@@ -56,7 +56,7 @@ export default function Home() {
 
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-amber-400 scale-105">
               <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-center py-2 text-sm font-bold">MAS VENDIDO</div>
-              <div className="h-48 bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1580323956656-26bbb7206583?w=800)'}}></div>
+              <div className="h-48 bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800)'}}></div>
               <div className="p-6">
                 <span className="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">COMPLETO</span>
                 <h3 className="text-2xl font-bold text-slate-900 mt-3 mb-2">Lisboa 2 Dias</h3>
@@ -94,40 +94,112 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-amber-400 font-semibold text-sm uppercase tracking-wider">Apps esenciales</span>
+            <h2 className="text-4xl font-bold mt-4">Tu kit digital para Lisboa</h2>
+            <p className="text-slate-300 mt-4 max-w-2xl mx-auto">Las apps que usamos los locales. Te explicamos como usarlas en la guia.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <span className="text-white text-2xl font-bold">C</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Carris Metropolitana</h3>
+              <p className="text-slate-300 text-sm mb-3">Bus y tranvias en tiempo real. Rutas y horarios.</p>
+              <span className="text-xs text-amber-400 font-semibold">GRATIS</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <span className="text-white text-2xl font-bold">M</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Metro Lisboa</h3>
+              <p className="text-slate-300 text-sm mb-3">App oficial del metro. Mapa y alertas de servicio.</p>
+              <span className="text-xs text-amber-400 font-semibold">GRATIS</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <span className="text-white text-2xl font-bold">B</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Bolt</h3>
+              <p className="text-slate-300 text-sm mb-3">Mas barato que Uber en Lisboa. Para distancias largas.</p>
+              <span className="text-xs text-amber-400 font-semibold">RECOMENDADA</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl hover:bg-white/20 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <span className="text-white text-2xl font-bold">G</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Gira</h3>
+              <p className="text-slate-300 text-sm mb-3">Bicicletas publicas. Ideal para zona del rio.</p>
+              <span className="text-xs text-amber-400 font-semibold">GRATIS 45 MIN</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">Apps esenciales</span>
-            <h2 className="text-4xl font-bold mt-4 text-slate-900">Tu kit digital para Lisboa</h2>
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">Informacion util</span>
+            <h2 className="text-4xl font-bold mt-4 text-slate-900">Todo lo que necesitas saber</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center mb-4">
-                <span className="text-white text-2xl font-bold">C</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-blue-600 text-xl">PT</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Carris</h3>
-              <p className="text-slate-600 text-sm">Bus y tranvias en tiempo real.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Idioma</h3>
+              <p className="text-slate-600 text-sm">Portugues. Muchos hablan espanol e ingles.</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-4">
-                <span className="text-white text-2xl font-bold">M</span>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-green-600 text-xl">EU</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Metro Lisboa</h3>
-              <p className="text-slate-600 text-sm">Mapa y alertas de servicio.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Moneda</h3>
+              <p className="text-slate-600 text-sm">Euro. Tarjetas aceptadas en casi todos lados.</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-4">
-                <span className="text-white text-2xl font-bold">B</span>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-amber-600 text-xl">220</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Bolt</h3>
-              <p className="text-slate-600 text-sm">Mas barato que Uber en Lisboa.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Enchufes</h3>
+              <p className="text-slate-600 text-sm">Tipo F europeo. 220V igual que Espana.</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm">
-              <div className="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center mb-4">
-                <span className="text-white text-2xl font-bold">G</span>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-red-600 text-xl">112</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Gira</h3>
-              <p className="text-slate-600 text-sm">Bicicletas publicas.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Emergencias</h3>
+              <p className="text-slate-600 text-sm">112 numero europeo. Policia turistica existe.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-cyan-600 text-xl">H2O</span>
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">Agua</h3>
+              <p className="text-slate-600 text-sm">Del grifo es potable y buena. Ahorra en botellas.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-purple-600 text-xl">-1h</span>
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">Horario</h3>
+              <p className="text-slate-600 text-sm">1 hora menos que Espana. Mismo que UK.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-pink-600 text-xl">Rx</span>
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">Farmacias</h3>
+              <p className="text-slate-600 text-sm">Muchas y bien surtidas. Busca la cruz verde.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+              <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-indigo-600 text-xl">WiFi</span>
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">Internet</h3>
+              <p className="text-slate-600 text-sm">WiFi gratis en muchos sitios. Roaming EU ok.</p>
             </div>
           </div>
         </div>
@@ -136,83 +208,42 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">Seguridad</span>
-            <h2 className="text-4xl font-bold mt-4 text-slate-900">Lisboa es muy segura</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-green-50 border border-green-200 p-6 rounded-2xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Zonas muy seguras</h3>
-              <ul className="text-slate-600 space-y-2">
-                <li>Belem - turistico y tranquilo</li>
-                <li>Parque das Nacoes - moderno</li>
-                <li>Principe Real - bohemio</li>
-                <li>Chiado - comercial</li>
-              </ul>
-            </div>
-            <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Atencion normal</h3>
-              <ul className="text-slate-600 space-y-2">
-                <li>Baixa - carteristas en hora punta</li>
-                <li>Alfama de noche - calles oscuras</li>
-                <li>Tranvia 28 - lleno de turistas</li>
-                <li>Rossio - mucha gente</li>
-              </ul>
-            </div>
-            <div className="bg-red-50 border border-red-200 p-6 rounded-2xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Evitar de noche</h3>
-              <ul className="text-slate-600 space-y-2">
-                <li>Martim Moniz - despues de las 22h</li>
-                <li>Intendente - algunas calles</li>
-                <li>Cais do Sodre - madrugada</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">Datos utiles</h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <h3 className="font-bold mb-2">Idioma</h3>
-              <p className="text-slate-400 text-sm">Portugues. Muchos hablan espanol.</p>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">Moneda</h3>
-              <p className="text-slate-400 text-sm">Euro. Tarjetas aceptadas.</p>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">Enchufes</h3>
-              <p className="text-slate-400 text-sm">Tipo F europeo. 220V.</p>
-            </div>
-            <div>
-              <h3 className="font-bold mb-2">Emergencias</h3>
-              <p className="text-slate-400 text-sm">112 - numero europeo.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900">Lo que dicen nuestros viajeros</h2>
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">Testimonios</span>
+            <h2 className="text-4xl font-bold mt-4 text-slate-900">Lo que dicen nuestros viajeros</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-50 p-8 rounded-2xl">
+              <div className="flex gap-1 mb-4 text-amber-400 text-lg">*****</div>
               <p className="text-slate-700 mb-6">"El restaurante de Alfama que nos recomendaron fue increible. La guia vale oro."</p>
-              <p className="font-semibold text-slate-900">Maria Garcia - Madrid</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full"></div>
+                <div>
+                  <p className="font-semibold text-slate-900">Maria Garcia</p>
+                  <p className="text-sm text-slate-500">Madrid, Espana</p>
+                </div>
+              </div>
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl">
+              <div className="flex gap-1 mb-4 text-amber-400 text-lg">*****</div>
               <p className="text-slate-700 mb-6">"Gracias al tip del tranvia 28 lo cogimos sin cola. Sintra fue magico."</p>
-              <p className="font-semibold text-slate-900">Carlos Rodriguez - Mexico</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full"></div>
+                <div>
+                  <p className="font-semibold text-slate-900">Carlos Rodriguez</p>
+                  <p className="text-sm text-slate-500">Ciudad de Mexico</p>
+                </div>
+              </div>
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl">
+              <div className="flex gap-1 mb-4 text-amber-400 text-lg">*****</div>
               <p className="text-slate-700 mb-6">"Los mapas offline nos salvaron. Todo muy bien organizado."</p>
-              <p className="font-semibold text-slate-900">Ana Lopez - Buenos Aires</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full"></div>
+                <div>
+                  <p className="font-semibold text-slate-900">Ana Lopez</p>
+                  <p className="text-sm text-slate-500">Buenos Aires</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
