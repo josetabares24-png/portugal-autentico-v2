@@ -49,7 +49,7 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
           <ul className="space-y-3 mb-12">
             {itinerary.includes.map((item: string, i: number) => (
               <li key={i} className="flex items-center text-gray-700">
-                <span className="text-green-500 mr-3">✓</span> {item}
+                <span className="text-green-500 mr-3">ok</span> {item}
               </li>
             ))}
           </ul>
@@ -60,7 +60,7 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
             ))}
           </div>
           <div className="text-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700">
               Comprar Ahora - {itinerary.price} EUR
             </button>
           </div>
