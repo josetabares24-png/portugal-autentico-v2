@@ -94,7 +94,7 @@ export default function ItinerariosPage() {
                 className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow ${
                   itinerario.duration === 2 ? 'ring-2 ring-primary-600' : ''
                 }`}
-              >
+              
                 {itinerario.duration === 2 && (
                   <div className="bg-primary-600 text-white text-center py-2 font-bold text-sm">
                     ⭐ MÁS VENDIDO - El favorito de nuestros viajeros
