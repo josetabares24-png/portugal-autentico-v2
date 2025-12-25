@@ -9,7 +9,7 @@ export const lisboa2DiasItinerary: Itinerary = {
   subtitle: 'De Alfama a Belém - La Experiencia Equilibrada Perfecta',
   destination: 'Lisboa, Portugal',
   duration: 2,
-  price: 37,
+  price: 30,
   featured: true,
   coverImage: '/images/lisboa-2dias-cover.jpg',
   gallery: [
