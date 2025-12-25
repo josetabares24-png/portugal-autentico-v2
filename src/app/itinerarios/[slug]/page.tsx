@@ -68,8 +68,14 @@ const itinerarios: Record<string, any> = {
   }
 };
 
-export default function ItinerarioPage({ params }: { params: { slug: string } }) {
-  const it = itinerarios[params.slug];
+type Props = {
+  params: Promise<{ slug: string }>
+}
+
+export default async function ItinerarioPage({ params }: Props) {
+  const { slug } = await params;
+  const it = itinerarios[slug];
+  
   if (!it) {
     return <div className="min-h-screen flex items-center justify-center text-2xl">Itinerario no encontrado</div>;
   }
@@ -100,7 +106,7 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
           <div className="grid md:grid-cols-2 gap-4">
             {it.includes.map((item: string, i: number) => (
               <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl">
-                <span className="text-green-500 text-xl">ok</span>
+                <span className="text-green-500 text-xl">✓</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -113,11 +119,11 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
           <h2 className="text-3xl font-bold text-center mb-8">Itinerario hora a hora</h2>
           <div className="space-y-4">
             {it.schedule.map((item: any, i: number) => (
-              <div key={i} className={item.desc === "" ? "pt-6" : "bg-gray-50 rounded-xl p-4 flex gap-4"}>
+              <div key={i} className={item.desc === "" ? "pt-6" : "bg-gray-50 rounded-xl p-4"}>
                 {item.desc === "" ? (
                   <h3 className="text-2xl font-bold text-blue-600">{item.time} - {item.place}</h3>
                 ) : (
-                  <div className="flex gap-4 w-full">
+                  <div className="flex gap-4">
                     <span className="font-bold text-blue-600 w-16">{item.time}</span>
                     <div>
                       <p className="font-bold">{item.place}</p>
