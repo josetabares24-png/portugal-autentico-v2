@@ -2,160 +2,106 @@ import Link from 'next/link';
 
 const itinerarios: Record<string, any> = {
   "lisboa-1-dia-lo-esencial": {
-    title: "Lisboa 1 Dia - Lo Esencial",
-    subtitle: "Descubre lo mejor de Lisboa en un dia perfectamente planificado",
+    title: "Lisboa 1 Dia",
     price: 27,
     duration: "1 dia",
-    color: "from-sky-400 to-blue-600",
     stops: 8,
     restaurants: 3,
-    walking: "6 km",
-    highlights: ["Castillo San Jorge", "Alfama", "Baixa", "Chiado", "Mirador Santa Luzia", "Mirador Portas do Sol", "Catedral Se", "Praca do Comercio"],
-    includes: [
-      "Itinerario hora a hora optimizado",
-      "Mapa offline interactivo",
-      "3 restaurantes locales recomendados",
-      "Tips para evitar colas",
-      "Mejores horarios para fotos",
-      "Transporte publico explicado"
-    ],
+    description: "Descubre lo mejor de Lisboa en un dia perfectamente planificado",
+    includes: ["Itinerario hora a hora", "Mapa offline", "3 restaurantes locales", "Tips para evitar colas"],
     schedule: [
-      { time: "09:00", place: "Praca do Comercio", desc: "Empieza en la plaza mas impresionante de Lisboa. Cafe con vista al rio Tajo." },
-      { time: "10:00", place: "Elevador Santa Justa", desc: "Sube antes de las colas. Vistas 360 de Lisboa." },
-      { time: "11:00", place: "Barrio de Alfama", desc: "Pierdete por las calles mas antiguas. Te marcamos la ruta perfecta." },
-      { time: "12:30", place: "Mirador Portas do Sol", desc: "Las mejores vistas de Alfama. Punto perfecto para fotos." },
-      { time: "13:30", place: "Almuerzo local", desc: "Restaurante secreto con bacalao increible. Solo 12 EUR." },
-      { time: "15:00", place: "Castillo San Jorge", desc: "La entrada perfecta: sin colas y con mejor luz." },
-      { time: "17:00", place: "Barrio de Chiado", desc: "Cafe en A Brasileira, librerias antiguas, ambiente bohemio." },
-      { time: "19:00", place: "Mirador Santa Luzia", desc: "Atardecer magico. El mejor final para tu dia." }
+      { time: "09:00", place: "Praca do Comercio", desc: "Empieza en la plaza mas impresionante" },
+      { time: "10:00", place: "Elevador Santa Justa", desc: "Vistas 360 de Lisboa" },
+      { time: "11:00", place: "Alfama", desc: "El barrio mas antiguo" },
+      { time: "13:00", place: "Almuerzo local", desc: "Restaurante con bacalao increible" },
+      { time: "15:00", place: "Castillo San Jorge", desc: "Sin colas con nuestro horario" },
+      { time: "17:00", place: "Chiado", desc: "Cafe y ambiente bohemio" },
+      { time: "19:00", place: "Mirador Santa Luzia", desc: "Atardecer magico" }
     ]
   },
   "lisboa-2-dias-completo": {
-    title: "Lisboa 2 Dias - Completo",
-    subtitle: "La experiencia completa de Lisboa con Belem, LX Factory y vida nocturna",
+    title: "Lisboa 2 Dias",
     price: 37,
     duration: "2 dias",
-    color: "from-amber-400 to-orange-500",
-    popular: true,
     stops: 15,
     restaurants: 6,
-    walking: "12 km",
-    highlights: ["Todo de 1 dia", "Belem", "Torre de Belem", "Monasterio Jeronimos", "Pasteis de Belem", "LX Factory", "Time Out Market", "Vida nocturna en Bairro Alto"],
-    includes: [
-      "Itinerario completo de 2 dias",
-      "Mapas offline de todas las zonas",
-      "6 restaurantes locales probados",
-      "Guia de vida nocturna",
-      "Tips de transporte entre zonas",
-      "Horarios sin colas para Belem",
-      "Mejores tiendas en LX Factory"
-    ],
+    popular: true,
+    description: "La experiencia completa con Belem y vida nocturna",
+    includes: ["Itinerario de 2 dias", "Mapas offline", "6 restaurantes", "Guia vida nocturna", "Tips transporte"],
     schedule: [
-      { time: "DIA 1", place: "", desc: "" },
-      { time: "09:00", place: "Centro Historico", desc: "Alfama, Baixa, miradores - todo el recorrido esencial." },
-      { time: "13:30", place: "Almuerzo en Alfama", desc: "Tasca tradicional con vino verde y petiscos." },
-      { time: "15:00", place: "Castillo y Chiado", desc: "Tarde cultural con las mejores vistas." },
-      { time: "20:00", place: "Cena en Time Out Market", desc: "El mejor mercado gastronomico de Europa." },
-      { time: "22:00", place: "Bairro Alto", desc: "La vida nocturna lisboeta. Bares con fado en vivo." },
-      { time: "DIA 2", place: "", desc: "" },
-      { time: "09:00", place: "Belem temprano", desc: "Monasterio Jeronimos sin colas. Imprescindible." },
-      { time: "10:30", place: "Pasteis de Belem", desc: "Los originales. Te decimos el truco para no esperar." },
-      { time: "11:30", place: "Torre de Belem", desc: "Icono de Lisboa. Fotos perfectas." },
-      { time: "13:00", place: "Almuerzo en Belem", desc: "Marisqueria local con vista al rio." },
-      { time: "15:00", place: "LX Factory", desc: "Fabrica convertida en paraiso hipster. Tiendas unicas." },
-      { time: "18:00", place: "Atardecer en el rio", desc: "Despedida perfecta de Lisboa." }
+      { time: "DIA 1", place: "Centro Historico", desc: "" },
+      { time: "09:00", place: "Alfama y Baixa", desc: "Todo el recorrido esencial" },
+      { time: "13:30", place: "Almuerzo en Alfama", desc: "Tasca tradicional" },
+      { time: "15:00", place: "Castillo y Chiado", desc: "Tarde cultural" },
+      { time: "20:00", place: "Time Out Market", desc: "Cena gourmet" },
+      { time: "22:00", place: "Bairro Alto", desc: "Vida nocturna" },
+      { time: "DIA 2", place: "Belem", desc: "" },
+      { time: "09:00", place: "Monasterio Jeronimos", desc: "Sin colas temprano" },
+      { time: "10:30", place: "Pasteis de Belem", desc: "Los originales" },
+      { time: "11:30", place: "Torre de Belem", desc: "Icono de Lisboa" },
+      { time: "15:00", place: "LX Factory", desc: "Fabrica hipster" }
     ]
   },
   "lisboa-3-dias-premium": {
-    title: "Lisboa 3 Dias - Premium",
-    subtitle: "Lisboa y alrededores: Sintra, Cascais y experiencias unicas",
+    title: "Lisboa 3 Dias Premium",
     price: 47,
     duration: "3 dias",
-    color: "from-violet-500 to-purple-700",
     stops: 22,
     restaurants: 9,
-    walking: "18 km",
-    highlights: ["Todo de 2 dias", "Sintra", "Palacio da Pena", "Quinta da Regaleira", "Cascais", "Cabo da Roca", "Boca do Inferno", "Atardecer en el Atlantico"],
-    includes: [
-      "Itinerario premium de 3 dias",
-      "Mapas offline de Lisboa, Sintra y Cascais",
-      "9 restaurantes cuidadosamente seleccionados",
-      "Guia completa de Sintra",
-      "Transporte a Sintra y Cascais explicado",
-      "Horarios para evitar multitudes",
-      "Mejores spots para fotos",
-      "Tips de ahorro en entradas"
-    ],
+    description: "Lisboa, Sintra y Cascais como un local",
+    includes: ["Itinerario de 3 dias", "Mapas de todo", "9 restaurantes", "Guia Sintra", "Transporte explicado"],
     schedule: [
-      { time: "DIA 1", place: "", desc: "" },
-      { time: "09:00", place: "Centro Historico", desc: "Alfama, Baixa, miradores iconicos." },
-      { time: "13:30", place: "Almuerzo local", desc: "Tasca escondida en Alfama." },
-      { time: "15:00", place: "Castillo y Chiado", desc: "Historia y cultura portuguesa." },
-      { time: "20:00", place: "Cena y fado", desc: "Experiencia autentica de fado en Alfama." },
-      { time: "DIA 2", place: "", desc: "" },
-      { time: "08:30", place: "Tren a Sintra", desc: "Salida temprana para evitar multitudes." },
-      { time: "09:30", place: "Palacio da Pena", desc: "El palacio de colores. Llegamos antes de las masas." },
-      { time: "12:00", place: "Quinta da Regaleira", desc: "Jardines magicos y el pozo iniciativo." },
-      { time: "14:00", place: "Almuerzo en Sintra", desc: "Restaurante con vista al pueblo." },
-      { time: "16:00", place: "Cascais", desc: "Pueblo costero elegante. Helado en la plaza." },
-      { time: "18:30", place: "Cabo da Roca", desc: "El punto mas occidental de Europa. Atardecer epico." },
-      { time: "DIA 3", place: "", desc: "" },
-      { time: "09:00", place: "Belem", desc: "Monasterio, Torre, Pasteis - sin prisas." },
-      { time: "13:00", place: "Almuerzo gourmet", desc: "Marisqueria premium en Belem." },
-      { time: "15:00", place: "LX Factory", desc: "Compras y cafe en la fabrica hipster." },
-      { time: "17:00", place: "Libre", desc: "Tiempo para repetir tu lugar favorito." },
-      { time: "20:00", place: "Cena de despedida", desc: "Restaurante especial para cerrar el viaje." }
+      { time: "DIA 1", place: "Centro Historico", desc: "" },
+      { time: "09:00", place: "Alfama completo", desc: "Miradores y callejuelas" },
+      { time: "20:00", place: "Cena con fado", desc: "Experiencia autentica" },
+      { time: "DIA 2", place: "Sintra y Cascais", desc: "" },
+      { time: "08:30", place: "Tren a Sintra", desc: "Salida temprana" },
+      { time: "09:30", place: "Palacio da Pena", desc: "Antes de las masas" },
+      { time: "12:00", place: "Quinta da Regaleira", desc: "Jardines magicos" },
+      { time: "16:00", place: "Cascais", desc: "Pueblo costero" },
+      { time: "18:30", place: "Cabo da Roca", desc: "Atardecer en el fin del mundo" },
+      { time: "DIA 3", place: "Belem y despedida", desc: "" },
+      { time: "09:00", place: "Belem sin prisas", desc: "Torre y Monasterio" },
+      { time: "15:00", place: "LX Factory", desc: "Compras y cafe" },
+      { time: "20:00", place: "Cena de despedida", desc: "Restaurante especial" }
     ]
   }
 };
 
 export default function ItinerarioPage({ params }: { params: { slug: string } }) {
   const it = itinerarios[params.slug];
-  
   if (!it) {
-    return <div className="min-h-screen flex items-center justify-center">Itinerario no encontrado</div>;
+    return <div className="min-h-screen flex items-center justify-center text-2xl">Itinerario no encontrado</div>;
   }
 
   return (
     <main className="min-h-screen bg-white">
-      <section className={"relative py-20 bg-gradient-to-br " + it.color}>
-        {it.popular && (
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white text-slate-900 text-sm font-bold px-4 py-1 rounded-full">
-            MAS VENDIDO
-          </div>
-        )}
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{it.title}</h1>
-          <p className="text-xl opacity-90 mb-8">{it.subtitle}</p>
+          {it.popular && <span className="bg-yellow-500 text-black px-4 py-1 rounded-full text-sm font-bold">MAS VENDIDO</span>}
+          <h1 className="text-5xl font-bold mt-4 mb-4">{it.title}</h1>
+          <p className="text-xl opacity-90 mb-6">{it.description}</p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">{it.duration}</span>
-            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">{it.stops} paradas</span>
-            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">{it.restaurants} restaurantes</span>
-            <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">{it.walking} a pie</span>
+            <span className="bg-white/20 px-4 py-2 rounded-full">{it.duration}</span>
+            <span className="bg-white/20 px-4 py-2 rounded-full">{it.stops} paradas</span>
+            <span className="bg-white/20 px-4 py-2 rounded-full">{it.restaurants} restaurantes</span>
           </div>
-          <div className="bg-white rounded-2xl p-6 text-slate-900 max-w-md mx-auto">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-4xl font-bold">{it.price} EUR</span>
-              <span className="text-slate-500">Acceso inmediato</span>
-            </div>
-            <button className={"w-full py-4 rounded-xl font-bold text-white text-lg bg-gradient-to-r " + it.color + " hover:shadow-lg transition-all"}>
-              Comprar Ahora
-            </button>
-            <p className="text-sm text-slate-500 mt-3">Garantia de 14 dias - Sin riesgos</p>
+          <div className="bg-white rounded-2xl p-6 text-slate-900 max-w-sm mx-auto">
+            <p className="text-4xl font-bold mb-2">{it.price} EUR</p>
+            <button className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold text-lg hover:bg-blue-700">Comprar Ahora</button>
+            <p className="text-sm text-gray-500 mt-2">Garantia 14 dias</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">Que incluye</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Que incluye</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {it.includes.map((item: string, i: number) => (
-              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl">
-                <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-700">{item}</span>
+              <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl">
+                <span className="text-green-500 text-xl">ok</span>
+                <span>{item}</span>
               </div>
             ))}
           </div>
@@ -164,33 +110,20 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
 
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">Lugares que visitaras</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {it.highlights.map((place: string, i: number) => (
-              <span key={i} className="bg-slate-100 text-slate-700 px-4 py-2 rounded-full">{place}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">Tu itinerario hora a hora</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Itinerario hora a hora</h2>
           <div className="space-y-4">
             {it.schedule.map((item: any, i: number) => (
-              <div key={i} className={item.place === "" ? "pt-8 first:pt-0" : "bg-white rounded-xl p-6 flex gap-6"}>
-                {item.place === "" ? (
-                  <h3 className="text-2xl font-bold text-slate-900">{item.time}</h3>
+              <div key={i} className={item.desc === "" ? "pt-6" : "bg-gray-50 rounded-xl p-4 flex gap-4"}>
+                {item.desc === "" ? (
+                  <h3 className="text-2xl font-bold text-blue-600">{item.time} - {item.place}</h3>
                 ) : (
-                  <>
-                    <div className="text-right w-16 flex-shrink-0">
-                      <span className="text-lg font-bold text-slate-900">{item.time}</span>
+                  <div className="flex gap-4 w-full">
+                    <span className="font-bold text-blue-600 w-16">{item.time}</span>
+                    <div>
+                      <p className="font-bold">{item.place}</p>
+                      <p className="text-gray-600">{item.desc}</p>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-slate-900 mb-1">{item.place}</h4>
-                      <p className="text-slate-600">{item.desc}</p>
-                    </div>
-                  </>
+                  </div>
                 )}
               </div>
             ))}
@@ -198,20 +131,13 @@ export default function ItinerarioPage({ params }: { params: { slug: string } })
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Listo para tu aventura?</h2>
-            <p className="text-slate-300 mb-8">Acceso inmediato despues del pago. Descarga todo a tu movil.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className={"px-8 py-4 rounded-xl font-bold text-white text-lg bg-gradient-to-r " + it.color + " hover:shadow-lg transition-all"}>
-                Comprar por {it.price} EUR
-              </button>
-              <Link href="/itinerarios" className="text-slate-400 hover:text-white transition-colors">
-                Ver otros itinerarios
-              </Link>
-            </div>
-          </div>
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Listo para tu aventura?</h2>
+          <p className="mb-8 opacity-90">Acceso inmediato. Garantia 14 dias.</p>
+          <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100">
+            Comprar por {it.price} EUR
+          </button>
         </div>
       </section>
     </main>
