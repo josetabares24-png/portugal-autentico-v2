@@ -2,96 +2,115 @@ import Link from 'next/link';
 
 export default function PreviewPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-16 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold mb-6">PREVIEW GRATIS</span>
-          <h1 className="text-4xl font-bold mb-4">Mira como es un itinerario</h1>
-          <p className="text-xl text-slate-300">Te mostramos las primeras 3 horas del itinerario de 1 dia.</p>
+    <main>
+      <section className="relative py-16" style={{background: 'var(--color-primary)'}}>
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920)'}}></div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 bg-green-500 text-white">GRATIS</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Preview del itinerario</h1>
+          <p className="text-xl text-white/80">Mira como son nuestros itinerarios antes de comprar</p>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-16" style={{background: 'var(--color-secondary)'}}>
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-amber-800">Este es un preview. El itinerario completo tiene 8+ horas.</p>
-            <Link href="/itinerarios/lisboa-1-dia-lo-esencial" className="bg-amber-500 text-white px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap">
-              Ver completo
-            </Link>
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="p-6 border-b" style={{background: 'var(--color-primary)'}}>
+              <h2 className="text-2xl font-bold text-white">Lisboa Esencial - Manana (Preview)</h2>
+              <p className="text-white/70">Esto es un extracto del itinerario de 1 dia</p>
+            </div>
+            
+            <div className="p-6 md:p-8">
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-20 text-center">
+                    <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>09:00</div>
+                    <div className="text-xs text-slate-500">1.5 horas</div>
+                  </div>
+                  <div className="flex-1 bg-slate-50 rounded-xl p-5">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold" style={{color: 'var(--color-primary)'}}>Barrio de Alfama</h3>
+                      <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-700">Visita</span>
+                    </div>
+                    <p className="text-slate-600 text-sm mb-4">El barrio mas antiguo de Lisboa. Callejuelas empedradas, ropa tendida, fado sonando desde las ventanas. Empieza por la Catedral Se y pierdete subiendo hacia el castillo.</p>
+                    <div className="flex flex-wrap gap-3 text-xs">
+                      <span className="flex items-center gap-1 text-slate-500">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Alfama, Lisboa
+                      </span>
+                      <span className="flex items-center gap-1 text-green-600">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Gratis
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-20 text-center">
+                    <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>10:30</div>
+                    <div className="text-xs text-slate-500">45 min</div>
+                  </div>
+                  <div className="flex-1 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold" style={{color: 'var(--color-primary)'}}>Cafe en Cruzes Credo</h3>
+                      <span className="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-700">Comida</span>
+                    </div>
+                    <p className="text-slate-600 text-sm mb-4">El mejor cafe de especialidad del barrio. Pide el pastel de nata con canela - lo hacen ellos mismos cada manana. Terraza con vistas a la catedral.</p>
+                    <div className="flex flex-wrap gap-3 text-xs">
+                      <span className="flex items-center gap-1 text-slate-500">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Rua Cruzes da Se 29
+                      </span>
+                      <span className="flex items-center gap-1 text-green-600 font-medium">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        3-5 EUR
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-20 text-center">
+                    <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>11:15</div>
+                    <div className="text-xs text-slate-500">1 hora</div>
+                  </div>
+                  <div className="flex-1 bg-pink-50 rounded-xl p-5 border border-pink-200">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold" style={{color: 'var(--color-primary)'}}>Mirador de Santa Luzia</h3>
+                      <span className="text-xs px-2 py-1 rounded-full bg-pink-100 text-pink-700">Foto</span>
+                    </div>
+                    <p className="text-slate-600 text-sm mb-4">El mirador mas fotografiado de Lisboa. Azulejos, buganvillas y vistas al rio Tejo. Llega antes de las 12 para evitar grupos de turistas.</p>
+                    <div className="flex flex-wrap gap-3 text-xs">
+                      <span className="flex items-center gap-1 text-pink-600 font-medium">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Mejor luz: 9-11am
+                      </span>
+                      <span className="flex items-center gap-1 text-green-600">Gratis</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-100 rounded-xl p-6 text-center">
+                  <div className="text-4xl mb-3">í´’</div>
+                  <h3 className="text-lg font-bold mb-2" style={{color: 'var(--color-primary)'}}>Continua en el itinerario completo...</h3>
+                  <p className="text-slate-600 text-sm mb-4">Tarde en Belem, atardecer en el mejor mirador secreto, cena en tasca local, y mas.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Itinerario - Primeras 3 horas</h2>
-          
-          <div className="space-y-4">
-            <div className="bg-slate-50 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="text-center min-w-16">
-                  <span className="text-xl font-bold text-blue-600">08:30</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Praca do Comercio - Punto de inicio</h3>
-                  <p className="text-slate-600 mt-2">Empieza tu dia en la plaza mas impresionante de Lisboa, frente al rio Tajo. El ambiente a primera hora es tranquilo y la luz es perfecta para fotos.</p>
-                  <div className="mt-4 p-4 bg-white rounded-lg border border-slate-200">
-                    <p className="text-sm font-semibold text-slate-700">Desayuno recomendado:</p>
-                    <p className="text-sm text-slate-600">Cafe Martinho da Arcada (desde 1782). Tostada con mantequilla y cafe: 4 EUR.</p>
-                  </div>
-                </div>
-              </div>
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>Te gusto lo que viste?</h3>
+            <p className="text-slate-600 mb-8">Esto es solo la manana. El itinerario completo incluye todo el dia + restaurantes + mapas offline.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/itinerarios/lisboa-1-dia-lo-esencial" className="btn-primary inline-flex items-center justify-center gap-2 hover:scale-105 transition-all">
+                Ver pack 1 dia - 5.99 EUR
+              </Link>
+              <Link href="/itinerarios" className="btn-secondary inline-flex items-center justify-center gap-2">
+                Ver todos los packs
+              </Link>
             </div>
-
-            <div className="bg-slate-50 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="text-center min-w-16">
-                  <span className="text-xl font-bold text-blue-600">09:30</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Rua Augusta y Arco Triunfal</h3>
-                  <p className="text-slate-600 mt-2">Camina por la calle peatonal principal. Pasa bajo el Arco da Rua Augusta - subir cuesta 3 EUR y vale la pena temprano sin cola.</p>
-                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-sm font-semibold text-blue-700">Tip local:</p>
-                    <p className="text-sm text-blue-600">Evita los restaurantes de Rua Augusta - son caros y turisticos.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="text-center min-w-16">
-                  <span className="text-xl font-bold text-blue-600">10:00</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Elevador de Santa Justa - El truco</h3>
-                  <p className="text-slate-600 mt-2">Este elevador es iconico pero la cola puede ser de 1 hora. NO hagas la cola.</p>
-                  <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-                    <p className="text-sm font-semibold text-green-700">Alternativa gratis:</p>
-                    <p className="text-sm text-green-600">Sube por las escaleras del Convento do Carmo. Llegas al mismo mirador sin cola y sin pagar.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="text-center min-w-16">
-                  <span className="text-xl font-bold text-blue-600">10:30</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Convento do Carmo</h3>
-                  <p className="text-slate-600 mt-2">Ruinas goticas impresionantes al aire libre. El terremoto de 1755 destruyo el techo pero las columnas siguen en pie.</p>
-                  <p className="text-slate-500 text-sm mt-2">Entrada: 5 EUR | Tiempo: 20-30 minutos</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 bg-gradient-to-r from-slate-100 to-blue-50 rounded-2xl p-8 text-center">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">El itinerario continua...</h3>
-            <p className="text-slate-600 mb-6">Faltan 5+ horas: Chiado, Alfama, Castillo, miradores, restaurantes y mas.</p>
-            <Link href="/itinerarios/lisboa-1-dia-lo-esencial" className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all">
-              Ver itinerario completo - 27 EUR
-            </Link>
-            <p className="text-slate-500 text-sm mt-4">Garantia de 14 dias</p>
           </div>
         </div>
       </section>
