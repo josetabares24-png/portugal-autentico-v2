@@ -155,9 +155,9 @@ export default function PackPage({ params }: { params: { slug: string } }) {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             Volver a itinerarios
           </Link>
-          {pack.badge && (
+          {('badge' in pack) && pack.badge && ((
             <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4 text-white" style={{background: 'var(--color-accent)'}}>
-              {pack.badge}
+              {(pack as any).badge}
             </span>
           )}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">{pack.title}</h1>
