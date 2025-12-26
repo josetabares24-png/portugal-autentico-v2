@@ -1,248 +1,281 @@
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Apps Esenciales para Lisboa | Portugal Autentico',
-  description: 'Las mejores apps para moverte, comer y disfrutar Lisboa. Transporte, mapas, comida y mas.',
-};
-
 export default function AppsPage() {
   const apps = {
     transporte: [
       {
-        nombre: "Citymapper",
-        descripcion: "La mejor app para transporte publico. Metro, bus, tranvia, todo integrado con horarios en tiempo real.",
-        porque: "Te dice exactamente que tranvia coger, donde bajar, y alternativas si hay retrasos.",
-        ios: "https://apps.apple.com/app/citymapper/id469463298",
-        android: "https://play.google.com/store/apps/details?id=com.citymapper.app.release",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Citymapper_app_logo.svg/480px-Citymapper_app_logo.svg.png",
-        gratis: true
-      },
-      
-      {
-        nombre: "Bolt",
-        descripcion: "Alternativa a Uber, mas barata en Lisboa. Taxis y patinetes electricos.",
-        porque: "Precios mas bajos que Uber. Muy usado por locales.",
-        ios: "https://apps.apple.com/app/bolt-request-a-ride/id675033630",
-        android: "https://play.google.com/store/apps/details?id=ee.mtakso.client",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bolt_logo.svg/480px-Bolt_logo.svg.png",
-        gratis: true
+        name: 'Citymapper',
+        description: 'La mejor app para transporte publico en Lisboa. Metro, tranvia, bus, todo integrado.',
+        why: 'Muestra todas las opciones de transporte y te dice exactamente cuando llegar a la parada.',
+        logo: 'https://logo.clearbit.com/citymapper.com',
+        appStore: 'https://apps.apple.com/app/citymapper/id469463298',
+        playStore: 'https://play.google.com/store/apps/details?id=com.citymapper.app.release',
+        color: '#3DB846'
       },
       {
-        nombre: "Uber",
-        descripcion: "El clasico. Funciona muy bien en Lisboa con precios razonables.",
-        porque: "Alternativa a Bolt. A veces tiene mejores precios segun la hora.",
-        ios: "https://apps.apple.com/app/uber/id368677368",
-        android: "https://play.google.com/store/apps/details?id=com.ubercab",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/480px-Uber_logo_2018.svg.png",
-        gratis: true
+        name: 'Bolt',
+        description: 'Alternativa a Uber, generalmente mas barata en Lisboa.',
+        why: 'Precios mas competitivos y muy popular en Portugal.',
+        logo: 'https://logo.clearbit.com/bolt.eu',
+        appStore: 'https://apps.apple.com/app/bolt-fast-affordable-rides/id675033630',
+        playStore: 'https://play.google.com/store/apps/details?id=ee.mtakso.client',
+        color: '#34D186'
       },
       {
-        nombre: "Free Now",
-        descripcion: "App de taxis oficiales. Util si prefieres taxi tradicional con taximetro.",
-        porque: "Taxis con licencia, precio fijo al aeropuerto, pago con tarjeta garantizado.",
-        ios: "https://apps.apple.com/app/free-now-mytaxi/id357852748",
-        android: "https://play.google.com/store/apps/details?id=taxi.android.client",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/FREE_NOW_logo.svg/480px-FREE_NOW_logo.svg.png",
-        gratis: true
+        name: 'Uber',
+        description: 'El clasico que ya conoces. Funciona muy bien en Lisboa.',
+        why: 'Confiable, conocido, y con buen servicio en la ciudad.',
+        logo: 'https://logo.clearbit.com/uber.com',
+        appStore: 'https://apps.apple.com/app/uber/id368677368',
+        playStore: 'https://play.google.com/store/apps/details?id=com.ubercab',
+        color: '#000000'
+      },
+      {
+        name: 'Free Now',
+        description: 'App de taxis oficiales y VTC. Antes conocida como MyTaxi.',
+        why: 'Ideal si prefieres taxis tradicionales con precio cerrado.',
+        logo: 'https://logo.clearbit.com/free-now.com',
+        appStore: 'https://apps.apple.com/app/free-now-mytaxi/id357852748',
+        playStore: 'https://play.google.com/store/apps/details?id=taxi.android.client',
+        color: '#C8102E'
       }
     ],
     comida: [
       {
-        nombre: "The Fork",
-        descripcion: "Reservas en restaurantes con descuentos de hasta 50%. Muy popular en Lisboa.",
-        porque: "Descuentos reales en restaurantes buenos. Reserva con un click.",
-        ios: "https://apps.apple.com/app/thefork-restaurant-bookings/id351439447",
-        android: "https://play.google.com/store/apps/details?id=com.lafourchette.lafourchette",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/TheFork_logo.svg/480px-TheFork_logo.svg.png",
-        gratis: true
+        name: 'The Fork',
+        description: 'Reservas en restaurantes con descuentos de hasta 50%.',
+        why: 'Muchos restaurantes en Lisboa ofrecen descuentos exclusivos.',
+        logo: 'https://logo.clearbit.com/thefork.com',
+        appStore: 'https://apps.apple.com/app/thefork-restaurant-bookings/id351091731',
+        playStore: 'https://play.google.com/store/apps/details?id=com.lafourchette.lafourchette',
+        color: '#00665A'
       },
       {
-        nombre: "Glovo",
-        descripcion: "Delivery de comida, supermercado, farmacia. El mas usado en Portugal.",
-        porque: "Mas restaurantes locales que Uber Eats. Entregas rapidas.",
-        ios: "https://apps.apple.com/app/glovo/id951812684",
-        android: "https://play.google.com/store/apps/details?id=com.glovo",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Glovo_logo.svg/480px-Glovo_logo.svg.png",
-        gratis: true
+        name: 'Glovo',
+        description: 'Delivery de comida, super, farmacia... de todo.',
+        why: 'Muy popular en Lisboa con entregas rapidas.',
+        logo: 'https://logo.clearbit.com/glovoapp.com',
+        appStore: 'https://apps.apple.com/app/glovo-delivery-from-any-store/id951812684',
+        playStore: 'https://play.google.com/store/apps/details?id=com.glovo',
+        color: '#FFC244'
       },
       {
-        nombre: "Uber Eats",
-        descripcion: "Delivery de comida. Buena seleccion de restaurantes en Lisboa.",
-        porque: "Alternativa a Glovo. A veces tiene ofertas mejores.",
-        ios: "https://apps.apple.com/app/uber-eats-food-delivery/id1058959277",
-        android: "https://play.google.com/store/apps/details?id=com.ubercab.eats",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Uber_Eats_2020_logo.svg/480px-Uber_Eats_2020_logo.svg.png",
-        gratis: true
+        name: 'Uber Eats',
+        description: 'Delivery de restaurantes. Gran variedad en Lisboa.',
+        why: 'Interfaz conocida y muchas opciones de restaurantes.',
+        logo: 'https://logo.clearbit.com/ubereats.com',
+        appStore: 'https://apps.apple.com/app/uber-eats-food-delivery/id1058959277',
+        playStore: 'https://play.google.com/store/apps/details?id=com.ubercab.eats',
+        color: '#06C167'
       }
     ],
     mapas: [
       {
-        nombre: "Google Maps",
-        descripcion: "El mapa de siempre. Descarga el mapa offline de Lisboa antes de viajar.",
-        porque: "Funciona sin internet si descargas el mapa. Opiniones de restaurantes utiles.",
-        ios: "https://apps.apple.com/app/google-maps/id585027354",
-        android: "https://play.google.com/store/apps/details?id=com.google.android.apps.maps",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Google_Maps_icon_%282020%29.svg/480px-Google_Maps_icon_%282020%29.svg.png",
-        gratis: true
+        name: 'Google Maps',
+        description: 'El estandar para navegacion y busqueda de lugares.',
+        why: 'Descarga el mapa offline de Lisboa antes de viajar.',
+        logo: 'https://logo.clearbit.com/google.com/maps',
+        appStore: 'https://apps.apple.com/app/google-maps/id585027354',
+        playStore: 'https://play.google.com/store/apps/details?id=com.google.android.apps.maps',
+        color: '#4285F4'
       },
       {
-        nombre: "Maps.me",
-        descripcion: "Mapas 100% offline. Perfecto si no tienes datos moviles.",
-        porque: "Funciona completamente sin internet. Rutas a pie muy precisas.",
-        ios: "https://apps.apple.com/app/maps-me-offline-maps-gps-nav/id510623322",
-        android: "https://play.google.com/store/apps/details?id=com.mapswithme.maps.pro",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Maps.me_logo.svg/480px-Maps.me_logo.svg.png",
-        gratis: true
+        name: 'Maps.me',
+        description: 'Mapas offline gratuitos, perfectos para viajar.',
+        why: 'No necesitas internet. Muy detallado para caminar.',
+        logo: 'https://logo.clearbit.com/maps.me',
+        appStore: 'https://apps.apple.com/app/maps-me-offline-maps-gps-nav/id510623322',
+        playStore: 'https://play.google.com/store/apps/details?id=com.mapswithme.maps.pro',
+        color: '#20B24B'
       }
     ],
     utilidades: [
       {
-        nombre: "Google Translate",
-        descripcion: "Traductor con camara. Apunta a un menu en portugues y lo traduce al instante.",
-        porque: "La funcion de camara es magica para menus y carteles.",
-        ios: "https://apps.apple.com/app/google-translate/id414706506",
-        android: "https://play.google.com/store/apps/details?id=com.google.android.apps.translate",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Google_Translate_logo.svg/480px-Google_Translate_logo.svg.png",
-        gratis: true
+        name: 'Google Translate',
+        description: 'Traductor con camara para menus y carteles.',
+        why: 'Apunta la camara a cualquier texto en portugues.',
+        logo: 'https://logo.clearbit.com/translate.google.com',
+        appStore: 'https://apps.apple.com/app/google-translate/id414706506',
+        playStore: 'https://play.google.com/store/apps/details?id=com.google.android.apps.translate',
+        color: '#4285F4'
       },
       {
-        nombre: "Revolut",
-        descripcion: "Tarjeta sin comisiones en el extranjero. Cambio de divisa al tipo real.",
-        porque: "Paga en euros sin comisiones. Saca dinero gratis en cajeros.",
-        ios: "https://apps.apple.com/app/revolut/id932493382",
-        android: "https://play.google.com/store/apps/details?id=com.revolut.revolut",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Revolut_logo.svg/480px-Revolut_logo.svg.png",
-        gratis: true
+        name: 'Revolut',
+        description: 'Tarjeta sin comisiones en el extranjero.',
+        why: 'Paga en euros sin comisiones de cambio.',
+        logo: 'https://logo.clearbit.com/revolut.com',
+        appStore: 'https://apps.apple.com/app/revolut/id932493382',
+        playStore: 'https://play.google.com/store/apps/details?id=com.revolut.revolut',
+        color: '#0075EB'
       },
       {
-        nombre: "Wise",
-        descripcion: "Alternativa a Revolut. Transferencias internacionales y tarjeta multimoneda.",
-        porque: "Otra opcion para pagar sin comisiones.",
-        ios: "https://apps.apple.com/app/wise-ex-transferwise/id612261027",
-        android: "https://play.google.com/store/apps/details?id=com.transferwise.android",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Wise_Logo.svg/480px-Wise_Logo.svg.png",
-        gratis: true
+        name: 'Wise',
+        description: 'Transferencias y tarjeta con el mejor tipo de cambio.',
+        why: 'Alternativa a Revolut, excelente para viajeros.',
+        logo: 'https://logo.clearbit.com/wise.com',
+        appStore: 'https://apps.apple.com/app/wise-ex-transferwise/id612261027',
+        playStore: 'https://play.google.com/store/apps/details?id=com.transferwise.android',
+        color: '#00B9FF'
       }
     ],
     experiencias: [
       {
-        nombre: "GetYourGuide",
-        descripcion: "Tours, entradas a monumentos, experiencias. Cancelacion gratuita en muchos.",
-        porque: "Entradas sin cola al Oceanario, Jeronimos, etc.",
-        ios: "https://apps.apple.com/app/getyourguide-tours-tickets/id657029442",
-        android: "https://play.google.com/store/apps/details?id=com.getyourguide.android",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/GetYourGuide_logo.svg/480px-GetYourGuide_logo.svg.png",
-        gratis: true
+        name: 'GetYourGuide',
+        description: 'Tours, entradas y experiencias en Lisboa.',
+        why: 'Reserva tours de Sintra, Belem, y mas con cancelacion gratis.',
+        logo: 'https://logo.clearbit.com/getyourguide.com',
+        appStore: 'https://apps.apple.com/app/getyourguide-tours-activities/id657029209',
+        playStore: 'https://play.google.com/store/apps/details?id=com.getyourguide.android',
+        color: '#FF5533'
       },
       {
-        nombre: "Airbnb",
-        descripcion: "No solo alojamiento. La seccion de Experiencias tiene tours locales unicos.",
-        porque: "Experiencias con locales: clases de cocina, tours de fado, paseos alternativos.",
-        ios: "https://apps.apple.com/app/airbnb/id401626263",
-        android: "https://play.google.com/store/apps/details?id=com.airbnb.android",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/480px-Airbnb_Logo_B%C3%A9lo.svg.png",
-        gratis: true
+        name: 'Airbnb',
+        description: 'Alojamientos y experiencias locales.',
+        why: 'Encuentra experiencias unicas con locales en Lisboa.',
+        logo: 'https://logo.clearbit.com/airbnb.com',
+        appStore: 'https://apps.apple.com/app/airbnb/id401626263',
+        playStore: 'https://play.google.com/store/apps/details?id=com.airbnb.android',
+        color: '#FF5A5F'
       }
     ]
   };
 
-  const categorias = [
-    { key: 'transporte', nombre: 'Transporte', icono: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4', color: 'from-blue-500 to-blue-600' },
-    { key: 'comida', nombre: 'Comida y Restaurantes', icono: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', color: 'from-amber-500 to-orange-500' },
-    { key: 'mapas', nombre: 'Mapas Offline', icono: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', color: 'from-green-500 to-emerald-500' },
-    { key: 'utilidades', nombre: 'Utilidades', icono: 'M13 10V3L4 14h7v7l9-11h-7z', color: 'from-purple-500 to-violet-500' },
-    { key: 'experiencias', nombre: 'Tours y Experiencias', icono: 'M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z', color: 'from-pink-500 to-rose-500' }
+  const categories = [
+    { key: 'transporte', name: 'Transporte', icon: 'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z' },
+    { key: 'comida', name: 'Comida', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
+    { key: 'mapas', name: 'Mapas', icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7' },
+    { key: 'utilidades', name: 'Utilidades', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+    { key: 'experiencias', name: 'Experiencias', icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' }
   ];
 
   return (
     <main>
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/70"></div>
-        <div className="relative max-w-6xl mx-auto px-4">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-white/10 text-white backdrop-blur-sm border border-white/20">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-              14 apps recomendadas
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Apps <span style={{color: 'var(--color-accent)'}}>esenciales</span>
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">Todo lo que necesitas en tu movil para moverte, comer y disfrutar Lisboa como un local.</p>
-          </div>
+      <section className="relative py-24 md:py-32">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1920&q=80" 
+            alt="Lisboa apps" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90"></div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-white/10 text-white backdrop-blur-sm border border-white/20">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+            14 apps recomendadas
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Apps esenciales para tu viaje a Lisboa
+          </h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            Las aplicaciones que usamos nosotros y que te haran la vida mucho mas facil durante tu viaje.
+          </p>
+        </div>
       </section>
 
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4">
-          
-          <div className="bg-white rounded-2xl p-6 mb-12 shadow-sm">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-1" style={{color: 'var(--color-primary)'}}>Tip: Descarga antes de viajar</h3>
-                <p className="text-slate-600">Instala estas apps con WiFi en casa. Algunas permiten descargar mapas offline. Asi no dependes de datos moviles al llegar.</p>
-              </div>
+      <section className="py-8 bg-amber-50 border-b border-amber-200">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <h3 className="font-semibold text-amber-900 mb-1">Consejo: Descarga antes de viajar</h3>
+              <p className="text-amber-800 text-sm">Instala todas las apps antes de salir de casa. Asi las tendras listas con tu cuenta configurada cuando llegues a Lisboa.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {categorias.map((cat) => (
-            <div key={cat.key} className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center shadow-lg`}>
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={cat.icono} /></svg>
-                </div>
-                <h2 className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>{cat.nombre}</h2>
+      {categories.map((category) => (
+        <section key={category.key} className="py-16 border-b border-slate-100 last:border-0">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{background: 'linear-gradient(135deg, var(--color-accent), var(--color-primary))'}}>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={category.icon} />
+                </svg>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {apps[cat.key as keyof typeof apps].map((app) => (
-                  <div key={app.nombre} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                        <img src={app.logo} alt={app.nombre} className="w-12 h-12 object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-bold" style={{color: 'var(--color-primary)'}}>{app.nombre}</h3>
-                          {app.gratis && <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-700 font-medium">Gratis</span>}
-                        </div>
-                        <p className="text-slate-600 text-sm mb-2">{app.descripcion}</p>
-                        <p className="text-slate-500 text-xs mb-4">{app.porque}</p>
-                        <div className="flex gap-2">
-                          <a href={app.ios} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-slate-800 transition-colors">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                            App Store
-                          </a>
-                          <a href={app.android} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-600 text-white text-xs font-medium hover:bg-green-700 transition-colors">
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3.5V21a.5.5 0 00.854.354l8.646-8.646L3.854 3.146A.5.5 0 003 3.5zm18.146 8.354l-3.792 2.197-3.5-3.5 3.5-3.5 3.792 2.197a1 1 0 010 1.606zM5.854 2.146l8.646 8.646-2.5 2.5L4 5.5l1.854-3.354z"/></svg>
-                            Google Play
-                          </a>
-                        </div>
+              <h2 className="text-2xl md:text-3xl font-bold" style={{color: 'var(--color-primary)'}}>{category.name}</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {apps[category.key as keyof typeof apps].map((app) => (
+                <div key={app.name} className="group bg-white rounded-2xl p-6 border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="relative">
+                      <img 
+                        src={app.logo} 
+                        alt={app.name}
+                        className="w-16 h-16 rounded-2xl object-contain bg-slate-50 p-2"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-bold';
+                            fallback.style.background = app.color;
+                            fallback.textContent = app.name.charAt(0);
+                            parent.appendChild(fallback);
+                          }
+                        }}
+                      />
+                      <span className="absolute -bottom-1 -right-1 px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+                        Gratis
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold mb-1" style={{color: 'var(--color-primary)'}}>{app.name}</h3>
+                      <p className="text-slate-600 text-sm mb-2">{app.description}</p>
+                      <p className="text-slate-500 text-xs mb-4">
+                        <span className="font-medium" style={{color: 'var(--color-accent)'}}>Por que la recomendamos:</span> {app.why}
+                      </p>
+                      <div className="flex gap-3">
+                        <a 
+                          href={app.appStore} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded-lg hover:bg-slate-800 transition-colors"
+                        >
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                          App Store
+                        </a>
+                        <a 
+                          href={app.playStore} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-medium rounded-lg hover:bg-slate-200 transition-colors"
+                        >
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                          Play Store
+                        </a>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          <div className="mt-16 relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-900"></div>
-            <div className="relative p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Quieres todo organizado?</h3>
-                <p className="text-white/70 text-lg">Nuestros itinerarios incluyen que app usar en cada momento del viaje.</p>
-              </div>
-              <Link href="/itinerarios" className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl bg-white" style={{color: 'var(--color-primary)'}}>
-                Ver itinerarios
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
+                </div>
+              ))}
             </div>
           </div>
+        </section>
+      ))}
+
+      <section className="py-20" style={{background: 'var(--color-accent)'}}>
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Listo para tu viaje?
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            Con estas apps y nuestros itinerarios, tendras todo lo que necesitas.
+          </p>
+          <Link 
+            href="/itinerarios" 
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 bg-white"
+            style={{color: 'var(--color-primary)'}}
+          >
+            Ver itinerarios de Lisboa
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
         </div>
       </section>
     </main>
