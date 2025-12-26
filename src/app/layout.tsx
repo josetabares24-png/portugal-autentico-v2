@@ -23,14 +23,13 @@ export default function RootLayout({
                   <span className="text-white font-bold text-lg">P</span>
                 </div>
                 <div className="hidden sm:block">
-                  <span className="text-xl font-bold" style={{color: 'var(--color-primary)'}}>Portugal</span>
-                  <span className="text-xl font-bold" style={{color: 'var(--color-accent)'}}>Autentico</span>
+                  <span className="text-xl font-bold" style={{color: 'var(--color-primary)'}}>Portugal</span>   
+                  <span className="text-xl font-bold" style={{color: 'var(--color-accent)'}}>Autentico</span>   
                 </div>
               </Link>
 
               <div className="hidden md:flex items-center space-x-1">
                 <Link href="/itinerarios" className="px-4 py-2 text-slate-600 hover:text-slate-900 rounded-lg font-medium transition-colors">Itinerarios</Link>
-                <Link href="/comparar" className="px-4 py-2 text-slate-600 hover:text-slate-900 rounded-lg font-medium transition-colors">Comparar</Link>
                 <Link href="/blog" className="px-4 py-2 text-slate-600 hover:text-slate-900 rounded-lg font-medium transition-colors">Blog</Link>
                 <Link href="/free-tour" className="px-4 py-2 text-slate-600 hover:text-slate-900 rounded-lg font-medium transition-colors">Free Tour</Link>
 
@@ -41,8 +40,8 @@ export default function RootLayout({
                   </button>
                   <div className="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-lg border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                     <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50 rounded-t-xl">Español</a>
-                    <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50">English</a>
-                    <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50">Português</a>
+                    <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50">English</a>        
+                    <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50">Português</a>      
                     <a href="#" className="block px-4 py-2 text-slate-700 hover:bg-slate-50 rounded-b-xl">Français</a>
                   </div>
                 </div>
@@ -60,7 +59,6 @@ export default function RootLayout({
                 </summary>
                 <div className="absolute right-0 top-12 w-64 bg-white rounded-xl shadow-xl border p-4 space-y-2">
                   <Link href="/itinerarios" className="block px-4 py-3 hover:bg-slate-50 rounded-lg font-medium">Itinerarios</Link>
-                  <Link href="/comparar" className="block px-4 py-3 hover:bg-slate-50 rounded-lg font-medium">Comparar</Link>
                   <Link href="/blog" className="block px-4 py-3 hover:bg-slate-50 rounded-lg font-medium">Blog</Link>
                   <Link href="/free-tour" className="block px-4 py-3 hover:bg-slate-50 rounded-lg font-medium">Free Tour</Link>
                   <div className="pt-2 border-t">
@@ -91,13 +89,13 @@ export default function RootLayout({
                 </div>
                 <span className="text-white font-semibold">PortugalAutentico</span>
               </Link>
-              
+
               <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                 <Link href="/itinerarios" className="text-slate-400 hover:text-white transition-colors">Itinerarios</Link>
-                <Link href="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link>
+                <Link href="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link>    
                 <Link href="/free-tour" className="text-slate-400 hover:text-white transition-colors">Free Tour</Link>
-                <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">FAQ</Link>
-                <Link href="/contacto" className="text-slate-400 hover:text-white transition-colors">Contacto</Link>
+                <Link href="/privacidad" className="text-slate-400 hover:text-white transition-colors">Privacidad</Link>
+                <Link href="/terminos" className="text-slate-400 hover:text-white transition-colors">Terminos</Link>
               </nav>
 
               <div className="flex items-center gap-4">
@@ -112,12 +110,12 @@ export default function RootLayout({
                 </a>
               </div>
             </div>
-            
+
             <div className="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-              <p>© 2025 Portugal Auténtico. Hecho con ❤️ en Lisboa.</p>
+              <p>© 2025 Portugal Autentico. Hecho con amor en Lisboa.</p>
               <div className="flex gap-4">
-                <Link href="/privacidad" className="hover:text-slate-300 transition-colors">Privacidad</Link>
-                <Link href="/terminos" className="hover:text-slate-300 transition-colors">Términos</Link>
+                <Link href="/privacidad" className="hover:text-slate-300 transition-colors">Privacidad</Link>   
+                <Link href="/terminos" className="hover:text-slate-300 transition-colors">Terminos</Link>       
               </div>
             </div>
           </div>
