@@ -46,7 +46,7 @@ export default function CompararPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
             {packs.map((pack) => (
-              <div key={pack.slug} className={`relative rounded-2xl p-5 text-center ${pack.popular ? 'ring-2 ring-offset-2' : ''}`} style={pack.popular ? {ringColor: 'var(--color-accent)'} : {}}>
+              <div key={pack.slug} className={`relative rounded-2xl p-5 text-center bg-white shadow-sm ${pack.popular ? 'ring-2 ring-orange-500 ring-offset-2' : ''}`}>
                 {pack.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg" style={{background: 'var(--color-accent)'}}>POPULAR</span>
@@ -173,7 +173,7 @@ export default function CompararPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2" style={{color: 'var(--color-primary)'}}>Garantia 14 dias</h3>
-                  <p className="text-slate-600">Si no estas satisfecho, te devolvemos el dinero. Sin preguntas ni complicaciones.</p>
+                  <p className="text-slate-600">Si no estas satisfecho, te devolvemos el dinero. Sin preguntas.</p>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function CompararPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2" style={{color: 'var(--color-primary)'}}>Descarga inmediata</h3>
-                  <p className="text-slate-600">Recibe tu itinerario al instante en PDF. Funciona offline, sin internet.</p>
+                  <p className="text-slate-600">Recibe tu itinerario al instante en PDF. Funciona offline.</p>
                 </div>
               </div>
             </div>
