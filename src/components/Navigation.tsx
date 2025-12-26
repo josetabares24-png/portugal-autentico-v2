@@ -21,6 +21,7 @@ const navigationItems = [
   },
   { name: 'Guía Práctica', href: '/guia-practica' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Mapa', href: '/mapa' },
   { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
   { name: 'Contacto', href: '/contacto' },
 ];
