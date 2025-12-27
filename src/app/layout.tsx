@@ -36,6 +36,7 @@ export default function RootLayout({
             <div className="hidden md:flex items-center gap-8">
               <Link href="/itinerarios" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Itinerarios</Link>
               <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Blog</Link>
+              <Link href="/free-tour" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Free Tours</Link>
               <Link href="/apps" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Apps</Link>
               <Link href="/itinerarios" className="btn-primary">Ver Packs</Link>
             </div>
