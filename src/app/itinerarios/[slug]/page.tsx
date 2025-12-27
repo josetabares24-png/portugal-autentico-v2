@@ -136,8 +136,9 @@ export function generateStaticParams() {
   return Object.keys(packs).map((slug) => ({ slug }));
 }
 
-export default function PackPage({ params }: { params: { slug: string } }) {
-  const pack = packs[params.slug as keyof typeof packs];
+export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const pack = packs[slug as keyof typeof packs];
   
   if (!pack) {
     notFound();

@@ -46,8 +46,8 @@ export default function Lisboa3DiasPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
               <div>
-                <span className="text-slate-400 line-through text-lg">69 EUR</span>
-                <span className="text-3xl font-bold text-slate-900 ml-2">47 EUR</span>
+                
+                <span className="text-3xl font-bold text-slate-900 ml-2">11.99 EUR</span>
               </div>
               <span className="bg-green-100 text-green-700 text-sm font-bold px-3 py-1 rounded-full">-32%</span>
             </div>
@@ -317,7 +317,7 @@ export default function Lisboa3DiasPage() {
           <p className="text-xl text-purple-100 mb-8">Lisboa, Sintra, Cascais. Todo planificado hora a hora para que solo disfrutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-10 py-4 bg-white text-purple-700 rounded-xl font-bold text-lg hover:shadow-xl transition-all">
-              Comprar por 47 EUR
+              Comprar por 11.99 EUR
             </button>
             <Link href="/comparar" className="px-10 py-4 border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
               Comparar packs
