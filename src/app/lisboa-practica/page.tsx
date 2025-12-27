@@ -1,6 +1,81 @@
 import Link from 'next/link';
 
 export default function LisboaPracticaPage() {
+  const centrosComerciales = [
+    {
+      nombre: 'Centro Colombo',
+      desc: 'El más grande de Portugal con más de 340 tiendas',
+      metro: 'Colégio Militar/Luz',
+      horario: '10:00 - 24:00',
+      rating: 4.5,
+      reviews: 28450,
+      badge: 'Más grande',
+      badgeColor: 'bg-amber-500',
+      imagen: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80',
+      tiendas: ['Zara', 'H&M', 'Apple', 'FNAC', 'Primark']
+    },
+    {
+      nombre: 'Vasco da Gama',
+      desc: 'Centro moderno junto al Oceanário en Parque das Nações',
+      metro: 'Oriente',
+      horario: '10:00 - 24:00',
+      rating: 4.4,
+      reviews: 15230,
+      badge: 'Moderno',
+      badgeColor: 'bg-blue-500',
+      imagen: 'https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=800&q=80',
+      tiendas: ['Mango', 'Massimo Dutti', 'Nike', 'Sephora']
+    },
+    {
+      nombre: 'El Corte Inglés',
+      desc: 'Grandes almacenes premium con supermercado gourmet',
+      metro: 'São Sebastião',
+      horario: '10:00 - 22:00',
+      rating: 4.3,
+      reviews: 12840,
+      badge: 'Premium',
+      badgeColor: 'bg-purple-500',
+      imagen: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
+      tiendas: ['Gourmet', 'Moda', 'Electrónica', 'Hogar']
+    },
+    {
+      nombre: 'Amoreiras Shopping',
+      desc: 'Centro elegante con terraza panorámica y cine',
+      metro: 'Bus 702, 713',
+      horario: '10:00 - 23:00',
+      rating: 4.2,
+      reviews: 8920,
+      badge: 'Elegante',
+      badgeColor: 'bg-pink-500',
+      imagen: 'https://images.unsplash.com/photo-1555529771-7888783a18d3?w=800&q=80',
+      tiendas: ['Boutiques', 'Restaurantes', 'Cine UCI']
+    },
+    {
+      nombre: 'Freeport Lisboa',
+      desc: 'Outlet a 30 min del centro con descuentos 30-70%',
+      metro: 'Bus desde Oriente (30 min)',
+      horario: '10:00 - 21:00',
+      rating: 4.1,
+      reviews: 19540,
+      badge: 'Outlet',
+      badgeColor: 'bg-green-500',
+      imagen: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80',
+      tiendas: ['Guess', 'Levi\'s', 'Adidas', 'Tommy Hilfiger']
+    },
+    {
+      nombre: 'LX Factory',
+      desc: 'Mercado creativo con tiendas vintage, arte y gastronomía',
+      metro: 'Tranvía 15E',
+      horario: '10:00 - 20:00',
+      rating: 4.6,
+      reviews: 31280,
+      badge: 'Alternativo',
+      badgeColor: 'bg-orange-500',
+      imagen: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
+      tiendas: ['Ler Devagar', 'Landeau', 'Vintage', 'Arte']
+    },
+  ];
+
   return (
     <main>
       {/* Hero */}
@@ -149,7 +224,7 @@ export default function LisboaPracticaPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { 
+              {
                 equipo: 'SL Benfica',
                 estadio: 'Estádio da Luz',
                 capacidad: '64.642 espectadores',
@@ -159,7 +234,7 @@ export default function LisboaPracticaPage() {
                 imagen: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80',
                 color: 'bg-red-600'
               },
-              { 
+              {
                 equipo: 'Sporting CP',
                 estadio: 'Estádio José Alvalade',
                 capacidad: '50.095 espectadores',
@@ -195,29 +270,71 @@ export default function LisboaPracticaPage() {
         </div>
       </section>
 
-      {/* Compras */}
+      {/* Compras - ACTUALIZADO CON IMÁGENES Y RATING */}
       <section className="py-20" style={{background: 'var(--color-secondary)'}}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Shopping</span>
             <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Centros Comerciales</h2>
+            <p className="text-slate-600 mt-2">Los mejores lugares para ir de compras en Lisboa</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { nombre: 'Centro Colombo', desc: 'El más grande de Portugal', metro: 'Colégio Militar/Luz', horario: '10:00 - 24:00' },
-              { nombre: 'Vasco da Gama', desc: 'Moderno junto al Oceanário', metro: 'Oriente', horario: '10:00 - 24:00' },
-              { nombre: 'El Corte Inglés', desc: 'Grandes almacenes premium', metro: 'São Sebastião', horario: '10:00 - 22:00' },
-              { nombre: 'Amoreiras', desc: 'Elegante y céntrico', metro: 'Bus 702, 713', horario: '10:00 - 23:00' },
-              { nombre: 'Freeport Outlet', desc: 'Descuentos 30-70%', metro: 'Bus desde Oriente', horario: '10:00 - 21:00' },
-              { nombre: 'LX Factory', desc: 'Tiendas vintage y diseño', metro: 'Tranvía 15E', horario: '10:00 - 20:00' },
-            ].map((cc, i) => (
-              <div key={i} className="card-hover bg-white rounded-2xl p-5 shadow-sm">
-                <h3 className="font-bold mb-1" style={{color: 'var(--color-primary)'}}>{cc.nombre}</h3>
-                <p className="text-slate-500 text-sm mb-3">{cc.desc}</p>
-                <div className="space-y-1 text-sm text-slate-600">
-                  <p><span className="font-medium">Metro:</span> {cc.metro}</p>
-                  <p><span className="font-medium">Horario:</span> {cc.horario}</p>
+            {centrosComerciales.map((cc, index) => (
+              <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                {/* Imagen */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={cc.imagen}
+                    alt={cc.nombre}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
+                  
+                  {/* Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className={`${cc.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg`}>
+                      {cc.badge}
+                    </span>
+                  </div>
+                  
+                  {/* Rating */}
+                  <div className="absolute top-3 right-3 bg-white/95 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 shadow-lg">
+                    <svg className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <span className="font-bold text-sm">{cc.rating}</span>
+                    <span className="text-slate-400 text-xs">({(cc.reviews / 1000).toFixed(1)}k)</span>
+                  </div>
+                  
+                  {/* Nombre sobre imagen */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-white text-lg font-bold">{cc.nombre}</h3>
+                  </div>
+                </div>
+                
+                {/* Contenido */}
+                <div className="p-5">
+                  <p className="text-slate-600 text-sm mb-4">{cc.desc}</p>
+                  
+                  {/* Tiendas destacadas */}
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-1.5">
+                      {cc.tiendas.map((tienda, i) => (
+                        <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">{tienda}</span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Info */}
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-sm">
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+                      {cc.metro}
+                    </div>
+                    <div className="flex items-center gap-1.5 text-slate-600">
+                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      {cc.horario}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
