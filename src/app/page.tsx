@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FadeIn from '@/components/FadeIn';
 
 export default function Home() {
   return (
@@ -122,7 +123,7 @@ export default function Home() {
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">Desde escapadas de un dia hasta aventuras de una semana. Todo incluido.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100">
               <div className="h-48 relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800" alt="Lisboa 1 dia" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -139,7 +140,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 relative" style={{borderColor: 'var(--color-accent)'}}>
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 relative" style={{borderColor: 'var(--color-accent)'}}>
               <div className="absolute top-0 left-0 right-0 text-center py-2 text-sm font-bold text-white z-10" style={{background: 'var(--color-accent)'}}>MAS VENDIDO</div>
               <div className="h-48 relative overflow-hidden mt-8">
                 <img src="https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800" alt="Lisboa 2 dias" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -157,7 +158,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-100">
               <div className="h-48 relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800" alt="Lisboa 3 dias" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
