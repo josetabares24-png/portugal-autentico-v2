@@ -3,12 +3,22 @@ import Link from 'next/link';
 export default function ItinerariosPage() {
   return (
     <main>
-      <section className="relative py-20" style={{background: 'var(--color-primary)'}}>
-        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920)'}}></div>
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6" style={{background: 'var(--color-accent)', color: 'white'}}>5 PACKS DISPONIBLES</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Elige tu experiencia perfecta</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">Itinerarios completos con restaurantes, spots de fotos y tips de locales.</p>
+      <section className="relative min-h-[50vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80" alt="Lisboa" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80"></div>
+        </div>
+        <div className="relative z-10 text-center px-4 py-16">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-6 text-white" style={{background: 'var(--color-accent)'}}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+            5 PACKS DISPONIBLES
+          </div>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 italic" style={{fontFamily: 'Georgia, serif'}}>
+            Elige tu experiencia perfecta
+          </h1>
+          <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto">
+            Itinerarios completos con restaurantes, spots de fotos y tips de locales.
+          </p>
         </div>
       </section>
 
@@ -61,19 +71,19 @@ export default function ItinerariosPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2" style={{color: 'var(--color-primary)'}}>Lisboa Completa</h3>
-                <p className="text-slate-600 text-sm mb-4">El favorito. Fin de semana perfecto con Belem, LX Factory y vida nocturna.</p>
+                <p className="text-slate-600 text-sm mb-4">El favorito. Fin de semana perfecto con Belem, Alfama y los barrios con encanto.</p>
                 <ul className="space-y-2 mb-6 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    2 dias perfectamente organizados
+                    2 rutas completas dia a dia
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    6 restaurantes + bares
+                    6 restaurantes probados
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    15 spots + miradores
+                    15+ spots de fotos
                   </li>
                 </ul>
                 <div className="flex items-center justify-between pt-4 border-t">
@@ -87,7 +97,7 @@ export default function ItinerariosPage() {
               <div className="h-48 bg-cover bg-center relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800)'}}>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
-                  <span className="bg-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">3 dias + Sintra</span>
+                  <span className="text-white text-sm font-medium px-3 py-1 rounded-full" style={{background: 'var(--color-accent)'}}>3 dias + Sintra</span>
                 </div>
               </div>
               <div className="p-6">
@@ -100,16 +110,16 @@ export default function ItinerariosPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Sintra: Pena, Regaleira
+                    Excursion Sintra completa
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Cascais + Cabo da Roca
+                    Cascais y Cabo da Roca
                   </li>
                 </ul>
                 <div className="flex items-center justify-between pt-4 border-t">
-                  <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>11.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
-                  <Link href="/itinerarios/lisboa-3-dias-premium" className="btn-secondary text-sm">Ver pack</Link>
+                  <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>12.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
+                  <Link href="/itinerarios/lisboa-3-dias-sintra" className="btn-secondary text-sm">Ver pack</Link>
                 </div>
               </div>
             </div>
@@ -121,71 +131,40 @@ export default function ItinerariosPage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>Packs especiales</h2>
-            <p style={{color: 'var(--color-text-soft)'}}>Itinerarios tematicos para experiencias unicas</p>
+            <p style={{color: 'var(--color-text-soft)'}}>Experiencias unicas para viajeros diferentes</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
-              <div className="h-56 bg-cover bg-center relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800)'}}>
-                <div className="absolute inset-0 bg-gradient-to-t from-pink-600/80 to-transparent"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 text-pink-600 text-xs font-bold px-3 py-1 rounded-full">NUEVO</span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white mb-1">Lisboa Fotografica</h3>
-                  <p className="text-white/90 text-sm">15 spots con coordenadas exactas</p>
+              <div className="h-40 bg-cover bg-center relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1551632811-561732d1e306?w=800)'}}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="text-white text-sm font-medium px-3 py-1 rounded-full bg-emerald-500">5-7 dias</span>
                 </div>
               </div>
               <div className="p-6">
-                <ul className="space-y-2 mb-6 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-pink-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Mejores horarios de luz (golden hour)
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-pink-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Angulos secretos sin turistas
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-pink-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Cafes instagrameables
-                  </li>
-                </ul>
+                <h3 className="text-xl font-bold mb-2" style={{color: 'var(--color-primary)'}}>Lisboa Full Week</h3>
+                <p className="text-slate-600 text-sm mb-4">Una semana completa: Lisboa, Sintra, Cascais, Setubal y Arrabida.</p>
                 <div className="flex items-center justify-between pt-4 border-t">
-                  <div className="text-2xl font-bold text-pink-600">6.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
-                  <Link href="/itinerarios/lisboa-fotografia" className="inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold text-sm text-white transition-all hover:scale-105 hover:shadow-lg" style={{background: 'linear-gradient(to right, #ec4899, #f43f5e)'}}>Ver pack</Link>
+                  <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>19.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
+                  <Link href="/itinerarios/lisboa-full-week" className="btn-secondary text-sm">Ver pack</Link>
                 </div>
               </div>
             </div>
 
             <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
-              <div className="h-56 bg-cover bg-center relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800)'}}>
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/80 to-transparent"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full">FAMILIAR</span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white mb-1">Lisboa en Familia</h3>
-                  <p className="text-white/90 text-sm">Actividades para todas las edades</p>
+              <div className="h-40 bg-cover bg-center relative" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800)'}}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="text-white text-sm font-medium px-3 py-1 rounded-full bg-pink-500">Romantico</span>
                 </div>
               </div>
               <div className="p-6">
-                <ul className="space-y-2 mb-6 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Oceanario, teleferico, castillo
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Restaurantes family-friendly
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Parques y heladerias
-                  </li>
-                </ul>
+                <h3 className="text-xl font-bold mb-2" style={{color: 'var(--color-primary)'}}>Lisboa Romantica</h3>
+                <p className="text-slate-600 text-sm mb-4">Miradores al atardecer, cenas romanticas y experiencias para parejas.</p>
                 <div className="flex items-center justify-between pt-4 border-t">
-                  <div className="text-2xl font-bold text-emerald-600">7.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
-                  <Link href="/itinerarios/lisboa-familiar" className="inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold text-sm text-white transition-all hover:scale-105 hover:shadow-lg" style={{background: 'linear-gradient(to right, #10b981, #14b8a6)'}}>Ver pack</Link>
+                  <div className="text-2xl font-bold" style={{color: 'var(--color-primary)'}}>9.99 <span className="text-sm font-normal text-slate-500">EUR</span></div>
+                  <Link href="/itinerarios/lisboa-romantica" className="btn-secondary text-sm">Ver pack</Link>
                 </div>
               </div>
             </div>
@@ -193,25 +172,14 @@ export default function ItinerariosPage() {
         </div>
       </section>
 
-      <section className="py-16" style={{background: 'var(--color-primary)'}}>
+      <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-6">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          </div>
-          <h2 className="text-3xl font-bold text-white mb-4">Garantia de 14 dias</h2>
-          <p className="text-xl text-white/80 mb-2">Si no estas satisfecho, te devolvemos el dinero.</p>
-          <p className="text-white/60">Sin preguntas. Sin complicaciones.</p>
-        </div>
-      </section>
-
-      <section className="py-20" style={{background: 'var(--color-accent)'}}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Listo para tu aventura?</h2>
-          <p className="text-xl text-white/90 mb-8">Por menos que un cafe tienes todo tu viaje organizado.</p>
-          <Link href="/comparar" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg bg-white" style={{color: 'var(--color-primary)'}}>
-            Comparar todos los packs
+          <h2 className="text-2xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>¿Tienes dudas?</h2>
+          <p className="text-slate-600 mb-6">Escríbenos y te ayudamos a elegir el pack perfecto para tu viaje.</p>
+          <Link href="/contacto" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white hover:scale-105 transition-all" style={{background: 'var(--color-primary)'}}>
+            Contactar
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
-          <p className="text-white/70 text-sm mt-6">Descarga inmediata - Acceso de por vida - 14 dias de garantia</p>
         </div>
       </section>
     </main>
