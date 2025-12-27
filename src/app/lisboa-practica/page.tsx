@@ -1,16 +1,6 @@
 import Link from 'next/link';
 
 export default function LisboaPracticaPage() {
-  const secciones = [
-    { id: 'emergencias', nombre: 'Emergencias' },
-    { id: 'aeropuerto', nombre: 'Aeropuerto' },
-    { id: 'transporte', nombre: 'Transporte' },
-    { id: 'estadios', nombre: 'Estadios' },
-    { id: 'compras', nombre: 'Compras' },
-    { id: 'salud', nombre: 'Salud' },
-    { id: 'conectividad', nombre: 'Internet' },
-  ];
-
   return (
     <main>
       {/* Hero */}
@@ -22,147 +12,104 @@ export default function LisboaPracticaPage() {
         <div className="relative z-10 text-center px-4 py-16">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-6 text-white" style={{background: 'var(--color-accent)'}}>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            INFORMACIÓN ESENCIAL
+            GUÍA PRÁCTICA
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 italic" style={{fontFamily: 'Georgia, serif'}}>
-            Lisboa Práctica
+            Todo lo que necesitas saber
           </h1>
           <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto">
-            Emergencias, transporte, estadios, compras y todo lo que necesitas saber.
+            Emergencias, transporte, estadios, compras y conectividad.
           </p>
         </div>
       </section>
 
-      {/* Navegación rápida */}
-      <section className="py-3 bg-white border-b sticky top-16 z-30">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {secciones.map((sec) => (
-              <a 
-                key={sec.id}
-                href={`#${sec.id}`}
-                className="px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors border hover:border-slate-300"
-                style={{color: 'var(--color-primary)'}}
-              >
-                {sec.nombre}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EMERGENCIAS */}
-      <section id="emergencias" className="py-16 scroll-mt-32" style={{background: 'var(--color-secondary)'}}>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Números importantes</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Emergencias</h2>
+      {/* Emergencias */}
+      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Números importantes</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Emergencias</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-10">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { nombre: 'Emergencias', numero: '112', desc: 'Policía, bomberos, ambulancia' },
-              { nombre: 'Policía Turística', numero: '21 342 1623', desc: 'Hablan inglés y español' },
-              { nombre: 'Ambulancia (INEM)', numero: '21 792 7700', desc: 'Emergencias médicas' },
+              { numero: '112', nombre: 'Emergencias General', desc: 'Policía, bomberos, ambulancia' },
+              { numero: '21 342 1623', nombre: 'Policía Turística', desc: 'Hablan inglés y español' },
+              { numero: '21 792 7700', nombre: 'Ambulancia (INEM)', desc: 'Emergencias médicas' },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-sm text-center">
-                <p className="text-3xl font-bold mb-1" style={{color: 'var(--color-primary)'}}>{item.numero}</p>
-                <p className="font-semibold text-slate-800">{item.nombre}</p>
+              <div key={i} className="card-hover bg-white rounded-2xl p-6 shadow-sm text-center">
+                <p className="text-3xl font-bold mb-2" style={{color: 'var(--color-accent)'}}>{item.numero}</p>
+                <p className="font-bold" style={{color: 'var(--color-primary)'}}>{item.nombre}</p>
                 <p className="text-slate-500 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <h3 className="text-lg font-bold mb-4" style={{color: 'var(--color-primary)'}}>Embajadas y Consulados</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { pais: 'España', telefono: '+351 21 347 2381' },
-              { pais: 'México', telefono: '+351 21 319 2030' },
-              { pais: 'Argentina', telefono: '+351 21 799 4810' },
-              { pais: 'Colombia', telefono: '+351 21 017 7470' },
-              { pais: 'Chile', telefono: '+351 21 315 8944' },
-              { pais: 'Perú', telefono: '+351 21 386 4372' },
-            ].map((emb, i) => (
-              <div key={i} className="bg-white rounded-xl p-4 shadow-sm flex justify-between items-center">
-                <span className="font-medium" style={{color: 'var(--color-primary)'}}>{emb.pais}</span>
-                <span className="text-slate-600 text-sm">{emb.telefono}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AEROPUERTO */}
-      <section id="aeropuerto" className="py-16 bg-white scroll-mt-32">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Aeropuerto Humberto Delgado</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Cómo llegar al centro</h2>
-            <p className="text-slate-600 mt-2">El aeropuerto está a solo 7 km del centro de Lisboa</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { 
-                medio: 'Metro (Línea Roja)', 
-                precio: '1.65€', 
-                tiempo: '25-30 min',
-                destino: 'Alameda, Saldanha, São Sebastião',
-                tip: 'La opción más barata. Compra tarjeta Viva Viagem (0.50€)'
-              },
-              { 
-                medio: 'Aerobus', 
-                precio: '4€', 
-                tiempo: '20-35 min',
-                destino: 'Marqués de Pombal, Restauradores, Cais do Sodré',
-                tip: 'Directo y con espacio para maletas'
-              },
-              { 
-                medio: 'Taxi', 
-                precio: '15-20€', 
-                tiempo: '15-25 min',
-                destino: 'Cualquier punto',
-                tip: 'Precio fijo al centro ~15€. Exige taxímetro'
-              },
-              { 
-                medio: 'Uber / Bolt', 
-                precio: '10-18€', 
-                tiempo: '15-25 min',
-                destino: 'Cualquier dirección',
-                tip: 'Generalmente más barato que taxi'
-              },
-            ].map((op, i) => (
-              <div key={i} className="bg-slate-50 rounded-2xl p-5">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-bold" style={{color: 'var(--color-primary)'}}>{op.medio}</h3>
-                  <div className="text-right">
-                    <span className="font-bold" style={{color: 'var(--color-accent)'}}>{op.precio}</span>
-                    <span className="text-slate-500 text-sm ml-2">{op.tiempo}</span>
-                  </div>
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 className="text-xl font-bold mb-6" style={{color: 'var(--color-primary)'}}>Embajadas y Consulados</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { pais: 'España', tel: '+351 21 347 2381' },
+                { pais: 'México', tel: '+351 21 319 2030' },
+                { pais: 'Argentina', tel: '+351 21 799 4810' },
+                { pais: 'Colombia', tel: '+351 21 017 7470' },
+                { pais: 'Chile', tel: '+351 21 315 8944' },
+                { pais: 'Perú', tel: '+351 21 386 4372' },
+              ].map((emb, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-slate-100 last:border-0">
+                  <span className="font-medium" style={{color: 'var(--color-primary)'}}>{emb.pais}</span>
+                  <span className="text-slate-600 text-sm">{emb.tel}</span>
                 </div>
-                <p className="text-slate-600 text-sm mb-2">{op.destino}</p>
-                <p className="text-sm text-slate-500 italic">{op.tip}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Aeropuerto */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Aeropuerto Humberto Delgado</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Cómo llegar al centro</h2>
+            <p className="text-slate-600 mt-2">A solo 7 km del centro de Lisboa</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { medio: 'Metro', precio: '1.65€', tiempo: '25-30 min', tip: 'Línea Roja. La opción más barata.' },
+              { medio: 'Aerobus', precio: '4€', tiempo: '20-35 min', tip: 'Directo con espacio para maletas.' },
+              { medio: 'Taxi', precio: '15-20€', tiempo: '15-25 min', tip: 'Precio fijo al centro ~15€.' },
+              { medio: 'Uber/Bolt', precio: '10-18€', tiempo: '15-25 min', tip: 'Generalmente más barato que taxi.' },
+            ].map((op, i) => (
+              <div key={i} className="card-hover bg-slate-50 rounded-2xl p-5">
+                <h3 className="font-bold text-lg mb-1" style={{color: 'var(--color-primary)'}}>{op.medio}</h3>
+                <div className="flex gap-3 mb-3">
+                  <span className="font-bold" style={{color: 'var(--color-accent)'}}>{op.precio}</span>
+                  <span className="text-slate-500">{op.tiempo}</span>
+                </div>
+                <p className="text-slate-600 text-sm">{op.tip}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TRANSPORTE */}
-      <section id="transporte" className="py-16 scroll-mt-32" style={{background: 'var(--color-secondary)'}}>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Moverse por Lisboa</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Transporte Público</h2>
+      {/* Transporte */}
+      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Moverse por la ciudad</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Transporte Público</h2>
           </div>
 
-          {/* Tarjeta Viva Viagem */}
-          <div className="rounded-2xl p-6 mb-8 text-white" style={{background: 'var(--color-primary)'}}>
+          {/* Tarjeta destacada */}
+          <div className="rounded-2xl p-8 mb-8 text-white" style={{background: 'var(--color-primary)'}}>
             <h3 className="text-xl font-bold mb-4">Tarjeta Viva Viagem</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold">0.50€</p>
-                <p className="text-white/70 text-sm">Coste de la tarjeta</p>
+                <p className="text-white/70 text-sm">Coste tarjeta</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold">1.65€</p>
@@ -177,86 +124,69 @@ export default function LisboaPracticaPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { nombre: 'Metro', lineas: '4 líneas (Azul, Amarilla, Verde, Roja)', horario: '6:30 - 1:00', frecuencia: 'Cada 4-7 min', tip: 'La forma más rápida' },
-              { nombre: 'Tranvía', lineas: 'Líneas 12, 15, 18, 24, 25, 28', horario: '6:00 - 23:00', frecuencia: 'Cada 10-15 min', tip: 'El 28 es turístico pero lleno. Prueba el 12' },
-              { nombre: 'Autobús', lineas: 'Red extensa por toda la ciudad', horario: '6:00 - 21:00', frecuencia: 'Cada 10-20 min', tip: 'Útil para Belém' },
-              { nombre: 'Elevadores', lineas: 'Bica, Glória, Lavra + Santa Justa', horario: '7:00 - 21:00', frecuencia: 'Continuo', tip: 'Incluidos en tarjeta 24h' },
+              { nombre: 'Metro', info: '4 líneas · 6:30 - 1:00 · Cada 4-7 min', tip: 'La forma más rápida de cruzar la ciudad' },
+              { nombre: 'Tranvía', info: 'Líneas 12, 15, 18, 24, 25, 28 · 6:00 - 23:00', tip: 'El 28 es turístico pero muy lleno. Prueba el 12 o 25' },
+              { nombre: 'Autobús', info: 'Red extensa · 6:00 - 21:00 · Cada 10-20 min', tip: 'Útil para zonas sin metro como Belém' },
+              { nombre: 'Elevadores', info: 'Bica, Glória, Lavra + Santa Justa · 7:00 - 21:00', tip: 'Incluidos en la tarjeta 24h. Santa Justa tiene cola' },
             ].map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-sm">
-                <h3 className="text-lg font-bold mb-3" style={{color: 'var(--color-primary)'}}>{t.nombre}</h3>
-                <div className="space-y-1 text-sm text-slate-600 mb-3">
-                  <p>{t.lineas}</p>
-                  <p>{t.horario} · {t.frecuencia}</p>
-                </div>
-                <p className="text-sm italic text-slate-500">{t.tip}</p>
+              <div key={i} className="card-hover bg-white rounded-2xl p-6 shadow-sm">
+                <h3 className="font-bold text-lg mb-2" style={{color: 'var(--color-primary)'}}>{t.nombre}</h3>
+                <p className="text-slate-600 text-sm mb-3">{t.info}</p>
+                <p className="text-sm italic" style={{color: 'var(--color-accent)'}}>{t.tip}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ESTADIOS */}
-      <section id="estadios" className="py-16 bg-white scroll-mt-32">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Fútbol en Lisboa</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Estadios</h2>
+      {/* Estadios */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Fútbol en Lisboa</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Estadios</h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               { 
                 equipo: 'SL Benfica',
                 estadio: 'Estádio da Luz',
-                capacidad: '64.642',
-                metro: 'Línea Azul - "Colégio Militar/Luz"',
+                capacidad: '64.642 espectadores',
+                metro: 'Línea Azul - Colégio Militar/Luz',
                 entradas: 'slbenfica.pt - Desde 20€',
-                tour: '15€ (estadio + museo)',
+                tour: 'Estadio + museo: 15€',
                 imagen: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80',
-                color: 'from-red-600 to-red-700'
+                color: 'bg-red-600'
               },
               { 
                 equipo: 'Sporting CP',
                 estadio: 'Estádio José Alvalade',
-                capacidad: '50.095',
-                metro: 'Línea Verde - "Campo Grande"',
+                capacidad: '50.095 espectadores',
+                metro: 'Línea Verde - Campo Grande',
                 entradas: 'sporting.pt - Desde 15€',
-                tour: '12.50€',
+                tour: 'Estadio + museo: 12.50€',
                 imagen: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
-                color: 'from-green-600 to-green-700'
+                color: 'bg-green-600'
               },
             ].map((est, i) => (
-              <div key={i} className="bg-slate-50 rounded-2xl overflow-hidden">
-                <div className="md:flex">
-                  <div className="md:w-1/3 h-48 md:h-auto relative">
-                    <img src={est.imagen} alt={est.estadio} className="w-full h-full object-cover" />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${est.color} opacity-70`}></div>
-                    <div className="absolute inset-0 flex items-center justify-center text-white text-center p-4">
-                      <div>
-                        <p className="text-2xl font-bold">{est.equipo}</p>
-                        <p className="text-white/80 text-sm">{est.estadio}</p>
-                      </div>
-                    </div>
+              <div key={i} className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                <div className="h-48 relative">
+                  <img src={est.imagen} alt={est.estadio} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-2xl font-bold">{est.equipo}</p>
+                    <p className="text-white/80 text-sm">{est.estadio}</p>
                   </div>
-                  <div className="md:w-2/3 p-6">
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <p className="text-slate-500 text-xs uppercase mb-1">Cómo llegar</p>
-                        <p className="text-slate-700">{est.metro}</p>
-                      </div>
-                      <div>
-                        <p className="text-slate-500 text-xs uppercase mb-1">Entradas</p>
-                        <p className="text-slate-700">{est.entradas}</p>
-                      </div>
-                      <div>
-                        <p className="text-slate-500 text-xs uppercase mb-1">Tour del estadio</p>
-                        <p className="text-slate-700">{est.tour}</p>
-                      </div>
-                      <div>
-                        <p className="text-slate-500 text-xs uppercase mb-1">Capacidad</p>
-                        <p className="text-slate-700">{est.capacidad} espectadores</p>
-                      </div>
-                    </div>
+                  <div className={`absolute top-4 right-4 ${est.color} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                    {est.capacidad}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="space-y-2 text-sm text-slate-600">
+                    <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Metro:</span> {est.metro}</p>
+                    <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Entradas:</span> {est.entradas}</p>
+                    <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Tour:</span> {est.tour}</p>
                   </div>
                 </div>
               </div>
@@ -265,29 +195,29 @@ export default function LisboaPracticaPage() {
         </div>
       </section>
 
-      {/* COMPRAS */}
-      <section id="compras" className="py-16 scroll-mt-32" style={{background: 'var(--color-secondary)'}}>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Shopping</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Centros Comerciales</h2>
+      {/* Compras */}
+      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Shopping</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Centros Comerciales</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { nombre: 'Centro Colombo', tipo: 'El más grande de Portugal', metro: 'Colégio Militar/Luz', horario: '10:00 - 24:00' },
-              { nombre: 'Vasco da Gama', tipo: 'Moderno junto al Oceanário', metro: 'Oriente', horario: '10:00 - 24:00' },
-              { nombre: 'El Corte Inglés', tipo: 'Grandes almacenes premium', metro: 'São Sebastião', horario: '10:00 - 22:00' },
-              { nombre: 'Amoreiras', tipo: 'Elegante y céntrico', metro: 'Bus 702, 713', horario: '10:00 - 23:00' },
-              { nombre: 'Freeport Outlet', tipo: 'Descuentos 30-70%', metro: 'Bus desde Oriente', horario: '10:00 - 21:00' },
-              { nombre: 'LX Factory', tipo: 'Tiendas vintage y diseño', metro: 'Tranvía 15E', horario: '10:00 - 20:00' },
+              { nombre: 'Centro Colombo', desc: 'El más grande de Portugal', metro: 'Colégio Militar/Luz', horario: '10:00 - 24:00' },
+              { nombre: 'Vasco da Gama', desc: 'Moderno junto al Oceanário', metro: 'Oriente', horario: '10:00 - 24:00' },
+              { nombre: 'El Corte Inglés', desc: 'Grandes almacenes premium', metro: 'São Sebastião', horario: '10:00 - 22:00' },
+              { nombre: 'Amoreiras', desc: 'Elegante y céntrico', metro: 'Bus 702, 713', horario: '10:00 - 23:00' },
+              { nombre: 'Freeport Outlet', desc: 'Descuentos 30-70%', metro: 'Bus desde Oriente', horario: '10:00 - 21:00' },
+              { nombre: 'LX Factory', desc: 'Tiendas vintage y diseño', metro: 'Tranvía 15E', horario: '10:00 - 20:00' },
             ].map((cc, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-sm">
+              <div key={i} className="card-hover bg-white rounded-2xl p-5 shadow-sm">
                 <h3 className="font-bold mb-1" style={{color: 'var(--color-primary)'}}>{cc.nombre}</h3>
-                <p className="text-slate-500 text-sm mb-3">{cc.tipo}</p>
-                <div className="text-sm text-slate-600 space-y-1">
-                  <p>🚇 {cc.metro}</p>
-                  <p>🕐 {cc.horario}</p>
+                <p className="text-slate-500 text-sm mb-3">{cc.desc}</p>
+                <div className="space-y-1 text-sm text-slate-600">
+                  <p><span className="font-medium">Metro:</span> {cc.metro}</p>
+                  <p><span className="font-medium">Horario:</span> {cc.horario}</p>
                 </div>
               </div>
             ))}
@@ -295,26 +225,26 @@ export default function LisboaPracticaPage() {
         </div>
       </section>
 
-      {/* SALUD */}
-      <section id="salud" className="py-16 bg-white scroll-mt-32">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Salud</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Hospitales y Farmacias</h2>
+      {/* Salud */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Salud</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Hospitales y Farmacias</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-slate-50 rounded-2xl p-5">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-slate-50 rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-4" style={{color: 'var(--color-primary)'}}>Hospitales</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {[
-                  { nombre: 'Hospital Santa Maria', tel: '21 780 5000', tipo: 'Público' },
-                  { nombre: 'CUF Descobertas', tel: '21 002 5200', tipo: 'Privado' },
-                  { nombre: 'British Hospital', tel: '21 721 3400', tipo: 'Privado - Inglés' },
+                  { nombre: 'Hospital Santa Maria', tel: '21 780 5000', tipo: 'Público - Urgencias 24h' },
+                  { nombre: 'CUF Descobertas', tel: '21 002 5200', tipo: 'Privado - Mejor atención' },
+                  { nombre: 'British Hospital', tel: '21 721 3400', tipo: 'Privado - Hablan inglés' },
                 ].map((h, i) => (
-                  <div key={i} className="flex justify-between items-center py-2 border-b border-slate-200 last:border-0">
+                  <div key={i} className="flex justify-between items-start border-b border-slate-200 pb-3 last:border-0">
                     <div>
-                      <p className="font-medium text-slate-800">{h.nombre}</p>
+                      <p className="font-medium" style={{color: 'var(--color-primary)'}}>{h.nombre}</p>
                       <p className="text-slate-500 text-xs">{h.tipo}</p>
                     </div>
                     <p className="text-slate-600 text-sm">{h.tel}</p>
@@ -323,53 +253,53 @@ export default function LisboaPracticaPage() {
               </div>
             </div>
 
-            <div className="bg-slate-50 rounded-2xl p-5">
+            <div className="bg-slate-50 rounded-2xl p-6">
               <h3 className="font-bold text-lg mb-4" style={{color: 'var(--color-primary)'}}>Farmacias 24h</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {[
                   { nombre: 'Farmácia Barral', zona: 'Rossio' },
                   { nombre: 'Farmácia Estácio', zona: 'Baixa-Chiado' },
                   { nombre: 'Farmácia Azevedos', zona: 'Rossio' },
                 ].map((f, i) => (
-                  <div key={i} className="flex justify-between items-center py-2 border-b border-slate-200 last:border-0">
-                    <p className="font-medium text-slate-800">{f.nombre}</p>
-                    <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-700">{f.zona}</span>
+                  <div key={i} className="flex justify-between items-center border-b border-slate-200 pb-3 last:border-0">
+                    <p className="font-medium" style={{color: 'var(--color-primary)'}}>{f.nombre}</p>
+                    <span className="text-xs px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium">{f.zona}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-slate-500 mt-4">Busca farmacias de turno en: farmaciasdeservico.net</p>
+              <p className="text-sm text-slate-500 mt-4">Farmacias de turno: farmaciasdeservico.net</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONECTIVIDAD */}
-      <section id="conectividad" className="py-16 scroll-mt-32" style={{background: 'var(--color-secondary)'}}>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Conectividad</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Internet y Telefonía</h2>
+      {/* Conectividad */}
+      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Internet</span>
+            <h2 className="text-3xl md:text-4xl font-bold" style={{color: 'var(--color-primary)'}}>Conectividad</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
-              { titulo: 'Roaming UE', info: 'Si tienes móvil europeo, usas tus datos como en casa.' },
-              { titulo: 'SIM Local', info: 'Vodafone, NOS, MEO. Desde 10€ con 5GB. Cómpralas en el aeropuerto.' },
-              { titulo: 'eSIM', info: 'Airalo, Holafly. Activas desde el móvil sin cambiar SIM.' },
+              { titulo: 'Roaming UE', desc: 'Si tienes móvil europeo, usas tus datos como en casa sin coste extra.' },
+              { titulo: 'SIM Local', desc: 'Vodafone, NOS, MEO. Desde 10€ con 5GB. Cómprala en el aeropuerto.' },
+              { titulo: 'eSIM', desc: 'Airalo, Holafly. Activas desde el móvil sin cambiar tu SIM física.' },
             ].map((c, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-sm">
+              <div key={i} className="card-hover bg-white rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold mb-2" style={{color: 'var(--color-primary)'}}>{c.titulo}</h3>
-                <p className="text-slate-600 text-sm">{c.info}</p>
+                <p className="text-slate-600 text-sm">{c.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-white rounded-2xl p-5 shadow-sm">
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
             <h3 className="font-bold mb-4" style={{color: 'var(--color-primary)'}}>WiFi Gratis</h3>
-            <div className="grid md:grid-cols-3 gap-3 text-sm">
+            <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-600">
               {['Lisboa WiFi (plazas)', 'Metro de Lisboa', 'Aeropuerto', 'Centros comerciales', 'Starbucks', 'McDonald\'s'].map((w, i) => (
-                <div key={i} className="flex items-center gap-2 text-slate-600">
-                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
+                <div key={i} className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                   {w}
                 </div>
               ))}
@@ -378,14 +308,14 @@ export default function LisboaPracticaPage() {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="py-20 bg-white">
+      {/* CTA */}
+      <section className="py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>¿Listo para explorar Lisboa?</h2>
-          <p className="text-slate-600 text-lg mb-8">Descubre nuestros itinerarios con rutas, restaurantes y los mejores spots.</p>
-          <Link href="/itinerarios" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:scale-105 transition-all" style={{background: 'var(--color-accent)'}}>
+          <h2 className="text-2xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>¿Listo para explorar Lisboa?</h2>
+          <p className="text-slate-600 mb-6">Descubre nuestros itinerarios con rutas, restaurantes y los mejores spots.</p>
+          <Link href="/itinerarios" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white hover:scale-105 transition-all" style={{background: 'var(--color-accent)'}}>
             Ver itinerarios desde 5.99€
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
         </div>
       </section>
