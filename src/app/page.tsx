@@ -65,6 +65,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-slate-50">
+        <FadeIn>
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -113,10 +114,12 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <FadeIn>
+          <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Nuestros packs</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>Elige segun tus dias en Lisboa</h2>
@@ -183,6 +186,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        </FadeIn>
       </section>
 
       <section className="py-20" style={{background: 'var(--color-secondary)'}}>
@@ -222,6 +226,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </section>
 
       <section className="py-20 bg-white">
