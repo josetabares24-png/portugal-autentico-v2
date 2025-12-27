@@ -12,7 +12,8 @@ export default function LisboaPracticaPage() {
       badge: 'Más grande',
       badgeColor: 'bg-amber-500',
       imagen: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80',
-      tiendas: ['Zara', 'H&M', 'Apple', 'FNAC', 'Primark']
+      tiendas: ['Zara', 'H&M', 'Apple', 'FNAC', 'Primark'],
+      maps: 'https://maps.google.com/?q=Centro+Colombo+Lisboa'
     },
     {
       nombre: 'Vasco da Gama',
@@ -23,8 +24,9 @@ export default function LisboaPracticaPage() {
       reviews: 15230,
       badge: 'Moderno',
       badgeColor: 'bg-blue-500',
-      imagen: 'https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=800&q=80',
-      tiendas: ['Mango', 'Massimo Dutti', 'Nike', 'Sephora']
+      imagen: 'https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?w=800&q=80',
+      tiendas: ['Mango', 'Massimo Dutti', 'Nike', 'Sephora'],
+      maps: 'https://maps.google.com/?q=Centro+Vasco+da+Gama+Lisboa'
     },
     {
       nombre: 'El Corte Inglés',
@@ -36,7 +38,8 @@ export default function LisboaPracticaPage() {
       badge: 'Premium',
       badgeColor: 'bg-purple-500',
       imagen: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
-      tiendas: ['Gourmet', 'Moda', 'Electrónica', 'Hogar']
+      tiendas: ['Gourmet', 'Moda', 'Electrónica', 'Hogar'],
+      maps: 'https://maps.google.com/?q=El+Corte+Ingles+Lisboa'
     },
     {
       nombre: 'Amoreiras Shopping',
@@ -48,7 +51,8 @@ export default function LisboaPracticaPage() {
       badge: 'Elegante',
       badgeColor: 'bg-pink-500',
       imagen: 'https://images.unsplash.com/photo-1555529771-7888783a18d3?w=800&q=80',
-      tiendas: ['Boutiques', 'Restaurantes', 'Cine UCI']
+      tiendas: ['Boutiques', 'Restaurantes', 'Cine UCI'],
+      maps: 'https://maps.google.com/?q=Amoreiras+Shopping+Lisboa'
     },
     {
       nombre: 'Freeport Lisboa',
@@ -60,7 +64,8 @@ export default function LisboaPracticaPage() {
       badge: 'Outlet',
       badgeColor: 'bg-green-500',
       imagen: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80',
-      tiendas: ['Guess', 'Levi\'s', 'Adidas', 'Tommy Hilfiger']
+      tiendas: ['Guess', 'Levi\'s', 'Adidas', 'Tommy Hilfiger'],
+      maps: 'https://maps.google.com/?q=Freeport+Outlet+Alcochete'
     },
     {
       nombre: 'LX Factory',
@@ -72,7 +77,8 @@ export default function LisboaPracticaPage() {
       badge: 'Alternativo',
       badgeColor: 'bg-orange-500',
       imagen: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
-      tiendas: ['Ler Devagar', 'Landeau', 'Vintage', 'Arte']
+      tiendas: ['Ler Devagar', 'Landeau', 'Vintage', 'Arte'],
+      maps: 'https://maps.google.com/?q=LX+Factory+Lisboa'
     },
   ];
 
@@ -232,7 +238,8 @@ export default function LisboaPracticaPage() {
                 entradas: 'slbenfica.pt - Desde 20€',
                 tour: 'Estadio + museo: 15€',
                 imagen: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80',
-                color: 'bg-red-600'
+                color: 'bg-red-600',
+                maps: 'https://maps.google.com/?q=Estadio+da+Luz+Lisboa'
               },
               {
                 equipo: 'Sporting CP',
@@ -242,7 +249,8 @@ export default function LisboaPracticaPage() {
                 entradas: 'sporting.pt - Desde 15€',
                 tour: 'Estadio + museo: 12.50€',
                 imagen: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
-                color: 'bg-green-600'
+                color: 'bg-green-600',
+                maps: 'https://maps.google.com/?q=Estadio+Jose+Alvalade+Lisboa'
               },
             ].map((est, i) => (
               <div key={i} className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
@@ -258,11 +266,21 @@ export default function LisboaPracticaPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="space-y-2 text-sm text-slate-600">
+                  <div className="space-y-2 text-sm text-slate-600 mb-4">
                     <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Metro:</span> {est.metro}</p>
                     <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Entradas:</span> {est.entradas}</p>
                     <p><span className="font-medium" style={{color: 'var(--color-primary)'}}>Tour:</span> {est.tour}</p>
                   </div>
+                  <a
+                    href={est.maps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white text-sm hover:scale-105 transition-all w-full justify-center"
+                    style={{background: 'var(--color-accent)'}}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    Cómo llegar
+                  </a>
                 </div>
               </div>
             ))}
@@ -326,14 +344,19 @@ export default function LisboaPracticaPage() {
                   
                   {/* Info */}
                   <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-sm">
-                    <div className="flex items-center gap-1.5 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-                      {cc.metro}
-                    </div>
-                    <div className="flex items-center gap-1.5 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div className="text-slate-500">
                       {cc.horario}
                     </div>
+                    <a
+                      href={cc.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-semibold text-white text-sm hover:scale-105 transition-all"
+                      style={{background: 'var(--color-accent)'}}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                      Cómo llegar
+                    </a>
                   </div>
                 </div>
               </div>
