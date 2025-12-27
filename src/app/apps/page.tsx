@@ -41,7 +41,7 @@ export default function AppsPage() {
   return (
     <main>
       {/* Hero igual que el home */}
-      <section className="relative min-h-[60vh] flex items-center justify-center">
+      <section className="relative min-h-[50vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1920&q=80" alt="Lisboa apps" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/80"></div>
