@@ -226,7 +226,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       <section className="py-20 bg-white">
