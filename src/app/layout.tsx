@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from '@/components/Header';
 import Link from 'next/link';
 import "./globals.css";
 
@@ -26,22 +27,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
-          <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-1">
-              <span className="text-sm italic text-slate-400">estaba en</span>
-              <span className="text-xl font-bold" style={{color: 'var(--color-primary)'}}>Lisboa</span>
-              <span className="w-2 h-2 rounded-full ml-1" style={{background: '#E8C547'}}></span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/itinerarios" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Itinerarios</Link>
-              <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Blog</Link>
-              <Link href="/free-tour" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Free Tours</Link>
-              <Link href="/apps" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Apps</Link>
-              <Link href="/itinerarios" className="btn-primary">Ver Packs</Link>
-            </div>
-          </nav>
-        </header>
+        <Header />
         <div className="pt-16">
           {children}
         </div>
@@ -63,6 +49,7 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/itinerarios" className="text-white/70 hover:text-white">Itinerarios</Link></li>
                   <li><Link href="/blog" className="text-white/70 hover:text-white">Blog</Link></li>
+                  <li><Link href="/free-tour" className="text-white/70 hover:text-white">Free Tours</Link></li>
                   <li><Link href="/apps" className="text-white/70 hover:text-white">Apps</Link></li>
                 </ul>
               </div>
@@ -77,8 +64,9 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-4 text-white/90">Contacto</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><a href="https://instagram.com/estabaenlisboa" className="text-white/70 hover:text-white">@estabaenlisboa</a></li>
+                  <li><a href="https://instagram.com/estabaenlisboa" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">@estabaenlisboa</a></li>
                   <li><a href="mailto:hola@estabaenlisboa.com" className="text-white/70 hover:text-white">hola@estabaenlisboa.com</a></li>
+                  <li><a href="https://wa.me/351900000000" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">WhatsApp</a></li>
                 </ul>
               </div>
             </div>
