@@ -10,25 +10,26 @@ export default function BlogPage() {
     { slug: "mejores-pasteles-nata-lisboa", titulo: "Los mejores pasteles de nata de Lisboa", descripcion: "Probamos 15 pastelerias para encontrar el pastel de nata perfecto.", imagen: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800", categoria: "Comida", fecha: "8 Dic 2024", minutos: 5 }
   ];
   const categoriaColor: Record<string, string> = { "Guias": "bg-blue-100 text-blue-700", "Comida": "bg-amber-100 text-amber-700", "Transporte": "bg-green-100 text-green-700", "Tips": "bg-purple-100 text-purple-700", "Alojamiento": "bg-pink-100 text-pink-700" };
-  
+
   return (
     <main>
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920)'}}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60"></div>
-        <div className="relative max-w-6xl mx-auto px-4">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 bg-white/10 text-white backdrop-blur-sm border border-white/20">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
-              {posts.length} articulos disponibles
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Blog de <span style={{color: 'var(--color-accent)'}}>Lisboa</span>
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">Tips de locales, guias detalladas y todos los secretos para que tu viaje sea inolvidable.</p>
-          </div>
+      <section className="relative min-h-[50vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80" alt="Lisboa Blog" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80"></div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        <div className="relative z-10 text-center px-4 py-16">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-6 text-white" style={{background: 'var(--color-accent)'}}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+            {posts.length} ARTICULOS
+          </div>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 italic" style={{fontFamily: 'Georgia, serif'}}>
+            Blog de Lisboa
+          </h1>
+          <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto">
+            Tips de locales, guías detalladas y todos los secretos para tu viaje.
+          </p>
+        </div>
       </section>
 
       <section className="py-16 bg-slate-50">
@@ -53,11 +54,9 @@ export default function BlogPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors" style={{color: 'var(--color-primary)'}}>
-                    <Link href={`/blog/${post.slug}`}>{post.titulo}</Link>
-                  </h2>
-                  <p className="text-slate-600 text-sm leading-relaxed">{post.descripcion}</p>
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 mt-4 text-sm font-semibold group-hover:gap-2 transition-all" style={{color: 'var(--color-accent)'}}>
+                  <h2 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors" style={{color: 'var(--color-primary)'}}>{post.titulo}</h2>
+                  <p className="text-slate-600 text-sm mb-4 line-clamp-2">{post.descripcion}</p>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all" style={{color: 'var(--color-accent)'}}>
                     Leer articulo
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </Link>
@@ -65,20 +64,19 @@ export default function BlogPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-20 relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-900"></div>
-            <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920)', backgroundSize: 'cover'}}></div>
-            <div className="relative p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Quieres todo organizado?</h3>
-                <p className="text-white/70 text-lg">Itinerarios completos con rutas, restaurantes y mapas offline.</p>
-              </div>
-              <Link href="/itinerarios" className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl bg-white" style={{color: 'var(--color-primary)'}}>
-                Ver itinerarios
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-            </div>
+      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl text-center">
+            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Planifica tu viaje</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>¿Quieres todo organizado?</h2>
+            <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">Nuestros itinerarios incluyen todo lo que necesitas: rutas, restaurantes, horarios y secretos locales.</p>
+            <Link href="/itinerarios" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:scale-105 transition-all" style={{background: 'var(--color-accent)'}}>
+              Ver itinerarios
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
           </div>
         </div>
       </section>
