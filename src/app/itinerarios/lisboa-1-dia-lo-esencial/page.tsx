@@ -131,8 +131,8 @@ export default function Lisboa1DiaPage() {
 
       {/* Timeline Section */}
       <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-12">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wide mb-3">
               Itinerario completo
             </span>
@@ -144,9 +144,12 @@ export default function Lisboa1DiaPage() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20 md:-translate-x-1/2"></div>
+            
             {lisboa1DiaTimeline.map((stop, idx) => (
-              <TimelineStop key={idx} {...stop} />
+              <TimelineStop key={idx} {...stop} index={idx} />
             ))}
           </div>
         </div>
