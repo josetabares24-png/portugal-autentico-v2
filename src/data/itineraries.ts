@@ -166,7 +166,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Empieza temprano antes de que lleguen los turistas. Callejuelas medievales, ropa tendida, fado sonando desde las ventanas. Es la Lisboa real.',
     tip: 'Entra por la Catedral Sé y piérdete subiendo hacia el castillo',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800'
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800'
   },
   {
     time: '10:30',
@@ -174,7 +174,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Las mejores vistas de Alfama y el río Tajo. Azulejos preciosos, buganvillas, perfecto para fotos. Hay un kiosco para tomar un café.',
     tip: 'El mirador de al lado (Portas do Sol) tiene más gente pero vistas diferentes',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800'
+    image: 'https://images.unsplash.com/photo-1588642411190-3e72e93b1497?w=800'
   },
   {
     time: '11:30',
@@ -182,7 +182,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Vistas 360 de Lisboa. Pasea por las murallas, ve los pavos reales. Vale la pena subir aunque la entrada sea de pago.',
     tip: 'Entrada: 15 EUR | Tip: Después de las 15:00 hay menos gente',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800'
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800'
   },
   {
     time: '13:00',
@@ -190,7 +190,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Tasca auténtica donde comen los locales. Menú del día por 8-10 EUR. Pide lo que tengan ese día. Fado en vivo por las noches.',
     tip: 'Alternativa: Taberna da Rua das Flores (un poco más caro pero espectacular)',
     type: 'food',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800'
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800'
   },
   {
     time: '15:00',
@@ -206,7 +206,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Los pastéis de nata originales desde 1837. La cola parece larga pero avanza rápido. Pídelos calientes con canela.',
     tip: '1.30 EUR cada uno | El salón de atrás tiene menos cola que la tienda',
     type: 'food',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800'
+    image: 'https://images.unsplash.com/photo-1565299543923-37dd37887442?w=800'
   },
   {
     time: '18:00',
@@ -214,7 +214,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Antigua fábrica convertida en espacio creativo. Tiendas, galerías, street art, restaurantes. Ambiente muy cool para el atardecer.',
     tip: 'Ler Devagar es una librería increíble dentro de la fábrica',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800'
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800'
   },
   {
     time: '20:00',
@@ -222,7 +222,7 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
     description: 'Vuelve al centro para cenar en Bairro Alto. Ambiente animado, muchos restaurantes. Después puedes pasear por las calles con vida nocturna.',
     tip: 'Recomendado: Café Buenos Aires (carnes) o Cervejaria Trindade (mariscos, edificio histórico)',
     type: 'food',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800'
+    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800'
   }
 ];
 
