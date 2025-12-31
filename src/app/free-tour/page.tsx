@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function FreeTourPage() {
   const toursDestacados = [
@@ -38,54 +39,54 @@ export default function FreeTourPage() {
       incluye: ["Callejuelas de Alfama", "Casas de Fado", "Mercados locales", "Arte callejero"],
       url: "https://www.lisbonwalker.com"
     },
-    { 
-      nombre: "Belém y los Descubrimientos", 
+    {
+      nombre: "Belém y los Descubrimientos",
       empresa: "Lisbon Free Tours",
-      duracion: "2 horas", 
-      horarios: ["10:00", "14:30"], 
-      idiomas: ["ES", "EN"], 
+      duracion: "2 horas",
+      horarios: ["10:00", "14:30"],
+      idiomas: ["ES", "EN"],
       punto: "Monasterio de los Jerónimos",
-      propina: "8-12€", 
-      rating: 4.7, 
+      propina: "8-12€",
+      rating: 4.7,
       reviews: 1892,
       destacado: false,
       badge: "Historia",
-      badgeColor: "bg-blue-500",
+      badgeColor: "bg-secondary-blue",
       imagen: "https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800&q=80",
       descripcion: "La época dorada de Portugal. Navegantes, especias y arquitectura manuelina.",
-      incluye: ["Torre de Belém", "Monasterio Jerónimos", "Monumento Descubrimientos", "Pastéis de Belém"],
+      incluye: ["Torre de Belém", "Monasterio Jerónimos", "Monumento Descubrimientos", "Pastéis de Belém"],     
       url: "https://www.freetour.com/lisbon/belem-free-tour"
     },
-    { 
-      nombre: "Bairro Alto & Chiado", 
+    {
+      nombre: "Bairro Alto & Chiado",
       empresa: "Sandeman's New Europe",
-      duracion: "2.5 horas", 
-      horarios: ["10:00", "14:00", "17:00"], 
-      idiomas: ["EN", "ES"], 
+      duracion: "2.5 horas",
+      horarios: ["10:00", "14:00", "17:00"],
+      idiomas: ["EN", "ES"],
       punto: "Praça Luís de Camões",
-      propina: "10-15€", 
-      rating: 4.7, 
+      propina: "10-15€",
+      rating: 4.7,
       reviews: 3421,
       destacado: false,
       badge: "Bohemio",
       badgeColor: "bg-purple-500",
       imagen: "https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800&q=80",
       descripcion: "El lado bohemio y artístico. Librerías, cafés históricos y vida nocturna.",
-      incluye: ["Elevador Santa Justa", "Convento do Carmo", "Café A Brasileira", "Miradouro São Pedro"],
+      incluye: ["Elevador Santa Justa", "Convento do Carmo", "Café A Brasileira", "Miradouro São Pedro"],       
       url: "https://www.neweuropetours.eu/lisbon"
     },
   ];
 
   const toursAlternativos = [
-    { 
-      nombre: "Lisboa al Atardecer", 
+    {
+      nombre: "Lisboa al Atardecer",
       empresa: "Sunset Tours Lisbon",
-      duracion: "2 horas", 
-      horarios: ["18:00"], 
-      idiomas: ["EN", "ES"], 
+      duracion: "2 horas",
+      horarios: ["18:00"],
+      idiomas: ["EN", "ES"],
       punto: "Miradouro da Graça",
-      propina: "10-15€", 
-      rating: 4.8, 
+      propina: "10-15€",
+      rating: 4.8,
       reviews: 687,
       badge: "Sunset",
       badgeColor: "bg-orange-500",
@@ -93,15 +94,15 @@ export default function FreeTourPage() {
       descripcion: "Miradores secretos al atardecer con vino incluido.",
       url: "https://www.freetour.com/lisbon"
     },
-    { 
-      nombre: "Street Art Tour", 
+    {
+      nombre: "Street Art Tour",
       empresa: "Urban Art Lisbon",
-      duracion: "2 horas", 
-      horarios: ["11:00", "15:00"], 
-      idiomas: ["EN"], 
+      duracion: "2 horas",
+      horarios: ["11:00", "15:00"],
+      idiomas: ["EN"],
       punto: "LX Factory",
-      propina: "8-12€", 
-      rating: 4.8, 
+      propina: "8-12€",
+      rating: 4.8,
       reviews: 534,
       badge: "Arte",
       badgeColor: "bg-pink-500",
@@ -109,15 +110,15 @@ export default function FreeTourPage() {
       descripcion: "Murales, graffiti y la escena artística underground.",
       url: "https://www.freetour.com/lisbon"
     },
-    { 
-      nombre: "Gastronomía Portuguesa", 
+    {
+      nombre: "Gastronomía Portuguesa",
       empresa: "Taste of Lisboa",
-      duracion: "3 horas", 
-      horarios: ["10:30", "17:00"], 
-      idiomas: ["EN", "ES"], 
+      duracion: "3 horas",
+      horarios: ["10:30", "17:00"],
+      idiomas: ["EN", "ES"],
       punto: "Mercado da Ribeira",
-      propina: "12-18€", 
-      rating: 4.9, 
+      propina: "12-18€",
+      rating: 4.9,
       reviews: 423,
       badge: "Foodie",
       badgeColor: "bg-red-500",
@@ -128,57 +129,91 @@ export default function FreeTourPage() {
   ];
 
   return (
-    <main>
+    <main className="bg-background-light">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80" alt="Lisboa Free Tour" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80"></div>
+          <Image
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
+            alt="Lisboa Free Tour"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/70 to-slate-900/85"></div>
         </div>
-        <div className="relative z-10 text-center px-4 py-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-6 text-white" style={{background: 'var(--color-accent)'}}>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            TOURS GRATUITOS CON GUÍAS LOCALES
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 italic" style={{fontFamily: 'Georgia, serif'}}>
-            Free Walking Tours en Lisboa
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8 text-sm font-bold uppercase tracking-wide">
+            <span className="material-symbols-outlined text-yellow-400">verified</span>
+            Tours gratuitos con guías locales
+          </span>
+          
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
+            Free Walking Tours<br />
+            <span className="text-amber-300">en Lisboa</span>
           </h1>
-          <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto mb-8">
+          
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
             Conoce la ciudad con guías apasionados. Reserva gratis, paga solo la propina que quieras al final.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-white/90">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Reserva sin pagar
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span className="text-white font-medium">Reserva sin pagar</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Guías locales
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-blue-400">groups</span>
+              <span className="text-white font-medium">Guías locales</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Cancelación gratis
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-yellow-400">event_busy</span>
+              <span className="text-white font-medium">Cancelación gratis</span>
             </div>
           </div>
+
+          <a 
+            href="#tours" 
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+          >
+            <span className="material-symbols-outlined text-2xl">explore</span>
+            Ver todos los tours
+          </a>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
-      {/* Cómo funciona - Compacto */}
-      <section className="py-8 bg-white border-b">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-center">
+      {/* Cómo funciona */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+              ¿Cómo funciona?
+            </h2>
+            <p className="text-slate-600 text-lg">Es muy sencillo</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
             {[
-              { paso: "1", texto: "Reserva online gratis", icon: "📱" },
-              { paso: "2", texto: "Llega al punto de encuentro", icon: "📍" },
-              { paso: "3", texto: "Disfruta 2-3h de tour", icon: "🚶" },
-              { paso: "4", texto: "Deja la propina que quieras", icon: "💶" },
+              { paso: "1", texto: "Reserva online gratis", desc: "Sin tarjeta, sin compromiso", icon: "smartphone" },
+              { paso: "2", texto: "Llega al punto", desc: "10 minutos antes de la hora", icon: "location_on" },
+              { paso: "3", texto: "Disfruta el tour", desc: "2-3 horas explorando", icon: "directions_walk" },
+              { paso: "4", texto: "Deja propina", desc: "Lo que consideres justo", icon: "euro" },
             ].map((item) => (
-              <div key={item.paso} className="flex items-center gap-3">
-                <span className="text-2xl">{item.icon}</span>
-                <div className="text-left">
-                  <span className="text-xs font-bold text-slate-400">PASO {item.paso}</span>
-                  <p className="text-sm font-medium" style={{color: 'var(--color-primary)'}}>{item.texto}</p>
+              <div key={item.paso} className="text-center group">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined text-primary text-4xl">{item.icon}</span>
                 </div>
+                <div className="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center mx-auto mb-3">
+                  {item.paso}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.texto}</h3>
+                <p className="text-sm text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -186,97 +221,105 @@ export default function FreeTourPage() {
       </section>
 
       {/* Tours Destacados */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Los mejores valorados</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Tours clásicos de Lisboa</h2>
-            <p className="text-slate-600 mt-2">Los imprescindibles para conocer la ciudad</p>
+      <section className="py-20 bg-background-cream" id="tours">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+              Los mejores valorados
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+              Tours clásicos de Lisboa
+            </h2>
+            <p className="text-slate-600 text-lg">Los imprescindibles para conocer la ciudad</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {toursDestacados.map((tour, index) => (
-              <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+              <div key={index} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 {/* Imagen */}
-                <div className="relative h-52 overflow-hidden">
-                  <img 
-                    src={tour.imagen} 
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={tour.imagen}
                     alt={tour.nombre}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
-                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
                   {/* Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`${tour.badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg`}>
+                  <div className="absolute top-6 left-6">
+                    <span className={`${tour.badgeColor} text-white text-sm font-bold px-4 py-2 rounded-full shadow-xl`}>
                       {tour.badge}
                     </span>
                   </div>
-                  
+
                   {/* Rating */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-lg">
-                    <svg className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <span className="font-bold text-sm">{tour.rating}</span>
-                    <span className="text-slate-400 text-xs">({tour.reviews.toLocaleString()})</span>
+                  <div className="absolute top-6 right-6 bg-white/95 backdrop-blur px-3 py-2 rounded-xl flex items-center gap-2 shadow-xl">
+                    <span className="material-symbols-outlined text-amber-400" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    <span className="font-bold">{tour.rating}</span>
+                    <span className="text-slate-400 text-sm">({tour.reviews.toLocaleString()})</span>
                   </div>
-                  
-                  {/* Empresa */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white/80 text-sm">{tour.empresa}</p>
-                    <h3 className="text-white text-xl font-bold">{tour.nombre}</h3>
+
+                  {/* Info sobre imagen */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white/80 text-sm mb-1">{tour.empresa}</p>
+                    <h3 className="text-white text-2xl font-bold">{tour.nombre}</h3>
                   </div>
                 </div>
 
                 {/* Contenido */}
-                <div className="p-6">
-                  <p className="text-slate-600 text-sm mb-4">{tour.descripcion}</p>
-                  
-                  {/* Qué incluye */}
-                  <div className="mb-4">
-                    <p className="text-xs font-semibold text-slate-400 mb-2">QUÉ VERÁS</p>
+                <div className="p-8">
+                  <p className="text-slate-600 mb-6 leading-relaxed">{tour.descripcion}</p>
+
+                  {/* Qué verás */}
+                  <div className="mb-6">
+                    <p className="text-xs font-bold text-slate-400 mb-3 uppercase tracking-wide">Qué verás</p>
                     <div className="flex flex-wrap gap-2">
                       {tour.incluye.map((lugar, i) => (
-                        <span key={i} className="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-full">{lugar}</span>
+                        <span key={i} className="text-sm bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full">
+                          {lugar}
+                        </span>
                       ))}
                     </div>
                   </div>
-                  
-                  {/* Info rápida */}
-                  <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      {tour.duracion}
+
+                  {/* Info grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-slate-400">schedule</span>
+                      <span className="text-slate-700 font-medium">{tour.duracion}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
-                      {tour.idiomas.join(" · ")}
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-slate-400">translate</span>
+                      <span className="text-slate-700 font-medium">{tour.idiomas.join(" · ")}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-                      {tour.punto}
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-slate-400">location_on</span>
+                      <span className="text-slate-700 font-medium text-sm">{tour.punto}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      Propina: {tour.propina}
+                    <div className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-slate-400">euro</span>
+                      <span className="text-slate-700 font-medium">{tour.propina}</span>
                     </div>
                   </div>
-                  
-                  {/* Horarios y botón */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+
+                  {/* Horarios y CTA */}
+                  <div className="flex items-center justify-between pt-6 border-t border-slate-200">
                     <div className="flex gap-2">
                       {tour.horarios.map((h) => (
-                        <span key={h} className="text-sm font-semibold px-3 py-1 rounded-lg bg-slate-100" style={{color: 'var(--color-primary)'}}>{h}</span>
+                        <span key={h} className="px-4 py-2 rounded-xl bg-primary/10 text-primary font-bold">
+                          {h}
+                        </span>
                       ))}
                     </div>
-                    <a 
-                      href={tour.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white hover:scale-105 transition-all"
-                      style={{background: 'var(--color-accent)'}}
+                    <a
+                      href={tour.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white bg-primary hover:bg-primary-dark transition-all hover:scale-105 shadow-lg"
                     >
                       Reservar
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      <span className="material-symbols-outlined">arrow_forward</span>
                     </a>
                   </div>
                 </div>
@@ -287,75 +330,77 @@ export default function FreeTourPage() {
       </section>
 
       {/* Tours Alternativos */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-2 block" style={{color: 'var(--color-accent)'}}>Experiencias únicas</span>
-            <h2 className="text-3xl font-bold" style={{color: 'var(--color-primary)'}}>Tours temáticos</h2>
-            <p className="text-slate-600 mt-2">Para quienes buscan algo diferente</p>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-secondary-blue/10 text-secondary-blue rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+              Experiencias únicas
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+              Tours temáticos
+            </h2>
+            <p className="text-slate-600 text-lg">Para quienes buscan algo diferente</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {toursAlternativos.map((tour, index) => (
-              <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+              <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-200">
                 {/* Imagen */}
-                <div className="relative h-40 overflow-hidden">
-                  <img 
-                    src={tour.imagen} 
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={tour.imagen}
                     alt={tour.nombre}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
-                  
-                  {/* Badge */}
-                  <div className="absolute top-3 left-3">
-                    <span className={`${tour.badgeColor} text-white text-xs font-bold px-2.5 py-1 rounded-full`}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                  <div className="absolute top-4 left-4">
+                    <span className={`${tour.badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full`}>
                       {tour.badge}
                     </span>
                   </div>
-                  
-                  {/* Rating pequeño */}
-                  <div className="absolute top-3 right-3 bg-white/95 backdrop-blur px-2 py-0.5 rounded flex items-center gap-1">
-                    <svg className="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <span className="font-bold text-xs">{tour.rating}</span>
+
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-2.5 py-1 rounded-lg flex items-center gap-1">
+                    <span className="material-symbols-outlined text-amber-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    <span className="font-bold text-sm">{tour.rating}</span>
                   </div>
-                  
-                  {/* Título sobre imagen */}
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <h3 className="text-white text-lg font-bold">{tour.nombre}</h3>
+
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-xl font-bold">{tour.nombre}</h3>
                   </div>
                 </div>
 
-                {/* Contenido */}
-                <div className="p-5">
-                  <p className="text-slate-600 text-sm mb-4">{tour.descripcion}</p>
-                  
-                  <div className="space-y-2 text-sm text-slate-600 mb-4">
+                <div className="p-6">
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{tour.descripcion}</p>
+
+                  <div className="space-y-2 text-sm text-slate-600 mb-6">
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      {tour.duracion} · {tour.idiomas.join(", ")}
+                      <span className="material-symbols-outlined text-slate-400 text-lg">schedule</span>
+                      <span>{tour.duracion} · {tour.idiomas.join(", ")}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-                      {tour.punto}
+                      <span className="material-symbols-outlined text-slate-400 text-lg">location_on</span>
+                      <span>{tour.punto}</span>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <div className="flex gap-1.5">
+
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+                    <div className="flex gap-2">
                       {tour.horarios.map((h) => (
-                        <span key={h} className="text-xs font-medium px-2 py-1 rounded bg-slate-100 text-slate-600">{h}</span>
+                        <span key={h} className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700">
+                          {h}
+                        </span>
                       ))}
                     </div>
-                    <a 
-                      href={tour.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-sm font-semibold hover:underline flex items-center gap-1"
-                      style={{color: 'var(--color-accent)'}}
+                    <a
+                      href={tour.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary font-bold hover:underline flex items-center gap-1"
                     >
                       Reservar
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </a>
                   </div>
                 </div>
@@ -365,24 +410,32 @@ export default function FreeTourPage() {
         </div>
       </section>
 
-      {/* Tips */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-8 text-center" style={{color: 'var(--color-primary)'}}>Tips para tu Free Tour</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Tips Section */}
+      <section className="py-20 bg-background-cream">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+              Tips para tu Free Tour
+            </h2>
+            <p className="text-slate-600 text-lg">Aprovecha al máximo tu experiencia</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { titulo: "Llega 10 min antes", desc: "Los grupos se llenan rápido en temporada alta.", icon: "⏰" },
-              { titulo: "Lleva efectivo", desc: "La propina se da en mano. 10-15€ es lo normal.", icon: "💵" },
-              { titulo: "Calzado cómodo", desc: "Lisboa tiene muchas cuestas y adoquines.", icon: "👟" },
-              { titulo: "Protección solar", desc: "La ciudad es muy soleada todo el año.", icon: "🧴" },
-              { titulo: "Botella de agua", desc: "Hay fuentes públicas para rellenar gratis.", icon: "💧" },
-              { titulo: "Pregunta al guía", desc: "Tienen los mejores tips de restaurantes.", icon: "💬" }
+              { titulo: "Llega 10 min antes", desc: "Los grupos se llenan rápido en temporada alta.", icon: "schedule" },
+              { titulo: "Lleva efectivo", desc: "La propina se da en mano. 10-15€ es lo normal.", icon: "euro" },
+              { titulo: "Calzado cómodo", desc: "Lisboa tiene muchas cuestas y adoquines.", icon: "footprint" },
+              { titulo: "Protección solar", desc: "La ciudad es muy soleada todo el año.", icon: "wb_sunny" },
+              { titulo: "Botella de agua", desc: "Hay fuentes públicas para rellenar gratis.", icon: "water_drop" },
+              { titulo: "Pregunta al guía", desc: "Tienen los mejores tips de restaurantes.", icon: "chat" }
             ].map((tip, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
-                <span className="text-2xl">{tip.icon}</span>
+              <div key={i} className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-slate-200">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="material-symbols-outlined text-primary">{tip.icon}</span>
+                </div>
                 <div>
-                  <h3 className="font-semibold" style={{color: 'var(--color-primary)'}}>{tip.titulo}</h3>
-                  <p className="text-slate-600 text-sm">{tip.desc}</p>
+                  <h3 className="font-bold text-slate-900 mb-1">{tip.titulo}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{tip.desc}</p>
                 </div>
               </div>
             ))}
@@ -390,37 +443,53 @@ export default function FreeTourPage() {
         </div>
       </section>
 
-      {/* Consejo + CTA */}
+      {/* Consejo destacado */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 md:p-8 border border-amber-200 mb-12">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">💡</span>
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 md:p-10 border-2 border-amber-200">
+            <div className="flex items-start gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center flex-shrink-0">
+                <span className="material-symbols-outlined text-white text-3xl">lightbulb</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-2 text-amber-900">Nuestro consejo</h3>
-                <p className="text-amber-800">Haz un Free Tour el <strong>primer día</strong>. Te orientas por la ciudad, aprendes la historia básica y el guía te dará recomendaciones de restaurantes y bares locales. Después puedes explorar por tu cuenta con más contexto.</p>
+                <h3 className="text-2xl font-bold text-amber-900 mb-3">💡 Nuestro consejo</h3>
+                <p className="text-amber-800 text-lg leading-relaxed">
+                  Haz un Free Tour el <strong>primer día</strong>. Te orientas por la ciudad, aprendes la historia básica y el guía te dará recomendaciones de restaurantes y bares locales. Después puedes explorar por tu cuenta con más contexto.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="py-20" style={{background: 'var(--color-secondary)'}}>
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl text-center">
-            <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Después del Free Tour</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>Explora Lisboa por tu cuenta</h2>
-            <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">Nuestros itinerarios incluyen los restaurantes, miradores y rincones secretos que los Free Tours no tienen tiempo de cubrir.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/itinerarios" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg text-white hover:scale-105 transition-all" style={{background: 'var(--color-accent)'}}>
+      {/* CTA Final */}
+      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
+        <div className="relative max-w-6xl mx-auto px-4">
+          <div className="bg-white rounded-3xl p-10 md:p-16 shadow-2xl text-center">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wide mb-6">
+              Después del Free Tour
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+              Explora Lisboa<br />por tu cuenta
+            </h2>
+            <p className="text-slate-600 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              Nuestros itinerarios incluyen los restaurantes, miradores y rincones secretos que los Free Tours no tienen tiempo de cubrir.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/itinerarios" 
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-xl shadow-xl hover:scale-105 transition-all"
+              >
+                <span className="material-symbols-outlined text-2xl">map</span>
                 Ver itinerarios desde 5.99€
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
-              <Link href="/apps" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg border-2 hover:scale-105 transition-all" style={{borderColor: 'var(--color-primary)', color: 'var(--color-primary)'}}>
-                Apps útiles para el viaje
+              <Link 
+                href="/apps" 
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-transparent border-2 border-slate-300 hover:border-slate-400 text-slate-900 rounded-2xl font-bold text-xl transition-all"
+              >
+                <span className="material-symbols-outlined text-2xl">apps</span>
+                Apps útiles
               </Link>
             </div>
           </div>
