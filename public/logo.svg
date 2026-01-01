@@ -1,0 +1,22 @@
+<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .texto {
+      font-family: 'Bodoni MT', 'Didot', 'Times New Roman', serif;
+    }
+    .titulo {
+      font-size: 140px;
+      font-weight: bold;
+      fill: #000000;
+    }
+    .subtitulo {
+      font-size: 45px;
+      fill: #4a4a4a;
+    }
+    .circulo {
+      fill: #ea8a34;
+    }
+  </style>
+  <text x="50" y="80" class="texto subtitulo">estaba en</text>
+  <circle cx="460" cy="135" r="65" class="circulo" />
+  <text x="45" y="190" class="texto titulo">Lisboa.</text>
+</svg>

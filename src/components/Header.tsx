@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +9,8 @@ export default function Header() {
   return (
     <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-1">
-          <span className="text-sm italic text-slate-400">estaba en</span>
-          <span className="text-xl font-bold" style={{color: 'var(--color-primary)'}}>Lisboa</span>
-          <span className="w-2 h-2 rounded-full ml-1" style={{background: '#E8C547'}}></span>
-        </Link>
+        {/* Logo nuevo */}
+        <Logo />
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
@@ -31,17 +29,17 @@ export default function Header() {
           aria-label="Menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${
+            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
               isOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${
+            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
               isOpen ? 'opacity-0 scale-0' : ''
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${
+            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
               isOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />
