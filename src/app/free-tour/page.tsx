@@ -62,7 +62,7 @@ export default function FreeTourPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1569959220744-ff553533f492?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&q=80"
             alt="Free Tours Lisboa"
             fill
             className="object-cover scale-110"

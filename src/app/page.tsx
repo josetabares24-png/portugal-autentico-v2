@@ -35,27 +35,6 @@ export default function HomePage() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "María G.",
-      location: "Madrid, España",
-      initials: "MG",
-      text: "El mejor itinerario que he comprado. Todo estaba perfectamente organizado y los restaurantes... ¡increíbles! Nos ahorraron horas de investigación."
-    },
-    {
-      name: "João P.",
-      location: "Porto, Portugal",
-      initials: "JP",
-      text: "Sendo português, pensava que conhecia Lisboa. Este pack me mostró rincones que ni sabía que existían. Totalmente recomendado."
-    },
-    {
-      name: "Sophie L.",
-      location: "Paris, France",
-      initials: "SL",
-      text: "Worth every cent! The timing was perfect and we didn't waste a single minute. The photo spots were absolutely Instagram-worthy!"
-    }
-  ];
-
   return (
     <main className="bg-background-light">
       {/* Hero Section */}
@@ -75,15 +54,15 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8 animate-pulse">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">verified</span>
-            <span className="text-sm font-bold tracking-wide">+2,500 VIAJEROS FELICES EN 2024</span>
+            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2025</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
             Descubre Lisboa<br />
-            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">        
               como un local
             </span>
           </h1>
@@ -95,16 +74,16 @@ export default function HomePage() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Link 
-              href="#itinerarios" 
+            <Link
+              href="#itinerarios"
               className="group flex items-center gap-3 px-8 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105"
             >
               <span className="material-symbols-outlined text-2xl">map</span>
               Ver Itinerarios Premium
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-            <Link 
-              href="#free" 
+            <Link
+              href="#free"
               className="flex items-center gap-3 px-8 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-lg border-2 border-white/30 transition-all"
             >
               <span className="material-symbols-outlined text-2xl">download</span>
@@ -119,8 +98,8 @@ export default function HomePage() {
               <span>Descarga inmediata</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-yellow-400">star</span>
-              <span>4.9/5 de 2,500+ reviews</span>
+              <span className="material-symbols-outlined text-yellow-400">verified</span>
+              <span>Creado por locales</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
@@ -135,18 +114,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Social Proof Bar */}
+      {/* Features Bar */}
       <section className="py-6 bg-gradient-to-r from-primary to-orange-500 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8 text-center">
             <div>
-              <div className="text-4xl font-black">2,500+</div>
-              <div className="text-sm font-medium opacity-90">Viajeros Felices</div>
+              <div className="text-4xl font-black">100%</div>
+              <div className="text-sm font-medium opacity-90">Actualizado</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/30"></div>
             <div>
-              <div className="text-4xl font-black">4.9★</div>
-              <div className="text-sm font-medium opacity-90">Valoración Media</div>
+              <div className="text-4xl font-black">Local</div>
+              <div className="text-sm font-medium opacity-90">Hecho por Lisboetas</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/30"></div>
             <div>
@@ -175,11 +154,11 @@ export default function HomePage() {
           {/* Cards Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {featuredItineraries.map((itinerary) => (
-              <div 
-                key={itinerary.id} 
+              <div
+                key={itinerary.id}
                 className={`group bg-white rounded-3xl overflow-hidden shadow-lg border transition-all hover:-translate-y-2 ${
-                  itinerary.featured 
-                    ? 'border-4 border-primary shadow-2xl relative' 
+                  itinerary.featured
+                    ? 'border-4 border-primary shadow-2xl relative'
                     : 'border-slate-200'
                 }`}
               >
@@ -188,7 +167,7 @@ export default function HomePage() {
                     ⭐ MÁS VENDIDO
                   </div>
                 )}
-                
+
                 <div className={`relative h-56 ${itinerary.featured ? 'mt-8' : ''}`}>
                   <Image
                     src={itinerary.image}
@@ -201,15 +180,15 @@ export default function HomePage() {
                       {itinerary.duration}
                     </span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>        
                 </div>
-                
+
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">{itinerary.title}</h3>
                   <p className="text-slate-600 mb-6">{itinerary.description}</p>
                   <div className="flex items-center justify-between">
                     <div className="text-3xl font-black text-primary">{itinerary.price}€</div>
-                    <Link 
+                    <Link
                       href={itinerary.href}
                       className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all hover:scale-105"
                     >
@@ -223,8 +202,8 @@ export default function HomePage() {
           </div>
 
           <div className="text-center">
-            <Link 
-              href="/itinerarios" 
+            <Link
+              href="/itinerarios"
               className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-lg transition-all"
             >
               Ver los 8 itinerarios
@@ -263,7 +242,7 @@ export default function HomePage() {
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 text-center hover:-translate-y-2 transition-transform">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>
+                <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Garantía Total</h3>
               <p className="text-slate-600">14 días de garantía. Si no te gusta, te devolvemos el dinero sin preguntas.</p>
@@ -272,50 +251,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-2 text-yellow-400 text-3xl mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              ))}
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-              Lo que dicen nuestros viajeros
-            </h2>
-            <p className="text-xl text-slate-600">4.9/5 de más de 2,500 opiniones</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-2 text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  ))}
-                </div>
-                <p className="text-slate-700 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-bold">{testimonial.initials}</span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900">{testimonial.name}</p>
-                    <p className="text-sm text-slate-600">{testimonial.location}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Free Guide CTA */}
       <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden" id="free">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">download</span>
+          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">download</span>     
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Aún no estás seguro?
           </h2>
@@ -323,7 +263,7 @@ export default function HomePage() {
             Descarga nuestra guía gratuita con 15 consejos que solo los locales conocen
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               href="/contacto"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
             >
@@ -331,7 +271,7 @@ export default function HomePage() {
               Descargar Guía Gratis
             </Link>
           </div>
-          <p className="text-white/80 text-sm mt-6">✅ Sin spam · ✅ Descarga inmediata · ✅ 100% gratis</p>
+          <p className="text-white/80 text-sm mt-6">✅ Sin spam · ✅ Descarga inmediata · ✅ 100% gratis</p>    
         </div>
       </section>
     </main>
