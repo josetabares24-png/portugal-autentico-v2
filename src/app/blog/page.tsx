@@ -70,10 +70,10 @@ export default function BlogPage() {
   return (
     <main className="bg-background-light">
       {/* Hero - Estilo Home */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1588179071719-dfdadcd51d26?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&q=80"
             alt="Blog de Lisboa"
             fill
             className="object-cover scale-110"

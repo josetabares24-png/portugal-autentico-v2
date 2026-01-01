@@ -48,7 +48,7 @@ export default function AppsPage() {
   return (
     <main className="bg-background-light">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&q=80"

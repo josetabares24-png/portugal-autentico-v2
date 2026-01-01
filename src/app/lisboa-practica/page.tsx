@@ -11,10 +11,10 @@ export default function LisboaPracticaPage() {
   return (
     <main className="bg-background-light">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&q=80"
             alt="Lisboa Info Útil"
             fill
             className="object-cover scale-110"
