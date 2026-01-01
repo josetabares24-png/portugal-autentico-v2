@@ -44,7 +44,7 @@ El vendedor ofrece **guías turísticas digitales en formato PDF** sobre Lisboa 
 ## 4. Precios
 
 - Todos los precios incluyen **IVA al 23%** (tipo aplicable a productos digitales en Portugal)
-- Los precios pueden cambiar sin previo aviso, pero se respeta el precio vigente al momento de la compra
+- Los precios pueden cambiar sin previo aviso, pero se respeta el precio vigente al momento de la compra        
 - No hay costes de envío (producto digital)
 
 ## 5. Métodos de Pago
@@ -58,18 +58,29 @@ Métodos aceptados:
 
 **No guardamos datos de tarjeta.** Todo el procesamiento lo realiza Stripe de forma segura.
 
-## 6. Derecho de Desistimiento
+## 6. Política de Reembolso y Garantía de Satisfacción
 
-**IMPORTANTE:** Según el artículo 9 del Decreto-Ley n.º 24/2014 de Portugal sobre contratos celebrados a distancia:
+**Garantía de 48 horas:**
 
-> "El consumidor renuncia al derecho de desistimiento si acepta la descarga inmediata del contenido digital."
+Ofrecemos una garantía de satisfacción de **48 horas desde la compra**.
+
+Si no estás satisfecho con tu guía digital, puedes solicitar un reembolso completo dentro de las primeras 48 horas, siempre que:
+- Notifiques tu solicitud a contacto@estabaenlisboa.com
+- Proporciones el número de pedido
+- Expliques brevemente el motivo de insatisfacción
+
+**IMPORTANTE - Derecho de Desistimiento:**
+
+Según el artículo 9 del Decreto-Ley n.º 24/2014 de Portugal sobre contratos celebrados a distancia:
+
+> "El consumidor renuncia al derecho de desistimiento legal de 14 días si acepta la descarga inmediata del contenido digital."
 
 **Al completar la compra, aceptas expresamente:**
 - La entrega inmediata del producto digital
-- Que renuncias a tu derecho de desistimiento de 14 días
-- Que no se realizarán reembolsos una vez descargado el PDF
+- Que renuncias a tu derecho de desistimiento legal de 14 días
+- Que la garantía de satisfacción es de 48 horas (no 14 días)
 
-Esta renuncia es necesaria para poder entregarte el producto inmediatamente.
+**Después de 48 horas:** No se realizarán reembolsos salvo por errores graves en el contenido que impidan su uso normal.
 
 ## 7. Garantías y Responsabilidades
 

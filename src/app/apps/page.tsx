@@ -6,11 +6,20 @@ import Image from 'next/image';
 export default function AppsPage() {
   const categories = [
     {
+      titulo: "Mapas & Navegación",
+      descripcion: "Nunca te pierdas en la ciudad",
+      imagen: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80",
+      apps: [
+        { name: 'Citymapper', description: 'La mejor app para transporte público en Lisboa. Metro, tranvía, bus, todo integrado.', why: 'Muestra todas las opciones de transporte y te dice exactamente cuándo llegar a la parada.', badge: 'Popular', badgeColor: 'bg-blue-500' },
+        { name: 'Google Maps', description: 'El estándar para navegación y búsqueda de lugares.', why: 'Descarga el mapa offline de Lisboa antes de viajar.', badge: 'Offline', badgeColor: 'bg-green-600' },
+        { name: 'Maps.me', description: 'Mapas offline gratuitos, perfectos para viajar.', why: 'No necesitas internet. Muy detallado para caminar.', badge: 'Sin internet', badgeColor: 'bg-blue-600' },
+      ]
+    },
+    {
       titulo: "Transporte",
       descripcion: "Muévete por Lisboa como un local",
       imagen: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
       apps: [
-        { name: 'Citymapper', description: 'La mejor app para transporte público en Lisboa. Metro, tranvía, bus, todo integrado.', why: 'Muestra todas las opciones de transporte y te dice exactamente cuándo llegar a la parada.', badge: 'Popular', badgeColor: 'bg-blue-500' },
         { name: 'Bolt', description: 'Alternativa a Uber, generalmente más barata en Lisboa.', why: 'Precios más competitivos y muy popular en Portugal.', badge: 'Mejor precio', badgeColor: 'bg-green-500' },
         { name: 'Uber', description: 'El clásico que ya conoces. Funciona muy bien en Lisboa.', why: 'Confiable, conocido, y con buen servicio en la ciudad.', badge: 'Clásico', badgeColor: 'bg-slate-700' },
       ]
@@ -22,15 +31,6 @@ export default function AppsPage() {
       apps: [
         { name: 'The Fork', description: 'Reservas en restaurantes con descuentos de hasta 50%.', why: 'Muchos restaurantes en Lisboa ofrecen descuentos exclusivos.', badge: 'Descuentos', badgeColor: 'bg-red-500' },
         { name: 'Glovo', description: 'Delivery de comida, supermercado, farmacia... de todo.', why: 'Muy popular en Lisboa con entregas rápidas.', badge: 'Rápido', badgeColor: 'bg-primary' },
-      ]
-    },
-    {
-      titulo: "Mapas & Navegación",
-      descripcion: "Nunca te pierdas en la ciudad",
-      imagen: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80",
-      apps: [
-        { name: 'Google Maps', description: 'El estándar para navegación y búsqueda de lugares.', why: 'Descarga el mapa offline de Lisboa antes de viajar.', badge: 'Offline', badgeColor: 'bg-green-600' },
-        { name: 'Maps.me', description: 'Mapas offline gratuitos, perfectos para viajar.', why: 'No necesitas internet. Muy detallado para caminar.', badge: 'Sin internet', badgeColor: 'bg-blue-600' },
       ]
     },
     {

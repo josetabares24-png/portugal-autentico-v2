@@ -103,7 +103,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
-              <span>Garantía 14 días</span>
+              <span>Garantía 48h</span>
             </div>
           </div>
         </div>
