@@ -23,7 +23,7 @@ const navigationItems = [
   { name: 'Blog', href: '/blog' },
   { name: 'Mapa', href: '/mapa' },
   { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: 'Guía Gratis', href: '/guia-gratis' },
 ];
 
 export default function Navigation() {

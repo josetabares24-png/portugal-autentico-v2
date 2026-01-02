@@ -264,7 +264,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contacto"
+              href="/guia-gratis"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
             >
               <span className="material-symbols-outlined text-2xl">download</span>
