@@ -1,4 +1,3 @@
-// Configuración de productos de Stripe
 export const STRIPE_PRODUCTS = {
   "lisboa-1-dia-lo-esencial": {
     priceId: "price_1SIRshQvLqfRMzHmVNSqlSFE",
