@@ -10,6 +10,9 @@ export async function POST(request: NextRequest) {
   try {
     const { productId } = await request.json();
 
+    // Log para debug
+    console.log('Product ID recibido:', productId);
+
     if (!productId || !(productId in STRIPE_PRODUCTS)) {
       return NextResponse.json(
         { error: 'Producto no válido' },
@@ -18,6 +21,10 @@ export async function POST(request: NextRequest) {
     }
 
     const product = STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS];
+    
+    // Log para debug
+    console.log('Product encontrado:', product);
+    console.log('Price ID:', product.priceId);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -28,8 +35,8 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/exito?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/itinerarios`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/exito?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/itinerarios`,
       metadata: {
         productId: productId,
       },
