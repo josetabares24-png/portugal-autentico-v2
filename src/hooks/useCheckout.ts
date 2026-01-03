@@ -35,12 +35,13 @@ export function useCheckout() {
         throw new Error('Stripe no se cargó correctamente');
       }
 
-      const { error: stripeError } = await stripe.redirectToCheckout({
+      // Usar el nuevo método
+      const result = await stripe.redirectToCheckout({
         sessionId,
       });
 
-      if (stripeError) {
-        throw new Error(stripeError.message);
+      if (result.error) {
+        throw new Error(result.error.message);
       }
     } catch (err: any) {
       console.error('Error en checkout:', err);
