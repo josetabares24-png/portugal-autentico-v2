@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Itinerary } from '@/data/itineraries';
 import { BuyButton } from '@/components/BuyButton';
-import { ProductId } from '@/lib/stripe-products';
+import type { ProductId } from '@/lib/stripe-products';
 
 interface ItineraryCardProps extends Itinerary {
   size?: 'default' | 'compact';
@@ -68,12 +68,14 @@ export function ItineraryCard({
                 Ver detalles →
               </Link>
             </div>
-            <BuyButton 
-              productId={productId}
-              className="w-full py-2.5 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 text-sm"
-            >
-              Comprar ahora
-            </BuyButton>
+            {productId && (
+              <BuyButton 
+                productId={productId}
+                className="w-full py-2.5 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 text-sm"
+              >
+                Comprar ahora
+              </BuyButton>
+            )}
           </div>
         </div>
       </div>
@@ -134,16 +136,18 @@ export function ItineraryCard({
               Ver detalles →
             </Link>
           </div>
-          <BuyButton 
-            productId={productId}
-            className={`w-full py-3 px-6 font-bold rounded-lg transition-all hover:scale-105 ${
-              featured 
-                ? 'bg-primary hover:bg-primary-dark text-white shadow-lg' 
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-900'
-            }`}
-          >
-            Comprar ahora
-          </BuyButton>
+          {productId && (
+            <BuyButton 
+              productId={productId}
+              className={`w-full py-3 px-6 font-bold rounded-lg transition-all hover:scale-105 ${
+                featured 
+                  ? 'bg-primary hover:bg-primary-dark text-white shadow-lg' 
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-900'
+              }`}
+            >
+              Comprar ahora
+            </BuyButton>
+          )}
         </div>
       </div>
     </div>
