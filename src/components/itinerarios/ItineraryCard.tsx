@@ -1,12 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Itinerary } from '@/data/itineraries';
+import { BuyButton } from '@/components/BuyButton';
+import { ProductId } from '@/lib/stripe-products';
 
 interface ItineraryCardProps extends Itinerary {
   size?: 'default' | 'compact';
 }
 
+// Mapeo de IDs de itinerarios a IDs de productos de Stripe
+const itineraryToProductMap: Record<string, ProductId> = {
+  'lisboa-1-dia': 'lisboa-1-dia-lo-esencial',
+  'lisboa-2-dias': 'lisboa-2-dias-completo',
+  'lisboa-3-dias': 'lisboa-3-dias-premium',
+  'lisboa-full-week': 'lisboa-full-week',
+  'lisboa-romantica': 'lisboa-romantica',
+  'lisboa-familiar': 'lisboa-familiar',
+  'lisboa-fotografia': 'lisboa-fotografia',
+};
+
 export function ItineraryCard({ 
+  id,
   title, 
   description, 
   image, 
@@ -18,6 +32,8 @@ export function ItineraryCard({
   size = 'default'
 }: ItineraryCardProps) {
   
+  const productId = itineraryToProductMap[id];
+
   if (size === 'compact') {
     return (
       <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
@@ -40,16 +56,24 @@ export function ItineraryCard({
         <div className="p-5">
           <h3 className="text-lg font-bold mb-1 text-text-main">{title}</h3>
           <p className="text-slate-600 text-sm mb-4 line-clamp-2">{description}</p>
-          <div className="flex items-center justify-between pt-3 border-t">
-            <div className="text-xl font-bold text-primary">
-              {price.toFixed(2)} <span className="text-xs font-normal text-slate-500">EUR</span>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <div className="text-xl font-bold text-primary">
+                {price.toFixed(2)} <span className="text-xs font-normal text-slate-500">EUR</span>
+              </div>
+              <Link 
+                href={href} 
+                className="text-sm font-semibold hover:underline text-primary"
+              >
+                Ver detalles →
+              </Link>
             </div>
-            <Link 
-              href={href} 
-              className="text-sm font-semibold hover:underline text-primary"
+            <BuyButton 
+              productId={productId}
+              className="w-full py-2.5 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 text-sm"
             >
-              Ver →
-            </Link>
+              Comprar ahora
+            </BuyButton>
           </div>
         </div>
       </div>
@@ -98,16 +122,28 @@ export function ItineraryCard({
           ))}
         </ul>
 
-        <div className="flex items-center justify-between pt-4 border-t">
-          <div className="text-2xl font-bold text-primary">
-            {price.toFixed(2)} <span className="text-sm font-normal text-slate-500">EUR</span>
+        <div className="space-y-3 pt-4 border-t">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold text-primary">
+              {price.toFixed(2)} <span className="text-sm font-normal text-slate-500">EUR</span>
+            </div>
+            <Link 
+              href={href} 
+              className="text-sm font-semibold hover:underline text-primary"
+            >
+              Ver detalles →
+            </Link>
           </div>
-          <Link 
-            href={href} 
-            className={featured ? 'btn-primary text-sm' : 'btn-secondary text-sm'}
+          <BuyButton 
+            productId={productId}
+            className={`w-full py-3 px-6 font-bold rounded-lg transition-all hover:scale-105 ${
+              featured 
+                ? 'bg-primary hover:bg-primary-dark text-white shadow-lg' 
+                : 'bg-slate-100 hover:bg-slate-200 text-slate-900'
+            }`}
           >
-            Ver pack
-          </Link>
+            Comprar ahora
+          </BuyButton>
         </div>
       </div>
     </div>
