@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export function useCheckout() {
   const [loading, setLoading] = useState(false);
@@ -11,7 +14,6 @@ export function useCheckout() {
       setLoading(true);
       setError(null);
 
-      // Crear sesión de checkout
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
@@ -26,32 +28,29 @@ export function useCheckout() {
         throw new Error(data.error);
       }
 
-      // Redirigir directamente a Stripe Checkout usando la URL de la sesión
-      if (data.sessionId) {
-        const stripe = await import('@stripe/stripe-js').then(m => 
-          m.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
-        );
-        
-        if (!stripe) {
-          throw new Error('Stripe no se cargó correctamente');
-        }
-
-        const { error: stripeError } = await stripe.redirectToCheckout({
-          sessionId: data.sessionId,
-        });
-
-        if (stripeError) {
-          throw new Error(stripeError.message);
-        }
-      } else {
+      if (!data.sessionId) {
         throw new Error('No se recibió ID de sesión');
       }
+
+      const stripe = await stripePromise;
+      
+      if (!stripe) {
+        throw new Error('No se pudo cargar Stripe');
+      }
+
+      const result = await stripe.redirectToCheckout({
+        sessionId: data.sessionId,
+      });
+
+      if (result.error) {
+        throw new Error(result.error.message);
+      }
+
     } catch (err: any) {
       console.error('Error en checkout:', err);
       setError(err.message || 'Error al procesar el pago');
       setLoading(false);
     }
-    // No ponemos finally aquí porque la redirección ocurrirá antes
   };
 
   return { redirectToCheckout, loading, error };
