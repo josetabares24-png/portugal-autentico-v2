@@ -1,9 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export function useCheckout() {
   const [loading, setLoading] = useState(false);
@@ -28,23 +25,12 @@ export function useCheckout() {
         throw new Error(data.error);
       }
 
-      if (!data.sessionId) {
-        throw new Error('No se recibió ID de sesión');
+      if (!data.url) {
+        throw new Error('No se recibió URL de checkout');
       }
 
-      const stripe = await stripePromise;
-      
-      if (!stripe) {
-        throw new Error('No se pudo cargar Stripe');
-      }
-
-      const result = await stripe.redirectToCheckout({
-        sessionId: data.sessionId,
-      });
-
-      if (result.error) {
-        throw new Error(result.error.message);
-      }
+      // Redirigir directamente a la URL de Stripe
+      window.location.href = data.url;
 
     } catch (err: any) {
       console.error('Error en checkout:', err);
