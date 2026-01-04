@@ -9,7 +9,12 @@ interface ItineraryCardProps extends Itinerary {
 }
 
 // Mapeo de IDs de itinerarios a IDs de productos de Stripe
-const itineraryToProductMap: Record<string, ProductId | undefined> = {
+const itineraryToProductMap: Record<string, ProductId> = {
+  'lisboa-1-dia': 'lisboa-1-dia-lo-esencial',
+  'lisboa-2-dias': 'lisboa-2-dias-completo',
+  'lisboa-3-dias': 'lisboa-3-dias-premium',
+  'lisboa-full-week': 'lisboa-full-week',
+  'lisboa-romantica': 'lisboa-romantica',
   'lisboa-familiar': 'lisboa-familiar',
   'lisboa-fotografia': 'lisboa-fotografia',
 };
