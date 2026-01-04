@@ -1,10 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BuyButton } from '@/components/BuyButton';
+import type { ProductId } from '@/lib/stripe-products';
 
 export default function HomePage() {
-  const featuredItineraries = [
+  const featuredItineraries: Array<{
+    id: string;
+    productId: ProductId;
+    title: string;
+    description: string;
+    duration: string;
+    price: number;
+    image: string;
+    href: string;
+    featured: boolean;
+  }> = [
     {
       id: 'lisboa-1-dia',
+      productId: 'lisboa-1-dia-lo-esencial',
       title: 'Lisboa Esencial',
       description: 'Lo mejor de Lisboa en un día perfectamente organizado.',
       duration: '1 DÍA',
@@ -15,6 +28,7 @@ export default function HomePage() {
     },
     {
       id: 'lisboa-2-dias',
+      productId: 'lisboa-2-dias-completo',
       title: 'Lisboa Completa',
       description: 'Fin de semana perfecto con Belém, Alfama y barrios con encanto.',
       duration: '2 DÍAS',
@@ -25,6 +39,7 @@ export default function HomePage() {
     },
     {
       id: 'lisboa-3-dias',
+      productId: 'lisboa-3-dias-premium',
       title: 'Lisboa + Sintra',
       description: 'Experiencia completa con excursión a Sintra y Cascais.',
       duration: '3 DÍAS',
@@ -186,15 +201,23 @@ export default function HomePage() {
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">{itinerary.title}</h3>
                   <p className="text-slate-600 mb-6">{itinerary.description}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="text-3xl font-black text-primary">{itinerary.price}€</div>
-                    <Link
-                      href={itinerary.href}
-                      className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all hover:scale-105"
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <div className="text-3xl font-black text-primary">{itinerary.price}€</div>
+                      <Link
+                        href={itinerary.href}
+                        className="text-sm font-semibold text-primary hover:underline"
+                      >
+                        Ver detalles →
+                      </Link>
+                    </div>
+                    <BuyButton
+                      productId={itinerary.productId}
+                      className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all hover:scale-105"
                     >
-                      Ver guía
-                      <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                    </Link>
+                      Comprar ahora
+                      <span className="material-symbols-outlined text-lg">shopping_cart</span>
+                    </BuyButton>
                   </div>
                 </div>
               </div>
