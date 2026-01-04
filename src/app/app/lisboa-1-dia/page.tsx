@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
 
 export default function LisboaAppPage() {
@@ -10,194 +11,203 @@ export default function LisboaAppPage() {
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-      <div className="relative mx-auto flex h-screen w-full max-w-[480px] flex-col bg-slate-50 dark:bg-slate-900 overflow-hidden">
-        {/* Header con controles */}
-        <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-4 pt-12 bg-gradient-to-b from-black/40 to-transparent">
-          <button className="flex size-10 items-center justify-center rounded-full bg-white/90 dark:bg-black/60 backdrop-blur-sm shadow-sm transition active:scale-95">
-            <span className="material-symbols-outlined text-gray-900 dark:text-white text-xl">arrow_back</span>
-          </button>
-          
-          <div className="flex gap-3">
-            <button className="flex size-10 items-center justify-center rounded-full bg-white/90 dark:bg-black/60 backdrop-blur-sm shadow-sm transition active:scale-95">
-              <span className="material-symbols-outlined text-gray-900 dark:text-white text-xl">favorite</span>
-            </button>
-            <button className="flex size-10 items-center justify-center rounded-full bg-white/90 dark:bg-black/60 backdrop-blur-sm shadow-sm transition active:scale-95">
-              <span className="material-symbols-outlined text-gray-900 dark:text-white text-xl">share</span>
-            </button>
-          </div>
-        </div>
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+        {/* Header */}
+        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between">
+              <Link href="/itinerarios" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
+                <span className="material-symbols-outlined">arrow_back</span>
+                <span className="hidden sm:inline">Volver</span>
+              </Link>
 
-        {/* Mapa */}
-        <div className="relative h-[45vh] w-full shrink-0 group">
-          <div className="absolute inset-0 bg-cover bg-center" style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200)'
-          }}>
-            <div className="absolute inset-0 bg-black/10 dark:bg-slate-900/60"></div>
-          </div>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Lisboa en 1 día</h1>
 
-          {/* Marcadores en el mapa */}
-          <div className="absolute top-[40%] left-[30%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-            <div className="flex size-12 items-center justify-center rounded-full bg-orange-500 shadow-lg border-2 border-white">
-              <span className="material-symbols-outlined text-white text-2xl">castle</span>
-            </div>
-            <div className="mt-1 rounded bg-white px-2 py-0.5 text-[10px] font-bold shadow-md text-gray-900">Castelo</div>
-          </div>
-
-          <div className="absolute top-[60%] left-[65%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-            <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
-              <span className="material-symbols-outlined text-gray-900 text-xl">restaurant</span>
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={() => setDarkMode(!darkMode)}
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                >
+                  <span className="material-symbols-outlined text-gray-600 dark:text-gray-300">
+                    {darkMode ? 'light_mode' : 'dark_mode'}
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
+        </header>
 
-          <div className="absolute top-[25%] left-[70%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-            <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
-              <span className="material-symbols-outlined text-gray-900 text-xl">photo_camera</span>
-            </div>
-          </div>
-
-          {/* Controles del mapa */}
-          <div className="absolute bottom-6 right-4 flex flex-col gap-2 z-10">
-            <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700">
-              <span className="material-symbols-outlined text-2xl">layers</span>
-            </button>
-            <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700">
-              <span className="material-symbols-outlined text-2xl">my_location</span>
-            </button>
-          </div>
-
-          {/* Toggle modo oscuro */}
-          <div className="absolute top-24 left-4 z-10">
-            <button 
-              onClick={() => setDarkMode(!darkMode)}
-              className="group flex cursor-pointer items-center gap-3 rounded-full bg-white/95 p-1.5 pr-4 shadow-xl border border-white/40 backdrop-blur-md dark:bg-gray-900/90 dark:border-gray-700 transition-all hover:scale-[1.02]"
-            >
-              <div className="relative h-7 w-12 rounded-full bg-gray-200 dark:bg-gray-700 shadow-inner border border-black/5 dark:border-white/5">
-                <div className={`absolute left-1 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white shadow-sm transition-all ${darkMode ? 'translate-x-5' : ''}`}>
-                  <span className={`material-symbols-outlined text-[14px] text-amber-500 ${darkMode ? 'hidden' : ''}`}>light_mode</span>
-                  <span className={`material-symbols-outlined text-[14px] text-indigo-500 ${darkMode ? '' : 'hidden'}`}>dark_mode</span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 leading-none mb-0.5">Modo</span>
-                <span className="text-xs font-extrabold text-gray-800 dark:text-gray-200 leading-none">Mapa</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        {/* Panel inferior */}
-        <div className="relative -mt-6 flex flex-1 flex-col rounded-t-2xl bg-slate-50 dark:bg-slate-900 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)] z-10">
-          <div className="flex w-full flex-col items-center pt-3 pb-1">
-            <div className="h-1.5 w-12 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-          </div>
-
-          <div className="flex-1 overflow-y-auto px-5 pb-24">
-            <div className="mb-6 mt-2">
-              <div className="flex items-start justify-between">
-                <h1 className="text-2xl font-extrabold text-gray-900 dark:text-white leading-tight">Lisboa en 1 día</h1>
-                <span className="rounded-full bg-orange-500/20 px-2.5 py-1 text-xs font-bold text-orange-700 dark:text-orange-400">
-                  Popular
-                </span>
+        {/* Layout principal: Mapa a la izquierda, Timeline a la derecha */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-0 lg:gap-6">
+            {/* Mapa - Fixed en desktop, scroll en mobile */}
+            <div className="lg:sticky lg:top-20 h-[40vh] lg:h-[calc(100vh-6rem)] bg-gray-200 dark:bg-gray-800 relative">
+              <div className="absolute inset-0 bg-cover bg-center" style={{
+                backgroundImage: 'url(https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200)'
+              }}>
+                <div className="absolute inset-0 bg-black/10 dark:bg-slate-900/60"></div>
               </div>
 
-              <div className="mt-3 flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-lg">schedule</span>
-                  <span>10-12 horas</span>
+              {/* Marcadores en el mapa */}
+              <div className="absolute top-[40%] left-[30%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
+                <div className="flex size-12 items-center justify-center rounded-full bg-orange-500 shadow-lg border-2 border-white">
+                  <span className="material-symbols-outlined text-white text-2xl">castle</span>
                 </div>
-                <div className="h-3 w-px bg-gray-300 dark:bg-gray-700"></div>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-lg">directions_walk</span>
-                  <span>Moderado</span>
-                </div>
-                <div className="h-3 w-px bg-gray-300 dark:bg-gray-700"></div>
-                <div className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-lg">location_on</span>
-                  <span>{lisboa1DiaTimeline.length} paradas</span>
+                <div className="mt-1 rounded bg-white px-2 py-0.5 text-[10px] font-bold shadow-md text-gray-900">Castelo</div>
+              </div>
+
+              <div className="absolute top-[60%] left-[65%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
+                  <span className="material-symbols-outlined text-gray-900 text-xl">restaurant</span>
                 </div>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                Explora los barrios históricos esenciales de Alfama y Baixa en una jornada inolvidable. Ruta perfecta para sentir la esencia de la ciudad.
-              </p>
-            </div>
+              <div className="absolute top-[25%] left-[70%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
+                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
+                  <span className="material-symbols-outlined text-gray-900 text-xl">photo_camera</span>
+                </div>
+              </div>
 
-            <hr className="border-gray-200 dark:border-gray-800 mb-6"/>
+              {/* Controles del mapa */}
+              <div className="absolute bottom-4 right-4 flex flex-col gap-2">
+                <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700 hover:scale-105 transition">
+                  <span className="material-symbols-outlined">layers</span>
+                </button>
+                <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700 hover:scale-105 transition">
+                  <span className="material-symbols-outlined">my_location</span>
+                </button>
+              </div>
 
-            {/* Timeline de paradas */}
-            <div className="flex flex-col gap-0">
-              <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">Itinerario</h3>
-
-              {lisboa1DiaTimeline.map((stop, idx) => (
-                <div key={idx} className="relative flex gap-4 pb-8 group">
-                  {/* Línea vertical */}
-                  {idx < lisboa1DiaTimeline.length - 1 && (
-                    <div className="absolute left-[19px] top-8 h-full w-0.5 bg-gray-200 dark:bg-gray-700"></div>
-                  )}
-
-                  {/* Número */}
-                  <div className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-sm ${
-                    idx === currentStop 
-                      ? 'bg-white dark:bg-slate-800 border-2 border-orange-500' 
-                      : 'bg-white dark:bg-slate-800 border-2 border-gray-300 dark:border-gray-600'
-                  }`}>
-                    <span className={`text-xs font-bold ${
-                      idx === currentStop 
-                        ? 'text-orange-500' 
-                        : 'text-gray-600 dark:text-gray-300'
-                    }`}>
-                      {idx + 1}
-                    </span>
+              {/* Info card en el mapa */}
+              <div className="absolute top-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-lg">schedule</span>
+                    <span>10-12h</span>
                   </div>
+                  <div className="h-3 w-px bg-gray-300 dark:bg-gray-700"></div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-lg">location_on</span>
+                    <span>{lisboa1DiaTimeline.length} paradas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                  {/* Contenido */}
-                  <div className="flex flex-1 flex-col gap-2">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-base font-bold text-gray-900 dark:text-white">{stop.title}</h4>
-                        <p className="text-xs font-medium text-gray-500">{stop.time} • {stop.type === 'food' ? 'Comida' : 'Visita'}</p>
+            {/* Timeline - Scrollable */}
+            <div className="bg-white dark:bg-slate-900 lg:pr-6">
+              <div className="p-4 sm:p-6 lg:p-8">
+                {/* Intro */}
+                <div className="mb-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-700 dark:text-orange-400 rounded-full text-xs font-bold mb-2">
+                        Popular
+                      </span>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Itinerario Completo</h2>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Explora los barrios históricos esenciales de Alfama y Baixa en una jornada inolvidable. Cada parada optimizada para que no pierdas tiempo.
+                  </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="space-y-0">
+                  {lisboa1DiaTimeline.map((stop, idx) => (
+                    <div key={idx} className="relative flex gap-4 sm:gap-6 pb-8 last:pb-0">
+                      {/* Línea vertical */}
+                      {idx < lisboa1DiaTimeline.length - 1 && (
+                        <div className="absolute left-[19px] sm:left-[23px] top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                      )}
+
+                      {/* Número */}
+                      <div className={`relative z-10 flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full shadow-lg ${
+                        idx === currentStop 
+                          ? 'bg-orange-500 border-4 border-orange-200 dark:border-orange-900' 
+                          : 'bg-white dark:bg-slate-800 border-2 border-gray-300 dark:border-gray-600'
+                      }`}>
+                        <span className={`text-sm sm:text-base font-bold ${
+                          idx === currentStop 
+                            ? 'text-white' 
+                            : 'text-gray-600 dark:text-gray-300'
+                        }`}>
+                          {idx + 1}
+                        </span>
+                      </div>
+
+                      {/* Contenido */}
+                      <div className="flex-1 space-y-3">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-sm font-bold text-orange-600 dark:text-orange-400">{stop.time}</span>
+                            <span className="text-xs text-gray-500">•</span>
+                            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                              stop.type === 'food' 
+                                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' 
+                                : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                            }`}>
+                              {stop.type === 'food' ? 'Comida' : 'Visita'}
+                            </span>
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{stop.title}</h3>
+                        </div>
+
+                        {stop.image && (
+                          <div className="relative h-48 sm:h-56 w-full overflow-hidden rounded-xl shadow-md">
+                            <Image
+                              src={stop.image}
+                              alt={stop.title}
+                              fill
+                              className="object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        )}
+
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                          {stop.description}
+                        </p>
+
+                        {stop.tip && (
+                          <div className="flex gap-3 items-start bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4 border border-orange-100 dark:border-orange-900/30">
+                            <span className="material-symbols-outlined text-orange-600 dark:text-orange-400 text-xl mt-0.5 shrink-0">lightbulb</span>
+                            <div className="text-sm text-orange-900 dark:text-orange-200 leading-relaxed">
+                              <strong className="font-bold block mb-1">Consejo del local:</strong>
+                              {stop.tip}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
-
-                    {stop.image && (
-                      <div className="relative h-32 w-full overflow-hidden rounded-xl bg-gray-100">
-                        <Image
-                          src={stop.image}
-                          alt={stop.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-
-                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {stop.description}
-                    </p>
-
-                    {stop.tip && (
-                      <div className="flex gap-2 items-start bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3 border border-orange-100 dark:border-orange-900/30">
-                        <span className="material-symbols-outlined text-orange-600 dark:text-orange-400 text-lg mt-0.5">lightbulb</span>
-                        <p className="text-xs text-orange-900 dark:text-orange-200 leading-relaxed flex-1">
-                          <strong className="font-bold">Tip:</strong> {stop.tip}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                  ))}
                 </div>
-              ))}
+
+                {/* CTA final */}
+                <div className="mt-12 p-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl text-white text-center">
+                  <span className="material-symbols-outlined text-5xl mb-4 block">celebration</span>
+                  <h3 className="text-2xl font-bold mb-2">¡Ruta Completada!</h3>
+                  <p className="text-orange-100 mb-6">Has descubierto lo esencial de Lisboa como un local</p>
+                  <Link 
+                    href="/itinerarios"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-orange-600 rounded-xl font-bold hover:scale-105 transition-transform"
+                  >
+                    Ver más itinerarios
+                    <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Botón fijo inferior */}
-        <div className="absolute bottom-0 left-0 right-0 z-30 border-t border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-slate-900/80 px-4 py-4 backdrop-blur-md">
-          <button className="flex w-full items-center justify-between rounded-xl bg-orange-500 px-2 py-2 text-white shadow-lg hover:bg-orange-600 active:scale-[0.98] transition-all">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black/10">
-              <span className="material-symbols-outlined text-2xl">navigation</span>
-            </div>
-            <span className="text-base font-bold">Comenzar Ruta</span>
-            <div className="flex items-center gap-1 pr-4 text-xs font-bold opacity-90">
-              <span>GPS ACTIVO</span>
+        {/* Botón flotante en mobile */}
+        <div className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
+          <button className="w-full flex items-center justify-between rounded-xl bg-orange-500 px-4 py-4 text-white shadow-2xl hover:bg-orange-600 active:scale-[0.98] transition-all">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black/10">
+                <span className="material-symbols-outlined text-2xl">navigation</span>
+              </div>
+              <span className="text-base font-bold">Comenzar Navegación GPS</span>
             </div>
           </button>
         </div>
