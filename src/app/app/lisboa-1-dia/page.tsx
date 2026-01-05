@@ -4,6 +4,19 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
+import { GoogleMapComponent } from '@/components/GoogleMap';
+
+// Coordenadas de las paradas del itinerario
+const mapMarkers = [
+  { position: { lat: 38.7115, lng: -9.1281 }, title: 'Alfama' },
+  { position: { lat: 38.7115, lng: -9.1328 }, title: 'Mirador Santa Luzia' },
+  { position: { lat: 38.7139, lng: -9.1334 }, title: 'Castelo de São Jorge' },
+  { position: { lat: 38.7077, lng: -9.1365 }, title: 'Tasca do Chico' },
+  { position: { lat: 38.6976, lng: -9.2064 }, title: 'Belém - Torre' },
+  { position: { lat: 38.6979, lng: -9.2031 }, title: 'Pastéis de Belém' },
+  { position: { lat: 38.7061, lng: -9.2026 }, title: 'LX Factory' },
+  { position: { lat: 38.7125, lng: -9.1450 }, title: 'Bairro Alto' },
+];
 
 export default function LisboaAppPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -42,41 +55,11 @@ export default function LisboaAppPage() {
           <div className="grid lg:grid-cols-2 gap-0 lg:gap-6">
             {/* Mapa - Fixed en desktop, scroll en mobile */}
             <div className="lg:sticky lg:top-20 h-[40vh] lg:h-[calc(100vh-6rem)] bg-gray-200 dark:bg-gray-800 relative">
-              <div className="absolute inset-0 bg-cover bg-center" style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200)'
-              }}>
-                <div className="absolute inset-0 bg-black/10 dark:bg-slate-900/60"></div>
-              </div>
-
-              {/* Marcadores en el mapa */}
-              <div className="absolute top-[40%] left-[30%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-                <div className="flex size-12 items-center justify-center rounded-full bg-orange-500 shadow-lg border-2 border-white">
-                  <span className="material-symbols-outlined text-white text-2xl">castle</span>
-                </div>
-                <div className="mt-1 rounded bg-white px-2 py-0.5 text-[10px] font-bold shadow-md text-gray-900">Castelo</div>
-              </div>
-
-              <div className="absolute top-[60%] left-[65%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
-                  <span className="material-symbols-outlined text-gray-900 text-xl">restaurant</span>
-                </div>
-              </div>
-
-              <div className="absolute top-[25%] left-[70%] flex flex-col items-center cursor-pointer transform hover:scale-110 transition-transform">
-                <div className="flex size-10 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
-                  <span className="material-symbols-outlined text-gray-900 text-xl">photo_camera</span>
-                </div>
-              </div>
-
-              {/* Controles del mapa */}
-              <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-                <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700 hover:scale-105 transition">
-                  <span className="material-symbols-outlined">layers</span>
-                </button>
-                <button className="flex size-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-lg border border-gray-100 dark:border-gray-700 hover:scale-105 transition">
-                  <span className="material-symbols-outlined">my_location</span>
-                </button>
-              </div>
+              <GoogleMapComponent 
+                markers={mapMarkers}
+                center={{ lat: 38.7115, lng: -9.1350 }}
+                zoom={13}
+              />
 
               {/* Info card en el mapa */}
               <div className="absolute top-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-200 dark:border-gray-700">
