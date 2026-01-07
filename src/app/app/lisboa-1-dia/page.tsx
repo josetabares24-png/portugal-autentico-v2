@@ -27,11 +27,11 @@ export default function Lisboa1DiaPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/itinerarios" className="flex items-center gap-2 text-gray-700 hover:text-orange-600">
-              <span className="material-icons">arrow_back</span>
+              <span className="material-symbols-outlined">arrow_back</span>
               <span className="font-semibold">Volver</span>
             </Link>
             <button onClick={() => setNavegacionActiva(true)} className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full flex items-center gap-2 shadow-lg">
-              <span className="material-icons">navigation</span>
+              <span className="material-symbols-outlined">navigation</span>
               <span className="hidden sm:inline">Comenzar Ruta</span>
             </button>
           </div>
@@ -42,9 +42,9 @@ export default function Lisboa1DiaPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white">
           <div className="flex items-center gap-2 mb-2">
-            <span className="material-icons">schedule</span>
+            <span className="material-symbols-outlined">schedule</span>
             <span className="text-lg">{ruta.duracion}</span>
-            <span className="material-icons ml-4">location_on</span>
+            <span className="material-symbols-outlined ml-4">location_on</span>
             <span className="text-lg">{ruta.paradas} paradas</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">{ruta.nombre}</h1>
@@ -78,7 +78,7 @@ export default function Lisboa1DiaPage() {
                   </div>
                   <div className="md:w-2/3 p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="material-icons text-orange-500">{parada.tipo === 'Comida' ? 'restaurant' : 'place'}</span>
+                      <span className="material-symbols-outlined text-orange-500">{parada.tipo === 'Comida' ? 'restaurant' : 'place'}</span>
                       <span className="text-sm font-semibold text-gray-500">{parada.hora} • {parada.duracion}</span>
                       {parada.precio && <span className="ml-auto text-sm font-bold text-orange-600">{parada.precio}</span>}
                     </div>
@@ -87,7 +87,7 @@ export default function Lisboa1DiaPage() {
                     {parada.consejoLocal && (
                       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-4">
                         <div className="flex items-start gap-2">
-                          <span className="material-icons text-yellow-600">lightbulb</span>
+                          <span className="material-symbols-outlined text-yellow-600">lightbulb</span>
                           <div>
                             <p className="font-semibold text-yellow-800 text-sm mb-1">Consejo del local</p>
                             <p className="text-sm text-yellow-700">{parada.consejoLocal}</p>
@@ -100,12 +100,12 @@ export default function Lisboa1DiaPage() {
               </div>
             ))}
             <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 text-center text-white">
-              <span className="material-icons text-6xl mb-4">celebration</span>
+              <span className="material-symbols-outlined text-6xl mb-4">celebration</span>
               <h3 className="text-3xl font-bold mb-2">¡Ruta Completada!</h3>
               <p className="text-green-100 mb-6">Has descubierto lo esencial de Lisboa como un local</p>
               <Link href="/itinerarios" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold py-3 px-6 rounded-full hover:bg-green-50 transition">
                 <span>Ver más itinerarios</span>
-                <span className="material-icons">arrow_forward</span>
+                <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function Lisboa1DiaPage() {
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
-                <span className="material-icons text-orange-600 text-4xl">account_balance_wallet</span>
+                <span className="material-symbols-outlined text-orange-600 text-4xl">account_balance_wallet</span>
                 Presupuesto Estimado
               </h2>
               <div className="space-y-4">
@@ -151,13 +151,13 @@ export default function Lisboa1DiaPage() {
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
-                <span className="material-icons text-yellow-500 text-4xl">lightbulb</span>
+                <span className="material-symbols-outlined text-yellow-500 text-4xl">lightbulb</span>
                 Consejos Importantes
               </h2>
               <ul className="space-y-4">
                 {ruta.consejos.map((consejo: string, index: number) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="material-icons text-orange-500 mt-1">check_circle</span>
+                    <span className="material-symbols-outlined text-orange-500 mt-1">check_circle</span>
                     <span className="text-gray-700">{consejo}</span>
                   </li>
                 ))}
