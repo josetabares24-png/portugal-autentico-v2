@@ -155,7 +155,7 @@ export default function Lisboa1DiaPage() {
                 Consejos Importantes
               </h2>
               <ul className="space-y-4">
-                {ruta.consejos.map((consejo, index) => (
+                {ruta.consejos.map((consejo: string, index: number) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="material-icons text-orange-500 mt-1">check_circle</span>
                     <span className="text-gray-700">{consejo}</span>
