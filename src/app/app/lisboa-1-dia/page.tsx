@@ -69,7 +69,7 @@ export default function Lisboa1DiaPage() {
       <main className="container mx-auto px-4 py-8">
         {seccionActiva === 'itinerario' && (
           <div className="max-w-4xl mx-auto space-y-6">
-            {ruta.paradas_data.map((parada) => (
+            {ruta.paradas_data.map((parada: any) => (
               <div key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
                 <div className="md:flex">
                   <div className="md:w-1/3 relative h-64 md:h-auto">
