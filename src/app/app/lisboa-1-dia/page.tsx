@@ -1,200 +1,173 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { lisboa1DiaTimeline } from '@/data/itineraries';
-import { GoogleMapComponent } from '@/components/GoogleMap';
+import { LISBOA_1_DIA } from '@/data/lisboa-1-dia';
+import RutaNavegacion from '@/components/RutaNavegacion';
 
-// Coordenadas de las paradas del itinerario
-const mapMarkers = [
-  { position: { lat: 38.7115, lng: -9.1281 }, title: 'Alfama' },
-  { position: { lat: 38.7115, lng: -9.1328 }, title: 'Mirador Santa Luzia' },
-  { position: { lat: 38.7139, lng: -9.1334 }, title: 'Castelo de São Jorge' },
-  { position: { lat: 38.7077, lng: -9.1365 }, title: 'Tasca do Chico' },
-  { position: { lat: 38.6976, lng: -9.2064 }, title: 'Belém - Torre' },
-  { position: { lat: 38.6979, lng: -9.2031 }, title: 'Pastéis de Belém' },
-  { position: { lat: 38.7061, lng: -9.2026 }, title: 'LX Factory' },
-  { position: { lat: 38.7125, lng: -9.1450 }, title: 'Bairro Alto' },
-];
+const MapaInteractivo = dynamic(() => import('@/components/MapaInteractivo'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[500px] bg-gray-100 rounded-lg flex items-center justify-center">
+      <p className="text-gray-500">Cargando mapa...</p>
+    </div>
+  ),
+});
 
-export default function LisboaAppPage() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [currentStop, setCurrentStop] = useState(0);
+export default function Lisboa1DiaPage() {
+  const [navegacionActiva, setNavegacionActiva] = useState(false);
+  const [seccionActiva, setSeccionActiva] = useState<'itinerario' | 'mapa' | 'info'>('itinerario');
+  const ruta = LISBOA_1_DIA;
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-        {/* Header */}
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between">
-              <Link href="/itinerarios" className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
-                <span className="material-symbols-outlined">arrow_back</span>
-                <span className="hidden sm:inline">Volver</span>
-              </Link>
-
-              <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Lisboa en 1 día</h1>
-
-              <div className="flex items-center gap-2">
-                <button 
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-                >
-                  <span className="material-symbols-outlined text-gray-600 dark:text-gray-300">
-                    {darkMode ? 'light_mode' : 'dark_mode'}
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Layout principal: Mapa a la izquierda, Timeline a la derecha */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-0 lg:gap-6">
-            {/* Mapa - Fixed en desktop, scroll en mobile */}
-            <div className="lg:sticky lg:top-20 h-[40vh] lg:h-[calc(100vh-6rem)] bg-gray-200 dark:bg-gray-800 relative">
-              <GoogleMapComponent 
-                markers={mapMarkers}
-                center={{ lat: 38.7115, lng: -9.1350 }}
-                zoom={13}
-              />
-
-              {/* Info card en el mapa */}
-              <div className="absolute top-4 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-xl p-4 shadow-xl border border-gray-200 dark:border-gray-700">
-                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                  <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-lg">schedule</span>
-                    <span>10-12h</span>
-                  </div>
-                  <div className="h-3 w-px bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-lg">location_on</span>
-                    <span>{lisboa1DiaTimeline.length} paradas</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Timeline - Scrollable */}
-            <div className="bg-white dark:bg-slate-900 lg:pr-6">
-              <div className="p-4 sm:p-6 lg:p-8">
-                {/* Intro */}
-                <div className="mb-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-700 dark:text-orange-400 rounded-full text-xs font-bold mb-2">
-                        Popular
-                      </span>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Itinerario Completo</h2>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Explora los barrios históricos esenciales de Alfama y Baixa en una jornada inolvidable. Cada parada optimizada para que no pierdas tiempo.
-                  </p>
-                </div>
-
-                {/* Timeline */}
-                <div className="space-y-0">
-                  {lisboa1DiaTimeline.map((stop, idx) => (
-                    <div key={idx} className="relative flex gap-4 sm:gap-6 pb-8 last:pb-0">
-                      {/* Línea vertical */}
-                      {idx < lisboa1DiaTimeline.length - 1 && (
-                        <div className="absolute left-[19px] sm:left-[23px] top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
-                      )}
-
-                      {/* Número */}
-                      <div className={`relative z-10 flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-full shadow-lg ${
-                        idx === currentStop 
-                          ? 'bg-orange-500 border-4 border-orange-200 dark:border-orange-900' 
-                          : 'bg-white dark:bg-slate-800 border-2 border-gray-300 dark:border-gray-600'
-                      }`}>
-                        <span className={`text-sm sm:text-base font-bold ${
-                          idx === currentStop 
-                            ? 'text-white' 
-                            : 'text-gray-600 dark:text-gray-300'
-                        }`}>
-                          {idx + 1}
-                        </span>
-                      </div>
-
-                      {/* Contenido */}
-                      <div className="flex-1 space-y-3">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-sm font-bold text-orange-600 dark:text-orange-400">{stop.time}</span>
-                            <span className="text-xs text-gray-500">•</span>
-                            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                              stop.type === 'food' 
-                                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' 
-                                : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
-                            }`}>
-                              {stop.type === 'food' ? 'Comida' : 'Visita'}
-                            </span>
-                          </div>
-                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{stop.title}</h3>
-                        </div>
-
-                        {stop.image && (
-                          <div className="relative h-48 sm:h-56 w-full overflow-hidden rounded-xl shadow-md">
-                            <Image
-                              src={stop.image}
-                              alt={stop.title}
-                              fill
-                              className="object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                        )}
-
-                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {stop.description}
-                        </p>
-
-                        {stop.tip && (
-                          <div className="flex gap-3 items-start bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4 border border-orange-100 dark:border-orange-900/30">
-                            <span className="material-symbols-outlined text-orange-600 dark:text-orange-400 text-xl mt-0.5 shrink-0">lightbulb</span>
-                            <div className="text-sm text-orange-900 dark:text-orange-200 leading-relaxed">
-                              <strong className="font-bold block mb-1">Consejo del local:</strong>
-                              {stop.tip}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA final */}
-                <div className="mt-12 p-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl text-white text-center">
-                  <span className="material-symbols-outlined text-5xl mb-4 block">celebration</span>
-                  <h3 className="text-2xl font-bold mb-2">¡Ruta Completada!</h3>
-                  <p className="text-orange-100 mb-6">Has descubierto lo esencial de Lisboa como un local</p>
-                  <Link 
-                    href="/itinerarios"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-orange-600 rounded-xl font-bold hover:scale-105 transition-transform"
-                  >
-                    Ver más itinerarios
-                    <span className="material-symbols-outlined">arrow_forward</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link href="/itinerarios" className="flex items-center gap-2 text-gray-700 hover:text-orange-600">
+              <span className="material-icons">arrow_back</span>
+              <span className="font-semibold">Volver</span>
+            </Link>
+            <button onClick={() => setNavegacionActiva(true)} className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full flex items-center gap-2 shadow-lg">
+              <span className="material-icons">navigation</span>
+              <span className="hidden sm:inline">Comenzar Ruta</span>
+            </button>
           </div>
         </div>
+      </header>
 
-        {/* Botón flotante en mobile */}
-        <div className="lg:hidden fixed bottom-4 left-4 right-4 z-50">
-          <button className="w-full flex items-center justify-between rounded-xl bg-orange-500 px-4 py-4 text-white shadow-2xl hover:bg-orange-600 active:scale-[0.98] transition-all">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black/10">
-                <span className="material-symbols-outlined text-2xl">navigation</span>
-              </div>
-              <span className="text-base font-bold">Comenzar Navegación GPS</span>
-            </div>
-          </button>
+      <section className="relative h-[40vh] min-h-[300px] bg-gradient-to-br from-orange-500 to-orange-600">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="material-icons">schedule</span>
+            <span className="text-lg">{ruta.duracion}</span>
+            <span className="material-icons ml-4">location_on</span>
+            <span className="text-lg">{ruta.paradas} paradas</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">{ruta.nombre}</h1>
+          <p className="text-xl max-w-2xl text-orange-100">{ruta.descripcion}</p>
+        </div>
+      </section>
+
+      <div className="sticky top-[73px] z-30 bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex gap-6">
+            {['itinerario', 'mapa', 'info'].map((tab) => (
+              <button key={tab} onClick={() => setSeccionActiva(tab as any)} className={`py-4 px-2 font-semibold border-b-2 transition ${seccionActiva === tab ? 'border-orange-600 text-orange-600' : 'border-transparent text-gray-600'}`}>
+                {tab === 'itinerario' && 'Itinerario'}
+                {tab === 'mapa' && 'Mapa'}
+                {tab === 'info' && 'Información'}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
+
+      <main className="container mx-auto px-4 py-8">
+        {seccionActiva === 'itinerario' && (
+          <div className="max-w-4xl mx-auto space-y-6">
+            {ruta.paradas_data.map((parada) => (
+              <div key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group">
+                <div className="md:flex">
+                  <div className="md:w-1/3 relative h-64 md:h-auto">
+                    <Image src={parada.imagenUrl} alt={parada.titulo} fill className="object-cover group-hover:scale-105 transition duration-500" />
+                    <div className="absolute top-4 left-4 bg-white text-orange-600 font-bold w-12 h-12 rounded-full flex items-center justify-center shadow-lg">{parada.id}</div>
+                  </div>
+                  <div className="md:w-2/3 p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="material-icons text-orange-500">{parada.tipo === 'Comida' ? 'restaurant' : 'place'}</span>
+                      <span className="text-sm font-semibold text-gray-500">{parada.hora} • {parada.duracion}</span>
+                      {parada.precio && <span className="ml-auto text-sm font-bold text-orange-600">{parada.precio}</span>}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900">{parada.titulo}</h3>
+                    <p className="text-gray-600 mb-4">{parada.descripcion}</p>
+                    {parada.consejoLocal && (
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-4">
+                        <div className="flex items-start gap-2">
+                          <span className="material-icons text-yellow-600">lightbulb</span>
+                          <div>
+                            <p className="font-semibold text-yellow-800 text-sm mb-1">Consejo del local</p>
+                            <p className="text-sm text-yellow-700">{parada.consejoLocal}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 text-center text-white">
+              <span className="material-icons text-6xl mb-4">celebration</span>
+              <h3 className="text-3xl font-bold mb-2">¡Ruta Completada!</h3>
+              <p className="text-green-100 mb-6">Has descubierto lo esencial de Lisboa como un local</p>
+              <Link href="/itinerarios" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold py-3 px-6 rounded-full hover:bg-green-50 transition">
+                <span>Ver más itinerarios</span>
+                <span className="material-icons">arrow_forward</span>
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {seccionActiva === 'mapa' && (
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Mapa Interactivo de la Ruta</h2>
+              <MapaInteractivo paradas={ruta.paradas_data} />
+              <div className="mt-6 grid md:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center gap-2"><div className="w-6 h-6 rounded-full bg-[#4ECDC4]" /><span className="text-gray-600">Visitas</span></div>
+                <div className="flex items-center gap-2"><div className="w-6 h-6 rounded-full bg-[#FF6B35]" /><span className="text-gray-600">Comidas</span></div>
+                <div className="flex items-center gap-2"><div className="w-6 h-6 rounded-full bg-[#95E1D3]" /><span className="text-gray-600">Transporte</span></div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {seccionActiva === 'info' && (
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <span className="material-icons text-orange-600 text-4xl">account_balance_wallet</span>
+                Presupuesto Estimado
+              </h2>
+              <div className="space-y-4">
+                {Object.entries(ruta.presupuesto).map(([key, value]) => {
+                  if (key === 'total') return null;
+                  const labels: Record<string, string> = {transporte: 'Transporte', comidas: 'Comidas', entradas: 'Entradas', extras: 'Extras'};
+                  return (
+                    <div key={key} className="flex justify-between items-center pb-4 border-b border-gray-200">
+                      <span className="text-gray-700 font-medium">{labels[key]}</span>
+                      <span className="text-xl font-bold text-gray-900">{value} EUR</span>
+                    </div>
+                  );
+                })}
+                <div className="flex justify-between items-center pt-2">
+                  <span className="text-xl font-bold text-gray-900">TOTAL</span>
+                  <span className="text-3xl font-bold text-orange-600">{ruta.presupuesto.total} EUR</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <span className="material-icons text-yellow-500 text-4xl">lightbulb</span>
+                Consejos Importantes
+              </h2>
+              <ul className="space-y-4">
+                {ruta.consejos.map((consejo, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="material-icons text-orange-500 mt-1">check_circle</span>
+                    <span className="text-gray-700">{consejo}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+      </main>
+
+      {navegacionActiva && <RutaNavegacion paradas={ruta.paradas_data} onClose={() => setNavegacionActiva(false)} />}
     </div>
   );
 }
