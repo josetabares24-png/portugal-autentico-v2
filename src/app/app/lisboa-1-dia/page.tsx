@@ -133,7 +133,7 @@ export default function Lisboa1DiaPage() {
                 Presupuesto Estimado
               </h2>
               <div className="space-y-4">
-                {Object.entries(ruta.presupuesto).map(([key, value]) => {
+                {Object.entries(ruta.presupuesto).map(([key, value]: [string, any]) => {
                   if (key === 'total') return null;
                   const labels: Record<string, string> = {transporte: 'Transporte', comidas: 'Comidas', entradas: 'Entradas', extras: 'Extras'};
                   return (
