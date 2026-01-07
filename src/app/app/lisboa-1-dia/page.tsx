@@ -22,9 +22,21 @@ export default function Lisboa1DiaPage() {
   const [seccionActiva, setSeccionActiva] = useState<'itinerario' | 'mapa' | 'info'>('itinerario');
   const ruta = LISBOA_1_DIA;
 
+  // Simulamos que el usuario NO ha comprado (cambiar a true para ver versión completa)
+  const hasUserPurchased = false;
+  
+  // Mostramos solo 3 paradas gratis
+  const paradasGratis = ruta.paradas_data.slice(0, 3);
+  const paradasBloqueadas = ruta.paradas_data.slice(3);
+
   const abrirGoogleMaps = (lat: number, lng: number, nombre: string) => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
     window.open(url, '_blank');
+  };
+
+  const handleComprar = () => {
+    // Aquí iría la integración con Stripe
+    alert('🚀 Aquí se abriría Stripe para pagar 5.99 EUR\n\nPor ahora es solo una demo visual.');
   };
 
   return (
@@ -45,9 +57,9 @@ export default function Lisboa1DiaPage() {
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-6">
             <span className="material-symbols-outlined text-yellow-300">verified</span>
-            <span className="font-semibold">Guia Premium Verificada 2025</span>
+            <span className="font-semibold">Guía Premium Verificada 2025</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">Lisboa en 1 Dia</h1>
+          <h1 className="text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">Lisboa en 1 Día</h1>
           <p className="text-xl md:text-2xl text-orange-100 max-w-2xl mb-8 font-light">{ruta.descripcion}</p>
           <div className="flex flex-wrap gap-6 text-sm">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
@@ -75,7 +87,7 @@ export default function Lisboa1DiaPage() {
             {[
               { key: 'itinerario', label: 'Itinerario', icon: 'route' },
               { key: 'mapa', label: 'Mapa', icon: 'map' },
-              { key: 'info', label: 'Informacion', icon: 'info' }
+              { key: 'info', label: 'Información', icon: 'info' }
             ].map((tab) => (
               <button key={tab.key} onClick={() => setSeccionActiva(tab.key as any)} className={`flex-1 py-4 px-4 font-bold border-b-4 transition flex items-center justify-center gap-2 ${seccionActiva === tab.key ? 'border-orange-600 text-orange-600 bg-orange-50' : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
                 <span className="material-symbols-outlined">{tab.icon}</span>
@@ -89,7 +101,8 @@ export default function Lisboa1DiaPage() {
       <main className="container mx-auto px-4 py-8">
         {seccionActiva === 'itinerario' && (
           <div className="max-w-5xl mx-auto space-y-8">
-            {ruta.paradas_data.map((parada: any) => (
+            {/* PARADAS GRATIS (1-3) */}
+            {paradasGratis.map((parada: any) => (
               <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="md:flex">
                   <div className="md:w-2/5 relative h-72 md:h-auto">
@@ -139,12 +152,123 @@ export default function Lisboa1DiaPage() {
               </article>
             ))}
 
+            {/* PAYWALL */}
+            {!hasUserPurchased && (
+              <div className="relative">
+                {/* Paradas bloqueadas con blur */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-10" style={{ backdropFilter: 'blur(8px)' }}></div>
+                  
+                  {paradasBloqueadas.slice(0, 2).map((parada: any) => (
+                    <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg mb-8 opacity-50 pointer-events-none">
+                      <div className="md:flex">
+                        <div className="md:w-2/5 relative h-72 md:h-auto">
+                          <Image src={parada.imagenUrl} alt={parada.titulo} fill className="object-cover" />
+                          <div className="absolute top-4 left-4 bg-gradient-to-br from-gray-400 to-gray-500 text-white font-black w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-2xl">{parada.id}</div>
+                        </div>
+                        <div className="md:w-3/5 p-6">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="p-2 rounded-lg bg-gray-100">
+                              <span className="material-symbols-outlined text-gray-400">lock</span>
+                            </div>
+                            <div>
+                              <div className="text-sm text-gray-400 font-semibold">{parada.tipo}</div>
+                              <div className="text-xs text-gray-300">{parada.hora} - {parada.duracion}</div>
+                            </div>
+                          </div>
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-400">{parada.titulo}</h2>
+                          <div className="h-24 bg-gray-100 rounded-lg mb-4"></div>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                {/* CTA PAYWALL */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center">
+                  <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-2xl mx-4 border-4 border-orange-500">
+                    <div className="text-center mb-6">
+                      <span className="material-symbols-outlined text-orange-600 text-7xl mb-4 inline-block">lock_open</span>
+                      <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Desbloquea 5 Paradas Más</h3>
+                      <p className="text-gray-600 text-lg">Descubre los secretos que solo los locales conocen</p>
+                    </div>
+
+                    <div className="bg-orange-50 rounded-2xl p-6 mb-6">
+                      <div className="grid md:grid-cols-2 gap-3">
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">Tasca do Chico - Almuerzo auténtico</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">Belém - Torre y Monasterio</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">Pastéis de Belém originales</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">LX Factory - Arte urbano</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">Bairro Alto - Vida nocturna</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0">check_circle</span>
+                          <span className="text-sm text-gray-700">Mapa interactivo completo</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button onClick={handleComprar} className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-black py-5 px-8 rounded-xl text-xl flex items-center justify-center gap-3 shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 mb-4">
+                      <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+                      <span>Ver Guía Completa - 5.99 EUR</span>
+                    </button>
+
+                    <div className="flex items-center justify-center gap-6 text-sm text-gray-500 mb-4">
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-green-600 text-lg">verified</span>
+                        <span>Pago seguro</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-blue-600 text-lg">flash_on</span>
+                        <span>Acceso inmediato</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-purple-600 text-lg">all_inclusive</span>
+                        <span>Tuyo para siempre</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                      <div className="flex items-start gap-2">
+                        <span className="material-symbols-outlined text-yellow-600 text-xl flex-shrink-0">star</span>
+                        <div>
+                          <p className="text-sm text-yellow-900 font-semibold">"La mejor guía que he usado. Los consejos locales me ahorraron horas de cola y encontré lugares increíbles."</p>
+                          <p className="text-xs text-yellow-700 mt-1">- María, Madrid · Verificado ⭐⭐⭐⭐⭐</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Si ya compró, mostrar resto de paradas */}
+            {hasUserPurchased && paradasBloqueadas.map((parada: any) => (
+              <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                {/* Mismo diseño que paradas gratis */}
+              </article>
+            ))}
+
             <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl">
               <span className="material-symbols-outlined text-7xl mb-4 inline-block animate-bounce">celebration</span>
-              <h3 className="text-4xl font-black mb-3">Ruta Completada!</h3>
+              <h3 className="text-4xl font-black mb-3">¡Ruta Completada!</h3>
               <p className="text-green-100 text-lg mb-8 max-w-md mx-auto">Has descubierto lo esencial de Lisboa como un verdadero local</p>
               <Link href="/itinerarios" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold py-4 px-8 rounded-xl hover:bg-green-50 transition shadow-xl">
-                <span>Explorar mas itinerarios</span>
+                <span>Explorar más itinerarios</span>
                 <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </div>
@@ -155,7 +279,7 @@ export default function Lisboa1DiaPage() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mapa Interactivo de la Ruta</h2>
-              <MapaInteractivo paradas={ruta.paradas_data} />
+              <MapaInteractivo paradas={hasUserPurchased ? ruta.paradas_data : paradasGratis} />
               <div className="mt-6 grid grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center gap-2 bg-blue-50 p-3 rounded-lg">
                   <div className="w-6 h-6 rounded-full bg-[#4ECDC4] flex-shrink-0"></div>
@@ -170,6 +294,15 @@ export default function Lisboa1DiaPage() {
                   <span className="text-gray-700 font-semibold">Transporte</span>
                 </div>
               </div>
+              
+              {!hasUserPurchased && (
+                <div className="mt-6 bg-orange-50 border-2 border-orange-200 rounded-xl p-6 text-center">
+                  <p className="text-orange-900 font-semibold mb-3">🔒 Desbloquea el mapa completo con las 8 paradas</p>
+                  <button onClick={handleComprar} className="bg-orange-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-700 transition">
+                    Ver Guía Completa - 5.99 EUR
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -205,17 +338,36 @@ export default function Lisboa1DiaPage() {
                 <span>Consejos Importantes</span>
               </h2>
               <ul className="space-y-4">
-                {ruta.consejos.map((consejo: string, index: number) => (
+                {ruta.consejos.slice(0, hasUserPurchased ? ruta.consejos.length : 3).map((consejo: string, index: number) => (
                   <li key={index} className="flex items-start gap-3 bg-yellow-50 p-4 rounded-xl">
                     <span className="material-symbols-outlined text-orange-500 mt-1 flex-shrink-0">check_circle</span>
                     <span className="text-gray-700 leading-relaxed">{consejo}</span>
                   </li>
                 ))}
               </ul>
+              
+              {!hasUserPurchased && (
+                <div className="mt-6 bg-orange-50 border-2 border-orange-200 rounded-xl p-6 text-center">
+                  <p className="text-orange-900 font-semibold mb-3">🔒 Desbloquea {ruta.consejos.length - 3} consejos más de locales</p>
+                  <button onClick={handleComprar} className="bg-orange-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-700 transition">
+                    Ver Guía Completa - 5.99 EUR
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
       </main>
+
+      {/* STICKY CTA MOBILE */}
+      {!hasUserPurchased && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-orange-500 shadow-2xl p-4 z-50">
+          <button onClick={handleComprar} className="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg">
+            <span className="material-symbols-outlined">lock_open</span>
+            <span>Desbloquear - 5.99 EUR</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
