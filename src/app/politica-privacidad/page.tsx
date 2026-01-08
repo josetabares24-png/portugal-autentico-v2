@@ -9,13 +9,12 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Privacidad
 
-**Última actualización:** 1 de enero de 2026
+**Última actualización:** 8 de enero de 2026
 
 ## 1. Responsable del Tratamiento
 
-- **Nombre:** Jose Manuel Tabares Vergara
-- **NIF:** 319862160
-- **Dirección:** Rua Almada Negreiros, Lote J, 1800-014 Lisboa, Portugal
+- **Nombre:** José Tabares
+- **Dirección:** Lisboa, Portugal
 - **Email:** contacto@estabaenlisboa.com
 
 ## 2. Datos que Recopilamos
@@ -94,7 +93,7 @@ Para ejercer estos derechos, contacta: **contacto@estabaenlisboa.com**
 
 Si consideras que tus derechos no han sido atendidos, puedes presentar una reclamación ante:
 
-**CNPD - Comissão Nacional de Proteção de Dados**  
+**CNPD - Comissão Nacional de Proteção de Dados**
 https://www.cnpd.pt
 
 ## 10. Seguridad

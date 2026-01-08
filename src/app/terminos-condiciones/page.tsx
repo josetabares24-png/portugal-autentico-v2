@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Términos y Condiciones de Compra
 
-**Última actualización:** 1 de enero de 2026
+**Última actualización:** 8 de enero de 2026
 
 ## 1. Partes Contratantes
 
 Estas condiciones regulan la compra de productos digitales entre:
 
-- **Vendedor:** Jose Manuel Tabares Vergara, NIF 319862160, Rua Almada Negreiros, Lote J, 1800-014 Lisboa, Portugal
+- **Vendedor:** José Tabares, con sede en Lisboa, Portugal
 - **Comprador:** La persona que realiza la compra en https://estabaenlisboa.com
 
 ## 2. Objeto del Contrato
@@ -44,7 +44,7 @@ El vendedor ofrece **guías turísticas digitales en formato PDF** sobre Lisboa 
 ## 4. Precios
 
 - Todos los precios incluyen **IVA al 23%** (tipo aplicable a productos digitales en Portugal)
-- Los precios pueden cambiar sin previo aviso, pero se respeta el precio vigente al momento de la compra        
+- Los precios pueden cambiar sin previo aviso, pero se respeta el precio vigente al momento de la compra
 - No hay costes de envío (producto digital)
 
 ## 5. Métodos de Pago

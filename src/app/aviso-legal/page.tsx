@@ -9,15 +9,14 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Aviso Legal
 
-**Última actualización:** 1 de enero de 2026
+**Última actualización:** 8 de enero de 2026
 
 ## 1. Datos del Responsable
 
 De conformidad con lo dispuesto en la legislación portuguesa y europea aplicable, se informa de los siguientes datos del responsable de este sitio web:
 
-- **Nombre/Razón Social:** Jose Manuel Tabares Vergara
-- **NIF:** 319862160
-- **Dirección:** Rua Almada Negreiros, Lote J, 1800-014 Lisboa, Portugal
+- **Nombre:** José Tabares
+- **Dirección:** Lisboa, Portugal
 - **Email de contacto:** contacto@estabaenlisboa.com
 - **Sitio web:** https://estabaenlisboa.com
 
@@ -37,7 +36,7 @@ El acceso y uso de este sitio web implica la aceptación expresa de estas condic
 
 ## 4. Propiedad Intelectual
 
-Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías PDF) son propiedad de Jose Manuel Tabares Vergara o se utilizan con la debida autorización.
+Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías PDF) son propiedad de José Tabares o se utilizan con la debida autorización.
 
 Queda prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin autorización expresa del titular.
 
@@ -63,7 +62,7 @@ En caso de controversia, el consumidor puede acudir a esta plataforma.
 
 La autoridad de protección de datos competente es:
 
-**CNPD - Comissão Nacional de Proteção de Dados**  
+**CNPD - Comissão Nacional de Proteção de Dados**
 https://www.cnpd.pt
 
 ## 8. Legislación Aplicable
