@@ -1,11 +1,7 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Guías de Lisboa Creadas por Locales | Estaba en Lisboa',
-  description: 'Descubre Lisboa con guías digitales auténticas desde 3.99€. Itinerarios verificados, restaurantes locales y spots secretos.',
-};
 
 export default function HomePage() {
   return (

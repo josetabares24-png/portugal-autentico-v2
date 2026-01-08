@@ -1,11 +1,7 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Pack Completo: 8 Guías de Lisboa por 24.99€ (Ahorra 60%) | Estaba en Lisboa',
-  description: 'Lleva todas las guías de Lisboa en un solo pack. 8 guías digitales + bonus + actualizaciones de por vida. Ahorra 37.91€.',
-};
 
 export default function PackCompletoPage() {
   return (
