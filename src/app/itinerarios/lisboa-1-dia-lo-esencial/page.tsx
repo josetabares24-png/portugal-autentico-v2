@@ -10,34 +10,56 @@ export const metadata = {
 };
 
 export default function Lisboa1DiaPage() {
+  const previewStops = 3; // Número de paradas visibles en preview
+
   return (
     <main className="min-h-screen bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920")'}}>
+      {/* Hero Section - ESTILO UNIFICADO CON HOMEPAGE */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
+            alt="Lisboa - Itinerario 1 día"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center">
-          <Link href="/itinerarios" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 text-sm transition-colors">
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Back Link */}
+          <Link 
+            href="/itinerarios" 
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
+          >
             <span className="material-symbols-outlined text-lg">arrow_back</span>
             Volver a itinerarios
           </Link>
-          
-          <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-white/30">
-            <span className="material-symbols-outlined text-base">schedule</span>
-            GUÍA DE VIAJE 2025
-          </span>
-          
-          <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 text-white drop-shadow-lg">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
+            <span className="material-symbols-outlined text-yellow-400">verified</span>
+            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2025</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
             Lisboa en 1 día:<br />
-            <span className="text-amber-300">Lo Esencial</span>
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+              Lo Esencial
+            </span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-2xl mx-auto mb-10 drop-shadow-md">
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
             Descubre el alma de la ciudad: desde los miradores de Alfama hasta los pasteles de Belém en una experiencia auténtica y optimizada.
           </p>
-          
-          <div className="flex flex-wrap gap-3 justify-center">
+
+          {/* Stats Pills */}
+          <div className="flex flex-wrap gap-3 justify-center mb-16">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
               <span className="material-symbols-outlined text-white text-sm">location_on</span>
               <span className="text-white text-sm font-medium">8 paradas</span>
@@ -55,6 +77,27 @@ export default function Lisboa1DiaPage() {
               <span className="text-white text-sm font-medium">Mapa offline</span>
             </div>
           </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span>Descarga inmediata</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-yellow-400">verified</span>
+              <span>Creado por locales</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
+              <span>Garantía 48h</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
@@ -64,7 +107,7 @@ export default function Lisboa1DiaPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
               <div>
-                <span className="text-3xl font-bold text-primary">5.99 EUR</span>
+                <span className="text-3xl font-bold text-primary">5.99€</span>
               </div>
               <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
                 <span className="material-symbols-outlined text-lg">check_circle</span>
@@ -74,13 +117,14 @@ export default function Lisboa1DiaPage() {
             <div className="flex gap-3">
               <a 
                 href="#preview" 
-                className="px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 hover:border-primary hover:text-primary transition-all"
+                className="px-6 py-3 rounded-2xl font-semibold border-2 border-slate-300 hover:border-primary hover:text-primary transition-all"
               >
                 Ver preview
               </a>
-              <button className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white bg-primary hover:bg-primary-dark transition-all hover:scale-105 shadow-lg">
+              <button className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105">
                 <span className="material-symbols-outlined">shopping_cart</span>
                 Comprar ahora
+                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
             </div>
           </div>
@@ -129,18 +173,18 @@ export default function Lisboa1DiaPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
+      {/* Timeline Section con PREVIEW + PAYWALL */}
+      <section className="py-20 bg-white bg-azulejo-pattern" id="preview">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wide mb-3">
-              Itinerario completo
+              Vista previa del itinerario
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
               Tu Cronograma Paso a Paso
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              Cada parada está pensada para que aproveches tu tiempo al máximo sin sentirte apurado
+              Mostrando las primeras {previewStops} paradas. Compra la guía completa para ver todas las {lisboa1DiaTimeline.length} paradas con detalles.
             </p>
           </div>
 
@@ -148,9 +192,78 @@ export default function Lisboa1DiaPage() {
             {/* Vertical Line */}
             <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20 md:-translate-x-1/2"></div>
             
-            {lisboa1DiaTimeline.map((stop, idx) => (
+            {/* PARADAS VISIBLES (Preview) */}
+            {lisboa1DiaTimeline.slice(0, previewStops).map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
             ))}
+
+            {/* PARADAS BLOQUEADAS (Paywall) */}
+            <div className="relative mt-12">
+              {/* Contenido con blur */}
+              <div className="blur-sm pointer-events-none select-none opacity-40">
+                {lisboa1DiaTimeline.slice(previewStops).map((stop, idx) => (
+                  <TimelineStop key={idx + previewStops} {...stop} index={idx + previewStops} />
+                ))}
+              </div>
+
+              {/* Overlay de Paywall */}
+              <div className="absolute inset-0 flex items-center justify-center py-20">
+                <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-primary/20 max-w-xl mx-4 text-center">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <span className="material-symbols-outlined text-primary text-5xl">lock</span>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-black text-text-main mb-4">
+                    Desbloquea el Itinerario Completo
+                  </h3>
+                  
+                  <p className="text-lg text-text-secondary mb-6">
+                    Accede a las {lisboa1DiaTimeline.length - previewStops} paradas restantes con:
+                  </p>
+
+                  <ul className="text-left space-y-3 mb-8">
+                    <li className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                      <span className="text-text-secondary">Direcciones exactas y horarios optimizados</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                      <span className="text-text-secondary">Restaurantes recomendados por locales</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                      <span className="text-text-secondary">Spots secretos de fotos instagrameables</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                      <span className="text-text-secondary">Mapa offline descargable</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
+                      <span className="text-text-secondary">Tips y trucos de locales</span>
+                    </li>
+                  </ul>
+
+                  <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 rounded-2xl p-6 mb-8">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <span className="text-4xl font-black text-primary">5.99€</span>
+                      <span className="text-text-secondary line-through text-xl">12.99€</span>
+                    </div>
+                    <p className="text-sm text-primary font-bold">🔥 Oferta de lanzamiento - 54% de descuento</p>
+                  </div>
+
+                  <button className="group w-full flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all mb-4">
+                    <span className="material-symbols-outlined text-2xl">shopping_cart</span>
+                    Comprar Guía Completa
+                    <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </button>
+
+                  <p className="text-sm text-text-secondary">
+                    ✅ Descarga inmediata · ✅ Garantía 48h · ✅ Acceso de por vida
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -234,29 +347,31 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-azulejo-pattern opacity-10"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-6xl mb-6 inline-block text-white/90">travel_explore</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
+      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
+        <div className="relative max-w-5xl mx-auto px-4 text-center">
+          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">travel_explore</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Listo para explorar Lisboa?
           </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
             Descarga inmediata. Acceso de por vida. Garantía de reembolso de 14 días.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-white text-primary font-bold shadow-lg transition-all hover:scale-105">
-              <span className="material-symbols-outlined">download</span>
-              Comprar por 5.99 EUR
+            <button className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all">
+              <span className="material-symbols-outlined text-2xl">download</span>
+              Comprar por 5.99€
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </button>
             <a 
               href="/contacto" 
-              className="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-transparent border-2 border-white/20 hover:bg-white/10 text-white font-bold transition-all"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
             >
-              <span className="material-symbols-outlined">chat</span>
+              <span className="material-symbols-outlined text-2xl">chat</span>
               Tengo dudas
             </a>
           </div>
+          <p className="text-white/80 text-sm mt-6">✅ Sin spam · ✅ Descarga inmediata · ✅ 100% gratis</p>
         </div>
       </section>
     </main>
