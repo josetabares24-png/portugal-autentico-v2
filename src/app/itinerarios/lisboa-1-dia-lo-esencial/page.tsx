@@ -1,22 +1,67 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { TimelineStop } from '@/components/itinerarios/TimelineStop';
-import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
-import { lisboa1DiaTimeline } from '@/data/itineraries';
+'use client';
 
-export const metadata = {
-  title: 'Lisboa en 1 Día: Lo Esencial | Estaba en Lisboa',
-  description: 'Lo mejor de Lisboa en un día perfectamente organizado. Alfama, Belém, miradores y los mejores restaurantes locales.',
-};
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
+import { LISBOA_1_DIA } from '@/data/lisboa-1-dia';
+
+const MapaInteractivo = dynamic(() => import('@/components/MapaInteractivo'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[600px] bg-gray-100 rounded-xl flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+        <p className="text-gray-500">Cargando mapa interactivo...</p>
+      </div>
+    </div>
+  ),
+});
 
 export default function Lisboa1DiaPage() {
-  const previewStops = 3; // Número de paradas visibles en preview
+  const [seccionActiva, setSeccionActiva] = useState<'itinerario' | 'mapa' | 'info'>('itinerario');
+  const ruta = LISBOA_1_DIA;
+
+  // Simulamos que el usuario NO ha comprado (cambiar a true para ver versión completa)
+  const hasUserPurchased = false;
+  
+  // Mostramos solo 3 paradas gratis
+  const paradasGratis = ruta.paradas_data.slice(0, 3);
+  const paradasBloqueadas = ruta.paradas_data.slice(3);
+
+  const abrirGoogleMaps = (lat: number, lng: number, nombre: string) => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
+    window.open(url, '_blank');
+  };
+
+  const handleComprar = () => {
+    // Aquí iría la integración con Stripe
+    alert('🚀 Aquí se abriría Stripe para pagar 5.99 EUR\n\nPor ahora es solo una demo visual.');
+  };
 
   return (
-    <main className="min-h-screen bg-background-light">
-      {/* Hero Section - ESTILO UNIFICADO CON HOMEPAGE */}
+    <div className="min-h-screen bg-gray-50">
+      {/* Header Mejorado */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <Link href="/itinerarios" className="inline-flex items-center gap-2 text-gray-700 hover:text-orange-600 transition-colors font-semibold">
+              <span className="material-symbols-outlined text-lg">arrow_back</span>
+              <span>Volver a itinerarios</span>
+            </Link>
+            <div className="flex items-center gap-4">
+              <div className="text-right hidden sm:block">
+                <div className="text-2xl font-bold text-orange-600">5.99€</div>
+                <div className="text-xs text-gray-500">Guía completa</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* HERO SECTION - ESTILO HOMEPAGE UNIFICADO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+        {/* Background con gradiente mejorado */}
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
@@ -30,22 +75,13 @@ export default function Lisboa1DiaPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
-          {/* Back Link */}
-          <Link 
-            href="/itinerarios" 
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
-          >
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
-            Volver a itinerarios
-          </Link>
-
-          {/* Badge */}
+          {/* Badge Verificado */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">verified</span>
             <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2025</span>
           </div>
 
-          {/* Main Heading */}
+          {/* Título Principal con Gradiente */}
           <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
             Lisboa en 1 día:<br />
             <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
@@ -53,24 +89,24 @@ export default function Lisboa1DiaPage() {
             </span>
           </h1>
 
-          {/* Subheading */}
+          {/* Descripción */}
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
-            Descubre el alma de la ciudad: desde los miradores de Alfama hasta los pasteles de Belém en una experiencia auténtica y optimizada.
+            {ruta.descripcion}
           </p>
 
           {/* Stats Pills */}
           <div className="flex flex-wrap gap-3 justify-center mb-16">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">schedule</span>
+              <span className="text-white text-sm font-medium">{ruta.duracion}</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
               <span className="material-symbols-outlined text-white text-sm">location_on</span>
-              <span className="text-white text-sm font-medium">8 paradas</span>
+              <span className="text-white text-sm font-medium">{ruta.paradas} paradas</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">restaurant</span>
-              <span className="text-white text-sm font-medium">3 restaurantes</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">photo_camera</span>
-              <span className="text-white text-sm font-medium">8 spots de fotos</span>
+              <span className="material-symbols-outlined text-white text-sm">payments</span>
+              <span className="text-white text-sm font-medium">{ruta.presupuesto.total} EUR presupuesto</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
               <span className="material-symbols-outlined text-white text-sm">map</span>
@@ -101,279 +137,421 @@ export default function Lisboa1DiaPage() {
         </div>
       </section>
 
-      {/* Sticky CTA Bar */}
-      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
-        <div className="max-w-5xl mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div>
-                <span className="text-3xl font-bold text-primary">5.99€</span>
-              </div>
-              <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
-                <span className="material-symbols-outlined text-lg">check_circle</span>
-                Descarga inmediata
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <a 
-                href="#preview" 
-                className="px-6 py-3 rounded-2xl font-semibold border-2 border-slate-300 hover:border-primary hover:text-primary transition-all"
+      {/* Tabs Navigation */}
+      <div className="sticky top-[61px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex gap-0">
+            {[
+              { key: 'itinerario', label: 'Itinerario', icon: 'route' },
+              { key: 'mapa', label: 'Mapa', icon: 'map' },
+              { key: 'info', label: 'Información', icon: 'info' }
+            ].map((tab) => (
+              <button 
+                key={tab.key} 
+                onClick={() => setSeccionActiva(tab.key as any)} 
+                className={`flex-1 py-4 px-4 font-bold border-b-4 transition flex items-center justify-center gap-2 ${
+                  seccionActiva === tab.key 
+                    ? 'border-orange-600 text-orange-600 bg-orange-50' 
+                    : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
               >
-                Ver preview
-              </a>
-              <button className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105">
-                <span className="material-symbols-outlined">shopping_cart</span>
-                Comprar ahora
-                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <span className="material-symbols-outlined">{tab.icon}</span>
+                <span className="hidden sm:inline">{tab.label}</span>
               </button>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Quick Summary */}
-      <section className="py-16 bg-background-cream">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">Resumen del Viaje</h2>
-            <p className="text-text-secondary text-lg max-w-xl mx-auto">Todo lo que necesitas saber antes de empezar tu aventura por las 7 colinas.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">schedule</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Duración</h3>
-                <p className="text-text-secondary">10-12 horas de exploración tranquila</p>
-              </div>
+      <main className="container mx-auto px-4 py-8">
+        {seccionActiva === 'itinerario' && (
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Encabezado de Preview */}
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+                Vista Previa Gratuita
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Descubre las Primeras 3 Paradas
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Mostrando {paradasGratis.length} de {ruta.paradas_data.length} paradas. Desbloquea la guía completa para ver todos los detalles, restaurantes y consejos de locales.
+              </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">directions_transit</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Transporte</h3>
-                <p className="text-text-secondary">Caminando y el mítico Tranvía 28</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">payments</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Presupuesto</h3>
-                <p className="text-text-secondary">€€ - Accesible con opciones gourmet</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section con PREVIEW + PAYWALL */}
-      <section className="py-20 bg-white bg-azulejo-pattern" id="preview">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wide mb-3">
-              Vista previa del itinerario
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
-              Tu Cronograma Paso a Paso
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Mostrando las primeras {previewStops} paradas. Compra la guía completa para ver todas las {lisboa1DiaTimeline.length} paradas con detalles.
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20 md:-translate-x-1/2"></div>
-            
-            {/* PARADAS VISIBLES (Preview) */}
-            {lisboa1DiaTimeline.slice(0, previewStops).map((stop, idx) => (
-              <TimelineStop key={idx} {...stop} index={idx} />
+            {/* PARADAS GRATIS (1-3) */}
+            {paradasGratis.map((parada: any) => (
+              <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="md:flex">
+                  <div className="md:w-2/5 relative h-72 md:h-auto">
+                    <Image src={parada.imagenUrl} alt={parada.titulo} fill className="object-cover" />
+                    <div className="absolute top-4 left-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white font-black w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-2xl">
+                      {parada.id}
+                    </div>
+                    {parada.precio && (
+                      <div className="absolute top-4 right-4 bg-green-500 text-white font-bold px-4 py-2 rounded-full shadow-lg">
+                        {parada.precio}
+                      </div>
+                    )}
+                  </div>
+                  <div className="md:w-3/5 p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`p-2 rounded-lg ${
+                        parada.tipo === 'Comida' ? 'bg-orange-100' : 
+                        parada.tipo === 'Visita' ? 'bg-blue-100' : 
+                        'bg-green-100'
+                      }`}>
+                        <span className={`material-symbols-outlined ${
+                          parada.tipo === 'Comida' ? 'text-orange-600' : 
+                          parada.tipo === 'Visita' ? 'text-blue-600' : 
+                          'text-green-600'
+                        }`}>
+                          {parada.tipo === 'Comida' ? 'restaurant' : parada.tipo === 'Visita' ? 'place' : 'directions'}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 font-semibold">{parada.tipo}</div>
+                        <div className="text-xs text-gray-400">{parada.hora} - {parada.duracion}</div>
+                      </div>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{parada.titulo}</h2>
+                    <div className="prose prose-sm max-w-none mb-4">
+                      <p className="text-gray-700 leading-relaxed">{parada.descripcion}</p>
+                    </div>
+                    {parada.horario && (
+                      <div className="flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-lg mb-3">
+                        <span className="material-symbols-outlined text-sm">schedule</span>
+                        <span><strong>Horario:</strong> {parada.horario}</span>
+                      </div>
+                    )}
+                    {parada.consejoLocal && (
+                      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-4 rounded-r-xl mb-4">
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-yellow-600 flex-shrink-0 mt-1">lightbulb</span>
+                          <div>
+                            <p className="font-bold text-yellow-900 text-sm mb-2">Consejos de Local</p>
+                            <p className="text-sm text-yellow-800 leading-relaxed whitespace-pre-line">{parada.consejoLocal}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    <button 
+                      onClick={() => abrirGoogleMaps(parada.coordenadas.lat, parada.coordenadas.lng, parada.titulo)} 
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition"
+                    >
+                      <span className="material-symbols-outlined">map</span>
+                      <span>Ver Ruta en Google Maps</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
             ))}
 
-            {/* PARADAS BLOQUEADAS (Paywall) */}
-            <div className="relative mt-12">
-              {/* Contenido con blur */}
-              <div className="blur-sm pointer-events-none select-none opacity-40">
-                {lisboa1DiaTimeline.slice(previewStops).map((stop, idx) => (
-                  <TimelineStop key={idx + previewStops} {...stop} index={idx + previewStops} />
-                ))}
-              </div>
-
-              {/* Overlay de Paywall */}
-              <div className="absolute inset-0 flex items-center justify-center py-20">
-                <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-primary/20 max-w-xl mx-4 text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <span className="material-symbols-outlined text-primary text-5xl">lock</span>
-                  </div>
+            {/* PAYWALL MEJORADO */}
+            {!hasUserPurchased && (
+              <div className="relative mt-16">
+                {/* Paradas bloqueadas con blur */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white z-10 pointer-events-none" style={{ backdropFilter: 'blur(10px)' }}></div>
                   
-                  <h3 className="text-3xl md:text-4xl font-black text-text-main mb-4">
-                    Desbloquea el Itinerario Completo
-                  </h3>
-                  
-                  <p className="text-lg text-text-secondary mb-6">
-                    Accede a las {lisboa1DiaTimeline.length - previewStops} paradas restantes con:
-                  </p>
+                  {paradasBloqueadas.slice(0, 2).map((parada: any) => (
+                    <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg mb-8 opacity-40 pointer-events-none select-none">
+                      <div className="md:flex">
+                        <div className="md:w-2/5 relative h-72 md:h-auto">
+                          <Image src={parada.imagenUrl} alt={parada.titulo} fill className="object-cover" />
+                          <div className="absolute top-4 left-4 bg-gradient-to-br from-gray-400 to-gray-500 text-white font-black w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-2xl">
+                            {parada.id}
+                          </div>
+                        </div>
+                        <div className="md:w-3/5 p-6">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="p-2 rounded-lg bg-gray-100">
+                              <span className="material-symbols-outlined text-gray-400">lock</span>
+                            </div>
+                            <div>
+                              <div className="text-sm text-gray-400 font-semibold">{parada.tipo}</div>
+                              <div className="text-xs text-gray-300">{parada.hora} - {parada.duracion}</div>
+                            </div>
+                          </div>
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-400">{parada.titulo}</h2>
+                          <div className="h-24 bg-gray-100 rounded-lg mb-4"></div>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
 
-                  <ul className="text-left space-y-3 mb-8">
-                    <li className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
-                      <span className="text-text-secondary">Direcciones exactas y horarios optimizados</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
-                      <span className="text-text-secondary">Restaurantes recomendados por locales</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
-                      <span className="text-text-secondary">Spots secretos de fotos instagrameables</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
-                      <span className="text-text-secondary">Mapa offline descargable</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-primary mt-1">check_circle</span>
-                      <span className="text-text-secondary">Tips y trucos de locales</span>
-                    </li>
-                  </ul>
-
-                  <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 rounded-2xl p-6 mb-8">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-4xl font-black text-primary">5.99€</span>
-                      <span className="text-text-secondary line-through text-xl">12.99€</span>
+                {/* CTA PAYWALL - DISEÑO MEJORADO */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center px-4 py-20">
+                  <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-2xl w-full border-4 border-orange-500/20">
+                    <div className="text-center mb-8">
+                      <div className="w-20 h-20 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-6">
+                        <span className="material-symbols-outlined text-orange-600 text-5xl">lock_open</span>
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+                        Desbloquea el Itinerario Completo
+                      </h3>
+                      <p className="text-lg text-gray-600 mb-2">
+                        Accede a las {paradasBloqueadas.length} paradas restantes con:
+                      </p>
                     </div>
-                    <p className="text-sm text-primary font-bold">🔥 Oferta de lanzamiento - 54% de descuento</p>
+
+                    {/* Lista de beneficios */}
+                    <div className="bg-orange-50 rounded-2xl p-6 mb-8">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">Tasca do Chico</p>
+                            <p className="text-xs text-gray-600">Almuerzo auténtico lisboeta</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">Belém Completo</p>
+                            <p className="text-xs text-gray-600">Torre y Monasterio</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">Pastéis de Belém</p>
+                            <p className="text-xs text-gray-600">Los originales desde 1837</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">LX Factory</p>
+                            <p className="text-xs text-gray-600">Arte urbano y cultura</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">Bairro Alto</p>
+                            <p className="text-xs text-gray-600">Vida nocturna local</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <span className="material-symbols-outlined text-orange-600 flex-shrink-0 mt-0.5">check_circle</span>
+                          <div>
+                            <p className="font-bold text-gray-900 text-sm">Mapa Offline</p>
+                            <p className="text-xs text-gray-600">Navegación sin internet</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Precio destacado */}
+                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 rounded-2xl p-6 mb-6 text-center">
+                      <div className="flex items-center justify-center gap-3 mb-2">
+                        <span className="text-4xl font-black text-orange-600">5.99€</span>
+                        <span className="text-gray-500 line-through text-xl">12.99€</span>
+                      </div>
+                      <p className="text-sm font-bold text-orange-700">🔥 Oferta de lanzamiento - 54% de descuento</p>
+                    </div>
+
+                    {/* Botón CTA */}
+                    <button 
+                      onClick={handleComprar} 
+                      className="group w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-black py-5 px-8 rounded-2xl text-xl flex items-center justify-center gap-3 shadow-2xl hover:scale-105 transition-all mb-4"
+                    >
+                      <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+                      <span>Comprar Guía Completa</span>
+                      <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+
+                    {/* Trust badges */}
+                    <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-green-600 text-lg">verified</span>
+                        <span>Pago seguro</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-blue-600 text-lg">flash_on</span>
+                        <span>Acceso inmediato</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="material-symbols-outlined text-purple-600 text-lg">all_inclusive</span>
+                        <span>De por vida</span>
+                      </div>
+                    </div>
                   </div>
-
-                  <button className="group w-full flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all mb-4">
-                    <span className="material-symbols-outlined text-2xl">shopping_cart</span>
-                    Comprar Guía Completa
-                    <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                  </button>
-
-                  <p className="text-sm text-text-secondary">
-                    ✅ Descarga inmediata · ✅ Garantía 48h · ✅ Acceso de por vida
-                  </p>
                 </div>
               </div>
-            </div>
+            )}
+
+            {/* Si ya compró, mostrar resto de paradas */}
+            {hasUserPurchased && (
+              <>
+                {paradasBloqueadas.map((parada: any) => (
+                  <article key={parada.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="md:flex">
+                      <div className="md:w-2/5 relative h-72 md:h-auto">
+                        <Image src={parada.imagenUrl} alt={parada.titulo} fill className="object-cover" />
+                        <div className="absolute top-4 left-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white font-black w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl text-2xl">
+                          {parada.id}
+                        </div>
+                      </div>
+                      <div className="md:w-3/5 p-6">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className={`p-2 rounded-lg ${
+                            parada.tipo === 'Comida' ? 'bg-orange-100' : 
+                            parada.tipo === 'Visita' ? 'bg-blue-100' : 
+                            'bg-green-100'
+                          }`}>
+                            <span className={`material-symbols-outlined ${
+                              parada.tipo === 'Comida' ? 'text-orange-600' : 
+                              parada.tipo === 'Visita' ? 'text-blue-600' : 
+                              'text-green-600'
+                            }`}>
+                              {parada.tipo === 'Comida' ? 'restaurant' : parada.tipo === 'Visita' ? 'place' : 'directions'}
+                            </span>
+                          </div>
+                          <div>
+                            <div className="text-sm text-gray-500 font-semibold">{parada.tipo}</div>
+                            <div className="text-xs text-gray-400">{parada.hora} - {parada.duracion}</div>
+                          </div>
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{parada.titulo}</h2>
+                        <p className="text-gray-700 leading-relaxed mb-4">{parada.descripcion}</p>
+                        {parada.consejoLocal && (
+                          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-4 rounded-r-xl mb-4">
+                            <div className="flex items-start gap-3">
+                              <span className="material-symbols-outlined text-yellow-600 flex-shrink-0 mt-1">lightbulb</span>
+                              <div>
+                                <p className="font-bold text-yellow-900 text-sm mb-2">Consejos de Local</p>
+                                <p className="text-sm text-yellow-800 leading-relaxed whitespace-pre-line">{parada.consejoLocal}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        <button 
+                          onClick={() => abrirGoogleMaps(parada.coordenadas.lat, parada.coordenadas.lng, parada.titulo)} 
+                          className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition"
+                        >
+                          <span className="material-symbols-outlined">map</span>
+                          <span>Ver Ruta en Google Maps</span>
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+
+                <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl">
+                  <span className="material-symbols-outlined text-7xl mb-4 inline-block animate-bounce">celebration</span>
+                  <h3 className="text-4xl font-black mb-3">¡Ruta Completada!</h3>
+                  <p className="text-green-100 text-lg mb-8 max-w-md mx-auto">Has descubierto lo esencial de Lisboa como un verdadero local</p>
+                  <Link href="/itinerarios" className="inline-flex items-center gap-2 bg-white text-green-600 font-bold py-4 px-8 rounded-xl hover:bg-green-50 transition shadow-xl">
+                    <span>Explorar más itinerarios</span>
+                    <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-      </section>
+        )}
 
-      {/* Included Features */}
-      <IncludedFeatures />
-
-      {/* Insider Tips Section */}
-      <section className="py-16 bg-background-cream" id="consejos">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2">
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 bg-secondary-blue/10 text-secondary-blue rounded-full text-xs font-bold uppercase tracking-wide mb-3">
-                  Consejos exclusivos
-                </span>
-                <h2 className="text-3xl font-bold text-text-main mb-4">Trucos que Solo los Locales Conocen</h2>
-                <p className="text-text-secondary">Evita errores comunes y aprovecha tu día como un lisboeta más.</p>
+        {seccionActiva === 'mapa' && (
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mapa Interactivo de la Ruta</h2>
+              <MapaInteractivo paradas={hasUserPurchased ? ruta.paradas_data : paradasGratis} />
+              <div className="mt-6 grid grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center gap-2 bg-blue-50 p-3 rounded-lg">
+                  <div className="w-6 h-6 rounded-full bg-[#4ECDC4] flex-shrink-0"></div>
+                  <span className="text-gray-700 font-semibold">Visitas</span>
+                </div>
+                <div className="flex items-center gap-2 bg-orange-50 p-3 rounded-lg">
+                  <div className="w-6 h-6 rounded-full bg-[#FF6B35] flex-shrink-0"></div>
+                  <span className="text-gray-700 font-semibold">Comidas</span>
+                </div>
+                <div className="flex items-center gap-2 bg-green-50 p-3 rounded-lg">
+                  <div className="w-6 h-6 rounded-full bg-[#95E1D3] flex-shrink-0"></div>
+                  <span className="text-gray-700 font-semibold">Transporte</span>
+                </div>
               </div>
               
-              <div className="aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-lg relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800"
-                  alt="Lisboa streets"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-                  <div className="text-center text-white">
-                    <span className="material-symbols-outlined text-5xl mb-2 block">map</span>
-                    <p className="font-bold">Mapa Interactivo Incluido</p>
-                  </div>
+              {!hasUserPurchased && (
+                <div className="mt-6 bg-orange-50 border-2 border-orange-200 rounded-xl p-6 text-center">
+                  <p className="text-orange-900 font-semibold mb-3">🔒 Desbloquea el mapa completo con las 8 paradas</p>
+                  <button onClick={handleComprar} className="bg-orange-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-700 transition">
+                    Ver Guía Completa - 5.99 EUR
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {seccionActiva === 'info' && (
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <span className="material-symbols-outlined text-orange-600 text-5xl">account_balance_wallet</span>
+                <span>Presupuesto Estimado</span>
+              </h2>
+              <div className="space-y-4">
+                {Object.entries(ruta.presupuesto).map(([key, value]: [string, any]) => {
+                  if (key === 'total') return null;
+                  const labels: Record<string, string> = {
+                    transporte: 'Transporte', 
+                    comidas: 'Comidas', 
+                    entradas: 'Entradas', 
+                    extras: 'Extras'
+                  };
+                  return (
+                    <div key={key} className="flex justify-between items-center pb-4 border-b border-gray-200 last:border-0">
+                      <span className="text-gray-700 font-semibold text-lg">{labels[key]}</span>
+                      <span className="text-2xl font-bold text-gray-900">{value} EUR</span>
+                    </div>
+                  );
+                })}
+                <div className="flex justify-between items-center pt-4 border-t-4 border-orange-200">
+                  <span className="text-2xl font-black text-gray-900">TOTAL</span>
+                  <span className="text-4xl font-black text-orange-600">{ruta.presupuesto.total} EUR</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col h-full">
-              <div className="bg-white p-6 rounded-xl azulejo-border flex flex-col gap-6 flex-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-16 h-16 opacity-10 bg-azulejo-pattern"></div>
-                
-                <div className="inline-flex items-center gap-2 bg-secondary-blue/10 text-secondary-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide self-start">
-                  <span className="material-symbols-outlined text-base">lightbulb</span>
-                  Insider Tips
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <span className="material-symbols-outlined text-yellow-500 text-5xl">lightbulb</span>
+                <span>Consejos Importantes</span>
+              </h2>
+              <ul className="space-y-4">
+                {ruta.consejos.slice(0, hasUserPurchased ? ruta.consejos.length : 3).map((consejo: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3 bg-yellow-50 p-4 rounded-xl">
+                    <span className="material-symbols-outlined text-orange-500 mt-1 flex-shrink-0">check_circle</span>
+                    <span className="text-gray-700 leading-relaxed">{consejo}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              {!hasUserPurchased && (
+                <div className="mt-6 bg-orange-50 border-2 border-orange-200 rounded-xl p-6 text-center">
+                  <p className="text-orange-900 font-semibold mb-3">🔒 Desbloquea {ruta.consejos.length - 3} consejos más de locales</p>
+                  <button onClick={handleComprar} className="bg-orange-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-700 transition">
+                    Ver Guía Completa - 5.99 EUR
+                  </button>
                 </div>
-                
-                <ul className="flex flex-col gap-5 flex-1">
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-primary text-lg">foot_bones</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-text-main text-sm">Zapatos Cómodos</h4>
-                      <p className="text-text-secondary text-sm mt-1">La "calçada portuguesa" es preciosa pero resbaladiza y desigual. Evita tacones.</p>
-                    </div>
-                  </li>
-
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-primary text-lg">credit_card</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-text-main text-sm">Viva Viagem</h4>
-                      <p className="text-text-secondary text-sm mt-1">Compra esta tarjeta recargable en cualquier estación de metro. Es mucho más barato.</p>
-                    </div>
-                  </li>
-
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-primary text-lg">tram</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-text-main text-sm">Tranvía 28</h4>
-                      <p className="text-text-secondary text-sm mt-1">Evita las horas punta (11am-4pm). Cógelo en la parada inicial para ir sentado.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        )}
+      </main>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">travel_explore</span>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ¿Listo para explorar Lisboa?
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Descarga inmediata. Acceso de por vida. Garantía de reembolso de 14 días.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all">
-              <span className="material-symbols-outlined text-2xl">download</span>
-              Comprar por 5.99€
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </button>
-            <a 
-              href="/contacto" 
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">chat</span>
-              Tengo dudas
-            </a>
-          </div>
-          <p className="text-white/80 text-sm mt-6">✅ Sin spam · ✅ Descarga inmediata · ✅ 100% gratis</p>
+      {/* STICKY CTA MOBILE */}
+      {!hasUserPurchased && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-orange-500 shadow-2xl p-4 z-50">
+          <button onClick={handleComprar} className="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg">
+            <span className="material-symbols-outlined">lock_open</span>
+            <span>Desbloquear - 5.99€</span>
+          </button>
         </div>
-      </section>
-    </main>
+      )}
+    </div>
   );
 }
