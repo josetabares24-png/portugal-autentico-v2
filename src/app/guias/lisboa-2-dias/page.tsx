@@ -1,6 +1,6 @@
-import { auth } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
-import { checkUserAccess } from '@/lib/access';
+import { hasAccess } from '@/lib/access';
 import Paywall from '@/components/Paywall';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -63,15 +63,16 @@ const GUIDE_DATA = {
 };
 
 export default async function GuiaPage() {
-  const { userId } = auth();
+  const user = await currentUser();
+  const userId = user?.id;
   
   // Verificar acceso
-  const hasAccess = userId ? await checkUserAccess(userId, GUIDE_ID) : false;
+  const userHasAccess = userId ? await hasAccess(userId, GUIDE_ID) : false;
 
-  const guia = GUIDE_DATA[GUIDE_ID];
+  const guia = GUIDE_DATA[GUIDE_ID as keyof typeof GUIDE_DATA];
 
   // Si no tiene acceso, mostrar paywall
-  if (!hasAccess) {
+  if (!userHasAccess) {
     return (
       <div className="min-h-screen bg-white">
         {/* Hero con imagen */}
