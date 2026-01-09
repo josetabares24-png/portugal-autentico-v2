@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 // TEMPLATE PREMIUM - Todas las guías con conversión optimizada
 
-const GUIDE_ID = 'lisboa-romantico'; // ← Cambiar por cada guía
+const GUIDE_ID = 'GUIDE_ID_AQUI'; // ← Cambiar por cada guía
 
 const GUIDE_DATA = {
   'lisboa-1-dia': {

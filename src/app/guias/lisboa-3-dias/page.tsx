@@ -2,11 +2,12 @@ import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import { hasAccess } from '@/lib/access';
 import Paywall from '@/components/Paywall';
+import PreviewContenido from '@/components/PreviewContenido';
+import Garantia48h from '@/components/Garantia48h';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// TEMPLATE PARA TODAS LAS GUÍAS
-// Reemplaza GUIDE_ID con: lisboa-2-dias, lisboa-3-dias, lisboa-fotografia, etc.
+// TEMPLATE PREMIUM - Todas las guías con conversión optimizada
 
 const GUIDE_ID = 'lisboa-3-dias'; // ← Cambiar por cada guía
 
@@ -78,7 +79,7 @@ export default async function GuiaPage() {
 
   const guia = GUIDE_DATA[GUIDE_ID as keyof typeof GUIDE_DATA];
 
-  // Si no tiene acceso, mostrar paywall
+  // Si no tiene acceso, mostrar página optimizada de conversión
   if (!userHasAccess) {
     return (
       <div className="min-h-screen bg-white">
@@ -108,7 +109,17 @@ export default async function GuiaPage() {
           </div>
         </section>
 
-        {/* Paywall */}
+        {/* NUEVO: Preview de contenido - muestra valor ANTES de comprar */}
+        <PreviewContenido guideId={GUIDE_ID} />
+
+        {/* NUEVO: Garantía 48h - elimina riesgo de compra */}
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <div className="max-w-4xl mx-auto">
+            <Garantia48h showStats={true} />
+          </div>
+        </div>
+
+        {/* Paywall - ahora después de mostrar todo el valor */}
         <Paywall
           guideId={GUIDE_ID}
           guideName={guia.titulo}
@@ -149,7 +160,7 @@ export default async function GuiaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
-            {/* PLACEHOLDER - Aquí va el contenido real */}
+            {/* Box de confirmación */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 md:p-12 border-2 border-green-200 mb-12">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
@@ -160,7 +171,7 @@ export default async function GuiaPage() {
                     ¡Guía Desbloqueada!
                   </h2>
                   <p className="text-slate-700" style={{ fontFamily: 'Georgia, serif' }}>
-                    Tienes acceso completo a este itinerario. Aquí encontrarás toda la información detallada.
+                    Tienes acceso completo a este itinerario con {guia.paradas} paradas verificadas.
                   </p>
                 </div>
               </div>
@@ -170,17 +181,17 @@ export default async function GuiaPage() {
             <div className="prose prose-lg max-w-none">
               <h2 style={{ fontFamily: 'Georgia, serif' }}>Itinerario Completo</h2>
               <p style={{ fontFamily: 'Georgia, serif' }}>
-                [CONTENIDO REAL DE LA GUÍA AQUÍ - {guia.paradas} paradas detalladas]
+                [CONTENIDO REAL DE LA GUÍA AQUÍ - {guia.paradas} paradas detalladas con horarios, precios, coordenadas GPS y tips de local]
               </p>
               
               <h3 style={{ fontFamily: 'Georgia, serif' }}>Parada 1: Ejemplo</h3>
               <p style={{ fontFamily: 'Georgia, serif' }}>
-                Descripción detallada de la parada, horarios, precios, tips de local...
+                Descripción detallada de la parada, horarios, precios, tips de local, coordenadas GPS...
               </p>
 
               <h3 style={{ fontFamily: 'Georgia, serif' }}>Restaurantes Recomendados</h3>
               <p style={{ fontFamily: 'Georgia, serif' }}>
-                Lista de restaurantes con direcciones, precios estimados, especialidades...
+                Lista de restaurantes con direcciones exactas, precios estimados, especialidades, horarios...
               </p>
             </div>
 
