@@ -115,7 +115,7 @@ export default async function GuiaPage() {
         {/* NUEVO: Garantía 48h - elimina riesgo de compra */}
         <div className="container mx-auto px-4 py-8 md:py-12">
           <div className="max-w-4xl mx-auto">
-            <Garantia48h showStats={true} />
+            <Garantia48h />
           </div>
         </div>
 
