@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import "./globals.css";
+import { ClerkProvider } from '@clerk/nextjs';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,27 +26,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <head>
-        <link
-       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        <div className="pt-16">
-          {children}
-        </div>
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="es">
+        <head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+          />
+          <link 
+            rel="stylesheet" 
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossOrigin=""
+          />
+        </head>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <Header />
+          <div className="pt-16">
+            {children}
+          </div>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
-
-<link 
-  rel="stylesheet" 
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossOrigin=""
-/>

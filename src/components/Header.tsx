@@ -1,106 +1,167 @@
-"use client";
-import { useState } from 'react';
+'use client';
+
 import Link from 'next/link';
-import Logo from '@/components/Logo';
+import Image from 'next/image';
+import { useState } from 'react';
+import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSignedIn, isLoaded } = useUser();
 
   return (
-    <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
-      <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo nuevo */}
-        <Logo />
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          {/* Logo Original */}
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo.svg" 
+              alt="Estaba en Lisboa" 
+              width={180} 
+              height={40}
+              priority
+            />
+          </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-6">
-          <Link href="/itinerarios" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Itinerarios</Link>
-          <Link href="/blog" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Blog</Link>
-          <Link href="/free-tour" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Free Tours</Link>
-          <Link href="/apps" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Apps</Link>
-          <Link href="/lisboa-practica" className="text-slate-600 hover:text-slate-900 transition-colors font-medium">Info Útil</Link>
-          <Link href="/itinerarios" className="btn-primary">Ver Packs</Link>
-        </div>
-
-        {/* Mobile menu button - Animated hamburger */}
-        <button
-          className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-slate-100 transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Menu"
-        >
-          <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
-              isOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
-              isOpen ? 'opacity-0 scale-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-slate-600 rounded-full transition-all duration-300 ease-out ${       
-              isOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
-      </nav>
-
-      {/* Mobile menu with slide animation */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="bg-white border-t border-slate-100 shadow-lg">
-          <div className="flex flex-col p-4 space-y-1">
-            <Link
-              href="/itinerarios"
-              className="text-slate-700 hover:text-slate-900 font-medium py-3 px-4 rounded-xl hover:bg-slate-50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="/itinerarios" className="text-slate-700 hover:text-primary font-medium transition-colors">
               Itinerarios
             </Link>
-            <Link
-              href="/blog"
-              className="text-slate-700 hover:text-slate-900 font-medium py-3 px-4 rounded-xl hover:bg-slate-50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/blog" className="text-slate-700 hover:text-primary font-medium transition-colors">
               Blog
             </Link>
-            <Link
-              href="/free-tour"
-              className="text-slate-700 hover:text-slate-900 font-medium py-3 px-4 rounded-xl hover:bg-slate-50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/free-tours" className="text-slate-700 hover:text-primary font-medium transition-colors">
               Free Tours
             </Link>
-            <Link
-              href="/apps"
-              className="text-slate-700 hover:text-slate-900 font-medium py-3 px-4 rounded-xl hover:bg-slate-50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/apps" className="text-slate-700 hover:text-primary font-medium transition-colors">
               Apps
             </Link>
-            <Link
-              href="/lisboa-practica"
-              className="text-slate-700 hover:text-slate-900 font-medium py-3 px-4 rounded-xl hover:bg-slate-50 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/info-util" className="text-slate-700 hover:text-primary font-medium transition-colors">
               Info Útil
             </Link>
-            <div className="pt-2">
-              <Link
-                href="/itinerarios"
-                className="btn-primary block text-center"
+
+            {/* User Button or Sign In */}
+            {isLoaded && (
+              <div className="flex items-center gap-4">
+                {isSignedIn ? (
+                  <UserButton 
+                    afterSignOutUrl="/"
+                    appearance={{
+                      elements: {
+                        avatarBox: "w-10 h-10 rounded-full border-2 border-primary hover:border-primary-dark transition-colors"
+                      }
+                    }}
+                  />
+                ) : (
+                  <SignInButton mode="modal">
+                    <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
+                      <span className="material-symbols-outlined">person</span>
+                      <span>Iniciar Sesión</span>
+                    </button>
+                  </SignInButton>
+                )}
+                
+                <Link 
+                  href="/pack-completo" 
+                  className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full transition-all hover:scale-105"
+                >
+                  Ver Packs
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-slate-900"
+            aria-label="Toggle menu"
+          >
+            <span className="material-symbols-outlined text-3xl">
+              {isOpen ? 'close' : 'menu'}
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 pt-4">
+            <div className="flex flex-col gap-4">
+              <Link 
+                href="/itinerarios" 
+                className="text-slate-700 hover:text-primary font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Itinerarios
+              </Link>
+              <Link 
+                href="/blog" 
+                className="text-slate-700 hover:text-primary font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link 
+                href="/free-tours" 
+                className="text-slate-700 hover:text-primary font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Free Tours
+              </Link>
+              <Link 
+                href="/apps" 
+                className="text-slate-700 hover:text-primary font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Apps
+              </Link>
+              <Link 
+                href="/info-util" 
+                className="text-slate-700 hover:text-primary font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Info Útil
+              </Link>
+
+              {/* Mobile User Button */}
+              {isLoaded && (
+                <div className="flex items-center gap-4 pt-4 border-t border-slate-200">
+                  {isSignedIn ? (
+                    <div className="flex items-center gap-3">
+                      <UserButton 
+                        afterSignOutUrl="/"
+                        appearance={{
+                          elements: {
+                            avatarBox: "w-10 h-10"
+                          }
+                        }}
+                      />
+                      <span className="text-sm text-slate-600">Mi Cuenta</span>
+                    </div>
+                  ) : (
+                    <SignInButton mode="modal">
+                      <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
+                        <span className="material-symbols-outlined">person</span>
+                        <span>Iniciar Sesión</span>
+                      </button>
+                    </SignInButton>
+                  )}
+                </div>
+              )}
+
+              <Link 
+                href="/pack-completo" 
+                className="bg-gradient-to-r from-primary to-orange-500 text-white font-bold py-3 px-6 rounded-full text-center transition-all hover:scale-105"
                 onClick={() => setIsOpen(false)}
               >
                 Ver Packs
               </Link>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </nav>
     </header>
   );
 }
