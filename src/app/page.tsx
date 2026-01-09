@@ -1,423 +1,426 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
-      
-      {/* =============================================
-          HERO - EDITORIAL MAGAZINE STYLE
-      ============================================= */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A3D62]">
-        {/* Pattern azulejos de fondo */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(242,203,5,0.3) 35px, rgba(242,203,5,0.3) 70px),
-          repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(242,203,5,0.3) 35px, rgba(242,203,5,0.3) 70px)`
-        }}></div>
-
-        {/* Imagen grande lado derecho */}
-        <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+    <div className="min-h-screen bg-background-light">
+      {/* HERO SECTION - PROPUESTA DE VALOR */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=1600"
+            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
             alt="Lisboa"
             fill
-            className="object-cover opacity-60"
+            className="object-cover scale-110"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-2xl">
-            
-            {/* Badge único */}
-            <div className="inline-flex items-center gap-2 bg-[#F4E8C1] px-4 py-2 mb-8 border border-[#F2CB05]">
-              <svg className="w-4 h-4 text-[#0A3D62]" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-xs font-semibold tracking-wider uppercase text-[#0A3D62]" style={{ fontFamily: 'Cinzel, serif' }}>
-                Verificado por Local
-              </span>
-            </div>
-
-            {/* Headline GRANDE editorial */}
-            <h1 className="mb-8" style={{ fontFamily: 'Fraunces, Georgia, serif' }}>
-              <span className="block text-6xl md:text-8xl font-black text-[#F2CB05] leading-none mb-4" style={{ letterSpacing: '-0.02em' }}>
-                Lisboa
-              </span>
-              <span className="block text-4xl md:text-6xl font-black text-white leading-tight">
-                sin filtros<br />
-                ni clichés
-              </span>
-            </h1>
-
-            {/* Subheadline con más personalidad */}
-            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              Vivo aquí desde 2015. He caminado cada calle de Alfama 
-              50 veces. Estas no son <em>recomendaciones</em> — 
-              es <strong className="text-[#F2CB05]">mi ciudad descodificada</strong> para ti.
-            </p>
-
-            {/* CTA único premium */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/itinerarios"
-                className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0A3D62] to-[#1B4F72] text-[#F2CB05] font-bold px-8 py-4 border-2 border-[#F2CB05] uppercase tracking-wider text-sm overflow-hidden transition-all duration-300 hover:scale-105"
-                style={{ fontFamily: 'DM Sans, sans-serif' }}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F2CB05]/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">Ver Itinerarios</span>
-                <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-
-              <button className="text-white font-semibold px-8 py-4 border border-white/30 hover:bg-white/10 transition-colors uppercase tracking-wider text-sm" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                Desde €3.99
-              </button>
-            </div>
-
-            {/* Stats inline discretos */}
-            <div className="mt-12 flex items-center gap-6 text-white/70 text-sm">
-              <span>✓ 500+ viajeros</span>
-              <span>✓ 48h garantía</span>
-              <span>✓ 2025 actualizado</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Decoración inferior */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0A3D62] via-[#F2CB05] via-[#C65D3B] to-[#0A3D62]"></div>
-      </section>
-
-      {/* =============================================
-          MANIFESTO - AUTENTICIDAD
-      ============================================= */}
-      <section className="py-20 md:py-32 bg-[#FAF7F0] relative overflow-hidden">
-        {/* Decoración lateral */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-64 bg-[#F2CB05]"></div>
-        
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            
-            {/* Número grande decorativo */}
-            <div className="relative mb-12">
-              <span className="text-[12rem] md:text-[16rem] font-black leading-none text-[#0A3D62]/5 absolute -top-16 -left-4" style={{ fontFamily: 'Fraunces, serif' }}>
-                01
-              </span>
-              <p className="text-sm uppercase tracking-widest text-[#C65D3B] font-semibold mb-6 relative z-10" style={{ fontFamily: 'Cinzel, serif' }}>
-                Por qué esto existe
-              </p>
-            </div>
-
-            <h2 className="text-4xl md:text-6xl font-black text-[#0A3D62] mb-8 leading-tight" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
-              Los blogs te mienten.<br />
-              Las apps copian info vieja.<br />
-              <span className="text-[#C65D3B]">Yo vivo aquí.</span>
-            </h2>
-
-            <div className="prose prose-xl max-w-none" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              <p className="text-xl text-[#5A5A5A] leading-relaxed mb-6">
-                Llevo 10 años en Lisboa. He visto cómo <strong>Mirador das Portas do Sol</strong> pasó 
-                de spot local a trampa turística. He probado los 47 sitios que dicen 
-                tener "el mejor pastel de nata" (spoiler: solo 3 valen la pena).
-              </p>
-              
-              <p className="text-xl text-[#5A5A5A] leading-relaxed">
-                Estas guías no son recopi laciones de Google. Son <strong>años de vida aquí</strong>, 
-                condensados en itinerarios que funcionan. Sin perder tiempo. Sin colas absurdas. 
-                Solo la Lisboa que yo conozco.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =============================================
-          GUÍAS - CARDS EDITORIAL PREMIUM
-      ============================================= */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container mx-auto px-4">
-          
-          {/* Header sección */}
-          <div className="max-w-3xl mb-16">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-1 bg-[#F2CB05]"></div>
-              <p className="text-sm uppercase tracking-widest text-[#C65D3B] font-semibold" style={{ fontFamily: 'Cinzel, serif' }}>
-                Elige tu experiencia
-              </p>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-[#0A3D62] leading-tight" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
-              Itinerarios que<br />
-              realmente funcionan
-            </h2>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
+            <span className="material-symbols-outlined text-yellow-400">verified</span>
+            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2026</span>
           </div>
 
-          {/* Grid guías - Layout asimétrico editorial */}
-          <div className="grid md:grid-cols-12 gap-6 max-w-7xl mx-auto">
-            
-            {/* Guía destacada GRANDE - Lisboa 1 Día */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{ fontFamily: 'Georgia, serif' }}>
+            Descubre Lisboa<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+              Como un Local
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            Guías digitales auténticas creadas por quien vive aquí. Itinerarios verificados, restaurantes locales y spots que no encontrarás en ningún blog turístico.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link 
-              href="/guias/lisboa-1-dia"
-              className="group md:col-span-7 bg-[#0A3D62] overflow-hidden relative min-h-[500px] flex items-end"
+              href="#guias-destacadas" 
+              className="group bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-black py-5 px-10 rounded-2xl text-xl shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
-              <Image
-                src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=1200"
-                alt="Lisboa en 1 Día"
-                fill
-                className="object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
-              />
-              
-              <div className="relative z-10 p-8 w-full">
-                <div className="inline-block bg-[#F2CB05] text-[#0A3D62] px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                  Popular
+              <span>Ver Guías Desde 3.99€</span>
+              <span className="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </Link>
+            
+            <Link 
+              href="/pack-completo" 
+              className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold py-5 px-10 rounded-2xl text-xl border-2 border-white/30 shadow-lg transition-all flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined text-yellow-400">local_offer</span>
+              <span>Pack Completo -60%</span>
+            </Link>
+          </div>
+
+          {/* TRUST BAR */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span>Descarga inmediata</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-yellow-400">verified</span>
+              <span>Actualizadas 2026</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
+              <span>Garantía 48h</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        </div>
+      </section>
+
+      {/* GUÍAS DESTACADAS */}
+      <section id="guias-destacadas" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+              Más Populares
+            </span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+              Comienza Tu Aventura
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Elige la guía perfecta según tu estilo de viaje
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+            {/* GUÍA 1: Lisboa 1 Día - ENTRADA */}
+            <article className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100">
+              <div className="relative h-64">
+                <Image 
+                  src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800" 
+                  alt="Lisboa 1 Día"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-green-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow-lg">
+                  Más Vendida
                 </div>
-                
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Fraunces, serif' }}>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-black text-slate-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
                   Lisboa en 1 Día
                 </h3>
-                
-                <p className="text-lg text-white/80 mb-6 max-w-md" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                  Lo esencial sin prisas. 8 paradas verificadas. Ningún sitio turístico genérico.
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Lo esencial de Lisboa: Alfama, Castillo, Belém. Perfecto para primera visita o escala.
                 </p>
-
+                <div className="flex items-center gap-4 mb-6 text-sm text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">schedule</span>
+                    <span>1 día</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">location_on</span>
+                    <span>8 paradas</span>
+                  </div>
+                </div>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-white/70 text-sm">
-                    <span>⏱ 1 día</span>
-                    <span>📍 8 paradas</span>
+                  <div>
+                    <div className="text-3xl font-black text-primary">3.99€</div>
+                    <div className="text-xs text-slate-500">Precio de lanzamiento</div>
                   </div>
-                  <div className="text-3xl font-black text-[#F2CB05]" style={{ fontFamily: 'Fraunces, serif' }}>
-                    €3.99
-                  </div>
+                  <Link 
+                    href="/guias/lisboa-1-dia" 
+                    className="bg-gradient-to-r from-primary to-orange-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-all shadow-lg"
+                  >
+                    Ver Guía
+                  </Link>
                 </div>
               </div>
+            </article>
 
-              {/* Borde decorativo */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#F2CB05]"></div>
-            </Link>
-
-            {/* Dos guías medianas lado derecho */}
-            <div className="md:col-span-5 space-y-6">
-              
-              {/* Lisboa 2 Días */}
-              <Link 
-                href="/guias/lisboa-2-dias"
-                className="group block bg-[#FAF7F0] p-8 border-l-4 border-[#C65D3B] hover:border-l-8 transition-all duration-300 min-h-[240px] flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-3xl font-black text-[#0A3D62] mb-3 group-hover:text-[#C65D3B] transition-colors" style={{ fontFamily: 'Fraunces, serif' }}>
-                    Lisboa en 2 Días
-                  </h3>
-                  <p className="text-base text-[#5A5A5A] mb-4" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                    Añade Belém, Parque das Nações y barrios escondidos.
-                  </p>
+            {/* GUÍA 2: Lisboa Fotografía - TRENDING */}
+            <article className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border-2 border-primary">
+              <div className="relative h-64">
+                <Image 
+                  src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800" 
+                  alt="Lisboa Fotografía"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold px-4 py-2 rounded-full text-sm shadow-lg">
+                  ⭐ Nuevo
                 </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-3 text-sm text-[#5A5A5A]">
-                    <span>⏱ 2 días</span>
-                    <span>📍 15 paradas</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-black text-slate-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                  Lisboa Fotografía
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  50+ spots Instagram-perfect con horarios golden hour y coordenadas GPS exactas.
+                </p>
+                <div className="flex items-center gap-4 mb-6 text-sm text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">photo_camera</span>
+                    <span>50+ spots</span>
                   </div>
-                  <span className="text-2xl font-black text-[#0A3D62]" style={{ fontFamily: 'Fraunces, serif' }}>
-                    €5.99
-                  </span>
-                </div>
-              </Link>
-
-              {/* Lisboa 3 Días */}
-              <Link 
-                href="/guias/lisboa-3-dias"
-                className="group block bg-[#FAF7F0] p-8 border-l-4 border-[#1B4F72] hover:border-l-8 transition-all duration-300 min-h-[240px] flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-3xl font-black text-[#0A3D62] mb-3 group-hover:text-[#1B4F72] transition-colors" style={{ fontFamily: 'Fraunces, serif' }}>
-                    Lisboa en 3 Días
-                  </h3>
-                  <p className="text-base text-[#5A5A5A] mb-4" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                    Inmersión total. Incluye excursión Sintra y rincones secretos.
-                  </p>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-3 text-sm text-[#5A5A5A]">
-                    <span>⏱ 3 días</span>
-                    <span>📍 20+ paradas</span>
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">wb_twilight</span>
+                    <span>Golden hour</span>
                   </div>
-                  <span className="text-2xl font-black text-[#0A3D62]" style={{ fontFamily: 'Fraunces, serif' }}>
-                    €7.99
-                  </span>
                 </div>
-              </Link>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-black text-primary">7.99€</div>
+                    <div className="text-xs text-slate-500">Para fotógrafos</div>
+                  </div>
+                  <Link 
+                    href="/guias/lisboa-fotografia" 
+                    className="bg-gradient-to-r from-primary to-orange-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-all shadow-lg"
+                  >
+                    Ver Guía
+                  </Link>
+                </div>
+              </div>
+            </article>
 
-            </div>
+            {/* GUÍA 3: Lisboa 7 Días - PREMIUM */}
+            <article className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100">
+              <div className="relative h-64">
+                <Image 
+                  src="https://images.unsplash.com/photo-1526306063970-d5c223f28c89?w=800" 
+                  alt="Lisboa 7 Días"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-purple-600 text-white font-bold px-4 py-2 rounded-full text-sm shadow-lg">
+                  Premium
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-black text-slate-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                  Lisboa en 7 Días
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Experiencia completa: Lisboa + Sintra + Cascais + Óbidos. Para vacaciones completas.
+                </p>
+                <div className="flex items-center gap-4 mb-6 text-sm text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">calendar_month</span>
+                    <span>7 días</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-sm">explore</span>
+                    <span>4 excursiones</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-black text-primary">9.99€</div>
+                    <div className="text-xs text-slate-500">Más completa</div>
+                  </div>
+                  <Link 
+                    href="/guias/lisboa-7-dias" 
+                    className="bg-gradient-to-r from-primary to-orange-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-all shadow-lg"
+                  >
+                    Ver Guía
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
 
-          {/* Link ver todas */}
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <Link 
-              href="/itinerarios"
-              className="inline-flex items-center gap-2 text-[#0A3D62] font-bold uppercase text-sm tracking-wider hover:text-[#C65D3B] transition-colors"
-              style={{ fontFamily: 'DM Sans, sans-serif' }}
+              href="/itinerarios" 
+              className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:gap-3 transition-all"
             >
               <span>Ver todas las guías</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>
-
         </div>
       </section>
 
-      {/* =============================================
-          PACK COMPLETO - DESTACADO PREMIUM
-      ============================================= */}
-      <section className="py-20 md:py-32 bg-[#1B4F72] relative overflow-hidden">
-        {/* Pattern azulejos decorativo */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(242,203,5,0.5) 35px, rgba(242,203,5,0.5) 70px)`
-        }}></div>
-
+      {/* PACK COMPLETO CTA - UPSELL PROMINENTE */}
+      <section className="py-20 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            
-            {/* Badge ahorro */}
-            <div className="inline-block bg-[#F2CB05] text-[#0A3D62] px-4 py-2 mb-8 border border-[#F2CB05]">
-              <span className="text-xs font-bold uppercase tracking-wider" style={{ fontFamily: 'Cinzel, serif' }}>
-                Ahorra 60% · Acceso perpetuo
-              </span>
-            </div>
-
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
-              Pack Completo<br />
-              <span className="text-[#F2CB05]">Lisboa Descodificada</span>
-            </h2>
-
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              Las 7 guías + actualizaciones perpetuas + soporte directo conmigo
-            </p>
-
-            {/* Precio destacado */}
-            <div className="mb-12">
-              <div className="text-white/60 text-2xl line-through mb-2">€42</div>
-              <div className="text-7xl md:text-8xl font-black text-[#F2CB05]" style={{ fontFamily: 'Fraunces, serif' }}>
-                €24.99
+          <div className="max-w-5xl mx-auto bg-white rounded-3xl p-10 md:p-16 shadow-2xl">
+            <div className="text-center mb-12">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full mb-6">
+                <span className="text-orange-700 font-black text-sm">🔥 OFERTA DE LANZAMIENTO 2026</span>
               </div>
-            </div>
-
-            {/* CTA único */}
-            <Link
-              href="/pack-completo"
-              className="inline-flex items-center justify-center gap-3 bg-[#F2CB05] text-[#0A3D62] font-black px-12 py-6 border-4 border-[#F2CB05] hover:bg-transparent hover:text-[#F2CB05] transition-all duration-300 uppercase tracking-wider text-base"
-              style={{ fontFamily: 'DM Sans, sans-serif' }}
-            >
-              <span>Desbloquear Todo</span>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-
-            <p className="text-sm text-white/60 mt-8" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              Garantía 48h · Sin renovaciones · Actualizaciones gratis de por vida
-            </p>
-          </div>
-        </div>
-
-        {/* Decoración inferior */}
-        <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0A3D62] via-[#F2CB05] to-[#C65D3B]"></div>
-      </section>
-
-      {/* =============================================
-          PROOF - STATS CON PERSONALIDAD
-      ============================================= */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            
-            <div className="grid md:grid-cols-3 gap-12 text-center">
               
-              {/* Stat 1 */}
-              <div>
-                <div className="text-6xl font-black text-[#0A3D62] mb-3" style={{ fontFamily: 'Fraunces, serif' }}>
-                  500<span className="text-[#F2CB05]">+</span>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                Pack Completo:<br />
+                <span className="text-primary">Todas las Guías</span>
+              </h2>
+              
+              <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                Lleva las 8 guías digitales + acceso web de por vida + actualizaciones gratuitas
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="text-center">
+                  <div className="text-6xl font-black text-primary">24.99€</div>
+                  <div className="text-sm text-slate-500 font-semibold">Precio Pack</div>
                 </div>
-                <p className="text-sm uppercase tracking-wider text-[#5A5A5A] font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
-                  Viajeros Satisfechos
-                </p>
-                <p className="text-sm text-[#5A5A5A]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                  Han descubierto la Lisboa real
-                </p>
+                <div className="text-4xl text-slate-300">→</div>
+                <div className="text-center">
+                  <div className="text-3xl text-slate-400 line-through">62.90€</div>
+                  <div className="text-sm text-slate-500 font-semibold">Individual</div>
+                </div>
               </div>
 
-              {/* Stat 2 */}
-              <div>
-                <div className="text-6xl font-black text-[#0A3D62] mb-3" style={{ fontFamily: 'Fraunces, serif' }}>
-                  48<span className="text-[#C65D3B]">h</span>
-                </div>
-                <p className="text-sm uppercase tracking-wider text-[#5A5A5A] font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
-                  Garantía Total
-                </p>
-                <p className="text-sm text-[#5A5A5A]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                  Devolución sin preguntas
-                </p>
+              <div className="inline-block px-6 py-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-2xl mb-10">
+                <span className="text-green-800 font-black text-2xl">Ahorras 37.91€ (60%)</span>
               </div>
-
-              {/* Stat 3 */}
-              <div>
-                <div className="text-6xl font-black text-[#0A3D62] mb-3" style={{ fontFamily: 'Fraunces, serif' }}>
-                  2025
-                </div>
-                <p className="text-sm uppercase tracking-wider text-[#5A5A5A] font-semibold mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
-                  Actualizado Enero
-                </p>
-                <p className="text-sm text-[#5A5A5A]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                  Precios y horarios verificados
-                </p>
-              </div>
-
             </div>
 
-            {/* Proof adicional */}
-            <div className="mt-16 text-center">
-              <p className="text-sm text-[#5A5A5A] italic max-w-2xl mx-auto" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                Solo 8 devoluciones en 6 meses. No por insatisfacción — por compras accidentales.
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              {[
+                { title: 'Lisboa 1 Día', price: '3.99€' },
+                { title: 'Lisboa 3 Días', price: '5.99€' },
+                { title: 'Lisboa Pareja', price: '6.99€' },
+                { title: 'Lisboa Niños', price: '6.99€' },
+                { title: 'Lisboa 7 Días', price: '9.99€' },
+                { title: 'Lisboa Coche', price: '7.99€' },
+                { title: 'Lisboa Cultural', price: '8.99€' },
+                { title: 'Lisboa Fotografía', price: '7.99€' }
+              ].map((guia, idx) => (
+                <div key={idx} className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl">
+                  <span className="material-symbols-outlined text-green-600 text-2xl">check_circle</span>
+                  <div className="flex-1">
+                    <p className="font-bold text-slate-900">{guia.title}</p>
+                  </div>
+                  <span className="text-slate-400 line-through font-semibold">{guia.price}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl mb-8">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-yellow-600 text-3xl">emoji_events</span>
+                <div>
+                  <p className="font-black text-yellow-900 text-lg mb-2">BONUS Exclusivo</p>
+                  <p className="text-yellow-800">Guía secreta "Lisboa como Local" solo disponible en el pack (valor 9.99€)</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Link 
+                href="/pack-completo" 
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-black py-6 px-12 rounded-2xl text-2xl shadow-2xl hover:scale-105 transition-all"
+              >
+                <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+                <span>Comprar Pack Completo</span>
+                <span className="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </Link>
+              
+              <p className="mt-4 text-sm text-slate-500">
+                ✓ Descarga inmediata · ✓ Acceso de por vida · ✓ Garantía 48h
               </p>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* =============================================
-          CTA FINAL - DIRECTO
-      ============================================= */}
-      <section className="py-20 md:py-32 bg-[#FAF7F0]">
+      {/* TODAS LAS GUÍAS - GRID COMPLETO */}
+      <section className="py-20 bg-background-light">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            
-            <h2 className="text-5xl md:text-7xl font-black text-[#0A3D62] mb-8 leading-tight" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>
-              ¿Listo para la<br />
-              <span className="text-[#C65D3B]">Lisboa real?</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+              Todas Nuestras Guías
             </h2>
-
-            <p className="text-xl text-[#5A5A5A] mb-12" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-              Empieza desde €3.99. Sin colas. Sin perder tiempo. Solo lo que funciona.
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Elige la experiencia perfecta para tu viaje a Lisboa
             </p>
+          </div>
 
-            <Link
-              href="/itinerarios"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0A3D62] to-[#1B4F72] text-[#F2CB05] font-black px-10 py-5 border-2 border-[#F2CB05] uppercase tracking-wider text-sm hover:scale-105 transition-transform duration-300"
-              style={{ fontFamily: 'DM Sans, sans-serif' }}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {[
+              { title: 'Lisboa 3 Días', price: '5.99€', icon: 'calendar_month', href: '/guias/lisboa-3-dias' },
+              { title: 'Lisboa Pareja', price: '6.99€', icon: 'favorite', href: '/guias/lisboa-pareja' },
+              { title: 'Lisboa Niños', price: '6.99€', icon: 'family_restroom', href: '/guias/lisboa-ninos' },
+              { title: 'Lisboa Coche', price: '7.99€', icon: 'directions_car', href: '/guias/lisboa-coche' },
+              { title: 'Lisboa Cultural', price: '8.99€', icon: 'museum', href: '/guias/lisboa-cultural' }
+            ].map((guia, idx) => (
+              <Link 
+                key={idx}
+                href={guia.href}
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border border-slate-100 hover:border-primary"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined text-primary text-3xl">{guia.icon}</span>
+                </div>
+                <h3 className="text-xl font-black text-slate-900 mb-2">{guia.title}</h3>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-black text-primary">{guia.price}</span>
+                  <span className="material-symbols-outlined text-slate-400 group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link 
+              href="/itinerarios" 
+              className="inline-flex items-center gap-2 bg-white text-primary font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all border-2 border-primary"
             >
-              <span>Ver Itinerarios</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <span>Ver Todas las Guías</span>
+              <span className="material-symbols-outlined">apps</span>
             </Link>
-
           </div>
         </div>
       </section>
 
-    </main>
+      {/* FAQ SECTION - OBJECIONES */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl font-black text-center text-slate-900 mb-12" style={{ fontFamily: 'Georgia, serif' }}>
+              Preguntas Frecuentes
+            </h2>
+            
+            <div className="space-y-6">
+              {[
+                {
+                  q: '¿Son guías en PDF descargables?',
+                  a: 'Sí, recibes el PDF por email inmediatamente después de la compra. Además, tienes acceso web ilimitado para consultarlas online.'
+                },
+                {
+                  q: '¿Se actualizan las guías?',
+                  a: 'Sí, todas las guías se actualizan regularmente con nuevos restaurantes, horarios y precios. Las actualizaciones son gratuitas de por vida.'
+                },
+                {
+                  q: '¿Hay garantía de reembolso?',
+                  a: 'Sí, tienes 48 horas para solicitar reembolso completo si no estás satisfecho, sin preguntas.'
+                },
+                {
+                  q: '¿Las guías funcionan offline?',
+                  a: 'Sí, el PDF incluye mapas descargables que funcionan sin internet. Perfecto para no gastar datos en el extranjero.'
+                },
+                {
+                  q: '¿Quién crea las guías?',
+                  a: 'Las guías las creo yo, José, que vivo en Lisboa desde hace años. Todo el contenido está basado en mi experiencia real como local.'
+                }
+              ].map((faq, idx) => (
+                <details key={idx} className="group bg-slate-50 rounded-2xl p-6 cursor-pointer hover:bg-slate-100 transition-colors">
+                  <summary className="flex items-center justify-between font-bold text-slate-900 text-lg list-none">
+                    <span>{faq.q}</span>
+                    <span className="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+                  </summary>
+                  <p className="mt-4 text-slate-600 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
