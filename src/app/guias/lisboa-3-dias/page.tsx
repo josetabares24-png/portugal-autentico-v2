@@ -104,8 +104,6 @@ export default async function GuiaPage() {
         {/* Paywall */}
         <Paywall
           guideId={GUIDE_ID}
-          title={guia.titulo}
-          price={guia.precio}
         />
       </div>
     );
