@@ -1,14 +1,15 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 
-export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const { isSignedIn } = useUser();
+  const { isSignedIn, isLoaded } = useUser();
 
   const navLinks = [
     { href: '/itinerarios', label: 'Guías' },
@@ -20,22 +21,22 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* LOGO */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex items-center">
-              <span className="text-2xl md:text-3xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
-                estaba en
-              </span>
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary to-orange-500 ml-1 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-sm md:text-base">L</span>
-              </div>
-            </div>
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          
+          {/* Logo Original SVG */}
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
+            <Image
+              src="/logo.svg"
+              alt="Estaba en Lisboa"
+              width={180}
+              height={40}
+              priority
+            />
           </Link>
 
-          {/* DESKTOP NAV */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -50,58 +51,68 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-          </div>
 
-          {/* DESKTOP ACTIONS */}
-          <div className="hidden md:flex items-center gap-4">
-            {isSignedIn ? (
-              <>
+            {/* User Actions */}
+            {isLoaded && (
+              <div className="flex items-center gap-4">
+                {isSignedIn ? (
+                  <>
+                    <Link
+                      href="/mis-guias"
+                      className="text-slate-700 hover:text-primary font-medium transition-colors"
+                    >
+                      Mis Guías
+                    </Link>
+                    <UserButton
+                      afterSignOutUrl="/"
+                      appearance={{
+                        elements: {
+                          avatarBox: "w-10 h-10 rounded-full border-2 border-primary hover:border-primary-dark transition-colors"
+                        }
+                      }}
+                    />
+                  </>
+                ) : (
+                  <SignInButton mode="modal">
+                    <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
+                      <span className="material-symbols-outlined">person</span>
+                      <span>Iniciar Sesión</span>
+                    </button>
+                  </SignInButton>
+                )}
+                
+                {/* CTA Principal */}
                 <Link
-                  href="/mis-guias"
-                  className="text-slate-700 hover:text-primary font-medium transition-colors"
+                  href="/itinerarios"
+                  className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full transition-all hover:scale-105"
                 >
-                  Mis Guías
+                  Ver Guías
                 </Link>
-                <UserButton afterSignOutUrl="/" />
-              </>
-            ) : (
-              <SignInButton mode="modal">
-                <button className="text-slate-700 hover:text-primary font-medium transition-colors">
-                  Iniciar Sesión
-                </button>
-              </SignInButton>
+              </div>
             )}
-            
-            <Link
-              href="/itinerarios"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-all"
-            >
-              <span>Ver Guías</span>
-              <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* Mobile Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-700 hover:text-primary transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-slate-900"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-3xl">
-              {mobileMenuOpen ? 'close' : 'menu'}
+              {isOpen ? 'close' : 'menu'}
             </span>
           </button>
         </div>
 
-        {/* MOBILE MENU */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-slate-200 bg-white">
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 pt-4">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setIsOpen(false)}
                   className={`font-medium text-lg py-2 transition-colors ${
                     isActive(link.href)
                       ? 'text-primary'
@@ -112,41 +123,44 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              <div className="border-t border-slate-200 pt-4 mt-2 flex flex-col gap-4">
-                {isSignedIn ? (
-                  <>
-                    <Link
-                      href="/mis-guias"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-slate-700 hover:text-primary font-medium text-lg py-2 transition-colors"
-                    >
-                      Mis Guías
-                    </Link>
-                    <div className="py-2">
-                      <UserButton afterSignOutUrl="/" />
-                    </div>
-                  </>
-                ) : (
-                  <SignInButton mode="modal">
-                    <button className="text-slate-700 hover:text-primary font-medium text-lg py-2 text-left transition-colors">
-                      Iniciar Sesión
-                    </button>
-                  </SignInButton>
-                )}
+              {/* Mobile User Actions */}
+              {isLoaded && (
+                <div className="border-t border-slate-200 pt-4 mt-2 flex flex-col gap-4">
+                  {isSignedIn ? (
+                    <>
+                      <Link
+                        href="/mis-guias"
+                        onClick={() => setIsOpen(false)}
+                        className="text-slate-700 hover:text-primary font-medium text-lg py-2 transition-colors"
+                      >
+                        Mis Guías
+                      </Link>
+                      <div className="py-2">
+                        <UserButton afterSignOutUrl="/" />
+                      </div>
+                    </>
+                  ) : (
+                    <SignInButton mode="modal">
+                      <button className="text-slate-700 hover:text-primary font-medium text-lg py-2 text-left transition-colors flex items-center gap-2">
+                        <span className="material-symbols-outlined">person</span>
+                        <span>Iniciar Sesión</span>
+                      </button>
+                    </SignInButton>
+                  )}
 
-                <Link
-                  href="/itinerarios"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg"
-                >
-                  <span>Ver Guías</span>
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </Link>
-              </div>
+                  <Link
+                    href="/itinerarios"
+                    onClick={() => setIsOpen(false)}
+                    className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-3 px-6 rounded-full text-center transition-all"
+                  >
+                    Ver Guías
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
