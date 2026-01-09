@@ -1,167 +1,152 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { isSignedIn, isLoaded } = useUser();
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { isSignedIn } = useUser();
+
+  const navLinks = [
+    { href: '/itinerarios', label: 'Guías' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/apps', label: 'Apps' },
+    { href: '/info-util', label: 'Info Útil' }
+  ];
+
+  const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
-      <nav className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo Original */}
-          <Link href="/" className="flex items-center">
-            <Image 
-              src="/logo.svg" 
-              alt="Estaba en Lisboa" 
-              width={180} 
-              height={40}
-              priority
-            />
+    <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="flex items-center">
+              <span className="text-2xl md:text-3xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
+                estaba en
+              </span>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-primary to-orange-500 ml-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-sm md:text-base">L</span>
+              </div>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/itinerarios" className="text-slate-700 hover:text-primary font-medium transition-colors">
-              Itinerarios
-            </Link>
-            <Link href="/blog" className="text-slate-700 hover:text-primary font-medium transition-colors">
-              Blog
-            </Link>
-            <Link href="/free-tours" className="text-slate-700 hover:text-primary font-medium transition-colors">
-              Free Tours
-            </Link>
-            <Link href="/apps" className="text-slate-700 hover:text-primary font-medium transition-colors">
-              Apps
-            </Link>
-            <Link href="/info-util" className="text-slate-700 hover:text-primary font-medium transition-colors">
-              Info Útil
-            </Link>
-
-            {/* User Button or Sign In */}
-            {isLoaded && (
-              <div className="flex items-center gap-4">
-                {isSignedIn ? (
-                  <UserButton 
-                    afterSignOutUrl="/"
-                    appearance={{
-                      elements: {
-                        avatarBox: "w-10 h-10 rounded-full border-2 border-primary hover:border-primary-dark transition-colors"
-                      }
-                    }}
-                  />
-                ) : (
-                  <SignInButton mode="modal">
-                    <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
-                      <span className="material-symbols-outlined">person</span>
-                      <span>Iniciar Sesión</span>
-                    </button>
-                  </SignInButton>
-                )}
-                
-                <Link 
-                  href="/pack-completo" 
-                  className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full transition-all hover:scale-105"
-                >
-                  Ver Packs
-                </Link>
-              </div>
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium transition-colors ${
+                  isActive(link.href)
+                    ? 'text-primary'
+                    : 'text-slate-700 hover:text-primary'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* DESKTOP ACTIONS */}
+          <div className="hidden md:flex items-center gap-4">
+            {isSignedIn ? (
+              <>
+                <Link
+                  href="/mis-guias"
+                  className="text-slate-700 hover:text-primary font-medium transition-colors"
+                >
+                  Mis Guías
+                </Link>
+                <UserButton afterSignOutUrl="/" />
+              </>
+            ) : (
+              <SignInButton mode="modal">
+                <button className="text-slate-700 hover:text-primary font-medium transition-colors">
+                  Iniciar Sesión
+                </button>
+              </SignInButton>
+            )}
+            
+            <Link
+              href="/itinerarios"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-all"
+            >
+              <span>Ver Guías</span>
+              <span className="material-symbols-outlined text-lg">arrow_forward</span>
+            </Link>
+          </div>
+
+          {/* MOBILE MENU BUTTON */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-slate-900"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-700 hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-3xl">
-              {isOpen ? 'close' : 'menu'}
+              {mobileMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 pt-4">
+        {/* MOBILE MENU */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-6 border-t border-slate-200 bg-white">
             <div className="flex flex-col gap-4">
-              <Link 
-                href="/itinerarios" 
-                className="text-slate-700 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Itinerarios
-              </Link>
-              <Link 
-                href="/blog" 
-                className="text-slate-700 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link 
-                href="/free-tours" 
-                className="text-slate-700 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Free Tours
-              </Link>
-              <Link 
-                href="/apps" 
-                className="text-slate-700 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Apps
-              </Link>
-              <Link 
-                href="/info-util" 
-                className="text-slate-700 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Info Útil
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`font-medium text-lg py-2 transition-colors ${
+                    isActive(link.href)
+                      ? 'text-primary'
+                      : 'text-slate-700 hover:text-primary'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-              {/* Mobile User Button */}
-              {isLoaded && (
-                <div className="flex items-center gap-4 pt-4 border-t border-slate-200">
-                  {isSignedIn ? (
-                    <div className="flex items-center gap-3">
-                      <UserButton 
-                        afterSignOutUrl="/"
-                        appearance={{
-                          elements: {
-                            avatarBox: "w-10 h-10"
-                          }
-                        }}
-                      />
-                      <span className="text-sm text-slate-600">Mi Cuenta</span>
+              <div className="border-t border-slate-200 pt-4 mt-2 flex flex-col gap-4">
+                {isSignedIn ? (
+                  <>
+                    <Link
+                      href="/mis-guias"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-slate-700 hover:text-primary font-medium text-lg py-2 transition-colors"
+                    >
+                      Mis Guías
+                    </Link>
+                    <div className="py-2">
+                      <UserButton afterSignOutUrl="/" />
                     </div>
-                  ) : (
-                    <SignInButton mode="modal">
-                      <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
-                        <span className="material-symbols-outlined">person</span>
-                        <span>Iniciar Sesión</span>
-                      </button>
-                    </SignInButton>
-                  )}
-                </div>
-              )}
+                  </>
+                ) : (
+                  <SignInButton mode="modal">
+                    <button className="text-slate-700 hover:text-primary font-medium text-lg py-2 text-left transition-colors">
+                      Iniciar Sesión
+                    </button>
+                  </SignInButton>
+                )}
 
-              <Link 
-                href="/pack-completo" 
-                className="bg-gradient-to-r from-primary to-orange-500 text-white font-bold py-3 px-6 rounded-full text-center transition-all hover:scale-105"
-                onClick={() => setIsOpen(false)}
-              >
-                Ver Packs
-              </Link>
+                <Link
+                  href="/itinerarios"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg"
+                >
+                  <span>Ver Guías</span>
+                  <span className="material-symbols-outlined">arrow_forward</span>
+                </Link>
+              </div>
             </div>
           </div>
         )}
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }
