@@ -4,30 +4,33 @@ import Link from 'next/link';
 export default function InfoUtilPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* HERO */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600">
-        <div className="absolute inset-0 opacity-10">
+      {/* HERO - CAMBIADO A OSCURO */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95"></div>
+        
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-8 border border-white/30">
-            <span className="material-symbols-outlined text-white text-xl">verified</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
+            <span className="material-symbols-outlined text-primary">verified</span>
             <span className="text-sm font-medium text-white tracking-wide">100% GRATIS</span>
           </div>
 
           <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             Guía Práctica
             <br />
-            <span className="text-yellow-300">de Lisboa</span>
+            <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
+              de Lisboa
+            </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
             Todo lo esencial que necesitas saber antes de viajar
           </p>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <span className="material-symbols-outlined text-white/70 text-3xl">expand_more</span>
         </div>
@@ -37,7 +40,6 @@ export default function InfoUtilPage() {
       <section className="py-32 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* Section Header */}
             <div className="flex items-center gap-4 mb-16">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
                 <span className="material-symbols-outlined text-white text-3xl">directions_transit</span>
@@ -53,7 +55,6 @@ export default function InfoUtilPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Card 1 */}
               <div className="bg-white rounded-2xl p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
@@ -81,7 +82,6 @@ export default function InfoUtilPage() {
                 </div>
               </div>
 
-              {/* Card 2 */}
               <div className="bg-white rounded-2xl p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
@@ -103,7 +103,6 @@ export default function InfoUtilPage() {
                 </div>
               </div>
 
-              {/* Card 3 */}
               <div className="bg-white rounded-2xl p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
@@ -123,7 +122,6 @@ export default function InfoUtilPage() {
                 </div>
               </div>
 
-              {/* Card 4 */}
               <div className="bg-white rounded-2xl p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
@@ -151,7 +149,6 @@ export default function InfoUtilPage() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* Section Header */}
             <div className="flex items-center gap-4 mb-16">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg">
                 <span className="material-symbols-outlined text-white text-3xl">euro</span>
@@ -168,9 +165,9 @@ export default function InfoUtilPage() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[
-                { rango: '50-80 EUR', tipo: 'Económico', color: 'green' },
-                { rango: '100-150 EUR', tipo: 'Medio', color: 'blue' },
-                { rango: '200+ EUR', tipo: 'Confortable', color: 'purple' }
+                { rango: '50-80 EUR', tipo: 'Económico' },
+                { rango: '100-150 EUR', tipo: 'Medio' },
+                { rango: '200+ EUR', tipo: 'Confortable' }
               ].map((budget, idx) => (
                 <div key={idx} className="bg-slate-50 rounded-2xl p-8 text-center border border-slate-100">
                   <p className="text-sm text-slate-600 mb-2 tracking-wide uppercase">{budget.tipo}</p>
@@ -211,7 +208,6 @@ export default function InfoUtilPage() {
       <section className="py-32 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* Section Header */}
             <div className="flex items-center gap-4 mb-16">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
                 <span className="material-symbols-outlined text-white text-3xl">wb_sunny</span>
@@ -293,7 +289,6 @@ export default function InfoUtilPage() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold text-slate-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
                 Tips <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Esenciales</span>

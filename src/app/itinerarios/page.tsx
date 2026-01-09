@@ -14,8 +14,7 @@ export default function ItinerariosPage() {
       duracion: 'Acceso ilimitado',
       paradas: '40+ experiencias',
       restaurantes: '30+ locales',
-      badge: '✓ MÁS VENDIDA',
-      imagen: '/images/guias/pack-completo.jpg'
+      badge: '✓ MÁS VENDIDA'
     },
     {
       id: 'lisboa-1-dia',
@@ -25,8 +24,7 @@ export default function ItinerariosPage() {
       precio: '3.99',
       duracion: '1 día completo',
       paradas: '8 paradas clave',
-      restaurantes: '5 restaurantes',
-      imagen: '/images/guias/lisboa-1-dia.jpg'
+      restaurantes: '5 restaurantes'
     },
     {
       id: 'lisboa-2-dias',
@@ -36,8 +34,7 @@ export default function ItinerariosPage() {
       precio: '5.99',
       duracion: '2 días',
       paradas: '15 paradas',
-      restaurantes: '8 restaurantes',
-      imagen: '/images/guias/lisboa-2-dias.jpg'
+      restaurantes: '8 restaurantes'
     },
     {
       id: 'lisboa-3-dias',
@@ -47,8 +44,7 @@ export default function ItinerariosPage() {
       precio: '7.99',
       duracion: '3 días',
       paradas: '20+ paradas',
-      restaurantes: '12 restaurantes',
-      imagen: '/images/guias/lisboa-3-dias.jpg'
+      restaurantes: '12 restaurantes'
     },
     {
       id: 'lisboa-fotografia',
@@ -59,8 +55,7 @@ export default function ItinerariosPage() {
       duracion: '1 día',
       paradas: '12 spots fotográficos',
       restaurantes: '4 cafés con encanto',
-      badge: '📸 INSTAGRAMEABLE',
-      imagen: '/images/guias/lisboa-fotografia.jpg'
+      badge: '📸 INSTAGRAMEABLE'
     },
     {
       id: 'lisboa-familia',
@@ -70,8 +65,7 @@ export default function ItinerariosPage() {
       precio: '6.99',
       duracion: '2 días',
       paradas: '10 paradas familiares',
-      restaurantes: '6 restaurantes',
-      imagen: '/images/guias/lisboa-familia.jpg'
+      restaurantes: '6 restaurantes'
     },
     {
       id: 'lisboa-romantico',
@@ -82,8 +76,7 @@ export default function ItinerariosPage() {
       duracion: '2 días',
       paradas: '10 paradas románticas',
       restaurantes: '8 restaurantes especiales',
-      badge: '♥ ESPECIAL PAREJAS',
-      imagen: '/images/guias/lisboa-romantico.jpg'
+      badge: '♥ ESPECIAL PAREJAS'
     },
     {
       id: 'lisboa-foodie',
@@ -94,8 +87,7 @@ export default function ItinerariosPage() {
       duracion: '2 días',
       paradas: '8 paradas gourmet',
       restaurantes: '15 experiencias',
-      badge: '🍽 GASTRONÓMICA',
-      imagen: '/images/guias/lisboa-foodie.jpg'
+      badge: '🍽 GASTRONÓMICA'
     }
   ];
 
@@ -103,7 +95,6 @@ export default function ItinerariosPage() {
     <div className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-slate-900">
-        {/* Background Image Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95"></div>
         
         <div className="absolute inset-0 opacity-20">
@@ -146,7 +137,6 @@ export default function ItinerariosPage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <span className="material-symbols-outlined text-white/50 text-3xl">expand_more</span>
         </div>
@@ -156,7 +146,6 @@ export default function ItinerariosPage() {
       <section className="py-32 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Header Section */}
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
                 <span className="text-primary font-bold text-sm tracking-wide">MEJOR OPCIÓN</span>
@@ -169,27 +158,24 @@ export default function ItinerariosPage() {
               </p>
             </div>
 
-            {/* Pack Card */}
             <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-slate-100">
-              {/* Badge flotante */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-primary to-orange-500 text-white font-bold rounded-full shadow-lg">
                 ✓ MÁS VENDIDA · AHORRA 60%
               </div>
 
               <div className="grid md:grid-cols-2 gap-12 items-center mt-4">
-                {/* Izquierda - Descripción */}
                 <div>
                   <div className="mb-8">
-                    <div className="flex items-baseline gap-4 mb-4">
-                      <span className="text-7xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
-                        24<span className="text-5xl">.99</span><span className="text-4xl">€</span>
-                      </span>
-                      <div className="flex flex-col">
-                        <span className="text-2xl text-slate-400 line-through font-light">62.90€</span>
-                        <span className="text-sm text-green-600 font-bold">Ahorras 37.91€</span>
+                    <div className="mb-6">
+                      <div className="text-8xl font-black text-primary mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                        24<span className="text-6xl">.99</span><span className="text-5xl">€</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl text-slate-400 line-through font-light">62.90€</span>
+                        <span className="px-4 py-2 bg-green-500 text-white font-black rounded-full text-lg">-60%</span>
                       </div>
                     </div>
-                    <p className="text-slate-600" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-slate-600 text-lg" style={{ fontFamily: 'Georgia, serif' }}>
                       Pago único · Acceso de por vida · Sin suscripciones
                     </p>
                   </div>
@@ -213,14 +199,13 @@ export default function ItinerariosPage() {
 
                   <Link
                     href="/pack-completo"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-5 px-10 rounded-2xl text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    className="inline-flex items-center gap-3 text-primary hover:text-primary-dark font-bold text-xl group"
                   >
-                    <span>Ver Pack Completo</span>
-                    <span className="material-symbols-outlined">arrow_forward</span>
+                    <span style={{ fontFamily: 'Georgia, serif' }}>Ver Pack Completo</span>
+                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </Link>
                 </div>
 
-                {/* Derecha - Stats Grid */}
                 <div className="grid grid-cols-2 gap-6">
                   {[
                     { numero: '8', label: 'Guías\nCompletas', icon: 'auto_stories' },
@@ -247,7 +232,6 @@ export default function ItinerariosPage() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            {/* Header */}
             <div className="text-center mb-20">
               <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
                 Guías <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Individuales</span>
@@ -257,15 +241,13 @@ export default function ItinerariosPage() {
               </p>
             </div>
 
-            {/* Grid de guías */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {guias.filter(g => g.id !== 'pack-completo').map((guia, idx) => (
+              {guias.filter(g => g.id !== 'pack-completo').map((guia) => (
                 <Link
                   key={guia.id}
                   href={`/guias/${guia.id}`}
                   className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500"
                 >
-                  {/* Imagen placeholder con gradiente */}
                   <div className="relative h-64 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-orange-500/20 group-hover:scale-110 transition-transform duration-500"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -279,7 +261,6 @@ export default function ItinerariosPage() {
                     )}
                   </div>
 
-                  {/* Contenido */}
                   <div className="p-8">
                     <div className="mb-4">
                       <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors" style={{ fontFamily: 'Georgia, serif' }}>
@@ -292,7 +273,6 @@ export default function ItinerariosPage() {
                       {guia.descripcion}
                     </p>
 
-                    {/* Mini stats */}
                     <div className="flex flex-col gap-2 mb-6 text-sm text-slate-500">
                       <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-base">schedule</span>
@@ -308,15 +288,14 @@ export default function ItinerariosPage() {
                       </div>
                     </div>
 
-                    {/* Footer con precio */}
                     <div className="flex items-center justify-between pt-6 border-t border-slate-100">
                       <div>
-                        <span className="text-4xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
-                          {guia.precio}<span className="text-2xl">€</span>
-                        </span>
+                        <div className="text-5xl font-black text-primary" style={{ fontFamily: 'Georgia, serif' }}>
+                          {guia.precio}<span className="text-3xl">€</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                        <span className="text-sm">Ver guía</span>
+                      <div className="flex items-center gap-2 text-primary font-bold group-hover:gap-3 transition-all">
+                        <span className="text-sm" style={{ fontFamily: 'Georgia, serif' }}>Ver guía</span>
                         <span className="material-symbols-outlined text-xl">arrow_forward</span>
                       </div>
                     </div>
