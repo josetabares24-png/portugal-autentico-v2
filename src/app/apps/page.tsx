@@ -99,8 +99,8 @@ export default function AppsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* HERO CON IMAGEN DE FONDO */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* HERO COMPACTO CON IMAGEN */}
+      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=2000&auto=format&fit=crop"
@@ -112,13 +112,13 @@ export default function AppsPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/85 to-slate-800/90"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
-            <span className="material-symbols-outlined text-primary">phone_iphone</span>
-            <span className="text-sm font-medium text-white tracking-wide">APPS ESENCIALES</span>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-12 md:py-24">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8 border border-white/20">
+            <span className="material-symbols-outlined text-primary text-sm md:text-base">phone_iphone</span>
+            <span className="text-[10px] md:text-sm font-medium text-white tracking-wide">APPS ESENCIALES</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             Apps Imprescindibles
             <br />
             <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
@@ -126,27 +126,27 @@ export default function AppsPage() {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          <p className="text-sm md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
             Las aplicaciones que realmente necesitas para vivir
-            <br />
-            Lisboa como un local y ahorrarte quebraderos de cabeza
+            <br className="hidden md:block" />
+            <span className="hidden md:inline">Lisboa como un local y ahorrarte quebraderos de cabeza</span>
           </p>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white/70 text-3xl">expand_more</span>
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white/70 text-xl md:text-3xl">expand_more</span>
         </div>
       </section>
 
-      {/* CATEGORÍAS - BOTONES FUNCIONALES */}
-      <section className="py-12 bg-slate-50 border-b border-slate-200">
+      {/* CATEGORÍAS FUNCIONALES */}
+      <section className="py-6 md:py-12 bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
             {categorias.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategoriaActiva(cat)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold transition-all text-xs md:text-base ${
                   cat === categoriaActiva
                     ? 'bg-primary text-white shadow-lg'
                     : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
@@ -159,49 +159,49 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* APPS GRID */}
-      <section className="py-32 bg-white">
+      {/* APPS GRID COMPACTO */}
+      <section className="py-12 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="text-center mb-8 md:mb-20">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
                 Apps <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Recomendadas</span>
               </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+              <p className="text-sm md:text-xl text-slate-600 max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
                 Descarga estas apps antes de viajar y tendrás todo lo necesario
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {appsFiltradas.map((app, idx) => (
                 <div
                   key={idx}
-                  className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500"
+                  className="group bg-white rounded-xl md:rounded-2xl p-5 md:p-8 border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500"
                 >
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                    <span className="material-symbols-outlined text-white text-4xl">{app.icono}</span>
+                  <div className={`w-14 h-14 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center mb-4 md:mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <span className="material-symbols-outlined text-white text-2xl md:text-4xl">{app.icono}</span>
                   </div>
 
-                  <div className="inline-block px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-700 mb-4">
+                  <div className="inline-block px-2 py-1 md:px-3 md:py-1 bg-slate-100 rounded-full text-[10px] md:text-xs font-bold text-slate-700 mb-3 md:mb-4">
                     {app.categoria}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-2 md:mb-3 group-hover:text-primary transition-colors" style={{ fontFamily: 'Georgia, serif' }}>
                     {app.nombre}
                   </h3>
 
-                  <p className="text-slate-600 mb-6 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-slate-600 mb-4 md:mb-6 leading-relaxed text-xs md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
                     {app.descripcion}
                   </p>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <span className="text-sm font-bold text-green-600">{app.precio}</span>
+                  <div className="flex items-center justify-between pt-3 md:pt-4 border-t border-slate-100">
+                    <span className="text-xs md:text-sm font-bold text-green-600">{app.precio}</span>
                     <Link
                       href={app.link}
-                      className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold text-sm group/link"
+                      className="inline-flex items-center gap-1.5 md:gap-2 text-primary hover:text-primary-dark font-bold text-xs md:text-sm group/link"
                     >
                       <span>Descargar</span>
-                      <span className="material-symbols-outlined text-lg group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                      <span className="material-symbols-outlined text-base md:text-lg group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                     </Link>
                   </div>
                 </div>
@@ -209,8 +209,8 @@ export default function AppsPage() {
             </div>
 
             {appsFiltradas.length === 0 && (
-              <div className="text-center py-20">
-                <p className="text-xl text-slate-500" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+              <div className="text-center py-12 md:py-20">
+                <p className="text-base md:text-xl text-slate-500" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
                   No hay apps en esta categoría todavía
                 </p>
               </div>
@@ -219,17 +219,17 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* TIPS ADICIONALES */}
-      <section className="py-32 bg-slate-50">
+      {/* TIPS COMPACTOS */}
+      <section className="py-12 md:py-32 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
                 Tips <span className="text-primary">Adicionales</span>
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
               {[
                 {
                   icon: 'download',
@@ -252,14 +252,14 @@ export default function AppsPage() {
                   desc: 'Lleva batería externa. Usar GPS y Google Maps consume mucha batería.'
                 }
               ].map((tip, idx) => (
-                <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mb-6 shadow-lg">
-                    <span className="material-symbols-outlined text-white text-2xl">{tip.icon}</span>
+                <div key={idx} className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 border border-slate-200 hover:shadow-lg transition-shadow">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
+                    <span className="material-symbols-outlined text-white text-xl md:text-2xl">{tip.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3" style={{ fontFamily: 'Georgia, serif' }}>
                     {tip.titulo}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-slate-600 leading-relaxed text-xs md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
                     {tip.desc}
                   </p>
                 </div>
@@ -269,8 +269,8 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-32 relative overflow-hidden">
+      {/* CTA COMPACTO */}
+      <section className="py-12 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2000&auto=format&fit=crop"
@@ -283,7 +283,7 @@ export default function AppsPage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
               ¿Listo para Explorar
               <br />
               <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
@@ -291,20 +291,20 @@ export default function AppsPage() {
               </span>
             </h2>
 
-            <p className="text-xl text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+            <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
               Descubre nuestros itinerarios completos con restaurantes verificados,
-              coordenadas GPS y tips de local
+              <span className="hidden md:inline"><br />coordenadas GPS y tips de local</span>
             </p>
 
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-6 px-12 rounded-2xl text-xl shadow-2xl hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-3 px-8 md:py-6 md:px-12 rounded-xl md:rounded-2xl text-base md:text-xl shadow-2xl hover:scale-105 transition-all"
             >
               <span>Ver Itinerarios</span>
-              <span className="material-symbols-outlined">arrow_forward</span>
+              <span className="material-symbols-outlined text-lg md:text-2xl">arrow_forward</span>
             </Link>
 
-            <p className="text-slate-500 text-sm mt-8">
+            <p className="text-slate-500 text-xs md:text-sm mt-4 md:mt-8">
               ✓ Desde 3.99€ · ✓ Descarga inmediata · ✓ Actualizadas 2026
             </p>
           </div>
