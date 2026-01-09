@@ -15,6 +15,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa en 1 Día',
     subtitulo: 'Lo Esencial',
     precio: '3.99',
+    paradas: 8,
     imagen: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=1600',
     descripcion: 'El itinerario perfecto para descubrir lo imprescindible de Lisboa en un día impecablemente organizado.'
   },
@@ -22,6 +23,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa en 2 Días',
     subtitulo: 'Experiencia Completa',
     precio: '5.99',
+    paradas: 15,
     imagen: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=1600',
     descripcion: 'Explora Lisboa sin prisas, incluyendo barrios auténticos, miradores secretos y experiencias locales.'
   },
@@ -29,6 +31,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa en 3 Días',
     subtitulo: 'Inmersión Total',
     precio: '7.99',
+    paradas: 20,
     imagen: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=1600',
     descripcion: 'Vive Lisboa como residente: mercados tradicionales, barrios escondidos y rincones que solo conocen los locales.'
   },
@@ -36,6 +39,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa Fotográfico',
     subtitulo: 'Los Mejores Encuadres',
     precio: '4.99',
+    paradas: 12,
     imagen: 'https://images.unsplash.com/photo-1526048598645-62b31f82c0c5?q=80&w=1600',
     descripcion: 'Ruta fotográfica diseñada para capturar Lisboa en su mejor luz: golden hour, composiciones perfectas y spots secretos.'
   },
@@ -43,6 +47,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa en Familia',
     subtitulo: 'Con Niños',
     precio: '6.99',
+    paradas: 10,
     imagen: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1600',
     descripcion: 'Itinerario familiar con oceanario, parques infantiles, museos interactivos y restaurantes kids-friendly.'
   },
@@ -50,6 +55,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa Romántico',
     subtitulo: 'Para Parejas',
     precio: '5.99',
+    paradas: 8,
     imagen: 'https://images.unsplash.com/photo-1598084991519-c90900bc9df0?q=80&w=1600',
     descripcion: 'Los rincones más románticos de Lisboa: atardeceres en miradores, cenas íntimas y paseos al anochecer.'
   },
@@ -57,6 +63,7 @@ const GUIDE_DATA = {
     titulo: 'Lisboa Foodie',
     subtitulo: 'Ruta Gastronómica',
     precio: '6.99',
+    paradas: 12,
     imagen: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600',
     descripcion: 'Tour culinario por los mejores mercados, tabernas centenarias, pastelerías históricas y restaurantes de autor.'
   }
@@ -104,6 +111,9 @@ export default async function GuiaPage() {
         {/* Paywall */}
         <Paywall
           guideId={GUIDE_ID}
+          guideName={guia.titulo}
+          price={guia.precio}
+          remainingStops={guia.paradas}
         />
       </div>
     );
@@ -160,7 +170,7 @@ export default async function GuiaPage() {
             <div className="prose prose-lg max-w-none">
               <h2 style={{ fontFamily: 'Georgia, serif' }}>Itinerario Completo</h2>
               <p style={{ fontFamily: 'Georgia, serif' }}>
-                [CONTENIDO REAL DE LA GUÍA AQUÍ]
+                [CONTENIDO REAL DE LA GUÍA AQUÍ - {guia.paradas} paradas detalladas]
               </p>
               
               <h3 style={{ fontFamily: 'Georgia, serif' }}>Parada 1: Ejemplo</h3>
