@@ -8,7 +8,7 @@ import Link from 'next/link';
 // TEMPLATE PARA TODAS LAS GUÍAS
 // Reemplaza GUIDE_ID con: lisboa-2-dias, lisboa-3-dias, lisboa-fotografia, etc.
 
-const GUIDE_ID = 'lisboa-fotografia'; // ← Cambiar por cada guía
+const GUIDE_ID = 'lisboa-familia'; // ← Cambiar por cada guía
 
 const GUIDE_DATA = {
   'lisboa-1-dia': {
