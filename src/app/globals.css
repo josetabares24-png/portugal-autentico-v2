@@ -169,13 +169,10 @@ a:focus-visible {
 /* ========== TIPOGRAFÍA CARACTERÍSTICA ========== */
 
 /* Headlines - Serif editorial con personalidad */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
 
 /* Body - Moderna pero cálida */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 /* Accent - Portuguesa auténtica */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
 .font-headline {
   font-family: 'Fraunces', Georgia, serif;
