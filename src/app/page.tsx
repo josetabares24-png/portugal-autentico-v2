@@ -5,18 +5,18 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
+  // Preview 5 - Estados
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [exitModalShown, setExitModalShown] = useState(false);
 
+  // Preview 5 - Effects
   useEffect(() => {
-    // Sticky bar on scroll
     const handleScroll = () => {
       setShowStickyBar(window.scrollY > 300);
     };
 
-    // Exit intent detection
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY < 10 && !exitModalShown && !emailSubmitted) {
         setShowExitModal(true);
@@ -33,18 +33,18 @@ export default function Home() {
     };
   }, [exitModalShown, emailSubmitted]);
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Aquí integrarías con tu backend/email service
+    // TODO: Integrar con tu backend/email service aquí
     setEmailSubmitted(true);
     setTimeout(() => setShowExitModal(false), 2000);
   };
 
   return (
-    <main className="min-h-screen bg-[#FFFDF7] pb-32">
+    <main className="min-h-screen bg-[#FFFDF7]">
       
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          HERO - Diseño humano existente
+          HERO - Diseño humano con ilustración orgánica
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -139,25 +139,479 @@ export default function Home() {
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          CONTENIDO EXISTENTE (simplificado para demo)
+          EL PROBLEMA - Diseño humano con ilustración
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-24 bg-white" id="itinerarios">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black mb-6" style={{ fontFamily: 'Georgia, serif' }}>Elige tu experiencia</h2>
-          <p className="text-xl text-gray-600 mb-16">Desde €3.99 · Acceso perpetuo · Garantía 48h</p>
+      <section className="py-24 bg-gradient-to-b from-orange-50/30 to-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-200 to-transparent"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative">
           
-          {/* Aquí irían tus cards de productos existentes */}
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 rounded-3xl p-12">
-            <p className="text-gray-700 text-lg leading-relaxed">
-              [Aquí van tus cards de productos actuales del diseño V2.0]<br/>
-              Lisboa 1 Día · Lisboa 2 Días · Lisboa 3 Días · Pack Completo
+          <div className="inline-flex items-center gap-2 bg-red-100 border-2 border-red-300 rounded-full px-4 py-2 mb-8">
+            <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
+            <span className="text-red-700 font-bold text-sm uppercase tracking-wider">El problema</span>
+          </div>
+
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              Los blogs te mandan a los<br />
+              <span className="relative inline-block">
+                <span className="text-red-500">mismos sitios turísticos</span>
+                <svg className="absolute -inset-2 w-[calc(100%+1rem)] h-[calc(100%+1rem)]" viewBox="0 0 200 60" fill="none">
+                  <ellipse cx="100" cy="30" rx="95" ry="25" stroke="#FF6B35" strokeWidth="3" strokeDasharray="4 4" opacity="0.3" />
+                </svg>
+              </span>
+            </h2>
+            
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Las apps copian info vieja. Los tours grupales siguen rutas comerciales.<br />
+              <span className="font-bold text-gray-900 relative inline-block mt-2">
+                Yo vivo aquí desde 2015. Conozco la Lisboa real.
+                <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 300 8" fill="none">
+                  <path d="M2 4 Q 75 6, 150 4 T 298 4" stroke="#FF6B35" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </span>
             </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          ITINERARIOS - Diseño warm con cards
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="itinerarios" className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white rounded-full px-5 py-2.5 mb-8 shadow-lg">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+            </svg>
+            <span className="font-bold text-sm uppercase tracking-wider">Itinerarios</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            Elige tu experiencia
+          </h2>
+          <p className="text-xl text-gray-600 mb-16 leading-relaxed">
+            Horarios exactos, coordenadas GPS y tips que solo un local conoce.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            
+            {/* Card 1 Día */}
+            <Link href="/guias/lisboa-1-dia" className="group relative bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 hover:border-orange-400 rounded-3xl p-8 transition-all hover:shadow-2xl hover:-translate-y-2">
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white text-xs font-black uppercase px-4 py-2 rounded-full shadow-lg transform rotate-6">
+                Más Popular
+              </div>
+              
+              <div className="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=800"
+                  alt="Lisboa en 1 Día"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              <h3 className="text-2xl font-black text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Lisboa en 1 Día
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Lo esencial sin prisas ni turistadas
+              </p>
+
+              <div className="flex items-center gap-4 mb-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">1 día</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">8 paradas</span>
+                </div>
+              </div>
+
+              <div className="flex items-baseline gap-3 mb-6">
+                <span className="text-5xl font-black text-gray-900">€3.99</span>
+              </div>
+
+              <div className="text-orange-600 font-bold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+                <span>Ver guía</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+
+            {/* Card 2 Días */}
+            <Link href="/guias/lisboa-2-dias" className="group bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 hover:border-orange-400 rounded-3xl p-8 transition-all hover:shadow-2xl hover:-translate-y-2">
+              <div className="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=800"
+                  alt="Lisboa en 2 Días"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              <h3 className="text-2xl font-black text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Lisboa en 2 Días
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Con tiempo para respirar la ciudad
+              </p>
+
+              <div className="flex items-center gap-4 mb-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">2 días</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">15 paradas</span>
+                </div>
+              </div>
+
+              <div className="flex items-baseline gap-3 mb-6">
+                <span className="text-5xl font-black text-gray-900">€5.99</span>
+              </div>
+
+              <div className="text-orange-600 font-bold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+                <span>Ver guía</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+
+            {/* Card 3 Días */}
+            <Link href="/guias/lisboa-3-dias" className="group bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 hover:border-orange-400 rounded-3xl p-8 transition-all hover:shadow-2xl hover:-translate-y-2">
+              <div className="relative h-48 mb-6 rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800"
+                  alt="Lisboa en 3 Días"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              <h3 className="text-2xl font-black text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Lisboa en 3 Días
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Inmersión completa como residente
+              </p>
+
+              <div className="flex items-center gap-4 mb-6 text-sm">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">3 días</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-bold text-gray-700">20+ paradas</span>
+                </div>
+              </div>
+
+              <div className="flex items-baseline gap-3 mb-6">
+                <span className="text-5xl font-black text-gray-900">€7.99</span>
+              </div>
+
+              <div className="text-orange-600 font-bold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+                <span>Ver guía</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </Link>
+
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/itinerarios"
+              className="inline-flex items-center gap-3 text-orange-600 hover:text-orange-700 font-bold text-lg group"
+            >
+              <span>Ver todas las guías</span>
+              <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          PACK COMPLETO - Diseño premium con descuento
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-orange-900/90 to-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
+          
+          <div className="bg-white/10 backdrop-blur-xl rounded-[3rem] p-12 md:p-20 text-center border-2 border-white/20 shadow-2xl">
+            
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white text-sm font-black uppercase tracking-wider px-6 py-3 rounded-full mb-8 shadow-xl">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span>Ahorra 60% Hoy</span>
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+              Pack Completo Lisboa
+            </h2>
+            
+            <p className="text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto">
+              Las 7 guías + actualizaciones perpetuas + soporte directo conmigo
+            </p>
+
+            <div className="mb-12">
+              <div className="text-2xl text-white/60 line-through mb-2">€42.00</div>
+              <div className="flex items-center justify-center gap-6 mb-3">
+                <span className="text-8xl md:text-9xl font-black" style={{ textShadow: '0 6px 30px rgba(0,0,0,0.4)' }}>€24.99</span>
+                <div className="bg-gradient-to-r from-[#FF6B35] to-[#F7931E] px-6 py-3 rounded-2xl font-black text-3xl shadow-xl transform rotate-3">
+                  -60%
+                </div>
+              </div>
+              <p className="text-white/80 font-bold text-xl">Ahorras €17 · Acceso perpetuo</p>
+            </div>
+
+            <Link
+              href="/pack-completo"
+              className="inline-flex items-center gap-4 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] hover:from-[#F7931E] hover:to-[#FF6B35] text-white font-black px-16 py-7 rounded-[2rem] text-2xl transition-all shadow-2xl hover:scale-105 group mb-8"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+              </svg>
+              <span>Desbloquear Todo</span>
+            </Link>
+
+            <p className="text-base text-white/70 font-semibold">
+              ✓ Descarga inmediata · ✓ Garantía 48h · ✓ Sin renovaciones
+            </p>
+
           </div>
         </div>
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          STICKY CTA BOTTOM - Preview 5
+          CÓMO FUNCIONA - Diseño ilustrado
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section id="como-funciona" className="py-24 bg-gradient-to-b from-white to-orange-50/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full px-5 py-2.5 mb-8 shadow-lg">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <span className="font-bold text-sm uppercase tracking-wider">Cómo Funciona</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            Desde elegir hasta explorar<br />en menos de 5 minutos
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-12 mt-16">
+            
+            {/* Step 1 */}
+            <div className="text-center relative">
+              <div className="relative inline-block mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B35] to-[#F7931E] rounded-[2rem] flex items-center justify-center text-3xl font-black text-white shadow-xl transform -rotate-3">
+                  1
+                </div>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-orange-300 rounded-full"></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-orange-400 rounded-full"></div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                Elige tu itinerario
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                1, 2 o 3 días. Fotográfico, familiar, romántico o foodie. Tú decides el ritmo.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center relative">
+              <div className="relative inline-block mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B35] to-[#F7931E] rounded-[2rem] flex items-center justify-center text-3xl font-black text-white shadow-xl">
+                  2
+                </div>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-orange-300 rounded-full"></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-orange-400 rounded-full"></div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                Acceso inmediato
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Pago único. Sin suscripciones. Entras desde cualquier dispositivo de por vida.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center relative">
+              <div className="relative inline-block mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B35] to-[#F7931E] rounded-[2rem] flex items-center justify-center text-3xl font-black text-white shadow-xl transform rotate-3">
+                  3
+                </div>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-orange-300 rounded-full"></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-orange-400 rounded-full"></div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                Explora con GPS
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Cada parada tiene coordenadas exactas. Un clic y Google Maps te lleva directo.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          STATS + GARANTÍA - Diseño warm
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section className="py-24 bg-gradient-to-b from-orange-50/50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-20">
+            
+            <div>
+              <div className="text-7xl md:text-8xl font-black mb-4" style={{ 
+                background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                500+
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Viajeros Satisfechos</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Han explorado Lisboa con nuestros itinerarios sin perderse
+              </p>
+            </div>
+
+            <div>
+              <div className="text-7xl md:text-8xl font-black mb-4" style={{ 
+                background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                48h
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Garantía Total</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Si no cumple expectativas, devolvemos sin preguntas
+              </p>
+            </div>
+
+            <div>
+              <div className="text-7xl md:text-8xl font-black mb-4" style={{ 
+                background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                2025
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Actualizado Enero</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Precios, horarios y recomendaciones verificados este mes
+              </p>
+            </div>
+
+          </div>
+
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute -top-4 -left-4 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl"></div>
+            
+            <div className="relative bg-gradient-to-br from-orange-50 to-orange-100/50 border-2 border-orange-300 rounded-3xl p-10 shadow-xl">
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="text-6xl flex-shrink-0">🛡️</div>
+                <div className="flex-1">
+                  <h4 className="text-2xl font-black text-gray-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                    Garantía sin preguntas de 48 horas
+                  </h4>
+                  <p className="text-gray-700 mb-4 leading-relaxed text-lg">
+                    Si la guía no cumple tus expectativas, te devuelvo el dinero. 
+                    Sin explicaciones. Sin trámites.
+                  </p>
+                  <div className="bg-white/70 rounded-2xl p-5 border border-orange-200">
+                    <p className="text-sm text-gray-700 italic">
+                      <strong className="text-gray-900">Dato real:</strong> Solo 8 personas de 500+ han pedido devolución 
+                      (y fue porque compraron la misma guía dos veces por error).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center mt-16 text-sm text-gray-500 italic">
+            Solo 8 devoluciones en 6 meses — no por insatisfacción, sino por compras duplicadas
+          </p>
+
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          CTA FINAL - Diseño premium
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center relative z-10">
+          
+          <h2 className="text-5xl md:text-6xl font-black mb-8" style={{ fontFamily: 'Georgia, serif' }}>
+            ¿Listo para conocer<br />la Lisboa real?
+          </h2>
+          <p className="text-2xl text-gray-300 mb-12 leading-relaxed">
+            Empieza con cualquier itinerario desde €3.99
+          </p>
+
+          <Link
+            href="#itinerarios"
+            className="inline-flex items-center gap-4 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] hover:from-[#F7931E] hover:to-[#FF6B35] text-white font-black px-16 py-7 rounded-[2rem] text-2xl transition-all shadow-2xl hover:scale-105 group"
+          >
+            <span>Ver Itinerarios</span>
+            <svg className="w-7 h-7 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          PREVIEW 5 - STICKY CTA BOTTOM
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <div className={`
         fixed bottom-0 left-0 right-0 z-50
@@ -207,7 +661,7 @@ export default function Home() {
       </div>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          FLOATING WHATSAPP - Preview 5
+          PREVIEW 5 - FLOATING WHATSAPP
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <a
         href="https://wa.me/351XXXXXXXXX?text=Hola,%20tengo%20una%20pregunta%20sobre%20las%20guías"
@@ -226,7 +680,7 @@ export default function Home() {
       </a>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          EXIT INTENT MODAL - Preview 5
+          PREVIEW 5 - EXIT INTENT MODAL
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       {showExitModal && (
         <div 
@@ -280,6 +734,7 @@ export default function Home() {
                 <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-8">
                   <input
                     type="email"
+                    name="email"
                     placeholder="tu@email.com"
                     required
                     className="flex-1 px-6 py-4 border-2 border-gray-300 rounded-xl text-lg focus:outline-none focus:border-orange-500 transition-colors"
