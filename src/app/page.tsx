@@ -46,15 +46,15 @@ export default function Home() {
             {/* Headline - Typography mix serif/sans */}
             <h1 className="mb-8">
               <span className="block text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-3" style={{ fontFamily: 'Georgia, serif' }}>
-                Descubre Lisboa
+                Evita Trampas Turísticas
               </span>
-              <span className="block text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1]" style={{ 
+              <span className="block text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1]" style={{
                 background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                Como un Local
+                en Lisboa 2025
               </span>
             </h1>
 
@@ -64,10 +64,10 @@ export default function Home() {
               <svg className="absolute -bottom-2 left-0 w-full h-3 opacity-50" viewBox="0 0 300 12" fill="none">
                 <path d="M2 6 Q 75 10, 150 6 T 298 6" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" />
               </svg>
-              
-              <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 leading-relaxed px-6">
-                Itinerarios verificados por quien vive aquí desde hace 10 años.<br className="hidden sm:block" />
-                <span className="text-white font-semibold">Sin perder tiempo. Sin colas. Sin turistadas.</span>
+
+              <p className="text-xl sm:text-2xl lg:text-3xl text-white leading-relaxed px-6">
+                Horarios exactos + GPS + Restaurantes locales<br className="hidden sm:block" />
+                <span className="text-white font-semibold">Por quien vive aquí desde 2015. Actualizado Enero 2025.</span>
               </p>
             </div>
 

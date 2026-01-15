@@ -1,5 +1,6 @@
 export interface Itinerary {
   id: string;
+  slug?: string;
   title: string;
   description: string;
   duration: string;
@@ -17,6 +18,7 @@ export interface Itinerary {
 export const mainItineraries: Itinerary[] = [
   {
     id: 'lisboa-1-dia',
+    slug: 'lisboa-1-dia-lo-esencial',
     title: 'Lisboa Esencial',
     description: 'Perfecto si tienes escala o poco tiempo. Lo mejor de Lisboa bien organizado.',
     duration: '1 día completo',
@@ -36,6 +38,7 @@ export const mainItineraries: Itinerary[] = [
   },
   {
     id: 'lisboa-2-dias',
+    slug: 'lisboa-2-dias-completo',
     title: 'Lisboa Completa',
     description: 'El favorito. Fin de semana perfecto con Belém, Alfama y los barrios con encanto.',
     duration: '2 días completos',
@@ -55,6 +58,7 @@ export const mainItineraries: Itinerary[] = [
   },
   {
     id: 'lisboa-3-dias',
+    slug: 'lisboa-3-dias-premium',
     title: 'Lisboa + Alrededores',
     description: 'La experiencia completa. Lisboa, Sintra, Cascais y Cabo da Roca.',
     duration: '3 días + Sintra',
@@ -77,6 +81,7 @@ export const mainItineraries: Itinerary[] = [
 export const specialItineraries: Itinerary[] = [
   {
     id: 'lisboa-full-week',
+    slug: 'lisboa-full-week',
     title: 'Lisboa Full Week',
     description: 'Una semana completa: Lisboa, Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
@@ -95,6 +100,7 @@ export const specialItineraries: Itinerary[] = [
   },
   {
     id: 'lisboa-romantica',
+    slug: 'lisboa-romantica',
     title: 'Lisboa Romántica',
     description: 'Miradores al atardecer, cenas románticas y experiencias para parejas.',
     duration: 'Romántico',
@@ -113,6 +119,7 @@ export const specialItineraries: Itinerary[] = [
   },
   {
     id: 'lisboa-familiar',
+    slug: 'lisboa-familiar',
     title: 'Lisboa Familiar',
     description: 'Actividades para niños, ritmo relajado y restaurantes kid-friendly.',
     duration: 'Familiar',
@@ -131,6 +138,7 @@ export const specialItineraries: Itinerary[] = [
   },
   {
     id: 'lisboa-fotografia',
+    slug: 'lisboa-fotografia',
     title: 'Lisboa Fotografía',
     description: '30+ spots, horarios de luz perfecta y rutas fotográficas.',
     duration: 'Fotografía',

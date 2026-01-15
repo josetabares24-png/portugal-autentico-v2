@@ -10,10 +10,15 @@ export async function POST(request: NextRequest) {
   try {
     const { productId } = await request.json();
 
-    // Log para debug
-    console.log('Product ID recibido:', productId);
+    // Validación de input
+    if (!productId || typeof productId !== 'string') {
+      return NextResponse.json(
+        { error: 'Product ID inválido' },
+        { status: 400 }
+      );
+    }
 
-    if (!productId || !(productId in STRIPE_PRODUCTS)) {
+    if (!(productId in STRIPE_PRODUCTS)) {
       return NextResponse.json(
         { error: 'Producto no válido' },
         { status: 400 }
@@ -21,10 +26,6 @@ export async function POST(request: NextRequest) {
     }
 
     const product = STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS];
-    
-    // Log para debug
-    console.log('Product encontrado:', product);
-    console.log('Price ID:', product.priceId);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

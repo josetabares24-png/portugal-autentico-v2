@@ -1,10 +1,10 @@
-import { supabase } from './supabase'
+import { supabaseAdmin } from './supabase'
 
 export async function hasAccess(userId: string, guideId: string): Promise<boolean> {
   if (!userId) return false
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from('purchases')
       .select('id')
       .eq('user_id', userId)
@@ -27,7 +27,7 @@ export async function hasPackCompleto(userId: string): Promise<boolean> {
   if (!userId) return false
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from('purchases')
       .select('id')
       .eq('user_id', userId)
@@ -50,7 +50,7 @@ export async function getUserPurchases(userId: string): Promise<string[]> {
   if (!userId) return []
 
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
       .from('purchases')
       .select('guide_id')
       .eq('user_id', userId)
@@ -74,7 +74,7 @@ export async function registerPurchase(
   stripePaymentId: string
 ): Promise<boolean> {
   try {
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
       .from('purchases')
       .insert({
         user_id: userId,
