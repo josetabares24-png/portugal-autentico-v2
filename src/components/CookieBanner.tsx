@@ -27,8 +27,17 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-2xl z-50 p-6 sm:p-8">
-      <div className="container mx-auto max-w-5xl">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div className="container mx-auto max-w-5xl relative">
+        {/* Botón cerrar (X) */}
+        <button
+          onClick={rejectCookies}
+          className="absolute top-0 right-0 text-gray-400 hover:text-gray-600 transition-colors text-2xl font-bold w-8 h-8 flex items-center justify-center"
+          aria-label="Cerrar banner de cookies"
+        >
+          ✕
+        </button>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pr-8">
           <div className="flex-1">
             <h3 className="font-bold text-gray-900 text-lg mb-2">🍪 Uso de Cookies</h3>
             <p className="text-gray-700 text-sm leading-relaxed">

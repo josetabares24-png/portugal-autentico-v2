@@ -165,24 +165,33 @@ export interface TimelineStop {
   tip: string;
   type: 'visit' | 'food';
   image?: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+  googleMapsUrl?: string;
 }
 
 export const lisboa1DiaTimeline: TimelineStop[] = [
   {
     time: '09:00',
     title: 'Alfama - El barrio más auténtico',
-    description: 'Empieza temprano antes de que lleguen los turistas. Callejuelas medievales, ropa tendida, fado sonando desde las ventanas. Es la Lisboa real.',
-    tip: 'Entra por la Catedral Sé y piérdete subiendo hacia el castillo',
+    description: 'Aquí es donde empieza tu día perfecto en Lisboa. Sal temprano, tipo 9 de la mañana, cuando las calles todavía están tranquilas y solo ves a los vecinos abriendo sus tiendas. Alfama es el único barrio que sobrevivió al terremoto de 1755, así que caminar por aquí es literalmente caminar por la historia medieval de la ciudad. Vas a ver ropa tendida cruzando las calles, escuchar fado saliendo de alguna ventana, y oler a bacalao cocinándose para el almuerzo. No uses Google Maps aquí - lo mejor es perderte. En serio. Las mejores fotos y los rincones más bonitos están donde no hay turistas.',
+    tip: '📍 Empieza en la Catedral Sé (coordenadas abajo) y sube caminando hacia el castillo. Todas las calles llevan arriba. Si ves una escalera, súbela. Confía en mí.',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800'
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7109, lng: -9.1333 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7109,-9.1333'
   },
   {
     time: '10:30',
     title: 'Mirador Santa Luzia',
-    description: 'Las mejores vistas de Alfama y el río Tajo. Azulejos preciosos, buganvillas, perfecto para fotos. Hay un kiosco para tomar un café.',
-    tip: 'El mirador de al lado (Portas do Sol) tiene más gente pero vistas diferentes',
+    description: 'Después de caminar por Alfama, llegas a este mirador y entiendes por qué Lisboa se llama "la ciudad de las siete colinas". Las vistas son una postal: los tejados naranjas de Alfama bajando hacia el río Tajo, el panteón nacional a lo lejos, y si tienes suerte, algún barco de crucero pasando. Hay azulejos antiguos en las paredes que cuentan la historia de Lisboa antes del terremoto - tómate un momento para verlos. Al lado hay un kiosco donde puedes tomar un café con los locales. Y las buganvillas rosadas que cuelgan por todas partes hacen que las fotos se hagan solas.',
+    tip: '🎥 Mejor hora para fotos: 10-11am (luz perfecta). Hay otro mirador justo al lado (Portas do Sol) con menos gente y vistas hacia otro lado. Visítalos ambos.',
     type: 'visit',
-    image: 'https://images.unsplash.com/photo-1588642411190-3e72e93b1497?w=800'
+    image: 'https://images.unsplash.com/photo-1588642411190-3e72e93b1497?w=800',
+    coordinates: { lat: 38.7115, lng: -9.1294 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7115,-9.1294'
   },
   {
     time: '11:30',
