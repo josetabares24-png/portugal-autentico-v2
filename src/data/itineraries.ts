@@ -255,6 +255,134 @@ export const lisboa1DiaTimeline: TimelineStop[] = [
   }
 ];
 
+// Timeline stops para Lisboa 2 días - DÍA 1
+export const lisboa2DiasDia1Timeline: TimelineStop[] = [
+  {
+    time: '09:00',
+    title: 'Baixa-Chiado - Corazón histórico',
+    description: 'Empezamos en la Baixa, el centro neurálgico de Lisboa reconstruido después del terremoto de 1755 por el Marqués de Pombal. Este barrio fue el primer ejemplo de planificación urbana moderna en Europa - calles en cuadrícula perfecta, edificios de la misma altura, y plazas simétricas. Empieza en Praça do Comércio (la plaza más grande de Europa junto al río) donde llegaban los barcos con las especias de la India. Camina por Rua Augusta (la calle peatonal principal llena de tiendas y artistas callejeros) hasta Rossio. Súbete al Elevador de Santa Justa (3€) - un ascensor de hierro de 1902 que parece sacado de París. Las vistas desde arriba son brutales: toda la Baixa desplegada hasta el río. Después baja a Chiado, el barrio intelectual donde Pessoa tomaba café y Fernando Pessoa escribía poesía. Entra a "A Brasileira" (el café más famoso) y verás la estatua de Pessoa sentado en la terraza.',
+    tip: '🎫 Elevador Santa Justa: 5.30€ o GRATIS con la Lisboa Card. TRUCO: En vez de pagar el elevador, sube por las Escadas do Carmo (escaleras gratis al lado) y entras al mirador por arriba (1.50€ vs 5.30€).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7071, lng: -9.1364 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7071,-9.1364'
+  },
+  {
+    time: '11:30',
+    title: 'Tranvía 28 - La experiencia lisboeta',
+    description: 'No es solo transporte - es UNA EXPERIENCIA. El tranvía 28 es un tranvía amarillo de madera de 1930 que trepa colinas imposibles, pasa por calles tan estrechas que casi rozas las paredes, y atraviesa los barrios más auténticos de Lisboa. Sube en Martim Moniz o Graça (menos gente que en Baixa) y aguanta todo el recorrido hasta Campo de Ourique (40 minutos de película). Vas a pasar por: Graça (barrio residencial en la colina), Alfama (laberinto medieval), Sé Catedral, Baixa, Estrela (basílica blanca gigante), y Campo de Ourique. Los conductores maniobran estas máquinas antiguas con una precisión milimétrica - parece imposible que quepan por esas calles. Ojo con los carteristas - van en el tranvía buscando turistas distraídos. Mochila adelante, manos en los bolsillos.',
+    tip: '🚋 Billete: 3€ en el conductor (solo efectivo) o 1.50€ con la tarjeta Viva Viagem recargable. MEJOR HORARIO: 9-11am o después de las 18:00 (menos turistas). Evita 12-17h que va REPLETO.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1597426509446-cd65442af149?w=800',
+    coordinates: { lat: 38.7169, lng: -9.1399 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7169,-9.1399'
+  },
+  {
+    time: '13:00',
+    title: 'Almuerzo en Graça - Restaurante O Pitéu',
+    description: 'Después del tranvía 28, bájate en Graça y busca "O Pitéu da Graça". Este restaurante NO está en ninguna guía turística (todavía) pero los vecinos del barrio hacen cola para comer aquí. Es una tasca tradicional portuguesa con manteles de papel, platos de cerámica, y la dueña que te trata como si fueras su sobrino. El menú del día cuesta 9-11€ e incluye: entrada (sopa o ensalada), plato principal, postre, café, y medio litro de vino. Los platos típicos: arroz de pato (duck rice - INCREÍBLE), bacalao à Brás (bacalao desmigado con patatas paja y huevos), carne de porco alentejana (cerdo con almejas, sí leíste bien), y los domingos hacen cozido à portuguesa (cocido portugués con todas las carnes habidas y por haber). Las porciones son generosas - no pidas dos platos porque no vas a poder.',
+    tip: '💰 Menú del día: 9-11€. No reservan, llegas y esperas mesa (10-15 min máximo). Abre solo almuerzo (12:00-15:00) de lunes a sábado. Domingos cerrado. ALTERNATIVA: "Tasca da Graça" (enfrente) también es buenísima.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800',
+    coordinates: { lat: 38.7169, lng: -9.1329 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7169,-9.1329'
+  },
+  {
+    time: '15:00',
+    title: 'Mirador da Senhora do Monte',
+    description: 'Después de comer, camina 5 minutos cuesta arriba hasta el mirador secreto de Lisboa. A diferencia de los miradores turísticos (Santa Luzia, Portas do Sol) que están LLENOS de gente, este casi nadie lo conoce. Es el punto más alto de Lisboa (después del castillo) y las vistas son de 270 grados: ves el Castelo, toda Alfama bajando hacia el río, el puente 25 de Abril a lo lejos, el Cristo Rei al otro lado del Tajo, y la ciudad desplegada hasta donde alcanza la vista. Hay bancos en la sombra bajo los árboles, silencio (solo pájaros y alguna conversación bajita), y una ermita pequeña del siglo XVIII. Los lisboetas vienen aquí al atardecer con una cerveza Super Bock del quiosco de abajo. Es el lugar perfecto para procesar que estás en una de las ciudades más bonitas de Europa.',
+    tip: '📸 MEJOR MOMENTO: Atardecer (18:30-20:00 en verano, 17:00-18:30 en invierno). Lleva algo para beber del supermercado de abajo. Hay bancos en la sombra. Perfecto para sentarse 30-45 minutos.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7176, lng: -9.1316 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7176,-9.1316'
+  },
+  {
+    time: '17:00',
+    title: 'Panteón Nacional + Feira da Ladra',
+    description: 'Baja caminando hacia el Panteón Nacional - ese edificio blanco gigante con cúpula que ves desde todos los miradores. Fue una iglesia barroca que empezaron a construir en 1582 y tardaron 284 AÑOS en terminar (de ahí el dicho portugués "obras de Santa Engrácia" para algo que nunca se acaba). Ahora es el panteón donde están enterrados los grandes portugueses: presidentes, escritores, fadistas como Amália Rodrigues. La entrada cuesta 4€ pero SÚBETE A LA CÚPULA - son 180 escalones pero las vistas a 360° justifican cada paso. Si es martes o sábado, la Feira da Ladra (mercado de pulgas más antiguo de Lisboa desde 1272) está montada justo al lado. Venden de todo: antigüedades, ropa vintage, discos de vinilo, azulejos antiguos, cachivaches increíbles.',
+    tip: '🎫 Entrada: 4€, gratis el primer domingo de mes. HORARIO: Martes-domingo 10:00-17:00 (18:00 verano). Feira da Ladra: Solo martes y sábados 8:00-15:00. Regatea TODO (es parte del juego).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1567949485386-e670e582e537?w=800',
+    coordinates: { lat: 38.7143, lng: -9.1254 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7143,-9.1254'
+  },
+  {
+    time: '19:30',
+    title: 'Cena + Fado en Alfama',
+    description: 'La experiencia quintessential lisboeta: cena con fado en vivo en Alfama. El fado es Patrimonio Inmaterial de la Humanidad por la UNESCO - canciones melancólicas sobre saudade (nostalgia portuguesa), el mar, y amores perdidos. Hay dos tipos de sitios: (1) Restaurantes turísticos caros (40-60€) con show programado, o (2) Tascas auténticas donde el fado surge espontáneamente después de las 22:00 (15-25€). Recomiendo las auténticas: "Tasca do Chico" (la misma del día 1 pero de noche tiene fado espontáneo, gratis, solo pagas la cena), "Mesa de Frades" (íntimo, 20-30€), o "Parreirinha de Alfama" (más formal, 35-45€ con espectáculo). La regla sagrada: cuando alguien canta fado, SILENCIO ABSOLUTO. Ni susurros. Es una falta de respeto gravísima interrumpir.',
+    tip: '🎭 RESERVA OBLIGATORIA (llama por la tarde). Tasca do Chico: fado gratis + cena 15-20€, llega 21:00-21:30 para buena mesa. Mesa de Frades: más organizado, reserva online. La comida en sitios de fado suele ser mediocre - vas por la experiencia, no por la comida.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800',
+    coordinates: { lat: 38.7117, lng: -9.1288 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7117,-9.1288'
+  }
+];
+
+// Timeline stops para Lisboa 2 días - DÍA 2
+export const lisboa2DiasDia2Timeline: TimelineStop[] = [
+  {
+    time: '09:00',
+    title: 'Belém - Monumentos Marítimos',
+    description: 'El día 2 empezamos en Belém, el barrio desde donde Portugal se lanzó a conquistar medio mundo. Toma el tranvía 15E desde Praça da Figueira (15 min, 3€) o Uber (10-12€). Arranca en la Torre de Belém - esa torre medieval que parece un castillo de arena al borde del Tajo. Fue construida en 1515 para defender la entrada del puerto y se ha convertido en EL ícono de Lisboa. La cola puede ser larga (1 hora en verano) así que compra online o llega a las 9:00 cuando abren. Por dentro hay 5 pisos conectados por escaleras de caracol super estrechas, salas con armaduras, cañones, y las vistas desde la terraza superior son espectaculares. Justo al lado está el Padrão dos Descobrimentos (Monumento a los Descubrimientos) - un monumento gigante con forma de carabela con 33 estatuas de los exploradores portugueses. Sube arriba (6€) para ver el mosaico del mapamundi en el suelo que muestra todas las rutas de exploración.',
+    tip: '🎫 Torre de Belém: 6€, Monumento Descubrimientos: 6€, o Pack combinado: 12€. TRUCO: Compra la Lisboa Card (21€/24h) que incluye TODO en Belém + transporte público ilimitado. EVITA COLAS: Llega 8:45-9:00.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.6916, lng: -9.2158 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
+  },
+  {
+    time: '11:00',
+    title: 'Monasterio de los Jerónimos',
+    description: 'Camina 10 minutos por la orilla del río hasta el Monasterio de los Jerónimos - posiblemente el edificio más impresionante de Portugal. Es gótico manuelino (estilo único portugués del siglo XVI lleno de motivos marítimos: cuerdas, anclas, carabelas talladas en piedra). Fue construido con el 5% del oro que traían de la India - el presupuesto era básicamente infinito. La iglesia es GRATIS y es lo mejor: techos abovedados de 25 metros que parecen palmeras de piedra, la tumba de Vasco da Gama (el tipo que abrió la ruta marítima a India), y la de Luís de Camões (el Shakespeare portugués). El claustro del monasterio cuesta 12€ y es precioso pero sinceramente la iglesia ya vale el viaje. Patrimonio de la UNESCO y con razón - cuando entras entiendes por qué Portugal era una superpotencia en el siglo XVI.',
+    tip: '💡 LA IGLESIA ES GRATIS (entrada lateral izquierda). El Monasterio son 12€ extra (claustro). Si tienes Lisboa Card = gratis todo. IMPRESCINDIBLE: Llega antes de las 11:00 o después de las 15:00 para evitar grupos de cruceros.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1599052518715-4106f84fc9f6?w=800',
+    coordinates: { lat: 38.6977, lng: -9.2062 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6977,-9.2062'
+  },
+  {
+    time: '12:30',
+    title: 'Pastéis de Belém (La peregrinación obligatoria)',
+    description: 'Ya sabes qué viene ahora. Pastéis de Belém - la fábrica original desde 1837 con la receta secreta que solo conocen 3 maestros pasteleros. No es marketing: estos pasteles SÍ saben diferente a todos los demás "pastéis de nata" que comiste. La masa es más hojaldrada (tiene 18 capas), la crema más cremosa, y los hacen en hornos de 400°C que les dan ese toque caramelizado perfecto. La cola de la tienda asusta pero avanza rápido. IGNORA LA COLA DE LA TIENDA - entra directo al salón grande de atrás (con azulejos azules del siglo XIX) que tiene menos cola y puedes sentarte. Pide los pasteles "quentes" (calientes), espolvorea canela y azúcar glass, y acompaña con un galão (café con leche). Van a estar a 200°C así que sopla. Mínimo 3 por persona. No es negociable.',
+    tip: '🥐 ESTRATEGIA PRO: Ignora la cola de la entrada (para llevar). Entra directo al salón gigante de atrás → menos cola, te sientas, comes caliente. Precio: 1.30€/unidad. Pide "3 pastéis quentes, um galão". El salón de atrás tiene 400 asientos - siempre hay sitio.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1565299543923-37dd37887442?w=800',
+    coordinates: { lat: 38.6976, lng: -9.2031 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6976,-9.2031'
+  },
+  {
+    time: '14:30',
+    title: 'MAAT - Museo de Arte Moderno',
+    description: 'Después del coma de azúcar, camina 10 minutos por la orilla del río hasta el MAAT (Museo de Arte, Arquitectura y Tecnología). El edificio ya vale la visita - arquitectura contemporánea blanca y curva diseñada por Amanda Levete que parece una ola congelada. Por dentro hay exposiciones rotativas de arte contemporáneo, diseño, y arquitectura. Pero lo mejor es el TECHO - puedes caminar por encima del museo (gratis, no hace falta entrada) y las vistas al puente 25 de Abril, el Cristo Rei, y el Tajo son perfectas. Es uno de los pocos sitios modernos de Lisboa (casi todo es histórico) y el contraste es refrescante. Si no te va el arte contemporáneo, solo sube al techo, toma fotos, y sigue.',
+    tip: '🎫 Entrada exposiciones: 9€. Subir al techo: GRATIS (acceso por rampa exterior). Horario: 11:00-19:00 (cerrado martes). El techo es perfecto para atardecer pero si vienes ahora al mediodía lo tienes para ti solo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=800',
+    coordinates: { lat: 38.6936, lng: -9.1980 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6936,-9.1980'
+  },
+  {
+    time: '16:30',
+    title: 'LX Factory - Hub Creativo',
+    description: 'Desde el MAAT, camina 15 minutos (o Uber 5€) hasta LX Factory - antigua fábrica de impresión reconvertida en epicentro cool de Lisboa. Imagina: naves industriales de ladrillo de 1846 llenas de grafitis, estudios de diseño, agencias creativas, cafés hipster, tiendas de ropa independiente, galerías de arte, y la librería Ler Devagar (libros del suelo al techo de 10 metros con una bici voladora suspendida en el aire). Los domingos hay mercado vintage, los jueves food trucks, y siempre ambiente. Es donde los creativos lisboetas trabajan, comen, y se toman cervezas después del trabajo. Siéntate en alguna terraza bajo el puente 25 de Abril, pide una cerveja y unos petiscos (tapas portuguesas), y absorbe que estás viviendo la Lisboa alternativa que no sale en las postales.',
+    tip: '☕ LandScape café: vistas al puente. By The Wine: 3000 vinos portugueses, degustación 12€. Ler Devagar librería: cierra 20:00, no llegues tarde. Domingos: mercado vintage 11:00-19:00. TODO es instagrameable aquí.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800',
+    coordinates: { lat: 38.7065, lng: -9.1799 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7065,-9.1799'
+  },
+  {
+    time: '20:00',
+    title: 'Cena en Time Out Market + Cais do Sodré',
+    description: 'Para cerrar el viaje perfecto, vamos al Time Out Market en Mercado da Ribeira. Es un food hall donde reunieron a los mejores chefs y restaurantes de Lisboa bajo un mismo techo. Hay 40 stands de comida: marisco fresco, steaks de carne ibérica, sushi, tacos, hamburguesas gourmet, pasteles, vinos, todo. El concepto: caminas, eliges lo que te llama, pides, y comes en las mesas centrales compartidas. Precios: 10-20€ por plato. Recomendados: Alexandre Silva (estrella Michelin, platos 12-18€), Henrique Sá Pessoa (otra estrella Michelin), Sea Me (mariscos), Miguel Castro e Silva (carne). Después de cenar, Cais do Sodré (el barrio justo afuera) es LA zona de fiesta de Lisboa. Calle Rosa (Pink Street) está llena de bares, música en vivo, y gente en la calle con cervezas hasta las 3am. Si quieres seguir, tienes 50 bares en 200 metros.',
+    tip: '🍽️ Time Out Market: 12:00-00:00 todos los días. Se llena 20:00-22:00 (llega 19:30 o espera mesa). POST-CENA: Pensão Amor (bar en antiguo burdel, ambiente único), Musicbox (discoteca techno/electrónica), o simplemente Pink Street con cerveza.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+    coordinates: { lat: 38.7069, lng: -9.1467 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7069,-9.1467'
+  }
+];
+
 // Features incluidas en los packs
 export const includedFeatures = [
   {
