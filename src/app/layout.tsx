@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
 import ExitIntentModal from '@/components/ExitIntentModal';
+import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
@@ -19,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guías de Lisboa 2025 por Locales | Evita Trampas Turísticas",
-  description: "Itinerarios verificados de Lisboa con horarios exactos y GPS. 500+ viajeros satisfechos. Desde €3.99. Garantía 48h sin preguntas. Actualizado Enero 2025.",
+  title: "Guías Gratuitas de Lisboa 2025 por Locales | Itinerarios Completos",
+  description: "Guías completas y gratuitas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas interactivos. Creadas por locales. Actualizado Enero 2025.",
   keywords: ["lisboa", "guias lisboa", "itinerarios lisboa", "viajar lisboa", "lisboa 2025", "guia local lisboa", "que ver en lisboa", "lisboa itinerario"],
   authors: [{ name: "Estaba en Lisboa", url: "https://estabaenlisboa.com" }],
   creator: "Estaba en Lisboa",
@@ -93,6 +94,7 @@ export default function RootLayout({
           <Footer />
           <StickyCTA />
           <ExitIntentModal />
+          <CookieBanner />
         </body>
       </html>
     </ClerkProvider>

@@ -9,33 +9,30 @@ export default function ItinerariosPage() {
 
   const guias = [
     {
-      id: 'lisboa-1-dia',
+      id: 'lisboa-1-dia-lo-esencial',
       titulo: 'Lisboa 1 Día',
       descripcion: 'Lo esencial de Lisboa en un día',
       dias: 1,
       paradas: 8,
-      precio: 3.99,
       imagen: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=800',
       categoria: 'clasicos',
       badge: 'Más Popular'
     },
     {
-      id: 'lisboa-2-dias',
+      id: 'lisboa-2-dias-completo',
       titulo: 'Lisboa 2 Días',
       descripcion: 'Experiencia completa con tiempo',
       dias: 2,
       paradas: 15,
-      precio: 5.99,
       imagen: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=800',
       categoria: 'clasicos'
     },
     {
-      id: 'lisboa-3-dias',
-      titulo: 'Lisboa 3 Días',
-      descripcion: 'Incluye excursión a Sintra',
+      id: 'lisboa-3-dias-premium',
+      titulo: 'Lisboa 3 Días + Sintra',
+      descripcion: 'Incluye excursión a Sintra y Cascais',
       dias: 3,
       paradas: 20,
-      precio: 7.99,
       imagen: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800',
       categoria: 'clasicos'
     },
@@ -45,40 +42,36 @@ export default function ItinerariosPage() {
       descripcion: 'Mejores spots para fotografía',
       dias: 1,
       paradas: 12,
-      precio: 4.99,
       imagen: 'https://images.unsplash.com/photo-1626447857058-2ef5a6739b85?q=80&w=800',
       categoria: 'tematicos'
     },
     {
-      id: 'lisboa-familias',
+      id: 'lisboa-familiar',
       titulo: 'Lisboa con Niños',
       descripcion: 'Actividades para toda la familia',
       dias: 2,
       paradas: 10,
-      precio: 5.99,
       imagen: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800',
       categoria: 'tematicos'
     },
     {
-      id: 'lisboa-parejas',
+      id: 'lisboa-romantica',
       titulo: 'Lisboa Romántica',
       descripcion: 'Para parejas y luna de miel',
       dias: 2,
       paradas: 12,
-      precio: 6.99,
       imagen: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800',
       categoria: 'tematicos'
     },
     {
-      id: 'lisboa-semana',
-      titulo: 'Lisboa 1 Semana',
+      id: 'lisboa-full-week',
+      titulo: 'Lisboa 1 Semana Completa',
       descripcion: 'Guía completa + excursiones',
       dias: 7,
       paradas: 35,
-      precio: 12.99,
       imagen: 'https://images.unsplash.com/photo-1590242896367-b0ab632f0b67?q=80&w=800',
       categoria: 'clasicos',
-      badge: 'Premium'
+      badge: 'Completa'
     }
   ];
 
@@ -135,7 +128,7 @@ export default function ItinerariosPage() {
             {guiasFiltradas.map((guia) => (
               <Link
                 key={guia.id}
-                href={`/guias/${guia.id}`}
+                href={`/itinerarios/${guia.id}`}
                 className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-orange-300 transition-all"
               >
                 {/* Imagen */}
@@ -178,11 +171,16 @@ export default function ItinerariosPage() {
                     </span>
                   </div>
 
-                  {/* Precio y CTA */}
+                  {/* CTA */}
                   <div className="flex items-center justify-between pt-4 border-t">
-                    <span className="text-2xl font-bold text-slate-900">€{guia.precio}</span>
-                    <span className="text-orange-500 font-medium text-sm group-hover:text-orange-600">
-                      Ver detalles →
+                    <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">
+                      100% Gratuita
+                    </span>
+                    <span className="text-orange-500 font-medium text-sm group-hover:text-orange-600 flex items-center gap-1">
+                      Ver guía
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </span>
                   </div>
                 </div>
@@ -192,18 +190,18 @@ export default function ItinerariosPage() {
         </div>
       </section>
 
-      {/* Garantías - simple */}
+      {/* Beneficios - simple */}
       <section className="py-12 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid sm:grid-cols-3 gap-6 text-center">
             <div className="p-6">
               <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-slate-900 mb-1">Garantía 48h</h3>
-              <p className="text-sm text-slate-600">Devolución sin preguntas</p>
+              <h3 className="font-bold text-slate-900 mb-1">100% Gratuito</h3>
+              <p className="text-sm text-slate-600">Sin registro ni pagos</p>
             </div>
 
             <div className="p-6">
@@ -219,11 +217,11 @@ export default function ItinerariosPage() {
             <div className="p-6">
               <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
                 <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>
               </div>
-              <h3 className="font-bold text-slate-900 mb-1">Descarga Instantánea</h3>
-              <p className="text-sm text-slate-600">PDF en tu email inmediato</p>
+              <h3 className="font-bold text-slate-900 mb-1">Mapas Interactivos</h3>
+              <p className="text-sm text-slate-600">Con GPS y coordenadas exactas</p>
             </div>
           </div>
         </div>

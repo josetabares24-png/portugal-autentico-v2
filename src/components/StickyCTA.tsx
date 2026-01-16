@@ -8,7 +8,6 @@ export default function StickyCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Mostrar después de scroll 800px (50vh aproximadamente)
       setShow(window.scrollY > 800);
     };
 
@@ -27,15 +26,15 @@ export default function StickyCTA() {
     >
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-center sm:text-left">
-          <p className="text-white font-black text-lg sm:text-xl">¿Listo para explorar Lisboa sin turistadas?</p>
-          <p className="text-white/90 text-sm sm:text-base font-medium">Desde €3.99 · Garantía 48h · 500+ viajeros satisfechos</p>
+          <p className="text-white font-black text-lg sm:text-xl">¿Listo para explorar Lisboa como un local?</p>
+          <p className="text-white/90 text-sm sm:text-base font-medium">Guías completas gratuitas · Actualizado 2025 · Mapas interactivos</p>
         </div>
         <Link
-          href="#itinerarios"
+          href="/itinerarios"
           className="bg-black hover:bg-gray-900 text-orange-400 font-black px-8 py-4 rounded-full transition-all hover:scale-105 shadow-2xl whitespace-nowrap border-2 border-orange-400/50 flex items-center gap-2"
-          aria-label="Ver guías de Lisboa desde €3.99"
+          aria-label="Ver guías gratuitas de Lisboa"
         >
-          <span>Ver Guías</span>
+          <span>Ver Guías Gratis</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
