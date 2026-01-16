@@ -22,7 +22,7 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa Esencial',
     description: 'Perfecto si tienes escala o poco tiempo. Lo mejor de Lisboa bien organizado.',
     duration: '1 día completo',
-    price: 5.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800',
     features: [
       'Ruta optimizada hora a hora',
@@ -32,8 +32,8 @@ export const mainItineraries: Itinerary[] = [
     href: '/itinerarios/lisboa-1-dia-lo-esencial',
     featured: false,
     badge: {
-      text: '1 día completo',
-      color: 'bg-primary'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   },
   {
@@ -42,7 +42,7 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa Completa',
     description: 'El favorito. Fin de semana perfecto con Belém, Alfama y los barrios con encanto.',
     duration: '2 días completos',
-    price: 8.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800',
     features: [
       '2 rutas completas día a día',
@@ -52,8 +52,8 @@ export const mainItineraries: Itinerary[] = [
     href: '/itinerarios/lisboa-2-dias-completo',
     featured: true,
     badge: {
-      text: '2 días completos',
-      color: 'bg-primary'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   },
   {
@@ -62,7 +62,7 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa + Alrededores',
     description: 'La experiencia completa. Lisboa, Sintra, Cascais y Cabo da Roca.',
     duration: '3 días + Sintra',
-    price: 12.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800',
     features: [
       'Todo del pack 2 días',
@@ -72,8 +72,8 @@ export const mainItineraries: Itinerary[] = [
     href: '/itinerarios/lisboa-3-dias-sintra',
     featured: false,
     badge: {
-      text: '3 días + Sintra',
-      color: 'bg-primary'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   }
 ];
@@ -85,7 +85,7 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Full Week',
     description: 'Una semana completa: Lisboa, Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
-    price: 19.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
     features: [
       'Todos los itinerarios anteriores',
@@ -94,8 +94,8 @@ export const specialItineraries: Itinerary[] = [
     ],
     href: '/itinerarios/lisboa-full-week',
     badge: {
-      text: '5-7 días',
-      color: 'bg-emerald-500'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   },
   {
@@ -104,7 +104,7 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Romántica',
     description: 'Miradores al atardecer, cenas románticas y experiencias para parejas.',
     duration: 'Romántico',
-    price: 9.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
     features: [
       'Rutas románticas',
@@ -113,8 +113,8 @@ export const specialItineraries: Itinerary[] = [
     ],
     href: '/itinerarios/lisboa-romantica',
     badge: {
-      text: 'Romántico',
-      color: 'bg-pink-500'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   },
   {
@@ -123,7 +123,7 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Familiar',
     description: 'Actividades para niños, ritmo relajado y restaurantes kid-friendly.',
     duration: 'Familiar',
-    price: 9.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800',
     features: [
       'Actividades para niños',
@@ -132,8 +132,8 @@ export const specialItineraries: Itinerary[] = [
     ],
     href: '/itinerarios/lisboa-familiar',
     badge: {
-      text: 'Familiar',
-      color: 'bg-sky-500'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   },
   {
@@ -142,7 +142,7 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Fotografía',
     description: '30+ spots, horarios de luz perfecta y rutas fotográficas.',
     duration: 'Fotografía',
-    price: 9.99,
+    price: 0,
     image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800',
     features: [
       '30+ spots fotográficos',
@@ -151,8 +151,8 @@ export const specialItineraries: Itinerary[] = [
     ],
     href: '/itinerarios/lisboa-fotografia',
     badge: {
-      text: 'Fotografía',
-      color: 'bg-violet-500'
+      text: '100% GRATIS',
+      color: 'bg-green-500'
     }
   }
 ];

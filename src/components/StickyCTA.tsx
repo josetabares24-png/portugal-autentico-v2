@@ -5,8 +5,14 @@ import Link from 'next/link';
 
 export default function StickyCTA() {
   const [show, setShow] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
+    const wasDismissed = localStorage.getItem('stickyCTADismissed');
+    if (wasDismissed) {
+      setDismissed(true);
+    }
+
     const handleScroll = () => {
       setShow(window.scrollY > 800);
     };
@@ -15,7 +21,12 @@ export default function StickyCTA() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (!show) return null;
+  const handleDismiss = () => {
+    setDismissed(true);
+    localStorage.setItem('stickyCTADismissed', 'true');
+  };
+
+  if (!show || dismissed) return null;
 
   return (
     <div
@@ -24,8 +35,17 @@ export default function StickyCTA() {
         animation: 'slideUp 0.4s ease-out'
       }}
     >
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="text-center sm:text-left">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 relative">
+        {/* Botón cerrar (X) */}
+        <button
+          onClick={handleDismiss}
+          className="absolute -top-2 right-0 sm:top-0 sm:right-0 text-white/80 hover:text-white transition-colors text-2xl font-bold w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-full"
+          aria-label="Cerrar banner"
+        >
+          ✕
+        </button>
+
+        <div className="text-center sm:text-left pr-8">
           <p className="text-white font-black text-lg sm:text-xl">¿Listo para explorar Lisboa como un local?</p>
           <p className="text-white/90 text-sm sm:text-base font-medium">Guías completas gratuitas · Actualizado 2025 · Mapas interactivos</p>
         </div>
