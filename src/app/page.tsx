@@ -8,108 +8,130 @@ export default function Home() {
     <main className="min-h-screen bg-[#FFFDF7]">
       
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          HERO - Diseño humano con ilustración orgánica
+          HERO - BOUTIQUE EDITORIAL ASIMÉTRICO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background con overlay warm */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2400"
-            alt="Lisboa"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-orange-900/40"></div>
-        </div>
+      <section className="relative min-h-screen flex items-center bg-clay-50 overflow-hidden">
 
-        {/* Decorative organic shapes - diseño ilustrador */}
-        <div className="absolute top-20 right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-orange-400/5 rounded-full blur-3xl"></div>
+        {/* Grid asimétrico: 60% izquierda, 40% derecha */}
+        <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[85vh]">
 
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          
-          {/* Badge artesanal */}
-          <div className="inline-flex items-center gap-2 bg-orange-50/10 backdrop-blur-md border-2 border-orange-400/30 rounded-full px-5 py-2.5 mb-10 shadow-lg">
-            <svg className="w-4 h-4 text-orange-400" viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="3">
-                <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-              </circle>
-            </svg>
-            <span className="text-sm font-bold text-orange-100 tracking-wide">Actualizado Enero 2025</span>
-          </div>
+            {/* Columna izquierda: Contenido (8 cols) */}
+            <div className="lg:col-span-8 pt-8 lg:pt-0">
 
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Headline - Typography mix serif/sans */}
-            <h1 className="mb-8">
-              <span className="block text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-3" style={{ fontFamily: 'Georgia, serif' }}>
-                Evita Trampas Turísticas
-              </span>
-              <span className="block text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1]" style={{
-                background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
-                en Lisboa 2025
-              </span>
-            </h1>
+              {/* Badge sutil */}
+              <div className="inline-flex items-center gap-2 bg-clay-100 border-hairline border-sand px-4 py-2 rounded-full mb-8">
+                <span className="font-mono text-xs font-medium text-ink-700 tracking-wider">ENERO 2025</span>
+              </div>
 
-            {/* Subheadline con micro-ilustración */}
-            <div className="relative inline-block mb-12">
-              {/* Decorative underline hand-drawn */}
-              <svg className="absolute -bottom-2 left-0 w-full h-3 opacity-50" viewBox="0 0 300 12" fill="none">
-                <path d="M2 6 Q 75 10, 150 6 T 298 6" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" />
-              </svg>
+              {/* Headline masiva - Fraunces Display */}
+              <h1 className="font-display font-light mb-8" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)', lineHeight: '1.05', letterSpacing: '-0.04em' }}>
+                <span className="block text-ink-900">
+                  Lo que nadie
+                </span>
+                <span className="block text-ink-900">
+                  te cuenta de
+                </span>
+                <span className="block font-black text-terracotta">
+                  Lisboa
+                </span>
+              </h1>
 
-              <p className="text-xl sm:text-2xl lg:text-3xl text-white leading-relaxed px-6">
-                Horarios exactos + GPS + Restaurantes locales<br className="hidden sm:block" />
-                <span className="text-white font-semibold">Por quien vive aquí desde 2015. Actualizado Enero 2025.</span>
-              </p>
-            </div>
+              {/* Línea hairline decorativa */}
+              <div className="w-24 h-px bg-gradient-to-r from-terracotta to-transparent mb-8"></div>
 
-            {/* CTAs con diseño orgánico */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-14">
+              {/* Subheadline - tono humano */}
+              <div className="max-w-xl mb-12">
+                <p className="font-body text-lg sm:text-xl text-ink-700 leading-relaxed mb-6">
+                  Dónde desayunar en Graça sin turistas.<br />
+                  Qué mirador está vacío a las 9am.<br />
+                  Por qué Belém a las 11 es un error.
+                </p>
+
+                <p className="font-body text-base text-ink-400">
+                  Por alguien que vive aquí desde 2015.
+                </p>
+              </div>
+
+              {/* CTA líquido */}
               <Link
                 href="#itinerarios"
-                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-orange-500/50 transition-all overflow-hidden"
+                className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-terracotta to-ochre text-white font-semibold px-8 py-4 rounded-full shadow-soft-lg hover:shadow-soft transition-all duration-500 hover:scale-105 overflow-hidden"
               >
-                {/* Shine effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></span>
-                <span className="relative text-lg">Ver Itinerarios</span>
-                <svg className="relative w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <span className="relative z-10">Ver guías</span>
+                <svg className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
+
+                {/* Efecto expansión líquida */}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
               </Link>
-              
-              <Link
-                href="#como-funciona"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 text-white font-semibold px-10 py-5 rounded-2xl transition-all"
-              >
-                <span>¿Cómo funciona?</span>
-              </Link>
+
+              {/* Social proof minimalista */}
+              <div className="flex items-center gap-6 mt-16 pt-8 border-t border-hairline border-sand">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-sage" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="font-mono text-xs text-ink-400">Usado por 500 personas</span>
+                </div>
+                <span className="text-ink-400">·</span>
+                <span className="font-mono text-xs text-ink-400">Garantía 48h</span>
+              </div>
             </div>
 
-            {/* Social Proof - diseño badge orgánico */}
-            <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
-              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-5 py-3 rounded-full border border-white/10">
-                <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                <span className="font-semibold text-gray-200">500+ viajeros</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-5 py-3 rounded-full border border-white/10">
-                <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                <span className="font-semibold text-gray-200">Garantía 48h</span>
+            {/* Columna derecha: Pricing flotante (4 cols) */}
+            <div className="lg:col-span-4">
+              <div className="bg-white border border-hairline border-sand rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-shadow duration-500 relative">
+
+                {/* Badge flotante */}
+                <div className="absolute -top-3 -right-3 bg-terracotta text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                  Más popular
+                </div>
+
+                <div className="mb-6">
+                  <p className="font-body text-sm text-ink-400 mb-2">Desde</p>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="font-display text-5xl font-black text-ink-900">3.99</span>
+                    <span className="font-mono text-lg text-ink-700">EUR</span>
+                  </div>
+                  <p className="font-body text-sm text-ink-400">PDF en tu email inmediato</p>
+                </div>
+
+                <Link
+                  href="/itinerarios"
+                  className="block w-full text-center bg-ink-900 text-white font-semibold py-3.5 rounded-full hover:bg-ink-700 transition-colors duration-300 mb-4"
+                >
+                  Elegir guía
+                </Link>
+
+                {/* Checks minimalistas */}
+                <div className="space-y-2 pt-4 border-t border-hairline border-sand">
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-body text-sm text-ink-700">Horarios exactos y GPS</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-body text-sm text-ink-700">Restaurantes locales 2025</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-sage flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-body text-sm text-ink-700">Cero trampas turísticas</span>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
+
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

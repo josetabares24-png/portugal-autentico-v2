@@ -9,18 +9,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#ee5b2b",
-        "primary-dark": "#d94a1a",
+        // Paleta Boutique - Tonos terrosos portugueses
+        clay: {
+          50: '#FAF8F5',
+          100: '#F5F0E8',
+        },
+        terracotta: '#D4653C',
+        ochre: '#E8A056',
+        ink: {
+          900: '#1A1614',
+          700: '#3D3935',
+          400: '#9B938C',
+        },
+        sage: '#8B9E8A',
+        sand: '#E5DDD1',
+
+        // Legacy (mantener para compatibilidad)
+        primary: "#D4653C",
+        "primary-dark": "#C05530",
         "secondary-blue": "#005F99",
-        "background-light": "#fcf9f8",
-        "background-cream": "#F9F7F2",
-        "background-dark": "#221510",
-        "text-main": "#1b110d",
-        "text-secondary": "#9a5f4c",
+        "background-light": "#FAF8F5",
+        "background-cream": "#F5F0E8",
+        "background-dark": "#1A1614",
+        "text-main": "#1A1614",
+        "text-secondary": "#3D3935",
       },
       fontFamily: {
-        display: ["Plus Jakarta Sans", "sans-serif"],
-        body: ["Noto Sans", "sans-serif"],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body: ['var(--font-body)', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+      },
+      boxShadow: {
+        'soft': '0 1px 2px rgba(26, 22, 20, 0.04), 0 2px 4px rgba(26, 22, 20, 0.04), 0 4px 8px rgba(26, 22, 20, 0.04)',
+        'soft-lg': '0 2px 4px rgba(26, 22, 20, 0.06), 0 4px 8px rgba(26, 22, 20, 0.06), 0 8px 16px rgba(26, 22, 20, 0.06)',
+      },
+      borderWidth: {
+        'hairline': '0.5px',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
