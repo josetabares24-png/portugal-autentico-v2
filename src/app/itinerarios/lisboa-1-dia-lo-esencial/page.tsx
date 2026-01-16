@@ -80,15 +80,15 @@ export default function Lisboa1DiaPage() {
           <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-green-400">check_circle</span>
-              <span>Descarga inmediata</span>
+              <span>100% Gratuita</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-yellow-400">verified</span>
               <span>Creado por locales</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
-              <span>Garantía 48h</span>
+              <span className="material-symbols-outlined text-blue-400">map</span>
+              <span>Con GPS y mapas</span>
             </div>
           </div>
         </div>
@@ -99,31 +99,28 @@ export default function Lisboa1DiaPage() {
         </div>
       </section>
 
-      {/* Sticky CTA Bar */}
+      {/* Sticky Info Bar */}
       <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div>
-                <span className="text-3xl font-bold text-primary">5.99€</span>
+              <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                <span className="material-symbols-outlined text-green-600 text-lg">check_circle</span>
+                <span className="text-green-600 text-sm font-bold">100% Gratuita</span>
               </div>
-              <div className="flex items-center gap-2 text-green-600 text-sm font-medium">
-                <span className="material-symbols-outlined text-lg">check_circle</span>
-                Descarga inmediata
+              <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                <span className="material-symbols-outlined text-lg">map</span>
+                Con mapas y GPS
               </div>
             </div>
             <div className="flex gap-3">
-              <a 
-                href="#preview" 
-                className="px-6 py-3 rounded-2xl font-semibold border-2 border-slate-300 hover:border-primary hover:text-primary transition-all"
+              <a
+                href="#itinerario"
+                className="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
               >
-                Ver preview
+                <span className="material-symbols-outlined">map</span>
+                Ver itinerario completo
               </a>
-              <button className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105">
-                <span className="material-symbols-outlined">shopping_cart</span>
-                Comprar ahora
-                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </button>
             </div>
           </div>
         </div>
