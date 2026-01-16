@@ -14,7 +14,7 @@ export default function Header() {
   const navLinks = [
     { href: '/itinerarios', label: 'Guías' },
     { href: '/blog', label: 'Blog' },
-    { href: '/apps', label: 'Apps' },
+    { href: '/faq', label: 'FAQ' },
     { href: '/info-util', label: 'Info Útil' }
   ];
 
@@ -80,14 +80,6 @@ export default function Header() {
                     </button>
                   </SignInButton>
                 )}
-                
-                {/* CTA Principal */}
-                <Link
-                  href="/itinerarios"
-                  className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full transition-all hover:scale-105"
-                >
-                  Ver Guías
-                </Link>
               </div>
             )}
           </div>
@@ -147,14 +139,6 @@ export default function Header() {
                       </button>
                     </SignInButton>
                   )}
-
-                  <Link
-                    href="/itinerarios"
-                    onClick={() => setIsOpen(false)}
-                    className="bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-3 px-6 rounded-full text-center transition-all"
-                  >
-                    Ver Guías
-                  </Link>
                 </div>
               )}
             </div>

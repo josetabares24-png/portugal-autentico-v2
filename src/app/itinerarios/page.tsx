@@ -338,6 +338,62 @@ export default function ItinerariosPage() {
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          TRUST SIGNALS - Garantías y confianza
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+
+            {/* Garantía de devolución */}
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100/50 border-2 border-orange-200 hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="font-black text-xl text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Garantía 48h
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Si no te sirve, te devolvemos el dinero. Sin preguntas.
+              </p>
+            </div>
+
+            {/* Actualizado 2025 */}
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100/50 border-2 border-orange-200 hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-black text-xl text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Actualizado Enero 2025
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Precios verificados, horarios confirmados. Nada obsoleto.
+              </p>
+            </div>
+
+            {/* Descarga instantánea */}
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100/50 border-2 border-orange-200 hover:shadow-xl transition-shadow">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </div>
+              <h3 className="font-black text-xl text-gray-900 mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                Descarga Instantánea
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                PDF al email en menos de 2 minutos. Listo para usar.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           PACK CTA - Premium coherente
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="py-32 bg-gradient-to-br from-orange-500 via-[#FF6B35] to-orange-600 relative overflow-hidden">
