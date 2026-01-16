@@ -6,7 +6,7 @@ interface TimelineStopProps extends TimelineStopType {
   image?: string;
 }
 
-export function TimelineStop({ time, title, description, tip, type, index, image }: TimelineStopProps) {
+export function TimelineStop({ time, title, description, tip, type, index, image, googleMapsUrl, coordinates }: TimelineStopProps) {
   const isEven = index % 2 === 0;
   const borderColor = type === 'food' ? 'border-amber-500' : 'border-sky-500';
   const badgeBg = type === 'food' ? 'bg-amber-100' : 'bg-sky-100';
@@ -36,6 +36,28 @@ export function TimelineStop({ time, title, description, tip, type, index, image
           </span>
           <p className={`${tipColor} text-sm font-medium`}>{tip}</p>
         </div>
+
+        {/* Google Maps Button */}
+        {googleMapsUrl && (
+          <div className={`mt-4 ${isEven ? 'md:flex md:justify-end' : ''}`}>
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-5 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Ver en Google Maps
+              {coordinates && (
+                <span className="text-xs opacity-80">
+                  {coordinates.lat.toFixed(4)}, {coordinates.lng.toFixed(4)}
+                </span>
+              )}
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Image */}
