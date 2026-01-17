@@ -457,6 +457,278 @@ export const lisboa3DiasDia3Timeline: TimelineStop[] = [
   }
 ];
 
+// Timeline stops para Lisboa Romántica
+export const lisboaRomanticaTimeline: TimelineStop[] = [
+  {
+    time: '10:00',
+    title: 'Jardim da Estrela - Paseo en el parque romántico',
+    description: 'Empezamos el día romántico en el Jardim da Estrela, un parque del siglo XIX que parece sacado de una película francesa. Es un jardín formal con caminos de grava, estanques con patos y cisnes, kioscos de hierro forjado, árboles centenarios que forman túneles de sombra, y la Basílica da Estrela de fondo (esa iglesia blanca gigante con cúpula que parece un pastel de bodas). Los domingos por la mañana hay músicos tocando, familias paseando, y parejas leyendo en los bancos. El quiosco central (Quiosque de Refrescos) sirve cafés, zumos naturales, y croissants - perfecto para sentarse en las mesitas de hierro bajo los árboles. No hay prisa, no hay agenda. Solo caminar de la mano, sentarse en algún banco junto al estanque, y ver pasar la mañana lisboeta sin que el tiempo importe. Es el Lisboa tranquilo que no ves en las guías turísticas.',
+    tip: '☕ Quiosque de Refrescos: café 1.50€, zumo natural 3€. Mejor momento: 10:00-12:00 (luz suave, menos gente). Los domingos hay mercadillo artesanal. Gratis. Alquiler de barcas en el estanque: 5€/30min (súper romántico).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800',
+    coordinates: { lat: 38.7156, lng: -9.1601 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7156,-9.1601'
+  },
+  {
+    time: '12:30',
+    title: 'Brunch en Heim Café - Ambiente nórdico',
+    description: 'Camina 10 minutos hasta Heim Café, un café escandinavo-portugués escondido en una calle residencial de Estrela. Por fuera es discreto (solo una puerta verde) pero por dentro es mágico: paredes blancas, plantas colgando del techo, mesas de madera clara, luz natural entrando por ventanales enormes, y un ambiente íntimo donde hablan bajito. El brunch es espectacular: tostadas de masa madre con aguacate y huevo poché (8.50€), pancakes esponjosos con frutos rojos y sirope de arce (9€), açaí bowls, salmón ahumado con cream cheese, y cafés de especialidad hechos con amor. Todo es fotogénico sin ser pretencioso. Sirven hasta las 15:00 así que no hay prisa. Es el tipo de sitio donde pierdes la noción del tiempo charlando, riendo, y robándote bocados del plato del otro.',
+    tip: '🥐 Precio medio: 18-25€ para dos. RESERVA: No aceptan reservas, llega 12:00-12:30 para mesa segura (máximo 10 min espera). Cierra martes. Instagram: @heimcafe - su feed te va a enamorar antes de ir.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800',
+    coordinates: { lat: 38.7145, lng: -9.1589 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7145,-9.1589'
+  },
+  {
+    time: '15:00',
+    title: 'Mirador de Santa Catarina - Atardecer anticipado',
+    description: 'Toma el tranvía 28 o camina 15 minutos bajando hasta el Mirador de Santa Catarina en Bairro Alto. Este mirador tiene una vibra totalmente diferente a los turísticos: es donde los lisboetas vienen a pasar la tarde. Hay grafitis enormes en las paredes, escalones de piedra donde la gente se sienta con cervezas Super Bock, músicos tocando guitarra, skaters haciendo trucos, y las vistas al Tajo, al puente 25 de Abril, y al Cristo Rei son de postal. Compra dos cervezas en el quiosco de abajo (1.50€ cada una), siéntate en los escalones con tu pareja, y absorbe la vibra bohemia de Lisboa. A medida que avanza la tarde empieza a llenarse de gente joven, parejas, grupos de amigos, todos viendo el atardecer juntos. Es informal, auténtico, y perfecto para conversaciones profundas con el Tajo de testigo.',
+    tip: '🍺 Quiosque: cerveza 1.50€, vino 3€, petiscos (aceitunas, queso) 4-6€. MEJOR MOMENTO: 17:00-19:30 (golden hour). Lleva algo para sentarte (el suelo es piedra). Los domingos hay jam sessions de música en vivo espontáneas.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=800',
+    coordinates: { lat: 38.7101, lng: -9.1484 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7101,-9.1484'
+  },
+  {
+    time: '17:30',
+    title: 'Paseo por Príncipe Real - Barrio sofisticado',
+    description: 'Desde Santa Catarina, sube caminando 10 minutos hasta Príncipe Real, el barrio más elegante y trendy de Lisboa. Es donde viven diseñadores, arquitectos, y artistas. Las calles están llenas de tiendas de decoración, galerías de arte, boutiques de moda independiente, cafés de especialidad, y anticuarios. El corazón del barrio es el Jardim do Príncipe Real - un jardín pequeño con un cedro gigante de 150 años en el centro (tan grande que su copa cubre casi todo el jardín) con bancos alrededor. Hay terrazas de cafés bajo los árboles, quioscos de flores, y un ambiente sofisticado pero relajado. Caminen de la mano explorando las tiendas: Embaixada (palacio del siglo XIX convertido en concept store con 15 tiendas artesanales), A Vida Portuguesa (productos portugueses vintage), y Corello (joyería portuguesa moderna). No es necesario comprar - solo pasear, mirar escaparates, y sentir el Lisboa cool.',
+    tip: '🌳 Jardim do Príncipe Real: gratis, perfecto para sentarse bajo el cedro gigante. COMPRAS: Embaixada abre 12:00-20:00. CAFÉ: Copenhagen Coffee Lab (café de especialidad, 2.50€). Los sábados hay mercado orgánico 9:00-15:00.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
+    coordinates: { lat: 38.7159, lng: -9.1502 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7159,-9.1502'
+  },
+  {
+    time: '19:00',
+    title: 'Mirador da Graça - El atardecer ÉPICO',
+    description: 'Ahora viene EL MOMENTO. Uber o tranvía 28 hasta Graça (15 min) para llegar al Mirador da Graça justo para el atardecer. Este es posiblemente el atardecer más romántico de Lisboa. El mirador tiene una terraza grande con mesitas blancas, sombrillas de pino, y vistas de 180° sobre toda la ciudad: el Castelo São Jorge a la izquierda, Alfama bajando hacia el Tajo, el puente 25 de Abril a lo lejos, y el cielo que se va poniendo naranja, rosa, morado mientras el sol desciende sobre el río. Hay un bar donde sirven vinos portugueses (4-6€), cervezas, y aperitivos. Llega 30 minutos antes del sunset, pide dos vinos blancos (Vinho Verde bien frío), consigue una mesita en primera fila, y prepárate para uno de esos momentos que se quedan grabados para siempre. Cuando el sol toca el horizonte y Lisboa entera se ilumina en dorado, vas a entender por qué esta ciudad se llama la ciudad de la luz.',
+    tip: '🌅 Sunset: consulta hora en Google. Llega 45 min ANTES para buena mesa. Vino: 4-6€, cerveza 3€, tabla de quesos 12€. OCUPADO: Viernes-domingo muy lleno. Entre semana más tranquilo. Alternativa si está repleto: Mirador de Santa Luzia (5 min caminando).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7169, lng: -9.1329 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7169,-9.1329'
+  },
+  {
+    time: '21:00',
+    title: 'Cena romántica en Chapitô à Mesa',
+    description: 'Baja caminando 10 minutos hasta Chapitô à Mesa - un restaurante único en lo alto de Alfama dentro de una escuela de circo. Sí, leíste bien. Es un restaurante gourmet en el tercer piso de una escuela de artes circenses con vistas panorámicas a Lisboa iluminada de noche. El interior es íntimo: luces tenues, velas en las mesas, paredes de ladrillo expuesto, y ventanales enormes con vistas al río y la ciudad brillando abajo. La comida es fusión portuguesa-mediterránea: tataki de atún con sésamo (16€), risotto de mariscos (18€), magret de pato con puré de boniato (22€), bacalao confitado con crema de grao (20€). De postre, el coulant de chocolate con helado de vainilla es obligatorio. Servicio atento sin ser intrusivo, ambiente romántico sin ser cursi, y vistas que quitan el aliento. Reserva mesa junto a la ventana y pide que sea "para ocasión especial" - se esmeran.',
+    tip: '🍽️ RESERVA OBLIGATORIA (online o teléfono, mínimo 2-3 días antes). Precio: 60-80€ para dos con vino. Pide mesa ventana "para ocasión romántica". Vino recomendado: Douro tinto 18-25€. Abre cena 19:30-23:00 (martes-domingo).',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800',
+    coordinates: { lat: 38.7156, lng: -9.1298 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7156,-9.1298'
+  },
+  {
+    time: '23:30',
+    title: 'Paseo nocturno por Alfama iluminada',
+    description: 'Después de cenar, baja caminando por las calles laberínticas de Alfama de noche. Este es el momento mágico que pocos turistas viven. Las calles estrechas iluminadas con faroles amarillos, las escaleras de adoquines brillando por la humedad del Tajo, el sonido lejano de fado saliendo de alguna ventana, gatos callejeros cruzando sigilosamente, ropa tendida meciéndose con la brisa nocturna, y el silencio roto solo por vuestros pasos y alguna conversación lejana. Perdeos sin rumbo. No uséis Google Maps. Todas las calles eventualmente bajan hacia el río o suben al castillo. Pasa por la Catedral Sé iluminada, el Mirador de Santa Luzia vacío y precioso de noche, el Mirador das Portas do Sol con vistas a la ciudad dormida. Camina hasta la orilla del Tajo, siéntate en los escalones mirando al río y las luces reflejadas en el agua. Este es el Lisboa íntimo, nocturno, romántico, que se siente solo caminando sin prisa con la persona que amas.',
+    tip: '🌙 SEGURO: Alfama de noche es seguro (mucha gente, bien iluminado). Lleva calzado cómodo (adoquines resbaladizos). Post-paseo: Copa en "Portas do Sol" (bar terraza abierto hasta 2am) o subir al Castillo (exterior iluminado, vistas nocturnas gratis).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7115, lng: -9.1281 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7115,-9.1281'
+  }
+];
+
+// Timeline stops para Lisboa Familiar
+export const lisboaFamiliarTimeline: TimelineStop[] = [
+  {
+    time: '09:30',
+    title: 'Oceanário de Lisboa - Acuario gigante',
+    description: 'Empezamos en el Oceanário de Lisboa, uno de los acuarios más grandes de Europa y probablemente la actividad #1 para familias en Lisboa. Está en el Parque das Nações (zona moderna construida para la Expo 98). El tanque central tiene 5 millones de litros de agua con tiburones, mantas rayas gigantes, atunes, pez luna (ese pez rarísimo que parece una cabeza flotante), y cientos de especies nadando juntas. Los niños se quedan hipnotizados viendo los tiburones pasar a centímetros del cristal. Hay 4 hábitats diferentes (Atlántico Norte, Antártico, Pacífico Tropical, Océano Índico) con nutrias, pingüinos, lémures, pájaros tropicales, y una zona táctil donde pueden tocar estrellas de mar y anémonas. Date mínimo 2-3 horas - los niños no querrán irse. Hay cafetería dentro con menús infantiles, baños amplios con cambiadores, y todo está pensado para familias.',
+    tip: '🐟 Entrada: adultos 22€, niños (3-12 años) 15€, menores 3 años gratis. Compra online (ahorras 2€ + evitas cola). Horario: 10:00-19:00. TRUCO: Llega 9:30-10:00 cuando abren (menos gente, tiburones más activos). Metro: Oriente (línea roja).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1544552866-d3ed42536cfd?w=800',
+    coordinates: { lat: 38.7633, lng: -9.0939 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7633,-9.0939'
+  },
+  {
+    time: '12:30',
+    title: 'Teleférico do Parque das Nações',
+    description: 'Justo al lado del Oceanário está el teleférico que recorre 1.2km por la orilla del Tajo a 20 metros de altura. Son 8 minutos de viaje con vistas al río, al Puente Vasco da Gama (el puente más largo de Europa con 17km), la Torre Vasco da Gama, y todo el Parque das Nações desde arriba. Los niños alucinan viendo los barcos pequeñitos abajo, la gente caminando, y sintiendo la cabina mecerse suavemente con el viento. Es seguro, tiene aire acondicionado, y perfecto para descansar las piernas después del Oceanário. Al final del recorrido hay un parque infantil gigante (Jardim da Água) con toboganes, columpios, fuentes de agua (en verano los niños juegan mojándose), y zona de picnic si traes bocadillos.',
+    tip: '🚡 Teleférico: adultos 6€, niños (3-12) 3€. Compra ida y vuelta 9€/5€ (más barato). Opera 10:30-19:00 (verano hasta 20:00). PARQUE INFANTIL: Jardim da Água gratis, perfecto para que corran 30-45 min. Lleva cambio de ropa si hace calor (fuentes de agua).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?w=800',
+    coordinates: { lat: 38.7681, lng: -9.0944 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7681,-9.0944'
+  },
+  {
+    time: '14:00',
+    title: 'Almuerzo en Vasco da Gama Shopping - Food court',
+    description: 'El centro comercial Vasco da Gama está a 5 minutos caminando y tiene un food court gigante con opciones para todos: McDonalds, pizza, sushi, comida portuguesa, hamburguesas gourmet, woks asiáticos, y heladerías. Lo mejor es que cada uno puede pedir lo que quiera - no tienes que negociar con niños quisquillosos sobre el restaurante. Precios razonables: menú infantil 5-7€, plato adulto 8-12€. Hay tronas, microondas para calentar potitos, baños familiares amplios con cambiadores, y zona de juegos infantil en la planta baja (Kidzania - parque temático educativo donde los niños "trabajan" en profesiones, 16€ entrada, opcional). Después del almuerzo puedes comprar lo que necesites: farmacia, supermercado, ropa, todo en un sitio.',
+    tip: '🍔 Food court planta superior: 12:00-22:00. Precio familia (2 adultos + 2 niños): 25-35€. KIDZANIA: 16€/niño (4-14 años), reserva online. Abre 10:00-20:00. DESCANSO: Hay sofás en zonas comunes para sentarse si alguien está cansado.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800',
+    coordinates: { lat: 38.7680, lng: -9.0986 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7680,-9.0986'
+  },
+  {
+    time: '16:00',
+    title: 'Jardim Zoológico de Lisboa',
+    description: 'Toma el metro desde Oriente hasta Jardim Zoológico (20 min, línea azul directa). El Zoo de Lisboa existe desde 1884 y tiene 2000 animales: leones, tigres, gorilas, elefantes, jirafas, hipopótamos, delfines, reptiles, aves tropicales, y una zona de granja con cabras y ovejas que los niños pueden acariciar. Hay 3 shows diarios: delfines (el favorito de los niños), aves rapaces en vuelo libre, y leones marinos. El recinto es grande (16 hectáreas) pero bien señalizado con mapas, hay trenecito interno que recorre el zoo (3€, ahorra piernas), teleférico que cruza por encima (incluido en entrada), y zona de juegos infantil. Lleva mínimo 3-4 horas para verlo todo sin prisa. Hay restaurante/cafetería dentro, baños en todas las zonas, y tiendas con peluches/souvenirs.',
+    tip: '🦁 Entrada: adultos 24€, niños (3-12) 16€, menores 3 años gratis. Pack familia (2+2): 68€. Compra online 10% descuento. Horario: 10:00-18:00 (verano hasta 20:00). IMPRESCINDIBLE: Show delfines (12:00, 15:00, 17:30) - llega 20 min antes para buenos asientos.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800',
+    coordinates: { lat: 38.7438, lng: -9.1731 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7438,-9.1731'
+  },
+  {
+    time: '19:30',
+    title: 'Cena en Jardim da Estrela - Picnic al atardecer',
+    description: 'Después del Zoo, toma el metro a Rato (10 min) y camina 5 minutos hasta el Jardim da Estrela. En vez de restaurante formal (niños cansados = desastre), para en un supermercado Pingo Doce de camino y compra cosas para picnic: pan, queso, jamón, fruta, zumos, galletas, yogures (15-20€ para toda la familia). El Jardim da Estrela es perfecto para picnic: césped amplio, bancos bajo los árboles, zona de juegos infantil grande con columpios y toboganes, estanque con patos, y el quiosco central que vende helados y bebidas. Los niños pueden correr, jugar, dar de comer a los patos (lleva pan), mientras vosotros os relajáis viendo el atardecer con la Basílica da Estrela de fondo. Es la manera perfecta de cerrar un día intenso sin estrés de restaurantes.',
+    tip: '🧺 Supermercado Pingo Doce: Rua da Escola Politécnica (camino al jardín). Picnic: 15-25€ familia. PARQUE INFANTIL: Zona cerrada, segura, con bancos para vigilar. Quiosque: helados 2-3€, bebidas 1.50€. Gratis. Jardín cierra 21:00 (verano 22:00).',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800',
+    coordinates: { lat: 38.7156, lng: -9.1601 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7156,-9.1601'
+  },
+  {
+    time: '10:00 (DÍA 2)',
+    title: 'Castillo de São Jorge - Castillo medieval',
+    description: 'El día 2 empieza con el castillo - todos los niños aman castillos. El Castillo de São Jorge es una fortaleza del siglo XI en lo alto de Lisboa con murallas enormes, torres, almenas donde asomarse, cañones antiguos, un foso, y pavos reales caminando libremente por el recinto (los niños alucinan cuando abren la cola). Las vistas desde las murallas son espectaculares: toda Lisboa hasta el río. Hay zona arqueológica con ruinas romanas y árabes, museo pequeño con armaduras y espadas (los niños se ponen a jugar), y espacios amplios para correr. No es un museo aburrido - es un castillo real donde pueden trepar escaleras de piedra, asomarse por las almenas, imaginar batallas medievales, y perseguir pavos reales. Dale 2 horas mínimo. Hay cafetería con terraza, baños, y sombra bajo los árboles.',
+    tip: '🏰 Entrada: adultos 15€, niños (10-17) 7.50€, menores 10 años gratis. Horario: 9:00-18:00 (verano hasta 21:00). ESTRATEGIA: Llega 9:30-10:00 (menos calor, menos gente). Lleva agua y gorra (mucho sol). Subida: Uber/taxi desde centro 6-8€ o tranvía 28 + caminar.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7139, lng: -9.1334 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7139,-9.1334'
+  },
+  {
+    time: '13:00',
+    title: 'Museo del Juguete + Almuerzo en Sintra',
+    description: 'Si los niños aguantan un extra de energía, toma el tren a Sintra (40 min desde Rossio, 2.30€) para visitar el Museo del Juguete. Está en el centro del pueblo de Sintra en un edificio antiguo con 4 pisos llenos de juguetes de los últimos 100 años: trenes de hojalata, muñecas antiguas, coches a pedal, soldaditos de plomo, juegos de mesa vintage, y una colección de 20,000 juguetes. Los niños se quedan fascinados viendo "cómo jugaban los abuelos". Hay zona interactiva donde pueden jugar con algunos juguetes. Entrada barata: adultos 5€, niños (3-17) 2.50€. Después, almuerzo en "Café Paris" (menú infantil 8€, hamburguesas, nuggets, pasta) o "Fábrica das Verdadeiras Queijadas da Sapa" (tarta de queso tradicional de Sintra, 1.50€, los niños las aman). Si tienen energía infinita, sube al Palácio da Pena (castillo de colores) pero honestamente después del castillo de la mañana probablemente estén saturados.',
+    tip: '🚂 Tren Lisboa→Sintra: 2.30€ adulto, 1.15€ niño (4-12). Cada 20 min. MUSEO JUGUETE: 5€/2.50€, 10:00-18:00. Almuerzo: 10-15€/niño. ALTERNATIVA más tranquila: En vez de Sintra, quédate en Lisboa y ve al Pavilhão do Conhecimento (museo ciencia interactivo, muy divertido).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1587828191251-c8959ce4fc79?w=800',
+    coordinates: { lat: 38.7975, lng: -9.3904 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7975,-9.3904'
+  }
+];
+
+// Timeline stops para Lisboa Fotografía (12 spots con horarios de luz óptimos)
+export const lisboaFotografiaTimeline: TimelineStop[] = [
+  {
+    time: 'Golden Hour Mañana (07:00-08:30)',
+    title: 'Mirador das Portas do Sol - Luz dorada sobre Alfama',
+    description: 'La primera parada es al amanecer en el Mirador das Portas do Sol. Llega cuando el sol empieza a subir por detrás de ti e ilumina toda Alfama con luz dorada horizontal. Las casas con tejas naranjas, las paredes blancas y amarillas, los azulejos, todo brilla. Desde aquí capturas: el Panteón Nacional (cúpula blanca gigante) a la izquierda, el Tajo azul intenso de fondo, y las calles laberínticas de Alfama bajando en capas. COMPOSICIÓN PERFECTA: Usa la balaustrada del mirador como leading line en primer plano, los tejados en plano medio, y el Tajo como fondo. Focal recomendada: 35-50mm para paisaje urbano amplio, o 85mm para comprimir las capas de casas. La terraza del quiosco está cerrada a esta hora así que lo tienes para ti solo. Cero turistas. Solo tú, tu cámara, y Lisboa despertando.',
+    tip: '📸 MEJOR HORA: 7:00-8:30 (luz horizontal dorada). SETTINGS: ISO 100-400, f/5.6-8 (profundidad), 1/125-1/250s. Trípode opcional (hay barandilla para apoyar). Focal: 24-70mm. ACCESO: Tranvía 28 o Uber (6€). Llega ANTES del amanecer para preparar.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7122, lng: -9.1280 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7122,-9.1280'
+  },
+  {
+    time: 'Mañana (08:30-10:00)',
+    title: 'Tranvía 28 en Rua da Bica - El shot icónico',
+    description: 'Baja caminando hasta la Rua da Bica de Duarte Belo - una de las calles más empinadas y fotogénicas de Lisboa. Es la calle del tranvía amarillo que ves en TODOS los posts de Instagram sobre Lisboa. La perspectiva es brutal: una calle adoquinada con pendiente de 45°, edificios de colores a ambos lados creando un túnel, y el tranvía 28 subiendo en el centro. TIMING: Los tranvías pasan cada 10-15 min. Plántate en el medio de la calle (CON CUIDADO, mira hacia arriba), pon la cámara en modo ráfaga, y dispara cuando el tranvía esté a mitad de la cuesta. TRUCO PRO: Agáchate para disparar desde abajo (calle como leading line hacia el tranvía). Mejor luz: 8:30-10:00 cuando el sol ilumina la calle desde arriba. Después de las 11:00 se llena de turistas haciendo lo mismo.',
+    tip: '📸 SETTINGS: ISO 200-400, f/8-11 (profundidad para calle+tranvía enfocados), 1/250-1/500s (congelar tranvía). Focal: 24-35mm (gran angular). PELIGRO: Los tranvías NO frenan, estate atento. Dispara, muévete, repite. La gente vive aquí - respeta.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1597426509446-cd65442af149?w=800',
+    coordinates: { lat: 38.7110, lng: -9.1459 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7110,-9.1459'
+  },
+  {
+    time: 'Mañana (10:30-12:00)',
+    title: 'Praça do Comércio - Geometría y simetría',
+    description: 'La Praça do Comércio es perfecta para fotografía arquitectónica. Es la plaza más grande de Lisboa: 3 lados con arcadas amarillas simétricas, el cuarto lado abierto al Tajo, y el Arco da Rua Augusta en el centro. SHOTS CLAVE: (1) Desde el centro de la plaza disparando hacia el arco (simetría perfecta), (2) Debajo de las arcadas laterales capturando la repetición de arcos hasta el infinito (leading lines), (3) Desde el agua (baja a la orilla) capturando toda la plaza reflejada si hay marea alta. MEJOR LUZ: 10:30-12:00 (sol alto ilumina todo uniformemente, menos sombras duras). Usa f/8-11 para toda la profundidad. Si tienes tilt-shift lens, este es el momento. Si no, corrige la perspectiva en Lightroom después.',
+    tip: '📸 SETTINGS: ISO 100, f/8-11, 1/250-1/500s. Focal: 16-24mm (ultra wide para capturar toda la plaza) o 50mm (comprimir arcos). TRUCO: Sube al Arco (3€) para shot cenital de la plaza + Tajo. Polarizador ayuda con reflejos del río.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7071, lng: -9.1364 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7071,-9.1364'
+  },
+  {
+    time: 'Mediodía (12:30-14:00)',
+    title: 'Elevador de Santa Justa - Perspectivas verticales',
+    description: 'El Elevador de Santa Justa es un ascensor de hierro neogótico de 1902 que parece sacado de París. Hay DOS shots aquí: (1) Desde abajo capturando toda la estructura vertical (45 metros) contra el cielo azul - usa ultra wide y dispara hacia arriba con la base como foreground, (2) Desde arriba (sube al mirador, 1.50€) capturando Baixa, el Castillo, y el Tajo con los tejados naranjas en primer plano. MEJOR LUZ para shot desde arriba: 12:00-14:00 (sol alto, menos sombras en la ciudad). Para shot desde abajo: cualquier hora con cielo azul. El hierro forjado tiene detalles preciosos - acércate con 50-85mm para abstracts de los engranajes, remaches, y estructura.',
+    tip: '📸 DESDE ABAJO: ISO 100, f/5.6-8, 1/500s, 16-24mm ultra wide. DESDE ARRIBA: Polarizador para cielo azul intenso, f/8, 35-50mm. PERSONAS: Evita 11:00-16:00 (cola enorme). Mejor 9:00-10:00 o 17:00-18:00. Subida: 5.30€ ascensor o camina gratis por Escadas do Carmo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7122, lng: -9.1394 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7122,-9.1394'
+  },
+  {
+    time: 'Tarde (15:00-16:30)',
+    title: 'Calles de Alfama - Detalles y texturas',
+    description: 'Piérdete por Alfama con la cámara buscando DETALLES: azulejos antiguos en las paredes (hay fachadas enteras cubiertas con patrones del siglo XVIII), ropa tendida cruzando las calles (súper lisboeta), puertas de madera desgastadas con colores vivos (verde, azul, amarillo), gatos en escaleras de piedra, señoras asomadas en ventanas, sardinas pintadas en las paredes, y las calles estrechas empinadas con adoquines brillantes. No busques la foto perfecta - busca 20 detalles pequeños que juntos cuentan la historia de Alfama. FOCAL: 35mm o 50mm (prime lens) para caminar ligero. Dispara en JPEG+RAW. Las sombras son duras en Alfama (calles super estrechas) - abraza el contraste. Blanco y negro funciona brutal para estas texturas.',
+    tip: '📸 SETTINGS: ISO 400-800 (calles oscuras), f/2.8-5.6 (bokeh suave), 1/125-1/250s. Focal: 35mm o 50mm f/1.8. RESPETO: Pide permiso antes de fotografiar a personas. Sonríe, muestra la foto, di "obrigado". La gente es amable si eres respetuoso. NO DRONE (prohibido en Alfama).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7115, lng: -9.1288 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7115,-9.1288'
+  },
+  {
+    time: 'Golden Hour Tarde (17:30-19:00)',
+    title: 'Mirador da Senhora do Monte - 360° golden hour',
+    description: 'El Mirador da Senhora do Monte es EL spot para golden hour. Es el punto más alto de Lisboa (después del castillo) con vistas de 270°. Llega 45 minutos antes del sunset, elige tu ángulo, y prepárate. ÁNGULOS KEY: (1) Castillo São Jorge a la izquierda con toda Alfama iluminada en dorado, (2) Puente 25 de Abril y Cristo Rei a lo lejos con el Tajo reflejando el cielo naranja/rosa, (3) Toda la ciudad desplegada con luz horizontal haciendo que cada edificio proyecte sombras largas. Usa trípode - vas a querer hacer timelapses del sunset. Dispara en bracketing (HDR) porque el rango dinámico es brutal (cielo brillante vs ciudad en sombra). Lleva batería extra y tarjetas - vas a disparar 200+ fotos fácil.',
+    tip: '📸 SETTINGS: Trípode obligatorio. ISO 100-400, f/8-11, bracket ±2EV (HDR). Focal: 24-70mm (versátil), 70-200mm (comprimir ciudad). TIMELAPSE: Intervalómetro cada 5-10s desde 30 min antes del sunset hasta 20 min después (blue hour). ND Grad filter opcional para balancear cielo/ciudad.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7176, lng: -9.1316 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7176,-9.1316'
+  },
+  {
+    time: 'Blue Hour (19:30-20:30)',
+    title: 'Ponte 25 de Abril desde Alcântara - Larga exposición',
+    description: 'Después del sunset, muévete rápido a Alcântara para blue hour. El Puente 25 de Abril iluminado contra el cielo azul profundo es MÁGICO. Baja a la orilla del Tajo (Doca de Santo Amaro) y dispara con larga exposición: el puente rojo brillante, las luces reflejadas en el agua como pintura, los barcos con estelas de luz, y el Cristo Rei iluminado al otro lado. SETTINGS clave: Trípode, ISO 100, f/8-16, 10-30 segundos de exposición. El agua se vuelve sedosa, las nubes se mueven creando drama, y las luces de coches en el puente se convierten en líneas rojas. Dispara en modo Manual, enfoque manual al infinito (el autofocus sufre con poca luz), y usa disparador remoto o timer 2s para evitar vibraciones.',
+    tip: '📸 BLUE HOUR: 20-30 min después del sunset (cielo azul oscuro pero no negro). SETTINGS: Trípode, ISO 100, f/11-16, 10-30s, Manual focus. ND filter opcional si todavía hay luz. RAW obligatorio. UBICACIÓN EXACTA: Doca de Santo Amaro (coordenadas abajo). Seguro, bien iluminado, lleno de fotógrafos.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7039, lng: -9.1754 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7039,-9.1754'
+  },
+  {
+    time: 'Noche (21:00-22:00)',
+    title: 'Baixa-Chiado de noche - Long exposure streets',
+    description: 'Sube a Baixa-Chiado para fotografía urbana nocturna. Rua Augusta peatonal con las tiendas iluminadas, gente caminando (fantasmas con larga exposición), artistas callejeros, y el Arco da Rua Augusta iluminado al final creando un punto focal perfecto. TÉCNICA: Trípode, ISO 200-400, f/8, 2-5 segundos - la gente en movimiento se vuelve transparente, solo quedan las luces y la arquitectura. Dispara desde el medio de la calle (es peatonal) con ultra wide (16-24mm) para leading lines hacia el arco. Alternativamente, sube a alguna terraza (rooftop bars en Chiado) y dispara la ciudad iluminada desde arriba. El contraste entre las calles oscuras de Alfama y las zonas iluminadas de Baixa crea depth brutal.',
+    tip: '📸 SETTINGS: ISO 200-800, f/5.6-11, 1-5s dependiendo de cuánto movimiento quieras. Focal: 16-35mm. ROOFTOPS: "Park Bar" (azotea con vistas), "Topo Chiado" (terraza alto). Pide permiso antes de montar trípode en bares. Compra una bebida, sé respetuoso. SEGURIDAD: Baixa es seguro de noche pero cuida tu equipo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7108, lng: -9.1385 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7108,-9.1385'
+  },
+  {
+    time: 'DÍA 2 - Mañana Belém (08:00-10:00)',
+    title: 'Torre de Belém al amanecer - Reflejos dorados',
+    description: 'El día 2 empieza temprano en Belém. La Torre de Belém al amanecer es postal perfecta: torre medieval blanca con marea baja creando charcos que reflejan la torre, luz dorada horizontal iluminando las piedras, y cero turistas. SHOT PERFECTO: Baja a la playa (sí, hay playa al lado de la torre cuando baja la marea) y dispara desde abajo capturando la torre + reflejo en charcos + cielo. Focal: 16-24mm ultra wide. Si la marea está alta, dispara desde el paseo capturando torre + Tajo + Puente 25 de Abril de fondo. BONUS: Monasterio dos Jerónimos (5 min caminando) también es brutal al amanecer - la fachada entera iluminada en dorado, las sombras de las columnas creando geometría, y vacío total.',
+    tip: '📸 MAREA: Consulta tabla de mareas (Google "mareas Lisboa"). Marea baja = playa con reflejos. Marea alta = torre rodeada de agua (también cool). SETTINGS: ISO 100-400, f/8-11, 1/125-1/500s. Polarizador para reflejos. HORA: 7:30-9:00 (golden hour). Torre abre 10:00 así que solo exterior.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.6916, lng: -9.2158 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
+  },
+  {
+    time: 'Mañana Belém (10:00-12:00)',
+    title: 'Jerónimos Interior - Arquitectura gótica',
+    description: 'Entra al Monasterio dos Jerónimos cuando abren (10:00). La IGLESIA ES GRATIS y es donde están las fotos más espectaculares: techos abovedados de 25 metros que parecen palmeras de piedra, columnas octogonales con tallados marinos increíbles, luz natural entrando por ventanas creando rayos de luz (god rays), y la tumba de Vasco da Gama con detalles en piedra brutal. TÉCNICA: Ultra wide (16-24mm) disparando hacia arriba para capturar los techos completos. Trípode opcional pero el suelo de mármol es perfecto para apoyar cámara. ISO 800-3200 (interior oscuro), f/2.8-5.6 (dejar entrar luz), 1/60-1/125s. BLANCO Y NEGRO funciona perfecto aquí - la arquitectura, las sombras, el contraste.',
+    tip: '📸 SETTINGS: ISO 1600-3200, f/2.8-5.6, 1/60-1/125s. Focal: 16-24mm ultra wide. ESTABILIZACIÓN ON si no llevas trípode. RAW obligatorio (sombras recuperables). HORARIO: 10:00-17:00, mejor 10:00-11:00 (menos gente, luz suave entrando). RESPETO: Silencio, es lugar religioso activo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1599052518715-4106f84fc9f6?w=800',
+    coordinates: { lat: 38.6977, lng: -9.2062 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6977,-9.2062'
+  },
+  {
+    time: 'Tarde (14:00-16:00)',
+    title: 'LX Factory - Grit urbano e industrial',
+    description: 'LX Factory es el paraíso para fotografía urbana alternativa. Antiguas naves industriales llenas de grafitis enormes, murales de artistas internacionales, escaleras de metal oxidadas, ladrillo expuesto, neones de cafés, la bici voladora de Ler Devagar librería, y el Puente 25 de Abril pasando literalmente por encima. Es street photography + arquitectura industrial + arte urbano todo junto. SHOTS: (1) Murales completos con gran angular, (2) Detalles de texturas (óxido, pintadas, ladrillos) con 50-85mm, (3) Gente en cafés con 35mm street photography, (4) Long exposure del puente desde LX con ND filter. La luz dura del mediodía funciona bien aquí - sombras fuertes dan carácter industrial.',
+    tip: '📸 SETTINGS: ISO 100-400, f/2.8-8 (variado), 1/250-1/1000s. Kit: 24-70mm versátil. DOMINGO: Mercado vintage (objetos, gente, color). LIBERTAD CREATIVA: Experimenta ángulos raros, contrastes fuertes, crop cuadrado, alto contraste B&W. Nadie te juzga aquí - es zona artística.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800',
+    coordinates: { lat: 38.7065, lng: -9.1799 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7065,-9.1799'
+  },
+  {
+    time: 'Golden Hour Final (18:00-19:30)',
+    title: 'Mirador de Santa Catarina - Cierre épico',
+    description: 'Termina el photoWalk en Santa Catarina para el segundo (y último) golden hour. Este mirador tiene vibra totalmente diferente: grafiti gigante en la pared (backdrop urbano), gente joven con cervezas sentada en los escalones (street photography oportunidades), skaters, músicos, y las vistas al Tajo + Puente 25 de Abril + Cristo Rei con luz dorada perfecta. COMPOSICIÓN: Usa la gente como foreground (siluetas contra el sunset), el puente en plano medio, y el cielo en llamas de fondo. Focal: 35mm o 50mm para candids + paisaje. Dispara en modo ráfaga - la escena cambia constantemente (skaters saltando, parejas besándose, músicos tocando). Cuando el sol toque el horizonte, saca el trípode y dispara el sunset clásico. Después, quédate para blue hour - el puente iluminado desde aquí también es precioso.',
+    tip: '📸 SETTINGS Golden: ISO 200-800, f/2.8-5.6, 1/250-1/1000s (candids), bracket para sunset. BLUE HOUR: Trípode, ISO 100, f/8, 5-15s. SOCIAL: La gente aquí es friendly - pregunta si puedes fotografiar, enseña resultados, conecta. CERVEZA: 1.50€ en quiosco, súper válido después de 2 días intensos.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=800',
+    coordinates: { lat: 38.7101, lng: -9.1484 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7101,-9.1484'
+  }
+];
+
 // Features incluidas en los packs
 export const includedFeatures = [
   {
