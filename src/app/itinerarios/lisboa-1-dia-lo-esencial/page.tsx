@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
+import SocialProof from '@/components/SocialProof';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
 
 export const metadata = {

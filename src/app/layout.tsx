@@ -6,6 +6,7 @@ import StickyCTA from '@/components/StickyCTA';
 import ExitIntentModal from '@/components/ExitIntentModal';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import EmailCapturePopup from '@/components/EmailCapturePopup';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -94,6 +95,7 @@ export default function RootLayout({
           <Footer />
           <StickyCTA />
           <ExitIntentModal />
+          <EmailCapturePopup />
           <CookieBanner />
         </body>
       </html>
