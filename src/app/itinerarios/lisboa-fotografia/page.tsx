@@ -1,156 +1,314 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { TimelineStop } from '@/components/itinerarios/TimelineStop';
+import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
+import SocialProof from '@/components/SocialProof';
+import { lisboaFotografiaTimeline } from '@/data/itineraries';
+
+export const metadata = {
+  title: 'Lisboa Fotografía - PhotoWalk Profesional | Estaba en Lisboa',
+  description: '12 spots fotográficos con horarios de luz perfecta, settings de cámara y ubicaciones exactas. Golden hour, blue hour y los mejores ángulos de Lisboa.',
+};
 
 export default function LisboaFotografiaPage() {
   return (
-    <main>
-      <section className="relative min-h-[60vh] flex items-center justify-center">
+    <main className="min-h-screen bg-background-light">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80" alt="Lisboa Fotografía" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/80"></div>
+          <Image
+            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
+            alt="Lisboa Fotografía PhotoWalk"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
-        <div className="relative z-10 text-center px-4 py-16">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-6 text-white bg-violet-500">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            PARA FOTÓGRAFOS
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Back Link */}
+          <Link
+            href="/itinerarios"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
+          >
+            <span className="material-symbols-outlined text-lg">arrow_back</span>
+            Volver a itinerarios
+          </Link>
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-indigo-500/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-indigo-400/30 mb-8">
+            <span className="material-symbols-outlined text-indigo-300 text-lg">photo_camera</span>
+            <span className="text-sm font-bold tracking-wide">PARA FOTÓGRAFOS</span>
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 italic" style={{fontFamily: 'Georgia, serif'}}>
-            Lisboa Fotografía
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Lisboa<br />
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+              Fotografía
+            </span>
           </h1>
-          <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto">
-            Los mejores spots, horas doradas y rincones secretos para fotos increíbles.
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            12 spots fotográficos con horarios de luz perfecta, settings de cámara y ubicaciones exactas. Golden hour, blue hour y larga exposición.
           </p>
+
+          {/* Stats Pills */}
+          <div className="flex flex-wrap gap-3 justify-center mb-16">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">location_on</span>
+              <span className="text-white text-sm font-medium">12 spots épicos</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">wb_twilight</span>
+              <span className="text-white text-sm font-medium">Golden + Blue hour</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">settings</span>
+              <span className="text-white text-sm font-medium">Settings de cámara</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">map</span>
+              <span className="text-white text-sm font-medium">GPS exacto</span>
+            </div>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span>100% Gratuita</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-indigo-400">photo_camera</span>
+              <span>Para todos los niveles</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">map</span>
+              <span>Con GPS y mapas</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-sm font-semibold tracking-wider uppercase mb-4 block" style={{color: 'var(--color-accent)'}}>Para amantes de la fotografía</span>
-              <h2 className="text-3xl font-bold mb-6" style={{color: 'var(--color-primary)'}}>Captura Lisboa</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  <div>
-                    <span className="font-semibold" style={{color: 'var(--color-primary)'}}>30+ spots fotogénicos</span>
-                    <p className="text-slate-600 text-sm">Miradores, calles con azulejos, tranvías, escaleras icónicas</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                  <div>
-                    <span className="font-semibold" style={{color: 'var(--color-primary)'}}>Horarios de luz perfecta</span>
-                    <p className="text-slate-600 text-sm">Golden hour, blue hour y mejores momentos para cada spot</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  <div>
-                    <span className="font-semibold" style={{color: 'var(--color-primary)'}}>Ubicaciones exactas</span>
-                    <p className="text-slate-600 text-sm">Coordenadas GPS y direcciones precisas de cada punto</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  <div>
-                    <span className="font-semibold" style={{color: 'var(--color-primary)'}}>Evita multitudes</span>
-                    <p className="text-slate-600 text-sm">Mejores horas para spots populares sin turistas</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                  <div>
-                    <span className="font-semibold" style={{color: 'var(--color-primary)'}}>Rutas fotográficas</span>
-                    <p className="text-slate-600 text-sm">Itinerarios optimizados para capturar lo mejor</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-3xl p-8 border border-violet-100">
-              <div className="text-center mb-6">
-                <span className="text-sm text-slate-500">Pack fotografía</span>
-                <div className="text-5xl font-bold mt-2" style={{color: 'var(--color-primary)'}}>9.99 <span className="text-xl font-normal text-slate-500">EUR</span></div>
+      {/* Sticky Info Bar */}
+      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                <span className="material-symbols-outlined text-green-600 text-lg">check_circle</span>
+                <span className="text-green-600 text-sm font-bold">100% Gratuita</span>
               </div>
-              <ul className="space-y-3 mb-8 text-sm">
-                <li className="flex items-center gap-2 text-slate-600">
-                  <svg className="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Guía de 30+ spots con fotos
-                </li>
-                <li className="flex items-center gap-2 text-slate-600">
-                  <svg className="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Coordenadas GPS exactas
-                </li>
-                <li className="flex items-center gap-2 text-slate-600">
-                  <svg className="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Mapas con rutas fotográficas
-                </li>
-                <li className="flex items-center gap-2 text-slate-600">
-                  <svg className="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Tips de composición
-                </li>
-              </ul>
-              <button className="w-full py-4 rounded-xl font-semibold text-white text-lg hover:scale-105 transition-all bg-violet-500 hover:bg-violet-600">
-                Comprar ahora
-              </button>
-              <p className="text-center text-xs text-slate-400 mt-4">Pago seguro con Stripe</p>
+              <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                <span className="material-symbols-outlined text-indigo-500 text-lg">photo_camera</span>
+                PhotoWalk profesional
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="#itinerario"
+                className="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
+              >
+                <span className="material-symbols-outlined">map</span>
+                Ver spots completos
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-slate-50">
+      {/* Social Proof */}
+      <section className="py-8 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <SocialProof guideId="lisboa-fotografia" />
+        </div>
+      </section>
+
+      {/* Quick Summary */}
+      <section className="py-16 bg-background-cream">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-8 text-center" style={{color: 'var(--color-primary)'}}>Spots destacados</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { titulo: "Miradouro da Senhora do Monte", desc: "La mejor panorámica de Lisboa al atardecer", tipo: "Golden Hour" },
-              { titulo: "Rua da Bica de Duarte Belo", desc: "El icónico funicular amarillo", tipo: "Clásico" },
-              { titulo: "Alfama al amanecer", desc: "Calles vacías y luz mágica", tipo: "Blue Hour" },
-              { titulo: "Arco da Rua Augusta", desc: "El arco triunfal con la plaza", tipo: "Arquitectura" },
-              { titulo: "Tranvía 28 en movimiento", desc: "Long exposure del tranvía histórico", tipo: "Movimiento" },
-              { titulo: "LX Factory", desc: "Street art y ambiente industrial", tipo: "Urbano" }
-            ].map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
-                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-violet-100 text-violet-700">{item.tipo}</span>
-                <h3 className="font-bold mt-3 mb-1" style={{color: 'var(--color-primary)'}}>{item.titulo}</h3>
-                <p className="text-slate-600 text-sm">{item.desc}</p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">Resumen del PhotoWalk</h2>
+            <p className="text-text-secondary text-lg max-w-xl mx-auto">2 días capturando Lisboa en sus mejores momentos de luz con settings profesionales.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-indigo-500 text-3xl">schedule</span>
               </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Duración</h3>
+                <p className="text-text-secondary">2 días intensivos (amanecer a noche)</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-indigo-500 text-3xl">photo_camera</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Highlights</h3>
+                <p className="text-text-secondary">12 spots + settings + composición</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-indigo-500 text-3xl">wb_twilight</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Mejor Luz</h3>
+                <p className="text-text-secondary">Golden hour + Blue hour + Noche</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-indigo-500/10 text-indigo-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+              PhotoWalk completo
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
+              12 Spots Fotográficos Épicos
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Cada ubicación incluye horario de luz óptimo, settings de cámara recomendados y tips de composición profesionales
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-indigo-500/20 via-indigo-500 to-indigo-500/20 md:-translate-x-1/2"></div>
+
+            {lisboaFotografiaTimeline.map((stop, idx) => (
+              <TimelineStop key={idx} {...stop} index={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="bg-violet-50 rounded-2xl p-6 md:p-8 border border-violet-200">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      {/* Included Features */}
+      <IncludedFeatures />
+
+      {/* Insider Tips Section */}
+      <section className="py-16 bg-background-cream" id="consejos">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="mb-6">
+                <span className="inline-block px-3 py-1 bg-indigo-500/10 text-indigo-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+                  Tips fotográficos
+                </span>
+                <h2 className="text-3xl font-bold text-text-main mb-4">Equipo Recomendado</h2>
+                <p className="text-text-secondary">Lo que necesitas llevar para capturar Lisboa perfectamente.</p>
               </div>
-              <div>
-                <h3 className="font-bold text-lg mb-2 text-violet-900">Tip de fotógrafo</h3>
-                <p className="text-violet-800">La luz en Lisboa es especial por su cercanía al mar. Los mejores momentos son 30 minutos después del amanecer y 1 hora antes del atardecer. En el pack incluimos los horarios exactos según la época del año.</p>
+
+              <div className="aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-lg relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800"
+                  alt="Lisboa fotografía"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+                  <div className="text-center text-white">
+                    <span className="material-symbols-outlined text-6xl mb-2 block">photo_camera</span>
+                    <p className="font-bold">Guía Fotográfica Completa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col h-full">
+              <div className="bg-white p-6 rounded-xl azulejo-border flex flex-col gap-6 flex-1 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 opacity-10 bg-azulejo-pattern"></div>
+
+                <div className="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide self-start">
+                  <span className="material-symbols-outlined text-base">photo_camera</span>
+                  Equipo Esencial
+                </div>
+
+                <ul className="flex flex-col gap-5 flex-1">
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-indigo-500 text-lg">camera_alt</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Lentes</h4>
+                      <p className="text-text-secondary text-sm mt-1">24-70mm versátil + 16mm ultra wide para arquitectura. Opcional: 70-200mm para comprimir.</p>
+                    </div>
+                  </li>
+
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-indigo-500 text-lg">tripod</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Trípode</h4>
+                      <p className="text-text-secondary text-sm mt-1">OBLIGATORIO para golden hour, blue hour y larga exposición nocturna.</p>
+                    </div>
+                  </li>
+
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-indigo-500 text-lg">wb_sunny</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Filtros</h4>
+                      <p className="text-text-secondary text-sm mt-1">Polarizador (reflejos + cielo) + ND Grad (sunset). Opcional pero recomendado.</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-4" style={{color: 'var(--color-primary)'}}>¿Quieres el itinerario completo?</h2>
-          <p className="text-slate-600 mb-8">Combina este pack con nuestros itinerarios para una experiencia completa.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/itinerarios/lisboa-2-dias-completo" className="px-6 py-3 rounded-xl font-medium border-2 hover:scale-105 transition-all" style={{borderColor: 'var(--color-primary)', color: 'var(--color-primary)'}}>
-              Lisboa 2 días
-            </Link>
-            <Link href="/itinerarios/lisboa-3-dias-sintra" className="px-6 py-3 rounded-xl font-medium border-2 hover:scale-105 transition-all" style={{borderColor: 'var(--color-primary)', color: 'var(--color-primary)'}}>
-              Lisboa 3 días + Sintra
-            </Link>
-            <Link href="/itinerarios/lisboa-romantica" className="px-6 py-3 rounded-xl font-medium border-2 hover:scale-105 transition-all" style={{borderColor: 'var(--color-primary)', color: 'var(--color-primary)'}}>
-              Lisboa Romántica
-            </Link>
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-indigo-500 to-purple-600 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
+        <div className="relative max-w-5xl mx-auto px-4 text-center">
+          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">photo_camera</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+            ¿Listo para capturar Lisboa?
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Acceso inmediato. Settings profesionales. 100% gratuito para siempre.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#itinerario"
+              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-indigo-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            >
+              <span className="material-symbols-outlined text-2xl">download</span>
+              Ver spots completos
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+            <a
+              href="/itinerarios"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+            >
+              <span className="material-symbols-outlined text-2xl">explore</span>
+              Otros itinerarios
+            </a>
           </div>
+          <p className="text-white/80 text-sm mt-6">✅ 100% gratis · ✅ Acceso inmediato · ✅ Settings incluidos</p>
         </div>
       </section>
     </main>
