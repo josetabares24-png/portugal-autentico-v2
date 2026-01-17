@@ -366,10 +366,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </article>
 
           <div className="mt-16 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Quieres un itinerario completo?</h3>
-            <p className="text-white/70 mb-6">Toda esta informacion organizada hora a hora, con mapas offline y recomendaciones actualizadas.</p>
+            <h3 className="text-2xl font-bold text-white mb-3">¿Quieres esto organizado paso a paso?</h3>
+            <p className="text-white/70 mb-6">Guías completas con rutas hora a hora, GPS en cada parada, y restaurantes probados. Menos que un café.</p>
             <Link href="/itinerarios" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-white hover:scale-105 transition-all" style={{color: 'var(--color-primary)'}}>
-              Ver itinerarios desde 5.99 EUR
+              Ver Guías desde 2€
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
