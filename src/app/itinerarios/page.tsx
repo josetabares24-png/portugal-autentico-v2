@@ -1,232 +1,198 @@
-'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import Image from 'next/image';
+import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
+import { mainItineraries, specialItineraries } from '@/data/itineraries';
 
 export default function ItinerariosPage() {
-  const [filtro, setFiltro] = useState<string>('todos');
-
-  const guias = [
-    {
-      id: 'lisboa-1-dia-lo-esencial',
-      titulo: 'Lisboa 1 Día',
-      descripcion: 'Lo esencial de Lisboa en un día',
-      dias: 1,
-      paradas: 8,
-      imagen: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=800',
-      categoria: 'clasicos',
-      badge: 'Más Popular'
-    },
-    {
-      id: 'lisboa-2-dias-completo',
-      titulo: 'Lisboa 2 Días',
-      descripcion: 'Experiencia completa con tiempo',
-      dias: 2,
-      paradas: 15,
-      imagen: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=800',
-      categoria: 'clasicos'
-    },
-    {
-      id: 'lisboa-3-dias-premium',
-      titulo: 'Lisboa 3 Días + Sintra',
-      descripcion: 'Incluye excursión a Sintra y Cascais',
-      dias: 3,
-      paradas: 20,
-      imagen: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800',
-      categoria: 'clasicos'
-    },
-    {
-      id: 'lisboa-fotografia',
-      titulo: 'Lisboa Fotográfica',
-      descripcion: 'Mejores spots para fotografía',
-      dias: 1,
-      paradas: 12,
-      imagen: 'https://images.unsplash.com/photo-1626447857058-2ef5a6739b85?q=80&w=800',
-      categoria: 'tematicos'
-    },
-    {
-      id: 'lisboa-familiar',
-      titulo: 'Lisboa con Niños',
-      descripcion: 'Actividades para toda la familia',
-      dias: 2,
-      paradas: 10,
-      imagen: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800',
-      categoria: 'tematicos'
-    },
-    {
-      id: 'lisboa-romantica',
-      titulo: 'Lisboa Romántica',
-      descripcion: 'Para parejas y luna de miel',
-      dias: 2,
-      paradas: 12,
-      imagen: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800',
-      categoria: 'tematicos'
-    },
-    {
-      id: 'lisboa-full-week',
-      titulo: 'Lisboa 1 Semana Completa',
-      descripcion: 'Guía completa + excursiones',
-      dias: 7,
-      paradas: 35,
-      imagen: 'https://images.unsplash.com/photo-1590242896367-b0ab632f0b67?q=80&w=800',
-      categoria: 'clasicos',
-      badge: 'Completa'
-    }
-  ];
-
-  const categorias = [
-    { id: 'todos', label: 'Todas' },
-    { id: 'clasicos', label: 'Clásicos' },
-    { id: 'tematicos', label: 'Temáticos' }
-  ];
-
-  const guiasFiltradas = filtro === 'todos'
-    ? guias
-    : guias.filter(g => g.categoria === filtro);
-
   return (
-    <main className="min-h-screen bg-white">
-
-      {/* Header simple */}
-      <section className="pt-24 pb-12 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
-            Guías de Lisboa
+    <main>
+      {/* Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80"
+            alt="Vista panorámica de Lisboa"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/70 to-slate-900/80"></div>
+        </div>
+        
+        <div className="relative z-10 text-center px-4 py-20 max-w-4xl mx-auto">
+          <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-white/30">
+            <span className="material-symbols-outlined text-base">map</span>
+            GUÍAS DE VIAJE 2025
+          </span>
+          
+          <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 text-white drop-shadow-lg">
+            Elige tu experiencia<br />
+            <span className="text-primary">perfecta en Lisboa</span>
           </h1>
-          <p className="text-slate-600 text-lg">
-            Itinerarios detallados con horarios y GPS
+          
+          <p className="text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-2xl mx-auto mb-10 drop-shadow-md">
+            Itinerarios completos con restaurantes auténticos, spots de fotos únicos y tips de locales que viven la ciudad.
           </p>
+          
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-primary text-white shadow-lg">
+            <span className="material-symbols-outlined text-lg">verified</span>
+            {mainItineraries.length + specialItineraries.length} PACKS DISPONIBLES
+          </div>
         </div>
       </section>
 
-      {/* Filtros simples */}
-      <section className="border-b bg-white sticky top-16 z-30">
-        <div className="container mx-auto px-4 max-w-6xl py-4">
-          <div className="flex gap-3 justify-center flex-wrap">
-            {categorias.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setFiltro(cat.id)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  filtro === cat.id
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
-              >
-                {cat.label}
-              </button>
+      {/* Quick Stats Section */}
+      <section className="py-16 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-primary text-3xl">schedule</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Descarga Inmediata</h3>
+                <p className="text-text-secondary text-sm">Acceso instantáneo tras la compra</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">100% Actualizado</h3>
+                <p className="text-text-secondary text-sm">Verificado en 2025 por locales</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-primary text-3xl">payments</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Garantía 14 Días</h3>
+                <p className="text-text-secondary text-sm">Reembolso sin preguntas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Itineraries Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+              Según tus días
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-main tracking-tight">
+              Itinerarios Principales
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Cada pack incluye itinerario hora a hora + restaurantes probados + spots de fotos + mapas offline
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {mainItineraries.map(itinerary => (
+              <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Grid de guías - limpio */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {guiasFiltradas.map((guia) => (
-              <Link
-                key={guia.id}
-                href={`/itinerarios/${guia.id}`}
-                className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-orange-300 transition-all"
-              >
-                {/* Imagen */}
-                <div className="relative h-48 overflow-hidden bg-slate-100">
-                  <Image
-                    src={guia.imagen}
-                    alt={guia.titulo}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {guia.badge && (
-                    <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      {guia.badge}
-                    </div>
-                  )}
-                </div>
+      {/* Special Packs Section */}
+      <section className="py-20 bg-background-cream bg-azulejo-pattern">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 bg-secondary-blue/10 text-secondary-blue rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+              Experiencias únicas
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-main tracking-tight">
+              Packs Especiales
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Para viajeros con intereses específicos y ganas de vivir Lisboa de forma diferente
+            </p>
+          </div>
 
-                {/* Contenido */}
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    {guia.titulo}
-                  </h3>
-                  <p className="text-sm text-slate-600 mb-4">
-                    {guia.descripcion}
-                  </p>
-
-                  {/* Meta info */}
-                  <div className="flex items-center gap-4 mb-4 text-xs text-slate-500">
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                      </svg>
-                      {guia.dias} {guia.dias === 1 ? 'día' : 'días'}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      {guia.paradas} paradas
-                    </span>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t">
-                    <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                      100% Gratuita
-                    </span>
-                    <span className="text-orange-500 font-medium text-sm group-hover:text-orange-600 flex items-center gap-1">
-                      Ver guía
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {specialItineraries.map(itinerary => (
+              <ItineraryCard key={itinerary.id} {...itinerary} size="compact" />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Beneficios - simple */}
-      <section className="py-12 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid sm:grid-cols-3 gap-6 text-center">
-            <div className="p-6">
-              <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-slate-900 mb-1">100% Gratuito</h3>
-              <p className="text-sm text-slate-600">Sin registro ni pagos</p>
+      {/* Social Proof */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-text-main mb-2">Lo que dicen nuestros viajeros</h3>
+            <div className="flex items-center justify-center gap-1 text-yellow-400 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+              ))}
             </div>
+            <p className="text-text-secondary">4.9/5 de más de 2,500 viajeros</p>
+          </div>
 
-            <div className="p-6">
-              <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "María G.", text: "El mejor itinerario que he comprado. Todo estaba perfectamente organizado y los restaurantes... ¡increíbles!", city: "Madrid" },
+              { name: "João P.", text: "Siendo portugués, pensaba que conocía Lisboa. Este pack me mostró rincones que ni sabía que existían.", city: "Porto" },
+              { name: "Sophie L.", text: "Worth every cent! The timing was perfect and we didn't waste a single minute. Highly recommended!", city: "Paris" }
+            ].map((review, idx) => (
+              <div key={idx} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div className="flex items-center gap-1 text-yellow-400 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  ))}
+                </div>
+                <p className="text-slate-700 text-sm mb-4 leading-relaxed">"{review.text}"</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-sm">person</span>
+                  </div>
+                  <div className="text-xs">
+                    <p className="font-semibold text-text-main">{review.name}</p>
+                    <p className="text-text-secondary">{review.city}</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-bold text-slate-900 mb-1">Actualizado 2025</h3>
-              <p className="text-sm text-slate-600">Precios y horarios verificados</p>
-            </div>
-
-            <div className="p-6">
-              <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-slate-900 mb-1">Mapas Interactivos</h3>
-              <p className="text-sm text-slate-600">Con GPS y coordenadas exactas</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-azulejo-pattern opacity-5"></div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <span className="material-symbols-outlined text-primary text-6xl mb-6 inline-block">travel_explore</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            ¿Tienes dudas sobre qué pack elegir?
+          </h2>
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            Escríbenos y te ayudamos a elegir el itinerario perfecto según tus días, intereses y estilo de viaje.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contacto" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white bg-primary hover:bg-primary-dark transition-all hover:scale-105 shadow-lg"
+            >
+              <span className="material-symbols-outlined">chat</span>
+              Hablar con un experto
+            </Link>
+            <a 
+              href="#main" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white border-2 border-white/20 hover:bg-white/10 transition-all"
+            >
+              Ver todos los packs
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

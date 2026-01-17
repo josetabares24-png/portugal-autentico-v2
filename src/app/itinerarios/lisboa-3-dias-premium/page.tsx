@@ -1,329 +1,314 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { TimelineStop } from '@/components/itinerarios/TimelineStop';
+import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
+import SocialProof from '@/components/SocialProof';
+import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
 
 export const metadata = {
-  title: 'Lisboa 3 Dias + Sintra + Cascais - Itinerario Premium | Portugal Autentico',
-  description: 'El itinerario mas completo: Lisboa, Sintra, Cabo da Roca y Cascais. 22 paradas, 9 restaurantes, mapas offline.',
+  title: 'Lisboa 3 Días + Sintra | Estaba en Lisboa',
+  description: 'Experiencia premium: 3 días completos visitando Lisboa + excursión mágica a Sintra con Palacio Pena, Quinta Regaleira y Castillo Mouros.',
 };
 
-export default function Lisboa3DiasPage() {
+export default function Lisboa3DiasPremiumPage() {
   return (
-    <main className="min-h-screen">
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=1920)'}}></div>
-        <div className="relative max-w-4xl mx-auto px-4">
-          <Link href="/itinerarios" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 text-sm">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+    <main className="min-h-screen bg-background-light">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=1920&q=80"
+            alt="Lisboa 3 Días + Sintra"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Back Link */}
+          <Link
+            href="/itinerarios"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
+          >
+            <span className="material-symbols-outlined text-lg">arrow_back</span>
             Volver a itinerarios
           </Link>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 rounded-full text-sm font-medium bg-purple-500 text-white">PREMIUM</span>
-            <span className="text-white/60 text-sm">3 dias completos</span>
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-teal-400/30 mb-8">
+            <span className="material-symbols-outlined text-teal-300 text-lg">stars</span>
+            <span className="text-sm font-bold tracking-wide">EXPERIENCIA PREMIUM</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Lisboa + Sintra + Cascais</h1>
-          <p className="text-xl text-white/80 mb-8">La experiencia completa. Lisboa, los palacios magicos de Sintra, Cabo da Roca (el punto mas occidental de Europa) y las playas de Cascais.</p>
-          
-          <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <span className="text-white text-sm">22 paradas</span>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Lisboa 3 Días<br />
+            <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+              + Sintra
+            </span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            La experiencia completa. 3 días en Lisboa + día mágico completo en Sintra con palacios de cuento, castillos y quinta misteriosa.
+          </p>
+
+          {/* Stats Pills */}
+          <div className="flex flex-wrap gap-3 justify-center mb-16">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">location_on</span>
+              <span className="text-white text-sm font-medium">13 paradas</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <span className="text-white text-sm">9 restaurantes</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">castle</span>
+              <span className="text-white text-sm font-medium">Día completo Sintra</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <span className="text-white text-sm">3 ciudades</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">explore</span>
+              <span className="text-white text-sm font-medium">Lisboa + excursión</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
-              <span className="text-white text-sm">Mapas offline</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
+              <span className="material-symbols-outlined text-white text-sm">map</span>
+              <span className="text-white text-sm font-medium">GPS y mapas</span>
+            </div>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span>100% Gratuita</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-teal-400">stars</span>
+              <span>Experiencia premium</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">map</span>
+              <span>Con GPS y mapas</span>
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        </div>
       </section>
 
-      {/* Precio sticky */}
-      <section className="py-6 bg-white border-b sticky top-16 z-40 shadow-sm">
-        <div className="max-w-4xl mx-auto px-4">
+      {/* Sticky Info Bar */}
+      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
+        <div className="max-w-5xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div>
-                
-                <span className="text-3xl font-bold text-slate-900 ml-2">11.99 EUR</span>
+              <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                <span className="material-symbols-outlined text-green-600 text-lg">check_circle</span>
+                <span className="text-green-600 text-sm font-bold">100% Gratuita</span>
               </div>
-              <span className="bg-green-100 text-green-700 text-sm font-bold px-3 py-1 rounded-full">-32%</span>
+              <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                <span className="material-symbols-outlined text-teal-500 text-lg">stars</span>
+                Experiencia premium
+              </div>
             </div>
             <div className="flex gap-3">
-              <Link href="/preview" className="px-6 py-3 border-2 border-slate-200 rounded-xl font-semibold hover:border-slate-300">
-                Ver preview
-              </Link>
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold hover:shadow-lg transition-all">
-                Comprar ahora
-              </button>
+              <a
+                href="#itinerario"
+                className="px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
+              >
+                <span className="material-symbols-outlined">map</span>
+                Ver itinerario completo
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Que incluye */}
-      <section className="py-16 bg-slate-50">
+      {/* Social Proof */}
+      <section className="py-8 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <SocialProof guideId="lisboa-3-dias" />
+        </div>
+      </section>
+
+      {/* Quick Summary */}
+      <section className="py-16 bg-background-cream">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-slate-900 mb-8">Todo lo que incluye</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              'Itinerario hora por hora para 3 dias',
-              'Dia 1: Centro historico completo',
-              'Dia 2: Belem + LX Factory + Fado',
-              'Dia 3: Sintra + Cabo da Roca + Cascais',
-              '22 paradas imprescindibles',
-              '9 restaurantes locales con precios',
-              'Guia de transporte (tren a Sintra incluido)',
-              'Mapas offline descargables',
-              'Tips para evitar colas',
-              'Mejores miradores con horarios',
-              'Casas de fado autenticas',
-              'Actualizaciones gratis'
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl">
-                <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-700">{item}</span>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">Resumen de la Experiencia Premium</h2>
+            <p className="text-text-secondary text-lg max-w-xl mx-auto">3 días completos optimizados: 2 días Lisboa + 1 día mágico en Sintra con palacios y castillos.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-teal-500 text-3xl">location_city</span>
               </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Día 1 - Lisboa Clásico</h3>
+                <p className="text-text-secondary">Alfama, Castillo San Jorge, Baixa y atardecer en Graça</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-teal-500 text-3xl">church</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Día 2 - Belém Monumental</h3>
+                <p className="text-text-secondary">Torre, Monasterio, Pastéis y orilla del Tajo</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
+              <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-teal-500 text-3xl">castle</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-text-main mb-1">Día 3 - Sintra COMPLETO</h3>
+                <p className="text-text-secondary">Palacio Pena, Quinta Regaleira, Castillo Mouros</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-teal-500/10 text-teal-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+              Itinerario completo
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
+              Tu Experiencia Premium de 3 Días
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              13 paradas épicas distribuidas en 3 días: lo mejor de Lisboa + el día mágico completo en Sintra
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-teal-500/20 via-teal-500 to-teal-500/20 md:-translate-x-1/2"></div>
+
+            {lisboa3DiasSintraTimeline.map((stop, idx) => (
+              <TimelineStop key={idx} {...stop} index={idx} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Dia 1 */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">1</div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">Dia 1: Centro Historico</h2>
-              <p className="text-slate-500">Baixa, Alfama, Castillo, Graca</p>
-            </div>
-          </div>
+      {/* Included Features */}
+      <IncludedFeatures />
 
-          <div className="space-y-4">
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">09:00</span>
-                <h3 className="font-bold text-slate-900">Praca do Comercio</h3>
+      {/* Insider Tips Section */}
+      <section className="py-16 bg-background-cream" id="consejos">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <div className="mb-6">
+                <span className="inline-block px-3 py-1 bg-teal-500/10 text-teal-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+                  Consejos exclusivos
+                </span>
+                <h2 className="text-3xl font-bold text-text-main mb-4">Tips para tu Experiencia Premium</h2>
+                <p className="text-text-secondary">Recomendaciones clave para aprovechar al máximo tus 3 días + Sintra.</p>
               </div>
-              <p className="text-slate-600 text-sm">La puerta de entrada a Lisboa. Sube al Arco da Rua Augusta (5 EUR) para la primera vista panoramica.</p>
-            </div>
 
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">10:30</span>
-                <h3 className="font-bold text-slate-900">Alfama sin mapa</h3>
+              <div className="aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-lg relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800"
+                  alt="Lisboa 3 días + Sintra"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+                  <div className="text-center text-white">
+                    <span className="material-symbols-outlined text-6xl mb-2 block">castle</span>
+                    <p className="font-bold">Guía Completa 3 Días + Sintra</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-slate-600 text-sm">Pierdete 1 hora por el barrio mas antiguo. Busca azulejos, ropa tendida, gatos dormidos. Es la esencia de Lisboa.</p>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">12:00</span>
-                <h3 className="font-bold text-slate-900">Almuerzo: Taberna da Rua das Flores</h3>
+            <div className="flex flex-col h-full">
+              <div className="bg-white p-6 rounded-xl azulejo-border flex flex-col gap-6 flex-1 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 opacity-10 bg-azulejo-pattern"></div>
+
+                <div className="inline-flex items-center gap-2 bg-teal-500/10 text-teal-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide self-start">
+                  <span className="material-symbols-outlined text-base">lightbulb</span>
+                  Tips Esenciales
+                </div>
+
+                <ul className="flex flex-col gap-5 flex-1">
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-teal-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-teal-500 text-lg">schedule</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Sintra: timing crítico</h4>
+                      <p className="text-text-secondary text-sm mt-1">Sal de Lisboa a las 8:00 AM. Tren desde Rossio - llega antes de las 9:00 para evitar multitudes.</p>
+                    </div>
+                  </li>
+
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-teal-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-teal-500 text-lg">confirmation_number</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Tickets online obligatorio</h4>
+                      <p className="text-text-secondary text-sm mt-1">Palacio Pena + Quinta Regaleira: COMPRA ONLINE días antes. Ahorras 2h de cola en cada uno.</p>
+                    </div>
+                  </li>
+
+                  <li className="flex gap-3 items-start">
+                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-teal-500/10 flex items-center justify-center mt-1">
+                      <span className="material-symbols-outlined text-teal-500 text-lg">route</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-text-main text-sm">Orden óptimo palacios</h4>
+                      <p className="text-text-secondary text-sm mt-1">1. Palacio Pena (mañana), 2. Castillo Mouros, 3. Quinta Regaleira (tarde). Bus 434 conecta todo.</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <p className="text-slate-600 text-sm">Cocina portuguesa moderna. Pide las croquetas de alheira y el pulpo. Reserva o ve temprano. ~25 EUR/persona.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">14:30</span>
-                <h3 className="font-bold text-slate-900">Castillo de San Jorge</h3>
-              </div>
-              <p className="text-slate-600 text-sm">15 EUR entrada. Ve despues de las 15:00 cuando se van los tours. Las mejores vistas de Lisboa.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">17:00</span>
-                <h3 className="font-bold text-slate-900">Miradouro da Graca</h3>
-              </div>
-              <p className="text-slate-600 text-sm">El mirador favorito de los locales. Cerveza en el kiosko viendo el atardecer sobre la ciudad.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">20:30</span>
-                <h3 className="font-bold text-slate-900">Cena + Fado en Alfama</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Mesa de Frades o Tasca do Chico. Fado autentico, no para turistas. Reserva con antelacion.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dia 2 */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">2</div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">Dia 2: Belem y Modernidad</h2>
-              <p className="text-slate-500">Belem, LX Factory, Time Out Market</p>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">09:00</span>
-                <h3 className="font-bold text-slate-900">Tranvia 15E a Belem</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Desde Praca do Comercio. Tarda 20 min. Evita el tranvia 28 (es una trampa turistica).</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">09:30</span>
-                <h3 className="font-bold text-slate-900">Pasteis de Belem</h3>
-              </div>
-              <p className="text-slate-600 text-sm">SI, hay cola. Pero ve a las salas del fondo, ahi no hay espera. El pastel de nata original desde 1837.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">10:30</span>
-                <h3 className="font-bold text-slate-900">Monasterio de los Jeronimos</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Patrimonio UNESCO. Compra entrada online para evitar 1 hora de cola. Iglesia gratis, claustro 10 EUR.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">12:30</span>
-                <h3 className="font-bold text-slate-900">Torre de Belem</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Foto obligatoria. No subas (colas eternas, vistas regulares). Mejor camina por el paseo maritimo.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">14:00</span>
-                <h3 className="font-bold text-slate-900">LX Factory</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Fabrica reconvertida en espacio creativo. Libreria Ler Devagar es espectacular. Almuerza en Landeau (mejor tarta de chocolate de Lisboa).</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">17:00</span>
-                <h3 className="font-bold text-slate-900">Miradouro de Santa Catarina</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Ambiente joven, musica en vivo improvisada. Compra cerveza en el supermercado de abajo.</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">20:00</span>
-                <h3 className="font-bold text-slate-900">Time Out Market</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Cena variada. Cada puesto es de un chef reconocido. Coge sitio primero, luego pide. Henrique Sá Pessoa es el mejor.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Dia 3 - SINTRA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">3</div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">Dia 3: Sintra + Cabo da Roca + Cascais</h2>
-              <p className="text-slate-500">Palacios, el fin de Europa, playas</p>
-            </div>
-          </div>
-
-          <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-6">
-            <p className="text-purple-800 text-sm"><strong>Transporte:</strong> Tren desde Rossio a Sintra (2.30 EUR, 40 min). En Sintra, bus 434 a los palacios. Ultimo bus Sintra-Cascais a las 18:00.</p>
-          </div>
-
-          <div className="space-y-4">
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">08:00</span>
-                <h3 className="font-bold text-slate-900">Tren a Sintra</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Sal temprano. Sintra se llena a las 11:00. Estacion de Rossio, tren cada 20 min.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">09:00</span>
-                <h3 className="font-bold text-slate-900">Palacio da Pena</h3>
-              </div>
-              <p className="text-slate-600 text-sm">El palacio colorido que has visto en Instagram. 14 EUR entrada. COMPRA ONLINE o haras 2 horas de cola. Es magico, parece de cuento.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">11:30</span>
-                <h3 className="font-bold text-slate-900">Quinta da Regaleira</h3>
-              </div>
-              <p className="text-slate-600 text-sm">El pozo iniciatico es increible. Jardines misteriosos, tuneles secretos. 10 EUR. Menos masificado que Pena.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">13:00</span>
-                <h3 className="font-bold text-slate-900">Almuerzo en Sintra Vila</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Incomum by Luis Santos - cocina portuguesa moderna. O Tascantiga para algo mas tradicional y barato. Prueba las queijadas de Sintra.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">14:30</span>
-                <h3 className="font-bold text-slate-900">Bus a Cabo da Roca</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Bus 403 desde Sintra (30 min). El punto mas occidental de Europa continental. Acantilados dramaticos sobre el Atlantico. Hace viento, lleva chaqueta.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">16:00</span>
-                <h3 className="font-bold text-slate-900">Bus a Cascais</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Bus 403 continua a Cascais (30 min). Pueblo costero elegante. Pasea por el centro, helado en Santini (el mejor de Portugal).</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">17:30</span>
-                <h3 className="font-bold text-slate-900">Boca do Inferno</h3>
-              </div>
-              <p className="text-slate-600 text-sm">Formacion rocosa a 15 min caminando del centro. Olas rompiendo contra los acantilados. Atardecer espectacular.</p>
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">19:00</span>
-                <h3 className="font-bold text-slate-900">Cena en Cascais</h3>
-              </div>
-              <p className="text-slate-600 text-sm">House of Wonders para pescado fresco. O Marisco na Praca para mariscos (caro pero vale). Tren de vuelta a Lisboa desde Cascais (40 min, 2.30 EUR).</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">3 dias perfectos te esperan</h2>
-          <p className="text-xl text-purple-100 mb-8">Lisboa, Sintra, Cascais. Todo planificado hora a hora para que solo disfrutes.</p>
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-teal-500 to-blue-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
+        <div className="relative max-w-5xl mx-auto px-4 text-center">
+          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">castle</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+            ¿Listo para tu experiencia premium?
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Acceso inmediato. 13 paradas épicas. 3 días + Sintra mágica. 100% gratuito para siempre.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-10 py-4 bg-white text-purple-700 rounded-xl font-bold text-lg hover:shadow-xl transition-all">
-              Comprar por 11.99 EUR
-            </button>
-            <Link href="/comparar" className="px-10 py-4 border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
-              Comparar packs
-            </Link>
+            <a
+              href="#itinerario"
+              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-teal-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            >
+              <span className="material-symbols-outlined text-2xl">download</span>
+              Ver itinerario completo
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+            <a
+              href="/itinerarios"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+            >
+              <span className="material-symbols-outlined text-2xl">explore</span>
+              Otros itinerarios
+            </a>
           </div>
-          <p className="mt-6 text-purple-200 text-sm">Descarga inmediata • Garantia 14 dias • Actualizaciones gratis</p>
+          <p className="text-white/80 text-sm mt-6">✅ 100% gratis · ✅ Acceso inmediato · ✅ GPS incluido</p>
         </div>
       </section>
     </main>

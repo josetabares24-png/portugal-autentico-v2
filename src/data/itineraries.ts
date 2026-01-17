@@ -762,3 +762,442 @@ export const includedFeatures = [
     description: 'Plan B para cada momento del día'
   }
 ];
+
+// Timeline stops para Lisboa 2 Días Completo
+export const lisboa2DiasTimeline: TimelineStop[] = [
+  // DÍA 1
+  {
+    time: '09:00 - Día 1',
+    title: 'Alfama + Castillo São Jorge',
+    description: 'Empezamos fuerte en Alfama, el barrio más antiguo de Lisboa que sobrevivió al terremoto de 1755. Sal temprano (9:00) cuando las calles todavía están tranquilas y solo ves vecinos abriendo tiendas. Camina sin rumbo por las callejuelas empinadas - perderte aquí es parte de la experiencia. Ves ropa tendida, azulejos centenarios, gatos durmiendo al sol, y fado saliendo de alguna ventana. Después sube al Castillo São Jorge (entrada 15€, gratis domingos hasta 14:00). Las murallas tienen 2000 años de historia, hay pavos reales sueltos, y las vistas de 360° sobre Lisboa son brutales. Dedica 1.5 horas a explorar las torres, los jardines, y el mirador panorámico. El castillo abre a las 9:00 así que si llegas temprano lo tienes casi vacío.',
+    tip: '🎫 TRUCO: Domingos gratis hasta 14:00 (llega 13:00 para evitar colas). Entre semana mejor 9:00-10:30 (menos turistas). No uses Google Maps en Alfama - lo mejor es perderte. Todas las calles eventualmente suben al castillo o bajan al río.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7139, lng: -9.1334 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7139,-9.1334'
+  },
+  {
+    time: '12:00',
+    title: 'Almuerzo en Mercado de Santa Clara',
+    description: 'Baja del castillo caminando hasta el Mercado de Santa Clara (10 min). Es un mercado de barrio auténtico donde los locales compran verduras, pescado fresco, y comen en las tascas alrededor. Ve a "Tasca do Mercado" - tasca tradicional con azulejos en las paredes, señoras cocinando bacalhau, y menú del día por 8-10€. Pide lo que esté cocinándose: bacalhau à brás (bacalao con patatas y huevo), arroz de pato, o sardinas asadas si es temporada (mayo-octubre). Comes como local, precios de local, sabor brutal. Los martes y sábados hay mercadillo de antigüedades en la plaza (Feira da Ladra) - perfecto para pasear después de comer buscando vinilos, azulejos vintage, y cosas random.',
+    tip: '🍽️ Precio: 8-12€ menú completo. HORARIO: 12:00-15:00 (después cierran cocina). Martes y sábados: Feira da Ladra 9:00-18:00 (mercadillo antigüedades). Lleva efectivo - muchas tascas no aceptan tarjeta.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+    coordinates: { lat: 38.7155, lng: -9.1268 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7155,-9.1268'
+  },
+  {
+    time: '14:30',
+    title: 'Tranvía 28 completo',
+    description: 'Toma el mítico Tranvía 28 desde Martim Moniz (parada inicial) para hacer el recorrido COMPLETO (45 min ida). Este tranvía amarillo histórico sube y baja por las 7 colinas de Lisboa pasando por Graça, Alfama, Baixa, Chiado, Estrela y Campo de Ourique. Las calles son TAN estrechas que el tranvía roza las paredes - vas a ver gente en ventanas casi tocando el tranvía. Siéntate en ventana (lado derecho = mejores vistas) y disfruta del paseo vintage. El truco: NO lo tomes en paradas turísticas (Baixa, Alfama) porque van repletos. Cógelo en Martim Moniz (inicio) o Campo de Ourique (final) para ir sentado. Bájate donde quieras explorar - con el mismo ticket puedes subir y bajar.',
+    tip: '🚋 Ticket: 3€ (compra en el tranvía, solo efectivo) o incluido en tarjeta Viva Viagem. EVITA: 11:00-16:00 (repleto de turistas). MEJOR: 9:00-10:30 o 17:00-19:00. Parada inicial Martim Moniz para ir sentado. Recorrido completo: 45 min.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1597426509446-cd65442af149?w=800',
+    coordinates: { lat: 38.7175, lng: -9.1372 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7175,-9.1372'
+  },
+  {
+    time: '16:00',
+    title: 'Baixa + Elevador de Santa Justa',
+    description: 'Bájate del 28 en Baixa (centro neurálgico de Lisboa). Camina por Rua Augusta (calle peatonal principal) hasta la Praça do Comércio - plaza enorme con arcadas amarillas abierta al río Tajo. Desde aquí, sube al Arco da Rua Augusta (3€, mirador 360°) para vistas de toda Baixa y el río. Después camina hasta el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 que parece sacado de París. Puedes subir (5.50€) o simplemente verlo desde abajo (la estructura es la foto, no las vistas). Pasea por las calles de Baixa viendo las tiendas de azulejos, pastelerías con vitrinas de pasteles de nata, y la arquitectura pombalina reconstruida después del terremoto de 1755.',
+    tip: '🏛️ Arco da Rua Augusta: 3€, vistas 360°. Elevador Santa Justa: 5.50€ (opcional, más turístico que útil). GRATIS: Caminar Baixa, Praça Comércio, fotos del elevador desde abajo. Pastelerías recomendadas: Confeitaria Nacional (desde 1829), pastel de nata 1.20€.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7071, lng: -9.1364 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7071,-9.1364'
+  },
+  {
+    time: '18:00',
+    title: 'Atardecer en Mirador da Graça',
+    description: 'Uber/tranvía hasta el Mirador da Graça para el atardecer (llega 45 min antes del sunset - consulta hora). Este mirador tiene vibra local: terrazas con mesitas blancas, quiosco sirviendo vinos y cervezas, y vistas de 180° sobre Alfama, el Castillo, el Tajo, y toda Lisboa. Pide un vino blanco Vinho Verde bien frío (4€) o cerveza Super Bock (3€), consigue mesita en primera fila, y prepárate para el show. Cuando el sol baja, toda la ciudad se ilumina en dorado - los tejados naranjas brillan, las sombras se alargan, el Tajo refleja el cielo rosa/naranja. Después del sunset quédate para blue hour - la ciudad iluminada con el cielo azul profundo es mágico.',
+    tip: '🌅 Sunset: Llega 45 min ANTES (mesitas se llenan rápido). Vino: 4-6€, cerveza: 3€. Horario quiosco: hasta 22:00. OCUPADO: Viernes-domingo (muy lleno). Martes-jueves más tranquilo. Alternativa si está repleto: Mirador de Santa Luzia (5 min caminando, igual de bonito).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7169, lng: -9.1329 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7169,-9.1329'
+  },
+  {
+    time: '20:30',
+    title: 'Cena en Bairro Alto',
+    description: 'Baja andando al Bairro Alto (15 min desde Graça). Este barrio es el epicentro nocturno de Lisboa: calles empinadas llenas de tascas, bares, gente con cervezas en la calle, fado saliendo de restaurantes, y ambiente bohemio. Para cenar, evita las trampas turísticas de Rua do Norte (menús en 5 idiomas = red flag). Ve a "Tasca da Esquina" (cocina portuguesa moderna, 15-25€), "Pharmacia" (restaurante en antigua farmacia con terraza y vistas, 20-30€), o "Cantina LX" (comida de autor portuguesa, 25-35€). Después de cenar, el Bairro Alto se transforma: cada puerta es un bar diferente (rock, jazz, fado, electrónica). Compra cerveza en tiendas (1€) y únete a la gente en las calles - es totalmente normal y legal.',
+    tip: '🍽️ Reserva recomendada para restaurantes (especialmente viernes-sábado). Precio cena: 20-35€. TRUCO: Tascas escondidas en calles laterales = más baratas y auténticas. Después de cenar: bares abren 22:00-3:00. Compra cerveza en minimercados (1€ vs 4€ en bares). Seguro de noche - mucha gente, bien iluminado.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800',
+    coordinates: { lat: 38.7137, lng: -9.1452 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7137,-9.1452'
+  },
+
+  // DÍA 2
+  {
+    time: '09:00 - Día 2',
+    title: 'Belém - Torre + Monasterio',
+    description: 'Día 2 empieza en Belém (15 min en tranvía 15 desde Praça da Figueira). Primero, la Torre de Belém - fortaleza del siglo XVI en la orilla del río que parece sacada de un cuento de hadas. Llega cuando abren (10:00) para evitar colas. La entrada (8€) te lleva por las torres, mazmorras, terrazas con vistas al Tajo, y la famosa terraza con forma de rinoceronte tallada en piedra. Después (11:00) cruza la calle al Monasterio dos Jerónimos - obra maestra del gótico manuelino con 500 años de historia. La IGLESIA ES GRATIS y es donde está lo más espectacular: techos abovedados de 25 metros que parecen palmeras de piedra, la tumba de Vasco da Gama, y luz natural creando rayos de dios. El claustro (10€) es opcional pero hermoso.',
+    tip: '🎫 Torre Belém: 8€. Jerónimos iglesia: GRATIS. Claustro: 10€. Combo torre+claustro: 14€ (ahorro 4€). HORARIO: 10:00-17:30 (invierno), 10:00-18:30 (verano). Lunes cerrado. TRUCO: Haz primero Torre (10:00 cuando abre, menos cola) → Jerónimos (11:00) → Pasteles (12:00).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.6916, lng: -9.2158 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
+  },
+  {
+    time: '12:00',
+    title: 'Pastéis de Belém (los ORIGINALES)',
+    description: 'Ahora viene EL MOMENTO. Camina 5 minutos hasta Pastéis de Belém - la pastelería original que inventó los pasteles de nata en 1837. Hay SIEMPRE cola en la tienda para llevar (30+ personas), pero el truco es entrar directamente a las SALAS DEL FONDO (señaladas como "Salão"). Son salones enormes con azulejos antiguos, meseros con pajarita, y mesas para sentarte. Aquí NO hay cola. Pide 2-3 pasteles por persona (1.30€ cada uno), un café, y espolvorea canela y azúcar glas encima (están en las mesas). La receta es secreta desde hace 200 años - solo 3 maestros pasteleros la conocen. El hojaldre crujiente + la crema caliente cremosa = explosión de sabor.',
+    tip: '🥐 Precio: 1.30€/pastel, café 1€. TRUCO CLAVE: Evita cola - entra directo a "Salão" (salones del fondo). Pide mínimo 2 por persona. Canela + azúcar glas en las mesas. Abre 8:00-23:00 todos los días. Tronas disponibles, kid-friendly. Para llevar: pide caja de 6 o 12 (viajan bien).',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1509365390695-33aee754301f?w=800',
+    coordinates: { lat: 38.6975, lng: -9.2032 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6975,-9.2032'
+  },
+  {
+    time: '14:00',
+    title: 'LX Factory - Arte urbano',
+    description: 'Uber o autobús hasta LX Factory (10 min desde Belém). Es una antigua fábrica textil convertida en hub creativo: naves industriales llenas de grafitis enormes, estudios de diseño, tiendas vintage, cafés hipsters, librerías alternativas, y el Puente 25 de Abril pasando literalmente por encima. Es Instagram paradise pero también tiene alma. Ve a Ler Devagar (librería espectacular con bicicleta voladora colgando del techo), explora las tiendas de ropa indie, tómate un café en "Landeau Chocolate" (el mejor brownie de Lisboa, 3.50€), y pasea viendo murales de artistas internacionales. Los domingos hay mercado vintage. La vibra es joven, artística, alternativa - totalmente diferente al Lisboa histórico.',
+    tip: '☕ GRATIS: Pasear y ver murales. Café: 2-4€. Brownie Landeau: 3.50€ (BRUTAL, imperdible). DOMINGO: Mercado vintage 11:00-19:00. Librerías, tiendas diseño, estudios artísticos. Mejor momento: 14:00-18:00. Restaurantes para almorzar: "Rio Maravilha" (terraza con vistas puente).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800',
+    coordinates: { lat: 38.7065, lng: -9.1799 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7065,-9.1799'
+  },
+  {
+    time: '17:00',
+    title: 'Time Out Market',
+    description: 'Uber o Metro (Cais do Sodré) hasta el Time Out Market - mercado gastronómico con 40+ restaurantes, tascas, y chefs con estrella Michelin todo bajo un mismo techo. Es perfecto cuando viajas en grupo y cada uno quiere algo diferente: sushi, hamburguesas, comida portuguesa, pizza, mariscos, vegano, todo. Funciona así: recorres los puestos, pides en el que quieras, te dan un número, y te llaman cuando esté listo. Después buscas mesa (hay cientos) y comes. Destacados: "Henrique Sá Pessoa" (chef con estrella Michelin, pulpo increíble), "Alexandre Silva" (cocina portuguesa moderna), "Marlene Vieira" (pastelería brutal). Precios: 8-18€ por plato. Vibra: animada pero no ruidosa, mezcla de turistas y locales, funciona para familias.',
+    tip: '🍽️ Precio: 10-20€/persona. HORARIO: 10:00-00:00 (domingos hasta 18:00). TRUCO: Evita 13:00-15:00 y 20:00-21:00 (lleno, difícil encontrar mesa). Mejor: 11:30 o 17:00-19:00. Barra central para beber vinos portugueses. Terraza exterior si hace buen tiempo.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+    coordinates: { lat: 38.7058, lng: -9.1455 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7058,-9.1455'
+  },
+  {
+    time: '19:30',
+    title: 'Fado auténtico en Alfama',
+    description: 'Termina tu viaje con la experiencia MÁS portuguesa: Fado en vivo en Alfama. El fado es Patrimonio de la Humanidad - música melancólica cantada con alma que te pone los pelos de punta incluso sin entender portugués. Ve a "Tasca do Chico" (Bairro Alto o Alfama, hay 2 locales) - tasca minúscula con azulejos, solo 20 personas, y fado espontáneo donde cantantes profesionales y amateurs se turnan. Es GRATIS (solo pagas lo que consumas - vino 3€, cerveza 2€, petiscos 4-8€). Alternativas: "A Baiuca" (Alfama, íntimo, reserva obligatoria), "Mesa de Frades" (Alfama, en una capilla antigua). Regla de oro: cuando alguien canta, silencio ABSOLUTO. Es sagrado. Dura 10-15 min por canción, después puedes volver a hablar hasta la siguiente.',
+    tip: '🎵 Tasca do Chico: GRATIS (solo consumes). A Baiuca: reserva online obligatoria. HORARIO: 21:00-2:00 (empieza 22:00). Llega 21:00 para sitio. RESPETO: Silencio absoluto cuando cantan. Fotos/videos solo entre canciones (pregunta antes). Consumo mínimo: 1 bebida + petisco = 7-10€ total.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800',
+    coordinates: { lat: 38.7115, lng: -9.1288 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7115,-9.1288'
+  }
+];
+
+// ============================================================================
+// LISBOA 3 DÍAS + SINTRA - Timeline completa
+// ============================================================================
+
+export const lisboa3DiasSintraTimeline: TimelineStop[] = [
+  // DÍA 1 - LISBOA CLÁSICO
+  {
+    time: '09:00 - Día 1',
+    title: 'Alfama al amanecer',
+    description: 'Arranca tu primera mañana en el corazón histórico de Lisboa: Alfama. Este barrio medieval sobrevivió al devastador terremoto de 1755, así que cada calle adoquinada, cada escalera empinada, cada plaza escondida tiene siglos de historia. Empieza en la Catedral Sé (Largo da Sé) y simplemente piérdete subiendo. Verás ropa tendida entre balcones, oirás fado saliendo de alguna ventana abierta, y te cruzarás con abuelas comprando en tiendecitas que llevan abiertas desde antes de la dictadura. No luches contra las cuestas - son parte de la experiencia. Súbelas todas. Al final de cada una te espera una vista diferente: el río Tajo brillando al fondo, tejados naranjas escalonados, azulejos antiguos, esquinas llenas de grafitis modernos sobre paredes medievales. La magia de Alfama es que no ha cambiado en décadas - sigue siendo un barrio de vecinos, no un decorado turístico.',
+    tip: '🚶 RUTA: Catedral Sé → calles aleatorias hacia arriba → Mirador Santa Luzia. Distancia: 1.5 km (pero con escaleras se siente como 3). GRATIS: Todo. Lleva agua, las subidas cansan. Mejor calzado: zapatillas con buen agarre. Hora pico turistas: 11:00-16:00, antes de las 10:00 es mágico y vacío.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7109, lng: -9.1333 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7109,-9.1333'
+  },
+  {
+    time: '11:00',
+    title: 'Castillo de San Jorge',
+    description: 'Después de Alfama, sube al Castillo de San Jorge - la fortaleza que domina Lisboa desde hace más de mil años. Los moros lo construyeron en el siglo XI, después lo conquistaron los cristianos, y hoy es el mirador más espectacular de la ciudad. La entrada son 15€ pero vale cada céntimo: murallas medievales que puedes recorrer por dentro, torres con vistas 360° sobre Lisboa (ves el puente 25 de Abril, el Tajo, Alfama completa, los barrios modernos al norte), jardines con pavos reales paseando libremente, y ruinas arqueológicas donde ves capas de civilizaciones - fenicios, romanos, moros, portugueses. Lo mejor es caminar por las murallas: pasas por torres de vigilancia, atraviesas pasadizos de piedra, y en cada esquina descubres una vista nueva. Dedícale mínimo una hora - no es solo un castillo, es un parque enorme con historia en cada rincón.',
+    tip: '🎫 Entrada: 15€ adultos, 7.50€ estudiantes/seniors. Compra online para evitar cola. HORARIO: 9:00-18:00 (invierno), 9:00-21:00 (verano). Lleva gorra/sombrero - casi no hay sombra. Cafetería cara dentro, mejor lleva snacks. TRUCO: Entra por la puerta de atrás (menos cola) - búscala en Google Maps como "Castelo de São Jorge - Entrada Norte".',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.7139, lng: -9.1334 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7139,-9.1334'
+  },
+  {
+    time: '14:00',
+    title: 'Baixa - Centro neurálgico',
+    description: 'Baja del castillo hacia Baixa, el centro neurálgico de Lisboa reconstruido después del terremoto de 1755. Todo aquí es ordenado, geométrico, iluminista - calles en cuadrícula perfecta, plazas simétricas, edificios pombalinos de 4 pisos pintados en colores pastel. Empieza en la Praça do Comércio (plaza gigante abierta al Tajo con arcadas amarillas impresionantes), sube al Arco da Rua Augusta (3€ para el mirador en la cima - vistas 360° de Baixa y el río), después camina por Rua Augusta (calle peatonal principal llena de tiendas, artistas callejeros, turistas, vendedores de castañas asadas). Pasa por el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 diseñado por un discípulo de Eiffel (puedes subir por 5.50€ pero la estructura es más bonita desde abajo). Termina en Rossio, la plaza donde solían quemar herejes en la Inquisición y hoy hay palomas, turistas, y portugueses tomando café en terrazas centenarias.',
+    tip: '💰 Arco da Rua Augusta: 3€ (vistas brutales). Elevador Santa Justa: 5.50€ (opcional, más foto que experiencia). GRATIS: Pasear Baixa, Praça Comércio, Rossio, ver el elevador desde abajo. COMIDA: Cafés históricos en Rossio - café + pastel de nata = 2.50€. Restaurantes turísticos = evita los de Rua Augusta (caros y mediocres), mejor calles laterales.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7071, lng: -9.1364 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7071,-9.1364'
+  },
+  {
+    time: '18:30',
+    title: 'Atardecer en Mirador da Graça',
+    description: 'Para el mejor atardecer de Lisboa, uber hasta el Mirador da Graça (10 min desde Baixa). Este mirador tiene todo: vistas de 270° sobre la ciudad (ves Alfama, el Castillo, el Tajo, el puente, los barrios del oeste hasta Belém), terrazas con mesitas blancas bajo pinos centenarios, un quiosco sirviendo vinos portugueses bien fríos y cerveza Super Bock, y vibra 100% local. Llega mínimo 45 minutos antes del sunset (consulta hora exacta en Google). Pide vino blanco Vinho Verde (4€) o cerveza (3€), consigue mesita en primera fila mirando al oeste, y espera el show. Cuando el sol empieza a bajar, toda Lisboa se ilumina en dorado - los tejados naranjas brillan como fuego, las sombras se alargan dramáticamente, el Tajo refleja el cielo en tonos rosa/naranja/morado. Después del sunset quédate para blue hour: la ciudad iluminada con el cielo azul profundo es pura magia.',
+    tip: '🌅 TIMING CRÍTICO: Llega 45-60 min ANTES del sunset (consulta hora). Mesitas primera fila se llenan RÁPIDO. Fin de semana = llega 1 hora antes. Vino: 4-6€, cerveza: 3€, petiscos: 5-8€. Quiosco horario: hasta 22:00. Si está repleto: Mirador Santa Luzia (igual de bonito, 10 min caminando). Lleva chaqueta - refresca después del sol.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7169, lng: -9.1329 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7169,-9.1329'
+  },
+
+  // DÍA 2 - BELÉM COMPLETO
+  {
+    time: '09:30 - Día 2',
+    title: 'Torre de Belém',
+    description: 'Día 2 dedicado por completo a Belém - el barrio de los descubrimientos portugueses. Sal temprano y toma el tranvía 15 desde Praça da Figueira (15 min, pasa cada 10 min). Tu primera parada es la Torre de Belém, la fortaleza del siglo XVI que parece sacada de un cuento de hadas - mezcla de estilo manuelino con torres blancas, baluartes, balcones sobre el río Tajo, y hasta un rinoceronte tallado en piedra (el primer rinoceronte que llegó a Europa). Llega exactamente cuando abren (10:00) para evitar las colas infernales que se forman después (en verano puede haber 1+ hora de espera a mediodía). La visita dura 30-45 min: subes por escaleras de caracol estrechas, pasas por las mazmorras donde encerraban prisioneros, sales a terrazas con vistas al Tajo y al puente 25 de Abril, y caminas por los baluartes defensivos imaginando cómo defendían Lisboa de invasores. Las vistas desde arriba son brutales - el río, los barcos pasando, Belém extendiéndose hacia el este.',
+    tip: '🎫 Entrada: 8€ individual, 14€ combo Torre + Monasterio Jerónimos (compra combo, ahorras 4€). HORARIO: 10:00-17:30 (oct-abr), 10:00-18:30 (may-sep). Lunes CERRADO. Compra online para saltarte cola. Escaleras MUY estrechas - no apto para claustrofobia o movilidad reducida. Julio-agosto = llega 9:45 para ser de los primeros.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.6916, lng: -9.2158 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
+  },
+  {
+    time: '11:00',
+    title: 'Monasterio dos Jerónimos',
+    description: 'Desde la Torre, camina 10 minutos (o tranvía 15 una parada) hasta el Monasterio dos Jerónimos - la obra maestra absoluta del gótico manuelino portugués y Patrimonio de la Humanidad UNESCO. Este monstruo de piedra calcárea blanca fue construido con el oro de las especias que Vasco da Gama trajo de la India. Hay DOS partes: la IGLESIA (entrada GRATIS) y el CLAUSTRO (10€). Empieza por la iglesia - es donde está lo más espectacular: techos abovedados de 25 metros que parecen palmeras de piedra con decoraciones de cuerdas, anclas, y esfera armilar, la tumba de Vasco da Gama (el tipo que descubrió la ruta a India), la tumba del poeta Camões, y columnas octogonales con decoraciones de una delicadeza brutal. La luz natural entra por vitrales creando rayos de dios. El claustro (10€ extra) es hermoso pero opcional - dos pisos de arcadas talladas rodeando un jardín, perfecto para fotos de arcos infinitos.',
+    tip: '💰 IGLESIA: GRATIS (imperdible). CLAUSTRO: 10€ (bonito pero opcional). Combo Torre+Claustro: 14€. LUNES: Todo cerrado. Cola iglesia: 20-40 min (verano). Mejor hora: 9:00-10:30 cuando abre. Audio-guía: 3€ (recomendada, explica decoraciones manuelinas). Tiempo visita: iglesia 30 min, claustro 20-30 min.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1580712771134-b48cf4863fe2?w=800',
+    coordinates: { lat: 38.6979, lng: -9.2061 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6979,-9.2061'
+  },
+  {
+    time: '13:00',
+    title: 'Pastéis de Belém - Los ORIGINALES',
+    description: 'Ahora viene el momento que todos esperan: probar los pasteles de nata ORIGINALES en la pastelería que los inventó en 1837. Camina 5 minutos desde el monasterio hasta Pastéis de Belém - la fábrica azul y blanca con cola eterna en la tienda para llevar. PERO ESPERA. No hagas la cola. El truco maestro: entra directamente por las puertas que dicen "SALÃO" (salones). Son salas enormes con azulejos antiguos hasta el techo, meseros con pajarita negra, mesas de mármol, y CERO cola. Siéntate, pide 2-3 pasteles por persona (1.30€ cada uno), un café (1€), y espera 5 minutos. Cuando lleguen calentitos, espolvorea canela y azúcar glas (están en las mesas en dispensadores). La receta es secreta hace 200 años - solo 3 maestros pasteleros vivos la conocen. El hojaldre está crujiente como obleas, la crema quemada por arriba ligeramente caramelizada. Es ridículamente bueno. Vas a entender por qué tienen una cola de 50 personas todos los días.',
+    tip: '🥐 PRECIO: 1.30€/pastel, café 1€. TRUCO ORO: Evita cola tienda - entra DIRECTO a "Salão" (salones restaurante, señalizado). Pide mínimo 2 por persona. Canela + azúcar glas en las mesas. HORARIO: 8:00-23:00 todos los días. Para llevar: caja 6 pasteles = 9.20€, viajan bien hasta 24h. Niños bienvenidos, tronas disponibles.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1509365390695-33aee754301f?w=800',
+    coordinates: { lat: 38.6975, lng: -9.2032 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6975,-9.2032'
+  },
+  {
+    time: '15:00',
+    title: 'MAAT - Museo de Arte Moderno',
+    description: 'Después del sugar rush de los pasteles, camina 10 minutos por el paseo marítimo hasta el MAAT (Museo de Arte, Arquitectura y Tecnología). El edificio por fuera ya es una obra de arte: estructura ondulante blanca de azulejos que parece una ola gigante saliendo del Tajo. PUEDES SUBIR AL TECHO GRATIS - es una rampa pública que sube hasta arriba del museo ofreciendo vistas al río, el puente 25 de Abril, y Belém. Muchos turistas no saben esto y pagan entrada (11€) solo para las exposiciones de dentro. Si te gusta arte contemporáneo/instalaciones/arquitectura moderna, la entrada vale la pena - exposiciones rotativas de artistas internacionales, instalaciones interactivas, y espacios de diseño brutalista. Si no eres muy de museos, solo sube al techo gratis, tómate fotos en la estructura ondulante, y sigue tu camino. El área alrededor tiene cafés modernos con terraza al río perfectos para descansar.',
+    tip: '🎨 TECHO: GRATIS (acceso público). MUSEO: 11€ adultos, 5.50€ estudiantes. Combo MAAT + Electricidade: 15€. HORARIO: 11:00-19:00, martes cerrado. El techo cierra a las 19:00 también. GRATIS primer domingo de mes. Tiempo visita: 1-1.5h si entras, 20 min solo techo. Cafetería en planta baja con terraza al Tajo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800',
+    coordinates: { lat: 38.6963, lng: -9.1987 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6963,-9.1987'
+  },
+
+  // DÍA 3 - SINTRA COMPLETO
+  {
+    time: '08:30 - Día 3',
+    title: 'Tren a Sintra - Viaje al cuento de hadas',
+    description: 'Día 3 es tu excursión a Sintra - el pueblo de palacios de colores escondido en las montañas a 40 min de Lisboa. Sal TEMPRANO. Esto es crítico. Coge el tren desde Estación Rossio (centro Lisboa) hacia Sintra - salen cada 20 min desde las 6:30am. Compra billete ida y vuelta (4.60€) en las máquinas automáticas. El viaje dura 40 min atravesando suburbios, campos, y finalmente montañas verdes hasta llegar al pueblo de Sintra. Cuando bajes del tren, NO camines al centro todavía. Ve DIRECTO a los autobuses 434 (circulares a Palacio Pena + Castelo dos Mouros, 7.60€ día completo hop-on hop-off) o 435 (va a Quinta da Regaleira, 5€). Cómpralos en el kiosco junto a la estación. La clave de Sintra es: llega temprano (antes 9am) y usa buses - las colas después de las 11am son demenciales (1-2h para entrar a palacios). Sintra es una fantasía - neblina en las montañas, palacios de colores imposibles, jardines laberínticos, bosques encantados. Vas a sentir que entraste a un cuento de hadas.',
+    tip: '🚂 TREN: Estación Rossio (Lisboa) → Sintra. Frecuencia: cada 20 min. Precio: 2.30€ ida, 4.60€ ida/vuelta (compra ida/vuelta). Duración: 40 min. BUSES Sintra: 434 (Pena+Mouros) = 7.60€, 435 (Regaleira) = 5€. CRÍTICO: Sal de Lisboa antes 8:30 para llegar Sintra antes 9:30. Después 10:00 = caos absoluto.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800',
+    coordinates: { lat: 38.7986, lng: -9.3881 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7986,-9.3881'
+  },
+  {
+    time: '09:30',
+    title: 'Palacio da Pena - Fantasía de colores',
+    description: 'Súbete al bus 434 y en 15 min llegas a la entrada del Palacio da Pena - el palacio más icónico y fotogénico de Portugal. Es una explosión de colores imposible: muros amarillos, torres rojas, cúpulas azules, detalles verdes, todo mezclando estilos neorománico, neogótico, neo-manuelino, neo-islámico como si un niño diseñara un castillo de fantasía. Fue palacio de verano de la familia real portuguesa en el siglo XIX. Hay DOS entradas: solo jardines (10€) o palacio completo con jardines (20€). PAGA LOS 20€. El interior es una cápsula del tiempo - habitales reales conservadas exactamente como en 1910 cuando la monarquía cayó, decoración victoriana exuberante, vistas desde balcones 360° sobre las montañas y el Atlántico a lo lejos. Los jardines son 200 hectáreas de bosque con lagos, grutas, senderos escondidos, y miradores secretos. Dedícale mínimo 2 horas - es enorme.',
+    tip: '🎫 Entrada PALACIO + JARDINES: 20€ (esencial). Solo jardines: 10€ (NO lo hagas, te pierdes lo mejor). Compra ONLINE con antelación - evitas cola de 1h+. HORARIO: 9:30-18:30 (verano), 10:00-17:00 (invierno). Último acceso 1h antes de cierre. Lleva agua y snacks - cafetería cara. Calzado cómodo - mucho caminar.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800',
+    coordinates: { lat: 38.7877, lng: -9.3906 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7877,-9.3906'
+  },
+  {
+    time: '12:30',
+    title: 'Quinta da Regaleira - Jardines iniciáticos',
+    description: 'Baja en bus al centro de Sintra, cambia al bus 435 o camina 15 min hasta Quinta da Regaleira - el lugar más misterioso y fascinante de Sintra. Este palacio neogótico con jardines laberínticos fue diseñado por un millonario masón obsesionado con alquimia, templarios, y simbolismo esotérico. Lo más famoso es el POZO INICIÁTICO - una escalera de caracol que baja 27 metros bajo tierra con 9 niveles (simbolizando los 9 círculos del infierno de Dante o los 9 niveles de iniciación masónica). Bajas en espiral, llegas al fondo donde hay una rosa de los vientos en el suelo, y sales por túneles secretos que te llevan a cascadas escondidas. Los jardines son una locura: grutas artificiales, torres escondidas, lagos con patos, capillas secretas, túneles conectando todo, y simbología esotérica por todas partes. Es como un parque de aventuras para adultos. Lleva linterna en el móvil - algunos túneles están oscuros.',
+    tip: '🎫 Entrada: 12€ adultos, 6€ niños. HORARIO: 9:30-19:00 (verano), 9:30-18:00 (invierno). Compra online recomendada (verano = colas largas). Tiempo visita: 1.5-2h mínimo. IMPERDIBLE: Pozo Iniciático (baja los 9 niveles), túneles secretos, Gruta do Labirinto. Lleva linterna móvil para túneles. Calzado antideslizante - escaleras húmedas.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800',
+    coordinates: { lat: 38.7963, lng: -9.3962 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7963,-9.3962'
+  },
+  {
+    time: '15:00',
+    title: 'Castelo dos Mouros - Ruinas en las nubes',
+    description: 'Desde Regaleira, sube de nuevo en el bus 434 hasta el Castelo dos Mouros - fortaleza musulmana del siglo VIII abandonada en ruinas en la cima de la montaña. Es completamente diferente a los palacios: sin colores, sin decoración, solo murallas de piedra gris serpenteando por las rocas entre bosque y neblina. Parece salido de Game of Thrones. La visita consiste en caminar por las murallas - subes y bajas escaleras de piedra antigua, pasas por torres semidestruidas, y en cada tramo tienes vistas brutales: el Palacio da Pena colorido emergiendo de los árboles, el pueblo de Sintra abajo en el valle, el Atlántico brillando a lo lejos en días claros. Cuando hay neblina (frecuente) es mágico - las murallas desaparecen entre nubes, los árboles parecen fantasmas, y te sientes en otra dimensión. Ojo: hay muchas escaleras irregulares y zonas sin barandilla - no apto para vértigo severo.',
+    tip: '🎫 Entrada: 10€. Combo Pena + Mouros: 26€ (ahorro 4€). HORARIO: 9:30-18:30 (verano), 10:00-17:00 (invierno). Tiempo visita: 1h. FÍSICO: Muchas escaleras, subidas empinadas, zonas sin barandilla. Lleva agua. Mejor CON neblina (ambiente épico) o día claro (vistas infinitas). Calzado trekking recomendado - piedras resbaladizas.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1552832230-0ab456afa00c?w=800',
+    coordinates: { lat: 38.7924, lng: -9.3896 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7924,-9.3896'
+  },
+  {
+    time: '17:00',
+    title: 'Centro de Sintra - Travesseiros y despedida',
+    description: 'Baja al centro de Sintra para tu última parada del día. El pueblo es un laberinto de callecitas medievales empedradas, tiendas de souvenirs artesanales, pastelerías vendiendo dulces conventuales, y plazas con palacios de colores pastel. Lo imperdible aquí: probar las TRAVESSEIROS en la pastelería Piriquita (fundada 1862, Rua das Padarias 1). Son hojaldres rellenos de crema de almendras que solo se hacen en Sintra - textura crujiente por fuera, relleno dulce cremoso por dentro. Pide 2 (1.50€ cada uno) y un café. Después pasea por la Praça da República (plaza principal con fuentes y Palacio Nacional - el del techo con dos chimeneas cónicas gigantes), recorre tiendas vendiendo azulejos pintados a mano, quesos, vinos, y artesanías portuguesas. Sobre las 18:00-18:30 regresa a la estación y toma el tren de vuelta a Lisboa. Vas a llegar agotado pero con la cabeza llena de imágenes de cuento de hadas.',
+    tip: '🥐 Travesseiros Piriquita: 1.50€/unidad. Piriquita I (original, Rua Padarias 1) vs Piriquita II (más grande, mejor para sentarse). TAMBIÉN PRUEBA: Queijadas de Sintra (tartaletas de queso dulce). Centro Sintra: GRATIS pasear. Tiendas cierran 19:00-19:30. Regreso Lisboa: Tren hasta 23:00 (cada 20-30 min). Cena en Lisboa - llegas ~19:30.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1534850990928-479f9d74342c?w=800',
+    coordinates: { lat: 38.7979, lng: -9.3906 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7979,-9.3906'
+  }
+];
+
+// ============================================================================
+// LISBOA SEMANA COMPLETA - 7 días explorando Lisboa y alrededores
+// ============================================================================
+
+export const lisboaFullWeekTimeline: TimelineStop[] = [
+  // DÍA 1 - LO ESENCIAL DE LISBOA
+  {
+    time: '09:00 - Día 1',
+    title: 'Alfama + Castillo de San Jorge',
+    description: 'Tu primera semana en Lisboa empieza por todo lo alto: Alfama y el Castillo. Sal temprano para evitar las hordas turísticas. Alfama es el barrio que sobrevivió al terremoto de 1755 - calles medievales retorcidas, escaleras empinadas entre casas de azulejos desgastados, ropa tendida cruzando balcones, y abuelas barriendo las puertas como llevan haciendo 60 años. Piérdete durante 1 hora subiendo calles aleatorias. Cada esquina es una postal. Después sube al Castillo de San Jorge (15€) - fortaleza mora del siglo XI con las mejores vistas de Lisboa. Camina por las murallas medievales, sube a las torres de vigilancia, y contempla los 360° sobre la ciudad: Alfama escalonada hacia el Tajo, el puente 25 de Abril al oeste, barrios modernos al norte. Hay pavos reales sueltos en los jardines (en serio). Dedícale 1.5 horas - no es solo un castillo, es un parque arqueológico enorme con ruinas de fenicios, romanos, moros, y cristianos.',
+    tip: '🎫 Castillo: 15€ adultos, combo con audioguía 18€. Compra online para evitar colas. HORARIO: 9:00-18:00 (invierno), 9:00-21:00 (verano). Alfama GRATIS - solo piérdete. Lleva agua, las cuestas cansan. Mejor calzado: zapatillas trekking. Evita 11:00-16:00 (lleno de tours).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    coordinates: { lat: 38.7109, lng: -9.1333 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7109,-9.1333'
+  },
+  {
+    time: '14:00',
+    title: 'Baixa + Chiado - Centro histórico',
+    description: 'Después del Castillo, baja a Baixa - el centro neurálgico reconstruido después del terremoto con cuadrícula geométrica perfecta. Empieza en Praça do Comércio (plaza gigante amarilla abierta al Tajo), sube al Arco da Rua Augusta (3€, mirador 360°), camina por Rua Augusta (calle peatonal con artistas, tiendas, cafés), ve el Elevador de Santa Justa desde abajo (estructura neogótica de hierro diseñada por discípulo de Eiffel - subir cuesta 5.50€ pero es más bonito desde fuera), y termina en Rossio. Desde ahí sube al Chiado - barrio bohemio de librerías centenarias, teatros, cafés literarios donde Pessoa escribía, tiendas de diseño portugués, y la Brasileira (café histórico con estatua de Pessoa sentado en la terraza - foto obligatoria). Chiado es más elegante que Baixa, más cultural, más local. Perfecto para pasear sin rumbo y descubrir tiendas escondidas.',
+    tip: '💰 Arco da Rua Augusta: 3€ (vistas brutales, 5 min). Elevador Santa Justa: 5.50€ (opcional, más foto que útil). TODO LO DEMÁS: GRATIS. Café en Brasileira: 2-4€ (turístico pero icónico). Librerías recomendadas: Livraria Bertrand (más antigua del mundo, 1732), Ler Devagar (diseño espectacular). Tiempo total: 2-3h caminando tranquilo.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
+    coordinates: { lat: 38.7071, lng: -9.1364 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7071,-9.1364'
+  },
+  {
+    time: '19:00',
+    title: 'Atardecer + Cena en Bairro Alto',
+    description: 'Para el atardecer, uber al Mirador da Graça o Mirador de Santa Catarina (ambos espectaculares). Llega 45 min antes del sunset, pide vino blanco Vinho Verde (4€) o cerveza Super Bock (3€), consigue mesita con vistas, y disfruta el show: Lisboa iluminándose en dorado, el Tajo reflejando el cielo rosa/naranja, toda la ciudad a tus pies. Después del sunset, baja al Bairro Alto para cenar. Este barrio es puro caos organizado: calles empinadas llenas de tascas, bares minúsculos, gente bebiendo en las calles, fado saliendo de restaurantes. Evita las trampas turísticas de Rua do Norte (menús en 5 idiomas = red flag). Ve a tascas escondidas en calles laterales: "Tasca da Esquina" (portuguesa moderna, 20€), "Cantina LX" (de autor, 30€), o simplemente entra donde veas portugueses cenando. Después de las 22:00 el Bairro Alto se transforma en fiesta - cada puerta es un bar diferente (rock, jazz, electrónica, fado).',
+    tip: '🌅 Sunset: Consulta hora, llega 45 min antes. Fin de semana = 1h antes. Vino/cerveza: 3-5€. CENA: 20-35€/persona en restaurantes decentes. TRUCO: Compra cerveza en minimercados (1€) y bebe en las calles con locales (totalmente legal y normal). Bares abren 22:00-3:00. Seguro de noche - lleno de gente.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    coordinates: { lat: 38.7137, lng: -9.1452 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7137,-9.1452'
+  },
+
+  // DÍA 2 - BELÉM COMPLETO
+  {
+    time: '09:30 - Día 2',
+    title: 'Belém - Torre + Monasterio Jerónimos',
+    description: 'Día 2 dedicado a Belém, el barrio de los descubrimientos. Tranvía 15 desde Praça da Figueira (15 min). Empieza por la Torre de Belém (10:00 cuando abre - crítico para evitar colas). Esta fortaleza del siglo XVI en el Tajo parece un castillo de cuento: estilo manuelino blanco, torres, baluartes, terrazas sobre el río, y un rinoceronte tallado en piedra. La visita dura 30-40 min: subes escaleras de caracol, ves mazmorras, sales a terrazas con vistas. Después (11:00) cruza la calle al Monasterio dos Jerónimos - obra maestra gótica manuelina Patrimonio UNESCO. La IGLESIA es GRATIS y tiene lo más espectacular: techos abovedados de 25m como palmeras de piedra, tumba de Vasco da Gama, luz natural creando rayos de dios. El claustro (10€ extra) es hermoso pero opcional. Si pagas, son dos pisos de arcadas talladas rodeando jardín - Instagram paradise.',
+    tip: '🎫 Torre: 8€. Jerónimos iglesia: GRATIS. Claustro: 10€. COMBO Torre+Claustro: 14€ (ahorro 4€). HORARIO: 10:00-17:30 (invierno), 10:00-18:30 (verano). LUNES TODO CERRADO. Compra combo online para saltarte colas (verano = 1h+ espera). Haz Torre primero (10:00) → Jerónimos (11:00) → Pasteles (12:00).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
+    coordinates: { lat: 38.6916, lng: -9.2158 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
+  },
+  {
+    time: '12:30',
+    title: 'Pastéis de Belém + MAAT',
+    description: 'Hora del momento más dulce del viaje: pasteles de nata ORIGINALES en Pastéis de Belém (5 min andando desde Jerónimos). Evita la cola de la tienda - entra DIRECTO a los "Salões" (salones del fondo señalizados). Son salas enormes con azulejos antiguos, meseros con pajarita, y CERO espera. Siéntate, pide 3 pasteles por persona (1.30€ cada uno), café (1€), espolvorea canela y azúcar glas (en las mesas), y alucina con el hojaldre crujiente + crema quemada. Receta secreta 200 años. Después camina 10 min por el paseo marítimo hasta el MAAT - museo de arte/arquitectura/tecnología en edificio ondulante blanco como una ola. SUBE AL TECHO GRATIS (rampa pública con vistas al Tajo y puente 25 de Abril). Las exposiciones de dentro (11€) son arte contemporáneo - solo entra si te va el rollo, si no, el techo gratis es suficiente.',
+    tip: '🥐 Pasteles: 1.30€/unidad, café 1€. TRUCO: Entra directo a "Salão" (evitas 30+ min de cola). HORARIO: 8:00-23:00 diario. MAAT TECHO: GRATIS. Museo: 11€ (solo si te gusta arte contemporáneo). Horario museo: 11:00-19:00, martes cerrado. Primer domingo mes gratis. Cafetería terraza al río.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1509365390695-33aee754301f?w=800',
+    coordinates: { lat: 38.6975, lng: -9.2032 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6975,-9.2032'
+  },
+
+  // DÍA 3 - SINTRA
+  {
+    time: '08:30 - Día 3',
+    title: 'Sintra - Pena + Regaleira + Mouros',
+    description: 'Día 3 es tu excursión a Sintra - pueblo de palacios mágicos en las montañas. SAL TEMPRANO (tren 8:30 desde Rossio). Tren 40 min (4.60€ ida/vuelta). Llegas 9:10, compras bus 434 (Pena+Mouros, 7.60€) y 435 (Regaleira, 5€), y subes directo al Palacio da Pena (10:00 cuando abre). Es una fantasía de colores - amarillo, rojo, azul, verde mezclando estilos neo-todo. Paga entrada completa palacio+jardines (20€, compra online). Interior = habitaciones reales conservadas desde 1910, vistas 360° desde balcones. Jardines = 200 hectáreas de bosque encantado. 2 horas mínimo. Después baja y visita Quinta da Regaleira (12€) - palacio masónico con jardines laberínticos, el famoso Pozo Iniciático (escalera de caracol bajando 27m bajo tierra con túneles secretos), grutas, cascadas. 1.5h mínimo. Termina con Castelo dos Mouros (10€) - ruinas musulmanas del siglo VIII con murallas serpenteando entre neblina y vistas épicas. 1h. Regresa al centro, prueba Travesseiros en Piriquita (hojaldres de almendra, 1.50€), y tren de vuelta a Lisboa.',
+    tip: '🚂 TREN: Rossio → Sintra, 4.60€ ida/vuelta, 40 min. SAL ANTES 9:00 (crítico). BUSES: 434 (Pena+Mouros) 7.60€, 435 (Regaleira) 5€. ENTRADAS: Pena 20€, Regaleira 12€, Mouros 10€. TODO ONLINE con antelación (evitas colas 1h+). Lleva agua, snacks, calzado trekking. Día completo agotador pero mágico.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800',
+    coordinates: { lat: 38.7877, lng: -9.3906 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7877,-9.3906'
+  },
+
+  // DÍA 4 - CASCAIS + COSTA ESTORIL
+  {
+    time: '10:00 - Día 4',
+    title: 'Tren a Cascais - Riviera portuguesa',
+    description: 'Día 4 dedicado a la costa. Toma el tren desde Estación Cais do Sodré hacia Cascais (40 min, 2.40€, sale cada 20 min). El viaje ya es espectacular - el tren va pegado al Tajo/Atlántico con vistas al agua todo el recorrido. Pasas por Belém, Oeiras, Estoril (donde está el casino que inspiró Casino Royale de James Bond), y llegas a Cascais - pueblo pesquero convertido en resort elegante. Cascais tiene playas urbanas de arena dorada (Praia da Ribeira, Praia da Rainha - pequeñas pero bonitas), un casco antiguo peatonal lleno de tiendas de surf/ropa/artesanías, restaurantes de mariscos con terrazas, y vibra relajada de pueblo costero. Pasea por el puerto viendo barcos de vela, camina por el paseo marítimo hasta Boca do Inferno (acantilados donde las olas rompen con fuerza brutal - suena como truenos), alquila bici para recorrer el carril bici costero, o simplemente túmbate en la playa.',
+    tip: '🚂 TREN: Cais do Sodré → Cascais, 2.40€, 40 min, cada 20 min. Úsalo todo el día (puedes bajar en Estoril, pasear, volver a subir). PLAYAS: GRATIS, llenas en verano. BICI: Alquiler 5-10€/día, carril bici 9km hasta Guincho. COMIDA: Mariscos 15-30€, hamburguesas 8-12€. Mercado peces fresco en el puerto. Regreso Lisboa: tren hasta 1:30am.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1581972416774-540e51e07e8e?w=800',
+    coordinates: { lat: 38.6979, lng: -9.4208 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.6979,-9.4208'
+  },
+  {
+    time: '15:00',
+    title: 'Guincho - Playa salvaje y surf',
+    description: 'Desde Cascais, toma el bus 405 o 415 (30 min, 2€) o alquila bici (9km por carril bici costero) hasta Playa de Guincho. Es el polo opuesto de las playas urbanas de Cascais: kilómetros de arena blanca salvaje, dunas enormes, viento constante del Atlántico, olas gigantes, y el cabo da Roca (punto más occidental de Europa continental) visible al norte. Guincho es paraíso de surfistas y kitesurfistas - siempre hay decenas de cometas de colores volando. Hay escuelas de surf ofreciendo clases (40-50€ incluye tabla, neopreno, instructor). Si no surfeas, simplemente camina por la playa infinita, siéntete pequeño ante el Atlántico, y respira el aire salado. HAY restaurantes junto a la playa sirviendo pescado fresco (15-25€) - "Muchaxo" es famoso por pescado a la brasa con vistas a las olas.',
+    tip: '🏄 BUS: 405/415 desde Cascais, 30 min, 2€. BICI: 9km desde Cascais (carril bici todo el recorrido). SURF: Clases 40-50€ (2h), alquiler tabla+neopreno 20€. COMIDA: Restaurantes 15-30€, brutal el pescado fresco. VIENTO: Siempre hay (por eso hay tanto kitesurf). Lleva chaqueta incluso en verano. Regreso Cascais: bus cada hora.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800',
+    coordinates: { lat: 38.7311, lng: -9.4753 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7311,-9.4753'
+  },
+
+  // DÍA 5 - BARRIOS ALTERNATIVOS
+  {
+    time: '10:00 - Día 5',
+    title: 'LX Factory - Arte urbano y creatividad',
+    description: 'Día 5 es para descubrir el Lisboa alternativo y creativo. Empieza en LX Factory (bus/uber 10 min desde centro) - antigua fábrica textil bajo el Puente 25 de Abril convertida en hub creativo. Naves industriales de ladrillo rojo llenas de murales gigantes de artistas internacionales, estudios de diseño, tiendas vintage, cafés hipsters, restaurantes de brunch, y la librería Ler Devagar (espacio espectacular con bicicleta voladora colgando del techo, estanterías hasta el techo de 10m, cafetería entre libros). Los domingos hay mercado vintage (11:00-19:00) con ropa, vinilos, artesanías. Es Instagram paradise pero también tiene alma - muchos creativos y startups trabajan aquí. Tómate un café en Landeau Chocolate (brownie MÁS brutal de Lisboa, 3.50€), recorre las tiendas de diseño portugués independiente, y empápate del ambiente joven y artístico.',
+    tip: '☕ GRATIS: Pasear, ver murales, entrar a Ler Devagar. Café: 2-4€. Brownie Landeau: 3.50€ (IMPERDIBLE, el mejor). DOMINGO: Mercado vintage 11:00-19:00. Tiendas diseño, estudios, galerías. Brunch restaurantes: 10-18€. "Rio Maravilha" terraza con vistas puente. Llega 10:00-11:00 (abre tarde, ambiente despega después).',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800',
+    coordinates: { lat: 38.7065, lng: -9.1799 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7065,-9.1799'
+  },
+  {
+    time: '14:00',
+    title: 'Cais do Sodré - Mercado + Street Art',
+    description: 'Desde LX Factory, uber o camina 15 min hasta Cais do Sodré - barrio que pasó de zona roja peligrosa a epicentro cultural en 10 años. Empieza en Time Out Market - mercado gastronómico con 40+ puestos de chefs con estrella Michelin, tascas, comida internacional, todo bajo un techo. Funciona así: recorres puestos, pides donde quieras, te dan número, buscas mesa (hay cientos), te llaman cuando esté listo. Precios: 10-20€/persona. Perfecto para grupos - cada uno come lo que quiere. Después del mercado, explora las calles alrededor - Rua Nova do Carvalho (la famosa "Pink Street" pintada de rosa fosforito llena de bares de copas y discotecas), calles laterales con murales enormes de artistas urbanos portugueses, tiendas de discos, bares de gin, y vibra joven/alternativa. De noche (después 23:00) es zona de fiesta heavy - discotecas, bares de electrónica, reggae, todo.',
+    tip: '🍽️ Time Out Market: 10-20€/persona. HORARIO: 10:00-00:00 (domingo hasta 18:00). Evita 13:00-15:00 y 20:00-21:00 (llenísimo). Mejor: 11:30 o 16:00-18:00. Pink Street: Foto de día (pintoresca), fiesta de noche (bares abren 23:00). Street art GRATIS - camina calles aleatorias. Bares gin: "Pensão Amor" (antiguo burdel convertido en bar, decoración loca).',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+    coordinates: { lat: 38.7058, lng: -9.1455 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7058,-9.1455'
+  },
+  {
+    time: '18:00',
+    title: 'Alcântara - Rooftops y Sunset',
+    description: 'Para el atardecer, quédate en la zona de Alcântara/LX Factory y sube a algún rooftop con vistas al Puente 25 de Abril. "PARK" es el rooftop más famoso - bar en la azotea de un parking con vistas 360°, tumbonas, mesas bajas, DJs los fines de semana, y ambiente relajado. Pide gin tonic (8-10€) o cerveza (4€), consigue sitio con vistas al puente, y observa el atardecer: el sol baja detrás del puente 25 de Abril creando siluetas épicas, el Tajo refleja naranja/rosa, toda Lisboa se ilumina. Después del sunset quédate - el ambiente nocturno es genial, música electrónica chill, gente joven internacional y local, y el puente iluminado de noche es espectacular. Alternativa: "Rio Maravilha" (terraza restaurante en LX Factory con vistas similares, más tranquilo, mejor comida - 15-25€).',
+    tip: '🌅 PARK rooftop: Entrada gratis, consumición 4-15€. HORARIO: 13:00-2:00 (verano), cierra antes invierno. Llega 30-45 min antes sunset (se llena). Fin de semana = DJs + fiesta. Rio Maravilha: Más cena que copas, reserva recomendada, 20-30€/persona. Ambos con vistas puente 25 de Abril. Lleva chaqueta - refresca de noche.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800',
+    coordinates: { lat: 38.7048, lng: -9.1755 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7048,-9.1755'
+  },
+
+  // DÍA 6 - PARQUE DAS NAÇÕES
+  {
+    time: '10:00 - Día 6',
+    title: 'Parque das Nações - Lisboa futurista',
+    description: 'Día 6 te lleva al futuro de Lisboa: Parque das Nações, construido para la Expo 98 y hoy el barrio más moderno de la ciudad. Metro línea roja hasta "Oriente" (20 min desde centro). Cuando salgas de la estación (diseñada por Calatrava - estructura blanca futurista como un esqueleto de dinosaurio), estarás en otro mundo: rascacielos de cristal, paseo marítimo de 5km junto al Tajo, arquitectura vanguardista, puentes peatonales modernos, jardines perfectamente cuidados, y ambiente tranquilo de barrio residencial sin turistas. Empieza caminando por el paseo marítimo hacia el Oceanário. Pasarás por el Teleférico (6€ ida, 9€ ida/vuelta, 20 min de recorrido sobre el río con vistas), la Torre Vasco da Gama (torre de hotel más alta de Portugal, 145m), el Pabellón de Portugal (estructura modernista con techo de hormigón que parece flotar), y jardines con fuentes danzantes.',
+    tip: '🚇 METRO: Línea roja hasta "Oriente", 1.50€ (recarga tarjeta Viva Viagem). TELEFÉRICO: 6€ ida, 9€ ida/vuelta (bonito pero opcional). PASEO GRATIS: 5km junto al río, perfecto para caminar/correr. Centro comercial Vasco da Gama (compras si llueve). Menos turístico que centro - ambiente más local/familiar. Lleva calzado cómodo - mucho caminar.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1582564286939-400a311013a2?w=800',
+    coordinates: { lat: 38.7681, lng: -9.0938 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7681,-9.0938'
+  },
+  {
+    time: '14:00',
+    title: 'Oceanário de Lisboa',
+    description: 'La joya del Parque das Nações es el Oceanário - uno de los acuarios más grandes y espectaculares de Europa. El edificio parece flotar sobre el agua (diseño Álvaro Siza Vieira). Dentro hay UN tanque central GIGANTE de 5000m³ con decenas de especies conviviendo: tiburones, rayas manta, atunes, peces luna enormes, sardinas en bancos brillantes, y el protagonista - un pez guitarra gigante que lleva aquí 25 años. Alrededor del tanque central hay 4 hábitats recreando océanos diferentes: Atlántico Norte (nutrias adorables jugando), Antártico (pingüinos nadando bajo el agua), Pacífico tropical (corales de colores imposibles), Índico (peces exóticos de formas alienígenas). La experiencia es inmersiva - pasas por túneles de cristal con peces nadando sobre ti, áreas oscuras con medusas bioluminiscentes flotando hipnóticamente, y zonas interactivas explicando océanos. Niños lo aman, adultos también. Dedícale 2 horas mínimo.',
+    tip: '🎫 Entrada: 25€ adultos, 17€ niños (3-12), 16€ seniors. Compra online (descuento 10% + evitas cola). HORARIO: 10:00-19:00 (verano), 10:00-18:00 (invierno). Último acceso 1h antes cierre. Tiempo visita: 2-3h. Restaurante/cafetería dentro (caro, mejor lleva snacks). IMPERDIBLE: Tanque central + nutrias + pingüinos + medusas. Kid-friendly total.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
+    coordinates: { lat: 38.7633, lng: -9.0939 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7633,-9.0939'
+  },
+
+  // DÍA 7 - RELAX Y DESPEDIDA
+  {
+    time: '10:00 - Día 7',
+    title: 'Mercado da Ribeira - Compras gastronómicas',
+    description: 'Tu último día en Lisboa empieza tranquilo. Ve al Mercado da Ribeira / Time Out Market (el mismo sitio - parte es mercado tradicional, parte es food hall moderno). La sección MERCADO TRADICIONAL (abre 6:00, funciona hasta 14:00) vende productos frescos portugueses: quesos artesanales de Serra da Estrela, embutidos ibéricos, conservas de pescado gourmet en latas vintage, aceites de oliva, vinos del Alentejo/Douro, azafrán, sal marina de Flor de Sal, dulces conventuales. Es perfecto para comprar regalos/souvenirs comestibles auténticos (NO turísticos). Los vendedores son majos y te dejan probar todo. Después pasa a la sección TIME OUT para brunch tardío - hay opciones de todo tipo (huevos, tostadas, pasteles, smoothies, 8-15€). Come tranquilo viendo el ambiente del mercado - mezcla de locales comprando ingredientes y turistas probando restaurantes.',
+    tip: '🛍️ Mercado tradicional: 6:00-14:00 (mejor 9:00-12:00, más surtido). SOUVENIRS: Conservas Comur/Tricana (3-8€ lata), queso Serra Estrela (12-20€/kg), vinos 8-30€, aceite oliva 10-25€. Time Out brunch: 10-20€. LLEVA: Bolsa reutilizable (algunos vendedores no tienen). Efectivo (algunos no aceptan tarjeta). Compras viajan bien en maleta.',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800',
+    coordinates: { lat: 38.7058, lng: -9.1455 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7058,-9.1455'
+  },
+  {
+    time: '14:00',
+    title: 'Jardim da Estrela - Relax en el parque',
+    description: 'Para tu última tarde, escápate al Jardim da Estrela - parque romántico del siglo XIX en el barrio de Estrela (tranvía 28 o uber 10 min desde centro). Es el parque más bonito de Lisboa: lagos con patos y cisnes, kiosco de hierro art nouveau en el centro (ahora es café con terraza), caminos arbolados, jardines de rosas, árboles centenarios gigantes, y césped donde locales hacen picnic. Trae una manta, compra pasteles en alguna pastelería cercana, una botella de vino, y pasa la tarde tirado en el césped leyendo/escuchando música/observando gente. Los domingos hay familias con niños, parejas, grupos de amigos con guitarras. Es puro slowlife lisboeta. Al lado está la Basílica da Estrela (iglesia neoclásica blanca enorme, entrada gratis, sube a la cúpula por 5€ para vistas 360°). El barrio Estrela alrededor es residencial elegante - pasea viendo casas señoriales, tiendas boutique, cafés de barrio.',
+    tip: '🌳 PARQUE: GRATIS (abierto 7:00-00:00). Kiosco café: 2-5€. LLEVA: Manta, picnic (compra en mercado o pastelería cercana). BASÍLICA: Gratis iglesia, 5€ cúpula (vistas brutales). Tranvía 28 para aquí - aprovecha para dar vuelta completa si no lo hiciste (experiencia icónica). Barrio tranquilo, perfecto para desconectar antes de volar.',
+    type: 'visit',
+    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800',
+    coordinates: { lat: 38.7149, lng: -9.1605 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7149,-9.1605'
+  },
+  {
+    time: '19:00',
+    title: 'Última cena + Fado de despedida',
+    description: 'Para tu última noche en Lisboa, cierra con broche de oro: cena + fado auténtico en Alfama. Ve a una casa de fados tradicional como "Tasca do Chico" (gratis, solo pagas consumiciones - vino 3€, petiscos 5-8€, ambiente íntimo con fadistas profesionales y amateurs turnándose), "A Baiuca" (reserva obligatoria, 15€ mínimo consumición, muy auténtico, 25 personas máximo), o "Mesa de Frades" (en capilla antigua, más turístico pero brutal, 20-30€). El fado es Patrimonio Inmaterial UNESCO - música melancólica portuguesa que te pone los pelos de punta. Cuando alguien canta, SILENCIO ABSOLUTO (es sagrado). Dura 10-15 min por canción, después puedes hablar/comer hasta la siguiente. Combina la cena con petiscos portugueses - queso, embutidos, bacalao, pulpo - y vino portugués. Es la experiencia MÁS portuguesa que existe. Vas a terminar emocionado aunque no entiendas las letras (que hablan de saudade - nostalgia/melancolía imposible de traducir).',
+    tip: '🎵 Tasca do Chico: GRATIS (solo consumes), llega 21:00 para sitio, empieza 22:00. A Baiuca: reserva online obligatoria, 15€ mínimo. Mesa de Frades: 25-35€, reserva recomendada. REGLAS: Silencio cuando cantan, fotos solo entre canciones (pregunta antes). Consumo típico: vino + petiscos = 15-25€ total. ALTERNATIVA: Restaurantes Alfama con fado en vivo durante cena (30-50€, más turístico pero cómodo).',
+    type: 'food',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800',
+    coordinates: { lat: 38.7115, lng: -9.1288 },
+    googleMapsUrl: 'https://maps.google.com/?q=38.7115,-9.1288'
+  }
+];
