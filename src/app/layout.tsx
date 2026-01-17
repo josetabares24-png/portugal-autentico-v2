@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import StickyCTA from '@/components/StickyCTA';
-import ExitIntentModal from '@/components/ExitIntentModal';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import EmailCapturePopup from '@/components/EmailCapturePopup';
@@ -93,8 +91,6 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
-          <StickyCTA />
-          <ExitIntentModal />
           <EmailCapturePopup />
           <CookieBanner />
         </body>
