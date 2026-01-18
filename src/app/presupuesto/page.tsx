@@ -47,7 +47,7 @@ export default function PresupuestoPage() {
   };
 
   const budget = budgets[tipo];
-  const totalDia = Object.values(budget).reduce((acc, val) => {
+  const totalDia = Object.values(budget).reduce<number>((acc, val) => {
     return typeof val === 'number' ? acc + val : acc;
   }, 0);
   const totalPersonaDia = totalDia;
