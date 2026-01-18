@@ -15,6 +15,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/itinerarios', label: 'Guías' },
+    { href: '/donde-dormir', label: 'Dónde Dormir' },
     { href: '/blog', label: 'Blog' },
     { href: '/tours', label: 'Tours' },
     { href: '/contacto', label: 'Contacto' }
@@ -66,9 +67,6 @@ export default function Navbar() {
                   <div className="border-t border-slate-100 my-2"></div>
                   <Link href="/transporte" className="block px-4 py-2 hover:bg-slate-50 text-sm text-slate-700 hover:text-primary transition-colors">
                     🚇 Transporte
-                  </Link>
-                  <Link href="/donde-dormir" className="block px-4 py-2 hover:bg-slate-50 text-sm text-slate-700 hover:text-primary transition-colors">
-                    🏨 Dónde Dormir
                   </Link>
                   <Link href="/info-util" className="block px-4 py-2 hover:bg-slate-50 text-sm text-slate-700 hover:text-primary transition-colors">
                     ℹ️ Info Útil
@@ -152,9 +150,6 @@ export default function Navbar() {
                 </Link>
                 <Link href="/transporte" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
                   🚇 Transporte
-                </Link>
-                <Link href="/donde-dormir" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
-                  🏨 Dónde Dormir
                 </Link>
                 <Link href="/info-util" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
                   ℹ️ Info Útil
