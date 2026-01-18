@@ -53,7 +53,7 @@ export default function Lisboa1DiaPage() {
 
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">verified</span>
-            <span className="text-sm font-bold tracking-wide">GUÍA PREMIUM 2025</span>
+            <span className="text-sm font-bold tracking-wide">GUÍA PREMIUM</span>
           </div>
 
           <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
