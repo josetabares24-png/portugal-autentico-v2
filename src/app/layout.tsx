@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import EmailCapturePopup from '@/components/EmailCapturePopup';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -91,7 +90,6 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
-          <EmailCapturePopup />
           <CookieBanner />
         </body>
       </html>

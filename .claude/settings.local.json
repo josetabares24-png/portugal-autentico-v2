@@ -4,7 +4,10 @@
       "Bash(npm run build:*)",
       "Bash(test:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: prepare for vercel deployment\n\n- Add vercel.json deployment configuration\n- Update next.config.mjs for Next.js 16 compatibility\n- Create .env.example template for environment variables\n- Add comprehensive deployment guides \\(DEPLOY-AHORA.md, VERCEL-DEPLOY-FIX.md\\)\n\nDeployment-ready with all configurations verified.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

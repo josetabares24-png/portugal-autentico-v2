@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3;
-const PRODUCT_PRICE = 9.99;
+const PRODUCT_PRICE = 2.99;
 
 export default function LisboaRomanticaPage() {
   const previewStops = lisboaRomanticaTimeline.slice(0, PREVIEW_STOPS);
@@ -20,10 +20,10 @@ export default function LisboaRomanticaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800', caption: 'Mirador Senhora do Monte - Atardecer romántico' },
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Calles de Alfama al atardecer' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém iluminada' },
-    { url: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800', caption: 'Cena romántica con vistas' },
+    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte - Atardecer romántico' },
+    { url: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg', caption: 'Calles de Alfama al atardecer' },
+    { url: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg', caption: 'Puente 25 de Abril iluminado' },
+    { url: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg', caption: 'Terrazas románticas' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaRomanticaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1920&q=80"
+            src="/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg"
             alt="Lisboa Romántica para Parejas"
             fill
             className="object-cover scale-110"

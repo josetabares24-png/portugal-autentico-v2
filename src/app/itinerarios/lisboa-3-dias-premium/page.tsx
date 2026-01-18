@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3; // Mostrar solo 3 paradas gratis
-const PRODUCT_PRICE = 12.99;
+const PRODUCT_PRICE = 3.99;
 
 export default function Lisboa3DiasPremiumPage() {
   const previewStops = lisboa3DiasSintraTimeline.slice(0, PREVIEW_STOPS);
@@ -21,10 +21,10 @@ export default function Lisboa3DiasPremiumPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800', caption: 'Palacio da Pena - Sintra' },
-    { url: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800', caption: 'Quinta da Regaleira' },
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Alfama Lisboa' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém' },
+    { url: '/images/julia-solonina-ci19YINguoc-unsplash.jpg', caption: 'Palacio da Pena - Sintra' },
+    { url: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg', caption: 'Puente 25 de Abril y Cristo Rei' },
+    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Alfama Lisboa' },
+    { url: '/images/malu-decks-yOFgKNgbg_g-unsplash.jpg', caption: 'Vista del Tajo' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Lisboa3DiasPremiumPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=1920&q=80"
+            src="/images/julia-solonina-ci19YINguoc-unsplash.jpg"
             alt="Lisboa 3 Días + Sintra"
             fill
             className="object-cover scale-110"

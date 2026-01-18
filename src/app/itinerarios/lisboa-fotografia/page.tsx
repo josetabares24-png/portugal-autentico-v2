@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3;
-const PRODUCT_PRICE = 9.99;
+const PRODUCT_PRICE = 2.99;
 
 export default function LisboaFotografiaPage() {
   const previewStops = lisboaFotografiaTimeline.slice(0, PREVIEW_STOPS);
@@ -20,10 +20,10 @@ export default function LisboaFotografiaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800', caption: 'Mirador Senhora do Monte - Golden hour' },
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Alfama - Blue hour perfecto' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém - Larga exposición' },
-    { url: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800', caption: 'Comercio Plaza - Arquitectura' },
+    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte - Golden hour' },
+    { url: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg', caption: 'Tranvía 28 - Blue hour nocturno' },
+    { url: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg', caption: 'Arco da Rua Augusta - Arquitectura' },
+    { url: '/images/eddie-hollywood-F-HXaVpuRFQ-unsplash.jpg', caption: 'Arcadas del Comercio - Perspectiva' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaFotografiaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
+            src="/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg"
             alt="Lisboa Fotografía PhotoWalk"
             fill
             className="object-cover scale-110"

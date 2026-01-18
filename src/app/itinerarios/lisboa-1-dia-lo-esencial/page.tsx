@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3; // Mostrar solo 3 paradas gratis
-const PRODUCT_PRICE = 5.99;
+const PRODUCT_PRICE = 1.99;
 
 export default function Lisboa1DiaPage() {
   const previewStops = lisboa1DiaTimeline.slice(0, PREVIEW_STOPS);
@@ -21,10 +21,10 @@ export default function Lisboa1DiaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800', caption: 'Mirador Senhora do Monte' },
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Alfama auténtica' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém' },
-    { url: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800', caption: 'Pasteles de Belém' },
+    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte' },
+    { url: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg', caption: 'Alfama auténtica' },
+    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Iglesia de Santo Estêvão' },
+    { url: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg', caption: 'Tranvía 28 emblemático' },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function Lisboa1DiaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1920&q=80"
+            src="/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg"
             alt="Lisboa - Itinerario 1 día"
             fill
             className="object-cover scale-110"

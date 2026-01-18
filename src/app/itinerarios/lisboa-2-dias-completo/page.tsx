@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3; // Mostrar solo 3 paradas gratis
-const PRODUCT_PRICE = 8.99;
+const PRODUCT_PRICE = 2.99;
 
 export default function Lisboa2DiasPage() {
   const previewStops = lisboa2DiasTimeline.slice(0, PREVIEW_STOPS);
@@ -21,10 +21,10 @@ export default function Lisboa2DiasPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800', caption: 'Vista panorámica de Lisboa' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém' },
-    { url: 'https://images.unsplash.com/photo-1558489580-faa74691fdc5?w=800', caption: 'Tranvía 28 en Alfama' },
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Calles de Alfama' },
+    { url: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg', caption: 'Vista panorámica de Lisboa' },
+    { url: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg', caption: 'Arco da Rua Augusta' },
+    { url: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg', caption: 'Tranvía 28 en Alfama' },
+    { url: '/images/pexels-german-latasa-814203747-35697448.jpg', caption: 'Casas coloridas de Lisboa' },
   ];
   return (
     <main className="min-h-screen bg-background-light">
@@ -33,7 +33,7 @@ export default function Lisboa2DiasPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1569959220744-ff553533f492?w=1920&q=80"
+            src="/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg"
             alt="Lisboa 2 Días Completo"
             fill
             className="object-cover scale-110"

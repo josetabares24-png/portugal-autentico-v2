@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3; // Mostrar solo 3 paradas gratis
-const PRODUCT_PRICE = 19.99;
+const PRODUCT_PRICE = 5.99;
 
 export default function LisboaFullWeekPage() {
   const previewStops = lisboaFullWeekTimeline.slice(0, PREVIEW_STOPS);
@@ -21,10 +21,10 @@ export default function LisboaFullWeekPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800', caption: 'Lisboa panorámica' },
-    { url: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800', caption: 'Sintra mágica' },
-    { url: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800', caption: 'Cascais y playas' },
-    { url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800', caption: 'Torre de Belém' },
+    { url: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg', caption: 'Lisboa panorámica' },
+    { url: '/images/julia-solonina-ci19YINguoc-unsplash.jpg', caption: 'Palacio da Pena - Sintra' },
+    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Alfama y mirador' },
+    { url: '/images/zac-wolff-guO8kfE2XMs-unsplash.jpg', caption: 'Plaza Rossio' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function LisboaFullWeekPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80"
+            src="/images/zac-wolff-guO8kfE2XMs-unsplash.jpg"
             alt="Lisboa - Semana Completa"
             fill
             className="object-cover scale-110"

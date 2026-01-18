@@ -8,8 +8,8 @@ export default function HomePage() {
       title: 'Lisboa Esencial',
       description: 'Lo mejor de Lisboa en un día perfectamente organizado.',
       duration: '1 DÍA',
-      price: 5.99,
-      image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800',
+      price: 1.99,
+      image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
       href: '/itinerarios/lisboa-1-dia-lo-esencial',
       featured: false
     },
@@ -18,8 +18,8 @@ export default function HomePage() {
       title: 'Lisboa Completa',
       description: 'Fin de semana perfecto con Belém, Alfama y barrios con encanto.',
       duration: '2 DÍAS',
-      price: 8.99,
-      image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800',
+      price: 2.99,
+      image: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
       href: '/itinerarios/lisboa-2-dias-completo',
       featured: true
     },
@@ -28,8 +28,8 @@ export default function HomePage() {
       title: 'Lisboa + Sintra',
       description: 'Experiencia completa con excursión a Sintra y Cascais.',
       duration: '3 DÍAS',
-      price: 12.99,
-      image: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800',
+      price: 3.99,
+      image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
       href: '/itinerarios/lisboa-3-dias-premium',
       featured: false
     }
@@ -42,7 +42,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80"
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
             alt="Lisboa panorama"
             fill
             className="object-cover scale-110"

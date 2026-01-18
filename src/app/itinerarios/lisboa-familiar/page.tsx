@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 const PREVIEW_STOPS = 3;
-const PRODUCT_PRICE = 9.99;
+const PRODUCT_PRICE = 2.99;
 
 export default function LisboaFamiliarPage() {
   const previewStops = lisboaFamiliarTimeline.slice(0, PREVIEW_STOPS);
@@ -20,10 +20,10 @@ export default function LisboaFamiliarPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800', caption: 'Oceanário de Lisboa - Actividad estrella' },
-    { url: 'https://images.unsplash.com/photo-1585169062093-b1b16c19e72c?w=800', caption: 'Castillo de São Jorge' },
-    { url: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800', caption: 'Tranvía 28 - Aventura familiar' },
-    { url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800', caption: 'Parques para niños' },
+    { url: '/images/pexels-german-latasa-814203747-35697448.jpg', caption: 'Casas coloridas de Lisboa' },
+    { url: '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg', caption: 'Tranvía Hills Tramcar Tour' },
+    { url: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg', caption: 'Tranvía 28 - Aventura familiar' },
+    { url: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg', caption: 'Plazas con terrazas kid-friendly' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaFamiliarPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1920&q=80"
+            src="/images/pexels-german-latasa-814203747-35697448.jpg"
             alt="Lisboa en Familia con Niños"
             fill
             className="object-cover scale-110"
