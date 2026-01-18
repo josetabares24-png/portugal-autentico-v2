@@ -6,9 +6,13 @@ import Link from 'next/link';
 export default function ToursPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // TODO: Reemplazar con tu ID de afiliado de Civitatis
-  // Registrate en: https://www.civitatis.com/es/programa-de-afiliacion/
-  const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 Reemplazar con tu ID
+  // TODO: Obtener tu ID de afiliado de Civitatis y reemplazar aquí
+  // Cuenta registrada: contacto@estabaenlisboa.com
+  // 1. Inicia sesión en tu panel de afiliados de Civitatis
+  // 2. Ve a "Herramientas" > "Enlaces de afiliado"
+  // 3. Copia tu "Affiliate ID" (aparece como aid=XXXXX)
+  // 4. Reemplaza "TU_AFFILIATE_ID" con ese número
+  const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 URGENTE: Reemplazar con tu Civitatis Affiliate ID (contacto@estabaenlisboa.com)
 
   const categories = [
     { id: 'all', name: 'Todos', emoji: '🗺️' },

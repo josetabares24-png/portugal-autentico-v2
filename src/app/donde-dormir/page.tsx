@@ -6,9 +6,12 @@ import Link from 'next/link';
 export default function DondeDormirPage() {
   const [selectedZone, setSelectedZone] = useState('all');
 
-  // TODO: Reemplazar estos URLs con tus enlaces de afiliado de Booking.com
-  // Registrate en: https://www.booking.com/affiliate-program/v2/index.html
-  const BOOKING_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 Reemplazar con tu ID de afiliado
+  // TODO: Obtener tu ID de afiliado de Booking.com y reemplazar aquí
+  // 1. Inicia sesión en tu cuenta de afiliado de Booking.com
+  // 2. Ve a "Links & Banners" > "Create a link"
+  // 3. Copia tu "Affiliate ID" (aparece como aid=XXXXX)
+  // 4. Reemplaza "TU_AFFILIATE_ID" con ese número
+  const BOOKING_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 URGENTE: Reemplazar con tu Booking.com Affiliate ID
 
   const zones = [
     {
