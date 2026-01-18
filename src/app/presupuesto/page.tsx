@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PresupuestoPage() {
   const [tipo, setTipo] = useState<'low' | 'mid' | 'high'>('mid');
@@ -75,25 +76,61 @@ export default function PresupuestoPage() {
 
   return (
     <main className="min-h-screen bg-background-light">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-900 to-emerald-700 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-500 rounded-full blur-3xl"></div>
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=2000&auto=format&fit=crop"
+            alt="Lisboa pastel de nata and coins"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-green-900/70 to-emerald-900/85"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">calculate</span>
             <span className="text-sm font-bold tracking-wide">CALCULADORA INTERACTIVA</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
-            💶 ¿Cuánto cuesta viajar<br/>a Lisboa?
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{fontFamily: 'Georgia, serif'}}>
+            ¿Cuánto cuesta<br />
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              viajar a Lisboa?
+            </span>
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Calcula tu presupuesto real según tu estilo de viaje. Precios actualizados 2025.
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            Calcula tu presupuesto real según tu estilo de viaje. Precios verificados y actualizados 2025.
           </p>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
+              <span>Precios reales 2025</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-yellow-400">verified</span>
+              <span>Verificado por locales</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">calculate</span>
+              <span>Calculadora interactiva</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 

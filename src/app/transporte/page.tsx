@@ -156,28 +156,43 @@ export default function TransportePage() {
 
   return (
     <main className="min-h-screen bg-background-light">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-900 to-blue-700 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=2000&auto=format&fit=crop"
+            alt="Lisboa tram 28"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-900/75 to-blue-900/90"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">train</span>
             <span className="text-sm font-bold tracking-wide">GUÍA COMPLETA DE TRANSPORTE</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
-            Moverse por Lisboa
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{fontFamily: 'Georgia, serif'}}>
+            Moverse por<br />
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Lisboa
+            </span>
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-            Todo lo que necesitas saber sobre metro, tranvías, trenes y tarjetas de transporte
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            Todo lo que necesitas saber sobre metro, tranvías, trenes y tarjetas de transporte.
           </p>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-green-400">check_circle</span>
               <span>Actualizado 2025</span>
@@ -191,6 +206,11 @@ export default function TransportePage() {
               <span>100% gratis</span>
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
