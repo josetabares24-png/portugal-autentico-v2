@@ -30,7 +30,7 @@ export default function HomePage() {
       duration: '3 DÍAS',
       price: 12.99,
       image: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800',
-      href: '/itinerarios/lisboa-3-dias-sintra',
+      href: '/itinerarios/lisboa-3-dias-premium',
       featured: false
     }
   ];
