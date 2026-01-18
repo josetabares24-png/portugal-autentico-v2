@@ -22,8 +22,8 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa Esencial',
     description: 'Perfecto si tienes escala o poco tiempo. Lo mejor de Lisboa bien organizado.',
     duration: '1 día completo',
-    price: 2,
-    image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800',
+    price: 1.99,
+    image: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
     features: [
       'Ruta optimizada hora a hora',
       '3 restaurantes locales',
@@ -42,8 +42,8 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa Completa',
     description: 'El favorito. Fin de semana perfecto con Belém, Alfama y los barrios con encanto.',
     duration: '2 días completos',
-    price: 2,
-    image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=800',
+    price: 2.99,
+    image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
     features: [
       '2 rutas completas día a día',
       '6 restaurantes probados',
@@ -62,14 +62,14 @@ export const mainItineraries: Itinerary[] = [
     title: 'Lisboa + Alrededores',
     description: 'La experiencia completa. Lisboa, Sintra, Cascais y Cabo da Roca.',
     duration: '3 días + Sintra',
-    price: 3,
-    image: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=800',
+    price: 3.99,
+    image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
     features: [
       'Todo del pack 2 días',
       'Excursión Sintra completa',
       'Cascais y Cabo da Roca'
     ],
-    href: '/itinerarios/lisboa-3-dias-sintra',
+    href: '/itinerarios/lisboa-3-dias-premium',
     featured: false,
     badge: {
       text: 'EXPERIENCIA COMPLETA',
@@ -85,8 +85,8 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Full Week',
     description: 'Una semana completa: Lisboa, Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
-    price: 5,
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
+    price: 5.99,
+    image: '/images/zac-wolff-guO8kfE2XMs-unsplash.jpg',
     features: [
       'Todos los itinerarios anteriores',
       'Setúbal y Arrábida',
@@ -104,8 +104,8 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Romántica',
     description: 'Miradores al atardecer, cenas románticas y experiencias para parejas.',
     duration: 'Romántico',
-    price: 3,
-    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800',
+    price: 2.99,
+    image: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
     features: [
       'Rutas románticas',
       'Restaurantes especiales',
@@ -123,8 +123,8 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Familiar',
     description: 'Actividades para niños, ritmo relajado y restaurantes kid-friendly.',
     duration: 'Familiar',
-    price: 3,
-    image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800',
+    price: 2.99,
+    image: '/images/pexels-german-latasa-814203747-35697448.jpg',
     features: [
       'Actividades para niños',
       'Ritmo relajado',
@@ -142,8 +142,8 @@ export const specialItineraries: Itinerary[] = [
     title: 'Lisboa Fotografía',
     description: '12 spots fotográficos, horarios de luz perfecta y settings de cámara.',
     duration: 'Fotografía',
-    price: 3,
-    image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=800',
+    price: 2.99,
+    image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
     features: [
       '12 spots fotográficos',
       'Settings de cámara',
