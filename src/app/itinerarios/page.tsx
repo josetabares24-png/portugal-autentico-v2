@@ -70,7 +70,7 @@ export default function ItinerariosPage() {
                 <span className="material-symbols-outlined text-primary text-3xl">payments</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Garantía 14 Días</h3>
+                <h3 className="font-bold text-lg text-text-main mb-1">Garantía 48 Horas</h3>
                 <p className="text-text-secondary text-sm">Reembolso sin preguntas</p>
               </div>
             </div>

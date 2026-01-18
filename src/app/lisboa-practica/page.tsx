@@ -242,7 +242,7 @@ export default function LisboaPracticaPage() {
             Ver Itinerarios desde 5.99€
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
-          <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 14 días</p>
+          <p className="text-white/80 text-sm mt-6">✅ Acceso inmediato · ✅ Garantía 48 horas</p>
         </div>
       </section>
     </main>

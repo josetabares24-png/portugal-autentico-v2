@@ -10,11 +10,11 @@ const faqs = [
     questions: [
       {
         question: "¿Cómo recibo el itinerario después de comprar?",
-        answer: "Inmediatamente después del pago recibirás un email con acceso a tu itinerario. Puedes verlo online o descargarlo en PDF para usarlo offline. El acceso es permanente y podrás acceder cuando quieras."
+        answer: "Inmediatamente después del pago recibirás acceso instantáneo a tu Guía Digital Interactiva. Puedes verla online desde cualquier dispositivo con conexión a internet. El acceso es permanente y podrás consultarla cuando quieras."
       },
       {
         question: "¿Puedo usar el itinerario sin internet?",
-        answer: "Sí. Puedes descargar el PDF completo y los mapas para usarlos sin conexión. Recomendamos descargar todo antes de viajar para tenerlo disponible siempre."
+        answer: "Sí. Puedes descargar mapas offline, coordenadas GPS y un checklist en formato PNG para usarlo sin conexión. Recomendamos descargar estos recursos antes de viajar para tenerlos disponibles siempre."
       },
       {
         question: "¿Qué métodos de pago aceptan?",
@@ -55,8 +55,8 @@ const faqs = [
         answer: "Sí, aunque algunos tramos tienen cuestas. Te indicamos dónde son y alternativas más fáciles. Alfama y Sintra pueden ser cansados para niños pequeños. Tenemos una guía familiar específica."
       },
       {
-        question: "¿Cómo funciona la garantía de 14 días?",
-        answer: "Si no estás satisfecho por cualquier motivo, escríbenos dentro de los primeros 14 días y te devolvemos el 100% del dinero. Sin preguntas."
+        question: "¿Cómo funciona la garantía de 48 horas?",
+        answer: "Si no estás satisfecho por cualquier motivo, escríbenos dentro de las primeras 48 horas después de tu compra y te devolvemos el 100% del dinero. Sin preguntas."
       },
     ]
   }

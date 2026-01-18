@@ -20,7 +20,7 @@ Estas condiciones regulan la compra de productos digitales entre:
 
 ## 2. Objeto del Contrato
 
-El vendedor ofrece **guías turísticas digitales en formato PDF** sobre Lisboa y alrededores.
+El vendedor ofrece **guías turísticas digitales interactivas** accesibles online sobre Lisboa y alrededores.
 
 **No se ofrecen:**
 - Tours presenciales
@@ -38,8 +38,9 @@ El vendedor ofrece **guías turísticas digitales en formato PDF** sobre Lisboa 
 
 ### 3.2. Entrega del producto
 - La entrega es **inmediata** tras confirmar el pago
-- El PDF se envía al email proporcionado
-- El comprador puede descargar el archivo las veces que necesite
+- El acceso a la Guía Digital Interactiva se envía al email proporcionado
+- El comprador puede acceder al contenido online las veces que necesite
+- Incluye recursos descargables (mapas offline, coordenadas GPS, checklist en PNG)
 
 ## 4. Precios
 
@@ -99,13 +100,13 @@ El vendedor **NO se responsabiliza de:**
 ### 7.3. Uso del producto
 El comprador se compromete a:
 - Usar la guía para uso personal y privado
-- No revender, redistribuir o compartir públicamente el PDF
+- No revender, redistribuir o compartir públicamente el contenido digital
 - No modificar o alterar el contenido
 - No utilizar el contenido con fines comerciales
 
 ## 8. Propiedad Intelectual
 
-El PDF y todo su contenido (textos, imágenes, diseño) están protegidos por derechos de autor.
+La Guía Digital Interactiva y todo su contenido (textos, imágenes, diseño) están protegidos por derechos de autor.
 
 La compra otorga una **licencia de uso personal, no exclusiva e intransferible**.
 

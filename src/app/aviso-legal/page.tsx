@@ -22,7 +22,7 @@ De conformidad con lo dispuesto en la legislación portuguesa y europea aplicabl
 
 ## 2. Objeto y Actividad
 
-Este sitio web tiene como finalidad la venta de guías turísticas digitales descargables en formato PDF sobre Lisboa y alrededores.
+Este sitio web tiene como finalidad la venta de guías turísticas digitales interactivas accesibles online sobre Lisboa y alrededores.
 
 **No se ofrecen tours presenciales, ni reservas, ni servicios guiados en persona.** Solo se venden productos digitales para uso autónomo del viajero.
 
@@ -32,11 +32,11 @@ El acceso y uso de este sitio web implica la aceptación expresa de estas condic
 
 - Utilizar el sitio web de forma lícita y conforme a la buena fe
 - No realizar actividades contrarias a la ley o que puedan dañar los derechos del responsable
-- No utilizar los contenidos descargados con fines comerciales o de reventa
+- No utilizar los contenidos digitales con fines comerciales o de reventa
 
 ## 4. Propiedad Intelectual
 
-Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías PDF) son propiedad de José Tabares o se utilizan con la debida autorización.
+Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías digitales interactivas) son propiedad de José Tabares o se utilizan con la debida autorización.
 
 Queda prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin autorización expresa del titular.
 

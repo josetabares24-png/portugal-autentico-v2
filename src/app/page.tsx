@@ -245,33 +245,33 @@ export default function HomePage() {
                 <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Garantía Total</h3>
-              <p className="text-slate-600">14 días de garantía. Si no te gusta, te devolvemos el dinero sin preguntas.</p>
+              <p className="text-slate-600">48 horas de garantía. Si no te gusta, te devolvemos el dinero sin preguntas.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Free Guide CTA */}
+      {/* Info Útil CTA */}
       <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden" id="free">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">download</span>     
+          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">info</span>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ¿Aún no estás seguro?
+            ¿Primera vez en Lisboa?
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Descarga nuestra guía gratuita con 15 consejos que solo los locales conocen
+            Consulta nuestra guía práctica gratuita con transporte, precios, clima y consejos esenciales
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/guia-gratis"
+              href="/info-util"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
             >
-              <span className="material-symbols-outlined text-2xl">download</span>
-              Descargar Guía Gratis
+              <span className="material-symbols-outlined text-2xl">explore</span>
+              Ver Guía Práctica Gratis
             </Link>
           </div>
-          <p className="text-white/80 text-sm mt-6">✅ Sin spam · ✅ Descarga inmediata · ✅ 100% gratis</p>    
+          <p className="text-white/80 text-sm mt-6">✅ Transporte · ✅ Presupuestos · ✅ Mejor época · ✅ 100% gratis</p>
         </div>
       </section>
     </main>
