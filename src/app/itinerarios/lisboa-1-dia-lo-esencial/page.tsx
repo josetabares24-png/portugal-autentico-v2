@@ -5,6 +5,7 @@ import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import SocialProof from '@/components/SocialProof';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
+import InteractiveMap from '@/components/InteractiveMap';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -212,6 +213,14 @@ export default function Lisboa1DiaPage() {
 
       {/* Included Features */}
       <IncludedFeatures />
+
+      {/* Interactive Map */}
+      <InteractiveMap
+        mapId="PLACEHOLDER"
+        title="Mapa Interactivo del Itinerario"
+        description="Todos los restaurantes, miradores y monumentos de esta guía en un solo mapa. Descárgalo en tu móvil y úsalo offline."
+        guideTitle="Lisboa 1 Día - Lo Esencial"
+      />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}
       <section className="py-16 bg-background-cream" id="galeria">

@@ -324,7 +324,7 @@ export default function TransportePage() {
               </div>
 
               <div className="space-y-4">
-                {transportOptions[0].options.map((option, index) => (
+                {transportOptions[0]?.options?.map((option, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 border-2 border-slate-200 hover:border-primary transition-all">
                     <div className="flex flex-col md:flex-row md:items-start gap-4">
                       <div className="flex-1">
@@ -379,7 +379,7 @@ export default function TransportePage() {
               </div>
 
               <div className="space-y-4">
-                {transportOptions[1].options.map((option, index) => (
+                {transportOptions[1]?.options?.map((option, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 border-2 border-slate-200 hover:border-primary transition-all">
                     <div className="flex flex-col md:flex-row md:items-start gap-4">
                       <div className="flex-1">
@@ -451,7 +451,7 @@ export default function TransportePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {transportOptions[2].stations.map((station, index) => (
+                    {transportOptions[2]?.stations?.map((station, index) => (
                       <tr key={index} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
                         <td className="px-6 py-4 font-bold text-slate-900">{station.station}</td>
                         <td className="px-6 py-4 text-slate-700">{station.destination}</td>
@@ -470,7 +470,7 @@ export default function TransportePage() {
 
               {/* Detailed Info Cards */}
               <div className="grid md:grid-cols-2 gap-6 mt-8">
-                {transportOptions[2].stations.map((station, index) => (
+                {transportOptions[2]?.stations?.map((station, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 border-2 border-slate-200">
                     <div className="flex items-start gap-3 mb-4">
                       <span className="material-symbols-outlined text-primary text-3xl">train</span>
