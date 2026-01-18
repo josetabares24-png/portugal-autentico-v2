@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
@@ -85,10 +85,8 @@ export default function RootLayout({
           <SchemaMarkup />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <Header />
-          <div className="pt-16">
-            {children}
-          </div>
+          <Navbar />
+          {children}
           <Footer />
           <CookieBanner />
         </body>

@@ -14,7 +14,8 @@ export default function BlogPage() {
       excerpt: 'Descubre los miradores más espectaculares de Lisboa, desde los más famosos hasta los secretos que solo conocen los locales.',
       categoria: 'Guías',
       fecha: '15 Dic 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1555881400-69d83c8b8db8?w=800&q=80'
     },
     {
       id: 'donde-comer-barato-lisboa',
@@ -22,7 +23,8 @@ export default function BlogPage() {
       excerpt: 'Los mejores restaurantes económicos de Lisboa donde comen los locales. Calidad auténtica sin turistadas.',
       categoria: 'Gastronomía',
       fecha: '10 Dic 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=800&q=80'
     },
     {
       id: 'barrios-imprescindibles',
@@ -30,7 +32,8 @@ export default function BlogPage() {
       excerpt: 'Alfama, Bairro Alto, Belém... Qué ver en cada barrio y cuál es el mejor momento para visitarlos.',
       categoria: 'Guías',
       fecha: '5 Dic 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1624714037596-f89e8733ed60?w=800&q=80'
     },
     {
       id: 'evitar-turistadas-lisboa',
@@ -38,7 +41,8 @@ export default function BlogPage() {
       excerpt: 'Tips de local para no caer en trampas turísticas y vivir Lisboa de forma auténtica.',
       categoria: 'Consejos',
       fecha: '1 Dic 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1588619351935-c71c5328c7bb?w=800&q=80'
     },
     {
       id: 'pasteles-de-belem',
@@ -46,7 +50,8 @@ export default function BlogPage() {
       excerpt: 'Todo lo que necesitas saber sobre los famosos pasteles: historia, cuándo ir, y por qué no son lo mismo que "pastéis de nata".',
       categoria: 'Gastronomía',
       fecha: '28 Nov 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1621955964441-c173e01c135b?w=800&q=80'
     },
     {
       id: 'mejor-epoca-visitar-lisboa',
@@ -54,7 +59,8 @@ export default function BlogPage() {
       excerpt: 'Análisis mes a mes del clima, precios y eventos. Descubre cuándo viajar según tu estilo.',
       categoria: 'Planificación',
       fecha: '25 Nov 2024',
-      autor: 'José Tabares'
+      autor: 'José Tabares',
+      imagen: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800&q=80'
     }
   ];
 
@@ -137,12 +143,26 @@ export default function BlogPage() {
                   className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500"
                 >
                   <div className="relative h-40 md:h-64 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-orange-500/20 group-hover:scale-110 transition-transform duration-500"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-slate-400 text-5xl md:text-8xl">image</span>
-                    </div>
-                    
-                    <div className="absolute top-2 md:top-4 left-2 md:left-4 px-2 md:px-4 py-1 md:py-2 bg-white/95 backdrop-blur-sm text-primary font-bold rounded-lg md:rounded-xl text-[10px] md:text-xs shadow-lg">
+                    {post.imagen ? (
+                      <>
+                        <Image
+                          src={post.imagen}
+                          alt={post.titulo}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-orange-500/20 group-hover:scale-110 transition-transform duration-500"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="material-symbols-outlined text-slate-400 text-5xl md:text-8xl">image</span>
+                        </div>
+                      </>
+                    )}
+
+                    <div className="absolute top-2 md:top-4 left-2 md:left-4 px-2 md:px-4 py-1 md:py-2 bg-white/95 backdrop-blur-sm text-primary font-bold rounded-lg md:rounded-xl text-[10px] md:text-xs shadow-lg z-10">
                       {post.categoria}
                     </div>
                   </div>
