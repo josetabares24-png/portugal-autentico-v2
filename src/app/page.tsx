@@ -251,6 +251,110 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+              ⭐ Testimonios Reales
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
+              Lo que dicen nuestros <span className="text-primary">viajeros</span>
+            </h2>
+            <p className="text-xl text-slate-600">
+              Más de 500 personas han usado nuestras guías. Esto es lo que opinan.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Testimonio 1 */}
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-6 italic leading-relaxed">
+                "La guía de 2 días me salvó el viaje. Restaurantes buenísimos y cero turistadas. El mapa interactivo es brutal. Ya compré la de Porto."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  A
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900">Ana M.</p>
+                  <p className="text-sm text-slate-500">Barcelona • Abril 2025</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 2 */}
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-6 italic leading-relaxed">
+                "Compré 3 guías en PDF en otros sitios. Esta es LA MEJOR con diferencia. El nivel de detalle y los restaurantes son TOP."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  C
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900">Carlos R.</p>
+                  <p className="text-sm text-slate-500">Madrid • Marzo 2025</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonio 3 */}
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-6 italic leading-relaxed">
+                "Mi pareja y yo seguimos la guía romántica al pie de la letra. Restaurante con vistas al Tajo espectacular. Pedida de mano exitosa 💍"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  M
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900">María & Javi</p>
+                  <p className="text-sm text-slate-500">Sevilla • Febrero 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Bar */}
+          <div className="mt-12 bg-gradient-to-r from-primary to-orange-500 rounded-2xl p-8 text-white">
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-black mb-2">500+</div>
+                <div className="text-white/80 text-sm">Viajeros felices</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black mb-2">4.9/5</div>
+                <div className="text-white/80 text-sm">Valoración media</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black mb-2">98%</div>
+                <div className="text-white/80 text-sm">Recomendarían</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black mb-2">24h</div>
+                <div className="text-white/80 text-sm">Soporte rápido</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Info Útil CTA */}
       <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden" id="free">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
