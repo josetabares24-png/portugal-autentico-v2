@@ -77,33 +77,31 @@ export default function PresupuestoPage() {
   return (
     <main className="min-h-screen bg-background-light">
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=2000&auto=format&fit=crop"
-            alt="Lisboa pastel de nata and coins"
+            src="/images/julie-ricard-DuzIBO_11SI-unsplash.jpg"
+            alt="Presupuesto Lisboa"
             fill
-            className="object-cover scale-110"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <span className="material-symbols-outlined text-yellow-400">calculate</span>
-            <span className="text-sm font-bold tracking-wide">CALCULADORA INTERACTIVA</span>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
+            <span className="material-symbols-outlined text-base">calculate</span>
+            <span className="text-sm font-semibold tracking-wide">Calculadora interactiva</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             ¿Cuánto cuesta<br />
-            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-              viajar a Lisboa?
-            </span>
+            <span className="text-accent">viajar a Lisboa?</span>
           </h1>
 
           {/* Subheading */}

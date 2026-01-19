@@ -202,37 +202,35 @@ export default function ToursPage() {
   return (
     <main className="bg-background-light">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-            alt="Lisboa panorama"
+            src="/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg"
+            alt="Tour en Lisboa"
             fill
-            className="object-cover scale-110"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <span className="material-symbols-outlined text-yellow-400">tour</span>
-            <span className="text-sm font-bold tracking-wide">TOURS Y ACTIVIDADES</span>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
+            <span className="material-symbols-outlined text-base">tour</span>
+            <span className="text-sm font-semibold tracking-wide">Tours y actividades</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             Tours y<br />
-            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-              Actividades
-            </span>
+            <span className="text-accent">Actividades</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
             Free tours, excursiones a Sintra, experiencias gastronómicas y aventuras. Reserva con cancelación gratis y en español.
           </p>
 

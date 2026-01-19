@@ -157,33 +157,31 @@ export default function TransportePage() {
   return (
     <main className="min-h-screen bg-background-light">
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=2000&auto=format&fit=crop"
-            alt="Lisboa tram 28"
+            src="/images/tranvia-28.jpg"
+            alt="Tranvía 28 Lisboa"
             fill
-            className="object-cover scale-110"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <span className="material-symbols-outlined text-yellow-400">train</span>
-            <span className="text-sm font-bold tracking-wide">GUÍA COMPLETA DE TRANSPORTE</span>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
+            <span className="material-symbols-outlined text-base">train</span>
+            <span className="text-sm font-semibold tracking-wide">Guía completa de transporte</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             Transporte en<br />
-            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-              Lisboa
-            </span>
+            <span className="text-accent">Lisboa</span>
           </h1>
 
           {/* Subheading */}

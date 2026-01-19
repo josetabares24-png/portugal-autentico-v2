@@ -116,20 +116,20 @@ export default function HomePage() {
       {/* Features Bar */}
       <section className="py-10 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-16 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 text-center">
             <div>
-              <div className="text-5xl font-display font-black mb-1 text-accent">100%</div>
-              <div className="text-sm font-medium opacity-90">Verificado</div>
+              <div className="text-3xl md:text-5xl font-display font-black mb-1 text-accent">100%</div>
+              <div className="text-xs md:text-sm font-medium opacity-90">Verificado</div>
             </div>
             <div className="hidden sm:block w-px h-16 bg-white/20"></div>
             <div>
-              <div className="text-5xl font-display font-black mb-1 text-accent">Local</div>
-              <div className="text-sm font-medium opacity-90">Por lisboetas</div>
+              <div className="text-3xl md:text-5xl font-display font-black mb-1 text-accent">Local</div>
+              <div className="text-xs md:text-sm font-medium opacity-90">Por lisboetas</div>
             </div>
             <div className="hidden sm:block w-px h-16 bg-white/20"></div>
             <div>
-              <div className="text-5xl font-display font-black mb-1 text-accent">8</div>
-              <div className="text-sm font-medium opacity-90">Rutas completas</div>
+              <div className="text-3xl md:text-5xl font-display font-black mb-1 text-accent">8</div>
+              <div className="text-xs md:text-sm font-medium opacity-90">Rutas completas</div>
             </div>
           </div>
         </div>
