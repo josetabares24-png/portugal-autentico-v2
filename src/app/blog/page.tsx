@@ -61,10 +61,118 @@ export default function BlogPage() {
       fecha: '25 Nov 2024',
       autor: 'José Tabares',
       imagen: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800&q=80'
+    },
+    {
+      id: 'transporte-publico-lisboa',
+      titulo: 'Guía Completa del Transporte Público en Lisboa',
+      excerpt: 'Metro, tranvía, autobús y tarjetas. Todo lo que necesitas saber para moverte como un local.',
+      categoria: 'Transporte',
+      fecha: '22 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/tranvia-28.jpg'
+    },
+    {
+      id: 'restaurantes-romanticos-lisboa',
+      titulo: '10 Restaurantes Románticos en Lisboa',
+      excerpt: 'Cenas con vistas, terrazas íntimas y ambiente especial para una noche perfecta en pareja.',
+      categoria: 'Gastronomía',
+      fecha: '20 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg'
+    },
+    {
+      id: 'que-ver-cascais-desde-lisboa',
+      titulo: 'Qué Ver en Cascais desde Lisboa: Guía Completa',
+      excerpt: 'Pueblo costero, playas y palacios. La excursión perfecta de un día desde la capital.',
+      categoria: 'Guías',
+      fecha: '18 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg'
+    },
+    {
+      id: 'playas-cerca-lisboa',
+      titulo: 'Las Mejores Playas Cerca de Lisboa',
+      excerpt: 'Costa de Lisboa, Cascais, Sesimbra y Arrábida. Arenas doradas y agua cristalina a menos de 1 hora.',
+      categoria: 'Guías',
+      fecha: '15 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg'
+    },
+    {
+      id: 'donde-escuchar-fado-autentico',
+      titulo: 'Dónde Escuchar Fado Auténtico en Lisboa',
+      excerpt: 'Bares locales, restaurantes históricos y casas de fado. La música portuguesa en su estado más puro.',
+      categoria: 'Cultura',
+      fecha: '12 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg'
+    },
+    {
+      id: 'presupuesto-viajar-lisboa',
+      titulo: 'Presupuesto Real para Viajar a Lisboa: Día a Día',
+      excerpt: 'Cuánto cuesta realmente comer, dormir y moverse. Análisis honesto de precios en 2024.',
+      categoria: 'Planificación',
+      fecha: '10 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg'
+    },
+    {
+      id: 'mejores-mercados-lisboa',
+      titulo: 'Los Mejores Mercados de Lisboa: Guía Completa',
+      excerpt: 'Time Out Market, Feira da Ladra, mercados locales. Comida, artesanía y vida auténtica.',
+      categoria: 'Guías',
+      fecha: '8 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg'
+    },
+    {
+      id: 'donde-tomar-cafe-lisboa',
+      titulo: 'Dónde Tomar el Mejor Café en Lisboa',
+      excerpt: 'Cafeterías locales, especialidad y tradición. El café portugués en los mejores locales de la ciudad.',
+      categoria: 'Gastronomía',
+      fecha: '5 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg'
+    },
+    {
+      id: 'miradores-atardecer-lisboa',
+      titulo: 'Los Mejores Miradores para el Atardecer en Lisboa',
+      excerpt: 'Dónde ver el mejor sunset de Lisboa. Horarios, ubicaciones y consejos de local.',
+      categoria: 'Guías',
+      fecha: '3 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg'
+    },
+    {
+      id: 'que-comprar-lisboa-souvenirs',
+      titulo: 'Qué Comprar en Lisboa: Souvenirs Auténticos',
+      excerpt: 'Azulejos, vino, conservas y artesanía. Los mejores recuerdos que realmente valen la pena.',
+      categoria: 'Consejos',
+      fecha: '1 Nov 2024',
+      autor: 'José Tabares',
+      imagen: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg'
+    },
+    {
+      id: 'viajar-ninos-lisboa',
+      titulo: 'Viajar con Niños a Lisboa: Guía Completa',
+      excerpt: 'Actividades, restaurantes kid-friendly y consejos para familias. Lisboa es perfecta para pequeños exploradores.',
+      categoria: 'Consejos',
+      fecha: '28 Oct 2024',
+      autor: 'José Tabares',
+      imagen: '/images/julia-solonina-ci19YINguoc-unsplash.jpg'
+    },
+    {
+      id: 'excursiones-desde-lisboa',
+      titulo: 'Las Mejores Excursiones desde Lisboa',
+      excerpt: 'Sintra, Óbidos, Nazaré y más. Excursiones de un día perfectas para conocer los alrededores.',
+      categoria: 'Guías',
+      fecha: '25 Oct 2024',
+      autor: 'José Tabares',
+      imagen: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg'
     }
   ];
 
-  const categorias = ['Todos', 'Guías', 'Gastronomía', 'Consejos', 'Planificación'];
+  const categorias = ['Todos', 'Guías', 'Gastronomía', 'Consejos', 'Planificación', 'Transporte', 'Cultura'];
 
   const postsFiltrados = categoriaActiva === 'Todos' 
     ? posts 
