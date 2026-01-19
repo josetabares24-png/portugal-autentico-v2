@@ -1,39 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-export default function HomePage() {
-  const featuredItineraries = [
-    {
-      id: 'lisboa-1-dia',
-      title: 'Un día en Lisboa',
-      description: 'Pastéis de nata a las 8:30 antes de que abra la cola. Mirador de Graça sin selfies. El 28 cuando funciona.',
-      duration: '1 DÍA',
-      price: 1.99,
-      image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
-      href: '/itinerarios/lisboa-1-dia-lo-esencial',
-      featured: false
-    },
-    {
-      id: 'lisboa-2-dias',
-      title: 'Fin de semana completo',
-      description: 'Belém a las 9am, pastéis cuando salen del horno. Alfama cuando los vecinos bajan a comprar. Bairro Alto de noche, no de día.',
-      duration: '2 DÍAS',
-      price: 2.99,
-      image: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
-      href: '/itinerarios/lisboa-2-dias-completo',
-      featured: true
-    },
-    {
-      id: 'lisboa-3-dias',
-      title: 'Lisboa y alrededores',
-      description: 'Sintra sin colas de 3 horas. Dónde aparcar gratis. Cascais cuando el sol está de verdad.',
-      duration: '3 DÍAS',
-      price: 3.99,
-      image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
-      href: '/itinerarios/lisboa-3-dias-premium',
-      featured: false
-    }
-  ];
+import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
+import { mainItineraries } from '@/data/itineraries';
 
   return (
     <main className="bg-background-light">
@@ -135,7 +103,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Itineraries */}
+      {/* Featured Itineraries - Usando mismos datos que /itinerarios */}
       <section className="py-32 bg-background-light" id="itinerarios">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -146,57 +114,14 @@ export default function HomePage() {
               Elige tu <span className="text-primary">ruta</span>
             </h2>
             <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Cada guía incluye el bar donde desayuno los domingos. El mirador que visito cuando vienen amigos. Mapas que funcionan cuando no hay señal.
+              Cada guía incluye itinerario hora a hora + restaurantes probados + spots de fotos + mapas offline
             </p>
           </div>
 
-          {/* Cards Grid */}
+          {/* Cards Grid - Usando ItineraryCard component */}
           <div className="grid md:grid-cols-3 gap-10 mb-16">
-            {featuredItineraries.map((itinerary) => (
-              <div
-                key={itinerary.id}
-                className={`group bg-white rounded-3xl overflow-hidden shadow-soft border border-border-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1 ${
-                  itinerary.featured
-                    ? 'border-2 border-primary shadow-editorial relative'
-                    : ''
-                }`}
-              >
-                {itinerary.featured && (
-                  <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-2.5 font-semibold text-xs z-10 tracking-wider uppercase">
-                    Más vendida
-                  </div>
-                )}
-
-                <div className={`relative h-64 ${itinerary.featured ? 'mt-10' : ''}`}>
-                  <Image
-                    src={itinerary.image}
-                    alt={itinerary.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute top-5 left-5">
-                    <span className="bg-primary/95 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-semibold">
-                      {itinerary.duration}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>        
-                </div>
-
-                <div className="p-8">
-                  <h3 className="text-2xl font-display font-black text-text-main mb-4 leading-tight">{itinerary.title}</h3>
-                  <p className="text-text-secondary mb-6 leading-relaxed">{itinerary.description}</p>
-                  <div className="flex items-center justify-between pt-6 border-t border-border-soft">
-                    <div className="text-4xl font-display font-black text-primary">{itinerary.price}€</div>
-                    <Link
-                      href={itinerary.href}
-                      className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
-                    >
-                      Ver detalles
-                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            {mainItineraries.map((itinerary) => (
+              <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}
           </div>
 
