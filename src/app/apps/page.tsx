@@ -313,6 +313,6 @@ export default function AppsPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

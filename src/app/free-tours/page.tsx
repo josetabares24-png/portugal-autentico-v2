@@ -245,6 +245,6 @@ export default function FreeToursPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

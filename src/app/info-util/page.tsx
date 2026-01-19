@@ -372,6 +372,6 @@ export default function InfoUtilPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
