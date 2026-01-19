@@ -35,7 +35,7 @@ export default function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Lisboa en 1 Día - Guía Completa",
-    "image": "https://estabaenlisboa.com/images/lisboa-1-dia.jpg",
+    "image": "https://estabaenlisboa.com/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg",
     "description": "Itinerario completo de Lisboa en 1 día con horarios exactos, coordenadas GPS y restaurantes verificados. Lo esencial sin turistadas.",
     "brand": {
       "@type": "Brand",

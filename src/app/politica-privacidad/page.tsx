@@ -13,7 +13,7 @@ async function getLegalContent() {
 
 ## 1. Responsable del Tratamiento
 
-- **Nombre:** José Tabares
+- **Nombre:** Jose Tabares
 - **Dirección:** Lisboa, Portugal
 - **Email:** contacto@estabaenlisboa.com
 

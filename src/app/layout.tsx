@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -72,6 +73,13 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="es">
         <head>
+          {/* Preconnect para recursos externos */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link rel="preconnect" href="https://unpkg.com" />
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+          <link rel="dns-prefetch" href="https://unpkg.com" />
+          
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
@@ -85,10 +93,12 @@ export default function RootLayout({
           <SchemaMarkup />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <Navbar />
-          {children}
-          <Footer />
-          <CookieBanner />
+          <ErrorBoundary>
+            <Navbar />
+            {children}
+            <Footer />
+            <CookieBanner />
+          </ErrorBoundary>
         </body>
       </html>
     </ClerkProvider>

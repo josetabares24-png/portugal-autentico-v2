@@ -23,7 +23,7 @@ export default function ToursPrivadosPage() {
       maxPersonas: 8,
       descripcion: 'Tour culinario por mercados y tabernas auténticas de Lisboa.',
       incluye: ['Guía gastronómico', '6 degustaciones', 'Vino portugués', 'Recetas tradicionales'],
-      image: '/images/pasteis-nata.jpg',
+      image: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
     },
     {
       id: 'sintra-cascais',

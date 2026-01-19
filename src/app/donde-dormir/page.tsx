@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function DondeDormirPage() {
   const [selectedZone, setSelectedZone] = useState('all');
@@ -178,22 +179,37 @@ export default function DondeDormirPage() {
   return (
     <main className="min-h-screen bg-background-light">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-indigo-900 to-purple-700 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-500 rounded-full blur-3xl"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Lisboa panorama"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">bed</span>
-            <span className="text-sm font-bold tracking-wide">GUÍA DE ALOJAMIENTO LOCAL</span>
+            <span className="text-sm font-bold tracking-wide">GUÍA DE ALOJAMIENTO</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
-            Dónde Dormir en Lisboa
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Dónde Dormir<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+              en Lisboa
+            </span>
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
             Hostels para mochileros y hoteles boutique para parejas. Recomendaciones por zonas, con precios reales y sin turistadas.
           </p>
 

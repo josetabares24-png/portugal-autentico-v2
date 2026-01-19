@@ -183,19 +183,19 @@ export default function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="/mis-compras"
+              href="/mis-guias"
               className={cn(
                 'p-2 rounded-full transition-colors',
                 isScrolled
                   ? 'text-gray-700 hover:bg-gray-100'
                   : 'text-white hover:bg-white/10'
               )}
-              aria-label="Mis compras"
+              aria-label="Mis guías"
             >
               <ShoppingBag className="h-5 w-5" />
             </Link>
             <Link
-              href="/mi-cuenta"
+              href="/mis-guias"
               className={cn(
                 'p-2 rounded-full transition-colors',
                 isScrolled
@@ -300,14 +300,14 @@ export default function Navigation() {
             
             <div className="pt-4 border-t border-gray-200 space-y-3">
               <Link
-                href="/mis-compras"
+                href="/mis-guias"
                 className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50"
               >
                 <ShoppingBag className="h-5 w-5" />
-                <span className="font-medium">Mis Compras</span>
+                <span className="font-medium">Mis Guías</span>
               </Link>
               <Link
-                href="/mi-cuenta"
+                href="/mis-guias"
                 className="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50"
               >
                 <User className="h-5 w-5" />

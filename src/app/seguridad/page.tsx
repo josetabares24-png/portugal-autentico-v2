@@ -3,33 +3,33 @@ import Image from 'next/image';
 
 export default function SeguridadPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      {/* Hero Section with Background Image */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <main className="bg-background-light">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?q=80&w=2000&auto=format&fit=crop"
-            alt="Lisboa safe streets"
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Lisboa panorama"
             fill
             className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-blue-900/75 to-slate-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <span className="material-symbols-outlined text-green-400">verified_user</span>
+            <span className="material-symbols-outlined text-yellow-400">verified_user</span>
             <span className="text-sm font-bold tracking-wide">GUÍA DE SEGURIDAD</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{fontFamily: 'Georgia, serif'}}>
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
             Lisboa es<br />
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
               muy segura
             </span>
           </h1>
@@ -62,7 +62,7 @@ export default function SeguridadPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-green-50 border-2 border-green-200 p-8 rounded-2xl">

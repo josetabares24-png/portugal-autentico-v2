@@ -71,48 +71,51 @@ export default function BlogPage() {
     : posts.filter(post => post.categoria === categoriaActiva);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* HERO COMPACTO CON IMAGEN */}
-      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <main className="bg-background-light">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=2000&auto=format&fit=crop"
-            alt="Lisboa"
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Lisboa panorama"
             fill
-            className="object-cover"
+            className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/85 to-slate-800/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-12 md:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8 border border-white/20">
-            <span className="material-symbols-outlined text-primary text-sm md:text-base">article</span>
-            <span className="text-[10px] md:text-sm font-medium text-white tracking-wide">BLOG DE LISBOA</span>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
+            <span className="material-symbols-outlined text-yellow-400">article</span>
+            <span className="text-sm font-bold tracking-wide">BLOG DE LISBOA</span>
           </div>
 
-          <h1 className="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            Historias y Consejos
-            <br />
-            <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
-              de Lisboa
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Historias y<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+              Consejos
             </span>
           </h1>
 
-          <p className="text-sm md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-            Tips de local, guías auténticas y todo lo que necesitas
-            <br className="hidden md:block" />
-            <span className="hidden md:inline">saber para vivir Lisboa como un residente</span>
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            Tips de local, guías auténticas y todo lo que necesitas saber para vivir Lisboa como un residente
           </p>
         </div>
 
-        <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white/70 text-xl md:text-3xl">expand_more</span>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
       {/* CATEGORÍAS FUNCIONALES */}
-      <section className="py-6 md:py-12 bg-slate-50 border-b border-slate-200">
+      <section className="py-6 bg-gradient-to-r from-primary to-orange-500 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
             {categorias.map((cat) => (
@@ -132,15 +135,15 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* POSTS GRID COMPACTO */}
-      <section className="py-12 md:py-32 bg-white">
+      {/* POSTS GRID */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10">
               {postsFiltrados.map((post) => (
                 <article
                   key={post.id}
-                  className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500"
+                  className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative h-40 md:h-64 bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                     {post.imagen ? (

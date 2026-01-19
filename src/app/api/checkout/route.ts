@@ -2,7 +2,16 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+// Validar variables de entorno al inicio
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error('STRIPE_SECRET_KEY is not configured');
+}
+
+if (!process.env.NEXT_PUBLIC_SITE_URL) {
+  throw new Error('NEXT_PUBLIC_SITE_URL is not configured');
+}
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2025-12-15.clover',
 });
 

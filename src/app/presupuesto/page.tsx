@@ -87,7 +87,7 @@ export default function PresupuestoPage() {
             className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-green-900/70 to-emerald-900/85"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
         {/* Hero Content */}
@@ -99,9 +99,9 @@ export default function PresupuestoPage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{fontFamily: 'Georgia, serif'}}>
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
             ¿Cuánto cuesta<br />
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
               viajar a Lisboa?
             </span>
           </h1>
@@ -135,7 +135,7 @@ export default function PresupuestoPage() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Controls */}
@@ -413,7 +413,7 @@ export default function PresupuestoPage() {
       </section>
 
       {/* Tips Section */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
             💡 Cómo ahorrar en Lisboa
@@ -471,17 +471,17 @@ export default function PresupuestoPage() {
 
           <div className="mt-8 text-center">
             <Link
-              href="/trampas-turisticas"
+              href="/itinerarios"
               className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-lg"
             >
-              🚫 Ver Trampas Turísticas
+              🚫 Ver Guías Auténticas
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-24 bg-background-cream">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-slate-900 mb-4">
             ¿Listo para planificar tu viaje?

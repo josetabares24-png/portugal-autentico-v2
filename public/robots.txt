@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /mis-guias/
+Disallow: /preview/
+Disallow: /exito/
+
+# Sitemap
+Sitemap: https://estabaenlisboa.com/sitemap.xml

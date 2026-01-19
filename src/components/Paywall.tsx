@@ -111,9 +111,9 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
             )}
 
             <div className="mt-8 pt-6 border-t border-slate-200">
-              <Link href="/pack-completo" className="text-primary hover:text-primary-dark font-bold text-sm inline-flex items-center gap-1">
+              <Link href="/itinerarios" className="text-primary hover:text-primary-dark font-bold text-sm inline-flex items-center gap-1">
                 <span className="material-symbols-outlined text-sm">local_offer</span>
-                <span>O ahorra 60% con el Pack Completo (8 guías por 24.99€)</span>
+                <span>Ver todas las guías disponibles</span>
               </Link>
             </div>
           </div>

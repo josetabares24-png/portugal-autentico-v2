@@ -15,7 +15,7 @@ async function getLegalContent() {
 
 De conformidad con lo dispuesto en la legislación portuguesa y europea aplicable, se informa de los siguientes datos del responsable de este sitio web:
 
-- **Nombre:** José Tabares
+- **Nombre:** Jose Tabares
 - **Dirección:** Lisboa, Portugal
 - **Email de contacto:** contacto@estabaenlisboa.com
 - **Sitio web:** https://estabaenlisboa.com
@@ -36,7 +36,7 @@ El acceso y uso de este sitio web implica la aceptación expresa de estas condic
 
 ## 4. Propiedad Intelectual
 
-Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías digitales interactivas) son propiedad de José Tabares o se utilizan con la debida autorización.
+Todos los contenidos de este sitio web (textos, imágenes, diseño, logotipos, guías digitales interactivas) son propiedad de Jose Tabares o se utilizan con la debida autorización.
 
 Queda prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin autorización expresa del titular.
 

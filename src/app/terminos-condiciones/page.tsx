@@ -15,7 +15,7 @@ async function getLegalContent() {
 
 Estas condiciones regulan la compra de productos digitales entre:
 
-- **Vendedor:** José Tabares, con sede en Lisboa, Portugal
+- **Vendedor:** Jose Tabares, con sede en Lisboa, Portugal
 - **Comprador:** La persona que realiza la compra en https://estabaenlisboa.com
 
 ## 2. Objeto del Contrato

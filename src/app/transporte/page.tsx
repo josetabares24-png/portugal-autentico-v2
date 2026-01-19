@@ -167,7 +167,7 @@ export default function TransportePage() {
             className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-900/75 to-blue-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
         {/* Hero Content */}
@@ -179,9 +179,9 @@ export default function TransportePage() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl" style={{fontFamily: 'Georgia, serif'}}>
-            Moverse por<br />
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Transporte en<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
               Lisboa
             </span>
           </h1>
@@ -273,7 +273,7 @@ export default function TransportePage() {
       </section>
 
       {/* Content Sections */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           {/* Overview Tab */}
           {selectedTab === 'overview' && (

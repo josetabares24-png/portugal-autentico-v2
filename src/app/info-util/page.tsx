@@ -3,41 +3,51 @@ import Link from 'next/link';
 
 export default function InfoUtilPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* HERO COMPACTO OSCURO */}
-      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95"></div>
-        
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
+    <main className="bg-background-light">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Lisboa panorama"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-12 md:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-6 md:py-3 bg-white/10 backdrop-blur-sm rounded-full mb-4 md:mb-8 border border-white/20">
-            <span className="material-symbols-outlined text-primary text-sm md:text-base">verified</span>
-            <span className="text-[10px] md:text-sm font-medium text-white tracking-wide">100% GRATIS</span>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
+            <span className="material-symbols-outlined text-yellow-400">verified</span>
+            <span className="text-sm font-bold tracking-wide">100% GRATIS</span>
           </div>
 
-          <h1 className="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            Guía Práctica
-            <br />
-            <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Guía Práctica<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
               de Lisboa
             </span>
           </h1>
 
-          <p className="text-sm md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
             Todo lo esencial que necesitas saber antes de viajar
           </p>
         </div>
 
-        <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white/70 text-xl md:text-3xl">expand_more</span>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
-      {/* TRANSPORTE COMPACTO */}
-      <section className="py-12 md:py-32 bg-gradient-to-b from-white to-slate-50">
+      {/* TRANSPORTE */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-16">

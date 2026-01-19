@@ -75,7 +75,7 @@ export default function FotografoPersonalPage() {
       sesiones: '500+ sesiones',
       rating: 4.9,
       instagram: '@ricardosantos_photo',
-      imagen: '/images/fotografo-ricardo.jpg',
+      imagen: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
       idiomas: ['Portugués', 'Español', 'Inglés'],
     },
     {
@@ -85,7 +85,7 @@ export default function FotografoPersonalPage() {
       sesiones: '350+ sesiones',
       rating: 5.0,
       instagram: '@anamartins_captures',
-      imagen: '/images/fotografo-ana.jpg',
+      imagen: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
       idiomas: ['Portugués', 'Español', 'Francés'],
     },
     {
@@ -95,7 +95,7 @@ export default function FotografoPersonalPage() {
       sesiones: '700+ sesiones',
       rating: 4.9,
       instagram: '@joao_pereira_lens',
-      imagen: '/images/fotografo-joao.jpg',
+      imagen: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
       idiomas: ['Portugués', 'Inglés'],
     },
   ];
