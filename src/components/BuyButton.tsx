@@ -17,15 +17,21 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
   const { isSignedIn, isLoaded } = useUser();
   const [localError, setLocalError] = useState<string | null>(null);
 
+  // Debug: Log del estado de Clerk
+  if (typeof window !== 'undefined') {
+    console.log('BuyButton - Clerk state:', { isLoaded, isSignedIn, productId });
+  }
+
   const handleClick = async () => {
+    // Si Clerk aún no se ha cargado, intentar igual (puede ser un problema de configuración)
     if (!isLoaded) {
-      setLocalError('Cargando información del usuario...');
-      return;
+      console.warn('BuyButton: Clerk aún no se ha cargado, pero intentando checkout');
+      // No retornar inmediatamente, permitir que intente
     }
     
     setLocalError(null); // Limpiar error previo
     
-    if (!isSignedIn) {
+    if (isLoaded && !isSignedIn) {
       setLocalError('Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta.');
       return;
     }
@@ -45,6 +51,9 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
       // Pero podemos agregar un mensaje más específico aquí si es necesario
       if (err.message?.includes('iniciar sesión') || err.message?.includes('401')) {
         setLocalError(err.message || 'Debes iniciar sesión para comprar.');
+      } else {
+        // Mostrar cualquier otro error
+        setLocalError(err.message || 'Error al procesar el pago. Por favor, intenta de nuevo.');
       }
     }
   };
@@ -70,15 +79,25 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
     );
   }
 
+  // Si Clerk no se ha cargado, mostrar mensaje y permitir click (por si es problema de Clerk)
+  const isDisabled = loading;
+  const showLoadingState = !isLoaded && !displayError;
+
   return (
     <div className="w-full">
       <button
         onClick={handleClick}
-        disabled={loading || !isLoaded}
-        className={`${className} ${loading || !isLoaded ? 'opacity-50 cursor-not-allowed' : ''}`}
+        disabled={isDisabled}
+        className={`${className} ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+        type="button"
       >
-        {loading ? 'Procesando...' : (children || 'Comprar ahora')}
+        {loading ? 'Procesando...' : showLoadingState ? 'Cargando...' : (children || 'Comprar ahora')}
       </button>
+      {showLoadingState && (
+        <p className="text-xs text-slate-500 mt-2 text-center">
+          Verificando autenticación...
+        </p>
+      )}
       {displayError && (
         <div className="mt-2 text-center">
           <p className="text-red-600 text-sm font-medium mb-2">{displayError}</p>
