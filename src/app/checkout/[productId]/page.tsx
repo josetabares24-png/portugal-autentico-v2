@@ -43,8 +43,6 @@ export default function CheckoutPage() {
 
       const data = await response.json();
 
-      const data = await response.json();
-
       if (!response.ok) {
         const errorMessage = data.error || 'Error al crear sesión de checkout';
         throw new Error(errorMessage);
