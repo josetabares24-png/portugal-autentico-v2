@@ -37,157 +37,81 @@ export default function HomePage() {
 
   return (
     <main className="bg-background-light">
-      {/* Hero Bento Grid Section */}
-      <section className="relative py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Bento Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 auto-rows-fr">
-            
-            {/* Main Hero Cell - Large */}
-            <div className="md:col-span-4 lg:col-span-4 row-span-2 relative group overflow-hidden rounded-3xl h-[400px] md:h-[600px] lg:h-[700px]">
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-                  alt="Vista panorámica de Lisboa"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"></div>
-              </div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Vista de Lisboa desde un mirador"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+        </div>
 
-              {/* Glassmorphism Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-                <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-8 border border-white/20 shadow-2xl">
-                  {/* Badge */}
-                  <div className="inline-flex items-center gap-2 mb-6">
-                    <span className="material-symbols-outlined text-accent text-xl">verified</span>
-                    <span className="text-sm font-medium text-white/90 uppercase tracking-wider">Actualizado Enero 2025</span>
-                  </div>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
+            <span className="material-symbols-outlined text-yellow-400">verified</span>
+            <span className="text-sm font-bold tracking-wide uppercase">Actualizado Enero 2025</span>
+          </div>
 
-                  {/* Main Heading */}
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.95] mb-6 text-white tracking-tight">
-                    Lo que nadie<br />
-                    <span className="text-accent">te cuenta</span><br />
-                    de Lisboa
-                  </h1>
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Lo que nadie<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">        
+              te cuenta
+            </span><br />
+            de Lisboa
+          </h1>
 
-                  {/* Subheading */}
-                  <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed mb-8 font-normal">
-                    Llevo 3 años viviendo aquí. Te digo dónde desayunar en Graça cuando aún no hay nadie. Qué mirador funciona a las 9am. Por qué el 28 a las 11 es un error.
-                  </p>
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
+            Llevo 3 años viviendo aquí. Te digo dónde desayunar en Graça cuando aún no hay nadie. Qué mirador funciona a las 9am. Por qué el 28 a las 11 es un error.
+          </p>
 
-                  {/* CTA Button */}
-                  <Link
-                    href="#itinerarios"
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold text-base shadow-soft-lg hover:shadow-editorial transition-all duration-300 hover:opacity-95 group/btn"
-                  >
-                    <span className="material-symbols-outlined text-xl">map</span>
-                    Quiero la ruta
-                    <span className="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform duration-300">arrow_forward</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Link: Mejores Hoteles */}
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
-              href="/donde-dormir"
-              className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
+              href="#itinerarios"
+              className="group flex items-center gap-3 px-8 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105"
             >
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg"
-                  alt="Hoteles en Lisboa"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary-dark/90"></div>
-              </div>
-
-              {/* Glassmorphism Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="material-symbols-outlined text-white text-2xl">bed</span>
-                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Hoteles</h3>
-                  </div>
-                  <p className="text-white/90 text-sm font-medium">Hostels sin fiesta, hoteles sin turistas</p>
-                </div>
-              </div>
+              <span className="material-symbols-outlined text-2xl">map</span>
+              Quiero la ruta
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-
-            {/* Quick Link: Dónde Comer */}
             <Link
-              href="/info-util"
-              className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
+              href="#free"
+              className="flex items-center gap-3 px-8 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-lg border-2 border-white/30 transition-all"
             >
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/julia-solonina-ci19YINguoc-unsplash.jpg"
-                  alt="Restaurantes en Lisboa"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/80 to-terracotta/90"></div>
-              </div>
-
-              {/* Glassmorphism Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="material-symbols-outlined text-white text-2xl">restaurant</span>
-                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Dónde Comer</h3>
-                  </div>
-                  <p className="text-white/90 text-sm font-medium">Donde comemos los viernes</p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Quick Link: Transporte */}
-            <Link
-              href="/transporte"
-              className="md:col-span-4 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg"
-                  alt="Transporte en Lisboa"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 to-primary/90"></div>
-              </div>
-
-              {/* Glassmorphism Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center p-6">
-                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20 text-center w-full">
-                  <div className="flex items-center justify-center gap-3 mb-3">
-                    <span className="material-symbols-outlined text-white text-2xl">directions_transit</span>
-                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Transporte</h3>
-                  </div>
-                  <p className="text-white/90 text-sm font-medium">El Viva Viagem, el 28 y evitar taxis</p>
-                </div>
-              </div>
+              <span className="material-symbols-outlined text-2xl">download</span>
+              Guía práctica gratis
             </Link>
           </div>
 
-          {/* Trust Indicators - Below Grid */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 pt-12 border-t border-border-soft">
-            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
-              <span className="material-symbols-outlined text-accent text-lg">check_circle</span>
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400">check_circle</span>
               <span>Descarga inmediata</span>
             </div>
-            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
-              <span className="material-symbols-outlined text-accent text-lg">verified</span>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-yellow-400">verified</span>
               <span>Hecho por quien vive aquí</span>
             </div>
-            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
-              <span className="material-symbols-outlined text-accent text-lg">workspace_premium</span>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
               <span>Garantía 48h</span>
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
         </div>
       </section>
 
