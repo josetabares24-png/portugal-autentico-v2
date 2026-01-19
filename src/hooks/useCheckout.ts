@@ -41,11 +41,11 @@ export function useCheckout() {
       }
 
       // Redirigir a Stripe Checkout
-      const result = await stripe.redirectToCheckout({
+      const result = await (stripe as any).redirectToCheckout({
         sessionId: data.sessionId,
       });
 
-      if (result.error) {
+      if (result?.error) {
         throw new Error(result.error.message);
       }
 
