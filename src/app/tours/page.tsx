@@ -386,8 +386,10 @@ export default function ToursPage() {
         <div className="max-w-6xl mx-auto px-4">
           {selectedCategory !== 'free' && selectedCategory !== 'all' && (
             <div className="mb-8">
-              <h2 className="text-3xl font-black text-slate-900 mb-2">
-                {categories.find(c => c.id === selectedCategory)?.emoji}{' '}
+              <h2 className="text-3xl font-black text-slate-900 mb-2 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  {categories.find(c => c.id === selectedCategory)?.icon}
+                </span>
                 {categories.find(c => c.id === selectedCategory)?.name}
               </h2>
               <p className="text-slate-600">
