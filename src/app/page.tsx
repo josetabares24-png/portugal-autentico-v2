@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { mainItineraries } from '@/data/itineraries';
 
+export default function HomePage() {
   return (
     <main className="bg-background-light">
       {/* Hero Section */}

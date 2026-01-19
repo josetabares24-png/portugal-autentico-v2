@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useCheckout } from '@/hooks/useCheckout';
 import { ProductId } from '@/lib/stripe-products';
 import { useUser } from '@clerk/nextjs';
@@ -14,17 +15,42 @@ interface BuyButtonProps {
 export function BuyButton({ productId, className = '', children }: BuyButtonProps) {
   const { redirectToCheckout, loading, error } = useCheckout();
   const { isSignedIn, isLoaded } = useUser();
+  const [localError, setLocalError] = useState<string | null>(null);
 
-  const handleClick = () => {
-    if (!isLoaded) return;
-    
-    if (!isSignedIn) {
-      // El error se mostrará automáticamente
+  const handleClick = async () => {
+    if (!isLoaded) {
+      setLocalError('Cargando información del usuario...');
       return;
     }
     
-    redirectToCheckout(productId);
+    setLocalError(null); // Limpiar error previo
+    
+    if (!isSignedIn) {
+      setLocalError('Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta.');
+      return;
+    }
+    
+    if (!productId) {
+      setLocalError('Error: Producto no especificado. Por favor, recarga la página.');
+      return;
+    }
+    
+    try {
+      console.log('BuyButton: Iniciando checkout para producto:', productId);
+      await redirectToCheckout(productId);
+      // Si llegamos aquí sin error, la redirección debería haber ocurrido
+    } catch (err: any) {
+      console.error('BuyButton: Error capturado:', err);
+      // El error ya se maneja en useCheckout y se muestra en displayError
+      // Pero podemos agregar un mensaje más específico aquí si es necesario
+      if (err.message?.includes('iniciar sesión') || err.message?.includes('401')) {
+        setLocalError(err.message || 'Debes iniciar sesión para comprar.');
+      }
+    }
   };
+  
+  // Combinar errores del hook y locales
+  const displayError = error || localError;
 
   // Si no está autenticado, mostrar mensaje claro
   if (isLoaded && !isSignedIn) {
@@ -53,8 +79,17 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
       >
         {loading ? 'Procesando...' : (children || 'Comprar ahora')}
       </button>
-      {error && (
-        <p className="text-red-500 text-sm mt-2 text-center">{error}</p>
+      {displayError && (
+        <div className="mt-2 text-center">
+          <p className="text-red-600 text-sm font-medium mb-2">{displayError}</p>
+          {displayError.includes('iniciar sesión') && (
+            <SignInButton mode="modal">
+              <button className="text-xs text-primary hover:underline font-semibold">
+                Iniciar sesión ahora →
+              </button>
+            </SignInButton>
+          )}
+        </div>
       )}
     </div>
   );
