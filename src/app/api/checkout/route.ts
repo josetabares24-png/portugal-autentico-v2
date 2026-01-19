@@ -48,12 +48,12 @@ export async function POST(request: NextRequest) {
     const product = STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS];
 
     // Obtener información del precio desde Stripe para usar el nombre real
-    let priceName = product.name;
+    let priceName: string = product.name;
     try {
       const price = await stripe.prices.retrieve(product.priceId);
       if (price.product) {
         const stripeProduct = await stripe.products.retrieve(price.product as string);
-        priceName = stripeProduct.name;
+        priceName = stripeProduct.name || product.name;
       }
     } catch (err) {
       console.warn('No se pudo obtener nombre del producto desde Stripe, usando nombre local:', err);
