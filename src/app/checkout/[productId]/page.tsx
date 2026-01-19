@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 import Link from 'next/link';
+import { useUser, SignInButton } from '@clerk/nextjs';
 
 export default function CheckoutPage() {
   const router = useRouter();
   const params = useParams();
   const productId = params.productId as string;
+  const { isSignedIn, isLoaded } = useUser();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -132,6 +134,27 @@ export default function CheckoutPage() {
               </ul>
             </div>
 
+            {/* Auth Required Message */}
+            {isLoaded && !isSignedIn && (
+              <div className="mb-6 p-6 bg-amber-50 border-2 border-amber-200 rounded-xl">
+                <div className="flex items-start gap-3 mb-4">
+                  <span className="material-symbols-outlined text-amber-600 text-2xl">info</span>
+                  <div>
+                    <p className="font-bold text-amber-900 mb-1">Inicia sesión para continuar</p>
+                    <p className="text-sm text-amber-700">
+                      Necesitas crear una cuenta (gratis) para comprar guías y acceder a tus descargas.
+                    </p>
+                  </div>
+                </div>
+                <SignInButton mode="modal">
+                  <button className="w-full py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                    <span className="material-symbols-outlined">login</span>
+                    Iniciar sesión o Crear cuenta
+                  </button>
+                </SignInButton>
+              </div>
+            )}
+
             {/* Error Message */}
             {error && (
               <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-start gap-3">
@@ -146,13 +169,18 @@ export default function CheckoutPage() {
             {/* Checkout Button */}
             <button
               onClick={handleCheckout}
-              disabled={loading}
+              disabled={loading || !isSignedIn}
               className="w-full py-4 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 disabled:from-slate-300 disabled:to-slate-400 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
             >
               {loading ? (
                 <>
                   <span className="material-symbols-outlined animate-spin">progress_activity</span>
                   Procesando...
+                </>
+              ) : !isSignedIn ? (
+                <>
+                  <span className="material-symbols-outlined">lock</span>
+                  Inicia sesión para pagar
                 </>
               ) : (
                 <>
