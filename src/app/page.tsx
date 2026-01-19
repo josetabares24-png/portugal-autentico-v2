@@ -37,8 +37,8 @@ export default function HomePage() {
 
   return (
     <main className="bg-background-light">
-      {/* Hero Section - CRO Optimized */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -52,38 +52,41 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
             <span className="material-symbols-outlined text-base">verified</span>
             <span className="text-sm font-semibold tracking-wide">Actualizado Enero 2025</span>
           </div>
 
-          {/* Main Heading - CRO Título */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black leading-[1.1] mb-6 text-white tracking-tight drop-shadow-lg text-balance max-w-5xl mx-auto">
-            Disfruta de la Lisboa que los turistas nunca llegan a conocer
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
+            Lo que nadie<br />
+            <span className="text-accent">te cuenta</span><br />
+            de Lisboa
           </h1>
 
-          {/* Subheading - CRO Optimized */}
-          <p className="text-lg md:text-xl text-white/95 max-w-4xl mx-auto mb-10 leading-relaxed font-normal">
-            Ahorra horas de planificación y evita las trampas para turistas con las rutas exactas y secretos que solo conocemos los que vivimos aquí tras 3 años en la ciudad
+          {/* Subheading */}
+          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+            Llevo 3 años viviendo aquí. Te digo dónde desayunar en Graça cuando aún no hay nadie. Qué mirador funciona a las 9am. Por qué el 28 a las 11 es un error.
           </p>
 
-          {/* CTA Buttons - CRO Optimized */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
               href="#itinerarios"
-              className="group flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              style={{ backgroundColor: '#D4A574', color: '#1A1614' }}
+              className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              Conseguir mis Guías
-              <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <span className="material-symbols-outlined text-xl">map</span>
+              Ver las rutas
+              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
             <Link
               href="#free"
-              className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border-2 border-white/30 transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border border-white/30 transition-all duration-300"
             >
-              Ver muestra gratuita
+              <span className="material-symbols-outlined text-xl">download</span>
+              Guía práctica gratis
             </Link>
           </div>
 
@@ -110,46 +113,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Benefits Section - CRO 3 Columns */}
-      <section className="py-20" style={{ backgroundColor: '#FAFAF8' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-10">
-            {/* Benefit 1 */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="material-symbols-outlined text-5xl" style={{ color: '#D4A574' }}>schedule</span>
-              </div>
-              <h3 className="text-2xl font-display font-black text-text-main mb-4">Sin colas ni esperas</h3>
-              <p className="text-text-secondary leading-relaxed">
-                Evita las masas en el Tranvía 28 y miradores saturados
-              </p>
-            </div>
-
-            {/* Benefit 2 */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="material-symbols-outlined text-5xl" style={{ color: '#D4A574' }}>map</span>
-              </div>
-              <h3 className="text-2xl font-display font-black text-text-main mb-4">Rutas optimizadas</h3>
-              <p className="text-text-secondary leading-relaxed">
-                Itinerarios diseñados para aprovechar cada minuto
-              </p>
-            </div>
-
-            {/* Benefit 3 */}
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="material-symbols-outlined text-5xl" style={{ color: '#D4A574' }}>restaurant</span>
-              </div>
-              <h3 className="text-2xl font-display font-black text-text-main mb-4">Come como un local</h3>
-              <p className="text-text-secondary leading-relaxed">
-                Mi lista personal de tascas con comida increíble y precios reales
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Bar */}
       <section className="py-10 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -172,10 +135,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Itineraries - Premium Cards CRO */}
-      <section className="py-24 bg-background-light" id="itinerarios">
+      {/* Featured Itineraries */}
+      <section className="py-32 bg-background-light" id="itinerarios">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
               Rutas verificadas
             </span>
@@ -187,31 +150,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Cards Grid - Premium Design */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-10 mb-16">
             {featuredItineraries.map((itinerary) => (
               <div
                 key={itinerary.id}
-                className={`group bg-white rounded-2xl overflow-hidden shadow-lg border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 relative ${
+                className={`group bg-white rounded-3xl overflow-hidden shadow-soft border border-border-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1 ${
                   itinerary.featured
-                    ? 'border-[#D4A574] shadow-xl'
-                    : 'border-border-soft'
+                    ? 'border-2 border-primary shadow-editorial relative'
+                    : ''
                 }`}
               >
-                {/* Badge LA MÁS ELEGIDA */}
                 {itinerary.featured && (
-                  <div className="absolute top-0 left-0 right-0 text-center py-3 font-bold text-xs z-10 tracking-wider uppercase" style={{ backgroundColor: '#D4A574', color: '#1A1614' }}>
-                    LA MÁS ELEGIDA
+                  <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-2.5 font-semibold text-xs z-10 tracking-wider uppercase">
+                    Más vendida
                   </div>
                 )}
 
-                {/* Image */}
-                <div className={`relative h-64 ${itinerary.featured ? 'mt-11' : ''}`}>
+                <div className={`relative h-64 ${itinerary.featured ? 'mt-10' : ''}`}>
                   <Image
                     src={itinerary.image}
                     alt={itinerary.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute top-5 left-5">
                     <span className="bg-primary/95 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-semibold">
@@ -221,37 +182,17 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>        
                 </div>
 
-                {/* Content */}
                 <div className="p-8">
                   <h3 className="text-2xl font-display font-black text-text-main mb-4 leading-tight">{itinerary.title}</h3>
                   <p className="text-text-secondary mb-6 leading-relaxed">{itinerary.description}</p>
-                  
-                  {/* Check List - Premium */}
-                  <div className="space-y-3 mb-8">
-                    <div className="flex items-center gap-3">
-                      <span className="material-symbols-outlined text-green-600 text-xl flex-shrink-0">check_circle</span>
-                      <span className="text-sm text-text-secondary font-medium">Mapa interactivo móvil</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="material-symbols-outlined text-green-600 text-xl flex-shrink-0">check_circle</span>
-                      <span className="text-sm text-text-secondary font-medium">Recomendaciones reales</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="material-symbols-outlined text-green-600 text-xl flex-shrink-0">check_circle</span>
-                      <span className="text-sm text-text-secondary font-medium">Actualizaciones de por vida</span>
-                    </div>
-                  </div>
-
-                  {/* Price & CTA */}
-                  <div className="flex items-center justify-between pt-6 border-t-2 border-border-soft">
+                  <div className="flex items-center justify-between pt-6 border-t border-border-soft">
                     <div className="text-4xl font-display font-black text-primary">{itinerary.price}€</div>
                     <Link
                       href={itinerary.href}
-                      className="group flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                      style={{ backgroundColor: itinerary.featured ? '#D4A574' : '#1B4F72', color: itinerary.featured ? '#1A1614' : '#FFFFFF' }}
+                      className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
                     >
-                      Comprar ahora
-                      <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      Ver detalles
+                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </Link>
                   </div>
                 </div>
@@ -267,33 +208,6 @@ export default function HomePage() {
               Ver todas las rutas
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Authority Block - CRO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-8 bg-gradient-to-br from-background-cream to-white rounded-3xl p-10 shadow-lg border border-border-soft">
-            <div className="flex-shrink-0">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
-                <Image
-                  src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-                  alt="Jose Tabares"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-3xl font-display font-black text-text-main mb-4">
-                Soy Jose Tabares
-              </h3>
-              <p className="text-lg text-text-secondary leading-relaxed font-medium">
-                Tras 3 años viviendo aquí, estas guías son mi experiencia real convertida en tu mejor viaje
-              </p>
-            </div>
           </div>
         </div>
       </section>
