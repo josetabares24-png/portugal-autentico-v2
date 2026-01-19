@@ -5,8 +5,8 @@ export default function HomePage() {
   const featuredItineraries = [
     {
       id: 'lisboa-1-dia',
-      title: 'Lisboa Esencial',
-      description: 'Lo mejor de Lisboa en un día perfectamente organizado.',
+      title: 'Un día en Lisboa',
+      description: 'Dónde desayunar en Graça sin turistas. Qué mirador está vacío a las 9am.',
       duration: '1 DÍA',
       price: 1.99,
       image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
@@ -15,8 +15,8 @@ export default function HomePage() {
     },
     {
       id: 'lisboa-2-dias',
-      title: 'Lisboa Completa',
-      description: 'Fin de semana perfecto con Belém, Alfama y barrios con encanto.',
+      title: 'Fin de semana completo',
+      description: 'Belém temprano para evitar colas. Alfama cuando las calles están tranquilas.',
       duration: '2 DÍAS',
       price: 2.99,
       image: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
@@ -25,8 +25,8 @@ export default function HomePage() {
     },
     {
       id: 'lisboa-3-dias',
-      title: 'Lisboa + Sintra',
-      description: 'Experiencia completa con excursión a Sintra y Cascais.',
+      title: 'Lisboa y alrededores',
+      description: 'Sintra en un día sin agobios. Dónde aparcar sin pagar el parking caro.',
       duration: '3 DÍAS',
       price: 3.99,
       image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
@@ -43,157 +43,156 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-            alt="Lisboa panorama"
+            alt="Vista de Lisboa desde un mirador"
             fill
             className="object-cover scale-110"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/65 to-slate-900/80"></div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <span className="material-symbols-outlined text-yellow-400">verified</span>
-            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2025</span>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-white border border-white/20 mb-12">
+            <span className="material-symbols-outlined text-accent text-lg">verified</span>
+            <span className="text-sm font-medium tracking-wide uppercase">Actualizado Enero 2025</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
-            Descubre Lisboa<br />
-            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">        
-              como un local
-            </span>
+          <h1 className="text-6xl md:text-9xl font-display font-black leading-[0.95] mb-10 text-white tracking-tight">
+            Lo que nadie<br />
+            <span className="text-accent">te cuenta</span><br />
+            de Lisboa
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
-            Guías premium creadas por quien vive en Lisboa. Sin turistadas, solo experiencias auténticas que recordarás para siempre.
+          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-16 leading-relaxed font-normal">
+            Vivimos aquí. Te decimos dónde desayunar en Graça sin turistas, qué mirador está vacío a las 9am, y por qué Belém a las 11 es un error.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
             <Link
               href="#itinerarios"
-              className="group flex items-center gap-3 px-8 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105"
+              className="group flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold text-lg shadow-soft-lg hover:shadow-editorial transition-all duration-300 hover:opacity-95"
             >
-              <span className="material-symbols-outlined text-2xl">map</span>
-              Ver Itinerarios Premium
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <span className="material-symbols-outlined text-xl">map</span>
+              Ver las rutas
+              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
             </Link>
             <Link
               href="#free"
-              className="flex items-center gap-3 px-8 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-lg border-2 border-white/30 transition-all"
+              className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-medium text-lg border border-white/30 transition-all duration-300 hover:opacity-90"
             >
-              <span className="material-symbols-outlined text-2xl">download</span>
-              Guía Gratis
+              <span className="material-symbols-outlined text-xl">download</span>
+              Guía práctica gratis
             </Link>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-green-400">check_circle</span>
+          <div className="flex flex-wrap justify-center gap-12 text-white/75 text-sm font-medium">
+            <div className="flex items-center gap-2.5">
+              <span className="material-symbols-outlined text-accent text-lg">check_circle</span>
               <span>Descarga inmediata</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-yellow-400">verified</span>
-              <span>Creado por locales</span>
+            <div className="flex items-center gap-2.5">
+              <span className="material-symbols-outlined text-accent text-lg">verified</span>
+              <span>Hecho por quien vive aquí</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
+            <div className="flex items-center gap-2.5">
+              <span className="material-symbols-outlined text-accent text-lg">workspace_premium</span>
               <span>Garantía 48h</span>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-60">expand_more</span>
         </div>
       </section>
 
       {/* Features Bar */}
-      <section className="py-6 bg-gradient-to-r from-primary to-orange-500 text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-8 text-center">
+      <section className="py-10 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap items-center justify-center gap-16 text-center">
             <div>
-              <div className="text-4xl font-black">100%</div>
-              <div className="text-sm font-medium opacity-90">Actualizado</div>
+              <div className="text-5xl font-display font-black mb-1">100%</div>
+              <div className="text-sm font-medium opacity-90">Verificado</div>
             </div>
-            <div className="hidden sm:block w-px h-12 bg-white/30"></div>
+            <div className="hidden sm:block w-px h-16 bg-white/20"></div>
             <div>
-              <div className="text-4xl font-black">Local</div>
-              <div className="text-sm font-medium opacity-90">Hecho por Lisboetas</div>
+              <div className="text-5xl font-display font-black mb-1">Local</div>
+              <div className="text-sm font-medium opacity-90">Por lisboetas</div>
             </div>
-            <div className="hidden sm:block w-px h-12 bg-white/30"></div>
+            <div className="hidden sm:block w-px h-16 bg-white/20"></div>
             <div>
-              <div className="text-4xl font-black">8</div>
-              <div className="text-sm font-medium opacity-90">Guías Premium</div>
+              <div className="text-5xl font-display font-black mb-1">8</div>
+              <div className="text-sm font-medium opacity-90">Rutas completas</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Itineraries */}
-      <section className="py-24 bg-white" id="itinerarios">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wide mb-4">
-              Itinerarios Premium
+      <section className="py-32 bg-background-light" id="itinerarios">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <span className="inline-block px-5 py-2.5 bg-primary/8 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
+              Rutas verificadas
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-              Elige tu <span className="text-primary">aventura</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black text-text-main mb-8 tracking-tight">
+              Elige tu <span className="text-primary">ruta</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Cada guía incluye restaurantes locales, spots secretos de fotos y mapas offline
+            <p className="text-xl text-text-secondary max-w-xl mx-auto leading-relaxed">
+              Cada guía incluye restaurantes donde comemos nosotros, miradores sin multitudes y mapas que funcionan offline.
             </p>
           </div>
 
           {/* Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-10 mb-16">
             {featuredItineraries.map((itinerary) => (
               <div
                 key={itinerary.id}
-                className={`group bg-white rounded-3xl overflow-hidden shadow-lg border transition-all hover:-translate-y-2 ${
+                className={`group bg-white rounded-3xl overflow-hidden shadow-soft border border-border-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1 ${
                   itinerary.featured
-                    ? 'border-4 border-primary shadow-2xl relative'
-                    : 'border-slate-200'
+                    ? 'border-2 border-primary shadow-editorial relative'
+                    : ''
                 }`}
               >
                 {itinerary.featured && (
-                  <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-2 font-bold text-sm z-10">
-                    ⭐ MÁS VENDIDO
+                  <div className="absolute top-0 left-0 right-0 bg-primary text-white text-center py-2.5 font-semibold text-xs z-10 tracking-wider uppercase">
+                    Más vendida
                   </div>
                 )}
 
-                <div className={`relative h-56 ${itinerary.featured ? 'mt-8' : ''}`}>
+                <div className={`relative h-64 ${itinerary.featured ? 'mt-10' : ''}`}>
                   <Image
                     src={itinerary.image}
                     alt={itinerary.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute top-5 left-5">
+                    <span className="bg-primary/95 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-semibold">
                       {itinerary.duration}
                     </span>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>        
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>        
                 </div>
 
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{itinerary.title}</h3>
-                  <p className="text-slate-600 mb-6">{itinerary.description}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="text-3xl font-black text-primary">{itinerary.price}€</div>
+                <div className="p-10">
+                  <h3 className="text-2xl font-display font-black text-text-main mb-4 leading-tight">{itinerary.title}</h3>
+                  <p className="text-text-secondary mb-8 leading-relaxed">{itinerary.description}</p>
+                  <div className="flex items-center justify-between pt-6 border-t border-border-soft">
+                    <div className="text-4xl font-display font-black text-primary">{itinerary.price}€</div>
                     <Link
                       href={itinerary.href}
-                      className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all hover:scale-105"
+                      className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium text-sm transition-all duration-300 hover:opacity-90"
                     >
-                      Ver guía
-                      <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                      Ver ruta
+                      <span className="material-symbols-outlined text-base">arrow_forward</span>
                     </Link>
                   </div>
                 </div>
@@ -204,151 +203,151 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-lg transition-all"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-text-main hover:bg-text-secondary text-white rounded-xl font-medium text-base transition-all duration-300 hover:opacity-90"
             >
-              Ver los 8 itinerarios
-              <span className="material-symbols-outlined">arrow_forward</span>
+              Ver todas las rutas
+              <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-background-cream">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-              ¿Por qué <span className="text-primary">Estaba en Lisboa</span>?
+      <section className="py-32 bg-background-cream">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <h2 className="text-5xl md:text-7xl font-display font-black text-text-main mb-6">
+              Por qué <span className="text-primary">nosotros</span>
             </h2>
-            <p className="text-xl text-slate-600">No somos turistas haciendo guías. Vivimos aquí.</p>
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">No somos turistas haciendo guías. Vivimos aquí.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 text-center hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-white rounded-3xl p-12 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-24 h-24 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-8">
                 <span className="material-symbols-outlined text-primary text-5xl">home</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Creadas por Locales</h3>
-              <p className="text-slate-600">Vivimos en Lisboa. Conocemos los sitios donde van los lisboetas, no los turistas.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-5">Hechas por locales</h3>
+              <p className="text-text-secondary leading-relaxed">Vivimos en Lisboa. Conocemos los sitios donde vamos nosotros, no donde mandan los tours.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 text-center hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white rounded-3xl p-12 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-24 h-24 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-8">
                 <span className="material-symbols-outlined text-primary text-5xl">update</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Siempre Actualizadas</h3>
-              <p className="text-slate-600">Verificamos cada restaurante y lugar cada mes. Sin sorpresas de sitios cerrados.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-5">Verificadas cada mes</h3>
+              <p className="text-text-secondary leading-relaxed">Comprobamos cada restaurante y lugar cada mes. Sin sorpresas de sitios cerrados o cambiados.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 text-center hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white rounded-3xl p-12 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-24 h-24 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-8">
                 <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Garantía Total</h3>
-              <p className="text-slate-600">48 horas de garantía. Si no te gusta, te devolvemos el dinero sin preguntas.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-5">Garantía</h3>
+              <p className="text-text-secondary leading-relaxed">48 horas. Si no te gusta, te devolvemos el dinero. Sin preguntas.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-bold uppercase tracking-wide mb-4">
-              ⭐ Testimonios Reales
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <span className="inline-block px-5 py-2.5 bg-accent/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
+              Lo que dicen
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-              Lo que dicen nuestros <span className="text-primary">viajeros</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black text-text-main mb-6">
+              Quienes <span className="text-primary">las usaron</span>
             </h2>
-            <p className="text-xl text-slate-600">
-              Más de 500 personas han usado nuestras guías. Esto es lo que opinan.
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+              Usado por 500 personas que querían evitar las multitudes y comer donde comemos nosotros.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonio 1 */}
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
                 ))}
               </div>
-              <p className="text-slate-700 mb-6 italic leading-relaxed">
-                "La guía de 2 días me salvó el viaje. Restaurantes buenísimos y cero turistadas. El mapa interactivo es brutal. Ya compré la de Porto."
+              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
+                "La guía de 2 días me salvó el viaje. Restaurantes buenísimos y cero turistadas. El mapa interactivo funciona perfecto offline. Ya compré la de Porto."
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
+                <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
                   A
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Ana M.</p>
-                  <p className="text-sm text-slate-500">Barcelona • Abril 2025</p>
+                  <p className="font-semibold text-text-main">Ana M.</p>
+                  <p className="text-sm text-text-muted">Barcelona • Abril 2025</p>
                 </div>
               </div>
             </div>
 
             {/* Testimonio 2 */}
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
                 ))}
               </div>
-              <p className="text-slate-700 mb-6 italic leading-relaxed">
-                "Compré 3 guías en PDF en otros sitios. Esta es LA MEJOR con diferencia. El nivel de detalle y los restaurantes son TOP."
+              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
+                "Compré 3 guías en PDF en otros sitios. Esta es la mejor con diferencia. El nivel de detalle y los restaurantes son exactamente lo que buscaba."
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
+                <div className="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
                   C
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Carlos R.</p>
-                  <p className="text-sm text-slate-500">Madrid • Marzo 2025</p>
+                  <p className="font-semibold text-text-main">Carlos R.</p>
+                  <p className="text-sm text-text-muted">Madrid • Marzo 2025</p>
                 </div>
               </div>
             </div>
 
             {/* Testimonio 3 */}
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:shadow-xl transition-all">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-yellow-400 text-xl">star</span>
+                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
                 ))}
               </div>
-              <p className="text-slate-700 mb-6 italic leading-relaxed">
-                "Mi pareja y yo seguimos la guía romántica al pie de la letra. Restaurante con vistas al Tajo espectacular. Pedida de mano exitosa 💍"
+              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
+                "Seguimos la guía romántica al pie de la letra. Restaurante con vistas al Tajo increíble. Pedida de mano exitosa."
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
+                <div className="w-14 h-14 bg-terracotta/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
                   M
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">María & Javi</p>
-                  <p className="text-sm text-slate-500">Sevilla • Febrero 2025</p>
+                  <p className="font-semibold text-text-main">María & Javi</p>
+                  <p className="text-sm text-text-muted">Sevilla • Febrero 2025</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Stats Bar */}
-          <div className="mt-12 bg-gradient-to-r from-primary to-orange-500 rounded-2xl p-8 text-white">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="mt-20 bg-primary rounded-3xl p-12 text-white shadow-editorial">
+            <div className="grid md:grid-cols-4 gap-12 text-center">
               <div>
-                <div className="text-4xl font-black mb-2">500+</div>
-                <div className="text-white/80 text-sm">Viajeros felices</div>
+                <div className="text-5xl font-display font-black mb-2">500+</div>
+                <div className="text-white/80 text-sm font-medium">Personas</div>
               </div>
               <div>
-                <div className="text-4xl font-black mb-2">4.9/5</div>
-                <div className="text-white/80 text-sm">Valoración media</div>
+                <div className="text-5xl font-display font-black mb-2">4.9/5</div>
+                <div className="text-white/80 text-sm font-medium">Valoración</div>
               </div>
               <div>
-                <div className="text-4xl font-black mb-2">98%</div>
-                <div className="text-white/80 text-sm">Recomendarían</div>
+                <div className="text-5xl font-display font-black mb-2">98%</div>
+                <div className="text-white/80 text-sm font-medium">Recomendarían</div>
               </div>
               <div>
-                <div className="text-4xl font-black mb-2">24h</div>
-                <div className="text-white/80 text-sm">Soporte rápido</div>
+                <div className="text-5xl font-display font-black mb-2">24h</div>
+                <div className="text-white/80 text-sm font-medium">Respuesta</div>
               </div>
             </div>
           </div>
@@ -356,26 +355,26 @@ export default function HomePage() {
       </section>
 
       {/* Info Útil CTA */}
-      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden" id="free">
-        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">info</span>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ¿Primera vez en Lisboa?
+      <section className="py-32 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden" id="free">
+        <div className="absolute inset-0 opacity-5 bg-azulejo-pattern"></div>
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
+          <span className="material-symbols-outlined text-white text-8xl mb-8 inline-block opacity-80">info</span>
+          <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-8 tracking-tight">
+            Primera vez en Lisboa
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Consulta nuestra guía práctica gratuita con transporte, precios, clima y consejos esenciales
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Guía práctica gratuita con transporte, presupuestos reales, mejor época y consejos esenciales.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
             <Link
               href="/info-util"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-semibold text-lg shadow-editorial hover:opacity-95 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-2xl">explore</span>
-              Ver Guía Práctica Gratis
+              <span className="material-symbols-outlined text-xl">explore</span>
+              Ver guía práctica
             </Link>
           </div>
-          <p className="text-white/80 text-sm mt-6">✅ Transporte · ✅ Presupuestos · ✅ Mejor época · ✅ 100% gratis</p>
+          <p className="text-white/75 text-sm font-medium">Transporte · Presupuestos · Mejor época · 100% gratis</p>
         </div>
       </section>
     </main>
