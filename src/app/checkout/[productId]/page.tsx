@@ -173,22 +173,22 @@ export default function CheckoutPage() {
                 </ul>
               </div>
 
-            {/* Auth Recommended Message - No bloquea, solo recomienda */}
+            {/* Auth Required Message - OBLIGATORIO */}
             {isLoaded && !isSignedIn && (
-              <div className="mb-8 p-6 bg-gradient-to-br from-blue-50 to-primary/5 border-2 border-primary/20 rounded-3xl">
+              <div className="mb-8 p-6 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300 rounded-3xl">
                 <div className="flex items-start gap-4 mb-4">
-                  <span className="material-symbols-outlined text-primary text-3xl flex-shrink-0">info</span>
+                  <span className="material-symbols-outlined text-red-600 text-3xl flex-shrink-0">lock</span>
                   <div>
-                    <p className="font-bold text-slate-900 mb-1 text-base">Recomendado: Crear cuenta</p>
-                    <p className="text-slate-600 text-sm">
-                      Puedes comprar sin cuenta, pero con una cuenta gratuita tendrás acceso inmediato a tus guías y podrás descargarlas cuando quieras.
+                    <p className="font-black text-red-900 mb-2 text-lg">Debes iniciar sesión para comprar</p>
+                    <p className="text-red-700 text-sm font-medium mb-1">
+                      Las guías se guardan en tu cuenta para acceso permanente. Necesitas una cuenta gratuita para continuar.
                     </p>
                   </div>
                 </div>
                 <SignInButton mode="modal">
-                  <button className="w-full py-3 bg-primary/10 hover:bg-primary/20 text-primary font-semibold rounded-xl transition-all flex items-center justify-center gap-2 text-sm border border-primary/30">
-                    <span className="material-symbols-outlined text-lg">login</span>
-                    Crear cuenta gratis (recomendado)
+                  <button className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg">
+                    <span className="material-symbols-outlined text-xl">login</span>
+                    Iniciar sesión para comprar
                   </button>
                 </SignInButton>
               </div>
@@ -214,8 +214,8 @@ export default function CheckoutPage() {
 
               {/* Checkout Button */}
               <button
+                disabled={!isSignedIn || loading}
                 onClick={handleCheckout}
-                disabled={loading}
                 className="w-full py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 disabled:from-slate-300 disabled:to-slate-400 text-white font-black text-xl rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-lg flex items-center justify-center gap-3"
               >
                 {loading ? (

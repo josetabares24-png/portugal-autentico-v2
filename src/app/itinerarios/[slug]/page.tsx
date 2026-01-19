@@ -144,6 +144,19 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  // Mapear slug a productId para el checkout
+  const productIdMap: Record<string, string> = {
+    'lisboa-1-dia-lo-esencial': 'lisboa-1-dia-lo-esencial',
+    'lisboa-2-dias-completo': 'lisboa-2-dias-completo',
+    'lisboa-3-dias-premium': 'lisboa-3-dias-premium',
+    'lisboa-full-week': 'lisboa-full-week',
+    'lisboa-romantica': 'lisboa-romantica',
+    'lisboa-familiar': 'lisboa-familiar',
+    'lisboa-fotografia': 'lisboa-fotografia',
+  };
+  
+  const productId = productIdMap[slug] || slug;
+
   return (
     <main>
       <section className="relative py-20 md:py-28">
@@ -221,9 +234,13 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
                     <p className="text-sm text-slate-500">Pago unico - Acceso de por vida</p>
                   </div>
                   
-                  <button className="w-full py-4 rounded-xl font-semibold text-lg text-white mb-4 hover:scale-105 transition-transform" style={{background: 'var(--color-accent)'}}>
+                  <Link 
+                    href={`/checkout/${productId}`}
+                    className="w-full py-4 rounded-xl font-semibold text-lg text-white mb-4 hover:scale-105 transition-transform text-center block"
+                    style={{background: 'var(--color-accent)'}}
+                  >
                     Comprar ahora
-                  </button>
+                  </Link>
                   
                   <div className="space-y-3 text-sm text-slate-600">
                     <div className="flex items-center gap-2">

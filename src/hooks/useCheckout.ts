@@ -25,29 +25,17 @@ export function useCheckout() {
 
       const data = await response.json();
 
-      if (data.error) {
-        throw new Error(data.error);
+      if (!response.ok) {
+        const errorMessage = data.error || 'Error al crear sesión de checkout';
+        throw new Error(errorMessage);
       }
 
-      if (!data.sessionId) {
-        throw new Error('No se recibió ID de sesión');
+      if (!data.url) {
+        throw new Error('No se recibió URL de checkout');
       }
 
-      // Obtener instancia de Stripe
-      const stripe = await stripePromise;
-      
-      if (!stripe) {
-        throw new Error('No se pudo cargar Stripe');
-      }
-
-      // Redirigir a Stripe Checkout
-      const result = await (stripe as any).redirectToCheckout({
-        sessionId: data.sessionId,
-      });
-
-      if (result?.error) {
-        throw new Error(result.error.message);
-      }
+      // Redirigir directamente a Stripe Checkout usando la URL
+      window.location.href = data.url;
 
     } catch (err: any) {
       console.error('Error en checkout:', err);

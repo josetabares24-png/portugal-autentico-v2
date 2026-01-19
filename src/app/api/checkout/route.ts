@@ -18,8 +18,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 export async function POST(request: NextRequest) {
   try {
-    // Obtener userId si está autenticado (opcional)
+    // Verificar autenticación OBLIGATORIA - las guías se guardan con el usuario
     const { userId } = await auth();
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: 'Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta para acceso permanente.' },
+        { status: 401 }
+      );
+    }
+
     const { productId } = await request.json();
 
     // Validación de input
@@ -62,11 +70,12 @@ export async function POST(request: NextRequest) {
       mode: 'payment',
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/exito?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/itinerarios`,
-      customer_email: undefined, // Stripe pedirá el email si no está autenticado
       metadata: {
         productId: productId,
-        userId: userId,
+        userId: userId, // Guardamos userId para asociar la compra con el usuario
       },
+      // Customer ID para asociar con Clerk user
+      customer: undefined, // Stripe creará el customer automáticamente
     });
 
     if (!session.url) {
