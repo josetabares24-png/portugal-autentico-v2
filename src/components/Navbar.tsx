@@ -47,7 +47,7 @@ export default function Navbar() {
               onMouseLeave={() => setUtilidadesDropdownOpen(false)}
             >
               <button className={`px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-slate-50 flex items-center gap-1.5 ${
-                ['/apps', '/presupuesto', '/transporte', '/donde-dormir', '/info-util', '/seguridad'].some(p => pathname.startsWith(p))
+                ['/apps', '/presupuesto', '/transporte', '/donde-dormir', '/info-util'].some(p => pathname.startsWith(p))
                   ? 'text-primary bg-primary/10'
                   : 'text-slate-700'
               }`}>
@@ -79,10 +79,6 @@ export default function Navbar() {
                   <Link href="/info-util" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
                     <span className="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">info</span>
                     <span className="font-semibold text-sm">Info Útil</span>
-                  </Link>
-                  <Link href="/seguridad" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
-                    <span className="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">verified_user</span>
-                    <span className="font-semibold text-sm">Seguridad</span>
                   </Link>
                 </div>
               )}
@@ -167,10 +163,6 @@ export default function Navbar() {
                 <Link href="/info-util" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
                   <span className="material-symbols-outlined text-lg">info</span>
                   <span>Info Útil</span>
-                </Link>
-                <Link href="/seguridad" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
-                  <span className="material-symbols-outlined text-lg">verified_user</span>
-                  <span>Seguridad</span>
                 </Link>
               </div>
 

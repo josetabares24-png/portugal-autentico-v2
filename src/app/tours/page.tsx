@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ToursPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -12,15 +13,15 @@ export default function ToursPage() {
   // 2. Ve a "Herramientas" > "Enlaces de afiliado"
   // 3. Copia tu "Affiliate ID" (aparece como aid=XXXXX)
   // 4. Reemplaza "TU_AFFILIATE_ID" con ese número
-  const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 URGENTE: Reemplazar con tu Civitatis Affiliate ID (contacto@estabaenlisboa.com)
+  const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID";
 
   const categories = [
-    { id: 'all', name: 'Todos', emoji: '🗺️' },
-    { id: 'free', name: 'Free Tours', emoji: '🎁' },
-    { id: 'day-trips', name: 'Excursiones', emoji: '🚌' },
-    { id: 'food', name: 'Gastronómicos', emoji: '🍷' },
-    { id: 'culture', name: 'Cultura', emoji: '🎭' },
-    { id: 'adventure', name: 'Aventura', emoji: '🌊' }
+    { id: 'all', name: 'Todos', icon: 'map' },
+    { id: 'free', name: 'Free Tours', icon: 'redeem' },
+    { id: 'day-trips', name: 'Excursiones', icon: 'directions_bus' },
+    { id: 'food', name: 'Gastronómicos', icon: 'restaurant' },
+    { id: 'culture', name: 'Cultura', icon: 'theater_comedy' },
+    { id: 'adventure', name: 'Aventura', icon: 'sports_sailing' }
   ];
 
   const tours = [
@@ -199,29 +200,44 @@ export default function ToursPage() {
     : tours.filter(tour => tour.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-background-light">
+    <main className="bg-background-light">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-teal-900 to-blue-700 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-500 rounded-full blur-3xl"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            alt="Lisboa panorama"
+            fill
+            className="object-cover scale-110"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">tour</span>
             <span className="text-sm font-bold tracking-wide">TOURS Y ACTIVIDADES</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
-            Tours y Actividades en Lisboa
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+            Tours y<br />
+            <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+              Actividades
+            </span>
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
             Free tours, excursiones a Sintra, experiencias gastronómicas y aventuras. Reserva con cancelación gratis y en español.
           </p>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-green-400">verified_user</span>
               <span>Cancelación gratis</span>
@@ -236,23 +252,29 @@ export default function ToursPage() {
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        </div>
       </section>
 
       {/* Category Filter */}
-      <section className="bg-white border-b sticky top-16 z-40 shadow-md">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
+      <section className="py-6 bg-gradient-to-r from-primary to-orange-500 text-white sticky top-16 z-40 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex gap-2 overflow-x-auto py-2 scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all flex items-center gap-2 ${
                   selectedCategory === cat.id
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    ? 'bg-white text-primary shadow-xl'
+                    : 'bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
                 }`}
               >
-                {cat.emoji} {cat.name}
+                <span className="material-symbols-outlined text-lg">{cat.icon}</span>
+                {cat.name}
               </button>
             ))}
           </div>
@@ -261,7 +283,7 @@ export default function ToursPage() {
 
       {/* Free Tours Highlight */}
       {(selectedCategory === 'all' || selectedCategory === 'free') && (
-        <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-100">
+        <section className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex items-center gap-4 mb-8">
               <span className="material-symbols-outlined text-green-600 text-5xl">redeem</span>
@@ -271,8 +293,11 @@ export default function ToursPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border-2 border-green-200 mb-8">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">💡 ¿Cómo funcionan los Free Tours?</h3>
+            <div className="bg-white rounded-3xl p-8 border-2 border-green-200 mb-8 shadow-lg">
+              <h3 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary text-2xl">lightbulb</span>
+                ¿Cómo funcionan los Free Tours?
+              </h3>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
                   <p className="font-bold text-green-900 mb-2">1. Reservas gratis online</p>
@@ -291,7 +316,7 @@ export default function ToursPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {tours.filter(t => t.category === 'free').map(tour => (
-                <div key={tour.id} className="bg-white rounded-2xl overflow-hidden border-2 border-green-200 hover:border-green-400 hover:shadow-xl transition-all">
+                <div key={tour.id} className="bg-white rounded-3xl overflow-hidden border-2 border-green-200 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1">
                   {/* Image Placeholder */}
                   <div className="h-56 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center relative">
                     <span className="material-symbols-outlined text-white text-7xl">tour</span>
@@ -357,7 +382,7 @@ export default function ToursPage() {
       )}
 
       {/* All Other Tours */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-background-cream">
         <div className="max-w-6xl mx-auto px-4">
           {selectedCategory !== 'free' && selectedCategory !== 'all' && (
             <div className="mb-8">
@@ -373,8 +398,8 @@ export default function ToursPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredTours.filter(t => t.category !== 'free').map(tour => (
-              <div key={tour.id} className={`bg-white rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all ${
-                tour.recommended ? 'border-primary' : 'border-slate-200 hover:border-primary/50'
+              <div key={tour.id} className={`bg-white rounded-3xl overflow-hidden border-2 hover:shadow-2xl transition-all hover:-translate-y-1 ${
+                tour.recommended ? 'border-primary shadow-lg' : 'border-slate-200 hover:border-primary'
               }`}>
                 {/* Image Placeholder */}
                 <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center relative">
@@ -386,8 +411,9 @@ export default function ToursPage() {
                       {tour.badge}
                     </div>
                   )}
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white text-xs p-2 text-center">
-                    📸 Foto placeholder: {tour.category === 'day-trips' ? 'Palacio o destino' : tour.category === 'food' ? 'Plato típico' : 'Actividad'}
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white text-xs p-2 text-center flex items-center justify-center gap-1">
+                    <span className="material-symbols-outlined text-sm">image</span>
+                    Foto: {tour.category === 'day-trips' ? 'Palacio o destino' : tour.category === 'food' ? 'Plato típico' : 'Actividad'}
                   </div>
                 </div>
 
@@ -441,7 +467,7 @@ export default function ToursPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
             ¿Por qué reservar con Civitatis?
@@ -476,15 +502,11 @@ export default function ToursPage() {
       </section>
 
       {/* CTA to Guides */}
-      <section className="py-20 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-
+      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
           <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">map</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Quieres organizar tu viaje completo?
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">

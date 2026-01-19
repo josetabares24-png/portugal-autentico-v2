@@ -18,16 +18,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 export async function POST(request: NextRequest) {
   try {
-    // Verificar autenticación
+    // Obtener userId si está autenticado (opcional)
     const { userId } = await auth();
-    
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Debes iniciar sesión para realizar una compra' },
-        { status: 401 }
-      );
-    }
-
     const { productId } = await request.json();
 
     // Validación de input

@@ -173,27 +173,26 @@ export default function CheckoutPage() {
                 </ul>
               </div>
 
-              {/* Auth Required Message */}
-              {isLoaded && !isSignedIn && (
-                <div className="mb-8 p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl">
-                  <div className="flex items-start gap-4 mb-6">
-                    <span className="material-symbols-outlined text-amber-600 text-4xl flex-shrink-0">info</span>
-                    <div>
-                      <p className="font-black text-amber-900 mb-2 text-xl">Inicia sesión para continuar</p>
-                      <p className="text-amber-700 font-medium">
-                        Necesitas crear una cuenta (gratis) para comprar guías y acceder a tus descargas.
-                      </p>
-                    </div>
+            {/* Auth Recommended Message - No bloquea, solo recomienda */}
+            {isLoaded && !isSignedIn && (
+              <div className="mb-8 p-6 bg-gradient-to-br from-blue-50 to-primary/5 border-2 border-primary/20 rounded-3xl">
+                <div className="flex items-start gap-4 mb-4">
+                  <span className="material-symbols-outlined text-primary text-3xl flex-shrink-0">info</span>
+                  <div>
+                    <p className="font-bold text-slate-900 mb-1 text-base">Recomendado: Crear cuenta</p>
+                    <p className="text-slate-600 text-sm">
+                      Puedes comprar sin cuenta, pero con una cuenta gratuita tendrás acceso inmediato a tus guías y podrás descargarlas cuando quieras.
+                    </p>
                   </div>
-                  <SignInButton mode="modal">
-                    <button className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg">
-                      <span className="material-symbols-outlined text-2xl">login</span>
-                      Iniciar sesión o Crear cuenta
-                      <span className="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                  </SignInButton>
                 </div>
-              )}
+                <SignInButton mode="modal">
+                  <button className="w-full py-3 bg-primary/10 hover:bg-primary/20 text-primary font-semibold rounded-xl transition-all flex items-center justify-center gap-2 text-sm border border-primary/30">
+                    <span className="material-symbols-outlined text-lg">login</span>
+                    Crear cuenta gratis (recomendado)
+                  </button>
+                </SignInButton>
+              </div>
+            )}
 
               {/* Error Message */}
               {error && (
@@ -216,18 +215,13 @@ export default function CheckoutPage() {
               {/* Checkout Button */}
               <button
                 onClick={handleCheckout}
-                disabled={loading || !isSignedIn}
+                disabled={loading}
                 className="w-full py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 disabled:from-slate-300 disabled:to-slate-400 text-white font-black text-xl rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-lg flex items-center justify-center gap-3"
               >
                 {loading ? (
                   <>
                     <span className="material-symbols-outlined animate-spin text-2xl">progress_activity</span>
                     Procesando pago...
-                  </>
-                ) : !isSignedIn ? (
-                  <>
-                    <span className="material-symbols-outlined text-2xl">lock</span>
-                    Inicia sesión para pagar
                   </>
                 ) : (
                   <>
