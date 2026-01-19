@@ -54,56 +54,54 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400/95 to-orange-500/95 backdrop-blur-md px-6 py-3 rounded-full text-black border-2 border-yellow-300/50 mb-8 shadow-2xl">
-            <span className="material-symbols-outlined text-lg">verified</span>
-            <span className="text-sm font-black tracking-wide uppercase">Actualizado Enero 2025</span>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
+            <span className="material-symbols-outlined text-base">verified</span>
+            <span className="text-sm font-semibold tracking-wide">Actualizado Enero 2025</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-[0.95] mb-8 text-white tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             Lo que nadie<br />
-            <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]">        
-              te cuenta
-            </span><br />
+            <span className="text-accent">te cuenta</span><br />
             de Lisboa
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-white font-semibold max-w-4xl mx-auto mb-12 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
             Llevo 3 años viviendo aquí. Te digo dónde desayunar en Graça cuando aún no hay nadie. Qué mirador funciona a las 9am. Por qué el 28 a las 11 es un error.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
               href="#itinerarios"
-              className="group flex items-center gap-3 px-10 py-6 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black rounded-2xl font-black text-xl shadow-[0_8px_24px_rgba(251,191,36,0.4)] hover:shadow-[0_12px_32px_rgba(251,191,36,0.6)] transition-all hover:scale-110 transform"
+              className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <span className="material-symbols-outlined text-2xl">map</span>
-              Quiero la ruta
-              <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+              <span className="material-symbols-outlined text-xl">map</span>
+              Ver las rutas
+              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
             <Link
               href="#free"
-              className="flex items-center gap-3 px-10 py-6 bg-white/95 backdrop-blur-md hover:bg-white text-black rounded-2xl font-black text-xl border-3 border-white shadow-[0_8px_24px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_32px_rgba(255,255,255,0.5)] transition-all hover:scale-110 transform"
+              className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border border-white/30 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-2xl">download</span>
+              <span className="material-symbols-outlined text-xl">download</span>
               Guía práctica gratis
             </Link>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-10 text-white font-bold text-base">
-            <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/30">
-              <span className="material-symbols-outlined text-green-300 text-2xl">check_circle</span>
+          <div className="flex flex-wrap justify-center gap-8 text-white/90 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-green-400 text-lg">check_circle</span>
               <span>Descarga inmediata</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/30">
-              <span className="material-symbols-outlined text-yellow-300 text-2xl">verified</span>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-accent text-lg">verified</span>
               <span>Hecho por quien vive aquí</span>
             </div>
-            <div className="flex items-center gap-3 bg-white/15 backdrop-blur-sm px-5 py-3 rounded-full border border-white/30">
-              <span className="material-symbols-outlined text-blue-300 text-2xl">workspace_premium</span>
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-blue-400 text-lg">workspace_premium</span>
               <span>Garantía 48h</span>
             </div>
           </div>
@@ -116,22 +114,22 @@ export default function HomePage() {
       </section>
 
       {/* Features Bar */}
-      <section className="py-12 bg-gradient-to-r from-primary via-primary-dark to-primary text-white shadow-lg">
+      <section className="py-10 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-16 text-center">
-            <div className="transform hover:scale-110 transition-transform">
-              <div className="text-6xl font-display font-black mb-2 bg-gradient-to-br from-yellow-300 to-orange-400 bg-clip-text text-transparent">100%</div>
-              <div className="text-base font-bold text-white">Verificado</div>
+            <div>
+              <div className="text-5xl font-display font-black mb-1 text-accent">100%</div>
+              <div className="text-sm font-medium opacity-90">Verificado</div>
             </div>
-            <div className="hidden sm:block w-px h-20 bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className="transform hover:scale-110 transition-transform">
-              <div className="text-6xl font-display font-black mb-2 bg-gradient-to-br from-yellow-300 to-orange-400 bg-clip-text text-transparent">Local</div>
-              <div className="text-base font-bold text-white">Por lisboetas</div>
+            <div className="hidden sm:block w-px h-16 bg-white/20"></div>
+            <div>
+              <div className="text-5xl font-display font-black mb-1 text-accent">Local</div>
+              <div className="text-sm font-medium opacity-90">Por lisboetas</div>
             </div>
-            <div className="hidden sm:block w-px h-20 bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className="transform hover:scale-110 transition-transform">
-              <div className="text-6xl font-display font-black mb-2 bg-gradient-to-br from-yellow-300 to-orange-400 bg-clip-text text-transparent">8</div>
-              <div className="text-base font-bold text-white">Rutas completas</div>
+            <div className="hidden sm:block w-px h-16 bg-white/20"></div>
+            <div>
+              <div className="text-5xl font-display font-black mb-1 text-accent">8</div>
+              <div className="text-sm font-medium opacity-90">Rutas completas</div>
             </div>
           </div>
         </div>
@@ -140,14 +138,14 @@ export default function HomePage() {
       {/* Featured Itineraries */}
       <section className="py-32 bg-background-light" id="itinerarios">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <span className="inline-block px-6 py-3 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 border-2 border-yellow-400/30 text-primary rounded-full text-sm font-black uppercase tracking-wider mb-8 shadow-lg">
+          <div className="text-center mb-20">
+            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
               Rutas verificadas
             </span>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-text-main mb-8 tracking-tight">
-              Elige tu <span className="bg-gradient-to-r from-primary via-orange-500 to-red-500 bg-clip-text text-transparent">ruta</span>
+            <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6 tracking-tight">
+              Elige tu <span className="text-primary">ruta</span>
             </h2>
-            <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed font-semibold">
+            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
               Cada guía incluye el bar donde desayuno los domingos. El mirador que visito cuando vienen amigos. Mapas que funcionan cuando no hay señal.
             </p>
           </div>
@@ -184,17 +182,17 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>        
                 </div>
 
-                <div className="p-10">
-                  <h3 className="text-3xl font-display font-black text-text-main mb-5 leading-tight">{itinerary.title}</h3>
-                  <p className="text-lg text-text-secondary mb-8 leading-relaxed font-medium">{itinerary.description}</p>
-                  <div className="flex items-center justify-between pt-6 border-t-2 border-border-soft">
-                    <div className="text-5xl font-display font-black bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">{itinerary.price}€</div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-display font-black text-text-main mb-4 leading-tight">{itinerary.title}</h3>
+                  <p className="text-text-secondary mb-6 leading-relaxed">{itinerary.description}</p>
+                  <div className="flex items-center justify-between pt-6 border-t border-border-soft">
+                    <div className="text-4xl font-display font-black text-primary">{itinerary.price}€</div>
                     <Link
                       href={itinerary.href}
-                      className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="group flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all duration-300 hover:opacity-90"
                     >
-                      Quiero ir ahí
-                      <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      Ver detalles
+                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </Link>
                   </div>
                 </div>
@@ -205,10 +203,10 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white rounded-2xl font-black text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-text-main hover:bg-text-secondary text-white rounded-xl font-semibold text-base transition-all duration-300 hover:opacity-90"
             >
               Ver todas las rutas
-              <span className="material-symbols-outlined text-xl">arrow_forward</span>
+              <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
           </div>
         </div>
@@ -217,36 +215,36 @@ export default function HomePage() {
       {/* Why Choose Us */}
       <section className="py-32 bg-background-cream">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-text-main mb-8">
-              Por qué <span className="bg-gradient-to-r from-primary via-orange-500 to-red-500 bg-clip-text text-transparent">esto funciona</span>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6">
+              Por qué <span className="text-primary">esto funciona</span>
             </h2>
-            <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed font-semibold">No soy turista haciendo guías. Llevo 3 años viviendo aquí. Compro en el mismo supermercado que los lisboetas.</p>
+            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">No soy turista haciendo guías. Llevo 3 años viviendo aquí. Compro en el mismo supermercado que los lisboetas.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            <div className="bg-white rounded-3xl p-12 shadow-soft border-2 border-border-soft text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/30">
-              <div className="w-28 h-28 bg-gradient-to-br from-primary/20 to-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-primary/10">
-                <span className="material-symbols-outlined text-primary text-6xl">home</span>
+            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-5xl">home</span>
               </div>
-              <h3 className="text-3xl font-display font-black text-text-main mb-5">Hechas por quien vive aquí</h3>
-              <p className="text-lg text-text-secondary leading-relaxed font-medium">Vivo en Lisboa. Conozco el bar donde desayuno cuando no tengo prisa. El mirador donde llevo a los que vienen de visita.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-4">Hechas por quien vive aquí</h3>
+              <p className="text-text-secondary leading-relaxed">Vivo en Lisboa. Conozco el bar donde desayuno cuando no tengo prisa. El mirador donde llevo a los que vienen de visita.</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-12 shadow-soft border-2 border-border-soft text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/30">
-              <div className="w-28 h-28 bg-gradient-to-br from-primary/20 to-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-primary/10">
-                <span className="material-symbols-outlined text-primary text-6xl">update</span>
+            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-5xl">update</span>
               </div>
-              <h3 className="text-3xl font-display font-black text-text-main mb-5">Verificadas cada mes</h3>
-              <p className="text-lg text-text-secondary leading-relaxed font-medium">Voy a cada sitio cada mes. Si cierra o cambia, lo actualizo. No te encuentras el restaurante cerrado porque hace 6 meses que no voy.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-4">Verificadas cada mes</h3>
+              <p className="text-text-secondary leading-relaxed">Voy a cada sitio cada mes. Si cierra o cambia, lo actualizo. No te encuentras el restaurante cerrado porque hace 6 meses que no voy.</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-12 shadow-soft border-2 border-border-soft text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/30">
-              <div className="w-28 h-28 bg-gradient-to-br from-primary/20 to-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-primary/10">
-                <span className="material-symbols-outlined text-primary text-6xl">workspace_premium</span>      
+            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
-              <h3 className="text-3xl font-display font-black text-text-main mb-5">Garantía</h3>
-              <p className="text-lg text-text-secondary leading-relaxed font-medium">48 horas. Si la ruta no te funciona, te devuelvo el dinero. Sin preguntas, sin explicaciones.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-4">Garantía</h3>
+              <p className="text-text-secondary leading-relaxed">48 horas. Si la ruta no te funciona, te devuelvo el dinero. Sin preguntas, sin explicaciones.</p>
             </div>
           </div>
         </div>
@@ -255,14 +253,14 @@ export default function HomePage() {
       {/* Testimonials Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <span className="inline-block px-6 py-3 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 border-2 border-yellow-400/30 text-primary rounded-full text-sm font-black uppercase tracking-wider mb-8 shadow-lg">
+          <div className="text-center mb-16">
+            <span className="inline-block px-5 py-2 bg-accent/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
               Lo que dicen
             </span>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-text-main mb-8">
-              Quienes <span className="bg-gradient-to-r from-primary via-orange-500 to-red-500 bg-clip-text text-transparent">las usaron</span>
+            <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6">
+              Quienes <span className="text-primary">las usaron</span>
             </h2>
-            <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed font-semibold">
+            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
               500 personas ya las usaron. Evitaron las colas del 28. Comieron donde comemos nosotros. Llegaron al mirador cuando aún no había nadie.
             </p>
           </div>
@@ -361,18 +359,18 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-5 bg-azulejo-pattern"></div>
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <span className="material-symbols-outlined text-white text-8xl mb-8 inline-block opacity-80">info</span>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+          <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 tracking-tight">
             Primera vez en Lisboa
           </h2>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white font-bold mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+          <p className="text-lg md:text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed">
             Guía práctica gratis. Cómo funciona el Viva Viagem. Cuánto cuesta realmente una comida. Qué llevar en la maleta.
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               href="/info-util"
-              className="flex items-center justify-center gap-3 px-12 py-6 bg-white text-primary rounded-2xl font-black text-xl shadow-[0_8px_24px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_32px_rgba(255,255,255,0.5)] transition-all duration-300 hover:scale-110 transform"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-xl font-semibold text-lg shadow-lg hover:opacity-95 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-2xl">explore</span>
+              <span className="material-symbols-outlined text-xl">explore</span>
               Quiero la guía práctica
             </Link>
           </div>
