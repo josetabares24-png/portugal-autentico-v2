@@ -37,79 +37,157 @@ export default function HomePage() {
 
   return (
     <main className="bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-            alt="Vista de Lisboa desde un mirador"
-            fill
-            className="object-cover scale-110"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/65 to-slate-900/80"></div>
-        </div>
+      {/* Hero Bento Grid Section */}
+      <section className="relative py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Bento Grid Container */}
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 auto-rows-fr">
+            
+            {/* Main Hero Cell - Large */}
+            <div className="md:col-span-4 lg:col-span-4 row-span-2 relative group overflow-hidden rounded-3xl h-[400px] md:h-[600px] lg:h-[700px]">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+                  alt="Vista panorámica de Lisboa"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"></div>
+              </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-white border border-white/20 mb-12">
-            <span className="material-symbols-outlined text-accent text-lg">verified</span>
-            <span className="text-sm font-medium tracking-wide uppercase">Actualizado Enero 2025</span>
+              {/* Glassmorphism Content Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+                <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-8 border border-white/20 shadow-2xl">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 mb-6">
+                    <span className="material-symbols-outlined text-accent text-xl">verified</span>
+                    <span className="text-sm font-medium text-white/90 uppercase tracking-wider">Actualizado Enero 2025</span>
+                  </div>
+
+                  {/* Main Heading */}
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[0.95] mb-6 text-white tracking-tight">
+                    Lo que nadie<br />
+                    <span className="text-accent">te cuenta</span><br />
+                    de Lisboa
+                  </h1>
+
+                  {/* Subheading */}
+                  <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed mb-8 font-normal">
+                    Vivimos aquí. Te decimos dónde desayunar en Graça sin turistas, qué mirador está vacío a las 9am.
+                  </p>
+
+                  {/* CTA Button */}
+                  <Link
+                    href="#itinerarios"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold text-base shadow-soft-lg hover:shadow-editorial transition-all duration-300 hover:opacity-95 group/btn"
+                  >
+                    <span className="material-symbols-outlined text-xl">map</span>
+                    Ver las rutas
+                    <span className="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Link: Mejores Hoteles */}
+            <Link
+              href="/donde-dormir"
+              className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg"
+                  alt="Hoteles en Lisboa"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary-dark/90"></div>
+              </div>
+
+              {/* Glassmorphism Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-white text-2xl">bed</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Hoteles</h3>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Dónde dormir en Lisboa</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Quick Link: Dónde Comer */}
+            <Link
+              href="/info-util"
+              className="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/julia-solonina-ci19YINguoc-unsplash.jpg"
+                  alt="Restaurantes en Lisboa"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/80 to-terracotta/90"></div>
+              </div>
+
+              {/* Glassmorphism Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-white text-2xl">restaurant</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Dónde Comer</h3>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Restaurantes donde comemos nosotros</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Quick Link: Transporte */}
+            <Link
+              href="/transporte"
+              className="md:col-span-4 lg:col-span-2 relative group overflow-hidden rounded-3xl h-[200px] md:h-[300px] transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg"
+                  alt="Transporte en Lisboa"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 to-primary/90"></div>
+              </div>
+
+              {/* Glassmorphism Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center p-6">
+                <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20 text-center w-full">
+                  <div className="flex items-center justify-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-white text-2xl">directions_transit</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-black text-white">Transporte</h3>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Cómo moverte por Lisboa</p>
+                </div>
+              </div>
+            </Link>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-6xl md:text-9xl font-display font-black leading-[0.95] mb-10 text-white tracking-tight">
-            Lo que nadie<br />
-            <span className="text-accent">te cuenta</span><br />
-            de Lisboa
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-16 leading-relaxed font-normal">
-            Vivimos aquí. Te decimos dónde desayunar en Graça sin turistas, qué mirador está vacío a las 9am, y por qué Belém a las 11 es un error.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
-            <Link
-              href="#itinerarios"
-              className="group flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold text-lg shadow-soft-lg hover:shadow-editorial transition-all duration-300 hover:opacity-95"
-            >
-              <span className="material-symbols-outlined text-xl">map</span>
-              Ver las rutas
-              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
-            </Link>
-            <Link
-              href="#free"
-              className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-medium text-lg border border-white/30 transition-all duration-300 hover:opacity-90"
-            >
-              <span className="material-symbols-outlined text-xl">download</span>
-              Guía práctica gratis
-            </Link>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-12 text-white/75 text-sm font-medium">
-            <div className="flex items-center gap-2.5">
+          {/* Trust Indicators - Below Grid */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 pt-12 border-t border-border-soft">
+            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
               <span className="material-symbols-outlined text-accent text-lg">check_circle</span>
               <span>Descarga inmediata</span>
             </div>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
               <span className="material-symbols-outlined text-accent text-lg">verified</span>
               <span>Hecho por quien vive aquí</span>
             </div>
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 text-text-secondary text-sm font-medium">
               <span className="material-symbols-outlined text-accent text-lg">workspace_premium</span>
               <span>Garantía 48h</span>
             </div>
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-60">expand_more</span>
         </div>
       </section>
 
