@@ -14,7 +14,7 @@ const articles: Record<string, {
     titulo: "Los 10 mejores miradores de Lisboa",
     descripcion: "Desde los clasicos hasta los secretos que solo conocen los locales.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "20 Dic 2024",
     minutos: 8,
     contenido: [
@@ -51,7 +51,7 @@ const articles: Record<string, {
     titulo: "Donde comer barato en Lisboa (2024)",
     descripcion: "Tascas, mercados y restaurantes locales donde comer bien por menos de 15 euros.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
-    categoria: "Comida",
+    categoria: "Gastronomía",
     fecha: "18 Dic 2024",
     minutos: 6,
     contenido: [
@@ -146,7 +146,7 @@ const articles: Record<string, {
     titulo: "Lisboa Card: Vale la pena en 2024?",
     descripcion: "Analizamos precios y calculamos si realmente ahorras dinero.",
     imagen: "https://images.unsplash.com/photo-1569959220744-ff553533f492?w=1200",
-    categoria: "Tips",
+    categoria: "Consejos",
     fecha: "12 Dic 2024",
     minutos: 7,
     contenido: [
@@ -246,7 +246,7 @@ const articles: Record<string, {
     titulo: "Los mejores pasteles de nata de Lisboa",
     descripcion: "Probamos 15 pastelerias para encontrar el pastel de nata perfecto.",
     imagen: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200",
-    categoria: "Comida",
+    categoria: "Gastronomía",
     fecha: "8 Dic 2024",
     minutos: 5,
     contenido: [
@@ -344,7 +344,7 @@ const articles: Record<string, {
     titulo: "10 Restaurantes Romanticos en Lisboa",
     descripcion: "Cenas con vistas, terrazas intimas y ambiente especial para una noche perfecta en pareja.",
     imagen: "/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg",
-    categoria: "Gastronomia",
+    categoria: "Gastronomía",
     fecha: "20 Nov 2024",
     minutos: 8,
     contenido: [
@@ -427,7 +427,7 @@ const articles: Record<string, {
     titulo: "Que Ver en Cascais desde Lisboa: Guia Completa",
     descripcion: "Pueblo costero, playas y palacios. La excursion perfecta de un dia desde la capital.",
     imagen: "/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "18 Nov 2024",
     minutos: 7,
     contenido: [
@@ -484,7 +484,7 @@ const articles: Record<string, {
     titulo: "Las Mejores Playas Cerca de Lisboa",
     descripcion: "Costa de Lisboa, Cascais, Sesimbra y Arrabida. Arenas doradas y agua cristalina a menos de 1 hora.",
     imagen: "/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "15 Nov 2024",
     minutos: 8,
     contenido: [
@@ -584,7 +584,7 @@ const articles: Record<string, {
     titulo: "Presupuesto Real para Viajar a Lisboa: Dia a Dia",
     descripcion: "Cuanto cuesta realmente comer, dormir y moverse. Analisis honesto de precios en 2024.",
     imagen: "/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg",
-    categoria: "Planificacion",
+    categoria: "Planificación",
     fecha: "10 Nov 2024",
     minutos: 9,
     contenido: [
@@ -665,7 +665,7 @@ const articles: Record<string, {
     titulo: "Los Mejores Mercados de Lisboa: Guia Completa",
     descripcion: "Time Out Market, Feira da Ladra, mercados locales. Comida, artesania y vida autentica.",
     imagen: "/images/annie-spratt-epexF_Ltb7s-unsplash.jpg",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "8 Nov 2024",
     minutos: 7,
     contenido: [
@@ -717,7 +717,7 @@ const articles: Record<string, {
     titulo: "Donde Tomar el Mejor Cafe en Lisboa",
     descripcion: "Cafeterias locales, especialidad y tradicion. El cafe portugues en los mejores locales de la ciudad.",
     imagen: "/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg",
-    categoria: "Gastronomia",
+    categoria: "Gastronomía",
     fecha: "5 Nov 2024",
     minutos: 5,
     contenido: [
@@ -761,7 +761,7 @@ const articles: Record<string, {
     titulo: "Los Mejores Miradores para el Atardecer en Lisboa",
     descripcion: "Donde ver el mejor sunset de Lisboa. Horarios, ubicaciones y consejos de local.",
     imagen: "/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "3 Nov 2024",
     minutos: 6,
     contenido: [
@@ -900,7 +900,7 @@ const articles: Record<string, {
     titulo: "Las Mejores Excursiones desde Lisboa",
     descripcion: "Sintra, Obidos, Nazare y mas. Excursiones de un dia perfectas para conocer los alrededores.",
     imagen: "/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg",
-    categoria: "Guias",
+    categoria: "Guías",
     fecha: "25 Oct 2024",
     minutos: 9,
     contenido: [
@@ -961,18 +961,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   }
 
   const categoriaColor: Record<string, string> = {
-    "Guias": "bg-blue-100 text-blue-700",
     "Guías": "bg-blue-100 text-blue-700",
-    "Comida": "bg-amber-100 text-amber-700",
     "Gastronomía": "bg-amber-100 text-amber-700",
-    "Gastronomia": "bg-amber-100 text-amber-700",
     "Transporte": "bg-green-100 text-green-700",
-    "Tips": "bg-purple-100 text-purple-700",
     "Consejos": "bg-purple-100 text-purple-700",
     "Alojamiento": "bg-pink-100 text-pink-700",
     "Cultura": "bg-indigo-100 text-indigo-700",
-    "Planificación": "bg-teal-100 text-teal-700",
-    "Planificacion": "bg-teal-100 text-teal-700"
+    "Planificación": "bg-teal-100 text-teal-700"
   };
 
   return (
