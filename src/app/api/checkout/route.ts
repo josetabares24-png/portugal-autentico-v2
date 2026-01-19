@@ -2,9 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 import { auth } from '@clerk/nextjs/server';
-import fs from 'fs';
-
-const LOG_PATH = 'c:\\Users\\joset\\OneDrive\\Desktop\\portugal-nuevo\\portugal-autentico\\.cursor\\debug.log';
 
 // Validar variables de entorno al inicio
 if (!process.env.STRIPE_SECRET_KEY) {
@@ -21,26 +18,19 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 export async function POST(request: NextRequest) {
   try {
-    // #region agent log
-    fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:19',message:'POST handler started',data:{hasStripeKey:!!process.env.STRIPE_SECRET_KEY,hasSiteUrl:!!process.env.NEXT_PUBLIC_SITE_URL},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H2'})+'\n');
-    // #endregion
-    
-    console.log('API Checkout: Iniciando proceso de checkout');
+    console.log('API Checkout: Iniciando proceso de checkout', {
+      hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
+      hasSiteUrl: !!process.env.NEXT_PUBLIC_SITE_URL,
+      stripeMode: process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST'
+    });
     
     // Verificar autenticación OBLIGATORIA - las guías se guardan con el usuario
     const { userId } = await auth();
     
-    // #region agent log
-    fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:26',message:'Auth check',data:{hasUserId:!!userId},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H3'})+'\n');
-    // #endregion
-    
-    console.log('API Checkout: userId =', userId ? 'Autenticado' : 'No autenticado');
+    console.log('API Checkout: Auth check', { hasUserId: !!userId });
     
     if (!userId) {
       console.error('API Checkout: Usuario no autenticado');
-      // #region agent log
-      fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:32',message:'Unauthorized',data:{hasUserId:false},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H3'})+'\n');
-      // #endregion
       return NextResponse.json(
         { error: 'Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta para acceso permanente.' },
         { status: 401 }
@@ -72,24 +62,18 @@ export async function POST(request: NextRequest) {
 
     const product = STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS];
     
-    // #region agent log
-    fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:60',message:'Product found',data:{productId,priceId:product.priceId,name:product.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-    // #endregion
-    
-    console.log('API Checkout: Producto encontrado:', product.name, 'Price ID:', product.priceId);
+    console.log('API Checkout: Producto encontrado', {
+      productId,
+      priceId: product.priceId,
+      name: product.name
+    });
 
     // Verificar que el Price ID existe en Stripe
     let priceName: string = product.name;
     try {
-      console.log('API Checkout: Verificando price ID en Stripe:', product.priceId);
-      // #region agent log
-      fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:66',message:'Retrieving price from Stripe',data:{priceId:product.priceId},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-      // #endregion
+      console.log('API Checkout: Verificando price ID en Stripe', { priceId: product.priceId });
       const price = await stripe.prices.retrieve(product.priceId);
-      console.log('API Checkout: Price encontrado en Stripe:', price.id);
-      // #region agent log
-      fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:68',message:'Price retrieved successfully',data:{priceId:price.id},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-      // #endregion
+      console.log('API Checkout: Price encontrado en Stripe', { priceId: price.id });
       
       if (price.product) {
         const stripeProduct = await stripe.products.retrieve(price.product as string);
@@ -97,16 +81,20 @@ export async function POST(request: NextRequest) {
         console.log('API Checkout: Producto en Stripe:', stripeProduct.name);
       }
     } catch (err: any) {
-      console.error('API Checkout: Error al verificar producto en Stripe:', err);
-      // #region agent log
-      fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:99',message:'Stripe price retrieval error',data:{error:err.message,code:err.code,priceId:product.priceId},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-      // #endregion
+      const stripeMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST';
+      console.error('API Checkout: Error al verificar producto en Stripe', {
+        error: err.message,
+        code: err.code,
+        priceId: product.priceId,
+        stripeMode
+      });
       // Si el price ID no existe, esto es un error crítico
       if (err.code === 'resource_missing') {
-        // #region agent log
-        const stripeMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST';
-        fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:105',message:'Price missing in Stripe',data:{priceId:product.priceId,stripeMode,secretKeyPrefix:process.env.STRIPE_SECRET_KEY?.substring(0,12)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-        // #endregion
+        console.error('API Checkout: Price missing in Stripe', {
+          priceId: product.priceId,
+          stripeMode,
+          secretKeyPrefix: process.env.STRIPE_SECRET_KEY?.substring(0, 12)
+        });
         return NextResponse.json(
           { error: `El producto no está configurado correctamente en Stripe (Modo: ${stripeMode}). El Price ID '${product.priceId}' no existe. Por favor, verifica que los productos estén creados en el modo correcto (${stripeMode}). Error: ${err.message}` },
           { status: 500 }
@@ -115,11 +103,11 @@ export async function POST(request: NextRequest) {
       console.warn('API Checkout: No se pudo obtener nombre del producto desde Stripe, usando nombre local:', err.message);
     }
 
-    console.log('API Checkout: Creando sesión de checkout en Stripe');
-    // #region agent log
     const stripeMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST';
-    fs.appendFileSync(LOG_PATH, JSON.stringify({location:'checkout/route.ts:111',message:'Creating checkout session',data:{priceId:product.priceId,stripeMode},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H4'})+'\n');
-    // #endregion
+    console.log('API Checkout: Creando sesión de checkout en Stripe', {
+      priceId: product.priceId,
+      stripeMode
+    });
     
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
