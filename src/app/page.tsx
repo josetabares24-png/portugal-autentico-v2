@@ -6,7 +6,7 @@ export default function HomePage() {
     {
       id: 'lisboa-1-dia',
       title: 'Un día en Lisboa',
-      description: 'Dónde desayunar en Graça sin turistas. Qué mirador está vacío a las 9am.',
+      description: 'Pastéis de nata a las 8:30 antes de que abra la cola. Mirador de Graça sin selfies. El 28 cuando funciona.',
       duration: '1 DÍA',
       price: 1.99,
       image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
@@ -16,7 +16,7 @@ export default function HomePage() {
     {
       id: 'lisboa-2-dias',
       title: 'Fin de semana completo',
-      description: 'Belém temprano para evitar colas. Alfama cuando las calles están tranquilas.',
+      description: 'Belém a las 9am, pastéis cuando salen del horno. Alfama cuando los vecinos bajan a comprar. Bairro Alto de noche, no de día.',
       duration: '2 DÍAS',
       price: 2.99,
       image: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       id: 'lisboa-3-dias',
       title: 'Lisboa y alrededores',
-      description: 'Sintra en un día sin agobios. Dónde aparcar sin pagar el parking caro.',
+      description: 'Sintra sin colas de 3 horas. Dónde aparcar gratis. Cascais cuando el sol está de verdad.',
       duration: '3 DÍAS',
       price: 3.99,
       image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
@@ -75,7 +75,7 @@ export default function HomePage() {
 
                   {/* Subheading */}
                   <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed mb-8 font-normal">
-                    Vivimos aquí. Te decimos dónde desayunar en Graça sin turistas, qué mirador está vacío a las 9am.
+                    Llevo 3 años viviendo aquí. Te digo dónde desayunar en Graça cuando aún no hay nadie. Qué mirador funciona a las 9am. Por qué el 28 a las 11 es un error.
                   </p>
 
                   {/* CTA Button */}
@@ -84,7 +84,7 @@ export default function HomePage() {
                     className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-semibold text-base shadow-soft-lg hover:shadow-editorial transition-all duration-300 hover:opacity-95 group/btn"
                   >
                     <span className="material-symbols-outlined text-xl">map</span>
-                    Ver las rutas
+                    Quiero la ruta
                     <span className="material-symbols-outlined text-lg group-hover/btn:translate-x-1 transition-transform duration-300">arrow_forward</span>
                   </Link>
                 </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
                     <span className="material-symbols-outlined text-white text-2xl">bed</span>
                     <h3 className="text-2xl md:text-3xl font-display font-black text-white">Hoteles</h3>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Dónde dormir en Lisboa</p>
+                  <p className="text-white/90 text-sm font-medium">Hostels sin fiesta, hoteles sin turistas</p>
                 </div>
               </div>
             </Link>
@@ -140,7 +140,7 @@ export default function HomePage() {
                     <span className="material-symbols-outlined text-white text-2xl">restaurant</span>
                     <h3 className="text-2xl md:text-3xl font-display font-black text-white">Dónde Comer</h3>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Restaurantes donde comemos nosotros</p>
+                  <p className="text-white/90 text-sm font-medium">Donde comemos los viernes</p>
                 </div>
               </div>
             </Link>
@@ -167,7 +167,7 @@ export default function HomePage() {
                     <span className="material-symbols-outlined text-white text-2xl">directions_transit</span>
                     <h3 className="text-2xl md:text-3xl font-display font-black text-white">Transporte</h3>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Cómo moverte por Lisboa</p>
+                  <p className="text-white/90 text-sm font-medium">El Viva Viagem, el 28 y evitar taxis</p>
                 </div>
               </div>
             </Link>
@@ -224,7 +224,7 @@ export default function HomePage() {
               Elige tu <span className="text-primary">ruta</span>
             </h2>
             <p className="text-xl text-text-secondary max-w-xl mx-auto leading-relaxed">
-              Cada guía incluye restaurantes donde comemos nosotros, miradores sin multitudes y mapas que funcionan offline.
+              Cada guía incluye el bar donde desayuno los domingos. El mirador que visito cuando vienen amigos. Mapas que funcionan cuando no hay señal.
             </p>
           </div>
 
@@ -269,7 +269,7 @@ export default function HomePage() {
                       href={itinerary.href}
                       className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium text-sm transition-all duration-300 hover:opacity-90"
                     >
-                      Ver ruta
+                      Quiero ir ahí
                       <span className="material-symbols-outlined text-base">arrow_forward</span>
                     </Link>
                   </div>
@@ -295,9 +295,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-display font-black text-text-main mb-6">
-              Por qué <span className="text-primary">nosotros</span>
+              Por qué <span className="text-primary">esto funciona</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">No somos turistas haciendo guías. Vivimos aquí.</p>
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">No soy turista haciendo guías. Llevo 3 años viviendo aquí. Compro en el mismo supermercado que los lisboetas.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -305,8 +305,8 @@ export default function HomePage() {
               <div className="w-24 h-24 bg-primary/8 rounded-full flex items-center justify-center mx-auto mb-8">
                 <span className="material-symbols-outlined text-primary text-5xl">home</span>
               </div>
-              <h3 className="text-2xl font-display font-black text-text-main mb-5">Hechas por locales</h3>
-              <p className="text-text-secondary leading-relaxed">Vivimos en Lisboa. Conocemos los sitios donde vamos nosotros, no donde mandan los tours.</p>
+              <h3 className="text-2xl font-display font-black text-text-main mb-5">Hechas por quien vive aquí</h3>
+              <p className="text-text-secondary leading-relaxed">Vivo en Lisboa. Conozco el bar donde desayuno cuando no tengo prisa. El mirador donde llevo a los que vienen de visita.</p>
             </div>
 
             <div className="bg-white rounded-3xl p-12 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
@@ -314,7 +314,7 @@ export default function HomePage() {
                 <span className="material-symbols-outlined text-primary text-5xl">update</span>
               </div>
               <h3 className="text-2xl font-display font-black text-text-main mb-5">Verificadas cada mes</h3>
-              <p className="text-text-secondary leading-relaxed">Comprobamos cada restaurante y lugar cada mes. Sin sorpresas de sitios cerrados o cambiados.</p>
+              <p className="text-text-secondary leading-relaxed">Voy a cada sitio cada mes. Si cierra o cambia, lo actualizo. No te encuentras el restaurante cerrado porque hace 6 meses que no voy.</p>
             </div>
 
             <div className="bg-white rounded-3xl p-12 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
@@ -322,7 +322,7 @@ export default function HomePage() {
                 <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
               <h3 className="text-2xl font-display font-black text-text-main mb-5">Garantía</h3>
-              <p className="text-text-secondary leading-relaxed">48 horas. Si no te gusta, te devolvemos el dinero. Sin preguntas.</p>
+              <p className="text-text-secondary leading-relaxed">48 horas. Si la ruta no te funciona, te devuelvo el dinero. Sin preguntas, sin explicaciones.</p>
             </div>
           </div>
         </div>
@@ -339,7 +339,7 @@ export default function HomePage() {
               Quienes <span className="text-primary">las usaron</span>
             </h2>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Usado por 500 personas que querían evitar las multitudes y comer donde comemos nosotros.
+              500 personas ya las usaron. Evitaron las colas del 28. Comieron donde comemos nosotros. Llegaron al mirador cuando aún no había nadie.
             </p>
           </div>
 
@@ -352,7 +352,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "La guía de 2 días me salvó el viaje. Restaurantes buenísimos y cero turistadas. El mapa interactivo funciona perfecto offline. Ya compré la de Porto."
+                "La guía de 2 días funcionó. El restaurante de Alfama que recomendaste, el pastel de nata estaba recién hecho. El mapa offline me salvó cuando no había señal."
               </p>
               <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
                 <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
@@ -373,7 +373,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "Compré 3 guías en PDF en otros sitios. Esta es la mejor con diferencia. El nivel de detalle y los restaurantes son exactamente lo que buscaba."
+                "Compré 3 guías antes. Esta fue la única que me dijo a qué hora ir al mirador para que no estuviera lleno. Y el bar donde desayunamos el domingo existía de verdad."
               </p>
               <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
                 <div className="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
@@ -394,7 +394,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "Seguimos la guía romántica al pie de la letra. Restaurante con vistas al Tajo increíble. Pedida de mano exitosa."
+                "Seguimos la guía romántica completa. El restaurante con vistas al Tajo funcionó. La pedida de mano fue ahí. Dijiste que funcionaba y funcionó."
               </p>
               <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
                 <div className="w-14 h-14 bg-terracotta/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
@@ -441,7 +441,7 @@ export default function HomePage() {
             Primera vez en Lisboa
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Guía práctica gratuita con transporte, presupuestos reales, mejor época y consejos esenciales.
+            Guía práctica gratis. Cómo funciona el Viva Viagem. Cuánto cuesta realmente una comida. Qué llevar en la maleta.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
             <Link
@@ -449,10 +449,10 @@ export default function HomePage() {
               className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-semibold text-lg shadow-editorial hover:opacity-95 transition-all duration-300"
             >
               <span className="material-symbols-outlined text-xl">explore</span>
-              Ver guía práctica
+              Quiero la guía práctica
             </Link>
           </div>
-          <p className="text-white/75 text-sm font-medium">Transporte · Presupuestos · Mejor época · 100% gratis</p>
+          <p className="text-white/75 text-sm font-medium">Transporte · Presupuestos · Mejor época · Gratis</p>
         </div>
       </section>
     </main>
