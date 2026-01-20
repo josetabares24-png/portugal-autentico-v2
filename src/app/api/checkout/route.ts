@@ -18,6 +18,23 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 export async function POST(request: NextRequest) {
   try {
+    // #region agent log
+    const apiStartLogData = {
+      location: 'route.ts:19',
+      message: 'API checkout started',
+      data: {
+        hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
+        hasSiteUrl: !!process.env.NEXT_PUBLIC_SITE_URL,
+        stripeMode: process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST'
+      },
+      timestamp: Date.now(),
+      sessionId: 'debug-session',
+      runId: 'initial',
+      hypothesisId: 'C'
+    };
+    fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(apiStartLogData)}).catch(()=>{});
+    // #endregion
+
     console.log('API Checkout: Iniciando proceso de checkout', {
       hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
       hasSiteUrl: !!process.env.NEXT_PUBLIC_SITE_URL,
@@ -27,9 +44,34 @@ export async function POST(request: NextRequest) {
     // Verificar autenticación OBLIGATORIA - las guías se guardan con el usuario
     const { userId } = await auth();
     
+    // #region agent log
+    const authCheckLogData = {
+      location: 'route.ts:34',
+      message: 'Auth check completed',
+      data: { hasUserId: !!userId, userId: userId || null },
+      timestamp: Date.now(),
+      sessionId: 'debug-session',
+      runId: 'initial',
+      hypothesisId: 'C'
+    };
+    fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(authCheckLogData)}).catch(()=>{});
+    // #endregion
+
     console.log('API Checkout: Auth check', { hasUserId: !!userId });
     
     if (!userId) {
+      // #region agent log
+      const noAuthLogData = {
+        location: 'route.ts:42',
+        message: 'No user ID - returning 401',
+        data: { hasUserId: false, userId: null },
+        timestamp: Date.now(),
+        sessionId: 'debug-session',
+        runId: 'initial',
+        hypothesisId: 'C'
+      };
+      fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(noAuthLogData)}).catch(()=>{});
+      // #endregion
       console.error('API Checkout: Usuario no autenticado');
       return NextResponse.json(
         { error: 'Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta para acceso permanente.' },
