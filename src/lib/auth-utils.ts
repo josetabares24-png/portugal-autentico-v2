@@ -12,7 +12,8 @@ export async function isAdmin(): Promise<boolean> {
   }
 
   try {
-    const user = await clerkClient.users.getUser(userId);
+    const client = await clerkClient();
+    const user = await client.users.getUser(userId);
     const metadata = user.publicMetadata as { role?: string; isAdmin?: boolean; isMaster?: boolean };
     
     // Verifica si es admin por metadata
