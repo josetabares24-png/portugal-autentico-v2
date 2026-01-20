@@ -20,10 +20,10 @@ export default function LisboaFotografiaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte - Golden hour' },
-    { url: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg', caption: 'Tranvía 28 - Blue hour nocturno' },
-    { url: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg', caption: 'Arco da Rua Augusta - Arquitectura' },
-    { url: '/images/eddie-hollywood-F-HXaVpuRFQ-unsplash.jpg', caption: 'Arcadas del Comercio - Perspectiva' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Miradores de Lisboa - Golden hour' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 - Blue hour' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura icónica' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Perspectivas abiertas de la ciudad' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaFotografiaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg"
+            src="/images/fotografo-hero.jpg"
             alt="Lisboa Fotografía PhotoWalk"
             fill
             className="object-cover scale-110"

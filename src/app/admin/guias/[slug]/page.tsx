@@ -1,7 +1,9 @@
 import { redirect, notFound } from 'next/navigation';
 import Link from 'next/link';
 import { isAdmin } from '@/lib/auth-utils';
-import { mainItineraries, specialItineraries, type Itinerary, type TimelineStop } from '@/data/itineraries';
+import { type TimelineStop } from '@/data/itineraries';
+import { getGuideEditData } from '@/lib/guide-store';
+import { GuideAdminActions } from './GuideAdminActions';
 import {
   lisboa1DiaTimeline,
   lisboa2DiasDia1Timeline,
@@ -44,18 +46,14 @@ export default async function AdminGuiaEditPage({
 
   const { slug } = await params;
 
-  // Buscar la guía
-  const allGuides = [...mainItineraries, ...specialItineraries];
-  const guide = allGuides.find(
-    (g) => g.slug === slug || g.id === slug || g.href?.includes(slug)
-  );
+  const guide = await getGuideEditData(slug);
 
   if (!guide) {
     notFound();
   }
 
   // Obtener timeline si existe
-  const timeline = timelineMap[slug] || timelineMap[guide.slug || ''] || [];
+  const timeline = timelineMap[slug] || [];
 
   return (
     <main className="min-h-screen bg-[#FFFDF7] pt-24 pb-16">
@@ -89,7 +87,7 @@ export default async function AdminGuiaEditPage({
                 Editar Guía
               </Link>
               <Link
-                href={guide.href}
+                href={`/itinerarios/${guide.slug}`}
                 target="_blank"
                 className="inline-flex items-center gap-2 bg-white border-2 border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl hover:border-orange-500 transition-all"
               >
@@ -160,12 +158,12 @@ export default async function AdminGuiaEditPage({
                 )}
               </div>
             </div>
-            {guide.badge && (
+            {guide.badgeText && (
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Badge</label>
                 <div className="bg-slate-50 rounded-lg p-3">
-                  <span className={`inline-block px-3 py-1 rounded text-sm font-bold text-white ${guide.badge.color}`}>
-                    {guide.badge.text}
+                  <span className={`inline-block px-3 py-1 rounded text-sm font-bold text-white ${guide.badgeColor || 'bg-orange-500'}`}>
+                    {guide.badgeText}
                   </span>
                 </div>
               </div>
@@ -180,12 +178,15 @@ export default async function AdminGuiaEditPage({
               <h2 className="text-2xl font-bold text-slate-900">
                 Timeline ({timeline.length} paradas)
               </h2>
-              <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg">
+              <Link
+                href={`/admin/guias/${slug}/edit#timeline`}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
                 Editar Timeline
-              </button>
+              </Link>
             </div>
             <div className="space-y-6">
               {timeline.map((stop, idx) => (
@@ -252,14 +253,9 @@ export default async function AdminGuiaEditPage({
               </svg>
               Editar Guía
             </Link>
-            <button className="inline-flex items-center gap-2 bg-white border-2 border-red-300 text-red-700 font-semibold px-6 py-3 rounded-xl hover:border-red-500 transition-all">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-              </svg>
-              Eliminar
-            </button>
+            <GuideAdminActions slug={slug} />
             <Link
-              href={`/itinerarios/${guide.slug || guide.id}`}
+              href={`/itinerarios/${guide.slug}`}
               target="_blank"
               className="inline-flex items-center gap-2 bg-white border-2 border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl hover:border-orange-500 transition-all"
             >

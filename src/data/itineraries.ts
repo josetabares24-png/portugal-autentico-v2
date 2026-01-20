@@ -20,14 +20,16 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-1-dia',
     slug: 'lisboa-1-dia-lo-esencial',
     title: 'Lisboa Esencial',
-    description: 'Perfecto si tienes escala o poco tiempo. Lo mejor de Lisboa bien organizado.',
+    description: 'La ruta más eficiente para ver Lisboa en un solo día: horarios reales, barrios clave y paradas estratégicas.',
     duration: '1 día completo',
     price: 1.99,
-    image: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+    image: '/images/alfama-panoramica.jpg',
     features: [
-      'Ruta optimizada hora a hora',
-      '3 restaurantes locales',
-      '8 spots de fotos'
+      'Ruta optimizada por horas reales',
+      'Mapa con puntos GPS y accesos',
+      'Restaurantes locales con rango €',
+      'Spots fotográficos con mejor luz',
+      'Plan B si llueve o hay colas'
     ],
     href: '/itinerarios/lisboa-1-dia-lo-esencial',
     featured: false,
@@ -40,14 +42,16 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-2-dias',
     slug: 'lisboa-2-dias-completo',
     title: 'Lisboa Completa',
-    description: 'El favorito. Fin de semana perfecto con Belém, Alfama y los barrios con encanto.',
+    description: 'Dos días redondos con Lisboa clásica y barrios con encanto, sin perder tiempo ni caer en trampas turísticas.',
     duration: '2 días completos',
     price: 2.99,
-    image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+    image: '/images/elevador-santa-justa.jpg',
     features: [
       '2 rutas completas día a día',
-      '6 restaurantes probados',
-      '15+ spots de fotos'
+      'Restaurantes verificados y terrazas',
+      '15+ spots de fotos con horarios',
+      'Tips de transporte y ahorro',
+      'Cafés locales y miradores clave'
     ],
     href: '/itinerarios/lisboa-2-dias-completo',
     featured: true,
@@ -60,14 +64,16 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-3-dias',
     slug: 'lisboa-3-dias-premium',
     title: 'Lisboa + Alrededores',
-    description: 'La experiencia completa. Lisboa, Sintra, Cascais y Cabo da Roca.',
+    description: 'Tres días premium con Lisboa, Sintra y la costa: rutas cerradas, logística clara y tiempos reales.',
     duration: '3 días + Sintra',
     price: 3.99,
-    image: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+    image: '/images/tranvia-28.jpg',
     features: [
-      'Todo del pack 2 días',
-      'Excursión Sintra completa',
-      'Cascais y Cabo da Roca'
+      'Todo el pack 2 días incluido',
+      'Sintra con orden ideal de visita',
+      'Cascais y Cabo da Roca optimizados',
+      'Consejos de transporte interurbano',
+      'Ritmo equilibrado sin prisas'
     ],
     href: '/itinerarios/lisboa-3-dias-premium',
     featured: false,
@@ -83,14 +89,16 @@ export const specialItineraries: Itinerary[] = [
     id: 'lisboa-full-week',
     slug: 'lisboa-full-week',
     title: 'Lisboa Full Week',
-    description: 'Una semana completa: Lisboa, Sintra, Cascais, Setúbal y Arrábida.',
+    description: 'Siete días completos con Lisboa y alrededores, incluyendo escapadas a Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
     price: 5.99,
-    image: '/images/zac-wolff-guO8kfE2XMs-unsplash.jpg',
+    image: '/images/hero-lisboa.jpg',
     features: [
-      'Todos los itinerarios anteriores',
-      'Setúbal y Arrábida',
-      'Actividades extra'
+      'Todos los itinerarios incluidos',
+      'Escapadas a Sintra y Cascais',
+      'Setúbal y Arrábida con playas',
+      'Logística completa día a día',
+      'Bonus gastronómico y miradores'
     ],
     href: '/itinerarios/lisboa-full-week',
     badge: {
@@ -102,14 +110,16 @@ export const specialItineraries: Itinerary[] = [
     id: 'lisboa-romantica',
     slug: 'lisboa-romantica',
     title: 'Lisboa Romántica',
-    description: 'Miradores al atardecer, cenas románticas y experiencias para parejas.',
+    description: 'Atardeceres, cenas con vistas y rincones íntimos para vivir Lisboa en pareja con ritmo relajado.',
     duration: 'Romántico',
     price: 2.99,
-    image: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
+    image: '/images/vino-celebracion.jpg',
     features: [
-      'Rutas románticas',
-      'Restaurantes especiales',
-      'Atardeceres únicos'
+      'Rutas románticas por barrios top',
+      'Restaurantes con reserva recomendada',
+      'Atardeceres con mejores vistas',
+      'Paseos nocturnos y miradores',
+      'Detalles para sorprender'
     ],
     href: '/itinerarios/lisboa-romantica',
     badge: {
@@ -121,14 +131,16 @@ export const specialItineraries: Itinerary[] = [
     id: 'lisboa-familiar',
     slug: 'lisboa-familiar',
     title: 'Lisboa Familiar',
-    description: 'Actividades para niños, ritmo relajado y restaurantes kid-friendly.',
+    description: 'Plan familiar con ritmo cómodo, actividades para niños y paradas prácticas sin estrés.',
     duration: 'Familiar',
     price: 2.99,
-    image: '/images/pexels-german-latasa-814203747-35697448.jpg',
+    image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
     features: [
-      'Actividades para niños',
-      'Ritmo relajado',
-      'Restaurantes kid-friendly'
+      'Actividades para niños por edad',
+      'Parques y zonas de descanso',
+      'Restaurantes kid-friendly',
+      'Transporte sencillo con carrito',
+      'Alternativas en días de lluvia'
     ],
     href: '/itinerarios/lisboa-familiar',
     badge: {
@@ -140,14 +152,16 @@ export const specialItineraries: Itinerary[] = [
     id: 'lisboa-fotografia',
     slug: 'lisboa-fotografia',
     title: 'Lisboa Fotografía',
-    description: '12 spots fotográficos, horarios de luz perfecta y settings de cámara.',
+    description: 'Ruta fotográfica con luz perfecta, ángulos exactos y spots sin aglomeraciones.',
     duration: 'Fotografía',
     price: 2.99,
-    image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
+    image: '/images/fotografo-hero.jpg',
     features: [
-      '12 spots fotográficos',
-      'Settings de cámara',
-      'Golden hour + Blue hour'
+      'Spots fotográficos con coordenadas',
+      'Golden hour + blue hour',
+      'Ángulos y lentes recomendados',
+      'Cafés fotogénicos incluidos',
+      'Rutas cortas para mejores vistas'
     ],
     href: '/itinerarios/lisboa-fotografia',
     badge: {
@@ -734,32 +748,42 @@ export const includedFeatures = [
   {
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
     title: 'Itinerario hora a hora',
-    description: 'Cada minuto optimizado para que no pierdas tiempo'
+    description: 'Ritmo realista con tiempos de traslado y paradas clave'
   },
   {
     icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-    title: '3 restaurantes locales',
-    description: 'Con precios, qué pedir y cómo llegar'
+    title: 'Restaurantes verificados',
+    description: 'Qué pedir, rangos de precio y ubicaciones exactas'
   },
   {
     icon: 'M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z M15 13a3 3 0 11-6 0 3 3 0 016 0z',
-    title: '8 spots de fotos',
-    description: 'Los mejores ángulos y horarios de luz'
+    title: 'Spots fotográficos',
+    description: 'Mejores ángulos, luz ideal y puntos sin aglomeraciones'
   },
   {
     icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
-    title: 'Mapa offline',
-    description: 'Google Maps con todos los puntos marcados'
+    title: 'Mapa con GPS',
+    description: 'Enlaces directos a Google Maps y rutas optimizadas'
   },
   {
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
-    title: 'Tips para evitar colas',
-    description: 'Horarios secretos que usan los locales'
+    title: 'Tips anti-colas',
+    description: 'Horarios inteligentes y accesos recomendados'
   },
   {
     icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
-    title: 'Alternativas si llueve',
-    description: 'Plan B para cada momento del día'
+    title: 'Plan B por clima',
+    description: 'Opciones interiores y rutas cubiertas si llueve'
+  },
+  {
+    icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+    title: 'Información práctica',
+    description: 'Transporte, zonas recomendadas y alertas útiles'
+  },
+  {
+    icon: 'M5 13l4 4L19 7',
+    title: 'Actualizaciones 2025',
+    description: 'Contenido revisado y mejorado con datos recientes'
   }
 ];
 

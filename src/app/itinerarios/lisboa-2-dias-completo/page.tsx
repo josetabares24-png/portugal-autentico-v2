@@ -21,10 +21,10 @@ export default function Lisboa2DiasPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg', caption: 'Vista panorámica de Lisboa' },
-    { url: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg', caption: 'Arco da Rua Augusta' },
-    { url: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg', caption: 'Tranvía 28 en Alfama' },
-    { url: '/images/pexels-german-latasa-814203747-35697448.jpg', caption: 'Casas coloridas de Lisboa' },
+    { url: '/images/lisboa-2dias-cover.jpg', caption: 'Centro histórico de Lisboa' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 en Alfama' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Panorámica de Lisboa' },
   ];
   return (
     <main className="min-h-screen bg-background-light">
@@ -33,7 +33,7 @@ export default function Lisboa2DiasPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg"
+            src="/images/lisboa-2dias-cover.jpg"
             alt="Lisboa 2 Días Completo"
             fill
             className="object-cover scale-110"

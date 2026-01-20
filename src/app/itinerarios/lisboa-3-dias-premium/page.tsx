@@ -21,10 +21,10 @@ export default function Lisboa3DiasPremiumPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/julia-solonina-ci19YINguoc-unsplash.jpg', caption: 'Palacio da Pena - Sintra' },
-    { url: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg', caption: 'Puente 25 de Abril y Cristo Rei' },
-    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Alfama Lisboa' },
-    { url: '/images/malu-decks-yOFgKNgbg_g-unsplash.jpg', caption: 'Vista del Tajo' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Panorámica de Lisboa' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura icónica' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía histórico en Lisboa' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Lisboa3DiasPremiumPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/julia-solonina-ci19YINguoc-unsplash.jpg"
+            src="/images/hero-lisboa.jpg"
             alt="Lisboa 3 Días + Sintra"
             fill
             className="object-cover scale-110"

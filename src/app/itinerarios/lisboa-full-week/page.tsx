@@ -21,10 +21,10 @@ export default function LisboaFullWeekPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg', caption: 'Lisboa panorámica' },
-    { url: '/images/julia-solonina-ci19YINguoc-unsplash.jpg', caption: 'Palacio da Pena - Sintra' },
-    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Alfama y mirador' },
-    { url: '/images/zac-wolff-guO8kfE2XMs-unsplash.jpg', caption: 'Plaza Rossio' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa panorámica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura icónica' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía histórico en Lisboa' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function LisboaFullWeekPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/zac-wolff-guO8kfE2XMs-unsplash.jpg"
+            src="/images/hero-lisboa.jpg"
             alt="Lisboa - Semana Completa"
             fill
             className="object-cover scale-110"

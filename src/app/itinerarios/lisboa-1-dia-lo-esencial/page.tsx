@@ -22,10 +22,10 @@ export default function Lisboa1DiaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte' },
-    { url: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg', caption: 'Alfama auténtica' },
-    { url: '/images/pexels-helena-i-1489651-2867883.jpg', caption: 'Iglesia de Santo Estêvão' },
-    { url: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg', caption: 'Tranvía 28 emblemático' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores clásicos' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 por las colinas' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Panorámica de Lisboa' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Lisboa1DiaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg"
+            src="/images/alfama-panoramica.jpg"
             alt="Lisboa - Itinerario 1 día"
             fill
             className="object-cover scale-110"

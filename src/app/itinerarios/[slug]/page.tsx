@@ -1,144 +1,18 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
+import { getGuidePack } from '@/lib/guide-store';
+import SocialProof from '@/components/SocialProof';
 
-const packs = {
-  'lisboa-1-dia-lo-esencial': {
-    title: 'Lisboa Esencial',
-    subtitle: '1 dia completo',
-    duration: '1 dia',
-    price: '5.99',
-    image: 'https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200',
-    color: 'from-sky-400 to-blue-600',
-    description: 'Perfecto si tienes escala o poco tiempo. Lo mejor de Lisboa perfectamente organizado para que no pierdas ni un minuto.',
-    includes: [
-      'Itinerario hora a hora optimizado',
-      '3 restaurantes locales con precios',
-      '8 spots de fotos con horarios',
-      'Mapa offline con todos los puntos',
-      'Tips para evitar colas',
-      'Alternativas si llueve'
-    ],
-    highlights: [
-      { time: '09:00', place: 'Alfama', desc: 'Empieza por el barrio mas autentico antes de las multitudes' },
-      { time: '11:00', place: 'Mirador Santa Luzia', desc: 'Las mejores vistas de Lisboa con cafe' },
-      { time: '13:00', place: 'Almuerzo local', desc: 'Tasca escondida con menu del dia por 8 EUR' },
-      { time: '15:00', place: 'Belem', desc: 'Torre, Monasterio y pasteis de nata' },
-      { time: '18:00', place: 'LX Factory', desc: 'Mercado, tiendas y ambiente alternativo' },
-      { time: '20:00', place: 'Cena en Bairro Alto', desc: 'Restaurante con terraza y vistas' }
-    ]
-  },
-  'lisboa-2-dias-completo': {
-    title: 'Lisboa Completa',
-    subtitle: '2 dias completos',
-    duration: '2 dias',
-    price: '8.99',
-    image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?w=1200',
-    color: 'from-amber-400 to-orange-500',
-    badge: 'MAS VENDIDO',
-    description: 'El pack favorito. Fin de semana perfecto con Belem, LX Factory, vida nocturna y todos los secretos que solo conocen los locales.',
-    includes: [
-      'Itinerario completo de 2 dias',
-      '6 restaurantes + bares nocturnos',
-      '15 spots de fotos con horarios',
-      'Mapa offline con todos los puntos',
-      'Tips de transporte y ahorro',
-      'Guia de vida nocturna'
-    ],
-    highlights: [
-      { time: 'Dia 1 AM', place: 'Centro historico', desc: 'Alfama, Graca y los mejores miradores' },
-      { time: 'Dia 1 PM', place: 'Belem', desc: 'Torre, Monasterio, MAAT y pasteis' },
-      { time: 'Dia 1 Noche', place: 'Bairro Alto', desc: 'Cena y bares con ambiente local' },
-      { time: 'Dia 2 AM', place: 'LX Factory', desc: 'Brunch, mercado y tiendas unicas' },
-      { time: 'Dia 2 PM', place: 'Principe Real', desc: 'El barrio mas trendy de Lisboa' },
-      { time: 'Dia 2 Noche', place: 'Fado en Alfama', desc: 'Experiencia autentica portuguesa' }
-    ]
-  },
-  'lisboa-3-dias-premium': {
-    title: 'Lisboa + Alrededores',
-    subtitle: '3 dias + Sintra',
-    duration: '3 dias',
-    price: '11.99',
-    image: 'https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=1200',
-    color: 'from-violet-500 to-purple-700',
-    description: 'La experiencia completa. Lisboa, Sintra, Cascais y Cabo da Roca. Todo lo que necesitas para una semana perfecta.',
-    includes: [
-      'Todo del pack 2 dias incluido',
-      'Dia completo en Sintra',
-      'Excursion a Cascais y Cabo da Roca',
-      '10 restaurantes en total',
-      '25+ spots de fotos',
-      'Tips de transporte entre ciudades'
-    ],
-    highlights: [
-      { time: 'Dias 1-2', place: 'Lisboa', desc: 'Todo el contenido del pack 2 dias' },
-      { time: 'Dia 3 AM', place: 'Sintra', desc: 'Palacio da Pena y Quinta da Regaleira' },
-      { time: 'Dia 3 PM', place: 'Cascais', desc: 'Pueblo costero con encanto' },
-      { time: 'Dia 3 Tarde', place: 'Cabo da Roca', desc: 'El punto mas occidental de Europa' },
-      { time: 'Dia 3 Noche', place: 'Cena en Cascais', desc: 'Mariscos frescos frente al mar' },
-      { time: 'Bonus', place: 'Tips extra', desc: 'Playas secretas y miradores' }
-    ]
-  },
-  'lisboa-fotografia': {
-    title: 'Lisboa Fotografica',
-    subtitle: 'Spots de fotos',
-    duration: 'Flexible',
-    price: '6.99',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200',
-    color: 'from-pink-500 to-rose-600',
-    badge: 'NUEVO',
-    description: 'Los mejores spots para fotos increibles. Horarios de luz perfecta, angulos secretos y lugares sin turistas.',
-    includes: [
-      '15 spots fotograficos con coordenadas',
-      'Mejores horarios de luz (golden hour)',
-      'Angulos exactos para cada foto',
-      'Cafes instagrameables incluidos',
-      'Tips para evitar multitudes',
-      'Configuracion de camara recomendada'
-    ],
-    highlights: [
-      { time: '06:30', place: 'Mirador Senhora do Monte', desc: 'Amanecer sobre Lisboa' },
-      { time: '08:00', place: 'Alfama vacia', desc: 'Calles sin turistas' },
-      { time: '10:00', place: 'Tranvia 28', desc: 'La foto iconica' },
-      { time: '16:00', place: 'LX Factory', desc: 'Arte urbano y grafitis' },
-      { time: '18:30', place: 'Mirador Santa Catarina', desc: 'Golden hour perfecta' },
-      { time: '20:00', place: 'Comercio iluminada', desc: 'Hora azul magica' }
-    ]
-  },
-  'lisboa-familiar': {
-    title: 'Lisboa en Familia',
-    subtitle: 'Con ninos',
-    duration: '2-3 dias',
-    price: '7.99',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200',
-    color: 'from-emerald-400 to-teal-600',
-    badge: 'FAMILIAR',
-    description: 'Actividades perfectas para ninos de todas las edades. Ritmo relajado, parques, playas y diversion garantizada.',
-    includes: [
-      'Itinerario adaptado a ninos',
-      'Restaurantes family-friendly',
-      'Parques y areas de juego',
-      'Playas cercanas accesibles',
-      'Tips de transporte con carritos',
-      'Alternativas para dias de lluvia'
-    ],
-    highlights: [
-      { time: 'Dia 1', place: 'Oceanario', desc: 'Uno de los mejores acuarios del mundo' },
-      { time: 'Dia 1', place: 'Teleferico', desc: 'Vistas del Parque de las Naciones' },
-      { time: 'Dia 2', place: 'Tranvia 28', desc: 'Aventura por las colinas' },
-      { time: 'Dia 2', place: 'Castillo San Jorge', desc: 'Pavos reales y vistas' },
-      { time: 'Dia 3', place: 'Playa de Cascais', desc: 'Dia de playa en familia' },
-      { time: 'Bonus', place: 'Pasteis de Belem', desc: 'Merienda obligatoria' }
-    ]
-  }
-};
+const packs = guidePacks;
 
 export function generateStaticParams() {
-  return Object.keys(packs).map((slug) => ({ slug }));
+  return guidePackSlugs.map((slug) => ({ slug }));
 }
 
 export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const pack = packs[slug as keyof typeof packs];
+  const pack = await getGuidePack(slug);
   
   if (!pack) {
     notFound();
@@ -156,6 +30,12 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
   };
   
   const productId = productIdMap[slug] || slug;
+  const socialGuideIdMap: Record<string, string> = {
+    'lisboa-1-dia-lo-esencial': 'lisboa-1-dia',
+    'lisboa-2-dias-completo': 'lisboa-2-dias',
+    'lisboa-3-dias-premium': 'lisboa-3-dias',
+  };
+  const socialGuideId = socialGuideIdMap[slug] || slug;
 
   return (
     <main>
@@ -193,6 +73,26 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <SocialProof guideId={socialGuideId} />
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ruta profesional</h3>
+              <p className="text-sm text-slate-600">Orden lógico, tiempos reales y consejos locales para moverte sin estrés.</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Contenido premium</h3>
+              <p className="text-sm text-slate-600">Restaurantes verificados, spots fotográficos y planes alternativos.</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Actualizado 2025</h3>
+              <p className="text-sm text-slate-600">Datos vigentes, horarios revisados y recomendaciones recientes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
@@ -202,7 +102,7 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
               
               <div className="grid sm:grid-cols-2 gap-4 mb-12">
                 {pack.includes.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
                     <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-slate-700">{item}</span>
                   </div>

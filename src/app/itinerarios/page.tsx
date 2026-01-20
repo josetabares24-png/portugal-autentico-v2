@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
-import { mainItineraries, specialItineraries } from '@/data/itineraries';
+import { getGuideList } from '@/lib/guide-store';
 
-export default function ItinerariosPage() {
+export default async function ItinerariosPage() {
+  const { main: mainItineraries, special: specialItineraries } = await getGuideList();
   return (
     <main>
       {/* Hero Section - Estilo consistente con home */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+            src="/images/hero-lisboa.jpg"
             alt="Vista panorámica de Lisboa"
             fill
             className="object-cover"

@@ -20,10 +20,10 @@ export default function LisboaRomanticaPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg', caption: 'Mirador Senhora do Monte - Atardecer romántico' },
-    { url: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg', caption: 'Calles de Alfama al atardecer' },
-    { url: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg', caption: 'Puente 25 de Abril iluminado' },
-    { url: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg', caption: 'Terrazas románticas' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Miradores al atardecer en Lisboa' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Calles históricas con encanto' },
+    { url: '/images/tranvia-28.jpg', caption: 'Paseo en tranvía con vistas' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Vistas nocturnas elegantes' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaRomanticaPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg"
+            src="/images/alfama-panoramica.jpg"
             alt="Lisboa Romántica para Parejas"
             fill
             className="object-cover scale-110"

@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { isAdmin } from '@/lib/auth-utils';
-import { mainItineraries, specialItineraries, type Itinerary } from '@/data/itineraries';
+import { getGuideList } from '@/lib/guide-store';
 
 export const metadata = {
   title: 'Gestión de Guías | Admin',
@@ -15,8 +15,8 @@ export default async function AdminGuiasPage() {
     redirect('/');
   }
 
-  // Combinar todas las guías
-  const allGuides: Itinerary[] = [...mainItineraries, ...specialItineraries];
+  const { main: mainItineraries, special: specialItineraries } = await getGuideList();
+  const allGuides = [...mainItineraries, ...specialItineraries];
 
   return (
     <main className="min-h-screen bg-[#FFFDF7] pt-24 pb-16">

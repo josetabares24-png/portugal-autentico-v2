@@ -13,6 +13,9 @@ export function TimelineStop({ time, title, description, tip, type, index, image
   const badgeText = type === 'food' ? 'text-amber-700' : 'text-sky-700';
   const tipColor = type === 'food' ? 'text-amber-600' : 'text-sky-600';
   const iconBg = type === 'food' ? 'bg-amber-500' : 'bg-primary';
+  const imageSrc = image && image.startsWith('/images/')
+    ? image
+    : '/images/hero-lisboa.jpg';
 
   return (
     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 group">
@@ -63,9 +66,9 @@ export function TimelineStop({ time, title, description, tip, type, index, image
       {/* Image */}
       <div className={`pl-20 md:pl-0 ${isEven ? 'order-2' : 'order-2 md:order-1 md:pr-4'} ${isEven ? '' : 'md:text-right'}`}>
         <div className={`aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-md group-hover:shadow-lg transition-shadow ${isEven ? '' : 'ml-auto'}`}>
-          {image ? (
+          {imageSrc ? (
             <Image 
-              src={image} 
+              src={imageSrc} 
               alt={title}
               width={600}
               height={400}

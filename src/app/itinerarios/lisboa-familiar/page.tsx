@@ -20,10 +20,10 @@ export default function LisboaFamiliarPage() {
 
   // Fotos para la galería
   const photos = [
-    { url: '/images/pexels-german-latasa-814203747-35697448.jpg', caption: 'Casas coloridas de Lisboa' },
-    { url: '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg', caption: 'Tranvía Hills Tramcar Tour' },
-    { url: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg', caption: 'Tranvía 28 - Aventura familiar' },
-    { url: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg', caption: 'Plazas con terrazas kid-friendly' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Panorámica de Lisboa en familia' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 - Aventura familiar' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador Santa Justa' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores' },
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function LisboaFamiliarPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/pexels-german-latasa-814203747-35697448.jpg"
+            src="/images/tranvia-28.jpg"
             alt="Lisboa en Familia con Niños"
             fill
             className="object-cover scale-110"

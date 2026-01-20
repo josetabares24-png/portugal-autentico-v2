@@ -114,7 +114,12 @@ Página detallada de cada guía que muestra:
    - Información completa del timeline
    - Estadísticas rápidas
 
-3. **Navegación**
+3. **Edición real con Supabase**
+   - Guardado persistente en base de datos
+   - Edición de contenido, features e highlights
+   - Creación y eliminación desde el panel
+
+4. **Navegación**
    - Links entre secciones
    - Acceso rápido a versión pública
    - Breadcrumbs para navegación
@@ -140,6 +145,19 @@ Página detallada de cada guía que muestra:
 ---
 
 ## 🛠️ Estructura Técnica
+### Base de datos (Supabase)
+
+Para que la edición sea persistente, crea la tabla `guides` en Supabase usando el script:
+
+```
+scripts/sql/guides.sql
+```
+
+Pasos:
+1. Abre Supabase → SQL Editor
+2. Copia y pega el contenido de `scripts/sql/guides.sql`
+3. Ejecuta el script
+
 
 ### Archivos Creados
 
@@ -237,21 +255,11 @@ El panel usa el mismo diseño que el resto de la plataforma:
 
 ### Para Implementar Edición
 
-1. **Crear API Routes**
-   - `POST /api/admin/guias` - Crear guía
-   - `PUT /api/admin/guias/[slug]` - Actualizar guía
-   - `DELETE /api/admin/guias/[slug]` - Eliminar guía
+1. **Mejorar Timeline avanzado**
+   - Editor drag & drop
+   - Imágenes por parada
 
-2. **Mover Datos a Base de Datos**
-   - Considerar mover guías a Supabase
-   - O mantener en archivos pero con API de escritura
-
-3. **Crear Formularios**
-   - Formulario de edición de información básica
-   - Editor de timeline (drag & drop)
-   - Upload de imágenes
-
-4. **Validación**
+2. **Validación**
    - Validar datos antes de guardar
    - Sanitizar inputs
    - Verificar permisos en API
