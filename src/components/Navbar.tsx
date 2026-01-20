@@ -5,11 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
+import { useIsAdmin } from '@/hooks/useIsAdmin';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { isSignedIn } = useUser();
+  const isAdmin = useIsAdmin();
 
   const [utilidadesDropdownOpen, setUtilidadesDropdownOpen] = useState(false);
 
@@ -110,6 +112,15 @@ export default function Navbar() {
                 >
                   Mis Guías
                 </Link>
+                {isAdmin && (
+                  <Link
+                    href="/admin"
+                    className="px-4 py-2.5 text-orange-600 hover:text-orange-700 font-semibold text-sm transition-colors rounded-xl hover:bg-orange-50 border border-orange-200"
+                  >
+                    <span className="material-symbols-outlined text-lg align-middle mr-1">admin_panel_settings</span>
+                    Admin
+                  </Link>
+                )}
                 <UserButton afterSignOutUrl="/" />
               </>
             ) : (
@@ -195,6 +206,16 @@ export default function Navbar() {
                     >
                       Mis Guías
                     </Link>
+                    {isAdmin && (
+                      <Link
+                        href="/admin"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="px-4 py-3 text-orange-600 hover:text-orange-700 font-semibold text-base rounded-xl hover:bg-orange-50 transition-colors border border-orange-200"
+                      >
+                        <span className="material-symbols-outlined text-lg align-middle mr-2">admin_panel_settings</span>
+                        Panel de Admin
+                      </Link>
+                    )}
                     <div className="px-4 py-2">
                       <UserButton afterSignOutUrl="/" />
                     </div>

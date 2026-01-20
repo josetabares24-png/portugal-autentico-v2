@@ -80,6 +80,15 @@ export default async function AdminGuiaEditPage({
             </div>
             <div className="flex gap-4">
               <Link
+                href={`/admin/guias/${slug}/edit`}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                Editar Guía
+              </Link>
+              <Link
                 href={guide.href}
                 target="_blank"
                 className="inline-flex items-center gap-2 bg-white border-2 border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl hover:border-orange-500 transition-all"
@@ -234,12 +243,15 @@ export default async function AdminGuiaEditPage({
         <div className="bg-white rounded-2xl border-2 border-slate-200 p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Acciones</h2>
           <div className="flex flex-wrap gap-4">
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg">
+            <Link
+              href={`/admin/guias/${slug}/edit`}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+            >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg>
               Editar Guía
-            </button>
+            </Link>
             <button className="inline-flex items-center gap-2 bg-white border-2 border-red-300 text-red-700 font-semibold px-6 py-3 rounded-xl hover:border-red-500 transition-all">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
