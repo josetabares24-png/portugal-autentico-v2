@@ -75,6 +75,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Error al crear la guía' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Error al crear la guía';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { blogPosts } from '@/data/blog-posts';
 
 const articles: Record<string, {
   titulo: string;
@@ -952,6 +955,72 @@ const articles: Record<string, {
   }
 };
 
+const localImages: Record<string, string> = {
+  'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
+  'donde-comer-barato-lisboa': '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+  'como-ir-sintra-desde-lisboa': '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
+  'tarjeta-lisboa-card-vale-pena': '/images/tranvia-28.jpg',
+  'barrios-lisboa-donde-alojarse': '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
+  'los-10-mejores-miradores': '/images/hero-lisboa.jpg',
+  'pasteles-de-belem': '/images/IMG_1880.jpg',
+  'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
+  'presupuesto-viajar-lisboa': '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
+  'mejores-mercados-lisboa': '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
+  'donde-tomar-cafe-lisboa': '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
+  'miradores-atardecer-lisboa': '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+  'que-comprar-lisboa-souvenirs': '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+  'viajar-ninos-lisboa': '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg',
+  'excursiones-desde-lisboa': '/images/pexels-daniel-1547736.jpg',
+  'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
+  'donde-escuchar-fado-autentico': '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
+  'mejor-epoca-visitar-lisboa': '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+};
+
+const SITE_URL = 'https://estabaenlisboa.com';
+const AUTHOR_NAME = 'José Tabares';
+
+function toAbsoluteUrl(pathOrUrl: string) {
+  if (pathOrUrl.startsWith('http')) return pathOrUrl;
+  return `${SITE_URL}${pathOrUrl}`;
+}
+
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const article = articles[params.slug];
+  if (!article) {
+    return {
+      title: 'Artículo no encontrado | Blog Lisboa',
+    };
+  }
+
+  const image = localImages[params.slug] || article.imagen;
+  return {
+    title: `${article.titulo} | Blog Lisboa`,
+    description: article.descripcion,
+    openGraph: {
+      title: `${article.titulo} | Blog Lisboa`,
+      description: article.descripcion,
+      url: `${SITE_URL}/blog/${params.slug}`,
+      images: [
+        {
+          url: toAbsoluteUrl(image),
+          width: 1200,
+          height: 630,
+          alt: article.titulo,
+        },
+      ],
+    },
+  };
+}
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = articles[slug];
@@ -959,6 +1028,47 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!article) {
     notFound();
   }
+
+  const heroImage = localImages[slug] || article.imagen;
+  const headings = article.contenido
+    .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
+    .map((bloque) => ({
+      title: bloque.texto as string,
+      id: slugify(bloque.texto as string),
+    }));
+
+  const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
+  const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
+  const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.titulo,
+    description: article.descripcion,
+    datePublished: article.fecha,
+    author: {
+      '@type': 'Person',
+      name: AUTHOR_NAME,
+    },
+    image: toAbsoluteUrl(heroImage),
+    mainEntityOfPage: toAbsoluteUrl(`/blog/${slug}`),
+    publisher: {
+      '@type': 'Organization',
+      name: 'Estaba en Lisboa',
+      url: SITE_URL,
+    },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: article.titulo, item: `${SITE_URL}/blog/${slug}` },
+    ],
+  };
 
   const categoriaColor: Record<string, string> = {
     "Guías": "bg-blue-100 text-blue-700",
@@ -970,11 +1080,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     "Planificación": "bg-teal-100 text-teal-700"
   };
 
+  let paragraphIndex = 0;
+
   return (
     <main>
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${article.imagen})`}}></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/60"></div>
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={article.titulo}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/60"></div>
+        </div>
         <div className="relative max-w-4xl mx-auto px-4">
           <Link href="/blog" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
@@ -997,32 +1117,89 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </section>
 
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid lg:grid-cols-[2fr,1fr] gap-10 mb-12">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+              <p className="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-3">Resumen rápido</p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-4">{article.descripcion}</p>
+              {takeaways.length > 0 && (
+                <ul className="space-y-2 text-slate-700">
+                  {takeaways.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-1 text-emerald-600">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {headings.length > 0 && (
+              <aside className="border border-slate-200 rounded-2xl p-6 bg-white">
+                <p className="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-4">Tabla de contenidos</p>
+                <nav className="space-y-2 text-sm">
+                  {headings.map((heading) => (
+                    <a
+                      key={heading.id}
+                      href={`#${heading.id}`}
+                      className="block text-slate-700 hover:text-primary transition-colors"
+                    >
+                      {heading.title}
+                    </a>
+                  ))}
+                </nav>
+              </aside>
+            )}
+          </div>
+
           <article className="prose prose-lg max-w-none">
             {article.contenido.map((bloque, index) => {
-              if (bloque.tipo === "parrafo") {
-                return <p key={index} className="text-slate-600 leading-relaxed mb-6">{bloque.texto}</p>;
+              if (bloque.tipo === 'parrafo') {
+                paragraphIndex += 1;
+                const isLead = paragraphIndex === 1;
+                return (
+                  <p
+                    key={index}
+                    className={`text-slate-600 leading-relaxed mb-6 ${isLead ? 'text-lg text-slate-700' : ''}`}
+                  >
+                    {bloque.texto}
+                  </p>
+                );
               }
-              if (bloque.tipo === "subtitulo") {
-                return <h2 key={index} className="text-2xl font-bold mt-10 mb-4" style={{color: 'var(--color-primary)'}}>{bloque.texto}</h2>;
+              if (bloque.tipo === 'subtitulo') {
+                const headingId = slugify(bloque.texto || '');
+                return (
+                  <h2
+                    key={index}
+                    id={headingId}
+                    className="text-2xl font-bold mt-10 mb-4 scroll-mt-28"
+                    style={{ color: 'var(--color-primary)' }}
+                  >
+                    {bloque.texto}
+                  </h2>
+                );
               }
-              if (bloque.tipo === "lista") {
+              if (bloque.tipo === 'lista') {
                 return (
                   <ul key={index} className="space-y-2 mb-6">
                     {bloque.items?.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-slate-600">
-                        <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         {item}
                       </li>
                     ))}
                   </ul>
                 );
               }
-              if (bloque.tipo === "tip") {
+              if (bloque.tipo === 'tip') {
                 return (
                   <div key={index} className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6 rounded-r-lg">
                     <p className="text-amber-800 font-medium flex items-start gap-2">
-                      <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                      <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
                       {bloque.texto}
                     </p>
                   </div>
@@ -1040,8 +1217,47 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
+
+          {relatedPosts.length > 0 && (
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Artículos relacionados</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {relatedPosts.map((post) => (
+                  <Link
+                    key={post.id}
+                    href={`/blog/${post.id}`}
+                    className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-primary hover:shadow-xl transition-all"
+                  >
+                    <div className="relative h-36">
+                      <Image
+                        src={post.imagen}
+                        alt={post.titulo}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-xs font-semibold text-slate-500 mb-2">{post.categoria}</p>
+                      <h4 className="text-base font-bold text-slate-900 group-hover:text-primary transition-colors">
+                        {post.titulo}
+                      </h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
     </main>
   );
 }

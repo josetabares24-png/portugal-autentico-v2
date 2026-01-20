@@ -4,6 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
+import InteractiveMap from '@/components/InteractiveMap';
 import { lisboaFotografiaTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -211,6 +212,13 @@ export default function LisboaFotografiaPage() {
 
       {/* Included Features */}
       <IncludedFeatures />
+
+      <InteractiveMap
+        mapId="PLACEHOLDER"
+        title="Mapa Interactivo del Itinerario"
+        description="Spots fotográficos, golden hour y ubicaciones exactas en un mapa interactivo."
+        guideTitle="Lisboa Fotografía"
+      />
 
       {/* Photo Gallery Section */}
       <section className="py-16 bg-background-cream" id="galeria">

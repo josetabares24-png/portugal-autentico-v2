@@ -4,6 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
+import InteractiveMap from '@/components/InteractiveMap';
 import { lisboaFamiliarTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -211,6 +212,13 @@ export default function LisboaFamiliarPage() {
 
       {/* Included Features */}
       <IncludedFeatures />
+
+      <InteractiveMap
+        mapId="PLACEHOLDER"
+        title="Mapa Interactivo del Itinerario"
+        description="Parques, actividades y paradas familiares ubicadas en un solo mapa."
+        guideTitle="Lisboa en Familia"
+      />
 
       {/* Photo Gallery Section */}
       <section className="py-16 bg-background-cream" id="galeria">

@@ -27,7 +27,8 @@ export async function GET(
 
     return NextResponse.json({ data });
   } catch (error) {
-    return NextResponse.json({ error: 'Error al obtener la guía' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Error al obtener la guía';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 
@@ -107,7 +108,8 @@ export async function PUT(
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Error al guardar la guía' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Error al guardar la guía';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 
@@ -134,6 +136,7 @@ export async function DELETE(
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Error al eliminar la guía' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Error al eliminar la guía';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

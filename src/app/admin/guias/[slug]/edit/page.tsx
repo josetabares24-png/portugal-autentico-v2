@@ -4,13 +4,18 @@ import { isAdmin } from '@/lib/auth-utils';
 import { getGuideEditData } from '@/lib/guide-store';
 import { GuideEditForm } from './GuideEditForm';
 
-export default async function EditGuiaPage({ params }: { params: { slug: string } }) {
+export default async function EditGuiaPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const admin = await isAdmin();
   if (!admin) {
     redirect('/');
   }
 
-  const guide = await getGuideEditData(params.slug);
+  const { slug } = await params;
+  const guide = await getGuideEditData(slug);
   if (!guide) {
     notFound();
   }
@@ -20,7 +25,7 @@ export default async function EditGuiaPage({ params }: { params: { slug: string 
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-8">
           <Link
-            href={`/admin/guias/${params.slug}`}
+            href={`/admin/guias/${slug}`}
             className="inline-flex items-center gap-2 text-slate-600 hover:text-orange-600 mb-4 transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -5,6 +5,7 @@ import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import SocialProof from '@/components/SocialProof';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
+import InteractiveMap from '@/components/InteractiveMap';
 import { lisboaFullWeekTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -239,6 +240,13 @@ export default function LisboaFullWeekPage() {
 
       {/* Included Features */}
       <IncludedFeatures />
+
+      <InteractiveMap
+        mapId="PLACEHOLDER"
+        title="Mapa Interactivo del Itinerario"
+        description="Todos los barrios, escapadas y rutas de la semana completa en un solo mapa."
+        guideTitle="Lisboa Full Week"
+      />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}
       <section className="py-16 bg-background-cream" id="galeria">

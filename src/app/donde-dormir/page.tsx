@@ -79,6 +79,7 @@ export default function DondeDormirPage() {
         price: '18-35€',
         rating: 9.1,
         description: 'Hostel social con excelente ambiente. Desayuno incluido y actividades diarias.',
+        image: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
         amenities: ['Desayuno gratis', 'Cocina compartida', 'Free walking tours', 'Bar'],
         bookingUrl: `https://www.booking.com/hotel/pt/home-lisbon-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MÁS SOCIAL'
@@ -89,6 +90,7 @@ export default function DondeDormirPage() {
         price: '20-40€',
         rating: 8.9,
         description: 'Perfecto para viajeros solos. Eventos nocturnos y excursiones organizadas.',
+        image: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg',
         amenities: ['Solo travelers', 'Fiesta incluida', 'Terraza panorámica', 'Desayuno'],
         bookingUrl: `https://www.booking.com/hotel/pt/goodmorning-solo-traveller-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'PARA SOLOS'
@@ -99,6 +101,7 @@ export default function DondeDormirPage() {
         price: '22-45€',
         rating: 9.0,
         description: 'Hostel boutique en edificio histórico. Vistas increíbles desde la terraza.',
+        image: '/images/alfama-panoramica.jpg',
         amenities: ['Terraza con vistas', 'Desayuno buffet', 'Ubicación premium', 'Habitaciones privadas'],
         bookingUrl: `https://www.booking.com/hotel/pt/lisbon-destination-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MEJOR VISTAS'
@@ -111,6 +114,7 @@ export default function DondeDormirPage() {
         price: '90-150€',
         rating: 8.7,
         description: 'Hotel clásico con terraza rooftop. Vistas al Castillo de São Jorge.',
+        image: '/images/elevador-santa-justa.jpg',
         amenities: ['Terraza rooftop', 'Desayuno incluido', 'Centro histórico', 'WiFi gratis'],
         bookingUrl: `https://www.booking.com/hotel/pt/mundial.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MEJOR TERRAZA'
@@ -121,6 +125,7 @@ export default function DondeDormirPage() {
         price: '120-200€',
         rating: 9.2,
         description: 'Hotel boutique de diseño. Piscina con vistas al río Tajo.',
+        image: '/images/alfama-panoramica.jpg',
         amenities: ['Piscina con vistas', 'Diseño moderno', 'Bar en rooftop', 'Spa'],
         bookingUrl: `https://www.booking.com/hotel/pt/memmo-alfama.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'LUJO ASEQUIBLE'
@@ -131,6 +136,7 @@ export default function DondeDormirPage() {
         price: '110-180€',
         rating: 9.0,
         description: 'Hotel elegante en palacete del siglo XVIII. Spa y piscina interior.',
+        image: '/images/hero-lisboa.jpg',
         amenities: ['Spa completo', 'Piscina interior', 'Edificio histórico', 'Restaurante gourmet'],
         bookingUrl: `https://www.booking.com/hotel/pt/the-lumiares.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'CON SPA'
@@ -141,6 +147,7 @@ export default function DondeDormirPage() {
         price: '140-250€',
         rating: 9.3,
         description: 'Palacio del siglo XIX convertido en hotel boutique. Piscina panorámica.',
+        image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
         amenities: ['Piscina infinita', 'Vistas panorámicas', 'Decoración de época', 'Bar sofisticado'],
         bookingUrl: `https://www.booking.com/hotel/pt/torel-palace-lisbon.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'ROMÁNTICO'
@@ -151,6 +158,7 @@ export default function DondeDormirPage() {
         price: '150-280€',
         rating: 9.1,
         description: 'Hotel de lujo junto al río. Vista directa a la Torre de Belém.',
+        image: '/images/pexels-helena-i-1489651-2867883.jpg',
         amenities: ['Spa de lujo', 'Restaurante Michelin', 'Vistas río', 'Gimnasio'],
         bookingUrl: `https://www.booking.com/hotel/pt/altis-belem.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'LUJO TOTAL'
@@ -161,6 +169,7 @@ export default function DondeDormirPage() {
         price: '100-170€',
         rating: 9.0,
         description: 'Hotel moderno 5 estrellas. Cerca del aeropuerto y estación Oriente.',
+        image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
         amenities: ['Piscina infinita', 'Spa', 'Restaurante panorámico', 'Gimnasio 24h'],
         bookingUrl: `https://www.booking.com/hotel/pt/myriad-by-sana-hotels.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MODERNO'
@@ -334,14 +343,17 @@ export default function DondeDormirPage() {
                   key={index}
                   className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-primary transition-all hover:shadow-xl"
                 >
-                  {/* Placeholder Image */}
-                  <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center relative">
-                    <span className="material-symbols-outlined text-white text-6xl">hotel</span>
-                    <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
+                  {/* Imagen real */}
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={hostel.image}
+                      alt={`Hostel ${hostel.name}`}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                       {hostel.highlight}
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white text-xs p-2 text-center">
-                      📸 Foto placeholder: Imagen exterior/recepción del hostel (800x600px)
                     </div>
                   </div>
 
@@ -413,14 +425,17 @@ export default function DondeDormirPage() {
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-primary transition-all hover:shadow-xl"
               >
-                {/* Placeholder Image */}
-                <div className="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center relative">
-                  <span className="material-symbols-outlined text-white text-7xl">apartment</span>
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
+                {/* Imagen real */}
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={hotel.image}
+                    alt={`Hotel ${hotel.name}`}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                     {hotel.highlight}
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm text-white text-xs p-2 text-center">
-                    📸 Foto placeholder: Fachada o habitación del hotel (1200x800px)
                   </div>
                 </div>
 

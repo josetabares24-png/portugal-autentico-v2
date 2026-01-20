@@ -11,6 +11,7 @@ interface GuideEditFormProps {
 export function GuideEditForm({ initialData }: GuideEditFormProps) {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState<GuideEditData>(initialData);
 
   const updateHighlight = (index: number, field: keyof GuideHighlight, value: string) => {
@@ -34,6 +35,7 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setSaving(true);
+    setErrorMessage(null);
 
     try {
       const response = await fetch(`/api/admin/guides/${formData.slug}`, {
@@ -43,13 +45,18 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
       });
 
       if (!response.ok) {
-        throw new Error('No se pudo guardar la guía.');
+        const payload = await response.json().catch(() => null);
+        const message = payload?.error || 'No se pudo guardar la guía.';
+        throw new Error(message);
       }
 
       router.push(`/admin/guias/${formData.slug}`);
       router.refresh();
     } catch (error) {
-      alert('Error al guardar la guía. Revisa la configuración de Supabase.');
+      const message = error instanceof Error
+        ? error.message
+        : 'Error al guardar la guía. Revisa la configuración de Supabase.';
+      setErrorMessage(message);
     } finally {
       setSaving(false);
     }
@@ -57,6 +64,11 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl border-2 border-slate-200 p-8 space-y-8">
+      {errorMessage && (
+        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          {errorMessage}
+        </div>
+      )}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-900">Información principal</h2>
 

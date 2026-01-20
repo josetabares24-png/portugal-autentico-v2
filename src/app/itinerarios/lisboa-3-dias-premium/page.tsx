@@ -5,6 +5,7 @@ import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import SocialProof from '@/components/SocialProof';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
+import InteractiveMap from '@/components/InteractiveMap';
 import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -229,6 +230,13 @@ export default function Lisboa3DiasPremiumPage() {
 
       {/* Included Features */}
       <IncludedFeatures />
+
+      <InteractiveMap
+        mapId="PLACEHOLDER"
+        title="Mapa Interactivo del Itinerario"
+        description="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave del día 3."
+        guideTitle="Lisboa + Alrededores"
+      />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}
       <section className="py-16 bg-background-cream" id="galeria">
