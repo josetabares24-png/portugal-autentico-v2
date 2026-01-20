@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCheckout } from '@/hooks/useCheckout';
 import { ProductId } from '@/lib/stripe-products';
 import { useUser } from '@clerk/nextjs';
@@ -16,23 +16,39 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
   const { redirectToCheckout, loading, error } = useCheckout();
   const { isSignedIn, isLoaded } = useUser();
   const [localError, setLocalError] = useState<string | null>(null);
+  const [clerkTimeout, setClerkTimeout] = useState(false);
 
-  // Debug: Log del estado de Clerk
-  if (typeof window !== 'undefined') {
-    console.log('BuyButton - Clerk state:', { isLoaded, isSignedIn, productId });
-  }
+  // Detectar si Clerk tarda mucho en cargar (15 segundos)
+  useEffect(() => {
+    if (!isLoaded) {
+      const timeout = setTimeout(() => {
+        setClerkTimeout(true);
+      }, 15000);
+
+      return () => clearTimeout(timeout);
+    } else {
+      setClerkTimeout(false);
+    }
+  }, [isLoaded]);
 
   const handleClick = async () => {
-    // Si Clerk aún no se ha cargado, intentar igual (puede ser un problema de configuración)
-    if (!isLoaded) {
-      console.warn('BuyButton: Clerk aún no se ha cargado, pero intentando checkout');
-      // No retornar inmediatamente, permitir que intente
+    setLocalError(null);
+    
+    // Si Clerk aún no se ha cargado, esperar un poco más
+    if (!isLoaded && !clerkTimeout) {
+      setLocalError('Cargando autenticación... Por favor, espera un momento.');
+      return;
+    }
+
+    // Si Clerk no se cargó después del timeout
+    if (!isLoaded && clerkTimeout) {
+      setLocalError('Error al cargar la autenticación. Por favor, recarga la página.');
+      return;
     }
     
-    setLocalError(null); // Limpiar error previo
-    
+    // Si está cargado pero no autenticado
     if (isLoaded && !isSignedIn) {
-      setLocalError('Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta.');
+      setLocalError('Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta para acceso permanente.');
       return;
     }
     
@@ -42,17 +58,12 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
     }
     
     try {
-      console.log('BuyButton: Iniciando checkout para producto:', productId);
       await redirectToCheckout(productId);
-      // Si llegamos aquí sin error, la redirección debería haber ocurrido
     } catch (err: any) {
-      console.error('BuyButton: Error capturado:', err);
-      // El error ya se maneja en useCheckout y se muestra en displayError
-      // Pero podemos agregar un mensaje más específico aquí si es necesario
+      console.error('Error en checkout:', err);
       if (err.message?.includes('iniciar sesión') || err.message?.includes('401')) {
         setLocalError(err.message || 'Debes iniciar sesión para comprar.');
       } else {
-        // Mostrar cualquier otro error
         setLocalError(err.message || 'Error al procesar el pago. Por favor, intenta de nuevo.');
       }
     }
@@ -61,14 +72,12 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
   // Combinar errores del hook y locales
   const displayError = error || localError;
 
-  // Si no está autenticado, mostrar mensaje claro
+  // Si no está autenticado y Clerk ya se cargó, mostrar botón de inicio de sesión
   if (isLoaded && !isSignedIn) {
     return (
       <div className="w-full">
         <SignInButton mode="modal">
-          <button
-            className={className}
-          >
+          <button className={className}>
             {children || 'Inicia sesión para comprar'}
           </button>
         </SignInButton>
@@ -79,9 +88,9 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
     );
   }
 
-  // Si Clerk no se ha cargado, mostrar mensaje y permitir click (por si es problema de Clerk)
-  const isDisabled = loading;
-  const showLoadingState = !isLoaded && !displayError;
+  // Si Clerk no se ha cargado aún
+  const isDisabled = loading || (!isLoaded && !clerkTimeout);
+  const showLoadingState = !isLoaded && !displayError && !clerkTimeout;
 
   return (
     <div className="w-full">

@@ -3,20 +3,31 @@ import Stripe from 'stripe';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 import { auth } from '@clerk/nextjs/server';
 
-// Validar variables de entorno al inicio
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not configured');
-}
-
-if (!process.env.NEXT_PUBLIC_SITE_URL) {
-  throw new Error('NEXT_PUBLIC_SITE_URL is not configured');
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2025-12-15.clover',
-});
+// Forzar que esta ruta sea dinámica para evitar análisis en build time
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
+  // Validar variables de entorno en runtime, no en tiempo de import
+  if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('STRIPE_SECRET_KEY no está configurada');
+    return NextResponse.json(
+      { error: 'Error de configuración del servidor. Por favor, contacta al soporte.' },
+      { status: 500 }
+    );
+  }
+
+  if (!process.env.NEXT_PUBLIC_SITE_URL) {
+    console.error('NEXT_PUBLIC_SITE_URL no está configurada');
+    return NextResponse.json(
+      { error: 'Error de configuración del servidor. Por favor, contacta al soporte.' },
+      { status: 500 }
+    );
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2024-11-20.acacia',
+  });
   try {
     console.log('API Checkout: Iniciando proceso de checkout', {
       hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
