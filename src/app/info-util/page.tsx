@@ -34,7 +34,7 @@ export default function InfoUtilPage() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Todo lo esencial que necesitas saber antes de viajar
+            Guía práctica de Lisboa con transporte, presupuesto, barrios y consejos reales para viajeros hispanohablantes.
           </p>
         </div>
 

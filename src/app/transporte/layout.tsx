@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Transporte en Lisboa: Metro, Bus, Tranvía y Tren 2025 | Portugal Auténtico',
-  description: 'Guía completa del transporte público en Lisboa: metro, autobuses, tranvías, funiculares y trenes. Precios actualizados 2025, horarios, mapas y consejos para moverse como un local.',
+  title: 'Transporte en Lisboa 2025: Metro, Tranvía y Trenes | Estaba en Lisboa',
+  description: 'Guía completa del transporte en Lisboa: metro, tranvías, buses y trenes. Precios 2025, horarios y consejos locales.',
   keywords: [
     'transporte lisboa',
     'metro lisboa',
@@ -17,31 +17,25 @@ export const metadata: Metadata = {
     'moverse lisboa',
     'transporte público lisboa precios'
   ],
-  authors: [{ name: 'Portugal Auténtico' }],
+  authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: '🚇 Guía Completa del Transporte en Lisboa 2025',
-    description: 'Todo sobre el transporte público en Lisboa: metro, buses, tranvías, funiculares y trenes. Precios, horarios y consejos de locales.',
-    url: 'https://portugalautentico.com/transporte',
-    siteName: 'Portugal Auténtico',
+    title: 'Transporte en Lisboa 2025: Metro, Tranvía y Trenes',
+    description: 'Todo sobre transporte público en Lisboa con precios, horarios y consejos locales.',
+    url: 'https://estabaenlisboa.com/transporte',
+    siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'article',
     images: [
       {
-        url: '/og-transporte-lisboa.jpg',
+        url: 'https://estabaenlisboa.com/images/tranvia-28.jpg',
         width: 1200,
         height: 630,
         alt: 'Guía del Transporte en Lisboa 2025',
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: '🚇 Transporte en Lisboa: Guía Completa 2025',
-    description: 'Metro, buses, tranvías y trenes. Precios actualizados, horarios y consejos insider.',
-    images: ['/og-transporte-lisboa.jpg'],
-  },
   alternates: {
-    canonical: 'https://portugalautentico.com/transporte',
+    canonical: 'https://estabaenlisboa.com/transporte',
   },
   robots: {
     index: true,

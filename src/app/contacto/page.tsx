@@ -80,7 +80,7 @@ export default function ContactoPage() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            ¿Tienes dudas sobre nuestras guías? Estamos aquí para ayudarte
+            Contacto para dudas sobre Lisboa, guías, itinerarios y colaboraciones. Respuesta rápida.
           </p>
         </div>
 

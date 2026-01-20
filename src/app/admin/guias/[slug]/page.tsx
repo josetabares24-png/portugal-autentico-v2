@@ -1,5 +1,6 @@
 import { redirect, notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { isAdmin } from '@/lib/auth-utils';
 import { type TimelineStop } from '@/data/itineraries';
 import { getGuideEditData } from '@/lib/guide-store';
@@ -221,9 +222,14 @@ export default async function AdminGuiaEditPage({
                       )}
                       {stop.image && (
                         <div className="mt-3">
-                          <img
+                          <Image
                             src={stop.image}
                             alt={stop.title}
+                            width={512}
+                            height={192}
+                            loading="lazy"
+                            decoding="async"
+                            sizes="(max-width: 768px) 100vw, 512px"
                             className="rounded-lg w-full max-w-md h-48 object-cover"
                           />
                         </div>

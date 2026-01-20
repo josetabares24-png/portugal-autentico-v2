@@ -129,7 +129,7 @@ export default function AppsPage() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Las aplicaciones que realmente necesitas para vivir Lisboa como un local y ahorrarte quebraderos de cabeza
+            Las mejores apps para viajar a Lisboa en 2025: transporte, mapas offline, restaurantes y dinero. Útiles de verdad y sin perder tiempo.
           </p>
         </div>
 
@@ -157,6 +157,26 @@ export default function AppsPage() {
               </button>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <p className="text-slate-700">
+            Complementa estas apps con nuestras guías de{' '}
+            <Link href="/transporte" className="text-primary font-semibold hover:underline">
+              transporte en Lisboa
+            </Link>
+            ,{' '}
+            <Link href="/presupuesto" className="text-primary font-semibold hover:underline">
+              presupuesto de viaje
+            </Link>{' '}
+            y{' '}
+            <Link href="/itinerarios" className="text-primary font-semibold hover:underline">
+              itinerarios por días
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

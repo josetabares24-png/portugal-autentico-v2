@@ -185,7 +185,7 @@ export default function FAQPage() {
             </Link>
             <Link
               href="/itinerarios"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all"
             >
               <span className="material-symbols-outlined text-2xl">map</span>
               Ver Guías

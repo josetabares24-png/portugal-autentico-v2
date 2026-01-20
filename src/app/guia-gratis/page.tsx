@@ -31,7 +31,7 @@ export default function GuiaGratisPage() {
         setShowSuccess(true);
         setFormData({ name: '', email: '' });
         
-        // Descargar PDF automáticamente después de 1 segundo
+        // Descargar guía automáticamente después de 1 segundo
         setTimeout(() => {
           window.location.href = '/downloads/guia-lisboa-gratis.pdf';
         }, 1000);

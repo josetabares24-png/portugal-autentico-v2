@@ -61,6 +61,34 @@ export default function PresupuestoPage() {
     setEmailCaptured(true);
   };
 
+  const faqItems = [
+    {
+      question: '¿Cuánto cuesta un viaje medio a Lisboa?',
+      answer: 'Entre 60€ y 90€ por día incluyendo alojamiento, comidas y transporte.',
+    },
+    {
+      question: '¿Cuál es el mayor gasto en Lisboa?',
+      answer: 'El alojamiento suele ser el gasto más alto, sobre todo en temporada alta.',
+    },
+    {
+      question: '¿Cómo ahorrar en comida?',
+      answer: 'Busca el menú del día al mediodía y evita zonas muy turísticas.',
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   const getTip = () => {
     if (tipo === 'low' && dias > 3) {
       return "💡 Con nuestra guía, encuentras tascas con menú del día desde 7€. Ahorras 3-5€ por comida.";
@@ -86,6 +114,8 @@ export default function PresupuestoPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -312,7 +342,7 @@ export default function PresupuestoPage() {
                       <span><strong>Mix transporte</strong>: metro + Uber ocasional</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="material-symbols-oriented text-green-600 text-sm mt-0.5">check_circle</span>
+                      <span className="material-symbols-outlined text-green-600 text-sm mt-0.5">check_circle</span>
                       <span><strong>Tours pagados</strong> (Sintra 49€, fado 65€)</span>
                     </li>
                   </ul>
@@ -359,7 +389,7 @@ export default function PresupuestoPage() {
                 📊 Recibe tu Presupuesto Detallado
               </h2>
               <p className="text-xl text-white/90 mb-8">
-                PDF con <strong>desglose completo</strong> + lista de restaurantes recomendados por rango de precio + cupón 20% en guías
+                Desglose completo + lista de restaurantes recomendados por rango de precio + cupón 20% en guías
               </p>
 
               <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto">
@@ -376,7 +406,7 @@ export default function PresupuestoPage() {
                     type="submit"
                     className="px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-2xl whitespace-nowrap"
                   >
-                    Enviar PDF Gratis →
+                    Enviar presupuesto →
                   </button>
                 </div>
                 <p className="text-white/70 text-xs mt-3">
@@ -395,12 +425,12 @@ export default function PresupuestoPage() {
               <p className="text-xl text-white/90 mb-4">
                 Tu presupuesto de <strong>{totalViaje}€</strong> para {dias} {dias === 1 ? 'día' : 'días'} está en tu email.
               </p>
-              <p className="text-white/80 mb-8">
-                Incluye lista de restaurantes, alojamientos y cupón 20% OFF
-              </p>
+                <p className="text-white/80 mb-8">
+                  Incluye lista de restaurantes, alojamientos y cupón 20% OFF
+                </p>
               <Link
                 href="/itinerarios"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold hover:scale-105 transition-all shadow-2xl"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold hover:scale-105 transition-all shadow-lg"
               >
                 <span className="material-symbols-outlined">map</span>
                 Ver Guías Premium
@@ -470,10 +500,27 @@ export default function PresupuestoPage() {
           <div className="mt-8 text-center">
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all hover:scale-105 shadow-lg"
             >
               🚫 Ver Guías Auténticas
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
+            Preguntas frecuentes sobre presupuesto en Lisboa
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+            {faqItems.map((item) => (
+              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -489,7 +536,7 @@ export default function PresupuestoPage() {
           </p>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold text-xl rounded-2xl shadow-2xl hover:scale-105 transition-all"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white font-semibold text-xl rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             <span className="material-symbols-outlined text-2xl">explore</span>
             Ver Guías desde 1.99€
@@ -497,6 +544,10 @@ export default function PresupuestoPage() {
           </Link>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </main>
   );
 }

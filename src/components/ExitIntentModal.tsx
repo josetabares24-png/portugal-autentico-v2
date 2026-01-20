@@ -66,7 +66,7 @@ export default function ExitIntentModal() {
           <Link
             href="/itinerarios"
             onClick={() => setShow(false)}
-            className="w-full block text-center bg-gradient-to-r from-[#FF6B35] to-[#F7931E] hover:from-[#F7931E] hover:to-[#FF6B35] text-white font-black py-4 rounded-xl text-lg transition-all hover:scale-105 shadow-xl"
+            className="w-full block text-center bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-xl text-lg transition-all hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Ver Guías Gratuitas 🚀
           </Link>

@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
         <body>
           <div class="header">
             <h1>¡Hola ${name}! 👋</h1>
-            <p>Tu guía de Lisboa está lista para descargar</p>
+            <p>Tu guía de Lisboa está lista</p>
           </div>
           
           <div class="content">
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
             
             <p style="text-align: center;">
               <a href="${process.env.NEXT_PUBLIC_SITE_URL}/downloads/guia-lisboa-gratis.pdf" class="button">
-                📥 Descargar Guía en PDF
+                📥 Acceder a la guía
               </a>
             </p>
             

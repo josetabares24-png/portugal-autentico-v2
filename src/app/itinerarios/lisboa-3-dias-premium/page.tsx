@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
-import SocialProof from '@/components/SocialProof';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import InteractiveMap from '@/components/InteractiveMap';
@@ -147,7 +146,6 @@ export default function Lisboa3DiasPremiumPage() {
       {/* Social Proof */}
       <section className="py-8 bg-background-cream">
         <div className="max-w-5xl mx-auto px-4">
-          <SocialProof guideId="lisboa-3-dias" />
         </div>
       </section>
 

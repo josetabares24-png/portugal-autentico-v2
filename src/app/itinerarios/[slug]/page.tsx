@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
-import SocialProof from '@/components/SocialProof';
 
 const packs = guidePacks;
 
@@ -41,7 +41,15 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
     <main>
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0">
-          <img src={pack.image} alt={pack.title} className="w-full h-full object-cover" />
+          <Image
+            src={pack.image}
+            alt={pack.title}
+            fill
+            className="object-cover"
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -75,8 +83,7 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
 
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <SocialProof guideId={socialGuideId} />
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
               <h3 className="text-lg font-bold text-slate-900 mb-2">Ruta profesional</h3>
               <p className="text-sm text-slate-600">Orden lógico, tiempos reales y consejos locales para moverte sin estrés.</p>

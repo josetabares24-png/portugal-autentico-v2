@@ -115,6 +115,7 @@ export default function DondeDormirPage() {
         rating: 8.7,
         description: 'Hotel clásico con terraza rooftop. Vistas al Castillo de São Jorge.',
         image: '/images/elevador-santa-justa.jpg',
+        officialUrl: 'https://www.hotel-mundial.pt/',
         amenities: ['Terraza rooftop', 'Desayuno incluido', 'Centro histórico', 'WiFi gratis'],
         bookingUrl: `https://www.booking.com/hotel/pt/mundial.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MEJOR TERRAZA'
@@ -126,6 +127,7 @@ export default function DondeDormirPage() {
         rating: 9.2,
         description: 'Hotel boutique de diseño. Piscina con vistas al río Tajo.',
         image: '/images/alfama-panoramica.jpg',
+        officialUrl: 'https://www.memmo.com/alfama/',
         amenities: ['Piscina con vistas', 'Diseño moderno', 'Bar en rooftop', 'Spa'],
         bookingUrl: `https://www.booking.com/hotel/pt/memmo-alfama.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'LUJO ASEQUIBLE'
@@ -137,6 +139,7 @@ export default function DondeDormirPage() {
         rating: 9.0,
         description: 'Hotel elegante en palacete del siglo XVIII. Spa y piscina interior.',
         image: '/images/hero-lisboa.jpg',
+        officialUrl: 'https://www.thelumiares.com/',
         amenities: ['Spa completo', 'Piscina interior', 'Edificio histórico', 'Restaurante gourmet'],
         bookingUrl: `https://www.booking.com/hotel/pt/the-lumiares.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'CON SPA'
@@ -148,6 +151,7 @@ export default function DondeDormirPage() {
         rating: 9.3,
         description: 'Palacio del siglo XIX convertido en hotel boutique. Piscina panorámica.',
         image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+        officialUrl: 'https://torelhospitality.com/torel-palace-lisbon',
         amenities: ['Piscina infinita', 'Vistas panorámicas', 'Decoración de época', 'Bar sofisticado'],
         bookingUrl: `https://www.booking.com/hotel/pt/torel-palace-lisbon.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'ROMÁNTICO'
@@ -159,6 +163,7 @@ export default function DondeDormirPage() {
         rating: 9.1,
         description: 'Hotel de lujo junto al río. Vista directa a la Torre de Belém.',
         image: '/images/pexels-helena-i-1489651-2867883.jpg',
+        officialUrl: 'https://www.altishotels.com/altis-belem-hotel/',
         amenities: ['Spa de lujo', 'Restaurante Michelin', 'Vistas río', 'Gimnasio'],
         bookingUrl: `https://www.booking.com/hotel/pt/altis-belem.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'LUJO TOTAL'
@@ -170,6 +175,7 @@ export default function DondeDormirPage() {
         rating: 9.0,
         description: 'Hotel moderno 5 estrellas. Cerca del aeropuerto y estación Oriente.',
         image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
+        officialUrl: 'https://www.sanahotels.com/hotel/myriad-by-sana',
         amenities: ['Piscina infinita', 'Spa', 'Restaurante panorámico', 'Gimnasio 24h'],
         bookingUrl: `https://www.booking.com/hotel/pt/myriad-by-sana-hotels.html?aid=${BOOKING_AFFILIATE_ID}`,
         highlight: 'MODERNO'
@@ -185,6 +191,38 @@ export default function DondeDormirPage() {
     ? accommodations.hotels
     : accommodations.hotels.filter(h => h.zone === selectedZone);
 
+  const faqItems = [
+    {
+      question: '¿Cuál es el mejor barrio para primera vez?',
+      answer: 'Baixa-Chiado es el más práctico por ubicación y transporte. Si buscas algo más auténtico, Alfama es ideal.',
+    },
+    {
+      question: '¿Qué zona es más tranquila por la noche?',
+      answer: 'Príncipe Real y Belém son más silenciosos. Bairro Alto es la zona más ruidosa por vida nocturna.',
+    },
+    {
+      question: '¿Cuánto cuesta dormir en Lisboa?',
+      answer: 'Hostels desde 18-25€ y hoteles boutique desde 90-120€ por noche. Fuera del centro baja el precio.',
+    },
+    {
+      question: '¿Es seguro alojarse en Alfama?',
+      answer: 'Sí, es seguro y muy auténtico. Solo considera las cuestas y calles empedradas si viajas con maleta grande.',
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-background-light">
       {/* Hero Section */}
@@ -197,6 +235,8 @@ export default function DondeDormirPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -223,7 +263,7 @@ export default function DondeDormirPage() {
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-green-400">verified_user</span>
+              <span className="material-symbols-outlined text-accent">verified_user</span>
               <span>Verificado por locales</span>
             </div>
             <div className="flex items-center gap-2">
@@ -303,13 +343,13 @@ export default function DondeDormirPage() {
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
                   <div>
-                    <p className="font-bold text-green-800 mb-1">Ventajas</p>
+                    <p className="font-bold text-primary mb-1">Ventajas</p>
                     {zone.pros.slice(0, 2).map((pro, i) => (
                       <p key={i} className="text-slate-600">✓ {pro}</p>
                     ))}
                   </div>
                   <div>
-                    <p className="font-bold text-red-800 mb-1">Contras</p>
+                    <p className="font-bold text-slate-600 mb-1">Contras</p>
                     {zone.cons.slice(0, 2).map((con, i) => (
                       <p key={i} className="text-slate-600">✗ {con}</p>
                     ))}
@@ -426,7 +466,12 @@ export default function DondeDormirPage() {
                 className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-primary transition-all hover:shadow-xl"
               >
                 {/* Imagen real */}
-                <div className="relative h-64 overflow-hidden">
+                <a
+                  href={hotel.officialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative h-64 overflow-hidden block"
+                >
                   <Image
                     src={hotel.image}
                     alt={`Hotel ${hotel.name}`}
@@ -437,7 +482,10 @@ export default function DondeDormirPage() {
                   <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                     {hotel.highlight}
                   </div>
-                </div>
+                  <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 rounded-full shadow">
+                    Web oficial
+                  </div>
+                </a>
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
@@ -497,9 +545,9 @@ export default function DondeDormirPage() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
-              <h3 className="text-lg font-bold text-green-900 mb-3">✅ Reserva con antelación si...</h3>
-              <ul className="text-sm text-green-800 space-y-2">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">✅ Reserva con antelación si...</h3>
+              <ul className="text-sm text-slate-700 space-y-2">
                 <li>• Viajas en temporada alta (junio-septiembre)</li>
                 <li>• Quieres hoteles boutique específicos</li>
                 <li>• Viajas en festivales (Santo António en junio)</li>
@@ -507,9 +555,9 @@ export default function DondeDormirPage() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
-              <h3 className="text-lg font-bold text-blue-900 mb-3">🔍 Cosas a verificar antes de reservar</h3>
-              <ul className="text-sm text-blue-800 space-y-2">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">🔍 Cosas a verificar antes de reservar</h3>
+              <ul className="text-sm text-slate-700 space-y-2">
                 <li>• ¿Hay ascensor? (muchos edificios históricos no tienen)</li>
                 <li>• ¿Incluye aire acondicionado? (necesario en verano)</li>
                 <li>• ¿Está en cuesta muy empinada? (Alfama, Graça)</li>
@@ -517,9 +565,9 @@ export default function DondeDormirPage() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
-              <h3 className="text-lg font-bold text-orange-900 mb-3">💰 Cómo ahorrar dinero</h3>
-              <ul className="text-sm text-orange-800 space-y-2">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">💰 Cómo ahorrar dinero</h3>
+              <ul className="text-sm text-slate-700 space-y-2">
                 <li>• Reserva con cancelación gratis (por si encuentras mejor)</li>
                 <li>• Hoteles en Parque das Nações son 30-40% más baratos</li>
                 <li>• Evita viernes-domingo (más caros)</li>
@@ -527,15 +575,32 @@ export default function DondeDormirPage() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
-              <h3 className="text-lg font-bold text-purple-900 mb-3">⚠️ Evita estas trampas</h3>
-              <ul className="text-sm text-purple-800 space-y-2">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">⚠️ Evita estas trampas</h3>
+              <ul className="text-sm text-slate-700 space-y-2">
                 <li>• "Vista al castillo" puede ser 1 ventanita pequeña</li>
                 <li>• Baixa-Chiado: MUY ruidoso viernes-sábado</li>
                 <li>• "5 min del centro" a menudo son 15-20 min reales</li>
                 <li>• Verifica reseñas recientes (último año)</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-background-cream">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
+            Preguntas frecuentes sobre dónde dormir en Lisboa
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+            {faqItems.map((item) => (
+              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -557,7 +622,7 @@ export default function DondeDormirPage() {
           </p>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             <span className="material-symbols-outlined text-2xl">explore</span>
             Ver Guías Premium
@@ -566,6 +631,10 @@ export default function DondeDormirPage() {
           <p className="text-white/80 text-sm mt-6">✅ Desde 1.99€ · ✅ Acceso inmediato · ✅ Garantía 48 horas</p>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </main>
   );
 }

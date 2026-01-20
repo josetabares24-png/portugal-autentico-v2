@@ -154,6 +154,34 @@ export default function TransportePage() {
     { pass: 'Viva Viagem (recargable)', price: '0.50€ (una vez)', validity: 'Permanente', bestFor: 'Residentes y estancias largas' },
   ];
 
+  const faqItems = [
+    {
+      question: '¿Cuál es la mejor forma de ir del aeropuerto al centro?',
+      answer: 'El metro (línea roja) es la opción más rápida y económica. Taxi/Uber conviene si vas con maletas o llegas tarde.',
+    },
+    {
+      question: '¿Conviene comprar el pase de 24 horas?',
+      answer: 'Sí si vas a hacer más de 4-5 viajes en un día. Sale más barato que billetes sueltos.',
+    },
+    {
+      question: '¿Qué tranvía usar para ir a Belém?',
+      answer: 'El tranvía 15E es el más práctico para llegar a Belém desde el centro.',
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-background-light">
       {/* Hero Section with Background Image */}
@@ -166,6 +194,8 @@ export default function TransportePage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -628,6 +658,23 @@ export default function TransportePage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
+            Preguntas frecuentes sobre transporte en Lisboa
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+            {faqItems.map((item) => (
+              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -645,7 +692,7 @@ export default function TransportePage() {
           </p>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             <span className="material-symbols-outlined text-2xl">explore</span>
             Ver Guías Premium
@@ -654,6 +701,10 @@ export default function TransportePage() {
           <p className="text-white/80 text-sm mt-6">✅ Desde 1.99€ · ✅ Acceso inmediato · ✅ Garantía 48 horas</p>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </main>
   );
 }

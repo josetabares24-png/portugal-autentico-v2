@@ -133,7 +133,7 @@ export default function Navbar() {
             
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-2.5 rounded-2xl shadow-lg hover:shadow-primary/50 hover:scale-105 transition-all text-sm"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm"
             >
               <span>Ver Guías</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -231,7 +231,7 @@ export default function Navbar() {
                 <Link
                   href="/itinerarios"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold px-6 py-3.5 rounded-2xl shadow-lg hover:shadow-primary/50 hover:scale-105 transition-all text-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm"
                 >
                   <span>Ver Guías</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>

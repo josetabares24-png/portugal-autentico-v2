@@ -5,6 +5,9 @@ import { blogPosts } from '@/data/blog-posts';
 export const metadata: Metadata = {
   title: 'Blog de Lisboa | Guías y Consejos de Locales',
   description: 'Historias, rutas auténticas y consejos prácticos para vivir Lisboa como un local. Guías actualizadas, gastronomía y transporte.',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/blog',
+  },
   openGraph: {
     title: 'Blog de Lisboa | Guías y Consejos de Locales',
     description: 'Historias, rutas auténticas y consejos prácticos para vivir Lisboa como un local.',

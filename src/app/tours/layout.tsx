@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Tours y Excursiones en Lisboa 2025 | Mejores Experiencias | Portugal Auténtico',
-  description: 'Descubre los mejores tours y excursiones en Lisboa verificados por locales: free tours, visitas guiadas, excursiones a Sintra, Cascais, Óbidos y más. Sin turistadas, solo experiencias auténticas.',
+  title: 'Tours en Lisboa 2025: Free Tours, Sintra y Experiencias | Estaba en Lisboa',
+  description: 'Tours en Lisboa verificados por locales: free tours, Sintra, Cascais, gastronomía y más. Rutas claras, precios reales y cancelación gratis.',
   keywords: [
     'tours lisboa',
     'excursiones lisboa',
@@ -18,31 +18,25 @@ export const metadata: Metadata = {
     'civitatis lisboa',
     'experiencias lisboa'
   ],
-  authors: [{ name: 'Portugal Auténtico' }],
+  authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: '🎯 Mejores Tours y Excursiones en Lisboa 2025',
-    description: 'Tours verificados por locales: free tours, Sintra, Cascais, gastronomía y más. Sin turistadas, solo experiencias auténticas.',
-    url: 'https://portugalautentico.com/tours',
-    siteName: 'Portugal Auténtico',
+    title: 'Tours en Lisboa 2025: Free Tours, Sintra y Experiencias',
+    description: 'Tours verificados por locales: free tours, Sintra, Cascais y gastronomía. Itinerarios claros y recomendaciones reales.',
+    url: 'https://estabaenlisboa.com/tours',
+    siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'article',
     images: [
       {
-        url: '/og-tours-lisboa.jpg',
+        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
         alt: 'Mejores Tours y Excursiones en Lisboa 2025',
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: '🎯 Mejores Tours y Excursiones en Lisboa 2025',
-    description: 'Tours verificados por locales: free tours, Sintra, Cascais y más. Sin turistadas.',
-    images: ['/og-tours-lisboa.jpg'],
-  },
   alternates: {
-    canonical: 'https://portugalautentico.com/tours',
+    canonical: 'https://estabaenlisboa.com/tours',
   },
   robots: {
     index: true,

@@ -43,6 +43,8 @@ export function ItineraryCard({
             alt={title}
             fill
             className="object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           {badge && (
@@ -98,6 +100,8 @@ export function ItineraryCard({
           alt={title}
           fill
           className="object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
         {badge && (

@@ -70,7 +70,7 @@ export default function CheckoutPage() {
           <p className="text-slate-600 mb-6">El producto que buscas no existe</p>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-2xl hover:bg-primary-dark transition-colors shadow-lg hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
           >
             <span className="material-symbols-outlined">arrow_back</span>
             Ver Guías
@@ -148,7 +148,7 @@ export default function CheckoutPage() {
                 <ul className="grid md:grid-cols-2 gap-4 text-slate-700">
                   <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
                     <span className="material-symbols-outlined text-green-600 text-2xl mt-0.5 flex-shrink-0">done</span>
-                    <span className="font-medium">Guía PDF descargable en alta calidad</span>
+                    <span className="font-medium">Guía digital descargable en alta calidad</span>
                   </li>
                   <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
                     <span className="material-symbols-outlined text-green-600 text-2xl mt-0.5 flex-shrink-0">done</span>

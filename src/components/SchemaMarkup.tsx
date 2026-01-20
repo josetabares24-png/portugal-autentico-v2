@@ -13,8 +13,7 @@ export default function SchemaMarkup() {
       "addressCountry": "PT"
     },
     "sameAs": [
-      "https://instagram.com/estabaenlisboa",
-      "https://twitter.com/estabaenlisboa"
+      "https://instagram.com/estabaenlisboa"
     ]
   };
 
@@ -48,13 +47,6 @@ export default function SchemaMarkup() {
       "price": "3.99",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "500",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 

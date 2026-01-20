@@ -1,10 +1,59 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 
+export const metadata: Metadata = {
+  title: 'Itinerarios en Lisboa 2025: Guías por Días y Barrios | Estaba en Lisboa',
+  description: 'Elige tu itinerario de Lisboa con rutas por días, barrios y estilos. Guías locales con horarios reales, mapas y restaurantes.',
+  openGraph: {
+    title: 'Itinerarios en Lisboa 2025: Guías por Días y Barrios',
+    description: 'Guías locales con rutas optimizadas, mapas y restaurantes reales en Lisboa.',
+    url: 'https://estabaenlisboa.com/itinerarios',
+    images: [
+      {
+        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Itinerarios en Lisboa 2025',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/itinerarios',
+  },
+};
+
 export default async function ItinerariosPage() {
   const { main: mainItineraries, special: specialItineraries } = await getGuideList();
+  const faqItems = [
+    {
+      question: '¿Cuántos días se recomiendan para Lisboa?',
+      answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.',
+    },
+    {
+      question: '¿Qué incluye cada itinerario?',
+      answer: 'Rutas hora a hora, mapas, recomendaciones de restaurantes y tips locales.',
+    },
+    {
+      question: '¿Los itinerarios sirven para primera visita?',
+      answer: 'Sí, están diseñados para optimizar tiempos y evitar turistadas.',
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
   return (
     <main>
       {/* Hero Section - Estilo consistente con home */}
@@ -16,6 +65,8 @@ export default async function ItinerariosPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -84,6 +135,45 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+              Planifica mejor
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+              Todo lo que necesitas antes de elegir ruta
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Alojamientos, transporte, presupuesto y tours recomendados para completar tu itinerario.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+            <Link href="/donde-dormir" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
+              <span className="material-symbols-outlined text-primary text-3xl">hotel</span>
+              <div className="font-semibold text-slate-900 mt-2">Dónde dormir en Lisboa</div>
+            </Link>
+            <Link href="/transporte" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
+              <span className="material-symbols-outlined text-primary text-3xl">directions_transit</span>
+              <div className="font-semibold text-slate-900 mt-2">Transporte en Lisboa</div>
+            </Link>
+            <Link href="/presupuesto" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
+              <span className="material-symbols-outlined text-primary text-3xl">payments</span>
+              <div className="font-semibold text-slate-900 mt-2">Presupuesto de viaje</div>
+            </Link>
+            <Link href="/tours" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
+              <span className="material-symbols-outlined text-primary text-3xl">tour</span>
+              <div className="font-semibold text-slate-900 mt-2">Tours recomendados</div>
+            </Link>
+            <Link href="/blog" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
+              <span className="material-symbols-outlined text-primary text-3xl">article</span>
+              <div className="font-semibold text-slate-900 mt-2">Consejos y guías</div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Main Itineraries Section - Estilo consistente */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -130,52 +220,6 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* Social Proof - Estilo consistente */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-5 py-2 bg-accent/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
-              Lo que dicen
-            </span>
-            <h2 className="text-3xl md:text-5xl font-display font-black text-text-main mb-6">
-              Nuestros <span className="text-primary">viajeros</span>
-            </h2>
-            <div className="flex items-center justify-center gap-1 text-accent mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              ))}
-            </div>
-            <p className="text-lg text-text-secondary">4.9/5 de más de 2,500 viajeros</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: "María G.", text: "El mejor itinerario que he comprado. Todo estaba perfectamente organizado y los restaurantes... ¡increíbles!", city: "Madrid" },
-              { name: "João P.", text: "Siendo portugués, pensaba que conocía Lisboa. Este pack me mostró rincones que ni sabía que existían.", city: "Porto" },
-              { name: "Sophie L.", text: "Worth every cent! The timing was perfect and we didn't waste a single minute. Highly recommended!", city: "Paris" }
-            ].map((review, idx) => (
-              <div key={idx} className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
-                <div className="flex items-center gap-1 text-accent mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  ))}
-                </div>
-                <p className="text-text-secondary text-base mb-8 italic leading-relaxed">"{review.text}"</p>
-                <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
-                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold text-lg">
-                    {review.name[0]}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-text-main">{review.name}</p>
-                    <p className="text-sm text-text-muted">{review.city}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section - Estilo consistente */}
       <section className="py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-azulejo-pattern"></div>
@@ -204,6 +248,25 @@ export default async function ItinerariosPage() {
           </div>
         </div>
       </section>
+      <section className="py-20 bg-background-cream">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
+            Preguntas frecuentes sobre itinerarios en Lisboa
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+            {faqItems.map((item) => (
+              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
+                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </main>
   );
 }

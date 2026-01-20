@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dónde Dormir en Lisboa: Mejores Barrios y Hoteles 2025 | Portugal Auténtico',
-  description: 'Descubre los mejores barrios para alojarse en Lisboa: Alfama, Baixa, Chiado, Belém y más. Guía completa con recomendaciones de hoteles, hostales y apartamentos verificados.',
+  title: 'Dónde Dormir en Lisboa 2025: Barrios, Hoteles y Consejos | Estaba en Lisboa',
+  description: 'Guía real de alojamiento en Lisboa: mejores barrios, hoteles y hostales con pros, contras y precios. Recomendado por locales.',
   keywords: [
     'donde dormir lisboa',
     'mejores barrios lisboa',
@@ -18,31 +18,25 @@ export const metadata: Metadata = {
     'mejores zonas lisboa',
     'barrios lisboa turismo'
   ],
-  authors: [{ name: 'Portugal Auténtico' }],
+  authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: '🏨 Dónde Dormir en Lisboa: Mejores Barrios y Hoteles 2025',
-    description: 'Guía completa de los mejores barrios y alojamientos en Lisboa. Recomendaciones verificadas por locales con precios, pros y contras de cada zona.',
-    url: 'https://portugalautentico.com/donde-dormir',
-    siteName: 'Portugal Auténtico',
+    title: 'Dónde Dormir en Lisboa 2025: Barrios y Hoteles',
+    description: 'Mejores zonas para alojarse en Lisboa con recomendaciones reales, precios y pros/contras.',
+    url: 'https://estabaenlisboa.com/donde-dormir',
+    siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'article',
     images: [
       {
-        url: '/og-donde-dormir-lisboa.jpg',
+        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
         alt: 'Mejores Barrios para Dormir en Lisboa 2025',
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: '🏨 Dónde Dormir en Lisboa: Mejores Barrios 2025',
-    description: 'Descubre los mejores barrios para alojarse en Lisboa con recomendaciones de locales.',
-    images: ['/og-donde-dormir-lisboa.jpg'],
-  },
   alternates: {
-    canonical: 'https://portugalautentico.com/donde-dormir',
+    canonical: 'https://estabaenlisboa.com/donde-dormir',
   },
   robots: {
     index: true,

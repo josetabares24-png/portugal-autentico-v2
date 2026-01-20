@@ -16,6 +16,8 @@ export default function HomePage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -171,110 +173,6 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-display font-black text-text-main mb-4">Garantía</h3>
               <p className="text-text-secondary leading-relaxed">48 horas. Si la ruta no te funciona, te devuelvo el dinero. Sin preguntas, sin explicaciones.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-5 py-2 bg-accent/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
-              Lo que dicen
-            </span>
-            <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6">
-              Quienes <span className="text-primary">las usaron</span>
-            </h2>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              500 personas ya las usaron. Evitaron las colas del 28. Comieron donde comemos nosotros. Llegaron al mirador cuando aún no había nadie.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonio 1 */}
-            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
-                ))}
-              </div>
-              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "La guía de 2 días funcionó. El restaurante de Alfama que recomendaste, el pastel de nata estaba recién hecho. El mapa offline me salvó cuando no había señal."
-              </p>
-              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
-                <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
-                  A
-                </div>
-                <div>
-                  <p className="font-semibold text-text-main">Ana M.</p>
-                  <p className="text-sm text-text-muted">Barcelona • Abril 2025</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 2 */}
-            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
-                ))}
-              </div>
-              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "Compré 3 guías antes. Esta fue la única que me dijo a qué hora ir al mirador para que no estuviera lleno. Y el bar donde desayunamos el domingo existía de verdad."
-              </p>
-              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
-                <div className="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
-                  C
-                </div>
-                <div>
-                  <p className="font-semibold text-text-main">Carlos R.</p>
-                  <p className="text-sm text-text-muted">Madrid • Marzo 2025</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonio 3 */}
-            <div className="bg-background-cream rounded-3xl p-10 border border-border-soft transition-all duration-300 hover:shadow-soft-lg">
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-accent text-lg">star</span>
-                ))}
-              </div>
-              <p className="text-text-secondary mb-8 italic leading-relaxed text-base">
-                "Seguimos la guía romántica completa. El restaurante con vistas al Tajo funcionó. La pedida de mano fue ahí. Dijiste que funcionaba y funcionó."
-              </p>
-              <div className="flex items-center gap-4 pt-6 border-t border-border-soft">
-                <div className="w-14 h-14 bg-terracotta/20 rounded-full flex items-center justify-center text-primary font-semibold text-lg">
-                  M
-                </div>
-                <div>
-                  <p className="font-semibold text-text-main">María & Javi</p>
-                  <p className="text-sm text-text-muted">Sevilla • Febrero 2025</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Bar */}
-          <div className="mt-20 bg-primary rounded-3xl p-12 text-white shadow-editorial">
-            <div className="grid md:grid-cols-4 gap-12 text-center">
-              <div>
-                <div className="text-5xl font-display font-black mb-2">500+</div>
-                <div className="text-white/80 text-sm font-medium">Personas</div>
-              </div>
-              <div>
-                <div className="text-5xl font-display font-black mb-2">4.9/5</div>
-                <div className="text-white/80 text-sm font-medium">Valoración</div>
-              </div>
-              <div>
-                <div className="text-5xl font-display font-black mb-2">98%</div>
-                <div className="text-white/80 text-sm font-medium">Recomendarían</div>
-              </div>
-              <div>
-                <div className="text-5xl font-display font-black mb-2">24h</div>
-                <div className="text-white/80 text-sm font-medium">Respuesta</div>
-              </div>
             </div>
           </div>
         </div>

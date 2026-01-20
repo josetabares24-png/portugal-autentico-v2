@@ -22,7 +22,7 @@ export default function Garantia48hEditorial({ className = '' }: Garantia48hEdit
           </p>
 
           <p className="text-slate-700 leading-relaxed mb-6">
-            Creemos en la calidad de nuestro trabajo. Más de 500 viajeros han usado estas guías, y solo hemos procesado 8 devoluciones en los últimos seis meses — la mayoría por compras accidentales, no por insatisfacción con el contenido.
+            Creemos en la calidad de nuestro trabajo y queremos que pruebes la guía con total tranquilidad.
           </p>
 
           <p className="text-sm text-slate-600 italic">

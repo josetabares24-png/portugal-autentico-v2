@@ -101,7 +101,7 @@ export default function EmailCapturePopup() {
                     ¡Espera! Te regalo algo
                   </h3>
                   <p className="text-white/90 text-sm md:text-base">
-                    Descarga GRATIS el PDF:
+                    Recibe gratis la guía:
                   </p>
                   <p className="text-white font-bold text-lg md:text-xl mt-2">
                     "10 Errores que Cometen los Turistas en Lisboa"
@@ -148,7 +148,7 @@ export default function EmailCapturePopup() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold py-4 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-xl"
                   >
-                    Descargar PDF Gratis
+                    Recibir guía gratis
                   </button>
                 </form>
 
@@ -168,7 +168,7 @@ export default function EmailCapturePopup() {
                 ¡Perfecto!
               </h3>
               <p className="text-gray-600 mb-2">
-                Revisa tu email. Te acabamos de enviar el PDF.
+                Revisa tu email. Te acabamos de enviar la guía.
               </p>
               <p className="text-sm text-gray-500">
                 (Revisa spam si no lo ves en 5 minutos)

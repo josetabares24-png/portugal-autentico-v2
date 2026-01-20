@@ -1,7 +1,7 @@
 // src/app/servicios/fotografo-personal/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import { Camera, Clock, MapPin, Star, CheckCircle, Users, Award, Heart, Instagram } from 'lucide-react';
+import { Camera, Clock, MapPin, CheckCircle, Users, Award, Heart, Instagram } from 'lucide-react';
 
 export default function FotografoPersonalPage() {
   const paquetes = [
@@ -72,8 +72,8 @@ export default function FotografoPersonalPage() {
       nombre: 'Ricardo Santos',
       especialidad: 'Retratos urbanos y parejas',
       experiencia: '8 años',
-      sesiones: '500+ sesiones',
-      rating: 4.9,
+      sesiones: '',
+      rating: null,
       instagram: '@ricardosantos_photo',
       imagen: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
       idiomas: ['Portugués', 'Español', 'Inglés'],
@@ -82,8 +82,8 @@ export default function FotografoPersonalPage() {
       nombre: 'Ana Martins',
       especialidad: 'Lifestyle y familia',
       experiencia: '6 años',
-      sesiones: '350+ sesiones',
-      rating: 5.0,
+      sesiones: '',
+      rating: null,
       instagram: '@anamartins_captures',
       imagen: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
       idiomas: ['Portugués', 'Español', 'Francés'],
@@ -92,8 +92,8 @@ export default function FotografoPersonalPage() {
       nombre: 'João Pereira',
       especialidad: 'Street photography y golden hour',
       experiencia: '10 años',
-      sesiones: '700+ sesiones',
-      rating: 4.9,
+      sesiones: '',
+      rating: null,
       instagram: '@joao_pereira_lens',
       imagen: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
       idiomas: ['Portugués', 'Inglés'],
@@ -144,7 +144,7 @@ export default function FotografoPersonalPage() {
             <div className="flex flex-wrap gap-6 text-white text-lg">
               <div className="flex items-center gap-2">
                 <Star className="h-6 w-6 text-gold-400 fill-gold-400" />
-                <span className="font-medium">4.9/5 · 1,200+ sesiones</span>
+                <span className="font-medium">Fotografía local en Lisboa</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-6 w-6 text-primary-400" />
@@ -317,10 +317,9 @@ export default function FotografoPersonalPage() {
                     {fotografo.especialidad}
                   </p>
                   
-                  <div className="flex items-center gap-2 mb-3">
-                    <Star className="h-5 w-5 text-gold-400 fill-gold-400" />
-                    <span className="font-bold text-gray-900">{fotografo.rating}</span>
-                    <span className="text-gray-600">· {fotografo.sesiones}</span>
+                  <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <span>Sesiones personalizadas</span>
                   </div>
                   
                   <div className="text-sm text-gray-600 mb-3">

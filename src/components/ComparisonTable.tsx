@@ -147,7 +147,7 @@ export default function ComparisonTable() {
           </p>
           <a
             href="#itinerarios"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-black px-10 py-5 rounded-2xl text-lg hover:scale-105 transition-all shadow-xl"
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-semibold px-10 py-5 rounded-xl text-lg hover:scale-105 transition-all shadow-lg hover:shadow-xl"
           >
             <span>Ver Guías Desde €3.99</span>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

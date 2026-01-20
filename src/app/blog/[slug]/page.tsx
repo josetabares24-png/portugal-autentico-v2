@@ -95,6 +95,75 @@ const articles: Record<string, {
       ]}
     ]
   },
+  "barrios-imprescindibles": {
+    titulo: "Los 5 Barrios Imprescindibles de Lisboa",
+    descripcion: "Qué ver en cada barrio, cuándo ir y qué evitar para aprovechar Lisboa como un local.",
+    imagen: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    categoria: "Guías",
+    fecha: "5 Dic 2024",
+    minutos: 7,
+    contenido: [
+      { tipo: "parrafo", texto: "Lisboa cambia mucho de un barrio a otro. Si eliges bien, puedes ver lo mejor sin perder tiempo en zonas que no encajan contigo." },
+      { tipo: "subtitulo", texto: "1. Baixa-Chiado (la base perfecta)" },
+      { tipo: "parrafo", texto: "Zona llana, céntrica y bien comunicada. Ideal si es tu primera vez y quieres ir andando a casi todo." },
+      { tipo: "lista", items: [
+        "Qué ver: Rua Augusta, Elevador de Santa Justa, Praça do Comércio",
+        "Mejor hora: Mañana temprano para fotos sin gente",
+        "Evita: Restaurantes con menú turístico en Rua Augusta"
+      ]},
+      { tipo: "subtitulo", texto: "2. Alfama (el Lisboa más auténtico)" },
+      { tipo: "parrafo", texto: "Callejuelas, fado y miradores. Precioso pero con muchas cuestas." },
+      { tipo: "lista", items: [
+        "Qué ver: Miradores, fado, Castelo de São Jorge",
+        "Mejor hora: Atardecer y noche para ambiente",
+        "Evita: Subir con maletas grandes"
+      ]},
+      { tipo: "subtitulo", texto: "3. Bairro Alto (vida nocturna)" },
+      { tipo: "parrafo", texto: "De día tranquilo, de noche lleno de bares. Perfecto si buscas plan nocturno." },
+      { tipo: "lista", items: [
+        "Qué ver: Mirador de São Pedro de Alcântara, callejones con bares",
+        "Mejor hora: Tarde-noche",
+        "Evita: Si duermes ligero, el ruido es real"
+      ]},
+      { tipo: "subtitulo", texto: "4. Belém (historia y río)" },
+      { tipo: "parrafo", texto: "Monumentos icónicos y paseo junto al Tajo. Ideal para medio día." },
+      { tipo: "lista", items: [
+        "Qué ver: Torre de Belém, Jerónimos, Pastéis de Belém",
+        "Mejor hora: Mañana para evitar colas",
+        "Evita: Ir sin reservar Jerónimos en temporada alta"
+      ]},
+      { tipo: "subtitulo", texto: "5. Príncipe Real (trendy y local)" },
+      { tipo: "parrafo", texto: "Boutiques, brunch y jardines bonitos. Muy agradable para pasear." },
+      { tipo: "lista", items: [
+        "Qué ver: Jardín del Príncipe Real, mirador y cafés",
+        "Mejor hora: Mediodía o tarde",
+        "Evita: Subidas si vienes desde el río"
+      ]},
+      { tipo: "tip", texto: "Si solo tienes un día, mezcla Baixa + Alfama + un mirador al atardecer." }
+    ]
+  },
+  "evitar-turistadas-lisboa": {
+    titulo: "Cómo Evitar las Turistadas en Lisboa",
+    descripcion: "Errores típicos de turista y cómo esquivarlos con rutas más auténticas y horarios inteligentes.",
+    imagen: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    categoria: "Consejos",
+    fecha: "1 Dic 2024",
+    minutos: 6,
+    contenido: [
+      { tipo: "parrafo", texto: "Lisboa puede sentirse turística si sigues la ruta típica. Con pequeños ajustes de horario y zonas, cambia totalmente la experiencia." },
+      { tipo: "subtitulo", texto: "Turistada #1: comer en Rua Augusta" },
+      { tipo: "parrafo", texto: "Precios altos y calidad media. A 5 minutos andando encuentras tascas reales con platos mejores." },
+      { tipo: "subtitulo", texto: "Turistada #2: tranvía 28 a media tarde" },
+      { tipo: "parrafo", texto: "Colas eternas y carteristas. Mejor subir temprano o usar el tranvía 12." },
+      { tipo: "subtitulo", texto: "Turistada #3: subir al castillo a las 12:00" },
+      { tipo: "parrafo", texto: "Es la hora con más gente y más sol. Ve antes de las 10:00 o al final de la tarde." },
+      { tipo: "subtitulo", texto: "Turistada #4: mirar miradores sin plan" },
+      { tipo: "parrafo", texto: "Con una ruta bien pensada ahorras cuestas y tiempo. Junta miradores cercanos." },
+      { tipo: "subtitulo", texto: "Turistada #5: pagar demasiado por fado" },
+      { tipo: "parrafo", texto: "Hay fado auténtico en tascas pequeñas. No necesitas cenas de 60€." },
+      { tipo: "tip", texto: "Regla de oro: si hay fotos de paella en Lisboa, huye." }
+    ]
+  },
   "como-ir-sintra-desde-lisboa": {
     titulo: "Como ir a Sintra desde Lisboa",
     descripcion: "Tren, bus o tour? Te explicamos todas las opciones y precios.",
@@ -245,6 +314,28 @@ const articles: Record<string, {
       { tipo: "parrafo", texto: "Segunda vez o mas dias: Alfama o Principe Real. Ya conoces la ciudad y puedes disfrutar barrios con mas personalidad." }
     ]
   },
+  "pasteles-de-belem": {
+    titulo: "Pastéis de Belém: La Guía Definitiva",
+    descripcion: "Historia real, mejores horarios y la diferencia entre pastéis de nata y pastéis de Belém.",
+    imagen: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    categoria: "Gastronomía",
+    fecha: "28 Nov 2024",
+    minutos: 6,
+    contenido: [
+      { tipo: "parrafo", texto: "Los Pastéis de Belém son la pastelería más famosa de Lisboa. La receta original es secreta y solo se hace allí." },
+      { tipo: "subtitulo", texto: "Pastéis de Belém vs pastéis de nata" },
+      { tipo: "parrafo", texto: "Todo pastel de Belém es un pastel de nata, pero no al revés. El de Belém tiene receta propia y textura distinta." },
+      { tipo: "subtitulo", texto: "Mejor hora para ir (sin colas)" },
+      { tipo: "parrafo", texto: "A primera hora (antes de las 9:30) o a última de la tarde. Evita el mediodía." },
+      { tipo: "subtitulo", texto: "Cómo comerlos como un local" },
+      { tipo: "lista", items: [
+        "Pídelos calientes",
+        "Añade canela y azúcar glas",
+        "Sienta en el salón interior si quieres ambiente histórico"
+      ]},
+      { tipo: "tip", texto: "Si la cola exterior es larga, prueba la cola del salón. Suele moverse más rápido." }
+    ]
+  },
   "mejores-pasteles-nata-lisboa": {
     titulo: "Los mejores pasteles de nata de Lisboa",
     descripcion: "Probamos 15 pastelerias para encontrar el pastel de nata perfecto.",
@@ -286,6 +377,26 @@ const articles: Record<string, {
       { tipo: "tip", texto: "El pastel de nata se come templado, con canela y azucar glass por encima. Pidelo siempre 'com canela'." },
       { tipo: "subtitulo", texto: "Bonus: Pastel de nata vegano" },
       { tipo: "parrafo", texto: "Si eres vegano, Copenhagen Coffee Lab en Principe Real tiene una version vegana bastante decente. No es igual, pero es una alternativa." }
+    ]
+  },
+  "mejor-epoca-visitar-lisboa": {
+    titulo: "Cuál es la Mejor Época para Visitar Lisboa",
+    descripcion: "Clima mes a mes, precios reales y eventos para elegir cuándo viajar según tu estilo.",
+    imagen: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    categoria: "Planificación",
+    fecha: "25 Nov 2024",
+    minutos: 7,
+    contenido: [
+      { tipo: "parrafo", texto: "Lisboa se disfruta todo el año, pero cada temporada tiene ventajas y desventajas. Depende de si priorizas clima, precios o ambiente." },
+      { tipo: "subtitulo", texto: "Primavera (marzo-mayo)" },
+      { tipo: "parrafo", texto: "Buen clima y menos turistas. Ideal para caminar y ver miradores sin colas." },
+      { tipo: "subtitulo", texto: "Verano (junio-agosto)" },
+      { tipo: "parrafo", texto: "Mucho sol, más gente y precios más altos. Perfecto si quieres playa." },
+      { tipo: "subtitulo", texto: "Otoño (septiembre-noviembre)" },
+      { tipo: "parrafo", texto: "Clima suave, atardeceres increíbles y menos masificación." },
+      { tipo: "subtitulo", texto: "Invierno (diciembre-febrero)" },
+      { tipo: "parrafo", texto: "Precios bajos y ciudad tranquila. Ideal para gastronomía y museos." },
+      { tipo: "tip", texto: "Si buscas equilibrio total, mayo y septiembre son los mejores meses." }
     ]
   },
   "transporte-publico-lisboa": {
@@ -958,12 +1069,13 @@ const articles: Record<string, {
 const localImages: Record<string, string> = {
   'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
   'donde-comer-barato-lisboa': '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+  'barrios-imprescindibles': '/images/tranvia-28.jpg',
+  'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
   'como-ir-sintra-desde-lisboa': '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
   'tarjeta-lisboa-card-vale-pena': '/images/tranvia-28.jpg',
   'barrios-lisboa-donde-alojarse': '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
-  'los-10-mejores-miradores': '/images/hero-lisboa.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
-  'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
+  'mejor-epoca-visitar-lisboa': '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
   'presupuesto-viajar-lisboa': '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
   'mejores-mercados-lisboa': '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
   'donde-tomar-cafe-lisboa': '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
@@ -973,7 +1085,6 @@ const localImages: Record<string, string> = {
   'excursiones-desde-lisboa': '/images/pexels-daniel-1547736.jpg',
   'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
   'donde-escuchar-fado-autentico': '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
-  'mejor-epoca-visitar-lisboa': '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';
@@ -993,6 +1104,232 @@ function slugify(value: string) {
     .replace(/(^-|-$)+/g, '');
 }
 
+function getSeoTitle(title: string) {
+  const hasLisboa = title.toLowerCase().includes('lisboa');
+  const base = hasLisboa ? title : `${title} en Lisboa`;
+  return `${base} 2025 | Guía local`;
+}
+
+function getSeoDescription(description: string) {
+  return `${description} Consejos locales, horarios y recomendaciones reales para planificar tu viaje.`;
+}
+
+function getFaqs(slug: string) {
+  if (slug.includes('transporte')) {
+    return [
+      { q: '¿Cuál es el transporte más barato en Lisboa?', a: 'El metro y los tranvías con tarjeta recargable son la opción más económica para moverte.' },
+      { q: '¿Conviene usar el tranvía 28?', a: 'Sí, pero evita las horas punta. Es mejor temprano por la mañana o al final de la tarde.' },
+      { q: '¿Cómo ir del aeropuerto al centro?', a: 'El metro es la opción más rápida y barata; taxi/Uber es más cómodo si vas con maleta.' },
+    ];
+  }
+  if (slug.includes('presupuesto') || slug.includes('dinero')) {
+    return [
+      { q: '¿Cuánto dinero llevar a Lisboa por día?', a: 'Depende del estilo: 35€ mochilero, 60€ medio, 120€ confort.' },
+      { q: '¿Lisboa es cara para comer?', a: 'No si evitas zonas turísticas. Hay menús del día desde 7-10€.' },
+      { q: '¿Se puede pagar con tarjeta en Lisboa?', a: 'Sí, pero conviene llevar algo de efectivo para cafés y pequeños comercios.' },
+    ];
+  }
+  if (slug.includes('miradores')) {
+    return [
+      { q: '¿Cuál es el mejor mirador de Lisboa?', a: 'Senhora do Monte es el favorito local por vistas y ambiente.' },
+      { q: '¿A qué hora ir a los miradores?', a: 'Antes de las 10:00 para menos gente o al atardecer para la mejor luz.' },
+      { q: '¿Hay miradores gratis en Lisboa?', a: 'Sí, la mayoría son gratuitos y de fácil acceso a pie o en tranvía.' },
+    ];
+  }
+  if (slug.includes('comer') || slug.includes('restaurantes')) {
+    return [
+      { q: '¿Dónde comer barato en Lisboa?', a: 'En tascas locales fuera de Baixa/Chiado. Menús desde 7-12€.' },
+      { q: '¿Qué plato típico pedir?', a: 'Bacalao, bifanas y pastéis de nata son imprescindibles.' },
+      { q: '¿Es necesario reservar restaurantes?', a: 'En sitios populares sí, especialmente fines de semana.' },
+    ];
+  }
+  if (slug.includes('sintra')) {
+    return [
+      { q: '¿Cuánto tarda el tren a Sintra?', a: 'Unos 40 minutos desde la estación de Rossio.' },
+      { q: '¿Se puede ver Sintra en un día?', a: 'Sí, pero planifica 2-3 lugares para no ir con prisas.' },
+      { q: '¿Conviene comprar entradas online?', a: 'Sí, evita colas largas especialmente en temporada alta.' },
+    ];
+  }
+  return [
+    { q: '¿Cuántos días son ideales para Lisboa?', a: 'Entre 2 y 4 días para ver lo esencial sin prisas.' },
+    { q: '¿Cuál es el mejor barrio para alojarse?', a: 'Baixa-Chiado es práctico; Alfama es más auténtico.' },
+    { q: '¿Qué época es mejor para viajar?', a: 'Primavera y otoño tienen buen clima y menos turistas.' },
+  ];
+}
+
+const internalLinks = [
+  { href: '/itinerarios', label: 'Itinerarios por días en Lisboa' },
+  { href: '/donde-dormir', label: 'Dónde dormir en Lisboa' },
+  { href: '/transporte', label: 'Transporte en Lisboa' },
+  { href: '/presupuesto', label: 'Presupuesto para viajar a Lisboa' },
+  { href: '/tours', label: 'Tours y excursiones en Lisboa' },
+];
+
+const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faqs: { q: string; a: string }[] }> = {
+  'mejores-miradores-lisboa': {
+    comoLlegar: 'Empieza en Graça (tranvía 28/12 o bus 734) y baja caminando hacia Alfama y Baixa para encadenar miradores sin repetir cuestas.',
+    mejorHora: 'Amanecer o 30-45 minutos antes del atardecer para mejor luz y menos gente.',
+    faqs: [
+      { q: '¿Cuál es el mirador más bonito de Lisboa?', a: 'Senhora do Monte suele ser el favorito por vistas amplias y ambiente local.' },
+      { q: '¿Qué mirador es mejor para fotos?', a: 'Santa Luzia por los azulejos y Portas do Sol por la vista abierta a Alfama.' },
+      { q: '¿Se pueden visitar varios en una tarde?', a: 'Sí, Santa Luzia + Portas do Sol + Graça están a pocos minutos a pie.' },
+    ],
+  },
+  'donde-comer-barato-lisboa': {
+    comoLlegar: 'Busca zonas locales como Mouraria, Arroios o Campo de Ourique (metro Martim Moniz o Arroios). Desde Baixa estás a 10-15 min caminando.',
+    mejorHora: 'Entre 12:30 y 14:00 para aprovechar el “prato do dia” a buen precio.',
+    faqs: [
+      { q: '¿Cuánto cuesta comer barato en Lisboa?', a: 'Entre 8 y 12€ en tascas locales con plato del día.' },
+      { q: '¿Dónde comer barato sin turistas?', a: 'Mouraria, Arroios y Campo de Ourique suelen tener precios reales.' },
+      { q: '¿Los mercados son buena opción?', a: 'Sí, para variedad; pero Time Out Market es más caro que otros.' },
+    ],
+  },
+  'barrios-imprescindibles': {
+    comoLlegar: 'Arranca en Baixa-Chiado (metro) y conecta con Alfama por tranvía 28/12. Belém se alcanza con tranvía 15 desde Cais do Sodré.',
+    mejorHora: 'Mañanas para Baixa/Belém y tardes-noches para Alfama y Bairro Alto.',
+    faqs: [
+      { q: '¿Cuál es el mejor barrio para primera visita?', a: 'Baixa-Chiado por ubicación, plano y buena conexión.' },
+      { q: '¿Qué barrio tiene más encanto?', a: 'Alfama, por sus calles y ambiente de fado.' },
+      { q: '¿Dónde está la vida nocturna?', a: 'En Bairro Alto y Cais do Sodré.' },
+    ],
+  },
+  'evitar-turistadas-lisboa': {
+    comoLlegar: 'Muévete en metro y a pie. Evita tours exprés y tuk-tuks en zonas saturadas.',
+    mejorHora: 'Visita lo más popular antes de las 10:00 o después de las 17:00.',
+    faqs: [
+      { q: '¿Cuál es la mayor turistada en Lisboa?', a: 'Comer en Rua Augusta: precios altos y calidad media.' },
+      { q: '¿Cómo evitar colas en el tranvía 28?', a: 'Sube temprano o usa el tranvía 12 que hace una ruta similar.' },
+      { q: '¿Dónde hay fado auténtico?', a: 'En tascas pequeñas de Alfama o Bairro Alto, no en restaurantes turísticos.' },
+    ],
+  },
+  'pasteles-de-belem': {
+    comoLlegar: 'Tranvía 15E desde Cais do Sodré o tren a Belém. La pastelería está a 5 min de la estación.',
+    mejorHora: 'Antes de las 9:30 o a partir de las 17:00 para evitar colas largas.',
+    faqs: [
+      { q: '¿Qué diferencia hay con los pastéis de nata?', a: 'La receta de Belém es secreta y solo se hace en esa pastelería.' },
+      { q: '¿Cuánto cuesta un Pastel de Belém?', a: 'Suele rondar 1,30-1,50€ por unidad.' },
+      { q: '¿Merece la pena la cola?', a: 'Sí si es tu primera visita; prueba a entrar al salón para menos espera.' },
+    ],
+  },
+  'mejor-epoca-visitar-lisboa': {
+    comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
+    mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
+    faqs: [
+      { q: '¿Cuál es el mejor mes para visitar Lisboa?', a: 'Mayo y septiembre ofrecen buen clima y menos gente.' },
+      { q: '¿Lisboa es buena en invierno?', a: 'Sí, es más tranquila y con precios más bajos.' },
+      { q: '¿Cuándo es temporada alta?', a: 'De junio a agosto, con precios y ocupación más altos.' },
+    ],
+  },
+  'transporte-publico-lisboa': {
+    comoLlegar: 'Desde el aeropuerto, metro línea roja hasta Baixa-Chiado o Saldanha.',
+    mejorHora: 'Evita horas punta 8:00-9:30 y 18:00-19:30 si quieres ir cómodo.',
+    faqs: [
+      { q: '¿Qué tarjeta necesito para moverme?', a: 'La Viva Viagem, recargable y válida para metro, bus y tranvía.' },
+      { q: '¿Es seguro el tranvía 28?', a: 'Sí, pero hay carteristas; ve atento a tus bolsillos.' },
+      { q: '¿Conviene el pase diario?', a: 'Sí si haces más de 3-4 viajes en un día.' },
+    ],
+  },
+  'restaurantes-romanticos-lisboa': {
+    comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
+    mejorHora: 'Reserva para 20:00-21:00; si hay terraza, mejor al atardecer.',
+    faqs: [
+      { q: '¿Hay restaurantes con vistas en Lisboa?', a: 'Sí, Chapitô à Mesa y Ponto Final tienen vistas excelentes.' },
+      { q: '¿Hay que reservar siempre?', a: 'En los más populares sí, sobre todo viernes y sábados.' },
+      { q: '¿Opciones románticas sin gastar mucho?', a: 'Ponto Final o Tasca da Esquina con presupuesto medio.' },
+    ],
+  },
+  'que-ver-cascais-desde-lisboa': {
+    comoLlegar: 'Tren directo desde Cais do Sodré cada 20 minutos. El trayecto dura 30-40 minutos.',
+    mejorHora: 'Sal temprano para ver el centro y la costa sin prisas, sobre todo en verano.',
+    faqs: [
+      { q: '¿Cascais se puede ver en un día?', a: 'Sí, es ideal para una excursión de un día.' },
+      { q: '¿Hace falta coche?', a: 'No, el tren es rápido y llega al centro.' },
+      { q: '¿Qué no me puedo perder?', a: 'Boca do Inferno y el paseo marítimo.' },
+    ],
+  },
+  'playas-cerca-lisboa': {
+    comoLlegar: 'Cascais en tren, Caparica en bus y Arrábida en coche. Todas están a menos de 1 hora.',
+    mejorHora: 'Llega antes de las 10:30 en verano para evitar parking lleno.',
+    faqs: [
+      { q: '¿Cuál es la playa más fácil desde Lisboa?', a: 'Cascais, por tren directo desde Cais do Sodré.' },
+      { q: '¿Dónde hay playa más salvaje?', a: 'Arrábida y Adraga son más naturales y menos urbanas.' },
+      { q: '¿Se puede ir en invierno?', a: 'Sí, para pasear; para bañarse mejor de junio a septiembre.' },
+    ],
+  },
+  'donde-escuchar-fado-autentico': {
+    comoLlegar: 'Alfama y Bairro Alto se alcanzan con metro a Baixa-Chiado y luego caminando.',
+    mejorHora: 'Entre 20:00 y 22:30. Jueves a sábado hay más ambiente.',
+    faqs: [
+      { q: '¿Dónde escuchar fado auténtico?', a: 'En tascas pequeñas como Tasca do Chico o A Baiuca.' },
+      { q: '¿El fado es gratis?', a: 'En bares locales suele ser gratis con consumición.' },
+      { q: '¿Qué evitar?', a: 'Restaurantes turísticos con “show de fado” caro en Baixa.' },
+    ],
+  },
+  'presupuesto-viajar-lisboa': {
+    comoLlegar: 'Vuelos low cost desde España a Lisboa. Metro línea roja desde el aeropuerto al centro.',
+    mejorHora: 'Ahorra comiendo menús del día al mediodía y usando pases diarios.',
+    faqs: [
+      { q: '¿Cuánto cuesta un viaje medio a Lisboa?', a: 'Entre 60 y 90€ al día incluyendo alojamiento y comidas.' },
+      { q: '¿Es Lisboa cara?', a: 'Puede serlo en zonas turísticas, pero hay opciones económicas.' },
+      { q: '¿Qué gasto es el más alto?', a: 'El alojamiento suele ser el mayor coste.' },
+    ],
+  },
+  'mejores-mercados-lisboa': {
+    comoLlegar: 'Time Out Market en Cais do Sodré, Feira da Ladra en Santa Apolónia, Arroios con metro.',
+    mejorHora: 'Primera hora para mejor producto y menos gente.',
+    faqs: [
+      { q: '¿Cuál es el mercado más famoso?', a: 'Time Out Market, aunque es más turístico.' },
+      { q: '¿Dónde comprar barato y local?', a: 'Mercado de Arroios y la parte tradicional del Mercado da Ribeira.' },
+      { q: '¿Cuándo es Feira da Ladra?', a: 'Martes y sábados por la mañana.' },
+    ],
+  },
+  'donde-tomar-cafe-lisboa': {
+    comoLlegar: 'Chiado y Príncipe Real están conectados por metro (Baixa-Chiado o Rato).',
+    mejorHora: 'Entre 8:00 y 11:00 para ver la rutina local con poca cola.',
+    faqs: [
+      { q: '¿Cómo se pide un café en Lisboa?', a: 'Pide una “bica” si quieres un espresso.' },
+      { q: '¿Café de especialidad o tradicional?', a: 'Ambos son buenos; prueba A Brasileira y Copenhagen Coffee Lab.' },
+      { q: '¿Es caro el café?', a: 'No, suele costar entre 0,70 y 1,50€.' },
+    ],
+  },
+  'miradores-atardecer-lisboa': {
+    comoLlegar: 'Para Graça usa el tranvía 28/12 o el bus 734. Portas do Sol queda cerca de Alfama.',
+    mejorHora: '30-45 minutos antes del atardecer para reservar buen sitio.',
+    faqs: [
+      { q: '¿Qué mirador es mejor para el atardecer?', a: 'Senhora do Monte por vistas abiertas y menos gente.' },
+      { q: '¿Hay miradores con bares?', a: 'Portas do Sol y Santa Catarina tienen kioscos cerca.' },
+      { q: '¿Conviene reservar mesa en Ponto Final?', a: 'Sí, si quieres ver el atardecer desde Cacilhas.' },
+    ],
+  },
+  'que-comprar-lisboa-souvenirs': {
+    comoLlegar: 'Feira da Ladra está cerca de Santa Apolónia (metro). Chiado es accesible desde Baixa.',
+    mejorHora: 'Martes o sábado por la mañana para Feira da Ladra.',
+    faqs: [
+      { q: '¿Qué souvenir vale la pena?', a: 'Azulejos, conservas de pescado y vino de Oporto.' },
+      { q: '¿Dónde comprar sin turistadas?', a: 'Feira da Ladra y tiendas locales fuera de Baixa.' },
+      { q: '¿Puedo llevar comida en avión?', a: 'Sí, conservas y dulces suelen pasar sin problema en equipaje.' },
+    ],
+  },
+  'viajar-ninos-lisboa': {
+    comoLlegar: 'El Oceanário está en Parque das Nações (metro línea roja). El resto se hace caminando o tranvía.',
+    mejorHora: 'Mañanas para el Oceanário y tardes para parques; evita 13:00-16:00 en verano.',
+    faqs: [
+      { q: '¿Lisboa es cómoda con niños?', a: 'Sí, pero las cuestas son un reto; usa elevadores y tranvías.' },
+      { q: '¿Qué plan gusta más?', a: 'Oceanário y tranvía 28 suelen ser los favoritos.' },
+      { q: '¿Dónde comer con niños?', a: 'Time Out Market o tascas con platos simples.' },
+    ],
+  },
+  'excursiones-desde-lisboa': {
+    comoLlegar: 'Trenes desde Rossio (Sintra) o Cais do Sodré (Cascais). Buses desde Sete Rios para Óbidos y Nazaré.',
+    mejorHora: 'Salidas entre 8:00 y 9:00 para aprovechar el día completo.',
+    faqs: [
+      { q: '¿Cuál es la excursión número uno?', a: 'Sintra, por palacios y paisajes únicos.' },
+      { q: '¿Se pueden combinar excursiones?', a: 'Óbidos y Nazaré sí; Sintra y Cascais es muy justo.' },
+      { q: '¿Hace falta tour?', a: 'No siempre, pero ayuda si quieres todo organizado.' },
+    ],
+  },
+};
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = articles[params.slug];
   if (!article) {
@@ -1001,13 +1338,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const seoTitle = getSeoTitle(article.titulo);
+  const seoDescription = getSeoDescription(article.descripcion);
   const image = localImages[params.slug] || article.imagen;
   return {
-    title: `${article.titulo} | Blog Lisboa`,
-    description: article.descripcion,
+    title: seoTitle,
+    description: seoDescription,
+    alternates: {
+      canonical: `${SITE_URL}/blog/${params.slug}`,
+    },
     openGraph: {
-      title: `${article.titulo} | Blog Lisboa`,
-      description: article.descripcion,
+      title: seoTitle,
+      description: seoDescription,
       url: `${SITE_URL}/blog/${params.slug}`,
       images: [
         {
@@ -1030,22 +1372,33 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   }
 
   const heroImage = localImages[slug] || article.imagen;
-  const headings = article.contenido
+  const seoTitle = getSeoTitle(article.titulo);
+  const seoDescription = getSeoDescription(article.descripcion);
+  const extras = articleExtras[slug];
+  const baseHeadings = article.contenido
     .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
     .map((bloque) => ({
       title: bloque.texto as string,
       id: slugify(bloque.texto as string),
     }));
+  const extraHeadings = extras
+    ? [
+        { title: 'Cómo llegar', id: 'como-llegar' },
+        { title: 'Mejor hora para ir', id: 'mejor-hora' },
+      ]
+    : [];
+  const headings = [...extraHeadings, ...baseHeadings];
 
   const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
   const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
   const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
+  const faqs = extras?.faqs ?? getFaqs(slug);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: article.titulo,
-    description: article.descripcion,
+    headline: seoTitle,
+    description: seoDescription,
     datePublished: article.fecha,
     author: {
       '@type': 'Person',
@@ -1070,6 +1423,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
   const categoriaColor: Record<string, string> = {
     "Guías": "bg-blue-100 text-blue-700",
     "Gastronomía": "bg-amber-100 text-amber-700",
@@ -1092,6 +1458,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/60"></div>
         </div>
@@ -1102,7 +1470,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </Link>
           <span className={`inline-block text-xs font-semibold px-3 py-1.5 rounded-full mb-4 ${categoriaColor[article.categoria]}`}>{article.categoria}</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{article.titulo}</h1>
-          <p className="text-xl text-white/80 mb-6">{article.descripcion}</p>
+          <p className="text-xl text-white/80 mb-6">{seoDescription}</p>
           <div className="flex items-center gap-4 text-white/60 text-sm">
             <span className="flex items-center gap-1">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
@@ -1121,7 +1489,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="grid lg:grid-cols-[2fr,1fr] gap-10 mb-12">
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
               <p className="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-3">Resumen rápido</p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-4">{article.descripcion}</p>
+              <p className="text-lg text-slate-700 leading-relaxed mb-4">{seoDescription}</p>
               {takeaways.length > 0 && (
                 <ul className="space-y-2 text-slate-700">
                   {takeaways.map((item, index) => (
@@ -1152,7 +1520,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </div>
 
+          {extras && (
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-white border border-slate-200 rounded-2xl p-6">
+                <h2 id="como-llegar" className="text-xl font-bold text-slate-900 mb-3 scroll-mt-28">
+                  Cómo llegar
+                </h2>
+                <p className="text-slate-700 leading-relaxed">{extras.comoLlegar}</p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-2xl p-6">
+                <h2 id="mejor-hora" className="text-xl font-bold text-slate-900 mb-3 scroll-mt-28">
+                  Mejor hora para ir
+                </h2>
+                <p className="text-slate-700 leading-relaxed">{extras.mejorHora}</p>
+              </div>
+            </div>
+          )}
+
           <article className="prose prose-lg max-w-none">
+            <p className="text-slate-700 text-lg leading-relaxed mb-6">
+              En esta guía de {article.titulo.toLowerCase()}, te cuento lo esencial con consejos reales para moverte por Lisboa sin perder tiempo.
+            </p>
             {article.contenido.map((bloque, index) => {
               if (bloque.tipo === 'parrafo') {
                 paragraphIndex += 1;
@@ -1209,10 +1597,35 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             })}
           </article>
 
-          <div className="mt-16 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center">
+          <div className="mt-16 bg-white rounded-2xl p-8 border border-slate-200">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Enlaces internos recomendados</h3>
+            <ul className="grid md:grid-cols-2 gap-3">
+              {internalLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-primary font-semibold hover:underline">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-12 bg-background-cream rounded-2xl p-8 border border-slate-200">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Preguntas frecuentes</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="bg-white rounded-xl p-5 border border-slate-200">
+                  <h4 className="font-bold text-slate-900 mb-2">{faq.q}</h4>
+                  <p>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">¿Quieres esto organizado paso a paso?</h3>
             <p className="text-white/70 mb-6">Guías completas con rutas hora a hora, GPS en cada parada, y restaurantes probados. Menos que un café.</p>
-            <Link href="/itinerarios" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-white hover:scale-105 transition-all" style={{color: 'var(--color-primary)'}}>
+            <Link href="/itinerarios" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-primary hover:bg-primary-dark text-white hover:scale-105 transition-all shadow-lg">
               Ver Guías desde 2€
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
@@ -1257,6 +1670,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
     </main>
   );

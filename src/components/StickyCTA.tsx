@@ -51,7 +51,7 @@ export default function StickyCTA() {
         </div>
         <Link
           href="/itinerarios"
-          className="bg-black hover:bg-gray-900 text-orange-400 font-black px-8 py-4 rounded-full transition-all hover:scale-105 shadow-2xl whitespace-nowrap border-2 border-orange-400/50 flex items-center gap-2"
+          className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap flex items-center gap-2"
           aria-label="Ver guías gratuitas de Lisboa"
         >
           <span>Ver Guías Gratis</span>

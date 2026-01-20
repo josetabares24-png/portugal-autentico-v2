@@ -50,6 +50,8 @@ export default function FreeToursPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
@@ -70,7 +72,7 @@ export default function FreeToursPage() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Tours gratuitos con guías locales apasionados. Descubre Lisboa de la mano de quien mejor la conoce
+            Free tours en Lisboa con guías locales en español, horarios claros y puntos de salida céntricos.
           </p>
         </div>
 
@@ -225,13 +227,20 @@ export default function FreeToursPage() {
             </h2>
 
             <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-              Descubre nuestras guías digitales con itinerarios completos,
-              <span className="hidden md:inline"><br />restaurantes verificados y tips de local</span>
+              Combina free tours con{' '}
+              <Link href="/tours" className="underline">
+                excursiones premium
+              </Link>{' '}
+              y nuestras guías de{' '}
+              <Link href="/itinerarios" className="underline">
+                itinerarios por días
+              </Link>
+              .
             </p>
 
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-3 px-8 md:py-6 md:px-12 rounded-xl md:rounded-2xl text-base md:text-xl shadow-2xl hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 md:gap-3 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 md:py-6 md:px-12 rounded-xl text-base md:text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
             >
               <span>Ver Guías Digitales</span>
               <span className="material-symbols-outlined text-lg md:text-2xl">arrow_forward</span>
