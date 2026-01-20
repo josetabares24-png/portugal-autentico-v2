@@ -13,7 +13,8 @@ export interface UserPurchase {
 export async function hasAccess(userId: string, guideId: string): Promise<boolean> {
   if (!userId) return false
   try {
-    const { data, error } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data, error } = await supabase
       .from('purchases')
       .select('id')
       .eq('user_id', userId)
@@ -33,7 +34,8 @@ export async function hasAccess(userId: string, guideId: string): Promise<boolea
 export async function hasPackCompleto(userId: string): Promise<boolean> {
   if (!userId) return false
   try {
-    const { data, error } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data, error } = await supabase
       .from('purchases')
       .select('id')
       .eq('user_id', userId)
@@ -53,7 +55,8 @@ export async function hasPackCompleto(userId: string): Promise<boolean> {
 export async function getUserPurchases(userId: string): Promise<string[]> {
   if (!userId) return []
   try {
-    const { data, error } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data, error } = await supabase
       .from('purchases')
       .select('guide_id')
       .eq('user_id', userId)
@@ -71,7 +74,8 @@ export async function getUserPurchases(userId: string): Promise<string[]> {
 export async function getUserPurchasesWithDetails(userId: string): Promise<UserPurchase[]> {
   if (!userId) return []
   try {
-    const { data, error } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data, error } = await supabase
       .from('purchases')
       .select('*')
       .eq('user_id', userId)
@@ -94,7 +98,8 @@ export async function registerPurchase(
   stripePaymentId: string
 ): Promise<boolean> {
   try {
-    const { data: existing } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data: existing } = await supabase
       .from('purchases')
       .select('id')
       .eq('user_id', userId)
@@ -103,7 +108,7 @@ export async function registerPurchase(
     if (existing) {
       return true
     }
-    const { error } = await supabaseAdmin
+    const { error } = await supabase
       .from('purchases')
       .insert({
         user_id: userId,
@@ -132,7 +137,8 @@ export async function hasAccessToGuide(userId: string, guideId: string): Promise
 
 export async function isPaymentProcessed(stripePaymentId: string): Promise<boolean> {
   try {
-    const { data, error } = await supabaseAdmin
+    const supabase = supabaseAdmin();
+    const { data, error } = await supabase
       .from('purchases')
       .select('id')
       .eq('stripe_payment_id', stripePaymentId)

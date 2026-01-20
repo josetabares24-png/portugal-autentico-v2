@@ -1,24 +1,32 @@
-// src/lib/supabase.ts
-import { createClient } from '@supabase/supabase-js';
+﻿import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-  throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_URL');
-}
+let supabaseInstance: SupabaseClient | null = null;
 
-if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  throw new Error('Missing env.SUPABASE_SERVICE_ROLE_KEY');
-}
-
-export const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
+function getSupabaseAdmin(): SupabaseClient {
+  if (supabaseInstance) return supabaseInstance;
+  
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_URL');
   }
-);
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('Missing env.SUPABASE_SERVICE_ROLE_KEY');
+  }
+  
+  supabaseInstance = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    }
+  );
+  
+  return supabaseInstance;
+}
+
+export { getSupabaseAdmin as supabaseAdmin };
 
 export interface Purchase {
   id: string;
@@ -62,20 +70,16 @@ export async function createPurchase(data: {
   additional_notes?: string;
   metadata?: Record<string, any>;
 }): Promise<Purchase> {
-  const { data: userId, error: userError } = await supabaseAdmin.rpc(
+  const supabase = getSupabaseAdmin();
+  const { data: userId, error: userError } = await supabase.rpc(
     'get_or_create_user',
-    {
-      p_email: data.email,
-      p_name: data.name,
-    }
+    { p_email: data.email, p_name: data.name }
   );
-
   if (userError) {
     console.error('Error getting/creating user:', userError);
     throw new Error('Failed to get or create user');
   }
-
-  const { data: purchase, error: purchaseError } = await supabaseAdmin
+  const { data: purchase, error: purchaseError } = await supabase
     .from('purchases')
     .insert({
       user_id: userId,
@@ -97,23 +101,19 @@ export async function createPurchase(data: {
     })
     .select()
     .single();
-
   if (purchaseError) {
     console.error('Error creating purchase:', purchaseError);
     throw new Error('Failed to create purchase');
   }
-
   return purchase;
 }
 
 export async function updatePurchaseWithPayment(
   stripeSessionId: string,
-  data: {
-    stripe_payment_intent_id: string;
-    status: 'completed' | 'failed';
-  }
+  data: { stripe_payment_intent_id: string; status: 'completed' | 'failed' }
 ): Promise<Purchase | null> {
-  const { data: purchase, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data: purchase, error } = await supabase
     .from('purchases')
     .update({
       stripe_payment_intent_id: data.stripe_payment_intent_id,
@@ -122,101 +122,79 @@ export async function updatePurchaseWithPayment(
     .eq('stripe_session_id', stripeSessionId)
     .select()
     .single();
-
   if (error) {
     console.error('Error updating purchase:', error);
     return null;
   }
-
   return purchase;
 }
 
-export async function markPurchaseAsPdfGenerated(
-  purchaseId: string,
-  pdfUrl: string
-): Promise<boolean> {
-  const { error } = await supabaseAdmin
+export async function markPurchaseAsPdfGenerated(purchaseId: string, pdfUrl: string): Promise<boolean> {
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
     .from('purchases')
-    .update({
-      pdf_generated: true,
-      pdf_url: pdfUrl,
-    })
+    .update({ pdf_generated: true, pdf_url: pdfUrl })
     .eq('id', purchaseId);
-
   if (error) {
     console.error('Error marking PDF as generated:', error);
     return false;
   }
-
   return true;
 }
 
-export async function markPurchaseAsEmailSent(
-  purchaseId: string
-): Promise<boolean> {
-  const { error } = await supabaseAdmin
+export async function markPurchaseAsEmailSent(purchaseId: string): Promise<boolean> {
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
     .from('purchases')
-    .update({
-      email_sent: true,
-    })
+    .update({ email_sent: true })
     .eq('id', purchaseId);
-
   if (error) {
     console.error('Error marking email as sent:', error);
     return false;
   }
-
   return true;
 }
 
-export async function getPurchaseByStripeSession(
-  sessionId: string
-): Promise<Purchase | null> {
-  const { data, error } = await supabaseAdmin
+export async function getPurchaseByStripeSession(sessionId: string): Promise<Purchase | null> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from('purchases')
     .select('*')
     .eq('stripe_session_id', sessionId)
     .single();
-
   if (error) {
     console.error('Error getting purchase by session:', error);
     return null;
   }
-
   return data;
 }
 
 export async function getPurchasesByEmail(email: string): Promise<Purchase[]> {
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from('purchases')
     .select('*')
     .eq('email', email)
     .eq('status', 'completed')
     .order('created_at', { ascending: false });
-
   if (error) {
     console.error('Error getting purchases by email:', error);
     return [];
   }
-
   return data || [];
 }
 
-export async function getAllPurchases(
-  limit: number = 100,
-  offset: number = 0
-): Promise<Purchase[]> {
-  const { data, error } = await supabaseAdmin
+export async function getAllPurchases(limit: number = 100, offset: number = 0): Promise<Purchase[]> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from('purchases')
     .select('*')
     .order('created_at', { ascending: false })
     .range(offset, offset + limit - 1);
-
   if (error) {
     console.error('Error getting all purchases:', error);
     return [];
   }
-
   return data || [];
 }
 
@@ -227,12 +205,11 @@ export async function getSalesStats(): Promise<{
   pending_sales: number;
   avg_sale_amount: number;
 } | null> {
-  const { data, error } = await supabaseAdmin.rpc('get_sales_stats');
-
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase.rpc('get_sales_stats');
   if (error) {
     console.error('Error getting sales stats:', error);
     return null;
   }
-
   return data;
 }
