@@ -17,7 +17,7 @@ export function useIsAdmin(): boolean {
     }
 
     // También verifica por email (fallback)
-    const adminEmails = process.env.NEXT_PUBLIC_ADMIN_EMAILS?.split(',') || ['josetabares24@gmail.com'];
+    const adminEmails = ['josetabares24@gmail.com'];
     const userEmail = user.emailAddresses[0]?.emailAddress;
     
     if (userEmail && adminEmails.includes(userEmail)) {
