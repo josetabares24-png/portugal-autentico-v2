@@ -5,7 +5,7 @@ import type { GuideHighlight } from '@/lib/guide-store';
 
 export async function GET(
   _request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   const admin = await isAdmin();
   if (!admin) {
@@ -13,11 +13,12 @@ export async function GET(
   }
 
   try {
+    const { slug } = await params;
     validateSupabaseConfig();
     const { data, error } = await supabaseAdmin
       .from('guides')
       .select('*')
-      .eq('slug', params.slug)
+      .eq('slug', slug)
       .single();
 
     if (error) {
@@ -32,7 +33,7 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   const admin = await isAdmin();
   if (!admin) {
@@ -40,6 +41,7 @@ export async function PUT(
   }
 
   try {
+    const { slug } = await params;
     validateSupabaseConfig();
     const body = await request.json();
 
@@ -82,7 +84,7 @@ export async function PUT(
     const { error } = await supabaseAdmin
       .from('guides')
       .upsert({
-        slug: params.slug,
+        slug,
         title,
         subtitle: subtitle || null,
         description,
@@ -111,7 +113,7 @@ export async function PUT(
 
 export async function DELETE(
   _request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   const admin = await isAdmin();
   if (!admin) {
@@ -119,11 +121,12 @@ export async function DELETE(
   }
 
   try {
+    const { slug } = await params;
     validateSupabaseConfig();
     const { error } = await supabaseAdmin
       .from('guides')
       .delete()
-      .eq('slug', params.slug);
+      .eq('slug', slug);
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });

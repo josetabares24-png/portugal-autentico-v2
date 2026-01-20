@@ -106,12 +106,8 @@ export default async function AdminGuiaEditPage({
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Información Básica</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">ID</label>
-              <div className="bg-slate-50 rounded-lg p-3 text-slate-900 font-mono text-sm">{guide.id}</div>
-            </div>
-            <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">Slug</label>
-              <div className="bg-slate-50 rounded-lg p-3 text-slate-900 font-mono text-sm">{guide.slug || guide.id}</div>
+              <div className="bg-slate-50 rounded-lg p-3 text-slate-900 font-mono text-sm">{guide.slug}</div>
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">Título</label>
