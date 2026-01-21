@@ -1,7 +1,7 @@
 // src/app/servicios/fotografo-personal/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import { Camera, Clock, MapPin, CheckCircle, Users, Award, Heart, Instagram } from 'lucide-react';
+import { Camera, Clock, MapPin, CheckCircle, Users, Award, Heart, Instagram, Star } from 'lucide-react';
 
 export default function FotografoPersonalPage() {
   const paquetes = [
