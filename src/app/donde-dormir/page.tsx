@@ -436,7 +436,7 @@ export default function DondeDormirPage() {
                       href={hostel.bookingUrl}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="block w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white text-center font-bold py-3 rounded-xl transition-all hover:scale-105 shadow-lg"
+                      className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
                     >
                       Ver Disponibilidad →
                     </a>
@@ -526,7 +526,7 @@ export default function DondeDormirPage() {
                     href={hotel.bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
-                    className="block w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white text-center font-bold py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-lg"
+                    className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
                   >
                     Ver Disponibilidad →
                   </a>

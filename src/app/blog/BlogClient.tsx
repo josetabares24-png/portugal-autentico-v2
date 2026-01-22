@@ -56,6 +56,25 @@ export default function BlogClient() {
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
             Tips de local, guías auténticas y todo lo que necesitas saber para vivir Lisboa como un residente
           </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Link
+              href="/itinerarios"
+              className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <span className="material-symbols-outlined text-xl">map</span>
+              Ver las rutas
+              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </Link>
+            <Link
+              href="/info-util"
+              className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border border-white/30 transition-all duration-300"
+            >
+              <span className="material-symbols-outlined text-xl">download</span>
+              Guía práctica gratis
+            </Link>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -194,7 +213,7 @@ export default function BlogClient() {
               />
               <button
                 type="submit"
-                className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold rounded-xl md:rounded-2xl shadow-xl hover:scale-105 transition-all text-sm md:text-base"
+                className="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-all duration-300 text-base"
               >
                 Suscribirme
               </button>
