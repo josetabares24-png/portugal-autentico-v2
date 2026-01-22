@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { tourFallbackImage, tourImageMap } from '@/lib/media';
 
 export default function ToursPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -292,7 +293,7 @@ export default function ToursPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-6 bg-gradient-to-r from-primary to-orange-500 text-white sticky top-16 z-40 shadow-lg">
+      <section className="py-6 bg-primary text-white sticky top-16 z-40 shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-2 overflow-x-auto py-2 scrollbar-hide">
             {categories.map((cat) => (
@@ -385,7 +386,7 @@ export default function ToursPage() {
                 <div key={tour.id} className="bg-white rounded-3xl overflow-hidden border-2 border-primary/20 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1">
                   <div className="relative h-56">
                     <Image
-                      src={tour.image}
+                      src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
                       alt={tour.name}
                       fill
                       className="object-cover"
@@ -425,11 +426,11 @@ export default function ToursPage() {
                       </div>
                     </div>
 
-                    <a
+                  <a
                       href={tour.bookingUrl}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="block w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white text-center font-bold py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
+                    className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
                     >
                       Reservar Ahora (Gratis) →
                     </a>
@@ -465,7 +466,7 @@ export default function ToursPage() {
               }`}>
                 <div className="relative h-48">
                   <Image
-                    src={tour.image}
+                    src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
                     alt={tour.name}
                     fill
                     className="object-cover"
@@ -572,7 +573,7 @@ export default function ToursPage() {
       </section>
 
       {/* CTA to Guides */}
-      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
           <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">map</span>

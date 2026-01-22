@@ -10,8 +10,8 @@ export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
 }
 
-export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function PackPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const pack = await getGuidePack(slug);
   
   if (!pack) {

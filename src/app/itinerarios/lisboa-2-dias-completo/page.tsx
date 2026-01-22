@@ -233,6 +233,7 @@ export default function Lisboa2DiasPage() {
         title="Mapa Interactivo del Itinerario"
         description="Todos los restaurantes, miradores y monumentos de esta guía en un solo mapa con rutas optimizadas."
         guideTitle="Lisboa 2 Días - Completo"
+        fallbackQuery="Lisboa 2 días itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

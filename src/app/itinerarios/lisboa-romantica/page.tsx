@@ -218,6 +218,7 @@ export default function LisboaRomanticaPage() {
         title="Mapa Interactivo del Itinerario"
         description="Miradores, cenas y planes románticos ubicados en un mapa con rutas sugeridas."
         guideTitle="Lisboa Romántica"
+        fallbackQuery="Lisboa romántica itinerario"
       />
 
       {/* Photo Gallery Section */}

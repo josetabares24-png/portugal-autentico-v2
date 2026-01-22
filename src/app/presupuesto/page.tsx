@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { submitQuizLead } from '@/lib/brevo';
 
 export default function PresupuestoPage() {
   const [tipo, setTipo] = useState<'low' | 'mid' | 'high'>('mid');
@@ -10,6 +11,8 @@ export default function PresupuestoPage() {
   const [personas, setPersonas] = useState(2);
   const [emailCaptured, setEmailCaptured] = useState(false);
   const [email, setEmail] = useState('');
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [emailError, setEmailError] = useState<string | null>(null);
 
   const budgets = {
     low: {
@@ -56,9 +59,34 @@ export default function PresupuestoPage() {
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrar con ConvertKit/Resend
-    console.log('Email captured:', email, { tipo, dias, personas, total: totalViaje });
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError('Ingresa un email válido.');
+      setEmailStatus('error');
+      return;
+    }
+
+    setEmailStatus('loading');
+    setEmailError(null);
+
+    const result = await submitQuizLead({
+      email,
+      profile: 'presupuesto',
+      companion: `${personas} personas`,
+      interest: 'presupuesto-detallado',
+      duration: `${dias} dias`,
+      budget: tipo,
+      experience: '',
+    });
+
+    if (!result.success) {
+      setEmailStatus('error');
+      setEmailError('No pudimos guardar tu email. Inténtalo otra vez.');
+      return;
+    }
+
     setEmailCaptured(true);
+    setEmailStatus('success');
   };
 
   const faqItems = [
@@ -163,12 +191,12 @@ export default function PresupuestoPage() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background-cream">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Controls */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white rounded-2xl p-6 border-2 border-slate-200 sticky top-24">
+              <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft sticky top-24">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Personaliza tu viaje</h2>
 
                 {/* Tipo de Viajero */}
@@ -187,7 +215,7 @@ export default function PresupuestoPage() {
                             : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                         }`}
                       >
-                        <div className="text-2xl mb-1">{budgets[t].emoji}</div>
+                          <div className="text-2xl mb-1">{budgets[t].emoji}</div>
                         {budgets[t].nombre}
                       </button>
                     ))}
@@ -233,8 +261,8 @@ export default function PresupuestoPage() {
                 </div>
 
                 {/* Tip */}
-                <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-                  <p className="text-sm text-blue-800">{getTip()}</p>
+                <div className="bg-primary/10 rounded-xl p-4 border border-primary/20">
+                  <p className="text-sm text-primary-dark">{getTip()}</p>
                 </div>
               </div>
             </div>
@@ -242,7 +270,7 @@ export default function PresupuestoPage() {
             {/* Results */}
             <div className="lg:col-span-3 space-y-6">
               {/* Total destacado */}
-              <div className="bg-gradient-to-br from-primary to-orange-500 rounded-2xl p-8 text-white text-center">
+              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-white text-center shadow-soft-lg">
                 <p className="text-white/80 text-sm font-bold mb-2">PRESUPUESTO TOTAL</p>
                 <div className="text-6xl font-black mb-2">{totalViaje.toFixed(0)}€</div>
                 <p className="text-white/90 text-sm">
@@ -256,7 +284,7 @@ export default function PresupuestoPage() {
               </div>
 
               {/* Desglose */}
-              <div className="bg-white rounded-2xl p-6 border-2 border-slate-200">
+              <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">
                   Desglose por persona/día
                 </h3>
@@ -283,7 +311,7 @@ export default function PresupuestoPage() {
                         </div>
                         <div className="w-full bg-slate-100 rounded-full h-2">
                           <div
-                            className="bg-gradient-to-r from-primary to-orange-500 h-2 rounded-full transition-all"
+                            className="bg-gradient-to-r from-primary to-primary-dark h-2 rounded-full transition-all"
                             style={{ width: `${percentage}%` }}
                           ></div>
                         </div>
@@ -301,7 +329,7 @@ export default function PresupuestoPage() {
               </div>
 
               {/* Qué incluye cada presupuesto */}
-              <div className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-200">
+              <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">
                   ¿Qué incluye el presupuesto {budget.nombre}? {budget.emoji}
                 </h3>
@@ -375,7 +403,7 @@ export default function PresupuestoPage() {
       </section>
 
       {/* Email Capture - Detailed Budget */}
-      <section className="py-20 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -404,11 +432,15 @@ export default function PresupuestoPage() {
                   />
                   <button
                     type="submit"
-                    className="px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-2xl whitespace-nowrap"
+                    className="px-8 py-4 bg-white text-primary font-bold rounded-xl transition-all hover:scale-105 shadow-2xl whitespace-nowrap disabled:opacity-70 disabled:hover:scale-100"
+                    disabled={emailStatus === 'loading'}
                   >
-                    Enviar presupuesto →
+                    {emailStatus === 'loading' ? 'Enviando...' : 'Enviar presupuesto →'}
                   </button>
                 </div>
+                {emailError && (
+                  <p className="text-white text-sm mt-3">{emailError}</p>
+                )}
                 <p className="text-white/70 text-xs mt-3">
                   ✅ Presupuesto personalizado · ✅ Sin spam · ✅ 100% gratis
                 </p>
@@ -441,55 +473,55 @@ export default function PresupuestoPage() {
       </section>
 
       {/* Tips Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background-light">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
             💡 Cómo ahorrar en Lisboa
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
-              <h3 className="font-bold text-green-900 mb-3 flex items-center gap-2">
-                <span className="material-symbols-outlined">savings</span>
+            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
+              <h3 className="font-bold text-text-main mb-3 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">savings</span>
                 Alojamiento
               </h3>
-              <ul className="text-sm text-green-800 space-y-2">
+              <ul className="text-sm text-text-secondary space-y-2">
                 <li>• Reserva con 2+ meses: ahorra 30-40%</li>
                 <li>• Parque das Nações: 40% más barato que Baixa</li>
                 <li>• Lunes-jueves: 20% menos que fin de semana</li>
               </ul>
             </div>
 
-            <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
-              <h3 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
-                <span className="material-symbols-outlined">restaurant</span>
+            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
+              <h3 className="font-bold text-text-main mb-3 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">restaurant</span>
                 Comida
               </h3>
-              <ul className="text-sm text-blue-800 space-y-2">
+              <ul className="text-sm text-text-secondary space-y-2">
                 <li>• Menú del día (12:00-14:00): 7-10€ completo</li>
                 <li>• Mercados: Ribeira, Campo de Ourique</li>
                 <li>• Evita Baixa turística: +30% más caro</li>
               </ul>
             </div>
 
-            <div className="bg-purple-50 rounded-2xl p-6 border-2 border-purple-200">
-              <h3 className="font-bold text-purple-900 mb-3 flex items-center gap-2">
-                <span className="material-symbols-outlined">directions_subway</span>
+            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
+              <h3 className="font-bold text-text-main mb-3 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">directions_subway</span>
                 Transporte
               </h3>
-              <ul className="text-sm text-purple-800 space-y-2">
+              <ul className="text-sm text-text-secondary space-y-2">
                 <li>• Pase 24h (6.80€) vs 5 viajes sueltos (8.25€)</li>
                 <li>• Camina centro histórico (gratis + ejercicio)</li>
                 <li>• Uber split con otros viajeros</li>
               </ul>
             </div>
 
-            <div className="bg-orange-50 rounded-2xl p-6 border-2 border-orange-200">
-              <h3 className="font-bold text-orange-900 mb-3 flex items-center gap-2">
-                <span className="material-symbols-outlined">tour</span>
+            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft">
+              <h3 className="font-bold text-text-main mb-3 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">tour</span>
                 Actividades
               </h3>
-              <ul className="text-sm text-orange-800 space-y-2">
+              <ul className="text-sm text-text-secondary space-y-2">
                 <li>• Free tours (propina 10-15€ vs 25€ pagados)</li>
                 <li>• Museos gratis: domingos 10:00-14:00</li>
                 <li>• Miradores: 100% gratis y espectaculares</li>

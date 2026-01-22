@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
+import QuizCTA from '@/components/QuizCTA';
 import { mainItineraries } from '@/data/itineraries';
 
 export default function HomePage() {
@@ -81,6 +82,13 @@ export default function HomePage() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        </div>
+      </section>
+
+      {/* Quiz CTA */}
+      <section className="py-16 bg-background-cream">
+        <div className="max-w-6xl mx-auto px-6">
+          <QuizCTA />
         </div>
       </section>
 

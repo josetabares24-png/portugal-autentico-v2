@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { TimelineStop as TimelineStopType } from '@/data/itineraries';
+import { timelineFallbackImages } from '@/lib/media';
 
 interface TimelineStopProps extends TimelineStopType {
   index: number;
@@ -13,7 +14,12 @@ export function TimelineStop({ time, title, description, tip, type, index, image
   const badgeText = type === 'food' ? 'text-amber-700' : 'text-sky-700';
   const tipColor = type === 'food' ? 'text-amber-600' : 'text-sky-600';
   const iconBg = type === 'food' ? 'bg-amber-500' : 'bg-primary';
-  const imageSrc = image?.trim() ? image : '/images/hero-lisboa.jpg';
+  const fallbackImage = timelineFallbackImages[index % timelineFallbackImages.length];
+  const imageSrc = image?.trim()
+    ? image.startsWith('http')
+      ? fallbackImage
+      : image
+    : fallbackImage;
 
   return (
     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 group">

@@ -7,14 +7,29 @@ interface InteractiveMapProps {
   title: string;
   description: string;
   guideTitle: string;
+  fallbackQuery?: string;
 }
 
-export default function InteractiveMap({ mapId, title, description, guideTitle }: InteractiveMapProps) {
+export default function InteractiveMap({
+  mapId,
+  title,
+  description,
+  guideTitle,
+  fallbackQuery
+}: InteractiveMapProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const isPlaceholder = mapId === 'PLACEHOLDER';
+  const hasFallback = Boolean(fallbackQuery);
+  const fallbackValue = fallbackQuery || 'Lisboa, Portugal';
+
   // URLs para diferentes acciones
-  const embedUrl = `https://www.google.com/maps/d/embed?mid=${mapId}`;
-  const viewUrl = `https://www.google.com/maps/d/viewer?mid=${mapId}`;
+  const embedUrl = isPlaceholder
+    ? `https://maps.google.com/maps?q=${encodeURIComponent(fallbackValue)}&output=embed`
+    : `https://www.google.com/maps/d/embed?mid=${mapId}`;
+  const viewUrl = isPlaceholder
+    ? `https://maps.google.com/?q=${encodeURIComponent(fallbackValue)}`
+    : `https://www.google.com/maps/d/viewer?mid=${mapId}`;
   const downloadUrl = `https://www.google.com/maps/d/viewer?mid=${mapId}`;
 
   return (
@@ -60,7 +75,7 @@ export default function InteractiveMap({ mapId, title, description, guideTitle }
 
         {/* Map Container */}
         <div className="bg-white rounded-2xl overflow-hidden border-2 border-blue-300 shadow-2xl">
-          {mapId === 'PLACEHOLDER' ? (
+          {isPlaceholder && !hasFallback ? (
             // Placeholder cuando aún no se ha creado el mapa
             <div className="relative h-96 bg-gradient-to-br from-blue-100 to-indigo-200 flex flex-col items-center justify-center p-8">
               <span className="material-symbols-outlined text-blue-600 text-8xl mb-6">map</span>
@@ -112,37 +127,38 @@ export default function InteractiveMap({ mapId, title, description, guideTitle }
             </>
           )}
 
-          {/* Action Buttons */}
-          <div className="p-6 bg-gradient-to-r from-blue-600 to-indigo-600">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={viewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white text-blue-600 rounded-xl font-bold hover:scale-105 transition-all shadow-lg"
-              >
-                <span className="material-symbols-outlined text-xl">open_in_new</span>
-                Ver mapa completo en nueva pestaña
-              </a>
-              <button
-                onClick={() => {
-                  // Abrir en Google Maps app o web
-                  window.open(downloadUrl, '_blank');
-                }}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white/20 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold hover:bg-white/30 transition-all"
-              >
-                <span className="material-symbols-outlined text-xl">download</span>
-                Descargar para offline
-              </button>
-            </div>
+          {(!isPlaceholder || hasFallback) && (
+            <div className="p-6 bg-gradient-to-r from-blue-600 to-indigo-600">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={viewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white text-blue-600 rounded-xl font-bold hover:scale-105 transition-all shadow-lg"
+                >
+                  <span className="material-symbols-outlined text-xl">open_in_new</span>
+                  Ver mapa completo en nueva pestaña
+                </a>
+                {!isPlaceholder && (
+                  <button
+                    onClick={() => {
+                      window.open(downloadUrl, '_blank');
+                    }}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white/20 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold hover:bg-white/30 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-xl">download</span>
+                    Descargar para offline
+                  </button>
+                )}
+              </div>
 
-            {/* Instructions */}
-            <div className="mt-4 text-center">
-              <p className="text-white/90 text-sm">
-                💡 <strong>Tip:</strong> Abre el mapa en Google Maps → Toca "Guardar" → Disponible offline sin internet
-              </p>
+              <div className="mt-4 text-center">
+                <p className="text-white/90 text-sm">
+                  💡 <strong>Tip:</strong> Abre el mapa en Google Maps → Toca "Guardar" → Disponible offline sin internet
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* How to use section */}
@@ -182,12 +198,6 @@ export default function InteractiveMap({ mapId, title, description, guideTitle }
           </div>
         </div>
 
-        {/* Social Proof */}
-        <div className="mt-6 text-center">
-          <p className="text-slate-600 text-sm">
-            ⭐ <strong>Valoración de usuarios:</strong> "El mapa me salvó el viaje. Tener todo en un sitio es brutal" - Ana M.
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { isAdmin } from '@/lib/auth-utils';
 import { type TimelineStop } from '@/data/itineraries';
 import { getGuideEditData } from '@/lib/guide-store';
 import { GuideAdminActions } from './GuideAdminActions';
+import { timelineFallbackImages } from '@/lib/media';
 import {
   lisboa1DiaTimeline,
   lisboa2DiasDia1Timeline,
@@ -38,14 +39,14 @@ const timelineMap: Record<string, TimelineStop[]> = {
 export default async function AdminGuiaEditPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
   const admin = await isAdmin();
   if (!admin) {
     redirect('/');
   }
 
-  const { slug } = await params;
+  const { slug } = params;
 
   const guide = await getGuideEditData(slug);
 
@@ -80,7 +81,7 @@ export default async function AdminGuiaEditPage({
             <div className="flex gap-4">
               <Link
                 href={`/admin/guias/${slug}/edit`}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -177,7 +178,7 @@ export default async function AdminGuiaEditPage({
               </h2>
               <Link
                 href={`/admin/guias/${slug}/edit#timeline`}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -186,7 +187,14 @@ export default async function AdminGuiaEditPage({
               </Link>
             </div>
             <div className="space-y-6">
-              {timeline.map((stop, idx) => (
+              {timeline.map((stop, idx) => {
+                const fallbackImage = timelineFallbackImages[idx % timelineFallbackImages.length];
+                const imageSrc = stop.image?.trim()
+                  ? stop.image.startsWith('http')
+                    ? fallbackImage
+                    : stop.image
+                  : fallbackImage;
+                return (
                 <div key={idx} className="border-l-4 border-orange-500 pl-6 pb-6">
                   <div className="flex items-start gap-4 mb-3">
                     <div className="flex-shrink-0 w-20 text-right">
@@ -220,10 +228,10 @@ export default async function AdminGuiaEditPage({
                           )}
                         </div>
                       )}
-                      {stop.image && (
+                      {imageSrc && (
                         <div className="mt-3">
                           <Image
-                            src={stop.image}
+                            src={imageSrc}
                             alt={stop.title}
                             width={512}
                             height={192}
@@ -237,7 +245,8 @@ export default async function AdminGuiaEditPage({
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -248,7 +257,7 @@ export default async function AdminGuiaEditPage({
           <div className="flex flex-wrap gap-4">
             <Link
               href={`/admin/guias/${slug}/edit`}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />

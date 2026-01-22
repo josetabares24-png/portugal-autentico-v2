@@ -7,14 +7,14 @@ import { GuideEditForm } from './GuideEditForm';
 export default async function EditGuiaPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
   const admin = await isAdmin();
   if (!admin) {
     redirect('/');
   }
 
-  const { slug } = await params;
+  const { slug } = params;
   const guide = await getGuideEditData(slug);
   if (!guide) {
     notFound();

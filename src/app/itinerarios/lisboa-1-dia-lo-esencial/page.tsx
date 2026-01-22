@@ -219,6 +219,7 @@ export default function Lisboa1DiaPage() {
         title="Mapa Interactivo del Itinerario"
         description="Todos los restaurantes, miradores y monumentos de esta guía en un solo mapa. Descárgalo en tu móvil y úsalo offline."
         guideTitle="Lisboa 1 Día - Lo Esencial"
+        fallbackQuery="Lisboa 1 día itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

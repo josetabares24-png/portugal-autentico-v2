@@ -234,6 +234,7 @@ export default function Lisboa3DiasPremiumPage() {
         title="Mapa Interactivo del Itinerario"
         description="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave del día 3."
         guideTitle="Lisboa + Alrededores"
+        fallbackQuery="Lisboa 3 días Sintra Cascais itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

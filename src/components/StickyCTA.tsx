@@ -30,7 +30,7 @@ export default function StickyCTA() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] py-4 px-6 z-50 shadow-2xl transform transition-transform duration-300 ease-out"
+      className="fixed bottom-0 left-0 right-0 bg-primary py-4 px-6 z-50 shadow-2xl transform transition-transform duration-300 ease-out"
       style={{
         animation: 'slideUp 0.4s ease-out'
       }}
@@ -51,7 +51,7 @@ export default function StickyCTA() {
         </div>
         <Link
           href="/itinerarios"
-          className="bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap flex items-center gap-2"
+          className="bg-white hover:bg-background-cream text-primary font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap flex items-center gap-2"
           aria-label="Ver guías gratuitas de Lisboa"
         >
           <span>Ver Guías Gratis</span>

@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
+import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
-const articles: Record<string, {
+type Article = {
   titulo: string;
   descripcion: string;
   imagen: string;
@@ -12,7 +13,9 @@ const articles: Record<string, {
   fecha: string;
   minutos: number;
   contenido: { tipo: string; texto?: string; items?: string[]; imagen?: string; caption?: string }[];
-}> = {
+};
+
+const articles: Record<string, Article> = {
   "mejores-miradores-lisboa": {
     titulo: "Los 10 mejores miradores de Lisboa",
     descripcion: "Desde los clasicos hasta los secretos que solo conocen los locales.",
@@ -1114,6 +1117,500 @@ function getSeoDescription(description: string) {
   return `${description} Consejos locales, horarios y recomendaciones reales para planificar tu viaje.`;
 }
 
+function resolveBlogImage(slug: string, image?: string) {
+  const mapped = blogImageMap[slug];
+  const candidate = mapped || image || blogFallbackImage;
+  if (candidate.startsWith('http')) {
+    return blogFallbackImage;
+  }
+  return candidate;
+}
+
+function buildFallbackArticle(slug: string): Article | null {
+  const post = blogPosts.find((item) => item.id === slug);
+  if (!post) return null;
+  const tituloBase = post.titulo.replace(/\s+en Lisboa/i, '').trim();
+  const categoria = post.categoria;
+  const contexto = `En esta guía sobre ${tituloBase.toLowerCase()}, te comparto lo esencial con enfoque local, directo y sin rodeos.`;
+  const listaClave = [
+    'Qué merece la pena y qué puedes saltarte sin culpa.',
+    'Horarios reales para evitar colas y multitudes.',
+    'Costes aproximados para planificar sin sorpresas.',
+    'Atajos de local para moverte mejor y ahorrar tiempo.',
+    'Errores típicos que conviene evitar.',
+  ];
+
+  const categoryIntro: Record<string, string> = {
+    Guías: 'La clave aquí es priorizar zonas con buen acceso y vistas sin duplicar cuestas ni tiempos.',
+    Gastronomía: 'Lisboa se come por horarios. Si llegas a tiempo, comes mejor y por menos.',
+    Consejos: 'La diferencia entre una visita normal y una buena es conocer los detalles pequeños.',
+    Planificación: 'Un buen plan ahorra dinero y horas. Lo importante es ajustar expectativas y ritmo.',
+    Transporte: 'Moverse bien en Lisboa es tener una tarjeta correcta y saber qué evitar.',
+    Cultura: 'Para vivir la cultura local hay que respetar tiempos, silencios y códigos.',
+  };
+
+  const categoryMusts: Record<string, string[]> = {
+    Guías: [
+      'Zonas clave en un orden que evita subidas innecesarias.',
+      'Paradas con mejores vistas y menos gente.',
+      'Ventanas horarias recomendadas según luz y afluencia.',
+      'Tiempo real entre puntos para no correr.',
+      'Dónde hacer una pausa sin pagar de más.',
+    ],
+    Gastronomía: [
+      'Tascas locales con menú del día a buen precio.',
+      'Qué pedir para acertar sin gastar de más.',
+      'Horarios ideales para evitar colas.',
+      'Diferencias entre zonas turísticas y locales.',
+      'Dónde tomar un café bueno y barato.',
+    ],
+    Consejos: [
+      'Errores típicos que encarecen el viaje.',
+      'Consejos prácticos para moverte rápido.',
+      'Qué horarios evitar en zonas populares.',
+      'Cosas que no necesitas comprar.',
+      'Pequeños hábitos de local que ayudan.',
+    ],
+    Planificación: [
+      'Presupuesto diario realista por estilo de viaje.',
+      'Épocas del año con mejor clima-precio.',
+      'Cómo distribuir los días por zonas.',
+      'Tiempo real para cada actividad.',
+      'Qué reservar con antelación.',
+    ],
+    Transporte: [
+      'Qué tarjeta comprar y cómo recargarla.',
+      'Tramos donde el metro es más útil.',
+      'Tranvías que valen la pena y los que no.',
+      'Cuándo usar Uber/Bolt sin gastar de más.',
+      'Cómo llegar desde el aeropuerto al centro.',
+    ],
+    Cultura: [
+      'Lugares auténticos con menos turistada.',
+      'Horarios recomendados para buena experiencia.',
+      'Cómo comportarse en espectáculos locales.',
+      'Rincones culturales con entrada gratuita.',
+      'Planes alternativos si hay colas.',
+    ],
+  };
+
+  const categoryChecklist: Record<string, string[]> = {
+    Guías: ['Calzado cómodo', 'Agua y snack ligero', 'Foto rápida y seguir ruta', 'Reserva si aplica'],
+    Gastronomía: ['Llegar antes de las 14:00', 'Pedir plato del día', 'Evitar menús turísticos', 'Pagar con tarjeta o efectivo pequeño'],
+    Consejos: ['Evitar horas punta', 'Plan de 2-3 zonas por día', 'Mapa offline listo', 'Tiempo de descanso'],
+    Planificación: ['Fechas flexibles', 'Presupuesto diario', 'Plan A y plan B', 'Reservas clave'],
+    Transporte: ['Tarjeta Viva Viagem', 'Horario del primer metro', 'Plan alterno si llueve', 'Apps útiles'],
+    Cultura: ['Reservas si hay show', 'Llegar 10-15 min antes', 'Respeto al silencio', 'Alternativa cercana'],
+  };
+
+  const categoryTip: Record<string, string> = {
+    Guías: 'Si quieres el detalle completo con mapas, horarios y paradas exactas, revisa nuestras guías actualizadas.',
+    Gastronomía: 'Si algo parece muy turístico, camina 5 minutos y verás opciones mejores y más baratas.',
+    Consejos: 'La ciudad se disfruta más temprano y tarde. Entre 13:00 y 16:00 suele estar más cargada.',
+    Planificación: 'Con 2-4 días bien organizados ves lo esencial sin correr.',
+    Transporte: 'El tranvía 28 es icónico, pero el 12 hace una ruta similar con menos cola.',
+    Cultura: 'El fado auténtico se vive mejor en espacios pequeños, con ambiente silencioso.',
+  };
+
+  const slugDetails: Record<
+    string,
+    { intro?: string; musts?: string[]; itinerary?: string[]; localTips?: string[] }
+  > = {
+    'mejores-miradores-lisboa': {
+      intro: 'Si buscas las mejores vistas sin perder tiempo, estos son los miradores que sí valen la pena.',
+      musts: [
+        'Senhora do Monte para vistas completas sin tanta gente.',
+        'Santa Luzia por azulejos y postal clásica.',
+        'Portas do Sol para una parada rápida con kioskito.',
+        'Graça para ambiente local y sombra.',
+        'Santa Catarina si quieres atardecer con buen ambiente.',
+      ],
+      itinerary: [
+        'Mañana: Santa Luzia + Portas do Sol (15 min a pie).',
+        'Mediodía: Graça y descanso.',
+        'Tarde: Senhora do Monte.',
+        'Atardecer: Santa Catarina o São Pedro de Alcântara.',
+      ],
+      localTips: [
+        'Llega 30-40 minutos antes del atardecer.',
+        'Evita sábados por la tarde en los miradores más turísticos.',
+      ],
+    },
+    'donde-comer-barato-lisboa': {
+      intro: 'Comer bien y barato en Lisboa es posible si evitas las zonas más turísticas.',
+      musts: [
+        'Tascas en Mouraria o Arroios con menú del día.',
+        'Mercados locales con platos sencillos y frescos.',
+        'Pastelerías de barrio para desayunos baratos.',
+        'Cafés con “prato do dia” entre semana.',
+        'Opciones para picar sin sentarte a cenar.',
+      ],
+      itinerary: [
+        'Desayuno: pastelería local (bica + pastel).',
+        'Comida: menú del día (12:30-14:30).',
+        'Cena: tasca de barrio o petiscos.',
+      ],
+      localTips: [
+        'Si el menú está en cinco idiomas, pasa de largo.',
+        'En Lisboa se come temprano; después de las 15:00 hay menos opciones.',
+      ],
+    },
+    'barrios-imprescindibles': {
+      intro: 'Lisboa cambia por barrios. Estos son los que más sentido tienen para una primera visita.',
+      musts: [
+        'Baixa-Chiado para moverte fácil y ver lo básico.',
+        'Alfama para callejuelas y fado.',
+        'Bairro Alto para atardecer y vida nocturna.',
+        'Belém para monumentos y paseo junto al río.',
+        'Príncipe Real para cafés y ambiente local.',
+      ],
+      itinerary: [
+        'Día 1: Baixa + Chiado + Alfama.',
+        'Día 2: Belém + Príncipe Real + Bairro Alto.',
+      ],
+      localTips: [
+        'Alojamiento: Baixa-Chiado si es tu primera vez.',
+        'Alfama es precioso, pero tiene cuestas fuertes.',
+      ],
+    },
+    'evitar-turistadas-lisboa': {
+      intro: 'Lisboa se disfruta más cuando evitas las trampas de siempre.',
+      musts: [
+        'No comas en Rua Augusta.',
+        'Evita el tranvía 28 a media tarde.',
+        'No subas al castillo a las 12:00.',
+        'No te quedes solo en Baixa.',
+        'No pagues cenas “con fado” infladas.',
+      ],
+      itinerary: [
+        'Mañanas: sitios populares.',
+        'Mediodía: barrios locales.',
+        'Tardes: miradores menos masificados.',
+      ],
+      localTips: [
+        'Camina 5-10 minutos fuera de las calles principales.',
+        'Si ves “menu turístico”, cambia de calle.',
+      ],
+    },
+    'pasteles-de-belem': {
+      intro: 'Pastéis de Belém tiene una receta propia. Vale la pena si eliges bien el horario.',
+      musts: [
+        'Ir antes de las 9:30 o a última hora.',
+        'Probarlos calientes con canela.',
+        'Evitar la cola principal si hay salón interior.',
+      ],
+      itinerary: [
+        'Mañana: pastéis + paseo por Belém.',
+        'Mediodía: Jerónimos o Torre de Belém.',
+      ],
+      localTips: [
+        'La cola del salón suele ser más rápida.',
+        'Pide para llevar y come en el paseo.',
+      ],
+    },
+    'mejor-epoca-visitar-lisboa': {
+      intro: 'Primavera y otoño son el equilibrio perfecto entre clima y precios.',
+      musts: [
+        'Mayo y septiembre para mejor clima.',
+        'Junio-agosto para playa y ambiente.',
+        'Invierno para precios bajos y ciudad tranquila.',
+      ],
+      itinerary: [
+        'Si vas en verano: madruga y descansa al mediodía.',
+        'Si vas en invierno: más museos y cafés.',
+      ],
+      localTips: [
+        'Consulta eventos locales para evitar precios altos.',
+        'Reserva con antelación si viajas en agosto.',
+      ],
+    },
+    'transporte-publico-lisboa': {
+      intro: 'La clave es la tarjeta Viva Viagem y entender qué líneas te sirven.',
+      musts: [
+        'Compra la Viva Viagem el primer día.',
+        'Metro para distancias largas.',
+        'Tranvía 28 solo si tienes tiempo.',
+        'Bus para barrios sin metro.',
+        'Uber/Bolt para trayectos puntuales.',
+      ],
+      itinerary: [
+        'Día 1: Viva Viagem + pase diario.',
+        'Día 2+: combina metro y caminata.',
+      ],
+      localTips: [
+        'El tranvía 12 es una alternativa al 28.',
+        'El elevador de Santa Justa se puede subir gratis por detrás.',
+      ],
+    },
+    'restaurantes-romanticos-lisboa': {
+      intro: 'Para una cena especial, reserva con tiempo y busca vistas reales.',
+      musts: [
+        'Chapitô à Mesa para atardecer.',
+        'Ponto Final para cena con vistas al río.',
+        'Solar dos Presuntos para algo más clásico.',
+        'Bairro Alto si quieres plan nocturno.',
+      ],
+      itinerary: [
+        'Atardecer: mirador cercano.',
+        'Cena: reserva a las 20:30.',
+        'Copa: barrio cercano a pie.',
+      ],
+      localTips: [
+        'Reservar viernes y sábado es obligatorio.',
+        'Pregunta por mesas con vista antes de confirmar.',
+      ],
+    },
+    'que-ver-cascais-desde-lisboa': {
+      intro: 'Cascais es la escapada fácil: tren directo y todo caminable.',
+      musts: [
+        'Centro histórico.',
+        'Boca do Inferno.',
+        'Paseo marítimo.',
+        'Playa principal.',
+      ],
+      itinerary: [
+        'Tren desde Cais do Sodré.',
+        'Centro + paseo marítimo.',
+        'Boca do Inferno.',
+        'Comida cerca del puerto.',
+      ],
+      localTips: [
+        'Si vas en verano, llega temprano.',
+        'Si hace viento, lleva chaqueta ligera.',
+      ],
+    },
+    'playas-cerca-lisboa': {
+      intro: 'Las playas más fáciles son Cascais y Costa da Caparica.',
+      musts: [
+        'Cascais si quieres tren directo.',
+        'Caparica si buscas arena larga.',
+        'Arrábida si tienes coche.',
+      ],
+      itinerary: [
+        'Mañana: tren a Cascais.',
+        'Mediodía: playa y comida.',
+        'Tarde: regreso antes del atardecer.',
+      ],
+      localTips: [
+        'En agosto, evita llegar después de las 11:00.',
+        'Arrábida es más bonita pero requiere coche.',
+      ],
+    },
+    'donde-escuchar-fado-autentico': {
+      intro: 'El fado auténtico se vive en espacios pequeños, con silencio y respeto.',
+      musts: [
+        'Tascas pequeñas en Alfama.',
+        'Bares con ambiente local.',
+        'Evitar shows turísticos masivos.',
+      ],
+      itinerary: [
+        'Cena temprano en Alfama.',
+        'Fado entre 20:30 y 22:30.',
+      ],
+      localTips: [
+        'No hables durante las canciones.',
+        'Consume algo para apoyar al local.',
+      ],
+    },
+    'presupuesto-viajar-lisboa': {
+      intro: 'La clave es ajustar tu estilo: mochilero, medio o confort.',
+      musts: [
+        'Mochilero: 35-50€ al día.',
+        'Medio: 60-90€ al día.',
+        'Confort: 120€+ al día.',
+        'La comida puede ser barata si eliges bien.',
+      ],
+      itinerary: [
+        'Mañana: desayuno local.',
+        'Mediodía: menú del día.',
+        'Noche: cena ligera o petiscos.',
+      ],
+      localTips: [
+        'El alojamiento es el gasto principal.',
+        'Evita zonas turísticas para comer.',
+      ],
+    },
+    'mejores-mercados-lisboa': {
+      intro: 'Time Out es el más famoso, pero no el más local.',
+      musts: [
+        'Time Out Market para variedad.',
+        'Feira da Ladra para antigüedades.',
+        'Mercado de Arroios para comida local.',
+      ],
+      itinerary: [
+        'Mañana: mercado local.',
+        'Mediodía: comida en el mercado.',
+      ],
+      localTips: [
+        'Feira da Ladra es martes y sábado.',
+        'El mercado tradicional suele ser más barato.',
+      ],
+    },
+    'donde-tomar-cafe-lisboa': {
+      intro: 'En Lisboa se pide “bica”. Un café corto y fuerte.',
+      musts: [
+        'A Brasileira por historia.',
+        'Manteigaria para café y pastel.',
+        'Cafeterías de especialidad en Príncipe Real.',
+      ],
+      itinerary: [
+        'Mañana: bica en un café local.',
+        'Tarde: café con pastel en una pastelería.',
+      ],
+      localTips: [
+        'El café es barato fuera de zonas turísticas.',
+        'A primera hora hay mejor ambiente local.',
+      ],
+    },
+    'miradores-atardecer-lisboa': {
+      intro: 'El atardecer en Lisboa merece planificarlo bien.',
+      musts: [
+        'Senhora do Monte para vistas abiertas.',
+        'Santa Catarina para ambiente.',
+        'Portas do Sol si quieres foto clásica.',
+      ],
+      itinerary: [
+        'Llega 30-45 min antes.',
+        'Elige un mirador por tarde.',
+      ],
+      localTips: [
+        'Evita sábados por la tarde.',
+        'Lleva algo de beber.',
+      ],
+    },
+    'que-comprar-lisboa-souvenirs': {
+      intro: 'Los mejores souvenirs son útiles, locales y fáciles de llevar.',
+      musts: [
+        'Azulejos pequeños.',
+        'Conservas portuguesas.',
+        'Vino de Oporto.',
+        'Artesanía en corcho.',
+      ],
+      itinerary: [
+        'Mañana: Feira da Ladra.',
+        'Tarde: tiendas en Chiado o Alfama.',
+      ],
+      localTips: [
+        'Evita souvenirs de Rossio.',
+        'Compra en mercados locales.',
+      ],
+    },
+    'viajar-ninos-lisboa': {
+      intro: 'Lisboa es cómoda para familias si planificas ritmos y descansos.',
+      musts: [
+        'Oceanário para niños.',
+        'Parques con sombra.',
+        'Tranvía como experiencia.',
+      ],
+      itinerary: [
+        'Mañana: Oceanário.',
+        'Tarde: parque + paseo suave.',
+      ],
+      localTips: [
+        'Evita cuestas largas con cochecito.',
+        'Lleva snacks y agua siempre.',
+      ],
+    },
+    'excursiones-desde-lisboa': {
+      intro: 'Sintra es la número uno, Cascais es la más fácil.',
+      musts: [
+        'Sintra para palacios.',
+        'Cascais para costa.',
+        'Óbidos si quieres plan medieval.',
+      ],
+      itinerary: [
+        'Salir entre 8:00 y 9:00.',
+        'Elegir una excursión por día.',
+      ],
+      localTips: [
+        'Reserva entradas si vas a Sintra.',
+        'Evita combinar Sintra y Cascais el mismo día.',
+      ],
+    },
+  };
+
+  const introExtra = categoryIntro[categoria] || categoryIntro['Guías'];
+  const slugDetail = slugDetails[slug];
+  const musts = slugDetail?.musts || categoryMusts[categoria] || categoryMusts['Guías'];
+  const checklist = categoryChecklist[categoria] || categoryChecklist['Guías'];
+  const tip = categoryTip[categoria] || categoryTip['Guías'];
+  const itinerary = slugDetail?.itinerary;
+  const localTips = slugDetail?.localTips;
+  return {
+    titulo: post.titulo,
+    descripcion: post.excerpt,
+    imagen: post.imagen,
+    categoria: post.categoria,
+    fecha: post.fecha,
+    minutos: 7,
+    contenido: [
+      { tipo: 'parrafo', texto: post.excerpt },
+      { tipo: 'parrafo', texto: contexto },
+      { tipo: 'parrafo', texto: introExtra },
+      { tipo: 'subtitulo', texto: 'Lo esencial antes de ir' },
+      {
+        tipo: 'lista',
+        items: listaClave,
+      },
+      {
+        tipo: 'subtitulo',
+        texto: 'Ruta rápida recomendada',
+      },
+      {
+        tipo: 'parrafo',
+        texto:
+          'Empieza por lo más cercano al centro y avanza por zonas conectadas entre sí. Así evitas subir y bajar colinas sin necesidad. Si viajas con poco tiempo, prioriza dos zonas clave y deja el resto como extra.',
+      },
+      ...(itinerary
+        ? [
+            { tipo: 'lista', items: itinerary },
+          ]
+        : []),
+      {
+        tipo: 'subtitulo',
+        texto: 'Qué no te puedes perder',
+      },
+      {
+        tipo: 'lista',
+        items: musts,
+      },
+      {
+        tipo: 'subtitulo',
+        texto: 'Consejos de local',
+      },
+      {
+        tipo: 'lista',
+        items: [
+          'Ve temprano si quieres fotos limpias y menos filas.',
+          'Evita la franja de 13:00 a 16:00 en lugares populares.',
+          'Si algo se ve demasiado turístico, camina 5 minutos y mejora.',
+        ],
+      },
+      ...(localTips
+        ? [
+            { tipo: 'lista', items: localTips },
+          ]
+        : []),
+      {
+        tipo: 'subtitulo',
+        texto: 'Checklist rápida',
+      },
+      {
+        tipo: 'lista',
+        items: checklist,
+      },
+      {
+        tipo: 'tip',
+        texto: tip,
+      },
+    ],
+  };
+}
+
+function getArticle(slug: string): Article | null {
+  return articles[slug] ?? buildFallbackArticle(slug);
+}
+
 function getFaqs(slug: string) {
   if (slug.includes('transporte')) {
     return [
@@ -1330,8 +1827,9 @@ const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faq
   },
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = articles[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
   if (!article) {
     return {
       title: 'Artículo no encontrado | Blog Lisboa',
@@ -1340,17 +1838,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const seoTitle = getSeoTitle(article.titulo);
   const seoDescription = getSeoDescription(article.descripcion);
-  const image = localImages[params.slug] || article.imagen;
+  const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
   return {
     title: seoTitle,
     description: seoDescription,
     alternates: {
-      canonical: `${SITE_URL}/blog/${params.slug}`,
+      canonical: `${SITE_URL}/blog/${slug}`,
     },
     openGraph: {
       title: seoTitle,
       description: seoDescription,
-      url: `${SITE_URL}/blog/${params.slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       images: [
         {
           url: toAbsoluteUrl(image),
@@ -1365,13 +1863,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = articles[slug];
+  const article = getArticle(slug);
 
   if (!article) {
     notFound();
   }
 
-  const heroImage = localImages[slug] || article.imagen;
+  const heroImage = resolveBlogImage(slug, localImages[slug] || article.imagen);
   const seoTitle = getSeoTitle(article.titulo);
   const seoDescription = getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
@@ -1448,10 +1946,74 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   let paragraphIndex = 0;
 
+  // Tags para el artículo
+  const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2025'];
+
   return (
-    <main>
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0">
+    <main className="bg-white">
+      {/* Breadcrumb minimalista */}
+      <div className="border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 py-3">
+          <nav className="flex items-center gap-2 text-sm text-slate-500">
+            <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
+            <span>›</span>
+            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <span>›</span>
+            <span className="text-slate-700 font-medium">{article.categoria}</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Header editorial */}
+      <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
+        {/* Categoría */}
+        <div className="mb-4">
+          <span className={`inline-block text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded ${categoriaColor[article.categoria]}`}>
+            {article.categoria}
+          </span>
+        </div>
+
+        {/* Título principal - estilo periódico */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+          {article.titulo}
+        </h1>
+
+        {/* Lead/Subtítulo destacado */}
+        <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-6 border-l-4 border-primary pl-4">
+          {article.descripcion}
+        </p>
+
+        {/* Meta info estilo editorial */}
+        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-primary font-bold">JT</span>
+            </div>
+            <div>
+              <p className="font-semibold text-slate-900">Por {AUTHOR_NAME}</p>
+              <p className="text-xs text-slate-500">Desde Lisboa</p>
+            </div>
+          </div>
+          <span className="text-slate-300">|</span>
+          <time className="flex items-center gap-1.5">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {article.fecha}
+          </time>
+          <span className="text-slate-300">|</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {article.minutos} min lectura
+          </span>
+        </div>
+      </header>
+
+      {/* Imagen destacada estilo editorial */}
+      <figure className="max-w-5xl mx-auto px-4 mb-10">
+        <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
           <Image
             src={heroImage}
             alt={article.titulo}
@@ -1459,210 +2021,269 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             className="object-cover"
             priority
             fetchPriority="high"
-            sizes="100vw"
+            sizes="(max-width: 1024px) 100vw, 1024px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/60"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto px-4">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-            Volver al blog
-          </Link>
-          <span className={`inline-block text-xs font-semibold px-3 py-1.5 rounded-full mb-4 ${categoriaColor[article.categoria]}`}>{article.categoria}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{article.titulo}</h1>
-          <p className="text-xl text-white/80 mb-6">{seoDescription}</p>
-          <div className="flex items-center gap-4 text-white/60 text-sm">
-            <span className="flex items-center gap-1">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-              {article.fecha}
-            </span>
-            <span className="flex items-center gap-1">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              {article.minutos} min de lectura
-            </span>
-          </div>
-        </div>
-      </section>
+        <figcaption className="mt-3 text-sm text-slate-500 text-center italic">
+          {article.titulo} — Foto: Estaba en Lisboa
+        </figcaption>
+      </figure>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid lg:grid-cols-[2fr,1fr] gap-10 mb-12">
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <p className="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-3">Resumen rápido</p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-4">{seoDescription}</p>
-              {takeaways.length > 0 && (
-                <ul className="space-y-2 text-slate-700">
-                  {takeaways.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="mt-1 text-emerald-600">✓</span>
+      {/* Layout principal: contenido + sidebar */}
+      <div className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid lg:grid-cols-[1fr,320px] gap-10">
+          {/* Columna principal */}
+          <article className="min-w-0">
+            {/* Lead paragraph - primer párrafo destacado */}
+            <p className="text-xl text-slate-700 leading-relaxed mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+              {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
+            </p>
+
+            {/* Caja de resumen estilo editorial */}
+            {takeaways.length > 0 && (
+              <div className="bg-slate-50 border border-slate-200 p-6 mb-8 rounded-lg">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Lo esencial</p>
+                <ul className="space-y-2">
+                  {takeaways.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-slate-700">
+                      <span className="text-primary font-bold">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-              )}
+              </div>
+            )}
+
+            {/* Secciones "Cómo llegar" y "Mejor hora" */}
+            {extras && (
+              <div className="border-l-4 border-primary bg-primary/5 p-6 mb-8 rounded-r-lg">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <h2 id="como-llegar" className="text-lg font-bold text-slate-900 mb-2 scroll-mt-28">
+                      📍 Cómo llegar
+                    </h2>
+                    <p className="text-slate-600 text-sm leading-relaxed">{extras.comoLlegar}</p>
+                  </div>
+                  <div>
+                    <h2 id="mejor-hora" className="text-lg font-bold text-slate-900 mb-2 scroll-mt-28">
+                      ⏰ Mejor hora para ir
+                    </h2>
+                    <p className="text-slate-600 text-sm leading-relaxed">{extras.mejorHora}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Contenido del artículo */}
+            <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed">
+              {article.contenido.slice(1).map((bloque, index) => {
+                if (bloque.tipo === 'parrafo') {
+                  paragraphIndex += 1;
+                  // Cada 3 párrafos, añadir destacado estilo cita
+                  if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
+                    return (
+                      <blockquote key={index} className="border-l-4 border-primary bg-slate-50 px-6 py-4 my-8 not-prose rounded-r-lg">
+                        <p className="text-lg text-slate-700 italic leading-relaxed">
+                          "{bloque.texto}"
+                        </p>
+                      </blockquote>
+                    );
+                  }
+                  return (
+                    <p key={index} className="text-slate-600 leading-relaxed mb-6">
+                      {bloque.texto}
+                    </p>
+                  );
+                }
+                if (bloque.tipo === 'subtitulo') {
+                  const headingId = slugify(bloque.texto || '');
+                  return (
+                    <h2
+                      key={index}
+                      id={headingId}
+                      className="text-2xl font-bold text-slate-900 mt-12 mb-4 scroll-mt-28 border-b border-slate-200 pb-2"
+                    >
+                      {bloque.texto}
+                    </h2>
+                  );
+                }
+                if (bloque.tipo === 'lista') {
+                  return (
+                    <ul key={index} className="space-y-3 mb-6 not-prose">
+                      {bloque.items?.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                          <span className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  );
+                }
+                if (bloque.tipo === 'tip') {
+                  return (
+                    <div key={index} className="bg-amber-50 border border-amber-200 p-5 mb-6 rounded-lg not-prose">
+                      <p className="text-amber-900 font-medium flex items-start gap-3">
+                        <span className="text-2xl">💡</span>
+                        <span className="leading-relaxed">{bloque.texto}</span>
+                      </p>
+                    </div>
+                  );
+                }
+                return null;
+              })}
             </div>
 
+            {/* Separador */}
+            <hr className="my-12 border-slate-200" />
+
+            {/* FAQs estilo editorial */}
+            <section className="mb-12">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                Preguntas frecuentes
+              </h3>
+              <div className="space-y-4">
+                {faqs.map((faq, i) => (
+                  <details key={i} className="group border border-slate-200 rounded-lg overflow-hidden">
+                    <summary className="flex items-center justify-between p-4 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
+                      <h4 className="font-semibold text-slate-900 pr-4">{faq.q}</h4>
+                      <span className="text-primary group-open:rotate-180 transition-transform">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <div className="p-4 pt-0 text-slate-600 leading-relaxed bg-slate-50">
+                      {faq.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {articleTags.map(tag => (
+                <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full hover:bg-slate-200 transition-colors">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA final */}
+            <div className="bg-slate-900 rounded-xl p-8 text-center">
+              <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Guías Premium</p>
+              <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                ¿Quieres esto organizado paso a paso?
+              </h3>
+              <p className="text-slate-400 mb-6 max-w-md mx-auto">
+                Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
+              </p>
+              <Link 
+                href="/itinerarios" 
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-lg font-semibold transition-all hover:scale-105"
+              >
+                Ver Guías desde 2€
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </article>
+
+          {/* Sidebar */}
+          <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+            {/* Tabla de contenidos */}
             {headings.length > 0 && (
-              <aside className="border border-slate-200 rounded-2xl p-6 bg-white">
-                <p className="text-sm uppercase tracking-widest text-slate-500 font-semibold mb-4">Tabla de contenidos</p>
-                <nav className="space-y-2 text-sm">
+              <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">En este artículo</p>
+                <nav className="space-y-2">
                   {headings.map((heading) => (
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}
-                      className="block text-slate-700 hover:text-primary transition-colors"
+                      className="block text-sm text-slate-600 hover:text-primary hover:pl-2 transition-all py-1 border-l-2 border-transparent hover:border-primary pl-3"
                     >
                       {heading.title}
                     </a>
                   ))}
                 </nav>
-              </aside>
+              </div>
             )}
-          </div>
 
-          {extras && (
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-white border border-slate-200 rounded-2xl p-6">
-                <h2 id="como-llegar" className="text-xl font-bold text-slate-900 mb-3 scroll-mt-28">
-                  Cómo llegar
-                </h2>
-                <p className="text-slate-700 leading-relaxed">{extras.comoLlegar}</p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-2xl p-6">
-                <h2 id="mejor-hora" className="text-xl font-bold text-slate-900 mb-3 scroll-mt-28">
-                  Mejor hora para ir
-                </h2>
-                <p className="text-slate-700 leading-relaxed">{extras.mejorHora}</p>
-              </div>
-            </div>
-          )}
-
-          <article className="prose prose-lg max-w-none">
-            <p className="text-slate-700 text-lg leading-relaxed mb-6">
-              En esta guía de {article.titulo.toLowerCase()}, te cuento lo esencial con consejos reales para moverte por Lisboa sin perder tiempo.
-            </p>
-            {article.contenido.map((bloque, index) => {
-              if (bloque.tipo === 'parrafo') {
-                paragraphIndex += 1;
-                const isLead = paragraphIndex === 1;
-                return (
-                  <p
-                    key={index}
-                    className={`text-slate-600 leading-relaxed mb-6 ${isLead ? 'text-lg text-slate-700' : ''}`}
-                  >
-                    {bloque.texto}
-                  </p>
-                );
-              }
-              if (bloque.tipo === 'subtitulo') {
-                const headingId = slugify(bloque.texto || '');
-                return (
-                  <h2
-                    key={index}
-                    id={headingId}
-                    className="text-2xl font-bold mt-10 mb-4 scroll-mt-28"
-                    style={{ color: 'var(--color-primary)' }}
-                  >
-                    {bloque.texto}
-                  </h2>
-                );
-              }
-              if (bloque.tipo === 'lista') {
-                return (
-                  <ul key={index} className="space-y-2 mb-6">
-                    {bloque.items?.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-slate-600">
-                        <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                );
-              }
-              if (bloque.tipo === 'tip') {
-                return (
-                  <div key={index} className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6 rounded-r-lg">
-                    <p className="text-amber-800 font-medium flex items-start gap-2">
-                      <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                      {bloque.texto}
-                    </p>
-                  </div>
-                );
-              }
-              return null;
-            })}
-          </article>
-
-          <div className="mt-16 bg-white rounded-2xl p-8 border border-slate-200">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Enlaces internos recomendados</h3>
-            <ul className="grid md:grid-cols-2 gap-3">
-              {internalLinks.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-primary font-semibold hover:underline">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-12 bg-background-cream rounded-2xl p-8 border border-slate-200">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Preguntas frecuentes</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-slate-700">
-              {faqs.map((faq) => (
-                <div key={faq.q} className="bg-white rounded-xl p-5 border border-slate-200">
-                  <h4 className="font-bold text-slate-900 mb-2">{faq.q}</h4>
-                  <p>{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">¿Quieres esto organizado paso a paso?</h3>
-            <p className="text-white/70 mb-6">Guías completas con rutas hora a hora, GPS en cada parada, y restaurantes probados. Menos que un café.</p>
-            <Link href="/itinerarios" className="group inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              Ver Guías desde 2€
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-          </div>
-
-          {relatedPosts.length > 0 && (
-            <div className="mt-16">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Artículos relacionados</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                {relatedPosts.map((post) => (
-                  <Link
-                    key={post.id}
-                    href={`/blog/${post.id}`}
-                    className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-primary hover:shadow-xl transition-all"
-                  >
-                    <div className="relative h-36">
-                      <Image
-                        src={post.imagen}
-                        alt={post.titulo}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                    <div className="p-4">
-                      <p className="text-xs font-semibold text-slate-500 mb-2">{post.categoria}</p>
-                      <h4 className="text-base font-bold text-slate-900 group-hover:text-primary transition-colors">
-                        {post.titulo}
-                      </h4>
-                    </div>
-                  </Link>
+            {/* Enlaces internos */}
+            <div className="bg-white rounded-lg p-5 border border-slate-200">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">También te interesa</p>
+              <ul className="space-y-3">
+                {internalLinks.slice(0, 5).map((item) => (
+                  <li key={item.href}>
+                    <Link 
+                      href={item.href} 
+                      className="flex items-start gap-2 text-sm text-slate-700 hover:text-primary transition-colors group"
+                    >
+                      <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
-          )}
+
+            {/* Mini CTA sidebar */}
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-5 text-center">
+              <p className="text-2xl mb-2">🇵🇹</p>
+              <p className="font-bold text-slate-900 mb-2">¿Primera vez en Lisboa?</p>
+              <p className="text-sm text-slate-600 mb-4">Descubre tu perfil viajero en 60 segundos</p>
+              <Link 
+                href="/quiz" 
+                className="block w-full py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition-colors"
+              >
+                Hacer el Quiz
+              </Link>
+            </div>
+          </aside>
         </div>
-      </section>
+
+        {/* Relacionados */}
+        {relatedPosts.length > 0 && (
+          <section className="mt-16 pt-12 border-t border-slate-200">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
+                Relacionadas
+              </h3>
+              <Link href="/blog" className="text-primary text-sm font-semibold hover:underline">
+                Ver todo →
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.id}`}
+                  className="group"
+                >
+                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-3">
+                    <Image
+                      src={post.imagen}
+                      alt={post.titulo}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">{post.categoria}</p>
+                  <h4 className="font-bold text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                    {post.titulo}
+                  </h4>
+                  <p className="text-sm text-slate-500 mt-1">{post.fecha}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

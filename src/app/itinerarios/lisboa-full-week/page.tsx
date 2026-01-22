@@ -244,6 +244,7 @@ export default function LisboaFullWeekPage() {
         title="Mapa Interactivo del Itinerario"
         description="Todos los barrios, escapadas y rutas de la semana completa en un solo mapa."
         guideTitle="Lisboa Full Week"
+        fallbackQuery="Lisboa 7 días itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

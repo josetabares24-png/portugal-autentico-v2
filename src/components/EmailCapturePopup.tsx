@@ -1,12 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { submitQuizLead } from '@/lib/brevo';
 
 export default function EmailCapturePopup() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     // Check if already dismissed or submitted
@@ -41,14 +44,35 @@ export default function EmailCapturePopup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // TODO: Integrar con ConvertKit cuando tengas la API key
-    // Por ahora solo guardamos en localStorage
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErrorMessage('Ingresa un email válido.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const result = await submitQuizLead({
+      email,
+      profile: 'newsletter',
+      companion: '',
+      interest: 'captura-popup',
+      duration: '',
+      budget: '',
+      experience: '',
+    });
+
+    if (!result.success) {
+      setIsSubmitting(false);
+      setErrorMessage('No pudimos guardar tu email. Inténtalo de nuevo.');
+      return;
+    }
+
     localStorage.setItem('emailSubmitted', 'true');
     localStorage.setItem('userEmail', email);
-
     setSubmitted(true);
+    setIsSubmitting(false);
 
-    // Hide popup after 3 seconds
     setTimeout(() => {
       setShow(false);
     }, 3000);
@@ -87,7 +111,7 @@ export default function EmailCapturePopup() {
           {!submitted ? (
             <>
               {/* Header with gradient */}
-              <div className="bg-gradient-to-r from-[#FF6B35] to-[#F7931E] px-8 py-12 text-center relative overflow-hidden">
+              <div className="bg-primary px-8 py-12 text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
                   <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-20 translate-y-20"></div>
@@ -140,17 +164,22 @@ export default function EmailCapturePopup() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="tu@email.com"
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#FF6B35] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold py-4 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+                    className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl hover:scale-105 transition-all shadow-lg hover:shadow-xl disabled:opacity-70 disabled:hover:scale-100"
+                    disabled={isSubmitting}
                   >
-                    Recibir guía gratis
+                    {isSubmitting ? 'Enviando...' : 'Recibir guía gratis'}
                   </button>
                 </form>
+
+                {errorMessage && (
+                  <p className="text-sm text-red-600 text-center mt-3">{errorMessage}</p>
+                )}
 
                 <p className="text-xs text-gray-500 text-center mt-4">
                   ✓ Sin spam · ✓ Cancela cuando quieras · ✓ Descarga inmediata

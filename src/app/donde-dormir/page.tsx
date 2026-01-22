@@ -310,7 +310,7 @@ export default function DondeDormirPage() {
       </section>
 
       {/* Zones Information */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-background-cream">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
@@ -325,10 +325,10 @@ export default function DondeDormirPage() {
             {zones.map((zone) => (
               <div
                 key={zone.id}
-                className={`bg-white rounded-2xl p-6 border-2 transition-all cursor-pointer ${
+                className={`bg-white/90 backdrop-blur-sm rounded-3xl p-6 border transition-all cursor-pointer ${
                   selectedZone === zone.id
-                    ? 'border-primary shadow-xl scale-105'
-                    : 'border-slate-200 hover:border-primary/50 hover:shadow-lg'
+                    ? 'border-primary shadow-2xl scale-[1.02] ring-1 ring-primary/20'
+                    : 'border-slate-200/80 hover:border-primary/50 hover:shadow-xl'
                 }`}
                 onClick={() => setSelectedZone(zone.id)}
               >
@@ -381,7 +381,7 @@ export default function DondeDormirPage() {
               {filteredHostels.map((hostel, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-primary transition-all hover:shadow-xl"
+                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 >
                   {/* Imagen real */}
                   <div className="relative h-48 overflow-hidden">
@@ -449,7 +449,7 @@ export default function DondeDormirPage() {
       </section>
 
       {/* Hotels Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-background-cream">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center gap-4 mb-8">
             <span className="material-symbols-outlined text-primary text-5xl">hotel_class</span>
@@ -461,10 +461,10 @@ export default function DondeDormirPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {filteredHotels.map((hotel, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-primary transition-all hover:shadow-xl"
-              >
+                <div
+                  key={index}
+                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                >
                 {/* Imagen real */}
                 <a
                   href={hotel.officialUrl}

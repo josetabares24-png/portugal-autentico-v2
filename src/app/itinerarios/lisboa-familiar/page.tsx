@@ -218,6 +218,7 @@ export default function LisboaFamiliarPage() {
         title="Mapa Interactivo del Itinerario"
         description="Parques, actividades y paradas familiares ubicadas en un solo mapa."
         guideTitle="Lisboa en Familia"
+        fallbackQuery="Lisboa familiar itinerario"
       />
 
       {/* Photo Gallery Section */}

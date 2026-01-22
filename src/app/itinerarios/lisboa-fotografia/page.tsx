@@ -218,6 +218,7 @@ export default function LisboaFotografiaPage() {
         title="Mapa Interactivo del Itinerario"
         description="Spots fotográficos, golden hour y ubicaciones exactas en un mapa interactivo."
         guideTitle="Lisboa Fotografía"
+        fallbackQuery="Lisboa fotografía spots"
       />
 
       {/* Photo Gallery Section */}

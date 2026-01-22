@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 import { useIsAdmin } from '@/hooks/useIsAdmin';
+import LisbonStatus from '@/components/LisbonStatus';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,11 +33,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Estaba en Lisboa"
-              width={180}
-              height={40}
+              width={160}
+              height={50}
               priority
+              className="h-12 w-auto"
             />
           </Link>
 
@@ -104,6 +106,7 @@ export default function Navbar() {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden md:flex items-center gap-3">
+            <LisbonStatus />
             {isSignedIn ? (
               <>
                 <Link
@@ -150,6 +153,12 @@ export default function Navbar() {
               {mobileMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
+        </div>
+
+        <div className="md:hidden pb-3">
+          <div className="flex justify-center">
+            <LisbonStatus className="flex bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm shadow-soft" />
+          </div>
         </div>
 
         {/* MOBILE MENU */}

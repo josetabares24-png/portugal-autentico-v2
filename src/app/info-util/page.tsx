@@ -45,104 +45,104 @@ export default function InfoUtilPage() {
       </section>
 
       {/* TRANSPORTE */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-16">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">directions_transit</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center shadow-soft">
+                <span className="material-symbols-outlined text-primary text-2xl md:text-3xl">directions_transit</span>
               </div>
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-3xl md:text-5xl font-display font-black text-text-main">
                   Transporte
                 </h2>
-                <p className="text-slate-600 mt-0.5 md:mt-1 text-xs md:text-base" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <p className="text-text-secondary mt-0.5 md:mt-1 text-xs md:text-base">
                   Cómo moverte por Lisboa
                 </p>
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-slate-200/80 hover:shadow-soft-lg transition-all">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <span className="material-symbols-outlined text-blue-600 text-xl md:text-2xl">flight_land</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-primary text-xl md:text-2xl">flight_land</span>
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1 md:mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3 className="text-lg md:text-2xl font-bold text-text-main mb-1 md:mb-2">
                       Desde el Aeropuerto
                     </h3>
                   </div>
                 </div>
-                <div className="space-y-3 md:space-y-4 text-slate-700 text-sm md:text-base">
+                <div className="space-y-3 md:space-y-4 text-text-secondary text-sm md:text-base">
                   <div>
                     <p className="font-bold mb-1">Metro (más económico)</p>
-                    <p style={{ fontFamily: 'Georgia, serif' }}>
+                    <p>
                       Línea roja directa al centro. Solo 1.50 EUR, 25 minutos de viaje.
                     </p>
                   </div>
                   <div>
                     <p className="font-bold mb-1">Taxi / Uber / Bolt</p>
-                    <p style={{ fontFamily: 'Georgia, serif' }}>
+                    <p>
                       Taxi oficial: 15-20 EUR al centro. Uber/Bolt: 10-15 EUR.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-slate-200/80 hover:shadow-soft-lg transition-all">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <span className="material-symbols-outlined text-blue-600 text-xl md:text-2xl">confirmation_number</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-primary text-xl md:text-2xl">confirmation_number</span>
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1 md:mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3 className="text-lg md:text-2xl font-bold text-text-main mb-1 md:mb-2">
                       Tarjeta Viva Viagem
                     </h3>
                   </div>
                 </div>
-                <div className="space-y-3 md:space-y-4 text-slate-700 text-sm md:text-base">
-                  <p style={{ fontFamily: 'Georgia, serif' }}>
+                <div className="space-y-3 md:space-y-4 text-text-secondary text-sm md:text-base">
+                  <p>
                     Tarjeta recargable que cuesta 0.50 EUR. Cómprala en cualquier estación de metro.
                   </p>
-                  <p style={{ fontFamily: 'Georgia, serif' }}>
+                  <p>
                     <strong>Funciona en:</strong> Metro, tranvías, autobuses y elevadores. Recargable cuando quieras.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-slate-200/80 hover:shadow-soft-lg transition-all">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <span className="material-symbols-outlined text-blue-600 text-xl md:text-2xl">sell</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-primary text-xl md:text-2xl">sell</span>
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1 md:mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3 className="text-lg md:text-2xl font-bold text-text-main mb-1 md:mb-2">
                       Pase Diario
                     </h3>
                   </div>
                 </div>
-                <div className="text-slate-700 text-sm md:text-base">
-                  <p className="text-2xl md:text-3xl font-bold text-blue-600 mb-2 md:mb-3">6.60 EUR</p>
-                  <p style={{ fontFamily: 'Georgia, serif' }}>
+                <div className="text-text-secondary text-sm md:text-base">
+                  <p className="text-2xl md:text-3xl font-bold text-primary mb-2 md:mb-3">6.60 EUR</p>
+                  <p>
                     Metro, bus y tranvía ilimitado durante 24 horas. Perfecto si usarás transporte público varias veces al día.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+              <div className="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-slate-200/80 hover:shadow-soft-lg transition-all">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <span className="material-symbols-outlined text-blue-600 text-xl md:text-2xl">tram</span>
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-primary text-xl md:text-2xl">tram</span>
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1 md:mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3 className="text-lg md:text-2xl font-bold text-text-main mb-1 md:mb-2">
                       Tranvía 28
                     </h3>
                   </div>
                 </div>
-                <div className="text-slate-700 text-sm md:text-base">
-                  <p style={{ fontFamily: 'Georgia, serif' }}>
+                <div className="text-text-secondary text-sm md:text-base">
+                  <p>
                     El tranvía icónico de Lisboa. Pasa por Graça, Alfama, Baixa y Estrela. 
                     <strong className="block mt-2">Tip:</strong> Ve temprano (antes de 10:00) para evitar multitudes.
                   </p>
@@ -154,18 +154,18 @@ export default function InfoUtilPage() {
       </section>
 
       {/* DINERO Y PRECIOS COMPACTO */}
-      <section className="py-12 md:py-32 bg-white">
+      <section className="py-12 md:py-32 bg-background-light">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-16">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg">
-                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">euro</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center shadow-soft">
+                <span className="material-symbols-outlined text-primary text-2xl md:text-3xl">euro</span>
               </div>
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-3xl md:text-5xl font-display font-black text-text-main">
                   Dinero y Precios
                 </h2>
-                <p className="text-slate-600 mt-0.5 md:mt-1 text-xs md:text-base" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <p className="text-text-secondary mt-0.5 md:mt-1 text-xs md:text-base">
                   Presupuesto y gastos típicos
                 </p>
               </div>
@@ -177,32 +177,32 @@ export default function InfoUtilPage() {
                 { rango: '100-150 EUR', tipo: 'Medio' },
                 { rango: '200+ EUR', tipo: 'Confortable' }
               ].map((budget, idx) => (
-                <div key={idx} className="bg-slate-50 rounded-xl md:rounded-2xl p-4 md:p-8 text-center border border-slate-100">
-                  <p className="text-[10px] md:text-sm text-slate-600 mb-1 md:mb-2 tracking-wide uppercase">{budget.tipo}</p>
-                  <p className="text-2xl md:text-4xl font-bold text-slate-900 mb-2 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                <div key={idx} className="bg-white rounded-3xl p-4 md:p-8 text-center border border-slate-200/80 shadow-soft">
+                  <p className="text-[10px] md:text-sm text-text-secondary mb-1 md:mb-2 tracking-wide uppercase">{budget.tipo}</p>
+                  <p className="text-2xl md:text-4xl font-bold text-text-main mb-2 md:mb-4">
                     {budget.rango}
                   </p>
-                  <p className="text-[10px] md:text-sm text-slate-500">por persona/día</p>
+                  <p className="text-[10px] md:text-sm text-text-secondary">por persona/día</p>
                 </div>
               ))}
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl md:rounded-2xl p-6 md:p-10 border border-green-100">
-                <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-3 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+              <div className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-soft">
+                <h3 className="text-lg md:text-2xl font-bold text-text-main mb-3 md:mb-4">
                   Moneda
                 </h3>
-                <p className="text-slate-700 leading-relaxed text-sm md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
+                <p className="text-text-secondary leading-relaxed text-sm md:text-base">
                   <strong>Euro (€).</strong> Tarjetas aceptadas en prácticamente todos lados. 
                   Lleva algo de efectivo para mercados tradicionales y pequeños comercios locales.
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl md:rounded-2xl p-6 md:p-10 border border-green-100">
-                <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-3 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+              <div className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-soft">
+                <h3 className="text-lg md:text-2xl font-bold text-text-main mb-3 md:mb-4">
                   Propinas
                 </h3>
-                <p className="text-slate-700 leading-relaxed text-sm md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
+                <p className="text-text-secondary leading-relaxed text-sm md:text-base">
                   <strong>No obligatorias.</strong> 5-10% si el servicio fue bueno. 
                   En cafés, redondear está bien (ejemplo: 8.60€ → dejar 9€).
                 </p>
@@ -213,18 +213,18 @@ export default function InfoUtilPage() {
       </section>
 
       {/* CLIMA COMPACTO */}
-      <section className="py-12 md:py-32 bg-slate-50">
+      <section className="py-12 md:py-32 bg-background-cream">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-16">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg">
-                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">wb_sunny</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center shadow-soft">
+                <span className="material-symbols-outlined text-primary text-2xl md:text-3xl">wb_sunny</span>
               </div>
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-3xl md:text-5xl font-display font-black text-text-main">
                   Clima y Mejor Época
                 </h2>
-                <p className="text-slate-600 mt-0.5 md:mt-1 text-xs md:text-base" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <p className="text-text-secondary mt-0.5 md:mt-1 text-xs md:text-base">
                   Cuándo visitar Lisboa
                 </p>
               </div>
@@ -265,21 +265,21 @@ export default function InfoUtilPage() {
                   color: 'from-blue-500 to-cyan-500'
                 }
               ].map((season, idx) => (
-                <div key={idx} className="bg-white rounded-xl md:rounded-2xl p-6 md:p-10 shadow-lg border border-slate-100 relative overflow-hidden">
+                <div key={idx} className="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-slate-200/80 relative overflow-hidden">
                   <div className={`absolute top-0 left-0 w-1.5 md:w-2 h-full bg-gradient-to-b ${season.color}`}></div>
                   
                   <div className="mb-3 md:mb-4">
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 md:mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3 className="text-2xl md:text-3xl font-bold text-text-main mb-1 md:mb-2">
                       {season.estacion}
                     </h3>
-                    <p className="text-slate-600 text-sm md:text-base">{season.meses}</p>
+                    <p className="text-text-secondary text-sm md:text-base">{season.meses}</p>
                   </div>
 
-                  <div className="inline-block px-3 py-1 md:px-4 md:py-2 bg-slate-100 rounded-lg mb-3 md:mb-4">
-                    <span className="font-bold text-slate-900 text-sm md:text-base">{season.temp}</span>
+                  <div className="inline-block px-3 py-1 md:px-4 md:py-2 bg-background-cream rounded-lg mb-3 md:mb-4">
+                    <span className="font-bold text-text-main text-sm md:text-base">{season.temp}</span>
                   </div>
 
-                  <p className="text-slate-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-text-secondary mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
                     {season.desc}
                   </p>
 
@@ -294,14 +294,14 @@ export default function InfoUtilPage() {
       </section>
 
       {/* TIPS COMPACTOS */}
-      <section className="py-12 md:py-32 bg-white">
+      <section className="py-12 md:py-32 bg-background-light">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-2 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-                Tips <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Esenciales</span>
+              <h2 className="text-3xl md:text-5xl font-display font-black text-text-main mb-2 md:mb-4">
+                Tips <span className="text-primary">Esenciales</span>
               </h2>
-              <p className="text-sm md:text-xl text-slate-600" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+              <p className="text-sm md:text-xl text-text-secondary">
                 Lo que necesitas saber antes de viajar
               </p>
             </div>
@@ -318,14 +318,14 @@ export default function InfoUtilPage() {
                 { icon: 'credit_card', titulo: 'Pagos', desc: 'Tarjetas ampliamente aceptadas. Contactless disponible en casi todos lados.' },
                 { icon: 'local_hospital', titulo: 'Salud', desc: 'Tarjeta Sanitaria Europea válida. Farmacias (cruz verde) abundantes.' }
               ].map((tip, idx) => (
-                <div key={idx} className="bg-slate-50 rounded-xl md:rounded-2xl p-5 md:p-8 hover:shadow-xl transition-all hover:scale-105 border border-slate-100">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-                    <span className="material-symbols-outlined text-white text-xl md:text-2xl">{tip.icon}</span>
+                <div key={idx} className="bg-white rounded-3xl p-5 md:p-8 hover:shadow-soft-lg transition-all border border-slate-200/80">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6 shadow-soft">
+                    <span className="material-symbols-outlined text-primary text-xl md:text-2xl">{tip.icon}</span>
                   </div>
-                  <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h3 className="text-base md:text-xl font-bold text-text-main mb-2 md:mb-3">
                     {tip.titulo}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed text-xs md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-text-secondary leading-relaxed text-xs md:text-base">
                     {tip.desc}
                   </p>
                 </div>
@@ -336,35 +336,35 @@ export default function InfoUtilPage() {
       </section>
 
       {/* CTA COMPACTO */}
-      <section className="py-12 md:py-32 bg-slate-900 relative overflow-hidden">
+      <section className="py-12 md:py-32 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white mb-3 md:mb-6">
               ¿Listo para Explorar
               <br />
-              <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
+              <span className="text-accent">
                 Lisboa?
               </span>
             </h2>
 
-            <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+            <p className="text-sm md:text-xl text-white/90 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto">
               Descubre nuestros itinerarios completos con restaurantes verificados,
               <span className="hidden md:inline"><br />coordenadas GPS y tips de local</span>
             </p>
 
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-3 px-8 md:py-6 md:px-12 rounded-xl md:rounded-2xl text-base md:text-xl shadow-2xl hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 md:gap-3 bg-white text-primary font-bold py-3 px-8 md:py-6 md:px-12 rounded-xl md:rounded-2xl text-base md:text-xl shadow-2xl hover:scale-105 transition-all"
             >
               <span>Ver Itinerarios</span>
               <span className="material-symbols-outlined text-lg md:text-2xl">arrow_forward</span>
             </Link>
 
-            <p className="text-slate-500 text-xs md:text-sm mt-4 md:mt-8">
+            <p className="text-white/70 text-xs md:text-sm mt-4 md:mt-8">
               ✓ Desde 1.99€ · ✓ Descarga inmediata · ✓ Actualizadas 2025
             </p>
           </div>

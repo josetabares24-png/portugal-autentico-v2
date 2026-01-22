@@ -275,7 +275,7 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
         <button
           type="submit"
           disabled={saving}
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {saving ? 'Guardando...' : 'Guardar Cambios'}
         </button>
