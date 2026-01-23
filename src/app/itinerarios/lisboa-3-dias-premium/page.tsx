@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import ItineraryMap from '@/components/ItineraryMap';
+import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -229,12 +229,15 @@ export default function Lisboa3DiasPremiumPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <ItineraryMap
+      <PremiumContent
+        productId="lisboa-3-dias-premium"
+        price={PRODUCT_PRICE}
+        productName="Lisboa 3 Días + Sintra"
         coordinates={lisboa3DiasSintraTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        title="Mapa Interactivo del Itinerario"
-        description="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave. Haz click en los marcadores numerados para ver cada parada."
+        mapTitle="Mapa Interactivo del Itinerario"
+        mapDescription="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa 3 Días + Sintra"
       />
 

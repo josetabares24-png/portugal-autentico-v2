@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import ItineraryMap from '@/components/ItineraryMap';
+import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFotografiaTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -213,12 +213,15 @@ export default function LisboaFotografiaPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <ItineraryMap
+      <PremiumContent
+        productId="lisboa-fotografia"
+        price={PRODUCT_PRICE}
+        productName="Lisboa para Fotografía"
         coordinates={lisboaFotografiaTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        title="Mapa Interactivo del Itinerario"
-        description="Spots fotográficos con mejores horas de luz, miradores secretos y rincones instagrameables. Haz click en los marcadores numerados para ver cada parada."
+        mapTitle="Mapa Interactivo del Itinerario"
+        mapDescription="Spots fotográficos con mejores horas de luz, miradores secretos y rincones instagrameables. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa para Fotografía"
       />
 

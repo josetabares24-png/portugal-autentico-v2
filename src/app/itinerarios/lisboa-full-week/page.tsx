@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import ItineraryMap from '@/components/ItineraryMap';
+import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFullWeekTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -239,12 +239,15 @@ export default function LisboaFullWeekPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <ItineraryMap
+      <PremiumContent
+        productId="lisboa-full-week"
+        price={PRODUCT_PRICE}
+        productName="Lisboa Full Week"
         coordinates={lisboaFullWeekTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        title="Mapa Interactivo del Itinerario"
-        description="Mapa completo con Lisboa, Sintra, Cascais, Setúbal y Arrábida con todas las paradas de la semana. Haz click en los marcadores numerados para ver cada parada."
+        mapTitle="Mapa Interactivo del Itinerario"
+        mapDescription="Mapa completo con Lisboa, Sintra, Cascais, Setúbal y Arrábida con todas las paradas de la semana. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa Full Week"
       />
 

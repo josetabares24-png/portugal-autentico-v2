@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import ItineraryMap from '@/components/ItineraryMap';
+import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFamiliarTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -213,12 +213,15 @@ export default function LisboaFamiliarPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <ItineraryMap
+      <PremiumContent
+        productId="lisboa-familiar"
+        price={PRODUCT_PRICE}
+        productName="Lisboa en Familia"
         coordinates={lisboaFamiliarTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        title="Mapa Interactivo del Itinerario"
-        description="Parques, museos familiares y restaurantes kid-friendly en un mapa. Haz click en los marcadores numerados para ver cada parada."
+        mapTitle="Mapa Interactivo del Itinerario"
+        mapDescription="Parques, museos familiares y restaurantes kid-friendly en un mapa. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa en Familia"
       />
 
