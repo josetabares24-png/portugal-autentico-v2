@@ -93,33 +93,8 @@ export async function POST(request: NextRequest) {
       return interestMap[i] || i;
     }).join(', ') : '';
 
-    // Generar HTML para parámetros de Conserjería Digital
-    const alojamientoRow = alojamientoNombre 
-      ? `<tr><td style="padding: 8px 0; font-size: 15px; color: #475569;"><strong style="color: #1e293b; min-width: 120px; display: inline-block;">Alojamiento:</strong>${alojamientoNombre}</td></tr>`
-      : '';
-    
-    const ritmoRow = ritmoNombre
-      ? `<tr><td style="padding: 8px 0; font-size: 15px; color: #475569;"><strong style="color: #1e293b; min-width: 120px; display: inline-block;">Ritmo:</strong>${ritmoNombre}</td></tr>`
-      : '';
-    
-    const interesesSection = interesesTexto
-      ? `<tr>
-  <td style="padding-bottom: 35px;">
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
-      <tr>
-        <td style="padding: 25px;">
-          <h3 style="margin: 0 0 15px 0; font-size: 16px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
-            Tus intereses
-          </h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
-            ${interesesTexto}
-          </p>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>`
-      : '';
+    // Preparar parámetros de texto para Conserjería Digital (sin HTML)
+    // El HTML se construye directamente en la plantilla de Brevo
 
     // Generar HTML del presupuesto detallado (fallback si no hay template)
     const htmlContent = `
@@ -351,11 +326,30 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
 
 © 2025 Estaba en Lisboa. Todos los derechos reservados.`;
 
+    // Función para obtener guía recomendada según días
+    const getRecommendedGuide = (dias: number): { slug: string; price: string; name: string } => {
+      if (dias === 1) {
+        return { slug: 'lisboa-1-dia-lo-esencial', price: '1.99', name: 'Guía Lisboa Express: Lo Mejor en 1 Día' };
+      }
+      if (dias === 2) {
+        return { slug: 'lisboa-2-dias-completo', price: '2.99', name: 'Guía Lisboa Fin de Semana: 2 Días Perfectos' };
+      }
+      if (dias === 3) {
+        return { slug: 'lisboa-3-dias-premium', price: '3.99', name: 'Guía Lisboa + Sintra: 3 Días de Experiencia Completa' };
+      }
+      if (dias >= 7) {
+        return { slug: 'lisboa-full-week', price: '5.99', name: 'Guía Lisboa 7 Días: Semana Completa + Alrededores' };
+      }
+      return { slug: 'lisboa-2-dias-completo', price: '2.99', name: 'Guía Lisboa Fin de Semana: 2 Días Perfectos' };
+    };
+
+    const recommendedGuide = getRecommendedGuide(dias);
+
     // Intentar usar Brevo primero
     if (brevoApiKey && senderEmail) {
       try {
-        // Priorizar plantilla de Conserjería Digital si está disponible
-        if (conserjeriaTemplateId) {
+        // Usar template simple de presupuesto (ID 12) - enfoque en guías premium
+        if (presupuestoTemplateId) {
           const response = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
@@ -364,7 +358,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
               'api-key': brevoApiKey,
             },
             body: JSON.stringify({
-              templateId: parseInt(conserjeriaTemplateId, 10),
+              templateId: parseInt(presupuestoTemplateId, 10),
               to: [{ email, name: nombre }],
               params: {
                 NOMBRE: nombre,
@@ -374,14 +368,19 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
                 DIAS: dias.toString(),
                 DIAS_SINGULAR: dias === 1 ? 'día' : 'días',
                 TOTAL_PERSONA_DIA: totalPersonaDia.toFixed(0),
-                ESTILO_NOMBRE: estiloNombre,
-                ALOJAMIENTO_ROW: alojamientoRow,
-                RITMO_ROW: ritmoRow,
-                ALOJAMIENTO_VALOR: alojamientoValor.toString(),
-                COMIDA_VALOR: comidaValor.toString(),
-                TRANSPORTE_VALOR: transporteValor.toString(),
-                ACTIVIDADES_VALOR: actividadesValor.toString(),
-                INTERESES_SECTION: interesesSection,
+                TIPO_NOMBRE: tipoNombre,
+                TIPO_DESCRIPCION: tipoDescripcion,
+                ALOJAMIENTO: budget.alojamiento.toString(),
+                DESAYUNO: budget.desayuno.toString(),
+                ALMUERZO: budget.almuerzo.toString(),
+                CENA: budget.cena.toString(),
+                TRANSPORTE: budget.transporte.toString(),
+                ACTIVIDADES: budget.actividades.toString(),
+                EXTRAS: budget.extras.toString(),
+                GUIA_RECOMENDADA_SLUG: recommendedGuide.slug,
+                GUIA_RECOMENDADA_NOMBRE: recommendedGuide.name,
+                GUIA_RECOMENDADA_PRECIO: recommendedGuide.price,
+                GUIA_RECOMENDADA_URL: `https://estabaenlisboa.com/itinerarios/${recommendedGuide.slug}`,
               },
               headers: {
                 'X-Mailer': 'Estaba en Lisboa',
@@ -405,7 +404,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
                   email,
                   attributes: {
                     NOMBRE: nombre,
-                    PRESUPUESTO_TIPO: estiloNombre,
+                    PRESUPUESTO_TIPO: tipoNombre,
                     PRESUPUESTO_DIAS: dias.toString(),
                     PRESUPUESTO_PERSONAS: personas.toString(),
                     PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
@@ -423,10 +422,8 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
               { status: 200 }
             );
           }
-        }
-        
-        // Fallback a plantilla de presupuesto original si no hay Conserjería
-        if (presupuestoTemplateId) {
+        } else {
+          // Fallback: enviar email directo sin template
           const response = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {

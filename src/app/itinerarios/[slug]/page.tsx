@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
 
@@ -8,6 +9,65 @@ const packs = guidePacks;
 
 export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
+  const pack = await getGuidePack(slug);
+  
+  if (!pack) {
+    return {
+      title: 'Guía no encontrada',
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  return {
+    title: `${pack.title} | Estaba en Lisboa`,
+    description: pack.description || `Guía completa de ${pack.duration} en Lisboa con itinerario detallado, restaurantes locales y mapas interactivos.`,
+    keywords: [
+      'lisboa',
+      'guia lisboa',
+      'itinerario lisboa',
+      pack.duration.toLowerCase(),
+      'viajar lisboa',
+      'que ver lisboa',
+    ],
+    authors: [{ name: 'Estaba en Lisboa' }],
+    openGraph: {
+      title: pack.title,
+      description: pack.description || `Guía completa de ${pack.duration} en Lisboa`,
+      url: `https://estabaenlisboa.com/itinerarios/${slug}`,
+      siteName: 'Estaba en Lisboa',
+      locale: 'es_ES',
+      type: 'article',
+      images: [
+        {
+          url: pack.image,
+          width: 1200,
+          height: 630,
+          alt: pack.title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://estabaenlisboa.com/itinerarios/${slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
 }
 
 export default async function PackPage({ params }: { params: { slug: string } }) {

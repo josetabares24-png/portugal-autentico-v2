@@ -19,6 +19,20 @@ const nextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      {
+        // Asegurar que las rutas de itinerarios sean indexables
+        source: '/itinerarios/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

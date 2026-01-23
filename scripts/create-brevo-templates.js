@@ -849,8 +849,8 @@ const conserjeriaDigitalTemplate = {
                                 {{params.PERSONAS}} {{params.PERSONAS_SINGULAR}}
                               </td>
                             </tr>
-                            {{params.ALOJAMIENTO_ROW}}
-                            {{params.RITMO_ROW}}
+                            <tr><td style="padding: 8px 0; font-size: 15px; color: #475569;"><strong style="color: #1e293b; min-width: 120px; display: inline-block;">Alojamiento:</strong>{{params.ALOJAMIENTO_NOMBRE}}</td></tr>
+                            <tr><td style="padding: 8px 0; font-size: 15px; color: #475569;"><strong style="color: #1e293b; min-width: 120px; display: inline-block;">Ritmo:</strong>{{params.RITMO_NOMBRE}}</td></tr>
                           </table>
                         </td>
                       </tr>
@@ -904,7 +904,22 @@ const conserjeriaDigitalTemplate = {
                 </tr>
                 
                 <!-- Intereses -->
-                {{params.INTERESES_SECTION}}
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                      <tr>
+                        <td style="padding: 25px;">
+                          <h3 style="margin: 0 0 15px 0; font-size: 16px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Tus intereses
+                          </h3>
+                          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
+                            {{params.INTERESES_TEXTO}}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
                 
                 <!-- Qué Incluye -->
                 <tr>
