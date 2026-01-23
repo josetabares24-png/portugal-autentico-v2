@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import InteractiveMap from '@/components/InteractiveMap';
+import ItineraryMap from '@/components/ItineraryMap';
 import { lisboaRomanticaTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -213,12 +213,13 @@ export default function LisboaRomanticaPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboaRomanticaTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Miradores, cenas y planes románticos ubicados en un mapa con rutas sugeridas."
+        description="Miradores, cenas y planes románticos ubicados en un mapa. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa Romántica"
-        fallbackQuery="Lisboa romántica itinerario"
       />
 
       {/* Photo Gallery Section */}

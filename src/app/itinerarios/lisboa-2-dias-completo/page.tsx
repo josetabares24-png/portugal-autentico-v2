@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import InteractiveMap from '@/components/InteractiveMap';
+import ItineraryMap from '@/components/ItineraryMap';
 import { lisboa2DiasTimeline } from '@/data/itineraries';
 
 export const metadata = {
@@ -228,12 +228,13 @@ export default function Lisboa2DiasPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboa2DiasTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Todos los restaurantes, miradores y monumentos de esta guía en un solo mapa con rutas optimizadas."
+        description="Todos los restaurantes, miradores y monumentos de esta guía en un solo mapa. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa 2 Días - Completo"
-        fallbackQuery="Lisboa 2 días itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

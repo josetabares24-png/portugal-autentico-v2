@@ -4,7 +4,7 @@ import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import InteractiveMap from '@/components/InteractiveMap';
+import ItineraryMap from '@/components/ItineraryMap';
 import { lisboaFotografiaTimeline } from '@/data/itineraries';
 
 export const metadata = {
