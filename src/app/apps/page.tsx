@@ -28,7 +28,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía, Uber: todo en una app con rutas en tiempo real.',
       descripcionLarga: 'Citymapper es la app de transporte público más completa para Lisboa. Te muestra todas las opciones: metro, autobuses, tranvías, e incluso integra Uber y Bolt. Lo mejor es que calcula rutas en tiempo real considerando retrasos, cierres y el tráfico actual. Perfecta para comparar opciones y elegir la ruta más rápida o económica.',
-      logo: 'https://www.citymapper.com/favicon-192x192.png',
+      logo: 'https://d2k1ftgv7pobq7.cloudfront.net/images/logo-citymapper.svg',
       color: 'from-green-500 to-emerald-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/citymapper/id469463298',
@@ -54,7 +54,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'App oficial para recargar tu tarjeta de transporte público desde el móvil.',
       descripcionLarga: 'La app oficial de Viva Viagem te permite recargar tu tarjeta de transporte sin ir a una máquina. Es súper útil porque las máquinas en las estaciones de metro suelen tener colas, especialmente en hora pico. Con esta app recargas desde el móvil con tarjeta de crédito y luego acercas tu tarjeta física al lector NFC del móvil para transferir el saldo. También puedes ver tu historial de viajes y el saldo restante. Ahorra tiempo y evita colas.',
-      logo: 'https://www.metrolisboa.pt/favicon-192x192.png',
+      logo: 'https://www.metrolisboa.pt/wp-content/uploads/2020/03/viva-viagem-app.png',
       color: 'from-purple-500 to-purple-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/pt/app/viva-viagem/id1449782000',
@@ -67,7 +67,7 @@ export default function AppsPage() {
       categoria: 'Restaurantes',
       descripcion: 'Reserva restaurantes con descuentos de hasta 50%. Los mejores sitios de Lisboa con ofertas exclusivas.',
       descripcionLarga: 'TheFork (antes LaFourchette) es la app de reservas de restaurantes más usada en Lisboa. Lo mejor son los descuentos: muchos restaurantes ofrecen 30-50% de descuento si reservas a través de la app, especialmente en horarios menos populares (almuerzos entre semana, cenas tempranas). También puedes ver menús, fotos de platos, y reseñas. Perfecta para reservar en restaurantes populares que suelen estar llenos. Los descuentos son reales y funcionan - he ahorrado cientos de euros usando esta app.',
-      logo: 'https://www.thefork.com/favicon-192x192.png',
+      logo: 'https://cdn.thefork.com/images/logo-thefork.svg',
       color: 'from-red-500 to-rose-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/thefork-restaurant-booking/id318452441',
@@ -80,7 +80,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Taxis privados más baratos que taxis oficiales. Precio fijo antes de viajar, pago con tarjeta.',
       descripcionLarga: 'Uber es la app de transporte privado más conocida en Lisboa. Más barata que los taxis oficiales y más cómoda. Ves el precio estimado antes de pedir, pagas con tarjeta, y rastreas el viaje en tiempo real. Perfecta para ir del aeropuerto al centro (15-20€ vs 25-30€ en taxi oficial) o moverte por la noche cuando el transporte público cierra.',
-      logo: 'https://www.uber.com/favicon-192x192.png',
+      logo: 'https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg',
       color: 'from-slate-700 to-slate-800',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
@@ -93,7 +93,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Similar a Uber pero 10-20% más barato. La opción más económica para taxis privados en Lisboa.',
       descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos que Uber para el mismo trayecto. Funciona igual: pides un viaje, ves el precio, pagas con tarjeta. Siempre compara ambas apps antes de pedir - a veces Bolt es mucho más barato, especialmente en horas pico. También tienen opción de compartir viaje para ahorrar aún más.',
-      logo: 'https://bolt.eu/favicon-192x192.png',
+      logo: 'https://bolt.eu/bolt-logo.svg',
       color: 'from-yellow-500 to-orange-500',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
@@ -132,7 +132,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Similar a Revolut pero con mejor tipo de cambio. Ideal para cambiar grandes cantidades de dinero.',
       descripcionLarga: 'Wise (antes TransferWise) es como Revolut pero con mejor tipo de cambio. Especialmente útil si necesitas cambiar grandes cantidades de dinero. Te da el tipo de cambio real del mercado sin comisiones ocultas. La app es más simple que Revolut pero igual de efectiva. Perfecta si ya tienes cuenta en Wise o si necesitas cambiar mucho dinero de una vez.',
-      logo: 'https://wise.com/favicon-192x192.png',
+      logo: 'https://wise.com/public-resources/assets/logos/wise_logo.svg',
       color: 'from-teal-500 to-cyan-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/wise-money-transfers/id612261329',
@@ -157,7 +157,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Conversor de moneda offline. Perfecto para saber cuánto estás gastando en tu moneda local.',
       descripcionLarga: 'XE Currency es el conversor de moneda más preciso y confiable. Funciona offline una vez que descargas los tipos de cambio, así que no necesitas internet para saber cuánto cuesta algo en tu moneda. Los tipos de cambio se actualizan automáticamente cuando tienes conexión. Perfecta para saber si algo es caro o barato comparado con tu país, especialmente útil en restaurantes y tiendas donde los precios están en euros. También tiene gráficos históricos para ver tendencias.',
-      logo: 'https://www.xe.com/favicon-192x192.png',
+      logo: 'https://www.xe.com/staticimages/xe-logo.svg',
       color: 'from-teal-500 to-teal-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/xe-currency/id315241195',
@@ -290,35 +290,40 @@ export default function AppsPage() {
                   {/* Logo y Header */}
                   <div className="flex items-start gap-4 mb-4">
                     {/* Logo de la App */}
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-white border-2 border-slate-200 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                      {app.logo && app.logo.startsWith('http') ? (
-                        <Image
-                          src={app.logo}
-                          alt={`Logo de ${app.nombre}`}
-                          width={80}
-                          height={80}
-                          className="object-contain p-2"
-                          unoptimized
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            const parent = target.parentElement;
-                            if (parent) {
-                              const iconMap: Record<string, string> = {
-                                'Uber': 'local_taxi',
-                                'Bolt': 'local_taxi',
-                                'Revolut / Wise': 'credit_card',
-                                'CP - Comboios de Portugal': 'train',
-                              };
-                              const icon = iconMap[app.nombre] || 'phone_iphone';
-                              parent.innerHTML = `<span class="material-symbols-outlined text-3xl text-slate-600">${icon}</span>`;
-                            }
-                          }}
-                        />
-                      ) : (
-                        <span className="material-symbols-outlined text-3xl text-slate-600">phone_iphone</span>
-                      )}
-                    </div>
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-200 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                          {app.logo && app.logo.startsWith('http') ? (
+                            <img
+                              src={app.logo}
+                              alt={`Logo de ${app.nombre}`}
+                              className="w-full h-full object-contain p-2"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const parent = target.parentElement;
+                                if (parent) {
+                                  const iconMap: Record<string, string> = {
+                                    'Uber': 'local_taxi',
+                                    'Bolt': 'local_taxi',
+                                    'Revolut': 'credit_card',
+                                    'Wise': 'credit_card',
+                                    'CP - Comboios de Portugal': 'train',
+                                    'Citymapper': 'directions_transit',
+                                    'Google Maps': 'map',
+                                    'Viva Viagem App': 'confirmation_number',
+                                    'TheFork': 'restaurant',
+                                    'Timeout Lisboa': 'event',
+                                    'XE Currency': 'currency_exchange',
+                                    'Google Translate': 'translate',
+                                  };
+                                  const icon = iconMap[app.nombre] || 'phone_iphone';
+                                  parent.innerHTML = `<span class="material-symbols-outlined text-3xl text-slate-600">${icon}</span>`;
+                                }
+                              }}
+                            />
+                          ) : (
+                            <span className="material-symbols-outlined text-3xl text-slate-600">phone_iphone</span>
+                          )}
+                        </div>
 
                     {/* Info Básica */}
                     <div className="flex-1 min-w-0">
