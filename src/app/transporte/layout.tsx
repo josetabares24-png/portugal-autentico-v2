@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Transporte en Lisboa 2025: Metro, Tranvía y Trenes | Estaba en Lisboa',
-  description: 'Guía completa del transporte en Lisboa: metro, tranvías, buses y trenes. Precios 2025, horarios y consejos locales.',
+  title: 'Transporte en Lisboa 2026: Metro, Tranvía y Trenes | Estaba en Lisboa',
+  description: 'Guía completa del transporte en Lisboa: metro, tranvías, buses y trenes. Precios 2026, horarios y consejos locales.',
   keywords: [
     'transporte lisboa',
     'metro lisboa',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: 'https://estabaenlisboa.com/images/tranvia-28.jpg',
         width: 1200,
         height: 630,
-        alt: 'Guía del Transporte en Lisboa 2025',
+        alt: 'Guía del Transporte en Lisboa 2026',
       },
     ],
   },

@@ -193,7 +193,7 @@ const welcomeTemplate = {
                 <tr>
                   <td style="padding-top: 20px;">
                     <p style="margin: 0; font-size: 11px; color: #999;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -336,7 +336,7 @@ const subscriptionTemplate = {
                 <tr>
                   <td style="padding-top: 15px;">
                     <p style="margin: 0; font-size: 11px; color: #999;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -699,26 +699,6 @@ const presupuestoTemplate = {
                   </td>
                 </tr>
                 
-                <!-- Cupón -->
-                <tr>
-                  <td style="padding-top: 20px; border-top: 1px solid #eee;">
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); border-radius: 8px;">
-                      <tr>
-                        <td style="padding: 20px; text-align: center;">
-                          <p style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #ffffff; text-transform: uppercase;">
-                            🎁 Cupón de Descuento
-                          </p>
-                          <p style="margin: 0; font-size: 24px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">
-                            20% OFF
-                          </p>
-                          <p style="margin: 10px 0 0 0; font-size: 12px; color: rgba(255,255,255,0.9);">
-                            Usa este código en tu próxima compra: <strong>PRESUPUESTO20</strong>
-                          </p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
               </table>
             </td>
           </tr>
@@ -737,7 +717,7 @@ const presupuestoTemplate = {
                 <tr>
                   <td style="padding-top: 15px;">
                     <p style="margin: 0; font-size: 11px; color: #999;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -1030,7 +1010,7 @@ const conserjeriaDigitalTemplate = {
                 <tr>
                   <td style="padding-top: 20px;">
                     <p style="margin: 0; font-size: 11px; color: #cbd5e1;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -1179,7 +1159,7 @@ const contactConfirmationTemplate = {
                 <tr>
                   <td style="padding-top: 15px;">
                     <p style="margin: 0; font-size: 11px; color: #999;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>

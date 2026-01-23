@@ -36,7 +36,7 @@ export function PreviewPaywall({ productId, price, productName, totalStops }: Pr
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
             <span className="material-symbols-outlined text-primary text-3xl mb-2 block">restaurant</span>
             <h4 className="font-bold text-white text-sm mb-1">Restaurantes Locales</h4>
-            <p className="text-white/70 text-xs">Probados en 2025</p>
+            <p className="text-white/70 text-xs">Probados en 2026</p>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
             <span className="material-symbols-outlined text-primary text-3xl mb-2 block">photo_camera</span>
@@ -80,7 +80,7 @@ export function PreviewPaywall({ productId, price, productName, totalStops }: Pr
           </div>
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-blue-400">update</span>
-            <span>Actualizado 2025</span>
+            <span>Actualizado 2026</span>
           </div>
         </div>
       </div>

@@ -62,7 +62,7 @@ export default function ComparisonTable() {
                 </td>
               </tr>
               <tr className="hover:bg-primary/5 transition-colors">
-                <td className="py-4 px-4 font-semibold text-gray-700">Actualizado 2025</td>
+                <td className="py-4 px-4 font-semibold text-gray-700">Actualizado 2026</td>
                 <td className="text-center py-4 px-4">
                   <span className="text-green-500 text-2xl">✅</span>
                 </td>

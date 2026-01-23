@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Presupuesto Lisboa 2025: Calculadora y Costes Reales | Estaba en Lisboa',
+  title: 'Presupuesto Lisboa 2026: Calculadora y Costes Reales | Estaba en Lisboa',
   description: 'Calcula cuánto cuesta viajar a Lisboa según tu estilo: mochilero, medio o confort. Incluye alojamiento, comida, transporte y actividades.',
   keywords: [
     'presupuesto lisboa',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'viajar lisboa barato',
     'precio viaje lisboa',
     'calculadora viaje lisboa',
-    'gastos lisboa 2025',
+    'gastos lisboa 2026',
     'presupuesto portugal',
     'cuánto dinero llevar lisboa',
     'viaje lisboa económico',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Calculadora de Presupuesto Lisboa 2025',
+        alt: 'Calculadora de Presupuesto Lisboa 2026',
       },
     ],
   },

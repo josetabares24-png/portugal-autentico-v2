@@ -8,6 +8,10 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 export default function BlogClient() {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
+  const [email, setEmail] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const categorias = useMemo(
     () => ['Todos', 'Guías', 'Gastronomía', 'Consejos', 'Planificación', 'Transporte', 'Cultura'],
@@ -262,23 +266,88 @@ export default function BlogClient() {
               <span className="hidden md:inline"><br />directamente en tu bandeja de entrada</span>
             </p>
 
-            <form className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-2xl mx-auto">
-              <input
-                type="email"
-                placeholder="tu@email.com"
-                className="flex-1 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-all duration-300 text-base"
-              >
-                Suscribirme
-              </button>
-            </form>
+            {status === 'success' ? (
+              <div className="max-w-2xl mx-auto p-6 bg-green-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl text-center">
+                <p className="text-green-300 font-semibold text-lg">
+                  ✅ ¡Gracias por suscribirte! Revisa tu email para confirmar.
+                </p>
+              </div>
+            ) : (
+              <form 
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  
+                  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    setErrorMessage('Por favor, ingresa un email válido');
+                    setStatus('error');
+                    return;
+                  }
 
-            <p className="text-slate-500 text-xs md:text-sm mt-4 md:mt-6">
-              ✓ Sin spam · ✓ Cancela cuando quieras
-            </p>
+                  setStatus('loading');
+                  setErrorMessage(null);
+
+                  try {
+                    const response = await fetch('/api/subscribe', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        email,
+                        name: nombre || email.split('@')[0], // Usar nombre si existe, sino la parte antes del @
+                      }),
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok || !data.success) {
+                      setStatus('error');
+                      setErrorMessage(data.message || 'Error al suscribirse. Inténtalo de nuevo.');
+                      return;
+                    }
+
+                    setStatus('success');
+                    setEmail('');
+                    setNombre('');
+                  } catch (error) {
+                    setStatus('error');
+                    setErrorMessage('Error de conexión. Por favor, intenta de nuevo.');
+                  }
+                }}
+                className="flex flex-col gap-3 md:gap-4 max-w-2xl mx-auto"
+              >
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                  <input
+                    type="text"
+                    placeholder="Tu nombre (opcional)"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    className="flex-1 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
+                  />
+                  <input
+                    type="email"
+                    placeholder="tu@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary text-sm md:text-base"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="px-8 py-4 bg-primary hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-all duration-300 text-base"
+                  >
+                    {status === 'loading' ? 'Enviando...' : 'Suscribirme'}
+                  </button>
+                </div>
+                {errorMessage && (
+                  <p className="text-red-300 text-sm text-center">
+                    {errorMessage}
+                  </p>
+                )}
+                <p className="text-slate-500 text-xs md:text-sm mt-2">
+                  ✓ Sin spam · ✓ Cancela cuando quieras
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </section>

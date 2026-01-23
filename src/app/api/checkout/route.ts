@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 import { auth } from '@clerk/nextjs/server';
+import logger from '@/lib/logger';
 
 // Forzar que esta ruta sea dinámica para evitar análisis en build time
 export const dynamic = 'force-dynamic';
@@ -18,7 +19,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (!process.env.NEXT_PUBLIC_SITE_URL) {
-    console.error('NEXT_PUBLIC_SITE_URL no está configurada');
+    logger.error('NEXT_PUBLIC_SITE_URL no está configurada');
     return NextResponse.json(
       { error: 'Error de configuración del servidor. Por favor, contacta al soporte.' },
       { status: 500 }
@@ -38,10 +39,10 @@ export async function POST(request: NextRequest) {
     // Verificar autenticación OBLIGATORIA - las guías se guardan con el usuario
     const { userId } = await auth();
     
-    console.log('API Checkout: Auth check', { hasUserId: !!userId });
+    logger.log('API Checkout: Auth check', { hasUserId: !!userId });
     
     if (!userId) {
-      console.error('API Checkout: Usuario no autenticado');
+      logger.error('API Checkout: Usuario no autenticado');
       return NextResponse.json(
         { error: 'Debes iniciar sesión para comprar. Las guías se guardan en tu cuenta para acceso permanente.' },
         { status: 401 }
@@ -55,7 +56,7 @@ export async function POST(request: NextRequest) {
 
     // Validación de input
     if (!productId || typeof productId !== 'string') {
-      console.error('API Checkout: Product ID inválido', productId);
+      logger.error('API Checkout: Product ID inválido', productId);
       return NextResponse.json(
         { error: 'Product ID inválido. Por favor, recarga la página e intenta de nuevo.' },
         { status: 400 }
@@ -73,7 +74,7 @@ export async function POST(request: NextRequest) {
 
     const product = STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS];
     
-    console.log('API Checkout: Producto encontrado', {
+    logger.log('API Checkout: Producto encontrado', {
       productId,
       priceId: product.priceId,
       name: product.name
@@ -82,18 +83,18 @@ export async function POST(request: NextRequest) {
     // Verificar que el Price ID existe en Stripe
     let priceName: string = product.name;
     try {
-      console.log('API Checkout: Verificando price ID en Stripe', { priceId: product.priceId });
+      logger.log('API Checkout: Verificando price ID en Stripe', { priceId: product.priceId });
       const price = await stripe.prices.retrieve(product.priceId);
-      console.log('API Checkout: Price encontrado en Stripe', { priceId: price.id });
+      logger.log('API Checkout: Price encontrado en Stripe', { priceId: price.id });
       
       if (price.product) {
         const stripeProduct = await stripe.products.retrieve(price.product as string);
         priceName = stripeProduct.name || product.name;
-        console.log('API Checkout: Producto en Stripe:', stripeProduct.name);
+        logger.log('API Checkout: Producto en Stripe:', stripeProduct.name);
       }
     } catch (err: any) {
       const stripeMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST';
-      console.error('API Checkout: Error al verificar producto en Stripe', {
+      logger.error('API Checkout: Error al verificar producto en Stripe', {
         error: err.message,
         code: err.code,
         priceId: product.priceId,
@@ -111,7 +112,7 @@ export async function POST(request: NextRequest) {
           { status: 500 }
         );
       }
-      console.warn('API Checkout: No se pudo obtener nombre del producto desde Stripe, usando nombre local:', err.message);
+      logger.warn('API Checkout: No se pudo obtener nombre del producto desde Stripe, usando nombre local:', err.message);
     }
 
     const stripeMode = process.env.STRIPE_SECRET_KEY?.startsWith('sk_live_') ? 'LIVE' : 'TEST';
@@ -139,17 +140,17 @@ export async function POST(request: NextRequest) {
       customer: undefined, // Stripe creará el customer automáticamente
     });
 
-    console.log('API Checkout: Sesión creada:', session.id);
+    logger.log('API Checkout: Sesión creada:', session.id);
 
     if (!session.url) {
       console.error('API Checkout: La sesión no tiene URL');
       throw new Error('No se pudo crear la sesión de checkout. Por favor, intenta de nuevo.');
     }
 
-    console.log('API Checkout: URL de checkout:', session.url);
+    logger.log('API Checkout: URL de checkout:', session.url);
     return NextResponse.json({ url: session.url });
   } catch (error: any) {
-    console.error('API Checkout: Error completo:', {
+    logger.error('API Checkout: Error completo:', {
       message: error.message,
       type: error.type,
       code: error.code,

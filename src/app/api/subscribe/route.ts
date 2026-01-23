@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBrevoService } from '@/lib/brevo';
+import logger from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,6 +50,30 @@ export async function POST(request: NextRequest) {
         });
 
         if (response.ok) {
+          // Agregar contacto a Brevo
+          try {
+            await fetch('https://api.brevo.com/v3/contacts', {
+              method: 'POST',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'api-key': brevoApiKey,
+              },
+              body: JSON.stringify({
+                email,
+                attributes: {
+                  NOMBRE: name || email.split('@')[0],
+                  FUENTE: 'blog',
+                },
+                listIds: [5], // Lista ID 5 (Newsletter)
+                updateEnabled: true,
+              }),
+            });
+          } catch (contactError) {
+            // No fallar si no se puede agregar el contacto, el email ya se envió
+            logger.warn('[Subscribe] Error agregando contacto a Brevo:', contactError);
+          }
+
           return NextResponse.json({ 
             success: true, 
             message: 'Email de bienvenida enviado correctamente',
@@ -114,7 +139,7 @@ export async function POST(request: NextRequest) {
             to: [{ email, name }],
             subject: '¡Bienvenido a Estaba en Lisboa!',
             htmlContent,
-            textContent: `¡Hola ${name}!\n\nGracias por suscribirte a Estaba en Lisboa.\n\nRecibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.\n\nExplora nuestras guías: https://estabaenlisboa.com/itinerarios\n\nDarse de baja: https://estabaenlisboa.com/unsubscribe\n\n© 2025 Estaba en Lisboa. Todos los derechos reservados.`,
+            textContent: `¡Hola ${name}!\n\nGracias por suscribirte a Estaba en Lisboa.\n\nRecibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.\n\nExplora nuestras guías: https://estabaenlisboa.com/itinerarios\n\nDarse de baja: https://estabaenlisboa.com/unsubscribe\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
             headers: {
               'X-Mailer': 'Estaba en Lisboa',
               'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
@@ -124,6 +149,30 @@ export async function POST(request: NextRequest) {
         });
 
         if (response.ok) {
+          // Agregar contacto a Brevo
+          try {
+            await fetch('https://api.brevo.com/v3/contacts', {
+              method: 'POST',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'api-key': process.env.BREVO_API_KEY || '',
+              },
+              body: JSON.stringify({
+                email,
+                attributes: {
+                  NOMBRE: name || email.split('@')[0],
+                  FUENTE: 'blog',
+                },
+                listIds: [5], // Lista ID 5 (Newsletter)
+                updateEnabled: true,
+              }),
+            });
+          } catch (contactError) {
+            // No fallar si no se puede agregar el contacto, el email ya se envió
+            logger.warn('[Subscribe] Error agregando contacto a Brevo:', contactError);
+          }
+
           return NextResponse.json({ 
             success: true, 
             message: 'Email de bienvenida enviado correctamente',
@@ -269,7 +318,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error al procesar suscripción:', error);
+    logger.error('Error al procesar suscripción:', error);
     return NextResponse.json(
       { message: 'Error al procesar la solicitud' },
       { status: 500 }

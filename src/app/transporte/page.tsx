@@ -223,7 +223,7 @@ export default function TransportePage() {
           <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-green-400">check_circle</span>
-              <span>Actualizado 2025</span>
+              <span>Actualizado 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-yellow-400">verified</span>

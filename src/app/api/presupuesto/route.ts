@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -251,21 +252,6 @@ export async function POST(request: NextRequest) {
                 <!-- Cupón -->
                 <tr>
                   <td style="padding-top: 20px; border-top: 1px solid #eee;">
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); border-radius: 8px;">
-                      <tr>
-                        <td style="padding: 20px; text-align: center;">
-                          <p style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #ffffff; text-transform: uppercase;">
-                            🎁 Cupón de Descuento
-                          </p>
-                          <p style="margin: 0; font-size: 24px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">
-                            20% OFF
-                          </p>
-                          <p style="margin: 10px 0 0 0; font-size: 12px; color: rgba(255,255,255,0.9);">
-                            Usa este código en tu próxima compra: <strong>PRESUPUESTO20</strong>
-                          </p>
-                        </td>
-                      </tr>
-                    </table>
                   </td>
                 </tr>
               </table>
@@ -286,7 +272,7 @@ export async function POST(request: NextRequest) {
                 <tr>
                   <td style="padding-top: 15px;">
                     <p style="margin: 0; font-size: 11px; color: #999;">
-                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                      © 2026 Estaba en Lisboa. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -319,12 +305,9 @@ TOTAL POR DÍA: ${totalPersonaDia}€
 
 Tipo de presupuesto: ${tipoNombre}
 
-🎁 Cupón de Descuento: 20% OFF
-Código: PRESUPUESTO20
-
 Ver nuestras guías: https://estabaenlisboa.com/itinerarios
 
-© 2025 Estaba en Lisboa. Todos los derechos reservados.`;
+© 2026 Estaba en Lisboa. Todos los derechos reservados.`;
 
     // Función para obtener guía recomendada según días
     const getRecommendedGuide = (dias: number): { slug: string; price: string; name: string } => {
@@ -414,7 +397,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
                 }),
               });
             } catch (contactError) {
-              console.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
+              logger.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
             }
 
             return NextResponse.json(
@@ -469,7 +452,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
                 }),
               });
             } catch (contactError) {
-              console.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
+              logger.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
             }
 
             return NextResponse.json(
@@ -516,7 +499,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
       { status: 200 }
     );
   } catch (error: any) {
-    console.error('Error enviando presupuesto:', error);
+    logger.error('Error enviando presupuesto:', error);
     return NextResponse.json(
       { success: false, error: 'Error al enviar el presupuesto. Por favor, intenta de nuevo.' },
       { status: 500 }

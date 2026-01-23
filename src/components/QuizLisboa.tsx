@@ -1040,7 +1040,7 @@ export default function QuizLisboa() {
                         </span>
                         <span className="flex items-center gap-2 font-semibold">
                           <span className="material-symbols-outlined text-lg text-primary">autorenew</span>
-                          Actualizado 2025
+                          Actualizado 2026
                         </span>
                       </div>
 

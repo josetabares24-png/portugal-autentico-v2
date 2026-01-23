@@ -1086,7 +1086,7 @@ function slugify(value: string) {
 function getSeoTitle(title: string) {
   const hasLisboa = title.toLowerCase().includes('lisboa');
   const base = hasLisboa ? title : `${title} en Lisboa`;
-  return `${base} 2025 | Guía local`;
+  return `${base} 2026 | Guía local`;
 }
 
 function getSeoDescription(description: string) {
@@ -1930,7 +1930,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   let paragraphIndex = 0;
 
   // Tags para el artículo
-  const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2025'];
+  const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
     <main className="bg-white">

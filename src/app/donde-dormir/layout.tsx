@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dónde Dormir en Lisboa 2025: Barrios, Hoteles y Consejos | Estaba en Lisboa',
+  title: 'Dónde Dormir en Lisboa 2026: Barrios, Hoteles y Consejos | Estaba en Lisboa',
   description: 'Guía real de alojamiento en Lisboa: mejores barrios, hoteles y hostales con pros, contras y precios. Recomendado por locales.',
   keywords: [
     'donde dormir lisboa',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: 'Dónde Dormir en Lisboa 2025: Barrios y Hoteles',
+    title: 'Dónde Dormir en Lisboa 2026: Barrios y Hoteles',
     description: 'Mejores zonas para alojarse en Lisboa con recomendaciones reales, precios y pros/contras.',
     url: 'https://estabaenlisboa.com/donde-dormir',
     siteName: 'Estaba en Lisboa',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Mejores Barrios para Dormir en Lisboa 2025',
+        alt: 'Mejores Barrios para Dormir en Lisboa 2026',
       },
     ],
   },

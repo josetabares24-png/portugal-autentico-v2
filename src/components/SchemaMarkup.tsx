@@ -58,7 +58,7 @@ export default function SchemaMarkup() {
       "url": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
       "priceCurrency": "EUR",
       "price": "3.99",
-      "priceValidUntil": "2025-12-31",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     }
@@ -97,10 +97,10 @@ export default function SchemaMarkup() {
       },
       {
         "@type": "Question",
-        "name": "¿Están actualizadas las guías en 2025?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, todas nuestras guías están verificadas y actualizadas en Enero 2025. Incluyen precios actuales, horarios vigentes y restaurantes operativos."
+        "name": "¿Están actualizadas las guías en 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todas nuestras guías están verificadas y actualizadas en Enero 2026. Incluyen precios actuales, horarios vigentes y restaurantes operativos."
         }
       },
       {

@@ -159,11 +159,11 @@ export async function POST(request: NextRequest) {
                     <a href="mailto:contacto@estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">contacto@estabaenlisboa.com</a>
                   </p>
                   <p style="color: #999; font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-                    © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                    © 2026 Estaba en Lisboa. Todos los derechos reservados.
                   </p>
                 </div>
               `,
-              textContent: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2025 Estaba en Lisboa. Todos los derechos reservados.`,
+              textContent: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
               headers: {
                 'X-Mailer': 'Estaba en Lisboa',
                 'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
           { status: 200 }
         );
       } catch (brevoError) {
-        console.warn('[Contact] Error con Brevo, usando fallback:', brevoError);
+        logger.warn('[Contact] Error con Brevo, usando fallback:', brevoError);
       }
     }
 
@@ -250,11 +250,11 @@ export async function POST(request: NextRequest) {
             <a href="mailto:contacto@estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">contacto@estabaenlisboa.com</a>
           </p>
           <p style="color: #999; font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-            © 2025 Estaba en Lisboa. Todos los derechos reservados.
+            © 2026 Estaba en Lisboa. Todos los derechos reservados.
           </p>
         </div>
       `,
-      text: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2025 Estaba en Lisboa. Todos los derechos reservados.`,
+      text: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
     });
 
     return NextResponse.json(
@@ -262,7 +262,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error: any) {
-    console.error('Error enviando email de contacto:', error);
+    logger.error('Error enviando email de contacto:', error);
     return NextResponse.json(
       { message: 'Error al enviar el mensaje. Por favor, intenta de nuevo.' },
       { status: 500 }

@@ -129,7 +129,7 @@ export default function AppsPage() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Las mejores apps para viajar a Lisboa en 2025: transporte, mapas offline, restaurantes y dinero. Útiles de verdad y sin perder tiempo.
+            Las mejores apps para viajar a Lisboa en 2026: transporte, mapas offline, restaurantes y dinero. Útiles de verdad y sin perder tiempo.
           </p>
         </div>
 

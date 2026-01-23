@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBrevoService } from '@/lib/brevo';
+import logger from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!result.success) {
-      console.error('Brevo error:', result.error);
+      logger.error('Brevo error:', result.error);
     }
 
     let emailSent = false;
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, emailSent });
   } catch (error) {
-    console.error('Quiz lead API error:', error);
+    logger.error('Quiz lead API error:', error);
     return NextResponse.json(
       { success: false, error: 'Server error' },
       { status: 500 }

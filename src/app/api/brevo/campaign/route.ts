@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/lib/logger';
 
 type CampaignPayload = {
   name: string;
@@ -66,7 +67,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, data: result });
   } catch (error) {
-    console.error('Brevo campaign API error:', error);
+    logger.error('Brevo campaign API error:', error);
     return NextResponse.json(
       { success: false, error: 'Server error' },
       { status: 500 }

@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guías Gratuitas de Lisboa 2025 por Locales | Itinerarios Completos",
-  description: "Guías completas y gratuitas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas interactivos. Creadas por locales. Actualizado Enero 2025.",
-  keywords: ["lisboa", "guias lisboa", "itinerarios lisboa", "viajar lisboa", "lisboa 2025", "guia local lisboa", "que ver en lisboa", "lisboa itinerario"],
+  title: "Guías Gratuitas de Lisboa 2026 por Locales | Itinerarios Completos",
+  description: "Guías completas y gratuitas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas interactivos. Creadas por locales. Actualizado Enero 2026.",
+  keywords: ["lisboa", "guias lisboa", "itinerarios lisboa", "viajar lisboa", "lisboa 2026", "guia local lisboa", "que ver en lisboa", "lisboa itinerario"],
   authors: [{ name: "Estaba en Lisboa", url: "https://estabaenlisboa.com" }],
   creator: "Estaba en Lisboa",
   publisher: "Estaba en Lisboa",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Guías de Lisboa 2025 por Locales - Evita Trampas Turísticas',
+    title: 'Guías de Lisboa 2026 por Locales - Evita Trampas Turísticas',
     description: 'Itinerarios verificados con horarios exactos, GPS y restaurantes locales. Sin trampas turísticas.',
     images: [
       {
@@ -133,74 +133,76 @@ export default function RootLayout({
             <Footer />
             <CookieBanner />
             <GoogleAnalytics />
-            <Script id="clerk-cors-debug" strategy="afterInteractive">
-              {`
-                (function() {
-                  if (typeof window === 'undefined') return;
-                  const run = function() {
-                    let corsErrorDetected = false;
-                    window.addEventListener('error', function(e) {
-                      if (e.message && e.message.includes('CORS') && e.filename && e.filename.includes('clerk')) {
-                        if (!corsErrorDetected) {
-                          corsErrorDetected = true;
-                          const logData = {
-                            location: 'layout.tsx:body',
-                            message: 'CORS error detected with Clerk',
-                            data: {
-                              errorMessage: e.message,
-                              filename: e.filename,
-                              lineno: e.lineno,
-                              colno: e.colno,
-                              timestamp: Date.now()
-                            },
-                            timestamp: Date.now(),
-                            sessionId: 'debug-session',
-                            runId: 'initial',
-                            hypothesisId: 'A'
-                          };
-                          fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(logData)
-                          }).catch(function() {});
+            {process.env.NODE_ENV === 'development' && (
+              <Script id="clerk-cors-debug" strategy="afterInteractive">
+                {`
+                  (function() {
+                    if (typeof window === 'undefined') return;
+                    const run = function() {
+                      let corsErrorDetected = false;
+                      window.addEventListener('error', function(e) {
+                        if (e.message && e.message.includes('CORS') && e.filename && e.filename.includes('clerk')) {
+                          if (!corsErrorDetected) {
+                            corsErrorDetected = true;
+                            const logData = {
+                              location: 'layout.tsx:body',
+                              message: 'CORS error detected with Clerk',
+                              data: {
+                                errorMessage: e.message,
+                                filename: e.filename,
+                                lineno: e.lineno,
+                                colno: e.colno,
+                                timestamp: Date.now()
+                              },
+                              timestamp: Date.now(),
+                              sessionId: 'debug-session',
+                              runId: 'initial',
+                              hypothesisId: 'A'
+                            };
+                            fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify(logData)
+                            }).catch(function() {});
+                          }
                         }
-                      }
-                    }, true);
+                      }, true);
 
-                    window.addEventListener('unhandledrejection', function(e) {
-                      if (e.reason && e.reason.toString && e.reason.toString().includes('CORS')) {
-                        if (!corsErrorDetected) {
-                          corsErrorDetected = true;
-                          const logData = {
-                            location: 'layout.tsx:body',
-                            message: 'CORS error detected in promise rejection',
-                            data: {
-                              reason: e.reason.toString(),
-                              timestamp: Date.now()
-                            },
-                            timestamp: Date.now(),
-                            sessionId: 'debug-session',
-                            runId: 'initial',
-                            hypothesisId: 'A'
-                          };
-                          fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(logData)
-                          }).catch(function() {});
+                      window.addEventListener('unhandledrejection', function(e) {
+                        if (e.reason && e.reason.toString && e.reason.toString().includes('CORS')) {
+                          if (!corsErrorDetected) {
+                            corsErrorDetected = true;
+                            const logData = {
+                              location: 'layout.tsx:body',
+                              message: 'CORS error detected in promise rejection',
+                              data: {
+                                reason: e.reason.toString(),
+                                timestamp: Date.now()
+                              },
+                              timestamp: Date.now(),
+                              sessionId: 'debug-session',
+                              runId: 'initial',
+                              hypothesisId: 'A'
+                            };
+                            fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify(logData)
+                            }).catch(function() {});
+                          }
                         }
-                      }
-                    });
-                  };
+                      });
+                    };
 
-                  if ('requestIdleCallback' in window) {
-                    window.requestIdleCallback(run);
-                  } else {
-                    setTimeout(run, 2000);
-                  }
-                })();
-              `}
-            </Script>
+                    if ('requestIdleCallback' in window) {
+                      window.requestIdleCallback(run);
+                    } else {
+                      setTimeout(run, 2000);
+                    }
+                  })();
+                `}
+              </Script>
+            )}
           </ErrorBoundary>
         </body>
       </html>

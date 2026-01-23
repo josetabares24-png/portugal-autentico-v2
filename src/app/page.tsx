@@ -28,7 +28,7 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
             <span className="material-symbols-outlined text-base">verified</span>
-            <span className="text-sm font-semibold tracking-wide">Actualizado Enero 2025</span>
+            <span className="text-sm font-semibold tracking-wide">Actualizado Enero 2026</span>
           </div>
 
           {/* Main Heading */}

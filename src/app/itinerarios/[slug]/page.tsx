@@ -153,7 +153,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
               <p className="text-sm text-slate-600">Restaurantes verificados, spots fotográficos y planes alternativos.</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Actualizado 2025</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Actualizado 2026</h3>
               <p className="text-sm text-slate-600">Datos vigentes, horarios revisados y recomendaciones recientes.</p>
             </div>
           </div>

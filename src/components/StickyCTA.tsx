@@ -47,7 +47,7 @@ export default function StickyCTA() {
 
         <div className="text-center sm:text-left pr-8">
           <p className="text-white font-black text-lg sm:text-xl">¿Listo para explorar Lisboa como un local?</p>
-          <p className="text-white/90 text-sm sm:text-base font-medium">Guías completas gratuitas · Actualizado 2025 · Mapas interactivos</p>
+          <p className="text-white/90 text-sm sm:text-base font-medium">Guías completas gratuitas · Actualizado 2026 · Mapas interactivos</p>
         </div>
         <Link
           href="/itinerarios"

@@ -40,7 +40,7 @@ export default function Lisboa1DiaPage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
             <span className="material-symbols-outlined text-yellow-400">verified</span>
-            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2025</span>
+            <span className="text-sm font-bold tracking-wide">GUÍAS VERIFICADAS 2026</span>
           </div>
 
           {/* Main Heading */}

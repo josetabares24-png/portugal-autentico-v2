@@ -5,10 +5,10 @@ import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 
 export const metadata: Metadata = {
-  title: 'Itinerarios en Lisboa 2025: Guías por Días y Barrios | Estaba en Lisboa',
+  title: 'Itinerarios en Lisboa 2026: Guías por Días y Barrios | Estaba en Lisboa',
   description: 'Elige tu itinerario de Lisboa con rutas por días, barrios y estilos. Guías locales con horarios reales, mapas y restaurantes.',
   openGraph: {
-    title: 'Itinerarios en Lisboa 2025: Guías por Días y Barrios',
+    title: 'Itinerarios en Lisboa 2026: Guías por Días y Barrios',
     description: 'Guías locales con rutas optimizadas, mapas y restaurantes reales en Lisboa.',
     url: 'https://estabaenlisboa.com/itinerarios',
     images: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Itinerarios en Lisboa 2025',
+        alt: 'Itinerarios en Lisboa 2026',
       },
     ],
   },
@@ -74,7 +74,7 @@ export default async function ItinerariosPage() {
         <div className="relative z-10 text-center px-6 py-16 max-w-6xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
             <span className="material-symbols-outlined text-base">map</span>
-            <span className="text-sm font-semibold tracking-wide">Guías de viaje 2025</span>
+            <span className="text-sm font-semibold tracking-wide">Guías de viaje 2026</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-display font-black leading-tight tracking-tight mb-6 text-white drop-shadow-lg">
@@ -118,7 +118,7 @@ export default async function ItinerariosPage() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-text-main mb-1">100% Actualizado</h3>
-                <p className="text-text-secondary text-sm">Verificado en 2025 por locales</p>
+                <p className="text-text-secondary text-sm">Verificado en 2026 por locales</p>
               </div>
             </div>
 

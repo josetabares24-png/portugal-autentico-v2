@@ -365,7 +365,7 @@ export default function InfoUtilPage() {
             </Link>
 
             <p className="text-white/70 text-xs md:text-sm mt-4 md:mt-8">
-              ✓ Desde 1.99€ · ✓ Descarga inmediata · ✓ Actualizadas 2025
+              ✓ Desde 1.99€ · ✓ Descarga inmediata · ✓ Actualizadas 2026
             </p>
           </div>
         </div>
