@@ -9,7 +9,7 @@ interface App {
   categoria: string;
   descripcion: string;
   descripcionLarga: string;
-  logo: string;
+  logo?: string; // Opcional - usamos iconos Material
   color: string;
   precio: 'Gratis' | 'Gratis (pago por uso)' | 'Freemium';
   linkAppStore?: string;
@@ -28,7 +28,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía, Uber: todo en una app con rutas en tiempo real.',
       descripcionLarga: 'Citymapper es la app de transporte público más completa para Lisboa. Te muestra todas las opciones: metro, autobuses, tranvías, e incluso integra Uber y Bolt. Lo mejor es que calcula rutas en tiempo real considerando retrasos, cierres y el tráfico actual. Perfecta para comparar opciones y elegir la ruta más rápida o económica.',
-      logo: 'https://d2k1ftgv7pobq7.cloudfront.net/images/logo-citymapper.svg',
+      logo: '', // Usar icono Material
       color: 'from-green-500 to-emerald-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/citymapper/id469463298',
@@ -54,7 +54,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'App oficial para recargar tu tarjeta de transporte público desde el móvil.',
       descripcionLarga: 'La app oficial de Viva Viagem te permite recargar tu tarjeta de transporte sin ir a una máquina. Es súper útil porque las máquinas en las estaciones de metro suelen tener colas, especialmente en hora pico. Con esta app recargas desde el móvil con tarjeta de crédito y luego acercas tu tarjeta física al lector NFC del móvil para transferir el saldo. También puedes ver tu historial de viajes y el saldo restante. Ahorra tiempo y evita colas.',
-      logo: 'https://www.metrolisboa.pt/wp-content/uploads/2020/03/viva-viagem-app.png',
+      logo: '', // Usar icono Material
       color: 'from-purple-500 to-purple-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/pt/app/viva-viagem/id1449782000',
@@ -67,7 +67,7 @@ export default function AppsPage() {
       categoria: 'Restaurantes',
       descripcion: 'Reserva restaurantes con descuentos de hasta 50%. Los mejores sitios de Lisboa con ofertas exclusivas.',
       descripcionLarga: 'TheFork (antes LaFourchette) es la app de reservas de restaurantes más usada en Lisboa. Lo mejor son los descuentos: muchos restaurantes ofrecen 30-50% de descuento si reservas a través de la app, especialmente en horarios menos populares (almuerzos entre semana, cenas tempranas). También puedes ver menús, fotos de platos, y reseñas. Perfecta para reservar en restaurantes populares que suelen estar llenos. Los descuentos son reales y funcionan - he ahorrado cientos de euros usando esta app.',
-      logo: 'https://cdn.thefork.com/images/logo-thefork.svg',
+      logo: '', // Usar icono Material
       color: 'from-red-500 to-rose-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/thefork-restaurant-booking/id318452441',
@@ -80,7 +80,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Taxis privados más baratos que taxis oficiales. Precio fijo antes de viajar, pago con tarjeta.',
       descripcionLarga: 'Uber es la app de transporte privado más conocida en Lisboa. Más barata que los taxis oficiales y más cómoda. Ves el precio estimado antes de pedir, pagas con tarjeta, y rastreas el viaje en tiempo real. Perfecta para ir del aeropuerto al centro (15-20€ vs 25-30€ en taxi oficial) o moverte por la noche cuando el transporte público cierra.',
-      logo: 'https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg',
+      logo: '', // Usar icono Material
       color: 'from-slate-700 to-slate-800',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
@@ -93,7 +93,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Similar a Uber pero 10-20% más barato. La opción más económica para taxis privados en Lisboa.',
       descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos que Uber para el mismo trayecto. Funciona igual: pides un viaje, ves el precio, pagas con tarjeta. Siempre compara ambas apps antes de pedir - a veces Bolt es mucho más barato, especialmente en horas pico. También tienen opción de compartir viaje para ahorrar aún más.',
-      logo: 'https://bolt.eu/bolt-logo.svg',
+      logo: '', // Usar icono Material
       color: 'from-yellow-500 to-orange-500',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
@@ -106,7 +106,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'App oficial de trenes portugueses. Compra billetes, consulta horarios y rutas a Sintra, Cascais y otras ciudades.',
       descripcionLarga: 'La app oficial de Comboios de Portugal (trenes) es esencial si planeas ir a Sintra, Cascais, o cualquier otra ciudad. Puedes comprar billetes directamente desde la app, consultar horarios en tiempo real, y ver rutas. Mucho más fácil que ir a la estación. Los billetes son más baratos si los compras con antelación. También muestra conexiones y tiempos de transbordo.',
-      logo: 'https://www.cp.pt/passageiros/pt/media/logotipos/cp-logo.png',
+      logo: '', // Usar icono Material
       color: 'from-blue-600 to-blue-700',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/pt/app/cp-comboios-de-portugal/id477117471',
@@ -119,7 +119,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Tarjeta prepago para viajar sin comisiones de cambio. Tipo de cambio real, sacar dinero gratis.',
       descripcionLarga: 'Revolut es una tarjeta prepago que te ahorra dinero al viajar. Los bancos tradicionales te cobran comisiones de cambio (2-3%) y tasas infladas. Revolut te da el tipo de cambio real del mercado sin comisiones ocultas. Puedes cambiar euros a tu moneda antes de viajar o pagar directamente. También puedes sacar dinero gratis hasta cierto límite mensual. La app es muy fácil de usar y puedes congelar/descongelar la tarjeta desde el móvil.',
-      logo: 'https://www.revolut.com/favicon-192x192.png',
+      logo: '', // Usar icono Material
       color: 'from-indigo-500 to-indigo-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/revolut-better-way-to-money/id932493382',
@@ -132,7 +132,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Similar a Revolut pero con mejor tipo de cambio. Ideal para cambiar grandes cantidades de dinero.',
       descripcionLarga: 'Wise (antes TransferWise) es como Revolut pero con mejor tipo de cambio. Especialmente útil si necesitas cambiar grandes cantidades de dinero. Te da el tipo de cambio real del mercado sin comisiones ocultas. La app es más simple que Revolut pero igual de efectiva. Perfecta si ya tienes cuenta en Wise o si necesitas cambiar mucho dinero de una vez.',
-      logo: 'https://wise.com/public-resources/assets/logos/wise_logo.svg',
+      logo: '', // Usar icono Material
       color: 'from-teal-500 to-cyan-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/wise-money-transfers/id612261329',
@@ -145,7 +145,7 @@ export default function AppsPage() {
       categoria: 'Eventos',
       descripcion: 'Qué hacer en Lisboa: eventos, conciertos, exposiciones, mercados. Agenda actualizada diariamente.',
       descripcionLarga: 'Timeout Lisboa es la guía de eventos y cultura más completa de la ciudad. Actualizan diariamente con conciertos, exposiciones, mercados, festivales, y eventos especiales. También tienen recomendaciones de restaurantes, bares, y lugares que visitar. Es la versión digital de la revista Time Out que se distribuye gratis en hoteles y cafés. Perfecta para descubrir qué está pasando en Lisboa durante tu visita, especialmente si buscas música en vivo, mercados locales, o eventos culturales.',
-      logo: 'https://www.timeout.com/favicon-192x192.png',
+      logo: '', // Usar icono Material
       color: 'from-orange-500 to-orange-600',
       precio: 'Gratis',
       linkWeb: 'https://www.timeout.pt/lisboa',
