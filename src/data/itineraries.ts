@@ -567,7 +567,7 @@ export const lisboaRomanticaTimeline: TimelineStop[] = [
     time: '13:30',
     title: 'Almuerzo en Belém — Cena junto al río',
     description: 'Bajad del tranvía en Belém y caminad hasta algún restaurante con terraza junto al Tajo. Belém tiene varios restaurantes con vistas al río perfectos para un almuerzo romántico: "Darwin\'s Café" (moderno, terraza al río, 25-35€/persona), "A Margem" (portugués tradicional, más económico, 15-25€/persona), o simplemente "Pastéis de Belém" si queréis algo más casual (los pasteles originales, 1.30€ cada uno, con café). Después del almuerzo, pasad por el Monasterio dos Jerónimos —la iglesia es GRATIS y tiene techos abovedados de 25 metros que parecen palmeras de piedra. Es impresionante entrar juntos y contemplar la arquitectura. Si queréis, podéis visitar el claustro (10€) que es hermoso —dos pisos de arcadas talladas rodeando un jardín, perfecto para fotos de arcos infinitos.',
-    tip: '🍽️ Restaurantes con terraza: Darwin's Café (25-35€), A Margem (15-25€). Pastéis de Belém: 1.30€/pastel, café 1€. TRUCO: Entra directo a "Salão" (evitas cola). Monasterio Jerónimos: IGLESIA GRATIS (imperdible), claustro 10€ (opcional pero hermoso). Tiempo: 1-1.5h para comer tranquilo.',
+    tip: '🍽️ Restaurantes con terraza: Darwin\'s Café (25-35€), A Margem (15-25€). Pastéis de Belém: 1.30€/pastel, café 1€. TRUCO: Entra directo a "Salão" (evitas cola). Monasterio Jerónimos: IGLESIA GRATIS (imperdible), claustro 10€ (opcional pero hermoso). Tiempo: 1-1.5h para comer tranquilo.',
     type: 'food',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800',
     coordinates: { lat: 38.6979, lng: -9.2061 },
