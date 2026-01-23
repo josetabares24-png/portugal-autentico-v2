@@ -143,7 +143,7 @@ const optionVariants = {
     opacity: 1,
     x: 0,
     scale: 1,
-    transition: { delay: i * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: i * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] as const },
   }),
 };
 
