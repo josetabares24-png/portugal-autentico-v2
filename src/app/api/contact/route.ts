@@ -1,25 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { validateEmail, createErrorResponse } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
+
   try {
     const body = await request.json();
     const { nombre, email, asunto, mensaje } = body;
 
     // Validación básica
     if (!nombre || !email || !asunto || !mensaje) {
-      return NextResponse.json(
-        { message: 'Todos los campos son requeridos' },
-        { status: 400 }
-      );
+      return createErrorResponse('Todos los campos son requeridos', 400);
     }
 
     // Validar formato de email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { message: 'Email no válido' },
-        { status: 400 }
-      );
+    if (!validateEmail(email)) {
+      return createErrorResponse('Email no válido', 400);
     }
 
     // Mapear asuntos a texto legible

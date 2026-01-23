@@ -1,16 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBrevoService } from '@/lib/brevo';
 import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { validateEmail, createErrorResponse } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
+
   try {
     const data = await request.json();
 
-    if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      return NextResponse.json(
-        { success: false, error: 'Email inválido' },
-        { status: 400 }
-      );
+    if (!data.email || !validateEmail(data.email)) {
+      return createErrorResponse('Email inválido', 400);
     }
 
     const brevo = getBrevoService();

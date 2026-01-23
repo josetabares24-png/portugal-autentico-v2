@@ -6,7 +6,7 @@ import { mainItineraries } from '@/data/itineraries';
 
 export default function HomePage() {
   return (
-    <main className="bg-background-light">
+    <main id="main-content" className="bg-background-light">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

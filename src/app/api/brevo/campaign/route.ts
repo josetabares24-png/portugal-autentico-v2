@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { createErrorResponse } from '@/lib/api-utils';
 
 type CampaignPayload = {
   name: string;
@@ -13,6 +15,15 @@ type CampaignPayload = {
 const BREVO_API_URL = 'https://api.brevo.com/v3';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting (más permisivo para admin - 30 requests/minuto)
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
   try {
     const apiKey = process.env.BREVO_API_KEY;
     if (!apiKey) {

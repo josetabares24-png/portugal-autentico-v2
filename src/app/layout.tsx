@@ -7,6 +7,7 @@ import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import ErrorBoundaryComponent from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -109,6 +110,13 @@ export default function RootLayout({
           <SchemaMarkup />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {/* Skip to main content link - Accesibilidad */}
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#FF6B35] focus:text-white focus:rounded focus:shadow-lg focus:outline-none"
+          >
+            Saltar al contenido principal
+          </a>
           {/* Google tag (gtag.js) - Aplicado a todas las páginas */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-8F54LQ5862"
@@ -133,6 +141,7 @@ export default function RootLayout({
             <Footer />
             <CookieBanner />
             <GoogleAnalytics />
+          </ErrorBoundary>
             {process.env.NODE_ENV === 'development' && (
               <Script id="clerk-cors-debug" strategy="afterInteractive">
                 {`

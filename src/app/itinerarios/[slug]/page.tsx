@@ -98,7 +98,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
   const socialGuideId = socialGuideIdMap[slug] || slug;
 
   return (
-    <main>
+    <main id="main-content">
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0">
           <Image

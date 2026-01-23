@@ -224,14 +224,14 @@ export default function DondeDormirPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background-light">
+    <main id="main-content" className="min-h-screen bg-background-light">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg"
-            alt="Hotel en Lisboa"
+            alt="Hotel boutique en el barrio histórico de Chiado, Lisboa, con fachada tradicional portuguesa y balcones decorativos"
             fill
             className="object-cover"
             priority
@@ -474,7 +474,7 @@ export default function DondeDormirPage() {
                 >
                   <Image
                     src={hotel.image}
-                    alt={`Hotel ${hotel.name}`}
+                    alt={`Hotel ${hotel.name} en ${hotel.barrio}, Lisboa - ${hotel.descripcion || 'Alojamiento recomendado'}`}
                     fill
                     className="object-cover"
                   />

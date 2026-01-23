@@ -1933,7 +1933,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
-    <main className="bg-white">
+    <main id="main-content" className="bg-white">
       {/* Breadcrumb minimalista */}
       <div className="border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 py-3">
@@ -1999,7 +1999,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
           <Image
             src={heroImage}
-            alt={article.titulo}
+            alt={`Imagen del artículo: ${article.titulo} sobre ${article.categoria} en Lisboa`}
             fill
             className="object-cover"
             priority

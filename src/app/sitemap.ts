@@ -1,10 +1,12 @@
 import { MetadataRoute } from 'next'
+import { blogPosts } from '@/data/blog-posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://estabaenlisboa.com'
   const currentDate = new Date()
 
-  return [
+  // URLs estáticas
+  const staticUrls: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
@@ -143,5 +145,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
-  ]
+  ];
+
+  // URLs dinámicas del blog
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.id}`,
+    lastModified: new Date(post.fecha) || currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticUrls, ...blogUrls];
 }

@@ -1,17 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { validateEmail, createErrorResponse, sendBrevoEmail, addBrevoContact } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
+
   try {
     const body = await request.json();
     const { email, nombre, tipo, dias, personas, totalViaje, totalPersonaDia, desglose, presupuesto, alojamiento, ritmo, intereses } = body;
 
     // Validación
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { success: false, error: 'Email no válido' },
-        { status: 400 }
-      );
+    if (!email || !validateEmail(email)) {
+      return createErrorResponse('Email no válido', 400);
     }
 
     if (!nombre || nombre.trim().length === 0) {
@@ -375,30 +384,17 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
 
           if (response.ok) {
             // También agregar a Brevo como contacto
-            try {
-              await fetch('https://api.brevo.com/v3/contacts', {
-                method: 'POST',
-                headers: {
-                  Accept: 'application/json',
-                  'Content-Type': 'application/json',
-                  'api-key': brevoApiKey,
-                },
-                body: JSON.stringify({
-                  email,
-                  attributes: {
-                    NOMBRE: nombre,
-                    PRESUPUESTO_TIPO: tipoNombre,
-                    PRESUPUESTO_DIAS: dias.toString(),
-                    PRESUPUESTO_PERSONAS: personas.toString(),
-                    PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
-                  },
-                  listIds: [5], // Lista ID 5
-                  updateEnabled: true,
-                }),
-              });
-            } catch (contactError) {
-              logger.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
-            }
+            await addBrevoContact({
+              email,
+              name: nombre,
+              attributes: {
+                PRESUPUESTO_TIPO: tipoNombre,
+                PRESUPUESTO_DIAS: dias.toString(),
+                PRESUPUESTO_PERSONAS: personas.toString(),
+                PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
+              },
+              listIds: [5],
+            });
 
             return NextResponse.json(
               { success: true, message: 'Presupuesto enviado correctamente' },
@@ -430,30 +426,17 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
 
           if (response.ok) {
             // También agregar a Brevo como contacto
-            try {
-              await fetch('https://api.brevo.com/v3/contacts', {
-                method: 'POST',
-                headers: {
-                  Accept: 'application/json',
-                  'Content-Type': 'application/json',
-                  'api-key': brevoApiKey,
-                },
-                body: JSON.stringify({
-                  email,
-                  attributes: {
-                    NOMBRE: nombre,
-                    PRESUPUESTO_TIPO: tipoNombre,
-                    PRESUPUESTO_DIAS: dias.toString(),
-                    PRESUPUESTO_PERSONAS: personas.toString(),
-                    PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
-                  },
-                  listIds: [5], // Lista ID 5
-                  updateEnabled: true,
-                }),
-              });
-            } catch (contactError) {
-              logger.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
-            }
+            await addBrevoContact({
+              email,
+              name: nombre,
+              attributes: {
+                PRESUPUESTO_TIPO: tipoNombre,
+                PRESUPUESTO_DIAS: dias.toString(),
+                PRESUPUESTO_PERSONAS: personas.toString(),
+                PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
+              },
+              listIds: [5],
+            });
 
             return NextResponse.json(
               { success: true, message: 'Presupuesto enviado correctamente' },
@@ -462,7 +445,7 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
           }
         }
       } catch (brevoError) {
-        console.warn('[Presupuesto] Error con Brevo, usando fallback:', brevoError);
+        logger.warn('[Presupuesto] Error con Brevo, usando fallback:', brevoError);
       }
     }
 

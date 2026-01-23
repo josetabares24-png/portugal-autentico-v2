@@ -1,27 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBrevoService } from '@/lib/brevo';
 import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { validateEmail, createErrorResponse, sendBrevoEmail, addBrevoContact } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
+
   try {
     const body = await request.json();
     const { name, email } = body;
 
     // Validación básica
     if (!name || !email) {
-      return NextResponse.json(
-        { message: 'Nombre y email son requeridos' },
-        { status: 400 }
-      );
+      return createErrorResponse('Nombre y email son requeridos', 400);
     }
 
     // Validar formato de email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { message: 'Email no válido' },
-        { status: 400 }
-      );
+    if (!validateEmail(email)) {
+      return createErrorResponse('Email no válido', 400);
     }
 
     // Intentar usar Brevo primero
@@ -51,28 +56,14 @@ export async function POST(request: NextRequest) {
 
         if (response.ok) {
           // Agregar contacto a Brevo
-          try {
-            await fetch('https://api.brevo.com/v3/contacts', {
-              method: 'POST',
-              headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': brevoApiKey,
-              },
-              body: JSON.stringify({
-                email,
-                attributes: {
-                  NOMBRE: name || email.split('@')[0],
-                  FUENTE: 'blog',
-                },
-                listIds: [5], // Lista ID 5 (Newsletter)
-                updateEnabled: true,
-              }),
-            });
-          } catch (contactError) {
-            // No fallar si no se puede agregar el contacto, el email ya se envió
-            logger.warn('[Subscribe] Error agregando contacto a Brevo:', contactError);
-          }
+          await addBrevoContact({
+            email,
+            name: name || email.split('@')[0],
+            attributes: {
+              FUENTE: 'blog',
+            },
+            listIds: [5],
+          });
 
           return NextResponse.json({ 
             success: true, 
@@ -150,28 +141,14 @@ export async function POST(request: NextRequest) {
 
         if (response.ok) {
           // Agregar contacto a Brevo
-          try {
-            await fetch('https://api.brevo.com/v3/contacts', {
-              method: 'POST',
-              headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': process.env.BREVO_API_KEY || '',
-              },
-              body: JSON.stringify({
-                email,
-                attributes: {
-                  NOMBRE: name || email.split('@')[0],
-                  FUENTE: 'blog',
-                },
-                listIds: [5], // Lista ID 5 (Newsletter)
-                updateEnabled: true,
-              }),
-            });
-          } catch (contactError) {
-            // No fallar si no se puede agregar el contacto, el email ya se envió
-            logger.warn('[Subscribe] Error agregando contacto a Brevo:', contactError);
-          }
+          await addBrevoContact({
+            email,
+            name: name || email.split('@')[0],
+            attributes: {
+              FUENTE: 'blog',
+            },
+            listIds: [5],
+          });
 
           return NextResponse.json({ 
             success: true, 
@@ -181,7 +158,7 @@ export async function POST(request: NextRequest) {
         }
       }
     } catch (brevoError) {
-      console.warn('[Subscribe] Brevo no disponible, usando fallback nodemailer:', brevoError);
+      logger.warn('[Subscribe] Brevo no disponible, usando fallback nodemailer:', brevoError);
     }
 
     // Fallback a nodemailer si Brevo no está disponible

@@ -3,12 +3,23 @@ import Stripe from 'stripe';
 import { STRIPE_PRODUCTS } from '@/lib/stripe-products';
 import { auth } from '@clerk/nextjs/server';
 import logger from '@/lib/logger';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { createErrorResponse } from '@/lib/api-utils';
 
 // Forzar que esta ruta sea dinámica para evitar análisis en build time
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
+  // Rate limiting (más permisivo para checkout - 20 requests/minuto)
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
   // Validar variables de entorno en runtime, no en tiempo de import
   if (!process.env.STRIPE_SECRET_KEY) {
     console.error('STRIPE_SECRET_KEY no está configurada');

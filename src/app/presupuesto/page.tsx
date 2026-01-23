@@ -109,7 +109,7 @@ export default function PresupuestoPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FFFDF7] relative overflow-hidden">
+    <main id="main-content" className="min-h-screen bg-[#FFFDF7] relative overflow-hidden">
       {/* Fondo con textura sutil */}
       <div className="fixed inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{

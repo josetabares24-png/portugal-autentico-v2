@@ -183,7 +183,7 @@ export default function TransportePage() {
   };
 
   return (
-    <main className="min-h-screen bg-background-light">
+    <main id="main-content" className="min-h-screen bg-background-light">
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

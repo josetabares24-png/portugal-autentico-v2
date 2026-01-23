@@ -1,8 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
+import { createErrorResponse } from '@/lib/api-utils';
 
 export async function GET(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
   const { searchParams } = new URL(request.url);
   const guideId = searchParams.get('guideId');
 
@@ -24,9 +35,19 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
+      429
+    );
+  }
+
   const { userId } = await auth();
   if (!userId) {
-    return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+    return createErrorResponse('No autorizado', 401);
   }
 
   const body = await request.json();

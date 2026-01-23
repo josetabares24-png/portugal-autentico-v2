@@ -55,7 +55,7 @@ export default async function ItinerariosPage() {
     })),
   };
   return (
-    <main>
+    <main id="main-content">
       {/* Hero Section - Estilo consistente con home */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

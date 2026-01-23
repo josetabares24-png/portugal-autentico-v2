@@ -31,7 +31,7 @@ export default function BlogClient() {
   const remaining = postsFiltrados.slice(4);
 
   return (
-    <main className="bg-background-light">
+    <main id="main-content" className="bg-background-light">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -93,6 +93,8 @@ export default function BlogClient() {
               <button
                 key={cat}
                 onClick={() => setCategoriaActiva(cat)}
+                aria-label={`Filtrar por categoría: ${cat}`}
+                aria-pressed={cat === categoriaActiva}
                 className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full font-semibold transition-all text-xs md:text-sm ${
                   cat === categoriaActiva
                     ? 'bg-primary text-white shadow-sm'
@@ -240,7 +242,7 @@ export default function BlogClient() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-lisboa.jpg"
-            alt="Lisboa sunset"
+            alt="Atardecer sobre Lisboa con el puente 25 de Abril iluminado y el río Tajo reflejando los colores del cielo"
             fill
             className="object-cover"
           />
