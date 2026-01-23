@@ -229,12 +229,13 @@ export default function Lisboa3DiasPremiumPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboa3DiasSintraTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave del día 3."
-        guideTitle="Lisboa + Alrededores"
-        fallbackQuery="Lisboa 3 días Sintra Cascais itinerario"
+        description="Mapa completo con Lisboa, Sintra, Cascais y los puntos clave. Haz click en los marcadores numerados para ver cada parada."
+        guideTitle="Lisboa 3 Días + Sintra"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}

@@ -213,12 +213,13 @@ export default function LisboaFamiliarPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboaFamiliarTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Parques, actividades y paradas familiares ubicadas en un solo mapa."
+        description="Parques, museos familiares y restaurantes kid-friendly en un mapa. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa en Familia"
-        fallbackQuery="Lisboa familiar itinerario"
       />
 
       {/* Photo Gallery Section */}

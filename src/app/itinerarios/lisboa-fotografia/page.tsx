@@ -213,12 +213,13 @@ export default function LisboaFotografiaPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboaFotografiaTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Spots fotográficos, golden hour y ubicaciones exactas en un mapa interactivo."
-        guideTitle="Lisboa Fotografía"
-        fallbackQuery="Lisboa fotografía spots"
+        description="Spots fotográficos con mejores horas de luz, miradores secretos y rincones instagrameables. Haz click en los marcadores numerados para ver cada parada."
+        guideTitle="Lisboa para Fotografía"
       />
 
       {/* Photo Gallery Section */}

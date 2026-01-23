@@ -239,12 +239,13 @@ export default function LisboaFullWeekPage() {
       {/* Included Features */}
       <IncludedFeatures />
 
-      <InteractiveMap
-        mapId="PLACEHOLDER"
+      <ItineraryMap
+        coordinates={lisboaFullWeekTimeline
+          .filter(stop => stop.coordinates)
+          .map(stop => stop.coordinates!)}
         title="Mapa Interactivo del Itinerario"
-        description="Todos los barrios, escapadas y rutas de la semana completa en un solo mapa."
+        description="Mapa completo con Lisboa, Sintra, Cascais, Setúbal y Arrábida con todas las paradas de la semana. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa Full Week"
-        fallbackQuery="Lisboa 7 días itinerario"
       />
 
       {/* Photo Gallery Section - Reemplaza mapa interactivo */}
