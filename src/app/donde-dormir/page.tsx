@@ -474,7 +474,7 @@ export default function DondeDormirPage() {
                 >
                   <Image
                     src={hotel.image}
-                    alt={`Hotel ${hotel.name} en ${hotel.barrio}, Lisboa - ${hotel.descripcion || 'Alojamiento recomendado'}`}
+                    alt={`Hotel ${hotel.name} en ${zones.find(z => z.id === hotel.zone)?.name || hotel.zone}, Lisboa - ${hotel.description || 'Alojamiento recomendado'}`}
                     fill
                     className="object-cover"
                   />
