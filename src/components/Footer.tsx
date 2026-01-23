@@ -15,9 +15,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Estaba en Lisboa"
-                width={140}
-                height={44}
-                className="h-11 w-auto brightness-0 invert"
+                width={180}
+                height={56}
+                className="h-14 w-auto"
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-4">
@@ -71,15 +71,16 @@ export default function Footer() {
               <span>© {currentYear} Estaba en Lisboa. Todos los derechos reservados.</span>
             </div>
 
-          {/* Enlaces legales */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/aviso-legal" className="hover:text-slate-300 transition-colors">Aviso Legal</Link>
-            <span className="text-slate-700">·</span>
-            <Link href="/politica-privacidad" className="hover:text-slate-300 transition-colors">Privacidad</Link>
-            <span className="text-slate-700">·</span>
-            <Link href="/terminos-condiciones" className="hover:text-slate-300 transition-colors">Términos</Link>
-            <span className="text-slate-700">·</span>
-            <Link href="/politica-cookies" className="hover:text-slate-300 transition-colors">Cookies</Link>
+            {/* Enlaces legales */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link href="/aviso-legal" className="hover:text-slate-300 transition-colors">Aviso Legal</Link>
+              <span className="text-slate-700">·</span>
+              <Link href="/politica-privacidad" className="hover:text-slate-300 transition-colors">Privacidad</Link>
+              <span className="text-slate-700">·</span>
+              <Link href="/terminos-condiciones" className="hover:text-slate-300 transition-colors">Términos</Link>
+              <span className="text-slate-700">·</span>
+              <Link href="/politica-cookies" className="hover:text-slate-300 transition-colors">Cookies</Link>
+            </div>
           </div>
         </div>
       </div>

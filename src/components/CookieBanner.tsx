@@ -14,16 +14,17 @@ export default function CookieBanner() {
     const hasValidConsent = storedConsent === 'accepted' || storedConsent === 'rejected';
 
     if (hasValidConsent && explicit === 'true') {
+      // Usuario ya ha dado consentimiento explícito
       setConsent(storedConsent);
       setExplicitConsent(true);
       document.documentElement.dataset.cookieConsent = storedConsent;
       setShow(false);
     } else {
-      localStorage.removeItem('cookieConsent');
-      localStorage.removeItem('cookieConsentExplicit');
+      // No hay consentimiento previo - mostrar banner y NO rechazar automáticamente
       setConsent(null);
       setExplicitConsent(false);
       setShow(true);
+      // NO establecer ningún valor por defecto - esperar acción explícita del usuario
     }
   }, []);
 

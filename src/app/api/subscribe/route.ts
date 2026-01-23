@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { getBrevoService } from '@/lib/brevo';
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,7 +23,120 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Configurar transporter de email
+    // Intentar usar Brevo primero
+    try {
+      const brevoApiKey = process.env.BREVO_API_KEY;
+      const subscriptionTemplateId = process.env.BREVO_SUBSCRIPTION_TEMPLATE_ID;
+      
+      if (brevoApiKey && subscriptionTemplateId) {
+        // Usar plantilla de Brevo
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'api-key': brevoApiKey,
+          },
+          body: JSON.stringify({
+            templateId: parseInt(subscriptionTemplateId, 10),
+            to: [{ email, name }],
+            headers: {
+              'X-Mailer': 'Estaba en Lisboa',
+              'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
+              'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+            },
+          }),
+        });
+
+        if (response.ok) {
+          return NextResponse.json({ 
+            success: true, 
+            message: 'Email de bienvenida enviado correctamente',
+            method: 'brevo_template'
+          });
+        }
+      }
+
+      // Si no hay template, usar método alternativo de Brevo
+      const senderName = process.env.BREVO_SENDER_NAME || 'Estaba en Lisboa';
+      const senderEmail = process.env.BREVO_SENDER_EMAIL;
+      
+      if (senderEmail) {
+        const htmlContent = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <tr>
+            <td style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 40px 30px; text-align: center;">
+              <img src="https://estabaenlisboa.com/logo.png" alt="Estaba en Lisboa" width="180" height="56" style="display: block; max-width: 180px; height: auto; border: 0; margin: 0 auto;" />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 40px 30px;">
+              <h1 style="margin: 0 0 20px 0; font-size: 24px; font-weight: 700; color: #333;">¡Hola ${name}! 👋</h1>
+              <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #555;">Gracias por suscribirte a <strong style="color: #FF6B35;">Estaba en Lisboa</strong>.</p>
+              <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #555;">Recibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.</p>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="https://estabaenlisboa.com/itinerarios" style="display: inline-block; background: #FF6B35; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 600;">Explorar guías →</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="background: #f9f9f9; padding: 20px; text-align: center; border-top: 1px solid #eee;">
+              <p style="margin: 0; font-size: 12px; color: #999;"><a href="{{unsubscribe}}" style="color: #FF6B35; text-decoration: none;">Darse de baja</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+        `;
+
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'api-key': process.env.BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: senderName, email: senderEmail },
+            to: [{ email, name }],
+            subject: '¡Bienvenido a Estaba en Lisboa!',
+            htmlContent,
+            textContent: `¡Hola ${name}!\n\nGracias por suscribirte a Estaba en Lisboa.\n\nRecibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.\n\nExplora nuestras guías: https://estabaenlisboa.com/itinerarios\n\nDarse de baja: https://estabaenlisboa.com/unsubscribe\n\n© 2025 Estaba en Lisboa. Todos los derechos reservados.`,
+            headers: {
+              'X-Mailer': 'Estaba en Lisboa',
+              'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
+              'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+            },
+          }),
+        });
+
+        if (response.ok) {
+          return NextResponse.json({ 
+            success: true, 
+            message: 'Email de bienvenida enviado correctamente',
+            method: 'brevo_html'
+          });
+        }
+      }
+    } catch (brevoError) {
+      console.warn('[Subscribe] Brevo no disponible, usando fallback nodemailer:', brevoError);
+    }
+
+    // Fallback a nodemailer si Brevo no está disponible
+    const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
@@ -34,7 +147,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Email de bienvenida con link de descarga
+    // Email de bienvenida con link de descarga (fallback nodemailer)
     await transporter.sendMail({
       from: `"Estaba en Lisboa" <${process.env.SMTP_USER}>`,
       to: email,

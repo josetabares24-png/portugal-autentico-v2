@@ -39,14 +39,14 @@ const timelineMap: Record<string, TimelineStop[]> = {
 export default async function AdminGuiaEditPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const admin = await isAdmin();
   if (!admin) {
     redirect('/');
   }
 
-  const { slug } = params;
+  const { slug } = await params;
 
   const guide = await getGuideEditData(slug);
 

@@ -130,38 +130,46 @@ export async function getGuideEditData(slug: string): Promise<GuideEditData | nu
   const localPack = guidePacks[slug as keyof typeof guidePacks];
   const localMeta = getLocalGuideMeta(slug);
 
+  // Intentar obtener de Supabase solo si está configurado
   try {
-    validateSupabaseConfig();
-    const { data, error } = await supabaseAdmin
-      .from('guides')
-      .select('*')
-      .eq('slug', slug)
-      .single();
+    // Verificar si Supabase está configurado sin lanzar error
+    const hasSupabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY;
+    
+    if (hasSupabase) {
+      validateSupabaseConfig();
+      const { data, error } = await supabaseAdmin
+        .from('guides')
+        .select('*')
+        .eq('slug', slug)
+        .single();
 
-    if (!error && data) {
-      const row = data as GuideRow;
-      return {
-        slug: row.slug,
-        title: row.title,
-        subtitle: row.subtitle || localPack?.subtitle || '',
-        duration: row.duration,
-        price: Number(row.price),
-        image: row.image,
-        color: row.color || localPack?.color || 'from-slate-600 to-slate-800',
-        description: row.description,
-        includes: row.includes || localPack?.includes || [],
-        highlights: row.highlights || localPack?.highlights || [],
-        features: row.features || localMeta?.features || [],
-        featured: row.featured || false,
-        badgeText: row.badge_text || localMeta?.badge?.text,
-        badgeColor: row.badge_color || localMeta?.badge?.color,
-        type: row.type || (localMeta?.id.includes('full-week') || localMeta?.id.includes('romantica') || localMeta?.id.includes('familiar') || localMeta?.id.includes('fotografia') ? 'special' : 'main'),
-      };
+      if (!error && data) {
+        const row = data as GuideRow;
+        return {
+          slug: row.slug,
+          title: row.title,
+          subtitle: row.subtitle || localPack?.subtitle || '',
+          duration: row.duration,
+          price: Number(row.price),
+          image: row.image,
+          color: row.color || localPack?.color || 'from-slate-600 to-slate-800',
+          description: row.description,
+          includes: row.includes || localPack?.includes || [],
+          highlights: row.highlights || localPack?.highlights || [],
+          features: row.features || localMeta?.features || [],
+          featured: row.featured || false,
+          badgeText: row.badge_text || localMeta?.badge?.text,
+          badgeColor: row.badge_color || localMeta?.badge?.color,
+          type: row.type || (localMeta?.id.includes('full-week') || localMeta?.id.includes('romantica') || localMeta?.id.includes('familiar') || localMeta?.id.includes('fotografia') ? 'special' : 'main'),
+        };
+      }
     }
   } catch (error) {
-    // fallback below
+    // Si hay error con Supabase, continuar con fallback local
+    console.warn(`[guide-store] Supabase no disponible, usando datos locales para ${slug}:`, error instanceof Error ? error.message : 'Unknown error');
   }
 
+  // Fallback a datos locales
   if (!localPack || !localMeta) {
     return null;
   }

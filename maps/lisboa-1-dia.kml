@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa 1 Día - Lo Esencial - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa 1 Día - Lo Esencial</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Almuerzo en Tasca do Chico — Donde comen los locales</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Tasca do Chico — Donde comen los locales</h3>
+            <p><strong>⏰ Hora:</strong> 13:00</p>
+            <p>Hora de comer de verdad. Y no, no vamos a un sitio turístico con menús en cinco idiomas y fotos de los platos en la puerta. Tasca do Chico es donde van los trabajadores del barrio, los vecinos de toda la vida, y los lisboetas que saben dónde está la comida buena y barata. Está en Bairro Alto (baja d...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍷 No reservan para el almuerzo —llegas y esperas mesa (máximo 10-15 minutos, los locales comen rápido y se van). Abre de lunes a sábado 12:00-15:00 (después cierran la cocina). Domingos cerrado. Llev...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7131,-9.1443" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1443,38.7131,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pastéis de Belém</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Pastéis de Belém</h3>
+            <p><strong>⏰ Hora:</strong> 16:30</p>
+            <p>Vale, ahora lo que viniste a hacer a Lisboa: comer el pastel de nata ORIGINAL. No es un pastel de nata normal - es EL pastel de nata. La receta secreta está guardada en una sala a la que solo entran 3 maestros pasteleros, y nadie más en el mundo sabe cómo hacerlos exactamente así. Se hacen aquí desd...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 ORDEN PERFECTA: 2-3 pastéis quentes, un galão, y siéntate en el salón de atrás. Espolverea canela, no tengas miedo. Van a estar a 200°C así que sopla antes de morder. El salón de atrás tiene MENOS ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6976,-9.2031" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.2031,38.6976,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena en Bairro Alto — El barrio que nunca duerme</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena en Bairro Alto — El barrio que nunca duerme</h3>
+            <p><strong>⏰ Hora:</strong> 20:00</p>
+            <p>Para cerrar el día perfecto, volvemos al centro histórico —específicamente Bairro Alto, el barrio bohemio donde los lisboetas van a cenar y salir desde hace quinientos años. Las calles son estrechas, empedradas, llenas de grafitis que cambian cada semana, y restaurantes pequeños con diez mesas donde...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ RESERVA para cenar (especialmente viernes/sábado) —llama por la tarde o reserva online. Si no reservaste, llega a las 19:30 antes del rush de las 20:30. POST-CENA: Para drinks con vistas, &quot;Park Ba...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7142,-9.1459" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1459,38.7142,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Alfama - El barrio más auténtico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Alfama - El barrio más auténtico</h3>
+            <p><strong>⏰ Hora:</strong> 09:00</p>
+            <p>Aquí es donde empieza tu día perfecto en Lisboa. Sal temprano, tipo 9 de la mañana, cuando las calles todavía están tranquilas y solo ves a los vecinos abriendo sus tiendas. Alfama es el único barrio que sobrevivió al terremoto de 1755, así que caminar por aquí es literalmente caminar por la histori...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📍 Empieza en la Catedral Sé (coordenadas abajo) y sube caminando hacia el castillo. Todas las calles llevan arriba. Si ves una escalera, súbela. Confía en mí.</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7109,-9.1333" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1333,38.7109,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Luzia — La postal que todo el mundo reconoce</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Luzia — La postal que todo el mundo reconoce</h3>
+            <p><strong>⏰ Hora:</strong> 10:30</p>
+            <p>Después de perderte por las callejuelas de Alfama, subes una última cuesta y llegas a este mirador. Es el momento en que entiendes por qué llaman a Lisboa &quot;la ciudad de las siete colinas&quot; — porque desde aquí ves cómo los tejados naranjas descienden en cascada hacia el Tajo, cómo las calles serpentea...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 Mejor hora para fotos: 10:00-11:00 (luz dorada horizontal, menos sombras duras). El mirador se llena después de las 11:00 con grupos organizados. Hay otro mirador justo al lado (Portas do Sol) con ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1294" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1294,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Castelo de São Jorge — Donde nació Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Castelo de São Jorge — Donde nació Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 11:30</p>
+            <p>Este castillo no es solo un castillo — es literalmente donde nació Lisboa. Los fenicios fundaron aquí el primer asentamiento hace tres mil años porque desde esta colina se domina todo: quién viene navegando por el río, quién se acerca por tierra, y quién intenta atacar. La posición estratégica es ev...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 💰 Entrada: 15€ adultos, 7.50€ estudiantes/seniors, menores 10 años gratis. TRUCO: Ve después de las 15:00 cuando ya se fue medio mundo, o compra online para evitar cola (en verano puede ser de 1 hora...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7139,-9.1334" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1334,38.7139,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Belém — Donde Portugal conquistó el mundo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Belém — Donde Portugal conquistó el mundo</h3>
+            <p><strong>⏰ Hora:</strong> 15:00</p>
+            <p>Después de comer, toma el tranvía 15E desde Praça da Figueira (o un Uber, 15 minutos, 8-10€) y vete a Belém. Este barrio es donde Portugal se hizo grande —literalmente. Desde este mismo lugar, en el siglo XV, salieron las carabelas que &quot;descubrieron&quot; medio mundo: Vasco da Gama abrió la ruta a la Ind...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 IMPORTANTE: Compra tickets online para el Monasterio (12€) —la cola puede ser de una hora en verano. La iglesia es GRATIS y está dentro del mismo complejo (no necesitas ticket para entrar). Torre d...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6979,-9.2061" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2061,38.6979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>LX Factory — El corazón creativo de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">LX Factory — El corazón creativo de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 18:00</p>
+            <p>Ahora que estás en modo coma de azúcar después de los pasteles, vamos a un sitio completamente diferente que te va a despertar. LX Factory es una antigua fábrica de impresión de 1846 que se convirtió en el espacio creativo más cool de Lisboa. Piensa en: naves industriales de ladrillo rojo con grafit...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎨 Abre de 12:00 a 00:00 todos los días. Domingos hay mercado vintage (11:00-19:00) con ropa, vinilos, artesanías, y comida callejera. Ler Devagar cierra a las 20:00 —no llegues tarde si quieres verla...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7065,-9.1799" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1799,38.7065,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

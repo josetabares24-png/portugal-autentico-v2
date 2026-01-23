@@ -4,7 +4,14 @@ export default function SchemaMarkup() {
     "@type": "Organization",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
-    "logo": "https://estabaenlisboa.com/logo.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://estabaenlisboa.com/logo.png",
+      "width": 600,
+      "height": 188,
+      "caption": "Estaba en Lisboa - Guías de Lisboa por Locales"
+    },
+    "image": "https://estabaenlisboa.com/logo.png",
     "description": "Guías y itinerarios verificados de Lisboa por locales. Horarios exactos, GPS y restaurantes sin trampas turísticas.",
     "foundingDate": "2015",
     "address": {
@@ -14,7 +21,13 @@ export default function SchemaMarkup() {
     },
     "sameAs": [
       "https://instagram.com/estabaenlisboa"
-    ]
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "hola@estabaenlisboa.com",
+      "availableLanguage": ["Spanish", "Portuguese", "English"]
+    }
   };
 
   const websiteSchema = {
@@ -42,9 +55,10 @@ export default function SchemaMarkup() {
     },
     "offers": {
       "@type": "Offer",
-      "url": "https://estabaenlisboa.com/guias/lisboa-1-dia",
+      "url": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
       "priceCurrency": "EUR",
       "price": "3.99",
+      "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     }

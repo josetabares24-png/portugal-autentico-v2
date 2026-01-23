@@ -12,9 +12,9 @@ export default function Logo({ className = '', inverted = false }: LogoProps) {
       <Image
         src="/logo.png"
         alt="Estaba en Lisboa"
-        width={160}
-        height={50}
-        className={`h-12 w-auto ${inverted ? 'brightness-0 invert' : ''}`}
+        width={180}
+        height={56}
+        className="h-14 w-auto"
         priority
       />
     </Link>

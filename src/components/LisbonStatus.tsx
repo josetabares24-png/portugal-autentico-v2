@@ -72,18 +72,18 @@ export default function LisbonStatus({ className }: LisbonStatusProps) {
     return () => controller.abort();
   }, []);
 
-  const baseClassName = 'items-center gap-2 text-xs font-semibold';
+  const baseClassName = 'items-center gap-1.5 text-xs font-semibold';
   const wrapperClassName = className
     ? `${baseClassName} ${className}`
     : `hidden md:flex ${baseClassName} text-slate-500`;
 
   return (
     <div className={wrapperClassName}>
-      <span>Lisboa</span>
-      <span className="text-slate-300">•</span>
-      <span>{time || '--:--'}</span>
-      <span className="text-slate-300">•</span>
-      <span>
+      <span className="hidden md:inline">Lisboa</span>
+      <span className="hidden md:inline text-slate-300">•</span>
+      <span className="whitespace-nowrap font-medium">{time || '--:--'}</span>
+      <span className="text-slate-300 mx-1">•</span>
+      <span className="whitespace-nowrap">
         {weather.temperature !== null ? `${weather.temperature}°C` : '--°C'} {weather.icon}
       </span>
     </div>

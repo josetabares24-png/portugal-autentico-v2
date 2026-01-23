@@ -14,6 +14,17 @@ export async function GET(
 
   try {
     const { slug } = await params;
+    
+    // Verificar si Supabase está configurado
+    const hasSupabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY;
+    
+    if (!hasSupabase) {
+      return NextResponse.json({ 
+        error: 'Supabase no está configurado. Las guías se editan desde los archivos locales.',
+        fallback: true 
+      }, { status: 503 });
+    }
+    
     validateSupabaseConfig();
     const { data, error } = await supabaseAdmin
       .from('guides')
@@ -43,6 +54,17 @@ export async function PUT(
 
   try {
     const { slug } = await params;
+    
+    // Verificar si Supabase está configurado
+    const hasSupabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY;
+    
+    if (!hasSupabase) {
+      return NextResponse.json({ 
+        error: 'Supabase no está configurado. Configura NEXT_PUBLIC_SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY en Vercel para editar guías.',
+        fallback: true 
+      }, { status: 503 });
+    }
+    
     validateSupabaseConfig();
     const body = await request.json();
 

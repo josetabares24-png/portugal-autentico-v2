@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa 2 Días - Completo - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa 2 Días - Completo</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Almuerzo en Graça - Restaurante O Pitéu</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Graça - Restaurante O Pitéu</h3>
+            <p><strong>⏰ Hora:</strong> 13:00</p>
+            <p>Después del tranvía 28, bájate en Graça y busca &quot;O Pitéu da Graça&quot;. Este restaurante NO está en ninguna guía turística (todavía) pero los vecinos del barrio hacen cola para comer aquí. Es una tasca tradicional portuguesa con manteles de papel, platos de cerámica, y la dueña que te trata como si fuer...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 💰 Menú del día: 9-11€. No reservan, llegas y esperas mesa (10-15 min máximo). Abre solo almuerzo (12:00-15:00) de lunes a sábado. Domingos cerrado. ALTERNATIVA: &quot;Tasca da Graça&quot; (enfrente) también es...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1329" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1329,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena + Fado en Alfama — La experiencia más portuguesa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena + Fado en Alfama — La experiencia más portuguesa</h3>
+            <p><strong>⏰ Hora:</strong> 19:30</p>
+            <p>La experiencia quintessential lisboeta: cena con fado en vivo en Alfama, el barrio donde nació esta música. El fado es Patrimonio Inmaterial de la Humanidad por la UNESCO —canciones melancólicas sobre saudade (esa nostalgia portuguesa imposible de traducir), el mar que siempre está presente en la vi...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎭 RESERVA OBLIGATORIA para la mayoría de sitios (llama por la tarde o reserva online). Tasca do Chico: fado gratis + cena 15-20€, llega 21:00-21:30 para buena mesa (el local es pequeño, apenas caben ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7117,-9.1288" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1288,38.7117,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Baixa-Chiado — El corazón que late de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Baixa-Chiado — El corazón que late de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 09:00</p>
+            <p>Empezamos en la Baixa, el centro neurálgico de Lisboa que el Marqués de Pombal reconstruyó desde cero después del terremoto de 1755. Este barrio fue el primer ejemplo de planificación urbana moderna en Europa —calles en cuadrícula perfecta como un tablero de ajedrez, edificios de la misma altura cre...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ⚠️ Elevador Santa Justa: Actualmente CERRADO (2026) por mantenimiento. La estructura sigue siendo impresionante desde abajo (gratis) —vale la pena verla aunque no puedas subir. ALTERNATIVA: Sube por l...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7071,-9.1364" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1364,38.7071,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tranvía 28 — La experiencia más lisboeta que existe</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tranvía 28 — La experiencia más lisboeta que existe</h3>
+            <p><strong>⏰ Hora:</strong> 11:30</p>
+            <p>No es solo transporte —es UNA EXPERIENCIA que define Lisboa. El tranvía 28 es un tranvía amarillo de madera de 1930 que trepa colinas imposibles con pendientes del 15%, pasa por calles tan estrechas que casi rozas las paredes de las casas (literalmente puedes tocar los azulejos desde la ventanilla),...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚋 Billete: 3€ en el conductor (solo efectivo, tenlo preparado) o 1.50€ con la tarjeta Viva Viagem recargable (mucho más barato si haces varios trayectos). MEJOR HORARIO: 9:00-11:00 o después de las 1...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1399" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1399,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador da Senhora do Monte — El secreto mejor guardado</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador da Senhora do Monte — El secreto mejor guardado</h3>
+            <p><strong>⏰ Hora:</strong> 15:00</p>
+            <p>Después de comer, camina cinco minutos cuesta arriba hasta el mirador secreto de Lisboa. A diferencia de los miradores turísticos (Santa Luzia, Portas do Sol) que están LLENOS de gente haciendo selfies y grupos organizados con paraguas de colores, este casi nadie lo conoce porque está apartado del c...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 MEJOR MOMENTO: Atardecer (18:30-20:00 en verano, 17:00-18:30 en invierno) cuando el sol ilumina toda la ciudad en dorado. Llega 30-40 minutos antes del sunset para asegurar un buen sitio en los ban...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7176,-9.1316" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1316,38.7176,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Panteón Nacional — Donde descansan los grandes de Portugal</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Panteón Nacional — Donde descansan los grandes de Portugal</h3>
+            <p><strong>⏰ Hora:</strong> 17:00</p>
+            <p>Baja caminando hacia el Panteón Nacional —ese edificio blanco gigante con cúpula que ves desde todos los miradores y que parece un pastel de bodas arquitectónico. Fue una iglesia barroca que empezaron a construir en 1582 y tardaron 284 AÑOS en terminar (de ahí el dicho portugués &quot;obras de Santa Engr...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 4€ adultos, gratis el primer domingo de mes y para menores de 12 años. HORARIO: Martes-domingo 10:00-17:00 (18:00 en verano). Lunes cerrado. La subida a la cúpula está incluida en la entra...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7143,-9.1254" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1254,38.7143,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

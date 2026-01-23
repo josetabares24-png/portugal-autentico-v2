@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa 2 Días - Completo - Día 2 - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa 2 Días - Completo - Día 2</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Pastéis de Belém — La peregrinación dulce obligatoria</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Pastéis de Belém — La peregrinación dulce obligatoria</h3>
+            <p><strong>⏰ Hora:</strong> 12:30</p>
+            <p>Ya sabes qué viene ahora. Pastéis de Belém —la fábrica original desde 1837 con la receta secreta que solo conocen tres maestros pasteleros en todo el mundo, y que nunca viajan juntos por si ocurriera una desgracia. No es marketing: estos pasteles SÍ saben diferente a todos los demás &quot;pastéis de nata...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 ESTRATEGIA PRO: Ignora completamente la cola de la entrada (para llevar). Entra directo al salón gigante de atrás señalizado como &quot;Salão&quot; → casi nunca hay cola, te sientas en mesas de mármol, comes...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6976,-9.2031" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.2031,38.6976,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena en Time Out Market — El estómago de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena en Time Out Market — El estómago de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 20:00</p>
+            <p>Para cerrar el viaje perfecto, vamos al Time Out Market en Mercado da Ribeira. Es un food hall donde reunieron a los mejores chefs y restaurantes de Lisboa bajo un mismo techo —el concepto es brillante: en vez de elegir un restaurante y comprometerte, caminas entre 40 stands diferentes, eliges lo qu...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Time Out Market: 12:00-00:00 todos los días (domingos hasta 18:00). Se llena brutalmente 20:00-22:00 (llega 19:30 o prepárate para esperar mesa 15-20 min). Mejor momento: 17:00-19:00 o después de ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7069,-9.1467" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1467,38.7069,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Belém - Monumentos Marítimos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Belém - Monumentos Marítimos</h3>
+            <p><strong>⏰ Hora:</strong> 09:00</p>
+            <p>El día 2 empezamos en Belém, el barrio desde donde Portugal se lanzó a conquistar medio mundo. Toma el tranvía 15E desde Praça da Figueira (15 min, 3€) o Uber (10-12€). Arranca en la Torre de Belém - esa torre medieval que parece un castillo de arena al borde del Tajo. Fue construida en 1515 para de...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Torre de Belém: 6€, Monumento Descubrimientos: 6€, o Pack combinado: 12€. TRUCO: Compra la Lisboa Card (21€/24h) que incluye TODO en Belém + transporte público ilimitado. EVITA COLAS: Llega 8:45-9:...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6916,-9.2158" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2158,38.6916,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monasterio de los Jerónimos — La obra maestra del oro portugués</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Monasterio de los Jerónimos — La obra maestra del oro portugués</h3>
+            <p><strong>⏰ Hora:</strong> 11:00</p>
+            <p>Camina diez minutos por la orilla del río hasta el Monasterio de los Jerónimos —posiblemente el edificio más impresionante de Portugal y uno de los más espectaculares de Europa. Es gótico manuelino, un estilo único portugués del siglo XVI que mezcla gótico tardío con elementos renacentistas y está l...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 💡 LA IGLESIA ES GRATIS (entrada lateral izquierda, no necesitas ticket). El claustro del monasterio son 12€ extra (opcional pero hermoso). Si tienes Lisboa Card = gratis todo. IMPRESCINDIBLE: Llega a...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6977,-9.2062" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2062,38.6977,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MAAT — Lisboa mirando al futuro</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">MAAT — Lisboa mirando al futuro</h3>
+            <p><strong>⏰ Hora:</strong> 14:30</p>
+            <p>Después del coma de azúcar de los pasteles, camina diez minutos por la orilla del río hasta el MAAT (Museo de Arte, Arquitectura y Tecnología). El edificio ya vale la visita solo por su arquitectura —diseñado por Amanda Levete, es una estructura contemporánea blanca y curva que parece una ola congel...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada a las exposiciones: 9€ (opcional, solo si te interesa el arte contemporáneo). Subir al techo: GRATIS (acceso por rampa exterior, no necesitas ticket). Horario: 11:00-19:00 (cerrado martes)....</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6936,-9.1980" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.198,38.6936,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>LX Factory — El corazón creativo de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">LX Factory — El corazón creativo de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 16:30</p>
+            <p>Desde el MAAT, camina quince minutos siguiendo el río (o Uber 5€ si estás cansado) hasta LX Factory —una antigua fábrica de impresión de 1846 reconvertida en el epicentro cool de Lisboa. Imagina: naves industriales de ladrillo rojo de casi doscientos años llenas de grafitis enormes de artistas inter...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ☕ LandScape café: vistas al puente, cafés de especialidad 2-4€. By The Wine: 3000 vinos portugueses, degustación 12€, ambiente íntimo perfecto para relajarse. Ler Devagar librería: cierra 20:00 —no ll...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7065,-9.1799" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1799,38.7065,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

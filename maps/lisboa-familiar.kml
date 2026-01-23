@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa Familiar - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa Familiar</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Almuerzo en Vasco da Gama Shopping - Food court</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Vasco da Gama Shopping - Food court</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>El centro comercial Vasco da Gama está a 5 minutos caminando y tiene un food court gigante con opciones para todos: McDonalds, pizza, sushi, comida portuguesa, hamburguesas gourmet, woks asiáticos, y heladerías. Lo mejor es que cada uno puede pedir lo que quiera - no tienes que negociar con niños qu...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍔 Food court planta superior: 12:00-22:00. Precio familia (2 adultos + 2 niños): 25-35€. KIDZANIA: 16€/niño (4-14 años), reserva online. Abre 10:00-20:00. DESCANSO: Hay sofás en zonas comunes para se...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7680,-9.0986" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.0986,38.768,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena en Jardim da Estrela - Picnic al atardecer</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena en Jardim da Estrela - Picnic al atardecer</h3>
+            <p><strong>⏰ Hora:</strong> 19:30</p>
+            <p>Después del Zoo, toma el metro a Rato (10 min) y camina 5 minutos hasta el Jardim da Estrela. En vez de restaurante formal (niños cansados = desastre), para en un supermercado Pingo Doce de camino y compra cosas para picnic: pan, queso, jamón, fruta, zumos, galletas, yogures (15-20€ para toda la fam...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🧺 Supermercado Pingo Doce: Rua da Escola Politécnica (camino al jardín). Picnic: 15-25€ familia. PARQUE INFANTIL: Zona cerrada, segura, con bancos para vigilar. Quiosque: helados 2-3€, bebidas 1.50€....</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7156,-9.1601" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1601,38.7156,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Almuerzo en Time Out Market — Food hall para todos los gustos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Time Out Market — Food hall para todos los gustos</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>Tomad un Uber/taxi hasta Time Out Market en Cais do Sodré (15 min, 8-10€). Este food hall gigante es perfecto para familias porque cada uno puede pedir lo que quiera sin negociar sobre el restaurante. Hay 40+ puestos diferentes: pizza, hamburguesas, sushi, comida portuguesa tradicional, woks asiátic...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Time Out Market: 10:00-00:00 (comida hasta 23:00). Precio familia (2 adultos + 2 niños): 35-50€. TRUCO: Llega 13:30-14:00 (evitas hora punta 12:30-13:30). Hay zona de juegos pequeña en la plaza ex...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7071,-9.1444" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1444,38.7071,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Oceanário de Lisboa — El acuario que hipnotiza a grandes y pequeños</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Oceanário de Lisboa — El acuario que hipnotiza a grandes y pequeños</h3>
+            <p><strong>⏰ Hora:</strong> 09:30</p>
+            <p>Empezamos en el Oceanário de Lisboa, uno de los acuarios más grandes y espectaculares de Europa, y probablemente la actividad número uno para familias en toda la ciudad. Está en el Parque das Nações (zona moderna construida para la Expo 98, completamente diferente al Lisboa histórico). El edificio e...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🐟 Entrada: adultos 25€, niños (3-12 años) 17€, menores 3 años gratis. Compra online (ahorras 2€ por persona + evitas cola que puede ser de 30-60 min en verano). Pack familia (2 adultos + 2 niños): 75...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7633,-9.0939" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0939,38.7633,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Teleférico do Parque das Nações — Vistas aéreas del Tajo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Teleférico do Parque das Nações — Vistas aéreas del Tajo</h3>
+            <p><strong>⏰ Hora:</strong> 12:30</p>
+            <p>Justo al lado del Oceanário está el teleférico que recorre 1.2 kilómetros por la orilla del Tajo a 20 metros de altura —es como volar sobre el río sin necesidad de avión. Son 8 minutos de viaje continuo con vistas espectaculares: el río Tajo serpenteando hacia el Atlántico, el Puente Vasco da Gama (...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚡 Teleférico: adultos 6€ ida, niños (3-12) 3€ ida. Compra ida y vuelta 9€/5€ (más barato y puedes bajar en cualquier parada intermedia). Opera 10:30-19:00 (verano hasta 20:00). Las cabinas pasan cada...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7681,-9.0944" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0944,38.7681,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jardim Zoológico de Lisboa — El zoo histórico con shows épicos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Jardim Zoológico de Lisboa — El zoo histórico con shows épicos</h3>
+            <p><strong>⏰ Hora:</strong> 16:00</p>
+            <p>Toma el metro desde Oriente hasta Jardim Zoológico (20 minutos, línea azul directa, muy fácil con niños). El Zoo de Lisboa existe desde 1884 —es uno de los más antiguos de Europa— y tiene más de 2000 animales de 300 especies diferentes: leones que rugean impresionantemente, tigres siberianos majestu...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🦁 Entrada: adultos 24€, niños (3-12) 16€, menores 3 años gratis. Pack familia (2 adultos + 2 niños): 68€ (ahorro de 8€). Compra online 10% descuento + evitas cola. Horario: 10:00-18:00 (verano hasta ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7438,-9.1731" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1731,38.7438,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Castillo de São Jorge — El castillo que todos los niños sueñan</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Castillo de São Jorge — El castillo que todos los niños sueñan</h3>
+            <p><strong>⏰ Hora:</strong> 10:00 (DÍA 2)</p>
+            <p>El día 2 empieza con el castillo —todos los niños aman castillos, y este es de los de verdad. El Castillo de São Jorge es una fortaleza del siglo XI en lo alto de Lisboa con murallas enormes que han visto mil años de historia, torres de vigilancia donde puedes subir y asomarte, almenas donde imagina...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🏰 Entrada: adultos 15€, niños (10-17) 7.50€, menores 10 años gratis. Pack familia disponible. Horario: 9:00-18:00 (verano hasta 21:00). ESTRATEGIA: Llega 9:30-10:00 (menos calor, menos gente, y los a...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7139,-9.1334" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1334,38.7139,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Museo del Juguete + Almuerzo en Sintra</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Museo del Juguete + Almuerzo en Sintra</h3>
+            <p><strong>⏰ Hora:</strong> 13:00</p>
+            <p>Si los niños aguantan un extra de energía, toma el tren a Sintra (40 min desde Rossio, 2.30€) para visitar el Museo del Juguete. Está en el centro del pueblo de Sintra en un edificio antiguo con 4 pisos llenos de juguetes de los últimos 100 años: trenes de hojalata, muñecas antiguas, coches a pedal,...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚂 Tren Lisboa→Sintra: 2.30€ adulto, 1.15€ niño (4-12). Cada 20 min. MUSEO JUGUETE: 5€/2.50€, 10:00-18:00. Almuerzo: 10-15€/niño. ALTERNATIVA más tranquila: En vez de Sintra, quédate en Lisboa y ve al...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7975,-9.3904" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3904,38.7975,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tranvía 28 — La aventura sobre ruedas que todos aman</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tranvía 28 — La aventura sobre ruedas que todos aman</h3>
+            <p><strong>⏰ Hora:</strong> 10:00 (DÍA 3)</p>
+            <p>El día 3 empieza con el tranvía 28 —el tranvía amarillo de madera más icónico de Lisboa que es una atracción en sí mismo. Para familias es perfecto porque es transporte + experiencia + vistas todo en uno. Subid en Martim Moniz (la parada inicial, menos gente, más fácil conseguir asientos) y aguantad...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚋 Billete: 3€ en el conductor (solo efectivo) o 1.50€ con tarjeta Viva Viagem (mucho más barato). MEJOR HORARIO: 9:00-11:00 o después de las 18:00 (menos turistas, más espacio). Evita 12:00-17:00 que...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1399" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1399,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Belém — Torre, Pastéis y jardines junto al río</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Belém — Torre, Pastéis y jardines junto al río</h3>
+            <p><strong>⏰ Hora:</strong> 11:30</p>
+            <p>Bajad del tranvía y tomad un Uber/taxi hasta Belém (15 min, 8-10€) o tren desde Cais do Sodré (10 min, 1.50€). Belém es perfecto para familias porque tiene todo junto: monumentos impresionantes, jardines amplios para correr, y los mejores pasteles de nata del mundo. Empezad en la Torre de Belém —una...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🏰 Torre de Belém: adultos 8€, niños (0-12) gratis, estudiantes 4€. Horario: 10:00-18:30 (verano hasta 19:30). Lunes cerrado. Subida: escaleras estrechas, niños pequeños con supervisión. PASTÉIS DE BE...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6916,-9.2158" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2158,38.6916,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pavilhão do Conhecimento — Museo de ciencia interactivo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Pavilhão do Conhecimento — Museo de ciencia interactivo</h3>
+            <p><strong>⏰ Hora:</strong> 16:00</p>
+            <p>Tomad el metro desde Cais do Sodré hasta Oriente (20 min, línea verde → roja) y caminad 5 minutos hasta el Pavilhão do Conhecimento (Pabellón del Conocimiento). Este museo de ciencia interactivo es uno de los mejores de Europa y los niños se vuelven locos porque TODO se puede tocar, experimentar, y ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🔬 Entrada: adultos 10€, niños (3-17) 7€, menores 3 años gratis. Pack familia (2 adultos + 2 niños): 28€. Planetario: +3€/persona. Horario: 10:00-18:00 (verano hasta 19:00). Lunes cerrado. TRUCO: Lleg...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7633,-9.0942" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0942,38.7633,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jardim da Estrela — Parque perfecto para cerrar el día</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Jardim da Estrela — Parque perfecto para cerrar el día</h3>
+            <p><strong>⏰ Hora:</strong> 18:30</p>
+            <p>Tomad el metro desde Oriente hasta Rato (25 min, línea roja → amarilla) y caminad 5 minutos hasta el Jardim da Estrela. Este parque del siglo XIX es el favorito de las familias lisboetas porque tiene TODO lo que necesitas: zona de juegos infantil grande con columpios, toboganes, y estructuras de esc...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌳 Jardim da Estrela: GRATIS, abre 7:00-21:00 (verano hasta 22:00). PARQUE INFANTIL: Zona cerrada, segura, con bancos para vigilar. Quiosque: helados 2-3€, zumos 2€, snacks 1-3€. PATOS: Lleva pan (los...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7156,-9.1601" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1601,38.7156,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cascais — Playa, paseo marítimo y helados</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cascais — Playa, paseo marítimo y helados</h3>
+            <p><strong>⏰ Hora:</strong> 10:00 (DÍA 4 - OPCIONAL)</p>
+            <p>Si tenéis un día extra y el tiempo lo permite, tomad el tren desde Cais do Sodré hasta Cascais (40 min, 2.30€). Cascais es un pueblo costero encantador a solo 30 km de Lisboa que es perfecto para familias. Tiene playas de arena fina y aguas tranquilas (perfectas para niños), paseo marítimo amplio pa...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🏖️ Tren Lisboa→Cascais: 2.30€ adulto, 1.15€ niño (4-12). Cada 20 min desde Cais do Sodré. PLAYA: Gratis, arena fina, aguas tranquilas. Lleva toallas, protector solar, gorras, y cambio de ropa. HELADO...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6979,-9.4215" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.4215,38.6979,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa Romántica - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa Romántica</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Brunch en Heim Café - Ambiente nórdico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Brunch en Heim Café - Ambiente nórdico</h3>
+            <p><strong>⏰ Hora:</strong> 12:30</p>
+            <p>Camina 10 minutos hasta Heim Café, un café escandinavo-portugués escondido en una calle residencial de Estrela. Por fuera es discreto (solo una puerta verde) pero por dentro es mágico: paredes blancas, plantas colgando del techo, mesas de madera clara, luz natural entrando por ventanales enormes, y ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 Precio medio: 18-25€ para dos. RESERVA: No aceptan reservas, llega 12:00-12:30 para mesa segura (máximo 10 min espera). Cierra martes. Instagram: @heimcafe - su feed te va a enamorar antes de ir.</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7145,-9.1589" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1589,38.7145,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena romántica en Chapitô à Mesa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena romántica en Chapitô à Mesa</h3>
+            <p><strong>⏰ Hora:</strong> 21:00</p>
+            <p>Baja caminando 10 minutos hasta Chapitô à Mesa - un restaurante único en lo alto de Alfama dentro de una escuela de circo. Sí, leíste bien. Es un restaurante gourmet en el tercer piso de una escuela de artes circenses con vistas panorámicas a Lisboa iluminada de noche. El interior es íntimo: luces t...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ RESERVA OBLIGATORIA (online o teléfono, mínimo 2-3 días antes). Precio: 60-80€ para dos con vino. Pide mesa ventana &quot;para ocasión romántica&quot;. Vino recomendado: Douro tinto 18-25€. Abre cena 19:30-...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7156,-9.1298" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1298,38.7156,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Jardim da Estrela - Paseo en el parque romántico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Jardim da Estrela - Paseo en el parque romántico</h3>
+            <p><strong>⏰ Hora:</strong> 10:00</p>
+            <p>Empezamos el día romántico en el Jardim da Estrela, un parque del siglo XIX que parece sacado de una película francesa. Es un jardín formal con caminos de grava, estanques con patos y cisnes, kioscos de hierro forjado, árboles centenarios que forman túneles de sombra, y la Basílica da Estrela de fon...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ☕ Quiosque de Refrescos: café 1.50€, zumo natural 3€. Mejor momento: 10:00-12:00 (luz suave, menos gente). Los domingos hay mercadillo artesanal. Gratis. Alquiler de barcas en el estanque: 5€/30min (s...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7156,-9.1601" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1601,38.7156,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Catarina - Atardecer anticipado</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Catarina - Atardecer anticipado</h3>
+            <p><strong>⏰ Hora:</strong> 15:00</p>
+            <p>Toma el tranvía 28 o camina 15 minutos bajando hasta el Mirador de Santa Catarina en Bairro Alto. Este mirador tiene una vibra totalmente diferente a los turísticos: es donde los lisboetas vienen a pasar la tarde. Hay grafitis enormes en las paredes, escalones de piedra donde la gente se sienta con ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍺 Quiosque: cerveza 1.50€, vino 3€, petiscos (aceitunas, queso) 4-6€. MEJOR MOMENTO: 17:00-19:30 (golden hour). Lleva algo para sentarte (el suelo es piedra). Los domingos hay jam sessions de música ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7101,-9.1484" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1484,38.7101,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paseo por Príncipe Real - Barrio sofisticado</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Paseo por Príncipe Real - Barrio sofisticado</h3>
+            <p><strong>⏰ Hora:</strong> 17:30</p>
+            <p>Desde Santa Catarina, sube caminando 10 minutos hasta Príncipe Real, el barrio más elegante y trendy de Lisboa. Es donde viven diseñadores, arquitectos, y artistas. Las calles están llenas de tiendas de decoración, galerías de arte, boutiques de moda independiente, cafés de especialidad, y anticuari...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌳 Jardim do Príncipe Real: gratis, perfecto para sentarse bajo el cedro gigante. COMPRAS: Embaixada abre 12:00-20:00. CAFÉ: Copenhagen Coffee Lab (café de especialidad, 2.50€). Los sábados hay mercad...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7159,-9.1502" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1502,38.7159,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador da Graça - El atardecer ÉPICO</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador da Graça - El atardecer ÉPICO</h3>
+            <p><strong>⏰ Hora:</strong> 19:00</p>
+            <p>Ahora viene EL MOMENTO. Uber o tranvía 28 hasta Graça (15 min) para llegar al Mirador da Graça justo para el atardecer. Este es posiblemente el atardecer más romántico de Lisboa. El mirador tiene una terraza grande con mesitas blancas, sombrillas de pino, y vistas de 180° sobre toda la ciudad: el Ca...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌅 Sunset: consulta hora en Google. Llega 45 min ANTES para buena mesa. Vino: 4-6€, cerveza 3€, tabla de quesos 12€. OCUPADO: Viernes-domingo muy lleno. Entre semana más tranquilo. Alternativa si está...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1329" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1329,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paseo nocturno por Alfama iluminada — El momento más íntimo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Paseo nocturno por Alfama iluminada — El momento más íntimo</h3>
+            <p><strong>⏰ Hora:</strong> 23:30</p>
+            <p>Después de cenar, baja caminando por las calles laberínticas de Alfama de noche. Este es el momento mágico que pocos turistas viven porque la mayoría ya está en el hotel o en bares del centro. Las calles estrechas iluminadas con faroles amarillos que crean sombras danzantes en las paredes, las escal...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌙 SEGURO: Alfama de noche es seguro (mucha gente paseando, bien iluminado, y la policía patrulla regularmente). Lleva calzado cómodo con buen agarre —los adoquines pueden estar resbaladizos. Post-pas...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1281" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1281,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Luzia — La postal más romántica</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Luzia — La postal más romántica</h3>
+            <p><strong>⏰ Hora:</strong> DÍA 2 - 10:00</p>
+            <p>El segundo día empieza tranquilo en el Mirador de Santa Luzia —el mirador más fotografiado de Lisboa y posiblemente el más romántico. Es el momento en que entiendes por qué llaman a Lisboa &quot;la ciudad de las siete colinas&quot; — porque desde aquí ves cómo los tejados naranjas descienden en cascada hacia ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 Mejor hora para fotos: 10:00-11:00 (luz dorada horizontal, menos sombras duras). El mirador se llena después de las 11:00 con grupos organizados. Hay otro mirador justo al lado (Portas do Sol) con ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1294" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1294,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tranvía 28 — El paseo más romántico de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tranvía 28 — El paseo más romántico de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 12:00</p>
+            <p>Después del mirador, caminad 5 minutos hasta Martim Moniz (la parada inicial del tranvía 28) y subid al tranvía amarillo de madera más icónico de Lisboa. Este no es solo transporte —es UNA EXPERIENCIA que define Lisboa. El tranvía 28 es un tranvía amarillo de madera de 1930 que trepa colinas imposib...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚋 Billete: 3€ en el conductor (solo efectivo, tenlo preparado) o 1.50€ con la tarjeta Viva Viagem recargable (mucho más barato si hacéis varios trayectos). MEJOR HORARIO: 9:00-11:00 o después de las ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1399" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1399,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paseo por Belém — Jardines y monumentos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Paseo por Belém — Jardines y monumentos</h3>
+            <p><strong>⏰ Hora:</strong> 16:00</p>
+            <p>Después de comer, pasad por los jardines de Belém junto al río. Es un paseo perfecto: caminos arbolados, bancos con vistas al Tajo, el Padrão dos Descobrimentos (monumento gigante con forma de carabela), y la Torre de Belém al fondo. Podéis subir al Padrão (6€) para ver el mosaico del mapamundi en e...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Padrão dos Descobrimentos: 6€ adultos, 3€ estudiantes/seniors. Subir arriba: vistas al mosaico del mapamundi + panorámica del Tajo. HORARIO: 10:00-19:00 (verano), 10:00-18:00 (invierno). Lunes cerr...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6936,-9.2058" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2058,38.6936,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

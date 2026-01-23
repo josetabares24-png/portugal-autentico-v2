@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa Fotografía - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa Fotografía</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Mirador das Portas do Sol — Luz dorada sobre Alfama al amanecer</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador das Portas do Sol — Luz dorada sobre Alfama al amanecer</h3>
+            <p><strong>⏰ Hora:</strong> Golden Hour Mañana (07:00-08:30)</p>
+            <p>La primera parada es al amanecer en el Mirador das Portas do Sol, cuando Lisboa todavía duerme y solo los fotógrafos y los madrugadores están despiertos. Llega cuando el sol empieza a subir por detrás de ti e ilumina toda Alfama con luz dorada horizontal que parece miel líquida derramándose sobre lo...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 MEJOR HORA: 7:00-8:30 (luz horizontal dorada, sombras largas, contraste perfecto). SETTINGS: ISO 100-400 (según la luz disponible), f/5.6-8 (profundidad de campo para tener todo enfocado), 1/125-1/...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7122,-9.1280" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.128,38.7122,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tranvía 28 en Rua da Bica — El shot más icónico de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tranvía 28 en Rua da Bica — El shot más icónico de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> Mañana (08:30-10:00)</p>
+            <p>Baja caminando desde el mirador hasta la Rua da Bica de Duarte Belo —una de las calles más empinadas y fotogénicas de Lisboa, y posiblemente la más fotografiada del país. Es la calle del tranvía amarillo que ves en TODOS los posts de Instagram sobre Lisboa, y cuando estés ahí entenderás por qué. La ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 200-400 (según la luz), f/8-11 (profundidad de campo para tener calle y tranvía enfocados), 1/250-1/500s (velocidad suficiente para congelar el tranvía en movimiento). Focal: 24-35mm ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7110,-9.1459" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1459,38.711,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Praça do Comércio - Geometría y simetría</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Praça do Comércio - Geometría y simetría</h3>
+            <p><strong>⏰ Hora:</strong> Mañana (10:30-12:00)</p>
+            <p>La Praça do Comércio es perfecta para fotografía arquitectónica. Es la plaza más grande de Lisboa: 3 lados con arcadas amarillas simétricas, el cuarto lado abierto al Tajo, y el Arco da Rua Augusta en el centro. SHOTS CLAVE: (1) Desde el centro de la plaza disparando hacia el arco (simetría perfecta...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100, f/8-11, 1/250-1/500s. Focal: 16-24mm (ultra wide para capturar toda la plaza) o 50mm (comprimir arcos). TRUCO: Sube al Arco (3€) para shot cenital de la plaza + Tajo. Polarizador...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7071,-9.1364" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1364,38.7071,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Elevador de Santa Justa - Perspectivas verticales</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Elevador de Santa Justa - Perspectivas verticales</h3>
+            <p><strong>⏰ Hora:</strong> Mediodía (12:30-14:00)</p>
+            <p>El Elevador de Santa Justa es un ascensor de hierro neogótico de 1902 que parece sacado de París. Actualmente está cerrado (2026) por mantenimiento, pero sigue siendo uno de los íconos fotográficos de Lisboa. Hay DOS shots aquí: (1) Desde abajo capturando toda la estructura vertical (45 metros) cont...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 DESDE ABAJO: ISO 100, f/5.6-8, 1/500s, 16-24mm ultra wide. DESDE ARRIBA: Sube por Escadas do Carmo (gratis) y entra al mirador pagando 1.50€. Polarizador para cielo azul intenso, f/8, 35-50mm. PERS...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7122,-9.1394" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1394,38.7122,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Calles de Alfama - Detalles y texturas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Calles de Alfama - Detalles y texturas</h3>
+            <p><strong>⏰ Hora:</strong> Tarde (15:00-16:30)</p>
+            <p>Piérdete por Alfama con la cámara buscando DETALLES: azulejos antiguos en las paredes (hay fachadas enteras cubiertas con patrones del siglo XVIII), ropa tendida cruzando las calles (súper lisboeta), puertas de madera desgastadas con colores vivos (verde, azul, amarillo), gatos en escaleras de piedr...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 400-800 (calles oscuras), f/2.8-5.6 (bokeh suave), 1/125-1/250s. Focal: 35mm o 50mm f/1.8. RESPETO: Pide permiso antes de fotografiar a personas. Sonríe, muestra la foto, di &quot;obrigado...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1288" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1288,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador da Senhora do Monte - 360° golden hour</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador da Senhora do Monte - 360° golden hour</h3>
+            <p><strong>⏰ Hora:</strong> Golden Hour Tarde (17:30-19:00)</p>
+            <p>El Mirador da Senhora do Monte es EL spot para golden hour. Es el punto más alto de Lisboa (después del castillo) con vistas de 270°. Llega 45 minutos antes del sunset, elige tu ángulo, y prepárate. ÁNGULOS KEY: (1) Castillo São Jorge a la izquierda con toda Alfama iluminada en dorado, (2) Puente 25...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: Trípode obligatorio. ISO 100-400, f/8-11, bracket ±2EV (HDR). Focal: 24-70mm (versátil), 70-200mm (comprimir ciudad). TIMELAPSE: Intervalómetro cada 5-10s desde 30 min antes del sunset ha...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7176,-9.1316" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1316,38.7176,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ponte 25 de Abril desde Alcântara - Larga exposición</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Ponte 25 de Abril desde Alcântara - Larga exposición</h3>
+            <p><strong>⏰ Hora:</strong> Blue Hour (19:30-20:30)</p>
+            <p>Después del sunset, muévete rápido a Alcântara para blue hour. El Puente 25 de Abril iluminado contra el cielo azul profundo es MÁGICO. Baja a la orilla del Tajo (Doca de Santo Amaro) y dispara con larga exposición: el puente rojo brillante, las luces reflejadas en el agua como pintura, los barcos c...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 BLUE HOUR: 20-30 min después del sunset (cielo azul oscuro pero no negro). SETTINGS: Trípode, ISO 100, f/11-16, 10-30s, Manual focus. ND filter opcional si todavía hay luz. RAW obligatorio. UBICACI...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7039,-9.1754" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1754,38.7039,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Baixa-Chiado de noche - Long exposure streets</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Baixa-Chiado de noche - Long exposure streets</h3>
+            <p><strong>⏰ Hora:</strong> Noche (21:00-22:00)</p>
+            <p>Sube a Baixa-Chiado para fotografía urbana nocturna. Rua Augusta peatonal con las tiendas iluminadas, gente caminando (fantasmas con larga exposición), artistas callejeros, y el Arco da Rua Augusta iluminado al final creando un punto focal perfecto. TÉCNICA: Trípode, ISO 200-400, f/8, 2-5 segundos -...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 200-800, f/5.6-11, 1-5s dependiendo de cuánto movimiento quieras. Focal: 16-35mm. ROOFTOPS: &quot;Park Bar&quot; (azotea con vistas), &quot;Topo Chiado&quot; (terraza alto). Pide permiso antes de montar ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7108,-9.1385" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1385,38.7108,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Torre de Belém al amanecer - Reflejos dorados</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Torre de Belém al amanecer - Reflejos dorados</h3>
+            <p><strong>⏰ Hora:</strong> DÍA 2 - Mañana Belém (08:00-10:00)</p>
+            <p>El día 2 empieza temprano en Belém. La Torre de Belém al amanecer es postal perfecta: torre medieval blanca con marea baja creando charcos que reflejan la torre, luz dorada horizontal iluminando las piedras, y cero turistas. SHOT PERFECTO: Baja a la playa (sí, hay playa al lado de la torre cuando ba...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 MAREA: Consulta tabla de mareas (Google &quot;mareas Lisboa&quot;). Marea baja = playa con reflejos. Marea alta = torre rodeada de agua (también cool). SETTINGS: ISO 100-400, f/8-11, 1/125-1/500s. Polarizado...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6916,-9.2158" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2158,38.6916,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jerónimos Interior - Arquitectura gótica</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Jerónimos Interior - Arquitectura gótica</h3>
+            <p><strong>⏰ Hora:</strong> Mañana Belém (10:00-12:00)</p>
+            <p>Entra al Monasterio dos Jerónimos cuando abren (10:00). La IGLESIA ES GRATIS y es donde están las fotos más espectaculares: techos abovedados de 25 metros que parecen palmeras de piedra, columnas octogonales con tallados marinos increíbles, luz natural entrando por ventanas creando rayos de luz (god...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 1600-3200, f/2.8-5.6, 1/60-1/125s. Focal: 16-24mm ultra wide. ESTABILIZACIÓN ON si no llevas trípode. RAW obligatorio (sombras recuperables). HORARIO: 10:00-17:00, mejor 10:00-11:00 (...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6977,-9.2062" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2062,38.6977,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>LX Factory - Grit urbano e industrial</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">LX Factory - Grit urbano e industrial</h3>
+            <p><strong>⏰ Hora:</strong> Tarde (14:00-16:00)</p>
+            <p>LX Factory es el paraíso para fotografía urbana alternativa. Antiguas naves industriales llenas de grafitis enormes, murales de artistas internacionales, escaleras de metal oxidadas, ladrillo expuesto, neones de cafés, la bici voladora de Ler Devagar librería, y el Puente 25 de Abril pasando literal...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100-400, f/2.8-8 (variado), 1/250-1/1000s. Kit: 24-70mm versátil. DOMINGO: Mercado vintage (objetos, gente, color). LIBERTAD CREATIVA: Experimenta ángulos raros, contrastes fuertes, c...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7065,-9.1799" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1799,38.7065,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Catarina - Cierre épico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Catarina - Cierre épico</h3>
+            <p><strong>⏰ Hora:</strong> Golden Hour Final (18:00-19:30)</p>
+            <p>Termina el photoWalk en Santa Catarina para el segundo (y último) golden hour. Este mirador tiene vibra totalmente diferente: grafiti gigante en la pared (backdrop urbano), gente joven con cervezas sentada en los escalones (street photography oportunidades), skaters, músicos, y las vistas al Tajo + ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS Golden: ISO 200-800, f/2.8-5.6, 1/250-1/1000s (candids), bracket para sunset. BLUE HOUR: Trípode, ISO 100, f/8, 5-15s. SOCIAL: La gente aquí es friendly - pregunta si puedes fotografiar, e...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7101,-9.1484" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1484,38.7101,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Luzia — Alfama desde otro ángulo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Luzia — Alfama desde otro ángulo</h3>
+            <p><strong>⏰ Hora:</strong> DÍA 2 - Mañana (08:00-09:30)</p>
+            <p>El segundo día empieza en el Mirador de Santa Luzia —el mirador más fotografiado de Lisboa y con razón. Desde aquí capturas una de las composiciones más icónicas: el Panteón Nacional (esa cúpula blanca gigante) a la izquierda como punto focal, el Tajo azul intenso de fondo creando contraste, y las c...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 MEJOR HORA: 8:00-9:30 (luz horizontal dorada, sombras largas, contraste perfecto). SETTINGS: ISO 100-400, f/5.6-8, 1/125-1/250s. Focal: 24-70mm zoom te da versatilidad. Trípode opcional pero hay ba...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1294" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1294,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Castillo de San Jorge — Vistas 360° desde las murallas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Castillo de San Jorge — Vistas 360° desde las murallas</h3>
+            <p><strong>⏰ Hora:</strong> Mañana (10:00-11:30)</p>
+            <p>Sube al Castillo de San Jorge para fotografía arquitectónica y paisajística. Las murallas medievales ofrecen vistas 360° sobre Lisboa que son perfectas para panorámicas. SHOTS CLAVE: (1) Desde las murallas capturando toda Alfama bajando hacia el Tajo con el puente 25 de Abril de fondo, (2) Detalles ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100-400, f/8-11 (profundidad de campo), 1/250-1/500s. Focal: 16-35mm (panorámicas), 50-85mm (detalles arquitectónicos). ENTRADA: 15€ adultos, 7.50€ estudiantes. HORARIO: 9:00-18:00 (i...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7139,-9.1334" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1334,38.7139,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chiado — Arquitectura y street photography</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Chiado — Arquitectura y street photography</h3>
+            <p><strong>⏰ Hora:</strong> Mediodía (12:00-13:30)</p>
+            <p>Baja al Chiado para fotografía urbana y arquitectónica. Este barrio intelectual tiene calles elegantes, cafés históricos, librerías centenarias, y arquitectura del siglo XIX perfecta para street photography. SHOTS: (1) A Brasileira con la estatua de Pessoa (foto icónica), (2) Calles del Chiado con a...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100-400, f/5.6-8, 1/250-1/500s. Focal: 24-70mm (versátil), 50mm (street photography). CAFÉ: A Brasileira (2-4€, turístico pero icónico, foto obligatoria con estatua de Pessoa). LIBRER...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7108,-9.1408" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1408,38.7108,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MAAT — Arquitectura moderna y reflejos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">MAAT — Arquitectura moderna y reflejos</h3>
+            <p><strong>⏰ Hora:</strong> Tarde (14:30-16:00)</p>
+            <p>Ve al MAAT (Museo de Arte, Arquitectura y Tecnología) en Belém para fotografía arquitectónica moderna. El edificio por fuera ya es una obra de arte: estructura ondulante blanca de azulejos que parece una ola gigante saliendo del Tajo. SHOTS: (1) La estructura completa desde el paseo marítimo (ultra ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100-400, f/8-11, 1/250-1/500s. Focal: 16-35mm (estructura completa), 50-85mm (detalles). TECHO: GRATIS (acceso público, rampa exterior). MUSEO: 11€ (solo si te interesa arte contempor...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6963,-9.1987" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1987,38.6963,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Padrão dos Descobrimentos — Geometría y simetría</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Padrão dos Descobrimentos — Geometría y simetría</h3>
+            <p><strong>⏰ Hora:</strong> Tarde (16:30-18:00)</p>
+            <p>El Padrão dos Descobrimentos es perfecto para fotografía arquitectónica y simétrica. Este monumento gigante de 52 metros de altura con forma de carabela tiene 33 estatuas de exploradores portugueses talladas en la fachada. SHOTS: (1) Desde el frente capturando toda la estructura vertical contra el c...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 SETTINGS: ISO 100-400, f/8-11, 1/250-1/500s. Focal: 16-35mm (estructura completa), 50-85mm (detalles estatuas). ENTRADA: 6€ adultos, 3€ estudiantes. Subir arriba: vistas al mosaico del mapamundi + ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6936,-9.2058" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2058,38.6936,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

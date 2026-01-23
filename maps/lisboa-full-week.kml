@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Lisboa Full Week - Estaba en Lisboa</name>
+    <description>Mapa interactivo con todos los lugares de la guía Lisboa Full Week</description>
+    <Style id="restaurant">
+      <IconStyle>
+        <color>ff00ff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="visit">
+      <IconStyle>
+        <color>ff0000ff</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="photo">
+      <IconStyle>
+        <color>ffffff00</color>
+        <scale>1.2</scale>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>🍴 Restaurantes y Comida</name>
+      <Placemark>
+        <name>Almuerzo en Baixa — Comida local auténtica</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Baixa — Comida local auténtica</h3>
+            <p><strong>⏰ Hora:</strong> 13:30</p>
+            <p>Después del castillo, baja hacia Baixa para comer. El centro neurálgico de Lisboa reconstruido después del terremoto de 1755 es ordenado, geométrico, iluminista —calles en cuadrícula perfecta, plazas simétricas, edificios pombalinos de 4 pisos pintados en colores pastel. Para comer, evita los restau...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Evita restaurantes de Rua Augusta (trampas turísticas). Mejor: calles laterales o cafés históricos. Precio medio: 15-25€/persona en restaurantes decentes. Cafés históricos: café + pastel = 2.50€. ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7071,-9.1364" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1364,38.7071,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chiado y A Brasileira — El café de Pessoa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Chiado y A Brasileira — El café de Pessoa</h3>
+            <p><strong>⏰ Hora:</strong> 16:30</p>
+            <p>Desde el elevador, sube al Chiado —el barrio intelectual de Lisboa donde Fernando Pessoa tomaba café cada mañana y escribía poesía en las mesas de los cafés. El Chiado es más elegante que la Baixa, más cultural, más local —aquí están las librerías centenarias (Livraria Bertrand, desde 1732, la más a...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ☕ A Brasileira: café 2-4€ (turístico pero icónico, foto obligatoria con estatua de Pessoa). Librerías: Bertrand (desde 1732, la más antigua del mundo), Ler Devagar (diseño espectacular). GRATIS: Pasea...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7108,-9.1408" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1408,38.7108,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cena en Bairro Alto — El barrio que nunca duerme</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cena en Bairro Alto — El barrio que nunca duerme</h3>
+            <p><strong>⏰ Hora:</strong> 19:00</p>
+            <p>Para el atardecer, uber al Mirador da Graça o Mirador de Santa Catarina (ambos espectaculares). Llega 45 min antes del sunset, pide vino blanco Vinho Verde (4€) o cerveza Super Bock (3€), consigue mesita con vistas, y disfruta el show: Lisboa iluminándose en dorado, el Tajo reflejando el cielo rosa/...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌅 Sunset: Consulta hora, llega 45 min antes. Fin de semana = 1h antes. Vino/cerveza: 3-5€. CENA: 20-35€/persona en restaurantes decentes. TRUCO: Compra cerveza en minimercados (1€) y bebe en las call...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7137,-9.1452" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1452,38.7137,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pastéis de Belém — Los ORIGINALES</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Pastéis de Belém — Los ORIGINALES</h3>
+            <p><strong>⏰ Hora:</strong> 12:30</p>
+            <p>Hora del momento más dulce del viaje: pasteles de nata ORIGINALES en Pastéis de Belém (5 min andando desde Jerónimos). Evita la cola de la tienda - entra DIRECTO a los &quot;Salões&quot; (salones del fondo señalizados). Son salas enormes con azulejos antiguos, meseros con pajarita, y CERO espera. Siéntate, pi...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 Pasteles: 1.30€/unidad, café 1€. TRUCO: Entra directo a &quot;Salão&quot; (evitas 30+ min de cola). HORARIO: 8:00-23:00 diario. MAAT TECHO: GRATIS. Museo: 11€ (solo si te gusta arte contemporáneo). Horario m...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6975,-9.2032" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.2032,38.6975,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Almuerzo en Sintra — Travesseiros y queijadas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Sintra — Travesseiros y queijadas</h3>
+            <p><strong>⏰ Hora:</strong> 14:30</p>
+            <p>Después de explorar Regaleira, baja al centro de Sintra para comer. El pueblo es un laberinto encantador de callecitas medievales empedradas que suben y bajan entre casas de colores pastel, tiendas de souvenirs artesanales vendiendo azulejos pintados a mano, pastelerías con vitrinas llenas de dulces...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 Travesseiros Piriquita: 1.50€/unidad (imperdibles, solo se hacen aquí). Piriquita I (original, Rua Padarias 1, más auténtico) vs Piriquita II (más grande, mejor para sentarse si estás cansado). TAM...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7979,-9.3906" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.3906,38.7979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Almuerzo en Cascais — Mariscos frescos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Almuerzo en Cascais — Mariscos frescos</h3>
+            <p><strong>⏰ Hora:</strong> 13:00</p>
+            <p>Vuelve al centro de Cascais para comer. Este pueblo costero tiene excelentes restaurantes de mariscos con terrazas mirando al mar. Recomendados: &quot;Mar do Inferno&quot; (mariscos frescos, 20-35€, reserva recomendada), &quot;Taberna da Praça&quot; (tapas portuguesas, 15-25€), o &quot;Santini&quot; (helados artesanales desde 19...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Mariscos: 20-35€/persona en restaurantes buenos. Menú del día: 12-18€ en calles laterales. Helados Santini: 3-5€ (IMPERDIBLE, el mejor de Portugal). Reserva recomendada en verano (especialmente fi...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6979,-9.4208" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.4208,38.6979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brunch en LX Factory — El mejor brunch de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Brunch en LX Factory — El mejor brunch de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 12:00</p>
+            <p>Después de explorar LX Factory, quédate para brunch. Hay varios restaurantes excelentes: &quot;Rio Maravilha&quot; (terraza con vistas al puente 25 de Abril, brunch 15-25€, reserva recomendada), &quot;Cantina LX&quot; (de autor, brunch 12-18€), o simplemente cafés con opciones más ligeras. El ambiente es relajado, jove...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🥐 Brunch: 12-25€ según restaurante. Rio Maravilha: terraza con vistas puente, reserva recomendada. Brownie Landeau: 3.50€ (IMPERDIBLE). Tiempo: 1-1.5h para brunch tranquilo. DOMINGO: Ambiente especia...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7065,-9.1799" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1799,38.7065,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cais do Sodré - Mercado + Street Art</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Cais do Sodré - Mercado + Street Art</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>Desde LX Factory, uber o camina 15 min hasta Cais do Sodré - barrio que pasó de zona roja peligrosa a epicentro cultural en 10 años. Empieza en Time Out Market - mercado gastronómico con 40+ puestos de chefs con estrella Michelin, tascas, comida internacional, todo bajo un techo. Funciona así: recor...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Time Out Market: 10-20€/persona. HORARIO: 10:00-00:00 (domingo hasta 18:00). Evita 13:00-15:00 y 20:00-21:00 (llenísimo). Mejor: 11:30 o 16:00-18:00. Pink Street: Foto de día (pintoresca), fiesta ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7058,-9.1455" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1455,38.7058,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mercado da Ribeira - Compras gastronómicas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mercado da Ribeira - Compras gastronómicas</h3>
+            <p><strong>⏰ Hora:</strong> 09:00 - Día 7</p>
+            <p>Tu último día en Lisboa empieza tranquilo. Ve al Mercado da Ribeira / Time Out Market (el mismo sitio - parte es mercado tradicional, parte es food hall moderno). La sección MERCADO TRADICIONAL (abre 6:00, funciona hasta 14:00) vende productos frescos portugueses: quesos artesanales de Serra da Estr...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🛍️ Mercado tradicional: 6:00-14:00 (mejor 9:00-12:00, más surtido). SOUVENIRS: Conservas Comur/Tricana (3-8€ lata, diseños vintage preciosos), queso Serra Estrela (12-20€/kg), vinos 8-30€, aceite oli...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7058,-9.1455" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1455,38.7058,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brunch en Time Out Market — Última comida en Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Brunch en Time Out Market — Última comida en Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 11:00</p>
+            <p>Después de comprar, pasa a la sección TIME OUT para brunch tardío - hay opciones de todo tipo (huevos, tostadas, pasteles, smoothies, 8-15€). Come tranquilo viendo el ambiente del mercado - mezcla de locales comprando ingredientes y turistas probando restaurantes. Es tu última comida en Lisboa, así ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🍽️ Time Out brunch: 10-20€. HORARIO: 10:00-00:00 (domingo hasta 18:00). Evita 13:00-15:00 (llenísimo). Mejor: 11:00-12:00 para brunch tranquilo. Tiempo: 1-1.5h para comer y procesar que es tu último ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7058,-9.1455" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1455,38.7058,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Última cena + Fado de despedida</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Última cena + Fado de despedida</h3>
+            <p><strong>⏰ Hora:</strong> 19:00</p>
+            <p>Para tu última noche en Lisboa, cierra con broche de oro: cena + fado auténtico en Alfama. Ve a una casa de fados tradicional como &quot;Tasca do Chico&quot; (gratis, solo pagas consumiciones - vino 3€, petiscos 5-8€, ambiente íntimo con fadistas profesionales y amateurs turnándose), &quot;A Baiuca&quot; (reserva oblig...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎵 Tasca do Chico: GRATIS (solo consumes), llega 21:00 para sitio, empieza 22:00. A Baiuca: reserva online obligatoria, 15€ mínimo. Mesa de Frades: 25-35€, reserva recomendada. REGLAS: Silencio cuando...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1288" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#restaurant</styleUrl>
+        <Point>
+          <coordinates>-9.1288,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>🏛️ Monumentos y Visitas</name>
+      <Placemark>
+        <name>Alfama - El barrio más auténtico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Alfama - El barrio más auténtico</h3>
+            <p><strong>⏰ Hora:</strong> 09:00 - Día 1</p>
+            <p>Tu primera semana en Lisboa empieza por todo lo alto: Alfama. Sal temprano para evitar las hordas turísticas. Alfama es el barrio que sobrevivió al terremoto de 1755 - calles medievales retorcidas, escaleras empinadas entre casas de azulejos desgastados, ropa tendida cruzando balcones, y abuelas bar...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚶 GRATIS: Todo Alfama. RUTA: Catedral Sé → calles aleatorias hacia arriba → Mirador Santa Luzia. Distancia: 1.5 km (pero con escaleras se siente como 3). Lleva agua, las subidas cansan. Mejor calzado...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7109,-9.1333" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1333,38.7109,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador de Santa Luzia — La postal que todo el mundo reconoce</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador de Santa Luzia — La postal que todo el mundo reconoce</h3>
+            <p><strong>⏰ Hora:</strong> 10:30</p>
+            <p>Después de perderte por las callejuelas de Alfama, subes una última cuesta y llegas a este mirador. Es el momento en que entiendes por qué llaman a Lisboa &quot;la ciudad de las siete colinas&quot; — porque desde aquí ves cómo los tejados naranjas descienden en cascada hacia el Tajo, cómo las calles serpentea...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 Mejor hora para fotos: 10:00-11:00 (luz dorada horizontal, menos sombras duras). El mirador se llena después de las 11:00 con grupos organizados. Hay otro mirador justo al lado (Portas do Sol) con ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7115,-9.1294" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1294,38.7115,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Castillo de San Jorge — Donde nació Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Castillo de San Jorge — Donde nació Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 11:30</p>
+            <p>Después del mirador, sube al Castillo de San Jorge - fortaleza mora del siglo XI con las mejores vistas de Lisboa. La entrada son 15€ pero vale cada céntimo: murallas medievales que puedes recorrer por dentro, torres con vistas 360° sobre Lisboa (ves el puente 25 de Abril, el Tajo, Alfama completa, ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Castillo: 15€ adultos, 7.50€ estudiantes/seniors, menores 10 años gratis. TRUCO: Ve después de las 15:00 cuando ya se fue medio mundo, o compra online para evitar cola (en verano puede ser de 1 hor...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7139,-9.1334" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1334,38.7139,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Baixa - Centro neurálgico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Baixa - Centro neurálgico</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>Después de comer, explora Baixa caminando. Empieza en la Praça do Comércio (plaza gigante amarilla abierta al Tajo con arcadas impresionantes), sube al Arco da Rua Augusta (3€, mirador 360° con vistas brutales), camina por Rua Augusta (calle peatonal principal llena de tiendas, artistas callejeros, ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 💰 Arco da Rua Augusta: 3€ (vistas brutales, 5 min arriba). GRATIS: Pasear Baixa, Praça Comércio, Rossio. Tiempo: 1-1.5h caminando tranquilo.</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7071,-9.1364" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1364,38.7071,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Elevador de Santa Justa — El ascensor neogótico</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Elevador de Santa Justa — El ascensor neogótico</h3>
+            <p><strong>⏰ Hora:</strong> 15:30</p>
+            <p>El Elevador de Santa Justa es uno de los íconos arquitectónicos de Lisboa —un ascensor vertical de hierro neogótico de 45 metros de altura diseñado en 1902 por Raoul Mesnier du Ponsard, discípulo de Gustave Eiffel. La estructura parece sacada de una novela de Julio Verne: hierro forjado con decoraci...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ⚠️ Elevador: CERRADO (2026) por mantenimiento. GRATIS: Ver la estructura desde abajo —es igual de impresionante. ALTERNATIVA: Sube gratis por Escadas do Carmo (escaleras al lado) y entra al mirador po...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7124,-9.1396" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1396,38.7124,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mirador da Graça — El mejor atardecer de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Mirador da Graça — El mejor atardecer de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 18:00</p>
+            <p>Para el mejor atardecer de Lisboa, uber hasta el Mirador da Graça (10 min desde Chiado). Este mirador tiene todo: vistas de 270° sobre la ciudad (ves Alfama, el Castillo, el Tajo, el puente, los barrios del oeste hasta Belém), terrazas con mesitas blancas bajo pinos centenarios, un quiosco sirviendo...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌅 TIMING CRÍTICO: Llega 45-60 min ANTES del sunset (consulta hora). Mesitas primera fila se llenan RÁPIDO. Fin de semana = llega 1 hora antes. Vino: 4-6€, cerveza: 3€, petiscos: 5-8€. Quiosco horario...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7169,-9.1329" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1329,38.7169,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Torre de Belém — El ícono de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Torre de Belém — El ícono de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 09:30 - Día 2</p>
+            <p>Día 2 dedicado a Belém, el barrio de los descubrimientos. Tranvía 15 desde Praça da Figueira (15 min). Empieza por la Torre de Belém (10:00 cuando abre - crítico para evitar colas). Esta fortaleza del siglo XVI en el Tajo parece un castillo de cuento: estilo manuelino blanco, torres, baluartes, terr...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 8€ individual, 14€ combo Torre + Monasterio Jerónimos (compra combo, ahorras 4€). HORARIO: 10:00-17:30 (oct-abr), 10:00-18:30 (may-sep). Lunes CERRADO. Compra online para saltarte cola. Es...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6916,-9.2158" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2158,38.6916,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Padrão dos Descobrimentos — Monumento a los Descubrimientos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Padrão dos Descobrimentos — Monumento a los Descubrimientos</h3>
+            <p><strong>⏰ Hora:</strong> 10:30</p>
+            <p>Justo al lado de la Torre de Belém, camina 2 minutos hasta el Padrão dos Descobrimentos (Monumento a los Descubrimientos) —un monumento gigante de 52 metros de altura con forma de carabela que celebra la era dorada de los descubrimientos portugueses. Fue construido en 1960 para conmemorar el 500 ani...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 6€ adultos, 3€ estudiantes/seniors. Subir arriba: vistas al mosaico del mapamundi + panorámica del Tajo. HORARIO: 10:00-19:00 (verano), 10:00-18:00 (invierno). Lunes cerrado. Tiempo visita...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6936,-9.2058" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2058,38.6936,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Monasterio dos Jerónimos — La obra maestra del oro portugués</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Monasterio dos Jerónimos — La obra maestra del oro portugués</h3>
+            <p><strong>⏰ Hora:</strong> 11:00</p>
+            <p>Desde el Padrão, camina 10 minutos (o tranvía 15 una parada) hasta el Monasterio dos Jerónimos - la obra maestra absoluta del gótico manuelino portugués y Patrimonio de la Humanidad UNESCO. Este monstruo de piedra calcárea blanca fue construido con el oro de las especias que Vasco da Gama trajo de l...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 💰 IGLESIA: GRATIS (imperdible). CLAUSTRO: 10€ (bonito pero opcional). Combo Torre+Claustro: 14€. LUNES: Todo cerrado. Cola iglesia: 20-40 min (verano). Mejor hora: 9:00-10:30 cuando abre. Audio-guía:...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6979,-9.2061" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.2061,38.6979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tren a Sintra — Viaje al cuento de hadas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tren a Sintra — Viaje al cuento de hadas</h3>
+            <p><strong>⏰ Hora:</strong> 08:30 - Día 3</p>
+            <p>Día 3 es tu excursión a Sintra —el pueblo de palacios de colores escondido en las montañas a cuarenta minutos de Lisboa que parece sacado de un cuento de hadas. Sal TEMPRANO. Esto es crítico y no es una exageración. Coge el tren desde la Estación Rossio (centro de Lisboa, fácil de llegar en metro lí...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚂 TREN: Estación Rossio (Lisboa) → Sintra. Frecuencia: cada 20 minutos desde 6:30. Precio: 2.30€ ida, 4.60€ ida/vuelta (compra ida/vuelta, más barato). Duración: 40 minutos. Último tren de vuelta: 23...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7986,-9.3881" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3881,38.7986,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Palacio da Pena — La fantasía de colores que define Sintra</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Palacio da Pena — La fantasía de colores que define Sintra</h3>
+            <p><strong>⏰ Hora:</strong> 09:30</p>
+            <p>Súbete al bus 434 y en quince minutos llegas a la entrada del Palacio da Pena —el palacio más icónico y fotogénico de Portugal, y posiblemente uno de los más coloridos del mundo. Es una explosión de colores imposible que parece diseñada por un niño con una caja de lápices: muros amarillos brillantes...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada PALACIO + JARDINES: 20€ (esencial, no te conformes con solo jardines). Solo jardines: 10€ (NO lo hagas, te pierdes lo mejor que es el interior del palacio). Compra ONLINE con antelación —ev...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7877,-9.3906" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3906,38.7877,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Quinta da Regaleira — Los jardines iniciáticos más misteriosos</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Quinta da Regaleira — Los jardines iniciáticos más misteriosos</h3>
+            <p><strong>⏰ Hora:</strong> 12:30</p>
+            <p>Baja en bus al centro de Sintra, cambia al bus 435 o camina quince minutos hasta Quinta da Regaleira —el lugar más misterioso y fascinante de Sintra, y posiblemente de toda Portugal. Este palacio neogótico con jardines laberínticos de cuatro hectáreas fue diseñado a principios del siglo XX por un mi...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 12€ adultos, 6€ niños (3-17 años), menores 3 años gratis. HORARIO: 9:30-19:00 (verano), 9:30-18:00 (invierno). Compra online recomendada (verano = colas largas de 30-60 min). Tiempo visita...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7963,-9.3962" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3962,38.7963,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Castelo dos Mouros - Ruinas en las nubes</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Castelo dos Mouros - Ruinas en las nubes</h3>
+            <p><strong>⏰ Hora:</strong> 15:00</p>
+            <p>Desde el centro de Sintra, sube de nuevo en el bus 434 hasta el Castelo dos Mouros - fortaleza musulmana del siglo VIII abandonada en ruinas en la cima de la montaña. Es completamente diferente a los palacios: sin colores, sin decoración, solo murallas de piedra gris serpenteando por las rocas entre...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 10€. Combo Pena + Mouros: 26€ (ahorro 4€). HORARIO: 9:30-18:30 (verano), 10:00-17:00 (invierno). Tiempo visita: 1h. FÍSICO: Muchas escaleras, subidas empinadas, zonas sin barandilla. Lleva...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7924,-9.3896" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3896,38.7924,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centro de Sintra — Despedida del cuento de hadas</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Centro de Sintra — Despedida del cuento de hadas</h3>
+            <p><strong>⏰ Hora:</strong> 17:00</p>
+            <p>Baja al centro de Sintra para tu última parada del día antes de volver a Lisboa. Pasea por la Praça da República (plaza principal con fuentes, bancos, y el Palacio Nacional de Sintra —ese edificio blanco con dos chimeneas cónicas gigantes que parecen sombreros de bruja), recorre tiendas vendiendo az...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🛍️ Centro Sintra: GRATIS pasear, no hay entrada a nada. Tiendas cierran 19:00-19:30. Regreso Lisboa: Tren hasta 23:00 aproximadamente (cada 20-30 minutos). Cena en Lisboa —llegas alrededor de las 19:...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7979,-9.3906" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.3906,38.7979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tren a Cascais - Riviera portuguesa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Tren a Cascais - Riviera portuguesa</h3>
+            <p><strong>⏰ Hora:</strong> 09:00 - Día 4</p>
+            <p>Día 4 dedicado a la costa. Toma el tren desde Estación Cais do Sodré hacia Cascais (40 min, 2.40€, sale cada 20 min). El viaje ya es espectacular - el tren va pegado al Tajo/Atlántico con vistas al agua todo el recorrido. Pasas por Belém, Oeiras, Estoril (donde está el casino que inspiró Casino Roya...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚂 TREN: Cais do Sodré → Cascais, 2.40€, 40 min, cada 20 min. Úsalo todo el día (puedes bajar en Estoril, pasear, volver a subir). PLAYAS: GRATIS, llenas en verano. COMIDA: Mariscos 15-30€, hamburgues...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6979,-9.4208" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.4208,38.6979,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Boca do Inferno — Acantilados donde el mar ruge</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Boca do Inferno — Acantilados donde el mar ruge</h3>
+            <p><strong>⏰ Hora:</strong> 11:00</p>
+            <p>Desde el centro de Cascais, camina 15 minutos por el paseo marítimo hasta Boca do Inferno (Boca del Infierno) —una formación rocosa espectacular donde las olas del Atlántico rompen con fuerza brutal contra los acantilados, creando un sonido que suena como truenos. El nombre viene de la forma de la r...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌊 GRATIS: Acceso 24 horas. MEJOR MOMENTO: Marea alta + oleaje fuerte (consulta tablas de mareas). El espectáculo es más épico con mal tiempo. Paseo desde Cascais: 15 min caminando por paseo marítimo....</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.6881,-9.4247" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.4247,38.6881,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Guincho - Playa salvaje y surf</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Guincho - Playa salvaje y surf</h3>
+            <p><strong>⏰ Hora:</strong> 15:00</p>
+            <p>Desde Cascais, toma el bus 405 o 415 (30 min, 2€) o alquila bici (9km por carril bici costero) hasta Playa de Guincho. Es el polo opuesto de las playas urbanas de Cascais: kilómetros de arena blanca salvaje, dunas enormes, viento constante del Atlántico, olas gigantes, y el cabo da Roca (punto más o...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🏄 BUS: 405/415 desde Cascais, 30 min, 2€. BICI: 9km desde Cascais (carril bici todo el recorrido). SURF: Clases 40-50€ (2h), alquiler tabla+neopreno 20€. COMIDA: Restaurantes 15-30€, brutal el pescad...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7311,-9.4753" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.4753,38.7311,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>LX Factory - Arte urbano y creatividad</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">LX Factory - Arte urbano y creatividad</h3>
+            <p><strong>⏰ Hora:</strong> 10:00 - Día 5</p>
+            <p>Día 5 es para descubrir el Lisboa alternativo y creativo. Empieza en LX Factory (bus/uber 10 min desde centro) - antigua fábrica textil bajo el Puente 25 de Abril convertida en hub creativo. Naves industriales de ladrillo rojo llenas de murales gigantes de artistas internacionales, estudios de diseñ...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> ☕ GRATIS: Pasear, ver murales, entrar a Ler Devagar. Café: 2-4€. Brownie Landeau: 3.50€ (IMPERDIBLE, el mejor). DOMINGO: Mercado vintage 11:00-19:00. Tiendas diseño, estudios, galerías. Brunch restaur...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7065,-9.1799" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1799,38.7065,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pink Street — La calle más fotogénica de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Pink Street — La calle más fotogénica de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 16:00</p>
+            <p>Después del mercado, explora Pink Street (Rua Nova do Carvalho) —la calle más fotogénica de Lisboa, pintada de rosa fosforito de extremo a extremo. Durante el día es perfecta para fotos —el contraste del rosa vibrante con los edificios históricos alrededor es único. De noche (después de las 23:00) s...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 📸 FOTO: Mejor de día (luz natural, menos gente). Fiesta: Después 23:00. Bares: &quot;Pensão Amor&quot; (5-8€ copas, ambiente único), &quot;Musicbox&quot; (discoteca, 5-10€ entrada). Cerveza minimercado: 1€ vs 4€ en bare...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7069,-9.1467" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1467,38.7069,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alcântara - Rooftops y Sunset</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Alcântara - Rooftops y Sunset</h3>
+            <p><strong>⏰ Hora:</strong> 18:00</p>
+            <p>Para el atardecer, quédate en la zona de Alcântara/LX Factory y sube a algún rooftop con vistas al Puente 25 de Abril. &quot;PARK&quot; es el rooftop más famoso - bar en la azotea de un parking con vistas 360°, tumbonas, mesas bajas, DJs los fines de semana, y ambiente relajado. Pide gin tonic (8-10€) o cerve...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌅 PARK rooftop: Entrada gratis, consumición 4-15€. HORARIO: 13:00-2:00 (verano), cierra antes invierno. Llega 30-45 min antes sunset (se llena). Fin de semana = DJs + fiesta. Rio Maravilha: Más cena ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7048,-9.1755" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1755,38.7048,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parque das Nações - Lisboa futurista</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Parque das Nações - Lisboa futurista</h3>
+            <p><strong>⏰ Hora:</strong> 10:00 - Día 6</p>
+            <p>Día 6 te lleva al futuro de Lisboa: Parque das Nações, construido para la Expo 98 y hoy el barrio más moderno de la ciudad. Metro línea roja hasta &quot;Oriente&quot; (20 min desde centro). Cuando salgas de la estación (diseñada por Calatrava - estructura blanca futurista como un esqueleto de dinosaurio), est...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🚇 METRO: Línea roja hasta &quot;Oriente</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7681,-9.0938" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0938,38.7681,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Teleférico do Parque das Nações — Vistas aéreas del Tajo</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Teleférico do Parque das Nações — Vistas aéreas del Tajo</h3>
+            <p><strong>⏰ Hora:</strong> 11:30</p>
+            <p>El Teleférico del Parque das Nações es una experiencia única —un recorrido de 20 minutos sobre el río Tajo con vistas aéreas espectaculares del barrio más moderno de Lisboa. El teleférico va desde el Pabellón del Conocimiento hasta el Oceanário, pasando sobre el río, jardines, y arquitectura vanguar...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Teleférico: 6€ ida, 9€ ida/vuelta (recomendado ida/vuelta, más barato). HORARIO: 10:00-20:00 (verano), 10:00-18:00 (invierno). Duración: 20 min recorrido. MEJOR MOMENTO: Atardecer (18:00-20:00 vera...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7681,-9.0938" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0938,38.7681,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oceanário de Lisboa</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Oceanário de Lisboa</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>La joya del Parque das Nações es el Oceanário - uno de los acuarios más grandes y espectaculares de Europa. El edificio parece flotar sobre el agua (diseño Álvaro Siza Vieira). Dentro hay UN tanque central GIGANTE de 5000m³ con decenas de especies conviviendo: tiburones, rayas manta, atunes, peces l...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Entrada: 25€ adultos, 17€ niños (3-12), 16€ seniors. Compra online (descuento 10% + evitas cola). HORARIO: 10:00-19:00 (verano), 10:00-18:00 (invierno). Último acceso 1h antes cierre. Tiempo visita...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7633,-9.0939" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.0939,38.7633,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jardim da Estrela - Relax en el parque</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Jardim da Estrela - Relax en el parque</h3>
+            <p><strong>⏰ Hora:</strong> 14:00</p>
+            <p>Para tu última tarde, escápate al Jardim da Estrela - parque romántico del siglo XIX en el barrio de Estrela (tranvía 28 o uber 10 min desde centro). Es el parque más bonito de Lisboa: lagos con patos y cisnes, kiosco de hierro art nouveau en el centro (ahora es café con terraza), caminos arbolados,...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🌳 PARQUE: GRATIS (abierto 7:00-00:00). Kiosco café: 2-5€. LLEVA: Manta, picnic (compra en mercado o pastelería cercana). BASÍLICA: Gratis iglesia, 5€ cúpula (vistas brutales). Tranvía 28 para aquí - ...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7149,-9.1605" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1605,38.7149,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Basílica da Estrela — Cúpula con vistas 360°</name>
+        <description><![CDATA[
+          <div style="font-family: Arial, sans-serif; max-width: 400px;">
+            <h3 style="color: #FF6B35; margin-top: 0;">Basílica da Estrela — Cúpula con vistas 360°</h3>
+            <p><strong>⏰ Hora:</strong> 17:00</p>
+            <p>Al lado del Jardim da Estrela está la Basílica da Estrela —una iglesia neoclásica blanca enorme construida en el siglo XVIII por la reina María I. La entrada a la iglesia es gratis, pero lo mejor es subir a la cúpula (5€) para tener las últimas vistas 360° de Lisboa antes de irte. La subida es por e...</p>
+            <p style="background: #f0f7ff; padding: 10px; border-radius: 5px; margin-top: 10px;"><strong>💡 Tip:</strong> 🎫 Basílica: GRATIS (iglesia). Cúpula: 5€ (vistas 360° brutales). HORARIO: 9:00-19:00 (verano), 9:00-18:00 (invierno). Tiempo visita: 30-45 min (iglesia + subida cúpula). Menos turístico que otros mon...</p>
+            <p style="margin-top: 15px;">
+              <a href="https://maps.google.com/?q=38.7149,-9.1605" target="_blank" style="color: #FF6B35; text-decoration: none; font-weight: bold;">📍 Abrir en Google Maps →</a>
+            </p>
+          </div>
+        ]]></description>
+        <styleUrl>#visit</styleUrl>
+        <Point>
+          <coordinates>-9.1605,38.7149,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

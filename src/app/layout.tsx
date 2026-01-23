@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
@@ -39,6 +40,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logo.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
@@ -47,6 +57,12 @@ export const metadata: Metadata = {
     title: 'Guías de Lisboa 2025 por Locales - Evita Trampas Turísticas',
     description: 'Itinerarios verificados con horarios exactos, GPS y restaurantes locales. Sin trampas turísticas.',
     images: [
+      {
+        url: 'https://estabaenlisboa.com/logo.png',
+        width: 600,
+        height: 188,
+        alt: 'Estaba en Lisboa - Logo',
+      },
       {
         url: 'https://estabaenlisboa.com/og-image.jpg',
         width: 1200,
@@ -74,9 +90,11 @@ export default function RootLayout({
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
           <link rel="preconnect" href="https://unpkg.com" />
           <link rel="preconnect" href="https://js.stripe.com" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://unpkg.com" />
           <link rel="dns-prefetch" href="https://js.stripe.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -91,11 +109,30 @@ export default function RootLayout({
           <SchemaMarkup />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {/* Google tag (gtag.js) - Aplicado a todas las páginas */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-8F54LQ5862"
+            strategy="afterInteractive"
+            async
+          />
+          <Script id="google-analytics-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8F54LQ5862', {
+                anonymize_ip: true,
+                cookie_flags: 'SameSite=None;Secure'
+              });
+            `}
+          </Script>
+          
           <ErrorBoundary>
             <Navbar />
             {children}
             <Footer />
             <CookieBanner />
+            <GoogleAnalytics />
             <Script id="clerk-cors-debug" strategy="afterInteractive">
               {`
                 (function() {

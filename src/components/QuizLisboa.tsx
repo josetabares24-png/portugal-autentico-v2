@@ -132,47 +132,49 @@ const guideData: Record<Duration, Guide> = {
 };
 
 const screenVariants = {
-  initial: { opacity: 0, y: 20, scale: 0.98 },
+  initial: { opacity: 0, y: 30, scale: 0.96 },
   animate: { opacity: 1, y: 0, scale: 1 },
-  exit: { opacity: 0, y: -20, scale: 0.98 },
+  exit: { opacity: 0, y: -30, scale: 0.96 },
 };
 
 const optionVariants = {
-  initial: { opacity: 0, x: -12 },
+  initial: { opacity: 0, x: -20, scale: 0.95 },
   animate: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: i * 0.08, duration: 0.35 },
+    scale: 1,
+    transition: { delay: i * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.1,
     },
   },
 };
 
 function ProgressBar({ current, total }: { current: number; total: number }) {
+  const progress = ((current + 1) / total) * 100;
+  
   return (
-    <div className="mb-6">
-      <div className="flex gap-1.5 mb-3">
-        {Array.from({ length: total }).map((_, i) => (
-          <motion.div
-            key={i}
-            className={`h-1 flex-1 rounded-full ${
-              i < current ? 'bg-primary' : i === current ? 'bg-primary/40' : 'bg-slate-200'
-            }`}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: i * 0.05, duration: 0.25 }}
-          />
-        ))}
+    <div className="mb-8">
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-sm font-semibold text-slate-600">
+          Pregunta <span className="text-primary font-bold">{current + 1}</span> de {total}
+        </p>
+        <span className="text-xs font-medium text-slate-400">{Math.round(progress)}%</span>
       </div>
-      <p className="text-sm text-text-secondary">
-        Pregunta <span className="text-primary font-semibold">{current + 1}</span> de {total}
-      </p>
+      <div className="relative h-2 bg-slate-100 rounded-full overflow-hidden">
+        <motion.div
+          className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-[#F7931E] rounded-full shadow-lg"
+          initial={{ width: 0 }}
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+      </div>
     </div>
   );
 }
@@ -193,44 +195,73 @@ function OptionCard({ emoji, title, desc, selected, onClick, index }: OptionCard
       variants={optionVariants}
       initial="initial"
       animate="animate"
-      whileHover={{ scale: 1.01, x: 3 }}
+      whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className={`w-full p-4 rounded-2xl border transition-all duration-300 flex items-center gap-4 text-left ${
+      className={`group relative w-full p-5 rounded-3xl border-2 transition-all duration-300 flex items-center gap-4 text-left overflow-hidden ${
         selected
-          ? 'bg-primary/10 border-primary shadow-soft-lg'
-          : 'bg-white border-slate-200/80 hover:border-primary/40 hover:shadow-soft'
+          ? 'bg-gradient-to-br from-primary/15 via-primary/10 to-primary/5 border-primary shadow-xl shadow-primary/20'
+          : 'bg-white/80 backdrop-blur-sm border-slate-200 hover:border-primary/50 hover:shadow-lg hover:bg-white'
       }`}
     >
-      <div
-        className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl transition-all duration-300 ${
-          selected ? 'bg-primary text-white shadow-lg' : 'bg-background-cream'
+      {/* Efecto de brillo en hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500" />
+      
+      {/* Icono con efecto premium */}
+      <motion.div
+        className={`relative w-16 h-16 rounded-2xl flex items-center justify-center text-3xl transition-all duration-300 ${
+          selected
+            ? 'bg-gradient-to-br from-primary to-[#F7931E] text-white shadow-lg shadow-primary/30'
+            : 'bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-primary/10 group-hover:to-primary/5'
         }`}
+        whileHover={{ rotate: [0, -5, 5, 0], scale: 1.05 }}
+        transition={{ duration: 0.3 }}
       >
         {emoji}
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="font-semibold text-text-main">{title}</p>
-        <p className="text-sm text-text-secondary">{desc}</p>
-      </div>
-      <div
-        className={`w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-300 ${
-          selected ? 'bg-primary border-primary' : 'border-slate-300'
-        }`}
-      >
         {selected && (
-          <motion.svg
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="w-3.5 h-3.5 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={3}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </motion.svg>
+          <motion.div
+            className="absolute inset-0 rounded-2xl bg-white/20"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
         )}
+      </motion.div>
+      
+      {/* Contenido */}
+      <div className="flex-1 min-w-0">
+        <p className={`font-bold text-lg mb-1 transition-colors ${
+          selected ? 'text-slate-900' : 'text-slate-800 group-hover:text-primary'
+        }`}>
+          {title}
+        </p>
+        <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
+      </div>
+      
+      {/* Checkbox premium */}
+      <div className="relative flex-shrink-0">
+        <motion.div
+          className={`w-7 h-7 rounded-xl border-2 flex items-center justify-center transition-all duration-300 ${
+            selected
+              ? 'bg-primary border-primary shadow-lg shadow-primary/30'
+              : 'bg-white border-slate-300 group-hover:border-primary/50'
+          }`}
+          animate={selected ? { scale: [1, 1.1, 1] } : {}}
+          transition={{ duration: 0.3 }}
+        >
+          {selected && (
+            <motion.svg
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              className="w-4 h-4 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={3.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </motion.svg>
+          )}
+        </motion.div>
       </div>
     </motion.button>
   );
@@ -251,7 +282,7 @@ export default function QuizLisboa() {
   const handleAnswer = useCallback(
     (key: keyof Answers, value: string, nextScreen: typeof screen) => {
       setAnswers((prev) => ({ ...prev, [key]: value }));
-      setTimeout(() => setScreen(nextScreen), 300);
+      setTimeout(() => setScreen(nextScreen), 400);
     },
     []
   );
@@ -301,7 +332,7 @@ export default function QuizLisboa() {
       showToast('Email enviado. Revisa tu bandeja', 'success');
     }
 
-    setTimeout(() => setScreen('results'), 1200);
+    setTimeout(() => setScreen('results'), 1500);
   }, [answers, getProfileKey, showToast]);
 
   const shareResult = useCallback(() => {
@@ -321,22 +352,32 @@ export default function QuizLisboa() {
     screen === 'q1' ? 0 : screen === 'q2' ? 1 : screen === 'q3' ? 2 : screen === 'q4' ? 3 : screen === 'q5' ? 4 : -1;
 
   return (
-    <div className="min-h-screen bg-background-light text-text-main relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background-cream via-background-light to-white" />
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full blur-[120px]" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 text-slate-900 relative overflow-hidden">
+      {/* Fondo premium con efectos */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/20 to-[#F7931E]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-primary/15 to-[#F7931E]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl" />
+      </div>
 
-      <div className="relative z-10 max-w-lg mx-auto px-5 py-8 min-h-screen flex flex-col">
-        <header className="flex items-center justify-between mb-6">
+      <div className="relative z-10 max-w-2xl mx-auto px-5 sm:px-6 py-8 sm:py-12 min-h-screen flex flex-col">
+        {/* Header premium */}
+        <header className="flex items-center justify-between mb-8 sm:mb-12">
           <a href="https://estabaenlisboa.com" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
-              <span className="text-lg">📍</span>
-            </div>
-            <span className="font-semibold text-text-main">Estaba en Lisboa</span>
+            <motion.div
+              className="w-12 h-12 bg-gradient-to-br from-primary to-[#F7931E] rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-xl group-hover:shadow-primary/30 transition-all"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-xl">📍</span>
+            </motion.div>
+            <span className="font-bold text-lg text-slate-800 group-hover:text-primary transition-colors">
+              Estaba en Lisboa
+            </span>
           </a>
           <a
             href="https://estabaenlisboa.com"
-            className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-slate-50 transition-all"
+            className="w-11 h-11 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-white hover:border-primary/30 hover:shadow-lg transition-all"
           >
             <span className="material-symbols-outlined text-xl">close</span>
           </a>
@@ -352,59 +393,112 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
-              transition={{ duration: 0.35 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="flex-1 flex flex-col justify-center text-center py-8"
             >
-              <motion.span
-                className="text-6xl mb-4 block"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              <motion.div
+                className="relative inline-block mb-8"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                🇵🇹
-              </motion.span>
+                <span className="text-7xl sm:text-8xl block">🇵🇹</span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#F7931E]/20 rounded-full blur-2xl -z-10"
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+              </motion.div>
 
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mx-auto mb-6">
-                <span className="material-symbols-outlined text-base">verified</span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2.5 bg-gradient-to-r from-primary/10 to-[#F7931E]/10 border-2 border-primary/30 text-primary px-5 py-2.5 rounded-full text-sm font-bold mx-auto mb-8 shadow-lg shadow-primary/10"
+              >
+                <span className="material-symbols-outlined text-lg">verified</span>
                 Por alguien que vive aquí
-              </div>
+              </motion.div>
 
-              <h1 className="text-4xl sm:text-5xl font-display font-black mb-4 tracking-tight">
-                ¿Qué Lisboa es <span className="text-primary">para ti</span>?
-              </h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-5xl sm:text-6xl md:text-7xl font-black mb-6 tracking-tight leading-tight"
+              >
+                ¿Qué Lisboa es{' '}
+                <span className="bg-gradient-to-r from-primary to-[#F7931E] bg-clip-text text-transparent">
+                  para ti
+                </span>
+                ?
+              </motion.h1>
 
-              <p className="text-lg text-text-secondary mb-8 max-w-sm mx-auto">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-xl sm:text-2xl text-slate-600 mb-12 max-w-lg mx-auto leading-relaxed"
+              >
                 5 preguntas rápidas. Te digo qué barrios, qué experiencias y qué guía necesitas.
-              </p>
+              </motion.p>
 
-              <div className="flex justify-center gap-6 mb-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-12"
+              >
                 {[
-                  { icon: '⏱️', text: '60 seg' },
-                  { icon: '🎯', text: 'Personalizado' },
-                  { icon: '🎁', text: 'Gratis' },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2 text-text-secondary">
-                    <span className="w-9 h-9 bg-white rounded-lg flex items-center justify-center border border-slate-200">
+                  { icon: '⏱️', text: '60 seg', desc: 'Súper rápido' },
+                  { icon: '🎯', text: 'Personalizado', desc: '100% para ti' },
+                  { icon: '🎁', text: 'Gratis', desc: 'Sin coste' },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.text}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 + i * 0.1 }}
+                    className="flex flex-col items-center gap-2 text-slate-700"
+                  >
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-2xl shadow-lg border border-slate-100">
                       {item.icon}
-                    </span>
-                    <span className="text-sm">{item.text}</span>
-                  </div>
+                    </div>
+                    <div className="text-center">
+                      <p className="font-bold text-sm">{item.text}</p>
+                      <p className="text-xs text-slate-500">{item.desc}</p>
+                    </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setScreen('q1')}
-                className="w-full py-4 px-6 bg-primary hover:bg-primary-dark rounded-2xl font-semibold text-lg text-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                className="group relative w-full sm:w-auto sm:px-12 py-5 bg-gradient-to-r from-primary to-[#F7931E] hover:from-primary-dark hover:to-[#E55A28] rounded-2xl font-bold text-lg text-white shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all flex items-center justify-center gap-3 mx-auto overflow-hidden"
               >
-                Descubrir mi Lisboa
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                <span className="relative z-10">Descubrir mi Lisboa</span>
+                <motion.span
+                  className="material-symbols-outlined text-xl relative z-10"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  arrow_forward
+                </motion.span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               </motion.button>
 
-              <p className="text-sm text-text-secondary mt-4 flex items-center justify-center gap-1.5">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="text-sm text-slate-500 mt-6 flex items-center justify-center gap-2"
+              >
                 <span className="material-symbols-outlined text-base text-primary">group</span>
-                +2,400 viajeros ya lo hicieron
-              </p>
+                <span className="font-semibold text-slate-700">+2,400</span> viajeros ya lo hicieron
+              </motion.p>
             </motion.div>
           )}
 
@@ -415,10 +509,17 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Con quién viajas a Lisboa?</h2>
-              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-3">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-8 text-slate-900"
+              >
+                ¿Con quién viajas a Lisboa?
+              </motion.h2>
+              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-4">
                 {[
                   { value: 'solo', emoji: '🎒', title: 'Solo', desc: 'A mi ritmo, sin compromisos' },
                   { value: 'pareja', emoji: '💑', title: 'En pareja', desc: 'Escapada romántica' },
@@ -446,10 +547,17 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Qué te emociona más de Lisboa?</h2>
-              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-3">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-8 text-slate-900"
+              >
+                ¿Qué te emociona más de Lisboa?
+              </motion.h2>
+              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-4">
                 {[
                   { value: 'gastronomia', emoji: '🍷', title: 'Comer y beber bien', desc: 'Pastéis, vino, marisco fresco' },
                   { value: 'cultura', emoji: '🏛️', title: 'Historia y cultura', desc: 'Monumentos, fado, azulejos' },
@@ -477,10 +585,17 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Cuántos días tienes?</h2>
-              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-3">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-8 text-slate-900"
+              >
+                ¿Cuántos días tienes?
+              </motion.h2>
+              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-4">
                 {[
                   { value: '1dia', emoji: '⚡', title: '1 día', desc: 'Escala o visita exprés' },
                   { value: '2dias', emoji: '📅', title: '2-3 días', desc: 'Fin de semana largo' },
@@ -508,10 +623,17 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Cómo vas de presupuesto?</h2>
-              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-3">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-8 text-slate-900"
+              >
+                ¿Cómo vas de presupuesto?
+              </motion.h2>
+              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-4">
                 {[
                   { value: 'bajo', emoji: '💰', title: 'Ajustado', desc: 'Maximizar sin gastar de más' },
                   { value: 'medio', emoji: '💳', title: 'Normal', desc: 'Algunos gustos sin pasarse' },
@@ -538,10 +660,17 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
+              transition={{ duration: 0.4 }}
               className="flex-1 flex flex-col"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6">¿Primera vez en Lisboa?</h2>
-              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-3">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-8 text-slate-900"
+              >
+                ¿Primera vez en Lisboa?
+              </motion.h2>
+              <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-4">
                 {[
                   { value: 'primera', emoji: '🆕', title: 'Sí, primera vez', desc: 'Todo es nuevo para mí' },
                   { value: 'segunda', emoji: '🔄', title: 'Ya conozco lo básico', desc: 'Belém, Alfama, tranvía 28...' },
@@ -568,61 +697,88 @@ export default function QuizLisboa() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="flex-1 flex flex-col justify-center text-center py-8"
+              transition={{ duration: 0.4 }}
+              className="flex-1 flex flex-col justify-center text-center py-8 max-w-md mx-auto w-full"
             >
               <motion.div
-                className="w-20 h-20 mx-auto mb-6 bg-primary/10 border border-primary/20 rounded-3xl flex items-center justify-center text-4xl"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                className="relative w-24 h-24 mx-auto mb-8"
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
               >
-                🎁
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-[#F7931E]/20 rounded-3xl blur-xl" />
+                <div className="relative w-full h-full bg-gradient-to-br from-primary/10 to-[#F7931E]/10 border-2 border-primary/30 rounded-3xl flex items-center justify-center text-5xl shadow-2xl">
+                  🎁
+                </div>
               </motion.div>
 
-              <h2 className="text-2xl sm:text-3xl font-bold mb-2">Tu resultado está listo</h2>
-              <p className="text-text-secondary mb-2">¿Dónde te lo mando?</p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-3xl sm:text-4xl font-black mb-3"
+              >
+                Tu resultado está listo
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-lg text-slate-600 mb-4"
+              >
+                ¿Dónde te lo mando?
+              </motion.p>
 
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mx-auto mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-[#F7931E]/10 border-2 border-primary/30 text-primary px-5 py-2.5 rounded-full text-sm font-bold mx-auto mb-10 shadow-lg"
+              >
                 <span>🎁</span>
                 + Mini-itinerario gratis
-              </div>
+              </motion.div>
 
-              <div className="space-y-3 max-w-xs mx-auto w-full">
-                <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <span className="material-symbols-outlined text-lg">person</span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="space-y-4 w-full"
+              >
+                <div className="relative group">
+                  <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                    <span className="material-symbols-outlined text-xl">person</span>
                   </span>
                   <input
                     type="text"
                     placeholder="Tu nombre"
                     value={answers.name || ''}
                     onChange={(e) => setAnswers((prev) => ({ ...prev, name: e.target.value }))}
-                    className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl text-text-main placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-white transition-all"
+                    className="w-full pl-14 pr-5 py-4 bg-white/90 backdrop-blur-sm border-2 border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:shadow-primary/10 transition-all font-medium"
                   />
                 </div>
-                <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <span className="material-symbols-outlined text-lg">mail</span>
+                <div className="relative group">
+                  <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                    <span className="material-symbols-outlined text-xl">mail</span>
                   </span>
                   <input
                     type="email"
                     placeholder="Tu mejor email"
                     value={answers.email || ''}
                     onChange={(e) => setAnswers((prev) => ({ ...prev, email: e.target.value }))}
-                    className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl text-text-main placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-white transition-all"
+                    className="w-full pl-14 pr-5 py-4 bg-white/90 backdrop-blur-sm border-2 border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-lg focus:shadow-primary/10 transition-all font-medium"
                   />
                 </div>
 
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleEmailSubmit}
-                  className="w-full py-4 px-6 bg-primary hover:bg-primary-dark rounded-2xl font-semibold shadow-lg text-white flex items-center justify-center gap-2"
+                  className="w-full py-5 px-6 bg-gradient-to-r from-primary to-[#F7931E] hover:from-primary-dark hover:to-[#E55A28] rounded-2xl font-bold text-lg text-white shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all flex items-center justify-center gap-3 mt-6"
                 >
                   Ver mi resultado
-                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xl">arrow_forward</span>
                 </motion.button>
 
-                <p className="text-xs text-text-secondary flex items-center justify-center gap-1.5 mt-4">
+                <p className="text-xs text-slate-500 flex items-center justify-center gap-2 mt-6">
                   <span className="material-symbols-outlined text-base text-primary">lock</span>
                   Sin spam. Solo contenido útil.
                 </p>
@@ -630,13 +786,13 @@ export default function QuizLisboa() {
                 <button
                   onClick={() => {
                     setScreen('loading');
-                    setTimeout(() => setScreen('results'), 1200);
+                    setTimeout(() => setScreen('results'), 1500);
                   }}
-                  className="text-text-secondary text-sm hover:text-text-main transition-colors mt-2"
+                  className="text-slate-500 text-sm hover:text-primary font-medium transition-colors mt-4"
                 >
                   Ver sin dejar email
                 </button>
-              </div>
+              </motion.div>
             </motion.div>
           )}
 
@@ -649,30 +805,43 @@ export default function QuizLisboa() {
               exit="exit"
               className="flex-1 flex flex-col justify-center items-center text-center py-8"
             >
-              <div className="relative w-28 h-28 mb-8">
+              <div className="relative w-32 h-32 mb-10">
                 <motion.div
-                  className="absolute inset-0 border-[3px] border-primary/20 border-t-primary rounded-full"
+                  className="absolute inset-0 border-4 border-primary/20 border-t-primary rounded-full"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                 />
                 <motion.div
-                  className="absolute inset-4 border-[3px] border-accent/20 border-t-accent rounded-full"
+                  className="absolute inset-3 border-4 border-[#F7931E]/20 border-t-[#F7931E] rounded-full"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
                 />
                 <motion.span
-                  className="absolute inset-0 flex items-center justify-center text-3xl"
-                  animate={{ y: [0, -5, 0] }}
+                  className="absolute inset-0 flex items-center justify-center text-4xl"
+                  animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   🔍
                 </motion.span>
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">Analizando tus respuestas</h3>
-              <p className="text-text-secondary mb-8">Preparando recomendaciones...</p>
+              <motion.h3
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-2xl font-black mb-3"
+              >
+                Analizando tus respuestas
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-slate-600 mb-10 text-lg"
+              >
+                Preparando recomendaciones personalizadas...
+              </motion.p>
 
-              <div className="space-y-3 text-left max-w-[260px]">
+              <div className="space-y-4 text-left max-w-sm w-full">
                 {[
                   'Identificando tu perfil viajero',
                   'Seleccionando barrios ideales',
@@ -680,15 +849,20 @@ export default function QuizLisboa() {
                 ].map((text, i) => (
                   <motion.div
                     key={text}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + i * 0.4 }}
-                    className="flex items-center gap-3 text-sm text-text-secondary"
+                    transition={{ delay: 0.4 + i * 0.5 }}
+                    className="flex items-center gap-4 text-base text-slate-700"
                   >
-                    <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-[14px] text-white">check</span>
-                    </div>
-                    {text}
+                    <motion.div
+                      className="w-6 h-6 bg-gradient-to-br from-primary to-[#F7931E] rounded-full flex items-center justify-center shadow-lg"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.5 + i * 0.5 }}
+                    >
+                      <span className="material-symbols-outlined text-sm text-white">check</span>
+                    </motion.div>
+                    <span className="font-medium">{text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -710,79 +884,162 @@ export default function QuizLisboa() {
 
                 return (
                   <>
-                    <div className="text-center pb-6 mb-6 border-b border-slate-200 relative">
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-primary rounded-full" />
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center pb-8 mb-8 border-b-2 border-slate-200 relative"
+                    >
+                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-[#F7931E] rounded-full" />
 
-                      <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-[#F7931E]/10 border-2 border-primary/30 text-primary px-5 py-2 rounded-full text-xs font-black uppercase tracking-wider mb-6 shadow-lg"
+                      >
                         <span className="material-symbols-outlined text-base">verified</span>
                         Tu perfil viajero
-                      </div>
+                      </motion.div>
 
-                      <span className="text-5xl block mb-3">{profile.emoji}</span>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold mb-1">{profile.title}</h2>
-                      <p className="text-text-secondary">{profile.subtitle}</p>
-                    </div>
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+                        className="text-7xl block mb-4"
+                      >
+                        {profile.emoji}
+                      </motion.span>
+                      <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-3xl sm:text-4xl font-black mb-2 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent"
+                      >
+                        {profile.title}
+                      </motion.h2>
+                      <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="text-lg text-slate-600"
+                      >
+                        {profile.subtitle}
+                      </motion.p>
+                    </motion.div>
 
-                    <div className="space-y-4 mb-6">
-                      <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-soft">
-                        <div className="flex items-center gap-2.5 text-xs font-semibold text-text-secondary uppercase tracking-wide mb-4">
-                          <div className="w-7 h-7 bg-primary/10 rounded-lg flex items-center justify-center">
-                            <span className="material-symbols-outlined text-base text-primary">place</span>
+                    <div className="space-y-5 mb-8">
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                        className="bg-white/80 backdrop-blur-sm border-2 border-slate-200 rounded-3xl p-6 shadow-xl"
+                      >
+                        <div className="flex items-center gap-3 text-xs font-black text-slate-600 uppercase tracking-wider mb-5">
+                          <div className="w-8 h-8 bg-gradient-to-br from-primary to-[#F7931E] rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="material-symbols-outlined text-base text-white">place</span>
                           </div>
                           Barrios para ti
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                          {profile.barrios.map((barrio) => (
-                            <span key={barrio} className="px-3 py-1.5 bg-background-cream rounded-lg text-sm font-medium">
+                        <div className="flex flex-wrap gap-3">
+                          {profile.barrios.map((barrio, i) => (
+                            <motion.span
+                              key={barrio}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.7 + i * 0.1 }}
+                              className="px-4 py-2 bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl text-sm font-bold text-slate-800 border border-slate-200 shadow-sm"
+                            >
                               {barrio}
-                            </span>
+                            </motion.span>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
 
-                      <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-soft">
-                        <div className="flex items-center gap-2.5 text-xs font-semibold text-text-secondary uppercase tracking-wide mb-4">
-                          <div className="w-7 h-7 bg-primary/10 rounded-lg flex items-center justify-center">
-                            <span className="material-symbols-outlined text-base text-primary">star</span>
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8 }}
+                        className="bg-white/80 backdrop-blur-sm border-2 border-slate-200 rounded-3xl p-6 shadow-xl"
+                      >
+                        <div className="flex items-center gap-3 text-xs font-black text-slate-600 uppercase tracking-wider mb-5">
+                          <div className="w-8 h-8 bg-gradient-to-br from-primary to-[#F7931E] rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="material-symbols-outlined text-base text-white">star</span>
                           </div>
                           No te puedes perder
                         </div>
-                        <div className="space-y-3">
-                          {profile.experiences.map((exp) => (
-                            <div key={exp.text} className="flex items-start gap-3">
-                              <span className="w-9 h-9 bg-background-cream rounded-xl flex items-center justify-center text-lg shrink-0">
+                        <div className="space-y-4">
+                          {profile.experiences.map((exp, i) => (
+                            <motion.div
+                              key={exp.text}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.9 + i * 0.15 }}
+                              className="flex items-start gap-4"
+                            >
+                              <span className="w-12 h-12 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center text-2xl shrink-0 border border-slate-200 shadow-sm">
                                 {exp.icon}
                               </span>
-                              <p className="text-sm text-text-secondary pt-2">{exp.text}</p>
-                            </div>
+                              <p className="text-base text-slate-700 pt-3 font-medium leading-relaxed">{exp.text}</p>
+                            </motion.div>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
-                    <div className="bg-white border border-primary/20 rounded-3xl p-6 text-center relative overflow-hidden shadow-soft-lg">
-                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-
-                      <div className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.2 }}
+                      className="bg-gradient-to-br from-white via-white to-slate-50 border-2 border-primary/30 rounded-3xl p-8 text-center relative overflow-hidden shadow-2xl"
+                    >
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                      
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 1.3 }}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-[#F7931E] text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-6 shadow-lg"
+                      >
                         <span className="material-symbols-outlined text-base">bolt</span>
                         Tu guía ideal
-                      </div>
+                      </motion.div>
 
-                      <h3 className="text-xl font-bold mb-1">{guide.title}</h3>
-                      <p className="text-sm text-text-secondary mb-4">{guide.desc}</p>
+                      <motion.h3
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.4 }}
+                        className="text-2xl sm:text-3xl font-black mb-2"
+                      >
+                        {guide.title}
+                      </motion.h3>
+                      <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.5 }}
+                        className="text-base text-slate-600 mb-6"
+                      >
+                        {guide.desc}
+                      </motion.p>
 
-                      <div className="mb-4">
-                        <span className="text-4xl font-extrabold text-primary">{guide.price}</span>
-                        <span className="text-slate-400 line-through ml-2">25€</span>
-                      </div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 1.6, type: 'spring' }}
+                        className="mb-6"
+                      >
+                        <span className="text-5xl font-black bg-gradient-to-r from-primary to-[#F7931E] bg-clip-text text-transparent">
+                          {guide.price}
+                        </span>
+                        <span className="text-xl text-slate-400 line-through ml-3">25€</span>
+                      </motion.div>
 
-                      <div className="flex justify-center gap-4 text-xs text-text-secondary mb-6">
-                        <span className="flex items-center gap-1.5">
-                          <span className="material-symbols-outlined text-base text-primary">download</span>
+                      <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-600 mb-8">
+                        <span className="flex items-center gap-2 font-semibold">
+                          <span className="material-symbols-outlined text-lg text-primary">download</span>
                           Acceso inmediato
                         </span>
-                        <span className="flex items-center gap-1.5">
-                          <span className="material-symbols-outlined text-base text-primary">autorenew</span>
+                        <span className="flex items-center gap-2 font-semibold">
+                          <span className="material-symbols-outlined text-lg text-primary">autorenew</span>
                           Actualizado 2025
                         </span>
                       </div>
@@ -790,27 +1047,36 @@ export default function QuizLisboa() {
                       <div className="space-y-3">
                         <motion.a
                           href={`https://estabaenlisboa.com${guide.url}`}
-                          whileHover={{ scale: 1.02 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full py-4 px-6 bg-primary hover:bg-primary-dark rounded-2xl font-semibold text-white shadow-lg flex items-center justify-center gap-2"
+                          className="block w-full py-5 px-6 bg-gradient-to-r from-primary to-[#F7931E] hover:from-primary-dark hover:to-[#E55A28] rounded-2xl font-black text-lg text-white shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all flex items-center justify-center gap-3"
                         >
-                          <span className="material-symbols-outlined text-lg">map</span>
+                          <span className="material-symbols-outlined text-xl">map</span>
                           Quiero mi guía
                         </motion.a>
 
-                        <button
+                        <motion.button
+                          whileHover={{ scale: 1.02, y: -2 }}
+                          whileTap={{ scale: 0.98 }}
                           onClick={shareResult}
-                          className="w-full py-4 px-6 bg-white border border-slate-200 rounded-2xl font-semibold hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+                          className="w-full py-4 px-6 bg-white border-2 border-slate-200 rounded-2xl font-bold hover:bg-slate-50 hover:border-primary/30 transition-all flex items-center justify-center gap-3 shadow-lg"
                         >
-                          <span className="material-symbols-outlined text-lg">share</span>
+                          <span className="material-symbols-outlined text-xl">share</span>
                           Compartir resultado
-                        </button>
+                        </motion.button>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="text-center mt-8 pt-6 border-t border-slate-200">
-                      <p className="text-sm text-text-secondary mb-4">¿Viajas con alguien? Que hagan el quiz</p>
-                      <div className="flex justify-center gap-3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.8 }}
+                      className="text-center mt-10 pt-8 border-t-2 border-slate-200"
+                    >
+                      <p className="text-base text-slate-600 mb-6 font-medium">
+                        ¿Viajas con alguien? Que hagan el quiz
+                      </p>
+                      <div className="flex justify-center gap-4 mb-6">
                         {[
                           {
                             icon: '📱',
@@ -829,19 +1095,22 @@ export default function QuizLisboa() {
                             },
                           },
                         ].map((item) => (
-                          <button
+                          <motion.button
                             key={item.icon}
+                            whileHover={{ scale: 1.1, y: -3 }}
+                            whileTap={{ scale: 0.95 }}
                             onClick={item.action}
-                            className="w-12 h-12 bg-white border border-slate-200 rounded-xl text-xl hover:bg-slate-50 hover:-translate-y-0.5 transition-all"
+                            className="w-14 h-14 bg-white border-2 border-slate-200 rounded-2xl text-2xl hover:bg-slate-50 hover:border-primary/30 transition-all shadow-lg"
                           >
                             {item.icon}
-                          </button>
+                          </motion.button>
                         ))}
                       </div>
-                      <p className="text-xs text-text-secondary mt-4">
-                        Etiquétanos en Instagram: <span className="text-primary font-semibold">@estabaenlisboa</span>
+                      <p className="text-sm text-slate-500">
+                        Etiquétanos en Instagram:{' '}
+                        <span className="text-primary font-bold">@estabaenlisboa</span>
                       </p>
-                    </div>
+                    </motion.div>
                   </>
                 );
               })()}
@@ -853,14 +1122,16 @@ export default function QuizLisboa() {
       <AnimatePresence>
         {toast && (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className={`fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-2xl font-medium flex items-center gap-2 shadow-xl z-50 ${
-              toast.type === 'error' ? 'bg-red-500 text-white' : 'bg-primary text-white'
+            initial={{ opacity: 0, y: 50, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 50, scale: 0.8 }}
+            className={`fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-4 rounded-2xl font-bold flex items-center gap-3 shadow-2xl z-50 ${
+              toast.type === 'error'
+                ? 'bg-gradient-to-r from-red-500 to-red-600 text-white'
+                : 'bg-gradient-to-r from-primary to-[#F7931E] text-white'
             }`}
           >
-            <span className="material-symbols-outlined text-lg">
+            <span className="material-symbols-outlined text-xl">
               {toast.type === 'error' ? 'error' : 'check_circle'}
             </span>
             {toast.message}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import type { GuideEditData, GuideHighlight } from '@/lib/guide-store';
 
@@ -13,6 +13,15 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
   const [saving, setSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState<GuideEditData>(initialData);
+  const [supabaseConfigured, setSupabaseConfigured] = useState<boolean | null>(null);
+
+  // Verificar si Supabase está configurado
+  useEffect(() => {
+    fetch('/api/admin/guides/test-supabase')
+      .then(res => res.json())
+      .then(data => setSupabaseConfigured(data.configured))
+      .catch(() => setSupabaseConfigured(false));
+  }, []);
 
   const updateHighlight = (index: number, field: keyof GuideHighlight, value: string) => {
     const updated = [...formData.highlights];
@@ -47,6 +56,12 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
       if (!response.ok) {
         const payload = await response.json().catch(() => null);
         const message = payload?.error || 'No se pudo guardar la guía.';
+        
+        // Si Supabase no está configurado, mostrar mensaje más claro
+        if (payload?.fallback) {
+          throw new Error('Supabase no está configurado. Las guías se editan desde los archivos locales en el código. Configura NEXT_PUBLIC_SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY en Vercel para habilitar la edición desde el admin.');
+        }
+        
         throw new Error(message);
       }
 
@@ -64,6 +79,22 @@ export function GuideEditForm({ initialData }: GuideEditFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl border-2 border-slate-200 p-8 space-y-8">
+      {supabaseConfigured === false && (
+        <div className="rounded-xl border border-amber-200 bg-amber-50 px-6 py-4 text-sm text-amber-800">
+          <div className="flex items-start gap-3">
+            <span className="text-xl">⚠️</span>
+            <div>
+              <p className="font-semibold mb-1">Supabase no está configurado</p>
+              <p className="mb-2">Las guías se están mostrando desde datos locales. Para habilitar la edición desde el admin, configura estas variables en Vercel:</p>
+              <ul className="list-disc list-inside space-y-1 mb-2">
+                <li><code className="bg-amber-100 px-2 py-0.5 rounded">NEXT_PUBLIC_SUPABASE_URL</code></li>
+                <li><code className="bg-amber-100 px-2 py-0.5 rounded">SUPABASE_SERVICE_ROLE_KEY</code></li>
+              </ul>
+              <p className="text-xs">Mientras tanto, puedes editar las guías directamente en los archivos del código.</p>
+            </div>
+          </div>
+        </div>
+      )}
       {errorMessage && (
         <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {errorMessage}

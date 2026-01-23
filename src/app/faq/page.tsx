@@ -30,10 +30,6 @@ const faqs = [
         answer: "Los precios son aproximados basados en nuestra última visita. Pueden variar ligeramente, pero te damos una idea muy cercana de lo que gastarás en cada lugar."
       },
       {
-        question: "¿Qué pasa si llueve durante mi viaje?",
-        answer: "Cada itinerario incluye alternativas para días de lluvia: museos, mercados cubiertos y experiencias bajo techo para que disfrutes Lisboa con cualquier clima."
-      },
-      {
         question: "¿Los itinerarios están actualizados?",
         answer: "Sí. Actualizamos los itinerarios cada 3 meses con nuevos restaurantes, horarios y tips. Si algo cambia, te avisamos por email automáticamente."
       },
