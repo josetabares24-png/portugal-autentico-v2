@@ -10,9 +10,10 @@
 
 let ratelimit: any = null;
 
-try {
-  // Intentar importar solo si las variables están disponibles
-  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+// Intentar importar solo si las variables están disponibles
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  try {
+    // Dynamic import para evitar errores en build si no está instalado
     const { Ratelimit } = require("@upstash/ratelimit");
     const { Redis } = require("@upstash/redis");
 
@@ -21,10 +22,10 @@ try {
       limiter: Ratelimit.slidingWindow(10, "1 m"), // 10 requests por minuto
       analytics: true,
     });
+  } catch (error) {
+    // Si no está instalado o configurado, ratelimit será null
+    console.warn('[RateLimit] Upstash no disponible. Rate limiting desactivado.');
   }
-} catch (error) {
-  // Si no está instalado o configurado, ratelimit será null
-  console.warn('[RateLimit] Upstash no configurado. Rate limiting desactivado.');
 }
 
 /**

@@ -6,8 +6,7 @@ import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
-import ErrorBoundaryComponent from '@/components/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -141,7 +140,6 @@ export default function RootLayout({
             <Footer />
             <CookieBanner />
             <GoogleAnalytics />
-          </ErrorBoundary>
             {process.env.NODE_ENV === 'development' && (
               <Script id="clerk-cors-debug" strategy="afterInteractive">
                 {`
