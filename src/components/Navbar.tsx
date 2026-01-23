@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-18 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-20">
           {/* Logo + Hora/Clima (Mobile) */}
           <div className="flex items-center gap-2.5 md:gap-0 flex-1 min-w-0">
             <Link href="/" className="flex items-center hover:opacity-90 transition-opacity flex-shrink-0">
@@ -39,7 +39,7 @@ export default function Navbar() {
                 width={180}
                 height={56}
                 priority
-                className="h-11 w-auto md:h-14 md:w-auto"
+                className="h-14 w-auto"
               />
             </Link>
             {/* Hora y Clima en móvil - al lado del logo */}
