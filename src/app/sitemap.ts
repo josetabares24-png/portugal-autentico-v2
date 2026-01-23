@@ -148,12 +148,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // URLs dinámicas del blog
-  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.id}`,
-    lastModified: new Date(post.fecha) || currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => {
+    // Intentar parsear la fecha del post
+    // Formato esperado: "15 Dic 2024"
+    let postDate = currentDate;
+    try {
+      // Mapear meses en español a inglés
+      const meses: Record<string, string> = {
+        'Ene': 'Jan', 'Feb': 'Feb', 'Mar': 'Mar', 'Abr': 'Apr',
+        'May': 'May', 'Jun': 'Jun', 'Jul': 'Jul', 'Ago': 'Aug',
+        'Sep': 'Sep', 'Oct': 'Oct', 'Nov': 'Nov', 'Dic': 'Dec'
+      };
+      
+      const fechaParts = post.fecha.split(' ');
+      if (fechaParts.length === 3) {
+        const [dia, mesEsp, año] = fechaParts;
+        const mesEn = meses[mesEsp] || mesEsp;
+        const fechaStr = `${dia} ${mesEn} ${año}`;
+        const parsedDate = new Date(fechaStr);
+        
+        // Verificar que la fecha es válida
+        if (!isNaN(parsedDate.getTime())) {
+          postDate = parsedDate;
+        }
+      }
+    } catch (error) {
+      // Si falla el parseo, usar currentDate
+      postDate = currentDate;
+    }
+
+    return {
+      url: `${baseUrl}/blog/${post.id}`,
+      lastModified: postDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    };
+  });
 
   return [...staticUrls, ...blogUrls];
 }
