@@ -376,37 +376,38 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
             }),
           });
 
-        if (response.ok) {
-          // También agregar a Brevo como contacto
-          try {
-            await fetch('https://api.brevo.com/v3/contacts', {
-              method: 'POST',
-              headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': brevoApiKey,
-              },
-              body: JSON.stringify({
-                email,
-                attributes: {
-                  NOMBRE: nombre,
-                  PRESUPUESTO_TIPO: tipoNombre,
-                  PRESUPUESTO_DIAS: dias.toString(),
-                  PRESUPUESTO_PERSONAS: personas.toString(),
-                  PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
+          if (response.ok) {
+            // También agregar a Brevo como contacto
+            try {
+              await fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+                  'api-key': brevoApiKey,
                 },
-                listIds: [5], // Lista ID 5
-                updateEnabled: true,
-              }),
-            });
-          } catch (contactError) {
-            console.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
-          }
+                body: JSON.stringify({
+                  email,
+                  attributes: {
+                    NOMBRE: nombre,
+                    PRESUPUESTO_TIPO: tipoNombre,
+                    PRESUPUESTO_DIAS: dias.toString(),
+                    PRESUPUESTO_PERSONAS: personas.toString(),
+                    PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
+                  },
+                  listIds: [5], // Lista ID 5
+                  updateEnabled: true,
+                }),
+              });
+            } catch (contactError) {
+              console.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
+            }
 
-          return NextResponse.json(
-            { success: true, message: 'Presupuesto enviado correctamente' },
-            { status: 200 }
-          );
+            return NextResponse.json(
+              { success: true, message: 'Presupuesto enviado correctamente' },
+              { status: 200 }
+            );
+          }
         }
       } catch (brevoError) {
         console.warn('[Presupuesto] Error con Brevo, usando fallback:', brevoError);
