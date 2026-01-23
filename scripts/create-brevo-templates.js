@@ -759,6 +759,284 @@ const presupuestoTemplate = {
   isActive: true
 };
 
+// Plantilla de Conserjería Digital (Calculadora Premium)
+const conserjeriaDigitalTemplate = {
+  templateName: 'Conserjería Digital - Propuesta Personalizada',
+  subject: 'Tu propuesta de viaje a Portugal - {{params.NOMBRE}}',
+  htmlContent: `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tu Propuesta de Viaje a Portugal</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td {font-family: Arial, sans-serif !important;}
+  </style>
+  <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #FFFDF7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FFFDF7;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          
+          <!-- Header con Logo -->
+          <tr>
+            <td style="background: #ffffff; padding: 50px 40px 30px 40px; text-align: center; border-bottom: 1px solid #f0f0f0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td align="center" style="padding-bottom: 20px;">
+                    <img src="https://estabaenlisboa.com/logo.png" alt="Estaba en Lisboa" width="180" height="56" style="display: block; max-width: 180px; height: auto; border: 0;" />
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="color: #FF6B35; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">
+                    🇵🇹 Conserjería Digital
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Contenido Principal -->
+          <tr>
+            <td style="padding: 50px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="padding-bottom: 25px;">
+                    <h1 style="margin: 0; font-size: 32px; font-weight: 400; font-style: italic; color: #1e293b; line-height: 1.3; font-family: Georgia, serif;">
+                      Hola {{params.NOMBRE}},
+                    </h1>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td style="padding-bottom: 30px;">
+                    <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #475569;">
+                      Gracias por confiar en nosotros para diseñar tu viaje perfecto a Portugal. He creado una propuesta personalizada basada en tus preferencias.
+                    </p>
+                  </td>
+                </tr>
+                
+                <!-- Resumen del Viaje -->
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+                      <tr>
+                        <td style="padding: 25px;">
+                          <h3 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Resumen de tu viaje
+                          </h3>
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <td style="padding: 8px 0; font-size: 15px; color: #475569;">
+                                <strong style="color: #1e293b; min-width: 120px; display: inline-block;">Estilo:</strong>
+                                <span style="color: #FF6B35; font-weight: 600;">{{params.ESTILO_NOMBRE}}</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 8px 0; font-size: 15px; color: #475569;">
+                                <strong style="color: #1e293b; min-width: 120px; display: inline-block;">Duración:</strong>
+                                {{params.DIAS}} {{params.DIAS_SINGULAR}}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 8px 0; font-size: 15px; color: #475569;">
+                                <strong style="color: #1e293b; min-width: 120px; display: inline-block;">Viajeros:</strong>
+                                {{params.PERSONAS}} {{params.PERSONAS_SINGULAR}}
+                              </td>
+                            </tr>
+                            {{params.ALOJAMIENTO_ROW}}
+                            {{params.RITMO_ROW}}
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Presupuesto Estimado -->
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 16px; overflow: hidden;">
+                      <tr>
+                        <td style="padding: 35px; text-align: center;">
+                          <p style="margin: 0 0 12px 0; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1.5px;">
+                            Presupuesto Estimado
+                          </p>
+                          <p style="margin: 0 0 20px 0; font-size: 56px; font-weight: 300; color: #ffffff; font-family: Georgia, serif;">
+                            {{params.TOTAL_VIAJE}}€
+                          </p>
+                          <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                            <p style="margin: 0; font-size: 16px; color: #ffffff; font-weight: 500;">
+                              {{params.TOTAL_PERSONA_DIA}}€ por persona al día
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Desglose -->
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+                      <tr>
+                        <td style="padding: 25px;">
+                          <h3 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Desglose por persona/día
+                          </h3>
+                          {{params.DESGLOSE_ITEMS}}
+                          <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid #FF6B35;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                              <span style="font-size: 15px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">Total por día</span>
+                              <span style="font-size: 32px; font-weight: 300; color: #FF6B35; font-family: Georgia, serif;">{{params.TOTAL_PERSONA_DIA}}€</span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Intereses -->
+                {{params.INTERESES_SECTION}}
+                
+                <!-- Qué Incluye -->
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #f8fafc; border-radius: 12px; border-left: 4px solid #FF6B35;">
+                      <tr>
+                        <td style="padding: 25px;">
+                          <h3 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            ¿Qué incluye tu propuesta?
+                          </h3>
+                          <ul style="margin: 0; padding-left: 20px; list-style: none;">
+                            <li style="margin-bottom: 12px; font-size: 15px; line-height: 1.6; color: #475569; padding-left: 25px; position: relative;">
+                              <span style="position: absolute; left: 0; color: #FF6B35; font-weight: bold;">✓</span>
+                              Itinerario día a día (mañana, tarde y noche)
+                            </li>
+                            <li style="margin-bottom: 12px; font-size: 15px; line-height: 1.6; color: #475569; padding-left: 25px; position: relative;">
+                              <span style="position: absolute; left: 0; color: #FF6B35; font-weight: bold;">✓</span>
+                              Reserva de restaurantes locales "no turísticos"
+                            </li>
+                            <li style="margin-bottom: 12px; font-size: 15px; line-height: 1.6; color: #475569; padding-left: 25px; position: relative;">
+                              <span style="position: absolute; left: 0; color: #FF6B35; font-weight: bold;">✓</span>
+                              Logística de transporte optimizada
+                            </li>
+                            <li style="margin-bottom: 0; font-size: 15px; line-height: 1.6; color: #475569; padding-left: 25px; position: relative;">
+                              <span style="position: absolute; left: 0; color: #FF6B35; font-weight: bold;">✓</span>
+                              Asistencia vía WhatsApp durante el viaje
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Fee de Diseño -->
+                <tr>
+                  <td style="padding-bottom: 35px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #ffffff; border: 2px dashed #e2e8f0; border-radius: 12px;">
+                      <tr>
+                        <td style="padding: 25px; text-align: center;">
+                          <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Fee de Diseño Local
+                          </p>
+                          <p style="margin: 0; font-size: 36px; font-weight: 300; color: #1e293b; font-family: Georgia, serif;">
+                            150€
+                          </p>
+                          <p style="margin: 12px 0 0 0; font-size: 13px; color: #94a3b8;">
+                            Incluye planificación completa y asistencia
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- CTA Button -->
+                <tr>
+                  <td align="center" style="padding-bottom: 30px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                      <tr>
+                        <td align="center" style="background: #1e293b; border-radius: 10px;">
+                          <a href="https://estabaenlisboa.com/itinerarios" style="display: inline-block; padding: 18px 40px; font-size: 16px; font-weight: 600; color: #ffffff; text-decoration: none; border-radius: 10px; letter-spacing: 0.3px;">
+                            Ver Guías Premium →
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Mensaje Personal -->
+                <tr>
+                  <td style="padding-top: 30px; border-top: 1px solid #e2e8f0;">
+                    <p style="margin: 0 0 15px 0; font-size: 15px; line-height: 1.7; color: #475569; font-style: italic;">
+                      "No vendemos tours, diseñamos memorias que duran toda la vida."
+                    </p>
+                    <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
+                      Si tienes alguna pregunta o quieres ajustar algo de tu propuesta, responde a este email. Estaré encantado de ayudarte a crear el viaje perfecto.
+                    </p>
+                  </td>
+                </tr>
+                
+                <!-- Signature -->
+                <tr>
+                  <td style="padding-top: 30px; border-top: 1px solid #e2e8f0;">
+                    <p style="margin: 0 0 8px 0; font-size: 15px; line-height: 1.6; color: #1e293b;">
+                      <strong>José</strong><br>
+                      Estaba en Lisboa<br>
+                      <a href="https://estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">estabaenlisboa.com</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background: #f8fafc; padding: 35px 40px; text-align: center; border-top: 1px solid #e2e8f0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td>
+                    <p style="margin: 0; font-size: 12px; color: #94a3b8;">
+                      <a href="https://estabaenlisboa.com/politica-privacidad" style="color: #FF6B35; text-decoration: none;">Política de privacidad</a>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 20px;">
+                    <p style="margin: 0; font-size: 11px; color: #cbd5e1;">
+                      © 2025 Estaba en Lisboa. Todos los derechos reservados.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim(),
+  sender: {
+    name: 'Estaba en Lisboa',
+    email: process.env.BREVO_SENDER_EMAIL || 'noreply@estabaenlisboa.com'
+  },
+  isActive: true
+};
+
 // Plantilla de confirmación de contacto (para el usuario)
 const contactConfirmationTemplate = {
   templateName: 'Contacto - Confirmación Usuario',
@@ -1111,6 +1389,7 @@ async function main() {
   contactNotificationTemplate.sender = validSender;
   contactConfirmationTemplate.sender = validSender;
   presupuestoTemplate.sender = validSender;
+  conserjeriaDigitalTemplate.sender = validSender;
 
   // Listar plantillas existentes
   console.log('📋 Verificando plantillas existentes...');
@@ -1224,6 +1503,27 @@ async function main() {
   if (presupuestoResult.success) {
     console.log(`   ✅ ID de plantilla: ${presupuestoResult.id}`);
     console.log(`   💡 Agrega en Vercel: BREVO_PRESUPUESTO_TEMPLATE_ID=${presupuestoResult.id}\n`);
+  }
+
+  // Buscar o crear/actualizar plantilla de Conserjería Digital
+  console.log('6️⃣ Actualizando plantilla de Conserjería Digital...');
+  const existingConserjeria = existingTemplates.find(t => t.id === 13) ||
+                              existingTemplates.find(t => 
+                                (t.name === conserjeriaDigitalTemplate.templateName || t.templateName === conserjeriaDigitalTemplate.templateName)
+                              );
+  
+  let conserjeriaResult;
+  if (existingConserjeria) {
+    console.log(`   📝 Encontrada plantilla existente (ID: ${existingConserjeria.id}), actualizando...`);
+    conserjeriaResult = await updateTemplate(existingConserjeria.id, conserjeriaDigitalTemplate);
+  } else {
+    console.log(`   ➕ Creando nueva plantilla...`);
+    conserjeriaResult = await createTemplate(conserjeriaDigitalTemplate);
+  }
+  
+  if (conserjeriaResult.success) {
+    console.log(`   ✅ ID de plantilla: ${conserjeriaResult.id}`);
+    console.log(`   💡 Agrega en Vercel: BREVO_CONSERJERIA_TEMPLATE_ID=${conserjeriaResult.id}\n`);
   }
 
   console.log('✨ Proceso completado!\n');

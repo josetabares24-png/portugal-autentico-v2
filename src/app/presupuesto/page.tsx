@@ -118,6 +118,10 @@ export default function PresupuestoPage() {
           totalViaje,
           totalPersonaDia,
           desglose,
+          presupuesto: formData.presupuesto,
+          alojamiento: formData.alojamiento,
+          ritmo: formData.ritmo,
+          intereses: formData.intereses,
         }),
       });
 

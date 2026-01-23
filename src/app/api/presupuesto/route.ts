@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, nombre, tipo, dias, personas, totalViaje, totalPersonaDia, desglose } = body;
+    const { email, nombre, tipo, dias, personas, totalViaje, totalPersonaDia, desglose, presupuesto, alojamiento, ritmo, intereses } = body;
 
     // Validación
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
     const senderEmail = process.env.BREVO_SENDER_EMAIL;
     const senderName = process.env.BREVO_SENDER_NAME || 'Estaba en Lisboa';
     const presupuestoTemplateId = process.env.BREVO_PRESUPUESTO_TEMPLATE_ID;
+    const conserjeriaTemplateId = process.env.BREVO_CONSERJERIA_TEMPLATE_ID;
 
     const tipoNombres: Record<string, string> = {
       low: 'Mochilero',
@@ -40,6 +41,24 @@ export async function POST(request: NextRequest) {
     const tipoNombre = tipoNombres[tipo] || 'Medio';
     const tipoDescripcion = tipoDescripciones[tipo] || tipoDescripciones.mid;
 
+    // Mapeo para Conserjería Digital
+    const estiloNombres: Record<string, string> = {
+      smart: 'Smart & Local',
+      premium: 'Premium Experience',
+      luxury: 'Ultra-Luxury',
+    };
+
+    const alojamientoNombres: Record<string, string> = {
+      boutique: 'Boutique',
+      lujo: 'Lujo',
+      local: 'Local Auténtico',
+    };
+
+    const ritmoNombres: Record<string, string> = {
+      relajado: 'Relajado',
+      intenso: 'Intenso',
+    };
+
     const budget = {
       alojamiento: tipo === 'low' ? 20 : tipo === 'mid' ? 60 : 120,
       desayuno: tipo === 'low' ? 3 : tipo === 'mid' ? 8 : 15,
@@ -49,6 +68,30 @@ export async function POST(request: NextRequest) {
       actividades: tipo === 'low' ? 10 : tipo === 'mid' ? 25 : 50,
       extras: tipo === 'low' ? 5 : tipo === 'mid' ? 15 : 30,
     };
+
+    // Preparar parámetros para Conserjería Digital
+    const estiloNombre = presupuesto ? estiloNombres[presupuesto] || 'Premium Experience' : tipoNombre;
+    const alojamientoNombre = alojamiento ? (alojamientoNombres[alojamiento] || alojamiento) : '';
+    const ritmoNombre = ritmo ? (ritmoNombres[ritmo] || ritmo) : '';
+    
+    // Extraer valores del desglose
+    const alojamientoValor = desglose?.find((item: { label: string }) => item.label === 'Alojamiento')?.value || budget.alojamiento;
+    const comidaValor = desglose?.find((item: { label: string }) => item.label === 'Comida')?.value || (budget.almuerzo + budget.cena);
+    const transporteValor = desglose?.find((item: { label: string }) => item.label === 'Transporte')?.value || budget.transporte;
+    const actividadesValor = desglose?.find((item: { label: string }) => item.label === 'Actividades')?.value || budget.actividades;
+
+    // Generar texto de intereses
+    const interesesTexto = intereses && intereses.length > 0 ? intereses.map((i: string) => {
+      const interestMap: Record<string, string> = {
+        gastronomia: '🍷 Gastronomía',
+        historia: '🏛️ Historia Oculta',
+        naturaleza: '🌊 Naturaleza Salvaje',
+        cultura: '🎭 Cultura Local',
+        fiesta: '🎉 Vida Nocturna',
+        fotografia: '📸 Fotografía',
+      };
+      return interestMap[i] || i;
+    }).join(', ') : '';
 
     // Generar HTML del presupuesto detallado (fallback si no hay template)
     const htmlContent = `
@@ -283,7 +326,78 @@ Ver nuestras guías: https://estabaenlisboa.com/itinerarios
     // Intentar usar Brevo primero
     if (brevoApiKey && senderEmail) {
       try {
-        // Si hay template ID, usar plantilla de Brevo
+        // Priorizar plantilla de Conserjería Digital si está disponible
+        if (conserjeriaTemplateId) {
+          const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              'api-key': brevoApiKey,
+            },
+            body: JSON.stringify({
+              templateId: parseInt(conserjeriaTemplateId, 10),
+              to: [{ email, name: nombre }],
+              params: {
+                NOMBRE: nombre,
+                TOTAL_VIAJE: totalViaje.toFixed(0),
+                PERSONAS: personas.toString(),
+                PERSONAS_SINGULAR: personas === 1 ? 'persona' : 'personas',
+                DIAS: dias.toString(),
+                DIAS_SINGULAR: dias === 1 ? 'día' : 'días',
+                TOTAL_PERSONA_DIA: totalPersonaDia.toFixed(0),
+                ESTILO_NOMBRE: estiloNombre,
+                ALOJAMIENTO_ROW: alojamientoRow,
+                RITMO_ROW: ritmoRow,
+                ALOJAMIENTO_VALOR: alojamientoValor.toString(),
+                COMIDA_VALOR: comidaValor.toString(),
+                TRANSPORTE_VALOR: transporteValor.toString(),
+                ACTIVIDADES_VALOR: actividadesValor.toString(),
+                INTERESES_SECTION: interesesSection,
+              },
+              headers: {
+                'X-Mailer': 'Estaba en Lisboa',
+                'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
+                'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+              },
+            }),
+          });
+
+          if (response.ok) {
+            // También agregar a Brevo como contacto
+            try {
+              await fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+                  'api-key': brevoApiKey,
+                },
+                body: JSON.stringify({
+                  email,
+                  attributes: {
+                    NOMBRE: nombre,
+                    PRESUPUESTO_TIPO: estiloNombre,
+                    PRESUPUESTO_DIAS: dias.toString(),
+                    PRESUPUESTO_PERSONAS: personas.toString(),
+                    PRESUPUESTO_TOTAL: totalViaje.toFixed(0),
+                  },
+                  listIds: [5], // Lista ID 5
+                  updateEnabled: true,
+                }),
+              });
+            } catch (contactError) {
+              console.warn('[Presupuesto] Error agregando contacto a Brevo:', contactError);
+            }
+
+            return NextResponse.json(
+              { success: true, message: 'Presupuesto enviado correctamente' },
+              { status: 200 }
+            );
+          }
+        }
+        
+        // Fallback a plantilla de presupuesto original si no hay Conserjería
         if (presupuestoTemplateId) {
           const response = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
