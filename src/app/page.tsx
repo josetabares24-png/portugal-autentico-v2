@@ -127,7 +127,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6 tracking-tight">
               Elige tu <span className="text-primary">ruta perfecta</span>
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-text-secondary max-w-xl mx-auto leading-relaxed">
               Itinerarios detallados hora a hora, restaurantes que realmente funcionan, los mejores spots para fotos y mapas offline que no fallan nunca.
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-6xl font-display font-black text-text-main mb-6">
               Por qué <span className="text-primary">esto funciona</span>
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">No soy turista que viene dos semanas y escribe una guía. Vivo aquí desde hace 3 años. Hago la compra en el mismo supermercado, tomo café en los mismos sitios y conozco los atajos que los lisboetas usamos todos los días.</p>
+            <p className="text-lg md:text-xl text-text-secondary max-w-xl mx-auto leading-relaxed">No soy turista que viene dos semanas y escribe una guía. Vivo aquí desde hace 3 años. Hago la compra en el mismo supermercado, tomo café en los mismos sitios y conozco los atajos que los lisboetas usamos todos los días.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -197,7 +197,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 tracking-tight">
             ¿Primera vez en Lisboa?
           </h2>
-          <p className="text-lg md:text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/95 mb-10 max-w-xl mx-auto leading-relaxed">
             Descarga gratis mi guía esencial: cómo funciona el transporte público, cuánto cuesta realmente comer, qué meter en la maleta y los errores más comunes que cometen los turistas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
