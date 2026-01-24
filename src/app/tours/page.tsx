@@ -490,61 +490,63 @@ export default function ToursPage() {
               const directUrl = directUrls[tour.id as keyof typeof directUrls] || tour.bookingUrl;
 
               return (
-              <div key={tour.id} className={`bg-white rounded-3xl overflow-hidden border-2 hover:shadow-2xl transition-all hover:-translate-y-1 ${
-                tour.recommended ? 'border-primary shadow-lg' : 'border-slate-200 hover:border-primary'
-              }`}>
-                <div className="relative h-48">
-                  <Image
-                    src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
-                    alt={tour.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-                  {tour.badge && (
-                    <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {tour.badge}
+                <div key={tour.id} className={`bg-white rounded-3xl overflow-hidden border-2 hover:shadow-2xl transition-all hover:-translate-y-1 ${
+                  tour.recommended ? 'border-primary shadow-lg' : 'border-slate-200 hover:border-primary'
+                }`}>
+                  <div className="relative h-48">
+                    <Image
+                      src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
+                      alt={tour.name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+                    {tour.badge && (
+                      <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        {tour.badge}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold text-slate-900 flex-1 leading-tight">{tour.name}</h3>
                     </div>
-                  )}
+
+                    <p className="text-sm text-slate-600 mb-4">{tour.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {tour.highlights.slice(0, 3).map((highlight, i) => (
+                        <span key={i} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-lg">
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between mb-4 pt-4 border-t">
+                      <div>
+                        <p className="text-xs text-slate-500">Duración</p>
+                        <p className="text-sm font-bold text-slate-900">{tour.duration}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xs text-slate-500">Desde</p>
+                        <p className="text-xl font-black text-primary">{tour.price}</p>
+                      </div>
+                    </div>
+
+                    <a
+                      href={directUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
+                    >
+                      Ver Disponibilidad →
+                    </a>
+                  </div>
                 </div>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-slate-900 flex-1 leading-tight">{tour.name}</h3>
-                  </div>
-
-                  <p className="text-sm text-slate-600 mb-4">{tour.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {tour.highlights.slice(0, 3).map((highlight, i) => (
-                      <span key={i} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-lg">
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between mb-4 pt-4 border-t">
-                    <div>
-                      <p className="text-xs text-slate-500">Duración</p>
-                      <p className="text-sm font-bold text-slate-900">{tour.duration}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-slate-500">Desde</p>
-                      <p className="text-xl font-black text-primary">{tour.price}</p>
-                    </div>
-                  </div>
-
-                  <a
-                    href={directUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
-                  >
-                    Ver Disponibilidad →
-                  </a>
-                );
-              })}
-            </div>
+              );
+            })}
+          </div>
           </div>
         </div>
       </section>
