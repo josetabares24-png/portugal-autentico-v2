@@ -76,7 +76,7 @@ function formatPrice(amount: number, currency: string): string {
 function generateSecureDownloadUrl(sessionId: string): string {
   // This should generate a secure, time-limited URL for downloading the guide
   // For now, we'll create a placeholder URL - you'll need to implement the actual download system
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://portugalautentico.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://estabaenlisboa.com';
   return `${baseUrl}/api/download/${sessionId}`;
 }
 
@@ -98,7 +98,7 @@ async function sendPurchaseEmail(data: PurchaseData) {
   const emailData = {
     sender: {
       name: 'Portugal Auténtico',
-      email: 'hola@portugalautentico.com',
+      email: 'hola@estabaenlisboa.com',
     },
     to: [
       {
@@ -110,7 +110,7 @@ async function sendPurchaseEmail(data: PurchaseData) {
     htmlContent: generatePurchaseEmailHtml(data),
     textContent: generatePurchaseEmailText(data),
     replyTo: {
-      email: 'hola@portugalautentico.com',
+      email: 'hola@estabaenlisboa.com',
       name: 'Portugal Auténtico',
     },
     tags: ['purchase', 'guide-delivery', data.productName.toLowerCase().replace(/\s+/g, '-')],

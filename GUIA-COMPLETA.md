@@ -118,7 +118,7 @@ Necesitas agregar en **Vercel**:
 
 ```env
 STRIPE_SECRET_KEY=sk_test_51... (o sk_live_51... para producción)
-NEXT_PUBLIC_SITE_URL=https://portugalautentico.com
+NEXT_PUBLIC_SITE_URL=https://estabaenlisboa.com
 ```
 
 **Dónde conseguirlas:**

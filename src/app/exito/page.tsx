@@ -29,7 +29,7 @@ export default function ExitoPage() {
                 <p className="text-sm text-blue-800">
                   1. Revisa tu carpeta de spam o promociones<br />
                   2. Espera hasta 5 minutos<br />
-                  3. Escríbenos a <a href="mailto:hola@portugalautentico.com" className="underline font-semibold">hola@portugalautentico.com</a>
+                  3. Escríbenos a <a href="mailto:hola@estabaenlisboa.com" className="underline font-semibold">hola@estabaenlisboa.com</a>
                 </p>
               </div>
             </div>

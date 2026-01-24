@@ -14,14 +14,14 @@ Se ha implementado un sistema completo de envío automático de emails tras comp
 Agrega estas variables a tu archivo `.env.local` (o configuración de Vercel):
 
 ```env
-# Stripe Webhook
+# Stripe Webhook (obtén esto del dashboard de Stripe)
 STRIPE_WEBHOOK_SECRET=whsec_xxx
 
 # Email API (Brevo/Sendinblue)
 BREVO_API_KEY=xkeysib-xxx
 
-# URLs
-NEXT_PUBLIC_BASE_URL=https://portugalautentico.com
+# URLs (actualiza para tu dominio)
+NEXT_PUBLIC_BASE_URL=https://estabaenlisboa.com
 ```
 
 ## Configuración del Webhook en Stripe
@@ -34,9 +34,9 @@ NEXT_PUBLIC_BASE_URL=https://portugalautentico.com
 1. Haz clic en **"Add endpoint"**
 2. En **"Endpoint URL"**, ingresa:
    ```
-   https://portugalautentico.com/api/stripe/webhook
+   https://estabaenlisboa.com/api/stripe/webhook
    ```
-   *(Cambia el dominio por tu URL de producción)*
+   *(Esta es tu URL de producción)*
 
 3. En **"Events to send"**, selecciona:
    - `checkout.session.completed`
@@ -57,7 +57,7 @@ NEXT_PUBLIC_BASE_URL=https://portugalautentico.com
 
 ### 2. Verificar Configuración de Email
 1. Asegúrate de que tu dominio esté verificado en Brevo
-2. El email remitente debe ser `hola@portugalautentico.com`
+2. El email remitente debe ser `hola@estabaenlisboa.com`
 
 ## Implementación del Sistema de Descargas
 
