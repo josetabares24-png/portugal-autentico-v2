@@ -14,8 +14,8 @@ export default function ExitoPage() {
           </h1>
           
           <p className="text-lg text-text-secondary mb-8">
-            Tu guía de Lisboa ha sido enviada a tu email.<br />
-            Revisa tu bandeja de entrada (y spam por si acaso).
+            ¡Tu guía está lista! Hemos enviado automáticamente un email con:<br />
+            <strong>Enlace de descarga directo</strong> • <strong>Instrucciones completas</strong> • <strong>Contenido premium</strong>
           </p>
           
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
@@ -23,10 +23,28 @@ export default function ExitoPage() {
               <span className="material-symbols-outlined text-blue-600 text-2xl mt-0.5">info</span>
               <div className="text-left">
                 <h3 className="font-bold text-blue-900 mb-2">¿No recibes el email?</h3>
+                <p className="text-sm text-blue-800 mb-3">
+                  Los emails se envían automáticamente al completar el pago. Si no lo ves:
+                </p>
                 <p className="text-sm text-blue-800">
                   1. Revisa tu carpeta de spam o promociones<br />
-                  2. Espera hasta 10 minutos<br />
-                  3. Escríbenos a <a href="mailto:contacto@estabaenlisboa.com" className="underline font-semibold">contacto@estabaenlisboa.com</a>
+                  2. Espera hasta 5 minutos<br />
+                  3. Escríbenos a <a href="mailto:hola@portugalautentico.com" className="underline font-semibold">hola@portugalautentico.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-green-600 text-2xl mt-0.5">email</span>
+              <div className="text-left">
+                <h3 className="font-bold text-green-900 mb-2">¿Qué incluye el email?</h3>
+                <p className="text-sm text-green-800">
+                  • <strong>Enlace seguro de descarga</strong> (válido 30 días)<br />
+                  • <strong>Acceso completo</strong> a tu guía premium<br />
+                  • <strong>Instrucciones detalladas</strong> para usar tu guía<br />
+                  • <strong>Información de contacto</strong> para soporte
                 </p>
               </div>
             </div>
