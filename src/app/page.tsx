@@ -20,7 +20,7 @@ export default function HomePage() {
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/20"></div>
         </div>
 
         {/* Hero Content */}
@@ -34,13 +34,12 @@ export default function HomePage() {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             La Lisboa que los<br />
-            <span className="text-accent">lisboetas OCULTAN</span><br />
-            (y yo te revelo)
+            <span className="text-accent">lisboetas OCULTAN</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Llevo 3 años viviendo aquí. Los lisboetas tenemos nuestros secretos: dónde desayunar en Graça cuando aún no hay nadie, qué miradores funcionan a las 9am, por qué el 28 a las 11 es un error garrafal. Todo lo que aprendí viviendo aquí, ahora para ti.
+          <p className="text-lg md:text-xl text-white/95 max-w-xl mx-auto mb-10 leading-[1.6] font-normal">
+            Tras 3 años viviendo aquí, te revelo los secretos que no están en las guías: desde desayunos solitarios en Graça hasta cómo evitar la trampa del tranvía 28.
           </p>
 
           {/* CTA Buttons */}
@@ -55,7 +54,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="#free"
-              className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border border-white/30 transition-all duration-300"
+              className="flex items-center gap-3 px-8 py-4 bg-transparent hover:bg-white/5 text-white rounded-xl font-semibold text-lg border border-white/20 hover:border-white/40 transition-all duration-300"
             >
               <span className="material-symbols-outlined text-xl">download</span>
               Guía esencial gratis
@@ -63,21 +62,21 @@ export default function HomePage() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-white/90 text-sm">
+          <div className="flex flex-wrap justify-center gap-8 text-white/90 text-sm pt-8">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+              <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
               <span>Acceso inmediato</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-accent text-lg">verified</span>
+              <span className="material-symbols-outlined text-accent text-base">verified</span>
               <span>+2,400 viajeros</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-blue-400 text-lg">workspace_premium</span>
+              <span className="material-symbols-outlined text-blue-400 text-base">workspace_premium</span>
               <span>Garantía 48h total</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-yellow-400 text-lg">savings</span>
+              <span className="material-symbols-outlined text-yellow-400 text-base">savings</span>
               <span>Ahorrás x2 mínimo</span>
             </div>
           </div>
