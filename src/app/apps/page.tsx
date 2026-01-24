@@ -59,9 +59,101 @@ export default function AppsPage() {
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/google-maps/id585027354',
       linkPlayStore: 'https://play.google.com/store/apps/details?id=com.google.android.apps.maps',
-      pros: ['GPS offline', 'Información de lugares', 'Fotos y reseñas', 'Rutas optimizadas'],
-      mejorPara: 'Navegación GPS, encontrar lugares, ver fotos antes de ir'
+      pros: ['GPS offline', 'Información de lugares', 'Fotos y reseñas'],
+      mejorPara: 'Navegación GPS, encontrar lugares'
     },
+    {
+      nombre: 'Uber',
+      categoria: 'Transporte',
+      descripcion: 'Taxis privados más baratos que taxis oficiales. Pago con tarjeta.',
+      descripcionLarga: 'Uber es más barato que los taxis oficiales y más cómodo. Ves el precio estimado antes de pedir y pagas con tarjeta. Perfecto para ir del aeropuerto al centro o moverte por la noche.',
+      logo: '/logos/uber.png',
+      color: 'from-slate-700 to-slate-800',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.ubercab',
+      pros: ['Más barato que taxis', 'Precio fijo', 'Pago con tarjeta'],
+      mejorPara: 'Aeropuerto, viajes nocturnos'
+    },
+    {
+      nombre: 'Bolt',
+      categoria: 'Transporte',
+      descripcion: 'Similar a Uber pero 10-20% más barato. Opción más económica.',
+      descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos. Siempre compara precios entre ambas apps antes de pedir - a veces Bolt es mucho más barato.',
+      logo: '/logos/bolt.png',
+      color: 'from-yellow-500 to-orange-500',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=ee.mtakso.client',
+      pros: ['10-20% más barato que Uber', 'Precio fijo'],
+      mejorPara: 'Ahorrar en taxis, comparar precios'
+    },
+    {
+      nombre: 'TheFork',
+      categoria: 'Restaurantes',
+      descripcion: 'Reserva restaurantes con descuentos de hasta 50%.',
+      descripcionLarga: 'TheFork ofrece descuentos de 30-50% en muchos restaurantes de Lisboa, especialmente en horarios menos populares. Perfecta para reservar en restaurantes populares.',
+      logo: '/logos/thefork.png',
+      color: 'from-red-500 to-rose-600',
+      precio: 'Gratis',
+      linkAppStore: 'https://apps.apple.com/app/thefork-restaurant-booking/id318452441',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.lafourchette.android',
+      pros: ['Descuentos 30-50%', 'Reservas fáciles', 'Ver menús'],
+      mejorPara: 'Comer bien con descuento'
+    },
+    {
+      nombre: 'Revolut',
+      categoria: 'Utilidades',
+      descripcion: 'Tarjeta prepago sin comisiones de cambio. Tipo de cambio real.',
+      descripcionLarga: 'Revolut te ahorra dinero al viajar. Los bancos tradicionales cobran comisiones de cambio (2-3%). Revolut te da el tipo de cambio real del mercado sin comisiones ocultas.',
+      logo: '/logos/revolut.png',
+      color: 'from-indigo-500 to-indigo-600',
+      precio: 'Gratis',
+      linkAppStore: 'https://apps.apple.com/app/revolut-better-way-to-money/id932493382',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.revolut.revolut',
+      pros: ['Sin comisiones', 'Tipo de cambio real', 'Sacar dinero gratis'],
+      mejorPara: 'Ahorrar en comisiones, cambiar moneda'
+    },
+    {
+      nombre: 'GetYourGuide',
+      categoria: 'Actividades',
+      descripcion: 'Tours y actividades en Lisboa con cancelación gratuita.',
+      descripcionLarga: 'GetYourGuide es la plataforma más grande para tours y experiencias en Lisboa. Desde visitas guiadas hasta tours de fado. Cancelación gratuita hasta 24 horas antes.',
+      logo: '/logos/getyourguide.jpg',
+      color: 'from-green-600 to-teal-600',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/getyourguide-tours-activities/id412395452',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.getyourguide.android',
+      pros: ['Cancelación gratuita', 'Reseñas verificadas', 'Tours en español'],
+      mejorPara: 'Tours y actividades, experiencias locales'
+    },
+    {
+      nombre: 'Airbnb',
+      categoria: 'Alojamiento',
+      descripcion: 'Encuentra alojamiento único: apartamentos y habitaciones en Lisboa.',
+      descripcionLarga: 'Airbnb es perfecto para encontrar alojamiento alternativo en Lisboa. Desde apartamentos enteros hasta habitaciones compartidas. Contacta directamente con anfitriones locales.',
+      logo: '/logos/airbnb.png',
+      color: 'from-pink-500 to-rose-600',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/airbnb/id401626263',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.airbnb.android',
+      pros: ['Alojamientos únicos', 'Contactar anfitriones locales'],
+      mejorPara: 'Alojamiento alternativo, sentirte como local'
+    },
+    {
+      nombre: 'Glovo',
+      categoria: 'Delivery',
+      descripcion: 'Delivery de comida y productos. Entrega rápida en Lisboa.',
+      descripcionLarga: 'Glovo es el servicio de delivery más usado en Lisboa. Puedes pedir comida de cualquier restaurante o productos del supermercado. Entrega rápida (30-45 minutos).',
+      logo: '/logos/glovo.png',
+      color: 'from-orange-500 to-red-500',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/glovo-food-delivery/id951624702',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.glovo',
+      pros: ['Entrega rápida', 'Todo tipo de productos', 'Promociones'],
+      mejorPara: 'Comida a domicilio, compras urgentes'
+    }
+  ];
     {
       nombre: 'Maps.me',
       categoria: 'Navegación',
