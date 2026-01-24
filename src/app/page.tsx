@@ -54,7 +54,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="#free"
-              className="flex items-center gap-3 px-8 py-4 bg-transparent hover:bg-white/5 text-white rounded-xl font-semibold text-lg border border-white/20 hover:border-white/40 transition-all duration-300"
+              className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/15 text-white rounded-xl font-semibold text-lg border border-white/30 hover:border-white/50 transition-all duration-300"
             >
               <span className="material-symbols-outlined text-xl">download</span>
               Guía esencial gratis
