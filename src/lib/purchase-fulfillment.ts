@@ -98,7 +98,7 @@ async function sendPurchaseEmail(data: PurchaseData) {
   const emailData = {
     sender: {
       name: 'Portugal Auténtico',
-      email: 'hola@estabaenlisboa.com',
+      email: 'contacto@estabaenlisboa.com',
     },
     to: [
       {

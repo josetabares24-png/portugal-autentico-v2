@@ -166,7 +166,7 @@ export function generatePurchaseEmailHtml(data: PurchaseEmailData): string {
         <div class="footer">
             <div class="social-links">
                 <a href="https://estabaenlisboa.com">🌐 Web</a>
-                <a href="mailto:hola@estabaenlisboa.com">📧 Email</a>
+                <a href="mailto:contacto@estabaenlisboa.com">📧 Email</a>
             </div>
             <p>
                 Portugal Auténtico - Descubre el Portugal real<br>
@@ -204,7 +204,7 @@ ${guideContent}` : ''}
 - Consejos prácticos para tu viaje
 - Información actualizada para 2026
 
-Si tienes preguntas, contactanos en hola@estabaenlisboa.com
+Si tienes preguntas, contactanos en contacto@estabaenlisboa.com
 
 Portugal Auténtico - Descubre el Portugal real
 © 2026 Portugal Auténtico
