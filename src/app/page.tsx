@@ -20,7 +20,7 @@ export default function HomePage() {
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
 
         {/* Hero Content */}
@@ -49,7 +49,7 @@ export default function HomePage() {
               className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <span className="material-symbols-outlined text-xl">map</span>
-              Explorar rutas
+              Ver las rutas
               <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
             <Link
