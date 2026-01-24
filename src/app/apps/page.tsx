@@ -50,17 +50,30 @@ export default function AppsPage() {
       mejorPara: 'Navegación GPS, encontrar lugares, ver fotos antes de ir'
     },
     {
-      nombre: 'Viva Viagem App',
-      categoria: 'Transporte',
-      descripcion: 'App oficial para recargar tu tarjeta de transporte público desde el móvil.',
-      descripcionLarga: 'La app oficial de Viva Viagem te permite recargar tu tarjeta de transporte sin ir a una máquina. Es súper útil porque las máquinas en las estaciones de metro suelen tener colas, especialmente en hora pico. Con esta app recargas desde el móvil con tarjeta de crédito y luego acercas tu tarjeta física al lector NFC del móvil para transferir el saldo. También puedes ver tu historial de viajes y el saldo restante. Ahorra tiempo y evita colas.',
-      logo: '', // Usar icono Material
-      color: 'from-purple-500 to-purple-600',
+      nombre: 'Maps.me',
+      categoria: 'Navegación',
+      descripcion: 'Mapas offline gratuitos con navegación GPS sin conexión. Ideal para viajar sin datos.',
+      descripcionLarga: 'Maps.me es la app perfecta para navegación offline en Lisboa. Descarga mapas completos gratis y navega sin consumir datos móviles. Tiene navegación GPS precisa, puntos de interés, rutas a pie optimizadas y funciona perfectamente sin internet. Lo mejor es que es completamente gratuita y no requiere cuenta. Perfecta como alternativa o complemento a Google Maps cuando quieres ahorrar datos.',
+      logo: '/logos/mapsme.webp',
+      color: 'from-purple-600 to-purple-800',
       precio: 'Gratis',
-      linkAppStore: 'https://apps.apple.com/pt/app/viva-viagem/id1449782000',
-      linkPlayStore: 'https://play.google.com/store/apps/details?id=pt.metrolisboa.vivaviagem',
-      pros: ['Recarga sin colas', 'Historial de viajes', 'Ver saldo', 'NFC para transferir'],
-      mejorPara: 'Usar transporte público frecuentemente, evitar colas'
+      linkAppStore: 'https://apps.apple.com/app/maps-me-offline-map-gps-nav/id510623322',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.mapswithme.maps.pro',
+      pros: ['Completamente offline', 'Mapas gratis', 'Navegación GPS precisa', 'Sin cuenta requerida'],
+      mejorPara: 'Navegación offline, ahorrar datos móviles'
+    },
+    {
+      nombre: 'Airbnb',
+      categoria: 'Alojamiento',
+      descripcion: 'Encuentra alojamiento único en Lisboa: apartamentos, habitaciones y experiencias locales.',
+      descripcionLarga: 'Airbnb es la plataforma más grande para encontrar alojamiento alternativo en Lisboa. Desde apartamentos enteros hasta habitaciones compartidas, pasando por casas tradicionales en Alfama o modernos lofts en el centro. Lo mejor es que puedes contactar directamente con los anfitriones locales que te darán consejos reales sobre Lisboa. También ofrecen experiencias únicas como tours privados o clases de fado. Perfecta para sentirte como un local durante tu viaje.',
+      logo: '/logos/airbnb.png',
+      color: 'from-pink-500 to-rose-600',
+      precio: 'Gratis (pago por reserva)',
+      linkAppStore: 'https://apps.apple.com/app/airbnb/id401626263',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.airbnb.android',
+      pros: ['Alojamientos únicos', 'Contactar anfitriones locales', 'Experiencias especiales', 'Precios competitivos'],
+      mejorPara: 'Encontrar alojamiento alternativo, experiencias locales'
     },
     {
       nombre: 'TheFork',
@@ -76,6 +89,32 @@ export default function AppsPage() {
       mejorPara: 'Comer bien con descuento, reservar restaurantes populares'
     },
     {
+      nombre: 'GetYourGuide',
+      categoria: 'Actividades',
+      descripcion: 'Tours, experiencias y actividades en Lisboa con cancelación gratuita y reseñas verificadas.',
+      descripcionLarga: 'GetYourGuide es la plataforma más grande para tours y experiencias en Lisboa. Desde visitas guiadas a Belém hasta tours de fado por la noche, pasando por experiencias de surf o clases de portugués. Lo mejor es que tienen cancelación gratuita hasta 24 horas antes y reseñas verificadas de viajeros reales. Puedes comparar precios y leer experiencias de otros visitantes antes de reservar. Perfecta para completar tu viaje con actividades auténticas.',
+      logo: '/logos/getyourguide.jpg',
+      color: 'from-green-600 to-teal-600',
+      precio: 'Gratis (pago por actividad)',
+      linkAppStore: 'https://apps.apple.com/app/getyourguide-tours-activities/id412395452',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.getyourguide.android',
+      pros: ['Cancelación gratuita', 'Reseñas verificadas', 'Tours en español', 'Precios transparentes'],
+      mejorPara: 'Tours y actividades, experiencias locales'
+    },
+    {
+      nombre: 'Glovo',
+      categoria: 'Delivery',
+      descripcion: 'Delivery de comida, supermercado y productos. Entrega rápida en Lisboa y alrededores.',
+      descripcionLarga: 'Glovo es el servicio de delivery más usado en Lisboa. Puedes pedir comida de prácticamente cualquier restaurante, productos del supermercado, medicinas de farmacias, e incluso recoger paquetes. La entrega es rápida (30-45 minutos) y el servicio es confiable. Lo mejor es que tienen promociones frecuentes y puedes pagar con tarjeta. Perfecta cuando no quieres salir de casa o necesitas algo urgente.',
+      logo: '/logos/glovo.png',
+      color: 'from-orange-500 to-red-500',
+      precio: 'Gratis (pago por pedido)',
+      linkAppStore: 'https://apps.apple.com/app/glovo-food-delivery/id951624702',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.glovo',
+      pros: ['Entrega rápida', 'Todo tipo de productos', 'Promociones frecuentes', 'Pago con tarjeta'],
+      mejorPara: 'Comida a domicilio, compras urgentes, no salir de casa'
+    },
+    {
       nombre: 'Uber',
       categoria: 'Transporte',
       descripcion: 'Taxis privados más baratos que taxis oficiales. Precio fijo antes de viajar, pago con tarjeta.',
@@ -89,6 +128,19 @@ export default function AppsPage() {
       mejorPara: 'Aeropuerto, viajes nocturnos'
     },
     {
+      nombre: 'Uber Eats',
+      categoria: 'Delivery',
+      descripcion: 'Delivery de comida de restaurantes. Más rápido que Glovo en algunas zonas de Lisboa.',
+      descripcionLarga: 'Uber Eats es el servicio de delivery de Uber. Funciona igual que Glovo pero en algunas zonas de Lisboa es más rápido. Puedes pedir comida de cientos de restaurantes y recibirla en casa en 20-40 minutos. Lo mejor es que puedes usar el mismo perfil de Uber, así que si ya tienes la app, solo necesitas activar Eats. Perfecta cuando quieres comer algo específico de un restaurante determinado.',
+      logo: '/logos/uber-eats.png',
+      color: 'from-slate-600 to-slate-800',
+      precio: 'Gratis (pago por pedido)',
+      linkAppStore: 'https://apps.apple.com/app/uber-eats-food-delivery/id1058959277',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.ubercab.eats',
+      pros: ['Entrega rápida', 'Cientos de restaurantes', 'Mismo perfil que Uber', 'Pago con tarjeta'],
+      mejorPara: 'Delivery de comida, restaurantes específicos'
+    },
+    {
       nombre: 'Bolt',
       categoria: 'Transporte',
       descripcion: 'Similar a Uber pero 10-20% más barato. La opción más económica para taxis privados en Lisboa.',
@@ -100,6 +152,19 @@ export default function AppsPage() {
       linkPlayStore: 'https://play.google.com/store/apps/details?id=ee.mtakso.client',
       pros: ['10-20% más barato que Uber', 'Precio fijo', 'Pago con tarjeta'],
       mejorPara: 'Ahorrar en taxis, comparar precios'
+    },
+    {
+      nombre: 'FreeNow',
+      categoria: 'Transporte',
+      descripcion: 'Otra alternativa de taxi privado. Compite directamente con Uber y Bolt en precios.',
+      descripcionLarga: 'FreeNow (antes MyTaxi) es otra excelente opción para taxis privados en Lisboa. Forma parte del mismo grupo que Freenow en otros países europeos. Los precios son muy competitivos y comparables con Uber y Bolt. La app es simple y confiable. Siempre compara precios entre las tres apps antes de pedir un viaje - los precios varían según la demanda y zona. Perfecta como tercera opción para conseguir el mejor precio.',
+      logo: '/logos/freenow.png',
+      color: 'from-blue-600 to-blue-800',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/freenow/id1459786191',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=taxi.android.client',
+      pros: ['Precios competitivos', 'Comparar con otras apps', 'Servicio confiable'],
+      mejorPara: 'Taxis privados, comparar precios entre compañías'
     },
     {
       nombre: 'CP - Comboios de Portugal',
@@ -180,7 +245,7 @@ export default function AppsPage() {
     }
   ];
 
-  const categorias = ['Todas', 'Transporte', 'Restaurantes', 'Utilidades', 'Eventos'];
+  const categorias = ['Todas', 'Transporte', 'Restaurantes', 'Utilidades', 'Eventos', 'Alojamiento', 'Actividades', 'Delivery'];
 
   const appsFiltradas = categoriaActiva === 'Todas' 
     ? apps 
