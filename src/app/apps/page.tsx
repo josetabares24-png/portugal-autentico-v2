@@ -39,29 +39,108 @@ export default function AppsPage() {
     {
       nombre: 'Citymapper',
       categoria: 'Transporte',
-      descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía, Uber: todo en una app con rutas en tiempo real.',
-      descripcionLarga: 'Citymapper es la app de transporte público más completa para Lisboa. Te muestra todas las opciones: metro, autobuses, tranvías, e incluso integra Uber y Bolt. Lo mejor es que calcula rutas en tiempo real considerando retrasos, cierres y el tráfico actual. Perfecta para comparar opciones y elegir la ruta más rápida o económica.',
+      descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía en tiempo real.',
+      descripcionLarga: 'Citymapper es la app de transporte público más completa para Lisboa. Te muestra todas las opciones: metro, autobuses, tranvías con rutas en tiempo real considerando retrasos y cierres. Perfecta para comparar opciones.',
       logo: '/logos/citymapper.png',
       color: 'from-green-500 to-emerald-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/citymapper/id469463298',
       linkPlayStore: 'https://play.google.com/store/apps/details?id=com.citymapper.app.release',
-      pros: ['Rutas en tiempo real', 'Integra todos los transportes', 'Muestra precios'],
-      mejorPara: 'Primera vez en Lisboa, optimizar tiempo'
+      pros: ['Rutas en tiempo real', 'Integra todos los transportes'],
+      mejorPara: 'Transporte público, primera vez en Lisboa'
     },
     {
-      nombre: 'Google Maps',
-      categoria: 'Navegación',
-      descripcion: 'Imprescindible para GPS offline. Descarga el mapa de Lisboa antes de viajar y úsalo sin datos.',
-      descripcionLarga: 'Google Maps es esencial para no perderte en Lisboa. La función clave es descargar el mapa offline antes de viajar: ve a "Tus sitios" → "Mapas" → "Descargar mapa" y selecciona el área de Lisboa. Así tendrás GPS sin consumir datos. También tiene información de restaurantes, horarios de monumentos, y rutas a pie optimizadas. Úsalo para encontrar restaurantes cercanos, ver fotos de lugares antes de ir, y navegar por las calles empinadas de Alfama sin perderte.',
-      logo: 'https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png',
-      color: 'from-blue-500 to-blue-600',
-      precio: 'Gratis',
-      linkAppStore: 'https://apps.apple.com/app/google-maps/id585027354',
-      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.google.android.apps.maps',
-      pros: ['GPS offline', 'Información de lugares', 'Fotos y reseñas'],
-      mejorPara: 'Navegación GPS, encontrar lugares'
+      nombre: 'Uber',
+      categoria: 'Transporte',
+      descripcion: 'Taxis privados más baratos que taxis oficiales. Pago con tarjeta.',
+      descripcionLarga: 'Uber es más barato que los taxis oficiales y más cómodo. Ves el precio estimado antes de pedir y pagas con tarjeta. Perfecto para aeropuerto o viajes nocturnos.',
+      logo: '/logos/uber.png',
+      color: 'from-slate-700 to-slate-800',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.ubercab',
+      pros: ['Más barato que taxis', 'Precio fijo', 'Pago con tarjeta'],
+      mejorPara: 'Aeropuerto, viajes nocturnos'
     },
+    {
+      nombre: 'Bolt',
+      categoria: 'Transporte',
+      descripcion: 'Similar a Uber pero 10-20% más barato.',
+      descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos. Siempre compara precios entre ambas apps antes de pedir.',
+      logo: '/logos/bolt.png',
+      color: 'from-yellow-500 to-orange-500',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=ee.mtakso.client',
+      pros: ['10-20% más barato que Uber', 'Precio fijo'],
+      mejorPara: 'Ahorrar en taxis, comparar precios'
+    },
+    {
+      nombre: 'TheFork',
+      categoria: 'Restaurantes',
+      descripcion: 'Reserva restaurantes con descuentos de hasta 50%.',
+      descripcionLarga: 'TheFork ofrece descuentos de 30-50% en muchos restaurantes de Lisboa. Perfecta para reservar en restaurantes populares.',
+      logo: '/logos/thefork.png',
+      color: 'from-red-500 to-rose-600',
+      precio: 'Gratis',
+      linkAppStore: 'https://apps.apple.com/app/thefork-restaurant-booking/id318452441',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.lafourchette.android',
+      pros: ['Descuentos 30-50%', 'Reservas fáciles'],
+      mejorPara: 'Comer bien con descuento'
+    },
+    {
+      nombre: 'Revolut',
+      categoria: 'Utilidades',
+      descripcion: 'Tarjeta prepago sin comisiones de cambio.',
+      descripcionLarga: 'Revolut te ahorra dinero al viajar. Los bancos tradicionales cobran comisiones de cambio (2-3%). Revolut te da el tipo de cambio real.',
+      logo: '/logos/revolut.png',
+      color: 'from-indigo-500 to-indigo-600',
+      precio: 'Gratis',
+      linkAppStore: 'https://apps.apple.com/app/revolut-better-way-to-money/id932493382',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.revolut.revolut',
+      pros: ['Sin comisiones', 'Tipo de cambio real'],
+      mejorPara: 'Ahorrar en comisiones, cambiar moneda'
+    },
+    {
+      nombre: 'GetYourGuide',
+      categoria: 'Actividades',
+      descripcion: 'Tours y actividades en Lisboa con cancelación gratuita.',
+      descripcionLarga: 'GetYourGuide es la plataforma más grande para tours y experiencias en Lisboa. Cancelación gratuita hasta 24 horas antes.',
+      logo: '/logos/getyourguide.jpg',
+      color: 'from-green-600 to-teal-600',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/getyourguide-tours-activities/id412395452',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.getyourguide.android',
+      pros: ['Cancelación gratuita', 'Reseñas verificadas'],
+      mejorPara: 'Tours y actividades, experiencias locales'
+    },
+    {
+      nombre: 'Airbnb',
+      categoria: 'Alojamiento',
+      descripcion: 'Encuentra alojamiento único en Lisboa.',
+      descripcionLarga: 'Airbnb es perfecto para encontrar alojamiento alternativo en Lisboa. Desde apartamentos hasta habitaciones compartidas.',
+      logo: '/logos/airbnb.png',
+      color: 'from-pink-500 to-rose-600',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/airbnb/id401626263',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.airbnb.android',
+      pros: ['Alojamientos únicos', 'Contactar anfitriones'],
+      mejorPara: 'Alojamiento alternativo'
+    },
+    {
+      nombre: 'Glovo',
+      categoria: 'Delivery',
+      descripcion: 'Delivery de comida y productos.',
+      descripcionLarga: 'Glovo es el servicio de delivery más usado en Lisboa. Puedes pedir comida o productos del supermercado. Entrega rápida.',
+      logo: '/logos/glovo.png',
+      color: 'from-orange-500 to-red-500',
+      precio: 'Gratis (pago por uso)',
+      linkAppStore: 'https://apps.apple.com/app/glovo-food-delivery/id951624702',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.glovo',
+      pros: ['Entrega rápida', 'Todo tipo de productos'],
+      mejorPara: 'Comida a domicilio, compras urgentes'
+    }
+  ];
     {
       nombre: 'Uber',
       categoria: 'Transporte',
@@ -152,8 +231,7 @@ export default function AppsPage() {
       linkPlayStore: 'https://play.google.com/store/apps/details?id=com.glovo',
       pros: ['Entrega rápida', 'Todo tipo de productos', 'Promociones'],
       mejorPara: 'Comida a domicilio, compras urgentes'
-    }
-  ];
+    },
     {
       nombre: 'Maps.me',
       categoria: 'Navegación',
@@ -166,7 +244,8 @@ export default function AppsPage() {
       linkPlayStore: 'https://play.google.com/store/apps/details?id=com.mapswithme.maps.pro',
       pros: ['Completamente offline', 'Mapas gratis', 'Navegación GPS precisa', 'Sin cuenta requerida'],
       mejorPara: 'Navegación offline, ahorrar datos móviles'
-    },
+    }
+  ];
     {
       nombre: 'Airbnb',
       categoria: 'Alojamiento',
