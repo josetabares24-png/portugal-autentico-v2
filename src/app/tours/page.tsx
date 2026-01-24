@@ -16,6 +16,22 @@ export default function ToursPage() {
   // 4. Reemplaza "TU_AFFILIATE_ID" con ese número
   const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID";
 
+  // URLs directas sin affiliate ID (por ahora)
+  const directUrls: Record<number, string> = {
+    1: 'https://www.civitatis.com/es/lisboa/free-tour-lisboa/',
+    2: 'https://www.civitatis.com/es/lisboa/free-tour-alfama/',
+    3: 'https://www.civitatis.com/es/lisboa/excursion-sintra-cascais/',
+    4: 'https://www.civitatis.com/es/lisboa/tour-sintra-palacio-pena/',
+    5: 'https://www.civitatis.com/es/lisboa/excursion-fatima-batalha-nazare-obidos/',
+    6: 'https://www.civitatis.com/es/lisboa/tour-gastronomico/',
+    7: 'https://www.civitatis.com/es/lisboa/cata-vinos-quesos/',
+    8: 'https://www.civitatis.com/es/lisboa/espectaculo-fado-cena/',
+    9: 'https://www.civitatis.com/es/lisboa/visita-guiada-oceanario/',
+    10: 'https://www.civitatis.com/es/lisboa/paseo-barco-tajo-atardecer/',
+    11: 'https://www.civitatis.com/es/lisboa/clase-surf/',
+    12: 'https://www.civitatis.com/es/lisboa/tour-privado/'
+  };
+
   const categories = [
     { id: 'all', name: 'Todos', icon: 'map' },
     { id: 'free', name: 'Free Tours', icon: 'redeem' },
@@ -469,7 +485,11 @@ export default function ToursPage() {
           )}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredTours.filter(t => t.category !== 'free').map(tour => (
+            {filteredTours.filter(t => t.category !== 'free').map(tour => {
+              // Usar links directos por ahora
+              const directUrl = directUrls[tour.id as keyof typeof directUrls] || tour.bookingUrl;
+
+              return (
               <div key={tour.id} className={`bg-white rounded-3xl overflow-hidden border-2 hover:shadow-2xl transition-all hover:-translate-y-1 ${
                 tour.recommended ? 'border-primary shadow-lg' : 'border-slate-200 hover:border-primary'
               }`}>
@@ -515,13 +535,16 @@ export default function ToursPage() {
                   </div>
 
                   <a
-                    href={tour.bookingUrl}
+                    href={directUrl}
                     target="_blank"
-                    rel="noopener noreferrer sponsored"
+                    rel="noopener noreferrer"
                     className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
                   >
                     Ver Disponibilidad →
                   </a>
+                );
+              })}
+            </div>
                 </div>
               </div>
             ))}
