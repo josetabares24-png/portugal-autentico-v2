@@ -142,32 +142,6 @@ export default function AppsPage() {
     }
   ];
     {
-      nombre: 'Uber',
-      categoria: 'Transporte',
-      descripcion: 'Taxis privados más baratos que taxis oficiales. Pago con tarjeta.',
-      descripcionLarga: 'Uber es más barato que los taxis oficiales y más cómodo. Ves el precio estimado antes de pedir y pagas con tarjeta. Perfecto para ir del aeropuerto al centro o moverte por la noche.',
-      logo: '/logos/uber.png',
-      color: 'from-slate-700 to-slate-800',
-      precio: 'Gratis (pago por uso)',
-      linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
-      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.ubercab',
-      pros: ['Más barato que taxis', 'Precio fijo', 'Pago con tarjeta'],
-      mejorPara: 'Aeropuerto, viajes nocturnos'
-    },
-    {
-      nombre: 'Bolt',
-      categoria: 'Transporte',
-      descripcion: 'Similar a Uber pero 10-20% más barato. Opción más económica.',
-      descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos. Siempre compara precios entre ambas apps antes de pedir - a veces Bolt es mucho más barato.',
-      logo: '/logos/bolt.png',
-      color: 'from-yellow-500 to-orange-500',
-      precio: 'Gratis (pago por uso)',
-      linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
-      linkPlayStore: 'https://play.google.com/store/apps/details?id=ee.mtakso.client',
-      pros: ['10-20% más barato que Uber', 'Precio fijo'],
-      mejorPara: 'Ahorrar en taxis, comparar precios'
-    },
-    {
       nombre: 'TheFork',
       categoria: 'Restaurantes',
       descripcion: 'Reserva restaurantes con descuentos de hasta 50%.',
@@ -246,10 +220,14 @@ export default function AppsPage() {
       mejorPara: 'Navegación offline, ahorrar datos móviles'
     }
   ];
-    {
-      nombre: 'Airbnb',
-      categoria: 'Alojamiento',
-      descripcion: 'Encuentra alojamiento único en Lisboa: apartamentos, habitaciones y experiencias locales.',
+
+  const categorias = ['Todas', 'Navegación', 'Transporte', 'Restaurantes', 'Utilidades', 'Alojamiento', 'Actividades', 'Delivery'];
+
+  const appsFiltradas = categoriaActiva === 'Todas'
+    ? apps
+    : apps.filter(app => app.categoria === categoriaActiva);
+
+  return (
       descripcionLarga: 'Airbnb es la plataforma más grande para encontrar alojamiento alternativo en Lisboa. Desde apartamentos enteros hasta habitaciones compartidas, pasando por casas tradicionales en Alfama o modernos lofts en el centro. Lo mejor es que puedes contactar directamente con los anfitriones locales que te darán consejos reales sobre Lisboa. También ofrecen experiencias únicas como tours privados o clases de fado. Perfecta para sentirte como un local durante tu viaje.',
       logo: '/logos/airbnb.png',
       color: 'from-pink-500 to-rose-600',
