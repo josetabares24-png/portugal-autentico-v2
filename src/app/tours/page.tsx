@@ -545,9 +545,6 @@ export default function ToursPage() {
                 );
               })}
             </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
