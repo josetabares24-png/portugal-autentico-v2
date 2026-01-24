@@ -69,7 +69,7 @@ export default function AppsPage() {
       descripcionLarga: 'Airbnb es la plataforma más grande para encontrar alojamiento alternativo en Lisboa. Desde apartamentos enteros hasta habitaciones compartidas, pasando por casas tradicionales en Alfama o modernos lofts en el centro. Lo mejor es que puedes contactar directamente con los anfitriones locales que te darán consejos reales sobre Lisboa. También ofrecen experiencias únicas como tours privados o clases de fado. Perfecta para sentirte como un local durante tu viaje.',
       logo: '/logos/airbnb.png',
       color: 'from-pink-500 to-rose-600',
-      precio: 'Gratis (pago por reserva)',
+      precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/airbnb/id401626263',
       linkPlayStore: 'https://play.google.com/store/apps/details?id=com.airbnb.android',
       pros: ['Alojamientos únicos', 'Contactar anfitriones locales', 'Experiencias especiales', 'Precios competitivos'],
