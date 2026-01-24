@@ -28,7 +28,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía, Uber: todo en una app con rutas en tiempo real.',
       descripcionLarga: 'Citymapper es la app de transporte público más completa para Lisboa. Te muestra todas las opciones: metro, autobuses, tranvías, e incluso integra Uber y Bolt. Lo mejor es que calcula rutas en tiempo real considerando retrasos, cierres y el tráfico actual. Perfecta para comparar opciones y elegir la ruta más rápida o económica.',
-      logo: '', // Usar icono Material
+      logo: '/logos/citymapper.png',
       color: 'from-green-500 to-emerald-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/citymapper/id469463298',
@@ -67,7 +67,7 @@ export default function AppsPage() {
       categoria: 'Restaurantes',
       descripcion: 'Reserva restaurantes con descuentos de hasta 50%. Los mejores sitios de Lisboa con ofertas exclusivas.',
       descripcionLarga: 'TheFork (antes LaFourchette) es la app de reservas de restaurantes más usada en Lisboa. Lo mejor son los descuentos: muchos restaurantes ofrecen 30-50% de descuento si reservas a través de la app, especialmente en horarios menos populares (almuerzos entre semana, cenas tempranas). También puedes ver menús, fotos de platos, y reseñas. Perfecta para reservar en restaurantes populares que suelen estar llenos. Los descuentos son reales y funcionan - he ahorrado cientos de euros usando esta app.',
-      logo: '', // Usar icono Material
+      logo: '/logos/thefork.png',
       color: 'from-red-500 to-rose-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/thefork-restaurant-booking/id318452441',
@@ -80,7 +80,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Taxis privados más baratos que taxis oficiales. Precio fijo antes de viajar, pago con tarjeta.',
       descripcionLarga: 'Uber es la app de transporte privado más conocida en Lisboa. Más barata que los taxis oficiales y más cómoda. Ves el precio estimado antes de pedir, pagas con tarjeta, y rastreas el viaje en tiempo real. Perfecta para ir del aeropuerto al centro (15-20€ vs 25-30€ en taxi oficial) o moverte por la noche cuando el transporte público cierra.',
-      logo: '', // Usar icono Material
+      logo: '/logos/uber.png',
       color: 'from-slate-700 to-slate-800',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/uber/id368677368',
@@ -93,7 +93,7 @@ export default function AppsPage() {
       categoria: 'Transporte',
       descripcion: 'Similar a Uber pero 10-20% más barato. La opción más económica para taxis privados en Lisboa.',
       descripcionLarga: 'Bolt es como Uber pero más barato. Suele costar 10-20% menos que Uber para el mismo trayecto. Funciona igual: pides un viaje, ves el precio, pagas con tarjeta. Siempre compara ambas apps antes de pedir - a veces Bolt es mucho más barato, especialmente en horas pico. También tienen opción de compartir viaje para ahorrar aún más.',
-      logo: '', // Usar icono Material
+      logo: '/logos/bolt.png',
       color: 'from-yellow-500 to-orange-500',
       precio: 'Gratis (pago por uso)',
       linkAppStore: 'https://apps.apple.com/app/bolt/id6750336309',
@@ -119,7 +119,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Tarjeta prepago para viajar sin comisiones de cambio. Tipo de cambio real, sacar dinero gratis.',
       descripcionLarga: 'Revolut es una tarjeta prepago que te ahorra dinero al viajar. Los bancos tradicionales te cobran comisiones de cambio (2-3%) y tasas infladas. Revolut te da el tipo de cambio real del mercado sin comisiones ocultas. Puedes cambiar euros a tu moneda antes de viajar o pagar directamente. También puedes sacar dinero gratis hasta cierto límite mensual. La app es muy fácil de usar y puedes congelar/descongelar la tarjeta desde el móvil.',
-      logo: '', // Usar icono Material
+      logo: '/logos/revolut.png',
       color: 'from-indigo-500 to-indigo-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/revolut-better-way-to-money/id932493382',
@@ -132,7 +132,7 @@ export default function AppsPage() {
       categoria: 'Utilidades',
       descripcion: 'Similar a Revolut pero con mejor tipo de cambio. Ideal para cambiar grandes cantidades de dinero.',
       descripcionLarga: 'Wise (antes TransferWise) es como Revolut pero con mejor tipo de cambio. Especialmente útil si necesitas cambiar grandes cantidades de dinero. Te da el tipo de cambio real del mercado sin comisiones ocultas. La app es más simple que Revolut pero igual de efectiva. Perfecta si ya tienes cuenta en Wise o si necesitas cambiar mucho dinero de una vez.',
-      logo: '', // Usar icono Material
+      logo: '/logos/wise.png',
       color: 'from-teal-500 to-cyan-600',
       precio: 'Gratis',
       linkAppStore: 'https://apps.apple.com/app/wise-money-transfers/id612261329',
