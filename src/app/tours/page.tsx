@@ -382,61 +382,70 @@ export default function ToursPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {tours.filter(t => t.category === 'free').map(tour => (
-                <div key={tour.id} className="bg-white rounded-3xl overflow-hidden border-2 border-primary/20 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1">
-                  <div className="relative h-56">
-                    <Image
-                      src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
-                      alt={tour.name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                    {tour.badge && (
-                      <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        {tour.badge}
-                      </div>
-                    )}
-                  </div>
+              {tours.filter(t => t.category === 'free').map(tour => {
+                // URLs directas sin affiliate ID por ahora
+                const directUrls = {
+                  1: 'https://www.civitatis.com/es/lisboa/free-tour-lisboa/',
+                  2: 'https://www.civitatis.com/es/lisboa/free-tour-alfama/'
+                };
+                const directUrl = directUrls[tour.id as keyof typeof directUrls] || tour.bookingUrl;
 
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl font-bold text-slate-900 flex-1">{tour.name}</h3>
-                    </div>
-
-                    <p className="text-slate-600 mb-4">{tour.description}</p>
-
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      {tour.highlights.map((highlight, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                          <span className="material-symbols-outlined text-green-600 text-sm">check_circle</span>
-                          <span>{highlight}</span>
+                return (
+                  <div key={tour.id} className="bg-white rounded-3xl overflow-hidden border-2 border-primary/20 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div className="relative h-56">
+                      <Image
+                        src={tourImageMap[tour.id] || tour.image || tourFallbackImage}
+                        alt={tour.name}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                      {tour.badge && (
+                        <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                          {tour.badge}
                         </div>
-                      ))}
+                      )}
                     </div>
 
-                    <div className="flex items-center justify-between mb-4 pt-4 border-t">
-                      <div>
-                        <p className="text-sm text-slate-500">Duración</p>
-                        <p className="font-bold text-slate-900">{tour.duration}</p>
+                    <div className="p-6">
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-xl font-bold text-slate-900 flex-1">{tour.name}</h3>
                       </div>
-                      <div className="text-right">
-                        <p className="text-sm text-slate-500">Precio</p>
-                        <p className="text-2xl font-black text-primary">{tour.price}</p>
-                      </div>
-                    </div>
 
-                  <a
-                      href={tour.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                    className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
-                    >
-                      Reservar Ahora (Gratis) →
-                    </a>
+                      <p className="text-slate-600 mb-4">{tour.description}</p>
+
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        {tour.highlights.map((highlight, i) => (
+                          <div key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                            <span className="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center justify-between mb-4 pt-4 border-t">
+                        <div>
+                          <p className="text-sm text-slate-500">Duración</p>
+                          <p className="font-bold text-slate-900">{tour.duration}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm text-slate-500">Precio</p>
+                          <p className="text-2xl font-black text-primary">{tour.price}</p>
+                        </div>
+                      </div>
+
+                    <a
+                        href={directUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all hover:scale-105 shadow-lg"
+                      >
+                        Reservar Ahora (Gratis) →
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
