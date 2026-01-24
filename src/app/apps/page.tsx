@@ -24,6 +24,19 @@ export default function AppsPage() {
 
   const apps: App[] = [
     {
+      nombre: 'Google Maps',
+      categoria: 'Navegación',
+      descripcion: 'Imprescindible para GPS offline. Descarga el mapa de Lisboa antes de viajar.',
+      descripcionLarga: 'Google Maps es esencial para no perderte en Lisboa. Descarga el mapa offline antes de viajar para usar GPS sin datos. Información de restaurantes, horarios de monumentos, rutas a pie optimizadas.',
+      logo: 'https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png',
+      color: 'from-blue-500 to-blue-600',
+      precio: 'Gratis',
+      linkAppStore: 'https://apps.apple.com/app/google-maps/id585027354',
+      linkPlayStore: 'https://play.google.com/store/apps/details?id=com.google.android.apps.maps',
+      pros: ['GPS offline', 'Información de lugares', 'Fotos y reseñas'],
+      mejorPara: 'Navegación GPS, encontrar lugares'
+    },
+    {
       nombre: 'Citymapper',
       categoria: 'Transporte',
       descripcion: 'La mejor app para moverte por Lisboa. Metro, bus, tranvía, Uber: todo en una app con rutas en tiempo real.',
@@ -245,7 +258,7 @@ export default function AppsPage() {
     }
   ];
 
-  const categorias = ['Todas', 'Transporte', 'Restaurantes', 'Utilidades', 'Eventos', 'Alojamiento', 'Actividades', 'Delivery'];
+  const categorias = ['Todas', 'Navegación', 'Transporte', 'Restaurantes', 'Utilidades', 'Alojamiento', 'Actividades', 'Delivery'];
 
   const appsFiltradas = categoriaActiva === 'Todas' 
     ? apps 
