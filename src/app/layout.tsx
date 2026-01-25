@@ -91,10 +91,16 @@ export default function RootLayout({
           <link rel="preconnect" href="https://unpkg.com" />
           <link rel="preconnect" href="https://js.stripe.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://api.brevo.com" />
+          <link rel="preconnect" href="https://api.stripe.com" />
+          <link rel="preconnect" href="https://clerk.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://unpkg.com" />
           <link rel="dns-prefetch" href="https://js.stripe.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="https://api.brevo.com" />
+          <link rel="dns-prefetch" href="https://api.stripe.com" />
+          <link rel="dns-prefetch" href="https://clerk.com" />
           
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -140,76 +146,6 @@ export default function RootLayout({
             <Footer />
             <CookieBanner />
             <GoogleAnalytics />
-            {process.env.NODE_ENV === 'development' && (
-              <Script id="clerk-cors-debug" strategy="afterInteractive">
-                {`
-                  (function() {
-                    if (typeof window === 'undefined') return;
-                    const run = function() {
-                      let corsErrorDetected = false;
-                      window.addEventListener('error', function(e) {
-                        if (e.message && e.message.includes('CORS') && e.filename && e.filename.includes('clerk')) {
-                          if (!corsErrorDetected) {
-                            corsErrorDetected = true;
-                            const logData = {
-                              location: 'layout.tsx:body',
-                              message: 'CORS error detected with Clerk',
-                              data: {
-                                errorMessage: e.message,
-                                filename: e.filename,
-                                lineno: e.lineno,
-                                colno: e.colno,
-                                timestamp: Date.now()
-                              },
-                              timestamp: Date.now(),
-                              sessionId: 'debug-session',
-                              runId: 'initial',
-                              hypothesisId: 'A'
-                            };
-                            fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify(logData)
-                            }).catch(function() {});
-                          }
-                        }
-                      }, true);
-
-                      window.addEventListener('unhandledrejection', function(e) {
-                        if (e.reason && e.reason.toString && e.reason.toString().includes('CORS')) {
-                          if (!corsErrorDetected) {
-                            corsErrorDetected = true;
-                            const logData = {
-                              location: 'layout.tsx:body',
-                              message: 'CORS error detected in promise rejection',
-                              data: {
-                                reason: e.reason.toString(),
-                                timestamp: Date.now()
-                              },
-                              timestamp: Date.now(),
-                              sessionId: 'debug-session',
-                              runId: 'initial',
-                              hypothesisId: 'A'
-                            };
-                            fetch('http://127.0.0.1:7242/ingest/bbbed4c0-6b1e-4cf6-9f02-da79905f3ca5', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify(logData)
-                            }).catch(function() {});
-                          }
-                        }
-                      });
-                    };
-
-                    if ('requestIdleCallback' in window) {
-                      window.requestIdleCallback(run);
-                    } else {
-                      setTimeout(run, 2000);
-                    }
-                  })();
-                `}
-              </Script>
-            )}
           </ErrorBoundary>
         </body>
       </html>
