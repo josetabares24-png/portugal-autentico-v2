@@ -34,12 +34,17 @@ export default function HomePage() {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
             La Lisboa que los<br />
-            <span className="text-accent">lisboetas OCULTAN</span>
+            <span className="text-accent">lisboetas se GUARDAN</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/95 max-w-xl mx-auto mb-10 leading-[1.6] font-normal">
-            Tras 3 años viviendo aquí, te revelo los secretos que no están en las guías: desde desayunos solitarios en Graça hasta cómo evitar la trampa del tranvía 28.
+            Tres años aquí me enseñaron la diferencia entre visitar y vivir: los cafés de Graça donde aún desayunas en silencio, los barrios que ningún influencer fotografía, y por qué el tranvía 28 es la trampa turística perfecta.
+          </p>
+          
+          {/* Premium Tagline */}
+          <p className="text-base md:text-lg text-white/80 max-w-xl mx-auto mb-8 leading-relaxed font-medium italic">
+            Esto no es una guía. Es mi Lisboa.
           </p>
 
           {/* CTA Buttons */}
