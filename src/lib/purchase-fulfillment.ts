@@ -47,9 +47,17 @@ export async function handlePurchaseFulfillment(session: Stripe.Checkout.Session
     };
 
     // Send email via Brevo
-    await sendPurchaseEmail(emailData);
-
-    console.log(`Purchase email sent successfully to ${customerEmail} for ${productName}`);
+    try {
+      await sendPurchaseEmail(emailData);
+      console.log(`Purchase email sent successfully to ${customerEmail} for ${productName}`);
+    } catch (emailError: any) {
+      // No fallar todo el proceso si el email falla
+      // El pago ya se procesó, solo logueamos el error
+      console.error(`[CRITICAL] Error enviando email de compra a ${customerEmail}:`, emailError);
+      // Podrías agregar aquí un sistema de notificación (Sentry, logs, etc.)
+      // Por ahora, no lanzamos el error para que el webhook responda OK
+      // y Stripe no reintente el webhook
+    }
 
   } catch (error) {
     console.error('Error in purchase fulfillment:', error);
@@ -87,9 +95,10 @@ async function getGuideContent(priceId?: string): Promise<string | undefined> {
   return undefined;
 }
 
-async function sendPurchaseEmail(data: PurchaseData) {
+async function sendPurchaseEmail(data: PurchaseData, retries = 2): Promise<any> {
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
   const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
+  const TIMEOUT_MS = 30000; // 30 segundos timeout
 
   if (!BREVO_API_KEY) {
     throw new Error('BREVO_API_KEY not configured');
@@ -116,25 +125,61 @@ async function sendPurchaseEmail(data: PurchaseData) {
     tags: ['purchase', 'guide-delivery', data.productName.toLowerCase().replace(/\s+/g, '-')],
   };
 
-  const response = await fetch(BREVO_API_URL, {
-    method: 'POST',
-    headers: {
-      'accept': 'application/json',
-      'api-key': BREVO_API_KEY,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify(emailData),
-  });
+  // Crear AbortController para timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
-  if (!response.ok) {
-    const errorData = await response.text();
-    throw new Error(`Brevo API error: ${response.status} - ${errorData}`);
+  try {
+    console.log(`[Email] Intentando enviar email a ${data.customerEmail}...`);
+    
+    const response = await fetch(BREVO_API_URL, {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(emailData),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      let errorData: string;
+      try {
+        errorData = await response.text();
+      } catch (e) {
+        errorData = `Error ${response.status}: ${response.statusText}`;
+      }
+      
+      // Si es un error 429 (rate limit) o 5xx, reintentar
+      if ((response.status === 429 || response.status >= 500) && retries > 0) {
+        console.log(`[Email] Error ${response.status}, reintentando... (${retries} intentos restantes)`);
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos
+        return sendPurchaseEmail(data, retries - 1);
+      }
+      
+      throw new Error(`Brevo API error: ${response.status} - ${errorData}`);
+    }
+
+    const result = await response.json();
+    console.log(`[Email] Email enviado exitosamente a ${data.customerEmail}:`, result.messageId || 'OK');
+    return result;
+
+  } catch (error: any) {
+    clearTimeout(timeoutId);
+    
+    // Si es un error de timeout o conexión, reintentar
+    if ((error.name === 'AbortError' || error.message?.includes('fetch') || error.code === 'ECONNREFUSED') && retries > 0) {
+      console.log(`[Email] Error de conexión, reintentando... (${retries} intentos restantes)`);
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos
+      return sendPurchaseEmail(data, retries - 1);
+    }
+    
+    console.error('[Email] Error enviando email:', error);
+    throw new Error(`Error al enviar email: ${error.message || 'Error de conexión con Brevo API'}`);
   }
-
-  const result = await response.json();
-  console.log('Email sent successfully:', result);
-
-  return result;
 }
 
 // Optional: Function to log purchase fulfillment for analytics
