@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
+import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
@@ -8,8 +10,11 @@ import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
 
 export const metadata = {
-  title: 'Lisboa 3 Días + Sintra | Estaba en Lisboa',
-  description: 'Experiencia premium: 3 días completos visitando Lisboa + excursión mágica a Sintra con Palacio Pena, Quinta Regaleira y Castillo Mouros.',
+  title: 'Lisboa 3 Días + Sintra - Guía Completa 2026',
+  description: 'Itinerario Lisboa 3 días: ciudad + excursión a Sintra. Palacio Pena, Quinta Regaleira, Castillo Mouros. Horarios, GPS y restaurantes.',
+  keywords: ['lisboa 3 dias', 'lisboa sintra', 'excursion sintra', 'palacio pena'],
+  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
+  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
 };
 
 const PREVIEW_STOPS = 3; // Mostrar solo 3 paradas gratis
@@ -116,8 +121,15 @@ export default function Lisboa3DiasPremiumPage() {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <section className="bg-background-cream py-4 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios', href: '/itinerarios' }, { label: 'Lisboa 3 Días + Sintra' }]} />
+        </div>
+      </section>
+
       {/* Sticky Info Bar */}
-      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
+      <section className="sticky top-20 z-40 bg-white/98 backdrop-blur-md border-b border-slate-100 shadow-soft">
         <div className="max-w-5xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -192,8 +204,8 @@ export default function Lisboa3DiasPremiumPage() {
       </section>
 
       {/* Timeline Section - PREVIEW */}
-      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-20 bg-background-cream" id="itinerario">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-teal-500/10 text-teal-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
               Preview gratuito
@@ -206,10 +218,7 @@ export default function Lisboa3DiasPremiumPage() {
             </p>
           </div>
 
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-teal-500/20 via-teal-500 to-teal-500/20 md:-translate-x-1/2"></div>
-
+          <TimelineContainer lineColor="teal">
             {/* Preview Stops - Solo primeras 3 */}
             {previewStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
@@ -222,7 +231,7 @@ export default function Lisboa3DiasPremiumPage() {
               productName="Lisboa 3 Días + Sintra Premium"
               totalStops={totalStops}
             />
-          </div>
+          </TimelineContainer>
         </div>
       </section>
 

@@ -23,9 +23,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guías Gratuitas de Lisboa 2026 por Locales | Itinerarios Completos",
-  description: "Guías completas y gratuitas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas interactivos. Creadas por locales. Actualizado Enero 2026.",
-  keywords: ["lisboa", "guias lisboa", "itinerarios lisboa", "viajar lisboa", "lisboa 2026", "guia local lisboa", "que ver en lisboa", "lisboa itinerario"],
+  metadataBase: new URL('https://estabaenlisboa.com'),
+  title: {
+    default: "Guías de Lisboa 2026 por Locales | Itinerarios y Rutas Verificadas",
+    template: "%s | Estaba en Lisboa",
+  },
+  description: "Guías completas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas. Creadas por locales. Qué ver en Lisboa, Alfama, Belém, miradores y restaurantes auténticos. Actualizado 2026.",
+  keywords: ["lisboa", "guia lisboa", "itinerario lisboa", "que ver lisboa", "viajar lisboa", "lisboa 2026", "alfama", "belem", "miradores lisboa", "restaurantes lisboa", "tranvia 28", "lisboa en 1 dia"],
   authors: [{ name: "Estaba en Lisboa", url: "https://estabaenlisboa.com" }],
   creator: "Estaba en Lisboa",
   publisher: "Estaba en Lisboa",
@@ -54,20 +58,14 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Guías de Lisboa 2026 por Locales - Evita Trampas Turísticas',
-    description: 'Itinerarios verificados con horarios exactos, GPS y restaurantes locales. Sin trampas turísticas.',
+    title: 'Guías de Lisboa 2026 por Locales - Itinerarios Verificados',
+    description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
     images: [
       {
-        url: 'https://estabaenlisboa.com/logo.png',
-        width: 600,
-        height: 188,
-        alt: 'Estaba en Lisboa - Logo',
-      },
-      {
-        url: 'https://estabaenlisboa.com/og-image.jpg',
+        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
         width: 1200,
         height: 630,
-        alt: 'Guías de Lisboa por Locales - Vista de Alfama con tranvía amarillo',
+        alt: 'Guías de Lisboa por Locales - Vista de Alfama',
       },
     ],
   },

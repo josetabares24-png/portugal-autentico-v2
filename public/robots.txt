@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin/
 Disallow: /checkout/
 Disallow: /mis-guias/
 Disallow: /preview/

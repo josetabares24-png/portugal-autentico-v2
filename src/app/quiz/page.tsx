@@ -8,9 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: '¿Qué Lisboa es para ti?',
     description: 'Quiz personalizado para planificar tu viaje perfecto a Lisboa',
-    images: ['/images/hero-lisboa.jpg'],
+    url: 'https://estabaenlisboa.com/quiz',
+    images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Quiz Lisboa' }],
     type: 'website',
   },
+  alternates: { canonical: 'https://estabaenlisboa.com/quiz' },
 };
 
 export default function QuizPage() {

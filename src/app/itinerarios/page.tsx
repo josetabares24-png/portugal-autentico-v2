@@ -2,14 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { getGuideList } from '@/lib/guide-store';
 
 export const metadata: Metadata = {
-  title: 'Itinerarios en Lisboa 2026: Guías por Días y Barrios | Estaba en Lisboa',
-  description: 'Elige tu itinerario de Lisboa con rutas por días, barrios y estilos. Guías locales con horarios reales, mapas y restaurantes.',
+  title: 'Itinerarios en Lisboa 2026: Guías 1, 2, 3 Días y Semana',
+  description: 'Guías de Lisboa por días: 1 día esencial, 2 días completo, 3 días con Sintra, semana completa. Rutas con horarios reales, GPS, restaurantes locales y mapas. Creadas por locales.',
+  keywords: ['itinerario lisboa 1 dia', 'lisboa 2 dias', 'lisboa 3 dias', 'guia lisboa', 'que ver lisboa', 'ruta lisboa'],
   openGraph: {
-    title: 'Itinerarios en Lisboa 2026: Guías por Días y Barrios',
-    description: 'Guías locales con rutas optimizadas, mapas y restaurantes reales en Lisboa.',
+    title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
+    description: 'Guías con rutas hora a hora, mapas GPS y restaurantes. Lisboa esencial, completo o con Sintra.',
     url: 'https://estabaenlisboa.com/itinerarios',
     images: [
       {
@@ -98,6 +100,13 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <section className="bg-background-cream py-4 border-b border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios' }]} />
+        </div>
+      </section>
+
       {/* Quick Stats Section - Estilo consistente */}
       <section className="py-16 bg-background-cream">
         <div className="max-w-5xl mx-auto px-6">
@@ -171,7 +180,7 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* Main Itineraries Section - Estilo consistente */}
-      <section className="py-20 bg-white">
+      <section id="itinerarios" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
@@ -236,7 +245,7 @@ export default async function ItinerariosPage() {
               Hablar con un experto
             </Link>
             <a 
-              href="#main" 
+              href="#main-content" 
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg text-white border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
             >
               Ver todos los packs

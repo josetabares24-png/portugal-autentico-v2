@@ -1,8 +1,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import QuizCTA from '@/components/QuizCTA';
 import { mainItineraries } from '@/data/itineraries';
+
+export const metadata: Metadata = {
+  title: 'Guías de Lisboa 2026 por Locales | Itinerarios Verificados',
+  description: 'Descubre Lisboa como un local. Itinerarios hora a hora, restaurantes auténticos, miradores secretos y mapas GPS. Guías creadas por quien vive aquí. Alfama, Belém, tranvía 28.',
+  openGraph: {
+    title: 'Guías de Lisboa 2026 por Locales',
+    description: 'Itinerarios verificados con horarios exactos. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
+    url: 'https://estabaenlisboa.com',
+    images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Guías de Lisboa' }],
+  },
+  alternates: { canonical: 'https://estabaenlisboa.com' },
+};
 
 export default function HomePage() {
   return (

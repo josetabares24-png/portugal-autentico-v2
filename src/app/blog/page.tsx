@@ -3,8 +3,9 @@ import BlogClient from './BlogClient';
 import { blogPosts } from '@/data/blog-posts';
 
 export const metadata: Metadata = {
-  title: 'Blog de Lisboa | Guías y Consejos de Locales',
-  description: 'Historias, rutas auténticas y consejos prácticos para vivir Lisboa como un local. Guías actualizadas, gastronomía y transporte.',
+  title: 'Blog Lisboa 2026 | Consejos, Guías y Rutas de Local',
+  description: 'Consejos prácticos para Lisboa: miradores, restaurantes baratos, transporte, barrios, qué evitar. Guías escritas por quien vive en Lisboa.',
+  keywords: ['blog lisboa', 'consejos lisboa', 'miradores lisboa', 'restaurantes lisboa', 'transporte lisboa'],
   alternates: {
     canonical: 'https://estabaenlisboa.com/blog',
   },

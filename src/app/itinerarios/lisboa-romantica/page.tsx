@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
+import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
@@ -8,8 +10,11 @@ import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaRomanticaTimeline } from '@/data/itineraries';
 
 export const metadata = {
-  title: 'Lisboa Romántica para Parejas | Estaba en Lisboa',
-  description: 'Itinerario perfecto para parejas: miradores al atardecer, cenas románticas, paseos por barrios con encanto y los mejores spots para enamorarse de Lisboa.',
+  title: 'Lisboa Romántica para Parejas - Guía 2026',
+  description: 'Itinerario romántico Lisboa: miradores atardecer, cenas con vistas, paseos por Alfama. Los mejores spots para parejas. Guía por locales.',
+  keywords: ['lisboa romantica', 'lisboa parejas', 'miradores lisboa', 'cena romantica lisboa'],
+  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-romantica' },
+  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-romantica' },
 };
 
 const PREVIEW_STOPS = 3;
@@ -107,8 +112,15 @@ export default function LisboaRomanticaPage() {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <section className="bg-background-cream py-4 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios', href: '/itinerarios' }, { label: 'Lisboa Romántica' }]} />
+        </div>
+      </section>
+
       {/* Sticky Info Bar */}
-      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
+      <section className="sticky top-20 z-40 bg-white/98 backdrop-blur-md border-b border-slate-100 shadow-soft">
         <div className="max-w-5xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -177,8 +189,8 @@ export default function LisboaRomanticaPage() {
       </section>
 
       {/* Timeline Section - PREVIEW */}
-      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-20 bg-background-cream" id="itinerario">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-pink-500/10 text-pink-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
               Preview gratuito
@@ -206,7 +218,7 @@ export default function LisboaRomanticaPage() {
               productName="Lisboa Romántica para Parejas"
               totalStops={totalStops}
             />
-          </div>
+          </TimelineContainer>
         </div>
       </section>
 

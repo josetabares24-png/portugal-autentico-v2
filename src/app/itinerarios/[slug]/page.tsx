@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'article',
       images: [
         {
-          url: pack.image,
+          url: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`,
           width: 1200,
           height: 630,
           alt: pack.title,
@@ -97,8 +97,25 @@ export default async function PackPage({ params }: { params: { slug: string } })
   };
   const socialGuideId = socialGuideIdMap[slug] || slug;
 
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: pack.title,
+    description: pack.description,
+    image: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`,
+    brand: { '@type': 'Brand', name: 'Estaba en Lisboa' },
+    offers: {
+      '@type': 'Offer',
+      url: `https://estabaenlisboa.com/itinerarios/${slug}`,
+      priceCurrency: 'EUR',
+      price: pack.price,
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0">
           <Image

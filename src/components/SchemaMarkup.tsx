@@ -35,12 +35,33 @@ export default function SchemaMarkup() {
     "@type": "WebSite",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
-    "description": "Guías verificadas de Lisboa con horarios exactos y GPS",
+    "description": "Guías verificadas de Lisboa con itinerarios, horarios exactos, GPS y restaurantes locales",
+    "inLanguage": "es",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://estabaenlisboa.com/itinerarios?q={search_term_string}",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://estabaenlisboa.com/itinerarios?q={search_term_string}"
+      },
       "query-input": "required name=search_term_string"
     }
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Guías de Lisboa",
+    "description": "Itinerarios y guías de viaje para Lisboa creadas por locales",
+    "numberOfItems": 7,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Lisboa en 1 día", "url": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial" },
+      { "@type": "ListItem", "position": 2, "name": "Lisboa 2 días completo", "url": "https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo" },
+      { "@type": "ListItem", "position": 3, "name": "Lisboa 3 días con Sintra", "url": "https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium" },
+      { "@type": "ListItem", "position": 4, "name": "Lisboa semana completa", "url": "https://estabaenlisboa.com/itinerarios/lisboa-full-week" },
+      { "@type": "ListItem", "position": 5, "name": "Lisboa romántica", "url": "https://estabaenlisboa.com/itinerarios/lisboa-romantica" },
+      { "@type": "ListItem", "position": 6, "name": "Lisboa en familia", "url": "https://estabaenlisboa.com/itinerarios/lisboa-familiar" },
+      { "@type": "ListItem", "position": 7, "name": "Lisboa para fotografía", "url": "https://estabaenlisboa.com/itinerarios/lisboa-fotografia" }
+    ]
   };
 
   const productSchema = {
@@ -135,6 +156,10 @@ export default function SchemaMarkup() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <script
         type="application/ld+json"

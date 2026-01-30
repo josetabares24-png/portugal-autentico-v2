@@ -1821,9 +1821,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seoTitle = getSeoTitle(article.titulo);
   const seoDescription = getSeoDescription(article.descripcion);
   const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
+  const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
   return {
     title: seoTitle,
     description: seoDescription,
+    keywords,
     alternates: {
       canonical: `${SITE_URL}/blog/${slug}`,
     },

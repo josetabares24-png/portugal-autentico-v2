@@ -4,6 +4,8 @@ const nextConfig = {
     return [
       { source: '/donde-dormir', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },
+      { source: '/guia-practica', destination: '/info-util', permanent: true },
+      { source: '/mapa', destination: '/itinerarios', permanent: true },
     ];
   },
   typescript: {

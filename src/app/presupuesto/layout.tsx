@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: 'Presupuesto Lisboa 2025: Calculadora y Costes Reales',
+    title: 'Presupuesto Lisboa 2026: Calculadora y Costes Reales',
     description: 'Calcula tu presupuesto de viaje a Lisboa con precios reales y consejos locales.',
     url: 'https://estabaenlisboa.com/presupuesto',
     siteName: 'Estaba en Lisboa',

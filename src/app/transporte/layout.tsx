@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: 'Transporte en Lisboa 2025: Metro, Tranvía y Trenes',
+    title: 'Transporte en Lisboa 2026: Metro, Tranvía y Trenes',
     description: 'Todo sobre transporte público en Lisboa con precios, horarios y consejos locales.',
     url: 'https://estabaenlisboa.com/transporte',
     siteName: 'Estaba en Lisboa',

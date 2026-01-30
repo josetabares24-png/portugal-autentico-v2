@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
+import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
@@ -8,8 +10,11 @@ import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFamiliarTimeline } from '@/data/itineraries';
 
 export const metadata = {
-  title: 'Lisboa en Familia con Niños | Estaba en Lisboa',
-  description: 'Itinerario perfecto para familias: Oceanário, teleférico, castillo, parques y restaurantes kid-friendly. Ritmo relajado sin prisas.',
+  title: 'Lisboa en Familia con Niños - Guía 2026',
+  description: 'Itinerario Lisboa con niños: Oceanário, teleférico, castillo, parques. Restaurantes kid-friendly y ritmo relajado. Guía por padres locales.',
+  keywords: ['lisboa con niños', 'lisboa familia', 'oceanario lisboa', 'viajar con niños lisboa'],
+  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-familiar' },
+  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-familiar' },
 };
 
 const PREVIEW_STOPS = 3;
@@ -107,8 +112,15 @@ export default function LisboaFamiliarPage() {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <section className="bg-background-cream py-4 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios', href: '/itinerarios' }, { label: 'Lisboa en Familia' }]} />
+        </div>
+      </section>
+
       {/* Sticky Info Bar */}
-      <section className="sticky top-16 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg">
+      <section className="sticky top-20 z-40 bg-white/98 backdrop-blur-md border-b border-slate-100 shadow-soft">
         <div className="max-w-5xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -177,8 +189,8 @@ export default function LisboaFamiliarPage() {
       </section>
 
       {/* Timeline Section - PREVIEW */}
-      <section className="py-20 bg-white bg-azulejo-pattern" id="itinerario">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-20 bg-background-cream" id="itinerario">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-yellow-500/10 text-yellow-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
               Preview gratuito
@@ -191,9 +203,7 @@ export default function LisboaFamiliarPage() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-yellow-500/20 via-yellow-500 to-yellow-500/20 md:-translate-x-1/2"></div>
-
+          <TimelineContainer lineColor="yellow">
             {/* Preview Stops - Solo primeras 3 */}
             {previewStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
@@ -206,7 +216,7 @@ export default function LisboaFamiliarPage() {
               productName="Lisboa en Familia con Niños"
               totalStops={totalStops}
             />
-          </div>
+          </TimelineContainer>
         </div>
       </section>
 
