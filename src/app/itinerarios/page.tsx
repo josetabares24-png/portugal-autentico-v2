@@ -102,7 +102,7 @@ export default async function ItinerariosPage() {
       <section className="py-16 bg-background-cream">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-border-soft shadow-soft hover:shadow-soft-lg transition-shadow flex flex-col items-center text-center gap-4 group">
+            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-primary text-3xl">schedule</span>
               </div>
@@ -112,7 +112,7 @@ export default async function ItinerariosPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-border-soft shadow-soft hover:shadow-soft-lg transition-shadow flex flex-col items-center text-center gap-4 group">
+            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
               </div>
@@ -122,7 +122,7 @@ export default async function ItinerariosPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-border-soft shadow-soft hover:shadow-soft-lg transition-shadow flex flex-col items-center text-center gap-4 group">
+            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-primary text-3xl">payments</span>
               </div>
@@ -145,30 +145,26 @@ export default async function ItinerariosPage() {
               Todo lo que necesitas antes de elegir ruta
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Alojamientos, transporte, presupuesto y tours recomendados para completar tu itinerario.
+              Transporte, presupuesto y consejos para completar tu itinerario.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
-            <Link href="/donde-dormir" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
-              <span className="material-symbols-outlined text-primary text-3xl">hotel</span>
-              <div className="font-semibold text-slate-900 mt-2">Dónde dormir en Lisboa</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+            <Link href="/transporte" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
+              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">directions_transit</span>
+              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Transporte en Lisboa</div>
             </Link>
-            <Link href="/transporte" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
-              <span className="material-symbols-outlined text-primary text-3xl">directions_transit</span>
-              <div className="font-semibold text-slate-900 mt-2">Transporte en Lisboa</div>
+            <Link href="/presupuesto" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
+              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">payments</span>
+              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Presupuesto de viaje</div>
             </Link>
-            <Link href="/presupuesto" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
-              <span className="material-symbols-outlined text-primary text-3xl">payments</span>
-              <div className="font-semibold text-slate-900 mt-2">Presupuesto de viaje</div>
+            <Link href="/apps" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
+              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">phone_iphone</span>
+              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Apps útiles</div>
             </Link>
-            <Link href="/tours" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
-              <span className="material-symbols-outlined text-primary text-3xl">tour</span>
-              <div className="font-semibold text-slate-900 mt-2">Tours recomendados</div>
-            </Link>
-            <Link href="/blog" className="rounded-2xl border border-slate-200 p-4 hover:border-primary hover:shadow-soft transition-all">
-              <span className="material-symbols-outlined text-primary text-3xl">article</span>
-              <div className="font-semibold text-slate-900 mt-2">Consejos y guías</div>
+            <Link href="/blog" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
+              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Consejos y guías</div>
             </Link>
           </div>
         </div>
@@ -255,7 +251,7 @@ export default async function ItinerariosPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6 text-slate-700">
             {faqItems.map((item) => (
-              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
                 <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
                 <p>{item.answer}</p>
               </div>

@@ -246,10 +246,10 @@ function UsefulResources() {
               Guía visual de los barrios principales con características y mejores momentos para visitar.
             </p>
             <a
-              href="/donde-dormir"
+              href="/itinerarios"
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
-              Ver guía de barrios
+              Ver itinerarios por barrios
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>

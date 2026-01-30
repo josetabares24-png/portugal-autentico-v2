@@ -227,11 +227,7 @@ export default function FreeToursPage() {
             </h2>
 
             <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-              Combina free tours con{' '}
-              <Link href="/tours" className="underline">
-                excursiones premium
-              </Link>{' '}
-              y nuestras guías de{' '}
+              Combina free tours con nuestras guías de{' '}
               <Link href="/itinerarios" className="underline">
                 itinerarios por días
               </Link>

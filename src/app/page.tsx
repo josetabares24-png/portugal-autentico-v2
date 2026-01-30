@@ -20,7 +20,7 @@ export default function HomePage() {
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
         </div>
 
         {/* Hero Content */}
@@ -51,7 +51,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
               href="#itinerarios"
-              className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:-translate-y-1"
             >
               <span className="material-symbols-outlined text-xl">map</span>
               Ver las rutas
@@ -147,7 +147,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-text-main hover:bg-text-secondary text-white rounded-xl font-semibold text-base transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-text-main hover:bg-primary text-white rounded-xl font-semibold text-base transition-all duration-300 shadow-soft hover:shadow-card-hover hover:-translate-y-0.5"
             >
               Ver todas las rutas
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -167,7 +167,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+            <div className="bg-white rounded-3xl p-10 shadow-card border border-slate-100/80 text-center transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:border-slate-200/60">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="material-symbols-outlined text-primary text-5xl">home</span>
               </div>
@@ -175,7 +175,7 @@ export default function HomePage() {
               <p className="text-text-secondary leading-relaxed">No escribo desde un hotel. Vivo en Lisboa desde hace 3 años. Sé dónde desayunar tranquilo en Graça antes de que llegue todo el mundo, cuál es el mirador que funciona a las 9am y por qué algunos restaurantes cierran a las 3pm.</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+            <div className="bg-white rounded-3xl p-10 shadow-card border border-slate-100/80 text-center transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:border-slate-200/60">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="material-symbols-outlined text-primary text-5xl">update</span>
               </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
               <p className="text-text-secondary leading-relaxed">Actualizo cada guía mensualmente. Si un restaurante cambia de horario, si abren un nuevo mirador o cierran un bar, lo reflejo inmediatamente. No vas a llegar a un sitio y encontrarte con que cerró hace 6 meses.</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-10 shadow-soft border border-border-soft text-center transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1">
+            <div className="bg-white rounded-3xl p-10 shadow-card border border-slate-100/80 text-center transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:border-slate-200/60">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="material-symbols-outlined text-primary text-5xl">workspace_premium</span>      
               </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               href="/info-util"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-xl font-semibold text-lg shadow-lg hover:opacity-95 transition-all duration-300"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-xl font-semibold text-lg shadow-premium hover:shadow-premium-lg hover:-translate-y-1 transition-all duration-300"
             >
               <span className="material-symbols-outlined text-xl">explore</span>
               Quiero la guía gratis

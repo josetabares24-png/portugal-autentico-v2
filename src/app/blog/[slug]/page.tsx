@@ -1632,10 +1632,9 @@ function getFaqs(slug: string) {
 
 const internalLinks = [
   { href: '/itinerarios', label: 'Itinerarios por días en Lisboa' },
-  { href: '/donde-dormir', label: 'Dónde dormir en Lisboa' },
   { href: '/transporte', label: 'Transporte en Lisboa' },
   { href: '/presupuesto', label: 'Presupuesto para viajar a Lisboa' },
-  { href: '/tours', label: 'Tours y excursiones en Lisboa' },
+  { href: '/blog', label: 'Consejos y guías de Lisboa' },
 ];
 
 const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faqs: { q: string; a: string }[] }> = {

@@ -5,9 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-[#0f1419] text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo y descripción */}
           <div className="md:col-span-2">
@@ -20,7 +20,7 @@ export default function Footer() {
                 className="h-14 w-auto"
               />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-4">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-6">
               Guías de Lisboa creadas por un local. Rutas probadas, restaurantes auténticos y consejos que no encontrarás en ningún otro sitio.
             </p>
             <div className="flex items-center gap-4">
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Recursos */}
           <div>
-            <h4 className="font-bold text-white mb-4">Recursos</h4>
+            <h4 className="font-display font-semibold text-white mb-5 text-sm tracking-wide uppercase">Recursos</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-slate-400 hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/presupuesto" className="text-slate-400 hover:text-primary transition-colors">Calculadora</Link></li>
@@ -63,7 +63,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             {/* Copyright */}

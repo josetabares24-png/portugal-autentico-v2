@@ -36,8 +36,8 @@ export function ItineraryCard({
 
   if (size === 'compact') {
     return (
-      <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
-        <div className="h-36 bg-cover bg-center relative">
+      <div className="card-hover bg-white rounded-2xl overflow-hidden shadow-card border border-slate-100/80 hover:border-slate-200/80">
+        <div className="h-36 bg-cover bg-center relative overflow-hidden">
           <Image 
             src={image} 
             alt={title}
@@ -46,7 +46,7 @@ export function ItineraryCard({
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
           {badge && (
             <div className="absolute bottom-3 left-3">
               <span className={`text-white text-xs font-medium px-2.5 py-1 rounded-full ${badge.color}`}>
@@ -73,7 +73,7 @@ export function ItineraryCard({
             {productId && (
               <BuyButton 
                 productId={productId}
-                className="w-full py-2.5 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 text-sm"
+                className="w-full py-2.5 px-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-sm shadow-soft"
               >
                 Comprar ahora
               </BuyButton>
@@ -85,8 +85,8 @@ export function ItineraryCard({
   }
 
   return (
-    <div className={`card-hover bg-white rounded-2xl overflow-hidden shadow-sm relative ${
-      featured ? 'border-2 border-primary shadow-lg' : ''
+    <div className={`card-hover bg-white rounded-2xl overflow-hidden shadow-card border border-slate-100/80 hover:border-slate-200/80 relative ${
+      featured ? 'ring-2 ring-primary/30 shadow-premium' : ''
     }`}>
       {featured && (
         <div className="absolute top-0 left-0 right-0 text-center py-2 text-sm font-semibold text-white z-10 bg-primary">
@@ -94,7 +94,7 @@ export function ItineraryCard({
         </div>
       )}
       
-      <div className={`h-48 bg-cover bg-center relative ${featured ? 'mt-9' : ''}`}>
+        <div className={`h-52 bg-cover bg-center relative overflow-hidden ${featured ? 'mt-9' : ''}`}>
         <Image 
           src={image} 
           alt={title}
@@ -114,7 +114,7 @@ export function ItineraryCard({
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-text-main">{title}</h3>
+        <h3 className="text-xl font-display font-bold mb-2 text-text-main tracking-tight">{title}</h3>
         <p className="text-slate-600 text-sm mb-4">{description}</p>
         
         <ul className="space-y-2 mb-6 text-sm text-slate-600">
@@ -143,10 +143,10 @@ export function ItineraryCard({
           {productId && (
             <BuyButton 
               productId={productId}
-              className={`w-full py-3 px-6 font-bold rounded-lg transition-all hover:scale-105 ${
+              className={`w-full py-3 px-6 font-semibold rounded-xl transition-all duration-300 ${
                 featured 
-                  ? 'bg-primary hover:bg-primary-dark text-white shadow-lg' 
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-900'
+                  ? 'bg-primary hover:bg-primary-dark text-white shadow-soft hover:shadow-card-hover hover:-translate-y-0.5' 
+                  : 'bg-slate-50 hover:bg-primary/10 text-slate-900 hover:text-primary border border-slate-200/80 hover:border-primary/30'
               }`}
             >
               Comprar ahora

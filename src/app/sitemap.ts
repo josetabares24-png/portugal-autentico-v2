@@ -68,12 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/donde-dormir`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/transporte`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -95,12 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/info-util`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tours`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
