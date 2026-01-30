@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
       try {
         // 1. Enviar notificación al administrador
         if (notificationTemplateId) {
-          await fetch('https://api.brevo.com/v3/smtp/email', {
+          const notificationResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -72,9 +72,18 @@ export async function POST(request: NextRequest) {
               },
             }),
           });
+
+          if (!notificationResponse.ok) {
+            const errorData = await notificationResponse.json().catch(() => ({}));
+            logger.error('[Contact] Brevo notification error:', {
+              status: notificationResponse.status,
+              error: errorData
+            });
+            throw new Error(`Brevo notification error: ${notificationResponse.status} - ${JSON.stringify(errorData)}`);
+          }
         } else if (senderEmail) {
           // Fallback sin template
-          await fetch('https://api.brevo.com/v3/smtp/email', {
+          const notificationResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -109,11 +118,20 @@ export async function POST(request: NextRequest) {
               },
             }),
           });
+
+          if (!notificationResponse.ok) {
+            const errorData = await notificationResponse.json().catch(() => ({}));
+            logger.error('[Contact] Brevo notification error (fallback):', {
+              status: notificationResponse.status,
+              error: errorData
+            });
+            throw new Error(`Brevo notification error: ${notificationResponse.status} - ${JSON.stringify(errorData)}`);
+          }
         }
 
         // 2. Enviar confirmación al usuario (SIEMPRE)
         if (confirmationTemplateId) {
-          await fetch('https://api.brevo.com/v3/smtp/email', {
+          const confirmationResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -135,9 +153,18 @@ export async function POST(request: NextRequest) {
               },
             }),
           });
+
+          if (!confirmationResponse.ok) {
+            const errorData = await confirmationResponse.json().catch(() => ({}));
+            logger.error('[Contact] Brevo confirmation error:', {
+              status: confirmationResponse.status,
+              error: errorData
+            });
+            throw new Error(`Brevo confirmation error: ${confirmationResponse.status} - ${JSON.stringify(errorData)}`);
+          }
         } else if (senderEmail) {
           // Fallback: enviar confirmación sin template si no hay template ID
-          await fetch('https://api.brevo.com/v3/smtp/email', {
+          const confirmationResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -177,6 +204,15 @@ export async function POST(request: NextRequest) {
               },
             }),
           });
+
+          if (!confirmationResponse.ok) {
+            const errorData = await confirmationResponse.json().catch(() => ({}));
+            logger.error('[Contact] Brevo confirmation error (fallback):', {
+              status: confirmationResponse.status,
+              error: errorData
+            });
+            throw new Error(`Brevo confirmation error: ${confirmationResponse.status} - ${JSON.stringify(errorData)}`);
+          }
         }
 
         return NextResponse.json(
@@ -192,9 +228,9 @@ export async function POST(request: NextRequest) {
     const nodemailer = require('nodemailer');
     
     if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('SMTP no configurado');
+      logger.error('[Contact] SMTP no configurado - no se puede usar fallback');
       return NextResponse.json(
-        { message: 'Error de configuración del servidor' },
+        { message: 'Error de configuración del servidor. Por favor, contacta con soporte.' },
         { status: 500 }
       );
     }

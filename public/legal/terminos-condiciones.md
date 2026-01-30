@@ -6,7 +6,7 @@
 
 Estas condiciones regulan la compra de productos digitales entre:
 
-- **Vendedor:** Jose Manuel Tabares Vergara, NIF 319862160, Rua Almada Negreiros, Lote J, 1800-014 Lisboa, Portugal
+- **Vendedor:** Jose Tabares,  Lisboa, Portugal
 - **Comprador:** La persona que realiza la compra en https://estabaenlisboa.com
 
 ## 2. Objeto del Contrato

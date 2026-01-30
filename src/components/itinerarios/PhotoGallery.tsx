@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { HIDE_GUIDE_PHOTOS } from '@/lib/guide-config';
 
 interface Photo {
   url: string;
@@ -11,6 +12,11 @@ interface PhotoGalleryProps {
 }
 
 export function PhotoGallery({ photos, title = "Vista previa del itinerario" }: PhotoGalleryProps) {
+  // Ocultar galería temporalmente cuando HIDE_GUIDE_PHOTOS
+  if (HIDE_GUIDE_PHOTOS || photos.length === 0) {
+    return null;
+  }
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {photos.map((photo, index) => (

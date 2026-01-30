@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { TimelineStop as TimelineStopType } from '@/data/itineraries';
 import { timelineFallbackImages } from '@/lib/media';
+import { HIDE_GUIDE_PHOTOS } from '@/lib/guide-config';
 
 interface TimelineStopProps extends TimelineStopType {
   index: number;
@@ -20,9 +21,10 @@ export function TimelineStop({ time, title, description, tip, type, index, image
       ? fallbackImage
       : image
     : fallbackImage;
+  const showImage = !HIDE_GUIDE_PHOTOS;
 
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 group">
+    <div className={`relative grid grid-cols-1 gap-8 md:gap-16 mb-16 group ${showImage ? 'md:grid-cols-2' : ''}`}>
       {/* Vertical line dot */}
       <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-4 border-white bg-primary shadow-lg z-10 flex items-center justify-center text-white font-bold text-sm">
         {index + 1}
@@ -67,26 +69,28 @@ export function TimelineStop({ time, title, description, tip, type, index, image
         )}
       </div>
 
-      {/* Image */}
-      <div className={`pl-20 md:pl-0 ${isEven ? 'order-2' : 'order-2 md:order-1 md:pr-4'} ${isEven ? '' : 'md:text-right'}`}>
-        <div className={`aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-md group-hover:shadow-lg transition-shadow ${isEven ? '' : 'ml-auto'}`}>
-          {imageSrc ? (
-            <Image 
-              src={imageSrc} 
-              alt={title}
-              width={600}
-              height={400}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-              <span className="material-symbols-outlined text-6xl text-slate-400">
-                {type === 'food' ? 'restaurant' : 'location_on'}
-              </span>
-            </div>
-          )}
+      {/* Image - oculto temporalmente cuando HIDE_GUIDE_PHOTOS */}
+      {showImage && (
+        <div className={`pl-20 md:pl-0 ${isEven ? 'order-2' : 'order-2 md:order-1 md:pr-4'} ${isEven ? '' : 'md:text-right'}`}>
+          <div className={`aspect-video w-full rounded-xl bg-gray-200 overflow-hidden shadow-md group-hover:shadow-lg transition-shadow ${isEven ? '' : 'ml-auto'}`}>
+            {imageSrc ? (
+              <Image 
+                src={imageSrc} 
+                alt={title}
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                <span className="material-symbols-outlined text-6xl text-slate-400">
+                  {type === 'food' ? 'restaurant' : 'location_on'}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

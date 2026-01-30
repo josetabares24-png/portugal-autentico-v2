@@ -6,9 +6,9 @@
 
 De conformidad con lo dispuesto en la legislación portuguesa y europea aplicable, se informa de los siguientes datos del responsable de este sitio web:
 
-- **Nombre/Razón Social:** Jose Manuel Tabares Vergara
+- **Nombre/Razón Social:** Jose Tabares
 - **NIF:** 319862160
-- **Dirección:** Rua Almada Negreiros, Lote J, 1800-014 Lisboa, Portugal
+- **Dirección:** Lisboa, Portugal.
 - **Email de contacto:** contacto@estabaenlisboa.com
 - **Sitio web:** https://estabaenlisboa.com
 
