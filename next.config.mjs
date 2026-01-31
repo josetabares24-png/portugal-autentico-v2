@@ -6,6 +6,7 @@ const nextConfig = {
       { source: '/tours', destination: '/itinerarios', permanent: true },
       { source: '/guia-practica', destination: '/info-util', permanent: true },
       { source: '/mapa', destination: '/itinerarios', permanent: true },
+      { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
     ];
   },
   typescript: {

@@ -203,9 +203,7 @@ export default function LisboaFotografiaPage() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-indigo-500/20 via-indigo-500 to-indigo-500/20 md:-translate-x-1/2"></div>
-
+          <TimelineContainer lineColor="indigo">
             {/* Preview Stops - Solo primeros 3 */}
             {previewStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />

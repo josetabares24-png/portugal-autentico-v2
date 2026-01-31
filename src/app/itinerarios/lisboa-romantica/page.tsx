@@ -203,9 +203,7 @@ export default function LisboaRomanticaPage() {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-pink-500/20 via-pink-500 to-pink-500/20 md:-translate-x-1/2"></div>
-
+          <TimelineContainer lineColor="pink">
             {/* Preview Stops - Solo primeras 3 */}
             {previewStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
