@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
-import QuizCTA from '@/components/QuizCTA';
 import { mainItineraries } from '@/data/itineraries';
+
+const QuizCTA = dynamic(() => import('@/components/QuizCTA'));
 
 export const metadata: Metadata = {
   title: 'Guías de Lisboa 2026 por Locales | Itinerarios Verificados',

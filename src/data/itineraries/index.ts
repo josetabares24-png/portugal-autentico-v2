@@ -1,24 +1,17 @@
-export const itinerarios = [
-  {
-    slug: "lisboa-1-dia-lo-esencial",
-    title: "Lisboa 1 Dia",
-    description: "Lo esencial de Lisboa",
-    price: 27,
-    duration: 1
-  },
-  {
-    slug: "lisboa-2-dias-completo",
-    title: "Lisboa 2 Dias",
-    description: "Experiencia completa",
-    price: 37,
-    duration: 2,
-    popular: true
-  },
-  {
-    slug: "lisboa-3-dias-premium",
-    title: "Lisboa 3 Dias",
-    description: "Lisboa y alrededores",
-    price: 47,
-    duration: 3
-  }
-];
+// Types
+export type { Itinerary, TimelineStop } from './types';
+
+// Card data
+export { mainItineraries, specialItineraries } from './main';
+
+// Features
+export { includedFeatures } from './features';
+
+// Timelines - individual exports for code-splitting
+export { lisboa1DiaTimeline } from './lisboa-1-dia';
+export { lisboa2DiasDia1Timeline, lisboa2DiasDia2Timeline, lisboa2DiasTimeline } from './lisboa-2-dias';
+export { lisboa3DiasDia3Timeline, lisboa3DiasSintraTimeline } from './lisboa-3-dias';
+export { lisboaRomanticaTimeline } from './lisboa-romantica';
+export { lisboaFamiliarTimeline } from './lisboa-familiar';
+export { lisboaFotografiaTimeline } from './lisboa-fotografia';
+export { lisboaFullWeekTimeline } from './lisboa-full-week';

@@ -20,8 +20,8 @@ module.exports = {
         "border-soft": "#e8e4df",
       },
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Playfair Display", "Georgia", "serif"],
+        body: ["var(--font-body)", "Plus Jakarta Sans", "Noto Sans KR", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04)",

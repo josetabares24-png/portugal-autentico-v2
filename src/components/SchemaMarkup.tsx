@@ -26,7 +26,7 @@ export default function SchemaMarkup() {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "hola@estabaenlisboa.com",
-      "availableLanguage": ["Spanish", "Portuguese", "English"]
+      "availableLanguage": ["Spanish", "Portuguese", "English", "Korean"]
     }
   };
 
@@ -36,7 +36,7 @@ export default function SchemaMarkup() {
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
     "description": "Guías verificadas de Lisboa con itinerarios, horarios exactos, GPS y restaurantes locales",
-    "inLanguage": "es",
+    "inLanguage": ["es", "en", "ko"],
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -44,44 +44,6 @@ export default function SchemaMarkup() {
         "urlTemplate": "https://estabaenlisboa.com/itinerarios?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
-    }
-  };
-
-  const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Guías de Lisboa",
-    "description": "Itinerarios y guías de viaje para Lisboa creadas por locales",
-    "numberOfItems": 7,
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Lisboa en 1 día", "url": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial" },
-      { "@type": "ListItem", "position": 2, "name": "Lisboa 2 días completo", "url": "https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo" },
-      { "@type": "ListItem", "position": 3, "name": "Lisboa 3 días con Sintra", "url": "https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium" },
-      { "@type": "ListItem", "position": 4, "name": "Lisboa semana completa", "url": "https://estabaenlisboa.com/itinerarios/lisboa-full-week" },
-      { "@type": "ListItem", "position": 5, "name": "Lisboa romántica", "url": "https://estabaenlisboa.com/itinerarios/lisboa-romantica" },
-      { "@type": "ListItem", "position": 6, "name": "Lisboa en familia", "url": "https://estabaenlisboa.com/itinerarios/lisboa-familiar" },
-      { "@type": "ListItem", "position": 7, "name": "Lisboa para fotografía", "url": "https://estabaenlisboa.com/itinerarios/lisboa-fotografia" }
-    ]
-  };
-
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Lisboa en 1 Día - Guía Completa",
-    "image": "https://estabaenlisboa.com/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg",
-    "description": "Itinerario completo de Lisboa en 1 día con horarios exactos, coordenadas GPS y restaurantes verificados. Lo esencial sin turistadas.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Estaba en Lisboa"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
-      "priceCurrency": "EUR",
-      "price": "3.99",
-      "priceValidUntil": "2026-12-31",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
     }
   };
 
@@ -104,45 +66,6 @@ export default function SchemaMarkup() {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las guías de Lisboa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las guías individuales cuestan desde €3.99 (Lisboa 1 día) hasta €7.99 (Lisboa 3 días). También ofrecemos un pack completo con todas las guías por €24.99, ahorrando €17."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Están actualizadas las guías en 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, todas nuestras guías están verificadas y actualizadas en Enero 2026. Incluyen precios actuales, horarios vigentes y restaurantes operativos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué incluyen las guías?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cada guía incluye: horarios exactos hora a hora, coordenadas GPS para cada parada, restaurantes verificados sin trampas turísticas, tips para evitar colas, mejores horarios para fotos y alternativas si llueve."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hay garantía de devolución?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, ofrecemos garantía de 48 horas sin preguntas. Si la guía no cumple tus expectativas, devolvemos el 100% de tu dinero."
-        }
-      }
-    ]
-  };
-
   return (
     <>
       <script
@@ -155,19 +78,7 @@ export default function SchemaMarkup() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );

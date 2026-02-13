@@ -156,6 +156,50 @@ export async function createPurchase(data: {
   return purchase;
 }
 
+/**
+ * Inserta una compra completada vinculada a un usuario de Clerk.
+ * Usado por el webhook de Stripe cuando el checkout se completa.
+ */
+export async function insertCompletedPurchase(data: {
+  clerkUserId: string;
+  email: string;
+  name: string;
+  productId: string;
+  itinerarySlug: string;
+  itineraryTitle: string;
+  amount: number;
+  stripeSessionId: string;
+}): Promise<Purchase | null> {
+  const { data: purchase, error } = await supabaseAdmin
+    .from('purchases')
+    .insert({
+      user_id: data.clerkUserId,
+      email: data.email,
+      name: data.name,
+      itinerary_id: data.productId,
+      itinerary_slug: data.itinerarySlug,
+      itinerary_title: data.itineraryTitle,
+      amount: data.amount,
+      currency: 'eur',
+      stripe_session_id: data.stripeSessionId,
+      status: 'completed',
+      dietary_restrictions: [],
+      interests: [],
+      metadata: {},
+      pdf_generated: false,
+      email_sent: false,
+    })
+    .select()
+    .single();
+
+  if (error) {
+    console.error('Error inserting completed purchase:', error);
+    return null;
+  }
+
+  return purchase;
+}
+
 export async function updatePurchaseWithPayment(
   stripeSessionId: string,
   data: {

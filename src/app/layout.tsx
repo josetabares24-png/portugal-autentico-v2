@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Script from 'next/script';
+import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google';
+import { getLocale } from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
@@ -10,16 +11,18 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
+  variable: "--font-display",
   subsets: ["latin"],
   display: 'swap',
+  weight: ['400', '600', '700', '900'],
 });
 
 export const metadata: Metadata = {
@@ -71,56 +74,52 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com',
+    languages: {
+      'es': 'https://estabaenlisboa.com',
+      'en': 'https://estabaenlisboa.com/en',
+      'ko': 'https://estabaenlisboa.com/ko',
+    },
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <ClerkProvider>
-      <html lang="es">
+      <html lang={locale}>
         <head>
-          {/* Preconnect para recursos externos */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-          <link rel="preconnect" href="https://unpkg.com" />
           <link rel="preconnect" href="https://js.stripe.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
           <link rel="preconnect" href="https://api.stripe.com" />
           <link rel="preconnect" href="https://clerk.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-          <link rel="dns-prefetch" href="https://unpkg.com" />
           <link rel="dns-prefetch" href="https://js.stripe.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://api.brevo.com" />
           <link rel="dns-prefetch" href="https://api.stripe.com" />
           <link rel="dns-prefetch" href="https://clerk.com" />
-          
+
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
           />
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-            crossOrigin=""
-          />
           <SchemaMarkup />
         </head>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {/* Skip to main content link - Accesibilidad */}
-          <a 
-            href="#main-content" 
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#FF6B35] focus:text-white focus:rounded focus:shadow-lg focus:outline-none"
+        <body className={`${plusJakarta.variable} ${playfair.variable} antialiased`}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded focus:shadow-lg focus:outline-none"
           >
             Saltar al contenido principal
           </a>
-          {/* Google tag (gtag.js) - Aplicado a todas las páginas */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-8F54LQ5862"
             strategy="afterInteractive"
@@ -137,7 +136,7 @@ export default function RootLayout({
               });
             `}
           </Script>
-          
+
           <ErrorBoundary>
             <Navbar />
             {children}

@@ -52,14 +52,20 @@ export default function ExitoPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
+              href="/mis-guias"
+              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-xl transition-all"
+            >
+              Ver mis guías
+            </Link>
+            <Link 
               href="/itinerarios"
-              className="btn-primary"
+              className="inline-flex items-center justify-center gap-2 border-2 border-slate-300 hover:border-primary text-slate-700 hover:text-primary font-semibold px-8 py-4 rounded-xl transition-all"
             >
               Ver más guías
             </Link>
             <Link 
               href="/"
-              className="btn-secondary"
+              className="inline-flex items-center justify-center gap-2 text-slate-600 hover:text-primary font-medium px-6 py-4 transition-colors"
             >
               Volver al inicio
             </Link>

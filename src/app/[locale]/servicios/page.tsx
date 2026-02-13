@@ -79,7 +79,7 @@ export default function ServiciosPage() {
                 className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1"
               >
                 <div className="relative h-52">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+                  <Image src={service.image} alt={service.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
                   <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                     {service.badge}

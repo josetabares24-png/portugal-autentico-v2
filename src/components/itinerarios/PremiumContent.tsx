@@ -2,8 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
-import ItineraryMap from '@/components/ItineraryMap';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+
+const ItineraryMap = dynamic(() => import('@/components/ItineraryMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="py-16 bg-slate-50 text-center">
+      <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mx-auto mb-3"></div>
+      <p className="text-slate-500 text-sm">Cargando mapa...</p>
+    </div>
+  ),
+});
 
 interface Coordinate {
   lat: number;

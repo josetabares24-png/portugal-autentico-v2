@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
@@ -14,7 +18,7 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'], // Mantener errores y warnings en producción
+      exclude: ['error', 'warn'],
     } : false,
   },
   images: {
@@ -36,7 +40,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Asegurar que las rutas de itinerarios sean indexables
         source: '/itinerarios/:path*',
         headers: [
           {
@@ -46,7 +49,6 @@ const nextConfig = {
         ],
       },
       {
-        // Headers de seguridad para todas las rutas
         source: '/:path*',
         headers: [
           {
@@ -83,4 +85,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

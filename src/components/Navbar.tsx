@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 import { useIsAdmin } from '@/hooks/useIsAdmin';
 import LisbonStatus from '@/components/LisbonStatus';
+import LanguageSelector from '@/components/LanguageSelector';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,6 +111,7 @@ export default function Navbar() {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSelector />
             <LisbonStatus />
             {isSignedIn ? (
               <>
