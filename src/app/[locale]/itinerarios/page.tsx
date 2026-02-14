@@ -13,35 +13,18 @@ export const metadata: Metadata = {
     title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
     description: 'Guías con rutas hora a hora, mapas GPS y restaurantes. Lisboa esencial, completo o con Sintra.',
     url: 'https://estabaenlisboa.com/itinerarios',
-    images: [
-      {
-        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Itinerarios en Lisboa 2026',
-      },
-    ],
+    images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
-  alternates: {
-    canonical: 'https://estabaenlisboa.com/itinerarios',
-  },
+  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios' },
 };
 
 export default async function ItinerariosPage() {
   const { main: mainItineraries, special: specialItineraries } = await getGuideList();
+
   const faqItems = [
-    {
-      question: '¿Cuántos días se recomiendan para Lisboa?',
-      answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.',
-    },
-    {
-      question: '¿Qué incluye cada itinerario?',
-      answer: 'Rutas hora a hora, mapas, recomendaciones de restaurantes y tips locales.',
-    },
-    {
-      question: '¿Los itinerarios sirven para primera visita?',
-      answer: 'Sí, están diseñados para optimizar tiempos y evitar turistadas.',
-    },
+    { question: '¿Cuántos días se recomiendan para Lisboa?', answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.' },
+    { question: '¿Qué incluye cada itinerario?', answer: 'Rutas hora a hora, mapas GPS offline, recomendaciones de restaurantes verificados y tips de locales.' },
+    { question: '¿Los itinerarios sirven para primera visita?', answer: 'Sí, están diseñados para optimizar tiempos y evitar trampas turísticas.' },
   ];
 
   const faqJsonLd = {
@@ -50,16 +33,14 @@ export default async function ItinerariosPage() {
     mainEntity: faqItems.map((item) => ({
       '@type': 'Question',
       name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   };
+
   return (
     <main id="main-content">
-      {/* Hero Section - Estilo consistente con home */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/hero-lisboa.jpg"
@@ -70,131 +51,71 @@ export default async function ItinerariosPage() {
             fetchPriority="high"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
-        
-        <div className="relative z-10 text-center px-6 py-16 max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">map</span>
-            <span className="text-sm font-semibold tracking-wide">Guías de viaje 2026</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight tracking-tight mb-6 text-white drop-shadow-lg">
-            Elige tu experiencia<br />
-            <span className="text-accent">perfecta en Lisboa</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-white/95 font-normal leading-relaxed max-w-3xl mx-auto mb-10 drop-shadow-md">
-            Itinerarios completos con restaurantes auténticos, spots de fotos únicos y tips de locales que viven la ciudad.
-          </p>
-          
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold bg-primary text-white shadow-lg">
-            <span className="material-symbols-outlined text-lg">verified</span>
-            {mainItineraries.length + specialItineraries.length} Packs disponibles
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 pt-32">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 border border-white/20 mb-6 text-sm">
+              <span className="material-symbols-outlined text-base">map</span>
+              {mainItineraries.length + specialItineraries.length} rutas disponibles
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.08] mb-5 text-white tracking-tight">
+              Elige tu experiencia
+              <br />
+              <span className="text-accent">perfecta en Lisboa</span>
+            </h1>
+
+            <p className="text-lg text-white/80 max-w-lg leading-relaxed">
+              Itinerarios completos con restaurantes, spots de fotos y tips de locales. Desde 1 día hasta una semana.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Breadcrumbs */}
-      <section className="bg-background-cream py-4 border-b border-slate-100">
+      <section className="bg-white py-3 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios' }]} />
         </div>
       </section>
 
-      {/* Quick Stats Section - Estilo consistente */}
-      <section className="py-16 bg-background-cream">
+      {/* ─── TRUST BAR ─── */}
+      <section className="py-6 bg-white border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">schedule</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm">
+            {[
+              { icon: 'bolt', label: 'Acceso inmediato' },
+              { icon: 'verified', label: 'Verificado 2026' },
+              { icon: 'workspace_premium', label: 'Garantía 48h' },
+              { icon: 'map', label: 'Mapas GPS offline' },
+            ].map((item) => (
+              <div key={item.icon} className="flex items-center gap-2 text-text-secondary">
+                <span className="material-symbols-outlined text-primary text-base">{item.icon}</span>
+                {item.label}
               </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Descarga Inmediata</h3>
-                <p className="text-text-secondary text-sm">Acceso instantáneo tras la compra</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">100% Actualizado</h3>
-                <p className="text-text-secondary text-sm">Verificado en 2026 por locales</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-slate-100 shadow-card hover:shadow-premium transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-3xl">payments</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Garantía 48 Horas</h3>
-                <p className="text-text-secondary text-sm">Reembolso sin preguntas</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-              Planifica mejor
-            </span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-              Todo lo que necesitas antes de elegir ruta
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Transporte, presupuesto y consejos para completar tu itinerario.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            <Link href="/transporte" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
-              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">directions_transit</span>
-              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Transporte en Lisboa</div>
-            </Link>
-            <Link href="/presupuesto" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
-              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">payments</span>
-              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Presupuesto de viaje</div>
-            </Link>
-            <Link href="/apps" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
-              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">phone_iphone</span>
-              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Apps útiles</div>
-            </Link>
-            <Link href="/blog" className="group rounded-2xl border border-slate-200/80 p-6 hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-white/50">
-              <span className="material-symbols-outlined text-primary text-3xl block mb-2 group-hover:scale-110 transition-transform">article</span>
-              <div className="font-semibold text-slate-900 group-hover:text-primary transition-colors">Consejos y guías</div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Itineraries Section - Estilo consistente */}
-      <section id="itinerarios" className="py-20 bg-white">
+      {/* ─── MAIN ITINERARIES ─── */}
+      <section id="itinerarios" className="py-20 bg-background-light">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
+          <div className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 bg-primary/8 text-primary rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
               Según tus días
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-black mb-6 text-text-main tracking-tight">
-              Itinerarios <span className="text-primary">Principales</span>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
+              Itinerarios principales
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Cada pack incluye itinerario hora a hora + restaurantes probados + spots de fotos + mapas offline
+            <p className="text-text-secondary max-w-lg mx-auto">
+              Cada pack incluye itinerario hora a hora, restaurantes verificados, spots de fotos y mapas offline.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8">
             {mainItineraries.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}
@@ -202,22 +123,22 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* Special Packs Section - Estilo consistente */}
-      <section className="py-20 bg-background-cream bg-azulejo-pattern">
+      {/* ─── SPECIAL PACKS ─── */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-xs font-medium uppercase tracking-wider mb-6">
-              Experiencias únicas
+          <div className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 bg-primary/8 text-primary rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
+              Experiencias temáticas
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-black mb-6 text-text-main tracking-tight">
-              Packs <span className="text-primary">Especiales</span>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
+              Packs especiales
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Para viajeros con intereses específicos y ganas de vivir Lisboa de forma diferente
+            <p className="text-text-secondary max-w-lg mx-auto">
+              Para viajeros con intereses específicos: parejas, familias, fotógrafos o estancias largas.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {specialItineraries.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} size="compact" />
             ))}
@@ -225,49 +146,76 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* CTA Section - Estilo consistente */}
-      <section className="py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-azulejo-pattern"></div>
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block opacity-80">travel_explore</span>
-          <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-6 tracking-tight">
-            ¿Tienes dudas sobre qué pack elegir?
-          </h2>
-          <p className="text-lg md:text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Escríbenos y te ayudamos a elegir el itinerario perfecto según tus días, intereses y estilo de viaje.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contacto" 
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg text-white bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/30 transition-all duration-300 hover:scale-105"
-            >
-              <span className="material-symbols-outlined text-xl">chat</span>
-              Hablar con un experto
-            </Link>
-            <a 
-              href="#main-content" 
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg text-white border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
-            >
-              Ver todos los packs
-            </a>
+      {/* ─── USEFUL LINKS ─── */}
+      <section className="py-14 bg-background-light">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-xl font-display font-black text-text-main mb-6 text-center">Completa tu viaje</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { href: '/transporte', icon: 'directions_transit', label: 'Transporte' },
+              { href: '/presupuesto', icon: 'payments', label: 'Presupuesto' },
+              { href: '/apps', icon: 'phone_iphone', label: 'Apps útiles' },
+              { href: '/info-util', icon: 'info', label: 'Info esencial' },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-100 hover:border-primary/20 hover:shadow-soft transition-all duration-300"
+              >
+                <span className="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform">{link.icon}</span>
+                <span className="font-semibold text-text-main text-sm group-hover:text-primary transition-colors">{link.label}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-      <section className="py-20 bg-background-cream">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
-            Preguntas frecuentes sobre itinerarios en Lisboa
+
+      {/* ─── FAQ ─── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-2xl font-display font-black text-text-main mb-8 text-center">
+            Preguntas frecuentes
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+          <div className="space-y-4">
             {faqItems.map((item) => (
-              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-card">
-                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
-                <p>{item.answer}</p>
+              <div key={item.question} className="bg-background-light rounded-2xl p-6 border border-slate-100">
+                <h3 className="font-bold text-text-main mb-2">{item.question}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ─── CTA ─── */}
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] bg-azulejo-pattern" />
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-5 tracking-tight">
+            No sabes cuál elegir?
+          </h2>
+          <p className="text-lg text-white/85 mb-8 max-w-xl mx-auto leading-relaxed">
+            Haz el quiz de 60 segundos y te recomendamos la ruta perfecta para tu viaje.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/quiz"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <span className="material-symbols-outlined text-xl">quiz</span>
+              Hacer el quiz
+            </Link>
+            <Link
+              href="/contacto"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
+            >
+              <span className="material-symbols-outlined text-lg">chat</span>
+              Pregúntanos
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
