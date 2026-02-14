@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-import ErrorBoundary from '@/components/ErrorBoundary';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
@@ -137,13 +132,7 @@ export default async function RootLayout({
             `}
           </Script>
 
-          <ErrorBoundary>
-            <Navbar />
-            {children}
-            <Footer />
-            <CookieBanner />
-            <GoogleAnalytics />
-          </ErrorBoundary>
+          {children}
         </body>
       </html>
     </ClerkProvider>
