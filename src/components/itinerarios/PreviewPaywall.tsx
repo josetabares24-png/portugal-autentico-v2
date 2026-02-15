@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
 
 interface PreviewPaywallProps {
   productId: string;
@@ -8,6 +9,10 @@ interface PreviewPaywallProps {
 }
 
 export function PreviewPaywall({ productId, price, productName, totalStops }: PreviewPaywallProps) {
+  if (isFreeAccessActive()) {
+    return null;
+  }
+
   return (
     <div className="relative my-16">
       {/* Blur effect on timeline */}

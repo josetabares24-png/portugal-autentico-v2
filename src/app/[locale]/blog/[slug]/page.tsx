@@ -1042,6 +1042,141 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Combinaciones posibles" },
       { tipo: "parrafo", texto: "Puedes combinar algunas excursiones en un dia, pero no todas. Sintra y Cascais juntas es complicado. Obidos y Nazare se pueden combinar." }
     ]
+  },
+  "vida-nocturna-lisboa": {
+    titulo: "Vida Nocturna en Lisboa: Guía Completa 2026",
+    descripcion: "Bairro Alto, Cais do Sodré, Santos y LX Factory: las mejores zonas para salir de noche en Lisboa con recomendaciones de bares y clubes.",
+    imagen: "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1200",
+    categoria: "Guías",
+    fecha: "3 Feb 2026",
+    minutos: 11,
+    contenido: [
+      { tipo: "parrafo", texto: "Lisboa de noche es una ciudad completamente distinta. Las calles empinadas que durante el día transpiran historia y melancolía se transforman después de las diez en un escenario vibrante donde la música sale por las ventanas abiertas, los grupos se forman espontáneamente en las esquinas, y el olor a ginja —el licor de guinda típico— se mezcla con la brisa atlántica." },
+      { tipo: "parrafo", texto: "Llevo años saliendo por Lisboa y puedo decirte que la clave para disfrutar la noche lisboeta no es encontrar el club más exclusivo ni el bar más instagrameable. La clave es entender el ritmo: aquí se cena a las nueve, se toma la primera copa a las once, se sale a las doce y se vuelve a casa cuando amanece. Si intentas salir a las ocho como en Madrid o Ciudad de México, te encontrarás con calles vacías y bares cerrados." },
+      { tipo: "subtitulo", texto: "Bairro Alto — Donde todo empieza" },
+      { tipo: "parrafo", texto: "El Bairro Alto es el corazón de la noche lisboeta desde hace décadas. Un laberinto de calles estrechas con más de cien bares concentrados en unas pocas manzanas. La dinámica es única: compras una cerveza o una copa en cualquier bar, sales a la calle con ella en la mano, y socializas entre la multitud que ocupa las callejuelas empedradas. No hay otro barrio en Europa con esta energía." },
+      { tipo: "parrafo", texto: "Los jueves y viernes son los mejores días. Los sábados el barrio se llena demasiado y pierde parte de su encanto. Empieza por la Rua da Atalaia o la Rua do Norte, donde encontrarás desde tascas con fado en vivo hasta bares de cocktails con DJs pinchando música electrónica. La diversidad es parte del encanto: en la misma calle puedes encontrar un bar de rock, una cervecería artesanal y un club de música africana." },
+      { tipo: "tip", texto: "No vayas al Bairro Alto antes de las 23:00 — estará vacío. El pico es entre la 1:00 y las 3:00. Lleva efectivo para los bares pequeños. Las cervezas cuestan entre 2-3€ en la mayoría de sitios." },
+      { tipo: "subtitulo", texto: "Cais do Sodré — La zona que lo cambió todo" },
+      { tipo: "parrafo", texto: "La famosa Rua Nova do Carvalho, conocida como 'Pink Street' por su suelo pintado de rosa, es probablemente la calle más fotografiada de la noche lisboeta. Hace quince años era una zona de marineros y prostitución; hoy es el epicentro de la escena nocturna moderna de Lisboa. Bares como Pensão Amor (en un antiguo burdel), Sol e Pesca (conservas y vino en un antiguo quiosco de pesca) y Music Box (uno de los mejores clubs de la ciudad) concentran lo mejor de la noche en apenas doscientos metros." },
+      { tipo: "parrafo", texto: "La ventaja de Cais do Sodré frente al Bairro Alto es que aquí encuentras clubs con programación seria. Music Box trae artistas internacionales de electrónica, hip-hop y jazz. Tokyo es perfecto si te va la música alternativa y el indie. Y si prefieres algo más tranquilo, los bares a lo largo del río ofrecen terrazas con vistas al Tajo donde tomar un cocktail antes de la fiesta." },
+      { tipo: "tip", texto: "Pink Street se llena rápido los fines de semana. Llega antes de las 23:30 si quieres sitio en los bares. Music Box cobra entrada (10-15€) cuando hay eventos especiales, pero entre semana suele ser gratis." },
+      { tipo: "subtitulo", texto: "Santos y Alcântara — Para trasnochadores" },
+      { tipo: "parrafo", texto: "Cuando el Bairro Alto cierra y Cais do Sodré empieza a vaciarse, la fiesta se mueve hacia Santos y Alcântara. Esta zona junto al río alberga los clubs más grandes y las fiestas que duran hasta el amanecer. Lux Frágil, propiedad parcial del actor John Malkovich, es el club más icónico de Lisboa: música de calidad, terraza sobre el río y un ambiente que mezcla artistas, estudiantes y noctámbulos de toda Europa." },
+      { tipo: "parrafo", texto: "En LX Factory, el antiguo complejo industrial reconvertido, algunos bares y restaurantes abren hasta tarde los fines de semana. Rio Maravilha tiene una terraza espectacular para tomar algo mientras ves el Puente 25 de Abril iluminado. No es el sitio para bailar, pero sí para cenar tarde o tomar la última copa con vistas." },
+      { tipo: "subtitulo", texto: "Ginjinhas — El ritual obligatorio" },
+      { tipo: "parrafo", texto: "Ninguna noche en Lisboa está completa sin una ginjinha. Este licor de guinda servido en vasito de chocolate es una tradición lisboeta que debes probar al menos una vez. Los dos sitios clásicos son A Ginjinha (en Rossio, abierto desde 1840) y Ginjinha Sem Rival, justo enfrente. Un chupito cuesta 1.50€ y el ritual es simple: pides 'com elas' (con las guindas) o 'sem elas' (sin), te lo bebes de un trago, y sigues tu camino." },
+      { tipo: "subtitulo", texto: "Consejos prácticos para salir de noche" },
+      { tipo: "lista", items: [
+        "Horarios: Los bares abren entre 21:00-22:00, los clubs no arrancan hasta la 1:00",
+        "Transporte: El metro cierra a la 1:00. Después, usa Uber/Bolt (5-8€ al centro)",
+        "Seguridad: Lisboa es muy segura de noche, pero cuida el móvil en zonas muy concurridas",
+        "Dresscode: Casual en casi todos los sitios. Solo Lux Frágil pide vestir un poco mejor",
+        "Precios: Cervezas 2-4€, cocktails 8-12€, entradas a clubs 0-15€"
+      ]}
+    ]
+  },
+  "lisboa-en-invierno": {
+    titulo: "Lisboa en Invierno: Por Qué Es la Mejor Época",
+    descripcion: "Menos turistas, precios más bajos, clima suave y luz perfecta para fotografía. Todo lo que ganas visitando Lisboa entre noviembre y marzo.",
+    imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
+    categoria: "Planificación",
+    fecha: "1 Feb 2026",
+    minutos: 10,
+    contenido: [
+      { tipo: "parrafo", texto: "Cuando le digo a alguien que mi época favorita para estar en Lisboa es el invierno, me miran como si estuviera loco. 'Pero si en verano es cuando hay que ir', responden. Y yo pienso: exacto, en verano es cuando van todos, y por eso en invierno es cuando se disfruta de verdad." },
+      { tipo: "parrafo", texto: "El invierno en Lisboa no tiene nada que ver con el invierno del norte de Europa o de buena parte de Latinoamérica. Las temperaturas rara vez bajan de los 8-10 grados, hay una media de 5-6 horas de sol al día incluso en enero, y la luz tiene una cualidad dorada que los fotógrafos adoran. Sí, llueve, pero normalmente en chaparrones cortos que dan paso a cielos limpios." },
+      { tipo: "subtitulo", texto: "Menos turistas, más Lisboa" },
+      { tipo: "parrafo", texto: "La diferencia más brutal entre verano e invierno es la cantidad de gente. En julio y agosto, el Tranvía 28 tiene colas de una hora, los miradores están atestados y es imposible pasear por Alfama sin esquivar grupos de turistas con selfie sticks. En enero puedes subirte al tranvía 28 en la primera parada sin esperar, sentarte tranquilamente en el Mirador de Santa Luzia, y caminar por las callejuelas de Alfama escuchando solo tus pasos y el fado que sale de alguna ventana." },
+      { tipo: "parrafo", texto: "Los museos están vacíos, los restaurantes tienen mesa sin reserva, y los locales recuperan sus sitios favoritos. Es la Lisboa auténtica, sin el filtro turístico que la transforma en verano." },
+      { tipo: "subtitulo", texto: "Precios que hacen sonreír" },
+      { tipo: "parrafo", texto: "Los vuelos a Lisboa en invierno cuestan entre un 30% y un 50% menos que en temporada alta. Un billete desde Madrid que en agosto cuesta 150-200€ ida y vuelta, en febrero lo encuentras por 40-60€. Los hoteles bajan de precio de forma similar: habitaciones que en verano cuestan 150€ por noche, en invierno las consigues por 70-80€. Y los Airbnb del centro, que en agosto son prohibitivos, en enero tienen precios de barrio residencial." },
+      { tipo: "lista", items: [
+        "Vuelos: 30-50% más baratos que en verano",
+        "Hoteles: 40-60% de descuento respecto a temporada alta",
+        "Restaurantes: Mismos precios, pero con menos espera y mejor servicio",
+        "Entradas: Algunos monumentos tienen descuentos en temporada baja",
+        "Transporte: Menos congestión, tranvías y buses más puntuales"
+      ]},
+      { tipo: "subtitulo", texto: "La luz de invierno en Lisboa" },
+      { tipo: "parrafo", texto: "Si te interesa la fotografía, el invierno en Lisboa es un regalo. El sol está más bajo, lo que crea sombras largas y una luz dorada que dura más tiempo. La golden hour de verano dura quince minutos; en invierno puede durar más de una hora. Los atardeceres sobre el Tajo son más dramáticos, con cielos que pasan del rosa al morado con nubes que añaden textura." },
+      { tipo: "parrafo", texto: "Los mejores miradores para fotografía invernal son el Mirador da Senhora do Monte (sin nadie, luz perfecta a las cuatro de la tarde), Santa Catarina (el sol se pone detrás del puente) y el Castelo de São Jorge (la luz rasante ilumina los tejados de Alfama de forma espectacular)." },
+      { tipo: "subtitulo", texto: "Qué hacer en un día de lluvia" },
+      { tipo: "parrafo", texto: "Cuando llueve —y lloverá algún día— Lisboa tiene opciones de sobra. El Oceanário de Lisboa es uno de los mejores acuarios de Europa y está genial para pasar una mañana. El Museo Nacional del Azulejo es fascinante y nunca está lleno. El Time Out Market es perfecto para comer de todo bajo techo. Y simplemente sentarte en un café histórico como A Brasileira o Café Nicola a ver llover mientras tomas una bica (espresso portugués) es una de las experiencias más lisboetas que existen." },
+      { tipo: "tip", texto: "Lleva un paraguas plegable y zapatos impermeables. La calçada portuguesa (el empedrado típico) es muy resbaladiza cuando se moja. Las chaparrones suelen durar 20-30 minutos y luego sale el sol." },
+      { tipo: "subtitulo", texto: "Eventos de invierno" },
+      { tipo: "parrafo", texto: "Lisboa en invierno tiene eventos únicos: los mercados navideños de diciembre, la celebración de Año Nuevo con fuegos artificiales sobre el Tajo (uno de los mejores de Europa), el carnaval en febrero con desfiles por la Avenida da Liberdade, y el festival de fado en varios locales durante todo el invierno. La programación cultural es intensa porque los lisboetas, sin playa, se refugian en conciertos, teatro y exposiciones." }
+    ]
+  },
+  "errores-turistas-lisboa": {
+    titulo: "15 Errores que Todo Turista Comete en Lisboa",
+    descripcion: "Desde comer en Rossio hasta ignorar el tranvía 15: errores comunes que arruinan el viaje y cómo evitarlos con alternativas reales.",
+    imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
+    categoria: "Consejos",
+    fecha: "28 Ene 2026",
+    minutos: 13,
+    contenido: [
+      { tipo: "parrafo", texto: "Después de años viviendo en Lisboa y viendo a miles de visitantes cometer los mismos errores, he compilado esta lista con las meteduras de pata más comunes. No para juzgar a nadie —yo también las cometí todas cuando llegué— sino para que tú las evites y aproveches mejor cada minuto de tu viaje." },
+      { tipo: "subtitulo", texto: "1. Comer en las terrazas de Rossio y Praça do Comércio" },
+      { tipo: "parrafo", texto: "Es el error número uno y el más caro. Las terrazas de las plazas principales cobran el doble o el triple que un restaurante a cinco minutos caminando. Un bacalhau à brás que en Rossio cuesta 18€, en una tasca de Mouraria sale por 8-9€ y está mucho más bueno. La regla es simple: si el menú está en cinco idiomas y tiene fotos, huye." },
+      { tipo: "subtitulo", texto: "2. No llevar calzado cómodo" },
+      { tipo: "parrafo", texto: "Lisboa es la ciudad de las siete colinas, y esas colinas no son metafóricas. Vas a subir y bajar cuestas todo el día sobre calçada portuguesa, un empedrado precioso pero traicionero, especialmente cuando llueve. Chanclas, tacones y zapatillas con suela lisa son una receta para el desastre. Invierte en unas zapatillas cómodas con buena suela y tu espalda te lo agradecerá." },
+      { tipo: "subtitulo", texto: "3. Hacer cola para el Tranvía 28 sin conocer las alternativas" },
+      { tipo: "parrafo", texto: "El Tranvía 28 es icónico, sí. Pero entre las 10:00 y las 16:00, la cola puede ser de 45 minutos a una hora, el tranvía va tan lleno que ni te puedes mover, y los carteristas operan a sus anchas. El secreto: tómalo a primera hora (antes de las 9:00) o al final de la tarde (después de las 17:00), y siempre desde la parada inicial en Martim Moniz para asegurarte asiento. O mejor aún: el Tranvía 15E hacia Belém es igual de bonito, mucho más tranquilo y pasa cada 10 minutos." },
+      { tipo: "subtitulo", texto: "4. No descargar mapas offline" },
+      { tipo: "parrafo", texto: "El roaming en Europa funciona bien si vienes de la UE, pero si vienes de Latinoamérica o de fuera de Europa, los datos pueden costarte una fortuna. Descarga el mapa de Lisboa en Google Maps con WiFi del hotel antes de salir. Ocupa unos 100MB y tendrás GPS funcional todo el día sin gastar un byte de datos." },
+      { tipo: "subtitulo", texto: "5. Ignorar los horarios reales" },
+      { tipo: "parrafo", texto: "En Lisboa, muchos restaurantes cierran entre las 15:00 y las 19:00. Llegar a las 16:00 esperando comer es garantía de frustración. Las tiendas pequeñas cierran los domingos. Los museos cierran los lunes. Y la mayoría de monumentos dejan de vender entradas 30 minutos antes del cierre. Planifica con horarios reales, no con suposiciones." },
+      { tipo: "subtitulo", texto: "6. Gastar en la Lisboa Card sin calcular" },
+      { tipo: "parrafo", texto: "La Lisboa Card (24h: 27€, 48h: 44€, 72h: 54€) parece atractiva porque incluye transporte y entradas. Pero a menos que vayas a visitar tres o más monumentos de pago por día, no te sale rentable. Muchos de los mejores sitios de Lisboa son gratis: miradores, callejuelas de Alfama, playas, mercados. Haz números antes de comprar." },
+      { tipo: "subtitulo", texto: "7. No probar la comida portuguesa de verdad" },
+      { tipo: "parrafo", texto: "Muchos visitantes se quedan en las hamburguesas, la pizza y los brunch instagrameables. Error. La gastronomía portuguesa es espectacular: bacalhau à brás, arroz de marisco, caldo verde, bifana, francesinha (si vas a Oporto)... Entra en una tasca donde solo se oiga portugués, pide lo que pidan los locales, y descubrirás sabores que no olvidarás." },
+      { tipo: "subtitulo", texto: "8. Subestimar las distancias" },
+      { tipo: "parrafo", texto: "En el mapa, todo parece cerca. En la realidad, las cuestas multiplican el tiempo de caminata por dos. Lo que Google Maps marca como '10 minutos caminando' puede ser una subida brutal que te deja sin aliento. Planifica máximo tres o cuatro zonas por día, con descansos para café entre ellas." },
+      { tipo: "subtitulo", texto: "9. No reservar restaurantes populares" },
+      { tipo: "parrafo", texto: "Los restaurantes recomendados por locales se llenan rápido, especialmente viernes y sábados. Sitios como Cervejaria Ramiro, O Velho Eurico o Taberna da Rua das Flores necesitan reserva. TheFork tiene descuentos y reservas fáciles." },
+      { tipo: "subtitulo", texto: "10. Olvidar el protector solar" },
+      { tipo: "parrafo", texto: "Incluso en invierno, el sol de Lisboa pega fuerte. La latitud es similar a la de Túnez, no la de París. Si pasas todo el día en miradores y terrazas, acabarás quemado. Factor 30 mínimo, siempre." },
+      { tipo: "subtitulo", texto: "11-15: Errores rápidos" },
+      { tipo: "lista", items: [
+        "11. No probar los pastéis de nata fuera de Belém — las mejores pastelerías están en barrios locales",
+        "12. Comprar souvenirs en Rossio — precios inflados, ve a la Feira da Ladra o tiendas de artesanía en Alfama",
+        "13. No llevar efectivo — muchos bares y tascas pequeñas solo aceptan efectivo",
+        "14. Ignorar Graça y Mouraria — barrios auténticos que la mayoría de turistas se salta",
+        "15. No aprender 'obrigado/obrigada' — los portugueses valoran mucho el esfuerzo de hablar su idioma"
+      ]},
+      { tipo: "tip", texto: "Imprime o guarda offline este artículo antes de viajar. Son errores fáciles de evitar si los tienes presentes, pero muy fáciles de cometer si no los conoces." }
+    ]
+  },
+  "sintra-desde-lisboa": {
+    titulo: "Sintra desde Lisboa: Guía Completa para un Día Perfecto",
+    descripcion: "Cómo llegar, el orden ideal de visitas para evitar colas, entradas con descuento, restaurantes y trucos que los guías no cuentan.",
+    imagen: "https://images.unsplash.com/photo-1497802176012-0ff3191ce56a?w=1200",
+    categoria: "Guías",
+    fecha: "22 Ene 2026",
+    minutos: 14,
+    contenido: [
+      { tipo: "parrafo", texto: "Sintra es, sin exagerar, uno de los lugares más bonitos que he visto en mi vida. Palacios de cuento de hadas emergiendo entre bosques de niebla, jardines que parecen diseñados por elfos, y una atmósfera romántica que Lord Byron describió como 'el Edén glorioso'. Está a solo 40 minutos en tren de Lisboa, lo que la convierte en la excursión de un día más popular de Portugal." },
+      { tipo: "parrafo", texto: "El problema es que esa popularidad tiene consecuencias: en verano, las colas para entrar al Palacio da Pena pueden ser de dos horas, los restaurantes del centro están llenos de turistas, y los precios son un 50% más altos que en Lisboa. He ido a Sintra más de treinta veces y he aprendido exactamente cómo evitar todo eso. Esta guía es el resultado de esos años de prueba y error." },
+      { tipo: "subtitulo", texto: "Cómo llegar: Tren desde Rossio" },
+      { tipo: "parrafo", texto: "El tren sale desde la estación de Rossio (en pleno centro de Lisboa) cada 20-30 minutos. El trayecto dura 40 minutos y cuesta 2.30€ por trayecto con la tarjeta Viva Viagem cargada con 'zapping' (prepago). Compra la tarjeta Viva Viagem en cualquier estación de metro (0.50€ + saldo que quieras cargar) y úsala tanto para el metro de Lisboa como para el tren a Sintra." },
+      { tipo: "tip", texto: "Coge el primer tren (alrededor de las 6:30-7:00). Llegarás a Sintra antes de las 8:00, cuando los palacios abren y no hay nadie. A las 10:00 ya estarás visitando sin colas mientras los grupos organizados ni siquiera han salido de Lisboa." },
+      { tipo: "subtitulo", texto: "El orden IDEAL de visitas (secreto local)" },
+      { tipo: "parrafo", texto: "Este es el error que comete el 90% de los visitantes: van primero al Palacio da Pena porque es el más famoso. El resultado es que llegan cuando las colas ya son enormes. El orden correcto es exactamente el contrario:" },
+      { tipo: "lista", items: [
+        "1. Quinta da Regaleira (abre a las 9:30) — El pozo iniciático, los túneles, los jardines. Es el sitio que más impresiona y a primera hora está vacío",
+        "2. Palacio da Pena (llegar sobre las 11:30) — Las colas de la mañana ya bajaron. La terraza tiene las mejores vistas de Sintra",
+        "3. Castelo dos Mouros (si tienes tiempo) — Las murallas medievales con vistas panorámicas. Está en el camino entre Regaleira y Pena",
+        "4. Centro de Sintra (para comer) — Baja al pueblo, come en una tasca y prueba las travesseiros (dulce típico de Sintra)"
+      ]},
+      { tipo: "subtitulo", texto: "Entradas y precios 2026" },
+      { tipo: "parrafo", texto: "Las entradas son la parte más cara de Sintra. El Palacio da Pena cuesta 14€ (parque + palacio), la Quinta da Regaleira 10€, y el Castelo dos Mouros 8€. Si piensas visitar los tres, puedes comprar un pack combinado en la web de Parques de Sintra que te ahorra un 10-15%. IMPORTANTE: compra SIEMPRE online y con antelación. En verano, las entradas físicas en taquilla pueden agotarse." },
+      { tipo: "subtitulo", texto: "Transporte dentro de Sintra" },
+      { tipo: "parrafo", texto: "Desde la estación de tren hasta los palacios hay que subir una montaña. Tienes tres opciones: el bus 434 (circuito que conecta estación-centro-Pena-Mouros, 7€ ida y vuelta), tuk-tuk (15-20€ por trayecto, negociable), o caminar (30-45 minutos cuesta arriba, bonito pero agotador). Mi recomendación: sube en el bus 434 y baja caminando por los jardines, que son preciosos y es todo cuesta abajo." },
+      { tipo: "subtitulo", texto: "Dónde comer en Sintra (sin trampas)" },
+      { tipo: "parrafo", texto: "Evita los restaurantes del centro turístico alrededor del Palacio Nacional. Son caros y mediocres. En cambio, camina cinco minutos por cualquier calle lateral y encontrarás tascas donde los locales comen menú del día por 8-10€. Incrível es un favorito local con buena relación calidad-precio. Y para el dulce, las queijadas de Sintra y los travesseiros de Casa Piriquita son obligatorios." },
+      { tipo: "tip", texto: "Si visitas Sintra en fin de semana entre junio y septiembre, prepárate para multitudes. El mejor momento es un martes o miércoles de octubre-noviembre: poca gente, buen tiempo, colores otoñales increíbles en los bosques." }
+    ]
   }
 };
 
@@ -1064,6 +1199,10 @@ const localImages: Record<string, string> = {
   'excursiones-desde-lisboa': '/images/pexels-daniel-1547736.jpg',
   'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
   'donde-escuchar-fado-autentico': '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
+  'vida-nocturna-lisboa': '/images/hero-lisboa.jpg',
+  'lisboa-en-invierno': '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+  'errores-turistas-lisboa': '/images/tranvia-28.jpg',
+  'sintra-desde-lisboa': '/images/pexels-daniel-1547736.jpg',
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';

@@ -8,6 +8,7 @@ import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaRomanticaTimeline } from '@/data/itineraries';
+import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
 
 export const metadata = {
   title: 'Lisboa Romántica para Parejas - Guía 2026',
@@ -21,7 +22,8 @@ const PREVIEW_STOPS = 3;
 const PRODUCT_PRICE = 2.99;
 
 export default function LisboaRomanticaPage() {
-  const previewStops = lisboaRomanticaTimeline.slice(0, PREVIEW_STOPS);
+  const isFree = isFreeAccessActive();
+  const displayStops = isFree ? lisboaRomanticaTimeline : lisboaRomanticaTimeline.slice(0, PREVIEW_STOPS);
   const totalStops = lisboaRomanticaTimeline.length;
 
   // Fotos para la galería
@@ -91,20 +93,42 @@ export default function LisboaRomanticaPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-green-400">check_circle</span>
-              <span>Preview gratis</span>
+          {isFree ? (
+            <div className="flex flex-col items-center gap-4">
+              <a
+                href="#itinerario"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
+              >
+                <span className="material-symbols-outlined text-lg">lock_open</span>
+                GRATIS por tiempo limitado
+              </a>
+              <div className="flex items-center gap-4 text-white/70 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                  Acceso completo
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-accent text-base">schedule</span>
+                  Hasta {FREE_ACCESS_UNTIL}
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-yellow-400">verified</span>
-              <span>Creado por locales</span>
+          ) : (
+            <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-green-400">check_circle</span>
+                <span>Preview gratis</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-yellow-400">verified</span>
+                <span>Creado por locales</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
+                <span>Garantía 48h</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
-              <span>Garantía 48h</span>
-            </div>
-          </div>
+          )}
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
@@ -126,21 +150,32 @@ export default function LisboaRomanticaPage() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 bg-pink-500/10 px-4 py-2 rounded-full">
                 <span className="material-symbols-outlined text-pink-500 text-lg">workspace_premium</span>
-                <span className="text-pink-500 text-sm font-bold">Solo {PRODUCT_PRICE}€</span>
+                {isFree ? (
+                  <span className="text-green-600 font-bold text-sm">GRATIS</span>
+                ) : (
+                  <span className="text-pink-500 text-sm font-bold">Solo {PRODUCT_PRICE}€</span>
+                )}
               </div>
               <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
                 <span className="material-symbols-outlined text-lg">visibility</span>
-                Preview gratis disponible
+                {isFree ? 'Acceso completo sin costo' : 'Preview gratis disponible'}
               </div>
             </div>
             <div className="flex gap-3">
-              <Link
-                href="/checkout/lisboa-romantica"
-                className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
-              >
-                <span className="material-symbols-outlined">lock_open</span>
-                Desbloquear guía
-              </Link>
+              {isFree ? (
+                <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
+                  <span className="material-symbols-outlined text-base">lock_open</span>
+                  Acceso libre
+                </span>
+              ) : (
+                <Link
+                  href="/checkout/lisboa-romantica"
+                  className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
+                >
+                  <span className="material-symbols-outlined">lock_open</span>
+                  Desbloquear guía
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -181,7 +216,8 @@ export default function LisboaRomanticaPage() {
               </div>
               <div>
                 <h3 className="font-bold text-lg text-text-main mb-1">Precio</h3>
-                <p className="text-pink-500 text-xl">{PRODUCT_PRICE}€</p>
+                <p className="text-pink-500 text-xl">{isFree ? 'GRATIS' : `${PRODUCT_PRICE}€`}</p>
+                {isFree && <p className="text-text-secondary text-sm mt-1">Por tiempo limitado</p>}
               </div>
             </div>
           </div>
@@ -192,20 +228,23 @@ export default function LisboaRomanticaPage() {
       <section className="py-20 bg-background-cream" id="itinerario">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-3 py-1 bg-pink-500/10 text-pink-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
-              Preview gratuito
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-3 ${isFree ? 'bg-green-500/10 text-green-600' : 'bg-pink-500/10 text-pink-600'}`}>
+              {isFree ? 'Acceso completo gratuito' : 'Preview gratuito'}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
               Vuestro Día Romántico en Lisboa
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              Mostrando las primeras {PREVIEW_STOPS} paradas. Desbloquea la guía completa para ver las {totalStops - PREVIEW_STOPS} restantes con restaurantes y coordenadas GPS.
+              {isFree
+                ? `Las ${totalStops} paradas completas con restaurantes, coordenadas GPS y tips de local.`
+                : `Mostrando las primeras ${PREVIEW_STOPS} paradas. Desbloquea la guía completa para ver las ${totalStops - PREVIEW_STOPS} restantes con restaurantes y coordenadas GPS.`
+              }
             </p>
           </div>
 
           <TimelineContainer lineColor="pink">
             {/* Preview Stops - Solo primeras 3 */}
-            {previewStops.map((stop, idx) => (
+            {displayStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
             ))}
 

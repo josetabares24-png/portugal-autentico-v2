@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { isFreeAccessActive } from '@/lib/guide-config';
 
 const ItineraryMap = dynamic(() => import('@/components/ItineraryMap'), {
   ssr: false,
@@ -45,8 +46,15 @@ export function PremiumContent({
 
   useEffect(() => {
     async function checkAccess() {
+      // Acceso gratuito temporal
+      if (isFreeAccessActive()) {
+        setHasAccess(true);
+        setIsChecking(false);
+        return;
+      }
+
       if (!isLoaded) return;
-      
+
       if (!user) {
         setHasAccess(false);
         setIsChecking(false);

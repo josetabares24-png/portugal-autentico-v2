@@ -8,6 +8,7 @@ import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
+import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
 
 export const metadata = {
   title: 'Lisboa en 1 Día: Lo Esencial - Guía Completa 2026',
@@ -25,7 +26,8 @@ const PREVIEW_STOPS = 3;
 const PRODUCT_PRICE = 1.99;
 
 export default function Lisboa1DiaPage() {
-  const previewStops = lisboa1DiaTimeline.slice(0, PREVIEW_STOPS);
+  const isFree = isFreeAccessActive();
+  const displayStops = isFree ? lisboa1DiaTimeline : lisboa1DiaTimeline.slice(0, PREVIEW_STOPS);
   const totalStops = lisboa1DiaTimeline.length;
 
   const photos = [
@@ -95,23 +97,47 @@ export default function Lisboa1DiaPage() {
 
           {/* Price + CTA row */}
           <div className="flex flex-wrap items-center gap-4 border-t border-white/15 pt-8">
-            <Link
-              href="/checkout/lisboa-1-dia-lo-esencial"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
-            >
-              <span className="material-symbols-outlined text-lg">lock_open</span>
-              Desbloquear por {PRODUCT_PRICE}€
-            </Link>
-            <div className="flex items-center gap-4 text-white/70 text-sm">
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
-                Acceso inmediato
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-accent text-base">workspace_premium</span>
-                Garantía 48h
-              </span>
-            </div>
+            {isFree ? (
+              <>
+                <a
+                  href="#itinerario"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
+                >
+                  <span className="material-symbols-outlined text-lg">lock_open</span>
+                  GRATIS por tiempo limitado
+                </a>
+                <div className="flex items-center gap-4 text-white/70 text-sm">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                    Acceso completo
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-accent text-base">schedule</span>
+                    Hasta {FREE_ACCESS_UNTIL}
+                  </span>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/checkout/lisboa-1-dia-lo-esencial"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
+                >
+                  <span className="material-symbols-outlined text-lg">lock_open</span>
+                  Desbloquear por {PRODUCT_PRICE}€
+                </Link>
+                <div className="flex items-center gap-4 text-white/70 text-sm">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                    Acceso inmediato
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-accent text-base">workspace_premium</span>
+                    Garantía 48h
+                  </span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -136,17 +162,30 @@ export default function Lisboa1DiaPage() {
             <div className="flex items-center gap-3 text-sm">
               <span className="font-display font-bold text-text-main">Lisboa 1 Día</span>
               <span className="text-slate-300">|</span>
-              <span className="text-primary font-bold">{PRODUCT_PRICE}€</span>
+              {isFree ? (
+                <span className="text-green-600 font-bold">GRATIS</span>
+              ) : (
+                <span className="text-primary font-bold">{PRODUCT_PRICE}€</span>
+              )}
               <span className="text-slate-300 hidden sm:inline">|</span>
-              <span className="text-text-secondary hidden sm:inline">Preview gratis abajo</span>
+              <span className="text-text-secondary hidden sm:inline">
+                {isFree ? 'Acceso completo sin costo' : 'Preview gratis abajo'}
+              </span>
             </div>
-            <Link
-              href="/checkout/lisboa-1-dia-lo-esencial"
-              className="px-5 py-2 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all flex items-center gap-2"
-            >
-              <span className="material-symbols-outlined text-base">lock_open</span>
-              Desbloquear
-            </Link>
+            {isFree ? (
+              <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
+                <span className="material-symbols-outlined text-base">lock_open</span>
+                Acceso libre
+              </span>
+            ) : (
+              <Link
+                href="/checkout/lisboa-1-dia-lo-esencial"
+                className="px-5 py-2 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all flex items-center gap-2"
+              >
+                <span className="material-symbols-outlined text-base">lock_open</span>
+                Desbloquear
+              </Link>
+            )}
           </div>
         </div>
       </section>
@@ -163,7 +202,7 @@ export default function Lisboa1DiaPage() {
             {[
               { icon: 'schedule', title: 'Duración', value: '10-12 horas', desc: 'Ritmo tranquilo' },
               { icon: 'directions_walk', title: 'Transporte', value: 'A pie + Tranvía', desc: 'Sin complicaciones' },
-              { icon: 'payments', title: 'Precio', value: `${PRODUCT_PRICE}€`, desc: 'Acceso inmediato', highlight: true },
+              { icon: 'payments', title: 'Precio', value: isFree ? 'GRATIS' : `${PRODUCT_PRICE}€`, desc: isFree ? 'Por tiempo limitado' : 'Acceso inmediato', highlight: true },
             ].map((item) => (
               <div key={item.icon} className={`rounded-2xl p-5 text-center border ${item.highlight ? 'bg-primary/5 border-primary/20' : 'bg-background-light border-slate-100'}`}>
                 <span className={`material-symbols-outlined text-2xl mb-2 inline-block ${item.highlight ? 'text-primary' : 'text-text-secondary'}`}>{item.icon}</span>
@@ -180,19 +219,22 @@ export default function Lisboa1DiaPage() {
       <section className="py-20 bg-background-cream" id="itinerario">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-14">
-            <span className="inline-block px-4 py-1.5 bg-primary/8 text-primary rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
-              Preview gratuito
+            <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 ${isFree ? 'bg-green-500/10 text-green-600' : 'bg-primary/8 text-primary'}`}>
+              {isFree ? 'Acceso completo gratuito' : 'Preview gratuito'}
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
               Tu cronograma paso a paso
             </h2>
             <p className="text-text-secondary max-w-lg mx-auto">
-              Primeras {PREVIEW_STOPS} paradas gratis. Desbloquea la guía para ver las {totalStops - PREVIEW_STOPS} restantes con restaurantes y GPS.
+              {isFree
+                ? `Las ${totalStops} paradas completas con restaurantes, coordenadas GPS y tips de local.`
+                : `Primeras ${PREVIEW_STOPS} paradas gratis. Desbloquea la guía para ver las ${totalStops - PREVIEW_STOPS} restantes con restaurantes y GPS.`
+              }
             </p>
           </div>
 
           <TimelineContainer lineColor="primary">
-            {previewStops.map((stop, idx) => (
+            {displayStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
             ))}
             <PreviewPaywall

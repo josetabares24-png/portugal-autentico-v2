@@ -35,7 +35,7 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 // Rutas que no deben pasar por el middleware de i18n
-const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app(.*)']);
+const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
   // Solo proteger rutas que no son publicas
