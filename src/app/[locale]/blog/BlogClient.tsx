@@ -5,9 +5,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import Icon from '@/components/Icon';
+
+const POSTS_PER_PAGE = 9;
 
 export default function BlogClient() {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
+  const [paginaActual, setPaginaActual] = useState(1);
   const [email, setEmail] = useState('');
   const [nombre, setNombre] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -26,9 +30,17 @@ export default function BlogClient() {
     [categoriaActiva]
   );
 
+  const totalPaginas = Math.ceil(Math.max(0, postsFiltrados.length - 4) / POSTS_PER_PAGE);
+
   const featured = postsFiltrados[0];
   const secondary = postsFiltrados.slice(1, 4);
-  const remaining = postsFiltrados.slice(4);
+  const allRemaining = postsFiltrados.slice(4);
+  const remaining = allRemaining.slice((paginaActual - 1) * POSTS_PER_PAGE, paginaActual * POSTS_PER_PAGE);
+
+  function cambiarCategoria(cat: string) {
+    setCategoriaActiva(cat);
+    setPaginaActual(1);
+  }
 
   return (
     <main id="main-content" className="bg-background-light">
@@ -47,7 +59,7 @@ export default function BlogClient() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">article</span>
+            <Icon name="article" size={16} />
             <span className="text-sm font-semibold tracking-wide">Blog de Lisboa</span>
           </div>
 
@@ -66,22 +78,22 @@ export default function BlogClient() {
               href="/itinerarios"
               className="group flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <span className="material-symbols-outlined text-xl">map</span>
+              <Icon name="map" size={20} />
               Ver las rutas
-              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/info-util"
               className="flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-xl font-semibold text-lg border border-white/30 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-xl">download</span>
+              <Icon name="download" size={20} />
               Guía práctica gratis
             </Link>
           </div>
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
@@ -92,7 +104,7 @@ export default function BlogClient() {
             {categorias.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setCategoriaActiva(cat)}
+                onClick={() => cambiarCategoria(cat)}
                 aria-label={`Filtrar por categoría: ${cat}`}
                 aria-pressed={cat === categoriaActiva}
                 className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full font-semibold transition-all text-xs md:text-sm ${
@@ -217,9 +229,7 @@ export default function BlogClient() {
                       className="inline-flex items-center gap-1.5 md:gap-2 text-primary hover:text-primary-dark font-bold group/link text-xs md:text-base"
                     >
                       Leer más
-                      <span className="material-symbols-outlined text-base md:text-xl group-hover/link:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
+                      <Icon name="arrow_forward" size={16} className="md:!size-[20px] group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </article>
@@ -228,10 +238,52 @@ export default function BlogClient() {
 
             {postsFiltrados.length === 0 && (
               <div className="text-center py-12 md:py-20">
-                <p className="text-base md:text-xl text-slate-500" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <p className="text-base md:text-xl text-slate-500 font-display italic">
                   No hay posts en esta categoría todavía
                 </p>
               </div>
+            )}
+
+            {totalPaginas > 1 && (
+              <nav className="flex items-center justify-center gap-2 mt-12" aria-label="Paginación del blog">
+                <button
+                  onClick={() => { setPaginaActual(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  disabled={paginaActual === 1}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  aria-label="Página anterior"
+                >
+                  <Icon name="chevron_left" size={16} />
+                  Anterior
+                </button>
+
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((n) => (
+                    <button
+                      key={n}
+                      onClick={() => { setPaginaActual(n); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      aria-label={`Ir a página ${n}`}
+                      aria-current={n === paginaActual ? 'page' : undefined}
+                      className={`w-9 h-9 rounded-xl text-sm font-semibold transition-colors ${
+                        n === paginaActual
+                          ? 'bg-primary text-white'
+                          : 'border border-slate-200 text-slate-600 hover:border-primary hover:text-primary'
+                      }`}
+                    >
+                      {n}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => { setPaginaActual(p => Math.min(totalPaginas, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  disabled={paginaActual === totalPaginas}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:border-primary hover:text-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  aria-label="Página siguiente"
+                >
+                  Siguiente
+                  <Icon name="chevron_right" size={16} />
+                </button>
+              </nav>
             )}
           </div>
         </div>
@@ -251,19 +303,19 @@ export default function BlogClient() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mx-auto mb-4 md:mb-8 shadow-2xl">
-              <span className="material-symbols-outlined text-white text-2xl md:text-4xl">mail</span>
+            <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-4 md:mb-8 shadow-2xl">
+              <Icon name="mail" size={24} className="text-white md:!size-[36px]" />
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-6">
               Recibe Tips de
               <br />
-              <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
+              <span className="text-accent">
                 Local en tu Email
               </span>
             </h2>
 
-            <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-10 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+            <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-10 leading-relaxed font-display italic">
               Los mejores consejos, lugares secretos y novedades de Lisboa
               <span className="hidden md:inline"><br />directamente en tu bandeja de entrada</span>
             </p>

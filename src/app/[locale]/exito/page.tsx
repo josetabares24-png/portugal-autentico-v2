@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 
 export default function ExitoPage() {
   return (
@@ -6,7 +7,7 @@ export default function ExitoPage() {
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
         <div className="bg-white rounded-2xl p-12 shadow-xl border border-slate-200">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="material-symbols-outlined text-green-600 text-5xl">check_circle</span>
+            <Icon name="check_circle" size={36} className="text-green-600" />
           </div>
           
           <h1 className="text-4xl font-bold text-text-main mb-4">
@@ -20,7 +21,7 @@ export default function ExitoPage() {
           
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
             <div className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-blue-600 text-2xl mt-0.5">info</span>
+              <Icon name="info" size={24} className="text-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="font-bold text-blue-900 mb-2">¿No recibes el email?</h3>
                 <p className="text-sm text-blue-800 mb-3">
@@ -37,7 +38,7 @@ export default function ExitoPage() {
 
           <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
             <div className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-green-600 text-2xl mt-0.5">email</span>
+              <Icon name="email" size={24} className="text-green-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="font-bold text-green-900 mb-2">¿Qué incluye el email?</h3>
                 <p className="text-sm text-green-800">

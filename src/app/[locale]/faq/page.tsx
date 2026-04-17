@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Icon from '@/components/Icon';
 
 const faqs = [
   {
@@ -58,6 +59,18 @@ const faqs = [
   }
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((cat) =>
+    cat.questions.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+    }))
+  ),
+};
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<string | null>(null);
 
@@ -68,6 +81,10 @@ export default function FAQPage() {
 
   return (
     <main className="bg-background-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -86,7 +103,7 @@ export default function FAQPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">help</span>
+            <Icon name="help" size={16} />
             <span className="text-sm font-semibold tracking-wide">Preguntas frecuentes</span>
           </div>
 
@@ -104,7 +121,7 @@ export default function FAQPage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
@@ -117,7 +134,7 @@ export default function FAQPage() {
                 {/* Category Title */}
                 <div className="mb-8">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-3">
-                    <span className="material-symbols-outlined text-primary text-lg">check_circle</span>
+                    <Icon name="check_circle" size={18} className="text-primary" />
                     <span className="text-sm font-bold text-primary">{category.category}</span>
                   </div>
                 </div>
@@ -138,9 +155,7 @@ export default function FAQPage() {
                           <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex-1">
                             {faq.question}
                           </h3>
-                          <span className={`material-symbols-outlined text-primary flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}>
-                            expand_more
-                          </span>
+                          <Icon name="expand_more" size={18} className={`text-primary flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                         </button>
                         {isOpen && (
                           <div className="px-6 sm:px-8 pb-6 pt-2">
@@ -163,7 +178,7 @@ export default function FAQPage() {
       <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">chat</span>
+          <Icon name="chat" size={36} className="text-white mb-6 inline-block" />
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Tienes otra pregunta?
           </h2>
@@ -175,15 +190,15 @@ export default function FAQPage() {
               href="/contacto"
               className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
             >
-              <span className="material-symbols-outlined text-2xl">mail</span>
+              <Icon name="mail" size={24} />
               Contactar
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/itinerarios"
               className="flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all"
             >
-              <span className="material-symbols-outlined text-2xl">map</span>
+              <Icon name="map" size={24} />
               Ver Guías
             </Link>
           </div>

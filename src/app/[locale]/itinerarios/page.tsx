@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { getGuideList } from '@/lib/guide-store';
@@ -15,7 +16,9 @@ export const metadata: Metadata = {
     url: 'https://estabaenlisboa.com/itinerarios',
     images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
-  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios' },
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/itinerarios',
+  },
 };
 
 export default async function ItinerariosPage() {
@@ -57,7 +60,7 @@ export default async function ItinerariosPage() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 pt-32">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 border border-white/20 mb-6 text-sm">
-              <span className="material-symbols-outlined text-base">map</span>
+              <Icon name="map" size={16} />
               {mainItineraries.length + specialItineraries.length} rutas disponibles
             </div>
 
@@ -92,7 +95,7 @@ export default async function ItinerariosPage() {
               { icon: 'map', label: 'Mapas GPS offline' },
             ].map((item) => (
               <div key={item.icon} className="flex items-center gap-2 text-text-secondary">
-                <span className="material-symbols-outlined text-primary text-base">{item.icon}</span>
+                <Icon name={item.icon} size={16} className="text-primary" />
                 {item.label}
               </div>
             ))}
@@ -162,7 +165,7 @@ export default async function ItinerariosPage() {
                 href={link.href}
                 className="group flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-100 hover:border-primary/20 hover:shadow-soft transition-all duration-300"
               >
-                <span className="material-symbols-outlined text-primary text-xl group-hover:scale-110 transition-transform">{link.icon}</span>
+                <Icon name={link.icon} size={20} className="text-primary group-hover:scale-110 transition-transform" />
                 <span className="font-semibold text-text-main text-sm group-hover:text-primary transition-colors">{link.label}</span>
               </Link>
             ))}
@@ -202,14 +205,14 @@ export default async function ItinerariosPage() {
               href="/quiz"
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-xl">quiz</span>
+              <Icon name="quiz" size={20} />
               Hacer el quiz
             </Link>
             <Link
               href="/contacto"
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
             >
-              <span className="material-symbols-outlined text-lg">chat</span>
+              <Icon name="chat" size={18} />
               Pregúntanos
             </Link>
           </div>

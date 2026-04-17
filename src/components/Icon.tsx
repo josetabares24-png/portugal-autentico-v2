@@ -1,5 +1,5 @@
 import {
-  ArrowRight, ArrowLeft, ArrowDown, ChevronDown, ChevronLeft, ChevronRight,
+  ArrowRight, ArrowLeft, ArrowDown, ChevronDown, ChevronLeft, ChevronRight, Menu,
   Map, MapPin, Navigation, Compass,
   Lock, LockOpen, ShieldCheck, Shield,
   Check, CheckCircle, Circle,
@@ -35,6 +35,7 @@ const iconMap: Record<string, LucideIcon> = {
   expand_more: ChevronDown,
   chevron_left: ChevronLeft,
   chevron_right: ChevronRight,
+  menu: Menu,
 
   // Mapa / Ubicación
   map: Map,

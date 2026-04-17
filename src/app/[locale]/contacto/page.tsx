@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Icon from '@/components/Icon';
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -69,7 +70,7 @@ export default function ContactoPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">mail</span>
+            <Icon name="mail" size={16} />
             <span className="text-sm font-semibold tracking-wide">Contacto</span>
           </div>
 
@@ -86,7 +87,7 @@ export default function ContactoPage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
@@ -172,9 +173,9 @@ export default function ContactoPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-bold py-5 rounded-2xl shadow-2xl hover:shadow-primary/50 hover:scale-105 transition-all flex items-center justify-center gap-3 text-lg"
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-lg"
                 >
-                  <span className="material-symbols-outlined text-2xl">send</span>
+                  <Icon name="send" size={24} />
                   Enviar mensaje
                 </button>
 
@@ -185,7 +186,7 @@ export default function ContactoPage() {
             ) : (
               <div className="text-center py-12">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="material-symbols-outlined text-green-500 text-5xl">check_circle</span>
+                  <Icon name="check_circle" size={36} className="text-green-500" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">
                   ¡Mensaje enviado!
@@ -197,7 +198,7 @@ export default function ContactoPage() {
                   href="/itinerarios"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold"
                 >
-                  <span className="material-symbols-outlined">arrow_back</span>
+                  <Icon name="arrow_back" size={18} />
                   Volver a guías
                 </Link>
               </div>
@@ -207,7 +208,7 @@ export default function ContactoPage() {
           {/* FAQ Quick Links */}
           <div className="mt-12 bg-background-cream rounded-3xl p-8 border border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary">help</span>
+              <Icon name="help" size={18} className="text-primary" />
               Preguntas Frecuentes
             </h3>
             <div className="space-y-3">

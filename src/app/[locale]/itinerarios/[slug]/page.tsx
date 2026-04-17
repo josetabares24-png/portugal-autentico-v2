@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Icon from '@/components/Icon';
 import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
@@ -226,7 +227,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                     <>
                       <div className="text-center mb-6">
                         <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-3">
-                          <span className="material-symbols-outlined text-lg">lock_open</span>
+                          <Icon name="lock_open" size={18} />
                           GRATIS por tiempo limitado
                         </div>
                         <div className="text-4xl font-bold mb-2 text-green-600">0€</div>
@@ -324,7 +325,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
           <h2 className="text-2xl font-bold mb-4 text-primary">Tienes preguntas?</h2>
           <p className="text-slate-600 mb-6">Escribenos y te ayudamos a elegir el pack perfecto para ti.</p>
           <Link href="/contacto" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary-dark transition-colors">
-            <span className="material-symbols-outlined">mail</span>
+            <Icon name="mail" size={18} />
             Escribenos
           </Link>
         </div>
