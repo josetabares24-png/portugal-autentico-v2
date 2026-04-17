@@ -3,22 +3,16 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { isFreeAccessActive } from '@/lib/guide-config';
 
 export default function DondeDormirPage() {
+  const isFree = isFreeAccessActive();
   const [selectedZone, setSelectedZone] = useState('all');
-
-  // TODO: Obtener tu ID de afiliado de Booking.com y reemplazar aquí
-  // 1. Inicia sesión en tu cuenta de afiliado de Booking.com
-  // 2. Ve a "Links & Banners" > "Create a link"
-  // 3. Copia tu "Affiliate ID" (aparece como aid=XXXXX)
-  // 4. Reemplaza "TU_AFFILIATE_ID" con ese número
-  const BOOKING_AFFILIATE_ID = "TU_AFFILIATE_ID"; // 🔧 URGENTE: Reemplazar con tu Booking.com Affiliate ID
 
   const zones = [
     {
       id: 'baixa',
       name: 'Baixa-Chiado',
-      emoji: '🏛️',
       description: 'Centro histórico, cerca de todo',
       bestFor: 'Primera vez en Lisboa, turismo intenso',
       pros: ['A pie de todo', 'Muchos restaurantes', 'Bien conectado con metro'],
@@ -27,7 +21,6 @@ export default function DondeDormirPage() {
     {
       id: 'alfama',
       name: 'Alfama',
-      emoji: '🎵',
       description: 'Barrio más auténtico y fotogénico',
       bestFor: 'Ambiente local, fado, callejuelas pintorescas',
       pros: ['Auténtico y con encanto', 'Restaurantes locales', 'Mejor para fotos'],
@@ -36,7 +29,6 @@ export default function DondeDormirPage() {
     {
       id: 'bairro-alto',
       name: 'Bairro Alto',
-      emoji: '🍷',
       description: 'Vida nocturna y ambiente bohemio',
       bestFor: 'Jóvenes, fiesta, restaurantes modernos',
       pros: ['Vida nocturna increíble', 'Muchos bares y terrazas', 'Ambiente alternativo'],
@@ -45,7 +37,6 @@ export default function DondeDormirPage() {
     {
       id: 'principe-real',
       name: 'Príncipe Real',
-      emoji: '🌳',
       description: 'Elegante, tranquilo, muy local',
       bestFor: 'Parejas, viajeros que buscan tranquilidad',
       pros: ['Barrio residencial tranquilo', 'Cafés y tiendas bonitas', 'Seguro y limpio'],
@@ -54,7 +45,6 @@ export default function DondeDormirPage() {
     {
       id: 'belem',
       name: 'Belém',
-      emoji: '🏰',
       description: 'Zona monumental junto al río',
       bestFor: 'Familias, amantes de la cultura',
       pros: ['Tranquilo y espacioso', 'Cerca de monumentos principales', 'Río y parques'],
@@ -63,7 +53,6 @@ export default function DondeDormirPage() {
     {
       id: 'parque-nacoes',
       name: 'Parque das Nações',
-      emoji: '🚀',
       description: 'Zona moderna, estación Oriente',
       bestFor: 'Familias, viajes de negocios, llegadas tarde',
       pros: ['Moderno y limpio', 'Cerca del aeropuerto', 'Hoteles más económicos'],
@@ -81,8 +70,8 @@ export default function DondeDormirPage() {
         description: 'Hostel social con excelente ambiente. Desayuno incluido y actividades diarias.',
         image: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
         amenities: ['Desayuno gratis', 'Cocina compartida', 'Free walking tours', 'Bar'],
-        bookingUrl: `https://www.booking.com/hotel/pt/home-lisbon-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'MÁS SOCIAL'
+        url: 'https://www.booking.com/hotel/pt/home-lisbon-hostel.html',
+        highlight: 'Más social'
       },
       {
         name: 'Goodmorning Solo Traveller Hostel',
@@ -92,8 +81,8 @@ export default function DondeDormirPage() {
         description: 'Perfecto para viajeros solos. Eventos nocturnos y excursiones organizadas.',
         image: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg',
         amenities: ['Solo travelers', 'Fiesta incluida', 'Terraza panorámica', 'Desayuno'],
-        bookingUrl: `https://www.booking.com/hotel/pt/goodmorning-solo-traveller-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'PARA SOLOS'
+        url: 'https://www.booking.com/hotel/pt/goodmorning-solo-traveller-hostel.html',
+        highlight: 'Para solos'
       },
       {
         name: 'Lisbon Destination Hostel',
@@ -103,8 +92,8 @@ export default function DondeDormirPage() {
         description: 'Hostel boutique en edificio histórico. Vistas increíbles desde la terraza.',
         image: '/images/alfama-panoramica.jpg',
         amenities: ['Terraza con vistas', 'Desayuno buffet', 'Ubicación premium', 'Habitaciones privadas'],
-        bookingUrl: `https://www.booking.com/hotel/pt/lisbon-destination-hostel.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'MEJOR VISTAS'
+        url: 'https://www.booking.com/hotel/pt/lisbon-destination-hostel.html',
+        highlight: 'Mejores vistas'
       }
     ],
     hotels: [
@@ -115,10 +104,9 @@ export default function DondeDormirPage() {
         rating: 8.7,
         description: 'Hotel clásico con terraza rooftop. Vistas al Castillo de São Jorge.',
         image: '/images/elevador-santa-justa.jpg',
-        officialUrl: 'https://www.hotel-mundial.pt/',
+        url: 'https://www.hotel-mundial.pt/',
         amenities: ['Terraza rooftop', 'Desayuno incluido', 'Centro histórico', 'WiFi gratis'],
-        bookingUrl: `https://www.booking.com/hotel/pt/mundial.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'MEJOR TERRAZA'
+        highlight: 'Mejor terraza'
       },
       {
         name: 'Memmo Alfama Hotel',
@@ -127,10 +115,9 @@ export default function DondeDormirPage() {
         rating: 9.2,
         description: 'Hotel boutique de diseño. Piscina con vistas al río Tajo.',
         image: '/images/alfama-panoramica.jpg',
-        officialUrl: 'https://www.memmo.com/alfama/',
+        url: 'https://www.memmo.com/alfama/',
         amenities: ['Piscina con vistas', 'Diseño moderno', 'Bar en rooftop', 'Spa'],
-        bookingUrl: `https://www.booking.com/hotel/pt/memmo-alfama.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'LUJO ASEQUIBLE'
+        highlight: 'Lujo asequible'
       },
       {
         name: 'The Lumiares Hotel & Spa',
@@ -139,10 +126,9 @@ export default function DondeDormirPage() {
         rating: 9.0,
         description: 'Hotel elegante en palacete del siglo XVIII. Spa y piscina interior.',
         image: '/images/hero-lisboa.jpg',
-        officialUrl: 'https://www.thelumiares.com/',
+        url: 'https://www.thelumiares.com/',
         amenities: ['Spa completo', 'Piscina interior', 'Edificio histórico', 'Restaurante gourmet'],
-        bookingUrl: `https://www.booking.com/hotel/pt/the-lumiares.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'CON SPA'
+        highlight: 'Con spa'
       },
       {
         name: 'Torel Palace Lisbon',
@@ -151,10 +137,9 @@ export default function DondeDormirPage() {
         rating: 9.3,
         description: 'Palacio del siglo XIX convertido en hotel boutique. Piscina panorámica.',
         image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
-        officialUrl: 'https://torelhospitality.com/torel-palace-lisbon',
+        url: 'https://torelhospitality.com/torel-palace-lisbon',
         amenities: ['Piscina infinita', 'Vistas panorámicas', 'Decoración de época', 'Bar sofisticado'],
-        bookingUrl: `https://www.booking.com/hotel/pt/torel-palace-lisbon.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'ROMÁNTICO'
+        highlight: 'Romántico'
       },
       {
         name: 'Altis Belém Hotel & Spa',
@@ -163,10 +148,9 @@ export default function DondeDormirPage() {
         rating: 9.1,
         description: 'Hotel de lujo junto al río. Vista directa a la Torre de Belém.',
         image: '/images/pexels-helena-i-1489651-2867883.jpg',
-        officialUrl: 'https://www.altishotels.com/altis-belem-hotel/',
+        url: 'https://www.altishotels.com/altis-belem-hotel/',
         amenities: ['Spa de lujo', 'Restaurante Michelin', 'Vistas río', 'Gimnasio'],
-        bookingUrl: `https://www.booking.com/hotel/pt/altis-belem.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'LUJO TOTAL'
+        highlight: 'Lujo total'
       },
       {
         name: 'MYRIAD by SANA Hotels',
@@ -175,10 +159,9 @@ export default function DondeDormirPage() {
         rating: 9.0,
         description: 'Hotel moderno 5 estrellas. Cerca del aeropuerto y estación Oriente.',
         image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
-        officialUrl: 'https://www.sanahotels.com/hotel/myriad-by-sana',
+        url: 'https://www.sanahotels.com/hotel/myriad-by-sana',
         amenities: ['Piscina infinita', 'Spa', 'Restaurante panorámico', 'Gimnasio 24h'],
-        bookingUrl: `https://www.booking.com/hotel/pt/myriad-by-sana-hotels.html?aid=${BOOKING_AFFILIATE_ID}`,
-        highlight: 'MODERNO'
+        highlight: 'Moderno'
       }
     ]
   };
@@ -216,144 +199,97 @@ export default function DondeDormirPage() {
     mainEntity: faqItems.map((item) => ({
       '@type': 'Question',
       name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg"
-            alt="Hotel boutique en el barrio histórico de Chiado, Lisboa, con fachada tradicional portuguesa y balcones decorativos"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
+    <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">bed</span>
-            <span className="text-sm font-semibold tracking-wide">Guía de alojamiento</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Dónde Dormir<br />
-            <span className="text-accent">en Lisboa</span>
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg"
+          alt="Dónde dormir en Lisboa"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/60 text-xs uppercase tracking-widest mb-3">Alojamiento</p>
+          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight">
+            Dónde dormir en Lisboa
           </h1>
-
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Hostels para mochileros y hoteles boutique para parejas. Recomendaciones por zonas, con precios reales y sin turistadas.
-          </p>
-
-          {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-accent">verified_user</span>
-              <span>Verificado por locales</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-yellow-400">hotel</span>
-              <span>Reserva con descuento</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-blue-400">cancel</span>
-              <span>Cancelación gratis</span>
-            </div>
-          </div>
+          <p className="text-white/70 text-sm mt-2">Hostels y hoteles boutique · Recomendaciones por zonas · Precios reales</p>
         </div>
       </section>
 
-      {/* Zone Selection */}
-      <section className="bg-white border-b sticky top-16 z-40 shadow-md">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
+      {/* Filtro de zona */}
+      <section className="bg-background-light py-6 border-b border-border-soft sticky top-16 z-30">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <button
               onClick={() => setSelectedZone('all')}
-              className={`px-6 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${
+              className={`text-sm pb-1 transition-colors ${
                 selectedZone === 'all'
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'text-text-main font-semibold border-b-2 border-primary'
+                  : 'text-text-secondary hover:text-text-main'
               }`}
             >
-              🗺️ Todas las Zonas
+              Todas las zonas
             </button>
             {zones.map((zone) => (
               <button
                 key={zone.id}
                 onClick={() => setSelectedZone(zone.id)}
-                className={`px-6 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${
+                className={`text-sm pb-1 transition-colors ${
                   selectedZone === zone.id
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    ? 'text-text-main font-semibold border-b-2 border-primary'
+                    : 'text-text-secondary hover:text-text-main'
                 }`}
               >
-                {zone.emoji} {zone.name}
+                {zone.name}
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Zones Information */}
-      <section className="py-16 bg-background-cream">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-              Elige tu zona según tu estilo
-            </h2>
-            <p className="text-lg text-slate-600">
-              Cada barrio de Lisboa tiene su personalidad. Te ayudamos a elegir el perfecto para ti.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Info por zonas */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Elige tu zona según tu estilo
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 divide-y md:divide-y-0 divide-border-soft">
             {zones.map((zone) => (
               <div
                 key={zone.id}
-                className={`bg-white/90 backdrop-blur-sm rounded-3xl p-6 border transition-all cursor-pointer ${
-                  selectedZone === zone.id
-                    ? 'border-primary shadow-2xl scale-[1.02] ring-1 ring-primary/20'
-                    : 'border-slate-200/80 hover:border-primary/50 hover:shadow-xl'
-                }`}
                 onClick={() => setSelectedZone(zone.id)}
+                className={`pt-6 pb-6 pr-6 cursor-pointer border-t-2 transition-colors ${
+                  selectedZone === zone.id ? 'border-primary' : 'border-border-soft hover:border-text-secondary'
+                }`}
               >
-                <div className="text-5xl mb-4">{zone.emoji}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{zone.name}</h3>
-                <p className="text-sm text-slate-600 mb-4">{zone.description}</p>
-
-                <div className="mb-4">
-                  <p className="text-xs font-bold text-primary mb-2">PERFECTO PARA:</p>
-                  <p className="text-sm text-slate-700">{zone.bestFor}</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div>
-                    <p className="font-bold text-primary mb-1">Ventajas</p>
-                    {zone.pros.slice(0, 2).map((pro, i) => (
-                      <p key={i} className="text-slate-600">✓ {pro}</p>
-                    ))}
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-600 mb-1">Contras</p>
-                    {zone.cons.slice(0, 2).map((con, i) => (
-                      <p key={i} className="text-slate-600">✗ {con}</p>
-                    ))}
-                  </div>
+                <h3 className="font-semibold text-text-main text-sm mb-1">{zone.name}</h3>
+                <p className="text-text-secondary text-xs mb-3">{zone.description}</p>
+                <p className="text-xs text-text-secondary mb-2">
+                  <span className="font-semibold text-text-main">Perfecto para:</span> {zone.bestFor}
+                </p>
+                <div className="space-y-0.5">
+                  {zone.pros.slice(0, 2).map((pro) => (
+                    <p key={pro} className="text-xs text-text-secondary">
+                      <span className="text-primary">&#10003;</span> {pro}
+                    </p>
+                  ))}
+                  {zone.cons.slice(0, 1).map((con) => (
+                    <p key={con} className="text-xs text-text-secondary">
+                      <span className="text-text-secondary">&#215;</span> {con}
+                    </p>
+                  ))}
                 </div>
               </div>
             ))}
@@ -361,280 +297,174 @@ export default function DondeDormirPage() {
         </div>
       </section>
 
-      {/* Hostels Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="material-symbols-outlined text-primary text-5xl">backpack</span>
-            <div>
-              <h2 className="text-3xl font-black text-slate-900">Hostels para Mochileros</h2>
-              <p className="text-slate-600">Ambiente social, cocina compartida y presupuesto ajustado</p>
-            </div>
-          </div>
-
+      {/* Hostels */}
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Hostels para mochileros
+          </p>
           {filteredHostels.length === 0 ? (
-            <div className="bg-slate-50 rounded-2xl p-12 text-center">
-              <p className="text-slate-500">No hay hostels en esta zona. Prueba con hoteles o cambia de barrio.</p>
-            </div>
+            <p className="text-text-secondary text-sm">No hay hostels en esta zona. Prueba con otra o selecciona todas.</p>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredHostels.map((hostel, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                >
-                  {/* Imagen real */}
-                  <div className="relative h-48 overflow-hidden">
+            <div className="grid md:grid-cols-3 gap-10">
+              {filteredHostels.map((hostel) => (
+                <article key={hostel.name}>
+                  <div className="relative aspect-[4/3] overflow-hidden mb-4">
                     <Image
                       src={hostel.image}
-                      alt={`Hostel ${hostel.name}`}
+                      alt={hostel.name}
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                    <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {hostel.highlight}
-                    </div>
                   </div>
-
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-lg font-bold text-slate-900">{hostel.name}</h3>
-                      <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
-                        <span className="material-symbols-outlined text-primary text-sm">star</span>
-                        <span className="text-sm font-bold text-primary">{hostel.rating}</span>
-                      </div>
+                  <div className="border-t-2 border-primary pt-4">
+                    <div className="flex items-baseline justify-between mb-1">
+                      <h3 className="font-semibold text-text-main text-sm">{hostel.name}</h3>
+                      <span className="text-xs text-primary font-semibold">{hostel.rating}</span>
                     </div>
-
-                    <p className="text-sm text-slate-600 mb-4">{hostel.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {hostel.amenities.map((amenity, i) => (
-                        <span key={i} className="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-lg">
-                          {amenity}
-                        </span>
+                    <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">{hostel.highlight} · {zones.find(z => z.id === hostel.zone)?.name}</p>
+                    <p className="text-text-secondary text-sm mb-3">{hostel.description}</p>
+                    <div className="space-y-1 mb-4">
+                      {hostel.amenities.map((a) => (
+                        <div key={a} className="flex items-center gap-2 text-xs text-text-secondary">
+                          <span className="text-primary">&#10003;</span>{a}
+                        </div>
                       ))}
                     </div>
-
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <p className="text-sm text-slate-500">Desde</p>
-                        <p className="text-2xl font-black text-primary">{hostel.price}</p>
-                        <p className="text-xs text-slate-500">por noche</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-xs font-bold text-slate-700">
-                          {zones.find(z => z.id === hostel.zone)?.name}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          {zones.find(z => z.id === hostel.zone)?.emoji}
-                        </p>
-                      </div>
+                    <div className="flex items-center justify-between">
+                      <p className="font-bold text-text-main text-sm">Desde {hostel.price}</p>
+                      <a
+                        href={hostel.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-primary hover:underline underline-offset-2"
+                      >
+                        Ver disponibilidad →
+                      </a>
                     </div>
-
-                    <a
-                      href={hostel.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
-                    >
-                      Ver Disponibilidad →
-                    </a>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Hotels Section */}
-      <section className="py-16 bg-background-cream">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="material-symbols-outlined text-primary text-5xl">hotel_class</span>
-            <div>
-              <h2 className="text-3xl font-black text-slate-900">Hoteles Boutique y Confort</h2>
-              <p className="text-slate-600">Parejas, lunas de miel y quienes buscan experiencia premium</p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {filteredHotels.map((hotel, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                >
-                {/* Imagen real */}
-                <a
-                  href={hotel.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative h-64 overflow-hidden block"
-                >
+      {/* Hoteles */}
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Hoteles boutique y confort
+          </p>
+          <div className="grid md:grid-cols-2 gap-10">
+            {filteredHotels.map((hotel) => (
+              <article key={hotel.name}>
+                <a href={hotel.url} target="_blank" rel="noopener noreferrer" className="block relative aspect-[16/9] overflow-hidden mb-4">
                   <Image
                     src={hotel.image}
-                    alt={`Hotel ${hotel.name} en ${zones.find(z => z.id === hotel.zone)?.name || hotel.zone}, Lisboa - ${hotel.description || 'Alojamiento recomendado'}`}
+                    alt={`${hotel.name} en ${zones.find(z => z.id === hotel.zone)?.name || hotel.zone}, Lisboa`}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                    {hotel.highlight}
-                  </div>
-                  <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 rounded-full shadow">
-                    Web oficial
-                  </div>
                 </a>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-slate-900">{hotel.name}</h3>
-                    <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
-                      <span className="material-symbols-outlined text-primary text-sm">star</span>
-                      <span className="text-sm font-bold text-primary">{hotel.rating}</span>
-                    </div>
+                <div className="border-t-2 border-primary pt-4">
+                  <div className="flex items-baseline justify-between mb-1">
+                    <h3 className="font-semibold text-text-main text-sm">{hotel.name}</h3>
+                    <span className="text-xs text-primary font-semibold">{hotel.rating}</span>
                   </div>
-
-                  <p className="text-slate-600 mb-4">{hotel.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {hotel.amenities.map((amenity, i) => (
-                      <span key={i} className="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-lg font-medium">
-                        {amenity}
-                      </span>
+                  <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">{hotel.highlight} · {zones.find(z => z.id === hotel.zone)?.name}</p>
+                  <p className="text-text-secondary text-sm mb-3">{hotel.description}</p>
+                  <div className="space-y-1 mb-4">
+                    {hotel.amenities.map((a) => (
+                      <div key={a} className="flex items-center gap-2 text-xs text-text-secondary">
+                        <span className="text-primary">&#10003;</span>{a}
+                      </div>
                     ))}
                   </div>
-
-                  <div className="flex items-end justify-between mb-4">
-                    <div>
-                      <p className="text-sm text-slate-500">Desde</p>
-                      <p className="text-3xl font-black text-primary">{hotel.price}</p>
-                      <p className="text-xs text-slate-500">por noche</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-bold text-slate-700">
-                        {zones.find(z => z.id === hotel.zone)?.name}
-                      </p>
-                      <p className="text-sm text-slate-500">
-                        {zones.find(z => z.id === hotel.zone)?.emoji}
-                      </p>
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold text-text-main text-sm">Desde {hotel.price}</p>
+                    <a
+                      href={hotel.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-primary hover:underline underline-offset-2"
+                    >
+                      Web oficial →
+                    </a>
                   </div>
-
-                  <a
-                    href={hotel.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                    className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg text-base"
-                  >
-                    Ver Disponibilidad →
-                  </a>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Tips Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
-            💡 Consejos para reservar alojamiento en Lisboa
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">✅ Reserva con antelación si...</h3>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>• Viajas en temporada alta (junio-septiembre)</li>
-                <li>• Quieres hoteles boutique específicos</li>
-                <li>• Viajas en festivales (Santo António en junio)</li>
-                <li>• Buscas hostels sociales (se llenan rápido)</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">🔍 Cosas a verificar antes de reservar</h3>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>• ¿Hay ascensor? (muchos edificios históricos no tienen)</li>
-                <li>• ¿Incluye aire acondicionado? (necesario en verano)</li>
-                <li>• ¿Está en cuesta muy empinada? (Alfama, Graça)</li>
-                <li>• ¿Cerca de metro o tranvía? (imprescindible)</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">💰 Cómo ahorrar dinero</h3>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>• Reserva con cancelación gratis (por si encuentras mejor)</li>
-                <li>• Hoteles en Parque das Nações son 30-40% más baratos</li>
-                <li>• Evita viernes-domingo (más caros)</li>
-                <li>• Hostels con cocina = ahorro en comidas</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-6 border border-orange-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">⚠️ Evita estas trampas</h3>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>• "Vista al castillo" puede ser 1 ventanita pequeña</li>
-                <li>• Baixa-Chiado: MUY ruidoso viernes-sábado</li>
-                <li>• "5 min del centro" a menudo son 15-20 min reales</li>
-                <li>• Verifica reseñas recientes (último año)</li>
-              </ul>
-            </div>
+      {/* Tips */}
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Antes de reservar
+          </p>
+          <div className="grid sm:grid-cols-2 gap-0 divide-y sm:divide-y-0 divide-border-soft">
+            {[
+              { titulo: 'Reserva con antelación si...', items: ['Viajas en temporada alta (junio-septiembre)', 'Quieres hoteles boutique específicos', 'Viajas en festivales (Santo António en junio)', 'Buscas hostels sociales (se llenan rápido)'] },
+              { titulo: 'Cosas a verificar antes de reservar', items: ['¿Hay ascensor? (muchos edificios históricos no tienen)', '¿Incluye aire acondicionado? (necesario en verano)', '¿Está en cuesta muy empinada? (Alfama, Graça)', '¿Cerca de metro o tranvía? (imprescindible)'] },
+              { titulo: 'Cómo ahorrar dinero', items: ['Reserva con cancelación gratis (por si encuentras mejor)', 'Hoteles en Parque das Nações son 30-40% más baratos', 'Evita viernes-domingo (más caros)', 'Hostels con cocina = ahorro en comidas'] },
+              { titulo: 'Evita estas trampas', items: ['"Vista al castillo" puede ser 1 ventanita pequeña', 'Baixa-Chiado: MUY ruidoso viernes-sábado', '"5 min del centro" a menudo son 15-20 min reales', 'Verifica reseñas recientes (último año)'] },
+            ].map((tip) => (
+              <div key={tip.titulo} className="pt-5 pb-5 sm:pr-10">
+                <h3 className="font-semibold text-text-main text-sm mb-3">{tip.titulo}</h3>
+                <ul className="space-y-1">
+                  {tip.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-text-secondary">
+                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-background-cream">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
-            Preguntas frecuentes sobre dónde dormir en Lisboa
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-slate-700">
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-6 pb-3 border-b border-border-soft">
+            Preguntas frecuentes
+          </p>
+          <div className="divide-y divide-border-soft">
             {faqItems.map((item) => (
-              <div key={item.question} className="bg-white rounded-2xl p-6 border border-slate-200">
-                <h3 className="font-bold text-slate-900 mb-2">{item.question}</h3>
-                <p>{item.answer}</p>
-              </div>
+              <details key={item.question} className="group py-5">
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <span className="font-semibold text-text-main text-sm pr-4">{item.question}</span>
+                  <span className="text-text-secondary group-open:rotate-45 transition-transform flex-shrink-0 text-lg leading-none">+</span>
+                </summary>
+                <p className="text-text-secondary text-sm mt-3 leading-relaxed">{item.answer}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA to Guides */}
-      <section className="py-20 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">map</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-            ¿Ya tienes dónde dormir?
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Ahora descubre qué hacer cada día con nuestras Guías Digitales Interactivas. Itinerarios completos, restaurantes locales y todos los secretos.
+      {/* CTA */}
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-white/60 text-xs uppercase tracking-widest mb-4">¿Ya tienes dónde dormir?</p>
+          <p className="font-display italic text-white text-3xl mb-6">
+            Ahora planifica qué hacer cada día
           </p>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold transition-colors"
           >
-            <span className="material-symbols-outlined text-2xl">explore</span>
-            Ver Guías Premium
-            <span className="material-symbols-outlined">arrow_forward</span>
+            {isFree ? 'Ver guías gratis →' : 'Ver itinerarios →'}
           </Link>
-          <p className="text-white/80 text-sm mt-6">✅ Desde 1.99€ · ✅ Acceso inmediato · ✅ Garantía 48 horas</p>
         </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
     </main>
   );
 }

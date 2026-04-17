@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { isFreeAccessActive } from '@/lib/guide-config';
 
 export default function FreeToursPage() {
+  const isFree = isFreeAccessActive();
   const tours = [
     {
       titulo: 'Free Tour Centro Histórico',
@@ -39,213 +41,99 @@ export default function FreeToursPage() {
   ];
 
   return (
-    <main className="bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg"
-            alt="Free tours Lisboa"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">tour</span>
-            <span className="text-sm font-semibold tracking-wide">Free tours en Lisboa</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Free Walking<br />
-            <span className="text-accent">Tours</span>
+    <main>
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg"
+          alt="Free tours Lisboa"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/60 text-xs uppercase tracking-widest mb-3">Recorridos a pie</p>
+          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight">
+            Free Walking Tours
           </h1>
+          <p className="text-white/70 text-sm mt-2">Guías locales en español · Sin pago por adelantado · Propina voluntaria</p>
+        </div>
+      </section>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Free tours en Lisboa con guías locales en español, horarios claros y puntos de salida céntricos.
+      {/* Cómo funcionan */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Cómo funcionan los free tours
           </p>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
-        </div>
-      </section>
-
-      {/* CÓMO FUNCIONAN */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
-                ¿Cómo Funcionan los <span className="text-primary">Free Tours?</span>
-              </h2>
-              <p className="text-sm md:text-xl text-slate-600" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-                Sin precio fijo, tú decides cuánto vale la experiencia
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-3 gap-4 md:gap-8">
-              {[
-                {
-                  numero: '1',
-                  titulo: 'Reserva Gratis',
-                  desc: 'No pagas nada por adelantado. Solo reserva tu plaza online.',
-                  icon: 'event_available'
-                },
-                {
-                  numero: '2',
-                  titulo: 'Disfruta el Tour',
-                  desc: 'Guía local experto te muestra Lisboa y responde todas tus dudas.',
-                  icon: 'explore'
-                },
-                {
-                  numero: '3',
-                  titulo: 'Tú Decides',
-                  desc: 'Al final, das la propina que consideres justa (5-15€ típico).',
-                  icon: 'volunteer_activism'
-                }
-              ].map((paso) => (
-                <div key={paso.numero} className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg border border-slate-100 text-center">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-lg">
-                    <span className="text-2xl md:text-3xl font-black text-white" style={{ fontFamily: 'Georgia, serif' }}>
-                      {paso.numero}
-                    </span>
-                  </div>
-                  <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-3 md:mb-4 block">{paso.icon}</span>
-                  <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-2 md:mb-3" style={{ fontFamily: 'Georgia, serif' }}>
-                    {paso.titulo}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed text-xs md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
-                    {paso.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              { titulo: 'Reserva gratis', desc: 'No pagas nada por adelantado. Solo reserva tu plaza online.' },
+              { titulo: 'Disfruta el tour', desc: 'Guía local experto te muestra Lisboa y responde todas tus dudas.' },
+              { titulo: 'Tú decides', desc: 'Al final, das la propina que consideres justa (5-15€ típico).' },
+            ].map((paso) => (
+              <div key={paso.titulo} className="border-t-2 border-primary pt-5">
+                <h3 className="font-semibold text-text-main text-sm mb-1">{paso.titulo}</h3>
+                <p className="text-text-secondary text-xs leading-relaxed">{paso.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* TOURS COMPACTOS */}
-      <section className="py-12 md:py-32 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-2 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-                Tours <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Disponibles</span>
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
-              {tours.map((tour, idx) => (
-                <div
-                  key={idx}
-                  className={`bg-white rounded-xl md:rounded-2xl p-6 md:p-10 border-2 hover:shadow-2xl transition-all ${
-                    tour.destacado 
-                      ? 'border-primary shadow-xl' 
-                      : 'border-slate-200'
-                  }`}
+      {/* Lista de tours */}
+      <section className="bg-background-light py-8 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Tours disponibles
+          </p>
+          <div className="grid sm:grid-cols-2 gap-10">
+            {tours.map((tour) => (
+              <article key={tour.titulo} className={`border-t-2 pt-6 ${tour.destacado ? 'border-primary' : 'border-border-soft'}`}>
+                {tour.destacado && (
+                  <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Más popular</p>
+                )}
+                <h3 className="font-display italic text-text-main text-xl mb-2">{tour.titulo}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed mb-4">{tour.descripcion}</p>
+                <div className="space-y-1 mb-5">
+                  <p className="text-xs text-text-secondary"><span className="font-semibold text-text-main">Duración:</span> {tour.duracion}</p>
+                  <p className="text-xs text-text-secondary"><span className="font-semibold text-text-main">Idiomas:</span> {tour.idiomas}</p>
+                  <p className="text-xs text-text-secondary"><span className="font-semibold text-text-main">Salida:</span> {tour.salida}</p>
+                  <p className="text-xs text-text-secondary"><span className="font-semibold text-text-main">Horarios:</span> {tour.horarios}</p>
+                </div>
+                <a
+                  href="https://www.getyourguide.es/lisboa-l42/free-tours-tc172/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline underline-offset-2"
                 >
-                  {tour.destacado && (
-                    <div className="inline-block px-3 py-1 md:px-4 md:py-2 bg-primary text-white font-bold rounded-full text-xs md:text-sm mb-4 md:mb-6">
-                      ⭐ MÁS POPULAR
-                    </div>
-                  )}
-
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 md:mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-                    {tour.titulo}
-                  </h3>
-
-                  <p className="text-slate-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base" style={{ fontFamily: 'Georgia, serif' }}>
-                    {tour.descripcion}
-                  </p>
-
-                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                    <div className="flex items-center gap-2 md:gap-3 text-slate-700 text-sm md:text-base">
-                      <span className="material-symbols-outlined text-primary text-base md:text-xl">schedule</span>
-                      <span><strong>Duración:</strong> {tour.duracion}</span>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-3 text-slate-700 text-sm md:text-base">
-                      <span className="material-symbols-outlined text-primary text-base md:text-xl">language</span>
-                      <span><strong>Idiomas:</strong> {tour.idiomas}</span>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-3 text-slate-700 text-sm md:text-base">
-                      <span className="material-symbols-outlined text-primary text-base md:text-xl">location_on</span>
-                      <span><strong>Salida:</strong> {tour.salida}</span>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-3 text-slate-700 text-sm md:text-base">
-                      <span className="material-symbols-outlined text-primary text-base md:text-xl">event</span>
-                      <span><strong>Horarios:</strong> {tour.horarios}</span>
-                    </div>
-                  </div>
-
-                  <Link
-                    href="https://www.getyourguide.es/lisboa-l42/free-tours-tc172/"
-                    target="_blank"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold text-base md:text-lg group"
-                  >
-                    <span style={{ fontFamily: 'Georgia, serif' }}>Reservar ahora</span>
-                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg md:text-xl">arrow_forward</span>
-                  </Link>
-                </div>
-              ))}
-            </div>
+                  Reservar ahora →
+                </a>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA COMPACTO */}
-      <section className="py-12 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?q=80&w=2000&auto=format&fit=crop"
-            alt="Lisboa"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-slate-900/90"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
-              ¿Prefieres Explorar
-              <br />
-              <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
-                por Tu Cuenta?
-              </span>
-            </h2>
-
-            <p className="text-sm md:text-xl text-slate-300 mb-6 md:mb-12 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-              Combina free tours con nuestras guías de{' '}
-              <Link href="/itinerarios" className="underline">
-                itinerarios por días
-              </Link>
-              .
-            </p>
-
-            <Link
-              href="/itinerarios"
-              className="inline-flex items-center gap-2 md:gap-3 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 md:py-6 md:px-12 rounded-xl text-base md:text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-            >
-              <span>Ver Guías Digitales</span>
-              <span className="material-symbols-outlined text-lg md:text-2xl">arrow_forward</span>
-            </Link>
-
-            <p className="text-slate-500 text-xs md:text-sm mt-4 md:mt-8">
-              ✓ Desde 3.99€ · ✓ Descarga inmediata · ✓ Actualizadas 2026
-            </p>
-          </div>
+      {/* CTA */}
+      <section className="bg-[#1a2b4a] py-16 mt-8">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-white/60 text-xs uppercase tracking-widest mb-4">¿Prefieres explorar por tu cuenta?</p>
+          <p className="font-display italic text-white text-3xl mb-3">
+            Combina free tours con nuestras guías de itinerarios
+          </p>
+          <p className="text-white/60 text-sm mb-8">
+            Rutas día a día, restaurantes verificados y los secretos de Lisboa.
+          </p>
+          <Link
+            href="/itinerarios"
+            className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold transition-colors"
+          >
+            {isFree ? 'Ver guías gratis →' : 'Ver guías digitales →'}
+          </Link>
         </div>
       </section>
     </main>
