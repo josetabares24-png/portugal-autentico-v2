@@ -34,6 +34,17 @@ export async function POST(request: NextRequest) {
       console.log(`Processing completed checkout session: ${session.id}`);
 
       try {
+        const metadataType = session.metadata?.type;
+
+        // Donaciones: solo loguear, no necesitan fulfillment de guías
+        if (metadataType === 'donation') {
+          const donationAmount = session.metadata?.amount || '0';
+          const guideSlug = session.metadata?.guideSlug || '';
+          const donorEmail = session.customer_details?.email || 'anónimo';
+          console.log(`Donation received: ${donationAmount}€ from ${donorEmail}${guideSlug ? ` (guide: ${guideSlug})` : ''}`);
+          return NextResponse.json({ received: true });
+        }
+
         // 1. Guardar compra en Supabase para Mis Guías y acceso a contenido
         const productId = session.metadata?.productId as string | undefined;
         const clerkUserId = session.metadata?.userId as string | undefined;

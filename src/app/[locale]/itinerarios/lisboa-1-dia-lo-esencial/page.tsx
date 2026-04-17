@@ -9,6 +9,7 @@ import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
 import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 export const metadata = {
   title: 'Lisboa en 1 Día: Lo Esencial - Guía Completa 2026',
@@ -58,13 +59,13 @@ export default function Lisboa1DiaPage() {
             href="/itinerarios"
             className="inline-flex items-center gap-1.5 text-white/60 hover:text-white text-sm mb-8 transition-colors"
           >
-            <span className="material-symbols-outlined text-base">arrow_back</span>
+            <Icon name="arrow_back" size={16} />
             Todas las rutas
           </Link>
 
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 border border-white/20 mb-6 text-sm">
-              <span className="material-symbols-outlined text-accent text-base">verified</span>
+              <Icon name="verified" size={16} className="text-accent" />
               Guía premium
             </div>
 
@@ -89,7 +90,7 @@ export default function Lisboa1DiaPage() {
               { icon: 'schedule', label: '10-12 horas' },
             ].map((stat) => (
               <div key={stat.icon} className="flex items-center gap-1.5 bg-white/10 backdrop-blur px-3.5 py-2 rounded-full border border-white/15 text-white/90 text-sm">
-                <span className="material-symbols-outlined text-base">{stat.icon}</span>
+                <Icon name={stat.icon} size={16} />
                 {stat.label}
               </div>
             ))}
@@ -103,16 +104,16 @@ export default function Lisboa1DiaPage() {
                   href="#itinerario"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
                 >
-                  <span className="material-symbols-outlined text-lg">lock_open</span>
+                  <Icon name="lock_open" size={18} />
                   GRATIS por tiempo limitado
                 </a>
                 <div className="flex items-center gap-4 text-white/70 text-sm">
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                    <Icon name="check_circle" size={16} className="text-green-400" />
                     Acceso completo
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-accent text-base">schedule</span>
+                    <Icon name="schedule" size={16} className="text-accent" />
                     Hasta {FREE_ACCESS_UNTIL}
                   </span>
                 </div>
@@ -123,16 +124,16 @@ export default function Lisboa1DiaPage() {
                   href="/checkout/lisboa-1-dia-lo-esencial"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
                 >
-                  <span className="material-symbols-outlined text-lg">lock_open</span>
+                  <Icon name="lock_open" size={18} />
                   Desbloquear por {PRODUCT_PRICE}€
                 </Link>
                 <div className="flex items-center gap-4 text-white/70 text-sm">
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                    <Icon name="check_circle" size={16} className="text-green-400" />
                     Acceso inmediato
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-accent text-base">workspace_premium</span>
+                    <Icon name="workspace_premium" size={16} className="text-accent" />
                     Garantía 48h
                   </span>
                 </div>
@@ -174,7 +175,7 @@ export default function Lisboa1DiaPage() {
             </div>
             {isFree ? (
               <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
-                <span className="material-symbols-outlined text-base">lock_open</span>
+                <Icon name="lock_open" size={16} />
                 Acceso libre
               </span>
             ) : (
@@ -182,7 +183,7 @@ export default function Lisboa1DiaPage() {
                 href="/checkout/lisboa-1-dia-lo-esencial"
                 className="px-5 py-2 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all flex items-center gap-2"
               >
-                <span className="material-symbols-outlined text-base">lock_open</span>
+                <Icon name="lock_open" size={16} />
                 Desbloquear
               </Link>
             )}
@@ -205,7 +206,7 @@ export default function Lisboa1DiaPage() {
               { icon: 'payments', title: 'Precio', value: isFree ? 'GRATIS' : `${PRODUCT_PRICE}€`, desc: isFree ? 'Por tiempo limitado' : 'Acceso inmediato', highlight: true },
             ].map((item) => (
               <div key={item.icon} className={`rounded-2xl p-5 text-center border ${item.highlight ? 'bg-primary/5 border-primary/20' : 'bg-background-light border-slate-100'}`}>
-                <span className={`material-symbols-outlined text-2xl mb-2 inline-block ${item.highlight ? 'text-primary' : 'text-text-secondary'}`}>{item.icon}</span>
+                <Icon name={item.icon} size={24} className={`mb-2 inline-block ${item.highlight ? 'text-primary' : 'text-text-secondary'}`} />
                 <p className="text-xs text-text-secondary uppercase tracking-wider mb-1">{item.title}</p>
                 <p className={`text-lg font-display font-black ${item.highlight ? 'text-primary' : 'text-text-main'}`}>{item.value}</p>
                 <p className="text-xs text-text-secondary mt-1">{item.desc}</p>
@@ -279,7 +280,7 @@ export default function Lisboa1DiaPage() {
             <div>
               <div className="bg-background-light rounded-2xl p-6 border border-slate-100 sticky top-40">
                 <div className="flex items-center gap-2 mb-5">
-                  <span className="material-symbols-outlined text-primary text-lg">lightbulb</span>
+                  <Icon name="lightbulb" size={18} className="text-primary" />
                   <span className="font-bold text-text-main text-sm uppercase tracking-wider">Tips locales</span>
                 </div>
 
@@ -291,7 +292,7 @@ export default function Lisboa1DiaPage() {
                   ].map((tip) => (
                     <div key={tip.icon} className="flex gap-3">
                       <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="material-symbols-outlined text-primary text-base">{tip.icon}</span>
+                        <Icon name={tip.icon} size={16} className="text-primary" />
                       </div>
                       <div>
                         <h4 className="font-bold text-text-main text-sm">{tip.title}</h4>
@@ -313,39 +314,66 @@ export default function Lisboa1DiaPage() {
           <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-5 tracking-tight">
             Listo para explorar Lisboa?
           </h2>
-          <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto leading-relaxed">
-            Acceso inmediato por solo {PRODUCT_PRICE}€. Si no te convence, te devuelvo el dinero en 48h.
-          </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-            <Link
-              href="/checkout/lisboa-1-dia-lo-esencial"
-              className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <span className="material-symbols-outlined text-xl">lock_open</span>
-              Desbloquear por {PRODUCT_PRICE}€
-              <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </Link>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
-            >
-              <span className="material-symbols-outlined text-lg">chat</span>
-              Tengo dudas
-            </Link>
-          </div>
+          {isFree ? (
+            <>
+              <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto leading-relaxed">
+                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+                <Link
+                  href="/itinerarios/lisboa-1-dia-lo-esencial"
+                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-green-700 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  <Icon name="lock_open" size={20} />
+                  Acceder Gratis
+                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/donar?guide=lisboa-1-dia-lo-esencial"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
+                >
+                  <Icon name="favorite" size={18} />
+                  Apoyar con donativo
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto leading-relaxed">
+                Acceso inmediato por solo {PRODUCT_PRICE}€. Si no te convence, te devuelvo el dinero en 48h.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+                <Link
+                  href="/checkout/lisboa-1-dia-lo-esencial"
+                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  <Icon name="lock_open" size={20} />
+                  Desbloquear por {PRODUCT_PRICE}€
+                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
+                >
+                  <Icon name="chat" size={18} />
+                  Tengo dudas
+                </Link>
+              </div>
+            </>
+          )}
 
           <div className="flex flex-wrap justify-center gap-6 text-white/70 text-sm">
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
-              Descarga inmediata
+              {isFree ? 'Acceso completo' : 'Descarga inmediata'}
             </span>
             <span className="flex items-center gap-1.5">
               <span className="material-symbols-outlined text-accent text-base">workspace_premium</span>
-              Garantía 48h
+              {isFree ? 'Actualizado 2026' : 'Garantía 48h'}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-blue-300 text-base">block</span>
+              <Icon name="block" size={16} className="text-blue-300" />
               Sin suscripciones
             </span>
           </div>

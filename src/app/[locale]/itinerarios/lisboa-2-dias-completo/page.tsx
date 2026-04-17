@@ -9,6 +9,7 @@ import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa2DiasTimeline } from '@/data/itineraries';
 import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 export const metadata = {
   title: 'Lisboa 2 Días Completo - Fin de Semana Perfecto 2026',
@@ -56,13 +57,13 @@ export default function Lisboa2DiasPage() {
             href="/itinerarios"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
           >
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
+            <Icon name="arrow_back" size={18} />
             Volver a itinerarios
           </Link>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-amber-400/30 mb-8">
-            <span className="material-symbols-outlined text-amber-300 text-lg">verified</span>
+            <Icon name="verified" size={18} className="text-amber-300" />
             <span className="text-sm font-bold tracking-wide">GUÍA PREMIUM</span>
           </div>
 
@@ -82,19 +83,19 @@ export default function Lisboa2DiasPage() {
           {/* Stats Pills */}
           <div className="flex flex-wrap gap-3 justify-center mb-16">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">location_on</span>
+              <Icon name="location_on" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">11 paradas épicas</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">restaurant</span>
+              <Icon name="restaurant" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">6 restaurantes</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">nightlife</span>
+              <Icon name="nightlife" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">Vida nocturna + Fado</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">map</span>
+              <Icon name="map" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">GPS y mapas</span>
             </div>
           </div>
@@ -106,16 +107,16 @@ export default function Lisboa2DiasPage() {
                 href="#itinerario"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
               >
-                <span className="material-symbols-outlined text-lg">lock_open</span>
+                <Icon name="lock_open" size={18} />
                 GRATIS por tiempo limitado
               </a>
               <div className="flex items-center gap-4 text-white/70 text-sm">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
+                  <Icon name="check_circle" size={16} className="text-green-400" />
                   Acceso completo
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-accent text-base">schedule</span>
+                  <Icon name="schedule" size={16} className="text-accent" />
                   Hasta {FREE_ACCESS_UNTIL}
                 </span>
               </div>
@@ -123,15 +124,15 @@ export default function Lisboa2DiasPage() {
           ) : (
             <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-green-400">check_circle</span>
+                <Icon name="check_circle" size={18} className="text-green-400" />
                 <span>Preview gratis</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-yellow-400">verified</span>
+                <Icon name="verified" size={18} className="text-yellow-400" />
                 <span>Creado por locales</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
+                <Icon name="workspace_premium" size={18} className="text-blue-400" />
                 <span>Garantía 48h</span>
               </div>
             </div>
@@ -140,7 +141,7 @@ export default function Lisboa2DiasPage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
@@ -157,7 +158,7 @@ export default function Lisboa2DiasPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 bg-amber-500/10 px-4 py-2 rounded-full">
-                <span className="material-symbols-outlined text-amber-500 text-lg">workspace_premium</span>
+                <Icon name="workspace_premium" size={18} className="text-amber-500" />
                 {isFree ? (
                   <span className="text-green-600 font-bold text-sm">GRATIS</span>
                 ) : (
@@ -165,14 +166,14 @@ export default function Lisboa2DiasPage() {
                 )}
               </div>
               <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
-                <span className="material-symbols-outlined text-lg">visibility</span>
+                <Icon name="visibility" size={18} />
                 {isFree ? 'Acceso completo sin costo' : 'Preview gratis disponible'}
               </div>
             </div>
             <div className="flex gap-3">
               {isFree ? (
                 <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-base">lock_open</span>
+                  <Icon name="lock_open" size={16} />
                   Acceso libre
                 </span>
               ) : (
@@ -180,7 +181,7 @@ export default function Lisboa2DiasPage() {
                   href="/checkout/lisboa-2-dias-completo"
                   className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
                 >
-                  <span className="material-symbols-outlined">lock_open</span>
+                  <Icon name="lock_open" size={18} />
                   Desbloquear guía
                 </Link>
               )}
@@ -206,7 +207,7 @@ export default function Lisboa2DiasPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-amber-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-amber-500 text-3xl">schedule</span>
+                <Icon name="schedule" size={30} className="text-amber-500" />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-text-main mb-1">Duración</h3>
@@ -216,7 +217,7 @@ export default function Lisboa2DiasPage() {
 
             <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-amber-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-amber-500 text-3xl">attractions</span>
+                <Icon name="attractions" size={30} className="text-amber-500" />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-text-main mb-1">Highlights</h3>
@@ -226,7 +227,7 @@ export default function Lisboa2DiasPage() {
 
             <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
               <div className="w-14 h-14 rounded-full bg-amber-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-amber-500 text-3xl">payments</span>
+                <Icon name="payments" size={30} className="text-amber-500" />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-text-main mb-1">Precio</h3>
@@ -309,14 +310,14 @@ export default function Lisboa2DiasPage() {
                 <div className="absolute top-0 right-0 w-16 h-16 opacity-10 bg-azulejo-pattern"></div>
 
                 <div className="inline-flex items-center gap-2 bg-secondary-blue/10 text-secondary-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide self-start">
-                  <span className="material-symbols-outlined text-base">lightbulb</span>
+                  <Icon name="lightbulb" size={16} />
                   Insider Tips
                 </div>
 
                 <ul className="flex flex-col gap-5 flex-1">
                   <li className="flex gap-3 items-start">
                     <div className="min-w-[32px] w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-amber-500 text-lg">tram</span>
+                      <Icon name="tram" size={18} className="text-amber-500" />
                     </div>
                     <div>
                       <h4 className="font-bold text-text-main text-sm">Tranvía 28</h4>
@@ -326,7 +327,7 @@ export default function Lisboa2DiasPage() {
 
                   <li className="flex gap-3 items-start">
                     <div className="min-w-[32px] w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-amber-500 text-lg">restaurant</span>
+                      <Icon name="restaurant" size={18} className="text-amber-500" />
                     </div>
                     <div>
                       <h4 className="font-bold text-text-main text-sm">Pastéis de Belém</h4>
@@ -336,7 +337,7 @@ export default function Lisboa2DiasPage() {
 
                   <li className="flex gap-3 items-start">
                     <div className="min-w-[32px] w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-amber-500 text-lg">nightlife</span>
+                      <Icon name="nightlife" size={18} className="text-amber-500" />
                     </div>
                     <div>
                       <h4 className="font-bold text-text-main text-sm">Fado auténtico</h4>
@@ -354,31 +355,59 @@ export default function Lisboa2DiasPage() {
       <section className="py-24 bg-gradient-to-br from-amber-500 to-orange-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
         <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">travel_explore</span>
+          <Icon name="travel_explore" size={72} className="text-white mb-6 inline-block" />
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Listo para tu fin de semana perfecto?
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/checkout/lisboa-2-dias-completo"
-              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-amber-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">lock_open</span>
-              Desbloquear por {PRODUCT_PRICE}€
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </Link>
-            <a
-              href="/contacto"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">chat</span>
-              Tengo dudas
-            </a>
-          </div>
-          <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+          {isFree ? (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/itinerarios/lisboa-2-dias-completo"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-green-700 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <Icon name="lock_open" size={24} />
+                  Acceder Gratis
+                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/donar?guide=lisboa-2-dias-completo"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <Icon name="favorite" size={24} />
+                  Apoyar con donativo
+                </Link>
+              </div>
+              <p className="text-white/80 text-sm mt-6">Acceso completo · Actualizado 2026 · Sin suscripciones</p>
+            </>
+          ) : (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/checkout/lisboa-2-dias-completo"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-amber-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <Icon name="lock_open" size={24} />
+                  Desbloquear por {PRODUCT_PRICE}€
+                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <a
+                  href="/contacto"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <Icon name="chat" size={24} />
+                  Tengo dudas
+                </a>
+              </div>
+              <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+            </>
+          )}
         </div>
       </section>
     </main>

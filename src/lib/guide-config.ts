@@ -8,9 +8,8 @@ export const HIDE_GUIDE_PHOTOS = true;
  * Cambiar FREE_ACCESS_UNTIL a null para desactivar.
  * Formato: 'YYYY-MM-DD'
  */
-export const FREE_ACCESS_UNTIL = '2026-03-15';
+export const FREE_ACCESS_UNTIL = '2099-12-31';
 
 export function isFreeAccessActive(): boolean {
-  if (!FREE_ACCESS_UNTIL) return false;
-  return new Date() < new Date(FREE_ACCESS_UNTIL + 'T23:59:59');
+  return true;
 }

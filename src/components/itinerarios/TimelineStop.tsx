@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { TimelineStop as TimelineStopType } from '@/data/itineraries';
 import { timelineFallbackImages } from '@/lib/media';
 import { HIDE_GUIDE_PHOTOS } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 interface TimelineStopProps extends TimelineStopType {
   index: number;
@@ -37,9 +38,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
         {description}
       </p>
       <div className={`flex items-start gap-3 p-4 rounded-xl border ${tipBg} mb-5`}>
-        <span className={`material-symbols-outlined text-xl mt-0.5 flex-shrink-0 ${tipIconColor}`}>
-          lightbulb
-        </span>
+        <Icon name="lightbulb" size={20} className={`mt-0.5 flex-shrink-0 ${tipIconColor}`} />
         <p className="text-slate-700 text-sm md:text-base font-medium leading-relaxed">
           {tip}
         </p>
@@ -102,9 +101,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-              <span className="material-symbols-outlined text-6xl text-slate-400">
-                {type === 'food' ? 'restaurant' : 'location_on'}
-              </span>
+              <Icon name={type === 'food' ? 'restaurant' : 'location_on'} size={60} className="text-slate-400" />
             </div>
           )}
         </div>

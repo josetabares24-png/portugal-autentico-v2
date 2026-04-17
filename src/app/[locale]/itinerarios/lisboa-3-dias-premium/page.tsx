@@ -9,6 +9,7 @@ import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
 import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 export const metadata = {
   title: 'Lisboa 3 Días + Sintra - Guía Completa 2026',
@@ -57,13 +58,13 @@ export default function Lisboa3DiasPremiumPage() {
             href="/itinerarios"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
           >
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
+            <Icon name="arrow_back" size={18} />
             Volver a itinerarios
           </Link>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-teal-400/30 mb-8">
-            <span className="material-symbols-outlined text-teal-300 text-lg">verified</span>
+            <Icon name="verified" size={18} className="text-teal-300" />
             <span className="text-sm font-bold tracking-wide">GUÍA PREMIUM</span>
           </div>
 
@@ -83,19 +84,19 @@ export default function Lisboa3DiasPremiumPage() {
           {/* Stats Pills */}
           <div className="flex flex-wrap gap-3 justify-center mb-16">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">location_on</span>
+              <Icon name="location_on" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">{totalStops} paradas</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">castle</span>
+              <Icon name="castle" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">Día completo Sintra</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">explore</span>
+              <Icon name="explore" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">Lisboa + excursión</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">map</span>
+              <Icon name="map" size={14} className="text-white" />
               <span className="text-white text-sm font-medium">GPS y mapas</span>
             </div>
           </div>
@@ -359,27 +360,55 @@ export default function Lisboa3DiasPremiumPage() {
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Listo para tu experiencia premium?
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/checkout/lisboa-3-dias-premium"
-              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-teal-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">lock_open</span>
-              Desbloquear por {PRODUCT_PRICE}€
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </Link>
-            <a
-              href="/contacto"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">chat</span>
-              Tengo dudas
-            </a>
-          </div>
-          <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+          {isFree ? (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/itinerarios/lisboa-3-dias-premium"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-green-700 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">lock_open</span>
+                  Acceder Gratis
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
+                <Link
+                  href="/donar?guide=lisboa-3-dias-premium"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">favorite</span>
+                  Apoyar con donativo
+                </Link>
+              </div>
+              <p className="text-white/80 text-sm mt-6">Acceso completo · Actualizado 2026 · Sin suscripciones</p>
+            </>
+          ) : (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/checkout/lisboa-3-dias-premium"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-teal-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">lock_open</span>
+                  Desbloquear por {PRODUCT_PRICE}€
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
+                <a
+                  href="/contacto"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">chat</span>
+                  Tengo dudas
+                </a>
+              </div>
+              <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+            </>
+          )}
         </div>
       </section>
     </main>

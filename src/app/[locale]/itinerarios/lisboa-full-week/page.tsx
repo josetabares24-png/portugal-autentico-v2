@@ -9,6 +9,7 @@ import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFullWeekTimeline } from '@/data/itineraries';
 import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 export const metadata = {
   title: 'Lisboa Semana Completa - 7 Días 2026',
@@ -369,27 +370,55 @@ export default function LisboaFullWeekPage() {
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
             ¿Listo para tu semana en Lisboa?
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/checkout/lisboa-full-week"
-              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-purple-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">lock_open</span>
-              Desbloquear por {PRODUCT_PRICE}€
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </Link>
-            <a
-              href="/contacto"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
-            >
-              <span className="material-symbols-outlined text-2xl">chat</span>
-              Tengo dudas
-            </a>
-          </div>
-          <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+          {isFree ? (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/itinerarios/lisboa-full-week"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-green-700 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">lock_open</span>
+                  Acceder Gratis
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
+                <Link
+                  href="/donar?guide=lisboa-full-week"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">favorite</span>
+                  Apoyar con donativo
+                </Link>
+              </div>
+              <p className="text-white/80 text-sm mt-6">Acceso completo · Actualizado 2026 · Sin suscripciones</p>
+            </>
+          ) : (
+            <>
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/checkout/lisboa-full-week"
+                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-purple-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">lock_open</span>
+                  Desbloquear por {PRODUCT_PRICE}€
+                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
+                <a
+                  href="/contacto"
+                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                >
+                  <span className="material-symbols-outlined text-2xl">chat</span>
+                  Tengo dudas
+                </a>
+              </div>
+              <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+            </>
+          )}
         </div>
       </section>
     </main>
