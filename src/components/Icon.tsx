@@ -11,7 +11,7 @@ import {
   User, Users, UserCheck,
   Hotel, Bed, Home, Building,
   Utensils, Coffee,
-  Train, Bus, Tram, Plane, Car, Bike, Footprints,
+  Train, Bus, TramFront, Plane, Car, Bike, Footprints,
   Camera, Sun, Cloud,
   BookOpen, Newspaper, FileText,
   LogIn, Crown, Award, Gift, Ticket,
@@ -156,7 +156,7 @@ const iconMap: Record<string, LucideIcon> = {
 
   // Transporte
   train: Train,
-  tram: Tram,
+  tram: TramFront,
   bus: Bus,
   flight: Plane,
   flight_land: Plane,
