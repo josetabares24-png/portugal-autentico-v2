@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
+import Icon from '@/components/Icon';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +76,7 @@ export default function Header() {
                 ) : (
                   <SignInButton mode="modal">
                     <button className="flex items-center gap-2 text-slate-700 hover:text-primary font-medium transition-colors">
-                      <span className="material-symbols-outlined">person</span>
+                      <Icon name="person" size={16} />
                       <span>Iniciar Sesión</span>
                     </button>
                   </SignInButton>
@@ -90,9 +91,7 @@ export default function Header() {
             className="md:hidden text-slate-900"
             aria-label="Toggle menu"
           >
-            <span className="material-symbols-outlined text-3xl">
-              {isOpen ? 'close' : 'menu'}
-            </span>
+            <Icon name={isOpen ? 'close' : 'menu'} size={30} />
           </button>
         </div>
 
@@ -134,7 +133,7 @@ export default function Header() {
                   ) : (
                     <SignInButton mode="modal">
                       <button className="text-slate-700 hover:text-primary font-medium text-lg py-2 text-left transition-colors flex items-center gap-2">
-                        <span className="material-symbols-outlined">person</span>
+                        <Icon name="person" size={16} />
                         <span>Iniciar Sesión</span>
                       </button>
                     </SignInButton>

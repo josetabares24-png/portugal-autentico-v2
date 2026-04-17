@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 interface PreviewPaywallProps {
   productId: string;
@@ -23,7 +24,7 @@ export function PreviewPaywall({ productId, price, productName, totalStops }: Pr
 
         {/* Lock Icon */}
         <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="material-symbols-outlined text-white text-5xl">lock</span>
+          <Icon name="lock" size={48} className="text-white" />
         </div>
 
         {/* Headline */}
@@ -39,17 +40,17 @@ export function PreviewPaywall({ productId, price, productName, totalStops }: Pr
         {/* What's Included */}
         <div className="grid md:grid-cols-3 gap-4 mb-10 text-left">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <span className="material-symbols-outlined text-primary text-3xl mb-2 block">restaurant</span>
+            <Icon name="restaurant" size={30} className="text-primary mb-2 block" />
             <h4 className="font-bold text-white text-sm mb-1">Restaurantes Locales</h4>
             <p className="text-white/70 text-xs">Probados en 2026</p>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <span className="material-symbols-outlined text-primary text-3xl mb-2 block">photo_camera</span>
+            <Icon name="photo_camera" size={30} className="text-primary mb-2 block" />
             <h4 className="font-bold text-white text-sm mb-1">Spots de Fotos</h4>
             <p className="text-white/70 text-xs">Mejores ángulos</p>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <span className="material-symbols-outlined text-primary text-3xl mb-2 block">map</span>
+            <Icon name="map" size={30} className="text-primary mb-2 block" />
             <h4 className="font-bold text-white text-sm mb-1">Mapas Offline</h4>
             <p className="text-white/70 text-xs">GPS exacto</p>
           </div>
@@ -68,23 +69,23 @@ export function PreviewPaywall({ productId, price, productName, totalStops }: Pr
           href={`/checkout/${productId}`}
           className="inline-flex items-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all group"
         >
-          <span className="material-symbols-outlined text-2xl">lock_open</span>
+          <Icon name="lock_open" size={24} />
           Desbloquear Guía Completa
-          <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
 
         {/* Trust badges */}
         <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-white/70">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-green-400">check_circle</span>
+            <Icon name="check_circle" size={18} className="text-green-400" />
             <span>Descarga inmediata</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-yellow-400">workspace_premium</span>
+            <Icon name="workspace_premium" size={18} className="text-yellow-400" />
             <span>Garantía 48h</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-blue-400">update</span>
+            <Icon name="update" size={18} className="text-blue-400" />
             <span>Actualizado 2026</span>
           </div>
         </div>

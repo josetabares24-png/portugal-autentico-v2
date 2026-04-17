@@ -8,6 +8,7 @@ import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 import { useIsAdmin } from '@/hooks/useIsAdmin';
 import LisbonStatus from '@/components/LisbonStatus';
 import LanguageSelector from '@/components/LanguageSelector';
+import Icon from '@/components/Icon';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,25 +57,25 @@ export default function Navbar() {
               onMouseLeave={() => setUtilidadesDropdownOpen(false)}
             >
               <button className={`px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-slate-50 flex items-center gap-1.5 ${
-                ['/apps', '/presupuesto', '/transporte', '/info-util'].some(p => pathname.startsWith(p))
+                ['/apps', '/presupuesto', '/transporte', '/info-util', '/donde-dormir', '/free-tours'].some(p => pathname.startsWith(p))
                   ? 'text-primary bg-primary/10'
                   : 'text-slate-700'
               }`}>
                 Utilidades
-                <span className="material-symbols-outlined text-base">expand_more</span>
+                <Icon name="expand_more" size={16} />
               </button>
 
               {utilidadesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-premium border border-slate-100 py-3 z-50">
                   <Link href="/apps" className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
-                    <span className="material-symbols-outlined text-primary text-xl mt-0.5 group-hover:scale-110 transition-transform">phone_iphone</span>
+                    <Icon name="phone_iphone" size={20} className="text-primary mt-0.5 group-hover:scale-110 transition-transform" />
                     <div>
                       <div className="font-bold text-slate-900 text-sm mb-0.5">Apps Útiles</div>
                       <div className="text-xs text-slate-500">Mejores apps para viajar</div>
                     </div>
                   </Link>
                   <Link href="/presupuesto" className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
-                    <span className="material-symbols-outlined text-primary text-xl mt-0.5 group-hover:scale-110 transition-transform">calculate</span>
+                    <Icon name="calculate" size={20} className="text-primary mt-0.5 group-hover:scale-110 transition-transform" />
                     <div>
                       <div className="font-bold text-slate-900 text-sm mb-0.5">Calculadora Presupuesto</div>
                       <div className="text-xs text-slate-500">Calcula cuánto necesitas</div>
@@ -82,11 +83,19 @@ export default function Navbar() {
                   </Link>
                   <div className="border-t border-slate-100 my-2"></div>
                   <Link href="/transporte" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
-                    <span className="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">directions_transit</span>
+                    <Icon name="directions_transit" size={18} className="group-hover:scale-110 transition-transform" />
                     <span className="font-semibold text-sm">Transporte</span>
                   </Link>
+                  <Link href="/donde-dormir" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
+                    <Icon name="hotel" size={18} className="group-hover:scale-110 transition-transform" />
+                    <span className="font-semibold text-sm">Dónde Dormir</span>
+                  </Link>
+                  <Link href="/free-tours" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
+                    <Icon name="tour" size={18} className="group-hover:scale-110 transition-transform" />
+                    <span className="font-semibold text-sm">Free Tours</span>
+                  </Link>
                   <Link href="/info-util" className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors group">
-                    <span className="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">info</span>
+                    <Icon name="info" size={18} className="group-hover:scale-110 transition-transform" />
                     <span className="font-semibold text-sm">Info Útil</span>
                   </Link>
                 </div>
@@ -126,7 +135,7 @@ export default function Navbar() {
                     href="/admin"
                     className="px-4 py-2.5 text-orange-600 hover:text-orange-700 font-semibold text-sm transition-colors rounded-xl hover:bg-orange-50 border border-orange-200"
                   >
-                    <span className="material-symbols-outlined text-lg align-middle mr-1">admin_panel_settings</span>
+                    <Icon name="admin_panel_settings" size={18} className="align-middle mr-1" />
                     Admin
                   </Link>
                 )}
@@ -145,7 +154,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-2.5 rounded-xl shadow-soft hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 text-sm"
             >
               <span>Ver Guías</span>
-              <span className="material-symbols-outlined text-lg">arrow_forward</span>
+              <Icon name="arrow_forward" size={18} />
             </Link>
           </div>
 
@@ -156,9 +165,7 @@ export default function Navbar() {
             aria-label={mobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             aria-expanded={mobileMenuOpen}
           >
-            <span className="material-symbols-outlined text-3xl" aria-hidden="true">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
+            <Icon name={mobileMenuOpen ? 'close' : 'menu'} size={30} aria-hidden="true" />
           </button>
         </div>
 
@@ -171,19 +178,27 @@ export default function Navbar() {
               <div className="mb-3">
                 <div className="px-4 py-2 text-xs font-bold text-slate-500 uppercase tracking-wide">Utilidades</div>
                 <Link href="/apps" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 rounded-xl transition-colors">
-                  <span className="material-symbols-outlined text-primary text-xl">phone_iphone</span>
+                  <Icon name="phone_iphone" size={20} className="text-primary" />
                   <span>Apps Útiles</span>
                 </Link>
                 <Link href="/presupuesto" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 rounded-xl transition-colors">
-                  <span className="material-symbols-outlined text-primary text-xl">calculate</span>
+                  <Icon name="calculate" size={20} className="text-primary" />
                   <span>Calculadora Presupuesto</span>
                 </Link>
                 <Link href="/transporte" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
-                  <span className="material-symbols-outlined text-lg">directions_transit</span>
+                  <Icon name="directions_transit" size={18} />
                   <span>Transporte</span>
                 </Link>
+                <Link href="/donde-dormir" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
+                  <Icon name="hotel" size={18} />
+                  <span>Dónde Dormir</span>
+                </Link>
+                <Link href="/free-tours" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
+                  <Icon name="tour" size={18} />
+                  <span>Free Tours</span>
+                </Link>
                 <Link href="/info-util" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 rounded-xl transition-colors font-medium">
-                  <span className="material-symbols-outlined text-lg">info</span>
+                  <Icon name="info" size={18} />
                   <span>Info Útil</span>
                 </Link>
               </div>
@@ -223,7 +238,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenuOpen(false)}
                         className="px-4 py-3 text-orange-600 hover:text-orange-700 font-semibold text-base rounded-xl hover:bg-orange-50 transition-colors border border-orange-200"
                       >
-                        <span className="material-symbols-outlined text-lg align-middle mr-2">admin_panel_settings</span>
+                        <Icon name="admin_panel_settings" size={18} className="align-middle mr-2" />
                         Panel de Admin
                       </Link>
                     )}
@@ -245,7 +260,7 @@ export default function Navbar() {
                   className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl shadow-soft hover:shadow-card-hover transition-all duration-300 text-sm"
                 >
                   <span>Ver Guías</span>
-                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                  <Icon name="arrow_forward" size={18} />
                 </Link>
               </div>
             </div>

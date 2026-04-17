@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import Icon from '@/components/Icon';
 
 interface PageHeroProps {
   title: string | ReactNode;
@@ -45,7 +46,7 @@ export default function PageHero({
         {badge && (
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
             {badge.icon && (
-              <span className="material-symbols-outlined text-base">{badge.icon}</span>
+              <Icon name={badge.icon} size={16} />
             )}
             <span className="text-sm font-semibold tracking-wide">{badge.text}</span>
           </div>
@@ -71,7 +72,7 @@ export default function PageHero({
       {/* Scroll Indicator */}
       {showScrollIndicator && (
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
+          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       )}
     </section>

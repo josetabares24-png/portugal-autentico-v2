@@ -6,11 +6,16 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   async redirects() {
     return [
-      { source: '/donde-dormir', destination: '/itinerarios', permanent: true },
+      // Default locale (no prefix)
       { source: '/tours', destination: '/itinerarios', permanent: true },
       { source: '/guia-practica', destination: '/info-util', permanent: true },
       { source: '/mapa', destination: '/itinerarios', permanent: true },
       { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
+      // Sintra slug antiguo → premium actual
+      { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      // Redirecciones de versiones en/ko a español (sitio monoidioma)
+      { source: '/en/:path*', destination: '/:path*', permanent: true },
+      { source: '/ko/:path*', destination: '/:path*', permanent: true },
     ];
   },
   typescript: {

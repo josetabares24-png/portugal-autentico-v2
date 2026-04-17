@@ -8,20 +8,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#c65d3b",
-        "primary-dark": "#a84d2f",
-        "secondary-blue": "#0A3D62",
-        accent: "#F2CB05",
-        "background-light": "#faf8f5",
-        "background-cream": "#f5f2eb",
-        "background-dark": "#1a1614",
-        "text-main": "#1a1614",
-        "text-secondary": "#5a524c",
-        "border-soft": "#e8e4df",
+        cream: "#F5EFE6",
+        night: "#1a2b4a",
+        terracotta: "#C84B31",
+        taupe: "#8A8279",
+        // Legacy aliases (para no romper componentes existentes durante la migración)
+        primary: "#C84B31",
+        "primary-dark": "#a83d27",
+        "secondary-blue": "#1a2b4a",
+        "background-light": "#F5EFE6",
+        "background-cream": "#F5EFE6",
+        "text-main": "#1a2b4a",
+        "text-secondary": "#8A8279",
+        "border-soft": "#e8e2d9",
       },
       fontFamily: {
         display: ["var(--font-display)", "Playfair Display", "Georgia", "serif"],
-        body: ["var(--font-body)", "Plus Jakarta Sans", "Noto Sans KR", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Montserrat", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04)",

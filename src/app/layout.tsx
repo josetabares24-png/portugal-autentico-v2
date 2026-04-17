@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
-import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google';
+import { Montserrat, Playfair_Display } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
-const plusJakarta = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500'],
 });
 
 const playfair = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
   display: 'swap',
-  weight: ['400', '600', '700', '900'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -69,11 +70,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com',
-    languages: {
-      'es': 'https://estabaenlisboa.com',
-      'en': 'https://estabaenlisboa.com/en',
-      'ko': 'https://estabaenlisboa.com/ko',
-    },
   },
 };
 
@@ -102,13 +98,9 @@ export default async function RootLayout({
           <link rel="dns-prefetch" href="https://api.stripe.com" />
           <link rel="dns-prefetch" href="https://clerk.com" />
 
-          <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-            rel="stylesheet"
-          />
           <SchemaMarkup />
         </head>
-        <body className={`${plusJakarta.variable} ${playfair.variable} antialiased`}>
+        <body className={`${montserrat.variable} ${playfair.variable} antialiased`}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded focus:shadow-lg focus:outline-none"

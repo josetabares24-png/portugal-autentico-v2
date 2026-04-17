@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { routing } from '@/i18n/routing';
+import Icon from '@/components/Icon';
 
 const localeNames: Record<string, string> = {
   es: 'Espanol',
@@ -56,9 +57,9 @@ export default function LanguageSelector() {
         aria-label="Cambiar idioma"
         aria-expanded={open}
       >
-        <span className="material-symbols-outlined text-base">language</span>
+        <Icon name="language" size={16} />
         <span className="uppercase text-xs font-bold tracking-wider">{locale}</span>
-        <span className="material-symbols-outlined text-sm">expand_more</span>
+        <Icon name="expand_more" size={14} />
       </button>
 
       {open && (

@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Icon from '@/components/Icon';
 
 interface Coordinate {
   lat: number;
@@ -90,9 +91,7 @@ export default function ItineraryMap({
               className="absolute top-4 right-4 bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl font-bold text-sm shadow-lg border border-slate-200 flex items-center gap-2 z-10 transition-all"
               aria-label={isExpanded ? 'Reducir mapa' : 'Expandir mapa a pantalla completa'}
             >
-              <span className="material-symbols-outlined text-lg">
-                {isExpanded ? 'close_fullscreen' : 'open_in_full'}
-              </span>
+              <Icon name={isExpanded ? 'close_fullscreen' : 'open_in_full'} size={18} />
               {isExpanded ? 'Reducir' : 'Pantalla completa'}
             </button>
           </div>
@@ -106,7 +105,7 @@ export default function ItineraryMap({
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white text-slate-700 rounded-xl font-bold hover:scale-105 transition-all shadow-lg"
               >
-                <span className="material-symbols-outlined text-xl">open_in_new</span>
+                <Icon name="open_in_new" size={20} />
                 Abrir en Google Maps
               </a>
               <a
@@ -115,7 +114,7 @@ export default function ItineraryMap({
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-slate-600 hover:bg-slate-500 text-white rounded-xl font-bold transition-all"
               >
-                <span className="material-symbols-outlined text-xl">directions</span>
+                <Icon name="directions" size={20} />
                 Cómo llegar
               </a>
             </div>
@@ -131,7 +130,7 @@ export default function ItineraryMap({
         {/* Info */}
         <div className="mt-8 bg-white rounded-2xl p-6 border-2 border-slate-200">
           <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">info</span>
+            <Icon name="info" size={18} className="text-primary" />
             Cómo usar este mapa
           </h3>
           <div className="grid md:grid-cols-3 gap-4 text-sm">

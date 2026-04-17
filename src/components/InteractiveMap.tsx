@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '@/components/Icon';
 
 interface InteractiveMapProps {
   mapId: string;
@@ -38,7 +39,7 @@ export default function InteractiveMap({
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-            <span className="material-symbols-outlined text-xl">new_releases</span>
+            <Icon name="new_releases" size={20} />
             EXCLUSIVO - VALOR AÑADIDO
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
@@ -52,22 +53,22 @@ export default function InteractiveMap({
         {/* Benefits Grid */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-xl p-4 text-center border-2 border-blue-200">
-            <span className="material-symbols-outlined text-blue-600 text-3xl mb-2">restaurant</span>
+            <Icon name="restaurant" size={30} className="text-blue-600 mb-2" />
             <p className="font-bold text-slate-900 text-sm">Restaurantes</p>
             <p className="text-xs text-slate-600">Locales verificados</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center border-2 border-blue-200">
-            <span className="material-symbols-outlined text-blue-600 text-3xl mb-2">photo_camera</span>
+            <Icon name="photo_camera" size={30} className="text-blue-600 mb-2" />
             <p className="font-bold text-slate-900 text-sm">Spots de fotos</p>
             <p className="text-xs text-slate-600">Mejores ángulos</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center border-2 border-blue-200">
-            <span className="material-symbols-outlined text-blue-600 text-3xl mb-2">castle</span>
+            <Icon name="castle" size={30} className="text-blue-600 mb-2" />
             <p className="font-bold text-slate-900 text-sm">Monumentos</p>
             <p className="text-xs text-slate-600">Con horarios</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center border-2 border-blue-200">
-            <span className="material-symbols-outlined text-blue-600 text-3xl mb-2">download</span>
+            <Icon name="download" size={30} className="text-blue-600 mb-2" />
             <p className="font-bold text-slate-900 text-sm">Offline</p>
             <p className="text-xs text-slate-600">Descargable</p>
           </div>
@@ -78,7 +79,7 @@ export default function InteractiveMap({
           {isPlaceholder && !hasFallback ? (
             // Placeholder cuando aún no se ha creado el mapa
             <div className="relative h-96 bg-gradient-to-br from-blue-100 to-indigo-200 flex flex-col items-center justify-center p-8">
-              <span className="material-symbols-outlined text-blue-600 text-8xl mb-6">map</span>
+              <Icon name="map" size={96} className="text-blue-600 mb-6" />
               <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">
                 Mapa Interactivo en Preparación
               </h3>
@@ -119,9 +120,7 @@ export default function InteractiveMap({
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="absolute top-4 right-4 bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl font-bold text-sm shadow-lg border border-slate-200 flex items-center gap-2 z-10"
               >
-                <span className="material-symbols-outlined text-lg">
-                  {isExpanded ? 'close_fullscreen' : 'open_in_full'}
-                </span>
+                <Icon name={isExpanded ? 'close_fullscreen' : 'open_in_full'} size={18} />
                 {isExpanded ? 'Reducir' : 'Pantalla completa'}
               </button>
             </>
@@ -136,7 +135,7 @@ export default function InteractiveMap({
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white text-blue-600 rounded-xl font-bold hover:scale-105 transition-all shadow-lg"
                 >
-                  <span className="material-symbols-outlined text-xl">open_in_new</span>
+                  <Icon name="open_in_new" size={20} />
                   Ver mapa completo en nueva pestaña
                 </a>
                 {!isPlaceholder && (
@@ -146,7 +145,7 @@ export default function InteractiveMap({
                     }}
                     className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white/20 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold hover:bg-white/30 transition-all"
                   >
-                    <span className="material-symbols-outlined text-xl">download</span>
+                    <Icon name="download" size={20} />
                     Descargar para offline
                   </button>
                 )}
@@ -164,7 +163,7 @@ export default function InteractiveMap({
         {/* How to use section */}
         <div className="mt-8 bg-white rounded-2xl p-6 border-2 border-slate-200">
           <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <span className="material-symbols-outlined text-blue-600">info</span>
+            <Icon name="info" size={18} className="text-blue-600" />
             Cómo usar este mapa
           </h3>
           <div className="grid md:grid-cols-3 gap-4 text-sm">

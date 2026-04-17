@@ -2,6 +2,7 @@
 
 import { useUser, SignInButton } from '@clerk/nextjs';
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 
 interface PaywallProps {
   guideId: string;
@@ -36,7 +37,7 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-primary">
           <div className="text-center">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-orange-500 mx-auto mb-6 flex items-center justify-center">
-              <span className="material-symbols-outlined text-white text-5xl">lock</span>
+              <Icon name="lock" size={48} className="text-white" />
             </div>
 
             <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
@@ -57,7 +58,7 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
                 'Actualizaciones gratuitas de por vida'
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-2">
-                  <span className="material-symbols-outlined text-green-600 text-xl flex-shrink-0">check_circle</span>
+                  <Icon name="check_circle" size={20} className="text-green-600 flex-shrink-0" />
                   <span className="text-sm text-slate-700">{feature}</span>
                 </div>
               ))}
@@ -73,11 +74,11 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
               </div>
               <div className="flex items-center justify-center gap-6 text-xs text-slate-600">
                 <div className="flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">check_circle</span>
+                  <Icon name="check_circle" size={14} />
                   <span>Sin subscripción</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">verified</span>
+                  <Icon name="verified" size={14} />
                   <span>Garantía 48h</span>
                 </div>
               </div>
@@ -87,7 +88,7 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
               <div className="space-y-4">
                 <SignInButton mode="modal">
                   <button className="w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-black py-5 px-10 rounded-2xl text-xl shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2">
-                    <span className="material-symbols-outlined text-2xl">login</span>
+                    <Icon name="login" size={24} />
                     <span>Inicia Sesión para Desbloquear</span>
                   </button>
                 </SignInButton>
@@ -101,7 +102,7 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
                   onClick={() => alert('Próximamente: Stripe Checkout')}
                   className="w-full bg-gradient-to-r from-primary to-orange-500 hover:from-primary-dark hover:to-orange-600 text-white font-black py-5 px-10 rounded-2xl text-xl shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2"
                 >
-                  <span className="material-symbols-outlined text-2xl">shopping_cart</span>
+                  <Icon name="shopping_cart" size={24} />
                   <span>Comprar por {price}</span>
                 </button>
                 <p className="text-sm text-slate-500">
@@ -112,7 +113,7 @@ export default function Paywall({ guideId, guideName, price, remainingStops }: P
 
             <div className="mt-8 pt-6 border-t border-slate-200">
               <Link href="/itinerarios" className="text-primary hover:text-primary-dark font-bold text-sm inline-flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">local_offer</span>
+                <Icon name="local_offer" size={14} />
                 <span>Ver todas las guías disponibles</span>
               </Link>
             </div>

@@ -5,6 +5,7 @@ import { useUser } from '@clerk/nextjs';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { isFreeAccessActive } from '@/lib/guide-config';
+import Icon from '@/components/Icon';
 
 const ItineraryMap = dynamic(() => import('@/components/ItineraryMap'), {
   ssr: false,
@@ -95,7 +96,7 @@ export function PremiumContent({
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-white rounded-2xl p-12 text-center shadow-xl border-2 border-slate-200">
             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="material-symbols-outlined text-primary text-5xl">lock</span>
+              <Icon name="lock" size={48} className="text-primary" />
             </div>
             <h3 className="text-3xl font-black text-slate-900 mb-4">
               Contenido Premium
@@ -107,7 +108,7 @@ export function PremiumContent({
               href={`/checkout/${productId}`}
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold text-lg shadow-lg hover:scale-105 transition-all"
             >
-              <span className="material-symbols-outlined">lock_open</span>
+              <Icon name="lock_open" size={18} />
               Desbloquear por {price}€
             </Link>
           </div>
@@ -150,7 +151,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">train</span>
+                <Icon name="train" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Metro de Lisboa</h3>
             </div>
@@ -164,7 +165,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver mapa oficial
-              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              <Icon name="open_in_new" size={14} />
             </a>
           </div>
 
@@ -172,7 +173,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">tram</span>
+                <Icon name="tram" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Tranvías</h3>
             </div>
@@ -186,7 +187,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver rutas
-              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              <Icon name="open_in_new" size={14} />
             </a>
           </div>
 
@@ -194,7 +195,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">directions_bus</span>
+                <Icon name="directions_bus" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Autobuses</h3>
             </div>
@@ -208,7 +209,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver rutas
-              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              <Icon name="open_in_new" size={14} />
             </a>
           </div>
 
@@ -216,7 +217,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">credit_card</span>
+                <Icon name="credit_card" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Lisboa Card</h3>
             </div>
@@ -228,7 +229,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver análisis
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              <Icon name="arrow_forward" size={14} />
             </a>
           </div>
 
@@ -236,7 +237,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">local_taxi</span>
+                <Icon name="local_taxi" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Uber / Bolt</h3>
             </div>
@@ -248,7 +249,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver comparativa
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              <Icon name="arrow_forward" size={14} />
             </a>
           </div>
 
@@ -256,7 +257,7 @@ function UsefulResources() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-slate-200 hover:border-primary transition-all">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-2xl">map</span>
+                <Icon name="map" size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Barrios de Lisboa</h3>
             </div>
@@ -268,7 +269,7 @@ function UsefulResources() {
               className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
             >
               Ver itinerarios por barrios
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              <Icon name="arrow_forward" size={14} />
             </a>
           </div>
         </div>
