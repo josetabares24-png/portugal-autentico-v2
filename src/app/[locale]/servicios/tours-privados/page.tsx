@@ -1,7 +1,5 @@
-// src/app/servicios/tours-privados/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Clock, Users, Star, CheckCircle, Calendar } from 'lucide-react';
 
 export default function ToursPrivadosPage() {
   const tours = [
@@ -38,125 +36,85 @@ export default function ToursPrivadosPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-20">
+    <main id="main-content">
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/alfama-panoramica.jpg"
-            alt="Tours Privados Lisboa"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/40" />
-        </div>
-
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-            <span className="text-white font-semibold">Próximamente Disponible</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/alfama-panoramica.jpg"
+          alt="Tours Privados Lisboa"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/60 text-xs uppercase tracking-widest mb-3">Próximamente disponible</p>
+          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
             Tours Privados en Lisboa
           </h1>
-          <p className="text-xl md:text-2xl text-white/90">
-            Experiencias exclusivas con guías locales expertos
-          </p>
+          <p className="text-white/70 text-sm">Experiencias exclusivas con guías locales expertos</p>
         </div>
       </section>
 
-      {/* Tours Grid */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
-              Nuestros Tours
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experiencias privadas diseñadas para descubrir el verdadero Lisboa
-            </p>
-          </div>
-
+      {/* Tours */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Nuestros tours
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {tours.map((tour) => (
-              <div key={tour.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="relative h-64">
-                  <Image
-                    src={tour.image}
-                    alt={tour.title}
-                    fill
-                    className="object-cover"
-                  />
+              <article key={tour.id} className="border-t-2 border-border-soft pt-6">
+                <div className="relative aspect-[4/3] overflow-hidden mb-5">
+                  <Image src={tour.image} alt={tour.title} fill className="object-cover" />
                 </div>
-
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {tour.title}
-                  </h3>
-
-                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{tour.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>Máx. {tour.maxPersonas}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 mb-4">
-                    {tour.descripcion}
-                  </p>
-
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Incluye:</h4>
-                    <ul className="space-y-1">
-                      {tour.incluye.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="border-t pt-4 flex items-center justify-between">
-                    <div>
-                      <div className="text-3xl font-black text-primary-600">
-                        €{tour.price}
-                      </div>
-                      <div className="text-sm text-gray-600">por grupo</div>
-                    </div>
-                    <button
-                      disabled
-                      className="px-6 py-3 bg-gray-300 text-gray-500 rounded-xl font-bold cursor-not-allowed"
-                    >
-                      Próximamente
-                    </button>
-                  </div>
+                <h3 className="font-display italic text-text-main text-xl mb-2">{tour.title}</h3>
+                <div className="flex items-center gap-4 mb-3 text-xs text-text-secondary">
+                  <span>{tour.duration}</span>
+                  <span>·</span>
+                  <span>Máx. {tour.maxPersonas} personas</span>
                 </div>
-              </div>
+                <p className="text-text-secondary text-xs leading-relaxed mb-4">{tour.descripcion}</p>
+                <ul className="space-y-1 mb-5">
+                  {tour.incluye.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-text-secondary">
+                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-border-soft pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-2xl font-bold text-text-main">€{tour.price}</p>
+                    <p className="text-xs text-text-secondary">por grupo</p>
+                  </div>
+                  <button
+                    disabled
+                    className="px-4 py-2 border border-border-soft text-text-secondary text-xs font-semibold cursor-not-allowed"
+                  >
+                    Próximamente
+                  </button>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 bg-primary-600 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <Calendar className="w-16 h-16 mx-auto mb-6 opacity-90" />
-          <h2 className="text-3xl md:text-5xl font-black mb-4">
-            Disponible Muy Pronto
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Estamos seleccionando los mejores guías locales para ofrecerte experiencias inolvidables
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="font-display italic text-white text-3xl mb-4">Disponible muy pronto</p>
+          <p className="text-white/60 text-sm mb-8">
+            Estamos seleccionando los mejores guías locales para ofrecerte experiencias inolvidables.
           </p>
           <Link
             href="/itinerarios"
-            className="inline-block px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-100 transition-all"
+            className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white font-semibold text-sm transition-colors"
           >
-            Mientras tanto, explora nuestros itinerarios
+            Mientras tanto, explora nuestros itinerarios →
           </Link>
         </div>
       </section>

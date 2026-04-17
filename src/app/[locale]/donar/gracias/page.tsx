@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import Icon from '@/components/Icon';
 
 export const metadata: Metadata = {
   title: 'Gracias por tu donativo | Estaba en Lisboa',
@@ -8,31 +9,30 @@ export const metadata: Metadata = {
 
 export default function GraciasPage() {
   return (
-    <main className="bg-gradient-to-b from-green-50 to-white min-h-screen flex items-center justify-center">
-      <div className="max-w-lg mx-auto px-4 py-20 text-center">
-        <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
-          <span className="material-symbols-outlined text-green-600 text-5xl">volunteer_activism</span>
+    <main className="bg-background-light py-32">
+      <div className="max-w-lg mx-auto px-6 text-center">
+        <div className="border-t-2 border-primary pt-8 mb-8">
+          <div className="w-10 h-10 bg-primary flex items-center justify-center mx-auto mb-6">
+            <Icon name="favorite" size={20} className="text-white" />
+          </div>
+          <h1 className="font-display italic text-text-main text-3xl md:text-4xl mb-4">
+            Muchas gracias
+          </h1>
+          <p className="text-text-secondary text-sm leading-relaxed">
+            Tu donativo nos ayuda a seguir creando y actualizando guías gratuitas para viajeros como tú. De verdad, gracias.
+          </p>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          Muchas gracias
-        </h1>
-
-        <p className="text-lg text-slate-600 mb-8">
-          Tu donativo nos ayuda a seguir creando y actualizando guias gratuitas para viajeros como tu. De verdad, gracias.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/itinerarios"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-colors"
           >
-            <span className="material-symbols-outlined">explore</span>
-            Ver guias
+            Ver guías
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border-soft text-text-main font-semibold text-sm hover:border-primary transition-colors"
           >
             Volver al inicio
           </Link>

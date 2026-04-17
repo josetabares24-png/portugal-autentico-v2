@@ -17,13 +17,11 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Verificar que el producto existe
   const product = productId && productId in STRIPE_PRODUCTS
     ? STRIPE_PRODUCTS[productId as keyof typeof STRIPE_PRODUCTS]
     : null;
 
   useEffect(() => {
-    // Si el producto no existe, redirigir
     if (!product) {
       router.push('/itinerarios');
     }
@@ -36,24 +34,20 @@ export default function CheckoutPage() {
     try {
       const response = await fetch('/api/checkout', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        const errorMessage = data.error || 'Error al crear sesión de checkout';
-        throw new Error(errorMessage);
+        throw new Error(data.error || 'Error al crear sesión de checkout');
       }
 
       if (!data.url) {
         throw new Error('No se recibió URL de checkout');
       }
 
-      // Redirigir a Stripe Checkout
       window.location.href = data.url;
     } catch (err: any) {
       console.error('Error:', err);
@@ -64,215 +58,144 @@ export default function CheckoutPage() {
 
   if (!product) {
     return (
-      <main className="bg-background-light min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <Icon name="error" size={36} className="text-slate-400 mb-4" />
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">Producto no encontrado</h1>
-          <p className="text-slate-600 mb-6">El producto que buscas no existe</p>
-          <Link
-            href="/itinerarios"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
-          >
-            <Icon name="arrow_back" size={18} />
-            Ver Guías
-          </Link>
-        </div>
+      <main className="bg-background-light py-32 text-center">
+        <h1 className="text-2xl font-bold text-text-main mb-2">Producto no encontrado</h1>
+        <p className="text-text-secondary mb-6">El producto que buscas no existe</p>
+        <Link href="/itinerarios" className="inline-block px-6 py-3 bg-primary text-white font-semibold transition-colors hover:bg-primary-dark">
+          Ver Guías
+        </Link>
       </main>
     );
   }
 
   return (
-    <main className="bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-            alt="Lisboa panorama"
-            fill
-            className="object-cover scale-110"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/20 mb-8">
-            <Icon name="lock" size={18} className="text-yellow-400" />
-            <span className="text-sm font-bold tracking-wide">PAGO SEGURO</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
-            Finalizar<br />
-            <span className="text-accent">
-              Compra
-            </span>
+    <main id="main-content">
+      {/* Hero */}
+      <section className="relative h-[40vh] min-h-[260px] overflow-hidden">
+        <Image
+          src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+          alt="Lisboa panorama"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
+            ← Itinerarios
+          </Link>
+          <h1 className="font-display italic text-white text-3xl md:text-4xl leading-tight mb-1">
+            Finalizar Compra
           </h1>
-
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
-            Pago 100% seguro procesado por Stripe. Acceso inmediato tras la compra.
-          </p>
+          <p className="text-white/60 text-sm">Pago seguro procesado por Stripe</p>
         </div>
       </section>
 
-      {/* Checkout Card Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          {/* Checkout Card */}
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+      {/* Checkout */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-2xl mx-auto px-6">
 
-            {/* Product Info */}
-            <div className="p-8 md:p-12">
-              <div className="mb-8 pb-8 border-b border-slate-200">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold mb-4">
-                  <Icon name="workspace_premium" size={18} />
-                  Guía Premium
-                </div>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight">{product.name}</h2>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-5xl md:text-6xl font-black text-primary">{product.price.toFixed(2)}€</span>
-                  <span className="text-slate-500 text-lg">pago único</span>
-                </div>
-              </div>
-
-              {/* What's Included */}
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl p-8 mb-8 border-2 border-slate-200">
-                <h3 className="font-black text-xl text-slate-900 mb-6 flex items-center gap-3">
-                  <Icon name="check_circle" size={30} className="text-primary" />
-                  Qué incluye tu guía
-                </h3>
-                <ul className="grid md:grid-cols-2 gap-4 text-slate-700">
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Guía digital descargable en alta calidad</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Itinerario completo paso a paso</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Mapa interactivo con todos los lugares</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Restaurantes verificados por locales</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Acceso inmediato tras el pago</span>
-                  </li>
-                  <li className="flex items-start gap-3 p-3 bg-white rounded-xl">
-                    <Icon name="done" size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">Actualizaciones gratuitas de por vida</span>
-                  </li>
-                </ul>
-              </div>
-
-            {/* Auth Required Message - OBLIGATORIO */}
-            {isLoaded && !isSignedIn && (
-              <div className="mb-8 p-6 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300 rounded-3xl">
-                <div className="flex items-start gap-4 mb-4">
-                  <Icon name="lock" size={30} className="text-red-600 flex-shrink-0" />
-                  <div>
-                    <p className="font-black text-red-900 mb-2 text-lg">Debes iniciar sesión para comprar</p>
-                    <p className="text-red-700 text-sm font-medium mb-1">
-                      Las guías se guardan en tu cuenta para acceso permanente. Necesitas una cuenta gratuita para continuar.
-                    </p>
-                  </div>
-                </div>
-                <SignInButton mode="modal">
-                  <button className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg">
-                    <Icon name="login" size={20} />
-                    Iniciar sesión para comprar
-                  </button>
-                </SignInButton>
-              </div>
-            )}
-
-              {/* Error Message */}
-              {error && (
-                <div className="mb-8 p-6 bg-red-50 border-2 border-red-300 rounded-3xl flex items-start gap-4 shadow-lg">
-                  <Icon name="error" size={36} className="text-red-600 flex-shrink-0" />
-                  <div>
-                    <p className="font-black text-red-900 mb-2 text-xl">Error al procesar el pago</p>
-                    <p className="text-red-700 font-medium">{error}</p>
-                    {error.includes('iniciar sesión') && (
-                      <SignInButton mode="modal">
-                        <button className="mt-4 px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-colors text-sm">
-                          Iniciar sesión ahora
-                        </button>
-                      </SignInButton>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Checkout Button */}
-              <button
-                disabled={!isSignedIn || loading}
-                onClick={handleCheckout}
-                className="w-full py-5 bg-primary hover:bg-primary-dark disabled:bg-slate-300 text-white font-black text-xl rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-lg flex items-center justify-center gap-3"
-              >
-                {loading ? (
-                  <>
-                    <Icon name="progress_activity" size={24} className="animate-spin" />
-                    Procesando pago...
-                  </>
-                ) : (
-                  <>
-                    <Icon name="lock" size={24} />
-                    Pagar {product.price.toFixed(2)}€ de forma segura
-                    <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </>
-                )}
-              </button>
-
-              {/* Security Info */}
-              <div className="mt-8 text-center">
-                <p className="text-sm text-slate-600 mb-4 flex items-center justify-center gap-2 font-medium">
-                  <Icon name="shield" size={18} className="text-primary" />
-                  Pago 100% seguro procesado por Stripe
-                </p>
-                <div className="flex items-center justify-center gap-6 text-slate-400 mb-6">
-                  <div className="flex items-center gap-2">
-                    <Icon name="lock" size={24} />
-                    <span className="text-xs font-medium">SSL Encriptado</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="verified" size={24} />
-                    <span className="text-xs font-medium">Stripe Secure</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="check_circle" size={24} />
-                    <span className="text-xs font-medium">PCI Compliant</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Cancel Link */}
-              <div className="pt-6 border-t border-slate-200 text-center">
-                <Link
-                  href="/itinerarios"
-                  className="inline-flex items-center gap-2 text-slate-500 hover:text-primary text-sm font-bold transition-colors"
-                >
-                  <Icon name="arrow_back" size={18} />
-                  Volver a las guías
-                </Link>
-              </div>
+          {/* Product info */}
+          <div className="border-b border-border-soft pb-8 mb-8">
+            <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Guía Premium</p>
+            <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4 leading-tight">{product.name}</h2>
+            <div className="flex items-baseline gap-3">
+              <span className="text-4xl font-bold text-primary">{product.price.toFixed(2)}€</span>
+              <span className="text-text-secondary text-sm">pago único</span>
             </div>
           </div>
 
-          {/* Money-back Guarantee */}
-          <div className="mt-8 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-3xl p-8 text-center shadow-lg">
-            <Icon name="verified" size={36} className="text-green-600 mb-4 inline-block" />
-            <h3 className="font-black text-green-900 mb-3 text-2xl">Garantía de Satisfacción 48h</h3>
-            <p className="text-green-700 font-medium max-w-2xl mx-auto">
+          {/* Includes */}
+          <div className="border-t-2 border-primary pt-6 mb-8">
+            <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Qué incluye</p>
+            <ul className="grid md:grid-cols-2 gap-3">
+              {[
+                'Guía digital descargable',
+                'Itinerario completo paso a paso',
+                'Mapa interactivo GPS',
+                'Restaurantes verificados por locales',
+                'Acceso inmediato tras el pago',
+                'Actualizaciones gratuitas de por vida',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-text-secondary">
+                  <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Auth warning */}
+          {isLoaded && !isSignedIn && (
+            <div className="mb-8 p-6 border border-border-soft border-l-4 border-l-primary">
+              <p className="font-semibold text-text-main mb-1 text-sm">Debes iniciar sesión para comprar</p>
+              <p className="text-text-secondary text-xs mb-4">
+                Las guías se guardan en tu cuenta para acceso permanente. Necesitas una cuenta gratuita.
+              </p>
+              <SignInButton mode="modal">
+                <button className="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-colors flex items-center gap-2">
+                  <Icon name="login" size={16} />
+                  Iniciar sesión para comprar
+                </button>
+              </SignInButton>
+            </div>
+          )}
+
+          {/* Error */}
+          {error && (
+            <div className="mb-8 p-5 border border-border-soft border-l-4 border-l-red-500">
+              <p className="font-semibold text-text-main mb-1 text-sm">Error al procesar el pago</p>
+              <p className="text-text-secondary text-xs">{error}</p>
+              {error.includes('iniciar sesión') && (
+                <SignInButton mode="modal">
+                  <button className="mt-3 px-5 py-2 bg-primary text-white font-semibold text-xs transition-colors">
+                    Iniciar sesión ahora
+                  </button>
+                </SignInButton>
+              )}
+            </div>
+          )}
+
+          {/* Pay button */}
+          <button
+            disabled={!isSignedIn || loading}
+            onClick={handleCheckout}
+            className="w-full py-4 bg-primary hover:bg-primary-dark disabled:bg-border-soft disabled:text-text-secondary text-white font-semibold text-base transition-colors disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            {loading ? (
+              <>
+                <Icon name="progress_activity" size={20} className="animate-spin" />
+                Procesando pago...
+              </>
+            ) : (
+              <>
+                <Icon name="lock" size={18} />
+                Pagar {product.price.toFixed(2)}€ de forma segura
+              </>
+            )}
+          </button>
+
+          <p className="text-xs text-text-secondary text-center mt-4 flex items-center justify-center gap-1.5">
+            <Icon name="shield" size={14} className="text-primary" />
+            Pago 100% seguro · SSL · Stripe
+          </p>
+
+          <div className="mt-8 pt-6 border-t border-border-soft text-center">
+            <Link href="/itinerarios" className="text-xs text-text-secondary hover:text-primary transition-colors">
+              ← Volver a las guías
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee */}
+      <section className="bg-background-light border-t border-border-soft py-10">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <div className="border-t-2 border-primary pt-6">
+            <p className="font-semibold text-text-main text-sm mb-1">Garantía de satisfacción 48h</p>
+            <p className="text-text-secondary text-xs">
               Si no estás 100% satisfecho con tu guía, te devolvemos el dinero completo. Sin preguntas.
             </p>
           </div>

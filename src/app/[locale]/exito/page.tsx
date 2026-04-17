@@ -3,74 +3,61 @@ import Icon from '@/components/Icon';
 
 export default function ExitoPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background-cream">
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <div className="bg-white rounded-2xl p-12 shadow-xl border border-slate-200">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Icon name="check_circle" size={36} className="text-green-600" />
+    <main className="bg-background-light py-24">
+      <div className="max-w-2xl mx-auto px-6">
+        <div className="border-t-2 border-primary pt-8 text-center mb-10">
+          <div className="w-10 h-10 bg-primary flex items-center justify-center mx-auto mb-6">
+            <Icon name="check_circle" size={20} className="text-white" />
           </div>
-          
-          <h1 className="text-4xl font-bold text-text-main mb-4">
+          <h1 className="font-display italic text-text-main text-3xl md:text-4xl mb-4">
             ¡Pago completado!
           </h1>
-          
-          <p className="text-lg text-text-secondary mb-8">
-            ¡Tu guía está lista! Hemos enviado automáticamente un email con:<br />
-            <strong>Enlace de descarga directo</strong> • <strong>Instrucciones completas</strong> • <strong>Contenido premium</strong>
+          <p className="text-text-secondary text-sm leading-relaxed max-w-md mx-auto">
+            Tu guía está lista. Hemos enviado automáticamente un email con el enlace de descarga, instrucciones y acceso completo.
           </p>
-          
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+        </div>
+
+        <div className="space-y-4 mb-10">
+          <div className="border-t border-border-soft pt-5">
             <div className="flex items-start gap-3">
-              <Icon name="info" size={24} className="text-blue-600 mt-0.5" />
-              <div className="text-left">
-                <h3 className="font-bold text-blue-900 mb-2">¿No recibes el email?</h3>
-                <p className="text-sm text-blue-800 mb-3">
-                  Los emails se envían automáticamente al completar el pago. Si no lo ves:
-                </p>
-                <p className="text-sm text-blue-800">
-                  1. Revisa tu carpeta de spam o promociones<br />
-                  2. Espera hasta 5 minutos<br />
-                  3. Escríbenos a <a href="mailto:hola@estabaenlisboa.com" className="underline font-semibold">hola@estabaenlisboa.com</a>
+              <Icon name="info" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="font-semibold text-text-main text-sm mb-1">¿No recibes el email?</p>
+                <p className="text-text-secondary text-xs leading-relaxed">
+                  Los emails se envían automáticamente al completar el pago. Revisa spam o promociones,
+                  espera hasta 5 minutos, o escríbenos a{' '}
+                  <a href="mailto:hola@estabaenlisboa.com" className="text-primary hover:underline">hola@estabaenlisboa.com</a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+          <div className="border-t border-border-soft pt-5">
             <div className="flex items-start gap-3">
-              <Icon name="email" size={24} className="text-green-600 mt-0.5" />
-              <div className="text-left">
-                <h3 className="font-bold text-green-900 mb-2">¿Qué incluye el email?</h3>
-                <p className="text-sm text-green-800">
-                  • <strong>Enlace seguro de descarga</strong> (válido 30 días)<br />
-                  • <strong>Acceso completo</strong> a tu guía premium<br />
-                  • <strong>Instrucciones detalladas</strong> para usar tu guía<br />
-                  • <strong>Información de contacto</strong> para soporte
+              <Icon name="email" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="font-semibold text-text-main text-sm mb-1">¿Qué incluye el email?</p>
+                <p className="text-text-secondary text-xs leading-relaxed">
+                  Enlace seguro de descarga (válido 30 días) · Acceso completo a tu guía premium · Instrucciones detalladas · Información de soporte
                 </p>
               </div>
             </div>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/mis-guias"
-              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-xl transition-all"
-            >
-              Ver mis guías
-            </Link>
-            <Link 
-              href="/itinerarios"
-              className="inline-flex items-center justify-center gap-2 border-2 border-slate-300 hover:border-primary text-slate-700 hover:text-primary font-semibold px-8 py-4 rounded-xl transition-all"
-            >
-              Ver más guías
-            </Link>
-            <Link 
-              href="/"
-              className="inline-flex items-center justify-center gap-2 text-slate-600 hover:text-primary font-medium px-6 py-4 transition-colors"
-            >
-              Volver al inicio
-            </Link>
-          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/mis-guias"
+            className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 text-sm transition-colors"
+          >
+            Ver mis guías
+          </Link>
+          <Link
+            href="/itinerarios"
+            className="inline-flex items-center justify-center gap-2 border border-border-soft hover:border-primary text-text-main font-semibold px-6 py-3 text-sm transition-colors"
+          >
+            Ver más guías
+          </Link>
         </div>
       </div>
     </main>
