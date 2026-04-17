@@ -7,96 +7,68 @@ const services = [
     description: 'Sesiones profesionales en los mejores spots de Lisboa con guía local.',
     href: '/servicios/fotografo-personal',
     image: '/images/fotografo-hero.jpg',
-    badge: 'Premium',
   },
   {
     title: 'Tours privados',
     description: 'Itinerarios 100% personalizados con ritmo y paradas a tu medida.',
     href: '/servicios/tours-privados',
     image: '/images/hero-lisboa.jpg',
-    badge: 'Exclusivo',
   },
   {
     title: 'Transfers',
     description: 'Traslados aeropuerto-hotel y city rides sin esperas ni estrés.',
     href: '/servicios/transfers',
     image: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg',
-    badge: 'Cómodo',
   },
 ];
 
 export default function ServiciosPage() {
   return (
-    <main className="bg-background-light">
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
-            alt="Servicios en Lisboa"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">workspace_premium</span>
-            <span className="text-sm font-semibold tracking-wide">Servicios premium</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Servicios
-            <br />
-            <span className="text-accent">a medida</span>
+    <main>
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+          alt="Servicios en Lisboa"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Experiencias privadas</p>
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
+            Servicios a medida
           </h1>
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Experiencias privadas, logística sin fricción y sesiones únicas en Lisboa.
-          </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      {/* Servicios */}
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-              Elegidos por locales
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">
-              Elige tu servicio
-            </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Todos con soporte local, horarios claros y atención personalizada.
-            </p>
+          <div className="mb-12">
+            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Elegidos por locales</p>
+            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">Elige tu servicio</h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {services.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-primary hover:shadow-2xl transition-all hover:-translate-y-1"
-              >
-                <div className="relative h-52">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                    {service.badge}
-                  </div>
+              <Link key={service.href} href={service.href} className="block group">
+                <div className="relative aspect-[4/3] overflow-hidden mb-4">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 mb-4">{service.description}</p>
-                  <span className="inline-flex items-center gap-2 text-primary font-semibold">
-                    Ver detalles
-                    <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </span>
-                </div>
+                <h3 className="font-display italic text-text-main text-xl mb-1 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-text-secondary text-sm mb-3">{service.description}</p>
+                <span className="text-sm text-primary">Ver detalles →</span>
               </Link>
             ))}
           </div>

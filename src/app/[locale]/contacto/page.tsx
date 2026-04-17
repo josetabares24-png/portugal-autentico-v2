@@ -2,237 +2,171 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import Icon from '@/components/Icon';
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
     asunto: '',
-    mensaje: ''
+    mensaje: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const data = await response.json();
-
       if (response.ok) {
         setSubmitted(true);
         setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
+        setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert(data.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.');
       }
-    } catch (error) {
-      console.error('Error:', error);
+    } catch {
       alert('Error de conexión. Por favor, intenta de nuevo.');
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <main className="bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg"
-            alt="Contacto Lisboa"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <Icon name="mail" size={16} />
-            <span className="text-sm font-semibold tracking-wide">Contacto</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Contáctanos
+    <main>
+      {/* Cabecera */}
+      <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Contacto</p>
+          <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight">
+            Escríbenos
           </h1>
-
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Contacto para dudas sobre Lisboa, guías, itinerarios y colaboraciones. Respuesta rápida.
-          </p>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-slate-200">
-            {!submitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Nombre */}
-                <div>
-                  <label htmlFor="nombre" className="block text-sm font-bold text-slate-900 mb-2">
-                    Nombre *
-                  </label>
-                  <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                    placeholder="Tu nombre"
-                  />
-                </div>
+      {/* Formulario */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="grid md:grid-cols-[2fr,1fr] gap-16 items-start">
+            {/* Form */}
+            <div>
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="nombre" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">
+                      Nombre
+                    </label>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                      placeholder="Tu nombre"
+                    />
+                  </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-slate-900 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                    placeholder="tu@email.com"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
 
-                {/* Asunto */}
-                <div>
-                  <label htmlFor="asunto" className="block text-sm font-bold text-slate-900 mb-2">
-                    Asunto *
-                  </label>
-                  <select
-                    id="asunto"
-                    name="asunto"
-                    value={formData.asunto}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                  <div>
+                    <label htmlFor="asunto" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">
+                      Asunto
+                    </label>
+                    <select
+                      id="asunto"
+                      name="asunto"
+                      value={formData.asunto}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                    >
+                      <option value="">Selecciona un asunto</option>
+                      <option value="duda-guia">Duda sobre una guía</option>
+                      <option value="problema-pago">Problema con el pago</option>
+                      <option value="sugerencia">Sugerencia o feedback</option>
+                      <option value="colaboracion">Propuesta de colaboración</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="mensaje" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">
+                      Mensaje
+                    </label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      value={formData.mensaje}
+                      onChange={handleChange}
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors resize-none text-sm"
+                      placeholder="Cuéntanos cómo podemos ayudarte..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm"
                   >
-                    <option value="">Selecciona un asunto</option>
-                    <option value="duda-guia">Duda sobre una guía</option>
-                    <option value="problema-pago">Problema con el pago</option>
-                    <option value="sugerencia">Sugerencia o feedback</option>
-                    <option value="colaboracion">Propuesta de colaboración</option>
-                    <option value="otro">Otro</option>
-                  </select>
+                    Enviar mensaje
+                  </button>
+
+                  <p className="text-xs text-text-secondary">
+                    Responderemos en menos de 24 horas.
+                  </p>
+                </form>
+              ) : (
+                <div className="py-12">
+                  <p className="font-display italic text-text-main text-2xl mb-4">Mensaje enviado.</p>
+                  <p className="text-text-secondary mb-8">
+                    Gracias por contactarnos. Te responderemos pronto a tu email.
+                  </p>
+                  <Link href="/itinerarios" className="text-sm text-primary hover:underline underline-offset-2">
+                    ← Volver a las guías
+                  </Link>
                 </div>
+              )}
+            </div>
 
-                {/* Mensaje */}
-                <div>
-                  <label htmlFor="mensaje" className="block text-sm font-bold text-slate-900 mb-2">
-                    Mensaje *
-                  </label>
-                  <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    value={formData.mensaje}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
-                    placeholder="Cuéntanos cómo podemos ayudarte..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-lg"
-                >
-                  <Icon name="send" size={24} />
-                  Enviar mensaje
-                </button>
-
-                <p className="text-xs text-slate-500 text-center">
-                  Responderemos en menos de 24 horas
+            {/* Sidebar */}
+            <div className="space-y-8">
+              <div className="border-t-2 border-primary pt-5">
+                <h3 className="font-semibold text-text-main text-sm mb-2">Preguntas frecuentes</h3>
+                <p className="text-text-secondary text-xs leading-relaxed mb-3">
+                  Antes de escribirnos, revisa si ya tenemos respuesta para tu duda.
                 </p>
-              </form>
-            ) : (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon name="check_circle" size={36} className="text-green-500" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                  ¡Mensaje enviado!
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  Gracias por contactarnos. Te responderemos pronto a tu email.
-                </p>
-                <Link
-                  href="/itinerarios"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-bold"
-                >
-                  <Icon name="arrow_back" size={18} />
-                  Volver a guías
+                <Link href="/faq" className="text-xs text-primary hover:underline underline-offset-2">
+                  Ver FAQ →
                 </Link>
               </div>
-            )}
-          </div>
-
-          {/* FAQ Quick Links */}
-          <div className="mt-12 bg-background-cream rounded-3xl p-8 border border-slate-200">
-            <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <Icon name="help" size={18} className="text-primary" />
-              Preguntas Frecuentes
-            </h3>
-            <div className="space-y-3">
-              <Link
-                href="/faq"
-                className="block p-4 bg-white rounded-xl hover:shadow-md transition-shadow border border-slate-100"
-              >
-                <p className="font-semibold text-slate-900 mb-1">¿Cómo accedo a mi guía?</p>
-                <p className="text-sm text-slate-600">Después del pago, recibirás acceso instantáneo a tu Guía Digital Interactiva</p>
-              </Link>
-              <Link
-                href="/faq"
-                className="block p-4 bg-white rounded-xl hover:shadow-md transition-shadow border border-slate-100"
-              >
-                <p className="font-semibold text-slate-900 mb-1">¿Qué incluyen las guías?</p>
-                <p className="text-sm text-slate-600">Itinerarios detallados, restaurantes, GPS, horarios y mapas offline</p>
-              </Link>
-              <Link
-                href="/faq"
-                className="block p-4 bg-white rounded-xl hover:shadow-md transition-shadow border border-slate-100"
-              >
-                <p className="font-semibold text-slate-900 mb-1">¿Tienen garantía de reembolso?</p>
-                <p className="text-sm text-slate-600">Sí, 48 horas de garantía sin preguntas</p>
-              </Link>
+              <div className="border-t border-border-soft pt-5">
+                <h3 className="font-semibold text-text-main text-sm mb-2">Garantía</h3>
+                <p className="text-text-secondary text-xs leading-relaxed">
+                  48 horas de devolución sin preguntas. Si no te funciona, te devolvemos el dinero.
+                </p>
+              </div>
             </div>
           </div>
         </div>

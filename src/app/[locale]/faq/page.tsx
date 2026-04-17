@@ -2,61 +2,59 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import Icon from '@/components/Icon';
 
 const faqs = [
   {
     category: 'Compra y Acceso',
     questions: [
       {
-        question: "¿Cómo recibo el itinerario después de comprar?",
-        answer: "Inmediatamente después del pago recibirás acceso instantáneo a tu Guía Digital Interactiva. Puedes verla online desde cualquier dispositivo con conexión a internet. El acceso es permanente y podrás consultarla cuando quieras."
+        question: '¿Cómo recibo el itinerario después de comprar?',
+        answer: 'Inmediatamente después del pago recibirás acceso instantáneo a tu Guía Digital Interactiva. Puedes verla online desde cualquier dispositivo con conexión a internet. El acceso es permanente y podrás consultarla cuando quieras.',
       },
       {
-        question: "¿Puedo usar el itinerario sin internet?",
-        answer: "Sí. Puedes descargar mapas offline, coordenadas GPS y un checklist en formato PNG para usarlo sin conexión. Recomendamos descargar estos recursos antes de viajar para tenerlos disponibles siempre."
+        question: '¿Puedo usar el itinerario sin internet?',
+        answer: 'Sí. Puedes descargar mapas offline, coordenadas GPS y un checklist en formato PNG para usarlo sin conexión. Recomendamos descargar estos recursos antes de viajar para tenerlos disponibles siempre.',
       },
       {
-        question: "¿Qué métodos de pago aceptan?",
-        answer: "Aceptamos tarjeta de crédito/débito (Visa, Mastercard, Amex) y PayPal. El pago es 100% seguro a través de Stripe."
+        question: '¿Qué métodos de pago aceptan?',
+        answer: 'Aceptamos tarjeta de crédito/débito (Visa, Mastercard, Amex) y PayPal. El pago es 100% seguro a través de Stripe.',
       },
-    ]
+    ],
   },
   {
     category: 'Contenido',
     questions: [
       {
-        question: "¿Los precios de restaurantes son exactos?",
-        answer: "Los precios son aproximados basados en nuestra última visita. Pueden variar ligeramente, pero te damos una idea muy cercana de lo que gastarás en cada lugar."
+        question: '¿Los precios de restaurantes son exactos?',
+        answer: 'Los precios son aproximados basados en nuestra última visita. Pueden variar ligeramente, pero te damos una idea muy cercana de lo que gastarás en cada lugar.',
       },
       {
-        question: "¿Los itinerarios están actualizados?",
-        answer: "Sí. Actualizamos los itinerarios cada 3 meses con nuevos restaurantes, horarios y tips. Si algo cambia, te avisamos por email automáticamente."
+        question: '¿Los itinerarios están actualizados?',
+        answer: 'Sí. Actualizamos los itinerarios cada 3 meses con nuevos restaurantes, horarios y tips. Si algo cambia, te avisamos por email automáticamente.',
       },
       {
-        question: "¿Incluye entradas a monumentos?",
-        answer: "No, el itinerario no incluye entradas. Pero te indicamos precios exactos y dónde comprarlas online para evitar colas y ahorrar tiempo."
+        question: '¿Incluye entradas a monumentos?',
+        answer: 'No, el itinerario no incluye entradas. Pero te indicamos precios exactos y dónde comprarlas online para evitar colas y ahorrar tiempo.',
       },
-    ]
+    ],
   },
   {
     category: 'Uso y Personalización',
     questions: [
       {
-        question: "¿Puedo modificar el itinerario a mi gusto?",
-        answer: "Por supuesto. El itinerario es una guía, no una obligación. Puedes saltarte paradas, cambiar el orden o añadir lugares que te interesen. Es 100% flexible."
+        question: '¿Puedo modificar el itinerario a mi gusto?',
+        answer: 'Por supuesto. El itinerario es una guía, no una obligación. Puedes saltarte paradas, cambiar el orden o añadir lugares que te interesen. Es 100% flexible.',
       },
       {
-        question: "¿Es adecuado para familias con niños?",
-        answer: "Sí, aunque algunos tramos tienen cuestas. Te indicamos dónde son y alternativas más fáciles. Alfama y Sintra pueden ser cansados para niños pequeños. Tenemos una guía familiar específica."
+        question: '¿Es adecuado para familias con niños?',
+        answer: 'Sí, aunque algunos tramos tienen cuestas. Te indicamos dónde son y alternativas más fáciles. Alfama y Sintra pueden ser cansados para niños pequeños. Tenemos una guía familiar específica.',
       },
       {
-        question: "¿Cómo funciona la garantía de 48 horas?",
-        answer: "Si no estás satisfecho por cualquier motivo, escríbenos dentro de las primeras 48 horas después de tu compra y te devolvemos el 100% del dinero. Sin preguntas."
+        question: '¿Cómo funciona la garantía de 48 horas?',
+        answer: 'Si no estás satisfecho por cualquier motivo, escríbenos dentro de las primeras 48 horas después de tu compra y te devolvemos el 100% del dinero. Sin preguntas.',
       },
-    ]
-  }
+    ],
+  },
 ];
 
 const faqJsonLd = {
@@ -80,86 +78,51 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="bg-background-light">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg"
-            alt="FAQ Lisboa"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <Icon name="help" size={16} />
-            <span className="text-sm font-semibold tracking-wide">Preguntas frecuentes</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Preguntas<br />
-            <span className="text-accent">Frecuentes</span>
+      {/* Cabecera */}
+      <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Ayuda</p>
+          <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight">
+            Preguntas frecuentes
           </h1>
-
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Respuestas claras sobre nuestros itinerarios, garantías y cómo funciona todo
-          </p>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <Icon name="expand_more" size={36} className="text-white opacity-70" />
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="space-y-12">
+      {/* FAQ */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="space-y-14">
             {faqs.map((category, catIndex) => (
               <div key={catIndex}>
-                {/* Category Title */}
-                <div className="mb-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-3">
-                    <Icon name="check_circle" size={18} className="text-primary" />
-                    <span className="text-sm font-bold text-primary">{category.category}</span>
-                  </div>
-                </div>
-
-                {/* Questions */}
-                <div className="space-y-4">
+                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-6 pb-3 border-b border-border-soft">
+                  {category.category}
+                </p>
+                <div className="space-y-0">
                   {category.questions.map((faq, qIndex) => {
                     const isOpen = openIndex === `${catIndex}-${qIndex}`;
                     return (
-                      <div
-                        key={qIndex}
-                        className="bg-white border-2 border-slate-200 rounded-3xl overflow-hidden hover:border-primary transition-all shadow-lg hover:shadow-xl"
-                      >
+                      <div key={qIndex} className="border-b border-border-soft">
                         <button
                           onClick={() => toggleFAQ(catIndex, qIndex)}
-                          className="w-full px-6 sm:px-8 py-6 flex items-start justify-between gap-4 text-left hover:bg-slate-50 transition-colors"
+                          className="w-full py-5 flex items-start justify-between gap-4 text-left"
+                          aria-expanded={isOpen}
                         >
-                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex-1">
+                          <span className="font-semibold text-text-main text-sm md:text-base leading-snug">
                             {faq.question}
-                          </h3>
-                          <Icon name="expand_more" size={18} className={`text-primary flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                          </span>
+                          <span className={`text-text-secondary flex-shrink-0 text-lg leading-none transition-transform ${isOpen ? 'rotate-45' : ''}`}>
+                            +
+                          </span>
                         </button>
                         {isOpen && (
-                          <div className="px-6 sm:px-8 pb-6 pt-2">
-                            <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                          <div className="pb-5">
+                            <p className="text-text-secondary text-sm leading-relaxed">
                               {faq.answer}
                             </p>
                           </div>
@@ -174,35 +137,29 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary to-orange-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <Icon name="chat" size={36} className="text-white mb-6 inline-block" />
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+      {/* CTA */}
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
             ¿Tienes otra pregunta?
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Escríbenos y te respondemos al instante. Estamos aquí para ayudarte.
+          <p className="text-white/60 mb-8">
+            Escríbenos y te respondemos en menos de 24 horas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contacto"
-              className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
             >
-              <Icon name="mail" size={24} />
               Contactar
-              <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/itinerarios"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all"
+              className="px-8 py-3 border border-white/20 hover:border-white/40 text-white font-semibold transition-colors"
             >
-              <Icon name="map" size={24} />
-              Ver Guías
+              Ver guías
             </Link>
           </div>
-          <p className="text-white/80 text-sm mt-6">✅ Respuesta en menos de 24h · ✅ Soporte 7 días/semana</p>
         </div>
       </section>
     </main>

@@ -2604,15 +2604,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     })),
   };
 
-  const categoriaColor: Record<string, string> = {
-    "Guías": "bg-blue-100 text-blue-700",
-    "Gastronomía": "bg-amber-100 text-amber-700",
-    "Transporte": "bg-green-100 text-green-700",
-    "Consejos": "bg-purple-100 text-purple-700",
-    "Alojamiento": "bg-pink-100 text-pink-700",
-    "Cultura": "bg-indigo-100 text-indigo-700",
-    "Planificación": "bg-teal-100 text-teal-700"
-  };
 
   let paragraphIndex = 0;
 
@@ -2636,57 +2627,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {/* Header editorial */}
       <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
-        {/* Categoría */}
-        <div className="mb-4">
-          <span className={`inline-block text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded ${categoriaColor[article.categoria]}`}>
-            {article.categoria}
-          </span>
-        </div>
+        {/* Categoría + meta */}
+        <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">
+          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura
+        </p>
 
-        {/* Título principal - estilo periódico */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+        {/* Título */}
+        <h1 className="font-display italic text-text-main text-3xl sm:text-4xl md:text-5xl leading-tight mb-5">
           {article.titulo}
         </h1>
 
-        {/* Lead/Subtítulo destacado */}
-        <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-6 border-l-4 border-primary pl-4">
+        {/* Lead */}
+        <p className="text-text-secondary text-lg md:text-xl leading-relaxed mb-6 pb-6 border-b border-border-soft">
           {article.descripcion}
         </p>
-
-        {/* Meta info estilo editorial */}
-        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-primary font-bold">JT</span>
-            </div>
-            <div>
-              <p className="font-semibold text-slate-900">Por {AUTHOR_NAME}</p>
-              <p className="text-xs text-slate-500">Desde Lisboa</p>
-            </div>
-          </div>
-          <span className="text-slate-300">|</span>
-          <time className="flex items-center gap-1.5">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            {article.fecha}
-          </time>
-          <span className="text-slate-300">|</span>
-          <span className="flex items-center gap-1.5">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {article.minutos} min lectura
-          </span>
-        </div>
       </header>
 
-      {/* Imagen destacada estilo editorial */}
+      {/* Imagen destacada */}
       <figure className="max-w-5xl mx-auto px-4 mb-10">
-        <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden">
           <Image
             src={heroImage}
-            alt={`Imagen del artículo: ${article.titulo} sobre ${article.categoria} en Lisboa`}
+            alt={`${article.titulo} — Lisboa`}
             fill
             className="object-cover"
             priority
@@ -2694,9 +2656,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             sizes="(max-width: 1024px) 100vw, 1024px"
           />
         </div>
-        <figcaption className="mt-3 text-sm text-slate-500 text-center italic">
-          {article.titulo} — Foto: Estaba en Lisboa
-        </figcaption>
       </figure>
 
       {/* Layout principal: contenido + sidebar */}
@@ -2709,14 +2668,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
             </p>
 
-            {/* Caja de resumen estilo editorial */}
+            {/* Resumen */}
             {takeaways.length > 0 && (
-              <div className="bg-slate-50 border border-slate-200 p-6 mb-8 rounded-lg">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Lo esencial</p>
+              <div className="border-l-2 border-primary pl-6 mb-8">
+                <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Lo esencial</p>
                 <ul className="space-y-2">
                   {takeaways.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-700">
-                      <span className="text-primary font-bold">•</span>
+                    <li key={i} className="flex items-start gap-2 text-text-secondary text-sm">
+                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -2724,22 +2683,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            {/* Secciones "Cómo llegar" y "Mejor hora" */}
+            {/* Cómo llegar / Mejor hora */}
             {extras && (
-              <div className="border-l-4 border-primary bg-primary/5 p-6 mb-8 rounded-r-lg">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <h2 id="como-llegar" className="text-lg font-bold text-slate-900 mb-2 scroll-mt-28">
-                      📍 Cómo llegar
-                    </h2>
-                    <p className="text-slate-600 text-sm leading-relaxed">{extras.comoLlegar}</p>
-                  </div>
-                  <div>
-                    <h2 id="mejor-hora" className="text-lg font-bold text-slate-900 mb-2 scroll-mt-28">
-                      ⏰ Mejor hora para ir
-                    </h2>
-                    <p className="text-slate-600 text-sm leading-relaxed">{extras.mejorHora}</p>
-                  </div>
+              <div className="border-t border-border-soft pt-6 mb-8 grid sm:grid-cols-2 gap-6">
+                <div>
+                  <h2 id="como-llegar" className="font-semibold text-text-main text-sm mb-2 scroll-mt-28">Cómo llegar</h2>
+                  <p className="text-text-secondary text-sm leading-relaxed">{extras.comoLlegar}</p>
+                </div>
+                <div>
+                  <h2 id="mejor-hora" className="font-semibold text-text-main text-sm mb-2 scroll-mt-28">Mejor hora para ir</h2>
+                  <p className="text-text-secondary text-sm leading-relaxed">{extras.mejorHora}</p>
                 </div>
               </div>
             )}
@@ -2779,15 +2732,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'lista') {
                   return (
-                    <ul key={index} className="space-y-3 mb-6 not-prose">
+                    <ul key={index} className="space-y-2 mb-6 not-prose">
                       {bloque.items?.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                          <span className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </span>
-                          <span className="leading-relaxed">{item}</span>
+                        <li key={i} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                          <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -2795,11 +2744,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'tip') {
                   return (
-                    <div key={index} className="bg-amber-50 border border-amber-200 p-5 mb-6 rounded-lg not-prose">
-                      <p className="text-amber-900 font-medium flex items-start gap-3">
-                        <span className="text-2xl">💡</span>
-                        <span className="leading-relaxed">{bloque.texto}</span>
-                      </p>
+                    <div key={index} className="border-l-2 border-primary pl-5 py-2 mb-6 not-prose">
+                      <p className="text-text-secondary text-sm leading-relaxed italic">{bloque.texto}</p>
                     </div>
                   );
                 }
@@ -2810,23 +2756,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {/* Separador */}
             <hr className="my-12 border-slate-200" />
 
-            {/* FAQs estilo editorial */}
+            {/* FAQs */}
             <section className="mb-12">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
-                Preguntas frecuentes
-              </h3>
-              <div className="space-y-4">
+              <h3 className="font-display italic text-text-main text-2xl mb-6">Preguntas frecuentes</h3>
+              <div className="space-y-0">
                 {faqs.map((faq, i) => (
-                  <details key={i} className="group border border-slate-200 rounded-lg overflow-hidden">
-                    <summary className="flex items-center justify-between p-4 cursor-pointer bg-white hover:bg-slate-50 transition-colors">
-                      <h4 className="font-semibold text-slate-900 pr-4">{faq.q}</h4>
-                      <span className="text-primary group-open:rotate-180 transition-transform">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
+                  <details key={i} className="group border-t border-border-soft">
+                    <summary className="flex items-start justify-between py-5 cursor-pointer gap-4">
+                      <h4 className="font-semibold text-text-main text-sm leading-snug">{faq.q}</h4>
+                      <span className="text-text-secondary flex-shrink-0 text-lg leading-none group-open:rotate-45 transition-transform">+</span>
                     </summary>
-                    <div className="p-4 pt-0 text-slate-600 leading-relaxed bg-slate-50">
+                    <div className="pb-5 text-text-secondary text-sm leading-relaxed">
                       {faq.a}
                     </div>
                   </details>
@@ -2834,48 +2774,35 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </div>
             </section>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {articleTags.map(tag => (
-                <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full hover:bg-slate-200 transition-colors">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
             {/* CTA final */}
-            <div className="bg-slate-900 rounded-xl p-8 text-center">
-              <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-2">Guías Premium</p>
-              <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="bg-[#1a2b4a] p-8 text-center">
+              <h3 className="font-display italic text-white text-2xl mb-3">
                 ¿Quieres esto organizado paso a paso?
               </h3>
-              <p className="text-slate-400 mb-6 max-w-md mx-auto">
+              <p className="text-white/60 mb-6 text-sm max-w-md mx-auto">
                 Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
               </p>
-              <Link 
-                href="/itinerarios" 
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-lg font-semibold transition-all hover:scale-105"
+              <Link
+                href="/itinerarios"
+                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm"
               >
-                Ver Guías desde 2€
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                Ver guías desde 2 €
               </Link>
             </div>
           </article>
 
           {/* Sidebar */}
-          <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+          <aside className="space-y-10 lg:sticky lg:top-24 lg:self-start">
             {/* Tabla de contenidos */}
             {headings.length > 0 && (
-              <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">En este artículo</p>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-text-secondary mb-4 pb-3 border-b border-border-soft">En este artículo</p>
                 <nav className="space-y-2">
                   {headings.map((heading) => (
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}
-                      className="block text-sm text-slate-600 hover:text-primary hover:pl-2 transition-all py-1 border-l-2 border-transparent hover:border-primary pl-3"
+                      className="block text-sm text-text-secondary hover:text-primary transition-colors py-1"
                     >
                       {heading.title}
                     </a>
@@ -2884,34 +2811,29 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            {/* Enlaces internos */}
-            <div className="bg-white rounded-lg p-5 border border-slate-200">
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">También te interesa</p>
+            {/* También te interesa */}
+            <div>
+              <p className="text-xs uppercase tracking-widest text-text-secondary mb-4 pb-3 border-b border-border-soft">También te interesa</p>
               <ul className="space-y-3">
                 {internalLinks.slice(0, 5).map((item) => (
                   <li key={item.href}>
-                    <Link 
-                      href={item.href} 
-                      className="flex items-start gap-2 text-sm text-slate-700 hover:text-primary transition-colors group"
-                    >
-                      <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
-                      <span>{item.label}</span>
+                    <Link href={item.href} className="text-sm text-text-secondary hover:text-primary transition-colors">
+                      {item.label} →
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Mini CTA sidebar */}
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-5 text-center">
-              <p className="text-2xl mb-2">🇵🇹</p>
-              <p className="font-bold text-slate-900 mb-2">¿Primera vez en Lisboa?</p>
-              <p className="text-sm text-slate-600 mb-4">Descubre tu perfil viajero en 60 segundos</p>
-              <Link 
-                href="/quiz" 
-                className="block w-full py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition-colors"
+            {/* Mini CTA */}
+            <div className="border-t-2 border-primary pt-5">
+              <p className="font-semibold text-text-main text-sm mb-2">¿Primera vez en Lisboa?</p>
+              <p className="text-text-secondary text-xs mb-4 leading-relaxed">Descubre tu perfil viajero en 60 segundos</p>
+              <Link
+                href="/quiz"
+                className="block w-full py-2.5 bg-primary hover:bg-primary-dark text-white text-xs font-semibold text-center transition-colors"
               >
-                Hacer el Quiz
+                Hacer el quiz
               </Link>
             </div>
           </aside>
@@ -2919,35 +2841,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         {/* Relacionados */}
         {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-slate-200">
+          <section className="mt-16 pt-12 border-t border-border-soft">
             <div className="flex items-center justify-between mb-8">
-              <h3 className="text-2xl font-bold text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>
-                Relacionadas
-              </h3>
-              <Link href="/blog" className="text-primary text-sm font-semibold hover:underline">
+              <h3 className="font-display italic text-text-main text-2xl">Relacionadas</h3>
+              <Link href="/blog" className="text-sm text-primary hover:underline underline-offset-2">
                 Ver todo →
               </Link>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
               {relatedPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/${post.id}`}
-                  className="group"
-                >
-                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-3">
+                <Link key={post.id} href={`/blog/${post.id}`} className="group">
+                  <div className="relative aspect-[16/10] overflow-hidden mb-3">
                     <Image
                       src={post.imagen}
                       alt={post.titulo}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
-                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">{post.categoria}</p>
-                  <h4 className="font-bold text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                  <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{post.categoria}</p>
+                  <h4 className="font-display italic text-text-main group-hover:text-primary transition-colors leading-snug">
                     {post.titulo}
                   </h4>
-                  <p className="text-sm text-slate-500 mt-1">{post.fecha}</p>
                 </Link>
               ))}
             </div>

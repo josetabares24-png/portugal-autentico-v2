@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     description: 'Preguntas frecuentes sobre nuestras guías e itinerarios.',
     url: 'https://estabaenlisboa.com/faq',
   },
-  alternates: { canonical: 'https://estabaenlisboa.com/faq' },
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/faq',
+  },
 };
 
 export default function FAQLayout({ children }: { children: React.ReactNode }) {

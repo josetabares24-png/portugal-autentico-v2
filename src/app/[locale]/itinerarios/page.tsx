@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import Icon from '@/components/Icon';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { getGuideList } from '@/lib/guide-store';
 
 export const metadata: Metadata = {
@@ -42,83 +40,36 @@ export default async function ItinerariosPage() {
 
   return (
     <main id="main-content">
-      {/* ─── HERO ─── */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-lisboa.jpg"
-            alt="Vista panorámica de Lisboa"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-        </div>
-
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 pt-32">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 border border-white/20 mb-6 text-sm">
-              <Icon name="map" size={16} />
-              {mainItineraries.length + specialItineraries.length} rutas disponibles
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.08] mb-5 text-white tracking-tight">
-              Elige tu experiencia
-              <br />
-              <span className="text-accent">perfecta en Lisboa</span>
-            </h1>
-
-            <p className="text-lg text-white/80 max-w-lg leading-relaxed">
-              Itinerarios completos con restaurantes, spots de fotos y tips de locales. Desde 1 día hasta una semana.
-            </p>
-          </div>
+      {/* Hero */}
+      <section className="relative h-[60vh] min-h-[380px] overflow-hidden">
+        <Image
+          src="/images/hero-lisboa.jpg"
+          alt="Vista panorámica de Lisboa"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Guías de viaje</p>
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
+            Itinerarios para Lisboa
+          </h1>
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <section className="bg-white py-3 border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios' }]} />
-        </div>
-      </section>
-
-      {/* ─── TRUST BAR ─── */}
-      <section className="py-6 bg-white border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm">
-            {[
-              { icon: 'bolt', label: 'Acceso inmediato' },
-              { icon: 'verified', label: 'Verificado 2026' },
-              { icon: 'workspace_premium', label: 'Garantía 48h' },
-              { icon: 'map', label: 'Mapas GPS offline' },
-            ].map((item) => (
-              <div key={item.icon} className="flex items-center gap-2 text-text-secondary">
-                <Icon name={item.icon} size={16} className="text-primary" />
-                {item.label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── MAIN ITINERARIES ─── */}
-      <section id="itinerarios" className="py-20 bg-background-light">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="inline-block px-4 py-1.5 bg-primary/8 text-primary rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
-              Según tus días
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
-              Itinerarios principales
+      {/* Itinerarios principales */}
+      <section id="itinerarios" className="bg-background-light py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Según tus días</p>
+            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
+              Elige tu ruta
             </h2>
-            <p className="text-text-secondary max-w-lg mx-auto">
-              Cada pack incluye itinerario hora a hora, restaurantes verificados, spots de fotos y mapas offline.
-            </p>
           </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10">
             {mainItineraries.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}
@@ -126,22 +77,21 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* ─── SPECIAL PACKS ─── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="inline-block px-4 py-1.5 bg-primary/8 text-primary rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
-              Experiencias temáticas
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
+      {/* Separador */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-border-soft" />
+      </div>
+
+      {/* Packs especiales */}
+      <section className="bg-background-light py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Experiencias temáticas</p>
+            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
               Packs especiales
             </h2>
-            <p className="text-text-secondary max-w-lg mx-auto">
-              Para viajeros con intereses específicos: parejas, familias, fotógrafos o estancias largas.
-            </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {specialItineraries.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} size="compact" />
             ))}
@@ -149,70 +99,71 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* ─── USEFUL LINKS ─── */}
-      <section className="py-14 bg-background-light">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-xl font-display font-black text-text-main mb-6 text-center">Completa tu viaje</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      {/* Separador */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-border-soft" />
+      </div>
+
+      {/* Completa tu viaje */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">También te puede interesar</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { href: '/transporte', icon: 'directions_transit', label: 'Transporte' },
-              { href: '/presupuesto', icon: 'payments', label: 'Presupuesto' },
-              { href: '/apps', icon: 'phone_iphone', label: 'Apps útiles' },
-              { href: '/info-util', icon: 'info', label: 'Info esencial' },
+              { href: '/transporte', label: 'Transporte en Lisboa' },
+              { href: '/presupuesto', label: 'Presupuesto para Lisboa' },
+              { href: '/apps', label: 'Apps útiles' },
+              { href: '/info-util', label: 'Información esencial' },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-100 hover:border-primary/20 hover:shadow-soft transition-all duration-300"
+                className="text-sm text-text-secondary hover:text-primary transition-colors underline-offset-2 hover:underline"
               >
-                <Icon name={link.icon} size={20} className="text-primary group-hover:scale-110 transition-transform" />
-                <span className="font-semibold text-text-main text-sm group-hover:text-primary transition-colors">{link.label}</span>
+                {link.label} →
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
-      <section className="py-16 bg-white">
+      {/* FAQ */}
+      <section className="bg-[#1a2b4a] py-16">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-display font-black text-text-main mb-8 text-center">
+          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-10">
             Preguntas frecuentes
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-8">
             {faqItems.map((item) => (
-              <div key={item.question} className="bg-background-light rounded-2xl p-6 border border-slate-100">
-                <h3 className="font-bold text-text-main mb-2">{item.question}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{item.answer}</p>
+              <div key={item.question} className="border-t border-white/10 pt-6">
+                <h3 className="font-semibold text-white mb-2">{item.question}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04] bg-azulejo-pattern" />
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-5 tracking-tight">
-            No sabes cuál elegir?
+      {/* CTA quiz */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4">
+            ¿No sabes cuál elegir?
           </h2>
-          <p className="text-lg text-white/85 mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-text-secondary mb-8">
             Haz el quiz de 60 segundos y te recomendamos la ruta perfecta para tu viaje.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/quiz"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
             >
-              <Icon name="quiz" size={20} />
               Hacer el quiz
             </Link>
             <Link
               href="/contacto"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
+              className="px-8 py-3 border border-border-soft hover:border-text-secondary text-text-main font-semibold transition-colors"
             >
-              <Icon name="chat" size={18} />
               Pregúntanos
             </Link>
           </div>

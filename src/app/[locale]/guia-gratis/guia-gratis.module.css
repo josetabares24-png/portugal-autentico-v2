@@ -1,11 +1,11 @@
 .pageContent {
   min-height: 100vh;
-  background: #FFF5F0;
+  background: #FAF8F5;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #c65d3b 0%, #a84d2f 100%);
   padding: 60px 20px;
   text-align: center;
   position: relative;
@@ -45,7 +45,7 @@
 }
 
 .hero h1 {
-  font-family: Georgia, serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   color: white;
   margin-bottom: 15px;
@@ -83,7 +83,7 @@
 }
 
 .formCard h2 {
-  font-family: Georgia, serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
   color: #1a1a1a;
   margin-bottom: 10px;
@@ -117,13 +117,13 @@
 
 .formGroup input:focus {
   outline: none;
-  border-color: #FF6B35;
+  border-color: #c65d3b;
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .submitButton {
   width: 100%;
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #c65d3b 0%, #a84d2f 100%);
   color: white;
   padding: 16px;
   border: none;
@@ -171,7 +171,7 @@
 }
 
 .privacyNotice a {
-  color: #FF6B35;
+  color: #c65d3b;
   text-decoration: none;
 }
 
@@ -205,7 +205,7 @@
 }
 
 .benefitsCard h3 {
-  font-family: Georgia, serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   color: #1a1a1a;
   margin-bottom: 25px;
@@ -229,7 +229,7 @@
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  background: #FFF5F0;
+  background: #FAF8F5;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -259,7 +259,7 @@
 }
 
 .previewSection h3 {
-  font-family: Georgia, serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 30px;
@@ -273,7 +273,7 @@
 
 .topicItem {
   padding: 15px;
-  background: #FFF5F0;
+  background: #FAF8F5;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -283,7 +283,7 @@
 .topicNumber {
   width: 30px;
   height: 30px;
-  background: #FF6B35;
+  background: #c65d3b;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -308,7 +308,7 @@
 }
 
 .footer a {
-  color: #FF6B35;
+  color: #c65d3b;
   text-decoration: none;
 }
 

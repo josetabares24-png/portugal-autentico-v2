@@ -3,73 +3,86 @@ import Link from 'next/link';
 
 export default function SobreNosotrosPage() {
   return (
-    <main className="bg-background-light">
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-lisboa.jpg"
-            alt="Sobre nosotros"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-white/25 mb-8">
-            <span className="material-symbols-outlined text-base">verified</span>
-            <span className="text-sm font-semibold tracking-wide">Locales en Lisboa</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black leading-tight mb-6 text-white tracking-tight drop-shadow-lg">
-            Sobre
-            <br />
-            <span className="text-accent">Estaba en Lisboa</span>
+    <main>
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/hero-lisboa.jpg"
+          alt="Lisboa desde las alturas"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Quiénes somos</p>
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
+            Estaba en Lisboa
           </h1>
-          <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-            Guías reales creadas por quien vive aquí. Sin turistadas, sin perder tiempo.
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="bg-background-light py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <p className="font-display italic text-text-main text-xl md:text-2xl leading-relaxed mb-8">
+            Vivimos en Lisboa. Probamos las rutas cada mes. Escribimos solo lo que funciona.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-6">
+            Nada de guías copiadas de Wikipedia. Nada de listas de &ldquo;los 10 mejores restaurantes&rdquo; que llevan tres años sin actualizarse. Solo lo que nosotros mismos haríamos si llegásemos por primera vez a Lisboa mañana.
+          </p>
+          <p className="text-text-secondary leading-relaxed">
+            Cada itinerario está verificado, cada restaurante sigue abierto, cada precio está actualizado para 2026. Si algo cambia, lo actualizamos.
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="bg-background-cream rounded-3xl p-8 border border-border-soft">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">home</span>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Vivimos aquí</h3>
-              <p className="text-slate-600">
-                Probamos rutas cada mes para que lo que recomiendas funcione de verdad.
-              </p>
-            </div>
-            <div className="bg-background-cream rounded-3xl p-8 border border-border-soft">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">update</span>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Actualizadas</h3>
-              <p className="text-slate-600">
-                Si algo cambia, se actualiza. Nada de guías viejas.
-              </p>
-            </div>
-            <div className="bg-background-cream rounded-3xl p-8 border border-border-soft">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4">workspace_premium</span>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Garantía</h3>
-              <p className="text-slate-600">
-                48h de devolución. Si no te funciona, te devolvemos el dinero.
-              </p>
-            </div>
-          </div>
+      {/* Separador */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-border-soft" />
+      </div>
 
-          <div className="mt-16 bg-gradient-to-r from-primary to-orange-500 rounded-3xl p-10 text-white text-center">
-            <h2 className="text-3xl font-black mb-4">¿Hablamos?</h2>
-            <p className="text-white/90 mb-6">
-              Si quieres colaborar o tienes dudas, escríbenos y te respondemos rápido.
-            </p>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-2xl font-bold shadow-xl hover:scale-105 transition-all"
-            >
-              Contactar
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
+      {/* Tres pilares */}
+      <section className="bg-background-light py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="border-t-2 border-primary pt-6">
+              <h3 className="font-display italic text-text-main text-xl mb-3">Vivimos aquí</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
+                Probamos rutas cada mes para que lo que recomendamos funcione de verdad, no solo en papel.
+              </p>
+            </div>
+            <div className="border-t-2 border-border-soft pt-6">
+              <h3 className="font-display italic text-text-main text-xl mb-3">Siempre actualizadas</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
+                Si algo cambia &mdash; precio, horario, restaurante que cierra &mdash; actualizamos la guía. Nada de información vieja.
+              </p>
+            </div>
+            <div className="border-t-2 border-border-soft pt-6">
+              <h3 className="font-display italic text-text-main text-xl mb-3">Garantía 48h</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">
+                Si la guía no te es útil, te devolvemos el dinero en 48 horas. Sin preguntas.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA contacto */}
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
+            ¿Hablamos?
+          </h2>
+          <p className="text-white/60 mb-8 leading-relaxed">
+            Si quieres colaborar, tienes dudas sobre alguna guía o simplemente quieres preguntar algo de Lisboa, escríbenos.
+          </p>
+          <Link
+            href="/contacto"
+            className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+          >
+            Escribirnos
+          </Link>
         </div>
       </section>
     </main>
