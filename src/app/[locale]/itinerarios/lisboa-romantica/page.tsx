@@ -2,19 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaRomanticaTimeline } from '@/data/itineraries';
-import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
-import Icon from '@/components/Icon';
+import { isFreeAccessActive } from '@/lib/guide-config';
 
 export const metadata = {
-  title: 'Lisboa Romántica para Parejas - Guía 2026',
-  description: 'Itinerario romántico Lisboa: miradores atardecer, cenas con vistas, paseos por Alfama. Los mejores spots para parejas. Guía por locales.',
-  keywords: ['lisboa romantica', 'lisboa parejas', 'miradores lisboa', 'cena romantica lisboa'],
+  title: 'Lisboa Romántica: Guía para Parejas 2026',
+  description: 'Lisboa en pareja: miradores al atardecer, fado auténtico y cenas especiales. Los rincones más románticos de la ciudad.',
+  keywords: ['lisboa romantica', 'lisboa pareja', 'viaje romantico lisboa', 'luna de miel lisboa'],
   openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-romantica' },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-romantica' },
 };
@@ -27,240 +25,102 @@ export default function LisboaRomanticaPage() {
   const displayStops = isFree ? lisboaRomanticaTimeline : lisboaRomanticaTimeline.slice(0, PREVIEW_STOPS);
   const totalStops = lisboaRomanticaTimeline.length;
 
-  // Fotos para la galería
   const photos = [
-    { url: '/images/alfama-panoramica.jpg', caption: 'Miradores al atardecer en Lisboa' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Calles históricas con encanto' },
-    { url: '/images/tranvia-28.jpg', caption: 'Paseo en tranvía con vistas' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Vistas nocturnas elegantes' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama al atardecer' },
+    { url: '/images/tranvia-28.jpg', caption: 'Calles de Lisboa' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa desde el río' },
+    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura romántica' },
   ];
 
   return (
-    <main className="min-h-screen bg-background-light">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/alfama-panoramica.jpg"
-            alt="Lisboa Romántica para Parejas"
-            fill
-            className="object-cover scale-110"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
-          <Link
-            href="/itinerarios"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 text-sm transition-colors"
-          >
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
-            Volver a itinerarios
+    <main id="main-content">
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/alfama-panoramica.jpg"
+          alt="Lisboa romántica para parejas"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
+            ← Itinerarios
           </Link>
-
-          <div className="inline-flex items-center gap-2 bg-pink-500/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white border border-pink-400/30 mb-8">
-            <span className="material-symbols-outlined text-pink-300">verified</span>
-            <span className="text-sm font-bold tracking-wide">GUÍA PREMIUM</span>
-          </div>
-
-          <h1 className="text-5xl md:text-8xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
-            Lisboa<br />
-            <span className="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">
-              Romántica
-            </span>
+          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+            Lisboa Romántica
           </h1>
+          <p className="text-white/70 text-sm">Para parejas · {totalStops} paradas · Miradores, fado y cenas</p>
+        </div>
+      </section>
 
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium drop-shadow-lg">
-            Miradores al atardecer, cenas con vistas, paseos por calles secretas y momentos para enamorarse de Lisboa juntos.
-          </p>
-
-          <div className="flex flex-wrap gap-3 justify-center mb-16">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">location_on</span>
-              <span className="text-white text-sm font-medium">{totalStops} paradas románticas</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">restaurant</span>
-              <span className="text-white text-sm font-medium">2 restaurantes seleccionados</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">wb_twilight</span>
-              <span className="text-white text-sm font-medium">Atardeceres épicos</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-              <span className="material-symbols-outlined text-white text-sm">map</span>
-              <span className="text-white text-sm font-medium">Mapas offline</span>
-            </div>
-          </div>
-
+      {/* Sticky bar */}
+      <section className="bg-background-light sticky top-16 z-30 border-b border-border-soft">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+          <span className="font-display italic text-text-main text-sm">Lisboa para Dos</span>
           {isFree ? (
-            <div className="flex flex-col items-center gap-4">
-              <a
-                href="#itinerario"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
-              >
-                <span className="material-symbols-outlined text-lg">lock_open</span>
-                GRATIS por tiempo limitado
-              </a>
-              <div className="flex items-center gap-4 text-white/70 text-sm">
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
-                  Acceso completo
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-accent text-base">schedule</span>
-                  Hasta {FREE_ACCESS_UNTIL}
-                </span>
-              </div>
-            </div>
+            <span className="text-primary font-semibold text-sm">Acceso libre</span>
           ) : (
-            <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-green-400">check_circle</span>
-                <span>Preview gratis</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-yellow-400">verified</span>
-                <span>Creado por locales</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-blue-400">workspace_premium</span>
-                <span>Garantía 48h</span>
-              </div>
-            </div>
+            <Link
+              href="/checkout/lisboa-romantica"
+              className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+            >
+              Desbloquear {PRODUCT_PRICE}€
+            </Link>
           )}
         </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-white text-4xl opacity-70">expand_more</span>
-        </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <section className="bg-background-cream py-4 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios', href: '/itinerarios' }, { label: 'Lisboa Romántica' }]} />
-        </div>
-      </section>
-
-      {/* Sticky Info Bar */}
-      <section className="sticky top-20 z-40 bg-white/98 backdrop-blur-md border-b border-slate-100 shadow-soft">
-        <div className="max-w-5xl mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 bg-pink-500/10 px-4 py-2 rounded-full">
-                <span className="material-symbols-outlined text-pink-500 text-lg">workspace_premium</span>
-                {isFree ? (
-                  <span className="text-green-600 font-bold text-sm">GRATIS</span>
-                ) : (
-                  <span className="text-pink-500 text-sm font-bold">Solo {PRODUCT_PRICE}€</span>
-                )}
-              </div>
-              <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
-                <span className="material-symbols-outlined text-lg">visibility</span>
-                {isFree ? 'Acceso completo sin costo' : 'Preview gratis disponible'}
-              </div>
+      {/* Resumen */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Resumen de la guía
+          </p>
+          <div className="grid sm:grid-cols-3 gap-8">
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Para quién</h3>
+              <p className="text-text-secondary text-sm">Parejas · Luna de miel · Escapada</p>
             </div>
-            <div className="flex gap-3">
-              {isFree ? (
-                <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-base">lock_open</span>
-                  Acceso libre
-                </span>
-              ) : (
-                <Link
-                  href="/checkout/lisboa-romantica"
-                  className="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl font-semibold transition-all flex items-center gap-2"
-                >
-                  <span className="material-symbols-outlined">lock_open</span>
-                  Desbloquear guía
-                </Link>
-              )}
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Paradas</h3>
+              <p className="text-text-secondary text-sm">{totalStops} rincones románticos</p>
+            </div>
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Precio</h3>
+              <p className="text-text-secondary text-sm">{isFree ? 'Gratis (acceso libre)' : `${PRODUCT_PRICE}€ · Acceso de por vida`}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Summary */}
-      <section className="py-16 bg-background-cream">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">Resumen del Itinerario Romántico</h2>
-            <p className="text-text-secondary text-lg max-w-xl mx-auto">Un día perfecto para parejas que quieren descubrir el lado más íntimo de Lisboa.</p>
-          </div>
+      {/* Timeline */}
+      <section className="bg-background-light py-16 border-t border-border-soft" id="itinerario">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
+            Itinerario día a día
+          </p>
+          <p className={`text-xs uppercase tracking-widest font-semibold mb-10 ${isFree ? 'text-primary' : 'text-text-secondary'}`}>
+            {isFree ? 'Acceso completo gratuito' : `Mostrando ${PREVIEW_STOPS} de ${totalStops} paradas`}
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-pink-500 text-3xl">schedule</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Duración</h3>
-                <p className="text-text-secondary">Un día completo sin prisas (10:00-23:30)</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-pink-500 text-3xl">wb_twilight</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Highlights</h3>
-                <p className="text-text-secondary">3 miradores + cena romántica + paseo nocturno</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-4 group">
-              <div className="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-pink-500 text-3xl">payments</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-text-main mb-1">Precio</h3>
-                <p className="text-pink-500 text-xl">{isFree ? 'GRATIS' : `${PRODUCT_PRICE}€`}</p>
-                {isFree && <p className="text-text-secondary text-sm mt-1">Por tiempo limitado</p>}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section - PREVIEW */}
-      <section className="py-20 bg-background-cream" id="itinerario">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-3 ${isFree ? 'bg-green-500/10 text-green-600' : 'bg-pink-500/10 text-pink-600'}`}>
-              {isFree ? 'Acceso completo gratuito' : 'Preview gratuito'}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-text-main mb-4 tracking-tight">
-              Vuestro Día Romántico en Lisboa
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              {isFree
-                ? `Las ${totalStops} paradas completas con restaurantes, coordenadas GPS y tips de local.`
-                : `Mostrando las primeras ${PREVIEW_STOPS} paradas. Desbloquea la guía completa para ver las ${totalStops - PREVIEW_STOPS} restantes con restaurantes y coordenadas GPS.`
-              }
-            </p>
-          </div>
-
-          <TimelineContainer lineColor="pink">
-            {/* Preview Stops - Solo primeras 3 */}
+          <TimelineContainer lineColor="primary">
             {displayStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
             ))}
-
-            {/* Paywall */}
             <PreviewPaywall
               productId="lisboa-romantica"
               price={PRODUCT_PRICE}
-              productName="Lisboa Romántica para Parejas"
+              productName="Lisboa Romántica"
               totalStops={totalStops}
             />
           </TimelineContainer>
         </div>
       </section>
 
-      {/* Included Features */}
       <IncludedFeatures />
 
       <PremiumContent
@@ -270,64 +130,45 @@ export default function LisboaRomanticaPage() {
         coordinates={lisboaRomanticaTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        mapTitle="Mapa Interactivo del Itinerario"
-        mapDescription="Miradores, cenas y planes románticos ubicados en un mapa. Haz click en los marcadores numerados para ver cada parada."
+        mapTitle="Mapa de rincones románticos"
+        mapDescription="Miradores, restaurantes y lugares especiales para parejas. Haz click en los marcadores para ver cada parada."
         guideTitle="Lisboa Romántica"
       />
 
-      {/* Photo Gallery Section */}
-      <section className="py-16 bg-background-cream" id="galeria">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8">
+      {/* Galería + tips */}
+      <section className="bg-background-light py-16 border-t border-border-soft" id="galeria">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Vista previa y consejos
+          </p>
+          <div className="grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2">
-              <div className="mb-6">
-                <span className="inline-block px-3 py-1 bg-pink-500/10 text-pink-600 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
-                  Vista previa
-                </span>
-                <h2 className="text-3xl font-bold text-text-main mb-4">Lo que viviréis juntos</h2>
-                <p className="text-text-secondary">Los lugares más románticos de Lisboa, cuidadosamente seleccionados para parejas.</p>
-              </div>
-
               <PhotoGallery photos={photos} />
             </div>
 
-            <div className="flex flex-col h-full">
-              <div className="bg-white p-6 rounded-xl azulejo-border flex flex-col gap-6 flex-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-16 h-16 opacity-10 bg-azulejo-pattern"></div>
-
-                <div className="inline-flex items-center gap-2 bg-pink-500/10 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide self-start">
-                  <span className="material-symbols-outlined text-base">lightbulb</span>
-                  Tips Románticos
-                </div>
-
-                <ul className="flex flex-col gap-5 flex-1">
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-pink-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-pink-500 text-lg">wb_twilight</span>
-                    </div>
+            <div>
+              <div className="border-t-2 border-primary pt-6">
+                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Tips de local</p>
+                <ul className="space-y-5">
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
-                      <h4 className="font-bold text-text-main text-sm">Atardecer en Graça</h4>
-                      <p className="text-text-secondary text-sm mt-1">Llega 45 min antes del sunset para conseguir buena mesa. Es EL momento del día.</p>
+                      <p className="font-semibold text-text-main text-sm">Atardecer en Graça</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Llega 45 minutos antes del sunset. El Miradouro da Graça es el más tranquilo de la ciudad.</p>
                     </div>
                   </li>
-
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-pink-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-pink-500 text-lg">restaurant</span>
-                    </div>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
-                      <h4 className="font-bold text-text-main text-sm">Reserva Chapitô</h4>
-                      <p className="text-text-secondary text-sm mt-1">IMPRESCINDIBLE reservar 2-3 días antes. Pide mesa ventana y menciona "ocasión especial".</p>
+                      <p className="font-semibold text-text-main text-sm">Chapitô</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Reserva con 2-3 días de antelación. Las mejores mesas con vista al Tajo se agotan rápido.</p>
                     </div>
                   </li>
-
-                  <li className="flex gap-3 items-start">
-                    <div className="min-w-[32px] w-8 h-8 rounded-full bg-pink-500/10 flex items-center justify-center mt-1">
-                      <span className="material-symbols-outlined text-pink-500 text-lg">calendar_month</span>
-                    </div>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
-                      <h4 className="font-bold text-text-main text-sm">Mejor día</h4>
-                      <p className="text-text-secondary text-sm mt-1">Martes-jueves menos turistas. Domingos perfecto para ambiente local en Jardim da Estrela.</p>
+                      <p className="font-semibold text-text-main text-sm">Mejor momento</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Martes a jueves: menos turistas, más tranquilo, restaurantes con mejor trato.</p>
                     </div>
                   </li>
                 </ul>
@@ -337,61 +178,37 @@ export default function LisboaRomanticaPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-pink-500 to-rose-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-azulejo-pattern"></div>
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <span className="material-symbols-outlined text-white text-7xl mb-6 inline-block">favorite</span>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ¿Listos para vuestra escapada romántica?
-          </h2>
+      {/* CTA final */}
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="font-display italic text-white text-3xl mb-4">Lisboa para dos</p>
           {isFree ? (
             <>
-              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
-              </p>
+              <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/itinerarios/lisboa-romantica"
-                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-green-700 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+                <a
+                  href="#itinerario"
+                  className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
                 >
-                  <span className="material-symbols-outlined text-2xl">lock_open</span>
-                  Acceder Gratis
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </Link>
+                  Ver guía gratis
+                </a>
                 <Link
                   href="/donar?guide=lisboa-romantica"
-                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
+                  className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold transition-colors"
                 >
-                  <span className="material-symbols-outlined text-2xl">favorite</span>
-                  Apoyar con donativo
+                  Dejar donativo
                 </Link>
               </div>
-              <p className="text-white/80 text-sm mt-6">Acceso completo · Actualizado 2026 · Sin suscripciones</p>
             </>
           ) : (
             <>
-              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Acceso inmediato por solo {PRODUCT_PRICE}€. Garantía de reembolso de 48 horas.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/checkout/lisboa-romantica"
-                  className="group flex items-center justify-center gap-3 px-10 py-5 bg-white text-pink-600 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all"
-                >
-                  <span className="material-symbols-outlined text-2xl">lock_open</span>
-                  Desbloquear por {PRODUCT_PRICE}€
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </Link>
-                <a
-                  href="/contacto"
-                  className="flex items-center justify-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-2xl font-bold text-xl border-2 border-white/30 transition-all"
-                >
-                  <span className="material-symbols-outlined text-2xl">chat</span>
-                  Tengo dudas
-                </a>
-              </div>
-              <p className="text-white/80 text-sm mt-6">✅ Descarga inmediata · ✅ Garantía 48h · ✅ Sin suscripciones</p>
+              <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
+              <Link
+                href="/checkout/lisboa-romantica"
+                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+              >
+                Desbloquear por {PRODUCT_PRICE}€
+              </Link>
             </>
           )}
         </div>

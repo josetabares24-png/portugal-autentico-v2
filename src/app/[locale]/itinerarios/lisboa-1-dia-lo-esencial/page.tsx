@@ -2,24 +2,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
 import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboa1DiaTimeline } from '@/data/itineraries';
-import { isFreeAccessActive, FREE_ACCESS_UNTIL } from '@/lib/guide-config';
-import Icon from '@/components/Icon';
+import { isFreeAccessActive } from '@/lib/guide-config';
 
 export const metadata = {
-  title: 'Lisboa en 1 Día: Lo Esencial - Guía Completa 2026',
-  description: 'Itinerario Lisboa 1 día: Alfama, Belém, miradores Santa Luzia, pastéis de nata. Horarios exactos, GPS y restaurantes locales. Guía creada por quien vive aquí.',
-  keywords: ['lisboa 1 dia', 'que ver lisboa un dia', 'itinerario lisboa', 'alfama belem', 'lisboa esencial'],
-  openGraph: {
-    title: 'Lisboa en 1 Día - Lo Esencial',
-    description: 'La ruta más eficiente para ver lo mejor de Lisboa en un día. Alfama, Belém, miradores.',
-    url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial',
-  },
+  title: 'Lisboa en 1 Día: Lo Esencial 2026',
+  description: '8 paradas imprescindibles en Lisboa en un solo día. Alfama, Castillo, Belém y más. Itinerario optimizado con horarios y consejos locales.',
+  keywords: ['lisboa 1 dia', 'itinerario lisboa un dia', 'que ver lisboa'],
+  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
 };
 
@@ -32,207 +26,86 @@ export default function Lisboa1DiaPage() {
   const totalStops = lisboa1DiaTimeline.length;
 
   const photos = [
-    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores clásicos' },
-    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 por las colinas' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama desde las alturas' },
+    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 en Alfama' },
     { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Panorámica de Lisboa' },
+    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa panorámica' },
   ];
 
   return (
-    <main className="min-h-screen bg-background-light">
-      {/* ─── HERO ─── */}
-      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/alfama-panoramica.jpg"
-            alt="Lisboa - Itinerario 1 día"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-        </div>
-
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-16 pt-32">
-          <Link
-            href="/itinerarios"
-            className="inline-flex items-center gap-1.5 text-white/60 hover:text-white text-sm mb-8 transition-colors"
-          >
-            <Icon name="arrow_back" size={16} />
-            Todas las rutas
+    <main id="main-content">
+      {/* Hero */}
+      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/alfama-panoramica.jpg"
+          alt="Lisboa en 1 día - Lo esencial"
+          fill
+          className="object-cover"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+          <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
+            ← Itinerarios
           </Link>
+          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+            Lisboa en 1 Día
+          </h1>
+          <p className="text-white/70 text-sm">Lo esencial · {totalStops} paradas · Alfama, Castillo, Belém</p>
+        </div>
+      </section>
 
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white/90 border border-white/20 mb-6 text-sm">
-              <Icon name="verified" size={16} className="text-accent" />
-              Guía premium
+      {/* Sticky bar */}
+      <section className="bg-background-light sticky top-16 z-30 border-b border-border-soft">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+          <span className="font-display italic text-text-main text-sm">Lo Esencial de Lisboa</span>
+          {isFree ? (
+            <span className="text-primary font-semibold text-sm">Acceso libre</span>
+          ) : (
+            <Link
+              href="/checkout/lisboa-1-dia-lo-esencial"
+              className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+            >
+              Desbloquear {PRODUCT_PRICE}€
+            </Link>
+          )}
+        </div>
+      </section>
+
+      {/* Resumen */}
+      <section className="bg-background-light py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Resumen de la guía
+          </p>
+          <div className="grid sm:grid-cols-3 gap-8">
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Duración</h3>
+              <p className="text-text-secondary text-sm">1 día completo (9:00 – 21:00)</p>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black leading-[1.08] mb-5 text-white tracking-tight">
-              Lisboa en 1 día:
-              <br />
-              <span className="text-accent">Lo Esencial</span>
-            </h1>
-
-            <p className="text-lg text-white/80 max-w-lg mb-10 leading-relaxed">
-              Desde los miradores de Alfama hasta los pasteles de Belém. La ruta más eficiente con horarios reales y paradas estratégicas.
-            </p>
-          </div>
-
-          {/* Quick stats */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {[
-              { icon: 'location_on', label: `${totalStops} paradas` },
-              { icon: 'restaurant', label: '3 restaurantes' },
-              { icon: 'photo_camera', label: '8 spots fotos' },
-              { icon: 'map', label: 'Mapa offline' },
-              { icon: 'schedule', label: '10-12 horas' },
-            ].map((stat) => (
-              <div key={stat.icon} className="flex items-center gap-1.5 bg-white/10 backdrop-blur px-3.5 py-2 rounded-full border border-white/15 text-white/90 text-sm">
-                <Icon name={stat.icon} size={16} />
-                {stat.label}
-              </div>
-            ))}
-          </div>
-
-          {/* Price + CTA row */}
-          <div className="flex flex-wrap items-center gap-4 border-t border-white/15 pt-8">
-            {isFree ? (
-              <>
-                <a
-                  href="#itinerario"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
-                >
-                  <Icon name="lock_open" size={18} />
-                  GRATIS por tiempo limitado
-                </a>
-                <div className="flex items-center gap-4 text-white/70 text-sm">
-                  <span className="flex items-center gap-1.5">
-                    <Icon name="check_circle" size={16} className="text-green-400" />
-                    Acceso completo
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Icon name="schedule" size={16} className="text-accent" />
-                    Hasta {FREE_ACCESS_UNTIL}
-                  </span>
-                </div>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/checkout/lisboa-1-dia-lo-esencial"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
-                >
-                  <Icon name="lock_open" size={18} />
-                  Desbloquear por {PRODUCT_PRICE}€
-                </Link>
-                <div className="flex items-center gap-4 text-white/70 text-sm">
-                  <span className="flex items-center gap-1.5">
-                    <Icon name="check_circle" size={16} className="text-green-400" />
-                    Acceso inmediato
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <Icon name="workspace_premium" size={16} className="text-accent" />
-                    Garantía 48h
-                  </span>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Breadcrumbs */}
-      <section className="bg-white py-3 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
-          <Breadcrumbs
-            items={[
-              { label: 'Inicio', href: '/' },
-              { label: 'Itinerarios', href: '/itinerarios' },
-              { label: 'Lisboa 1 Día - Lo Esencial' },
-            ]}
-          />
-        </div>
-      </section>
-
-      {/* ─── STICKY BAR ─── */}
-      <section className="sticky top-20 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div className="max-w-5xl mx-auto px-6 py-3">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-sm">
-              <span className="font-display font-bold text-text-main">Lisboa 1 Día</span>
-              <span className="text-slate-300">|</span>
-              {isFree ? (
-                <span className="text-green-600 font-bold">GRATIS</span>
-              ) : (
-                <span className="text-primary font-bold">{PRODUCT_PRICE}€</span>
-              )}
-              <span className="text-slate-300 hidden sm:inline">|</span>
-              <span className="text-text-secondary hidden sm:inline">
-                {isFree ? 'Acceso completo sin costo' : 'Preview gratis abajo'}
-              </span>
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Paradas</h3>
+              <p className="text-text-secondary text-sm">{totalStops} lugares imprescindibles</p>
             </div>
-            {isFree ? (
-              <span className="px-5 py-2 bg-green-500 text-white rounded-xl font-semibold text-sm flex items-center gap-2">
-                <Icon name="lock_open" size={16} />
-                Acceso libre
-              </span>
-            ) : (
-              <Link
-                href="/checkout/lisboa-1-dia-lo-esencial"
-                className="px-5 py-2 bg-primary hover:bg-primary-dark text-white rounded-xl font-semibold text-sm transition-all flex items-center gap-2"
-              >
-                <Icon name="lock_open" size={16} />
-                Desbloquear
-              </Link>
-            )}
+            <div className="border-t-2 border-primary pt-5">
+              <h3 className="font-semibold text-text-main text-sm mb-1">Precio</h3>
+              <p className="text-text-secondary text-sm">{isFree ? 'Gratis (acceso libre)' : `${PRODUCT_PRICE}€ · Acceso de por vida`}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── QUICK SUMMARY ─── */}
-      <section className="py-14 bg-white">
+      {/* Timeline */}
+      <section className="bg-background-light py-16 border-t border-border-soft" id="itinerario">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-display font-black text-text-main mb-3 tracking-tight">Resumen del itinerario</h2>
-            <p className="text-text-secondary">Todo lo que necesitas saber antes de salir</p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-4">
-            {[
-              { icon: 'schedule', title: 'Duración', value: '10-12 horas', desc: 'Ritmo tranquilo' },
-              { icon: 'directions_walk', title: 'Transporte', value: 'A pie + Tranvía', desc: 'Sin complicaciones' },
-              { icon: 'payments', title: 'Precio', value: isFree ? 'GRATIS' : `${PRODUCT_PRICE}€`, desc: isFree ? 'Por tiempo limitado' : 'Acceso inmediato', highlight: true },
-            ].map((item) => (
-              <div key={item.icon} className={`rounded-2xl p-5 text-center border ${item.highlight ? 'bg-primary/5 border-primary/20' : 'bg-background-light border-slate-100'}`}>
-                <Icon name={item.icon} size={24} className={`mb-2 inline-block ${item.highlight ? 'text-primary' : 'text-text-secondary'}`} />
-                <p className="text-xs text-text-secondary uppercase tracking-wider mb-1">{item.title}</p>
-                <p className={`text-lg font-display font-black ${item.highlight ? 'text-primary' : 'text-text-main'}`}>{item.value}</p>
-                <p className="text-xs text-text-secondary mt-1">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TIMELINE PREVIEW ─── */}
-      <section className="py-20 bg-background-cream" id="itinerario">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-14">
-            <span className={`inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 ${isFree ? 'bg-green-500/10 text-green-600' : 'bg-primary/8 text-primary'}`}>
-              {isFree ? 'Acceso completo gratuito' : 'Preview gratuito'}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-black text-text-main mb-4 tracking-tight">
-              Tu cronograma paso a paso
-            </h2>
-            <p className="text-text-secondary max-w-lg mx-auto">
-              {isFree
-                ? `Las ${totalStops} paradas completas con restaurantes, coordenadas GPS y tips de local.`
-                : `Primeras ${PREVIEW_STOPS} paradas gratis. Desbloquea la guía para ver las ${totalStops - PREVIEW_STOPS} restantes con restaurantes y GPS.`
-              }
-            </p>
-          </div>
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
+            Itinerario día a día
+          </p>
+          <p className={`text-xs uppercase tracking-widest font-semibold mb-10 ${isFree ? 'text-primary' : 'text-text-secondary'}`}>
+            {isFree ? 'Acceso completo gratuito' : `Mostrando ${PREVIEW_STOPS} de ${totalStops} paradas`}
+          </p>
 
           <TimelineContainer lineColor="primary">
             {displayStops.map((stop, idx) => (
@@ -241,142 +114,103 @@ export default function Lisboa1DiaPage() {
             <PreviewPaywall
               productId="lisboa-1-dia-lo-esencial"
               price={PRODUCT_PRICE}
-              productName="Lisboa 1 Día - Lo Esencial"
+              productName="Lisboa en 1 Día"
               totalStops={totalStops}
             />
           </TimelineContainer>
         </div>
       </section>
 
-      {/* Included Features */}
       <IncludedFeatures />
 
-      {/* Premium Content */}
       <PremiumContent
         productId="lisboa-1-dia-lo-esencial"
         price={PRODUCT_PRICE}
-        productName="Lisboa 1 Día - Lo Esencial"
+        productName="Lisboa en 1 Día"
         coordinates={lisboa1DiaTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
-        mapTitle="Mapa Interactivo del Itinerario"
-        mapDescription="Todos los restaurantes, miradores y monumentos en un solo mapa. Haz click en los marcadores para ver cada parada."
-        guideTitle="Lisboa 1 Día - Lo Esencial"
+        mapTitle="Mapa del itinerario"
+        mapDescription="Todas las paradas del día con coordenadas GPS. Haz click en los marcadores para ver cada parada."
+        guideTitle="Lisboa en 1 Día"
       />
 
-      {/* ─── GALLERY + TIPS ─── */}
-      <section className="py-16 bg-white" id="galeria">
+      {/* Galería + tips */}
+      <section className="bg-background-light py-16 border-t border-border-soft" id="galeria">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
+            Vista previa y consejos
+          </p>
+          <div className="grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2">
-              <span className="inline-block px-4 py-1.5 bg-secondary-blue/8 text-secondary-blue rounded-full text-xs font-semibold uppercase tracking-widest mb-4">
-                Vista previa
-              </span>
-              <h2 className="text-2xl font-display font-black text-text-main mb-3">Lo que verás en este itinerario</h2>
-              <p className="text-text-secondary mb-6 text-sm">Lugares auténticos seleccionados y probados por locales.</p>
               <PhotoGallery photos={photos} />
             </div>
 
             <div>
-              <div className="bg-background-light rounded-2xl p-6 border border-slate-100 sticky top-40">
-                <div className="flex items-center gap-2 mb-5">
-                  <Icon name="lightbulb" size={18} className="text-primary" />
-                  <span className="font-bold text-text-main text-sm uppercase tracking-wider">Tips locales</span>
-                </div>
-
-                <div className="space-y-5">
-                  {[
-                    { icon: 'foot_bones', title: 'Zapatos cómodos', desc: 'La calçada portuguesa es resbaladiza. Nada de tacones.' },
-                    { icon: 'credit_card', title: 'Viva Viagem', desc: 'Tarjeta recargable en cualquier metro. Mucho más barato.' },
-                    { icon: 'tram', title: 'Tranvía 28', desc: 'Evita 11am-4pm. Mejor en la parada inicial.' },
-                  ].map((tip) => (
-                    <div key={tip.icon} className="flex gap-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon name={tip.icon} size={16} className="text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-text-main text-sm">{tip.title}</h4>
-                        <p className="text-text-secondary text-xs leading-relaxed mt-0.5">{tip.desc}</p>
-                      </div>
+              <div className="border-t-2 border-primary pt-6">
+                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Tips de local</p>
+                <ul className="space-y-5">
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <div>
+                      <p className="font-semibold text-text-main text-sm">Calzado cómodo</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">La calçada portuguesa es resbaladiza. Nada de tacones ni suela lisa.</p>
                     </div>
-                  ))}
-                </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <div>
+                      <p className="font-semibold text-text-main text-sm">Tarjeta Viva Viagem</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Recargable para metro y bus. Evitas colas y es más barata que los billetes sueltos.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <div>
+                      <p className="font-semibold text-text-main text-sm">Tranvía 28</p>
+                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Evita de 11:00 a 16:00 (masificado). Tómalo por la mañana temprano o tarde.</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── FINAL CTA ─── */}
-      <section className="py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04] bg-azulejo-pattern" />
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-display font-black text-white mb-5 tracking-tight">
-            Listo para explorar Lisboa?
-          </h2>
-
+      {/* CTA final */}
+      <section className="bg-[#1a2b4a] py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="font-display italic text-white text-3xl mb-4">Lo esencial de Lisboa en un día</p>
           {isFree ? (
             <>
-              <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto leading-relaxed">
-                Acceso gratuito por tiempo limitado. Sin tarjeta, sin registro.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-                <Link
-                  href="/itinerarios/lisboa-1-dia-lo-esencial"
-                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-green-700 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#itinerario"
+                  className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
                 >
-                  <Icon name="lock_open" size={20} />
-                  Acceder Gratis
-                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                  Ver guía gratis
+                </a>
                 <Link
                   href="/donar?guide=lisboa-1-dia-lo-esencial"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
+                  className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold transition-colors"
                 >
-                  <Icon name="favorite" size={18} />
-                  Apoyar con donativo
+                  Dejar donativo
                 </Link>
               </div>
             </>
           ) : (
             <>
-              <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto leading-relaxed">
-                Acceso inmediato por solo {PRODUCT_PRICE}€. Si no te convence, te devuelvo el dinero en 48h.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-                <Link
-                  href="/checkout/lisboa-1-dia-lo-esencial"
-                  className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-white text-primary rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  <Icon name="lock_open" size={20} />
-                  Desbloquear por {PRODUCT_PRICE}€
-                  <Icon name="arrow_forward" size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/contacto"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-2xl font-bold border border-white/25 transition-all duration-300"
-                >
-                  <Icon name="chat" size={18} />
-                  Tengo dudas
-                </Link>
-              </div>
+              <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
+              <Link
+                href="/checkout/lisboa-1-dia-lo-esencial"
+                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+              >
+                Desbloquear por {PRODUCT_PRICE}€
+              </Link>
             </>
           )}
-
-          <div className="flex flex-wrap justify-center gap-6 text-white/70 text-sm">
-            <span className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-green-400 text-base">check_circle</span>
-              {isFree ? 'Acceso completo' : 'Descarga inmediata'}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-accent text-base">workspace_premium</span>
-              {isFree ? 'Actualizado 2026' : 'Garantía 48h'}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Icon name="block" size={16} className="text-blue-300" />
-              Sin suscripciones
-            </span>
-          </div>
         </div>
       </section>
     </main>
