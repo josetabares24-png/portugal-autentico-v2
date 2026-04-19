@@ -81,7 +81,7 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
             {children || 'Inicia sesión para comprar'}
           </button>
         </SignInButton>
-        <p className="text-xs text-slate-500 mt-2 text-center">
+        <p className="text-xs text-text-secondary mt-2 text-center">
           Las guías se guardan en tu cuenta para acceso permanente
         </p>
       </div>
@@ -103,7 +103,7 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
         {loading ? 'Procesando...' : showLoadingState ? 'Cargando...' : (children || 'Comprar ahora')}
       </button>
       {showLoadingState && (
-        <p className="text-xs text-slate-500 mt-2 text-center">
+        <p className="text-xs text-text-secondary mt-2 text-center">
           Verificando autenticación...
         </p>
       )}

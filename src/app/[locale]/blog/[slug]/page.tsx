@@ -2611,16 +2611,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
-    <main id="main-content" className="bg-white">
+    <main id="main-content" className="bg-background-light">
       {/* Breadcrumb minimalista */}
-      <div className="border-b border-slate-200">
+      <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
-          <nav className="flex items-center gap-2 text-sm text-slate-500">
+          <nav className="flex items-center gap-2 text-xs text-text-secondary">
             <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
             <span>›</span>
             <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
             <span>›</span>
-            <span className="text-slate-700 font-medium">{article.categoria}</span>
+            <span className="font-semibold text-text-main">{article.categoria}</span>
           </nav>
         </div>
       </div>
@@ -2664,7 +2664,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {/* Columna principal */}
           <article className="min-w-0">
             {/* Lead paragraph - primer párrafo destacado */}
-            <p className="text-xl text-slate-700 leading-relaxed mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+            <p className="text-xl text-text-secondary leading-relaxed mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
               {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
             </p>
 
@@ -2698,7 +2698,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
 
             {/* Contenido del artículo */}
-            <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed">
+            <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-text-main prose-p:text-text-secondary prose-p:leading-relaxed">
               {article.contenido.slice(1).map((bloque, index) => {
                 if (bloque.tipo === 'parrafo') {
                   paragraphIndex += 1;
@@ -2706,14 +2706,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
                       <blockquote key={index} className="border-l-4 border-primary bg-background-light px-6 py-4 my-8 not-prose">
-                        <p className="text-lg text-slate-700 italic leading-relaxed">
+                        <p className="text-lg text-text-secondary italic leading-relaxed">
                           "{bloque.texto}"
                         </p>
                       </blockquote>
                     );
                   }
                   return (
-                    <p key={index} className="text-slate-600 leading-relaxed mb-6">
+                    <p key={index} className="text-text-secondary leading-relaxed mb-6">
                       {bloque.texto}
                     </p>
                   );
@@ -2724,7 +2724,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <h2
                       key={index}
                       id={headingId}
-                      className="text-2xl font-bold text-slate-900 mt-12 mb-4 scroll-mt-28 border-b border-slate-200 pb-2"
+                      className="text-2xl font-bold text-text-main mt-12 mb-4 scroll-mt-28 border-b border-border-soft pb-2"
                     >
                       {bloque.texto}
                     </h2>

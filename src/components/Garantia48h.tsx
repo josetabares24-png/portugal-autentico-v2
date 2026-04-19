@@ -4,32 +4,25 @@ interface Garantia48hEditorialProps {
 
 export default function Garantia48hEditorial({ className = '' }: Garantia48hEditorialProps) {
   return (
-    <div className={`bg-slate-50 border-t border-b border-slate-200 py-12 md:py-16 ${className}`}>
-      <div className="max-w-3xl mx-auto px-4">
-        
-        {/* Header simple */}
-        <div className="mb-8">
-          <h3 className="text-2xl md:text-3xl font-normal text-slate-900 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+    <div className={`bg-background-light border-t border-b border-border-soft py-12 md:py-16 ${className}`}>
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="mb-6">
+          <h3 className="font-display italic text-text-main text-2xl md:text-3xl mb-4">
             Garantía de Satisfacción
           </h3>
-          <div className="w-12 h-px bg-slate-900"></div>
+          <div className="w-12 h-px bg-primary"></div>
         </div>
-
-        {/* Contenido editorial limpio */}
-        <div className="prose prose-lg max-w-none" style={{ fontFamily: 'Georgia, serif' }}>
-          <p className="text-slate-700 leading-relaxed mb-6">
+        <div className="space-y-4">
+          <p className="text-text-secondary text-sm leading-relaxed">
             Si esta guía no cumple tus expectativas en las siguientes 48 horas, te devolvemos el 100% de tu dinero. Sin preguntas, sin complicaciones.
           </p>
-
-          <p className="text-slate-700 leading-relaxed mb-6">
+          <p className="text-text-secondary text-sm leading-relaxed">
             Creemos en la calidad de nuestro trabajo y queremos que pruebes la guía con total tranquilidad.
           </p>
-
-          <p className="text-sm text-slate-600 italic">
+          <p className="text-text-secondary text-xs italic">
             Contacta con nosotros en cualquier momento a través de contacto@estabaenlisboa.com y procesaremos tu devolución en menos de 24 horas.
           </p>
         </div>
-
       </div>
     </div>
   );
