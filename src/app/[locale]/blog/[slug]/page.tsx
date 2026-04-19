@@ -2705,7 +2705,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   // Cada 3 párrafos, añadir destacado estilo cita
                   if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
-                      <blockquote key={index} className="border-l-4 border-primary bg-slate-50 px-6 py-4 my-8 not-prose rounded-r-lg">
+                      <blockquote key={index} className="border-l-4 border-primary bg-background-light px-6 py-4 my-8 not-prose">
                         <p className="text-lg text-slate-700 italic leading-relaxed">
                           "{bloque.texto}"
                         </p>
