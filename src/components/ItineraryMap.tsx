@@ -23,56 +23,38 @@ export default function ItineraryMap({
 }: ItineraryMapProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Crear URL de Google Maps con todos los marcadores usando Google Maps estándar
   const mapUrl = useMemo(() => {
     if (!coordinates || coordinates.length === 0) {
-      // Fallback a Lisboa si no hay coordenadas
       return 'https://www.google.com/maps?q=Lisboa,Portugal&output=embed';
     }
-
-    // Calcular centro para múltiples puntos
     const lats = coordinates.map(c => c.lat);
     const lngs = coordinates.map(c => c.lng);
     const centerLat = (Math.min(...lats) + Math.max(...lats)) / 2;
     const centerLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
-
-    // Crear marcadores como query parameters
-    // Formato: markers=label:1|lat1,lng1&markers=label:2|lat2,lng2
     const markers = coordinates
       .map((coord, idx) => `markers=label:${idx + 1}|${coord.lat},${coord.lng}`)
       .join('&');
-
-    // Usar Google Maps estándar con marcadores
     return `https://www.google.com/maps?q=${centerLat},${centerLng}&${markers}&output=embed`;
   }, [coordinates]);
 
-  // URL alternativa usando Google Maps estándar con query parameters
   const alternativeMapUrl = useMemo(() => {
     if (!coordinates || coordinates.length === 0) {
       return 'https://www.google.com/maps?q=Lisboa,Portugal';
     }
-
-    // Crear URL con todos los puntos como destino
     const points = coordinates.map(c => `${c.lat},${c.lng}`).join('/');
     return `https://www.google.com/maps/dir/${points}`;
   }, [coordinates]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-            🗺️ {title}
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            {description}
-          </p>
+    <section className="bg-background-light py-16 border-t border-border-soft">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="mb-8">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">{title}</p>
+          <p className="text-text-secondary text-sm">{description}</p>
         </div>
 
-        {/* Map Container */}
-        <div className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 shadow-xl">
-          <div className={`relative ${isExpanded ? 'h-screen' : 'h-96 md:h-[600px]'} transition-all duration-300`}>
+        <div className="border border-border-soft overflow-hidden">
+          <div className={`relative ${isExpanded ? 'h-screen' : 'h-96 md:h-[500px]'}`}>
             <iframe
               src={mapUrl}
               width="100%"
@@ -83,85 +65,53 @@ export default function ItineraryMap({
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title={`Mapa interactivo de ${guideTitle}`}
-            ></iframe>
-
-            {/* Expand/Collapse Button */}
+            />
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="absolute top-4 right-4 bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl font-bold text-sm shadow-lg border border-slate-200 flex items-center gap-2 z-10 transition-all"
-              aria-label={isExpanded ? 'Reducir mapa' : 'Expandir mapa a pantalla completa'}
+              className="absolute top-3 right-3 bg-background-light border border-border-soft text-text-secondary px-3 py-1.5 text-xs font-semibold flex items-center gap-1.5 z-10 hover:border-text-secondary transition-colors"
+              aria-label={isExpanded ? 'Reducir mapa' : 'Expandir mapa'}
             >
-              <Icon name={isExpanded ? 'close_fullscreen' : 'open_in_full'} size={18} />
-              {isExpanded ? 'Reducir' : 'Pantalla completa'}
+              <Icon name={isExpanded ? 'close_fullscreen' : 'open_in_full'} size={14} />
+              {isExpanded ? 'Reducir' : 'Expandir'}
             </button>
           </div>
 
-          {/* Actions */}
-          <div className="p-6 bg-gradient-to-r from-slate-700 to-slate-800">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={alternativeMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-white text-slate-700 rounded-xl font-bold hover:scale-105 transition-all shadow-lg"
-              >
-                <Icon name="open_in_new" size={20} />
-                Abrir en Google Maps
-              </a>
-              <a
-                href={`https://www.google.com/maps?q=${coordinates.length > 0 ? `${coordinates[0].lat},${coordinates[0].lng}` : 'Lisboa,Portugal'}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-slate-600 hover:bg-slate-500 text-white rounded-xl font-bold transition-all"
-              >
-                <Icon name="directions" size={20} />
-                Cómo llegar
-              </a>
-            </div>
-
-            <div className="mt-4 text-center">
-              <p className="text-white/90 text-sm">
-                💡 <strong>Tip:</strong> Abre el mapa en Google Maps app → Guarda los lugares en "Tus sitios" → Navega con GPS en tiempo real
-              </p>
-            </div>
+          <div className="border-t border-border-soft p-5 flex flex-col sm:flex-row gap-3">
+            <a
+              href={alternativeMapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-5 py-3 border border-border-soft text-text-secondary text-xs font-semibold hover:border-text-secondary transition-colors"
+            >
+              <Icon name="open_in_new" size={14} />
+              Abrir en Google Maps
+            </a>
+            <a
+              href={`https://www.google.com/maps?q=${coordinates.length > 0 ? `${coordinates[0].lat},${coordinates[0].lng}` : 'Lisboa,Portugal'}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+            >
+              <Icon name="directions" size={14} />
+              Cómo llegar
+            </a>
           </div>
         </div>
 
-        {/* Info */}
-        <div className="mt-8 bg-white rounded-2xl p-6 border-2 border-slate-200">
-          <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <Icon name="info" size={18} className="text-primary" />
-            Cómo usar este mapa
-          </h3>
-          <div className="grid md:grid-cols-3 gap-4 text-sm">
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">
-                1
-              </div>
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          {[
+            { n: '1', title: 'En tu ordenador', desc: 'Haz click en los marcadores numerados para ver cada parada del itinerario.' },
+            { n: '2', title: 'En tu móvil', desc: 'Abre en Google Maps app → Guarda en "Tus sitios" → Navega con GPS en tiempo real.' },
+            { n: '3', title: 'Ruta optimizada', desc: 'Los marcadores están numerados en el orden del itinerario para seguirlo paso a paso.' },
+          ].map((item) => (
+            <div key={item.n} className="border-t border-border-soft pt-4 flex gap-3">
+              <span className="text-xs font-bold text-primary flex-shrink-0">{item.n}.</span>
               <div>
-                <p className="font-bold text-slate-900 mb-1">En tu ordenador</p>
-                <p className="text-slate-600">Haz click en los marcadores numerados para ver cada parada del itinerario</p>
+                <p className="text-xs font-semibold text-text-main mb-1">{item.title}</p>
+                <p className="text-xs text-text-secondary leading-relaxed">{item.desc}</p>
               </div>
             </div>
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">
-                2
-              </div>
-              <div>
-                <p className="font-bold text-slate-900 mb-1">En tu móvil</p>
-                <p className="text-slate-600">Abre en Google Maps app → Guarda en "Tus sitios" → Navega con GPS en tiempo real</p>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">
-                3
-              </div>
-              <div>
-                <p className="font-bold text-slate-900 mb-1">Ruta optimizada</p>
-                <p className="text-slate-600">Los marcadores están numerados en el orden del itinerario para seguir la ruta paso a paso</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
