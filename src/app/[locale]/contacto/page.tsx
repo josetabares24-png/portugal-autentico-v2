@@ -11,9 +11,11 @@ export default function ContactoPage() {
     mensaje: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -26,10 +28,10 @@ export default function ContactoPage() {
         setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        alert(data.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.');
+        setError(data.message || 'Error al enviar el mensaje. Por favor, intenta de nuevo.');
       }
     } catch {
-      alert('Error de conexión. Por favor, intenta de nuevo.');
+      setError('Error de conexión. Por favor, intenta de nuevo.');
     }
   };
 
@@ -132,6 +134,10 @@ export default function ContactoPage() {
                   >
                     Enviar mensaje
                   </button>
+
+                  {error && (
+                    <p className="text-xs text-red-600">{error}</p>
+                  )}
 
                   <p className="text-xs text-text-secondary">
                     Responderemos en menos de 24 horas.

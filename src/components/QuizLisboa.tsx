@@ -156,7 +156,7 @@ function OptionButton({ title, desc, selected, onClick }: OptionButtonProps) {
       onClick={onClick}
       className={`w-full p-5 border-t-2 text-left transition-colors ${
         selected
-          ? 'border-primary bg-white'
+          ? 'border-primary bg-background-light'
           : 'border-border-soft hover:border-text-secondary'
       }`}
     >

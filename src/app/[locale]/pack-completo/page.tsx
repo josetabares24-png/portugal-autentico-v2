@@ -51,7 +51,7 @@ export default function PackCompletoPage() {
               </div>
               <p className="text-white/60 text-sm mb-8">Ahorras 60% · Pago único · Acceso de por vida</p>
               <button
-                onClick={() => alert('Aquí se abrirá Stripe checkout')}
+                onClick={() => window.location.href = '/itinerarios'}
                 className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
               >
                 Comprar ahora
@@ -170,7 +170,7 @@ export default function PackCompletoPage() {
             <>
               <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
               <button
-                onClick={() => alert('Aquí se abrirá Stripe checkout')}
+                onClick={() => window.location.href = '/itinerarios'}
                 className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
               >
                 Comprar pack por 24.99€

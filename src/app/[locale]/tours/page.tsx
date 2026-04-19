@@ -8,8 +8,6 @@ import { tourFallbackImage, tourImageMap } from '@/lib/media';
 export default function ToursPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const CIVITATIS_AFFILIATE_ID = "TU_AFFILIATE_ID";
-
   const directUrls: Record<number, string> = {
     1: 'https://www.civitatis.com/es/lisboa/free-tour-lisboa/',
     2: 'https://www.civitatis.com/es/lisboa/free-tour-alfama/',
@@ -42,7 +40,7 @@ export default function ToursPage() {
       description: 'Descubre la historia de Lisboa con guías en español. Recorre Baixa, Chiado, Rossio y conoce las leyendas de la ciudad.',
       highlights: ['Baixa-Chiado', 'Rossio', 'Historia local', 'Propina a tu criterio'],
       image: '/images/hero-lisboa.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/free-tour-lisboa/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/free-tour-lisboa/',
       badge: 'Más popular', recommended: true
     },
     {
@@ -52,7 +50,7 @@ export default function ToursPage() {
       description: 'Explora el barrio más auténtico de Lisboa. Callejuelas, miradores, fado y la esencia más pura de la ciudad.',
       highlights: ['Barrio Alfama', 'Miradores', 'Cultura fado', 'Casas típicas'],
       image: '/images/alfama-panoramica.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/free-tour-alfama/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/free-tour-alfama/',
       badge: 'Imprescindible', recommended: true
     },
     {
@@ -62,7 +60,7 @@ export default function ToursPage() {
       description: 'Palacio da Pena, Quinta da Regaleira, el punto más occidental de Europa y el pueblo costero de Cascais. Todo en un día.',
       highlights: ['Palacio da Pena', 'Cascais', 'Cabo da Roca', 'Transporte incluido'],
       image: '/images/pexels-german-latasa-814203747-35697448.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/excursion-sintra-cascais/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/excursion-sintra-cascais/',
       badge: 'Mejor valorado', recommended: true
     },
     {
@@ -72,7 +70,7 @@ export default function ToursPage() {
       description: 'Visita el Palacio da Pena y el centro histórico de Sintra. Ideal si quieres centrarte solo en Sintra sin prisas.',
       highlights: ['Palacio da Pena', 'Centro de Sintra', 'Entrada incluida', 'Grupos pequeños'],
       image: '/images/pexels-helena-i-1489651-2867883.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/tour-sintra-palacio-pena/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/tour-sintra-palacio-pena/',
       badge: null, recommended: false
     },
     {
@@ -82,7 +80,7 @@ export default function ToursPage() {
       description: 'Santuario de Fátima, monasterio de Batalha, pueblo pesquero de Nazaré y la villa medieval de Óbidos.',
       highlights: ['Santuario Fátima', 'Óbidos medieval', 'Nazaré', 'Almuerzo incluido'],
       image: '/images/pexels-daniel-1547736.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/excursion-fatima-batalha-nazare-obidos/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/excursion-fatima-batalha-nazare-obidos/',
       badge: null, recommended: false
     },
     {
@@ -92,7 +90,7 @@ export default function ToursPage() {
       description: 'Degusta pastéis de nata, bacalao, ginjinha y vino de Oporto. Visita mercados locales y tascas auténticas.',
       highlights: ['10+ degustaciones', 'Mercados locales', 'Vinos portugueses', 'Guía foodie'],
       image: '/images/IMG_1880.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/tour-gastronomico/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/tour-gastronomico/',
       badge: 'Experiencia única', recommended: true
     },
     {
@@ -102,7 +100,7 @@ export default function ToursPage() {
       description: 'Cata de vinos del Douro, Alentejo y Vinho Verde con quesos artesanales portugueses. En una bodega histórica.',
       highlights: ['6 vinos premium', 'Quesos artesanales', 'Bodega histórica', 'Grupos reducidos'],
       image: '/images/vino-celebracion.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/cata-vinos-quesos/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/cata-vinos-quesos/',
       badge: null, recommended: false
     },
     {
@@ -112,7 +110,7 @@ export default function ToursPage() {
       description: 'Cena tradicional portuguesa + espectáculo de fado en vivo en una casa típica de Alfama. Incluye bebidas.',
       highlights: ['Cena 3 platos', 'Fado en vivo', 'Bebidas incluidas', 'Casa auténtica'],
       image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/espectaculo-fado-cena/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/espectaculo-fado-cena/',
       badge: 'Romántico', recommended: true
     },
     {
@@ -122,7 +120,7 @@ export default function ToursPage() {
       description: 'Uno de los acuarios más grandes de Europa. Perfecto para familias. Entrada sin colas incluida.',
       highlights: ['Sin colas', 'Guía especializado', 'Para toda la familia', 'Parque das Nações'],
       image: '/images/yingcan-chen-xZ_GfV_JZlE-unsplash.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/visita-guiada-oceanario/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/visita-guiada-oceanario/',
       badge: 'Para familias', recommended: false
     },
     {
@@ -132,7 +130,7 @@ export default function ToursPage() {
       description: 'Navega por el río Tajo al atardecer. Vistas de la Torre de Belém, Puente 25 de Abril y Cristo Rei. Incluye bebida.',
       highlights: ['Atardecer mágico', 'Bebida incluida', 'Vistas panorámicas', 'Grupos pequeños'],
       image: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/paseo-barco-tajo-atardecer/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/paseo-barco-tajo-atardecer/',
       badge: null, recommended: true
     },
     {
@@ -142,7 +140,7 @@ export default function ToursPage() {
       description: 'Clase de surf en Carcavelos o Costa da Caparica. Para principiantes. Tabla y neopreno incluidos.',
       highlights: ['Instructor profesional', 'Equipo incluido', 'Playa Carcavelos', 'Todos los niveles'],
       image: '/images/pexels-daniel-1547736.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/clase-surf/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/clase-surf/',
       badge: null, recommended: false
     },
     {
@@ -152,7 +150,7 @@ export default function ToursPage() {
       description: 'Tour 100% personalizado solo para tu grupo. Elige qué ver y adapta el ritmo. Guía exclusivo en español.',
       highlights: ['Totalmente personalizable', 'Guía exclusivo', 'Itinerario a medida', 'Recogida en hotel'],
       image: '/images/hero-lisboa.jpg',
-      bookingUrl: `https://www.civitatis.com/es/lisboa/tour-privado/?aid=${CIVITATIS_AFFILIATE_ID}`,
+      bookingUrl: 'https://www.civitatis.com/es/lisboa/tour-privado/',
       badge: null, recommended: false
     }
   ];
