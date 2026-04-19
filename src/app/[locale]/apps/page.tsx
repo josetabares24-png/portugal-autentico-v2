@@ -219,7 +219,7 @@ export default function AppsPage() {
               <article key={app.nombre} className="py-8">
                 <div className="grid md:grid-cols-[5rem,1fr,auto] gap-6 items-start">
                   {/* Logo */}
-                  <div className="w-16 h-16 border border-border-soft bg-white flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 border border-border-soft bg-background-light flex items-center justify-center flex-shrink-0">
                     <Image
                       src={app.logo}
                       alt={`Logo de ${app.nombre}`}

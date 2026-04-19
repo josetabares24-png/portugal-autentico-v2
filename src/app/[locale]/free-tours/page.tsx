@@ -41,7 +41,7 @@ export default function FreeToursPage() {
   ];
 
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image

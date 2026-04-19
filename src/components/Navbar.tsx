@@ -50,7 +50,7 @@ export default function Navbar() {
               onMouseLeave={() => setUtilidadesDropdownOpen(false)}
             >
               <button className={`px-4 py-2 font-semibold text-sm transition-colors flex items-center gap-1.5 ${
-                ['/apps', '/presupuesto', '/transporte', '/info-util', '/donde-dormir', '/free-tours'].some(p => pathname.startsWith(p))
+                ['/apps', '/presupuesto', '/transporte', '/info-util', '/donde-dormir', '/free-tours', '/tours'].some(p => pathname.startsWith(p))
                   ? 'text-primary'
                   : 'text-text-main hover:text-primary'
               }`}>
@@ -82,6 +82,10 @@ export default function Navbar() {
                   <Link href="/donde-dormir" className="flex items-center gap-3 px-4 py-2.5 text-text-main hover:text-primary transition-colors">
                     <Icon name="hotel" size={16} />
                     <span className="text-sm">Dónde Dormir</span>
+                  </Link>
+                  <Link href="/tours" className="flex items-center gap-3 px-4 py-2.5 text-text-main hover:text-primary transition-colors">
+                    <Icon name="explore" size={16} />
+                    <span className="text-sm">Tours y Actividades</span>
                   </Link>
                   <Link href="/free-tours" className="flex items-center gap-3 px-4 py-2.5 text-text-main hover:text-primary transition-colors">
                     <Icon name="tour" size={16} />
@@ -179,6 +183,10 @@ export default function Navbar() {
                 <Link href="/donde-dormir" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-text-main hover:text-primary transition-colors">
                   <Icon name="hotel" size={16} />
                   <span>Dónde Dormir</span>
+                </Link>
+                <Link href="/tours" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-text-main hover:text-primary transition-colors">
+                  <Icon name="explore" size={16} />
+                  <span>Tours y Actividades</span>
                 </Link>
                 <Link href="/free-tours" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-text-main hover:text-primary transition-colors">
                   <Icon name="tour" size={16} />
