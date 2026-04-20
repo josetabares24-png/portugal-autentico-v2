@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function SobreNosotrosPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image

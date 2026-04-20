@@ -64,7 +64,7 @@ export default function GuiaGratisPage() {
   };
 
   return (
-    <main>
+    <main id="main-content">
       {/* Cabecera */}
       <section className="bg-[#1a2b4a] py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">

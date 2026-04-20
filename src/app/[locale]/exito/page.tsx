@@ -3,7 +3,7 @@ import Icon from '@/components/Icon';
 
 export default function ExitoPage() {
   return (
-    <main className="bg-background-light py-24">
+    <main id="main-content" className="bg-background-light py-24">
       <div className="max-w-2xl mx-auto px-6">
         <div className="border-t-2 border-primary pt-8 text-center mb-10">
           <div className="w-10 h-10 bg-primary flex items-center justify-center mx-auto mb-6">

@@ -40,7 +40,7 @@ export default function ContactoPage() {
   };
 
   return (
-    <main>
+    <main id="main-content">
       {/* Cabecera */}
       <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
         <div className="max-w-3xl mx-auto px-6">
