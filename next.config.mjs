@@ -13,6 +13,8 @@ const nextConfig = {
       { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
       // Sintra slug antiguo → premium actual
       { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      // Blog stubs → artículos completos
+      { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
       // Redirecciones de versiones en/ko a español (sitio monoidioma)
       { source: '/en/:path*', destination: '/:path*', permanent: true },
       { source: '/ko/:path*', destination: '/:path*', permanent: true },

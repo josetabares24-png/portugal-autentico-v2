@@ -32,8 +32,19 @@ export default function LisboaFullWeekPage() {
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía histórico en Lisboa' },
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa Semana Completa - 7 Días 2026',
+    description: 'Itinerario Lisboa 7 días: ciudad, Sintra, Cascais, Arrábida. La experiencia total con horarios, GPS y restaurantes.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-full-week',
+    isAccessibleForFree: 'False',
+    hasPart: [{ '@type': 'WebPageElement', isAccessibleForFree: 'False', cssSelector: '.premium-paywall' }],
+  };
+
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image

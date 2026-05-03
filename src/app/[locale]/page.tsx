@@ -39,8 +39,8 @@ export const metadata: Metadata = {
 };
 
 const historias = [
-  blogPosts.find(p => p.id === 'historia-de-lisboa') || blogPosts[0],
-  blogPosts.find(p => p.id === 'terremoto-lisboa-1755') || blogPosts[1],
+  blogPosts.find(p => p.id === 'mejores-miradores-lisboa') || blogPosts[0],
+  blogPosts.find(p => p.id === 'historia-de-lisboa') || blogPosts[1],
   blogPosts.find(p => p.id === 'barrios-imprescindibles') ||
     blogPosts.find(p => p.id === 'novedades-lisboa-2026') ||
     blogPosts[2],
@@ -55,12 +55,12 @@ const barrios = [
   { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg' },
 ];
 
-const libreta = [
-  'El 13 de junio huele a sardinas. No hay excepción.',
-  'El mejor mirador a las 7 de la mañana es el de Santa Luzia. A las 11, ya no.',
-  'En Mouraria, los lunes hay mercado. Viene poca gente y eso es lo bueno.',
-  'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.',
-  'Hay una tasca en Graça que solo abre tres días a la semana. Siempre llena.',
+const libreta: { texto: string; href?: string }[] = [
+  { texto: 'El 13 de junio huele a sardinas. No hay excepción.' },
+  { texto: 'El mejor mirador a las 7 de la mañana es el de Santa Luzia. A las 11, ya no.', href: '/blog/mejores-miradores-lisboa' },
+  { texto: 'En Mouraria, los lunes hay mercado. Viene poca gente y eso es lo bueno.' },
+  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.' },
+  { texto: 'Hay una tasca en Graça que solo abre tres días a la semana. Siempre llena.' },
 ];
 
 export default function HomePage() {
@@ -198,7 +198,13 @@ export default function HomePage() {
             {libreta.map((nota, i) => (
               <li key={i} className="flex gap-5 items-start">
                 <span className="text-taupe font-body font-light text-sm mt-1 flex-shrink-0 w-5 text-right">{i + 1}</span>
-                <p className="text-night font-body font-light text-lg leading-relaxed">{nota}</p>
+                {nota.href ? (
+                  <Link href={nota.href} className="text-night font-body font-light text-lg leading-relaxed border-b border-taupe/40 hover:border-terracotta hover:text-terracotta transition-colors">
+                    {nota.texto}
+                  </Link>
+                ) : (
+                  <p className="text-night font-body font-light text-lg leading-relaxed">{nota.texto}</p>
+                )}
               </li>
             ))}
           </ul>

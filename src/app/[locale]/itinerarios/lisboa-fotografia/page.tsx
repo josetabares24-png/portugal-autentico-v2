@@ -32,8 +32,19 @@ export default function LisboaFotografiaPage() {
     { url: '/images/hero-lisboa.jpg', caption: 'Perspectivas abiertas de la ciudad' },
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa Fotografía - PhotoWalk y Spots 2026',
+    description: '12 spots fotográficos Lisboa: golden hour, blue hour, ángulos exactos. Settings cámara y coordenadas GPS.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-fotografia',
+    isAccessibleForFree: 'False',
+    hasPart: [{ '@type': 'WebPageElement', isAccessibleForFree: 'False', cssSelector: '.premium-paywall' }],
+  };
+
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
