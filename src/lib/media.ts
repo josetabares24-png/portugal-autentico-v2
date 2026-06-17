@@ -20,7 +20,7 @@ export const blogImageMap: Record<string, string> = {
   'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
   'mejor-epoca-visitar-lisboa': '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
-  'transporte-publico-lisboa': '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg',
+  'transporte-publico-lisboa': '/images/funicular-bica-turistas.jpg',
   'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
   'que-ver-cascais-desde-lisboa': '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
   'playas-cerca-lisboa': '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg',
@@ -28,10 +28,10 @@ export const blogImageMap: Record<string, string> = {
   'presupuesto-viajar-lisboa': '/images/bica-cafe-mapa.jpg',
   'mejores-mercados-lisboa': '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
   'donde-tomar-cafe-lisboa': '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
-  'miradores-atardecer-lisboa': '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
-  'que-comprar-lisboa-souvenirs': '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+  'miradores-atardecer-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
+  'que-comprar-lisboa-souvenirs': '/images/aldaba-puerta-lisboa.jpg',
   'viajar-ninos-lisboa': '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg',
-  'excursiones-desde-lisboa': '/images/pexels-daniel-1547736.jpg',
+  'excursiones-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
 };
 
 export const tourImageMap: Record<number, string> = {

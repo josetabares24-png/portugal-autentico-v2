@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Alojamiento',
     fecha: '20 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
+    imagen: '/images/barrio-calle-residencial.jpg',
   },
   {
     id: 'barrios-imprescindibles',
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '3 Feb 2026',
     autor: 'José Tabares',
-    imagen: '/images/hero-lisboa.jpg',
+    imagen: '/images/bairro-alto-calle-noche.jpg',
   },
   {
     id: 'lisboa-en-invierno',
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Transporte',
     fecha: '18 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/ronan-furuta-RkmIdgnJSKk-unsplash.jpg',
+    imagen: '/images/funicular-bica-turistas.jpg',
   },
   {
     id: 'restaurantes-romanticos-lisboa',
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '28 Dic 2025',
     autor: 'José Tabares',
-    imagen: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+    imagen: '/images/mirador-tajo-amarras-atardecer.jpg',
   },
   {
     id: 'que-comprar-lisboa-souvenirs',
@@ -196,7 +196,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Consejos',
     fecha: '25 Dic 2025',
     autor: 'José Tabares',
-    imagen: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+    imagen: '/images/aldaba-puerta-lisboa.jpg',
   },
   {
     id: 'viajar-ninos-lisboa',
@@ -214,7 +214,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '20 Dic 2025',
     autor: 'José Tabares',
-    imagen: '/images/pexels-daniel-1547736.jpg',
+    imagen: '/images/sintra-palacio-turistas.jpg',
   },
   {
     id: 'historia-de-lisboa',
@@ -259,7 +259,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '10 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+    imagen: '/images/parque-nacoes-torres-atardecer.jpg',
   },
   {
     id: 'festivales-eventos-lisboa-2026',
@@ -286,7 +286,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '3 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/estatua-praca-lisboa.jpg',
   },
   {
     id: 'semana-santa-lisboa-2026',
