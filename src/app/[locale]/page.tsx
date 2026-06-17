@@ -74,8 +74,8 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative h-screen min-h-[600px] max-h-[900px]">
         <Image
-          src="/images/ventana-alfama-tajo.jpg"
-          alt="Vista desde una ventana de Alfama hacia el río Tajo, Lisboa"
+          src="/images/miradouro-grupo-atardecer.jpg"
+          alt="Gente sentada viendo el atardecer sobre los tejados de Alfama desde un miradouro, Lisboa"
           fill
           className="object-cover"
           priority

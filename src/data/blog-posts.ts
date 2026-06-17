@@ -268,7 +268,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '8 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
+    imagen: '/images/festival-sardinhas-noche.jpg',
   },
   {
     id: 'lisboa-vs-porto',
@@ -322,7 +322,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '22 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
+    imagen: '/images/fado-tasca-noche.jpg',
   },
   {
     id: 'belem-barrio-guia',

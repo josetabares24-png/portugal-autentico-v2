@@ -14,8 +14,8 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
-  'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
-  'donde-comer-barato-lisboa': '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+  'mejores-miradores-lisboa': '/images/miradouro-atardecer.jpg',
+  'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/tranvia-28.jpg',
   'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
@@ -24,8 +24,8 @@ export const blogImageMap: Record<string, string> = {
   'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
   'que-ver-cascais-desde-lisboa': '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
   'playas-cerca-lisboa': '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg',
-  'donde-escuchar-fado-autentico': '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
-  'presupuesto-viajar-lisboa': '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
+  'donde-escuchar-fado-autentico': '/images/fado-tasca-noche.jpg',
+  'presupuesto-viajar-lisboa': '/images/bica-cafe-mapa.jpg',
   'mejores-mercados-lisboa': '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
   'donde-tomar-cafe-lisboa': '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
   'miradores-atardecer-lisboa': '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
