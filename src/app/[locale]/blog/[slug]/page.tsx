@@ -2360,8 +2360,8 @@ function getFaqs(slug: string) {
 
 const internalLinks = [
   { href: '/itinerarios', label: 'Itinerarios por días en Lisboa' },
-  { href: '/transporte', label: 'Transporte en Lisboa' },
-  { href: '/presupuesto', label: 'Presupuesto para viajar a Lisboa' },
+  { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
+  { href: '/pack-completo', label: 'Pack completo de guías' },
   { href: '/blog', label: 'Consejos y guías de Lisboa' },
 ];
 
@@ -2870,12 +2870,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {/* Mini CTA */}
             <div className="border-t-2 border-primary pt-5">
               <p className="font-semibold text-text-main text-sm mb-2">¿Primera vez en Lisboa?</p>
-              <p className="text-text-secondary text-xs mb-4 leading-relaxed">Descubre tu perfil viajero en 60 segundos</p>
+              <p className="text-text-secondary text-xs mb-4 leading-relaxed">Te ayudamos a planificar tu viaje 1:1</p>
               <Link
-                href="/quiz"
+                href="/planifica-tu-viaje"
                 className="block w-full py-2.5 bg-primary hover:bg-primary-dark text-white text-xs font-semibold text-center transition-colors"
               >
-                Hacer el quiz
+                Planifica tu viaje
               </Link>
             </div>
           </aside>

@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBrevoService } from '@/lib/brevo';
 import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
 import { validateEmail, createErrorResponse, sendBrevoEmail, addBrevoContact } from '@/lib/api-utils';

@@ -110,10 +110,10 @@ export default async function ItinerariosPage() {
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">También te puede interesar</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { href: '/transporte', label: 'Transporte en Lisboa' },
-              { href: '/presupuesto', label: 'Presupuesto para Lisboa' },
-              { href: '/apps', label: 'Apps útiles' },
-              { href: '/info-util', label: 'Información esencial' },
+              { href: '/planifica-tu-viaje', label: 'Planifica tu viaje' },
+              { href: '/pack-completo', label: 'Pack completo de guías' },
+              { href: '/blog', label: 'Blog: historias y consejos' },
+              { href: '/faq', label: 'Preguntas frecuentes' },
             ].map((link) => (
               <Link
                 key={link.href}
@@ -144,21 +144,21 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* CTA quiz */}
+      {/* CTA planifica tu viaje */}
       <section className="bg-background-light py-16">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4">
             ¿No sabes cuál elegir?
           </h2>
           <p className="text-text-secondary mb-8">
-            Haz el quiz de 60 segundos y te recomendamos la ruta perfecta para tu viaje.
+            Cuéntanos tus días y tu estilo de viaje y te recomendamos la ruta perfecta.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/quiz"
+              href="/planifica-tu-viaje"
               className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
             >
-              Hacer el quiz
+              Planifica tu viaje
             </Link>
             <Link
               href="/contacto"

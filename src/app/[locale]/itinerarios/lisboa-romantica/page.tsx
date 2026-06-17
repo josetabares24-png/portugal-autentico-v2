@@ -185,20 +185,12 @@ export default function LisboaRomanticaPage() {
           {isFree ? (
             <>
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#itinerario"
-                  className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
-                >
-                  Ver guía gratis
-                </a>
-                <Link
-                  href="/donar?guide=lisboa-romantica"
-                  className="inline-block px-8 py-3 border border-white/30 hover:border-white text-white text-sm font-semibold transition-colors"
-                >
-                  Dejar donativo
-                </Link>
-              </div>
+              <a
+                href="#itinerario"
+                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+              >
+                Ver guía gratis
+              </a>
             </>
           ) : (
             <>

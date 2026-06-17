@@ -19,6 +19,12 @@ export default function Footer() {
 
           <nav className="flex flex-wrap items-center gap-6 md:gap-8">
             <Link
+              href="/planifica-tu-viaje"
+              className="font-body font-light text-sm text-night hover:text-terracotta transition-colors"
+            >
+              Planifica tu Viaje
+            </Link>
+            <Link
               href="/contacto"
               className="font-body font-light text-sm text-night hover:text-terracotta transition-colors"
             >
