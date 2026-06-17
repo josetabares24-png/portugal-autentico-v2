@@ -74,8 +74,8 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative h-screen min-h-[600px] max-h-[900px]">
         <Image
-          src="/images/tranvia-28.jpg"
-          alt="Tranvía 28 en una calle de Alfama, Lisboa"
+          src="/images/ventana-alfama-tajo.jpg"
+          alt="Vista desde una ventana de Alfama hacia el río Tajo, Lisboa"
           fill
           className="object-cover"
           priority

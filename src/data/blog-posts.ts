@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '10 Feb 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/miradouro-atardecer.jpg',
   },
   {
     id: 'donde-comer-barato-lisboa',
@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '20 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/alfama-callejon.jpg',
   },
   {
     id: 'terremoto-lisboa-1755',
@@ -232,7 +232,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '18 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/alfama-callejon.jpg',
   },
   {
     id: 'descubrimientos-portugueses-lisboa',
@@ -367,7 +367,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Transporte',
     fecha: '14 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/tranvia-28.jpg',
+    imagen: '/images/turista-tranvia-28.jpg',
   },
   {
     id: 'bacalhau-plato-portugal',
