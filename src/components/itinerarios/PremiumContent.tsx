@@ -148,17 +148,10 @@ function UsefulResources() {
       external: true,
     },
     {
-      titulo: 'Lisboa Card',
-      desc: '¿Vale la pena? Análisis completo según tu itinerario.',
-      href: '/apps',
-      label: 'Ver análisis',
-      external: false,
-    },
-    {
-      titulo: 'Uber / Bolt',
-      desc: 'Comparativa de precios y cuándo usar cada app en Lisboa.',
-      href: '/apps',
-      label: 'Ver comparativa',
+      titulo: 'Planifica tu Viaje',
+      desc: '¿Pocos días y quieres aprovecharlos al máximo? Te ayudamos 1:1.',
+      href: '/planifica-tu-viaje',
+      label: 'Ver más',
       external: false,
     },
     {

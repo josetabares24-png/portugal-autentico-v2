@@ -169,16 +169,6 @@ export default async function PackPage({ params }: { params: { slug: string } })
                         </div>
                       ))}
                     </div>
-                    <div className="border-t border-border-soft pt-5 text-center">
-                      <p className="text-text-secondary text-sm mb-3">Si te ha sido útil, puedes apoyarnos</p>
-                      <Link
-                        href={`/donar?guide=${slug}`}
-                        className="block w-full py-2.5 border border-border-soft hover:border-text-secondary text-text-main text-sm font-semibold transition-colors"
-                      >
-                        Dejar un donativo voluntario
-                      </Link>
-                      <p className="text-xs text-text-secondary mt-2">100% opcional</p>
-                    </div>
                   </>
                 ) : (
                   <>
