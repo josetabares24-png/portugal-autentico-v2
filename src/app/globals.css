@@ -119,40 +119,16 @@ select:focus-visible {
   }
 }
 
-/* ========== UTILITY CLASSES (used in components) ========== */
+/* ========== INTERACTION FEEDBACK ========== */
 
-.azulejo-border {
-  border: 2px solid #005F99;
-  box-shadow: 4px 4px 0px 0px #005F99;
+a {
+  transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out;
 }
 
-.card-hover {
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+button {
+  transition: transform 0.12s ease-out, color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out;
 }
 
-.card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px -12px rgba(198, 93, 59, 0.25), 0 4px 12px -4px rgba(0, 0, 0, 0.08);
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-a, button {
-  transition: all 0.2s ease;
-}
-
-/* ========== ANIMATIONS ========== */
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
+button:active:not(:disabled) {
+  transform: scale(0.97);
 }
