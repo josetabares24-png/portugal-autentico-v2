@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '8 Feb 2026',
     autor: 'José Tabares',
-    imagen: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+    imagen: '/images/tasca-da-graca.jpg',
   },
   {
     id: 'tarjeta-lisboa-card-vale-pena',
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '22 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/pexels-daniel-1547736.jpg',
+    imagen: '/images/estacion-sintra.jpg',
   },
   {
     id: 'mejor-epoca-visitar-lisboa',
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '8 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg',
+    imagen: '/images/fado-tasca-noche.jpg',
   },
   {
     id: 'presupuesto-viajar-lisboa',
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '5 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg',
+    imagen: '/images/bica-cafe-mapa.jpg',
   },
   {
     id: 'mejores-mercados-lisboa',
