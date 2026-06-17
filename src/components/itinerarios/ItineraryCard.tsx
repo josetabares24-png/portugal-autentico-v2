@@ -35,9 +35,9 @@ export function ItineraryCard({
 
   if (size === 'compact') {
     return (
-      <article className={`border-t-2 pt-5 ${featured ? 'border-primary' : 'border-border-soft'}`}>
+      <article className={`group border-t-2 pt-5 ${featured ? 'border-primary' : 'border-border-soft'}`}>
         <div className="relative aspect-[4/3] overflow-hidden mb-4">
-          <Image src={image} alt={title} fill className="object-cover" loading="lazy" />
+          <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
         </div>
         <h3 className="font-display italic text-text-main text-lg leading-snug mb-1">{title}</h3>
         <p className="text-text-secondary text-sm mb-4 line-clamp-2">{description}</p>
@@ -74,12 +74,12 @@ export function ItineraryCard({
   }
 
   return (
-    <article className={`border-t-2 pt-6 ${featured ? 'border-primary' : 'border-border-soft'}`}>
+    <article className={`group border-t-2 pt-6 ${featured ? 'border-primary' : 'border-border-soft'}`}>
       {featured && (
         <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Más popular</p>
       )}
       <div className="relative aspect-[16/9] overflow-hidden mb-5">
-        <Image src={image} alt={title} fill className="object-cover" loading="lazy" />
+        <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
       </div>
       <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
       <p className="text-text-secondary text-sm mb-5">{description}</p>
