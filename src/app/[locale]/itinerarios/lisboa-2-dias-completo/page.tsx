@@ -26,10 +26,10 @@ export default function Lisboa2DiasPage() {
   const totalStops = lisboa2DiasTimeline.length;
 
   const photos = [
-    { url: '/images/lisboa-2dias-cover.jpg', caption: 'Lisboa desde el Tajo' },
+    { url: '/images/miradouro-atardecer.jpg', caption: 'Lisboa desde el Tajo' },
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y sus miradores' },
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 histórico' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Funicular da Bica' },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Lisboa2DiasPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
-          src="/images/lisboa-2dias-cover.jpg"
+          src="/images/miradouro-atardecer.jpg"
           alt="Lisboa en 2 días itinerario completo"
           fill
           className="object-cover"

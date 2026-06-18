@@ -28,8 +28,8 @@ export default function LisboaRomanticaPage() {
   const photos = [
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama al atardecer' },
     { url: '/images/tranvia-28.jpg', caption: 'Calles de Lisboa' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa desde el río' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura romántica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el río' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura romántica' },
   ];
 
   return (

@@ -17,7 +17,7 @@ export function GuideCreateForm() {
     description: '',
     duration: '',
     price: 0,
-    image: '/images/hero-lisboa.jpg',
+    image: '/images/alfama-panoramica.jpg',
     color: 'from-slate-600 to-slate-800',
     features: [] as string[],
     includes: [] as string[],

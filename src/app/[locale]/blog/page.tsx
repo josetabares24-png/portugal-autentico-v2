@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://estabaenlisboa.com/blog',
     images: [
       {
-        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
+        url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg',
         width: 1200,
         height: 630,
         alt: 'Blog de Lisboa',

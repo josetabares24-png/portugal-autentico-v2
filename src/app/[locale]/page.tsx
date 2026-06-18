@@ -48,11 +48,11 @@ const historias = [
 
 const barrios = [
   { nombre: 'Alfama', href: '/blog/barrios-imprescindibles', imagen: '/images/alfama-panoramica.jpg' },
-  { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg' },
-  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg' },
-  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/elevador-santa-justa.jpg' },
-  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg' },
-  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg' },
+  { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-grupo-atardecer.jpg' },
+  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/bica-cafe-mapa.jpg' },
+  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/funicular-bica-turistas.jpg' },
+  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/bairro-alto-calle-noche.jpg' },
+  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-atardecer.jpg' },
 ];
 
 const libreta: { texto: string; href?: string }[] = [

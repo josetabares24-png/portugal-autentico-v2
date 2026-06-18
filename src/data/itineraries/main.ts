@@ -30,7 +30,7 @@ export const mainItineraries: Itinerary[] = [
     description: 'Dos días redondos con Lisboa clásica y barrios con encanto, sin perder tiempo ni caer en trampas turísticas.',
     duration: '2 días completos',
     price: 2.99,
-    image: '/images/elevador-santa-justa.jpg',
+    image: '/images/funicular-bica-turistas.jpg',
     features: [
       '2 rutas completas día a día',
       'Restaurantes verificados y terrazas',
@@ -77,7 +77,7 @@ export const specialItineraries: Itinerary[] = [
     description: 'Siete días completos con Lisboa y alrededores, incluyendo escapadas a Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
     price: 5.99,
-    image: '/images/hero-lisboa.jpg',
+    image: '/images/alfama-panoramica.jpg',
     features: [
       'Todos los itinerarios incluidos',
       'Escapadas a Sintra y Cascais',
@@ -98,7 +98,7 @@ export const specialItineraries: Itinerary[] = [
     description: 'Atardeceres, cenas con vistas y rincones íntimos para vivir Lisboa en pareja con ritmo relajado.',
     duration: 'Romántico',
     price: 2.99,
-    image: '/images/vino-celebracion.jpg',
+    image: '/images/fado-tasca-noche.jpg',
     features: [
       'Rutas románticas por barrios top',
       'Restaurantes con reserva recomendada',
@@ -119,7 +119,7 @@ export const specialItineraries: Itinerary[] = [
     description: 'Plan familiar con ritmo cómodo, actividades para niños y paradas prácticas sin estrés.',
     duration: 'Familiar',
     price: 2.99,
-    image: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+    image: '/images/aldaba-puerta-lisboa.jpg',
     features: [
       'Actividades para niños por edad',
       'Parques y zonas de descanso',
@@ -140,7 +140,7 @@ export const specialItineraries: Itinerary[] = [
     description: 'Ruta fotográfica con luz perfecta, ángulos exactos y spots sin aglomeraciones.',
     duration: 'Fotografía',
     price: 2.99,
-    image: '/images/fotografo-hero.jpg',
+    image: '/images/mirador-tajo-amarras-atardecer.jpg',
     features: [
       'Spots fotográficos con coordenadas',
       'Golden hour + blue hour',

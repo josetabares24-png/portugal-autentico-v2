@@ -73,7 +73,7 @@ export default function CheckoutPage() {
       {/* Hero */}
       <section className="relative h-[40vh] min-h-[260px] overflow-hidden">
         <Image
-          src="/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg"
+          src="/images/miradouro-grupo-atardecer.jpg"
           alt="Lisboa panorama"
           fill
           className="object-cover"

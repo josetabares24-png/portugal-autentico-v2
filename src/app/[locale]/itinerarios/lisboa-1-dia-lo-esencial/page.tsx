@@ -28,8 +28,8 @@ export default function Lisboa1DiaPage() {
   const photos = [
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama desde las alturas' },
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 en Alfama' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa panorámica' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Funicular da Bica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa panorámica' },
   ];
 
   return (

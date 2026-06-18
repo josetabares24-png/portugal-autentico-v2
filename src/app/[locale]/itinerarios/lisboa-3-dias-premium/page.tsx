@@ -26,10 +26,10 @@ export default function Lisboa3DiasPremiumPage() {
   const totalStops = lisboa3DiasSintraTimeline.length;
 
   const photos = [
-    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa desde el Tajo' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el Tajo' },
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama al atardecer' },
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura lisboeta' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura lisboeta' },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function Lisboa3DiasPremiumPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
-          src="/images/hero-lisboa.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Lisboa 3 días con Sintra"
           fill
           className="object-cover"

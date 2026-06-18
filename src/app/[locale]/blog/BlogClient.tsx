@@ -46,7 +46,7 @@ export default function BlogClient() {
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[420px] overflow-hidden">
         <Image
-          src="/images/malu-decks-yOFgKNgbg_g-unsplash.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Lisboa vista desde arriba"
           fill
           className="object-cover"

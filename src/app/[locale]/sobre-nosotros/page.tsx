@@ -7,7 +7,7 @@ export default function SobreNosotrosPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
-          src="/images/hero-lisboa.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Lisboa desde las alturas"
           fill
           className="object-cover"

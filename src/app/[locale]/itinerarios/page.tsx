@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
     description: 'Guías con rutas hora a hora, mapas GPS y restaurantes. Lisboa esencial, completo o con Sintra.',
     url: 'https://estabaenlisboa.com/itinerarios',
-    images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
+    images: [{ url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com/itinerarios',
@@ -43,7 +43,7 @@ export default async function ItinerariosPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[380px] overflow-hidden">
         <Image
-          src="/images/hero-lisboa.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Vista panorámica de Lisboa"
           fill
           className="object-cover"

@@ -10,6 +10,7 @@ const isPublicRoute = createRouteMatcher([
   '/(es|en|ko)',
   '/(es|en|ko)/(.*)',
   '/itinerarios(.*)',
+  '/actividades(.*)',
   '/blog(.*)',
   '/contacto',
   '/seguridad',

@@ -26,9 +26,9 @@ export default function LisboaFullWeekPage() {
   const totalStops = lisboaFullWeekTimeline.length;
 
   const photos = [
-    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa panorámica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa panorámica' },
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama y miradores' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura icónica' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura icónica' },
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía histórico en Lisboa' },
   ];
 
@@ -48,7 +48,7 @@ export default function LisboaFullWeekPage() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
-          src="/images/hero-lisboa.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Lisboa semana completa — 7 días"
           fill
           className="object-cover"

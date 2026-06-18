@@ -28,8 +28,8 @@ export default function LisboaFamiliarPage() {
   const photos = [
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía histórico, adorado por los niños' },
     { url: '/images/alfama-panoramica.jpg', caption: 'Alfama con callejuelas para explorar' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Elevador de Santa Justa' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Lisboa desde el río' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Funicular da Bica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el río' },
   ];
 
   return (

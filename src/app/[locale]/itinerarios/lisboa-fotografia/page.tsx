@@ -28,8 +28,8 @@ export default function LisboaFotografiaPage() {
   const photos = [
     { url: '/images/alfama-panoramica.jpg', caption: 'Miradores de Lisboa — golden hour' },
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 — blue hour' },
-    { url: '/images/elevador-santa-justa.jpg', caption: 'Arquitectura icónica' },
-    { url: '/images/hero-lisboa.jpg', caption: 'Perspectivas abiertas de la ciudad' },
+    { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura icónica' },
+    { url: '/images/alfama-panoramica.jpg', caption: 'Perspectivas abiertas de la ciudad' },
   ];
 
   const jsonLd = {
