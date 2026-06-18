@@ -14,6 +14,8 @@ export interface Activity {
   zone: string;
   isFree: boolean;
   priceLabel: string;
+  /** Precio numérico de partida en EUR, solo cuando es inequívoco (para schema.org Offer). */
+  priceFrom?: number;
   duration: string;
   image: string;
   description: string;
@@ -75,6 +77,7 @@ export const activities: Activity[] = [
     zone: 'Alfama / Castelo',
     isFree: false,
     priceLabel: 'Desde 15 €',
+    priceFrom: 15,
     duration: '1.5-2 h',
     image: '/images/alfama-callejon.jpg',
     description: 'Castillo medieval con murallas, torres y la mejor panorámica de 360º sobre la ciudad y el río.',
@@ -87,6 +90,7 @@ export const activities: Activity[] = [
     zone: 'Belém',
     isFree: false,
     priceLabel: 'Desde 10 €',
+    priceFrom: 10,
     duration: '1 h',
     image: '/images/elevador-santa-justa.jpg',
     description: 'Joya del manuelino portugués; el claustro es la parte de pago, considerada imprescindible por su detalle.',
@@ -99,6 +103,7 @@ export const activities: Activity[] = [
     zone: 'Belém',
     isFree: false,
     priceLabel: 'Desde 6 €',
+    priceFrom: 6,
     duration: '45 min',
     image: '/images/turista-tranvia-28.jpg',
     description: 'Torre-fortaleza junto al río, símbolo de la Era de los Descubrimientos y Patrimonio de la Humanidad.',
@@ -111,6 +116,7 @@ export const activities: Activity[] = [
     zone: 'Belém',
     isFree: false,
     priceLabel: 'Desde 1,50 € / pastel',
+    priceFrom: 1.5,
     duration: '20 min',
     image: '/images/vino-celebracion.jpg',
     description: 'La pastelería original (desde 1837) donde probar el auténtico pastel de nata recién horneado.',
@@ -123,6 +129,7 @@ export const activities: Activity[] = [
     zone: 'Graça / Alfama / Baixa',
     isFree: false,
     priceLabel: '3 € con billete normal',
+    priceFrom: 3,
     duration: '40 min',
     image: '/images/tranvia-28.jpg',
     description: 'El recorrido más icónico de Lisboa, subiendo y bajando las colinas de los barrios históricos.',
@@ -159,6 +166,7 @@ export const activities: Activity[] = [
     zone: 'Parque das Nações',
     isFree: false,
     priceLabel: 'Desde 19 €',
+    priceFrom: 19,
     duration: '1.5-2 h',
     image: '/images/parque-nacoes-torres-atardecer.jpg',
     description: 'Uno de los acuarios más grandes de Europa, ideal para ir con niños un día de lluvia.',
@@ -171,6 +179,7 @@ export const activities: Activity[] = [
     zone: 'Sintra',
     isFree: false,
     priceLabel: 'Desde 20-25 € + tren',
+    priceFrom: 20,
     duration: 'Día completo',
     image: '/images/sintra-palacio-turistas.jpg',
     description: 'Excursión clásica desde Lisboa: palacios de cuento, jardines y la sierra más verde de la región.',
@@ -183,6 +192,7 @@ export const activities: Activity[] = [
     zone: 'Cascais',
     isFree: false,
     priceLabel: 'Desde 10 € transporte',
+    priceFrom: 10,
     duration: 'Medio día',
     image: '/images/estacion-sintra.jpg',
     description: 'Paseo marítimo, centro histórico y el punto más occidental de Europa continental con vistas al Atlántico.',
@@ -207,6 +217,7 @@ export const activities: Activity[] = [
     zone: 'Río Tajo',
     isFree: false,
     priceLabel: 'Desde 15-20 €',
+    priceFrom: 15,
     duration: '1 h',
     image: '/images/mirador-tajo-amarras-atardecer.jpg',
     description: 'Vistas de la ciudad, el puente 25 de Abril y el Cristo Rei desde el agua, con la luz del atardecer.',
@@ -255,6 +266,7 @@ export const activities: Activity[] = [
     zone: 'Varias zonas',
     isFree: false,
     priceLabel: 'Desde 8-12 € el menú',
+    priceFrom: 8,
     duration: '1 h',
     image: '/images/tasca-da-graca.jpg',
     description: 'El "prato do dia" (plato del día) en una tasca de barrio es la forma más auténtica y barata de comer bien en Lisboa.',
@@ -267,6 +279,7 @@ export const activities: Activity[] = [
     zone: 'Almada',
     isFree: false,
     priceLabel: 'Ferry 1,40 € + entrada 6 €',
+    priceFrom: 7.4,
     duration: '1.5 h',
     image: '/images/parque-nacoes-torres-atardecer.jpg',
     description: 'Mirador en la otra orilla del Tajo con la vista más completa de Lisboa, el puente 25 de Abril y el río.',
