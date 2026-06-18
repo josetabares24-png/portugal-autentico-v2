@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/itinerarios', label: 'Guías' },
+    { href: '/actividades', label: 'Actividades' },
     { href: '/planifica-tu-viaje', label: 'Planifica tu Viaje' },
     { href: '/contacto', label: 'Contacto' },
   ];

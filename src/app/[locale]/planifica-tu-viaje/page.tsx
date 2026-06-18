@@ -4,8 +4,16 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { isFreeAccessActive } from '@/lib/guide-config';
 import { guidePacks } from '@/data/guide-packs';
+import { activities } from '@/data/activities';
+import { ActivityCard } from '@/components/actividades/ActivityCard';
 
 type BudgetType = 'low' | 'mid' | 'high';
+
+const RECOMMENDED_ACTIVITY_SLUGS: Record<BudgetType, string[]> = {
+  low: ['miradouro-santa-luzia', 'free-walking-tour-centro', 'tasca-tradicional'],
+  mid: ['castelo-sao-jorge', 'tranvia-28', 'pasteis-de-belem'],
+  high: ['sintra-dia-completo', 'crucero-atardecer-tajo', 'fado-en-alfama'],
+};
 
 const BUDGET_OPTIONS: Array<{ id: BudgetType; label: string; desc: string }> = [
   { id: 'low', label: 'Mochilero', desc: 'Hostales y tascas locales' },
@@ -39,6 +47,9 @@ export default function PlanificaTuViajePage() {
   const isFree = isFreeAccessActive();
   const recommendedSlug = getRecommendedGuideSlug(dias);
   const recommendedGuide = guidePacks[recommendedSlug];
+  const recommendedActivities = RECOMMENDED_ACTIVITY_SLUGS[tipo]
+    .map((slug) => activities.find((a) => a.slug === slug))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -189,6 +200,25 @@ export default function PlanificaTuViajePage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Actividades recomendadas según presupuesto */}
+      <section className="bg-background-light py-16 border-b border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between mb-8 pb-3 border-b border-border-soft">
+            <p className="text-xs uppercase tracking-widest text-text-secondary">
+              Actividades para perfil &quot;{BUDGET_OPTIONS.find((o) => o.id === tipo)?.label}&quot;
+            </p>
+            <Link href="/actividades" className="text-sm text-primary hover:underline underline-offset-2">
+              Ver todas →
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {recommendedActivities.map((activity) => (
+              <ActivityCard key={activity.slug} activity={activity} />
+            ))}
           </div>
         </div>
       </section>

@@ -108,8 +108,9 @@ export default async function ItinerariosPage() {
       <section className="bg-background-light py-16">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">También te puede interesar</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
+              { href: '/actividades', label: 'Actividades sin gastar mucho' },
               { href: '/planifica-tu-viaje', label: 'Planifica tu viaje' },
               { href: '/pack-completo', label: 'Pack completo de guías' },
               { href: '/blog', label: 'Blog: historias y consejos' },
