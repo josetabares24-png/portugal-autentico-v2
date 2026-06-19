@@ -118,6 +118,15 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/funicular-bica-turistas.jpg',
   },
   {
+    id: 'aeropuerto-lisboa-al-centro',
+    titulo: 'Cómo Ir del Aeropuerto de Lisboa al Centro',
+    excerpt: 'Metro, Aerobus, taxi y Uber comparados: precios reales, tiempos y cuál conviene según cómo viajes.',
+    categoria: 'Transporte',
+    fecha: '19 Jun 2026',
+    autor: 'José Tabares',
+    imagen: '/images/elevador-santa-justa.jpg',
+  },
+  {
     id: 'restaurantes-romanticos-lisboa',
     titulo: '10 Restaurantes Románticos en Lisboa',
     excerpt: 'Cenas con vistas, terrazas íntimas y planes perfectos para una noche especial.',

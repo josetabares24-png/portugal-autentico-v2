@@ -59,8 +59,9 @@ const libreta: { texto: string; href?: string }[] = [
   { texto: 'El 13 de junio huele a sardinas. No hay excepción.' },
   { texto: 'El mejor mirador a las 7 de la mañana es el de Santa Luzia. A las 11, ya no.', href: '/blog/mejores-miradores-lisboa' },
   { texto: 'En Mouraria, los lunes hay mercado. Viene poca gente y eso es lo bueno.' },
-  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.' },
+  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.', href: '/blog/tram-28-historia-guia' },
   { texto: 'Hay una tasca en Graça que solo abre tres días a la semana. Siempre llena.' },
+  { texto: 'Del aeropuerto al centro, el metro tarda lo mismo que un Uber y cuesta diez veces menos.', href: '/blog/aeropuerto-lisboa-al-centro' },
 ];
 
 export default function HomePage() {

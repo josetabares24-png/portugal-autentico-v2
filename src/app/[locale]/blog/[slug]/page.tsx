@@ -535,6 +535,33 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Mi recomendación final: el primer día, compra la tarjeta Viva Viagem y cárgala con un pase diario. Explora la ciudad sin preocuparte por billetes. A partir del segundo día, evalúa si necesitas otro pase o si con viajes individuales te basta." }
     ]
   },
+  "aeropuerto-lisboa-al-centro": {
+    titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
+    descripcion: "Todas las opciones para llegar del aeropuerto de Lisboa al centro explicadas con precios reales: cuál es la más rápida, la más barata y la mejor si vas con maletas.",
+    imagen: "/images/elevador-santa-justa.jpg",
+    categoria: "Transporte",
+    fecha: "19 Jun 2026",
+    minutos: 9,
+    contenido: [
+      { tipo: "parrafo", texto: "Aterrizas en el aeropuerto Humberto Delgado y lo primero que necesitas resolver es cómo llegar al centro. Hay cuatro opciones razonables —metro, Aerobus, taxi y Uber/Bolt— y la mejor depende de cuánto equipaje llevas, a qué hora llegas y cuánta prisa tienes." },
+      { tipo: "subtitulo", texto: "Metro: la opción más barata" },
+      { tipo: "parrafo", texto: "El aeropuerto tiene su propia estación de metro, Aeroporto, en la línea roja. Es la opción más económica con diferencia: un billete con la tarjeta Viva Viagem cuesta 1,50 euros (más 0,50 euros la primera vez por la tarjeta). El trayecto hasta el centro tarda entre 20 y 25 minutos, normalmente con un cambio en Alameda o Saldanha si tu destino es Baixa-Chiado, Rossio o Cais do Sodré." },
+      { tipo: "tip", texto: "El metro funciona desde las 6:30 hasta la 1:00 de la madrugada. Si tu vuelo llega de madrugada, no contarás con esta opción." },
+      { tipo: "subtitulo", texto: "Aerobus: cómodo y sin cambios" },
+      { tipo: "parrafo", texto: "El Aerobus es un autobús lanzadera pensado para turistas, con espacio para maletas y paradas en los puntos clave del centro: Marquês de Pombal, Restauradores, Rossio y Cais do Sodré (Línea 1), o la estación de tren de Sete Rios (Línea 2). Cuesta unos 4 euros y sale cada 20-30 minutos desde la terminal de llegadas." },
+      { tipo: "parrafo", texto: "Es más cómodo que el metro porque no hay que hacer cambios ni cargar las maletas por escaleras, pero el trayecto puede alargarse con tráfico, sobre todo en hora punta." },
+      { tipo: "subtitulo", texto: "Taxi: el más caro, pero directo" },
+      { tipo: "parrafo", texto: "Hay una parada oficial de taxis justo a la salida de llegadas. El trayecto al centro suele rondar los 15-20 euros, pero con el suplemento de equipaje (1,60 euros por maleta en el maletero) y el recargo nocturno o de fin de semana puede superar los 25 euros. Súbete solo a los taxis oficiales de la parada, nunca a quien se ofrezca sin taxímetro." },
+      { tipo: "subtitulo", texto: "Uber y Bolt: el equilibrio" },
+      { tipo: "parrafo", texto: "Uber y Bolt funcionan bien en el aeropuerto de Lisboa y suelen salir más baratos que el taxi: unos 12-15 euros al centro dependiendo de la hora y el tráfico. El punto de recogida está señalizado en la zona de llegadas, separado de la parada de taxis; sigue las indicaciones de la app, que suelen coincidir con las señales físicas del aeropuerto." },
+      { tipo: "tip", texto: "Si llegas con varias maletas o después de un vuelo largo, el coste extra de Uber frente al metro se nota poco y ahorra mucho cansancio." },
+      { tipo: "subtitulo", texto: "Autobús urbano: la opción menos práctica" },
+      { tipo: "parrafo", texto: "Varias líneas de autobús de Carris paran en el aeropuerto y cuestan 2 euros, pero hacen más paradas y tardan más que el metro. Solo tiene sentido si tu alojamiento está cerca de una de esas paradas y prefieres no usar el metro." },
+      { tipo: "subtitulo", texto: "Cuál elegir según tu caso" },
+      { tipo: "parrafo", texto: "Si viajas solo, con poco equipaje y quieres ahorrar, el metro es la mejor opción. Si vas en grupo o con maletas grandes y prefieres no hacer cambios, el Aerobus es un buen punto medio. Si llegas de madrugada, muy tarde, o simplemente quieres ir directo a la puerta de tu alojamiento, Uber o Bolt son la opción más razonable." },
+      { tipo: "parrafo", texto: "El taxi solo merece la pena si no tienes conexión a internet al llegar o prefieres pagar en efectivo sin depender de una app." }
+    ]
+  },
   "restaurantes-romanticos-lisboa": {
     titulo: "Los restaurantes más románticos de Lisboa para una noche inolvidable",
     descripcion: "Terrazas con vistas al río, cenas íntimas con fado, y rincones donde el ambiente y la comida crean momentos perfectos para parejas.",
@@ -2046,6 +2073,23 @@ function buildFallbackArticle(slug: string): Article | null {
         'El elevador de Santa Justa se puede subir gratis por detrás.',
       ],
     },
+    'aeropuerto-lisboa-al-centro': {
+      intro: 'La opción depende de tu equipaje, tu hora de llegada y cuánto quieras ahorrar: metro, Aerobus, taxi o Uber.',
+      musts: [
+        'Metro (línea roja) para la opción más barata.',
+        'Aerobus si vas con maletas grandes y sin cambios.',
+        'Uber/Bolt si llegas de madrugada o muy cansado.',
+        'Taxi solo en la parada oficial, nunca con quien se ofrezca sin taxímetro.',
+      ],
+      itinerary: [
+        'De día: metro o Aerobus.',
+        'De madrugada (después de la 1:00): taxi o Uber/Bolt.',
+      ],
+      localTips: [
+        'Compra la Viva Viagem en la propia estación del aeropuerto si vas a usar el metro.',
+        'El punto de recogida de Uber/Bolt está señalizado y separado del de taxis.',
+      ],
+    },
     'restaurantes-romanticos-lisboa': {
       intro: 'Para una cena especial, reserva con tiempo y busca vistas reales.',
       musts: [
@@ -2427,6 +2471,15 @@ const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faq
       { q: '¿Qué tarjeta necesito para moverme?', a: 'La Viva Viagem, recargable y válida para metro, bus y tranvía.' },
       { q: '¿Es seguro el tranvía 28?', a: 'Sí, pero hay carteristas; ve atento a tus bolsillos.' },
       { q: '¿Conviene el pase diario?', a: 'Sí si haces más de 3-4 viajes en un día.' },
+    ],
+  },
+  'aeropuerto-lisboa-al-centro': {
+    comoLlegar: 'Estación de metro Aeroporto en la línea roja, justo en la terminal; también hay parada de Aerobus, taxis oficiales y zona señalizada para Uber/Bolt.',
+    mejorHora: 'El metro y el Aerobus son la mejor opción de día; de madrugada (después de la 1:00) solo quedan taxi o Uber/Bolt.',
+    faqs: [
+      { q: '¿Cuál es la forma más barata de ir del aeropuerto de Lisboa al centro?', a: 'El metro, con la tarjeta Viva Viagem: 1,50€ el trayecto (más 0,50€ la tarjeta la primera vez).' },
+      { q: '¿Cuánto cuesta un taxi del aeropuerto al centro?', a: 'Entre 15 y 25€ según hora, tráfico y suplemento de equipaje.' },
+      { q: '¿Hay metro toda la noche desde el aeropuerto?', a: 'No, el metro cierra a la 1:00. Si llegas de madrugada, usa taxi o Uber/Bolt.' },
     ],
   },
   'restaurantes-romanticos-lisboa': {
