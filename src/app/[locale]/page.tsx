@@ -48,19 +48,20 @@ const historias = [
 
 const barrios = [
   { nombre: 'Alfama', href: '/blog/barrios-imprescindibles', imagen: '/images/alfama-panoramica.jpg' },
-  { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg' },
-  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg' },
-  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/elevador-santa-justa.jpg' },
-  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg' },
-  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg' },
+  { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-grupo-atardecer.jpg' },
+  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/bica-cafe-mapa.jpg' },
+  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/funicular-bica-turistas.jpg' },
+  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/bairro-alto-calle-noche.jpg' },
+  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-atardecer.jpg' },
 ];
 
 const libreta: { texto: string; href?: string }[] = [
   { texto: 'El 13 de junio huele a sardinas. No hay excepción.' },
   { texto: 'El mejor mirador a las 7 de la mañana es el de Santa Luzia. A las 11, ya no.', href: '/blog/mejores-miradores-lisboa' },
   { texto: 'En Mouraria, los lunes hay mercado. Viene poca gente y eso es lo bueno.' },
-  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.' },
+  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.', href: '/blog/tram-28-historia-guia' },
   { texto: 'Hay una tasca en Graça que solo abre tres días a la semana. Siempre llena.' },
+  { texto: 'Del aeropuerto al centro, el metro tarda lo mismo que un Uber y cuesta diez veces menos.', href: '/blog/aeropuerto-lisboa-al-centro' },
 ];
 
 export default function HomePage() {
@@ -91,10 +92,13 @@ export default function HomePage() {
         />
 
         <div className="absolute bottom-0 left-0 p-8 md:p-16 max-w-3xl">
-          <h1 className="font-display italic text-white leading-tight"
+          <h1 className="font-display italic text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', fontWeight: 400 }}>
             Vivo en Graça hace tres años. Esto es lo que le cuento a la gente que viene a verme.
           </h1>
+          <Link href="/itinerarios" className="btn-ghost-light inline-flex px-6 py-3 text-sm">
+            Ver guías de viaje →
+          </Link>
         </div>
       </section>
 
@@ -166,7 +170,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {barrios.map((barrio) => (
               <Link key={barrio.nombre} href={barrio.href} className="group block">
-                <div className="relative aspect-square overflow-hidden mb-3">
+                <div className="relative aspect-square overflow-hidden mb-3 rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300">
                   <Image
                     src={barrio.imagen}
                     alt={barrio.nombre}
@@ -211,19 +215,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── GUÍAS (discreto, sin precios) ── */}
-      <section className="py-16 md:py-20 border-t border-taupe/20 bg-cream">
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <p className="font-body font-light text-taupe text-base leading-relaxed max-w-lg">
-            Si te sirve, también preparé rutas hora a hora para organizarte el viaje.{' '}
-            <Link
-              href="/itinerarios"
-              className="text-night border-b border-night pb-0.5 hover:text-terracotta hover:border-terracotta transition-colors"
-            >
-              Las encuentras aquí
-            </Link>{' '}
-            →
+      {/* ── GUÍAS ── */}
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-5xl mx-auto px-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
+            Si te sirve, también preparé rutas hora a hora para organizarte el viaje.
           </p>
+          <Link href="/itinerarios" className="btn-primary inline-flex px-7 py-3 text-sm flex-shrink-0">
+            Ver itinerarios →
+          </Link>
         </div>
       </section>
     </main>

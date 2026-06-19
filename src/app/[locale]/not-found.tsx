@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="text-text-secondary text-sm mb-8">Esta página no existe. Volvamos al inicio.</p>
         <Link
           href="/"
-          className="inline-block px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-colors"
+          className="btn-primary inline-flex px-6 py-3 text-sm"
         >
           Volver al inicio
         </Link>

@@ -63,7 +63,6 @@ export default async function PackPage({ params }: { params: { slug: string } })
       price: pack.price,
       availability: 'https://schema.org/InStock',
     },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: 4.8, reviewCount: 127, bestRating: 5, worstRating: 1 },
   };
 
   return (
@@ -86,7 +85,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
           <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white transition-colors mb-4 block">
             ← Itinerarios
           </Link>
-          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             {pack.title}
           </h1>
           <p className="text-white/70 text-sm">{pack.duration} &middot; Descarga inmediata &middot; Garantía 48h</p>
@@ -106,7 +105,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                   { titulo: 'Contenido premium', desc: 'Restaurantes verificados y spots fotográficos.' },
                   { titulo: 'Actualizado 2026', desc: 'Horarios revisados y recomendaciones recientes.' },
                 ].map((item) => (
-                  <div key={item.titulo} className="border-t-2 border-primary pt-5">
+                  <div key={item.titulo} className="card-surface p-5 border-t-2 border-gold">
                     <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
                     <p className="text-text-secondary text-xs leading-relaxed">{item.desc}</p>
                   </div>
@@ -120,7 +119,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                 <div className="space-y-2">
                   {pack.includes.map((item, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                      <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -133,7 +132,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                 <div className="space-y-0">
                   {pack.highlights.map((h, i) => (
                     <div key={i} className="border-t border-border-soft py-5 grid grid-cols-[5rem,1fr] gap-4">
-                      <span className="text-sm font-semibold text-primary">{h.time}</span>
+                      <span className="text-sm font-semibold text-terracotta">{h.time}</span>
                       <div>
                         <p className="font-semibold text-text-main text-sm mb-1">{h.place}</p>
                         <p className="text-text-secondary text-sm">{h.desc}</p>
@@ -146,10 +145,10 @@ export default async function PackPage({ params }: { params: { slug: string } })
 
             {/* Sidebar compra */}
             <div className="lg:sticky lg:top-24">
-              <div className="border-t-2 border-primary pt-6">
+              <div className="card-surface p-6 border-l-2 border-gold">
                 {isFree ? (
                   <>
-                    <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Acceso gratuito</p>
+                    <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Acceso gratuito</p>
                     <div className="flex items-baseline gap-2 mb-2">
                       <span className="text-3xl font-bold text-text-main">0 €</span>
                       <span className="text-text-secondary text-sm line-through">{pack.price} €</span>
@@ -157,14 +156,14 @@ export default async function PackPage({ params }: { params: { slug: string } })
                     <p className="text-text-secondary text-sm mb-6">Acceso completo sin coste.</p>
                     <Link
                       href={`/itinerarios/${slug}`}
-                      className="block w-full text-center py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors mb-6"
+                      className="btn-primary w-full text-center py-3 mb-6"
                     >
                       Acceder gratis
                     </Link>
                     <div className="space-y-2 text-sm text-text-secondary mb-6">
                       {['Acceso inmediato online', 'Mapas offline incluidos', 'Actualizaciones gratis', 'Soporte por email'].map((f) => (
                         <div key={f} className="flex items-center gap-2">
-                          <span className="text-primary">&#10003;</span>
+                          <span className="text-terracotta">&#10003;</span>
                           {f}
                         </div>
                       ))}
@@ -176,14 +175,14 @@ export default async function PackPage({ params }: { params: { slug: string } })
                     <p className="text-3xl font-bold text-text-main mb-6">{pack.price} €</p>
                     <BuyButton
                       productId={productId}
-                      className="w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors mb-6"
+                      className="btn-primary w-full py-3 mb-6"
                     >
                       Comprar ahora
                     </BuyButton>
                     <div className="space-y-2 text-sm text-text-secondary mb-6">
                       {['Acceso inmediato online', 'Mapas offline incluidos', 'Actualizaciones gratis', 'Soporte por email'].map((f) => (
                         <div key={f} className="flex items-center gap-2">
-                          <span className="text-primary">&#10003;</span>
+                          <span className="text-terracotta">&#10003;</span>
                           {f}
                         </div>
                       ))}
@@ -204,7 +203,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
       <section className="bg-background-light py-12 border-t border-border-soft">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <p className="text-text-secondary text-sm mb-4">¿Tienes dudas sobre este itinerario?</p>
-          <Link href="/contacto" className="text-sm text-primary hover:underline underline-offset-2">
+          <Link href="/contacto" className="text-sm text-terracotta hover:underline underline-offset-2">
             Escríbenos y te ayudamos →
           </Link>
         </div>

@@ -20,12 +20,12 @@ export default function PackCompletoPage() {
   return (
     <main id="main-content">
       {/* Hero */}
-      <section className="bg-[#1a2b4a] py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-white/50 text-xs uppercase tracking-widest mb-3">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <span className="badge-pill inline-flex bg-gold text-night mb-4">
             {isFree ? 'Acceso gratuito 2026' : 'Oferta de lanzamiento 2026'}
-          </p>
-          <h1 className="font-display italic text-white text-4xl md:text-5xl leading-tight mb-4">
+          </span>
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-4">
             Pack Completo Lisboa
           </h1>
           <p className="text-white/70 text-sm mb-10">
@@ -38,7 +38,7 @@ export default function PackCompletoPage() {
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizadas 2026</p>
               <Link
                 href="/itinerarios"
-                className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+                className="btn-primary inline-flex px-10 py-4"
               >
                 Ver todas las guías →
               </Link>
@@ -49,10 +49,10 @@ export default function PackCompletoPage() {
                 <span className="text-5xl font-bold text-white">24.99€</span>
                 <span className="text-2xl text-white/40 line-through">62.90€</span>
               </div>
-              <p className="text-white/60 text-sm mb-8">Ahorras 60% · Pago único · Acceso de por vida</p>
+              <p className="text-gold text-sm font-semibold mb-8">Ahorras 60% · Pago único · Acceso de por vida</p>
               <button
                 onClick={() => window.location.href = '/itinerarios'}
-                className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+                className="btn-primary inline-flex px-10 py-4"
               >
                 Comprar ahora
               </button>
@@ -77,15 +77,15 @@ export default function PackCompletoPage() {
                 </div>
                 <div className="text-right flex-shrink-0">
                   <p className="text-text-secondary line-through text-sm">{guia.price}</p>
-                  <p className="text-primary text-xs font-semibold">Incluida</p>
+                  <p className="text-terracotta text-xs font-semibold">Incluida</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Bonus */}
-          <div className="border-t-2 border-primary pt-6 mt-8">
-            <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Bonus exclusivo</p>
+          <div className="card-surface border-l-2 border-gold px-6 py-6 mt-8">
+            <span className="badge-pill bg-gold text-night mb-3">Bonus exclusivo</span>
             <h3 className="font-display italic text-text-main text-xl mb-2">Guía secreta "Lisboa como Local"</h3>
             <p className="text-text-secondary text-sm leading-relaxed">
               Restaurantes no turísticos, bares de barrio, mercados tradicionales y consejos que solo un local puede darte. Solo disponible en el pack. (Valor 9.99€)
@@ -95,13 +95,13 @@ export default function PackCompletoPage() {
       </section>
 
       {/* Comparativa */}
-      <section className="bg-background-light py-16 border-t border-border-soft">
+      <section className="bg-background-light py-20 border-t border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             ¿Por qué el pack?
           </p>
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="border-t border-border-soft pt-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="card-surface p-6">
               <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">Compra individual</p>
               <p className="text-3xl font-bold text-text-secondary mb-4">62.90€</p>
               <div className="space-y-2">
@@ -113,14 +113,15 @@ export default function PackCompletoPage() {
                 ))}
               </div>
             </div>
-            <div className="border-t-2 border-primary pt-6">
-              <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Pack completo</p>
+            <div className="card-surface ring-2 ring-gold p-6 relative">
+              <span className="badge-pill absolute -top-3 right-6 bg-gold text-night">Recomendado</span>
+              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-2">Pack completo</p>
               <p className="text-3xl font-bold text-text-main mb-1">24.99€</p>
-              <p className="text-xs text-primary font-semibold mb-4">Ahorras 60%</p>
+              <p className="text-xs text-terracotta font-semibold mb-4">Ahorras 60%</p>
               <div className="space-y-2">
                 {['Todas las 8 guías incluidas', 'Bonus "Lisboa como Local"', 'Compra única', 'Actualizaciones de por vida'].map((item) => (
                   <div key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -131,7 +132,7 @@ export default function PackCompletoPage() {
       </section>
 
       {/* Por qué confiar */}
-      <section className="bg-background-light py-16 border-t border-border-soft">
+      <section className="bg-background-light py-20 border-t border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             Por qué confiar en nuestras guías
@@ -142,7 +143,7 @@ export default function PackCompletoPage() {
               { titulo: 'Experiencia real', desc: 'Cada recomendación está probada personalmente, no copiada de internet.' },
               { titulo: 'Actualizaciones gratis', desc: 'Cuando algo cambia, recibes la versión actualizada sin coste adicional.' },
             ].map((item) => (
-              <div key={item.titulo} className="border-t-2 border-primary pt-5">
+              <div key={item.titulo} className="card-surface p-6 border-t-2 border-gold">
                 <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
                 <p className="text-text-secondary text-xs leading-relaxed">{item.desc}</p>
               </div>
@@ -152,16 +153,16 @@ export default function PackCompletoPage() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="font-display italic text-white text-3xl mb-4">Comienza tu aventura en Lisboa</p>
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <p className="font-display italic text-white text-4xl mb-4">Comienza tu aventura en Lisboa</p>
 
           {isFree ? (
             <>
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizadas 2026</p>
               <Link
                 href="/itinerarios"
-                className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+                className="btn-primary inline-flex px-10 py-4"
               >
                 Ver guías gratis →
               </Link>
@@ -171,7 +172,7 @@ export default function PackCompletoPage() {
               <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
               <button
                 onClick={() => window.location.href = '/itinerarios'}
-                className="inline-block px-10 py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+                className="btn-primary inline-flex px-10 py-4"
               >
                 Comprar pack por 24.99€
               </button>

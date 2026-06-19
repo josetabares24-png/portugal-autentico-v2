@@ -535,10 +535,37 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Mi recomendación final: el primer día, compra la tarjeta Viva Viagem y cárgala con un pase diario. Explora la ciudad sin preocuparte por billetes. A partir del segundo día, evalúa si necesitas otro pase o si con viajes individuales te basta." }
     ]
   },
+  "aeropuerto-lisboa-al-centro": {
+    titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
+    descripcion: "Todas las opciones para llegar del aeropuerto de Lisboa al centro explicadas con precios reales: cuál es la más rápida, la más barata y la mejor si vas con maletas.",
+    imagen: "/images/elevador-santa-justa.jpg",
+    categoria: "Transporte",
+    fecha: "19 Jun 2026",
+    minutos: 9,
+    contenido: [
+      { tipo: "parrafo", texto: "Aterrizas en el aeropuerto Humberto Delgado y lo primero que necesitas resolver es cómo llegar al centro. Hay cuatro opciones razonables —metro, Aerobus, taxi y Uber/Bolt— y la mejor depende de cuánto equipaje llevas, a qué hora llegas y cuánta prisa tienes." },
+      { tipo: "subtitulo", texto: "Metro: la opción más barata" },
+      { tipo: "parrafo", texto: "El aeropuerto tiene su propia estación de metro, Aeroporto, en la línea roja. Es la opción más económica con diferencia: un billete con la tarjeta Viva Viagem cuesta 1,50 euros (más 0,50 euros la primera vez por la tarjeta). El trayecto hasta el centro tarda entre 20 y 25 minutos, normalmente con un cambio en Alameda o Saldanha si tu destino es Baixa-Chiado, Rossio o Cais do Sodré." },
+      { tipo: "tip", texto: "El metro funciona desde las 6:30 hasta la 1:00 de la madrugada. Si tu vuelo llega de madrugada, no contarás con esta opción." },
+      { tipo: "subtitulo", texto: "Aerobus: cómodo y sin cambios" },
+      { tipo: "parrafo", texto: "El Aerobus es un autobús lanzadera pensado para turistas, con espacio para maletas y paradas en los puntos clave del centro: Marquês de Pombal, Restauradores, Rossio y Cais do Sodré (Línea 1), o la estación de tren de Sete Rios (Línea 2). Cuesta unos 4 euros y sale cada 20-30 minutos desde la terminal de llegadas." },
+      { tipo: "parrafo", texto: "Es más cómodo que el metro porque no hay que hacer cambios ni cargar las maletas por escaleras, pero el trayecto puede alargarse con tráfico, sobre todo en hora punta." },
+      { tipo: "subtitulo", texto: "Taxi: el más caro, pero directo" },
+      { tipo: "parrafo", texto: "Hay una parada oficial de taxis justo a la salida de llegadas. El trayecto al centro suele rondar los 15-20 euros, pero con el suplemento de equipaje (1,60 euros por maleta en el maletero) y el recargo nocturno o de fin de semana puede superar los 25 euros. Súbete solo a los taxis oficiales de la parada, nunca a quien se ofrezca sin taxímetro." },
+      { tipo: "subtitulo", texto: "Uber y Bolt: el equilibrio" },
+      { tipo: "parrafo", texto: "Uber y Bolt funcionan bien en el aeropuerto de Lisboa y suelen salir más baratos que el taxi: unos 12-15 euros al centro dependiendo de la hora y el tráfico. El punto de recogida está señalizado en la zona de llegadas, separado de la parada de taxis; sigue las indicaciones de la app, que suelen coincidir con las señales físicas del aeropuerto." },
+      { tipo: "tip", texto: "Si llegas con varias maletas o después de un vuelo largo, el coste extra de Uber frente al metro se nota poco y ahorra mucho cansancio." },
+      { tipo: "subtitulo", texto: "Autobús urbano: la opción menos práctica" },
+      { tipo: "parrafo", texto: "Varias líneas de autobús de Carris paran en el aeropuerto y cuestan 2 euros, pero hacen más paradas y tardan más que el metro. Solo tiene sentido si tu alojamiento está cerca de una de esas paradas y prefieres no usar el metro." },
+      { tipo: "subtitulo", texto: "Cuál elegir según tu caso" },
+      { tipo: "parrafo", texto: "Si viajas solo, con poco equipaje y quieres ahorrar, el metro es la mejor opción. Si vas en grupo o con maletas grandes y prefieres no hacer cambios, el Aerobus es un buen punto medio. Si llegas de madrugada, muy tarde, o simplemente quieres ir directo a la puerta de tu alojamiento, Uber o Bolt son la opción más razonable." },
+      { tipo: "parrafo", texto: "El taxi solo merece la pena si no tienes conexión a internet al llegar o prefieres pagar en efectivo sin depender de una app." }
+    ]
+  },
   "restaurantes-romanticos-lisboa": {
     titulo: "Los restaurantes más románticos de Lisboa para una noche inolvidable",
     descripcion: "Terrazas con vistas al río, cenas íntimas con fado, y rincones donde el ambiente y la comida crean momentos perfectos para parejas.",
-    imagen: "/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg",
+    imagen: "/images/bairro-alto-calle-noche.jpg",
     categoria: "Gastronomía",
     fecha: "20 Nov 2024",
     minutos: 16,
@@ -585,7 +612,7 @@ const articles: Record<string, Article> = {
   "que-ver-cascais-desde-lisboa": {
     titulo: "Cascais: el pueblo costero perfecto para escapar de Lisboa",
     descripcion: "A solo 30 minutos en tren, Cascais combina playas doradas, palacios históricos y un paseo marítimo que invita a quedarse. Guía completa para un día perfecto.",
-    imagen: "/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg",
+    imagen: "/images/miradouro-atardecer.jpg",
     categoria: "Guías",
     fecha: "18 Nov 2024",
     minutos: 13,
@@ -627,7 +654,7 @@ const articles: Record<string, Article> = {
   "playas-cerca-lisboa": {
     titulo: "Las mejores playas cerca de Lisboa: guía completa de la costa",
     descripcion: "Arenas doradas, agua cristalina y acantilados dramáticos a menos de una hora. Desde Cascais hasta la Arrábida, todas las opciones para escapar del calor urbano.",
-    imagen: "/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg",
+    imagen: "/images/mirador-tajo-amarras-atardecer.jpg",
     categoria: "Guías",
     fecha: "15 Nov 2024",
     minutos: 12,
@@ -663,7 +690,7 @@ const articles: Record<string, Article> = {
   "donde-escuchar-fado-autentico": {
     titulo: "Dónde escuchar fado auténtico en Lisboa: guía para encontrar el verdadero",
     descripcion: "El fado es el alma de Lisboa, pero no todo lo que se vende como fado lo es. Aprende a distinguir el auténtico del turístico y dónde encontrarlo.",
-    imagen: "/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg",
+    imagen: "/images/miradouro-grupo-atardecer.jpg",
     categoria: "Cultura",
     fecha: "12 Nov 2024",
     minutos: 14,
@@ -705,7 +732,7 @@ const articles: Record<string, Article> = {
   "presupuesto-viajar-lisboa": {
     titulo: "Presupuesto real para viajar a Lisboa: análisis honesto día a día",
     descripcion: "Cuánto cuesta realmente comer, dormir y moverse en Lisboa. Desglose detallado de precios reales en 2024 para que planifiques sin sorpresas.",
-    imagen: "/images/veronika-jorjobert-mR_AxcbVivg-unsplash.jpg",
+    imagen: "/images/alfama-callejon.jpg",
     categoria: "Planificación",
     fecha: "10 Nov 2024",
     minutos: 13,
@@ -793,7 +820,7 @@ const articles: Record<string, Article> = {
   "mejores-mercados-lisboa": {
     titulo: "Los mejores mercados de Lisboa: donde la ciudad cobra vida",
     descripcion: "Desde el Time Out Market hasta mercados de barrio escondidos. Comida fresca, artesanía local y la vida auténtica de Lisboa en cada rincón.",
-    imagen: "/images/annie-spratt-epexF_Ltb7s-unsplash.jpg",
+    imagen: "/images/barrio-calle-residencial.jpg",
     categoria: "Guías",
     fecha: "8 Nov 2024",
     minutos: 11,
@@ -846,7 +873,7 @@ const articles: Record<string, Article> = {
   "donde-tomar-cafe-lisboa": {
     titulo: "Dónde tomar el mejor café en Lisboa: guía del café portugués",
     descripcion: "El café en Portugal es un ritual. Desde el bica tradicional hasta cafeterías de especialidad. Dónde encontrar el mejor café y cómo pedirlo como un local.",
-    imagen: "/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg",
+    imagen: "/images/bica-cafe-mapa.jpg",
     categoria: "Gastronomía",
     fecha: "5 Nov 2024",
     minutos: 10,
@@ -891,7 +918,7 @@ const articles: Record<string, Article> = {
   "miradores-atardecer-lisboa": {
     titulo: "Los mejores miradores para el atardecer en Lisboa: donde el sol se despide",
     descripcion: "Dónde ver el mejor sunset de Lisboa. Horarios exactos, ubicaciones y secretos de local para disfrutar el momento mágico del día.",
-    imagen: "/images/fabio-vilhena-2FIcT5nHlLo-unsplash.jpg",
+    imagen: "/images/miradouro-grupo-atardecer.jpg",
     categoria: "Guías",
     fecha: "3 Nov 2024",
     minutos: 11,
@@ -940,7 +967,7 @@ const articles: Record<string, Article> = {
   "que-comprar-lisboa-souvenirs": {
     titulo: "Que Comprar en Lisboa: Souvenirs Autenticos",
     descripcion: "Azulejos, vino, conservas y artesania. Los mejores recuerdos que realmente valen la pena.",
-    imagen: "/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg",
+    imagen: "/images/aldaba-puerta-lisboa.jpg",
     categoria: "Consejos",
     fecha: "1 Nov 2024",
     minutos: 6,
@@ -982,7 +1009,7 @@ const articles: Record<string, Article> = {
   "viajar-ninos-lisboa": {
     titulo: "Viajar con niños a Lisboa: guía completa para familias",
     descripcion: "Actividades perfectas para pequeños exploradores, restaurantes kid-friendly, y consejos prácticos para que toda la familia disfrute Lisboa.",
-    imagen: "/images/julia-solonina-ci19YINguoc-unsplash.jpg",
+    imagen: "/images/ventana-alfama-tajo.jpg",
     categoria: "Consejos",
     fecha: "28 Oct 2024",
     minutos: 12,
@@ -1033,7 +1060,7 @@ const articles: Record<string, Article> = {
   "excursiones-desde-lisboa": {
     titulo: "Las mejores excursiones desde Lisboa: escapadas de un día perfectas",
     descripcion: "Sintra, Óbidos, Nazaré y más. Cómo llegar, qué ver y cuánto tiempo necesitas para cada excursión desde la capital.",
-    imagen: "/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg",
+    imagen: "/images/estacion-sintra.jpg",
     categoria: "Guías",
     fecha: "25 Oct 2024",
     minutos: 13,
@@ -1752,45 +1779,45 @@ const articles: Record<string, Article> = {
 
 const localImages: Record<string, string> = {
   'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
-  'donde-comer-barato-lisboa': '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+  'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/tranvia-28.jpg',
-  'evitar-turistadas-lisboa': '/images/hero-lisboa.jpg',
+  'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
   'como-ir-sintra-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
   'tarjeta-lisboa-card-vale-pena': '/images/tranvia-28.jpg',
   'barrios-lisboa-donde-alojarse': '/images/barrio-calle-residencial.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
-  'mejor-epoca-visitar-lisboa': '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+  'mejor-epoca-visitar-lisboa': '/images/miradouro-atardecer.jpg',
   'presupuesto-viajar-lisboa': '/images/bica-cafe-mapa.jpg',
-  'mejores-mercados-lisboa': '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
-  'donde-tomar-cafe-lisboa': '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
+  'mejores-mercados-lisboa': '/images/barrio-calle-residencial.jpg',
+  'donde-tomar-cafe-lisboa': '/images/bica-cafe-mapa.jpg',
   'miradores-atardecer-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
   'que-comprar-lisboa-souvenirs': '/images/aldaba-puerta-lisboa.jpg',
-  'viajar-ninos-lisboa': '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg',
+  'viajar-ninos-lisboa': '/images/parque-nacoes-torres-atardecer.jpg',
   'excursiones-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
-  'restaurantes-romanticos-lisboa': '/images/vino-celebracion.jpg',
+  'restaurantes-romanticos-lisboa': '/images/fado-tasca-noche.jpg',
   'donde-escuchar-fado-autentico': '/images/fado-tasca-noche.jpg',
   'vida-nocturna-lisboa': '/images/bairro-alto-calle-noche.jpg',
-  'lisboa-en-invierno': '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+  'lisboa-en-invierno': '/images/ventana-alfama-tajo.jpg',
   'errores-turistas-lisboa': '/images/tranvia-28.jpg',
   'sintra-desde-lisboa': '/images/estacion-sintra.jpg',
   'historia-de-lisboa': '/images/alfama-callejon.jpg',
   'terremoto-lisboa-1755': '/images/alfama-callejon.jpg',
-  'descubrimientos-portugueses-lisboa': '/images/hero-lisboa.jpg',
-  'azulejos-portugueses-historia': '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+  'descubrimientos-portugueses-lisboa': '/images/alfama-panoramica.jpg',
+  'azulejos-portugueses-historia': '/images/aldaba-puerta-lisboa.jpg',
   'novedades-lisboa-2026': '/images/parque-nacoes-torres-atardecer.jpg',
   'festivales-eventos-lisboa-2026': '/images/festival-sardinhas-noche.jpg',
-  'lisboa-vs-porto': '/images/hero-lisboa.jpg',
+  'lisboa-vs-porto': '/images/alfama-panoramica.jpg',
   'monumentos-de-lisboa': '/images/estatua-praca-lisboa.jpg',
-  'semana-santa-lisboa-2026': '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
+  'semana-santa-lisboa-2026': '/images/bairro-alto-calle-noche.jpg',
   'alfama-historia-guia': '/images/alfama-panoramica.jpg',
   'gastronomia-portuguesa-guia': '/images/IMG_1880.jpg',
   'fado-historia-origen': '/images/fado-tasca-noche.jpg',
-  'belem-barrio-guia': '/images/hero-lisboa.jpg',
+  'belem-barrio-guia': '/images/alfama-panoramica.jpg',
   'chiado-bairro-alto-guia': '/images/tranvia-28.jpg',
   'mouraria-barrio-guia': '/images/alfama-panoramica.jpg',
-  'vinos-portugueses-guia': '/images/vino-celebracion.jpg',
+  'vinos-portugueses-guia': '/images/fado-tasca-noche.jpg',
   'tram-28-historia-guia': '/images/tranvia-28.jpg',
-  'bacalhau-plato-portugal': '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+  'bacalhau-plato-portugal': '/images/tasca-da-graca.jpg',
   'arquitectura-manuelina-lisboa': '/images/alfama-panoramica.jpg',
 };
 
@@ -2044,6 +2071,23 @@ function buildFallbackArticle(slug: string): Article | null {
       localTips: [
         'El tranvía 12 es una alternativa al 28.',
         'El elevador de Santa Justa se puede subir gratis por detrás.',
+      ],
+    },
+    'aeropuerto-lisboa-al-centro': {
+      intro: 'La opción depende de tu equipaje, tu hora de llegada y cuánto quieras ahorrar: metro, Aerobus, taxi o Uber.',
+      musts: [
+        'Metro (línea roja) para la opción más barata.',
+        'Aerobus si vas con maletas grandes y sin cambios.',
+        'Uber/Bolt si llegas de madrugada o muy cansado.',
+        'Taxi solo en la parada oficial, nunca con quien se ofrezca sin taxímetro.',
+      ],
+      itinerary: [
+        'De día: metro o Aerobus.',
+        'De madrugada (después de la 1:00): taxi o Uber/Bolt.',
+      ],
+      localTips: [
+        'Compra la Viva Viagem en la propia estación del aeropuerto si vas a usar el metro.',
+        'El punto de recogida de Uber/Bolt está señalizado y separado del de taxis.',
       ],
     },
     'restaurantes-romanticos-lisboa': {
@@ -2429,6 +2473,15 @@ const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faq
       { q: '¿Conviene el pase diario?', a: 'Sí si haces más de 3-4 viajes en un día.' },
     ],
   },
+  'aeropuerto-lisboa-al-centro': {
+    comoLlegar: 'Estación de metro Aeroporto en la línea roja, justo en la terminal; también hay parada de Aerobus, taxis oficiales y zona señalizada para Uber/Bolt.',
+    mejorHora: 'El metro y el Aerobus son la mejor opción de día; de madrugada (después de la 1:00) solo quedan taxi o Uber/Bolt.',
+    faqs: [
+      { q: '¿Cuál es la forma más barata de ir del aeropuerto de Lisboa al centro?', a: 'El metro, con la tarjeta Viva Viagem: 1,50€ el trayecto (más 0,50€ la tarjeta la primera vez).' },
+      { q: '¿Cuánto cuesta un taxi del aeropuerto al centro?', a: 'Entre 15 y 25€ según hora, tráfico y suplemento de equipaje.' },
+      { q: '¿Hay metro toda la noche desde el aeropuerto?', a: 'No, el metro cierra a la 1:00. Si llegas de madrugada, usa taxi o Uber/Bolt.' },
+    ],
+  },
   'restaurantes-romanticos-lisboa': {
     comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
     mejorHora: 'Reserva para 20:00-21:00; si hay terraza, mejor al atardecer.',
@@ -2658,9 +2711,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <nav className="flex items-center gap-2 text-xs text-text-secondary">
-            <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
+            <Link href="/" className="hover:text-terracotta transition-colors">Inicio</Link>
             <span>›</span>
-            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-terracotta transition-colors">Blog</Link>
             <span>›</span>
             <span className="font-semibold text-text-main">{article.categoria}</span>
           </nav>
@@ -2671,7 +2724,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
         {/* Categoría + meta */}
         <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">
-          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura
+          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
         </p>
 
         {/* Título */}
@@ -2687,7 +2740,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {/* Imagen destacada */}
       <figure className="max-w-5xl mx-auto px-4 mb-10">
-        <div className="relative aspect-[16/9] overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-premium">
           <Image
             src={heroImage}
             alt={`${article.titulo} — Lisboa`}
@@ -2706,18 +2759,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {/* Columna principal */}
           <article className="min-w-0">
             {/* Lead paragraph - primer párrafo destacado */}
-            <p className="text-xl text-text-secondary leading-relaxed mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+            <p className="font-display italic text-xl md:text-2xl text-night leading-relaxed mb-8">
               {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
             </p>
 
             {/* Resumen */}
             {takeaways.length > 0 && (
-              <div className="border-l-2 border-primary pl-6 mb-8">
+              <div className="card-surface border-l-2 border-gold px-6 py-5 mb-8">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Lo esencial</p>
                 <ul className="space-y-2">
                   {takeaways.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-text-secondary text-sm">
-                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                      <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -2747,9 +2800,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   // Cada 3 párrafos, añadir destacado estilo cita
                   if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
-                      <blockquote key={index} className="border-l-4 border-primary bg-background-light px-6 py-4 my-8 not-prose">
-                        <p className="text-lg text-text-secondary italic leading-relaxed">
-                          "{bloque.texto}"
+                      <blockquote key={index} className="border-l-4 border-gold bg-cream rounded-r-xl px-6 py-5 my-8 not-prose">
+                        <p className="font-display italic text-xl text-night leading-relaxed">
+                          {bloque.texto}
                         </p>
                       </blockquote>
                     );
@@ -2777,7 +2830,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <ul key={index} className="space-y-2 mb-6 not-prose">
                       {bloque.items?.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
-                          <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                          <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -2786,8 +2839,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'tip') {
                   return (
-                    <div key={index} className="border-l-2 border-primary pl-5 py-2 mb-6 not-prose">
-                      <p className="text-text-secondary text-sm leading-relaxed italic">{bloque.texto}</p>
+                    <div key={index} className="card-surface border-l-2 border-gold px-5 py-4 mb-6 not-prose">
+                      <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Tip local</p>
+                      <p className="text-text-secondary text-sm leading-relaxed">{bloque.texto}</p>
                     </div>
                   );
                 }
@@ -2796,7 +2850,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Separador */}
-            <hr className="my-12 border-slate-200" />
+            <hr className="my-12 border-border-soft" />
 
             {/* FAQs */}
             <section className="mb-12">
@@ -2817,19 +2871,42 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </section>
 
             {/* CTA final */}
-            <div className="bg-[#1a2b4a] p-8 text-center">
-              <h3 className="font-display italic text-white text-2xl mb-3">
+            <div className="relative bg-night bg-azulejo-pattern-gold rounded-2xl p-8 text-center overflow-hidden">
+              <h3 className="relative font-display italic text-white text-2xl mb-3">
                 ¿Quieres esto organizado paso a paso?
               </h3>
-              <p className="text-white/60 mb-6 text-sm max-w-md mx-auto">
+              <p className="relative text-white/60 mb-6 text-sm max-w-md mx-auto">
                 Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
               </p>
               <Link
                 href="/itinerarios"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Ver guías desde 2 €
               </Link>
+            </div>
+
+            {/* Sobre el autor */}
+            <div className="mt-12 pt-8 border-t border-border-soft flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-xl flex-shrink-0">
+                JT
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-text-main">Escrito por {AUTHOR_NAME}</p>
+                <p className="text-sm text-text-secondary leading-relaxed mt-1">
+                  Vivo en Lisboa y pruebo cada ruta, restaurante y actividad antes de recomendarla.{' '}
+                  <Link href="/sobre-nosotros" className="text-terracotta hover:underline">Más sobre mí</Link>
+                  {' · '}
+                  <a
+                    href="https://instagram.com/estabaenlisboa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-terracotta hover:underline"
+                  >
+                    Instagram
+                  </a>
+                </p>
+              </div>
             </div>
           </article>
 
@@ -2844,7 +2921,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}
-                      className="block text-sm text-text-secondary hover:text-primary transition-colors py-1"
+                      className="block text-sm text-text-secondary hover:text-terracotta transition-colors py-1"
                     >
                       {heading.title}
                     </a>
@@ -2859,7 +2936,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <ul className="space-y-3">
                 {internalLinks.slice(0, 5).map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-sm text-text-secondary hover:text-primary transition-colors">
+                    <Link href={item.href} className="text-sm text-text-secondary hover:text-terracotta transition-colors">
                       {item.label} →
                     </Link>
                   </li>
@@ -2868,12 +2945,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Mini CTA */}
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-l-2 border-gold">
               <p className="font-semibold text-text-main text-sm mb-2">¿Primera vez en Lisboa?</p>
               <p className="text-text-secondary text-xs mb-4 leading-relaxed">Te ayudamos a planificar tu viaje 1:1</p>
               <Link
                 href="/planifica-tu-viaje"
-                className="block w-full py-2.5 bg-primary hover:bg-primary-dark text-white text-xs font-semibold text-center transition-colors"
+                className="btn-primary block w-full py-2.5 text-xs"
               >
                 Planifica tu viaje
               </Link>
@@ -2886,7 +2963,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <section className="mt-16 pt-12 border-t border-border-soft">
             <div className="flex items-center justify-between mb-8">
               <h3 className="font-display italic text-text-main text-2xl">Relacionadas</h3>
-              <Link href="/blog" className="text-sm text-primary hover:underline underline-offset-2">
+              <Link href="/blog" className="text-sm text-terracotta hover:underline underline-offset-2">
                 Ver todo →
               </Link>
             </div>
@@ -2902,7 +2979,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     />
                   </div>
                   <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{post.categoria}</p>
-                  <h4 className="font-display italic text-text-main group-hover:text-primary transition-colors leading-snug">
+                  <h4 className="font-display italic text-text-main group-hover:text-terracotta transition-colors leading-snug">
                     {post.titulo}
                   </h4>
                 </Link>

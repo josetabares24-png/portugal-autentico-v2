@@ -16,6 +16,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/itinerarios', label: 'Guías' },
+    { href: '/actividades', label: 'Actividades' },
     { href: '/planifica-tu-viaje', label: 'Planifica tu Viaje' },
     { href: '/contacto', label: 'Contacto' },
   ];
@@ -23,7 +24,7 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="bg-cream border-b border-taupe/20 sticky top-0 z-50">
+    <nav className="bg-cream/95 backdrop-blur-sm border-b border-taupe/10 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center flex-1 min-w-0">
@@ -45,9 +46,9 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 font-semibold text-sm transition-colors ${
+                className={`relative px-4 py-2 font-semibold text-sm transition-colors ${
                   isActive(link.href)
-                    ? 'text-terracotta'
+                    ? 'text-terracotta after:absolute after:-bottom-px after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-terracotta'
                     : 'text-night hover:text-terracotta'
                 }`}
               >
@@ -86,7 +87,7 @@ export default function Navbar() {
 
             <Link
               href="/itinerarios"
-              className="inline-flex items-center gap-2 bg-terracotta hover:bg-night text-white font-semibold px-5 py-2 transition-colors text-sm"
+              className="btn-primary px-5 py-2 text-sm"
             >
               Ver Guías
               <Icon name="arrow_forward" size={16} />
@@ -159,7 +160,7 @@ export default function Navbar() {
                 <Link
                   href="/itinerarios"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 bg-terracotta hover:bg-night text-white font-semibold px-6 py-3 transition-colors text-sm mx-4"
+                  className="btn-primary px-6 py-3 text-sm mx-4"
                 >
                   Ver Guías
                   <Icon name="arrow_forward" size={16} />

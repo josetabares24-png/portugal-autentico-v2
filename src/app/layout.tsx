@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
     images: [
       {
-        url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg',
+        url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg',
         width: 1200,
         height: 630,
         alt: 'Guías de Lisboa por Locales - Vista de Alfama',

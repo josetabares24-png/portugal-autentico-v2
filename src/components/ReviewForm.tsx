@@ -49,10 +49,10 @@ export default function ReviewForm({ guideId, guideTitle, existingReview }: Revi
             key={value}
             type="button"
             onClick={() => setRating(value)}
-            className={`w-9 h-9 border text-xs font-semibold transition-colors ${
+            className={`w-9 h-9 rounded-md text-xs font-semibold transition-all duration-200 ${
               rating >= value
-                ? 'bg-primary text-white border-primary'
-                : 'bg-background-light text-text-secondary border-border-soft hover:border-primary'
+                ? 'bg-terracotta text-white shadow-card'
+                : 'bg-background-light text-text-secondary border border-border-soft hover:border-terracotta'
             }`}
             aria-label={`Valorar con ${value} estrellas`}
           >
@@ -64,17 +64,17 @@ export default function ReviewForm({ guideId, guideTitle, existingReview }: Revi
         value={comment}
         onChange={(event) => setComment(event.target.value)}
         placeholder="¿Qué te gustó? ¿Qué mejorarías?"
-        className="w-full min-h-[100px] border border-border-soft px-3 py-2 text-xs text-text-secondary focus:outline-none focus:border-primary"
+        className="form-input min-h-[100px] text-xs"
       />
       <div className="mt-3 flex items-center justify-between">
         <button
           type="submit"
-          className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+          className="btn-primary px-4 py-2 text-xs"
           disabled={status === 'saving'}
         >
           {existingReview ? 'Actualizar reseña' : 'Enviar reseña'}
         </button>
-        {status === 'saved' && <span className="text-xs text-primary">Reseña guardada</span>}
+        {status === 'saved' && <span className="text-xs text-terracotta">Reseña guardada</span>}
         {status === 'error' && <span className="text-xs text-red-600">No se pudo guardar</span>}
       </div>
     </form>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
     description: 'Guías con rutas hora a hora, mapas GPS y restaurantes. Lisboa esencial, completo o con Sintra.',
     url: 'https://estabaenlisboa.com/itinerarios',
-    images: [{ url: 'https://estabaenlisboa.com/images/hero-lisboa.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
+    images: [{ url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com/itinerarios',
@@ -43,7 +43,7 @@ export default async function ItinerariosPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[380px] overflow-hidden">
         <Image
-          src="/images/hero-lisboa.jpg"
+          src="/images/alfama-panoramica.jpg"
           alt="Vista panorámica de Lisboa"
           fill
           className="object-cover"
@@ -105,11 +105,12 @@ export default async function ItinerariosPage() {
       </div>
 
       {/* Completa tu viaje */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">También te puede interesar</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
+              { href: '/actividades', label: 'Actividades sin gastar mucho' },
               { href: '/planifica-tu-viaje', label: 'Planifica tu viaje' },
               { href: '/pack-completo', label: 'Pack completo de guías' },
               { href: '/blog', label: 'Blog: historias y consejos' },
@@ -118,7 +119,7 @@ export default async function ItinerariosPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-secondary hover:text-primary transition-colors underline-offset-2 hover:underline"
+                className="text-sm text-text-secondary hover:text-terracotta transition-colors underline-offset-2 hover:underline"
               >
                 {link.label} →
               </Link>
@@ -128,9 +129,9 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-10">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-10">
             Preguntas frecuentes
           </h2>
           <div className="space-y-8">
@@ -145,7 +146,7 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* CTA planifica tu viaje */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4">
             ¿No sabes cuál elegir?
@@ -156,13 +157,13 @@ export default async function ItinerariosPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/planifica-tu-viaje"
-              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+              className="btn-primary px-8 py-3"
             >
               Planifica tu viaje
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-3 border border-border-soft hover:border-text-secondary text-text-main font-semibold transition-colors"
+              className="btn-outline px-8 py-3"
             >
               Pregúntanos
             </Link>

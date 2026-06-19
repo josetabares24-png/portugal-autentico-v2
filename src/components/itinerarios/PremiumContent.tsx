@@ -89,9 +89,9 @@ export function PremiumContent({
     return (
       <div className="py-16 bg-background-light border-t border-border-soft">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="border-t-2 border-primary pt-8">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center mx-auto mb-6">
-              <Icon name="lock" size={24} className="text-white" />
+          <div className="card-surface p-8 border-t-2 border-gold">
+            <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center mx-auto mb-6 shadow-gold-glow">
+              <Icon name="lock" size={24} className="text-night" />
             </div>
             <h3 className="font-display italic text-text-main text-2xl mb-3">
               Contenido Premium
@@ -101,7 +101,7 @@ export function PremiumContent({
             </p>
             <Link
               href={`/checkout/${productId}`}
-              className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+              className="btn-primary inline-flex px-8 py-3 text-sm"
             >
               Desbloquear por {price}€
             </Link>
@@ -171,14 +171,14 @@ function UsefulResources() {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {recursos.map((r) => (
-            <div key={r.titulo} className="border-t border-border-soft pt-5">
+            <div key={r.titulo} className="card-surface p-5">
               <h3 className="font-semibold text-text-main text-sm mb-1">{r.titulo}</h3>
               <p className="text-text-secondary text-xs leading-relaxed mb-3">{r.desc}</p>
               <a
                 href={r.href}
                 target={r.external ? '_blank' : undefined}
                 rel={r.external ? 'noopener noreferrer' : undefined}
-                className="text-xs text-primary hover:underline underline-offset-2 font-semibold"
+                className="text-xs text-terracotta hover:underline underline-offset-2 font-semibold"
               >
                 {r.label} →
               </a>

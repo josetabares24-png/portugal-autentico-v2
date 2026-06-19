@@ -95,33 +95,33 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="space-y-14">
             {faqs.map((category, catIndex) => (
               <div key={catIndex}>
-                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-6 pb-3 border-b border-border-soft">
+                <span className="badge-pill inline-flex bg-terracotta/10 text-terracotta mb-6">
                   {category.category}
-                </p>
-                <div className="space-y-0">
+                </span>
+                <div className="card-surface divide-y divide-border-soft overflow-hidden">
                   {category.questions.map((faq, qIndex) => {
                     const isOpen = openIndex === `${catIndex}-${qIndex}`;
                     return (
-                      <div key={qIndex} className="border-b border-border-soft">
+                      <div key={qIndex}>
                         <button
                           onClick={() => toggleFAQ(catIndex, qIndex)}
-                          className="w-full py-5 flex items-start justify-between gap-4 text-left"
+                          className="w-full py-5 px-6 flex items-start justify-between gap-4 text-left"
                           aria-expanded={isOpen}
                         >
                           <span className="font-semibold text-text-main text-sm md:text-base leading-snug">
                             {faq.question}
                           </span>
-                          <span className={`text-text-secondary flex-shrink-0 text-lg leading-none transition-transform ${isOpen ? 'rotate-45' : ''}`}>
+                          <span className={`text-terracotta flex-shrink-0 text-lg leading-none transition-transform ${isOpen ? 'rotate-45' : ''}`}>
                             +
                           </span>
                         </button>
                         {isOpen && (
-                          <div className="pb-5">
+                          <div className="pb-5 px-6">
                             <p className="text-text-secondary text-sm leading-relaxed">
                               {faq.answer}
                             </p>
@@ -138,9 +138,9 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-4">
             ¿Tienes otra pregunta?
           </h2>
           <p className="text-white/60 mb-8">
@@ -149,13 +149,13 @@ export default function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contacto"
-              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+              className="btn-primary px-8 py-3"
             >
               Contactar
             </Link>
             <Link
               href="/itinerarios"
-              className="px-8 py-3 border border-white/20 hover:border-white/40 text-white font-semibold transition-colors"
+              className="btn-ghost-light px-8 py-3"
             >
               Ver guías
             </Link>

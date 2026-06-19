@@ -45,14 +45,14 @@ export default function LegalPageLayout({ content }: LegalPageLayoutProps) {
             ),
             li: ({ children }) => (
               <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                 <span>{children}</span>
               </li>
             ),
             a: ({ href, children }) => (
               <a
                 href={href}
-                className="text-primary hover:underline underline-offset-2"
+                className="text-terracotta hover:underline underline-offset-2"
                 target={href?.startsWith('http') ? '_blank' : undefined}
                 rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
@@ -63,7 +63,7 @@ export default function LegalPageLayout({ content }: LegalPageLayoutProps) {
               <strong className="font-semibold text-text-main">{children}</strong>
             ),
             blockquote: ({ children }) => (
-              <blockquote className="border-l-2 border-primary pl-4 italic text-text-secondary my-4">
+              <blockquote className="card-surface border-l-2 border-gold px-4 py-3 italic text-text-secondary my-4">
                 {children}
               </blockquote>
             ),

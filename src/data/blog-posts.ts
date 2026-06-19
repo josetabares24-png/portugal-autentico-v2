@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '1 Feb 2026',
     autor: 'José Tabares',
-    imagen: '/images/julia-solonina-ci19YINguoc-unsplash.jpg',
+    imagen: '/images/ventana-alfama-tajo.jpg',
   },
   {
     id: 'errores-turistas-lisboa',
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '20 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/paulo-evangelista-Ss3FBqiWwP4-unsplash.jpg',
+    imagen: '/images/miradouro-atardecer.jpg',
   },
   {
     id: 'transporte-publico-lisboa',
@@ -118,13 +118,22 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/funicular-bica-turistas.jpg',
   },
   {
+    id: 'aeropuerto-lisboa-al-centro',
+    titulo: 'Cómo Ir del Aeropuerto de Lisboa al Centro',
+    excerpt: 'Metro, Aerobus, taxi y Uber comparados: precios reales, tiempos y cuál conviene según cómo viajes.',
+    categoria: 'Transporte',
+    fecha: '19 Jun 2026',
+    autor: 'José Tabares',
+    imagen: '/images/elevador-santa-justa.jpg',
+  },
+  {
     id: 'restaurantes-romanticos-lisboa',
     titulo: '10 Restaurantes Románticos en Lisboa',
     excerpt: 'Cenas con vistas, terrazas íntimas y planes perfectos para una noche especial.',
     categoria: 'Gastronomía',
     fecha: '15 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/vino-celebracion.jpg',
+    imagen: '/images/fado-tasca-noche.jpg',
   },
   {
     id: 'que-ver-cascais-desde-lisboa',
@@ -133,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '12 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/pelayo-arbues-YN9_NQBZcSc-unsplash.jpg',
+    imagen: '/images/estacion-sintra.jpg',
   },
   {
     id: 'playas-cerca-lisboa',
@@ -142,7 +151,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '10 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/yuliia-sereda-qRF4TQbiXfc-unsplash.jpg',
+    imagen: '/images/mirador-tajo-amarras-atardecer.jpg',
   },
   {
     id: 'donde-escuchar-fado-autentico',
@@ -169,7 +178,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '3 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/annie-spratt-epexF_Ltb7s-unsplash.jpg',
+    imagen: '/images/barrio-calle-residencial.jpg',
   },
   {
     id: 'donde-tomar-cafe-lisboa',
@@ -178,7 +187,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '1 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/jacek-urbanski-0sODcpe2RPo-unsplash.jpg',
+    imagen: '/images/bica-cafe-mapa.jpg',
   },
   {
     id: 'miradores-atardecer-lisboa',
@@ -205,7 +214,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Consejos',
     fecha: '22 Dic 2025',
     autor: 'José Tabares',
-    imagen: '/images/ekaterina-boltaga-jqkGK3ofxi8-unsplash.jpg',
+    imagen: '/images/parque-nacoes-torres-atardecer.jpg',
   },
   {
     id: 'excursiones-desde-lisboa',
@@ -241,7 +250,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '15 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/hero-lisboa.jpg',
+    imagen: '/images/alfama-panoramica.jpg',
   },
   {
     id: 'azulejos-portugueses-historia',
@@ -250,7 +259,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '12 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/claudio-luiz-castro-cFj656inKM0-unsplash.jpg',
+    imagen: '/images/aldaba-puerta-lisboa.jpg',
   },
   {
     id: 'novedades-lisboa-2026',
@@ -277,7 +286,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Planificación',
     fecha: '5 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/hero-lisboa.jpg',
+    imagen: '/images/alfama-panoramica.jpg',
   },
   {
     id: 'monumentos-de-lisboa',
@@ -295,7 +304,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '1 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/joel-filipe-FrSDv3rVG-E-unsplash.jpg',
+    imagen: '/images/bairro-alto-calle-noche.jpg',
   },
   {
     id: 'alfama-historia-guia',
@@ -331,7 +340,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '21 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/hero-lisboa.jpg',
+    imagen: '/images/alfama-panoramica.jpg',
   },
   {
     id: 'chiado-bairro-alto-guia',
@@ -358,7 +367,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '16 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/vino-celebracion.jpg',
+    imagen: '/images/fado-tasca-noche.jpg',
   },
   {
     id: 'tram-28-historia-guia',
@@ -376,7 +385,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '13 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/eduardo-goody-0Iu7mKa1sPw-unsplash.jpg',
+    imagen: '/images/tasca-da-graca.jpg',
   },
   {
     id: 'arquitectura-manuelina-lisboa',

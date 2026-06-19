@@ -10,7 +10,7 @@ export function TimelineContainer({ children }: TimelineContainerProps) {
     <div className="relative">
       {!HIDE_GUIDE_PHOTOS && (
         <div
-          className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-primary md:-translate-x-1/2"
+          className="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-terracotta md:-translate-x-1/2"
           aria-hidden
         />
       )}

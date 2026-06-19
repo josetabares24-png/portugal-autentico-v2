@@ -90,7 +90,7 @@ export default function ItineraryMap({
               href={`https://www.google.com/maps?q=${coordinates.length > 0 ? `${coordinates[0].lat},${coordinates[0].lng}` : 'Lisboa,Portugal'}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+              className="btn-primary flex-1 text-xs px-5 py-3"
             >
               <Icon name="directions" size={14} />
               Cómo llegar
@@ -105,7 +105,7 @@ export default function ItineraryMap({
             { n: '3', title: 'Ruta optimizada', desc: 'Los marcadores están numerados en el orden del itinerario para seguirlo paso a paso.' },
           ].map((item) => (
             <div key={item.n} className="border-t border-border-soft pt-4 flex gap-3">
-              <span className="text-xs font-bold text-primary flex-shrink-0">{item.n}.</span>
+              <span className="text-xs font-bold text-terracotta flex-shrink-0">{item.n}.</span>
               <div>
                 <p className="text-xs font-semibold text-text-main mb-1">{item.title}</p>
                 <p className="text-xs text-text-secondary leading-relaxed">{item.desc}</p>

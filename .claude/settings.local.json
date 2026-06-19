@@ -8,7 +8,14 @@
       "Bash(git push:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__get_deployment_build_logs"
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__get_deployment_build_logs",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__deploy_to_vercel",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__get_access_to_vercel_url",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__list_deployments",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__get_deployment",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__get_project",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__list_teams",
+      "mcp__62af5d14-45dd-4de5-9147-246def6cecd7__list_projects"
     ]
   }
 }

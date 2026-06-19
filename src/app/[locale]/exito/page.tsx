@@ -5,9 +5,9 @@ export default function ExitoPage() {
   return (
     <main id="main-content" className="bg-background-light py-24">
       <div className="max-w-2xl mx-auto px-6">
-        <div className="border-t-2 border-primary pt-8 text-center mb-10">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center mx-auto mb-6">
-            <Icon name="check_circle" size={20} className="text-white" />
+        <div className="card-surface p-8 border-t-2 border-gold text-center mb-10">
+          <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center mx-auto mb-6 shadow-gold-glow">
+            <Icon name="check_circle" size={20} className="text-night" />
           </div>
           <h1 className="font-display italic text-text-main text-3xl md:text-4xl mb-4">
             ¡Pago completado!
@@ -18,23 +18,23 @@ export default function ExitoPage() {
         </div>
 
         <div className="space-y-4 mb-10">
-          <div className="border-t border-border-soft pt-5">
+          <div className="card-surface p-5">
             <div className="flex items-start gap-3">
-              <Icon name="info" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+              <Icon name="info" size={16} className="text-terracotta mt-0.5 flex-shrink-0" />
               <div>
                 <p className="font-semibold text-text-main text-sm mb-1">¿No recibes el email?</p>
                 <p className="text-text-secondary text-xs leading-relaxed">
                   Los emails se envían automáticamente al completar el pago. Revisa spam o promociones,
                   espera hasta 5 minutos, o escríbenos a{' '}
-                  <a href="mailto:hola@estabaenlisboa.com" className="text-primary hover:underline">hola@estabaenlisboa.com</a>
+                  <a href="mailto:hola@estabaenlisboa.com" className="text-terracotta hover:underline">hola@estabaenlisboa.com</a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-border-soft pt-5">
+          <div className="card-surface p-5">
             <div className="flex items-start gap-3">
-              <Icon name="email" size={16} className="text-primary mt-0.5 flex-shrink-0" />
+              <Icon name="email" size={16} className="text-terracotta mt-0.5 flex-shrink-0" />
               <div>
                 <p className="font-semibold text-text-main text-sm mb-1">¿Qué incluye el email?</p>
                 <p className="text-text-secondary text-xs leading-relaxed">
@@ -48,13 +48,13 @@ export default function ExitoPage() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/mis-guias"
-            className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 text-sm transition-colors"
+            className="btn-primary px-6 py-3 text-sm"
           >
             Ver mis guías
           </Link>
           <Link
             href="/itinerarios"
-            className="inline-flex items-center justify-center gap-2 border border-border-soft hover:border-primary text-text-main font-semibold px-6 py-3 text-sm transition-colors"
+            className="btn-outline px-6 py-3 text-sm"
           >
             Ver más guías
           </Link>

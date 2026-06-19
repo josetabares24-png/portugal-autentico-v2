@@ -69,11 +69,11 @@ export default function CookieBanner() {
                   Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación,
                   analizar el tráfico del sitio y personalizar el contenido. Al hacer clic en "Aceptar",
                   consientes el uso de todas las cookies. Puedes consultar más información en nuestra{' '}
-                  <Link href="/politica-cookies" className="text-primary hover:underline underline-offset-2">
+                  <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
                     Política de Cookies
                   </Link>
                   {' '}y en nuestra{' '}
-                  <Link href="/politica-privacidad" className="text-primary hover:underline underline-offset-2">
+                  <Link href="/politica-privacidad" className="text-terracotta hover:underline underline-offset-2">
                     Política de Privacidad
                   </Link>.
                 </p>
@@ -89,7 +89,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="px-6 py-3 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+                  className="btn-primary px-6 py-3 text-xs"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
@@ -105,7 +105,7 @@ export default function CookieBanner() {
           <span className="text-xs font-semibold text-text-main">Cookies rechazadas</span>
           <button
             onClick={openPreferences}
-            className="text-xs font-semibold text-primary hover:underline underline-offset-2"
+            className="text-xs font-semibold text-terracotta hover:underline underline-offset-2"
           >
             Cambiar
           </button>
