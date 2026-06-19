@@ -2671,7 +2671,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
         {/* Categoría + meta */}
         <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">
-          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura
+          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
         </p>
 
         {/* Título */}
@@ -2831,6 +2831,29 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               >
                 Ver guías desde 2 €
               </Link>
+            </div>
+
+            {/* Sobre el autor */}
+            <div className="mt-12 pt-8 border-t border-border-soft flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-xl flex-shrink-0">
+                JT
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-text-main">Escrito por {AUTHOR_NAME}</p>
+                <p className="text-sm text-text-secondary leading-relaxed mt-1">
+                  Vivo en Lisboa y pruebo cada ruta, restaurante y actividad antes de recomendarla.{' '}
+                  <Link href="/sobre-nosotros" className="text-terracotta hover:underline">Más sobre mí</Link>
+                  {' · '}
+                  <a
+                    href="https://instagram.com/estabaenlisboa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-terracotta hover:underline"
+                  >
+                    Instagram
+                  </a>
+                </p>
+              </div>
             </div>
           </article>
 

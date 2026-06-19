@@ -44,6 +44,36 @@ export default function SobreNosotrosPage() {
         <div className="border-t border-border-soft" />
       </div>
 
+      {/* Autor */}
+      <section className="bg-background-light py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="card-surface p-8 flex flex-col sm:flex-row items-start gap-6">
+            <div className="w-16 h-16 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-2xl flex-shrink-0">
+              JT
+            </div>
+            <div>
+              <p className="text-text-main font-semibold mb-1">José Tabares</p>
+              <p className="text-text-secondary text-sm leading-relaxed mb-3">
+                Vivo en Lisboa y pruebo cada ruta, cada restaurante y cada actividad antes de recomendarla. Si está en esta web, es porque lo he probado yo mismo.
+              </p>
+              <a
+                href="https://instagram.com/estabaenlisboa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-terracotta hover:underline"
+              >
+                Sígueme en Instagram →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Separador */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-border-soft" />
+      </div>
+
       {/* Tres pilares */}
       <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
