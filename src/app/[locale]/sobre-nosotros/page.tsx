@@ -71,9 +71,9 @@ export default function SobreNosotrosPage() {
       </section>
 
       {/* CTA contacto */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-4">
             ¿Hablamos?
           </h2>
           <p className="text-white/60 mb-8 leading-relaxed">

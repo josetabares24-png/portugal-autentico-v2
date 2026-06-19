@@ -108,7 +108,7 @@ export default function PlanificaTuViajePage() {
       </section>
 
       {/* Recomendación instantánea */}
-      <section className="bg-background-light py-16 border-b border-border-soft">
+      <section className="bg-background-light py-20 border-b border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             Recomendación al instante
@@ -207,7 +207,7 @@ export default function PlanificaTuViajePage() {
       </section>
 
       {/* Actividades recomendadas según presupuesto */}
-      <section className="bg-background-light py-16 border-b border-border-soft">
+      <section className="bg-background-light py-20 border-b border-border-soft">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between mb-8 pb-3 border-b border-border-soft">
             <p className="text-xs uppercase tracking-widest text-text-secondary">
@@ -226,7 +226,7 @@ export default function PlanificaTuViajePage() {
       </section>
 
       {/* Plan a medida 1:1 */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Servicio 1:1</p>
           <h2 className="font-display italic text-text-main text-3xl mb-4">Un plan a medida, hecho por mí</h2>

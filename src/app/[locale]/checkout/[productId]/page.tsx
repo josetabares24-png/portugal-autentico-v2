@@ -86,7 +86,7 @@ export default function CheckoutPage() {
           <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
             ← Itinerarios
           </Link>
-          <h1 className="font-display italic text-white text-3xl md:text-4xl leading-tight mb-1">
+          <h1 className="font-display italic text-white text-4xl md:text-5xl leading-tight mb-1">
             Finalizar Compra
           </h1>
           <p className="text-white/60 text-sm">Pago seguro procesado por Stripe</p>
@@ -94,7 +94,7 @@ export default function CheckoutPage() {
       </section>
 
       {/* Checkout */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-2xl mx-auto px-6">
 
           {/* Product info */}

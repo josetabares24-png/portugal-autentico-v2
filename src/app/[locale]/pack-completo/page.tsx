@@ -25,7 +25,7 @@ export default function PackCompletoPage() {
           <span className="badge-pill inline-flex bg-gold text-night mb-4">
             {isFree ? 'Acceso gratuito 2026' : 'Oferta de lanzamiento 2026'}
           </span>
-          <h1 className="font-display italic text-white text-4xl md:text-5xl leading-tight mb-4">
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-4">
             Pack Completo Lisboa
           </h1>
           <p className="text-white/70 text-sm mb-10">
@@ -95,7 +95,7 @@ export default function PackCompletoPage() {
       </section>
 
       {/* Comparativa */}
-      <section className="bg-background-light py-16 border-t border-border-soft">
+      <section className="bg-background-light py-20 border-t border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             ¿Por qué el pack?
@@ -132,7 +132,7 @@ export default function PackCompletoPage() {
       </section>
 
       {/* Por qué confiar */}
-      <section className="bg-background-light py-16 border-t border-border-soft">
+      <section className="bg-background-light py-20 border-t border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             Por qué confiar en nuestras guías
@@ -153,9 +153,9 @@ export default function PackCompletoPage() {
       </section>
 
       {/* CTA final */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <p className="font-display italic text-white text-3xl mb-4">Comienza tu aventura en Lisboa</p>
+          <p className="font-display italic text-white text-4xl mb-4">Comienza tu aventura en Lisboa</p>
 
           {isFree ? (
             <>

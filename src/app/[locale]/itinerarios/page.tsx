@@ -105,7 +105,7 @@ export default async function ItinerariosPage() {
       </div>
 
       {/* Completa tu viaje */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">También te puede interesar</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -129,9 +129,9 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* FAQ */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-10">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-10">
             Preguntas frecuentes
           </h2>
           <div className="space-y-8">
@@ -146,7 +146,7 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* CTA planifica tu viaje */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4">
             ¿No sabes cuál elegir?

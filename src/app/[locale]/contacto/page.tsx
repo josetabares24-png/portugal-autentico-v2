@@ -52,7 +52,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Formulario */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="grid md:grid-cols-[2fr,1fr] gap-16 items-start">
             {/* Form */}

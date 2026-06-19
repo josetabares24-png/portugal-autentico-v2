@@ -50,7 +50,7 @@ export default function Lisboa1DiaPage() {
           <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
             ← Itinerarios
           </Link>
-          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             Lisboa en 1 Día
           </h1>
           <p className="text-white/70 text-sm">Lo esencial · {totalStops} paradas · Alfama, Castillo, Belém</p>
@@ -75,7 +75,7 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* Resumen */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             Resumen de la guía
@@ -98,7 +98,7 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-background-light py-16 border-t border-border-soft" id="itinerario">
+      <section className="bg-background-light py-20 border-t border-border-soft" id="itinerario">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
             Itinerario día a día
@@ -136,7 +136,7 @@ export default function Lisboa1DiaPage() {
       />
 
       {/* Galería + tips */}
-      <section className="bg-background-light py-16 border-t border-border-soft" id="galeria">
+      <section className="bg-background-light py-20 border-t border-border-soft" id="galeria">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
             Vista previa y consejos
@@ -179,9 +179,9 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* CTA final */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <p className="font-display italic text-white text-3xl mb-4">Lo esencial de Lisboa en un día</p>
+          <p className="font-display italic text-white text-4xl mb-4">Lo esencial de Lisboa en un día</p>
           {isFree ? (
             <>
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>

@@ -215,7 +215,7 @@ export default function HomePage() {
       </section>
 
       {/* ── GUÍAS ── */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 md:py-20 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-5xl mx-auto px-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
             Si te sirve, también preparé rutas hora a hora para organizarte el viaje.

@@ -86,7 +86,7 @@ export default function BlogClient() {
       </section>
 
       {/* Artículo destacado + recientes */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
           {featured && (
             <div className="grid lg:grid-cols-[3fr,2fr] gap-12 items-start">
@@ -152,7 +152,7 @@ export default function BlogClient() {
       </div>
 
       {/* Grid de artículos */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => {

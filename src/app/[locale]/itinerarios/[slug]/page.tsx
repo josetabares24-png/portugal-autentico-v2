@@ -85,7 +85,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
           <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white transition-colors mb-4 block">
             ← Itinerarios
           </Link>
-          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             {pack.title}
           </h1>
           <p className="text-white/70 text-sm">{pack.duration} &middot; Descarga inmediata &middot; Garantía 48h</p>

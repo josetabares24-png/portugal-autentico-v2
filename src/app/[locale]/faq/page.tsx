@@ -95,7 +95,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="space-y-14">
             {faqs.map((category, catIndex) => (
@@ -138,9 +138,9 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-4">
             ¿Tienes otra pregunta?
           </h2>
           <p className="text-white/60 mb-8">

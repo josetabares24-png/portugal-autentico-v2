@@ -93,7 +93,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <span>/</span>
             <span className="text-white/90">{activity.category}</span>
           </nav>
-          <h1 className="font-display italic text-white text-3xl md:text-5xl leading-tight mb-2">
+          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             {activity.title}
           </h1>
           <p className="text-white/70 text-sm">{activity.zone} &middot; {activity.duration}</p>
@@ -101,7 +101,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
       </section>
 
       {/* Contenido */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="flex items-center justify-between mb-8 pb-6 border-b border-border-soft">
             <div>
@@ -142,7 +142,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
       {/* Relacionadas */}
       {related.length > 0 && (
-        <section className="bg-background-light py-16 border-t border-border-soft">
+        <section className="bg-background-light py-20 border-t border-border-soft">
           <div className="max-w-6xl mx-auto px-6">
             <p className="text-xs text-text-secondary uppercase tracking-widest mb-8">Más en {activity.category}</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">

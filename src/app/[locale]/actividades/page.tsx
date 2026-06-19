@@ -75,7 +75,7 @@ export default function ActividadesPage() {
       </section>
 
       {/* Catálogo */}
-      <section className="bg-background-light py-16">
+      <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-8">
             {filtered.length} {filtered.length === 1 ? 'actividad' : 'actividades'}
@@ -93,9 +93,9 @@ export default function ActividadesPage() {
       </section>
 
       {/* CTA plan a medida */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
+          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-4">
             ¿Prefieres que te lo organice yo?
           </h2>
           <p className="text-white/60 mb-8">
