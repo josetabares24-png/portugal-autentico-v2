@@ -12,6 +12,8 @@ export default function SobreNosotrosPage() {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
@@ -45,20 +47,20 @@ export default function SobreNosotrosPage() {
       {/* Tres pilares */}
       <section className="bg-background-light py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="border-t-2 border-primary pt-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card-surface p-6 border-t-2 border-gold">
               <h3 className="font-display italic text-text-main text-xl mb-3">Vivimos aquí</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Probamos rutas cada mes para que lo que recomendamos funcione de verdad, no solo en papel.
               </p>
             </div>
-            <div className="border-t-2 border-border-soft pt-6">
+            <div className="card-surface p-6 border-t-2 border-border-soft">
               <h3 className="font-display italic text-text-main text-xl mb-3">Siempre actualizadas</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Si algo cambia &mdash; precio, horario, restaurante que cierra &mdash; actualizamos la guía. Nada de información vieja.
               </p>
             </div>
-            <div className="border-t-2 border-border-soft pt-6">
+            <div className="card-surface p-6 border-t-2 border-border-soft">
               <h3 className="font-display italic text-text-main text-xl mb-3">Garantía 48h</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
                 Si la guía no te es útil, te devolvemos el dinero en 48 horas. Sin preguntas.
@@ -69,8 +71,8 @@ export default function SobreNosotrosPage() {
       </section>
 
       {/* CTA contacto */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-2xl mx-auto px-6 text-center">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
             ¿Hablamos?
           </h2>
@@ -79,7 +81,7 @@ export default function SobreNosotrosPage() {
           </p>
           <Link
             href="/contacto"
-            className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+            className="btn-primary inline-flex px-8 py-3"
           >
             Escribirnos
           </Link>

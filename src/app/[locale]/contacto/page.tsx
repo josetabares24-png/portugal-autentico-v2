@@ -70,7 +70,7 @@ export default function ContactoPage() {
                       value={formData.nombre}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                      className="form-input text-sm"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -86,7 +86,7 @@ export default function ContactoPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                      className="form-input text-sm"
                       placeholder="tu@email.com"
                     />
                   </div>
@@ -101,7 +101,7 @@ export default function ContactoPage() {
                       value={formData.asunto}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors text-sm"
+                      className="form-input text-sm"
                     >
                       <option value="">Selecciona un asunto</option>
                       <option value="duda-guia">Duda sobre una guía</option>
@@ -123,14 +123,14 @@ export default function ContactoPage() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary transition-colors resize-none text-sm"
+                      className="form-input resize-none text-sm"
                       placeholder="Cuéntanos cómo podemos ayudarte..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm"
+                    className="btn-primary w-full py-4 text-sm"
                   >
                     Enviar mensaje
                   </button>
@@ -144,7 +144,7 @@ export default function ContactoPage() {
                   </p>
                 </form>
               ) : (
-                <div className="py-12">
+                <div className="card-surface p-8 border-l-2 border-gold">
                   <p className="font-display italic text-text-main text-2xl mb-4">Mensaje enviado.</p>
                   <p className="text-text-secondary mb-8">
                     Gracias por contactarnos. Te responderemos pronto a tu email.
@@ -157,8 +157,8 @@ export default function ContactoPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-8">
-              <div className="border-t-2 border-primary pt-5">
+            <div className="space-y-6">
+              <div className="card-surface p-5 border-l-2 border-gold">
                 <h3 className="font-semibold text-text-main text-sm mb-2">Preguntas frecuentes</h3>
                 <p className="text-text-secondary text-xs leading-relaxed mb-3">
                   Antes de escribirnos, revisa si ya tenemos respuesta para tu duda.
@@ -167,7 +167,7 @@ export default function ContactoPage() {
                   Ver FAQ →
                 </Link>
               </div>
-              <div className="border-t border-border-soft pt-5">
+              <div className="card-surface p-5">
                 <h3 className="font-semibold text-text-main text-sm mb-2">Garantía</h3>
                 <p className="text-text-secondary text-xs leading-relaxed">
                   48 horas de devolución sin preguntas. Si no te funciona, te devolvemos el dinero.

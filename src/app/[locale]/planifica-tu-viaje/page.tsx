@@ -122,8 +122,10 @@ export default function PlanificaTuViajePage() {
                     <button
                       key={opt.id}
                       onClick={() => setTipo(opt.id)}
-                      className={`py-4 px-3 border-t-2 text-left transition-colors ${
-                        tipo === opt.id ? 'border-primary' : 'border-border-soft hover:border-text-secondary'
+                      className={`py-4 px-3 rounded-lg text-left transition-all duration-200 ${
+                        tipo === opt.id
+                          ? 'bg-white shadow-card ring-2 ring-gold'
+                          : 'border border-border-soft hover:border-taupe hover:shadow-soft'
                       }`}
                     >
                       <p className="font-semibold text-text-main text-sm mb-1">{opt.label}</p>
@@ -161,7 +163,7 @@ export default function PlanificaTuViajePage() {
                 </div>
               </div>
 
-              <div className="border-t-2 border-primary pt-6">
+              <div className="card-surface p-6 border-l-2 border-gold">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Presupuesto estimado</p>
                 <p className="text-5xl font-bold text-text-main mb-1">{totalViaje} €</p>
                 <p className="text-text-secondary text-sm">{totalPersonaDia} € por persona al día</p>
@@ -184,7 +186,7 @@ export default function PlanificaTuViajePage() {
               )}
             </div>
 
-            <div className="border-t-2 border-primary pt-6 lg:sticky lg:top-24">
+            <div className="card-surface p-6 lg:sticky lg:top-24">
               <p className="text-xs uppercase tracking-widest text-text-secondary mb-5">Tips de ahorro</p>
               <ul className="space-y-4 text-sm text-text-secondary">
                 {[
@@ -240,7 +242,7 @@ export default function PlanificaTuViajePage() {
                   <label htmlFor="nombre" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Nombre</label>
                   <input
                     type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required
-                    className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                    className="form-input text-sm"
                     placeholder="Tu nombre"
                   />
                 </div>
@@ -248,7 +250,7 @@ export default function PlanificaTuViajePage() {
                   <label htmlFor="email" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Email</label>
                   <input
                     type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
-                    className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                    className="form-input text-sm"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -259,7 +261,7 @@ export default function PlanificaTuViajePage() {
                   <label htmlFor="fechas" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Fechas</label>
                   <input
                     type="text" id="fechas" name="fechas" value={formData.fechas} onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                    className="form-input text-sm"
                     placeholder="Ej: 12-15 julio"
                   />
                 </div>
@@ -267,7 +269,7 @@ export default function PlanificaTuViajePage() {
                   <label htmlFor="dias" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Días</label>
                   <input
                     type="number" id="dias" name="dias" min="1" value={formData.dias} onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                    className="form-input text-sm"
                     placeholder="3"
                   />
                 </div>
@@ -275,7 +277,7 @@ export default function PlanificaTuViajePage() {
                   <label htmlFor="personas" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Personas</label>
                   <input
                     type="number" id="personas" name="personas" min="1" value={formData.personas} onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                    className="form-input text-sm"
                     placeholder="2"
                   />
                 </div>
@@ -289,8 +291,10 @@ export default function PlanificaTuViajePage() {
                       key={r}
                       type="button"
                       onClick={() => setFormData({ ...formData, ritmo: r })}
-                      className={`py-3 px-3 border-t-2 text-sm font-semibold transition-colors ${
-                        formData.ritmo === r ? 'border-primary text-text-main' : 'border-border-soft text-text-secondary hover:border-text-secondary'
+                      className={`py-3 px-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                        formData.ritmo === r
+                          ? 'bg-white shadow-card ring-2 ring-gold text-text-main'
+                          : 'border border-border-soft text-text-secondary hover:border-taupe hover:shadow-soft'
                       }`}
                     >
                       {r}
@@ -322,7 +326,7 @@ export default function PlanificaTuViajePage() {
                 <textarea
                   id="comentarios" name="comentarios" value={formData.comentarios} onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary resize-none text-sm"
+                  className="form-input resize-none text-sm"
                   placeholder="Movilidad reducida, viajas con niños, alergias, alojamiento ya reservado..."
                 />
               </div>
@@ -332,7 +336,7 @@ export default function PlanificaTuViajePage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full py-4 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm disabled:opacity-50"
+                className="btn-primary w-full py-4 text-sm disabled:opacity-50 disabled:hover:translate-y-0"
               >
                 {status === 'loading' ? 'Enviando…' : 'Solicitar mi plan a medida'}
               </button>
@@ -342,7 +346,7 @@ export default function PlanificaTuViajePage() {
               </p>
             </form>
           ) : (
-            <div className="py-12 border-t-2 border-primary">
+            <div className="card-surface p-8 border-l-2 border-gold">
               <p className="font-display italic text-text-main text-2xl mb-4">Solicitud enviada.</p>
               <p className="text-text-secondary mb-8">
                 Gracias. Voy a revisar tus respuestas y te escribo en 24-48 horas con tu plan a medida.

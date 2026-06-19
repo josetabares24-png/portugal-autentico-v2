@@ -72,6 +72,10 @@ h1, h2, h3, h4, h5, h6 {
   .card-surface {
     @apply bg-white rounded-xl shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
   }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-border-soft bg-white text-text-main placeholder:text-text-secondary/60 transition-colors duration-200 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15;
+  }
 }
 
 /* ========== SCROLLBAR ========== */
@@ -120,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
   clip: auto;
   white-space: normal;
-  background-color: #c65d3b;
+  background-color: #B8472E;
   color: white;
   font-weight: 700;
   border-radius: 0.5rem;
@@ -132,7 +136,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid #c65d3b;
+  outline: 3px solid #B8472E;
   outline-offset: 2px;
   border-radius: 0.25rem;
 }

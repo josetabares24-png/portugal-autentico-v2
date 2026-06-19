@@ -66,7 +66,7 @@ export default function LisboaFamiliarPage() {
           ) : (
             <Link
               href="/checkout/lisboa-familiar"
-              className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+              className="btn-primary px-4 py-2 text-xs"
             >
               Desbloquear {PRODUCT_PRICE}€
             </Link>
@@ -81,15 +81,15 @@ export default function LisboaFamiliarPage() {
             Resumen de la guía
           </p>
           <div className="grid sm:grid-cols-3 gap-8">
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Formato</h3>
               <p className="text-text-secondary text-sm">Ritmo tranquilo · Pausas frecuentes</p>
             </div>
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Paradas</h3>
               <p className="text-text-secondary text-sm">{totalStops} actividades kid-friendly</p>
             </div>
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Precio</h3>
               <p className="text-text-secondary text-sm">{isFree ? 'Gratis (acceso libre)' : `${PRODUCT_PRICE}€ · Acceso de por vida`}</p>
             </div>
@@ -147,25 +147,25 @@ export default function LisboaFamiliarPage() {
             </div>
 
             <div>
-              <div className="border-t-2 border-primary pt-6">
-                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Tips de local</p>
+              <div className="card-surface p-6 border-l-2 border-gold">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-4">Tips de local</p>
                 <ul className="space-y-5">
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Parque das Nações</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Terreno completamente plano — ideal para carritos. Acuario, teleférico y espacio abierto.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Horarios</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Empieza a las 9:30. Para de 14:00 a 16:00 (calor + cansancio). Vuelve por la tarde.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Llevar siempre</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Galletas, fruta y agua propia. Los precios en zonas turísticas son altos y los niños no esperan.</p>
@@ -179,15 +179,15 @@ export default function LisboaFamiliarPage() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="font-display italic text-white text-3xl mb-4">Lisboa en familia</p>
           {isFree ? (
             <>
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
               <a
                 href="#itinerario"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Ver guía gratis
               </a>
@@ -197,7 +197,7 @@ export default function LisboaFamiliarPage() {
               <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
               <Link
                 href="/checkout/lisboa-familiar"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Desbloquear por {PRODUCT_PRICE}€
               </Link>

@@ -66,7 +66,7 @@ export default function Lisboa3DiasPremiumPage() {
           ) : (
             <Link
               href="/checkout/lisboa-3-dias-premium"
-              className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-semibold transition-colors"
+              className="btn-primary px-4 py-2 text-xs"
             >
               Desbloquear {PRODUCT_PRICE}€
             </Link>
@@ -81,15 +81,15 @@ export default function Lisboa3DiasPremiumPage() {
             Resumen de la guía
           </p>
           <div className="grid sm:grid-cols-3 gap-8">
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Duración</h3>
               <p className="text-text-secondary text-sm">3 días + excursión a Sintra</p>
             </div>
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Paradas</h3>
               <p className="text-text-secondary text-sm">{totalStops}+ lugares con GPS</p>
             </div>
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-t-2 border-gold">
               <h3 className="font-semibold text-text-main text-sm mb-1">Precio</h3>
               <p className="text-text-secondary text-sm">{isFree ? 'Gratis (acceso libre)' : `${PRODUCT_PRICE}€ · Acceso de por vida`}</p>
             </div>
@@ -147,25 +147,25 @@ export default function Lisboa3DiasPremiumPage() {
             </div>
 
             <div>
-              <div className="border-t-2 border-primary pt-6">
-                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Tips de local</p>
+              <div className="card-surface p-6 border-l-2 border-gold">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-4">Tips de local</p>
                 <ul className="space-y-5">
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Sintra: sal temprano</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Primer tren desde Rossio a las 8:00. Llegas antes que los grupos y entras sin cola.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Entradas online</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Palacio da Pena y Quinta da Regaleira: compra online. En taquilla pueden estar agotadas.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <div>
                       <p className="font-semibold text-text-main text-sm">Orden óptimo</p>
                       <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Bus 434 desde el centro: Pena primero (frío, niebla matinal), Castelo dos Mouros, Regaleira al final.</p>
@@ -179,15 +179,15 @@ export default function Lisboa3DiasPremiumPage() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="font-display italic text-white text-3xl mb-4">Tres días para descubrir Lisboa</p>
           {isFree ? (
             <>
               <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
               <a
                 href="#itinerario"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Ver guía gratis
               </a>
@@ -197,7 +197,7 @@ export default function Lisboa3DiasPremiumPage() {
               <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
               <Link
                 href="/checkout/lisboa-3-dias-premium"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Desbloquear por {PRODUCT_PRICE}€
               </Link>

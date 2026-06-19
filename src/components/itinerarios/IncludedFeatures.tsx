@@ -7,10 +7,10 @@ export function IncludedFeatures() {
         <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
           Qué incluye esta guía
         </p>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {includedFeatures.map((feature, idx) => (
-            <div key={idx} className="flex items-start gap-4 border-t border-border-soft pt-4">
-              <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+            <div key={idx} className="card-surface flex items-start gap-4 p-5">
+              <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
               <div>
                 <h4 className="font-semibold text-text-main text-sm mb-0.5">{feature.title}</h4>
                 <p className="text-xs text-text-secondary leading-relaxed">{feature.description}</p>

@@ -129,7 +129,7 @@ export default function CheckoutPage() {
 
           {/* Auth warning */}
           {isLoaded && !isSignedIn && (
-            <div className="card-surface mb-8 p-6 border-l-2 border-primary">
+            <div className="card-surface mb-8 p-6 border-l-2 border-gold">
               <p className="font-semibold text-text-main mb-1 text-sm">Debes iniciar sesión para comprar</p>
               <p className="text-text-secondary text-xs mb-4">
                 Las guías se guardan en tu cuenta para acceso permanente. Necesitas una cuenta gratuita.

@@ -43,14 +43,14 @@ export default async function MisGuiasPage() {
         </div>
 
         {!purchases || purchases.length === 0 ? (
-          <div className="border-t-2 border-primary pt-8 text-center py-16">
+          <div className="card-surface p-8 text-center py-16 border-t-2 border-gold">
             <p className="text-text-main font-semibold mb-2">Aún no tienes guías compradas</p>
             <p className="text-text-secondary text-sm mb-8">
               Explora nuestros itinerarios y elige la guía que mejor encaje con tu viaje.
             </p>
             <Link
               href="/itinerarios"
-              className="inline-block px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-colors"
+              className="btn-primary inline-flex px-6 py-3 text-sm"
             >
               Ver Todas las Guías
             </Link>
@@ -58,7 +58,7 @@ export default async function MisGuiasPage() {
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
             {purchases.map((purchase) => (
-              <div key={purchase.id} className="border-t-2 border-primary pt-6">
+              <div key={purchase.id} className="card-surface p-6 border-t-2 border-gold">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <h3 className="font-semibold text-text-main text-sm">{purchase.itinerary_title}</h3>

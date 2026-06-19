@@ -26,7 +26,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
           {time}
         </span>
         {type === 'food' && (
-          <span className="text-xs text-primary">·  Gastronomía</span>
+          <span className="text-xs text-terracotta">·  Gastronomía</span>
         )}
       </div>
       <h3 className="font-display italic text-text-main text-xl md:text-2xl leading-tight mb-3">
@@ -35,7 +35,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
       <p className="text-text-secondary text-sm leading-relaxed mb-4">
         {description}
       </p>
-      <div className="border-l-2 border-primary pl-4 mb-4">
+      <div className="card-surface border-l-2 border-gold px-4 py-3 mb-4">
         <p className="text-text-secondary text-xs leading-relaxed">
           {tip}
         </p>
@@ -45,7 +45,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-primary hover:underline underline-offset-2 text-xs font-semibold"
+          className="inline-flex items-center gap-2 text-terracotta hover:underline underline-offset-2 text-xs font-semibold"
         >
           <Icon name="map" size={14} />
           Ver en Google Maps
@@ -63,7 +63,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
     return (
       <div className="relative flex gap-6 md:gap-8 mb-10 md:mb-12">
         <div className="flex flex-col items-center flex-shrink-0 pt-1">
-          <div className="w-10 h-10 border-2 border-primary bg-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-terracotta shadow-card flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
             {index + 1}
           </div>
         </div>
@@ -76,7 +76,7 @@ export function TimelineStop({ time, title, description, tip, type, index, image
 
   return (
     <div className={`relative grid grid-cols-1 gap-8 md:gap-16 mb-14 group md:grid-cols-2`}>
-      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 border-2 border-primary bg-primary z-10 flex items-center justify-center text-white font-bold text-sm">
+      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 rounded-full bg-terracotta shadow-card z-10 flex items-center justify-center text-white font-bold text-sm">
         {index + 1}
       </div>
       <div className={`pl-16 md:pl-0 ${isEven ? 'md:pr-4 order-1' : 'md:pl-4 order-1 md:order-2'}`}>

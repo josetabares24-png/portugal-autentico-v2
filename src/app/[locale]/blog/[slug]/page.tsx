@@ -2687,7 +2687,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {/* Imagen destacada */}
       <figure className="max-w-5xl mx-auto px-4 mb-10">
-        <div className="relative aspect-[16/9] overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-premium">
           <Image
             src={heroImage}
             alt={`${article.titulo} — Lisboa`}
@@ -2706,18 +2706,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {/* Columna principal */}
           <article className="min-w-0">
             {/* Lead paragraph - primer párrafo destacado */}
-            <p className="text-xl text-text-secondary leading-relaxed mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+            <p className="font-display italic text-xl md:text-2xl text-night leading-relaxed mb-8">
               {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
             </p>
 
             {/* Resumen */}
             {takeaways.length > 0 && (
-              <div className="border-l-2 border-primary pl-6 mb-8">
+              <div className="card-surface border-l-2 border-gold px-6 py-5 mb-8">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Lo esencial</p>
                 <ul className="space-y-2">
                   {takeaways.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-text-secondary text-sm">
-                      <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                      <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -2747,9 +2747,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   // Cada 3 párrafos, añadir destacado estilo cita
                   if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
-                      <blockquote key={index} className="border-l-4 border-primary bg-background-light px-6 py-4 my-8 not-prose">
-                        <p className="text-lg text-text-secondary italic leading-relaxed">
-                          "{bloque.texto}"
+                      <blockquote key={index} className="border-l-4 border-gold bg-cream rounded-r-xl px-6 py-5 my-8 not-prose">
+                        <p className="font-display italic text-xl text-night leading-relaxed">
+                          {bloque.texto}
                         </p>
                       </blockquote>
                     );
@@ -2786,8 +2786,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'tip') {
                   return (
-                    <div key={index} className="border-l-2 border-primary pl-5 py-2 mb-6 not-prose">
-                      <p className="text-text-secondary text-sm leading-relaxed italic">{bloque.texto}</p>
+                    <div key={index} className="card-surface border-l-2 border-gold px-5 py-4 mb-6 not-prose">
+                      <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Tip local</p>
+                      <p className="text-text-secondary text-sm leading-relaxed">{bloque.texto}</p>
                     </div>
                   );
                 }
@@ -2796,7 +2797,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Separador */}
-            <hr className="my-12 border-slate-200" />
+            <hr className="my-12 border-border-soft" />
 
             {/* FAQs */}
             <section className="mb-12">
@@ -2817,16 +2818,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </section>
 
             {/* CTA final */}
-            <div className="bg-[#1a2b4a] p-8 text-center">
-              <h3 className="font-display italic text-white text-2xl mb-3">
+            <div className="relative bg-night bg-azulejo-pattern-gold rounded-2xl p-8 text-center overflow-hidden">
+              <h3 className="relative font-display italic text-white text-2xl mb-3">
                 ¿Quieres esto organizado paso a paso?
               </h3>
-              <p className="text-white/60 mb-6 text-sm max-w-md mx-auto">
+              <p className="relative text-white/60 mb-6 text-sm max-w-md mx-auto">
                 Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
               </p>
               <Link
                 href="/itinerarios"
-                className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors text-sm"
+                className="btn-primary relative inline-flex px-8 py-3 text-sm"
               >
                 Ver guías desde 2 €
               </Link>
@@ -2868,12 +2869,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Mini CTA */}
-            <div className="border-t-2 border-primary pt-5">
+            <div className="card-surface p-5 border-l-2 border-gold">
               <p className="font-semibold text-text-main text-sm mb-2">¿Primera vez en Lisboa?</p>
               <p className="text-text-secondary text-xs mb-4 leading-relaxed">Te ayudamos a planificar tu viaje 1:1</p>
               <Link
                 href="/planifica-tu-viaje"
-                className="block w-full py-2.5 bg-primary hover:bg-primary-dark text-white text-xs font-semibold text-center transition-colors"
+                className="btn-primary block w-full py-2.5 text-xs"
               >
                 Planifica tu viaje
               </Link>

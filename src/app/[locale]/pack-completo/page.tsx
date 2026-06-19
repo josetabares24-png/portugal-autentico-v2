@@ -143,7 +143,7 @@ export default function PackCompletoPage() {
               { titulo: 'Experiencia real', desc: 'Cada recomendación está probada personalmente, no copiada de internet.' },
               { titulo: 'Actualizaciones gratis', desc: 'Cuando algo cambia, recibes la versión actualizada sin coste adicional.' },
             ].map((item) => (
-              <div key={item.titulo} className="card-surface p-6 border-t-2 border-primary">
+              <div key={item.titulo} className="card-surface p-6 border-t-2 border-gold">
                 <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
                 <p className="text-text-secondary text-xs leading-relaxed">{item.desc}</p>
               </div>

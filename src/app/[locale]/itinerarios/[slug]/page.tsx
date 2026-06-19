@@ -106,7 +106,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                   { titulo: 'Contenido premium', desc: 'Restaurantes verificados y spots fotográficos.' },
                   { titulo: 'Actualizado 2026', desc: 'Horarios revisados y recomendaciones recientes.' },
                 ].map((item) => (
-                  <div key={item.titulo} className="border-t-2 border-primary pt-5">
+                  <div key={item.titulo} className="card-surface p-5 border-t-2 border-gold">
                     <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
                     <p className="text-text-secondary text-xs leading-relaxed">{item.desc}</p>
                   </div>
@@ -146,7 +146,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
 
             {/* Sidebar compra */}
             <div className="lg:sticky lg:top-24">
-              <div className="border-t-2 border-primary pt-6">
+              <div className="card-surface p-6 border-l-2 border-gold">
                 {isFree ? (
                   <>
                     <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Acceso gratuito</p>
@@ -157,7 +157,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                     <p className="text-text-secondary text-sm mb-6">Acceso completo sin coste.</p>
                     <Link
                       href={`/itinerarios/${slug}`}
-                      className="block w-full text-center py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors mb-6"
+                      className="btn-primary w-full text-center py-3 mb-6"
                     >
                       Acceder gratis
                     </Link>
@@ -176,7 +176,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
                     <p className="text-3xl font-bold text-text-main mb-6">{pack.price} €</p>
                     <BuyButton
                       productId={productId}
-                      className="w-full py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors mb-6"
+                      className="btn-primary w-full py-3 mb-6"
                     >
                       Comprar ahora
                     </BuyButton>

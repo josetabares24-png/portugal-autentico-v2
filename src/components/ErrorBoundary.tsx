@@ -43,14 +43,14 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
             <div className="flex gap-4 justify-center">
               <button
                 onClick={() => window.location.reload()}
-                className="px-6 py-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+                className="btn-primary px-6 py-3 text-sm"
                 aria-label="Recargar página"
               >
                 Recargar página
               </button>
               <a
                 href="/contacto"
-                className="px-6 py-3 border border-border-soft text-text-secondary text-sm font-semibold hover:border-text-secondary transition-colors"
+                className="btn-outline px-6 py-3 text-sm"
                 aria-label="Contactar soporte"
               >
                 Contactar soporte

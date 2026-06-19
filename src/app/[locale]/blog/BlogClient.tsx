@@ -51,6 +51,8 @@ export default function BlogClient() {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
@@ -62,18 +64,18 @@ export default function BlogClient() {
       </section>
 
       {/* Filtros por categoría */}
-      <section className="bg-background-light border-b border-border-soft py-5">
+      <section className="bg-background-light border-b border-border-soft py-6 sticky top-16 z-10">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-wrap gap-6 items-center">
+          <div className="flex flex-wrap gap-2">
             {categorias.map((cat) => (
               <button
                 key={cat}
                 onClick={() => cambiarCategoria(cat)}
                 aria-pressed={cat === categoriaActiva}
-                className={`text-sm tracking-wide transition-colors ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   cat === categoriaActiva
-                    ? 'text-primary font-semibold underline underline-offset-4'
-                    : 'text-text-secondary hover:text-text-main'
+                    ? 'bg-primary text-white shadow-card'
+                    : 'bg-white text-text-secondary border border-border-soft hover:border-primary hover:text-primary'
                 }`}
               >
                 {cat}
@@ -196,16 +198,16 @@ export default function BlogClient() {
                 &larr; Anterior
               </button>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((n) => (
                   <button
                     key={n}
                     onClick={() => { setPaginaActual(n); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     aria-current={n === paginaActual ? 'page' : undefined}
-                    className={`text-sm transition-colors ${
+                    className={`w-8 h-8 rounded-full text-sm font-semibold transition-all duration-200 ${
                       n === paginaActual
-                        ? 'text-primary font-semibold underline underline-offset-4'
-                        : 'text-text-secondary hover:text-text-main'
+                        ? 'bg-primary text-white shadow-card'
+                        : 'text-text-secondary hover:bg-white hover:shadow-soft'
                     }`}
                   >
                     {n}
@@ -227,8 +229,8 @@ export default function BlogClient() {
       </section>
 
       {/* Newsletter */}
-      <section className="bg-[#1a2b4a] py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+        <div className="relative max-w-xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-white text-3xl md:text-4xl mb-3">
             Tips de local, directo a tu email
           </h2>
@@ -237,7 +239,7 @@ export default function BlogClient() {
           </p>
 
           {status === 'success' ? (
-            <p className="text-white font-semibold py-4 border-t border-white/20">
+            <p className="text-white font-semibold card-surface bg-white/10 py-4 px-6">
               Gracias por suscribirte. Revisa tu bandeja de entrada.
             </p>
           ) : (
@@ -278,7 +280,7 @@ export default function BlogClient() {
                 placeholder="Tu nombre (opcional)"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
-                className="w-full px-5 py-3 bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-white/50 text-sm"
+                className="w-full px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
               />
               <div className="flex gap-3">
                 <input
@@ -287,12 +289,12 @@ export default function BlogClient() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 px-5 py-3 bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-white/50 text-sm"
+                  className="flex-1 px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
                 />
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="px-6 py-3 bg-primary hover:bg-primary-dark disabled:opacity-50 text-white text-sm font-semibold transition-colors"
+                  className="btn-primary px-6 py-3 text-sm disabled:opacity-50 disabled:hover:translate-y-0 flex-shrink-0"
                 >
                   {status === 'loading' ? 'Enviando…' : 'Suscribirse'}
                 </button>
