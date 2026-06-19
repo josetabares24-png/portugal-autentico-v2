@@ -149,7 +149,7 @@ export default function ContactoPage() {
                   <p className="text-text-secondary mb-8">
                     Gracias por contactarnos. Te responderemos pronto a tu email.
                   </p>
-                  <Link href="/itinerarios" className="text-sm text-primary hover:underline underline-offset-2">
+                  <Link href="/itinerarios" className="text-sm text-terracotta hover:underline underline-offset-2">
                     ← Volver a las guías
                   </Link>
                 </div>
@@ -163,7 +163,7 @@ export default function ContactoPage() {
                 <p className="text-text-secondary text-xs leading-relaxed mb-3">
                   Antes de escribirnos, revisa si ya tenemos respuesta para tu duda.
                 </p>
-                <Link href="/faq" className="text-xs text-primary hover:underline underline-offset-2">
+                <Link href="/faq" className="text-xs text-terracotta hover:underline underline-offset-2">
                   Ver FAQ →
                 </Link>
               </div>

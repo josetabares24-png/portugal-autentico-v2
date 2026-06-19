@@ -112,7 +112,7 @@ export function BuyButton({ productId, className = '', children }: BuyButtonProp
           <p className="text-red-600 text-sm font-medium mb-2">{displayError}</p>
           {displayError.includes('iniciar sesión') && (
             <SignInButton mode="modal">
-              <button className="text-xs text-primary hover:underline font-semibold">
+              <button className="text-xs text-terracotta hover:underline font-semibold">
                 Iniciar sesión ahora →
               </button>
             </SignInButton>

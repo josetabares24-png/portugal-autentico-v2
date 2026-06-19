@@ -36,13 +36,13 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           </span>
         </div>
         <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{activity.zone}</p>
-        <h3 className="font-display italic text-text-main text-lg leading-snug mb-2 group-hover:text-primary transition-colors">
+        <h3 className="font-display italic text-text-main text-lg leading-snug mb-2 group-hover:text-terracotta transition-colors">
           {activity.title}
         </h3>
         <p className="text-text-secondary text-sm mb-3 line-clamp-2">{activity.description}</p>
 
         <div className="flex items-center justify-between text-sm mb-3">
-          <span className={`font-semibold ${activity.isFree ? 'text-primary' : 'text-text-main'}`}>
+          <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
           <span className="text-text-secondary text-xs">{activity.duration}</span>
@@ -50,7 +50,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
 
         <div className="bg-background-light border-l-2 border-gold rounded-md px-3 py-2.5">
           <p className="text-xs text-text-secondary leading-relaxed">
-            <span className="text-primary font-semibold">Tip para ahorrar: </span>
+            <span className="text-terracotta font-semibold">Tip para ahorrar: </span>
             {activity.savingTip}
           </p>
         </div>

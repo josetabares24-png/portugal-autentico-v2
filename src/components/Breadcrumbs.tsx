@@ -35,7 +35,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-terracotta transition-colors"
                   itemProp="item"
                 >
                   <span itemProp="name">{item.label}</span>

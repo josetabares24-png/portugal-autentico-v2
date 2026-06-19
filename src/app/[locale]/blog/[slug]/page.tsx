@@ -2658,9 +2658,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
           <nav className="flex items-center gap-2 text-xs text-text-secondary">
-            <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
+            <Link href="/" className="hover:text-terracotta transition-colors">Inicio</Link>
             <span>›</span>
-            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-terracotta transition-colors">Blog</Link>
             <span>›</span>
             <span className="font-semibold text-text-main">{article.categoria}</span>
           </nav>
@@ -2777,7 +2777,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <ul key={index} className="space-y-2 mb-6 not-prose">
                       {bloque.items?.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
-                          <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                          <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -2845,7 +2845,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}
-                      className="block text-sm text-text-secondary hover:text-primary transition-colors py-1"
+                      className="block text-sm text-text-secondary hover:text-terracotta transition-colors py-1"
                     >
                       {heading.title}
                     </a>
@@ -2860,7 +2860,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <ul className="space-y-3">
                 {internalLinks.slice(0, 5).map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-sm text-text-secondary hover:text-primary transition-colors">
+                    <Link href={item.href} className="text-sm text-text-secondary hover:text-terracotta transition-colors">
                       {item.label} →
                     </Link>
                   </li>
@@ -2887,7 +2887,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <section className="mt-16 pt-12 border-t border-border-soft">
             <div className="flex items-center justify-between mb-8">
               <h3 className="font-display italic text-text-main text-2xl">Relacionadas</h3>
-              <Link href="/blog" className="text-sm text-primary hover:underline underline-offset-2">
+              <Link href="/blog" className="text-sm text-terracotta hover:underline underline-offset-2">
                 Ver todo →
               </Link>
             </div>
@@ -2903,7 +2903,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     />
                   </div>
                   <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{post.categoria}</p>
-                  <h4 className="font-display italic text-text-main group-hover:text-primary transition-colors leading-snug">
+                  <h4 className="font-display italic text-text-main group-hover:text-terracotta transition-colors leading-snug">
                     {post.titulo}
                   </h4>
                 </Link>

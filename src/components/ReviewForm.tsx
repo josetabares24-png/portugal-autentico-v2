@@ -74,7 +74,7 @@ export default function ReviewForm({ guideId, guideTitle, existingReview }: Revi
         >
           {existingReview ? 'Actualizar reseña' : 'Enviar reseña'}
         </button>
-        {status === 'saved' && <span className="text-xs text-primary">Reseña guardada</span>}
+        {status === 'saved' && <span className="text-xs text-terracotta">Reseña guardada</span>}
         {status === 'error' && <span className="text-xs text-red-600">No se pudo guardar</span>}
       </div>
     </form>

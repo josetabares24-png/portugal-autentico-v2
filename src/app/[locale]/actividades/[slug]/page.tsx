@@ -106,7 +106,7 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
           <div className="flex items-center justify-between mb-8 pb-6 border-b border-border-soft">
             <div>
               <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Precio</p>
-              <p className={`text-2xl font-bold ${activity.isFree ? 'text-primary' : 'text-text-main'}`}>
+              <p className={`text-2xl font-bold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
                 {activity.priceLabel}
               </p>
             </div>

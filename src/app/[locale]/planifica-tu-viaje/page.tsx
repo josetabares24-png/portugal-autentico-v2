@@ -137,7 +137,7 @@ export default function PlanificaTuViajePage() {
 
               <div>
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">
-                  Días en Lisboa: <span className="text-primary font-bold">{dias}</span>
+                  Días en Lisboa: <span className="text-terracotta font-bold">{dias}</span>
                 </p>
                 <input
                   type="range" min="1" max="14" value={dias}
@@ -151,7 +151,7 @@ export default function PlanificaTuViajePage() {
 
               <div>
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">
-                  Personas: <span className="text-primary font-bold">{personas}</span>
+                  Personas: <span className="text-terracotta font-bold">{personas}</span>
                 </p>
                 <input
                   type="range" min="1" max="10" value={personas}
@@ -176,7 +176,7 @@ export default function PlanificaTuViajePage() {
                   </p>
                   <Link
                     href={`/itinerarios/${recommendedGuide.slug}`}
-                    className="text-sm text-primary hover:underline underline-offset-2"
+                    className="text-sm text-terracotta hover:underline underline-offset-2"
                   >
                     {isFree
                       ? `Ver ${recommendedGuide.title} (Gratis) →`
@@ -196,7 +196,7 @@ export default function PlanificaTuViajePage() {
                   'Evita restaurantes turísticos en la Baixa',
                 ].map((tip) => (
                   <li key={tip} className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <span>{tip}</span>
                   </li>
                 ))}
@@ -213,7 +213,7 @@ export default function PlanificaTuViajePage() {
             <p className="text-xs uppercase tracking-widest text-text-secondary">
               Actividades para perfil &quot;{BUDGET_OPTIONS.find((o) => o.id === tipo)?.label}&quot;
             </p>
-            <Link href="/actividades" className="text-sm text-primary hover:underline underline-offset-2">
+            <Link href="/actividades" className="text-sm text-terracotta hover:underline underline-offset-2">
               Ver todas →
             </Link>
           </div>
@@ -351,7 +351,7 @@ export default function PlanificaTuViajePage() {
               <p className="text-text-secondary mb-8">
                 Gracias. Voy a revisar tus respuestas y te escribo en 24-48 horas con tu plan a medida.
               </p>
-              <Link href="/itinerarios" className="text-sm text-primary hover:underline underline-offset-2">
+              <Link href="/itinerarios" className="text-sm text-terracotta hover:underline underline-offset-2">
                 ← Ver guías mientras tanto
               </Link>
             </div>

@@ -44,8 +44,8 @@ export default function ActividadesPage() {
                 onClick={() => setCategory(c)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   category === c
-                    ? 'bg-primary text-white shadow-card'
-                    : 'bg-white text-text-secondary border border-border-soft hover:border-primary hover:text-primary'
+                    ? 'bg-terracotta text-white shadow-card'
+                    : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
                 }`}
               >
                 {c}

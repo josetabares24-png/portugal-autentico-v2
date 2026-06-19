@@ -119,7 +119,7 @@ export default async function ItinerariosPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-secondary hover:text-primary transition-colors underline-offset-2 hover:underline"
+                className="text-sm text-text-secondary hover:text-terracotta transition-colors underline-offset-2 hover:underline"
               >
                 {link.label} →
               </Link>

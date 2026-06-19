@@ -74,8 +74,8 @@ export default function BlogClient() {
                 aria-pressed={cat === categoriaActiva}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   cat === categoriaActiva
-                    ? 'bg-primary text-white shadow-card'
-                    : 'bg-white text-text-secondary border border-border-soft hover:border-primary hover:text-primary'
+                    ? 'bg-terracotta text-white shadow-card'
+                    : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
                 }`}
               >
                 {cat}
@@ -104,7 +104,7 @@ export default function BlogClient() {
                   <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">
                     {featured.categoria} &mdash; {featured.fecha}
                   </p>
-                  <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-snug mb-3 group-hover:text-primary transition-colors">
+                  <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-snug mb-3 group-hover:text-terracotta transition-colors">
                     {featured.titulo}
                   </h2>
                   <p className="text-text-secondary leading-relaxed">{featured.excerpt}</p>
@@ -132,7 +132,7 @@ export default function BlogClient() {
                           <p className="text-[11px] text-text-secondary uppercase tracking-wide mb-1">
                             {post.categoria}
                           </p>
-                          <h4 className="text-sm font-semibold text-text-main group-hover:text-primary transition-colors leading-snug">
+                          <h4 className="text-sm font-semibold text-text-main group-hover:text-terracotta transition-colors leading-snug">
                             {post.titulo}
                           </h4>
                         </div>
@@ -171,7 +171,7 @@ export default function BlogClient() {
                     <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">
                       {post.categoria} &mdash; {post.fecha}
                     </p>
-                    <h2 className="font-display italic text-text-main text-xl leading-snug mb-2 group-hover:text-primary transition-colors">
+                    <h2 className="font-display italic text-text-main text-xl leading-snug mb-2 group-hover:text-terracotta transition-colors">
                       {post.titulo}
                     </h2>
                     <p className="text-text-secondary text-sm leading-relaxed">{post.excerpt}</p>
@@ -206,7 +206,7 @@ export default function BlogClient() {
                     aria-current={n === paginaActual ? 'page' : undefined}
                     className={`w-8 h-8 rounded-full text-sm font-semibold transition-all duration-200 ${
                       n === paginaActual
-                        ? 'bg-primary text-white shadow-card'
+                        ? 'bg-terracotta text-white shadow-card'
                         : 'text-text-secondary hover:bg-white hover:shadow-soft'
                     }`}
                   >

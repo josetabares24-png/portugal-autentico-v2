@@ -68,7 +68,7 @@ export default async function MisGuiasPage() {
                   </div>
                   <Link
                     href={`/itinerarios/${purchase.itinerary_slug}`}
-                    className="text-xs font-semibold text-primary hover:underline underline-offset-2 flex-shrink-0"
+                    className="text-xs font-semibold text-terracotta hover:underline underline-offset-2 flex-shrink-0"
                   >
                     Ver guía →
                   </Link>

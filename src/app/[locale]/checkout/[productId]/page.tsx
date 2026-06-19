@@ -102,7 +102,7 @@ export default function CheckoutPage() {
             <span className="badge-pill inline-flex bg-gold text-night mb-3">Guía Premium</span>
             <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4 leading-tight">{product.name}</h2>
             <div className="flex items-baseline gap-3">
-              <span className="text-4xl font-bold text-primary">{product.price.toFixed(2)}€</span>
+              <span className="text-4xl font-bold text-terracotta">{product.price.toFixed(2)}€</span>
               <span className="text-text-secondary text-sm">pago único</span>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function CheckoutPage() {
                 'Actualizaciones gratuitas de por vida',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                  <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                  <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -178,12 +178,12 @@ export default function CheckoutPage() {
           </button>
 
           <p className="text-xs text-text-secondary text-center mt-4 flex items-center justify-center gap-1.5">
-            <Icon name="shield" size={14} className="text-primary" />
+            <Icon name="shield" size={14} className="text-terracotta" />
             Pago 100% seguro · SSL · Stripe
           </p>
 
           <div className="mt-8 pt-6 border-t border-border-soft text-center">
-            <Link href="/itinerarios" className="text-xs text-text-secondary hover:text-primary transition-colors">
+            <Link href="/itinerarios" className="text-xs text-text-secondary hover:text-terracotta transition-colors">
               ← Volver a las guías
             </Link>
           </div>

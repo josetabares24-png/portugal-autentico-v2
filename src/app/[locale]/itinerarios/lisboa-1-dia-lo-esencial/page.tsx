@@ -62,7 +62,7 @@ export default function Lisboa1DiaPage() {
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <span className="font-display italic text-text-main text-sm">Lo Esencial de Lisboa</span>
           {isFree ? (
-            <span className="text-primary font-semibold text-sm">Acceso libre</span>
+            <span className="text-terracotta font-semibold text-sm">Acceso libre</span>
           ) : (
             <Link
               href="/checkout/lisboa-1-dia-lo-esencial"
@@ -103,7 +103,7 @@ export default function Lisboa1DiaPage() {
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
             Itinerario día a día
           </p>
-          <p className={`text-xs uppercase tracking-widest font-semibold mb-10 ${isFree ? 'text-primary' : 'text-text-secondary'}`}>
+          <p className={`text-xs uppercase tracking-widest font-semibold mb-10 ${isFree ? 'text-terracotta' : 'text-text-secondary'}`}>
             {isFree ? 'Acceso completo gratuito' : `Mostrando ${PREVIEW_STOPS} de ${totalStops} paradas`}
           </p>
 

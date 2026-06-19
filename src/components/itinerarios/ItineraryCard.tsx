@@ -45,13 +45,13 @@ export function ItineraryCard({
         <div className="flex items-center justify-between mb-3">
           {isFree ? (
             <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-primary">Gratis</span>
+              <span className="text-sm font-semibold text-terracotta">Gratis</span>
               <span className="text-xs text-text-secondary line-through">{price.toFixed(2)} €</span>
             </div>
           ) : (
             <span className="text-sm font-semibold text-text-main">{price.toFixed(2)} €</span>
           )}
-          <Link href={href} className="text-sm text-primary hover:underline underline-offset-2">
+          <Link href={href} className="text-sm text-terracotta hover:underline underline-offset-2">
             Ver detalles →
           </Link>
         </div>
@@ -86,7 +86,7 @@ export function ItineraryCard({
       <ul className="space-y-2 mb-6">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-start gap-2 text-sm text-text-secondary">
-            <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+            <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
             {feature}
           </li>
         ))}
@@ -96,13 +96,13 @@ export function ItineraryCard({
         <div className="flex items-center justify-between">
           {isFree ? (
             <div className="flex items-center gap-2">
-              <span className="font-bold text-primary">Gratis</span>
+              <span className="font-bold text-terracotta">Gratis</span>
               <span className="text-sm text-text-secondary line-through">{price.toFixed(2)} €</span>
             </div>
           ) : (
             <span className="text-xl font-bold text-text-main">{price.toFixed(2)} €</span>
           )}
-          <Link href={href} className="text-sm text-primary hover:underline underline-offset-2">
+          <Link href={href} className="text-sm text-terracotta hover:underline underline-offset-2">
             Ver detalles →
           </Link>
         </div>

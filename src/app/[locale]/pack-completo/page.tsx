@@ -77,7 +77,7 @@ export default function PackCompletoPage() {
                 </div>
                 <div className="text-right flex-shrink-0">
                   <p className="text-text-secondary line-through text-sm">{guia.price}</p>
-                  <p className="text-primary text-xs font-semibold">Incluida</p>
+                  <p className="text-terracotta text-xs font-semibold">Incluida</p>
                 </div>
               </div>
             ))}
@@ -115,13 +115,13 @@ export default function PackCompletoPage() {
             </div>
             <div className="card-surface ring-2 ring-gold p-6 relative">
               <span className="badge-pill absolute -top-3 right-6 bg-gold text-night">Recomendado</span>
-              <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Pack completo</p>
+              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-2">Pack completo</p>
               <p className="text-3xl font-bold text-text-main mb-1">24.99€</p>
-              <p className="text-xs text-primary font-semibold mb-4">Ahorras 60%</p>
+              <p className="text-xs text-terracotta font-semibold mb-4">Ahorras 60%</p>
               <div className="space-y-2">
                 {['Todas las 8 guías incluidas', 'Bonus "Lisboa como Local"', 'Compra única', 'Actualizaciones de por vida'].map((item) => (
                   <div key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="text-primary mt-0.5 flex-shrink-0">&#10003;</span>
+                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                     <span>{item}</span>
                   </div>
                 ))}
