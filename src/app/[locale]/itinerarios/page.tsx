@@ -129,8 +129,8 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-3xl mx-auto px-6">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+        <div className="relative max-w-3xl mx-auto px-6">
           <h2 className="font-display italic text-white text-2xl md:text-3xl mb-10">
             Preguntas frecuentes
           </h2>
@@ -157,13 +157,13 @@ export default async function ItinerariosPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/planifica-tu-viaje"
-              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+              className="btn-primary px-8 py-3"
             >
               Planifica tu viaje
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-3 border border-border-soft hover:border-text-secondary text-text-main font-semibold transition-colors"
+              className="btn-outline px-8 py-3"
             >
               Pregúntanos
             </Link>

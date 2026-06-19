@@ -118,21 +118,21 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
           <p className="text-text-secondary leading-relaxed mb-8">{activity.description}</p>
 
-          <div className="bg-[#1a2b4a] px-6 py-6 mb-10">
-            <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Tip para ahorrar de un local</p>
-            <p className="text-white leading-relaxed">{activity.savingTip}</p>
+          <div className="relative bg-night bg-azulejo-pattern-gold rounded-lg px-6 py-6 mb-10 overflow-hidden">
+            <p className="relative text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Tip para ahorrar de un local</p>
+            <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/planifica-tu-viaje"
-              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold text-center transition-colors"
+              className="btn-primary px-8 py-3 text-center"
             >
               Incluir en mi plan de viaje
             </Link>
             <Link
               href="/actividades"
-              className="px-8 py-3 border border-border-soft hover:border-text-secondary text-text-main font-semibold text-center transition-colors"
+              className="btn-outline px-8 py-3 text-center"
             >
               ← Ver todas las actividades
             </Link>

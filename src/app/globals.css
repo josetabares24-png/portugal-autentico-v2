@@ -11,11 +11,12 @@
 :root {
   --color-cream: #F5EFE6;
   --color-night: #1a2b4a;
-  --color-terracotta: #C84B31;
+  --color-terracotta: #B8472E;
   --color-taupe: #8A8279;
+  --color-gold: #C9974A;
   /* Legacy */
-  --color-primary: #C84B31;
-  --color-primary-dark: #a83d27;
+  --color-primary: #B8472E;
+  --color-primary-dark: #8f3520;
   --color-secondary: #1a2b4a;
 }
 
@@ -41,8 +42,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: rgba(200, 75, 49, 0.15);
+  background: rgba(184, 71, 46, 0.15);
   color: var(--color-night);
+}
+
+/* ========== BOTONES, BADGES Y TARJETAS REUTILIZABLES ========== */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-terracotta text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-primary-dark hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-night text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-terracotta hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-night/15 text-night font-semibold rounded-md transition-all duration-200 hover:border-night hover:bg-night hover:text-white hover:-translate-y-0.5;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 border border-white/40 bg-white/10 text-white font-semibold rounded-md backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-night hover:-translate-y-0.5;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-soft;
+  }
+
+  .card-surface {
+    @apply bg-white rounded-xl shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
 }
 
 /* ========== SCROLLBAR ========== */

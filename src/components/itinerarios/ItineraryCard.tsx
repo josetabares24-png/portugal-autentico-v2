@@ -35,9 +35,10 @@ export function ItineraryCard({
 
   if (size === 'compact') {
     return (
-      <article className={`group border-t-2 pt-5 ${featured ? 'border-primary' : 'border-border-soft'}`}>
-        <div className="relative aspect-[4/3] overflow-hidden mb-4">
+      <article className={`card-surface group p-4 ${featured ? 'ring-2 ring-gold' : ''}`}>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
           <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          {featured && <span className="badge-pill absolute top-3 left-3 bg-gold text-night">Más popular</span>}
         </div>
         <h3 className="font-display italic text-text-main text-lg leading-snug mb-1">{title}</h3>
         <p className="text-text-secondary text-sm mb-4 line-clamp-2">{description}</p>
@@ -57,14 +58,14 @@ export function ItineraryCard({
         {isFree ? (
           <Link
             href={href}
-            className="block w-full text-center py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+            className="btn-primary block w-full text-center py-2.5 text-sm"
           >
             Ver itinerario
           </Link>
         ) : productId ? (
           <BuyButton
             productId={productId}
-            className="w-full py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-semibold transition-colors"
+            className="btn-primary w-full py-2.5 text-sm"
           >
             Comprar
           </BuyButton>
@@ -74,12 +75,10 @@ export function ItineraryCard({
   }
 
   return (
-    <article className={`group border-t-2 pt-6 ${featured ? 'border-primary' : 'border-border-soft'}`}>
-      {featured && (
-        <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3">Más popular</p>
-      )}
-      <div className="relative aspect-[16/9] overflow-hidden mb-5">
+    <article className={`card-surface group p-5 ${featured ? 'ring-2 ring-gold' : ''}`}>
+      <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-5">
         <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        {featured && <span className="badge-pill absolute top-3 left-3 bg-gold text-night">Más popular</span>}
       </div>
       <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
       <p className="text-text-secondary text-sm mb-5">{description}</p>
@@ -110,18 +109,14 @@ export function ItineraryCard({
         {isFree ? (
           <Link
             href={href}
-            className="block w-full text-center py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+            className="btn-primary block w-full text-center py-3"
           >
             Ver itinerario completo
           </Link>
         ) : productId ? (
           <BuyButton
             productId={productId}
-            className={`w-full py-3 font-semibold transition-colors ${
-              featured
-                ? 'bg-primary hover:bg-primary-dark text-white'
-                : 'bg-[#1a2b4a] hover:bg-[#152239] text-white'
-            }`}
+            className={`w-full py-3 ${featured ? 'btn-primary' : 'btn-dark'}`}
           >
             Comprar ahora
           </BuyButton>

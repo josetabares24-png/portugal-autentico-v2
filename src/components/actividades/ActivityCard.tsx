@@ -14,9 +14,9 @@ export function ActivityCard({ activity }: { activity: Activity }) {
       : 'De pago';
 
   return (
-    <Link href={`/actividades/${activity.slug}`} className="group block border-t-2 border-border-soft pt-5">
+    <Link href={`/actividades/${activity.slug}`} className="card-surface group block p-4">
       <article>
-        <div className="relative aspect-[4/3] overflow-hidden mb-4">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
           <Image
             src={activity.image}
             alt={activity.title}
@@ -24,12 +24,12 @@ export function ActivityCard({ activity }: { activity: Activity }) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
-          <span className="absolute top-3 left-3 bg-white/90 text-text-main text-[11px] font-semibold uppercase tracking-widest px-2.5 py-1">
+          <span className="badge-pill absolute top-3 left-3 bg-white/85 backdrop-blur-sm text-text-main">
             {activity.category}
           </span>
           <span
-            className={`absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 ${
-              activity.isFree ? 'bg-primary text-white' : 'bg-white/90 text-text-main'
+            className={`badge-pill absolute top-3 right-3 ${
+              activity.isFree ? 'bg-gold text-night' : 'bg-white/85 backdrop-blur-sm text-text-main'
             }`}
           >
             {priceBadge}
@@ -48,7 +48,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           <span className="text-text-secondary text-xs">{activity.duration}</span>
         </div>
 
-        <div className="bg-background-light border border-border-soft px-3 py-2.5">
+        <div className="bg-background-light border-l-2 border-gold rounded-md px-3 py-2.5">
           <p className="text-xs text-text-secondary leading-relaxed">
             <span className="text-primary font-semibold">Tip para ahorrar: </span>
             {activity.savingTip}

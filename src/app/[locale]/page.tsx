@@ -91,10 +91,13 @@ export default function HomePage() {
         />
 
         <div className="absolute bottom-0 left-0 p-8 md:p-16 max-w-3xl">
-          <h1 className="font-display italic text-white leading-tight"
+          <h1 className="font-display italic text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', fontWeight: 400 }}>
             Vivo en Graça hace tres años. Esto es lo que le cuento a la gente que viene a verme.
           </h1>
+          <Link href="/itinerarios" className="btn-ghost-light inline-flex px-6 py-3 text-sm">
+            Ver guías de viaje →
+          </Link>
         </div>
       </section>
 
@@ -166,7 +169,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {barrios.map((barrio) => (
               <Link key={barrio.nombre} href={barrio.href} className="group block">
-                <div className="relative aspect-square overflow-hidden mb-3">
+                <div className="relative aspect-square overflow-hidden mb-3 rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300">
                   <Image
                     src={barrio.imagen}
                     alt={barrio.nombre}
@@ -211,19 +214,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── GUÍAS (discreto, sin precios) ── */}
-      <section className="py-16 md:py-20 border-t border-taupe/20 bg-cream">
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <p className="font-body font-light text-taupe text-base leading-relaxed max-w-lg">
-            Si te sirve, también preparé rutas hora a hora para organizarte el viaje.{' '}
-            <Link
-              href="/itinerarios"
-              className="text-night border-b border-night pb-0.5 hover:text-terracotta hover:border-terracotta transition-colors"
-            >
-              Las encuentras aquí
-            </Link>{' '}
-            →
+      {/* ── GUÍAS ── */}
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 md:py-20 overflow-hidden">
+        <div className="relative max-w-5xl mx-auto px-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
+            Si te sirve, también preparé rutas hora a hora para organizarte el viaje.
           </p>
+          <Link href="/itinerarios" className="btn-primary inline-flex px-7 py-3 text-sm flex-shrink-0">
+            Ver itinerarios →
+          </Link>
         </div>
       </section>
     </main>

@@ -61,7 +61,7 @@ export default function CheckoutPage() {
       <main className="bg-background-light py-32 text-center">
         <h1 className="text-2xl font-bold text-text-main mb-2">Producto no encontrado</h1>
         <p className="text-text-secondary mb-6">El producto que buscas no existe</p>
-        <Link href="/itinerarios" className="inline-block px-6 py-3 bg-primary text-white font-semibold transition-colors hover:bg-primary-dark">
+        <Link href="/itinerarios" className="btn-primary inline-flex px-6 py-3">
           Ver Guías
         </Link>
       </main>
@@ -98,8 +98,8 @@ export default function CheckoutPage() {
         <div className="max-w-2xl mx-auto px-6">
 
           {/* Product info */}
-          <div className="border-b border-border-soft pb-8 mb-8">
-            <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-2">Guía Premium</p>
+          <div className="card-surface p-6 mb-8">
+            <span className="badge-pill inline-flex bg-gold text-night mb-3">Guía Premium</span>
             <h2 className="font-display italic text-text-main text-2xl md:text-3xl mb-4 leading-tight">{product.name}</h2>
             <div className="flex items-baseline gap-3">
               <span className="text-4xl font-bold text-primary">{product.price.toFixed(2)}€</span>
@@ -108,7 +108,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Includes */}
-          <div className="border-t-2 border-primary pt-6 mb-8">
+          <div className="card-surface border-l-2 border-gold px-6 py-6 mb-8">
             <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Qué incluye</p>
             <ul className="grid md:grid-cols-2 gap-3">
               {[
@@ -129,13 +129,13 @@ export default function CheckoutPage() {
 
           {/* Auth warning */}
           {isLoaded && !isSignedIn && (
-            <div className="mb-8 p-6 border border-border-soft border-l-4 border-l-primary">
+            <div className="card-surface mb-8 p-6 border-l-2 border-primary">
               <p className="font-semibold text-text-main mb-1 text-sm">Debes iniciar sesión para comprar</p>
               <p className="text-text-secondary text-xs mb-4">
                 Las guías se guardan en tu cuenta para acceso permanente. Necesitas una cuenta gratuita.
               </p>
               <SignInButton mode="modal">
-                <button className="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm transition-colors flex items-center gap-2">
+                <button className="btn-primary px-5 py-2.5 text-sm">
                   <Icon name="login" size={16} />
                   Iniciar sesión para comprar
                 </button>
@@ -145,12 +145,12 @@ export default function CheckoutPage() {
 
           {/* Error */}
           {error && (
-            <div className="mb-8 p-5 border border-border-soft border-l-4 border-l-red-500">
+            <div className="card-surface mb-8 p-5 border-l-2 border-red-500">
               <p className="font-semibold text-text-main mb-1 text-sm">Error al procesar el pago</p>
               <p className="text-text-secondary text-xs">{error}</p>
               {error.includes('iniciar sesión') && (
                 <SignInButton mode="modal">
-                  <button className="mt-3 px-5 py-2 bg-primary text-white font-semibold text-xs transition-colors">
+                  <button className="btn-primary mt-3 px-5 py-2 text-xs">
                     Iniciar sesión ahora
                   </button>
                 </SignInButton>
@@ -162,7 +162,7 @@ export default function CheckoutPage() {
           <button
             disabled={!isSignedIn || loading}
             onClick={handleCheckout}
-            className="w-full py-4 bg-primary hover:bg-primary-dark disabled:bg-border-soft disabled:text-text-secondary text-white font-semibold text-base transition-colors disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="btn-primary w-full py-4 text-base disabled:bg-border-soft disabled:text-text-secondary disabled:shadow-none disabled:cursor-not-allowed disabled:hover:translate-y-0"
           >
             {loading ? (
               <>
@@ -193,7 +193,7 @@ export default function CheckoutPage() {
       {/* Guarantee */}
       <section className="bg-background-light border-t border-border-soft py-10">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <div className="border-t-2 border-primary pt-6">
+          <div className="card-surface border-l-2 border-gold px-6 py-6 inline-block text-left">
             <p className="font-semibold text-text-main text-sm mb-1">Garantía de satisfacción 48h</p>
             <p className="text-text-secondary text-xs">
               Si no estás 100% satisfecho con tu guía, te devolvemos el dinero completo. Sin preguntas.

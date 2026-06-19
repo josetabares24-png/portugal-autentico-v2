@@ -42,10 +42,10 @@ export default function ActividadesPage() {
               <button
                 key={c}
                 onClick={() => setCategory(c)}
-                className={`px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   category === c
-                    ? 'bg-primary text-white'
-                    : 'bg-white text-text-secondary border border-border-soft hover:border-text-secondary'
+                    ? 'bg-primary text-white shadow-card'
+                    : 'bg-white text-text-secondary border border-border-soft hover:border-primary hover:text-primary'
                 }`}
               >
                 {c}
@@ -61,9 +61,9 @@ export default function ActividadesPage() {
               <button
                 key={opt.id}
                 onClick={() => setPrice(opt.id)}
-                className={`px-4 py-2 text-xs font-semibold transition-colors border-t-2 ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 border ${
                   price === opt.id
-                    ? 'border-primary text-text-main'
+                    ? 'border-gold bg-gold/10 text-night'
                     : 'border-border-soft text-text-secondary hover:border-text-secondary'
                 }`}
               >
@@ -93,8 +93,8 @@ export default function ActividadesPage() {
       </section>
 
       {/* CTA plan a medida */}
-      <section className="bg-[#1a2b4a] py-16">
-        <div className="max-w-2xl mx-auto px-6 text-center">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-16 overflow-hidden">
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display italic text-white text-2xl md:text-3xl mb-4">
             ¿Prefieres que te lo organice yo?
           </h2>
@@ -103,7 +103,7 @@ export default function ActividadesPage() {
           </p>
           <Link
             href="/planifica-tu-viaje"
-            className="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white font-semibold transition-colors"
+            className="btn-primary inline-flex px-8 py-3"
           >
             Planifica tu viaje
           </Link>
