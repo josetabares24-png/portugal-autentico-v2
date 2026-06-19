@@ -35,14 +35,14 @@ export default function ActividadesPage() {
       </section>
 
       {/* Filtros */}
-      <section className="bg-background-light py-10 border-b border-border-soft sticky top-16 z-10">
-        <div className="max-w-6xl mx-auto px-6 space-y-4">
-          <div className="flex flex-wrap gap-2">
+      <section className="bg-background-light py-3 border-b border-border-soft sticky top-16 z-10">
+        <div className="max-w-6xl mx-auto px-6 space-y-2">
+          <div className="flex flex-wrap gap-1.5">
             {(['Todas', ...ACTIVITY_CATEGORIES] as const).map((c) => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
+                className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   category === c
                     ? 'bg-terracotta text-white shadow-card'
                     : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
@@ -52,7 +52,7 @@ export default function ActividadesPage() {
               </button>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {([
               { id: 'todas', label: 'Cualquier precio' },
               { id: 'gratis', label: 'Gratis' },
@@ -61,7 +61,7 @@ export default function ActividadesPage() {
               <button
                 key={opt.id}
                 onClick={() => setPrice(opt.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 border ${
+                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 border ${
                   price === opt.id
                     ? 'border-gold bg-gold/10 text-night'
                     : 'border-border-soft text-text-secondary hover:border-text-secondary'
