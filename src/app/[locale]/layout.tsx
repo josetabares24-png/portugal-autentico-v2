@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import ChatWidget from '@/components/ChatWidget';
 
 type Props = {
   children: React.ReactNode;
@@ -33,6 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         {children}
         <Footer />
         <CookieBanner />
+        <ChatWidget />
         <GoogleAnalytics />
       </ErrorBoundary>
     </NextIntlClientProvider>
