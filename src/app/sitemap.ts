@@ -42,6 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/sobre-nosotros`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/contacto`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/faq`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/aviso-legal`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/politica-privacidad`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/politica-cookies`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/terminos-condiciones`, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const guideUrls: MetadataRoute.Sitemap = guidePackSlugs.map((slug) => ({

@@ -8,14 +8,38 @@ const nextConfig = {
     return [
       // Default locale (no prefix)
       { source: '/tours', destination: '/itinerarios', permanent: true },
-      { source: '/guia-practica', destination: '/info-util', permanent: true },
+      { source: '/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
+      { source: '/info-util', destination: '/planifica-tu-viaje', permanent: true },
       { source: '/mapa', destination: '/itinerarios', permanent: true },
       { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
       // Sintra slug antiguo → premium actual
       { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
       // Blog stubs → artículos completos
       { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
+      // Legacy en/ko known redirects without chains
+      { source: '/en/tours', destination: '/itinerarios', permanent: true },
+      { source: '/ko/tours', destination: '/itinerarios', permanent: true },
+      { source: '/en/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
+      { source: '/ko/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
+      { source: '/en/info-util', destination: '/planifica-tu-viaje', permanent: true },
+      { source: '/ko/info-util', destination: '/planifica-tu-viaje', permanent: true },
+      { source: '/en/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
+      { source: '/ko/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
+      { source: '/en/transporte', destination: '/blog/transporte-publico-lisboa', permanent: true },
+      { source: '/ko/transporte', destination: '/blog/transporte-publico-lisboa', permanent: true },
+      { source: '/en/mapa', destination: '/itinerarios', permanent: true },
+      { source: '/ko/mapa', destination: '/itinerarios', permanent: true },
+      { source: '/en/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
+      { source: '/ko/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
+      { source: '/en/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      { source: '/ko/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      { source: '/en/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
+      { source: '/ko/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
+      { source: '/en/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
+      { source: '/ko/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       // Redirecciones de versiones en/ko a español (sitio monoidioma)
+      { source: '/en', destination: '/', permanent: true },
+      { source: '/ko', destination: '/', permanent: true },
       { source: '/en/:path*', destination: '/:path*', permanent: true },
       { source: '/ko/:path*', destination: '/:path*', permanent: true },
     ];
@@ -46,6 +70,42 @@ const nextConfig = {
   },
   async headers() {
     return [
+      {
+        source: '/checkout/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, follow',
+          },
+        ],
+      },
+      {
+        source: '/exito',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, follow',
+          },
+        ],
+      },
+      {
+        source: '/mis-guias',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
+        source: '/admin/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
       {
         source: '/itinerarios/:path*',
         headers: [

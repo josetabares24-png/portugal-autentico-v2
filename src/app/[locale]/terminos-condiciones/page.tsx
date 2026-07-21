@@ -4,6 +4,21 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 export const metadata: Metadata = {
   title: 'Términos y Condiciones | Estaba en Lisboa',
   description: 'Términos y condiciones de compra de guías digitales de Lisboa',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/terminos-condiciones',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Términos y Condiciones | Estaba en Lisboa',
+    description: 'Condiciones de compra, entrega digital, reembolsos y uso de las guías de Lisboa.',
+    url: 'https://estabaenlisboa.com/terminos-condiciones',
+    siteName: 'Estaba en Lisboa',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 async function getLegalContent() {
