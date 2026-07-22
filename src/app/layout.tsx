@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
-import { Montserrat, Playfair_Display } from 'next/font/google';
+import { Montserrat, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
@@ -19,6 +19,13 @@ const playfair = Playfair_Display({
   display: 'swap',
   weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-article",
+  subsets: ["latin"],
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -100,7 +107,7 @@ export default async function RootLayout({
 
           <SchemaMarkup />
         </head>
-        <body className={`${montserrat.variable} ${playfair.variable} antialiased`}>
+        <body className={`${montserrat.variable} ${playfair.variable} ${plusJakarta.variable} antialiased`}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded focus:shadow-lg focus:outline-none"

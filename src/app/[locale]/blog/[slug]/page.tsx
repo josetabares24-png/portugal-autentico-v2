@@ -2706,11 +2706,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
-    <main id="main-content" className="bg-background-light">
+    <main id="main-content" className="article-page bg-background-light">
       {/* Breadcrumb minimalista */}
       <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
-          <nav className="flex items-center gap-2 text-xs text-text-secondary">
+          <nav className="article-breadcrumb flex items-center gap-2">
             <Link href="/" className="hover:text-terracotta transition-colors">Inicio</Link>
             <span>›</span>
             <Link href="/blog" className="hover:text-terracotta transition-colors">Blog</Link>
@@ -2723,17 +2723,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       {/* Header editorial */}
       <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
         {/* Categoría + meta */}
-        <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">
+        <p className="article-meta uppercase tracking-widest mb-3">
           {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
         </p>
 
         {/* Título */}
-        <h1 className="font-display italic text-text-main text-3xl sm:text-4xl md:text-5xl leading-tight mb-5">
+        <h1 className="article-title font-display text-text-main mb-5">
           {article.titulo}
         </h1>
 
         {/* Lead */}
-        <p className="text-text-secondary text-lg md:text-xl leading-relaxed mb-6 pb-6 border-b border-border-soft">
+        <p className="article-description mb-6 pb-6 border-b border-border-soft">
           {article.descripcion}
         </p>
       </header>
@@ -2757,19 +2757,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="max-w-6xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-[1fr,320px] gap-10">
           {/* Columna principal */}
-          <article className="min-w-0">
+          <article className="article-surface min-w-0">
             {/* Lead paragraph - primer párrafo destacado */}
-            <p className="font-display italic text-xl md:text-2xl text-night leading-relaxed mb-8">
+            <p className="article-lead">
               {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
             </p>
 
             {/* Resumen */}
             {takeaways.length > 0 && (
-              <div className="card-surface border-l-2 border-gold px-6 py-5 mb-8">
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Lo esencial</p>
-                <ul className="space-y-2">
+              <div className="article-info-box article-reading border-l-2 border-gold">
+                <p className="article-box-label uppercase tracking-widest mb-3">Lo esencial</p>
+                <ul className="article-list article-list-compact">
                   {takeaways.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-text-secondary text-sm">
+                    <li key={i} className="flex items-start gap-2">
                       <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                       <span>{item}</span>
                     </li>
@@ -2780,35 +2780,35 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             {/* Cómo llegar / Mejor hora */}
             {extras && (
-              <div className="border-t border-border-soft pt-6 mb-8 grid sm:grid-cols-2 gap-6">
+              <div className="article-facts article-reading border-t border-border-soft grid sm:grid-cols-2 gap-6">
                 <div>
-                  <h2 id="como-llegar" className="font-semibold text-text-main text-sm mb-2 scroll-mt-28">Cómo llegar</h2>
-                  <p className="text-text-secondary text-sm leading-relaxed">{extras.comoLlegar}</p>
+                  <h2 id="como-llegar" className="scroll-mt-28">Cómo llegar</h2>
+                  <p>{extras.comoLlegar}</p>
                 </div>
                 <div>
-                  <h2 id="mejor-hora" className="font-semibold text-text-main text-sm mb-2 scroll-mt-28">Mejor hora para ir</h2>
-                  <p className="text-text-secondary text-sm leading-relaxed">{extras.mejorHora}</p>
+                  <h2 id="mejor-hora" className="scroll-mt-28">Mejor hora para ir</h2>
+                  <p>{extras.mejorHora}</p>
                 </div>
               </div>
             )}
 
             {/* Contenido del artículo */}
-            <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-text-main prose-p:text-text-secondary prose-p:leading-relaxed">
+            <div className="article-content article-reading">
               {article.contenido.slice(1).map((bloque, index) => {
                 if (bloque.tipo === 'parrafo') {
                   paragraphIndex += 1;
                   // Cada 3 párrafos, añadir destacado estilo cita
                   if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
-                      <blockquote key={index} className="border-l-4 border-gold bg-cream rounded-r-xl px-6 py-5 my-8 not-prose">
-                        <p className="font-display italic text-xl text-night leading-relaxed">
+                      <blockquote key={index} className="article-quote border-l-4 border-gold">
+                        <p>
                           {bloque.texto}
                         </p>
                       </blockquote>
                     );
                   }
                   return (
-                    <p key={index} className="text-text-secondary leading-relaxed mb-6">
+                    <p key={index}>
                       {bloque.texto}
                     </p>
                   );
@@ -2819,7 +2819,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     <h2
                       key={index}
                       id={headingId}
-                      className="text-2xl font-bold text-text-main mt-12 mb-4 scroll-mt-28 border-b border-border-soft pb-2"
+                      className="scroll-mt-28"
                     >
                       {bloque.texto}
                     </h2>
@@ -2827,9 +2827,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'lista') {
                   return (
-                    <ul key={index} className="space-y-2 mb-6 not-prose">
+                    <ul key={index} className="article-list">
                       {bloque.items?.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                        <li key={i} className="flex items-start gap-2">
                           <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
                           <span>{item}</span>
                         </li>
@@ -2839,9 +2839,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'tip') {
                   return (
-                    <div key={index} className="card-surface border-l-2 border-gold px-5 py-4 mb-6 not-prose">
-                      <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Tip local</p>
-                      <p className="text-text-secondary text-sm leading-relaxed">{bloque.texto}</p>
+                    <div key={index} className="article-info-box article-tip border-l-2 border-gold">
+                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Tip local</p>
+                      <p>{bloque.texto}</p>
                     </div>
                   );
                 }
@@ -2853,16 +2853,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <hr className="my-12 border-border-soft" />
 
             {/* FAQs */}
-            <section className="mb-12">
-              <h3 className="font-display italic text-text-main text-2xl mb-6">Preguntas frecuentes</h3>
+            <section className="article-faq article-reading">
+              <h3>Preguntas frecuentes</h3>
               <div className="space-y-0">
                 {faqs.map((faq, i) => (
                   <details key={i} className="group border-t border-border-soft">
-                    <summary className="flex items-start justify-between py-5 cursor-pointer gap-4">
-                      <h4 className="font-semibold text-text-main text-sm leading-snug">{faq.q}</h4>
-                      <span className="text-text-secondary flex-shrink-0 text-lg leading-none group-open:rotate-45 transition-transform">+</span>
+                    <summary className="flex items-start justify-between cursor-pointer gap-4">
+                      <h4>{faq.q}</h4>
+                      <span className="article-faq-icon flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
                     </summary>
-                    <div className="pb-5 text-text-secondary text-sm leading-relaxed">
+                    <div className="article-faq-answer">
                       {faq.a}
                     </div>
                   </details>
@@ -2871,37 +2871,36 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </section>
 
             {/* CTA final */}
-            <div className="relative bg-night bg-azulejo-pattern-gold rounded-2xl p-8 text-center overflow-hidden">
-              <h3 className="relative font-display italic text-white text-2xl mb-3">
+            <div className="article-cta article-reading relative bg-night bg-azulejo-pattern-gold text-center overflow-hidden">
+              <h3 className="relative text-white">
                 ¿Quieres esto organizado paso a paso?
               </h3>
-              <p className="relative text-white/60 mb-6 text-sm max-w-md mx-auto">
+              <p className="relative text-white/70">
                 Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
               </p>
               <Link
                 href="/itinerarios"
-                className="btn-primary relative inline-flex px-8 py-3 text-sm"
+                className="btn-primary article-cta-button relative inline-flex px-8 py-3 text-sm"
               >
                 Ver guías desde 2 €
               </Link>
             </div>
 
             {/* Sobre el autor */}
-            <div className="mt-12 pt-8 border-t border-border-soft flex items-start gap-4">
+            <div className="article-author article-reading border-t border-border-soft flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-xl flex-shrink-0">
                 JT
               </div>
               <div>
-                <p className="text-sm font-semibold text-text-main">Escrito por {AUTHOR_NAME}</p>
-                <p className="text-sm text-text-secondary leading-relaxed mt-1">
+                <p className="article-author-name">Escrito por {AUTHOR_NAME}</p>
+                <p className="article-author-bio">
                   Vivo en Lisboa y pruebo cada ruta, restaurante y actividad antes de recomendarla.{' '}
-                  <Link href="/sobre-nosotros" className="text-terracotta hover:underline">Más sobre mí</Link>
+                  <Link href="/sobre-nosotros">Más sobre mí</Link>
                   {' · '}
                   <a
                     href="https://instagram.com/estabaenlisboa"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-terracotta hover:underline"
                   >
                     Instagram
                   </a>
@@ -2911,17 +2910,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </article>
 
           {/* Sidebar */}
-          <aside className="space-y-10 lg:sticky lg:top-24 lg:self-start">
+          <aside className="article-toc space-y-10 lg:sticky lg:top-24 lg:self-start">
             {/* Tabla de contenidos */}
             {headings.length > 0 && (
               <div>
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-4 pb-3 border-b border-border-soft">En este artículo</p>
+                <p className="article-toc-label uppercase tracking-widest mb-4 pb-3 border-b border-border-soft">En este artículo</p>
                 <nav className="space-y-2">
                   {headings.map((heading) => (
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}
-                      className="block text-sm text-text-secondary hover:text-terracotta transition-colors py-1"
+                      className="block transition-colors py-1"
                     >
                       {heading.title}
                     </a>
@@ -2932,11 +2931,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             {/* También te interesa */}
             <div>
-              <p className="text-xs uppercase tracking-widest text-text-secondary mb-4 pb-3 border-b border-border-soft">También te interesa</p>
+              <p className="article-toc-label uppercase tracking-widest mb-4 pb-3 border-b border-border-soft">También te interesa</p>
               <ul className="space-y-3">
                 {internalLinks.slice(0, 5).map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-sm text-text-secondary hover:text-terracotta transition-colors">
+                    <Link href={item.href} className="transition-colors">
                       {item.label} →
                     </Link>
                   </li>
@@ -2945,12 +2944,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Mini CTA */}
-            <div className="card-surface p-5 border-l-2 border-gold">
-              <p className="font-semibold text-text-main text-sm mb-2">¿Primera vez en Lisboa?</p>
-              <p className="text-text-secondary text-xs mb-4 leading-relaxed">Te ayudamos a planificar tu viaje 1:1</p>
+            <div className="article-sidebar-cta card-surface p-5 border-l-2 border-gold">
+              <p className="article-sidebar-cta-title">¿Primera vez en Lisboa?</p>
+              <p className="article-sidebar-cta-text">Te ayudamos a planificar tu viaje 1:1</p>
               <Link
                 href="/planifica-tu-viaje"
-                className="btn-primary block w-full py-2.5 text-xs"
+                className="btn-primary block w-full py-2.5"
               >
                 Planifica tu viaje
               </Link>
@@ -2960,10 +2959,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         {/* Relacionados */}
         {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-border-soft">
+          <section className="article-related mt-16 pt-12 border-t border-border-soft">
             <div className="flex items-center justify-between mb-8">
-              <h3 className="font-display italic text-text-main text-2xl">Relacionadas</h3>
-              <Link href="/blog" className="text-sm text-terracotta hover:underline underline-offset-2">
+              <h3>Relacionadas</h3>
+              <Link href="/blog" className="article-related-link">
                 Ver todo →
               </Link>
             </div>
@@ -2978,8 +2977,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
-                  <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{post.categoria}</p>
-                  <h4 className="font-display italic text-text-main group-hover:text-terracotta transition-colors leading-snug">
+                  <p className="article-related-category uppercase tracking-widest mb-1">{post.categoria}</p>
+                  <h4 className="transition-colors">
                     {post.titulo}
                   </h4>
                 </Link>
