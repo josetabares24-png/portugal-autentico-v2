@@ -2739,16 +2739,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </header>
 
       {/* Imagen destacada */}
-      <figure className="max-w-5xl mx-auto px-4 mb-10">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-premium">
+      <figure className="article-hero-figure mx-auto px-4">
+        <div className="article-hero-media relative overflow-hidden shadow-premium">
           <Image
             src={heroImage}
             alt={`${article.titulo} — Lisboa`}
             fill
-            className="object-cover"
+            className="article-hero-image"
             priority
             fetchPriority="high"
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            sizes="(max-width: 768px) 100vw, 900px"
           />
         </div>
       </figure>
