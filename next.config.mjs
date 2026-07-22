@@ -17,16 +17,8 @@ const nextConfig = {
       // Blog stubs → artículos completos
       { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
       // Legacy en/ko known redirects without chains
-      { source: '/en/tours', destination: '/itinerarios', permanent: true, locale: false },
-      { source: '/ko/tours', destination: '/itinerarios', permanent: true, locale: false },
-      { source: '/en/guia-practica', destination: '/planifica-tu-viaje', permanent: true, locale: false },
-      { source: '/ko/guia-practica', destination: '/planifica-tu-viaje', permanent: true, locale: false },
       { source: '/en/info-util', destination: '/planifica-tu-viaje', permanent: true },
       { source: '/ko/info-util', destination: '/planifica-tu-viaje', permanent: true },
-      { source: '/en/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true, locale: false },
-      { source: '/ko/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true, locale: false },
-      { source: '/en/transporte', destination: '/blog/transporte-publico-lisboa', permanent: true, locale: false },
-      { source: '/ko/transporte', destination: '/blog/transporte-publico-lisboa', permanent: true, locale: false },
       { source: '/en/mapa', destination: '/itinerarios', permanent: true },
       { source: '/ko/mapa', destination: '/itinerarios', permanent: true },
       { source: '/en/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
@@ -40,8 +32,8 @@ const nextConfig = {
       // Redirecciones de versiones en/ko a español (sitio monoidioma)
       { source: '/en', destination: '/', permanent: true },
       { source: '/ko', destination: '/', permanent: true },
-      { source: '/en/:path*', destination: '/:path*', permanent: true },
-      { source: '/ko/:path*', destination: '/:path*', permanent: true },
+      { source: '/en/:path((?!presupuesto$|transporte$|tours$|guia-practica$).*)', destination: '/:path', permanent: true },
+      { source: '/ko/:path((?!presupuesto$|transporte$|tours$|guia-practica$).*)', destination: '/:path', permanent: true },
     ];
   },
   typescript: {
