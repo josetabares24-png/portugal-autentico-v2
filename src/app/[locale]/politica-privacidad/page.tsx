@@ -4,6 +4,21 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 export const metadata: Metadata = {
   title: 'Política de Privacidad | Estaba en Lisboa',
   description: 'Política de privacidad y protección de datos de Estaba en Lisboa',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/politica-privacidad',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Política de Privacidad | Estaba en Lisboa',
+    description: 'Información sobre privacidad, protección de datos y tratamiento de información personal.',
+    url: 'https://estabaenlisboa.com/politica-privacidad',
+    siteName: 'Estaba en Lisboa',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 async function getLegalContent() {

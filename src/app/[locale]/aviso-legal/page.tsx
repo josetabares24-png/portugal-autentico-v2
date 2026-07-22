@@ -4,6 +4,21 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 export const metadata: Metadata = {
   title: 'Aviso Legal | Estaba en Lisboa',
   description: 'Información legal sobre Estaba en Lisboa - Guías turísticas digitales de Lisboa',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/aviso-legal',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Aviso Legal | Estaba en Lisboa',
+    description: 'Información legal sobre Estaba en Lisboa y sus guías digitales de Lisboa.',
+    url: 'https://estabaenlisboa.com/aviso-legal',
+    siteName: 'Estaba en Lisboa',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 async function getLegalContent() {

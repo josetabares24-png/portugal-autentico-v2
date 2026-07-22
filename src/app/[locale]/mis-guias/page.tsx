@@ -1,12 +1,20 @@
+import type { Metadata } from 'next';
 import { auth } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import ReviewForm from '@/components/ReviewForm';
 import { supabaseAdmin } from '@/lib/supabase';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Mis Guías | Estaba en Lisboa',
   description: 'Accede a tus guías compradas de Lisboa',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/mis-guias',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function MisGuiasPage() {

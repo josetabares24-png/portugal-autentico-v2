@@ -1,8 +1,20 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import createMiddleware from 'next-intl/middleware';
+import { NextResponse } from 'next/server';
 import { routing } from '@/i18n/routing';
 
 const intlMiddleware = createMiddleware(routing);
+
+const legacyDirectRedirects = new Map([
+  ['/en/presupuesto', '/blog/presupuesto-viajar-lisboa'],
+  ['/ko/presupuesto', '/blog/presupuesto-viajar-lisboa'],
+  ['/en/transporte', '/blog/transporte-publico-lisboa'],
+  ['/ko/transporte', '/blog/transporte-publico-lisboa'],
+  ['/en/tours', '/itinerarios'],
+  ['/ko/tours', '/itinerarios'],
+  ['/en/guia-practica', '/planifica-tu-viaje'],
+  ['/ko/guia-practica', '/planifica-tu-viaje'],
+]);
 
 // Rutas publicas que no requieren autenticacion
 const isPublicRoute = createRouteMatcher([
@@ -30,6 +42,16 @@ const isPublicRoute = createRouteMatcher([
 const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
+  const legacyDestination = legacyDirectRedirects.get(req.nextUrl.pathname);
+
+  if (legacyDestination) {
+    const redirectUrl = req.nextUrl.clone();
+    redirectUrl.pathname = legacyDestination;
+    redirectUrl.search = '';
+
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
   // Solo proteger rutas que no son publicas
   if (!isPublicRoute(req)) {
     await auth.protect();

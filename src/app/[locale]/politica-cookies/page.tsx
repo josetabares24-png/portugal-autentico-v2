@@ -4,6 +4,21 @@ import LegalPageLayout from '@/components/LegalPageLayout';
 export const metadata: Metadata = {
   title: 'Política de Cookies | Estaba en Lisboa',
   description: 'Información sobre el uso de cookies en Estaba en Lisboa',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/politica-cookies',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Política de Cookies | Estaba en Lisboa',
+    description: 'Información sobre el uso de cookies, analítica y preferencias en Estaba en Lisboa.',
+    url: 'https://estabaenlisboa.com/politica-cookies',
+    siteName: 'Estaba en Lisboa',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 async function getLegalContent() {

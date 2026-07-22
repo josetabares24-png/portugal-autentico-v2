@@ -1,5 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Icon from '@/components/Icon';
+
+export const metadata: Metadata = {
+  title: 'Compra completada | Estaba en Lisboa',
+  description: 'Confirmación de compra de una guía digital de Estaba en Lisboa.',
+  alternates: {
+    canonical: 'https://estabaenlisboa.com/exito',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function ExitoPage() {
   return (
