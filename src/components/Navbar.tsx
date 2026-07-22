@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 import { useIsAdmin } from '@/hooks/useIsAdmin';
 import Icon from '@/components/Icon';
 
@@ -15,13 +15,13 @@ export default function Navbar() {
   const isAdmin = useIsAdmin();
 
   const navLinks = [
-    { href: '/itinerarios', label: 'Guías' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/itinerarios', label: 'Itinerarios' },
     { href: '/actividades', label: 'Actividades' },
-    { href: '/planifica-tu-viaje', label: 'Planifica tu Viaje' },
     { href: '/contacto', label: 'Contacto' },
   ];
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <nav className="bg-cream/95 backdrop-blur-sm border-b border-taupe/10 shadow-sm sticky top-0 z-50">
@@ -46,6 +46,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? 'page' : undefined}
                 className={`relative px-4 py-2 font-semibold text-sm transition-colors ${
                   isActive(link.href)
                     ? 'text-terracotta after:absolute after:-bottom-px after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-terracotta'
@@ -59,10 +60,20 @@ export default function Navbar() {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden md:flex items-center gap-3">
-            {isSignedIn ? (
+            <Link
+              href="/planifica-tu-viaje"
+              aria-current={isActive('/planifica-tu-viaje') ? 'page' : undefined}
+              className="btn-primary px-5 py-2 text-sm"
+            >
+              Planifica tu viaje
+              <Icon name="arrow_forward" size={16} />
+            </Link>
+
+            {isSignedIn && (
               <>
                 <Link
                   href="/mis-guias"
+                  aria-current={isActive('/mis-guias') ? 'page' : undefined}
                   className="px-4 py-2 text-night hover:text-terracotta font-semibold text-sm transition-colors"
                 >
                   Mis Guías
@@ -70,6 +81,7 @@ export default function Navbar() {
                 {isAdmin && (
                   <Link
                     href="/admin"
+                    aria-current={isActive('/admin') ? 'page' : undefined}
                     className="px-4 py-2 text-taupe hover:text-night font-semibold text-sm transition-colors border border-taupe/20"
                   >
                     Admin
@@ -77,21 +89,7 @@ export default function Navbar() {
                 )}
                 <UserButton afterSignOutUrl="/" />
               </>
-            ) : (
-              <SignInButton mode="modal">
-                <button className="px-4 py-2 text-night hover:text-terracotta font-semibold text-sm transition-colors">
-                  Iniciar Sesión
-                </button>
-              </SignInButton>
             )}
-
-            <Link
-              href="/itinerarios"
-              className="btn-primary px-5 py-2 text-sm"
-            >
-              Ver Guías
-              <Icon name="arrow_forward" size={16} />
-            </Link>
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -114,6 +112,7 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-4 py-2.5 text-sm font-semibold transition-colors ${
                       isActive(link.href)
@@ -124,48 +123,42 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-              </div>
-
-              <div className="border-t border-taupe/20 pt-3 mt-2 flex flex-col gap-2">
-                {isSignedIn ? (
-                  <>
-                    <Link
-                      href="/mis-guias"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="px-4 py-2.5 text-night hover:text-terracotta font-semibold text-sm transition-colors"
-                    >
-                      Mis Guías
-                    </Link>
-                    {isAdmin && (
-                      <Link
-                        href="/admin"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="px-4 py-2.5 text-taupe font-semibold text-sm border border-taupe/20 transition-colors"
-                      >
-                        Panel de Admin
-                      </Link>
-                    )}
-                    <div className="px-4 py-2">
-                      <UserButton afterSignOutUrl="/" />
-                    </div>
-                  </>
-                ) : (
-                  <SignInButton mode="modal">
-                    <button className="px-4 py-2.5 text-night hover:text-terracotta font-semibold text-sm transition-colors text-left">
-                      Iniciar Sesión
-                    </button>
-                  </SignInButton>
-                )}
-
                 <Link
-                  href="/itinerarios"
+                  href="/planifica-tu-viaje"
+                  aria-current={isActive('/planifica-tu-viaje') ? 'page' : undefined}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-primary px-6 py-3 text-sm mx-4"
+                  className="btn-primary px-6 py-3 text-sm mx-4 mt-3"
                 >
-                  Ver Guías
+                  Planifica tu viaje
                   <Icon name="arrow_forward" size={16} />
                 </Link>
               </div>
+
+              {isSignedIn && (
+                <div className="border-t border-taupe/20 pt-3 mt-4 flex flex-col gap-2">
+                  <Link
+                    href="/mis-guias"
+                    aria-current={isActive('/mis-guias') ? 'page' : undefined}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-4 py-2.5 text-night hover:text-terracotta font-semibold text-sm transition-colors"
+                  >
+                    Mis Guías
+                  </Link>
+                  {isAdmin && (
+                    <Link
+                      href="/admin"
+                      aria-current={isActive('/admin') ? 'page' : undefined}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="px-4 py-2.5 text-taupe font-semibold text-sm border border-taupe/20 transition-colors"
+                    >
+                      Panel de Admin
+                    </Link>
+                  )}
+                  <div className="px-4 py-2">
+                    <UserButton afterSignOutUrl="/" />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
