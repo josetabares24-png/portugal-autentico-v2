@@ -2721,37 +2721,26 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* Header editorial */}
-      <header className="max-w-4xl mx-auto px-4 pt-8 pb-6">
-        {/* Categoría + meta */}
-        <p className="article-meta uppercase tracking-widest mb-3">
-          {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
-        </p>
+      <header className="article-header max-w-6xl mx-auto px-4 pt-8 pb-5">
+        <div className="grid lg:grid-cols-[1fr,320px] gap-10">
+          <div className="article-header-content min-w-0">
+            {/* Categoría + meta */}
+            <p className="article-meta uppercase tracking-widest mb-3">
+              {article.categoria} &mdash; {article.fecha} &mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
+            </p>
 
-        {/* Título */}
-        <h1 className="article-title font-display text-text-main mb-5">
-          {article.titulo}
-        </h1>
+            {/* Título */}
+            <h1 className="article-title font-display text-text-main mb-5">
+              {article.titulo}
+            </h1>
 
-        {/* Lead */}
-        <p className="article-description mb-6 pb-6 border-b border-border-soft">
-          {article.descripcion}
-        </p>
-      </header>
-
-      {/* Imagen destacada */}
-      <figure className="article-hero-figure mx-auto px-4">
-        <div className="article-hero-media relative overflow-hidden shadow-premium">
-          <Image
-            src={heroImage}
-            alt={`${article.titulo} — Lisboa`}
-            fill
-            className="article-hero-image"
-            priority
-            fetchPriority="high"
-            sizes="(max-width: 768px) 100vw, 900px"
-          />
+            {/* Lead */}
+            <p className="article-description mb-0 pb-5 border-b border-border-soft">
+              {article.descripcion}
+            </p>
+          </div>
         </div>
-      </figure>
+      </header>
 
       {/* Layout principal: contenido + sidebar */}
       <div className="max-w-6xl mx-auto px-4 pb-16">
