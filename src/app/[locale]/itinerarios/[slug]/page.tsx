@@ -122,7 +122,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
               </div>
             </div>
 
-            {/* Sidebar compra */}
+            {/* Sidebar de acceso gratuito */}
             <div className="lg:sticky lg:top-24">
               <div className="card-surface p-6 border-l-2 border-gold">
                 <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Gratis</p>

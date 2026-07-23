@@ -14,8 +14,8 @@ export function ActivityCard({ activity }: { activity: Activity }) {
       : 'De pago';
 
   return (
-    <Link href={`/actividades/${activity.slug}`} className="card-surface group block p-4">
-      <article>
+    <Link href={`/actividades/${activity.slug}`} className="card-surface group flex h-full flex-col p-4">
+      <article className="flex h-full flex-col">
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
           <Image
             src={activity.image}
@@ -39,17 +39,17 @@ export function ActivityCard({ activity }: { activity: Activity }) {
         <h3 className="font-display italic text-text-main text-lg leading-snug mb-2 group-hover:text-terracotta transition-colors">
           {activity.title}
         </h3>
-        <p className="text-text-secondary text-sm mb-3 line-clamp-2">{activity.description}</p>
+        <p className="mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2">{activity.description}</p>
 
-        <div className="flex items-center justify-between text-sm mb-3">
+        <div className="mb-3 mt-auto flex items-center justify-between text-sm">
           <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
-          <span className="text-text-secondary text-xs">{activity.duration}</span>
+          <span className="text-text-secondary text-xs font-medium">{activity.duration}</span>
         </div>
 
         <div className="bg-background-light border-l-2 border-gold rounded-md px-3 py-2.5">
-          <p className="text-xs text-text-secondary leading-relaxed">
+          <p className="text-xs leading-relaxed text-text-secondary">
             <span className="text-terracotta font-semibold">Tip para ahorrar: </span>
             {activity.savingTip}
           </p>

@@ -1,11 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useUser } from '@clerk/nextjs';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import { isFreeAccessActive } from '@/lib/guide-config';
-import Icon from '@/components/Icon';
 
 const ItineraryMap = dynamic(() => import('@/components/ItineraryMap'), {
   ssr: false,
@@ -22,99 +17,20 @@ interface Coordinate {
 }
 
 interface PremiumContentProps {
-  productId: string;
-  price?: number;
-  productName: string;
   coordinates: Coordinate[];
   mapTitle: string;
   mapDescription: string;
   guideTitle: string;
-  publicAccess?: boolean;
   showResources?: boolean;
 }
 
 export function PremiumContent({
-  productId,
-  price,
-  productName,
   coordinates,
   mapTitle,
   mapDescription,
   guideTitle,
-  publicAccess = false,
   showResources = true,
 }: PremiumContentProps) {
-  const { user, isLoaded } = useUser();
-  const [hasAccess, setHasAccess] = useState(false);
-  const [isChecking, setIsChecking] = useState(true);
-
-  useEffect(() => {
-    async function checkAccess() {
-      if (publicAccess || isFreeAccessActive()) {
-        setHasAccess(true);
-        setIsChecking(false);
-        return;
-      }
-
-      if (!isLoaded) return;
-
-      if (!user) {
-        setHasAccess(false);
-        setIsChecking(false);
-        return;
-      }
-
-      try {
-        const response = await fetch(`/api/check-purchase?productId=${productId}`);
-        const data = await response.json();
-        setHasAccess(data.hasAccess || false);
-      } catch (error) {
-        console.error('Error checking access:', error);
-        setHasAccess(false);
-      } finally {
-        setIsChecking(false);
-      }
-    }
-
-    checkAccess();
-  }, [user, isLoaded, productId, publicAccess]);
-
-  if (isChecking) {
-    return (
-      <div className="py-12 bg-background-light border-t border-border-soft">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-text-secondary text-sm">Verificando acceso...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!hasAccess) {
-    return (
-      <div className="py-16 bg-background-light border-t border-border-soft">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="card-surface p-8 border-t-2 border-gold">
-            <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center mx-auto mb-6 shadow-gold-glow">
-              <Icon name="lock" size={24} className="text-night" />
-            </div>
-            <h3 className="font-display italic text-text-main text-2xl mb-3">
-              Contenido Premium
-            </h3>
-            <p className="text-text-secondary text-sm mb-8 max-w-md mx-auto">
-              El mapa interactivo y recursos adicionales están disponibles para quienes han comprado la guía.
-            </p>
-            <Link
-              href={`/checkout/${productId}`}
-              className="btn-primary inline-flex px-8 py-3 text-sm"
-            >
-              {typeof price === 'number' ? `Desbloquear por ${price}€` : 'Ver opciones de acceso'}
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
       <ItineraryMap

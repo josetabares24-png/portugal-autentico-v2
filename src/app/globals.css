@@ -12,7 +12,7 @@
   --color-cream: #F5EFE6;
   --color-night: #1a2b4a;
   --color-terracotta: #B8472E;
-  --color-taupe: #8A8279;
+  --color-taupe: #6F665D;
   --color-gold: #C9974A;
   /* Legacy */
   --color-primary: #B8472E;
@@ -26,9 +26,10 @@
 
 body {
   font-family: var(--font-body), 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-night);
   background: var(--color-cream);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -50,19 +51,19 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-terracotta text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-primary-dark hover:shadow-card-hover hover:-translate-y-0.5;
+    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center bg-terracotta text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-primary-dark hover:shadow-card-hover hover:-translate-y-0.5;
   }
 
   .btn-dark {
-    @apply inline-flex items-center justify-center gap-2 bg-night text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-terracotta hover:shadow-card-hover hover:-translate-y-0.5;
+    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center bg-night text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-terracotta hover:shadow-card-hover hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border border-night/15 text-night font-semibold rounded-md transition-all duration-200 hover:border-night hover:bg-night hover:text-white hover:-translate-y-0.5;
+    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center border border-night/15 text-night font-semibold rounded-md transition-all duration-200 hover:border-night hover:bg-night hover:text-white hover:-translate-y-0.5;
   }
 
   .btn-ghost-light {
-    @apply inline-flex items-center justify-center gap-2 border border-white/40 bg-white/10 text-white font-semibold rounded-md backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-night hover:-translate-y-0.5;
+    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center border border-white/40 bg-white/10 text-white font-semibold rounded-md backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-night hover:-translate-y-0.5;
   }
 
   .badge-pill {
@@ -70,11 +71,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .card-surface {
-    @apply bg-white rounded-xl shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+    @apply bg-white rounded-xl border border-border-soft/70 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
   }
 
   .form-input {
-    @apply w-full px-4 py-3 rounded-lg border border-border-soft bg-white text-text-main placeholder:text-text-secondary/60 transition-colors duration-200 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15;
+    @apply w-full px-4 py-3 rounded-lg border border-border-soft bg-white text-text-main placeholder:text-text-secondary/75 transition-colors duration-200 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15;
   }
 }
 
@@ -548,6 +549,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 767px) {
+  .article-meta {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    overflow-wrap: anywhere;
+  }
+
+  .article-title {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    overflow-wrap: anywhere;
+  }
+
+  .article-description,
+  .article-content p,
+  .article-list li,
+  .article-info-box p:not(.article-box-label),
+  .article-faq-answer,
+  .article-author-bio {
+    overflow-wrap: anywhere;
+  }
+
   .article-surface {
     padding: 1.25rem;
     border-right: 0;

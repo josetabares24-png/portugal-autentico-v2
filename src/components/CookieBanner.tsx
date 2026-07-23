@@ -52,44 +52,42 @@ export default function CookieBanner() {
   return (
     <>
       {show && (
-        <div className="fixed bottom-0 left-0 right-0 bg-background-light border-t-2 border-border-soft z-50 p-6 sm:p-8">
-          <div className="container mx-auto max-w-5xl relative">
+        <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[min(440px,calc(100vw-3rem))] sm:p-0">
+          <div className="relative rounded-2xl border border-border-soft bg-background-light/95 p-3 pr-10 shadow-card backdrop-blur sm:p-4 sm:pr-11">
             <button
               onClick={closeBanner}
-              className="absolute top-0 right-0 text-text-secondary hover:text-text-main transition-colors text-xl font-bold w-8 h-8 flex items-center justify-center"
+              className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main sm:h-8 sm:w-8"
               aria-label="Cerrar banner de cookies"
             >
               ✕
             </button>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pr-8">
-              <div className="flex-1">
-                <h3 className="font-semibold text-text-main text-sm mb-2">Uso de Cookies</h3>
-                <p className="text-text-secondary text-xs leading-relaxed">
-                  Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación,
-                  analizar el tráfico del sitio y personalizar el contenido. Al hacer clic en "Aceptar",
-                  consientes el uso de todas las cookies. Puedes consultar más información en nuestra{' '}
+            <div className="space-y-3">
+              <div>
+                <h3 className="mb-1 text-xs font-semibold text-text-main sm:mb-1.5">Uso de Cookies</h3>
+                <p className="text-[11px] leading-snug text-text-secondary sm:text-xs sm:leading-relaxed">
+                  Usamos cookies para mejorar la experiencia y medir el tráfico. Puedes aceptar, rechazar o leer la{' '}
                   <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
                     Política de Cookies
                   </Link>
-                  {' '}y en nuestra{' '}
+                  {' '}y la{' '}
                   <Link href="/politica-privacidad" className="text-terracotta hover:underline underline-offset-2">
-                    Política de Privacidad
+                    Privacidad
                   </Link>.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <div className="grid w-full grid-cols-2 gap-2">
                 <button
                   onClick={rejectCookies}
-                  className="px-6 py-3 border border-border-soft text-text-secondary text-xs font-semibold hover:border-text-secondary transition-colors"
+                  className="min-h-10 rounded-md border border-border-soft px-4 py-2 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
                   aria-label="Rechazar cookies"
                 >
                   Rechazar
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="btn-primary px-6 py-3 text-xs"
+                  className="btn-primary min-h-10 px-4 py-2 text-xs"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
@@ -101,7 +99,7 @@ export default function CookieBanner() {
       )}
 
       {!show && consent === 'rejected' && explicitConsent && (
-        <div className="fixed bottom-4 left-4 z-40 bg-background-light border border-border-soft px-4 py-3 flex items-center gap-3">
+        <div className="fixed bottom-4 left-4 z-40 flex items-center gap-3 rounded-xl border border-border-soft bg-background-light px-4 py-3 shadow-card">
           <span className="text-xs font-semibold text-text-main">Cookies rechazadas</span>
           <button
             onClick={openPreferences}

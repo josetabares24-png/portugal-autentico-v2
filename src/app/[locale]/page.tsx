@@ -73,7 +73,7 @@ export default function HomePage() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative h-screen min-h-[600px] max-h-[900px]">
+      <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] md:min-h-[620px]">
         <Image
           src="/images/miradouro-grupo-atardecer.jpg"
           alt="Gente sentada viendo el atardecer sobre los tejados de Alfama desde un miradouro, Lisboa"
@@ -91,13 +91,18 @@ export default function HomePage() {
           }}
         />
 
-        <div className="absolute bottom-0 left-0 p-8 md:p-16 max-w-3xl">
-          <h1 className="font-display italic text-white leading-tight mb-6"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', fontWeight: 400 }}>
-            Vivo en Graça hace tres años. Esto es lo que le cuento a la gente que viene a verme.
+        <div className="absolute bottom-0 left-0 max-w-3xl p-7 sm:p-10 md:p-16">
+          <h1
+            className="font-display italic text-white leading-[1.02] mb-4"
+            style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
+          >
+            La Lisboa que le enseño a quien viene a verme.
           </h1>
+          <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
+            Vivo en Graça desde hace tres años. Estas son mis rutas, lugares y consejos locales.
+          </p>
           <Link href="/itinerarios" className="btn-ghost-light inline-flex px-6 py-3 text-sm">
-            Ver guías de viaje →
+            Ver itinerarios →
           </Link>
         </div>
       </section>
@@ -134,7 +139,7 @@ export default function HomePage() {
                       {post!.titulo}
                     </h3>
                   </Link>
-                  <p className="text-taupe font-body font-light leading-relaxed text-base mb-5 line-clamp-3">
+                  <p className="text-text-secondary font-body leading-relaxed text-base mb-5 line-clamp-3">
                     {post!.excerpt}
                   </p>
                   <Link

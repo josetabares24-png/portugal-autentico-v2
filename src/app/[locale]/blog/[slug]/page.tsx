@@ -538,7 +538,7 @@ const articles: Record<string, Article> = {
   "aeropuerto-lisboa-al-centro": {
     titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
     descripcion: "Todas las opciones para llegar del aeropuerto de Lisboa al centro explicadas con precios reales: cuál es la más rápida, la más barata y la mejor si vas con maletas.",
-    imagen: "/images/elevador-santa-justa.jpg",
+    imagen: "/images/funicular-bica-turistas.jpg",
     categoria: "Transporte",
     fecha: "19 Jun 2026",
     minutos: 9,
@@ -2865,13 +2865,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 ¿Quieres esto organizado paso a paso?
               </h3>
               <p className="relative text-white/70">
-                Rutas hora a hora, GPS en cada parada, restaurantes probados. Menos que un café.
+                Rutas hora a hora, GPS en cada parada y restaurantes probados para moverte con criterio.
               </p>
               <Link
                 href="/itinerarios"
                 className="btn-primary article-cta-button relative inline-flex px-8 py-3 text-sm"
               >
-                Ver guías desde 2 €
+                Ver guías gratis
               </Link>
             </div>
 

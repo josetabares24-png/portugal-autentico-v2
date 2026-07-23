@@ -11,7 +11,7 @@ module.exports = {
         cream: "#F5EFE6",
         night: "#1a2b4a",
         terracotta: "#B8472E",
-        taupe: "#8A8279",
+        taupe: "#6F665D",
         gold: "#C9974A",
         "gold-dark": "#A87830",
         // Legacy aliases (para no romper componentes existentes durante la migración)
@@ -21,7 +21,7 @@ module.exports = {
         "background-light": "#F5EFE6",
         "background-cream": "#F5EFE6",
         "text-main": "#1a2b4a",
-        "text-secondary": "#8A8279",
+        "text-secondary": "#6F665D",
         "border-soft": "#e8e2d9",
       },
       fontFamily: {

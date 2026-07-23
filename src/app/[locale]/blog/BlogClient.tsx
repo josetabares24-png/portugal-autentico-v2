@@ -44,7 +44,7 @@ export default function BlogClient() {
   return (
     <main id="main-content">
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[420px] overflow-hidden">
+      <section className="relative h-[56vh] min-h-[380px] overflow-hidden md:min-h-[420px]">
         <Image
           src="/images/alfama-panoramica.jpg"
           alt="Lisboa vista desde arriba"
@@ -55,16 +55,18 @@ export default function BlogClient() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="max-w-6xl px-6 pb-10 pt-28 sm:px-8 md:p-16">
           <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Historias &amp; Consejos</p>
-          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
+          <h1 className="font-display italic text-white text-[clamp(2.6rem,11vw,4.2rem)] leading-[1.02] md:text-6xl">
             El blog de Lisboa
           </h1>
+          </div>
         </div>
       </section>
 
       {/* Filtros por categoría */}
-      <section className="bg-background-light border-b border-border-soft py-6 sticky top-16 z-10">
+      <section className="bg-background-light border-b border-border-soft py-4 sticky top-16 z-10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-wrap gap-2">
             {categorias.map((cat) => (
@@ -86,14 +88,14 @@ export default function BlogClient() {
       </section>
 
       {/* Artículo destacado + recientes */}
-      <section className="bg-background-light py-20">
+      <section className="bg-background-light py-10 md:py-12">
         <div className="max-w-6xl mx-auto px-6">
           {featured && (
-            <div className="grid lg:grid-cols-[3fr,2fr] gap-12 items-start">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr),minmax(320px,1.35fr)] lg:gap-12 lg:items-start">
               {/* Featured */}
               <article>
                 <Link href={`/blog/${featured.id}`} className="block group">
-                  <div className="relative aspect-[16/9] overflow-hidden mb-5">
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-xl mb-5 shadow-card">
                     <Image
                       src={blogImageMap[featured.id] || featured.imagen || blogFallbackImage}
                       alt={featured.titulo}
@@ -104,23 +106,23 @@ export default function BlogClient() {
                   <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">
                     {featured.categoria} &mdash; {featured.fecha}
                   </p>
-                  <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-snug mb-3 group-hover:text-terracotta transition-colors">
+                  <h2 className="font-display italic text-text-main text-3xl leading-[1.12] md:text-4xl mb-3 group-hover:text-terracotta transition-colors">
                     {featured.titulo}
                   </h2>
-                  <p className="text-text-secondary leading-relaxed">{featured.excerpt}</p>
+                  <p className="max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg">{featured.excerpt}</p>
                 </Link>
               </article>
 
               {/* Recientes */}
-              <aside>
+              <aside className="rounded-2xl border border-border-soft bg-white/70 p-5 shadow-sm">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-6 pb-3 border-b border-border-soft">
                   Últimas entradas
                 </p>
-                <div className="space-y-7">
+                <div className="space-y-5">
                   {secondary.map((post) => (
                     <Link key={post.id} href={`/blog/${post.id}`} className="block group">
                       <div className="flex gap-4 items-start">
-                        <div className="relative w-20 h-16 flex-shrink-0 overflow-hidden">
+                        <div className="relative h-20 w-24 flex-shrink-0 overflow-hidden rounded-lg">
                           <Image
                             src={blogImageMap[post.id] || post.imagen || blogFallbackImage}
                             alt={post.titulo}
@@ -132,7 +134,7 @@ export default function BlogClient() {
                           <p className="text-[11px] text-text-secondary uppercase tracking-wide mb-1">
                             {post.categoria}
                           </p>
-                          <h4 className="text-sm font-semibold text-text-main group-hover:text-terracotta transition-colors leading-snug">
+                          <h4 className="text-[0.95rem] font-semibold text-text-main group-hover:text-terracotta transition-colors leading-snug">
                             {post.titulo}
                           </h4>
                         </div>
@@ -152,7 +154,7 @@ export default function BlogClient() {
       </div>
 
       {/* Grid de artículos */}
-      <section className="bg-background-light py-20">
+      <section className="bg-background-light py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => {

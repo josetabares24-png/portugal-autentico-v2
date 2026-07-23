@@ -22,11 +22,11 @@ export function ItineraryCard({
           <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
         </div>
         <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
-        <p className="text-text-main/75 text-sm leading-relaxed mb-5 line-clamp-3 min-h-[4.5rem]">{description}</p>
+        <p className="text-text-secondary text-sm leading-relaxed mb-5 line-clamp-3 min-h-[4.5rem]">{description}</p>
 
         <ul className="space-y-2 mb-6">
           {features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-2 text-sm text-text-main/70">
+            <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
               <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
               {feature}
             </li>
@@ -54,11 +54,11 @@ export function ItineraryCard({
         <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
       </div>
       <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
-      <p className="text-text-main/75 text-sm leading-relaxed mb-5">{description}</p>
+      <p className="text-text-secondary text-sm leading-relaxed mb-5">{description}</p>
 
       <ul className="space-y-2 mb-6">
         {features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-sm text-text-main/70">
+          <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
             <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
             {feature}
           </li>

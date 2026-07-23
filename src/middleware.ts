@@ -16,30 +16,11 @@ const legacyLocaleRedirects: Record<string, string> = {
   '/ko/guia-practica': '/planifica-tu-viaje',
 };
 
-// Rutas publicas que no requieren autenticacion
-const isPublicRoute = createRouteMatcher([
-  '/',
-  '/(es|en|ko)',
-  '/(es|en|ko)/(.*)',
-  '/itinerarios(.*)',
-  '/actividades(.*)',
-  '/blog(.*)',
-  '/contacto',
-  '/seguridad',
-  '/planifica-tu-viaje',
-  '/checkout(.*)',
-  '/exito',
-  '/pack-completo',
-  '/sobre-nosotros',
-  '/faq',
-  '/aviso-legal',
-  '/politica-privacidad',
-  '/politica-cookies',
-  '/terminos-condiciones',
-]);
+// Rutas privadas conocidas que requieren autenticacion.
+const isProtectedRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
 
 // Rutas que no deben pasar por el middleware de i18n
-const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)']);
+const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
   const legacyDestination = legacyLocaleRedirects[req.nextUrl.pathname];
@@ -51,8 +32,8 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  // Solo proteger rutas que no son publicas
-  if (!isPublicRoute(req)) {
+  // Proteger solo rutas privadas conocidas; las desconocidas deben caer en el 404 editorial.
+  if (isProtectedRoute(req)) {
     await auth.protect();
   }
 
@@ -67,6 +48,7 @@ export default clerkMiddleware(async (auth, req) => {
 
 export const config = {
   matcher: [
+    '/api/admin/:path*',
     '/((?!_next|api|trpc|robots\\.txt|sitemap\\.xml|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
   ],
 };

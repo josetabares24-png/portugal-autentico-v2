@@ -41,7 +41,7 @@ export default async function ItinerariosPage() {
   return (
     <main id="main-content">
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[380px] overflow-hidden">
+      <section className="relative h-[62vh] min-h-[430px] overflow-hidden md:min-h-[460px]">
         <Image
           src="/images/alfama-panoramica.jpg"
           alt="Vista panorámica de Lisboa"
@@ -52,24 +52,26 @@ export default async function ItinerariosPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="max-w-6xl px-6 pb-10 pt-28 sm:px-8 md:p-16">
           <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Guías de viaje</p>
-          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
+          <h1 className="font-display italic text-white text-[clamp(2.65rem,11vw,4rem)] leading-[1.02] md:text-6xl">
             Itinerarios para Lisboa
           </h1>
+          </div>
         </div>
       </section>
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light pt-20 pb-16 md:pb-20">
+      <section id="itinerarios" className="bg-background-light pt-14 pb-12 md:pt-16 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
+          <div className="mb-8 md:mb-10">
             <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Según tus días</p>
             <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
               Elige tu ruta
             </h2>
           </div>
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8">
             {mainItineraries.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}
@@ -78,9 +80,9 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* Más formas de descubrir Lisboa */}
-      <section className="bg-background-light pb-20">
+      <section className="bg-background-light pb-16 md:pb-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-10 md:mb-12">
+          <div className="mb-8 md:mb-10">
             <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Más formas de descubrir Lisboa</p>
             <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
               Elige según tu estilo
@@ -107,7 +109,7 @@ export default async function ItinerariosPage() {
             {[
               { href: '/actividades', label: 'Actividades sin gastar mucho' },
               { href: '/planifica-tu-viaje', label: 'Planifica tu viaje' },
-              { href: '/pack-completo', label: 'Pack completo de guías' },
+              { href: '/pack-completo', label: 'Todas las guías gratuitas' },
               { href: '/blog', label: 'Blog: historias y consejos' },
               { href: '/faq', label: 'Preguntas frecuentes' },
             ].map((link) => (
@@ -133,7 +135,7 @@ export default async function ItinerariosPage() {
             {faqItems.map((item) => (
               <div key={item.question} className="border-t border-white/10 pt-6">
                 <h3 className="font-semibold text-white mb-2">{item.question}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{item.answer}</p>
+                <p className="text-white/75 text-sm leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
-# Configurar reseñas reales
+# Configurar reseñas de guías
 
-Ejecuta este SQL en Supabase para habilitar reseñas verificadas por compra:
+Ejecuta este SQL en Supabase para habilitar reseñas de guías públicas:
 
 ```sql
 create table if not exists public.guide_reviews (
@@ -32,4 +32,4 @@ for each row execute procedure public.set_guide_reviews_updated_at();
 
 Notas:
 - Solo se permite una reseña por usuario y guía (se actualiza si la vuelves a enviar).
-- El endpoint valida que exista una compra completada antes de aceptar la reseña.
+- El endpoint requiere usuario autenticado, pero ya no valida compras porque las guías son gratuitas.

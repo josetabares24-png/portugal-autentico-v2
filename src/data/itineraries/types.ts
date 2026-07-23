@@ -4,7 +4,6 @@ export interface Itinerary {
   title: string;
   description: string;
   duration: string;
-  price: number;
   image: string;
   features: string[];
   href: string;

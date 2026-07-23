@@ -115,15 +115,12 @@ export default function LisboaFullWeekPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-full-week"
-        productName="Lisboa Full Week"
         coordinates={lisboaFullWeekTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa completo de la semana"
         mapDescription="Lisboa, Sintra, Cascais y alrededores con todas las paradas. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa Full Week"
-        publicAccess
       />
 
       {/* Galería + tips */}

@@ -31,11 +31,6 @@ export function getFeaturedItineraries(): Itinerary[] {
   return ALL_ITINERARIES.filter((it) => it.featured);
 }
 
-export function getItineraryPrice(idOrSlug: string): number | null {
-  const itinerary = getItinerary(idOrSlug);
-  return itinerary ? itinerary.price : null;
-}
-
 export function getItineraryTitle(idOrSlug: string): string | null {
   const itinerary = getItinerary(idOrSlug);
   return itinerary ? itinerary.title : null;
