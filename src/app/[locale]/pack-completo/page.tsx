@@ -1,183 +1,146 @@
-'use client';
-
 import Link from 'next/link';
-import { isFreeAccessActive } from '@/lib/guide-config';
+
+const guides = [
+  {
+    title: 'Lisboa en 1 Día',
+    subtitle: 'Lo esencial sin perder tiempo',
+    href: '/itinerarios/lisboa-1-dia-lo-esencial',
+    desc: 'Una ruta compacta por Alfama, miradores, Belém y paradas clave para aprovechar un día completo.',
+  },
+  {
+    title: 'Lisboa en 2 Días',
+    subtitle: 'Fin de semana completo',
+    href: '/itinerarios/lisboa-2-dias-completo',
+    desc: 'Dos jornadas con centro histórico, Belém, barrios con ambiente y recomendaciones para comer bien.',
+  },
+  {
+    title: 'Lisboa en 3 Días',
+    subtitle: 'Ciudad, Sintra y costa',
+    href: '/itinerarios/lisboa-3-dias-premium',
+    desc: 'Un plan amplio para sumar Sintra, Cascais y Cabo da Roca con orden lógico y tiempos realistas.',
+  },
+  {
+    title: 'Lisboa Semana Completa',
+    subtitle: 'Siete días con alrededores',
+    href: '/itinerarios/lisboa-full-week',
+    desc: 'Una guía para viajar con calma, alternar barrios, escapadas y planes gastronómicos sin improvisar.',
+  },
+  {
+    title: 'Lisboa Romántica',
+    subtitle: 'Miradores, cenas y paseos',
+    href: '/itinerarios/lisboa-romantica',
+    desc: 'Una selección de rincones tranquilos, atardeceres y planes especiales para vivir Lisboa en pareja.',
+  },
+  {
+    title: 'Lisboa en Familia',
+    subtitle: 'Ritmo cómodo con niños',
+    href: '/itinerarios/lisboa-familiar',
+    desc: 'Actividades kid-friendly, pausas útiles, zonas cómodas y consejos para evitar estrés durante el viaje.',
+  },
+  {
+    title: 'Lisboa Fotografía',
+    subtitle: 'Spots, luz y encuadres',
+    href: '/itinerarios/lisboa-fotografia',
+    desc: 'Una ruta para capturar miradores, tranvías, fachadas y escenas urbanas en las mejores horas de luz.',
+  },
+];
+
+const benefits = [
+  'Rutas organizadas por tipo de viaje',
+  'Mapas y puntos clave para orientarte',
+  'Horarios, restaurantes y consejos locales',
+  'Contenido abierto para planificar a tu ritmo',
+];
 
 export default function PackCompletoPage() {
-  const isFree = isFreeAccessActive();
-
-  const guias = [
-    { title: 'Lisboa en 1 Día: Lo Esencial', price: '3.99€', desc: '8 paradas · Alfama, Castillo, Belém' },
-    { title: 'Lisboa en 3 Días: Completa', price: '5.99€', desc: '3 días completos · Incluye Sintra' },
-    { title: 'Lisboa en Pareja: Romance', price: '6.99€', desc: 'Miradores · Cenas · Rincones secretos' },
-    { title: 'Lisboa con Niños: Familiar', price: '6.99€', desc: 'Actividades kid-friendly · Restaurantes' },
-    { title: 'Lisboa en 7 Días: Inmersiva', price: '9.99€', desc: 'Semana completa · 4 excursiones' },
-    { title: 'Lisboa en Coche: Road Trip', price: '7.99€', desc: 'Rutas optimizadas · Parking · GPS' },
-    { title: 'Lisboa Cultural: Arte', price: '8.99€', desc: 'Museos · Galerías · Patrimonio' },
-    { title: 'Lisboa Fotografía: Instagram', price: '7.99€', desc: '50+ spots · Golden hour · GPS' },
-  ];
-
   return (
     <main id="main-content">
-      {/* Hero */}
       <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <span className="badge-pill inline-flex bg-gold text-night mb-4">
-            {isFree ? 'Acceso gratuito 2026' : 'Oferta de lanzamiento 2026'}
+            Gratis
           </span>
           <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-4">
-            Pack Completo Lisboa
+            Todas las guías de Lisboa
           </h1>
-          <p className="text-white/70 text-sm mb-10">
-            8 guías + bonus exclusivo · Todo lo que necesitas para descubrir Lisboa como un local.
+          <p className="text-white/70 text-sm mb-10 max-w-2xl mx-auto leading-relaxed">
+            Elige una ruta según tus días, tu compañía o tu forma de viajar. Todas están pensadas para ayudarte a moverte mejor, comer con criterio y disfrutar Lisboa con menos dudas.
           </p>
-
-          {isFree ? (
-            <>
-              <p className="text-3xl font-bold text-white mb-2">Acceso 100% gratuito</p>
-              <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizadas 2026</p>
-              <Link
-                href="/itinerarios"
-                className="btn-primary inline-flex px-10 py-4"
-              >
-                Ver todas las guías →
-              </Link>
-            </>
-          ) : (
-            <>
-              <div className="flex items-baseline justify-center gap-4 mb-2">
-                <span className="text-5xl font-bold text-white">24.99€</span>
-                <span className="text-2xl text-white/40 line-through">62.90€</span>
-              </div>
-              <p className="text-gold text-sm font-semibold mb-8">Ahorras 60% · Pago único · Acceso de por vida</p>
-              <button
-                onClick={() => window.location.href = '/itinerarios'}
-                className="btn-primary inline-flex px-10 py-4"
-              >
-                Comprar ahora
-              </button>
-              <p className="text-white/50 text-xs mt-4">Descarga inmediata · Garantía 48h · Pago seguro con Stripe</p>
-            </>
-          )}
+          <Link
+            href="#guias"
+            className="btn-primary inline-flex px-10 py-4"
+          >
+            Ver guías gratis
+          </Link>
         </div>
       </section>
 
-      {/* Qué incluye */}
-      <section className="bg-background-light py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            Qué incluye el pack
-          </p>
-          <div className="divide-y divide-border-soft">
-            {guias.map((guia) => (
-              <div key={guia.title} className="py-5 flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-semibold text-text-main text-sm mb-0.5">{guia.title}</h3>
-                  <p className="text-text-secondary text-xs">{guia.desc}</p>
+      <section className="bg-background-light py-20" id="guias">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">Guías disponibles</p>
+            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
+              Encuentra la ruta que encaja con tu viaje
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {guides.map((guide) => (
+              <article key={guide.href} className="card-surface p-6 border-t-2 border-gold flex flex-col">
+                <div className="mb-5">
+                  <span className="badge-pill bg-gold/80 text-night mb-4">Gratis</span>
+                  <h3 className="font-display italic text-text-main text-2xl leading-tight mb-2">
+                    {guide.title}
+                  </h3>
+                  <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">
+                    {guide.subtitle}
+                  </p>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {guide.desc}
+                  </p>
                 </div>
-                <div className="text-right flex-shrink-0">
-                  <p className="text-text-secondary line-through text-sm">{guia.price}</p>
-                  <p className="text-terracotta text-xs font-semibold">Incluida</p>
-                </div>
-              </div>
+                <Link
+                  href={guide.href}
+                  className="btn-primary mt-auto w-full justify-center py-3 text-sm"
+                >
+                  Ver guía gratis
+                </Link>
+              </article>
             ))}
           </div>
-
-          {/* Bonus */}
-          <div className="card-surface border-l-2 border-gold px-6 py-6 mt-8">
-            <span className="badge-pill bg-gold text-night mb-3">Bonus exclusivo</span>
-            <h3 className="font-display italic text-text-main text-xl mb-2">Guía secreta "Lisboa como Local"</h3>
-            <p className="text-text-secondary text-sm leading-relaxed">
-              Restaurantes no turísticos, bares de barrio, mercados tradicionales y consejos que solo un local puede darte. Solo disponible en el pack. (Valor 9.99€)
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* Comparativa */}
       <section className="bg-background-light py-20 border-t border-border-soft">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            ¿Por qué el pack?
+            Qué encontrarás
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="card-surface p-6">
-              <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">Compra individual</p>
-              <p className="text-3xl font-bold text-text-secondary mb-4">62.90€</p>
-              <div className="space-y-2">
-                {['Pagas precio completo por cada guía', 'Sin bonus exclusivo', 'Múltiples transacciones', 'Mismo contenido'].map((item) => (
-                  <div key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="text-text-secondary mt-0.5 flex-shrink-0">&#8722;</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="card-surface ring-2 ring-gold p-6 relative">
-              <span className="badge-pill absolute -top-3 right-6 bg-gold text-night">Recomendado</span>
-              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-2">Pack completo</p>
-              <p className="text-3xl font-bold text-text-main mb-1">24.99€</p>
-              <p className="text-xs text-terracotta font-semibold mb-4">Ahorras 60%</p>
-              <div className="space-y-2">
-                {['Todas las 8 guías incluidas', 'Bonus "Lisboa como Local"', 'Compra única', 'Actualizaciones de por vida'].map((item) => (
-                  <div key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Por qué confiar */}
-      <section className="bg-background-light py-20 border-t border-border-soft">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            Por qué confiar en nuestras guías
-          </p>
-          <div className="grid sm:grid-cols-3 gap-8">
-            {[
-              { titulo: 'Verificadas 2026', desc: 'Todas las guías actualizadas con horarios, precios y restaurantes vigentes.' },
-              { titulo: 'Experiencia real', desc: 'Cada recomendación está probada personalmente, no copiada de internet.' },
-              { titulo: 'Actualizaciones gratis', desc: 'Cuando algo cambia, recibes la versión actualizada sin coste adicional.' },
-            ].map((item) => (
-              <div key={item.titulo} className="card-surface p-6 border-t-2 border-gold">
-                <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
-                <p className="text-text-secondary text-xs leading-relaxed">{item.desc}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit) => (
+              <div key={benefit} className="card-surface p-5">
+                <span className="text-terracotta block mb-3">&#10003;</span>
+                <p className="text-text-secondary text-sm leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA final */}
       <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <p className="font-display italic text-white text-4xl mb-4">Comienza tu aventura en Lisboa</p>
-
-          {isFree ? (
-            <>
-              <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizadas 2026</p>
-              <Link
-                href="/itinerarios"
-                className="btn-primary inline-flex px-10 py-4"
-              >
-                Ver guías gratis →
-              </Link>
-            </>
-          ) : (
-            <>
-              <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
-              <button
-                onClick={() => window.location.href = '/itinerarios'}
-                className="btn-primary inline-flex px-10 py-4"
-              >
-                Comprar pack por 24.99€
-              </button>
-            </>
-          )}
+          <p className="font-display italic text-white text-4xl mb-4">
+            Planifica Lisboa con una ruta clara
+          </p>
+          <p className="text-white/60 text-sm mb-8">
+            Empieza por la guía que mejor encaje con tus días y vuelve a esta página cuando quieras comparar opciones.
+          </p>
+          <Link
+            href="/itinerarios"
+            className="btn-primary inline-flex px-10 py-4"
+          >
+            Ver itinerarios
+          </Link>
         </div>
       </section>
     </main>

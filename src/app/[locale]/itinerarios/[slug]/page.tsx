@@ -4,9 +4,6 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
-import { isFreeAccessActive } from '@/lib/guide-config';
-import { BuyButton } from '@/components/BuyButton';
-import type { ProductId } from '@/lib/stripe-products';
 
 export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
@@ -34,20 +31,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function PackPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const pack = await getGuidePack(slug);
-  const isFree = isFreeAccessActive();
 
   if (!pack) notFound();
-
-  const productIdMap: Record<string, string> = {
-    'lisboa-1-dia-lo-esencial': 'lisboa-1-dia-lo-esencial',
-    'lisboa-2-dias-completo': 'lisboa-2-dias-completo',
-    'lisboa-3-dias-premium': 'lisboa-3-dias-premium',
-    'lisboa-full-week': 'lisboa-full-week',
-    'lisboa-romantica': 'lisboa-romantica',
-    'lisboa-familiar': 'lisboa-familiar',
-    'lisboa-fotografia': 'lisboa-fotografia',
-  };
-  const productId = (productIdMap[slug] || slug) as ProductId;
 
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -56,13 +41,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
     description: pack.description,
     image: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`,
     brand: { '@type': 'Brand', name: 'Estaba en Lisboa' },
-    offers: {
-      '@type': 'Offer',
-      url: `https://estabaenlisboa.com/itinerarios/${slug}`,
-      priceCurrency: 'EUR',
-      price: pack.price,
-      availability: 'https://schema.org/InStock',
-    },
+    isAccessibleForFree: true,
   };
 
   return (
@@ -88,7 +67,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
           <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             {pack.title}
           </h1>
-          <p className="text-white/70 text-sm">{pack.duration} &middot; Descarga inmediata &middot; Garantía 48h</p>
+          <p className="text-white/70 text-sm">{pack.duration} &middot; Ruta, mapa y consejos locales</p>
         </div>
       </section>
 
@@ -102,7 +81,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
               <div className="grid sm:grid-cols-3 gap-8 mb-16">
                 {[
                   { titulo: 'Ruta profesional', desc: 'Orden lógico, tiempos reales y consejos locales.' },
-                  { titulo: 'Contenido premium', desc: 'Restaurantes verificados y spots fotográficos.' },
+                  { titulo: 'Consejos locales', desc: 'Restaurantes verificados y spots fotográficos.' },
                   { titulo: 'Actualizado 2026', desc: 'Horarios revisados y recomendaciones recientes.' },
                 ].map((item) => (
                   <div key={item.titulo} className="card-surface p-5 border-t-2 border-gold">
@@ -127,7 +106,7 @@ export default async function PackPage({ params }: { params: { slug: string } })
               </div>
 
               {/* Preview itinerario */}
-              <div>
+              <div id="preview">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-6 pb-3 border-b border-border-soft">Preview del itinerario</p>
                 <div className="space-y-0">
                   {pack.highlights.map((h, i) => (
@@ -146,53 +125,25 @@ export default async function PackPage({ params }: { params: { slug: string } })
             {/* Sidebar compra */}
             <div className="lg:sticky lg:top-24">
               <div className="card-surface p-6 border-l-2 border-gold">
-                {isFree ? (
-                  <>
-                    <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Acceso gratuito</p>
-                    <div className="flex items-baseline gap-2 mb-2">
-                      <span className="text-3xl font-bold text-text-main">0 €</span>
-                      <span className="text-text-secondary text-sm line-through">{pack.price} €</span>
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-3">Gratis</p>
+                <p className="font-display italic text-text-main text-2xl mb-2">Guía gratuita</p>
+                <p className="text-text-secondary text-sm mb-6">
+                  Consulta la ruta completa, mapas, horarios y consejos prácticos para organizar tu viaje.
+                </p>
+                <Link
+                  href="#preview"
+                  className="btn-primary w-full text-center py-3 mb-6"
+                >
+                  Empezar la ruta
+                </Link>
+                <div className="space-y-2 text-sm text-text-secondary mb-6">
+                  {['Ruta organizada', 'Mapa y puntos clave', 'Consejos locales', 'Actualizado 2026'].map((f) => (
+                    <div key={f} className="flex items-center gap-2">
+                      <span className="text-terracotta">&#10003;</span>
+                      {f}
                     </div>
-                    <p className="text-text-secondary text-sm mb-6">Acceso completo sin coste.</p>
-                    <Link
-                      href={`/itinerarios/${slug}`}
-                      className="btn-primary w-full text-center py-3 mb-6"
-                    >
-                      Acceder gratis
-                    </Link>
-                    <div className="space-y-2 text-sm text-text-secondary mb-6">
-                      {['Acceso inmediato online', 'Mapas offline incluidos', 'Actualizaciones gratis', 'Soporte por email'].map((f) => (
-                        <div key={f} className="flex items-center gap-2">
-                          <span className="text-terracotta">&#10003;</span>
-                          {f}
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Pago único · Acceso de por vida</p>
-                    <p className="text-3xl font-bold text-text-main mb-6">{pack.price} €</p>
-                    <BuyButton
-                      productId={productId}
-                      className="btn-primary w-full py-3 mb-6"
-                    >
-                      Comprar ahora
-                    </BuyButton>
-                    <div className="space-y-2 text-sm text-text-secondary mb-6">
-                      {['Acceso inmediato online', 'Mapas offline incluidos', 'Actualizaciones gratis', 'Soporte por email'].map((f) => (
-                        <div key={f} className="flex items-center gap-2">
-                          <span className="text-terracotta">&#10003;</span>
-                          {f}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="border-t border-border-soft pt-5 text-center">
-                      <p className="text-sm text-text-secondary">Garantía de 48 horas</p>
-                      <p className="text-xs text-text-secondary mt-1">Si no te encanta, te devolvemos el dinero.</p>
-                    </div>
-                  </>
-                )}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
