@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Transporte',
     fecha: '19 Jun 2026',
     autor: 'José Tabares',
-    imagen: '/images/elevador-santa-justa.jpg',
+    imagen: '/images/funicular-bica-turistas.jpg',
   },
   {
     id: 'restaurantes-romanticos-lisboa',
