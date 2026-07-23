@@ -35,7 +35,7 @@ export const mainItineraries: Itinerary[] = [
       '2 rutas completas día a día',
       'Restaurantes verificados y terrazas',
       '15+ spots de fotos con horarios',
-      'Tips de transporte y ahorro',
+      'Tips de transporte y logística',
       'Cafés locales y miradores clave'
     ],
     href: '/itinerarios/lisboa-2-dias-completo',
@@ -49,7 +49,7 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-3-dias',
     slug: 'lisboa-3-dias-premium',
     title: 'Lisboa + Alrededores',
-    description: 'Tres días premium con Lisboa, Sintra y la costa: rutas cerradas, logística clara y tiempos reales.',
+    description: 'Tres días completos con Lisboa, Sintra y la costa: rutas cerradas, logística clara y tiempos reales.',
     duration: '3 días + Sintra',
     price: 3.99,
     image: '/images/tranvia-28.jpg',

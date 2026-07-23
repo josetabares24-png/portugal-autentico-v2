@@ -23,12 +23,13 @@ interface Coordinate {
 
 interface PremiumContentProps {
   productId: string;
-  price: number;
+  price?: number;
   productName: string;
   coordinates: Coordinate[];
   mapTitle: string;
   mapDescription: string;
   guideTitle: string;
+  publicAccess?: boolean;
 }
 
 export function PremiumContent({
@@ -39,6 +40,7 @@ export function PremiumContent({
   mapTitle,
   mapDescription,
   guideTitle,
+  publicAccess = false,
 }: PremiumContentProps) {
   const { user, isLoaded } = useUser();
   const [hasAccess, setHasAccess] = useState(false);
@@ -46,7 +48,7 @@ export function PremiumContent({
 
   useEffect(() => {
     async function checkAccess() {
-      if (isFreeAccessActive()) {
+      if (publicAccess || isFreeAccessActive()) {
         setHasAccess(true);
         setIsChecking(false);
         return;
@@ -73,7 +75,7 @@ export function PremiumContent({
     }
 
     checkAccess();
-  }, [user, isLoaded, productId]);
+  }, [user, isLoaded, productId, publicAccess]);
 
   if (isChecking) {
     return (
@@ -103,7 +105,7 @@ export function PremiumContent({
               href={`/checkout/${productId}`}
               className="btn-primary inline-flex px-8 py-3 text-sm"
             >
-              Desbloquear por {price}€
+              {typeof price === 'number' ? `Desbloquear por ${price}€` : 'Ver opciones de acceso'}
             </Link>
           </div>
         </div>

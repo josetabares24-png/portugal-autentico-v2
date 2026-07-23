@@ -3,11 +3,9 @@ import Image from 'next/image';
 import { TimelineStop } from '@/components/itinerarios/TimelineStop';
 import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
 import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
-import { PreviewPaywall } from '@/components/itinerarios/PreviewPaywall';
 import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
 import { PremiumContent } from '@/components/itinerarios/PremiumContent';
 import { lisboaFullWeekTimeline } from '@/data/itineraries';
-import { isFreeAccessActive } from '@/lib/guide-config';
 
 export const metadata = {
   title: 'Lisboa Semana Completa - 7 Días 2026',
@@ -17,12 +15,8 @@ export const metadata = {
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-full-week' },
 };
 
-const PREVIEW_STOPS = 3;
-const PRODUCT_PRICE = 5.99;
-
 export default function LisboaFullWeekPage() {
-  const isFree = isFreeAccessActive();
-  const displayStops = isFree ? lisboaFullWeekTimeline : lisboaFullWeekTimeline.slice(0, PREVIEW_STOPS);
+  const displayStops = lisboaFullWeekTimeline;
   const totalStops = lisboaFullWeekTimeline.length;
 
   const photos = [
@@ -38,8 +32,7 @@ export default function LisboaFullWeekPage() {
     name: 'Lisboa Semana Completa - 7 Días 2026',
     description: 'Itinerario Lisboa 7 días: ciudad, Sintra, Cascais, Arrábida. La experiencia total con horarios, GPS y restaurantes.',
     url: 'https://estabaenlisboa.com/itinerarios/lisboa-full-week',
-    isAccessibleForFree: 'False',
-    hasPart: [{ '@type': 'WebPageElement', isAccessibleForFree: 'False', cssSelector: '.premium-paywall' }],
+    isAccessibleForFree: true,
   };
 
   return (
@@ -72,16 +65,9 @@ export default function LisboaFullWeekPage() {
       <section className="bg-background-light sticky top-16 z-30 border-b border-border-soft">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <span className="font-display italic text-text-main text-sm">Lisboa 7 Días</span>
-          {isFree ? (
-            <span className="text-terracotta font-semibold text-sm">Acceso libre</span>
-          ) : (
-            <Link
-              href="/checkout/lisboa-full-week"
-              className="btn-primary px-4 py-2 text-xs"
-            >
-              Desbloquear {PRODUCT_PRICE}€
-            </Link>
-          )}
+          <a href="#itinerario" className="text-terracotta font-semibold text-sm hover:underline underline-offset-2">
+            Empezar ruta
+          </a>
         </div>
       </section>
 
@@ -101,8 +87,8 @@ export default function LisboaFullWeekPage() {
               <p className="text-text-secondary text-sm">{totalStops} experiencias · 10+ restaurantes</p>
             </div>
             <div className="card-surface p-5 border-t-2 border-gold">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Precio</h3>
-              <p className="text-text-secondary text-sm">{isFree ? 'Gratis (acceso libre)' : `${PRODUCT_PRICE}€ · Acceso de por vida`}</p>
+              <h3 className="font-semibold text-text-main text-sm mb-1">Acceso</h3>
+              <p className="text-text-secondary text-sm">Guía gratuita</p>
             </div>
           </div>
         </div>
@@ -114,20 +100,14 @@ export default function LisboaFullWeekPage() {
           <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
             Tu semana día a día
           </p>
-          <p className={`text-xs uppercase tracking-widest font-semibold mb-10 ${isFree ? 'text-terracotta' : 'text-text-secondary'}`}>
-            {isFree ? 'Acceso completo gratuito' : `Mostrando ${PREVIEW_STOPS} de ${totalStops} paradas`}
+          <p className="text-xs uppercase tracking-widest font-semibold mb-10 text-terracotta">
+            Ruta completa gratuita
           </p>
 
           <TimelineContainer lineColor="primary">
             {displayStops.map((stop, idx) => (
               <TimelineStop key={idx} {...stop} index={idx} />
             ))}
-            <PreviewPaywall
-              productId="lisboa-full-week"
-              price={PRODUCT_PRICE}
-              productName="Lisboa Semana Completa"
-              totalStops={totalStops}
-            />
           </TimelineContainer>
         </div>
       </section>
@@ -136,7 +116,6 @@ export default function LisboaFullWeekPage() {
 
       <PremiumContent
         productId="lisboa-full-week"
-        price={PRODUCT_PRICE}
         productName="Lisboa Full Week"
         coordinates={lisboaFullWeekTimeline
           .filter(stop => stop.coordinates)
@@ -144,6 +123,7 @@ export default function LisboaFullWeekPage() {
         mapTitle="Mapa completo de la semana"
         mapDescription="Lisboa, Sintra, Cascais y alrededores con todas las paradas. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa Full Week"
+        publicAccess
       />
 
       {/* Galería + tips */}
@@ -193,27 +173,13 @@ export default function LisboaFullWeekPage() {
       <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="font-display italic text-white text-4xl mb-4">Tu semana perfecta en Lisboa</p>
-          {isFree ? (
-            <>
-              <p className="text-white/60 text-sm mb-8">Acceso completo · Sin registro · Actualizado 2026</p>
-              <a
-                href="#itinerario"
-                className="btn-primary relative inline-flex px-8 py-3 text-sm"
-              >
-                Ver guía gratis
-              </a>
-            </>
-          ) : (
-            <>
-              <p className="text-white/60 text-sm mb-8">Descarga inmediata · Garantía 48h · Acceso de por vida</p>
-              <Link
-                href="/checkout/lisboa-full-week"
-                className="btn-primary relative inline-flex px-8 py-3 text-sm"
-              >
-                Desbloquear por {PRODUCT_PRICE}€
-              </Link>
-            </>
-          )}
+          <p className="text-white/60 text-sm mb-8">Ruta completa · Mapa y consejos · Actualizado 2026</p>
+          <a
+            href="#itinerario"
+            className="btn-primary relative inline-flex px-8 py-3 text-sm"
+          >
+            Ver guía gratis
+          </a>
         </div>
       </section>
     </main>
