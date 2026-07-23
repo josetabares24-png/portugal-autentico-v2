@@ -78,7 +78,6 @@ export default async function AdminGuiasPage() {
                     </p>
                     <div className="flex items-center gap-4 text-sm">
                       <span className="text-slate-500">{guide.duration}</span>
-                      <span className="font-bold text-orange-600">€{guide.price.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
@@ -120,7 +119,6 @@ export default async function AdminGuiasPage() {
                     </p>
                     <div className="flex items-center gap-4 text-sm">
                       <span className="text-slate-500">{guide.duration}</span>
-                      <span className="font-bold text-orange-600">€{guide.price.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>

@@ -39,4 +39,3 @@ export const metadata: Metadata = {
 Ya configurado con ID: `G-8F54LQ5862`. Verifica en GA4 que:
 - El flujo de datos recibe visitas
 - Los eventos se registran correctamente
-- La conversión de compras está configurada (si usas Stripe)

@@ -73,7 +73,6 @@ export async function PUT(
       subtitle,
       description,
       duration,
-      price,
       image,
       color,
       features = [],
@@ -88,7 +87,6 @@ export async function PUT(
       subtitle?: string;
       description: string;
       duration: string;
-      price: number;
       image: string;
       color?: string;
       features?: string[];
@@ -112,7 +110,7 @@ export async function PUT(
         subtitle: subtitle || null,
         description,
         duration,
-        price,
+        price: 0,
         image,
         color: color || null,
         features,

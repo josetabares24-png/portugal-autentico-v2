@@ -25,9 +25,18 @@ export default function LisboaFamiliarPage() {
     { url: '/images/funicular-bica-turistas.jpg', caption: 'Funicular da Bica' },
     { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el río' },
   ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa con Niños: Itinerario Familiar 2026',
+    description: 'Lisboa en familia: actividades kid-friendly, horarios adaptados y restaurantes para niños. El itinerario perfecto para viajes con niños.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-familiar',
+    isAccessibleForFree: true,
+  };
 
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
@@ -105,15 +114,12 @@ export default function LisboaFamiliarPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-familiar"
-        productName="Lisboa Familiar"
         coordinates={lisboaFamiliarTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa del itinerario familiar"
         mapDescription="Todas las paradas kid-friendly con coordenadas GPS. Haz click en los marcadores para ver cada actividad."
         guideTitle="Lisboa Familiar"
-        publicAccess
       />
 
       {/* Galería + tips */}

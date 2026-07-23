@@ -60,7 +60,6 @@ El rate limiting se activará automáticamente cuando las variables estén confi
 
 **Límites configurados:**
 - 10 requests por minuto por IP
-- Para checkout: 20 requests por minuto (más permisivo)
 
 **Si no está configurado:** El rate limiting se desactiva automáticamente (fail open) para no romper la aplicación.
 

@@ -27,8 +27,6 @@ const isPublicRoute = createRouteMatcher([
   '/contacto',
   '/seguridad',
   '/planifica-tu-viaje',
-  '/checkout(.*)',
-  '/exito',
   '/pack-completo',
   '/sobre-nosotros',
   '/faq',

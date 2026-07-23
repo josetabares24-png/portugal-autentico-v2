@@ -19,7 +19,6 @@ export async function POST(request: Request) {
       subtitle,
       description,
       duration,
-      price,
       image,
       color,
       features = [],
@@ -35,7 +34,6 @@ export async function POST(request: Request) {
       subtitle?: string;
       description: string;
       duration: string;
-      price: number;
       image: string;
       color?: string;
       features?: string[];
@@ -57,7 +55,7 @@ export async function POST(request: Request) {
       subtitle: subtitle || null,
       description,
       duration,
-      price,
+      price: 0,
       image,
       color: color || null,
       features,

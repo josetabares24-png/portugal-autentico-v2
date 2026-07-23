@@ -9,7 +9,6 @@ export interface GuidePack {
   title: string;
   subtitle: string;
   duration: string;
-  price: string;
   image: string;
   color: string;
   badge?: string;
@@ -24,14 +23,13 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa Esencial',
     subtitle: '1 día completo',
     duration: '1 día',
-    price: '1.99',
     image: '/images/alfama-panoramica.jpg',
     color: 'from-sky-400 to-blue-600',
     description: 'La ruta más eficiente para ver Lisboa en un solo día. Horarios reales, paradas clave y consejos locales para aprovechar cada minuto.',
     includes: [
       'Itinerario hora a hora con tiempos realistas',
       'Mapa interactivo con GPS y accesos',
-      'Restaurantes locales con rango de precio',
+      'Restaurantes locales por presupuesto',
       'Spots fotográficos con mejor luz',
       'Tips anti-colas y transporte sencillo',
       'Plan B si llueve o hay viento'
@@ -50,10 +48,9 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa Completa',
     subtitle: '2 días completos',
     duration: '2 días',
-    price: '2.99',
     image: '/images/funicular-bica-turistas.jpg',
     color: 'from-amber-400 to-orange-500',
-    badge: 'MAS VENDIDO',
+    badge: 'RUTA COMPLETA',
     description: 'El fin de semana perfecto: Lisboa clásica + barrios modernos, con rutas claras, logística simple y consejos de locales.',
     includes: [
       'Itinerario completo día a día',
@@ -77,12 +74,11 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa + Alrededores',
     subtitle: '3 días + Sintra',
     duration: '3 días',
-    price: '3.99',
     image: '/images/tranvia-28.jpg',
     color: 'from-violet-500 to-purple-700',
-    description: 'Tres días premium con Lisboa, Sintra y la costa. Logística clara, orden ideal y tiempos reales.',
+    description: 'Tres días completos con Lisboa, Sintra y la costa. Logística clara, orden ideal y tiempos reales.',
     includes: [
-      'Todo el pack 2 días incluido',
+      'Ruta completa de Lisboa en 2 días',
       'Día completo en Sintra (orden ideal)',
       'Cascais y Cabo da Roca sin prisas',
       '10 restaurantes en total',
@@ -90,7 +86,7 @@ export const guidePacks: Record<string, GuidePack> = {
       'Transporte interurbano explicado'
     ],
     highlights: [
-      { time: 'Días 1-2', place: 'Lisboa', desc: 'Contenido completo del pack 2 días, optimizado.' },
+      { time: 'Días 1-2', place: 'Lisboa', desc: 'Contenido completo de la ruta de 2 días, optimizado.' },
       { time: 'Día 3 AM', place: 'Sintra', desc: 'Palacio da Pena + Quinta da Regaleira.' },
       { time: 'Día 3 PM', place: 'Cascais', desc: 'Paseo costero y centro histórico.' },
       { time: 'Día 3 Tarde', place: 'Cabo da Roca', desc: 'Atardecer en el punto más occidental.' },
@@ -103,10 +99,9 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa Full Week',
     subtitle: 'Semana completa',
     duration: '5-7 días',
-    price: '5.99',
     image: '/images/alfama-panoramica.jpg',
     color: 'from-emerald-500 to-teal-600',
-    badge: 'PACK COMPLETO',
+    badge: 'SEMANA COMPLETA',
     description: 'La experiencia definitiva: 7 días explorando Lisboa y sus alrededores con un plan claro día a día.',
     includes: [
       'Todos los itinerarios incluidos',
@@ -130,7 +125,6 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa Romántica',
     subtitle: 'Para parejas',
     duration: 'Romántico',
-    price: '2.99',
     image: '/images/alfama-panoramica.jpg',
     color: 'from-pink-500 to-rose-600',
     badge: 'PARA PAREJAS',
@@ -157,7 +151,6 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa en Familia',
     subtitle: 'Con niños',
     duration: '2-3 días',
-    price: '2.99',
     image: '/images/tranvia-28.jpg',
     color: 'from-emerald-400 to-teal-600',
     badge: 'FAMILIAR',
@@ -184,7 +177,6 @@ export const guidePacks: Record<string, GuidePack> = {
     title: 'Lisboa Fotografía',
     subtitle: 'Spots de fotos',
     duration: 'Flexible',
-    price: '2.99',
     image: '/images/mirador-tajo-amarras-atardecer.jpg',
     color: 'from-pink-500 to-rose-600',
     badge: 'FOTÓGRAFOS',

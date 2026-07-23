@@ -71,13 +71,6 @@ export default function Navbar() {
 
             {isSignedIn && (
               <>
-                <Link
-                  href="/mis-guias"
-                  aria-current={isActive('/mis-guias') ? 'page' : undefined}
-                  className="px-4 py-2 text-night hover:text-terracotta font-semibold text-sm transition-colors"
-                >
-                  Mis Guías
-                </Link>
                 {isAdmin && (
                   <Link
                     href="/admin"
@@ -136,14 +129,6 @@ export default function Navbar() {
 
               {isSignedIn && (
                 <div className="border-t border-taupe/20 pt-3 mt-4 flex flex-col gap-2">
-                  <Link
-                    href="/mis-guias"
-                    aria-current={isActive('/mis-guias') ? 'page' : undefined}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-2.5 text-night hover:text-terracotta font-semibold text-sm transition-colors"
-                  >
-                    Mis Guías
-                  </Link>
                   {isAdmin && (
                     <Link
                       href="/admin"

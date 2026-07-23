@@ -120,10 +120,6 @@ export default async function AdminGuiaEditPage({
               <div className="bg-slate-50 rounded-lg p-3 text-slate-900">{guide.duration}</div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">Precio</label>
-              <div className="bg-slate-50 rounded-lg p-3 text-slate-900 font-bold text-orange-600">€{guide.price.toFixed(2)}</div>
-            </div>
-            <div>
               <label className="block text-sm font-semibold text-slate-700 mb-2">Imagen</label>
               <div className="bg-slate-50 rounded-lg p-3 text-slate-900 font-mono text-sm break-all">{guide.image}</div>
             </div>

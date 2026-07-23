@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { isFreeAccessActive } from '@/lib/guide-config';
 import { guidePacks } from '@/data/guide-packs';
 import { activities } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
@@ -44,7 +43,6 @@ export default function PlanificaTuViajePage() {
   const budget = BUDGETS[tipo];
   const totalPersonaDia = Object.values(budget).reduce((a, b) => a + b, 0);
   const totalViaje = totalPersonaDia * dias * personas;
-  const isFree = isFreeAccessActive();
   const recommendedSlug = getRecommendedGuideSlug(dias);
   const recommendedGuide = guidePacks[recommendedSlug];
   const recommendedActivities = RECOMMENDED_ACTIVITY_SLUGS[tipo]
@@ -178,9 +176,7 @@ export default function PlanificaTuViajePage() {
                     href={`/itinerarios/${recommendedGuide.slug}`}
                     className="text-sm text-terracotta hover:underline underline-offset-2"
                   >
-                    {isFree
-                      ? `Ver ${recommendedGuide.title} (Gratis) →`
-                      : `Ver ${recommendedGuide.title} (${recommendedGuide.price} €) →`}
+                    Ver {recommendedGuide.title} (Gratis) →
                   </Link>
                 </div>
               )}

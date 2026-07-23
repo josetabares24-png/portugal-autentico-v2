@@ -25,9 +25,18 @@ export default function LisboaRomanticaPage() {
     { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el río' },
     { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura romántica' },
   ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa Romántica: Guía para Parejas 2026',
+    description: 'Lisboa en pareja: miradores al atardecer, fado auténtico y cenas especiales. Los rincones más románticos de la ciudad.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-romantica',
+    isAccessibleForFree: true,
+  };
 
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
@@ -105,15 +114,12 @@ export default function LisboaRomanticaPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-romantica"
-        productName="Lisboa Romántica"
         coordinates={lisboaRomanticaTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa de rincones románticos"
         mapDescription="Miradores, restaurantes y lugares especiales para parejas. Haz click en los marcadores para ver cada parada."
         guideTitle="Lisboa Romántica"
-        publicAccess
       />
 
       {/* Galería + tips */}

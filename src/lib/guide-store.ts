@@ -13,7 +13,6 @@ export interface GuideEditData {
   title: string;
   subtitle: string;
   duration: string;
-  price: number;
   image: string;
   color: string;
   description: string;
@@ -32,7 +31,6 @@ interface GuideRow {
   subtitle: string | null;
   description: string;
   duration: string;
-  price: number;
   image: string;
   color: string | null;
   featured: boolean | null;
@@ -73,7 +71,6 @@ export async function getGuideList(): Promise<{
       title: row.title,
       description: row.description,
       duration: row.duration,
-      price: Number(row.price),
       image: row.image,
       features: row.features || [],
       href: `/itinerarios/${row.slug}`,
@@ -109,7 +106,6 @@ export async function getGuidePack(slug: string): Promise<GuidePack | null> {
         title: row.title,
         subtitle: row.subtitle || row.duration,
         duration: row.duration,
-        price: Number(row.price).toFixed(2),
         image: row.image,
         color: row.color || 'from-slate-600 to-slate-800',
         badge: row.badge_text || undefined,
@@ -150,7 +146,6 @@ export async function getGuideEditData(slug: string): Promise<GuideEditData | nu
           title: row.title,
           subtitle: row.subtitle || localPack?.subtitle || '',
           duration: row.duration,
-          price: Number(row.price),
           image: row.image,
           color: row.color || localPack?.color || 'from-slate-600 to-slate-800',
           description: row.description,
@@ -179,7 +174,6 @@ export async function getGuideEditData(slug: string): Promise<GuideEditData | nu
     title: localPack.title,
     subtitle: localPack.subtitle,
     duration: localPack.duration,
-    price: Number(localPack.price),
     image: localPack.image,
     color: localPack.color,
     description: localPack.description,

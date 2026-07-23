@@ -25,9 +25,18 @@ export default function Lisboa3DiasPremiumPage() {
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28' },
     { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura lisboeta' },
   ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa en 3 Días con Sintra 2026',
+    description: '3 días en Lisboa + Sintra. Más de 20 paradas, restaurantes verificados y el timing perfecto para los palacios de Sintra.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium',
+    isAccessibleForFree: true,
+  };
 
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
@@ -105,15 +114,12 @@ export default function Lisboa3DiasPremiumPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-3-dias-premium"
-        productName="Lisboa 3 Días + Sintra"
         coordinates={lisboa3DiasSintraTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa del itinerario"
         mapDescription="Lisboa y Sintra con todas las paradas. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa 3 Días + Sintra"
-        publicAccess
       />
 
       {/* Galería + tips */}
