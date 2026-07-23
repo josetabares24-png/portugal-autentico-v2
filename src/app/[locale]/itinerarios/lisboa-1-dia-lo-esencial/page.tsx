@@ -23,21 +23,6 @@ const navItems = [
 
 const summaryItems = [
   {
-    icon: 'schedule',
-    title: 'Duración',
-    description: '1 día completo, de 09:00 a 21:00.',
-  },
-  {
-    icon: 'route',
-    title: 'Paradas',
-    description: '8 lugares imprescindibles en orden.',
-  },
-  {
-    icon: 'lock_open',
-    title: 'Acceso',
-    description: 'Guía abierta para consultar en ruta.',
-  },
-  {
     icon: 'photo_camera',
     title: 'Spots fotográficos',
     description: 'Mejores ángulos, luz ideal y puntos sin aglomeraciones.',
@@ -174,7 +159,7 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* Resumen */}
-      <section id="resumen" className="scroll-mt-32 py-12 md:py-16">
+      <section id="resumen" className="scroll-mt-32 py-10 md:py-14">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
@@ -185,7 +170,7 @@ export default function Lisboa1DiaPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {summaryItems.map((item) => (
               <div
                 key={item.title}
@@ -203,7 +188,7 @@ export default function Lisboa1DiaPage() {
       </section>
 
       {/* Antes de empezar */}
-      <section id="consejos" className="scroll-mt-32 pb-12 md:pb-16">
+      <section id="consejos" className="scroll-mt-32 pb-10 md:pb-14">
         <div className="mx-auto max-w-6xl px-6">
           <div className="rounded-[1.5rem] border border-terracotta/25 bg-terracotta/5 p-5 md:p-7">
             <div className="grid gap-6 md:grid-cols-[minmax(0,0.7fr),minmax(0,1fr)] md:items-start">
@@ -217,7 +202,7 @@ export default function Lisboa1DiaPage() {
               </div>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {beforeStartItems.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-[#4b5563]">
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-[#374151]">
                     <Icon name="check" size={16} className="mt-0.5 flex-shrink-0 text-terracotta" />
                     <span>{item}</span>
                   </li>
@@ -242,7 +227,7 @@ export default function Lisboa1DiaPage() {
       </div>
 
       {/* Timeline */}
-      <section className="scroll-mt-32 py-14 md:py-20" id="ruta">
+      <section className="scroll-mt-32 py-12 md:py-16" id="ruta">
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-10 border-b border-border-soft pb-6">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
@@ -285,7 +270,7 @@ export default function Lisboa1DiaPage() {
             <h2 className="font-display italic text-3xl leading-tight text-text-main">
               De Alfama a Bairro Alto en un día
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-[1.7] text-[#4b5563]">
+            <p className="mt-4 max-w-2xl text-sm leading-[1.7] text-[#374151]">
               La ruta empieza temprano entre las calles de Alfama, baja hacia el centro, se abre al río en Belém y termina con cena en Bairro Alto.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -325,7 +310,7 @@ function EditorialRouteImage({
   caption: string;
 }) {
   return (
-    <figure className="mb-10 ml-[3.25rem] overflow-hidden rounded-[1.25rem] border border-border-soft bg-white shadow-sm md:mb-12">
+    <figure className="mb-8 overflow-hidden rounded-[1.25rem] border border-border-soft bg-white shadow-sm sm:ml-[3.75rem] md:mb-10">
       <div className="relative aspect-[16/9]">
         <Image
           src={src}

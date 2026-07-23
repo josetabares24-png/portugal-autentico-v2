@@ -42,21 +42,24 @@ export default function ContactoPage() {
   return (
     <main id="main-content">
       {/* Cabecera */}
-      <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
+      <section className="bg-background-light pt-20 pb-10 border-b border-border-soft">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Contacto</p>
           <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight">
             Escríbenos
           </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">
+            ¿Tienes una duda sobre Lisboa, una propuesta o quieres colaborar? Cuéntanos y te responderemos con una orientación concreta.
+          </p>
         </div>
       </section>
 
       {/* Formulario */}
-      <section className="bg-background-light py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="grid md:grid-cols-[2fr,1fr] gap-16 items-start">
+      <section className="bg-background-light py-12 md:py-14">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,2.2fr),minmax(260px,1fr)] md:items-start">
             {/* Form */}
-            <div>
+            <div className="card-surface p-5 sm:p-7">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -135,7 +138,7 @@ export default function ContactoPage() {
                   </button>
 
                   {error && (
-                    <p className="text-xs text-red-600">{error}</p>
+                    <p className="text-xs font-medium text-red-600">{error}</p>
                   )}
 
                   <p className="text-xs text-text-secondary">
@@ -156,19 +159,19 @@ export default function ContactoPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+            <div className="space-y-5 md:pt-1">
               <div className="card-surface p-5 border-l-2 border-gold">
                 <h3 className="font-semibold text-text-main text-sm mb-2">Preguntas frecuentes</h3>
-                <p className="text-text-secondary text-xs leading-relaxed mb-3">
+                <p className="text-text-secondary text-sm leading-relaxed mb-3">
                   Antes de escribirnos, revisa si ya tenemos respuesta para tu duda.
                 </p>
-                <Link href="/faq" className="text-xs text-terracotta hover:underline underline-offset-2">
+                <Link href="/faq" className="text-sm font-semibold text-terracotta hover:underline underline-offset-2">
                   Ver FAQ →
                 </Link>
               </div>
               <div className="card-surface p-5">
                 <h3 className="font-semibold text-text-main text-sm mb-2">Respuesta cercana</h3>
-                <p className="text-text-secondary text-xs leading-relaxed">
+                <p className="text-text-secondary text-sm leading-relaxed">
                   Si tu duda necesita contexto, te responderemos con una recomendación concreta.
                 </p>
               </div>

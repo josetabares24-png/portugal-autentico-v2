@@ -28,15 +28,16 @@ export default function ActividadesPage() {
           <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight mb-3">
             Lisboa sin gastar mucho
           </h1>
-          <p className="text-text-secondary">
+          <p className="text-text-secondary leading-relaxed">
             Elige actividades sueltas y arma tu propio plan: cada una con precio real, duración y un tip de ahorro de local.
           </p>
         </div>
       </section>
 
       {/* Filtros */}
-      <section className="bg-background-light py-3 border-b border-border-soft sticky top-16 z-10">
-        <div className="max-w-6xl mx-auto px-6 space-y-2">
+      <section className="bg-background-light py-4 border-b border-border-soft sticky top-16 z-10">
+        <div className="max-w-6xl mx-auto px-6 space-y-3">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Categoría</p>
           <div className="flex flex-wrap gap-1.5">
             {(['Todas', ...ACTIVITY_CATEGORIES] as const).map((c) => (
               <button
@@ -52,7 +53,7 @@ export default function ActividadesPage() {
               </button>
             ))}
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1.5 border-t border-border-soft pt-3">
             {([
               { id: 'todas', label: 'Cualquier precio' },
               { id: 'gratis', label: 'Gratis' },
@@ -75,9 +76,9 @@ export default function ActividadesPage() {
       </section>
 
       {/* Catálogo */}
-      <section className="bg-background-light py-20">
+      <section className="bg-background-light py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-8">
+          <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">
             {filtered.length} {filtered.length === 1 ? 'actividad' : 'actividades'}
           </p>
           {filtered.length > 0 ? (

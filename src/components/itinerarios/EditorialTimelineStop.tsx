@@ -38,7 +38,7 @@ export function EditorialTimelineStop({
   const stopLabel = type === 'food' ? 'Gastronomía' : 'Visita';
 
   return (
-    <article id={id} className="relative scroll-mt-32 pb-8 md:pb-10">
+    <article id={id} className="relative scroll-mt-32 pb-7 md:pb-9">
       {!isLast && (
         <div
           className="absolute left-[1.18rem] top-12 bottom-0 w-px bg-terracotta/25"
@@ -67,10 +67,7 @@ export function EditorialTimelineStop({
 
           <div className="mt-5 max-w-3xl space-y-5">
             <section aria-label={`Introducción de ${title}`}>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-                Introducción
-              </p>
-              <p className="text-[15.5px] leading-[1.72] text-[#3f4652] sm:text-base">
+              <p className="text-[15.5px] leading-[1.72] text-[#2f3744] sm:text-base">
                 {introParagraph}
               </p>
             </section>
@@ -84,7 +81,7 @@ export function EditorialTimelineStop({
                   {detailParagraphs.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="text-[15.5px] leading-[1.72] text-[#3f4652] sm:text-base"
+                      className="text-[15.5px] leading-[1.72] text-[#2f3744] sm:text-base"
                     >
                       {paragraph}
                     </p>
@@ -101,7 +98,7 @@ export function EditorialTimelineStop({
                 <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-terracotta">
                   Consejo local
                 </p>
-                <p className="text-sm leading-[1.7] text-[#4b5563]">
+                <p className="text-sm leading-[1.7] text-[#374151]">
                   {tip}
                 </p>
               </div>

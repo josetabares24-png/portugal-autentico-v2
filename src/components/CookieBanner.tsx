@@ -2,14 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
   const [consent, setConsent] = useState<string | null>(null);
   const [explicitConsent, setExplicitConsent] = useState(false);
-  const pathname = usePathname();
-  const isHome = pathname === '/' || pathname === '/es';
 
   useEffect(() => {
     const storedConsent = localStorage.getItem('cookieConsent');
@@ -55,46 +52,42 @@ export default function CookieBanner() {
   return (
     <>
       {show && (
-        <div
-          className={`fixed left-0 right-0 z-50 px-3 sm:px-6 ${
-            isHome ? 'top-16 pt-3 sm:top-20 sm:pt-0' : 'bottom-0 pb-3 sm:bottom-0 sm:pb-6'
-          }`}
-        >
-          <div className="relative mx-auto max-w-4xl rounded-2xl border border-border-soft bg-background-light/95 p-3 shadow-card backdrop-blur sm:p-5">
+        <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[min(440px,calc(100vw-3rem))] sm:p-0">
+          <div className="relative rounded-2xl border border-border-soft bg-background-light/95 p-3 pr-10 shadow-card backdrop-blur sm:p-4 sm:pr-11">
             <button
               onClick={closeBanner}
-              className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-lg font-bold text-text-secondary transition-colors hover:text-text-main sm:h-8 sm:w-8"
+              className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main sm:h-8 sm:w-8"
               aria-label="Cerrar banner de cookies"
             >
               ✕
             </button>
 
-            <div className="flex flex-col items-start justify-between gap-2 pr-8 sm:flex-row sm:items-center sm:gap-5">
-              <div className="flex-1">
+            <div className="space-y-3">
+              <div>
                 <h3 className="mb-1 text-xs font-semibold text-text-main sm:mb-1.5">Uso de Cookies</h3>
                 <p className="text-[11px] leading-snug text-text-secondary sm:text-xs sm:leading-relaxed">
-                  Usamos cookies para mejorar la experiencia y analizar el tráfico. Más información en nuestra{' '}
+                  Usamos cookies para mejorar la experiencia y medir el tráfico. Puedes aceptar, rechazar o leer la{' '}
                   <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
                     Política de Cookies
                   </Link>
-                  {' '}y en nuestra{' '}
+                  {' '}y la{' '}
                   <Link href="/politica-privacidad" className="text-terracotta hover:underline underline-offset-2">
-                    Política de Privacidad
+                    Privacidad
                   </Link>.
                 </p>
               </div>
 
-              <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:gap-3">
+              <div className="grid w-full grid-cols-2 gap-2">
                 <button
                   onClick={rejectCookies}
-                  className="min-h-10 rounded-md border border-border-soft px-4 py-2 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary sm:min-h-11 sm:py-2.5"
+                  className="min-h-10 rounded-md border border-border-soft px-4 py-2 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
                   aria-label="Rechazar cookies"
                 >
                   Rechazar
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="btn-primary min-h-10 px-4 py-2 text-xs sm:min-h-11 sm:py-2.5"
+                  className="btn-primary min-h-10 px-4 py-2 text-xs"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
