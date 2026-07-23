@@ -82,9 +82,18 @@ const editorialImages: Record<number, { src: string; alt: string; caption: strin
 export default function Lisboa1DiaPage() {
   const displayStops = lisboa1DiaTimeline;
   const totalStops = lisboa1DiaTimeline.length;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa en 1 Día: Lo Esencial 2026',
+    description: '8 paradas imprescindibles en Lisboa en un solo día. Alfama, Castillo, Belém y más. Itinerario optimizado con horarios y consejos locales.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial',
+    isAccessibleForFree: true,
+  };
 
   return (
     <main id="main-content" className="bg-background-light text-text-main">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section id="inicio" className="relative h-[58vh] min-h-[430px] overflow-hidden md:h-[62vh]">
         <Image
@@ -222,15 +231,12 @@ export default function Lisboa1DiaPage() {
       {/* Mapa */}
       <div id="mapa" className="scroll-mt-32">
         <PremiumContent
-          productId="lisboa-1-dia-lo-esencial"
-          productName="Lisboa en 1 Día"
           coordinates={lisboa1DiaTimeline
             .filter(stop => stop.coordinates)
             .map(stop => stop.coordinates!)}
           mapTitle="Mapa del recorrido"
           mapDescription="Todas las paradas del día con coordenadas GPS. Haz click en los marcadores para ver cada parada."
           guideTitle="Lisboa en 1 Día"
-          publicAccess
           showResources={false}
         />
       </div>

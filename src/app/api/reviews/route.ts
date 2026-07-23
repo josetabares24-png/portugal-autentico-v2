@@ -68,22 +68,6 @@ export async function POST(request: NextRequest) {
 
   const trimmedComment = comment?.trim() || null;
 
-  const { data: purchase, error: purchaseError } = await supabaseAdmin
-    .from('purchases')
-    .select('id')
-    .eq('user_id', userId)
-    .eq('itinerary_id', guideId)
-    .eq('status', 'completed')
-    .maybeSingle();
-
-  if (purchaseError) {
-    return NextResponse.json({ error: 'Error validando la compra' }, { status: 500 });
-  }
-
-  if (!purchase) {
-    return NextResponse.json({ error: 'Solo puedes valorar guías compradas' }, { status: 403 });
-  }
-
   const { data, error } = await supabaseAdmin
     .from('guide_reviews')
     .upsert(

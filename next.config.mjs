@@ -6,6 +6,13 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   async redirects() {
     return [
+      // Commerce legacy routes now point to the free guide collection.
+      { source: '/checkout/:path*', destination: '/itinerarios', permanent: true },
+      { source: '/exito', destination: '/itinerarios', permanent: true },
+      { source: '/mis-guias', destination: '/itinerarios', permanent: true },
+      { source: '/:locale(en|ko|es)/checkout/:path*', destination: '/itinerarios', permanent: true },
+      { source: '/:locale(en|ko|es)/exito', destination: '/itinerarios', permanent: true },
+      { source: '/:locale(en|ko|es)/mis-guias', destination: '/itinerarios', permanent: true },
       // Default locale (no prefix)
       { source: '/tours', destination: '/itinerarios', permanent: true },
       { source: '/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
@@ -62,33 +69,6 @@ const nextConfig = {
   },
   async headers() {
     return [
-      {
-        source: '/checkout/:path*',
-        headers: [
-          {
-            key: 'X-Robots-Tag',
-            value: 'noindex, follow',
-          },
-        ],
-      },
-      {
-        source: '/exito',
-        headers: [
-          {
-            key: 'X-Robots-Tag',
-            value: 'noindex, follow',
-          },
-        ],
-      },
-      {
-        source: '/mis-guias',
-        headers: [
-          {
-            key: 'X-Robots-Tag',
-            value: 'noindex, nofollow',
-          },
-        ],
-      },
       {
         source: '/admin/:path*',
         headers: [

@@ -93,16 +93,12 @@ export default async function RootLayout({
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-          <link rel="preconnect" href="https://js.stripe.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
-          <link rel="preconnect" href="https://api.stripe.com" />
           <link rel="preconnect" href="https://clerk.com" />
           <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-          <link rel="dns-prefetch" href="https://js.stripe.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://api.brevo.com" />
-          <link rel="dns-prefetch" href="https://api.stripe.com" />
           <link rel="dns-prefetch" href="https://clerk.com" />
 
           <SchemaMarkup />

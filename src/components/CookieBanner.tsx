@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
   const [consent, setConsent] = useState<string | null>(null);
   const [explicitConsent, setExplicitConsent] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/' || pathname === '/es';
 
   useEffect(() => {
     const storedConsent = localStorage.getItem('cookieConsent');
@@ -52,23 +55,25 @@ export default function CookieBanner() {
   return (
     <>
       {show && (
-        <div className="fixed bottom-0 left-0 right-0 bg-background-light border-t-2 border-border-soft z-50 p-6 sm:p-8">
-          <div className="container mx-auto max-w-5xl relative">
+        <div
+          className={`fixed left-0 right-0 z-50 px-3 sm:px-6 ${
+            isHome ? 'top-16 pt-3 sm:top-20 sm:pt-0' : 'bottom-0 pb-3 sm:bottom-0 sm:pb-6'
+          }`}
+        >
+          <div className="relative mx-auto max-w-4xl rounded-2xl border border-border-soft bg-background-light/95 p-3 shadow-card backdrop-blur sm:p-5">
             <button
               onClick={closeBanner}
-              className="absolute top-0 right-0 text-text-secondary hover:text-text-main transition-colors text-xl font-bold w-8 h-8 flex items-center justify-center"
+              className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-lg font-bold text-text-secondary transition-colors hover:text-text-main sm:h-8 sm:w-8"
               aria-label="Cerrar banner de cookies"
             >
               ✕
             </button>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pr-8">
+            <div className="flex flex-col items-start justify-between gap-2 pr-8 sm:flex-row sm:items-center sm:gap-5">
               <div className="flex-1">
-                <h3 className="font-semibold text-text-main text-sm mb-2">Uso de Cookies</h3>
-                <p className="text-text-secondary text-xs leading-relaxed">
-                  Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación,
-                  analizar el tráfico del sitio y personalizar el contenido. Al hacer clic en "Aceptar",
-                  consientes el uso de todas las cookies. Puedes consultar más información en nuestra{' '}
+                <h3 className="mb-1 text-xs font-semibold text-text-main sm:mb-1.5">Uso de Cookies</h3>
+                <p className="text-[11px] leading-snug text-text-secondary sm:text-xs sm:leading-relaxed">
+                  Usamos cookies para mejorar la experiencia y analizar el tráfico. Más información en nuestra{' '}
                   <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
                     Política de Cookies
                   </Link>
@@ -79,17 +84,17 @@ export default function CookieBanner() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:gap-3">
                 <button
                   onClick={rejectCookies}
-                  className="px-6 py-3 border border-border-soft text-text-secondary text-xs font-semibold hover:border-text-secondary transition-colors"
+                  className="min-h-10 rounded-md border border-border-soft px-4 py-2 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary sm:min-h-11 sm:py-2.5"
                   aria-label="Rechazar cookies"
                 >
                   Rechazar
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="btn-primary px-6 py-3 text-xs"
+                  className="btn-primary min-h-10 px-4 py-2 text-xs sm:min-h-11 sm:py-2.5"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
@@ -101,7 +106,7 @@ export default function CookieBanner() {
       )}
 
       {!show && consent === 'rejected' && explicitConsent && (
-        <div className="fixed bottom-4 left-4 z-40 bg-background-light border border-border-soft px-4 py-3 flex items-center gap-3">
+        <div className="fixed bottom-4 left-4 z-40 flex items-center gap-3 rounded-xl border border-border-soft bg-background-light px-4 py-3 shadow-card">
           <span className="text-xs font-semibold text-text-main">Cookies rechazadas</span>
           <button
             onClick={openPreferences}

@@ -28,7 +28,7 @@ export default async function AdminPage() {
         </div>
 
         {/* Admin Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {/* Gestión de Guías */}
           <Link
             href="/admin/guias"
@@ -57,23 +57,7 @@ export default async function AdminPage() {
             </div>
             <h2 className="text-2xl font-bold text-slate-900 mb-2">Estadísticas</h2>
             <p className="text-slate-600">
-              Ver ventas, usuarios y métricas de la plataforma
-            </p>
-          </Link>
-
-          {/* Compras */}
-          <Link
-            href="/admin/compras"
-            className="bg-white rounded-2xl border-2 border-slate-200 p-8 hover:border-green-500 hover:shadow-xl transition-all group"
-          >
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">Compras</h2>
-            <p className="text-slate-600">
-              Ver y gestionar todas las compras realizadas
+              Ver guías, reseñas y métricas editoriales
             </p>
           </Link>
         </div>

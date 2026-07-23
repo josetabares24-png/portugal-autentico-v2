@@ -105,7 +105,6 @@ export default function ContactoPage() {
                     >
                       <option value="">Selecciona un asunto</option>
                       <option value="duda-guia">Duda sobre una guía</option>
-                      <option value="problema-pago">Problema con el pago</option>
                       <option value="sugerencia">Sugerencia o feedback</option>
                       <option value="colaboracion">Propuesta de colaboración</option>
                       <option value="otro">Otro</option>
@@ -168,9 +167,9 @@ export default function ContactoPage() {
                 </Link>
               </div>
               <div className="card-surface p-5">
-                <h3 className="font-semibold text-text-main text-sm mb-2">Garantía</h3>
+                <h3 className="font-semibold text-text-main text-sm mb-2">Respuesta cercana</h3>
                 <p className="text-text-secondary text-xs leading-relaxed">
-                  48 horas de devolución sin preguntas. Si no te funciona, te devolvemos el dinero.
+                  Si tu duda necesita contexto, te responderemos con una recomendación concreta.
                 </p>
               </div>
             </div>

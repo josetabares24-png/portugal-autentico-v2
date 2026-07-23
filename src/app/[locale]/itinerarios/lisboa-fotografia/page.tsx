@@ -115,15 +115,12 @@ export default function LisboaFotografiaPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-fotografia"
-        productName="Lisboa para Fotografía"
         coordinates={lisboaFotografiaTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa de spots fotográficos"
         mapDescription="Spots fotográficos con mejores horas de luz, miradores secretos y rincones instagrameables. Haz click en los marcadores para ver cada parada."
         guideTitle="Lisboa para Fotografía"
-        publicAccess
       />
 
       {/* Galería + tips */}

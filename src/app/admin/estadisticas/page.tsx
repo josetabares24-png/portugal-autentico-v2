@@ -1,7 +1,22 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { isAdmin } from '@/lib/auth-utils';
-import { getSalesStats } from '@/lib/supabase';
+import { getGuideList } from '@/lib/guide-store';
+import { supabaseAdmin, validateSupabaseConfig } from '@/lib/supabase';
+
+async function getReviewCount(): Promise<number | null> {
+  try {
+    validateSupabaseConfig();
+    const { count, error } = await supabaseAdmin
+      .from('guide_reviews')
+      .select('id', { count: 'exact', head: true });
+
+    if (error) return null;
+    return count ?? 0;
+  } catch {
+    return null;
+  }
+}
 
 export default async function AdminEstadisticasPage() {
   const admin = await isAdmin();
@@ -9,7 +24,12 @@ export default async function AdminEstadisticasPage() {
     redirect('/');
   }
 
-  const stats = await getSalesStats();
+  const [{ main, special }, reviewCount] = await Promise.all([
+    getGuideList(),
+    getReviewCount(),
+  ]);
+  const totalGuides = main.length + special.length;
+  const featuredGuides = [...main, ...special].filter((guide) => guide.featured).length;
 
   return (
     <main className="min-h-screen bg-[#FFFDF7] pt-24 pb-16">
@@ -27,39 +47,33 @@ export default async function AdminEstadisticasPage() {
           <h1 className="text-4xl sm:text-5xl font-black text-slate-900 mb-2" style={{ fontFamily: 'Georgia, serif' }}>
             Estadísticas
           </h1>
-          <p className="text-xl text-slate-600">Resumen de ventas y rendimiento</p>
+          <p className="text-xl text-slate-600">Resumen editorial de guías y reseñas</p>
         </div>
 
-        {stats ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
-              <p className="text-slate-500 text-sm">Ventas completadas</p>
-              <p className="text-3xl font-black text-green-600">{stats.completed_sales}</p>
-            </div>
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
-              <p className="text-slate-500 text-sm">Ventas pendientes</p>
-              <p className="text-3xl font-black text-orange-600">{stats.pending_sales}</p>
-            </div>
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
-              <p className="text-slate-500 text-sm">Ingresos totales</p>
-              <p className="text-3xl font-black text-slate-900">€{stats.total_revenue.toFixed(2)}</p>
-            </div>
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
-              <p className="text-slate-500 text-sm">Ventas totales</p>
-              <p className="text-3xl font-black text-slate-900">{stats.total_sales}</p>
-            </div>
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
-              <p className="text-slate-500 text-sm">Ticket promedio</p>
-              <p className="text-3xl font-black text-slate-900">€{stats.avg_sale_amount.toFixed(2)}</p>
-            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p className="text-slate-500 text-sm">Guías públicas</p>
+            <p className="text-3xl font-black text-orange-600">{totalGuides}</p>
           </div>
-        ) : (
-          <div className="bg-white rounded-2xl border-2 border-slate-200 p-8 text-center">
-            <p className="text-slate-600">
-              No hay datos disponibles. Revisa la configuración de Supabase o espera nuevas ventas.
+          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p className="text-slate-500 text-sm">Guías principales</p>
+            <p className="text-3xl font-black text-blue-600">{main.length}</p>
+          </div>
+          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p className="text-slate-500 text-sm">Guías especiales</p>
+            <p className="text-3xl font-black text-purple-600">{special.length}</p>
+          </div>
+          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p className="text-slate-500 text-sm">Reseñas</p>
+            <p className="text-3xl font-black text-slate-900">
+              {reviewCount === null ? 'No disponible' : reviewCount}
             </p>
           </div>
-        )}
+          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p className="text-slate-500 text-sm">Destacadas</p>
+            <p className="text-3xl font-black text-green-600">{featuredGuides}</p>
+          </div>
+        </div>
       </div>
     </main>
   );

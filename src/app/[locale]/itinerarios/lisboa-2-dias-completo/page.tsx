@@ -25,9 +25,18 @@ export default function Lisboa2DiasPage() {
     { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28 histórico' },
     { url: '/images/funicular-bica-turistas.jpg', caption: 'Funicular da Bica' },
   ];
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Lisboa en 2 Días: Itinerario Completo 2026',
+    description: '2 días completos en Lisboa con Belém, Alfama, Chiado y más. Horarios optimizados, restaurantes verificados y consejos de local.',
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo',
+    isAccessibleForFree: true,
+  };
 
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
         <Image
@@ -105,15 +114,12 @@ export default function Lisboa2DiasPage() {
       <IncludedFeatures />
 
       <PremiumContent
-        productId="lisboa-2-dias-completo"
-        productName="Lisboa en 2 Días"
         coordinates={lisboa2DiasTimeline
           .filter(stop => stop.coordinates)
           .map(stop => stop.coordinates!)}
         mapTitle="Mapa del itinerario"
         mapDescription="Todas las paradas organizadas por día con coordenadas GPS. Haz click en los marcadores para ver cada parada."
         guideTitle="Lisboa en 2 Días"
-        publicAccess
       />
 
       {/* Galería + tips */}

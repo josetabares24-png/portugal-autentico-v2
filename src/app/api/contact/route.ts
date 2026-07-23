@@ -31,7 +31,6 @@ export async function POST(request: NextRequest) {
     // Mapear asuntos a texto legible
     const asuntoMap: Record<string, string> = {
       'duda-guia': 'Duda sobre una guía',
-      'problema-pago': 'Problema con el pago',
       'sugerencia': 'Sugerencia o feedback',
       'colaboracion': 'Propuesta de colaboración',
       'otro': 'Otro',

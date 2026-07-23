@@ -91,9 +91,9 @@ export default function SobreNosotrosPage() {
               </p>
             </div>
             <div className="card-surface p-6 border-t-2 border-border-soft">
-              <h3 className="font-display italic text-text-main text-xl mb-3">Garantía 48h</h3>
+              <h3 className="font-display italic text-text-main text-xl mb-3">Criterio editorial</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Si la guía no te es útil, te devolvemos el dinero en 48 horas. Sin preguntas.
+                Recomendamos solo lugares, rutas y consejos que encajan con una Lisboa real, útil y disfrutable.
               </p>
             </div>
           </div>

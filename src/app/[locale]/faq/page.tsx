@@ -5,19 +5,19 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    category: 'Compra y Acceso',
+    category: 'Acceso y uso',
     questions: [
       {
-        question: '¿Cómo recibo el itinerario después de comprar?',
-        answer: 'Inmediatamente después del pago recibirás acceso instantáneo a tu Guía Digital Interactiva. Puedes verla online desde cualquier dispositivo con conexión a internet. El acceso es permanente y podrás consultarla cuando quieras.',
+        question: '¿Cómo accedo a los itinerarios?',
+        answer: 'Todas las guías públicas son gratuitas. Puedes abrirlas directamente desde la sección de itinerarios y consultarlas online desde cualquier dispositivo con conexión a internet.',
       },
       {
         question: '¿Puedo usar el itinerario sin internet?',
         answer: 'Sí. Puedes descargar mapas offline, coordenadas GPS y un checklist en formato PNG para usarlo sin conexión. Recomendamos descargar estos recursos antes de viajar para tenerlos disponibles siempre.',
       },
       {
-        question: '¿Qué métodos de pago aceptan?',
-        answer: 'Aceptamos tarjeta de crédito/débito (Visa, Mastercard, Amex) y PayPal. El pago es 100% seguro a través de Stripe.',
+        question: '¿Necesito crear una cuenta?',
+        answer: 'No necesitas iniciar sesión para leer las guías públicas. El acceso con cuenta se mantiene solo para funciones internas de administración.',
       },
     ],
   },
@@ -30,7 +30,7 @@ const faqs = [
       },
       {
         question: '¿Los itinerarios están actualizados?',
-        answer: 'Sí. Actualizamos los itinerarios cada 3 meses con nuevos restaurantes, horarios y tips. Si algo cambia, te avisamos por email automáticamente.',
+        answer: 'Sí. Actualizamos los itinerarios con nuevos restaurantes, horarios y consejos locales cuando detectamos cambios relevantes.',
       },
       {
         question: '¿Incluye entradas a monumentos?',
@@ -50,8 +50,8 @@ const faqs = [
         answer: 'Sí, aunque algunos tramos tienen cuestas. Te indicamos dónde son y alternativas más fáciles. Alfama y Sintra pueden ser cansados para niños pequeños. Tenemos una guía familiar específica.',
       },
       {
-        question: '¿Cómo funciona la garantía de 48 horas?',
-        answer: 'Si no estás satisfecho por cualquier motivo, escríbenos dentro de las primeras 48 horas después de tu compra y te devolvemos el 100% del dinero. Sin preguntas.',
+        question: '¿Puedo pedir ayuda si una ruta no encaja con mi viaje?',
+        answer: 'Sí. Escríbenos desde contacto y te orientamos para elegir la ruta que mejor encaje con tus días, ritmo y tipo de viaje.',
       },
     ],
   },
@@ -157,7 +157,7 @@ export default function FAQPage() {
               href="/itinerarios"
               className="btn-ghost-light px-8 py-3"
             >
-              Ver guías
+            Ver guías
             </Link>
           </div>
         </div>
