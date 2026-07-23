@@ -30,6 +30,7 @@ interface PremiumContentProps {
   mapDescription: string;
   guideTitle: string;
   publicAccess?: boolean;
+  showResources?: boolean;
 }
 
 export function PremiumContent({
@@ -41,6 +42,7 @@ export function PremiumContent({
   mapDescription,
   guideTitle,
   publicAccess = false,
+  showResources = true,
 }: PremiumContentProps) {
   const { user, isLoaded } = useUser();
   const [hasAccess, setHasAccess] = useState(false);
@@ -121,7 +123,7 @@ export function PremiumContent({
         description={mapDescription}
         guideTitle={guideTitle}
       />
-      <UsefulResources />
+      {showResources && <UsefulResources />}
     </>
   );
 }
