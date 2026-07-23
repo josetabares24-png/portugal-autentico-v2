@@ -61,7 +61,7 @@ export default async function ItinerariosPage() {
       </section>
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light py-20">
+      <section id="itinerarios" className="bg-background-light pt-20 pb-16 md:pb-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-12">
             <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Según tus días</p>
@@ -77,18 +77,13 @@ export default async function ItinerariosPage() {
         </div>
       </section>
 
-      {/* Separador */}
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-border-soft" />
-      </div>
-
-      {/* Packs especiales */}
-      <section className="bg-background-light py-20">
+      {/* Más formas de descubrir Lisboa */}
+      <section className="bg-background-light pb-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-12">
-            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Experiencias temáticas</p>
+          <div className="mb-10 md:mb-12">
+            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Más formas de descubrir Lisboa</p>
             <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
-              Packs especiales
+              Elige según tu estilo
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

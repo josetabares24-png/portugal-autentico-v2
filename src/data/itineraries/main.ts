@@ -54,7 +54,7 @@ export const mainItineraries: Itinerary[] = [
     price: 3.99,
     image: '/images/tranvia-28.jpg',
     features: [
-      'Todo el pack 2 días incluido',
+      'Ruta completa de Lisboa en 2 días',
       'Sintra con orden ideal de visita',
       'Cascais y Cabo da Roca optimizados',
       'Consejos de transporte interurbano',
@@ -77,7 +77,7 @@ export const specialItineraries: Itinerary[] = [
     description: 'Siete días completos con Lisboa y alrededores, incluyendo escapadas a Sintra, Cascais, Setúbal y Arrábida.',
     duration: '5-7 días',
     price: 5.99,
-    image: '/images/alfama-panoramica.jpg',
+    image: '/images/parque-nacoes-torres-atardecer.jpg',
     features: [
       'Todos los itinerarios incluidos',
       'Escapadas a Sintra y Cascais',
