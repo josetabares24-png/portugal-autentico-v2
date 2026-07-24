@@ -8,14 +8,376 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 type Article = {
   titulo: string;
   descripcion: string;
+  seoTitle?: string;
+  metaDescription?: string;
   imagen: string;
+  imageAlt?: string;
   categoria: string;
   fecha: string;
   minutos: number;
+  links?: { href: string; label: string }[];
+  cta?: {
+    href: string;
+    label: string;
+    title: string;
+    text: string;
+  };
   contenido: { tipo: string; texto?: string; items?: string[]; imagen?: string; caption?: string }[];
 };
 
 const articles: Record<string, Article> = {
+  'que-hacer-en-lisboa-en-3-dias': {
+    titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
+    descripcion: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',
+    seoTitle: 'Qué hacer en Lisboa en 3 días | Itinerario local',
+    metaDescription: 'Ruta de 3 días por Lisboa con centro histórico, Belém, miradores, transporte, planes si llueve y errores que conviene evitar.',
+    imagen: '/images/alfama-panoramica.jpg',
+    imageAlt: 'Calle inclinada de Lisboa con azulejos y vistas al Tajo al fondo',
+    categoria: 'Guías',
+    fecha: '24 Jul 2026',
+    minutos: 12,
+    links: [
+      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Abrir la guía gratuita de Lisboa en 3 días' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa sin complicarte' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse para ahorrar tiempo' },
+      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Planes gratis que encajan en la ruta' },
+      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-3-dias-premium',
+      label: 'Seguir la ruta completa',
+      title: '¿Quieres llevarte la ruta ya ordenada?',
+      text: 'La guía gratuita de Lisboa en 3 días reúne el recorrido paso a paso para seguirlo sin rehacer el plan cada mañana.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa parece pequeña en el mapa, pero sus cuestas cambian la escala real del viaje. Tres días dan para conocer el centro, respirar junto al río, entrar en Belém y reservar tiempo para barrios menos obvios, siempre que no intentes cruzar la ciudad de punta a punta cada dos horas.' },
+      { tipo: 'subtitulo', texto: 'Antes de repartir los días' },
+      { tipo: 'parrafo', texto: 'La mejor forma de organizar Lisboa es pensar por zonas, no por monumentos sueltos. Baixa, Chiado, Alfama y Graça funcionan bien juntos porque están cerca, aunque haya desnivel. Belém merece su propia media jornada porque está más alejado. El tercer día conviene dejarlo más flexible: miradores, barrios, un museo o una escapada corta según energía y clima.' },
+      { tipo: 'lista', items: [
+        'Usa calzado cómodo desde el primer día: no es una recomendación decorativa, es logística básica.',
+        'Evita meter Belém entre Alfama y Bairro Alto; perderás tiempo en transporte y llegarás cansado.',
+        'Reserva las subidas fuertes para la mañana o para el final de la tarde.',
+        'Deja una pausa real al mediodía, sobre todo en verano.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Día 1: centro histórico y primeras vistas' },
+      { tipo: 'subseccion', texto: 'Mañana: Baixa, Chiado y el primer contacto' },
+      { tipo: 'parrafo', texto: 'Empieza en la Baixa, no porque sea la zona más emocionante, sino porque te orienta. Praça do Comércio, Rua Augusta, Rossio y Restauradores colocan la ciudad en la cabeza: el río abajo, las colinas a los lados y los barrios históricos subiendo desde el centro. Dedica entre dos y tres horas a esta parte si vas sin entrar en museos.' },
+      { tipo: 'parrafo', texto: 'Después sube hacia Chiado y el Carmo. Aquí Lisboa se vuelve más elegante, más literaria y más cómoda para hacer una pausa. El Convento do Carmo ayuda a entender el terremoto de 1755 sin convertir la mañana en una clase larga. Si el día está claro, asómate a las vistas cercanas antes de seguir.' },
+      { tipo: 'subseccion', texto: 'Tarde: Alfama sin correr' },
+      { tipo: 'parrafo', texto: 'Alfama necesita tiempo lento. Si entras con una lista demasiado rígida, se vuelve frustrante: calles estrechas, escaleras, miradores, pequeños desvíos. La idea no es tachar cada esquina, sino subir hacia Santa Luzia y Portas do Sol, bajar por callejones tranquilos y dejar que el barrio haga su trabajo.' },
+      { tipo: 'parrafo', texto: 'Para comer, busca una tasca sencilla fuera de las calles con menús fotográficos. No hace falta convertir la comida en una búsqueda épica: un plato del día, sopa o pescado sencillo suele ser mejor que un restaurante con reclamo turístico en cinco idiomas.' },
+      { tipo: 'subseccion', texto: 'Atardecer: Graça o Senhora do Monte' },
+      { tipo: 'parrafo', texto: 'Si las piernas responden, termina el día en Graça o Senhora do Monte. Son miradores que resumen bien Lisboa: tejados, castillo, río y esa luz que cambia la ciudad en diez minutos. Si estás agotado, no fuerces. Un primer día bien hecho también consiste en parar antes de odiar las cuestas.' },
+      { tipo: 'subtitulo', texto: 'Tiempos aproximados para no ir a la carrera' },
+      { tipo: 'parrafo', texto: 'Una mañana de Baixa y Chiado puede ocupar tres horas sin entrar a muchos sitios. Alfama necesita otras tres si quieres subir, bajar y parar en miradores. Belém pide al menos media jornada, y el tercer día conviene dejarlo con una o dos zonas principales, no con cinco barrios distintos. Lisboa castiga los planes que parecen eficientes pero obligan a cruzar colinas.' },
+      { tipo: 'lista', items: [
+        'Baixa y Chiado: entre 2,5 y 4 horas según pausas y visitas interiores.',
+        'Alfama y miradores cercanos: entre 3 y 5 horas si lo haces sin correr.',
+        'Belém: media jornada amplia, más si entras en varios monumentos.',
+        'Príncipe Real, Estrela o Graça: una mañana o tarde completa si quieres disfrutarlos.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Día 2: Belém y zonas junto al río' },
+      { tipo: 'parrafo', texto: 'Belém es mejor por la mañana. Llegas con más energía, evitas parte del calor y puedes decidir sobre la marcha si entras en monumentos o si prefieres quedarte en el paseo exterior. El Monasterio de los Jerónimos, la Torre de Belém, el MAAT y el río no necesitan todos el mismo nivel de atención; elige según tus intereses.' },
+      { tipo: 'parrafo', texto: 'La conexión desde el centro suele hacerse en tranvía, bus o tren desde Cais do Sodré, según dónde estés alojado. No merece la pena ir andando desde la Baixa salvo que quieras dedicar una mañana entera al paseo. Calcula media jornada amplia, unas cuatro o cinco horas, y añade más si vas a entrar en varios espacios culturales.' },
+      { tipo: 'parrafo', texto: 'A la vuelta, puedes parar en Cais do Sodré, Ribeira das Naus o Santos para una tarde más baja de intensidad. Esta parte de Lisboa ayuda a equilibrar el viaje: menos escalones, más río, más espacio para sentarse sin sentir que estás perdiendo el día.' },
+      { tipo: 'subtitulo', texto: 'Día 3: barrios, miradores o una alternativa según el ritmo' },
+      { tipo: 'parrafo', texto: 'El tercer día es donde se nota si planificaste bien. Si los dos primeros fueron intensos, dedica la mañana a Príncipe Real, São Bento o Estrela: cafés, jardines, tiendas pequeñas y una Lisboa menos monumental. Si todavía tienes energía, puedes subir a Mouraria y Graça con más calma o enlazar varios miradores sin repetir la ruta del día 1.' },
+      { tipo: 'parrafo', texto: 'También puedes usar este día para Sintra o Cascais, pero solo si aceptas que dejas Lisboa a medias. Para una primera visita de tres días, yo reservaría la escapada para viajes más largos, salvo que Sintra sea una prioridad absoluta para ti. Lisboa tiene capas suficientes para llenar tres días sin necesidad de huir de ella.' },
+      { tipo: 'subtitulo', texto: 'Qué cambiar si llueve' },
+      { tipo: 'parrafo', texto: 'Lisboa con lluvia pide menos mirador y más interior. Cambia Santa Luzia por Carmo, museos o cafés largos; cambia las bajadas de Alfama por zonas con mejor pavimento; deja Belém para una ventana seca si puedes. Las aceras portuguesas son bonitas, pero mojadas pueden ser resbaladizas. No planifiques la lluvia como si fuera un detalle menor.' },
+      { tipo: 'subtitulo', texto: 'Dónde comer sin montar una ruta gastronómica' },
+      { tipo: 'parrafo', texto: 'En tres días no hace falta perseguir restaurantes por toda la ciudad. Come cerca de la zona donde ya estás. En Baixa y Chiado, sal de las calles más obvias; en Alfama, evita menús con fotos gigantes; en Belém, acepta que algunas opciones son más turísticas y compensa con una cena sencilla de barrio. Un buen almuerzo en Lisboa suele estar más cerca de una calle lateral que de una plaza principal.' },
+      { tipo: 'parrafo', texto: 'Si quieres controlar gasto y tiempo, elige una comida al día como pausa real y deja las otras más flexibles: pastelaría, sopa, petiscos sencillos o una tasca sin ceremonia. Lo que arruina muchos itinerarios no es comer mal, sino cruzar media ciudad para llegar a un sitio que obliga a reorganizar toda la tarde.' },
+      { tipo: 'subtitulo', texto: 'Errores frecuentes en una ruta de 3 días' },
+      { tipo: 'lista', items: [
+        'Hacer Alfama, Belém y LX Factory el mismo día sin necesidad.',
+        'Reservar alojamiento lejos del metro pensando que todo queda cerca.',
+        'Subir al tranvía 28 en hora punta como si fuera transporte rápido.',
+        'Meter demasiados restaurantes concretos y acabar cruzando la ciudad para comer.',
+        'No dejar margen para descansar, que en Lisboa significa disfrutar más y discutir menos con el mapa.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'Tres días en Lisboa funcionan muy bien si haces una ruta compacta: centro y Alfama el primer día, Belém el segundo, barrios y miradores el tercero. No es una ciudad para exprimir con cronómetro, sino para ordenar con sentido. Si quieres llevar el recorrido listo, la guía gratuita de Lisboa en 3 días te evita rehacer estas decisiones sobre la marcha.' },
+    ],
+  },
+  'donde-alojarse-en-lisboa': {
+    titulo: 'Dónde alojarse en Lisboa: mejores zonas según tu viaje',
+    descripcion: 'Baixa, Chiado, Alfama, Graça, Saldanha y otras zonas explicadas según comodidad, ruido, cuestas y tipo de viaje.',
+    seoTitle: 'Dónde alojarse en Lisboa | Mejores zonas',
+    metaDescription: 'Guía honesta para elegir dónde dormir en Lisboa según tu viaje: primera visita, pareja, familia, vida nocturna, presupuesto y transporte.',
+    imagen: '/images/barrio-calle-residencial.jpg',
+    imageAlt: 'Calle residencial de Lisboa con viajeros caminando entre fachadas de azulejo',
+    categoria: 'Planificación',
+    fecha: '23 Jul 2026',
+    minutos: 13,
+    links: [
+      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Ruta de 3 días para elegir zona con criterio' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte y cuestas antes de reservar' },
+      { href: '/itinerarios/lisboa-2-dias-completo', label: 'Ver la guía gratuita de Lisboa en 2 días' },
+      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
+      { href: '/planifica-tu-viaje', label: 'Planificar el viaje según tus días' },
+    ],
+    cta: {
+      href: '/itinerarios',
+      label: 'Explorar los itinerarios',
+      title: 'El alojamiento mejora cuando sabes tu ruta',
+      text: 'Mira las guías gratuitas por días antes de reservar zona: ahorrarás trayectos y cuestas innecesarias.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Elegir dónde alojarse en Lisboa no va solo de estar cerca del centro. También va de cuestas, ruido, transporte, maletas y ritmo de viaje. Una zona preciosa puede ser incómoda si llegas tarde, viajas con niños o tienes que subir escalones cada noche después de caminar todo el día.' },
+      { tipo: 'subtitulo', texto: 'Cómo elegir zona sin complicarte' },
+      { tipo: 'parrafo', texto: 'Para una primera visita, prioriza tres cosas: conexión con metro o tren, posibilidad de volver caminando por la noche y una ubicación que no te obligue a cruzar la ciudad para cada plan. Lisboa invita a improvisar, pero el alojamiento marca mucho más de lo que parece porque la ciudad tiene desnivel real.' },
+      { tipo: 'lista', items: [
+        'Si es tu primera vez, busca comodidad antes que postal perfecta.',
+        'Si viajas en pareja, puedes permitirte una zona más tranquila o con más encanto.',
+        'Si vas con familia, evita calles muy empinadas o barrios con mucho ruido nocturno.',
+        'Si tu presupuesto es ajustado, mira zonas conectadas por metro aunque no estén en la foto clásica.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Baixa: práctica para una primera visita' },
+      { tipo: 'parrafo', texto: 'Baixa es la opción más fácil de entender. Estás cerca de Rossio, Praça do Comércio, Chiado y los accesos hacia Alfama. Para quien llega por primera vez y quiere moverse sin pensar demasiado, funciona bien. La parte menos atractiva es que algunas calles viven mucho del turismo y pueden sentirse menos locales.' },
+      { tipo: 'parrafo', texto: 'Es buena zona si viajas pocos días, si llegas tarde o si quieres una base cómoda para salir a caminar. Revisa, eso sí, que el alojamiento no esté justo encima de una calle muy transitada. La comodidad no compensa si no duermes bien.' },
+      { tipo: 'subtitulo', texto: 'Chiado: céntrico, bonito y algo más elegante' },
+      { tipo: 'parrafo', texto: 'Chiado tiene librerías, teatros, cafés, tiendas y una posición excelente entre Baixa, Bairro Alto y Cais do Sodré. Suele gustar a parejas y viajeros que quieren estar en el centro sin sentir tanto la zona de paso de Rua Augusta. También tiene cuestas, pero son manejables si eliges bien la calle.' },
+      { tipo: 'parrafo', texto: 'La desventaja es que puede ser caro y que algunas calles cercanas a Bairro Alto se vuelven ruidosas por la noche. Antes de reservar, mira el mapa con calma: dos manzanas pueden cambiar completamente la experiencia.' },
+      { tipo: 'subtitulo', texto: 'Alfama: mucho encanto, poca comodidad' },
+      { tipo: 'parrafo', texto: 'Alfama es preciosa para pasear, escuchar fado y perderse, pero no siempre es la mejor base. Hay callejones estrechos, escaleras, accesos irregulares y alojamientos donde llegar con maleta se convierte en una pequeña prueba física. Si buscas postal y ambiente antiguo, puede ser maravillosa; si buscas eficiencia, quizá no.' },
+      { tipo: 'parrafo', texto: 'La recomiendo para segundas visitas, parejas con poco equipaje o viajeros que aceptan caminar despacio. No la elegiría como primera opción para familias con carrito, personas con movilidad reducida o quien quiera volver de noche sin pensar en la subida.' },
+      { tipo: 'subtitulo', texto: 'Graça: vistas y barrio, con cuestas serias' },
+      { tipo: 'parrafo', texto: 'Graça conserva una sensación más vecinal y tiene algunos de los mejores miradores. Es una zona con personalidad, cafés sencillos y acceso a Alfama y Mouraria, pero exige piernas. Si te alojas arriba, tendrás vistas y calma; también tendrás subidas al final del día.' },
+      { tipo: 'parrafo', texto: 'Funciona bien para quien quiere una Lisboa menos pulida y no depende de horarios muy ajustados. Si vas a salir mucho de noche por Cais do Sodré o Bairro Alto, quizá te resulte incómoda para volver.' },
+      { tipo: 'subtitulo', texto: 'Avenida da Liberdade y Marquês de Pombal' },
+      { tipo: 'parrafo', texto: 'La Avenida da Liberdade y Marquês de Pombal son cómodas, bien conectadas y más ordenadas. No tienen el encanto de Alfama, pero permiten moverse con metro, taxi o a pie hacia el centro. Para hoteles de más categoría, viajes de trabajo o personas que prefieren calles amplias, son una buena apuesta.' },
+      { tipo: 'parrafo', texto: 'Marquês puede sentirse menos romántico, pero es práctico. Si tu viaje combina turismo y desplazamientos fuera del centro, dormir cerca de una estación bien conectada suele ganar a dormir en una calle preciosa pero complicada.' },
+      { tipo: 'subtitulo', texto: 'Bairro Alto y Príncipe Real' },
+      { tipo: 'parrafo', texto: 'Bairro Alto tiene vida nocturna, bares y mucha energía. Puede ser divertido si vienes a salir, pero no es el lugar más sensato si necesitas silencio. Príncipe Real, en cambio, mantiene una mezcla más tranquila de jardines, restaurantes, tiendas pequeñas y alojamiento con más aire editorial.' },
+      { tipo: 'parrafo', texto: 'Para parejas, Príncipe Real suele funcionar mejor que Bairro Alto. Para vida nocturna, Bairro Alto es cómodo si aceptas ruido. Para familias, miraría otra zona salvo que el alojamiento garantice silencio y buen acceso.' },
+      { tipo: 'subtitulo', texto: 'Saldanha y Parque das Nações' },
+      { tipo: 'parrafo', texto: 'Saldanha es menos turístico, pero tiene metro, avenidas amplias y una relación práctica entre precio, calma y conexión. Puede ser buena opción si no necesitas dormir en la postal clásica. Parque das Nações está más lejos del centro histórico, pero es ordenado, plano y útil para familias o eventos concretos.' },
+      { tipo: 'parrafo', texto: 'No elegiría Parque das Nações para una primera visita corta centrada en Alfama, Baixa y Belém. Sí puede tener sentido si valoras comodidad, modernidad o llegas por motivos concretos a esa zona.' },
+      { tipo: 'subtitulo', texto: 'Conexión con aeropuerto y transporte' },
+      { tipo: 'parrafo', texto: 'Si llegas por avión, dormir cerca de metro puede ahorrarte estrés desde el primer minuto. Zonas como Saldanha, Marquês de Pombal, Baixa-Chiado u Oriente conectan bien según tu ruta y equipaje. No elijas solo por distancia en kilómetros: revisa cambios, escaleras, horario de llegada y si tendrás que subir una cuesta con maleta.' },
+      { tipo: 'parrafo', texto: 'Para viajes cortos, una zona bien conectada vale más que una zona ligeramente más bonita. Si vas a Belém, Cascais o Sintra, mira también la conexión con Cais do Sodré o Rossio. Dormir donde cada excursión empieza con dos transbordos suele cansar más que pagar un poco más por ubicación inteligente.' },
+      { tipo: 'subtitulo', texto: 'Zonas que pueden resultar incómodas' },
+      { tipo: 'parrafo', texto: 'No hay una zona universalmente mala, pero sí zonas que pueden ser mala elección para ciertos viajes. Alfama y Graça pueden cansar por cuestas; Bairro Alto y Cais do Sodré pueden molestar por ruido; áreas muy alejadas del metro pueden convertir cada salida en logística. También conviene desconfiar de alojamientos que prometen centro pero están en calles empinadas o con acceso difícil.' },
+      { tipo: 'parrafo', texto: 'Si viajas con personas mayores, carrito o movilidad reducida, confirma ascensor, acceso en taxi y pendiente real de la calle. Lisboa es hermosa, pero no siempre amable con quien necesita trayectos planos. Ese detalle puede cambiar completamente la percepción del viaje.' },
+      { tipo: 'subtitulo', texto: 'Recomendación final según tu viaje' },
+      { tipo: 'lista', items: [
+        'Primera visita: Baixa, Chiado o Avenida da Liberdade.',
+        'Pareja: Chiado, Príncipe Real o una Alfama bien elegida.',
+        'Familia: Avenida da Liberdade, Saldanha o Parque das Nações si priorizas comodidad.',
+        'Vida nocturna: Bairro Alto o Cais do Sodré, aceptando ruido.',
+        'Presupuesto ajustado: Saldanha, Arroios o zonas con metro bien conectado.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'La mejor zona para alojarse en Lisboa no es siempre la más bonita, sino la que encaja con tu ritmo. Para pocos días, comodidad. Para una visita lenta, carácter. Para familias, accesibilidad. Antes de reservar, mira tus rutas: dormir cerca de lo que vas a hacer vale más que perseguir una foto de portada.' },
+    ],
+  },
+  'lisboa-card-vale-la-pena': {
+    titulo: 'Lisboa Card: qué incluye y cuándo vale la pena',
+    descripcion: 'Cómo decidir si la Lisboa Card compensa según tu ritmo, transportes, monumentos y días de visita, sin depender de precios inventados.',
+    seoTitle: 'Lisboa Card: qué incluye y cuándo compensa',
+    metaDescription: 'Guía prudente para decidir si la Lisboa Card vale la pena según monumentos, transporte, ritmo de viaje y condiciones que debes verificar.',
+    imagen: '/images/funicular-bica-turistas.jpg',
+    imageAlt: 'Turistas subiendo a un funicular de Lisboa en una calle empinada',
+    categoria: 'Consejos',
+    fecha: '22 Jul 2026',
+    minutos: 11,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'Entender el transporte antes de decidir' },
+      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Ver cómo encaja en una ruta de 3 días' },
+      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Alternativas gratuitas y de bajo coste' },
+      { href: '/itinerarios/lisboa-2-dias-completo', label: 'Abrir la guía gratuita de Lisboa en 2 días' },
+      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-2-dias-completo',
+      label: 'Ver la guía de 2 días',
+      title: 'La tarjeta solo ayuda si tu ruta la aprovecha',
+      text: 'Usa la guía gratuita de Lisboa en 2 días para ver si concentras suficientes visitas y trayectos para que la Lisboa Card tenga sentido.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'La Lisboa Card puede ser útil, pero no es una compra automática. Compensa cuando concentras monumentos, museos y transporte en poco tiempo; pierde sentido si vas a caminar sin prisa, mirar miradores gratuitos y entrar solo en uno o dos lugares de pago.' },
+      { tipo: 'subtitulo', texto: 'Qué es la Lisboa Card' },
+      { tipo: 'parrafo', texto: 'La Lisboa Card es una tarjeta turística pensada para combinar transporte público y acceso o descuentos en espacios culturales. Normalmente se vende por duraciones de 24, 48 o 72 horas, activadas desde el primer uso. La lista exacta de monumentos, museos, descuentos y condiciones puede cambiar, así que conviene verificarla en la web oficial antes de decidir.' },
+      { tipo: 'parrafo', texto: 'Su valor no está en tener una tarjeta bonita en la cartera, sino en ahorrar fricción: menos compras sueltas, menos dudas en transporte y posibilidad de entrar en varios lugares si tu ruta está bien concentrada. Si tu plan es muy libre, ese ahorro de fricción quizá no compense el coste.' },
+      { tipo: 'subtitulo', texto: 'Qué suele incluir' },
+      { tipo: 'parrafo', texto: 'La tarjeta suele girar alrededor de transporte público urbano y una selección de museos, monumentos y servicios culturales. Entre los nombres que muchas personas revisan están espacios de Belém, algunos museos nacionales, elevadores o atracciones con descuento, pero no debes asumir inclusiones concretas sin comprobar la lista vigente el día de compra.' },
+      { tipo: 'lista', items: [
+        'Transporte público dentro de la red indicada por la tarjeta.',
+        'Entrada gratuita o descuento en una selección de museos y monumentos.',
+        'Descuentos en servicios turísticos o culturales participantes.',
+        'Ventajas de acceso en algunos lugares cuando las condiciones lo permiten.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Cuándo puede compensar' },
+      { tipo: 'parrafo', texto: 'Puede compensar si vas a dedicar un día intenso a Belém, museos y transporte. Por ejemplo: moverte desde el centro, entrar en uno o dos monumentos importantes, sumar otro museo y volver usando transporte público. En ese caso, el ahorro potencial y la comodidad empiezan a tener sentido.' },
+      { tipo: 'parrafo', texto: 'También puede funcionar si es tu primera visita y prefieres simplificar decisiones. Hay viajeros que pagan un poco más por no pensar en cada billete. Eso no es malo, siempre que sepas que estás comprando comodidad además de posibles ahorros.' },
+      { tipo: 'parrafo', texto: 'El caso más claro suele ser un viaje corto con agenda cultural concentrada. Si tienes dos días y uno de ellos está dedicado a Belém, museo, elevador o monumento, la tarjeta entra en conversación. Si en cambio tu día fuerte es caminar por barrios, sentarte en miradores y comer sin prisa, no hay tanta ventaja que capturar.' },
+      { tipo: 'subtitulo', texto: 'Cuándo probablemente no compensa' },
+      { tipo: 'parrafo', texto: 'No suele compensar si tu viaje es tranquilo, si vas a entrar en pocos monumentos o si te interesan más los barrios, miradores, cafés y paseos junto al río. Lisboa tiene muchísimo valor gratuito: Alfama, Graça, plazas, jardines, mercados, vistas y calles donde lo importante no está detrás de una taquilla.' },
+      { tipo: 'parrafo', texto: 'Tampoco la compraría para un día en el que ya tienes una comida larga, mucho descanso o planes dispersos. La tarjeta premia la concentración. Si pasas media mañana en un solo museo y luego te vas a pasear sin entrar en nada más, es probable que pagar por separado sea más sensato.' },
+      { tipo: 'subtitulo', texto: 'Ejemplo práctico: día intenso' },
+      { tipo: 'parrafo', texto: 'Imagina una jornada centrada en Belém: sales del centro en transporte, visitas un monumento principal, entras en otro espacio cultural, haces una pausa, añades un museo y regresas al final de la tarde. Ese tipo de día es el terreno natural de la Lisboa Card. La clave es que los puntos estén cerca y que realmente quieras entrar.' },
+      { tipo: 'subtitulo', texto: 'Ejemplo práctico: viaje tranquilo' },
+      { tipo: 'parrafo', texto: 'Ahora imagina un día de Alfama, miradores, café, paseo por la Baixa y atardecer en Graça. Quizá uses transporte una vez, quizá no entres en ningún museo y quizá la mejor parte del día sea sentarte a mirar el río. En ese escenario, la tarjeta pierde fuerza. No porque sea mala, sino porque tu viaje no la necesita.' },
+      { tipo: 'subtitulo', texto: 'Comprar tarjeta o pagar por separado' },
+      { tipo: 'parrafo', texto: 'La decisión se hace con una suma sencilla: anota los lugares de pago que de verdad vas a visitar, confirma si están incluidos o tienen descuento, añade los trayectos de transporte y compara. Si necesitas inventar visitas para justificar la tarjeta, probablemente no la necesitas. Si la ruta ya tiene varias entradas y desplazamientos, puede ser buena aliada.' },
+      { tipo: 'subtitulo', texto: 'Cómo calcularlo en cinco minutos' },
+      { tipo: 'parrafo', texto: 'Abre la lista oficial de la tarjeta y marca solo los lugares que ya estaban en tu plan. Después mira el precio vigente de cada entrada en la web oficial del monumento o museo. Añade los trayectos de transporte que harías igualmente. Si el total se acerca o supera el coste de la tarjeta, entonces tiene sentido mirarla en serio. Si queda lejos, no fuerces.' },
+      { tipo: 'parrafo', texto: 'El cálculo debe hacerse por día, no por ilusión de viaje. Una tarjeta de 48 o 72 horas puede parecer más rentable, pero solo si esos días concentran visitas incluidas. Si uno de los días lo pasas caminando por Alfama, descansando en miradores o yendo a la playa, ese día quizá no aporta valor a la tarjeta.' },
+      { tipo: 'subtitulo', texto: 'Errores al usar la Lisboa Card' },
+      { tipo: 'lista', items: [
+        'Comprar la tarjeta antes de saber qué vas a visitar.',
+        'Activarla demasiado tarde o demasiado pronto sin pensar en la ventana de uso.',
+        'Ir a monumentos incluidos en horas de máxima cola y perder parte del día esperando.',
+        'Creer que todos los descuentos equivalen a ahorro real.',
+        'No revisar cierres, obras o cambios de condiciones antes de salir.',
+      ] },
+      { tipo: 'parrafo', texto: 'Otro error frecuente es medirla solo en dinero. A veces no ahorra mucho, pero reduce compras sueltas y dudas. Otras veces parece ahorrar, pero te empuja a correr para amortizarla. La mejor tarjeta es la que encaja con tu forma de viajar, no la que te obliga a viajar distinto.' },
+      { tipo: 'subtitulo', texto: 'Alternativas gratuitas o de bajo coste' },
+      { tipo: 'parrafo', texto: 'Antes de comprar cualquier tarjeta, mira también planes gratuitos: miradores, jardines, barrios, paseo junto al Tajo, mercados de acceso libre y rutas compactas por zonas. A veces el mejor viaje no es el que incluye más entradas, sino el que alterna una visita cultural con tiempo suficiente para caminar sin prisa.' },
+      { tipo: 'subtitulo', texto: 'Advertencia antes de comprar' },
+      { tipo: 'parrafo', texto: 'No uses este artículo como sustituto de la comprobación final. Tarifas, monumentos participantes, horarios y ventajas pueden cambiar. La decisión correcta se toma con la información oficial abierta delante y con tu ruta escrita. Si falta cualquiera de las dos cosas, espera antes de pagar.' },
+      { tipo: 'parrafo', texto: 'También revisa si viajas con niños, mayores, estudiantes o personas con descuentos propios. A veces una entrada reducida, un día gratuito o un ritmo familiar cambia por completo el cálculo. La Lisboa Card debe compararse con tu situación real, no con un ejemplo ideal.' },
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'La Lisboa Card vale la pena si tu ruta ya incluye varios monumentos, museos y trayectos en un periodo corto. No la compraría para un viaje lento o muy centrado en planes gratuitos. La regla es simple: primero diseña la ruta, después decide la tarjeta. Hacerlo al revés suele llevar a gastar más o correr demasiado.' },
+    ],
+  },
+  'como-moverse-por-lisboa': {
+    titulo: 'Cómo moverse por Lisboa: metro, tranvía, autobús y a pie',
+    descripcion: 'Metro, tranvías, buses, trenes, cuestas y alternativas para moverte por Lisboa con menos dudas desde el primer día.',
+    seoTitle: 'Cómo moverse por Lisboa | Transporte claro',
+    metaDescription: 'Guía práctica para moverte por Lisboa en metro, tranvía, bus, tren, a pie, taxi o apps, con consejos sobre cuestas y trayectos útiles.',
+    imagen: '/images/turista-tranvia-28.jpg',
+    imageAlt: 'Viajera consultando el móvil en una calle de Lisboa mientras pasa un tranvía',
+    categoria: 'Transporte',
+    fecha: '21 Jul 2026',
+    minutos: 12,
+    links: [
+      { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
+      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Aplicar el transporte a una ruta de 3 días' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Elegir alojamiento según conexiones' },
+      { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Abrir la guía gratuita de Lisboa en 1 día' },
+      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-1-dia-lo-esencial',
+      label: 'Abrir el itinerario de 1 día',
+      title: 'Moverse bien empieza con una ruta realista',
+      text: 'La guía gratuita de Lisboa en 1 día ordena los trayectos principales para que no pierdas tiempo subiendo y bajando sin sentido.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Moverse por Lisboa es fácil cuando entiendes una idea: no siempre gana el trayecto más corto en el mapa. A veces conviene rodear en metro, bajar andando o usar un elevador para ahorrar una subida que parece pequeña y acaba pesando en las piernas.' },
+      { tipo: 'subtitulo', texto: 'Metro: rápido para distancias claras' },
+      { tipo: 'parrafo', texto: 'El metro es la forma más previsible de moverte entre zonas conectadas: aeropuerto, Saldanha, Marquês, Baixa-Chiado, Cais do Sodré y Oriente, entre otras. Es limpio, sencillo de leer y útil cuando tienes que cruzar ciudad. No resuelve todos los barrios históricos, pero evita muchos trayectos largos en superficie.' },
+      { tipo: 'parrafo', texto: 'Para llegar desde el aeropuerto suele ser una opción práctica si llevas equipaje manejable y tu alojamiento queda cerca de una estación. Si llegas de madrugada, viajas con niños o llevas maletas grandes, puede compensar taxi, Uber o Bolt por comodidad.' },
+      { tipo: 'subtitulo', texto: 'Tranvías: icono, no siempre transporte eficiente' },
+      { tipo: 'parrafo', texto: 'El tranvía 28 es famoso por una razón: atraviesa calles estrechas, sube colinas y condensa una imagen muy reconocible de Lisboa. Pero también puede ir lleno, lento y con colas. Si lo quieres vivir como experiencia, intenta hacerlo temprano o al final de la tarde. Si solo quieres llegar rápido, quizá no es la mejor herramienta.' },
+      { tipo: 'parrafo', texto: 'Otros tranvías y recorridos pueden ser más prácticos según el trayecto. Para Belém, por ejemplo, conviene revisar la combinación desde Cais do Sodré o desde tu zona de alojamiento. No diseñes el día alrededor de un tranvía si ese tranvía te obliga a esperar demasiado.' },
+      { tipo: 'subtitulo', texto: 'Autobuses: menos románticos, muy útiles' },
+      { tipo: 'parrafo', texto: 'Los autobuses no salen tanto en las fotos, pero salvan rutas que el metro no cubre bien. Son útiles para conectar miradores, zonas residenciales y puntos que quedan incómodos a pie. El problema es que dependen más del tráfico y pueden ser menos intuitivos para una primera visita.' },
+      { tipo: 'parrafo', texto: 'Mi consejo es usarlos cuando Google Maps o la app de transporte los muestre claramente como mejor opción, pero no planificar todo el viaje solo con buses. Lisboa se entiende mejor mezclando metro, caminata y soluciones puntuales.' },
+      { tipo: 'subtitulo', texto: 'Elevadores y funiculares' },
+      { tipo: 'parrafo', texto: 'Los elevadores y funiculares existen por una razón: Lisboa sube de verdad. Bica, Glória, Lavra y Santa Justa no son solo atracciones, también cuentan cómo la ciudad resolvió sus desniveles. Pueden ahorrar esfuerzo, aunque en horas turísticas quizá haya más cola que ventaja.' },
+      { tipo: 'parrafo', texto: 'Si vas con poco tiempo, úsalos cuando encajen en tu ruta, no como una lista obligatoria. A veces una calle paralela, una pausa o una combinación con metro resuelve mejor que esperar media hora por una foto.' },
+      { tipo: 'subtitulo', texto: 'Trenes urbanos: Belém, Sintra y Cascais' },
+      { tipo: 'parrafo', texto: 'Para Belém puede servir el eje de Cais do Sodré y la línea hacia Cascais, además de opciones en tranvía o bus. Para Cascais, el tren desde Cais do Sodré es la referencia habitual. Para Sintra, la conexión desde Rossio suele ser la más directa para quien se aloja en el centro. Horarios y frecuencias cambian, así que revisa siempre antes de salir.' },
+      { tipo: 'parrafo', texto: 'No mezcles Sintra y Cascais en el mismo día si quieres disfrutar. Es posible en papel, pero suele convertir la jornada en una sucesión de esperas. Para una primera visita, elige una escapada y hazla bien.' },
+      { tipo: 'subtitulo', texto: 'Cómo llegar a Belém sin perder media mañana' },
+      { tipo: 'parrafo', texto: 'Belém está lo bastante cerca para parecer sencillo y lo bastante lejos para desordenar un día mal planificado. Si sales desde Baixa o Chiado, revisa opciones desde Cais do Sodré, tranvía o bus según el estado del servicio. Lo importante es salir con una opción principal y una alternativa, porque las colas o incidencias pueden cambiar el plan.' },
+      { tipo: 'parrafo', texto: 'Evita ir a Belém entre dos planes del centro histórico. Hazlo como bloque: transporte, paseo, monumentos o museos, pausa y regreso. Así no conviertes una zona agradable junto al río en una carrera de ida y vuelta.' },
+      { tipo: 'subtitulo', texto: 'Sintra y Cascais, de forma introductoria' },
+      { tipo: 'parrafo', texto: 'Sintra y Cascais no son barrios de Lisboa, pero muchas personas los meten en el mismo viaje. Para Sintra, piensa en una jornada casi completa y sal temprano. Para Cascais, el plan puede ser más ligero y costero. En ambos casos, consulta horarios oficiales de tren antes de salir y no armes una escapada sobre frecuencias recordadas de otro año.' },
+      { tipo: 'subtitulo', texto: 'Caminar: necesario, pero con estrategia' },
+      { tipo: 'parrafo', texto: 'Caminar es parte del viaje. La Baixa se hace muy bien a pie, Chiado pide una subida, Alfama pide paciencia y Graça pide piernas. Lo importante es no caminar contra la ciudad: si puedes empezar arriba y bajar, hazlo. Si puedes agrupar miradores cercanos, no los separes en días distintos.' },
+      { tipo: 'parrafo', texto: 'En verano, evita las subidas largas al mediodía. En lluvia, cuidado con la calçada portuguesa porque puede resbalar. Y si viajas con movilidad reducida, carrito o cansancio acumulado, conviene priorizar zonas planas y transporte antes que romantizar las cuestas.' },
+      { tipo: 'subtitulo', texto: 'Tarjetas y sistemas de pago' },
+      { tipo: 'parrafo', texto: 'Lisboa utiliza tarjetas y soportes de transporte que conviene revisar antes de viajar, porque tarifas y condiciones pueden cambiar. La idea práctica es tener desde el primer día una forma de pago válida para metro, bus y tranvía, y no depender de comprar billetes sueltos con prisa en cada trayecto.' },
+      { tipo: 'subtitulo', texto: 'Taxi, Uber y Bolt' },
+      { tipo: 'parrafo', texto: 'Taxi, Uber y Bolt son buenos recursos para trayectos puntuales: llegar con maletas, volver tarde, salvar una subida o cruzar la ciudad cuando el transporte público te obliga a demasiados cambios. No los usaría para todo, pero sí como herramienta de descanso cuando la ruta empieza a pesar.' },
+      { tipo: 'subtitulo', texto: 'Accesibilidad, cochecitos y cuestas' },
+      { tipo: 'parrafo', texto: 'Lisboa no siempre es fácil para movilidad reducida, cochecitos o rodillas cansadas. Antes de elegir alojamiento o ruta, mira si hay ascensor, pendiente, escaleras y transporte cercano. Baixa, parte de Avenida da Liberdade, Parque das Nações y algunos tramos junto al río son más amables. Alfama, Graça y Bairro Alto requieren más paciencia.' },
+      { tipo: 'subtitulo', texto: 'Moverse de noche' },
+      { tipo: 'parrafo', texto: 'De noche conviene ser prudente con horarios. El metro no funciona toda la madrugada en condiciones normales, algunos buses reducen frecuencia y las apps de coche pueden subir de precio cuando hay mucha demanda. Si vas a salir por Bairro Alto, Cais do Sodré o Santos, decide antes cómo volver, sobre todo si duermes en una colina.' },
+      { tipo: 'parrafo', texto: 'Para trayectos cortos nocturnos, caminar puede ser agradable en zonas con movimiento, pero no lo conviertas en obligación si estás lejos, cansado o no conoces el barrio. Lisboa es bastante caminable en el centro, aunque las distancias de noche se sienten más largas cuando aparecen cuestas y calles vacías.' },
+      { tipo: 'subtitulo', texto: 'Errores frecuentes' },
+      { tipo: 'lista', items: [
+        'Pensar que el tranvía 28 es una solución rápida para todo.',
+        'Reservar alojamiento lejos del metro sin revisar las cuestas.',
+        'Ir a Belém tarde y con prisa.',
+        'Subestimar los tiempos entre miradores.',
+        'No tener plan alternativo si llueve o si un transporte va lleno.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'La mejor forma de moverse por Lisboa es combinar. Metro para cruzar ciudad, caminata por zonas compactas, tranvía como experiencia puntual, tren para Belém o escapadas, y coche con app cuando el cuerpo lo pida. Si ordenas la ruta por barrios, el transporte deja de ser un problema y empieza a trabajar a tu favor.' },
+    ],
+  },
+  'que-hacer-gratis-en-lisboa': {
+    titulo: 'Qué hacer gratis en Lisboa: planes y lugares que valen la pena',
+    descripcion: 'Miradores, barrios, jardines, río y planes sencillos para disfrutar Lisboa con presupuesto mínimo sin caer en reclamos vacíos.',
+    seoTitle: 'Qué hacer gratis en Lisboa | Planes útiles',
+    metaDescription: 'Planes gratis en Lisboa que sí valen la pena: miradores, barrios, jardines, río, mercados, lluvia y una ruta gratuita de medio día.',
+    imagen: '/images/miradouro-grupo-atardecer.jpg',
+    imageAlt: 'Personas sentadas en un mirador de Lisboa durante el atardecer',
+    categoria: 'Guías',
+    fecha: '20 Jul 2026',
+    minutos: 11,
+    links: [
+      { href: '/blog/mejores-miradores-lisboa', label: 'Miradores de Lisboa para completar el plan' },
+      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Encajar planes gratis en una ruta de 3 días' },
+      { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo pagar entradas y cuándo no' },
+      { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Abrir la guía gratuita de Lisboa en 1 día' },
+      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
+    ],
+    cta: {
+      href: '/itinerarios',
+      label: 'Ver itinerarios gratuitos',
+      title: 'Organiza los planes gratis por zonas',
+      text: 'Las guías gratuitas te ayudan a unir miradores, barrios y pausas sin gastar más por moverte mal.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa se presta mucho a gastar sin darte cuenta, pero también permite días muy buenos con presupuesto mínimo. Lo importante es no confundir gratis con improvisado: si ordenas miradores, barrios, río y pausas, puedes tener una jornada completa sin pagar entradas.' },
+      { tipo: 'subtitulo', texto: 'Miradores gratuitos' },
+      { tipo: 'parrafo', texto: 'Los miradores son el gran lujo gratuito de Lisboa. Senhora do Monte, Graça, Santa Luzia, Portas do Sol y Santa Catarina permiten entender la ciudad desde arriba sin comprar nada. Algunos tienen quioscos o terrazas cerca, pero mirar la ciudad no exige consumir.' },
+      { tipo: 'parrafo', texto: 'La clave es elegir la hora. Por la mañana tendrás más calma y mejor temperatura; al atardecer tendrás más ambiente y más gente. No intentes verlos todos en el mismo día. Dos o tres bien elegidos valen más que una carrera cuesta arriba.' },
+      { tipo: 'subtitulo', texto: 'Barrios para caminar sin pagar entrada' },
+      { tipo: 'parrafo', texto: 'Alfama, Mouraria, Graça, Chiado, Príncipe Real y Estrela se disfrutan caminando. Cada uno tiene un ritmo distinto: Alfama es callejón y sombra, Mouraria mezcla vida cotidiana y memoria, Chiado es más elegante, Príncipe Real más pausado, Estrela más residencial.' },
+      { tipo: 'parrafo', texto: 'El mejor plan gratuito es atravesar dos barrios cercanos sin saltar de un extremo a otro. Por ejemplo, Baixa, Chiado y Príncipe Real; o Alfama, Graça y Mouraria. Así gastas energía en mirar, no en corregir el mapa.' },
+      { tipo: 'subtitulo', texto: 'Plazas, jardines y pausas con aire' },
+      { tipo: 'parrafo', texto: 'Praça do Comércio, Largo do Carmo, Jardim da Estrela, Jardim do Príncipe Real y algunos jardines de barrio son buenos lugares para bajar revoluciones. Lisboa puede saturar por ruido, cuestas y luz; sentarse sin comprar nada también forma parte de viajar bien.' },
+      { tipo: 'parrafo', texto: 'Si viajas con niños o con alguien que se cansa rápido, estos descansos no son relleno. Son lo que hace que el día aguante. Una ruta gratuita inteligente siempre incluye bancos, sombra y baños cercanos cuando sea posible.' },
+      { tipo: 'subtitulo', texto: 'El río: el plan más sencillo' },
+      { tipo: 'parrafo', texto: 'El paseo junto al Tajo es una de las mejores formas de sentir Lisboa sin gastar. Ribeira das Naus, Cais do Sodré, Santos y parte del camino hacia Belém ofrecen espacio abierto y luz. No todos los tramos son igual de bonitos, pero ayudan a respirar después de barrios densos.' },
+      { tipo: 'parrafo', texto: 'Para un atardecer barato, compra algo sencillo en una tienda o lleva agua y busca un banco mirando al río. No necesitas una terraza cara para entender por qué Lisboa mira tanto al Tajo.' },
+      { tipo: 'subtitulo', texto: 'Mercados y espacios de acceso libre' },
+      { tipo: 'parrafo', texto: 'Algunos mercados y espacios culturales tienen acceso libre aunque consumir o comprar sea opcional. Conviene distinguir entrada gratuita de plan completamente gratis: puedes entrar, mirar, pasear y salir, pero si te sientas a comer o compras algo, ya no lo es. No pasa nada; lo importante es saberlo antes.' },
+      { tipo: 'subtitulo', texto: 'Arte urbano y calles con carácter' },
+      { tipo: 'parrafo', texto: 'Lisboa tiene mucho arte urbano en zonas como Mouraria, Graça, Intendente o los alrededores de LX Factory. No lo convertiría en una búsqueda obsesiva de murales, pero sí en una capa más del paseo. A veces una pared explica mejor la ciudad contemporánea que una sala de museo.' },
+      { tipo: 'subtitulo', texto: 'Planes al atardecer sin pagar terraza' },
+      { tipo: 'parrafo', texto: 'El atardecer es uno de los momentos donde Lisboa más invita a gastar: rooftop, copa, mesa con vistas. Todo eso puede estar bien, pero no es obligatorio. Un mirador, un banco junto al río o una plaza con luz baja pueden dar una experiencia igual de memorable si llegas con tiempo y sin expectativas de postal perfecta.' },
+      { tipo: 'parrafo', texto: 'Santa Catarina tiene ambiente joven, Graça es más de barrio, Senhora do Monte ofrece vistas amplias y Ribeira das Naus da una versión más abierta del río. Elige según dónde termines la ruta. Cruzar la ciudad solo por un atardecer puede quitarle gracia al plan.' },
+      { tipo: 'subtitulo', texto: 'Qué hacer gratis si llueve' },
+      { tipo: 'parrafo', texto: 'Con lluvia, lo gratuito se reduce un poco, pero no desaparece. Puedes hacer recorridos cortos por galerías, librerías, mercados cubiertos o cafés donde pagar solo una bebida sencilla. También puedes visitar estaciones, iglesias abiertas o espacios públicos bajo techo, comprobando siempre horarios y normas de acceso.' },
+      { tipo: 'parrafo', texto: 'La lluvia también puede ser buen momento para mirar azulejos, portales, estaciones y pequeñas iglesias abiertas. Evita calles muy pulidas o bajadas pronunciadas si el suelo está mojado. El plan gratuito con lluvia no debe ser heroico: debe ser corto, seguro y con pausas.' },
+      { tipo: 'subtitulo', texto: 'Presupuesto mínimo sin sentir que renuncias' },
+      { tipo: 'parrafo', texto: 'Un día barato en Lisboa puede combinar desayuno sencillo, paseo por barrios, comida en una tasca o supermercado, miradores y río. Lo que más encarece no siempre son las entradas, sino los cafés en lugares muy turísticos, los transportes mal encadenados y las decisiones tomadas por cansancio.' },
+      { tipo: 'parrafo', texto: 'Lleva agua, revisa baños y no llenes el día de desplazamientos. La experiencia gratuita mejora cuando el plan es compacto. Baixa, Chiado y Príncipe Real funcionan bien juntos; Alfama, Mouraria y Graça también. Belém merece otro bloque, incluso si solo paseas por exteriores.' },
+      { tipo: 'subtitulo', texto: 'Planes gratuitos que combinan bien con una entrada de pago' },
+      { tipo: 'parrafo', texto: 'No hace falta que todo el día sea gratuito para que el presupuesto funcione. Puedes elegir una sola entrada que te apetezca mucho y rodearla de planes sin coste: un mirador antes, un jardín después, un paseo junto al río al final. Así el viaje no se siente limitado, pero tampoco se convierte en una suma constante de tickets.' },
+      { tipo: 'parrafo', texto: 'Este equilibrio es especialmente útil en Belém. Puedes caminar por exteriores, ver el río, acercarte a la Torre, pasear por jardines y decidir si entras en un monumento concreto. Si entras en todo por inercia, Belém deja de ser un paseo y se vuelve una lista cara.' },
+      { tipo: 'subtitulo', texto: 'Ruta gratuita sugerida de medio día' },
+      { tipo: 'lista', items: [
+        'Empieza en Praça do Comércio y camina por la Baixa hacia Rossio.',
+        'Sube a Largo do Carmo y asómate a Chiado.',
+        'Continúa hacia Príncipe Real para una pausa en el jardín.',
+        'Si todavía hay energía, baja hacia São Pedro de Alcântara para cerrar con vistas.',
+      ] },
+      { tipo: 'subtitulo', texto: 'Cuidado con lo que parece gratis' },
+      { tipo: 'parrafo', texto: 'Algunos lugares tienen exterior gratuito y zonas de pago. Otros son gratis ciertos días, para determinados residentes o con condiciones concretas. Antes de organizar un día alrededor de una entrada gratuita, verifica la información oficial. Lo gratuito no debería obligarte a discutir en una taquilla.' },
+      { tipo: 'parrafo', texto: 'También hay planes que son gratis solo si aceptas no consumir: mercados, librerías, miradores con quiosco, terrazas abiertas o espacios creativos. Está bien entrar y mirar con respeto, pero no confundas acceso libre con una invitación a ocupar mesas o baños de negocios privados sin consumir.' },
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'Hacer Lisboa gratis no significa verla peor. Significa elegir bien: miradores, barrios, río, jardines y pausas con sentido. Si mezclas dos zonas cercanas y no intentas abarcarlo todo, tendrás una ciudad más amable y un presupuesto mucho más controlado.' },
+    ],
+  },
   "mejores-miradores-lisboa": {
     titulo: "Los 10 mejores miradores de Lisboa",
     descripcion: "Rincones con vistas que transforman cualquier atardecer en un recuerdo imborrable. Incluye horarios, rutas y secretos que los guías no cuentan.",
@@ -1778,6 +2140,11 @@ const articles: Record<string, Article> = {
 };
 
 const localImages: Record<string, string> = {
+  'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
+  'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
+  'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
+  'como-moverse-por-lisboa': '/images/turista-tranvia-28.jpg',
+  'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
   'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
   'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/tranvia-28.jpg',
@@ -2360,6 +2727,41 @@ function getArticle(slug: string): Article | null {
 }
 
 function getFaqs(slug: string) {
+  if (slug === 'que-hacer-en-lisboa-en-3-dias') {
+    return [
+      { q: '¿Tres días son suficientes para Lisboa?', a: 'Sí, si agrupas la ruta por zonas: centro y Alfama, Belém, y un tercer día para barrios, miradores o una escapada suave.' },
+      { q: '¿Conviene ir a Sintra en una visita de 3 días?', a: 'Solo si Sintra es una prioridad. Para una primera visita, Lisboa tiene contenido suficiente para tres días completos.' },
+      { q: '¿Qué día es mejor para Belém?', a: 'El segundo día suele funcionar bien porque ya entiendes el centro y puedes dedicar media jornada sin mezclar zonas lejanas.' },
+    ];
+  }
+  if (slug === 'donde-alojarse-en-lisboa') {
+    return [
+      { q: '¿Cuál es la mejor zona para una primera visita?', a: 'Baixa, Chiado o Avenida da Liberdade suelen ser las opciones más cómodas por conexión y facilidad para volver caminando.' },
+      { q: '¿Alfama es buena zona para dormir?', a: 'Tiene mucho encanto, pero también cuestas, escaleras y accesos irregulares. Funciona mejor si viajas ligero y aceptas caminar.' },
+      { q: '¿Qué zona evitar si quiero dormir tranquilo?', a: 'Revisa con cuidado Bairro Alto y Cais do Sodré si necesitas silencio, porque algunas calles tienen bastante vida nocturna.' },
+    ];
+  }
+  if (slug === 'lisboa-card-vale-la-pena') {
+    return [
+      { q: '¿La Lisboa Card vale la pena siempre?', a: 'No. Compensa sobre todo si concentras monumentos, museos y transporte en poco tiempo. Para un viaje lento puede no hacer falta.' },
+      { q: '¿Debo comprarla antes de organizar la ruta?', a: 'Mejor no. Primero decide qué vas a visitar y después compara si la tarjeta encaja con ese plan.' },
+      { q: '¿Puedo fiarme de listas antiguas de atracciones?', a: 'No conviene. Las inclusiones y condiciones pueden cambiar, así que revisa siempre la información oficial vigente.' },
+    ];
+  }
+  if (slug === 'como-moverse-por-lisboa') {
+    return [
+      { q: '¿Cuál es la mejor forma de moverse por Lisboa?', a: 'Combinar metro, caminata y transporte puntual según la zona. El metro cruza ciudad; caminar funciona mejor en barrios compactos.' },
+      { q: '¿El tranvía 28 sirve para moverse rápido?', a: 'Normalmente no. Es una buena experiencia si vas temprano, pero puede ir lleno y ser lento.' },
+      { q: '¿Cómo llegar del aeropuerto al centro?', a: 'El metro suele ser práctico de día si tu alojamiento queda cerca de una estación; de madrugada o con mucho equipaje, taxi o apps pueden ser más cómodos.' },
+    ];
+  }
+  if (slug === 'que-hacer-gratis-en-lisboa') {
+    return [
+      { q: '¿Se puede disfrutar Lisboa gratis?', a: 'Sí. Miradores, barrios, jardines, plazas y paseos junto al río permiten montar un día completo sin pagar entradas.' },
+      { q: '¿Todos los museos son gratis?', a: 'No. Algunos tienen días, condiciones o zonas gratuitas, pero hay que verificar la información oficial antes de ir.' },
+      { q: '¿Cuál es el mejor plan gratis al atardecer?', a: 'Un mirador como Graça, Senhora do Monte o Santa Catarina, elegido según dónde termines la ruta.' },
+    ];
+  }
   if (slug.includes('transporte')) {
     return [
       { q: '¿Cuál es el transporte más barato en Lisboa?', a: 'El metro y los tranvías con tarjeta recargable son la opción más económica para moverte.' },
@@ -2599,8 +3001,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const seoTitle = getSeoTitle(article.titulo);
-  const seoDescription = getSeoDescription(article.descripcion);
+  const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
+  const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
   const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
   return {
@@ -2619,7 +3021,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           url: toAbsoluteUrl(image),
           width: 1200,
           height: 630,
-          alt: article.titulo,
+          alt: article.imageAlt ?? article.titulo,
         },
       ],
     },
@@ -2635,9 +3037,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   }
 
   const heroImage = resolveBlogImage(slug, localImages[slug] || article.imagen);
-  const seoTitle = getSeoTitle(article.titulo);
-  const seoDescription = getSeoDescription(article.descripcion);
+  const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
+  const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
+  const sidebarLinks = article.links ?? internalLinks;
+  const finalCta = article.cta ?? {
+    href: '/itinerarios',
+    label: 'Ver guías gratis',
+    title: '¿Quieres esto organizado paso a paso?',
+    text: 'Rutas hora a hora, GPS en cada parada y restaurantes probados para moverte con criterio.',
+  };
   const baseHeadings = article.contenido
     .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
     .map((bloque) => ({
@@ -2814,6 +3223,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     </h2>
                   );
                 }
+                if (bloque.tipo === 'subseccion') {
+                  const headingId = slugify(bloque.texto || '');
+                  return (
+                    <h3
+                      key={index}
+                      id={headingId}
+                      className="scroll-mt-28"
+                    >
+                      {bloque.texto}
+                    </h3>
+                  );
+                }
                 if (bloque.tipo === 'lista') {
                   return (
                     <ul key={index} className="article-list">
@@ -2862,16 +3283,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {/* CTA final */}
             <div className="article-cta article-reading relative bg-night bg-azulejo-pattern-gold text-center overflow-hidden">
               <h3 className="relative text-white">
-                ¿Quieres esto organizado paso a paso?
+                {finalCta.title}
               </h3>
               <p className="relative text-white/70">
-                Rutas hora a hora, GPS en cada parada y restaurantes probados para moverte con criterio.
+                {finalCta.text}
               </p>
               <Link
-                href="/itinerarios"
+                href={finalCta.href}
                 className="btn-primary article-cta-button relative inline-flex px-8 py-3 text-sm"
               >
-                Ver guías gratis
+                {finalCta.label}
               </Link>
             </div>
 
@@ -2922,7 +3343,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div>
               <p className="article-toc-label uppercase tracking-widest mb-4 pb-3 border-b border-border-soft">También te interesa</p>
               <ul className="space-y-3">
-                {internalLinks.slice(0, 5).map((item) => (
+                {sidebarLinks.slice(0, 5).map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="transition-colors">
                       {item.label} →

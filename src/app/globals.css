@@ -228,6 +228,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.article-content h3 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.35;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--article-main);
+}
+
+@media (min-width: 768px) {
+  .article-content h3 {
+    font-size: 1.3125rem;
+    line-height: 1.35;
+  }
+}
+
 .article-content a,
 .article-author a {
   color: var(--article-link);
