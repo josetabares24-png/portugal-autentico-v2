@@ -228,6 +228,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.article-content h3 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.35;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--article-main);
+}
+
+@media (min-width: 768px) {
+  .article-content h3 {
+    font-size: 1.3125rem;
+    line-height: 1.35;
+  }
+}
+
 .article-content a,
 .article-author a {
   color: var(--article-link);
@@ -394,6 +412,48 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.68;
   font-weight: 400;
   color: var(--article-secondary);
+}
+
+.article-sources {
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.35rem;
+  background: #f8f2e9;
+  border: 1px solid var(--article-border);
+  border-radius: 0.875rem;
+}
+
+.article-sources h3 {
+  margin: 0 0 0.875rem;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--article-main);
+}
+
+.article-sources ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-sources li {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--article-secondary);
+}
+
+.article-sources li:last-child {
+  margin-bottom: 0;
+}
+
+.article-sources a {
+  color: var(--article-link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 3px;
 }
 
 .article-cta {

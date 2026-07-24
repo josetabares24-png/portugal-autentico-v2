@@ -14,6 +14,11 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
+  'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
+  'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
+  'como-moverse-por-lisboa': '/images/turista-tranvia-28.jpg',
+  'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
   'mejores-miradores-lisboa': '/images/miradouro-atardecer.jpg',
   'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/tranvia-28.jpg',
