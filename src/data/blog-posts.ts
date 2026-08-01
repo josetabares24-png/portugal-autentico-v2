@@ -73,15 +73,6 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/tasca-da-graca.jpg',
   },
   {
-    id: 'tarjeta-lisboa-card-vale-pena',
-    titulo: 'Lisboa Card 2026: ¿Vale la Pena? El Análisis Definitivo',
-    excerpt: 'Calculamos si la Lisboa Card te ahorra dinero de verdad. Precios 2026, qué incluye, cuándo SÍ conviene y cuándo es mejor sin ella.',
-    categoria: 'Consejos',
-    fecha: '15 Ene 2026',
-    autor: 'José Tabares',
-    imagen: '/images/tranvia-28.jpg',
-  },
-  {
     id: 'barrios-lisboa-donde-alojarse',
     titulo: 'Dónde Alojarse en Lisboa: Guía Honesta Barrio a Barrio',
     excerpt: 'Baixa, Alfama, Bairro Alto, Príncipe Real, Intendente y Belém: precios reales, pros, contras y para quién es cada zona.',
@@ -155,8 +146,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'transporte-publico-lisboa',
-    titulo: 'Guía Completa del Transporte Público en Lisboa',
-    excerpt: 'Metro, tranvía, buses y tarjetas. Qué comprar y cómo moverte rápido sin gastar de más.',
+    titulo: 'Transporte público en Lisboa: billetes y tarjetas',
+    excerpt: 'Billetes, tarjetas, validación y errores frecuentes al usar metro, tranvía, buses y elevadores.',
     categoria: 'Transporte',
     fecha: '18 Ene 2026',
     autor: 'José Tabares',

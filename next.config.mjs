@@ -14,6 +14,9 @@ const nextConfig = {
       { source: '/:locale(en|ko|es)/exito', destination: '/itinerarios', permanent: true },
       { source: '/:locale(en|ko|es)/mis-guias', destination: '/itinerarios', permanent: true },
       // Default locale (no prefix)
+      { source: '/transporte', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
+      { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },
       { source: '/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
       { source: '/info-util', destination: '/planifica-tu-viaje', permanent: true },
@@ -22,6 +25,7 @@ const nextConfig = {
       // Sintra slug antiguo → premium actual
       { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
       // Blog stubs → artículos completos
+      { source: '/blog/tarjeta-lisboa-card-vale-pena', destination: '/blog/lisboa-card-vale-la-pena', permanent: true },
       { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
       // Legacy en/ko known redirects without chains
       { source: '/en/info-util', destination: '/planifica-tu-viaje', permanent: true },
@@ -34,13 +38,15 @@ const nextConfig = {
       { source: '/ko/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
       { source: '/en/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
       { source: '/ko/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
+      { source: '/en/blog/tarjeta-lisboa-card-vale-pena', destination: '/blog/lisboa-card-vale-la-pena', permanent: true },
+      { source: '/ko/blog/tarjeta-lisboa-card-vale-pena', destination: '/blog/lisboa-card-vale-la-pena', permanent: true },
       { source: '/en/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       { source: '/ko/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       // Redirecciones de versiones en/ko a español (sitio monoidioma)
       { source: '/en', destination: '/', permanent: true },
       { source: '/ko', destination: '/', permanent: true },
-      { source: '/en/:path((?!presupuesto$|transporte$|tours$|guia-practica$).*)', destination: '/:path', permanent: true },
-      { source: '/ko/:path((?!presupuesto$|transporte$|tours$|guia-practica$).*)', destination: '/:path', permanent: true },
+      { source: '/en/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
+      { source: '/ko/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
     ];
   },
   typescript: {
