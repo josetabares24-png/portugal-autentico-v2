@@ -682,62 +682,6 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Este itinerario y muchos mas detalles estan en nuestro pack de 3 dias, que incluye Sintra con mapas y horarios optimizados." }
     ]
   },
-  "tarjeta-lisboa-card-vale-pena": {
-    titulo: "Lisboa Card 2026: ¿Vale la pena? El análisis definitivo",
-    descripcion: "Calculamos si la Lisboa Card te ahorra dinero de verdad en 2026. Precios actualizados, qué incluye realmente, cuándo SÍ conviene y cuándo es mejor sin ella.",
-    imagen: "https://images.unsplash.com/photo-1569959220744-ff553533f492?w=1200",
-    categoria: "Consejos",
-    fecha: "15 Ene 2026",
-    minutos: 11,
-    contenido: [
-      { tipo: "parrafo", texto: "Mi primera Lisboa Card fue un error caro. Llegué convencido de que era la forma inteligente de viajar —transporte ilimitado, museos gratis, todo incluido—, y al final de los dos días hice las cuentas: había usado exactamente el metro cuatro veces y entrado a un único museo que resultó estar incluido en la tarjeta. El ahorro total fue de unos doce euros sobre el precio de la tarjeta de 44 euros. Una inversión dudosa." },
-      { tipo: "parrafo", texto: "Desde entonces he calculado la rentabilidad de la Lisboa Card para docenas de perfiles de viajero distintos. La conclusión es que la tarjeta tiene sentido para un tipo muy específico de visitante, y completamente ninguno para otros. Este análisis te ayudará a saber en cuál de los dos grupos estás antes de gastar el dinero." },
-      { tipo: "subtitulo", texto: "Qué incluye la Lisboa Card en 2026" },
-      { tipo: "parrafo", texto: "La tarjeta cubre tres grandes categorías: transporte, museos y descuentos. En transporte incluye uso ilimitado del metro de Lisboa, los autobuses y tranvías de Carris —incluido el histórico tranvía 28—, los ascensores y elevadores, el funicular do Lavra, y los trenes de Comboios de Portugal en la red de cercanías que conecta Lisboa con Sintra, Cascais, Setúbal y la Costa Azul." },
-      { tipo: "parrafo", texto: "En museos y monumentos, el acceso gratuito incluye una lista de más de cuarenta espacios entre los que destacan el Museo Nacional de Arte Antiga, el Museo del Azulejo, el Palacio Nacional de Queluz, el MAAT (Museo de Arte, Arquitectura y Tecnología), el Museo Nacional del Azulejo y el Panteón Nacional. Algunos de los grandes nombres —Torre de Belém y Monasterio de los Jerónimos— también están incluidos, aunque con restricciones en temporada alta que conviene verificar al comprar." },
-      { tipo: "lista", items: [
-        "Transporte ilimitado: metro, bus, tranvías 12E y 28E, elevadores, tren a Sintra y Cascais",
-        "Museos gratuitos: 40+ espacios incluyendo Torre de Belém, Jerónimos, MAAT, Azulejo",
-        "Descuentos: 10-25% en cruceros por el Tajo, tours en tuk-tuk, algunas atracciones privadas",
-        "App oficial con mapa y guía de monumentos incluidos"
-      ]},
-      { tipo: "subtitulo", texto: "Precios de la Lisboa Card en 2026" },
-      { tipo: "parrafo", texto: "Los precios han subido ligeramente respecto a años anteriores, siguiendo la tendencia general del turismo en Lisboa. Conviene comprarla online con al menos 24 horas de antelación, ya que algunos puntos de venta físicos —como el aeropuerto— aplican un recargo de hasta dos euros." },
-      { tipo: "lista", items: [
-        "Lisboa Card 24 horas: 29 EUR adulto / 18,50 EUR niño (4-12 años)",
-        "Lisboa Card 48 horas: 47 EUR adulto / 28 EUR niño",
-        "Lisboa Card 72 horas: 58 EUR adulto / 33,50 EUR niño",
-        "Dónde comprar: web oficial lisboacard.org, puntos de venta Ask Me Lisboa, aeropuerto"
-      ]},
-      { tipo: "tip", texto: "Compra siempre online en lisboacard.org. Además de evitar filas en el aeropuerto, recibirás el código QR en el correo y podrás activarlo cuando quieras —el temporizador empieza en el primer uso, no al comprar." },
-      { tipo: "subtitulo", texto: "Cuándo SÍ vale la pena: el cálculo honesto" },
-      { tipo: "parrafo", texto: "La Lisboa Card sale rentable cuando el ahorro en entradas y transporte supera su precio. Voy a hacer el cálculo para el perfil más habitual: turista de fin de semana que quiere ver los monumentos principales en 48 horas." },
-      { tipo: "parrafo", texto: "Si tu plan incluye Torre de Belém (10 EUR), Monasterio de los Jerónimos (10 EUR), Museo del Azulejo (5 EUR), MAAT (9 EUR), un viaje de ida y vuelta a Sintra en tren (4,60 EUR por trayecto, 9,20 en total), y transporte en metro durante dos días (aproximadamente 10 EUR en recargas), la suma asciende a 53,20 EUR. La Lisboa Card de 48 horas cuesta 47 EUR. Ahorro: 6,20 euros." },
-      { tipo: "parrafo", texto: "No parece un ahorro espectacular, pero hay que añadir el valor de la comodidad: no necesitas comprar billetes individuales, no hay colas en las taquillas de cada monumento, y el proceso de entrada es más fluido. Para viajeros que valoran la eficiencia sobre el precio exacto, eso tiene valor real." },
-      { tipo: "lista", items: [
-        "Perfil ideal: primer viaje a Lisboa, 3-4 días, interés en museos históricos y Sintra",
-        "Escenario rentable: 3+ museos de pago + transporte intensivo + viaje a Sintra o Cascais",
-        "Mejor tarjeta: la de 72 horas si planeas Sintra Y Cascais en días distintos",
-        "Con niños: la tarjeta infantil es muy competitiva si llevas dos o más menores"
-      ]},
-      { tipo: "subtitulo", texto: "Cuándo NO vale la pena" },
-      { tipo: "parrafo", texto: "Hay un perfil de viajero para el que la Lisboa Card es casi un desperdicio: el que viene a Lisboa a callejear, comer, descubrir miradores y absorber el ambiente de los barrios. Y ese perfil, por cierto, describe a la mayoría de los visitantes que conozco." },
-      { tipo: "parrafo", texto: "Los miradores más impresionantes son completamente gratuitos: Senhora do Monte, Graça, Santa Catarina, Portas do Sol. El barrio de Alfama se recorre a pie sin pagar entrada a nada. Los mercados tradicionales son libres. Las mejores tascas no tienen tarifa de entrada. Si tu Lisboa es más gastronómica y peatonal que museística, la tarjeta no te rentará." },
-      { tipo: "lista", items: [
-        "Visita corta (1-2 días) con solo 1-2 monumentos en mente",
-        "Estilo de viaje callejero: miradores, barrios, mercados, tapas",
-        "Descuentos de estudiante, senior o residente UE disponibles (suelen ser mejores)",
-        "Viaje centrado en Sintra: las entradas de los palacios (Pena, Regaleira, Monserrate) NO están incluidas"
-      ]},
-      { tipo: "tip", texto: "Trampa habitual: mucha gente compra la Lisboa Card pensando que les da acceso a los palacios de Sintra. Solo cubre el tren hasta Sintra. Los palacios más visitados —Pena, Regaleira— tienen sus propias entradas (8-12 EUR cada uno) que la tarjeta no incluye." },
-      { tipo: "subtitulo", texto: "La alternativa que yo uso: Viva Viagem" },
-      { tipo: "parrafo", texto: "Cuando no tengo clara la rentabilidad de la Lisboa Card, recurro a la tarjeta Viva Viagem. Cuesta 0,50 EUR y funciona como monedero recargable para todos los transportes públicos de Lisboa. Puedes cargar viajes individuales (1,61 EUR el viaje en metro), un pase de 24 horas de metro y autobús (6,80 EUR), o simplemente recargar según vayas necesitando." },
-      { tipo: "parrafo", texto: "La ventaja frente a la Lisboa Card es la flexibilidad: si un día decides quedarte en el barrio y caminar en vez de coger el metro, no has desperdiciado nada. El dinero que no gastas en transport sigue en la tarjeta para usarlo mañana. Y para los museos, puedes optar por comprar las entradas individualmente solo a los que realmente te interesan." },
-      { tipo: "subtitulo", texto: "Mi recomendación final" },
-      { tipo: "parrafo", texto: "Antes de comprar la Lisboa Card, haz este ejercicio: escribe en papel los monumentos que definitivamente vas a visitar y suma sus entradas individuales. Luego añade un cálculo aproximado de lo que gastarás en transporte. Si ese total supera el precio de la tarjeta en más de 10 euros, cómprala. Si no supera o apenas iguala el precio, ahorra el dinero y viaja más libre." },
-      { tipo: "parrafo", texto: "Para una visita de tres o más días con agenda densa que incluya Sintra, Cascais y los principales monumentos, la tarjeta de 72 horas casi siempre sale rentable. Para estancias de dos días centradas en el ambiente de los barrios, me quedo con la Viva Viagem y la libertad de improvisar." }
-    ]
-  },
   "barrios-lisboa-donde-alojarse": {
     titulo: "Dónde alojarse en Lisboa: guía honesta barrio a barrio",
     descripcion: "Analizamos cada barrio de Lisboa para ayudarte a elegir dónde quedarte: Baixa, Alfama, Bairro Alto, Príncipe Real, Intendente y Belém. Precios reales, pros, contras y para quién es ideal cada zona.",
@@ -2216,7 +2160,6 @@ const localImages: Record<string, string> = {
   'barrios-imprescindibles': '/images/tranvia-28.jpg',
   'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
   'como-ir-sintra-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
-  'tarjeta-lisboa-card-vale-pena': '/images/tranvia-28.jpg',
   'barrios-lisboa-donde-alojarse': '/images/barrio-calle-residencial.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
   'mejor-epoca-visitar-lisboa': '/images/miradouro-atardecer.jpg',
