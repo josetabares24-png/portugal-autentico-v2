@@ -146,8 +146,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'transporte-publico-lisboa',
-    titulo: 'Guía Completa del Transporte Público en Lisboa',
-    excerpt: 'Metro, tranvía, buses y tarjetas. Qué comprar y cómo moverte rápido sin gastar de más.',
+    titulo: 'Transporte público en Lisboa: billetes y tarjetas',
+    excerpt: 'Billetes, tarjetas, validación y errores frecuentes al usar metro, tranvía, buses y elevadores.',
     categoria: 'Transporte',
     fecha: '18 Ene 2026',
     autor: 'José Tabares',
