@@ -40,19 +40,25 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
   const otherPacks = guidePackSlugs.filter((s) => s !== slug).slice(0, 2);
   const relatedReading = blogPosts.filter((post) => relatedReadingSlugs.includes(post.id));
 
-  const productJsonLd = {
+  // CreativeWork instead of Product: this is a free editorial itinerary,
+  // not a good or service that's bought/sold (no price, no Offer, no
+  // availability). Product implies a commercial transaction that doesn't
+  // exist here; CreativeWork is the schema.org type that actually defines
+  // isAccessibleForFree, without asserting a sale.
+  const creativeWorkJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'CreativeWork',
     name: pack.title,
     description: pack.description,
     image: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`,
-    brand: { '@type': 'Brand', name: 'Estaba en Lisboa' },
+    author: { '@type': 'Organization', name: 'Estaba en Lisboa' },
     isAccessibleForFree: true,
+    url: `https://estabaenlisboa.com/itinerarios/${slug}`,
   };
 
   return (
     <main id="main-content">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
