@@ -19,7 +19,14 @@ export function ItineraryCard({
     return (
       <article className={`card-surface group flex h-full flex-col p-5 ${featured ? 'ring-2 ring-gold' : ''}`}>
         <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-5">
-          <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
         </div>
         <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
         <p className="text-text-secondary text-sm leading-relaxed mb-5 line-clamp-3 min-h-[4.5rem]">{description}</p>
@@ -51,7 +58,14 @@ export function ItineraryCard({
   return (
     <article className={`card-surface group flex h-full flex-col p-5 ${featured ? 'ring-2 ring-gold' : ''}`}>
       <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-5">
-        <Image src={image} alt={title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+          sizes="(max-width: 1024px) 100vw, 33vw"
+        />
       </div>
       <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
       <p className="text-text-secondary text-sm leading-relaxed mb-5">{description}</p>

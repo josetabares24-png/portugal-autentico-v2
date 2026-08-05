@@ -23,6 +23,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           <span className="badge-pill absolute top-3 left-3 bg-white/85 backdrop-blur-sm text-text-main">
             {activity.category}
