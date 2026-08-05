@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Todas las Guías de Lisboa | Estaba en Lisboa',
+  title: 'Todas las Guías de Lisboa',
   description: 'Todas las guías gratuitas de Lisboa: 1 día, 2 días, 3 días, semana completa, romántica, familiar y fotografía. Elige la ruta que encaja con tu viaje.',
   keywords: ['guías lisboa', 'itinerarios lisboa', 'rutas lisboa', 'viajar lisboa'],
   openGraph: {

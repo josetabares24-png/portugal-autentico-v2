@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import LegalPageLayout from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Aviso Legal | Estaba en Lisboa',
+  title: 'Aviso Legal',
   description: 'Información legal sobre Estaba en Lisboa, medio editorial gratuito con guías e itinerarios de Lisboa.',
   alternates: {
     canonical: 'https://estabaenlisboa.com/aviso-legal',

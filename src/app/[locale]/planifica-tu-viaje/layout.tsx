@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Planifica tu Viaje a Lisboa | Estaba en Lisboa',
+  title: 'Planifica tu Viaje a Lisboa',
   description: 'Recomendación instantánea de itinerario y presupuesto, o un plan a medida 1:1 si tienes pocos días y quieres aprovecharlos al máximo.',
   keywords: [
     'planificar viaje lisboa',

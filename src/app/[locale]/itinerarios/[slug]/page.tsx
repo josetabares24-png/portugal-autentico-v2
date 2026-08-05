@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const pack = await getGuidePack(slug);
   if (!pack) return { title: 'Guía no encontrada', robots: { index: false, follow: false } };
   return {
-    title: `${pack.title} | Estaba en Lisboa`,
+    title: pack.title,
     description: pack.description || `Guía completa de ${pack.duration} en Lisboa.`,
     keywords: ['lisboa', 'guia lisboa', 'itinerario lisboa', pack.duration.toLowerCase()],
     authors: [{ name: 'Estaba en Lisboa' }],
