@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Actividades en Lisboa sin Gastar Mucho | Estaba en Lisboa',
+  title: 'Actividades en Lisboa sin Gastar Mucho',
   description: 'Catálogo de actividades en Lisboa con precio real, duración y un tip de ahorro para cada una: miradouros gratis, cultura, gastronomía, excursiones y más.',
   keywords: [
     'que hacer en lisboa barato',
