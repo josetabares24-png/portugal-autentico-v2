@@ -1,18 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { UserButton, useUser } from '@clerk/nextjs';
-import { useIsAdmin } from '@/hooks/useIsAdmin';
 import Icon from '@/components/Icon';
+
+const NavbarAuthSlot = dynamic(() => import('@/components/NavbarAuthSlot'), { ssr: false });
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const { isSignedIn } = useUser();
-  const isAdmin = useIsAdmin();
 
   const navLinks = [
     { href: '/blog', label: 'Blog' },
@@ -69,20 +68,7 @@ export default function Navbar() {
               <Icon name="arrow_forward" size={16} />
             </Link>
 
-            {isSignedIn && (
-              <>
-                {isAdmin && (
-                  <Link
-                    href="/admin"
-                    aria-current={isActive('/admin') ? 'page' : undefined}
-                    className="px-4 py-2 text-taupe hover:text-night font-semibold text-sm transition-colors border border-taupe/20"
-                  >
-                    Admin
-                  </Link>
-                )}
-                <UserButton afterSignOutUrl="/" />
-              </>
-            )}
+            <NavbarAuthSlot variant="desktop" pathname={pathname} />
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -127,23 +113,7 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {isSignedIn && (
-                <div className="border-t border-taupe/20 pt-3 mt-4 flex flex-col gap-2">
-                  {isAdmin && (
-                    <Link
-                      href="/admin"
-                      aria-current={isActive('/admin') ? 'page' : undefined}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="px-4 py-2.5 text-taupe font-semibold text-sm border border-taupe/20 transition-colors"
-                    >
-                      Panel de Admin
-                    </Link>
-                  )}
-                  <div className="px-4 py-2">
-                    <UserButton afterSignOutUrl="/" />
-                  </div>
-                </div>
-              )}
+              <NavbarAuthSlot variant="mobile" pathname={pathname} onNavigate={() => setMobileMenuOpen(false)} />
             </div>
           </div>
         )}
