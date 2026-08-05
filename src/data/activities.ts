@@ -21,6 +21,19 @@ export interface Activity {
   description: string;
   savingTip: string;
   bookingUrl?: string;
+  /** URL de la fuente oficial usada para verificar precio/horario/estado. */
+  officialUrl?: string;
+  /** Fecha (YYYY-MM-DD) de la última verificación de los datos frente a la fuente oficial. */
+  lastVerified?: string;
+  /**
+   * Si la ficha puede indexarse como página independiente (index, follow) en
+   * sitemap.xml y metadata.robots. Mientras sea false, la ficha sigue siendo
+   * visitable y enlazada, pero se sirve con noindex, follow y se excluye del
+   * sitemap porque el contenido editorial todavía no es lo bastante completo.
+   */
+  indexable: boolean;
+  /** Nota corta sobre algo temporal o incierto (obras, cierre parcial, etc.). */
+  statusNote?: string;
 }
 
 export const ACTIVITY_CATEGORIES: ActivityCategory[] = [
@@ -36,6 +49,7 @@ export const ACTIVITY_CATEGORIES: ActivityCategory[] = [
 export const activities: Activity[] = [
   {
     slug: 'miradouro-santa-luzia',
+    indexable: false,
     title: 'Miradouro de Santa Luzia',
     category: 'Miradouros',
     zone: 'Alfama',
@@ -48,6 +62,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'miradouro-senhora-do-monte',
+    indexable: false,
     title: 'Miradouro da Senhora do Monte',
     category: 'Miradouros',
     zone: 'Graça',
@@ -60,6 +75,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'miradouro-portas-do-sol',
+    indexable: false,
     title: 'Miradouro das Portas do Sol',
     category: 'Miradouros',
     zone: 'Alfama',
@@ -72,6 +88,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'castelo-sao-jorge',
+    indexable: false,
     title: 'Castelo de São Jorge',
     category: 'Cultura e Historia',
     zone: 'Alfama / Castelo',
@@ -85,6 +102,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'mosteiro-jeronimos',
+    indexable: false,
     title: 'Mosteiro dos Jerónimos',
     category: 'Cultura e Historia',
     zone: 'Belém',
@@ -98,6 +116,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'torre-de-belem',
+    indexable: false,
     title: 'Torre de Belém',
     category: 'Cultura e Historia',
     zone: 'Belém',
@@ -111,6 +130,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'pasteis-de-belem',
+    indexable: false,
     title: 'Pastéis de Belém',
     category: 'Gastronomía',
     zone: 'Belém',
@@ -124,6 +144,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'tranvia-28',
+    indexable: false,
     title: 'Tranvía 28',
     category: 'Experiencias',
     zone: 'Graça / Alfama / Baixa',
@@ -137,6 +158,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'lx-factory',
+    indexable: false,
     title: 'LX Factory',
     category: 'Cultura e Historia',
     zone: 'Alcântara',
@@ -149,6 +171,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'elevador-santa-justa',
+    indexable: false,
     title: 'Elevador de Santa Justa',
     category: 'Experiencias',
     zone: 'Baixa',
@@ -161,6 +184,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'oceanario-lisboa',
+    indexable: false,
     title: 'Oceanário de Lisboa',
     category: 'Familia',
     zone: 'Parque das Nações',
@@ -174,6 +198,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'sintra-dia-completo',
+    indexable: false,
     title: 'Sintra: Palacio da Pena + Quinta da Regaleira',
     category: 'Excursiones',
     zone: 'Sintra',
@@ -187,6 +212,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'cascais-cabo-da-roca',
+    indexable: false,
     title: 'Cascais y Cabo da Roca',
     category: 'Excursiones',
     zone: 'Cascais',
@@ -200,6 +226,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'fado-en-alfama',
+    indexable: false,
     title: 'Fado en Alfama',
     category: 'Experiencias',
     zone: 'Alfama',
@@ -212,6 +239,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'crucero-atardecer-tajo',
+    indexable: false,
     title: 'Paseo en barco al atardecer por el Tajo',
     category: 'Experiencias',
     zone: 'Río Tajo',
@@ -225,6 +253,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'free-walking-tour-centro',
+    indexable: false,
     title: 'Free Walking Tour por el centro',
     category: 'Cultura e Historia',
     zone: 'Baixa / Chiado',
@@ -237,6 +266,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'jardim-estrela-principe-real',
+    indexable: false,
     title: 'Jardim da Estrela y Príncipe Real',
     category: 'Naturaleza',
     zone: 'Estrela / Príncipe Real',
@@ -249,6 +279,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'parque-eduardo-vii',
+    indexable: false,
     title: 'Parque Eduardo VII',
     category: 'Naturaleza',
     zone: 'Marquês de Pombal',
@@ -261,6 +292,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'tasca-tradicional',
+    indexable: false,
     title: 'Comer en una tasca tradicional',
     category: 'Gastronomía',
     zone: 'Varias zonas',
@@ -274,6 +306,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'cristo-rei',
+    indexable: false,
     title: 'Cristo Rei (vía ferry)',
     category: 'Miradouros',
     zone: 'Almada',

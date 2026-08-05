@@ -27,6 +27,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       images: [{ url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }],
     },
     alternates: { canonical: `https://estabaenlisboa.com/actividades/${slug}` },
+    // La ficha sigue visitable y enlazada, pero solo se indexa como página
+    // independiente cuando su contenido editorial está verificado y completo
+    // (activity.indexable === true). Ver src/data/activities.ts.
+    robots: activity.indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 
