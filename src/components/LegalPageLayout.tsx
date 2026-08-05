@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { slugify } from '@/lib/utils';
 
 interface LegalPageLayoutProps {
   content: string;
+}
+
+function headingText(children: React.ReactNode): string {
+  return React.Children.toArray(children)
+    .map((child) => (typeof child === 'string' ? child : ''))
+    .join('');
 }
 
 export default function LegalPageLayout({ content }: LegalPageLayoutProps) {
@@ -19,7 +26,10 @@ export default function LegalPageLayout({ content }: LegalPageLayoutProps) {
               </h1>
             ),
             h2: ({ children }) => (
-              <h2 className="font-semibold text-text-main text-base mt-10 mb-3 border-t border-border-soft pt-6">
+              <h2
+                id={slugify(headingText(children))}
+                className="font-semibold text-text-main text-base mt-10 mb-3 border-t border-border-soft pt-6 scroll-mt-24"
+              >
                 {children}
               </h2>
             ),

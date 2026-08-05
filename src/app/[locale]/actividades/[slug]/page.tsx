@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { activities, activitySlugs } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import { buildAffiliateUrl } from '@/lib/affiliate';
 
 export function generateStaticParams() {
   return activitySlugs.map((slug) => ({ slug }));
@@ -122,6 +124,20 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <p className="relative text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Tip para ahorrar de un local</p>
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
+
+          {activity.bookingUrl && (
+            <div className="mb-10 space-y-3">
+              <a
+                href={buildAffiliateUrl(activity.bookingUrl, activity.slug)}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="btn-primary px-8 py-3 text-center block sm:inline-flex"
+              >
+                Reservar con GuruWalk →
+              </a>
+              <AffiliateDisclosure />
+            </div>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
