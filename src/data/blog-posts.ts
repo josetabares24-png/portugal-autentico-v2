@@ -268,7 +268,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '20 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-callejon.jpg',
+    imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-02.webp',
   },
   {
     id: 'terremoto-lisboa-1755',
@@ -277,7 +277,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '18 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-callejon.jpg',
+    imagen: '/images/lisboa-originales/arquitetura-baixa-pombalina-lisboa-01.webp',
   },
   {
     id: 'descubrimientos-portugueses-lisboa',

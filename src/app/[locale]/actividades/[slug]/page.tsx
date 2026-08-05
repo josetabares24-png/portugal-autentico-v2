@@ -98,7 +98,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
         {activity.image ? (
           <Image
             src={activity.image}
-            alt={activity.title}
+            alt={activity.imageAlt ?? activity.title}
             fill
             className="object-cover"
             priority

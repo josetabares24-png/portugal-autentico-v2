@@ -19,6 +19,8 @@ export interface Activity {
   duration: string;
   /** Ausente cuando no hay foto verificada que corresponda realmente a este lugar (ver ActivityImagePlaceholder). */
   image?: string;
+  /** Texto alternativo descriptivo de la foto; si falta, se usa el título como respaldo. */
+  imageAlt?: string;
   description: string;
   savingTip: string;
   bookingUrl?: string;
@@ -272,7 +274,8 @@ export const activities: Activity[] = [
     isFree: true,
     priceLabel: 'Gratis (propina)',
     duration: '2.5-3 h',
-    image: '/images/estatua-praca-lisboa.jpg',
+    image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
+    imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
     description: 'Recorrido guiado a pie por la historia de la Baixa y el Chiado, con guías locales que viven de las propinas.',
     savingTip: 'No tiene coste fijo: al final paga lo que consideres justo (5-10 € por persona es lo habitual).',
   },

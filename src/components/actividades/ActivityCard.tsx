@@ -21,7 +21,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           {activity.image ? (
             <Image
               src={activity.image}
-              alt={activity.title}
+              alt={activity.imageAlt ?? activity.title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
