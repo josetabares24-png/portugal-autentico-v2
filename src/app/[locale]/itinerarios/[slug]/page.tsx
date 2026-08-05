@@ -12,8 +12,8 @@ export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const pack = await getGuidePack(slug);
   if (!pack) return { title: 'Guía no encontrada', robots: { index: false, follow: false } };
   return {
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function PackPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const pack = await getGuidePack(slug);
 
   if (!pack) notFound();
