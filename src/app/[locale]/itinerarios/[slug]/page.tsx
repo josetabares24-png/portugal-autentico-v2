@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
+import { blogPosts } from '@/data/blog-posts';
+
+const relatedReadingSlugs = ['como-moverse-por-lisboa', 'donde-alojarse-en-lisboa', 'presupuesto-viajar-lisboa'];
 
 export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
@@ -33,6 +36,9 @@ export default async function PackPage({ params }: { params: { slug: string } })
   const pack = await getGuidePack(slug);
 
   if (!pack) notFound();
+
+  const otherPacks = guidePackSlugs.filter((s) => s !== slug).slice(0, 2);
+  const relatedReading = blogPosts.filter((post) => relatedReadingSlugs.includes(post.id));
 
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -146,6 +152,31 @@ export default async function PackPage({ params }: { params: { slug: string } })
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sigue explorando */}
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8">Sigue explorando</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherPacks.map((otherSlug) => (
+              <Link key={otherSlug} href={`/itinerarios/${otherSlug}`} className="card-surface block p-5">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Itinerario</p>
+                <p className="font-display italic text-text-main text-lg">{guidePacks[otherSlug]?.title}</p>
+              </Link>
+            ))}
+            {relatedReading.map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="card-surface block p-5">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Blog</p>
+                <p className="font-display italic text-text-main text-lg">{post.titulo}</p>
+              </Link>
+            ))}
+            <Link href="/actividades" className="card-surface block p-5">
+              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Actividades</p>
+              <p className="font-display italic text-text-main text-lg">Qué hacer y ver en Lisboa</p>
+            </Link>
           </div>
         </div>
       </section>

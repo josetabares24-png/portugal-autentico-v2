@@ -147,6 +147,12 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
               Incluir en mi plan de viaje
             </Link>
             <Link
+              href="/itinerarios"
+              className="btn-outline px-8 py-3 text-center"
+            >
+              Ver itinerarios gratuitos
+            </Link>
+            <Link
               href="/actividades"
               className="btn-outline px-8 py-3 text-center"
             >
