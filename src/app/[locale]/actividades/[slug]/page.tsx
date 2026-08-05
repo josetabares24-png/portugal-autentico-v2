@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { activities, activitySlugs } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import { buildAffiliateUrl } from '@/lib/affiliate';
 
@@ -24,7 +25,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: activity.title,
       description: activity.description,
       url: `https://estabaenlisboa.com/actividades/${slug}`,
-      images: [{ url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }],
+      // Sin foto verificada del lugar todavía: se usa el logo del sitio en
+      // vez de arriesgarnos a mostrar la imagen de otro monumento o barrio.
+      images: [
+        activity.image
+          ? { url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }
+          : { url: 'https://estabaenlisboa.com/logo.png', width: 600, height: 188, alt: 'Estaba en Lisboa' },
+      ],
     },
     alternates: { canonical: `https://estabaenlisboa.com/actividades/${slug}` },
     // La ficha sigue visitable y enlazada, pero solo se indexa como página
@@ -48,7 +55,10 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
     '@type': 'TouristAttraction',
     name: activity.title,
     description: activity.description,
-    image: `https://estabaenlisboa.com${activity.image}`,
+    // Solo se declara `image` cuando hay una foto verificada de este lugar
+    // concreto; no queremos afirmar en datos estructurados que una imagen
+    // de otro monumento o barrio corresponde a esta actividad.
+    ...(activity.image ? { image: `https://estabaenlisboa.com${activity.image}` } : {}),
     isAccessibleForFree: activity.isFree,
     address: {
       '@type': 'PostalAddress',
@@ -85,15 +95,19 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[320px] overflow-hidden">
-        <Image
-          src={activity.image}
-          alt={activity.title}
-          fill
-          className="object-cover"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
+        {activity.image ? (
+          <Image
+            src={activity.image}
+            alt={activity.title}
+            fill
+            className="object-cover"
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+          />
+        ) : (
+          <ActivityImagePlaceholder />
+        )}
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
           <nav aria-label="Breadcrumb" className="text-white/60 text-xs uppercase tracking-widest mb-4 flex items-center gap-2">

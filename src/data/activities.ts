@@ -17,7 +17,8 @@ export interface Activity {
   /** Precio numérico de partida en EUR, solo cuando es inequívoco (para schema.org Offer). */
   priceFrom?: number;
   duration: string;
-  image: string;
+  /** Ausente cuando no hay foto verificada que corresponda realmente a este lugar (ver ActivityImagePlaceholder). */
+  image?: string;
   description: string;
   savingTip: string;
   bookingUrl?: string;
@@ -96,7 +97,6 @@ export const activities: Activity[] = [
     priceLabel: 'Desde 15 €',
     priceFrom: 15,
     duration: '1.5-2 h',
-    image: '/images/alfama-callejon.jpg',
     description: 'Castillo medieval con murallas, torres y la mejor panorámica de 360º sobre la ciudad y el río.',
     savingTip: 'Compra la entrada online para evitar la cola; los jardines exteriores con vistas son gratuitos sin entrar al recinto.',
     officialUrl: 'https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket/',
@@ -112,7 +112,6 @@ export const activities: Activity[] = [
     priceLabel: 'Desde 18 €',
     priceFrom: 18,
     duration: '1 h',
-    image: '/images/estatua-praca-lisboa.jpg',
     description: 'Joya del manuelino portugués; el claustro es la parte de pago, considerada imprescindible por su detalle.',
     savingTip: 'La iglesia del monasterio (con la tumba de Vasco da Gama) es gratuita, solo se paga la entrada al claustro. Los domingos hasta las 14h la entrada al claustro también es gratuita.',
     officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo',
@@ -128,7 +127,6 @@ export const activities: Activity[] = [
     priceLabel: 'Desde 15 €',
     priceFrom: 15,
     duration: '45 min',
-    image: '/images/turista-tranvia-28.jpg',
     description: 'Torre-fortaleza junto al río, símbolo de la Era de los Descubrimientos y Patrimonio de la Humanidad.',
     savingTip: 'Combina la visita con los Jerónimos en la misma mañana: están a 10 minutos a pie y ahorras un desplazamiento. Reserva con antelación: desde la reapertura de mayo de 2026 el acceso es por franjas horarias limitadas (unas 900 entradas al día).',
     officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
@@ -145,7 +143,6 @@ export const activities: Activity[] = [
     priceLabel: 'Desde 1,50 € / pastel',
     priceFrom: 1.5,
     duration: '20 min',
-    image: '/images/tasca-da-graca.jpg',
     description: 'La pastelería original (desde 1837) donde probar el auténtico pastel de nata recién horneado.',
     savingTip: 'Pide los pasteles para llevar en el mostrador de la izquierda: te ahorras la cola de la zona de mesas.',
     officialUrl: 'https://pasteisdebelem.pt/',
@@ -176,7 +173,6 @@ export const activities: Activity[] = [
     isFree: true,
     priceLabel: 'Gratis (pasear)',
     duration: '1-2 h',
-    image: '/images/festival-sardinhas-noche.jpg',
     description: 'Antigua fábrica reconvertida en arte urbano, tiendas de diseño, librerías y cafés con mucho ambiente.',
     savingTip: 'Entrar y pasear es gratis; ve a media tarde para la mejor luz de fotos sin gastar en las tiendas.',
   },
@@ -189,7 +185,6 @@ export const activities: Activity[] = [
     isFree: false,
     priceLabel: 'Consulta si está operativo antes de ir',
     duration: '15 min',
-    image: '/images/funicular-bica-turistas.jpg',
     description: 'Ascensor neogótico de hierro que conecta la Baixa con el Chiado, con un mirador en la parte superior.',
     savingTip: 'Sube gratis a pie por la calle de atrás hasta la pasarela del mirador; el ascensor en sí ha estado cerrado por revisiones de seguridad, así que confirma su estado antes de planificar la subida en cabina.',
     officialUrl: 'https://www.carris.pt/viaje/alteracoes-de-servico/reabertura-do-miradouro-de-santa-justa/',
@@ -236,7 +231,6 @@ export const activities: Activity[] = [
     isFree: false,
     priceLabel: 'Tren + bus, consulta el precio actualizado',
     duration: 'Medio día',
-    image: '/images/estacion-sintra.jpg',
     description: 'Paseo marítimo, centro histórico y el punto más occidental de Europa continental con vistas al Atlántico.',
     savingTip: 'El tren Lisboa-Cascais (billete sencillo de unos 2,50 €) sale cada 20 minutos: no necesitas reservar un tour para llegar. Para Cabo da Roca desde Cascais se añade el bus de Scotturb, con tarifa aparte.',
     officialUrl: 'https://www.cp.pt/passageiros/pt/consultar-horarios/precos/precos-zonas',
@@ -291,7 +285,6 @@ export const activities: Activity[] = [
     isFree: true,
     priceLabel: 'Gratis',
     duration: '1 h',
-    image: '/images/barrio-calle-residencial.jpg',
     description: 'Dos de los jardines más bonitos de Lisboa, con quioscos de café, sombra y ambiente local tranquilo.',
     savingTip: 'Lleva algo para picar y siéntate en el césped en vez de en la terraza del kiosco: el ambiente es el mismo.',
   },
@@ -304,7 +297,6 @@ export const activities: Activity[] = [
     isFree: true,
     priceLabel: 'Gratis',
     duration: '30 min',
-    image: '/images/barrio-calle-residencial.jpg',
     description: 'Parque urbano con vistas en línea recta hasta el río, ideal para una pausa entre el centro y las Avenidas Novas.',
     savingTip: 'Sube hasta el mirador superior del parque: misma vista que muchos miradores de pago, sin coste.',
   },
@@ -331,7 +323,6 @@ export const activities: Activity[] = [
     isFree: false,
     priceLabel: 'Ferry + entrada al mirador, consulta el precio actualizado',
     duration: '1.5 h',
-    image: '/images/parque-nacoes-torres-atardecer.jpg',
     description: 'Mirador en la otra orilla del Tajo con la vista más completa de Lisboa, el puente 25 de Abril y el río.',
     savingTip: 'El propio cruce en ferry desde Cais do Sodré (un par de euros con tarjeta Navegante) ya es parte de la experiencia: mucho más barato que un tour panorámico en barco. Solo se paga por subir al mirador del monumento; el recinto exterior es gratuito.',
     officialUrl: 'https://cristorei.pt/visitas/bilheteira/',

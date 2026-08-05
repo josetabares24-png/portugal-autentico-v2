@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Activity } from '@/data/activities';
+import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 
 function formatPrice(n: number) {
   return n % 1 === 0 ? `${n}` : n.toFixed(2).replace('.', ',');
@@ -17,14 +18,18 @@ export function ActivityCard({ activity }: { activity: Activity }) {
     <Link href={`/actividades/${activity.slug}`} className="card-surface group flex h-full flex-col p-4">
       <article className="flex h-full flex-col">
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
-          <Image
-            src={activity.image}
-            alt={activity.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+          {activity.image ? (
+            <Image
+              src={activity.image}
+              alt={activity.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <ActivityImagePlaceholder />
+          )}
           <span className="badge-pill absolute top-3 left-3 bg-white/85 backdrop-blur-sm text-text-main">
             {activity.category}
           </span>
