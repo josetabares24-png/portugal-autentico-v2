@@ -15,7 +15,7 @@ export default function AffiliateDisclosure({ className = '' }: AffiliateDisclos
       Esta página puede incluir enlaces de afiliados a actividades, tours o reservas. Si
       compras a través de ellos, podemos recibir una pequeña comisión sin coste adicional
       para ti. Elegimos qué recomendar solo por su calidad, no por la comisión.{' '}
-      <Link href="/aviso-legal#3-afiliados" className="underline underline-offset-2 hover:text-terracotta">
+      <Link href="/aviso-legal#3-afiliados-y-enlaces-a-terceros" className="underline underline-offset-2 hover:text-terracotta">
         Más información
       </Link>
       .
