@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "smoke:activities": "node scripts/smoke-activities.mjs",
-    "smoke:itineraries": "node scripts/smoke-itineraries.mjs"
+    "smoke:itineraries": "node scripts/smoke-itineraries.mjs",
+    "smoke:titles": "node scripts/smoke-titles.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",
