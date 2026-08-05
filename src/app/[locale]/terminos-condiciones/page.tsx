@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import LegalPageLayout from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Términos y Condiciones | Estaba en Lisboa',
-  description: 'Términos y condiciones de compra de guías digitales de Lisboa',
+  title: 'Términos y Condiciones',
+  description: 'Términos y condiciones de uso de Estaba en Lisboa, medio editorial gratuito con guías e itinerarios de Lisboa.',
   alternates: {
     canonical: 'https://estabaenlisboa.com/terminos-condiciones',
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Términos y Condiciones | Estaba en Lisboa',
-    description: 'Condiciones de compra, entrega digital, reembolsos y uso de las guías de Lisboa.',
+    description: 'Condiciones de uso del contenido editorial gratuito de Estaba en Lisboa.',
     url: 'https://estabaenlisboa.com/terminos-condiciones',
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
@@ -22,139 +22,62 @@ export const metadata: Metadata = {
 };
 
 async function getLegalContent() {
-  const content = `# Términos y Condiciones de Compra
+  const content = `# Términos y Condiciones de Uso
 
-**Última actualización:** 8 de enero de 2026
+**Última actualización:** 5 de agosto de 2026
 
-## 1. Partes Contratantes
+## 1. Naturaleza del Sitio
 
-Estas condiciones regulan la compra de productos digitales entre:
+Estaba en Lisboa es un medio editorial gratuito sobre Lisboa: itinerarios, guías, artículos de blog y recomendaciones de actividades. Todo el contenido actualmente publicado en este sitio es de acceso gratuito y no requiere compra ni registro.
 
-- **Vendedor:** Jose Tabares, con sede en Lisboa, Portugal
-- **Comprador:** La persona que realiza la compra en https://estabaenlisboa.com
+Este sitio no vende actualmente guías ni ningún otro producto digital. Si en el futuro se lanzara algún producto de pago, estas condiciones se actualizarían antes de activarlo, con una sección propia sobre precio, entrega y derechos del comprador.
 
-## 2. Objeto del Contrato
+## 2. Uso del Contenido
 
-El vendedor ofrece **guías turísticas digitales interactivas** accesibles online sobre Lisboa y alrededores.
+El acceso y uso de este sitio web implica la aceptación de estas condiciones. Al usar el sitio, el usuario acepta:
 
-**No se ofrecen:**
-- Tours presenciales
-- Reservas de alojamiento o restaurantes
-- Servicios de guía turístico en persona
-- Productos físicos
+- Utilizarlo de forma lícita y conforme a la buena fe.
+- No utilizar los contenidos (textos, itinerarios, mapas, fotografías) con fines comerciales, de reventa o redistribución pública sin autorización.
+- Verificar por su cuenta horarios, precios, disponibilidad y condiciones de acceso de los lugares, actividades y establecimientos mencionados antes de viajar, ya que pueden cambiar en cualquier momento.
 
-## 3. Proceso de Compra
+## 3. Enlaces a Terceros y Afiliados
 
-### 3.1. Selección y pago
-1. El comprador selecciona la guía deseada
-2. Proporciona email y datos de facturación
-3. Realiza el pago mediante Stripe (tarjeta de crédito/débito)
-4. Recibe confirmación por email
+Este sitio puede enlazar a plataformas externas (por ejemplo, de reserva de actividades, tours o alojamiento), incluyendo enlaces de afiliado: si el usuario reserva o compra a través de ellos, Estaba en Lisboa puede recibir una comisión del proveedor, sin coste adicional para el usuario.
 
-### 3.2. Entrega del producto
-- La entrega es **inmediata** tras confirmar el pago
-- El acceso a la Guía Digital Interactiva se envía al email proporcionado
-- El comprador puede acceder al contenido online las veces que necesite
-- Incluye recursos descargables (mapas offline, coordenadas GPS, checklist en PNG)
+**Estaba en Lisboa no procesa ni gestiona esas reservas.** Cuando el usuario reserva o compra en una plataforma externa, el contrato correspondiente (pago, cancelación, garantías, atención al cliente) se formaliza directamente entre el usuario y esa plataforma o proveedor, no con Estaba en Lisboa. Más detalle en el [Aviso Legal](/aviso-legal).
 
-## 4. Precios
+## 4. Propiedad Intelectual
 
-- Todos los precios incluyen **IVA al 23%** (tipo aplicable a productos digitales en Portugal)
-- Los precios pueden cambiar sin previo aviso, pero se respeta el precio vigente al momento de la compra
-- No hay costes de envío (producto digital)
+Los textos, itinerarios, mapas, fotografías propias y el diseño de este sitio son propiedad de Jose Tabares o se utilizan con la debida autorización, y están protegidos por derechos de autor.
 
-## 5. Métodos de Pago
+Se permite el uso personal del contenido (leerlo, guardarlo para consulta propia, imprimirlo para uso privado durante un viaje). No se permite su reproducción, distribución o publicación en otro sitio o medio sin autorización expresa.
 
-El pago se procesa mediante **Stripe**, plataforma certificada PCI-DSS.
+## 5. Responsabilidad
 
-Métodos aceptados:
-- Tarjetas de crédito (Visa, Mastercard, American Express)
-- Tarjetas de débito
-- Otros métodos habilitados por Stripe
+Las recomendaciones de este sitio son orientativas y se basan en experiencia personal y verificación propia en el momento de escribirlas. Estaba en Lisboa no se responsabiliza de:
 
-**No guardamos datos de tarjeta.** Todo el procesamiento lo realiza Stripe de forma segura.
+- Cambios posteriores en horarios, precios, aforos o condiciones de acceso de lugares o actividades mencionados.
+- Cierres temporales o permanentes de establecimientos recomendados.
+- Actuaciones, cancelaciones o incidencias de plataformas externas enlazadas desde este sitio.
+- Interrupciones o errores técnicos en el acceso al sitio web.
 
-## 6. Política de Reembolso y Garantía de Satisfacción
+Este documento no sustituye asesoramiento legal, fiscal o profesional específico; ante dudas sobre un caso concreto, conviene consultar a un profesional cualificado.
 
-**Garantía de 48 horas:**
+## 6. Contacto
 
-Ofrecemos una garantía de satisfacción de **48 horas desde la compra**.
+Para cualquier consulta sobre estas condiciones: **contacto@estabaenlisboa.com**
 
-Si no estás satisfecho con tu guía digital, puedes solicitar un reembolso completo dentro de las primeras 48 horas, siempre que:
-- Notifiques tu solicitud a contacto@estabaenlisboa.com
-- Proporciones el número de pedido
-- Expliques brevemente el motivo de insatisfacción
+## 7. Modificaciones
 
-**IMPORTANTE - Derecho de Desistimiento:**
+Estas condiciones pueden actualizarse para reflejar cambios reales en el funcionamiento del sitio. Los cambios se publicarán en esta página con su fecha de actualización.
 
-Según el artículo 9 del Decreto-Ley n.º 24/2014 de Portugal sobre contratos celebrados a distancia:
+## 8. Resolución de Litigios
 
-> "El consumidor renuncia al derecho de desistimiento legal de 14 días si acepta la descarga inmediata del contenido digital."
+De conformidad con la legislación europea sobre resolución alternativa de litigios en materia de consumo, existe una plataforma de resolución de litigios en línea disponible en **https://www.rll.pt/**.
 
-**Al completar la compra, aceptas expresamente:**
-- La entrega inmediata del producto digital
-- Que renuncias a tu derecho de desistimiento legal de 14 días
-- Que la garantía de satisfacción es de 48 horas (no 14 días)
+## 9. Legislación Aplicable
 
-**Después de 48 horas:** No se realizarán reembolsos salvo por errores graves en el contenido que impidan su uso normal.
-
-## 7. Garantías y Responsabilidades
-
-### 7.1. Garantía del producto
-- Las guías contienen información verificada y actualizada
-- Las recomendaciones se basan en experiencias reales
-- Nos comprometemos a corregir errores significativos notificados
-
-### 7.2. Limitaciones de responsabilidad
-El vendedor **NO se responsabiliza de:**
-- Cambios en horarios, precios o disponibilidad de establecimientos mencionados
-- Cierres temporales o permanentes de lugares recomendados
-- Experiencias personales del usuario que no coincidan con las expectativas
-- Problemas técnicos ajenos al vendedor (cliente de email, conexión, etc.)
-
-### 7.3. Uso del producto
-El comprador se compromete a:
-- Usar la guía para uso personal y privado
-- No revender, redistribuir o compartir públicamente el contenido digital
-- No modificar o alterar el contenido
-- No utilizar el contenido con fines comerciales
-
-## 8. Propiedad Intelectual
-
-La Guía Digital Interactiva y todo su contenido (textos, imágenes, diseño) están protegidos por derechos de autor.
-
-La compra otorga una **licencia de uso personal, no exclusiva e intransferible**.
-
-## 9. Facturación
-
-- Se emite factura electrónica para cada compra
-- La factura se envía al email proporcionado
-- Incluye todos los datos fiscales necesarios
-- Se conserva según obligaciones legales (10 años)
-
-## 10. Soporte y Atención al Cliente
-
-Para cualquier consulta o problema:
-
-**Email:** contacto@estabaenlisboa.com
-
-Nos comprometemos a responder en un plazo máximo de 48 horas laborables.
-
-## 11. Modificaciones
-
-Nos reservamos el derecho de modificar estos términos. Los cambios se publicarán en el sitio web con la fecha de actualización.
-
-Las compras realizadas se rigen por los términos vigentes en ese momento.
-
-## 12. Resolución de Litigios
-
-Puedes acudir a la plataforma europea de resolución de litigios en línea:
-
-**https://www.rll.pt/**
-
-## 13. Legislación Aplicable
-
-Estos términos se rigen por la legislación portuguesa y europea aplicable en materia de comercio electrónico y protección de consumidores.`;
+Estas condiciones se rigen por la legislación portuguesa y europea aplicable.`;
 
   return content;
 }

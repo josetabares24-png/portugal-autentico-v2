@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import LegalPageLayout from '@/components/LegalPageLayout';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad | Estaba en Lisboa',
+  title: 'Política de Privacidad',
   description: 'Política de privacidad y protección de datos de Estaba en Lisboa',
   alternates: {
     canonical: 'https://estabaenlisboa.com/politica-privacidad',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Privacidad
 
-**Última actualización:** 8 de enero de 2026
+**Última actualización:** 5 de agosto de 2026
 
 ## 1. Responsable del Tratamiento
 
@@ -34,57 +34,52 @@ async function getLegalContent() {
 
 ## 2. Datos que Recopilamos
 
-### 2.1. Datos de compra
-Cuando realizas una compra, recopilamos:
-- Nombre y apellidos
-- Dirección de email
-- Datos de facturación (procesados por Stripe)
-- Información de la transacción
+Este sitio no tiene actualmente tienda ni checkout: no recopilamos datos de compra, facturación ni de pago porque no se procesan.
 
-### 2.2. Datos de navegación
-Recopilamos automáticamente:
-- Dirección IP
-- Tipo de navegador
-- Páginas visitadas
-- Fecha y hora de acceso
+### 2.1. Datos que envías voluntariamente
+Cuando usas el formulario de contacto, el de planifica-tu-viaje, o te suscribes a novedades por email, recopilamos los datos que introduces en ese formulario (por ejemplo, nombre y correo electrónico, y el contenido de tu mensaje o consulta). Se usan solo para responderte o, si te suscribes, para enviarte las comunicaciones que hayas solicitado.
 
-### 2.3. Cookies y tecnologías similares
-Utilizamos cookies para mejorar tu experiencia. Consulta nuestra [Política de Cookies](/politica-cookies) para más información.
+### 2.2. Cuentas de administración
+El panel de administración del sitio usa Clerk para el inicio de sesión. Esto solo afecta a quienes acceden a ese panel (el equipo del sitio), no a la navegación pública.
+
+### 2.3. Datos de navegación
+Si aceptas las cookies analíticas, recopilamos de forma automática datos de uso del sitio (páginas visitadas, origen del tráfico, tipo de dispositivo) a través de Google Analytics, con la IP anonimizada.
+
+### 2.4. Cookies y tecnologías similares
+Consulta la [Política de Cookies](/politica-cookies) para el detalle de qué se activa y bajo qué condiciones.
 
 ## 3. Finalidad del Tratamiento
 
 Tus datos se utilizan para:
 
-- **Gestión de compras:** Procesar tu pedido y enviar la guía digital
-- **Comunicación:** Enviar confirmación de compra y soporte
-- **Facturación:** Cumplir obligaciones fiscales
-- **Mejora del servicio:** Analizar el uso del sitio web (Google Analytics)
-- **Marketing (opcional):** Enviar novedades si das tu consentimiento
+- **Atención al usuario:** Responder a tu mensaje de contacto o solicitud a través de planifica-tu-viaje.
+- **Comunicaciones que solicitas:** Enviarte novedades si te suscribes voluntariamente.
+- **Administración del sitio:** Autenticar a quien gestiona el contenido a través de Clerk.
+- **Mejora del servicio:** Analizar el uso del sitio web de forma agregada, si aceptas las cookies analíticas (Google Analytics).
 
 ## 4. Base Legal
 
 Tratamos tus datos basándonos en:
 
-- **Ejecución de contrato:** Para procesar tu compra
-- **Obligación legal:** Para cumplir con obligaciones fiscales
-- **Consentimiento:** Para cookies analíticas y comunicaciones de marketing
-- **Interés legítimo:** Para mejorar nuestros servicios
+- **Consentimiento:** Para responder a tu formulario de contacto, para las comunicaciones que solicitas, y para las cookies analíticas.
+- **Interés legítimo:** Para el funcionamiento técnico y de seguridad del sitio.
 
 ## 5. Conservación de Datos
 
-- **Datos de compra:** Se conservan durante el plazo legal exigido para obligaciones fiscales (actualmente 10 años en Portugal)
-- **Datos de navegación:** Se conservan durante 12 meses
-- **Datos de marketing:** Hasta que retires tu consentimiento
+- **Mensajes de contacto:** Se conservan el tiempo necesario para atender tu consulta y un periodo razonable posterior por si hay seguimiento.
+- **Suscripción a novedades:** Hasta que te des de baja o retires tu consentimiento.
+- **Datos de navegación (analítica):** Según la configuración por defecto de Google Analytics para esta propiedad; consulta la política de privacidad de Google para el detalle exacto, ya que ese plazo lo determina el proveedor, no nosotros.
 
 ## 6. Destinatarios de los Datos
 
-Tus datos pueden ser compartidos con:
+Según el tipo de dato, puede ser tratado por:
 
-- **Stripe:** Procesador de pagos (con sede en la UE, cumple RGPD)
-- **Vercel:** Alojamiento web (con medidas de seguridad adecuadas)
-- **Google Analytics:** Análisis de tráfico web (con IP anonimizada)
+- **Brevo:** Envío de emails de contacto y newsletter, si te suscribes.
+- **Clerk:** Autenticación del panel de administración.
+- **Google Analytics:** Análisis de tráfico web (con IP anonimizada), solo si aceptas las cookies analíticas.
+- **Vercel:** Alojamiento y ejecución del sitio web.
 
-No vendemos ni compartimos tus datos con terceros para fines de marketing.
+No vendemos tus datos a terceros con fines de marketing.
 
 ## 7. Transferencias Internacionales
 
@@ -113,7 +108,7 @@ https://www.cnpd.pt
 
 ## 10. Seguridad
 
-Implementamos medidas técnicas y organizativas para proteger tus datos contra acceso no autorizado, pérdida o destrucción. Utilizamos conexión HTTPS y procesadores de pago certificados.
+Implementamos medidas técnicas y organizativas para proteger tus datos contra acceso no autorizado, pérdida o destrucción, incluyendo conexión HTTPS en todo el sitio.
 
 ## 11. Menores de Edad
 
