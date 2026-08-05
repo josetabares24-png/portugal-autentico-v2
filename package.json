@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "smoke:activities": "node scripts/smoke-activities.mjs"
+    "smoke:activities": "node scripts/smoke-activities.mjs",
+    "smoke:itineraries": "node scripts/smoke-itineraries.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",
