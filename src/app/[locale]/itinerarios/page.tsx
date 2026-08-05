@@ -6,7 +6,7 @@ import { getGuideList } from '@/lib/guide-store';
 
 export const metadata: Metadata = {
   title: 'Itinerarios en Lisboa 2026: Guías 1, 2, 3 Días y Semana',
-  description: 'Guías de Lisboa por días: 1 día esencial, 2 días completo, 3 días con Sintra, semana completa. Rutas con horarios reales, GPS, restaurantes locales y mapas. Creadas por locales.',
+  description: 'Guías de Lisboa por días: 1 día esencial, 2 días completo, 3 días con Sintra, semana completa. Rutas con horarios reales, GPS, restaurantes locales y mapas. Creadas desde Lisboa.',
   keywords: ['itinerario lisboa 1 dia', 'lisboa 2 dias', 'lisboa 3 dias', 'guia lisboa', 'que ver lisboa', 'ruta lisboa'],
   openGraph: {
     title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
@@ -24,7 +24,7 @@ export default async function ItinerariosPage() {
 
   const faqItems = [
     { question: '¿Cuántos días se recomiendan para Lisboa?', answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.' },
-    { question: '¿Qué incluye cada itinerario?', answer: 'Rutas hora a hora, mapas GPS offline, recomendaciones de restaurantes verificados y tips de locales.' },
+    { question: '¿Qué incluye cada itinerario?', answer: 'Rutas hora a hora, mapas GPS offline y recomendaciones de restaurantes comprobados sobre el terreno.' },
     { question: '¿Los itinerarios sirven para primera visita?', answer: 'Sí, están diseñados para optimizar tiempos y evitar trampas turísticas.' },
   ];
 
