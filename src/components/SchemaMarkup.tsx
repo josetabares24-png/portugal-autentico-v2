@@ -13,7 +13,6 @@ export default function SchemaMarkup() {
     },
     "image": "https://estabaenlisboa.com/logo.png",
     "description": "Guías y itinerarios verificados de Lisboa por locales. Horarios exactos, GPS y restaurantes sin trampas turísticas.",
-    "foundingDate": "2015",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lisboa",
@@ -26,7 +25,7 @@ export default function SchemaMarkup() {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "hola@estabaenlisboa.com",
-      "availableLanguage": ["Spanish", "Portuguese", "English", "Korean"]
+      "availableLanguage": ["Spanish"]
     }
   };
 
@@ -36,15 +35,7 @@ export default function SchemaMarkup() {
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
     "description": "Guías verificadas de Lisboa con itinerarios, horarios exactos, GPS y restaurantes locales",
-    "inLanguage": ["es", "en", "ko"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://estabaenlisboa.com/itinerarios?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": ["es"]
   };
 
   return (

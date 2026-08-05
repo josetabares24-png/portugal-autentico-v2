@@ -3,27 +3,6 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Estaba en Lisboa',
-  url: 'https://estabaenlisboa.com',
-  logo: 'https://estabaenlisboa.com/images/tranvia-28.jpg',
-  description: 'Guías de viaje para Lisboa escritas por un residente: qué ver, dónde comer, barrios, historia y rutas a pie.',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Lisboa',
-    addressCountry: 'PT',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 38.7223,
-    longitude: -9.1393,
-  },
-  areaServed: { '@type': 'City', name: 'Lisboa' },
-  sameAs: ['https://estabaenlisboa.com'],
-};
-
 export const metadata: Metadata = {
   title: 'Qué Ver en Lisboa 2026 — Guías Gratis, Historia, Barrios y Rutas',
   description: 'Guía completa de Lisboa 2026: qué ver, dónde comer, historia de la ciudad, miradores, barrios y rutas. Gratis, escrita por alguien que vive aquí.',
@@ -67,11 +46,6 @@ const libreta: { texto: string; href?: string }[] = [
 export default function HomePage() {
   return (
     <main id="main-content" className="bg-cream">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-
       {/* ── HERO ── */}
       <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] md:min-h-[620px]">
         <Image
