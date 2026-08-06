@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'como-pagar-en-portugal',
+    titulo: 'Cómo pagar en Portugal y evitar comisiones innecesarias',
+    excerpt: 'Efectivo, tarjetas, cajeros y cambio de moneda explicados sin tecnicismos, para que sepas qué esperar antes de llegar.',
+    categoria: 'Planificación',
+    fecha: '6 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
+  },
+  {
     id: 'que-hacer-en-lisboa-en-3-dias',
     titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
     excerpt: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',

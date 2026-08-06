@@ -16,6 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/blog', label: 'Blog' },
     { href: '/itinerarios', label: 'Itinerarios' },
+    { href: '/free-tours-lisboa', label: 'Free tours' },
     { href: '/actividades', label: 'Actividades' },
     { href: '/contacto', label: 'Contacto' },
   ];
@@ -46,7 +47,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? 'page' : undefined}
-                className={`relative px-4 py-2 font-semibold text-sm transition-colors ${
+                className={`relative flex items-center px-4 py-3 font-semibold text-sm transition-colors ${
                   isActive(link.href)
                     ? 'text-terracotta after:absolute after:-bottom-px after:left-4 after:right-4 after:h-[2px] after:rounded-full after:bg-terracotta'
                     : 'text-night hover:text-terracotta'
@@ -93,7 +94,7 @@ export default function Navbar() {
                     href={link.href}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-2.5 text-sm font-semibold transition-colors ${
+                    className={`block px-4 py-3 text-sm font-semibold transition-colors ${
                       isActive(link.href)
                         ? 'text-terracotta'
                         : 'text-night hover:text-terracotta'

@@ -252,14 +252,25 @@ export default function FreeToursLisboaPage() {
                   id={route.anchor}
                   className="group relative flex scroll-mt-24 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover focus-within:-translate-y-1 focus-within:shadow-card-hover"
                 >
-                  {/* Acento superior: distingue la tarjeta sin recurrir al color como única señal */}
+                  {route.image && (
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      <Image
+                        src={route.image}
+                        alt={route.imageAlt ?? ''}
+                        fill
+                        className="object-cover motion-safe:transition-transform motion-safe:duration-500 group-hover:scale-[1.03]"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                  )}
+
+                  {/* Acento: distingue la tarjeta sin recurrir al color como única señal */}
                   <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
 
                   <div className="flex flex-1 flex-col p-5 md:p-6">
-                    <div className="mb-3 flex items-center gap-2.5">
-                      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-terracotta/10 text-terracotta">
-                        <Icon name={route.icon} size={17} />
-                      </span>
+                    <div className="mb-3 flex items-center gap-2">
+                      <Icon name={route.icon} size={15} className="flex-shrink-0 text-terracotta" />
                       <span className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
                         {route.label}
                       </span>

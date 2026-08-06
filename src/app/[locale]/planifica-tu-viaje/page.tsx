@@ -165,6 +165,13 @@ export default function PlanificaTuViajePage() {
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Presupuesto estimado</p>
                 <p className="text-5xl font-bold text-text-main mb-1">{totalViaje} €</p>
                 <p className="text-text-secondary text-sm">{totalPersonaDia} € por persona al día</p>
+                <p className="mt-4 border-t border-border-soft pt-4 text-sm leading-relaxed text-text-secondary">
+                  Antes de viajar, repasa{' '}
+                  <Link href="/blog/como-pagar-en-portugal" className="text-terracotta underline underline-offset-2 hover:no-underline">
+                    cómo pagar en Portugal
+                  </Link>{' '}
+                  para no dejarte parte del presupuesto en comisiones evitables.
+                </p>
               </div>
 
               {recommendedGuide && (

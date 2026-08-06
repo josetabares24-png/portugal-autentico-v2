@@ -45,6 +45,10 @@ export interface FreeTourCategory {
   label: string;
   /** Nombre de icono en `src/components/Icon.tsx`. */
   icon: string;
+  /** Fotografía principal de la tarjeta (4:3). Ausente en el acceso general. */
+  image?: string;
+  /** Texto alternativo de la fotografía. */
+  imageAlt?: string;
   /**
    * `true` en la entrada que no es una ruta concreta sino el acceso general
    * al destino. Se muestra aparte de la cuadrícula de rutas.
@@ -81,6 +85,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Lisboa imprescindible',
     label: 'Primera visita',
     icon: 'attractions',
+    image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
+    imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
     description:
       'La mejor opción para una primera visita: Baixa, Chiado, Rossio y los principales episodios de la historia de Lisboa.',
     duration: 'Normalmente 2-3 horas',
@@ -94,6 +100,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Alfama',
     label: 'Calles y miradores',
     icon: 'directions_walk',
+    image: '/images/actividades/portas-do-sol-alfama.webp',
+    imageAlt: 'Tejados de Alfama y el río Tajo desde el Miradouro das Portas do Sol',
     description:
       'Calles estrechas, miradores, fado, historia medieval y algunas de las cuestas más conocidas de Lisboa.',
     notice:
@@ -108,6 +116,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Belém',
     label: 'Historia marítima',
     icon: 'sailing',
+    image: '/images/actividades/torre-de-belem-lisboa.webp',
+    imageAlt: 'Torre de Belém junto al río Tajo',
     description:
       'Una ruta centrada en los Descubrimientos, los Jerónimos, la Torre de Belém y la historia marítima portuguesa.',
     ctaLabel: 'Ver tours por Belém',
@@ -120,6 +130,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Misterios y leyendas',
     label: 'Historias ocultas',
     icon: 'sparkles',
+    image: '/images/free-tours/lisboa-misterios-leyendas.webp',
+    imageAlt: 'Terraza con azulejos sobre los tejados de Alfama y el río Tajo al anochecer',
     description:
       'Historias menos conocidas, leyendas, secretos y episodios oscuros de la ciudad.',
     ctaLabel: 'Ver tours de misterios',
@@ -132,6 +144,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Lisboa nocturna',
     label: 'Después del atardecer',
     icon: 'bedtime',
+    image: '/images/free-tours/lisboa-nocturna.webp',
+    imageAlt: 'Vista nocturna de la Baixa de Lisboa y el puente 25 de Abril',
     description:
       'Una forma distinta de recorrer Alfama y el centro cuando bajan las temperaturas y cambia el ambiente de las calles.',
     ctaLabel: 'Ver tours nocturnos',
