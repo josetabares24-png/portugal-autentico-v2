@@ -34,6 +34,7 @@ const MANDATORY = [
   `${PROD_ORIGIN}/planifica-tu-viaje`,
   `${PROD_ORIGIN}/contacto`,
   `${PROD_ORIGIN}/sobre-nosotros`,
+  `${PROD_ORIGIN}/blog/como-pagar-en-portugal`,
 ];
 
 /**
@@ -410,6 +411,98 @@ async function checkEveryUrl(locs, baseUrl) {
   return { checked, problems, noCanonical };
 }
 
+/** Las 15 imágenes del paquete editorial más las 13 asignaciones. */
+const NEW_IMAGES = [
+  'cascais-centro-historico', 'castelo-sao-jorge-lisboa', 'cristo-rei-ponte-25-abril',
+  'elevador-santa-justa-lisboa', 'jardim-da-estrela-coreto', 'lx-factory-lisboa',
+  'mosteiro-dos-jeronimos-claustro', 'oceanario-de-lisboa', 'parque-eduardo-vii-lisboa',
+  'passeio-barco-rio-tejo-lisboa', 'pasteis-de-belem', 'portas-do-sol-alfama',
+  'torre-de-belem-lisboa',
+].map((n) => `/images/actividades/${n}.webp`).concat([
+  '/images/free-tours/lisboa-misterios-leyendas.webp',
+  '/images/free-tours/lisboa-nocturna.webp',
+]);
+
+const ACTIVITIES_WITH_IMAGE = [
+  'elevador-santa-justa', 'mosteiro-jeronimos', 'lx-factory', 'castelo-sao-jorge',
+  'torre-de-belem', 'cristo-rei', 'parque-eduardo-vii', 'miradouro-portas-do-sol',
+  'crucero-atardecer-tajo', 'oceanario-lisboa', 'pasteis-de-belem',
+  'cascais-cabo-da-roca', 'jardim-estrela-principe-real',
+];
+
+async function checkNewImages(baseUrl) {
+  const broken = [];
+  for (const img of NEW_IMAGES) {
+    const res = await fetch(`${baseUrl}${img}`, { redirect: 'manual' });
+    if (res.status !== 200) broken.push(`${img} -> ${res.status}`);
+  }
+  record('las 15 imágenes nuevas se sirven sin 404', broken.length === 0, broken.length ? broken.join(', ') : `${NEW_IMAGES.length} imágenes`);
+}
+
+async function checkNavigation(baseUrl) {
+  const html = await (await fetch(`${baseUrl}/`)).text();
+  const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+  // El Navbar usa un único array para escritorio y móvil: dos apariciones.
+  const navHits = [...visible.matchAll(/href="\/free-tours-lisboa"/g)].length;
+  record('la portada enlaza /free-tours-lisboa en nav de escritorio y móvil', navHits >= 2, `${navHits} enlaces en la portada`);
+  record('la portada muestra el acceso editorial a free tours', visible.includes('Ver free tours'), 'CTA de portada');
+
+  // Estado activo en la propia landing
+  const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
+  record(
+    'la landing marca su entrada de menú como activa',
+    /<a[^>]*href="\/free-tours-lisboa"[^>]*aria-current="page"/.test(landing.replace(/\n/g, ' ')),
+    'aria-current="page"'
+  );
+}
+
+async function checkArticle(baseUrl) {
+  const path = '/blog/como-pagar-en-portugal';
+  const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+  const html = await res.text();
+
+  record(`${path} responde 200`, res.status === 200, `HTTP ${res.status}`);
+  if (res.status !== 200) return;
+
+  const robots = getRobotsMeta(html);
+  record('el artículo no lleva noindex', !robots || !/noindex/i.test(robots), `robots="${robots ?? '(por defecto)'}"`);
+  record('el artículo tiene title', !!getTitle(html), getTitle(html) ?? '-');
+  record(
+    'el artículo tiene canonical correcto',
+    getCanonical(html) === `${PROD_ORIGIN}${path}`,
+    `canonical="${getCanonical(html)}"`
+  );
+
+  const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+  record('el artículo no menciona Wise', !/\bwise\b/i.test(visible), 'sin menciones');
+  record('el artículo no contiene enlaces afiliados', !/rel="[^"]*sponsored/i.test(html) && !html.includes('guruwalk.com'), 'sin afiliación');
+  record(
+    'las cinco preguntas frecuentes aparecen en la página',
+    ['pagar con tarjeta en Lisboa', 'llevar efectivo a Portugal', 'euros y mi moneda', 'comisión en Portugal', 'cambiar dinero antes'].every((q) => visible.includes(q)),
+    'FAQ visibles, no sólo en schema'
+  );
+}
+
+async function checkActivityImages(baseUrl) {
+  const html = await (await fetch(`${baseUrl}/actividades`)).text();
+  const missing = ACTIVITIES_WITH_IMAGE.filter((slug) => {
+    const i = html.indexOf(`href="/actividades/${slug}"`);
+    if (i === -1) return true;
+    return !html.slice(i, i + 1200).includes('images%2Factividades');
+  });
+  record(
+    'las 13 actividades muestran imagen y no placeholder',
+    missing.length === 0,
+    missing.length ? `sin imagen: ${missing.join(', ')}` : '13 con imagen'
+  );
+
+  const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
+  const cards = [...landing.matchAll(/<article[^>]*id="ruta-[a-z-]+"[\s\S]{0,900}?<\/article>/g)];
+  const withPhoto = cards.filter((c) => c[0].includes('<img')).length;
+  record('las 5 tarjetas de ruta llevan fotografía', withPhoto === 5, `${withPhoto}/5 con <img>`);
+}
+
 async function checkRobots(baseUrl) {
   const res = await fetch(`${baseUrl}/robots.txt`, { redirect: 'manual' });
   const txt = await res.text();
@@ -492,6 +585,14 @@ async function main() {
     checkBlog(locs);
     log('');
     await checkRobots(baseUrl);
+    log('');
+    await checkNavigation(baseUrl);
+    log('');
+    await checkArticle(baseUrl);
+    log('');
+    await checkActivityImages(baseUrl);
+    log('');
+    await checkNewImages(baseUrl);
     log('');
     log(`== Comprobando las ${locs.length} URLs una a una ==`);
     await checkEveryUrl(locs, baseUrl);
