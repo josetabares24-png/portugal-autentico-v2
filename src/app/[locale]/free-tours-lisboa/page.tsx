@@ -259,7 +259,7 @@ export default function FreeToursLisboaPage() {
                       campaign={category.campaign}
                       content={`card-${category.id}`}
                       placement="category-card"
-                      className="btn-outline w-full px-5 py-2.5 text-sm"
+                      className="btn-outline w-full px-5 py-3 text-sm"
                     >
                       {category.ctaLabel}
                     </AffiliateLink>
