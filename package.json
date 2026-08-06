@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "smoke:activities": "node scripts/smoke-activities.mjs",
+    "smoke:itineraries": "node scripts/smoke-itineraries.mjs",
+    "smoke:titles": "node scripts/smoke-titles.mjs",
+    "smoke:free-tours": "node scripts/smoke-free-tours.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",
@@ -19,7 +24,6 @@
     "@upstash/redis": "^1.30.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
-    "framer-motion": "^12.29.0",
     "lucide-react": "^0.562.0",
     "next": "^16.1.1",
     "next-intl": "^4.8.2",
@@ -40,5 +44,10 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "ws": "8.21.2",
+    "icu-minify": "4.13.5",
+    "@babel/core": "7.29.7"
   }
 }

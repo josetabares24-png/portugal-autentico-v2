@@ -273,6 +273,13 @@ export default function Lisboa1DiaPage() {
             <p className="mt-4 max-w-2xl text-sm leading-[1.7] text-[#374151]">
               La ruta empieza temprano entre las calles de Alfama, baja hacia el centro, se abre al río en Belém y termina con cena en Bairro Alto.
             </p>
+            <p className="mt-3 max-w-2xl text-sm leading-[1.7] text-[#374151]">
+              Si es tu primer día en la ciudad, empezar con un{' '}
+              <Link href="/free-tours-lisboa" className="text-terracotta underline underline-offset-2 hover:no-underline">
+                free tour por el centro
+              </Link>{' '}
+              te da el contexto histórico para recorrer el resto de la ruta entendiendo lo que ves.
+            </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#inicio"

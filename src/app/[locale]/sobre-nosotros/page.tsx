@@ -28,13 +28,13 @@ export default function SobreNosotrosPage() {
       <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <p className="font-display italic text-text-main text-xl md:text-2xl leading-relaxed mb-8">
-            Vivimos en Lisboa. Probamos las rutas cada mes. Escribimos solo lo que funciona.
+            Vivo en Lisboa. Reviso las rutas periódicamente. Escribo solo lo que funciona.
           </p>
           <p className="text-text-secondary leading-relaxed mb-6">
-            Nada de guías copiadas de Wikipedia. Nada de listas de &ldquo;los 10 mejores restaurantes&rdquo; que llevan tres años sin actualizarse. Solo lo que nosotros mismos haríamos si llegásemos por primera vez a Lisboa mañana.
+            Nada de guías copiadas de Wikipedia. Nada de listas de &ldquo;los 10 mejores restaurantes&rdquo; que llevan tres años sin actualizarse. Solo lo que yo mismo haría si llegara por primera vez a Lisboa mañana.
           </p>
           <p className="text-text-secondary leading-relaxed">
-            Cada itinerario está verificado, cada restaurante sigue abierto, cada precio está actualizado para 2026. Si algo cambia, lo actualizamos.
+            Reviso cada itinerario periódicamente, compruebo que los restaurantes recomendados sigan abiertos y actualizo precios cuando detecto cambios.
           </p>
         </div>
       </section>
@@ -79,21 +79,21 @@ export default function SobreNosotrosPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card-surface p-6 border-t-2 border-gold">
-              <h3 className="font-display italic text-text-main text-xl mb-3">Vivimos aquí</h3>
+              <h3 className="font-display italic text-text-main text-xl mb-3">Vivo aquí</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Probamos rutas cada mes para que lo que recomendamos funcione de verdad, no solo en papel.
+                Reviso las rutas periódicamente para que lo que recomiendo funcione de verdad, no solo en papel.
               </p>
             </div>
             <div className="card-surface p-6 border-t-2 border-border-soft">
-              <h3 className="font-display italic text-text-main text-xl mb-3">Siempre actualizadas</h3>
+              <h3 className="font-display italic text-text-main text-xl mb-3">Revisadas periódicamente</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Si algo cambia &mdash; precio, horario, restaurante que cierra &mdash; actualizamos la guía. Nada de información vieja.
+                Si algo cambia &mdash; precio, horario, restaurante que cierra &mdash; actualizo la guía en cuanto lo detecto.
               </p>
             </div>
             <div className="card-surface p-6 border-t-2 border-border-soft">
               <h3 className="font-display italic text-text-main text-xl mb-3">Criterio editorial</h3>
               <p className="text-text-secondary text-sm leading-relaxed">
-                Recomendamos solo lugares, rutas y consejos que encajan con una Lisboa real, útil y disfrutable.
+                Recomiendo solo lugares, rutas y consejos que encajan con una Lisboa real, útil y disfrutable.
               </p>
             </div>
           </div>
@@ -107,13 +107,13 @@ export default function SobreNosotrosPage() {
             ¿Hablamos?
           </h2>
           <p className="text-white/60 mb-8 leading-relaxed">
-            Si quieres colaborar, tienes dudas sobre alguna guía o simplemente quieres preguntar algo de Lisboa, escríbenos.
+            Si quieres colaborar, tienes dudas sobre alguna guía o simplemente quieres preguntar algo de Lisboa, escríbeme.
           </p>
           <Link
             href="/contacto"
             className="btn-primary inline-flex px-8 py-3"
           >
-            Escribirnos
+            Escribirme
           </Link>
         </div>
       </section>

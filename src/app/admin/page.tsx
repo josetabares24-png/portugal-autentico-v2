@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { isAdmin } from '@/lib/auth-utils';
 
 export const metadata = {
-  title: 'Panel de Administración | Estaba en Lisboa',
+  title: 'Panel de Administración',
   description: 'Panel de administración para gestionar guías y contenido',
 };
 

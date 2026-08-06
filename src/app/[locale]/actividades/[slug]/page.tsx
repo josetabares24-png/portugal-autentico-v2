@@ -4,13 +4,18 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { activities, activitySlugs } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Icon from '@/components/Icon';
+import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
+import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
 
 export function generateStaticParams() {
   return activitySlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) return { title: 'Actividad no encontrada', robots: { index: false, follow: false } };
 
@@ -22,25 +27,50 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: activity.title,
       description: activity.description,
       url: `https://estabaenlisboa.com/actividades/${slug}`,
-      images: [{ url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }],
+      // Sin foto verificada del lugar todavía: se usa el logo del sitio en
+      // vez de arriesgarnos a mostrar la imagen de otro monumento o barrio.
+      images: [
+        activity.image
+          ? { url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }
+          : { url: 'https://estabaenlisboa.com/logo.png', width: 600, height: 188, alt: 'Estaba en Lisboa' },
+      ],
     },
     alternates: { canonical: `https://estabaenlisboa.com/actividades/${slug}` },
+    // La ficha sigue visitable y enlazada, pero solo se indexa como página
+    // independiente cuando su contenido editorial está verificado y completo
+    // (activity.indexable === true). Ver src/data/activities.ts.
+    robots: activity.indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 
-export default async function ActivityDetailPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ActivityDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) notFound();
 
   const related = activities.filter((a) => a.category === activity.category && a.slug !== activity.slug).slice(0, 3);
+
+  // Enlace de reserva: si la ficha declara una categoría de free tour, la
+  // URL afiliada se resuelve centralizadamente (y sólo en servidor). Si no,
+  // se usa el bookingUrl propio de la ficha, si lo tiene.
+  const freeTourCategory = activity.affiliateCategory
+    ? getFreeTourCategory(activity.affiliateCategory)
+    : null;
+  const isFreeTour = freeTourCategory !== null;
+  const affiliateHref = freeTourCategory ? getFreeTourAffiliateUrl(freeTourCategory) : null;
+  const affiliateCampaign = freeTourCategory ? freeTourCategory.campaign : activity.slug;
 
   const touristAttractionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
     name: activity.title,
     description: activity.description,
-    image: `https://estabaenlisboa.com${activity.image}`,
+    // Solo se declara `image` cuando hay una foto verificada de este lugar
+    // concreto; no queremos afirmar en datos estructurados que una imagen
+    // de otro monumento o barrio corresponde a esta actividad.
+    ...(activity.image ? { image: `https://estabaenlisboa.com${activity.image}` } : {}),
     isAccessibleForFree: activity.isFree,
     address: {
       '@type': 'PostalAddress',
@@ -77,15 +107,19 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
 
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[320px] overflow-hidden">
-        <Image
-          src={activity.image}
-          alt={activity.title}
-          fill
-          className="object-cover"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
+        {activity.image ? (
+          <Image
+            src={activity.image}
+            alt={activity.imageAlt ?? activity.title}
+            fill
+            className="object-cover"
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+          />
+        ) : (
+          <ActivityImagePlaceholder />
+        )}
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
           <nav aria-label="Breadcrumb" className="text-white/60 text-xs uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -123,12 +157,61 @@ export default async function ActivityDetailPage({ params }: { params: { slug: s
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
 
+          {/* El bloque se muestra en cuanto la ficha declara una categoría de
+              free tour o un bookingUrl propio, aunque todavía no haya enlace
+              afiliado configurado: en ese caso el CTA se renderiza inerte,
+              igual que en la landing, en vez de desaparecer la sección. */}
+          {(isFreeTour || activity.bookingUrl) && (
+            <div className="mb-10 overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
+              <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
+
+              <div className="p-5 md:p-6">
+                {isFreeTour && (
+                  <p className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
+                    <Icon name="event_available" size={15} className="flex-shrink-0 text-gold" />
+                    Disponibilidad según la fecha
+                  </p>
+                )}
+
+                <AffiliateLink
+                  href={affiliateHref ?? activity.bookingUrl ?? null}
+                  campaign={affiliateCampaign}
+                  content={`activity-${activity.slug}`}
+                  placement="activity-detail"
+                  activitySlug={activity.slug}
+                  className="btn-primary w-full px-7 py-3.5 text-base sm:w-auto"
+                >
+                  {isFreeTour ? 'Consultar free tours y horarios' : 'Reservar con GuruWalk'}
+                </AffiliateLink>
+
+                {isFreeTour && (
+                  <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                    Los horarios y las plazas cambian cada día. Puedes comparar esta y
+                    otras rutas en la{' '}
+                    <Link href="/free-tours-lisboa" className="text-terracotta underline underline-offset-2 hover:no-underline">
+                      guía de free tours de Lisboa
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                <AffiliateDisclosure variant="compact" className="mt-4 border-t border-border-soft pt-4 text-text-secondary" />
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/planifica-tu-viaje"
               className="btn-primary px-8 py-3 text-center"
             >
               Incluir en mi plan de viaje
+            </Link>
+            <Link
+              href="/itinerarios"
+              className="btn-outline px-8 py-3 text-center"
+            >
+              Ver itinerarios gratuitos
             </Link>
             <Link
               href="/actividades"

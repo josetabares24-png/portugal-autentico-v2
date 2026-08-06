@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blog-posts'
 import { guidePackSlugs } from '@/data/guide-packs'
+import { activities } from '@/data/activities'
 
 const baseUrl = 'https://estabaenlisboa.com'
 
@@ -36,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticUrls: MetadataRoute.Sitemap = [
     { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/itinerarios`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/actividades`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/free-tours-lisboa`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/planifica-tu-viaje`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/pack-completo`, changeFrequency: 'monthly', priority: 0.8 },
@@ -54,6 +57,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Solo las fichas marcadas como indexable (editorialmente completas y
+  // verificadas) entran en el sitemap; el resto sigue siendo visitable
+  // desde /actividades pero se sirve con noindex, follow.
+  const activityUrls: MetadataRoute.Sitemap = activities
+    .filter((activity) => activity.indexable)
+    .map((activity) => ({
+      url: `${baseUrl}/actividades/${activity.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }));
+
   // URLs dinámicas del blog
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => {
     const postDate = parseSpanishDate(post.fecha);
@@ -70,5 +84,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return entry;
   });
 
-  return [...staticUrls, ...guideUrls, ...blogUrls];
+  return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls];
 }

@@ -4,17 +4,20 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
+import { blogPosts } from '@/data/blog-posts';
+
+const relatedReadingSlugs = ['como-moverse-por-lisboa', 'donde-alojarse-en-lisboa', 'presupuesto-viajar-lisboa'];
 
 export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const pack = await getGuidePack(slug);
   if (!pack) return { title: 'Guía no encontrada', robots: { index: false, follow: false } };
   return {
-    title: `${pack.title} | Estaba en Lisboa`,
+    title: pack.title,
     description: pack.description || `Guía completa de ${pack.duration} en Lisboa.`,
     keywords: ['lisboa', 'guia lisboa', 'itinerario lisboa', pack.duration.toLowerCase()],
     authors: [{ name: 'Estaba en Lisboa' }],
@@ -28,25 +31,34 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function PackPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PackPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const pack = await getGuidePack(slug);
 
   if (!pack) notFound();
 
-  const productJsonLd = {
+  const otherPacks = guidePackSlugs.filter((s) => s !== slug).slice(0, 2);
+  const relatedReading = blogPosts.filter((post) => relatedReadingSlugs.includes(post.id));
+
+  // CreativeWork instead of Product: this is a free editorial itinerary,
+  // not a good or service that's bought/sold (no price, no Offer, no
+  // availability). Product implies a commercial transaction that doesn't
+  // exist here; CreativeWork is the schema.org type that actually defines
+  // isAccessibleForFree, without asserting a sale.
+  const creativeWorkJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'CreativeWork',
     name: pack.title,
     description: pack.description,
     image: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`,
-    brand: { '@type': 'Brand', name: 'Estaba en Lisboa' },
+    author: { '@type': 'Organization', name: 'Estaba en Lisboa' },
     isAccessibleForFree: true,
+    url: `https://estabaenlisboa.com/itinerarios/${slug}`,
   };
 
   return (
     <main id="main-content">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
@@ -146,6 +158,31 @@ export default async function PackPage({ params }: { params: { slug: string } })
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sigue explorando */}
+      <section className="bg-background-light py-16 border-t border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8">Sigue explorando</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherPacks.map((otherSlug) => (
+              <Link key={otherSlug} href={`/itinerarios/${otherSlug}`} className="card-surface block p-5">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Itinerario</p>
+                <p className="font-display italic text-text-main text-lg">{guidePacks[otherSlug]?.title}</p>
+              </Link>
+            ))}
+            {relatedReading.map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="card-surface block p-5">
+                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Blog</p>
+                <p className="font-display italic text-text-main text-lg">{post.titulo}</p>
+              </Link>
+            ))}
+            <Link href="/actividades" className="card-surface block p-5">
+              <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-1">Actividades</p>
+              <p className="font-display italic text-text-main text-lg">Qué hacer y ver en Lisboa</p>
+            </Link>
           </div>
         </div>
       </section>

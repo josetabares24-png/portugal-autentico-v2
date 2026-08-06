@@ -24,6 +24,7 @@ import {
   FlameKindling, Church,
   Route, LocateFixed,
   Activity, Loader,
+  Moon, MoonStar, Sparkles, Ship,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -212,6 +213,12 @@ const iconMap: Record<string, LucideIcon> = {
   account_balance: Landmark,
   foot_bones: Footprints,
   PersonStanding: PersonStanding,
+
+  // Noche y relatos
+  dark_mode: Moon,
+  bedtime: MoonStar,
+  sparkles: Sparkles,
+  directions_boat: Ship,
 };
 
 interface IconProps {

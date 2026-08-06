@@ -28,6 +28,8 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             alt={photo.caption}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            sizes="(max-width: 768px) 50vw, 25vw"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors">
             <div className="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
