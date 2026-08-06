@@ -194,6 +194,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── FREE TOURS ── */}
+      <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="/images/lisboa-originales/baixa-pombalina-lisboa-02.webp"
+                alt="Calle de la Baixa Pombalina descendiendo hacia el río Tajo, en el centro de Lisboa"
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+
+            <div>
+              <h2 className="font-display italic text-night mb-4"
+                style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
+                Free tours en Lisboa
+              </h2>
+              <p className="font-body font-light text-night/80 text-lg leading-relaxed mb-7">
+                Compara recorridos por el centro, Alfama, Belém y otras zonas de Lisboa
+                antes de reservar.
+              </p>
+              <Link
+                href="/free-tours-lisboa"
+                className="btn-primary px-7 py-3.5 text-base"
+              >
+                Ver free tours
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── GUÍAS ── */}
       <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-5xl mx-auto px-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
