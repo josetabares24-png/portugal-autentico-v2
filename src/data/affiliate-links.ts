@@ -41,6 +41,15 @@ export interface FreeTourCategory {
   /** Ancla interna para enlazar a la tarjeta desde otras páginas. */
   anchor: string;
   name: string;
+  /** Etiqueta corta para distinguir la ruta de un vistazo. */
+  label: string;
+  /** Nombre de icono en `src/components/Icon.tsx`. */
+  icon: string;
+  /**
+   * `true` en la entrada que no es una ruta concreta sino el acceso general
+   * al destino. Se muestra aparte de la cuadrícula de rutas.
+   */
+  isGeneral?: boolean;
   /** Texto editorial de la tarjeta. */
   description: string;
   /** Aviso honesto de accesibilidad o condiciones, cuando aplica. */
@@ -70,6 +79,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'imprescindible',
     anchor: 'ruta-imprescindible',
     name: 'Lisboa imprescindible',
+    label: 'Primera visita',
+    icon: 'attractions',
     description:
       'La mejor opción para una primera visita: Baixa, Chiado, Rossio y los principales episodios de la historia de Lisboa.',
     duration: 'Normalmente 2-3 horas',
@@ -81,6 +92,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'alfama',
     anchor: 'ruta-alfama',
     name: 'Alfama',
+    label: 'Calles y miradores',
+    icon: 'directions_walk',
     description:
       'Calles estrechas, miradores, fado, historia medieval y algunas de las cuestas más conocidas de Lisboa.',
     notice:
@@ -93,6 +106,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'belem',
     anchor: 'ruta-belem',
     name: 'Belém',
+    label: 'Historia marítima',
+    icon: 'sailing',
     description:
       'Una ruta centrada en los Descubrimientos, los Jerónimos, la Torre de Belém y la historia marítima portuguesa.',
     ctaLabel: 'Ver tours por Belém',
@@ -103,6 +118,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'misterios',
     anchor: 'ruta-misterios',
     name: 'Misterios y leyendas',
+    label: 'Historias ocultas',
+    icon: 'sparkles',
     description:
       'Historias menos conocidas, leyendas, secretos y episodios oscuros de la ciudad.',
     ctaLabel: 'Ver tours de misterios',
@@ -113,6 +130,8 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'nocturno',
     anchor: 'ruta-nocturna',
     name: 'Lisboa nocturna',
+    label: 'Después del atardecer',
+    icon: 'bedtime',
     description:
       'Una forma distinta de recorrer Alfama y el centro cuando bajan las temperaturas y cambia el ambiente de las calles.',
     ctaLabel: 'Ver tours nocturnos',
@@ -123,6 +142,9 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     id: 'todos',
     anchor: 'todos-los-free-tours',
     name: 'Todos los free tours',
+    label: 'Todas las rutas',
+    icon: 'explore',
+    isGeneral: true,
     description:
       'Consulta las rutas y horarios disponibles para tus fechas antes de elegir.',
     ctaLabel: 'Ver todos los free tours de Lisboa',
@@ -130,6 +152,14 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     publicUrl: GURUWALK_LISBOA,
   },
 ] as const;
+
+/**
+ * Las cinco rutas concretas, sin el acceso general al destino. Es lo que
+ * se muestra en la cuadrícula del comparador: "todos los free tours" no es
+ * una ruta más, sino una acción general, y va en su propio bloque.
+ */
+export const FREE_TOUR_ROUTES: readonly FreeTourCategory[] =
+  FREE_TOUR_CATEGORIES.filter((c) => !c.isGeneral);
 
 export function getFreeTourCategory(id: FreeTourCategoryId): FreeTourCategory {
   const category = FREE_TOUR_CATEGORIES.find((c) => c.id === id);
@@ -154,9 +184,4 @@ export function getFreeTourAffiliateUrl(
   if (legacyUrl) return legacyUrl;
 
   return null;
-}
-
-/** true si hay al menos un enlace afiliado configurado. */
-export function hasAnyAffiliateUrl(): boolean {
-  return FREE_TOUR_CATEGORIES.some((c) => getFreeTourAffiliateUrl(c) !== null);
 }

@@ -6,6 +6,7 @@ import { activities, activitySlugs } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Icon from '@/components/Icon';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
 import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
 
@@ -161,30 +162,41 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
               afiliado configurado: en ese caso el CTA se renderiza inerte,
               igual que en la landing, en vez de desaparecer la sección. */}
           {(isFreeTour || activity.bookingUrl) && (
-            <div className="mb-10 space-y-3">
-              <AffiliateLink
-                href={affiliateHref ?? activity.bookingUrl ?? null}
-                campaign={affiliateCampaign}
-                content={`activity-${activity.slug}`}
-                placement="activity-detail"
-                activitySlug={activity.slug}
-                className="btn-primary px-8 py-3 text-center block sm:inline-flex"
-              >
-                {isFreeTour ? 'Consultar free tours y horarios' : 'Reservar con GuruWalk'}
-              </AffiliateLink>
+            <div className="mb-10 overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
+              <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
 
-              {isFreeTour && (
-                <p className="text-sm leading-relaxed text-text-secondary">
-                  La disponibilidad cambia según la fecha. Puedes comparar esta y otras
-                  rutas en la{' '}
-                  <Link href="/free-tours-lisboa" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    guía de free tours de Lisboa
-                  </Link>
-                  .
-                </p>
-              )}
+              <div className="p-5 md:p-6">
+                {isFreeTour && (
+                  <p className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
+                    <Icon name="event_available" size={15} className="flex-shrink-0 text-gold" />
+                    Disponibilidad según la fecha
+                  </p>
+                )}
 
-              <AffiliateDisclosure />
+                <AffiliateLink
+                  href={affiliateHref ?? activity.bookingUrl ?? null}
+                  campaign={affiliateCampaign}
+                  content={`activity-${activity.slug}`}
+                  placement="activity-detail"
+                  activitySlug={activity.slug}
+                  className="btn-primary w-full px-7 py-3.5 text-base sm:w-auto"
+                >
+                  {isFreeTour ? 'Consultar free tours y horarios' : 'Reservar con GuruWalk'}
+                </AffiliateLink>
+
+                {isFreeTour && (
+                  <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                    Los horarios y las plazas cambian cada día. Puedes comparar esta y
+                    otras rutas en la{' '}
+                    <Link href="/free-tours-lisboa" className="text-terracotta underline underline-offset-2 hover:no-underline">
+                      guía de free tours de Lisboa
+                    </Link>
+                    .
+                  </p>
+                )}
+
+                <AffiliateDisclosure variant="compact" className="mt-4 border-t border-border-soft pt-4 text-text-secondary" />
+              </div>
             </div>
           )}
 

@@ -41,14 +41,25 @@ const TEST_REF = 'SMOKETESTREF123';
 const TOTAL_AFFILIATE_CTAS = 9;
 const LANDING_AFFILIATE_CTAS = 8;
 
-const CATEGORIES = [
+// Las cinco RUTAS de la cuadrícula del comparador.
+const ROUTES = [
   { id: 'imprescindible', anchor: 'ruta-imprescindible', path: '/es/lisboa/tag/imprescindible', campaign: 'free-tour-centro' },
   { id: 'alfama', anchor: 'ruta-alfama', path: '/es/lisboa/tag/alfama', campaign: 'free-tour-alfama' },
   { id: 'belem', anchor: 'ruta-belem', path: '/es/lisboa/tag/belem', campaign: 'free-tour-belem' },
   { id: 'misterios', anchor: 'ruta-misterios', path: '/es/lisboa/tag/leyendas-secretos-y-misterios', campaign: 'free-tour-misterios' },
   { id: 'nocturno', anchor: 'ruta-nocturna', path: '/es/lisboa/tag/nocturno', campaign: 'free-tour-nocturno' },
-  { id: 'todos', anchor: 'todos-los-free-tours', path: '/es/lisboa', campaign: 'free-tours-lisboa' },
 ];
+
+// El acceso general al destino, en su propio bloque fuera de la cuadrícula.
+const GENERAL = {
+  id: 'todos',
+  anchor: 'todos-los-free-tours',
+  path: '/es/lisboa',
+  campaign: 'free-tours-lisboa',
+  content: 'destacado-todos',
+};
+
+const ALL_ANCHORS = [...ROUTES.map((r) => r.anchor), GENERAL.anchor];
 
 const EXPECTED_CAMPAIGNS = [
   'free-tours-lisboa',
@@ -142,11 +153,14 @@ function countInert(html) {
   return [...html.matchAll(/<span[^>]*aria-disabled="true"/gi)].length;
 }
 
-/** Extrae el href afiliado que hay dentro de la tarjeta con ese ancla. */
-function cardHref(html, anchor) {
+/**
+ * Extrae el href afiliado que hay dentro del bloque que abre ese ancla.
+ * `endMarker` acota el bloque para que no se cuele el enlace del siguiente.
+ */
+function hrefInBlock(html, anchor, endMarker) {
   const start = html.indexOf(`id="${anchor}"`);
   if (start === -1) return null;
-  const end = html.indexOf('</article>', start);
+  const end = html.indexOf(endMarker, start);
   const block = html.slice(start, end === -1 ? html.length : end);
   const m = block.match(/href="([^"]*guruwalk[^"]*)"/i);
   return m ? decodeEntities(m[1]) : null;
@@ -292,9 +306,9 @@ async function checkLanding(baseUrl) {
 
   const itemList = jsonLd.find((b) => b['@type'] === 'ItemList');
   record(
-    'ItemList schema presente y solo de categorías',
-    !!itemList && itemList.itemListElement?.length === CATEGORIES.length,
-    itemList ? `${itemList.itemListElement?.length} categorías` : 'ausente'
+    'ItemList schema presente y solo de las 5 rutas',
+    !!itemList && itemList.itemListElement?.length === ROUTES.length,
+    itemList ? `${itemList.itemListElement?.length} rutas` : 'ausente'
   );
 
   const serialized = JSON.stringify(jsonLd);
@@ -306,17 +320,61 @@ async function checkLanding(baseUrl) {
 
   record('breadcrumb visible presente', /aria-label="Breadcrumb"/.test(html), 'nav[aria-label=Breadcrumb]');
 
-  const missingAnchors = CATEGORIES.filter((c) => !html.includes(`id="${c.anchor}"`));
+  const missingAnchors = ALL_ANCHORS.filter((a) => !html.includes(`id="${a}"`));
   record(
-    'todas las tarjetas de ruta tienen su ancla',
+    'todas las rutas y el acceso general tienen su ancla',
     missingAnchors.length === 0,
-    missingAnchors.length ? `faltan: ${missingAnchors.map((c) => c.anchor).join(', ')}` : `${CATEGORIES.length} anclas`
+    missingAnchors.length ? `faltan: ${missingAnchors.join(', ')}` : `${ALL_ANCHORS.length} anclas`
   );
 
   record(
-    'divulgación de afiliación presente',
-    /Divulgaci[óo]n/.test(html) && /comisi[óo]n/.test(html),
-    'AffiliateDisclosure'
+    'divulgación de afiliación visible',
+    /Algunos enlaces son afiliados/.test(html) && /aviso-legal#3-afiliados/.test(html),
+    'variante compacta con enlace legal'
+  );
+
+  // --- Estructura editorial del rediseño ---
+  const routeCards = [...html.matchAll(/<article[^>]*id="ruta-[a-z-]+"/g)].length;
+  record('la cuadrícula muestra 5 tarjetas de ruta', routeCards === ROUTES.length, `${routeCards} tarjetas`);
+
+  record(
+    'el acceso general va en su propio bloque, fuera de la cuadrícula',
+    html.includes('¿Ninguna de estas rutas encaja exactamente?') &&
+      !/<article[^>]*id="todos-los-free-tours"/.test(html),
+    'bloque destacado separado'
+  );
+
+  // Sin los <script>: el payload de Next repite el texto de la página y
+  // duplicaría cualquier recuento hecho sobre el HTML en bruto.
+  const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+  const stepCount = [...visible.matchAll(/Paso\s\d/g)].length;
+  record('el funcionamiento se explica en 4 pasos', stepCount === 4, `${stepCount} pasos`);
+
+  record(
+    'hay bloque de consejos prácticos',
+    html.includes('Consejos prácticos antes de salir'),
+    'presente'
+  );
+
+  record(
+    'la recomendación lleva la firma de José',
+    html.includes('vive en Lisboa') && html.includes('Recomendación de Estaba en Lisboa'),
+    'firma presente'
+  );
+
+  record(
+    'el CTA final es distinto del hero',
+    html.includes('¿Ya sabes qué zona quieres conocer?') &&
+      html.includes('Consultar disponibilidad en Lisboa'),
+    'CTA de cierre propio'
+  );
+
+  const benefits = ['Reserva anticipada', 'Sin precio fijo', 'Tú decides la propina'];
+  const missingBenefits = benefits.filter((b) => !html.includes(b));
+  record(
+    'el hero muestra los tres microbeneficios',
+    missingBenefits.length === 0,
+    missingBenefits.length ? `faltan: ${missingBenefits.join(', ')}` : 'los tres'
   );
 
   record(
@@ -394,10 +452,10 @@ async function checkLanding(baseUrl) {
   record('ningún enlace duplica parámetros', duplicated.length === 0, duplicated.length ? `${duplicated.length} con duplicados` : 'ninguno');
 
   // 1. Cada tarjeta enlaza a SU categoría
-  for (const cat of CATEGORIES) {
-    const href = cardHref(html, cat.anchor);
+  for (const route of ROUTES) {
+    const href = hrefInBlock(html, route.anchor, '</article>');
     if (!href) {
-      record(`tarjeta ${cat.id}: tiene enlace afiliado`, false, 'no encontrado');
+      record(`tarjeta ${route.id}: tiene enlace afiliado`, false, 'no encontrado');
       continue;
     }
     let pathname = null;
@@ -407,16 +465,31 @@ async function checkLanding(baseUrl) {
       /* url inválida */
     }
     record(
-      `tarjeta ${cat.id}: enlaza a su categoría`,
-      pathname === cat.path,
+      `tarjeta ${route.id}: enlaza a su categoría`,
+      pathname === route.path,
       `${pathname ?? 'url inválida'}`
     );
     record(
-      `tarjeta ${cat.id}: campaña correcta`,
-      href.includes(`utm_campaign=${cat.campaign}`),
-      `utm_campaign=${cat.campaign}`
+      `tarjeta ${route.id}: campaña correcta`,
+      href.includes(`utm_campaign=${route.campaign}`),
+      `utm_campaign=${route.campaign}`
     );
   }
+
+  // El bloque general conserva su enlace, campaña y utm_content propio
+  const generalHref = hrefInBlock(html, GENERAL.anchor, '</section>');
+  record(
+    'el bloque general conserva su enlace afiliado',
+    !!generalHref && new URL(generalHref).pathname.replace(/\/$/, '') === GENERAL.path,
+    generalHref ? new URL(generalHref).pathname : 'no encontrado'
+  );
+  record(
+    'el bloque general conserva campaña y utm_content propio',
+    !!generalHref &&
+      generalHref.includes(`utm_campaign=${GENERAL.campaign}`) &&
+      generalHref.includes(`utm_content=${GENERAL.content}`),
+    `utm_content=${GENERAL.content}`
+  );
 
   const foundCampaigns = new Set(
     affiliate.map((a) => a.href.match(/utm_campaign=([^&]*)/)?.[1]).filter(Boolean)
@@ -462,7 +535,7 @@ async function checkActividades(baseUrl) {
   record('/actividades sigue respondiendo 200', res.status === 200, `HTTP ${res.status}`);
   record('/actividades enlaza la landing de free tours', html.includes(`href="${PAGE_PATH}"`), 'enlace presente');
 
-  const anchorLinks = CATEGORIES.slice(0, 3).filter((c) => html.includes(`href="${PAGE_PATH}#${c.anchor}"`));
+  const anchorLinks = ROUTES.slice(0, 3).filter((r) => html.includes(`href="${PAGE_PATH}#${r.anchor}"`));
   record('/actividades enlaza las 3 rutas destacadas', anchorLinks.length === 3, `${anchorLinks.length}/3`);
 
   const fichas = new Set([...html.matchAll(/href="\/actividades\/([a-z0-9-]+)"/g)].map((m) => m[1]));

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import Icon from '@/components/Icon';
 
 type PriceFilter = 'todas' | 'gratis' | 'pago';
 
@@ -11,9 +12,9 @@ type PriceFilter = 'todas' | 'gratis' | 'pago';
 // interna (con el ancla de cada ruta), no directamente al afiliado: los
 // enlaces afiliados viven centralizados en /free-tours-lisboa.
 const FREE_TOUR_HIGHLIGHTS = [
-  { anchor: 'ruta-imprescindible', name: 'Centro histórico', hint: 'Baixa, Chiado y Rossio: la ruta para el primer día.' },
-  { anchor: 'ruta-alfama', name: 'Alfama', hint: 'Callejuelas, miradores y fado, con bastante cuesta.' },
-  { anchor: 'ruta-belem', name: 'Belém', hint: 'Los Descubrimientos y la historia marítima portuguesa.' },
+  { anchor: 'ruta-imprescindible', name: 'Centro histórico', icon: 'attractions' },
+  { anchor: 'ruta-alfama', name: 'Alfama', icon: 'directions_walk' },
+  { anchor: 'ruta-belem', name: 'Belém', icon: 'sailing' },
 ] as const;
 
 export default function ActividadesPage() {
@@ -43,37 +44,57 @@ export default function ActividadesPage() {
         </div>
       </section>
 
-      {/* Free tours destacados: acceso editorial a la landing, sin
-          convertir el catálogo en un escaparate comercial. */}
+      {/* Free tours: bloque editorial destacado, visualmente separado del
+          catálogo para que no se lea como una actividad más ni como
+          publicidad de un proveedor. */}
       <section className="bg-background-light py-10 border-b border-border-soft">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Free tours</p>
-          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-3">
-            Descubre Lisboa con un free tour
-          </h2>
-          <p className="text-text-secondary leading-relaxed max-w-2xl mb-6">
-            Una buena opción para entender la ciudad durante el primer día y después
-            recorrerla por tu cuenta con más contexto.
-          </p>
+          <div className="relative overflow-hidden rounded-xl bg-night px-6 py-8 md:px-9 md:py-9">
+            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-terracotta to-gold" />
 
-          <div className="grid gap-4 sm:grid-cols-3 mb-6">
-            {FREE_TOUR_HIGHLIGHTS.map((item) => (
-              <Link
-                key={item.anchor}
-                href={`/free-tours-lisboa#${item.anchor}`}
-                className="card-surface group flex flex-col px-5 py-4"
-              >
-                <span className="font-display italic text-text-main text-lg leading-snug mb-1 group-hover:text-terracotta transition-colors">
-                  {item.name}
-                </span>
-                <span className="text-sm text-text-secondary leading-relaxed">{item.hint}</span>
-              </Link>
-            ))}
+            <div className="md:flex md:items-start md:justify-between md:gap-10">
+              <div className="md:max-w-md">
+                <p className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+                  <span aria-hidden="true" className="h-px w-5 bg-gold/70" />
+                  Empieza por aquí
+                </p>
+                <h2 className="mb-3 font-display text-2xl italic leading-tight text-white md:text-3xl">
+                  Descubre Lisboa con un free tour
+                </h2>
+                <p className="text-sm leading-relaxed text-white/75">
+                  Una buena opción para entender la ciudad durante el primer día y
+                  después recorrerla por tu cuenta con más contexto.
+                </p>
+              </div>
+
+              <div className="mt-7 md:mt-0 md:flex-1">
+                <ul className="mb-6 divide-y divide-white/10 border-y border-white/10">
+                  {FREE_TOUR_HIGHLIGHTS.map((item) => (
+                    <li key={item.anchor}>
+                      <Link
+                        href={`/free-tours-lisboa#${item.anchor}`}
+                        className="group flex min-h-11 items-center justify-between gap-4 py-3 text-white transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                      >
+                        <span className="flex items-center gap-2.5">
+                          <Icon name={item.icon} size={16} className="flex-shrink-0 text-gold" />
+                          <span className="text-sm font-medium">{item.name}</span>
+                        </span>
+                        <Icon
+                          name="arrow_forward"
+                          size={16}
+                          className="flex-shrink-0 text-white/40 motion-safe:transition-transform group-hover:translate-x-1 group-hover:text-gold"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link href="/free-tours-lisboa" className="btn-primary w-full px-6 py-3 text-sm sm:w-auto">
+                  Comparar todos los free tours
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <Link href="/free-tours-lisboa" className="btn-outline px-6 py-2.5 text-sm">
-            Ver todos los free tours
-          </Link>
         </div>
       </section>
 
