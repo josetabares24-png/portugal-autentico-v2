@@ -29,6 +29,111 @@ type Article = {
 };
 
 const articles: Record<string, Article> = {
+  'como-pagar-en-portugal': {
+    titulo: 'Cómo pagar en Portugal: efectivo, tarjetas, cajeros y cambio de moneda',
+    descripcion:
+      'Guía práctica y neutral para entender cómo se paga en Portugal: cuánto efectivo llevar, dónde se acepta tarjeta, cómo funcionan los cajeros y qué mirar antes de confirmar una operación.',
+    seoTitle: 'Cómo pagar en Portugal y evitar comisiones innecesarias',
+    metaDescription:
+      'Aprende cómo pagar en Portugal, utilizar tarjetas y cajeros, evitar conversiones desfavorables y gestionar mejor tus euros durante el viaje.',
+    imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
+    imageAlt: 'Esquina con cafés y comercios en la Baixa de Lisboa',
+    categoria: 'Planificación',
+    fecha: '6 Ago 2026',
+    fechaActualizacion: '6 Ago 2026',
+    dateModified: '2026-08-06',
+    minutos: 8,
+    fuentes: [
+      { label: 'Banco de Portugal — Comparador de comisiones bancarias', href: 'https://www.bportugal.pt/comparadorcomissoes' },
+      { label: 'Banco de Portugal — Portal do Cliente Bancário', href: 'https://clientebancario.bportugal.pt/' },
+      { label: 'Multibanco (SIBS) — red de cajeros de Portugal', href: 'https://www.multibanco.pt/' },
+    ],
+    links: [
+      { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios gratuitos de Lisboa' },
+      { href: '/actividades', label: 'Actividades en Lisboa' },
+    ],
+    cta: {
+      href: '/planifica-tu-viaje',
+      label: 'Planificar mi viaje',
+      title: '¿Organizamos el resto del viaje?',
+      text: 'Presupuesto, días, zonas y ritmo: te ayudamos a montar un plan realista antes de reservar nada.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Portugal usa el euro, así que si vienes desde otro país de la zona euro la parte monetaria de tu viaje es casi transparente. Aun así, cómo pagues aquí sí cambia lo que acabas gastando: no por el precio de las cosas, sino por las comisiones que se cuelan cuando sacas dinero, cuando aceptas una conversión que no necesitabas o cuando cambias moneda en el sitio equivocado.' },
+      { tipo: 'parrafo', texto: 'Esta guía es informativa y no recomienda ningún banco ni proveedor concreto. Las condiciones de cada entidad cambian con frecuencia y dependen de tu país, tu contrato y tu tipo de cuenta, así que lo único sensato es entender el mecanismo y comprobar tus propias condiciones antes de viajar. Nada de lo que leas aquí sustituye a lo que diga tu banco.' },
+
+      { tipo: 'subtitulo', texto: '¿Cuánto efectivo conviene llevar?' },
+      { tipo: 'parrafo', texto: 'Menos del que la gente imagina, pero no cero. Lisboa es una ciudad donde se paga con tarjeta con total normalidad, y en la práctica puedes pasar días enteros sin tocar un billete. Dicho eso, el efectivo sigue resolviendo situaciones concretas: tascas pequeñas de barrio, mercados, algún quiosco de mirador, propinas, y esos negocios que ponen un mínimo de consumo para aceptar tarjeta.' },
+      { tipo: 'parrafo', texto: 'Una forma razonable de plantearlo es llevar una cantidad pequeña para los primeros días y reponer sobre la marcha, en lugar de traer un fajo desde casa. Así evitas cambiar de golpe una cantidad grande en el peor momento y solo sacas lo que realmente vas usando.' },
+      { tipo: 'nota', texto: 'Si vienes desde fuera de la zona euro, cambiar todo el presupuesto del viaje antes de salir rara vez sale a cuenta. Suele ser mejor traer algo de efectivo para llegar y decidir el resto ya sobre el terreno.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde se paga con tarjeta y dónde no' },
+      { tipo: 'parrafo', texto: 'En hoteles, restaurantes, supermercados, museos, transporte y comercio en general, la tarjeta es la norma. En Lisboa y en las zonas turísticas de Portugal es raro encontrarse con un sitio que no acepte pagos electrónicos.' },
+      { tipo: 'parrafo', texto: 'Donde conviene llevar algo suelto es en el comercio más pequeño y tradicional: tascas familiares, puestos de mercado, alguna pastelería de barrio, ferias y mercadillos. También hay establecimientos que aceptan tarjeta pero piden un importe mínimo; no es ilegal ni raro, simplemente les compensa poco para un café.' },
+      { tipo: 'lista', items: [
+        'Restaurantes, hoteles y comercio general: tarjeta sin problema',
+        'Transporte público y billetes: tarjeta, aunque conviene consultar cada operador',
+        'Tascas pequeñas, mercados y puestos: mejor llevar efectivo',
+        'Propinas: casi siempre en efectivo, aunque no son obligatorias',
+      ]},
+
+      { tipo: 'subtitulo', texto: 'Débito o crédito: qué cambia en la práctica' },
+      { tipo: 'parrafo', texto: 'Para pagar en una tienda o un restaurante, la diferencia suele ser mínima. Donde sí puede notarse es en dos situaciones. La primera, al sacar efectivo: muchas entidades tratan la retirada con tarjeta de crédito como un adelanto de efectivo, con condiciones distintas y a veces con intereses desde el primer día. La segunda, en las fianzas: algunos alojamientos y alquileres de coche prefieren o exigen crédito para bloquear un importe como garantía.' },
+      { tipo: 'parrafo', texto: 'Lo práctico es viajar con las dos si puedes, usar débito para el día a día y reservar la de crédito para fianzas o imprevistos. Y, sobre todo, mirar antes de salir qué cobra cada una de tus tarjetas por pagar y por sacar dinero fuera de tu país.' },
+
+      { tipo: 'subtitulo', texto: 'Cajeros en Portugal: cómo funcionan' },
+      { tipo: 'parrafo', texto: 'La mayoría de los cajeros de Portugal pertenecen a Multibanco, la red interbancaria nacional. Los reconocerás por el logotipo azul y verde y están por todas partes: calles, centros comerciales, estaciones y aeropuerto. Son los cajeros “normales” del país, no una empresa que compita por tu operación.' },
+      { tipo: 'parrafo', texto: 'Junto a ellos han aparecido en zonas turísticas cajeros de operadores independientes, con marcas propias y a menudo pantallas más llamativas. Funcionan, pero sus condiciones las fija el operador, no tu banco, y suelen ser menos favorables. Si tienes las dos opciones a la vista, la red bancaria habitual es la apuesta más previsible.' },
+      { tipo: 'tip', texto: 'Antes de confirmar cualquier retirada, lee la pantalla entera. El cajero debe informarte de los cargos que aplica él mismo antes de que aceptes, y ahí es donde se ve la diferencia entre uno y otro.' },
+
+      { tipo: 'subtitulo', texto: 'Las dos comisiones que se suelen confundir' },
+      { tipo: 'parrafo', texto: 'Cuando sacas dinero en el extranjero puede haber dos cargos distintos, y mezclarlos es el origen de casi todas las sorpresas.' },
+      { tipo: 'lista', items: [
+        'El de tu propio banco: lo que tu entidad cobra por retirar en cajeros ajenos o fuera de tu país. Aparece en tu contrato y en tu app, no en la pantalla del cajero',
+        'El del operador del cajero: un cargo que aplica quien gestiona esa máquina. Se muestra en pantalla antes de confirmar y puedes cancelar la operación en ese momento',
+      ]},
+      { tipo: 'parrafo', texto: 'Por eso una misma retirada puede salir muy distinta según dónde la hagas: no depende solo de tu banco. Y por eso también suele salir mejor hacer pocas retiradas de importe mayor que muchas pequeñas, cuando el cargo es fijo por operación. Si tu banco cobra un porcentaje en vez de un fijo, el cálculo cambia; revisa cuál es tu caso.' },
+
+      { tipo: 'subtitulo', texto: 'La pregunta del terminal: ¿euros o tu moneda?' },
+      { tipo: 'parrafo', texto: 'Si tu tarjeta está emitida en una moneda distinta del euro, tarde o temprano el datáfono o el cajero te preguntará si quieres pagar en euros o en la moneda de tu tarjeta. Esto se llama conversión dinámica de moneda, y conviene entenderlo porque la pregunta está formulada de manera que la opción cómoda no siempre es la que te interesa.' },
+      { tipo: 'parrafo', texto: 'Si eliges tu moneda, la conversión la hace el comercio o el operador del cajero, con el tipo de cambio y el margen que ellos decidan. Si eliges euros, la conversión la hace tu banco o tu red de tarjeta, con sus propias condiciones. Ninguna de las dos es automáticamente mejor en todos los casos, pero el margen que aplica el terminal suele ser menos ventajoso, así que merece la pena mirar la cifra que te ofrecen antes de aceptar en lugar de pulsar por inercia.' },
+      { tipo: 'nota', texto: 'Cuando el terminal te muestra “con conversión” y “sin conversión”, te está enseñando dos precios. Tómate un segundo para compararlos: es la decisión más rentable de todo el proceso y no cuesta nada.' },
+
+      { tipo: 'subtitulo', texto: 'Pagos sin contacto y desde el móvil' },
+      { tipo: 'parrafo', texto: 'El contactless está completamente extendido en Portugal, tanto con tarjeta física como con móvil o reloj. Por encima de cierto importe te pedirán el PIN o la autenticación del teléfono, igual que en el resto de Europa.' },
+      { tipo: 'parrafo', texto: 'Hay además una particularidad local que conviene conocer si vas a quedarte una temporada: MB WAY, la aplicación de pagos asociada a la red bancaria portuguesa. Se usa muchísimo entre residentes para pagar entre particulares, dividir cuentas o generar tarjetas virtuales, pero está pensada para cuentas portuguesas, así que como turista probablemente no la necesites.' },
+
+      { tipo: 'subtitulo', texto: 'Enviar y recibir dinero' },
+      { tipo: 'parrafo', texto: 'Si viajas acompañado y tenéis que repartir gastos, lo más simple suele ser una transferencia entre cuentas del mismo país o una app de pagos que ya uséis en casa. Dentro de la zona euro, las transferencias en euros entre países de la UE deben tratarse igual que una transferencia nacional en cuanto a comisiones, lo que en la práctica abarata mucho estos movimientos.' },
+      { tipo: 'parrafo', texto: 'Para envíos entre monedas distintas la cosa se complica, porque además de la comisión visible está el tipo de cambio aplicado, que es donde suele ir el margen real. Compara siempre el importe que llega al destinatario, no solo la comisión anunciada: son dos cosas distintas y solo la primera te dice lo que costó de verdad.' },
+
+      { tipo: 'subtitulo', texto: 'Cuentas multidivisa: qué son y qué no son' },
+      { tipo: 'parrafo', texto: 'Cada vez más gente viaja con cuentas o tarjetas que permiten mantener saldo en varias monedas y convertir entre ellas dentro de la propia aplicación. Como concepto, resuelven un problema real: te permiten decidir cuándo conviertes en lugar de que lo decida un terminal por ti en medio de una compra.' },
+      { tipo: 'parrafo', texto: 'No son magia, sin embargo. Suelen tener límites, condiciones distintas en fines de semana, tramos gratuitos y después cargos, y reglas propias para retiradas en cajero. Si estás pensando en usar una, léete sus condiciones concretas y sus límites antes del viaje, no en el aeropuerto. Y no des por hecho que lo que le funcionó a otra persona el año pasado sigue vigente.' },
+
+      { tipo: 'subtitulo', texto: 'Cambiar moneda: dónde tener cuidado' },
+      { tipo: 'parrafo', texto: 'Si necesitas cambiar efectivo, las casas de cambio de zonas muy turísticas y las de los aeropuertos son, casi siempre, el lugar más caro para hacerlo. El truco habitual es anunciar “sin comisión” y meter el margen en el tipo de cambio, de modo que la operación parece gratuita cuando no lo es.' },
+      { tipo: 'lista', items: [
+        'Compara el tipo que te ofrecen con el tipo de referencia del día, no con el de otra casa de cambio',
+        'Pregunta cuántos euros vas a recibir exactamente, en total, antes de entregar nada',
+        'Desconfía del reclamo “0 % de comisión” sin ver el tipo aplicado',
+        'Evita cambiar cantidades grandes en el aeropuerto salvo que no tengas alternativa',
+      ]},
+
+      { tipo: 'subtitulo', texto: 'Antes de salir de casa' },
+      { tipo: 'parrafo', texto: 'La mayor parte de los problemas se evitan con diez minutos de preparación. No se trata de encontrar el producto perfecto, sino de saber qué tienes entre manos.' },
+      { tipo: 'lista', items: [
+        'Mira qué cobra cada una de tus tarjetas por pagar y por sacar efectivo fuera de tu país',
+        'Comprueba si tu tarjeta funciona en el extranjero y avisa a tu banco si hace falta',
+        'Lleva más de un medio de pago y no los guardes todos en el mismo sitio',
+        'Apunta el teléfono de bloqueo de tu banco por si pierdes una tarjeta',
+        'Decide de antemano que pagarás en euros cuando el terminal te pregunte, salvo que los números digan lo contrario',
+      ]},
+      { tipo: 'tip', texto: 'Si vas a quedarte a vivir, el Banco de Portugal publica un comparador oficial de comisiones bancarias. Es la forma más neutral de ver qué cobra cada entidad sin fiarte de la publicidad de ninguna.' },
+      { tipo: 'parrafo', texto: 'Y una última idea, quizá la más útil: las condiciones de bancos y proveedores cambian, a veces varias veces al año. Cualquier cifra concreta que leas en internet —aquí incluido— puede haber quedado desfasada. Usa esta guía para saber qué preguntar y dónde mirar, y confirma los números en la fuente oficial de tu entidad antes de decidir.' },
+    ],
+  },
   'que-hacer-en-lisboa-en-3-dias': {
     titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
     descripcion: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',
@@ -1120,6 +1225,11 @@ const articles: Record<string, Article> = {
     categoria: "Planificación",
     fecha: "10 Nov 2024",
     minutos: 13,
+    links: [
+      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
+      { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios gratuitos de Lisboa' },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa puede ser una de las capitales más baratas de Europa o una de las más caras, dependiendo completamente de cómo viajes. He visto a viajeros gastar 200 euros al día sin darse cuenta, y a otros vivir perfectamente con 30. La diferencia no está en la ciudad, sino en las decisiones que tomas." },
       { tipo: "parrafo", texto: "He hecho los cálculos reales basándome en precios actuales de 2024, y he creado tres escenarios de presupuesto que reflejan formas reales de viajar. Estos números no son estimaciones optimistas ni pesimistas, sino lo que realmente cuesta según tus elecciones." },
@@ -2835,6 +2945,17 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faqs: { q: string; a: string }[] }> = {
+  'como-pagar-en-portugal': {
+    comoLlegar: 'No aplica: esta guía es de preparación del viaje, no de una ubicación concreta.',
+    mejorHora: 'Revisa las condiciones de tus tarjetas unos días antes de viajar, no en el aeropuerto.',
+    faqs: [
+      { q: '¿Se puede pagar con tarjeta en Lisboa?', a: 'Sí, con total normalidad en hoteles, restaurantes, comercios, museos y transporte. Conviene llevar algo de efectivo para tascas pequeñas, mercados y establecimientos que piden un importe mínimo.' },
+      { q: '¿Hace falta llevar efectivo a Portugal?', a: 'No mucho, pero sí algo. Se puede pasar días pagando solo con tarjeta; el efectivo resuelve puestos de mercado, comercio tradicional y propinas. Suele ser mejor reponer sobre la marcha que traer una cantidad grande de casa.' },
+      { q: '¿Qué opción elegir cuando el terminal pregunta entre euros y mi moneda?', a: 'Si eliges tu moneda, la conversión la hace el comercio o el cajero con su propio margen; si eliges euros, la hace tu banco. El margen del terminal suele ser menos ventajoso, así que merece la pena comparar las dos cifras en pantalla antes de aceptar.' },
+      { q: '¿Los cajeros pueden cobrar comisión en Portugal?', a: 'Puede haber dos cargos distintos: el de tu propio banco, que figura en tu contrato, y el del operador del cajero, que debe mostrarse en pantalla antes de confirmar. Los cajeros de operadores independientes en zonas turísticas suelen tener condiciones menos favorables que la red bancaria habitual.' },
+      { q: '¿Conviene cambiar dinero antes de viajar?', a: 'Si vienes de la zona euro no necesitas cambiar nada. Si vienes de fuera, cambiar todo el presupuesto por adelantado rara vez compensa; las casas de cambio de aeropuertos y zonas turísticas suelen aplicar el margen en el tipo de cambio aunque anuncien cero comisión.' },
+    ],
+  },
   'mejores-miradores-lisboa': {
     comoLlegar: 'Empieza en Graça (tranvía 28/12 o bus 734) y baja caminando hacia Alfama y Baixa para encadenar miradores sin repetir cuestas.',
     mejorHora: 'Amanecer o 30-45 minutos antes del atardecer para mejor luz y menos gente.',
