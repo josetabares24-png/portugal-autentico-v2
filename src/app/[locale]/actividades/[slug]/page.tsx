@@ -6,7 +6,8 @@ import { activities, activitySlugs } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
-import { buildAffiliateUrl } from '@/lib/affiliate';
+import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
+import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
 
 export function generateStaticParams() {
   return activitySlugs.map((slug) => ({ slug }));
@@ -49,6 +50,16 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
   if (!activity) notFound();
 
   const related = activities.filter((a) => a.category === activity.category && a.slug !== activity.slug).slice(0, 3);
+
+  // Enlace de reserva: si la ficha declara una categoría de free tour, la
+  // URL afiliada se resuelve centralizadamente (y sólo en servidor). Si no,
+  // se usa el bookingUrl propio de la ficha, si lo tiene.
+  const freeTourCategory = activity.affiliateCategory
+    ? getFreeTourCategory(activity.affiliateCategory)
+    : null;
+  const isFreeTour = freeTourCategory !== null;
+  const affiliateHref = freeTourCategory ? getFreeTourAffiliateUrl(freeTourCategory) : null;
+  const affiliateCampaign = freeTourCategory ? freeTourCategory.campaign : activity.slug;
 
   const touristAttractionJsonLd = {
     '@context': 'https://schema.org',
@@ -145,16 +156,30 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
 
-          {activity.bookingUrl && (
+          {(affiliateHref || activity.bookingUrl) && (
             <div className="mb-10 space-y-3">
-              <a
-                href={buildAffiliateUrl(activity.bookingUrl, activity.slug)}
-                target="_blank"
-                rel="sponsored noopener noreferrer"
+              <AffiliateLink
+                href={affiliateHref ?? activity.bookingUrl ?? null}
+                campaign={affiliateCampaign}
+                content={`activity-${activity.slug}`}
+                placement="activity-detail"
+                activitySlug={activity.slug}
                 className="btn-primary px-8 py-3 text-center block sm:inline-flex"
               >
-                Reservar con GuruWalk →
-              </a>
+                {isFreeTour ? 'Consultar free tours y horarios' : 'Reservar con GuruWalk'}
+              </AffiliateLink>
+
+              {isFreeTour && (
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  La disponibilidad cambia según la fecha. Puedes comparar esta y otras
+                  rutas en la{' '}
+                  <Link href="/free-tours-lisboa" className="text-terracotta underline underline-offset-2 hover:no-underline">
+                    guía de free tours de Lisboa
+                  </Link>
+                  .
+                </p>
+              )}
+
               <AffiliateDisclosure />
             </div>
           )}

@@ -1,3 +1,5 @@
+import type { FreeTourCategoryId } from '@/data/affiliate-links';
+
 export type ActivityCategory =
   | 'Miradouros'
   | 'Cultura e Historia'
@@ -24,6 +26,13 @@ export interface Activity {
   description: string;
   savingTip: string;
   bookingUrl?: string;
+  /**
+   * Categoría de free tour cuyo enlace afiliado corresponde a esta ficha.
+   * La URL no se escribe aquí: se resuelve centralizadamente desde
+   * `src/data/affiliate-links.ts`, para no repetir enlaces afiliados por
+   * varios sitios ni exponer el identificador en los datos.
+   */
+  affiliateCategory?: FreeTourCategoryId;
   /** URL de la fuente oficial usada para verificar precio/horario/estado. */
   officialUrl?: string;
   /** Fecha (YYYY-MM-DD) de la última verificación de los datos frente a la fuente oficial. */
@@ -276,8 +285,9 @@ export const activities: Activity[] = [
     duration: '2.5-3 h',
     image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
     imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
-    description: 'Recorrido guiado a pie por la historia de la Baixa y el Chiado, con guías locales que viven de las propinas.',
+    description: 'Recorrido guiado a pie por la historia de la Baixa y el Chiado, con guías locales que viven de las propinas. La disponibilidad y los horarios dependen de la fecha que elijas.',
     savingTip: 'No tiene coste fijo: al final paga lo que consideres justo (5-10 € por persona es lo habitual).',
+    affiliateCategory: 'imprescindible',
   },
   {
     slug: 'jardim-estrela-principe-real',

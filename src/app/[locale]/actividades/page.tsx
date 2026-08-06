@@ -7,6 +7,15 @@ import { ActivityCard } from '@/components/actividades/ActivityCard';
 
 type PriceFilter = 'todas' | 'gratis' | 'pago';
 
+// Accesos destacados a la landing de free tours. Se enlaza a la página
+// interna (con el ancla de cada ruta), no directamente al afiliado: los
+// enlaces afiliados viven centralizados en /free-tours-lisboa.
+const FREE_TOUR_HIGHLIGHTS = [
+  { anchor: 'ruta-imprescindible', name: 'Centro histórico', hint: 'Baixa, Chiado y Rossio: la ruta para el primer día.' },
+  { anchor: 'ruta-alfama', name: 'Alfama', hint: 'Callejuelas, miradores y fado, con bastante cuesta.' },
+  { anchor: 'ruta-belem', name: 'Belém', hint: 'Los Descubrimientos y la historia marítima portuguesa.' },
+] as const;
+
 export default function ActividadesPage() {
   const [category, setCategory] = useState<ActivityCategory | 'Todas'>('Todas');
   const [price, setPrice] = useState<PriceFilter>('todas');
@@ -31,6 +40,40 @@ export default function ActividadesPage() {
           <p className="text-text-secondary leading-relaxed">
             Elige actividades sueltas y arma tu propio plan: cada una con precio real, duración y un tip de ahorro de local.
           </p>
+        </div>
+      </section>
+
+      {/* Free tours destacados: acceso editorial a la landing, sin
+          convertir el catálogo en un escaparate comercial. */}
+      <section className="bg-background-light py-10 border-b border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Free tours</p>
+          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-3">
+            Descubre Lisboa con un free tour
+          </h2>
+          <p className="text-text-secondary leading-relaxed max-w-2xl mb-6">
+            Una buena opción para entender la ciudad durante el primer día y después
+            recorrerla por tu cuenta con más contexto.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-3 mb-6">
+            {FREE_TOUR_HIGHLIGHTS.map((item) => (
+              <Link
+                key={item.anchor}
+                href={`/free-tours-lisboa#${item.anchor}`}
+                className="card-surface group flex flex-col px-5 py-4"
+              >
+                <span className="font-display italic text-text-main text-lg leading-snug mb-1 group-hover:text-terracotta transition-colors">
+                  {item.name}
+                </span>
+                <span className="text-sm text-text-secondary leading-relaxed">{item.hint}</span>
+              </Link>
+            ))}
+          </div>
+
+          <Link href="/free-tours-lisboa" className="btn-outline px-6 py-2.5 text-sm">
+            Ver todos los free tours
+          </Link>
         </div>
       </section>
 

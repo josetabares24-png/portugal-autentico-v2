@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/itinerarios`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/actividades`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/free-tours-lisboa`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/planifica-tu-viaje`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/pack-completo`, changeFrequency: 'monthly', priority: 0.8 },

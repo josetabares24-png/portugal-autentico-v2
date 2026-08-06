@@ -25,6 +25,12 @@ export default function Footer() {
               Planifica tu Viaje
             </Link>
             <Link
+              href="/free-tours-lisboa"
+              className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
+            >
+              Free Tours
+            </Link>
+            <Link
               href="/contacto"
               className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
             >
