@@ -156,7 +156,11 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
 
-          {(affiliateHref || activity.bookingUrl) && (
+          {/* El bloque se muestra en cuanto la ficha declara una categoría de
+              free tour o un bookingUrl propio, aunque todavía no haya enlace
+              afiliado configurado: en ese caso el CTA se renderiza inerte,
+              igual que en la landing, en vez de desaparecer la sección. */}
+          {(isFreeTour || activity.bookingUrl) && (
             <div className="mb-10 space-y-3">
               <AffiliateLink
                 href={affiliateHref ?? activity.bookingUrl ?? null}

@@ -1,26 +1,32 @@
 /**
- * Catálogo editorial de free tours de Lisboa y punto único donde viven los
- * enlaces de afiliado de GuruWalk.
+ * Catálogo editorial de free tours de Lisboa y punto único donde se
+ * construyen los enlaces de afiliado de GuruWalk.
+ *
+ * Cómo funciona la afiliación de GuruWalk: un único identificador de
+ * referido se añade a cualquier URL de su web mediante `ref=<ID>`, y
+ * `pro=true` limita el listado a tours PRO. Por eso aquí no hacen falta
+ * seis URLs afiliadas distintas: basta con las URLs públicas de cada
+ * categoría (datos estáticos, abajo) más un único ID configurado en
+ * `GURUWALK_AFFILIATE_REF`.
+ *
+ * El ID no es un secreto: termina siendo visible en el href renderizado,
+ * como en cualquier enlace de afiliado. Está en una variable de entorno
+ * únicamente por higiene de configuración, para no dejarlo escrito en el
+ * repositorio y poder cambiarlo sin tocar código.
  *
  * Está partido en dos capas a propósito:
  *
  *  1. `FREE_TOUR_CATEGORIES` — metadatos estáticos (nombre, texto, CTA,
- *     ancla). No dependen de variables de entorno, así que puede
- *     importarlos también un componente de cliente sin arrastrar nada.
+ *     ancla y URL pública). No leen entorno, así que puede importarlos
+ *     también un componente de cliente sin arrastrar nada.
  *
- *  2. `getFreeTourAffiliateUrl()` — resuelve la URL afiliada real leyendo
- *     variables de entorno de servidor. Llamar SOLO desde componentes de
- *     servidor: así el identificador de afiliado nunca se incrusta en el
- *     bundle de cliente.
- *
- * Sobre la atribución: `publicPath` documenta la ruta pública de GuruWalk
- * que corresponde a cada categoría, pero NO se usa como href. Enlazar a la
- * URL pública sin el identificador de afiliado de José haría perder la
- * comisión, así que mientras no haya enlace afiliado configurado el CTA se
- * renderiza inerte (ver `AffiliateLink`).
+ *  2. `getFreeTourAffiliateUrl()` — construye el enlace final leyendo el
+ *     entorno de servidor. Devuelve `null` si no hay ID configurado, y en
+ *     ese caso el CTA se renderiza inerte (ver `AffiliateLink`): enlazar a
+ *     la URL pública sin `ref` haría perder la atribución de la comisión.
  */
 
-import type { AffiliateCampaign } from '@/lib/affiliate';
+import { withGuruwalkRef, type AffiliateCampaign } from '@/lib/affiliate';
 
 export type FreeTourCategoryId =
   | 'todos'
@@ -43,21 +49,21 @@ export interface FreeTourCategory {
   duration?: string;
   ctaLabel: string;
   campaign: AffiliateCampaign;
-  /**
-   * Ruta pública de GuruWalk de referencia. Documental: el href real se
-   * construye siempre desde el enlace afiliado configurado.
-   */
-  publicPath: string;
-  /**
-   * Variable de entorno (de servidor) con el enlace afiliado de esta
-   * categoría, tal y como lo entrega GuruWalk y con sus parámetros
-   * intactos.
-   */
-  envKey: string;
+  /** URL pública de GuruWalk de esta categoría. Base del enlace final. */
+  publicUrl: string;
 }
 
-/** Enlace afiliado general de Lisboa: respaldo de todas las categorías. */
-const GENERAL_ENV_KEY = 'GURUWALK_AFFILIATE_URL_LISBOA';
+/** Identificador de referido de GuruWalk. Método principal. */
+const REF_ENV_KEY = 'GURUWALK_AFFILIATE_REF';
+
+/**
+ * Compatibilidad temporal con la configuración anterior, basada en pegar
+ * una URL afiliada completa. Si está definida y no hay `ref`, se usa esa
+ * URL para todas las categorías, como antes.
+ */
+const LEGACY_URL_ENV_KEY = 'GURUWALK_AFFILIATE_URL_LISBOA';
+
+const GURUWALK_LISBOA = 'https://www.guruwalk.com/es/lisboa';
 
 export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
   {
@@ -69,8 +75,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     duration: 'Normalmente 2-3 horas',
     ctaLabel: 'Ver tours por el centro',
     campaign: 'free-tour-centro',
-    publicPath: '/es/lisboa/tag/imprescindible',
-    envKey: 'GURUWALK_AFFILIATE_URL_IMPRESCINDIBLE',
+    publicUrl: `${GURUWALK_LISBOA}/tag/imprescindible`,
   },
   {
     id: 'alfama',
@@ -82,8 +87,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'No es la mejor ruta para personas con movilidad reducida o dificultad para caminar por pendientes.',
     ctaLabel: 'Ver tours por Alfama',
     campaign: 'free-tour-alfama',
-    publicPath: '/es/lisboa/tag/alfama',
-    envKey: 'GURUWALK_AFFILIATE_URL_ALFAMA',
+    publicUrl: `${GURUWALK_LISBOA}/tag/alfama`,
   },
   {
     id: 'belem',
@@ -93,8 +97,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'Una ruta centrada en los Descubrimientos, los Jerónimos, la Torre de Belém y la historia marítima portuguesa.',
     ctaLabel: 'Ver tours por Belém',
     campaign: 'free-tour-belem',
-    publicPath: '/es/lisboa/tag/belem',
-    envKey: 'GURUWALK_AFFILIATE_URL_BELEM',
+    publicUrl: `${GURUWALK_LISBOA}/tag/belem`,
   },
   {
     id: 'misterios',
@@ -104,8 +107,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'Historias menos conocidas, leyendas, secretos y episodios oscuros de la ciudad.',
     ctaLabel: 'Ver tours de misterios',
     campaign: 'free-tour-misterios',
-    publicPath: '/es/lisboa/tag/leyendas-secretos-y-misterios',
-    envKey: 'GURUWALK_AFFILIATE_URL_MISTERIOS',
+    publicUrl: `${GURUWALK_LISBOA}/tag/leyendas-secretos-y-misterios`,
   },
   {
     id: 'nocturno',
@@ -115,8 +117,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'Una forma distinta de recorrer Alfama y el centro cuando bajan las temperaturas y cambia el ambiente de las calles.',
     ctaLabel: 'Ver tours nocturnos',
     campaign: 'free-tour-nocturno',
-    publicPath: '/es/lisboa/tag/nocturno',
-    envKey: 'GURUWALK_AFFILIATE_URL_NOCTURNO',
+    publicUrl: `${GURUWALK_LISBOA}/tag/nocturno`,
   },
   {
     id: 'todos',
@@ -126,8 +127,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'Consulta las rutas y horarios disponibles para tus fechas antes de elegir.',
     ctaLabel: 'Ver todos los free tours de Lisboa',
     campaign: 'free-tours-lisboa',
-    publicPath: '/es/lisboa',
-    envKey: GENERAL_ENV_KEY,
+    publicUrl: GURUWALK_LISBOA,
   },
 ] as const;
 
@@ -138,21 +138,20 @@ export function getFreeTourCategory(id: FreeTourCategoryId): FreeTourCategory {
 }
 
 /**
- * Devuelve el enlace afiliado configurado para una categoría, o `null` si
- * todavía no hay ninguno. Se prueba primero la variable específica de la
- * categoría y luego el enlace general de Lisboa, de modo que configurar una
- * sola variable ya activa toda la página.
+ * Construye el enlace afiliado de una categoría, o devuelve `null` si no
+ * hay configuración de afiliado todavía.
  *
  * Sólo debe llamarse desde componentes de servidor.
  */
 export function getFreeTourAffiliateUrl(
   category: FreeTourCategory
 ): string | null {
-  const specific = process.env[category.envKey]?.trim();
-  if (specific) return specific;
+  const ref = process.env[REF_ENV_KEY]?.trim();
+  if (ref) return withGuruwalkRef(category.publicUrl, ref);
 
-  const general = process.env[GENERAL_ENV_KEY]?.trim();
-  if (general) return general;
+  // Configuración antigua: una URL afiliada completa para todo el destino.
+  const legacyUrl = process.env[LEGACY_URL_ENV_KEY]?.trim();
+  if (legacyUrl) return legacyUrl;
 
   return null;
 }
