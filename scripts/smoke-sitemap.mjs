@@ -450,11 +450,12 @@ async function checkNavigation(baseUrl) {
 
   // Estado activo en la propia landing
   const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
-  record(
-    'la landing marca su entrada de menú como activa',
-    /<a[^>]*href="\/free-tours-lisboa"[^>]*aria-current="page"/.test(landing.replace(/\n/g, ' ')),
-    'aria-current="page"'
+  // React no garantiza el orden de los atributos, así que se busca la
+  // etiqueta <a> que contenga ambos, en cualquier orden.
+  const activeLink = [...landing.matchAll(/<a\s([^>]*)>/g)].some(
+    (m) => m[1].includes('href="/free-tours-lisboa"') && m[1].includes('aria-current="page"')
   );
+  record('la landing marca su entrada de menú como activa', activeLink, 'aria-current="page"');
 }
 
 async function checkArticle(baseUrl) {
@@ -498,9 +499,18 @@ async function checkActivityImages(baseUrl) {
   );
 
   const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
-  const cards = [...landing.matchAll(/<article[^>]*id="ruta-[a-z-]+"[\s\S]{0,900}?<\/article>/g)];
-  const withPhoto = cards.filter((c) => c[0].includes('<img')).length;
-  record('las 5 tarjetas de ruta llevan fotografía', withPhoto === 5, `${withPhoto}/5 con <img>`);
+  // Cada tarjeta ronda los 3.600 caracteres, así que se acota por el
+  // cierre de <article> en vez de por una ventana fija.
+  const cards = [...landing.matchAll(/<article[^>]*id="ruta-[a-z-]+"/g)].map((m) => {
+    const end = landing.indexOf('</article>', m.index);
+    return landing.slice(m.index, end === -1 ? undefined : end);
+  });
+  const withPhoto = cards.filter((c) => c.includes('<img')).length;
+  record(
+    'las 5 tarjetas de ruta llevan fotografía',
+    cards.length === 5 && withPhoto === 5,
+    `${withPhoto}/${cards.length} con <img>`
+  );
 }
 
 async function checkRobots(baseUrl) {

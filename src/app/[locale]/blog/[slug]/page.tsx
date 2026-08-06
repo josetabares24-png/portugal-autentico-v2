@@ -3460,7 +3460,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </p>
               <Link
                 href={finalCta.href}
-                className="btn-primary article-cta-button relative inline-flex px-8 py-3 text-sm"
+                className="btn-primary article-cta-button relative inline-flex min-h-11 px-8 py-3 text-sm"
               >
                 {finalCta.label}
               </Link>
@@ -3529,7 +3529,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <p className="article-sidebar-cta-text">Te ayudamos a planificar tu viaje 1:1</p>
               <Link
                 href="/planifica-tu-viaje"
-                className="btn-primary block w-full py-2.5"
+                className="btn-primary block w-full min-h-11 py-3"
               >
                 Planifica tu viaje
               </Link>
