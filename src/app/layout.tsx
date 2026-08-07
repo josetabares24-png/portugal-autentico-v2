@@ -51,9 +51,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
+    // El .ico lleva 16/32/48/64 px: Google exige al menos 48 px para
+    // mostrar el logotipo del sitio en resultados de búsqueda.
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48 64x64' },
       { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -68,12 +71,18 @@ export const metadata: Metadata = {
     description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
     images: [
       {
-        url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg',
+        url: 'https://estabaenlisboa.com/og-default.jpg',
         width: 1200,
         height: 630,
-        alt: 'Guías de Lisboa por Locales - Vista de Alfama',
+        alt: 'Estaba en Lisboa — guías de Lisboa escritas por un local',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guías de Lisboa 2026 por Locales - Itinerarios Verificados',
+    description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
+    images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com',
