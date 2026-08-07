@@ -11,7 +11,9 @@
  *   src/app/favicon.ico        16/32/48/64 px (Google exige 48 px mínimo)
  *   public/apple-touch-icon.png 180x180 aplanado sobre el azul noche
  *   public/icon-512.png         512x512 para PWA/Android
- *   public/og-default.jpg       1200x630 para Open Graph y Twitter
+ *
+ * La tarjeta Open Graph se genera aparte, en scripts/generate-og-image.mjs,
+ * porque necesita componer texto con la tipografía real de la marca.
  */
 
 import sharp from 'sharp';
@@ -20,14 +22,9 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const NIGHT = { r: 0x1a, g: 0x2b, b: 0x4a };   // #1a2b4a
-const CREAM = '#F5EFE6';
-const TERRACOTTA = '#B8472E';
-const GOLD = '#C9974A';
 
 /** Master del icono: la marca "L." ya existente, en 192 px. */
 const ICON_MASTER = path.join(ROOT, 'public/icon-192.png');
-const LOGO = path.join(ROOT, 'public/logo.png');
-const OG_PHOTO = path.join(ROOT, 'public/images/lisboa-originales/rua-augusta-arco-lisboa.webp');
 
 /**
  * Empaqueta varios PNG en un único .ico.
@@ -99,75 +96,7 @@ async function makeIcon512() {
   console.log(`icon-512.png       512x512  ${out.length} bytes`);
 }
 
-/**
- * Tarjeta 1200x630: panel crema con el logotipo real a la izquierda y una
- * fotografía propia de Lisboa a la derecha, con el acento terracota-dorado
- * que ya usan las tarjetas del sitio.
- *
- * No se compone ningún texto: el logotipo es un PNG con la tipografía de
- * la marca, así que no hace falta rasterizar fuentes ni arriesgarse a que
- * el sistema sustituya Playfair por otra serif.
- */
-async function makeOgImage() {
-  const W = 1200;
-  const H = 630;
-  const PANEL = 560;   // ancho del panel crema
-  const ACCENT = 8;    // barra superior
-
-  const photo = await sharp(OG_PHOTO)
-    .resize(W - PANEL, H, { fit: 'cover', position: 'centre' })
-    .toBuffer();
-
-  // Degradado sutil para que la foto no choque en seco con el panel.
-  const fade = Buffer.from(
-    `<svg width="${W - PANEL}" height="${H}" xmlns="http://www.w3.org/2000/svg">
-       <defs><linearGradient id="g" x1="0" x2="1">
-         <stop offset="0" stop-color="${CREAM}" stop-opacity="0.85"/>
-         <stop offset="0.18" stop-color="${CREAM}" stop-opacity="0"/>
-       </linearGradient></defs>
-       <rect width="100%" height="100%" fill="url(#g)"/>
-     </svg>`
-  );
-
-  const accent = Buffer.from(
-    `<svg width="${W}" height="${ACCENT}" xmlns="http://www.w3.org/2000/svg">
-       <defs><linearGradient id="a" x1="0" x2="1">
-         <stop offset="0" stop-color="${TERRACOTTA}"/>
-         <stop offset="1" stop-color="${GOLD}"/>
-       </linearGradient></defs>
-       <rect width="100%" height="100%" fill="url(#a)"/>
-     </svg>`
-  );
-
-  const logoW = 420;
-  const logo = await sharp(LOGO)
-    .resize(logoW, null, { kernel: 'lanczos3' })
-    .flatten({ background: CREAM })
-    .toBuffer();
-  const logoMeta = await sharp(logo).metadata();
-
-  const out = await sharp({
-    create: { width: W, height: H, channels: 3, background: CREAM },
-  })
-    .composite([
-      { input: photo, left: PANEL, top: 0 },
-      { input: fade, left: PANEL, top: 0 },
-      {
-        input: logo,
-        left: Math.round((PANEL - logoW) / 2),
-        top: Math.round((H - (logoMeta.height ?? 175)) / 2),
-      },
-      { input: accent, left: 0, top: 0 },
-    ])
-    .jpeg({ quality: 86, chromaSubsampling: '4:4:4' })
-    .toBuffer();
-
-  await fs.writeFile(path.join(ROOT, 'public/og-default.jpg'), out);
-  console.log(`og-default.jpg     ${W}x${H}  ${out.length} bytes`);
-}
-
 await makeFavicon();
 await makeAppleTouchIcon();
 await makeIcon512();
-await makeOgImage();
 console.log('\nListo.');
