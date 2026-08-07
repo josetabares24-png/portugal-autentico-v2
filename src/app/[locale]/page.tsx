@@ -10,7 +10,20 @@ export const metadata: Metadata = {
     title: 'Qué Ver en Lisboa 2026 — Guías Gratis de Local',
     description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie. Sin trampas turísticas.',
     url: 'https://estabaenlisboa.com',
-    images: [{ url: 'https://estabaenlisboa.com/images/tranvia-28.jpg', width: 1200, height: 630, alt: 'Tranvía 28 en las calles de Alfama, Lisboa' }],
+    images: [
+      {
+        url: 'https://estabaenlisboa.com/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Estaba en Lisboa — guías de Lisboa escritas por un local',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Qué Ver en Lisboa 2026 — Guías Gratis de Local',
+    description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie. Sin trampas turísticas.',
+    images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com',
