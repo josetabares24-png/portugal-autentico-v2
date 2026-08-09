@@ -725,3 +725,263 @@ button {
 button:active:not(:disabled) {
   transform: scale(0.97);
 }
+
+/* ========== MAQUETACIÓN EDITORIAL v2 (piloto) ==========
+   Todo cuelga de .article-v2, que solo se aplica al artículo piloto.
+   Los demás artículos siguen usando los estilos .article-* de arriba
+   sin ninguna variación. */
+
+/* Sin la tarjeta el texto se ensancharía de más en escritorio, así que la
+   columna de lectura se acorta. En píxeles y no en ch: `ch` se calcula sobre
+   el tamaño heredado del contenedor, no sobre el del párrafo, y daba 760 px. */
+.article-v2 .article-reading {
+  max-width: 40rem;
+}
+
+/* Titular en redonda y en negrita: menos decorativo que la cursiva,
+   más cercano a una cabecera de publicación seria. Playfair Display ya
+   carga el peso 700 en estilo normal, así que no entra ninguna fuente nueva. */
+.article-v2 .article-title {
+  font-style: normal;
+  font-weight: 700;
+  /* La redonda tiene la mancha más compacta que la cursiva y aguanta un
+     interlineado algo más cerrado sin que se toquen los trazos. */
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+/* Hasta 420 px el titular no cabe en dos líneas con el tamaño fluido y parte
+   dejando "miradores" sola. A 36 px entra completo. El corte se sitúa en
+   419.98 px y no en 400 porque los Android de 412 px caen en el mismo
+   problema; desde 420 px el tamaño fluido ya resuelve solo. */
+@media (max-width: 419.98px) {
+  .article-v2 .article-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-title {
+    line-height: 1.06;
+  }
+}
+
+/* La tarjeta blanca desaparece: el fondo crema pasa a ser el papel.
+   El pequeño padding deja el texto a 22 px del borde en móvil. */
+.article-v2 .article-surface {
+  padding: 0 0.375rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-surface {
+    padding: 0;
+  }
+}
+
+/* ---- Portada ---- */
+
+.article-v2 .article-hero {
+  margin: 0 auto 2.5rem;
+}
+
+.article-v2 .article-hero-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: rgba(26, 43, 74, 0.06);
+}
+
+@media (min-width: 640px) {
+  .article-v2 .article-hero-frame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-v2 .article-hero {
+    margin-bottom: 3.25rem;
+  }
+
+  .article-v2 .article-hero-frame {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+.article-v2 .article-hero-img {
+  object-fit: cover;
+}
+
+/* ---- Entradilla con capitular ---- */
+
+.article-v2 .article-lead {
+  max-width: 68ch;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.62;
+  color: var(--article-main);
+}
+
+/* Capitular contenida: en azul noche, del mismo color que el texto, para que
+   se lea como parte del párrafo y no como un adorno de color. */
+.article-v2 .article-lead::first-letter {
+  float: left;
+  margin: 0.1em 0.075em 0 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 0.86;
+  color: var(--article-main);
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-lead {
+    font-size: 1.25rem;
+    line-height: 1.64;
+  }
+}
+
+/* ---- Banda de datos rápidos ---- */
+
+.article-v2 .article-facts {
+  padding: 1.5rem 0 0;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--article-border);
+  border-bottom: 1px solid var(--article-border);
+  padding-bottom: 1.5rem;
+}
+
+.article-v2 .article-facts h2 {
+  margin-bottom: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--article-secondary);
+}
+
+.article-v2 .article-facts p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--article-main);
+}
+
+/* ---- Encabezados de sección ---- */
+
+.article-v2 .article-content h2 {
+  margin: 3.5rem 0 1.25rem;
+  padding: 2.25rem 0 0;
+  border-top: 1px solid var(--article-border);
+  border-bottom: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-content h2 {
+    margin-top: 4.25rem;
+    font-size: 1.875rem;
+  }
+}
+
+.article-v2 .article-h2-main {
+  display: block;
+}
+
+/* El guion largo se conserva en el DOM para no alterar el texto del
+   encabezado; solo se oculta a la vista, porque aquí el salto de línea
+   ya hace de separador. */
+.article-v2 .article-h2-sep {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.article-v2 .article-h2-sub {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--article-secondary);
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-h2-sub {
+    font-size: 1rem;
+  }
+}
+
+/* ---- Fotografía de sección ---- */
+
+.article-v2 .article-figure {
+  max-width: 70ch;
+  margin: 0 auto 1.9rem;
+}
+
+.article-v2 .article-figure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  background: rgba(26, 43, 74, 0.06);
+}
+
+@media (min-width: 640px) {
+  .article-v2 .article-figure-img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ---- Cajas más discretas ---- */
+
+.article-v2 .article-info-box {
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  background: transparent;
+  border-left: 2px solid rgba(201, 151, 74, 0.85);
+  border-radius: 0;
+}
+
+.article-v2 .article-info-box p:not(.article-box-label) {
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: var(--article-secondary);
+}
+
+.article-v2 .article-box-label {
+  margin-bottom: 0.3rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+}
+
+/* Bloque "Lo esencial": mantiene fondo para separarse de la entradilla */
+.article-v2 .article-reading.article-info-box:first-of-type {
+  padding-left: 1.1rem;
+}
+
+/* ---- Ritmo vertical ---- */
+
+.article-v2 .article-content p {
+  margin-bottom: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-content p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+}

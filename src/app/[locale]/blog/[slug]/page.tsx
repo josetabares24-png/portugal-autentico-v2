@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -7,7 +8,17 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 type Article = {
   titulo: string;
+  /**
+   * Texto de referencia del artículo. Alimenta la meta description y la
+   * og:description a través de `getSeoDescription()`.
+   */
   descripcion: string;
+  /**
+   * Bajada visible bajo el titular. Cuando falta se usa `descripcion`, que es
+   * lo que hacen todos los artículos salvo los que necesitan separar el copy
+   * editorial del de buscadores.
+   */
+  subtitulo?: string;
   seoTitle?: string;
   metaDescription?: string;
   imagen: string;
@@ -554,49 +565,52 @@ const articles: Record<string, Article> = {
   "mejores-miradores-lisboa": {
     titulo: "Los 10 mejores miradores de Lisboa",
     descripcion: "Rincones con vistas que transforman cualquier atardecer en un recuerdo imborrable. Incluye horarios, rutas y secretos que los guías no cuentan.",
+    subtitulo: "Diez miradores de Lisboa comparados por vistas, ubicación y ambiente, con lo que hay en cada uno para decidir cuáles encajan en tu recorrido.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Guías",
     fecha: "20 Dic 2024",
     minutos: 12,
     contenido: [
-      { tipo: "parrafo", texto: "La primera vez que subí al Mirador da Senhora do Monte fue por accidente. Me había perdido buscando una tasca que alguien me había recomendado en Graça, y de repente, al girar una esquina, la ciudad entera se desplegó ante mí como un mapa vivo. El Tajo brillaba dorado, el castillo parecía flotar sobre los tejados rojizos, y comprendí por qué llaman a Lisboa la ciudad de las siete colinas." },
-      { tipo: "parrafo", texto: "He subido a cada mirador de esta ciudad —algunos decenas de veces— y puedo decirte que no todos merecen el esfuerzo de la caminata. Hay miradores masificados donde apenas puedes respirar, otros que son joyas escondidas, y algunos que solo cobran sentido a ciertas horas del día. Esta guía nace de años caminando estas cuestas, maderas pulidas por generaciones de manos en las barandillas, y atardeceres compartidos con desconocidos que se convierten en amigos por unos minutos." },
+      { tipo: "parrafo", texto: "Lisboa está construida sobre colinas y los miradores forman parte de la manera de recorrer la ciudad. Pero no todos ofrecen lo mismo ni encajan igual en un viaje de pocos días." },
+      { tipo: "parrafo", texto: "Se diferencian por la vista que abarcan, por dónde están y por lo que hay alrededor: si tienen sombra, si hay un quiosco, si uno puede sentarse. Y también por cómo se enlazan entre sí, porque algunos quedan a un par de minutos a pie y otros al otro lado de la ciudad. Esta guía recoge diez con ese criterio, con lo que se ve desde cada uno y lo que conviene saber antes de subir." },
       { tipo: "subtitulo", texto: "1. Mirador da Senhora do Monte — El preferido de quienes viven aquí" },
-      { tipo: "parrafo", texto: "Si preguntas a cualquier lisboeta dónde ve el atardecer, probablemente te mande aquí. Está apartado del circuito habitual, lo que filtra naturalmente a la mayoría de visitantes. El camino de subida atraviesa callejones residenciales donde la ropa cuelga de las ventanas y los vecinos charlan en las puertas. Cuando llegas arriba, la recompensa es una panorámica de 180 grados que abarca desde el Castelo de São Jorge hasta el Puente 25 de Abril." },
-      { tipo: "parrafo", texto: "La pequeña ermita del siglo XVI que da nombre al lugar añade un toque de solemnidad. No hay quiosco ni cafetería —solo bancos de piedra y una explanada donde sentarse—, así que conviene llevar algo de beber. Los atardeceres aquí tienen algo distinto: el sol desciende justo detrás del Castillo, creando siluetas dramáticas contra un cielo que pasa del dorado al rosa en cuestión de minutos." },
-      { tipo: "tip", texto: "Llega al menos 40 minutos antes de la puesta de sol si quieres un buen sitio en el banco principal. Los fines de semana acuden parejas locales y grupos de amigos con guitarras, creando un ambiente íntimo que rara vez encontrarás en miradores céntricos." },
+      { tipo: "parrafo", texto: "Está en el punto más alto del barrio de Graça y se sube por calles residenciales. Arriba se abre una panorámica de 180 grados que abarca desde el Castelo de São Jorge hasta el Puente 25 de Abril." },
+      { tipo: "parrafo", texto: "La pequeña ermita que da nombre al lugar añade un toque de solemnidad. No hay quiosco ni cafetería —solo bancos de piedra y una explanada donde sentarse—, así que conviene llevar algo de beber." },
+      { tipo: "tip", texto: "Si vas al atardecer, cuenta con llegar entre media hora y tres cuartos antes." },
       { tipo: "subtitulo", texto: "2. Mirador de Santa Luzia — La postal que todo el mundo reconoce" },
-      { tipo: "parrafo", texto: "Hay imágenes de Lisboa que aparecen en todas las guías, y la mayoría están tomadas desde aquí. Los paneles de azulejos del siglo XVIII que flanquean la terraza representan la Praça do Comércio antes del terremoto de 1755 y la conquista del Castelo a los moros. Las buganvillas moradas que trepar por la pérgola completan un escenario casi irreal." },
-      { tipo: "parrafo", texto: "El problema es que todo el mundo lo sabe. A mediodía el mirador se convierte en un hervidero de selfies y codos, y la magia se diluye entre el bullicio. Pero a primera hora de la mañana —hablo de las siete y media, cuando la luz todavía es suave y dorada— el lugar recupera su serenidad. Los únicos sonidos son el traqueteo del tranvía 28 pasando por detrás y el canto de algún pájaro madrugador." },
-      { tipo: "tip", texto: "Si buscas la foto perfecta sin nadie, ven entre semana antes de las ocho de la mañana. Los azulejos cuentan historias fascinantes: dedica unos minutos a observarlos de cerca antes de sacar el móvil." },
+      { tipo: "parrafo", texto: "Es la terraza que aparece en buena parte de las postales de la ciudad. Los paneles de azulejos que la flanquean son del siglo XX, obra de António Quaresma realizada en la Fábrica Viúva Lamego, y representan la antigua Praça do Comércio antes del terremoto y la conquista cristiana de Lisboa. Sobre la pérgola trepan buganvillas." },
+      { tipo: "parrafo", texto: "También es de los más visitados: en las horas centrales del día se llena, y a primera hora está bastante más tranquilo. El tranvía 28 para justo delante, en el Largo de Santa Luzia." },
+      { tipo: "tip", texto: "Entre semana y a primera hora hay menos gente. Y merece la pena mirar los azulejos de cerca antes de sacar el móvil: cuentan dos episodios concretos de la historia de la ciudad." },
       { tipo: "subtitulo", texto: "3. Mirador das Portas do Sol — El vecino relajado" },
-      { tipo: "parrafo", texto: "Apenas treinta metros separan este mirador del anterior, pero el ambiente cambia completamente. Aquí hay un quiosco donde pedir una cerveza fría o un café, bancos bajo los árboles, y una terraza amplia donde sentarse sin prisa. Las vistas son similares —Alfama desplegándose colina abajo hasta el río— pero la sensación es de estar en el salón de tu casa, no en una atracción turística." },
-      { tipo: "parrafo", texto: "La estatua de San Vicente, patrón de Lisboa, preside la explanada sosteniendo el barco con los dos cuervos que aparecen en el escudo de la ciudad. Por las tardes, músicos callejeros tocan fado o bossa nova, y el sonido se mezcla con el tintineo de los vasos y las conversaciones en media docena de idiomas. Es el lugar perfecto para hacer una pausa larga." },
+      { tipo: "parrafo", texto: "Está a un par de minutos a pie del anterior, pero funciona de otra manera. Hay un quiosco donde pedir un café o una cerveza, bancos bajo los árboles y una terraza amplia. Las vistas son parecidas —Alfama bajando hasta el río— con la diferencia de que aquí uno puede quedarse un rato." },
+      { tipo: "parrafo", texto: "La estatua de San Vicente, patrón de Lisboa, preside la explanada sosteniendo el barco con los dos cuervos que aparecen en el escudo de la ciudad." },
       { tipo: "subtitulo", texto: "4. Mirador da Graça — Donde Lisboa huele a café recién hecho" },
-      { tipo: "parrafo", texto: "El quiosco que ocupa la esquina de este mirador lleva décadas sirviendo el mismo café a los mismos vecinos. Los domingos por la mañana se llena de familias locales que vienen a desayunar con vistas mientras los niños corretean por la explanada. Es uno de los pocos miradores donde sentirás que estás en un barrio de verdad, no en un decorado para visitantes." },
-      { tipo: "parrafo", texto: "La terraza es amplia y tiene sombra —algo que se agradece en verano— y las vistas del Castelo desde este ángulo son especialmente fotogénicas. Al fondo se distingue el estuario del Tajo y, en días claros, la otra orilla. El ambiente es tranquilo, conversaciones en portugués, periódicos abiertos sobre las mesas, perros tumbados a la sombra." },
-      { tipo: "tip", texto: "Pide el café con nata (natas de Belém en miniatura) del quiosco. Cuesta menos de tres euros y es el desayuno perfecto con vistas." },
+      { tipo: "parrafo", texto: "En la explanada hay un quiosco con esplanada, la Esplanada da Graça, abierta desde 1992. Está en pleno Largo da Graça, con vida de barrio alrededor." },
+      { tipo: "parrafo", texto: "La terraza es amplia y tiene sombra de pinos, algo que se agradece en verano. Desde este ángulo se ve el Castelo y, al fondo, el estuario del Tajo." },
+      { tipo: "tip", texto: "El nombre oficial del mirador es Miradouro Sophia de Mello Breyner Andresen, aunque se le conoce como Miradouro da Graça." },
       { tipo: "subtitulo", texto: "5. Elevador de Santa Justa — Ingeniería y panorámicas a partes iguales" },
-      { tipo: "parrafo", texto: "Diseñado por Raoul Mesnier du Ponsard —discípulo de Gustave Eiffel— a principios del siglo XX, este ascensor de hierro forjado conecta la Baixa con el Barrio Alto salvando 45 metros de desnivel. La estructura neogótica parece sacada de una novela de Julio Verne, y subir en su cabina de madera es una experiencia en sí misma." },
-      { tipo: "parrafo", texto: "Arriba hay una terraza con vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el río. La entrada cuesta cinco euros, pero hay un truco: puedes acceder a la pasarela superior (gratis con la Lisboa Card) subiendo por las escaleras de las ruinas del Convento do Carmo, evitando la cola del ascensor y ahorrándote el billete." },
-      { tipo: "tip", texto: "Si decides subir en el ascensor, hazlo al final de la tarde. Las colas son más cortas y la luz del atardecer tiñe el hierro de tonos cobrizos que quedan espectaculares en fotos." },
+      { tipo: "aviso", texto: "CARRIS lo marca actualmente como cerrado temporalmente. Conviene consultar su web oficial antes de acercarse: no hay fecha de reapertura anunciada." },
+      { tipo: "parrafo", texto: "Diseñado por Raoul Mesnier du Ponsard a principios del siglo XX, este ascensor de hierro forjado, con una estructura de 45 metros de altura, conecta la Baixa con el Largo do Carmo, en el Chiado. La estructura neogótica parece sacada de una novela de Julio Verne, y subir en su cabina de madera es una experiencia en sí misma." },
+      { tipo: "parrafo", texto: "Arriba hay una terraza con vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el río. Conviene distinguir dos cosas que suelen confundirse: el viaje en el ascensor, que forma parte de la red de transporte de Carris, y la entrada al miradouro de la torre, que se paga aparte —cinco euros— y no está incluida en la Lisboa Card." },
       { tipo: "subtitulo", texto: "6. Castelo de São Jorge — La vista que lo abarca todo" },
-      { tipo: "parrafo", texto: "Hay que pagar entrada para acceder al recinto (quince euros), pero las murallas ofrecen la panorámica más completa de Lisboa. Desde aquí se entiende la geografía de la ciudad: cómo las colinas descienden hacia el río, cómo los barrios se conectan entre sí, cómo la luz cambia según la hora." },
-      { tipo: "parrafo", texto: "El Castillo tiene casi mil años de historia visible en cada piedra. Los pavos reales que pasean por los jardines, los restos arqueológicos de asentamientos fenicios, las murallas desde las que se defendió la ciudad contra invasores... Todo contribuye a una visita que va mucho más allá de las vistas. Reserva al menos dos horas." },
+      { tipo: "parrafo", texto: "La entrada general cuesta 17 euros, con tarifas reducidas para jóvenes y mayores de 65 años y entrada gratuita para menores de 13. Desde las murallas se obtiene una panorámica muy amplia de Lisboa y el Tajo. Desde aquí se entiende la geografía de la ciudad: cómo las colinas descienden hacia el río, cómo los barrios se conectan entre sí, cómo la luz cambia según la hora." },
+      { tipo: "parrafo", texto: "La colina lleva ocupada mucho más tiempo que el castillo: el vestigio más antiguo del recinto es un asentamiento de la Edad del Hierro, del siglo VII a. C., en contacto con navegantes fenicios. La fortificación que se visita hoy es medieval, muy posterior. Por medio quedan los pavos reales que pasean por los jardines y las murallas que se pueden recorrer. Es una visita larga." },
       { tipo: "subtitulo", texto: "7. Mirador de Santa Catarina — El alma alternativa de Lisboa" },
-      { tipo: "parrafo", texto: "La estatua del Adamastor —monstruo marino de Os Lusíadas de Camões— vigila el río desde este mirador que se ha convertido en punto de encuentro de la Lisboa joven y alternativa. Por las tardes hay siempre alguien tocando la guitarra, vendedores de cervezas artesanales, y una mezcla de estudiantes erasmus, locales y viajeros que crea un ambiente difícil de encontrar en otro lugar." },
-      { tipo: "parrafo", texto: "Las vistas al Tajo y al puente 25 de Abril son espectaculares, especialmente cuando el sol se pone y la estructura del puente se recorta contra el cielo rojizo. No es un mirador para buscar tranquilidad, sino para dejarse llevar por la energía de una ciudad que sabe celebrar la vida." },
+      { tipo: "parrafo", texto: "La estatua del Adamastor —monstruo marino de Os Lusíadas de Camões— vigila el río desde este mirador, que es un punto de encuentro conocido, sobre todo por la tarde." },
+      { tipo: "parrafo", texto: "Mira al Tajo y al Puente 25 de Abril, que al atardecer se recorta contra el cielo. No es un mirador para buscar tranquilidad." },
       { tipo: "subtitulo", texto: "8. Mirador de São Pedro de Alcântara — Jardín con vistas al Castillo" },
-      { tipo: "parrafo", texto: "En pleno Bairro Alto, este jardín en dos niveles ofrece una perspectiva privilegiada del Castillo y la colina de Alfama. El nivel superior tiene un mapa en azulejos que identifica cada edificio del horizonte, perfecto para orientarse los primeros días. El inferior es más tranquilo, con bancos a la sombra de árboles centenarios." },
-      { tipo: "parrafo", texto: "Es el mirador ideal para combinar con una noche por el Bairro Alto: ve al atardecer, cena en alguna de las tascas cercanas, y luego explora los bares del barrio. La zona cobra vida a partir de las diez de la noche." },
-      { tipo: "subtitulo", texto: "9. Terraza de LX Factory — Lisboa industrial y contemporánea" },
-      { tipo: "parrafo", texto: "Este antiguo complejo industrial reconvertido en espacio creativo tiene varias terrazas con vistas privilegiadas al Puente 25 de Abril. La más conocida es la del restaurante Rio Maravilha, donde puedes comer o tomar algo mientras los coches cruzan el puente a la altura de tus ojos." },
-      { tipo: "parrafo", texto: "LX Factory merece una visita en sí mismo: tiendas de diseño, librerías, galerías, street art... Combinar la exploración del mercado con un brunch con vistas es uno de los mejores planes de domingo en Lisboa." },
+      { tipo: "parrafo", texto: "En pleno Bairro Alto, este jardín en dos niveles mira al Castelo y a la colina de Alfama. El nivel superior tiene un panel de azulejos que identifica lo que se ve en el horizonte, útil para orientarse los primeros días. El inferior es más tranquilo, con bancos a la sombra." },
+      { tipo: "parrafo", texto: "Encaja bien con una noche por el Bairro Alto: subir al atardecer, cenar en alguna tasca cercana y luego bajar a los bares. La zona se anima tarde." },
+      { tipo: "subtitulo", texto: "9. Miradouro do Torel — El jardín sobre la Avenida da Liberdade" },
+      { tipo: "parrafo", texto: "Está dentro del Jardim do Torel, un jardín público con origen en una quinta del siglo XVIII. Desde él se abren vistas amplias sobre el valle de la Avenida da Liberdade, con la colina de São Roque enfrente." },
+      { tipo: "parrafo", texto: "Se sube en el Elevador do Lavra o se llega a pie por la Rua do Telhal. Mira hacia el interior de la ciudad y no hacia el río, así que da una perspectiva distinta de la de los miradores de Alfama." },
+      // REVISAR COHERENCIA: es un punto panorámico móvil, no un miradouro
+      // tradicional. Pendiente de decidir si se mantiene en la lista.
       { tipo: "subtitulo", texto: "10. Teleférico del Parque das Nações — La Lisboa del siglo XXI" },
-      { tipo: "parrafo", texto: "El barrio que acogió la Expo 98 ofrece una Lisboa completamente diferente: arquitectura contemporánea, paseo marítimo ordenado, el Oceanário... El teleférico recorre el frente fluvial ofreciendo vistas aéreas del Tajo y la torre Vasco da Gama." },
-      { tipo: "parrafo", texto: "Es el mirador perfecto si buscas algo distinto al Lisboa clásico de tejados rojos y tranvías. La zona tiene también buenos restaurantes junto al agua y es ideal para pasear en bicicleta." },
+      { tipo: "parrafo", texto: "El barrio que acogió la Expo 98 ofrece una Lisboa distinta: arquitectura contemporánea, paseo marítimo y el Oceanário. El teleférico recorre el frente fluvial con vistas aéreas del Tajo y de la Torre Vasco da Gama." },
+      { tipo: "parrafo", texto: "Es la opción si buscas algo distinto a la Lisboa clásica de tejados rojos y tranvías. La zona tiene restaurantes junto al agua y carril bici." },
       { tipo: "subtitulo", texto: "Planifica tu ruta de miradores" },
-      { tipo: "parrafo", texto: "Intentar ver todos estos miradores en un día es una receta para acabar agotado y con las piernas doloridas. Mi consejo es elegir tres o cuatro que encajen con tu ruta del día y dejar los demás para otras jornadas. En nuestros itinerarios incluimos rutas optimizadas que conectan miradores cercanos sin subidas innecesarias, con horarios específicos para cada uno según la luz y la afluencia." }
+      { tipo: "parrafo", texto: "Verlos todos en un día no tiene mucho sentido: son cuestas y algunos quedan lejos entre sí. Mejor elegir tres o cuatro que encajen con la ruta del día y dejar el resto para otra jornada. En nuestros itinerarios incluimos rutas que conectan miradores cercanos sin subidas innecesarias, con indicaciones de hora según la luz y la afluencia." }
     ]
   },
   "donde-comer-barato-lisboa": {
@@ -2324,6 +2338,77 @@ const localImages: Record<string, string> = {
 const SITE_URL = 'https://estabaenlisboa.com';
 const AUTHOR_NAME = 'José Tabares';
 
+/**
+ * Maquetación editorial v2.
+ *
+ * Piloto acotado a un solo artículo: activa la foto de portada, las fotos por
+ * sección y una tipografía con más aire. Todo lo nuevo cuelga de la clase
+ * `article-v2` en globals.css, así que el resto de artículos no cambia.
+ */
+const EDITORIAL_V2_SLUGS = new Set(['mejores-miradores-lisboa']);
+
+/**
+ * Texto alternativo de la foto de portada.
+ *
+ * Vive aparte del objeto `articles` a propósito: si se guardara como
+ * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
+ */
+const heroAlt: Record<string, string> = {
+  'mejores-miradores-lisboa':
+    'Gente sentada en bancos de piedra viendo el atardecer sobre la Baixa de Lisboa, con la colina del Castelo de São Jorge al fondo',
+};
+
+type SectionPhoto = { src: string; alt: string; position?: string };
+
+/**
+ * Fotos por sección, indexadas por el id del encabezado.
+ *
+ * Solo se incluyen los miradores cuya fotografía se ha verificado
+ * visualmente. Los que no tienen foto se quedan sin ella: no se rellena con
+ * imágenes genéricas ni se describe un lugar que no aparece en la imagen.
+ */
+const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
+  'mejores-miradores-lisboa': {
+    '3-mirador-das-portas-do-sol-el-vecino-relajado': {
+      src: '/images/actividades/portas-do-sol-alfama.webp',
+      alt: 'Tejados de Alfama con la cúpula del Panteão Nacional y el río Tajo al fondo, vistos desde una zona elevada de Lisboa',
+    },
+    '5-elevador-de-santa-justa-ingenieria-y-panoramicas-a-partes-iguales': {
+      src: '/images/actividades/elevador-santa-justa-lisboa.webp',
+      alt: 'Elevador de Santa Justa y tejados de la Baixa de Lisboa',
+    },
+    '6-castelo-de-sao-jorge-la-vista-que-lo-abarca-todo': {
+      src: '/images/actividades/castelo-sao-jorge-lisboa.webp',
+      alt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
+    },
+    '10-teleferico-del-parque-das-nacoes-la-lisboa-del-siglo-xxi': {
+      src: '/images/parque-nacoes-torres-atardecer.jpg',
+      alt: 'Torres São Gabriel y São Rafael sobre el frente ribereño del Parque das Nações, en Lisboa',
+      position: '50% 32%',
+    },
+  },
+};
+
+/**
+ * Parte el encabezado por el guion largo para poder maquetar el subtítulo en
+ * su propia línea.
+ *
+ * El separador se conserva en el DOM (oculto solo visualmente) para que el
+ * texto del encabezado siga siendo exactamente el mismo que antes.
+ */
+function renderEditorialHeading(text: string) {
+  const separator = ' — ';
+  const cut = text.indexOf(separator);
+  if (cut === -1) return text;
+  return (
+    <>
+      <span className="article-h2-main">{text.slice(0, cut)}</span>
+      <span className="article-h2-sep">{separator}</span>
+      <span className="article-h2-sub">{text.slice(cut + separator.length)}</span>
+    </>
+  );
+}
+
 function toAbsoluteUrl(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http')) return pathOrUrl;
   return `${SITE_URL}${pathOrUrl}`;
@@ -3209,6 +3294,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
   const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
   const faqs = extras?.faqs ?? getFaqs(slug);
+  const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
+  const heroImageAlt = heroAlt[slug];
+  const photos = sectionPhotos[slug] ?? {};
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -3260,7 +3348,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
-    <main id="main-content" className="article-page bg-background-light">
+    <main
+      id="main-content"
+      className={`article-page bg-background-light${isEditorialV2 ? ' article-v2' : ''}`}
+    >
       {/* Breadcrumb minimalista */}
       <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
@@ -3292,11 +3383,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             {/* Lead */}
             <p className="article-description mb-0 pb-5 border-b border-border-soft">
-              {article.descripcion}
+              {article.subtitulo ?? article.descripcion}
             </p>
           </div>
         </div>
       </header>
+
+      {/* Fotografía de portada: es el LCP, por eso va con priority */}
+      {isEditorialV2 && heroImageAlt && (
+        <figure className="article-hero max-w-6xl mx-auto px-4">
+          <div className="article-hero-frame">
+            <Image
+              src={heroImage}
+              alt={heroImageAlt}
+              fill
+              className="article-hero-img"
+              sizes="(max-width: 1024px) 100vw, 1152px"
+              priority
+              fetchPriority="high"
+            />
+          </div>
+        </figure>
+      )}
 
       {/* Layout principal: contenido + sidebar */}
       <div className="max-w-6xl mx-auto px-4 pb-16">
@@ -3342,8 +3450,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {article.contenido.slice(1).map((bloque, index) => {
                 if (bloque.tipo === 'parrafo') {
                   paragraphIndex += 1;
-                  // Cada 3 párrafos, añadir destacado estilo cita
-                  if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
+                  // Cada 3 párrafos, añadir destacado estilo cita.
+                  // En la maquetación v2 no se aplica: convertía en cita un
+                  // párrafo corriente solo por su posición.
+                  if (!isEditorialV2 && paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
                       <blockquote key={index} className="article-quote border-l-4 border-gold">
                         <p>
@@ -3360,14 +3470,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'subtitulo') {
                   const headingId = slugify(bloque.texto || '');
+                  const photo = isEditorialV2 ? photos[headingId] : undefined;
                   return (
-                    <h2
-                      key={index}
-                      id={headingId}
-                      className="scroll-mt-28"
-                    >
-                      {bloque.texto}
-                    </h2>
+                    <Fragment key={index}>
+                      <h2 id={headingId} className="scroll-mt-28">
+                        {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
+                      </h2>
+                      {photo && (
+                        <figure className="article-figure">
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            width={1200}
+                            height={800}
+                            className="article-figure-img"
+                            sizes="(max-width: 768px) 100vw, 700px"
+                            loading="lazy"
+                            style={photo.position ? { objectPosition: photo.position } : undefined}
+                          />
+                        </figure>
+                      )}
+                    </Fragment>
                   );
                 }
                 if (bloque.tipo === 'subseccion') {
@@ -3406,6 +3529,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   return (
                     <div key={index} className="article-info-box article-note border-l-2 border-gold">
                       <p className="article-box-label article-box-label-accent uppercase tracking-widest">Dato verificado</p>
+                      <p>{bloque.texto}</p>
+                    </div>
+                  );
+                }
+                // Advertencia sobre el estado de un lugar: cierres, obras o
+                // cualquier cosa que convenga comprobar antes de ir. Reutiliza
+                // los estilos de `nota`; solo cambia la etiqueta.
+                if (bloque.tipo === 'aviso') {
+                  return (
+                    <div key={index} className="article-info-box article-note border-l-2 border-gold">
+                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Antes de ir</p>
                       <p>{bloque.texto}</p>
                     </div>
                   );
