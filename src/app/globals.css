@@ -747,6 +747,7 @@ button:active:not(:disabled) {
   /* La redonda tiene la mancha más compacta que la cursiva y aguanta un
      interlineado algo más cerrado sin que se toquen los trazos. */
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 @media (min-width: 768px) {
