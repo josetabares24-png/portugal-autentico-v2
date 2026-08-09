@@ -564,10 +564,10 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "He subido a cada mirador de esta ciudad —algunos decenas de veces— y puedo decirte que no todos merecen el esfuerzo de la caminata. Hay miradores masificados donde apenas puedes respirar, otros que son joyas escondidas, y algunos que solo cobran sentido a ciertas horas del día. Esta guía nace de años caminando estas cuestas, maderas pulidas por generaciones de manos en las barandillas, y atardeceres compartidos con desconocidos que se convierten en amigos por unos minutos." },
       { tipo: "subtitulo", texto: "1. Mirador da Senhora do Monte — El preferido de quienes viven aquí" },
       { tipo: "parrafo", texto: "Si preguntas a cualquier lisboeta dónde ve el atardecer, probablemente te mande aquí. Está apartado del circuito habitual, lo que filtra naturalmente a la mayoría de visitantes. El camino de subida atraviesa callejones residenciales donde la ropa cuelga de las ventanas y los vecinos charlan en las puertas. Cuando llegas arriba, la recompensa es una panorámica de 180 grados que abarca desde el Castelo de São Jorge hasta el Puente 25 de Abril." },
-      { tipo: "parrafo", texto: "La pequeña ermita del siglo XVI que da nombre al lugar añade un toque de solemnidad. No hay quiosco ni cafetería —solo bancos de piedra y una explanada donde sentarse—, así que conviene llevar algo de beber. Los atardeceres aquí tienen algo distinto: el sol desciende justo detrás del Castillo, creando siluetas dramáticas contra un cielo que pasa del dorado al rosa en cuestión de minutos." },
+      { tipo: "parrafo", texto: "La pequeña ermita del siglo XVI que da nombre al lugar añade un toque de solemnidad. No hay quiosco ni cafetería —solo bancos de piedra y una explanada donde sentarse—, así que conviene llevar algo de beber. Los atardeceres aquí tienen algo distinto: el cielo pasa del dorado al rosa en cuestión de minutos." },
       { tipo: "tip", texto: "Llega al menos 40 minutos antes de la puesta de sol si quieres un buen sitio en el banco principal. Los fines de semana acuden parejas locales y grupos de amigos con guitarras, creando un ambiente íntimo que rara vez encontrarás en miradores céntricos." },
       { tipo: "subtitulo", texto: "2. Mirador de Santa Luzia — La postal que todo el mundo reconoce" },
-      { tipo: "parrafo", texto: "Hay imágenes de Lisboa que aparecen en todas las guías, y la mayoría están tomadas desde aquí. Los paneles de azulejos del siglo XVIII que flanquean la terraza representan la Praça do Comércio antes del terremoto de 1755 y la conquista del Castelo a los moros. Las buganvillas moradas que trepar por la pérgola completan un escenario casi irreal." },
+      { tipo: "parrafo", texto: "Hay imágenes de Lisboa que aparecen en todas las guías, y la mayoría están tomadas desde aquí. Los paneles de azulejos que flanquean la terraza son del siglo XX, obra de António Quaresma realizada en la Fábrica Viúva Lamego, y representan la antigua Praça do Comércio antes del terremoto y la conquista cristiana de Lisboa. Las buganvillas moradas que trepan por la pérgola completan un escenario casi irreal." },
       { tipo: "parrafo", texto: "El problema es que todo el mundo lo sabe. A mediodía el mirador se convierte en un hervidero de selfies y codos, y la magia se diluye entre el bullicio. Pero a primera hora de la mañana —hablo de las siete y media, cuando la luz todavía es suave y dorada— el lugar recupera su serenidad. Los únicos sonidos son el traqueteo del tranvía 28 pasando por detrás y el canto de algún pájaro madrugador." },
       { tipo: "tip", texto: "Si buscas la foto perfecta sin nadie, ven entre semana antes de las ocho de la mañana. Los azulejos cuentan historias fascinantes: dedica unos minutos a observarlos de cerca antes de sacar el móvil." },
       { tipo: "subtitulo", texto: "3. Mirador das Portas do Sol — El vecino relajado" },
@@ -576,26 +576,32 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "4. Mirador da Graça — Donde Lisboa huele a café recién hecho" },
       { tipo: "parrafo", texto: "El quiosco que ocupa la esquina de este mirador lleva décadas sirviendo el mismo café a los mismos vecinos. Los domingos por la mañana se llena de familias locales que vienen a desayunar con vistas mientras los niños corretean por la explanada. Es uno de los pocos miradores donde sentirás que estás en un barrio de verdad, no en un decorado para visitantes." },
       { tipo: "parrafo", texto: "La terraza es amplia y tiene sombra —algo que se agradece en verano— y las vistas del Castelo desde este ángulo son especialmente fotogénicas. Al fondo se distingue el estuario del Tajo y, en días claros, la otra orilla. El ambiente es tranquilo, conversaciones en portugués, periódicos abiertos sobre las mesas, perros tumbados a la sombra." },
-      { tipo: "tip", texto: "Pide el café con nata (natas de Belém en miniatura) del quiosco. Cuesta menos de tres euros y es el desayuno perfecto con vistas." },
+      { tipo: "tip", texto: "Hay una esplanada con quiosco donde tomar algo sin moverte de las vistas." },
       { tipo: "subtitulo", texto: "5. Elevador de Santa Justa — Ingeniería y panorámicas a partes iguales" },
-      { tipo: "parrafo", texto: "Diseñado por Raoul Mesnier du Ponsard —discípulo de Gustave Eiffel— a principios del siglo XX, este ascensor de hierro forjado conecta la Baixa con el Barrio Alto salvando 45 metros de desnivel. La estructura neogótica parece sacada de una novela de Julio Verne, y subir en su cabina de madera es una experiencia en sí misma." },
-      { tipo: "parrafo", texto: "Arriba hay una terraza con vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el río. La entrada cuesta cinco euros, pero hay un truco: puedes acceder a la pasarela superior (gratis con la Lisboa Card) subiendo por las escaleras de las ruinas del Convento do Carmo, evitando la cola del ascensor y ahorrándote el billete." },
+      { tipo: "aviso", texto: "Carris lo da actualmente como encerrado temporariamente. Consulta su web antes de acercarte: no hay fecha de reapertura anunciada." },
+      { tipo: "parrafo", texto: "Diseñado por Raoul Mesnier du Ponsard a principios del siglo XX, este ascensor de hierro forjado conecta la Baixa con el Largo do Carmo, en el Chiado, salvando 45 metros. La estructura neogótica parece sacada de una novela de Julio Verne, y subir en su cabina de madera es una experiencia en sí misma." },
+      { tipo: "parrafo", texto: "Arriba hay una terraza con vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el río. Conviene distinguir dos cosas que suelen confundirse: el viaje en el ascensor, que forma parte de la red de transporte de Carris, y la entrada al miradouro de la torre, que se paga aparte —cinco euros— y no está incluida en la Lisboa Card." },
       { tipo: "tip", texto: "Si decides subir en el ascensor, hazlo al final de la tarde. Las colas son más cortas y la luz del atardecer tiñe el hierro de tonos cobrizos que quedan espectaculares en fotos." },
       { tipo: "subtitulo", texto: "6. Castelo de São Jorge — La vista que lo abarca todo" },
-      { tipo: "parrafo", texto: "Hay que pagar entrada para acceder al recinto (quince euros), pero las murallas ofrecen la panorámica más completa de Lisboa. Desde aquí se entiende la geografía de la ciudad: cómo las colinas descienden hacia el río, cómo los barrios se conectan entre sí, cómo la luz cambia según la hora." },
+      { tipo: "parrafo", texto: "Hay que pagar entrada para acceder al recinto —17 euros la general, 8,50 de 13 a 25 años, 14 a partir de 65 y gratis para menores de 13—, pero las murallas ofrecen la panorámica más completa de Lisboa. Desde aquí se entiende la geografía de la ciudad: cómo las colinas descienden hacia el río, cómo los barrios se conectan entre sí, cómo la luz cambia según la hora." },
       { tipo: "parrafo", texto: "El Castillo tiene casi mil años de historia visible en cada piedra. Los pavos reales que pasean por los jardines, los restos arqueológicos de asentamientos fenicios, las murallas desde las que se defendió la ciudad contra invasores... Todo contribuye a una visita que va mucho más allá de las vistas. Reserva al menos dos horas." },
       { tipo: "subtitulo", texto: "7. Mirador de Santa Catarina — El alma alternativa de Lisboa" },
-      { tipo: "parrafo", texto: "La estatua del Adamastor —monstruo marino de Os Lusíadas de Camões— vigila el río desde este mirador que se ha convertido en punto de encuentro de la Lisboa joven y alternativa. Por las tardes hay siempre alguien tocando la guitarra, vendedores de cervezas artesanales, y una mezcla de estudiantes erasmus, locales y viajeros que crea un ambiente difícil de encontrar en otro lugar." },
+      { tipo: "parrafo", texto: "La estatua del Adamastor —monstruo marino de Os Lusíadas de Camões— vigila el río desde este mirador que se ha convertido en punto de encuentro de la Lisboa joven y alternativa. Por las tardes hay siempre alguien tocando la guitarra, vendedores de cervezas artesanales, y una mezcla de estudiantes Erasmus, locales y viajeros que crea un ambiente difícil de encontrar en otro lugar." },
       { tipo: "parrafo", texto: "Las vistas al Tajo y al puente 25 de Abril son espectaculares, especialmente cuando el sol se pone y la estructura del puente se recorta contra el cielo rojizo. No es un mirador para buscar tranquilidad, sino para dejarse llevar por la energía de una ciudad que sabe celebrar la vida." },
       { tipo: "subtitulo", texto: "8. Mirador de São Pedro de Alcântara — Jardín con vistas al Castillo" },
       { tipo: "parrafo", texto: "En pleno Bairro Alto, este jardín en dos niveles ofrece una perspectiva privilegiada del Castillo y la colina de Alfama. El nivel superior tiene un mapa en azulejos que identifica cada edificio del horizonte, perfecto para orientarse los primeros días. El inferior es más tranquilo, con bancos a la sombra de árboles centenarios." },
       { tipo: "parrafo", texto: "Es el mirador ideal para combinar con una noche por el Bairro Alto: ve al atardecer, cena en alguna de las tascas cercanas, y luego explora los bares del barrio. La zona cobra vida a partir de las diez de la noche." },
       { tipo: "subtitulo", texto: "9. Terraza de LX Factory — Lisboa industrial y contemporánea" },
-      { tipo: "parrafo", texto: "Este antiguo complejo industrial reconvertido en espacio creativo tiene varias terrazas con vistas privilegiadas al Puente 25 de Abril. La más conocida es la del restaurante Rio Maravilha, donde puedes comer o tomar algo mientras los coches cruzan el puente a la altura de tus ojos." },
+      // REVISIÓN EDITORIAL PENDIENTE: al retirar Rio Maravilha —cerrado de
+      // forma permanente— esta sección se queda sin la terraza concreta que
+      // justificaba su presencia en una lista de miradores. No se sustituye
+      // por otra: hay que decidir si se documenta una alternativa real o si
+      // la sección sale de la lista.
+      { tipo: "parrafo", texto: "Este antiguo complejo industrial reconvertido en espacio creativo se levanta a los pies del Puente 25 de Abril, que cruza el cielo justo por encima de las naves." },
       { tipo: "parrafo", texto: "LX Factory merece una visita en sí mismo: tiendas de diseño, librerías, galerías, street art... Combinar la exploración del mercado con un brunch con vistas es uno de los mejores planes de domingo en Lisboa." },
       { tipo: "subtitulo", texto: "10. Teleférico del Parque das Nações — La Lisboa del siglo XXI" },
       { tipo: "parrafo", texto: "El barrio que acogió la Expo 98 ofrece una Lisboa completamente diferente: arquitectura contemporánea, paseo marítimo ordenado, el Oceanário... El teleférico recorre el frente fluvial ofreciendo vistas aéreas del Tajo y la torre Vasco da Gama." },
-      { tipo: "parrafo", texto: "Es el mirador perfecto si buscas algo distinto al Lisboa clásico de tejados rojos y tranvías. La zona tiene también buenos restaurantes junto al agua y es ideal para pasear en bicicleta." },
+      { tipo: "parrafo", texto: "Es el mirador perfecto si buscas algo distinto a la Lisboa clásica de tejados rojos y tranvías. La zona tiene también buenos restaurantes junto al agua y es ideal para pasear en bicicleta." },
       { tipo: "subtitulo", texto: "Planifica tu ruta de miradores" },
       { tipo: "parrafo", texto: "Intentar ver todos estos miradores en un día es una receta para acabar agotado y con las piernas doloridas. Mi consejo es elegir tres o cuatro que encajen con tu ruta del día y dejar los demás para otras jornadas. En nuestros itinerarios incluimos rutas optimizadas que conectan miradores cercanos sin subidas innecesarias, con horarios específicos para cada uno según la luz y la afluencia." }
     ]
@@ -2358,7 +2364,7 @@ const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
   'mejores-miradores-lisboa': {
     '3-mirador-das-portas-do-sol-el-vecino-relajado': {
       src: '/images/actividades/portas-do-sol-alfama.webp',
-      alt: 'Tejados de Alfama y el río Tajo desde el Miradouro das Portas do Sol',
+      alt: 'Tejados de Alfama con la cúpula del Panteão Nacional y el río Tajo al fondo, vistos desde una zona elevada de Lisboa',
     },
     '5-elevador-de-santa-justa-ingenieria-y-panoramicas-a-partes-iguales': {
       src: '/images/actividades/elevador-santa-justa-lisboa.webp',
@@ -2374,7 +2380,7 @@ const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
     },
     '10-teleferico-del-parque-das-nacoes-la-lisboa-del-siglo-xxi': {
       src: '/images/parque-nacoes-torres-atardecer.jpg',
-      alt: 'Torres São Gabriel y São Rafael sobre la Doca dos Olivais, en el Parque das Nações de Lisboa',
+      alt: 'Torres São Gabriel y São Rafael sobre el frente ribereño del Parque das Nações, en Lisboa',
       position: '50% 32%',
     },
   },
@@ -3520,6 +3526,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   return (
                     <div key={index} className="article-info-box article-note border-l-2 border-gold">
                       <p className="article-box-label article-box-label-accent uppercase tracking-widest">Dato verificado</p>
+                      <p>{bloque.texto}</p>
+                    </div>
+                  );
+                }
+                // Advertencia sobre el estado de un lugar: cierres, obras o
+                // cualquier cosa que convenga comprobar antes de ir. Reutiliza
+                // los estilos de `nota`; solo cambia la etiqueta.
+                if (bloque.tipo === 'aviso') {
+                  return (
+                    <div key={index} className="article-info-box article-note border-l-2 border-gold">
+                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Antes de ir</p>
                       <p>{bloque.texto}</p>
                     </div>
                   );
