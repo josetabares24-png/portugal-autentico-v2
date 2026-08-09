@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -2324,6 +2325,81 @@ const localImages: Record<string, string> = {
 const SITE_URL = 'https://estabaenlisboa.com';
 const AUTHOR_NAME = 'José Tabares';
 
+/**
+ * Maquetación editorial v2.
+ *
+ * Piloto acotado a un solo artículo: activa la foto de portada, las fotos por
+ * sección y una tipografía con más aire. Todo lo nuevo cuelga de la clase
+ * `article-v2` en globals.css, así que el resto de artículos no cambia.
+ */
+const EDITORIAL_V2_SLUGS = new Set(['mejores-miradores-lisboa']);
+
+/**
+ * Texto alternativo de la foto de portada.
+ *
+ * Vive aparte del objeto `articles` a propósito: si se guardara como
+ * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
+ */
+const heroAlt: Record<string, string> = {
+  'mejores-miradores-lisboa':
+    'Gente sentada en bancos de piedra viendo el atardecer sobre la Baixa de Lisboa, con la colina del Castelo de São Jorge al fondo',
+};
+
+type SectionPhoto = { src: string; alt: string; position?: string };
+
+/**
+ * Fotos por sección, indexadas por el id del encabezado.
+ *
+ * Solo se incluyen los miradores cuya fotografía se ha verificado
+ * visualmente. Los que no tienen foto se quedan sin ella: no se rellena con
+ * imágenes genéricas ni se describe un lugar que no aparece en la imagen.
+ */
+const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
+  'mejores-miradores-lisboa': {
+    '3-mirador-das-portas-do-sol-el-vecino-relajado': {
+      src: '/images/actividades/portas-do-sol-alfama.webp',
+      alt: 'Tejados de Alfama y el río Tajo desde el Miradouro das Portas do Sol',
+    },
+    '5-elevador-de-santa-justa-ingenieria-y-panoramicas-a-partes-iguales': {
+      src: '/images/actividades/elevador-santa-justa-lisboa.webp',
+      alt: 'Elevador de Santa Justa y tejados de la Baixa de Lisboa',
+    },
+    '6-castelo-de-sao-jorge-la-vista-que-lo-abarca-todo': {
+      src: '/images/actividades/castelo-sao-jorge-lisboa.webp',
+      alt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
+    },
+    '9-terraza-de-lx-factory-lisboa-industrial-y-contemporanea': {
+      src: '/images/actividades/lx-factory-lisboa.webp',
+      alt: 'Calle empedrada de LX Factory con antiguos edificios industriales y comercios',
+    },
+    '10-teleferico-del-parque-das-nacoes-la-lisboa-del-siglo-xxi': {
+      src: '/images/parque-nacoes-torres-atardecer.jpg',
+      alt: 'Torres São Gabriel y São Rafael sobre la Doca dos Olivais, en el Parque das Nações de Lisboa',
+      position: '50% 32%',
+    },
+  },
+};
+
+/**
+ * Parte el encabezado por el guion largo para poder maquetar el subtítulo en
+ * su propia línea.
+ *
+ * El separador se conserva en el DOM (oculto solo visualmente) para que el
+ * texto del encabezado siga siendo exactamente el mismo que antes.
+ */
+function renderEditorialHeading(text: string) {
+  const separator = ' — ';
+  const cut = text.indexOf(separator);
+  if (cut === -1) return text;
+  return (
+    <>
+      <span className="article-h2-main">{text.slice(0, cut)}</span>
+      <span className="article-h2-sep">{separator}</span>
+      <span className="article-h2-sub">{text.slice(cut + separator.length)}</span>
+    </>
+  );
+}
+
 function toAbsoluteUrl(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http')) return pathOrUrl;
   return `${SITE_URL}${pathOrUrl}`;
@@ -3209,6 +3285,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
   const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
   const faqs = extras?.faqs ?? getFaqs(slug);
+  const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
+  const heroImageAlt = heroAlt[slug];
+  const photos = sectionPhotos[slug] ?? {};
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -3260,7 +3339,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
 
   return (
-    <main id="main-content" className="article-page bg-background-light">
+    <main
+      id="main-content"
+      className={`article-page bg-background-light${isEditorialV2 ? ' article-v2' : ''}`}
+    >
       {/* Breadcrumb minimalista */}
       <div className="border-b border-border-soft">
         <div className="max-w-4xl mx-auto px-4 py-3">
@@ -3297,6 +3379,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </header>
+
+      {/* Fotografía de portada: es el LCP, por eso va con priority */}
+      {isEditorialV2 && heroImageAlt && (
+        <figure className="article-hero max-w-6xl mx-auto px-4">
+          <div className="article-hero-frame">
+            <Image
+              src={heroImage}
+              alt={heroImageAlt}
+              fill
+              className="article-hero-img"
+              sizes="(max-width: 1024px) 100vw, 1152px"
+              priority
+              fetchPriority="high"
+            />
+          </div>
+        </figure>
+      )}
 
       {/* Layout principal: contenido + sidebar */}
       <div className="max-w-6xl mx-auto px-4 pb-16">
@@ -3342,8 +3441,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {article.contenido.slice(1).map((bloque, index) => {
                 if (bloque.tipo === 'parrafo') {
                   paragraphIndex += 1;
-                  // Cada 3 párrafos, añadir destacado estilo cita
-                  if (paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
+                  // Cada 3 párrafos, añadir destacado estilo cita.
+                  // En la maquetación v2 no se aplica: convertía en cita un
+                  // párrafo corriente solo por su posición.
+                  if (!isEditorialV2 && paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
                     return (
                       <blockquote key={index} className="article-quote border-l-4 border-gold">
                         <p>
@@ -3360,14 +3461,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 }
                 if (bloque.tipo === 'subtitulo') {
                   const headingId = slugify(bloque.texto || '');
+                  const photo = isEditorialV2 ? photos[headingId] : undefined;
                   return (
-                    <h2
-                      key={index}
-                      id={headingId}
-                      className="scroll-mt-28"
-                    >
-                      {bloque.texto}
-                    </h2>
+                    <Fragment key={index}>
+                      <h2 id={headingId} className="scroll-mt-28">
+                        {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
+                      </h2>
+                      {photo && (
+                        <figure className="article-figure">
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            width={1200}
+                            height={800}
+                            className="article-figure-img"
+                            sizes="(max-width: 768px) 100vw, 700px"
+                            loading="lazy"
+                            style={photo.position ? { objectPosition: photo.position } : undefined}
+                          />
+                        </figure>
+                      )}
+                    </Fragment>
                   );
                 }
                 if (bloque.tipo === 'subseccion') {
