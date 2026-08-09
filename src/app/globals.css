@@ -738,6 +738,14 @@ button:active:not(:disabled) {
   max-width: 40rem;
 }
 
+/* Titular en redonda y en negrita: menos decorativo que la cursiva,
+   más cercano a una cabecera de publicación seria. Playfair Display ya
+   carga el peso 700 en estilo normal, así que no entra ninguna fuente nueva. */
+.article-v2 .article-title {
+  font-style: normal;
+  font-weight: 700;
+}
+
 /* La tarjeta blanca desaparece: el fondo crema pasa a ser el papel.
    El pequeño padding deja el texto a 22 px del borde en móvil. */
 .article-v2 .article-surface {
