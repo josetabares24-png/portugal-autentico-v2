@@ -744,6 +744,15 @@ button:active:not(:disabled) {
 .article-v2 .article-title {
   font-style: normal;
   font-weight: 700;
+  /* La redonda tiene la mancha más compacta que la cursiva y aguanta un
+     interlineado algo más cerrado sin que se toquen los trazos. */
+  line-height: 1.08;
+}
+
+@media (min-width: 768px) {
+  .article-v2 .article-title {
+    line-height: 1.06;
+  }
 }
 
 /* La tarjeta blanca desaparece: el fondo crema pasa a ser el papel.
@@ -806,14 +815,16 @@ button:active:not(:disabled) {
   color: var(--article-main);
 }
 
+/* Capitular contenida: en azul noche, del mismo color que el texto, para que
+   se lea como parte del párrafo y no como un adorno de color. */
 .article-v2 .article-lead::first-letter {
   float: left;
-  margin: 0.14em 0.085em 0 0;
+  margin: 0.1em 0.075em 0 0;
   font-family: var(--font-display), Georgia, serif;
-  font-size: 3.05em;
+  font-size: 2.5em;
   font-weight: 700;
-  line-height: 0.8;
-  color: var(--article-link);
+  line-height: 0.86;
+  color: var(--article-main);
 }
 
 @media (min-width: 768px) {
