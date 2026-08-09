@@ -750,6 +750,16 @@ button:active:not(:disabled) {
   text-wrap: balance;
 }
 
+/* Hasta 420 px el titular no cabe en dos líneas con el tamaño fluido y parte
+   dejando "miradores" sola. A 36 px entra completo. El corte se sitúa en
+   419.98 px y no en 400 porque los Android de 412 px caen en el mismo
+   problema; desde 420 px el tamaño fluido ya resuelve solo. */
+@media (max-width: 419.98px) {
+  .article-v2 .article-title {
+    font-size: 36px;
+  }
+}
+
 @media (min-width: 768px) {
   .article-v2 .article-title {
     line-height: 1.06;
