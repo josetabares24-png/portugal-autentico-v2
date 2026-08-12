@@ -62,8 +62,8 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] md:min-h-[620px]">
         <Image
-          src="/images/miradouro-grupo-atardecer.jpg"
-          alt="Gente sentada viendo el atardecer sobre los tejados de Alfama desde un miradouro, Lisboa"
+          src="/images/lisboa-originales/home-hero-lisboa-propia.webp"
+          alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
           fill
           className="object-cover"
           priority
