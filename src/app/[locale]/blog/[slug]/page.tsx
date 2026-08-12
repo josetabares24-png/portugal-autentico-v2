@@ -1,43 +1,14 @@
-import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { ArticleBody } from '@/components/blog/ArticleBody';
+import { ArticleHero } from '@/components/blog/ArticleHero';
+import { ArticleToc } from '@/components/blog/ArticleToc';
+import type { Article, ArticleExtras, SectionPhoto } from '@/components/blog/article-types';
+import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
-
-type Article = {
-  titulo: string;
-  /**
-   * Texto de referencia del artículo. Alimenta la meta description y la
-   * og:description a través de `getSeoDescription()`.
-   */
-  descripcion: string;
-  /**
-   * Bajada visible bajo el titular. Cuando falta se usa `descripcion`, que es
-   * lo que hacen todos los artículos salvo los que necesitan separar el copy
-   * editorial del de buscadores.
-   */
-  subtitulo?: string;
-  seoTitle?: string;
-  metaDescription?: string;
-  imagen: string;
-  imageAlt?: string;
-  categoria: string;
-  fecha: string;
-  fechaActualizacion?: string;
-  dateModified?: string;
-  minutos: number;
-  links?: { href: string; label: string }[];
-  fuentes?: { label: string; href: string }[];
-  cta?: {
-    href: string;
-    label: string;
-    title: string;
-    text: string;
-  };
-  contenido: { tipo: string; texto?: string; items?: string[]; imagen?: string; caption?: string }[];
-};
 
 const articles: Record<string, Article> = {
   'como-pagar-en-portugal': {
@@ -2358,8 +2329,6 @@ const heroAlt: Record<string, string> = {
     'Gente sentada en bancos de piedra viendo el atardecer sobre la Baixa de Lisboa, con la colina del Castelo de São Jorge al fondo',
 };
 
-type SectionPhoto = { src: string; alt: string; position?: string };
-
 /**
  * Fotos por sección, indexadas por el id del encabezado.
  *
@@ -2389,38 +2358,9 @@ const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
   },
 };
 
-/**
- * Parte el encabezado por el guion largo para poder maquetar el subtítulo en
- * su propia línea.
- *
- * El separador se conserva en el DOM (oculto solo visualmente) para que el
- * texto del encabezado siga siendo exactamente el mismo que antes.
- */
-function renderEditorialHeading(text: string) {
-  const separator = ' — ';
-  const cut = text.indexOf(separator);
-  if (cut === -1) return text;
-  return (
-    <>
-      <span className="article-h2-main">{text.slice(0, cut)}</span>
-      <span className="article-h2-sep">{separator}</span>
-      <span className="article-h2-sub">{text.slice(cut + separator.length)}</span>
-    </>
-  );
-}
-
 function toAbsoluteUrl(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http')) return pathOrUrl;
   return `${SITE_URL}${pathOrUrl}`;
-}
-
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
 }
 
 function getSeoTitle(title: string) {
@@ -3029,7 +2969,7 @@ const internalLinks = [
   { href: '/blog', label: 'Consejos y guías de Lisboa' },
 ];
 
-const articleExtras: Record<string, { comoLlegar: string; mejorHora: string; faqs: { q: string; a: string }[] }> = {
+const articleExtras: Record<string, ArticleExtras> = {
   'como-pagar-en-portugal': {
     comoLlegar: 'No aplica: esta guía es de preparación del viaje, no de una ubicación concreta.',
     mejorHora: 'Revisa las condiciones de tus tarjetas unos días antes de viajar, no en el aeropuerto.',
@@ -3341,334 +3281,35 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     })),
   };
 
-
-  let paragraphIndex = 0;
-
-  // Tags para el artículo
-  const articleTags = [article.categoria, 'Lisboa', 'Portugal', '2026'];
-
   return (
     <main
       id="main-content"
       className={`article-page bg-background-light${isEditorialV2 ? ' article-v2' : ''}`}
     >
-      {/* Breadcrumb minimalista */}
-      <div className="border-b border-border-soft">
-        <div className="max-w-4xl mx-auto px-4 py-3">
-          <nav className="article-breadcrumb flex items-center gap-2">
-            <Link href="/" className="hover:text-terracotta transition-colors">Inicio</Link>
-            <span>›</span>
-            <Link href="/blog" className="hover:text-terracotta transition-colors">Blog</Link>
-            <span>›</span>
-            <span className="font-semibold text-text-main">{article.categoria}</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Header editorial */}
-      <header className="article-header max-w-6xl mx-auto px-4 pt-8 pb-5">
-        <div className="grid lg:grid-cols-[1fr,320px] gap-10">
-          <div className="article-header-content min-w-0">
-            {/* Categoría + meta */}
-            <p className="article-meta uppercase tracking-widest mb-3">
-              {article.categoria} &mdash; {article.fecha}
-              {article.fechaActualizacion ? <> &mdash; {article.fechaActualizacion}</> : null}
-              {' '}&mdash; {article.minutos} min lectura &mdash; Por {AUTHOR_NAME}
-            </p>
-
-            {/* Título */}
-            <h1 className="article-title font-display text-text-main mb-5">
-              {article.titulo}
-            </h1>
-
-            {/* Lead */}
-            <p className="article-description mb-0 pb-5 border-b border-border-soft">
-              {article.subtitulo ?? article.descripcion}
-            </p>
-          </div>
-        </div>
-      </header>
-
-      {/* Fotografía de portada: es el LCP, por eso va con priority */}
-      {isEditorialV2 && heroImageAlt && (
-        <figure className="article-hero max-w-6xl mx-auto px-4">
-          <div className="article-hero-frame">
-            <Image
-              src={heroImage}
-              alt={heroImageAlt}
-              fill
-              className="article-hero-img"
-              sizes="(max-width: 1024px) 100vw, 1152px"
-              priority
-              fetchPriority="high"
-            />
-          </div>
-        </figure>
-      )}
+      <ArticleHero
+        article={article}
+        authorName={AUTHOR_NAME}
+        heroImage={heroImage}
+        heroImageAlt={heroImageAlt}
+        isEditorialV2={isEditorialV2}
+      />
 
       {/* Layout principal: contenido + sidebar */}
       <div className="max-w-6xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-[1fr,320px] gap-10">
-          {/* Columna principal */}
-          <article className="article-surface min-w-0">
-            {/* Lead paragraph - primer párrafo destacado */}
-            <p className="article-lead">
-              {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
-            </p>
+          <ArticleBody
+            article={article}
+            authorName={AUTHOR_NAME}
+            extras={extras}
+            faqs={faqs}
+            finalCta={finalCta}
+            isEditorialV2={isEditorialV2}
+            photos={photos}
+            seoDescription={seoDescription}
+            takeaways={takeaways}
+          />
 
-            {/* Resumen */}
-            {takeaways.length > 0 && (
-              <div className="article-info-box article-reading border-l-2 border-gold">
-                <p className="article-box-label uppercase tracking-widest mb-3">Lo esencial</p>
-                <ul className="article-list article-list-compact">
-                  {takeaways.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Cómo llegar / Mejor hora */}
-            {extras && (
-              <div className="article-facts article-reading border-t border-border-soft grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h2 id="como-llegar" className="scroll-mt-28">Cómo llegar</h2>
-                  <p>{extras.comoLlegar}</p>
-                </div>
-                <div>
-                  <h2 id="mejor-hora" className="scroll-mt-28">Mejor hora para ir</h2>
-                  <p>{extras.mejorHora}</p>
-                </div>
-              </div>
-            )}
-
-            {/* Contenido del artículo */}
-            <div className="article-content article-reading">
-              {article.contenido.slice(1).map((bloque, index) => {
-                if (bloque.tipo === 'parrafo') {
-                  paragraphIndex += 1;
-                  // Cada 3 párrafos, añadir destacado estilo cita.
-                  // En la maquetación v2 no se aplica: convertía en cita un
-                  // párrafo corriente solo por su posición.
-                  if (!isEditorialV2 && paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
-                    return (
-                      <blockquote key={index} className="article-quote border-l-4 border-gold">
-                        <p>
-                          {bloque.texto}
-                        </p>
-                      </blockquote>
-                    );
-                  }
-                  return (
-                    <p key={index}>
-                      {bloque.texto}
-                    </p>
-                  );
-                }
-                if (bloque.tipo === 'subtitulo') {
-                  const headingId = slugify(bloque.texto || '');
-                  const photo = isEditorialV2 ? photos[headingId] : undefined;
-                  return (
-                    <Fragment key={index}>
-                      <h2 id={headingId} className="scroll-mt-28">
-                        {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
-                      </h2>
-                      {photo && (
-                        <figure className="article-figure">
-                          <Image
-                            src={photo.src}
-                            alt={photo.alt}
-                            width={1200}
-                            height={800}
-                            className="article-figure-img"
-                            sizes="(max-width: 768px) 100vw, 700px"
-                            loading="lazy"
-                            style={photo.position ? { objectPosition: photo.position } : undefined}
-                          />
-                        </figure>
-                      )}
-                    </Fragment>
-                  );
-                }
-                if (bloque.tipo === 'subseccion') {
-                  const headingId = slugify(bloque.texto || '');
-                  return (
-                    <h3
-                      key={index}
-                      id={headingId}
-                      className="scroll-mt-28"
-                    >
-                      {bloque.texto}
-                    </h3>
-                  );
-                }
-                if (bloque.tipo === 'lista') {
-                  return (
-                    <ul key={index} className="article-list">
-                      {bloque.items?.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                }
-                if (bloque.tipo === 'tip') {
-                  return (
-                    <div key={index} className="article-info-box article-tip border-l-2 border-gold">
-                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Tip local</p>
-                      <p>{bloque.texto}</p>
-                    </div>
-                  );
-                }
-                if (bloque.tipo === 'nota') {
-                  return (
-                    <div key={index} className="article-info-box article-note border-l-2 border-gold">
-                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Dato verificado</p>
-                      <p>{bloque.texto}</p>
-                    </div>
-                  );
-                }
-                // Advertencia sobre el estado de un lugar: cierres, obras o
-                // cualquier cosa que convenga comprobar antes de ir. Reutiliza
-                // los estilos de `nota`; solo cambia la etiqueta.
-                if (bloque.tipo === 'aviso') {
-                  return (
-                    <div key={index} className="article-info-box article-note border-l-2 border-gold">
-                      <p className="article-box-label article-box-label-accent uppercase tracking-widest">Antes de ir</p>
-                      <p>{bloque.texto}</p>
-                    </div>
-                  );
-                }
-                return null;
-              })}
-            </div>
-
-            {/* Separador */}
-            <hr className="my-12 border-border-soft" />
-
-            {/* FAQs */}
-            <section className="article-faq article-reading">
-              <h3>Preguntas frecuentes</h3>
-              <div className="space-y-0">
-                {faqs.map((faq, i) => (
-                  <details key={i} className="group border-t border-border-soft">
-                    <summary className="flex items-start justify-between cursor-pointer gap-4">
-                      <h4>{faq.q}</h4>
-                      <span className="article-faq-icon flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div className="article-faq-answer">
-                      {faq.a}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </section>
-
-            {article.fuentes && article.fuentes.length > 0 && (
-              <section className="article-sources article-reading">
-                <h3>Fuentes oficiales consultadas</h3>
-                <ul>
-                  {article.fuentes.map((source) => (
-                    <li key={source.href}>
-                      <a href={source.href} target="_blank" rel="noopener noreferrer">
-                        {source.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )}
-
-            {/* CTA final */}
-            <div className="article-cta article-reading relative bg-night bg-azulejo-pattern-gold text-center overflow-hidden">
-              <h3 className="relative text-white">
-                {finalCta.title}
-              </h3>
-              <p className="relative text-white/70">
-                {finalCta.text}
-              </p>
-              <Link
-                href={finalCta.href}
-                className="btn-primary article-cta-button relative inline-flex min-h-11 px-8 py-3 text-sm"
-              >
-                {finalCta.label}
-              </Link>
-            </div>
-
-            {/* Sobre el autor */}
-            <div className="article-author article-reading border-t border-border-soft flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-xl flex-shrink-0">
-                JT
-              </div>
-              <div>
-                <p className="article-author-name">Escrito por {AUTHOR_NAME}</p>
-                <p className="article-author-bio">
-                  Vivo en Lisboa y pruebo cada ruta, restaurante y actividad antes de recomendarla.{' '}
-                  <Link href="/sobre-nosotros">Más sobre mí</Link>
-                  {' · '}
-                  <a
-                    href="https://instagram.com/estabaenlisboa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Instagram
-                  </a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          {/* Sidebar */}
-          <aside className="article-toc space-y-10 lg:sticky lg:top-24 lg:self-start">
-            {/* Tabla de contenidos */}
-            {headings.length > 0 && (
-              <div>
-                <p className="article-toc-label uppercase tracking-widest mb-4 pb-3 border-b border-border-soft">En este artículo</p>
-                <nav className="space-y-2">
-                  {headings.map((heading) => (
-                    <a
-                      key={heading.id}
-                      href={`#${heading.id}`}
-                      className="block transition-colors py-1"
-                    >
-                      {heading.title}
-                    </a>
-                  ))}
-                </nav>
-              </div>
-            )}
-
-            {/* También te interesa */}
-            <div>
-              <p className="article-toc-label uppercase tracking-widest mb-4 pb-3 border-b border-border-soft">También te interesa</p>
-              <ul className="space-y-3">
-                {sidebarLinks.slice(0, 5).map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="transition-colors">
-                      {item.label} →
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Mini CTA */}
-            <div className="article-sidebar-cta card-surface p-5 border-l-2 border-gold">
-              <p className="article-sidebar-cta-title">¿Primera vez en Lisboa?</p>
-              <p className="article-sidebar-cta-text">Te ayudamos a planificar tu viaje 1:1</p>
-              <Link
-                href="/planifica-tu-viaje"
-                className="btn-primary block w-full min-h-11 py-3"
-              >
-                Planifica tu viaje
-              </Link>
-            </div>
-          </aside>
+          <ArticleToc headings={headings} sidebarLinks={sidebarLinks} />
         </div>
 
         {/* Relacionados */}

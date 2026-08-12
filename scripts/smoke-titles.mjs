@@ -20,6 +20,8 @@ import net from 'node:net';
 
 const BRAND = 'Estaba en Lisboa';
 const DUPLICATE_PATTERN = `${BRAND} | ${BRAND}`;
+const isWindows = process.platform === 'win32';
+const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 
 // Known public pages whose title should contain the brand exactly once.
 const PAGES = [
@@ -55,7 +57,11 @@ function getFreePort() {
 
 function runStep(command, args, opts = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { stdio: 'inherit', ...opts });
+    const child = spawn(command === 'npx' ? npxCommand : command, args, {
+      stdio: 'inherit',
+      shell: isWindows,
+      ...opts,
+    });
     child.on('exit', (code) => {
       if (code === 0) resolve();
       else reject(new Error(`${command} ${args.join(' ')} exited with code ${code}`));
@@ -125,7 +131,11 @@ async function main() {
       }
 
       log(`== Arrancando next start en ${baseUrl} ==`);
-      child = spawn('npx', ['next', 'start', '-p', String(port)], { stdio: 'inherit', env });
+      child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {
+        stdio: 'inherit',
+        env,
+        shell: isWindows,
+      });
       await waitForServer(baseUrl);
       log('Servidor listo.\n');
     } else {

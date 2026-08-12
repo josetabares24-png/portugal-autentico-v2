@@ -73,9 +73,12 @@ const puertoLibre = () =>
 
 async function levantarServidor() {
   const puerto = await puertoLibre();
-  const hijo = spawn('npx', ['next', 'start', '-p', String(puerto)], {
+  const esWindows = process.platform === 'win32';
+  const npx = esWindows ? 'npx.cmd' : 'npx';
+  const hijo = spawn(npx, ['next', 'start', '-p', String(puerto)], {
     cwd: RAIZ,
-    detached: true,
+    detached: !esWindows,
+    shell: esWindows,
     stdio: 'ignore',
     env: {
       ...process.env,
@@ -90,7 +93,11 @@ async function levantarServidor() {
 
   const apagar = () => {
     try {
-      process.kill(-hijo.pid, 'SIGTERM');
+      if (esWindows) {
+        hijo.kill('SIGTERM');
+      } else {
+        process.kill(-hijo.pid, 'SIGTERM');
+      }
     } catch {
       /* ya estaba apagado */
     }
