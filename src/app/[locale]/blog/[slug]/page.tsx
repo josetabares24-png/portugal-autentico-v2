@@ -2306,6 +2306,10 @@ const localImages: Record<string, string> = {
   'arquitectura-manuelina-lisboa': '/images/alfama-panoramica.jpg',
 };
 
+const articleHeroImages: Record<string, string> = {
+  'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-vista-portas-do-sol.webp',
+};
+
 const SITE_URL = 'https://estabaenlisboa.com';
 const AUTHOR_NAME = 'José Tabares';
 
@@ -2325,7 +2329,7 @@ const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Obje
  */
 const heroAlt: Record<string, string> = {
   'mejores-miradores-lisboa':
-    'Gente sentada en bancos de piedra viendo el atardecer sobre la Baixa de Lisboa, con la colina del Castelo de São Jorge al fondo',
+    'Vista de Alfama desde Portas do Sol, con los tejados de Lisboa y el río Tajo al fondo',
 };
 
 /**
@@ -3205,6 +3209,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   }
 
   const heroImage = resolveBlogImage(slug, localImages[slug] || article.imagen);
+  const visualHeroImage = articleHeroImages[slug] ?? heroImage;
   const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
@@ -3288,7 +3293,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <ArticleHero
         article={article}
         authorName={AUTHOR_NAME}
-        heroImage={heroImage}
+        heroImage={visualHeroImage}
         heroImageAlt={heroImageAlt}
         isEditorialV2={isEditorialV2}
       />
