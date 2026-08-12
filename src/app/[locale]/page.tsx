@@ -68,7 +68,8 @@ export default function HomePage() {
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 1280px) 100vw, 1280px"
         />
         {/* Overlay solo abajo-izquierda */}
         <div
