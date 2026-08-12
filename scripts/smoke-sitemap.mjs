@@ -23,6 +23,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const PROD_ORIGIN = 'https://estabaenlisboa.com';
+const isWindows = process.platform === 'win32';
+const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 
 /** Páginas públicas que deben estar en el sitemap exactamente una vez. */
 const MANDATORY = [
@@ -77,7 +79,11 @@ function getFreePort() {
 
 function runStep(command, args, opts = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { stdio: 'inherit', ...opts });
+    const child = spawn(command === 'npx' ? npxCommand : command, args, {
+      stdio: 'inherit',
+      shell: isWindows,
+      ...opts,
+    });
     child.on('exit', (code) =>
       code === 0 ? resolve() : reject(new Error(`${command} ${args.join(' ')} exited with ${code}`))
     );
@@ -565,7 +571,12 @@ async function main() {
         env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
       }
       log(`== Arrancando next start en ${baseUrl} ==`);
-      child = spawn('npx', ['next', 'start', '-p', String(port)], { stdio: 'inherit', env, detached: true });
+      child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {
+        stdio: 'inherit',
+        env,
+        detached: !isWindows,
+        shell: isWindows,
+      });
       await waitForServer(baseUrl);
       log('Servidor listo.\n');
     } else {
@@ -619,10 +630,14 @@ async function main() {
   } finally {
     if (child) {
       log('\nDeteniendo el servidor de pruebas...');
-      try {
-        process.kill(-child.pid, 'SIGTERM');
-      } catch {
+      if (isWindows) {
         child.kill('SIGTERM');
+      } else {
+        try {
+          process.kill(-child.pid, 'SIGTERM');
+        } catch {
+          child.kill('SIGTERM');
+        }
       }
     }
   }

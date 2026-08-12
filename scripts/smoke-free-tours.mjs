@@ -32,6 +32,8 @@ const SITE_HOST = 'estabaenlisboa.com';
 const PAGE_PATH = '/free-tours-lisboa';
 const FICHA_PATH = '/actividades/free-walking-tour-centro';
 const HERO_IMAGE = '/images/lisboa-originales/rua-augusta-arco-lisboa.webp';
+const isWindows = process.platform === 'win32';
+const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 
 // ID de referido SINTÉTICO, solo para pruebas. No es un ID real de nadie.
 const TEST_REF = 'SMOKETESTREF123';
@@ -88,7 +90,11 @@ function getFreePort() {
 
 function runStep(command, args, opts = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(command, args, { stdio: 'inherit', ...opts });
+    const child = spawn(command === 'npx' ? npxCommand : command, args, {
+      stdio: 'inherit',
+      shell: isWindows,
+      ...opts,
+    });
     child.on('exit', (code) => {
       if (code === 0) resolve();
       else reject(new Error(`${command} ${args.join(' ')} exited with code ${code}`));
@@ -594,10 +600,11 @@ async function startServer(extraEnv) {
   // el grupo entero. Si sólo se señaliza al proceso de `npx`, el
   // `next-server` hijo sobrevive y deja colgada cualquier tubería que lea
   // la salida de este script.
-  const child = spawn('npx', ['next', 'start', '-p', String(port)], {
+  const child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {
     stdio: 'inherit',
     env,
-    detached: true,
+    detached: !isWindows,
+    shell: isWindows,
   });
   await waitForServer(baseUrl);
   return { child, baseUrl };
@@ -605,6 +612,10 @@ async function startServer(extraEnv) {
 
 function stopServer(child) {
   if (!child) return;
+  if (isWindows) {
+    child.kill('SIGTERM');
+    return;
+  }
   try {
     process.kill(-child.pid, 'SIGTERM');
   } catch {
