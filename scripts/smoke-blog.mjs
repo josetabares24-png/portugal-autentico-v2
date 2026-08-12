@@ -181,6 +181,8 @@ function huella(html) {
   }));
 
   return {
+    esV2: /class="[^"]*\barticle-page\b[^"]*\barticle-v2\b/.test(principal),
+    tieneHero: /class="[^"]*\barticle-hero\b/.test(principal),
     title: meta(/<title>([^<]*)<\/title>/),
     metaDescription: meta(/name="description" content="([^"]*)"/),
     canonical: meta(/rel="canonical" href="([^"]*)"/),
@@ -323,6 +325,123 @@ function comparar(nombreA, nombreB) {
   return ok ? 0 : 1;
 }
 
+const CAMPOS_PROTEGIDOS = [
+  'estado',
+  'redirigeA',
+  'title',
+  'metaDescription',
+  'canonical',
+  'robots',
+  'keywords',
+  'ogTitle',
+  'ogDescription',
+  'ogUrl',
+  'ogImage',
+  'ogImageAlt',
+  'h1',
+  'h2',
+  'h3',
+  'idsDeEncabezados',
+  'anclasDelIndice',
+  'enlacesInternos',
+  'enlacesExternos',
+  'tiposDeSchema',
+  'schemas',
+  'textoVisible',
+];
+
+const claveImagen = (img) =>
+  JSON.stringify({
+    src: img?.src ?? null,
+    alt: img?.alt ?? null,
+  });
+
+function contieneImagenesProtegidas(base, despues) {
+  const restantes = new Map();
+  for (const img of despues ?? []) {
+    const key = claveImagen(img);
+    restantes.set(key, (restantes.get(key) ?? 0) + 1);
+  }
+  const faltantes = [];
+  for (const img of base ?? []) {
+    const key = claveImagen(img);
+    const count = restantes.get(key) ?? 0;
+    if (count <= 0) {
+      faltantes.push(img);
+    } else {
+      restantes.set(key, count - 1);
+    }
+  }
+  return faltantes;
+}
+
+function compararProtegido(nombreA, nombreB) {
+  const leer = (n) => {
+    const p = path.join(DIR_SNAPSHOTS, `${n}.json`);
+    if (!fs.existsSync(p)) {
+      console.error(`No existe .snapshots/${n}.json. Genéralo antes con: node scripts/smoke-blog.mjs snapshot ${n}`);
+      process.exit(2);
+    }
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  };
+  const A = leer(nombreA);
+  const B = leer(nombreB);
+
+  const soloA = Object.keys(A).filter((k) => !(k in B));
+  const soloB = Object.keys(B).filter((k) => !(k in A));
+  const comunes = Object.keys(A).filter((k) => k in B);
+
+  console.log(`Comparando propiedades protegidas ${nombreA} → ${nombreB}`);
+  console.log(`  artículos en ${nombreA}: ${Object.keys(A).length}`);
+  console.log(`  artículos en ${nombreB}: ${Object.keys(B).length}\n`);
+  if (soloA.length) console.log(`  DESAPARECIDOS: ${soloA.join(', ')}`);
+  if (soloB.length) console.log(`  NUEVOS: ${soloB.join(', ')}`);
+
+  let conCambios = 0;
+  let totalCampos = 0;
+  let migradosV2 = 0;
+  const noMigrados = [];
+
+  for (const slug of comunes) {
+    const difs = [];
+    for (const campo of CAMPOS_PROTEGIDOS) {
+      difs.push(...diferencias(A[slug]?.[campo], B[slug]?.[campo], campo));
+    }
+
+    const imagenesFaltantes = contieneImagenesProtegidas(A[slug]?.imagenes, B[slug]?.imagenes);
+    for (const img of imagenesFaltantes) {
+      difs.push({ campo: 'imagenes protegidas', antes: img, despues: '(faltante)' });
+    }
+
+    if (B[slug]?.estado === 200 && B[slug]?.esV2 && B[slug]?.tieneHero) {
+      migradosV2 += 1;
+    } else if (B[slug]?.estado === 200) {
+      noMigrados.push(slug);
+    }
+
+    if (!difs.length) continue;
+    conCambios += 1;
+    totalCampos += difs.length;
+    console.log(`\n❌ ${slug} — ${difs.length} propiedad(es) protegida(s) distintas`);
+    for (const d of difs.slice(0, 12)) {
+      console.log(`   · ${d.campo}`);
+      console.log(`     antes:   ${recorta(d.antes)}`);
+      console.log(`     después: ${recorta(d.despues)}`);
+    }
+    if (difs.length > 12) console.log(`   … y ${difs.length - 12} más`);
+  }
+
+  console.log(`\n${'─'.repeat(60)}`);
+  console.log(`Migrados a v2 con hero: ${migradosV2}/${comunes.filter((slug) => B[slug]?.estado === 200).length}`);
+  if (noMigrados.length) console.log(`No migrados: ${noMigrados.join(', ')}`);
+  if (conCambios) {
+    console.log(`Con regresiones protegidas: ${conCambios} artículos, ${totalCampos} campos`);
+  }
+  const ok = conCambios === 0 && !soloA.length && !soloB.length && noMigrados.length === 0;
+  console.log(ok ? '\n✅ PROPIEDADES PROTEGIDAS SIN REGRESIONES' : '\n❌ HAY REGRESIONES PROTEGIDAS');
+  return ok ? 0 : 1;
+}
+
 // ---------------------------------------------------------------------------
 
 const [comando, a, b] = process.argv.slice(2);
@@ -331,17 +450,24 @@ if (comando === 'snapshot') {
   const nombre = a || 'base';
   const fallos = await capturar(nombre);
   process.exit(fallos ? 1 : 0);
+} else if (comando === 'compare-protected') {
+  process.exit(compararProtegido(a || 'base', b || 'after'));
 } else if (comando === 'compare') {
   process.exit(comparar(a || 'base', b || 'after'));
+} else if (!comando) {
+  const fallos = await capturar('after');
+  if (fallos) process.exit(1);
+  process.exit(compararProtegido('base', 'after'));
 } else {
   console.log(`Uso:
   node scripts/smoke-blog.mjs snapshot <nombre>     captura el estado actual
   node scripts/smoke-blog.mjs compare <a> <b>       compara dos capturas
+  node scripts/smoke-blog.mjs compare-protected <a> <b>
 
 Ejemplo del flujo de un refactor:
   npm run build && node scripts/smoke-blog.mjs snapshot base
   …se refactoriza…
   npm run build && node scripts/smoke-blog.mjs snapshot after
-  node scripts/smoke-blog.mjs compare base after`);
+  node scripts/smoke-blog.mjs compare-protected base after`);
   process.exit(comando ? 2 : 0);
 }

@@ -726,10 +726,7 @@ button:active:not(:disabled) {
   transform: scale(0.97);
 }
 
-/* ========== MAQUETACIÓN EDITORIAL v2 (piloto) ==========
-   Todo cuelga de .article-v2, que solo se aplica al artículo piloto.
-   Los demás artículos siguen usando los estilos .article-* de arriba
-   sin ninguna variación. */
+/* ========== MAQUETACIÓN EDITORIAL v2 ========== */
 
 /* Sin la tarjeta el texto se ensancharía de más en escritorio, así que la
    columna de lectura se acorta. En píxeles y no en ch: `ch` se calcula sobre
@@ -748,6 +745,7 @@ button:active:not(:disabled) {
      interlineado algo más cerrado sin que se toquen los trazos. */
   line-height: 1.08;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 /* Hasta 420 px el titular no cabe en dos líneas con el tamaño fluido y parte
@@ -756,7 +754,9 @@ button:active:not(:disabled) {
    problema; desde 420 px el tamaño fluido ya resuelve solo. */
 @media (max-width: 419.98px) {
   .article-v2 .article-title {
-    font-size: 36px;
+    max-width: 100%;
+    font-size: 2rem;
+    text-wrap: wrap;
   }
 }
 
