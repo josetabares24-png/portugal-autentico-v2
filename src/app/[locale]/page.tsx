@@ -60,15 +60,16 @@ export default function HomePage() {
   return (
     <main id="main-content" className="bg-cream">
       {/* ── HERO ── */}
-      <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] md:min-h-[620px]">
+      <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] overflow-hidden md:min-h-[620px]">
         <Image
-          src="/images/miradouro-grupo-atardecer.jpg"
-          alt="Gente sentada viendo el atardecer sobre los tejados de Alfama desde un miradouro, Lisboa"
+          src="/images/lisboa-originales/home-hero-lisboa-propia.webp"
+          alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
           fill
-          className="object-cover"
+          className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          sizes="100vw"
+          quality={90}
+          sizes="(max-width: 1280px) 100vw, 1280px"
         />
         {/* Overlay solo abajo-izquierda */}
         <div
