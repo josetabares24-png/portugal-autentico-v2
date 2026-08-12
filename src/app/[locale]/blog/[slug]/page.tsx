@@ -2312,14 +2312,13 @@ const AUTHOR_NAME = 'José Tabares';
 /**
  * Maquetación editorial v2.
  *
- * Piloto acotado a un solo artículo: activa la foto de portada, las fotos por
- * sección y una tipografía con más aire. Todo lo nuevo cuelga de la clase
- * `article-v2` en globals.css, así que el resto de artículos no cambia.
+ * El blog completo comparte este sistema visual. Las fotos por sección siguen
+ * limitadas a los artículos que ya las tienen verificadas.
  */
-const EDITORIAL_V2_SLUGS = new Set(['mejores-miradores-lisboa']);
+const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Object.keys(articles)]);
 
 /**
- * Texto alternativo de la foto de portada.
+ * Texto alternativo específico de la foto de portada.
  *
  * Vive aparte del objeto `articles` a propósito: si se guardara como
  * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
@@ -3235,7 +3234,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
   const faqs = extras?.faqs ?? getFaqs(slug);
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
-  const heroImageAlt = heroAlt[slug];
+  const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
   const photos = sectionPhotos[slug] ?? {};
 
   const jsonLd = {
