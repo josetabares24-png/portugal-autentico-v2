@@ -62,14 +62,22 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] overflow-hidden md:min-h-[620px]">
         <Image
-          src="/images/lisboa-originales/home-hero-lisboa-propia.webp"
+          src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.webp"
           alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
           fill
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
           quality={90}
-          sizes="(max-width: 1280px) 100vw, 1280px"
+          /*
+           * La caja es más alta que ancha y la foto es apaisada, así que
+           * `object-cover` la pinta mucho más ancha que el viewport: en un
+           * móvil de 393 px se dibuja a ~1709 px CSS, no a 393. Con `100vw`
+           * el navegador pedía una variante cuatro veces más pequeña de la
+           * que necesita y la ampliaba él. Estos valores describen el ancho
+           * real de render, no el del hueco.
+           */
+          sizes="(max-width: 767px) 450vw, (max-width: 1279px) 190vw, 100vw"
         />
         {/* Overlay solo abajo-izquierda */}
         <div
