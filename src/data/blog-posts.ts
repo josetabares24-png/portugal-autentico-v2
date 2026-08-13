@@ -52,7 +52,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Transporte',
     fecha: '21 Jul 2026',
     autor: 'José Tabares',
-    imagen: '/images/turista-tranvia-28.jpg',
+    imagen: '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
   },
   {
     id: 'que-hacer-gratis-en-lisboa',
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '5 Feb 2026',
     autor: 'José Tabares',
-    imagen: '/images/tranvia-28.jpg',
+    imagen: '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
   },
   {
     id: 'vida-nocturna-lisboa',

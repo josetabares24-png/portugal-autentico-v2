@@ -376,7 +376,7 @@ const articles: Record<string, Article> = {
     seoTitle: 'Cómo moverse por Lisboa | Transporte claro',
     metaDescription: 'Guía práctica para moverte por Lisboa en metro, tranvía, bus, tren, a pie, taxi o apps, con consejos sobre cuestas y trayectos útiles.',
     imagen: '/images/turista-tranvia-28.jpg',
-    imageAlt: 'Viajera consultando el móvil en una calle de Lisboa mientras pasa un tranvía',
+    imageAlt: 'Tranvía articulado moderno de la línea 15E de Carris circulando por una calle de Lisboa',
     categoria: 'Transporte',
     fecha: '21 Jul 2026',
     fechaActualizacion: 'Actualizado en julio de 2026',
@@ -2273,11 +2273,11 @@ const localImages: Record<string, string> = {
   'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
   'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
   'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
-  'como-moverse-por-lisboa': '/images/turista-tranvia-28.jpg',
   'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
   'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
+  'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
+  'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
   'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
-  'barrios-imprescindibles': '/images/tranvia-28.jpg',
   'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
   'como-ir-sintra-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
   'barrios-lisboa-donde-alojarse': '/images/barrio-calle-residencial.jpg',
@@ -2319,8 +2319,6 @@ const localImages: Record<string, string> = {
 
 const articleHeroImages: Record<string, string> = {
   'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
-  'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
-  'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';
