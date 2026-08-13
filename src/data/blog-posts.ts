@@ -154,15 +154,6 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/miradouro-atardecer.jpg',
   },
   {
-    id: 'transporte-publico-lisboa',
-    titulo: 'Transporte público en Lisboa: billetes y tarjetas',
-    excerpt: 'Billetes, tarjetas, validación y errores frecuentes al usar metro, tranvía, buses y elevadores.',
-    categoria: 'Transporte',
-    fecha: '22 Nov 2024',
-    autor: 'José Tabares',
-    imagen: '/images/funicular-bica-turistas.jpg',
-  },
-  {
     id: 'aeropuerto-lisboa-al-centro',
     titulo: 'Cómo Ir del Aeropuerto de Lisboa al Centro',
     excerpt: 'Metro, Aerobus, taxi y Uber comparados: precios reales, tiempos y cuál conviene según cómo viajes.',

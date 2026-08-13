@@ -15,6 +15,11 @@ const nextConfig = {
       { source: '/:locale(en|ko|es)/mis-guias', destination: '/itinerarios', permanent: true },
       // Default locale (no prefix)
       { source: '/transporte', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      // Los dos artículos de transporte cubrían lo mismo y competían entre sí
+      // por las mismas búsquedas. Se fusionan en la guía general, que era la
+      // más completa y la que ya recibía el doble de enlaces internos.
+      { source: '/blog/transporte-publico-lisboa', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/transporte-publico-lisboa', destination: '/blog/como-moverse-por-lisboa', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },

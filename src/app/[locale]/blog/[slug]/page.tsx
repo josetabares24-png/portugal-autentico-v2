@@ -411,10 +411,11 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Para llegar desde el aeropuerto suele ser una opción práctica si llevas equipaje manejable y tu alojamiento queda cerca de una estación. El aeropuerto tiene estación de metro y la conexión Aeroporto-Saldanha se anuncia como unos 20 minutos, pero eso no significa que llegue directo a todas las zonas céntricas: muchas rutas necesitan transbordo.' },
       { tipo: 'subtitulo', texto: 'Tranvías: icono, no siempre transporte eficiente' },
       { tipo: 'parrafo', texto: 'El tranvía 28 es famoso por una razón: atraviesa calles estrechas, sube colinas y condensa una imagen muy reconocible de Lisboa. Pero también puede ir lleno, lento y con colas. Si lo quieres vivir como experiencia, intenta hacerlo temprano o al final de la tarde. Si solo quieres llegar rápido, quizá no es la mejor herramienta.' },
-      { tipo: 'parrafo', texto: 'Otros tranvías y recorridos pueden ser más prácticos según el trayecto. Para Belém, por ejemplo, conviene revisar la combinación desde Cais do Sodré o desde tu zona de alojamiento. No diseñes el día alrededor de un tranvía si ese tranvía te obliga a esperar demasiado.' },
+      { tipo: 'parrafo', texto: 'Hay otras líneas más prácticas para desplazarte de verdad. El 15 conecta Belém con Cais do Sodré y Martim Moniz siguiendo la línea del río, y es el que lleva las unidades articuladas modernas, con más sitio y menos cola. El 25 va de Prazeres a Praça da Figueira atravesando barrios residenciales que el metro no alcanza. No diseñes el día alrededor de un tranvía si ese tranvía te obliga a esperar demasiado.' },
+      { tipo: 'tip', texto: 'Si el 28 tiene una cola interminable en Martim Moniz, camina un par de paradas cuesta arriba y súbete allí. Suele haber sitio y te ahorras la espera.' },
       { tipo: 'subtitulo', texto: 'Autobuses: menos románticos, muy útiles' },
       { tipo: 'parrafo', texto: 'Los autobuses no salen tanto en las fotos, pero salvan rutas que el metro no cubre bien. Son útiles para conectar miradores, zonas residenciales y puntos que quedan incómodos a pie. El problema es que dependen más del tráfico y pueden ser menos intuitivos para una primera visita.' },
-      { tipo: 'parrafo', texto: 'Mi consejo es usarlos cuando Google Maps o la app de transporte los muestre claramente como mejor opción, pero no planificar todo el viaje solo con buses. Lisboa se entiende mejor mezclando metro, caminata y soluciones puntuales. Si vienes desde el aeropuerto en bus urbano, recuerda que el propio aeropuerto limita el equipaje permitido a 50 x 40 x 20 cm; con maletas grandes, metro, taxi o app suelen ser más cómodos.' },
+      { tipo: 'parrafo', texto: 'Mi consejo es usarlos cuando Google Maps o la app de transporte los muestre claramente como mejor opción, pero no planificar todo el viaje solo con buses. La aplicación de Carris muestra rutas y horarios en tiempo real, y ahí se nota la diferencia: sin ella el bus es adivinar, con ella es una opción más. Si vienes desde el aeropuerto en bus urbano, recuerda que el propio aeropuerto limita el equipaje permitido a 50 x 40 x 20 cm; con maletas grandes, metro, taxi o app suelen ser más cómodos.' },
       { tipo: 'subtitulo', texto: 'Elevadores y funiculares' },
       { tipo: 'parrafo', texto: 'Los elevadores y funiculares existen por una razón: Lisboa sube de verdad. Bica, Glória, Lavra y Santa Justa no son solo atracciones, también cuentan cómo la ciudad resolvió sus desniveles. Pueden ahorrar esfuerzo, aunque en horas turísticas quizá haya más cola que ventaja.' },
       { tipo: 'parrafo', texto: 'Si vas con poco tiempo, úsalos cuando encajen en tu ruta, no como una lista obligatoria. A veces una calle paralela, una pausa o una combinación con metro resuelve mejor que esperar media hora por una foto.' },
@@ -960,62 +961,7 @@ const articles: Record<string, Article> = {
       { tipo: "tip", texto: "Si buscas equilibrio total, mayo y septiembre son los mejores meses." }
     ]
   },
-  "transporte-publico-lisboa": {
-    titulo: "Transporte público en Lisboa: billetes, tarjetas y errores comunes",
-    seoTitle: "Transporte público en Lisboa | Billetes y tarjetas",
-    metaDescription: "Qué tarjeta comprar, cómo validar y cuándo compensa el billete diario en metro, tranvía, bus y elevadores de Lisboa, sin pagar de más.",
-    descripcion: "Billetes, tarjetas, validación, metro, tranvía, bus y elevadores: una guía específica para usar la red pública sin pagar de más.",
-    imagen: "/images/tranvia-28.jpg",
-    categoria: "Transporte",
-    fecha: "22 Nov 2024",
-    minutos: 15,
-    links: [
-      { href: '/blog/como-moverse-por-lisboa', label: 'Ver la guía general para moverte por Lisboa' },
-      { href: '/blog/lisboa-card-vale-la-pena', label: 'Comparar con la Lisboa Card' },
-      { href: '/itinerarios', label: 'Explorar itinerarios gratuitos' },
-    ],
-    fuentes: [
-      { label: 'Metro Lisboa - comprar billetes', href: 'https://www.metrolisboa.pt/en/buy/' },
-      { label: 'Carris - tabla de precios 2026', href: 'https://www.carris.pt/en/discover/prices-table-2026/' },
-      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
-      { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/info/en/lisbon' },
-    ],
-    contenido: [
-      { tipo: "parrafo", texto: "Esta guía baja al detalle práctico del transporte público: qué soporte comprar, cómo validar, cuándo conviene un billete diario y qué errores hacen que termines pagando de más. Si lo que necesitas es decidir entre caminar, metro, taxi, tren o app según tu ruta, empieza por la guía general de cómo moverse por Lisboa." },
-      { tipo: "parrafo", texto: "Lisboa tiene un sistema que funciona bien, pero sus tarjetas, operadores y validaciones pueden confundir al llegar. La clave no es memorizar todas las líneas, sino entender cómo pagar, validar y combinar metro, Carris, trenes urbanos y elevadores sin improvisar en cada máquina." },
-      { tipo: "subtitulo", texto: "Billetes y tarjetas: la base antes de subir" },
-      { tipo: "parrafo", texto: "Evita comprar billetes sueltos sin mirar antes el tipo de viaje que vas a hacer. Para visitas cortas suele interesar un soporte ocasional recargable, zapping o un billete diario según la cantidad de trayectos y operadores que vayas a usar. La misma elección no sirve igual para moverte solo en metro que para combinar tranvía, bus, tren o barco." },
-      { tipo: "parrafo", texto: "Antes de cargar la tarjeta, revisa dos cosas: si la modalidad elegida permite transbordos como los necesitas y si cubre todos los operadores de tu ruta. Muchos errores vienen de asumir que una carga vale para cualquier red, cuando algunas combinaciones tienen condiciones propias." },
-      { tipo: "parrafo", texto: "El soporte es individual: cada persona necesita el suyo para validar correctamente. También conviene conservarlo hasta salir de la red, porque puede hacer falta en controles o puertas de salida." },
-      { tipo: "tip", texto: "Si vas a hacer varios trayectos en un día, compara el billete diario con zapping antes de cargar. Si solo vas a moverte una o dos veces, no compres un pase por costumbre." },
-      { tipo: "subtitulo", texto: "El metro: rápido, limpio y confiable" },
-      { tipo: "parrafo", texto: "El metro de Lisboa es relativamente nuevo —la primera línea se inauguró en 1959, pero la expansión real llegó en los noventa— y eso se nota en la limpieza y modernidad de las estaciones. Tiene cuatro líneas identificadas por colores: Azul, Amarilla, Verde y Roja. La red no es tan extensa como la de otras capitales europeas, pero conecta eficientemente los barrios principales." },
-      { tipo: "parrafo", texto: "Las estaciones más útiles para turistas son Rossio (centro histórico), Cais do Sodré (trenes a Cascais y ferries), Baixa-Chiado (zona comercial), y Marquês de Pombal (norte de la ciudad). La frecuencia es excelente en hora punta —cada tres o seis minutos— y se reduce a diez o quince minutos en horarios valle." },
-      { tipo: "parrafo", texto: "Es la mejor opción para distancias largas o cuando necesitas llegar rápido a algún lugar, pero revisa horarios oficiales antes de depender del último servicio. Para trayectos nocturnos o con incidencias, conviene tener una alternativa sencilla." },
-      { tipo: "subtitulo", texto: "Tranvías: el encanto lento de Lisboa" },
-      { tipo: "parrafo", texto: "Los tranvías amarillos son el símbolo más reconocible de Lisboa, pero no todos sirven para lo mismo. El tranvía 28 es el más famoso porque serpentea por Alfama y Graça ofreciendo vistas espectaculares, pero es también el más lento, el más lleno de turistas, y el más propenso a carteristas." },
-      { tipo: "parrafo", texto: "Si quieres vivir la experiencia del 28 sin sufrir, hay trucos. Sube antes de las ocho de la mañana o después de las siete de la tarde, cuando los grupos organizados ya se han marchado. O mejor aún, usa el tranvía 12, que hace un recorrido similar pero sin el aura turística. Los lisboetas lo usan para moverse de verdad, no para hacer fotos." },
-      { tipo: "parrafo", texto: "Los tranvías 15 y 25 son más prácticos para desplazamientos reales. El 15 conecta Belém con Cais do Sodré y Martim Moniz, siguiendo la línea del río. El 25 va de Prazeres a Praça da Figueira, atravesando barrios residenciales que el metro no alcanza." },
-      { tipo: "parrafo", texto: "Pagar a bordo suele ser menos conveniente que llevar el soporte ya preparado. Si vas a usar tranvías más de una vez, carga antes la modalidad adecuada y evita resolverlo con prisa delante del conductor." },
-      { tipo: "tip", texto: "Si el 28 tiene cola interminable, camina dos paradas más arriba y súbete allí. La mayoría de la gente espera en las terminales, pero los tranvías pasan por paradas intermedias medio vacíos." },
-      { tipo: "subtitulo", texto: "Elevadores: salvavidas para las colinas" },
-      { tipo: "parrafo", texto: "Lisboa tiene siete colinas, y subirlas a pie puede ser agotador, especialmente en verano. Los elevadores —funiculares que suben por las pendientes más pronunciadas— son la solución elegante. Hay tres principales además del Elevador de Santa Justa." },
-      { tipo: "parrafo", texto: "El Elevador da Glória conecta Restauradores con el Bairro Alto salvando una cuesta seria. El Elevador da Bica sube desde la zona de Cais do Sodré, y el Elevador do Lavra enlaza Largo da Anunciada con Campo Santana. Revisa horarios y condiciones porque no siempre compensan si hay mucha cola." },
-      { tipo: "parrafo", texto: "El Elevador de Santa Justa es diferente: es un ascensor vertical neogótico que conecta la Baixa con el Chiado. Puede funcionar como transporte o como visita, pero en horas turísticas muchas veces la espera pesa más que la utilidad real." },
-      { tipo: "aviso", texto: "Tras el accidente del Elevador da Glória en septiembre de 2025, los elevadores y funiculares históricos de Lisboa quedaron sujetos a cierres. Algunos han vuelto a funcionar y otros siguen parados sin fecha de reapertura. Consulta el estado de cada uno en la web de Carris antes de contar con ellos, y no los incluyas en tu ruta como algo seguro." },
-      { tipo: "subtitulo", texto: "Autobuses: para llegar donde el metro no alcanza" },
-      { tipo: "parrafo", texto: "La red de autobuses de Lisboa es extensa y conecta barrios que el metro no alcanza. Son especialmente útiles para llegar a Graça, Estrela, Campo de Ourique o zonas residenciales del norte. La aplicación Carris muestra rutas y horarios en tiempo real, y es imprescindible si planeas usar autobuses con frecuencia." },
-      { tipo: "parrafo", texto: "Algunas líneas coinciden con números de tranvías, lo que puede generar confusión al mirar una app. Comprueba si el icono corresponde a bus o tranvía y valida siempre al subir, aunque el trayecto parezca corto." },
-      { tipo: "subtitulo", texto: "Uber y Bolt: cuando el transporte público no basta" },
-      { tipo: "parrafo", texto: "Las aplicaciones de transporte privado funcionan excelentemente en Lisboa y son notablemente más baratas que en otras capitales europeas. Un trayecto corto dentro del centro cuesta entre 3 y 6 euros, y la disponibilidad es alta incluso en horas punta." },
-      { tipo: "parrafo", texto: "Para llegar desde el aeropuerto, Uber o Bolt pueden ser una alternativa cómoda si llevas maletas, llegas tarde o tu alojamiento queda lejos del metro. El precio cambia según hora, demanda y tráfico, así que compáralo en la app antes de decidir." },
-      { tipo: "tip", texto: "Si llegas tarde por la noche o con maletas pesadas, el Uber desde el aeropuerto vale cada euro. El transporte público funciona, pero después de un vuelo largo la comodidad se agradece." },
-      { tipo: "subtitulo", texto: "Errores comunes que puedes evitar" },
-      { tipo: "parrafo", texto: "El error más frecuente es comprar billetes individuales cada vez en lugar de usar la tarjeta. Pagas el doble sin necesidad. Otro error es intentar usar el tranvía 28 como medio de transporte real: es un paseo turístico, no un vehículo eficiente. Y finalmente, muchos visitantes no saben que pueden acceder gratis a la terraza del Elevador de Santa Justa subiendo por las escaleras del Carmo." },
-      { tipo: "parrafo", texto: "Mi recomendación final: separa la decisión en dos. Primero decide cómo te moverás por zonas; después elige el soporte o carga que encaja con esos trayectos. Comprar una tarjeta sin ruta suele acabar en recargas mal elegidas o pases que no amortizas." }
-    ]
-  },
-  "aeropuerto-lisboa-al-centro": {
+    "aeropuerto-lisboa-al-centro": {
     titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
     seoTitle: "Del aeropuerto de Lisboa al centro | 4 opciones",
     metaDescription: "Metro, Aerobus, taxi y Uber comparados: cuánto cuesta cada uno, cuánto tarda y cuál conviene según tu equipaje y tu hora de llegada.",
@@ -2621,25 +2567,7 @@ function buildFallbackArticle(slug: string): Article | null {
         'Reserva con antelación si viajas en agosto.',
       ],
     },
-    'transporte-publico-lisboa': {
-      intro: 'La clave es la tarjeta Viva Viagem y entender qué líneas te sirven.',
-      musts: [
-        'Compra la Viva Viagem el primer día.',
-        'Metro para distancias largas.',
-        'Tranvía 28 solo si tienes tiempo.',
-        'Bus para barrios sin metro.',
-        'Uber/Bolt para trayectos puntuales.',
-      ],
-      itinerary: [
-        'Día 1: Viva Viagem + pase diario.',
-        'Día 2+: combina metro y caminata.',
-      ],
-      localTips: [
-        'El tranvía 12 es una alternativa al 28.',
-        'El elevador de Santa Justa se puede subir gratis por detrás.',
-      ],
-    },
-    'aeropuerto-lisboa-al-centro': {
+      'aeropuerto-lisboa-al-centro': {
       intro: 'La opción depende de tu equipaje, tu hora de llegada y cuánto quieras ahorrar: metro, Aerobus, taxi o Uber.',
       musts: [
         'Metro (línea roja) para la opción más barata.',
@@ -3074,15 +3002,6 @@ const articleExtras: Record<string, ArticleExtras> = {
       { q: '¿Cuál es el mejor mes para visitar Lisboa?', a: 'Mayo y septiembre ofrecen buen clima y menos gente.' },
       { q: '¿Lisboa es buena en invierno?', a: 'Sí, es más tranquila y con precios más bajos.' },
       { q: '¿Cuándo es temporada alta?', a: 'De junio a agosto, con precios y ocupación más altos.' },
-    ],
-  },
-  'transporte-publico-lisboa': {
-    comoLlegar: 'Desde el aeropuerto, metro línea roja hasta Baixa-Chiado o Saldanha.',
-    mejorHora: 'Evita horas punta 8:00-9:30 y 18:00-19:30 si quieres ir cómodo.',
-    faqs: [
-      { q: '¿Qué tarjeta necesito para moverme?', a: 'La Viva Viagem, recargable y válida para metro, bus y tranvía.' },
-      { q: '¿Es seguro el tranvía 28?', a: 'Sí, pero hay carteristas; ve atento a tus bolsillos.' },
-      { q: '¿Conviene el pase diario?', a: 'Sí si haces más de 3-4 viajes en un día.' },
     ],
   },
   'aeropuerto-lisboa-al-centro': {
