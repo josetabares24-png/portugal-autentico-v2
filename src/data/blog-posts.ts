@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'barrios-imprescindibles',
-    titulo: 'Los 5 Barrios Imprescindibles de Lisboa',
+    titulo: 'Los 5 barrios de Lisboa que definen la ciudad',
     excerpt: 'Qué ver en cada barrio, cuándo ir y qué evitar para aprovechar Lisboa como un local.',
     categoria: 'Guías',
     fecha: '5 Feb 2026',
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     titulo: 'Transporte público en Lisboa: billetes y tarjetas',
     excerpt: 'Billetes, tarjetas, validación y errores frecuentes al usar metro, tranvía, buses y elevadores.',
     categoria: 'Transporte',
-    fecha: '18 Ene 2026',
+    fecha: '22 Nov 2024',
     autor: 'José Tabares',
     imagen: '/images/funicular-bica-turistas.jpg',
   },
