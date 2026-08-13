@@ -68,13 +68,22 @@ export default function BlogClient() {
       {/* Filtros por categoría */}
       <section className="bg-background-light border-b border-border-soft py-4 sticky top-16 z-10">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-wrap gap-2">
+          {/*
+            * Son siete categorías. En móvil no caben en una línea y se
+            * apilaban en tres, que además quedaban fijas en pantalla porque
+            * la barra es sticky. Aquí van en una sola fila que se desplaza
+            * en horizontal: el margen negativo la lleva hasta el borde de la
+            * pantalla, de modo que la categoría cortada por la derecha avisa
+            * de que hay más. A partir de `lg` caben todas y vuelve el ajuste
+            * por líneas de siempre.
+            */}
+          <div className="filtros-scroll -mx-6 flex gap-2 overflow-x-auto px-6 lg:mx-0 lg:flex-wrap lg:overflow-x-visible lg:px-0">
             {categorias.map((cat) => (
               <button
                 key={cat}
                 onClick={() => cambiarCategoria(cat)}
                 aria-pressed={cat === categoriaActiva}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
+                className={`flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                   cat === categoriaActiva
                     ? 'bg-terracotta text-white shadow-card'
                     : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'

@@ -985,3 +985,23 @@ button:active:not(:disabled) {
     line-height: 1.75;
   }
 }
+
+/* ========== FILTROS EN FILA DESPLAZABLE ========== */
+
+/*
+ * Oculta la barra de desplazamiento de los filtros del blog. La fila se
+ * desplaza con el dedo y la categoría cortada por el borde ya avisa de que
+ * hay más, así que la barra solo añadía ruido bajo los chips.
+ *
+ * `overscroll-behavior-x: contain` evita que al llegar al final el gesto
+ * arrastre la página o dispare el "atrás" del navegador.
+ */
+.filtros-scroll {
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-padding-left: 1.5rem;
+}
+
+.filtros-scroll::-webkit-scrollbar {
+  display: none;
+}
