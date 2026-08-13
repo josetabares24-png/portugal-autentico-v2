@@ -62,13 +62,20 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] overflow-hidden md:min-h-[620px]">
         <Image
-          src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.webp"
+          src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
           alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
           fill
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          quality={90}
+          /*
+           * 90 tenía sentido con el original de 1280, que se ampliaba x4 y
+           * necesitaba conservar cada píxel. Con 3840 la foto se dibuja a su
+           * tamaño o por debajo, así que 75 no se distingue a simple vista
+           * (1,22/255 de diferencia media) y pesa la mitad: 627 KB en vez de
+           * 1,4 MB. Es la imagen del LCP, así que el peso cuenta.
+           */
+          quality={75}
           /*
            * La caja es más alta que ancha y la foto es apaisada, así que
            * `object-cover` la pinta mucho más ancha que el viewport: en un

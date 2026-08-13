@@ -65,7 +65,15 @@ export function ArticleHero({
               alt={heroImageAlt}
               fill
               className="article-hero-img"
-              sizes="(max-width: 1024px) 100vw, 1152px"
+              /*
+               * Por debajo de 640 px el marco es 4:3 y las fotos son
+               * apaisadas, así que `object-cover` las dibuja más anchas que
+               * el hueco: en un móvil de 390 px se pintan a ~478 px CSS, no a
+               * 358. Declararlo como 100vw hacía que el navegador pidiera una
+               * variante un tercio más pequeña de la necesaria. A partir de
+               * 640 px el marco es 16:9 o más panorámico y ya no sobra ancho.
+               */
+              sizes="(max-width: 639px) 135vw, (max-width: 1024px) 100vw, 1152px"
               priority
               fetchPriority="high"
             />
