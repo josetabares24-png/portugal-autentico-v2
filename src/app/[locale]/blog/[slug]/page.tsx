@@ -399,6 +399,7 @@ const articles: Record<string, Article> = {
       { label: 'Metro Lisboa - comprar billetes', href: 'https://www.metrolisboa.pt/en/buy/' },
       { label: 'Metro Lisboa - tarjeta bancaria contactless', href: 'https://www.metrolisboa.pt/en/ride-on-metro-lisboa-with-contactless-payment-card/' },
       { label: 'Carris - tabla de precios 2026', href: 'https://www.carris.pt/en/discover/prices-table-2026/' },
+      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
       { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/info/en/lisbon' },
       { label: 'Aeropuerto de Lisboa - transporte público', href: 'https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/public-transportation?language=en' },
     ],
@@ -417,6 +418,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Elevadores y funiculares' },
       { tipo: 'parrafo', texto: 'Los elevadores y funiculares existen por una razón: Lisboa sube de verdad. Bica, Glória, Lavra y Santa Justa no son solo atracciones, también cuentan cómo la ciudad resolvió sus desniveles. Pueden ahorrar esfuerzo, aunque en horas turísticas quizá haya más cola que ventaja.' },
       { tipo: 'parrafo', texto: 'Si vas con poco tiempo, úsalos cuando encajen en tu ruta, no como una lista obligatoria. A veces una calle paralela, una pausa o una combinación con metro resuelve mejor que esperar media hora por una foto.' },
+      { tipo: 'aviso', texto: 'Tras el accidente del Elevador da Glória en septiembre de 2025, los elevadores y funiculares históricos de Lisboa quedaron sujetos a cierres. Algunos han vuelto a funcionar y otros siguen parados sin fecha de reapertura. Consulta el estado de cada uno en la web de Carris antes de contar con ellos para subir una cuesta, y ten preparada una alternativa a pie o en bus.' },
       { tipo: 'subtitulo', texto: 'Trenes urbanos: Belém, Sintra y Cascais' },
       { tipo: 'parrafo', texto: 'Para Belém puede servir el eje de Cais do Sodré y la línea hacia Cascais, además de opciones en tranvía o bus. Para Cascais, el tren desde Cais do Sodré es la referencia habitual. Para Sintra, la conexión desde Rossio suele ser la más directa para quien se aloja en el centro. CP organiza tarifas por zonas y trayectos; evita asumir un precio único y revisa el planificador o el tarifario oficial antes de salir.' },
       { tipo: 'parrafo', texto: 'No mezcles Sintra y Cascais en el mismo día si quieres disfrutar. Es posible en papel, pero suele convertir la jornada en una sucesión de esperas. Para una primera visita, elige una escapada y hazla bien.' },
@@ -429,7 +431,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Caminar es parte del viaje. La Baixa se hace muy bien a pie, Chiado pide una subida, Alfama pide paciencia y Graça pide piernas. Lo importante es no caminar contra la ciudad: si puedes empezar arriba y bajar, hazlo. Si puedes agrupar miradores cercanos, no los separes en días distintos.' },
       { tipo: 'parrafo', texto: 'En verano, evita las subidas largas al mediodía. En lluvia, cuidado con la calçada portuguesa porque puede resbalar. Y si viajas con movilidad reducida, carrito o cansancio acumulado, conviene priorizar zonas planas y transporte antes que romantizar las cuestas.' },
       { tipo: 'subtitulo', texto: 'Tarjetas y sistemas de pago' },
-      { tipo: 'parrafo', texto: 'Lisboa utiliza el soporte navegante ocasional para billetes y zapping. En julio de 2026, el soporte cuesta 0,50 € y es individual: una tarjeta por persona y por viaje. En Metro/Carris, el billete Carris/Metro cuesta 1,90 € y permite viajes durante 60 minutos tras la primera validación, sin usarlo para viajes consecutivos de metro.' },
+      { tipo: 'parrafo', texto: 'Lisboa utiliza el soporte navegante ocasional para billetes y zapping. En julio de 2026, el soporte cuesta 0,50 €, es nominal y sirve durante un año: hace falta una tarjeta por persona, pero no una nueva en cada viaje. En Metro/Carris, el billete Carris/Metro cuesta 1,90 € y permite viajes durante 60 minutos tras la primera validación, sin usarlo para viajes consecutivos de metro.' },
       { tipo: 'lista', items: [
         'Billete diario 24h Carris/Metro: 7,25 €.',
         'Billete diario 24h Carris/Metro/Transtejo Cacilhas: 10,35 €.',
@@ -960,6 +962,8 @@ const articles: Record<string, Article> = {
   },
   "transporte-publico-lisboa": {
     titulo: "Transporte público en Lisboa: billetes, tarjetas y errores comunes",
+    seoTitle: "Transporte público en Lisboa | Billetes y tarjetas",
+    metaDescription: "Qué tarjeta comprar, cómo validar y cuándo compensa el billete diario en metro, tranvía, bus y elevadores de Lisboa, sin pagar de más.",
     descripcion: "Billetes, tarjetas, validación, metro, tranvía, bus y elevadores: una guía específica para usar la red pública sin pagar de más.",
     imagen: "/images/tranvia-28.jpg",
     categoria: "Transporte",
@@ -973,6 +977,7 @@ const articles: Record<string, Article> = {
     fuentes: [
       { label: 'Metro Lisboa - comprar billetes', href: 'https://www.metrolisboa.pt/en/buy/' },
       { label: 'Carris - tabla de precios 2026', href: 'https://www.carris.pt/en/discover/prices-table-2026/' },
+      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
       { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/info/en/lisbon' },
     ],
     contenido: [
@@ -997,6 +1002,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Lisboa tiene siete colinas, y subirlas a pie puede ser agotador, especialmente en verano. Los elevadores —funiculares que suben por las pendientes más pronunciadas— son la solución elegante. Hay tres principales además del Elevador de Santa Justa." },
       { tipo: "parrafo", texto: "El Elevador da Glória conecta Restauradores con el Bairro Alto salvando una cuesta seria. El Elevador da Bica sube desde la zona de Cais do Sodré, y el Elevador do Lavra enlaza Largo da Anunciada con Campo Santana. Revisa horarios y condiciones porque no siempre compensan si hay mucha cola." },
       { tipo: "parrafo", texto: "El Elevador de Santa Justa es diferente: es un ascensor vertical neogótico que conecta la Baixa con el Chiado. Puede funcionar como transporte o como visita, pero en horas turísticas muchas veces la espera pesa más que la utilidad real." },
+      { tipo: "aviso", texto: "Tras el accidente del Elevador da Glória en septiembre de 2025, los elevadores y funiculares históricos de Lisboa quedaron sujetos a cierres. Algunos han vuelto a funcionar y otros siguen parados sin fecha de reapertura. Consulta el estado de cada uno en la web de Carris antes de contar con ellos, y no los incluyas en tu ruta como algo seguro." },
       { tipo: "subtitulo", texto: "Autobuses: para llegar donde el metro no alcanza" },
       { tipo: "parrafo", texto: "La red de autobuses de Lisboa es extensa y conecta barrios que el metro no alcanza. Son especialmente útiles para llegar a Graça, Estrela, Campo de Ourique o zonas residenciales del norte. La aplicación Carris muestra rutas y horarios en tiempo real, y es imprescindible si planeas usar autobuses con frecuencia." },
       { tipo: "parrafo", texto: "Algunas líneas coinciden con números de tranvías, lo que puede generar confusión al mirar una app. Comprueba si el icono corresponde a bus o tranvía y valida siempre al subir, aunque el trayecto parezca corto." },
@@ -1011,6 +1017,8 @@ const articles: Record<string, Article> = {
   },
   "aeropuerto-lisboa-al-centro": {
     titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
+    seoTitle: "Del aeropuerto de Lisboa al centro | 4 opciones",
+    metaDescription: "Metro, Aerobus, taxi y Uber comparados: cuánto cuesta cada uno, cuánto tarda y cuál conviene según tu equipaje y tu hora de llegada.",
     descripcion: "Todas las opciones para llegar del aeropuerto de Lisboa al centro explicadas con precios reales: cuál es la más rápida, la más barata y la mejor si vas con maletas.",
     imagen: "/images/funicular-bica-turistas.jpg",
     categoria: "Transporte",
@@ -1947,10 +1955,11 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Datos prácticos: abre a las 10:00. Precio: 6€ (o combinado con Jerónimos). El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
       { tipo: "subtitulo", texto: "3. Castelo de São Jorge — La Historia de Lisboa en Piedra" },
       { tipo: "parrafo", texto: "El castillo que corona Alfama tiene casi mil años de historia visible en sus murallas. Construido por los moros en el siglo XI sobre asentamientos anteriores, fue reconquistado por Afonso Henriques en 1147 con ayuda de cruzados del norte de Europa. Desde las almenas hay la panorámica más completa de Lisboa: los tejados de Alfama, el Tajo brillando al fondo, el Puente 25 de Abril en la distancia." },
-      { tipo: "parrafo", texto: "Precio: 15€. Vale la pena por las vistas y por el tour arqueológico (incluido en el precio) que muestra restos de la Lisboa fenicia, romana y mora bajo el recinto. Los pavos reales que deambulan por los jardines son un bonus inesperado." },
-      { tipo: "subtitulo", texto: "4. Elevador de Santa Justa — Eiffel y el Art Nouveau" },
-      { tipo: "parrafo", texto: "Este ascensor de hierro forjado de 45 metros de altura, diseñado por Raoul Mesnier du Ponsard (discípulo de Gustave Eiffel), conecta la Baixa con el Bairro Alto. Construido en 1902, es una pieza de ingeniería y arquitectura que parece sacada de un libro de Jules Verne. La terraza superior ofrece vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el Tajo." },
-      { tipo: "tip", texto: "El ascensor cuesta 5,30€ el trayecto. Si quieres las vistas sin pagar, sube al nivel del Bairro Alto por las escaleras del Convento do Carmo y accede a la pasarela superior gratis desde el lado de arriba." },
+      { tipo: "parrafo", texto: "La entrada general cuesta 17 euros, con tarifas reducidas para jóvenes y mayores de 65 años y entrada gratuita para menores de 13. Vale la pena por las vistas y por el tour arqueológico (incluido en el precio) que muestra restos de la Lisboa fenicia, romana y mora bajo el recinto. Los pavos reales que deambulan por los jardines son un bonus inesperado." },
+      { tipo: "subtitulo", texto: "4. Elevador de Santa Justa — Hierro forjado sobre la Baixa" },
+      { tipo: "aviso", texto: "Carris lo ha marcado como cerrado temporalmente. Conviene consultar su web oficial antes de acercarse, porque el estado ha ido cambiando desde 2025." },
+      { tipo: "parrafo", texto: "Este ascensor de hierro forjado, con una estructura de 45 metros de altura, fue diseñado por Raoul Mesnier du Ponsard y conecta la Baixa con el Largo do Carmo, en el Chiado. Construido en 1902, es una pieza de ingeniería y arquitectura que parece sacada de un libro de Jules Verne. La terraza superior ofrece vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el Tajo." },
+      { tipo: "nota", texto: "Conviene distinguir dos cosas que suelen confundirse: el viaje en el ascensor, que forma parte de la red de transporte de Carris, y la entrada al miradouro de la torre, que se paga aparte —cinco euros— y no está incluida en la Lisboa Card. No hay un acceso gratuito por el Convento do Carmo." },
       { tipo: "subtitulo", texto: "5. Palácio Nacional da Ajuda — El Palacio que Nunca Terminó" },
       { tipo: "parrafo", texto: "El mayor palacio de Lisboa es también uno de sus secretos mejor guardados. Construido para la familia real a partir de 1795, nunca llegó a completarse (la corte huyó a Brasil antes de que terminara la obra), lo que le da un curioso estatus de palacio inacabado. El interior, sin embargo, está entre los más ricos de Europa: salones de azulejos del siglo XIX, muebles de época, colecciones de pintura y porcelana. La visita es mucho menos masificada que los Jerónimos o el Castillo." },
       { tipo: "subtitulo", texto: "6-15. Los Monumentos Esenciales" },
@@ -2180,6 +2189,8 @@ const articles: Record<string, Article> = {
   },
   "tram-28-historia-guia": {
     titulo: "El Tranvía 28: Historia, Ruta y Trucos para Usarlo sin Colas",
+    seoTitle: "Tranvía 28 de Lisboa | Ruta y cómo evitar colas",
+    metaDescription: "Qué recorre el tranvía 28, a qué hora subir para encontrar sitio, dónde empezar el trayecto y cuándo compensa cambiar al 12.",
     descripcion: "El tranvía 28 lleva más de 100 años subiendo las mismas cuestas de Alfama. Es el símbolo de Lisboa y también su trampa turística más popular. La historia real y cómo aprovecharlo.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Transporte",
@@ -2366,6 +2377,29 @@ const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
     },
   },
 };
+
+const MESES_ABREVIADOS: Record<string, string> = {
+  ene: '01', feb: '02', mar: '03', abr: '04', may: '05', jun: '06',
+  jul: '07', ago: '08', sep: '09', set: '09', oct: '10', nov: '11', dic: '12',
+};
+
+/**
+ * Convierte la fecha visible del artículo ("14 Mar 2026") a ISO 8601.
+ *
+ * El campo `fecha` se escribe en castellano porque es lo que se pinta bajo el
+ * titular, pero schema.org exige `2026-03-14` y Google no sabe leer la otra
+ * forma. Se traduce solo para el JSON-LD; el texto visible no se toca.
+ *
+ * Si el formato no encaja devuelve `undefined`, para omitir la propiedad en
+ * lugar de publicar una fecha inventada.
+ */
+function toIsoDate(fecha: string): string | undefined {
+  const m = fecha.trim().match(/^(\d{1,2})\s+([A-Za-zÁÉÍÓÚáéíóú]+)\s+(\d{4})$/);
+  if (!m) return undefined;
+  const mes = MESES_ABREVIADOS[m[2].slice(0, 3).toLowerCase()];
+  if (!mes) return undefined;
+  return `${m[3]}-${mes}-${m[1].padStart(2, '0')}`;
+}
 
 function toAbsoluteUrl(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http')) return pathOrUrl;
@@ -3253,7 +3287,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     '@type': 'BlogPosting',
     headline: seoTitle,
     description: seoDescription,
-    datePublished: article.fecha,
+    ...(toIsoDate(article.fecha) ? { datePublished: toIsoDate(article.fecha) } : {}),
     ...(article.dateModified ? { dateModified: article.dateModified } : {}),
     author: {
       '@type': 'Person',
