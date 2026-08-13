@@ -25,7 +25,6 @@ export const blogImageMap: Record<string, string> = {
   'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
   'pasteles-de-belem': '/images/IMG_1880.jpg',
   'mejor-epoca-visitar-lisboa': '/images/miradouro-atardecer.jpg',
-  'transporte-publico-lisboa': '/images/funicular-bica-turistas.jpg',
   'restaurantes-romanticos-lisboa': '/images/fado-tasca-noche.jpg',
   'que-ver-cascais-desde-lisboa': '/images/estacion-sintra.jpg',
   'playas-cerca-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
