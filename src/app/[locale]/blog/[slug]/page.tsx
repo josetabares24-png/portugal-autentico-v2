@@ -2308,6 +2308,8 @@ const localImages: Record<string, string> = {
 
 const articleHeroImages: Record<string, string> = {
   'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+  'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
+  'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';
@@ -2330,6 +2332,10 @@ const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Obje
 const heroAlt: Record<string, string> = {
   'mejores-miradores-lisboa':
     'Vista de Alfama desde Portas do Sol, con los tejados de Lisboa y el río Tajo al fondo',
+  'como-moverse-por-lisboa':
+    'Tranvía articulado moderno de la línea 15E de Carris, con destino Praça da Figueira, circulando por una calle estrecha de Lisboa',
+  'barrios-imprescindibles':
+    'Escalinata empedrada de la Rua da Adiça, en Alfama, con casas encaladas, azulejos junto a las puertas y macetas en la calle',
 };
 
 /**
