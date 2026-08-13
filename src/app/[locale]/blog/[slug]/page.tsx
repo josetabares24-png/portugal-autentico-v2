@@ -2307,7 +2307,7 @@ const localImages: Record<string, string> = {
 };
 
 const articleHeroImages: Record<string, string> = {
-  'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.webp',
+  'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';
