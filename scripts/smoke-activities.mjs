@@ -36,8 +36,17 @@ const ACTIVITIES_SOURCE = fs.readFileSync(
   'utf8'
 );
 const INDEXABLE_BY_SLUG = new Map(
-  [...ACTIVITIES_SOURCE.matchAll(/slug:\s*'([a-z0-9-]+)',\s*\n\s*indexable:\s*(true|false),/g)]
-    .map((m) => [m[1], m[2] === 'true'])
+  // Se parte el fichero por entrada y se busca `indexable` dentro de cada una,
+  // en vez de exigir que vaya pegado a `slug`: entre ambos pueden aparecer
+  // otros campos, y hacerlo por adyacencia rompía el test al añadirlos.
+  ACTIVITIES_SOURCE.split(/\n  \{\n/)
+    .slice(1)
+    .map((entrada) => {
+      const slug = entrada.match(/slug:\s*'([a-z0-9-]+)'/);
+      const indexable = entrada.match(/indexable:\s*(true|false)/);
+      return slug && indexable ? [slug[1], indexable[1] === 'true'] : null;
+    })
+    .filter(Boolean)
 );
 
 // Las 20 fichas que este test vigila, tal cual están en src/data/activities.ts.

@@ -152,6 +152,43 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
 
           <p className="text-text-secondary leading-relaxed mb-8">{activity.description}</p>
 
+          {/* Bloque editorial ampliado. Va antes del tip de ahorro y del CTA
+              porque responde a la pregunta previa —si merece la pena ir— y
+              esas dos cosas solo tienen sentido una vez decidida. */}
+          {activity.experiencia && (
+            <div className="mb-10 space-y-8">
+              <p className="text-text-secondary leading-relaxed">{activity.experiencia.intro}</p>
+
+              <div>
+                <h2 className="font-display italic text-text-main text-2xl mb-4">Qué vas a ver</h2>
+                <ul className="space-y-2">
+                  {activity.experiencia.queVeras.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-text-secondary leading-relaxed">
+                      <span className="mt-0.5 flex-shrink-0 text-terracotta">&#10003;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid gap-8 sm:grid-cols-2">
+                <div>
+                  <h2 className="font-display italic text-text-main text-xl mb-2">Cuándo ir</h2>
+                  <p className="text-text-secondary leading-relaxed">{activity.experiencia.cuandoIr}</p>
+                </div>
+                <div>
+                  <h2 className="font-display italic text-text-main text-xl mb-2">Cómo llegar</h2>
+                  <p className="text-text-secondary leading-relaxed">{activity.experiencia.comoLlegar}</p>
+                </div>
+              </div>
+
+              <div className="border-l-2 border-terracotta pl-5">
+                <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">El error que casi todos cometen</p>
+                <p className="text-text-secondary leading-relaxed">{activity.experiencia.elError}</p>
+              </div>
+            </div>
+          )}
+
           <div className="relative bg-night bg-azulejo-pattern-gold rounded-lg px-6 py-6 mb-10 overflow-hidden">
             <p className="relative text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Tip para ahorrar de un local</p>
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
