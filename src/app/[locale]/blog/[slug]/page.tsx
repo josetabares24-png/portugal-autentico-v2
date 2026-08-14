@@ -117,6 +117,7 @@ const articles: Record<string, Article> = {
     contenido: [
       { tipo: 'parrafo', texto: 'Portugal usa el euro, así que si vienes desde otro país de la zona euro la parte monetaria de tu viaje es casi transparente. Aun así, cómo pagues aquí sí cambia lo que acabas gastando: no por el precio de las cosas, sino por las comisiones que se cuelan cuando sacas dinero, cuando aceptas una conversión que no necesitabas o cuando cambias moneda en el sitio equivocado.' },
       { tipo: 'parrafo', texto: 'Esta guía es informativa y no recomienda ningún banco ni proveedor concreto. Las condiciones de cada entidad cambian con frecuencia y dependen de tu país, tu contrato y tu tipo de cuenta, así que lo único sensato es entender el mecanismo y comprobar tus propias condiciones antes de viajar. Nada de lo que leas aquí sustituye a lo que diga tu banco.' },
+      { tipo: 'tip', texto: 'Revisa las condiciones de tus tarjetas unos días antes de viajar, no en el aeropuerto: comisión por sacar en cajero extranjero, comisión por pagar en comercio y límites diarios. Son tres datos que tu banco tiene publicados y que cambian bastante el gasto del viaje.' },
 
       { tipo: 'subtitulo', texto: '¿Cuánto efectivo conviene llevar?' },
       { tipo: 'parrafo', texto: 'Menos del que la gente imagina, pero no cero. Lisboa es una ciudad donde se paga con tarjeta con total normalidad, y en la práctica puedes pasar días enteros sin tocar un billete. Dicho eso, el efectivo sigue resolviendo situaciones concretas: tascas pequeñas de barrio, mercados, algún quiosco de mirador, propinas, y esos negocios que ponen un mínimo de consumo para aceptar tarjeta.' },
@@ -3128,9 +3129,10 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  // Sin ficha de lugar: es una guía de preparación, no de un sitio al que se
+  // llegue. El consejo de revisar las tarjetas antes de salir vive ahora como
+  // `tip` dentro del artículo, donde se lee en su contexto.
   'como-pagar-en-portugal': {
-    comoLlegar: 'No aplica: esta guía es de preparación del viaje, no de una ubicación concreta.',
-    mejorHora: 'Revisa las condiciones de tus tarjetas unos días antes de viajar, no en el aeropuerto.',
     faqs: [
       { q: '¿Se puede pagar con tarjeta en Lisboa?', a: 'Sí, con total normalidad en hoteles, restaurantes, comercios, museos y transporte. Conviene llevar algo de efectivo para tascas pequeñas, mercados y establecimientos que piden un importe mínimo.' },
       { q: '¿Hace falta llevar efectivo a Portugal?', a: 'No mucho, pero sí algo. Se puede pasar días pagando solo con tarjeta; el efectivo resuelve puestos de mercado, comercio tradicional y propinas. Suele ser mejor reponer sobre la marcha que traer una cantidad grande de casa.' },
@@ -3372,12 +3374,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       title: bloque.texto as string,
       id: slugify(bloque.texto as string),
     }));
-  const extraHeadings = extras
-    ? [
-        { title: 'Cómo llegar', id: 'como-llegar' },
-        { title: 'Mejor hora para ir', id: 'mejor-hora' },
-      ]
-    : [];
+  const extraHeadings = [
+    ...(extras?.comoLlegar ? [{ title: 'Cómo llegar', id: 'como-llegar' }] : []),
+    ...(extras?.mejorHora ? [{ title: 'Mejor hora para ir', id: 'mejor-hora' }] : []),
+  ];
   const headings = [...extraHeadings, ...baseHeadings];
 
   const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');

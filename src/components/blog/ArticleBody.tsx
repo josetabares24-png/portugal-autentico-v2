@@ -61,16 +61,20 @@ export function ArticleBody({
       )}
 
       {/* Cómo llegar / Mejor hora */}
-      {extras && (
+      {(extras?.comoLlegar || extras?.mejorHora) && (
         <div className="article-facts article-reading border-t border-border-soft grid sm:grid-cols-2 gap-6">
-          <div>
-            <h2 id="como-llegar" className="scroll-mt-28">Cómo llegar</h2>
-            <p>{extras.comoLlegar}</p>
-          </div>
-          <div>
-            <h2 id="mejor-hora" className="scroll-mt-28">Mejor hora para ir</h2>
-            <p>{extras.mejorHora}</p>
-          </div>
+          {extras.comoLlegar && (
+            <div>
+              <h2 id="como-llegar" className="scroll-mt-28">Cómo llegar</h2>
+              <p>{extras.comoLlegar}</p>
+            </div>
+          )}
+          {extras.mejorHora && (
+            <div>
+              <h2 id="mejor-hora" className="scroll-mt-28">Mejor hora para ir</h2>
+              <p>{extras.mejorHora}</p>
+            </div>
+          )}
         </div>
       )}
 

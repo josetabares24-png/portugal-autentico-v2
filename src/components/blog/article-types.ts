@@ -71,8 +71,14 @@ export type ArticleHeading = {
 };
 
 export type ArticleExtras = {
-  comoLlegar: string;
-  mejorHora: string;
+  /**
+   * Ficha de lugar. Ambos campos son opcionales a propósito: hay guías que no
+   * hablan de un sitio al que se llegue —cómo pagar, preparar el viaje— y ahí
+   * el bloque sobra. Cuando falta, no se pinta el epígrafe ni entra en el
+   * índice, en vez de rellenarlo con un "no aplica".
+   */
+  comoLlegar?: string;
+  mejorHora?: string;
   faqs: ArticleFaq[];
 };
 
