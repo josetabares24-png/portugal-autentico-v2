@@ -286,7 +286,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '18 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/lisboa-originales/arquitetura-baixa-pombalina-lisboa-01.webp',
+    imagen: '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   },
   {
     id: 'descubrimientos-portugueses-lisboa',
