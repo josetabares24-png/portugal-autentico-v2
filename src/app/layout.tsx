@@ -1,31 +1,43 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
-import { Montserrat, Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import { getLocale } from 'next-intl/server';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
-const montserrat = Montserrat({
-  variable: "--font-body",
-  subsets: ["latin"],
+/*
+ * Las tres familias van servidas desde el repositorio, no descargadas de
+ * Google en cada compilación. `next/font/google` las descarga durante el
+ * build, así que un fallo de red en el servidor de compilación tumba el
+ * despliegue entero: ya ocurrió una vez con Plus Jakarta Sans.
+ *
+ * Son los mismos ficheros que servía Google, en su versión variable y en el
+ * subconjunto latino, que es el único que estaba activo. Un fichero por
+ * familia y estilo cubre todo el rango de grosores.
+ */
+const montserrat = localFont({
+  src: [{ path: '../fonts/montserrat-latin.woff2', weight: '300 500', style: 'normal' }],
+  variable: '--font-body',
   display: 'swap',
-  weight: ['300', '400', '500'],
+  adjustFontFallback: 'Arial',
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-display",
-  subsets: ["latin"],
+const playfair = localFont({
+  src: [
+    { path: '../fonts/playfair-latin.woff2', weight: '400 700', style: 'normal' },
+    { path: '../fonts/playfair-italic-latin.woff2', weight: '400 700', style: 'italic' },
+  ],
+  variable: '--font-display',
   display: 'swap',
-  weight: ['400', '600', '700'],
-  style: ['normal', 'italic'],
+  adjustFontFallback: 'Times New Roman',
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-article",
-  subsets: ["latin"],
+const plusJakarta = localFont({
+  src: [{ path: '../fonts/plus-jakarta-latin.woff2', weight: '400 700', style: 'normal' }],
+  variable: '--font-article',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  adjustFontFallback: 'Arial',
 });
 
 export const metadata: Metadata = {
@@ -100,12 +112,11 @@ export default async function RootLayout({
     <ClerkProvider>
       <html lang={locale}>
         <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          {/* Sin preconnect a fonts.googleapis/gstatic: las tipografías se
+              sirven desde el propio dominio. */}
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
           <link rel="preconnect" href="https://clerk.com" />
-          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://api.brevo.com" />
           <link rel="dns-prefetch" href="https://clerk.com" />
