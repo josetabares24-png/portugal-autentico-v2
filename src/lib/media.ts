@@ -14,6 +14,7 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'mejores-apps-lisboa': '/images/turista-tranvia-28.jpg',
   'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
   'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
   'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
