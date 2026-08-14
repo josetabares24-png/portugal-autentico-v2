@@ -2402,7 +2402,7 @@ const articles: Record<string, Article> = {
         "Mejor horario: entre 7:00 y 9:00, o después de las 20:00. En esas franjas hay poca cola y puedes ir sentado",
         "Evita julio y agosto entre las 10:00 y las 19:00: el 28 está literalmente lleno hasta el estribo",
         "Sube en Martim Moniz, no en el Largo do Chiado: desde Martim Moniz vas de sentada; desde el Chiado probablemente de pie",
-        "Usa la tarjeta Viva Viagem (1.50€ por viaje) en vez de pagar al conductor (3€): más barato y más rápido",
+        "Usa la tarjeta Viva Viagem (1,50€ por viaje) en vez de pagar al conductor (3,30€): más barato y más rápido",
         "El tranvía 12 hace una ruta similar por el Chiado con menos cola: buena alternativa cuando el 28 está imposible"
       ]},
       { tipo: "tip", texto: "Si quieres la foto del tranvía 28 en las calles de Alfama sin subir: colócate en la esquina de la Rua de São Tomé con la Calçada de Santo André al atardecer. El tranvía pasa cada 8-12 minutos y la luz es perfecta." }
