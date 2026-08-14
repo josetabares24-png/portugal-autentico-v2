@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'mejores-apps-lisboa',
+    titulo: 'Las apps que de verdad sirven para Lisboa',
+    excerpt: 'Qué instalar para el transporte, los pagos y las reservas, y cuáles puedes ahorrarte.',
+    categoria: 'Consejos',
+    fecha: '14 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/turista-tranvia-28.jpg',
+  },
+  {
     id: 'como-pagar-en-portugal',
     titulo: 'Cómo pagar en Portugal y evitar comisiones innecesarias',
     excerpt: 'Efectivo, tarjetas, cajeros y cambio de moneda explicados sin tecnicismos, para que sepas qué esperar antes de llegar.',

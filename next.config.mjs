@@ -25,13 +25,11 @@ const nextConfig = {
       { source: '/tours', destination: '/itinerarios', permanent: true },
       { source: '/guia-practica', destination: '/planifica-tu-viaje', permanent: true },
       { source: '/info-util', destination: '/planifica-tu-viaje', permanent: true },
-      // `/apps` se borró en el rediseño junto al resto de páginas sueltas,
-      // pero se quedó sin redirección y devolvía 404. Search Console la sigue
-      // mostrando, así que hasta ahora los clics acababan en una página de
-      // error. La guía de transporte es lo más cercano que queda: menciona
-      // Google Maps y la app de Carris.
-      { source: '/apps', destination: '/blog/como-moverse-por-lisboa', permanent: true },
-      { source: '/:locale(en|ko|es)/apps', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      // `/apps` se borró en el rediseño y se quedó sin redirección, devolviendo
+      // 404 pese a ser la página con más clics según Search Console. Ahora
+      // apunta al artículo que sustituye a aquella lista.
+      { source: '/apps', destination: '/blog/mejores-apps-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/apps', destination: '/blog/mejores-apps-lisboa', permanent: true },
       // `/donde-dormir` tuvo redirección en su día, se perdió en el rediseño
       // y volvió a quedar en 404.
       { source: '/donde-dormir', destination: '/blog/donde-alojarse-en-lisboa', permanent: true },

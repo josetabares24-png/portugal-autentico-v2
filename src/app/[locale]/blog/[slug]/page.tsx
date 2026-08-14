@@ -11,6 +11,79 @@ import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'mejores-apps-lisboa': {
+    titulo: 'Las apps que de verdad sirven para Lisboa',
+    descripcion: 'Qué aplicaciones instalar antes de viajar a Lisboa para el transporte, los pagos y las reservas, y cuáles puedes ahorrarte.',
+    seoTitle: 'Mejores apps para Lisboa | Guía práctica',
+    metaDescription: 'Las aplicaciones útiles de verdad en Lisboa: transporte oficial, mapas sin datos, pagos y reservas. Con las que ya no funcionan en Portugal.',
+    imagen: '/images/turista-tranvia-28.jpg',
+    imageAlt: 'Viajera consultando el móvil en una calle de Lisboa mientras pasa un tranvía',
+    categoria: 'Consejos',
+    fecha: '14 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-14',
+    minutos: 9,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'La guía completa para moverte por Lisboa' },
+      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal sin comisiones' },
+      { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
+      { href: '/blog/mejores-apps-lisboa', label: 'Las apps que de verdad sirven aquí' },
+      { href: '/itinerarios', label: 'Explorar los itinerarios gratuitos' },
+    ],
+    fuentes: [
+      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
+      { label: 'Metropolitano de Lisboa - comprar', href: 'https://www.metrolisboa.pt/comprar/' },
+      { label: 'Citymapper - Lisboa', href: 'https://citymapper.com/lisboa' },
+      { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/info/en/lisbon' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-1-dia-lo-esencial',
+      label: 'Abrir el itinerario de 1 día',
+      title: 'Ya tienes el móvil listo',
+      text: 'Ahora te falta el plan. Empieza por la guía gratuita de Lisboa en un día.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Casi todas las listas de aplicaciones para Lisboa son la misma lista genérica de viaje: mapas, un traductor, un banco digital. Sirven para cualquier ciudad y por eso no resuelven ninguna. Esta va al revés: parte de lo que se hace mal en Lisboa —pagar el transporte, entender qué operador te corresponde, quedarte sin datos en una cuesta de Alfama— y dice qué aplicación lo arregla.' },
+      { tipo: 'parrafo', texto: 'Son pocas a propósito. Instalar quince aplicaciones antes de un viaje de cuatro días es una forma elegante de no usar ninguna. Con cuatro o cinco vas sobrado.' },
+
+      { tipo: 'subtitulo', texto: 'Para el transporte: una que las une y dos oficiales' },
+      { tipo: 'parrafo', texto: 'El problema de Lisboa no es que falte transporte, es que hay muchos operadores distintos y ninguno cubre la ciudad entero. Metro, Carris para buses y tranvías, CP y Fertagus para los trenes, Transtejo y Soflusa para los barcos del Tajo, Metro Sul do Tejo al otro lado. Saber cuál te toca en cada trayecto es la mitad del trabajo.' },
+      { tipo: 'parrafo', texto: 'Citymapper es la que resuelve eso. Integra todos esos operadores y te da la ruta completa sin que tengas que saber de antemano cuál usar. Es la que más recomiendo instalar si solo vas a instalar una.' },
+      { tipo: 'parrafo', texto: 'Aparte están las oficiales, que tienen sentido si vas a estar más de unos días. Carris tiene la suya para ver dónde está el bus o el tranvía en tiempo real, que es la diferencia entre esperar sabiendo cuánto falta y esperar a ciegas. Y la aplicación navegante sirve para cargar la tarjeta y consultar el saldo sin buscar una máquina.' },
+      { tipo: 'tip', texto: 'Si solo vas a estar dos o tres días, con Citymapper y Google Maps es suficiente. Las oficiales compensan cuando ya te mueves como un residente y quieres el dato exacto.' },
+
+      { tipo: 'subtitulo', texto: 'Google Maps, pero descargando el mapa antes de salir' },
+      { tipo: 'parrafo', texto: 'Google Maps no necesita presentación, pero sí una advertencia concreta para Lisboa: descarga el mapa sin conexión antes de viajar. En Alfama, Mouraria y Graça las calles son estrechas y los edificios altos, y la señal falla más de lo que esperas justo cuando estás perdido entre callejones que no siguen ninguna lógica.' },
+      { tipo: 'parrafo', texto: 'Con el mapa descargado el GPS sigue funcionando sin datos. Es de las pocas preparaciones de cinco minutos que de verdad cambian un día de viaje.' },
+
+      { tipo: 'subtitulo', texto: 'Bolt y Uber, y la que ya no existe en Portugal' },
+      { tipo: 'parrafo', texto: 'Para trayectos puntuales —llegar con maletas, volver tarde, salvar una subida— las dos que funcionan en Lisboa son Bolt y Uber. Suelen tener precios parecidos, así que merece la pena mirar las dos antes de pedir. La disponibilidad es buena incluso en horas punta.' },
+      { tipo: 'aviso', texto: 'Free Now dejó de operar en Portugal el 3 de abril de 2023. Sigue apareciendo en muchas listas de apps para Lisboa, incluidas guías que se presentan como actualizadas. Si la instalas no te va a servir de nada aquí.' },
+      { tipo: 'parrafo', texto: 'El taxi tradicional sigue existiendo y es perfectamente válido, sobre todo desde el aeropuerto, donde hay parada oficial. Lo que conviene evitar es aceptar un trayecto de alguien que se ofrece dentro de la terminal.' },
+
+      { tipo: 'subtitulo', texto: 'Para comer: reservar y, si no te apetece salir, pedir' },
+      { tipo: 'parrafo', texto: 'TheFork se usa mucho en Portugal y va bien para reservar mesa, sobre todo en restaurantes que se llenan y en horarios en los que aparecer sin reserva significa esperar de pie. Los descuentos que anuncia varían y no siempre están en los sitios que de verdad quieres, así que úsala para reservar más que para buscar chollo.' },
+      { tipo: 'parrafo', texto: 'Glovo funciona en Lisboa si una noche prefieres cenar en el alojamiento. No es la experiencia por la que has venido, pero después de un día de cuestas es una opción razonable.' },
+
+      { tipo: 'subtitulo', texto: 'Dinero: para no perder en cada pago' },
+      { tipo: 'parrafo', texto: 'Portugal está en la zona euro, así que si vienes de otro país del euro esto no te afecta. Si vienes de fuera, una cuenta como Revolut o Wise te evita el cambio de divisa de tu banco, que es donde se va el dinero sin que lo veas.' },
+      { tipo: 'nota', texto: 'Lo que sí te afecta venga de donde venga: cuando un datáfono te ofrezca cobrar en tu moneda en lugar de en euros, di siempre que no. Ese cambio lo aplica el terminal con su propia tasa y siempre sale peor.' },
+
+      { tipo: 'subtitulo', texto: 'Google Translate, con una función concreta' },
+      { tipo: 'parrafo', texto: 'En Lisboa se defiende mucha gente en inglés y bastante en español, así que no vas a necesitar traductor para pedir un café. Donde sí sirve es en la cámara: apuntar a una carta manuscrita en una tasca de barrio, o a un cartel de horarios, y leerlo al momento. Descarga el portugués sin conexión y funciona aunque no tengas datos.' },
+
+      { tipo: 'subtitulo', texto: 'Las que puedes ahorrarte' },
+      { tipo: 'lista', items: [
+        'Aplicaciones de audioguías genéricas: en Lisboa el contenido suele ser flojo y repetido.',
+        'Conversores de moneda: Portugal usa euros y el móvil ya lo hace.',
+        'Apps de una sola atracción, salvo que vayas a usar esa entrada concreta.',
+        'Cualquier lista que todavía te recomiende Free Now.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'En resumen' },
+      { tipo: 'parrafo', texto: 'Si tuviera que quedarme con dos: Citymapper para no pelearte con los operadores, y Google Maps con el mapa descargado para no perderte sin datos. Con eso ya vas mejor preparado que la mayoría. El resto depende de cuántos días te quedes y de si vienes de fuera de la zona euro.' },
+    ],
+  },
   'como-pagar-en-portugal': {
     titulo: 'Cómo pagar en Portugal: efectivo, tarjetas, cajeros y cambio de moneda',
     descripcion:
@@ -2854,6 +2927,13 @@ function getArticle(slug: string): Article | null {
 }
 
 function getFaqs(slug: string) {
+  if (slug === 'mejores-apps-lisboa') {
+    return [
+      { q: '¿Qué app necesito para el transporte en Lisboa?', a: 'Citymapper es la más práctica porque integra metro, Carris, trenes y barcos. Las oficiales de Carris y navegante compensan si te quedas más días.' },
+      { q: '¿Funciona Free Now en Lisboa?', a: 'No. Dejó de operar en Portugal el 3 de abril de 2023, aunque muchas listas lo sigan recomendando. En Lisboa se usan Bolt y Uber.' },
+      { q: '¿Necesito datos móviles para moverme?', a: 'Ayuda, pero si descargas el mapa de Lisboa sin conexión en Google Maps el GPS sigue funcionando sin cobertura.' },
+    ];
+  }
   if (slug === 'que-hacer-en-lisboa-en-3-dias') {
     return [
       { q: '¿Tres días son suficientes para Lisboa?', a: 'Sí, si agrupas la ruta por zonas: centro y Alfama, Belém, y un tercer día para barrios, miradores o una escapada suave.' },
