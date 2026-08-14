@@ -978,6 +978,9 @@ const articles: Record<string, Article> = {
     categoria: "Gastronomía",
     fecha: "28 Nov 2024",
     minutos: 11,
+    fuentes: [
+      { label: "Pastéis de Belém — horarios y la pastelería original", href: "https://pasteisdebelem.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Hay una imagen que se repite cada mañana frente al número 84-92 de la Rua de Belém: decenas de personas formando una cola que serpentea por la acera, consultando relojes, estirando cuellos para calcular cuánto falta. Desde 1837, la Fábrica dos Pastéis de Belém lleva provocando esta escena con un producto aparentemente simple: un hojaldre crujiente relleno de crema de huevo." },
       { tipo: "parrafo", texto: "Pero llamarlo 'simple' sería injusto. La receta original, creada por los monjes del Monasterio de los Jerónimos antes de la extinción de las órdenes religiosas, permanece guardada bajo siete llaves. Solo tres personas en el mundo conocen la fórmula completa, y nunca viajan juntas por si ocurriera una desgracia. El secreto lleva casi dos siglos transmitiéndose de maestro a aprendiz, y la empresa defiende que jamás ha sido replicado con exactitud." },
@@ -1101,6 +1104,11 @@ const articles: Record<string, Article> = {
     categoria: "Transporte",
     fecha: "19 Jun 2026",
     minutos: 9,
+    fuentes: [
+      { label: "Metropolitano de Lisboa — línea roja y estación Aeroporto", href: "https://www.metrolisboa.pt/viajar/aeroporto/" },
+      { label: "Aeroporto de Lisboa (ANA) — transportes públicos", href: "https://www.aeroportolisboa.pt/pt/lis/acesso-e-estacionamento/chegar-e-sair-do-aeroporto/transportes-publicos" },
+      { label: "Carris — autobuses y tarifas", href: "https://www.carris.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Aterrizas en el aeropuerto Humberto Delgado y lo primero que necesitas resolver es cómo llegar al centro. Hay cuatro opciones razonables —metro, Aerobus, taxi y Uber/Bolt— y la mejor depende de cuánto equipaje llevas, a qué hora llegas y cuánta prisa tienes." },
       { tipo: "subtitulo", texto: "Metro: la opción más barata" },
@@ -1179,6 +1187,9 @@ const articles: Record<string, Article> = {
     categoria: "Guías",
     fecha: "18 Nov 2024",
     minutos: 13,
+    fuentes: [
+      { label: "Comboios de Portugal — línea de Cascais", href: "https://www.cp.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Cascais fue el refugio de verano de la familia real portuguesa a finales del siglo XIX, y esa herencia de elegancia todavía se percibe en sus calles. Aunque hoy es más accesible que entonces, mantiene un aire distinguido que la diferencia de otros pueblos costeros. A solo treinta minutos en tren desde Lisboa, es la excursión perfecta cuando necesitas un respiro del bullicio urbano." },
       { tipo: "parrafo", texto: "He venido aquí decenas de veces —a veces solo para pasear, otras para pasar el día en la playa, algunas para comer pescado fresco— y cada vez descubro algo nuevo. Cascais es pequeño pero tiene suficiente para llenar un día completo sin agobios, y el ritmo relajado del pueblo es el antídoto perfecto para el estrés de la capital." },
@@ -1223,6 +1234,9 @@ const articles: Record<string, Article> = {
     categoria: "Guías",
     fecha: "15 Nov 2024",
     minutos: 12,
+    fuentes: [
+      { label: "Comboios de Portugal — líneas de Cascais y Setúbal", href: "https://www.cp.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa tiene muchas cosas, pero playa en el centro no es una de ellas. Sin embargo, a menos de una hora en transporte público o coche, encuentras algunas de las playas más bonitas de Portugal. He pasado incontables fines de semana explorando la costa desde Cascais hasta la Arrábida, y cada playa tiene su personalidad." },
       { tipo: "parrafo", texto: "Esta guía te ayudará a elegir según lo que busques: playas familiares con servicios, calas escondidas para fotógrafos, o kilómetros de arena virgen para surfistas. Todas están a distancia razonable de la capital, y el viaje forma parte de la experiencia." },
@@ -1305,6 +1319,10 @@ const articles: Record<string, Article> = {
     categoria: "Planificación",
     fecha: "10 Nov 2024",
     minutos: 13,
+    fuentes: [
+      { label: "Carris — tarifas de tranvía, autobús y elevadores", href: "https://www.carris.pt/" },
+      { label: "Metropolitano de Lisboa — títulos y precios", href: "https://www.metrolisboa.pt/" },
+    ],
     links: [
       { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
       { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
@@ -2115,6 +2133,10 @@ const articles: Record<string, Article> = {
     categoria: "Guías",
     fecha: "3 Mar 2026",
     minutos: 16,
+    fuentes: [
+      { label: "Museus e Monumentos de Portugal — horarios y entradas", href: "https://www.museusemonumentos.pt/" },
+      { label: "Castelo de São Jorge — visita y billetes", href: "https://castelodesaojorge.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa es una ciudad de monumentos. No del tipo de monumentos que se erigen en honor a batallas olvidadas, sino de edificios y estructuras que cuentan directamente la historia de la ciudad y del país: los monasterios construidos con el oro de las especias de India, las torres que vigilaban la entrada al río, los puentes y ascensores que conectaban las colinas. Esta guía te ayuda a priorizar qué ver, cómo evitar colas, y cuánto tiempo necesitas en cada lugar." },
       { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La Joya del Renacimiento Portugués" },
@@ -2280,6 +2302,10 @@ const articles: Record<string, Article> = {
     categoria: "Guías",
     fecha: "21 Mar 2026",
     minutos: 12,
+    fuentes: [
+      { label: "Museus e Monumentos de Portugal — Jerónimos y Torre de Belém", href: "https://www.museusemonumentos.pt/" },
+      { label: "Pastéis de Belém — la pastelería original", href: "https://pasteisdebelem.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "A finales del siglo XV, Belém no era un barrio de Lisboa: era una aldea de pescadores a las afueras de la ciudad, en la orilla del Tajo, a unos seis kilómetros del centro. Fue desde esta aldea desde donde Vasco de Gama zarpó en 1497 rumbo a India. Fue aquí donde el rey Manuel I construyó el monasterio más bello de Portugal para celebrar el descubrimiento de la ruta a las especias. Y fue aquí donde se instaló la pastelería que llevaría la crema de los monjes al mundo entero." },
       { tipo: "parrafo", texto: "Hoy Belém es un barrio tranquilo integrado en la ciudad, accesible en tranvía o en bicicleta desde el centro, con los monumentos más visitados de Portugal y también con algunos de los mejores museos del país. Merece al menos medio día, mejor uno completo." },
@@ -2388,6 +2414,9 @@ const articles: Record<string, Article> = {
     categoria: "Transporte",
     fecha: "14 Mar 2026",
     minutos: 9,
+    fuentes: [
+      { label: "Carris — recorridos, horarios y tarifas", href: "https://www.carris.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "El tranvía 28 es el símbolo más reconocible de Lisboa. Sus vagones amarillos de madera, diseñados en los años veinte del siglo XX, han recorrido las mismas cuestas imposibles de Alfama durante más de cien años. Es también, hay que decirlo sin rodeos, la mayor trampa turística de Lisboa: colas de una hora, carteristas profesionales, vagones tan llenos en verano que es difícil respirar, y finalmente un trayecto que puedes hacer caminando en veinte minutos." },
       { tipo: "parrafo", texto: "Pero el tranvía 28 también es uno de los trayectos más espectaculares que puedes hacer en cualquier ciudad europea. Los dos extremos de la verdad son ciertos al mismo tiempo. Lo que determina si el 28 es una experiencia o una decepción es cuándo y cómo lo tomas." },
