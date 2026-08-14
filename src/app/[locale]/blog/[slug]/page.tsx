@@ -3325,10 +3325,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
   const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
+  /*
+   * Un artículo que no está en `blogPosts` no aparece en el listado ni en el
+   * sitemap ni se prerenderiza: es un borrador, aunque su URL responda. Se
+   * marca noindex para que no compita en buscadores con el artículo publicado
+   * que cubre el mismo tema. Publicarlo es añadirlo a `blogPosts`.
+   */
+  const publicado = blogPosts.some((post) => post.id === slug);
   return {
     title: seoTitle,
     description: seoDescription,
     keywords,
+    ...(publicado ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `${SITE_URL}/blog/${slug}`,
     },

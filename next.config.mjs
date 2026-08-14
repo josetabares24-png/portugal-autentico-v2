@@ -41,6 +41,9 @@ const nextConfig = {
       // Blog stubs → artículos completos
       { source: '/blog/tarjeta-lisboa-card-vale-pena', destination: '/blog/lisboa-card-vale-la-pena', permanent: true },
       { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },
+      // La versión en español faltaba: /en y /ko sí redirigían y la ruta sin
+      // prefijo seguía sirviendo el borrador de 2024.
+      { source: '/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       // Legacy en/ko known redirects without chains
       { source: '/en/info-util', destination: '/planifica-tu-viaje', permanent: true },
       { source: '/ko/info-util', destination: '/planifica-tu-viaje', permanent: true },
