@@ -270,6 +270,7 @@ const articles: Record<string, Article> = {
       ] },
       { tipo: 'subtitulo', texto: 'Conclusión' },
       { tipo: 'parrafo', texto: 'Tres días en Lisboa funcionan muy bien si haces una ruta compacta: centro y Alfama el primer día, Belém el segundo, barrios y miradores el tercero. No es una ciudad para exprimir con cronómetro, sino para ordenar con sentido. Si quieres llevar el recorrido listo, la guía gratuita de Lisboa en 3 días te evita rehacer estas decisiones sobre la marcha.' },
+      { tipo: 'enlace', texto: 'Si es tu primer día, empezar con un tour a pie te da la orientación que luego hace que los otros dos días cundan más.', href: '/free-tours-lisboa#ruta-imprescindible', label: 'Ver los free tours por el centro histórico' },
     ],
   },
   'donde-alojarse-en-lisboa': {
@@ -762,7 +763,8 @@ const articles: Record<string, Article> = {
       ]},
       { tipo: "subtitulo", texto: "Cómo elegir tu barrio base" },
       { tipo: "parrafo", texto: "Si es tu primera vez y tienes pocos días, Baixa-Chiado te permite moverte con facilidad y ver lo esencial sin complicaciones. Si vienes a enamorarte de Lisboa, Alfama tiene la magia que buscas aunque cueste algunas cuestas. Si la noche es tu prioridad, Bairro Alto no tiene rival. Y si prefieres un Lisboa más contemporáneo y tranquilo, Príncipe Real te espera." },
-      { tipo: "tip", texto: "Un truco para indecisos: reserva las primeras noches en Baixa para orientarte, y las últimas en un barrio con más personalidad. Así combinas comodidad inicial con inmersión final." }
+      { tipo: "tip", texto: "Un truco para indecisos: reserva las primeras noches en Baixa para orientarte, y las últimas en un barrio con más personalidad. Así combinas comodidad inicial con inmersión final." },
+      { tipo: "enlace", texto: "Recorrer estos cinco barrios por tu cuenta funciona, pero un guía local te ahorra las horas de prueba y error que cuesta entender cómo encajan entre sí.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
   "evitar-turistadas-lisboa": {
@@ -1648,7 +1650,8 @@ const articles: Record<string, Article> = {
         "Seguridad: Lisboa es muy segura de noche, pero cuida el móvil en zonas muy concurridas",
         "Dresscode: Casual en casi todos los sitios. Solo Lux Frágil pide vestir un poco mejor",
         "Precios: Cervezas 2-4€, cocktails 8-12€, entradas a clubs 0-15€"
-      ]}
+      ]},
+      { tipo: "enlace", texto: "Si es tu primera noche y no quieres acabar en la calle más turística por descarte, un tour nocturno te sitúa.", href: "/free-tours-lisboa#ruta-nocturna", label: "Ver los free tours nocturnos" },
     ]
   },
   "lisboa-en-invierno": {
@@ -1720,7 +1723,8 @@ const articles: Record<string, Article> = {
         "14. Ignorar Graça y Mouraria — barrios auténticos que la mayoría de turistas se salta",
         "15. No aprender 'obrigado/obrigada' — los portugueses valoran mucho el esfuerzo de hablar su idioma"
       ]},
-      { tipo: "tip", texto: "Imprime o guarda offline este artículo antes de viajar. Son errores fáciles de evitar si los tienes presentes, pero muy fáciles de cometer si no los conoces." }
+      { tipo: "tip", texto: "Imprime o guarda offline este artículo antes de viajar. Son errores fáciles de evitar si los tienes presentes, pero muy fáciles de cometer si no los conoces." },
+      { tipo: "enlace", texto: "La mitad de estos errores se evitan simplemente entendiendo la ciudad el primer día en lugar del tercero.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
   "sintra-desde-lisboa": {
@@ -1788,7 +1792,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "La mañana del 25 de abril de 1974, un grupo de capitanes del ejército dio un golpe de estado casi incruento que terminó con cincuenta años de dictadura. En Lisboa, la gente salió a las calles a celebrar. Alguien metió claveles (era la flor de temporada en los mercados) en los cañones de los fusiles de los soldados. La Revolución de los Claveles no disparó un solo tiro y cambió para siempre la historia de Portugal. El 25 de abril es hoy festivo nacional y el Puente sobre el Tejo, inaugurado en 1966 como Puente Salazar, fue rebautizado como Puente 25 de Abril." },
       { tipo: "subtitulo", texto: "Lisboa Hoy: Capital Europea y Ciudad del Mundo" },
       { tipo: "parrafo", texto: "Desde la entrada en la Unión Europea en 1986 hasta hoy, Lisboa ha vivido una transformación radical. La Expo 98 regeneró el barrio de Parque das Nações, convirtiendo una zona industrial abandonada en el modelo de urbanismo contemporáneo de la ciudad. En los años 2010, Lisboa se convirtió en uno de los destinos más deseados de Europa: el reconocimiento de su luz especial, su cultura, su gastronomía y sus precios (todavía razonables comparados con el norte de Europa) atrajeron a millones de visitantes." },
-      { tipo: "parrafo", texto: "La Lisboa de 2026 es una ciudad en equilibrio delicado: entre la tradición y la modernidad, entre el turismo y la vida cotidiana de sus habitantes, entre la globalización y la preservación de su identidad única. Caminar por sus calles es, todavía, uno de los placeres más intensos que puede ofrecer Europa." }
+      { tipo: "parrafo", texto: "La Lisboa de 2026 es una ciudad en equilibrio delicado: entre la tradición y la modernidad, entre el turismo y la vida cotidiana de sus habitantes, entre la globalización y la preservación de su identidad única. Caminar por sus calles es, todavía, uno de los placeres más intensos que puede ofrecer Europa." },
+      { tipo: "enlace", texto: "Hay una versión de esta historia que se cuenta caminando, con los sitios delante, y funciona distinto que leerla.", href: "/free-tours-lisboa#ruta-misterios", label: "Ver los free tours de leyendas y misterios" },
     ]
   },
   "terremoto-lisboa-1755": {
@@ -1993,7 +1998,8 @@ const articles: Record<string, Article> = {
         "Museu Calouste Gulbenkian: El museo de arte más importante de Portugal, con colección desde el Antiguo Egipto hasta el siglo XX",
         "Teatro Nacional de Dona Maria II: El teatro neoclásico de la Praça do Rossio, frente a la estación",
         "Estação do Oriente (Santiago Calatrava): La estación de tren más bonita de Portugal, en Parque das Nações"
-      ]}
+      ]},
+      { tipo: "enlace", texto: "Muchos de estos monumentos se entienden mucho mejor con contexto histórico que leyendo el cartel de la entrada.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
   "semana-santa-lisboa-2026": {
@@ -2044,7 +2050,8 @@ const articles: Record<string, Article> = {
       { tipo: "tip", texto: "Para comer bien en Alfama sin pagar precio turístico: busca locales sin menú a la vista en la puerta, sin carta en inglés en la vitrina, y donde haya al menos un cliente con cara de vecino del barrio." },
       { tipo: "subtitulo", texto: "Alfama de Noche: El Fado" },
       { tipo: "parrafo", texto: "La noche cambia Alfama. Las callejuelas que de día estaban llenas de turistas con selfie-stick se vacían y quedan solo los que van a algo concreto: a cenar a una tasca pequeña o a escuchar fado. Las casas de fado en Alfama van desde las más conocidas —que cobran 25-30€ de consumo mínimo y tienen actuaciones programadas para grupos— hasta tabernas de barrio donde el fado surge de manera más espontánea entre la gente que se conoce." },
-      { tipo: "parrafo", texto: "Para escuchar fado auténtico en Alfama: busca los locales pequeños, con pocas mesas, donde se pide silencio cuando empieza la música. El fado no es background: es lo que importa. En los mejores sitios, el fadista canta con los ojos cerrados y el público no aplaude hasta que termina la última nota, no antes." }
+      { tipo: "parrafo", texto: "Para escuchar fado auténtico en Alfama: busca los locales pequeños, con pocas mesas, donde se pide silencio cuando empieza la música. El fado no es background: es lo que importa. En los mejores sitios, el fadista canta con los ojos cerrados y el público no aplaude hasta que termina la última nota, no antes." },
+      { tipo: "enlace", texto: "Alfama es el barrio donde más fácil es perderse y más se agradece que alguien te cuente qué estás mirando.", href: "/free-tours-lisboa#ruta-alfama", label: "Ver los free tours por Alfama" },
     ]
   },
   "gastronomia-portuguesa-guia": {
@@ -2133,7 +2140,8 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "El Padrão dos Descobrimentos y los Museos de Belém" },
       { tipo: "parrafo", texto: "El Padrão dos Descobrimentos es la escultura monumental construida en 1960 para conmemorar el 500 aniversario de la muerte del Infante Dom Henrique. Una proa de barco de piedra con 33 figuras de los grandes navegantes, cartógrafos y poetas de los descubrimientos: Vasco de Gama, Pedro Álvares Cabral, Fernando Magalhães, Luís de Camões... La vista desde arriba (hay ascensor) es espléndida." },
       { tipo: "parrafo", texto: "En los alrededores hay tres museos que merecen visita según tus intereses: el Museu de Marinha (embarcaciones y objetos de navegación originales de los siglos XV-XVI), el Museu dos Coches (la colección de carruajes reales más importante del mundo) y el MAAT (arte contemporáneo, arquitectura y tecnología, con un edificio que es ya una obra de arte sobre el Tajo)." },
-      { tipo: "tip", texto: "La ruta ideal en Belém: llegar al abrir, Jerónimos primero (2h), Torre de Belém (45min), pastel en Pastéis de Belém, almuerzo en el restaurante del Museu dos Coches o en alguna tasca de la calle Vieira Portuense, Padrão dos Descobrimentos por la tarde. Regresa en tranvía o bici por el paseo junto al Tajo." }
+      { tipo: "tip", texto: "La ruta ideal en Belém: llegar al abrir, Jerónimos primero (2h), Torre de Belém (45min), pastel en Pastéis de Belém, almuerzo en el restaurante del Museu dos Coches o en alguna tasca de la calle Vieira Portuense, Padrão dos Descobrimentos por la tarde. Regresa en tranvía o bici por el paseo junto al Tajo." },
+      { tipo: "enlace", texto: "En Belém los monumentos están cerca unos de otros, pero la historia que los conecta no es evidente si vas solo.", href: "/free-tours-lisboa#ruta-belem", label: "Ver los free tours por Belém" },
     ]
   },
   "chiado-bairro-alto-guia": {
@@ -2155,7 +2163,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "El Bairro Alto tiene también las mejores casas de fado de Lisboa fuera de Alfama, y algunos de los mejores restaurantes de la ciudad. La Rua do Norte y la Rua da Barroca concentran la mayor densidad de opciones buenas. Cena antes de las 21:30 para conseguir mesa sin reserva." },
       { tipo: "subtitulo", texto: "El Museu do Chiado" },
       { tipo: "parrafo", texto: "El Museu Nacional de Arte Contemporânea do Chiado, instalado en el antiguo convento de São Francisco (quemado en el incendio de 1988 y reconstruido por Siza), tiene la colección más importante de arte portugués de los siglos XIX y XX. Los martes por la tarde (hasta las 18:00) la entrada es gratuita. Vale la visita por los jardines y la arquitectura aunque no seas especialmente aficionado al arte contemporáneo." },
-      { tipo: "tip", texto: "Para el Chiado: llega antes de las 11:00 para el Café A Brasileira sin cola. La Livraria Bertrand abre a las 9:00. El Mirador de São Pedro de Alcântara, al final del Bairro Alto, tiene las mejores vistas del castillo de la zona y un jardín con bancos a la sombra." }
+      { tipo: "tip", texto: "Para el Chiado: llega antes de las 11:00 para el Café A Brasileira sin cola. La Livraria Bertrand abre a las 9:00. El Mirador de São Pedro de Alcântara, al final del Bairro Alto, tiene las mejores vistas del castillo de la zona y un jardín con bancos a la sombra." },
+      { tipo: "enlace", texto: "El Chiado está lleno de referencias literarias que pasan desapercibidas si nadie te las señala.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
   "mouraria-barrio-guia": {
@@ -2176,7 +2185,8 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Qué Comer en Mouraria" },
       { tipo: "parrafo", texto: "El Intendente, la gran plaza que hace de centro de gravedad del barrio, tiene en sus alrededores algunos de los mejores restaurantes económicos de Lisboa. O Corvo es una taberna pequeña donde siempre hay lista de espera al mediodía. Las ruas da Mouraria que bajan hacia la Baixa tienen tascas que han servido el mismo menú del día durante décadas a los trabajadores del barrio." },
       { tipo: "parrafo", texto: "El mercado de la zona — el Mercado de Arroios, a diez minutos a pie— tiene una sección de puestos de comida preparada donde almorzar por 6-7€ entre trabajadores locales. El restaurante del mercado sirve el mejor menú de precio fijo del centro de Lisboa según muchos locales que conozco." },
-      { tipo: "tip", texto: "Mouraria es mejor visitarla sin plan fijo: callejea, entra en los comercios que te llamen la atención, acepta el café que te ofrezcan. La calle da Mouraria tiene una vista inesperada del Castillo al final que merece la caminata." }
+      { tipo: "tip", texto: "Mouraria es mejor visitarla sin plan fijo: callejea, entra en los comercios que te llamen la atención, acepta el café que te ofrezcan. La calle da Mouraria tiene una vista inesperada del Castillo al final que merece la caminata." },
+      { tipo: "enlace", texto: "Mouraria y Alfama se recorren juntas y comparten historia, aunque casi nadie las cuente así.", href: "/free-tours-lisboa#ruta-alfama", label: "Ver los free tours por Alfama y alrededores" },
     ]
   },
   "vinos-portugueses-guia": {
