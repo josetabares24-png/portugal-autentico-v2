@@ -1641,60 +1641,106 @@ const articles: Record<string, Article> = {
     ]
   },
   "excursiones-desde-lisboa": {
-    titulo: "Las mejores excursiones desde Lisboa: escapadas de un día perfectas",
+    titulo: "Las mejores excursiones desde Lisboa: escapadas de un día",
     seoTitle: "Excursiones de un día desde Lisboa",
-    descripcion: "Sintra, Óbidos, Nazaré y más. Cómo llegar, qué ver y cuánto tiempo necesitas para cada excursión desde la capital.",
-    imagen: "/images/estacion-sintra.jpg",
+    descripcion: "Sintra, Cascais, Óbidos, Nazaré, Évora, Arrábida y Fátima. Cómo llegar en transporte público, cuánto tiempo necesitas y cuáles se pueden combinar.",
+    imagen: "/images/sintra-palacio-turistas.jpg",
     imageAlt: "Visitantes ante la fachada de un palacio de Sintra rodeado de jardines",
     categoria: "Guías",
     fecha: "25 Oct 2024",
-    minutos: 13,
+    fechaActualizacion: "14 Ago 2026",
+    dateModified: "2026-08-14",
+    minutos: 12,
+    fuentes: [
+      { label: "Comboios de Portugal — horarios y billetes de tren", href: "https://www.cp.pt/" },
+      { label: "Rede Expressos — autobuses de largo recorrido", href: "https://rede-expressos.pt/" },
+      { label: "Parques de Sintra — monumentos y precios oficiales", href: "https://www.parquesdesintra.pt/" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Una de las grandes ventajas de Lisboa es su ubicación estratégica. A menos de dos horas en transporte público encuentras palacios de cuento, pueblos medievales amurallados, playas paradisíacas y pueblos pesqueros donde el tiempo parece haberse detenido. He hecho estas excursiones docenas de veces, y cada una tiene su momento perfecto." },
-      { tipo: "parrafo", texto: "Esta guía te ayuda a elegir qué excursión hacer según tus intereses y el tiempo que tengas, con información práctica sobre cómo llegar, qué ver, y cuánto tiempo dedicar a cada lugar." },
-      { tipo: "subtitulo", texto: "1. Sintra (40 minutos)" },
-      { tipo: "parrafo", texto: "La excursion obligatoria. Palacios de cuento, bosques magicos, vistas increibles. Tren desde Rossio, 2.30 EUR por trayecto. Necesitas un dia completo." },
+      { tipo: "parrafo", texto: "Una de las ventajas menos comentadas de Lisboa es dónde está. A menos de dos horas en transporte público tienes palacios entre la niebla, un pueblo medieval entero dentro de sus murallas, playas de agua turquesa y una ciudad romana con un templo en pie. No hace falta alquilar coche para casi ninguna." },
+      { tipo: "parrafo", texto: "Esta guía ordena las siete escapadas que de verdad merecen el día, con lo que importa para decidir: cómo se llega, cuánto tiempo necesitas de verdad y cuáles se pueden encadenar. Los precios de entradas y billetes cambian cada temporada, así que doy el mecanismo y te enlazo a quien los publica, en vez de una cifra que caduque." },
+      { tipo: "subtitulo", texto: "1. Sintra: la que hay que hacer sí o sí" },
+      { tipo: "parrafo", texto: "Si solo puedes hacer una excursión, es esta. Palacios de cuento entre bosques de niebla, jardines con pozos iniciáticos y túneles, y una atmósfera que Lord Byron llamó «el Edén glorioso». Está a cuarenta minutos en tren desde la estación de Rossio, en pleno centro." },
+      { tipo: "parrafo", texto: "El problema de Sintra es su éxito: en verano las colas del Palacio da Pena pueden ser de dos horas. La diferencia entre un día perfecto y uno agotador está en el orden de las visitas, no en levantarse pronto solamente." },
       { tipo: "lista", items: [
-        "Transporte: Tren desde Rossio (2.30 EUR)",
-        "Duracion: 40 minutos",
-        "Que ver: Palacio da Pena, Quinta da Regaleira, Castelo dos Mouros",
-        "Precio entradas: 14-20 EUR por palacio"
+        "Cómo llegar: tren desde Rossio, cada 20-30 minutos",
+        "Duración del trayecto: 40 minutos",
+        "Tiempo necesario: día completo, sin discusión",
+        "Qué ver: Quinta da Regaleira, Palacio da Pena, Castelo dos Mouros",
+        "Entradas: los gestiona Parques de Sintra; compra online con antelación"
       ]},
-      { tipo: "subtitulo", texto: "2. Cascais (30 minutos)" },
-      { tipo: "parrafo", texto: "Pueblo costero elegante. Playas, palacios, paseo maritimo. Tren desde Cais do Sodre, 2.30 EUR. Perfecto para medio dia o dia completo." },
+      { tipo: "enlace", texto: "Sintra necesita su propia guía: el orden de visitas que evita las colas, cómo subir la montaña y dónde comer sin caer en el centro turístico.", href: "/blog/sintra-desde-lisboa", label: "Leer la guía completa de Sintra" },
+      { tipo: "subtitulo", texto: "2. Cascais: medio día que sabe a más" },
+      { tipo: "parrafo", texto: "Antiguo pueblo de pescadores convertido en villa de veraneo de la aristocracia portuguesa, y hoy la escapada más fácil de todas: tren directo desde Cais do Sodré, sin transbordos, con el Tajo a la izquierda durante todo el trayecto. Es el único de esta lista que se puede hacer en media tarde." },
+      { tipo: "parrafo", texto: "El centro histórico se recorre en una hora larga. Lo que hace especial a Cascais es lo que hay alrededor: la Boca do Inferno, una grieta en el acantilado donde el mar entra con fuerza, y el paseo marítimo hacia el Guincho, con playas de surf y viento constante." },
       { tipo: "lista", items: [
-        "Transporte: Tren desde Cais do Sodre (2.30 EUR)",
-        "Duracion: 30-40 minutos",
-        "Que ver: Centro historico, playas, Boca do Inferno",
-        "Precio: Gratis (excepto museos)"
+        "Cómo llegar: tren desde Cais do Sodré, línea directa",
+        "Duración del trayecto: 30-40 minutos",
+        "Tiempo necesario: media jornada, o día completo si vas a la playa",
+        "Qué ver: centro histórico, Boca do Inferno, playas, Cabo da Roca en bus",
+        "Lo mejor: se combina con el Cabo da Roca sin volver a Lisboa"
       ]},
-      { tipo: "subtitulo", texto: "3. Obidos (1 hora)" },
-      { tipo: "parrafo", texto: "Pueblo medieval amurallado. Callejuelas estrechas, castillo, chocolate. Autobus desde Sete Rios, 8 EUR. Medio dia es suficiente." },
+      { tipo: "subtitulo", texto: "3. Cabo da Roca: el punto más occidental de Europa" },
+      { tipo: "parrafo", texto: "Un acantilado de 140 metros sobre el Atlántico donde, como dice el verso de Camões grabado en la piedra, «la tierra acaba y el mar empieza». No hay mucho que hacer: hay que mirar. Pero es de esos sitios donde la geografía se entiende de golpe." },
+      { tipo: "parrafo", texto: "No tiene estación de tren. Se llega en autobús desde Cascais o desde Sintra, lo que lo convierte en el complemento natural de cualquiera de las dos. Lleva cortavientos aunque haga sol en Lisboa: aquí sopla siempre y la diferencia de temperatura es real." },
       { tipo: "lista", items: [
-        "Transporte: Autobus desde Sete Rios (8 EUR)",
-        "Duracion: 1 hora",
-        "Que ver: Murallas, castillo, callejuelas",
-        "Precio: Gratis (subir murallas)"
+        "Cómo llegar: autobús desde Cascais o desde Sintra",
+        "Tiempo necesario: una hora en el sitio, más el trayecto",
+        "Qué ver: el faro, los acantilados, el hito con el verso de Camões",
+        "Entrada: gratis",
+        "Combina con: Cascais o Sintra, el mismo día"
       ]},
-      { tipo: "subtitulo", texto: "4. Nazare (1.5 horas)" },
-      { tipo: "parrafo", texto: "Pueblo pesquero famoso por las olas gigantes. Playas, pescado fresco, ambiente local. Autobus desde Sete Rios, 12 EUR. Dia completo." },
+      { tipo: "subtitulo", texto: "4. Óbidos: un pueblo medieval entero" },
+      { tipo: "parrafo", texto: "Óbidos es una villa amurallada del siglo XII que se conserva prácticamente intacta: casas encaladas con cenefas azules y amarillas, calles empedradas de un metro de ancho y una muralla que se puede recorrer entera por arriba, sin barandilla. La muralla es la visita, y es gratis." },
+      { tipo: "parrafo", texto: "Se bebe ginjinha, un licor de guinda, servida en un vasito de chocolate que te comes al final. Es turístico y da igual: está bueno. Con medio día se ve bien; un día completo solo si vas sin prisa a comer." },
       { tipo: "lista", items: [
-        "Transporte: Autobus desde Sete Rios (12 EUR)",
-        "Duracion: 1.5 horas",
-        "Que ver: Playas, pescado fresco, olas gigantes (invierno)",
-        "Precio: Gratis"
+        "Cómo llegar: autobús desde la estación de Sete Rios",
+        "Duración del trayecto: alrededor de una hora",
+        "Tiempo necesario: media jornada",
+        "Qué ver: la muralla completa, el castillo, las calles del interior",
+        "Ojo: la muralla no tiene barandilla y el suelo es irregular"
       ]},
-      { tipo: "subtitulo", texto: "5. Arrabida (1 hora)" },
-      { tipo: "parrafo", texto: "Reserva natural con playas paradisiacas. Agua turquesa, arena blanca, naturaleza. Coche recomendado, aunque hay tours. Dia completo." },
+      { tipo: "subtitulo", texto: "5. Nazaré: el pueblo de las olas gigantes" },
+      { tipo: "parrafo", texto: "Nazaré era un pueblo pesquero sin más hasta que un cañón submarino de cinco kilómetros de profundidad, que llega casi hasta la playa, lo convirtió en el sitio donde rompen las olas más grandes del mundo. En invierno se han surfeado aquí olas de más de veinte metros, y hay un mirador en el fuerte de São Miguel Arcanjo desde donde se ven." },
+      { tipo: "parrafo", texto: "En verano es otra cosa: playa amplia, pescado a la brasa en el paseo y un funicular que sube al barrio alto del Sítio. Las olas gigantes son fenómeno de invierno, sobre todo entre octubre y marzo, y no están garantizadas ningún día concreto." },
       { tipo: "lista", items: [
-        "Transporte: Coche o tour (50-70 EUR)",
-        "Duracion: 1 hora",
-        "Que ver: Playas, reserva natural, Setubal",
-        "Precio: Gratis (parking puede tener costo)"
+        "Cómo llegar: autobús desde Sete Rios",
+        "Duración del trayecto: hora y media",
+        "Tiempo necesario: día completo",
+        "Qué ver: la playa, el Sítio en funicular, el fuerte y su mirador",
+        "Cuándo: olas gigantes entre octubre y marzo; playa en verano"
       ]},
-      { tipo: "tip", texto: "Para Sintra, compra las entradas online con antelacion. En verano las colas son de 1-2 horas." },
-      { tipo: "subtitulo", texto: "Combinaciones posibles" },
-      { tipo: "parrafo", texto: "Puedes combinar algunas excursiones en un dia, pero no todas. Sintra y Cascais juntas es complicado. Obidos y Nazare se pueden combinar." }
+      { tipo: "subtitulo", texto: "6. Évora: la parada romana y medieval" },
+      { tipo: "parrafo", texto: "Évora es la excursión que casi nadie hace y la que más sorprende. Es Patrimonio de la Humanidad y tiene, dentro de la muralla, un templo romano del siglo I en pie, una catedral gótica que se puede subir hasta el tejado, y la Capela dos Ossos, forrada con los huesos de unos cinco mil monjes y un letrero en la entrada que traduce: «nosotros, los huesos que aquí estamos, por los vuestros esperamos»." },
+      { tipo: "parrafo", texto: "Está en pleno Alentejo, así que el viaje es más largo y el paisaje cambia por completo: llanura, alcornoques y olivos. Se llega en autobús o en tren, y necesita día completo. Si tienes cuatro días en Lisboa y ya has hecho Sintra, esta es la segunda." },
+      { tipo: "lista", items: [
+        "Cómo llegar: autobús desde Sete Rios o tren desde Oriente",
+        "Duración del trayecto: entre hora y media y dos horas",
+        "Tiempo necesario: día completo",
+        "Qué ver: templo romano, catedral y su tejado, Capela dos Ossos, la muralla",
+        "Extra: es la puerta al Alentejo y a su cocina"
+      ]},
+      { tipo: "subtitulo", texto: "7. Arrábida: el agua turquesa que nadie espera en Portugal" },
+      { tipo: "parrafo", texto: "El parque natural de la Arrábida, al sur del Tajo, tiene playas de arena blanca y agua transparente entre montañas cubiertas de vegetación mediterránea. La imagen no parece portuguesa: parece del Adriático. Portinho da Arrábida y Galapinhos son las dos playas que salen en las fotos." },
+      { tipo: "parrafo", texto: "Es la única de la lista que cuesta de verdad sin coche. Hay autobuses hasta Setúbal y desde allí transporte local en temporada, pero la logística es incómoda y en verano el acceso rodado está limitado. Si vas a alquilar coche un día del viaje, que sea este." },
+      { tipo: "lista", items: [
+        "Cómo llegar: coche, o autobús a Setúbal y transporte local en temporada",
+        "Duración del trayecto: alrededor de una hora en coche",
+        "Tiempo necesario: día completo",
+        "Qué ver: Portinho da Arrábida, Galapinhos, la sierra, Setúbal",
+        "Ojo: en verano el acceso en coche a las playas está restringido"
+      ]},
+      { tipo: "subtitulo", texto: "Cuáles se pueden combinar y cuáles no" },
+      { tipo: "parrafo", texto: "La tentación de juntar dos en un día es normal y casi siempre sale mal. Estas son las combinaciones que funcionan de verdad, porque comparten línea de transporte y no obligan a volver al centro de Lisboa en medio:" },
+      { tipo: "lista", items: [
+        "Cascais + Cabo da Roca: sí, hay autobús directo entre los dos",
+        "Sintra + Cabo da Roca: sí, si renuncias a uno de los palacios",
+        "Óbidos + Nazaré: sí, están en la misma dirección y la carretera las une",
+        "Sintra + Cascais: mala idea, aunque haya autobús: los dos piden su tiempo",
+        "Évora o Arrábida con cualquier otra: no, están en la otra dirección"
+      ]},
+      { tipo: "tip", texto: "Si solo tienes un día para excursión, ve a Sintra. Si tienes dos, añade Cascais con el Cabo da Roca. Si tienes tres y ya conoces lo obvio, Évora es la que más te va a sorprender." },
+      { tipo: "aviso", texto: "Los precios de entradas, billetes de tren y autobús cambian cada temporada y según el operador. Consúltalos el mismo día en las webs oficiales que enlazo al final, en vez de fiarte de una cifra escrita hace meses." }
     ]
   },
   "vida-nocturna-lisboa": {
@@ -1815,7 +1861,13 @@ const articles: Record<string, Article> = {
     imageAlt: "Dos viajeros con mochila en el andén de una estación de tren, junto a un panel de azulejos del Castelo dos Mouros",
     categoria: "Guías",
     fecha: "22 Ene 2026",
+    fechaActualizacion: "14 Ago 2026",
+    dateModified: "2026-08-14",
     minutos: 14,
+    fuentes: [
+      { label: "Parques de Sintra — horarios y precios oficiales", href: "https://www.parquesdesintra.pt/pt/planear-a-visita/horarios-e-precos/" },
+      { label: "Comboios de Portugal — línea de Sintra", href: "https://www.cp.pt/" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Sintra es, sin exagerar, uno de los lugares más bonitos que he visto en mi vida. Palacios de cuento de hadas emergiendo entre bosques de niebla, jardines que parecen diseñados por elfos, y una atmósfera romántica que Lord Byron describió como 'el Edén glorioso'. Está a solo 40 minutos en tren de Lisboa, lo que la convierte en la excursión de un día más popular de Portugal." },
       { tipo: "parrafo", texto: "El problema es que esa popularidad tiene consecuencias: en verano, las colas para entrar al Palacio da Pena pueden ser de dos horas, los restaurantes del centro están llenos de turistas, y los precios son un 50% más altos que en Lisboa. He ido a Sintra más de treinta veces y he aprendido exactamente cómo evitar todo eso. Esta guía es el resultado de esos años de prueba y error." },
@@ -1830,10 +1882,11 @@ const articles: Record<string, Article> = {
         "3. Castelo dos Mouros (si tienes tiempo) — Las murallas medievales con vistas panorámicas. Está en el camino entre Regaleira y Pena",
         "4. Centro de Sintra (para comer) — Baja al pueblo, come en una tasca y prueba las travesseiros (dulce típico de Sintra)"
       ]},
-      { tipo: "subtitulo", texto: "Entradas y precios 2026" },
-      { tipo: "parrafo", texto: "Las entradas son la parte más cara de Sintra. El Palacio da Pena cuesta 14€ (parque + palacio), la Quinta da Regaleira 10€, y el Castelo dos Mouros 8€. Si piensas visitar los tres, puedes comprar un pack combinado en la web de Parques de Sintra que te ahorra un 10-15%. IMPORTANTE: compra SIEMPRE online y con antelación. En verano, las entradas físicas en taquilla pueden agotarse." },
+      { tipo: "subtitulo", texto: "Entradas: cuánto pesan en el presupuesto del día" },
+      { tipo: "parrafo", texto: "Las entradas son, con diferencia, la parte más cara de Sintra: cuestan bastante más que el tren de ida y vuelta desde Lisboa. Cada monumento se paga por separado —Pena, Regaleira y Mouros son entradas distintas— y quien los visita los tres suele gastar más en taquillas que en comer." },
+      { tipo: "parrafo", texto: "Los precios los fija Parques de Sintra y han ido subiendo estos últimos años, así que no me los invento aquí: míralos en su web el mismo día. Lo que sí no cambia es el consejo: compra online y con antelación. En verano las entradas de taquilla pueden agotarse, y hay packs combinados que salen mejor que comprar suelto si vas a más de un monumento." },
       { tipo: "subtitulo", texto: "Transporte dentro de Sintra" },
-      { tipo: "parrafo", texto: "Desde la estación de tren hasta los palacios hay que subir una montaña. Tienes tres opciones: el bus 434 (circuito que conecta estación-centro-Pena-Mouros, 7€ ida y vuelta), tuk-tuk (15-20€ por trayecto, negociable), o caminar (30-45 minutos cuesta arriba, bonito pero agotador). Mi recomendación: sube en el bus 434 y baja caminando por los jardines, que son preciosos y es todo cuesta abajo." },
+      { tipo: "parrafo", texto: "Desde la estación de tren hasta los palacios hay que subir una montaña. Tienes tres opciones: el bus 434 (circuito que conecta estación, centro, Pena y Mouros; el billete sencillo ronda los 4,50 € y hay abono de 24 horas), tuk-tuk (15-20€ por trayecto, negociable), o caminar (30-45 minutos cuesta arriba, bonito pero agotador). Mi recomendación: sube en el bus 434 y baja caminando por los jardines, que son preciosos y es todo cuesta abajo." },
       { tipo: "subtitulo", texto: "Dónde comer en Sintra (sin trampas)" },
       { tipo: "parrafo", texto: "Evita los restaurantes del centro turístico alrededor del Palacio Nacional. Son caros y mediocres. En cambio, camina cinco minutos por cualquier calle lateral y encontrarás tascas donde los locales comen menú del día por 8-10€. Incrível es un favorito local con buena relación calidad-precio. Y para el dulce, las queijadas de Sintra y los travesseiros de Casa Piriquita son obligatorios." },
       { tipo: "tip", texto: "Si visitas Sintra en fin de semana entre junio y septiembre, prepárate para multitudes. El mejor momento es un martes o miércoles de octubre-noviembre: poca gente, buen tiempo, colores otoñales increíbles en los bosques." }
