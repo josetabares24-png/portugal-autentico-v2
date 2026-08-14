@@ -20,15 +20,27 @@
 
 import { spawn } from 'node:child_process';
 import net from 'node:net';
+import fs from 'node:fs';
 
 const SITE_HOST = 'estabaenlisboa.com';
 const isWindows = process.platform === 'win32';
 const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 
-// The 20 activities this smoke test guards, exactly as listed in
-// src/data/activities.ts. Not imported from the .ts file on purpose,
-// to keep this script dependency-free (plain Node + fetch) and runnable
-// without a TypeScript loader.
+// Qué fichas deben estar indexadas se lee del propio `activities.ts`, para que
+// este test siga la fuente de la verdad en vez de una expectativa fija: si una
+// ficha cambia de estado, el test lo exige sin tener que tocarlo. Se parsea con
+// expresiones regulares en vez de importarlo, para mantener el script sin
+// dependencias (Node pelado + fetch) y ejecutable sin cargador de TypeScript.
+const ACTIVITIES_SOURCE = fs.readFileSync(
+  new URL('../src/data/activities.ts', import.meta.url),
+  'utf8'
+);
+const INDEXABLE_BY_SLUG = new Map(
+  [...ACTIVITIES_SOURCE.matchAll(/slug:\s*'([a-z0-9-]+)',\s*\n\s*indexable:\s*(true|false),/g)]
+    .map((m) => [m[1], m[2] === 'true'])
+);
+
+// Las 20 fichas que este test vigila, tal cual están en src/data/activities.ts.
 const ACTIVITY_SLUGS = [
   'miradouro-santa-luzia',
   'miradouro-senhora-do-monte',
@@ -177,7 +189,13 @@ async function checkActivity(baseUrl, slug) {
   const expectedCanonical = `https://${SITE_HOST}/actividades/${slug}`;
   record(`${slug}: canonical correcto`, canonical === expectedCanonical, `canonical="${canonical}"`);
 
-  record(`${slug}: robots es "noindex, follow"`, robots === 'noindex, follow', `robots="${robots}"`);
+  const debeIndexar = INDEXABLE_BY_SLUG.get(slug);
+  const robotsEsperado = debeIndexar ? 'index, follow' : 'noindex, follow';
+  record(
+    `${slug}: robots es "${robotsEsperado}" (indexable: ${debeIndexar})`,
+    robots === robotsEsperado,
+    `robots="${robots}"`
+  );
   record(`${slug}: robots no es "noindex, nofollow"`, robots !== 'noindex, nofollow', `robots="${robots}"`);
 
   return {
@@ -186,7 +204,7 @@ async function checkActivity(baseUrl, slug) {
     title,
     robots,
     canonical,
-    ok: !notFoundTitle && canonical === expectedCanonical && robots === 'noindex, follow',
+    ok: !notFoundTitle && canonical === expectedCanonical && robots === robotsEsperado,
   };
 }
 
@@ -204,13 +222,18 @@ async function checkSitemap(baseUrl) {
     xml.includes(`https://${SITE_HOST}/actividades<`);
   record('/actividades sigue en el sitemap', catalogPresent);
 
-  const leaked = ACTIVITY_SLUGS.filter((slug) =>
-    xml.includes(`https://${SITE_HOST}/actividades/${slug}<`)
+  const enSitemap = (slug) => xml.includes(`https://${SITE_HOST}/actividades/${slug}<`);
+  const sobran = ACTIVITY_SLUGS.filter((s) => !INDEXABLE_BY_SLUG.get(s) && enSitemap(s));
+  const faltan = ACTIVITY_SLUGS.filter((s) => INDEXABLE_BY_SLUG.get(s) && !enSitemap(s));
+  record(
+    'ninguna ficha noindex está en el sitemap',
+    sobran.length === 0,
+    sobran.length ? `presentes indebidamente: ${sobran.join(', ')}` : 'ninguna presente'
   );
   record(
-    'ninguna de las 20 fichas está en el sitemap',
-    leaked.length === 0,
-    leaked.length ? `presentes indebidamente: ${leaked.join(', ')}` : 'ninguna presente'
+    'todas las fichas indexables están en el sitemap',
+    faltan.length === 0,
+    faltan.length ? `ausentes: ${faltan.join(', ')}` : `${ACTIVITY_SLUGS.filter((s) => INDEXABLE_BY_SLUG.get(s)).length} presentes`
   );
 }
 
