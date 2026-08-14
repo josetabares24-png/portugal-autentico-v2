@@ -25,7 +25,9 @@ export const blogImageMap: Record<string, string> = {
   'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
   'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
   'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
-  'mejores-miradores-lisboa': '/images/miradouro-atardecer.jpg',
+  // Misma foto que la portada visible del artículo (`articleHeroImages`), para
+  // que og:image, la imagen del schema y lo que ve el lector sean la misma.
+  'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
   'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
   'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
