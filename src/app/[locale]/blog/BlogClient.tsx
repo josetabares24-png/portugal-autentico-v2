@@ -199,14 +199,14 @@ export default function BlogClient() {
           )}
 
           {totalPaginas > 1 && (
-            <nav className="flex items-center justify-center gap-6 mt-16" aria-label="Paginación">
+            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-16" aria-label="Paginación">
               <button
                 onClick={() => { setPaginaActual(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 disabled={paginaActual === 1}
                 className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 aria-label="Página anterior"
               >
-                &larr; Anterior
+                &larr;<span className="hidden sm:inline"> Anterior</span>
               </button>
 
               <div className="flex items-center gap-2">
@@ -232,7 +232,7 @@ export default function BlogClient() {
                 className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 aria-label="Página siguiente"
               >
-                Siguiente &rarr;
+                <span className="hidden sm:inline">Siguiente </span>&rarr;
               </button>
             </nav>
           )}
@@ -293,14 +293,14 @@ export default function BlogClient() {
                 onChange={(e) => setNombre(e.target.value)}
                 className="w-full px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
               />
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="tu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
+                  className="flex-1 min-w-0 px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
                 />
                 <button
                   type="submit"
