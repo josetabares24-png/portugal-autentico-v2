@@ -14,6 +14,9 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+  'arquitectura-manuelina-lisboa': '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+  'belem-barrio-guia': '/images/actividades/torre-de-belem-lisboa.webp',
   'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'mejores-apps-lisboa': '/images/turista-tranvia-28.jpg',
@@ -26,10 +29,10 @@ export const blogImageMap: Record<string, string> = {
   'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
   'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
   'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
-  'pasteles-de-belem': '/images/IMG_1880.jpg',
+  'pasteles-de-belem': '/images/actividades/pasteis-de-belem.webp',
   'mejor-epoca-visitar-lisboa': '/images/miradouro-atardecer.jpg',
   'restaurantes-romanticos-lisboa': '/images/fado-tasca-noche.jpg',
-  'que-ver-cascais-desde-lisboa': '/images/estacion-sintra.jpg',
+  'que-ver-cascais-desde-lisboa': '/images/actividades/cascais-centro-historico.webp',
   'playas-cerca-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
   'donde-escuchar-fado-autentico': '/images/fado-tasca-noche.jpg',
   'presupuesto-viajar-lisboa': '/images/bica-cafe-mapa.jpg',

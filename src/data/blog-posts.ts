@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '25 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/IMG_1880.jpg',
+    imagen: '/images/actividades/pasteis-de-belem.webp',
   },
   {
     id: 'sintra-desde-lisboa',
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '12 Ene 2026',
     autor: 'José Tabares',
-    imagen: '/images/estacion-sintra.jpg',
+    imagen: '/images/actividades/cascais-centro-historico.webp',
   },
   {
     id: 'playas-cerca-lisboa',
@@ -295,7 +295,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '15 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
   },
   {
     id: 'azulejos-portugueses-historia',
@@ -385,7 +385,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Guías',
     fecha: '21 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/actividades/torre-de-belem-lisboa.webp',
   },
   {
     id: 'chiado-bairro-alto-guia',
@@ -439,6 +439,6 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '11 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
+    imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
 ];
