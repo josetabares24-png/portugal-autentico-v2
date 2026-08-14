@@ -14,6 +14,7 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'mejores-apps-lisboa': '/images/turista-tranvia-28.jpg',
   'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
@@ -35,7 +36,7 @@ export const blogImageMap: Record<string, string> = {
   'mejores-mercados-lisboa': '/images/barrio-calle-residencial.jpg',
   'donde-tomar-cafe-lisboa': '/images/bica-cafe-mapa.jpg',
   'miradores-atardecer-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
-  'que-comprar-lisboa-souvenirs': '/images/aldaba-puerta-lisboa.jpg',
+  'que-comprar-lisboa-souvenirs': '/images/lisboa-originales/postales-souvenirs-lisboa.jpg',
   'viajar-ninos-lisboa': '/images/parque-nacoes-torres-atardecer.jpg',
   'excursiones-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
 };

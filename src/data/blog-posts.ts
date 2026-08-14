@@ -250,7 +250,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Consejos',
     fecha: '25 Dic 2025',
     autor: 'José Tabares',
-    imagen: '/images/aldaba-puerta-lisboa.jpg',
+    imagen: '/images/lisboa-originales/postales-souvenirs-lisboa.jpg',
   },
   {
     id: 'viajar-ninos-lisboa',
@@ -277,7 +277,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '20 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-02.webp',
+    imagen: '/images/lisboa-originales/mural-historia-lisboa.jpg',
   },
   {
     id: 'terremoto-lisboa-1755',
