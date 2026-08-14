@@ -41,6 +41,19 @@ const nextConfig = {
       { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
       // Sintra slug antiguo → premium actual
       { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      // Fusiones editoriales: el contenido único del absorbido se trasladó al
+      // destino antes de redirigir, así que no se pierde nada.
+      { source: '/blog/barrios-lisboa-donde-alojarse', destination: '/blog/donde-alojarse-en-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/barrios-lisboa-donde-alojarse', destination: '/blog/donde-alojarse-en-lisboa', permanent: true },
+      { source: '/blog/miradores-atardecer-lisboa', destination: '/blog/mejores-miradores-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/miradores-atardecer-lisboa', destination: '/blog/mejores-miradores-lisboa', permanent: true },
+      { source: '/blog/lisboa-en-invierno', destination: '/blog/mejor-epoca-visitar-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/lisboa-en-invierno', destination: '/blog/mejor-epoca-visitar-lisboa', permanent: true },
+      { source: '/blog/viajar-ninos-lisboa', destination: '/itinerarios/lisboa-familiar', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/viajar-ninos-lisboa', destination: '/itinerarios/lisboa-familiar', permanent: true },
+      // El artículo de Semana Santa pierde el año para dejar de caducar.
+      { source: '/blog/semana-santa-lisboa-2026', destination: '/blog/semana-santa-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/semana-santa-lisboa-2026', destination: '/blog/semana-santa-lisboa', permanent: true },
       // Blog stubs → artículos completos
       { source: '/blog/tarjeta-lisboa-card-vale-pena', destination: '/blog/lisboa-card-vale-la-pena', permanent: true },
       { source: '/blog/como-ir-sintra-desde-lisboa', destination: '/blog/sintra-desde-lisboa', permanent: true },

@@ -335,6 +335,28 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Saldanha y Parque das Nações' },
       { tipo: 'parrafo', texto: 'Saldanha es menos turístico, pero tiene metro, avenidas amplias y una relación práctica entre precio, calma y conexión. Puede ser buena opción si no necesitas dormir en la postal clásica. Parque das Nações está más lejos del centro histórico, pero es ordenado, plano y útil para familias o eventos concretos.' },
       { tipo: 'parrafo', texto: 'No elegiría Parque das Nações para una primera visita corta centrada en Alfama, Baixa y Belém. Sí puede tener sentido si valoras comodidad, modernidad o llegas por motivos concretos a esa zona.' },
+      { tipo: 'subtitulo', texto: 'Intendente y Mouraria: la Lisboa que se está descubriendo' },
+      { tipo: 'parrafo', texto: 'Hace diez años, pocos extranjeros pedían alojamiento en Intendente o Mouraria. Eran barrios trabajadores, multiculturales, con una reputación que los guías de viaje preferían ignorar. Hoy son las zonas de mayor crecimiento en calidad de alojamiento y gastronomía de Lisboa, manteniendo todavía un carácter genuino que los barrios más turísticos han perdido.' },
+      { tipo: 'parrafo', texto: 'Mouraria es el barrio de origen del fado, más antiguo que Alfama en esa tradición. Sus tascas son de las más auténticas de la ciudad. Intendente, la plaza central del área, ha experimentado una transformación ordenada que ha traído cafés de especialidad, galerías y tiendas de diseño sin desplazar a los vecinos de siempre. Los precios son entre un 20 y un 30% más bajos que en el Chiado por un nivel de autenticidad mayor.' },
+      { tipo: 'lista', items: [
+        'Terreno: mezcla de zonas planas y pendientes moderadas',
+        'Transporte: metro Intendente y Martim Moniz, autobuses frecuentes',
+        'Precio medio alojamiento: 60-110 EUR por noche',
+        'Puntos fuertes: autenticidad, precios más bajos, gastronomía excelente',
+        'Puntos débiles: menos monumentos a pie, zona en transición',
+        'Mejor para: viajeros con experiencia, quienes buscan Lisboa fuera del circuito turístico'
+      ]},
+      { tipo: 'subtitulo', texto: 'Belém: la Lisboa monumental junto al río' },
+      { tipo: 'parrafo', texto: 'Belém no es exactamente un barrio en el sentido urbano: es una extensión al oeste de Lisboa, junto al Tajo, donde se concentran los grandes monumentos de la era de los Descubrimientos. La Torre de Belém, el Monasterio de los Jerónimos, el Padrão dos Descobrimentos, el Centro Cultural de Belém y los pastéis originales están todos en un radio de diez minutos a pie.' },
+      { tipo: 'parrafo', texto: 'El problema de alojarse en Belém es que cuando se hace de noche y los monumentos cierran, el barrio queda prácticamente muerto. Los restaurantes del paseo marítimo son correctos pero orientados al turismo de paso. Para explorar Alfama, el Chiado o el Bairro Alto necesitarás coger el tranvía 15E o un Uber. Es la zona perfecta para pasar el día, pero un poco solitaria para quedarse a dormir a menos que busques exactamente esa tranquilidad.' },
+      { tipo: 'lista', items: [
+        'Terreno: completamente plano, junto al río',
+        'Transporte: tranvía 15E al centro (25 min), autobuses, tren de cercanías',
+        'Precio medio alojamiento: 75-145 EUR por noche',
+        'Puntos fuertes: tranquilidad, monumentos a pie, paseo marítimo, sin ruido nocturno',
+        'Puntos débiles: alejado del centro animado, poco ambiente nocturno',
+        'Mejor para: familias con niños, amantes de la historia, quienes valoran la tranquilidad'
+      ]},
       { tipo: 'subtitulo', texto: 'Conexión con aeropuerto y transporte' },
       { tipo: 'parrafo', texto: 'Si llegas por avión, dormir cerca de metro puede ahorrarte estrés desde el primer minuto. La línea del aeropuerto conecta con Saldanha en unos 20 minutos según la información oficial del aeropuerto, pero muchas zonas requieren transbordo o un tramo a pie. Zonas como Saldanha, Marquês de Pombal, Baixa-Chiado u Oriente pueden funcionar bien según tu ruta y equipaje; no elijas solo por distancia en kilómetros.' },
       { tipo: 'parrafo', texto: 'Para viajes cortos, una zona bien conectada vale más que una zona ligeramente más bonita. Si vas a Belém, Cascais o Sintra, mira también la conexión con Cais do Sodré o Rossio. Dormir donde cada excursión empieza con dos transbordos suele cansar más que pagar un poco más por ubicación inteligente.' },
@@ -2053,9 +2075,9 @@ const articles: Record<string, Article> = {
       { tipo: "enlace", texto: "Muchos de estos monumentos se entienden mucho mejor con contexto histórico que leyendo el cartel de la entrada.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
-  "semana-santa-lisboa-2026": {
-    titulo: "Semana Santa en Lisboa 2026: Procesiones, Tradiciones y Qué Visitar",
-    seoTitle: "Semana Santa en Lisboa 2026",
+  "semana-santa-lisboa": {
+    titulo: "Semana Santa en Lisboa: procesiones, tradiciones y qué visitar",
+    seoTitle: "Semana Santa en Lisboa: qué ver y cuándo",
     descripcion: "La Semana Santa en Lisboa tiene una espiritualidad especial. Procesiones en Alfama, iglesias históricas, gastronomía de Cuaresma y cómo vivirlo como un local.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Calle estrecha del Bairro Alto de noche, con gente paseando entre las fachadas iluminadas",
@@ -2064,7 +2086,7 @@ const articles: Record<string, Article> = {
     minutos: 10,
     contenido: [
       { tipo: "parrafo", texto: "La Semana Santa en Lisboa es una experiencia diferente a la de otras capitales europeas. No tiene la espectacularidad visual de Sevilla ni la masividad de Roma, pero tiene algo que esas ciudades han perdido en parte: una espiritualidad auténtica y de barrio que no está pensada para los turistas sino para los propios vecinos." },
-      { tipo: "parrafo", texto: "En 2026, la Semana Santa cae entre el 29 de marzo y el 5 de abril. Semana Santa coincide con el inicio de la primavera lisboeta, cuando los jardines empiezan a florecer y la temperatura se vuelve perfecta para caminar. Combinar los actos religiosos con la exploración de la ciudad en este momento del año es uno de los planes más gratificantes que puedes hacer en Lisboa." },
+      { tipo: "parrafo", texto: "La Semana Santa es una fiesta móvil: cae entre finales de marzo y finales de abril según el año. En 2027 va del 21 al 28 de marzo, una de las más tempranas de las últimas décadas. Sea cual sea la fecha, siempre coincide con el inicio de la primavera lisboeta, cuando los jardines empiezan a florecer y la temperatura se vuelve perfecta para caminar. Combinar los actos religiosos con la exploración de la ciudad en este momento del año es uno de los planes más gratificantes que puedes hacer en Lisboa." },
       { tipo: "subtitulo", texto: "Las Procesiones de Lisboa" },
       { tipo: "parrafo", texto: "Las procesiones de Semana Santa en Lisboa son más recogidas que las del sur de España, pero tienen una solemnidad particular. Las más importantes salen de Alfama, el barrio más antiguo y más religioso de la ciudad. La Procissão do Senhor dos Passos da Graça, organizada por la Iglesia de Nossa Senhora da Graça, es una de las tradiciones más antiguas de Lisboa: recorre las calles de Alfama el Domingo de Ramos con imágenes barrocas llevadas en andas." },
       { tipo: "parrafo", texto: "La Procissão do Enterro, el Viernes Santo, recorre el Bairro Alto desde la iglesia de São Roque hasta la Basílica da Estrela. Más recogida y nocturna, es uno de los actos religiosos más emotivos del año en Lisboa. Para ver las procesiones, llega al menos una hora antes al punto de partida y sigue el recorrido a pie." },
@@ -2405,7 +2427,7 @@ const localImages: Record<string, string> = {
   'festivales-eventos-lisboa-2026': '/images/festival-sardinhas-noche.jpg',
   'lisboa-vs-porto': '/images/alfama-panoramica.jpg',
   'monumentos-de-lisboa': '/images/estatua-praca-lisboa.jpg',
-  'semana-santa-lisboa-2026': '/images/bairro-alto-calle-noche.jpg',
+  'semana-santa-lisboa': '/images/bairro-alto-calle-noche.jpg',
   'alfama-historia-guia': '/images/alfama-panoramica.jpg',
   'gastronomia-portuguesa-guia': '/images/tasca-da-graca.jpg',
   'fado-historia-origen': '/images/fado-tasca-noche.jpg',
