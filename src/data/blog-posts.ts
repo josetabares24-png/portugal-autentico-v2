@@ -367,7 +367,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Gastronomía',
     fecha: '23 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/IMG_1880.jpg',
+    imagen: '/images/tasca-da-graca.jpg',
   },
   {
     id: 'fado-historia-origen',

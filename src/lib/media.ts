@@ -52,7 +52,7 @@ export const tourImageMap: Record<number, string> = {
   3: '/images/estatua-praca-lisboa.jpg',
   4: '/images/festival-sardinhas-noche.jpg',
   5: '/images/sintra-palacio-turistas.jpg',
-  6: '/images/IMG_1880.jpg',
+  6: '/images/tranvia-turistico-tuktuk-baixa.jpg',
   7: '/images/fado-tasca-noche.jpg',
   8: '/images/aldaba-puerta-lisboa.jpg',
   9: '/images/funicular-bica-turistas.jpg',

@@ -35,6 +35,9 @@ const nextConfig = {
       { source: '/donde-dormir', destination: '/blog/donde-alojarse-en-lisboa', permanent: true },
       { source: '/:locale(en|ko|es)/donde-dormir', destination: '/blog/donde-alojarse-en-lisboa', permanent: true },
       { source: '/mapa', destination: '/itinerarios', permanent: true },
+      // La foto se renombró para que el nombre diga qué se ve en ella; la ruta
+      // anterior puede estar indexada en Google Imágenes.
+      { source: '/images/IMG_1880.jpg', destination: '/images/tranvia-turistico-tuktuk-baixa.jpg', permanent: true },
       { source: '/app/lisboa-1-dia', destination: '/itinerarios/lisboa-1-dia-lo-esencial', permanent: true },
       // Sintra slug antiguo → premium actual
       { source: '/itinerarios/lisboa-3-dias-sintra', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
