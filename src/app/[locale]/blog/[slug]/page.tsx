@@ -88,7 +88,7 @@ const articles: Record<string, Article> = {
     titulo: 'Cómo pagar en Portugal: efectivo, tarjetas, cajeros y cambio de moneda',
     descripcion:
       'Guía práctica y neutral para entender cómo se paga en Portugal: cuánto efectivo llevar, dónde se acepta tarjeta, cómo funcionan los cajeros y qué mirar antes de confirmar una operación.',
-    seoTitle: 'Cómo pagar en Portugal y evitar comisiones innecesarias',
+    seoTitle: "Cómo pagar en Portugal sin comisiones",
     metaDescription:
       'Aprende cómo pagar en Portugal, utilizar tarjetas y cajeros, evitar conversiones desfavorables y gestionar mejor tus euros durante el viaje.',
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
@@ -192,7 +192,7 @@ const articles: Record<string, Article> = {
   'que-hacer-en-lisboa-en-3-dias': {
     titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
     descripcion: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',
-    seoTitle: 'Qué hacer en Lisboa en 3 días | Itinerario local',
+    seoTitle: "Qué hacer en Lisboa en 3 días",
     metaDescription: 'Ruta de 3 días por Lisboa con centro histórico, Belém, miradores, transporte, planes si llueve y errores que conviene evitar.',
     imagen: '/images/alfama-panoramica.jpg',
     imageAlt: 'Calle inclinada de Lisboa con azulejos y vistas al Tajo al fondo',
@@ -663,6 +663,7 @@ const articles: Record<string, Article> = {
   },
   "donde-comer-barato-lisboa": {
     titulo: "Dónde comer barato en Lisboa sin renunciar al sabor",
+    seoTitle: "Dónde comer barato en Lisboa",
     descripcion: "Tascas de barrio, mercados escondidos y rincones donde los lisboetas almuerzan a diario. Platos caseros por menos de lo que cuesta un café en la Baixa.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     categoria: "Gastronomía",
@@ -854,6 +855,7 @@ const articles: Record<string, Article> = {
   },
   "barrios-lisboa-donde-alojarse": {
     titulo: "Dónde alojarse en Lisboa: guía honesta barrio a barrio",
+    seoTitle: "Dónde alojarse en Lisboa | Barrio a barrio",
     descripcion: "Analizamos cada barrio de Lisboa para ayudarte a elegir dónde quedarte: Baixa, Alfama, Bairro Alto, Príncipe Real, Intendente y Belém. Precios reales, pros, contras y para quién es ideal cada zona.",
     imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200",
     categoria: "Alojamiento",
@@ -940,6 +942,7 @@ const articles: Record<string, Article> = {
   },
   "pasteles-de-belem": {
     titulo: "Pastéis de Belém: historia, secretos y la forma correcta de comerlos",
+    seoTitle: "Pastéis de Belém | Historia y secretos",
     descripcion: "La receta que llevan custodiando desde 1837, por qué no es lo mismo que un pastel de nata cualquiera, y cómo evitar la cola sin renunciar a la experiencia.",
     imagen: "/images/actividades/pasteis-de-belem.webp",
     imageAlt: "Cuatro pastéis de Belém en un plato, junto a la caja azul de la pastelería",
@@ -1039,7 +1042,7 @@ const articles: Record<string, Article> = {
   },
     "aeropuerto-lisboa-al-centro": {
     titulo: "Cómo ir del aeropuerto de Lisboa al centro: metro, Aerobus, taxi o Uber",
-    seoTitle: "Del aeropuerto de Lisboa al centro | 4 opciones",
+    seoTitle: "Del aeropuerto de Lisboa al centro",
     metaDescription: "Metro, Aerobus, taxi y Uber comparados: cuánto cuesta cada uno, cuánto tarda y cuál conviene según tu equipaje y tu hora de llegada.",
     descripcion: "Todas las opciones para llegar del aeropuerto de Lisboa al centro explicadas con precios reales: cuál es la más rápida, la más barata y la mejor si vas con maletas.",
     imagen: "/images/funicular-bica-turistas.jpg",
@@ -1069,6 +1072,7 @@ const articles: Record<string, Article> = {
   },
   "restaurantes-romanticos-lisboa": {
     titulo: "Los restaurantes más románticos de Lisboa para una noche inolvidable",
+    seoTitle: "Restaurantes románticos en Lisboa",
     descripcion: "Terrazas con vistas al río, cenas íntimas con fado, y rincones donde el ambiente y la comida crean momentos perfectos para parejas.",
     imagen: "/images/bairro-alto-calle-noche.jpg",
     categoria: "Gastronomía",
@@ -1116,6 +1120,7 @@ const articles: Record<string, Article> = {
   },
   "que-ver-cascais-desde-lisboa": {
     titulo: "Cascais: el pueblo costero perfecto para escapar de Lisboa",
+    seoTitle: "Cascais desde Lisboa | Qué ver",
     descripcion: "A solo 30 minutos en tren, Cascais combina playas doradas, palacios históricos y un paseo marítimo que invita a quedarse. Guía completa para un día perfecto.",
     imagen: "/images/actividades/cascais-centro-historico.webp",
     imageAlt: "Letras de Cascais sobre la calçada portuguesa, frente al ayuntamiento del centro histórico",
@@ -1159,6 +1164,7 @@ const articles: Record<string, Article> = {
   },
   "playas-cerca-lisboa": {
     titulo: "Las mejores playas cerca de Lisboa: guía completa de la costa",
+    seoTitle: "Las mejores playas cerca de Lisboa",
     descripcion: "Arenas doradas, agua cristalina y acantilados dramáticos a menos de una hora. Desde Cascais hasta la Arrábida, todas las opciones para escapar del calor urbano.",
     imagen: "/images/mirador-tajo-amarras-atardecer.jpg",
     imageAlt: "Atardecer sobre el Tajo desde un muelle, con el puente 25 de Abril a lo lejos",
@@ -1196,6 +1202,7 @@ const articles: Record<string, Article> = {
   },
   "donde-escuchar-fado-autentico": {
     titulo: "Dónde escuchar fado auténtico en Lisboa: guía para encontrar el verdadero",
+    seoTitle: "Dónde escuchar fado auténtico",
     descripcion: "El fado es el alma de Lisboa, pero no todo lo que se vende como fado lo es. Aprende a distinguir el auténtico del turístico y dónde encontrarlo.",
     imagen: "/images/miradouro-grupo-atardecer.jpg",
     categoria: "Cultura",
@@ -1238,6 +1245,7 @@ const articles: Record<string, Article> = {
   },
   "presupuesto-viajar-lisboa": {
     titulo: "Presupuesto real para viajar a Lisboa: análisis honesto día a día",
+    seoTitle: "Presupuesto para viajar a Lisboa",
     descripcion: "Cuánto cuesta realmente comer, dormir y moverse en Lisboa. Desglose detallado de precios reales en 2024 para que planifiques sin sorpresas.",
     imagen: "/images/alfama-callejon.jpg",
     categoria: "Planificación",
@@ -1331,6 +1339,7 @@ const articles: Record<string, Article> = {
   },
   "mejores-mercados-lisboa": {
     titulo: "Los mejores mercados de Lisboa: donde la ciudad cobra vida",
+    seoTitle: "Los mejores mercados de Lisboa",
     descripcion: "Desde el Time Out Market hasta mercados de barrio escondidos. Comida fresca, artesanía local y la vida auténtica de Lisboa en cada rincón.",
     imagen: "/images/barrio-calle-residencial.jpg",
     imageAlt: "Dos viajeros caminando por una calle de Lisboa con fachadas de azulejo",
@@ -1385,6 +1394,7 @@ const articles: Record<string, Article> = {
   },
   "donde-tomar-cafe-lisboa": {
     titulo: "Dónde tomar el mejor café en Lisboa: guía del café portugués",
+    seoTitle: "Dónde tomar café en Lisboa",
     descripcion: "El café en Portugal es un ritual. Desde el bica tradicional hasta cafeterías de especialidad. Dónde encontrar el mejor café y cómo pedirlo como un local.",
     imagen: "/images/bica-cafe-mapa.jpg",
     categoria: "Gastronomía",
@@ -1430,6 +1440,7 @@ const articles: Record<string, Article> = {
   },
   "miradores-atardecer-lisboa": {
     titulo: "Los mejores miradores para el atardecer en Lisboa: donde el sol se despide",
+    seoTitle: "Miradores de Lisboa al atardecer",
     descripcion: "Dónde ver el mejor sunset de Lisboa. Horarios exactos, ubicaciones y secretos de local para disfrutar el momento mágico del día.",
     imagen: "/images/miradouro-grupo-atardecer.jpg",
     categoria: "Guías",
@@ -1522,6 +1533,7 @@ const articles: Record<string, Article> = {
   },
   "viajar-ninos-lisboa": {
     titulo: "Viajar con niños a Lisboa: guía completa para familias",
+    seoTitle: "Viajar a Lisboa con niños",
     descripcion: "Actividades perfectas para pequeños exploradores, restaurantes kid-friendly, y consejos prácticos para que toda la familia disfrute Lisboa.",
     imagen: "/images/ventana-alfama-tajo.jpg",
     categoria: "Consejos",
@@ -1573,6 +1585,7 @@ const articles: Record<string, Article> = {
   },
   "excursiones-desde-lisboa": {
     titulo: "Las mejores excursiones desde Lisboa: escapadas de un día perfectas",
+    seoTitle: "Excursiones de un día desde Lisboa",
     descripcion: "Sintra, Óbidos, Nazaré y más. Cómo llegar, qué ver y cuánto tiempo necesitas para cada excursión desde la capital.",
     imagen: "/images/estacion-sintra.jpg",
     categoria: "Guías",
@@ -1735,6 +1748,7 @@ const articles: Record<string, Article> = {
   },
   "sintra-desde-lisboa": {
     titulo: "Sintra desde Lisboa: Guía Completa para un Día Perfecto",
+    seoTitle: "Sintra desde Lisboa | Guía de un día",
     descripcion: "Cómo llegar, el orden ideal de visitas para evitar colas, entradas con descuento, restaurantes y trucos que los guías no cuentan.",
     imagen: "https://images.unsplash.com/photo-1497802176012-0ff3191ce56a?w=1200",
     categoria: "Guías",
@@ -1804,6 +1818,7 @@ const articles: Record<string, Article> = {
   },
   "terremoto-lisboa-1755": {
     titulo: "El Terremoto de Lisboa de 1755: La Catástrofe que Rehízo Europa",
+    seoTitle: "El terremoto de Lisboa de 1755",
     descripcion: "El 1 de noviembre de 1755, un terremoto de magnitud 8,5 destruyó Lisboa. Así fue el desastre, la reconstrucción y el impacto filosófico en todo el mundo.",
     imagen: "/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png",
     imageAlt: "Panel de azulejos que representa el Terreiro do Paço a comienzos del siglo XVIII, con soldados y carruajes en la plaza, tal como era antes del terremoto de 1755",
@@ -1837,6 +1852,7 @@ const articles: Record<string, Article> = {
   },
   "descubrimientos-portugueses-lisboa": {
     titulo: "La Era de los Descubrimientos: Cómo Lisboa Dominó el Mundo",
+    seoTitle: "La era de los Descubrimientos",
     descripcion: "En el siglo XV, Lisboa era la capital del mundo. Vasco de Gama, Cabral, Magallanes: todo partió desde aquí. La historia de cuando Portugal cambió la historia de la humanidad.",
     imagen: "/images/actividades/passeio-barco-rio-tejo-lisboa.webp",
     imageAlt: "Velero navegando por el Tajo frente a Lisboa, con la Praça do Comércio y la colina del Castelo al fondo",
@@ -1867,6 +1883,7 @@ const articles: Record<string, Article> = {
   },
   "azulejos-portugueses-historia": {
     titulo: "Los Azulejos Portugueses: Arte, Historia y Dónde Ver los Mejores en Lisboa",
+    seoTitle: "Azulejos portugueses | Dónde verlos",
     descripcion: "Los azulejos son el alma visible de Portugal. Su historia de 500 años, técnicas, museos y los mejores rincones de Lisboa donde admirarlos.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Cultura",
@@ -1918,6 +1935,7 @@ const articles: Record<string, Article> = {
   },
   "festivales-eventos-lisboa-2026": {
     titulo: "Festivales y Eventos en Lisboa 2026: Calendario Completo",
+    seoTitle: "Festivales y eventos en Lisboa 2026",
     descripcion: "Santo António, NOS Alive, Festas de Lisboa, Arraiais y mucho más. El calendario completo de eventos y festivales de Lisboa para 2026.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Planificación",
@@ -1971,6 +1989,7 @@ const articles: Record<string, Article> = {
   },
   "monumentos-de-lisboa": {
     titulo: "Los 15 Monumentos de Lisboa que No Te Puedes Perder",
+    seoTitle: "Los monumentos de Lisboa que no fallan",
     descripcion: "Torre de Belém, Jerónimos, Castelo de São Jorge, el Elevador de Santa Justa... Los monumentos imprescindibles con horarios, precios y cómo evitar las colas.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Guías",
@@ -2011,6 +2030,7 @@ const articles: Record<string, Article> = {
   },
   "semana-santa-lisboa-2026": {
     titulo: "Semana Santa en Lisboa 2026: Procesiones, Tradiciones y Qué Visitar",
+    seoTitle: "Semana Santa en Lisboa 2026",
     descripcion: "La Semana Santa en Lisboa tiene una espiritualidad especial. Procesiones en Alfama, iglesias históricas, gastronomía de Cuaresma y cómo vivirlo como un local.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Calle estrecha del Bairro Alto de noche, con gente paseando entre las fachadas iluminadas",
@@ -2034,6 +2054,7 @@ const articles: Record<string, Article> = {
   },
   "alfama-historia-guia": {
     titulo: "Alfama: Historia, Callejuelas y Secretos del Barrio Más Antiguo de Lisboa",
+    seoTitle: "Alfama | Historia y guía del barrio",
     descripcion: "Alfama tiene casi mil años sin cambiar. Sus callejuelas empinadas, el fado que sale de las ventanas y los gatos en las escaleras cuentan una historia que ningún museo puede contar.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Guías",
@@ -2064,6 +2085,7 @@ const articles: Record<string, Article> = {
   },
   "gastronomia-portuguesa-guia": {
     titulo: "Gastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
+    seoTitle: "Gastronomía portuguesa | 20 platos",
     descripcion: "Bacalhau, pastéis de nata, bifanas, caldo verde, amêijoas à bulhão pato... La guía definitiva de la cocina portuguesa con dónde comer cada plato en Lisboa.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     imageAlt: "Calle de la Baixa de Lisboa con un autobús turístico y viajeros cruzando",
@@ -2103,6 +2125,7 @@ const articles: Record<string, Article> = {
   },
   "fado-historia-origen": {
     titulo: "El Fado: Historia, Origen y Por Qué Es el Alma de Lisboa",
+    seoTitle: "El fado | Historia y origen",
     descripcion: "El fado no es folklore de postal. Es una forma de estar en el mundo que nació en las tabernas de Alfama en el siglo XIX. Su historia, sus cantores y cómo escucharlo de verdad.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Cultura",
@@ -2128,6 +2151,7 @@ const articles: Record<string, Article> = {
   },
   "belem-barrio-guia": {
     titulo: "Belém: El Barrio de los Descubrimientos y los Pastéis de Nata",
+    seoTitle: "Belém | Guía del barrio y qué ver",
     descripcion: "Belém es el barrio donde Portugal cambió la historia del mundo. Jerónimos, Torre de Belém, Padrão dos Descobrimentos y la pastelería más famosa del mundo. Cómo visitarlo sin prisas.",
     imagen: "/images/actividades/torre-de-belem-lisboa.webp",
     imageAlt: "Torre de Belém junto al Tajo, con el paseo ribereño en primer plano",
@@ -2156,6 +2180,7 @@ const articles: Record<string, Article> = {
   },
   "chiado-bairro-alto-guia": {
     titulo: "Chiado y Bairro Alto: Cafés Literarios, Vida Nocturna y Arte",
+    seoTitle: "Chiado y Bairro Alto | Guía del barrio",
     descripcion: "El Chiado es el barrio intelectual de Lisboa. El Bairro Alto, su vecino nocturno. Los mejores cafés con historia, las librerías que vale la pena conocer y dónde cenar antes de salir.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Guías",
@@ -2179,6 +2204,7 @@ const articles: Record<string, Article> = {
   },
   "mouraria-barrio-guia": {
     titulo: "Mouraria: El Barrio Más Multicultural y Auténtico de Lisboa",
+    seoTitle: "Mouraria | Guía del barrio en Lisboa",
     descripcion: "Mouraria fue el barrio moro de Lisboa durante siglos. Hoy es el lugar más multicultural, más auténtico y más gastronómico de la ciudad. Qué ver, comer y sentir.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Tejados de Alfama y el Tajo al fondo, en la Lisboa antigua vecina de Mouraria",
@@ -2202,6 +2228,7 @@ const articles: Record<string, Article> = {
   },
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
+    seoTitle: "Vinos portugueses | Guía para entender",
     descripcion: "Portugal tiene uno de los patrimonios vinícolas más ignorados de Europa. Vinho verde, vino de Oporto, Douro, Alentejo, Madeira... qué pedir, cómo pedirlo y dónde beberlo en Lisboa.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     categoria: "Gastronomía",
@@ -2229,7 +2256,7 @@ const articles: Record<string, Article> = {
   },
   "tram-28-historia-guia": {
     titulo: "El Tranvía 28: Historia, Ruta y Trucos para Usarlo sin Colas",
-    seoTitle: "Tranvía 28 de Lisboa | Ruta y cómo evitar colas",
+    seoTitle: "Tranvía 28 de Lisboa | Ruta y colas",
     metaDescription: "Qué recorre el tranvía 28, a qué hora subir para encontrar sitio, dónde empezar el trayecto y cuándo compensa cambiar al 12.",
     descripcion: "El tranvía 28 lleva más de 100 años subiendo las mismas cuestas de Alfama. Es el símbolo de Lisboa y también su trampa turística más popular. La historia real y cómo aprovecharlo.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
@@ -2258,6 +2285,7 @@ const articles: Record<string, Article> = {
   },
   "bacalhau-plato-portugal": {
     titulo: "El Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa",
+    seoTitle: "El bacalhau | Guía del plato portugués",
     descripcion: "Un pescado noruego, un país atlántico y 500 años de historia marítima. Cómo el bacalhau se convirtió en el plato nacional de Portugal y las mejores recetas que tienes que probar.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     categoria: "Gastronomía",
@@ -2285,6 +2313,7 @@ const articles: Record<string, Article> = {
   },
   "arquitectura-manuelina-lisboa": {
     titulo: "La Arquitectura Manuelina: El Arte Único que Nació en Lisboa",
+    seoTitle: "Arquitectura manuelina en Lisboa",
     descripcion: "El estilo manuelino es la respuesta artística de Portugal a los descubrimientos. Cuerdas de piedra, cruz de Cristo, armillas estelares. Dónde verlo en Lisboa y qué significa cada detalle.",
     imagen: "/images/actividades/mosteiro-dos-jeronimos-claustro.webp",
     imageAlt: "Claustro del Mosteiro dos Jerónimos, con la piedra labrada característica del estilo manuelino",
@@ -2445,14 +2474,42 @@ function toAbsoluteUrl(pathOrUrl: string) {
   return `${SITE_URL}${pathOrUrl}`;
 }
 
+/**
+ * Título para buscadores cuando el artículo no define el suyo.
+ *
+ * Antes añadía " 2026 | Guía local" a cada título, y la plantilla del layout
+ * añade además " | Estaba en Lisboa". Eran 37 caracteres de relleno fijo que
+ * dejaban 43 de los 48 artículos por encima del corte de Google, de modo que
+ * lo que se truncaba era el tema del artículo y lo que sobrevivía, la
+ * coletilla.
+ *
+ * No se recorta aquí a propósito. Un título que llega al buscador con puntos
+ * suspensivos se lee como algo a medio hacer; Google ya corta por ancho real
+ * y lo hace mejor. Lo que sí se quita es el relleno, que no aportaba nada.
+ *
+ * El año tampoco se añade solo: los artículos que de verdad van de un año lo
+ * llevan en su propio título, y ponérselo al resto envejece el contenido.
+ */
 function getSeoTitle(title: string) {
   const hasLisboa = title.toLowerCase().includes('lisboa');
-  const base = hasLisboa ? title : `${title} en Lisboa`;
-  return `${base} 2026 | Guía local`;
+  return hasLisboa ? title : `${title} en Lisboa`;
 }
 
+/**
+ * Descripción para buscadores cuando el artículo no define la suya.
+ *
+ * Añadía una frase fija de 78 caracteres a cada descripción, idéntica en todo
+ * el blog, que dejaba a la mayoría por encima de 200 caracteres.
+ *
+ * Aquí sí se recorta, pero por final de frase: una descripción cortada a mitad
+ * de palabra queda peor que una más corta pero entera. Si ninguna frase cabe,
+ * se deja tal cual y que corte el buscador.
+ */
 function getSeoDescription(description: string) {
-  return `${description} Consejos locales, horarios y recomendaciones reales para planificar tu viaje.`;
+  if (description.length <= 160) return description;
+  const corte = description.slice(0, 160);
+  const fin = Math.max(corte.lastIndexOf('. '), corte.lastIndexOf('? '), corte.lastIndexOf('! '));
+  return fin > 80 ? description.slice(0, fin + 1) : description;
 }
 
 function resolveBlogImage(slug: string, image?: string) {
