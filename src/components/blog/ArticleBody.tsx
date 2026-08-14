@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Link from 'next/link';
 import type {
   Article,
   ArticleCta,
@@ -160,6 +161,23 @@ export function ArticleBody({
               <ArticleCallout key={index} label="Antes de ir">
                 <p>{bloque.texto}</p>
               </ArticleCallout>
+            );
+          }
+          /*
+           * Sugerencia dentro del texto, para los free tours. Va deliberadamente
+           * sobria —un filete lateral y un enlace, sin botón ni fondo— porque
+           * aparece en mitad de la lectura y un banner ahí resta credibilidad
+           * al artículo. Enlaza siempre a una sección de la web propia, nunca
+           * a un afiliado directo.
+           */
+          if (bloque.tipo === 'enlace' && bloque.href && bloque.label) {
+            return (
+              <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
+                {bloque.texto ? <p>{bloque.texto}</p> : null}
+                <Link href={bloque.href} className="article-inline-cta-link">
+                  {bloque.label} →
+                </Link>
+              </aside>
             );
           }
           return null;

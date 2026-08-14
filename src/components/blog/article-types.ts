@@ -4,6 +4,15 @@ export type ArticleBlock = {
   items?: string[];
   imagen?: string;
   caption?: string;
+  /**
+   * Destino del bloque `enlace`, una llamada discreta dentro del cuerpo del
+   * artículo. Se usa para los free tours, apuntando a la sección de la ruta
+   * que corresponda; nunca a un enlace de afiliado directo, para no llenar
+   * los artículos de salientes de afiliación.
+   */
+  href?: string;
+  /** Texto del enlace del bloque `enlace`. */
+  label?: string;
 };
 
 export type ArticleLink = {
