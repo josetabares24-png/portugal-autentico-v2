@@ -20,6 +20,19 @@ const BUDGET_OPTIONS: Array<{ id: BudgetType; label: string; desc: string }> = [
   { id: 'high', label: 'Confort', desc: 'Hoteles boutique y gourmet' },
 ];
 
+/*
+ * Nota sobre free tours dentro del bloque de actividades, distinta según el
+ * perfil. Para "Mochilero" no es una sugerencia comercial: con 10 € al día
+ * para actividades, un free tour es la respuesta correcta a la pregunta que
+ * la persona acaba de hacer. Para los otros dos perfiles se plantea como lo
+ * que es, una forma de orientarse el primer día.
+ */
+const FREE_TOUR_NOTA: Record<BudgetType, string> = {
+  low: 'Con este presupuesto para actividades, un free tour es la forma más rentable de empezar: pagas al final lo que consideres y te llevas la orientación que hace que el resto de días cundan más.',
+  mid: 'Si es tu primer día, un free tour por el centro te sitúa la ciudad antes de gastar en entradas. Se paga al final lo que consideres.',
+  high: 'Aunque no sea la parte más cara de tu viaje, un free tour el primer día te ahorra las horas de prueba y error que cuesta entender cómo encaja Lisboa.',
+};
+
 const BUDGETS: Record<BudgetType, { alojamiento: number; comida: number; transporte: number; actividades: number }> = {
   low: { alojamiento: 20, comida: 25, transporte: 7, actividades: 10 },
   mid: { alojamiento: 60, comida: 40, transporte: 7, actividades: 25 },
@@ -225,6 +238,27 @@ export default function PlanificaTuViajePage() {
               <ActivityCard key={activity.slug} activity={activity} />
             ))}
           </div>
+
+          {/*
+            Va después de las actividades, no antes: primero la respuesta que
+            la persona ha pedido, y luego esto como complemento. Filete lateral
+            y enlace, sin botón ni fondo de color, para que no compita con las
+            fichas. Enlaza a la sección propia, nunca a un afiliado directo.
+          */}
+          <aside className="mt-14 border-l-2 border-terracotta pl-5 sm:pl-6">
+            <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">
+              Free tours
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-3 max-w-2xl">
+              {FREE_TOUR_NOTA[tipo]}
+            </p>
+            <Link
+              href="/free-tours-lisboa"
+              className="text-terracotta underline underline-offset-2 hover:no-underline"
+            >
+              Comparar free tours por zona →
+            </Link>
+          </aside>
         </div>
       </section>
 

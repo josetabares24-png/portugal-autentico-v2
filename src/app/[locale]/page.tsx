@@ -167,62 +167,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── LOS BARRIOS ── */}
-      <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-display italic text-night mb-14"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-            Los barrios
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {barrios.map((barrio) => (
-              <Link key={barrio.nombre} href={barrio.href} className="group block">
-                <div className="relative aspect-square overflow-hidden mb-3 rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300">
-                  <Image
-                    src={barrio.imagen}
-                    alt={barrio.nombre}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="font-display italic text-night group-hover:text-terracotta transition-colors"
-                  style={{ fontSize: '1.1rem', fontWeight: 400 }}>
-                  {barrio.nombre}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LIBRETA ── */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="max-w-2xl mx-auto px-6 md:px-10">
-          <h2 className="font-display italic text-night mb-12"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-            Libreta
-          </h2>
-
-          <ul className="space-y-7">
-            {libreta.map((nota, i) => (
-              <li key={i} className="flex gap-5 items-start">
-                <span className="text-taupe font-body font-light text-sm mt-1 flex-shrink-0 w-5 text-right">{i + 1}</span>
-                {nota.href ? (
-                  <Link href={nota.href} className="text-night font-body font-light text-lg leading-relaxed border-b border-taupe/40 hover:border-terracotta hover:text-terracotta transition-colors">
-                    {nota.texto}
-                  </Link>
-                ) : (
-                  <p className="text-night font-body font-light text-lg leading-relaxed">{nota.texto}</p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ── FREE TOURS ── */}
       <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
         <div className="max-w-5xl mx-auto px-6 md:px-10">
@@ -255,6 +199,62 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── LOS BARRIOS ── */}
+      <section className="py-20 md:py-28 bg-cream">
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
+          <h2 className="font-display italic text-night mb-14"
+            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
+            Los barrios
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            {barrios.map((barrio) => (
+              <Link key={barrio.nombre} href={barrio.href} className="group block">
+                <div className="relative aspect-square overflow-hidden mb-3 rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300">
+                  <Image
+                    src={barrio.imagen}
+                    alt={barrio.nombre}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="font-display italic text-night group-hover:text-terracotta transition-colors"
+                  style={{ fontSize: '1.1rem', fontWeight: 400 }}>
+                  {barrio.nombre}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LIBRETA ── */}
+      <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
+        <div className="max-w-2xl mx-auto px-6 md:px-10">
+          <h2 className="font-display italic text-night mb-12"
+            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
+            Libreta
+          </h2>
+
+          <ul className="space-y-7">
+            {libreta.map((nota, i) => (
+              <li key={i} className="flex gap-5 items-start">
+                <span className="text-taupe font-body font-light text-sm mt-1 flex-shrink-0 w-5 text-right">{i + 1}</span>
+                {nota.href ? (
+                  <Link href={nota.href} className="text-night font-body font-light text-lg leading-relaxed border-b border-taupe/40 hover:border-terracotta hover:text-terracotta transition-colors">
+                    {nota.texto}
+                  </Link>
+                ) : (
+                  <p className="text-night font-body font-light text-lg leading-relaxed">{nota.texto}</p>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
