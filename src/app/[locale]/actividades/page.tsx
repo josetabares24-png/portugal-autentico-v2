@@ -101,49 +101,15 @@ export default function ActividadesPage() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------------
-          Selección editorial de actividades reservables (GetYourGuide).
+      {/* Filtros.
 
-          Va aquí, entre el bloque de free tours y los filtros, y no dentro
-          del catálogo, por dos razones. Una: el catálogo lo gobiernan los
-          filtros de categoría y precio, y estas tarjetas no responden a
-          ellos; mezclarlas rompería la promesa de que el contador de abajo
-          dice cuántas actividades hay. Y dos: el bloque de free tours ya
-          establece que antes de la rejilla van recomendaciones nuestras.
-
-          Qué actividades salen y en qué orden se decide en
-          `src/data/getyourguide.ts`, no aquí.
-          ------------------------------------------------------------------ */}
-      <section className="bg-background-light py-12 border-b border-border-soft">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-6">
-            Actividades recomendadas
-          </h2>
-
-          {/* Misma geometría que la rejilla del catálogo: `max-w-6xl` con
-              `px-6` y `gap-8` deja columnas de ~347 px en desktop, que es el
-              tamaño de tarjeta que buscábamos sin forzar ningún ancho. Las
-              alturas se igualan por fila desde el propio widget. */}
-          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {GYG_ACTIVITY_WIDGETS.map((activity) => (
-              <GetYourGuideWidget
-                key={activity.campaign}
-                campaign={activity.campaign}
-                tourIds={activity.tourId}
-                fallbackHref={activity.fallbackHref}
-              />
-            ))}
-          </div>
-
-          <AffiliateDisclosure
-            variant="compact"
-            className="mt-8 max-w-xl text-text-secondary"
-          />
-        </div>
-      </section>
-
-      {/* Filtros */}
-      <section className="bg-background-light py-4 border-b border-border-soft sticky top-16 z-10">
+          Fija sólo de tablet en adelante. En un móvil de 375 px esta barra
+          mide 235 px y, sumada a la cabecera, dejaba 300 px de pantalla
+          permanentemente ocupados: el 37 % del alto, y hasta el 45 % en un
+          móvil de 360. La culpa es de las ocho categorías, que no caben en
+          una línea y se parten en varias. Suelta en móvil, se recupera esa
+          pantalla y los filtros siguen donde estaban. */}
+      <section className="bg-background-light py-4 border-b border-border-soft static sm:sticky sm:top-16 z-10">
         <div className="max-w-6xl mx-auto px-6 space-y-3">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Categoría</p>
           <div className="flex flex-wrap gap-1.5">
@@ -198,6 +164,52 @@ export default function ActividadesPage() {
           ) : (
             <p className="text-text-secondary">No hay actividades con estos filtros todavía.</p>
           )}
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
+          Selección editorial de actividades reservables (GetYourGuide).
+
+          Va DESPUÉS del catálogo, y es deliberado. Esta página se titula
+          «Lisboa sin gastar mucho» y promete precio real en cada ficha;
+          estas tarjetas son de pago y no muestran precio, así que ponerlas
+          por encima contradecía la promesa nada más entrar. Además el
+          bloque de free tours ya ocupa la zona de arriba: con estas seis
+          delante, el visitante se comía dos bloques de afiliados de dos
+          empresas distintas antes de leer una sola línea nuestra.
+
+          Tampoco van dentro del catálogo: lo gobiernan los filtros de
+          categoría y precio, y estas no responden a ellos. Mezclarlas
+          rompería la promesa de que el contador dice cuántas hay.
+
+          Qué actividades salen y en qué orden se decide en
+          `src/data/getyourguide.ts`, no aquí.
+          ------------------------------------------------------------------ */}
+      <section className="bg-background-light pb-12 md:pb-16">
+        <div className="max-w-6xl mx-auto px-6 border-t border-border-soft pt-12">
+          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-6">
+            Actividades recomendadas
+          </h2>
+
+          {/* Misma geometría que la rejilla del catálogo: `max-w-6xl` con
+              `px-6` y `gap-8` deja columnas de ~347 px en desktop, que es el
+              tamaño de tarjeta que buscábamos sin forzar ningún ancho. Las
+              alturas se igualan por fila desde el propio widget. */}
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {GYG_ACTIVITY_WIDGETS.map((activity) => (
+              <GetYourGuideWidget
+                key={activity.campaign}
+                campaign={activity.campaign}
+                tourIds={activity.tourId}
+                fallbackHref={activity.fallbackHref}
+              />
+            ))}
+          </div>
+
+          <AffiliateDisclosure
+            variant="compact"
+            className="mt-8 max-w-xl text-text-secondary"
+          />
         </div>
       </section>
 
