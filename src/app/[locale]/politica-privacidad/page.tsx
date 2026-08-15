@@ -77,6 +77,7 @@ Según el tipo de dato, puede ser tratado por:
 - **Brevo:** Envío de emails de contacto y newsletter, si te suscribes.
 - **Clerk:** Autenticación del panel de administración.
 - **Google Analytics:** Análisis de tráfico web (con IP anonimizada), solo si aceptas las cookies analíticas.
+- **GetYourGuide:** Módulos de reserva de actividades incrustados en algunas páginas, solo si aceptas las cookies. Al cargarse reciben tu dirección IP y los datos de navegación propios de cualquier contenido incrustado, y registran que la visita llega desde este sitio para atribuir la reserva.
 - **Vercel:** Alojamiento y ejecución del sitio web.
 
 No vendemos tus datos a terceros con fines de marketing.
