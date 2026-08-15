@@ -138,3 +138,32 @@ export const GYG_ARTICLE_LINKS = {
 } as const;
 
 export type GetYourGuideArticleLink = keyof typeof GYG_ARTICLE_LINKS;
+
+/**
+ * Qué ficha de actividad enseña qué enlace.
+ *
+ * Sólo aparecen las fichas con un producto realmente equivalente. Las otras
+ * catorce no llevan nada: es mejor que una ficha no tenga CTA a que tenga uno
+ * que lleva a otra cosa.
+ *
+ * `label` describe lo que el enlace vende de verdad, no lo que cuenta la
+ * ficha. Importa sobre todo en Sintra: la ficha habla de Pena y Regaleira, y
+ * el enlace sólo vende la entrada a Pena. Prometer «reserva esta actividad»
+ * ahí sería mentir.
+ */
+export const GYG_ACTIVITY_CTA: Record<
+  string,
+  { link: GetYourGuideArticleLink; label: string }
+> = {
+  'castelo-sao-jorge': { link: 'castelo-sao-jorge', label: 'Ver entradas al Castelo' },
+  'oceanario-lisboa': { link: 'oceanario', label: 'Ver entradas al Oceanário' },
+  'crucero-atardecer-tajo': { link: 'crucero-tajo', label: 'Ver cruceros por el Tajo' },
+  'fado-en-alfama': { link: 'fado', label: 'Ver espectáculos de fado' },
+  // La ficha cubre Pena y Regaleira; el enlace es sólo la entrada a Pena.
+  'sintra-dia-completo': { link: 'sintra-palacio-pena', label: 'Ver entradas al Palacio da Pena' },
+  // El emparejamiento más flojo de los seis: la ficha va de comer barato en
+  // una tasca y el enlace vende un tour guiado, que es otra cosa y más cara.
+  // Se deja porque es lo más cercano que hay, pero es el primero que yo
+  // quitaría si el CTA desentona con el tono de la ficha.
+  'tasca-tradicional': { link: 'tour-gastronomico', label: 'Ver tours gastronómicos' },
+};

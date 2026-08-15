@@ -8,6 +8,7 @@ import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImage
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Icon from '@/components/Icon';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
+import { GetYourGuideCta } from '@/components/afiliados/GetYourGuideCta';
 import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
 
 export function generateStaticParams() {
@@ -236,6 +237,11 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
               </div>
             </div>
           )}
+
+          {/* Enlace de afiliado de GetYourGuide, sólo en las fichas con
+              producto equivalente. Va después del tip de ahorro a propósito:
+              primero lo que sabemos nosotros, después dónde comprarlo. */}
+          <GetYourGuideCta activitySlug={activity.slug} />
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
