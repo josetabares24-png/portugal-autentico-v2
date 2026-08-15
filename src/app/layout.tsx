@@ -147,6 +147,26 @@ export default async function RootLayout({
             `}
           </Script>
 
+          {/* PRUEBA TEMPORAL — GetYourGuide.
+              Este único script hace las dos cosas: mide como partner y además
+              es el que busca los `[data-gyg-widget]` del DOM y los convierte
+              en iframes. Por eso va aquí y una sola vez: si se repitiera
+              dentro de cada widget, cada copia volvería a escanear la página
+              entera. `next/script` deduplica por `id`, así que una navegación
+              de cliente no lo reinyecta.
+
+              `afterInteractive` y no `lazyOnload` porque este script tiene que
+              pintar contenido visible, no sólo medir; con `lazyOnload` los
+              widgets aparecerían después del `load` y darían un salto de
+              layout tardío. */}
+          <Script
+            id="getyourguide-analytics"
+            src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+            strategy="afterInteractive"
+            data-gyg-partner-id="J2Z24GU"
+            async
+          />
+
           {children}
         </body>
       </html>

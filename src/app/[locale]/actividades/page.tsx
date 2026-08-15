@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Icon from '@/components/Icon';
 
 type PriceFilter = 'todas' | 'gratis' | 'pago';
@@ -95,6 +97,48 @@ export default function ActividadesPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------------
+          PRUEBA TEMPORAL — widgets de GetYourGuide.
+
+          Va aquí, entre el bloque de free tours y los filtros, y no dentro
+          del catálogo, por dos razones. Una: el catálogo lo gobiernan los
+          filtros de categoría y precio, y estas dos tarjetas no responden a
+          ellos; mezclarlas rompería la promesa de que el contador de arriba
+          dice cuántas actividades hay. Y dos: el bloque de free tours ya
+          establece que antes de la rejilla van recomendaciones nuestras.
+
+          Para retirarla basta con borrar esta sección, el import del widget
+          y el `<Script>` de `src/app/layout.tsx`.
+          ------------------------------------------------------------------ */}
+      <section className="bg-background-light py-12 border-b border-border-soft">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-6">
+            Actividades recomendadas
+          </h2>
+
+          {/* Misma geometría que la rejilla del catálogo, así que en desktop
+              cada columna mide ~347 px: dentro del rango pedido sin forzar
+              ningún ancho. Con `lg:grid-cols-3` la tercera celda queda vacía
+              a propósito, que es lo que hay que ver para decidir si la
+              rejilla aguanta tres por fila. */}
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            <GetYourGuideWidget
+              campaign="web_actividad_sintra-completa"
+              tourIds="387617"
+            />
+            <GetYourGuideWidget
+              campaign="web_actividad_oceanario"
+              tourIds="38079"
+            />
+          </div>
+
+          <AffiliateDisclosure
+            variant="compact"
+            className="mt-8 max-w-xl text-text-secondary"
+          />
         </div>
       </section>
 
