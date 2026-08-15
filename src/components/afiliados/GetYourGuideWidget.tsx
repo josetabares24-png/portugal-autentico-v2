@@ -42,8 +42,26 @@ function GetYourGuideWidgetImpl({
     // `min-w-0` es lo que impide el desbordamiento horizontal: sin él una
     // celda de grid se niega a encogerse por debajo del ancho de su
     // contenido, y el iframe de GetYourGuide empujaría la página a lo ancho.
-    <div className={`w-full min-w-0 ${className}`}>
+    <div className={`h-full w-full min-w-0 ${className}`}>
       <div
+        /*
+         * Igualar las alturas de la fila.
+         *
+         * GetYourGuide fija el alto del iframe según su contenido, así que
+         * dos tarjetas con títulos de distinta longitud acaban midiendo
+         * distinto. La fila del grid ya mide lo que la más alta; lo que
+         * falta es que la más baja rellene su celda.
+         *
+         * Es `min-h-full` y no `h-full` a propósito: el alto en línea que
+         * pone GetYourGuide sigue siendo el que informa al grid de cuánto
+         * mide la fila. Con `h-full` esa medida desaparecería y la fila se
+         * quedaría sin altura de la que tirar.
+         *
+         * El coste es que la tarjeta más corta enseña el hueco sobrante
+         * abajo. No hay forma de evitarlo sin recortar contenido: el alto
+         * del iframe es de ellos, no nuestro.
+         */
+        className="h-full [&>iframe]:min-h-full"
         // El script sustituye el contenido de este div después de la
         // hidratación. `suppressHydrationWarning` evita que React se queje
         // si alguna vez llega a comparar lo que había con lo que hay.
