@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import { GYG_ACTIVITY_WIDGETS } from '@/data/getyourguide';
 import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Icon from '@/components/Icon';
@@ -101,17 +102,17 @@ export default function ActividadesPage() {
       </section>
 
       {/* ------------------------------------------------------------------
-          PRUEBA TEMPORAL — widgets de GetYourGuide.
+          Selección editorial de actividades reservables (GetYourGuide).
 
           Va aquí, entre el bloque de free tours y los filtros, y no dentro
           del catálogo, por dos razones. Una: el catálogo lo gobiernan los
-          filtros de categoría y precio, y estas dos tarjetas no responden a
-          ellos; mezclarlas rompería la promesa de que el contador de arriba
+          filtros de categoría y precio, y estas tarjetas no responden a
+          ellos; mezclarlas rompería la promesa de que el contador de abajo
           dice cuántas actividades hay. Y dos: el bloque de free tours ya
           establece que antes de la rejilla van recomendaciones nuestras.
 
-          Para retirarla basta con borrar esta sección, el import del widget
-          y el `<Script>` de `src/app/layout.tsx`.
+          Qué actividades salen y en qué orden se decide en
+          `src/data/getyourguide.ts`, no aquí.
           ------------------------------------------------------------------ */}
       <section className="bg-background-light py-12 border-b border-border-soft">
         <div className="max-w-6xl mx-auto px-6">
@@ -119,20 +120,19 @@ export default function ActividadesPage() {
             Actividades recomendadas
           </h2>
 
-          {/* Misma geometría que la rejilla del catálogo, así que en desktop
-              cada columna mide ~347 px: dentro del rango pedido sin forzar
-              ningún ancho. Con `lg:grid-cols-3` la tercera celda queda vacía
-              a propósito, que es lo que hay que ver para decidir si la
-              rejilla aguanta tres por fila. */}
+          {/* Misma geometría que la rejilla del catálogo: `max-w-6xl` con
+              `px-6` y `gap-8` deja columnas de ~347 px en desktop, que es el
+              tamaño de tarjeta que buscábamos sin forzar ningún ancho. Las
+              alturas se igualan por fila desde el propio widget. */}
           <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            <GetYourGuideWidget
-              campaign="web_actividad_sintra-completa"
-              tourIds="387617"
-            />
-            <GetYourGuideWidget
-              campaign="web_actividad_oceanario"
-              tourIds="38079"
-            />
+            {GYG_ACTIVITY_WIDGETS.map((activity) => (
+              <GetYourGuideWidget
+                key={activity.campaign}
+                campaign={activity.campaign}
+                tourIds={activity.tourId}
+                fallbackHref={activity.fallbackHref}
+              />
+            ))}
           </div>
 
           <AffiliateDisclosure

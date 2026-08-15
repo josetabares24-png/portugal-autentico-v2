@@ -1,29 +1,30 @@
 'use client';
 
 import { memo } from 'react';
+import { GYG_LOCALE_CODE, GYG_PARTNER_ID } from '@/data/getyourguide';
 
 /*
- * PRUEBA TEMPORAL — widget de actividad de GetYourGuide.
+ * Widget de una actividad de GetYourGuide.
  *
  * Este componente no dibuja nada: sólo coloca en el DOM el `<div>` que
  * GetYourGuide publica en su generador, con sus `data-*` tal cual. Quien lo
- * convierte en un iframe con foto, estrellas, precio y botón es el script
- * global que se carga en `src/app/layout.tsx`.
+ * convierte en un iframe con foto, título, valoración y enlace es el script
+ * que carga `GetYourGuideScript`, sujeto al consentimiento de cookies.
  *
  * Deliberadamente no lleva estilos de tarjeta propios. El widget ya viene
  * con su fondo blanco, su borde y su sombra; envolverlo en `card-surface`
- * pintaría un segundo marco alrededor del primero. El contenedor sólo
- * resuelve el ancho.
+ * pintaría un segundo marco alrededor del primero, y repetir fuera el
+ * título o la valoración duplicaría lo que el widget ya dice. El contenedor
+ * sólo resuelve el ancho y la altura de la fila.
  */
-
-/** Cuenta de partner. No se toca: de ella depende la atribución. */
-const PARTNER_ID = 'J2Z24GU';
 
 interface GetYourGuideWidgetProps {
   /** `data-gyg-tour-ids`, tal y como lo entrega GetYourGuide. */
   tourIds: string;
   /** `data-gyg-cmp`. Es lo que permite medir cada actividad por separado. */
   campaign: string;
+  /** Destino del enlace de repliegue, si el script no llega a cargar. */
+  fallbackHref: string;
   /** `data-gyg-number-of-items`. Una sola actividad por tarjeta. */
   numberOfItems?: string;
   /** `data-gyg-locale-code`. El idioma en el que el widget se pinta. */
@@ -34,8 +35,9 @@ interface GetYourGuideWidgetProps {
 function GetYourGuideWidgetImpl({
   tourIds,
   campaign,
+  fallbackHref,
   numberOfItems = '1',
-  localeCode = 'es-ES',
+  localeCode = GYG_LOCALE_CODE,
   className = '',
 }: GetYourGuideWidgetProps) {
   return (
@@ -71,7 +73,7 @@ function GetYourGuideWidgetImpl({
         data-gyg-widget="activities"
         data-gyg-number-of-items={numberOfItems}
         data-gyg-cmp={campaign}
-        data-gyg-partner-id={PARTNER_ID}
+        data-gyg-partner-id={GYG_PARTNER_ID}
         data-gyg-tour-ids={tourIds}
       >
         {/* Repliegue oficial de GetYourGuide: es lo único que se ve si el
@@ -83,7 +85,7 @@ function GetYourGuideWidgetImpl({
           <a
             target="_blank"
             rel="sponsored"
-            href="https://www.getyourguide.com/lisbon-l42/"
+            href={fallbackHref}
             className="underline underline-offset-2"
           >
             GetYourGuide
