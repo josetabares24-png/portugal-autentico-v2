@@ -90,7 +90,7 @@ export default function ComprarEntradasPage() {
   return (
     <main id="main-content">
       {/* Hero compacto: eyebrow, h1, una frase, buscador, chips. */}
-      <section className="bg-background-light pt-12 pb-8 md:pt-16">
+      <section className="bg-background-light pt-8 pb-5 md:pt-16 md:pb-8">
         <div className="max-w-6xl mx-auto px-6">
           <p className="mb-2 font-article text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
             Reserva en Lisboa
@@ -98,9 +98,8 @@ export default function ComprarEntradasPage() {
           <h1 className="mb-3 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Entradas y experiencias en Lisboa
           </h1>
-          <p className="mb-6 max-w-2xl font-article text-base leading-relaxed text-text-secondary">
-            Lo que merece reservarse por adelantado, elegido a mano. Sin recorrer diez
-            páginas para encontrarlo.
+          <p className="mb-4 max-w-2xl font-article text-[15px] leading-relaxed text-text-secondary md:mb-6 md:text-base">
+            Lo que merece reservarse por adelantado, elegido a mano.
           </p>
 
           <ExperienceSearch
@@ -112,7 +111,7 @@ export default function ComprarEntradasPage() {
             className="max-w-2xl"
           />
 
-          <div className="mt-4 flex flex-wrap items-center gap-2">
+          <div className="-mx-6 mt-3 flex snap-x snap-mandatory items-center gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:mt-4 sm:flex-wrap sm:overflow-visible sm:px-0 md:pb-0">
             {CATEGORIAS.map((c) => {
               const activa = categoria === c.id;
               return (
@@ -121,7 +120,7 @@ export default function ComprarEntradasPage() {
                   type="button"
                   aria-pressed={activa}
                   onClick={() => setCategoria(c.id)}
-                  className={`inline-flex min-h-11 items-center rounded-full border px-4 font-article text-sm font-semibold transition-colors ${
+                  className={`inline-flex min-h-11 flex-shrink-0 snap-start items-center rounded-full border px-4 font-article text-sm font-semibold transition-colors ${
                     activa
                       ? 'border-terracotta bg-terracotta text-white'
                       : 'border-border-soft bg-white text-text-secondary hover:border-terracotta hover:text-terracotta'
@@ -136,14 +135,14 @@ export default function ComprarEntradasPage() {
               <button
                 type="button"
                 onClick={limpiarTodo}
-                className="inline-flex min-h-11 items-center px-2 font-article text-sm font-semibold text-terracotta underline underline-offset-4 hover:no-underline"
+                className="inline-flex min-h-11 flex-shrink-0 items-center px-2 font-article text-sm font-semibold text-terracotta underline underline-offset-4 hover:no-underline"
               >
                 Limpiar filtros
               </button>
             )}
           </div>
 
-          <p className="mt-4 font-article text-xs text-text-secondary" aria-live="polite">
+          <p className="mt-3 font-article text-xs text-text-secondary" aria-live="polite">
             {filtrados.length} {filtrados.length === 1 ? 'opción' : 'opciones'}
           </p>
         </div>
@@ -178,7 +177,7 @@ export default function ComprarEntradasPage() {
 
               return (
                 <div key={cat} className="mb-12 last:mb-0">
-                  <div className="mb-5">
+                  <div className="mb-4">
                     <h2 className="font-display text-xl font-semibold not-italic leading-tight text-text-main md:text-2xl">
                       {label}
                     </h2>
