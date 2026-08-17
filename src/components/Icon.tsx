@@ -17,7 +17,7 @@ import {
   LogIn, Crown, Award, Gift, Ticket,
   Globe, Languages, Wifi, Battery,
   AlertCircle, XCircle, X, Ban,
-  ExternalLink, Eye, Settings,
+  ExternalLink, Eye, Settings, Search,
   Castle, TreePine, Waves, Anchor, Sailboat,
   Backpack, Baby, PersonStanding,
   Landmark, Theater, Music,
@@ -206,7 +206,10 @@ const iconMap: Record<string, LucideIcon> = {
   open_in_new: ExternalLink,
   visibility: Eye,
   settings: Settings,
-  search: Compass,
+  // `search` era una brújula, que no dice «buscar» a nadie. Nadie la usaba
+  // con ese nombre, así que pasa a ser la lupa de la misma librería.
+  search: Search,
+  compass: Compass,
   recommend: Star,
   volunteer_activism: Heart,
   progress_activity: Loader,

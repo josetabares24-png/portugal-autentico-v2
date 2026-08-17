@@ -2,29 +2,33 @@ import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
 import type { BookableProduct } from '@/data/bookings';
 
 /*
- * Un producto del hub: nuestro criterio arriba, la reserva del proveedor
- * abajo.
+ * Producto que se reserva a través del widget del proveedor.
  *
- * Deliberadamente no dibuja tarjeta. El widget ya viene con su fondo blanco,
- * su borde y su sombra; envolverlo en `card-surface` pintaría un marco
- * alrededor de otro marco. Y tampoco repite nombre, precio, valoración ni
- * duración: eso lo pone el widget, cambia con el tiempo, y duplicarlo aquí
- * sería crear una copia que se desactualiza sola.
+ * Hoy sólo lo usa la excursión completa de Sintra, porque es el único de los
+ * seis que no tiene enlace directo exacto: su widget es su único mecanismo de
+ * reserva. Los demás llevan tarjeta nativa (`BookingCard`), que convierte
+ * mejor porque el widget no muestra precio ni botón.
  *
- * Lo único que aportamos es el contexto: para quién es y cuándo merece la
- * pena. El nombre va como encabezado porque es lo que da estructura a la
- * página y permite enlazar a cada categoría, no para repetir al widget.
+ * No dibuja tarjeta propia: el widget ya trae su fondo, su borde y su sombra,
+ * y envolverlo pintaría un marco alrededor de otro. Tampoco repite nombre ni
+ * valoración, que las pone él.
  */
 export function BookingProductBlock({ product }: { product: BookableProduct }) {
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <h3 className="font-display italic text-text-main text-lg leading-snug mb-2">
-        {product.name}
-      </h3>
-      <p className="mb-4 text-sm leading-relaxed text-text-secondary">{product.blurb}</p>
+      {/* Sin repetir el nombre: el widget ya lo pinta dentro, y ponerlo
+          también fuera dejaba el mismo título dos veces seguidas. Aquí sólo
+          va lo que el widget no dice: qué tipo de plan es y por qué lo
+          recomendamos. */}
+      <p className="mb-1.5 font-article text-[11px] font-semibold uppercase tracking-widest text-terracotta">
+        {product.kind}
+      </p>
+      <p className="mb-4 font-article text-sm leading-relaxed text-text-secondary">
+        {product.blurb}
+      </p>
 
-      {/* `mt-auto` alinea abajo el arranque de los widgets de una misma fila,
-          aunque las microdescripciones tengan distinto número de líneas. */}
+      {/* `mt-auto` alinea el arranque de los widgets de una misma fila aunque
+          las frases tengan distinto número de líneas. */}
       <div className="mt-auto">
         {product.provider === 'getyourguide' && product.widget && (
           <GetYourGuideWidget
@@ -33,8 +37,8 @@ export function BookingProductBlock({ product }: { product: BookableProduct }) {
             fallbackHref={product.widget.fallbackHref}
           />
         )}
-        {/* Cuando entre Tiqets, su forma de reservar se añade aquí como otra
-            rama. El resto de la página no se entera. */}
+        {/* Cuando entre Tiqets, su mecanismo de reserva se añade aquí como
+            otra rama. El resto de la página no se entera. */}
       </div>
     </div>
   );

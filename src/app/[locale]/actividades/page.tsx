@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import { ExperienceSearch } from '@/components/ExperienceSearch';
 import Icon from '@/components/Icon';
+import { coincide } from '@/lib/search';
 
 type PriceFilter = 'todas' | 'gratis' | 'pago';
 
@@ -21,26 +23,51 @@ const FREE_TOUR_HIGHLIGHTS = [
 export default function ActividadesPage() {
   const [category, setCategory] = useState<ActivityCategory | 'Todas'>('Todas');
   const [price, setPrice] = useState<PriceFilter>('todas');
+  const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
     return activities.filter((a) => {
       const matchesCategory = category === 'Todas' || a.category === category;
       const matchesPrice = price === 'todas' || (price === 'gratis' ? a.isFree : !a.isFree);
-      return matchesCategory && matchesPrice;
+      /*
+       * La búsqueda mira también la zona y la etiqueta de precio, no sólo el
+       * título: así «alfama» encuentra por barrio y «gratis» por precio, que
+       * es como busca la gente. Combina con los filtros en lugar de
+       * sustituirlos.
+       */
+      const matchesQuery = coincide(query, [
+        a.title,
+        a.category,
+        a.zone,
+        a.description,
+        a.priceLabel,
+        a.isFree ? 'gratis' : 'de pago',
+      ]);
+      return matchesCategory && matchesPrice && matchesQuery;
     });
-  }, [category, price]);
+  }, [category, price, query]);
+
+  const hayFiltros = query !== '' || category !== 'Todas' || price !== 'todas';
+  const limpiarTodo = () => {
+    setQuery('');
+    setCategory('Todas');
+    setPrice('todas');
+  };
 
   return (
     <main id="main-content">
-      {/* Cabecera */}
-      <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
+      {/* Cabecera. Sin cursiva decorativa: el h1 va en redonda, como en el
+          hub, para que las dos páginas se lean como el mismo sitio. */}
+      <section className="bg-background-light pt-14 pb-8 border-b border-border-soft md:pt-16">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Actividades</p>
-          <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight mb-3">
+          <p className="mb-2 font-article text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
+            Actividades
+          </p>
+          <h1 className="mb-3 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Lisboa sin gastar mucho
           </h1>
-          <p className="text-text-secondary leading-relaxed">
-            Elige actividades sueltas y arma tu propio plan: cada una con precio real, duración y un tip de ahorro de local.
+          <p className="font-article text-base leading-relaxed text-text-secondary">
+            Cada actividad con su precio real, su duración y un tip de ahorro de local.
           </p>
         </div>
       </section>
@@ -59,7 +86,7 @@ export default function ActividadesPage() {
                   <span aria-hidden="true" className="h-px w-5 bg-gold/70" />
                   Empieza por aquí
                 </p>
-                <h2 className="mb-3 font-display text-2xl italic leading-tight text-white md:text-3xl">
+                <h2 className="mb-3 font-display text-2xl font-semibold not-italic leading-tight text-white md:text-3xl">
                   Descubre Lisboa con un free tour
                 </h2>
                 <p className="text-sm leading-relaxed text-white/75">
@@ -107,15 +134,27 @@ export default function ActividadesPage() {
           móvil de 360. La culpa es de las ocho categorías, que no caben en
           una línea y se parten en varias. Suelta en móvil, se recupera esa
           pantalla y los filtros siguen donde estaban. */}
-      <section className="bg-background-light py-4 border-b border-border-soft static sm:sticky sm:top-16 z-10">
-        <div className="max-w-6xl mx-auto px-6 space-y-3">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">Categoría</p>
+      <section className="bg-background-light py-5 border-b border-border-soft static sm:sticky sm:top-16 z-10">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Buscar y filtrar en la misma zona, no como dos interfaces
+              pegadas: el campo arriba, los filtros justo debajo. */}
+          <ExperienceSearch
+            id="buscar-actividades"
+            value={query}
+            onChange={setQuery}
+            label="Buscar actividades en Lisboa"
+            placeholder="Buscar actividades en Lisboa…"
+            className="mb-3 max-w-2xl"
+          />
+
           <div className="flex flex-wrap gap-1.5">
             {(['Todas', ...ACTIVITY_CATEGORIES] as const).map((c) => (
               <button
                 key={c}
+                type="button"
+                aria-pressed={category === c}
                 onClick={() => setCategory(c)}
-                className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
+                className={`inline-flex min-h-9 items-center rounded-full px-3 font-article text-xs font-semibold transition-all duration-200 ${
                   category === c
                     ? 'bg-terracotta text-white shadow-card'
                     : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
@@ -125,7 +164,8 @@ export default function ActividadesPage() {
               </button>
             ))}
           </div>
-          <div className="flex flex-wrap gap-1.5 border-t border-border-soft pt-3">
+
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
             {([
               { id: 'todas', label: 'Cualquier precio' },
               { id: 'gratis', label: 'Gratis' },
@@ -133,8 +173,10 @@ export default function ActividadesPage() {
             ] as const).map((opt) => (
               <button
                 key={opt.id}
+                type="button"
+                aria-pressed={price === opt.id}
                 onClick={() => setPrice(opt.id)}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 border ${
+                className={`inline-flex min-h-9 items-center rounded-full border px-3 font-article text-xs font-semibold transition-all duration-200 ${
                   price === opt.id
                     ? 'border-gold bg-gold/10 text-night'
                     : 'border-border-soft text-text-secondary hover:border-text-secondary'
@@ -143,24 +185,45 @@ export default function ActividadesPage() {
                 {opt.label}
               </button>
             ))}
+
+            {hayFiltros && (
+              <button
+                type="button"
+                onClick={limpiarTodo}
+                className="inline-flex min-h-9 items-center px-2 font-article text-xs font-semibold text-terracotta underline underline-offset-4 hover:no-underline"
+              >
+                Limpiar filtros
+              </button>
+            )}
           </div>
         </div>
       </section>
 
       {/* Catálogo */}
-      <section className="bg-background-light py-12 md:py-16">
+      <section className="bg-background-light py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-6">
+          <p className="mb-5 font-article text-xs text-text-secondary" aria-live="polite">
             {filtered.length} {filtered.length === 1 ? 'actividad' : 'actividades'}
           </p>
           {filtered.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((activity) => (
                 <ActivityCard key={activity.slug} activity={activity} />
               ))}
             </div>
           ) : (
-            <p className="text-text-secondary">No hay actividades con estos filtros todavía.</p>
+            <div className="rounded-xl border border-border-soft bg-white p-8 text-center">
+              <p className="mb-4 font-article text-text-main">
+                No encontramos actividades con esa búsqueda.
+              </p>
+              <button
+                type="button"
+                onClick={limpiarTodo}
+                className="btn-outline min-h-12 px-6 py-3 font-article text-sm"
+              >
+                Limpiar búsqueda
+              </button>
+            </div>
           )}
         </div>
       </section>
@@ -181,7 +244,7 @@ export default function ActividadesPage() {
         <div className="max-w-6xl mx-auto px-6 border-t border-border-soft pt-10">
           <div className="md:flex md:items-center md:justify-between md:gap-8">
             <div className="md:max-w-xl">
-              <h2 className="font-display italic text-text-main text-2xl leading-tight mb-2">
+              <h2 className="mb-2 font-display text-2xl font-semibold not-italic leading-tight text-text-main">
                 ¿Ya sabes qué quieres reservar?
               </h2>
               <p className="text-sm leading-relaxed text-text-secondary">
@@ -207,7 +270,7 @@ export default function ActividadesPage() {
       {/* CTA plan a medida */}
       <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
         <div className="relative max-w-2xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-4">
+          <h2 className="mb-4 font-display text-3xl font-semibold not-italic text-white md:text-4xl">
             ¿Prefieres que te lo organice yo?
           </h2>
           <p className="text-white/60 mb-8">

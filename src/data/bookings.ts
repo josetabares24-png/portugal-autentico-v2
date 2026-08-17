@@ -62,11 +62,28 @@ export interface BookableProduct {
   provider: BookingProvider;
   category: BookingCategory;
   /**
-   * Microdescripción editorial para el hub: para quién es, o cuándo tiene
-   * sentido reservarlo. Nada de precios, valoraciones ni duraciones: eso
-   * cambia y ya lo muestra el widget.
+   * Una frase. Para quién es o cuándo tiene sentido reservarlo. Nada de
+   * precios, valoraciones ni duraciones: eso cambia, y quien lo dice es el
+   * proveedor en su propia página.
    */
   blurb: string;
+  /** Etiqueta del tipo, para que la tarjeta se lea de un vistazo. */
+  kind: string;
+  /** Imagen nuestra, de las que ya usan las fichas de actividades. */
+  image: string;
+  imageAlt: string;
+  /**
+   * Distintivo editorial opcional. Sólo cosas que sostenemos nosotros: nunca
+   * «más vendido», «últimas plazas» ni descuentos, que no tenemos datos para
+   * afirmarlos.
+   */
+  badge?: string;
+  /**
+   * Palabras con las que un visitante buscaría esto, incluidas las que no
+   * aparecen en el nombre. Es lo que hace que «barco» encuentre el crucero y
+   * «comida» el tour gastronómico.
+   */
+  searchTerms: string[];
   /** Widget del hub. Sin él, el producto no aparece en `/comprar-entradas`. */
   widget?: BookingWidget;
   /**
@@ -101,7 +118,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'entradas',
     blurb:
-      'El plan que mejor funciona con niños y el mejor refugio para un día de lluvia. Reservar con antelación evita la cola de la taquilla, que en fin de semana se nota.',
+      'Una de las visitas más fáciles de recomendar en Parque das Nações, y el mejor refugio si el día se pone gris.',
+    kind: 'Entrada',
+    badge: 'Ideal con niños',
+    image: '/images/actividades/oceanario-de-lisboa.webp',
+    imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
+    searchTerms: ['oceanario', 'acuario', 'peces', 'tiburones', 'familia', 'ninos', 'lluvia', 'parque das nacoes', 'museo'],
     widget: { tourId: '38079', campaign: 'web_actividad_oceanario', fallbackHref: LISBON_EN },
     links: { article: { url: 'https://gyg.me/OIHaINA6', campaign: 'web_articulo_oceanario' } },
     activitySlug: 'oceanario-lisboa',
@@ -113,7 +135,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'entradas',
     blurb:
-      'La panorámica más completa del centro histórico. Merece la pena llevar la entrada comprada: la cola de la puerta puede comerse media mañana en temporada alta.',
+      'La panorámica más completa del centro histórico, y la cola de la puerta se salta llevando la entrada comprada.',
+    kind: 'Entrada',
+    badge: 'Nuestra selección',
+    image: '/images/actividades/castelo-sao-jorge-lisboa.webp',
+    imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
+    searchTerms: ['castelo', 'castillo', 'sao jorge', 'san jorge', 'alfama', 'muralla', 'mirador', 'historia', 'monumento'],
     widget: { tourId: '424720', campaign: 'web_actividad_castelo-sao-jorge', fallbackHref: LISBON_ES },
     links: { article: { url: 'https://gyg.me/xsuIYU11', campaign: 'web_articulo_castelo-sao-jorge' } },
     activitySlug: 'castelo-sao-jorge',
@@ -127,7 +154,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'experiencias',
     blurb:
-      'Ver Lisboa desde el agua cambia la escala de la ciudad. Si puedes elegir hora, la del atardecer es la que justifica el billete.',
+      'Ver Lisboa desde el agua le cambia la escala a la ciudad. Si puedes elegir hora, la del atardecer.',
+    kind: 'Experiencia',
+    badge: 'Plan de tarde',
+    image: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+    imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
+    searchTerms: ['crucero', 'barco', 'velero', 'tajo', 'tejo', 'rio', 'navegar', 'atardecer', 'puesta de sol', 'paseo en barco'],
     widget: { tourId: '410732', campaign: 'web_actividad_crucero-tajo', fallbackHref: LISBON_ES },
     links: { article: { url: 'https://gyg.me/IL8SaMuw', campaign: 'web_articulo_crucero-tajo' } },
     activitySlug: 'crucero-atardecer-tajo',
@@ -139,7 +171,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'experiencias',
     blurb:
-      'Para quien quiera escuchar fado sin arriesgarse a caer en un local de paso. Se reserva porque las casas buenas son pequeñas y se llenan.',
+      'Para escuchar fado sin acabar en un local de paso: las casas buenas son pequeñas y se llenan.',
+    kind: 'Experiencia',
+    badge: 'Plan de noche',
+    image: '/images/fado-tasca-noche.jpg',
+    imageAlt: 'Mesa con dos personas cenando en una tasca de Lisboa por la noche',
+    searchTerms: ['fado', 'musica', 'espectaculo', 'concierto', 'noche', 'cena', 'alfama', 'guitarra', 'cante'],
     widget: { tourId: '887435', campaign: 'web_actividad_fado', fallbackHref: LISBON_ES },
     links: { article: { url: 'https://gyg.me/8aL5dndR', campaign: 'web_articulo_fado' } },
     activitySlug: 'fado-en-alfama',
@@ -151,7 +188,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'experiencias',
     blurb:
-      'Tiene sentido el primer día, cuando todavía no sabes qué pedir ni dónde. Después ya puedes moverte solo por las tascas del barrio.',
+      'Tiene sentido el primer día, cuando todavía no sabes qué pedir ni dónde.',
+    kind: 'Experiencia',
+    image: '/images/tasca-da-graca.jpg',
+    imageAlt: 'Interior de una tasca tradicional de Lisboa con mesas puestas',
+    searchTerms: ['comida', 'comer', 'gastronomia', 'gastronomico', 'tapas', 'probar', 'bacalao', 'pasteis', 'food', 'tour', 'restaurante'],
     widget: { tourId: '603', campaign: 'web_actividad_tour-gastronomico', fallbackHref: LISBON_ES },
     links: { article: { url: 'https://gyg.me/9USjIETP', campaign: 'web_articulo_tour-gastronomico' } },
     // A propósito sin `activitySlug`. La ficha más parecida es «Comer en una
@@ -168,7 +209,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'excursiones',
     blurb:
-      'La opción para quien tiene un solo día y no quiere pelearse con trenes y autobuses. Cubre en una jornada lo que por tu cuenta son dos.',
+      'Para quien tiene un solo día y no quiere pelearse con trenes y autobuses.',
+    kind: 'Excursión',
+    badge: 'Desde Lisboa',
+    image: '/images/sintra-palacio-turistas.jpg',
+    imageAlt: 'Fachada del palacio de la Quinta da Regaleira en Sintra con visitantes',
+    searchTerms: ['sintra', 'pena', 'regaleira', 'cabo da roca', 'cascais', 'excursion', 'dia completo', 'palacio', 'fuera de lisboa'],
     widget: { tourId: '387617', campaign: 'web_actividad_sintra-completa', fallbackHref: LISBON_EN },
     // SIN enlace directo, y es deliberado. No existe todavía una URL corta
     // para esta excursión concreta. El enlace del Palacio da Pena NO sirve:
@@ -184,7 +230,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'getyourguide',
     category: 'excursiones',
     blurb:
-      'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta y no quiere hacer cola arriba.',
+      'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta.',
+    kind: 'Entrada',
+    image: '/images/sintra-palacio-turistas.jpg',
+    imageAlt: 'Palacio de Sintra con visitantes en la entrada',
+    searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
     // Sin widget: no aparece en el hub. Existe para dar botón a la ficha que
     // recomienda exactamente esto, que es visitar Pena por tu cuenta.
     links: {
