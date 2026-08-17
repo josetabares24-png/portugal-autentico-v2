@@ -443,6 +443,187 @@ function compararProtegido(nombreA, nombreB) {
 }
 
 // ---------------------------------------------------------------------------
+// Verificación de invariantes
+// ---------------------------------------------------------------------------
+
+/*
+ * Por qué existe esto además de las huellas.
+ *
+ * El mecanismo `base`/`after` es una herramienta de refactor: guardas una foto
+ * antes de tocar el renderer y la comparas después. Para eso funciona muy
+ * bien, pero no sirve como test permanente por dos razones. Una: cualquier
+ * cambio editorial legítimo —reescribir un título, cambiar una portada,
+ * fusionar dos artículos— sale como «regresión», porque la foto es byte a
+ * byte. Y dos: `.snapshots/` está en `.gitignore`, así que en un clon limpio
+ * no hay `base.json` contra el que comparar y el script no puede proteger
+ * nada.
+ *
+ * Esta verificación va por el otro lado: no compara con el pasado, comprueba
+ * propiedades que deben cumplirse siempre. No se rompe cuando reescribes un
+ * artículo, y sí se rompe cuando el renderer deja de pintar el canonical,
+ * cuando un artículo pierde su h1, cuando un JSON-LD deja de parsear o cuando
+ * un enlace interno apunta a una página que ya no existe.
+ */
+
+/** Mismo host que usan las demás suites, para no tener dos verdades. */
+const CANONICAL_BASE = 'https://estabaenlisboa.com/blog/';
+
+/** Reglas que debe cumplir cada artículo. Cada una devuelve un fallo o null. */
+const INVARIANTES = [
+  {
+    nombre: 'un solo h1',
+    check: (h) => (h.h1.length === 1 ? null : `${h.h1.length} h1 en la página`),
+  },
+  {
+    nombre: 'title propio y sin marca duplicada',
+    check: (h) => {
+      if (!h.title) return 'sin <title>';
+      const veces = h.title.split('Estaba en Lisboa').length - 1;
+      return veces > 1 ? `la marca aparece ${veces} veces en el title` : null;
+    },
+  },
+  {
+    nombre: 'meta description con longitud usable',
+    check: (h) => {
+      if (!h.metaDescription) return 'sin meta description';
+      const n = h.metaDescription.length;
+      return n < 50 || n > 320 ? `${n} caracteres (se espera entre 50 y 320)` : null;
+    },
+  },
+  {
+    nombre: 'canonical propio y correcto',
+    check: (h, slug) => {
+      const esperado = `${CANONICAL_BASE}${slug}`;
+      if (!h.canonical) return 'sin canonical';
+      return h.canonical === esperado ? null : `apunta a ${h.canonical}`;
+    },
+  },
+  {
+    nombre: 'robots declarado',
+    check: (h) => (h.robots ? null : 'sin meta robots'),
+  },
+  {
+    nombre: 'Open Graph completo',
+    check: (h) => {
+      const faltan = ['ogTitle', 'ogDescription', 'ogImage'].filter((k) => !h[k]);
+      return faltan.length ? `faltan ${faltan.join(', ')}` : null;
+    },
+  },
+  {
+    nombre: 'estructura de encabezados',
+    check: (h) => (h.h2.length >= 1 ? null : 'ningún h2 en el cuerpo'),
+  },
+  {
+    nombre: 'JSON-LD parsea',
+    check: (h) => {
+      if (!h.schemas.length) return 'sin datos estructurados';
+      const roto = h.schemas.filter((s) => s.__errorDeParseo).length;
+      return roto ? `${roto} bloque(s) de JSON-LD no parsean` : null;
+    },
+  },
+  {
+    nombre: 'JSON-LD con tipo de artículo',
+    check: (h) => {
+      const tipos = h.tiposDeSchema.flat().map(String);
+      return tipos.some((t) => /Article|BlogPosting/i.test(t))
+        ? null
+        : `tipos presentes: ${tipos.join(', ') || '(ninguno)'}`;
+    },
+  },
+  {
+    nombre: 'toda imagen con alt',
+    check: (h) => {
+      const sinAlt = h.imagenes.filter((i) => !i.alt || !i.alt.trim()).length;
+      return sinAlt ? `${sinAlt} de ${h.imagenes.length} imágenes sin alt` : null;
+    },
+  },
+  {
+    nombre: 'migrado a v2 con hero',
+    check: (h) => (h.esV2 && h.tieneHero ? null : `esV2=${h.esV2} tieneHero=${h.tieneHero}`),
+  },
+  {
+    nombre: 'anclas del índice resueltas',
+    check: (h) => {
+      const ids = new Set(h.idsDeEncabezados);
+      const huerfanas = [...new Set(h.anclasDelIndice)].filter((a) => !ids.has(a));
+      return huerfanas.length ? `no existen: ${huerfanas.join(', ')}` : null;
+    },
+  },
+];
+
+async function verificar() {
+  const slugs = leerSlugs();
+  console.log(`Artículos detectados: ${slugs.length}\n`);
+  const { puerto, apagar } = await levantarServidor();
+
+  const fallos = [];
+  const enlacesInternos = new Set();
+  let verificados = 0;
+  let redirigidos = 0;
+
+  for (const slug of slugs) {
+    const r = await fetch(`http://127.0.0.1:${puerto}/blog/${slug}`, { redirect: 'manual' });
+
+    if (r.status === 308 || r.status === 301) {
+      // Redirección declarada en next.config: legítima, pero debe llevar a algún sitio.
+      redirigidos += 1;
+      const destino = r.headers.get('location');
+      if (!destino) fallos.push({ slug, regla: 'redirección', detalle: `HTTP ${r.status} sin Location` });
+      continue;
+    }
+    if (r.status !== 200) {
+      fallos.push({ slug, regla: 'responde', detalle: `HTTP ${r.status}` });
+      continue;
+    }
+
+    const h = huella(await r.text());
+    verificados += 1;
+    for (const inv of INVARIANTES) {
+      const detalle = inv.check(h, slug);
+      if (detalle) fallos.push({ slug, regla: inv.nombre, detalle });
+    }
+    for (const href of h.enlacesInternos) enlacesInternos.add(href.split('#')[0]);
+  }
+
+  // Los enlaces internos se comprueban una sola vez cada uno, no por artículo.
+  console.log(`Comprobando ${enlacesInternos.size} enlaces internos únicos…`);
+  const rotos = [];
+  for (const href of enlacesInternos) {
+    if (!href || href === '/') continue;
+    const r = await fetch(`http://127.0.0.1:${puerto}${href}`, { redirect: 'manual' });
+    if (r.status >= 400) rotos.push(`${href} → HTTP ${r.status}`);
+  }
+  apagar();
+
+  console.log(`\n${'─'.repeat(60)}`);
+  console.log(`Artículos verificados: ${verificados}   ·   con redirección: ${redirigidos}`);
+  console.log(`Invariantes por artículo: ${INVARIANTES.length}   ·   comprobaciones: ${verificados * INVARIANTES.length}`);
+  console.log(`Enlaces internos únicos: ${enlacesInternos.size}   ·   rotos: ${rotos.length}`);
+
+  if (rotos.length) {
+    console.log('\nENLACES INTERNOS ROTOS:');
+    for (const r of rotos) console.log(`  · ${r}`);
+  }
+
+  if (fallos.length) {
+    console.log(`\nFALLOS (${fallos.length}):`);
+    const porSlug = new Map();
+    for (const f of fallos) {
+      if (!porSlug.has(f.slug)) porSlug.set(f.slug, []);
+      porSlug.get(f.slug).push(f);
+    }
+    for (const [slug, fs_] of porSlug) {
+      console.log(`\n❌ ${slug}`);
+      for (const f of fs_) console.log(`   · ${f.regla}: ${f.detalle}`);
+    }
+  }
+
+  const ok = fallos.length === 0 && rotos.length === 0;
+  console.log(ok ? '\n✅ TODAS LAS INVARIANTES DEL BLOG SE CUMPLEN' : '\n❌ HAY INVARIANTES INCUMPLIDAS');
+  return ok ? 0 : 1;
+}
+
+// ---------------------------------------------------------------------------
 
 const [comando, a, b] = process.argv.slice(2);
 
@@ -454,20 +635,30 @@ if (comando === 'snapshot') {
   process.exit(compararProtegido(a || 'base', b || 'after'));
 } else if (comando === 'compare') {
   process.exit(comparar(a || 'base', b || 'after'));
-} else if (!comando) {
-  const fallos = await capturar('after');
-  if (fallos) process.exit(1);
-  process.exit(compararProtegido('base', 'after'));
+} else if (comando === 'check' || !comando) {
+  // El comportamiento por defecto es la verificación de invariantes, que es lo
+  // único que tiene sentido ejecutar de forma continua: no necesita una foto
+  // previa y no se rompe cuando el contenido cambia a propósito.
+  process.exit(await verificar());
 } else {
   console.log(`Uso:
-  node scripts/smoke-blog.mjs snapshot <nombre>     captura el estado actual
-  node scripts/smoke-blog.mjs compare <a> <b>       compara dos capturas
+  node scripts/smoke-blog.mjs                      verifica invariantes (por defecto)
+  node scripts/smoke-blog.mjs check                lo mismo, explícito
+
+  node scripts/smoke-blog.mjs snapshot <nombre>    captura el estado actual
+  node scripts/smoke-blog.mjs compare <a> <b>      compara dos capturas
   node scripts/smoke-blog.mjs compare-protected <a> <b>
 
-Ejemplo del flujo de un refactor:
+Las invariantes son la protección permanente: comprueban propiedades que
+siempre deben cumplirse, así que un cambio editorial legítimo no las rompe.
+
+Las huellas son una herramienta de refactor, para un cambio concreto del
+renderer. Viven en .snapshots/, que está en .gitignore, así que sólo sirven
+dentro de la sesión en la que se toman:
+
   npm run build && node scripts/smoke-blog.mjs snapshot base
   …se refactoriza…
   npm run build && node scripts/smoke-blog.mjs snapshot after
   node scripts/smoke-blog.mjs compare-protected base after`);
-  process.exit(comando ? 2 : 0);
+  process.exit(2);
 }
