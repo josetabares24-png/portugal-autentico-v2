@@ -31,6 +31,12 @@ export default function Footer() {
               Free Tours
             </Link>
             <Link
+              href="/comprar-entradas"
+              className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
+            >
+              Comprar Entradas
+            </Link>
+            <Link
               href="/contacto"
               className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
             >

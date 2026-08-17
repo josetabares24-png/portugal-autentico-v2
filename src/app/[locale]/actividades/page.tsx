@@ -4,8 +4,6 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
-import { GYG_ACTIVITY_WIDGETS } from '@/data/getyourguide';
-import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Icon from '@/components/Icon';
 
@@ -168,42 +166,35 @@ export default function ActividadesPage() {
       </section>
 
       {/* ------------------------------------------------------------------
-          Selección editorial de actividades reservables (GetYourGuide).
+          Paso al hub transaccional.
 
-          Va DESPUÉS del catálogo, y es deliberado. Esta página se titula
-          «Lisboa sin gastar mucho» y promete precio real en cada ficha;
-          estas tarjetas son de pago y no muestran precio, así que ponerlas
-          por encima contradecía la promesa nada más entrar. Además el
-          bloque de free tours ya ocupa la zona de arriba: con estas seis
-          delante, el visitante se comía dos bloques de afiliados de dos
-          empresas distintas antes de leer una sola línea nuestra.
+          Aquí NO van widgets. Esta página es para descubrir qué hacer en
+          Lisboa, y el módulo de reserva de un proveedor compitiendo con
+          nuestras fichas convertía el catálogo en un escaparate. Los seis
+          widgets viven en `/comprar-entradas`, una sola vez.
 
-          Tampoco van dentro del catálogo: lo gobiernan los filtros de
-          categoría y precio, y estas no responden a ellos. Mezclarlas
-          rompería la promesa de que el contador dice cuántas hay.
-
-          Qué actividades salen y en qué orden se decide en
-          `src/data/getyourguide.ts`, no aquí.
+          Esto no sustituye a nada: las fichas que tienen producto exacto
+          llevan su propio botón directo, para que quien ya sabe lo que
+          quiere no tenga que pasar por una página intermedia.
           ------------------------------------------------------------------ */}
       <section className="bg-background-light pb-12 md:pb-16">
-        <div className="max-w-6xl mx-auto px-6 border-t border-border-soft pt-12">
-          <h2 className="font-display italic text-text-main text-2xl md:text-3xl leading-tight mb-6">
-            Actividades recomendadas
-          </h2>
-
-          {/* Misma geometría que la rejilla del catálogo: `max-w-6xl` con
-              `px-6` y `gap-8` deja columnas de ~347 px en desktop, que es el
-              tamaño de tarjeta que buscábamos sin forzar ningún ancho. Las
-              alturas se igualan por fila desde el propio widget. */}
-          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {GYG_ACTIVITY_WIDGETS.map((activity) => (
-              <GetYourGuideWidget
-                key={activity.campaign}
-                campaign={activity.campaign}
-                tourIds={activity.tourId}
-                fallbackHref={activity.fallbackHref}
-              />
-            ))}
+        <div className="max-w-6xl mx-auto px-6 border-t border-border-soft pt-10">
+          <div className="md:flex md:items-center md:justify-between md:gap-8">
+            <div className="md:max-w-xl">
+              <h2 className="font-display italic text-text-main text-2xl leading-tight mb-2">
+                ¿Ya sabes qué quieres reservar?
+              </h2>
+              <p className="text-sm leading-relaxed text-text-secondary">
+                Hemos reunido aparte las entradas, experiencias y excursiones que merecen
+                comprarse por adelantado, con precio y disponibilidad reales.
+              </p>
+            </div>
+            <Link
+              href="/comprar-entradas"
+              className="btn-outline mt-5 w-full px-6 py-3 text-sm md:mt-0 md:w-auto md:flex-shrink-0"
+            >
+              Ver todas las entradas y experiencias
+            </Link>
           </div>
 
           <AffiliateDisclosure

@@ -18,6 +18,9 @@ export default function Navbar() {
     { href: '/itinerarios', label: 'Itinerarios' },
     { href: '/free-tours-lisboa', label: 'Free tours' },
     { href: '/actividades', label: 'Actividades' },
+    // Justo después de Actividades: es el paso natural de «qué hago» a
+    // «cómo lo reservo», y así se leen como un par.
+    { href: '/comprar-entradas', label: 'Entradas' },
     { href: '/contacto', label: 'Contacto' },
   ];
 

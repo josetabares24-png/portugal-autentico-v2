@@ -38,6 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/itinerarios`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/actividades`, changeFrequency: 'weekly', priority: 0.8 },
+    // Hub transaccional. `weekly` porque su contenido depende de qué productos
+    // seleccionamos, no de la disponibilidad que muestra cada widget.
+    { url: `${baseUrl}/comprar-entradas`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/free-tours-lisboa`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/planifica-tu-viaje`, changeFrequency: 'monthly', priority: 0.9 },

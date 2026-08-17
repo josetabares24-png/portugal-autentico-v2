@@ -1,7 +1,7 @@
 'use client';
 
 import { memo } from 'react';
-import { GYG_LOCALE_CODE, GYG_PARTNER_ID } from '@/data/getyourguide';
+import { GYG_LOCALE_CODE, GYG_PARTNER_ID } from '@/data/bookings';
 
 /*
  * Widget de una actividad de GetYourGuide.
