@@ -54,7 +54,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
 
   return (
     <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card transition-all duration-300 hover:border-border-soft hover:shadow-card-hover">
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={product.image}
           alt={product.imageAlt}
@@ -71,14 +71,14 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-5">
         <p className="mb-1.5 font-article text-[11px] font-semibold uppercase tracking-widest text-terracotta">
           {product.kind}
         </p>
         <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
           {product.name}
         </h3>
-        <p className="mb-4 font-article text-sm leading-relaxed text-text-secondary">
+        <p className="mb-5 font-article text-sm leading-relaxed text-text-secondary">
           {product.blurb}
         </p>
 
@@ -86,7 +86,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           href={link.url}
           target="_blank"
           rel="sponsored noopener noreferrer"
-          className="btn-primary mt-auto min-h-12 w-full px-5 py-3 font-article text-sm"
+          className="btn-primary mt-auto min-h-12 w-full rounded-lg px-5 py-3 font-article text-sm"
           onClick={() =>
             trackClick({
               affiliate_partner: product.provider,

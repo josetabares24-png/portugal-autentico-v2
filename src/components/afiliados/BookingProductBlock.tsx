@@ -15,15 +15,23 @@ import type { BookableProduct } from '@/data/bookings';
  */
 export function BookingProductBlock({ product }: { product: BookableProduct }) {
   return (
-    <div className="flex h-full min-w-0 flex-col">
+    /*
+     * Mismo marco que `BookingCard`: radio, borde, sombra y fondo blanco. Con
+     * eso el bloque pertenece a la misma familia aunque dentro lleve el
+     * módulo del proveedor en lugar de nuestra foto y nuestro botón.
+     *
+     * Sin `overflow-hidden`: el widget se dimensiona solo y recortarlo sería
+     * arriesgarse a cortarle algo.
+     */
+    <article className="flex h-full min-w-0 flex-col rounded-xl border border-border-soft/70 bg-white p-5 shadow-card">
       {/* Sin repetir el nombre: el widget ya lo pinta dentro, y ponerlo
           también fuera dejaba el mismo título dos veces seguidas. Aquí sólo
           va lo que el widget no dice: qué tipo de plan es y por qué lo
-          recomendamos. */}
+          recomendamos. Mismas clases que en la tarjeta nativa. */}
       <p className="mb-1.5 font-article text-[11px] font-semibold uppercase tracking-widest text-terracotta">
         {product.kind}
       </p>
-      <p className="mb-4 font-article text-sm leading-relaxed text-text-secondary">
+      <p className="mb-5 font-article text-sm leading-relaxed text-text-secondary">
         {product.blurb}
       </p>
 
@@ -40,6 +48,6 @@ export function BookingProductBlock({ product }: { product: BookableProduct }) {
         {/* Cuando entre Tiqets, su mecanismo de reserva se añade aquí como
             otra rama. El resto de la página no se entera. */}
       </div>
-    </div>
+    </article>
   );
 }
