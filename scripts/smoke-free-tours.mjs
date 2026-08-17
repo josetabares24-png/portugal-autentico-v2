@@ -555,7 +555,13 @@ async function checkActivityFiche(baseUrl) {
   record('free-walking-tour-centro: HTTP 200', res.status === 200, `HTTP ${res.status}`);
   if (res.status !== 200) return;
 
-  record('free-walking-tour-centro: sigue con noindex, follow', getRobots(html) === 'noindex, follow', `robots="${getRobots(html)}"`);
+  // La comprobación esperaba `noindex, follow`, que era el estado de las 20
+  // fichas cuando se escribió. Dejaron de estarlo en `a35120b`, que las indexó
+  // a propósito (`indexable: true` en las 20), y desde entonces esta línea
+  // afirmaba una decisión ya revocada. Se actualiza al valor vigente, no se
+  // relaja: sigue exigiendo un valor exacto, y vuelve a fallar si alguien
+  // pone la ficha en noindex sin querer.
+  record('free-walking-tour-centro: robots index, follow', getRobots(html) === 'index, follow', `robots="${getRobots(html)}"`);
   record('free-walking-tour-centro: CTA actualizado', html.includes('Consultar free tours y horarios'), 'texto del CTA');
   record('free-walking-tour-centro: enlaza la landing', html.includes(`href="${PAGE_PATH}"`), 'enlace interno');
   record('free-walking-tour-centro: mantiene la foto del Arco', html.includes('rua-augusta-arco-lisboa'), 'imagen propia');

@@ -3,23 +3,23 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ExperienceSearch } from '@/components/ExperienceSearch';
-import { BookingCard } from '@/components/afiliados/BookingCard';
-import { BookingProductBlock } from '@/components/afiliados/BookingProductBlock';
+import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { HUB_PRODUCTS, type BookingCategory } from '@/data/bookings';
 import { coincide } from '@/lib/search';
 
 /*
- * Hub transaccional.
+ * Hub transaccional, multiproveedor.
  *
- * La versión anterior se leía como un artículo: dos párrafos de introducción,
- * una entradilla larga por categoría, y el primer producto por debajo del
- * pliegue. Aquí el orden es el de una tienda: título, una frase, buscador,
- * categorías, producto. El contexto editorial que sí aporta no se ha borrado,
- * se ha bajado al final.
+ * El orden es el de una tienda: título, una frase, buscador, categorías,
+ * producto. El contexto editorial que sí aporta está al final.
+ *
+ * Lo que esta página sabe: qué productos hay, cómo se buscan, cómo se filtran
+ * y en qué orden salen. Lo que NO sabe: con quién se reserva cada uno. Eso lo
+ * decide `BookingProductRenderer` leyendo lo que el producto declara, y por
+ * eso añadir un proveedor nuevo no toca este archivo.
  *
  * Componente de cliente porque el buscador y los chips son estado. El
- * contenido sigue renderizándose en servidor, así que Google ve los nombres,
- * las frases y los encabezados igual que antes.
+ * contenido sigue renderizándose en servidor.
  *
  * Sin cursivas decorativas: los encabezados usan el mismo serif del sitio en
  * redonda, y el cuerpo la tipografía de los artículos.
@@ -32,14 +32,15 @@ const CATEGORIAS: { id: BookingCategory | 'todo'; label: string }[] = [
   { id: 'excursiones', label: 'Excursiones' },
 ];
 
-/** Una frase por sección, y sólo cuando aporta algo que no sea evidente. */
+/**
+ * Una frase por categoría, y sólo cuando aporta algo que no sea evidente.
+ * Se pinta únicamente al elegir esa categoría: en «Todo» sobraría tres veces.
+ */
 const NOTA_CATEGORIA: Record<BookingCategory, string> = {
   entradas: 'Casi todo se puede pagar en taquilla: reserva cuando te ahorre la cola.',
   experiencias: 'Grupos pequeños, así que las plazas se acaban antes de lo que parece.',
   excursiones: 'Salir de la ciudad por el día sin pelearte con horarios de tren.',
 };
-
-const ORDEN: BookingCategory[] = ['entradas', 'experiencias', 'excursiones'];
 
 export default function ComprarEntradasPage() {
   const [consulta, setConsulta] = useState('');
@@ -62,30 +63,14 @@ export default function ComprarEntradasPage() {
   };
 
   /*
-   * Con «Todo» y sin buscar, se agrupa por categoría: da estructura y deja
-   * enlazables las secciones. En cuanto hay búsqueda o categoría elegida, se
-   * pinta una sola rejilla compacta, que es lo que espera quien está
-   * buscando algo concreto.
+   * Una sola rejilla, siempre.
+   *
+   * Antes, en «Todo», el catálogo se partía en tres bloques con su encabezado
+   * y su entradilla. Con seis productos eso obligaba a recorrer tres tramos
+   * de texto para ver seis cosas. El encabezado de categoría se pinta ahora
+   * sólo cuando el visitante elige una: ahí sí dice dónde está.
    */
-  const agrupado = categoria === 'todo' && consulta === '';
-
-  const renderProducto = (p: (typeof HUB_PRODUCTS)[number], i: number) =>
-    /*
-     * Los productos con enlace directo llevan tarjeta nuestra. La excursión
-     * de Sintra no tiene enlace propio todavía, así que conserva su widget:
-     * es su único mecanismo de reserva.
-     */
-    Object.keys(p.links).length > 0 ? (
-      <BookingCard
-        key={p.id}
-        product={p}
-        placement="activities"
-        placementLabel="comprar-entradas"
-        priority={i === 0}
-      />
-    ) : (
-      <BookingProductBlock key={p.id} product={p} />
-    );
+  const categoriaElegida = categoria === 'todo' ? null : categoria;
 
   return (
     <main id="main-content">
@@ -149,8 +134,19 @@ export default function ComprarEntradasPage() {
       </section>
 
       {/* Producto. Empieza aquí, no después de tres párrafos. */}
-      <section className="bg-background-light pb-14">
+      <section id="catalogo" className="bg-background-light pb-14 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-6">
+          {categoriaElegida && filtrados.length > 0 && (
+            <div className="mb-4">
+              <h2 className="font-display text-xl font-semibold not-italic leading-tight text-text-main md:text-2xl">
+                {CATEGORIAS.find((c) => c.id === categoriaElegida)?.label}
+              </h2>
+              <p className="mt-1 font-article text-sm text-text-secondary">
+                {NOTA_CATEGORIA[categoriaElegida]}
+              </p>
+            </div>
+          )}
+
           {filtrados.length === 0 && (
             <div className="rounded-xl border border-border-soft bg-white p-8 text-center">
               <p className="mb-4 font-article text-text-main">
@@ -162,35 +158,28 @@ export default function ComprarEntradasPage() {
             </div>
           )}
 
-          {filtrados.length > 0 && !agrupado && (
+          {filtrados.length > 0 && (
+            /*
+             * Columnas elegidas por el ancho que le queda al producto, no por
+             * costumbre.
+             *
+             * El módulo del proveedor es una tarjeta vertical pensada para el
+             * ancho al que ellos mismos las pintan, unos 300-360 px. Con esta
+             * rejilla la celda mide 309 px en 1024 y 352 px en 1280 y 1440:
+             * dentro de ese rango en todo el escritorio.
+             *
+             * La alternativa era pasar a tres columnas sólo en `xl`, y se
+             * descartó midiéndola: entre 1024 y 1279 dejaba celdas de 476 a
+             * 540 px, y ahí la foto del widget se agranda y la tarjeta se
+             * queda medio vacía. Más cerca de su ancho natural convierte
+             * mejor que más grande.
+             */
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filtrados.map(renderProducto)}
+              {filtrados.map((p, i) => (
+                <BookingProductRenderer key={p.id} product={p} priority={i === 0} />
+              ))}
             </div>
           )}
-
-          {filtrados.length > 0 &&
-            agrupado &&
-            ORDEN.map((cat) => {
-              const productos = filtrados.filter((p) => p.category === cat);
-              if (!productos.length) return null;
-              const label = CATEGORIAS.find((c) => c.id === cat)?.label ?? cat;
-
-              return (
-                <div key={cat} className="mb-12 last:mb-0">
-                  <div className="mb-4">
-                    <h2 className="font-display text-xl font-semibold not-italic leading-tight text-text-main md:text-2xl">
-                      {label}
-                    </h2>
-                    <p className="mt-1 font-article text-sm text-text-secondary">
-                      {NOTA_CATEGORIA[cat]}
-                    </p>
-                  </div>
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {productos.map(renderProducto)}
-                  </div>
-                </div>
-              );
-            })}
 
           {/* Divulgación compacta, debajo del producto y en redonda. */}
           <p className="mt-10 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">

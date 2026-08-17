@@ -42,8 +42,8 @@ interface BookingLink {
   campaign: string;
 }
 
-/** Widget incrustable. Sólo lo tienen los productos que van al hub. */
-interface BookingWidget {
+/** Lo que hace falta para pintar el widget oficial de GetYourGuide. */
+export interface GetYourGuideWidgetConfig {
   tourId: string;
   campaign: string;
   /**
@@ -53,6 +53,38 @@ interface BookingWidget {
    */
   fallbackHref: string;
 }
+
+/**
+ * Cómo se ofrece un producto en `/comprar-entradas`. Sin esto, el producto no
+ * aparece allí.
+ *
+ * Es una unión discriminada a propósito, y es la pieza que hace que la página
+ * no pertenezca a ningún proveedor. `render` dice con qué mecanismo se
+ * reserva; cuando ese mecanismo es un widget, `provider` dice de quién es, y
+ * cada proveedor trae su propia configuración porque no tienen por qué
+ * parecerse: los `data-*` de GetYourGuide no valen para Tiqets.
+ *
+ * Añadir Tiqets el día que entreguen sus códigos es añadir aquí una rama:
+ *
+ *     | { render: 'widget'; provider: 'tiqets'; widget: TiqetsWidgetConfig }
+ *
+ * y su componente en `BookingProductRenderer`. No hace falta tocar la página,
+ * ni el buscador, ni los filtros, ni el resto de los productos. Y no se puede
+ * olvidar el componente: el `switch` del renderer es exhaustivo, así que una
+ * rama nueva sin renderer deja de compilar.
+ *
+ * No se declara aquí la forma de `TiqetsWidgetConfig` porque todavía no
+ * tenemos sus códigos y cualquier campo que escribiera hoy sería inventado.
+ */
+export type BookingMechanism =
+  | { render: 'widget'; provider: 'getyourguide'; widget: GetYourGuideWidgetConfig }
+  /**
+   * Tarjeta nuestra: foto, nombre, una frase y un botón al enlace directo.
+   * No necesita saber de qué proveedor es, porque lo único que usa es el
+   * enlace de `links`, y ese ya lleva dentro la cuenta y la campaña. Sirve
+   * para cualquier partner que dé enlace pero no widget.
+   */
+  | { render: 'native-card' };
 
 export interface BookableProduct {
   /** Identificador interno. No se pinta en ninguna parte. */
@@ -84,8 +116,12 @@ export interface BookableProduct {
    * «comida» el tour gastronómico.
    */
   searchTerms: string[];
-  /** Widget del hub. Sin él, el producto no aparece en `/comprar-entradas`. */
-  widget?: BookingWidget;
+  /**
+   * Mecanismo con el que se reserva en el hub. Sin él, el producto no aparece
+   * en `/comprar-entradas`, que es el caso del Palacio da Pena: existe para
+   * dar botón a un artículo, no para venderse en el catálogo.
+   */
+  hub?: BookingMechanism;
   /**
    * Enlaces directos por ubicación. Sólo se usa el de la ubicación desde la
    * que se pulsa; si esa no tiene el suyo todavía, se recurre al que haya.
@@ -124,7 +160,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/actividades/oceanario-de-lisboa.webp',
     imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
     searchTerms: ['oceanario', 'acuario', 'peces', 'tiburones', 'familia', 'ninos', 'lluvia', 'parque das nacoes', 'museo'],
-    widget: { tourId: '38079', campaign: 'web_actividad_oceanario', fallbackHref: LISBON_EN },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '38079', campaign: 'web_actividad_oceanario', fallbackHref: LISBON_EN },
+    },
     links: { article: { url: 'https://gyg.me/OIHaINA6', campaign: 'web_articulo_oceanario' } },
     activitySlug: 'oceanario-lisboa',
     ctaLabel: 'Ver entradas',
@@ -141,7 +181,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/actividades/castelo-sao-jorge-lisboa.webp',
     imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
     searchTerms: ['castelo', 'castillo', 'sao jorge', 'san jorge', 'alfama', 'muralla', 'mirador', 'historia', 'monumento'],
-    widget: { tourId: '424720', campaign: 'web_actividad_castelo-sao-jorge', fallbackHref: LISBON_ES },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '424720', campaign: 'web_actividad_castelo-sao-jorge', fallbackHref: LISBON_ES },
+    },
     links: { article: { url: 'https://gyg.me/xsuIYU11', campaign: 'web_articulo_castelo-sao-jorge' } },
     activitySlug: 'castelo-sao-jorge',
     ctaLabel: 'Ver entradas',
@@ -160,7 +204,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
     imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
     searchTerms: ['crucero', 'barco', 'velero', 'tajo', 'tejo', 'rio', 'navegar', 'atardecer', 'puesta de sol', 'paseo en barco'],
-    widget: { tourId: '410732', campaign: 'web_actividad_crucero-tajo', fallbackHref: LISBON_ES },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '410732', campaign: 'web_actividad_crucero-tajo', fallbackHref: LISBON_ES },
+    },
     links: { article: { url: 'https://gyg.me/IL8SaMuw', campaign: 'web_articulo_crucero-tajo' } },
     activitySlug: 'crucero-atardecer-tajo',
     ctaLabel: 'Consultar disponibilidad',
@@ -177,7 +225,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/fado-tasca-noche.jpg',
     imageAlt: 'Mesa con dos personas cenando en una tasca de Lisboa por la noche',
     searchTerms: ['fado', 'musica', 'espectaculo', 'concierto', 'noche', 'cena', 'alfama', 'guitarra', 'cante'],
-    widget: { tourId: '887435', campaign: 'web_actividad_fado', fallbackHref: LISBON_ES },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '887435', campaign: 'web_actividad_fado', fallbackHref: LISBON_ES },
+    },
     links: { article: { url: 'https://gyg.me/8aL5dndR', campaign: 'web_articulo_fado' } },
     activitySlug: 'fado-en-alfama',
     ctaLabel: 'Ver opciones',
@@ -193,7 +245,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/tasca-da-graca.jpg',
     imageAlt: 'Interior de una tasca tradicional de Lisboa con mesas puestas',
     searchTerms: ['comida', 'comer', 'gastronomia', 'gastronomico', 'tapas', 'probar', 'bacalao', 'pasteis', 'food', 'tour', 'restaurante'],
-    widget: { tourId: '603', campaign: 'web_actividad_tour-gastronomico', fallbackHref: LISBON_ES },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '603', campaign: 'web_actividad_tour-gastronomico', fallbackHref: LISBON_ES },
+    },
     links: { article: { url: 'https://gyg.me/9USjIETP', campaign: 'web_articulo_tour-gastronomico' } },
     // A propósito sin `activitySlug`. La ficha más parecida es «Comer en una
     // tasca tradicional», que va justo de lo contrario: comer barato y por tu
@@ -215,7 +271,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/sintra-palacio-turistas.jpg',
     imageAlt: 'Fachada del palacio de la Quinta da Regaleira en Sintra con visitantes',
     searchTerms: ['sintra', 'pena', 'regaleira', 'cabo da roca', 'cascais', 'excursion', 'dia completo', 'palacio', 'fuera de lisboa'],
-    widget: { tourId: '387617', campaign: 'web_actividad_sintra-completa', fallbackHref: LISBON_EN },
+    hub: {
+      render: 'widget',
+      provider: 'getyourguide',
+      widget: { tourId: '387617', campaign: 'web_actividad_sintra-completa', fallbackHref: LISBON_EN },
+    },
     // SIN enlace directo, y es deliberado. No existe todavía una URL corta
     // para esta excursión concreta. El enlace del Palacio da Pena NO sirve:
     // es otro producto, y usarlo aquí sería vender una cosa por otra.
@@ -235,8 +295,10 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/sintra-palacio-turistas.jpg',
     imageAlt: 'Palacio de Sintra con visitantes en la entrada',
     searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
-    // Sin widget: no aparece en el hub. Existe para dar botón a la ficha que
-    // recomienda exactamente esto, que es visitar Pena por tu cuenta.
+    // Sin `hub`: no aparece en el catálogo. Existe para dar botón a un
+    // artículo que recomiende exactamente esto, que es subir a Pena por tu
+    // cuenta. El día que queramos venderlo en el hub sin widget, basta con
+    // `hub: { render: 'native-card' }`: ya tiene enlace directo.
     links: {
       article: { url: 'https://gyg.me/9i00hN0O', campaign: 'web_sintra_palacio-pena' },
     },
@@ -259,17 +321,21 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
  * recurrir al enlace de otro producto parecido.
  */
 export const ACTIVITY_HUB_ANCHOR: Record<string, { anchor: string; label: string }> = {
-  // La excursión completa de Sintra existe como widget en el hub, pero
-  // todavía no tiene URL corta propia. Hasta que la haya, la ficha manda a
-  // la sección de excursiones en lugar de a un producto que no es el suyo.
+  // La excursión completa de Sintra existe en el hub, pero todavía no tiene
+  // URL corta propia. Hasta que la haya, la ficha manda al catálogo en lugar
+  // de a un producto que no es el suyo.
+  //
+  // El ancla apuntaba antes a `excursiones-desde-lisboa`, que es el slug de un
+  // artículo y no existía como `id` en el hub: el enlace no llevaba a ninguna
+  // parte. Ahora apunta al catálogo, que sí existe.
   'sintra-dia-completo': {
-    anchor: 'excursiones-desde-lisboa',
+    anchor: 'catalogo',
     label: 'Ver excursiones a Sintra',
   },
 };
 
-/** Los productos del hub: los que tienen widget, en el orden declarado. */
-export const HUB_PRODUCTS = BOOKABLE_PRODUCTS.filter((p) => p.widget);
+/** Los productos del catálogo: los que declaran mecanismo de reserva. */
+export const HUB_PRODUCTS = BOOKABLE_PRODUCTS.filter((p) => p.hub);
 
 /**
  * Resuelve el enlace y la campaña para una ubicación concreta.

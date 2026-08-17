@@ -1,7 +1,7 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
 import Script from 'next/script';
+import { useCookieConsent } from '@/lib/consent';
 
 /*
  * Carga del script de GetYourGuide, condicionada al consentimiento.
@@ -19,36 +19,17 @@ import Script from 'next/script';
  * widgets, y de ese visitante no sale comisión.
  */
 
-/** El consentimiento es estado externo a React: vive en `localStorage`. */
-function subscribe(onChange: () => void) {
-  window.addEventListener('cookie-consent', onChange);
-  return () => window.removeEventListener('cookie-consent', onChange);
-}
-
-function getSnapshot() {
-  try {
-    return (
-      window.localStorage.getItem('cookieConsent') === 'accepted' &&
-      window.localStorage.getItem('cookieConsentExplicit') === 'true'
-    );
-  } catch {
-    // `localStorage` puede estar bloqueado. Sin poder leer el
-    // consentimiento, se asume que no lo hay.
-    return false;
-  }
-}
-
 /*
- * En servidor no hay consentimiento que consultar. Devolver `false` también
- * en la hidratación es lo que garantiza que el HTML del servidor y el primer
- * render del cliente coincidan.
+ * La lectura del consentimiento vive en `@/lib/consent`, compartida con los
+ * widgets del catálogo. Es la misma que había aquí, movida: tener dos copias
+ * de «¿tenemos permiso?» es la forma de que un día una se quede atrás y algo
+ * de terceros cargue sin él.
+ *
+ * Lo que no cambia es lo de siempre: una sola carga del script, y sólo con
+ * aceptación explícita.
  */
-function getServerSnapshot() {
-  return false;
-}
-
 export default function GetYourGuideScript() {
-  const granted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const granted = useCookieConsent();
 
   // Al revocar no se descarga nada: un script ya ejecutado no se puede
   // retirar de la página. Lo que corresponde es no volver a cargarlo, y de
