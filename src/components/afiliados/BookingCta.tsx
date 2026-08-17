@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Icon from '@/components/Icon';
 import {
+  ACTIVITY_HUB_ANCHOR,
   findProductByActivitySlug,
   resolveBookingLink,
   type BookingPlacement,
@@ -52,16 +53,19 @@ interface BookingCtaProps {
 
 export function BookingCta({ activitySlug, placement = 'activities' }: BookingCtaProps) {
   const product = findProductByActivitySlug(activitySlug);
-  // La mayoría de las fichas no tienen producto equivalente exacto. Ahí no se
-  // pinta nada: mejor una ficha sin botón que un botón que lleva a otra cosa.
-  if (!product) return null;
+  const link = product ? resolveBookingLink(product, placement) : null;
 
-  const link = resolveBookingLink(product, placement);
+  /*
+   * Sin producto exacto, o con producto pero todavía sin enlace directo
+   * propio. Nunca se recurre al enlace de otro producto parecido: si la
+   * ficha tiene una sección del hub asignada, se ofrece esa; si no, no se
+   * pinta nada. Una ficha sin botón es mejor que un botón que vende otra
+   * cosa.
+   */
+  if (!product || !link) {
+    const fallback = ACTIVITY_HUB_ANCHOR[activitySlug];
+    if (!fallback) return null;
 
-  // Producto sin enlace directo todavía (la excursión completa de Sintra). En
-  // vez de forzar uno de otro producto, se ofrece el hub, donde su widget sí
-  // tiene precio y disponibilidad reales.
-  if (!link) {
     return (
       <div className="mb-10 overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
         <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
@@ -70,9 +74,16 @@ export function BookingCta({ activitySlug, placement = 'activities' }: BookingCt
             <Icon name="confirmation_number" size={15} className="flex-shrink-0 text-gold" />
             Precio y disponibilidad
           </p>
-          <Link href="/comprar-entradas" className="btn-outline w-full px-7 py-3.5 text-base sm:w-auto">
-            Ver entradas y experiencias
+          <Link
+            href={`/comprar-entradas#${fallback.anchor}`}
+            className="btn-outline w-full px-7 py-3.5 text-base sm:w-auto"
+          >
+            {fallback.label}
           </Link>
+          <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+            Si prefieres subir por tu cuenta, las entradas de Pena y Regaleira se compran
+            por separado en la web de cada monumento.
+          </p>
         </div>
       </div>
     );

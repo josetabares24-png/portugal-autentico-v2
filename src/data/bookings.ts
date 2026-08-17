@@ -190,10 +190,33 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     links: {
       article: { url: 'https://gyg.me/9i00hN0O', campaign: 'web_sintra_palacio-pena' },
     },
-    activitySlug: 'sintra-dia-completo',
+    // Sin `activitySlug` a propósito. La ficha `sintra-dia-completo` cubre
+    // Pena Y Regaleira, que son dos entradas distintas; este enlace sólo
+    // vende la de Pena, así que como CTA de esa ficha sería una
+    // correspondencia parcial. Queda disponible para artículos que
+    // recomienden exactamente la entrada al Palacio da Pena y su parque.
     ctaLabel: 'Ver entradas al Palacio da Pena',
   },
 ];
+
+/**
+ * Fichas sin producto exacto que, aun así, tienen una sección del hub a la
+ * que merece la pena mandarlas.
+ *
+ * Es un CTA interno, no comercial: no vende ningún producto, sólo lleva a la
+ * sección donde están las opciones. Existe para no dejar sin salida a una
+ * ficha cuyo producto equivalente todavía no tiene enlace directo, sin
+ * recurrir al enlace de otro producto parecido.
+ */
+export const ACTIVITY_HUB_ANCHOR: Record<string, { anchor: string; label: string }> = {
+  // La excursión completa de Sintra existe como widget en el hub, pero
+  // todavía no tiene URL corta propia. Hasta que la haya, la ficha manda a
+  // la sección de excursiones en lugar de a un producto que no es el suyo.
+  'sintra-dia-completo': {
+    anchor: 'excursiones-desde-lisboa',
+    label: 'Ver excursiones a Sintra',
+  },
+};
 
 /** Los productos del hub: los que tienen widget, en el orden declarado. */
 export const HUB_PRODUCTS = BOOKABLE_PRODUCTS.filter((p) => p.widget);
