@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import GetYourGuideScript from '@/components/afiliados/GetYourGuideScript';
+import TiqetsScript from '@/components/afiliados/TiqetsScript';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
 type Props = {
@@ -39,6 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             demás terceros sujetos a consentimiento, y así deja de cargarse en
             el panel de administración, donde no hay ningún widget. */}
         <GetYourGuideScript />
+        <TiqetsScript />
       </ErrorBoundary>
     </NextIntlClientProvider>
   );

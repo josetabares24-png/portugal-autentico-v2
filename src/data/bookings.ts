@@ -2,9 +2,8 @@
  * Productos reservables de Estaba en Lisboa.
  *
  * Esta lista no pertenece a ningún proveedor: es nuestra selección, y cada
- * entrada declara con quién se reserva. Hoy todos son de GetYourGuide;
- * Tiqets entra añadiendo `provider: 'tiqets'` y su forma de reservar, sin
- * tocar la página ni el resto de los productos.
+ * entrada declara con quién se reserva. GetYourGuide y Tiqets conviven sin
+ * que la página tenga lógica propia de un partner concreto.
  *
  * Dos reglas de diseño que conviene entender antes de editar esto:
  *
@@ -38,6 +37,8 @@ interface BookingLink {
    * añadido nuestro es riesgo de romperla a cambio de nada.
    */
   url: string;
+  /** Proveedor real de este enlace concreto. Puede cambiar por ubicación. */
+  provider: BookingProvider;
   /** Campaña con la que el proveedor generó esa URL. Informativa: no se envía. */
   campaign: string;
 }
@@ -54,6 +55,15 @@ export interface GetYourGuideWidgetConfig {
   fallbackHref: string;
 }
 
+/** Lo que hace falta para pintar el widget oficial de Tiqets. */
+export interface TiqetsWidgetConfig {
+  productId: string;
+  partner: string;
+  campaign: string;
+  layout: 'compact';
+  orientation: 'vertical';
+}
+
 /**
  * Cómo se ofrece un producto en `/comprar-entradas`. Sin esto, el producto no
  * aparece allí.
@@ -64,20 +74,15 @@ export interface GetYourGuideWidgetConfig {
  * cada proveedor trae su propia configuración porque no tienen por qué
  * parecerse: los `data-*` de GetYourGuide no valen para Tiqets.
  *
- * Añadir Tiqets el día que entreguen sus códigos es añadir aquí una rama:
- *
- *     | { render: 'widget'; provider: 'tiqets'; widget: TiqetsWidgetConfig }
- *
- * y su componente en `BookingProductRenderer`. No hace falta tocar la página,
+ * Cada proveedor tiene su propia rama y su propio componente en
+ * `BookingProductRenderer`. No hace falta tocar la página,
  * ni el buscador, ni los filtros, ni el resto de los productos. Y no se puede
  * olvidar el componente: el `switch` del renderer es exhaustivo, así que una
  * rama nueva sin renderer deja de compilar.
- *
- * No se declara aquí la forma de `TiqetsWidgetConfig` porque todavía no
- * tenemos sus códigos y cualquier campo que escribiera hoy sería inventado.
  */
 export type BookingMechanism =
   | { render: 'widget'; provider: 'getyourguide'; widget: GetYourGuideWidgetConfig }
+  | { render: 'widget'; provider: 'tiqets'; widget: TiqetsWidgetConfig }
   /**
    * Tarjeta nuestra: foto, nombre, una frase y un botón al enlace directo.
    * No necesita saber de qué proveedor es, porque lo único que usa es el
@@ -143,6 +148,9 @@ export const GYG_PARTNER_ID = 'J2Z24GU';
 /** Idioma en el que GetYourGuide pinta sus tarjetas. */
 export const GYG_LOCALE_CODE = 'es-ES';
 
+/** Cuenta de partner de Tiqets. De ella depende la atribución. */
+export const TIQETS_PARTNER_ID = 'estaba_en_lisboa-189233';
+
 const LISBON_EN = 'https://www.getyourguide.com/lisbon-l42/';
 const LISBON_ES = 'https://www.getyourguide.com/lisboa-l42/';
 
@@ -151,7 +159,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
   {
     id: 'oceanario',
     name: 'Oceanário de Lisboa',
-    provider: 'getyourguide',
+    provider: 'tiqets',
     category: 'entradas',
     blurb:
       'Una de las visitas más fáciles de recomendar en Parque das Nações, y el mejor refugio si el día se pone gris.',
@@ -162,10 +170,27 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     searchTerms: ['oceanario', 'acuario', 'peces', 'tiburones', 'familia', 'ninos', 'lluvia', 'parque das nacoes', 'museo'],
     hub: {
       render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '38079', campaign: 'web_actividad_oceanario', fallbackHref: LISBON_EN },
+      provider: 'tiqets',
+      widget: {
+        productId: '975260',
+        partner: TIQETS_PARTNER_ID,
+        campaign: 'web_comprar_entradas_ocea',
+        layout: 'compact',
+        orientation: 'vertical',
+      },
     },
-    links: { article: { url: 'https://gyg.me/OIHaINA6', campaign: 'web_articulo_oceanario' } },
+    links: {
+      article: {
+        url: 'https://gyg.me/OIHaINA6',
+        provider: 'getyourguide',
+        campaign: 'web_articulo_oceanario',
+      },
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-oceanario-de-lisboa-entrada-p975260/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_oceanario',
+        provider: 'tiqets',
+        campaign: 'web_actividades_oceanario',
+      },
+    },
     activitySlug: 'oceanario-lisboa',
     ctaLabel: 'Ver entradas',
   },
@@ -186,9 +211,93 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       provider: 'getyourguide',
       widget: { tourId: '424720', campaign: 'web_actividad_castelo-sao-jorge', fallbackHref: LISBON_ES },
     },
-    links: { article: { url: 'https://gyg.me/xsuIYU11', campaign: 'web_articulo_castelo-sao-jorge' } },
+    links: {
+      article: {
+        url: 'https://gyg.me/xsuIYU11',
+        provider: 'getyourguide',
+        campaign: 'web_articulo_castelo-sao-jorge',
+      },
+      activities: {
+        url: 'https://gyg.me/C9HzQNsh',
+        provider: 'getyourguide',
+        campaign: 'web_actividades_castelo-sao-jorge',
+      },
+    },
     activitySlug: 'castelo-sao-jorge',
     ctaLabel: 'Ver entradas',
+  },
+  {
+    id: 'sintra-palacio-pena',
+    name: 'Palacio da Pena + Parque',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta.',
+    kind: 'Entrada',
+    image: '/images/sintra-palacio-turistas.jpg',
+    imageAlt: 'Palacio de Sintra con visitantes en la entrada',
+    searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
+    hub: {
+      render: 'widget',
+      provider: 'tiqets',
+      widget: {
+        productId: '1120392',
+        partner: TIQETS_PARTNER_ID,
+        campaign: 'web_comprar_entradas_pena',
+        layout: 'compact',
+        orientation: 'vertical',
+      },
+    },
+    links: {
+      article: {
+        url: 'https://gyg.me/9i00hN0O',
+        provider: 'getyourguide',
+        campaign: 'web_sintra_palacio-pena',
+      },
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_pena',
+        provider: 'tiqets',
+        campaign: 'web_actividades_pena',
+      },
+    },
+    // Sin `activitySlug` a propósito. La ficha `sintra-dia-completo` cubre
+    // Pena Y Regaleira, que son dos entradas distintas; este enlace sólo
+    // vende la de Pena, así que como CTA de esa ficha sería una
+    // correspondencia parcial. Queda disponible para artículos que
+    // recomienden exactamente la entrada al Palacio da Pena y su parque.
+    ctaLabel: 'Ver entradas al Palacio da Pena',
+  },
+  {
+    id: 'lisboa-card',
+    name: 'Lisboa Card',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'Puede compensar si concentras transporte y monumentos en pocos días; conviene revisar condiciones antes de comprar.',
+    kind: 'Pase',
+    badge: 'Para planificar',
+    image: '/images/funicular-bica-turistas.jpg',
+    imageAlt: 'Funicular de Bica subiendo una calle empinada de Lisboa',
+    searchTerms: ['lisboa card', 'tarjeta lisboa', 'transporte', 'museos', 'monumentos', 'pase', 'descuentos', 'belem'],
+    hub: {
+      render: 'widget',
+      provider: 'tiqets',
+      widget: {
+        productId: '974847',
+        partner: TIQETS_PARTNER_ID,
+        campaign: 'web_comprar_lisboa-card',
+        layout: 'compact',
+        orientation: 'vertical',
+      },
+    },
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_activ_lisboa-card',
+        provider: 'tiqets',
+        campaign: 'web_activ_lisboa-card',
+      },
+    },
+    ctaLabel: 'Ver Lisboa Card',
   },
 
   // ------------------------------------------------------------ experiencias
@@ -209,7 +318,18 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       provider: 'getyourguide',
       widget: { tourId: '410732', campaign: 'web_actividad_crucero-tajo', fallbackHref: LISBON_ES },
     },
-    links: { article: { url: 'https://gyg.me/IL8SaMuw', campaign: 'web_articulo_crucero-tajo' } },
+    links: {
+      article: {
+        url: 'https://gyg.me/IL8SaMuw',
+        provider: 'getyourguide',
+        campaign: 'web_articulo_crucero-tajo',
+      },
+      activities: {
+        url: 'https://gyg.me/TJA6VUJa',
+        provider: 'getyourguide',
+        campaign: 'web_actividades_crucero-tajo',
+      },
+    },
     activitySlug: 'crucero-atardecer-tajo',
     ctaLabel: 'Consultar disponibilidad',
   },
@@ -230,7 +350,18 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       provider: 'getyourguide',
       widget: { tourId: '887435', campaign: 'web_actividad_fado', fallbackHref: LISBON_ES },
     },
-    links: { article: { url: 'https://gyg.me/8aL5dndR', campaign: 'web_articulo_fado' } },
+    links: {
+      article: {
+        url: 'https://gyg.me/8aL5dndR',
+        provider: 'getyourguide',
+        campaign: 'web_articulo_fado',
+      },
+      activities: {
+        url: 'https://gyg.me/jH9FtGc7',
+        provider: 'getyourguide',
+        campaign: 'web_actividades_fado',
+      },
+    },
     activitySlug: 'fado-en-alfama',
     ctaLabel: 'Ver opciones',
   },
@@ -250,7 +381,18 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       provider: 'getyourguide',
       widget: { tourId: '603', campaign: 'web_actividad_tour-gastronomico', fallbackHref: LISBON_ES },
     },
-    links: { article: { url: 'https://gyg.me/9USjIETP', campaign: 'web_articulo_tour-gastronomico' } },
+    links: {
+      article: {
+        url: 'https://gyg.me/9USjIETP',
+        provider: 'getyourguide',
+        campaign: 'web_articulo_tour-gastronomico',
+      },
+      activities: {
+        url: 'https://gyg.me/jO1KCAoG',
+        provider: 'getyourguide',
+        campaign: 'web_actividades_tour-gastronomico',
+      },
+    },
     // A propósito sin `activitySlug`. La ficha más parecida es «Comer en una
     // tasca tradicional», que va justo de lo contrario: comer barato y por tu
     // cuenta. Un tour guiado ahí contradiría su tip de ahorro, así que este
@@ -276,38 +418,15 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       provider: 'getyourguide',
       widget: { tourId: '387617', campaign: 'web_actividad_sintra-completa', fallbackHref: LISBON_EN },
     },
-    // SIN enlace directo, y es deliberado. No existe todavía una URL corta
-    // para esta excursión concreta. El enlace del Palacio da Pena NO sirve:
-    // es otro producto, y usarlo aquí sería vender una cosa por otra.
-    links: {},
-    ctaLabel: 'Consultar disponibilidad',
-  },
-
-  // -------------------------------------------------- sólo enlace, sin widget
-  {
-    id: 'sintra-palacio-pena',
-    name: 'Palacio da Pena + Parque',
-    provider: 'getyourguide',
-    category: 'excursiones',
-    blurb:
-      'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta.',
-    kind: 'Entrada',
-    image: '/images/sintra-palacio-turistas.jpg',
-    imageAlt: 'Palacio de Sintra con visitantes en la entrada',
-    searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
-    // Sin `hub`: no aparece en el catálogo. Existe para dar botón a un
-    // artículo que recomiende exactamente esto, que es subir a Pena por tu
-    // cuenta. El día que queramos venderlo en el hub sin widget, basta con
-    // `hub: { render: 'native-card' }`: ya tiene enlace directo.
     links: {
-      article: { url: 'https://gyg.me/9i00hN0O', campaign: 'web_sintra_palacio-pena' },
+      activities: {
+        url: 'https://gyg.me/zgpDrBr1',
+        provider: 'getyourguide',
+        campaign: 'web_actividades_sintra-completa',
+      },
     },
-    // Sin `activitySlug` a propósito. La ficha `sintra-dia-completo` cubre
-    // Pena Y Regaleira, que son dos entradas distintas; este enlace sólo
-    // vende la de Pena, así que como CTA de esa ficha sería una
-    // correspondencia parcial. Queda disponible para artículos que
-    // recomienden exactamente la entrada al Palacio da Pena y su parque.
-    ctaLabel: 'Ver entradas al Palacio da Pena',
+    activitySlug: 'sintra-dia-completo',
+    ctaLabel: 'Consultar disponibilidad',
   },
 ];
 
@@ -321,17 +440,6 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
  * recurrir al enlace de otro producto parecido.
  */
 export const ACTIVITY_HUB_ANCHOR: Record<string, { anchor: string; label: string }> = {
-  // La excursión completa de Sintra existe en el hub, pero todavía no tiene
-  // URL corta propia. Hasta que la haya, la ficha manda al catálogo en lugar
-  // de a un producto que no es el suyo.
-  //
-  // El ancla apuntaba antes a `excursiones-desde-lisboa`, que es el slug de un
-  // artículo y no existía como `id` en el hub: el enlace no llevaba a ninguna
-  // parte. Ahora apunta al catálogo, que sí existe.
-  'sintra-dia-completo': {
-    anchor: 'catalogo',
-    label: 'Ver excursiones a Sintra',
-  },
 };
 
 /** Los productos del catálogo: los que declaran mecanismo de reserva. */
@@ -340,14 +448,12 @@ export const HUB_PRODUCTS = BOOKABLE_PRODUCTS.filter((p) => p.hub);
 /**
  * Resuelve el enlace y la campaña para una ubicación concreta.
  *
- * Hoy sólo existen los enlaces `web_articulo_*`, así que una ficha de
- * actividad cae en ellos. Cuando se generen los `web_actividades_*`, basta
- * con añadir `links.activities` al producto: esta función los prefiere sola
- * y la medición se separa sin tocar ni un componente.
+ * La función prefiere siempre el enlace exacto de la ubicación. Sólo recurre
+ * al otro cuando un producto sigue teniendo una campaña pendiente para esa
+ * página concreta, y deja visible de dónde salió mediante `usedPlacement`.
  *
- * Devuelve `null` cuando no hay ningún enlace, que es el caso de la excursión
- * completa de Sintra. Preferimos no ofrecer botón antes que ofrecer uno que
- * lleve a otro producto.
+ * Devuelve `null` cuando no hay ningún enlace. Preferimos no ofrecer botón
+ * antes que ofrecer uno que lleve a otro producto.
  */
 export function resolveBookingLink(
   product: BookableProduct,

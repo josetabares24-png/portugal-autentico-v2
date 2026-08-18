@@ -49,14 +49,14 @@ El sitio usa Clerk para gestionar el acceso al panel de administración. Clerk p
 - **Proveedor:** Google LLC.
 - **Duración exacta:** la determina Google según su propia configuración para GA4; no fijamos nosotros esos plazos. Consulta la [política de privacidad de Google](https://policies.google.com/privacy) para el detalle actualizado.
 
-### 2.4. Reservas de actividades (GetYourGuide)
-Algunas páginas incluyen módulos de reserva de GetYourGuide, con los que puedes consultar actividades y reservarlas. Para funcionar cargan un script de GetYourGuide que, además de mostrar la actividad, atribuye la reserva a este sitio, que es de donde sale nuestra comisión.
+### 2.4. Reservas de actividades (GetYourGuide y Tiqets)
+Algunas páginas incluyen módulos de reserva de GetYourGuide y Tiqets, con los que puedes consultar actividades y reservarlas. Para funcionar cargan scripts de esos proveedores que, además de mostrar la actividad, atribuyen la reserva a este sitio, que es de donde sale nuestra comisión.
 
 **Requieren tu consentimiento explícito**, el mismo que pedimos en el aviso de cookies. Si no aceptas, el script no se carga en absoluto y los módulos de reserva no se muestran.
 
 - **Qué hace:** identificar que la visita llega desde este sitio para atribuir la reserva, y medir el rendimiento de cada módulo.
-- **Proveedor:** GetYourGuide Deutschland GmbH.
-- **Duración exacta:** la determina GetYourGuide; no fijamos nosotros esos plazos. Consulta la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) para el detalle actualizado.
+- **Proveedores:** GetYourGuide Deutschland GmbH y Tiqets International B.V.
+- **Duración exacta:** la determina cada proveedor; no fijamos nosotros esos plazos. Consulta la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para el detalle actualizado.
 
 ### 2.5. Google Maps (mapas incrustados)
 Algunas guías e itinerarios incluyen un mapa de Google Maps incrustado directamente en la página. Al cargarse, Google puede establecer sus propias cookies de terceros, igual que si visitaras maps.google.com directamente. Esto ocurre al abrir una página con mapa, independientemente de tu elección en el aviso de cookies de este sitio, porque es un contenido embebido de Google, no una cookie que gestionemos nosotros.
@@ -64,7 +64,7 @@ Algunas guías e itinerarios incluyen un mapa de Google Maps incrustado directam
 ## 3. Servicios de Terceros que Pueden Establecer Cookies
 
 - **Google Analytics:** análisis de tráfico web, solo si aceptas las cookies analíticas.
-- **GetYourGuide:** módulos de reserva de actividades, solo si aceptas las cookies (ver punto 2.4).
+- **GetYourGuide y Tiqets:** módulos de reserva de actividades, solo si aceptas las cookies (ver punto 2.4).
 - **Google Maps:** mapas incrustados en guías e itinerarios (ver punto 2.5).
 - **Clerk:** autenticación del panel de administración.
 - **Vercel:** alojamiento y ejecución del sitio web; puede usar cookies técnicas propias de su infraestructura.
@@ -96,12 +96,12 @@ Configuración > Privacidad, búsqueda y servicios > Cookies y datos del sitio
 Si rechazas las cookies:
 - El sitio web seguirá funcionando correctamente y podrás leer todo el contenido.
 - No se activará Google Analytics, así que no analizaremos el uso agregado del sitio.
-- No se cargarán los módulos de reserva de GetYourGuide, así que no podrás reservar actividades desde aquí (ver 2.4). Puedes hacerlo igualmente desde el sitio de GetYourGuide.
+- No se cargarán los módulos de reserva de GetYourGuide o Tiqets, así que no podrás ver algunos módulos incrustados desde aquí (ver 2.4). Cuando exista enlace directo, podrás abrir igualmente la reserva en el sitio del proveedor.
 - Los mapas de Google incrustados en guías e itinerarios seguirán cargándose igual (ver 2.5), porque no dependen de esta elección.
 
 ## 5. Nombres y Duración Exactos de las Cookies
 
-Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Clerk, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) para los módulos de reserva, y la documentación de [Clerk](https://clerk.com/privacy) para las cookies de autenticación.
+Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Tiqets, Clerk, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para los módulos de reserva, y la documentación de [Clerk](https://clerk.com/privacy) para las cookies de autenticación.
 
 ## 6. Actualizaciones
 

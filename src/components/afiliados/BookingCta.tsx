@@ -106,7 +106,7 @@ export function BookingCta({ activitySlug, placement = 'activities' }: BookingCt
           className="btn-primary w-full px-7 py-3.5 text-base sm:w-auto"
           onClick={() =>
             trackClick({
-              affiliate_partner: product.provider,
+              affiliate_partner: link.provider,
               affiliate_campaign: link.campaign,
               affiliate_content: `activity-${activitySlug}`,
               // La ubicación real desde la que se pulsó, no la del enlace: si

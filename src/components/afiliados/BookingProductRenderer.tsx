@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
+import { TiqetsWidget } from '@/components/afiliados/TiqetsWidget';
 import { BookingCard } from '@/components/afiliados/BookingCard';
 import { useCookieConsent } from '@/lib/consent';
 import { resolveBookingLink, type BookableProduct } from '@/data/bookings';
@@ -12,8 +13,8 @@ import { resolveBookingLink, type BookableProduct } from '@/data/bookings';
  * Es la frontera entre nuestra página y los proveedores. Por encima de esta
  * línea todo es nuestro: el buscador, los filtros, las categorías y el orden.
  * Por debajo, cada producto pinta lo que su `hub` declara. Por eso no existe
- * un componente «marketplace de GetYourGuide»: la página no es de nadie, y
- * añadir Tiqets no la reescribe, sólo añade una rama aquí.
+ * un componente «marketplace de un proveedor»: la página no es de nadie, y
+ * añadir un partner no la reescribe, sólo añade una rama aquí.
  *
  * El `switch` es exhaustivo a propósito. Si mañana se añade a `bookings.ts`
  * una rama `provider: 'tiqets'` y nadie escribe su componente, el `never` del
@@ -36,7 +37,7 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
     case 'widget':
       /*
        * Sin consentimiento el script del proveedor no carga, y su `<div>` se
-       * queda vacío. Seis huecos vacíos parecen una página rota, así que ahí
+       * queda vacío. Ocho huecos vacíos parecen una página rota, así que ahí
        * se pinta lo nuestro, que no necesita cookies de nadie.
        */
       if (!consent) return <SinConsentimiento product={product} priority={priority} />;
@@ -77,12 +78,19 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
             </div>
           );
 
-        default: {
-          // Rama nueva en `BookingMechanism` sin renderer: error de compilación.
-          const proveedorSinRenderer: never = hub.provider;
-          void proveedorSinRenderer;
-          return null;
-        }
+        case 'tiqets':
+          return (
+            <div className="flex h-full min-w-0 flex-col">
+              <h3 className="sr-only">{product.name}</h3>
+              <TiqetsWidget
+                productId={hub.widget.productId}
+                partner={hub.widget.partner}
+                campaign={hub.widget.campaign}
+                layout={hub.widget.layout}
+                orientation={hub.widget.orientation}
+              />
+            </div>
+          );
       }
 
     case 'native-card':
@@ -106,15 +114,10 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
 /*
  * Lo que se ve cuando el visitante todavía no ha aceptado cookies.
  *
- * No es una versión degradada: para los cinco productos que tienen enlace
+ * No es una versión degradada: para los productos que tienen enlace
  * directo es la tarjeta nativa entera, con nuestra foto, nuestro texto y un
  * botón que funciona. Un enlace no necesita permiso de nadie, así que ahí no
  * se pierde ni la venta ni la comisión.
- *
- * El sexto es la excursión completa de Sintra, que sólo se puede reservar por
- * su widget. Ahí no hay botón que ofrecer sin mentir, así que se dice lo que
- * pasa y ya está: preferimos una tarjeta honesta a un CTA inventado o al
- * enlace de otro producto parecido.
  */
 function SinConsentimiento({ product, priority }: { product: BookableProduct; priority: boolean }) {
   const link = resolveBookingLink(product, 'activities');
@@ -155,7 +158,7 @@ function SinConsentimiento({ product, priority }: { product: BookableProduct; pr
           {product.blurb}
         </p>
         <p className="mt-auto rounded-lg bg-background-light p-3 font-article text-xs leading-relaxed text-text-secondary">
-          Esta excursión sólo se reserva desde el módulo de GetYourGuide, que usa sus
+          Esta opción sólo se reserva desde el módulo del proveedor, que usa sus
           propias cookies. Acepta las cookies para ver aquí precio y disponibilidad.
         </p>
       </div>
