@@ -52,6 +52,10 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
   const link = resolveBookingLink(product, placement);
   if (!link) return null;
 
+  const ctaLabel = placementLabel.startsWith('comprar-entradas')
+    ? 'Ver disponibilidad'
+    : product.ctaLabel;
+
   return (
     <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card transition-all duration-300 hover:border-border-soft hover:shadow-card-hover">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -101,7 +105,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
             })
           }
         >
-          {product.ctaLabel}
+          {ctaLabel}
           <span aria-hidden="true">→</span>
           <span className="sr-only"> (se abre en una pestaña nueva)</span>
         </a>

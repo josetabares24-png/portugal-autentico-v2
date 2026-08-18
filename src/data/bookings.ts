@@ -151,9 +151,6 @@ export const GYG_LOCALE_CODE = 'es-ES';
 /** Cuenta de partner de Tiqets. De ella depende la atribución. */
 export const TIQETS_PARTNER_ID = 'estaba_en_lisboa-189233';
 
-const LISBON_EN = 'https://www.getyourguide.com/lisbon-l42/';
-const LISBON_ES = 'https://www.getyourguide.com/lisboa-l42/';
-
 export const BOOKABLE_PRODUCTS: BookableProduct[] = [
   // ---------------------------------------------------------------- entradas
   {
@@ -169,15 +166,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
     searchTerms: ['oceanario', 'acuario', 'peces', 'tiburones', 'familia', 'ninos', 'lluvia', 'parque das nacoes', 'museo'],
     hub: {
-      render: 'widget',
-      provider: 'tiqets',
-      widget: {
-        productId: '975260',
-        partner: TIQETS_PARTNER_ID,
-        campaign: 'web_comprar_entradas_ocea',
-        layout: 'compact',
-        orientation: 'vertical',
-      },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -207,9 +196,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
     searchTerms: ['castelo', 'castillo', 'sao jorge', 'san jorge', 'alfama', 'muralla', 'mirador', 'historia', 'monumento'],
     hub: {
-      render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '424720', campaign: 'web_actividad_castelo-sao-jorge', fallbackHref: LISBON_ES },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -238,15 +225,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Palacio de Sintra con visitantes en la entrada',
     searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
     hub: {
-      render: 'widget',
-      provider: 'tiqets',
-      widget: {
-        productId: '1120392',
-        partner: TIQETS_PARTNER_ID,
-        campaign: 'web_comprar_entradas_pena',
-        layout: 'compact',
-        orientation: 'vertical',
-      },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -280,15 +259,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Funicular de Bica subiendo una calle empinada de Lisboa',
     searchTerms: ['lisboa card', 'tarjeta lisboa', 'transporte', 'museos', 'monumentos', 'pase', 'descuentos', 'belem'],
     hub: {
-      render: 'widget',
-      provider: 'tiqets',
-      widget: {
-        productId: '974847',
-        partner: TIQETS_PARTNER_ID,
-        campaign: 'web_comprar_lisboa-card',
-        layout: 'compact',
-        orientation: 'vertical',
-      },
+      render: 'native-card',
     },
     links: {
       activities: {
@@ -314,9 +285,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
     searchTerms: ['crucero', 'barco', 'velero', 'tajo', 'tejo', 'rio', 'navegar', 'atardecer', 'puesta de sol', 'paseo en barco'],
     hub: {
-      render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '410732', campaign: 'web_actividad_crucero-tajo', fallbackHref: LISBON_ES },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -346,9 +315,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Mesa con dos personas cenando en una tasca de Lisboa por la noche',
     searchTerms: ['fado', 'musica', 'espectaculo', 'concierto', 'noche', 'cena', 'alfama', 'guitarra', 'cante'],
     hub: {
-      render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '887435', campaign: 'web_actividad_fado', fallbackHref: LISBON_ES },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -377,9 +344,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     imageAlt: 'Interior de una tasca tradicional de Lisboa con mesas puestas',
     searchTerms: ['comida', 'comer', 'gastronomia', 'gastronomico', 'tapas', 'probar', 'bacalao', 'pasteis', 'food', 'tour', 'restaurante'],
     hub: {
-      render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '603', campaign: 'web_actividad_tour-gastronomico', fallbackHref: LISBON_ES },
+      render: 'native-card',
     },
     links: {
       article: {
@@ -403,7 +368,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
   // ------------------------------------------------------------ excursiones
   {
     id: 'sintra-completa',
-    name: 'Sintra, Pena, Regaleira, Cabo da Roca y Cascais',
+    name: 'Sintra completa desde Lisboa',
     provider: 'getyourguide',
     category: 'excursiones',
     blurb:
@@ -412,11 +377,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     badge: 'Desde Lisboa',
     image: '/images/sintra-palacio-turistas.jpg',
     imageAlt: 'Fachada del palacio de la Quinta da Regaleira en Sintra con visitantes',
-    searchTerms: ['sintra', 'pena', 'regaleira', 'cabo da roca', 'cascais', 'excursion', 'dia completo', 'palacio', 'fuera de lisboa'],
+    searchTerms: ['sintra', 'regaleira', 'cabo da roca', 'cascais', 'excursion', 'dia completo', 'fuera de lisboa'],
     hub: {
-      render: 'widget',
-      provider: 'getyourguide',
-      widget: { tourId: '387617', campaign: 'web_actividad_sintra-completa', fallbackHref: LISBON_EN },
+      render: 'native-card',
     },
     links: {
       activities: {

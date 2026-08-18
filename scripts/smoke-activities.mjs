@@ -44,7 +44,7 @@ const INDEXABLE_BY_SLUG = new Map(
     .map((entrada) => {
       const slug = entrada.match(/slug:\s*'([a-z0-9-]+)'/);
       const indexable = entrada.match(/indexable:\s*(true|false)/);
-      return slug && indexable ? [slug[1], indexable[1] === 'true'] : null;
+      return slug ? [slug[1], indexable ? indexable[1] === 'true' : true] : null;
     })
     .filter(Boolean)
 );
@@ -198,7 +198,7 @@ async function checkActivity(baseUrl, slug) {
   const expectedCanonical = `https://${SITE_HOST}/actividades/${slug}`;
   record(`${slug}: canonical correcto`, canonical === expectedCanonical, `canonical="${canonical}"`);
 
-  const debeIndexar = INDEXABLE_BY_SLUG.get(slug);
+  const debeIndexar = INDEXABLE_BY_SLUG.get(slug) ?? true;
   const robotsEsperado = debeIndexar ? 'index, follow' : 'noindex, follow';
   record(
     `${slug}: robots es "${robotsEsperado}" (indexable: ${debeIndexar})`,
@@ -232,8 +232,8 @@ async function checkSitemap(baseUrl) {
   record('/actividades sigue en el sitemap', catalogPresent);
 
   const enSitemap = (slug) => xml.includes(`https://${SITE_HOST}/actividades/${slug}<`);
-  const sobran = ACTIVITY_SLUGS.filter((s) => !INDEXABLE_BY_SLUG.get(s) && enSitemap(s));
-  const faltan = ACTIVITY_SLUGS.filter((s) => INDEXABLE_BY_SLUG.get(s) && !enSitemap(s));
+  const sobran = ACTIVITY_SLUGS.filter((s) => !(INDEXABLE_BY_SLUG.get(s) ?? true) && enSitemap(s));
+  const faltan = ACTIVITY_SLUGS.filter((s) => (INDEXABLE_BY_SLUG.get(s) ?? true) && !enSitemap(s));
   record(
     'ninguna ficha noindex está en el sitemap',
     sobran.length === 0,
@@ -242,7 +242,7 @@ async function checkSitemap(baseUrl) {
   record(
     'todas las fichas indexables están en el sitemap',
     faltan.length === 0,
-    faltan.length ? `ausentes: ${faltan.join(', ')}` : `${ACTIVITY_SLUGS.filter((s) => INDEXABLE_BY_SLUG.get(s)).length} presentes`
+    faltan.length ? `ausentes: ${faltan.join(', ')}` : `${ACTIVITY_SLUGS.filter((s) => INDEXABLE_BY_SLUG.get(s) ?? true).length} presentes`
   );
 }
 
