@@ -14,6 +14,13 @@
   --color-terracotta: #B8472E;
   --color-taupe: #6F665D;
   --color-gold: #C9974A;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ede7da;
+  --color-border: #e8e2d9;
+  --color-focus: #b8472e;
+  --radius-control: 0.375rem;
+  --radius-field: 0.5rem;
+  --radius-card: 1rem;
   /* Legacy */
   --color-primary: #B8472E;
   --color-primary-dark: #8f3520;
@@ -50,20 +57,41 @@ h1, h2, h3, h4, h5, h6 {
 /* ========== BOTONES, BADGES Y TARJETAS REUTILIZABLES ========== */
 
 @layer components {
+  .btn-primary,
+  .btn-dark,
+  .btn-outline,
+  .btn-secondary,
+  .btn-ghost-light {
+    @apply inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-md px-5 py-2.5 text-center font-body text-sm font-semibold leading-tight transition-all duration-200;
+  }
+
   .btn-primary {
-    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center bg-terracotta text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-primary-dark hover:shadow-card-hover hover:-translate-y-0.5;
+    @apply whitespace-normal bg-terracotta text-white shadow-card hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-card-hover disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
   }
 
   .btn-dark {
-    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center bg-night text-white font-semibold rounded-md shadow-card transition-all duration-200 hover:bg-terracotta hover:shadow-card-hover hover:-translate-y-0.5;
+    @apply whitespace-normal bg-night text-white shadow-card hover:-translate-y-0.5 hover:bg-terracotta hover:shadow-card-hover disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
   }
 
-  .btn-outline {
-    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center border border-night/15 text-night font-semibold rounded-md transition-all duration-200 hover:border-night hover:bg-night hover:text-white hover:-translate-y-0.5;
+  .btn-outline,
+  .btn-secondary {
+    @apply whitespace-normal border border-night/20 bg-transparent text-night hover:-translate-y-0.5 hover:border-night hover:bg-night hover:text-white disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
   }
 
   .btn-ghost-light {
-    @apply inline-flex max-w-full items-center justify-center gap-2 whitespace-normal text-center border border-white/40 bg-white/10 text-white font-semibold rounded-md backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-night hover:-translate-y-0.5;
+    @apply whitespace-normal border border-white/40 bg-white/10 text-white backdrop-blur-sm hover:-translate-y-0.5 hover:bg-white hover:text-night;
+  }
+
+  .btn-lg {
+    @apply min-h-12 px-7 py-3 text-base;
+  }
+
+  .btn-card {
+    @apply min-h-12 w-full px-5 py-3;
+  }
+
+  .text-cta {
+    @apply inline-flex min-h-11 items-center gap-1.5 font-body text-sm font-semibold text-terracotta underline decoration-terracotta/45 underline-offset-4 transition-colors hover:text-primary-dark hover:decoration-primary-dark;
   }
 
   .badge-pill {
@@ -75,7 +103,100 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .form-input {
-    @apply w-full px-4 py-3 rounded-lg border border-border-soft bg-white text-text-main placeholder:text-text-secondary/75 transition-colors duration-200 focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/15;
+    @apply min-h-12 w-full rounded-lg border border-border-soft bg-white px-4 py-3 font-body text-text-main placeholder:text-text-secondary/75 transition-colors duration-200 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/15;
+  }
+
+  .site-container {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+  }
+
+  .page-intro {
+    @apply border-b border-border-soft bg-background-light py-10 md:py-14;
+  }
+
+  .page-intro-content {
+    @apply max-w-3xl;
+  }
+
+  .page-eyebrow {
+    @apply mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary;
+  }
+
+  .page-title {
+    @apply mb-3 max-w-3xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .page-description {
+    @apply max-w-2xl font-body text-base leading-relaxed text-text-secondary;
+  }
+
+  .filter-chip {
+    @apply inline-flex min-h-11 flex-shrink-0 items-center justify-center rounded-full border border-border-soft bg-white px-4 font-body text-sm font-semibold text-text-secondary transition-colors hover:border-terracotta hover:text-terracotta;
+  }
+
+  .filter-chip-primary-active {
+    @apply border-terracotta bg-terracotta text-white shadow-card hover:border-terracotta hover:text-white;
+  }
+
+  .filter-chip-secondary-active {
+    @apply border-gold bg-gold/10 text-night hover:border-gold hover:text-night;
+  }
+
+  .filter-clear {
+    @apply inline-flex min-h-11 flex-shrink-0 items-center px-2 font-body text-sm font-semibold text-terracotta underline underline-offset-4 hover:no-underline;
+  }
+
+  .nav-link {
+    @apply relative inline-flex min-h-11 items-center font-body text-sm font-semibold text-night transition-colors hover:text-terracotta;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--color-terracotta);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 160ms ease-out;
+  }
+
+  .nav-link[aria-current='page'] {
+    @apply text-terracotta;
+  }
+
+  .nav-link[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+
+  .nav-link-desktop {
+    @apply px-3 py-2;
+  }
+
+  .nav-link-mobile {
+    @apply mx-4 w-[calc(100%-2rem)] px-0 py-3;
+  }
+
+  .editorial-page-hero {
+    @apply relative min-h-[400px] overflow-hidden md:min-h-[460px];
+    height: min(56vh, 35rem);
+  }
+
+  .editorial-page-hero-overlay {
+    background: linear-gradient(to top, rgba(26, 43, 74, 0.78) 0%, rgba(26, 43, 74, 0.34) 58%, rgba(26, 43, 74, 0.12) 100%);
+  }
+
+  .editorial-page-title {
+    max-width: 18ch;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: 0;
+    text-wrap: balance;
   }
 }
 

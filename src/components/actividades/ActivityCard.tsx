@@ -42,7 +42,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           </span>
         </div>
         <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{activity.zone}</p>
-        <h3 className="font-display italic text-text-main text-lg leading-snug mb-2 group-hover:text-terracotta transition-colors">
+        <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta">
           {activity.title}
         </h3>
         <p className="mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2">{activity.description}</p>

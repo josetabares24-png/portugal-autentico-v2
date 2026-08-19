@@ -3,6 +3,8 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ExperienceSearch } from '@/components/ExperienceSearch';
+import { FilterChip } from '@/components/FilterChip';
+import { PageIntro } from '@/components/PageIntro';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { HUB_PRODUCTS, type BookingCategory } from '@/data/bookings';
 import { coincide } from '@/lib/search';
@@ -74,19 +76,14 @@ export default function ComprarEntradasPage() {
 
   return (
     <main id="main-content">
-      {/* Hero compacto: eyebrow, h1, una frase, buscador, chips. */}
-      <section className="bg-background-light pt-8 pb-5 md:pt-16 md:pb-8">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="mb-2 font-article text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
-            Reserva en Lisboa
-          </p>
-          <h1 className="mb-3 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Entradas y experiencias en Lisboa
-          </h1>
-          <p className="mb-4 max-w-2xl font-article text-[15px] leading-relaxed text-text-secondary md:mb-6 md:text-base">
-            Lo que merece reservarse por adelantado, elegido a mano.
-          </p>
+      <PageIntro
+        eyebrow="Reserva en Lisboa"
+        title="Entradas y experiencias en Lisboa"
+        description="Lo que merece reservarse por adelantado, elegido a mano."
+      />
 
+      <section className="border-b border-border-soft bg-background-light py-5">
+        <div className="max-w-6xl mx-auto px-6">
           <ExperienceSearch
             id="buscar-entradas"
             value={consulta}
@@ -100,19 +97,14 @@ export default function ComprarEntradasPage() {
             {CATEGORIAS.map((c) => {
               const activa = categoria === c.id;
               return (
-                <button
+                <FilterChip
                   key={c.id}
-                  type="button"
-                  aria-pressed={activa}
+                  active={activa}
                   onClick={() => setCategoria(c.id)}
-                  className={`inline-flex min-h-11 flex-shrink-0 snap-start items-center rounded-full border px-4 font-article text-sm font-semibold transition-colors ${
-                    activa
-                      ? 'border-terracotta bg-terracotta text-white'
-                      : 'border-border-soft bg-white text-text-secondary hover:border-terracotta hover:text-terracotta'
-                  }`}
+                  className="snap-start"
                 >
                   {c.label}
-                </button>
+                </FilterChip>
               );
             })}
 
@@ -120,7 +112,7 @@ export default function ComprarEntradasPage() {
               <button
                 type="button"
                 onClick={limpiarTodo}
-                className="inline-flex min-h-11 flex-shrink-0 items-center px-2 font-article text-sm font-semibold text-terracotta underline underline-offset-4 hover:no-underline"
+                className="filter-clear"
               >
                 Limpiar filtros
               </button>
@@ -152,7 +144,7 @@ export default function ComprarEntradasPage() {
               <p className="mb-4 font-article text-text-main">
                 No encontramos nada con esa búsqueda.
               </p>
-              <button type="button" onClick={limpiarTodo} className="btn-outline min-h-12 px-6 py-3 font-article text-sm">
+              <button type="button" onClick={limpiarTodo} className="btn-secondary btn-lg">
                 Limpiar búsqueda
               </button>
             </div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { guidePacks } from '@/data/guide-packs';
 import { activities } from '@/data/activities';
 import { ActivityCard } from '@/components/actividades/ActivityCard';
+import { PageIntro } from '@/components/PageIntro';
 
 type BudgetType = 'low' | 'mid' | 'high';
 
@@ -105,18 +106,11 @@ export default function PlanificaTuViajePage() {
 
   return (
     <main id="main-content">
-      {/* Cabecera */}
-      <section className="bg-background-light pt-20 pb-12 border-b border-border-soft">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Planificación</p>
-          <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight mb-3">
-            Planifica tu viaje
-          </h1>
-          <p className="text-text-secondary">
-            Recomendación al instante, o si tienes pocos días y quieres aprovecharlos al máximo, te preparo un plan a medida.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Planificación"
+        title="Planifica tu viaje"
+        description="Recomendación al instante, o si tienes pocos días y quieres aprovecharlos al máximo, te preparo un plan a medida."
+      />
 
       {/* Recomendación instantánea */}
       <section className="bg-background-light py-20 border-b border-border-soft">
@@ -344,7 +338,7 @@ export default function PlanificaTuViajePage() {
                 <label htmlFor="presupuesto" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Presupuesto aproximado</label>
                 <input
                   type="text" id="presupuesto" name="presupuesto" value={formData.presupuesto} onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                  className="form-input text-sm"
                   placeholder="Ej: 100€/día por persona"
                 />
               </div>
@@ -353,7 +347,7 @@ export default function PlanificaTuViajePage() {
                 <label htmlFor="intereses" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">¿Qué te interesa más?</label>
                 <input
                   type="text" id="intereses" name="intereses" value={formData.intereses} onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border-soft bg-white text-text-main focus:outline-none focus:border-text-secondary text-sm"
+                  className="form-input text-sm"
                   placeholder="Ej: gastronomía, fotografía, historia, vida nocturna..."
                 />
               </div>
@@ -373,7 +367,7 @@ export default function PlanificaTuViajePage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="btn-primary w-full py-4 text-sm disabled:opacity-50 disabled:hover:translate-y-0"
+                className="btn-primary btn-lg w-full"
               >
                 {status === 'loading' ? 'Enviando…' : 'Solicitar mi plan a medida'}
               </button>
@@ -384,7 +378,7 @@ export default function PlanificaTuViajePage() {
             </form>
           ) : (
             <div className="card-surface p-8 border-l-2 border-gold">
-              <p className="font-display italic text-text-main text-2xl mb-4">Solicitud enviada.</p>
+              <p className="mb-4 font-display text-2xl font-semibold not-italic text-text-main">Solicitud enviada.</p>
               <p className="text-text-secondary mb-8">
                 Gracias. Voy a revisar tus respuestas y te escribo en 24-48 horas con tu plan a medida.
               </p>

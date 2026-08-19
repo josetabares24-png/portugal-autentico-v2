@@ -1,8 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { EditorialPageHero } from '@/components/EditorialPageHero';
+import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
@@ -43,27 +45,12 @@ export default function BlogClient() {
 
   return (
     <main id="main-content">
-      {/* Hero */}
-      <section className="relative h-[56vh] min-h-[380px] overflow-hidden md:min-h-[420px]">
-        <Image
-          src="/images/alfama-panoramica.jpg"
-          alt="Lisboa vista desde arriba"
-          fill
-          className="object-cover"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="max-w-6xl px-6 pb-10 pt-28 sm:px-8 md:p-16">
-          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Historias &amp; Consejos</p>
-          <h1 className="font-display italic text-white text-[clamp(2.6rem,11vw,4.2rem)] leading-[1.02] md:text-6xl">
-            El blog de Lisboa
-          </h1>
-          </div>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Historias & Consejos"
+        title="El blog de Lisboa"
+        image="/images/alfama-panoramica.jpg"
+        imageAlt="Lisboa vista desde arriba"
+      />
 
       {/* Filtros por categoría */}
       <section className="bg-background-light border-b border-border-soft py-4 sticky top-16 z-10">
@@ -79,18 +66,14 @@ export default function BlogClient() {
             */}
           <div className="filtros-scroll -mx-6 flex gap-2 overflow-x-auto px-6 lg:mx-0 lg:flex-wrap lg:overflow-x-visible lg:px-0">
             {categorias.map((cat) => (
-              <button
+              <FilterChip
                 key={cat}
                 onClick={() => cambiarCategoria(cat)}
-                aria-pressed={cat === categoriaActiva}
-                className={`flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
-                  cat === categoriaActiva
-                    ? 'bg-terracotta text-white shadow-card'
-                    : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
-                }`}
+                active={cat === categoriaActiva}
+                className="whitespace-nowrap text-xs uppercase tracking-widest"
               >
                 {cat}
-              </button>
+              </FilterChip>
             ))}
           </div>
         </div>
@@ -123,7 +106,7 @@ export default function BlogClient() {
               </article>
 
               {/* Recientes */}
-              <aside className="rounded-2xl border border-border-soft bg-white/70 p-5 shadow-sm">
+              <aside className="rounded-xl border border-border-soft bg-white/70 p-5 shadow-card">
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-6 pb-3 border-b border-border-soft">
                   Últimas entradas
                 </p>
@@ -305,7 +288,7 @@ export default function BlogClient() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="btn-primary px-6 py-3 text-sm disabled:opacity-50 disabled:hover:translate-y-0 flex-shrink-0"
+                  className="btn-primary flex-shrink-0"
                 >
                   {status === 'loading' ? 'Enviando…' : 'Suscribirse'}
                 </button>

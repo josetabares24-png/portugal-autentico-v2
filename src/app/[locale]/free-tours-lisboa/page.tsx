@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import { PageIntro } from '@/components/PageIntro';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
 import {
   FREE_TOUR_ROUTES,
@@ -160,73 +161,44 @@ export default function FreeToursLisboaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
-      {/* ---------------------------------------------------------------
-          Hero: la fotografía manda. El degradado carga abajo, donde va el
-          texto, y deja respirar el arco en la parte alta de la imagen.
-      ---------------------------------------------------------------- */}
-      <section className="relative overflow-hidden">
-        <Image
-          src={HERO_IMAGE}
-          alt="Arco da Rua Augusta visto desde la Baixa de Lisboa"
-          fill
-          className="object-cover object-[50%_32%] md:object-[50%_42%]"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(to_top,rgba(26,43,74,0.96)_0%,rgba(26,43,74,0.88)_38%,rgba(26,43,74,0.55)_68%,rgba(26,43,74,0.22)_100%)]"
-        />
-
-        <div className="relative mx-auto flex min-h-[520px] max-w-5xl flex-col justify-end px-6 pb-10 pt-24 sm:min-h-[560px] md:min-h-[600px] md:pb-14 md:pt-32">
-          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-widest text-white/55">
-            <Link href="/actividades" className="transition-colors hover:text-white">Actividades</Link>
+      <PageIntro
+        eyebrow="Free tours en Lisboa"
+        title="Free tours en Lisboa para descubrir la ciudad a pie"
+        description="Compara rutas por el centro, Alfama, Belém y otras zonas de Lisboa. Reserva tu plaza y decide la propina al terminar."
+        breadcrumb={(
+          <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-2 font-body text-[11px] uppercase tracking-widest text-text-secondary">
+            <Link href="/actividades" className="transition-colors hover:text-terracotta">Actividades</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-white/85">Free tours</span>
+            <span className="text-text-main">Free tours</span>
           </nav>
-
-          <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            <span aria-hidden="true" className="h-px w-6 bg-gold/70" />
-            Free tours en Lisboa
-          </p>
-
-          <h1 className="mb-4 max-w-3xl font-display text-[2.1rem] italic leading-[1.12] text-white sm:text-5xl md:text-6xl">
-            Free tours en Lisboa para descubrir la ciudad a pie
-          </h1>
-
-          <p className="mb-7 max-w-xl text-[15px] leading-relaxed text-white/80 md:text-lg">
-            Compara rutas por el centro, Alfama, Belém y otras zonas de Lisboa.
-            Reserva tu plaza y decide la propina al terminar.
-          </p>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        )}
+      >
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <AffiliateLink
               href={allToursUrl}
               campaign={allTours.campaign}
               content="hero"
               placement="hero"
-              className="btn-primary w-full px-7 py-3.5 text-base sm:w-auto"
+              className="btn-primary btn-lg w-full sm:w-auto"
             >
               Ver free tours disponibles
             </AffiliateLink>
-            <Link href="#comparar-rutas" className="btn-ghost-light w-full px-7 py-3.5 text-base sm:w-auto">
+            <Link href="#comparar-rutas" className="btn-secondary btn-lg w-full sm:w-auto">
               Comparar rutas
             </Link>
           </div>
 
-          <ul className="mt-7 flex flex-col gap-2.5 border-t border-white/15 pt-6 sm:flex-row sm:flex-wrap sm:gap-x-7">
+          <ul className="mt-7 flex flex-col gap-2.5 border-t border-border-soft pt-6 sm:flex-row sm:flex-wrap sm:gap-x-7">
             {heroBenefits.map((b) => (
-              <li key={b.text} className="flex items-center gap-2.5 text-sm text-white/85">
+              <li key={b.text} className="flex items-center gap-2.5 font-body text-sm text-text-secondary">
                 <Icon name={b.icon} size={17} className="flex-shrink-0 text-gold" />
                 {b.text}
               </li>
             ))}
           </ul>
 
-          <AffiliateDisclosure variant="compact" className="mt-5 max-w-xl text-white/60" />
-        </div>
-      </section>
+          <AffiliateDisclosure variant="compact" className="mt-5 max-w-xl text-text-secondary" />
+      </PageIntro>
 
       {/* ---------------------------------------------------------------
           Comparador de rutas
@@ -234,7 +206,7 @@ export default function FreeToursLisboaPage() {
       <section id="comparar-rutas" className="scroll-mt-20 bg-white py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Comparar rutas</p>
-          <h2 className="mb-4 max-w-2xl font-display text-3xl italic leading-tight text-text-main md:text-4xl">
+          <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Qué ruta encaja mejor con tu viaje
           </h2>
           <p className="mb-9 max-w-2xl leading-relaxed text-text-secondary">
@@ -276,7 +248,7 @@ export default function FreeToursLisboaPage() {
                       </span>
                     </div>
 
-                    <h3 className="mb-2 font-display text-xl italic leading-snug text-text-main">
+                    <h3 className="mb-2 font-display text-xl font-semibold not-italic leading-snug text-text-main">
                       {route.name}
                     </h3>
                     <p className="mb-4 text-sm leading-relaxed text-text-secondary">
@@ -303,7 +275,7 @@ export default function FreeToursLisboaPage() {
                         campaign={route.campaign}
                         content={`card-${route.id}`}
                         placement="category-card"
-                        className="btn-outline w-full px-4 py-3 text-sm"
+                        className="btn-primary btn-card"
                       >
                         {route.ctaLabel}
                       </AffiliateLink>
@@ -324,7 +296,7 @@ export default function FreeToursLisboaPage() {
                 <Icon name={allTours.icon} size={21} />
               </span>
               <div>
-                <h3 className="mb-1.5 font-display text-xl italic leading-snug text-text-main">
+                <h3 className="mb-1.5 font-display text-xl font-semibold not-italic leading-snug text-text-main">
                   ¿Ninguna de estas rutas encaja exactamente?
                 </h3>
                 <p className="max-w-xl text-sm leading-relaxed text-text-secondary">
@@ -338,7 +310,7 @@ export default function FreeToursLisboaPage() {
               campaign={allTours.campaign}
               content="destacado-todos"
               placement="category-card"
-              className="btn-primary w-full flex-shrink-0 px-6 py-3 text-sm md:w-auto"
+              className="btn-primary w-full flex-shrink-0 md:w-auto"
             >
               Ver todos los free tours de Lisboa
             </AffiliateLink>
@@ -352,7 +324,7 @@ export default function FreeToursLisboaPage() {
       <section className="bg-background-light py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Antes de reservar</p>
-          <h2 className="mb-4 max-w-2xl font-display text-3xl italic leading-tight text-text-main md:text-4xl">
+          <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Cómo funciona realmente un free tour
           </h2>
           <p className="mb-10 max-w-2xl leading-relaxed text-text-secondary">
@@ -382,7 +354,7 @@ export default function FreeToursLisboaPage() {
           </ol>
 
           <div className="mt-10 rounded-xl border-l-2 border-gold bg-white p-6 shadow-card md:mt-12">
-            <h3 className="mb-4 font-display text-xl italic leading-snug text-text-main">
+            <h3 className="mb-4 font-display text-xl font-semibold not-italic leading-snug text-text-main">
               Consejos prácticos antes de salir
             </h3>
             <ul className="grid gap-3 sm:grid-cols-2">
@@ -445,7 +417,7 @@ export default function FreeToursLisboaPage() {
       ---------------------------------------------------------------- */}
       <section className="bg-night py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-4 font-display text-3xl italic leading-tight text-white md:text-4xl">
+          <h2 className="mb-4 font-display text-3xl font-semibold not-italic leading-tight text-white md:text-4xl">
             ¿Ya sabes qué zona quieres conocer?
           </h2>
           <p className="mb-8 leading-relaxed text-white/75">
@@ -459,11 +431,11 @@ export default function FreeToursLisboaPage() {
               campaign={allTours.campaign}
               content="final-cta"
               placement="final-cta"
-              className="btn-primary w-full px-7 py-3.5 text-base sm:w-auto"
+              className="btn-primary btn-lg w-full sm:w-auto"
             >
               Consultar disponibilidad en Lisboa
             </AffiliateLink>
-            <Link href="/actividades" className="btn-ghost-light w-full px-7 py-3.5 text-base sm:w-auto">
+            <Link href="/actividades" className="btn-ghost-light btn-lg w-full sm:w-auto">
               Ver todas las actividades
             </Link>
           </div>
@@ -484,7 +456,7 @@ export default function FreeToursLisboaPage() {
       <section className="bg-background-light py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Dudas habituales</p>
-          <h2 className="mb-8 font-display text-3xl italic leading-tight text-text-main md:text-4xl">
+          <h2 className="mb-8 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Preguntas frecuentes sobre los free tours
           </h2>
 

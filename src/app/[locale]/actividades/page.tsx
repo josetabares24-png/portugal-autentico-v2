@@ -6,7 +6,9 @@ import { activities, ACTIVITY_CATEGORIES, ActivityCategory } from '@/data/activi
 import { ActivityCard } from '@/components/actividades/ActivityCard';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import { ExperienceSearch } from '@/components/ExperienceSearch';
+import { FilterChip } from '@/components/FilterChip';
 import Icon from '@/components/Icon';
+import { PageIntro } from '@/components/PageIntro';
 import { coincide } from '@/lib/search';
 
 type PriceFilter = 'todas' | 'gratis' | 'pago';
@@ -56,21 +58,11 @@ export default function ActividadesPage() {
 
   return (
     <main id="main-content">
-      {/* Cabecera. Sin cursiva decorativa: el h1 va en redonda, como en el
-          hub, para que las dos páginas se lean como el mismo sitio. */}
-      <section className="bg-background-light pt-14 pb-8 border-b border-border-soft md:pt-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="mb-2 font-article text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
-            Actividades
-          </p>
-          <h1 className="mb-3 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Lisboa sin gastar mucho
-          </h1>
-          <p className="font-article text-base leading-relaxed text-text-secondary">
-            Cada actividad con su precio real, su duración y un tip de ahorro de local.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Actividades"
+        title="Lisboa sin gastar mucho"
+        description="Cada actividad con su precio real, su duración y un tip de ahorro de local."
+      />
 
       {/* Free tours: bloque editorial destacado, visualmente separado del
           catálogo para que no se lea como una actividad más ni como
@@ -117,7 +109,7 @@ export default function ActividadesPage() {
                   ))}
                 </ul>
 
-                <Link href="/free-tours-lisboa" className="btn-primary w-full px-6 py-3 text-sm sm:w-auto">
+                <Link href="/free-tours-lisboa" className="btn-primary w-full sm:w-auto">
                   Comparar todos los free tours
                 </Link>
               </div>
@@ -149,19 +141,13 @@ export default function ActividadesPage() {
 
           <div className="flex flex-wrap gap-1.5">
             {(['Todas', ...ACTIVITY_CATEGORIES] as const).map((c) => (
-              <button
+              <FilterChip
                 key={c}
-                type="button"
-                aria-pressed={category === c}
+                active={category === c}
                 onClick={() => setCategory(c)}
-                className={`inline-flex min-h-9 items-center rounded-full px-3 font-article text-xs font-semibold transition-all duration-200 ${
-                  category === c
-                    ? 'bg-terracotta text-white shadow-card'
-                    : 'bg-white text-text-secondary border border-border-soft hover:border-terracotta hover:text-terracotta'
-                }`}
               >
                 {c}
-              </button>
+              </FilterChip>
             ))}
           </div>
 
@@ -171,26 +157,21 @@ export default function ActividadesPage() {
               { id: 'gratis', label: 'Gratis' },
               { id: 'pago', label: 'De pago' },
             ] as const).map((opt) => (
-              <button
+              <FilterChip
                 key={opt.id}
-                type="button"
-                aria-pressed={price === opt.id}
+                active={price === opt.id}
+                tone="secondary"
                 onClick={() => setPrice(opt.id)}
-                className={`inline-flex min-h-9 items-center rounded-full border px-3 font-article text-xs font-semibold transition-all duration-200 ${
-                  price === opt.id
-                    ? 'border-gold bg-gold/10 text-night'
-                    : 'border-border-soft text-text-secondary hover:border-text-secondary'
-                }`}
               >
                 {opt.label}
-              </button>
+              </FilterChip>
             ))}
 
             {hayFiltros && (
               <button
                 type="button"
                 onClick={limpiarTodo}
-                className="inline-flex min-h-9 items-center px-2 font-article text-xs font-semibold text-terracotta underline underline-offset-4 hover:no-underline"
+                className="filter-clear"
               >
                 Limpiar filtros
               </button>
@@ -219,7 +200,7 @@ export default function ActividadesPage() {
               <button
                 type="button"
                 onClick={limpiarTodo}
-                className="btn-outline min-h-12 px-6 py-3 font-article text-sm"
+                className="btn-secondary btn-lg"
               >
                 Limpiar búsqueda
               </button>
@@ -254,7 +235,7 @@ export default function ActividadesPage() {
             </div>
             <Link
               href="/comprar-entradas"
-              className="btn-outline mt-5 w-full px-6 py-3 text-sm md:mt-0 md:w-auto md:flex-shrink-0"
+              className="btn-secondary mt-5 w-full md:mt-0 md:w-auto md:flex-shrink-0"
             >
               Ver todas las entradas y experiencias
             </Link>
@@ -278,7 +259,7 @@ export default function ActividadesPage() {
           </p>
           <Link
             href="/planifica-tu-viaje"
-            className="btn-primary inline-flex px-8 py-3"
+            className="btn-primary btn-lg"
           >
             Planifica tu viaje
           </Link>
