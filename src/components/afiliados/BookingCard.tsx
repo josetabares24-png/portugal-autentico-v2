@@ -90,7 +90,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           href={link.url}
           target="_blank"
           rel="sponsored noopener noreferrer"
-          className="btn-primary mt-auto min-h-12 w-full rounded-lg px-5 py-3 font-article text-sm"
+          className="btn-primary btn-card mt-auto"
           onClick={() =>
             trackClick({
               affiliate_partner: link.provider,

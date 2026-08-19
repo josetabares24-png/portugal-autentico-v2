@@ -46,7 +46,7 @@ export function ItineraryCard({
           </div>
           <Link
             href={href}
-            className="btn-primary block w-full text-center py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            className="btn-primary btn-card"
           >
             Ver guía gratis
           </Link>
@@ -85,7 +85,7 @@ export function ItineraryCard({
         </div>
         <Link
           href={href}
-          className="btn-primary block w-full text-center py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+          className="btn-primary btn-card"
         >
           Ver guía gratis
         </Link>

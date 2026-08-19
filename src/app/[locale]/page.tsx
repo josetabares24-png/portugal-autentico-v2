@@ -104,7 +104,7 @@ export default function HomePage() {
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
             Vivo en Graça desde hace tres años. Estas son mis rutas, lugares y consejos locales.
           </p>
-          <Link href="/itinerarios" className="btn-ghost-light inline-flex px-6 py-3 text-sm">
+          <Link href="/itinerarios" className="btn-ghost-light btn-lg">
             Ver itinerarios →
           </Link>
         </div>
@@ -193,7 +193,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/free-tours-lisboa"
-                className="btn-primary px-7 py-3.5 text-base"
+                className="btn-primary btn-lg"
               >
                 Ver free tours
               </Link>
@@ -264,7 +264,7 @@ export default function HomePage() {
           <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
             Si te sirve, también preparé rutas hora a hora para organizarte el viaje.
           </p>
-          <Link href="/itinerarios" className="btn-primary inline-flex px-7 py-3 text-sm flex-shrink-0">
+          <Link href="/itinerarios" className="btn-primary flex-shrink-0">
             Ver itinerarios →
           </Link>
         </div>

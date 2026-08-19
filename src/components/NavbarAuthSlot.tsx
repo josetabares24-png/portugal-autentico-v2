@@ -30,7 +30,7 @@ export default function NavbarAuthSlot({ variant, pathname, onNavigate }: Navbar
             href="/admin"
             aria-current={isAdminActive ? 'page' : undefined}
             onClick={onNavigate}
-            className="px-4 py-2.5 text-taupe font-semibold text-sm border border-taupe/20 transition-colors"
+            className="btn-secondary mx-4 w-[calc(100%-2rem)]"
           >
             Panel de Admin
           </Link>
@@ -48,7 +48,7 @@ export default function NavbarAuthSlot({ variant, pathname, onNavigate }: Navbar
         <Link
           href="/admin"
           aria-current={isAdminActive ? 'page' : undefined}
-          className="px-4 py-2 text-taupe hover:text-night font-semibold text-sm transition-colors border border-taupe/20"
+          className="btn-secondary"
         >
           Admin
         </Link>

@@ -74,7 +74,7 @@ export function ExperienceSearch({
             }
           }}
           placeholder={placeholder}
-          className="h-[52px] w-full rounded-xl sm:h-14 border border-border-soft bg-white pl-12 pr-12 font-article text-base text-text-main shadow-card transition-colors placeholder:text-text-secondary/70 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20"
+          className="h-12 w-full rounded-lg border border-border-soft bg-white pl-12 pr-12 font-article text-base text-text-main shadow-card transition-colors placeholder:text-text-secondary/70 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20 sm:h-[52px]"
         />
 
         {value && (

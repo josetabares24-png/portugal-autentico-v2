@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { PageIntro } from '@/components/PageIntro';
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -41,18 +42,11 @@ export default function ContactoPage() {
 
   return (
     <main id="main-content">
-      {/* Cabecera */}
-      <section className="bg-background-light pt-20 pb-10 border-b border-border-soft">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs text-text-secondary uppercase tracking-widest mb-3">Contacto</p>
-          <h1 className="font-display italic text-text-main text-4xl md:text-5xl leading-tight">
-            Escríbenos
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">
-            ¿Tienes una duda sobre Lisboa, una propuesta o quieres colaborar? Cuéntanos y te responderemos con una orientación concreta.
-          </p>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Contacto"
+        title="Escríbenos"
+        description="¿Tienes una duda sobre Lisboa, una propuesta o quieres colaborar? Cuéntanos y te responderemos con una orientación concreta."
+      />
 
       {/* Formulario */}
       <section className="bg-background-light py-12 md:py-14">
@@ -132,7 +126,7 @@ export default function ContactoPage() {
 
                   <button
                     type="submit"
-                    className="btn-primary w-full py-4 text-sm"
+                    className="btn-primary btn-lg w-full"
                   >
                     Enviar mensaje
                   </button>
@@ -147,7 +141,7 @@ export default function ContactoPage() {
                 </form>
               ) : (
                 <div className="card-surface p-8 border-l-2 border-gold">
-                  <p className="font-display italic text-text-main text-2xl mb-4">Mensaje enviado.</p>
+                  <p className="mb-4 font-display text-2xl font-semibold not-italic text-text-main">Mensaje enviado.</p>
                   <p className="text-text-secondary mb-8">
                     Gracias por contactarnos. Te responderemos pronto a tu email.
                   </p>
@@ -161,16 +155,16 @@ export default function ContactoPage() {
             {/* Sidebar */}
             <div className="space-y-5 md:pt-1">
               <div className="card-surface p-5 border-l-2 border-gold">
-                <h3 className="font-semibold text-text-main text-sm mb-2">Preguntas frecuentes</h3>
+                <h3 className="mb-2 font-body text-sm font-semibold not-italic text-text-main">Preguntas frecuentes</h3>
                 <p className="text-text-secondary text-sm leading-relaxed mb-3">
                   Antes de escribirnos, revisa si ya tenemos respuesta para tu duda.
                 </p>
-                <Link href="/faq" className="text-sm font-semibold text-terracotta hover:underline underline-offset-2">
+                <Link href="/faq" className="text-cta">
                   Ver FAQ →
                 </Link>
               </div>
               <div className="card-surface p-5">
-                <h3 className="font-semibold text-text-main text-sm mb-2">Respuesta cercana</h3>
+                <h3 className="mb-2 font-body text-sm font-semibold not-italic text-text-main">Respuesta cercana</h3>
                 <p className="text-text-secondary text-sm leading-relaxed">
                   Si tu duda necesita contexto, te responderemos con una recomendación concreta.
                 </p>

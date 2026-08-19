@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
+import { EditorialPageHero } from '@/components/EditorialPageHero';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 
@@ -40,27 +40,12 @@ export default async function ItinerariosPage() {
 
   return (
     <main id="main-content">
-      {/* Hero */}
-      <section className="relative h-[62vh] min-h-[430px] overflow-hidden md:min-h-[460px]">
-        <Image
-          src="/images/alfama-panoramica.jpg"
-          alt="Vista panorámica de Lisboa"
-          fill
-          className="object-cover"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="max-w-6xl px-6 pb-10 pt-28 sm:px-8 md:p-16">
-          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Guías de viaje</p>
-          <h1 className="font-display italic text-white text-[clamp(2.65rem,11vw,4rem)] leading-[1.02] md:text-6xl">
-            Itinerarios para Lisboa
-          </h1>
-          </div>
-        </div>
-      </section>
+      <EditorialPageHero
+        eyebrow="Guías de viaje"
+        title="Itinerarios para Lisboa"
+        image="/images/alfama-panoramica.jpg"
+        imageAlt="Vista panorámica de Lisboa"
+      />
 
       {/* Itinerarios principales */}
       <section id="itinerarios" className="bg-background-light pt-14 pb-12 md:pt-16 md:pb-16">
@@ -154,13 +139,13 @@ export default async function ItinerariosPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/planifica-tu-viaje"
-              className="btn-primary px-8 py-3"
+              className="btn-primary btn-lg"
             >
               Planifica tu viaje
             </Link>
             <Link
               href="/contacto"
-              className="btn-outline px-8 py-3"
+              className="btn-secondary btn-lg"
             >
               Pregúntanos
             </Link>
