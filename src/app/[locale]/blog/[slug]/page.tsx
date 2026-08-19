@@ -256,6 +256,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Día 3: barrios, miradores o una alternativa según el ritmo' },
       { tipo: 'parrafo', texto: 'El tercer día es donde se nota si planificaste bien. Si los dos primeros fueron intensos, dedica la mañana a Príncipe Real, São Bento o Estrela: cafés, jardines, tiendas pequeñas y una Lisboa menos monumental. Si todavía tienes energía, puedes subir a Mouraria y Graça con más calma o enlazar varios miradores sin repetir la ruta del día 1.' },
       { tipo: 'parrafo', texto: 'También puedes usar este día para Sintra o Cascais, pero solo si aceptas que dejas Lisboa a medias. Para una primera visita de tres días, yo reservaría la escapada para viajes más largos, salvo que Sintra sea una prioridad absoluta para ti. Lisboa tiene capas suficientes para llenar tres días sin necesidad de huir de ella.' },
+      { tipo: 'enlace', texto: 'Si prefieres sustituir un barrio por una visita concreta, el catálogo reúne miradores, monumentos y experiencias por zona para comparar sin romper la ruta.', href: '/actividades', label: 'Explorar actividades en Lisboa' },
       { tipo: 'subtitulo', texto: 'Qué cambiar si llueve' },
       { tipo: 'parrafo', texto: 'Lisboa con lluvia pide menos mirador y más interior. Cambia Santa Luzia por Carmo, museos o cafés largos; cambia las bajadas de Alfama por zonas con mejor pavimento; deja Belém para una ventana seca si puedes. Las aceras portuguesas son bonitas, pero mojadas pueden ser resbaladizas. No planifiques la lluvia como si fuera un detalle menor.' },
       { tipo: 'subtitulo', texto: 'Dónde comer sin montar una ruta gastronómica' },
@@ -442,6 +443,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Ahora imagina un día de Alfama, miradores, café, paseo por la Baixa y atardecer en Graça. Quizá uses transporte una vez, quizá no entres en ningún museo y quizá la mejor parte del día sea sentarte a mirar el río. En ese escenario, la tarjeta pierde fuerza. No porque sea mala, sino porque tu viaje no la necesita.' },
       { tipo: 'subtitulo', texto: 'Comprar tarjeta o pagar por separado' },
       { tipo: 'parrafo', texto: 'La decisión se hace con una suma sencilla: anota los lugares de pago que de verdad vas a visitar, confirma si están incluidos o tienen descuento, añade los trayectos de transporte y compara. Si necesitas inventar visitas para justificar la tarjeta, probablemente no la necesitas. Si la ruta ya tiene varias entradas y desplazamientos, puede ser buena aliada.' },
+      { tipo: 'enlace', texto: 'Si decides pagar por separado, compara únicamente las entradas que ya forman parte de tu ruta antes de reservar.', href: '/comprar-entradas', label: 'Comparar entradas y experiencias' },
       { tipo: 'subtitulo', texto: 'Cómo calcularlo en cinco minutos' },
       { tipo: 'parrafo', texto: 'Abre la lista oficial de la tarjeta y marca solo los lugares que ya estaban en tu plan. Después mira el precio vigente de cada entrada en la web oficial del monumento o museo. Añade los trayectos de transporte que harías igualmente. Si el total se acerca o supera el coste de la tarjeta, entonces tiene sentido mirarla en serio. Si queda lejos, no fuerces.' },
       { tipo: 'parrafo', texto: 'El cálculo debe hacerse por día, no por ilusión de viaje. Una tarjeta de 48 o 72 horas puede parecer más rentable, pero solo si esos días concentran visitas incluidas. Si uno de los días lo pasas caminando por Alfama, descansando en miradores o yendo a la playa, ese día quizá no aporta valor a la tarjeta.' },
@@ -629,6 +631,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Cuidado con lo que parece gratis' },
       { tipo: 'parrafo', texto: 'Algunos lugares tienen exterior gratuito y zonas de pago. Otros son gratis ciertos días, para determinados residentes, edades o documentos. Antes de organizar un día alrededor de una entrada gratuita, verifica la información oficial. Lo gratuito no debería obligarte a discutir en una taquilla.' },
       { tipo: 'parrafo', texto: 'También hay planes que son gratis solo si aceptas no consumir: mercados, librerías, miradores con quiosco, terrazas abiertas o espacios creativos. Está bien entrar y mirar con respeto, pero no confundas acceso libre con una invitación a ocupar mesas o baños de negocios privados sin consumir.' },
+      { tipo: 'enlace', texto: 'Para combinar estos paseos con una visita concreta, puedes filtrar las actividades de Lisboa por zona y por precio.', href: '/actividades', label: 'Ver actividades gratuitas y de pago' },
       { tipo: 'subtitulo', texto: 'Conclusión' },
       { tipo: 'parrafo', texto: 'Hacer Lisboa gratis no significa verla peor. Significa elegir bien: miradores, barrios, río, jardines y pausas con sentido. Si mezclas dos zonas cercanas y no intentas abarcarlo todo, tendrás una ciudad más amable y un presupuesto mucho más controlado.' },
     ],
@@ -682,7 +685,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "El barrio que acogió la Expo 98 ofrece una Lisboa distinta: arquitectura contemporánea, paseo marítimo y el Oceanário. El teleférico recorre el frente fluvial con vistas aéreas del Tajo y de la Torre Vasco da Gama." },
       { tipo: "parrafo", texto: "Es la opción si buscas algo distinto a la Lisboa clásica de tejados rojos y tranvías. La zona tiene restaurantes junto al agua y carril bici." },
       { tipo: "subtitulo", texto: "Planifica tu ruta de miradores" },
-      { tipo: "parrafo", texto: "Verlos todos en un día no tiene mucho sentido: son cuestas y algunos quedan lejos entre sí. Mejor elegir tres o cuatro que encajen con la ruta del día y dejar el resto para otra jornada. En nuestros itinerarios incluimos rutas que conectan miradores cercanos sin subidas innecesarias, con indicaciones de hora según la luz y la afluencia." }
+      { tipo: "parrafo", texto: "Verlos todos en un día no tiene mucho sentido: son cuestas y algunos quedan lejos entre sí. Mejor elegir tres o cuatro que encajen con la ruta del día y dejar el resto para otra jornada. En nuestros itinerarios incluimos rutas que conectan miradores cercanos sin subidas innecesarias, con indicaciones de hora según la luz y la afluencia." },
+      { tipo: "enlace", texto: "Si quieres alternar las vistas con una visita cercana, consulta las actividades por barrio antes de cerrar el recorrido.", href: "/actividades", label: "Buscar actividades cerca de los miradores" }
     ]
   },
   "donde-comer-barato-lisboa": {
@@ -1903,6 +1907,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Entradas: cuánto pesan en el presupuesto del día" },
       { tipo: "parrafo", texto: "Las entradas son, con diferencia, la parte más cara de Sintra: cuestan bastante más que el tren de ida y vuelta desde Lisboa. Cada monumento se paga por separado —Pena, Regaleira y Mouros son entradas distintas— y quien los visita los tres suele gastar más en taquillas que en comer." },
       { tipo: "parrafo", texto: "Los precios los fija Parques de Sintra y han ido subiendo estos últimos años, así que no me los invento aquí: míralos en su web el mismo día. Lo que sí no cambia es el consejo: compra online y con antelación. En verano las entradas de taquilla pueden agotarse, y hay packs combinados que salen mejor que comprar suelto si vas a más de un monumento." },
+      { tipo: "enlace", texto: "Si el Palacio da Pena ya está en tu plan, compara la entrada disponible antes de fijar el resto del día.", href: "/comprar-entradas", label: "Consultar entradas para Sintra" },
       { tipo: "subtitulo", texto: "Transporte dentro de Sintra" },
       { tipo: "parrafo", texto: "Desde la estación de tren hasta los palacios hay que subir una montaña. Tienes tres opciones: el bus 434 (circuito que conecta estación, centro, Pena y Mouros; el billete sencillo ronda los 4,50 € y hay abono de 24 horas), tuk-tuk (15-20€ por trayecto, negociable), o caminar (30-45 minutos cuesta arriba, bonito pero agotador). Mi recomendación: sube en el bus 434 y baja caminando por los jardines, que son preciosos y es todo cuesta abajo." },
       { tipo: "subtitulo", texto: "Dónde comer en Sintra (sin trampas)" },
@@ -2167,6 +2172,7 @@ const articles: Record<string, Article> = {
         "Teatro Nacional de Dona Maria II: El teatro neoclásico de la Praça do Rossio, frente a la estación",
         "Estação do Oriente (Santiago Calatrava): La estación de tren más bonita de Portugal, en Parque das Nações"
       ]},
+      { tipo: "enlace", texto: "Para los monumentos que sí requieren billete, compara las opciones de entrada antes de decidir cuáles encajan en tu ruta.", href: "/comprar-entradas", label: "Ver entradas y experiencias en Lisboa" },
       { tipo: "enlace", texto: "Muchos de estos monumentos se entienden mucho mejor con contexto histórico que leyendo el cartel de la entrada.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
     ]
   },
