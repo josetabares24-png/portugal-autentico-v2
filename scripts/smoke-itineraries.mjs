@@ -46,7 +46,6 @@ const ITINERARY_SLUGS = [
   'lisboa-2-dias-completo',
   'lisboa-3-dias-premium',
   'lisboa-full-week',
-  'lisboa-familiar',
   'lisboa-fotografia',
 ];
 
@@ -55,6 +54,7 @@ const ITINERARY_SLUGS = [
 // de borrar el caso, para que la migración quede protegida por el test.
 const RETIRED_ITINERARIES = [
   { slug: 'lisboa-romantica', destination: '/blog/lisboa-en-pareja' },
+  { slug: 'lisboa-familiar', destination: '/blog/lisboa-con-ninos' },
 ];
 
 const NONEXISTENT_SLUG = 'itinerario-que-no-existe-de-verdad';

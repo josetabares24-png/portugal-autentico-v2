@@ -28,6 +28,10 @@ const nextConfig = {
       // URL ya no sirve HTML propio ni canonical propio.
       { source: '/itinerarios/lisboa-romantica', destination: '/blog/lisboa-en-pareja', permanent: true },
       { source: '/:locale(en|ko|es)/itinerarios/lisboa-romantica', destination: '/blog/lisboa-en-pareja', permanent: true },
+      // Mismo caso que el de romántica: el itinerario cerrado de cuatro días
+      // se sustituye por una guía de planes elegibles.
+      { source: '/itinerarios/lisboa-familiar', destination: '/blog/lisboa-con-ninos', permanent: true },
+      { source: '/:locale(en|ko|es)/itinerarios/lisboa-familiar', destination: '/blog/lisboa-con-ninos', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },
@@ -57,8 +61,11 @@ const nextConfig = {
       { source: '/:locale(en|ko|es)/blog/miradores-atardecer-lisboa', destination: '/blog/mejores-miradores-lisboa', permanent: true },
       { source: '/blog/lisboa-en-invierno', destination: '/blog/mejor-epoca-visitar-lisboa', permanent: true },
       { source: '/:locale(en|ko|es)/blog/lisboa-en-invierno', destination: '/blog/mejor-epoca-visitar-lisboa', permanent: true },
-      { source: '/blog/viajar-ninos-lisboa', destination: '/itinerarios/lisboa-familiar', permanent: true },
-      { source: '/:locale(en|ko|es)/blog/viajar-ninos-lisboa', destination: '/itinerarios/lisboa-familiar', permanent: true },
+      // Apuntaba a /itinerarios/lisboa-familiar, que a su vez ya redirige al
+      // artículo: eso habría creado una cadena de dos saltos. Se reapunta al
+      // destino final para que cualquier entrada llegue en uno solo.
+      { source: '/blog/viajar-ninos-lisboa', destination: '/blog/lisboa-con-ninos', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/viajar-ninos-lisboa', destination: '/blog/lisboa-con-ninos', permanent: true },
       // El artículo de Semana Santa pierde el año para dejar de caducar.
       { source: '/blog/semana-santa-lisboa-2026', destination: '/blog/semana-santa-lisboa', permanent: true },
       { source: '/:locale(en|ko|es)/blog/semana-santa-lisboa-2026', destination: '/blog/semana-santa-lisboa', permanent: true },

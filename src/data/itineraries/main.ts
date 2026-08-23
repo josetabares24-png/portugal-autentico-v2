@@ -125,7 +125,9 @@ export const specialItineraries: Itinerary[] = [
       'Transporte sencillo con carrito',
       'Tips locales y secretos de la ciudad'
     ],
-    href: '/itinerarios/lisboa-familiar',
+    // La URL antigua redirige de forma permanente al artículo. Se apunta
+    // directo al destino para que ningún enlace dependa del redirect.
+    href: '/blog/lisboa-con-ninos',
     badge: {
       text: 'CON NIÑOS',
       color: 'bg-yellow-500'

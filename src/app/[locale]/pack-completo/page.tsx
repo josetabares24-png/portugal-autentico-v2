@@ -34,9 +34,11 @@ const guides = [
     desc: 'Planes que funcionan de verdad para dos, para elegir según el rato, el presupuesto y el tiempo que haga.',
   },
   {
-    title: 'Lisboa en Familia',
-    subtitle: 'Ritmo cómodo con niños',
-    href: '/itinerarios/lisboa-familiar',
+    // El itinerario cerrado se retiró: su sustituto es /blog/lisboa-con-ninos.
+    // Se enlaza directo, sin pasar por el redirect.
+    title: 'Lisboa con niños',
+    subtitle: 'Planes y logística en familia',
+    href: '/blog/lisboa-con-ninos',
     desc: 'Actividades kid-friendly, pausas útiles, zonas cómodas y consejos para evitar estrés durante el viaje.',
   },
   {

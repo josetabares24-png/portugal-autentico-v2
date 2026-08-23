@@ -62,8 +62,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
    * pública, no el registro.
    *
    * lisboa-romantica -> /blog/lisboa-en-pareja   (redirect en next.config.mjs)
+   * lisboa-familiar  -> /blog/lisboa-con-ninos   (redirect en next.config.mjs)
    */
-  const RETIRED_GUIDE_SLUGS = new Set(['lisboa-romantica']);
+  const RETIRED_GUIDE_SLUGS = new Set(['lisboa-romantica', 'lisboa-familiar']);
 
   const guideUrls: MetadataRoute.Sitemap = guidePackSlugs
     .filter((slug) => !RETIRED_GUIDE_SLUGS.has(slug))
