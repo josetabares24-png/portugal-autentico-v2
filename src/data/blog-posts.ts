@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'lisboa-con-ninos',
+    titulo: 'Lisboa con niños: qué hacer y cómo organizar el viaje en familia',
+    excerpt: 'Oceanário, parques, transporte, carrito y planes de lluvia: qué es cómodo de verdad y cómo repartir los días sin agotar a nadie.',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/actividades/jardim-da-estrela-coreto.webp',
+  },
+  {
     id: 'lisboa-en-pareja',
     titulo: 'Lisboa en pareja: qué hacer, planes y lugares para dos',
     excerpt: 'Miradores, paseos, fado, el Tajo, Belém y Sintra: planes que funcionan de verdad, para elegir según el rato, el presupuesto y el tiempo que haga.',

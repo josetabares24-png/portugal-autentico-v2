@@ -12,6 +12,122 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
   /*
+   * Reemplazo editorial de /itinerarios/lisboa-familiar.
+   *
+   * El itinerario viejo eran trece paradas repartidas en cuatro días con horas
+   * fijas, y cada una traía su precio: 25€ el Oceanário, 24€ el zoo, 6€ el
+   * teleférico, 16€ KidZania, packs de familia al euro. Ninguno con fuente ni
+   * fecha. Una familia no sigue un horario así, y un precio de hace meses hace
+   * más daño que no dar ninguno.
+   *
+   * Lo que sí necesita quien viaja con niños es otra cosa: qué es cómodo, qué
+   * cansa, cómo se mueve un carrito por una ciudad de cuestas, y qué hacer
+   * cuando llueve. Eso es lo que responde este artículo.
+   *
+   * Datos operativos verificados contra fuente oficial el 2026-08-23:
+   * oceanario.pt (horario, entrada por franja, gratuidad hasta 2 años),
+   * metrolisboa.pt (47 de 56 estaciones con accesibilidad plena),
+   * pavconhecimento.pt (horarios y días de cierre reales).
+   */
+  'lisboa-con-ninos': {
+    titulo: 'Lisboa con niños: qué hacer y cómo organizar el viaje en familia',
+    descripcion: 'Qué hacer en Lisboa con niños: Oceanário, Parque das Nações, parques, transporte, carrito, planes de lluvia y consejos para organizar los días sin agotar a nadie.',
+    seoTitle: 'Lisboa con niños: qué hacer en familia',
+    metaDescription: 'Qué hacer en Lisboa con niños: Oceanário, barrios, parques, transporte, planes para días de lluvia y consejos para moverse en familia.',
+    imagen: '/images/actividades/jardim-da-estrela-coreto.webp',
+    imageAlt: 'El coreto del Jardim da Estrela rodeado de árboles, en Lisboa',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-23',
+    minutos: 11,
+    links: [
+      { href: '/actividades/oceanario-lisboa', label: 'La ficha del Oceanário de Lisboa' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer en Lisboa sin gastar' },
+      { href: '/blog/playas-cerca-lisboa', label: 'Playas cerca de Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
+    ],
+    fuentes: [
+      { label: 'Oceanário de Lisboa - planear la visita', href: 'https://oceanario.pt/en/plan-your-visit/' },
+      { label: 'Metropolitano de Lisboa - cómo utilizar el metro', href: 'https://www.metrolisboa.pt/viajar/como-utilizar-o-metro/' },
+      { label: 'Pavilhão do Conhecimento - información general', href: 'https://www.pavconhecimento.pt/visite-nos/informacoes-gerais/' },
+      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/viaje/tarifarios/' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-1-dia-lo-esencial',
+      label: 'Ver el itinerario de 1 día',
+      title: '¿Vais poco tiempo?',
+      text: 'La guía de un día trae el recorrido cerrado por horas. Con niños suele funcionar mejor tomarla como referencia y recortarla a la mitad.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa con niños tiene una ventaja y un inconveniente, y conviene saber los dos antes de reservar. La ventaja es que hay agua por todas partes —el río, el acuario, las playas a media hora en tren— y parques con zona de juegos en casi todos los barrios. El inconveniente son las cuestas: la ciudad está construida sobre colinas, y eso que en un viaje de adultos es pintoresco, con un carrito o con un niño de cuatro años se nota en las piernas de todos.' },
+      { tipo: 'parrafo', texto: 'Esta guía no es un itinerario con horas. Con niños los horarios se rompen, y planificar cuatro días minuto a minuto es la forma más rápida de acabar discutiendo en una parada de metro. Lo que hay aquí son planes que funcionan, agrupados para que elijáis según la edad, el tiempo que haga y las ganas que queden.' },
+
+      { tipo: 'subtitulo', texto: 'Qué hacer en Lisboa con niños' },
+
+      { tipo: 'subseccion', texto: 'Oceanário de Lisboa' },
+      { tipo: 'parrafo', texto: 'Es el plan que casi nunca falla, y el único de esta lista que yo pondría en el primer puesto sin dudar. Está en el Parque das Nações, la zona que se construyó para la Expo 98: es llana, moderna y está junto al río, así que el entorno ya juega a favor antes de entrar.' },
+      { tipo: 'parrafo', texto: 'Dos cosas prácticas que conviene saber para organizar el día. La entrada funciona por franja horaria, pero esa hora es sólo la de acceso: dentro no hay límite de permanencia, así que nadie os va a echar si los niños se quedan clavados delante del tanque central. Y existe un billete flexible válido para una visita en cualquier momento dentro de un periodo de siete días, que quita presión si el tiempo o las siestas se tuercen. Los menores de 2 años entran gratis y de 3 a 12 hay tarifa infantil.' },
+      { tipo: 'enlace', texto: 'Precios, horarios y disponibilidad cambian: mejor mirarlos antes de ir que fiarse de una cifra escrita hace meses.', href: '/actividades/oceanario-lisboa', label: 'Ver la ficha del Oceanário' },
+
+      { tipo: 'subseccion', texto: 'Parque das Nações y el paseo junto al río' },
+      { tipo: 'parrafo', texto: 'Ya que estáis allí, el propio barrio da para media jornada sin pagar nada. El paseo junto al Tajo es completamente llano, ancho y sin escalones —de los pocos sitios de Lisboa donde un carrito rueda sin pelearse con la calzada—, y hay zonas de juegos y espacio para correr. El teleférico recorre parte de ese frente fluvial; consultad horario y tarifas en el operador antes de contar con él.' },
+
+      { tipo: 'subseccion', texto: 'Pavilhão do Conhecimento' },
+      { tipo: 'parrafo', texto: 'Museo de ciencia interactivo, también en el Parque das Nações y a pocos minutos del Oceanário. Es de los pocos sitios donde tocar las cosas es justo lo que hay que hacer, así que funciona bien con niños de edad escolar.' },
+      { tipo: 'parrafo', texto: 'Un apunte, porque circula lo contrario: no cierra los lunes. Según su información oficial abre de lunes a viernes de 10:00 a 18:00 y fines de semana y festivos de 10:00 a 19:00, con última entrada media hora antes, y sólo cierra el 24, 25 y 31 de diciembre y el 1 de enero. Aun así, comprobadlo el mismo día: los horarios se revisan.' },
+
+      { tipo: 'subseccion', texto: 'Belém con niños' },
+      { tipo: 'parrafo', texto: 'Belém es la zona monumental más cómoda de la ciudad para ir en familia, y la razón es simple: es llana y tiene jardines. Se puede pasar la tarde entre el paseo del río, los jardines y los pasteles sin entrar a nada de pago, que con niños pequeños suele ser mejor plan que hacer cola para un claustro.' },
+      { tipo: 'parrafo', texto: 'Si entráis a algo, elegid una cosa y no tres. Los horarios, precios y días de cierre de cada monumento los fija cada uno y cambian por temporada: miradlos en su web oficial el mismo día.' },
+
+      { tipo: 'subseccion', texto: 'Alfama y los miradores: cuándo sí y cuándo cansa' },
+      { tipo: 'parrafo', texto: 'Aquí es donde la guía se separa de las listas habituales. Alfama es preciosa y es lo más característico de Lisboa, pero es un laberinto de escaleras y calles empinadas: con un carrito es incómodo de verdad, y con niños que ya caminan puede acabar en el clásico «me duelen las piernas» a mitad de cuesta.' },
+      { tipo: 'parrafo', texto: 'Mi forma de resolverlo es subir en transporte y bajar andando, nunca al revés, y elegir un mirador en vez de encadenar cuatro. Los miradores son gratis, tienen quiosco y sitio para sentarse, y a media tarde son un descanso más que una visita. Si el día ya viene cargado, esta parte es la primera que yo recortaría.' },
+
+      { tipo: 'subseccion', texto: 'Una escapada a la playa' },
+      { tipo: 'parrafo', texto: 'Es la carta que mejor funciona cuando la ciudad empieza a pesar. Desde Cais do Sodré sale la línea de tren que recorre la costa hasta Cascais, con paradas de playa por el camino, y el trayecto en sí ya entretiene porque va junto al agua casi todo el rato. Consultad horarios y tarifas en CP antes de salir.' },
+
+      { tipo: 'subtitulo', texto: 'Lisboa con carrito de bebé' },
+      { tipo: 'parrafo', texto: 'La respuesta honesta es: se puede, pero hay que elegir las zonas. La calzada portuguesa —esos adoquines pequeños— es bonita y resbala cuando llueve, y en las cuestas de Alfama, Bairro Alto o Graça un carrito es más un lastre que una ayuda. En cambio Belém, el Parque das Nações, la Baixa y los parques son llanos y cómodos.' },
+      { tipo: 'parrafo', texto: 'Para el metro, el dato oficial es útil y mejor que cualquier generalización: 47 de las 56 estaciones tienen accesibilidad plena, es decir, recorrido completo con ascensor entre la calle, el vestíbulo y el andén. Son unas cinco de cada seis, no todas, así que si dependéis del ascensor conviene comprobar antes la estación concreta. El propio Metro publica el estado de líneas y ascensores en su web, porque un ascensor puede estar fuera de servicio ese día.' },
+      { tipo: 'tip', texto: 'Si vais con carrito, plantead el día alrededor de una zona llana y usad el transporte para los desniveles. Ahorra más energía que cualquier otro truco.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo moverse por Lisboa con niños' },
+      { tipo: 'parrafo', texto: 'El metro es lo más previsible: va bajo tierra, no depende del tráfico y la mayoría de estaciones tienen ascensor. Los autobuses cubren lo que el metro no llega. El tranvía 28 es una atracción en sí misma, pero conviene decirlo claro: va lleno buena parte del día, no siempre hay sitio para sentarse y con carrito es incómodo. Si vais a subir, mejor a primera hora o al final del día, y mejor desde una parada inicial que a mitad de recorrido.' },
+      { tipo: 'parrafo', texto: 'Los barcos del Tajo son transporte público y suelen gustar más que muchas atracciones de pago: se cruza a la otra orilla por el precio de un billete normal y se ve la ciudad desde el agua.' },
+      { tipo: 'enlace', texto: 'Qué operador te toca en cada trayecto, cómo se paga y qué título compensa según los días que estéis.', href: '/blog/como-moverse-por-lisboa', label: 'La guía de transporte de Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Planes según la edad' },
+      { tipo: 'parrafo', texto: 'Cada niño es un mundo y esto es orientación, no una regla. Dicho eso, hay patrones que se repiten:' },
+      { tipo: 'lista', items: [
+        'Bebés y niños muy pequeños: prioridad a lo llano y a lo que no exige atención sostenida. Parques, el paseo del río en el Parque das Nações, Belém, los barcos del Tajo. Un plan grande al día y el resto sin agenda.',
+        'Edad escolar: es la franja que más disfruta el Oceanário y el museo de ciencia, y donde el tranvía y los miradores empiezan a tener gracia. Aguantan dos planes por día si hay una pausa larga en medio.',
+        'Mayores: ya entran los barrios a pie, la historia y las escapadas de día completo. Aquí sí funciona Alfama entera, y merece la pena dejarles elegir un plan del viaje.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué hacer si llueve' },
+      { tipo: 'parrafo', texto: 'Llueve más de lo que la gente espera entre noviembre y marzo, y con niños el problema no es mojarse: es que la calzada mojada resbala y las cuestas se vuelven inviables. El plan de lluvia se resuelve solo si bajáis a lo llano y tiráis de interiores.' },
+      { tipo: 'parrafo', texto: 'El Oceanário y el Pavilhão do Conhecimento son planes de interior que dan para horas, y están a pocos minutos uno del otro. Los mercados cubiertos y el propio metro también ayudan a pasar la mañana sin salir del todo. Los miradores, en cambio, dejadlos para una ventana seca: sin vista no compensan la subida.' },
+
+      { tipo: 'subtitulo', texto: 'Planes gratis o baratos en familia' },
+      { tipo: 'lista', items: [
+        'Los parques con zona de juegos: el Jardim da Estrela y el Parque Eduardo VII son los más socorridos, y son gratis.',
+        'El paseo del río en el Parque das Nações: llano, ancho y con espacio para correr.',
+        'Los jardines de Belém y el paseo junto al Tajo.',
+        'Los miradores: todos los que menciona esta guía son de acceso libre; sólo se paga lo que se consuma en el quiosco.',
+        'Cruzar el Tajo en barco cuesta un billete de transporte, no una excursión.',
+      ] },
+      { tipo: 'nota', texto: 'Los precios de entradas, transporte y atracciones cambian a lo largo del año, y las tarifas infantiles y gratuidades por edad cambian con ellos. En esta guía se evitan las cifras a propósito: es mejor consultar la web oficial de cada sitio el mismo día que fiarse de un número escrito hace meses.' },
+
+      { tipo: 'subtitulo', texto: 'Cuántos días hacen falta' },
+      { tipo: 'parrafo', texto: 'Con niños, la cuenta no es la misma que en un viaje de adultos. Yo calcularía un plan grande al día y poco más: tres días dan para el Oceanário y el Parque das Nações, un día de Belém y río, y un tercero de barrio, parque y mirador sin prisa. Con cuatro entra la playa. Con dos, elegid el Oceanário y Belém y dejad el resto.' },
+      { tipo: 'parrafo', texto: 'Y una cosa que se aprende viajando con niños y no aparece en las guías: el rato muerto en un parque suele recordarse más que el monumento por el que hicisteis cola.' },
+      { tipo: 'enlace', texto: 'Si preferís partir de un recorrido ya montado y recortarlo, los itinerarios por días sirven de esqueleto.', href: '/itinerarios', label: 'Ver los itinerarios de 1, 2 y 3 días' },
+    ],
+  },
+  /*
    * Reemplazo editorial de /itinerarios/lisboa-romantica.
    *
    * Aquella página era un itinerario cerrado de dos días con horas fijas —10:00
@@ -3374,6 +3490,17 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  // Sin ficha de lugar, por lo mismo que en la guía de pareja: no trata de un
+  // sitio al que se llegue, sino de cómo combinar varios.
+  'lisboa-con-ninos': {
+    faqs: [
+      { q: '¿Qué hacer en Lisboa con niños?', a: 'El plan que casi nunca falla es el Oceanário, en el Parque das Nações, y ese barrio da además para media jornada de paseo llano junto al río. A partir de ahí, Belém por sus jardines, el Pavilhão do Conhecimento si buscáis interior, un parque con zona de juegos y, si el tiempo acompaña, una escapada en tren a la costa.' },
+      { q: '¿Se puede ir por Lisboa con carrito de bebé?', a: 'Sí, eligiendo las zonas. Belém, el Parque das Nações, la Baixa y los parques son llanos y cómodos. Alfama, Bairro Alto y Graça son cuestas y escaleras, y ahí el carrito estorba más que ayuda. En el metro, 47 de las 56 estaciones tienen recorrido completo con ascensor, así que conviene comprobar la estación concreta si dependéis de él.' },
+      { q: '¿Cuántos días hacen falta para ver Lisboa con niños?', a: 'Contando un plan grande al día, tres días dan para el Oceanário y el Parque das Nações, un día de Belém y río, y otro de barrio, parque y mirador. Con cuatro entra la playa. Con dos, lo razonable es quedarse con el Oceanário y Belém.' },
+      { q: '¿Qué hacer en Lisboa con niños si llueve?', a: 'Bajar a lo llano y tirar de interiores. El Oceanário y el Pavilhão do Conhecimento están a pocos minutos uno del otro y dan para horas. Los mercados cubiertos también ayudan. Los miradores conviene dejarlos para una ventana seca, porque sin vista no compensan la subida y la calzada mojada resbala.' },
+      { q: '¿Merece la pena subir al tranvía 28 con niños?', a: 'Como experiencia sí, pero con matices: va lleno buena parte del día, no siempre hay sitio para sentarse y con carrito es incómodo. Si vais a subir, mejor a primera hora o al final del día, y desde una parada inicial en lugar de a mitad de recorrido.' },
+    ],
+  },
   /*
    * Sin ficha de lugar: la guía no trata de un sitio al que se llegue, sino de
    * cómo combinar varios. `comoLlegar` y `mejorHora` sobrarían aquí.
