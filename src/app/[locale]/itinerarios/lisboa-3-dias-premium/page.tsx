@@ -136,7 +136,7 @@ export default function Lisboa3DiasPremiumPage() {
         guideTitle="Lisboa 3 Días + Sintra"
       />
 
-      <ItineraryPersonalizeCTA />
+      <ItineraryPersonalizeCTA currentSlug={SLUG} currentDays={3} />
     </main>
   );
 }

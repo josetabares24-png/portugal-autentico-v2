@@ -148,3 +148,25 @@ export const specialItineraries: Itinerary[] = [
     }
   }
 ];
+
+/**
+ * Los tres itinerarios principales, en el orden en que se ofrecen.
+ *
+ * Existe como lista explícita, y no como un filtro sobre `mainItineraries`,
+ * porque el hub lee sus tarjetas de Supabase con `mainItineraries` sólo como
+ * repliegue: si mañana alguien añade una guía desde el panel, la selección
+ * principal no debe cambiar sola. Aquí está la decisión editorial, escrita.
+ *
+ * El nombre no es el comercial de la tarjeta («Lisboa Esencial»), sino el que
+ * responde a la pregunta que se hace quien llega: cuántos días tengo.
+ */
+export const CORE_ITINERARIES: { slug: string; label: string; days: number }[] = [
+  { slug: 'lisboa-1-dia-lo-esencial', label: 'Lisboa en 1 día', days: 1 },
+  { slug: 'lisboa-2-dias-completo', label: 'Lisboa en 2 días', days: 2 },
+  { slug: 'lisboa-3-dias-premium', label: 'Lisboa en 3 días', days: 3 },
+];
+
+/** `true` si ese slug es uno de los tres principales. */
+export function isCoreItinerary(slug: string): boolean {
+  return CORE_ITINERARIES.some((it) => it.slug === slug);
+}

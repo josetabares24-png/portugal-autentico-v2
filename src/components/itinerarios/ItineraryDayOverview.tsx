@@ -23,13 +23,23 @@ interface ItineraryDayOverviewProps {
 }
 
 export function ItineraryDayOverview({ dias }: ItineraryDayOverviewProps) {
+  /*
+   * Con una sola jornada esto no es un índice de días, es el resumen del día:
+   * cambia el encabezado y desaparece la etiqueta «Día 1», que no distingue
+   * nada cuando no hay un día 2. La estructura no se infla para que se parezca
+   * a la del itinerario de tres días.
+   */
+  const unSoloDia = dias.length === 1;
+
   return (
     <section id="resumen" className="scroll-mt-20">
       <h2 className="mb-1.5 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-[1.75rem]">
-        Tu viaje de un vistazo
+        {unSoloDia ? 'Tu día de un vistazo' : 'Tu viaje de un vistazo'}
       </h2>
       <p className="mb-6 font-body text-[15px] leading-relaxed text-text-secondary">
-        Los tres días, en orden. Toca uno para ir directo a su ruta.
+        {unSoloDia
+          ? 'Por dónde pasa la ruta, en orden. Toca para ir directo a ella.'
+          : `Los ${dias.length} días, en orden. Toca uno para ir directo a su ruta.`}
       </p>
 
       <ol className="border-t border-border-soft">
@@ -37,11 +47,17 @@ export function ItineraryDayOverview({ dias }: ItineraryDayOverviewProps) {
           <li key={dia.day} className="border-b border-border-soft">
             <Link
               href={`#dia-${dia.day}`}
-              className="group grid grid-cols-[3.25rem,minmax(0,1fr)] items-baseline gap-x-3 py-4 transition-colors hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta sm:grid-cols-[4.5rem,minmax(0,1fr)] sm:gap-x-5"
+              className={`group grid items-baseline gap-x-3 py-4 transition-colors hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta sm:gap-x-5 ${
+                unSoloDia
+                  ? 'grid-cols-1'
+                  : 'grid-cols-[3.25rem,minmax(0,1fr)] sm:grid-cols-[4.5rem,minmax(0,1fr)]'
+              }`}
             >
-              <span className="font-body text-[11px] font-semibold uppercase tracking-widest text-terracotta">
-                Día {dia.day}
-              </span>
+              {!unSoloDia && (
+                <span className="font-body text-[11px] font-semibold uppercase tracking-widest text-terracotta">
+                  Día {dia.day}
+                </span>
+              )}
 
               <span className="min-w-0">
                 <span className="block font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta">

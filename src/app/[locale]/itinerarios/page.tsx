@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { EditorialPageHero } from '@/components/EditorialPageHero';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
+import { CORE_ITINERARIES } from '@/data/itineraries';
 
 export const metadata: Metadata = {
   title: 'Itinerarios en Lisboa 2026: Guías 1, 2, 3 Días y Semana',
@@ -20,7 +21,24 @@ export const metadata: Metadata = {
 };
 
 export default async function ItinerariosPage() {
-  const { main: mainItineraries, special: specialItineraries } = await getGuideList();
+  const { main: guiasPrincipales } = await getGuideList();
+
+  /*
+   * La selección principal son tres, y sólo tres: 1, 2 y 3 días.
+   *
+   * Se filtra y se ordena contra `CORE_ITINERARIES` en lugar de confiar en lo
+   * que devuelva la lista, porque esa lista sale de Supabase cuando está
+   * configurada y de los datos locales cuando no: si mañana alguien añade una
+   * guía desde el panel, no debe colarse sola en la portada de la sección.
+   *
+   * Los cuatro itinerarios temáticos (romántica, familiar, fotografía y semana
+   * completa) siguen publicados, indexados y en el sitemap; lo que dejan de
+   * hacer es competir aquí. Se llega a ellos desde `/pack-completo`, que los
+   * enlaza todos.
+   */
+  const itinerariosPrincipales = CORE_ITINERARIES.map((core) =>
+    guiasPrincipales.find((g) => g.slug === core.slug || g.id === core.slug)
+  ).filter((g): g is NonNullable<typeof g> => Boolean(g));
 
   const faqItems = [
     { question: '¿Cuántos días se recomiendan para Lisboa?', answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.' },
@@ -51,31 +69,16 @@ export default async function ItinerariosPage() {
       <section id="itinerarios" className="bg-background-light pt-14 pb-12 md:pt-16 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-8 md:mb-10">
-            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Según tus días</p>
-            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
-              Elige tu ruta
-            </h2>
+            <p className="page-eyebrow">Según tus días</p>
+            <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
+            <p className="page-description">
+              Tres rutas, una por cada duración. La de un día es la misma ciudad en menos
+              paradas, no una versión recortada.
+            </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
-            {mainItineraries.map(itinerary => (
+            {itinerariosPrincipales.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Más formas de descubrir Lisboa */}
-      <section className="bg-background-light pb-16 md:pb-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-8 md:mb-10">
-            <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">Más formas de descubrir Lisboa</p>
-            <h2 className="font-display italic text-text-main text-3xl md:text-4xl">
-              Elige según tu estilo
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {specialItineraries.map(itinerary => (
-              <ItineraryCard key={itinerary.id} {...itinerary} size="compact" />
             ))}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import type { TimelineStop } from './types';
+import type { ItineraryDayMeta, TimelineStop } from './types';
 
 // Timeline stops para Lisboa 2 días - DÍA 1
 export const lisboa2DiasDia1Timeline: TimelineStop[] = [
@@ -134,10 +134,11 @@ export const lisboa2DiasDia2Timeline: TimelineStop[] = [
 export const lisboa2DiasTimeline: TimelineStop[] = [
   // DÍA 1
   {
-    time: '09:00 - Día 1',
+    time: '09:00',
+    day: 1,
     title: 'Alfama + Castillo São Jorge',
     description: 'Empezamos fuerte en Alfama, el barrio más antiguo de Lisboa que sobrevivió al terremoto de 1755. Sal temprano (9:00) cuando las calles todavía están tranquilas y solo ves vecinos abriendo tiendas. Camina sin rumbo por las callejuelas empinadas - perderte aquí es parte de la experiencia. Ves ropa tendida, azulejos centenarios, gatos durmiendo al sol, y fado saliendo de alguna ventana. Después sube al Castillo São Jorge (entrada 15€, gratis domingos hasta 14:00). Las murallas tienen 2000 años de historia, hay pavos reales sueltos, y las vistas de 360° sobre Lisboa son brutales. Dedica 1.5 horas a explorar las torres, los jardines, y el mirador panorámico. El castillo abre a las 9:00 así que si llegas temprano lo tienes casi vacío.',
-    tip: '🎫 TRUCO: Domingos gratis hasta 14:00 (llega 13:00 para evitar colas). Entre semana mejor 9:00-10:30 (menos turistas). No uses Google Maps en Alfama - lo mejor es perderte. Todas las calles eventualmente suben al castillo o bajan al río.',
+    tip: '🎫 La entrada gratuita de domingos y festivos por la mañana es sólo para residentes en Portugal, acreditando domicilio: como visitante te va a tocar pagar igual. Para colas, mejor 9:00-10:30 entre semana. Y en Alfama no uses Google Maps: todas las calles acaban subiendo al castillo o bajando al río.',
     type: 'visit',
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
     coordinates: { lat: 38.7139, lng: -9.1334 },
@@ -145,6 +146,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '12:00',
+    day: 1,
     title: 'Almuerzo en Mercado de Santa Clara',
     description: 'Baja del castillo caminando hasta el Mercado de Santa Clara (10 min). Es un mercado de barrio auténtico donde los locales compran verduras, pescado fresco, y comen en las tascas alrededor. Ve a "Tasca do Mercado" - tasca tradicional con azulejos en las paredes, señoras cocinando bacalhau, y menú del día por 8-10€. Pide lo que esté cocinándose: bacalhau à brás (bacalao con patatas y huevo), arroz de pato, o sardinas asadas si es temporada (mayo-octubre). Comes como local, precios de local, sabor brutal. Los martes y sábados hay mercadillo de antigüedades en la plaza (Feira da Ladra) - perfecto para pasear después de comer buscando vinilos, azulejos vintage, y cosas random.',
     tip: '🍽️ Precio: 8-12€ menú completo. HORARIO: 12:00-15:00 (después cierran cocina). Martes y sábados: Feira da Ladra 9:00-18:00 (mercadillo antigüedades). Lleva efectivo - muchas tascas no aceptan tarjeta.',
@@ -155,6 +157,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '14:30',
+    day: 1,
     title: 'Tranvía 28 completo',
     description: 'Toma el mítico Tranvía 28 desde Martim Moniz (parada inicial) para hacer el recorrido COMPLETO (45 min ida). Este tranvía amarillo histórico sube y baja por las 7 colinas de Lisboa pasando por Graça, Alfama, Baixa, Chiado, Estrela y Campo de Ourique. Las calles son TAN estrechas que el tranvía roza las paredes - vas a ver gente en ventanas casi tocando el tranvía. Siéntate en ventana (lado derecho = mejores vistas) y disfruta del paseo vintage. El truco: NO lo tomes en paradas turísticas (Baixa, Alfama) porque van repletos. Cógelo en Martim Moniz (inicio) o Campo de Ourique (final) para ir sentado. Bájate donde quieras explorar - con el mismo ticket puedes subir y bajar.',
     tip: '🚋 Ticket: 3,30€ (compra en el tranvía, solo efectivo) o incluido en tarjeta Viva Viagem. EVITA: 11:00-16:00 (repleto de turistas). MEJOR: 9:00-10:30 o 17:00-19:00. Parada inicial Martim Moniz para ir sentado. Recorrido completo: 45 min.',
@@ -165,6 +168,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '16:00',
+    day: 1,
     title: 'Baixa + Elevador de Santa Justa',
     description: 'Bájate del 28 en Baixa (centro neurálgico de Lisboa). Camina por Rua Augusta (calle peatonal principal) hasta la Praça do Comércio - plaza enorme con arcadas amarillas abierta al río Tajo. Desde aquí, sube al Arco da Rua Augusta (3€, mirador 360°) para vistas de toda Baixa y el río. Después camina hasta el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 que parece sacado de París. Actualmente está cerrado (2026) por mantenimiento, pero vale la pena verlo desde abajo —la estructura en sí es una obra de arte arquitectónica. Si quieres las vistas desde arriba, sube por las Escadas do Carmo (escaleras gratis al lado) y entra al mirador pagando 1.50€. Pasea por las calles de Baixa viendo las tiendas de azulejos, pastelerías con vitrinas de pasteles de nata, y la arquitectura pombalina reconstruida después del terremoto de 1755.',
     tip: '🏛️ Arco da Rua Augusta: 3€, vistas 360°. ⚠️ Elevador Santa Justa: CERRADO (2026). GRATIS: Caminar Baixa, Praça Comércio, fotos del elevador desde abajo. ALTERNATIVA: Escadas do Carmo (gratis) + mirador 1.50€ para vistas similares. Pastelerías recomendadas: Confeitaria Nacional (desde 1829), pastel de nata 1.20€.',
@@ -175,6 +179,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '18:00',
+    day: 1,
     title: 'Atardecer en Mirador da Graça',
     description: 'Uber/tranvía hasta el Mirador da Graça para el atardecer (llega 45 min antes del sunset - consulta hora). Este mirador tiene vibra local: terrazas con mesitas blancas, quiosco sirviendo vinos y cervezas, y vistas de 180° sobre Alfama, el Castillo, el Tajo, y toda Lisboa. Pide un vino blanco Vinho Verde bien frío (4€) o cerveza Super Bock (3€), consigue mesita en primera fila, y prepárate para el show. Cuando el sol baja, toda la ciudad se ilumina en dorado - los tejados naranjas brillan, las sombras se alargan, el Tajo refleja el cielo rosa/naranja. Después del sunset quédate para blue hour - la ciudad iluminada con el cielo azul profundo es mágico.',
     tip: '🌅 Sunset: Llega 45 min ANTES (mesitas se llenan rápido). Vino: 4-6€, cerveza: 3€. Horario quiosco: hasta 22:00. OCUPADO: Viernes-domingo (muy lleno). Martes-jueves más tranquilo. Alternativa si está repleto: Mirador de Santa Luzia (5 min caminando, igual de bonito).',
@@ -185,6 +190,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '20:30',
+    day: 1,
     title: 'Cena en Bairro Alto',
     description: 'Baja andando al Bairro Alto (15 min desde Graça). Este barrio es el epicentro nocturno de Lisboa: calles empinadas llenas de tascas, bares, gente con cervezas en la calle, fado saliendo de restaurantes, y ambiente bohemio. Para cenar, evita las trampas turísticas de Rua do Norte (menús en 5 idiomas = red flag). Ve a "Tasca da Esquina" (cocina portuguesa moderna, 15-25€), "Pharmacia" (restaurante en antigua farmacia con terraza y vistas, 20-30€), o "Cantina LX" (comida de autor portuguesa, 25-35€). Después de cenar, el Bairro Alto se transforma: cada puerta es un bar diferente (rock, jazz, fado, electrónica). Compra cerveza en tiendas (1€) y únete a la gente en las calles - es totalmente normal y legal.',
     tip: '🍽️ Reserva recomendada para restaurantes (especialmente viernes-sábado). Precio cena: 20-35€. TRUCO: Tascas escondidas en calles laterales = más baratas y auténticas. Después de cenar: bares abren 22:00-3:00. Compra cerveza en minimercados (1€ vs 4€ en bares). Seguro de noche - mucha gente, bien iluminado.',
@@ -196,10 +202,11 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
 
   // DÍA 2
   {
-    time: '09:00 - Día 2',
+    time: '09:00',
+    day: 2,
     title: 'Belém - Torre + Monasterio',
     description: 'Día 2 empieza en Belém (15 min en tranvía 15 desde Praça da Figueira). Primero, la Torre de Belém - fortaleza del siglo XVI en la orilla del río que parece sacada de un cuento de hadas. Llega cuando abren (10:00) para evitar colas. La entrada (15€) te lleva por las torres, mazmorras, terrazas con vistas al Tajo, y la famosa terraza con forma de rinoceronte tallada en piedra. Después (11:00) cruza la calle al Monasterio dos Jerónimos - obra maestra del gótico manuelino con 500 años de historia. La IGLESIA ES GRATIS y es donde está lo más espectacular: techos abovedados de 25 metros que parecen palmeras de piedra, la tumba de Vasco da Gama, y luz natural creando rayos de dios. El claustro (18€) es opcional pero hermoso.',
-    tip: '🎫 Torre Belém: 15€. Jerónimos iglesia: GRATIS. Claustro: 18€. Si hay billete combinado, compruébalo en la web oficial antes de comprar por separado. HORARIO: 10:00-17:30 (invierno), 10:00-18:30 (verano). Lunes cerrado. TRUCO: Haz primero Torre (10:00 cuando abre, menos cola) → Jerónimos (11:00) → Pasteles (12:00).',
+    tip: '🎫 Jerónimos iglesia: GRATIS. Para la Torre y el claustro, comprueba los precios vigentes en la web oficial de cada monumento. Si hay billete combinado, compruébalo en la web oficial antes de comprar por separado. HORARIO: 10:00-17:30 (invierno), 10:00-18:30 (verano). Lunes cerrado. TRUCO: Haz primero Torre (10:00 cuando abre, menos cola) → Jerónimos (11:00) → Pasteles (12:00).',
     type: 'visit',
     image: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800',
     coordinates: { lat: 38.6916, lng: -9.2158 },
@@ -207,6 +214,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '12:00',
+    day: 2,
     title: 'Pastéis de Belém (los ORIGINALES)',
     description: 'Ahora viene EL MOMENTO. Camina 5 minutos hasta Pastéis de Belém - la pastelería original que inventó los pasteles de nata en 1837. Hay SIEMPRE cola en la tienda para llevar (30+ personas), pero el truco es entrar directamente a las SALAS DEL FONDO (señaladas como "Salão"). Son salones enormes con azulejos antiguos, meseros con pajarita, y mesas para sentarte. Aquí NO hay cola. Pide 2-3 pasteles por persona (1.30€ cada uno), un café, y espolvorea canela y azúcar glas encima (están en las mesas). La receta es secreta desde hace 200 años - solo 3 maestros pasteleros la conocen. El hojaldre crujiente + la crema caliente cremosa = explosión de sabor.',
     tip: '🥐 Precio: 1.30€/pastel, café 1€. TRUCO CLAVE: Evita cola - entra directo a "Salão" (salones del fondo). Pide mínimo 2 por persona. Canela + azúcar glas en las mesas. Abre 8:00-23:00 todos los días. Tronas disponibles, kid-friendly. Para llevar: pide caja de 6 o 12 (viajan bien).',
@@ -217,6 +225,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '14:00',
+    day: 2,
     title: 'LX Factory - Arte urbano',
     description: 'Uber o autobús hasta LX Factory (10 min desde Belém). Es una antigua fábrica textil convertida en hub creativo: naves industriales llenas de grafitis enormes, estudios de diseño, tiendas vintage, cafés hipsters, librerías alternativas, y el Puente 25 de Abril pasando literalmente por encima. Es Instagram paradise pero también tiene alma. Ve a Ler Devagar (librería espectacular con bicicleta voladora colgando del techo), explora las tiendas de ropa indie, tómate un café en "Landeau Chocolate" (el mejor brownie de Lisboa, 3.50€), y pasea viendo murales de artistas internacionales. Los domingos hay mercado vintage. La vibra es joven, artística, alternativa - totalmente diferente al Lisboa histórico.',
     tip: '☕ GRATIS: Pasear y ver murales. Café: 2-4€. Brownie Landeau: 3.50€ (BRUTAL, imperdible). DOMINGO: Mercado vintage 11:00-19:00. Librerías, tiendas diseño, estudios artísticos. Mejor momento: 14:00-18:00. Restaurantes para almorzar: "Rio Maravilha" (terraza con vistas puente).',
@@ -227,6 +236,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '17:00',
+    day: 2,
     title: 'Time Out Market',
     description: 'Uber o Metro (Cais do Sodré) hasta el Time Out Market - mercado gastronómico con 40+ restaurantes, tascas, y chefs con estrella Michelin todo bajo un mismo techo. Es perfecto cuando viajas en grupo y cada uno quiere algo diferente: sushi, hamburguesas, comida portuguesa, pizza, mariscos, vegano, todo. Funciona así: recorres los puestos, pides en el que quieras, te dan un número, y te llaman cuando esté listo. Después buscas mesa (hay cientos) y comes. Destacados: "Henrique Sá Pessoa" (chef con estrella Michelin, pulpo increíble), "Alexandre Silva" (cocina portuguesa moderna), "Marlene Vieira" (pastelería brutal). Precios: 8-18€ por plato. Vibra: animada pero no ruidosa, mezcla de turistas y locales, funciona para familias.',
     tip: '🍽️ Precio: 10-20€/persona. HORARIO: 10:00-00:00 (domingos hasta 18:00). TRUCO: Evita 13:00-15:00 y 20:00-21:00 (lleno, difícil encontrar mesa). Mejor: 11:30 o 17:00-19:00. Barra central para beber vinos portugueses. Terraza exterior si hace buen tiempo.',
@@ -237,6 +247,7 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
   },
   {
     time: '19:30',
+    day: 2,
     title: 'Fado auténtico en Alfama',
     description: 'Termina tu viaje con la experiencia MÁS portuguesa: Fado en vivo en Alfama. El fado es Patrimonio de la Humanidad - música melancólica cantada con alma que te pone los pelos de punta incluso sin entender portugués. Ve a "Tasca do Chico" (Bairro Alto o Alfama, hay 2 locales) - tasca minúscula con azulejos, solo 20 personas, y fado espontáneo donde cantantes profesionales y amateurs se turnan. Es GRATIS (solo pagas lo que consumas - vino 3€, cerveza 2€, petiscos 4-8€). Alternativas: "A Baiuca" (Alfama, íntimo, reserva obligatoria), "Mesa de Frades" (Alfama, en una capilla antigua). Regla de oro: cuando alguien canta, silencio ABSOLUTO. Es sagrado. Dura 10-15 min por canción, después puedes volver a hablar hasta la siguiente.',
     tip: '🎵 Tasca do Chico: GRATIS (solo consumes). A Baiuca: reserva online obligatoria. HORARIO: 21:00-2:00 (empieza 22:00). Llega 21:00 para sitio. RESPETO: Silencio absoluto cuando cantan. Fotos/videos solo entre canciones (pregunta antes). Consumo mínimo: 1 bebida + petisco = 7-10€ total.',
@@ -251,3 +262,28 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
 // LISBOA 3 DÍAS + SINTRA - Timeline completa
 // ============================================================================
 
+/**
+ * Cabeceras de las dos jornadas de `lisboa2DiasTimeline`.
+ *
+ * Los títulos nombran las zonas por las que se pasa y los resúmenes cuentan
+ * cuántas paradas hay y cómo empieza y acaba el día. Nada que las paradas no
+ * digan ya.
+ */
+export const lisboa2DiasDays: ItineraryDayMeta[] = [
+  {
+    day: 1,
+    title: 'Alfama, el 28 y la Baixa',
+    summary:
+      'Seis paradas por el centro histórico: el castillo por la mañana, el tranvía 28 después de comer y el atardecer en el mirador da Graça.',
+    image: '/images/tranvia-28.jpg',
+    imageAlt: 'El tranvía 28 de Lisboa subiendo por una calle estrecha del centro histórico',
+  },
+  {
+    day: 2,
+    title: 'Belém, LX Factory y fado',
+    summary:
+      'Cinco paradas: los monumentos de Belém por la mañana, LX Factory y el Time Out por la tarde, y fado en Alfama para cerrar.',
+    image: '/images/mirador-tajo-amarras-atardecer.jpg',
+    imageAlt: 'El río Tajo a su paso por Lisboa al atardecer, con amarras en primer plano',
+  },
+];
