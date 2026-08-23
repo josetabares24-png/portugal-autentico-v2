@@ -31,7 +31,9 @@ export const mainItineraries: Itinerary[] = [
     image: '/images/funicular-bica-turistas.jpg',
     features: [
       '2 rutas completas día a día',
-      'Restaurantes verificados y terrazas',
+      // «Verificados» era una promesa que no podemos sostener: no hay un
+      // proceso de verificación detrás, son recomendaciones editoriales.
+      'Restaurantes y terrazas recomendados',
       '15+ spots de fotos con horarios',
       'Tips de transporte y logística',
       'Cafés locales y miradores clave'

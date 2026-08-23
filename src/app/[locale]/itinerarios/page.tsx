@@ -25,6 +25,23 @@ export const metadata: Metadata = {
     url: 'https://estabaenlisboa.com/itinerarios',
     images: [{ url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
+  /*
+   * Sin este bloque, Twitter heredaba el `twitter:title` y el
+   * `twitter:description` globales del layout, que hablan del sitio entero y
+   * no de esta página. Al compartir el hub salía una tarjeta genérica mientras
+   * Open Graph mostraba el texto correcto. Se alinean los dos.
+   *
+   * `card` e `images` se repiten aquí a propósito: Next.js no fusiona el
+   * objeto `twitter` con el del layout, lo sustituye entero. Declarar sólo
+   * título y descripción habría dejado la página sin `summary_large_image` y
+   * sin imagen. La imagen es la misma que ya usa Open Graph en esta página.
+   */
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Itinerarios Lisboa 2026: rutas de 1, 2 y 3 días',
+    description: 'Rutas de Lisboa para 1, 2 y 3 días, con planificación por jornadas, mapas y consejos prácticos.',
+    images: ['https://estabaenlisboa.com/images/alfama-panoramica.jpg'],
+  },
   alternates: {
     canonical: 'https://estabaenlisboa.com/itinerarios',
   },
