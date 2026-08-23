@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Guías de Lisboa 2026 por Locales | Itinerarios y Rutas Verificadas",
+    "title": "Guías de Lisboa 2026 por Locales | Itinerarios, Rutas y Consejos",
     "titleTemplate": "{title} | Estaba en Lisboa",
-    "description": "Guías completas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas. Creadas por locales. Qué ver en Lisboa, Alfama, Belém, miradores y restaurantes auténticos. Actualizado 2026.",
-    "ogTitle": "Guías de Lisboa 2026 por Locales - Itinerarios Verificados",
-    "ogDescription": "Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas."
+    "description": "Guías completas de Lisboa con itinerarios por jornadas, mapas y consejos prácticos. Qué ver en Lisboa, Alfama, Belém, miradores y dónde comer. Actualizado 2026.",
+    "ogTitle": "Guías de Lisboa 2026 por Locales - Itinerarios y Rutas",
+    "ogDescription": "Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores."
   },
   "nav": {
     "guides": "Guías",
@@ -31,12 +31,12 @@
     "trustGuarantee": "Sin compra",
     "trustSavings": "Ahorrás x2 mínimo",
     "verified": "100%",
-    "verifiedLabel": "Verificado",
+    "verifiedLabel": "Revisado",
     "local": "Local",
     "localLabel": "Por lisboetas",
     "routeCount": "8",
     "routeCountLabel": "Rutas completas",
-    "routesTag": "Rutas verificadas",
+    "routesTag": "Rutas completas",
     "routesTitle": "Elige tu",
     "routesTitleAccent": "ruta perfecta",
     "routesDescription": "Itinerarios detallados hora a hora, recomendaciones para comer, los mejores spots para fotos y mapas con las paradas de cada ruta.",
@@ -46,7 +46,7 @@
     "whyDescription": "No soy turista que viene dos semanas y escribe una guía. Vivo aquí desde hace 3 años. Hago la compra en el mismo supermercado, tomo café en los mismos sitios y conozco los atajos que los lisboetas usamos todos los días.",
     "whyLocal": "Hechas por quien vive aquí",
     "whyLocalDesc": "No escribo desde un hotel. Vivo en Lisboa desde hace 3 años. Sé dónde desayunar tranquilo en Graça antes de que llegue todo el mundo, cuál es el mirador que funciona a las 9am y por qué algunos restaurantes cierran a las 3pm.",
-    "whyUpdated": "Verificadas cada mes",
+    "whyUpdated": "Revisadas cada mes",
     "whyUpdatedDesc": "Actualizo cada guía mensualmente. Si un restaurante cambia de horario, si abren un nuevo mirador o cierran un bar, lo reflejo inmediatamente. No vas a llegar a un sitio y encontrarte con que cerró hace 6 meses.",
     "whyGuarantee": "Acceso gratuito",
     "whyGuaranteeDesc": "Las guías públicas son gratuitas y puedes consultarlas sin comprar ni iniciar sesión. El objetivo es ayudarte a evitar errores comunes antes y durante el viaje.",
@@ -66,7 +66,7 @@
     "instantDownload": "Acceso inmediato",
     "instantDownloadDesc": "Consulta online sin compra",
     "fullyUpdated": "100% Actualizado",
-    "fullyUpdatedDesc": "Verificado en 2026 por locales",
+    "fullyUpdatedDesc": "Revisado en 2026",
     "guarantee": "Gratis",
     "guaranteeDesc": "Sin compra ni registro",
     "mainTag": "Según tus días",

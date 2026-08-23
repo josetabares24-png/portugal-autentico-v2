@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Guía completa de Lisboa 2026: qué ver, dónde comer, historia de la ciudad, miradores, barrios y rutas. Gratis, escrita por alguien que vive aquí.',
   openGraph: {
     title: 'Qué Ver en Lisboa 2026 — Guías Gratis de Local',
-    description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie. Sin trampas turísticas.',
+    description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie.',
     url: 'https://estabaenlisboa.com',
     images: [
       {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Qué Ver en Lisboa 2026 — Guías Gratis de Local',
-    description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie. Sin trampas turísticas.',
+    description: 'Guía gratuita de Lisboa 2026: barrios, gastronomía, historia, miradores y rutas a pie.',
     images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {

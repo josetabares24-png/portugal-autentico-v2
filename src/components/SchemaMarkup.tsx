@@ -12,7 +12,13 @@ export default function SchemaMarkup() {
       "caption": "Estaba en Lisboa - Guías de Lisboa por Locales"
     },
     "image": "https://estabaenlisboa.com/logo.png",
-    "description": "Guías y itinerarios verificados de Lisboa por locales. Horarios exactos, GPS y restaurantes sin trampas turísticas.",
+    // Prometía guías contrastadas una a una, horarios al minuto y una oferta
+    // libre de engaños. Ninguna de las tres se sostiene: no hay un proceso
+    // de verificación detrás, los horarios los fija cada monumento y cambian, y
+    // calificar la oferta ajena de trampa es un juicio que no podemos
+    // respaldar. Este texto se sirve en TODAS las páginas, así que contradecía
+    // a las rutas que ya habíamos limpiado.
+    "description": "Guías, itinerarios y recursos en español para organizar un viaje a Lisboa, con rutas, mapas, recomendaciones y consejos prácticos.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lisboa",
@@ -34,7 +40,8 @@ export default function SchemaMarkup() {
     "@type": "WebSite",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
-    "description": "Guías verificadas de Lisboa con itinerarios, horarios exactos, GPS y restaurantes locales",
+    // Misma limpieza que en Organization, arriba.
+    "description": "Estaba en Lisboa reúne itinerarios, actividades, entradas y consejos prácticos para descubrir Lisboa y sus alrededores.",
     "inLanguage": ["es"]
   };
 

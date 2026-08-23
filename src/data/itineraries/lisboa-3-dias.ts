@@ -142,8 +142,10 @@ export const lisboa3DiasSintraTimeline: TimelineStop[] = [
     time: '14:00',
     day: 1,
     title: 'Baixa Pombalina a pie',
-    description: 'Después de comer, explora Baixa caminando. Empieza en la Praça do Comércio (plaza gigante abierta al Tajo con arcadas amarillas impresionantes), sube al Arco da Rua Augusta (3€ para el mirador en la cima - vistas 360° de Baixa y el río), después camina por Rua Augusta (calle peatonal principal llena de tiendas, artistas callejeros, turistas, vendedores de castañas asadas). Pasa por el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 diseñado por Raoul Mesnier du Ponsard. Actualmente está cerrado (2026) por mantenimiento, pero la estructura sigue siendo impresionante desde abajo —vale la pena verla aunque no puedas subir. Termina en Rossio, la plaza donde solían quemar herejes en la Inquisición y hoy hay palomas, turistas, y portugueses tomando café en terrazas centenarias.',
-    tip: '💰 Arco da Rua Augusta: 3€ (vistas brutales, 5 min arriba). GRATIS: Pasear Baixa, Praça Comércio, Rossio. Tiempo: 1-1.5h caminando tranquilo.',
+    // Arco da Rua Augusta: 5€. Fuente: Visit Lisboa Shop, consultado 2026-08-23.
+    // Antes figuraban 3€, sin fuente ni fecha.
+    description: 'Después de comer, explora Baixa caminando. Empieza en la Praça do Comércio (plaza gigante abierta al Tajo con arcadas amarillas impresionantes), sube al Arco da Rua Augusta (5€ para el mirador en la cima - vistas 360° de Baixa y el río), después camina por Rua Augusta (calle peatonal principal llena de tiendas, artistas callejeros, turistas, vendedores de castañas asadas). Pasa por el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 diseñado por Raoul Mesnier du Ponsard. Actualmente está cerrado (2026) por mantenimiento, pero la estructura sigue siendo impresionante desde abajo —vale la pena verla aunque no puedas subir. Termina en Rossio, la plaza donde solían quemar herejes en la Inquisición y hoy hay palomas, turistas, y portugueses tomando café en terrazas centenarias.',
+    tip: '💰 Arco da Rua Augusta: 5€ (vistas 360°, 5 min arriba). GRATIS: Pasear Baixa, Praça Comércio, Rossio. Tiempo: 1-1.5h caminando tranquilo.',
     type: 'visit',
     image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800',
     coordinates: { lat: 38.7071, lng: -9.1364 },

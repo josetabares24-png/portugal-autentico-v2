@@ -1518,7 +1518,7 @@ const articles: Record<string, Article> = {
   "miradores-atardecer-lisboa": {
     titulo: "Los mejores miradores para el atardecer en Lisboa: donde el sol se despide",
     seoTitle: "Miradores de Lisboa al atardecer",
-    descripcion: "Dónde ver el mejor sunset de Lisboa. Horarios exactos, ubicaciones y secretos de local para disfrutar el momento mágico del día.",
+    descripcion: "Dónde ver el atardecer en Lisboa: miradores, orientación, cómo llegar y a qué hora conviene ir según la época del año.",
     imagen: "/images/miradouro-grupo-atardecer.jpg",
     imageAlt: "Noray en un muelle del Tajo al atardecer, con el puente 25 de Abril recortado al fondo",
     categoria: "Guías",

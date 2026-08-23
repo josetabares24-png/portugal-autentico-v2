@@ -43,10 +43,10 @@ const plusJakarta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://estabaenlisboa.com'),
   title: {
-    default: "Guías de Lisboa 2026 por Locales | Itinerarios y Rutas Verificadas",
+    default: "Guías de Lisboa 2026 por Locales | Itinerarios, Rutas y Consejos",
     template: "%s | Estaba en Lisboa",
   },
-  description: "Guías completas de Lisboa con itinerarios detallados, horarios exactos, GPS y mapas. Creadas por locales. Qué ver en Lisboa, Alfama, Belém, miradores y restaurantes auténticos. Actualizado 2026.",
+  description: "Guías completas de Lisboa con itinerarios por jornadas, mapas y consejos prácticos. Qué ver en Lisboa, Alfama, Belém, miradores y dónde comer. Actualizado 2026.",
   keywords: ["lisboa", "guia lisboa", "itinerario lisboa", "que ver lisboa", "viajar lisboa", "lisboa 2026", "alfama", "belem", "miradores lisboa", "restaurantes lisboa", "tranvia 28", "lisboa en 1 dia"],
   authors: [{ name: "Estaba en Lisboa", url: "https://estabaenlisboa.com" }],
   creator: "Estaba en Lisboa",
@@ -79,8 +79,8 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Guías de Lisboa 2026 por Locales - Itinerarios Verificados',
-    description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
+    title: 'Guías de Lisboa 2026 por Locales - Itinerarios y Rutas',
+    description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
     images: [
       {
         url: 'https://estabaenlisboa.com/og-default.jpg',
@@ -92,8 +92,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guías de Lisboa 2026 por Locales - Itinerarios Verificados',
-    description: 'Itinerarios con horarios exactos, GPS y restaurantes locales. Qué ver en Lisboa, Alfama, Belém. Sin trampas turísticas.',
+    title: 'Guías de Lisboa 2026 por Locales - Itinerarios y Rutas',
+    description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
     images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {

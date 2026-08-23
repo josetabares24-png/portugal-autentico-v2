@@ -93,7 +93,7 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
               <div className="grid sm:grid-cols-3 gap-8 mb-16">
                 {[
                   { titulo: 'Ruta profesional', desc: 'Orden lógico, tiempos reales y consejos locales.' },
-                  { titulo: 'Consejos locales', desc: 'Restaurantes verificados y spots fotográficos.' },
+                  { titulo: 'Consejos locales', desc: 'Recomendaciones para comer y spots fotográficos.' },
                   { titulo: 'Actualizado 2026', desc: 'Horarios revisados y recomendaciones recientes.' },
                 ].map((item) => (
                   <div key={item.titulo} className="card-surface p-5 border-t-2 border-gold">

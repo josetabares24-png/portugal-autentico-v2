@@ -54,7 +54,7 @@ export const guidePacks: Record<string, GuidePack> = {
     description: 'El fin de semana perfecto: Lisboa clásica + barrios modernos, con rutas claras, logística simple y consejos de locales.',
     includes: [
       'Itinerario completo día a día',
-      'Restaurantes verificados + terrazas',
+      'Restaurantes y terrazas recomendados',
       '15+ spots fotográficos con horarios',
       'Mapa offline con todos los puntos',
       'Tips de transporte y ahorro real',
