@@ -20,6 +20,14 @@ const nextConfig = {
       // más completa y la que ya recibía el doble de enlaces internos.
       { source: '/blog/transporte-publico-lisboa', destination: '/blog/como-moverse-por-lisboa', permanent: true },
       { source: '/:locale(en|ko|es)/blog/transporte-publico-lisboa', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      // El itinerario «Lisboa romántica» era un recorrido cerrado de dos días
+      // con horas fijas para un viaje que casi nadie hace así. Su sustituto,
+      // /blog/lisboa-en-pareja, resuelve la misma intención de búsqueda como
+      // guía de planes elegibles. La página antigua deja de existir como
+      // documento: este redirect se resuelve antes que el enrutado, así que la
+      // URL ya no sirve HTML propio ni canonical propio.
+      { source: '/itinerarios/lisboa-romantica', destination: '/blog/lisboa-en-pareja', permanent: true },
+      { source: '/:locale(en|ko|es)/itinerarios/lisboa-romantica', destination: '/blog/lisboa-en-pareja', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },

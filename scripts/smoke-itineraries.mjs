@@ -46,9 +46,15 @@ const ITINERARY_SLUGS = [
   'lisboa-2-dias-completo',
   'lisboa-3-dias-premium',
   'lisboa-full-week',
-  'lisboa-romantica',
   'lisboa-familiar',
   'lisboa-fotografia',
+];
+
+// Itinerarios retirados: su URL ya no sirve documento propio, redirige de
+// forma permanente a su sustituto editorial. Se comprueba el redirect en vez
+// de borrar el caso, para que la migración quede protegida por el test.
+const RETIRED_ITINERARIES = [
+  { slug: 'lisboa-romantica', destination: '/blog/lisboa-en-pareja' },
 ];
 
 const NONEXISTENT_SLUG = 'itinerario-que-no-existe-de-verdad';
@@ -160,6 +166,23 @@ async function checkItinerary(baseUrl, slug) {
   };
 }
 
+async function checkRetired(baseUrl, { slug, destination }) {
+  const res = await fetch(`${baseUrl}/itinerarios/${slug}`, { redirect: 'manual' });
+  const permanent = res.status === 301 || res.status === 308;
+  record(`${slug}: redirect permanente`, permanent, `HTTP ${res.status}`);
+
+  const location = res.headers.get('location');
+  const target = location ? new URL(location, baseUrl).pathname : null;
+  record(`${slug}: destino ${destination}`, target === destination, target ?? '(sin Location)');
+
+  // Un solo salto: el destino debe responder 200 directamente, sin encadenar
+  // otra redirección.
+  if (target) {
+    const final = await fetch(`${baseUrl}${target}`, { redirect: 'manual' });
+    record(`${slug}: sin cadena de redirecciones`, final.status === 200, `HTTP ${final.status} en ${target}`);
+  }
+}
+
 async function checkNonexistent(baseUrl) {
   const res = await fetch(`${baseUrl}/itinerarios/${NONEXISTENT_SLUG}`, { redirect: 'manual' });
   record(`${NONEXISTENT_SLUG}: HTTP 404`, res.status === 404, `HTTP ${res.status}`);
@@ -211,6 +234,11 @@ async function main() {
     const itineraryResults = [];
     for (const slug of ITINERARY_SLUGS) {
       itineraryResults.push(await checkItinerary(baseUrl, slug));
+    }
+    log('');
+
+    for (const retired of RETIRED_ITINERARIES) {
+      await checkRetired(baseUrl, retired);
     }
     log('');
 

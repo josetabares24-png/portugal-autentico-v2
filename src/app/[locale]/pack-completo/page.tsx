@@ -26,10 +26,12 @@ const guides = [
     desc: 'Una guía para viajar con calma, alternar barrios, escapadas y planes gastronómicos sin improvisar.',
   },
   {
-    title: 'Lisboa Romántica',
-    subtitle: 'Miradores, cenas y paseos',
-    href: '/itinerarios/lisboa-romantica',
-    desc: 'Una selección de rincones tranquilos, atardeceres y planes especiales para vivir Lisboa en pareja.',
+    // El itinerario cerrado se retiró: su sustituto es la guía editorial
+    // /blog/lisboa-en-pareja. Se enlaza directo, sin pasar por el redirect.
+    title: 'Lisboa en pareja',
+    subtitle: 'Miradores, paseos y planes para dos',
+    href: '/blog/lisboa-en-pareja',
+    desc: 'Planes que funcionan de verdad para dos, para elegir según el rato, el presupuesto y el tiempo que haga.',
   },
   {
     title: 'Lisboa en Familia',

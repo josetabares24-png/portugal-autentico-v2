@@ -54,11 +54,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terminos-condiciones`, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
-  const guideUrls: MetadataRoute.Sitemap = guidePackSlugs.map((slug) => ({
-    url: `${baseUrl}/itinerarios/${slug}`,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
+  /*
+   * Itinerarios retirados: su URL redirige de forma permanente a su sustituto
+   * editorial, así que no puede seguir en el sitemap —un sitemap no debe
+   * declarar URLs que redirigen—. El dato se conserva en `guidePacks` porque
+   * el panel de administración sigue leyéndolo; lo que se retira es la URL
+   * pública, no el registro.
+   *
+   * lisboa-romantica -> /blog/lisboa-en-pareja   (redirect en next.config.mjs)
+   */
+  const RETIRED_GUIDE_SLUGS = new Set(['lisboa-romantica']);
+
+  const guideUrls: MetadataRoute.Sitemap = guidePackSlugs
+    .filter((slug) => !RETIRED_GUIDE_SLUGS.has(slug))
+    .map((slug) => ({
+      url: `${baseUrl}/itinerarios/${slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
 
   // Solo las fichas marcadas como indexable (editorialmente completas y
   // verificadas) entran en el sitemap; el resto sigue siendo visitable

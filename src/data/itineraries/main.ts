@@ -103,7 +103,9 @@ export const specialItineraries: Itinerary[] = [
       'Paseos nocturnos y miradores',
       'Detalles para sorprender'
     ],
-    href: '/itinerarios/lisboa-romantica',
+    // La URL antigua redirige de forma permanente al artículo. Se apunta
+    // directo al destino para que ningún enlace dependa del redirect.
+    href: '/blog/lisboa-en-pareja',
     badge: {
       text: 'PARA PAREJAS',
       color: 'bg-pink-500'
