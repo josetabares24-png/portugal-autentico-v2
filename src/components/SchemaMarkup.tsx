@@ -9,7 +9,7 @@ export default function SchemaMarkup() {
       "url": "https://estabaenlisboa.com/logo.png",
       "width": 600,
       "height": 188,
-      "caption": "Estaba en Lisboa - Guías de Lisboa por Locales"
+      "caption": "Estaba en Lisboa - Guías de Lisboa"
     },
     "image": "https://estabaenlisboa.com/logo.png",
     // Prometía guías contrastadas una a una, horarios al minuto y una oferta

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sobre Estaba en Lisboa | Guías hechas por locales',
-  description: 'Quiénes somos y cómo escribimos las guías de Lisboa: cómo elegimos las rutas, qué incluimos y con qué frecuencia las revisamos.',
+  title: 'Sobre Estaba en Lisboa | El proyecto',
+  description: 'Quién está detrás de Estaba en Lisboa y cómo se escriben las guías: experiencia propia, investigación, fuentes oficiales y revisión periódica.',
   alternates: {
     canonical: 'https://estabaenlisboa.com/sobre-nosotros',
   },

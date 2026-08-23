@@ -33,7 +33,7 @@ export function ArticleFooter({ authorName, finalCta }: ArticleFooterProps) {
         <div>
           <p className="article-author-name">Escrito por {authorName}</p>
           <p className="article-author-bio">
-            Vivo en Lisboa y pruebo cada ruta, restaurante y actividad antes de recomendarla.{' '}
+            Vivo en Lisboa y escribo estas guías combinando experiencia propia con investigación y fuentes oficiales.{' '}
             <Link href="/sobre-nosotros">Más sobre mí</Link>
             {' · '}
             <a

@@ -17,7 +17,7 @@ export default function SobreNosotrosPage() {
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
-          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Quiénes somos</p>
+          <p className="text-white/70 text-sm tracking-widest uppercase mb-3">Sobre el proyecto</p>
           <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight">
             Estaba en Lisboa
           </h1>
@@ -28,13 +28,13 @@ export default function SobreNosotrosPage() {
       <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">
           <p className="font-display italic text-text-main text-xl md:text-2xl leading-relaxed mb-8">
-            Vivo en Lisboa. Reviso las rutas periódicamente. Escribo solo lo que funciona.
+            Vivo en Lisboa. Escribo las guías, las reviso y corrijo lo que cambia.
           </p>
           <p className="text-text-secondary leading-relaxed mb-6">
-            Nada de guías copiadas de Wikipedia. Nada de listas de &ldquo;los 10 mejores restaurantes&rdquo; que llevan tres años sin actualizarse. Solo lo que yo mismo haría si llegara por primera vez a Lisboa mañana.
+            Nada de guías copiadas de Wikipedia. Nada de listas de &ldquo;los 10 mejores restaurantes&rdquo; que llevan tres años sin actualizarse. Escribo lo que yo mismo haría si llegara por primera vez a Lisboa mañana.
           </p>
           <p className="text-text-secondary leading-relaxed">
-            Reviso cada itinerario periódicamente, compruebo que los restaurantes recomendados sigan abiertos y actualizo precios cuando detecto cambios.
+            Reviso periódicamente horarios, precios y cambios relevantes, usando fuentes oficiales siempre que están disponibles.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function SobreNosotrosPage() {
             <div>
               <p className="text-text-main font-semibold mb-1">José Tabares</p>
               <p className="text-text-secondary text-sm leading-relaxed mb-3">
-                Vivo en Lisboa y pruebo cada ruta, cada restaurante y cada actividad antes de recomendarla. Si está en esta web, es porque lo he probado yo mismo.
+                Vivo en Lisboa y combino experiencia propia con investigación y fuentes oficiales. Cuando una recomendación parte de información editorial y no de una experiencia personal, no la presento como si la hubiera probado.
               </p>
               <a
                 href="https://instagram.com/estabaenlisboa"

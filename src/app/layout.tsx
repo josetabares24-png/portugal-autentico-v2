@@ -43,7 +43,7 @@ const plusJakarta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://estabaenlisboa.com'),
   title: {
-    default: "Guías de Lisboa 2026 por Locales | Itinerarios, Rutas y Consejos",
+    default: "Guías de Lisboa 2026 | Itinerarios, Rutas y Consejos",
     template: "%s | Estaba en Lisboa",
   },
   description: "Guías completas de Lisboa con itinerarios por jornadas, mapas y consejos prácticos. Qué ver en Lisboa, Alfama, Belém, miradores y dónde comer. Actualizado 2026.",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Guías de Lisboa 2026 por Locales - Itinerarios y Rutas',
+    title: 'Guías de Lisboa 2026 - Itinerarios y Rutas',
     description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
     images: [
       {
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guías de Lisboa 2026 por Locales - Itinerarios y Rutas',
+    title: 'Guías de Lisboa 2026 - Itinerarios y Rutas',
     description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
     images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
