@@ -5,13 +5,23 @@ import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 import { CORE_ITINERARIES } from '@/data/itineraries';
 
+/*
+ * La metadata prometía «Semana» y «semana completa» porque el hub ofrecía
+ * siete itinerarios. Desde que la selección principal son tres, eso describía
+ * una página que ya no existe: quien llegaba desde el buscador esperando una
+ * guía de una semana no la encontraba aquí.
+ *
+ * También se cae «mapas GPS offline». El mapa es Leaflet con teselas
+ * externas: sin conexión no se ve nada. Prometer offline era prometer una
+ * funcionalidad que no está implementada.
+ */
 export const metadata: Metadata = {
-  title: 'Itinerarios en Lisboa 2026: Guías 1, 2, 3 Días y Semana',
-  description: 'Guías de Lisboa por días: 1 día esencial, 2 días completo, 3 días con Sintra, semana completa. Rutas con horarios reales, GPS, restaurantes locales y mapas. Creadas desde Lisboa.',
+  title: 'Itinerarios en Lisboa 2026: rutas de 1, 2 y 3 días',
+  description: 'Itinerarios de Lisboa para 1, 2 y 3 días, con rutas hora a hora, mapas y consejos prácticos. Incluye una opción de 3 días con Sintra.',
   keywords: ['itinerario lisboa 1 dia', 'lisboa 2 dias', 'lisboa 3 dias', 'guia lisboa', 'que ver lisboa', 'ruta lisboa'],
   openGraph: {
-    title: 'Itinerarios Lisboa 2026: 1, 2, 3 Días y Semana',
-    description: 'Guías con rutas hora a hora, mapas GPS y restaurantes. Lisboa esencial, completo o con Sintra.',
+    title: 'Itinerarios Lisboa 2026: rutas de 1, 2 y 3 días',
+    description: 'Rutas de Lisboa para 1, 2 y 3 días, con planificación por jornadas, mapas y consejos prácticos.',
     url: 'https://estabaenlisboa.com/itinerarios',
     images: [{ url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg', width: 1200, height: 630, alt: 'Itinerarios en Lisboa 2026' }],
   },
@@ -42,7 +52,12 @@ export default async function ItinerariosPage() {
 
   const faqItems = [
     { question: '¿Cuántos días se recomiendan para Lisboa?', answer: 'Lo ideal son 3-4 días para ver lo esencial sin prisas. Con 2 días puedes cubrir lo imprescindible.' },
-    { question: '¿Qué incluye cada itinerario?', answer: 'Rutas hora a hora, mapas GPS offline y recomendaciones de restaurantes comprobados sobre el terreno.' },
+    /*
+     * Dos promesas que no podíamos sostener: «mapas GPS offline» (el mapa es
+     * Leaflet con teselas externas, sin conexión no se ve) y «restaurantes
+     * comprobados sobre el terreno» (no tenemos forma de demostrarlo).
+     */
+    { question: '¿Qué incluye cada itinerario?', answer: 'Rutas hora a hora, mapas con las paradas y recomendaciones prácticas para organizar cada jornada.' },
     { question: '¿Los itinerarios sirven para primera visita?', answer: 'Sí, están diseñados para optimizar tiempos y evitar trampas turísticas.' },
   ];
 
@@ -72,8 +87,7 @@ export default async function ItinerariosPage() {
             <p className="page-eyebrow">Según tus días</p>
             <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
             <p className="page-description">
-              Tres rutas, una por cada duración. La de un día es la misma ciudad en menos
-              paradas, no una versión recortada.
+              Tres rutas pensadas para aprovechar Lisboa según el tiempo que tengas.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">

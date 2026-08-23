@@ -39,7 +39,7 @@
     "routesTag": "Rutas verificadas",
     "routesTitle": "Elige tu",
     "routesTitleAccent": "ruta perfecta",
-    "routesDescription": "Itinerarios detallados hora a hora, restaurantes que realmente funcionan, los mejores spots para fotos y mapas offline que no fallan nunca.",
+    "routesDescription": "Itinerarios detallados hora a hora, recomendaciones para comer, los mejores spots para fotos y mapas con las paradas de cada ruta.",
     "viewAllRoutes": "Ver todas las rutas",
     "whyTitle": "Por qué",
     "whyTitleAccent": "esto funciona",
@@ -56,8 +56,8 @@
     "freeFooter": "Transporte · Presupuestos · Mejor época · Gratis"
   },
   "itineraries": {
-    "pageTitle": "Itinerarios en Lisboa 2026: Guías 1, 2, 3 Días y Semana",
-    "pageDescription": "Guías de Lisboa por días: 1 día esencial, 2 días completo, 3 días con Sintra, semana completa.",
+    "pageTitle": "Itinerarios en Lisboa 2026: rutas de 1, 2 y 3 días",
+    "pageDescription": "Guías de Lisboa por días: 1 día esencial, 2 días completo y 3 días con Sintra.",
     "badge": "Guías de viaje 2026",
     "heading": "Elige tu experiencia",
     "headingAccent": "perfecta en Lisboa",
@@ -72,7 +72,7 @@
     "mainTag": "Según tus días",
     "mainTitle": "Itinerarios",
     "mainTitleAccent": "Principales",
-    "mainDescription": "Cada guía incluye itinerario hora a hora, restaurantes probados, spots de fotos y mapas offline",
+    "mainDescription": "Cada guía incluye itinerario hora a hora, recomendaciones para comer, spots de fotos y un mapa con las paradas",
     "specialTag": "Experiencias únicas",
     "specialTitle": "Rutas",
     "specialTitleAccent": "Temáticas",
