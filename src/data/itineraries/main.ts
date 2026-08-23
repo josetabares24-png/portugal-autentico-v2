@@ -147,7 +147,9 @@ export const specialItineraries: Itinerary[] = [
       'Cafés fotogénicos incluidos',
       'Rutas cortas para mejores vistas'
     ],
-    href: '/itinerarios/lisboa-fotografia',
+    // La URL antigua redirige de forma permanente al artículo. Se apunta
+    // directo al destino para que ningún enlace dependa del redirect.
+    href: '/blog/donde-fotografiar-lisboa',
     badge: {
       text: 'FOTÓGRAFOS',
       color: 'bg-indigo-500'

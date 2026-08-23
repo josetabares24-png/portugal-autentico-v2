@@ -42,10 +42,12 @@ const guides = [
     desc: 'Actividades kid-friendly, pausas útiles, zonas cómodas y consejos para evitar estrés durante el viaje.',
   },
   {
-    title: 'Lisboa Fotografía',
-    subtitle: 'Spots, luz y encuadres',
-    href: '/itinerarios/lisboa-fotografia',
-    desc: 'Una ruta para capturar miradores, tranvías, fachadas y escenas urbanas en las mejores horas de luz.',
+    // El itinerario cerrado se retiró: su sustituto es
+    // /blog/donde-fotografiar-lisboa. Se enlaza directo, sin pasar por el redirect.
+    title: 'Dónde fotografiar Lisboa',
+    subtitle: 'Lugares, luz y encuadres',
+    href: '/blog/donde-fotografiar-lisboa',
+    desc: 'Qué se fotografía en cada zona, hacia dónde mira y a qué hora le da la luz de frente.',
   },
 ];
 

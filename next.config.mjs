@@ -32,6 +32,10 @@ const nextConfig = {
       // se sustituye por una guía de planes elegibles.
       { source: '/itinerarios/lisboa-familiar', destination: '/blog/lisboa-con-ninos', permanent: true },
       { source: '/:locale(en|ko|es)/itinerarios/lisboa-familiar', destination: '/blog/lisboa-con-ninos', permanent: true },
+      // El itinerario fotográfico daba ajustes de cámara por parada. Su
+      // sustituto ordena la ciudad por luz y encuadre, que es lo que no caduca.
+      { source: '/itinerarios/lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/itinerarios/lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },
