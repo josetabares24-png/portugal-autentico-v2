@@ -9,6 +9,7 @@ interface ItineraryCardProps extends Itinerary {
 export function ItineraryCard({
   title,
   description,
+  duration,
   image,
   features,
   href,
@@ -67,6 +68,14 @@ export function ItineraryCard({
           sizes="(max-width: 1024px) 100vw, 33vw"
         />
       </div>
+      {/*
+        La duración va ANTES del título y no escondida al final.
+        La sección pregunta «¿cuántos días tienes?» y hasta ahora las tarjetas
+        se llamaban «Lisboa Esencial», «Lisboa Completa» y «Lisboa +
+        Alrededores»: nombres que no contestan esa pregunta. El dato ya estaba
+        en los datos, sólo que no se pintaba en ninguna parte.
+      */}
+      <p className="page-eyebrow mb-1">{duration}</p>
       <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
       <p className="text-text-secondary text-sm leading-relaxed mb-5">{description}</p>
 
