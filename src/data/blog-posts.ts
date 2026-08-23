@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'donde-fotografiar-lisboa',
+    titulo: 'Dónde fotografiar Lisboa: lugares, miradores y mejores horas de luz',
+    excerpt: 'Qué se fotografía en cada zona, hacia dónde mira y a qué hora le da la luz de frente. Sin ajustes de cámara: con geometría.',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/lisboa-baixa-rio-tejo-entardecer.webp',
+  },
+  {
     id: 'lisboa-con-ninos',
     titulo: 'Lisboa con niños: qué hacer y cómo organizar el viaje en familia',
     excerpt: 'Oceanário, parques, transporte, carrito y planes de lluvia: qué es cómodo de verdad y cómo repartir los días sin agotar a nadie.',

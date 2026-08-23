@@ -12,6 +12,127 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
   /*
+   * Reemplazo editorial de /itinerarios/lisboa-fotografia.
+   *
+   * El itinerario viejo eran diecisiete paradas con ajustes de cámara para
+   * cada una —«ISO 100-400, f/8-11, 1/250s»— como si la luz de un martes de
+   * noviembre fuese la de un sábado de julio. Eso no es información, es ruido
+   * con aspecto técnico: los ajustes dependen de la luz que haya en ese
+   * momento y de la cámara, y cualquier móvil los resuelve solo.
+   *
+   * Lo que sí se puede escribir y no caduca es la geometría: qué se ve desde
+   * cada sitio, hacia dónde mira, y por tanto a qué hora le da la luz de
+   * frente. Eso es lo que ordena este artículo.
+   *
+   * NO es otra lista de miradores. /blog/mejores-miradores-lisboa ya compara
+   * diez por vistas y ambiente; aquí se habla de encuadre, dirección de luz y
+   * logística, y se enlaza allí para elegir.
+   *
+   * Verificado contra fuente oficial el 2026-08-23: la iglesia de Santa Maria
+   * de Belém y el claustro de los Jerónimos tienen accesos separados
+   * (mosteirojeronimos.gov.pt / DGPC).
+   */
+  'donde-fotografiar-lisboa': {
+    titulo: 'Dónde fotografiar Lisboa: lugares, miradores y mejores horas de luz',
+    descripcion: 'Los mejores lugares para fotografiar Lisboa: miradores, tranvías, azulejos, Alfama, Belém y el Tajo, con consejos sobre la luz y el momento del día.',
+    seoTitle: 'Dónde fotografiar Lisboa: mejores lugares y horas',
+    metaDescription: 'Los mejores lugares para fotografiar Lisboa: miradores, tranvías, azulejos, Alfama, Belém y el Tajo, con consejos sobre luz y momento del día.',
+    imagen: '/images/lisboa-originales/lisboa-baixa-rio-tejo-entardecer.webp',
+    imageAlt: 'La Baixa de Lisboa y el río Tajo al caer la tarde, con la luz baja sobre los tejados',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-23',
+    minutos: 11,
+    links: [
+      { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, comparados' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/mejor-epoca-visitar-lisboa', label: 'Cuándo visitar Lisboa' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
+    ],
+    fuentes: [
+      { label: 'Mosteiro dos Jerónimos - preguntas frecuentes', href: 'http://www.mosteirojeronimos.gov.pt/pt/index.php?pid=233&s=white' },
+      { label: 'Património Cultural - Mosteiro dos Jerónimos', href: 'https://www.patrimoniocultural.gov.pt/pt/museus-e-monumentos/dgpc/m/mosteiro-dos-jeronimos/' },
+      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
+      { label: 'MAAT - planear la visita', href: 'https://www.maat.pt/en/plan-a-visit' },
+    ],
+    cta: {
+      href: '/blog/mejores-miradores-lisboa',
+      label: 'Ver la guía de miradores',
+      title: '¿Buscas comparar los miradores?',
+      text: 'Esta guía habla de luz y encuadre. Si lo que necesitas es decidir a cuáles subir, la comparación está en la guía de miradores.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa es una ciudad fácil de fotografiar y difícil de fotografiar bien, y la razón es la misma en los dos casos: la luz. Está construida sobre colinas orientadas al sur y al río, así que casi cualquier sitio tiene una vista, pero esa vista cambia por completo según la hora a la que llegues. El mismo mirador puede darte los tejados encendidos o un contraluz plano.' },
+      { tipo: 'parrafo', texto: 'Por eso esta guía no está ordenada por sitios sino por lo que se ve y cuándo le da la luz. Aquí no vas a encontrar ajustes de cámara: dependen de la luz que haya ese día y del equipo que lleves, y cualquier móvil moderno los resuelve mejor que una tabla escrita hace meses. Lo que sí se puede saber de antemano es hacia dónde mira cada sitio.' },
+
+      { tipo: 'subtitulo', texto: 'Qué se fotografía en cada zona' },
+
+      { tipo: 'subseccion', texto: 'Alfama desde arriba: Santa Luzia y Portas do Sol' },
+      { tipo: 'parrafo', texto: 'Es la imagen que la mayoría de la gente tiene en la cabeza cuando piensa en Lisboa: los tejados naranjas bajando en cascada hacia el Tajo, con la cúpula blanca del Panteão asomando entre ellos. Los dos miradores están pegados y dan encuadres distintos: Santa Luzia añade el emparrado y los azulejos en primer plano, y Portas do Sol es más abierto y limpio.' },
+      { tipo: 'parrafo', texto: 'Miran al sureste, sobre el barrio y el río, así que funcionan de mañana: el sol sale por delante-izquierda y va iluminando los tejados de frente en lugar de recortarlos. A media mañana la luz ya cae desde arriba y aplana el relieve, que es justo lo que da carácter a esta vista.' },
+
+      { tipo: 'subseccion', texto: 'Los tranvías y las calles empinadas' },
+      { tipo: 'parrafo', texto: 'El tranvía amarillo subiendo una cuesta estrecha es el otro gran tema de Lisboa. La Rua da Bica es la más conocida —el ascensor amarillo en una calle muy inclinada, con casas a los lados—, pero no es la única: cualquier tramo del 28 por Graça o Alfama da la misma escena con menos gente delante.' },
+      { tipo: 'parrafo', texto: 'La clave aquí no es la hora de la luz sino la de la gente. A primera hora hay poca, y en una calle estrecha eso cambia la foto más que cualquier otra cosa. Y conviene dar tiempo: pasan cada pocos minutos, así que puedes componer el encuadre y esperar a que entre en cuadro en vez de disparar a la carrera.' },
+
+      { tipo: 'subseccion', texto: 'La Baixa: simetría y perspectiva' },
+      { tipo: 'parrafo', texto: 'El trazado pombalino es rectilíneo y regular, y eso es un regalo para las fotos de perspectiva: calles rectas que se cierran en un punto de fuga, fachadas de la misma altura, arcadas repetidas. La Praça do Comércio funciona por simetría —arcadas en tres lados y el río abierto en el cuarto—, y la Rua Augusta da la línea recta que termina en el arco.' },
+      { tipo: 'parrafo', texto: 'Es zona llana y peatonal en buena parte, así que se recorre con calma. Al ser espacio abierto orientado al sur, a mediodía la luz es dura; los extremos del día le sientan mucho mejor.' },
+
+      { tipo: 'subseccion', texto: 'Belém y el río' },
+      { tipo: 'parrafo', texto: 'Belém es plano y está junto al agua, y ahí está su interés fotográfico: se puede trabajar con reflejos y con horizonte, que es algo que en el resto de Lisboa no tienes. La Torre de Belém está en la orilla, así que la marea cambia la foto: con marea baja queda arena delante y charcos que reflejan; con marea alta, el agua llega a la base. Ninguna de las dos es mejor, son fotos distintas, pero conviene mirar la marea antes de ir si tienes una en mente.' },
+      { tipo: 'parrafo', texto: 'En los Jerónimos hay un detalle práctico que ahorra confusión: la iglesia de Santa Maria de Belém y el claustro tienen accesos separados. La iglesia sigue siendo parroquia en activo, con sus propios horarios de culto y de visita, y el claustro se visita aparte. Consultad los horarios oficiales antes de ir, sobre todo si vais a primera hora.' },
+      { tipo: 'parrafo', texto: 'El MAAT, un poco más allá, es arquitectura contemporánea junto al agua y se fotografía bien desde el paseo del río. Si queréis entrar o subir a alguna parte del edificio, comprobad las condiciones de acceso en su web: cambian según la programación.' },
+
+      { tipo: 'subseccion', texto: 'El puente y la otra orilla' },
+      { tipo: 'parrafo', texto: 'El Puente 25 de Abril se fotografía mejor desde abajo, en la zona de las docas de Alcântara, donde lo tienes cerca y con el agua delante. Mira hacia el suroeste, así que es un sitio de final de tarde: primero el sol bajando detrás de la estructura y después, cuando se enciende el alumbrado y el cielo todavía conserva azul, la media hora larga que da las mejores fotos nocturnas.' },
+      { tipo: 'parrafo', texto: 'Y hay un encuadre que sólo se consigue cruzando: desde la orilla sur, en Cacilhas, Lisboa entera se ve subiendo por las colinas y de frente, no a contraluz, porque miras hacia el norte. Se llega en barco desde Cais do Sodré como transporte normal.' },
+
+      { tipo: 'subseccion', texto: 'Azulejos, fachadas y detalles' },
+      { tipo: 'parrafo', texto: 'La otra Lisboa fotografiable no está en las vistas sino a un metro de distancia: fachadas enteras de azulejo, aldabas, ventanas con ropa tendida, calzada portuguesa dibujando figuras. Alfama, Mouraria y Graça son los barrios donde más se acumula, y aquí la luz plana de un día nublado funciona mejor que el sol directo, que quema los blancos del azulejo.' },
+      { tipo: 'parrafo', texto: 'Una nota que no es técnica: en esos barrios vive gente. Fotografiar una calle es una cosa y fotografiar a una persona en la puerta de su casa es otra; si sale alguien en el encuadre, lo cortés es preguntar.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde fotografiar Lisboa al amanecer' },
+      { tipo: 'parrafo', texto: 'A primera hora la ciudad está vacía, la luz entra de lado y las cuestas se llenan de sombras largas. Los sitios que mejor aprovechan ese momento son los que miran al este y al sur: Santa Luzia y Portas do Sol sobre Alfama, la Praça do Comércio abierta al río, y Belém, donde el sol sale a lo largo del agua.' },
+      { tipo: 'parrafo', texto: 'La hora exacta cambia varias horas entre invierno y verano, así que no tiene sentido dar un número: mirad la hora de amanecer del día concreto y contad con estar allí un rato antes. En verano madrugar de verdad; en invierno es un plan mucho más llevadero.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde fotografiar al atardecer y en la hora azul' },
+      { tipo: 'parrafo', texto: 'Al final del día conviene estar en algo que mire al oeste o al suroeste. La Senhora do Monte, que es de los puntos más altos, y Santa Catarina, sobre el río, son los dos clásicos; las docas de Alcântara si lo que queréis es el puente.' },
+      { tipo: 'parrafo', texto: 'Y el consejo que más cambia el resultado: no os vayáis cuando se pone el sol. Los veinte o treinta minutos siguientes, cuando el alumbrado ya está encendido y el cielo aún tiene azul en vez de negro, son los que dan las fotos nocturnas con color. Casi todo el mundo recoge justo antes de que empiece lo bueno.' },
+      { tipo: 'enlace', texto: 'Si lo que necesitáis es decidir a qué miradores subir y cuáles saltaros, la comparación está en su propia guía.', href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, comparados' },
+
+      { tipo: 'subtitulo', texto: 'Lisboa de noche' },
+      { tipo: 'parrafo', texto: 'De noche la ciudad cambia de tema: se acaban las panorámicas y empiezan las calles. Alfama con los faroles encendidos, la Baixa con los escaparates iluminados y el arco al fondo, el puente desde el agua. Es cuando la ciudad está más tranquila y cuando las calles estrechas se ven mejor, porque la luz artificial rellena lo que de día queda en sombra dura.' },
+      { tipo: 'parrafo', texto: 'Dos avisos prácticos, sin dramatismo: la calzada portuguesa mojada resbala bastante, y en una cuesta con la cámara en la mano eso importa. Y si vais con equipo, en Lisboa aplica lo de cualquier ciudad grande: no dejarlo desatendido y no llamar la atención en zonas vacías.' },
+
+      { tipo: 'subtitulo', texto: 'Fotografiar tranvías sin estorbar' },
+      { tipo: 'parrafo', texto: 'Es la parte que se ve mal y conviene decir. El 28 y el 12 son transporte público en calles muy estrechas: la gente que va dentro va a trabajar, y el conductor no puede esquivar a nadie porque va sobre raíles.' },
+      { tipo: 'lista', items: [
+        'No te pongas sobre la vía para encuadrar. El tranvía no puede apartarse y en una cuesta tarda en frenar.',
+        'Dispara desde la acera o desde un portal, no desde el medio de la calzada.',
+        'En las calles del 28 también pasan coches, y muchas no tienen acera a los dos lados.',
+        'Si estás esperando a que pase, deja libre el paso de los vecinos: en Bica y Alfama la calle es también su portal.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué llevar y qué no hace falta' },
+      { tipo: 'parrafo', texto: 'Lo que de verdad cambia el día no es el equipo, es el calzado: son cuestas y adoquín pulido, y vas a andar mucho más de lo que calculas. Después, una batería de repuesto o un cargador portátil, porque un día de fotos en la calle se lleva la batería del móvil por delante.' },
+      { tipo: 'parrafo', texto: 'Si lleváis cámara, un trípode ligero sirve para la hora azul, pero pensad dónde vais a usarlo: en un mirador lleno a la hora del atardecer estorba y no siempre hay sitio. Y no hace falta un catálogo de objetivos: con un angular moderado y algo de zoom se cubre casi todo lo que hay en esta guía.' },
+      { tipo: 'nota', texto: 'Los horarios y las condiciones de acceso de monumentos y museos cambian, y algunos elementos —como el Elevador de Santa Justa— pueden estar cerrados por obras durante temporadas largas. Antes de organizar una salida alrededor de un sitio concreto, comprobad su estado en la web oficial del propio monumento o del operador.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo agrupar los sitios por zonas' },
+      { tipo: 'parrafo', texto: 'El error que más tiempo cuesta es cruzar Lisboa de punta a punta persiguiendo una luz. La ciudad se deja agrupar bien en tres bloques, y cada uno tiene su momento:' },
+      { tipo: 'lista', items: [
+        'Colina de Alfama y Graça —Santa Luzia, Portas do Sol, Senhora do Monte, calles y azulejos—: mañana para las vistas, y vuelta de noche si os apetece el barrio iluminado.',
+        'Baixa, Chiado y Bica —perspectivas, arcadas, tranvías—: cualquier hora menos el mediodía, y muy buena de noche.',
+        'Belém y el río hacia el oeste —Torre, Jerónimos, MAAT, docas y puente—: primera hora para Belém, final de tarde para el puente. Es la zona más llana de las tres.',
+      ] },
+      { tipo: 'parrafo', texto: 'Con eso, un día da para dos bloques sin correr. Tres es posible, pero acabaréis viendo Lisboa por la pantalla.' },
+      { tipo: 'enlace', texto: 'Para encadenar las zonas sin perder tiempo en trayectos, conviene tener claro qué transporte toca en cada caso.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+    ],
+  },
+  /*
    * Reemplazo editorial de /itinerarios/lisboa-familiar.
    *
    * El itinerario viejo eran trece paradas repartidas en cuatro días con horas
@@ -3490,6 +3611,16 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  // Sin ficha de lugar: la guía recorre media ciudad, no un sitio concreto.
+  'donde-fotografiar-lisboa': {
+    faqs: [
+      { q: '¿Cuál es el mejor sitio para fotografiar Lisboa?', a: 'Depende de la hora más que del sitio. Para la vista clásica de los tejados de Alfama con el Panteão al fondo, Santa Luzia y Portas do Sol por la mañana, porque miran al sureste y reciben la luz de frente. Para el final del día, la Senhora do Monte o Santa Catarina, que miran al oeste. Y para el puente, las docas de Alcântara al atardecer.' },
+      { q: '¿A qué hora hay mejor luz para fotografiar Lisboa?', a: 'En los extremos del día. A primera hora la luz entra de lado y la ciudad está vacía; al final de la tarde pasa lo mismo del otro lado. El mediodía es la peor hora para casi todo lo de esta guía porque la luz cae desde arriba y aplana las cuestas. Las horas concretas cambian varias horas entre invierno y verano, así que conviene mirar el amanecer y el atardecer del día en cuestión.' },
+      { q: '¿Dónde se fotografía el tranvía amarillo de Lisboa?', a: 'La Rua da Bica es la más conocida, pero cualquier tramo del 28 por Graça o Alfama da la misma escena con menos gente delante. Lo que más cambia la foto no es el sitio sino la hora: a primera hora hay muy poca gente. Y conviene disparar desde la acera, nunca desde la vía: el tranvía va sobre raíles y no puede apartarse.' },
+      { q: '¿Merece la pena cruzar el Tajo para fotografiar Lisboa?', a: 'Sí, si buscáis un encuadre distinto. Desde la orilla sur, en Cacilhas, se ve Lisboa entera subiendo por las colinas y de frente, porque miras hacia el norte y la ciudad queda iluminada en lugar de a contraluz. Se llega en barco desde Cais do Sodré como transporte público normal.' },
+      { q: '¿Hace falta cámara o basta con el móvil?', a: 'Para casi todo lo de esta guía basta el móvil. Lo que de verdad cambia el resultado es a qué hora estás en cada sitio y hacia dónde mira ese sitio, no el equipo. Una cámara y un trípode ligero ayudan en la hora azul y en las fotos nocturnas, pero no son requisito para nada de lo anterior.' },
+    ],
+  },
   // Sin ficha de lugar, por lo mismo que en la guía de pareja: no trata de un
   // sitio al que se llegue, sino de cómo combinar varios.
   'lisboa-con-ninos': {
