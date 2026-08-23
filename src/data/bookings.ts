@@ -30,7 +30,7 @@ export type BookingCategory = 'entradas' | 'experiencias' | 'excursiones';
  */
 export type BookingPlacement = 'activities' | 'article';
 
-interface BookingLink {
+export interface BookingLink {
   /**
    * URL corta tal y como la entrega el proveedor. No se le añade ni un
    * parámetro: la atribución y la campaña ya van dentro, y cualquier
@@ -418,10 +418,13 @@ export const HUB_PRODUCTS = BOOKABLE_PRODUCTS.filter((p) => p.hub);
  * Devuelve `null` cuando no hay ningún enlace. Preferimos no ofrecer botón
  * antes que ofrecer uno que lleve a otro producto.
  */
+/** Enlace ya resuelto, con la ubicación de la que salió realmente. */
+export type BookingLinkResolved = BookingLink & { usedPlacement: BookingPlacement };
+
 export function resolveBookingLink(
   product: BookableProduct,
   placement: BookingPlacement
-): (BookingLink & { usedPlacement: BookingPlacement }) | null {
+): BookingLinkResolved | null {
   const exact = product.links[placement];
   if (exact) return { ...exact, usedPlacement: placement };
 
@@ -435,4 +438,12 @@ export function resolveBookingLink(
 /** El producto que recomienda una ficha de actividad, si lo hay. */
 export function findProductByActivitySlug(slug: string): BookableProduct | undefined {
   return BOOKABLE_PRODUCTS.find((p) => p.activitySlug === slug);
+}
+
+/**
+ * Producto por su `id`. Lo usan las paradas de itinerario, que declaran
+ * `productId` de forma explícita en lugar de adivinar por el nombre.
+ */
+export function findProductById(id: string): BookableProduct | undefined {
+  return BOOKABLE_PRODUCTS.find((p) => p.id === id);
 }

@@ -1,11 +1,26 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { TimelineStop } from '@/components/itinerarios/TimelineStop';
-import { TimelineContainer } from '@/components/itinerarios/TimelineContainer';
-import { IncludedFeatures } from '@/components/itinerarios/IncludedFeatures';
-import { PhotoGallery } from '@/components/itinerarios/PhotoGallery';
-import { PremiumContent } from '@/components/itinerarios/PremiumContent';
-import { lisboa3DiasSintraTimeline } from '@/data/itineraries';
+import { ItineraryHero } from '@/components/itinerarios/ItineraryHero';
+import { ItineraryDayOverview } from '@/components/itinerarios/ItineraryDayOverview';
+import { ItineraryDay } from '@/components/itinerarios/ItineraryDay';
+import { ItineraryMapSection } from '@/components/itinerarios/ItineraryMapSection';
+import { ItineraryPersonalizeCTA } from '@/components/itinerarios/ItineraryPersonalizeCTA';
+import { lisboa3DiasDays, lisboa3DiasSintraTimeline } from '@/data/itineraries';
+import { agruparPorDia } from '@/lib/itinerary-days';
+
+/*
+ * Lisboa en 3 días. Página piloto del sistema visual de itinerarios.
+ *
+ * Lo que cambia respecto a la versión anterior no es el aspecto, es la
+ * estructura: antes eran veinte paradas seguidas, numeradas del 1 al 20, sin
+ * un solo `h2` y con el día escondido dentro del campo de la hora. Ahora son
+ * tres capítulos con nombre, cada uno con su encabezado, su foto y sus
+ * paradas, y el día vive en su propio campo (ver `data/itineraries/types.ts`).
+ *
+ * Sigue siendo un Server Component: el itinerario entero se pinta en servidor
+ * y llega en el HTML. Lo único que se hidrata son el mapa (que ya era así) y
+ * los dos enlaces de reserva.
+ *
+ * Metadata, canonical, Open Graph, JSON-LD y URL: sin tocar.
+ */
 
 export const metadata = {
   title: 'Lisboa en 3 Días con Sintra 2026',
@@ -15,16 +30,42 @@ export const metadata = {
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
 };
 
-export default function Lisboa3DiasPremiumPage() {
-  const displayStops = lisboa3DiasSintraTimeline;
-  const totalStops = lisboa3DiasSintraTimeline.length;
+const SLUG = 'lisboa-3-dias-premium';
 
-  const photos = [
-    { url: '/images/alfama-panoramica.jpg', caption: 'Lisboa desde el Tajo' },
-    { url: '/images/alfama-panoramica.jpg', caption: 'Alfama al atardecer' },
-    { url: '/images/tranvia-28.jpg', caption: 'Tranvía 28' },
-    { url: '/images/funicular-bica-turistas.jpg', caption: 'Arquitectura lisboeta' },
-  ];
+/*
+ * Consejos de logística de Sintra que ya estaban en la página anterior, en un
+ * bloque lateral. Se conservan tal cual: son información real y útil, y
+ * borrarla por rediseñar sería perder contenido. Cambia dónde van —al final
+ * del recorrido, que es cuando toca decidir la excursión— y cómo se presentan.
+ */
+const CONSEJOS_SINTRA = [
+  {
+    titulo: 'Sal temprano',
+    texto: 'Primer tren desde Rossio a las 8:00. Llegas antes que los grupos y entras sin cola.',
+  },
+  {
+    titulo: 'Entradas online',
+    texto: 'Palacio da Pena y Quinta da Regaleira: compra online. En taquilla pueden estar agotadas.',
+  },
+  {
+    titulo: 'Orden óptimo',
+    texto: 'Bus 434 desde el centro: Pena primero (frío, niebla matinal), Castelo dos Mouros, Regaleira al final.',
+  },
+];
+
+export default function Lisboa3DiasPremiumPage() {
+  const dias = agruparPorDia(lisboa3DiasSintraTimeline, lisboa3DiasDays);
+  const totalParadas = lisboa3DiasSintraTimeline.length;
+
+  /*
+   * Los datos de cabecera salen del itinerario, no de una lista escrita a
+   * mano: si mañana se añade una parada, el número y el horario se corrigen
+   * solos en vez de quedarse mintiendo.
+   */
+  const horas = dias.flatMap((d) => d.stops.map((s) => s.time)).sort();
+  const primeraHora = horas[0] ?? '';
+  const ultimaHora = horas[horas.length - 1] ?? '';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -35,149 +76,67 @@ export default function Lisboa3DiasPremiumPage() {
   };
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="bg-background-light">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      {/* Hero */}
-      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
-        <Image
-          src="/images/alfama-panoramica.jpg"
-          alt="Lisboa 3 días con Sintra"
-          fill
-          className="object-cover"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
-          <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white/90 transition-colors block mb-3">
-            ← Itinerarios
-          </Link>
-          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
-            Lisboa en 3 Días
-          </h1>
-          <p className="text-white/70 text-sm">Con Sintra · {totalStops}+ paradas · Experiencia completa</p>
-        </div>
+
+      <ItineraryHero
+        eyebrow="Itinerario"
+        breadcrumbLabel="Lisboa en 3 días"
+        title="Lisboa en 3 días"
+        lead="Tres jornadas cerradas: el casco histórico a pie, Belém y el Tajo, y un día completo de excursión a Sintra. Con las horas de cada parada, los consejos de siempre y el mapa al final."
+        image="/images/alfama-panoramica.jpg"
+        imageAlt="Vista panorámica de los tejados de Alfama y el río Tajo, en Lisboa"
+        meta={[
+          { label: 'Duración', value: '3 días', icon: 'schedule' },
+          { label: 'Paradas', value: `${totalParadas}`, icon: 'location_on' },
+          { label: 'Horario', value: `${primeraHora}–${ultimaHora}`, icon: 'event' },
+          { label: 'Cómo moverse', value: 'A pie, metro y tren', icon: 'directions_walk' },
+        ]}
+      />
+
+      <div className="mx-auto max-w-4xl px-6 pt-10 md:px-8 md:pt-14">
+        <ItineraryDayOverview dias={dias} />
+      </div>
+
+      <div className="mx-auto max-w-4xl space-y-12 px-6 pt-12 md:space-y-16 md:px-8 md:pt-16">
+        {/*
+          Ninguna foto de jornada lleva `priority`, ni siquiera la del día 1.
+          La única imagen que compite por el LCP es la de la cabecera, y
+          precargar una segunda que está por debajo del pliegue le robaría
+          ancho de banda justo cuando más falta hace.
+        */}
+        {dias.map((dia) => (
+          <ItineraryDay key={dia.day} dia={dia} totalDias={dias.length} itinerarySlug={SLUG} />
+        ))}
+      </div>
+
+      <section className="mx-auto max-w-4xl scroll-mt-20 px-6 pb-14 pt-12 md:px-8 md:pt-16" id="antes-de-sintra">
+        <h2 className="mb-1.5 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-[1.75rem]">
+          Antes de ir a Sintra
+        </h2>
+        <p className="mb-6 max-w-[62ch] font-body text-[15px] leading-relaxed text-text-secondary">
+          El tercer día es el que más se puede torcer por logística. Tres cosas que conviene
+          dejar resueltas la noche anterior.
+        </p>
+
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {CONSEJOS_SINTRA.map((c) => (
+            <li key={c.titulo} className="border-l-2 border-gold bg-white/70 px-4 py-4">
+              <h3 className="mb-1 font-body text-sm font-semibold not-italic text-text-main">{c.titulo}</h3>
+              <p className="font-body text-sm leading-relaxed text-text-secondary">{c.texto}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      {/* Sticky bar */}
-      <section className="bg-background-light sticky top-16 z-30 border-b border-border-soft">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-          <span className="font-display italic text-text-main text-sm">Lisboa 3 Días + Sintra</span>
-          <a href="#itinerario" className="text-terracotta font-semibold text-sm hover:underline underline-offset-2">
-            Empezar ruta
-          </a>
-        </div>
-      </section>
-
-      {/* Resumen */}
-      <section className="bg-background-light py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            Resumen de la guía
-          </p>
-          <div className="grid sm:grid-cols-3 gap-8">
-            <div className="card-surface p-5 border-t-2 border-gold">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Duración</h3>
-              <p className="text-text-secondary text-sm">3 días + excursión a Sintra</p>
-            </div>
-            <div className="card-surface p-5 border-t-2 border-gold">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Paradas</h3>
-              <p className="text-text-secondary text-sm">{totalStops}+ lugares con GPS</p>
-            </div>
-            <div className="card-surface p-5 border-t-2 border-gold">
-              <h3 className="font-semibold text-text-main text-sm mb-1">Acceso</h3>
-              <p className="text-text-secondary text-sm">Guía gratuita</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-background-light py-20 border-t border-border-soft" id="itinerario">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-2 pb-3 border-b border-border-soft">
-            Itinerario día a día
-          </p>
-          <p className="text-xs uppercase tracking-widest font-semibold mb-10 text-terracotta">
-            Ruta completa gratuita
-          </p>
-
-          <TimelineContainer lineColor="primary">
-            {displayStops.map((stop, idx) => (
-              <TimelineStop key={idx} {...stop} index={idx} />
-            ))}
-          </TimelineContainer>
-        </div>
-      </section>
-
-      <IncludedFeatures />
-
-      <PremiumContent
-        coordinates={lisboa3DiasSintraTimeline
-          .filter(stop => stop.coordinates)
-          .map(stop => stop.coordinates!)}
+      <ItineraryMapSection
+        dias={dias}
         mapTitle="Mapa del itinerario"
         mapDescription="Lisboa y Sintra con todas las paradas. Haz click en los marcadores numerados para ver cada parada."
         guideTitle="Lisboa 3 Días + Sintra"
       />
 
-      {/* Galería + tips */}
-      <section className="bg-background-light py-20 border-t border-border-soft" id="galeria">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            Vista previa y consejos
-          </p>
-          <div className="grid lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2">
-              <PhotoGallery photos={photos} />
-            </div>
-
-            <div>
-              <div className="card-surface p-6 border-l-2 border-gold">
-                <p className="text-xs uppercase tracking-widest text-terracotta font-semibold mb-4">Tips de local</p>
-                <ul className="space-y-5">
-                  <li className="flex items-start gap-3">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <div>
-                      <p className="font-semibold text-text-main text-sm">Sintra: sal temprano</p>
-                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Primer tren desde Rossio a las 8:00. Llegas antes que los grupos y entras sin cola.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <div>
-                      <p className="font-semibold text-text-main text-sm">Entradas online</p>
-                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Palacio da Pena y Quinta da Regaleira: compra online. En taquilla pueden estar agotadas.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <div>
-                      <p className="font-semibold text-text-main text-sm">Orden óptimo</p>
-                      <p className="text-text-secondary text-xs leading-relaxed mt-0.5">Bus 434 desde el centro: Pena primero (frío, niebla matinal), Castelo dos Mouros, Regaleira al final.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <p className="font-display italic text-white text-4xl mb-4">Tres días para descubrir Lisboa</p>
-          <p className="text-white/60 text-sm mb-8">Ruta completa · Mapa y consejos · Actualizado 2026</p>
-          <a
-            href="#itinerario"
-            className="btn-primary relative inline-flex px-8 py-3 text-sm"
-          >
-            Ver guía gratis
-          </a>
-        </div>
-      </section>
+      <ItineraryPersonalizeCTA />
     </main>
   );
 }
