@@ -73,13 +73,13 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'De noche cambia por completo: se vacía de grupos, se encienden los faroles y se oye fado desde las puertas abiertas. Es cuando mejor está. Llevad calzado con agarre —la calzada portuguesa está pulida y resbala— y bajad con calma.' },
 
       { tipo: 'subseccion', texto: 'Escuchar fado' },
-      { tipo: 'parrafo', texto: 'El fado en pareja funciona mejor cuando no es un espectáculo con menú cerrado. Las casas pequeñas de Alfama y Mouraria mantienen el formato tradicional: se canta a oscuras, se pide silencio entre temas y la actuación se reparte en varias tandas a lo largo de la noche. Es una experiencia de escuchar, no de cenar mientras suena música de fondo.' },
-      { tipo: 'parrafo', texto: 'Casi todas piden reserva y muchas tienen consumición mínima. Conviene confirmar las condiciones con el local antes de ir, porque cambian y no siempre están claras en las webs de terceros.' },
+      { tipo: 'parrafo', texto: 'El fado en pareja gana cuando la noche está montada alrededor de escuchar y no de cenar con música de fondo. En algunas casas de Alfama y Mouraria eso se nota: luz baja, silencio pedido durante las canciones y actuaciones repartidas en tandas. No es una regla que valga para todos los locales —el formato, los horarios y si hay cena o consumición cambian de uno a otro—, así que conviene mirar cómo funciona el sitio concreto antes de decidir.' },
+      { tipo: 'parrafo', texto: 'En muchas casas conviene reservar y algunas establecen consumición mínima. Confirmad las condiciones directamente con el local antes de ir: cambian y no siempre están claras en las webs de terceros.' },
       { tipo: 'enlace', texto: 'La diferencia entre una casa de fado y un espectáculo para turistas se nota en la primera canción.', href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado en Lisboa' },
 
       { tipo: 'subseccion', texto: 'Cruzar el Tajo en barco' },
-      { tipo: 'parrafo', texto: 'Es el plan con mejor relación entre lo que cuesta y lo que da. Los barcos de Transtejo y Soflusa son transporte público de cercanías, no un tour: cruzan a Cacilhas, Trafaria o Montijo por el precio de un billete normal. Y desde el agua se ve la única postal que no se puede tener desde tierra, que es Lisboa entera subiendo por las colinas.' },
-      { tipo: 'parrafo', texto: 'El de Cacilhas es el más corto y el más práctico: sale de Cais do Sodré, tarda poco más de diez minutos y al otro lado hay un paseo junto al agua mirando a Lisboa. Comprobad el horario de vuelta antes de cruzar, sobre todo si vais al final del día.' },
+      { tipo: 'parrafo', texto: 'Es el plan con mejor relación entre lo que cuesta y lo que da. Los barcos de Transtejo y Soflusa son transporte público de cercanías, no un tour: cruzan a Cacilhas, Trafaria o Montijo por el precio de un billete normal. Y desde el agua se ve algo que dentro de la ciudad no se ve: Lisboa entera subiendo por las colinas.' },
+      { tipo: 'parrafo', texto: 'El de Cacilhas es de los más cortos y sale de Cais do Sodré; al otro lado hay un paseo junto al agua mirando a Lisboa. Consultad la duración y el horario de vuelta en la web del operador antes de cruzar, sobre todo si vais al final del día.' },
       { tipo: 'tip', texto: 'Sentaos en la cubierta que mira a Lisboa, no a la orilla contraria. En el trayecto de vuelta al atardecer es donde está la vista buena.' },
 
       { tipo: 'subseccion', texto: 'Pasar una tarde en Belém' },
@@ -88,7 +88,7 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subseccion', texto: 'Ir a Sintra por el día' },
       { tipo: 'parrafo', texto: 'Sintra es la escapada obvia y merece la pena, pero conviene decidirlo con los ojos abiertos: es un día completo, no una mañana. El tren desde Rossio tarda unos cuarenta minutos y los palacios están repartidos por la montaña, así que hay que sumar el autobús o la subida a pie.' },
-      { tipo: 'parrafo', texto: 'En pareja, el error habitual es intentar tres palacios. Con dos vais sobrados y volvéis con ganas en lugar de agotados. Comprad las entradas online con antelación: en temporada alta se agotan y la cola de taquilla puede llevarse una hora de las buenas.' },
+      { tipo: 'parrafo', texto: 'En pareja, el error habitual es intentar tres palacios. Con dos vais sobrados y volvéis con ganas en lugar de agotados. Si entra el Palacio da Pena, conviene reservar con antelación: el acceso al interior funciona con fecha y hora, y esa hora es la de entrada al palacio, no al parque. Desde la entrada del parque hasta el palacio hay un tramo que se recorre andando, así que organizad el resto del día alrededor de esa franja.' },
       { tipo: 'enlace', texto: 'Cómo montar el día sin que se convierta en una carrera entre autobuses.', href: '/blog/sintra-desde-lisboa', label: 'Guía de Sintra desde Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Planes según el momento del día' },
@@ -104,7 +104,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Planes baratos o gratis para dos' },
       { tipo: 'parrafo', texto: 'Buena parte de lo mejor de Lisboa no se paga. Estos planes cuestan poco o nada y no son el plan B de nadie.' },
       { tipo: 'lista', items: [
-        'Los miradores son todos de acceso libre. Lo único que se paga es lo que pidáis en el quiosco.',
+        'Los miradores públicos que menciona esta guía son de acceso libre. Si hay quiosco o terraza, sólo pagáis lo que consumáis.',
         'Alfama, Mouraria, Graça y Príncipe Real se recorren andando y no se entra a ningún sitio.',
         'Cruzar el Tajo cuesta un billete de transporte, no una excursión.',
         'Los jardines de Belém, el paseo del río y las escaleras del Carmo son gratuitos.',
