@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'lisboa-en-pareja',
+    titulo: 'Lisboa en pareja: qué hacer, planes y lugares para dos',
+    excerpt: 'Miradores, paseos, fado, el Tajo, Belém y Sintra: planes que funcionan de verdad, para elegir según el rato, el presupuesto y el tiempo que haga.',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/rio-tejo-por-do-sol-lisboa.webp',
+  },
+  {
     id: 'mejores-apps-lisboa',
     titulo: 'Las apps que de verdad sirven para Lisboa',
     excerpt: 'Qué instalar para el transporte, los pagos y las reservas, y cuáles puedes ahorrarte.',

@@ -11,6 +11,121 @@ import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  /*
+   * Reemplazo editorial de /itinerarios/lisboa-romantica.
+   *
+   * Aquella página era un itinerario cerrado de dos días con horas fijas —10:00
+   * parque, 12:30 brunch, 21:00 cena— para un viaje que casi nadie hace así. La
+   * intención de búsqueda real es «vamos a Lisboa en pareja, ¿qué merece la
+   * pena?», y eso pide planes elegibles, no un horario que se rompe en la
+   * primera sobremesa.
+   *
+   * La cena no se desarrolla aquí a propósito: /blog/restaurantes-romanticos-lisboa
+   * ya cubre diez restaurantes con ese ángulo, incluido Chapitô à Mesa, que era
+   * la parada de las 21:00 del itinerario viejo. Duplicarlo sería canibalizar
+   * un artículo que ya posiciona.
+   */
+  'lisboa-en-pareja': {
+    titulo: 'Lisboa en pareja: qué hacer, planes y lugares para dos',
+    descripcion: 'Ideas para disfrutar Lisboa en pareja: miradores, paseos, fado, el Tajo, Belém y Sintra, con planes para distintos presupuestos y momentos del día.',
+    seoTitle: 'Lisboa en pareja: qué hacer y mejores planes',
+    metaDescription: 'Ideas para disfrutar Lisboa en pareja: miradores, paseos, fado, el Tajo, Belém, Sintra y planes para distintos presupuestos y momentos del día.',
+    imagen: '/images/lisboa-originales/rio-tejo-por-do-sol-lisboa.webp',
+    imageAlt: 'El río Tajo al atardecer desde Lisboa, con la luz baja sobre el agua',
+    categoria: 'Guías',
+    fecha: '23 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-23',
+    minutos: 10,
+    links: [
+      { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, uno por uno' },
+      { href: '/blog/restaurantes-romanticos-lisboa', label: 'Restaurantes para una cena especial' },
+      { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado sin acabar en un espectáculo para turistas' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Cómo organizar el día en Sintra' },
+      { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
+    ],
+    fuentes: [
+      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/viaje/tarifarios/' },
+      { label: 'Transtejo · Soflusa - horarios de los barcos', href: 'https://ttsl.pt/' },
+      { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/passageiros/pt/como-viajar/horarios' },
+      { label: 'Parques de Sintra - visitar', href: 'https://www.parquesdesintra.pt/' },
+    ],
+    cta: {
+      href: '/itinerarios/lisboa-2-dias-completo',
+      label: 'Ver el itinerario de 2 días',
+      title: '¿Prefieres un plan ya montado?',
+      text: 'Si venís un fin de semana y no queréis decidir sobre la marcha, la guía de dos días trae el recorrido cerrado por jornadas.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa funciona bien en pareja por una razón poco romántica: es una ciudad que se recorre andando y que se mira desde arriba. Las cuestas obligan a parar, y cada parada suele tener una vista, un quiosco o una terraza. Eso convierte cualquier trayecto en un plan, sin que haga falta reservar nada.' },
+      { tipo: 'parrafo', texto: 'Por eso esta guía no es un itinerario con horas. Es una lista de planes que funcionan de verdad, ordenados para que podáis elegir según el rato que tengáis, el dinero que queráis gastar y el tiempo que haga. Coged tres o cuatro y dejad hueco entre ellos: en Lisboa, el hueco suele ser la mejor parte.' },
+
+      { tipo: 'subtitulo', texto: 'Qué hacer en Lisboa en pareja' },
+      { tipo: 'parrafo', texto: 'Seis planes que aguantan bien la comparación. No hace falta hacerlos todos, y desde luego no en un día.' },
+
+      { tipo: 'subseccion', texto: 'Ver el atardecer desde un mirador' },
+      { tipo: 'parrafo', texto: 'Es el plan que mejor resume la ciudad y el más barato de todos. Lisboa está construida sobre colinas y casi todas tienen un mirador arriba, muchos con quiosco. La diferencia entre uno y otro no es la vista sino el ambiente: Santa Catarina es el más informal, con gente sentada en las escaleras; Graça y Senhora do Monte son más abiertos y más concurridos; Santa Luzia y Portas do Sol miran directamente a Alfama y al río.' },
+      { tipo: 'parrafo', texto: 'El consejo que sí cambia la tarde: llegad con margen. La hora del atardecer varía mucho entre invierno y verano, y en los miradores con mesas el sitio se ocupa antes de que empiece lo bueno. Si llegáis y está lleno, casi siempre hay otro mirador a diez minutos andando.' },
+      { tipo: 'enlace', texto: 'Si queréis elegir con criterio en vez de ir al primero que salga en el mapa, cada mirador tiene su carácter y su mejor hora.', href: '/blog/mejores-miradores-lisboa', label: 'Ver la guía de miradores' },
+
+      { tipo: 'subseccion', texto: 'Caminar por Alfama sin una ruta fija' },
+      { tipo: 'parrafo', texto: 'Alfama es de los pocos barrios donde perderse es literalmente el plan. Es un laberinto medieval de calles estrechas, escaleras y patios, y cualquier intento de seguir un recorrido cerrado acaba en una calle que no lleva a donde parecía. Bajad desde el castillo o desde Portas do Sol y dejad que la cuesta decida.' },
+      { tipo: 'parrafo', texto: 'De noche cambia por completo: se vacía de grupos, se encienden los faroles y se oye fado desde las puertas abiertas. Es cuando mejor está. Llevad calzado con agarre —la calzada portuguesa está pulida y resbala— y bajad con calma.' },
+
+      { tipo: 'subseccion', texto: 'Escuchar fado' },
+      { tipo: 'parrafo', texto: 'El fado en pareja funciona mejor cuando no es un espectáculo con menú cerrado. Las casas pequeñas de Alfama y Mouraria mantienen el formato tradicional: se canta a oscuras, se pide silencio entre temas y la actuación se reparte en varias tandas a lo largo de la noche. Es una experiencia de escuchar, no de cenar mientras suena música de fondo.' },
+      { tipo: 'parrafo', texto: 'Casi todas piden reserva y muchas tienen consumición mínima. Conviene confirmar las condiciones con el local antes de ir, porque cambian y no siempre están claras en las webs de terceros.' },
+      { tipo: 'enlace', texto: 'La diferencia entre una casa de fado y un espectáculo para turistas se nota en la primera canción.', href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado en Lisboa' },
+
+      { tipo: 'subseccion', texto: 'Cruzar el Tajo en barco' },
+      { tipo: 'parrafo', texto: 'Es el plan con mejor relación entre lo que cuesta y lo que da. Los barcos de Transtejo y Soflusa son transporte público de cercanías, no un tour: cruzan a Cacilhas, Trafaria o Montijo por el precio de un billete normal. Y desde el agua se ve la única postal que no se puede tener desde tierra, que es Lisboa entera subiendo por las colinas.' },
+      { tipo: 'parrafo', texto: 'El de Cacilhas es el más corto y el más práctico: sale de Cais do Sodré, tarda poco más de diez minutos y al otro lado hay un paseo junto al agua mirando a Lisboa. Comprobad el horario de vuelta antes de cruzar, sobre todo si vais al final del día.' },
+      { tipo: 'tip', texto: 'Sentaos en la cubierta que mira a Lisboa, no a la orilla contraria. En el trayecto de vuelta al atardecer es donde está la vista buena.' },
+
+      { tipo: 'subseccion', texto: 'Pasar una tarde en Belém' },
+      { tipo: 'parrafo', texto: 'Belém es plano, está junto al río y se recorre sin cuestas, que después de dos días de colinas se agradece más de lo que parece. Los jardines junto al agua, el paseo hasta la Torre y los bancos frente al Tajo dan para una tarde entera sin entrar en ningún sitio de pago.' },
+      { tipo: 'parrafo', texto: 'Si queréis entrar a algo, el claustro de los Jerónimos es lo que justifica la visita —la iglesia se visita aparte y tiene sus propias condiciones—. Consultad precios y horarios en la web oficial del monumento el mismo día: cambian por temporada y hay días de acceso distinto.' },
+
+      { tipo: 'subseccion', texto: 'Ir a Sintra por el día' },
+      { tipo: 'parrafo', texto: 'Sintra es la escapada obvia y merece la pena, pero conviene decidirlo con los ojos abiertos: es un día completo, no una mañana. El tren desde Rossio tarda unos cuarenta minutos y los palacios están repartidos por la montaña, así que hay que sumar el autobús o la subida a pie.' },
+      { tipo: 'parrafo', texto: 'En pareja, el error habitual es intentar tres palacios. Con dos vais sobrados y volvéis con ganas en lugar de agotados. Comprad las entradas online con antelación: en temporada alta se agotan y la cola de taquilla puede llevarse una hora de las buenas.' },
+      { tipo: 'enlace', texto: 'Cómo montar el día sin que se convierta en una carrera entre autobuses.', href: '/blog/sintra-desde-lisboa', label: 'Guía de Sintra desde Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Planes según el momento del día' },
+      { tipo: 'parrafo', texto: 'Lisboa cambia mucho de carácter según la hora. Esto es lo que suele funcionar mejor en cada tramo.' },
+      { tipo: 'lista', items: [
+        'Mañana: los miradores están casi vacíos y la luz entra de lado sobre los tejados. Es la mejor hora para Santa Luzia y para Alfama, antes de que lleguen los grupos.',
+        'Mediodía: los parques. El Jardim da Estrela y el Jardim do Príncipe Real dan sombra, bancos y un quiosco, y son plano puro después de una mañana de cuestas.',
+        'Tarde: el río. Belém, el paseo de Cais do Sodré o cruzar a la otra orilla. Todo llano y con agua delante.',
+        'Atardecer: un mirador con quiosco, llegando con margen. O el barco de vuelta, que da la misma luz desde el agua.',
+        'Noche: Alfama a pie y, si os apetece, una casa de fado. El barrio de noche es otro barrio.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Planes baratos o gratis para dos' },
+      { tipo: 'parrafo', texto: 'Buena parte de lo mejor de Lisboa no se paga. Estos planes cuestan poco o nada y no son el plan B de nadie.' },
+      { tipo: 'lista', items: [
+        'Los miradores son todos de acceso libre. Lo único que se paga es lo que pidáis en el quiosco.',
+        'Alfama, Mouraria, Graça y Príncipe Real se recorren andando y no se entra a ningún sitio.',
+        'Cruzar el Tajo cuesta un billete de transporte, no una excursión.',
+        'Los jardines de Belém, el paseo del río y las escaleras del Carmo son gratuitos.',
+        'Muchos museos municipales tienen días o franjas de acceso reducido. Conviene mirarlo en su web antes de ir, porque las condiciones cambian.',
+      ] },
+      { tipo: 'nota', texto: 'Los precios de transporte, entradas y monumentos cambian a lo largo del año. En esta guía se evitan las cifras concretas a propósito: es mejor consultar la web oficial de cada operador o monumento el mismo día que fiarse de un número escrito hace meses.' },
+
+      { tipo: 'subtitulo', texto: 'Lisboa en pareja si llueve' },
+      { tipo: 'parrafo', texto: 'Llueve más de lo que la gente espera, sobre todo entre noviembre y marzo, y el problema no es el agua sino el suelo: la calzada portuguesa mojada resbala mucho, y las cuestas de Alfama y Bairro Alto se vuelven incómodas.' },
+      { tipo: 'parrafo', texto: 'El plan que mejor aguanta la lluvia es cambiar de altura: bajar a la Baixa, que es llana, y tirar de interiores. Cafés históricos, librerías, mercados cubiertos, museos. El tranvía y el barco siguen funcionando y son de las pocas formas de seguir viendo la ciudad sin mojarse. Dejad los miradores para una ventana seca: sin vista, no valen el paseo.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde cenar' },
+      { tipo: 'parrafo', texto: 'La cena da para un artículo entero, y lo tiene. En lugar de repetir aquí media docena de nombres, la lista larga está en la guía de restaurantes: terrazas con vistas al río, sitios pequeños de cuatro mesas y opciones para una ocasión concreta, con lo que conviene saber de cada uno.' },
+      { tipo: 'parrafo', texto: 'Lo único que añado aquí es lo práctico: en Lisboa se cena tarde, los sitios pequeños se llenan y la reserva marca la diferencia entre sentarse y dar vueltas. Y si la idea es cenar con vistas, mirad primero a qué hora se pone el sol, porque la mesa buena se pide por la vista y no por la comida.' },
+      { tipo: 'enlace', texto: 'La lista completa, con lo que hace especial a cada sitio.', href: '/blog/restaurantes-romanticos-lisboa', label: 'Restaurantes para una cena especial en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Cuántos días hacen falta' },
+      { tipo: 'parrafo', texto: 'Con dos días completos se ve Lisboa sin prisa: un día de casco histórico y miradores, otro de Belém y río. Con tres, entra Sintra sin sacrificar la ciudad. Con uno, elegid una colina y el atardecer, y dejad Belém para otro viaje.' },
+      { tipo: 'enlace', texto: 'Si preferís un recorrido ya montado por jornadas en vez de decidir sobre la marcha.', href: '/itinerarios', label: 'Ver los itinerarios de 1, 2 y 3 días' },
+    ],
+  },
   'mejores-apps-lisboa': {
     titulo: 'Las apps que de verdad sirven para Lisboa',
     descripcion: 'Qué aplicaciones instalar antes de viajar a Lisboa para el transporte, los pagos y las reservas, y cuáles puedes ahorrarte.',
@@ -3259,6 +3374,19 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  /*
+   * Sin ficha de lugar: la guía no trata de un sitio al que se llegue, sino de
+   * cómo combinar varios. `comoLlegar` y `mejorHora` sobrarían aquí.
+   */
+  'lisboa-en-pareja': {
+    faqs: [
+      { q: '¿Cuántos días hacen falta para ver Lisboa en pareja?', a: 'Con dos días completos da tiempo a ver la ciudad sin prisa: uno de casco histórico y miradores, otro de Belém y río. Con tres entra Sintra sin sacrificar Lisboa. Con uno, lo razonable es elegir una colina y quedarse al atardecer.' },
+      { q: '¿Cuál es el mejor mirador de Lisboa para ver el atardecer en pareja?', a: 'Depende del ambiente que busquéis más que de la vista. Santa Catarina es el más informal, con gente sentada en las escaleras; Graça y Senhora do Monte son más abiertos y se llenan antes; Santa Luzia y Portas do Sol miran directamente a Alfama y al río. En todos conviene llegar con bastante margen.' },
+      { q: '¿Qué se puede hacer en Lisboa en pareja sin gastar?', a: 'Bastante. Los miradores son de acceso libre, los barrios de Alfama, Mouraria, Graça y Príncipe Real se recorren andando, y los jardines de Belém y el paseo del río no cuestan nada. Cruzar el Tajo en barco cuesta un billete de transporte normal.' },
+      { q: '¿Merece la pena ir a Sintra si solo tenemos un fin de semana?', a: 'Sintra es un día completo, no una mañana, así que en un fin de semana corto obliga a dejar Lisboa a medias. Si es una prioridad, mejor reservarle el día entero y visitar dos palacios en vez de tres. Si no, se disfruta más dejándola para un viaje más largo.' },
+      { q: '¿Qué hacer en Lisboa en pareja si llueve?', a: 'Bajar a la Baixa, que es llana, y tirar de interiores: cafés históricos, librerías, mercados cubiertos y museos. El tranvía y el barco siguen funcionando y permiten seguir viendo la ciudad a cubierto. Los miradores conviene dejarlos para una ventana seca, porque sin vista no compensan el paseo.' },
+    ],
+  },
   // Sin ficha de lugar: es una guía de preparación, no de un sitio al que se
   // llegue. El consejo de revisar las tarjetas antes de salir vive ahora como
   // `tip` dentro del artículo, donde se lee en su contexto.
@@ -3482,6 +3610,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           alt: article.imageAlt ?? article.titulo,
         },
       ],
+    },
+    /*
+     * Sin este bloque, cada artículo heredaba el `twitter:title` y el
+     * `twitter:description` del layout raíz, que hablan del sitio entero. Al
+     * compartir un artículo salía una tarjeta genérica mientras Open Graph
+     * mostraba el titular correcto.
+     *
+     * `card` e `images` se repiten a propósito: Next.js no fusiona el objeto
+     * `twitter` con el del layout, lo sustituye entero, así que declarar sólo
+     * título y descripción dejaría los artículos sin `summary_large_image` y
+     * sin imagen. La imagen es la misma que ya usa Open Graph aquí arriba.
+     */
+    twitter: {
+      card: 'summary_large_image',
+      title: seoTitle,
+      description: seoDescription,
+      images: [toAbsoluteUrl(image)],
     },
   };
 }
