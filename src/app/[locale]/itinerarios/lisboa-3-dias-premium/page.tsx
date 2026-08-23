@@ -22,9 +22,23 @@ import { agruparPorDia } from '@/lib/itinerary-days';
  * Metadata, canonical, Open Graph, JSON-LD y URL: sin tocar.
  */
 
+/*
+ * La descripción prometía restaurantes contrastados uno a uno y un horario
+ * infalible para Sintra. Ninguna de las dos se sostiene: no hay proceso de
+ * verificación detrás de las recomendaciones, y el horario de Sintra depende
+ * del tren, de la cola y del día. Se sustituyen por lo que la página sí
+ * entrega.
+ *
+ * Vive junto al JSON-LD de más abajo en una constante compartida para que no
+ * puedan volver a divergir: antes eran dos cadenas iguales copiadas a mano, y
+ * corregir una sin la otra habría dejado el structured data contradiciendo al
+ * `<meta>`.
+ */
+const DESCRIPCION = '3 días en Lisboa y Sintra con rutas por jornadas, más de 20 paradas, consejos prácticos y planificación para visitar los principales puntos de Sintra.';
+
 export const metadata = {
   title: 'Lisboa en 3 Días con Sintra 2026',
-  description: '3 días en Lisboa + Sintra. Más de 20 paradas, restaurantes verificados y el timing perfecto para los palacios de Sintra.',
+  description: DESCRIPCION,
   keywords: ['lisboa 3 dias', 'sintra itinerario', 'lisboa sintra', 'tres dias lisboa'],
   openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
@@ -70,7 +84,7 @@ export default function Lisboa3DiasPremiumPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Lisboa en 3 Días con Sintra 2026',
-    description: '3 días en Lisboa + Sintra. Más de 20 paradas, restaurantes verificados y el timing perfecto para los palacios de Sintra.',
+    description: DESCRIPCION,
     url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium',
     isAccessibleForFree: true,
   };

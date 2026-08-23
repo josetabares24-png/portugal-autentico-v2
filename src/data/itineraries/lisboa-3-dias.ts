@@ -116,9 +116,23 @@ export const lisboa3DiasSintraTimeline: TimelineStop[] = [
   {
     time: '13:00',
     day: 1,
-    title: 'Almuerzo en Baixa — Comida local auténtica',
-    description: 'Después del castillo, baja hacia Baixa para comer. El centro neurálgico de Lisboa reconstruido después del terremoto de 1755 es ordenado, geométrico, iluminista —calles en cuadrícula perfecta, plazas simétricas, edificios pombalinos de 4 pisos pintados en colores pastel. Para comer, evita los restaurantes turísticos de Rua Augusta (caros y mediocres). Mejor opciones: "Taberna da Rua das Flores" (cocina portuguesa moderna, 15-20€, reserva recomendada), "Cervejaria Trindade" (mariscos en edificio histórico con azulejos del siglo XVIII, 20-35€), o simplemente cafés históricos en Rossio donde puedes tomar café + pastel de nata (2.50€) y seguir explorando.',
-    tip: '🍽️ Evita restaurantes de Rua Augusta (trampas turísticas). Mejor: calles laterales o cafés históricos. Precio medio: 15-25€/persona en restaurantes decentes. Cafés históricos: café + pastel = 2.50€. Tiempo: 1-1.5h para comer tranquilo.',
+    title: 'Almuerzo en la Baixa Pombalina',
+    /*
+     * Misma limpieza que en la ruta de 2 días: fuera la metáfora de
+     * centralidad y la geometría descrita en absolutos. El trazado pombalino
+     * es regular, no impecable, y decirlo así es más fiel a lo que uno ve al
+     * bajar.
+     *
+     * Los precios se caen enteros. Eran cuatro cifras duras de negocios
+     * concretos, sin fuente y sin fecha: no tengo forma de comprobar hoy lo
+     * que cuesta un menú en Taberna da Rua das Flores, y un precio obsoleto
+     * en una guía es peor que ninguno. Tampoco se sostiene llamar «caros y
+     * mediocres» a los restaurantes de Rua Augusta, ni «auténtica» a la
+     * comida: son juicios que no podemos respaldar. Queda el consejo
+     * verificable, que es dónde mirar.
+     */
+    description: 'Después del castillo, baja hacia la Baixa Pombalina para comer. Esta parte del centro fue reconstruida tras el terremoto de 1755 siguiendo el plan impulsado durante el gobierno del Marqués de Pombal. Sus calles rectas, las manzanas regulares y las fachadas de composición uniforme todavía muestran la lógica de aquella reconstrucción. Para comer, en las calles laterales encontrarás opciones portuguesas más tranquilas que las terrazas más turísticas de Rua Augusta. También puedes optar por los cafés históricos de Rossio, tomar un café con un pastel de nata y seguir explorando. Consulta precios y horarios en el propio local antes de sentarte.',
+    tip: '🍽️ Las terrazas de Rua Augusta son las más turísticas de la zona: en las calles laterales suele haber opciones más tranquilas. Otra alternativa son los cafés históricos de Rossio. Los precios varían y conviene mirarlos en la carta antes de sentarse. Tiempo: 1-1,5h para comer sin prisa.',
     type: 'food',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800',
     coordinates: { lat: 38.7071, lng: -9.1364 },
@@ -127,7 +141,7 @@ export const lisboa3DiasSintraTimeline: TimelineStop[] = [
   {
     time: '14:00',
     day: 1,
-    title: 'Baixa - Centro neurálgico',
+    title: 'Baixa Pombalina a pie',
     description: 'Después de comer, explora Baixa caminando. Empieza en la Praça do Comércio (plaza gigante abierta al Tajo con arcadas amarillas impresionantes), sube al Arco da Rua Augusta (3€ para el mirador en la cima - vistas 360° de Baixa y el río), después camina por Rua Augusta (calle peatonal principal llena de tiendas, artistas callejeros, turistas, vendedores de castañas asadas). Pasa por el Elevador de Santa Justa - ascensor neogótico de hierro de 1902 diseñado por Raoul Mesnier du Ponsard. Actualmente está cerrado (2026) por mantenimiento, pero la estructura sigue siendo impresionante desde abajo —vale la pena verla aunque no puedas subir. Termina en Rossio, la plaza donde solían quemar herejes en la Inquisición y hoy hay palomas, turistas, y portugueses tomando café en terrazas centenarias.',
     tip: '💰 Arco da Rua Augusta: 3€ (vistas brutales, 5 min arriba). GRATIS: Pasear Baixa, Praça Comércio, Rossio. Tiempo: 1-1.5h caminando tranquilo.',
     type: 'visit',

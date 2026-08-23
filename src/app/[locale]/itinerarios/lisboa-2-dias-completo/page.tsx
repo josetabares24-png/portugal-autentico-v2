@@ -19,9 +19,20 @@ import { agruparPorDia } from '@/lib/itinerary-days';
  * Metadata, canonical, Open Graph, JSON-LD y URL: sin tocar.
  */
 
+/*
+ * La descripción prometía restaurantes contrastados uno a uno. Ese proceso no
+ * existe: son recomendaciones editoriales. La promesa se cae también de aquí,
+ * como ya se cayó de la tarjeta del hub.
+ *
+ * La cadena vive en una constante compartida con el JSON-LD de más abajo. Eran
+ * dos copias idénticas escritas a mano, y corregir una sin la otra habría
+ * dejado el structured data contradiciendo al `<meta>`.
+ */
+const DESCRIPCION = '2 días completos en Lisboa con Belém, Alfama, Chiado y más. Rutas por jornadas, restaurantes recomendados y consejos prácticos.';
+
 export const metadata = {
   title: 'Lisboa en 2 Días: Itinerario Completo 2026',
-  description: '2 días completos en Lisboa con Belém, Alfama, Chiado y más. Horarios optimizados, restaurantes verificados y consejos de local.',
+  description: DESCRIPCION,
   keywords: ['lisboa 2 dias', 'itinerario lisboa dos dias', 'belem alfama chiado'],
   openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo' },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo' },
@@ -41,7 +52,7 @@ export default function Lisboa2DiasCompletoPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Lisboa en 2 Días: Itinerario Completo 2026',
-    description: '2 días completos en Lisboa con Belém, Alfama, Chiado y más. Horarios optimizados, restaurantes verificados y consejos de local.',
+    description: DESCRIPCION,
     url: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo',
     isAccessibleForFree: true,
   };
