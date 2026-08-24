@@ -36,6 +36,13 @@ const nextConfig = {
       // sustituto ordena la ciudad por luz y encuadre, que es lo que no caduca.
       { source: '/itinerarios/lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
       { source: '/:locale(en|ko|es)/itinerarios/lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
+      // El último temático. Eran 31 paradas con hora fija repartidas en siete
+      // días, y unas veinte repetían —a veces con el texto copiado— las de los
+      // itinerarios de 1, 2 y 3 días. Su sustituto no repite el «qué ver»:
+      // responde cómo se reparte una semana, que es lo que ninguna guía corta
+      // cubre. Ningún redirect histórico apuntaba aquí, así que no hay cadena.
+      { source: '/itinerarios/lisboa-full-week', destination: '/blog/lisboa-en-7-dias', permanent: true },
+      { source: '/:locale(en|ko|es)/itinerarios/lisboa-full-week', destination: '/blog/lisboa-en-7-dias', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },

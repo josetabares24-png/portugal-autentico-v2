@@ -83,7 +83,9 @@ export const specialItineraries: Itinerary[] = [
       'Logística completa día a día',
       'Bonus gastronómico y miradores'
     ],
-    href: '/itinerarios/lisboa-full-week',
+    // La URL antigua redirige de forma permanente al artículo. Se apunta
+    // directo al destino para que ningún enlace dependa del redirect.
+    href: '/blog/lisboa-en-7-dias',
     badge: {
       text: 'SEMANA COMPLETA',
       color: 'bg-emerald-500'

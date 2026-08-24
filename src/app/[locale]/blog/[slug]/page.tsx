@@ -12,6 +12,144 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
   /*
+   * Reemplazo editorial de /itinerarios/lisboa-full-week.
+   *
+   * La auditoría de canibalización que precede a este artículo dejó el
+   * problema a la vista: el itinerario viejo eran treinta y una paradas con
+   * hora fija, y unas veinte de ellas eran las mismas —varias con el texto
+   * literalmente copiado— que las de los itinerarios de 1, 2 y 3 días.
+   * Alfama, Santa Luzia, el castillo, Belém entero, Sintra entera, LX Factory
+   * y el Time Out Market ya estaban contados en las guías core. Publicarlo
+   * como otra línea de tiempo era competir contra ellas.
+   *
+   * Lo que ninguna guía corta responde, y sí necesita quien tiene siete días,
+   * es cómo se reparte la semana: qué va al principio, cuántas escapadas
+   * caben, y qué hacer con los días que sobran cuando lo evidente ya está
+   * visto. Ese es el ángulo. El «qué ver» se delega a la guía que ya lo
+   * cubre en cada caso.
+   *
+   * Decisión deliberada: aquí no se dan precios ni horarios concretos. Cada
+   * componente tiene su guía con ese dato mantenido; repetirlo aquí lo
+   * duplicaría y lo dejaría caducar en paralelo. Las fuentes oficiales
+   * quedan enlazadas para que el lector compruebe el dato vigente.
+   */
+  'lisboa-en-7-dias': {
+    titulo: 'Lisboa en 7 días: cómo repartir la semana sin repetirte',
+    descripcion: 'Cómo organizar una semana en Lisboa: qué hacer los primeros días, cuántas escapadas caben, y qué llenar los días que ninguna guía corta cubre.',
+    seoTitle: 'Lisboa en 7 días: cómo organizar la semana',
+    metaDescription: 'Cómo repartir siete días en Lisboa: el orden que funciona, cuántas escapadas caben y qué hacer con los días que las guías cortas no cubren.',
+    imagen: '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+    imageAlt: 'Los tejados de Alfama descendiendo hacia el río Tajo en una panorámica de Lisboa',
+    categoria: 'Guías',
+    fecha: '24 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-24',
+    minutos: 12,
+    links: [
+      { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+      { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones de un día desde Lisboa' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+    ],
+    fuentes: [
+      { label: 'CP - horarios de tren', href: 'https://www.cp.pt/passageiros/pt/como-viajar/horarios' },
+      { label: 'Parques de Sintra', href: 'https://www.parquesdesintra.pt/' },
+      { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
+      { label: 'Metro de Lisboa - horarios y frecuencia', href: 'https://www.metrolisboa.pt/en/travel/timetables-and-frequency/' },
+    ],
+    cta: {
+      href: '/itinerarios',
+      label: 'Ver los itinerarios de 1, 2 y 3 días',
+      title: '¿Buscas el recorrido día a día?',
+      text: 'Esta guía trata de cómo repartir la semana. Si lo que necesitas es la ruta concreta de cada jornada por el centro, Belém o Sintra, está en los itinerarios.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Siete días en Lisboa no son tres días repetidos dos veces y pico. Es una cantidad de tiempo distinta, y el error más común es tratarla como si fuera la misma lista de monumentos con más huecos: se acaba lo imprescindible el jueves y quedan tres días mirando el mapa sin saber qué queda.' },
+      { tipo: 'parrafo', texto: 'Por eso esta guía no es otra línea de tiempo con horas fijas. Lo que ves cada día ya está resuelto en las guías de 1, 2 y 3 días y en los artículos de cada barrio, y no tiene sentido volver a contarlo aquí. Lo que no está resuelto en ninguna parte, y es justo lo que falla en una semana, es el reparto: en qué orden, con qué ritmo, y qué hacer con los días que sobran.' },
+
+      { tipo: 'subtitulo', texto: 'Qué cambia de verdad cuando tienes siete días' },
+      { tipo: 'parrafo', texto: 'Lo primero que cambia no es cuánto ves sino a qué velocidad. Con dos o tres días vas encadenando: sales temprano, comes rápido, aprovechas hasta el atardecer. Con siete eso no se sostiene físicamente, y tampoco hace falta. Lisboa es una ciudad de cuestas y adoquín, y una semana a ese ritmo termina con las piernas destrozadas el cuarto día.' },
+      { tipo: 'parrafo', texto: 'Lo segundo es que dejas de depender del tiempo que haga. En un fin de semana, dos días de lluvia te arruinan el viaje. En una semana la lluvia es un inconveniente: mueves el mirador al jueves y adelantas el museo. Esa flexibilidad es la ventaja real de tener siete días, y sólo la aprovechas si no cierras el plan entero de antemano.' },
+      { tipo: 'parrafo', texto: 'Y lo tercero: con una semana entras en una segunda capa de la ciudad que en tres días no existe. Barrios sin monumento, mercados de barrio, la otra orilla del Tajo, un día entero de playa. Nada de eso es imprescindible, y por eso mismo no aparece en las guías cortas. En una semana es justamente lo que la salva de hacerse larga.' },
+
+      { tipo: 'subtitulo', texto: 'La estructura que funciona: tres bloques' },
+      { tipo: 'parrafo', texto: 'La forma más limpia de repartir siete días no es día por día sino por bloques, porque así puedes reordenar por el tiempo que haga sin desmontar nada.' },
+
+      { tipo: 'subseccion', texto: 'Bloque 1: la ciudad, tres días' },
+      { tipo: 'parrafo', texto: 'El centro histórico, Belém y los miradores. Son los tres días que ya están resueltos: el itinerario de 3 días cubre exactamente esto y con un orden que funciona. No hace falta reinventarlo, y conviene ponerlo al principio por una razón práctica: es la parte que no quieres dejar dependiendo del pronóstico de la última tarde.' },
+      { tipo: 'parrafo', texto: 'Una advertencia de reparto que se ve poco: no metas Alfama, el castillo y el tranvía 28 el mismo día que Belém. Son las dos zonas que más cansan y están en extremos opuestos. Repartidas dan dos días cómodos; juntas dan un día imposible y otro vacío.' },
+
+      { tipo: 'subseccion', texto: 'Bloque 2: las escapadas, uno o dos días' },
+      { tipo: 'parrafo', texto: 'Sintra y la costa. Aquí está la decisión más importante de toda la semana, y la trato aparte más abajo porque tiene trampa: la tentación es meter tres escapadas y acabas conociendo los trenes de cercanías mejor que Lisboa.' },
+
+      { tipo: 'subseccion', texto: 'Bloque 3: los días que ninguna guía corta cubre' },
+      { tipo: 'parrafo', texto: 'Los dos o tres días restantes son los que nadie te planifica, y son los que deciden si la semana se te hace larga o se te queda corta. Barrios sin lista de monumentos, el Parque das Nações, la otra orilla, mercados, y —esto va en serio— un día sin plan. Lo desarrollo más abajo.' },
+
+      { tipo: 'subtitulo', texto: 'Un reparto que funciona' },
+      { tipo: 'parrafo', texto: 'Con esos tres bloques, el reparto que mejor aguanta imprevistos es este. No es un horario: es un orden.' },
+      { tipo: 'lista', items: [
+        'Días 1 y 2: el centro histórico. Alfama, el castillo, la Baixa, el Chiado y los miradores, repartidos en dos jornadas y no en una.',
+        'Día 3: Belém y el río. Es zona llana, así que va bien después de dos días de cuestas.',
+        'Día 4: Sintra, el día completo. Sale temprano y vuelve tarde; no le encajes nada más.',
+        'Día 5: día de barrio y de calma. El contrapeso obligatorio después de Sintra.',
+        'Día 6: la costa o el Parque das Nações, según el tiempo que haga.',
+        'Día 7: lo que quedó pendiente, mercado y despedida. Deliberadamente sin cerrar.',
+      ] },
+      { tipo: 'parrafo', texto: 'La regla que sostiene todo esto es simple: nunca dos días exigentes seguidos. Sintra el día 4 y la costa el día 5 se puede hacer, pero llegas al día 6 sin ganas de ver nada, y eso es peor que haberte saltado una de las dos.' },
+      { tipo: 'enlace', texto: 'El detalle de qué ver cada día en el centro y en Belém está en los itinerarios, con el orden y los tiempos ya resueltos.', href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
+
+      { tipo: 'subtitulo', texto: 'Las escapadas: cuántas caben y cuál elegir' },
+      { tipo: 'parrafo', texto: 'En una semana caben dos escapadas cómodas. Tres es posible y es el error clásico: cada escapada se lleva el día entero contando los trayectos, y con tres te quedan cuatro días de Lisboa, que es menos de lo que tendrías en un viaje corto.' },
+
+      { tipo: 'subseccion', texto: 'Sintra: la única que es obligatoria' },
+      { tipo: 'parrafo', texto: 'Si sólo haces una, es esta. Se llega en tren desde la estación de Rossio y es un día completo, no una mañana: los palacios están repartidos por la sierra, se sube a ellos en autobús o andando, y entre uno y otro se va el tiempo. La recomendación que más cambia el día es ir a dos palacios sin prisa en vez de a tres corriendo.' },
+      { tipo: 'parrafo', texto: 'Dos cosas conviene mirar antes de salir: el horario del tren del día concreto y si las entradas a los palacios se pueden reservar con antelación, porque en temporada alta la cola es la diferencia entre ver dos sitios o uno.' },
+      { tipo: 'enlace', texto: 'El orden de visita, cómo moverse por la sierra y qué palacios elegir están en la guía de Sintra.', href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+
+      { tipo: 'subseccion', texto: 'La costa: Cascais y el Atlántico' },
+      { tipo: 'parrafo', texto: 'La segunda escapada natural es la costa, en tren desde Cais do Sodré. Cascais es un pueblo costero que se recorre andando, con playas urbanas pequeñas y un centro peatonal, y funciona igual de bien como plan de medio día que como día entero si sigues hasta las playas abiertas al Atlántico.' },
+      { tipo: 'parrafo', texto: 'Esas playas de fuera son otra cosa que las urbanas: viento casi constante, olas grandes y ambiente de surf. Son mejores para pasear y mirar el mar que para bañarse tranquilo, y el viento es real incluso en verano, así que conviene llevar algo de abrigo aunque haga sol.' },
+      { tipo: 'enlace', texto: 'Qué ver en Cascais y qué playas hay cerca de Lisboa, con cómo llegar a cada una.', href: '/blog/que-ver-cascais-desde-lisboa', label: 'Qué ver en Cascais desde Lisboa' },
+
+      { tipo: 'subseccion', texto: 'La escapada corta: cruzar el Tajo' },
+      { tipo: 'parrafo', texto: 'Y hay una tercera que no cuenta como día completo, y por eso cabe: cruzar a la otra orilla en barco desde Cais do Sodré. Es transporte público normal, se tarda poco, y desde Cacilhas se ve Lisboa entera subiendo por las colinas y de frente. Es media tarde, no una jornada, y encaja bien en un día de barrio.' },
+
+      { tipo: 'subtitulo', texto: 'Lo que sólo cabe en una semana' },
+      { tipo: 'parrafo', texto: 'Esta es la parte que justifica los siete días. Nada de esto entra en un viaje de tres, y todo esto es lo que hace que una semana no se haga larga.' },
+
+      { tipo: 'subseccion', texto: 'El Parque das Nações' },
+      { tipo: 'parrafo', texto: 'Es la Lisboa moderna, al noreste, y se llega en metro. No se parece en nada al resto de la ciudad: es llano, ordenado, junto al río, con un paseo largo para caminar sin cuestas. Además está el Oceanário, que es de los pocos planes de interior que aguantan una tarde entera y funciona igual de bien con lluvia. Como día completo se queda corto; como medio día combinado con otra cosa es perfecto.' },
+      { tipo: 'enlace', texto: 'La ficha del Oceanário, con lo que hay que saber antes de ir.', href: '/actividades/oceanario-lisboa', label: 'Oceanário de Lisboa' },
+
+      { tipo: 'subseccion', texto: 'Los barrios sin monumento' },
+      { tipo: 'parrafo', texto: 'Con tres días vas a los barrios que tienen algo dentro. Con siete puedes ir a los que no tienen nada que visitar y son justamente los que más se parecen a vivir allí: Mouraria, Graça, Príncipe Real, Estrela. Se recorren sin lista, sin entrada y sin horario, y son las mañanas que la gente recuerda después.' },
+      { tipo: 'enlace', texto: 'Qué define a cada barrio y cuándo conviene ir a cada uno.', href: '/blog/barrios-imprescindibles', label: 'Los barrios de Lisboa' },
+
+      { tipo: 'subseccion', texto: 'Los mercados, y no sólo el conocido' },
+      { tipo: 'parrafo', texto: 'El mercado grande del centro es parada obligada en cualquier viaje, pero en una semana da tiempo a los otros: los mercados de barrio, donde se compra de verdad, y el rastro al aire libre, que sólo se monta ciertos días de la semana. Ese es el tipo de detalle que conviene comprobar el día antes, porque si vas el día que no toca no hay nada que ver.' },
+      { tipo: 'enlace', texto: 'Los mercados de Lisboa, cuáles merecen la visita y qué se encuentra en cada uno.', href: '/blog/mejores-mercados-lisboa', label: 'Los mejores mercados de Lisboa' },
+
+      { tipo: 'subseccion', texto: 'Un día sin plan' },
+      { tipo: 'parrafo', texto: 'Suena a relleno y es lo contrario. Reservar un día entero sin nada cerrado es lo que te permite volver al sitio que te gustó, dormir hasta tarde después de una noche larga, o rescatar lo que la lluvia te tumbó el martes. En un viaje de tres días es un lujo imposible; en uno de siete es lo que evita que los últimos días sean puro trámite.' },
+      { tipo: 'tip', texto: 'Deja ese día en mitad de la semana, no al final. Al final se convierte en el día de hacer la maleta y no descansa a nadie; en mitad, funciona de verdad como el respiro que hace que los tres últimos días valgan la pena.' },
+
+      { tipo: 'subtitulo', texto: 'Los tres errores de planificar siete días' },
+      { tipo: 'parrafo', texto: 'Se repiten mucho y los tres se arreglan antes de salir de casa.' },
+      { tipo: 'lista', items: [
+        'Agotar el centro histórico en los dos primeros días. Es la tentación natural y deja cinco días de descenso. Mejor dejar un mirador, un barrio o una tarde de Baixa para la segunda mitad.',
+        'Encadenar escapadas. Dos días seguidos de tren y sierra queman la semana entera; entre una escapada y otra tiene que haber un día tranquilo en la ciudad.',
+        'Cerrar los siete días de antemano. Es exactamente lo contrario de la ventaja que da tener una semana: si el plan está cerrado, la lluvia del jueves no se mueve a ninguna parte.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Alojamiento, transporte y presupuesto para una semana' },
+      { tipo: 'parrafo', texto: 'Una semana cambia dos decisiones prácticas respecto a un viaje corto. La primera es el alojamiento: en dos días la ubicación lo es todo y compensa pagar por estar en el centro; en siete pesa más dormir bien, porque las zonas más céntricas son también las más ruidosas de noche y siete noches de ruido se notan.' },
+      { tipo: 'parrafo', texto: 'La segunda es el transporte. En un viaje corto se va casi todo andando y con billetes sueltos. En una semana vas a usar metro, tranvía, tren de cercanías y probablemente el barco, y ahí la tarjeta recargable y los abonos empiezan a tener sentido. Merece la pena hacer la cuenta antes en vez de ir comprando billete a billete.' },
+      { tipo: 'enlace', texto: 'Qué transporte conviene en cada caso y cómo funcionan las tarjetas.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { tipo: 'nota', texto: 'En esta guía no encontrarás precios ni horarios concretos, y es a propósito: cambian, y cada guía enlazada mantiene el suyo actualizado. Antes de organizar un día alrededor de un sitio concreto —un palacio de Sintra, un museo, el tranvía— comprueba horarios, cierres y entradas en la web oficial del propio sitio o del operador. Algunos elementos de la ciudad pueden estar cerrados por obras durante temporadas largas.' },
+    ],
+  },
+  /*
    * Reemplazo editorial de /itinerarios/lisboa-fotografia.
    *
    * El itinerario viejo eran diecisiete paradas con ajustes de cámara para
@@ -3611,6 +3749,19 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  /*
+   * Sin ficha de lugar: la guía trata de cómo repartir una semana entera, no
+   * de un sitio al que se llegue. `comoLlegar` y `mejorHora` no aplican.
+   */
+  'lisboa-en-7-dias': {
+    faqs: [
+      { q: '¿Son demasiados siete días para Lisboa?', a: 'No, si no los planteas como la misma lista de monumentos estirada. Lo imprescindible de la ciudad se ve en tres días; los otros cuatro se llenan con una o dos escapadas, barrios sin monumento, la otra orilla del Tajo y un día sin plan. Si intentas rellenarlos con más monumentos, entonces sí sobran.' },
+      { q: '¿Qué hacer en Lisboa en 7 días?', a: 'El reparto que mejor funciona son tres bloques: dos o tres días de ciudad —centro histórico, Belém y miradores—, una o dos escapadas de día completo, y dos o tres días para lo que no entra en un viaje corto: el Parque das Nações, los barrios sin lista de visitas, los mercados de barrio y un día deliberadamente sin cerrar.' },
+      { q: '¿Cuántas excursiones caben en una semana en Lisboa?', a: 'Dos con comodidad. Cada escapada se lleva el día entero contando los trayectos, así que con tres te quedan cuatro días de Lisboa, menos de lo que tendrías en un viaje corto. Si sólo haces una, que sea Sintra. Cruzar el Tajo en barco no cuenta como escapada porque es media tarde.' },
+      { q: '¿Cómo repartir los días entre Lisboa y Sintra?', a: 'Sintra pide un día completo y propio: se sale temprano y se vuelve tarde, y no conviene encajarle nada más ese día. Lo que sí importa es qué va antes y después: no la pongas pegada a otra escapada, porque dos días seguidos de tren y sierra queman el resto de la semana. Un día tranquilo de ciudad después funciona mucho mejor.' },
+      { q: '¿En qué orden conviene ver Lisboa si tengo una semana?', a: 'Empezando por el centro histórico y dejando Belém para el tercer día, porque es zona llana y descansa después de dos días de cuestas. Y sin agotar el centro en las primeras jornadas: guardar un mirador, un barrio o una tarde de Baixa para la segunda mitad evita que la semana vaya de más a menos.' },
+    ],
+  },
   // Sin ficha de lugar: la guía recorre media ciudad, no un sitio concreto.
   'donde-fotografiar-lisboa': {
     faqs: [

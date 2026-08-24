@@ -20,10 +20,12 @@ const guides = [
     desc: 'Un plan amplio para sumar Sintra, Cascais y Cabo da Roca con orden lógico y tiempos realistas.',
   },
   {
-    title: 'Lisboa Semana Completa',
-    subtitle: 'Siete días con alrededores',
-    href: '/itinerarios/lisboa-full-week',
-    desc: 'Una guía para viajar con calma, alternar barrios, escapadas y planes gastronómicos sin improvisar.',
+    // El itinerario cerrado se retiró: su sustituto es /blog/lisboa-en-7-dias.
+    // Se enlaza directo, sin pasar por el redirect.
+    title: 'Lisboa en 7 días',
+    subtitle: 'Cómo repartir la semana',
+    href: '/blog/lisboa-en-7-dias',
+    desc: 'El orden que funciona, cuántas escapadas caben de verdad y qué hacer con los días que las guías cortas no cubren.',
   },
   {
     // El itinerario cerrado se retiró: su sustituto es la guía editorial

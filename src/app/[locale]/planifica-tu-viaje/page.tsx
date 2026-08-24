@@ -47,6 +47,20 @@ function getRecommendedGuideSlug(dias: number): string {
   return 'lisboa-full-week';
 }
 
+/*
+ * El itinerario de semana completa se retiró: su URL redirige de forma
+ * permanente a la guía editorial. Aquí se apunta directo al destino para que
+ * la recomendación no dependa del redirect. El registro se mantiene en
+ * `guidePacks` porque de ahí sale el título que se muestra al usuario.
+ */
+const GUIDE_HREF_OVERRIDES: Record<string, string> = {
+  'lisboa-full-week': '/blog/lisboa-en-7-dias',
+};
+
+function getGuideHref(slug: string): string {
+  return GUIDE_HREF_OVERRIDES[slug] ?? `/itinerarios/${slug}`;
+}
+
 const RITMOS = ['Relajado', 'Equilibrado', 'Intenso'];
 
 export default function PlanificaTuViajePage() {
@@ -187,7 +201,7 @@ export default function PlanificaTuViajePage() {
                     Ruta recomendada para {dias} {dias === 1 ? 'día' : 'días'}:
                   </p>
                   <Link
-                    href={`/itinerarios/${recommendedGuide.slug}`}
+                    href={getGuideHref(recommendedGuide.slug)}
                     className="text-sm text-terracotta hover:underline underline-offset-2"
                   >
                     Ver {recommendedGuide.title} (Gratis) →

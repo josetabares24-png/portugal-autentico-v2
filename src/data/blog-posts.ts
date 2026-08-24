@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'lisboa-en-7-dias',
+    titulo: 'Lisboa en 7 días: cómo repartir la semana sin repetirte',
+    excerpt: 'El orden que funciona, cuántas escapadas caben de verdad y qué hacer con los días que ninguna guía corta cubre.',
+    categoria: 'Guías',
+    fecha: '24 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+  },
+  {
     id: 'donde-fotografiar-lisboa',
     titulo: 'Dónde fotografiar Lisboa: lugares, miradores y mejores horas de luz',
     excerpt: 'Qué se fotografía en cada zona, hacia dónde mira y a qué hora le da la luz de frente. Sin ajustes de cámara: con geometría.',

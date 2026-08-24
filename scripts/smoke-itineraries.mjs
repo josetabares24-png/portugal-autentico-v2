@@ -45,7 +45,6 @@ const ITINERARY_SLUGS = [
   'lisboa-1-dia-lo-esencial',
   'lisboa-2-dias-completo',
   'lisboa-3-dias-premium',
-  'lisboa-full-week',
 ];
 
 // Itinerarios retirados: su URL ya no sirve documento propio, redirige de
@@ -55,6 +54,7 @@ const RETIRED_ITINERARIES = [
   { slug: 'lisboa-romantica', destination: '/blog/lisboa-en-pareja' },
   { slug: 'lisboa-familiar', destination: '/blog/lisboa-con-ninos' },
   { slug: 'lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa' },
+  { slug: 'lisboa-full-week', destination: '/blog/lisboa-en-7-dias' },
 ];
 
 const NONEXISTENT_SLUG = 'itinerario-que-no-existe-de-verdad';
