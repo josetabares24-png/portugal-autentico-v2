@@ -49,11 +49,41 @@ import { agruparPorDia } from '@/lib/itinerary-days';
  */
 const DESCRIPCION = 'Ruta de 3 días por Lisboa con el casco histórico, Belém y el río, más de 20 paradas con horas, mapa, y un tercer día que puedes dedicar a Sintra o a seguir en la ciudad.';
 
+const OG_TITLE = 'Lisboa en 3 días: itinerario completo';
+const OG_IMAGE = 'https://estabaenlisboa.com/images/alfama-panoramica.jpg';
+
 export const metadata = {
-  title: 'Lisboa en 3 días: itinerario completo',
+  title: OG_TITLE,
   description: DESCRIPCION,
   keywords: ['lisboa 3 dias', 'que hacer en lisboa en 3 dias', 'itinerario lisboa 3 dias', 'lisboa sintra'],
-  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
+  /*
+   * Open Graph sólo declaraba la URL, así que el título y la descripción que
+   * salían al compartir eran los genéricos del layout —los del sitio entero— y
+   * no había imagen propia. Ahora los tres son de esta página.
+   */
+  openGraph: {
+    title: OG_TITLE,
+    description: DESCRIPCION,
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium',
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Los tejados de Alfama y el río Tajo, en Lisboa' }],
+  },
+  /*
+   * Mismo problema y misma solución que en el hub de itinerarios: sin este
+   * bloque, Twitter heredaba el `twitter:title` y el `twitter:description`
+   * globales del layout y mostraba una tarjeta genérica mientras Open Graph
+   * enseñaba el texto correcto.
+   *
+   * `card` e `images` se repiten aquí a propósito: Next.js no fusiona el
+   * objeto `twitter` con el del layout, lo sustituye entero. Declarar sólo
+   * título y descripción habría dejado la página sin `summary_large_image` y
+   * sin imagen.
+   */
+  twitter: {
+    card: 'summary_large_image',
+    title: OG_TITLE,
+    description: DESCRIPCION,
+    images: [OG_IMAGE],
+  },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
 };
 
@@ -79,11 +109,11 @@ const TIEMPOS_POR_ZONA = [
 const CONSEJOS_SINTRA = [
   {
     titulo: 'Sal temprano',
-    texto: 'Primer tren desde Rossio a las 8:00. Llegas antes que los grupos y entras sin cola.',
+    texto: 'Coge uno de los primeros trenes desde Rossio. Llegas antes que los grupos organizados y la mañana cunde el doble.',
   },
   {
-    titulo: 'Entradas online',
-    texto: 'Palacio da Pena y Quinta da Regaleira: compra online. En taquilla pueden estar agotadas.',
+    titulo: 'Entradas con hora',
+    texto: 'La Pena se entra con día y hora reservados, y en la Regaleira el billete vale sólo para el momento que indica. Cómpralas online con antelación.',
   },
   {
     titulo: 'Orden óptimo',
