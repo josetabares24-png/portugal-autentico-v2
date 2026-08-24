@@ -30,6 +30,7 @@ const PAGES = [
   '/itinerarios',
   '/pack-completo',
   '/planifica-tu-viaje',
+  '/calculadora-presupuesto-lisboa',
   '/aviso-legal',
   '/politica-privacidad',
   '/politica-cookies',

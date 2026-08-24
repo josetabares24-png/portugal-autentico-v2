@@ -186,7 +186,25 @@ export default function PlanificaTuViajePage() {
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Presupuesto estimado</p>
                 <p className="text-5xl font-bold text-text-main mb-1">{totalViaje} €</p>
                 <p className="text-text-secondary text-sm">{totalPersonaDia} € por persona al día</p>
+                {/*
+                  La cifra de arriba es un promedio de un solo número, que da
+                  una sensación de exactitud que ningún presupuesto de viaje
+                  tiene. La calculadora sí devuelve un rango y explica de dónde
+                  sale cada partida: se enlaza aquí, junto al número, que es
+                  donde surge la duda.
+                */}
                 <p className="mt-4 border-t border-border-soft pt-4 text-sm leading-relaxed text-text-secondary">
+                  Es un promedio. Para ver entre qué dos cifras se mueve de verdad, según
+                  dónde duermas y cuánto pienses entrar en sitios, usa la{' '}
+                  <Link
+                    href="/calculadora-presupuesto-lisboa"
+                    className="text-terracotta underline underline-offset-2 hover:no-underline"
+                  >
+                    calculadora de presupuesto
+                  </Link>
+                  .
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                   Antes de viajar, repasa{' '}
                   <Link href="/blog/como-pagar-en-portugal" className="text-terracotta underline underline-offset-2 hover:no-underline">
                     cómo pagar en Portugal

@@ -1733,6 +1733,10 @@ const articles: Record<string, Article> = {
       { label: "Metropolitano de Lisboa — títulos y precios", href: "https://www.metrolisboa.pt/" },
     ],
     links: [
+      // La calculadora es la versión herramienta de este mismo artículo: aquí
+      // está el porqué de cada partida, y allí el cálculo para un viaje
+      // concreto. Va primera porque es lo que busca quien llega hasta aquí.
+      { href: '/calculadora-presupuesto-lisboa', label: 'Calculadora de presupuesto para Lisboa' },
       { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
       { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
       { href: '/itinerarios', label: 'Itinerarios gratuitos de Lisboa' },

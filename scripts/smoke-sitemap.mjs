@@ -34,6 +34,7 @@ const MANDATORY = [
   `${PROD_ORIGIN}/actividades`,
   `${PROD_ORIGIN}/free-tours-lisboa`,
   `${PROD_ORIGIN}/planifica-tu-viaje`,
+  `${PROD_ORIGIN}/calculadora-presupuesto-lisboa`,
   `${PROD_ORIGIN}/contacto`,
   `${PROD_ORIGIN}/sobre-nosotros`,
   `${PROD_ORIGIN}/blog/como-pagar-en-portugal`,
