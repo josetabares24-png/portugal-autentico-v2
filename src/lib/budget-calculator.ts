@@ -252,7 +252,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     nombre: 'Castelo de São Jorge',
     zona: 'lisboa',
     clase: 'media',
-    desc: 'La panorámica más completa del centro histórico',
+    desc: 'Vistas amplias sobre el centro histórico y el Tajo',
     bookingProductId: 'castelo-sao-jorge',
   },
   {
@@ -267,7 +267,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     nombre: 'Torre de Belém',
     zona: 'lisboa',
     clase: 'media',
-    desc: 'La torre del río, con cola casi siempre',
+    desc: 'La torre fortificada junto al Tajo, en Belém',
   },
   {
     id: 'maat',
@@ -281,7 +281,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     nombre: 'Oceanário de Lisboa',
     zona: 'lisboa',
     clase: 'alta',
-    desc: 'En Parque das Nações; el mejor refugio si llueve',
+    desc: 'En Parque das Nações; una opción cómoda para un día de lluvia',
     bookingProductId: 'oceanario',
   },
   {
@@ -304,7 +304,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     nombre: 'Castelo dos Mouros',
     zona: 'sintra',
     clase: 'baja',
-    desc: 'Las murallas sobre Sintra, con las mejores vistas del valle',
+    desc: 'Las murallas sobre Sintra, con vistas abiertas sobre el valle',
   },
 ] as const;
 
