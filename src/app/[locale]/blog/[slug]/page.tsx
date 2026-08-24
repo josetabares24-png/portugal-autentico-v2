@@ -680,91 +680,6 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Y una última idea, quizá la más útil: las condiciones de bancos y proveedores cambian, a veces varias veces al año. Cualquier cifra concreta que leas en internet —aquí incluido— puede haber quedado desfasada. Usa esta guía para saber qué preguntar y dónde mirar, y confirma los números en la fuente oficial de tu entidad antes de decidir.' },
     ],
   },
-  'que-hacer-en-lisboa-en-3-dias': {
-    titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
-    descripcion: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',
-    seoTitle: "Qué hacer en Lisboa en 3 días",
-    metaDescription: 'Ruta de 3 días por Lisboa con centro histórico, Belém, miradores, transporte, planes si llueve y errores que conviene evitar.',
-    imagen: '/images/alfama-panoramica.jpg',
-    imageAlt: 'Calle inclinada de Lisboa con azulejos y vistas al Tajo al fondo',
-    categoria: 'Guías',
-    fecha: '24 Jul 2026',
-    fechaActualizacion: 'Actualizado en julio de 2026',
-    dateModified: '2026-07-24',
-    minutos: 12,
-    links: [
-      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Abrir la guía gratuita de Lisboa en 3 días' },
-      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa sin complicarte' },
-      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse para ahorrar tiempo' },
-      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Planes gratis que encajan en la ruta' },
-      { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
-    ],
-    cta: {
-      href: '/itinerarios/lisboa-3-dias-premium',
-      label: 'Seguir la ruta completa',
-      title: '¿Quieres llevarte la ruta ya ordenada?',
-      text: 'La guía gratuita de Lisboa en 3 días reúne el recorrido paso a paso para seguirlo sin rehacer el plan cada mañana.',
-    },
-    fuentes: [
-      { label: 'Visit Lisboa - Belém y Lisboa Card', href: 'https://www.visitlisboa.com/en/p/lisboa-card' },
-      { label: 'Visit Lisboa - Torre de Belém', href: 'https://www.visitlisboa.com/en/places/torre-de-belem' },
-      { label: 'Visit Lisboa - Jerónimos', href: 'https://www.visitlisboa.com/en/places/jeronimos-monastery' },
-      { label: 'Metro Lisboa - horarios', href: 'https://www.metrolisboa.pt/en/travel/timetables-and-frequency/' },
-    ],
-    contenido: [
-      { tipo: 'parrafo', texto: 'Lisboa parece pequeña en el mapa, pero sus cuestas cambian la escala real del viaje. Tres días dan para conocer el centro, respirar junto al río, entrar en Belém y reservar tiempo para barrios menos obvios, siempre que no intentes cruzar la ciudad de punta a punta cada dos horas.' },
-      { tipo: 'subtitulo', texto: 'Antes de repartir los días' },
-      { tipo: 'parrafo', texto: 'La mejor forma de organizar Lisboa es pensar por zonas, no por monumentos sueltos. Baixa, Chiado, Alfama y Graça funcionan bien juntos porque están cerca, aunque haya desnivel. Belém merece su propia media jornada porque está más alejado. El tercer día conviene dejarlo más flexible: miradores, barrios, un museo o una escapada corta según energía y clima.' },
-      { tipo: 'lista', items: [
-        'Usa calzado cómodo desde el primer día: no es una recomendación decorativa, es logística básica.',
-        'Evita meter Belém entre Alfama y Bairro Alto; perderás tiempo en transporte y llegarás cansado.',
-        'Reserva las subidas fuertes para la mañana o para el final de la tarde.',
-        'Deja una pausa real al mediodía, sobre todo en verano.',
-      ] },
-      { tipo: 'subtitulo', texto: 'Día 1: centro histórico y primeras vistas' },
-      { tipo: 'subseccion', texto: 'Mañana: Baixa, Chiado y el primer contacto' },
-      { tipo: 'parrafo', texto: 'Empieza en la Baixa, no porque sea la zona más emocionante, sino porque te orienta. Praça do Comércio, Rua Augusta, Rossio y Restauradores colocan la ciudad en la cabeza: el río abajo, las colinas a los lados y los barrios históricos subiendo desde el centro. Dedica entre dos y tres horas a esta parte si vas sin entrar en museos.' },
-      { tipo: 'parrafo', texto: 'Después sube hacia Chiado y el Carmo. Aquí Lisboa se vuelve más elegante, más literaria y más cómoda para hacer una pausa. El Convento do Carmo ayuda a entender el terremoto de 1755 sin convertir la mañana en una clase larga. Si el día está claro, asómate a las vistas cercanas antes de seguir.' },
-      { tipo: 'subseccion', texto: 'Tarde: Alfama sin correr' },
-      { tipo: 'parrafo', texto: 'Alfama necesita tiempo lento. Si entras con una lista demasiado rígida, se vuelve frustrante: calles estrechas, escaleras, miradores, pequeños desvíos. La idea no es tachar cada esquina, sino subir hacia Santa Luzia y Portas do Sol, bajar por callejones tranquilos y dejar que el barrio haga su trabajo.' },
-      { tipo: 'parrafo', texto: 'Para comer, busca una tasca sencilla fuera de las calles con menús fotográficos. No hace falta convertir la comida en una búsqueda épica: un plato del día, sopa o pescado sencillo suele ser mejor que un restaurante con reclamo turístico en cinco idiomas.' },
-      { tipo: 'subseccion', texto: 'Atardecer: Graça o Senhora do Monte' },
-      { tipo: 'parrafo', texto: 'Si las piernas responden, termina el día en Graça o Senhora do Monte. Son miradores que resumen bien Lisboa: tejados, castillo, río y esa luz que cambia la ciudad en diez minutos. Si estás agotado, no fuerces. Un primer día bien hecho también consiste en parar antes de odiar las cuestas.' },
-      { tipo: 'subtitulo', texto: 'Tiempos aproximados para no ir a la carrera' },
-      { tipo: 'parrafo', texto: 'Una mañana de Baixa y Chiado puede ocupar tres horas sin entrar a muchos sitios. Alfama necesita otras tres si quieres subir, bajar y parar en miradores. Belém pide al menos media jornada, y el tercer día conviene dejarlo con una o dos zonas principales, no con cinco barrios distintos. Lisboa castiga los planes que parecen eficientes pero obligan a cruzar colinas.' },
-      { tipo: 'lista', items: [
-        'Baixa y Chiado: entre 2,5 y 4 horas según pausas y visitas interiores.',
-        'Alfama y miradores cercanos: entre 3 y 5 horas si lo haces sin correr.',
-        'Belém: media jornada amplia, más si entras en varios monumentos.',
-        'Príncipe Real, Estrela o Graça: una mañana o tarde completa si quieres disfrutarlos.',
-      ] },
-      { tipo: 'subtitulo', texto: 'Día 2: Belém y zonas junto al río' },
-      { tipo: 'parrafo', texto: 'Belém es mejor por la mañana. Llegas con más energía, evitas parte del calor y puedes decidir sobre la marcha si entras en monumentos o si prefieres quedarte en el paseo exterior. El Monasterio de los Jerónimos, la Torre de Belém, el MAAT y el río no necesitan todos el mismo nivel de atención; elige según tus intereses.' },
-      { tipo: 'parrafo', texto: 'La conexión desde el centro suele hacerse en tranvía, bus o tren desde Cais do Sodré, según dónde estés alojado. No merece la pena ir andando desde la Baixa salvo que quieras dedicar una mañana entera al paseo. Calcula media jornada amplia, unas cuatro o cinco horas, y añade más si vas a entrar en varios espacios culturales.' },
-      { tipo: 'parrafo', texto: 'Si piensas usar Lisboa Card en Belém, comprueba antes las condiciones oficiales: algunos accesos pueden requerir reserva de franja, número de tarjeta física y estar sujetos a cupo diario. No diseñes el día dando por hecho que una tarjeta equivale a entrar sin espera en cualquier momento.' },
-      { tipo: 'parrafo', texto: 'A la vuelta, puedes parar en Cais do Sodré, Ribeira das Naus o Santos para una tarde más baja de intensidad. Esta parte de Lisboa ayuda a equilibrar el viaje: menos escalones, más río, más espacio para sentarse sin sentir que estás perdiendo el día.' },
-      { tipo: 'subtitulo', texto: 'Día 3: barrios, miradores o una alternativa según el ritmo' },
-      { tipo: 'parrafo', texto: 'El tercer día es donde se nota si planificaste bien. Si los dos primeros fueron intensos, dedica la mañana a Príncipe Real, São Bento o Estrela: cafés, jardines, tiendas pequeñas y una Lisboa menos monumental. Si todavía tienes energía, puedes subir a Mouraria y Graça con más calma o enlazar varios miradores sin repetir la ruta del día 1.' },
-      { tipo: 'parrafo', texto: 'También puedes usar este día para Sintra o Cascais, pero solo si aceptas que dejas Lisboa a medias. Para una primera visita de tres días, yo reservaría la escapada para viajes más largos, salvo que Sintra sea una prioridad absoluta para ti. Lisboa tiene capas suficientes para llenar tres días sin necesidad de huir de ella.' },
-      { tipo: 'enlace', texto: 'Si prefieres sustituir un barrio por una visita concreta, el catálogo reúne miradores, monumentos y experiencias por zona para comparar sin romper la ruta.', href: '/actividades', label: 'Explorar actividades en Lisboa' },
-      { tipo: 'subtitulo', texto: 'Qué cambiar si llueve' },
-      { tipo: 'parrafo', texto: 'Lisboa con lluvia pide menos mirador y más interior. Cambia Santa Luzia por Carmo, museos o cafés largos; cambia las bajadas de Alfama por zonas con mejor pavimento; deja Belém para una ventana seca si puedes. Las aceras portuguesas son bonitas, pero mojadas pueden ser resbaladizas. No planifiques la lluvia como si fuera un detalle menor.' },
-      { tipo: 'subtitulo', texto: 'Dónde comer sin montar una ruta gastronómica' },
-      { tipo: 'parrafo', texto: 'En tres días no hace falta perseguir restaurantes por toda la ciudad. Come cerca de la zona donde ya estás. En Baixa y Chiado, sal de las calles más obvias; en Alfama, evita menús con fotos gigantes; en Belém, acepta que algunas opciones son más turísticas y compensa con una cena sencilla de barrio. Un buen almuerzo en Lisboa suele estar más cerca de una calle lateral que de una plaza principal.' },
-      { tipo: 'parrafo', texto: 'Si quieres controlar gasto y tiempo, elige una comida al día como pausa real y deja las otras más flexibles: pastelaría, sopa, petiscos sencillos o una tasca sin ceremonia. Lo que arruina muchos itinerarios no es comer mal, sino cruzar media ciudad para llegar a un sitio que obliga a reorganizar toda la tarde.' },
-      { tipo: 'subtitulo', texto: 'Errores frecuentes en una ruta de 3 días' },
-      { tipo: 'lista', items: [
-        'Hacer Alfama, Belém y LX Factory el mismo día sin necesidad.',
-        'Reservar alojamiento lejos del metro pensando que todo queda cerca.',
-        'Subir al tranvía 28 en hora punta como si fuera transporte rápido.',
-        'Meter demasiados restaurantes concretos y acabar cruzando la ciudad para comer.',
-        'No dejar margen para descansar, que en Lisboa significa disfrutar más y discutir menos con el mapa.',
-      ] },
-      { tipo: 'subtitulo', texto: 'Conclusión' },
-      { tipo: 'parrafo', texto: 'Tres días en Lisboa funcionan muy bien si haces una ruta compacta: centro y Alfama el primer día, Belém el segundo, barrios y miradores el tercero. No es una ciudad para exprimir con cronómetro, sino para ordenar con sentido. Si quieres llevar el recorrido listo, la guía gratuita de Lisboa en 3 días te evita rehacer estas decisiones sobre la marcha.' },
-      { tipo: 'enlace', texto: 'Si es tu primer día, empezar con un tour a pie te da la orientación que luego hace que los otros dos días cundan más.', href: '/free-tours-lisboa#ruta-imprescindible', label: 'Ver los free tours por el centro histórico' },
-    ],
-  },
   'donde-alojarse-en-lisboa': {
     titulo: 'Dónde alojarse en Lisboa: mejores zonas según tu viaje',
     descripcion: 'Baixa, Chiado, Alfama, Graça, Saldanha y otras zonas explicadas según comodidad, ruido, cuestas y tipo de viaje.',
@@ -778,7 +693,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-07-24',
     minutos: 13,
     links: [
-      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Ruta de 3 días para elegir zona con criterio' },
+      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Ruta de 3 días para elegir zona con criterio' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Transporte y cuestas antes de reservar' },
       { href: '/itinerarios/lisboa-2-dias-completo', label: 'Ver la guía gratuita de Lisboa en 2 días' },
       { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
@@ -880,7 +795,7 @@ const articles: Record<string, Article> = {
     minutos: 11,
     links: [
       { href: '/blog/como-moverse-por-lisboa', label: 'Entender el transporte antes de decidir' },
-      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Ver cómo encaja en una ruta de 3 días' },
+      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Ver cómo encaja en una ruta de 3 días' },
       { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Alternativas gratuitas y de bajo coste' },
       { href: '/itinerarios/lisboa-2-dias-completo', label: 'Abrir la guía gratuita de Lisboa en 2 días' },
       { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
@@ -973,7 +888,7 @@ const articles: Record<string, Article> = {
     minutos: 12,
     links: [
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
-      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Aplicar el transporte a una ruta de 3 días' },
+      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Aplicar el transporte a una ruta de 3 días' },
       { href: '/blog/donde-alojarse-en-lisboa', label: 'Elegir alojamiento según conexiones' },
       { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Abrir la guía gratuita de Lisboa en 1 día' },
       { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
@@ -1063,7 +978,7 @@ const articles: Record<string, Article> = {
     minutos: 11,
     links: [
       { href: '/blog/mejores-miradores-lisboa', label: 'Miradores de Lisboa para completar el plan' },
-      { href: '/blog/que-hacer-en-lisboa-en-3-dias', label: 'Encajar planes gratis en una ruta de 3 días' },
+      { href: '/itinerarios/lisboa-3-dias-premium', label: 'Encajar planes gratis en una ruta de 3 días' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo pagar entradas y cuándo no' },
       { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Abrir la guía gratuita de Lisboa en 1 día' },
       { href: '/itinerarios', label: 'Explorar todos los itinerarios gratuitos' },
@@ -2991,7 +2906,6 @@ const articles: Record<string, Article> = {
 };
 
 const localImages: Record<string, string> = {
-  'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
   'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
   'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
   'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
@@ -3662,13 +3576,6 @@ function getFaqs(slug: string) {
       { q: '¿Qué app necesito para el transporte en Lisboa?', a: 'Citymapper es la más práctica porque integra metro, Carris, trenes y barcos. Las oficiales de Carris y navegante compensan si te quedas más días.' },
       { q: '¿Funciona Free Now en Lisboa?', a: 'No. Dejó de operar en Portugal el 3 de abril de 2023, aunque muchas listas lo sigan recomendando. En Lisboa se usan Bolt y Uber.' },
       { q: '¿Necesito datos móviles para moverme?', a: 'Ayuda, pero si descargas el mapa de Lisboa sin conexión en Google Maps el GPS sigue funcionando sin cobertura.' },
-    ];
-  }
-  if (slug === 'que-hacer-en-lisboa-en-3-dias') {
-    return [
-      { q: '¿Tres días son suficientes para Lisboa?', a: 'Sí, si agrupas la ruta por zonas: centro y Alfama, Belém, y un tercer día para barrios, miradores o una escapada suave.' },
-      { q: '¿Conviene ir a Sintra en una visita de 3 días?', a: 'Solo si Sintra es una prioridad. Para una primera visita, Lisboa tiene contenido suficiente para tres días completos.' },
-      { q: '¿Qué día es mejor para Belém?', a: 'El segundo día suele funcionar bien porque ya entiendes el centro y puedes dedicar media jornada sin mezclar zonas lejanas.' },
     ];
   }
   if (slug === 'donde-alojarse-en-lisboa') {

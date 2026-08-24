@@ -43,6 +43,16 @@ const nextConfig = {
       // cubre. Ningún redirect histórico apuntaba aquí, así que no hay cadena.
       { source: '/itinerarios/lisboa-full-week', destination: '/blog/lisboa-en-7-dias', permanent: true },
       { source: '/:locale(en|ko|es)/itinerarios/lisboa-full-week', destination: '/blog/lisboa-en-7-dias', permanent: true },
+      // Consolidación en sentido contrario a las cuatro anteriores: aquí el
+      // duplicado era el artículo y la página que se queda es el itinerario.
+      // Los dos respondían a la misma consulta —«lisboa en 3 días»— con los
+      // días 1 y 2 coincidiendo en zona y en orden, y con el día 3
+      // contradiciéndose: el artículo desaconsejaba Sintra y el itinerario la
+      // daba por hecha. El itinerario no se puede retirar (es uno de los tres
+      // core, con ficha, mapa, calculadora y panel), así que absorbe lo que
+      // sólo tenía el artículo y se queda con la URL.
+      { source: '/blog/que-hacer-en-lisboa-en-3-dias', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
+      { source: '/:locale(en|ko|es)/blog/que-hacer-en-lisboa-en-3-dias', destination: '/itinerarios/lisboa-3-dias-premium', permanent: true },
       { source: '/presupuesto', destination: '/blog/presupuesto-viajar-lisboa', permanent: true },
       { source: '/guia-gratis', destination: '/itinerarios', permanent: true },
       { source: '/tours', destination: '/itinerarios', permanent: true },

@@ -50,11 +50,15 @@ const ITINERARY_SLUGS = [
 // Itinerarios retirados: su URL ya no sirve documento propio, redirige de
 // forma permanente a su sustituto editorial. Se comprueba el redirect en vez
 // de borrar el caso, para que la migración quede protegida por el test.
+// La lista guarda la ruta completa, no sólo el slug, porque la última
+// consolidación va en sentido contrario a las otras cuatro: el duplicado era
+// un artículo del blog y la página que se queda es el itinerario.
 const RETIRED_ITINERARIES = [
-  { slug: 'lisboa-romantica', destination: '/blog/lisboa-en-pareja' },
-  { slug: 'lisboa-familiar', destination: '/blog/lisboa-con-ninos' },
-  { slug: 'lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa' },
-  { slug: 'lisboa-full-week', destination: '/blog/lisboa-en-7-dias' },
+  { from: '/itinerarios/lisboa-romantica', destination: '/blog/lisboa-en-pareja' },
+  { from: '/itinerarios/lisboa-familiar', destination: '/blog/lisboa-con-ninos' },
+  { from: '/itinerarios/lisboa-fotografia', destination: '/blog/donde-fotografiar-lisboa' },
+  { from: '/itinerarios/lisboa-full-week', destination: '/blog/lisboa-en-7-dias' },
+  { from: '/blog/que-hacer-en-lisboa-en-3-dias', destination: '/itinerarios/lisboa-3-dias-premium' },
 ];
 
 const NONEXISTENT_SLUG = 'itinerario-que-no-existe-de-verdad';
@@ -166,8 +170,9 @@ async function checkItinerary(baseUrl, slug) {
   };
 }
 
-async function checkRetired(baseUrl, { slug, destination }) {
-  const res = await fetch(`${baseUrl}/itinerarios/${slug}`, { redirect: 'manual' });
+async function checkRetired(baseUrl, { from, destination }) {
+  const slug = from;
+  const res = await fetch(`${baseUrl}${from}`, { redirect: 'manual' });
   const permanent = res.status === 301 || res.status === 308;
   record(`${slug}: redirect permanente`, permanent, `HTTP ${res.status}`);
 

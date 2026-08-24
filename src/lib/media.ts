@@ -20,7 +20,6 @@ export const blogImageMap: Record<string, string> = {
   'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'mejores-apps-lisboa': '/images/turista-tranvia-28.jpg',
-  'que-hacer-en-lisboa-en-3-dias': '/images/alfama-panoramica.jpg',
   'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
   'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
   'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',

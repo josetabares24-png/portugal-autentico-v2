@@ -64,15 +64,6 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
   },
   {
-    id: 'que-hacer-en-lisboa-en-3-dias',
-    titulo: 'Qué hacer en Lisboa en 3 días: itinerario completo',
-    excerpt: 'Una ruta clara para repartir centro histórico, Belém, miradores y barrios sin acabar persiguiendo el mapa.',
-    categoria: 'Guías',
-    fecha: '24 Jul 2026',
-    autor: 'José Tabares',
-    imagen: '/images/alfama-panoramica.jpg',
-  },
-  {
     id: 'donde-alojarse-en-lisboa',
     titulo: 'Dónde alojarse en Lisboa: mejores zonas según tu viaje',
     excerpt: 'Baixa, Chiado, Alfama, Graça, Saldanha y otras zonas explicadas según comodidad, ruido, cuestas y tipo de viaje.',
