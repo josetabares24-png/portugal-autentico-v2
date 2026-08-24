@@ -193,17 +193,19 @@ export default function PlanificaTuViajePage() {
                   sale cada partida: se enlaza aquí, junto al número, que es
                   donde surge la duda.
                 */}
-                <p className="mt-4 border-t border-border-soft pt-4 text-sm leading-relaxed text-text-secondary">
-                  Es un promedio. Para ver entre qué dos cifras se mueve de verdad, según
-                  dónde duermas y cuánto pienses entrar en sitios, usa la{' '}
+                <div className="mt-4 rounded-lg border border-border-soft bg-background-light p-4">
+                  <p className="text-sm leading-relaxed text-text-secondary">
+                    Es un promedio de un solo número. Para ver entre qué dos cifras se mueve
+                    de verdad —según las noches, dónde duermas y qué pienses visitar— usa la
+                    calculadora.
+                  </p>
                   <Link
                     href="/calculadora-presupuesto-lisboa"
-                    className="text-terracotta underline underline-offset-2 hover:no-underline"
+                    className="btn-outline mt-3 w-full justify-center py-2.5 text-sm sm:w-auto"
                   >
-                    calculadora de presupuesto
+                    Calcular mi presupuesto
                   </Link>
-                  .
-                </p>
+                </div>
                 <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                   Antes de viajar, repasa{' '}
                   <Link href="/blog/como-pagar-en-portugal" className="text-terracotta underline underline-offset-2 hover:no-underline">
