@@ -2,16 +2,27 @@
 /**
  * Smoke test HTTP de /calculadora-presupuesto-lisboa.
  *
- * Comprueba el HTML realmente servido, no el código fuente. Lo que vigila:
+ * Comprueba el HTML realmente servido, no el código fuente. Y no se limita a
+ * buscar cadenas: recalcula el estado inicial con la misma función pura que
+ * usa la página y verifica que las cifras servidas coinciden, incluidas las
+ * relaciones entre ellas (el gasto en destino es el total menos alojamiento y
+ * menos vuelos, el desglose suma lo que dice sumar...). Si la página se
+ * desincronizara del módulo de cálculo, esto lo vería.
  *
- *   - que la página responde 200 sin redirección y tiene un solo H1;
- *   - que el `canonical`, el `robots` y los metadatos sociales son los suyos;
- *   - que el resultado por defecto se sirve ya renderizado y es un rango, no
- *     una cifra suelta —que es la única promesa que hace esta herramienta—;
- *   - que las reglas del cálculo y lo que no incluye están publicados
- *     íntegros, comparándolos contra la fuente de verdad del módulo;
- *   - que dos peticiones idénticas devuelven el mismo resultado;
- *   - que ninguno de sus enlaces internos está roto ni pasa por un redirect.
+ * Qué vigila:
+ *
+ *   - 200 sin redirección, un solo H1 y con el texto que le toca;
+ *   - `canonical`, `robots` y metadatos sociales propios;
+ *   - los controles del alcance completo: noches, alojamiento con importe
+ *     propio, vuelos opcionales y selector de atracciones;
+ *   - el resultado servido: total, por persona, por persona y día, gasto en
+ *     destino sin alojamiento ni vuelos, y desglose;
+ *   - que sin importe de vuelos lo diga expresamente;
+ *   - reglas del cálculo y exclusiones publicadas íntegras, comparadas contra
+ *     la fuente de verdad del módulo;
+ *   - dos peticiones idénticas, mismo resultado;
+ *   - FAQ visible = FAQ del schema;
+ *   - enlaces internos vivos y sin redirect, y las dos páginas de entrada.
  *
  * Dos modos, como el resto de suites:
  *   - Local (por defecto): next build + next start en un puerto libre.
@@ -21,6 +32,7 @@
 import { spawn } from 'node:child_process';
 import net from 'node:net';
 import {
+  ATRACCIONES,
   BUDGET_ASSUMPTIONS,
   NO_INCLUIDO,
   calculateLisbonBudget,
@@ -29,19 +41,31 @@ import {
 
 const RUTA = '/calculadora-presupuesto-lisboa';
 const BRAND = 'Estaba en Lisboa';
+const H1_ESPERADO = 'Calculadora de presupuesto para Lisboa';
 const isWindows = process.platform === 'win32';
 const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 
 /** Estado inicial de la página. Debe coincidir con los `useState` de page.tsx. */
 const ESTADO_INICIAL = {
   dias: 3,
+  noches: 2,
   personas: 2,
-  alojamiento: 'intermedio',
+  alojamiento: { modo: 'estimado', nivel: 'intermedio' },
   comida: 'mixto',
   transporte: 'publico',
-  visitas: 'algunas',
+  atracciones: [],
   excursionSintra: false,
 };
+
+/** Controles que el alcance completo exige, y cómo se reconocen en el HTML. */
+const CONTROLES = [
+  { nombre: 'deslizador de días', patron: /id="dias"/ },
+  { nombre: 'deslizador de noches', patron: /id="noches"/ },
+  { nombre: 'deslizador de personas', patron: /id="personas"/ },
+  { nombre: 'opción de alojamiento con importe propio', patron: /Importe propio/ },
+  { nombre: 'campo de vuelos opcional', patron: /id="vuelos"/ },
+  { nombre: 'casilla del día en Sintra', patron: /id="sintra"/ },
+];
 
 /** Enlaces internos que la página debe ofrecer, todos vivos y sin redirect. */
 const ENLACES_INTERNOS = [
@@ -64,6 +88,9 @@ const PROMESAS_PROHIBIDAS = [
   'presupuesto exacto',
   'garantizado',
   'sin sorpresas',
+  'mejor precio',
+  'ahorra ',
+  'compra ya',
 ];
 
 function log(...args) {
@@ -156,15 +183,22 @@ async function comprobarPagina(baseUrl) {
   // --- Estructura ---
   const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/gi) || [];
   record('un solo H1', h1.length === 1, `${h1.length} encontrados`);
+  const h1Texto = h1.length === 1 ? normalizar(aTexto(h1[0])) : null;
+  record('el H1 es el de la herramienta', h1Texto === H1_ESPERADO, h1Texto || 'ausente');
+  record(
+    'el H1 no invade la intención del artículo de presupuesto',
+    !!h1Texto && !/cuánto cuesta un viaje a lisboa/i.test(h1Texto),
+    h1Texto || ''
+  );
 
   const h2 = html.match(/<h2[^>]*>/gi) || [];
-  record('tiene secciones (H2)', h2.length >= 3, `${h2.length} H2`);
+  record('tiene secciones (H2)', h2.length >= 4, `${h2.length} H2`);
 
   // --- Metadatos ---
   const title = meta(html, /<title>([^<]*)<\/title>/i);
   record(
     'title propio y con la marca una sola vez',
-    !!title && !title.includes(`${BRAND} | ${BRAND}`) && /presupuesto/i.test(title),
+    !!title && !title.includes(`${BRAND} | ${BRAND}`) && /calculadora/i.test(title),
     `title="${title}"`
   );
 
@@ -176,7 +210,11 @@ async function comprobarPagina(baseUrl) {
   );
 
   const robots = meta(html, /<meta name="robots" content="([^"]+)"/i);
-  record('indexable', !!robots && robots.includes('index') && !robots.includes('noindex'), robots || 'sin meta robots');
+  record(
+    'indexable',
+    !!robots && robots.includes('index') && !robots.includes('noindex'),
+    robots || 'sin meta robots'
+  );
 
   const ogTitle = meta(html, /<meta property="og:title" content="([^"]+)"/i);
   const twitterCard = meta(html, /<meta name="twitter:card" content="([^"]+)"/i);
@@ -185,23 +223,66 @@ async function comprobarPagina(baseUrl) {
   record('twitter:card es summary_large_image', twitterCard === 'summary_large_image', twitterCard || 'ausente');
   record('twitter:title alineado con og:title', !!twitterTitle && twitterTitle === ogTitle, twitterTitle || 'ausente');
 
+  // --- Controles del alcance completo ---
+  const faltan = CONTROLES.filter((c) => !c.patron.test(html)).map((c) => c.nombre);
+  record(
+    'están los controles del alcance completo',
+    faltan.length === 0,
+    faltan.length ? `faltan: ${faltan.join(', ')}` : `${CONTROLES.length} controles`
+  );
+
+  const atraccionesFaltan = ATRACCIONES.filter((a) => !texto.includes(normalizar(a.nombre)));
+  record(
+    'el selector ofrece todas las atracciones del catálogo',
+    atraccionesFaltan.length === 0,
+    atraccionesFaltan.length
+      ? `faltan ${atraccionesFaltan.map((a) => a.id).join(', ')}`
+      : `${ATRACCIONES.length} atracciones`
+  );
+
+  const casillas = (html.match(/type="checkbox"/g) || []).length;
+  record(
+    'hay una casilla por atracción, más la del día en Sintra',
+    casillas >= ATRACCIONES.length + 1,
+    `${casillas} casillas`
+  );
+
   // --- El resultado por defecto, ya renderizado en el servidor ---
   const esperado = calculateLisbonBudget(ESTADO_INICIAL);
-  const total = formatRango(esperado.total);
-  record(
-    'el resultado por defecto se sirve renderizado',
-    texto.includes(normalizar(total)),
-    `esperado "${total}"`
-  );
+
+  const cifras = [
+    ['total del grupo', esperado.total],
+    ['por persona', esperado.porPersona],
+    ['por persona y día', esperado.porPersonaYDia],
+    ['gasto en destino sin alojamiento ni vuelos', esperado.sinAlojamiento],
+  ];
+  for (const [nombre, rango] of cifras) {
+    record(
+      `sirve renderizado el ${nombre}`,
+      texto.includes(normalizar(formatRango(rango))),
+      formatRango(rango)
+    );
+  }
+
   record(
     'el resultado es un rango, no una cifra',
-    esperado.total.max > esperado.total.min && total.includes('–'),
-    total
+    esperado.total.max > esperado.total.min && formatRango(esperado.total).includes('–'),
+    formatRango(esperado.total)
   );
+
   record(
-    'muestra el gasto por persona y día',
-    texto.includes(normalizar(formatRango(esperado.porPersonaYDia))),
-    formatRango(esperado.porPersonaYDia)
+    'etiqueta el gasto en destino como sin alojamiento ni vuelos',
+    /sin alojamiento ni vuelos/i.test(texto),
+    null
+  );
+
+  // Comportamiento, no cadenas: el gasto en destino tiene que ser menor que el
+  // total en cuanto haya alojamiento, y no puede incluir alojamiento ni vuelos.
+  const alojamiento = esperado.categorias.find((c) => c.id === 'alojamiento');
+  record(
+    'el gasto en destino excluye de verdad el alojamiento',
+    esperado.sinAlojamiento.max < esperado.total.max && alojamiento.rango.max > 0,
+    `destino ${formatRango(esperado.sinAlojamiento)} · total ${formatRango(esperado.total)}`
   );
 
   let categoriasOk = 0;
@@ -212,6 +293,12 @@ async function comprobarPagina(baseUrl) {
     'el desglose muestra todas las categorías',
     categoriasOk === esperado.categorias.length,
     `${categoriasOk}/${esperado.categorias.length}`
+  );
+
+  record(
+    'sin importe de vuelos, lo dice expresamente',
+    esperado.vuelosIncluidos === false && /vuelos no incluidos/i.test(texto),
+    null
   );
 
   // --- Transparencia: reglas y exclusiones publicadas íntegras ---
@@ -229,11 +316,7 @@ async function comprobarPagina(baseUrl) {
     exclusionesFaltan.length ? `faltan ${exclusionesFaltan.length}` : `${NO_INCLUIDO.length} exclusiones`
   );
 
-  record(
-    'avisa de que no incluye los vuelos',
-    /vuelos/i.test(texto),
-    null
-  );
+  record('explica que las noches las decide el usuario', /noches las decides tú/i.test(texto), null);
 
   // --- Nada que prometa exactitud ---
   const enMinusculas = texto.toLowerCase();
@@ -257,8 +340,16 @@ async function comprobarPagina(baseUrl) {
   }
   record('tiene FAQPage', !!faq, faq ? `${faq.mainEntity.length} preguntas` : 'ausente');
   if (faq) {
-    const todasVisibles = faq.mainEntity.every((q) => texto.includes(normalizar(q.name)));
-    record('cada pregunta del FAQPage está visible en la página', todasVisibles, null);
+    const preguntasFuera = faq.mainEntity.filter((q) => !texto.includes(normalizar(q.name)));
+    record('cada pregunta del FAQPage está visible', preguntasFuera.length === 0, null);
+    const respuestasFuera = faq.mainEntity.filter(
+      (q) => !texto.includes(normalizar(q.acceptedAnswer.text))
+    );
+    record('cada respuesta del FAQPage está visible', respuestasFuera.length === 0, null);
+    const cubreVuelos = faq.mainEntity.some((q) => /vuelo/i.test(q.name + q.acceptedAnswer.text));
+    const cubreNoches = faq.mainEntity.some((q) => /noche/i.test(q.name + q.acceptedAnswer.text));
+    const cubreReserva = faq.mainEntity.some((q) => /reservad/i.test(q.name + q.acceptedAnswer.text));
+    record('la FAQ describe la herramienta real', cubreVuelos && cubreNoches && cubreReserva, null);
   }
 
   return html;
