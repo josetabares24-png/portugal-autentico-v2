@@ -44,6 +44,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/free-tours-lisboa`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/blog`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/planifica-tu-viaje`, changeFrequency: 'monthly', priority: 0.9 },
+    // Herramienta. `yearly` porque no trabaja con tarifas concretas sino con
+    // tramos de gasto: cambia cuando cambia el modelo, no cada temporada.
+    { url: `${baseUrl}/calculadora-presupuesto-lisboa`, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${baseUrl}/pack-completo`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/sobre-nosotros`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/contacto`, changeFrequency: 'monthly', priority: 0.5 },
