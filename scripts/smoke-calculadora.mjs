@@ -57,14 +57,31 @@ const ESTADO_INICIAL = {
   excursionSintra: false,
 };
 
-/** Controles que el alcance completo exige, y cómo se reconocen en el HTML. */
+/**
+ * Controles que el alcance exige, y cómo se reconocen en el HTML.
+ *
+ * Se buscan por `data-control` y no por `id` porque desde el rediseño los
+ * contadores son un grupo de dos botones más un `output`, no un único input
+ * con id. El atributo existe justamente para dar un ancla estable a esto.
+ */
 const CONTROLES = [
-  { nombre: 'deslizador de días', patron: /id="dias"/ },
-  { nombre: 'deslizador de noches', patron: /id="noches"/ },
-  { nombre: 'deslizador de personas', patron: /id="personas"/ },
+  { nombre: 'contador de días', patron: /data-control="dias"/ },
+  { nombre: 'contador de noches', patron: /data-control="noches"/ },
+  { nombre: 'contador de personas', patron: /data-control="personas"/ },
+  { nombre: 'selector de atracciones', patron: /data-control="atracciones"/ },
   { nombre: 'opción de alojamiento con importe propio', patron: /Importe propio/ },
   { nombre: 'campo de vuelos opcional', patron: /id="vuelos"/ },
   { nombre: 'casilla del día en Sintra', patron: /id="sintra"/ },
+];
+
+/** Botones de los tres contadores, con su etiqueta accesible. */
+const BOTONES_CONTADOR = [
+  'Reducir días',
+  'Aumentar días',
+  'Reducir noches',
+  'Aumentar noches',
+  'Reducir personas',
+  'Aumentar personas',
 ];
 
 /** Enlaces internos que la página debe ofrecer, todos vivos y sin redirect. */
@@ -193,6 +210,11 @@ async function comprobarPagina(baseUrl) {
 
   const h2 = html.match(/<h2[^>]*>/gi) || [];
   record('tiene secciones (H2)', h2.length >= 4, `${h2.length} H2`);
+  record(
+    'los dos pasos están titulados',
+    /Configura tu viaje/.test(texto) && /Tu presupuesto/.test(texto),
+    null
+  );
 
   // --- Metadatos ---
   const title = meta(html, /<title>([^<]*)<\/title>/i);
@@ -229,6 +251,21 @@ async function comprobarPagina(baseUrl) {
     'están los controles del alcance completo',
     faltan.length === 0,
     faltan.length ? `faltan: ${faltan.join(', ')}` : `${CONTROLES.length} controles`
+  );
+
+  const botonesFaltan = BOTONES_CONTADOR.filter(
+    (etiqueta) => !html.includes(`aria-label="${etiqueta}"`)
+  );
+  record(
+    'los contadores tienen sus botones + / − con etiqueta accesible',
+    botonesFaltan.length === 0,
+    botonesFaltan.length ? `faltan: ${botonesFaltan.join(', ')}` : `${BOTONES_CONTADOR.length} botones`
+  );
+
+  record(
+    'hay un atajo al resultado en móvil',
+    /Ver mi presupuesto/.test(texto),
+    null
   );
 
   const atraccionesFaltan = ATRACCIONES.filter((a) => !texto.includes(normalizar(a.nombre)));
@@ -360,17 +397,27 @@ async function comprobarDeterminismo(baseUrl) {
     fetch(`${baseUrl}${RUTA}`).then((r) => r.text()),
     fetch(`${baseUrl}${RUTA}`).then((r) => r.text()),
   ]);
+  // El ancla cambió con el rediseño: el bloque grande del resultado se titula
+  // «Total para el grupo». Se sigue midiendo lo mismo, la cifra servida.
   const extraer = (html) => {
-    const t = aTexto(html);
-    const m = t.match(/Presupuesto orientativo\s+([^A-Z]{0,40})/);
+    const m = aTexto(html).match(/Total para el grupo\s+([0-9][^A-Za-z]{0,30}€)/);
     return m ? m[1].trim() : null;
   };
   const ra = extraer(a);
   const rb = extraer(b);
   record(
-    'dos peticiones idénticas devuelven el mismo resultado',
+    'dos peticiones idénticas devuelven el mismo total',
     !!ra && ra === rb,
     ra && rb ? `"${ra}" / "${rb}"` : 'no se pudo extraer el resultado'
+  );
+
+  // Y, más fuerte que una sola cifra: el texto entero de la página debe ser
+  // idéntico entre dos peticiones. Si algo introdujera aleatoriedad o
+  // dependiera del reloj, aparecería aquí aunque el total no cambiara.
+  record(
+    'dos peticiones idénticas devuelven la misma página',
+    aTexto(a) === aTexto(b),
+    null
   );
 }
 

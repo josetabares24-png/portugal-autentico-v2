@@ -30,9 +30,15 @@ interface AttractionTicketLinkProps {
   productId: string;
   /** Nombre de la atracción tal y como se llama en la calculadora. */
   nombre: string;
+  /**
+   * Texto visible corto, para cuando el nombre de la atracción ya está justo
+   * al lado y repetirlo sería ruido. El nombre completo se conserva siempre
+   * para lectores de pantalla, que no ven esa proximidad visual.
+   */
+  etiqueta?: string;
 }
 
-export function AttractionTicketLink({ productId, nombre }: AttractionTicketLinkProps) {
+export function AttractionTicketLink({ productId, nombre, etiqueta }: AttractionTicketLinkProps) {
   const product = findProductById(productId);
   const link = product ? resolveBookingLink(product, 'article') : null;
 
@@ -56,7 +62,14 @@ export function AttractionTicketLink({ productId, nombre }: AttractionTicketLink
         })
       }
     >
-      Ver entradas para {nombre}
+      {etiqueta ? (
+        <>
+          <span aria-hidden="true">{etiqueta}</span>
+          <span className="sr-only">Ver entradas para {nombre}</span>
+        </>
+      ) : (
+        <>Ver entradas para {nombre}</>
+      )}
       <span aria-hidden="true"> ↗</span>
       <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
     </a>
