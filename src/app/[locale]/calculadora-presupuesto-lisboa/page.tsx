@@ -1,11 +1,14 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from '@/components/Icon';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import { AttractionTicketLink } from '@/components/afiliados/AttractionTicketLink';
+import { BudgetDonut, categoriaDominante } from '@/components/calculadora/BudgetDonut';
+import { BudgetMobileDock } from '@/components/calculadora/BudgetMobileDock';
+import { BudgetOptimizer } from '@/components/calculadora/BudgetOptimizer';
 import {
   ATRACCIONES,
   BUDGET_ASSUMPTIONS,
@@ -17,10 +20,12 @@ import {
   calculateLisbonBudget,
   formatRango,
   normalizarImporte,
+  type BudgetInput,
   type NivelAlojamiento,
   type NivelComida,
   type NivelTransporte,
 } from '@/lib/budget-calculator';
+import { generarSugerencias, type Sugerencia } from '@/lib/budget-optimizer';
 
 /*
  * /calculadora-presupuesto-lisboa
@@ -367,7 +372,15 @@ export default function CalculadoraPresupuestoPage() {
   const [excursionSintra, setExcursionSintra] = useState(false);
   const [vuelos, setVuelos] = useState('');
 
+  // Optimizador: panel abierto, último cambio aplicado y el input previo para
+  // poder deshacerlo. Un solo paso atrás, no un historial.
+  const [optimizadorAbierto, setOptimizadorAbierto] = useState(false);
+  const [ultimaAplicada, setUltimaAplicada] = useState<string | null>(null);
+  const [inputAnterior, setInputAnterior] = useState<BudgetInput | null>(null);
+
   const resultadoRef = useRef<HTMLDivElement>(null);
+  const optimizadorRef = useRef<HTMLDivElement>(null);
+  const [resultadoVisible, setResultadoVisible] = useState(false);
 
   function cambiarDias(nuevos: number) {
     setDiasEstado(nuevos);
@@ -385,27 +398,36 @@ export default function CalculadoraPresupuestoPage() {
     );
   }
 
-  function irAlResultado() {
-    resultadoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    resultadoRef.current?.focus({ preventScroll: true });
+  /** `true` si el sistema pide menos movimiento. Se consulta al vuelo. */
+  function prefiereMenosMovimiento(): boolean {
+    if (typeof window === 'undefined' || !window.matchMedia) return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  const resultado = useMemo(
-    () =>
-      calculateLisbonBudget({
-        dias,
-        noches,
-        personas,
-        alojamiento:
-          modoAlojamiento === 'propio'
-            ? { modo: 'propio', total: normalizarImporte(alojamientoPropio) }
-            : { modo: 'estimado', nivel: nivelAlojamiento },
-        comida,
-        transporte,
-        atracciones,
-        excursionSintra,
-        vuelosTotal: normalizarImporte(vuelos),
-      }),
+  const irAlResultado = useCallback((foco: 'panel' | 'optimizador' = 'panel') => {
+    const destino = foco === 'optimizador' ? optimizadorRef.current : resultadoRef.current;
+    destino?.scrollIntoView({
+      behavior: prefiereMenosMovimiento() ? 'auto' : 'smooth',
+      block: 'start',
+    });
+    resultadoRef.current?.focus({ preventScroll: true });
+  }, []);
+
+  const inputActual: BudgetInput = useMemo(
+    () => ({
+      dias,
+      noches,
+      personas,
+      alojamiento:
+        modoAlojamiento === 'propio'
+          ? { modo: 'propio', total: normalizarImporte(alojamientoPropio) }
+          : { modo: 'estimado', nivel: nivelAlojamiento },
+      comida,
+      transporte,
+      atracciones,
+      excursionSintra,
+      vuelosTotal: normalizarImporte(vuelos),
+    }),
     [
       dias,
       noches,
@@ -421,10 +443,65 @@ export default function CalculadoraPresupuestoPage() {
     ]
   );
 
+  const resultado = useMemo(() => calculateLisbonBudget(inputActual), [inputActual]);
+  const sugerencias = useMemo(() => generarSugerencias(inputActual), [inputActual]);
+
+  /**
+   * Lleva un `BudgetInput` completo de vuelta al estado de la interfaz. Sólo
+   * toca lo que el optimizador puede cambiar; los días, las noches y las
+   * atracciones se quedan como estén.
+   */
+  const aplicarInput = useCallback((input: BudgetInput) => {
+    if (input.alojamiento.modo === 'estimado') {
+      setModoAlojamiento('estimado');
+      setNivelAlojamiento(input.alojamiento.nivel);
+    }
+    setComida(input.comida);
+    setTransporte(input.transporte);
+  }, []);
+
+  function aplicarSugerencia(sugerencia: Sugerencia) {
+    setInputAnterior(inputActual);
+    setUltimaAplicada(sugerencia.titulo);
+    aplicarInput(sugerencia.nuevoInput);
+  }
+
+  function deshacer() {
+    if (!inputAnterior) return;
+    aplicarInput(inputAnterior);
+    setInputAnterior(null);
+    setUltimaAplicada(null);
+  }
+
+  function abrirOptimizador() {
+    setOptimizadorAbierto(true);
+    irAlResultado('optimizador');
+  }
+
+  /*
+   * El dock inferior sobra cuando el panel completo ya está en pantalla:
+   * serían dos resultados compitiendo. Se observa el panel y se esconde
+   * mientras se vea. Si el navegador no trae IntersectionObserver, el dock se
+   * queda visible: mejor de más que de menos.
+   */
+  useEffect(() => {
+    const panel = resultadoRef.current;
+    if (!panel || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entrada]) => setResultadoVisible(entrada.isIntersecting),
+      { rootMargin: '-80px 0px -120px 0px' }
+    );
+    observer.observe(panel);
+    return () => observer.disconnect();
+  }, []);
+
   const sintraMarcadas = resultado.atraccionesSeleccionadas.filter((a) => a.zona === 'sintra');
   const conEntradas = resultado.atraccionesSeleccionadas.filter((a) => a.bookingProductId);
   const sinEntradas = resultado.atraccionesSeleccionadas.filter((a) => !a.bookingProductId);
   const consejo = elegirConsejo({ atracciones: atracciones.length, noches, dias });
+  const dominante = categoriaDominante(resultado.categorias);
+  const importeVuelos = normalizarImporte(vuelos);
 
   const resumenAlojamiento =
     modoAlojamiento === 'propio'
@@ -446,6 +523,31 @@ export default function CalculadoraPresupuestoPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/*
+        Dos microanimaciones y nada más: la cifra entra con un fundido de
+        180 ms cuando cambia —lleva `key`, así que React la vuelve a montar— y
+        los tramos del anillo se mueven con una transición corta. Van aquí, en
+        un `style` de la página, para no meter reglas de una sola página en
+        globals.css. Con `prefers-reduced-motion` se desactivan las dos.
+      */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+@keyframes budgetCifraEntra {
+  from { opacity: 0; transform: scale(0.985); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.budget-cifra { animation: budgetCifraEntra 180ms ease-out both; }
+.budget-donut-segmento {
+  transition: stroke-dasharray 220ms ease-out, stroke-dashoffset 220ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .budget-cifra { animation: none; }
+  .budget-donut-segmento { transition: none; }
+}`,
+        }}
       />
 
       {/*
@@ -721,7 +823,7 @@ export default function CalculadoraPresupuestoPage() {
                 */}
                 <button
                   type="button"
-                  onClick={irAlResultado}
+                  onClick={() => irAlResultado('panel')}
                   className="btn-primary w-full justify-center py-3.5 text-base lg:hidden"
                 >
                   Ver mi presupuesto
@@ -742,9 +844,15 @@ export default function CalculadoraPresupuestoPage() {
                 {/* Cabecera: el total manda */}
                 <div className="bg-night px-6 py-6 text-white md:px-7">
                   <p className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                    Así queda tu viaje
+                  </p>
+                  <p className="mt-3 font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
                     Total para el grupo
                   </p>
-                  <p className="mt-1.5 font-display text-[2rem] font-semibold leading-none md:text-[2.5rem]">
+                  <p
+                    key={`total-${formatRango(resultado.total)}`}
+                    className="budget-cifra mt-1 font-display text-[2rem] font-semibold leading-none md:text-[2.5rem]"
+                  >
                     {formatRango(resultado.total)}
                   </p>
                   <p className="mt-3 border-t border-white/15 pt-3 font-body text-sm text-white/85">
@@ -766,8 +874,36 @@ export default function CalculadoraPresupuestoPage() {
                     {resumenAlojamiento}
                   </p>
 
+                  {/* Reparto del presupuesto */}
+                  {resultado.total.max > 0 && (
+                    <div className="mt-5 border-t border-border-soft pt-4">
+                      <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
+                        En qué se va
+                      </p>
+                      <BudgetDonut
+                        categorias={resultado.categorias}
+                        total={resultado.total}
+                        vuelos={importeVuelos > 0 ? importeVuelos : null}
+                      />
+                      {dominante && (
+                        <p className="mt-3 flex items-start gap-2 rounded-lg bg-background-light px-3 py-2 font-body text-xs leading-relaxed text-text-main">
+                          <Icon
+                            name="info"
+                            size={14}
+                            className="mt-0.5 flex-shrink-0 text-terracotta"
+                          />
+                          <span>
+                            Ahora mismo,{' '}
+                            <strong className="font-semibold">{dominante.frase}</strong> es la
+                            partida que más pesa en tu viaje.
+                          </span>
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   {/* Segundo bloque: gasto en destino */}
-                  <div className="mt-4 rounded-lg border border-border-soft bg-background-light px-4 py-3">
+                  <div className="mt-5 rounded-lg border border-border-soft bg-background-light px-4 py-3">
                     <div className="flex items-baseline justify-between gap-3">
                       <span className="font-body text-sm font-semibold text-text-main">
                         Gastos en destino
@@ -851,6 +987,20 @@ export default function CalculadoraPresupuestoPage() {
                       )}
                     </div>
                   )}
+
+                  {/* Optimizador */}
+                  <div ref={optimizadorRef} className="mt-5 scroll-mt-24">
+                    <BudgetOptimizer
+                      id="optimizador-presupuesto"
+                      abierto={optimizadorAbierto}
+                      sugerencias={sugerencias}
+                      aplicada={ultimaAplicada}
+                      puedeDeshacer={inputAnterior !== null}
+                      onToggle={() => setOptimizadorAbierto((v) => !v)}
+                      onAplicar={aplicarSugerencia}
+                      onDeshacer={deshacer}
+                    />
+                  </div>
 
                   {/* Consejo contextual */}
                   <div className="mt-5 flex items-start gap-2.5 border-t border-border-soft pt-4">
@@ -990,8 +1140,8 @@ export default function CalculadoraPresupuestoPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-background-light pb-14">
+      {/* FAQ. El padding inferior extra en móvil deja sitio al dock fijo. */}
+      <section className="bg-background-light pb-32 lg:pb-14">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="mb-5 font-display text-xl font-semibold text-text-main">
             Preguntas frecuentes
@@ -1021,6 +1171,13 @@ export default function CalculadoraPresupuestoPage() {
           </p>
         </div>
       </section>
+
+      <BudgetMobileDock
+        total={resultado.total}
+        porPersona={resultado.porPersona}
+        visible={!resultadoVisible}
+        onOptimizar={abrirOptimizador}
+      />
     </main>
   );
 }

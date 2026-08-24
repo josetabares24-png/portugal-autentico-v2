@@ -14,8 +14,9 @@
     "smoke:free-tours": "node scripts/smoke-free-tours.mjs",
     "smoke:sitemap": "node scripts/smoke-sitemap.mjs",
     "smoke:blog": "node scripts/smoke-blog.mjs",
-    "smoke:calculadora": "node scripts/smoke-calculadora.mjs",
-    "test:budget": "node scripts/test-budget-calculator.mjs"
+    "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
+    "test:budget": "node scripts/test-budget-calculator.mjs",
+    "test:optimizer": "node --import ./scripts/register-ts.mjs scripts/test-budget-optimizer.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",

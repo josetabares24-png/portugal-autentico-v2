@@ -107,8 +107,17 @@ const PROMESAS_PROHIBIDAS = [
   'sin sorpresas',
   'mejor precio',
   'ahorra ',
+  'ahorras',
   'compra ya',
+  'más barato garantizado',
+  'inteligencia artificial',
 ];
+
+/**
+ * Reclamos de «producto con IA» que hay que buscar como palabra suelta: como
+ * subcadena, «ia» aparece dentro de familia, guía o día.
+ */
+const PALABRAS_PROHIBIDAS = [/\bIA\b/, /\bAI\b/i, /\bsmart\b/i, /\balgorítmic/i];
 
 function log(...args) {
   console.log(...args);
@@ -268,6 +277,49 @@ async function comprobarPagina(baseUrl) {
     null
   );
 
+  // --- Piezas nuevas: anillo, «qué pesa más», optimizador y dock ---
+  const segmentos = (html.match(/class="budget-donut-segmento"/g) || []).length;
+  record(
+    'el anillo de reparto se sirve renderizado',
+    segmentos >= 3,
+    `${segmentos} tramos`
+  );
+  record(
+    'el anillo tiene alternativa en texto y no depende del color',
+    /Reparto aproximado del presupuesto/i.test(texto),
+    null
+  );
+  record(
+    'el anillo declara que es proporción, no importes',
+    /Proporción aproximada, no importes/i.test(texto),
+    null
+  );
+  record(
+    'dice qué partida pesa más',
+    /es la partida que más pesa/i.test(texto),
+    null
+  );
+  record(
+    'el optimizador está en la página',
+    /Quiero gastar menos/.test(texto) && /aria-controls="optimizador-presupuesto"/.test(html),
+    null
+  );
+  record(
+    'el dock móvil existe y no aparece en escritorio',
+    /Tu presupuesto/.test(texto) && /fixed inset-x-0 bottom-0[^"]*lg:hidden/.test(html),
+    null
+  );
+  record(
+    'el dock respeta el área segura del dispositivo',
+    /safe-area-inset-bottom/.test(html),
+    null
+  );
+  record(
+    'las microanimaciones respetan prefers-reduced-motion',
+    /prefers-reduced-motion: reduce/.test(html),
+    null
+  );
+
   const atraccionesFaltan = ATRACCIONES.filter((a) => !texto.includes(normalizar(a.nombre)));
   record(
     'el selector ofrece todas las atracciones del catálogo',
@@ -358,10 +410,16 @@ async function comprobarPagina(baseUrl) {
   // --- Nada que prometa exactitud ---
   const enMinusculas = texto.toLowerCase();
   const promesas = PROMESAS_PROHIBIDAS.filter((p) => enMinusculas.includes(p));
+  const palabras = PALABRAS_PROHIBIDAS.filter((p) => p.test(texto)).map(String);
   record(
     'no promete precisión que no tiene',
     promesas.length === 0,
     promesas.length ? `aparece: ${promesas.join(', ')}` : null
+  );
+  record(
+    'no se vende como producto con IA',
+    palabras.length === 0,
+    palabras.length ? `aparece: ${palabras.join(', ')}` : null
   );
 
   // --- Datos estructurados ---
