@@ -38,7 +38,7 @@ import {
   calculateLisbonBudget,
   formatRango,
 } from '../src/lib/budget-calculator.ts';
-import { getRecommendedBudget } from '../src/lib/budget-recommended.ts';
+import { getRecommendedBudget, recomendadoEntrada } from '../src/lib/budget-recommended.ts';
 
 const RUTA = '/calculadora-presupuesto-lisboa';
 const BRAND = 'Estaba en Lisboa';
@@ -441,6 +441,26 @@ async function comprobarPagina(baseUrl) {
   );
 
   const casillas = (html.match(/type="checkbox"/g) || []).length;
+  /*
+   * Marcar una casilla movía «Entradas» sin decir cuánto. Cada tarjeta lleva
+   * ahora la cifra que la calculadora usa, y sale del mismo helper que el
+   * presupuesto: si alguien la escribe a mano en el componente, esto lo caza.
+   */
+  const sinCifra = DESTACADAS.filter(
+    (a) => !texto.includes(normalizar(`Estimamos ${recomendadoEntrada(a.clase)} € / persona`))
+  );
+  record(
+    'cada atracción destacada dice cuánto contamos por ella',
+    sinCifra.length === 0,
+    sinCifra.length ? `sin cifra: ${sinCifra.map((a) => a.id).join(', ')}` : null
+  );
+
+  record(
+    'las cifras de entrada no se presentan como tarifas oficiales',
+    /no tarifas oficiales/i.test(texto) && !/Precio:|Entrada cuesta|Tarifa oficial/i.test(texto),
+    null
+  );
+
   record(
     'hay una casilla por atracción destacada, más la del día en Sintra',
     casillas >= DESTACADAS.length + 1,

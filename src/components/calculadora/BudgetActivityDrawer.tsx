@@ -3,6 +3,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import Icon from '@/components/Icon';
 import { ATRACCIONES, type Atraccion } from '@/lib/budget-calculator';
+import { recomendadoEntrada } from '@/lib/budget-recommended';
 
 /*
  * «Ver más actividades»: el resto del catálogo, sin meterlo en el formulario.
@@ -58,6 +59,9 @@ function Fila({
         </span>
         <span className="mt-0.5 block font-body text-[12px] leading-relaxed text-text-secondary">
           {atraccion.desc}
+        </span>
+        <span className="mt-1 block font-body text-[11px] font-semibold text-text-main">
+          Estimamos {recomendadoEntrada(atraccion.clase)} € / persona
         </span>
       </span>
     </label>

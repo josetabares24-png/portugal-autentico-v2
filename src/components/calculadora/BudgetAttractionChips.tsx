@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Icon from '@/components/Icon';
 import { ATRACCIONES, type Atraccion } from '@/lib/budget-calculator';
+import { recomendadoEntrada } from '@/lib/budget-recommended';
 import { BudgetActivityDrawer } from './BudgetActivityDrawer';
 
 /*
@@ -54,7 +55,7 @@ function Chip({
   return (
     <label
       title={atraccion.desc}
-      className={`relative flex min-h-[4rem] cursor-pointer items-center rounded-lg py-2.5 pl-2.5 pr-5 transition-all duration-200 ${
+      className={`relative flex min-h-[4.75rem] cursor-pointer items-center rounded-lg py-2.5 pl-2.5 pr-5 transition-all duration-200 ${
         marcada
           ? 'bg-white shadow-card ring-2 ring-gold'
           : 'border border-border-soft bg-white/60 hover:border-taupe'
@@ -74,8 +75,18 @@ function Chip({
       >
         {marcada && <Icon name="check" size={11} />}
       </span>
-      <span className="font-body text-[13px] font-semibold leading-snug text-text-main">
-        {atraccion.nombre}
+      <span className="min-w-0">
+        <span className="block font-body text-[13px] font-semibold leading-snug text-text-main">
+          {atraccion.nombre}
+        </span>
+        {/*
+          Marcar una casilla movía «Entradas» sin decir cuánto. Ahora la cifra
+          que usamos está junto al nombre, antes de decidir. No se llama
+          «precio» a propósito: es lo que contamos nosotros, no la tarifa.
+        */}
+        <span className="mt-0.5 block font-body text-[11px] leading-snug text-text-secondary">
+          Estimamos {recomendadoEntrada(atraccion.clase)} € / persona
+        </span>
       </span>
     </label>
   );
@@ -197,6 +208,11 @@ export function BudgetAttractionChips({
           )}
         </div>
       )}
+
+      <p className="font-body text-[11px] leading-relaxed text-text-secondary">
+        Estas cantidades son estimaciones para ayudarte a calcular el viaje, no tarifas
+        oficiales. Comprueba el precio actual antes de reservar.
+      </p>
 
       {panelAbierto && (
         <BudgetActivityDrawer
