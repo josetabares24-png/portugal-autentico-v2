@@ -367,13 +367,37 @@ async function comprobarPagina(baseUrl) {
     null
   );
 
-  const atraccionesFaltan = ATRACCIONES.filter((a) => !texto.includes(normalizar(a.nombre)));
+  /*
+   * El formulario enseña las destacadas y sólo las destacadas. Las demás viven
+   * detrás de «Ver más actividades», y que NO estén en el HTML inicial no es
+   * un descuido: es exactamente el punto del panel. Por eso aquí se comprueban
+   * las dos mitades, y la segunda en negativo.
+   */
+  const DESTACADAS = ATRACCIONES.filter((a) => a.destacada);
+  const EXTRA = ATRACCIONES.filter((a) => !a.destacada);
+
+  const destacadasFaltan = DESTACADAS.filter((a) => !texto.includes(normalizar(a.nombre)));
   record(
-    'el selector ofrece todas las atracciones del catálogo',
-    atraccionesFaltan.length === 0,
-    atraccionesFaltan.length
-      ? `faltan ${atraccionesFaltan.map((a) => a.id).join(', ')}`
-      : `${ATRACCIONES.length} atracciones`
+    'el formulario ofrece todas las atracciones destacadas',
+    destacadasFaltan.length === 0,
+    destacadasFaltan.length
+      ? `faltan ${destacadasFaltan.map((a) => a.id).join(', ')}`
+      : `${DESTACADAS.length} destacadas`
+  );
+
+  const extraColadas = EXTRA.filter((a) => texto.includes(normalizar(a.nombre)));
+  record(
+    'las actividades adicionales no cargan el formulario',
+    extraColadas.length === 0,
+    extraColadas.length
+      ? `se han colado: ${extraColadas.map((a) => a.id).join(', ')}`
+      : `${EXTRA.length} detrás del panel`
+  );
+
+  record(
+    'hay un «Ver más actividades» si hay algo detrás',
+    EXTRA.length === 0 ? !/Ver más actividades/.test(texto) : /Ver más actividades/.test(texto),
+    `${EXTRA.length} adicionales`
   );
 
   /*
@@ -385,7 +409,7 @@ async function comprobarPagina(baseUrl) {
     /data-control="atracciones"[\s\S]*?(?=<\/div><\/div><\/section>|Añadir transporte)/
   );
   const selector = bloqueSelector ? bloqueSelector[0] : '';
-  const enSelector = ATRACCIONES.filter(
+  const enSelector = DESTACADAS.filter(
     (a) => a.zona === 'lisboa' && !normalizar(aTexto(selector)).includes(normalizar(a.nombre))
   );
   record(
@@ -410,16 +434,10 @@ async function comprobarPagina(baseUrl) {
     null
   );
 
-  record(
-    'no hay un «Ver más lugares» que no lleve a ninguna parte',
-    !/Ver más lugares/.test(texto) || /Más lugares/.test(texto),
-    null
-  );
-
   const casillas = (html.match(/type="checkbox"/g) || []).length;
   record(
-    'hay una casilla por atracción, más la del día en Sintra',
-    casillas >= ATRACCIONES.length + 1,
+    'hay una casilla por atracción destacada, más la del día en Sintra',
+    casillas >= DESTACADAS.length + 1,
     `${casillas} casillas`
   );
 

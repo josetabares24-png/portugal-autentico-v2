@@ -17,7 +17,8 @@
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",
     "test:optimizer": "node --import ./scripts/register-ts.mjs scripts/test-budget-optimizer.mjs",
-    "test:presupuesto": "node --import ./scripts/register-ts.mjs scripts/test-presupuesto.mjs"
+    "test:presupuesto": "node --import ./scripts/register-ts.mjs scripts/test-presupuesto.mjs",
+    "test:actividades": "node --import ./scripts/register-ts.mjs scripts/test-actividades.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",

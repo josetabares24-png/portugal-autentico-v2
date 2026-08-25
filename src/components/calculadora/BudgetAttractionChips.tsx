@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Icon from '@/components/Icon';
 import { ATRACCIONES, type Atraccion } from '@/lib/budget-calculator';
+import { BudgetActivityDrawer } from './BudgetActivityDrawer';
 
 /*
  * Selector de lugares de pago.
@@ -17,33 +19,18 @@ import { ATRACCIONES, type Atraccion } from '@/lib/budget-calculator';
  * tarjeta: además de ser redundante, ese distintivo se comía el ancho que
  * necesitaba el nombre.
  *
- * **Preparado para crecer.** La lista que se pinta sale de `DESTACADAS_IDS`,
- * no de `ATRACCIONES` directamente. Hoy coinciden —las ocho son las ocho— y
- * por eso no aparece ningún «Ver más lugares»: un botón que abre un panel
- * vacío es peor que no tenerlo. El día que el catálogo tenga quince, las que
- * no estén destacadas caen solas en `resto` y el botón aparece sin tocar el
- * formulario.
+ * **El formulario no crece con el catálogo.** Aquí sólo se pintan las
+ * destacadas, que hoy son ocho. Las demás viven detrás de «Ver más
+ * actividades», en un panel: si entraran en la columna, esto dejaría de ser un
+ * selector y pasaría a ser un obstáculo entre la persona y su presupuesto.
+ * Cuáles son destacadas lo dice el propio catálogo, con `destacada`, no una
+ * lista escrita aquí: así una atracción nueva no se cuela delante sin que
+ * alguien lo haya decidido al añadirla.
  *
  * El estado vive en un único sitio, `atracciones[]` de la página, así que una
- * atracción no puede quedar marcada dos veces aunque algún día se pinte en
- * dos listas.
+ * atracción no puede quedar marcada dos veces aunque se pinte en dos listas, y
+ * lo que se marca en el panel sigue marcado al cerrarlo.
  */
-
-/**
- * Las que se ven de entrada. Escritas a mano y no derivadas de `ATRACCIONES`:
- * es justo lo que hace que una atracción nueva del catálogo no se cuele en el
- * bloque principal sin que alguien lo decida.
- */
-const DESTACADAS_IDS: readonly string[] = [
-  'castelo-sao-jorge',
-  'mosteiro-jeronimos',
-  'torre-belem',
-  'maat',
-  'oceanario',
-  'palacio-pena',
-  'quinta-regaleira',
-  'castelo-mouros',
-];
 
 function Chip({
   atraccion,
@@ -139,11 +126,15 @@ export function BudgetAttractionChips({
   /** Va debajo del grupo de Sintra: el transporte de la excursión. */
   children?: React.ReactNode;
 }) {
-  const destacadas = ATRACCIONES.filter((a) => DESTACADAS_IDS.includes(a.id));
-  const resto = ATRACCIONES.filter((a) => !DESTACADAS_IDS.includes(a.id));
+  const [panelAbierto, setPanelAbierto] = useState(false);
+
+  const destacadas = ATRACCIONES.filter((a) => a.destacada);
+  const resto = ATRACCIONES.filter((a) => !a.destacada);
 
   const lisboa = destacadas.filter((a) => a.zona === 'lisboa');
   const sintra = destacadas.filter((a) => a.zona === 'sintra');
+
+  const extraMarcadas = resto.filter((a) => seleccionadas.includes(a.id));
 
   return (
     <div data-control="atracciones" className="space-y-4">
@@ -164,17 +155,55 @@ export function BudgetAttractionChips({
       </Grupo>
 
       {/*
-        Hoy `resto` está vacío y esto no se pinta. Está escrito para que el
-        día que el catálogo crezca no haya que rehacer nada; y está detrás de
-        una condición para que nadie se encuentre con un botón que no lleva a
-        ninguna parte.
+        Sólo si hay algo detrás. Un botón que abre un panel vacío es peor que
+        no tener botón, así que si algún día las destacadas son el catálogo
+        entero, esto desaparece solo.
       */}
       {resto.length > 0 && (
-        <Grupo
-          titulo="Más lugares"
+        <div>
+          <button
+            type="button"
+            onClick={() => setPanelAbierto(true)}
+            className="flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-taupe/60 py-2.5 font-body text-[13px] font-semibold text-text-main transition-colors duration-150 hover:border-taupe hover:bg-white/60"
+          >
+            <Icon name="attractions" size={15} />
+            Ver más actividades
+          </button>
+
+          {/*
+            Lo que se marca en el panel tiene que verse también aquí fuera: si
+            no, alguien cierra, ve ocho tarjetas sin marcar y cree que se ha
+            perdido su selección. Van con su nombre completo y se pueden quitar
+            desde aquí sin volver a abrir el panel.
+          */}
+          {extraMarcadas.length > 0 && (
+            <ul className="mt-2 flex flex-wrap gap-1.5">
+              {extraMarcadas.map((atraccion) => (
+                <li key={atraccion.id}>
+                  <button
+                    type="button"
+                    onClick={() => onAlternar(atraccion.id)}
+                    className="flex min-h-8 items-center gap-1.5 rounded-full bg-white py-1 pl-3 pr-2 font-body text-[12px] font-semibold text-text-main ring-1 ring-gold"
+                  >
+                    {atraccion.nombre}
+                    <span className="sr-only">— quitar</span>
+                    <span aria-hidden="true" className="text-text-secondary">
+                      <Icon name="close" size={13} />
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+
+      {panelAbierto && (
+        <BudgetActivityDrawer
           atracciones={resto}
           seleccionadas={seleccionadas}
           onAlternar={onAlternar}
+          onCerrar={() => setPanelAbierto(false)}
         />
       )}
     </div>

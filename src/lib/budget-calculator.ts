@@ -236,15 +236,36 @@ export interface Atraccion {
    * exactamente igual: nunca se enlaza a un producto parecido.
    */
   bookingProductId?: string;
+  /**
+   * Si sale directamente en el formulario. Las destacadas son las que casi
+   * todo el mundo se plantea; el resto vive detrás de «Ver más actividades»
+   * para que el formulario no se convierta en una lista interminable.
+   *
+   * Es un dato del catálogo y no de la interfaz a propósito: quien añade una
+   * atracción decide aquí si merece estar delante, en el mismo sitio donde
+   * decide su tramo y su zona.
+   */
+  destacada: boolean;
 }
 
 /**
- * Las atracciones que se pueden marcar. Todas son sitios de pago que ya
- * aparecen en los itinerarios o en las guías del sitio; no es un catálogo de
- * todo lo visitable de Lisboa, ni pretende serlo.
+ * Las atracciones que se pueden marcar. Todas son sitios o experiencias de
+ * pago que ya aparecen en los itinerarios o en las guías del sitio; no es un
+ * catálogo de todo lo visitable de Lisboa, ni pretende serlo.
  *
- * Miradores, barrios, iglesias de acceso libre y calles no están aquí porque
- * no cuestan nada: entrarían con rango 0 y sólo alargarían la lista.
+ * Tres reglas para decidir si algo entra aquí:
+ *
+ *   1. **Se paga.** Miradores, barrios, iglesias de acceso libre y parques no
+ *      están: entrarían con rango 0 y sólo alargarían la lista.
+ *   2. **No lo cuenta ya otra categoría.** El tranvía 28 y el ferry a Cacilhas
+ *      son transporte urbano y ya van en su partida; un tour gastronómico se
+ *      solaparía con la comida. Contarlos aquí sería contarlos dos veces.
+ *   3. **Se sabe qué es.** El Elevador de Santa Justa se quedó fuera porque su
+ *      ficha advierte de que conviene comprobar si está operativo: una
+ *      calculadora no puede sumar una entrada que quizá no se pueda comprar.
+ *
+ * El tramo —baja, media, alta— es una aproximación editorial nuestra, no un
+ * precio. Aquí no se escribe ninguna tarifa.
  */
 export const ATRACCIONES: readonly Atraccion[] = [
   {
@@ -254,6 +275,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     clase: 'media',
     desc: 'Vistas amplias sobre el centro histórico y el Tajo',
     bookingProductId: 'castelo-sao-jorge',
+    destacada: true,
   },
   {
     id: 'mosteiro-jeronimos',
@@ -261,6 +283,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     zona: 'lisboa',
     clase: 'media',
     desc: 'El claustro manuelino de Belém',
+    destacada: true,
   },
   {
     id: 'torre-belem',
@@ -268,6 +291,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     zona: 'lisboa',
     clase: 'media',
     desc: 'La torre fortificada junto al Tajo, en Belém',
+    destacada: true,
   },
   {
     id: 'maat',
@@ -275,6 +299,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     zona: 'lisboa',
     clase: 'baja',
     desc: 'Arte y arquitectura junto al Tajo, con su cubierta transitable',
+    destacada: true,
   },
   {
     id: 'oceanario',
@@ -283,6 +308,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     clase: 'alta',
     desc: 'En Parque das Nações; una opción cómoda para un día de lluvia',
     bookingProductId: 'oceanario',
+    destacada: true,
   },
   {
     id: 'palacio-pena',
@@ -291,6 +317,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     clase: 'alta',
     desc: 'El palacio de colores de Sintra, con entrada por franja horaria',
     bookingProductId: 'sintra-palacio-pena',
+    destacada: true,
   },
   {
     id: 'quinta-regaleira',
@@ -298,6 +325,7 @@ export const ATRACCIONES: readonly Atraccion[] = [
     zona: 'sintra',
     clase: 'media',
     desc: 'El pozo iniciático y sus jardines, también en Sintra',
+    destacada: true,
   },
   {
     id: 'castelo-mouros',
@@ -305,6 +333,39 @@ export const ATRACCIONES: readonly Atraccion[] = [
     zona: 'sintra',
     clase: 'baja',
     desc: 'Las murallas sobre Sintra, con vistas abiertas sobre el valle',
+    destacada: true,
+  },
+  /*
+   * A partir de aquí, las que no salen en el formulario. Las tres vienen del
+   * catálogo real de /actividades y son de pago; las dos primeras tienen
+   * producto exacto en `bookings.ts`, la tercera no, y por eso no llevará
+   * ningún botón de compra.
+   */
+  {
+    id: 'crucero-tajo',
+    nombre: 'Paseo en barco por el Tajo',
+    zona: 'lisboa',
+    clase: 'media',
+    desc: 'Lisboa vista desde el agua; los de última hora cogen el atardecer',
+    bookingProductId: 'crucero-tajo',
+    destacada: false,
+  },
+  {
+    id: 'fado-alfama',
+    nombre: 'Noche de fado en Alfama',
+    zona: 'lisboa',
+    clase: 'alta',
+    desc: 'Una casa de fado; varias piden consumo mínimo en vez de entrada',
+    bookingProductId: 'fado',
+    destacada: false,
+  },
+  {
+    id: 'cristo-rei',
+    nombre: 'Cristo Rei',
+    zona: 'lisboa',
+    clase: 'baja',
+    desc: 'El mirador de Almada, al otro lado del río. El ferry va en transporte',
+    destacada: false,
   },
 ] as const;
 
