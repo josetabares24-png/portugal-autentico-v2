@@ -2,81 +2,58 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { guidePacks } from '@/data/guide-packs';
-import { activities } from '@/data/activities';
-import { ActivityCard } from '@/components/actividades/ActivityCard';
+import Icon from '@/components/Icon';
 import { PageIntro } from '@/components/PageIntro';
 
-type BudgetType = 'low' | 'mid' | 'high';
-
-const RECOMMENDED_ACTIVITY_SLUGS: Record<BudgetType, string[]> = {
-  low: ['miradouro-santa-luzia', 'free-walking-tour-centro', 'tasca-tradicional'],
-  mid: ['castelo-sao-jorge', 'tranvia-28', 'pasteis-de-belem'],
-  high: ['sintra-dia-completo', 'crucero-atardecer-tajo', 'fado-en-alfama'],
-};
-
-const BUDGET_OPTIONS: Array<{ id: BudgetType; label: string; desc: string }> = [
-  { id: 'low', label: 'Mochilero', desc: 'Hostales y tascas locales' },
-  { id: 'mid', label: 'Medio', desc: 'Hoteles céntricos y restaurantes' },
-  { id: 'high', label: 'Confort', desc: 'Hoteles boutique y gourmet' },
-];
-
 /*
- * Nota sobre free tours dentro del bloque de actividades, distinta según el
- * perfil. Para "Mochilero" no es una sugerencia comercial: con 10 € al día
- * para actividades, un free tour es la respuesta correcta a la pregunta que
- * la persona acaba de hacer. Para los otros dos perfiles se plantea como lo
- * que es, una forma de orientarse el primer día.
+ * Esta página fue durante mucho tiempo una segunda calculadora de presupuesto:
+ * tres perfiles (Mochilero / Medio / Confort), dos sliders y un número único
+ * del tipo «792 €». Se ha retirado por dos razones.
+ *
+ * La primera es que había dos calculadoras distintas en el mismo sitio, con
+ * modelos de coste distintos, y podían contradecirse. La de verdad vive en
+ * /calculadora-presupuesto-lisboa, trabaja con rangos y explica de dónde sale
+ * cada partida. Ésta daba una cifra cerrada que no tenía cómo sostener.
+ *
+ * La segunda es que un número único con dos decimales de aparente precisión es
+ * la clase de dato que la gente apunta y luego reclama. Un rango no.
+ *
+ * Lo que queda aquí es lo que esta URL debería haber sido siempre: un punto de
+ * partida que reparte a los tres caminos reales —presupuesto, itinerario y
+ * actividades— y, debajo, el servicio 1:1, que sigue igual porque nunca
+ * dependió de la calculadora.
  */
-const FREE_TOUR_NOTA: Record<BudgetType, string> = {
-  low: 'Con este presupuesto para actividades, un free tour es la forma más rentable de empezar: pagas al final lo que consideres y te llevas la orientación que hace que el resto de días cundan más.',
-  mid: 'Si es tu primer día, un free tour por el centro te sitúa la ciudad antes de gastar en entradas. Se paga al final lo que consideres.',
-  high: 'Aunque no sea la parte más cara de tu viaje, un free tour el primer día te ahorra las horas de prueba y error que cuesta entender cómo encaja Lisboa.',
-};
 
-const BUDGETS: Record<BudgetType, { alojamiento: number; comida: number; transporte: number; actividades: number }> = {
-  low: { alojamiento: 20, comida: 25, transporte: 7, actividades: 10 },
-  mid: { alojamiento: 60, comida: 40, transporte: 7, actividades: 25 },
-  high: { alojamiento: 120, comida: 80, transporte: 15, actividades: 50 },
-};
-
-function getRecommendedGuideSlug(dias: number): string {
-  if (dias === 1) return 'lisboa-1-dia-lo-esencial';
-  if (dias === 2) return 'lisboa-2-dias-completo';
-  if (dias === 3) return 'lisboa-3-dias-premium';
-  return 'lisboa-full-week';
-}
-
-/*
- * El itinerario de semana completa se retiró: su URL redirige de forma
- * permanente a la guía editorial. Aquí se apunta directo al destino para que
- * la recomendación no dependa del redirect. El registro se mantiene en
- * `guidePacks` porque de ahí sale el título que se muestra al usuario.
- */
-const GUIDE_HREF_OVERRIDES: Record<string, string> = {
-  'lisboa-full-week': '/blog/lisboa-en-7-dias',
-};
-
-function getGuideHref(slug: string): string {
-  return GUIDE_HREF_OVERRIDES[slug] ?? `/itinerarios/${slug}`;
-}
+const CAMINOS = [
+  {
+    icono: 'calculate',
+    titulo: 'Calcula tu presupuesto',
+    descripcion:
+      'Cuántos días, cuántas noches, cuántos sois y qué pensáis visitar. Devuelve un rango, no un precio cerrado, y dice de dónde sale cada partida.',
+    cta: 'Calcular mi presupuesto',
+    href: '/calculadora-presupuesto-lisboa',
+  },
+  {
+    icono: 'route',
+    titulo: 'Elige tu itinerario',
+    descripcion:
+      'Rutas hora a hora según los días que tengas, de uno a siete. Con las distancias reales de una ciudad que sube y baja más de lo que parece en el mapa.',
+    cta: 'Ver itinerarios',
+    href: '/itinerarios',
+  },
+  {
+    icono: 'confirmation_number',
+    titulo: 'Actividades y entradas',
+    descripcion:
+      'Qué merece la pena, qué se puede ver sin pagar y qué conviene reservar con antelación para no quedarte fuera.',
+    cta: 'Ver actividades',
+    href: '/actividades',
+  },
+] as const;
 
 const RITMOS = ['Relajado', 'Equilibrado', 'Intenso'];
 
 export default function PlanificaTuViajePage() {
-  const [tipo, setTipo] = useState<BudgetType>('mid');
-  const [dias, setDias] = useState(3);
-  const [personas, setPersonas] = useState(2);
-
-  const budget = BUDGETS[tipo];
-  const totalPersonaDia = Object.values(budget).reduce((a, b) => a + b, 0);
-  const totalViaje = totalPersonaDia * dias * personas;
-  const recommendedSlug = getRecommendedGuideSlug(dias);
-  const recommendedGuide = guidePacks[recommendedSlug];
-  const recommendedActivities = RECOMMENDED_ACTIVITY_SLUGS[tipo]
-    .map((slug) => activities.find((a) => a.slug === slug))
-    .filter((a): a is NonNullable<typeof a> => Boolean(a));
-
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -123,188 +100,86 @@ export default function PlanificaTuViajePage() {
       <PageIntro
         eyebrow="Planificación"
         title="Planifica tu viaje"
-        description="Recomendación al instante, o si tienes pocos días y quieres aprovecharlos al máximo, te preparo un plan a medida."
+        description="Tres formas de empezar, según lo que tengas por decidir. Y si prefieres no decidir nada, te preparo el plan yo."
       />
 
-      {/* Recomendación instantánea */}
-      <section className="bg-background-light py-20 border-b border-border-soft">
-        <div className="max-w-5xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-8 pb-3 border-b border-border-soft">
-            Recomendación al instante
-          </p>
-          <div className="grid lg:grid-cols-[2fr,1fr] gap-12 items-start">
-            <div className="space-y-10">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Tipo de viaje</p>
-                <div className="grid grid-cols-3 gap-4">
-                  {BUDGET_OPTIONS.map((opt) => (
-                    <button
-                      key={opt.id}
-                      onClick={() => setTipo(opt.id)}
-                      className={`py-4 px-3 rounded-lg text-left transition-all duration-200 ${
-                        tipo === opt.id
-                          ? 'bg-white shadow-card ring-2 ring-gold'
-                          : 'border border-border-soft hover:border-taupe hover:shadow-soft'
-                      }`}
-                    >
-                      <p className="font-semibold text-text-main text-sm mb-1">{opt.label}</p>
-                      <p className="text-text-secondary text-xs">{opt.desc}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
+      {/* Los tres caminos */}
+      <section className="border-b border-border-soft bg-background-light py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-8 border-b border-border-soft pb-3 text-xs uppercase tracking-widest text-text-secondary">
+            Por dónde empezar
+          </h2>
 
-              <div>
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">
-                  Días en Lisboa: <span className="text-terracotta font-bold">{dias}</span>
+          <div className="grid gap-6 md:grid-cols-3">
+            {CAMINOS.map((camino) => (
+              <div
+                key={camino.href}
+                className="card-surface flex flex-col p-6 transition-shadow duration-200 hover:shadow-card"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-night text-gold"
+                >
+                  <Icon name={camino.icono} size={20} />
+                </span>
+                <h3 className="mb-2 font-display text-xl font-semibold text-text-main">
+                  {camino.titulo}
+                </h3>
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-text-secondary">
+                  {camino.descripcion}
                 </p>
-                <input
-                  type="range" min="1" max="14" value={dias}
-                  onChange={(e) => setDias(Number(e.target.value))}
-                  className="w-full h-1 appearance-none cursor-pointer accent-primary bg-border-soft"
-                />
-                <div className="flex justify-between text-xs text-text-secondary mt-1">
-                  <span>1 día</span><span>14 días</span>
-                </div>
+                <Link
+                  href={camino.href}
+                  className="btn-outline w-full justify-center py-2.5 text-sm"
+                >
+                  {camino.cta}
+                </Link>
               </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">
-                  Personas: <span className="text-terracotta font-bold">{personas}</span>
-                </p>
-                <input
-                  type="range" min="1" max="10" value={personas}
-                  onChange={(e) => setPersonas(Number(e.target.value))}
-                  className="w-full h-1 appearance-none cursor-pointer accent-primary bg-border-soft"
-                />
-                <div className="flex justify-between text-xs text-text-secondary mt-1">
-                  <span>1 persona</span><span>10 personas</span>
-                </div>
-              </div>
-
-              <div className="card-surface p-6 border-l-2 border-gold">
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Presupuesto estimado</p>
-                <p className="text-5xl font-bold text-text-main mb-1">{totalViaje} €</p>
-                <p className="text-text-secondary text-sm">{totalPersonaDia} € por persona al día</p>
-                {/*
-                  La cifra de arriba es un promedio de un solo número, que da
-                  una sensación de exactitud que ningún presupuesto de viaje
-                  tiene. La calculadora sí devuelve un rango y explica de dónde
-                  sale cada partida: se enlaza aquí, junto al número, que es
-                  donde surge la duda.
-                */}
-                <div className="mt-4 rounded-lg border border-border-soft bg-background-light p-4">
-                  <p className="text-sm leading-relaxed text-text-secondary">
-                    Es un promedio de un solo número. Para ver entre qué dos cifras se mueve
-                    de verdad —según las noches, dónde duermas y qué pienses visitar— usa la
-                    calculadora.
-                  </p>
-                  <Link
-                    href="/calculadora-presupuesto-lisboa"
-                    className="btn-outline mt-3 w-full justify-center py-2.5 text-sm sm:w-auto"
-                  >
-                    Calcular mi presupuesto
-                  </Link>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-                  Antes de viajar, repasa{' '}
-                  <Link href="/blog/como-pagar-en-portugal" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    cómo pagar en Portugal
-                  </Link>{' '}
-                  para no dejarte parte del presupuesto en comisiones evitables.
-                </p>
-              </div>
-
-              {recommendedGuide && (
-                <div className="border-t border-border-soft pt-6">
-                  <p className="text-sm text-text-secondary mb-3">
-                    Ruta recomendada para {dias} {dias === 1 ? 'día' : 'días'}:
-                  </p>
-                  <Link
-                    href={getGuideHref(recommendedGuide.slug)}
-                    className="text-sm text-terracotta hover:underline underline-offset-2"
-                  >
-                    Ver {recommendedGuide.title} (Gratis) →
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <div className="card-surface p-6 lg:sticky lg:top-24">
-              <p className="text-xs uppercase tracking-widest text-text-secondary mb-5">Tips de ahorro</p>
-              <ul className="space-y-4 text-sm text-text-secondary">
-                {[
-                  'Compra entradas online para evitar colas',
-                  'Usa transporte público (muy económico)',
-                  'Come en tascas locales (mejor precio-calidad)',
-                  'Evita restaurantes turísticos en la Baixa',
-                ].map((tip) => (
-                  <li key={tip} className="flex items-start gap-2">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <span>{tip}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Actividades recomendadas según presupuesto */}
-      <section className="bg-background-light py-20 border-b border-border-soft">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8 pb-3 border-b border-border-soft">
-            <p className="text-xs uppercase tracking-widest text-text-secondary">
-              Actividades para perfil &quot;{BUDGET_OPTIONS.find((o) => o.id === tipo)?.label}&quot;
-            </p>
-            <Link href="/actividades" className="text-sm text-terracotta hover:underline underline-offset-2">
-              Ver todas →
-            </Link>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {recommendedActivities.map((activity) => (
-              <ActivityCard key={activity.slug} activity={activity} />
             ))}
           </div>
 
           {/*
-            Va después de las actividades, no antes: primero la respuesta que
-            la persona ha pedido, y luego esto como complemento. Filete lateral
-            y enlace, sin botón ni fondo de color, para que no compita con las
-            fichas. Enlaza a la sección propia, nunca a un afiliado directo.
+            Estos dos enlaces venían de la página anterior y no dependían de la
+            calculadora retirada, así que se conservan. Uno evita perder dinero
+            en comisiones antes de salir; el otro es la alternativa gratis a
+            pagar por orientarse el primer día.
           */}
-          <aside className="mt-14 border-l-2 border-terracotta pl-5 sm:pl-6">
-            <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">
-              Free tours
-            </p>
-            <p className="text-text-secondary leading-relaxed mb-3 max-w-2xl">
-              {FREE_TOUR_NOTA[tipo]}
-            </p>
+          <p className="mt-10 text-sm leading-relaxed text-text-secondary">
+            Antes de viajar, repasa{' '}
+            <Link
+              href="/blog/como-pagar-en-portugal"
+              className="text-terracotta underline underline-offset-2 hover:no-underline"
+            >
+              cómo pagar en Portugal
+            </Link>{' '}
+            para no dejarte parte del presupuesto en comisiones evitables. Y si es tu primer
+            día y quieres situarte antes de gastar en entradas, puedes{' '}
             <Link
               href="/free-tours-lisboa"
               className="text-terracotta underline underline-offset-2 hover:no-underline"
             >
-              Comparar free tours por zona →
+              comparar free tours por zona
             </Link>
-          </aside>
+            .
+          </p>
         </div>
       </section>
 
       {/* Plan a medida 1:1 */}
       <section className="bg-background-light py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest text-text-secondary mb-3">Servicio 1:1</p>
-          <h2 className="font-display italic text-text-main text-3xl mb-4">Un plan a medida, hecho por mí</h2>
-          <p className="text-text-secondary mb-10">
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Servicio 1:1</p>
+          <h2 className="mb-4 font-display text-3xl italic text-text-main">Un plan a medida, hecho por mí</h2>
+          <p className="mb-10 text-text-secondary">
             Si tienes pocos días en Lisboa y no quieres perder ni uno organizando, cuéntame cómo es tu viaje y te preparo personalmente
             un plan hora a hora: rutas exactas, reservas recomendadas y alternativas según tus gustos. Te lo envío en 24-48 horas.
           </p>
 
           {status !== 'success' ? (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="nombre" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Nombre</label>
+                  <label htmlFor="nombre" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Nombre</label>
                   <input
                     type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required
                     className="form-input text-sm"
@@ -312,7 +187,7 @@ export default function PlanificaTuViajePage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Email</label>
+                  <label htmlFor="email" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Email</label>
                   <input
                     type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
                     className="form-input text-sm"
@@ -321,9 +196,9 @@ export default function PlanificaTuViajePage() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-3 gap-6">
+              <div className="grid gap-6 sm:grid-cols-3">
                 <div>
-                  <label htmlFor="fechas" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Fechas</label>
+                  <label htmlFor="fechas" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Fechas</label>
                   <input
                     type="text" id="fechas" name="fechas" value={formData.fechas} onChange={handleChange}
                     className="form-input text-sm"
@@ -331,7 +206,7 @@ export default function PlanificaTuViajePage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="dias" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Días</label>
+                  <label htmlFor="dias" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Días</label>
                   <input
                     type="number" id="dias" name="dias" min="1" value={formData.dias} onChange={handleChange}
                     className="form-input text-sm"
@@ -339,7 +214,7 @@ export default function PlanificaTuViajePage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="personas" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Personas</label>
+                  <label htmlFor="personas" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Personas</label>
                   <input
                     type="number" id="personas" name="personas" min="1" value={formData.personas} onChange={handleChange}
                     className="form-input text-sm"
@@ -349,16 +224,16 @@ export default function PlanificaTuViajePage() {
               </div>
 
               <div>
-                <p className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Ritmo de viaje</p>
+                <p className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Ritmo de viaje</p>
                 <div className="grid grid-cols-3 gap-4">
                   {RITMOS.map((r) => (
                     <button
                       key={r}
                       type="button"
                       onClick={() => setFormData({ ...formData, ritmo: r })}
-                      className={`py-3 px-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                      className={`rounded-lg px-3 py-3 text-sm font-semibold transition-all duration-200 ${
                         formData.ritmo === r
-                          ? 'bg-white shadow-card ring-2 ring-gold text-text-main'
+                          ? 'bg-white text-text-main shadow-card ring-2 ring-gold'
                           : 'border border-border-soft text-text-secondary hover:border-taupe hover:shadow-soft'
                       }`}
                     >
@@ -369,7 +244,7 @@ export default function PlanificaTuViajePage() {
               </div>
 
               <div>
-                <label htmlFor="presupuesto" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Presupuesto aproximado</label>
+                <label htmlFor="presupuesto" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Presupuesto aproximado</label>
                 <input
                   type="text" id="presupuesto" name="presupuesto" value={formData.presupuesto} onChange={handleChange}
                   className="form-input text-sm"
@@ -378,7 +253,7 @@ export default function PlanificaTuViajePage() {
               </div>
 
               <div>
-                <label htmlFor="intereses" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">¿Qué te interesa más?</label>
+                <label htmlFor="intereses" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">¿Qué te interesa más?</label>
                 <input
                   type="text" id="intereses" name="intereses" value={formData.intereses} onChange={handleChange}
                   className="form-input text-sm"
@@ -387,7 +262,7 @@ export default function PlanificaTuViajePage() {
               </div>
 
               <div>
-                <label htmlFor="comentarios" className="block text-xs uppercase tracking-widest text-text-secondary mb-2">Algo más que deba saber</label>
+                <label htmlFor="comentarios" className="mb-2 block text-xs uppercase tracking-widest text-text-secondary">Algo más que deba saber</label>
                 <textarea
                   id="comentarios" name="comentarios" value={formData.comentarios} onChange={handleChange}
                   rows={4}
@@ -411,12 +286,12 @@ export default function PlanificaTuViajePage() {
               </p>
             </form>
           ) : (
-            <div className="card-surface p-8 border-l-2 border-gold">
+            <div className="card-surface border-l-2 border-gold p-8">
               <p className="mb-4 font-display text-2xl font-semibold not-italic text-text-main">Solicitud enviada.</p>
-              <p className="text-text-secondary mb-8">
+              <p className="mb-8 text-text-secondary">
                 Gracias. Voy a revisar tus respuestas y te escribo en 24-48 horas con tu plan a medida.
               </p>
-              <Link href="/itinerarios" className="text-sm text-terracotta hover:underline underline-offset-2">
+              <Link href="/itinerarios" className="text-sm text-terracotta underline-offset-2 hover:underline">
                 ← Ver guías mientras tanto
               </Link>
             </div>

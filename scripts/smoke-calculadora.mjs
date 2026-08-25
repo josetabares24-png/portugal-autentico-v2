@@ -97,6 +97,35 @@ const ENLACES_INTERNOS = [
 /** Páginas que deben enlazar a la calculadora. */
 const ENTRADAS = ['/planifica-tu-viaje', '/blog/presupuesto-viajar-lisboa'];
 
+/*
+ * /planifica-tu-viaje tuvo su propia calculadora: tres perfiles, dos sliders y
+ * un número único. Se retiró para que exista una sola calculadora en el sitio.
+ * Estas comprobaciones existen para que no vuelva por descuido.
+ *
+ * Los rastros se buscan como marcas concretas del widget antiguo, no como
+ * palabras sueltas: «Confort» o «Medio» podrían reaparecer legítimamente en
+ * otro texto, pero un `input type="range"` en esta página no.
+ */
+const PLANIFICA = '/planifica-tu-viaje';
+
+const RASTROS_CALCULADORA_ANTIGUA = [
+  { patron: /<input[^>]+type="range"/, que: 'sliders' },
+  { patron: /Mochilero/, que: 'perfil «Mochilero»' },
+  { patron: /Hostales y tascas locales/, que: 'descripción del perfil Mochilero' },
+  { patron: /Hoteles céntricos y restaurantes/, que: 'descripción del perfil Medio' },
+  { patron: /Hoteles boutique y gourmet/, que: 'descripción del perfil Confort' },
+  { patron: /Presupuesto estimado/, que: 'cifra única «Presupuesto estimado»' },
+  { patron: /€ por persona al día/, que: 'promedio por persona y día' },
+  { patron: /Actividades para perfil/, que: 'actividades recomendadas por perfil' },
+];
+
+/** Los tres caminos del hub, con su destino exacto. */
+const CAMINOS_HUB = [
+  { texto: 'Calcular mi presupuesto', href: '/calculadora-presupuesto-lisboa' },
+  { texto: 'Ver itinerarios', href: '/itinerarios' },
+  { texto: 'Ver actividades', href: '/actividades' },
+];
+
 /** Vocabulario prohibido: promete una exactitud que la herramienta no tiene. */
 const PROMESAS_PROHIBIDAS = [
   'precio exacto',
@@ -552,6 +581,33 @@ async function comprobarEntrada(baseUrl, ruta) {
   record(`${ruta} enlaza a la calculadora`, html.includes(RUTA), null);
 }
 
+/**
+ * /planifica-tu-viaje debe ser un hub, no una segunda calculadora: sin rastro
+ * del widget antiguo y con los tres caminos apuntando a donde toca.
+ */
+async function comprobarHubPlanifica(baseUrl) {
+  const res = await fetch(`${baseUrl}${PLANIFICA}`, { redirect: 'manual' });
+  if (res.status !== 200) {
+    record(`${PLANIFICA} responde 200`, false, `HTTP ${res.status}`);
+    return;
+  }
+  record(`${PLANIFICA} responde 200`, true, null);
+
+  const html = await res.text();
+
+  for (const { patron, que } of RASTROS_CALCULADORA_ANTIGUA) {
+    record(`${PLANIFICA} sin ${que}`, !patron.test(html), patron.test(html) ? 'sigue presente' : null);
+  }
+
+  for (const { texto, href } of CAMINOS_HUB) {
+    record(
+      `${PLANIFICA} ofrece «${texto}»`,
+      html.includes(texto) && html.includes(`href="${href}"`),
+      null
+    );
+  }
+}
+
 async function main() {
   const explicitBaseUrl = process.env.SMOKE_BASE_URL;
   let child = null;
@@ -596,6 +652,9 @@ async function main() {
     for (const ruta of ENTRADAS) {
       await comprobarEntrada(baseUrl, ruta);
     }
+
+    log('\n-- /planifica-tu-viaje como hub (sin calculadora antigua) --');
+    await comprobarHubPlanifica(baseUrl);
 
     log(`\n${results.length - failures}/${results.length} comprobaciones OK.`);
     if (failures > 0) {
