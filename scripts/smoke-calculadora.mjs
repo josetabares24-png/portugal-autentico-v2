@@ -347,6 +347,46 @@ async function comprobarPagina(baseUrl) {
       : `${ATRACCIONES.length} atracciones`
   );
 
+  /*
+   * Los nombres tienen que verse enteros. Se comprueban dos cosas: que el
+   * nombre completo está dentro de una etiqueta del selector —no sólo suelto
+   * por la página— y que ahí no hay nada recortando texto.
+   */
+  const bloqueSelector = html.match(
+    /data-control="atracciones"[\s\S]*?(?=<\/div><\/div><\/section>|Añadir transporte)/
+  );
+  const selector = bloqueSelector ? bloqueSelector[0] : '';
+  const enSelector = ATRACCIONES.filter(
+    (a) => a.zona === 'lisboa' && !normalizar(aTexto(selector)).includes(normalizar(a.nombre))
+  );
+  record(
+    'los nombres de Lisboa se ven completos dentro del selector',
+    selector.length > 0 && enSelector.length === 0,
+    enSelector.length ? `incompletos: ${enSelector.map((a) => a.id).join(', ')}` : null
+  );
+
+  const recortes = ['truncate', 'line-clamp-1', 'text-ellipsis', 'whitespace-nowrap'].filter((c) =>
+    selector.includes(c)
+  );
+  record(
+    'ningún nombre se recorta',
+    selector.length > 0 && recortes.length === 0,
+    recortes.length ? `aparece: ${recortes.join(', ')}` : null
+  );
+
+  record(
+    'Lisboa y Sintra van agrupadas',
+    /<legend[^>]*>\s*Lisboa\s*<\/legend>/.test(html) &&
+      /<legend[^>]*>\s*Sintra\s*<\/legend>/.test(html),
+    null
+  );
+
+  record(
+    'no hay un «Ver más lugares» que no lleve a ninguna parte',
+    !/Ver más lugares/.test(texto) || /Más lugares/.test(texto),
+    null
+  );
+
   const casillas = (html.match(/type="checkbox"/g) || []).length;
   record(
     'hay una casilla por atracción, más la del día en Sintra',

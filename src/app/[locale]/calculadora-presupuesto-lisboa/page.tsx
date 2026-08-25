@@ -716,30 +716,38 @@ summary::-webkit-details-marker { display: none; }
                 titulo="¿Qué lugares quieres visitar?"
                 ayuda="Sólo sitios de pago. Cada uno se suma una vez por persona; miradores, barrios y pasear no cuestan nada."
               >
-                <BudgetAttractionChips seleccionadas={atracciones} onAlternar={alternarAtraccion} />
-
-                <label
-                  htmlFor="sintra"
-                  className="mt-3 flex min-h-11 cursor-pointer items-center gap-2.5 rounded-lg border border-border-soft bg-background-light px-3 py-2"
+                <BudgetAttractionChips
+                  seleccionadas={atracciones}
+                  onAlternar={alternarAtraccion}
                 >
-                  <input
-                    id="sintra"
-                    type="checkbox"
-                    checked={excursionSintra}
-                    onChange={(e) => setExcursionSintra(e.target.checked)}
-                    className="h-4 w-4 flex-shrink-0 rounded border-border-soft text-terracotta focus:ring-terracotta/30"
-                  />
-                  <span className="font-body text-[13px] leading-snug text-text-main">
-                    Añadir transporte para un día en Sintra
-                  </span>
-                </label>
-                {sintraMarcadas.length > 0 && !excursionSintra && (
-                  <p role="status" className="mt-2 font-body text-[11px] leading-relaxed text-terracotta">
-                    Has marcado {sintraMarcadas.length}{' '}
-                    {sintraMarcadas.length === 1 ? 'sitio' : 'sitios'} en Sintra. Si vas a subir,
-                    marca también el día de Sintra para contar el viaje.
-                  </p>
-                )}
+                  {/*
+                    El transporte a Sintra va debajo de sus entradas, pero no es
+                    una novena atracción: es el desplazamiento, y por eso vive
+                    fuera de la cuadrícula y con otro aspecto.
+                  */}
+                  <label
+                    htmlFor="sintra"
+                    className="mt-2 flex min-h-11 cursor-pointer items-center gap-2.5 rounded-lg border border-border-soft bg-background-light px-3 py-2"
+                  >
+                    <input
+                      id="sintra"
+                      type="checkbox"
+                      checked={excursionSintra}
+                      onChange={(e) => setExcursionSintra(e.target.checked)}
+                      className="h-4 w-4 flex-shrink-0 rounded border-border-soft text-terracotta focus:ring-terracotta/30"
+                    />
+                    <span className="font-body text-[13px] leading-snug text-text-main">
+                      Añadir transporte para un día en Sintra
+                    </span>
+                  </label>
+                  {sintraMarcadas.length > 0 && !excursionSintra && (
+                    <p role="status" className="mt-2 font-body text-[11px] leading-relaxed text-terracotta">
+                      Has marcado {sintraMarcadas.length}{' '}
+                      {sintraMarcadas.length === 1 ? 'sitio' : 'sitios'} en Sintra. Si vas a
+                      subir, marca también el día de Sintra para contar el viaje.
+                    </p>
+                  )}
+                </BudgetAttractionChips>
               </Bloque>
 
               <button
