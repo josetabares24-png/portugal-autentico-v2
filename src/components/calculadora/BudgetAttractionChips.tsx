@@ -54,10 +54,20 @@ function Chip({
   marcada: boolean;
   onAlternar: (id: string) => void;
 }) {
+  /*
+   * El indicador va en la esquina, en posición absoluta, no en la fila del
+   * texto. Cuando compartía línea con el nombre se llevaba dieciséis píxeles
+   * de ancho más su hueco justo donde hacían falta: «Mosteiro dos Jerónimos»
+   * a 375 px no tenía sitio. Ahora el nombre dispone de casi toda la tarjeta
+   * y el `pr` reserva lo justo para que el indicador no pise ninguna letra.
+   *
+   * Toda la tarjeta sigue siendo clicable —es un `label` con el input dentro—
+   * así que el objetivo táctil es la tarjeta entera, no el cuadradito.
+   */
   return (
     <label
       title={atraccion.desc}
-      className={`flex min-h-[3.5rem] cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 transition-all duration-200 ${
+      className={`relative flex min-h-[4rem] cursor-pointer items-center rounded-lg py-2.5 pl-2.5 pr-5 transition-all duration-200 ${
         marcada
           ? 'bg-white shadow-card ring-2 ring-gold'
           : 'border border-border-soft bg-white/60 hover:border-taupe'
@@ -71,13 +81,13 @@ function Chip({
       />
       <span
         aria-hidden="true"
-        className={`flex h-4 w-4 flex-shrink-0 items-center justify-center rounded border ${
+        className={`absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded border ${
           marcada ? 'border-terracotta bg-terracotta text-white' : 'border-border-soft bg-white'
         }`}
       >
         {marcada && <Icon name="check" size={11} />}
       </span>
-      <span className="min-w-0 flex-1 font-body text-[13px] font-semibold leading-tight text-text-main">
+      <span className="font-body text-[13px] font-semibold leading-snug text-text-main">
         {atraccion.nombre}
       </span>
     </label>
