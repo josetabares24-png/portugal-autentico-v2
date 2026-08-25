@@ -16,7 +16,8 @@
     "smoke:blog": "node scripts/smoke-blog.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",
-    "test:optimizer": "node --import ./scripts/register-ts.mjs scripts/test-budget-optimizer.mjs"
+    "test:optimizer": "node --import ./scripts/register-ts.mjs scripts/test-budget-optimizer.mjs",
+    "test:presupuesto": "node --import ./scripts/register-ts.mjs scripts/test-presupuesto.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",
@@ -33,6 +34,7 @@
     "next": "^16.1.1",
     "next-intl": "^4.8.2",
     "nodemailer": "^7.0.12",
+    "pdf-lib": "^1.17.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-markdown": "^10.1.0",

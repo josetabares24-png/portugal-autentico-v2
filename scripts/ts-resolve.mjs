@@ -16,8 +16,23 @@
  * Se usa con: node --import ./scripts/register-ts.mjs <script>
  */
 
+import { pathToFileURL } from 'node:url';
+import { resolve as resolverRuta } from 'node:path';
+
+/**
+ * El alias `@/` del tsconfig, que apunta a `src/`. Sin esto no se puede
+ * cargar en Node nada que viva bajo `src/app`, porque las rutas de API
+ * importan sus utilidades por alias, no por camino relativo.
+ */
+const RAIZ_ALIAS = pathToFileURL(`${resolverRuta(process.cwd(), 'src')}/`).href;
+
 export async function resolve(specifier, context, next) {
-  const esRelativo = specifier.startsWith('./') || specifier.startsWith('../');
+  if (specifier.startsWith('@/')) {
+    return resolve(`${RAIZ_ALIAS}${specifier.slice(2)}`, context, next);
+  }
+
+  const esRelativo =
+    specifier.startsWith('./') || specifier.startsWith('../') || specifier.startsWith('file:');
   const tieneExtension = /\.[cm]?[jt]sx?$/.test(specifier) || /\.json$/.test(specifier);
 
   if (esRelativo && !tieneExtension) {
@@ -28,5 +43,22 @@ export async function resolve(specifier, context, next) {
     }
   }
 
-  return next(specifier, context);
+  try {
+    return await next(specifier, context);
+  } catch (error) {
+    /*
+     * Último recurso para los subcaminos de paquete que Next publica pensando
+     * en un bundler —`next/server` es el caso— y que Node no resuelve solo.
+     * Sólo se intenta cuando la resolución normal ya ha fallado, así que no
+     * puede tapar un módulo que sí existía.
+     */
+    if (!esRelativo && !tieneExtension) {
+      try {
+        return await next(`${specifier}.js`, context);
+      } catch {
+        // Tampoco: se propaga el error original, que es el informativo.
+      }
+    }
+    throw error;
+  }
 }

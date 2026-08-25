@@ -48,6 +48,12 @@ export async function sendBrevoEmail(config: {
   textContent?: string;
   subject?: string;
   replyTo?: { email: string; name: string };
+  /**
+   * Adjuntos, ya en base64. Brevo los acepta en el mismo `POST /v3/smtp/email`
+   * con un tope de 10 MB por mensaje, así que no hace falta subirlos antes ni
+   * alojarlos en ningún sitio: el archivo viaja en la petición y no se guarda.
+   */
+  attachment?: { name: string; content: string }[];
 }): Promise<{ success: boolean; error?: string }> {
   const brevoApiKey = process.env.BREVO_API_KEY;
   const senderEmail = process.env.BREVO_SENDER_EMAIL;
@@ -87,6 +93,10 @@ export async function sendBrevoEmail(config: {
 
     if (config.replyTo) {
       body.replyTo = config.replyTo;
+    }
+
+    if (config.attachment?.length) {
+      body.attachment = config.attachment;
     }
 
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {

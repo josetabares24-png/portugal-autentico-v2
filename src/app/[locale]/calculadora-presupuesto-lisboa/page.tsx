@@ -9,6 +9,7 @@ import { BudgetAttractionChips } from '@/components/calculadora/BudgetAttraction
 import { BudgetDonut, categoriaDominante } from '@/components/calculadora/BudgetDonut';
 import { BudgetMobileDock } from '@/components/calculadora/BudgetMobileDock';
 import { BudgetOptimizer } from '@/components/calculadora/BudgetOptimizer';
+import { BudgetSaveCard } from '@/components/calculadora/BudgetSaveCard';
 import {
   BudgetStylePresets,
   presetActivo,
@@ -851,6 +852,15 @@ summary::-webkit-details-marker { display: none; }
                   />
                 </Bloque>
               )}
+
+              {/*
+                Va después del donut y antes del optimizador: en este punto la
+                persona ya ha visto el total y cómo se reparte, que es cuando
+                tiene sentido querer llevárselo. Antes del optimizador porque
+                «gastar menos» invita a seguir tocando, y guardar es el final
+                natural de la lectura, no de la edición.
+              */}
+              {resultado.total.max > 0 && <BudgetSaveCard input={inputActual} />}
 
               <div ref={optimizadorRef} className="scroll-mt-24">
                 <BudgetOptimizer
