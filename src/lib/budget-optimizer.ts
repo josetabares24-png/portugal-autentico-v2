@@ -89,7 +89,7 @@ const COPY_COMIDA: Record<string, { titulo: string; descripcion: string }> = {
   },
   ahorro: {
     titulo: 'Comer más al ahorro',
-    descripcion: 'Pastelería, supermercado y tascas de menú, que es como come el barrio.',
+    descripcion: 'Pastelería, supermercado y tascas de menú.',
   },
 };
 

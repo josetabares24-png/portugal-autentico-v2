@@ -34,6 +34,8 @@ interface Segmento {
   /** Sólo para el reparto del círculo. Nunca se muestra como importe. */
   peso: number;
   porcentaje: number;
+  /** El rango real de la categoría, que sí se muestra. */
+  rango: Rango;
 }
 
 const COLORES: Record<string, string> = {
@@ -100,11 +102,14 @@ export function BudgetDonut({
   const excursion = porId.get('excursion');
 
   const brutos = ORDEN.map((id) => {
-    const rango = porId.get(id);
-    let peso = rango ? medio(rango) : 0;
-    // El día en Sintra es desplazamiento: va con transporte.
-    if (id === 'transporte' && excursion) peso += medio(excursion);
-    return { id, label: ETIQUETAS[id], color: COLORES[id], peso };
+    const propio = porId.get(id) ?? { min: 0, max: 0 };
+    // El día en Sintra es desplazamiento: va con transporte, también en el
+    // importe que se enseña al lado del porcentaje.
+    const rango: Rango =
+      id === 'transporte' && excursion
+        ? { min: propio.min + excursion.min, max: propio.max + excursion.max }
+        : propio;
+    return { id, label: ETIQUETAS[id], color: COLORES[id], peso: medio(rango), rango };
   });
 
   const porcentajes = repartirPorcentajes(brutos.map((b) => b.peso));
@@ -117,8 +122,8 @@ export function BudgetDonut({
 
   const resumenAccesible = segmentos.length
     ? `Reparto aproximado del presupuesto: ${segmentos
-        .map((s) => `${s.label.toLowerCase()} ${s.porcentaje} %`)
-        .join(', ')}.`
+        .map((s) => `${s.label.toLowerCase()} ${s.porcentaje} %, ${formatRango(s.rango)}`)
+        .join('; ')}.`
     : 'Todavía no hay gasto que repartir.';
 
   // Circunferencia 100 para que cada porcentaje sea directamente su longitud.
@@ -135,7 +140,7 @@ export function BudgetDonut({
 
   return (
     <div className="sm:flex sm:items-center sm:gap-6">
-      <div className="relative mx-auto h-40 w-40 flex-shrink-0 sm:mx-0">
+      <div className="relative mx-auto h-36 w-36 flex-shrink-0 sm:mx-0">
         <svg viewBox="0 0 42 42" className="h-full w-full -rotate-90" aria-hidden="true">
           <circle cx="21" cy="21" r={RADIO} fill="none" stroke="#e8e2d9" strokeWidth="5" />
           {tramos.map((s) => (
@@ -164,23 +169,26 @@ export function BudgetDonut({
       </div>
 
       <div className="mt-4 sm:mt-0 sm:flex-1">
-        <ul className="space-y-1.5">
+        <ul className="space-y-2">
           {segmentos.map((s) => (
-            <li key={s.id} className="flex items-center gap-2.5">
+            <li key={s.id} className="flex items-baseline gap-2.5">
               <span
                 aria-hidden="true"
-                className="h-2.5 w-2.5 flex-shrink-0 rounded-sm"
+                className="h-2.5 w-2.5 flex-shrink-0 translate-y-0.5 rounded-sm"
                 style={{ backgroundColor: s.color }}
               />
-              <span className="flex-1 font-body text-sm text-text-main">{s.label}</span>
+              <span className="min-w-0 flex-1 font-body text-sm text-text-main">{s.label}</span>
               <span className="font-body text-sm font-semibold tabular-nums text-text-main">
                 {s.porcentaje} %
+              </span>
+              <span className="w-[6.5rem] text-right font-body text-xs tabular-nums text-text-secondary">
+                {formatRango(s.rango)}
               </span>
             </li>
           ))}
         </ul>
         <p className="mt-2.5 font-body text-xs leading-relaxed text-text-secondary">
-          Proporción aproximada, no importes. Los vuelos no entran en el anillo.
+          Proporción orientativa. Los vuelos no entran en el anillo.
         </p>
         {/* El color no puede ser la única forma de leer el gráfico. */}
         <p className="sr-only">{resumenAccesible}</p>

@@ -30,18 +30,18 @@ export function BudgetMobileDock({
 }) {
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-night text-white transition-all duration-200 lg:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 rounded-t-2xl bg-night text-white shadow-premium-lg transition-all duration-200 lg:hidden ${
         visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0'
       }`}
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       aria-hidden={!visible}
     >
-      <div className="flex items-center justify-between gap-3 px-5 py-3">
+      <div className="flex items-center justify-between gap-3 px-5 py-3.5">
         <div className="min-w-0">
           <p className="font-body text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60">
-            Tu presupuesto
+            Tu presupuesto estimado
           </p>
-          <p className="font-body text-base font-semibold leading-tight text-white">
+          <p className="font-display text-lg font-semibold leading-tight text-white">
             {formatRango(total)}
           </p>
           <p className="font-body text-[11px] leading-tight text-white/70">

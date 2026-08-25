@@ -220,6 +220,11 @@ async function comprobarPagina(baseUrl) {
   const h2 = html.match(/<h2[^>]*>/gi) || [];
   record('tiene secciones (H2)', h2.length >= 4, `${h2.length} H2`);
   record(
+    'no se salta niveles de encabezado: hay H2 antes que H3',
+    html.indexOf('<h2') < html.indexOf('<h3'),
+    null
+  );
+  record(
     'los dos pasos están titulados',
     /Configura tu viaje/.test(texto) && /Tu presupuesto/.test(texto),
     null
@@ -290,8 +295,8 @@ async function comprobarPagina(baseUrl) {
     null
   );
   record(
-    'el anillo declara que es proporción, no importes',
-    /Proporción aproximada, no importes/i.test(texto),
+    'el anillo se declara orientativo',
+    /Proporción orientativa/i.test(texto),
     null
   );
   record(
@@ -301,8 +306,21 @@ async function comprobarPagina(baseUrl) {
   );
   record(
     'el optimizador está en la página',
-    /Quiero gastar menos/.test(texto) && /aria-controls="optimizador-presupuesto"/.test(html),
+    /Cómo gastar menos/.test(texto) && /id="optimizador-presupuesto"/.test(html),
     null
+  );
+  record(
+    'el selector de estilo de viaje está presente',
+    /data-control="estilo"/.test(html) &&
+      /Económico/.test(texto) &&
+      /Intermedio/.test(texto) &&
+      /Cómodo/.test(texto),
+    null
+  );
+  record(
+    'lo secundario queda plegado, pero en el HTML',
+    (html.match(/<details/g) || []).length >= 3,
+    `${(html.match(/<details/g) || []).length} plegables`
   );
   record(
     'el dock móvil existe y no aparece en escritorio',
@@ -458,7 +476,7 @@ async function comprobarDeterminismo(baseUrl) {
   // El ancla cambió con el rediseño: el bloque grande del resultado se titula
   // «Total para el grupo». Se sigue midiendo lo mismo, la cifra servida.
   const extraer = (html) => {
-    const m = aTexto(html).match(/Total para el grupo\s+([0-9][^A-Za-z]{0,30}€)/);
+    const m = aTexto(html).match(/Tu presupuesto estimado\s+([0-9][^A-Za-z]{0,30}€)/);
     return m ? m[1].trim() : null;
   };
   const ra = extraer(a);
