@@ -38,6 +38,7 @@ import {
   calculateLisbonBudget,
   formatRango,
 } from '../src/lib/budget-calculator.ts';
+import { getRecommendedBudget } from '../src/lib/budget-recommended.ts';
 
 const RUTA = '/calculadora-presupuesto-lisboa';
 const BRAND = 'Estaba en Lisboa';
@@ -320,12 +321,17 @@ async function comprobarPagina(baseUrl) {
   );
   record(
     'el anillo tiene alternativa en texto y no depende del color',
-    /Reparto aproximado del presupuesto/i.test(texto),
+    /Reparto del presupuesto recomendado/i.test(texto),
     null
   );
   record(
-    'el anillo se declara orientativo',
-    /Proporción orientativa/i.test(texto),
+    'el anillo declara de dónde salen sus proporciones',
+    /Reparto del presupuesto recomendado\./i.test(texto),
+    null
+  );
+  record(
+    'el anillo dice qué pasa con los vuelos',
+    /vuelos.{0,40}(fuera del anillo|quedar[áa]n fuera)/i.test(texto),
     null
   );
   record(
@@ -444,24 +450,56 @@ async function comprobarPagina(baseUrl) {
   // --- El resultado por defecto, ya renderizado en el servidor ---
   const esperado = calculateLisbonBudget(ESTADO_INICIAL);
 
-  const cifras = [
-    ['total del grupo', esperado.total],
-    ['por persona', esperado.porPersona],
-    ['por persona y día', esperado.porPersonaYDia],
-    ['gasto en destino sin alojamiento ni vuelos', esperado.sinAlojamiento],
+  /*
+   * La jerarquía cambió en 11B: arriba una cifra cerrada, y el rango un
+   * escalón por debajo. Se comprueban las dos mitades, porque perder
+   * cualquiera de ellas sería un error distinto: sin cifra la herramienta
+   * vuelve a no responder a la pregunta, y sin rango deja de ser honesta.
+   */
+  const recomendado = getRecommendedBudget(ESTADO_INICIAL, esperado);
+
+  const cerradas = [
+    ['presupuesto recomendado', recomendado.total],
+    ['por persona recomendado', recomendado.porPersona],
+    ['por persona y día recomendado', recomendado.porPersonaYDia],
   ];
-  for (const [nombre, rango] of cifras) {
+  for (const [nombre, importe] of cerradas) {
     record(
       `sirve renderizado el ${nombre}`,
+      texto.includes(normalizar(`${importe} €`)),
+      `${importe} €`
+    );
+  }
+
+  const rangos = [
+    ['rango estimado del total', esperado.total],
+    ['gasto en destino sin alojamiento ni vuelos', esperado.sinAlojamiento],
+  ];
+  for (const [nombre, rango] of rangos) {
+    record(
+      `sigue sirviendo el ${nombre}`,
       texto.includes(normalizar(formatRango(rango))),
       formatRango(rango)
     );
   }
 
   record(
-    'el resultado es un rango, no una cifra',
+    'la cifra principal es cerrada y cae dentro del rango',
+    recomendado.total >= esperado.total.min && recomendado.total <= esperado.total.max,
+    `${recomendado.total} € en ${formatRango(esperado.total)}`
+  );
+
+  record(
+    'el rango sigue existiendo y sigue siendo un rango',
     esperado.total.max > esperado.total.min && formatRango(esperado.total).includes('–'),
     formatRango(esperado.total)
+  );
+
+  record(
+    'el desglose recomendado reconstruye el total',
+    recomendado.categorias.reduce((a, c) => a + c.importe, 0) + recomendado.redondeo ===
+      recomendado.total,
+    `${recomendado.sumaCategorias} + ${recomendado.redondeo} = ${recomendado.total}`
   );
 
   record(
@@ -563,7 +601,7 @@ async function comprobarDeterminismo(baseUrl) {
   // El ancla cambió con el rediseño: el bloque grande del resultado se titula
   // «Total para el grupo». Se sigue midiendo lo mismo, la cifra servida.
   const extraer = (html) => {
-    const m = aTexto(html).match(/Tu presupuesto estimado\s+([0-9][^A-Za-z]{0,30}€)/);
+    const m = aTexto(html).match(/Tu presupuesto recomendado\s+([0-9][^A-Za-z]{0,30}€)/);
     return m ? m[1].trim() : null;
   };
   const ra = extraer(a);

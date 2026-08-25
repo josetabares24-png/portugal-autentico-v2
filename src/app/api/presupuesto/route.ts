@@ -21,7 +21,8 @@ import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
 import { validateEmail, createErrorResponse, sendBrevoEmail } from '@/lib/api-utils';
 import { parseBudgetInput } from '@/lib/budget-input';
-import { calculateLisbonBudget, formatRango } from '@/lib/budget-calculator';
+import { calculateLisbonBudget, formatRango, type Rango } from '@/lib/budget-calculator';
+import { formatRecomendado, getRecommendedBudget } from '@/lib/budget-recommended';
 import { generarSugerencias } from '@/lib/budget-optimizer';
 import { createBudgetPdf, nombreArchivoPdf, resumenPresupuesto } from '@/lib/budget-pdf';
 
@@ -98,12 +99,13 @@ export async function POST(request: NextRequest) {
     return createErrorResponse('Email no válido.', 400);
   }
 
-  const resumen = resumenPresupuesto(result.total, result.dias, result.personas);
+  const recomendado = getRecommendedBudget(parsed.input, result);
+  const viaje = resumenPresupuesto(result.dias, result.personas);
   const enviado = await sendBrevoEmail({
     to: [{ email, name: email }],
-    subject: `Tu presupuesto para Lisboa · ${formatRango(result.total)}`,
-    htmlContent: cuerpoHtml(resumen),
-    textContent: cuerpoTexto(resumen),
+    subject: `Tu presupuesto para Lisboa — ${recomendado.total} € recomendados`,
+    htmlContent: cuerpoHtml(recomendado.total, viaje, result.total),
+    textContent: cuerpoTexto(recomendado.total, viaje, result.total),
     attachment: [{ name: nombre, content: Buffer.from(pdf).toString('base64') }],
   });
 
@@ -120,11 +122,15 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ success: true });
 }
 
-function cuerpoTexto(resumen: string): string {
+function cuerpoTexto(total: number, viaje: string, rango: Rango): string {
   return [
-    'Aquí tienes tu presupuesto para Lisboa en PDF.',
+    'Tu presupuesto recomendado:',
+    formatRecomendado(total),
     '',
-    resumen,
+    `Para: ${viaje}`,
+    `Rango estimado: ${formatRango(rango)}`,
+    '',
+    'Adjuntamos el PDF con el desglose completo.',
     '',
     'Es una estimación orientativa, no un precio cerrado: depende de la temporada y de con cuánta antelación reserves.',
     '',
@@ -137,14 +143,19 @@ function cuerpoTexto(resumen: string): string {
   ].join('\n');
 }
 
-function cuerpoHtml(resumen: string): string {
+function cuerpoHtml(total: number, viaje: string, rango: Rango): string {
   return `<!doctype html>
 <html lang="es"><body style="margin:0;padding:24px;background:#F5EFE6;font-family:Helvetica,Arial,sans-serif;color:#1a2b4a;">
   <div style="max-width:520px;margin:0 auto;background:#ffffff;border:1px solid #e8e2d9;border-radius:12px;padding:28px;">
     <p style="margin:0 0 4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6F665D;">Estaba en Lisboa</p>
-    <h1 style="margin:0 0 16px;font-size:20px;">Tu presupuesto para Lisboa</h1>
-    <p style="margin:0 0 16px;font-size:15px;line-height:1.6;">Lo tienes en el PDF adjunto, con el desglose completo.</p>
-    <p style="margin:0 0 20px;padding:12px 16px;background:#F5EFE6;border-left:3px solid #C9974A;font-size:15px;font-weight:600;">${resumen}</p>
+    <h1 style="margin:0 0 20px;font-size:20px;">Tu presupuesto para Lisboa</h1>
+    <div style="margin:0 0 20px;padding:16px;background:#F5EFE6;border-left:3px solid #C9974A;">
+      <p style="margin:0 0 2px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6F665D;">Tu presupuesto recomendado</p>
+      <p style="margin:0 0 6px;font-size:32px;font-weight:700;line-height:1.1;">${formatRecomendado(total)}</p>
+      <p style="margin:0;font-size:14px;color:#6F665D;">Para: ${viaje}</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#6F665D;">Rango estimado: ${formatRango(rango)}</p>
+    </div>
+    <p style="margin:0 0 20px;font-size:15px;line-height:1.6;">Adjuntamos el PDF con el desglose completo.</p>
     <p style="margin:0 0 20px;font-size:13px;line-height:1.6;color:#6F665D;">Es una estimación orientativa, no un precio cerrado: depende de la temporada y de con cuánta antelación reserves.</p>
     <p style="margin:0 0 24px;font-size:14px;"><a href="https://estabaenlisboa.com/calculadora-presupuesto-lisboa" style="color:#B8472E;">Volver a calcularlo</a> cuando cambies de planes.</p>
     <p style="margin:0;padding-top:16px;border-top:1px solid #e8e2d9;font-size:12px;line-height:1.6;color:#6F665D;">Te lo enviamos porque lo pediste desde la calculadora. No te hemos suscrito a ninguna lista.</p>

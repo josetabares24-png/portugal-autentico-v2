@@ -1,11 +1,11 @@
 'use client';
 
+import { type CategoriaId } from '@/lib/budget-calculator';
 import {
-  formatRango,
-  type CategoriaId,
-  type CategoriaResultado,
-  type Rango,
-} from '@/lib/budget-calculator';
+  formatRecomendado,
+  type CategoriaRecomendada,
+  type RecommendedBudget,
+} from '@/lib/budget-recommended';
 
 /*
  * Anillo de reparto del presupuesto.
@@ -19,23 +19,21 @@ import {
  * El día en Sintra se suma a Transporte, que es literalmente lo que esa
  * categoría cuenta —el tren y moverse por allí—, no entradas.
  *
- * **El anillo no calcula dinero.** Los importes salen tal cual de
- * `resultado.categorias`. Para repartir el círculo hace falta un número por
- * categoría y no un rango, así que se usa el punto medio `(min + max) / 2`
- * ÚNICAMENTE como proporción visual. Ese punto medio no se enseña en ninguna
- * parte ni se presenta como presupuesto: la verdad visible sigue siendo el
- * rango, que está en el desglose de al lado.
+ * **El anillo no calcula dinero.** Reparte las cifras recomendadas por
+ * categoría, las mismas que están en el desglose de al lado. Antes usaba el
+ * punto medio de cada rango como proporción y no lo enseñaba en ninguna parte;
+ * ahora que existe una cifra recomendada explícita, esa doble contabilidad
+ * sobra: una sola fuente, y los porcentajes se pueden comprobar dividiendo los
+ * importes que se ven.
  */
 
 interface Segmento {
   id: string;
   label: string;
   color: string;
-  /** Sólo para el reparto del círculo. Nunca se muestra como importe. */
-  peso: number;
+  /** Importe recomendado de la categoría. Es a la vez peso y cifra visible. */
+  importe: number;
   porcentaje: number;
-  /** El rango real de la categoría, que sí se muestra. */
-  rango: Rango;
 }
 
 const COLORES: Record<string, string> = {
@@ -62,10 +60,6 @@ const FRASES: Record<string, string> = {
   atracciones: 'las entradas',
 };
 
-function medio(rango: Rango): number {
-  return (rango.min + rango.max) / 2;
-}
-
 /**
  * Reparte los porcentajes y corrige el redondeo: si al redondear no suman
  * 100, la diferencia se le da al segmento más grande. Sin decimales.
@@ -87,42 +81,33 @@ function repartirPorcentajes(pesos: number[]): number[] {
   return redondeados;
 }
 
-export function BudgetDonut({
-  categorias,
-  total,
-  vuelos,
-}: {
-  categorias: readonly CategoriaResultado[];
-  /** Total del grupo, tal y como se muestra arriba en el panel. */
-  total: Rango;
-  /** Importe de vuelos si lo hay. Se resta del centro, no entra en el anillo. */
-  vuelos: number | null;
-}) {
-  const porId = new Map(categorias.map((c) => [c.id, c.rango]));
-  const excursion = porId.get('excursion');
+export function BudgetDonut({ recomendado }: { recomendado: RecommendedBudget }) {
+  const importeDe = (id: CategoriaId) =>
+    recomendado.categorias.find((c) => c.id === id)?.importe ?? 0;
 
-  const brutos = ORDEN.map((id) => {
-    const propio = porId.get(id) ?? { min: 0, max: 0 };
+  const vuelos = importeDe('vuelos');
+  const excursion = importeDe('excursion');
+
+  const brutos = ORDEN.map((id) => ({
+    id,
+    label: ETIQUETAS[id],
+    color: COLORES[id],
     // El día en Sintra es desplazamiento: va con transporte, también en el
     // importe que se enseña al lado del porcentaje.
-    const rango: Rango =
-      id === 'transporte' && excursion
-        ? { min: propio.min + excursion.min, max: propio.max + excursion.max }
-        : propio;
-    return { id, label: ETIQUETAS[id], color: COLORES[id], peso: medio(rango), rango };
-  });
+    importe: id === 'transporte' ? importeDe(id) + excursion : importeDe(id),
+  }));
 
-  const porcentajes = repartirPorcentajes(brutos.map((b) => b.peso));
+  const porcentajes = repartirPorcentajes(brutos.map((b) => b.importe));
   const segmentos: Segmento[] = brutos
     .map((b, i) => ({ ...b, porcentaje: porcentajes[i] }))
-    .filter((s) => s.peso > 0);
+    .filter((s) => s.importe > 0);
 
-  const totalAnillo: Rango =
-    vuelos && vuelos > 0 ? { min: total.min - vuelos, max: total.max - vuelos } : total;
+  // Lo que suma el anillo. No es el total: los vuelos quedan fuera.
+  const totalAnillo = segmentos.reduce((suma, s) => suma + s.importe, 0);
 
   const resumenAccesible = segmentos.length
-    ? `Reparto aproximado del presupuesto: ${segmentos
-        .map((s) => `${s.label.toLowerCase()} ${s.porcentaje} %, ${formatRango(s.rango)}`)
+    ? `Reparto del presupuesto recomendado: ${segmentos
+        .map((s) => `${s.label.toLowerCase()} ${s.porcentaje} %, ${formatRecomendado(s.importe)}`)
         .join('; ')}.`
     : 'Todavía no hay gasto que repartir.';
 
@@ -160,10 +145,10 @@ export function BudgetDonut({
         </svg>
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <span className="font-body text-[10px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
-            {vuelos && vuelos > 0 ? 'Sin vuelos' : 'Total'}
+            {vuelos > 0 ? 'Sin vuelos' : 'Total'}
           </span>
-          <span className="mt-0.5 font-body text-[13px] font-semibold leading-tight text-text-main">
-            {formatRango(totalAnillo)}
+          <span className="mt-0.5 font-body text-[15px] font-semibold leading-tight text-text-main">
+            {formatRecomendado(totalAnillo)}
           </span>
         </div>
       </div>
@@ -181,14 +166,17 @@ export function BudgetDonut({
               <span className="font-body text-sm font-semibold tabular-nums text-text-main">
                 {s.porcentaje} %
               </span>
-              <span className="w-[6.5rem] text-right font-body text-xs tabular-nums text-text-secondary">
-                {formatRango(s.rango)}
+              <span className="w-[4.5rem] text-right font-body text-xs tabular-nums text-text-secondary">
+                {formatRecomendado(s.importe)}
               </span>
             </li>
           ))}
         </ul>
         <p className="mt-2.5 font-body text-xs leading-relaxed text-text-secondary">
-          Proporción orientativa. Los vuelos no entran en el anillo.
+          Reparto del presupuesto recomendado.{' '}
+          {vuelos > 0
+            ? 'Los vuelos quedan fuera del anillo: son un importe tuyo y externo a Lisboa.'
+            : 'Los vuelos, si los añades, quedarán fuera del anillo.'}
         </p>
         {/* El color no puede ser la única forma de leer el gráfico. */}
         <p className="sr-only">{resumenAccesible}</p>
@@ -199,16 +187,15 @@ export function BudgetDonut({
 
 /** La categoría que más pesa, para el bloque «Qué pesa más». */
 export function categoriaDominante(
-  categorias: readonly CategoriaResultado[]
+  categorias: readonly CategoriaRecomendada[]
 ): { id: string; label: string; frase: string } | null {
-  const porId = new Map(categorias.map((c) => [c.id, c.rango]));
-  const excursion = porId.get('excursion');
+  const importeDe = (id: CategoriaId) =>
+    categorias.find((c) => c.id === id)?.importe ?? 0;
+  const excursion = importeDe('excursion');
 
   let mejor: { id: string; label: string; peso: number } | null = null;
   for (const id of ORDEN) {
-    const rango = porId.get(id);
-    let peso = rango ? medio(rango) : 0;
-    if (id === 'transporte' && excursion) peso += medio(excursion);
+    const peso = id === 'transporte' ? importeDe(id) + excursion : importeDe(id);
     if (peso > 0 && (!mejor || peso > mejor.peso)) {
       mejor = { id, label: ETIQUETAS[id], peso };
     }

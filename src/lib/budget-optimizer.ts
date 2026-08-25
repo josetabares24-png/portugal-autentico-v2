@@ -26,6 +26,7 @@
  * orden. Sin `Math.random`, sin reloj, sin estado.
  */
 
+import { getRecommendedBudget } from './budget-recommended';
 import {
   calculateLisbonBudget,
   type BudgetInput,
@@ -48,6 +49,12 @@ export interface Sugerencia {
    * escenario actual y el alternativo, calculada con el mismo motor.
    */
   impacto: Rango;
+  /**
+   * La misma diferencia, pero entre las dos cifras recomendadas. Es lo que se
+   * enseña, porque es lo que se compara con el número grande de la pantalla:
+   * si arriba pone 845 € y aquí pone −95 €, la resta tiene que dar 750 €.
+   */
+  impactoRecomendado: number;
   /** El input completo que habría que aplicar para llegar a ese escenario. */
   nuevoInput: BudgetInput;
 }
@@ -128,6 +135,7 @@ function calcularImpacto(actual: Rango, alternativo: Rango): Rango {
  */
 export function generarSugerencias(input: BudgetInput): Sugerencia[] {
   const actual = calculateLisbonBudget(input);
+  const recomendadoActual = getRecommendedBudget(input, actual);
   const candidatas: Sugerencia[] = [];
 
   const añadir = (
@@ -139,8 +147,14 @@ export function generarSugerencias(input: BudgetInput): Sugerencia[] {
     if (!copy) return;
     const alternativo = calculateLisbonBudget(nuevoInput);
     const impacto = calcularImpacto(actual.total, alternativo.total);
-    if (impacto.max <= 0) return;
-    candidatas.push({ id, tipo, ...copy, impacto, nuevoInput });
+    const impactoRecomendado = Math.max(
+      0,
+      recomendadoActual.total - getRecommendedBudget(nuevoInput, alternativo).total
+    );
+    // Se descarta si no mueve ni el rango ni la cifra recomendada: proponer un
+    // cambio que no baja nada es hacer perder el tiempo.
+    if (impacto.max <= 0 && impactoRecomendado <= 0) return;
+    candidatas.push({ id, tipo, ...copy, impacto, impactoRecomendado, nuevoInput });
   };
 
   // Alojamiento. Con «importe propio» no se toca: es un dato real del usuario.
@@ -170,10 +184,19 @@ export function generarSugerencias(input: BudgetInput): Sugerencia[] {
     });
   }
 
-  // Orden estable: por impacto máximo, y a igualdad por id, para que dos
-  // ejecuciones con los mismos datos devuelvan exactamente lo mismo.
+  /*
+   * Orden estable: por lo que de verdad se ve, que es el impacto sobre la
+   * cifra recomendada; el máximo del rango desempata, y el id desempata a su
+   * vez, para que dos ejecuciones con los mismos datos devuelvan exactamente
+   * lo mismo y en el mismo orden.
+   */
   return candidatas
-    .sort((a, b) => b.impacto.max - a.impacto.max || a.id.localeCompare(b.id))
+    .sort(
+      (a, b) =>
+        b.impactoRecomendado - a.impactoRecomendado ||
+        b.impacto.max - a.impacto.max ||
+        a.id.localeCompare(b.id)
+    )
     .slice(0, 3);
 }
 
@@ -181,4 +204,13 @@ export function generarSugerencias(input: BudgetInput): Sugerencia[] {
 export function formatImpacto(impacto: Rango): string {
   if (impacto.min === impacto.max) return `−${impacto.min} €`;
   return `−${impacto.min} a −${impacto.max} €`;
+}
+
+/**
+ * El impacto sobre la cifra recomendada, que es el que se enseña. Lleva
+ * «aprox.» porque sigue siendo la diferencia entre dos estimaciones nuestras,
+ * no un descuento que nadie vaya a aplicar.
+ */
+export function formatImpactoRecomendado(importe: number): string {
+  return `−${importe} € aprox.`;
 }

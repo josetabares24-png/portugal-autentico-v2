@@ -1,6 +1,6 @@
 'use client';
 
-import { formatRango, type Rango } from '@/lib/budget-calculator';
+import { formatRecomendado } from '@/lib/budget-recommended';
 
 /*
  * Resumen fijo inferior, sólo en móvil y tablet pequeña.
@@ -23,8 +23,9 @@ export function BudgetMobileDock({
   visible,
   onOptimizar,
 }: {
-  total: Rango;
-  porPersona: Rango;
+  /** La cifra recomendada, no el rango: en el dock no cabe un intervalo. */
+  total: number;
+  porPersona: number;
   visible: boolean;
   onOptimizar: () => void;
 }) {
@@ -39,13 +40,13 @@ export function BudgetMobileDock({
       <div className="flex items-center justify-between gap-3 px-5 py-3.5">
         <div className="min-w-0">
           <p className="font-body text-[10px] font-semibold uppercase tracking-[0.16em] text-white/60">
-            Tu presupuesto estimado
+            Tu presupuesto recomendado
           </p>
           <p className="font-display text-lg font-semibold leading-tight text-white">
-            {formatRango(total)}
+            {formatRecomendado(total)}
           </p>
           <p className="font-body text-[11px] leading-tight text-white/70">
-            {formatRango(porPersona)} por persona
+            ≈ {formatRecomendado(porPersona)} por persona
           </p>
         </div>
         <button

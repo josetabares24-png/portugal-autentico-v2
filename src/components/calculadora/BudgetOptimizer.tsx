@@ -1,7 +1,11 @@
 'use client';
 
 import Icon from '@/components/Icon';
-import { formatImpacto, type Sugerencia } from '@/lib/budget-optimizer';
+import {
+  formatImpacto,
+  formatImpactoRecomendado,
+  type Sugerencia,
+} from '@/lib/budget-optimizer';
 
 /*
  * «Cómo gastar menos».
@@ -38,8 +42,18 @@ function Fila({
             {sugerencia.descripcion}
           </p>
         </div>
-        <span className="flex-shrink-0 text-right font-body text-sm font-semibold tabular-nums text-terracotta">
-          {formatImpacto(sugerencia.impacto)}
+        {/*
+          Arriba, la cifra que se compara con el número grande de la pantalla.
+          Debajo, en pequeño, cuánto se movería el rango completo: sigue
+          estando, pero ya no es lo primero que se lee.
+        */}
+        <span className="flex-shrink-0 text-right">
+          <span className="block font-body text-sm font-semibold tabular-nums text-terracotta">
+            {formatImpactoRecomendado(sugerencia.impactoRecomendado)}
+          </span>
+          <span className="mt-0.5 block font-body text-[10px] tabular-nums text-text-secondary">
+            rango {formatImpacto(sugerencia.impacto)}
+          </span>
         </span>
       </div>
       <button

@@ -28,7 +28,12 @@ import {
   type BudgetResult,
   type Rango,
 } from './budget-calculator';
-import { formatImpacto, type Sugerencia } from './budget-optimizer';
+import { formatImpactoRecomendado, type Sugerencia } from './budget-optimizer';
+import {
+  formatRecomendado,
+  getRecommendedBudget,
+  type RecommendedBudget,
+} from './budget-recommended';
 
 const CREAM = rgb(0.961, 0.937, 0.902); // #F5EFE6
 const NIGHT = rgb(0.102, 0.169, 0.29); // #1a2b4a
@@ -154,8 +159,8 @@ function parrafo(
 }
 
 function titulo(ctx: Contexto, contenido: string): void {
-  asegurar(ctx, 28);
-  ctx.y -= 9;
+  asegurar(ctx, 24);
+  ctx.y -= 5;
   texto(ctx, contenido.toUpperCase(), { size: 8, font: ctx.negrita, color: TERRACOTTA });
   ctx.y -= 6;
   ctx.pagina.drawLine({
@@ -169,13 +174,13 @@ function titulo(ctx: Contexto, contenido: string): void {
 
 /** Una fila «concepto ......... valor». El patrón de todo el desglose. */
 function fila(ctx: Contexto, etiqueta: string, valor: string, nota?: string): void {
-  asegurar(ctx, nota ? 23 : 15);
+  asegurar(ctx, nota ? 22 : 14);
   texto(ctx, etiqueta, { size: 10, font: ctx.negrita });
   textoDerecha(ctx, valor, { size: 10 });
-  ctx.y -= nota ? 11 : 14;
+  ctx.y -= nota ? 11 : 13;
   if (nota) {
     texto(ctx, nota, { size: 8, color: TAUPE });
-    ctx.y -= 12;
+    ctx.y -= 11;
   }
 }
 
@@ -194,6 +199,7 @@ export async function createBudgetPdf(
   sugerencias: readonly Sugerencia[],
   generadoEn: Date
 ): Promise<Uint8Array> {
+  const recomendado: RecommendedBudget = getRecommendedBudget(input, result);
   const doc = await PDFDocument.create();
   doc.setTitle('Presupuesto para tu viaje a Lisboa');
   doc.setAuthor('Estaba en Lisboa');
@@ -213,16 +219,16 @@ export async function createBudgetPdf(
   // -- Cabecera --------------------------------------------------------
   ctx.pagina.drawRectangle({
     x: 0,
-    y: A4.alto - 88,
+    y: A4.alto - 78,
     width: A4.ancho,
-    height: 88,
+    height: 78,
     color: NIGHT,
   });
-  ctx.y = A4.alto - 38;
+  ctx.y = A4.alto - 34;
   texto(ctx, 'Estaba en Lisboa', { size: 15, font: ctx.display, color: GOLD });
   ctx.y -= 21;
   texto(ctx, 'Presupuesto para tu viaje a Lisboa', { size: 17, font: ctx.negrita, color: BLANCO });
-  ctx.y = A4.alto - 88 - 22;
+  ctx.y = A4.alto - 78 - 20;
 
   // -- El viaje --------------------------------------------------------
   titulo(ctx, 'Tu viaje');
@@ -257,30 +263,47 @@ export async function createBudgetPdf(
   fila(ctx, 'Transporte', OPCIONES_TRANSPORTE.find((o) => o.id === input.transporte)?.label ?? '—');
   if (input.excursionSintra) fila(ctx, 'Excursión', 'Un día completo en Sintra');
 
-  // -- Las tres cifras -------------------------------------------------
-  titulo(ctx, 'Presupuesto estimado');
+  // -- Las cifras ------------------------------------------------------
+  titulo(ctx, 'Tu presupuesto recomendado');
 
-  asegurar(ctx, 74);
+  asegurar(ctx, 90);
   ctx.pagina.drawRectangle({
     x: MARGEN,
-    y: ctx.y - 58,
+    y: ctx.y - 74,
     width: ANCHO_UTIL,
-    height: 72,
+    height: 88,
     color: BLANCO,
     borderColor: GOLD,
     borderWidth: 1,
   });
   ctx.y -= 6;
-  texto(ctx, 'TOTAL PARA EL GRUPO', { size: 7.5, font: ctx.negrita, color: TAUPE, x: MARGEN + 16 });
-  ctx.y -= 24;
-  texto(ctx, formatRango(result.total), { size: 24, font: ctx.negrita, color: NIGHT, x: MARGEN + 16 });
-  ctx.y -= 20;
+  texto(ctx, 'PARA TODO EL GRUPO', { size: 7.5, font: ctx.negrita, color: TAUPE, x: MARGEN + 16 });
+  ctx.y -= 27;
+  texto(ctx, formatRecomendado(recomendado.total), {
+    size: 28,
+    font: ctx.negrita,
+    color: NIGHT,
+    x: MARGEN + 16,
+  });
+  ctx.y -= 19;
   texto(
     ctx,
-    `${formatRango(result.porPersona)} por persona  ·  ${formatRango(result.porPersonaYDia)} por persona y día`,
+    `≈ ${formatRecomendado(recomendado.porPersona)} por persona  ·  ≈ ${formatRecomendado(recomendado.porPersonaYDia)} por persona y día`,
     { size: 9, color: TAUPE, x: MARGEN + 16 }
   );
-  ctx.y -= 22;
+  ctx.y -= 15;
+  texto(ctx, `Rango estimado: ${formatRango(result.total)}`, {
+    size: 9,
+    color: TAUPE,
+    x: MARGEN + 16,
+  });
+  ctx.y -= 24;
+
+  parrafo(
+    ctx,
+    'Una cifra práctica dentro de nuestra estimación, para planificar sin manejar un intervalo enorme.'
+  );
+  ctx.y -= 6;
 
   fila(
     ctx,
@@ -290,33 +313,52 @@ export async function createBudgetPdf(
   );
 
   // -- Desglose --------------------------------------------------------
-  titulo(ctx, 'De dónde sale cada cifra');
+  titulo(ctx, 'Desglose recomendado');
 
-  for (const categoria of result.categorias) {
+  const baseDe = (id: string) => result.categorias.find((c) => c.id === id)?.base ?? '';
+
+  for (const categoria of recomendado.categorias) {
     fila(
       ctx,
       categoria.label,
-      formatRango(categoria.rango),
-      categoria.origen === 'introducido' ? `${categoria.base} · importe tuyo, sin estimar` : categoria.base
+      formatRecomendado(categoria.importe),
+      categoria.origen === 'introducido'
+        ? 'Importe que has indicado'
+        : `${baseDe(categoria.id)} · ${formatRango(categoria.rango)} estimados`
     );
   }
+
+  // La diferencia del redondeo va escrita, no escondida: así el desglose suma.
+  if (recomendado.redondeo > 0) {
+    fila(ctx, 'Redondeo', formatRecomendado(recomendado.redondeo));
+  }
+  fila(ctx, 'TOTAL RECOMENDADO', formatRecomendado(recomendado.total));
 
   if (!result.vuelosIncluidos) {
     parrafo(ctx, 'Los vuelos no están incluidos: no introdujiste ningún importe.');
   }
 
   // -- Atracciones -----------------------------------------------------
-  if (result.atraccionesSeleccionadas.length > 0) {
+  if (recomendado.entradas.length > 0) {
     titulo(ctx, 'Actividades seleccionadas');
-    for (const atraccion of result.atraccionesSeleccionadas) {
-      asegurar(ctx, 14);
-      texto(ctx, `·  ${atraccion.nombre}`, { size: 9.5 });
-      textoDerecha(ctx, atraccion.zona === 'sintra' ? 'Sintra' : 'Lisboa', { size: 8.5, color: TAUPE });
-      ctx.y -= 14;
+    for (const linea of recomendado.entradas) {
+      asegurar(ctx, 13);
+      texto(ctx, linea.atraccion.nombre, { size: 9.5, font: ctx.negrita });
+      texto(
+        ctx,
+        `  ·  ${linea.porPersona} € por persona × ${linea.personas}`,
+        {
+          size: 8,
+          color: TAUPE,
+          x: MARGEN + ctx.negrita.widthOfTextAtSize(sanear(linea.atraccion.nombre), 9.5),
+        }
+      );
+      textoDerecha(ctx, formatRecomendado(linea.subtotal), { size: 9.5, font: ctx.negrita });
+      ctx.y -= 13;
     }
     parrafo(
       ctx,
-      'Cada entrada se cuenta una vez por persona, estimada por tramo de precio. No citamos tarifas oficiales porque cambian.'
+      'Las cantidades de actividades son estimaciones para planificación y pueden diferir de la tarifa vigente. Comprueba el precio actual antes de reservar.'
     );
   }
 
@@ -326,7 +368,11 @@ export async function createBudgetPdf(
     for (const sugerencia of sugerencias) {
       asegurar(ctx, 28);
       texto(ctx, sugerencia.titulo, { size: 10, font: ctx.negrita });
-      textoDerecha(ctx, formatImpacto(sugerencia.impacto), { size: 10, font: ctx.negrita, color: TERRACOTTA });
+      textoDerecha(ctx, formatImpactoRecomendado(sugerencia.impactoRecomendado), {
+        size: 10,
+        font: ctx.negrita,
+        color: TERRACOTTA,
+      });
       ctx.y -= 12;
       for (const linea of envolver(sugerencia.descripcion, ctx.regular, 8.5, ANCHO_UTIL - 90)) {
         texto(ctx, linea, { size: 8.5, color: TAUPE });
@@ -338,18 +384,27 @@ export async function createBudgetPdf(
   }
 
   // -- Pie -------------------------------------------------------------
-  titulo(ctx, 'Antes de darlo por bueno');
-  parrafo(
-    ctx,
-    'Esto es una estimación orientativa, no un precio cerrado: depende de la temporada, de la antelación con la que reserves y de decisiones que quizá aún no has tomado. Los rangos estimados se redondean hacia fuera a múltiplos de 5 €; los importes que introdujiste tú entran tal cual.'
-  );
-
+  /*
+   * El cierre se reserva entero antes de empezar a dibujarlo. Sin esto, el
+   * párrafo cabía en la página y la fecha no, y el PDF acababa con una hoja
+   * en blanco ocupada por una sola línea.
+   */
+  const CIERRE =
+    'Estimación orientativa, no un precio cerrado: depende de la temporada, de la antelación con la que reserves y de decisiones que quizá aún no has tomado.';
   const fecha = generadoEn.toLocaleDateString('es-ES', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   });
-  asegurar(ctx, 18);
+
+  const lineasCierre = envolver(CIERRE, ctx.regular, 9, ANCHO_UTIL);
+  asegurar(ctx, 24 + lineasCierre.length * 12 + 16);
+
+  titulo(ctx, 'Antes de darlo por bueno');
+  for (const linea of lineasCierre) {
+    texto(ctx, linea, { size: 9, color: TAUPE });
+    ctx.y -= 12;
+  }
   ctx.y -= 4;
   texto(ctx, `Generado el ${fecha} · estabaenlisboa.com`, { size: 8, color: TAUPE });
 
@@ -361,9 +416,12 @@ export function nombreArchivoPdf(result: BudgetResult): string {
   return `presupuesto-lisboa-${result.dias}d-${result.personas}p.pdf`;
 }
 
-/** Resumen de una línea para el asunto del email. */
-export function resumenPresupuesto(total: Rango, dias: number, personas: number): string {
+/**
+ * El viaje en una línea, para el email. Sólo duración y personas: la cifra ya
+ * va aparte y como protagonista, y repetirla aquí la duplicaría.
+ */
+export function resumenPresupuesto(dias: number, personas: number): string {
   const dia = dias === 1 ? 'día' : 'días';
   const persona = personas === 1 ? 'persona' : 'personas';
-  return `${dias} ${dia}, ${personas} ${persona}: ${formatRango(total)}`;
+  return `${dias} ${dia} · ${personas} ${persona}`;
 }

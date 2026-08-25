@@ -18,7 +18,8 @@
     "test:budget": "node scripts/test-budget-calculator.mjs",
     "test:optimizer": "node --import ./scripts/register-ts.mjs scripts/test-budget-optimizer.mjs",
     "test:presupuesto": "node --import ./scripts/register-ts.mjs scripts/test-presupuesto.mjs",
-    "test:actividades": "node --import ./scripts/register-ts.mjs scripts/test-actividades.mjs"
+    "test:actividades": "node --import ./scripts/register-ts.mjs scripts/test-actividades.mjs",
+    "test:budget-recommended": "node --import ./scripts/register-ts.mjs scripts/test-budget-recommended.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.7",

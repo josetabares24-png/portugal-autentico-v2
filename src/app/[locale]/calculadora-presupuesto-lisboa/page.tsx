@@ -10,6 +10,7 @@ import { BudgetDonut, categoriaDominante } from '@/components/calculadora/Budget
 import { BudgetMobileDock } from '@/components/calculadora/BudgetMobileDock';
 import { BudgetOptimizer } from '@/components/calculadora/BudgetOptimizer';
 import { BudgetSaveCard } from '@/components/calculadora/BudgetSaveCard';
+import { formatRecomendado, getRecommendedBudget } from '@/lib/budget-recommended';
 import {
   BudgetStylePresets,
   presetActivo,
@@ -377,6 +378,7 @@ export default function CalculadoraPresupuestoPage() {
   const [inputAnterior, setInputAnterior] = useState<BudgetInput | null>(null);
 
   const resultadoRef = useRef<HTMLDivElement>(null);
+  const personalizarRef = useRef<HTMLDivElement>(null);
   const optimizadorRef = useRef<HTMLDivElement>(null);
   const [resultadoVisible, setResultadoVisible] = useState(false);
 
@@ -411,6 +413,20 @@ export default function CalculadoraPresupuestoPage() {
     resultadoRef.current?.focus({ preventScroll: true });
   }, []);
 
+  /*
+   * «Afinar presupuesto» abre Personalizar y lleva la vista hasta allí. No es
+   * un formulario nuevo: los campos de alojamiento propio y vuelos ya existen,
+   * sólo están plegados. Lo único que hace falta es dejar de esconderlos
+   * cuando alguien pregunta cómo mejorar la cifra.
+   */
+  const afinar = useCallback(() => {
+    setPersonalizarAbierto(true);
+    personalizarRef.current?.scrollIntoView({
+      behavior: prefiereMenosMovimiento() ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }, []);
+
   const inputActual: BudgetInput = useMemo(
     () => ({
       dias,
@@ -443,6 +459,10 @@ export default function CalculadoraPresupuestoPage() {
 
   const resultado = useMemo(() => calculateLisbonBudget(inputActual), [inputActual]);
   const sugerencias = useMemo(() => generarSugerencias(inputActual), [inputActual]);
+  const recomendado = useMemo(
+    () => getRecommendedBudget(inputActual, resultado),
+    [inputActual, resultado]
+  );
 
   /**
    * Lleva un `BudgetInput` completo de vuelta al estado de la interfaz. Sólo
@@ -506,7 +526,7 @@ export default function CalculadoraPresupuestoPage() {
   const sintraMarcadas = resultado.atraccionesSeleccionadas.filter((a) => a.zona === 'sintra');
   const conEntradas = resultado.atraccionesSeleccionadas.filter((a) => a.bookingProductId);
   const sinEntradas = resultado.atraccionesSeleccionadas.filter((a) => !a.bookingProductId);
-  const dominante = categoriaDominante(resultado.categorias);
+  const dominante = categoriaDominante(recomendado.categorias);
   const importeVuelos = normalizarImporte(vuelos);
   const estilo = presetActivo({ modoAlojamiento, alojamiento: nivelAlojamiento, comida, transporte });
 
@@ -624,7 +644,7 @@ summary::-webkit-details-marker { display: none; }
               <Bloque titulo="¿Cómo quieres viajar?">
                 <BudgetStylePresets activo={estilo} onElegir={elegirPreset} />
 
-                <div className="mt-4 border-t border-border-soft pt-3">
+                <div ref={personalizarRef} className="mt-4 scroll-mt-24 border-t border-border-soft pt-3">
                   <Plegable
                     titulo={
                       hayDatosPropios
@@ -770,36 +790,61 @@ summary::-webkit-details-marker { display: none; }
                 aria-live="polite"
                 className="overflow-hidden rounded-xl border border-border-soft bg-white shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
+                {/*
+                  La cifra protagonista es una sola. Un rango de trescientos
+                  euros de recorrido es honesto pero no se puede usar: nadie
+                  aparta «385 – 675 €» para un viaje. El rango no desaparece,
+                  baja un escalón —sigue aquí abajo y en el desglose— y arriba
+                  queda lo que la persona vino a preguntar.
+                */}
                 <div className="bg-night px-5 py-5 text-white md:px-6">
                   <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-white/65">
-                    Tu presupuesto estimado
+                    Tu presupuesto recomendado
                   </p>
                   <p
-                    key={`total-${formatRango(resultado.total)}`}
-                    className="budget-cifra mt-1 font-display text-[2rem] font-semibold leading-none md:text-[2.4rem]"
+                    key={`total-${recomendado.total}`}
+                    className="budget-cifra mt-1 font-display text-[2.6rem] font-semibold leading-none md:text-[3rem]"
                   >
-                    {formatRango(resultado.total)}
+                    {formatRecomendado(recomendado.total)}
+                  </p>
+                  <p className="mt-1.5 font-body text-[13px] text-white/75">
+                    {resultado.dias} {resultado.dias === 1 ? 'día' : 'días'}
+                    <span className="mx-1.5 text-white/40">·</span>
+                    {resultado.personas} {resultado.personas === 1 ? 'persona' : 'personas'}
+                    <span className="mx-1.5 text-white/40">·</span>
+                    {resultado.noches === 0
+                      ? 'sin dormir en Lisboa'
+                      : `${resultado.noches} ${resultado.noches === 1 ? 'noche' : 'noches'}`}
                   </p>
                   <p className="mt-2.5 border-t border-white/15 pt-2.5 font-body text-sm text-white/85">
                     <span className="font-semibold text-white">
-                      {formatRango(resultado.porPersona)}
+                      ≈ {formatRecomendado(recomendado.porPersona)}
                     </span>{' '}
                     por persona
-                    <span className="mx-2 text-white/40">·</span>
-                    {formatRango(resultado.porPersonaYDia)} al día
+                    <span className="mx-2 text-white/40">·</span>≈{' '}
+                    {formatRecomendado(recomendado.porPersonaYDia)} al día
                   </p>
                 </div>
 
                 <div className="px-5 py-4 md:px-6">
                   <p className="font-body text-[11px] leading-relaxed text-text-secondary">
-                    {resultado.dias} {resultado.dias === 1 ? 'día' : 'días'} ·{' '}
-                    {resultado.personas} {resultado.personas === 1 ? 'persona' : 'personas'} ·{' '}
-                    {resultado.noches === 0
-                      ? 'sin dormir en Lisboa'
-                      : `${resultado.noches} ${resultado.noches === 1 ? 'noche' : 'noches'}`}
+                    Una cifra práctica dentro de nuestra estimación, para que puedas planificar
+                    sin trabajar con un intervalo enorme.
                   </p>
 
                   <div className="mt-3 flex items-baseline justify-between gap-3 rounded-lg bg-background-light px-3 py-2.5">
+                    <span className="font-body text-[13px] text-text-main">
+                      Rango estimado
+                      <span className="block text-[11px] text-text-secondary">
+                        entre lo que puede salir barato y lo que puede salir caro
+                      </span>
+                    </span>
+                    <span className="font-body text-[15px] font-semibold tabular-nums text-text-main">
+                      {formatRango(resultado.total)}
+                    </span>
+                  </div>
+
+                  <div className="mt-2 flex items-baseline justify-between gap-3 rounded-lg bg-background-light px-3 py-2.5">
                     <span className="font-body text-[13px] text-text-main">
                       Gastos en destino
                       <span className="block text-[11px] text-text-secondary">
@@ -817,39 +862,115 @@ summary::-webkit-details-marker { display: none; }
                     </p>
                   )}
 
+                  {/*
+                    Atajo a «Personalizar». No es un formulario nuevo: los
+                    campos ya existen, sólo están plegados. Lo único que
+                    aporta es decir en voz alta que un importe real vale más
+                    que cualquier estimación nuestra.
+                  */}
+                  <div className="mt-3 rounded-lg border border-dashed border-taupe/50 px-3 py-2.5">
+                    <p className="font-body text-[12px] font-semibold text-text-main">
+                      ¿Quieres afinarlo más?
+                    </p>
+                    <p className="mt-0.5 font-body text-[11px] leading-relaxed text-text-secondary">
+                      Si ya sabes cuánto pagarás por alojamiento o vuelos, introduce esos importes
+                      en Personalizar y los usaremos tal cual.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={afinar}
+                      className="mt-2 font-body text-[12px] font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
+                    >
+                      Afinar presupuesto
+                    </button>
+                  </div>
+
                   <div className="mt-3 border-t border-border-soft pt-3">
                     <Plegable titulo="Ver el desglose completo">
                       <ul className="space-y-2">
-                        {resultado.categorias.map((categoria) => (
+                        {recomendado.categorias.map((categoria) => (
                           <li key={categoria.id} className="grid grid-cols-[1fr,auto] gap-x-3">
                             <span className="font-body text-[13px] text-text-main">
                               {categoria.label}
                             </span>
                             <span className="text-right font-body text-[13px] font-semibold tabular-nums text-text-main">
-                              {formatRango(categoria.rango)}
+                              {formatRecomendado(categoria.importe)}
                             </span>
                             <span className="font-body text-[11px] leading-snug text-text-secondary">
-                              {categoria.base}
-                              {categoria.origen === 'introducido' && ' · importe tuyo'}
+                              {categoria.origen === 'introducido'
+                                ? 'Importe que has indicado'
+                                : `${formatRango(categoria.rango)} estimados`}
                             </span>
                           </li>
                         ))}
+
+                        {/*
+                          Cuando la suma no cae en un múltiplo de cinco, la
+                          diferencia aparece como línea propia. Preferimos una
+                          fila fea a que las columnas no sumen: si alguien
+                          suma el desglose a mano y le falta un euro, deja de
+                          creerse el resto.
+                        */}
+                        {recomendado.redondeo > 0 && (
+                          <li className="grid grid-cols-[1fr,auto] gap-x-3">
+                            <span className="font-body text-[13px] text-text-secondary">
+                              Redondeo
+                            </span>
+                            <span className="text-right font-body text-[13px] tabular-nums text-text-secondary">
+                              {formatRecomendado(recomendado.redondeo)}
+                            </span>
+                          </li>
+                        )}
+
+                        <li className="grid grid-cols-[1fr,auto] gap-x-3 border-t border-border-soft pt-2">
+                          <span className="font-body text-[13px] font-semibold text-text-main">
+                            Total recomendado
+                          </span>
+                          <span className="text-right font-body text-[13px] font-semibold tabular-nums text-text-main">
+                            {formatRecomendado(recomendado.total)}
+                          </span>
+                        </li>
                       </ul>
+
+                      {recomendado.entradas.length > 0 && (
+                        <div className="mt-3 border-t border-border-soft pt-3">
+                          <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.12em] text-text-secondary">
+                            Entradas, una a una
+                          </p>
+                          <ul className="space-y-1.5">
+                            {recomendado.entradas.map((linea) => (
+                              <li
+                                key={linea.atraccion.id}
+                                className="grid grid-cols-[1fr,auto] gap-x-3"
+                              >
+                                <span className="font-body text-[12px] text-text-main">
+                                  {linea.atraccion.nombre}
+                                </span>
+                                <span className="text-right font-body text-[12px] font-semibold tabular-nums text-text-main">
+                                  {formatRecomendado(linea.subtotal)}
+                                </span>
+                                <span className="font-body text-[11px] text-text-secondary">
+                                  {linea.porPersona} € × {linea.personas}{' '}
+                                  {linea.personas === 1 ? 'persona' : 'personas'}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
                       <p className="mt-3 font-body text-[11px] leading-relaxed text-text-secondary">
-                        Es una estimación, no un precio. Los rangos son anchos a propósito.
+                        Cada partida es un punto dentro de su rango estimado, no un precio. Lo que
+                        has introducido tú entra tal cual.
                       </p>
                     </Plegable>
                   </div>
                 </div>
               </div>
 
-              {resultado.total.max > 0 && (
+              {recomendado.total > 0 && (
                 <Bloque titulo="Así se distribuye tu presupuesto">
-                  <BudgetDonut
-                    categorias={resultado.categorias}
-                    total={resultado.total}
-                    vuelos={importeVuelos > 0 ? importeVuelos : null}
-                  />
+                  <BudgetDonut recomendado={recomendado} />
                 </Bloque>
               )}
 
@@ -1034,8 +1155,8 @@ summary::-webkit-details-marker { display: none; }
       </section>
 
       <BudgetMobileDock
-        total={resultado.total}
-        porPersona={resultado.porPersona}
+        total={recomendado.total}
+        porPersona={recomendado.porPersona}
         visible={!resultadoVisible}
         onOptimizar={() => {
           setVerMasAhorro(true);

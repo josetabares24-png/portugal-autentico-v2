@@ -18,6 +18,7 @@ import assert from 'node:assert/strict';
 import { inflateSync } from 'node:zlib';
 import { calculateLisbonBudget, ATRACCIONES } from '../src/lib/budget-calculator.ts';
 import { generarSugerencias } from '../src/lib/budget-optimizer.ts';
+import { getRecommendedBudget } from '../src/lib/budget-recommended.ts';
 import { parseBudgetInput } from '../src/lib/budget-input.ts';
 import { createBudgetPdf, nombreArchivoPdf } from '../src/lib/budget-pdf.ts';
 
@@ -116,12 +117,23 @@ await test('A · el PDF es un PDF válido y no está vacío', async () => {
 await test('B · el PDF usa el resultado real del motor, no otro cálculo', async () => {
   const input = { ...BASE, dias: 5, personas: 3, comida: 'restaurantes' };
   const { result, texto } = await pdfDe(input);
-  // El PDF escribe el rango con guion simple: la raya del formato de pantalla
-  // no existe en WinAnsi y `sanear()` la traduce.
+  const rec = getRecommendedBudget(input, result);
+
+  // La cifra protagonista es la recomendada, cerrada.
+  assert.ok(texto.includes(`${rec.total} €`), `no aparece el total recomendado ${rec.total} €`);
+  assert.ok(
+    texto.includes(`${rec.porPersona} € por persona`),
+    `no aparece el por persona recomendado ${rec.porPersona} €`
+  );
+  assert.ok(
+    texto.includes(`${rec.porPersonaYDia} € por persona y día`),
+    `no aparece el por persona y día recomendado ${rec.porPersonaYDia} €`
+  );
+
+  // Y el rango sigue estando, en segundo plano. El PDF lo escribe con guion
+  // simple: la raya del formato de pantalla no existe en WinAnsi.
   for (const [concepto, rango] of [
-    ['total', result.total],
-    ['por persona', result.porPersona],
-    ['por persona y día', result.porPersonaYDia],
+    ['rango estimado', result.total],
     ['gastos en destino', result.sinAlojamiento],
   ]) {
     assert.ok(
@@ -129,6 +141,45 @@ await test('B · el PDF usa el resultado real del motor, no otro cálculo', asyn
       `no aparece el ${concepto} ${rango.min} - ${rango.max} €`
     );
   }
+  assert.ok(texto.includes('Rango estimado'), 'el rango debe seguir etiquetado');
+});
+
+await test('B2 · el desglose del PDF suma exactamente el total recomendado', async () => {
+  const input = { ...BASE, atracciones: ['castelo-sao-jorge', 'oceanario'], vuelosTotal: 343 };
+  const { result, texto } = await pdfDe(input);
+  const rec = getRecommendedBudget(input, result);
+
+  for (const categoria of rec.categorias) {
+    assert.ok(
+      texto.includes(`${categoria.importe} €`),
+      `falta la partida ${categoria.label} (${categoria.importe} €)`
+    );
+  }
+  if (rec.redondeo > 0) {
+    assert.ok(texto.includes('Redondeo'), 'el redondeo debe declararse, no esconderse');
+  }
+  assert.ok(texto.includes('TOTAL RECOMENDADO'), 'falta la fila del total');
+
+  const suma = rec.categorias.reduce((a, c) => a + c.importe, 0) + rec.redondeo;
+  assert.equal(suma, rec.total, 'el desglose no reconstruye el total');
+});
+
+await test('B3 · cada entrada del PDF lleva su cifra por persona y su subtotal', async () => {
+  const input = { ...BASE, personas: 2, atracciones: ['castelo-sao-jorge', 'palacio-pena'] };
+  const { result, texto } = await pdfDe(input);
+  const rec = getRecommendedBudget(input, result);
+
+  for (const linea of rec.entradas) {
+    assert.ok(texto.includes(linea.atraccion.nombre), `falta ${linea.atraccion.nombre}`);
+    assert.ok(
+      texto.includes(`${linea.porPersona} € por persona × ${linea.personas}`),
+      `falta el detalle de ${linea.atraccion.nombre}`
+    );
+  }
+  assert.ok(
+    texto.includes('pueden diferir de la tarifa vigente'),
+    'falta el aviso de que no son tarifas oficiales'
+  );
 });
 
 await test('C · el PDF incluye días, noches y personas', async () => {
@@ -182,7 +233,7 @@ await test('H · los vuelos introducidos aparecen; si no hay, se dice', async ()
 
 await test('I · el PDF lleva el aviso de estimación y la fecha de generación', async () => {
   const { texto } = await pdfDe(BASE);
-  assert.ok(texto.includes('estimación orientativa'), 'falta el aviso');
+  assert.ok(/[Ee]stimación orientativa/.test(texto), 'falta el aviso');
   assert.ok(texto.includes('no un precio cerrado'), 'falta la negación explícita');
   assert.ok(texto.includes('25 de agosto de 2026'), 'falta la fecha de generación');
 });
