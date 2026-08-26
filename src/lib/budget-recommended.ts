@@ -104,9 +104,25 @@ export interface RecommendedBudget {
   total: number;
   porPersona: number;
   porPersonaYDia: number;
+  /**
+   * Gasto en destino sin alojamiento ni vuelos, con la misma cifra
+   * recomendada. Existe para no obligar a leer dos modelos mentales a la vez:
+   * si arriba hay un número cerrado, aquí abajo también.
+   */
+  enDestino: number;
   /** El rango del motor, que sigue estando disponible. */
   rango: Rango;
+  /** El rango del gasto en destino, que también sigue disponible. */
+  rangoEnDestino: Rango;
 }
+
+/** Las partidas que se gastan estando allí. Ni alojamiento ni vuelos. */
+const CATEGORIAS_EN_DESTINO: readonly CategoriaId[] = [
+  'comida',
+  'transporte',
+  'atracciones',
+  'excursion',
+];
 
 /**
  * Elige la cifra recomendada de un presupuesto ya calculado.
@@ -154,6 +170,15 @@ export function getRecommendedBudget(input: BudgetInput, result: BudgetResult): 
   const sumaCategorias = categorias.reduce((suma, categoria) => suma + categoria.importe, 0);
   const total = arribaACinco(sumaCategorias);
 
+  /*
+   * El gasto en destino se suma de las mismas categorías recomendadas, no de
+   * una fórmula aparte. Si mañana cambia cómo se elige el punto de un rango,
+   * esta cifra cambia sola y sigue cuadrando con el desglose.
+   */
+  const enDestino = categorias
+    .filter((c) => CATEGORIAS_EN_DESTINO.includes(c.id))
+    .reduce((suma, c) => suma + c.importe, 0);
+
   return {
     categorias,
     entradas,
@@ -162,7 +187,9 @@ export function getRecommendedBudget(input: BudgetInput, result: BudgetResult): 
     total,
     porPersona: Math.round(total / personas),
     porPersonaYDia: Math.round(total / (personas * result.dias)),
+    enDestino,
     rango: result.total,
+    rangoEnDestino: result.sinAlojamiento,
   };
 }
 

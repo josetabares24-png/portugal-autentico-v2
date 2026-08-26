@@ -75,9 +75,9 @@ import { generarSugerencias, type Sugerencia } from '@/lib/budget-optimizer';
 
 const FAQ: readonly { pregunta: string; respuesta: string }[] = [
   {
-    pregunta: '¿Por qué da un rango y no una cifra exacta?',
+    pregunta: '¿Qué significa «presupuesto recomendado»?',
     respuesta:
-      'Porque una cifra exacta sería mentira. El mismo viaje cuesta cosas muy distintas en agosto y en febrero, reservando con cuatro meses o con cuatro días, y según decisiones que todavía no has tomado. El rango te dice entre qué dos números vas a moverte, que es lo que de verdad necesitas para decidir. Lo que sí es exacto es lo que introduces tú: si ya tienes el alojamiento reservado o sabes lo que cuestan tus vuelos, esos importes entran tal cual, sin margen añadido.',
+      'Es una cifra práctica dentro del rango que estimamos para tu viaje: un número con el que puedes trabajar, en vez de un intervalo de varios cientos de euros. No es un precio cerrado. Las fechas, la disponibilidad, la antelación con la que reserves y las decisiones que todavía no has tomado pueden mover el gasto, y por eso seguimos enseñando también el rango completo debajo. Lo que sí entra tal cual es lo que introduces tú: si ya tienes el alojamiento reservado o sabes lo que cuestan tus vuelos, esos importes se usan sin margen añadido.',
   },
   {
     pregunta: '¿Incluye los vuelos?',
@@ -87,17 +87,17 @@ const FAQ: readonly { pregunta: string; respuesta: string }[] = [
   {
     pregunta: '¿Puedo poner el alojamiento que ya tengo reservado?',
     respuesta:
-      'Sí, y es lo más recomendable en cuanto lo tengas. Elige «Importe propio» e introduce lo que pagas en total por toda la estancia y todo el grupo. Ese importe entra sin rango: es tu dato, no una estimación nuestra, y suele ser la partida que más estrecha el resultado.',
+      'Sí, y es lo más recomendable en cuanto lo tengas. Elige «Importe propio» e introduce lo que pagas en total por toda la estancia y todo el grupo, no por noche ni por persona. Ese importe entra tal cual: es tu dato, no una estimación nuestra, y suele ser la partida que más estrecha el resultado. Mientras no escribas nada seguimos usando nuestra estimación, para que el presupuesto no se quede corto sin que te des cuenta.',
   },
   {
     pregunta: '¿Cuántas noches cuenta?',
     respuesta:
-      'Las que tú le digas. Al empezar sugiere una menos que los días, porque lo habitual es llegar un día y marcharse otro, pero puedes cambiarlas: tres días con tres noches es perfectamente posible, y una visita de un día sin dormir también.',
+      'Las que tú le digas. Al empezar propone una menos que los días, porque lo habitual es llegar un día y marcharse otro: si llegas el lunes y te vas el jueves, son 4 días y 3 noches. Pero puedes cambiarlas, y a partir de ahí se quedan como las dejes. Tres días con tres noches es perfectamente posible, y una visita de un día sin dormir también.',
   },
   {
     pregunta: '¿Y si voy a Sintra?',
     respuesta:
-      'Marca «Un día en Sintra» y se suma el desplazamiento: el tren de ida y vuelta y moverse por allí, que está en cuesta y con los sitios separados. Las entradas de Sintra no van ahí: se marcan una a una en la lista de atracciones, igual que las de Lisboa, para que no se cuenten dos veces.',
+      'Marca «Añadir transporte para un día en Sintra» y se suma el desplazamiento: el tren de ida y vuelta y moverse por allí, que está en cuesta y con los sitios separados. Las entradas de Sintra no van ahí: se marcan una a una en la lista de atracciones, igual que las de Lisboa, para que no se cuenten dos veces.',
   },
   {
     pregunta: '¿Por qué sale más caro viajando solo?',
@@ -159,9 +159,17 @@ function Contador({
 }) {
   return (
     <div data-control={control} className="text-center">
+      {/*
+        Las etiquetas tienen longitudes muy distintas —«Personas» frente a
+        «Noches de alojamiento»— y en tres columnas a 375 px unas envuelven y
+        otras no. Con una altura mínima común y el texto apoyado abajo, los
+        tres contadores quedan alineados envuelva la que envuelva. El
+        `tracking` es algo más corto que en el resto de la página por la misma
+        razón: aquí el ancho es el recurso escaso.
+      */}
       <p
         id={`${control}-etiqueta`}
-        className="mb-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.12em] text-text-secondary"
+        className="mb-1.5 flex min-h-[2.1rem] items-end justify-center text-balance font-body text-[11px] font-semibold uppercase leading-tight tracking-[0.06em] text-text-secondary"
       >
         {etiqueta}
       </p>
@@ -427,13 +435,30 @@ export default function CalculadoraPresupuestoPage() {
     });
   }, []);
 
+  /*
+   * «Importe propio» elegido pero el campo todavía vacío no puede valer 0 €.
+   * Contaba cero y el presupuesto caía de 565 a 315 € en el default: una cifra
+   * engañosamente baja justo mientras la persona busca el importe real.
+   *
+   * Mientras no haya un importe, se sigue usando la estimación del nivel
+   * elegido y se dice en voz alta que falta el dato. En cuanto hay un número
+   * mayor que cero, entra exacto como siempre.
+   *
+   * Ojo: un 0 escrito a mano sí es un dato legítimo —quien duerme en casa de
+   * alguien paga cero—, pero eso sólo se puede distinguir aquí, donde existe
+   * la diferencia entre «vacío» y «cero». El motor no la ve ni tiene por qué.
+   */
+  const importeAlojamientoPropio = normalizarImporte(alojamientoPropio);
+  const alojamientoPropioPendiente =
+    modoAlojamiento === 'propio' && alojamientoPropio.trim() === '';
+
   const inputActual: BudgetInput = useMemo(
     () => ({
       dias,
       noches,
       personas,
       alojamiento:
-        modoAlojamiento === 'propio'
+        modoAlojamiento === 'propio' && alojamientoPropio.trim() !== ''
           ? { modo: 'propio', total: normalizarImporte(alojamientoPropio) }
           : { modo: 'estimado', nivel: nivelAlojamiento },
       comida,
@@ -527,6 +552,39 @@ export default function CalculadoraPresupuestoPage() {
   const conEntradas = resultado.atraccionesSeleccionadas.filter((a) => a.bookingProductId);
   const sinEntradas = resultado.atraccionesSeleccionadas.filter((a) => !a.bookingProductId);
   const dominante = categoriaDominante(recomendado.categorias);
+
+  /*
+   * Qué estamos contando, en una frase. Se arma con lo que de verdad hay en el
+   * presupuesto, no con una lista fija: si no hay entradas marcadas no se
+   * nombran, y los vuelos sólo aparecen si la persona puso su importe.
+   */
+  const queIncluye = (() => {
+    const partes = ['alojamiento', 'comida', 'transporte'];
+    if (excursionSintra) partes.push('Sintra');
+    const entradas = recomendado.entradas.length;
+    if (entradas > 0) {
+      partes.push(`${entradas} ${entradas === 1 ? 'entrada' : 'entradas'}`);
+    }
+    const lista = `${partes.slice(0, -1).join(', ')} y ${partes[partes.length - 1]}`;
+    const vuelos = resultado.vuelosIncluidos
+      ? 'Vuelos incluidos con el importe que has indicado.'
+      : 'Vuelos no incluidos.';
+    return `Incluye ${lista}. ${vuelos}`;
+  })();
+
+  /*
+   * Las dos partidas que la persona puede convertir en dato exacto. Cuando ya
+   * están las dos, «¿Quieres afinarlo más?» sobra; cuando falta una, se nombra
+   * sólo esa en vez de repetir las dos.
+   */
+  const alojamientoAfinado = modoAlojamiento === 'propio' && importeAlojamientoPropio > 0;
+  const vuelosAfinados = resultado.vuelosIncluidos;
+  const yaAfinado = alojamientoAfinado && vuelosAfinados;
+  const faltaPorAfinar = !alojamientoAfinado && !vuelosAfinados
+    ? 'alojamiento o vuelos'
+    : !alojamientoAfinado
+      ? 'alojamiento'
+      : 'vuelos';
   const importeVuelos = normalizarImporte(vuelos);
   const estilo = presetActivo({ modoAlojamiento, alojamiento: nivelAlojamiento, comida, transporte });
 
@@ -606,7 +664,7 @@ summary::-webkit-details-marker { display: none; }
                 <div className="grid grid-cols-3 gap-2">
                   <Contador
                     control="dias"
-                    etiqueta="Días"
+                    etiqueta="Días en Lisboa"
                     valor={dias}
                     min={LIMITES.diasMin}
                     max={LIMITES.diasMax}
@@ -614,7 +672,7 @@ summary::-webkit-details-marker { display: none; }
                   />
                   <Contador
                     control="noches"
-                    etiqueta="Noches"
+                    etiqueta="Noches de alojamiento"
                     valor={noches}
                     min={LIMITES.nochesMin}
                     max={LIMITES.nochesMax}
@@ -631,12 +689,12 @@ summary::-webkit-details-marker { display: none; }
                 </div>
                 {noches === 0 && dias > 1 ? (
                   <p role="status" className="mt-2.5 font-body text-[11px] leading-relaxed text-terracotta">
-                    Con 0 noches el alojamiento no cuenta nada. Si vas a dormir en Lisboa,
-                    súbelas: suele ser la partida más grande.
+                    Has puesto 0 noches, así que no contamos alojamiento.
                   </p>
                 ) : (
                   <p className="mt-2.5 font-body text-[11px] leading-relaxed text-text-secondary">
-                    Las noches se sugieren solas —una menos que los días— hasta que las cambias.
+                    Ejemplo: si llegas el lunes y te vas el jueves, son 4 días y 3 noches.
+                    Puedes cambiar las noches si tu viaje es distinto.
                   </p>
                 )}
               </Bloque>
@@ -695,8 +753,8 @@ summary::-webkit-details-marker { display: none; }
                               valor={alojamientoPropio}
                               onChange={setAlojamientoPropio}
                               aviso={
-                                normalizarImporte(alojamientoPropio) === 0
-                                  ? 'Escribe el importe para que entre en el cálculo. Vacío cuenta 0 €.'
+                                alojamientoPropioPendiente
+                                  ? 'Añade el total del alojamiento para sustituir nuestra estimación.'
                                   : undefined
                               }
                             />
@@ -748,24 +806,35 @@ summary::-webkit-details-marker { display: none; }
                   */}
                   <label
                     htmlFor="sintra"
-                    className="mt-2 flex min-h-11 cursor-pointer items-center gap-2.5 rounded-lg border border-border-soft bg-background-light px-3 py-2"
+                    className="mt-2 flex cursor-pointer items-start gap-2.5 rounded-lg border border-border-soft bg-background-light px-3 py-2.5"
                   >
                     <input
                       id="sintra"
                       type="checkbox"
                       checked={excursionSintra}
                       onChange={(e) => setExcursionSintra(e.target.checked)}
-                      className="h-4 w-4 flex-shrink-0 rounded border-border-soft text-terracotta focus:ring-terracotta/30"
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-border-soft text-terracotta focus:ring-terracotta/30"
                     />
-                    <span className="font-body text-[13px] leading-snug text-text-main">
-                      Añadir transporte para un día en Sintra
+                    <span className="min-w-0">
+                      <span className="block font-body text-[13px] font-semibold leading-snug text-text-main">
+                        Añadir transporte para un día en Sintra
+                      </span>
+                      {/*
+                        La ayuda va visible y no en un `title`: es justo el dato
+                        que evita la duda de si las entradas están dentro.
+                      */}
+                      <span className="mt-0.5 block font-body text-[11px] leading-relaxed text-text-secondary">
+                        Incluye el desplazamiento y el transporte local. Las entradas de Sintra
+                        se calculan aparte.
+                      </span>
                     </span>
                   </label>
                   {sintraMarcadas.length > 0 && !excursionSintra && (
                     <p role="status" className="mt-2 font-body text-[11px] leading-relaxed text-terracotta">
                       Has marcado {sintraMarcadas.length}{' '}
                       {sintraMarcadas.length === 1 ? 'sitio' : 'sitios'} en Sintra. Si vas a
-                      subir, marca también el día de Sintra para contar el viaje.
+                      {sintraMarcadas.length === 1 ? ' visitarlo' : ' visitarlos'}, añade también
+                      el transporte del día.
                     </p>
                   )}
                 </BudgetAttractionChips>
@@ -807,14 +876,15 @@ summary::-webkit-details-marker { display: none; }
                   >
                     {formatRecomendado(recomendado.total)}
                   </p>
+                  {/* Días, noches y personas, en el orden en que se piensa un viaje. */}
                   <p className="mt-1.5 font-body text-[13px] text-white/75">
                     {resultado.dias} {resultado.dias === 1 ? 'día' : 'días'}
-                    <span className="mx-1.5 text-white/40">·</span>
-                    {resultado.personas} {resultado.personas === 1 ? 'persona' : 'personas'}
                     <span className="mx-1.5 text-white/40">·</span>
                     {resultado.noches === 0
                       ? 'sin dormir en Lisboa'
                       : `${resultado.noches} ${resultado.noches === 1 ? 'noche' : 'noches'}`}
+                    <span className="mx-1.5 text-white/40">·</span>
+                    {resultado.personas} {resultado.personas === 1 ? 'persona' : 'personas'}
                   </p>
                   <p className="mt-2.5 border-t border-white/15 pt-2.5 font-body text-sm text-white/85">
                     <span className="font-semibold text-white">
@@ -827,40 +897,39 @@ summary::-webkit-details-marker { display: none; }
                 </div>
 
                 <div className="px-5 py-4 md:px-6">
-                  <p className="font-body text-[11px] leading-relaxed text-text-secondary">
-                    Una cifra práctica dentro de nuestra estimación, para que puedas planificar
-                    sin trabajar con un intervalo enorme.
+                  {/*
+                    Qué estamos contando, en una frase. Antes había que abrir el
+                    desglose para saber si los vuelos estaban dentro, y esa es
+                    justo la duda que aparece al ver la cifra por primera vez.
+                  */}
+                  <p className="font-body text-[12px] leading-relaxed text-text-main">
+                    {queIncluye}
                   </p>
 
                   <div className="mt-3 flex items-baseline justify-between gap-3 rounded-lg bg-background-light px-3 py-2.5">
-                    <span className="font-body text-[13px] text-text-main">
-                      Rango estimado
+                    <span className="min-w-0 font-body text-[13px] text-text-main">
+                      Gasto recomendado en destino
                       <span className="block text-[11px] text-text-secondary">
-                        entre lo que puede salir barato y lo que puede salir caro
+                        sin alojamiento ni vuelos · rango {formatRango(resultado.sinAlojamiento)}
                       </span>
                     </span>
-                    <span className="font-body text-[15px] font-semibold tabular-nums text-text-main">
-                      {formatRango(resultado.total)}
+                    <span className="flex-shrink-0 whitespace-nowrap font-body text-[15px] font-semibold tabular-nums text-text-main">
+                      {formatRecomendado(recomendado.enDestino)}
                     </span>
                   </div>
 
                   <div className="mt-2 flex items-baseline justify-between gap-3 rounded-lg bg-background-light px-3 py-2.5">
-                    <span className="font-body text-[13px] text-text-main">
-                      Gastos en destino
+                    <span className="min-w-0 font-body text-[13px] text-text-main">
+                      Rango estimado
                       <span className="block text-[11px] text-text-secondary">
-                        sin alojamiento ni vuelos
+                        Puede variar según fechas, disponibilidad y las decisiones finales del
+                        viaje.
                       </span>
                     </span>
-                    <span className="font-body text-[15px] font-semibold tabular-nums text-text-main">
-                      {formatRango(resultado.sinAlojamiento)}
+                    <span className="flex-shrink-0 whitespace-nowrap font-body text-[15px] font-semibold tabular-nums text-text-main">
+                      {formatRango(resultado.total)}
                     </span>
                   </div>
-
-                  {!resultado.vuelosIncluidos && (
-                    <p className="mt-3 font-body text-[11px] text-text-secondary">
-                      Vuelos no incluidos.
-                    </p>
-                  )}
 
                   {/*
                     Atajo a «Personalizar». No es un formulario nuevo: los
@@ -868,22 +937,38 @@ summary::-webkit-details-marker { display: none; }
                     aporta es decir en voz alta que un importe real vale más
                     que cualquier estimación nuestra.
                   */}
-                  <div className="mt-3 rounded-lg border border-dashed border-taupe/50 px-3 py-2.5">
-                    <p className="font-body text-[12px] font-semibold text-text-main">
-                      ¿Quieres afinarlo más?
+                  {/*
+                    Deja de insistir cuando ya no hay nada que afinar. Repetir
+                    «introduce tus importes» a quien ya los ha introducido es
+                    ruido, y además hace dudar de si se han recogido bien.
+                  */}
+                  {yaAfinado ? (
+                    <p className="mt-3 flex items-start gap-1.5 font-body text-[11px] leading-relaxed text-text-secondary">
+                      <span aria-hidden="true" className="mt-0.5 text-terracotta">
+                        <Icon name="check" size={13} />
+                      </span>
+                      Ya estamos usando tus importes de alojamiento y vuelos.
                     </p>
-                    <p className="mt-0.5 font-body text-[11px] leading-relaxed text-text-secondary">
-                      Si ya sabes cuánto pagarás por alojamiento o vuelos, introduce esos importes
-                      en Personalizar y los usaremos tal cual.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={afinar}
-                      className="mt-2 font-body text-[12px] font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
-                    >
-                      Afinar presupuesto
-                    </button>
-                  </div>
+                  ) : (
+                    <div className="mt-3 rounded-lg border border-dashed border-taupe/50 px-3 py-2.5">
+                      <p className="font-body text-[12px] font-semibold text-text-main">
+                        ¿Quieres afinarlo más?
+                      </p>
+                      <p className="mt-0.5 font-body text-[11px] leading-relaxed text-text-secondary">
+                        Si ya sabes cuánto pagarás por {faltaPorAfinar}, introduce{' '}
+                        {faltaPorAfinar.includes(' y ') ? 'esos importes' : 'ese importe'} en
+                        Personalizar y {faltaPorAfinar.includes(' y ') ? 'los' : 'lo'} usaremos
+                        tal cual.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={afinar}
+                        className="mt-2 font-body text-[12px] font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
+                      >
+                        Afinar presupuesto
+                      </button>
+                    </div>
+                  )}
 
                   <div className="mt-3 border-t border-border-soft pt-3">
                     <Plegable titulo="Ver el desglose completo">
@@ -974,15 +1059,6 @@ summary::-webkit-details-marker { display: none; }
                 </Bloque>
               )}
 
-              {/*
-                Va después del donut y antes del optimizador: en este punto la
-                persona ya ha visto el total y cómo se reparte, que es cuando
-                tiene sentido querer llevárselo. Antes del optimizador porque
-                «gastar menos» invita a seguir tocando, y guardar es el final
-                natural de la lectura, no de la edición.
-              */}
-              {resultado.total.max > 0 && <BudgetSaveCard input={inputActual} />}
-
               <div ref={optimizadorRef} className="scroll-mt-24">
                 <BudgetOptimizer
                   id="optimizador-presupuesto"
@@ -996,6 +1072,19 @@ summary::-webkit-details-marker { display: none; }
                   onDeshacer={deshacer}
                 />
               </div>
+
+              {/*
+                Guardar va DESPUÉS del optimizador, no antes. Antes se ofrecía
+                llevarse el PDF y sólo entonces aparecía «gastar menos», lo que
+                invitaba a descargar una versión que la propia página iba a
+                proponer cambiar dos centímetros más abajo. Primero se termina
+                de ajustar, después se guarda.
+
+                Recibe `inputActual`, así que si se aplica una sugerencia el PDF
+                y el email salen ya con el presupuesto nuevo, sin nada que
+                sincronizar.
+              */}
+              {resultado.total.max > 0 && <BudgetSaveCard input={inputActual} />}
 
               {resultado.atraccionesSeleccionadas.length > 0 && (
                 <Bloque titulo="Entradas seleccionadas">

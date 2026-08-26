@@ -84,8 +84,17 @@ function Chip({
           que usamos está junto al nombre, antes de decidir. No se llama
           «precio» a propósito: es lo que contamos nosotros, no la tarifa.
         */}
+        {/*
+          Sin «por persona» aquí, y medido: a 375 px la tarjeta deja 111 px
+          para esta línea, y «Estimamos 18 € / persona» ocupa 144. Partía en
+          dos en las ocho tarjetas, y encima cortaba entre el número y el
+          símbolo. «Estimamos 18 €» ocupa 89 y cabe.
+          Que se cuenta una vez por persona lo dice la cabecera del bloque, y
+          decirlo ocho veces más no aclaraba nada. En el panel, donde sobra
+          ancho, la línea sí va completa.
+        */}
         <span className="mt-0.5 block font-body text-[11px] leading-snug text-text-secondary">
-          Estimamos {recomendadoEntrada(atraccion.clase)} € / persona
+          Estimamos {recomendadoEntrada(atraccion.clase)} €
         </span>
       </span>
     </label>

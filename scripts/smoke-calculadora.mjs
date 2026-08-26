@@ -77,10 +77,10 @@ const CONTROLES = [
 
 /** Botones de los tres contadores, con su etiqueta accesible. */
 const BOTONES_CONTADOR = [
-  'Reducir días',
-  'Aumentar días',
-  'Reducir noches',
-  'Aumentar noches',
+  'Reducir días en lisboa',
+  'Aumentar días en lisboa',
+  'Reducir noches de alojamiento',
+  'Aumentar noches de alojamiento',
   'Reducir personas',
   'Aumentar personas',
 ];
@@ -447,7 +447,7 @@ async function comprobarPagina(baseUrl) {
    * presupuesto: si alguien la escribe a mano en el componente, esto lo caza.
    */
   const sinCifra = DESTACADAS.filter(
-    (a) => !texto.includes(normalizar(`Estimamos ${recomendadoEntrada(a.clase)} € / persona`))
+    (a) => !texto.includes(normalizar(`Estimamos ${recomendadoEntrada(a.clase)} €`))
   );
   record(
     'cada atracción destacada dice cuánto contamos por ella',
@@ -502,6 +502,70 @@ async function comprobarPagina(baseUrl) {
       formatRango(rango)
     );
   }
+
+  /*
+   * 11C. Tres anclas de experiencia, no de aritmética.
+   */
+  record(
+    'el resultado dice días, noches y personas en ese orden',
+    /3 días\s*·\s*2 noches\s*·\s*2 personas/.test(texto),
+    null
+  );
+
+  record(
+    'dice qué incluye el total sin abrir el desglose',
+    /Incluye alojamiento, comida y transporte\./.test(texto) &&
+      /Vuelos no incluidos\./.test(texto),
+    null
+  );
+
+  // El optimizador debe ir ANTES de guardar: primero se termina de ajustar,
+  // después se descarga. Se mide sobre el HTML, no sobre el código.
+  const posOptimizador = html.indexOf('id="optimizador-presupuesto"');
+  const posGuardar = html.indexOf('id="guardar-presupuesto"');
+  record(
+    'el optimizador va antes de «Guardar mi presupuesto»',
+    posOptimizador > -1 && posGuardar > -1 && posOptimizador < posGuardar,
+    `optimizador ${posOptimizador} · guardar ${posGuardar}`
+  );
+
+  record(
+    'la FAQ ya no dice que la herramienta sólo da un rango',
+    /Qué significa .presupuesto recomendado/i.test(texto) &&
+      !/Por qué da un rango y no una cifra exacta/i.test(texto),
+    null
+  );
+
+  record(
+    'el gasto en destino también se da como cifra cerrada',
+    /Gasto recomendado en destino/.test(texto) &&
+      texto.includes(normalizar(`${recomendado.enDestino} €`)),
+    `${recomendado.enDestino} €`
+  );
+
+  record(
+    'el rango explica de qué depende, sin prometer probabilidades',
+    /Puede variar según fechas, disponibilidad y las decisiones finales del viaje/.test(texto),
+    null
+  );
+
+  record(
+    'el ejemplo de días y noches usa un viaje real',
+    /llegas el lunes y te vas el jueves, son 4 días y 3 noches/.test(texto),
+    null
+  );
+
+  record(
+    'no se explica el funcionamiento interno al usuario',
+    !/se sugieren solas|estado interno|por defecto el componente/i.test(texto),
+    null
+  );
+
+  record(
+    'Sintra explica que las entradas van aparte',
+    /Las entradas de Sintra\s*se calculan aparte/.test(texto),
+    null
+  );
 
   record(
     'la cifra principal es cerrada y cae dentro del rango',

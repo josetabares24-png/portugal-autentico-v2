@@ -305,11 +305,15 @@ export async function createBudgetPdf(
   );
   ctx.y -= 6;
 
+  /*
+   * También cerrado, como en la pantalla. Dar aquí un rango mientras arriba
+   * hay una cifra obligaría a leer dos modelos mentales en el mismo papel.
+   */
   fila(
     ctx,
-    'Gastos en destino',
-    formatRango(result.sinAlojamiento),
-    'Comida, transporte urbano, entradas y logística de excursión. Sin alojamiento y sin vuelos.'
+    'Gasto recomendado en destino',
+    formatRecomendado(recomendado.enDestino),
+    `Comida, transporte urbano, entradas y logística de excursión. Sin alojamiento y sin vuelos · rango ${formatRango(result.sinAlojamiento)}.`
   );
 
   // -- Desglose --------------------------------------------------------
