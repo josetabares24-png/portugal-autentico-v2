@@ -529,6 +529,35 @@ async function comprobarPagina(baseUrl) {
     `optimizador ${posOptimizador} · guardar ${posGuardar}`
   );
 
+  /*
+   * 11D. El envío por email está dormido mientras la clave de Brevo no esté
+   * habilitada. La descarga es la única forma pública de guardar el resultado,
+   * así que se comprueba que está y que lo otro no asoma por ningún lado.
+   */
+  record(
+    'ofrece descargar el PDF',
+    /Descargar PDF/.test(texto),
+    null
+  );
+
+  const rastrosEmail = [
+    'Enviármelo por email',
+    'Tu email',
+    'Enviar mi presupuesto',
+    'No te suscribiremos a ninguna newsletter',
+  ].filter((frase) => texto.includes(normalizar(frase)));
+  record(
+    'el envío por email no aparece mientras está desactivado',
+    rastrosEmail.length === 0 && !/id="panel-email-presupuesto"/.test(html),
+    rastrosEmail.length ? `asoma: ${rastrosEmail.join(', ')}` : null
+  );
+
+  record(
+    'no se cuentan al usuario problemas internos',
+    !/brevo|api key|temporalmente desactivado|próximamente|problema técnico/i.test(texto),
+    null
+  );
+
   record(
     'la FAQ ya no dice que la herramienta sólo da un rango',
     /Qué significa .presupuesto recomendado/i.test(texto) &&

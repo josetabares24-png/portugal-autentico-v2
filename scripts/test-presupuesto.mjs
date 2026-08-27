@@ -21,6 +21,8 @@ import { generarSugerencias } from '../src/lib/budget-optimizer.ts';
 import { getRecommendedBudget } from '../src/lib/budget-recommended.ts';
 import { parseBudgetInput } from '../src/lib/budget-input.ts';
 import { createBudgetPdf, nombreArchivoPdf } from '../src/lib/budget-pdf.ts';
+import { BUDGET_EMAIL_ENABLED } from '../src/lib/budget-features.ts';
+import { sendBrevoEmail, validateEmail } from '../src/lib/api-utils.ts';
 
 let fallos = 0;
 let total = 0;
@@ -380,10 +382,17 @@ await test('S · sin email devuelve el PDF para descargar', async () => {
   assert.equal(bytes.subarray(0, 5).toString(), '%PDF-');
 });
 
-await test('T · email inválido devuelve 400', async () => {
-  for (const email of ['sin-arroba', 'a@', '@b.com', 'a b@c.com', 123]) {
-    const res = await POST(peticion({ input: BASE, email }));
-    assert.equal(res.status, 400, `debería rechazar ${JSON.stringify(email)}`);
+await test('T · la validación de email sigue rechazando lo que no es un email', () => {
+  /*
+   * Con el envío dormido, la ruta corta antes de mirar la dirección, así que
+   * esto se comprueba donde vive de verdad. La cobertura no se pierde: se
+   * mueve al sitio correcto.
+   */
+  for (const email of ['sin-arroba', 'a@', '@b.com', 'a b@c.com', 123, '', null, undefined]) {
+    assert.equal(validateEmail(email), false, `debería rechazar ${JSON.stringify(email)}`);
+  }
+  for (const email of ['viajera@example.com', 'a.b+c@sub.dominio.es']) {
+    assert.equal(validateEmail(email), true, `debería aceptar ${email}`);
   }
 });
 
@@ -429,12 +438,33 @@ await test('X · el total del PDF no lo decide el cliente', async () => {
   );
 });
 
-await test('Y · con email válido envía el PDF adjunto y devuelve éxito', async () => {
+/*
+ * La infraestructura de email sigue viva aunque la interfaz no la ofrezca.
+ * Estas tres pruebas dejan de pasar por la ruta —que ahora corta antes— y
+ * ejercitan `sendBrevoEmail` directamente. Es la misma cobertura: qué se manda,
+ * qué NO se manda, y qué se devuelve cuando el proveedor falla. El día que la
+ * clave se habilite, esto ya está comprobado.
+ */
+
+/** El adjunto tal y como lo construye la ruta: el PDF real en base64. */
+async function adjuntoDePrueba() {
+  const result = calculateLisbonBudget(BASE);
+  const bytes = await createBudgetPdf(BASE, result, generarSugerencias(BASE), FECHA);
+  return { name: nombreArchivoPdf(result), content: Buffer.from(bytes).toString('base64') };
+}
+
+await test('Y · sendBrevoEmail manda el PDF adjunto al endpoint correcto', async () => {
   const brevo = interceptarBrevo(okBrevo);
   try {
-    const res = await POST(peticion({ input: BASE, email: 'viajera@example.com' }));
-    assert.equal(res.status, 200);
-    assert.deepEqual(await res.json(), { success: true });
+    const adjunto = await adjuntoDePrueba();
+    const enviado = await sendBrevoEmail({
+      to: [{ email: 'viajera@example.com', name: 'viajera@example.com' }],
+      subject: 'Tu presupuesto para Lisboa',
+      htmlContent: '<p>hola</p>',
+      textContent: 'hola',
+      attachment: [adjunto],
+    });
+    assert.equal(enviado.success, true);
 
     assert.equal(brevo.llamadas.length, 1, 'debería haber una sola llamada al proveedor');
     const { url, body } = brevo.llamadas[0];
@@ -455,7 +485,12 @@ await test('Y · con email válido envía el PDF adjunto y devuelve éxito', asy
 await test('Z · el envío es transaccional: no da de alta ningún contacto', async () => {
   const brevo = interceptarBrevo(okBrevo);
   try {
-    await POST(peticion({ input: BASE, email: 'viajera@example.com' }));
+    await sendBrevoEmail({
+      to: [{ email: 'viajera@example.com', name: 'viajera@example.com' }],
+      subject: 'Tu presupuesto para Lisboa',
+      htmlContent: '<p>hola</p>',
+      attachment: [await adjuntoDePrueba()],
+    });
     const contactos = brevo.llamadas.filter((l) => l.url.includes('/v3/contacts'));
     assert.equal(contactos.length, 0, 'no debe tocar listas de contactos');
   } finally {
@@ -463,18 +498,57 @@ await test('Z · el envío es transaccional: no da de alta ningún contacto', as
   }
 });
 
-await test('AA · un fallo del proveedor devuelve 502 y un mensaje neutro', async () => {
+await test('AA · un fallo del proveedor no filtra el motivo', async () => {
   const brevo = interceptarBrevo(falloBrevo);
   try {
+    const enviado = await sendBrevoEmail({
+      to: [{ email: 'viajera@example.com', name: 'viajera@example.com' }],
+      subject: 'Tu presupuesto para Lisboa',
+      htmlContent: '<p>hola</p>',
+    });
+    assert.equal(enviado.success, false);
+    // El motivo llega al llamante para el log, pero la ruta nunca lo publica:
+    // devuelve su propio mensaje neutro, comprobado en AB.
+    assert.ok(enviado.error, 'debería explicar el fallo a quien llama');
+  } finally {
+    brevo.restaurar();
+  }
+});
+
+// ------------------------------------------- envío desactivado ------------
+
+await test('AB · con el email desactivado, la ruta no llama al proveedor', async () => {
+  assert.equal(BUDGET_EMAIL_ENABLED, false, 'esta prueba asume la bandera en false');
+
+  const brevo = interceptarBrevo(okBrevo);
+  try {
     const res = await POST(peticion({ input: BASE, email: 'viajera@example.com' }));
-    assert.equal(res.status, 502);
+    assert.equal(res.status, 503);
+    assert.equal(brevo.llamadas.length, 0, 'no debe haber ni un viaje al proveedor');
+
     const datos = await res.json();
     assert.equal(datos.success, false);
-    assert.ok(
-      !/clave|api|brevo|token/i.test(datos.error),
-      `el error no debe filtrar el motivo: «${datos.error}»`
-    );
+    assert.match(datos.error, /temporalmente desactivado/);
     assert.match(datos.error, /descargar el PDF/, 'debería ofrecer la alternativa');
+    assert.ok(
+      !/brevo|api key|unauthorized|clave|token/i.test(datos.error),
+      `el error no debe nombrar la infraestructura: «${datos.error}»`
+    );
+  } finally {
+    brevo.restaurar();
+  }
+});
+
+await test('AC · con el email desactivado, la descarga sigue intacta', async () => {
+  const brevo = interceptarBrevo(okBrevo);
+  try {
+    const res = await POST(peticion({ input: BASE }));
+    assert.equal(res.status, 200);
+    assert.equal(res.headers.get('content-type'), 'application/pdf');
+    const bytes = Buffer.from(await res.arrayBuffer());
+    assert.equal(bytes.subarray(0, 5).toString(), '%PDF-');
+    assert.ok(bytes.byteLength > 1000);
+    assert.equal(brevo.llamadas.length, 0, 'descargar no puede llamar a nadie');
   } finally {
     brevo.restaurar();
   }

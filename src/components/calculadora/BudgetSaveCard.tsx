@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Icon from '@/components/Icon';
 import type { BudgetInput } from '@/lib/budget-calculator';
+import { BUDGET_EMAIL_ENABLED } from '@/lib/budget-features';
 
 /*
  * «Guardar mi presupuesto»: descargar el PDF o recibirlo por email.
@@ -16,6 +17,11 @@ import type { BudgetInput } from '@/lib/budget-calculator';
  * envío transaccional: llega el PDF y ahí termina la relación. Decirlo en voz
  * alta bajo el campo no es un formalismo legal, es lo que hace que alguien
  * escriba su dirección de verdad en vez de una de usar y tirar.
+ *
+ * Ese camino está **dormido, no borrado**: `BUDGET_EMAIL_ENABLED` decide si se
+ * pinta, y hoy está en `false` porque la clave de Brevo no está habilitada.
+ * El formulario, el estado y la llamada siguen escritos y listos para volver
+ * con un solo cambio. La descarga no depende de nada de esto.
  */
 
 type Estado = 'idle' | 'descargando' | 'enviando' | 'enviado' | 'error';
@@ -93,6 +99,10 @@ export function BudgetSaveCard({ input }: { input: BudgetInput }) {
         Un PDF con el desglose completo, para tenerlo a mano mientras reservas.
       </p>
 
+      {/*
+        Con el email dormido queda un solo botón, y `flex-1` le da todo el
+        ancho: nadie ve un hueco donde antes había otra cosa.
+      */}
       <div className="flex flex-col gap-2 sm:flex-row">
         <button
           type="button"
@@ -103,23 +113,25 @@ export function BudgetSaveCard({ input }: { input: BudgetInput }) {
           <Icon name="download" size={16} />
           {estado === 'descargando' ? 'Generando…' : 'Descargar PDF'}
         </button>
-        <button
-          type="button"
-          onClick={() => {
-            setPanelEmail((abierto) => !abierto);
-            setError(null);
-          }}
-          aria-expanded={panelEmail}
-          aria-controls="panel-email-presupuesto"
-          disabled={ocupado}
-          className="btn-outline min-h-11 flex-1 justify-center px-4 py-2.5 text-sm disabled:opacity-60"
-        >
-          <Icon name="mail" size={16} />
-          Enviármelo por email
-        </button>
+        {BUDGET_EMAIL_ENABLED && (
+          <button
+            type="button"
+            onClick={() => {
+              setPanelEmail((abierto) => !abierto);
+              setError(null);
+            }}
+            aria-expanded={panelEmail}
+            aria-controls="panel-email-presupuesto"
+            disabled={ocupado}
+            className="btn-outline min-h-11 flex-1 justify-center px-4 py-2.5 text-sm disabled:opacity-60"
+          >
+            <Icon name="mail" size={16} />
+            Enviármelo por email
+          </button>
+        )}
       </div>
 
-      {panelEmail && (
+      {BUDGET_EMAIL_ENABLED && panelEmail && (
         <div
           id="panel-email-presupuesto"
           className="mt-4 rounded-lg border border-border-soft bg-background-light p-4"

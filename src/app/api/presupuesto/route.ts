@@ -14,6 +14,11 @@
  * El PDF no se guarda en ninguna parte. Se construye en memoria, se entrega o
  * se adjunta, y desaparece con la petición. Tampoco se da de alta el email en
  * ninguna lista: es correo transaccional y sólo eso.
+ *
+ * El segundo modo está **temporalmente cerrado** (`BUDGET_EMAIL_ENABLED`).
+ * Mientras lo esté, una petición con email se rechaza aquí mismo con un 503 y
+ * no se llama al proveedor: sin la clave habilitada, el viaje sólo servía para
+ * acabar en un 502 y llenar el log. La descarga no se ve afectada.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -21,6 +26,7 @@ import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
 import { validateEmail, createErrorResponse, sendBrevoEmail } from '@/lib/api-utils';
 import { parseBudgetInput } from '@/lib/budget-input';
+import { BUDGET_EMAIL_ENABLED } from '@/lib/budget-features';
 import { calculateLisbonBudget, formatRango, type Rango } from '@/lib/budget-calculator';
 import { formatRecomendado, getRecommendedBudget } from '@/lib/budget-recommended';
 import { generarSugerencias } from '@/lib/budget-optimizer';
@@ -94,6 +100,19 @@ export async function POST(request: NextRequest) {
   }
 
   // -- Modo email ------------------------------------------------------
+  /*
+   * La interfaz no ofrece este camino mientras la bandera esté en `false`,
+   * pero el endpoint es público y alguien puede llamarlo igual. Se corta
+   * antes de validar nada y sin nombrar al proveedor: quien llame no tiene
+   * por qué enterarse de con quién trabajamos ni de qué le pasa a la clave.
+   */
+  if (!BUDGET_EMAIL_ENABLED) {
+    return createErrorResponse(
+      'El envío por email está temporalmente desactivado. Puedes descargar el PDF.',
+      503
+    );
+  }
+
   const email = typeof cuerpo.email === 'string' ? cuerpo.email.trim() : '';
   if (!validateEmail(email)) {
     return createErrorResponse('Email no válido.', 400);
