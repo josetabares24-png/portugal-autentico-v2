@@ -11,6 +11,85 @@ import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'estacion-olaias-lisboa': {
+    titulo: 'Estación de Olaias en Lisboa: arte, arquitectura y cómo visitarla',
+    descripcion: 'Qué hace especial a la estación de Olaias, cómo llegar por la Línea Roja, cuánto tiempo dedicar y cuándo merece la pena visitarla.',
+    seoTitle: 'Estación de Olaias: arte y arquitectura en Lisboa',
+    metaDescription: 'Qué ver en la estación de Olaias, cómo llegar por la Línea Roja, cuánto tiempo dedicar y cuándo merece la pena visitarla y fotografiarla.',
+    imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
+    imageAlt: 'Techo geométrico y paneles de colores sobre el andén de la estación de Olaias en Lisboa',
+    categoria: 'Cultura',
+    fecha: '28 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-28',
+    minutos: 9,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios gratuitos por Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Metro de Lisboa - estación Olaias', href: 'https://www.metrolisboa.pt/viajar/olaias/' },
+      { label: 'Metro de Lisboa - arte en Olaias', href: 'https://www.metrolisboa.pt/viver/arte-nas-estacoes-2/olaias/' },
+      { label: 'Metro de Lisboa - historia de la red', href: 'https://www.metrolisboa.pt/institucional/conhecer/historia-do-metro/' },
+    ],
+    cta: {
+      href: '/blog/donde-fotografiar-lisboa',
+      label: 'Seguir la ruta fotográfica',
+      title: 'Otra forma de mirar Lisboa',
+      text: 'Olaias añade arquitectura contemporánea a una ruta que normalmente se concentra en miradores, tranvías, azulejos y el río.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Olaias no suele aparecer en los itinerarios clásicos de Lisboa, pero si te interesa la arquitectura, el metro o la fotografía, merece una parada. No hace falta organizar media jornada alrededor de ella: su gracia está precisamente en que puedes verla en poco tiempo y seguir viaje por la Línea Roja.' },
+      { tipo: 'parrafo', texto: 'La estación rompe con la imagen más conocida de la ciudad. Aquí no hay azulejos históricos ni tranvías amarillos, sino columnas monumentales, planos de color, metal, luz artificial y un techo que cambia según el punto desde el que lo mires. Es una Lisboa de finales del siglo XX que suele pasar desapercibida porque está bajo tierra.' },
+      { tipo: 'lista', items: [
+        'Olaias está en la Línea Roja del Metro de Lisboa, entre Alameda y Bela Vista.',
+        'La visita puede resolverse en unos 20 o 30 minutos si vas expresamente a mirar la estación.',
+        'Tiene más sentido para quienes disfrutan de arquitectura, arte público o fotografía que para una primera visita muy ajustada.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué tiene de especial la estación de Olaias' },
+      { tipo: 'parrafo', texto: 'Lo primero que sorprende es la escala. La topografía del lugar obligó a crear un espacio de gran altura sobre los andenes, y esa necesidad técnica terminó convirtiéndose en el rasgo más potente de la estación. Las columnas parecen sostener una sala mucho mayor de lo que uno espera encontrar en una parada de barrio.' },
+      { tipo: 'parrafo', texto: 'La segunda diferencia es el color. En lugar de una decoración aplicada al final, la arquitectura y las intervenciones artísticas trabajan juntas: superficies rojas, amarillas, azules y verdes atraviesan techos, muros y elementos de iluminación. No hay una única pieza que mirar y marcharse; la experiencia está en cómo cambia el conjunto al caminar.' },
+      { tipo: 'parrafo', texto: 'Eso explica por qué Olaias funciona mejor en persona que en una foto aislada. Una imagen puede enseñar el techo o una fila de columnas, pero no la relación entre la altura, las plataformas y los distintos planos de color. Conviene recorrer el andén con calma antes de sacar la cámara.' },
+
+      { tipo: 'subtitulo', texto: 'Arquitectura y arte: quién hizo qué' },
+      { tipo: 'parrafo', texto: 'El proyecto arquitectónico de la estación es de Tomás Taveira. El Metro de Lisboa atribuye las intervenciones plásticas a Pedro Cabrita Reis, Graça Pereira Coutinho, Pedro Calapez y Rui Sanches. Son nombres concretos y conviene mantenerlos separados de la arquitectura: Olaias es una obra colectiva, no una estación decorada por una sola persona.' },
+      { tipo: 'parrafo', texto: 'La iluminación, las piezas metálicas, los paneles y los volúmenes no compiten por protagonismo. Todo forma una composición deliberadamente intensa, con una policromía que el propio Metro destaca al explicar la estación. Puede parecer caótica al bajar del tren, pero desde ciertos puntos aparecen ejes muy claros entre columnas, escaleras y techo.' },
+      { tipo: 'subseccion', texto: 'El andén y la gran columnata' },
+      { tipo: 'parrafo', texto: 'En el nivel de los trenes se entiende mejor la escala. Las columnas marcan una perspectiva larga y repetida, mientras los elementos de color rompen esa regularidad. Si solo pasas por el vestíbulo y vuelves a salir, te pierdes la parte más característica del conjunto.' },
+      { tipo: 'subseccion', texto: 'El techo y la luz' },
+      { tipo: 'parrafo', texto: 'Mirar hacia arriba es parte de la visita. El techo combina formas geométricas, luminarias y piezas suspendidas que se leen de manera distinta desde cada plataforma. No hace falta identificar cada intervención para disfrutarla: basta con cambiar de lado y comprobar cómo se reordena el espacio.' },
+
+      { tipo: 'subtitulo', texto: 'Por qué se construyó así' },
+      { tipo: 'parrafo', texto: 'Olaias abrió con el primer tramo de la Línea Roja en mayo de 1998, cuando el metro se extendió entre Alameda y Oriente en el contexto de la Expo 98. Esa línea incorporó una generación de estaciones donde la arquitectura y el arte público tenían un peso especial, y Olaias es probablemente el ejemplo más expresivo.' },
+      { tipo: 'parrafo', texto: 'La fecha ayuda a entender su lenguaje. No intenta parecer una estación antigua ni imitar los azulejos tradicionales de Lisboa. Habla del momento en que la ciudad preparaba una gran transformación en el este, conectando el centro con el nuevo frente urbano del Parque das Nações.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo llegar a Olaias' },
+      { tipo: 'parrafo', texto: 'La forma directa es el Metro de Lisboa. Olaias pertenece a la Línea Roja, la misma que conecta el aeropuerto, Alameda y Oriente. Desde las líneas Verde, Azul o Amarilla tendrás que hacer el transbordo que corresponda según tu punto de partida; la guía general de movilidad explica cómo leer la red y qué título de transporte puede encajar mejor.' },
+      { tipo: 'enlace', texto: 'Si todavía no tienes claro cómo combinar metro, tranvía, tren y caminatas, conviene revisar primero el sistema completo.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { tipo: 'parrafo', texto: 'La dirección oficial de la estación es Avenida Engenheiro Arantes e Oliveira. Si llegas solo para verla, no necesitas alejarte del metro ni buscar una entrada concreta desde la calle: el interés principal está en los espacios interiores y en el nivel de los andenes.' },
+
+      { tipo: 'subtitulo', texto: 'Cuánto tiempo dedicar' },
+      { tipo: 'parrafo', texto: 'Para una visita sencilla, 20 o 30 minutos bastan. Ese margen permite bajar a los andenes, recorrer ambos lados, mirar el techo y esperar a que pase un tren si quieres una fotografía con escala. Si vas con cámara y te entretienes buscando simetrías, calcula algo más, pero no es un lugar que necesite dos horas.' },
+      { tipo: 'parrafo', texto: 'No recomendaría bajarse con maletas camino del aeropuerto. Aunque la estación esté en la misma línea, el desvío deja de ser agradable cuando tienes que vigilar equipaje y volver a subir. Funciona mucho mejor como parada deliberada en una mañana tranquila o enlazada con Oriente.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo fotografiar Olaias sin estorbar' },
+      { tipo: 'parrafo', texto: 'Olaias recompensa más la composición que el equipo. Las columnas crean puntos de fuga claros, el techo funciona con encuadres amplios y los trenes añaden una referencia de escala. Un móvil es suficiente si cuidas que las verticales no se inclinen demasiado y esperas un momento con menos pasajeros.' },
+      { tipo: 'parrafo', texto: 'Es una estación en funcionamiento, no una sala de exposiciones cerrada. Mantente fuera de la franja de seguridad, deja libres escaleras y puertas y evita convertir un trípode o una mochila en un obstáculo. La mejor foto no compensa molestar a quien está usando el metro para desplazarse.' },
+      { tipo: 'enlace', texto: 'Olaias añade una cara contemporánea a una ruta fotográfica que normalmente se concentra en miradores, tranvías y fachadas.', href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Qué combinar con la visita' },
+      { tipo: 'parrafo', texto: 'La combinación más lógica es Oriente. Está en la misma Línea Roja y ofrece otra lectura de la Lisboa de 1998: una gran estación intermodal, el Parque das Nações y el frente del Tajo. Olaias es interior, color y escala; Oriente es estructura, cubierta y movimiento.' },
+      { tipo: 'parrafo', texto: 'También puedes usar Alameda como punto de entrada o salida del recorrido, pero no hace falta llenar el día con estaciones. Si tu plan principal está en el centro histórico, Olaias funciona mejor como una visita breve que como una excusa para ir encadenando transbordos.' },
+      { tipo: 'subtitulo', texto: '¿Merece la pena desviarse?' },
+      { tipo: 'parrafo', texto: 'Sí, si ya conoces lo esencial de Lisboa o si la arquitectura y la fotografía forman parte del viaje. También merece la pena si vas hacia Oriente y puedes dedicarle media hora sin desmontar el día. La visita es corta, gratuita más allá del título de transporte que uses y muy distinta a los escenarios habituales.' },
+      { tipo: 'parrafo', texto: 'No la pondría por delante de Alfama, Belém o un primer paseo por la Baixa. En un viaje de uno o dos días, el tiempo tiene más valor en la superficie. Olaias funciona como una capa adicional: no sustituye la Lisboa clásica, pero demuestra que la ciudad también construyó una identidad contemporánea bajo tierra.' },
+
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'Olaias es una parada pequeña con una presencia visual enorme. Su arquitectura, la gran columnata y el trabajo conjunto de color, luz y arte justifican bajarse del tren cuando el itinerario lo permite. Con media hora y una ruta bien pensada, puedes verla sin sacrificar el resto del día.' },
+    ],
+  },
   /*
    * Reemplazo editorial de /itinerarios/lisboa-full-week.
    *
@@ -231,6 +310,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subseccion', texto: 'Azulejos, fachadas y detalles' },
       { tipo: 'parrafo', texto: 'La otra Lisboa fotografiable no está en las vistas sino a un metro de distancia: fachadas enteras de azulejo, aldabas, ventanas con ropa tendida, calzada portuguesa dibujando figuras. Alfama, Mouraria y Graça son los barrios donde más se acumula, y aquí la luz plana de un día nublado funciona mejor que el sol directo, que quema los blancos del azulejo.' },
       { tipo: 'parrafo', texto: 'Una nota que no es técnica: en esos barrios vive gente. Fotografiar una calle es una cosa y fotografiar a una persona en la puerta de su casa es otra; si sale alguien en el encuadre, lo cortés es preguntar.' },
+      { tipo: 'enlace', texto: 'Si te interesa la cara contemporánea de la ciudad, Olaias convierte una estación de metro en una visita de arquitectura y color que se resuelve en poco tiempo.', href: '/blog/estacion-olaias-lisboa', label: 'Ver la estación de Olaias' },
 
       { tipo: 'subtitulo', texto: 'Dónde fotografiar Lisboa al amanecer' },
       { tipo: 'parrafo', texto: 'A primera hora la ciudad está vacía, la luz entra de lado y las cuestas se llenan de sombras largas. Los sitios que mejor aprovechan ese momento son los que miran al este y al sur: Santa Luzia y Portas do Sol sobre Alfama, la Praça do Comércio abierta al río, y Belém, donde el sol sale a lo largo del agua.' },
@@ -2994,6 +3074,16 @@ const heroAlt: Record<string, string> = {
  * imágenes genéricas ni se describe un lugar que no aparece en la imagen.
  */
 const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
+  'estacion-olaias-lisboa': {
+    'que-tiene-de-especial-la-estacion-de-olaias': {
+      src: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-anden-columnas.jpg',
+      alt: 'Andén de la estación de Olaias con su columnata monumental y paneles de colores',
+    },
+    'arquitectura-y-arte-quien-hizo-que': {
+      src: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-techo-arte.jpg',
+      alt: 'Detalle del techo artístico y la iluminación de la estación de Olaias en Lisboa',
+    },
+  },
   'mejores-miradores-lisboa': {
     '3-mirador-das-portas-do-sol-el-vecino-relajado': {
       src: '/images/actividades/portas-do-sol-alfama.webp',
@@ -3660,6 +3750,17 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  'estacion-olaias-lisboa': {
+    comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
+    mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',
+    faqs: [
+      { q: '¿Dónde está la estación de Olaias?', a: 'Está en la Avenida Engenheiro Arantes e Oliveira, en la Línea Roja del Metro de Lisboa, entre las estaciones de Alameda y Bela Vista.' },
+      { q: '¿Cuánto tiempo hace falta para visitar Olaias?', a: 'Entre 20 y 30 minutos suelen bastar para recorrer los andenes, mirar el techo y la columnata y hacer algunas fotos sin prisa.' },
+      { q: '¿Quién diseñó la estación de Olaias?', a: 'El proyecto arquitectónico es de Tomás Taveira. Las intervenciones plásticas corresponden a Pedro Cabrita Reis, Graça Pereira Coutinho, Pedro Calapez y Rui Sanches.' },
+      { q: '¿Merece la pena ir solo para verla?', a: 'Sí, si te interesan la arquitectura contemporánea, el arte público o la fotografía. En un primer viaje muy corto conviene priorizar el centro histórico, pero Olaias encaja bien de camino a Oriente.' },
+      { q: '¿Se puede combinar Olaias con la estación de Oriente?', a: 'Sí. Las dos están en la Línea Roja, por lo que se pueden visitar en el mismo recorrido sin volver al centro entre una y otra.' },
+    ],
+  },
   /*
    * Sin ficha de lugar: la guía trata de cómo repartir una semana entera, no
    * de un sitio al que se llegue. `comoLlegar` y `mejorHora` no aplican.

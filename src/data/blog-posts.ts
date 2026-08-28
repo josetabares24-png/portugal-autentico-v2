@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'estacion-olaias-lisboa',
+    titulo: 'Estación de Olaias en Lisboa: arte, arquitectura y cómo visitarla',
+    excerpt: 'Qué hace distinta a Olaias, cómo llegar por la Línea Roja, cuánto tiempo dedicar y cuándo merece la pena incluirla en tu recorrido.',
+    categoria: 'Cultura',
+    fecha: '28 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
+  },
+  {
     id: 'lisboa-en-7-dias',
     titulo: 'Lisboa en 7 días: cómo repartir la semana sin repetirte',
     excerpt: 'El orden que funciona, cuántas escapadas caben de verdad y qué hacer con los días que ninguna guía corta cubre.',
