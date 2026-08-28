@@ -11,6 +11,116 @@ import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'time-out-market-lisboa': {
+    titulo: 'Time Out Market Lisboa: qué comer, precios y si merece la pena',
+    descripcion: 'Guía independiente del Time Out Market Lisboa: cómo funciona, qué tipo de comida hay, cuánto esperar gastar y cuándo conviene elegir otra opción.',
+    seoTitle: 'Time Out Market Lisboa: qué comer y si compensa',
+    metaDescription: 'Cómo funciona Time Out Market Lisboa, qué comida encontrarás, cuánto esperar gastar, cuándo hay más gente y para quién merece la pena.',
+    imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
+    imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
+    categoria: 'Gastronomía',
+    fecha: '28 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-28',
+    minutos: 10,
+    links: [
+      { href: '/blog/mejores-mercados-lisboa', label: 'Los mercados de Lisboa' },
+      { href: '/blog/donde-comer-barato-lisboa', label: 'Dónde comer barato en Lisboa' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios gratuitos por Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Time Out Market Lisboa - información oficial', href: 'https://www.timeout.com/time-out-market-lisboa' },
+      { label: 'Câmara Municipal de Lisboa - Mercado da Ribeira', href: 'https://www.lisboa.pt/pontos-de-interesse/detalhe/mercado-da-ribeira' },
+      { label: 'Comércio de Lisboa - ferias y mercados', href: 'https://comercio.lisboa.pt/feiras-e-mercados/' },
+    ],
+    cta: {
+      href: '/blog/mejores-mercados-lisboa',
+      label: 'Comparar los mercados de Lisboa',
+      title: 'Time Out no es el único mercado',
+      text: 'Si buscas producto fresco, ambiente de barrio o una visita menos centrada en comer, compara el Mercado da Ribeira con otros mercados antes de decidir.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Time Out Market Lisboa resuelve muy bien una situación concreta: un grupo con gustos distintos que quiere comer en el mismo sitio, sin reserva y en pleno Cais do Sodré. Lo que no resuelve es comer barato, tranquilo o como en una tasca de barrio. Si llegas sabiendo esa diferencia, es mucho más fácil decidir si encaja contigo.' },
+      { tipo: 'parrafo', texto: 'El espacio ocupa una parte del histórico Mercado da Ribeira y reúne puestos de comida alrededor de grandes mesas compartidas. Es cómodo, céntrico y ofrece variedad, pero también puede ser ruidoso y tener una relación calidad-precio menos favorable que otros restaurantes de Lisboa. Esta guía no intenta venderlo ni descartarlo: explica cómo funciona y para quién tiene sentido.' },
+      { tipo: 'lista', items: [
+        'Está dentro del Mercado da Ribeira, frente al intercambiador de Cais do Sodré.',
+        'Cada persona puede pedir en un puesto diferente y reunirse después en las mesas comunes.',
+        'Los precios y los operadores cambian; conviene mirar el menú visible de cada puesto antes de hacer cola.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué es Time Out Market Lisboa' },
+      { tipo: 'parrafo', texto: 'Es un mercado gastronómico inaugurado en 2014 dentro del Mercado da Ribeira. La idea concentra propuestas seleccionadas por Time Out en un gran salón común: cocinas distintas, bebidas y algunos comercios bajo el mismo techo, con un sistema de pedido independiente en cada mostrador.' },
+      { tipo: 'parrafo', texto: 'No es un mercado tradicional en el sentido de comprar verduras, pescado o carne para llevar a casa. Esa función histórica sigue existiendo en otra parte del edificio. Time Out Market es, sobre todo, un lugar para sentarse a comer, y conviene distinguir ambas zonas porque sus ritmos y horarios no son necesariamente los mismos.' },
+
+      { tipo: 'subtitulo', texto: 'La relación con el Mercado da Ribeira' },
+      { tipo: 'parrafo', texto: 'El Mercado da Ribeira se inauguró en 1882 y forma parte de la historia comercial de la zona. La Câmara Municipal de Lisboa explica que el edificio mantiene la actividad de mercado tradicional y que la zona gastronómica de Time Out se incorporó en 2014. No son dos edificios distintos, sino dos usos que conviven bajo la misma cubierta.' },
+      { tipo: 'parrafo', texto: 'Esa convivencia es parte del interés. Puedes entrar por la comida y descubrir que el lugar tiene una historia anterior al formato gastronómico actual. Pero no conviene usar la palabra “mercado” como garantía automática de autenticidad o precio bajo: la experiencia del gran salón está pensada para comer allí, con una selección y un nivel de precios propios.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo funciona al llegar' },
+      { tipo: 'parrafo', texto: 'No hay una mesa asignada para cada puesto. Primero eliges qué quieres comer, haces el pedido en el mostrador correspondiente y después buscas sitio en las mesas compartidas. Si vais varias personas, lo más práctico es encontrar una zona de referencia antes de dispersaros, especialmente cuando el salón está lleno.' },
+      { tipo: 'parrafo', texto: 'La web oficial indica que las mesas comunes no se reservan. Eso hace el sistema flexible, pero también introduce incertidumbre en horas de mucha demanda. Una persona puede guardar un sitio mientras las demás piden, siempre sin ocupar más espacio del necesario ni bloquear el paso con maletas.' },
+      { tipo: 'subseccion', texto: 'Pedir en puestos diferentes' },
+      { tipo: 'parrafo', texto: 'Cada puesto gestiona su propia cola y preparación. Si dos personas piden en lugares distintos, los platos pueden estar listos a tiempos diferentes. Para un grupo grande, conviene asumir que no todo llegará a la mesa a la vez; el valor está en la variedad, no en el servicio coordinado de un restaurante.' },
+      { tipo: 'subseccion', texto: 'Pago y recogida' },
+      { tipo: 'parrafo', texto: 'El mercado oficial señala que se aceptan tarjeta y efectivo, aunque la operativa concreta puede variar entre puestos. Mira siempre las indicaciones del mostrador. Algunos pedidos se recogen cuando te avisan y otros se entregan según el sistema de cada cocina.' },
+
+      { tipo: 'subtitulo', texto: 'Qué tipo de comida encontrarás' },
+      { tipo: 'parrafo', texto: 'La oferta cambia porque los operadores pueden renovarse, así que una lista cerrada envejece rápido. Lo estable es la mezcla: cocina portuguesa, pescado y marisco, carnes, bocados informales, propuestas internacionales, dulces y bebidas. También suele haber alternativas para distintas necesidades alimentarias, pero conviene confirmarlas directamente antes de pedir.' },
+      { tipo: 'parrafo', texto: 'Si es tu primera comida en Portugal y quieres entender la cocina local, no elijas solo por la foto más llamativa. Busca platos que tengan sentido dentro del repertorio portugués y compara dos o tres cartas. El formato permite compartir y probar cosas distintas, que es una de sus ventajas reales.' },
+      { tipo: 'tip', texto: 'Da una vuelta completa antes de ponerte en una cola. El primer puesto visible recibe mucha atención por pura posición, y a pocos metros puede haber una opción que encaje mejor con lo que quieres comer.' },
+
+      { tipo: 'subtitulo', texto: 'Cuánto cuesta comer' },
+      { tipo: 'parrafo', texto: 'No hay un precio único útil y no tendría sentido publicar una tabla que quedará vieja con el próximo cambio de carta. Cada puesto fija sus importes y la cuenta depende mucho de si pides un plato principal, varios bocados para compartir, bebida o postre.' },
+      { tipo: 'parrafo', texto: 'Como orientación de criterio, Time Out Market no es la opción a la que iría para comer lo más barato posible. El nivel suele acercarse más al de una comida informal en una zona muy céntrica que al de un menú del día en una tasca. La ventaja que pagas es la variedad, la ubicación y la facilidad para grupos.' },
+      { tipo: 'parrafo', texto: 'Antes de pedir, mira el precio completo del plato y si necesitas añadir acompañamiento o bebida. Una elección que parece razonable puede subir cuando cada elemento se cobra por separado. Los menús visibles en el propio puesto son la referencia válida el día de tu visita.' },
+      { tipo: 'enlace', texto: 'Si el presupuesto manda, compara esta experiencia con tascas, mercados de barrio y platos del día antes de decidir.', href: '/blog/donde-comer-barato-lisboa', label: 'Dónde comer barato en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Cuándo suele haber más gente' },
+      { tipo: 'parrafo', texto: 'Las horas normales de comida y cena concentran más demanda, y los fines de semana se nota especialmente. No hace falta perseguir una hora exacta porque cambia según la temporada y los eventos, pero llegar un poco antes o después del pico habitual facilita encontrar mesa y reduce las colas.' },
+      { tipo: 'parrafo', texto: 'Si vas con niños, equipaje o un grupo grande, esa diferencia importa. El salón puede ser estimulante cuando está animado y agotador cuando tienes que vigilar varias colas a la vez. Para una visita tranquila, evita usarlo como solución de última hora en el momento más concurrido del día.' },
+      { tipo: 'nota', texto: 'Los horarios, operadores y menús pueden cambiar. Consulta la web oficial y la información expuesta en el mercado antes de organizar el día alrededor de un puesto concreto.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo llegar a Cais do Sodré' },
+      { tipo: 'parrafo', texto: 'Time Out Market está en la Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Es una zona conectada por metro, tren, autobuses y barco, pero la mejor opción depende de dónde vengas. Desde Chiado se puede bajar andando; desde zonas más alejadas conviene revisar la combinación del día.' },
+      { tipo: 'parrafo', texto: 'Cais do Sodré también es punto de salida para la línea ferroviaria hacia Cascais y para conexiones fluviales. Si el mercado forma parte de un trayecto, encájalo antes o después de esa conexión en vez de cruzar la ciudad solo para comer. El barrio tiene suficiente actividad alrededor para continuar el paseo por el río o subir hacia Bica y Chiado.' },
+      { tipo: 'enlace', texto: 'La guía de movilidad explica cómo combinar Cais do Sodré con metro, tren, barco y caminatas sin comprar trayectos innecesarios.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Ventajas reales' },
+      { tipo: 'lista', items: [
+        'Variedad para grupos en los que cada persona quiere comer algo distinto.',
+        'Ubicación práctica junto a Cais do Sodré y bajo techo.',
+        'Posibilidad de probar varios bocados sin reservar restaurantes diferentes.',
+        'Horario amplio según la información oficial, aunque conviene comprobarlo antes de ir.',
+      ] },
+      { tipo: 'parrafo', texto: 'Su mejor escenario es un grupo flexible: unas personas quieren pescado, otras algo rápido y nadie quiere discutir durante media hora sobre un restaurante. También funciona bien como refugio en un día de lluvia o como comida antes de tomar un tren o un barco desde Cais do Sodré.' },
+
+      { tipo: 'subtitulo', texto: 'Inconvenientes que conviene asumir' },
+      { tipo: 'lista', items: [
+        'Ruido y dificultad para encontrar mesa cuando coincide mucha gente.',
+        'Precios generalmente menos orientados al ahorro que los de una tasca o un menú de barrio.',
+        'Pedidos que no llegan al mismo tiempo si el grupo compra en varios puestos.',
+        'Una experiencia más turística y diseñada que la del mercado tradicional contiguo.',
+      ] },
+      { tipo: 'parrafo', texto: 'Nada de esto lo convierte en un mal lugar. Solo significa que no debe recomendarse como respuesta universal a “dónde comer en Lisboa”. Es una opción concreta, con ventajas claras y costes también claros.' },
+
+      { tipo: 'subtitulo', texto: 'Para quién sí y para quién no' },
+      { tipo: 'parrafo', texto: 'Sí encaja para grupos, familias con gustos distintos, una comida práctica entre transportes o quien quiera comparar varias propuestas en un solo espacio. También puede interesar a quien dispone de poco tiempo y prefiere concentrar la elección.' },
+      { tipo: 'parrafo', texto: 'Encaja menos si buscas silencio, servicio de mesa, una comida larga o el presupuesto más bajo. Tampoco es la mejor forma de conocer la cocina cotidiana de Lisboa: para eso, una tasca, un restaurante de barrio o el mercado tradicional explican mejor cómo come la ciudad fuera del circuito turístico.' },
+
+      { tipo: 'subtitulo', texto: 'Alternativas antes de decidir' },
+      { tipo: 'parrafo', texto: 'Dentro del mismo Mercado da Ribeira está la zona tradicional, cuyo funcionamiento es distinto y conviene consultar por separado. En los alrededores de Cais do Sodré, Bica y Santos hay restaurantes y tascas de formatos muy variados; mirar dos calles más allá puede darte una comida más tranquila o más económica.' },
+      { tipo: 'parrafo', texto: 'Si lo que te interesa son los mercados y no necesariamente el food hall, Lisboa tiene opciones de barrio y ferias con otra relación con la ciudad. El Mercado de Arroios, la Feira da Ladra y otros espacios responden a intenciones distintas, por lo que vale la pena compararlos en lugar de tratarlos como equivalentes.' },
+      { tipo: 'enlace', texto: 'La guía de mercados separa espacios gastronómicos, mercados de abastos y ferias para que elijas según lo que realmente quieres encontrar.', href: '/blog/mejores-mercados-lisboa', label: 'Los mejores mercados de Lisboa' },
+
+      { tipo: 'subtitulo', texto: '¿Merece la pena?' },
+      { tipo: 'parrafo', texto: 'Sí, si valoras la variedad, vas en grupo o ya estás en Cais do Sodré. No, si buscas la comida más barata, un ambiente local sin turismo o una cena tranquila con servicio de mesa. La respuesta depende menos de la fama del mercado que del tipo de comida que quieres ese día.' },
+      { tipo: 'parrafo', texto: 'Mi criterio sería sencillo: entra, mira el ambiente y los menús, y decide sin compromiso. El acceso al edificio permite comprobar si hay sitio y si las opciones te convencen. Si no, el barrio ofrece alternativas y no has perdido más que unos minutos.' },
+
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'Time Out Market Lisboa es práctico, variado y muy fácil de encajar en una ruta por Cais do Sodré. También es concurrido, turístico y normalmente menos económico que una comida de barrio. Merece la pena cuando esas ventajas resuelven una necesidad real; no porque aparezca en todas las listas.' },
+    ],
+  },
   'estacion-oriente-lisboa': {
     titulo: 'Estación de Oriente de Lisboa: arquitectura, transportes y qué ver alrededor',
     descripcion: 'Guía para entender la estación de Oriente: arquitectura de Santiago Calatrava, conexiones de tren, metro y bus, y visitas cercanas en el Parque das Nações.',
@@ -1292,6 +1402,7 @@ const articles: Record<string, Article> = {
       { tipo: "tip", texto: "En cualquier tasca, pregunta por el 'prato do dia' (plato del día). Siempre es la opción más fresca y económica, porque aprovechan lo que compraron esa mañana en el mercado." },
       { tipo: "subtitulo", texto: "Mercados: donde comen los que saben" },
       { tipo: "parrafo", texto: "El Mercado da Ribeira tiene dos caras completamente diferentes. La que conoce todo el mundo es el Time Out Market: puestos de chefs reconocidos, colas interminables, precios de restaurante con formato de comida rápida. Funciona bien si quieres probar cocina de autor sin reserva, pero no es precisamente barato." },
+      { tipo: 'enlace', texto: 'La guía específica explica cómo funciona el salón, cuándo se llena y en qué casos la variedad compensa el precio.', href: '/blog/time-out-market-lisboa', label: 'Time Out Market Lisboa: guía práctica' },
       { tipo: "parrafo", texto: "La otra cara está al otro lado del pasillo: el mercado tradicional que lleva funcionando desde 1892. Aquí las señoras del barrio compran pescado, fruta y flores. Hay puestos de comida preparada donde un plato combinado con arroz, ensalada y carne o pescado del día cuesta cinco o seis euros. El ambiente es auténtico, el idioma es portugués, y la calidad es sorprendentemente buena." },
       { tipo: "parrafo", texto: "Pero mi mercado favorito está lejos del centro: el Mercado de Arroios, en un barrio residencial sin apenas visitantes. El restaurante del mercado sirve menús completos por siete euros, con sopa casera, plato del día, pan, y vino o agua. Los parroquianos son trabajadores del barrio, jubilados que llevan décadas viniendo, y algún curioso que se aventuró hasta allí siguiendo un consejo como este." },
       { tipo: "subtitulo", texto: "Bocadillos que alimentan el alma" },
@@ -2012,6 +2123,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Esta guía te lleva desde el mercado más famoso hasta los rincones escondidos donde solo van los lisboetas. Cada uno tiene su personalidad, su horario, y su razón de ser." },
       { tipo: "subtitulo", texto: "1. Time Out Market (Mercado da Ribeira)" },
       { tipo: "parrafo", texto: "El mercado mas famoso y turistico de Lisboa. Food court moderno con los mejores chefs de la ciudad. Turistico pero con comida excelente. Llega temprano o espera cola." },
+      { tipo: 'enlace', texto: 'Si quieres decidir si encaja contigo, la guía específica compara funcionamiento, precios variables, ventajas y alternativas.', href: '/blog/time-out-market-lisboa', label: 'Leer la guía de Time Out Market Lisboa' },
       { tipo: "lista", items: [
         "Direccion: Av. 24 de Julho 49",
         "Horario: 10:00 - 24:00",
@@ -3853,6 +3965,17 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  'time-out-market-lisboa': {
+    comoLlegar: 'Está en el Mercado da Ribeira, Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Se llega en metro, tren, bus, barco o a pie desde Chiado.',
+    mejorHora: 'Fuera de las horas habituales de comida y cena es más fácil encontrar mesa. Los fines de semana conviene evitar llegar justo en el pico.',
+    faqs: [
+      { q: '¿Qué es Time Out Market Lisboa?', a: 'Es un mercado gastronómico abierto en 2014 dentro del histórico Mercado da Ribeira. Reúne puestos de comida y bebida alrededor de mesas compartidas.' },
+      { q: '¿Es barato comer en Time Out Market?', a: 'No suele ser la opción más barata de Lisboa. Los precios cambian por puesto y carta; la ventaja está en la variedad y la ubicación, no en competir con un menú de tasca.' },
+      { q: '¿Hay que reservar mesa?', a: 'No. La información oficial indica que las mesas comunes no se reservan. En momentos concurridos puede costar encontrar sitio para un grupo.' },
+      { q: '¿Cómo llegar a Time Out Market?', a: 'Está frente a Cais do Sodré, un intercambiador con metro, tren, buses y conexiones fluviales. Desde Chiado también se puede bajar andando.' },
+      { q: '¿Merece la pena Time Out Market Lisboa?', a: 'Sí para grupos con gustos distintos, una comida práctica o si ya estás en Cais do Sodré. Si buscas tranquilidad, cocina cotidiana o el precio más bajo, una tasca o un mercado de barrio puede encajar mejor.' },
+    ],
+  },
   'estacion-oriente-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja, estación Oriente. El intercambiador reúne metro, trenes y terminal de autobuses junto al Parque das Nações.',
     mejorHora: 'Si quieres mirar la arquitectura sin ir con una conexión pendiente, encájala a media mañana o en una tarde de paseo por el Parque das Nações.',

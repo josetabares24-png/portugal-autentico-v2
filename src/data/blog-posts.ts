@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'time-out-market-lisboa',
+    titulo: 'Time Out Market Lisboa: qué comer, precios y si merece la pena',
+    excerpt: 'Cómo funciona el mercado, qué tipo de comida encontrarás, cuánto esperar gastar y cuándo conviene elegir otra opción en Cais do Sodré.',
+    categoria: 'Gastronomía',
+    fecha: '28 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
+  },
+  {
     id: 'estacion-oriente-lisboa',
     titulo: 'Estación de Oriente de Lisboa: arquitectura, transportes y qué ver alrededor',
     excerpt: 'Cómo orientarte entre tren, metro y buses, qué parte diseñó Santiago Calatrava y cuándo merece la pena visitarla aunque no viajes.',

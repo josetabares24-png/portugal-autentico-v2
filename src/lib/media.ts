@@ -14,6 +14,7 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'time-out-market-lisboa': '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
   'estacion-oriente-lisboa': '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
   'estacion-olaias-lisboa': '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
   'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
