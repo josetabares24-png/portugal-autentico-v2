@@ -11,6 +11,99 @@ import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'estacion-oriente-lisboa': {
+    titulo: 'Estación de Oriente de Lisboa: arquitectura, transportes y qué ver alrededor',
+    descripcion: 'Guía para entender la estación de Oriente: arquitectura de Santiago Calatrava, conexiones de tren, metro y bus, y visitas cercanas en el Parque das Nações.',
+    seoTitle: 'Estación de Oriente: arquitectura y transportes',
+    metaDescription: 'Cómo orientarte en la estación de Oriente, qué parte diseñó Santiago Calatrava, qué transportes conecta y qué ver cerca en Parque das Nações.',
+    imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
+    imageAlt: 'Tren detenido bajo la cubierta de vidrio y acero de la estación de Oriente en Lisboa',
+    categoria: 'Transporte',
+    fecha: '28 Ago 2026',
+    fechaActualizacion: 'Actualizado en agosto de 2026',
+    dateModified: '2026-08-28',
+    minutos: 10,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/estacion-olaias-lisboa', label: 'Arte y arquitectura en la estación de Olaias' },
+      { href: '/actividades/oceanario-lisboa', label: 'Oceanário de Lisboa' },
+      { href: '/itinerarios', label: 'Itinerarios gratuitos por Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Infraestruturas de Portugal - Estação do Oriente', href: 'https://www.infraestruturasdeportugal.pt/sites/default/files/pdfs/flipbook/RotasdosAzulejosLinhadoNorte/71/' },
+      { label: 'Metro de Lisboa - arte en Oriente', href: 'https://www.metrolisboa.pt/viver/arte-nas-estacoes-2__trashed/oriente/' },
+      { label: 'Metro de Lisboa - historia de la red', href: 'https://www.metrolisboa.pt/institucional/conhecer/historia-do-metro/' },
+      { label: 'Oceanário de Lisboa - cómo llegar', href: 'https://oceanario.pt/planear-a-visita/como-chegar/' },
+      { label: 'CP - horarios y planificador', href: 'https://www.cp.pt/passageiros/pt/como-viajar/horarios' },
+    ],
+    cta: {
+      href: '/actividades/oceanario-lisboa',
+      label: 'Planear la visita al Oceanário',
+      title: '¿Vas a quedarte en el Parque das Nações?',
+      text: 'La estación es la puerta de entrada al barrio. El Oceanário es la visita que más tiempo necesita y conviene comprobar sus condiciones antes de organizar el resto del paseo.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'Oriente es mucho más que una estación donde cambiar de tren. Es el gran punto de conexión del este de Lisboa y, al mismo tiempo, una de las piezas de arquitectura contemporánea más reconocibles de la ciudad. Aquí se cruzan ferrocarril, metro y autobuses junto al Parque das Nações, el barrio transformado para la Expo 98.' },
+      { tipo: 'parrafo', texto: 'También es un lugar fácil de entender mal. La gran cubierta de vidrio y acero pertenece a la estación ferroviaria diseñada por Santiago Calatrava, mientras que la estación de metro tiene otro proyecto y otra intervención artística. Esta guía separa ambas partes y explica cómo usar el conjunto sin convertirlo en una lista de horarios que caduca.' },
+      { tipo: 'lista', items: [
+        'Oriente funciona como intercambiador de trenes, Metro de Lisboa y servicios de autobús.',
+        'La terminal ferroviaria de Santiago Calatrava se inauguró el 19 de mayo de 1998, en el contexto de la Expo 98.',
+        'Aunque no vayas a tomar un tren, merece una parada si vas al Oceanário o quieres recorrer el Parque das Nações.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué es la estación de Oriente' },
+      { tipo: 'parrafo', texto: 'Gare do Oriente es un intercambiador organizado en niveles. Los trenes circulan arriba, bajo la gran cubierta; el metro queda en el nivel inferior; y los recorridos peatonales conectan con la terminal de autobuses y con el entorno urbano. Esa superposición permite mover a mucha gente sin extender la estación en una sola planta enorme.' },
+      { tipo: 'parrafo', texto: 'Para un viajero, lo importante es no pensar en Oriente como un único vestíbulo. Cada modo de transporte tiene sus accesos y paneles, y el cambio puede exigir bajar, cruzar y volver a subir. Si llevas equipaje o una conexión ajustada, sigue primero la señalización del operador y deja la arquitectura para después.' },
+
+      { tipo: 'subtitulo', texto: 'La arquitectura de Santiago Calatrava' },
+      { tipo: 'parrafo', texto: 'Infraestruturas de Portugal atribuye a Santiago Calatrava el proyecto de la estación ferroviaria de Oriente, inaugurada el 19 de mayo de 1998 para servir a la exposición internacional. Su elemento más visible es la cubierta modular de vidrio y acero que protege los andenes superiores.' },
+      { tipo: 'parrafo', texto: 'Desde abajo, la estructura se repite como una arboleda geométrica. Desde los andenes, las piezas de vidrio filtran la luz y hacen que la estación cambie con el cielo. Es una arquitectura concebida para el movimiento: se entiende mejor caminando por las plataformas y mirando cómo la cubierta acompaña la longitud de los trenes.' },
+      { tipo: 'subseccion', texto: 'La cubierta de los andenes' },
+      { tipo: 'parrafo', texto: 'La parte más fotogénica está arriba. Los módulos se alinean sobre las vías y crean una secuencia continua, con perspectivas muy marcadas hacia ambos extremos. Un tren detenido ayuda a comprender la escala; sin él, la cubierta puede parecer mucho más pequeña en fotografía de lo que es en realidad.' },
+      { tipo: 'subseccion', texto: 'Hormigón, escaleras y niveles' },
+      { tipo: 'parrafo', texto: 'Bajo la cubierta aparece otra estación: grandes piezas de hormigón, escaleras, pasarelas y espacios de circulación. No tiene la delicadeza visual del nivel superior, pero explica la complejidad del intercambiador. Oriente fue diseñada para hacer convivir recorridos distintos, no para ser contemplada desde un único punto.' },
+
+      { tipo: 'subtitulo', texto: 'El metro de Oriente es otra obra' },
+      { tipo: 'parrafo', texto: 'La estación de metro no debe atribuirse a Calatrava. El Metro de Lisboa identifica a Sanchez Jorge como autor del proyecto arquitectónico de la estación subterránea, abierta también en 1998. Su programa artístico se relaciona con los océanos y reunió trabajos de creadores de distintos países vinculados a la Expo.' },
+      { tipo: 'parrafo', texto: 'Esa diferencia importa porque ambas estaciones se leen de manera distinta. Arriba domina la estructura ferroviaria; abajo, los revestimientos y las intervenciones artísticas acompañan el trayecto hacia los andenes del metro. Forman un conjunto intermodal, pero no son una sola autoría.' },
+
+      { tipo: 'subtitulo', texto: 'Qué transportes conectan en Oriente' },
+      { tipo: 'parrafo', texto: 'Oriente conecta servicios ferroviarios de larga distancia, regionales y urbanos, además de la Línea Roja del Metro y distintas rutas de autobús. Los servicios exactos, las vías y los horarios cambian, por lo que no conviene memorizar una lista: comprueba el billete y el planificador del operador el día del viaje.' },
+      { tipo: 'parrafo', texto: 'CP incluye Oriente en servicios Alfa Pendular, Intercidades, regionales y urbanos. Eso la hace útil tanto para salir de Lisboa como para algunas conexiones dentro del área metropolitana. Pero que un tren pase por Oriente no significa que sea la mejor estación para cada destino: Rossio, Santa Apolónia y Cais do Sodré siguen teniendo papeles distintos según el trayecto.' },
+      { tipo: 'subseccion', texto: 'Metro' },
+      { tipo: 'parrafo', texto: 'La Línea Roja comunica Oriente con Olaias, Alameda y el aeropuerto. Para llegar a otras partes del centro necesitarás combinarla con otra línea o continuar en superficie. No presupongas que Oriente está en el centro histórico: está bien conectada, pero se encuentra en el este de la ciudad.' },
+      { tipo: 'subseccion', texto: 'Trenes' },
+      { tipo: 'parrafo', texto: 'Si sales en tren, mira número de servicio, hora y vía en los paneles. Llega con margen cuando no conozcas la estación, especialmente porque los andenes están en el nivel superior y el acceso puede ser más largo de lo que sugiere el mapa.' },
+      { tipo: 'subseccion', texto: 'Autobuses' },
+      { tipo: 'parrafo', texto: 'La terminal de autobuses forma parte del intercambiador, pero los operadores y puntos de salida pueden variar. Confirma siempre la dársena o la indicación incluida en tu reserva. “Oriente” es un área amplia: estar en la estación no significa estar ya delante del autobús correcto.' },
+      { tipo: 'enlace', texto: 'Para entender cuándo conviene Oriente y cuándo salen mejor Rossio, Cais do Sodré u otras estaciones, consulta la guía general de movilidad.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Cómo llegar y orientarte sin perder tiempo' },
+      { tipo: 'parrafo', texto: 'La forma más sencilla desde el centro suele ser llegar en metro, haciendo el transbordo necesario hasta la Línea Roja. Desde el aeropuerto, la misma línea llega a Oriente sin salir de la red. Si vienes en taxi o coche con aplicación, especifica si buscas la estación de tren o la terminal de autobuses para evitar rodeos.' },
+      { tipo: 'parrafo', texto: 'Dentro, separa la conexión en pasos: primero identifica el modo de transporte, después el nivel y por último la vía o dársena. Las indicaciones de “comboios”, “metro” y “autocarros” son más útiles que intentar orientarte solo por la forma del edificio.' },
+      { tipo: 'tip', texto: 'Si vas a tomar un tren, resuelve primero la vía y calcula cuánto tardas en llegar al andén. Después, si sobra tiempo, mira la cubierta con calma. Hacerlo al revés es la forma más sencilla de acabar corriendo por las escaleras.' },
+
+      { tipo: 'subtitulo', texto: 'Qué ver alrededor de la estación' },
+      { tipo: 'parrafo', texto: 'Al salir estás en el Parque das Nações, una zona llana y contemporánea junto al Tajo. El centro comercial Vasco da Gama queda frente a la estación y sirve como referencia visual; el paseo del río, el Oceanário y otros equipamientos del barrio están a distancia caminable.' },
+      { tipo: 'parrafo', texto: 'El Oceanário es la visita principal y necesita más tiempo que la estación. Si vas a combinar ambos, reserva la arquitectura para el trayecto de entrada o de salida y organiza el acceso al Oceanário según las condiciones vigentes. El barrio funciona bien con niños, con lluvia intermitente y para descansar de las cuestas del centro histórico.' },
+      { tipo: 'enlace', texto: 'Antes de reservar la jornada, revisa la información práctica y las condiciones actuales de la visita.', href: '/actividades/oceanario-lisboa', label: 'Ver la ficha del Oceanário de Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Fotografiar la estación de Oriente' },
+      { tipo: 'parrafo', texto: 'La cubierta pide encuadres simétricos y líneas largas. Desde los andenes, busca la repetición de los módulos y usa el tren como escala. Desde los niveles inferiores, las escaleras y el hormigón producen una imagen más dura y abstracta. La luz cambia bastante entre un día despejado y uno cubierto porque atraviesa el vidrio.' },
+      { tipo: 'parrafo', texto: 'No cruces zonas restringidas ni te acerques al borde para conseguir una perspectiva. Es una estación con circulación intensa y equipaje por todas partes. Un encuadre limpio suele aparecer esperando unos segundos, no bloqueando un paso o intentando ocupar el centro de una escalera.' },
+
+      { tipo: 'subtitulo', texto: 'Combinar Oriente con Olaias' },
+      { tipo: 'parrafo', texto: 'Si la arquitectura es parte del viaje, Olaias completa muy bien la visita. Ambas estaciones nacieron con la expansión de la Línea Roja en 1998, pero ofrecen experiencias opuestas: Oriente muestra la gran infraestructura y Olaias concentra arte, color y una escala inesperada bajo tierra.' },
+      { tipo: 'enlace', texto: 'Olaias se recorre en poco tiempo y queda en la misma línea, por lo que no exige volver al centro entre una estación y otra.', href: '/blog/estacion-olaias-lisboa', label: 'Visitar la estación de Olaias' },
+
+      { tipo: 'subtitulo', texto: '¿Merece la pena aunque no tomes un tren?' },
+      { tipo: 'parrafo', texto: 'Sí, cuando ya vas al Parque das Nações o te interesa la arquitectura contemporánea. La cubierta se puede apreciar como parte de un paseo y el barrio ofrece suficiente contexto para que la salida no dependa solo de una estación. También es una buena alternativa visual a la Lisboa de azulejos y colinas.' },
+      { tipo: 'parrafo', texto: 'No iría desde Alfama únicamente para hacer una foto rápida si tienes pocas horas en la ciudad. Oriente está alejada del núcleo histórico y gana valor cuando la combinas con el Oceanário, el río o una visita a Olaias. En ese contexto, deja de ser un desvío y se convierte en la puerta de entrada al este de Lisboa.' },
+
+      { tipo: 'subtitulo', texto: 'Conclusión' },
+      { tipo: 'parrafo', texto: 'Oriente funciona en dos niveles: como infraestructura práctica para viajar y como pieza de la transformación urbana de 1998. Entender qué parte pertenece a la terminal de Calatrava, cómo se organiza el intercambiador y qué hay alrededor permite usarla sin prisas y verla con más criterio.' },
+    ],
+  },
   'estacion-olaias-lisboa': {
     titulo: 'Estación de Olaias en Lisboa: arte, arquitectura y cómo visitarla',
     descripcion: 'Qué hace especial a la estación de Olaias, cómo llegar por la Línea Roja, cuánto tiempo dedicar y cuándo merece la pena visitarla.',
@@ -26,6 +119,7 @@ const articles: Record<string, Article> = {
     links: [
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
+      { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente' },
       { href: '/itinerarios', label: 'Itinerarios gratuitos por Lisboa' },
     ],
     fuentes: [
@@ -34,10 +128,10 @@ const articles: Record<string, Article> = {
       { label: 'Metro de Lisboa - historia de la red', href: 'https://www.metrolisboa.pt/institucional/conhecer/historia-do-metro/' },
     ],
     cta: {
-      href: '/blog/donde-fotografiar-lisboa',
-      label: 'Seguir la ruta fotográfica',
-      title: 'Otra forma de mirar Lisboa',
-      text: 'Olaias añade arquitectura contemporánea a una ruta que normalmente se concentra en miradores, tranvías, azulejos y el río.',
+      href: '/blog/estacion-oriente-lisboa',
+      label: 'Seguir hasta la estación de Oriente',
+      title: 'Dos estaciones, una misma línea',
+      text: 'Si te interesa la arquitectura contemporánea, la Línea Roja permite unir Olaias con Oriente en el mismo recorrido sin cruzar la ciudad dos veces.',
     },
     contenido: [
       { tipo: 'parrafo', texto: 'Olaias no suele aparecer en los itinerarios clásicos de Lisboa, pero si te interesa la arquitectura, el metro o la fotografía, merece una parada. No hace falta organizar media jornada alrededor de ella: su gracia está precisamente en que puedes verla en poco tiempo y seguir viaje por la Línea Roja.' },
@@ -82,6 +176,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Qué combinar con la visita' },
       { tipo: 'parrafo', texto: 'La combinación más lógica es Oriente. Está en la misma Línea Roja y ofrece otra lectura de la Lisboa de 1998: una gran estación intermodal, el Parque das Nações y el frente del Tajo. Olaias es interior, color y escala; Oriente es estructura, cubierta y movimiento.' },
       { tipo: 'parrafo', texto: 'También puedes usar Alameda como punto de entrada o salida del recorrido, pero no hace falta llenar el día con estaciones. Si tu plan principal está en el centro histórico, Olaias funciona mejor como una visita breve que como una excusa para ir encadenando transbordos.' },
+      { tipo: 'enlace', texto: 'La estación de Oriente mezcla arquitectura, metro, trenes, buses y acceso al Parque das Nações.', href: '/blog/estacion-oriente-lisboa', label: 'Qué ver en la estación de Oriente' },
       { tipo: 'subtitulo', texto: '¿Merece la pena desviarse?' },
       { tipo: 'parrafo', texto: 'Sí, si ya conoces lo esencial de Lisboa o si la arquitectura y la fotografía forman parte del viaje. También merece la pena si vas hacia Oriente y puedes dedicarle media hora sin desmontar el día. La visita es corta, gratuita más allá del título de transporte que uses y muy distinta a los escenarios habituales.' },
       { tipo: 'parrafo', texto: 'No la pondría por delante de Alfama, Belém o un primer paseo por la Baixa. En un viaje de uno o dos días, el tiempo tiene más valor en la superficie. Olaias funciona como una capa adicional: no sustituye la Lisboa clásica, pero demuestra que la ciudad también construyó una identidad contemporánea bajo tierra.' },
@@ -993,6 +1088,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Metro: rápido para distancias claras' },
       { tipo: 'parrafo', texto: 'El metro es la forma más previsible de moverte entre zonas conectadas: aeropuerto, Saldanha, Marquês, Baixa-Chiado, Cais do Sodré y Oriente, entre otras. Es limpio, sencillo de leer y útil cuando tienes que cruzar ciudad. No resuelve todos los barrios históricos, pero evita muchos trayectos largos en superficie.' },
       { tipo: 'parrafo', texto: 'Para llegar desde el aeropuerto suele ser una opción práctica si llevas equipaje manejable y tu alojamiento queda cerca de una estación. El aeropuerto tiene estación de metro y la conexión Aeroporto-Saldanha se anuncia como unos 20 minutos, pero eso no significa que llegue directo a todas las zonas céntricas: muchas rutas necesitan transbordo.' },
+      { tipo: 'enlace', texto: 'Si vas hacia el Parque das Nações o vas a tomar un tren, Oriente funciona como intercambiador y también merece una mirada por su arquitectura.', href: '/blog/estacion-oriente-lisboa', label: 'Guía de la estación de Oriente' },
       { tipo: 'subtitulo', texto: 'Tranvías: icono, no siempre transporte eficiente' },
       { tipo: 'parrafo', texto: 'El tranvía 28 es famoso por una razón: atraviesa calles estrechas, sube colinas y condensa una imagen muy reconocible de Lisboa. Pero también puede ir lleno, lento y con colas. Si lo quieres vivir como experiencia, intenta hacerlo temprano o al final de la tarde. Si solo quieres llegar rápido, quizá no es la mejor herramienta.' },
       { tipo: 'parrafo', texto: 'Hay otras líneas más prácticas para desplazarte de verdad. El 15 conecta Belém con Cais do Sodré y Martim Moniz siguiendo la línea del río, y es el que lleva las unidades articuladas modernas, con más sitio y menos cola. El 25 va de Prazeres a Praça da Figueira atravesando barrios residenciales que el metro no alcanza. No diseñes el día alrededor de un tranvía si ese tranvía te obliga a esperar demasiado.' },
@@ -3074,6 +3170,13 @@ const heroAlt: Record<string, string> = {
  * imágenes genéricas ni se describe un lugar que no aparece en la imagen.
  */
 const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
+  'estacion-oriente-lisboa': {
+    'la-arquitectura-de-santiago-calatrava': {
+      src: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-cubierta-calatrava-detalle.jpg',
+      alt: 'Detalle de la estructura de vidrio y acero diseñada por Santiago Calatrava en la estación de Oriente',
+      position: '50% 45%',
+    },
+  },
   'estacion-olaias-lisboa': {
     'que-tiene-de-especial-la-estacion-de-olaias': {
       src: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-anden-columnas.jpg',
@@ -3750,6 +3853,17 @@ const internalLinks = [
 ];
 
 const articleExtras: Record<string, ArticleExtras> = {
+  'estacion-oriente-lisboa': {
+    comoLlegar: 'Metro de Lisboa, Línea Roja, estación Oriente. El intercambiador reúne metro, trenes y terminal de autobuses junto al Parque das Nações.',
+    mejorHora: 'Si quieres mirar la arquitectura sin ir con una conexión pendiente, encájala a media mañana o en una tarde de paseo por el Parque das Nações.',
+    faqs: [
+      { q: '¿Quién diseñó la estación de Oriente?', a: 'Santiago Calatrava diseñó la estación ferroviaria y su cubierta. La estación de metro es un proyecto distinto de Sanchez Jorge, con un programa artístico propio.' },
+      { q: '¿Qué transportes salen de Oriente?', a: 'El intercambiador reúne trenes de larga distancia, regionales y urbanos, la Línea Roja del Metro de Lisboa y servicios de autobús. Los horarios y puntos de salida deben comprobarse con cada operador.' },
+      { q: '¿Cómo ir del aeropuerto a Oriente?', a: 'La Línea Roja del Metro conecta el aeropuerto con la estación de Oriente sin cambiar de línea. Comprueba el estado del servicio y calcula tiempo adicional si llevas equipaje.' },
+      { q: '¿Está el Oceanário cerca de la estación?', a: 'Sí. El Oceanário está en el Parque das Nações, a distancia caminable desde Oriente. Conviene seguir la señalización del barrio y revisar antes las condiciones de la visita.' },
+      { q: '¿Merece la pena visitar Oriente sin tomar un tren?', a: 'Sí, sobre todo si vas al Parque das Nações o te interesa la arquitectura contemporánea. En un viaje muy corto conviene combinarla con el Oceanário, el paseo del río u Olaias para que el desplazamiento tenga más sentido.' },
+    ],
+  },
   'estacion-olaias-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
     mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',

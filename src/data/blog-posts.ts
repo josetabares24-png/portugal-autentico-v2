@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'estacion-oriente-lisboa',
+    titulo: 'Estación de Oriente de Lisboa: arquitectura, transportes y qué ver alrededor',
+    excerpt: 'Cómo orientarte entre tren, metro y buses, qué parte diseñó Santiago Calatrava y cuándo merece la pena visitarla aunque no viajes.',
+    categoria: 'Transporte',
+    fecha: '28 Ago 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
+  },
+  {
     id: 'estacion-olaias-lisboa',
     titulo: 'Estación de Olaias en Lisboa: arte, arquitectura y cómo visitarla',
     excerpt: 'Qué hace distinta a Olaias, cómo llegar por la Línea Roja, cuánto tiempo dedicar y cuándo merece la pena incluirla en tu recorrido.',
