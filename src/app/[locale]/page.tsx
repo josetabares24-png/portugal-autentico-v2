@@ -31,11 +31,9 @@ export const metadata: Metadata = {
 };
 
 const historias = [
-  blogPosts.find(p => p.id === 'mejores-miradores-lisboa') || blogPosts[0],
-  blogPosts.find(p => p.id === 'historia-de-lisboa') || blogPosts[1],
-  blogPosts.find(p => p.id === 'barrios-imprescindibles') ||
-    blogPosts.find(p => p.id === 'novedades-lisboa-2026') ||
-    blogPosts[2],
+  blogPosts.find(p => p.id === 'time-out-market-lisboa') || blogPosts[0],
+  blogPosts.find(p => p.id === 'estacion-oriente-lisboa') || blogPosts[1],
+  blogPosts.find(p => p.id === 'estacion-olaias-lisboa') || blogPosts[2],
 ].filter(Boolean);
 
 const barrios = [
