@@ -577,6 +577,39 @@ h1, h2, h3, h4, h5, h6 {
   text-underline-offset: 3px;
 }
 
+.article-sources-compact summary {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--article-main);
+  list-style: none;
+}
+
+.article-sources-compact summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-sources-compact ul {
+  padding-top: 0.75rem;
+}
+
+.article-sources-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.article-sources-compact[open] .article-sources-icon {
+  transform: rotate(45deg);
+}
+
 .article-cta {
   margin: 0 auto;
   padding: 2rem;
@@ -606,6 +639,30 @@ h1, h2, h3, h4, h5, h6 {
 .article-cta-button {
   font-size: 1rem;
   text-decoration: none;
+}
+
+.article-cta-compact {
+  padding: 1.35rem 1.5rem;
+}
+
+.article-cta-compact h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.article-cta-compact p {
+  max-width: 34rem;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.article-pilot-ending .article-sources {
+  margin-top: 1.5rem;
+}
+
+.article-pilot-ending .article-author {
+  margin-top: 2rem;
 }
 
 .article-author {
@@ -653,6 +710,46 @@ h1, h2, h3, h4, h5, h6 {
 .article-toc a:hover,
 .article-toc a:focus-visible {
   color: var(--article-link);
+}
+
+.article-toc-compact {
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--article-border);
+  border-bottom: 1px solid var(--article-border);
+}
+
+.article-toc-compact summary {
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--article-secondary);
+  list-style: none;
+}
+
+.article-toc-compact summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-toc-compact nav {
+  padding: 0.25rem 0 1rem;
+}
+
+.article-toc-compact-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.article-toc-compact[open] .article-toc-compact-icon {
+  transform: rotate(45deg);
 }
 
 @media (min-width: 1024px) {

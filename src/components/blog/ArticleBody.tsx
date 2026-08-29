@@ -10,6 +10,7 @@ import type {
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
 import { ArticleFooter } from './ArticleFooter';
+import { ArticleSources } from './ArticleSources';
 import { renderEditorialHeading, slugify } from './article-utils';
 
 type ArticleBodyProps = {
@@ -22,6 +23,7 @@ type ArticleBodyProps = {
   photos: Record<string, SectionPhoto>;
   seoDescription: string;
   takeaways: string[];
+  deferEnding?: boolean;
 };
 
 export function ArticleBody({
@@ -34,6 +36,7 @@ export function ArticleBody({
   photos,
   seoDescription,
   takeaways,
+  deferEnding = false,
 }: ArticleBodyProps) {
   return (
     <article className="article-surface min-w-0">
@@ -188,43 +191,36 @@ export function ArticleBody({
         })}
       </div>
 
-      {/* Separador */}
-      <hr className="my-12 border-border-soft" />
-
-      {/* FAQs */}
-      <section className="article-faq article-reading">
-        <h3>Preguntas frecuentes</h3>
-        <div className="space-y-0">
-          {faqs.map((faq, i) => (
-            <details key={i} className="group border-t border-border-soft">
-              <summary className="flex items-start justify-between cursor-pointer gap-4">
-                <h4>{faq.q}</h4>
-                <span className="article-faq-icon flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
-              </summary>
-              <div className="article-faq-answer">
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {article.fuentes && article.fuentes.length > 0 && (
-        <section className="article-sources article-reading">
-          <h3>Fuentes oficiales consultadas</h3>
-          <ul>
-            {article.fuentes.map((source) => (
-              <li key={source.href}>
-                <a href={source.href} target="_blank" rel="noopener noreferrer">
-                  {source.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {faqs.length > 0 && (
+        <>
+          <hr className="my-12 border-border-soft" />
+          <section className="article-faq article-reading">
+            <h3>Preguntas frecuentes</h3>
+            <div className="space-y-0">
+              {faqs.map((faq, i) => (
+                <details key={i} className="group border-t border-border-soft">
+                  <summary className="flex items-start justify-between cursor-pointer gap-4">
+                    <h4>{faq.q}</h4>
+                    <span className="article-faq-icon flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <div className="article-faq-answer">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </>
       )}
 
-      <ArticleFooter authorName={authorName} finalCta={finalCta} />
+      {!deferEnding && (
+        <>
+          {article.fuentes && article.fuentes.length > 0 && (
+            <ArticleSources sources={article.fuentes} />
+          )}
+          <ArticleFooter authorName={authorName} finalCta={finalCta} />
+        </>
+      )}
     </article>
   );
 }

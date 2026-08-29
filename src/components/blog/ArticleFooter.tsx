@@ -1,29 +1,48 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import type { ArticleCta } from './article-types';
 
 type ArticleFooterProps = {
   authorName: string;
   finalCta: ArticleCta;
+  compactPlanning?: boolean;
+  beforeAuthor?: ReactNode;
 };
 
-export function ArticleFooter({ authorName, finalCta }: ArticleFooterProps) {
+export function ArticleFooter({
+  authorName,
+  finalCta,
+  compactPlanning = false,
+  beforeAuthor,
+}: ArticleFooterProps) {
+  const cta = compactPlanning
+    ? {
+        href: '/planifica-tu-viaje',
+        label: 'Planifica tu viaje',
+        title: '¿Quieres ayuda para ordenar tu viaje?',
+        text: 'Podemos revisar tu ruta y resolver las decisiones que más tiempo te están quitando.',
+      }
+    : finalCta;
+
   return (
     <>
       {/* CTA final */}
-      <div className="article-cta article-reading relative bg-night bg-azulejo-pattern-gold text-center overflow-hidden">
+      <div className={`article-cta article-reading relative bg-night bg-azulejo-pattern-gold text-center overflow-hidden${compactPlanning ? ' article-cta-compact' : ''}`}>
         <h3 className="relative text-white">
-          {finalCta.title}
+          {cta.title}
         </h3>
         <p className="relative text-white/70">
-          {finalCta.text}
+          {cta.text}
         </p>
         <Link
-          href={finalCta.href}
+          href={cta.href}
           className="btn-primary article-cta-button relative inline-flex min-h-11 px-8 py-3 text-sm"
         >
-          {finalCta.label}
+          {cta.label}
         </Link>
       </div>
+
+      {beforeAuthor}
 
       {/* Sobre el autor */}
       <div className="article-author article-reading border-t border-border-soft flex items-start gap-4">

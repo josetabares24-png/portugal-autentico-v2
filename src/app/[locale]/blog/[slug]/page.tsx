@@ -1,9 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
+import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
+import { ArticleRelated } from '@/components/blog/ArticleRelated';
+import { ArticleSources } from '@/components/blog/ArticleSources';
 import { ArticleToc } from '@/components/blog/ArticleToc';
 import type { Article, ArticleExtras, SectionPhoto } from '@/components/blog/article-types';
 import { slugify } from '@/components/blog/article-utils';
@@ -41,84 +42,47 @@ const articles: Record<string, Article> = {
       text: 'Si buscas producto fresco, ambiente de barrio o una visita menos centrada en comer, compara el Mercado da Ribeira con otros mercados antes de decidir.',
     },
     contenido: [
-      { tipo: 'parrafo', texto: 'Time Out Market Lisboa resuelve muy bien una situación concreta: un grupo con gustos distintos que quiere comer en el mismo sitio, sin reserva y en pleno Cais do Sodré. Lo que no resuelve es comer barato, tranquilo o como en una tasca de barrio. Si llegas sabiendo esa diferencia, es mucho más fácil decidir si encaja contigo.' },
-      { tipo: 'parrafo', texto: 'El espacio ocupa una parte del histórico Mercado da Ribeira y reúne puestos de comida alrededor de grandes mesas compartidas. Es cómodo, céntrico y ofrece variedad, pero también puede ser ruidoso y tener una relación calidad-precio menos favorable que otros restaurantes de Lisboa. Esta guía no intenta venderlo ni descartarlo: explica cómo funciona y para quién tiene sentido.' },
+      { tipo: 'parrafo', texto: 'Time Out Market Lisboa funciona muy bien para un grupo con gustos distintos que quiere comer en el mismo sitio, sin reserva y en pleno Cais do Sodré. Funciona peor si buscas silencio, servicio de mesa o la comida más económica posible.' },
+      { tipo: 'parrafo', texto: 'Ocupa parte del histórico Mercado da Ribeira y reúne puestos alrededor de grandes mesas compartidas. Es cómodo, céntrico y variado, pero también concurrido y más turístico que una tasca de barrio. Esa diferencia basta para saber si merece entrar.' },
       { tipo: 'lista', items: [
         'Está dentro del Mercado da Ribeira, frente al intercambiador de Cais do Sodré.',
         'Cada persona puede pedir en un puesto diferente y reunirse después en las mesas comunes.',
         'Los precios y los operadores cambian; conviene mirar el menú visible de cada puesto antes de hacer cola.',
       ] },
 
-      { tipo: 'subtitulo', texto: 'Qué es Time Out Market Lisboa' },
-      { tipo: 'parrafo', texto: 'Es un mercado gastronómico inaugurado en 2014 dentro del Mercado da Ribeira. La idea concentra propuestas seleccionadas por Time Out en un gran salón común: cocinas distintas, bebidas y algunos comercios bajo el mismo techo, con un sistema de pedido independiente en cada mostrador.' },
-      { tipo: 'parrafo', texto: 'No es un mercado tradicional en el sentido de comprar verduras, pescado o carne para llevar a casa. Esa función histórica sigue existiendo en otra parte del edificio. Time Out Market es, sobre todo, un lugar para sentarse a comer, y conviene distinguir ambas zonas porque sus ritmos y horarios no son necesariamente los mismos.' },
+      { tipo: 'subtitulo', texto: 'Qué es y cómo funciona' },
+      { tipo: 'parrafo', texto: 'La zona gastronómica abrió en 2014 dentro del Mercado da Ribeira, inaugurado en 1882. Ambos usos siguen bajo la misma cubierta: una parte conserva la actividad de mercado tradicional y la otra está pensada para sentarse a comer. La palabra “mercado” no implica aquí precio bajo ni una experiencia cotidiana de barrio.' },
+      { tipo: 'parrafo', texto: 'Cada puesto gestiona su cola, su pago y su preparación. Pides en el mostrador y buscas sitio en las mesas comunes, que no se reservan según la información oficial. Si vais en grupo, elegid primero una zona de referencia y asumid que los platos pueden quedar listos a tiempos distintos.' },
 
-      { tipo: 'subtitulo', texto: 'La relación con el Mercado da Ribeira' },
-      { tipo: 'parrafo', texto: 'El Mercado da Ribeira se inauguró en 1882 y forma parte de la historia comercial de la zona. La Câmara Municipal de Lisboa explica que el edificio mantiene la actividad de mercado tradicional y que la zona gastronómica de Time Out se incorporó en 2014. No son dos edificios distintos, sino dos usos que conviven bajo la misma cubierta.' },
-      { tipo: 'parrafo', texto: 'Esa convivencia es parte del interés. Puedes entrar por la comida y descubrir que el lugar tiene una historia anterior al formato gastronómico actual. Pero no conviene usar la palabra “mercado” como garantía automática de autenticidad o precio bajo: la experiencia del gran salón está pensada para comer allí, con una selección y un nivel de precios propios.' },
-
-      { tipo: 'subtitulo', texto: 'Cómo funciona al llegar' },
-      { tipo: 'parrafo', texto: 'No hay una mesa asignada para cada puesto. Primero eliges qué quieres comer, haces el pedido en el mostrador correspondiente y después buscas sitio en las mesas compartidas. Si vais varias personas, lo más práctico es encontrar una zona de referencia antes de dispersaros, especialmente cuando el salón está lleno.' },
-      { tipo: 'parrafo', texto: 'La web oficial indica que las mesas comunes no se reservan. Eso hace el sistema flexible, pero también introduce incertidumbre en horas de mucha demanda. Una persona puede guardar un sitio mientras las demás piden, siempre sin ocupar más espacio del necesario ni bloquear el paso con maletas.' },
-      { tipo: 'subseccion', texto: 'Pedir en puestos diferentes' },
-      { tipo: 'parrafo', texto: 'Cada puesto gestiona su propia cola y preparación. Si dos personas piden en lugares distintos, los platos pueden estar listos a tiempos diferentes. Para un grupo grande, conviene asumir que no todo llegará a la mesa a la vez; el valor está en la variedad, no en el servicio coordinado de un restaurante.' },
-      { tipo: 'subseccion', texto: 'Pago y recogida' },
-      { tipo: 'parrafo', texto: 'El mercado oficial señala que se aceptan tarjeta y efectivo, aunque la operativa concreta puede variar entre puestos. Mira siempre las indicaciones del mostrador. Algunos pedidos se recogen cuando te avisan y otros se entregan según el sistema de cada cocina.' },
-
-      { tipo: 'subtitulo', texto: 'Qué tipo de comida encontrarás' },
-      { tipo: 'parrafo', texto: 'La oferta cambia porque los operadores pueden renovarse, así que una lista cerrada envejece rápido. Lo estable es la mezcla: cocina portuguesa, pescado y marisco, carnes, bocados informales, propuestas internacionales, dulces y bebidas. También suele haber alternativas para distintas necesidades alimentarias, pero conviene confirmarlas directamente antes de pedir.' },
-      { tipo: 'parrafo', texto: 'Si es tu primera comida en Portugal y quieres entender la cocina local, no elijas solo por la foto más llamativa. Busca platos que tengan sentido dentro del repertorio portugués y compara dos o tres cartas. El formato permite compartir y probar cosas distintas, que es una de sus ventajas reales.' },
+      { tipo: 'subtitulo', texto: 'Qué encontrarás y cuánto puedes gastar' },
+      { tipo: 'parrafo', texto: 'La oferta cambia con los operadores, pero suele mezclar cocina portuguesa, pescado y marisco, carnes, bocados informales, propuestas internacionales, dulces y bebidas. Si tienes una necesidad alimentaria concreta, confírmala directamente en el puesto antes de pedir.' },
+      { tipo: 'parrafo', texto: 'No existe un precio único útil. Cada carta cambia y la cuenta depende de si añades bebida, acompañamiento o postre. Como criterio, el mercado suele competir por variedad, ubicación y facilidad para grupos, no por ser la opción más barata de Lisboa. Mira el importe completo antes de hacer cola.' },
       { tipo: 'tip', texto: 'Da una vuelta completa antes de ponerte en una cola. El primer puesto visible recibe mucha atención por pura posición, y a pocos metros puede haber una opción que encaje mejor con lo que quieres comer.' },
-
-      { tipo: 'subtitulo', texto: 'Cuánto cuesta comer' },
-      { tipo: 'parrafo', texto: 'No hay un precio único útil y no tendría sentido publicar una tabla que quedará vieja con el próximo cambio de carta. Cada puesto fija sus importes y la cuenta depende mucho de si pides un plato principal, varios bocados para compartir, bebida o postre.' },
-      { tipo: 'parrafo', texto: 'Como orientación de criterio, Time Out Market no es la opción a la que iría para comer lo más barato posible. El nivel suele acercarse más al de una comida informal en una zona muy céntrica que al de un menú del día en una tasca. La ventaja que pagas es la variedad, la ubicación y la facilidad para grupos.' },
-      { tipo: 'parrafo', texto: 'Antes de pedir, mira el precio completo del plato y si necesitas añadir acompañamiento o bebida. Una elección que parece razonable puede subir cuando cada elemento se cobra por separado. Los menús visibles en el propio puesto son la referencia válida el día de tu visita.' },
       { tipo: 'enlace', texto: 'Si el presupuesto manda, compara esta experiencia con tascas, mercados de barrio y platos del día antes de decidir.', href: '/blog/donde-comer-barato-lisboa', label: 'Dónde comer barato en Lisboa' },
 
-      { tipo: 'subtitulo', texto: 'Cuándo suele haber más gente' },
+      { tipo: 'subtitulo', texto: 'Cuándo ir y cómo llegar' },
       { tipo: 'parrafo', texto: 'Las horas normales de comida y cena concentran más demanda, y los fines de semana se nota especialmente. No hace falta perseguir una hora exacta porque cambia según la temporada y los eventos, pero llegar un poco antes o después del pico habitual facilita encontrar mesa y reduce las colas.' },
-      { tipo: 'parrafo', texto: 'Si vas con niños, equipaje o un grupo grande, esa diferencia importa. El salón puede ser estimulante cuando está animado y agotador cuando tienes que vigilar varias colas a la vez. Para una visita tranquila, evita usarlo como solución de última hora en el momento más concurrido del día.' },
+      { tipo: 'parrafo', texto: 'El mercado está en la Avenida 24 de Julho, frente al intercambiador de Cais do Sodré, conectado por metro, tren, autobuses y barco. Desde Chiado también se puede bajar andando. Si vas a tomar el tren hacia Cascais o una conexión fluvial, encaja la comida antes o después del trayecto en lugar de cruzar la ciudad solo para entrar al mercado.' },
       { tipo: 'nota', texto: 'Los horarios, operadores y menús pueden cambiar. Consulta la web oficial y la información expuesta en el mercado antes de organizar el día alrededor de un puesto concreto.' },
-
-      { tipo: 'subtitulo', texto: 'Cómo llegar a Cais do Sodré' },
-      { tipo: 'parrafo', texto: 'Time Out Market está en la Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Es una zona conectada por metro, tren, autobuses y barco, pero la mejor opción depende de dónde vengas. Desde Chiado se puede bajar andando; desde zonas más alejadas conviene revisar la combinación del día.' },
-      { tipo: 'parrafo', texto: 'Cais do Sodré también es punto de salida para la línea ferroviaria hacia Cascais y para conexiones fluviales. Si el mercado forma parte de un trayecto, encájalo antes o después de esa conexión en vez de cruzar la ciudad solo para comer. El barrio tiene suficiente actividad alrededor para continuar el paseo por el río o subir hacia Bica y Chiado.' },
       { tipo: 'enlace', texto: 'La guía de movilidad explica cómo combinar Cais do Sodré con metro, tren, barco y caminatas sin comprar trayectos innecesarios.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
 
-      { tipo: 'subtitulo', texto: 'Ventajas reales' },
+      { tipo: 'subtitulo', texto: 'Lo bueno y lo malo' },
       { tipo: 'lista', items: [
-        'Variedad para grupos en los que cada persona quiere comer algo distinto.',
-        'Ubicación práctica junto a Cais do Sodré y bajo techo.',
-        'Posibilidad de probar varios bocados sin reservar restaurantes diferentes.',
-        'Horario amplio según la información oficial, aunque conviene comprobarlo antes de ir.',
+        'La variedad resuelve bien una comida en grupo cuando cada persona quiere algo distinto.',
+        'La ubicación junto a Cais do Sodré y el espacio cubierto son muy prácticos.',
+        'Las mesas comunes implican ruido, colas y dificultad para sentarse en los momentos más concurridos.',
+        'Los pedidos pueden llegar a tiempos distintos y el gasto suele superar al de una tasca o un menú de barrio.',
       ] },
-      { tipo: 'parrafo', texto: 'Su mejor escenario es un grupo flexible: unas personas quieren pescado, otras algo rápido y nadie quiere discutir durante media hora sobre un restaurante. También funciona bien como refugio en un día de lluvia o como comida antes de tomar un tren o un barco desde Cais do Sodré.' },
-
-      { tipo: 'subtitulo', texto: 'Inconvenientes que conviene asumir' },
-      { tipo: 'lista', items: [
-        'Ruido y dificultad para encontrar mesa cuando coincide mucha gente.',
-        'Precios generalmente menos orientados al ahorro que los de una tasca o un menú de barrio.',
-        'Pedidos que no llegan al mismo tiempo si el grupo compra en varios puestos.',
-        'Una experiencia más turística y diseñada que la del mercado tradicional contiguo.',
-      ] },
-      { tipo: 'parrafo', texto: 'Nada de esto lo convierte en un mal lugar. Solo significa que no debe recomendarse como respuesta universal a “dónde comer en Lisboa”. Es una opción concreta, con ventajas claras y costes también claros.' },
-
-      { tipo: 'subtitulo', texto: 'Para quién sí y para quién no' },
-      { tipo: 'parrafo', texto: 'Sí encaja para grupos, familias con gustos distintos, una comida práctica entre transportes o quien quiera comparar varias propuestas en un solo espacio. También puede interesar a quien dispone de poco tiempo y prefiere concentrar la elección.' },
-      { tipo: 'parrafo', texto: 'Encaja menos si buscas silencio, servicio de mesa, una comida larga o el presupuesto más bajo. Tampoco es la mejor forma de conocer la cocina cotidiana de Lisboa: para eso, una tasca, un restaurante de barrio o el mercado tradicional explican mejor cómo come la ciudad fuera del circuito turístico.' },
-
-      { tipo: 'subtitulo', texto: 'Alternativas antes de decidir' },
-      { tipo: 'parrafo', texto: 'Dentro del mismo Mercado da Ribeira está la zona tradicional, cuyo funcionamiento es distinto y conviene consultar por separado. En los alrededores de Cais do Sodré, Bica y Santos hay restaurantes y tascas de formatos muy variados; mirar dos calles más allá puede darte una comida más tranquila o más económica.' },
-      { tipo: 'parrafo', texto: 'Si lo que te interesa son los mercados y no necesariamente el food hall, Lisboa tiene opciones de barrio y ferias con otra relación con la ciudad. El Mercado de Arroios, la Feira da Ladra y otros espacios responden a intenciones distintas, por lo que vale la pena compararlos en lugar de tratarlos como equivalentes.' },
-      { tipo: 'enlace', texto: 'La guía de mercados separa espacios gastronómicos, mercados de abastos y ferias para que elijas según lo que realmente quieres encontrar.', href: '/blog/mejores-mercados-lisboa', label: 'Los mejores mercados de Lisboa' },
+      { tipo: 'parrafo', texto: 'Encaja especialmente bien con grupos, familias con gustos distintos, una comida práctica entre transportes o un día de lluvia. Encaja peor si buscas silencio, servicio de mesa, una comida larga o una experiencia menos diseñada para visitantes.' },
 
       { tipo: 'subtitulo', texto: '¿Merece la pena?' },
       { tipo: 'parrafo', texto: 'Sí, si valoras la variedad, vas en grupo o ya estás en Cais do Sodré. No, si buscas la comida más barata, un ambiente local sin turismo o una cena tranquila con servicio de mesa. La respuesta depende menos de la fama del mercado que del tipo de comida que quieres ese día.' },
       { tipo: 'parrafo', texto: 'Mi criterio sería sencillo: entra, mira el ambiente y los menús, y decide sin compromiso. El acceso al edificio permite comprobar si hay sitio y si las opciones te convencen. Si no, el barrio ofrece alternativas y no has perdido más que unos minutos.' },
 
-      { tipo: 'subtitulo', texto: 'Conclusión' },
-      { tipo: 'parrafo', texto: 'Time Out Market Lisboa es práctico, variado y muy fácil de encajar en una ruta por Cais do Sodré. También es concurrido, turístico y normalmente menos económico que una comida de barrio. Merece la pena cuando esas ventajas resuelven una necesidad real; no porque aparezca en todas las listas.' },
+      { tipo: 'subtitulo', texto: 'Alternativas antes de decidir' },
+      { tipo: 'parrafo', texto: 'Dentro del mismo edificio está la zona tradicional del Mercado da Ribeira. En Cais do Sodré, Bica y Santos también hay restaurantes y tascas donde una comida puede ser más tranquila o económica. Mirar dos calles más allá suele bastar para cambiar de ambiente.' },
+      { tipo: 'parrafo', texto: 'Si te interesan los mercados más que el food hall, compara espacios de abastos y ferias como Arroios o Feira da Ladra: cumplen funciones distintas y no conviene tratarlos como equivalentes.' },
+      { tipo: 'enlace', texto: 'La guía de mercados separa espacios gastronómicos, mercados de abastos y ferias para que elijas según lo que realmente quieres encontrar.', href: '/blog/mejores-mercados-lisboa', label: 'Los mejores mercados de Lisboa' },
     ],
   },
   'estacion-oriente-lisboa': {
@@ -153,8 +117,8 @@ const articles: Record<string, Article> = {
       text: 'La estación es la puerta de entrada al barrio. El Oceanário es la visita que más tiempo necesita y conviene comprobar sus condiciones antes de organizar el resto del paseo.',
     },
     contenido: [
-      { tipo: 'parrafo', texto: 'Oriente es mucho más que una estación donde cambiar de tren. Es el gran punto de conexión del este de Lisboa y, al mismo tiempo, una de las piezas de arquitectura contemporánea más reconocibles de la ciudad. Aquí se cruzan ferrocarril, metro y autobuses junto al Parque das Nações, el barrio transformado para la Expo 98.' },
-      { tipo: 'parrafo', texto: 'También es un lugar fácil de entender mal. La gran cubierta de vidrio y acero pertenece a la estación ferroviaria diseñada por Santiago Calatrava, mientras que la estación de metro tiene otro proyecto y otra intervención artística. Esta guía separa ambas partes y explica cómo usar el conjunto sin convertirlo en una lista de horarios que caduca.' },
+      { tipo: 'parrafo', texto: 'Oriente es el gran intercambiador del este de Lisboa y una de las obras contemporáneas más reconocibles de la ciudad. Aquí se cruzan trenes, metro y autobuses junto al Parque das Nações; si vas al Oceanário o sales de viaje, probablemente pasarás por ella.' },
+      { tipo: 'parrafo', texto: 'También merece una pausa por su arquitectura. La cubierta de vidrio y acero pertenece a la terminal ferroviaria diseñada por Santiago Calatrava; la estación de metro es otra obra, con proyecto y programa artístico propios. Saber esa diferencia ayuda tanto a orientarse como a mirar el conjunto con más criterio.' },
       { tipo: 'lista', items: [
         'Oriente funciona como intercambiador de trenes, Metro de Lisboa y servicios de autobús.',
         'La terminal ferroviaria de Santiago Calatrava se inauguró el 19 de mayo de 1998, en el contexto de la Expo 98.',
@@ -167,51 +131,26 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'La arquitectura de Santiago Calatrava' },
       { tipo: 'parrafo', texto: 'Infraestruturas de Portugal atribuye a Santiago Calatrava el proyecto de la estación ferroviaria de Oriente, inaugurada el 19 de mayo de 1998 para servir a la exposición internacional. Su elemento más visible es la cubierta modular de vidrio y acero que protege los andenes superiores.' },
-      { tipo: 'parrafo', texto: 'Desde abajo, la estructura se repite como una arboleda geométrica. Desde los andenes, las piezas de vidrio filtran la luz y hacen que la estación cambie con el cielo. Es una arquitectura concebida para el movimiento: se entiende mejor caminando por las plataformas y mirando cómo la cubierta acompaña la longitud de los trenes.' },
-      { tipo: 'subseccion', texto: 'La cubierta de los andenes' },
-      { tipo: 'parrafo', texto: 'La parte más fotogénica está arriba. Los módulos se alinean sobre las vías y crean una secuencia continua, con perspectivas muy marcadas hacia ambos extremos. Un tren detenido ayuda a comprender la escala; sin él, la cubierta puede parecer mucho más pequeña en fotografía de lo que es en realidad.' },
-      { tipo: 'subseccion', texto: 'Hormigón, escaleras y niveles' },
-      { tipo: 'parrafo', texto: 'Bajo la cubierta aparece otra estación: grandes piezas de hormigón, escaleras, pasarelas y espacios de circulación. No tiene la delicadeza visual del nivel superior, pero explica la complejidad del intercambiador. Oriente fue diseñada para hacer convivir recorridos distintos, no para ser contemplada desde un único punto.' },
+      { tipo: 'parrafo', texto: 'Desde los andenes, los módulos se repiten como una arboleda geométrica y filtran la luz sobre las vías. Las líneas largas funcionan muy bien en fotografía, sobre todo con un tren como referencia de escala. Bajo esa cubierta aparecen hormigón, escaleras y pasarelas: una arquitectura pensada para el movimiento, no para contemplarse desde un único punto.' },
+      { tipo: 'subseccion', texto: 'El metro es otra obra' },
+      { tipo: 'parrafo', texto: 'La estación subterránea no debe atribuirse a Calatrava. El Metro de Lisboa identifica a Sanchez Jorge como autor de su proyecto arquitectónico, abierto también en 1998, y explica que el programa artístico se relaciona con los océanos. Arriba domina la estructura ferroviaria; abajo, los revestimientos y las intervenciones acompañan el camino hacia el metro.' },
 
-      { tipo: 'subtitulo', texto: 'El metro de Oriente es otra obra' },
-      { tipo: 'parrafo', texto: 'La estación de metro no debe atribuirse a Calatrava. El Metro de Lisboa identifica a Sanchez Jorge como autor del proyecto arquitectónico de la estación subterránea, abierta también en 1998. Su programa artístico se relaciona con los océanos y reunió trabajos de creadores de distintos países vinculados a la Expo.' },
-      { tipo: 'parrafo', texto: 'Esa diferencia importa porque ambas estaciones se leen de manera distinta. Arriba domina la estructura ferroviaria; abajo, los revestimientos y las intervenciones artísticas acompañan el trayecto hacia los andenes del metro. Forman un conjunto intermodal, pero no son una sola autoría.' },
-
-      { tipo: 'subtitulo', texto: 'Qué transportes conectan en Oriente' },
-      { tipo: 'parrafo', texto: 'Oriente conecta servicios ferroviarios de larga distancia, regionales y urbanos, además de la Línea Roja del Metro y distintas rutas de autobús. Los servicios exactos, las vías y los horarios cambian, por lo que no conviene memorizar una lista: comprueba el billete y el planificador del operador el día del viaje.' },
-      { tipo: 'parrafo', texto: 'CP incluye Oriente en servicios Alfa Pendular, Intercidades, regionales y urbanos. Eso la hace útil tanto para salir de Lisboa como para algunas conexiones dentro del área metropolitana. Pero que un tren pase por Oriente no significa que sea la mejor estación para cada destino: Rossio, Santa Apolónia y Cais do Sodré siguen teniendo papeles distintos según el trayecto.' },
-      { tipo: 'subseccion', texto: 'Metro' },
-      { tipo: 'parrafo', texto: 'La Línea Roja comunica Oriente con Olaias, Alameda y el aeropuerto. Para llegar a otras partes del centro necesitarás combinarla con otra línea o continuar en superficie. No presupongas que Oriente está en el centro histórico: está bien conectada, pero se encuentra en el este de la ciudad.' },
-      { tipo: 'subseccion', texto: 'Trenes' },
-      { tipo: 'parrafo', texto: 'Si sales en tren, mira número de servicio, hora y vía en los paneles. Llega con margen cuando no conozcas la estación, especialmente porque los andenes están en el nivel superior y el acceso puede ser más largo de lo que sugiere el mapa.' },
-      { tipo: 'subseccion', texto: 'Autobuses' },
-      { tipo: 'parrafo', texto: 'La terminal de autobuses forma parte del intercambiador, pero los operadores y puntos de salida pueden variar. Confirma siempre la dársena o la indicación incluida en tu reserva. “Oriente” es un área amplia: estar en la estación no significa estar ya delante del autobús correcto.' },
-      { tipo: 'enlace', texto: 'Para entender cuándo conviene Oriente y cuándo salen mejor Rossio, Cais do Sodré u otras estaciones, consulta la guía general de movilidad.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
-
-      { tipo: 'subtitulo', texto: 'Cómo llegar y orientarte sin perder tiempo' },
-      { tipo: 'parrafo', texto: 'La forma más sencilla desde el centro suele ser llegar en metro, haciendo el transbordo necesario hasta la Línea Roja. Desde el aeropuerto, la misma línea llega a Oriente sin salir de la red. Si vienes en taxi o coche con aplicación, especifica si buscas la estación de tren o la terminal de autobuses para evitar rodeos.' },
-      { tipo: 'parrafo', texto: 'Dentro, separa la conexión en pasos: primero identifica el modo de transporte, después el nivel y por último la vía o dársena. Las indicaciones de “comboios”, “metro” y “autocarros” son más útiles que intentar orientarte solo por la forma del edificio.' },
+      { tipo: 'subtitulo', texto: 'Cómo usar el intercambiador sin perder tiempo' },
+      { tipo: 'parrafo', texto: 'Oriente conecta trenes de larga distancia, regionales y urbanos, la Línea Roja del Metro y servicios de autobús. Las vías, dársenas y horas cambian, así que comprueba el billete o el planificador del operador en lugar de memorizar una lista. Para Sintra, Cascais u otros destinos, otra estación de Lisboa puede resultar más directa.' },
+      { tipo: 'parrafo', texto: 'La Línea Roja enlaza Oriente con Olaias, Alameda y el aeropuerto. Desde buena parte del centro necesitarás un transbordo. Si llegas en taxi o coche con aplicación, especifica si buscas trenes o autobuses: “Oriente” abarca un área mayor de lo que parece en el mapa.' },
+      { tipo: 'parrafo', texto: 'Dentro, piensa en tres pasos: identifica el transporte, busca su nivel y confirma la vía o dársena. Las indicaciones “comboios”, “metro” y “autocarros” son más útiles que orientarse por la forma del edificio.' },
       { tipo: 'tip', texto: 'Si vas a tomar un tren, resuelve primero la vía y calcula cuánto tardas en llegar al andén. Después, si sobra tiempo, mira la cubierta con calma. Hacerlo al revés es la forma más sencilla de acabar corriendo por las escaleras.' },
+      { tipo: 'enlace', texto: 'Para entender cuándo conviene Oriente y cuándo salen mejor Rossio, Cais do Sodré u otras estaciones, consulta la guía general de movilidad.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Qué ver alrededor de la estación' },
       { tipo: 'parrafo', texto: 'Al salir estás en el Parque das Nações, una zona llana y contemporánea junto al Tajo. El centro comercial Vasco da Gama queda frente a la estación y sirve como referencia visual; el paseo del río, el Oceanário y otros equipamientos del barrio están a distancia caminable.' },
       { tipo: 'parrafo', texto: 'El Oceanário es la visita principal y necesita más tiempo que la estación. Si vas a combinar ambos, reserva la arquitectura para el trayecto de entrada o de salida y organiza el acceso al Oceanário según las condiciones vigentes. El barrio funciona bien con niños, con lluvia intermitente y para descansar de las cuestas del centro histórico.' },
       { tipo: 'enlace', texto: 'Antes de reservar la jornada, revisa la información práctica y las condiciones actuales de la visita.', href: '/actividades/oceanario-lisboa', label: 'Ver la ficha del Oceanário de Lisboa' },
 
-      { tipo: 'subtitulo', texto: 'Fotografiar la estación de Oriente' },
-      { tipo: 'parrafo', texto: 'La cubierta pide encuadres simétricos y líneas largas. Desde los andenes, busca la repetición de los módulos y usa el tren como escala. Desde los niveles inferiores, las escaleras y el hormigón producen una imagen más dura y abstracta. La luz cambia bastante entre un día despejado y uno cubierto porque atraviesa el vidrio.' },
-      { tipo: 'parrafo', texto: 'No cruces zonas restringidas ni te acerques al borde para conseguir una perspectiva. Es una estación con circulación intensa y equipaje por todas partes. Un encuadre limpio suele aparecer esperando unos segundos, no bloqueando un paso o intentando ocupar el centro de una escalera.' },
-
-      { tipo: 'subtitulo', texto: 'Combinar Oriente con Olaias' },
-      { tipo: 'parrafo', texto: 'Si la arquitectura es parte del viaje, Olaias completa muy bien la visita. Ambas estaciones nacieron con la expansión de la Línea Roja en 1998, pero ofrecen experiencias opuestas: Oriente muestra la gran infraestructura y Olaias concentra arte, color y una escala inesperada bajo tierra.' },
-      { tipo: 'enlace', texto: 'Olaias se recorre en poco tiempo y queda en la misma línea, por lo que no exige volver al centro entre una estación y otra.', href: '/blog/estacion-olaias-lisboa', label: 'Visitar la estación de Olaias' },
-
       { tipo: 'subtitulo', texto: '¿Merece la pena aunque no tomes un tren?' },
       { tipo: 'parrafo', texto: 'Sí, cuando ya vas al Parque das Nações o te interesa la arquitectura contemporánea. La cubierta se puede apreciar como parte de un paseo y el barrio ofrece suficiente contexto para que la salida no dependa solo de una estación. También es una buena alternativa visual a la Lisboa de azulejos y colinas.' },
       { tipo: 'parrafo', texto: 'No iría desde Alfama únicamente para hacer una foto rápida si tienes pocas horas en la ciudad. Oriente está alejada del núcleo histórico y gana valor cuando la combinas con el Oceanário, el río o una visita a Olaias. En ese contexto, deja de ser un desvío y se convierte en la puerta de entrada al este de Lisboa.' },
-
-      { tipo: 'subtitulo', texto: 'Conclusión' },
-      { tipo: 'parrafo', texto: 'Oriente funciona en dos niveles: como infraestructura práctica para viajar y como pieza de la transformación urbana de 1998. Entender qué parte pertenece a la terminal de Calatrava, cómo se organiza el intercambiador y qué hay alrededor permite usarla sin prisas y verla con más criterio.' },
+      { tipo: 'enlace', texto: 'Si la arquitectura forma parte del viaje, Olaias ofrece color y arte público en la misma Línea Roja y se recorre en poco tiempo.', href: '/blog/estacion-olaias-lisboa', label: 'Visitar la estación de Olaias' },
     ],
   },
   'estacion-olaias-lisboa': {
@@ -245,7 +184,7 @@ const articles: Record<string, Article> = {
     },
     contenido: [
       { tipo: 'parrafo', texto: 'Olaias no suele aparecer en los itinerarios clásicos de Lisboa, pero si te interesa la arquitectura, el metro o la fotografía, merece una parada. No hace falta organizar media jornada alrededor de ella: su gracia está precisamente en que puedes verla en poco tiempo y seguir viaje por la Línea Roja.' },
-      { tipo: 'parrafo', texto: 'La estación rompe con la imagen más conocida de la ciudad. Aquí no hay azulejos históricos ni tranvías amarillos, sino columnas monumentales, planos de color, metal, luz artificial y un techo que cambia según el punto desde el que lo mires. Es una Lisboa de finales del siglo XX que suele pasar desapercibida porque está bajo tierra.' },
+      { tipo: 'parrafo', texto: 'La estación cambia por completo la imagen habitual de la ciudad: columnas monumentales, planos de color, metal y un techo que se transforma al caminar. Es una visita breve, muy visual y fácil de combinar con Oriente.' },
       { tipo: 'lista', items: [
         'Olaias está en la Línea Roja del Metro de Lisboa, entre Alameda y Bela Vista.',
         'La visita puede resolverse en unos 20 o 30 minutos si vas expresamente a mirar la estación.',
@@ -254,45 +193,26 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Qué tiene de especial la estación de Olaias' },
       { tipo: 'parrafo', texto: 'Lo primero que sorprende es la escala. La topografía del lugar obligó a crear un espacio de gran altura sobre los andenes, y esa necesidad técnica terminó convirtiéndose en el rasgo más potente de la estación. Las columnas parecen sostener una sala mucho mayor de lo que uno espera encontrar en una parada de barrio.' },
-      { tipo: 'parrafo', texto: 'La segunda diferencia es el color. En lugar de una decoración aplicada al final, la arquitectura y las intervenciones artísticas trabajan juntas: superficies rojas, amarillas, azules y verdes atraviesan techos, muros y elementos de iluminación. No hay una única pieza que mirar y marcharse; la experiencia está en cómo cambia el conjunto al caminar.' },
-      { tipo: 'parrafo', texto: 'Eso explica por qué Olaias funciona mejor en persona que en una foto aislada. Una imagen puede enseñar el techo o una fila de columnas, pero no la relación entre la altura, las plataformas y los distintos planos de color. Conviene recorrer el andén con calma antes de sacar la cámara.' },
+      { tipo: 'parrafo', texto: 'El color no funciona como decoración añadida. Superficies rojas, amarillas, azules y verdes atraviesan techos, muros e iluminación, de modo que el conjunto cambia según el punto desde el que lo mires. Por eso Olaias se entiende mejor caminando por el andén que con una sola foto.' },
 
       { tipo: 'subtitulo', texto: 'Arquitectura y arte: quién hizo qué' },
       { tipo: 'parrafo', texto: 'El proyecto arquitectónico de la estación es de Tomás Taveira. El Metro de Lisboa atribuye las intervenciones plásticas a Pedro Cabrita Reis, Graça Pereira Coutinho, Pedro Calapez y Rui Sanches. Son nombres concretos y conviene mantenerlos separados de la arquitectura: Olaias es una obra colectiva, no una estación decorada por una sola persona.' },
-      { tipo: 'parrafo', texto: 'La iluminación, las piezas metálicas, los paneles y los volúmenes no compiten por protagonismo. Todo forma una composición deliberadamente intensa, con una policromía que el propio Metro destaca al explicar la estación. Puede parecer caótica al bajar del tren, pero desde ciertos puntos aparecen ejes muy claros entre columnas, escaleras y techo.' },
-      { tipo: 'subseccion', texto: 'El andén y la gran columnata' },
-      { tipo: 'parrafo', texto: 'En el nivel de los trenes se entiende mejor la escala. Las columnas marcan una perspectiva larga y repetida, mientras los elementos de color rompen esa regularidad. Si solo pasas por el vestíbulo y vuelves a salir, te pierdes la parte más característica del conjunto.' },
-      { tipo: 'subseccion', texto: 'El techo y la luz' },
-      { tipo: 'parrafo', texto: 'Mirar hacia arriba es parte de la visita. El techo combina formas geométricas, luminarias y piezas suspendidas que se leen de manera distinta desde cada plataforma. No hace falta identificar cada intervención para disfrutarla: basta con cambiar de lado y comprobar cómo se reordena el espacio.' },
+      { tipo: 'parrafo', texto: 'Olaias abrió con el primer tramo de la Línea Roja en mayo de 1998, durante la transformación del este de Lisboa asociada a la Expo 98. La gran columnata ordena el nivel de los trenes y el techo combina geometría, luminarias y piezas suspendidas. Si solo miras el vestíbulo, te pierdes la parte más característica.' },
 
-      { tipo: 'subtitulo', texto: 'Por qué se construyó así' },
-      { tipo: 'parrafo', texto: 'Olaias abrió con el primer tramo de la Línea Roja en mayo de 1998, cuando el metro se extendió entre Alameda y Oriente en el contexto de la Expo 98. Esa línea incorporó una generación de estaciones donde la arquitectura y el arte público tenían un peso especial, y Olaias es probablemente el ejemplo más expresivo.' },
-      { tipo: 'parrafo', texto: 'La fecha ayuda a entender su lenguaje. No intenta parecer una estación antigua ni imitar los azulejos tradicionales de Lisboa. Habla del momento en que la ciudad preparaba una gran transformación en el este, conectando el centro con el nuevo frente urbano del Parque das Nações.' },
-
-      { tipo: 'subtitulo', texto: 'Cómo llegar a Olaias' },
-      { tipo: 'parrafo', texto: 'La forma directa es el Metro de Lisboa. Olaias pertenece a la Línea Roja, la misma que conecta el aeropuerto, Alameda y Oriente. Desde las líneas Verde, Azul o Amarilla tendrás que hacer el transbordo que corresponda según tu punto de partida; la guía general de movilidad explica cómo leer la red y qué título de transporte puede encajar mejor.' },
+      { tipo: 'subtitulo', texto: 'Cómo visitarla y fotografiarla' },
+      { tipo: 'parrafo', texto: 'La forma directa de llegar es la Línea Roja, entre Alameda y Bela Vista. Con 20 o 30 minutos basta para recorrer los andenes, mirar el techo y esperar un tren que dé escala a las fotografías. No recomendaría hacerlo con maletas camino del aeropuerto: la parada pierde gracia cuando tienes que vigilar equipaje.' },
+      { tipo: 'parrafo', texto: 'Las columnas crean puntos de fuga claros y el techo funciona bien con encuadres amplios. Un móvil es suficiente si cuidas las verticales y esperas un momento con menos pasajeros. Mantente fuera de la franja de seguridad y deja libres puertas y escaleras: sigue siendo una estación en funcionamiento.' },
       { tipo: 'enlace', texto: 'Si todavía no tienes claro cómo combinar metro, tranvía, tren y caminatas, conviene revisar primero el sistema completo.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
-      { tipo: 'parrafo', texto: 'La dirección oficial de la estación es Avenida Engenheiro Arantes e Oliveira. Si llegas solo para verla, no necesitas alejarte del metro ni buscar una entrada concreta desde la calle: el interés principal está en los espacios interiores y en el nivel de los andenes.' },
-
-      { tipo: 'subtitulo', texto: 'Cuánto tiempo dedicar' },
-      { tipo: 'parrafo', texto: 'Para una visita sencilla, 20 o 30 minutos bastan. Ese margen permite bajar a los andenes, recorrer ambos lados, mirar el techo y esperar a que pase un tren si quieres una fotografía con escala. Si vas con cámara y te entretienes buscando simetrías, calcula algo más, pero no es un lugar que necesite dos horas.' },
-      { tipo: 'parrafo', texto: 'No recomendaría bajarse con maletas camino del aeropuerto. Aunque la estación esté en la misma línea, el desvío deja de ser agradable cuando tienes que vigilar equipaje y volver a subir. Funciona mucho mejor como parada deliberada en una mañana tranquila o enlazada con Oriente.' },
-
-      { tipo: 'subtitulo', texto: 'Cómo fotografiar Olaias sin estorbar' },
-      { tipo: 'parrafo', texto: 'Olaias recompensa más la composición que el equipo. Las columnas crean puntos de fuga claros, el techo funciona con encuadres amplios y los trenes añaden una referencia de escala. Un móvil es suficiente si cuidas que las verticales no se inclinen demasiado y esperas un momento con menos pasajeros.' },
-      { tipo: 'parrafo', texto: 'Es una estación en funcionamiento, no una sala de exposiciones cerrada. Mantente fuera de la franja de seguridad, deja libres escaleras y puertas y evita convertir un trípode o una mochila en un obstáculo. La mejor foto no compensa molestar a quien está usando el metro para desplazarse.' },
       { tipo: 'enlace', texto: 'Olaias añade una cara contemporánea a una ruta fotográfica que normalmente se concentra en miradores, tranvías y fachadas.', href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Qué combinar con la visita' },
       { tipo: 'parrafo', texto: 'La combinación más lógica es Oriente. Está en la misma Línea Roja y ofrece otra lectura de la Lisboa de 1998: una gran estación intermodal, el Parque das Nações y el frente del Tajo. Olaias es interior, color y escala; Oriente es estructura, cubierta y movimiento.' },
-      { tipo: 'parrafo', texto: 'También puedes usar Alameda como punto de entrada o salida del recorrido, pero no hace falta llenar el día con estaciones. Si tu plan principal está en el centro histórico, Olaias funciona mejor como una visita breve que como una excusa para ir encadenando transbordos.' },
+      { tipo: 'parrafo', texto: 'No hace falta llenar el día con estaciones. Si tu plan principal está en el centro histórico, Olaias funciona mejor como parada breve de camino al este que como excusa para encadenar transbordos.' },
       { tipo: 'enlace', texto: 'La estación de Oriente mezcla arquitectura, metro, trenes, buses y acceso al Parque das Nações.', href: '/blog/estacion-oriente-lisboa', label: 'Qué ver en la estación de Oriente' },
+
       { tipo: 'subtitulo', texto: '¿Merece la pena desviarse?' },
       { tipo: 'parrafo', texto: 'Sí, si ya conoces lo esencial de Lisboa o si la arquitectura y la fotografía forman parte del viaje. También merece la pena si vas hacia Oriente y puedes dedicarle media hora sin desmontar el día. La visita es corta, gratuita más allá del título de transporte que uses y muy distinta a los escenarios habituales.' },
       { tipo: 'parrafo', texto: 'No la pondría por delante de Alfama, Belém o un primer paseo por la Baixa. En un viaje de uno o dos días, el tiempo tiene más valor en la superficie. Olaias funciona como una capa adicional: no sustituye la Lisboa clásica, pero demuestra que la ciudad también construyó una identidad contemporánea bajo tierra.' },
-
-      { tipo: 'subtitulo', texto: 'Conclusión' },
-      { tipo: 'parrafo', texto: 'Olaias es una parada pequeña con una presencia visual enorme. Su arquitectura, la gran columnata y el trabajo conjunto de color, luz y arte justifican bajarse del tren cuando el itinerario lo permite. Con media hora y una ruta bien pensada, puedes verla sin sacrificar el resto del día.' },
     ],
   },
   /*
@@ -3259,6 +3179,30 @@ const AUTHOR_NAME = 'José Tabares';
  */
 const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Object.keys(articles)]);
 
+const COMPACT_READING_PILOT: Record<string, { relatedPostIds: string[] }> = {
+  'estacion-olaias-lisboa': {
+    relatedPostIds: [
+      'estacion-oriente-lisboa',
+      'como-moverse-por-lisboa',
+      'donde-fotografiar-lisboa',
+    ],
+  },
+  'estacion-oriente-lisboa': {
+    relatedPostIds: [
+      'estacion-olaias-lisboa',
+      'como-moverse-por-lisboa',
+      'lisboa-con-ninos',
+    ],
+  },
+  'time-out-market-lisboa': {
+    relatedPostIds: [
+      'mejores-mercados-lisboa',
+      'donde-comer-barato-lisboa',
+      'vida-nocturna-lisboa',
+    ],
+  },
+};
+
 /**
  * Texto alternativo específico de la foto de portada.
  *
@@ -3968,35 +3912,17 @@ const articleExtras: Record<string, ArticleExtras> = {
   'time-out-market-lisboa': {
     comoLlegar: 'Está en el Mercado da Ribeira, Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Se llega en metro, tren, bus, barco o a pie desde Chiado.',
     mejorHora: 'Fuera de las horas habituales de comida y cena es más fácil encontrar mesa. Los fines de semana conviene evitar llegar justo en el pico.',
-    faqs: [
-      { q: '¿Qué es Time Out Market Lisboa?', a: 'Es un mercado gastronómico abierto en 2014 dentro del histórico Mercado da Ribeira. Reúne puestos de comida y bebida alrededor de mesas compartidas.' },
-      { q: '¿Es barato comer en Time Out Market?', a: 'No suele ser la opción más barata de Lisboa. Los precios cambian por puesto y carta; la ventaja está en la variedad y la ubicación, no en competir con un menú de tasca.' },
-      { q: '¿Hay que reservar mesa?', a: 'No. La información oficial indica que las mesas comunes no se reservan. En momentos concurridos puede costar encontrar sitio para un grupo.' },
-      { q: '¿Cómo llegar a Time Out Market?', a: 'Está frente a Cais do Sodré, un intercambiador con metro, tren, buses y conexiones fluviales. Desde Chiado también se puede bajar andando.' },
-      { q: '¿Merece la pena Time Out Market Lisboa?', a: 'Sí para grupos con gustos distintos, una comida práctica o si ya estás en Cais do Sodré. Si buscas tranquilidad, cocina cotidiana o el precio más bajo, una tasca o un mercado de barrio puede encajar mejor.' },
-    ],
+    faqs: [],
   },
   'estacion-oriente-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja, estación Oriente. El intercambiador reúne metro, trenes y terminal de autobuses junto al Parque das Nações.',
     mejorHora: 'Si quieres mirar la arquitectura sin ir con una conexión pendiente, encájala a media mañana o en una tarde de paseo por el Parque das Nações.',
-    faqs: [
-      { q: '¿Quién diseñó la estación de Oriente?', a: 'Santiago Calatrava diseñó la estación ferroviaria y su cubierta. La estación de metro es un proyecto distinto de Sanchez Jorge, con un programa artístico propio.' },
-      { q: '¿Qué transportes salen de Oriente?', a: 'El intercambiador reúne trenes de larga distancia, regionales y urbanos, la Línea Roja del Metro de Lisboa y servicios de autobús. Los horarios y puntos de salida deben comprobarse con cada operador.' },
-      { q: '¿Cómo ir del aeropuerto a Oriente?', a: 'La Línea Roja del Metro conecta el aeropuerto con la estación de Oriente sin cambiar de línea. Comprueba el estado del servicio y calcula tiempo adicional si llevas equipaje.' },
-      { q: '¿Está el Oceanário cerca de la estación?', a: 'Sí. El Oceanário está en el Parque das Nações, a distancia caminable desde Oriente. Conviene seguir la señalización del barrio y revisar antes las condiciones de la visita.' },
-      { q: '¿Merece la pena visitar Oriente sin tomar un tren?', a: 'Sí, sobre todo si vas al Parque das Nações o te interesa la arquitectura contemporánea. En un viaje muy corto conviene combinarla con el Oceanário, el paseo del río u Olaias para que el desplazamiento tenga más sentido.' },
-    ],
+    faqs: [],
   },
   'estacion-olaias-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
     mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',
-    faqs: [
-      { q: '¿Dónde está la estación de Olaias?', a: 'Está en la Avenida Engenheiro Arantes e Oliveira, en la Línea Roja del Metro de Lisboa, entre las estaciones de Alameda y Bela Vista.' },
-      { q: '¿Cuánto tiempo hace falta para visitar Olaias?', a: 'Entre 20 y 30 minutos suelen bastar para recorrer los andenes, mirar el techo y la columnata y hacer algunas fotos sin prisa.' },
-      { q: '¿Quién diseñó la estación de Olaias?', a: 'El proyecto arquitectónico es de Tomás Taveira. Las intervenciones plásticas corresponden a Pedro Cabrita Reis, Graça Pereira Coutinho, Pedro Calapez y Rui Sanches.' },
-      { q: '¿Merece la pena ir solo para verla?', a: 'Sí, si te interesan la arquitectura contemporánea, el arte público o la fotografía. En un primer viaje muy corto conviene priorizar el centro histórico, pero Olaias encaja bien de camino a Oriente.' },
-      { q: '¿Se puede combinar Olaias con la estación de Oriente?', a: 'Sí. Las dos están en la Línea Roja, por lo que se pueden visitar en el mismo recorrido sin volver al centro entre una y otra.' },
-    ],
+    faqs: [],
   },
   /*
    * Sin ficha de lugar: la guía trata de cómo repartir una semana entera, no
@@ -4323,7 +4249,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
   const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
-  const relatedPosts = blogPosts.filter((post) => post.id !== slug).slice(0, 3);
+  const compactReading = COMPACT_READING_PILOT[slug];
+  const relatedPosts = compactReading
+    ? compactReading.relatedPostIds.flatMap((postId) => {
+        const post = blogPosts.find((candidate) => candidate.id === postId);
+        return post ? [post] : [];
+      })
+    : blogPosts.filter((post) => post.id !== slug).slice(0, 3);
   const faqs = extras?.faqs ?? getFaqs(slug);
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
@@ -4398,39 +4330,32 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             photos={photos}
             seoDescription={seoDescription}
             takeaways={takeaways}
+            deferEnding={Boolean(compactReading)}
           />
 
-          <ArticleToc headings={headings} sidebarLinks={sidebarLinks} />
+          <ArticleToc
+            headings={headings}
+            sidebarLinks={sidebarLinks}
+            compactMobile={Boolean(compactReading)}
+            showDiscovery={!compactReading}
+          />
         </div>
 
-        {/* Relacionados */}
-        {relatedPosts.length > 0 && (
-          <section className="article-related mt-16 pt-12 border-t border-border-soft">
-            <div className="flex items-center justify-between mb-8">
-              <h3>Relacionadas</h3>
-              <Link href="/blog" className="article-related-link">
-                Ver todo →
-              </Link>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
-              {relatedPosts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.id}`} className="group">
-                  <div className="relative aspect-[16/10] overflow-hidden mb-3">
-                    <Image
-                      src={post.imagen}
-                      alt={post.titulo}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                  </div>
-                  <p className="article-related-category uppercase tracking-widest mb-1">{post.categoria}</p>
-                  <h4 className="transition-colors">
-                    {post.titulo}
-                  </h4>
-                </Link>
-              ))}
-            </div>
-          </section>
+        <ArticleRelated posts={relatedPosts} compact={Boolean(compactReading)} />
+
+        {compactReading && (
+          <div className="article-pilot-ending max-w-2xl mx-auto mt-10">
+            <ArticleFooter
+              authorName={AUTHOR_NAME}
+              finalCta={finalCta}
+              compactPlanning
+              beforeAuthor={
+                article.fuentes && article.fuentes.length > 0 ? (
+                  <ArticleSources sources={article.fuentes} compactMobile />
+                ) : null
+              }
+            />
+          </div>
         )}
       </div>
       <script
@@ -4441,10 +4366,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
     </main>
   );
 }
