@@ -93,19 +93,18 @@ export default async function ItinerariosPage() {
       <EditorialPageHero
         eyebrow="Guías de viaje"
         title="Itinerarios para Lisboa"
-        image="/images/alfama-panoramica.jpg"
-        imageAlt="Vista panorámica de Lisboa"
+        description="Rutas pensadas para aprovechar Lisboa según el tiempo que tengas."
+        image="/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg"
+        imageAlt="Calle empedrada y casas de Alfama en Lisboa"
+        variant="itineraries"
       />
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light pt-14 pb-12 md:pt-16 md:pb-16">
+      <section id="itinerarios" className="bg-background-light pt-10 pb-12 md:pt-12 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-8 md:mb-10">
+          <div className="mb-7 md:mb-9">
             <p className="page-eyebrow">Según tus días</p>
             <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
-            <p className="page-description">
-              Tres rutas pensadas para aprovechar Lisboa según el tiempo que tengas.
-            </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {itinerariosPrincipales.map(itinerary => (
