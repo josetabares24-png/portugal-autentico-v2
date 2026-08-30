@@ -79,7 +79,6 @@ export type ArticleExtras = {
    */
   comoLlegar?: string;
   mejorHora?: string;
-  faqs: ArticleFaq[];
 };
 
 export type SectionPhoto = {

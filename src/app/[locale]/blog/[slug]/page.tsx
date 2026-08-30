@@ -6,9 +6,10 @@ import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleRelated } from '@/components/blog/ArticleRelated';
 import { ArticleSources } from '@/components/blog/ArticleSources';
 import { ArticleToc } from '@/components/blog/ArticleToc';
-import type { Article, ArticleExtras, SectionPhoto } from '@/components/blog/article-types';
+import type { Article, ArticleExtras, ArticleFaq, SectionPhoto } from '@/components/blog/article-types';
 import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
+import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
@@ -3178,30 +3179,10 @@ const AUTHOR_NAME = 'José Tabares';
  * limitadas a los artículos que ya las tienen verificadas.
  */
 const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Object.keys(articles)]);
-
-const COMPACT_READING_PILOT: Record<string, { relatedPostIds: string[] }> = {
-  'estacion-olaias-lisboa': {
-    relatedPostIds: [
-      'estacion-oriente-lisboa',
-      'como-moverse-por-lisboa',
-      'donde-fotografiar-lisboa',
-    ],
-  },
-  'estacion-oriente-lisboa': {
-    relatedPostIds: [
-      'estacion-olaias-lisboa',
-      'como-moverse-por-lisboa',
-      'lisboa-con-ninos',
-    ],
-  },
-  'time-out-market-lisboa': {
-    relatedPostIds: [
-      'mejores-mercados-lisboa',
-      'donde-comer-barato-lisboa',
-      'vida-nocturna-lisboa',
-    ],
-  },
-};
+const BLOG_POST_BY_ID = new Map(blogPosts.map((post) => [post.id, post]));
+// Solo admite preguntas que aporten información adicional al cuerpo. La
+// auditoría actual no encontró ninguna que cumpliera ese criterio.
+const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {};
 
 /**
  * Texto alternativo específico de la foto de portada.
@@ -3823,327 +3804,90 @@ function getArticle(slug: string): Article | null {
   return articles[slug] ?? buildFallbackArticle(slug);
 }
 
-function getFaqs(slug: string) {
-  if (slug === 'mejores-apps-lisboa') {
-    return [
-      { q: '¿Qué app necesito para el transporte en Lisboa?', a: 'Citymapper es la más práctica porque integra metro, Carris, trenes y barcos. Las oficiales de Carris y navegante compensan si te quedas más días.' },
-      { q: '¿Funciona Free Now en Lisboa?', a: 'No. Dejó de operar en Portugal el 3 de abril de 2023, aunque muchas listas lo sigan recomendando. En Lisboa se usan Bolt y Uber.' },
-      { q: '¿Necesito datos móviles para moverme?', a: 'Ayuda, pero si descargas el mapa de Lisboa sin conexión en Google Maps el GPS sigue funcionando sin cobertura.' },
-    ];
-  }
-  if (slug === 'donde-alojarse-en-lisboa') {
-    return [
-      { q: '¿Cuál es la mejor zona para una primera visita?', a: 'Baixa, Chiado o Avenida da Liberdade suelen ser las opciones más cómodas por conexión y facilidad para volver caminando.' },
-      { q: '¿Alfama es buena zona para dormir?', a: 'Tiene mucho encanto, pero también cuestas, escaleras y accesos irregulares. Funciona mejor si viajas ligero y aceptas caminar.' },
-      { q: '¿Qué zona evitar si quiero dormir tranquilo?', a: 'Revisa con cuidado Bairro Alto y Cais do Sodré si necesitas silencio, porque algunas calles tienen bastante vida nocturna.' },
-    ];
-  }
-  if (slug === 'lisboa-card-vale-la-pena') {
-    return [
-      { q: '¿La Lisboa Card vale la pena siempre?', a: 'No. Compensa sobre todo si concentras monumentos, museos y transporte en poco tiempo. Para un viaje lento puede no hacer falta.' },
-      { q: '¿Debo comprarla antes de organizar la ruta?', a: 'Mejor no. Primero decide qué vas a visitar y después compara si la tarjeta encaja con ese plan.' },
-      { q: '¿Puedo fiarme de listas antiguas de atracciones?', a: 'No conviene. Las inclusiones y condiciones pueden cambiar, así que revisa siempre la información oficial vigente.' },
-    ];
-  }
-  if (slug === 'como-moverse-por-lisboa') {
-    return [
-      { q: '¿Cuál es la mejor forma de moverse por Lisboa?', a: 'Combinar metro, caminata y transporte puntual según la zona. El metro cruza ciudad; caminar funciona mejor en barrios compactos.' },
-      { q: '¿El tranvía 28 sirve para moverse rápido?', a: 'Normalmente no. Es una buena experiencia si vas temprano, pero puede ir lleno y ser lento.' },
-      { q: '¿Cómo llegar del aeropuerto al centro?', a: 'El metro suele ser práctico de día si tu alojamiento queda cerca de una estación; de madrugada o con mucho equipaje, taxi o apps pueden ser más cómodos.' },
-    ];
-  }
-  if (slug === 'que-hacer-gratis-en-lisboa') {
-    return [
-      { q: '¿Se puede disfrutar Lisboa gratis?', a: 'Sí. Miradores, barrios, jardines, plazas y paseos junto al río permiten montar un día completo sin pagar entradas.' },
-      { q: '¿Todos los museos son gratis?', a: 'No. Algunos tienen días, condiciones o zonas gratuitas, pero hay que verificar la información oficial antes de ir.' },
-      { q: '¿Cuál es el mejor plan gratis al atardecer?', a: 'Un mirador como Graça, Senhora do Monte o Santa Catarina, elegido según dónde termines la ruta.' },
-    ];
-  }
-  if (slug.includes('transporte')) {
-    return [
-      { q: '¿Cuál es el transporte más barato en Lisboa?', a: 'El metro y los tranvías con tarjeta recargable son la opción más económica para moverte.' },
-      { q: '¿Conviene usar el tranvía 28?', a: 'Sí, pero evita las horas punta. Es mejor temprano por la mañana o al final de la tarde.' },
-      { q: '¿Cómo ir del aeropuerto al centro?', a: 'El metro es la opción más rápida y barata; taxi/Uber es más cómodo si vas con maleta.' },
-    ];
-  }
-  if (slug.includes('presupuesto') || slug.includes('dinero')) {
-    return [
-      { q: '¿Cuánto dinero llevar a Lisboa por día?', a: 'Depende del estilo: 35€ mochilero, 60€ medio, 120€ confort.' },
-      { q: '¿Lisboa es cara para comer?', a: 'No si evitas zonas turísticas. Hay menús del día desde 7-10€.' },
-      { q: '¿Se puede pagar con tarjeta en Lisboa?', a: 'Sí, pero conviene llevar algo de efectivo para cafés y pequeños comercios.' },
-    ];
-  }
-  if (slug.includes('miradores')) {
-    return [
-      { q: '¿Cuál es el mejor mirador de Lisboa?', a: 'Senhora do Monte es el favorito local por vistas y ambiente.' },
-      { q: '¿A qué hora ir a los miradores?', a: 'Antes de las 10:00 para menos gente o al atardecer para la mejor luz.' },
-      { q: '¿Hay miradores gratis en Lisboa?', a: 'Sí, la mayoría son gratuitos y de fácil acceso a pie o en tranvía.' },
-    ];
-  }
-  if (slug.includes('comer') || slug.includes('restaurantes')) {
-    return [
-      { q: '¿Dónde comer barato en Lisboa?', a: 'En tascas locales fuera de Baixa/Chiado. Menús desde 7-12€.' },
-      { q: '¿Qué plato típico pedir?', a: 'Bacalao, bifanas y pastéis de nata son imprescindibles.' },
-      { q: '¿Es necesario reservar restaurantes?', a: 'En sitios populares sí, especialmente fines de semana.' },
-    ];
-  }
-  if (slug.includes('sintra')) {
-    return [
-      { q: '¿Cuánto tarda el tren a Sintra?', a: 'Unos 40 minutos desde la estación de Rossio.' },
-      { q: '¿Se puede ver Sintra en un día?', a: 'Sí, pero planifica 2-3 lugares para no ir con prisas.' },
-      { q: '¿Conviene comprar entradas online?', a: 'Sí, evita colas largas especialmente en temporada alta.' },
-    ];
-  }
-  return [
-    { q: '¿Cuántos días son ideales para Lisboa?', a: 'Entre 2 y 4 días para ver lo esencial sin prisas.' },
-    { q: '¿Cuál es el mejor barrio para alojarse?', a: 'Baixa-Chiado es práctico; Alfama es más auténtico.' },
-    { q: '¿Qué época es mejor para viajar?', a: 'Primavera y otoño tienen buen clima y menos turistas.' },
-  ];
-}
-
-const internalLinks = [
-  { href: '/itinerarios', label: 'Itinerarios por días en Lisboa' },
-  { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
-  { href: '/pack-completo', label: 'Pack completo de guías' },
-  { href: '/blog', label: 'Consejos y guías de Lisboa' },
-];
-
 const articleExtras: Record<string, ArticleExtras> = {
   'time-out-market-lisboa': {
     comoLlegar: 'Está en el Mercado da Ribeira, Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Se llega en metro, tren, bus, barco o a pie desde Chiado.',
     mejorHora: 'Fuera de las horas habituales de comida y cena es más fácil encontrar mesa. Los fines de semana conviene evitar llegar justo en el pico.',
-    faqs: [],
   },
   'estacion-oriente-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja, estación Oriente. El intercambiador reúne metro, trenes y terminal de autobuses junto al Parque das Nações.',
     mejorHora: 'Si quieres mirar la arquitectura sin ir con una conexión pendiente, encájala a media mañana o en una tarde de paseo por el Parque das Nações.',
-    faqs: [],
   },
   'estacion-olaias-lisboa': {
     comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
     mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',
-    faqs: [],
-  },
-  /*
-   * Sin ficha de lugar: la guía trata de cómo repartir una semana entera, no
-   * de un sitio al que se llegue. `comoLlegar` y `mejorHora` no aplican.
-   */
-  'lisboa-en-7-dias': {
-    faqs: [
-      { q: '¿Son demasiados siete días para Lisboa?', a: 'No, si no los planteas como la misma lista de monumentos estirada. Lo imprescindible de la ciudad se ve en tres días; los otros cuatro se llenan con una o dos escapadas, barrios sin monumento, la otra orilla del Tajo y un día sin plan. Si intentas rellenarlos con más monumentos, entonces sí sobran.' },
-      { q: '¿Qué hacer en Lisboa en 7 días?', a: 'El reparto que mejor funciona son tres bloques: dos o tres días de ciudad —centro histórico, Belém y miradores—, una o dos escapadas de día completo, y dos o tres días para lo que no entra en un viaje corto: el Parque das Nações, los barrios sin lista de visitas, los mercados de barrio y un día deliberadamente sin cerrar.' },
-      { q: '¿Cuántas excursiones caben en una semana en Lisboa?', a: 'Dos con comodidad. Cada escapada se lleva el día entero contando los trayectos, así que con tres te quedan cuatro días de Lisboa, menos de lo que tendrías en un viaje corto. Si sólo haces una, que sea Sintra. Cruzar el Tajo en barco no cuenta como escapada porque es media tarde.' },
-      { q: '¿Cómo repartir los días entre Lisboa y Sintra?', a: 'Sintra pide un día completo y propio: se sale temprano y se vuelve tarde, y no conviene encajarle nada más ese día. Lo que sí importa es qué va antes y después: no la pongas pegada a otra escapada, porque dos días seguidos de tren y sierra queman el resto de la semana. Un día tranquilo de ciudad después funciona mucho mejor.' },
-      { q: '¿En qué orden conviene ver Lisboa si tengo una semana?', a: 'Empezando por el centro histórico y dejando Belém para el tercer día, porque es zona llana y descansa después de dos días de cuestas. Y sin agotar el centro en las primeras jornadas: guardar un mirador, un barrio o una tarde de Baixa para la segunda mitad evita que la semana vaya de más a menos.' },
-    ],
-  },
-  // Sin ficha de lugar: la guía recorre media ciudad, no un sitio concreto.
-  'donde-fotografiar-lisboa': {
-    faqs: [
-      { q: '¿Cuál es el mejor sitio para fotografiar Lisboa?', a: 'Depende de la hora más que del sitio. Para la vista clásica de los tejados de Alfama con el Panteão al fondo, Santa Luzia y Portas do Sol por la mañana, porque miran al sureste y reciben la luz de frente. Para el final del día, la Senhora do Monte o Santa Catarina, que miran al oeste. Y para el puente, las docas de Alcântara al atardecer.' },
-      { q: '¿A qué hora hay mejor luz para fotografiar Lisboa?', a: 'En los extremos del día. A primera hora la luz entra de lado y la ciudad está vacía; al final de la tarde pasa lo mismo del otro lado. El mediodía es la peor hora para casi todo lo de esta guía porque la luz cae desde arriba y aplana las cuestas. Las horas concretas cambian varias horas entre invierno y verano, así que conviene mirar el amanecer y el atardecer del día en cuestión.' },
-      { q: '¿Dónde se fotografía el tranvía amarillo de Lisboa?', a: 'La Rua da Bica es la más conocida, pero cualquier tramo del 28 por Graça o Alfama da la misma escena con menos gente delante. Lo que más cambia la foto no es el sitio sino la hora: a primera hora hay muy poca gente. Y conviene disparar desde la acera, nunca desde la vía: el tranvía va sobre raíles y no puede apartarse.' },
-      { q: '¿Merece la pena cruzar el Tajo para fotografiar Lisboa?', a: 'Sí, si buscáis un encuadre distinto. Desde la orilla sur, en Cacilhas, se ve Lisboa entera subiendo por las colinas y de frente, porque miras hacia el norte y la ciudad queda iluminada en lugar de a contraluz. Se llega en barco desde Cais do Sodré como transporte público normal.' },
-      { q: '¿Hace falta cámara o basta con el móvil?', a: 'Para casi todo lo de esta guía basta el móvil. Lo que de verdad cambia el resultado es a qué hora estás en cada sitio y hacia dónde mira ese sitio, no el equipo. Una cámara y un trípode ligero ayudan en la hora azul y en las fotos nocturnas, pero no son requisito para nada de lo anterior.' },
-    ],
-  },
-  // Sin ficha de lugar, por lo mismo que en la guía de pareja: no trata de un
-  // sitio al que se llegue, sino de cómo combinar varios.
-  'lisboa-con-ninos': {
-    faqs: [
-      { q: '¿Qué hacer en Lisboa con niños?', a: 'El plan que casi nunca falla es el Oceanário, en el Parque das Nações, y ese barrio da además para media jornada de paseo llano junto al río. A partir de ahí, Belém por sus jardines, el Pavilhão do Conhecimento si buscáis interior, un parque con zona de juegos y, si el tiempo acompaña, una escapada en tren a la costa.' },
-      { q: '¿Se puede ir por Lisboa con carrito de bebé?', a: 'Sí, eligiendo las zonas. Belém, el Parque das Nações, la Baixa y los parques son llanos y cómodos. Alfama, Bairro Alto y Graça son cuestas y escaleras, y ahí el carrito estorba más que ayuda. En el metro, 47 de las 56 estaciones tienen recorrido completo con ascensor, así que conviene comprobar la estación concreta si dependéis de él.' },
-      { q: '¿Cuántos días hacen falta para ver Lisboa con niños?', a: 'Contando un plan grande al día, tres días dan para el Oceanário y el Parque das Nações, un día de Belém y río, y otro de barrio, parque y mirador. Con cuatro entra la playa. Con dos, lo razonable es quedarse con el Oceanário y Belém.' },
-      { q: '¿Qué hacer en Lisboa con niños si llueve?', a: 'Bajar a lo llano y tirar de interiores. El Oceanário y el Pavilhão do Conhecimento están a pocos minutos uno del otro y dan para horas. Los mercados cubiertos también ayudan. Los miradores conviene dejarlos para una ventana seca, porque sin vista no compensan la subida y la calzada mojada resbala.' },
-      { q: '¿Merece la pena subir al tranvía 28 con niños?', a: 'Como experiencia sí, pero con matices: va lleno buena parte del día, no siempre hay sitio para sentarse y con carrito es incómodo. Si vais a subir, mejor a primera hora o al final del día, y desde una parada inicial en lugar de a mitad de recorrido.' },
-    ],
-  },
-  /*
-   * Sin ficha de lugar: la guía no trata de un sitio al que se llegue, sino de
-   * cómo combinar varios. `comoLlegar` y `mejorHora` sobrarían aquí.
-   */
-  'lisboa-en-pareja': {
-    faqs: [
-      { q: '¿Cuántos días hacen falta para ver Lisboa en pareja?', a: 'Con dos días completos da tiempo a ver la ciudad sin prisa: uno de casco histórico y miradores, otro de Belém y río. Con tres entra Sintra sin sacrificar Lisboa. Con uno, lo razonable es elegir una colina y quedarse al atardecer.' },
-      { q: '¿Cuál es el mejor mirador de Lisboa para ver el atardecer en pareja?', a: 'Depende del ambiente que busquéis más que de la vista. Santa Catarina es el más informal, con gente sentada en las escaleras; Graça y Senhora do Monte son más abiertos y se llenan antes; Santa Luzia y Portas do Sol miran directamente a Alfama y al río. En todos conviene llegar con bastante margen.' },
-      { q: '¿Qué se puede hacer en Lisboa en pareja sin gastar?', a: 'Bastante. Los miradores son de acceso libre, los barrios de Alfama, Mouraria, Graça y Príncipe Real se recorren andando, y los jardines de Belém y el paseo del río no cuestan nada. Cruzar el Tajo en barco cuesta un billete de transporte normal.' },
-      { q: '¿Merece la pena ir a Sintra si solo tenemos un fin de semana?', a: 'Sintra es un día completo, no una mañana, así que en un fin de semana corto obliga a dejar Lisboa a medias. Si es una prioridad, mejor reservarle el día entero y visitar dos palacios en vez de tres. Si no, se disfruta más dejándola para un viaje más largo.' },
-      { q: '¿Qué hacer en Lisboa en pareja si llueve?', a: 'Bajar a la Baixa, que es llana, y tirar de interiores: cafés históricos, librerías, mercados cubiertos y museos. El tranvía y el barco siguen funcionando y permiten seguir viendo la ciudad a cubierto. Los miradores conviene dejarlos para una ventana seca, porque sin vista no compensan el paseo.' },
-    ],
-  },
-  // Sin ficha de lugar: es una guía de preparación, no de un sitio al que se
-  // llegue. El consejo de revisar las tarjetas antes de salir vive ahora como
-  // `tip` dentro del artículo, donde se lee en su contexto.
-  'como-pagar-en-portugal': {
-    faqs: [
-      { q: '¿Se puede pagar con tarjeta en Lisboa?', a: 'Sí, con total normalidad en hoteles, restaurantes, comercios, museos y transporte. Conviene llevar algo de efectivo para tascas pequeñas, mercados y establecimientos que piden un importe mínimo.' },
-      { q: '¿Hace falta llevar efectivo a Portugal?', a: 'No mucho, pero sí algo. Se puede pasar días pagando solo con tarjeta; el efectivo resuelve puestos de mercado, comercio tradicional y propinas. Suele ser mejor reponer sobre la marcha que traer una cantidad grande de casa.' },
-      { q: '¿Qué opción elegir cuando el terminal pregunta entre euros y mi moneda?', a: 'Si eliges tu moneda, la conversión la hace el comercio o el cajero con su propio margen; si eliges euros, la hace tu banco. El margen del terminal suele ser menos ventajoso, así que merece la pena comparar las dos cifras en pantalla antes de aceptar.' },
-      { q: '¿Los cajeros pueden cobrar comisión en Portugal?', a: 'Puede haber dos cargos distintos: el de tu propio banco, que figura en tu contrato, y el del operador del cajero, que debe mostrarse en pantalla antes de confirmar. Los cajeros de operadores independientes en zonas turísticas suelen tener condiciones menos favorables que la red bancaria habitual.' },
-      { q: '¿Conviene cambiar dinero antes de viajar?', a: 'Si vienes de la zona euro no necesitas cambiar nada. Si vienes de fuera, cambiar todo el presupuesto por adelantado rara vez compensa; las casas de cambio de aeropuertos y zonas turísticas suelen aplicar el margen en el tipo de cambio aunque anuncien cero comisión.' },
-    ],
   },
   'mejores-miradores-lisboa': {
     comoLlegar: 'Empieza en Graça (tranvía 28/12 o bus 734) y baja caminando hacia Alfama y Baixa para encadenar miradores sin repetir cuestas.',
     mejorHora: 'Amanecer o 30-45 minutos antes del atardecer para mejor luz y menos gente.',
-    faqs: [
-      { q: '¿Cuál es el mirador más bonito de Lisboa?', a: 'Senhora do Monte suele ser el favorito por vistas amplias y ambiente local.' },
-      { q: '¿Qué mirador es mejor para fotos?', a: 'Santa Luzia por los azulejos y Portas do Sol por la vista abierta a Alfama.' },
-      { q: '¿Se pueden visitar varios en una tarde?', a: 'Sí, Santa Luzia + Portas do Sol + Graça están a pocos minutos a pie.' },
-    ],
   },
   'donde-comer-barato-lisboa': {
     comoLlegar: 'Busca zonas locales como Mouraria, Arroios o Campo de Ourique (metro Martim Moniz o Arroios). Desde Baixa estás a 10-15 min caminando.',
     mejorHora: 'Entre 12:30 y 14:00 para aprovechar el “prato do dia” a buen precio.',
-    faqs: [
-      { q: '¿Cuánto cuesta comer barato en Lisboa?', a: 'Entre 8 y 12€ en tascas locales con plato del día.' },
-      { q: '¿Dónde comer barato sin turistas?', a: 'Mouraria, Arroios y Campo de Ourique suelen tener precios reales.' },
-      { q: '¿Los mercados son buena opción?', a: 'Sí, para variedad; pero Time Out Market es más caro que otros.' },
-    ],
   },
   'barrios-imprescindibles': {
     comoLlegar: 'Arranca en Baixa-Chiado (metro) y conecta con Alfama por tranvía 28/12. Belém se alcanza con tranvía 15 desde Cais do Sodré.',
     mejorHora: 'Mañanas para Baixa/Belém y tardes-noches para Alfama y Bairro Alto.',
-    faqs: [
-      { q: '¿Cuál es el mejor barrio para primera visita?', a: 'Baixa-Chiado por ubicación, plano y buena conexión.' },
-      { q: '¿Qué barrio tiene más encanto?', a: 'Alfama, por sus calles y ambiente de fado.' },
-      { q: '¿Dónde está la vida nocturna?', a: 'En Bairro Alto y Cais do Sodré.' },
-    ],
   },
   'evitar-turistadas-lisboa': {
     comoLlegar: 'Muévete en metro y a pie. Evita tours exprés y tuk-tuks en zonas saturadas.',
     mejorHora: 'Visita lo más popular antes de las 10:00 o después de las 17:00.',
-    faqs: [
-      { q: '¿Cuál es la mayor turistada en Lisboa?', a: 'Comer en Rua Augusta: precios altos y calidad media.' },
-      { q: '¿Cómo evitar colas en el tranvía 28?', a: 'Sube temprano o usa el tranvía 12 que hace una ruta similar.' },
-      { q: '¿Dónde hay fado auténtico?', a: 'En tascas pequeñas de Alfama o Bairro Alto, no en restaurantes turísticos.' },
-    ],
   },
   'pasteles-de-belem': {
     comoLlegar: 'Tranvía 15E desde Cais do Sodré o tren a Belém. La pastelería está a 5 min de la estación.',
     mejorHora: 'Antes de las 9:30 o a partir de las 17:00 para evitar colas largas.',
-    faqs: [
-      { q: '¿Qué diferencia hay con los pastéis de nata?', a: 'La receta de Belém es secreta y solo se hace en esa pastelería.' },
-      { q: '¿Cuánto cuesta un Pastel de Belém?', a: 'Suele rondar 1,30-1,50€ por unidad.' },
-      { q: '¿Merece la pena la cola?', a: 'Sí si es tu primera visita; prueba a entrar al salón para menos espera.' },
-    ],
   },
   'mejor-epoca-visitar-lisboa': {
     comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
     mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
-    faqs: [
-      { q: '¿Cuál es el mejor mes para visitar Lisboa?', a: 'Mayo y septiembre ofrecen buen clima y menos gente.' },
-      { q: '¿Lisboa es buena en invierno?', a: 'Sí, es más tranquila y con precios más bajos.' },
-      { q: '¿Cuándo es temporada alta?', a: 'De junio a agosto, con precios y ocupación más altos.' },
-    ],
   },
   'aeropuerto-lisboa-al-centro': {
     comoLlegar: 'Estación de metro Aeroporto en la línea roja, justo en la terminal; también hay parada de Aerobus, taxis oficiales y zona señalizada para Uber/Bolt.',
     mejorHora: 'El metro y el Aerobus son la mejor opción de día; de madrugada (después de la 1:00) solo quedan taxi o Uber/Bolt.',
-    faqs: [
-      { q: '¿Cuál es la forma más barata de ir del aeropuerto de Lisboa al centro?', a: 'El metro, con la tarjeta Viva Viagem: 1,50€ el trayecto (más 0,50€ la tarjeta la primera vez).' },
-      { q: '¿Cuánto cuesta un taxi del aeropuerto al centro?', a: 'Entre 15 y 25€ según hora, tráfico y suplemento de equipaje.' },
-      { q: '¿Hay metro toda la noche desde el aeropuerto?', a: 'No, el metro cierra a la 1:00. Si llegas de madrugada, usa taxi o Uber/Bolt.' },
-    ],
   },
   'restaurantes-romanticos-lisboa': {
     comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
     mejorHora: 'Reserva para 20:00-21:00; si hay terraza, mejor al atardecer.',
-    faqs: [
-      { q: '¿Hay restaurantes con vistas en Lisboa?', a: 'Sí, Chapitô à Mesa y Ponto Final tienen vistas excelentes.' },
-      { q: '¿Hay que reservar siempre?', a: 'En los más populares sí, sobre todo viernes y sábados.' },
-      { q: '¿Opciones románticas sin gastar mucho?', a: 'Ponto Final o Tasca da Esquina con presupuesto medio.' },
-    ],
   },
   'que-ver-cascais-desde-lisboa': {
     comoLlegar: 'Tren directo desde Cais do Sodré cada 20 minutos. El trayecto dura 30-40 minutos.',
     mejorHora: 'Sal temprano para ver el centro y la costa sin prisas, sobre todo en verano.',
-    faqs: [
-      { q: '¿Cascais se puede ver en un día?', a: 'Sí, es ideal para una excursión de un día.' },
-      { q: '¿Hace falta coche?', a: 'No, el tren es rápido y llega al centro.' },
-      { q: '¿Qué no me puedo perder?', a: 'Boca do Inferno y el paseo marítimo.' },
-    ],
   },
   'playas-cerca-lisboa': {
     comoLlegar: 'Cascais en tren, Caparica en bus y Arrábida en coche. Todas están a menos de 1 hora.',
     mejorHora: 'Llega antes de las 10:30 en verano para evitar parking lleno.',
-    faqs: [
-      { q: '¿Cuál es la playa más fácil desde Lisboa?', a: 'Cascais, por tren directo desde Cais do Sodré.' },
-      { q: '¿Dónde hay playa más salvaje?', a: 'Arrábida y Adraga son más naturales y menos urbanas.' },
-      { q: '¿Se puede ir en invierno?', a: 'Sí, para pasear; para bañarse mejor de junio a septiembre.' },
-    ],
   },
   'donde-escuchar-fado-autentico': {
     comoLlegar: 'Alfama y Bairro Alto se alcanzan con metro a Baixa-Chiado y luego caminando.',
     mejorHora: 'Entre 20:00 y 22:30. Jueves a sábado hay más ambiente.',
-    faqs: [
-      { q: '¿Dónde escuchar fado auténtico?', a: 'En tascas pequeñas como Tasca do Chico o A Baiuca.' },
-      { q: '¿El fado es gratis?', a: 'En bares locales suele ser gratis con consumición.' },
-      { q: '¿Qué evitar?', a: 'Restaurantes turísticos con “show de fado” caro en Baixa.' },
-    ],
   },
   'presupuesto-viajar-lisboa': {
     comoLlegar: 'Vuelos low cost desde España a Lisboa. Metro línea roja desde el aeropuerto al centro.',
     mejorHora: 'Ahorra comiendo menús del día al mediodía y usando pases diarios.',
-    faqs: [
-      { q: '¿Cuánto cuesta un viaje medio a Lisboa?', a: 'Entre 60 y 90€ al día incluyendo alojamiento y comidas.' },
-      { q: '¿Es Lisboa cara?', a: 'Puede serlo en zonas turísticas, pero hay opciones económicas.' },
-      { q: '¿Qué gasto es el más alto?', a: 'El alojamiento suele ser el mayor coste.' },
-    ],
   },
   'mejores-mercados-lisboa': {
     comoLlegar: 'Time Out Market en Cais do Sodré, Feira da Ladra en Santa Apolónia, Arroios con metro.',
     mejorHora: 'Primera hora para mejor producto y menos gente.',
-    faqs: [
-      { q: '¿Cuál es el mercado más famoso?', a: 'Time Out Market, aunque es más turístico.' },
-      { q: '¿Dónde comprar barato y local?', a: 'Mercado de Arroios y la parte tradicional del Mercado da Ribeira.' },
-      { q: '¿Cuándo es Feira da Ladra?', a: 'Martes y sábados por la mañana.' },
-    ],
   },
   'donde-tomar-cafe-lisboa': {
     comoLlegar: 'Chiado y Príncipe Real están conectados por metro (Baixa-Chiado o Rato).',
     mejorHora: 'Entre 8:00 y 11:00 para ver la rutina local con poca cola.',
-    faqs: [
-      { q: '¿Cómo se pide un café en Lisboa?', a: 'Pide una “bica” si quieres un espresso.' },
-      { q: '¿Café de especialidad o tradicional?', a: 'Ambos son buenos; prueba A Brasileira y Copenhagen Coffee Lab.' },
-      { q: '¿Es caro el café?', a: 'No, suele costar entre 0,70 y 1,50€.' },
-    ],
   },
   'miradores-atardecer-lisboa': {
     comoLlegar: 'Para Graça usa el tranvía 28/12 o el bus 734. Portas do Sol queda cerca de Alfama.',
     mejorHora: '30-45 minutos antes del atardecer para reservar buen sitio.',
-    faqs: [
-      { q: '¿Qué mirador es mejor para el atardecer?', a: 'Senhora do Monte por vistas abiertas y menos gente.' },
-      { q: '¿Hay miradores con bares?', a: 'Portas do Sol y Santa Catarina tienen kioscos cerca.' },
-      { q: '¿Conviene reservar mesa en Ponto Final?', a: 'Sí, si quieres ver el atardecer desde Cacilhas.' },
-    ],
   },
   'que-comprar-lisboa-souvenirs': {
     comoLlegar: 'Feira da Ladra está cerca de Santa Apolónia (metro). Chiado es accesible desde Baixa.',
     mejorHora: 'Martes o sábado por la mañana para Feira da Ladra.',
-    faqs: [
-      { q: '¿Qué souvenir vale la pena?', a: 'Azulejos, conservas de pescado y vino de Oporto.' },
-      { q: '¿Dónde comprar sin turistadas?', a: 'Feira da Ladra y tiendas locales fuera de Baixa.' },
-      { q: '¿Puedo llevar comida en avión?', a: 'Sí, conservas y dulces suelen pasar sin problema en equipaje.' },
-    ],
   },
   'viajar-ninos-lisboa': {
     comoLlegar: 'El Oceanário está en Parque das Nações (metro línea roja). El resto se hace caminando o tranvía.',
     mejorHora: 'Mañanas para el Oceanário y tardes para parques; evita 13:00-16:00 en verano.',
-    faqs: [
-      { q: '¿Lisboa es cómoda con niños?', a: 'Sí, pero las cuestas son un reto; usa elevadores y tranvías.' },
-      { q: '¿Qué plan gusta más?', a: 'Oceanário y tranvía 28 suelen ser los favoritos.' },
-      { q: '¿Dónde comer con niños?', a: 'Time Out Market o tascas con platos simples.' },
-    ],
   },
   'excursiones-desde-lisboa': {
     comoLlegar: 'Trenes desde Rossio (Sintra) o Cais do Sodré (Cascais). Buses desde Sete Rios para Óbidos y Nazaré.',
     mejorHora: 'Salidas entre 8:00 y 9:00 para aprovechar el día completo.',
-    faqs: [
-      { q: '¿Cuál es la excursión número uno?', a: 'Sintra, por palacios y paisajes únicos.' },
-      { q: '¿Se pueden combinar excursiones?', a: 'Óbidos y Nazaré sí; Sintra y Cascais es muy justo.' },
-      { q: '¿Hace falta tour?', a: 'No siempre, pero ayuda si quieres todo organizado.' },
-    ],
   },
 };
 
@@ -4228,13 +3972,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
-  const sidebarLinks = article.links ?? internalLinks;
-  const finalCta = article.cta ?? {
-    href: '/itinerarios',
-    label: 'Ver guías gratis',
-    title: '¿Quieres esto organizado paso a paso?',
-    text: 'Rutas hora a hora, GPS en cada parada y restaurantes probados para moverte con criterio.',
-  };
   const baseHeadings = article.contenido
     .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
     .map((bloque) => ({
@@ -4249,14 +3986,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
   const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
-  const compactReading = COMPACT_READING_PILOT[slug];
-  const relatedPosts = compactReading
-    ? compactReading.relatedPostIds.flatMap((postId) => {
-        const post = blogPosts.find((candidate) => candidate.id === postId);
-        return post ? [post] : [];
-      })
-    : blogPosts.filter((post) => post.id !== slug).slice(0, 3);
-  const faqs = extras?.faqs ?? getFaqs(slug);
+  const linkedArticleIds = (article.links ?? []).flatMap((link) => {
+    const match = link.href.match(/^\/blog\/([^/#?]+)/);
+    return match ? [match[1]] : [];
+  });
+  const relatedIds = BLOG_RELATED_POST_IDS[slug] ?? linkedArticleIds;
+  const relatedPosts = [
+    ...relatedIds,
+    ...blogPosts
+      .filter((post) => post.id !== slug && post.categoria === article.categoria)
+      .map((post) => post.id),
+  ]
+    .filter((postId, index, ids) => postId !== slug && ids.indexOf(postId) === index)
+    .flatMap((postId) => {
+      const post = BLOG_POST_BY_ID.get(postId);
+      return post ? [post] : [];
+    })
+    .slice(0, 3);
+  const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
   const photos = sectionPhotos[slug] ?? {};
@@ -4322,41 +4069,29 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="grid lg:grid-cols-[1fr,320px] gap-10">
           <ArticleBody
             article={article}
-            authorName={AUTHOR_NAME}
             extras={extras}
             faqs={faqs}
-            finalCta={finalCta}
             isEditorialV2={isEditorialV2}
             photos={photos}
             seoDescription={seoDescription}
             takeaways={takeaways}
-            deferEnding={Boolean(compactReading)}
           />
 
-          <ArticleToc
-            headings={headings}
-            sidebarLinks={sidebarLinks}
-            compactMobile={Boolean(compactReading)}
-            showDiscovery={!compactReading}
-          />
+          <ArticleToc headings={headings} />
         </div>
 
-        <ArticleRelated posts={relatedPosts} compact={Boolean(compactReading)} />
+        <ArticleRelated posts={relatedPosts} />
 
-        {compactReading && (
-          <div className="article-pilot-ending max-w-2xl mx-auto mt-10">
-            <ArticleFooter
-              authorName={AUTHOR_NAME}
-              finalCta={finalCta}
-              compactPlanning
-              beforeAuthor={
-                article.fuentes && article.fuentes.length > 0 ? (
-                  <ArticleSources sources={article.fuentes} compactMobile />
-                ) : null
-              }
-            />
-          </div>
-        )}
+        <div className="article-compact-ending max-w-2xl mx-auto mt-10">
+          <ArticleFooter
+            authorName={AUTHOR_NAME}
+            beforeAuthor={
+              article.fuentes && article.fuentes.length > 0 ? (
+                <ArticleSources sources={article.fuentes} />
+              ) : null
+            }
+          />
+        </div>
       </div>
       <script
         type="application/ld+json"

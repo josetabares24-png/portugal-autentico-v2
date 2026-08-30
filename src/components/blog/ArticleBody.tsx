@@ -2,41 +2,32 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import type {
   Article,
-  ArticleCta,
   ArticleExtras,
   ArticleFaq,
   SectionPhoto,
 } from './article-types';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
-import { ArticleFooter } from './ArticleFooter';
-import { ArticleSources } from './ArticleSources';
 import { renderEditorialHeading, slugify } from './article-utils';
 
 type ArticleBodyProps = {
   article: Article;
-  authorName: string;
   extras?: ArticleExtras;
   faqs: ArticleFaq[];
-  finalCta: ArticleCta;
   isEditorialV2: boolean;
   photos: Record<string, SectionPhoto>;
   seoDescription: string;
   takeaways: string[];
-  deferEnding?: boolean;
 };
 
 export function ArticleBody({
   article,
-  authorName,
   extras,
   faqs,
-  finalCta,
   isEditorialV2,
   photos,
   seoDescription,
   takeaways,
-  deferEnding = false,
 }: ArticleBodyProps) {
   return (
     <article className="article-surface min-w-0">
@@ -210,15 +201,6 @@ export function ArticleBody({
               ))}
             </div>
           </section>
-        </>
-      )}
-
-      {!deferEnding && (
-        <>
-          {article.fuentes && article.fuentes.length > 0 && (
-            <ArticleSources sources={article.fuentes} />
-          )}
-          <ArticleFooter authorName={authorName} finalCta={finalCta} />
         </>
       )}
     </article>

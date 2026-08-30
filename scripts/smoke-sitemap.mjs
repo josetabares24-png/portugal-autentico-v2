@@ -486,9 +486,9 @@ async function checkArticle(baseUrl) {
   record('el artículo no menciona Wise', !/\bwise\b/i.test(visible), 'sin menciones');
   record('el artículo no contiene enlaces afiliados', !/rel="[^"]*sponsored/i.test(html) && !html.includes('guruwalk.com'), 'sin afiliación');
   record(
-    'las cinco preguntas frecuentes aparecen en la página',
-    ['pagar con tarjeta en Lisboa', 'llevar efectivo a Portugal', 'euros y mi moneda', 'comisión en Portugal', 'cambiar dinero antes'].every((q) => visible.includes(q)),
-    'FAQ visibles, no sólo en schema'
+    'el artículo no publica FAQPage sin preguntas adicionales visibles',
+    !visible.includes('Preguntas frecuentes') && !html.includes('"@type":"FAQPage"'),
+    'sin FAQ redundante ni schema huérfano'
   );
 }
 

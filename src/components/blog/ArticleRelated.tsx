@@ -8,11 +8,11 @@ type RelatedPost = {
   imagen: string;
 };
 
-export function ArticleRelated({ posts, compact = false }: { posts: RelatedPost[]; compact?: boolean }) {
+export function ArticleRelated({ posts }: { posts: RelatedPost[] }) {
   if (posts.length === 0) return null;
 
   return (
-    <section className={`article-related border-t border-border-soft${compact ? ' mt-12 pt-8' : ' mt-16 pt-12'}`}>
+    <section className="article-related border-t border-border-soft mt-12 pt-8">
       <div className="flex items-center justify-between mb-8">
         <h3>Relacionadas</h3>
         <Link href="/blog" className="article-related-link">

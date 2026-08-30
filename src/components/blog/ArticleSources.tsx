@@ -1,10 +1,5 @@
 import type { ArticleSource } from './article-types';
 
-type ArticleSourcesProps = {
-  sources: ArticleSource[];
-  compactMobile?: boolean;
-};
-
 const SourceList = ({ sources }: { sources: ArticleSource[] }) => (
   <ul>
     {sources.map((source) => (
@@ -17,29 +12,20 @@ const SourceList = ({ sources }: { sources: ArticleSource[] }) => (
   </ul>
 );
 
-export function ArticleSources({ sources, compactMobile = false }: ArticleSourcesProps) {
-  if (compactMobile) {
-    return (
-      <>
-        <details className="article-sources article-sources-compact article-reading lg:hidden">
-          <summary>
-            <span>Fuentes consultadas ({sources.length})</span>
-            <span className="article-sources-icon" aria-hidden="true">+</span>
-          </summary>
-          <SourceList sources={sources} />
-        </details>
-        <section className="article-sources article-reading hidden lg:block">
-          <h3>Fuentes oficiales consultadas</h3>
-          <SourceList sources={sources} />
-        </section>
-      </>
-    );
-  }
-
+export function ArticleSources({ sources }: { sources: ArticleSource[] }) {
   return (
-    <section className="article-sources article-reading">
-      <h3>Fuentes oficiales consultadas</h3>
-      <SourceList sources={sources} />
-    </section>
+    <>
+      <details className="article-sources article-sources-compact article-reading lg:hidden">
+        <summary>
+          <span>Fuentes consultadas ({sources.length})</span>
+          <span className="article-sources-icon" aria-hidden="true">+</span>
+        </summary>
+        <SourceList sources={sources} />
+      </details>
+      <section className="article-sources article-reading hidden lg:block">
+        <h3>Fuentes oficiales consultadas</h3>
+        <SourceList sources={sources} />
+      </section>
+    </>
   );
 }
