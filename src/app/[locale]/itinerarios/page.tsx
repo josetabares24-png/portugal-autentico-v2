@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { EditorialPageHero } from '@/components/EditorialPageHero';
+import { PageIntro } from '@/components/PageIntro';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 import { CORE_ITINERARIES } from '@/data/itineraries';
@@ -90,17 +90,14 @@ export default async function ItinerariosPage() {
 
   return (
     <main id="main-content">
-      <EditorialPageHero
+      <PageIntro
         eyebrow="Guías de viaje"
         title="Itinerarios para Lisboa"
         description="Rutas pensadas para aprovechar Lisboa según el tiempo que tengas."
-        image="/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg"
-        imageAlt="Calle empedrada y casas de Alfama en Lisboa"
-        variant="itineraries"
       />
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light pt-10 pb-12 md:pt-12 md:pb-16">
+      <section id="itinerarios" className="bg-background-light pt-8 pb-12 md:pt-10 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-7 md:mb-9">
             <p className="page-eyebrow">Según tus días</p>
