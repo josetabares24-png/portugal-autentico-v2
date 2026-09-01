@@ -103,7 +103,7 @@ export default async function ItinerariosPage() {
             <p className="page-eyebrow">Según tus días</p>
             <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {itinerariosPrincipales.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}

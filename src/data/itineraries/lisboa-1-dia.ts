@@ -106,7 +106,7 @@ export const lisboa1DiaDays: ItineraryDayMeta[] = [
     title: 'De Alfama a Belém, y cierre en Bairro Alto',
     summary:
       'Ocho paradas de 09:00 a 20:00: la mañana en Alfama y el castillo, la tarde en Belém y LX Factory, y la noche en Bairro Alto.',
-    image: '/images/bairro-alto-calle-noche.jpg',
-    imageAlt: 'Calle del Bairro Alto de Lisboa de noche, con gente en la puerta de los bares',
+    image: '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
+    imageAlt: 'Calle empedrada de Alfama entre casas tradicionales de Lisboa',
   },
 ];
