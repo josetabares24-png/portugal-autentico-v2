@@ -32,7 +32,7 @@ export function BlogLandingHeader() {
             </p>
           </div>
 
-          <div className="grid h-[9.5rem] grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] grid-rows-2 gap-2 overflow-hidden rounded-lg bg-white shadow-soft sm:h-44 md:h-60">
+          <div className="grid h-[9.5rem] grid-cols-[minmax(0,1.55fr)_minmax(0,1fr)] grid-rows-2 gap-2 overflow-hidden rounded-lg border border-border-soft bg-[#ede7da] shadow-soft sm:h-44 md:h-60">
             <div className="relative row-span-2 overflow-hidden">
               <Image
                 src={editorialImages[0].src}
@@ -51,6 +51,8 @@ export function BlogLandingHeader() {
                   alt={image.alt}
                   fill
                   className="object-cover"
+                  priority
+                  fetchPriority="high"
                   sizes="(max-width: 767px) 36vw, (max-width: 1199px) 23vw, 270px"
                 />
               </div>

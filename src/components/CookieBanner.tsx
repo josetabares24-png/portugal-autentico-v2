@@ -52,20 +52,22 @@ export default function CookieBanner() {
   return (
     <>
       {show && (
-        <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[min(440px,calc(100vw-3rem))] sm:p-0">
-          <div className="relative rounded-2xl border border-border-soft bg-background-light/95 p-3 pr-10 shadow-card backdrop-blur sm:p-4 sm:pr-11">
+        <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-4 sm:right-4 sm:w-[min(360px,calc(100vw-2rem))] sm:p-0">
+          <div className="relative rounded-lg border border-border-soft bg-background-light/95 p-3 pr-9 shadow-soft backdrop-blur sm:p-3 sm:pr-9">
             <button
               onClick={closeBanner}
-              className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main sm:h-8 sm:w-8"
+              className="absolute right-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main"
               aria-label="Cerrar banner de cookies"
             >
               ✕
             </button>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               <div>
-                <h3 className="mb-1 text-xs font-semibold text-text-main sm:mb-1.5">Uso de Cookies</h3>
-                <p className="text-[11px] leading-snug text-text-secondary sm:text-xs sm:leading-relaxed">
+                <h3 className="mb-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-text-main">
+                  Cookies
+                </h3>
+                <p className="text-[11px] leading-snug text-text-secondary">
                   Usamos cookies para mejorar la experiencia y medir el tráfico. Puedes aceptar, rechazar o leer la{' '}
                   <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
                     Política de Cookies
@@ -80,14 +82,14 @@ export default function CookieBanner() {
               <div className="grid w-full grid-cols-2 gap-2">
                 <button
                   onClick={rejectCookies}
-                  className="min-h-10 rounded-md border border-border-soft px-4 py-2 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
+                  className="min-h-9 rounded-md border border-border-soft px-3 py-1.5 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
                   aria-label="Rechazar cookies"
                 >
                   Rechazar
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="btn-primary min-h-10 px-4 py-2 text-xs"
+                  className="min-h-9 rounded-md bg-terracotta px-3 py-1.5 font-body text-xs font-semibold text-white transition-colors hover:bg-primary-dark"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
@@ -99,7 +101,7 @@ export default function CookieBanner() {
       )}
 
       {!show && consent === 'rejected' && explicitConsent && (
-        <div className="fixed bottom-4 left-4 z-40 flex items-center gap-3 rounded-xl border border-border-soft bg-background-light px-4 py-3 shadow-card">
+        <div className="fixed bottom-3 left-3 z-40 flex items-center gap-3 rounded-lg border border-border-soft bg-background-light px-3 py-2 shadow-soft">
           <span className="text-xs font-semibold text-text-main">Cookies rechazadas</span>
           <button
             onClick={openPreferences}
