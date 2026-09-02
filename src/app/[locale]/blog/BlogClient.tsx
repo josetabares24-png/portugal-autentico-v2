@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { EditorialPageHero } from '@/components/EditorialPageHero';
+import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
@@ -45,15 +45,10 @@ export default function BlogClient() {
 
   return (
     <main id="main-content">
-      <EditorialPageHero
-        eyebrow="Historias & Consejos"
-        title="El blog de Lisboa"
-        image="/images/alfama-panoramica.jpg"
-        imageAlt="Lisboa vista desde arriba"
-      />
+      <BlogLandingHeader />
 
       {/* Filtros por categoría */}
-      <section className="bg-background-light border-b border-border-soft py-4 sticky top-16 z-10">
+      <section className="bg-background-light border-b border-border-soft py-3 sticky top-16 z-10">
         <div className="max-w-6xl mx-auto px-6">
           {/*
             * Son siete categorías. En móvil no caben en una línea y se
@@ -80,7 +75,7 @@ export default function BlogClient() {
       </section>
 
       {/* Artículo destacado + recientes */}
-      <section className="bg-background-light py-10 md:py-12">
+      <section className="bg-background-light py-8 md:py-10">
         <div className="max-w-6xl mx-auto px-6">
           {featured && (
             <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr),minmax(320px,1.35fr)] lg:gap-12 lg:items-start">

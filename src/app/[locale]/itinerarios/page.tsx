@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { EditorialPageHero } from '@/components/EditorialPageHero';
+import { PageIntro } from '@/components/PageIntro';
 import { ItineraryCard } from '@/components/itinerarios/ItineraryCard';
 import { getGuideList } from '@/lib/guide-store';
 import { CORE_ITINERARIES } from '@/data/itineraries';
@@ -90,24 +90,20 @@ export default async function ItinerariosPage() {
 
   return (
     <main id="main-content">
-      <EditorialPageHero
+      <PageIntro
         eyebrow="Guías de viaje"
         title="Itinerarios para Lisboa"
-        image="/images/alfama-panoramica.jpg"
-        imageAlt="Vista panorámica de Lisboa"
+        description="Rutas pensadas para aprovechar Lisboa según el tiempo que tengas."
       />
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light pt-14 pb-12 md:pt-16 md:pb-16">
+      <section id="itinerarios" className="bg-background-light pt-8 pb-12 md:pt-10 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-8 md:mb-10">
+          <div className="mb-7 md:mb-9">
             <p className="page-eyebrow">Según tus días</p>
             <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
-            <p className="page-description">
-              Tres rutas pensadas para aprovechar Lisboa según el tiempo que tengas.
-            </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {itinerariosPrincipales.map(itinerary => (
               <ItineraryCard key={itinerary.id} {...itinerary} />
             ))}

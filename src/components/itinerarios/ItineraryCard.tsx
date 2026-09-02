@@ -16,87 +16,55 @@ export function ItineraryCard({
   featured = false,
   size = 'default',
 }: ItineraryCardProps) {
-  if (size === 'compact') {
-    return (
-      <article className={`card-surface group flex h-full flex-col p-5 ${featured ? 'ring-2 ring-gold' : ''}`}>
-        <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-5">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
-        </div>
-        <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
-        <p className="text-text-secondary text-sm leading-relaxed mb-5 line-clamp-3 min-h-[4.5rem]">{description}</p>
-
-        <ul className="space-y-2 mb-6">
-          {features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
-              <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-              {feature}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-auto pt-4 border-t border-border-soft space-y-3">
-          <div className="flex items-center">
-            <span className="badge-pill bg-gold/80 text-night">Gratis</span>
-          </div>
-          <Link
-            href={href}
-            className="btn-primary btn-card"
-          >
-            Ver guía gratis
-          </Link>
-        </div>
-      </article>
-    );
-  }
-
   return (
-    <article className={`card-surface group flex h-full flex-col p-5 ${featured ? 'ring-2 ring-gold' : ''}`}>
-      <div className="relative aspect-[16/9] overflow-hidden rounded-lg mb-5">
+    <article
+      className={`group flex h-full flex-col border-t bg-white/25 pt-4 transition-colors hover:bg-white/45 ${
+        featured ? 'border-t-2 border-gold' : 'border-border-soft'
+      } ${size === 'compact' ? 'px-4 pb-4' : 'px-1 pb-2'}`}
+    >
+      <div className="relative mb-5 aspect-[16/7] overflow-hidden rounded-md bg-white/60">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover"
           loading="lazy"
-          sizes="(max-width: 1024px) 100vw, 33vw"
+          sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1023px) 45vw, 350px"
         />
       </div>
-      {/*
-        La duración va ANTES del título y no escondida al final.
-        La sección pregunta «¿cuántos días tienes?» y hasta ahora las tarjetas
-        se llamaban «Lisboa Esencial», «Lisboa Completa» y «Lisboa +
-        Alrededores»: nombres que no contestan esa pregunta. El dato ya estaba
-        en los datos, sólo que no se pintaba en ninguna parte.
-      */}
-      <p className="page-eyebrow mb-1">{duration}</p>
-      <h3 className="font-display italic text-text-main text-2xl leading-snug mb-2">{title}</h3>
-      <p className="text-text-secondary text-sm leading-relaxed mb-5">{description}</p>
 
-      <ul className="space-y-2 mb-6">
+      <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+        <p className="font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
+          {duration}
+        </p>
+        <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
+        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+          Gratis
+        </span>
+      </div>
+
+      <h3 className="mb-2 font-display text-2xl leading-snug text-text-main transition-colors group-hover:text-terracotta">
+        {title}
+      </h3>
+      <p className={`mb-5 font-body text-sm leading-relaxed text-text-secondary ${size === 'compact' ? 'line-clamp-3 min-h-[4.5rem]' : ''}`}>
+        {description}
+      </p>
+
+      <ul className="mb-5 space-y-2 border-t border-border-soft pt-4">
         {features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
-            <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-            {feature}
+          <li key={idx} className="flex items-start gap-3 font-body text-sm leading-relaxed text-text-secondary">
+            <span aria-hidden="true" className="mt-[0.65rem] h-px w-3 flex-shrink-0 bg-gold" />
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-auto pt-4 border-t border-border-soft space-y-3">
-        <div className="flex items-center">
-          <span className="badge-pill bg-gold/80 text-night">Gratis</span>
-        </div>
+      <div className="mt-auto border-t border-border-soft pt-3">
         <Link
           href={href}
-          className="btn-primary btn-card"
+          className="text-cta"
         >
-          Ver guía gratis
+          Abrir itinerario <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
     </article>
