@@ -1,12 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
-import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const POSTS_PER_PAGE = 9;
 
@@ -79,54 +77,15 @@ export default function BlogClient() {
         <div className="max-w-6xl mx-auto px-6">
           {featured && (
             <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr),minmax(320px,1.35fr)] lg:gap-12 lg:items-start">
-              {/* Featured */}
-              <article>
-                <Link href={`/blog/${featured.id}`} className="block group">
-                  <div className="relative aspect-[16/9] overflow-hidden rounded-xl mb-5 shadow-card">
-                    <Image
-                      src={blogImageMap[featured.id] || featured.imagen || blogFallbackImage}
-                      alt={featured.titulo}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                  </div>
-                  <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">
-                    {featured.categoria} &mdash; {featured.fecha}
-                  </p>
-                  <h2 className="font-display italic text-text-main text-3xl leading-[1.12] md:text-4xl mb-3 group-hover:text-terracotta transition-colors">
-                    {featured.titulo}
-                  </h2>
-                  <p className="max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg">{featured.excerpt}</p>
-                </Link>
-              </article>
+              <EditorialArticleCard post={featured} variant="feature" />
 
-              {/* Recientes */}
-              <aside className="rounded-xl border border-border-soft bg-white/70 p-5 shadow-card">
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-6 pb-3 border-b border-border-soft">
+              <aside className="border-t border-border-soft pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                <p className="mb-5 border-b border-border-soft pb-3 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
                   Últimas entradas
                 </p>
                 <div className="space-y-5">
                   {secondary.map((post) => (
-                    <Link key={post.id} href={`/blog/${post.id}`} className="block group">
-                      <div className="flex gap-4 items-start">
-                        <div className="relative h-20 w-24 flex-shrink-0 overflow-hidden rounded-lg">
-                          <Image
-                            src={blogImageMap[post.id] || post.imagen || blogFallbackImage}
-                            alt={post.titulo}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div>
-                          <p className="text-[11px] text-text-secondary uppercase tracking-wide mb-1">
-                            {post.categoria}
-                          </p>
-                          <h4 className="text-[0.95rem] font-semibold text-text-main group-hover:text-terracotta transition-colors leading-snug">
-                            {post.titulo}
-                          </h4>
-                        </div>
-                      </div>
-                    </Link>
+                    <EditorialArticleCard key={post.id} post={post} variant="compact" />
                   ))}
                 </div>
               </aside>
@@ -144,30 +103,9 @@ export default function BlogClient() {
       <section className="bg-background-light py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {remaining.map((post) => {
-              const imageSrc = blogImageMap[post.id] || post.imagen || blogFallbackImage;
-              return (
-                <article key={post.id}>
-                  <Link href={`/blog/${post.id}`} className="block group">
-                    <div className="relative aspect-[4/3] overflow-hidden mb-4">
-                      <Image
-                        src={imageSrc}
-                        alt={post.titulo}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                    <p className="text-xs text-text-secondary uppercase tracking-widest mb-2">
-                      {post.categoria} &mdash; {post.fecha}
-                    </p>
-                    <h2 className="font-display italic text-text-main text-xl leading-snug mb-2 group-hover:text-terracotta transition-colors">
-                      {post.titulo}
-                    </h2>
-                    <p className="text-text-secondary text-sm leading-relaxed">{post.excerpt}</p>
-                  </Link>
-                </article>
-              );
-            })}
+            {remaining.map((post) => (
+              <EditorialArticleCard key={post.id} post={post} />
+            ))}
           </div>
 
           {postsFiltrados.length === 0 && (

@@ -19,7 +19,7 @@ const legacyLocaleRedirects: Record<string, string> = {
 // Rutas privadas conocidas que requieren autenticacion.
 const isProtectedRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
 
-// Rutas que no deben pasar por el middleware de i18n
+// Rutas que no deben pasar por el proxy de i18n.
 const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
 
 export default clerkMiddleware(async (auth, req) => {
@@ -37,12 +37,12 @@ export default clerkMiddleware(async (auth, req) => {
     await auth.protect();
   }
 
-  // No aplicar i18n a rutas admin y legacy app
+  // No aplicar i18n a rutas admin y legacy app.
   if (isNonIntlRoute(req)) {
     return;
   }
 
-  // Aplicar i18n middleware
+  // Aplicar proxy de i18n.
   return intlMiddleware(req);
 });
 
