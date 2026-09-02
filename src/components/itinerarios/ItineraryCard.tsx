@@ -18,11 +18,20 @@ export function ItineraryCard({
 }: ItineraryCardProps) {
   return (
     <article
-      className={`group flex h-full flex-col border-t bg-white/25 pt-4 transition-colors hover:bg-white/45 ${
-        featured ? 'border-t-2 border-gold' : 'border-border-soft'
-      } ${size === 'compact' ? 'px-4 pb-4' : 'px-1 pb-2'}`}
+      className={`group relative flex h-full flex-col border-y border-border-soft bg-white/25 px-1 pb-0 pt-3 transition-colors hover:bg-white/45 ${
+        featured ? 'border-t-2 border-t-gold bg-white/35' : ''
+      } ${size === 'compact' ? 'px-4' : ''}`}
     >
-      <div className="relative mb-5 aspect-[16/7] overflow-hidden rounded-md bg-white/60">
+      {featured && (
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+            Recomendada
+          </span>
+          <span aria-hidden="true" className="h-px flex-1 bg-gold/45" />
+        </div>
+      )}
+
+      <div className="relative mb-4 aspect-[16/7] overflow-hidden rounded-md bg-white/60">
         <Image
           src={image}
           alt={title}
@@ -38,12 +47,12 @@ export function ItineraryCard({
           {duration}
         </p>
         <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
-        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-text-secondary">
           Gratis
         </span>
       </div>
 
-      <h3 className="mb-2 font-display text-2xl leading-snug text-text-main transition-colors group-hover:text-terracotta">
+      <h3 className="mb-2 font-display text-2xl leading-snug text-text-main">
         {title}
       </h3>
       <p className={`mb-5 font-body text-sm leading-relaxed text-text-secondary ${size === 'compact' ? 'line-clamp-3 min-h-[4.5rem]' : ''}`}>
@@ -59,12 +68,12 @@ export function ItineraryCard({
         ))}
       </ul>
 
-      <div className="mt-auto border-t border-border-soft pt-3">
+      <div className="mt-auto border-t border-border-soft py-3">
         <Link
           href={href}
-          className="text-cta"
+          className="inline-flex min-h-10 items-center gap-2 font-body text-sm font-semibold text-terracotta underline decoration-terracotta/40 underline-offset-4 transition-colors hover:text-primary-dark hover:decoration-primary-dark"
         >
-          Abrir itinerario <span aria-hidden="true">&rarr;</span>
+          Ver ruta completa <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
     </article>

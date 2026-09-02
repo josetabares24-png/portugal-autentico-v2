@@ -94,18 +94,26 @@ export default async function ItinerariosPage() {
         eyebrow="Guías de viaje"
         title="Itinerarios para Lisboa"
         description="Rutas pensadas para aprovechar Lisboa según el tiempo que tengas."
+        className="py-8 md:py-10"
       />
 
       {/* Itinerarios principales */}
-      <section id="itinerarios" className="bg-background-light pt-8 pb-12 md:pt-10 md:pb-16">
+      <section id="itinerarios" className="bg-background-light pt-6 pb-12 md:pt-8 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-7 md:mb-9">
+          <div className="mb-6 md:mb-8">
             <p className="page-eyebrow">Según tus días</p>
             <h2 className="page-title mb-2">¿Cuántos días tienes?</h2>
+            <p className="max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
+              Tres rutas claras: una escapada eficiente, una visita completa y una opción con Sintra.
+            </p>
           </div>
-          <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
             {itinerariosPrincipales.map(itinerary => (
-              <ItineraryCard key={itinerary.id} {...itinerary} />
+              <ItineraryCard
+                key={itinerary.id}
+                {...itinerary}
+                featured={itinerary.slug === 'lisboa-2-dias-completo' || itinerary.id === 'lisboa-2-dias'}
+              />
             ))}
           </div>
         </div>
