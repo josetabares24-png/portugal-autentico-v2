@@ -80,9 +80,10 @@ export default function ComprarEntradasPage() {
         eyebrow="Reserva en Lisboa"
         title="Entradas y experiencias en Lisboa"
         description="Lo que merece reservarse por adelantado, elegido a mano."
+        className="py-8 md:py-10"
       />
 
-      <section className="border-b border-border-soft bg-background-light py-5">
+      <section className="border-b border-border-soft bg-background-light py-4">
         <div className="max-w-6xl mx-auto px-6">
           <ExperienceSearch
             id="buscar-entradas"
@@ -126,7 +127,7 @@ export default function ComprarEntradasPage() {
       </section>
 
       {/* Producto. Empieza aquí, no después de tres párrafos. */}
-      <section id="catalogo" className="bg-background-light pb-14 scroll-mt-24">
+      <section id="catalogo" className="bg-background-light py-8 scroll-mt-24 md:py-10">
         <div className="max-w-6xl mx-auto px-6">
           {categoriaElegida && filtrados.length > 0 && (
             <div className="mb-4">
@@ -166,7 +167,7 @@ export default function ComprarEntradasPage() {
              * queda medio vacía. Más cerca de su ancho natural convierte
              * mejor que más grande.
              */
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {filtrados.map((p, i) => (
                 <BookingProductRenderer key={p.id} product={p} priority={i === 0} />
               ))}
@@ -190,7 +191,7 @@ export default function ComprarEntradasPage() {
       </section>
 
       {/* Contexto al final: comprar primero, leer después. */}
-      <section className="bg-background-light py-12 border-t border-border-soft">
+      <section className="bg-background-light py-10 border-t border-border-soft md:py-12">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="mb-4 font-display text-xl font-semibold not-italic leading-tight text-text-main md:text-2xl">
             Qué conviene reservar y qué no

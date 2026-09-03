@@ -165,6 +165,7 @@ export default function FreeToursLisboaPage() {
         eyebrow="Free tours en Lisboa"
         title="Free tours en Lisboa para descubrir la ciudad a pie"
         description="Compara rutas por el centro, Alfama, Belém y otras zonas de Lisboa. Reserva tu plaza y decide la propina al terminar."
+        className="py-8 md:py-10"
         breadcrumb={(
           <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-2 font-body text-[11px] uppercase tracking-widest text-text-secondary">
             <Link href="/actividades" className="transition-colors hover:text-terracotta">Actividades</Link>
@@ -173,22 +174,19 @@ export default function FreeToursLisboaPage() {
           </nav>
         )}
       >
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-5">
             <AffiliateLink
               href={allToursUrl}
               campaign={allTours.campaign}
               content="hero"
               placement="hero"
-              className="btn-primary btn-lg w-full sm:w-auto"
+              className="text-cta"
             >
               Ver free tours disponibles
             </AffiliateLink>
-            <Link href="#comparar-rutas" className="btn-secondary btn-lg w-full sm:w-auto">
-              Comparar rutas
-            </Link>
           </div>
 
-          <ul className="mt-7 flex flex-col gap-2.5 border-t border-border-soft pt-6 sm:flex-row sm:flex-wrap sm:gap-x-7">
+          <ul className="mt-4 grid gap-2.5 border-t border-border-soft pt-5 sm:grid-cols-3">
             {heroBenefits.map((b) => (
               <li key={b.text} className="flex items-center gap-2.5 font-body text-sm text-text-secondary">
                 <Icon name={b.icon} size={17} className="flex-shrink-0 text-gold" />
@@ -196,36 +194,34 @@ export default function FreeToursLisboaPage() {
               </li>
             ))}
           </ul>
-
-          <AffiliateDisclosure variant="compact" className="mt-5 max-w-xl text-text-secondary" />
       </PageIntro>
 
       {/* ---------------------------------------------------------------
           Comparador de rutas
       ---------------------------------------------------------------- */}
-      <section id="comparar-rutas" className="scroll-mt-20 bg-white py-14 md:py-20">
+      <section id="comparar-rutas" className="scroll-mt-20 bg-background-light py-8 md:py-10">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Comparar rutas</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Qué ruta encaja mejor con tu viaje
           </h2>
-          <p className="mb-9 max-w-2xl leading-relaxed text-text-secondary">
+          <p className="mb-7 max-w-2xl leading-relaxed text-text-secondary">
             Cada recorrido cuenta una Lisboa distinta. La disponibilidad, los horarios
             y los idiomas cambian según la fecha, así que conviene consultarlos para
             tus días concretos antes de decidir.
           </p>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {FREE_TOUR_ROUTES.map((route) => {
               const affiliateUrl = getFreeTourAffiliateUrl(route);
               return (
                 <article
                   key={route.id}
                   id={route.anchor}
-                  className="group relative flex scroll-mt-24 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover focus-within:-translate-y-1 focus-within:shadow-card-hover"
+                  className="group relative flex scroll-mt-24 flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45"
                 >
                   {route.image && (
-                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-md bg-white/60">
                       <Image
                         src={route.image}
                         alt={route.imageAlt ?? ''}
@@ -237,13 +233,10 @@ export default function FreeToursLisboaPage() {
                     </div>
                   )}
 
-                  {/* Acento: distingue la tarjeta sin recurrir al color como única señal */}
-                  <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
-
-                  <div className="flex flex-1 flex-col p-5 md:p-6">
-                    <div className="mb-3 flex items-center gap-2">
+                  <div className="flex flex-1 flex-col">
+                    <div className="mb-2 flex items-center gap-2">
                       <Icon name={route.icon} size={15} className="flex-shrink-0 text-terracotta" />
-                      <span className="text-[11px] font-semibold uppercase tracking-widest text-text-secondary">
+                      <span className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
                         {route.label}
                       </span>
                     </div>
@@ -263,7 +256,7 @@ export default function FreeToursLisboaPage() {
                     )}
 
                     {route.notice && (
-                      <p className="mb-4 flex items-start gap-2 rounded-md bg-background-light px-3 py-2 text-xs leading-relaxed text-text-secondary">
+                      <p className="mb-4 flex items-start gap-2 border-l-2 border-gold bg-background-light/60 px-3 py-2 text-xs leading-relaxed text-text-secondary">
                         <Icon name="info" size={14} className="mt-0.5 flex-shrink-0 text-gold" />
                         <span>{route.notice}</span>
                       </p>
@@ -275,7 +268,7 @@ export default function FreeToursLisboaPage() {
                         campaign={route.campaign}
                         content={`card-${route.id}`}
                         placement="category-card"
-                        className="btn-primary btn-card"
+                        className="text-cta"
                       >
                         {route.ctaLabel}
                       </AffiliateLink>
@@ -289,7 +282,7 @@ export default function FreeToursLisboaPage() {
           {/* Acceso general: no es una ruta más, así que va aparte */}
           <div
             id={allTours.anchor}
-            className="mt-8 flex scroll-mt-24 flex-col gap-5 rounded-xl border border-gold/35 bg-background-light p-6 md:flex-row md:items-center md:justify-between md:p-7"
+            className="mt-10 flex scroll-mt-24 flex-col gap-5 border-y border-border-soft py-5 md:flex-row md:items-center md:justify-between"
           >
             <div className="flex gap-4">
               <span className="hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold sm:flex">
@@ -310,18 +303,20 @@ export default function FreeToursLisboaPage() {
               campaign={allTours.campaign}
               content="destacado-todos"
               placement="category-card"
-              className="btn-primary w-full flex-shrink-0 md:w-auto"
+              className="text-cta w-full flex-shrink-0 md:w-auto"
             >
               Ver todos los free tours de Lisboa
             </AffiliateLink>
           </div>
+
+          <AffiliateDisclosure variant="compact" className="mt-6 max-w-2xl text-text-secondary" />
         </div>
       </section>
 
       {/* ---------------------------------------------------------------
           Cómo funciona + consejos
       ---------------------------------------------------------------- */}
-      <section className="bg-background-light py-14 md:py-20">
+      <section className="bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-5xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Antes de reservar</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
@@ -353,7 +348,7 @@ export default function FreeToursLisboaPage() {
             ))}
           </ol>
 
-          <div className="mt-10 rounded-xl border-l-2 border-gold bg-white p-6 shadow-card md:mt-12">
+          <div className="mt-10 border-l-2 border-gold bg-white/35 px-5 py-5 md:mt-12 md:px-6">
             <h3 className="mb-4 font-display text-xl font-semibold not-italic leading-snug text-text-main">
               Consejos prácticos antes de salir
             </h3>
@@ -372,16 +367,16 @@ export default function FreeToursLisboaPage() {
       {/* ---------------------------------------------------------------
           Recomendación personal
       ---------------------------------------------------------------- */}
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="bg-azulejo-pattern-gold relative overflow-hidden rounded-xl bg-night px-6 py-8 md:px-10 md:py-10">
-            <p className="relative mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+          <div className="border-y border-border-soft py-6 md:py-7">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-text-secondary">
               La opinión de la casa
             </p>
-            <h2 className="relative mb-4 font-display text-2xl italic leading-tight text-white md:text-3xl">
+            <h2 className="mb-4 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-3xl">
               ¿Cuál elegiría yo para una primera visita?
             </h2>
-            <p className="relative leading-relaxed text-white/85">
+            <p className="leading-relaxed text-text-secondary">
               Para una primera visita elegiría una ruta por Baixa y Chiado. Te da el
               contexto necesario para entender el terremoto de 1755, la reconstrucción
               de la ciudad y la relación entre los barrios del centro. Después haría
@@ -389,7 +384,7 @@ export default function FreeToursLisboaPage() {
               o la época de los Descubrimientos.
             </p>
 
-            <div className="relative mt-7 flex items-center gap-3 border-t border-white/15 pt-5">
+            <div className="mt-7 flex items-center gap-3 border-t border-border-soft pt-5">
               <span
                 aria-hidden="true"
                 className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-terracotta font-display text-sm italic text-white"
@@ -397,15 +392,15 @@ export default function FreeToursLisboaPage() {
                 JT
               </span>
               <div>
-                <p className="flex items-center gap-1.5 text-sm font-semibold text-white">
+                <p className="flex items-center gap-1.5 text-sm font-semibold text-text-main">
                   José
-                  <span aria-hidden="true" className="text-white/40">·</span>
-                  <span className="inline-flex items-center gap-1 font-normal text-white/75">
+                  <span aria-hidden="true" className="text-text-secondary/60">·</span>
+                  <span className="inline-flex items-center gap-1 font-normal text-text-secondary">
                     <Icon name="location_on" size={13} className="text-gold" />
                     vive en Lisboa
                   </span>
                 </p>
-                <p className="text-xs text-white/55">Recomendación de Estaba en Lisboa</p>
+                <p className="text-xs text-text-secondary">Recomendación de Estaba en Lisboa</p>
               </div>
             </div>
           </div>
@@ -415,12 +410,12 @@ export default function FreeToursLisboaPage() {
       {/* ---------------------------------------------------------------
           CTA final
       ---------------------------------------------------------------- */}
-      <section className="bg-night py-14 md:py-20">
+      <section className="border-y border-border-soft bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-4 font-display text-3xl font-semibold not-italic leading-tight text-white md:text-4xl">
+          <h2 className="mb-4 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             ¿Ya sabes qué zona quieres conocer?
           </h2>
-          <p className="mb-8 leading-relaxed text-white/75">
+          <p className="mb-7 leading-relaxed text-text-secondary">
             Comprueba qué recorridos están disponibles durante tu viaje y elige el que
             mejor encaje con tus días.
           </p>
@@ -431,18 +426,18 @@ export default function FreeToursLisboaPage() {
               campaign={allTours.campaign}
               content="final-cta"
               placement="final-cta"
-              className="btn-primary btn-lg w-full sm:w-auto"
+              className="text-cta w-full justify-center sm:w-auto"
             >
               Consultar disponibilidad en Lisboa
             </AffiliateLink>
-            <Link href="/actividades" className="btn-ghost-light btn-lg w-full sm:w-auto">
+            <Link href="/actividades" className="text-cta w-full justify-center sm:w-auto">
               Ver todas las actividades
             </Link>
           </div>
 
-          <p className="mt-7 text-sm leading-relaxed text-white/55">
+          <p className="mt-7 text-sm leading-relaxed text-text-secondary">
             ¿Prefieres organizarlo por tu cuenta? Tienes{' '}
-            <Link href="/itinerarios" className="text-white/75 underline underline-offset-2 hover:text-white">
+            <Link href="/itinerarios" className="text-terracotta underline underline-offset-2 hover:no-underline">
               itinerarios gratuitos de 1 a 7 días
             </Link>{' '}
             para recorrer Lisboa sin guía.
@@ -453,7 +448,7 @@ export default function FreeToursLisboaPage() {
       {/* ---------------------------------------------------------------
           Preguntas frecuentes
       ---------------------------------------------------------------- */}
-      <section className="bg-background-light py-14 md:py-20">
+      <section className="bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-3xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Dudas habituales</p>
           <h2 className="mb-8 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
