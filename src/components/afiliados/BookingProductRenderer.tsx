@@ -134,8 +134,8 @@ function SinConsentimiento({ product, priority }: { product: BookableProduct; pr
   }
 
   return (
-    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <article className="flex h-full min-w-0 flex-col border-t border-border-soft bg-white/25 px-1 pt-3">
+      <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
         <Image
           src={product.image}
           alt={product.imageAlt}
@@ -147,8 +147,8 @@ function SinConsentimiento({ product, priority }: { product: BookableProduct; pr
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <p className="mb-1.5 font-article text-[11px] font-semibold uppercase tracking-widest text-terracotta">
+      <div className="flex flex-1 flex-col">
+        <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-terracotta">
           {product.kind}
         </p>
         <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
@@ -157,7 +157,7 @@ function SinConsentimiento({ product, priority }: { product: BookableProduct; pr
         <p className="mb-4 font-article text-sm leading-relaxed text-text-secondary">
           {product.blurb}
         </p>
-        <p className="mt-auto rounded-lg bg-background-light p-3 font-article text-xs leading-relaxed text-text-secondary">
+        <p className="mt-auto border-l-2 border-gold bg-background-light/60 px-3 py-2.5 font-article text-xs leading-relaxed text-text-secondary">
           Esta opción sólo se reserva desde el módulo del proveedor, que usa sus
           propias cookies. Acepta las cookies para ver aquí precio y disponibilidad.
         </p>

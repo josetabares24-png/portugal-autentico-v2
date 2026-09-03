@@ -55,6 +55,8 @@ export default function ActividadesPage() {
     setCategory('Todas');
     setPrice('todas');
   };
+  const actividadesIniciales = filtered.slice(0, 6);
+  const actividadesRestantes = filtered.slice(6);
 
   return (
     <main id="main-content">
@@ -62,61 +64,8 @@ export default function ActividadesPage() {
         eyebrow="Actividades"
         title="Lisboa sin gastar mucho"
         description="Cada actividad con su precio real, su duración y un tip de ahorro de local."
+        className="py-8 md:py-10"
       />
-
-      {/* Free tours: bloque editorial destacado, visualmente separado del
-          catálogo para que no se lea como una actividad más ni como
-          publicidad de un proveedor. */}
-      <section className="bg-background-light py-10 border-b border-border-soft">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="relative overflow-hidden rounded-xl bg-night px-6 py-8 md:px-9 md:py-9">
-            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-terracotta to-gold" />
-
-            <div className="md:flex md:items-start md:justify-between md:gap-10">
-              <div className="md:max-w-md">
-                <p className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-                  <span aria-hidden="true" className="h-px w-5 bg-gold/70" />
-                  Empieza por aquí
-                </p>
-                <h2 className="mb-3 font-display text-2xl font-semibold not-italic leading-tight text-white md:text-3xl">
-                  Descubre Lisboa con un free tour
-                </h2>
-                <p className="text-sm leading-relaxed text-white/75">
-                  Una buena opción para entender la ciudad durante el primer día y
-                  después recorrerla por tu cuenta con más contexto.
-                </p>
-              </div>
-
-              <div className="mt-7 md:mt-0 md:flex-1">
-                <ul className="mb-6 divide-y divide-white/10 border-y border-white/10">
-                  {FREE_TOUR_HIGHLIGHTS.map((item) => (
-                    <li key={item.anchor}>
-                      <Link
-                        href={`/free-tours-lisboa#${item.anchor}`}
-                        className="group flex min-h-11 items-center justify-between gap-4 py-3 text-white transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <Icon name={item.icon} size={16} className="flex-shrink-0 text-gold" />
-                          <span className="text-sm font-medium">{item.name}</span>
-                        </span>
-                        <Icon
-                          name="arrow_forward"
-                          size={16}
-                          className="flex-shrink-0 text-white/40 motion-safe:transition-transform group-hover:translate-x-1 group-hover:text-gold"
-                        />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/free-tours-lisboa" className="btn-primary w-full sm:w-auto">
-                  Comparar todos los free tours
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Filtros.
 
@@ -139,7 +88,7 @@ export default function ActividadesPage() {
             className="mb-3 max-w-2xl"
           />
 
-          <div className="flex flex-wrap gap-1.5">
+          <div className="filtros-scroll -mx-6 flex gap-1.5 overflow-x-auto px-6 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
             {(['Todas', ...ACTIVITY_CATEGORIES] as const).map((c) => (
               <FilterChip
                 key={c}
@@ -151,7 +100,7 @@ export default function ActividadesPage() {
             ))}
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          <div className="filtros-scroll -mx-6 mt-2 flex gap-1.5 overflow-x-auto px-6 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
             {([
               { id: 'todas', label: 'Cualquier precio' },
               { id: 'gratis', label: 'Gratis' },
@@ -187,11 +136,62 @@ export default function ActividadesPage() {
             {filtered.length} {filtered.length === 1 ? 'actividad' : 'actividades'}
           </p>
           {filtered.length > 0 ? (
-            <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((activity) => (
-                <ActivityCard key={activity.slug} activity={activity} />
-              ))}
-            </div>
+            <>
+              <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                {actividadesIniciales.map((activity) => (
+                  <ActivityCard key={activity.slug} activity={activity} />
+                ))}
+              </div>
+
+              {!hayFiltros && (
+                <div className="my-10 border-y border-border-soft py-5 md:my-12 md:grid md:grid-cols-[minmax(0,0.95fr),minmax(0,1.4fr)] md:items-center md:gap-10">
+                  <div>
+                    <p className="page-eyebrow">Empieza por aquí</p>
+                    <h2 className="mb-2 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-3xl">
+                      Free tours para orientarte el primer día
+                    </h2>
+                    <p className="max-w-xl text-sm leading-relaxed text-text-secondary">
+                      Una forma sencilla de entender barrios, miradores y contexto antes de elegir el resto de actividades.
+                    </p>
+                  </div>
+
+                  <div className="mt-5 md:mt-0">
+                    <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-3 md:gap-y-0">
+                      {FREE_TOUR_HIGHLIGHTS.map((item) => (
+                        <li key={item.anchor}>
+                          <Link
+                            href={`/free-tours-lisboa#${item.anchor}`}
+                            className="group flex min-h-10 items-center justify-between gap-3 border-t border-border-soft py-2 text-text-main transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta sm:border-y sm:py-3"
+                          >
+                            <span className="flex min-w-0 items-center gap-2.5">
+                              <Icon name={item.icon} size={15} className="flex-shrink-0 text-gold" />
+                              <span className="truncate text-sm font-semibold">{item.name}</span>
+                            </span>
+                            <Icon
+                              name="arrow_forward"
+                              size={15}
+                              className="flex-shrink-0 text-text-secondary motion-safe:transition-transform group-hover:translate-x-0.5 group-hover:text-terracotta"
+                            />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href="/free-tours-lisboa" className="text-cta mt-3">
+                      Comparar rutas gratuitas <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
+
+              {actividadesRestantes.length > 0 && (
+                <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                  {actividadesRestantes.map((activity) => (
+                    <ActivityCard key={activity.slug} activity={activity} />
+                  ))}
+                </div>
+              )}
+            </>
           ) : (
             <div className="rounded-xl border border-border-soft bg-white p-8 text-center">
               <p className="mb-4 font-article text-text-main">

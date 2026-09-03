@@ -57,8 +57,8 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
     : product.ctaLabel;
 
   return (
-    <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card transition-all duration-300 hover:border-border-soft hover:shadow-card-hover">
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <article className="group flex h-full min-w-0 flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45">
+      <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
         <Image
           src={product.image}
           alt={product.imageAlt}
@@ -68,17 +68,23 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           priority={priority}
           loading={priority ? undefined : 'lazy'}
         />
-        {product.badge && (
-          <span className="badge-pill absolute left-3 top-3 bg-white/90 text-text-main backdrop-blur-sm">
-            {product.badge}
-          </span>
-        )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <p className="mb-1.5 font-article text-[11px] font-semibold uppercase tracking-widest text-terracotta">
-          {product.kind}
-        </p>
+      <div className="flex flex-1 flex-col">
+        <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-terracotta">
+            {product.kind}
+          </p>
+          {product.badge && (
+            <>
+              <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
+              <span className="font-body text-[10px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
+                {product.badge}
+              </span>
+            </>
+          )}
+        </div>
+
         <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
           {product.name}
         </h3>
@@ -90,7 +96,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           href={link.url}
           target="_blank"
           rel="sponsored noopener noreferrer"
-          className="btn-primary btn-card mt-auto"
+          className="text-cta mt-auto self-start"
           onClick={() =>
             trackClick({
               affiliate_partner: link.provider,
