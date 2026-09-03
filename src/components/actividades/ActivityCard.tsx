@@ -15,9 +15,12 @@ export function ActivityCard({ activity }: { activity: Activity }) {
       : 'De pago';
 
   return (
-    <Link href={`/actividades/${activity.slug}`} className="card-surface group flex h-full flex-col p-4">
+    <Link
+      href={`/actividades/${activity.slug}`}
+      className="group flex h-full flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45"
+    >
       <article className="flex h-full flex-col">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
+        <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
           {activity.image ? (
             <Image
               src={activity.image}
@@ -30,31 +33,33 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           ) : (
             <ActivityImagePlaceholder />
           )}
-          <span className="badge-pill absolute top-3 left-3 bg-white/85 backdrop-blur-sm text-text-main">
+        </div>
+
+        <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
             {activity.category}
-          </span>
-          <span
-            className={`badge-pill absolute top-3 right-3 ${
-              activity.isFree ? 'bg-gold text-night' : 'bg-white/85 backdrop-blur-sm text-text-main'
-            }`}
-          >
+          </p>
+          <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
+          <span className={`font-body text-[10px] font-semibold uppercase tracking-[0.16em] ${
+            activity.isFree ? 'text-terracotta' : 'text-text-secondary'
+          }`}>
             {priceBadge}
           </span>
         </div>
-        <p className="text-xs text-text-secondary uppercase tracking-widest mb-1">{activity.zone}</p>
+
         <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta">
           {activity.title}
         </h3>
         <p className="mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2">{activity.description}</p>
 
-        <div className="mb-3 mt-auto flex items-center justify-between text-sm">
+        <div className="mb-3 mt-auto flex items-center justify-between gap-4 border-t border-border-soft pt-3 text-sm">
           <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
           <span className="text-text-secondary text-xs font-medium">{activity.duration}</span>
         </div>
 
-        <div className="bg-background-light border-l-2 border-gold rounded-md px-3 py-2.5">
+        <div className="border-l-2 border-gold bg-background-light/60 px-3 py-2.5">
           <p className="text-xs leading-relaxed text-text-secondary">
             <span className="text-terracotta font-semibold">Tip para ahorrar: </span>
             {activity.savingTip}
