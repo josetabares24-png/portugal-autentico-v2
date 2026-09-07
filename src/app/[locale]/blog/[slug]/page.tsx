@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
+import { ArticleEditorialLinks } from '@/components/blog/ArticleEditorialLinks';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleRelated } from '@/components/blog/ArticleRelated';
@@ -4003,6 +4004,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       return post ? [post] : [];
     })
     .slice(0, 3);
+  // Related and the body already expose some declared links; restore only the rest.
+  const renderedDestinations = new Set([
+    `/blog/${slug}`,
+    '/planifica-tu-viaje',
+    ...relatedPosts.map((post) => `/blog/${post.id}`),
+    ...article.contenido.flatMap((block) =>
+      block.tipo === 'enlace' && block.href ? [block.href] : [],
+    ),
+  ]);
+  const editorialLinks = (article.links ?? []).filter((link) => {
+    if (renderedDestinations.has(link.href)) return false;
+    renderedDestinations.add(link.href);
+    return true;
+  });
   const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
@@ -4081,6 +4096,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
 
         <ArticleRelated posts={relatedPosts} />
+        <ArticleEditorialLinks links={editorialLinks} />
 
         <div className="article-compact-ending max-w-2xl mx-auto mt-10">
           <ArticleFooter
