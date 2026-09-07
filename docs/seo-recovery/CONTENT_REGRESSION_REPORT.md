@@ -1315,3 +1315,67 @@ La evidencia es el pasaje localizado en el cuerpo actual, no una fuente de verif
 ## Riesgos factuales existentes fuera de restauracion
 
 Aeropuerto contiene tarifas antiguas y Aerobus; presupuesto conserva cifras historicas; Sintra contiene frecuencias/precios y promesas de acceso; fado y restaurantes tienen condiciones comerciales no verificadas. No corregidos en esta fase. HIGH si se presentan como informacion actual verificada: requieren una revision con operadores/fuentes oficiales.
+
+## Encabezados del area de contenido (reconstruccion)
+
+H2 incluye extras comoLlegar/mejorHora; H3 incluye subseccion y titulo Preguntas frecuentes, no preguntas H4. Excluye footer/Related.
+
+| Articulo | H2 antes/ahora | H3 antes/ahora |
+|---|---|---|
+| time-out-market-lisboa | 8/8 | 0/0 |
+| estacion-oriente-lisboa | 7/7 | 1/1 |
+| estacion-olaias-lisboa | 7/7 | 0/0 |
+| lisboa-en-7-dias | 7/7 | 11/10 |
+| donde-fotografiar-lisboa | 7/7 | 7/6 |
+| lisboa-con-ninos | 7/7 | 7/6 |
+| lisboa-en-pareja | 6/6 | 7/6 |
+| mejores-apps-lisboa | 8/8 | 1/0 |
+| como-pagar-en-portugal | 11/11 | 1/0 |
+| donde-alojarse-en-lisboa | 14/14 | 1/0 |
+| lisboa-card-vale-la-pena | 13/13 | 1/0 |
+| como-moverse-por-lisboa | 14/14 | 1/0 |
+| que-hacer-gratis-en-lisboa | 13/13 | 1/0 |
+| mejores-miradores-lisboa | 13/13 | 1/0 |
+| donde-comer-barato-lisboa | 9/9 | 1/0 |
+| barrios-imprescindibles | 8/8 | 1/0 |
+| evitar-turistadas-lisboa | 8/8 | 1/0 |
+| como-ir-sintra-desde-lisboa | 5/5 | 1/0 |
+| barrios-lisboa-donde-alojarse | 8/8 | 1/0 |
+| pasteles-de-belem | 8/8 | 1/0 |
+| mejores-pasteles-nata-lisboa | 8/8 | 1/0 |
+| mejor-epoca-visitar-lisboa | 6/6 | 6/5 |
+| aeropuerto-lisboa-al-centro | 8/8 | 1/0 |
+| restaurantes-romanticos-lisboa | 13/13 | 1/0 |
+| que-ver-cascais-desde-lisboa | 10/10 | 1/0 |
+| playas-cerca-lisboa | 8/8 | 1/0 |
+| donde-escuchar-fado-autentico | 10/10 | 1/0 |
+| presupuesto-viajar-lisboa | 11/11 | 1/0 |
+| mejores-mercados-lisboa | 7/7 | 1/0 |
+| donde-tomar-cafe-lisboa | 8/8 | 1/0 |
+| miradores-atardecer-lisboa | 7/7 | 1/0 |
+| que-comprar-lisboa-souvenirs | 7/7 | 1/0 |
+| viajar-ninos-lisboa | 10/10 | 1/0 |
+| excursiones-desde-lisboa | 10/10 | 1/0 |
+| vida-nocturna-lisboa | 5/5 | 1/0 |
+| lisboa-en-invierno | 5/5 | 1/0 |
+| errores-turistas-lisboa | 11/11 | 1/0 |
+| sintra-desde-lisboa | 5/5 | 1/0 |
+| historia-de-lisboa | 8/8 | 1/0 |
+| terremoto-lisboa-1755 | 5/5 | 1/0 |
+| descubrimientos-portugueses-lisboa | 5/5 | 1/0 |
+| azulejos-portugueses-historia | 4/4 | 1/0 |
+| novedades-lisboa-2026 | 5/5 | 1/0 |
+| festivales-eventos-lisboa-2026 | 5/5 | 1/0 |
+| lisboa-vs-porto | 5/5 | 1/0 |
+| monumentos-de-lisboa | 6/6 | 1/0 |
+| semana-santa-lisboa | 3/3 | 1/0 |
+| alfama-historia-guia | 5/5 | 1/0 |
+| gastronomia-portuguesa-guia | 5/5 | 1/0 |
+| fado-historia-origen | 4/4 | 1/0 |
+| belem-barrio-guia | 4/4 | 1/0 |
+| chiado-bairro-alto-guia | 4/4 | 1/0 |
+| mouraria-barrio-guia | 3/3 | 1/0 |
+| vinos-portugueses-guia | 4/4 | 1/0 |
+| tram-28-historia-guia | 3/3 | 1/0 |
+| bacalhau-plato-portugal | 3/3 | 1/0 |
+| arquitectura-manuelina-lisboa | 2/2 | 1/0 |

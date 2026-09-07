@@ -4,7 +4,7 @@ SHA `5f26c7989fccc5b151f07ab5cb48003463bab058`; branch `audit/content-regression
 
 Produccion inspeccionada: `dpl_3w5hDbnRW7dgHybDDZxKJGWRg5gv`, READY, mismo SHA. Sin despliegue.
 
-Node 24.16.0; npm 11.13.0; Next 16.1.6; React 19.2.3; TypeScript 5.9.3; Supabase 2.90.1. Versiones adicionales en lockfile, no inferidas de rangos.
+Node 24.16.0; npm 11.13.0; Next 16.1.6; React 19.2.3; TypeScript 5.9.3; Supabase 2.90.1; Clerk 6.36.7; next-intl 4.13.5. Versiones instaladas, no inferidas de rangos.
 
 ## Pruebas previas
 
