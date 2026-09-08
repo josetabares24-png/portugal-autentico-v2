@@ -23,6 +23,7 @@ import net from 'node:net';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import ts from 'typescript';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR_SNAPSHOTS = path.join(RAIZ, '.snapshots');
@@ -552,6 +553,30 @@ const INVARIANTES = [
 ];
 
 async function verificar() {
+  const source = ts.createSourceFile('page.tsx', fs.readFileSync(
+    path.join(RAIZ, 'src/app/[locale]/blog/[slug]/page.tsx'), 'utf8'),
+    ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+  const declaredLinks = new Map();
+  // Parse the data object, not the renderer: a missing rendered link must fail this test.
+  for (const statement of source.statements) {
+    if (!ts.isVariableStatement(statement)) continue;
+    for (const declaration of statement.declarationList.declarations) {
+      if (declaration.name.getText(source) !== 'articles' ||
+          !declaration.initializer || !ts.isObjectLiteralExpression(declaration.initializer)) continue;
+      for (const article of declaration.initializer.properties) {
+        if (!ts.isPropertyAssignment(article) || !ts.isObjectLiteralExpression(article.initializer)) continue;
+        const slug = article.name.text;
+        const links = article.initializer.properties.find((p) => p.name?.getText(source) === 'links');
+        if (!links || !ts.isPropertyAssignment(links) || !ts.isArrayLiteralExpression(links.initializer)) continue;
+        declaredLinks.set(slug, links.initializer.elements.flatMap((link) => {
+          if (!ts.isObjectLiteralExpression(link)) return [];
+          const href = link.properties.find((p) => p.name?.getText(source) === 'href');
+          return href && ts.isPropertyAssignment(href) && ts.isStringLiteral(href.initializer)
+            ? [href.initializer.text] : [];
+        }));
+      }
+    }
+  }
   const slugs = leerSlugs();
   console.log(`Artículos detectados: ${slugs.length}\n`);
   const { puerto, apagar } = await levantarServidor();
@@ -577,6 +602,12 @@ async function verificar() {
     }
 
     const h = huella(await r.text());
+    for (const href of declaredLinks.get(slug) ?? []) {
+      if (href === `/blog/${slug}`) continue;
+      if (!h.enlacesInternos.includes(href)) {
+        fallos.push({ slug, regla: 'enlace editorial declarado visible', detalle: href });
+      }
+    }
     verificados += 1;
     for (const inv of INVARIANTES) {
       const detalle = inv.check(h, slug);
