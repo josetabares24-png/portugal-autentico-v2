@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { FilterChip } from '@/components/FilterChip';
@@ -8,9 +9,13 @@ import { blogPosts } from '@/data/blog-posts';
 
 const POSTS_PER_PAGE = 9;
 
-export default function BlogClient() {
+type BlogClientProps = {
+  initialPage?: number;
+};
+
+export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
-  const [paginaActual, setPaginaActual] = useState(1);
+  const [paginaActual, setPaginaActual] = useState(initialPage);
   const [email, setEmail] = useState('');
   const [nombre, setNombre] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -116,40 +121,85 @@ export default function BlogClient() {
 
           {totalPaginas > 1 && (
             <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-16" aria-label="Paginación">
-              <button
-                onClick={() => { setPaginaActual(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                disabled={paginaActual === 1}
-                className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                aria-label="Página anterior"
-              >
-                &larr;<span className="hidden sm:inline"> Anterior</span>
-              </button>
+              {categoriaActiva === 'Todos' ? (
+                paginaActual > 1 ? (
+                  <Link
+                    href={paginaActual === 2 ? '/blog' : `/blog?page=${paginaActual - 1}`}
+                    className="text-sm text-text-secondary hover:text-text-main transition-colors"
+                    aria-label="Página anterior"
+                  >
+                    &larr;<span className="hidden sm:inline"> Anterior</span>
+                  </Link>
+                ) : (
+                  <span className="text-sm text-text-secondary opacity-30" aria-hidden="true">
+                    &larr;<span className="hidden sm:inline"> Anterior</span>
+                  </span>
+                )
+              ) : (
+                <button
+                  onClick={() => { setPaginaActual(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  disabled={paginaActual === 1}
+                  className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  aria-label="Página anterior"
+                >
+                  &larr;<span className="hidden sm:inline"> Anterior</span>
+                </button>
+              )}
 
               <div className="flex items-center gap-2">
-                {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => { setPaginaActual(n); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                    aria-current={n === paginaActual ? 'page' : undefined}
-                    className={`w-8 h-8 rounded-full text-sm font-semibold transition-all duration-200 ${
-                      n === paginaActual
-                        ? 'bg-terracotta text-white shadow-card'
-                        : 'text-text-secondary hover:bg-white hover:shadow-soft'
-                    }`}
-                  >
-                    {n}
-                  </button>
-                ))}
+                {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((n) => {
+                  const classes = `inline-flex w-8 h-8 items-center justify-center rounded-full text-sm font-semibold transition-all duration-200 ${
+                    n === paginaActual
+                      ? 'bg-terracotta text-white shadow-card'
+                      : 'text-text-secondary hover:bg-white hover:shadow-soft'
+                  }`;
+
+                  return categoriaActiva === 'Todos' ? (
+                    <Link
+                      key={n}
+                      href={n === 1 ? '/blog' : `/blog?page=${n}`}
+                      aria-current={n === paginaActual ? 'page' : undefined}
+                      className={classes}
+                    >
+                      {n}
+                    </Link>
+                  ) : (
+                    <button
+                      key={n}
+                      onClick={() => { setPaginaActual(n); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      aria-current={n === paginaActual ? 'page' : undefined}
+                      className={classes}
+                    >
+                      {n}
+                    </button>
+                  );
+                })}
               </div>
 
-              <button
-                onClick={() => { setPaginaActual(p => Math.min(totalPaginas, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                disabled={paginaActual === totalPaginas}
-                className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                aria-label="Página siguiente"
-              >
-                <span className="hidden sm:inline">Siguiente </span>&rarr;
-              </button>
+              {categoriaActiva === 'Todos' ? (
+                paginaActual < totalPaginas ? (
+                  <Link
+                    href={`/blog?page=${paginaActual + 1}`}
+                    className="text-sm text-text-secondary hover:text-text-main transition-colors"
+                    aria-label="Página siguiente"
+                  >
+                    <span className="hidden sm:inline">Siguiente </span>&rarr;
+                  </Link>
+                ) : (
+                  <span className="text-sm text-text-secondary opacity-30" aria-hidden="true">
+                    <span className="hidden sm:inline">Siguiente </span>&rarr;
+                  </span>
+                )
+              ) : (
+                <button
+                  onClick={() => { setPaginaActual(p => Math.min(totalPaginas, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  disabled={paginaActual === totalPaginas}
+                  className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  aria-label="Página siguiente"
+                >
+                  <span className="hidden sm:inline">Siguiente </span>&rarr;
+                </button>
+              )}
             </nav>
           )}
         </div>
