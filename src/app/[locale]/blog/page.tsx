@@ -43,14 +43,25 @@ const jsonLd = {
   })),
 };
 
-export default function BlogPage() {
+type BlogPageProps = {
+  searchParams: Promise<{ page?: string | string[] }>;
+};
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const { page } = await searchParams;
+  const requestedPage = Number.parseInt(Array.isArray(page) ? page[0] : page ?? '1', 10);
+  const totalPages = Math.ceil(Math.max(0, blogPosts.length - 4) / 9);
+  const initialPage = Number.isFinite(requestedPage)
+    ? Math.min(Math.max(requestedPage, 1), totalPages)
+    : 1;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogClient />
+      <BlogClient key={initialPage} initialPage={initialPage} />
     </>
   );
 }

@@ -200,8 +200,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'aeropuerto-lisboa-al-centro',
-    titulo: 'Cómo Ir del Aeropuerto de Lisboa al Centro',
-    excerpt: 'Metro, Aerobus, taxi y Uber comparados: precios reales, tiempos y cuál conviene según cómo viajes.',
+    titulo: 'Cómo ir del aeropuerto de Lisboa al centro',
+    excerpt: 'Metro, autobuses, taxi y Uber o Bolt comparados según equipaje, hora de llegada y presupuesto.',
     categoria: 'Transporte',
     fecha: '19 Jun 2026',
     autor: 'José Tabares',

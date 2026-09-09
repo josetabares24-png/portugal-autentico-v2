@@ -59,6 +59,11 @@ function leerSlugs() {
   return [...new Set([...desdeIndice, ...desdeArticulos])].sort();
 }
 
+function leerSlugsDelIndice() {
+  const posts = fs.readFileSync(path.join(RAIZ, 'src/data/blog-posts.ts'), 'utf8');
+  return [...posts.matchAll(/id:\s*'([a-z0-9-]+)'/g)].map((m) => m[1]);
+}
+
 // ---------------------------------------------------------------------------
 // Servidor de pruebas
 // ---------------------------------------------------------------------------
@@ -586,6 +591,43 @@ async function verificar() {
   let verificados = 0;
   let redirigidos = 0;
 
+  const slugsDelIndice = leerSlugsDelIndice();
+  const postsPorPagina = 9;
+  const totalPaginas = Math.ceil(Math.max(0, slugsDelIndice.length - 4) / postsPorPagina);
+
+  for (let pagina = 1; pagina <= totalPaginas; pagina += 1) {
+    const sufijo = pagina === 1 ? '' : `?page=${pagina}`;
+    const r = await fetch(`http://127.0.0.1:${puerto}/blog${sufijo}`, { redirect: 'manual' });
+    if (r.status !== 200) {
+      fallos.push({ slug: `/blog${sufijo}`, regla: 'paginación rastreable', detalle: `HTTP ${r.status}` });
+      continue;
+    }
+
+    const html = await r.text();
+    const inicio = pagina === 1 ? 0 : 4 + (pagina - 1) * postsPorPagina;
+    const fin = pagina === 1 ? 4 + postsPorPagina : inicio + postsPorPagina;
+    const esperados = slugsDelIndice.slice(inicio, fin);
+    const enlaces = new Set(
+      [...html.matchAll(/href="\/blog\/([^"?#]+)"/g)].map((m) => m[1]),
+    );
+
+    for (const slug of esperados) {
+      if (!enlaces.has(slug)) {
+        fallos.push({ slug: `/blog${sufijo}`, regla: 'artículo enlazado en HTML', detalle: slug });
+      }
+    }
+
+    for (let destino = 2; destino <= totalPaginas; destino += 1) {
+      if (!html.includes(`href="/blog?page=${destino}"`)) {
+        fallos.push({
+          slug: `/blog${sufijo}`,
+          regla: 'enlace de paginación rastreable',
+          detalle: `/blog?page=${destino}`,
+        });
+      }
+    }
+  }
+
   for (const slug of slugs) {
     const r = await fetch(`http://127.0.0.1:${puerto}/blog/${slug}`, { redirect: 'manual' });
 
@@ -628,6 +670,7 @@ async function verificar() {
 
   console.log(`\n${'─'.repeat(60)}`);
   console.log(`Artículos verificados: ${verificados}   ·   con redirección: ${redirigidos}`);
+  console.log(`Páginas del índice rastreables: ${totalPaginas}`);
   console.log(`Invariantes por artículo: ${INVARIANTES.length}   ·   comprobaciones: ${verificados * INVARIANTES.length}`);
   console.log(`Enlaces internos únicos: ${enlacesInternos.size}   ·   rotos: ${rotos.length}`);
 
