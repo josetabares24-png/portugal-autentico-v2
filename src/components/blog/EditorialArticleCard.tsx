@@ -19,8 +19,8 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
 
   if (variant === 'feature') {
     return (
-      <article>
-        <Link href={`/blog/${post.id}`} className="group block">
+      <article className="min-w-0">
+        <Link href={`/blog/${post.id}`} className="group block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
           <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-white/60">
             <Image
               src={imageSrc}
@@ -34,7 +34,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
           <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
             {post.categoria} &mdash; {post.fecha}
           </p>
-          <h2 className="mb-3 font-display text-3xl italic leading-[1.12] text-text-main transition-colors group-hover:text-terracotta md:text-4xl">
+          <h2 className="mb-3 break-words font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-text-main transition-colors group-hover:text-terracotta md:text-4xl">
             {post.titulo}
           </h2>
           <p className="max-w-3xl font-body text-base leading-relaxed text-text-secondary md:text-lg">
@@ -47,8 +47,8 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
 
   if (variant === 'compact') {
     return (
-      <article>
-        <Link href={`/blog/${post.id}`} className="group grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4">
+      <article className="min-w-0">
+        <Link href={`/blog/${post.id}`} className="group grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-white/60">
             <Image
               src={imageSrc}
@@ -62,9 +62,9 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
             <p className="mb-1 font-body text-[11px] uppercase tracking-[0.14em] text-text-secondary">
               {post.categoria}
             </p>
-            <h4 className="font-body text-[0.95rem] font-semibold leading-snug text-text-main transition-colors group-hover:text-terracotta">
+            <h2 className="break-words font-body text-[0.95rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
               {post.titulo}
-            </h4>
+            </h2>
           </div>
         </Link>
       </article>
@@ -72,8 +72,8 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
   }
 
   return (
-    <article>
-      <Link href={`/blog/${post.id}`} className="group block border-t border-border-soft pt-4">
+    <article className="min-w-0">
+      <Link href={`/blog/${post.id}`} className="group block rounded-md border-t border-border-soft pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
         <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
           <Image
             src={imageSrc}
@@ -86,10 +86,10 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
         <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
           {post.categoria} &mdash; {post.fecha}
         </p>
-        <h2 className="mb-2 font-display text-xl italic leading-snug text-text-main transition-colors group-hover:text-terracotta">
+        <h2 className="mb-2 break-words font-display text-[1.375rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
           {post.titulo}
         </h2>
-        <p className="font-body text-sm leading-relaxed text-text-secondary">{post.excerpt}</p>
+        <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">{post.excerpt}</p>
       </Link>
     </article>
   );
