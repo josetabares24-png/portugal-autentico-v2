@@ -15,7 +15,8 @@ type BlogClientProps = {
 
 export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
-  const [paginaActual, setPaginaActual] = useState(initialPage);
+  const [paginaFiltrada, setPaginaFiltrada] = useState(1);
+  const paginaActual = categoriaActiva === 'Todos' ? initialPage : paginaFiltrada;
   const [email, setEmail] = useState('');
   const [nombre, setNombre] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -43,7 +44,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
 
   function cambiarCategoria(cat: string) {
     setCategoriaActiva(cat);
-    setPaginaActual(1);
+    setPaginaFiltrada(1);
   }
 
   return (
@@ -129,7 +130,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
             currentPage={paginaActual}
             totalPages={totalPaginas}
             linkPages={categoriaActiva === 'Todos'}
-            onPageChange={(page) => { setPaginaActual(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onPageChange={(page) => { setPaginaFiltrada(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           />
         </div>
       </section>}
