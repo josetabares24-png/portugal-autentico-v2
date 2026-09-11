@@ -137,9 +137,9 @@ export default function ActividadesPage() {
           </p>
           {filtered.length > 0 ? (
             <>
-              <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
                 {actividadesIniciales.map((activity) => (
-                  <ActivityCard key={activity.slug} activity={activity} />
+                  <ActivityCard key={activity.slug} activity={activity} compactMobile />
                 ))}
               </div>
 
@@ -185,9 +185,9 @@ export default function ActividadesPage() {
               )}
 
               {actividadesRestantes.length > 0 && (
-                <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
                   {actividadesRestantes.map((activity) => (
-                    <ActivityCard key={activity.slug} activity={activity} />
+                    <ActivityCard key={activity.slug} activity={activity} compactMobile />
                   ))}
                 </div>
               )}

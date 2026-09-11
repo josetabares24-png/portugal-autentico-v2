@@ -2,12 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Activity } from '@/data/activities';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
+import styles from './ActivityCard.module.css';
 
 function formatPrice(n: number) {
   return n % 1 === 0 ? `${n}` : n.toFixed(2).replace('.', ',');
 }
 
-export function ActivityCard({ activity }: { activity: Activity }) {
+export function ActivityCard({ activity, compactMobile = false }: { activity: Activity; compactMobile?: boolean }) {
   const priceBadge = activity.isFree
     ? 'Gratis'
     : activity.priceFrom !== undefined
@@ -17,10 +18,10 @@ export function ActivityCard({ activity }: { activity: Activity }) {
   return (
     <Link
       href={`/actividades/${activity.slug}`}
-      className="group flex h-full flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45"
+      className={`group flex h-full flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45 ${compactMobile ? styles.compact : ''}`}
     >
-      <article className="flex h-full flex-col">
-        <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
+      <article className={`flex h-full flex-col ${styles.content}`}>
+        <div className={`relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60 ${styles.image}`}>
           {activity.image ? (
             <Image
               src={activity.image}
@@ -28,14 +29,16 @@ export function ActivityCard({ activity }: { activity: Activity }) {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              sizes={compactMobile
+                ? '(max-width: 639px) 96px, (max-width: 1023px) 50vw, 33vw'
+                : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'}
             />
           ) : (
             <ActivityImagePlaceholder />
           )}
         </div>
 
-        <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+        <div className={`mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 ${styles.category}`}>
           <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
             {activity.category}
           </p>
@@ -47,19 +50,19 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           </span>
         </div>
 
-        <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta">
+        <h3 className={`mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta ${styles.title}`}>
           {activity.title}
         </h3>
-        <p className="mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2">{activity.description}</p>
+        <p className={`mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2 ${styles.description}`}>{activity.description}</p>
 
-        <div className="mb-3 mt-auto flex items-center justify-between gap-4 border-t border-border-soft pt-3 text-sm">
+        <div className={`mb-3 mt-auto flex items-center justify-between gap-4 border-t border-border-soft pt-3 text-sm ${styles.details}`}>
           <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
           <span className="text-text-secondary text-xs font-medium">{activity.duration}</span>
         </div>
 
-        <div className="border-l-2 border-gold bg-background-light/60 px-3 py-2.5">
+        <div className={`border-l-2 border-gold bg-background-light/60 px-3 py-2.5 ${styles.tip}`}>
           <p className="text-xs leading-relaxed text-text-secondary">
             <span className="text-terracotta font-semibold">Tip para ahorrar: </span>
             {activity.savingTip}
