@@ -38,21 +38,23 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
           )}
         </div>
 
-        <div className={`mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 ${styles.category}`}>
-          <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
-            {activity.category}
-          </p>
-          <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
-          <span className={`font-body text-[10px] font-semibold uppercase tracking-[0.16em] ${
-            activity.isFree ? 'text-terracotta' : 'text-text-secondary'
-          }`}>
-            {priceBadge}
-          </span>
-        </div>
+        <div className={styles.heading}>
+          <div className={`mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 ${styles.category}`}>
+            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
+              {activity.category}
+            </p>
+            <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
+            <span className={`font-body text-[10px] font-semibold uppercase tracking-[0.16em] ${
+              activity.isFree ? 'text-terracotta' : 'text-text-secondary'
+            }`}>
+              {priceBadge}
+            </span>
+          </div>
 
-        <h3 className={`mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta ${styles.title}`}>
-          {activity.title}
-        </h3>
+          <h3 className={`mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta ${styles.title}`}>
+            {activity.title}
+          </h3>
+        </div>
         <p className={`mb-3 min-h-[2.75rem] text-sm leading-relaxed text-text-secondary line-clamp-2 ${styles.description}`}>{activity.description}</p>
 
         <div className={`mb-3 mt-auto flex items-center justify-between gap-4 border-t border-border-soft pt-3 text-sm ${styles.details}`}>

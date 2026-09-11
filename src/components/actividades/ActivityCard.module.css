@@ -3,19 +3,26 @@
   outline-offset: 4px;
 }
 
+.heading {
+  display: contents;
+}
+
 /* Only the catalog opts in; detail-page recommendations keep their layout. */
 @media (max-width: 639px) {
   .compact .content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 96px;
-    grid-template-rows: min-content auto auto auto auto;
     grid-template-areas:
-      "category image"
-      "title image"
+      "heading image"
       "description description"
       "details details"
       "tip tip";
     column-gap: 16px;
+  }
+
+  .compact .heading {
+    display: block;
+    grid-area: heading;
   }
 
   .compact .image {
@@ -26,14 +33,10 @@
   }
 
   .compact .category {
-    grid-area: category;
-    align-self: start;
     column-gap: 8px;
-    letter-spacing: 0;
   }
 
   .compact .title {
-    grid-area: title;
     overflow-wrap: anywhere;
   }
 
