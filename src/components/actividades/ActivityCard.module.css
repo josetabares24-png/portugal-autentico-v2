@@ -8,6 +8,7 @@
   .compact .content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 96px;
+    grid-template-rows: min-content auto auto auto auto;
     grid-template-areas:
       "category image"
       "title image"
