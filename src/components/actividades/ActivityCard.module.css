@@ -1,0 +1,67 @@
+.compact:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.heading {
+  display: contents;
+}
+
+/* Only the catalog opts in; detail-page recommendations keep their layout. */
+@media (max-width: 639px) {
+  .compact .content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 96px;
+    grid-template-areas:
+      "heading image"
+      "description description"
+      "details details"
+      "tip tip";
+    column-gap: 16px;
+  }
+
+  .compact .heading {
+    display: block;
+    grid-area: heading;
+  }
+
+  .compact .image {
+    grid-area: image;
+    align-self: start;
+    aspect-ratio: 1;
+    margin-bottom: 8px;
+  }
+
+  .compact .category {
+    column-gap: 8px;
+  }
+
+  .compact .title {
+    overflow-wrap: anywhere;
+  }
+
+  .compact .description {
+    grid-area: description;
+    margin-top: 4px;
+  }
+
+  .compact .details {
+    grid-area: details;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 4px;
+    margin-top: 0;
+    padding-top: 8px;
+  }
+
+  .compact .tip {
+    grid-area: tip;
+    background: transparent;
+    padding: 0 0 0 8px;
+  }
+
+  .compact .tip p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
