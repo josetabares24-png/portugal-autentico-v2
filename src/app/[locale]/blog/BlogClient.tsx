@@ -1,9 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
+import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
 
@@ -15,7 +15,8 @@ type BlogClientProps = {
 
 export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
-  const [paginaActual, setPaginaActual] = useState(initialPage);
+  const [paginaFiltrada, setPaginaFiltrada] = useState(1);
+  const paginaActual = categoriaActiva === 'Todos' ? initialPage : paginaFiltrada;
   const [email, setEmail] = useState('');
   const [nombre, setNombre] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -43,7 +44,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
 
   function cambiarCategoria(cat: string) {
     setCategoriaActiva(cat);
-    setPaginaActual(1);
+    setPaginaFiltrada(1);
   }
 
   return (
@@ -78,13 +79,13 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
       </section>
 
       {/* Artículo destacado + recientes */}
-      <section className="bg-background-light py-8 md:py-10">
+      {paginaActual === 1 && featured && <section className="bg-background-light py-8 md:py-10">
         <div className="max-w-6xl mx-auto px-6">
           {featured && (
             <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr),minmax(320px,1.35fr)] lg:gap-12 lg:items-start">
               <EditorialArticleCard post={featured} variant="feature" />
 
-              <aside className="border-t border-border-soft pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              {secondary.length > 0 && <aside className="border-t border-border-soft pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                 <p className="mb-5 border-b border-border-soft pb-3 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
                   Últimas entradas
                 </p>
@@ -93,20 +94,26 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
                     <EditorialArticleCard key={post.id} post={post} variant="compact" />
                   ))}
                 </div>
-              </aside>
+              </aside>}
             </div>
           )}
         </div>
-      </section>
+      </section>}
 
       {/* Separador */}
-      <div className="max-w-6xl mx-auto px-6">
+      {paginaActual === 1 && remaining.length > 0 && <div className="max-w-6xl mx-auto px-6">
         <div className="border-t border-border-soft" />
-      </div>
+      </div>}
 
       {/* Grid de artículos */}
-      <section className="bg-background-light py-14 md:py-16">
+      {(remaining.length > 0 || postsFiltrados.length === 0) && <section className="bg-background-light py-8 md:py-10" aria-label="Artículos del blog">
         <div className="max-w-6xl mx-auto px-6">
+          {remaining.length > 0 && (
+            <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2 text-sm text-text-secondary">
+              <p className="font-semibold text-text-main">{categoriaActiva === 'Todos' ? 'Sigue explorando' : categoriaActiva}</p>
+              <p role="status">{4 + (paginaActual - 1) * POSTS_PER_PAGE + 1}–{Math.min(4 + paginaActual * POSTS_PER_PAGE, postsFiltrados.length)} de {postsFiltrados.length} artículos</p>
+            </div>
+          )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => (
               <EditorialArticleCard key={post.id} post={post} />
@@ -119,104 +126,27 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
             </p>
           )}
 
-          {totalPaginas > 1 && (
-            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-16" aria-label="Paginación">
-              {categoriaActiva === 'Todos' ? (
-                paginaActual > 1 ? (
-                  <Link
-                    href={paginaActual === 2 ? '/blog' : `/blog?page=${paginaActual - 1}`}
-                    className="text-sm text-text-secondary hover:text-text-main transition-colors"
-                    aria-label="Página anterior"
-                  >
-                    &larr;<span className="hidden sm:inline"> Anterior</span>
-                  </Link>
-                ) : (
-                  <span className="text-sm text-text-secondary opacity-30" aria-hidden="true">
-                    &larr;<span className="hidden sm:inline"> Anterior</span>
-                  </span>
-                )
-              ) : (
-                <button
-                  onClick={() => { setPaginaActual(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  disabled={paginaActual === 1}
-                  className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  aria-label="Página anterior"
-                >
-                  &larr;<span className="hidden sm:inline"> Anterior</span>
-                </button>
-              )}
-
-              <div className="flex items-center gap-2">
-                {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((n) => {
-                  const classes = `inline-flex w-8 h-8 items-center justify-center rounded-full text-sm font-semibold transition-all duration-200 ${
-                    n === paginaActual
-                      ? 'bg-terracotta text-white shadow-card'
-                      : 'text-text-secondary hover:bg-white hover:shadow-soft'
-                  }`;
-
-                  return categoriaActiva === 'Todos' ? (
-                    <Link
-                      key={n}
-                      href={n === 1 ? '/blog' : `/blog?page=${n}`}
-                      aria-current={n === paginaActual ? 'page' : undefined}
-                      className={classes}
-                    >
-                      {n}
-                    </Link>
-                  ) : (
-                    <button
-                      key={n}
-                      onClick={() => { setPaginaActual(n); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                      aria-current={n === paginaActual ? 'page' : undefined}
-                      className={classes}
-                    >
-                      {n}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {categoriaActiva === 'Todos' ? (
-                paginaActual < totalPaginas ? (
-                  <Link
-                    href={`/blog?page=${paginaActual + 1}`}
-                    className="text-sm text-text-secondary hover:text-text-main transition-colors"
-                    aria-label="Página siguiente"
-                  >
-                    <span className="hidden sm:inline">Siguiente </span>&rarr;
-                  </Link>
-                ) : (
-                  <span className="text-sm text-text-secondary opacity-30" aria-hidden="true">
-                    <span className="hidden sm:inline">Siguiente </span>&rarr;
-                  </span>
-                )
-              ) : (
-                <button
-                  onClick={() => { setPaginaActual(p => Math.min(totalPaginas, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  disabled={paginaActual === totalPaginas}
-                  className="text-sm text-text-secondary hover:text-text-main disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  aria-label="Página siguiente"
-                >
-                  <span className="hidden sm:inline">Siguiente </span>&rarr;
-                </button>
-              )}
-            </nav>
-          )}
+          <BlogPagination
+            currentPage={paginaActual}
+            totalPages={totalPaginas}
+            linkPages={categoriaActiva === 'Todos'}
+            onPageChange={(page) => { setPaginaFiltrada(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          />
         </div>
-      </section>
+      </section>}
 
       {/* Newsletter */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
+      <section className="relative bg-night bg-azulejo-pattern-gold py-12 md:py-16 overflow-hidden">
         <div className="relative max-w-xl mx-auto px-6 text-center">
-          <h2 className="font-display italic text-white text-3xl md:text-4xl mb-3">
+          <h2 className="font-display not-italic leading-tight tracking-normal text-white text-3xl md:text-4xl mb-3">
             Tips de local, directo a tu email
           </h2>
-          <p className="text-white/60 mb-10 leading-relaxed">
+          <p className="text-white/80 mb-6 leading-relaxed">
             Lo mejor de Lisboa sin spam. Sin publicidad. Solo lo que importa.
           </p>
 
           {status === 'success' ? (
-            <p className="text-white font-semibold card-surface bg-white/10 py-4 px-6">
+            <p role="status" className="text-white font-semibold rounded-lg border border-white/20 bg-white/10 py-4 px-6">
               Gracias por suscribirte. Revisa tu bandeja de entrada.
             </p>
           ) : (
@@ -250,36 +180,46 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
                   setErrorMessage('Error de conexión. Inténtalo de nuevo.');
                 }
               }}
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-4 text-left"
             >
+              <label htmlFor="blog-newsletter-name" className="text-sm font-medium text-white">Nombre <span className="font-normal text-white/80">(opcional)</span></label>
               <input
+                id="blog-newsletter-name"
+                name="name"
+                autoComplete="given-name"
                 type="text"
                 placeholder="Tu nombre (opcional)"
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
-                className="w-full px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
+                className="-mt-2 min-h-12 w-full px-4 py-3 rounded-lg bg-white/10 border border-white/40 text-white placeholder-white/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white text-base"
               />
-              <div className="flex flex-col sm:flex-row gap-3">
+              <label htmlFor="blog-newsletter-email" className="text-sm font-medium text-white">Email</label>
+              <div className="-mt-2 flex flex-col sm:flex-row gap-3">
                 <input
+                  id="blog-newsletter-email"
+                  name="email"
+                  autoComplete="email"
+                  aria-invalid={status === 'error'}
+                  aria-describedby={errorMessage ? 'blog-newsletter-error' : undefined}
                   type="email"
                   placeholder="tu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 min-w-0 px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 transition-colors focus:outline-none focus:border-gold text-sm"
+                  className="min-h-12 flex-1 min-w-0 px-4 py-3 rounded-lg bg-white/10 border border-white/40 text-white placeholder-white/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white text-base"
                 />
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="btn-primary flex-shrink-0"
+                  className="btn-primary flex-shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   {status === 'loading' ? 'Enviando…' : 'Suscribirse'}
                 </button>
               </div>
               {errorMessage && (
-                <p className="text-red-400 text-xs text-left">{errorMessage}</p>
+                <p id="blog-newsletter-error" role="alert" className="text-red-200 text-sm">{errorMessage}</p>
               )}
-              <p className="text-white/30 text-xs">Sin spam. Cancela cuando quieras.</p>
+              <p className="text-white/75 text-xs">Sin spam. Cancela cuando quieras.</p>
             </form>
           )}
         </div>
