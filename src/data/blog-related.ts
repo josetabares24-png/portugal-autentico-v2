@@ -5,6 +5,8 @@
  * recomendando las tres publicaciones más recientes aunque no compartan tema.
  */
 export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
+  'volta-portugal-devolucion-envases': ['como-pagar-en-portugal', 'presupuesto-viajar-lisboa', 'mejores-mercados-lisboa'],
+  'patinetes-electricos-lisboa': ['como-moverse-por-lisboa', 'mejores-apps-lisboa', 'estacion-oriente-lisboa'],
   'time-out-market-lisboa': ['mejores-mercados-lisboa', 'donde-comer-barato-lisboa', 'vida-nocturna-lisboa'],
   'estacion-oriente-lisboa': ['estacion-olaias-lisboa', 'como-moverse-por-lisboa', 'lisboa-con-ninos'],
   'estacion-olaias-lisboa': ['estacion-oriente-lisboa', 'como-moverse-por-lisboa', 'donde-fotografiar-lisboa'],
