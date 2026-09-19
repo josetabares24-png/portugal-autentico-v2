@@ -14,6 +14,108 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'volta-portugal-devolucion-envases': {
+    titulo: 'Volta en Portugal: cómo devolver envases y recuperar el depósito',
+    descripcion: 'Qué significa el símbolo Volta, por qué algunas bebidas llevan un depósito de 10 céntimos y cómo devolver sus envases durante un viaje a Lisboa.',
+    seoTitle: 'Volta en Portugal: envases y devolución de los 10 céntimos',
+    metaDescription: 'Qué es Volta en Portugal, qué envases llevan un depósito de 10 céntimos y cómo devolver botellas y latas en Lisboa para recuperar el dinero durante tu viaje.',
+    imagen: '/images/volta-devolucion-envases-portugal.webp',
+    imageAlt: 'Logotipo Volta y botella de plástico con el símbolo de devolución de envases de Portugal',
+    imageFit: 'contain',
+    categoria: 'Consejos',
+    fecha: '18 Sep 2026',
+    minutos: 4,
+    links: [
+      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal sin sorpresas' },
+      { href: '/blog/presupuesto-viajar-lisboa', label: 'Preparar el presupuesto de tu viaje' },
+      { href: '/itinerarios', label: 'Explorar los itinerarios gratuitos de Lisboa' },
+    ],
+    fuentes: [
+      { label: 'DGAE: puesta en marcha y funcionamiento del depósito', href: 'https://dgeconomia.gov.pt/comunicacao/noticias/sistema-de-deposito-e-reembolso.aspx' },
+      { label: 'Volta: envases, devolución y reembolso', href: 'https://volta.com.pt/perguntas-frequentes/' },
+      { label: 'SDR Portugal: puntos de recogida y formas de reembolso', href: 'https://sdrportugal.pt/pontos-de-recolha/' },
+      { label: 'Volta: mapa de puntos de devolución', href: 'https://volta.com.pt/onde-devolver/' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Si al comprar una bebida en Portugal aparecen 10 céntimos extra por el envase, mira la etiqueta antes de tirarlo. El símbolo Volta indica que has pagado un depósito recuperable: devuelve la botella o la lata en un punto del sistema y recupera ese importe.' },
+      { tipo: 'parrafo', texto: 'No necesitas organizar el viaje alrededor del reciclaje. Basta con no aplastar el envase y localizar un punto que te quede de paso. Lo importante es entender qué puedes devolver y no confundir el depósito con un recargo definitivo sobre la bebida.' },
+
+      { tipo: 'subtitulo', texto: 'Qué es Volta y por qué te cobran 10 céntimos' },
+      { tipo: 'parrafo', texto: 'Volta es la marca del sistema portugués de depósito y reembolso de envases de bebidas, en funcionamiento desde el 10 de abril de 2026. Se aplica a las botellas de plástico y latas incluidas en el sistema. La señal que debes buscar es el símbolo Volta, no solo el material del recipiente.' },
+      { tipo: 'parrafo', texto: 'El depósito es de 0,10 € por envase y se recupera al devolverlo en condiciones. Diez envases aceptados equivalen a 1 €: no es un descuento sobre la compra, sino dinero que habías adelantado. Una botella de vidrio o un envase sin el símbolo no se convierte en retornable por llevarlo a la máquina.' },
+      { tipo: 'enlace', texto: 'Si estás revisando pequeños cargos y formas de pago antes del viaje, conviene separar este depósito de las comisiones de tu banco.', href: '/blog/como-pagar-en-portugal', label: 'Qué tener en cuenta al pagar en Portugal' },
+
+      { tipo: 'subtitulo', texto: 'Cómo preparar y devolver la botella o la lata' },
+      { tipo: 'parrafo', texto: 'Vacía el envase y consérvalo entero, sin aplastarlo ni deteriorar la etiqueta. El código de barras debe poder leerse y las botellas deben llevar su tapón. No hace falta lavarlo, pero sí dejarlo sin bebida dentro.' },
+      { tipo: 'parrafo', texto: 'En una máquina automática, introduce los envases de uno en uno siguiendo las indicaciones. Al acabar, completa la operación y recoge el comprobante o elige la opción de reembolso ofrecida. No te marches después de introducir la última lata sin comprobar cómo vas a recuperar el importe.' },
+      { tipo: 'parrafo', texto: 'La rutina más cómoda es reservar una bolsa pequeña en el alojamiento y llevarla cuando vuelvas a hacer la compra. Durante el paseo, guardar una botella entera ocupa más que aplastarla, pero aplastarla puede impedir que la máquina la reconozca.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde devolver envases en Lisboa' },
+      { tipo: 'parrafo', texto: 'La red combina máquinas, puntos de recogida manual y quioscos. Muchos están vinculados a supermercados, pero no des por hecho que cualquier tienda dispone de máquina. Consulta el mapa oficial de Volta y elige un punto cerca del alojamiento o de tu siguiente parada.' },
+      { tipo: 'enlace', texto: 'Busca la ubicación concreta y comprueba su disponibilidad antes de desplazarte con una bolsa de envases.', href: 'https://volta.com.pt/onde-devolver/', label: 'Consultar el mapa oficial de devolución Volta' },
+      { tipo: 'parrafo', texto: 'Los puntos y quioscos Volta aceptan envases del sistema aunque se hayan comprado en otro lugar. No extrapoles esa regla a cualquier bar: los establecimientos de restauración solo están obligados a aceptar los que ellos hayan vendido.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo recuperar el dinero, sin otra compra obligatoria' },
+      { tipo: 'parrafo', texto: 'El reembolso puede pasar por un vale convertible en dinero, crédito de compra, tarjeta de fidelización o una donación, según el punto. En supermercados e hipermercados puedes pedir el importe en dinero: no tienes que gastarlo allí. El vale emitido por las máquinas tiene una validez de un año.' },
+      { tipo: 'parrafo', texto: 'Si estás de visita, pregunta dónde se canjea antes de salir de la tienda. Un saldo de fidelización que no volverás a usar puede resultarte menos práctico que cobrar el importe. Conserva el comprobante hasta terminar el canje y revisa la opción elegida antes de confirmarla.' },
+
+      { tipo: 'subtitulo', texto: 'Si la máquina rechaza el envase' },
+      { tipo: 'parrafo', texto: 'Comprueba primero el símbolo, que esté vacío, el tapón y el estado del código de barras. Si el punto no funciona, consulta al personal o prueba otro más tarde; no fuerces la entrada. Los envases que no pertenecen al sistema deben ir al circuito de reciclaje correspondiente.' },
+      { tipo: 'parrafo', texto: 'Para una estancia corta, la mejor solución es devolverlos durante una compra habitual, no reservar un desplazamiento solo para recuperar unos céntimos. Hazlo antes del último día: dejar una bolsa junto a la maleta no garantiza que encuentres un punto de devolución camino del aeropuerto.' },
+      { tipo: 'nota', texto: 'Funcionamiento y depósito comprobados el 18 de septiembre de 2026. Consulta Volta para confirmar los puntos disponibles y las condiciones de devolución antes de desplazarte.' },
+    ],
+  },
+  'patinetes-electricos-lisboa': {
+    titulo: 'Patinetes eléctricos en Lisboa: precios, apps y cuándo usarlos',
+    descripcion: 'Cómo alquilar una trotineta en Lisboa, comprobar su precio antes de salir y terminar el viaje sin dejar el contador en marcha.',
+    seoTitle: 'Patinetes en Lisboa: precios, apps y dónde aparcar',
+    metaDescription: 'Cómo alquilar patinetes eléctricos en Lisboa, comprobar precios en Bolt y Lime, aparcar correctamente y decidir cuándo conviene caminar o usar el metro.',
+    imagen: '/images/reserva/img_1415.jpg',
+    imageAlt: 'Paseo junto al agua y telecabinas en el Parque das Nações de Lisboa',
+    categoria: 'Transporte',
+    fecha: '18 Sep 2026',
+    minutos: 4,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'Comparar las formas de moverse por Lisboa' },
+      { href: '/blog/mejores-apps-lisboa', label: 'Apps útiles durante el viaje' },
+      { href: '/itinerarios', label: 'Elegir un itinerario gratuito por Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Bolt: alquiler, precios y uso de patinetes', href: 'https://bolt.eu/en/scooters/' },
+      { label: 'Lime: costes y tarifas de viaje', href: 'https://help.li.me/hc/pt/articles/115004914208-Custos-e-taxas-de-viagem' },
+      { label: 'Câmara Municipal de Lisboa: Liberdade Responsável', href: 'https://www.lisboa.pt/liberdade-responsavel' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Un patinete eléctrico puede resolver un trayecto corto en Lisboa, pero no convierte sus cuestas en una ruta cómoda ni garantiza ahorrar dinero. Antes de desbloquearlo, comprueba tres cosas: cuánto cuesta, por dónde puedes circular y dónde podrás terminar el alquiler.' },
+      { tipo: 'parrafo', texto: 'En portugués se llama trotineta. La que alquilas en la calle se gestiona desde una aplicación, y dejarla quieta no significa haber cerrado el viaje. Esa diferencia importa más para tu bolsillo que elegir el vehículo más cercano.' },
+
+      { tipo: 'subtitulo', texto: 'Cuánto cuesta: mira el precio antes de desbloquear' },
+      { tipo: 'parrafo', texto: 'No hay una tarifa única para todos los patinetes de Lisboa. Bolt explica que el coste combina desbloqueo y minutos, con importes que varían según la ubicación. Lime también remite a la aplicación para consultar la tarifa vigente y advierte de variaciones por lugar, momento y modalidad contratada.' },
+      { tipo: 'parrafo', texto: 'Para el pago por uso, calcula el desbloqueo más los minutos previstos multiplicados por la tarifa que muestra tu app, y revisa cualquier cargo adicional indicado antes de confirmar. Si quieres comparar un trayecto de 15 minutos con otro de 25, la diferencia son diez minutos más de alquiler, no dos precios fijos de ciudad.' },
+      { tipo: 'parrafo', texto: 'Cuenta también el tiempo de orientarte y encontrar aparcamiento permitido. Si vais dos personas, cada una necesita su vehículo y su alquiler: compara el coste conjunto con otras opciones. No publicamos un supuesto precio por minuto de Lisboa porque las páginas oficiales consultadas no ofrecen una tarifa local única verificable.' },
+      { tipo: 'nota', texto: 'Información consultada el 18 de septiembre de 2026. El precio aplicable es el que muestra el operador antes del desbloqueo; revisa también las condiciones de cualquier bono o promoción.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo elegir app y preparar el trayecto' },
+      { tipo: 'parrafo', texto: 'Bolt y Lime son dos aplicaciones que puedes consultar. Mira su mapa para comprobar qué vehículos y zonas están disponibles en ese momento; tener instalada una app no garantiza encontrar uno junto a ti. En Bolt, no confundas el alquiler de patinetes con pedir un coche con conductor.' },
+      { tipo: 'parrafo', texto: 'Antes de iniciar, revisa las condiciones del operador, la batería del vehículo, el destino y el aparcamiento admitido. Prepara también el móvil: necesitarás poder usar la aplicación al terminar. Resolver la ruta después de desbloquear significa empezar a pagar mientras todavía estás decidiendo adónde ir.' },
+      { tipo: 'enlace', texto: 'No hace falta llenar el teléfono de aplicaciones para una escapada. Instala las que encajen con los desplazamientos que realmente vas a hacer.', href: '/blog/mejores-apps-lisboa', label: 'Qué apps merece la pena llevar a Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Por dónde circular y dónde aparcar' },
+      { tipo: 'parrafo', texto: 'La campaña municipal Liberdade Responsável recuerda que las aceras son para peatones, que no se deben llevar pasajeros y que hay que respetar los semáforos. Para cruzar un paso de peatones, baja y lleva el patinete a mano. Guarda el teléfono mientras conduces y utiliza casco.' },
+      { tipo: 'parrafo', texto: 'Comprueba las zonas de circulación y estacionamiento en el mapa del operador. Que un paseo sea ancho o esté junto al río no significa que puedas recorrerlo entero en patinete ni dejarlo en cualquier punto. La señalización y las restricciones de la zona siguen importando.' },
+      { tipo: 'parrafo', texto: 'Al aparcar, deja libres rampas, puertas, pasos y recorridos peatonales. Piensa en alguien con carrito o silla de ruedas: un hueco que a ti te permite pasar de lado puede impedirle continuar. Usa un lugar autorizado, no simplemente el espacio libre más próximo a tu destino.' },
+
+      { tipo: 'subtitulo', texto: 'Terminar el viaje sin dejar el contador abierto' },
+      { tipo: 'parrafo', texto: 'Aparca donde la app lo permita y sigue sus instrucciones para finalizar, incluida la fotografía si la solicita. Espera a la confirmación del cierre y revisa el recibo. Lime indica expresamente que el cobro continúa hasta que el viaje termina y el vehículo queda bloqueado.' },
+      { tipo: 'parrafo', texto: 'Si no puedes cerrar, consulta el mensaje de la aplicación y contacta con soporte desde ella. Guarda evidencia del lugar, la hora y el error. Cerrar la app o marcharte porque el patinete está parado no sustituye la confirmación de fin de viaje.' },
+
+      { tipo: 'subtitulo', texto: 'Cuándo compensa y cuándo elegir otra cosa' },
+      { tipo: 'parrafo', texto: 'Tiene sentido para un desplazamiento concreto, con recorrido permitido, firme adecuado y aparcamiento cerca de la llegada. Tiene menos sentido para ir parando en escaparates, hacer fotos continuamente o encadenar miradores: estarás combinando pausas, pendientes y decisiones de aparcamiento.' },
+      { tipo: 'parrafo', texto: 'No lo elegiría como primera opción para descubrir las calles estrechas de Alfama ni para aprender a conducir entre tráfico y peatones. Las cuestas, los adoquines y los raíles exigen atención. Si el suelo está mojado o no te sientes seguro, cambia de transporte en lugar de improvisar.' },
+      { tipo: 'enlace', texto: 'Para cruzar la ciudad, subir a otro barrio o moverte con equipaje, compara el trayecto completo antes de decidir por proximidad.', href: '/blog/como-moverse-por-lisboa', label: 'Cuándo conviene metro, autobús, tren o caminar' },
+      { tipo: 'enlace', texto: 'Si lo que quieres es explorar a tu ritmo, una ruta a pie evita pagar mientras te detienes y te deja cambiar de plan sin buscar aparcamiento.', href: '/itinerarios', label: 'Abrir los itinerarios gratuitos de Lisboa' },
+    ],
+  },
   'time-out-market-lisboa': {
     titulo: 'Time Out Market Lisboa: qué comer, precios y si merece la pena',
     descripcion: 'Guía independiente del Time Out Market Lisboa: cómo funciona, qué tipo de comida hay, cuánto esperar gastar y cuándo conviene elegir otra opción.',

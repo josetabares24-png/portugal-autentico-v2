@@ -24,6 +24,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
           <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-white/60">
             <Image
               src={imageSrc}
+              style={post.imageFit ? { objectFit: post.imageFit } : undefined}
               alt={post.titulo}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -52,6 +53,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-white/60">
             <Image
               src={imageSrc}
+              style={post.imageFit ? { objectFit: post.imageFit } : undefined}
               alt={post.titulo}
               fill
               className="object-cover"
@@ -77,6 +79,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
         <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
           <Image
             src={imageSrc}
+            style={post.imageFit ? { objectFit: post.imageFit } : undefined}
             alt={post.titulo}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

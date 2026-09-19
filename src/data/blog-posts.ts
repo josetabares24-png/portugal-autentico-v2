@@ -6,9 +6,29 @@ export interface BlogPost {
   fecha: string;
   autor: string;
   imagen: string;
+  imageFit?: 'cover' | 'contain';
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: 'volta-portugal-devolucion-envases',
+    titulo: 'Volta en Portugal: cómo devolver envases y recuperar el depósito',
+    excerpt: 'Por qué pagas 10 céntimos más en algunas bebidas, qué botellas y latas se aceptan y cómo recuperar ese dinero durante tu viaje.',
+    categoria: 'Consejos',
+    fecha: '18 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/volta-devolucion-envases-portugal.webp',
+    imageFit: 'contain',
+  },
+  {
+    id: 'patinetes-electricos-lisboa',
+    titulo: 'Patinetes eléctricos en Lisboa: precios, apps y cuándo usarlos',
+    excerpt: 'Cómo comprobar lo que vas a pagar, dónde terminar el viaje y cuándo una trotineta resulta práctica o complica el paseo.',
+    categoria: 'Transporte',
+    fecha: '18 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/reserva/img_1415.jpg',
+  },
   {
     id: 'time-out-market-lisboa',
     titulo: 'Time Out Market Lisboa: qué comer, precios y si merece la pena',

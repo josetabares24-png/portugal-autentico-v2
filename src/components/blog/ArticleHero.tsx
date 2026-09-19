@@ -65,6 +65,7 @@ export function ArticleHero({
               alt={heroImageAlt}
               fill
               className="article-hero-img"
+              style={article.imageFit ? { objectFit: article.imageFit } : undefined}
               /*
                * Por debajo de 640 px el marco es 4:3 y las fotos son
                * apaisadas, así que `object-cover` las dibuja más anchas que
