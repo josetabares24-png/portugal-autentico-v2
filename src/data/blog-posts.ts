@@ -6,6 +6,7 @@ export interface BlogPost {
   fecha: string;
   autor: string;
   imagen: string;
+  imageFit?: 'cover' | 'contain';
 }
 
 export const blogPosts: BlogPost[] = [
@@ -16,7 +17,8 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Consejos',
     fecha: '18 Sep 2026',
     autor: 'José Tabares',
-    imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-02.webp',
+    imagen: '/images/volta-devolucion-envases-portugal.webp',
+    imageFit: 'contain',
   },
   {
     id: 'patinetes-electricos-lisboa',

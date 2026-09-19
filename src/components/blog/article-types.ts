@@ -49,6 +49,7 @@ export type Article = {
   metaDescription?: string;
   imagen: string;
   imageAlt?: string;
+  imageFit?: 'cover' | 'contain';
   categoria: string;
   fecha: string;
   fechaActualizacion?: string;
