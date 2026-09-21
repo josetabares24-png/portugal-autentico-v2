@@ -28,7 +28,12 @@ function parseSpanishDate(date: string): Date | undefined {
 
   const [dia, mesEsp, anio] = fechaParts;
   const mesEn = meses[mesEsp] || mesEsp;
-  const parsedDate = new Date(`${dia} ${mesEn} ${anio}`);
+  const monthIndex = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].indexOf(mesEn);
+  if (monthIndex === -1) return undefined;
+
+  // Construir la fecha en UTC evita que el mismo artículo genere un lastmod
+  // distinto según la zona horaria del entorno de build.
+  const parsedDate = new Date(Date.UTC(Number(anio), monthIndex, Number(dia)));
 
   return isNaN(parsedDate.getTime()) ? undefined : parsedDate;
 }

@@ -37,12 +37,12 @@ const historias = [
 ].filter(Boolean);
 
 const barrios = [
-  { nombre: 'Alfama', href: '/blog/barrios-imprescindibles', imagen: '/images/alfama-panoramica.jpg' },
-  { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-grupo-atardecer.jpg' },
-  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/bica-cafe-mapa.jpg' },
-  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/funicular-bica-turistas.jpg' },
-  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/bairro-alto-calle-noche.jpg' },
-  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-atardecer.jpg' },
+  { nombre: 'Alfama', href: '/blog/alfama-historia-guia', imagen: '/images/alfama-panoramica.jpg' },
+  { nombre: 'Graça', href: '/blog/graca-lisboa-que-ver', imagen: '/images/miradouro-grupo-atardecer.jpg' },
+  { nombre: 'Mouraria', href: '/blog/mouraria-barrio-guia', imagen: '/images/bica-cafe-mapa.jpg' },
+  { nombre: 'Chiado y Bairro Alto', href: '/blog/chiado-bairro-alto-guia', imagen: '/images/bairro-alto-calle-noche.jpg' },
+  { nombre: 'Belém', href: '/blog/belem-barrio-guia', imagen: '/images/miradouro-atardecer.jpg' },
+  { nombre: 'Baixa', href: '/blog/baixa-lisboa-que-ver', imagen: '/images/lisboa-originales/baixa-pombalina-lisboa-02.webp' },
 ];
 
 const libreta: { texto: string; href?: string }[] = [
@@ -105,6 +105,41 @@ export default function HomePage() {
           <Link href="/itinerarios" className="btn-ghost-light btn-lg">
             Ver itinerarios →
           </Link>
+        </div>
+      </section>
+
+      {/* ── QUÉ VER / HUB SEO ── */}
+      <section className="border-b border-taupe/20 bg-cream py-14 md:py-18">
+        <div className="mx-auto max-w-5xl px-6 md:px-10">
+          <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Primera vez en la ciudad</p>
+          <h2
+            className="mb-5 font-display italic leading-tight text-night"
+            style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 400 }}
+          >
+            Qué ver en Lisboa y por dónde empezar
+          </h2>
+          <p className="mb-8 max-w-3xl font-body text-base leading-relaxed text-text-secondary md:text-lg">
+            Si estás organizando el viaje, empieza por el tiempo que tienes y después baja a cada barrio.
+            Las rutas de 1, 2, 3 y 4 días conectan lo esencial con guías específicas de Alfama, Belém,
+            Baixa, Graça, miradores, transporte y Sintra.
+          </p>
+          <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días', text: 'Rutas organizadas para una primera visita.' },
+              { href: '/blog/lisboa-en-4-dias', label: 'Lisboa en 4 días', text: 'Centro, Belém, Sintra y una jornada más local.' },
+              { href: '/blog/barrios-imprescindibles', label: 'Barrios de Lisboa', text: 'Elige las zonas que mejor encajan con tu viaje.' },
+              { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse', text: 'Metro, tranvía, buses y billetes.' },
+              { href: '/blog/mejores-miradores-lisboa', label: 'Miradores', text: 'Las vistas que sí merece la pena incluir.' },
+              { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa', text: 'Cómo dedicarle un día sin improvisar.' },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="group border-t border-taupe/30 pt-4">
+                <span className="font-body text-sm font-semibold text-night transition-colors group-hover:text-terracotta">
+                  {item.label} →
+                </span>
+                <span className="mt-1 block font-body text-sm leading-relaxed text-text-secondary">{item.text}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
