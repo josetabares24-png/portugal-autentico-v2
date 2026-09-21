@@ -3998,6 +3998,23 @@ function buildFallbackArticle(slug: string): Article | null {
   };
 
   const introExtra = categoryIntro[categoria] || categoryIntro['Guías'];
+  const seoOverride =
+    slug === 'presupuesto-viajar-lisboa'
+      ? {
+          seoTitle: 'Presupuesto Lisboa 2026: cuánto cuesta viajar',
+          metaDescription:
+            'Calcula tu presupuesto para Lisboa en 2026 con transporte, alojamiento, comida y entradas, sin depender de una cifra diaria genérica.',
+          fechaActualizacion: 'Actualizado en septiembre de 2026',
+          dateModified: '2026-09-21',
+          links: [
+            { href: '/calculadora-presupuesto-lisboa', label: 'Calcular tu presupuesto de Lisboa' },
+            { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+            { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
+            { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+            { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
+          ],
+        }
+      : {};
   const slugDetail = slugDetails[slug];
   const musts = slugDetail?.musts || categoryMusts[categoria] || categoryMusts['Guías'];
   const checklist = categoryChecklist[categoria] || categoryChecklist['Guías'];
@@ -4011,6 +4028,7 @@ function buildFallbackArticle(slug: string): Article | null {
     categoria: post.categoria,
     fecha: post.fecha,
     minutos: 7,
+    ...seoOverride,
     contenido: [
       { tipo: 'parrafo', texto: post.excerpt },
       { tipo: 'parrafo', texto: contexto },
