@@ -65,7 +65,11 @@ Segunda expansión:
 - Clerk limitado a rutas que requieren autenticación.
 - Mensajes de idioma estáticos en sitio monoidioma.
 - Cookie de locale desactivada.
-- Nota: producción todavía puede responder HTML con `private, no-store`; no forzar caché manual sin entender primero el renderizado de `/[locale]`.
+- Causa del SSR público identificada: `next-intl` resolvía el locale desde el request.
+- Se añadió `setRequestLocale(locale)` tras validar el locale.
+- Build verificado con Next.js 16.3.5: home, artículos, actividades, itinerarios y páginas públicas pasan de `ƒ Dynamic` a `● SSG`.
+- `/[locale]/blog` permanece dinámico porque su paginación usa `searchParams`; las páginas de artículos sí quedan prerenderizadas.
+
 
 ### Enlazado
 
@@ -73,25 +77,18 @@ Segunda expansión:
 - Se añadieron entradas relevantes hacia páginas antes débiles como Lisboa vs Porto, novedades 2026 y evitar turistadas.
 - Los artículos nuevos deben seguir recibiendo enlaces desde pilares conforme ganen impresiones.
 
-## Deuda editorial detectada
+## Estado editorial real
 
-A fecha de este documento hay aproximadamente 60 entradas publicadas, de las cuales 23 tienen contenido editorial explícito y unas 37 todavía dependen total o parcialmente del generador fallback.
+Corrección de auditoría del 2026-09-21: el conteo inicial de páginas fallback fue incorrecto porque el script de comprobación solo detectaba claves con comillas simples y omitía artículos definidos con comillas dobles.
 
-No desindexarlas de golpe.
+Estado verificado después de corregir el parser:
 
-Prioridad:
+- 60 entradas publicadas en `blogPosts`.
+- 60/60 tienen contenido editorial explícito en el mapa de artículos.
+- El último fallback real era `/blog/restaurantes-romanticos-lisboa`; ya fue sustituido por una guía editorial completa.
+- El generador fallback genérico queda eliminado para impedir que una futura entrada sea indexable únicamente por existir en `blogPosts`.
 
-1. Identificar en GSC cuáles de esas 37 reciben impresiones/clics.
-2. Reescribir primero las que estén en posiciones 4–30 o tengan demanda clara.
-3. Para páginas sin impresiones durante un periodo suficiente, decidir entre:
-   - reescribir;
-   - fusionar con una URL mejor;
-   - redirigir;
-   - noindex;
-   - retirar.
-4. No tomar esa decisión sin datos.
-
-El fallback se ha vuelto más prudente: se retiraron promesas genéricas de “horarios reales”, “costes reales”, “atajos de local” y recomendaciones universales no verificadas.
+A partir de ahora, una entrada publicada debe tener contenido editorial explícito antes de poder resolverse como artículo. Las decisiones de reescritura, fusión, redirección, noindex o retirada siguen dependiendo de datos reales de Search Console, no de un supuesto estado “legacy”.
 
 ## Pilares a vigilar en Search Console
 

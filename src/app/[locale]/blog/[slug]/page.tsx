@@ -14,6 +14,74 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'restaurantes-romanticos-lisboa': {
+    titulo: 'Restaurantes románticos en Lisboa: 6 opciones según el tipo de cita',
+    descripcion: 'Seis restaurantes para una cena especial en Lisboa, elegidos por ambiente, vistas o formato de la experiencia, con fuentes actuales y sin asumir que lo más caro es siempre lo más romántico.',
+    seoTitle: 'Restaurantes románticos en Lisboa: 6 opciones',
+    metaDescription: 'Restaurantes románticos en Lisboa para una cena especial: vistas, ambiente íntimo, cocina portuguesa y experiencias de alta gama según tu tipo de cita.',
+    imagen: '/images/fado-tasca-noche.jpg',
+    imageAlt: 'Mesa preparada para una cena nocturna en Lisboa',
+    categoria: 'Gastronomía',
+    fecha: '15 Ene 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 9,
+    links: [
+      { href: '/blog/lisboa-en-pareja', label: 'Planes para hacer en pareja en Lisboa' },
+      { href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+      { href: '/blog/mejores-miradores-lisboa', label: 'Miradores para antes de cenar' },
+    ],
+    fuentes: [
+      { label: 'Guía MICHELIN: Fifty Seconds', href: 'https://guide.michelin.com/pt/pt_PT/lisboa-region/lisboa/restaurant/fifty-seconds' },
+      { label: 'Guía MICHELIN: Suba', href: 'https://guide.michelin.com/br/pt_BR/lisboa-region/lisboa/restaurant/suba' },
+      { label: 'Guía MICHELIN: Henrique Sá Pessoa', href: 'https://guide.michelin.com/pt/pt_PT/lisboa-region/lisboa/restaurant/henrique-sa-pessoa' },
+      { label: 'Visit Lisboa: 1147 Lisboa', href: 'https://www.visitlisboa.com/pt-pt/locais/1147-lisboa' },
+      { label: 'Visit Lisboa: Café São Bento', href: 'https://www.visitlisboa.com/en/places/cafe-sao-bento' },
+      { label: 'Visit Lisboa: Páteo Alfacinha', href: 'https://www.visitlisboa.com/en/places/pateo-alfacinha-restaurantes' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Una cena romántica en Lisboa no tiene que significar automáticamente rooftop, menú degustación y una cuenta enorme. Para algunas parejas lo importante son las vistas; para otras, una sala pequeña, buena conversación o un restaurante clásico donde la noche pueda alargarse. Por eso esta selección está organizada por tipo de cita, no como un ranking.' },
+
+      { tipo: 'subtitulo', texto: 'Fifty Seconds: para una cena panorámica de alta gama' },
+      { tipo: 'parrafo', texto: 'Fifty Seconds está en la Torre Vasco da Gama, en Parque das Nações. La Guía MICHELIN lo clasifica expresamente como una opción romántica y destaca la experiencia de comer a gran altura con vistas sobre Lisboa. Es una elección para quien quiere que el restaurante sea el plan principal de la noche, no simplemente el lugar donde cenar entre dos actividades.' },
+      { tipo: 'parrafo', texto: 'Por ubicación, tiene sentido combinarlo con un paseo por Parque das Nações antes de la reserva. Si te alojas en el centro histórico, calcula el desplazamiento de vuelta en vez de asumir que podrás terminar la noche caminando.' },
+
+      { tipo: 'subtitulo', texto: 'Suba: palacio histórico y terraza sobre la ciudad' },
+      { tipo: 'parrafo', texto: 'Suba está vinculado al Verride Palácio de Santa Catarina, en una zona muy cómoda para continuar la noche por Chiado, Bica o Cais do Sodré. MICHELIN lo presenta como romántico y destaca la terraza panorámica del edificio. Aquí la ventaja no es solo la vista: puedes construir una noche completa alrededor del barrio sin cruzar Lisboa después de cenar.' },
+
+      { tipo: 'subtitulo', texto: 'Henrique Sá Pessoa: para una experiencia gastronómica centrada en la mesa' },
+      { tipo: 'parrafo', texto: 'El restaurante Henrique Sá Pessoa, en Páteo Bagatela, aparece en la selección MICHELIN como romántico y ofrece una propuesta más enfocada en cocina de autor. Lo elegiría cuando la comida en sí es el centro de la cita y no necesitas estar junto a un mirador o una zona de bares para que la noche funcione.' },
+
+      { tipo: 'subtitulo', texto: '1147 Lisboa: cenar dentro del Castelo con vistas' },
+      { tipo: 'parrafo', texto: '1147 Lisboa ocupa la antigua Casa do Leão, dentro de las murallas del Castelo de São Jorge. Visit Lisboa lo describe como un espacio con vistas panorámicas sobre la ciudad y el Tajo y lo señala como escenario para cenas románticas. Es una opción especialmente lógica si ya vas a pasar la tarde por Alfama o el castillo.' },
+      { tipo: 'parrafo', texto: 'Comprueba siempre las condiciones de acceso a la zona del castillo y el horario de tu reserva: aquí la ubicación forma parte de la experiencia, pero también condiciona cómo llegas y cómo vuelves.' },
+
+      { tipo: 'subtitulo', texto: 'Café São Bento: una cena clásica e íntima' },
+      { tipo: 'parrafo', texto: 'Café São Bento está cerca de la Assembleia da República y mantiene una sala de estilo clásico. Visit Lisboa destaca su ambiente íntimo y su especialidad histórica en bife. Es una alternativa para quien prefiere una cena más tradicional, sin convertir la noche en una experiencia de lujo o en una búsqueda de la mejor terraza.' },
+
+      { tipo: 'subtitulo', texto: 'Páteo Alfacinha: para vistas al Tajo con un ambiente más portugués' },
+      { tipo: 'parrafo', texto: 'En Ajuda, Páteo Alfacinha combina gastronomía portuguesa con espacios que cambian según la temporada. Visit Lisboa menciona específicamente su terraza con vista hacia el Tajo y el puente 25 de Abril como adecuada también para cenas románticas. La ubicación queda fuera del núcleo de Baixa-Chiado, así que funciona mejor cuando buscas una noche con destino propio y no una cena improvisada durante un paseo por el centro.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo elegir sin equivocarte de restaurante' },
+      { tipo: 'lista', items: [
+        'Si quieres vistas: compara Fifty Seconds, Suba o 1147 Lisboa según la zona de tu día.',
+        'Si la comida es el plan principal: una propuesta gastronómica como Henrique Sá Pessoa tiene más sentido que perseguir únicamente una terraza.',
+        'Si buscas algo clásico e íntimo: Café São Bento encaja mejor con una noche tranquila.',
+        'Si quieres ambiente portugués y vistas al río: Páteo Alfacinha puede encajar mejor que una cena en pleno centro.',
+        'Comprueba menú, horario, política de reservas y ubicación directamente en el restaurante antes de pagar o desplazarte.',
+      ] },
+
+      { tipo: 'subtitulo', texto: '¿Hace falta reservar?' },
+      { tipo: 'parrafo', texto: 'Para una fecha concreta —cumpleaños, aniversario, viernes o sábado— reservar es una decisión sensata, especialmente en restaurantes pequeños o experiencias de alta gama. Pero no presentaría la reserva como obligatoria para todo Lisboa: depende del local, la hora y el día. Mira la disponibilidad real del restaurante que elijas.' },
+
+      { tipo: 'subtitulo', texto: 'Una noche romántica no tiene que empezar en el restaurante' },
+      { tipo: 'parrafo', texto: 'Puedes hacer que el restaurante sea solo una parte del plan: mirador al atardecer, paseo corto, cena y después una copa o regreso tranquilo. La clave es que todo quede relativamente cerca. Cruzar la ciudad tres veces por perseguir lugares “románticos” suele quitarle más a la noche de lo que añade.' },
+      { tipo: 'enlace', texto: 'Si quieres completar la cena con un paseo o una vista antes, aquí tienes una guía para hacerlo sin encadenar cuestas innecesarias.', href: '/blog/mejores-miradores-lisboa', label: 'Mejores miradores de Lisboa' },
+      { tipo: 'enlace', texto: 'Y si quieres construir un día completo alrededor de la pareja, no solo una cena, usa esta guía.', href: '/blog/lisboa-en-pareja', label: 'Lisboa en pareja' },
+    ],
+  },
+
   'sintra-desde-lisboa': {
     titulo: 'Sintra desde Lisboa: cómo ir y organizar un día sin correr',
     descripcion: 'Cómo ir de Lisboa a Sintra en tren, organizar Pena y el centro histórico, moverse dentro de Sintra y evitar una jornada imposible de cuatro palacios.',
@@ -2261,56 +2329,7 @@ const articles: Record<string, Article> = {
       { tipo: "tip", texto: "Si buscas equilibrio total, mayo y septiembre son los mejores meses." }
     ]
   },
-    "restaurantes-romanticos-lisboa": {
-    titulo: "Los restaurantes más románticos de Lisboa para una noche inolvidable",
-    seoTitle: "Restaurantes románticos en Lisboa",
-    descripcion: "Terrazas con vistas al río, cenas íntimas con fado, y rincones donde el ambiente y la comida crean momentos perfectos para parejas.",
-    imagen: "/images/bairro-alto-calle-noche.jpg",
-    imageAlt: "Dos personas cenando en la puerta de una tasca iluminada de noche",
-    categoria: "Gastronomía",
-    fecha: "20 Nov 2024",
-    minutos: 16,
-    contenido: [
-      { tipo: "parrafo", texto: "Hay restaurantes que se venden como románticos porque tienen velas en las mesas y música suave de fondo. Y luego están los lugares donde la magia ocurre sin necesidad de marketing: terrazas que se asoman al Tajo cuando el sol se pone, salones centenarios donde el fado nació, rincones escondidos donde la comida y el ambiente se combinan para crear momentos que se quedan grabados." },
-      { tipo: "parrafo", texto: "He celebrado cumpleaños, aniversarios y propuestas en restaurantes de Lisboa, y he aprendido que el romanticismo no se compra con precio alto ni con estrellas Michelin. Se encuentra en la combinación de detalles: una vista que quita el aliento, un servicio que se desvanece cuando no se le necesita, una comida que habla de la tierra y el mar, y un ambiente que invita a quedarse horas conversando." },
-      { tipo: "subtitulo", texto: "1. Chapitô à Mesa — La terraza con las mejores vistas" },
-      { tipo: "parrafo", texto: "Este restaurante ocupa un antiguo convento reconvertido en escuela de circo, y la terraza tiene vistas que quitan el aliento: el Castelo de São Jorge a un lado, el Tajo al otro, y toda Lisboa desplegándose a tus pies. El ambiente es bohemio —hay estudiantes de circo practicando en los patios interiores— y la comida es creativa sin ser pretenciosa." },
-      { tipo: "parrafo", texto: "La hora mágica es el atardecer. Reserva mesa en la terraza con al menos una semana de antelación, especialmente en verano. Cuando el sol se pone y la ciudad se ilumina, el momento se vuelve cinematográfico. El precio es razonable para lo que ofrecen: entre 30 y 50 euros por persona con vino." },
-      { tipo: "tip", texto: "Si no consigues reserva en la terraza, el salón interior también tiene encanto, pero las vistas son la razón de venir aquí." },
-      { tipo: "subtitulo", texto: "2. Ponto Final — Lisboa desde el otro lado del río" },
-      { tipo: "parrafo", texto: "Cruzar el Tajo en ferry desde Cais do Sodré hasta Cacilhas es una experiencia en sí misma. Diez minutos navegando con Lisboa como telón de fondo, y al llegar, un restaurante de pescado fresco con terraza directamente sobre el agua. Ponto Final no es sofisticado —mesas de plástico, ambiente de tasca de barrio— pero tiene algo que los restaurantes del centro no pueden ofrecer: la vista completa de Lisboa desde fuera." },
-      { tipo: "parrafo", texto: "Pide pescado a la parrilla —sardinas, dorada, lubina— acompañado de patatas y ensalada. El precio es justo (20-30 euros por persona) y la calidad es excelente porque el pescado llega directamente de los barcos que atracan a pocos metros. El ferry cuesta 2 euros ida y vuelta, y el trayecto es parte del encanto." },
-      { tipo: "tip", texto: "Ve al atardecer para ver Lisboa iluminándose mientras cenas. El ferry funciona hasta medianoche, así que no hay prisa para volver." },
-      { tipo: "subtitulo", texto: "3. Taberna da Rua das Flores — Intimidad en cuatro mesas" },
-      { tipo: "parrafo", texto: "Este lugar es especial porque solo tiene cuatro mesas. Literalmente. Las reservas se hacen con semanas de antelación, y cuando consigues una, tienes garantizada una experiencia íntima que pocos restaurantes pueden ofrecer. El ambiente es de tasca tradicional portuguesa: paredes de azulejos, vino servido en jarras, y comida que sabe a receta de abuela." },
-      { tipo: "parrafo", texto: "El menú cambia según lo que haya fresco en el mercado, y el dueño te explica cada plato con pasión. No es el lugar más barato (25-35 euros por persona), pero la combinación de calidad, ambiente y exclusividad lo convierte en una de mis recomendaciones más especiales." },
-      { tipo: "subtitulo", texto: "4. Solar dos Presuntos — Elegancia sin pretensiones" },
-      { tipo: "parrafo", texto: "En Príncipe Real, este restaurante lleva décadas sirviendo comida portuguesa refinada en un ambiente que equilibra elegancia con calidez. Los salones tienen techos altos, mesas bien espaciadas, y un servicio atento que sabe cuándo aparecer y cuándo desaparecer." },
-      { tipo: "parrafo", texto: "La especialidad es el bacalao —preparado de múltiples formas tradicionales— y los mariscos. El precio ronda los 40-60 euros por persona, y las reservas son necesarias, especialmente los fines de semana. Es el lugar perfecto si buscas una cena elegante sin el formalismo excesivo de los restaurantes con estrellas." },
-      { tipo: "subtitulo", texto: "5. Belcanto — Alta cocina para ocasiones únicas" },
-      { tipo: "parrafo", texto: "Si buscas la experiencia gastronómica definitiva en Lisboa, este restaurante de José Avillez con dos estrellas Michelin es la respuesta. El menú degustación de ocho platos es un viaje por la cocina portuguesa reinterpretada con técnicas contemporáneas. Cada plato es una obra de arte, y el servicio es impecable." },
-      { tipo: "parrafo", texto: "El precio es alto (180-250 euros por persona), pero si tienes una ocasión especial que celebrar —aniversario importante, propuesta de matrimonio, logro profesional—, esta es una inversión en recuerdos que no olvidarás. Las reservas se hacen con meses de antelación, especialmente para mesas en el salón principal." },
-      { tipo: "subtitulo", texto: "6. A Cevicheria — Romántico y moderno" },
-      { tipo: "parrafo", texto: "Un pulpo gigante colgando del techo preside este restaurante que trajo el ceviche a Lisboa. El ambiente es moderno y relajado, con música que invita a quedarse conversando. No es romántico en el sentido tradicional —no hay velas ni música de piano—, pero hay algo en la combinación de comida creativa, ambiente acogedor y servicio amable que crea momentos especiales." },
-      { tipo: "parrafo", texto: "El ceviche es la estrella, pero también tienen platos de marisco creativos y postres que merecen la pena. El precio ronda los 35-50 euros por persona, y aunque no requiere reserva con tanta antelación, conviene llamar unos días antes." },
-      { tipo: "subtitulo", texto: "7. Tasca da Esquina — Tapas portuguesas con estilo" },
-      { tipo: "parrafo", texto: "En Campo de Ourique, este restaurante de Vítor Sobral (hermano del chef del Belcanto) sirve comida portuguesa moderna en formato de tapas. El ambiente es íntimo —mesas pequeñas, iluminación cálida— y el servicio es excelente. Es perfecto para una cena donde quieres probar varios platos compartiendo." },
-      { tipo: "parrafo", texto: "Pide varios platos pequeños: croquetas de alheira, pulpo a la brasa, quesos de Serra da Estrela... El precio ronda los 40-60 euros por persona dependiendo de cuánto pidas. Las reservas son recomendadas, especialmente los fines de semana." },
-      { tipo: "subtitulo", texto: "8. Restaurante Eleven — Vistas al parque" },
-      { tipo: "parrafo", texto: "Con vistas al Parque Eduardo VII y a la ciudad desde las alturas, este restaurante ofrece alta cocina portuguesa en un ambiente elegante pero relajado. Las mesas junto a las ventanas son las más codiciadas, así que menciona que quieres una cuando reserves." },
-      { tipo: "parrafo", texto: "El precio ronda los 70-100 euros por persona, y aunque no tiene estrella Michelin, la calidad es excelente. Es perfecto para una ocasión especial donde quieres elegancia sin el precio y la formalidad de un restaurante con estrellas." },
-      { tipo: "subtitulo", texto: "9. Cervejaria Ramiro — Para amantes del marisco" },
-      { tipo: "parrafo", texto: "Este lugar no es romántico en el sentido clásico —es ruidoso, siempre lleno, y el ambiente es más de celebración que de intimidad—, pero si a tu pareja y a ti os gusta el marisco, aquí encontraréis el mejor de Lisboa. Gambas al ajillo, langosta, percebes, cangrejos... Todo fresco, todo excelente." },
-      { tipo: "parrafo", texto: "El precio puede subir fácilmente a 50-80 euros por persona dependiendo de lo que pidas, pero la calidad justifica cada euro. Ve temprano (antes de las siete) o prepárate para esperar cola. Termina con un prego no pão —bocadillo de ternera— que es tradición aquí." },
-      { tipo: "subtitulo", texto: "10. Café Luso — Fado y cena tradicional" },
-      { tipo: "parrafo", texto: "Si quieres combinar cena con espectáculo de fado, este es uno de los locales más tradicionales. El ambiente es de taberna antigua —azulejos en las paredes, mesas de madera— y el fado se interpreta en directo todas las noches. La comida es decente (no es el punto fuerte, pero está bien), y el precio incluye cena y show (60-80 euros por persona)." },
-      { tipo: "parrafo", texto: "No es el fado más auténtico de Lisboa —ese lo encuentras en tascas pequeñas—, pero es una experiencia completa y accesible si quieres vivir la tradición sin complicarte buscando locales más escondidos." },
-      { tipo: "subtitulo", texto: "Consejos para una noche perfecta" },
-      { tipo: "parrafo", texto: "Si planeas una propuesta de matrimonio, Chapitô à Mesa y Ponto Final tienen las mejores vistas y suelen estar abiertos a colaborar con planes especiales si avisas con tiempo. Para aniversarios, Taberna da Rua das Flores o Solar dos Presuntos ofrecen intimidad y elegancia. Y si buscas algo diferente, A Cevicheria o Tasca da Esquina combinan modernidad con buen ambiente." },
-      { tipo: "tip", texto: "Reserva siempre con antelación, especialmente para fines de semana. Y si mencionas que es una ocasión especial al reservar, muchos restaurantes harán un pequeño detalle extra —postre de cortesía, mesa mejor ubicada, etc." }
-    ]
-  },
-  "que-ver-cascais-desde-lisboa": {
+    "que-ver-cascais-desde-lisboa": {
     titulo: "Cascais: el pueblo costero perfecto para escapar de Lisboa",
     seoTitle: "Cascais desde Lisboa | Qué ver",
     descripcion: "A solo 30 minutos en tren, Cascais combina playas doradas, palacios históricos y un paseo marítimo que invita a quedarse. Guía completa para un día perfecto.",
@@ -3797,492 +3816,9 @@ function resolveBlogImage(slug: string, image?: string) {
   return candidate;
 }
 
-function buildFallbackArticle(slug: string): Article | null {
-  const post = blogPosts.find((item) => item.id === slug);
-  if (!post) return null;
-  const tituloBase = post.titulo.replace(/\s+en Lisboa/i, '').trim();
-  const categoria = post.categoria;
-  const contexto = `Esta guía sobre ${tituloBase.toLowerCase()} reúne una orientación inicial para decidir cómo encaja el tema en tu viaje a Lisboa.`;
-  const listaClave = [
-    'Qué parte del tema puede ser útil para tu viaje.',
-    'Cómo conectarlo con otras zonas o planes de Lisboa.',
-    'Qué información conviene comprobar de nuevo antes de ir.',
-    'Qué alternativas tienes si el plan no encaja con tu tiempo o presupuesto.',
-  ];
-
-  const categoryIntro: Record<string, string> = {
-    Guías: 'Prioriza zonas cercanas entre sí y ajusta el número de paradas al tiempo que realmente tienes.',
-    Gastronomía: 'Comprueba ubicación, menú y horario actual antes de desplazarte expresamente a un local.',
-    Consejos: 'Usa estas recomendaciones como punto de partida y adapta lo que cambie según tus fechas.',
-    Planificación: 'Separa las decisiones que dependen de tus fechas —alojamiento, reservas o eventos— de las que son más estables.',
-    Transporte: 'Compara el trayecto concreto y las condiciones vigentes del operador antes de elegir un título o una ruta.',
-    Cultura: 'El contexto ayuda a entender mejor cada lugar, pero horarios, exposiciones y accesos pueden cambiar.',
-  };
-
-  const categoryMusts: Record<string, string[]> = {
-    Guías: [
-      'Agrupa las visitas por zonas para reducir desplazamientos.',
-      'Prioriza menos paradas si el recorrido tiene muchas cuestas.',
-      'Deja margen para cambios de clima, colas o cansancio.',
-      'Comprueba horarios oficiales cuando una visita dependa de una franja concreta.',
-    ],
-    Gastronomía: [
-      'Comprueba menú y horario actual antes de ir expresamente.',
-      'Decide si buscas comida rápida, tradicional o una experiencia más larga.',
-      'Compara la ubicación con el resto de tu ruta.',
-      'Reserva cuando el propio local lo recomiende o la fecha sea especialmente demandada.',
-    ],
-    Consejos: [
-      'Distingue información estable de precios, horarios o reglas que pueden cambiar.',
-      'Evita añadir compras o reservas que no aporten a tu ruta.',
-      'Guarda una alternativa sencilla si el plan principal falla.',
-      'Comprueba fuentes oficiales cuando la decisión implique dinero o acceso.',
-    ],
-    Planificación: [
-      'Trabaja con tus fechas reales y no con precios de otro año.',
-      'Organiza los días por zonas antes de reservar actividades.',
-      'Deja margen para clima, colas y cambios de servicio.',
-      'Comprueba condiciones oficiales antes de pagar.',
-    ],
-    Transporte: [
-      'Elige el título de transporte según los trayectos que realmente harás.',
-      'Comprueba alteraciones de servicio antes de un desplazamiento importante.',
-      'Ten en cuenta equipaje, cuestas y transbordos.',
-      'Usa la web del operador como referencia final para tarifas y horarios.',
-    ],
-    Cultura: [
-      'Separa el contexto histórico de horarios o exposiciones temporales.',
-      'Comprueba acceso y condiciones actuales si el lugar requiere entrada.',
-      'Combina la visita con otros puntos cercanos cuando tenga sentido.',
-      'Respeta las normas específicas del espacio que visites.',
-    ],
-  };
-
-  const categoryChecklist: Record<string, string[]> = {
-    Guías: ['Calzado adecuado', 'Agua según la época', 'Ruta agrupada por zonas', 'Reserva si el lugar la exige'],
-    Gastronomía: ['Horario actual', 'Menú o rango de precios visible', 'Ubicación en tu ruta', 'Reserva si aplica'],
-    Consejos: ['Fuente actual si el dato cambia', 'Plan alternativo', 'Tiempo suficiente', 'Condiciones antes de pagar'],
-    Planificación: ['Fechas definidas', 'Presupuesto propio', 'Plan A y plan B', 'Reservas realmente necesarias'],
-    Transporte: ['Tarjeta Navegante si aplica', 'Estado del servicio', 'Ruta alternativa', 'App o web oficial del operador'],
-    Cultura: ['Horario actual', 'Entrada o reserva si aplica', 'Tiempo de visita', 'Alternativa cercana'],
-  };
-
-  const categoryTip: Record<string, string> = {
-    Guías: 'Usa esta página para orientar la ruta y confirma los datos variables antes del viaje.',
-    Gastronomía: 'Los locales, cartas y horarios cambian: comprueba la información del establecimiento antes de desplazarte.',
-    Consejos: 'Cuando un dato afecte dinero, acceso o transporte, usa la fuente oficial como comprobación final.',
-    Planificación: 'Planifica con tus fechas y condiciones reales; una cifra genérica rara vez representa todos los viajes.',
-    Transporte: 'Tarifas, obras y alteraciones pueden cambiar: confirma el trayecto en el operador antes de salir.',
-    Cultura: 'El contexto histórico es estable; horarios, exposiciones y accesos no siempre lo son.',
-  };
-
-  const categoryPlanningText: Record<string, string> = {
-    Guías: 'Encaja este plan con puntos cercanos y evita cruzar Lisboa varias veces el mismo día. Si la ruta tiene cuestas, reduce paradas o usa transporte para el tramo menos cómodo.',
-    Gastronomía: 'Haz que la parada para comer forme parte de la zona que ya estás visitando. Desplazarte media ciudad por una recomendación puede consumir más tiempo del que aporta.',
-    Consejos: 'Aplica solo las recomendaciones que resuelvan una necesidad real de tu viaje. Si un dato depende de precio, horario o normativa, compruébalo de nuevo.',
-    Planificación: 'Primero fija fechas y prioridades; después reserva. Así puedes comparar opciones reales en lugar de construir el viaje alrededor de cifras genéricas.',
-    Transporte: 'Decide el transporte a partir del origen, destino, equipaje y hora. La opción más barata no siempre es la más práctica, y la más rápida puede cambiar según el servicio.',
-    Cultura: 'Combina el tema con lugares relacionados que ya estén en tu recorrido. No hace falta convertir cada contexto histórico o cultural en una parada adicional.',
-  };
-
-  const slugDetails: Record<
-    string,
-    { intro?: string; musts?: string[]; itinerary?: string[]; localTips?: string[] }
-  > = {
-    'mejores-miradores-lisboa': {
-      intro: 'Si buscas las mejores vistas sin perder tiempo, estos son los miradores que sí valen la pena.',
-      musts: [
-        'Senhora do Monte para vistas completas sin tanta gente.',
-        'Santa Luzia por azulejos y postal clásica.',
-        'Portas do Sol para una parada rápida con kioskito.',
-        'Graça para ambiente local y sombra.',
-        'Santa Catarina si quieres atardecer con buen ambiente.',
-      ],
-      itinerary: [
-        'Mañana: Santa Luzia + Portas do Sol (15 min a pie).',
-        'Mediodía: Graça y descanso.',
-        'Tarde: Senhora do Monte.',
-        'Atardecer: Santa Catarina o São Pedro de Alcântara.',
-      ],
-      localTips: [
-        'Llega 30-40 minutos antes del atardecer.',
-        'Evita sábados por la tarde en los miradores más turísticos.',
-      ],
-    },
-    'donde-comer-barato-lisboa': {
-      intro: 'Comer bien y barato en Lisboa es posible si evitas las zonas más turísticas.',
-      musts: [
-        'Tascas en Mouraria o Arroios con menú del día.',
-        'Mercados locales con platos sencillos y frescos.',
-        'Pastelerías de barrio para desayunos baratos.',
-        'Cafés con “prato do dia” entre semana.',
-        'Opciones para picar sin sentarte a cenar.',
-      ],
-      itinerary: [
-        'Desayuno: pastelería local (bica + pastel).',
-        'Comida: menú del día (12:30-14:30).',
-        'Cena: tasca de barrio o petiscos.',
-      ],
-      localTips: [
-        'Si el menú está en cinco idiomas, pasa de largo.',
-        'En Lisboa se come temprano; después de las 15:00 hay menos opciones.',
-      ],
-    },
-    'barrios-imprescindibles': {
-      intro: 'Lisboa cambia por barrios. Estos son los que más sentido tienen para una primera visita.',
-      musts: [
-        'Baixa-Chiado para moverte fácil y ver lo básico.',
-        'Alfama para callejuelas y fado.',
-        'Bairro Alto para atardecer y vida nocturna.',
-        'Belém para monumentos y paseo junto al río.',
-        'Príncipe Real para cafés y ambiente local.',
-      ],
-      itinerary: [
-        'Día 1: Baixa + Chiado + Alfama.',
-        'Día 2: Belém + Príncipe Real + Bairro Alto.',
-      ],
-      localTips: [
-        'Alojamiento: Baixa-Chiado si es tu primera vez.',
-        'Alfama es precioso, pero tiene cuestas fuertes.',
-      ],
-    },
-    'evitar-turistadas-lisboa': {
-      intro: 'Lisboa se disfruta más cuando evitas las trampas de siempre.',
-      musts: [
-        'No comas en Rua Augusta.',
-        'Evita el tranvía 28 a media tarde.',
-        'No subas al castillo a las 12:00.',
-        'No te quedes solo en Baixa.',
-        'No pagues cenas “con fado” infladas.',
-      ],
-      itinerary: [
-        'Mañanas: sitios populares.',
-        'Mediodía: barrios locales.',
-        'Tardes: miradores menos masificados.',
-      ],
-      localTips: [
-        'Camina 5-10 minutos fuera de las calles principales.',
-        'Si ves “menu turístico”, cambia de calle.',
-      ],
-    },
-    'pasteles-de-belem': {
-      intro: 'Pastéis de Belém tiene una receta propia. Vale la pena si eliges bien el horario.',
-      musts: [
-        'Ir antes de las 9:30 o a última hora.',
-        'Probarlos calientes con canela.',
-        'Evitar la cola principal si hay salón interior.',
-      ],
-      itinerary: [
-        'Mañana: pastéis + paseo por Belém.',
-        'Mediodía: Jerónimos o Torre de Belém.',
-      ],
-      localTips: [
-        'La cola del salón suele ser más rápida.',
-        'Pide para llevar y come en el paseo.',
-      ],
-    },
-    'mejor-epoca-visitar-lisboa': {
-      intro: 'Primavera y otoño son el equilibrio perfecto entre clima y precios.',
-      musts: [
-        'Mayo y septiembre para mejor clima.',
-        'Junio-agosto para playa y ambiente.',
-        'Invierno para precios bajos y ciudad tranquila.',
-      ],
-      itinerary: [
-        'Si vas en verano: madruga y descansa al mediodía.',
-        'Si vas en invierno: más museos y cafés.',
-      ],
-      localTips: [
-        'Consulta eventos locales para evitar precios altos.',
-        'Reserva con antelación si viajas en agosto.',
-      ],
-    },
-      'aeropuerto-lisboa-al-centro': {
-      intro: 'La opción depende de tu equipaje, tu hora de llegada y la zona donde duermas: metro, autobús urbano, taxi o Uber/Bolt.',
-      musts: [
-        'Metro (línea roja) para la opción más barata.',
-        'Autobús urbano si llevas poco equipaje y la línea encaja con tu destino.',
-        'Taxi o Uber/Bolt si llegas de madrugada, con varias maletas o muy cansado.',
-        'Taxi solo en la parada oficial, nunca con quien se ofrezca sin taxímetro.',
-      ],
-      itinerary: [
-        'De día: metro o autobús según el alojamiento y el equipaje.',
-        'De madrugada (después de la 1:00): taxi o Uber/Bolt.',
-      ],
-      localTips: [
-        'Compra la Viva Viagem en la propia estación del aeropuerto si vas a usar el metro.',
-        'El punto de recogida de Uber/Bolt está señalizado y separado del de taxis.',
-      ],
-    },
-    'restaurantes-romanticos-lisboa': {
-      intro: 'Para una cena especial, reserva con tiempo y busca vistas reales.',
-      musts: [
-        'Chapitô à Mesa para atardecer.',
-        'Ponto Final para cena con vistas al río.',
-        'Solar dos Presuntos para algo más clásico.',
-        'Bairro Alto si quieres plan nocturno.',
-      ],
-      itinerary: [
-        'Atardecer: mirador cercano.',
-        'Cena: reserva a las 20:30.',
-        'Copa: barrio cercano a pie.',
-      ],
-      localTips: [
-        'Reservar viernes y sábado es obligatorio.',
-        'Pregunta por mesas con vista antes de confirmar.',
-      ],
-    },
-    'que-ver-cascais-desde-lisboa': {
-      intro: 'Cascais es la escapada fácil: tren directo y todo caminable.',
-      musts: [
-        'Centro histórico.',
-        'Boca do Inferno.',
-        'Paseo marítimo.',
-        'Playa principal.',
-      ],
-      itinerary: [
-        'Tren desde Cais do Sodré.',
-        'Centro + paseo marítimo.',
-        'Boca do Inferno.',
-        'Comida cerca del puerto.',
-      ],
-      localTips: [
-        'Si vas en verano, llega temprano.',
-        'Si hace viento, lleva chaqueta ligera.',
-      ],
-    },
-    'playas-cerca-lisboa': {
-      intro: 'Las playas más fáciles son Cascais y Costa da Caparica.',
-      musts: [
-        'Cascais si quieres tren directo.',
-        'Caparica si buscas arena larga.',
-        'Arrábida si tienes coche.',
-      ],
-      itinerary: [
-        'Mañana: tren a Cascais.',
-        'Mediodía: playa y comida.',
-        'Tarde: regreso antes del atardecer.',
-      ],
-      localTips: [
-        'En agosto, evita llegar después de las 11:00.',
-        'Arrábida es más bonita pero requiere coche.',
-      ],
-    },
-    'donde-escuchar-fado-autentico': {
-      intro: 'El fado auténtico se vive en espacios pequeños, con silencio y respeto.',
-      musts: [
-        'Tascas pequeñas en Alfama.',
-        'Bares con ambiente local.',
-        'Evitar shows turísticos masivos.',
-      ],
-      itinerary: [
-        'Cena temprano en Alfama.',
-        'Fado entre 20:30 y 22:30.',
-      ],
-      localTips: [
-        'No hables durante las canciones.',
-        'Consume algo para apoyar al local.',
-      ],
-    },
-    'presupuesto-viajar-lisboa': {
-      intro: 'No existe un presupuesto diario único: calcula alojamiento, transporte, comida y entradas por separado con precios de tus fechas.',
-      musts: [
-        'Billete Carris/Metro 2026: 1,90 €.',
-        'Billete 24 h Carris/Metro 2026: 7,25 €.',
-        'Zapping en Metro 2026: 1,72 € por viaje.',
-        'Tarjeta Navegante ocasional: 0,50 € y reutilizable durante un año.',
-        'Usa el precio real de tu alojamiento: es la partida que más cambia por fecha.',
-      ],
-      itinerary: [
-        'Primero: fija el coste real del alojamiento para tus fechas.',
-        'Después: calcula los trayectos y compara zapping con billetes de 24 horas.',
-        'Por último: añade comidas, entradas prioritarias y un margen para imprevistos.',
-      ],
-      localTips: [
-        'No uses rangos de alojamiento de años anteriores como referencia para 2026.',
-        'Agrupa las visitas por zonas: ahorrar trayectos también reduce el presupuesto.',
-        'Compara el resultado con la calculadora de presupuesto de la web.',
-      ],
-    },
-    'mejores-mercados-lisboa': {
-      intro: 'Time Out es el más famoso, pero no el más local.',
-      musts: [
-        'Time Out Market para variedad.',
-        'Feira da Ladra para antigüedades.',
-        'Mercado de Arroios para comida local.',
-      ],
-      itinerary: [
-        'Mañana: mercado local.',
-        'Mediodía: comida en el mercado.',
-      ],
-      localTips: [
-        'Feira da Ladra es martes y sábado.',
-        'El mercado tradicional suele ser más barato.',
-      ],
-    },
-    'donde-tomar-cafe-lisboa': {
-      intro: 'En Lisboa se pide “bica”. Un café corto y fuerte.',
-      musts: [
-        'A Brasileira por historia.',
-        'Manteigaria para café y pastel.',
-        'Cafeterías de especialidad en Príncipe Real.',
-      ],
-      itinerary: [
-        'Mañana: bica en un café local.',
-        'Tarde: café con pastel en una pastelería.',
-      ],
-      localTips: [
-        'El café es barato fuera de zonas turísticas.',
-        'A primera hora hay mejor ambiente local.',
-      ],
-    },
-    'miradores-atardecer-lisboa': {
-      intro: 'El atardecer en Lisboa merece planificarlo bien.',
-      musts: [
-        'Senhora do Monte para vistas abiertas.',
-        'Santa Catarina para ambiente.',
-        'Portas do Sol si quieres foto clásica.',
-      ],
-      itinerary: [
-        'Llega 30-45 min antes.',
-        'Elige un mirador por tarde.',
-      ],
-      localTips: [
-        'Evita sábados por la tarde.',
-        'Lleva algo de beber.',
-      ],
-    },
-    'que-comprar-lisboa-souvenirs': {
-      intro: 'Los mejores souvenirs son útiles, locales y fáciles de llevar.',
-      musts: [
-        'Azulejos pequeños.',
-        'Conservas portuguesas.',
-        'Vino de Oporto.',
-        'Artesanía en corcho.',
-      ],
-      itinerary: [
-        'Mañana: Feira da Ladra.',
-        'Tarde: tiendas en Chiado o Alfama.',
-      ],
-      localTips: [
-        'Evita souvenirs de Rossio.',
-        'Compra en mercados locales.',
-      ],
-    },
-    'viajar-ninos-lisboa': {
-      intro: 'Lisboa es cómoda para familias si planificas ritmos y descansos.',
-      musts: [
-        'Oceanário para niños.',
-        'Parques con sombra.',
-        'Tranvía como experiencia.',
-      ],
-      itinerary: [
-        'Mañana: Oceanário.',
-        'Tarde: parque + paseo suave.',
-      ],
-      localTips: [
-        'Evita cuestas largas con cochecito.',
-        'Lleva snacks y agua siempre.',
-      ],
-    },
-    'excursiones-desde-lisboa': {
-      intro: 'Sintra es la número uno, Cascais es la más fácil.',
-      musts: [
-        'Sintra para palacios.',
-        'Cascais para costa.',
-        'Óbidos si quieres plan medieval.',
-      ],
-      itinerary: [
-        'Salir entre 8:00 y 9:00.',
-        'Elegir una excursión por día.',
-      ],
-      localTips: [
-        'Reserva entradas si vas a Sintra.',
-        'Evita combinar Sintra y Cascais el mismo día.',
-      ],
-    },
-  };
-
-  const introExtra = categoryIntro[categoria] || categoryIntro['Guías'];
-  const slugDetail = slugDetails[slug];
-  const musts = slugDetail?.musts || categoryMusts[categoria] || categoryMusts['Guías'];
-  const checklist = categoryChecklist[categoria] || categoryChecklist['Guías'];
-  const tip = categoryTip[categoria] || categoryTip['Guías'];
-  const itinerary = slugDetail?.itinerary;
-  const localTips = slugDetail?.localTips;
-  return {
-    titulo: post.titulo,
-    descripcion: post.excerpt,
-    imagen: post.imagen,
-    categoria: post.categoria,
-    fecha: post.fecha,
-    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
-    minutos: 7,
-    contenido: [
-      { tipo: 'parrafo', texto: post.excerpt },
-      { tipo: 'parrafo', texto: contexto },
-      { tipo: 'parrafo', texto: introExtra },
-      { tipo: 'subtitulo', texto: 'Lo esencial antes de ir' },
-      {
-        tipo: 'lista',
-        items: listaClave,
-      },
-      {
-        tipo: 'subtitulo',
-        texto: 'Cómo encajarlo en tu viaje',
-      },
-      {
-        tipo: 'parrafo',
-        texto: categoryPlanningText[categoria] || categoryPlanningText['Guías'],
-      },
-      ...(itinerary
-        ? [
-            { tipo: 'lista', items: itinerary },
-          ]
-        : []),
-      {
-        tipo: 'subtitulo',
-        texto: 'Qué no te puedes perder',
-      },
-      {
-        tipo: 'lista',
-        items: musts,
-      },
-      {
-        tipo: 'subtitulo',
-        texto: 'Antes de decidir',
-      },
-      {
-        tipo: 'lista',
-        items: [
-          'Comprueba de nuevo cualquier precio, horario o condición que pueda cambiar.',
-          'Prioriza lo que encaje con tu ruta en vez de sumar paradas por obligación.',
-          'Guarda una alternativa cercana si el clima, una cola o una incidencia cambia el plan.',
-        ],
-      },
-      ...(localTips
-        ? [
-            { tipo: 'lista', items: localTips },
-          ]
-        : []),
-      {
-        tipo: 'subtitulo',
-        texto: 'Checklist rápida',
-      },
-      {
-        tipo: 'lista',
-        items: checklist,
-      },
-      {
-        tipo: 'tip',
-        texto: tip,
-      },
-    ],
-  };
-}
 
 function getArticle(slug: string): Article | null {
-  return articles[slug] ?? buildFallbackArticle(slug);
+  return articles[slug] ?? null;
 }
 
 const articleExtras: Record<string, ArticleExtras> = {
@@ -4317,10 +3853,6 @@ const articleExtras: Record<string, ArticleExtras> = {
   'mejor-epoca-visitar-lisboa': {
     comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
     mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
-  },
-  'restaurantes-romanticos-lisboa': {
-    comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
-    mejorHora: 'Reserva para 20:00-21:00; si hay terraza, mejor al atardecer.',
   },
   'que-ver-cascais-desde-lisboa': {
     comoLlegar: 'Tren directo desde Cais do Sodré cada 20 minutos. El trayecto dura 30-40 minutos.',

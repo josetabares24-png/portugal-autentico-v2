@@ -306,10 +306,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'restaurantes-romanticos-lisboa',
-    titulo: '10 Restaurantes Románticos en Lisboa',
-    excerpt: 'Cenas con vistas, terrazas íntimas y planes perfectos para una noche especial.',
+    titulo: 'Restaurantes románticos en Lisboa: 6 opciones según el tipo de cita',
+    excerpt: 'Vistas, salas íntimas y propuestas gastronómicas para una cena especial, organizadas según el tipo de noche que buscas.',
     categoria: 'Gastronomía',
     fecha: '15 Ene 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/fado-tasca-noche.jpg',
   },
