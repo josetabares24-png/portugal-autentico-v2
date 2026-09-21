@@ -1962,12 +1962,15 @@ const articles: Record<string, Article> = {
     ]
   },
   "barrios-imprescindibles": {
-    titulo: "Los 5 barrios de Lisboa que definen la ciudad",
-    descripcion: "Cada zona cuenta una historia diferente. Aprende a leer Lisboa a través de sus calles, desde el bullicio de la Baixa hasta el silencio de Graça al amanecer.",
+    titulo: "Barrios de Lisboa: 5 zonas que merece la pena conocer",
+    seoTitle: "Barrios de Lisboa: 5 zonas que merece la pena conocer",
+    metaDescription: "Guía de 5 barrios de Lisboa: Baixa-Chiado, Alfama, Bairro Alto, Belém y Príncipe Real. Qué ver en cada zona y cuál encaja mejor en tu visita.",
+    descripcion: "Una guía para entender cinco zonas muy distintas de Lisboa y decidir dónde pasear según lo que buscas: centro histórico, miradores, noche, monumentos o ambiente de barrio.",
     imagen: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
     imageAlt: "Callejón escalonado de Alfama con casas encaladas, macetas junto a las puertas y tejados de teja",
     categoria: "Guías",
     fecha: "5 Dic 2024",
+    dateModified: "2026-09-21",
     minutos: 15,
     contenido: [
       { tipo: "parrafo", texto: "Lisboa no es una ciudad que se entienda en plano. Hay que caminarla para comprender cómo cada colina guarda una personalidad distinta, cómo la luz cambia según la orientación de las calles, cómo el sonido del fado en Alfama da paso al bullicio juvenil del Bairro Alto apenas cruzas unas manzanas." },
@@ -2418,206 +2421,181 @@ const articles: Record<string, Article> = {
     ]
   },
   "donde-escuchar-fado-autentico": {
-    titulo: "Dónde escuchar fado auténtico en Lisboa: guía para encontrar el verdadero",
-    seoTitle: "Dónde escuchar fado auténtico",
-    descripcion: "El fado es el alma de Lisboa, pero no todo lo que se vende como fado lo es. Aprende a distinguir el auténtico del turístico y dónde encontrarlo.",
-    imagen: "/images/miradouro-grupo-atardecer.jpg",
-    imageAlt: "Tasca de Lisboa iluminada de noche en una calle empedrada, con clientes en la mesa de la entrada",
+    titulo: "Dónde escuchar fado en Lisboa: casas, tascas y zonas",
+    seoTitle: "Dónde escuchar fado en Lisboa: casas, tascas y zonas",
+    metaDescription: "Dónde escuchar fado en Lisboa: tipos de experiencia, zonas, casas de fado con referencia oficial y qué comprobar antes de reservar.",
+    descripcion: "Guía práctica para escuchar fado en Lisboa sin reducirlo a una etiqueta de «auténtico» o «turístico»: formatos, zonas, lugares reconocidos y cómo elegir.",
+    imagen: "/images/fado-tasca-noche.jpg",
+    imageAlt: "Interior nocturno de una tasca de Lisboa asociada al ambiente del fado",
     categoria: "Cultura",
     fecha: "12 Nov 2024",
-    minutos: 14,
+    dateModified: "2026-09-21",
+    minutos: 10,
+    fuentes: [
+      { label: "Visit Lisboa — Rota do Fado", href: "https://www.visitlisboa.com/pt-pt/lisbon-stories/1-fado-route/pois" },
+      { label: "Visit Lisboa — Museu do Fado", href: "https://www.visitlisboa.com/pt-pt/locais/museu-do-fado" },
+      { label: "Visit Lisboa — Parreirinha de Alfama", href: "https://www.visitlisboa.com/pt-pt/locais/parreirinha-de-alfama" },
+    ],
+    links: [
+      { href: "/blog/fado-historia-origen", label: "Historia y origen del fado" },
+      { href: "/blog/alfama-historia-guia", label: "Qué ver en Alfama" },
+      { href: "/blog/chiado-bairro-alto-guia", label: "Chiado y Bairro Alto" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "La primera vez que escuché fado auténtico fue por accidente. Estaba en una tasca de Alfama buscando un sitio donde comer barato, y de repente una mujer se levantó de su mesa, tomó una guitarra portuguesa que estaba apoyada en la pared, y empezó a cantar. No había micrófono, no había escenario, no había anuncio previo. Solo una voz que llenó el silencio del local con una melancolía que no había sentido antes." },
-      { tipo: "parrafo", texto: "Ese es el fado real: espontáneo, íntimo, nacido de la necesidad de expresar algo que las palabras no pueden. No el espectáculo estructurado que se ofrece en restaurantes turísticos con menús fijos y precios inflados. Esta guía te ayudará a encontrar el primero y evitar el segundo." },
-      { tipo: "subtitulo", texto: "Fado turístico versus fado auténtico: cómo distinguirlos" },
-      { tipo: "parrafo", texto: "El fado turístico tiene señales claras: restaurantes grandes con carteles en varios idiomas anunciando 'Fado Show', menús fijos obligatorios que cuestan 60-80 euros, horarios fijos de espectáculo, y fadistas profesionales que interpretan las mismas canciones cada noche para un público que no habla portugués." },
-      { tipo: "parrafo", texto: "El fado auténtico es diferente: bares pequeños donde los fadistas aparecen espontáneamente, sin micrófonos ni amplificación, cantando porque les nace, no porque les pagan. El público es mayoritariamente local, el ambiente es íntimo, y no hay menú obligatorio —solo consumes lo que quieras beber. El precio es el de una consumición, no el de una cena completa." },
-      { tipo: "parrafo", texto: "No digo que el fado turístico sea malo —puede ser una introducción accesible al género—, pero no es lo mismo. El fado auténtico te toca de otra manera, te conecta con algo más profundo que el entretenimiento." },
-      { tipo: "subtitulo", texto: "Tasca do Chico — El templo del fado vadio" },
-      { tipo: "parrafo", texto: "Este bar en el Bairro Alto es legendario entre los amantes del fado. No hay reservas, no hay escenario, no hay horario fijo. Los fadistas —algunos profesionales, otros aficionados que llevan décadas cantando aquí— aparecen cuando les apetece, toman una guitarra portuguesa, y el local se queda en silencio." },
-      { tipo: "parrafo", texto: "El fado aquí es vadio —improvisado, espontáneo—. Los miércoles y domingos a las ocho de la tarde suele haber más actividad, pero cualquier noche puede sorprenderte. El lugar es pequeño —apenas caben treinta personas—, así que llega temprano o prepárate para esperar fuera escuchando desde la calle." },
-      { tipo: "parrafo", texto: "No hay entrada, pero se espera que consumas algo —una cerveza, un vino, un café—. El ambiente es 100% local, y si hablas portugués o al menos muestras respeto por la tradición, los fadistas pueden dedicarte una canción." },
-      { tipo: "tip", texto: "Llega antes de las ocho para asegurar sitio. Y durante el fado, guarda silencio absoluto. Hablar o hacer ruido es de muy mala educación y te ganarás miradas de reproche de todo el local." },
-      { tipo: "subtitulo", texto: "A Baiona — Alfama en estado puro" },
-      { tipo: "parrafo", texto: "En el corazón de Alfama, este bar es donde los vecinos del barrio vienen a escuchar fado después de cenar. Los fadistas son aficionados que cantan por amor a la música, no profesionales que cobran por actuación. El ambiente es íntimo, sin turistas, y el fado que escucharás aquí es el que se canta en las casas de Alfama desde hace generaciones." },
-      { tipo: "parrafo", texto: "No hay horario fijo —el fado empieza cuando alguien se anima a cantar—, pero a partir de las ocho de la tarde suele haber actividad. El local es pequeño y oscuro, con mesas de madera y paredes decoradas con fotos antiguas. Consumir es obligatorio, pero el precio es el de cualquier bar de barrio." },
-      { tipo: "parrafo", texto: "Este es el lugar más auténtico de la lista. Si solo puedes ir a un sitio para escuchar fado real, que sea este." },
-      { tipo: "subtitulo", texto: "Clube de Fado — Profesional pero auténtico" },
-      { tipo: "parrafo", texto: "Este restaurante en Alfama ofrece un punto medio: fado profesional interpretado por fadistas reconocidos, pero en un ambiente que mantiene la autenticidad. El local es una casa antigua con salones íntimos, y los fadistas tocan sin micrófono, manteniendo la tradición acústica." },
-      { tipo: "parrafo", texto: "El precio incluye cena y show (60-80 euros por persona), y aunque es más estructurado que los bares, el fado que escucharás es de calidad y auténtico. Las reservas son recomendadas, especialmente los fines de semana." },
-      { tipo: "parrafo", texto: "Es perfecto si quieres una experiencia completa —buena comida portuguesa y fado de calidad— sin el ambiente turístico de los restaurantes más comerciales." },
-      { tipo: "subtitulo", texto: "A Tasca do Chico (Graça) — Espontaneidad en las alturas" },
-      { tipo: "parrafo", texto: "Aunque comparte nombre con el bar del Bairro Alto, este local en Graça es independiente y tiene su propia personalidad. El fado aquí es aún más espontáneo —los locales cantan cuando les apetece, sin estructura, sin horarios—. Es el lugar más difícil de encontrar para turistas, lo que lo hace aún más auténtico." },
-      { tipo: "parrafo", texto: "El ambiente es de bar de barrio donde la música surge naturalmente de las conversaciones. No vengas esperando un espectáculo: ven a beber, a conversar, y si el fado aparece, será un regalo inesperado." },
-      { tipo: "subtitulo", texto: "Senhor Fado — Buena relación calidad-precio" },
-      { tipo: "parrafo", texto: "Este pequeño restaurante en Alfama ofrece fado tradicional con cena a un precio más razonable que los grandes locales turísticos (40-50 euros por persona). El ambiente es íntimo, la comida portuguesa es decente, y el fado se interpreta todas las noches por fadistas locales." },
-      { tipo: "parrafo", texto: "No es tan espontáneo como los bares, pero tampoco tan comercial como los restaurantes grandes. Es un buen punto medio si quieres garantía de escuchar fado sin pagar precios exorbitantes." },
-      { tipo: "subtitulo", texto: "El protocolo del fado: cómo comportarse" },
-      { tipo: "parrafo", texto: "El fado tiene sus propias reglas de etiqueta, y seguirlas es esencial para respetar la tradición. Cuando un fadista empieza a cantar, el silencio debe ser absoluto. No hables, no uses el móvil, no hagas ruido con cubiertos o vasos. El fado se escucha en silencio respetuoso, y cualquier interrupción es considerada una falta grave." },
-      { tipo: "parrafo", texto: "No aplaudas entre canciones a menos que el resto del público lo haga. El fado no es un espectáculo de entretenimiento, es una expresión emocional que se comparte. Al final de la sesión, los aplausos son apropiados, pero durante el canto, el silencio es el mejor homenaje." },
-      { tipo: "tip", texto: "Si no entiendes portugués, no importa. El fado se siente más que se comprende. Deja que la emoción de la voz y la guitarra te lleguen sin intentar traducir cada palabra." },
-      { tipo: "subtitulo", texto: "Qué evitar: las trampas turísticas" },
-      { tipo: "parrafo", texto: "Cualquier restaurante en Rossio, Baixa o cerca del Castelo que tenga carteles grandes anunciando 'Fado Show' en varios idiomas es probablemente una trampa turística. Estos lugares cobran 60-80 euros por menús fijos de calidad mediocre, y el fado que ofrecen es una versión comercializada que ha perdido su esencia." },
-      { tipo: "parrafo", texto: "Si un local tiene menú obligatorio, horario fijo de espectáculo, y está lleno de turistas con auriculares de traducción, probablemente no es el lugar más auténtico. Los mejores fados se escuchan en lugares donde los portugueses van por su cuenta, no donde los llevan los guías turísticos." }
+      { tipo: "parrafo", texto: "Para escuchar fado en Lisboa primero conviene decidir qué tipo de experiencia buscas. Hay casas de fado con cena, espectáculos centrados en la música y sesiones más informales asociadas al llamado fado vadio. Ningún formato es automáticamente «real» o «falso»: cambian la estructura, el precio, la duración y el ambiente." },
+      { tipo: "parrafo", texto: "Alfama y Mouraria están muy ligadas a la historia del género, mientras que Bairro Alto y Chiado también concentran espacios donde escuchar fado. Visit Lisboa mantiene una Rota do Fado con lugares y referencias culturales que sirve como punto de partida para comprobar opciones vigentes." },
+
+      { tipo: "subtitulo", texto: "Qué significa buscar «fado auténtico» en Lisboa" },
+      { tipo: "parrafo", texto: "La palabra «auténtico» se usa mucho en turismo, pero no es una categoría oficial. Una casa profesional con actuaciones programadas puede tener una relación profunda con la tradición, igual que una sesión informal puede variar de una noche a otra. Es más útil fijarse en el formato y en las condiciones reales que promete cada lugar." },
+
+      { tipo: "subtitulo", texto: "Tres formatos para escuchar fado" },
+      { tipo: "lista", items: [
+        "Casa de fado con cena: combina restauración y actuaciones durante la noche; suele requerir reserva.",
+        "Espectáculo dedicado al fado: opción más simple si quieres escuchar música sin organizar una cena completa.",
+        "Fado vadio o sesiones informales: puede ser más espontáneo y depender del día, del local y de los participantes."
+      ]},
+
+      { tipo: "subtitulo", texto: "Alfama: casas de fado y Museu do Fado" },
+      { tipo: "parrafo", texto: "Alfama concentra varias casas históricas y el Museu do Fado. Entre los lugares recogidos por fuentes oficiales de turismo aparecen Parreirinha de Alfama y Casa de Fado Marquês da Sé. Si eliges una casa con cena, revisa antes la reserva, el consumo mínimo, la hora de inicio y si el programa musical está incluido en el precio." },
+
+      { tipo: "subtitulo", texto: "Mouraria: contexto histórico del fado" },
+      { tipo: "parrafo", texto: "La Rota do Fado de Visit Lisboa incluye puntos de Mouraria vinculados a Maria Severa y a la memoria histórica del género. Es una zona especialmente útil si quieres combinar una ruta cultural durante el día con música por la noche." },
+
+      { tipo: "subtitulo", texto: "Bairro Alto y Chiado: opciones céntricas" },
+      { tipo: "parrafo", texto: "Bairro Alto y Chiado ofrecen formatos distintos, desde casas y tascas hasta espectáculos pensados específicamente para escuchar fado. Si tu alojamiento está en el centro, pueden ser más cómodos que desplazarte a otra zona solo por perseguir una supuesta experiencia «menos turística»." },
+
+      { tipo: "subtitulo", texto: "Lugares con referencia oficial para empezar a comparar" },
+      { tipo: "lista", items: [
+        "Parreirinha de Alfama: casa de fado histórica en Alfama recogida por Visit Lisboa.",
+        "Casa de Fado Marquês da Sé: incluida en la Rota do Fado de Visit Lisboa.",
+        "Sr. Vinho: casa de fado incluida en la Rota do Fado de Visit Lisboa.",
+        "Museu do Fado: no sustituye una noche de música en vivo, pero ayuda a entender la historia, intérpretes y guitarra portuguesa."
+      ]},
+
+      { tipo: "subtitulo", texto: "Qué comprobar antes de reservar" },
+      { tipo: "lista", items: [
+        "Si la música está incluida en la reserva o depende de un consumo mínimo.",
+        "Si hay cena obligatoria o puedes ir solo a escuchar.",
+        "Hora de entrada y duración aproximada.",
+        "Política de cancelación y necesidad de reserva.",
+        "Programa o artistas previstos cuando el local lo publique."
+      ]},
+
+      { tipo: "subtitulo", texto: "Cómo comportarse durante el fado" },
+      { tipo: "parrafo", texto: "Cuando empieza una interpretación, lo habitual es reducir conversaciones y ruido para escuchar. Sigue las indicaciones del local sobre fotografías o vídeo y evita usar el móvil de forma que distraiga a intérpretes y público." },
+      { tipo: "enlace", texto: "Si quieres entender mejor qué estás escuchando antes de elegir un local, revisa la guía sobre significado, origen e historia del género.", href: "/blog/fado-historia-origen", label: "Historia y origen del fado" }
     ]
   },
   "presupuesto-viajar-lisboa": {
-    titulo: "Presupuesto real para viajar a Lisboa: análisis honesto día a día",
-    seoTitle: "Presupuesto para viajar a Lisboa",
-    descripcion: "Cuánto cuesta realmente comer, dormir y moverse en Lisboa. Desglose detallado de precios reales en 2024 para que planifiques sin sorpresas.",
+    titulo: "¿Lisboa es cara? Presupuesto para viajar en 2026",
+    seoTitle: "¿Lisboa es cara? Presupuesto para viajar en 2026",
+    metaDescription: "Cómo calcular un presupuesto para Lisboa en 2026: alojamiento, comida, transporte y entradas, con tarifas oficiales y una fórmula para estimar tu viaje.",
+    descripcion: "Una guía para calcular cuánto cuesta viajar a Lisboa sin usar presupuestos diarios irreales: separa alojamiento, comida, transporte y actividades y ajusta cada partida a tus fechas.",
     imagen: "/images/alfama-callejon.jpg",
-    imageAlt: "Tazas de café en la mesa de una terraza, en una calle empedrada en cuesta de Lisboa",
+    imageAlt: "Calle empedrada de Lisboa con terrazas y edificios históricos",
     categoria: "Planificación",
     fecha: "10 Nov 2024",
-    minutos: 13,
+    dateModified: "2026-09-21",
+    minutos: 10,
     fuentes: [
-      { label: "Carris — tarifas de tranvía, autobús y elevadores", href: "https://www.carris.pt/" },
-      { label: "Metropolitano de Lisboa — títulos y precios", href: "https://www.metrolisboa.pt/" },
+      { label: "CARRIS — tarifas en vigor durante 2026", href: "https://www.carris.pt/descubra/novo-tarifario-2026/" },
+      { label: "Metropolitano de Lisboa — billetes y tarifas", href: "https://www.metrolisboa.pt/" },
     ],
     links: [
-      // La calculadora es la versión herramienta de este mismo artículo: aquí
-      // está el porqué de cada partida, y allí el cálculo para un viaje
-      // concreto. Va primera porque es lo que busca quien llega hasta aquí.
-      { href: '/calculadora-presupuesto-lisboa', label: 'Calculadora de presupuesto para Lisboa' },
-      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
-      { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
-      { href: '/itinerarios', label: 'Itinerarios gratuitos de Lisboa' },
+      { href: "/calculadora-presupuesto-lisboa", label: "Calculadora de presupuesto para Lisboa" },
+      { href: "/blog/como-pagar-en-portugal", label: "Cómo pagar en Portugal" },
+      { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
+      { href: "/planifica-tu-viaje", label: "Planifica tu viaje a Lisboa" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "Lisboa puede ser una de las capitales más baratas de Europa o una de las más caras, dependiendo completamente de cómo viajes. He visto a viajeros gastar 200 euros al día sin darse cuenta, y a otros vivir perfectamente con 30. La diferencia no está en la ciudad, sino en las decisiones que tomas." },
-      { tipo: "parrafo", texto: "He hecho los cálculos reales basándome en precios actuales de 2024, y he creado tres escenarios de presupuesto que reflejan formas reales de viajar. Estos números no son estimaciones optimistas ni pesimistas, sino lo que realmente cuesta según tus elecciones." },
-      { tipo: "subtitulo", texto: "Presupuesto bajo: 30-40 euros al día" },
-      { tipo: "parrafo", texto: "Es perfectamente posible disfrutar Lisboa con un presupuesto ajustado. El alojamiento suele ser la partida más alta, así que conviene empezar por ella al organizar el presupuesto. Todo pasa por priorizar bien: alojamiento básico pero limpio, comida en tascas de barrio en lugar de restaurantes turísticos, transporte público en vez de taxis, y actividades gratuitas que son muchas en esta ciudad." },
-      { tipo: "parrafo", texto: "Un hostel decente en el centro cuesta entre 15 y 20 euros la noche en temporada media. Para comer, combina tascas locales (menú del día por 8-9 euros) con compras en supermercado para picnics en miradores. El transporte público con pase diario son 6,40 euros, y las mejores actividades —miradores, pasear por Alfama, playas— son gratis." },
-      { tipo: "parrafo", texto: "Con este presupuesto no tendrás lujos, pero vivirás la ciudad de forma auténtica, comerás donde comen los locales, y verás lo esencial sin renunciar a nada importante." },
+      { tipo: "parrafo", texto: "¿Lisboa es cara o barata? La respuesta depende sobre todo de dos decisiones: cuánto pagas por dormir y cuánto de tu viaje quieres dedicar a restaurantes, entradas y transporte de pago. Dar una cifra diaria única suele ser engañoso porque el alojamiento cambia mucho según las fechas, la zona y la antelación." },
+      { tipo: "parrafo", texto: "La forma más útil de preparar el presupuesto es separar las partidas. Así puedes comparar opciones reales para tus fechas y detectar dónde se está yendo el dinero antes de reservar." },
+
+      { tipo: "subtitulo", texto: "¿Lisboa es cara o barata en 2026?" },
+      { tipo: "parrafo", texto: "Lisboa permite combinar muchos planes gratuitos —barrios históricos, miradores y paseos— con gastos que sí pueden subir rápido, especialmente alojamiento, restaurantes y entradas. Por eso dos personas que visiten la ciudad los mismos días pueden terminar con presupuestos muy distintos sin que ninguna de las dos esté calculando mal." },
+
+      { tipo: "subtitulo", texto: "1. Alojamiento: la partida que más cambia el total" },
+      { tipo: "parrafo", texto: "Busca el precio real para tus fechas antes de fijar un presupuesto diario. Compara el coste total de la estancia, la tasa turística cuando corresponda, la política de cancelación y el transporte que necesitarás desde esa zona. Un alojamiento algo más barato puede dejar de compensar si obliga a hacer más trayectos o añade tiempos largos cada día." },
+
+      { tipo: "subtitulo", texto: "2. Comida: decide cuántas comidas quieres pagar fuera" },
+      { tipo: "parrafo", texto: "En vez de asumir un precio fijo por día, calcula cuántos desayunos, almuerzos y cenas harás en restaurantes y cuántos resolverás con cafetería, supermercado o una comida rápida. Es una partida fácil de ajustar sin cambiar el viaje completo." },
+
+      { tipo: "subtitulo", texto: "3. Transporte: tarifas oficiales de Lisboa en 2026" },
+      { tipo: "parrafo", texto: "CARRIS publica para 2026 un billete CARRIS/Metro de 1,90 €, zapping a 1,72 € y un título de 24 horas CARRIS/Metro de 7,25 €. La tarifa comprada a bordo de un eléctrico es de 3,30 €. Antes de comprar un pase diario, calcula cuántos trayectos reales harás: caminar es parte normal de una visita a Lisboa y no todos los días requieren el mismo título." },
+      { tipo: "enlace", texto: "Si no sabes qué combinación te conviene, la guía de movilidad compara metro, tranvía, autobús, tren y trayectos a pie.", href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
+
+      { tipo: "subtitulo", texto: "4. Entradas y excursiones: presupuesta solo lo que realmente harás" },
+      { tipo: "parrafo", texto: "Haz una lista corta de monumentos, museos o excursiones que son prioritarios y usa sus webs oficiales para comprobar el precio vigente. No sumes diez atracciones por si acaso: eso infla el presupuesto y rara vez refleja cómo termina siendo el viaje real." },
+
+      { tipo: "subtitulo", texto: "Tres maneras de construir tu presupuesto" },
       { tipo: "lista", items: [
-        "Alojamiento: Hostel 15-20 EUR/noche",
-        "Comida: 10-15 EUR/día (tascas y supermercado)",
-        "Transporte: 6.40 EUR (pase diario)",
-        "Actividades: Gratis (miradores, pasear, playas)",
-        "TOTAL: 31-41 EUR/día"
+        "Ajustado: prioriza alojamiento sencillo, muchos recorridos a pie, pocas entradas de pago y comidas mezcladas entre opciones económicas y supermercado.",
+        "Intermedio: combina una ubicación cómoda, restaurantes seleccionados, transporte público y varias entradas o una excursión.",
+        "Cómodo: reserva más margen para alojamiento, taxis o VTC puntuales, restaurantes, actividades de pago y cambios de última hora."
       ]},
-      { tipo: "subtitulo", texto: "Presupuesto medio: 60-80 euros al día" },
-      { tipo: "parrafo", texto: "Este es el presupuesto más común para viajeros que buscan equilibrio entre comodidad y economía. Te permite alojarte en hoteles decentes de 2-3 estrellas, comer en restaurantes locales de calidad sin ser turísticos, y pagar algunas entradas a museos o monumentos." },
-      { tipo: "parrafo", texto: "Un hotel en el centro cuesta entre 50 y 60 euros la noche si reservas con antelación. Para comer, puedes alternar entre tascas buenas (12-15 euros) y restaurantes locales (20-25 euros). El transporte sigue siendo el pase diario, y puedes permitirte algunas actividades de pago como el Castillo o la Torre de Belém." },
-      { tipo: "parrafo", texto: "Es el presupuesto ideal si quieres comodidad sin derrochar, y te permite disfrutar de la gastronomía portuguesa sin limitarte solo a lo más barato." },
+
+      { tipo: "subtitulo", texto: "Fórmula rápida para calcular cuánto te costará Lisboa" },
       { tipo: "lista", items: [
-        "Alojamiento: Hotel 50-60 EUR/noche",
-        "Comida: 20-25 EUR/día (restaurantes locales)",
-        "Transporte: 6.40 EUR (pase diario)",
-        "Actividades: 10-15 EUR (museos, entradas)",
-        "TOTAL: 86-106 EUR/día"
+        "Alojamiento total ÷ número de viajeros.",
+        "Comida estimada por persona × número de días.",
+        "Transporte según los trayectos previstos de cada día.",
+        "Entradas y excursiones que ya sabes que quieres hacer.",
+        "Un margen adicional para cafés, compras o cambios de plan."
       ]},
-      { tipo: "tip", texto: "Si viajas en pareja o grupo, compartir habitación en hotel baja el presupuesto a 40-50 euros por persona, permitiéndote subir de categoría sin aumentar mucho el gasto total." },
-      { tipo: "subtitulo", texto: "Presupuesto alto: 100-150 euros al día" },
-      { tipo: "parrafo", texto: "Con este presupuesto puedes permitirte hoteles de 4 estrellas, restaurantes de calidad reconocida, y actividades como tours guiados o excursiones a Sintra. Es el presupuesto para quienes buscan comodidad y no quieren preocuparse por el dinero durante el viaje." },
-      { tipo: "parrafo", texto: "Los hoteles de 4 estrellas en el centro cuestan entre 80 y 100 euros la noche. Puedes comer en restaurantes buenos (30-40 euros por comida) y permitirte caprichos como cenas románticas o mariscos. El transporte puede incluir Ubers ocasionales además del pase diario, y puedes hacer excursiones organizadas o tours privados." },
-      { tipo: "parrafo", texto: "Este presupuesto te da libertad total para disfrutar Lisboa sin restricciones, aunque con algunos ajustes inteligentes podrías hacer lo mismo por menos." },
-      { tipo: "lista", items: [
-        "Alojamiento: Hotel 80-100 EUR/noche",
-        "Comida: 40-50 EUR/día (restaurantes buenos)",
-        "Transporte: 6.40 EUR o Uber ocasional",
-        "Actividades: 20-30 EUR (tours, museos, Sintra)",
-        "TOTAL: 146-186 EUR/día"
-      ]},
-      { tipo: "subtitulo", texto: "Desglose de costos" },
-      { tipo: "parrafo", texto: "Desglose detallado de cada categoria para que planifiques mejor:" },
-      { tipo: "subtitulo", texto: "Alojamiento" },
-      { tipo: "lista", items: [
-        "Hostel: 15-25 EUR/noche",
-        "Hotel 2-3 estrellas: 50-70 EUR/noche",
-        "Hotel 4 estrellas: 80-120 EUR/noche",
-        "Hotel 5 estrellas: 150-300 EUR/noche",
-        "Airbnb: 40-100 EUR/noche (depende de la zona)"
-      ]},
-      { tipo: "subtitulo", texto: "Comida" },
-      { tipo: "lista", items: [
-        "Desayuno: 3-8 EUR (cafe y pastel de nata vs brunch)",
-        "Almuerzo: 8-15 EUR (tasca vs restaurante)",
-        "Cena: 15-40 EUR (tasca local vs restaurante bueno)",
-        "Bebidas: 2-5 EUR (cerveza o vino)",
-        "TOTAL comida: 28-68 EUR/dia"
-      ]},
-      { tipo: "subtitulo", texto: "Transporte" },
-      { tipo: "lista", items: [
-        "Viva Viagem: 0.50 EUR (compra una vez)",
-        "Pase diario: 6.40 EUR (ilimitado)",
-        "Viaje simple: 1.50 EUR",
-        "Uber trayecto corto: 3-6 EUR",
-        "Tren a Sintra: 4.60 EUR (ida y vuelta)"
-      ]},
-      { tipo: "subtitulo", texto: "Actividades" },
-      { tipo: "lista", items: [
-        "Miradores: Gratis",
-        "Castillo de Sao Jorge: 15 EUR",
-        "Torre de Belém: 15 EUR",
-        "Palacio da Pena (Sintra): 14 EUR",
-        "Museos: 5-10 EUR cada uno"
-      ]},
-      { tipo: "tip", texto: "Muchas actividades son gratis: pasear por Alfama, ver el atardecer en los miradores, ir a la playa. Planifica bien y ahorras mucho." },
-      { tipo: "subtitulo", texto: "Presupuesto para 3 dias" },
-      { tipo: "lista", items: [
-        "Presupuesto bajo: 90-120 EUR",
-        "Presupuesto medio: 260-320 EUR",
-        "Presupuesto alto: 440-560 EUR"
-      ]},
-      { tipo: "parrafo", texto: "Estos precios no incluyen vuelos, pero si todo lo demas: alojamiento, comida, transporte y actividades." }
+      { tipo: "enlace", texto: "Puedes hacer este cálculo con tus propios días y estilo de viaje en la herramienta de la web.", href: "/calculadora-presupuesto-lisboa", label: "Abrir la calculadora de presupuesto de Lisboa" },
+      { tipo: "tip", texto: "Primero fija alojamiento y fechas. Son las variables que más pueden cambiar el total; después ajusta comida, transporte y actividades." }
     ]
   },
   "mejores-mercados-lisboa": {
-    titulo: "Los mejores mercados de Lisboa: donde la ciudad cobra vida",
-    seoTitle: "Los mejores mercados de Lisboa",
-    descripcion: "Desde el Time Out Market hasta mercados de barrio escondidos. Comida fresca, artesanía local y la vida auténtica de Lisboa en cada rincón.",
-    imagen: "/images/barrio-calle-residencial.jpg",
-    imageAlt: "Dos viajeros caminando por una calle de Lisboa con fachadas de azulejo",
+    titulo: "Mercados de Lisboa: 5 mercados y ferias que visitar",
+    seoTitle: "Mercados de Lisboa: 5 mercados y ferias que visitar",
+    metaDescription: "Guía de mercados de Lisboa: Mercado da Ribeira, Campo de Ourique, Feira da Ladra, Arroios y Feira do Relógio. Qué encontrarás y cuándo ir.",
+    descripcion: "Cinco mercados y ferias de Lisboa con perfiles distintos: gastronomía, producto fresco, segunda mano y grandes ferias de calle.",
+    imagen: "/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg",
+    imageAlt: "Interior del Mercado da Ribeira en Lisboa con puestos de comida y mesas compartidas",
     categoria: "Guías",
     fecha: "8 Nov 2024",
-    minutos: 11,
+    dateModified: "2026-09-21",
+    minutos: 9,
+    fuentes: [
+      { label: "Lisboa Comércio — Feiras e Mercados", href: "https://comercio.lisboa.pt/feiras-e-mercados/" },
+      { label: "Câmara Municipal de Lisboa — Mercado de Campo de Ourique", href: "https://www.lisboa.pt/espacos-e-servicos/detalhe/mercado-campo-de-ourique" },
+      { label: "Junta de Freguesia de Arroios — Mercado de Arroios", href: "https://jfarroios.pt/equipamentos/mercados/mercado-de-arroios/" },
+    ],
+    links: [
+      { href: "/blog/time-out-market-lisboa", label: "Guía del Time Out Market Lisboa" },
+      { href: "/blog/donde-comer-barato-lisboa", label: "Dónde comer barato en Lisboa" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Los mercados de Lisboa son el corazón palpitante de la ciudad. Aquí es donde los vecinos compran el pescado del día, donde los productores locales venden sus frutas y verduras, y donde encuentras esa vida auténtica que a veces se pierde entre los monumentos turísticos. He pasado horas en estos mercados, no solo comprando, sino observando cómo funciona la ciudad real." },
-      { tipo: "parrafo", texto: "Esta guía te lleva desde el mercado más famoso hasta los rincones escondidos donde solo van los lisboetas. Cada uno tiene su personalidad, su horario, y su razón de ser." },
-      { tipo: "subtitulo", texto: "1. Time Out Market (Mercado da Ribeira)" },
-      { tipo: "parrafo", texto: "El mercado mas famoso y turistico de Lisboa. Food court moderno con los mejores chefs de la ciudad. Turistico pero con comida excelente. Llega temprano o espera cola." },
-      { tipo: 'enlace', texto: 'Si quieres decidir si encaja contigo, la guía específica compara funcionamiento, precios variables, ventajas y alternativas.', href: '/blog/time-out-market-lisboa', label: 'Leer la guía de Time Out Market Lisboa' },
+      { tipo: "parrafo", texto: "Buscar «mercados de Lisboa» mezcla lugares muy distintos. Hay mercados municipales de abastos, espacios gastronómicos dentro de mercados históricos y ferias de calle. Elegir bien depende de si quieres comer, comprar producto fresco, buscar objetos usados o simplemente ver un mercado de barrio." },
+      { tipo: "parrafo", texto: "Esta selección prioriza lugares con información oficial verificable y evita presentar un mercado como «más auténtico» solo porque tenga menos turistas." },
+
+      { tipo: "subtitulo", texto: "1. Mercado da Ribeira y Time Out Market" },
+      { tipo: "parrafo", texto: "El Mercado da Ribeira abrió en su ubicación actual en 1882 y mantiene actividad de mercado tradicional. Desde 2014 comparte el edificio con el espacio gastronómico Time Out Market, que reúne numerosos puestos de restauración y bebidas. Es la opción más directa si buscas un mercado gastronómico céntrico y con mucha variedad en un solo lugar." },
+      { tipo: "enlace", texto: "La guía específica explica cómo funciona el espacio, qué tipo de oferta encontrarás y cuándo puede interesarte elegir otra alternativa.", href: "/blog/time-out-market-lisboa", label: "Leer la guía del Time Out Market Lisboa" },
+
+      { tipo: "subtitulo", texto: "2. Mercado de Campo de Ourique" },
+      { tipo: "parrafo", texto: "Inaugurado en 1934, combina puestos de producto fresco con una zona de restauración. Funciona bien si quieres conocer un mercado de barrio sin renunciar a sentarte a comer. La Câmara de Lisboa publica el horario actualizado en la ficha oficial del mercado." },
+
+      { tipo: "subtitulo", texto: "3. Feira da Ladra" },
+      { tipo: "parrafo", texto: "Es una feria de calle centrada en artículos usados y artesanía, no un mercado gastronómico. Se celebra en Campo de Santa Clara. La información municipal vigente indica martes y sábados de 09:00 a 18:00." },
+      { tipo: "tip", texto: "Combina bien con Santa Apolónia, el Panteão Nacional y un paseo por Alfama o São Vicente; no la confundas con un mercado de abastos." },
+
+      { tipo: "subtitulo", texto: "4. Mercado de Arroios" },
+      { tipo: "parrafo", texto: "El Mercado de Arroios reúne pescado, bacalao, carne, fruta, verduras, pan, flores y varios espacios de restauración. La Junta de Freguesia de Arroios publica un horario de lunes a sábado de 07:00 a 14:00 y cierre los domingos." },
+
+      { tipo: "subtitulo", texto: "5. Feira do Relógio" },
+      { tipo: "parrafo", texto: "Es una de las grandes ferias municipales de Lisboa y tiene sectores de productos alimentarios y no alimentarios. La información municipal vigente la sitúa los domingos de 07:00 a 14:00. Está más alejada del circuito turístico clásico, así que encaja mejor si el objetivo es conocer una feria grande que si tienes pocas horas para visitar el centro." },
+
+      { tipo: "subtitulo", texto: "Qué mercado de Lisboa elegir" },
       { tipo: "lista", items: [
-        "Direccion: Av. 24 de Julho 49",
-        "Horario: 10:00 - 24:00",
-        "Precio: 8-20 EUR por comida",
-        "Ambiente: Turistico pero autentico"
+        "Para comer con muchas opciones: Mercado da Ribeira / Time Out Market.",
+        "Para mezclar mercado de barrio y restauración: Campo de Ourique.",
+        "Para segunda mano y objetos usados: Feira da Ladra.",
+        "Para producto fresco y mercado municipal: Mercado de Arroios.",
+        "Para una gran feria de domingo: Feira do Relógio."
       ]},
-      { tipo: "tip", texto: "El mercado tiene dos partes: la turistica (food court) y la tradicional (frutas, pescado). La tradicional es mas barata y local." },
-      { tipo: "subtitulo", texto: "2. Feira da Ladra (Mercado de las Pulgas)" },
-      { tipo: "parrafo", texto: "Mercado de segunda mano los martes y sabados en Alfama. Azulejos antiguos, ropa vintage, antiguedades. Perfecto para encontrar souvenirs unicos." },
-      { tipo: "lista", items: [
-        "Direccion: Campo de Santa Clara (Alfama)",
-        "Horario: Martes y sabados 6:00 - 17:00",
-        "Precio: Negociable (regatea)",
-        "Ambiente: Local y bohemio"
-      ]},
-      { tipo: "subtitulo", texto: "3. Mercado de Arroios" },
-      { tipo: "parrafo", texto: "Mercado local 100% autentico. Frutas, verduras, pescado fresco, comida casera. Ningun turista, solo locales. El menu del dia cuesta 7 EUR." },
-      { tipo: "lista", items: [
-        "Direccion: Rua Angelina Vidal 27",
-        "Horario: Lunes a sabado 7:00 - 14:00",
-        "Precio: Muy barato (menu 7 EUR)",
-        "Ambiente: 100% local"
-      ]},
-      { tipo: "subtitulo", texto: "4. LX Factory (Mercado Semanal)" },
-      { tipo: "parrafo", texto: "Mercado de domingo en LX Factory. Comida, artesania, musica en vivo. Ambiente joven y moderno. Perfecto para un domingo relajado." },
-      { tipo: "lista", items: [
-        "Direccion: Rua Rodrigues de Faria 103",
-        "Horario: Domingos 11:00 - 18:00",
-        "Precio: 8-15 EUR",
-        "Ambiente: Joven y moderno"
-      ]},
-      { tipo: "subtitulo", texto: "5. Mercado Biológico do Principe Real" },
-      { tipo: "parrafo", texto: "Mercado de productos organicos y locales. Frutas, verduras, pan, miel. Todo de productores locales. Solo los sabados." },
-      { tipo: "lista", items: [
-        "Direccion: Praça do Príncipe Real",
-        "Horario: Sabados 9:00 - 15:00",
-        "Precio: Precios justos",
-        "Ambiente: Local y ecologico"
-      ]}
+      { tipo: "tip", texto: "Los horarios pueden cambiar por festivos o decisiones de gestión. Si vas expresamente a un mercado, comprueba la fuente oficial el mismo día." }
     ]
   },
   "donde-tomar-cafe-lisboa": {
@@ -3448,35 +3426,55 @@ const articles: Record<string, Article> = {
     ]
   },
   "alfama-historia-guia": {
-    titulo: "Alfama: Historia, Callejuelas y Secretos del Barrio Más Antiguo de Lisboa",
-    seoTitle: "Alfama | Historia y guía del barrio",
-    descripcion: "Alfama tiene casi mil años sin cambiar. Sus callejuelas empinadas, el fado que sale de las ventanas y los gatos en las escaleras cuentan una historia que ningún museo puede contar.",
-    imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
-    imageAlt: "Vecina asomada a la ventana en una calle en cuesta de Lisboa que baja al Tajo",
+    titulo: "Alfama en Lisboa: qué ver, miradores y ruta a pie",
+    seoTitle: "Alfama en Lisboa: qué ver, miradores y ruta a pie",
+    metaDescription: "Guía de Alfama en Lisboa: qué ver, Sé, miradores, Castelo de São Jorge, cómo llegar y una ruta a pie para recorrer el barrio con sentido.",
+    descripcion: "Una guía práctica para recorrer Alfama a pie: puntos clave, miradores, conexión con la Sé y el castillo, cómo llegar y cómo enlazar el barrio con el fado.",
+    imagen: "/images/alfama-panoramica.jpg",
+    imageAlt: "Vista panorámica de Alfama en Lisboa con tejados y el río Tajo al fondo",
     categoria: "Guías",
     fecha: "25 Mar 2026",
-    minutos: 15,
+    dateModified: "2026-09-21",
+    minutos: 10,
+    fuentes: [
+      { label: "Visit Lisboa — Alfama", href: "https://www.visitlisboa.com/en/places/alfama" },
+      { label: "Castelo de São Jorge — información oficial de visita", href: "https://castelodesaojorge.pt/como-visitar/horarios/" },
+    ],
+    links: [
+      { href: "/blog/tram-28-historia-guia", label: "Guía del Tranvía 28" },
+      { href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
+      { href: "/blog/mejores-miradores-lisboa", label: "Mejores miradores de Lisboa" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Alfama huele distinto al resto de Lisboa. Hay una mezcla de humedad de piedra antigua, brasas de sardinas a mediodía y flores de las terrazas que no existe en ningún otro lugar. Es el barrio más antiguo de la ciudad y, en muchos sentidos, el más honesto: lo que ves es lo que lleva ahí desde la Edad Media." },
-      { tipo: "parrafo", texto: "El nombre viene del árabe Al-hamma, 'fuente de aguas calientes', porque aquí había manantiales termales que usaban los moros. Cuando los portugueses reconquistaron Lisboa en 1147, Alfama era ya un barrio de pescadores y artesanos que convivía con la aristocracia mora. Con el tiempo, la nobleza se fue a zonas más planas y Alfama quedó como barrio de gente sencilla: pescadores, marinheiros, lavanderas que tendían la ropa entre ventanas y cantaban el fado que consolaba las esperas largas." },
-      { tipo: "subtitulo", texto: "Cómo Orientarse en el Laberinto" },
-      { tipo: "parrafo", texto: "Alfama no tiene manzanas. Tiene uma trama de callejuelas que suben, bajan, giran y terminan en escaleras o en callejones ciegos. La estructura es árabe: diseñada para que el viento no corriera recto y la vida de la calle fuera más íntima. GPS en mano, hay momentos en que el punto azul da vueltas sin saber bien dónde ir." },
-      { tipo: "parrafo", texto: "La orientación más sencilla: el castillo está arriba del todo, el río está abajo. Cualquier calle que baje te llevará eventualmente al Tajo. Cualquier calle que suba te acercará al Castelo de São Jorge. No hay más secreto." },
-      { tipo: "tip", texto: "No uses Google Maps en Alfama para rutas a pie. Marca los puntos que quieres ver y camina libremente entre ellos. Las mejores calles de Alfama no están en ningún mapa porque son demasiado estrechas para aparecer como rutas." },
-      { tipo: "subtitulo", texto: "Los Miradores de Alfama: Cuál Ir Primero" },
-      { tipo: "parrafo", texto: "Alfama tiene cuatro miradores históricos. El Mirador de Santa Luzia tiene los paneles de azulejos más fotografiados de Lisboa —una representación de la Praça do Comércio antes del terremoto de 1755— y buganvillas que en primavera lo cubren de morado. Es el mirador para la foto. El Mirador das Portas do Sol, a treinta metros, tiene un quiosco donde tomarse una cerveza y vistas sin tanta aglomeración." },
-      { tipo: "parrafo", texto: "El Mirador da Graça está más al norte y a menudo lo pasan por alto los visitantes que se limitan a Alfama central. Gran error: las vistas del Castillo desde este ángulo son especialmente buenas, el quiosco sirve café desde primera hora, y los domingos por la mañana hay un ambiente de barrio genuino que vale la caminata." },
-      { tipo: "subtitulo", texto: "El Castelo de São Jorge" },
-      { tipo: "parrafo", texto: "El castillo que corona Alfama lleva en pie, en distintas formas, desde hace más de dos mil años. Fenicios, romanos, visigodos y moros lo usaron todos como punto defensivo sobre el estuario. Los portugueses lo tomaron en 1147 y desde entonces es el símbolo de la ciudad. Vale los 15€ de entrada por las vistas desde las almenas —las mejores de Lisboa— y por la zona arqueológica que muestra restos de todos esos pueblos anteriores." },
-      { tipo: "parrafo", texto: "Los pavos reales que deambulan por los jardines interiores son una rareza que sorprende a todo el mundo. Llevan en el castillo desde que el rey Manuel I los trajo de India como curiosidad exótica en el siglo XVI. Quinientos años después, sus descendientes siguen paseando entre los turistas." },
-      { tipo: "subtitulo", texto: "Dónde Comer en Alfama" },
-      { tipo: "parrafo", texto: "Alfama tiene dos realidades gastronómicas completamente distintas. La zona cercana al Largo de Santa Luzia y la subida al castillo está llena de restaurantes diseñados para los miles de visitantes que pasan cada día: cartas en cinco idiomas, terrazas con vistas, precios de barrio turístico. La comida no es necesariamente mala, pero la relación calidad-precio es mediocre." },
-      { tipo: "parrafo", texto: "La otra Alfama está cinco minutos a pie, calle adentro. Hay tascas pequeñas donde el menú del día cambia según lo que trajeron fresco esa mañana, restaurantes donde el dueño es también el cocinero y el camarero, y casas de fado donde la entrada es barata porque el negocio es el consumo. Esa es la Alfama que vale buscar." },
-      { tipo: "tip", texto: "Para comer bien en Alfama sin pagar precio turístico: busca locales sin menú a la vista en la puerta, sin carta en inglés en la vitrina, y donde haya al menos un cliente con cara de vecino del barrio." },
-      { tipo: "subtitulo", texto: "Alfama de Noche: El Fado" },
-      { tipo: "parrafo", texto: "La noche cambia Alfama. Las callejuelas que de día estaban llenas de turistas con selfie-stick se vacían y quedan solo los que van a algo concreto: a cenar a una tasca pequeña o a escuchar fado. Las casas de fado en Alfama van desde las más conocidas —que cobran 25-30€ de consumo mínimo y tienen actuaciones programadas para grupos— hasta tabernas de barrio donde el fado surge de manera más espontánea entre la gente que se conoce." },
-      { tipo: "parrafo", texto: "Para escuchar fado auténtico en Alfama: busca los locales pequeños, con pocas mesas, donde se pide silencio cuando empieza la música. El fado no es background: es lo que importa. En los mejores sitios, el fadista canta con los ojos cerrados y el público no aplaude hasta que termina la última nota, no antes." },
-      { tipo: "enlace", texto: "Alfama es el barrio donde más fácil es perderse y más se agradece que alguien te cuente qué estás mirando.", href: "/free-tours-lisboa#ruta-alfama", label: "Ver los free tours por Alfama" },
+      { tipo: "parrafo", texto: "Alfama es uno de los barrios históricos más conocidos de Lisboa y se recorre mejor a pie. Su trama de calles estrechas, escaleras y pendientes conecta la zona de la Sé con miradores como Santa Luzia y Portas do Sol y con las subidas hacia el Castelo de São Jorge." },
+      { tipo: "parrafo", texto: "La clave no es intentar cubrir cada calle, sino ordenar el recorrido para no repetir cuestas. Si eliges tres o cuatro puntos de referencia, puedes dejar espacio para desviarte por callejones sin perder el sentido de la ruta." },
+
+      { tipo: "subtitulo", texto: "Qué ver en Alfama" },
+      { tipo: "lista", items: [
+        "Sé de Lisboa: una referencia clara para empezar por la parte baja del barrio.",
+        "Miradouro de Santa Luzia: terraza y vistas sobre los tejados de Alfama y el Tajo.",
+        "Portas do Sol: otro mirador muy próximo a Santa Luzia y buen punto para orientarte.",
+        "Calles y escaleras entre Santa Luzia, São Miguel y la zona baja de Alfama.",
+        "Castelo de São Jorge: queda por encima del barrio y puede añadirse al recorrido si quieres entrar."
+      ]},
+
+      { tipo: "subtitulo", texto: "Ruta a pie por Alfama sin repetir demasiadas cuestas" },
+      { tipo: "parrafo", texto: "Una secuencia sencilla es empezar cerca de la Sé, subir hacia Santa Luzia y Portas do Sol y decidir allí si continúas hacia el castillo o desciendes poco a poco por el interior de Alfama hacia São Miguel y el entorno del Museu do Fado. El sentido inverso también funciona, pero implica empezar con más subida." },
+      { tipo: "tip", texto: "Usa el mapa para fijar puntos, no para seguir cada giro al centímetro. En Alfama muchas calles son peatonales, tienen escaleras o cambian de pendiente muy rápido." },
+
+      { tipo: "subtitulo", texto: "Miradores de Alfama: Santa Luzia y Portas do Sol" },
+      { tipo: "parrafo", texto: "Santa Luzia y Portas do Sol están muy cerca entre sí, así que no hace falta elegir solo uno. Visit Lisboa incluye Santa Luzia dentro de la ruta natural por Alfama; desde esta parte alta se entiende mejor la relación entre el barrio, los tejados y el río." },
+      { tipo: "enlace", texto: "Si quieres comparar estas vistas con otros puntos altos de la ciudad, usa la guía específica de miradores.", href: "/blog/mejores-miradores-lisboa", label: "Ver los mejores miradores de Lisboa" },
+
+      { tipo: "subtitulo", texto: "Castelo de São Jorge: cuándo añadirlo a la ruta" },
+      { tipo: "parrafo", texto: "El castillo requiere una visita propia y tiene entrada de pago. Si vas a entrar, reserva margen adicional en el itinerario; si solo quieres recorrer Alfama, puedes dejarlo para otro momento y concentrarte en las calles, la Sé y los miradores. La web oficial del Castelo publica horarios, cierres y precios vigentes." },
+
+      { tipo: "subtitulo", texto: "Cómo llegar a Alfama" },
+      { tipo: "parrafo", texto: "Puedes acercarte por Santa Apolónia, por la Baixa o utilizando líneas de CARRIS que atraviesan el centro histórico. El Tranvía 28E pasa por zonas de Alfama, aunque su recorrido puede sufrir alteraciones temporales; comprueba CARRIS si quieres usarlo como parte de la visita." },
+
+      { tipo: "subtitulo", texto: "Alfama y el fado" },
+      { tipo: "parrafo", texto: "Alfama está estrechamente vinculada a la cultura del fado y concentra casas de fado, restaurantes y espacios relacionados con el género. Si quieres organizar una noche alrededor de la música, conviene comparar formatos y condiciones antes de reservar en lugar de elegir solo por la etiqueta de «auténtico»." },
+      { tipo: "enlace", texto: "La guía de fado separa casas de fado, espectáculos y formatos más informales para que elijas según el tipo de noche que buscas.", href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" }
     ]
   },
   "gastronomia-portuguesa-guia": {
@@ -3617,9 +3615,9 @@ const articles: Record<string, Article> = {
     ]
   },
   "chiado-bairro-alto-guia": {
-    titulo: "Chiado y Bairro Alto: qué ver de día y qué hacer de noche",
-    seoTitle: "Chiado y Bairro Alto: qué ver y qué hacer",
-    metaDescription: "Guía de Chiado y Bairro Alto en Lisboa: qué ver de día, librerías y cafés históricos, miradores, vida nocturna y cómo combinar ambos barrios.",
+    titulo: "Chiado y Bairro Alto en Lisboa: qué ver y qué hacer",
+    seoTitle: "Chiado y Bairro Alto en Lisboa: qué ver y qué hacer",
+    metaDescription: "Qué ver en Chiado y Bairro Alto en Lisboa: librerías, cafés históricos, miradores, vida nocturna, cómo llegar y cómo recorrer ambos barrios.",
     descripcion: "Qué ver en Chiado durante el día y cómo cambia el ambiente al subir a Bairro Alto por la tarde y la noche.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Tranvía amarillo de la línea 28 subiendo por una calle estrecha de Lisboa",
@@ -3740,36 +3738,53 @@ const articles: Record<string, Article> = {
     ]
   },
   "tram-28-historia-guia": {
-    titulo: "El Tranvía 28: Historia, Ruta y Trucos para Usarlo sin Colas",
-    seoTitle: "Tranvía 28 de Lisboa | Ruta y colas",
-    metaDescription: "Qué recorre el tranvía 28, a qué hora subir para encontrar sitio, dónde empezar el trayecto y cuándo compensa cambiar al 12.",
-    descripcion: "El tranvía 28 lleva más de 100 años subiendo las mismas cuestas de Alfama. Es el símbolo de Lisboa y también su trampa turística más popular. La historia real y cómo aprovecharlo.",
+    titulo: "Tranvía 28 de Lisboa: ruta, paradas y consejos",
+    seoTitle: "Tranvía 28 de Lisboa: ruta, paradas y consejos",
+    metaDescription: "Ruta del Tranvía 28 (28E) de Lisboa: paradas útiles, zonas que conecta, tarifas oficiales de 2026 y consejos para evitar esperas innecesarias.",
+    descripcion: "Guía práctica del Tranvía 28 de Lisboa: recorrido, paradas que más interesan en una primera visita, tarifas 2026 y cómo comprobar cambios de servicio antes de subir.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
-    imageAlt: "Tranvía amarillo de la línea 28 en una calle estrecha de Lisboa, con pasajeros esperando en la acera",
+    imageAlt: "Tranvía amarillo de Lisboa circulando por una calle estrecha del centro histórico",
     categoria: "Transporte",
     fecha: "14 Mar 2026",
+    dateModified: "2026-09-21",
     minutos: 9,
     fuentes: [
-      { label: "Carris — recorridos, horarios y tarifas", href: "https://www.carris.pt/" },
+      { label: "CARRIS — línea 28E, recorrido y horarios", href: "https://www.carris.pt/viaje/carreiras/28e/" },
+      { label: "CARRIS — tarifas en vigor durante 2026", href: "https://www.carris.pt/descubra/novo-tarifario-2026/" },
+    ],
+    links: [
+      { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
+      { href: "/blog/alfama-historia-guia", label: "Qué ver en Alfama" },
+      { href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "El tranvía 28 es el símbolo más reconocible de Lisboa. Sus vagones amarillos de madera, diseñados en los años veinte del siglo XX, han recorrido las mismas cuestas imposibles de Alfama durante más de cien años. Es también, hay que decirlo sin rodeos, la mayor trampa turística de Lisboa: colas de una hora, carteristas profesionales, vagones tan llenos en verano que es difícil respirar, y finalmente un trayecto que puedes hacer caminando en veinte minutos." },
-      { tipo: "parrafo", texto: "Pero el tranvía 28 también es uno de los trayectos más espectaculares que puedes hacer en cualquier ciudad europea. Los dos extremos de la verdad son ciertos al mismo tiempo. Lo que determina si el 28 es una experiencia o una decepción es cuándo y cómo lo tomas." },
-      { tipo: "subtitulo", texto: "Historia: Más de 100 Años de Servicio" },
-      { tipo: "parrafo", texto: "La línea eléctrica que hoy conocemos como tranvía 28 empezó a funcionar en su forma actual en 1914. Los vagones históricos que siguen en servicio —los 'elétricos'— fueron fabricados entre los años 30 y 50 del siglo XX por la empresa St. Louis Car Company de Missouri. Son vehículos de madera y metal con cojines de cuero, ventanas que se abren a mano y frenos que crujen en las bajadas. El sonido de sus ruedas sobre el pavimento de piedra de Alfama es parte del paisaje sonoro de Lisboa." },
-      { tipo: "parrafo", texto: "El 28 es uno de los pocos tranvías históricos del mundo que sigue siendo un medio de transporte público funcional, no una atracción turística. Los lisboetas lo usan, aunque cada vez menos: las colas de turistas y los retrasos habituales han hecho que muchos vecinos prefieran el autobús o el metro." },
-      { tipo: "subtitulo", texto: "La Ruta: De Martim Moniz a Campo de Ourique" },
-      { tipo: "parrafo", texto: "El 28 sale de la Praça Martim Moniz (límite del barrio de Mouraria con la Baixa), sube por Alfama con sus curvas cerradas y sus pendientes de infarto, pasa por la Sé Catedral y los miradores de Santa Luzia y Portas do Sol, atraviesa el Chiado, pasa por el Largo do Chiado y la Calçada do Combro, y termina en Campo de Ourique, un barrio residencial tranquilo. El trayecto completo dura unos 30 minutos si no hay incidencias." },
-      { tipo: "parrafo", texto: "La parte más espectacular y más concurrida es la subida por Alfama. Si solo quieres la experiencia del tranvía histórico en las calles empinadas, basta con hacer ese tramo y bajarte en cualquiera de los miradores." },
-      { tipo: "subtitulo", texto: "Cómo Usarlo Sin Sufrir" },
+      { tipo: "parrafo", texto: "El Tranvía 28 —la línea 28E de CARRIS— atraviesa varios de los barrios históricos más visitados de Lisboa. Es útil como transporte, pero mucha gente lo busca también por el recorrido entre calles estrechas, cuestas y zonas como Graça, Alfama, Chiado, Estrela y Campo de Ourique." },
+      { tipo: "parrafo", texto: "Hay una precaución importante: el 28E sufre alteraciones temporales por obras, eventos y cortes de circulación. La ficha oficial de CARRIS consultada para esta actualización publica el servicio entre Graça y Campo de Ourique y muestra avisos asociados. Antes de organizar el día alrededor del tranvía, comprueba el recorrido del momento." },
+
+      { tipo: "subtitulo", texto: "Ruta del Tranvía 28: qué zonas conecta" },
+      { tipo: "parrafo", texto: "En su recorrido oficial aparecen paradas y zonas como Graça, Voz do Operário, Portas do Sol, Miradouro de Santa Luzia, Sé, Baixa, Chiado, Praça Luís de Camões, Estrela y Campo de Ourique. Es una sucesión muy útil para entender por qué el 28E concentra tanta demanda turística." },
+      { tipo: "parrafo", texto: "No necesitas hacer el trayecto completo para aprovecharlo. Si tu itinerario ya pasa por Alfama, Chiado o Estrela, puedes usar el 28E solo en el tramo que realmente te ahorre una subida o conecte dos visitas." },
+
+      { tipo: "subtitulo", texto: "Paradas del 28E más útiles para una primera visita" },
       { tipo: "lista", items: [
-        "Mejor horario: entre 7:00 y 9:00, o después de las 20:00. En esas franjas hay poca cola y puedes ir sentado",
-        "Evita julio y agosto entre las 10:00 y las 19:00: el 28 está literalmente lleno hasta el estribo",
-        "Sube en Martim Moniz, no en el Largo do Chiado: desde Martim Moniz vas de sentada; desde el Chiado probablemente de pie",
-        "Usa la tarjeta Viva Viagem (1,50€ por viaje) en vez de pagar al conductor (3,30€): más barato y más rápido",
-        "El tranvía 12 hace una ruta similar por el Chiado con menos cola: buena alternativa cuando el 28 está imposible"
+        "Graça: útil para enlazar con el barrio y sus miradores.",
+        "Portas do Sol / Miradouro de Santa Luzia: acceso directo a uno de los puntos más conocidos de Alfama.",
+        "Sé: buena referencia para empezar o terminar un recorrido a pie por la parte baja de Alfama.",
+        "Chiado / Praça Luís de Camões: conexión natural con Chiado, Bairro Alto y Bica.",
+        "Estrela: para la Basílica da Estrela y el entorno del jardín.",
+        "Campo de Ourique (Prazeres): extremo occidental del recorrido habitual."
       ]},
-      { tipo: "tip", texto: "Si quieres la foto del tranvía 28 en las calles de Alfama sin subir: colócate en la esquina de la Rua de São Tomé con la Calçada de Santo André al atardecer. El tranvía pasa cada 8-12 minutos y la luz es perfecta." }
+
+      { tipo: "subtitulo", texto: "Cuánto cuesta el Tranvía 28 en 2026" },
+      { tipo: "parrafo", texto: "CARRIS publica para 2026 una tarifa a bordo de los eléctricos de 3,30 €. Si ya llevas un título válido, el billete CARRIS/Metro cuesta 1,90 €, el zapping 1,72 € y el título de 24 horas CARRIS/Metro 7,25 €. Las tarifas pueden cambiar en años posteriores, por eso conviene comprobar la página oficial si estás leyendo esta guía después de 2026." },
+      { tipo: "tip", texto: "Si vas a hacer varios trayectos en transporte público el mismo día, compara el coste de tus viajes antes de pagar cada subida a bordo. La opción más conveniente depende de cuántos trayectos harás y de qué redes necesitas usar." },
+
+      { tipo: "subtitulo", texto: "Cómo evitar colas y esperas innecesarias" },
+      { tipo: "parrafo", texto: "La demanda cambia mucho según la hora, la temporada y las incidencias del servicio. En lugar de perseguir una supuesta hora perfecta, mira la cola y decide en el momento: si el vehículo llega lleno o la espera rompe tu itinerario, continúa a pie o usa otra conexión de CARRIS/Metro y vuelve al 28E en otro tramo." },
+      { tipo: "parrafo", texto: "Las primeras horas del día y la parte final de la jornada suelen ser más fáciles que las franjas de máxima visita, pero no hay garantía de asiento. El objetivo debería ser que el tranvía encaje en tu ruta, no perder una parte importante del día esperando solo por subir." },
+
+      { tipo: "subtitulo", texto: "Antes de subir: revisa el servicio oficial" },
+      { tipo: "parrafo", texto: "Consulta la página de la línea 28E de CARRIS el mismo día. Ahí aparecen el recorrido, los horarios y los avisos temporales. Es especialmente importante porque una obra o un evento puede cambiar terminales, dividir el servicio o sustituir parte del trayecto." }
     ]
   },
   "bacalhau-plato-portugal": {
