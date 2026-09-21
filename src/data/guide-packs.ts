@@ -20,27 +20,27 @@ export interface GuidePack {
 export const guidePacks: Record<string, GuidePack> = {
   'lisboa-1-dia-lo-esencial': {
     slug: 'lisboa-1-dia-lo-esencial',
-    title: 'Lisboa Esencial',
+    title: 'Qué ver en Lisboa en 1 día: ruta con mapa',
     subtitle: '1 día completo',
     duration: '1 día',
     image: '/images/alfama-panoramica.jpg',
     color: 'from-sky-400 to-blue-600',
-    description: 'La ruta más eficiente para ver Lisboa en un solo día. Horarios reales, paradas clave y consejos locales para aprovechar cada minuto.',
+    description: 'Ruta para ver Lisboa en un día con mapa interactivo, orden por zonas, tiempos orientativos, transporte y alternativas si cambia el clima.',
     includes: [
-      'Itinerario hora a hora con tiempos realistas',
-      'Mapa interactivo con GPS y accesos',
-      'Restaurantes locales por presupuesto',
-      'Spots fotográficos con mejor luz',
-      'Tips anti-colas y transporte sencillo',
-      'Plan B si llueve o hay viento'
+      'Itinerario por horas con tiempos orientativos',
+      'Mapa interactivo con los puntos de la ruta',
+      'Paradas para comer según la zona',
+      'Miradores y puntos fotográficos',
+      'Transporte explicado entre zonas alejadas',
+      'Plan alternativo si llueve o hay viento'
     ],
     highlights: [
-      { time: '09:00', place: 'Alfama', desc: 'Barrio histórico con calles auténticas y miradores tranquilos.' },
-      { time: '11:00', place: 'Miradores clásicos', desc: 'Santa Luzia + Portas do Sol con luz perfecta.' },
-      { time: '13:00', place: 'Almuerzo local', desc: 'Tasca tradicional con menú del día real.' },
-      { time: '15:00', place: 'Belém imprescindible', desc: 'Torre, Monasterio y pastéis en ruta eficiente.' },
-      { time: '18:00', place: 'LX Factory', desc: 'Arte urbano y tiendas únicas.' },
-      { time: '20:00', place: 'Bairro Alto', desc: 'Cena con vistas y paseo nocturno.' }
+      { time: '09:00', place: 'Alfama', desc: 'Calles históricas y miradores del barrio.' },
+      { time: '11:00', place: 'Santa Luzia y Portas do Sol', desc: 'Dos miradores cercanos dentro de la misma caminata.' },
+      { time: '13:00', place: 'Almuerzo', desc: 'Pausa para comer antes de cambiar de zona.' },
+      { time: '15:00', place: 'Belém', desc: 'Jerónimos, paseo junto al Tajo y monumentos según el tiempo disponible.' },
+      { time: '18:00', place: 'LX Factory', desc: 'Parada opcional antes de volver al centro.' },
+      { time: '20:00', place: 'Bairro Alto o Chiado', desc: 'Cena o paseo nocturno según tu energía.' }
     ]
   },
   'lisboa-2-dias-completo': {
