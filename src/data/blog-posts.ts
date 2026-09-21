@@ -445,10 +445,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'lisboa-vs-porto',
-    titulo: 'Lisboa vs Porto: ¿Cuál Visitar Primero?',
-    excerpt: 'Diferencias reales entre las dos grandes ciudades portuguesas. Ambiente, precios, qué ver, cuánto tiempo necesitas. La comparativa definitiva.',
+    titulo: 'Lisboa o Porto: diferencias y cuál elegir para tu viaje',
+    excerpt: 'Qué cambia entre Lisboa y Porto, cuántos días dedicar a cada una y cuál encaja mejor según el tipo de viaje.',
     categoria: 'Planificación',
     fecha: '5 Mar 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/alfama-panoramica.jpg',
   },
