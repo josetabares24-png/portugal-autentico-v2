@@ -14,6 +14,74 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'restaurantes-romanticos-lisboa': {
+    titulo: 'Restaurantes románticos en Lisboa: 6 opciones según el tipo de cita',
+    descripcion: 'Seis restaurantes para una cena especial en Lisboa, elegidos por ambiente, vistas o formato de la experiencia, con fuentes actuales y sin asumir que lo más caro es siempre lo más romántico.',
+    seoTitle: 'Restaurantes románticos en Lisboa: 6 opciones',
+    metaDescription: 'Restaurantes románticos en Lisboa para una cena especial: vistas, ambiente íntimo, cocina portuguesa y experiencias de alta gama según tu tipo de cita.',
+    imagen: '/images/fado-tasca-noche.jpg',
+    imageAlt: 'Mesa preparada para una cena nocturna en Lisboa',
+    categoria: 'Gastronomía',
+    fecha: '15 Ene 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 9,
+    links: [
+      { href: '/blog/lisboa-en-pareja', label: 'Planes para hacer en pareja en Lisboa' },
+      { href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+      { href: '/blog/mejores-miradores-lisboa', label: 'Miradores para antes de cenar' },
+    ],
+    fuentes: [
+      { label: 'Guía MICHELIN: Fifty Seconds', href: 'https://guide.michelin.com/pt/pt_PT/lisboa-region/lisboa/restaurant/fifty-seconds' },
+      { label: 'Guía MICHELIN: Suba', href: 'https://guide.michelin.com/br/pt_BR/lisboa-region/lisboa/restaurant/suba' },
+      { label: 'Guía MICHELIN: Henrique Sá Pessoa', href: 'https://guide.michelin.com/pt/pt_PT/lisboa-region/lisboa/restaurant/henrique-sa-pessoa' },
+      { label: 'Visit Lisboa: 1147 Lisboa', href: 'https://www.visitlisboa.com/pt-pt/locais/1147-lisboa' },
+      { label: 'Visit Lisboa: Café São Bento', href: 'https://www.visitlisboa.com/en/places/cafe-sao-bento' },
+      { label: 'Visit Lisboa: Páteo Alfacinha', href: 'https://www.visitlisboa.com/en/places/pateo-alfacinha-restaurantes' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Una cena romántica en Lisboa no tiene que significar automáticamente rooftop, menú degustación y una cuenta enorme. Para algunas parejas lo importante son las vistas; para otras, una sala pequeña, buena conversación o un restaurante clásico donde la noche pueda alargarse. Por eso esta selección está organizada por tipo de cita, no como un ranking.' },
+
+      { tipo: 'subtitulo', texto: 'Fifty Seconds: para una cena panorámica de alta gama' },
+      { tipo: 'parrafo', texto: 'Fifty Seconds está en la Torre Vasco da Gama, en Parque das Nações. La Guía MICHELIN lo clasifica expresamente como una opción romántica y destaca la experiencia de comer a gran altura con vistas sobre Lisboa. Es una elección para quien quiere que el restaurante sea el plan principal de la noche, no simplemente el lugar donde cenar entre dos actividades.' },
+      { tipo: 'parrafo', texto: 'Por ubicación, tiene sentido combinarlo con un paseo por Parque das Nações antes de la reserva. Si te alojas en el centro histórico, calcula el desplazamiento de vuelta en vez de asumir que podrás terminar la noche caminando.' },
+
+      { tipo: 'subtitulo', texto: 'Suba: palacio histórico y terraza sobre la ciudad' },
+      { tipo: 'parrafo', texto: 'Suba está vinculado al Verride Palácio de Santa Catarina, en una zona muy cómoda para continuar la noche por Chiado, Bica o Cais do Sodré. MICHELIN lo presenta como romántico y destaca la terraza panorámica del edificio. Aquí la ventaja no es solo la vista: puedes construir una noche completa alrededor del barrio sin cruzar Lisboa después de cenar.' },
+
+      { tipo: 'subtitulo', texto: 'Henrique Sá Pessoa: para una experiencia gastronómica centrada en la mesa' },
+      { tipo: 'parrafo', texto: 'El restaurante Henrique Sá Pessoa, en Páteo Bagatela, aparece en la selección MICHELIN como romántico y ofrece una propuesta más enfocada en cocina de autor. Lo elegiría cuando la comida en sí es el centro de la cita y no necesitas estar junto a un mirador o una zona de bares para que la noche funcione.' },
+
+      { tipo: 'subtitulo', texto: '1147 Lisboa: cenar dentro del Castelo con vistas' },
+      { tipo: 'parrafo', texto: '1147 Lisboa ocupa la antigua Casa do Leão, dentro de las murallas del Castelo de São Jorge. Visit Lisboa lo describe como un espacio con vistas panorámicas sobre la ciudad y el Tajo y lo señala como escenario para cenas románticas. Es una opción especialmente lógica si ya vas a pasar la tarde por Alfama o el castillo.' },
+      { tipo: 'parrafo', texto: 'Comprueba siempre las condiciones de acceso a la zona del castillo y el horario de tu reserva: aquí la ubicación forma parte de la experiencia, pero también condiciona cómo llegas y cómo vuelves.' },
+
+      { tipo: 'subtitulo', texto: 'Café São Bento: una cena clásica e íntima' },
+      { tipo: 'parrafo', texto: 'Café São Bento está cerca de la Assembleia da República y mantiene una sala de estilo clásico. Visit Lisboa destaca su ambiente íntimo y su especialidad histórica en bife. Es una alternativa para quien prefiere una cena más tradicional, sin convertir la noche en una experiencia de lujo o en una búsqueda de la mejor terraza.' },
+
+      { tipo: 'subtitulo', texto: 'Páteo Alfacinha: para vistas al Tajo con un ambiente más portugués' },
+      { tipo: 'parrafo', texto: 'En Ajuda, Páteo Alfacinha combina gastronomía portuguesa con espacios que cambian según la temporada. Visit Lisboa menciona específicamente su terraza con vista hacia el Tajo y el puente 25 de Abril como adecuada también para cenas románticas. La ubicación queda fuera del núcleo de Baixa-Chiado, así que funciona mejor cuando buscas una noche con destino propio y no una cena improvisada durante un paseo por el centro.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo elegir sin equivocarte de restaurante' },
+      { tipo: 'lista', items: [
+        'Si quieres vistas: compara Fifty Seconds, Suba o 1147 Lisboa según la zona de tu día.',
+        'Si la comida es el plan principal: una propuesta gastronómica como Henrique Sá Pessoa tiene más sentido que perseguir únicamente una terraza.',
+        'Si buscas algo clásico e íntimo: Café São Bento encaja mejor con una noche tranquila.',
+        'Si quieres ambiente portugués y vistas al río: Páteo Alfacinha puede encajar mejor que una cena en pleno centro.',
+        'Comprueba menú, horario, política de reservas y ubicación directamente en el restaurante antes de pagar o desplazarte.',
+      ] },
+
+      { tipo: 'subtitulo', texto: '¿Hace falta reservar?' },
+      { tipo: 'parrafo', texto: 'Para una fecha concreta —cumpleaños, aniversario, viernes o sábado— reservar es una decisión sensata, especialmente en restaurantes pequeños o experiencias de alta gama. Pero no presentaría la reserva como obligatoria para todo Lisboa: depende del local, la hora y el día. Mira la disponibilidad real del restaurante que elijas.' },
+
+      { tipo: 'subtitulo', texto: 'Una noche romántica no tiene que empezar en el restaurante' },
+      { tipo: 'parrafo', texto: 'Puedes hacer que el restaurante sea solo una parte del plan: mirador al atardecer, paseo corto, cena y después una copa o regreso tranquilo. La clave es que todo quede relativamente cerca. Cruzar la ciudad tres veces por perseguir lugares “románticos” suele quitarle más a la noche de lo que añade.' },
+      { tipo: 'enlace', texto: 'Si quieres completar la cena con un paseo o una vista antes, aquí tienes una guía para hacerlo sin encadenar cuestas innecesarias.', href: '/blog/mejores-miradores-lisboa', label: 'Mejores miradores de Lisboa' },
+      { tipo: 'enlace', texto: 'Y si quieres construir un día completo alrededor de la pareja, no solo una cena, usa esta guía.', href: '/blog/lisboa-en-pareja', label: 'Lisboa en pareja' },
+    ],
+  },
+
   'sintra-desde-lisboa': {
     titulo: 'Sintra desde Lisboa: cómo ir y organizar un día sin correr',
     descripcion: 'Cómo ir de Lisboa a Sintra en tren, organizar Pena y el centro histórico, moverse dentro de Sintra y evitar una jornada imposible de cuatro palacios.',
@@ -4014,24 +4082,6 @@ function buildFallbackArticle(slug: string): Article | null {
         'El punto de recogida de Uber/Bolt está señalizado y separado del de taxis.',
       ],
     },
-    'restaurantes-romanticos-lisboa': {
-      intro: 'Para una cena especial, reserva con tiempo y busca vistas reales.',
-      musts: [
-        'Chapitô à Mesa para atardecer.',
-        'Ponto Final para cena con vistas al río.',
-        'Solar dos Presuntos para algo más clásico.',
-        'Bairro Alto si quieres plan nocturno.',
-      ],
-      itinerary: [
-        'Atardecer: mirador cercano.',
-        'Cena: reserva a las 20:30.',
-        'Copa: barrio cercano a pie.',
-      ],
-      localTips: [
-        'Reservar viernes y sábado es obligatorio.',
-        'Pregunta por mesas con vista antes de confirmar.',
-      ],
-    },
     'que-ver-cascais-desde-lisboa': {
       intro: 'Cascais es la escapada fácil: tren directo y todo caminable.',
       musts: [
@@ -4317,10 +4367,6 @@ const articleExtras: Record<string, ArticleExtras> = {
   'mejor-epoca-visitar-lisboa': {
     comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
     mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
-  },
-  'restaurantes-romanticos-lisboa': {
-    comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
-    mejorHora: 'Reserva para 20:00-21:00; si hay terraza, mejor al atardecer.',
   },
   'que-ver-cascais-desde-lisboa': {
     comoLlegar: 'Tren directo desde Cais do Sodré cada 20 minutos. El trayecto dura 30-40 minutos.',
