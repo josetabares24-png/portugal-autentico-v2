@@ -1,4 +1,5 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
@@ -23,6 +24,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  // next-intl otherwise resolves the locale from request headers, which
+  // opts the entire public [locale] subtree into dynamic rendering.
+  setRequestLocale(locale);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
