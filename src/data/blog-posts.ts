@@ -265,10 +265,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'presupuesto-viajar-lisboa',
-    titulo: 'Presupuesto Real para Viajar a Lisboa en 2026',
-    excerpt: 'Costes reales día a día para comer, moverte y dormir sin sorpresas. Actualizado con precios de 2026.',
+    titulo: 'Presupuesto para viajar a Lisboa en 2026: cuánto cuesta de verdad',
+    excerpt: 'Cómo calcular alojamiento, comida, transporte y entradas con tarifas de 2026 y sin depender de un presupuesto diario genérico.',
     categoria: 'Planificación',
-    fecha: '5 Ene 2026',
+    fecha: '21 Sep 2026',
     autor: 'José Tabares',
     imagen: '/images/bica-cafe-mapa.jpg',
   },
