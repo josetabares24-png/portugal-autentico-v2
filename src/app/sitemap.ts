@@ -102,7 +102,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // URLs dinámicas del blog
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => {
-    const postDate = parseSpanishDate(post.fecha);
+    const modifiedDate = post.dateModified ? new Date(`${post.dateModified}T00:00:00.000Z`) : undefined;
+    const postDate = modifiedDate && !isNaN(modifiedDate.getTime())
+      ? modifiedDate
+      : parseSpanishDate(post.fecha);
     const entry: MetadataRoute.Sitemap[number] = {
       url: `${baseUrl}/blog/${post.id}`,
       changeFrequency: 'monthly' as const,
