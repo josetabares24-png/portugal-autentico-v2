@@ -3754,85 +3754,87 @@ function buildFallbackArticle(slug: string): Article | null {
   if (!post) return null;
   const tituloBase = post.titulo.replace(/\s+en Lisboa/i, '').trim();
   const categoria = post.categoria;
-  const contexto = `En esta guía sobre ${tituloBase.toLowerCase()}, te comparto lo esencial con enfoque local, directo y sin rodeos.`;
+  const contexto = `Esta guía sobre ${tituloBase.toLowerCase()} reúne una orientación inicial para decidir cómo encaja el tema en tu viaje a Lisboa.`;
   const listaClave = [
-    'Qué merece la pena y qué puedes saltarte sin culpa.',
-    'Horarios reales para evitar colas y multitudes.',
-    'Costes aproximados para planificar sin sorpresas.',
-    'Atajos de local para moverte mejor y ahorrar tiempo.',
-    'Errores típicos que conviene evitar.',
+    'Qué parte del tema puede ser útil para tu viaje.',
+    'Cómo conectarlo con otras zonas o planes de Lisboa.',
+    'Qué información conviene comprobar de nuevo antes de ir.',
+    'Qué alternativas tienes si el plan no encaja con tu tiempo o presupuesto.',
   ];
 
   const categoryIntro: Record<string, string> = {
-    Guías: 'La clave aquí es priorizar zonas con buen acceso y vistas sin duplicar cuestas ni tiempos.',
-    Gastronomía: 'Lisboa se come por horarios. Si llegas a tiempo, comes mejor y por menos.',
-    Consejos: 'La diferencia entre una visita normal y una buena es conocer los detalles pequeños.',
-    Planificación: 'Un buen plan ahorra dinero y horas. Lo importante es ajustar expectativas y ritmo.',
-    Transporte: 'Moverse bien en Lisboa es tener una tarjeta correcta y saber qué evitar.',
-    Cultura: 'Para vivir la cultura local hay que respetar tiempos, silencios y códigos.',
+    Guías: 'Prioriza zonas cercanas entre sí y ajusta el número de paradas al tiempo que realmente tienes.',
+    Gastronomía: 'Comprueba ubicación, menú y horario actual antes de desplazarte expresamente a un local.',
+    Consejos: 'Usa estas recomendaciones como punto de partida y adapta lo que cambie según tus fechas.',
+    Planificación: 'Separa las decisiones que dependen de tus fechas —alojamiento, reservas o eventos— de las que son más estables.',
+    Transporte: 'Compara el trayecto concreto y las condiciones vigentes del operador antes de elegir un título o una ruta.',
+    Cultura: 'El contexto ayuda a entender mejor cada lugar, pero horarios, exposiciones y accesos pueden cambiar.',
   };
 
   const categoryMusts: Record<string, string[]> = {
     Guías: [
-      'Zonas clave en un orden que evita subidas innecesarias.',
-      'Paradas con mejores vistas y menos gente.',
-      'Ventanas horarias recomendadas según luz y afluencia.',
-      'Tiempo real entre puntos para no correr.',
-      'Dónde hacer una pausa sin pagar de más.',
+      'Agrupa las visitas por zonas para reducir desplazamientos.',
+      'Prioriza menos paradas si el recorrido tiene muchas cuestas.',
+      'Deja margen para cambios de clima, colas o cansancio.',
+      'Comprueba horarios oficiales cuando una visita dependa de una franja concreta.',
     ],
     Gastronomía: [
-      'Tascas locales con menú del día a buen precio.',
-      'Qué pedir para acertar sin gastar de más.',
-      'Horarios ideales para evitar colas.',
-      'Diferencias entre zonas turísticas y locales.',
-      'Dónde tomar un café bueno y barato.',
+      'Comprueba menú y horario actual antes de ir expresamente.',
+      'Decide si buscas comida rápida, tradicional o una experiencia más larga.',
+      'Compara la ubicación con el resto de tu ruta.',
+      'Reserva cuando el propio local lo recomiende o la fecha sea especialmente demandada.',
     ],
     Consejos: [
-      'Errores típicos que encarecen el viaje.',
-      'Consejos prácticos para moverte rápido.',
-      'Qué horarios evitar en zonas populares.',
-      'Cosas que no necesitas comprar.',
-      'Pequeños hábitos de local que ayudan.',
+      'Distingue información estable de precios, horarios o reglas que pueden cambiar.',
+      'Evita añadir compras o reservas que no aporten a tu ruta.',
+      'Guarda una alternativa sencilla si el plan principal falla.',
+      'Comprueba fuentes oficiales cuando la decisión implique dinero o acceso.',
     ],
     Planificación: [
-      'Presupuesto diario realista por estilo de viaje.',
-      'Épocas del año con mejor clima-precio.',
-      'Cómo distribuir los días por zonas.',
-      'Tiempo real para cada actividad.',
-      'Qué reservar con antelación.',
+      'Trabaja con tus fechas reales y no con precios de otro año.',
+      'Organiza los días por zonas antes de reservar actividades.',
+      'Deja margen para clima, colas y cambios de servicio.',
+      'Comprueba condiciones oficiales antes de pagar.',
     ],
     Transporte: [
-      'Qué tarjeta comprar y cómo recargarla.',
-      'Tramos donde el metro es más útil.',
-      'Tranvías que valen la pena y los que no.',
-      'Cuándo usar Uber/Bolt sin gastar de más.',
-      'Cómo llegar desde el aeropuerto al centro.',
+      'Elige el título de transporte según los trayectos que realmente harás.',
+      'Comprueba alteraciones de servicio antes de un desplazamiento importante.',
+      'Ten en cuenta equipaje, cuestas y transbordos.',
+      'Usa la web del operador como referencia final para tarifas y horarios.',
     ],
     Cultura: [
-      'Lugares auténticos con menos turistada.',
-      'Horarios recomendados para buena experiencia.',
-      'Cómo comportarse en espectáculos locales.',
-      'Rincones culturales con entrada gratuita.',
-      'Planes alternativos si hay colas.',
+      'Separa el contexto histórico de horarios o exposiciones temporales.',
+      'Comprueba acceso y condiciones actuales si el lugar requiere entrada.',
+      'Combina la visita con otros puntos cercanos cuando tenga sentido.',
+      'Respeta las normas específicas del espacio que visites.',
     ],
   };
 
   const categoryChecklist: Record<string, string[]> = {
-    Guías: ['Calzado cómodo', 'Agua y snack ligero', 'Foto rápida y seguir ruta', 'Reserva si aplica'],
-    Gastronomía: ['Llegar antes de las 14:00', 'Pedir plato del día', 'Evitar menús turísticos', 'Pagar con tarjeta o efectivo pequeño'],
-    Consejos: ['Evitar horas punta', 'Plan de 2-3 zonas por día', 'Mapa offline listo', 'Tiempo de descanso'],
-    Planificación: ['Fechas flexibles', 'Presupuesto diario', 'Plan A y plan B', 'Reservas clave'],
-    Transporte: ['Tarjeta Viva Viagem', 'Horario del primer metro', 'Plan alterno si llueve', 'Apps útiles'],
-    Cultura: ['Reservas si hay show', 'Llegar 10-15 min antes', 'Respeto al silencio', 'Alternativa cercana'],
+    Guías: ['Calzado adecuado', 'Agua según la época', 'Ruta agrupada por zonas', 'Reserva si el lugar la exige'],
+    Gastronomía: ['Horario actual', 'Menú o rango de precios visible', 'Ubicación en tu ruta', 'Reserva si aplica'],
+    Consejos: ['Fuente actual si el dato cambia', 'Plan alternativo', 'Tiempo suficiente', 'Condiciones antes de pagar'],
+    Planificación: ['Fechas definidas', 'Presupuesto propio', 'Plan A y plan B', 'Reservas realmente necesarias'],
+    Transporte: ['Tarjeta Navegante si aplica', 'Estado del servicio', 'Ruta alternativa', 'App o web oficial del operador'],
+    Cultura: ['Horario actual', 'Entrada o reserva si aplica', 'Tiempo de visita', 'Alternativa cercana'],
   };
 
   const categoryTip: Record<string, string> = {
-    Guías: 'Si quieres el detalle completo con mapas, horarios y paradas exactas, revisa nuestras guías actualizadas.',
-    Gastronomía: 'Si algo parece muy turístico, camina 5 minutos y verás opciones mejores y más baratas.',
-    Consejos: 'La ciudad se disfruta más temprano y tarde. Entre 13:00 y 16:00 suele estar más cargada.',
-    Planificación: 'Con 2-4 días bien organizados ves lo esencial sin correr.',
-    Transporte: 'El tranvía 28 es icónico, pero el 12 hace una ruta similar con menos cola.',
-    Cultura: 'El fado auténtico se vive mejor en espacios pequeños, con ambiente silencioso.',
+    Guías: 'Usa esta página para orientar la ruta y confirma los datos variables antes del viaje.',
+    Gastronomía: 'Los locales, cartas y horarios cambian: comprueba la información del establecimiento antes de desplazarte.',
+    Consejos: 'Cuando un dato afecte dinero, acceso o transporte, usa la fuente oficial como comprobación final.',
+    Planificación: 'Planifica con tus fechas y condiciones reales; una cifra genérica rara vez representa todos los viajes.',
+    Transporte: 'Tarifas, obras y alteraciones pueden cambiar: confirma el trayecto en el operador antes de salir.',
+    Cultura: 'El contexto histórico es estable; horarios, exposiciones y accesos no siempre lo son.',
+  };
+
+  const categoryPlanningText: Record<string, string> = {
+    Guías: 'Encaja este plan con puntos cercanos y evita cruzar Lisboa varias veces el mismo día. Si la ruta tiene cuestas, reduce paradas o usa transporte para el tramo menos cómodo.',
+    Gastronomía: 'Haz que la parada para comer forme parte de la zona que ya estás visitando. Desplazarte media ciudad por una recomendación puede consumir más tiempo del que aporta.',
+    Consejos: 'Aplica solo las recomendaciones que resuelvan una necesidad real de tu viaje. Si un dato depende de precio, horario o normativa, compruébalo de nuevo.',
+    Planificación: 'Primero fija fechas y prioridades; después reserva. Así puedes comparar opciones reales en lugar de construir el viaje alrededor de cifras genéricas.',
+    Transporte: 'Decide el transporte a partir del origen, destino, equipaje y hora. La opción más barata no siempre es la más práctica, y la más rápida puede cambiar según el servicio.',
+    Cultura: 'Combina el tema con lugares relacionados que ya estén en tu recorrido. No hace falta convertir cada contexto histórico o cultural en una parada adicional.',
   };
 
   const slugDetails: Record<
@@ -4179,12 +4181,11 @@ function buildFallbackArticle(slug: string): Article | null {
       },
       {
         tipo: 'subtitulo',
-        texto: 'Ruta rápida recomendada',
+        texto: 'Cómo encajarlo en tu viaje',
       },
       {
         tipo: 'parrafo',
-        texto:
-          'Empieza por lo más cercano al centro y avanza por zonas conectadas entre sí. Así evitas subir y bajar colinas sin necesidad. Si viajas con poco tiempo, prioriza dos zonas clave y deja el resto como extra.',
+        texto: categoryPlanningText[categoria] || categoryPlanningText['Guías'],
       },
       ...(itinerary
         ? [
@@ -4201,14 +4202,14 @@ function buildFallbackArticle(slug: string): Article | null {
       },
       {
         tipo: 'subtitulo',
-        texto: 'Consejos de local',
+        texto: 'Antes de decidir',
       },
       {
         tipo: 'lista',
         items: [
-          'Ve temprano si quieres fotos limpias y menos filas.',
-          'Evita la franja de 13:00 a 16:00 en lugares populares.',
-          'Si algo se ve demasiado turístico, camina 5 minutos y mejora.',
+          'Comprueba de nuevo cualquier precio, horario o condición que pueda cambiar.',
+          'Prioriza lo que encaje con tu ruta en vez de sumar paradas por obligación.',
+          'Guarda una alternativa cercana si el clima, una cola o una incidencia cambia el plan.',
         ],
       },
       ...(localTips
