@@ -674,8 +674,8 @@ const articles: Record<string, Article> = {
   'time-out-market-lisboa': {
     titulo: 'Time Out Market Lisboa: qué comer, precios y si merece la pena',
     descripcion: 'Guía independiente del Time Out Market Lisboa: cómo funciona, qué tipo de comida hay, cuánto esperar gastar y cuándo conviene elegir otra opción.',
-    seoTitle: 'Time Out Market Lisboa: qué comer y si compensa',
-    metaDescription: 'Cómo funciona Time Out Market Lisboa, qué comida encontrarás, cuánto esperar gastar, cuándo hay más gente y para quién merece la pena.',
+    seoTitle: 'Time Out Market Lisboa: menú, precios y qué comer',
+    metaDescription: 'Qué encontrarás en el menú del Time Out Market Lisboa, cómo funcionan los puestos, qué esperar de los precios, cuándo se llena y si merece la pena.',
     imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
     imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
     categoria: 'Gastronomía',
@@ -713,7 +713,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'La zona gastronómica abrió en 2014 dentro del Mercado da Ribeira, inaugurado en 1882. Ambos usos siguen bajo la misma cubierta: una parte conserva la actividad de mercado tradicional y la otra está pensada para sentarse a comer. La palabra “mercado” no implica aquí precio bajo ni una experiencia cotidiana de barrio.' },
       { tipo: 'parrafo', texto: 'Cada puesto gestiona su cola, su pago y su preparación. Pides en el mostrador y buscas sitio en las mesas comunes, que no se reservan según la información oficial. Si vais en grupo, elegid primero una zona de referencia y asumid que los platos pueden quedar listos a tiempos distintos.' },
 
-      { tipo: 'subtitulo', texto: 'Qué encontrarás y cuánto puedes gastar' },
+      { tipo: 'subtitulo', texto: 'Menú y puestos: qué comida hay y cuánto puedes gastar' },
       { tipo: 'parrafo', texto: 'La oferta cambia con los operadores, pero suele mezclar cocina portuguesa, pescado y marisco, carnes, bocados informales, propuestas internacionales, dulces y bebidas. Si tienes una necesidad alimentaria concreta, confírmala directamente en el puesto antes de pedir.' },
       { tipo: 'parrafo', texto: 'No existe un precio único útil. Cada carta cambia y la cuenta depende de si añades bebida, acompañamiento o postre. Como criterio, el mercado suele competir por variedad, ubicación y facilidad para grupos, no por ser la opción más barata de Lisboa. Mira el importe completo antes de hacer cola.' },
       { tipo: 'tip', texto: 'Da una vuelta completa antes de ponerte en una cola. El primer puesto visible recibe mucha atención por pura posición, y a pocos metros puede haber una opción que encaje mejor con lo que quieres comer.' },
@@ -747,8 +747,8 @@ const articles: Record<string, Article> = {
   'estacion-oriente-lisboa': {
     titulo: 'Estación de Oriente de Lisboa: arquitectura, transportes y qué ver alrededor',
     descripcion: 'Guía para entender la estación de Oriente: arquitectura de Santiago Calatrava, conexiones de tren, metro y bus, y visitas cercanas en el Parque das Nações.',
-    seoTitle: 'Estación de Oriente: arquitectura y transportes',
-    metaDescription: 'Cómo orientarte en la estación de Oriente, qué parte diseñó Santiago Calatrava, qué transportes conecta y qué ver cerca en Parque das Nações.',
+    seoTitle: 'Estación de Oriente Lisboa: tren, metro y arquitectura',
+    metaDescription: 'Guía de la Estación de Oriente (Gare do Oriente) en Lisboa: tren, metro, autobuses, arquitectura de Calatrava y qué ver cerca en Parque das Nações.',
     imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
     imageAlt: 'Tren detenido bajo la cubierta de vidrio y acero de la estación de Oriente en Lisboa',
     categoria: 'Transporte',
@@ -1743,8 +1743,8 @@ const articles: Record<string, Article> = {
   'como-moverse-por-lisboa': {
     titulo: 'Cómo moverse por Lisboa: metro, tranvía, autobús y a pie',
     descripcion: 'Metro, tranvías, buses, trenes, cuestas y alternativas para moverte por Lisboa con menos dudas desde el primer día.',
-    seoTitle: 'Cómo moverse por Lisboa: metro, tranvía y a pie',
-    metaDescription: 'Elige cómo moverte por Lisboa según el trayecto: metro, tranvía, autobús, tren o a pie. Consejos para el aeropuerto, Belém, las cuestas y los billetes de viaje.',
+    seoTitle: 'Cómo moverse por Lisboa: transporte público y billetes',
+    metaDescription: 'Metro, tranvía, buses y trenes: cómo moverse por Lisboa, qué billetes usar y cómo llegar al aeropuerto, Belém, Sintra y Cascais sin perder tiempo.',
     imagen: '/images/turista-tranvia-28.jpg',
     imageAlt: 'Tranvía articulado moderno de la línea 15E de Carris circulando por una calle de Lisboa',
     categoria: 'Transporte',
