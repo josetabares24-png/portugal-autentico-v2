@@ -3615,28 +3615,73 @@ const articles: Record<string, Article> = {
     ]
   },
   "chiado-bairro-alto-guia": {
-    titulo: "Chiado y Bairro Alto: Cafés Literarios, Vida Nocturna y Arte",
-    seoTitle: "Chiado y Bairro Alto | Guía del barrio",
-    descripcion: "El Chiado es el barrio intelectual de Lisboa. El Bairro Alto, su vecino nocturno. Los mejores cafés con historia, las librerías que vale la pena conocer y dónde cenar antes de salir.",
+    titulo: "Chiado y Bairro Alto: qué ver de día y qué hacer de noche",
+    seoTitle: "Chiado y Bairro Alto: qué ver y qué hacer",
+    metaDescription: "Guía de Chiado y Bairro Alto en Lisboa: qué ver de día, librerías y cafés históricos, miradores, vida nocturna y cómo combinar ambos barrios.",
+    descripcion: "Qué ver en Chiado durante el día y cómo cambia el ambiente al subir a Bairro Alto por la tarde y la noche.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Tranvía amarillo de la línea 28 subiendo por una calle estrecha de Lisboa",
     categoria: "Guías",
     fecha: "19 Mar 2026",
-    minutos: 11,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-21",
+    minutos: 10,
+    links: [
+      { href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' },
+      { href: '/blog/mejores-miradores-lisboa', label: 'Mejores miradores de Lisboa' },
+      { href: '/blog/donde-tomar-cafe-lisboa', label: 'Dónde tomar café en Lisboa' },
+      { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado' },
+    ],
+    fuentes: [
+      { label: 'Visit Lisboa — Chiado', href: 'https://www.visitlisboa.com/pt-pt/locais/chiado-c26d2c0f-6ea9-4ff5-a64d-ffdfbc197b4c' },
+      { label: 'Visit Lisboa — Bairro Alto', href: 'https://www.visitlisboa.com/pt-pt/locais/bairro-alto' },
+      { label: 'Visit Lisboa — Lisboa Centro', href: 'https://www.visitlisboa.com/pt-pt/regions/lisboa-centro' },
+      { label: 'Bertrand — historia de la librería del Chiado', href: 'https://www.bertrand.pt/online/livraria-bertrand-do-chiado' },
+      { label: 'Visit Lisboa — ruta de comercios históricos', href: 'https://www.visitlisboa.com/en/lisbon-stories/21-shops-with-history-route/pois' },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "El Chiado y el Bairro Alto son vecinos físicamente —los separa apenas una calle— pero tienen personalidades tan distintas que da la impresión de que se toleran más que se quieren. El Chiado es el barrio de los cafés con historia, las librerías antiguas, los teatros, los museos. El Bairro Alto es el barrio de los bares que abren a las diez de la noche, las escaleras llenas de gente bebiendo en la calle y la resaca del domingo. Los dos juntos definen gran parte de la identidad cultural de Lisboa." },
-      { tipo: "subtitulo", texto: "El Chiado: Un Barrio con Memoria" },
-      { tipo: "parrafo", texto: "El Chiado fue durante siglos el corazón intelectual de Lisboa. El poeta Fernando Pessoa pasó gran parte de su vida en sus cafés y librerías; la Brasileira, donde hay una estatua de bronce de Pessoa sentado en la terraza, fue su local habitual desde 1905. El Café A Brasileira sigue abierto, sigue siendo caro y turístico, y sigue siendo uno de los lugares más fotogénicos de Lisboa." },
-      { tipo: "parrafo", texto: "En 1988, un incendio destruyó varios edificios del Chiado incluyendo el almacén Grandella. La reconstrucción fue encargada al arquitecto Álvaro Siza Vieira, que restauró las fachadas con una austeridad que respeta la escala histórica del barrio. El resultado es una de las reconstrucciones urbanas más respetadas de Europa: hay que mirar atentamente para distinguir lo nuevo de lo antiguo." },
-      { tipo: "subtitulo", texto: "Las Librerías del Chiado" },
-      { tipo: "parrafo", texto: "La Livraria Bertrand, en la Rua Garrett, es la librería más antigua del mundo en funcionamiento, según el Libro Guinness de los Récords: abierta en 1732. Es pequeña, con una disposición en varias salas conectadas, y tiene una sección en español más amplia de lo que esperarías. La Livraria do Intendente, en el barrio del mismo nombre, es más pequeña pero con una curaduría muy cuidada de libros y objetos de diseño." },
-      { tipo: "subtitulo", texto: "El Bairro Alto: De Noche" },
-      { tipo: "parrafo", texto: "El Bairro Alto de día es un barrio residencial tranquilo. De noche, a partir de las diez, se transforma en algo completamente diferente. Las calles estrechas del siglo XVI —con sus empedrados brillantes y sus fachadas azulejadas— se llenan de gente que va de bar en bar. El ambiente en las mejores noches de verano, con música que sale por todas las puertas abiertas y la gente bebiendo en la calle, es genuinamente festivo." },
-      { tipo: "parrafo", texto: "El Bairro Alto tiene también las mejores casas de fado de Lisboa fuera de Alfama, y algunos de los mejores restaurantes de la ciudad. La Rua do Norte y la Rua da Barroca concentran la mayor densidad de opciones buenas. Cena antes de las 21:30 para conseguir mesa sin reserva." },
-      { tipo: "subtitulo", texto: "El Museu do Chiado" },
-      { tipo: "parrafo", texto: "El Museu Nacional de Arte Contemporânea do Chiado, instalado en el antiguo convento de São Francisco (quemado en el incendio de 1988 y reconstruido por Siza), tiene la colección más importante de arte portugués de los siglos XIX y XX. Los martes por la tarde (hasta las 18:00) la entrada es gratuita. Vale la visita por los jardines y la arquitectura aunque no seas especialmente aficionado al arte contemporáneo." },
-      { tipo: "tip", texto: "Para el Chiado: llega antes de las 11:00 para el Café A Brasileira sin cola. La Livraria Bertrand abre a las 9:00. El Mirador de São Pedro de Alcântara, al final del Bairro Alto, tiene las mejores vistas del castillo de la zona y un jardín con bancos a la sombra." },
-      { tipo: "enlace", texto: "El Chiado está lleno de referencias literarias que pasan desapercibidas si nadie te las señala.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
+      { tipo: "parrafo", texto: "Chiado y Bairro Alto están pegados, pero funcionan mejor si los piensas como dos momentos de un mismo recorrido. Chiado concentra comercio, cafés, librerías y buena parte de la vida cultural del centro; Bairro Alto gana protagonismo conforme avanza la tarde y se convierte en una de las zonas clásicas de bares y vida nocturna." },
+
+      { tipo: "subtitulo", texto: "Chiado: qué ver durante el día" },
+      { tipo: "parrafo", texto: "Empieza por Largo do Chiado y Rua Garrett. Esta zona permite combinar arquitectura, comercios históricos, cafés y teatros sin grandes desplazamientos. Turismo de Lisboa sigue presentando Chiado como uno de los puntos centrales de la vida comercial y cultural de la ciudad." },
+
+      { tipo: "subtitulo", texto: "Livraria Bertrand: la parada literaria más clara" },
+      { tipo: "parrafo", texto: "La Bertrand del Chiado es reconocida por Guinness World Records como la librería más antigua del mundo todavía en funcionamiento. La propia librería sitúa su historia en el siglo XVIII y explica que volvió a instalarse en Rua Garrett después del terremoto de 1755. Es una visita sencilla de integrar porque está en pleno eje peatonal del barrio." },
+
+      { tipo: "subtitulo", texto: "A Brasileira y la memoria de los cafés del Chiado" },
+      { tipo: "parrafo", texto: "A Brasileira abrió en 1905 y forma parte de la ruta oficial de comercios históricos de Lisboa. Su vínculo con Fernando Pessoa y con la vida literaria del Chiado explica por qué sigue siendo una referencia cultural, más allá de si decides sentarte o simplemente verla desde fuera." },
+      { tipo: "enlace", texto: "Si quieres comparar esta parada con otros cafés de la ciudad, usa la guía específica.", href: "/blog/donde-tomar-cafe-lisboa", label: "Dónde tomar café en Lisboa" },
+
+      { tipo: "subtitulo", texto: "Qué más encaja en un paseo por Chiado" },
+      { tipo: "lista", items: [
+        "Largo do Chiado y Praça Luís de Camões, como transición entre Chiado y Bairro Alto.",
+        "Las calles comerciales alrededor de Rua Garrett y el eje hacia Baixa.",
+        "Los teatros y espacios culturales de la zona, si buscas una visita menos centrada en monumentos.",
+        "El descenso hacia Bica o Cais do Sodré si quieres continuar la ruta hacia el río."
+      ]},
+
+      { tipo: "subtitulo", texto: "Bairro Alto: qué cambia al subir" },
+      { tipo: "parrafo", texto: "Bairro Alto tiene otra lógica. De día conserva tiendas pequeñas, calles estrechas y un ritmo más residencial; por la noche Turismo de Lisboa lo identifica como uno de los principales centros de bares, restaurantes y ambiente de calle. No necesitas buscar un único local “imprescindible”: la experiencia del barrio está precisamente en moverte entre calles y elegir según el ambiente que encuentres." },
+
+      { tipo: "subtitulo", texto: "Dónde empieza la noche en Lisboa" },
+      { tipo: "parrafo", texto: "Una ruta nocturna bastante natural empieza en Bairro Alto, baja después hacia Bica y puede terminar en Cais do Sodré. Esa secuencia aparece también en la propia descripción oficial del barrio. Te permite conocer zonas distintas sin depender de taxis entre cada parada." },
+      { tipo: "enlace", texto: "Si buscas una guía más completa para salir, con zonas y tipo de ambiente, está separada aquí.", href: "/blog/vida-nocturna-lisboa", label: "Vida nocturna en Lisboa" },
+
+      { tipo: "subtitulo", texto: "Miradouro de São Pedro de Alcântara" },
+      { tipo: "parrafo", texto: "Antes de que anochezca, São Pedro de Alcântara funciona bien como transición entre paseo y noche. Está junto al borde de Bairro Alto y ofrece una vista abierta hacia la colina del Castelo. Si vas a incluirlo, tiene más sentido hacerlo al final de la tarde que atravesar la zona solo para volver después." },
+      { tipo: "enlace", texto: "Para decidir si este es el mirador que más encaja en tu ruta, compáralo con los demás.", href: "/blog/mejores-miradores-lisboa", label: "Mejores miradores de Lisboa" },
+
+      { tipo: "subtitulo", texto: "¿Chiado y Bairro Alto se pueden ver juntos?" },
+      { tipo: "parrafo", texto: "Sí. De hecho, juntos funcionan mejor que como dos visitas separadas. Puedes dedicar la tarde a Chiado, llegar a Praça Luís de Camões, subir hacia Bairro Alto y terminar en São Pedro de Alcântara o seguir hacia la zona de bares. Así evitas repetir cuestas y traslados." },
+
+      { tipo: "subtitulo", texto: "Cuánto tiempo dedicar" },
+      { tipo: "parrafo", texto: "Para una primera visita, unas horas bastan para Chiado si lo combinas con Baixa. Si quieres entrar en librerías, sentarte en un café, visitar un espacio cultural y después quedarte por Bairro Alto de noche, reserva una tarde completa y deja que el recorrido continúe sin una hora de salida demasiado rígida." },
+
+      { tipo: "subtitulo", texto: "Cómo llegar" },
+      { tipo: "parrafo", texto: "La estación Baixa-Chiado conecta directamente con el corazón del área. Desde allí puedes empezar abajo y subir progresivamente. Si vienes caminando desde Baixa, recuerda que la pendiente cambia rápido: planifica el recorrido para acabar arriba, no para subir y bajar varias veces." },
+
+      { tipo: "subtitulo", texto: "La idea clave para no perder tiempo" },
+      { tipo: "parrafo", texto: "No visites Chiado solo por una foto en un café ni Bairro Alto solo por un bar concreto. Lo que hace interesante esta parte de Lisboa es la transición entre cultura, comercio, miradores y noche dentro de una zona muy compacta." },
     ]
   },
   "mouraria-barrio-guia": {
