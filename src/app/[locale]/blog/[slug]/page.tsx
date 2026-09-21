@@ -190,12 +190,6 @@ const articles: Record<string, Article> = {
       { label: 'Metro de Lisboa: compra de billetes y pases', href: 'https://www.metrolisboa.pt/comprar/' },
       { label: 'Carris: nuevas tarifas 2026', href: 'https://www.carris.pt/descubra/novo-tarifario-2026/' },
     ],
-    cta: {
-      href: '/calculadora-presupuesto-lisboa',
-      label: 'Abrir calculadora',
-      title: '¿Quieres una cifra adaptada a tu viaje?',
-      text: 'La calculadora separa alojamiento, comidas, transporte y actividades para que no dependas de un presupuesto diario genérico.',
-    },
     contenido: [
       { tipo: 'parrafo', texto: 'No existe un único “presupuesto diario para Lisboa” que sea fiable. Dos personas pueden hacer exactamente el mismo recorrido y gastar cantidades muy distintas por el alojamiento, la época del viaje y el tipo de comida. Por eso esta guía no parte de una cifra mágica: separa cada gasto para que puedas construir el tuyo.' },
       { tipo: 'parrafo', texto: 'En 2026 el transporte público sigue siendo una de las partidas más fáciles de calcular. El alojamiento, en cambio, cambia mucho por fecha y demanda. Si quieres controlar el presupuesto, fija primero cuánto vas a pagar por dormir y calcula después el resto.' },
