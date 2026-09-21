@@ -4010,6 +4010,7 @@ function buildFallbackArticle(slug: string): Article | null {
     imagen: post.imagen,
     categoria: post.categoria,
     fecha: post.fecha,
+    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
     minutos: 7,
     contenido: [
       { tipo: 'parrafo', texto: post.excerpt },

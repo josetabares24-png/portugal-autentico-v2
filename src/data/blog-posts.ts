@@ -4,6 +4,7 @@ export interface BlogPost {
   excerpt: string;
   categoria: string;
   fecha: string;
+  dateModified?: string;
   autor: string;
   imagen: string;
   imageFit?: 'cover' | 'contain';
@@ -304,7 +305,8 @@ export const blogPosts: BlogPost[] = [
     titulo: 'Presupuesto para viajar a Lisboa en 2026: cuánto cuesta de verdad',
     excerpt: 'Cómo calcular alojamiento, comida, transporte y entradas con tarifas de 2026 y sin depender de un presupuesto diario genérico.',
     categoria: 'Planificación',
-    fecha: '21 Sep 2026',
+    fecha: '5 Ene 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/bica-cafe-mapa.jpg',
   },
