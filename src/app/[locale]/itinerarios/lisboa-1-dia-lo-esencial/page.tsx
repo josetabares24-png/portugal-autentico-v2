@@ -21,9 +21,9 @@ import { agruparPorDia } from '@/lib/itinerary-days';
  */
 
 export const metadata = {
-  title: 'Lisboa en 1 Día: Lo Esencial 2026',
-  description: '8 paradas imprescindibles en Lisboa en un solo día. Alfama, Castillo, Belém y más. Itinerario optimizado con horarios y consejos locales.',
-  keywords: ['lisboa 1 dia', 'itinerario lisboa un dia', 'que ver lisboa'],
+  title: 'Qué ver en Lisboa en 1 día: itinerario y mapa',
+  description: 'Qué ver en Lisboa en 1 día: ruta por Alfama, castillo, Baixa, Belém y más, con horarios, orden de paradas y mapa para aprovechar el día sin correr.',
+  keywords: ['que ver en lisboa en un dia', 'lisboa 1 dia', 'itinerario lisboa 1 dia', 'mapa lisboa 1 dia'],
   openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
 };
@@ -53,8 +53,8 @@ export default function Lisboa1DiaPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Lisboa en 1 Día: Lo Esencial 2026',
-    description: '8 paradas imprescindibles en Lisboa en un solo día. Alfama, Castillo, Belém y más. Itinerario optimizado con horarios y consejos locales.',
+    name: 'Qué ver en Lisboa en 1 día: itinerario y mapa',
+    description: 'Qué ver en Lisboa en 1 día: ruta por Alfama, castillo, Baixa, Belém y más, con horarios, orden de paradas y mapa para aprovechar el día sin correr.',
     url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial',
     isAccessibleForFree: true,
   };
@@ -66,8 +66,8 @@ export default function Lisboa1DiaPage() {
       <ItineraryHero
         eyebrow="Itinerario"
         breadcrumbLabel="Lisboa en 1 día"
-        title="Lisboa en 1 día"
-        lead="La ruta más eficiente para ver lo esencial sin correr: Alfama y el castillo por la mañana, Belém y LX Factory por la tarde, y Bairro Alto de noche. Con la hora de cada parada y el mapa al final."
+        title="Qué ver en Lisboa en 1 día"
+        lead="Un itinerario de un día por Lisboa con las paradas ordenadas para ver lo esencial sin correr: Alfama y el castillo por la mañana, Belém por la tarde y el mapa completo al final."
         image="/images/alfama-panoramica.jpg"
         imageAlt="Vista panorámica de los tejados de Alfama y el río Tajo, en Lisboa"
         meta={[
