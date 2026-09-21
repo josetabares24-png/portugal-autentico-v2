@@ -10,13 +10,43 @@ El objetivo de medición es **28.000+ impresiones en una ventana de 28 días**, 
 
 ## Baseline conocido
 
-Último baseline de Search Console verificado en el proyecto: 2026-09-03.
+Datos reales de Google Search Console consultados el 21 de septiembre de 2026 mediante la propiedad de dominio `estabaenlisboa.com`.
 
-- 7 días: 2.139 impresiones (~306/día), 14 clics, posición media ~11,6.
-- 28 días: 6.621 impresiones (~236/día), 62 clics, posición media ~10,9.
-- CTR reciente aproximado del periodo de 7 días: ~0,7 %.
+### Últimos 28 días completos: 24 Ago – 20 Sep 2026
 
-No tratar estas cifras como datos actuales. Antes de tomar decisiones de poda, noindex, fusiones o cambios grandes de title, revisar Search Console otra vez.
+- 6.296 impresiones.
+- 53 clics.
+- CTR: 0,84 %.
+- Posición media: 12,87.
+- Media: ~225 impresiones/día.
+
+### 28 días anteriores: 27 Jul – 23 Ago 2026
+
+- 4.301 impresiones.
+- 41 clics.
+- CTR: 0,95 %.
+- Posición media: 11,91.
+- Media: ~154 impresiones/día.
+
+Cambio 28d vs 28d anterior:
+
+- impresiones: +46,4 %;
+- clics: +29,3 %;
+- CTR: -0,11 puntos porcentuales;
+- posición media: ~0,95 posiciones peor.
+
+Lectura: el sitio creció claramente en cobertura total frente al periodo anterior, pero perdió CTR y desde comienzos de septiembre aparece una caída de impresiones diarias. No tratar esa caída como una penalización general: varias URLs mantuvieron o mejoraron posición mientras perdían volumen de consultas.
+
+### URLs prioritarias por impresiones + posición + CTR
+
+- `/blog/como-moverse-por-lisboa`: 832 impresiones, posición 9,74, CTR 0,48 %.
+- `/blog/como-pagar-en-portugal`: 781 impresiones, posición 6,88, CTR 0,90 %.
+- `/blog/time-out-market-lisboa`: 466 impresiones, posición 8,72, CTR 1,29 %.
+- `/blog/estacion-oriente-lisboa`: 446 impresiones, posición 9,87, CTR 0,67 %.
+- `/blog/arquitectura-manuelina-lisboa`: 330 impresiones, posición 8,98, CTR 0,61 %.
+
+Estas cinco URLs deben medirse antes y después de cada cambio de title/meta. Evitar reescrituras grandes simultáneas mientras están cerca de primera página.
+
 
 ## Principios
 
