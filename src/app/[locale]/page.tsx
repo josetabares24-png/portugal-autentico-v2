@@ -46,12 +46,12 @@ const barrios = [
 ];
 
 const libreta: { texto: string; href?: string }[] = [
-  { texto: 'El 13 de junio huele a sardinas. No hay excepción.' },
-  { texto: 'El mejor mirador a las 7 de la mañana es el de Santa Luzia. A las 11, ya no.', href: '/blog/mejores-miradores-lisboa' },
-  { texto: 'En Mouraria, los lunes hay mercado. Viene poca gente y eso es lo bueno.' },
-  { texto: 'El tranvía 28 tarda más en subir que tú a pie. Tómalo igual.', href: '/blog/tram-28-historia-guia' },
-  { texto: 'Hay una tasca en Graça que solo abre tres días a la semana. Siempre llena.' },
-  { texto: 'Del aeropuerto al centro, el metro tarda lo mismo que un Uber y cuesta diez veces menos.', href: '/blog/aeropuerto-lisboa-al-centro' },
+  { texto: 'Alfama se disfruta mejor sin intentar convertir cada calle en una parada.', href: '/blog/alfama-historia-guia' },
+  { texto: 'En los miradores, la hora importa casi tanto como el lugar.', href: '/blog/mejores-miradores-lisboa' },
+  { texto: 'Si subes a Graça en transporte y bajas a pie, ahorras una de las cuestas más pesadas.', href: '/blog/graca-lisboa-que-ver' },
+  { texto: 'El tranvía 28 funciona mejor como experiencia que como solución rápida para cruzar la ciudad.', href: '/blog/tram-28-historia-guia' },
+  { texto: 'Belém tiene más sentido como bloque de varias horas que como una parada rápida entre dos planes del centro.', href: '/blog/belem-barrio-guia' },
+  { texto: 'Desde el aeropuerto, la Línea Roja conecta con la red de Metro; la mejor opción depende de tu equipaje y alojamiento.', href: '/blog/aeropuerto-lisboa-al-centro' },
 ];
 
 export default function HomePage() {
@@ -100,7 +100,7 @@ export default function HomePage() {
             La Lisboa que le enseño a quien viene a verme.
           </h1>
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            Vivo en Graça desde hace tres años. Estas son mis rutas, lugares y consejos locales.
+            Vivo en Lisboa desde hace más de tres años. Estas son mis rutas, lugares y consejos para recorrerla con sentido.
           </p>
           <Link href="/itinerarios" className="btn-ghost-light btn-lg">
             Ver itinerarios →
@@ -120,16 +120,17 @@ export default function HomePage() {
           </h2>
           <p className="mb-8 max-w-3xl font-body text-base leading-relaxed text-text-secondary md:text-lg">
             Si estás organizando el viaje, empieza por el tiempo que tienes y después baja a cada barrio.
-            Las rutas de 1, 2, 3 y 4 días conectan lo esencial con guías específicas de Alfama, Belém,
-            Baixa, Graça, miradores, transporte y Sintra.
+            Las rutas de 1, 2, 3, 4 y 5 días conectan lo esencial con guías específicas de Alfama, Belém,
+            Baixa, Graça, miradores, transporte, Sintra y planes alternativos si cambia el tiempo.
           </p>
           <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días', text: 'Rutas organizadas para una primera visita.' },
               { href: '/blog/lisboa-en-4-dias', label: 'Lisboa en 4 días', text: 'Centro, Belém, Sintra y una jornada más local.' },
+              { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días', text: 'Más barrios, Parque das Nações y Sintra con calma.' },
               { href: '/blog/barrios-imprescindibles', label: 'Barrios de Lisboa', text: 'Elige las zonas que mejor encajan con tu viaje.' },
-              { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse', text: 'Metro, tranvía, buses y billetes.' },
-              { href: '/blog/mejores-miradores-lisboa', label: 'Miradores', text: 'Las vistas que sí merece la pena incluir.' },
+              { href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa', text: 'Líneas, horarios y billetes de 2026.' },
+              { href: '/blog/lisboa-cuando-llueve', label: 'Lisboa con lluvia', text: 'Planes cubiertos y cómo reorganizar el día.' },
               { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa', text: 'Cómo dedicarle un día sin improvisar.' },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="group border-t border-taupe/30 pt-4">

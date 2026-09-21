@@ -1308,8 +1308,8 @@ const articles: Record<string, Article> = {
     imageAlt: 'Calle residencial de Lisboa con viajeros caminando entre fachadas de azulejo',
     categoria: 'Planificación',
     fecha: '23 Jul 2026',
-    fechaActualizacion: 'Actualizado en julio de 2026',
-    dateModified: '2026-07-24',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
     minutos: 13,
     links: [
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Ruta de 3 días para elegir zona con criterio' },
@@ -1340,7 +1340,8 @@ const articles: Record<string, Article> = {
         'Si tu presupuesto es ajustado, mira zonas conectadas por metro aunque no estén en la foto clásica.',
       ] },
       { tipo: 'subtitulo', texto: 'Baixa: práctica para una primera visita' },
-      { tipo: 'parrafo', texto: 'Baixa es la opción más fácil de entender. Estás cerca de Rossio, Praça do Comércio, Chiado y los accesos hacia Alfama. Para quien llega por primera vez y quiere moverse sin pensar demasiado, funciona bien. La parte menos atractiva es que algunas calles viven mucho del turismo y pueden sentirse menos locales.' },
+      { tipo: 'parrafo', texto: 'Baixa es la opción más fácil de entender. Estás cerca de Rossio, Praça do Comércio, Chiado y los accesos hacia Alfama. Para quien llega por primera vez y quiere moverse sin pensar demasiado, funciona bien. La parte menos atractiva es que algunas calles tienen mucho tránsito turístico y pueden sentirse menos residenciales.' },
+      { tipo: 'enlace', texto: 'Si estás valorando esta zona, mira primero qué cubre realmente una ruta por la Baixa y cuánto caminarías desde allí.', href: '/blog/baixa-lisboa-que-ver', label: 'Qué ver en la Baixa' },
       { tipo: 'parrafo', texto: 'Es buena zona si viajas pocos días, si llegas tarde o si quieres una base cómoda para salir a caminar. Revisa, eso sí, que el alojamiento no esté justo encima de una calle muy transitada. La comodidad no compensa si no duermes bien.' },
       { tipo: 'subtitulo', texto: 'Chiado: céntrico, bonito y algo más elegante' },
       { tipo: 'parrafo', texto: 'Chiado tiene librerías, teatros, cafés, tiendas y una posición excelente entre Baixa, Bairro Alto y Cais do Sodré. Suele gustar a parejas y viajeros que quieren estar en el centro sin sentir tanto la zona de paso de Rua Augusta. También tiene cuestas, pero son manejables si eliges bien la calle.' },
@@ -1349,7 +1350,8 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Alfama es preciosa para pasear, escuchar fado y perderse, pero no siempre es la mejor base. Hay callejones estrechos, escaleras, accesos irregulares y alojamientos donde llegar con maleta se convierte en una pequeña prueba física. Si buscas postal y ambiente antiguo, puede ser maravillosa; si buscas eficiencia, quizá no.' },
       { tipo: 'parrafo', texto: 'La recomiendo para segundas visitas, parejas con poco equipaje o viajeros que aceptan caminar despacio. No la elegiría como primera opción para familias con carrito, personas con movilidad reducida o quien quiera volver de noche sin pensar en la subida.' },
       { tipo: 'subtitulo', texto: 'Graça: vistas y barrio, con cuestas serias' },
-      { tipo: 'parrafo', texto: 'Graça conserva una sensación más vecinal y tiene algunos de los mejores miradores. Es una zona con personalidad, cafés sencillos y acceso a Alfama y Mouraria, pero exige piernas. Si te alojas arriba, tendrás vistas y calma; también tendrás subidas al final del día.' },
+      { tipo: 'parrafo', texto: 'Graça tiene algunos de los miradores más conocidos y conecta con Alfama y Mouraria, pero exige piernas. Si te alojas en la parte alta, la pendiente y la forma de volver por la noche importan tanto como la vista.' },
+      { tipo: 'enlace', texto: 'Antes de reservar arriba de la colina, revisa la ruta de Graça y sus desniveles principales.', href: '/blog/graca-lisboa-que-ver', label: 'Qué ver en Graça' },
       { tipo: 'parrafo', texto: 'Funciona bien para quien quiere una Lisboa menos pulida y no depende de horarios muy ajustados. Si vas a salir mucho de noche por Cais do Sodré o Bairro Alto, quizá te resulte incómoda para volver.' },
       { tipo: 'subtitulo', texto: 'Avenida da Liberdade y Marquês de Pombal' },
       { tipo: 'parrafo', texto: 'La Avenida da Liberdade y Marquês de Pombal son cómodas, bien conectadas y más ordenadas. No tienen el encanto de Alfama, pero permiten moverse con metro, taxi o a pie hacia el centro. Para hoteles de más categoría, viajes de trabajo o personas que prefieren calles amplias, son una buena apuesta.' },
@@ -1360,27 +1362,25 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Saldanha y Parque das Nações' },
       { tipo: 'parrafo', texto: 'Saldanha es menos turístico, pero tiene metro, avenidas amplias y una relación práctica entre precio, calma y conexión. Puede ser buena opción si no necesitas dormir en la postal clásica. Parque das Nações está más lejos del centro histórico, pero es ordenado, plano y útil para familias o eventos concretos.' },
       { tipo: 'parrafo', texto: 'No elegiría Parque das Nações para una primera visita corta centrada en Alfama, Baixa y Belém. Sí puede tener sentido si valoras comodidad, modernidad o llegas por motivos concretos a esa zona.' },
-      { tipo: 'subtitulo', texto: 'Intendente y Mouraria: la Lisboa que se está descubriendo' },
-      { tipo: 'parrafo', texto: 'Hace diez años, pocos extranjeros pedían alojamiento en Intendente o Mouraria. Eran barrios trabajadores, multiculturales, con una reputación que los guías de viaje preferían ignorar. Hoy son las zonas de mayor crecimiento en calidad de alojamiento y gastronomía de Lisboa, manteniendo todavía un carácter genuino que los barrios más turísticos han perdido.' },
-      { tipo: 'parrafo', texto: 'Mouraria es el barrio de origen del fado, más antiguo que Alfama en esa tradición. Sus tascas son de las más auténticas de la ciudad. Intendente, la plaza central del área, ha experimentado una transformación ordenada que ha traído cafés de especialidad, galerías y tiendas de diseño sin desplazar a los vecinos de siempre. Los precios son entre un 20 y un 30% más bajos que en el Chiado por un nivel de autenticidad mayor.' },
+      { tipo: 'subtitulo', texto: 'Intendente y Mouraria: céntricos y con otro ritmo' },
+      { tipo: 'parrafo', texto: 'Intendente y Mouraria quedan cerca del centro histórico y tienen acceso al Metro y a varias zonas que se pueden recorrer a pie. El ambiente cambia bastante de una calle a otra, así que conviene mirar la ubicación exacta del alojamiento y no decidir solo por el nombre del barrio.' },
+      { tipo: 'parrafo', texto: 'Mouraria está estrechamente ligada a la historia del fado y reúne comercio, restauración y una población muy diversa. Intendente puede resultar práctico por su estación de Metro y la cercanía con Arroios, Mouraria y Baixa. No doy un precio medio de alojamiento porque cambia demasiado por fechas, tipo de propiedad y antelación.' },
       { tipo: 'lista', items: [
-        'Terreno: mezcla de zonas planas y pendientes moderadas',
-        'Transporte: metro Intendente y Martim Moniz, autobuses frecuentes',
-        'Precio medio alojamiento: 60-110 EUR por noche',
-        'Puntos fuertes: autenticidad, precios más bajos, gastronomía excelente',
-        'Puntos débiles: menos monumentos a pie, zona en transición',
-        'Mejor para: viajeros con experiencia, quienes buscan Lisboa fuera del circuito turístico'
+        'Terreno: mezcla de tramos cómodos y pendientes.',
+        'Transporte: Metro en Intendente y Martim Moniz, además de buses.',
+        'Puntos fuertes: cercanía al centro, transporte y mezcla de comercio local.',
+        'Puntos débiles: la comodidad y el ruido cambian mucho según la calle.',
+        'Mejor para: viajeros que quieren estar cerca del centro sin dormir necesariamente en Baixa o Chiado.'
       ]},
-      { tipo: 'subtitulo', texto: 'Belém: la Lisboa monumental junto al río' },
-      { tipo: 'parrafo', texto: 'Belém no es exactamente un barrio en el sentido urbano: es una extensión al oeste de Lisboa, junto al Tajo, donde se concentran los grandes monumentos de la era de los Descubrimientos. La Torre de Belém, el Monasterio de los Jerónimos, el Padrão dos Descobrimentos, el Centro Cultural de Belém y los pastéis originales están todos en un radio de diez minutos a pie.' },
-      { tipo: 'parrafo', texto: 'El problema de alojarse en Belém es que cuando se hace de noche y los monumentos cierran, el barrio queda prácticamente muerto. Los restaurantes del paseo marítimo son correctos pero orientados al turismo de paso. Para explorar Alfama, el Chiado o el Bairro Alto necesitarás coger el tranvía 15E o un Uber. Es la zona perfecta para pasar el día, pero un poco solitaria para quedarse a dormir a menos que busques exactamente esa tranquilidad.' },
+      { tipo: 'subtitulo', texto: 'Belém: monumentos y paseo junto al río' },
+      { tipo: 'parrafo', texto: 'Belém está al oeste del centro histórico y concentra Jerónimos, Padrão dos Descobrimentos, museos, jardines y el paseo junto al Tajo. Es una zona fácil de disfrutar durante el día y bastante más plana que Alfama o Graça.' },
+      { tipo: 'parrafo', texto: 'Como base para dormir, tiene sentido si priorizas tranquilidad, el frente ribereño o actividades en esa zona. Si tu viaje gira sobre todo alrededor de Alfama, Baixa, Chiado y la vida nocturna del centro, tendrás más desplazamientos que desde una zona céntrica.' },
       { tipo: 'lista', items: [
-        'Terreno: completamente plano, junto al río',
-        'Transporte: tranvía 15E al centro (25 min), autobuses, tren de cercanías',
-        'Precio medio alojamiento: 75-145 EUR por noche',
-        'Puntos fuertes: tranquilidad, monumentos a pie, paseo marítimo, sin ruido nocturno',
-        'Puntos débiles: alejado del centro animado, poco ambiente nocturno',
-        'Mejor para: familias con niños, amantes de la historia, quienes valoran la tranquilidad'
+        'Terreno: predominantemente plano junto al río.',
+        'Transporte: tranvía, autobuses y tren según el trayecto y el estado del servicio.',
+        'Puntos fuertes: paseo ribereño, monumentos y ambiente más tranquilo.',
+        'Puntos débiles: mayor distancia respecto a varias zonas del centro histórico.',
+        'Mejor para: familias, viajeros que priorizan Belém o quien busca una base menos centrada en la vida nocturna.'
       ]},
       { tipo: 'subtitulo', texto: 'Conexión con aeropuerto y transporte' },
       { tipo: 'parrafo', texto: 'Si llegas por avión, dormir cerca de metro puede ahorrarte estrés desde el primer minuto. La línea del aeropuerto conecta con Saldanha en unos 20 minutos según la información oficial del aeropuerto, pero muchas zonas requieren transbordo o un tramo a pie. Zonas como Saldanha, Marquês de Pombal, Baixa-Chiado u Oriente pueden funcionar bien según tu ruta y equipaje; no elijas solo por distancia en kilómetros.' },
@@ -3754,85 +3754,87 @@ function buildFallbackArticle(slug: string): Article | null {
   if (!post) return null;
   const tituloBase = post.titulo.replace(/\s+en Lisboa/i, '').trim();
   const categoria = post.categoria;
-  const contexto = `En esta guía sobre ${tituloBase.toLowerCase()}, te comparto lo esencial con enfoque local, directo y sin rodeos.`;
+  const contexto = `Esta guía sobre ${tituloBase.toLowerCase()} reúne una orientación inicial para decidir cómo encaja el tema en tu viaje a Lisboa.`;
   const listaClave = [
-    'Qué merece la pena y qué puedes saltarte sin culpa.',
-    'Horarios reales para evitar colas y multitudes.',
-    'Costes aproximados para planificar sin sorpresas.',
-    'Atajos de local para moverte mejor y ahorrar tiempo.',
-    'Errores típicos que conviene evitar.',
+    'Qué parte del tema puede ser útil para tu viaje.',
+    'Cómo conectarlo con otras zonas o planes de Lisboa.',
+    'Qué información conviene comprobar de nuevo antes de ir.',
+    'Qué alternativas tienes si el plan no encaja con tu tiempo o presupuesto.',
   ];
 
   const categoryIntro: Record<string, string> = {
-    Guías: 'La clave aquí es priorizar zonas con buen acceso y vistas sin duplicar cuestas ni tiempos.',
-    Gastronomía: 'Lisboa se come por horarios. Si llegas a tiempo, comes mejor y por menos.',
-    Consejos: 'La diferencia entre una visita normal y una buena es conocer los detalles pequeños.',
-    Planificación: 'Un buen plan ahorra dinero y horas. Lo importante es ajustar expectativas y ritmo.',
-    Transporte: 'Moverse bien en Lisboa es tener una tarjeta correcta y saber qué evitar.',
-    Cultura: 'Para vivir la cultura local hay que respetar tiempos, silencios y códigos.',
+    Guías: 'Prioriza zonas cercanas entre sí y ajusta el número de paradas al tiempo que realmente tienes.',
+    Gastronomía: 'Comprueba ubicación, menú y horario actual antes de desplazarte expresamente a un local.',
+    Consejos: 'Usa estas recomendaciones como punto de partida y adapta lo que cambie según tus fechas.',
+    Planificación: 'Separa las decisiones que dependen de tus fechas —alojamiento, reservas o eventos— de las que son más estables.',
+    Transporte: 'Compara el trayecto concreto y las condiciones vigentes del operador antes de elegir un título o una ruta.',
+    Cultura: 'El contexto ayuda a entender mejor cada lugar, pero horarios, exposiciones y accesos pueden cambiar.',
   };
 
   const categoryMusts: Record<string, string[]> = {
     Guías: [
-      'Zonas clave en un orden que evita subidas innecesarias.',
-      'Paradas con mejores vistas y menos gente.',
-      'Ventanas horarias recomendadas según luz y afluencia.',
-      'Tiempo real entre puntos para no correr.',
-      'Dónde hacer una pausa sin pagar de más.',
+      'Agrupa las visitas por zonas para reducir desplazamientos.',
+      'Prioriza menos paradas si el recorrido tiene muchas cuestas.',
+      'Deja margen para cambios de clima, colas o cansancio.',
+      'Comprueba horarios oficiales cuando una visita dependa de una franja concreta.',
     ],
     Gastronomía: [
-      'Tascas locales con menú del día a buen precio.',
-      'Qué pedir para acertar sin gastar de más.',
-      'Horarios ideales para evitar colas.',
-      'Diferencias entre zonas turísticas y locales.',
-      'Dónde tomar un café bueno y barato.',
+      'Comprueba menú y horario actual antes de ir expresamente.',
+      'Decide si buscas comida rápida, tradicional o una experiencia más larga.',
+      'Compara la ubicación con el resto de tu ruta.',
+      'Reserva cuando el propio local lo recomiende o la fecha sea especialmente demandada.',
     ],
     Consejos: [
-      'Errores típicos que encarecen el viaje.',
-      'Consejos prácticos para moverte rápido.',
-      'Qué horarios evitar en zonas populares.',
-      'Cosas que no necesitas comprar.',
-      'Pequeños hábitos de local que ayudan.',
+      'Distingue información estable de precios, horarios o reglas que pueden cambiar.',
+      'Evita añadir compras o reservas que no aporten a tu ruta.',
+      'Guarda una alternativa sencilla si el plan principal falla.',
+      'Comprueba fuentes oficiales cuando la decisión implique dinero o acceso.',
     ],
     Planificación: [
-      'Presupuesto diario realista por estilo de viaje.',
-      'Épocas del año con mejor clima-precio.',
-      'Cómo distribuir los días por zonas.',
-      'Tiempo real para cada actividad.',
-      'Qué reservar con antelación.',
+      'Trabaja con tus fechas reales y no con precios de otro año.',
+      'Organiza los días por zonas antes de reservar actividades.',
+      'Deja margen para clima, colas y cambios de servicio.',
+      'Comprueba condiciones oficiales antes de pagar.',
     ],
     Transporte: [
-      'Qué tarjeta comprar y cómo recargarla.',
-      'Tramos donde el metro es más útil.',
-      'Tranvías que valen la pena y los que no.',
-      'Cuándo usar Uber/Bolt sin gastar de más.',
-      'Cómo llegar desde el aeropuerto al centro.',
+      'Elige el título de transporte según los trayectos que realmente harás.',
+      'Comprueba alteraciones de servicio antes de un desplazamiento importante.',
+      'Ten en cuenta equipaje, cuestas y transbordos.',
+      'Usa la web del operador como referencia final para tarifas y horarios.',
     ],
     Cultura: [
-      'Lugares auténticos con menos turistada.',
-      'Horarios recomendados para buena experiencia.',
-      'Cómo comportarse en espectáculos locales.',
-      'Rincones culturales con entrada gratuita.',
-      'Planes alternativos si hay colas.',
+      'Separa el contexto histórico de horarios o exposiciones temporales.',
+      'Comprueba acceso y condiciones actuales si el lugar requiere entrada.',
+      'Combina la visita con otros puntos cercanos cuando tenga sentido.',
+      'Respeta las normas específicas del espacio que visites.',
     ],
   };
 
   const categoryChecklist: Record<string, string[]> = {
-    Guías: ['Calzado cómodo', 'Agua y snack ligero', 'Foto rápida y seguir ruta', 'Reserva si aplica'],
-    Gastronomía: ['Llegar antes de las 14:00', 'Pedir plato del día', 'Evitar menús turísticos', 'Pagar con tarjeta o efectivo pequeño'],
-    Consejos: ['Evitar horas punta', 'Plan de 2-3 zonas por día', 'Mapa offline listo', 'Tiempo de descanso'],
-    Planificación: ['Fechas flexibles', 'Presupuesto diario', 'Plan A y plan B', 'Reservas clave'],
-    Transporte: ['Tarjeta Viva Viagem', 'Horario del primer metro', 'Plan alterno si llueve', 'Apps útiles'],
-    Cultura: ['Reservas si hay show', 'Llegar 10-15 min antes', 'Respeto al silencio', 'Alternativa cercana'],
+    Guías: ['Calzado adecuado', 'Agua según la época', 'Ruta agrupada por zonas', 'Reserva si el lugar la exige'],
+    Gastronomía: ['Horario actual', 'Menú o rango de precios visible', 'Ubicación en tu ruta', 'Reserva si aplica'],
+    Consejos: ['Fuente actual si el dato cambia', 'Plan alternativo', 'Tiempo suficiente', 'Condiciones antes de pagar'],
+    Planificación: ['Fechas definidas', 'Presupuesto propio', 'Plan A y plan B', 'Reservas realmente necesarias'],
+    Transporte: ['Tarjeta Navegante si aplica', 'Estado del servicio', 'Ruta alternativa', 'App o web oficial del operador'],
+    Cultura: ['Horario actual', 'Entrada o reserva si aplica', 'Tiempo de visita', 'Alternativa cercana'],
   };
 
   const categoryTip: Record<string, string> = {
-    Guías: 'Si quieres el detalle completo con mapas, horarios y paradas exactas, revisa nuestras guías actualizadas.',
-    Gastronomía: 'Si algo parece muy turístico, camina 5 minutos y verás opciones mejores y más baratas.',
-    Consejos: 'La ciudad se disfruta más temprano y tarde. Entre 13:00 y 16:00 suele estar más cargada.',
-    Planificación: 'Con 2-4 días bien organizados ves lo esencial sin correr.',
-    Transporte: 'El tranvía 28 es icónico, pero el 12 hace una ruta similar con menos cola.',
-    Cultura: 'El fado auténtico se vive mejor en espacios pequeños, con ambiente silencioso.',
+    Guías: 'Usa esta página para orientar la ruta y confirma los datos variables antes del viaje.',
+    Gastronomía: 'Los locales, cartas y horarios cambian: comprueba la información del establecimiento antes de desplazarte.',
+    Consejos: 'Cuando un dato afecte dinero, acceso o transporte, usa la fuente oficial como comprobación final.',
+    Planificación: 'Planifica con tus fechas y condiciones reales; una cifra genérica rara vez representa todos los viajes.',
+    Transporte: 'Tarifas, obras y alteraciones pueden cambiar: confirma el trayecto en el operador antes de salir.',
+    Cultura: 'El contexto histórico es estable; horarios, exposiciones y accesos no siempre lo son.',
+  };
+
+  const categoryPlanningText: Record<string, string> = {
+    Guías: 'Encaja este plan con puntos cercanos y evita cruzar Lisboa varias veces el mismo día. Si la ruta tiene cuestas, reduce paradas o usa transporte para el tramo menos cómodo.',
+    Gastronomía: 'Haz que la parada para comer forme parte de la zona que ya estás visitando. Desplazarte media ciudad por una recomendación puede consumir más tiempo del que aporta.',
+    Consejos: 'Aplica solo las recomendaciones que resuelvan una necesidad real de tu viaje. Si un dato depende de precio, horario o normativa, compruébalo de nuevo.',
+    Planificación: 'Primero fija fechas y prioridades; después reserva. Así puedes comparar opciones reales en lugar de construir el viaje alrededor de cifras genéricas.',
+    Transporte: 'Decide el transporte a partir del origen, destino, equipaje y hora. La opción más barata no siempre es la más práctica, y la más rápida puede cambiar según el servicio.',
+    Cultura: 'Combina el tema con lugares relacionados que ya estén en tu recorrido. No hace falta convertir cada contexto histórico o cultural en una parada adicional.',
   };
 
   const slugDetails: Record<
@@ -4179,12 +4181,11 @@ function buildFallbackArticle(slug: string): Article | null {
       },
       {
         tipo: 'subtitulo',
-        texto: 'Ruta rápida recomendada',
+        texto: 'Cómo encajarlo en tu viaje',
       },
       {
         tipo: 'parrafo',
-        texto:
-          'Empieza por lo más cercano al centro y avanza por zonas conectadas entre sí. Así evitas subir y bajar colinas sin necesidad. Si viajas con poco tiempo, prioriza dos zonas clave y deja el resto como extra.',
+        texto: categoryPlanningText[categoria] || categoryPlanningText['Guías'],
       },
       ...(itinerary
         ? [
@@ -4201,14 +4202,14 @@ function buildFallbackArticle(slug: string): Article | null {
       },
       {
         tipo: 'subtitulo',
-        texto: 'Consejos de local',
+        texto: 'Antes de decidir',
       },
       {
         tipo: 'lista',
         items: [
-          'Ve temprano si quieres fotos limpias y menos filas.',
-          'Evita la franja de 13:00 a 16:00 en lugares populares.',
-          'Si algo se ve demasiado turístico, camina 5 minutos y mejora.',
+          'Comprueba de nuevo cualquier precio, horario o condición que pueda cambiar.',
+          'Prioriza lo que encaje con tu ruta en vez de sumar paradas por obligación.',
+          'Guarda una alternativa cercana si el clima, una cola o una incidencia cambia el plan.',
         ],
       },
       ...(localTips
