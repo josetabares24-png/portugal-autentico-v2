@@ -552,10 +552,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'arquitectura-manuelina-lisboa',
-    titulo: 'La Arquitectura Manuelina: El Arte Único que Nació en Lisboa',
-    excerpt: 'El estilo manuelino es la respuesta artística de Portugal a los descubrimientos. Cuerdas de piedra, cruz de Cristo, armillas estelares. Dónde verlo en Lisboa y qué significa cada detalle.',
+    titulo: 'Estilo manuelino: qué es, características y ejemplos en Lisboa',
+    excerpt: 'Qué es el estilo manuelino, cuáles son sus símbolos y cómo reconocerlo en los Jerónimos, la Torre de Belém y otros ejemplos portugueses.',
     categoria: 'Cultura',
     fecha: '11 Mar 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
