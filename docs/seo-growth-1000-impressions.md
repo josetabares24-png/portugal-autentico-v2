@@ -270,6 +270,43 @@ Desde ~163/día hasta 1.000/día faltan ~837 impresiones diarias. Recuperar el n
 
 El objetivo de 1.000/día sigue siendo una meta de crecimiento, no una previsión ni una garantía.
 
+
+## Lote GSC 3 — páginas en posiciones 10–20
+
+Baseline registrado el 21 de septiembre de 2026 sobre la ventana finalizada **24 Ago–20 Sep 2026**. Los totales por URL se consultan sin dimensión `query`; las consultas visibles se usan solo para entender intención porque Search Console anonimiza parte de ellas.
+
+| URL | Clics | Impresiones | CTR | Posición media |
+|---|---:|---:|---:|---:|
+| `/blog/tram-28-historia-guia` | 0 | 177 | 0,00 % | 17,69 |
+| `/blog/barrios-imprescindibles` | 2 | 161 | 1,24 % | 17,10 |
+| `/blog/chiado-bairro-alto-guia` | 0 | 119 | 0,00 % | 14,39 |
+| `/blog/presupuesto-viajar-lisboa` | 0 | 92 | 0,00 % | 16,63 |
+| `/blog/mejores-mercados-lisboa` | 0 | 86 | 0,00 % | 15,01 |
+| `/blog/alfama-historia-guia` | 0 | 74 | 0,00 % | 18,28 |
+| `/blog/donde-escuchar-fado-autentico` | 0 | 49 | 0,00 % | 15,37 |
+
+Consultas visibles que guiaron el ajuste:
+
+- Tranvía 28: `tram 28 lisboa` ~12,9; `eléctrico 28 lisboa` ~12; `tram 28` ~19,6; `tranvia 28` ~20,7.
+- Barrios: `barrios de lisboa` fue la consulta visible con más impresiones; también aparecen variantes `bairros lisboa` y `bairros de lisboa`.
+- Chiado/Bairro Alto: `chiado y barrio alto` ~11; `bairro chiado lisboa` ~12,5; `chiado lisbon` ~18,7.
+- Presupuesto: además de consultas ruidosas/no relevantes, aparece `lisboa es caro o barato` ~15,5; la página se reorienta a intención de coste/presupuesto 2026.
+- Mercados: `mercados lisboa` ~13; `mercados de lisboa` ~16,5; `mercados en lisboa` ~17,5.
+- Alfama: `alfama barrio` ~11; la consulta genérica `alfama` tiene más impresiones visibles pero posición mucho más baja.
+- Fado: aparecen `donde escuchar fado en lisboa`, `escuchar fado en lisboa` y `fado en lisboa no turístico`; la última estaba alrededor de posición 17.
+
+Cambios del lote:
+
+1. Barrios y Chiado/Bairro Alto: ajuste quirúrgico de H1/title/meta para reflejar la consulta principal.
+2. Tranvía 28: reorientación a ruta, paradas y tarifas 2026; se retiran tarifas antiguas y recomendaciones rígidas.
+3. Presupuesto: retirada de rangos de alojamiento/comida de 2024 y cambio a un método de cálculo por partidas con tarifas oficiales de transporte 2026.
+4. Mercados: retirada de precios/horarios no verificados y selección basada en fuentes municipales o de juntas de freguesia.
+5. Alfama: cambio de intención desde “historia/secretos” hacia “qué ver / miradores / ruta a pie”.
+6. Fado: cambio desde afirmaciones subjetivas de “auténtico vs turístico” hacia tipos de experiencia, zonas y casas con referencias oficiales.
+
+Protocolo de comparación: no evaluar este lote hasta que el commit esté desplegado en producción. Después, comparar ventanas finalizadas equivalentes de 7 y 14 días por URL y por consultas visibles, registrando impresiones, CTR, posición y ampliación/reducción de cobertura.
+
+
 ## Revisión semanal
 
 Cada semana revisar:
