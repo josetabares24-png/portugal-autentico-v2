@@ -5,12 +5,16 @@
  * recomendando las tres publicaciones más recientes aunque no compartan tema.
  */
 export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
+  'lisboa-en-5-dias': ['lisboa-en-4-dias', 'sintra-desde-lisboa', 'parque-das-nacoes-lisboa-que-ver'],
+  'lisboa-cuando-llueve': ['parque-das-nacoes-lisboa-que-ver', 'mejores-mercados-lisboa', 'donde-tomar-cafe-lisboa'],
+  'parque-das-nacoes-lisboa-que-ver': ['estacion-oriente-lisboa', 'metro-lisboa-guia', 'lisboa-con-ninos'],
+  'metro-lisboa-guia': ['tarjeta-navegante-lisboa', 'como-moverse-por-lisboa', 'aeropuerto-lisboa-al-centro'],
   'volta-portugal-devolucion-envases': ['como-pagar-en-portugal', 'presupuesto-viajar-lisboa', 'mejores-mercados-lisboa'],
   'patinetes-electricos-lisboa': ['como-moverse-por-lisboa', 'mejores-apps-lisboa', 'estacion-oriente-lisboa'],
   'time-out-market-lisboa': ['mejores-mercados-lisboa', 'donde-comer-barato-lisboa', 'vida-nocturna-lisboa'],
-  'estacion-oriente-lisboa': ['estacion-olaias-lisboa', 'como-moverse-por-lisboa', 'lisboa-con-ninos'],
+  'estacion-oriente-lisboa': ['parque-das-nacoes-lisboa-que-ver', 'metro-lisboa-guia', 'estacion-olaias-lisboa'],
   'estacion-olaias-lisboa': ['estacion-oriente-lisboa', 'como-moverse-por-lisboa', 'donde-fotografiar-lisboa'],
-  'lisboa-en-7-dias': ['excursiones-desde-lisboa', 'sintra-desde-lisboa', 'barrios-imprescindibles'],
+  'lisboa-en-7-dias': ['lisboa-en-5-dias', 'excursiones-desde-lisboa', 'sintra-desde-lisboa'],
   'donde-fotografiar-lisboa': ['mejores-miradores-lisboa', 'estacion-olaias-lisboa', 'mejor-epoca-visitar-lisboa'],
   'lisboa-con-ninos': ['que-hacer-gratis-en-lisboa', 'playas-cerca-lisboa', 'como-moverse-por-lisboa'],
   'lisboa-en-pareja': ['restaurantes-romanticos-lisboa', 'mejores-miradores-lisboa', 'donde-escuchar-fado-autentico'],
@@ -27,7 +31,7 @@ export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
   'errores-turistas-lisboa': ['mejores-apps-lisboa', 'como-moverse-por-lisboa', 'lisboa-card-vale-la-pena'],
   'pasteles-de-belem': ['belem-barrio-guia', 'gastronomia-portuguesa-guia', 'donde-tomar-cafe-lisboa'],
   'sintra-desde-lisboa': ['excursiones-desde-lisboa', 'que-ver-cascais-desde-lisboa', 'arquitectura-manuelina-lisboa'],
-  'mejor-epoca-visitar-lisboa': ['festivales-eventos-lisboa-2026', 'semana-santa-lisboa', 'playas-cerca-lisboa'],
+  'mejor-epoca-visitar-lisboa': ['lisboa-cuando-llueve', 'festivales-eventos-lisboa-2026', 'playas-cerca-lisboa'],
   'aeropuerto-lisboa-al-centro': ['como-moverse-por-lisboa', 'donde-alojarse-en-lisboa', 'mejores-apps-lisboa'],
   'restaurantes-romanticos-lisboa': ['lisboa-en-pareja', 'donde-escuchar-fado-autentico', 'vinos-portugueses-guia'],
   'que-ver-cascais-desde-lisboa': ['playas-cerca-lisboa', 'excursiones-desde-lisboa', 'mejor-epoca-visitar-lisboa'],
