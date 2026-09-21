@@ -14,6 +14,102 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'presupuesto-viajar-lisboa': {
+    titulo: 'Presupuesto para viajar a Lisboa en 2026: cuánto cuesta de verdad',
+    descripcion: 'Guía práctica para calcular cuánto cuesta viajar a Lisboa en 2026, separando alojamiento, comida, transporte y entradas sin vender un presupuesto fijo que no sirve para todos.',
+    seoTitle: 'Presupuesto Lisboa 2026: cuánto cuesta viajar',
+    metaDescription: 'Calcula tu presupuesto para Lisboa en 2026: transporte oficial, comida, alojamiento, entradas y tres formas de ajustar el gasto sin cifras engañosas.',
+    imagen: '/images/bica-cafe-mapa.jpg',
+    imageAlt: 'Mesa de café en Lisboa con mapa para organizar el presupuesto del viaje',
+    categoria: 'Planificación',
+    fecha: '5 Ene 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 9,
+    links: [
+      { href: '/calculadora-presupuesto-lisboa', label: 'Calcular tu presupuesto de Lisboa' },
+      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal sin comisiones innecesarias' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa según tu viaje' },
+      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis en Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Metro de Lisboa: tarifario 2026', href: 'https://www.metrolisboa.pt/2025/12/19/novas-tarifas-2026/' },
+      { label: 'Metro de Lisboa: compra de billetes y pases', href: 'https://www.metrolisboa.pt/comprar/' },
+      { label: 'Carris: nuevas tarifas 2026', href: 'https://www.carris.pt/descubra/novo-tarifario-2026/' },
+    ],
+    cta: {
+      href: '/calculadora-presupuesto-lisboa',
+      label: 'Abrir calculadora',
+      title: '¿Quieres una cifra adaptada a tu viaje?',
+      text: 'La calculadora separa alojamiento, comidas, transporte y actividades para que no dependas de un presupuesto diario genérico.',
+    },
+    contenido: [
+      { tipo: 'parrafo', texto: 'No existe un único “presupuesto diario para Lisboa” que sea fiable. Dos personas pueden hacer exactamente el mismo recorrido y gastar cantidades muy distintas por el alojamiento, la época del viaje y el tipo de comida. Por eso esta guía no parte de una cifra mágica: separa cada gasto para que puedas construir el tuyo.' },
+      { tipo: 'parrafo', texto: 'En 2026 el transporte público sigue siendo una de las partidas más fáciles de calcular. El alojamiento, en cambio, cambia mucho por fecha y demanda. Si quieres controlar el presupuesto, fija primero cuánto vas a pagar por dormir y calcula después el resto.' },
+
+      { tipo: 'subtitulo', texto: 'La parte fácil: cuánto cuesta moverse por Lisboa en 2026' },
+      { tipo: 'parrafo', texto: 'Desde el 1 de enero de 2026, el billete Carris/Metro cuesta 1,90 €. El billete de 24 horas Carris/Metro cuesta 7,25 €. Si prefieres zapping, un viaje de Metro descuenta 1,72 €. El pago directo con tarjeta bancaria contactless en el Metro cuesta 1,92 € por viaje.' },
+      { tipo: 'lista', items: [
+        'Billete Carris/Metro: 1,90 €.',
+        '24 horas Carris/Metro: 7,25 €.',
+        '24 horas Carris/Metro/Transtejo: 10,35 €.',
+        '24 horas Carris/Metro/CP: 11,40 €.',
+        'Zapping en Metro: 1,72 € por viaje.',
+        'Tarjeta navegante ocasional: 0,50 € y reutilizable durante un año.',
+      ]},
+      { tipo: 'parrafo', texto: 'No compres automáticamente el pase diario. Si ese día vas a caminar casi todo el tiempo y hacer solo uno o dos trayectos, puede no compensar. En cambio, una jornada con varios desplazamientos, tranvía y Metro puede justificarlo.' },
+      { tipo: 'enlace', texto: 'Si quieres comparar billete sencillo, zapping y pases según tu ruta, aquí está la guía completa de movilidad.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Alojamiento: la partida que realmente mueve el presupuesto' },
+      { tipo: 'parrafo', texto: 'Aquí es donde más desconfío de las guías que publican una cifra fija. Un alojamiento barato en enero puede costar mucho más en junio, durante un gran evento o si reservas con poca antelación. Para calcular bien, busca tus fechas reales y divide el precio total entre las noches.' },
+      { tipo: 'parrafo', texto: 'También compara ubicación, no solo precio. Ahorrar unos euros durmiendo muy lejos puede añadir transporte y tiempo todos los días. Para una primera visita, conviene valorar la conexión con Metro o tren y el desnivel de la zona antes de reservar.' },
+      { tipo: 'enlace', texto: 'Compara las zonas antes de pagar el alojamiento: el barrio puede cambiar tanto el gasto como la comodidad.', href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Comida: controla el promedio, no cada café' },
+      { tipo: 'parrafo', texto: 'El gasto en comida depende mucho más del tipo de local que de una tarifa oficial. Una estrategia sencilla es mezclar desayunos de pastelería, una comida principal y una cena ligera, dejando uno o dos restaurantes especiales para los días que realmente te interesen.' },
+      { tipo: 'lista', items: [
+        'Mira el menú y los precios antes de sentarte en zonas muy turísticas.',
+        'Los “pratos do dia” entre semana pueden ayudarte a contener el gasto.',
+        'Un supermercado o una comida sencilla puede equilibrar un día con una cena más cara.',
+        'No uses un precio de 2024 como referencia para 2026: comprueba el menú actual del sitio que te interesa.',
+      ]},
+
+      { tipo: 'subtitulo', texto: 'Entradas y actividades: decide antes qué sí pagarías' },
+      { tipo: 'parrafo', texto: 'Lisboa se puede disfrutar gastando poco en atracciones si alternas monumentos de pago con barrios, miradores, jardines y paseos junto al Tajo. La parte importante es elegir de antemano qué entradas son realmente prioritarias y no comprar por impulso cada vez que aparece una cola.' },
+      { tipo: 'enlace', texto: 'Si quieres reducir esta partida, tenemos una lista específica de planes que no requieren entrada.', href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Tres escenarios para construir tu presupuesto' },
+      { tipo: 'parrafo', texto: 'En vez de darte tres cifras cerradas que pueden quedar viejas en semanas, usa estos escenarios como estructura. Sustituye el alojamiento por el precio real que encuentres para tus fechas y añade el transporte según tus desplazamientos.' },
+      { tipo: 'lista', items: [
+        'Ajustado: alojamiento económico + caminar bastante + transporte ocasional + comida sencilla + mayoría de planes gratis.',
+        'Medio: alojamiento bien conectado + transporte diario cuando convenga + mezcla de tascas y restaurantes + algunas entradas.',
+        'Cómodo: alojamiento céntrico o de mayor categoría + más taxis/Uber + restaurantes frecuentes + actividades y entradas sin recortar demasiado.',
+      ]},
+
+      { tipo: 'subtitulo', texto: 'La fórmula que usaría para calcular el viaje' },
+      { tipo: 'lista', items: [
+        'Alojamiento total ÷ número de viajeros.',
+        'Transporte desde y hacia el aeropuerto.',
+        'Transporte urbano según los días y rutas.',
+        'Comida: fija un promedio diario que tú sí aceptarías pagar.',
+        'Entradas y actividades que ya sabes que quieres hacer.',
+        'Un colchón de 10-15 % para gastos que no habías previsto.',
+      ]},
+      { tipo: 'parrafo', texto: 'Si haces este cálculo antes de viajar, el presupuesto deja de ser una cifra genérica de internet y pasa a representar tu viaje real.' },
+      { tipo: 'enlace', texto: 'Puedes hacer ese cálculo directamente en nuestra herramienta y ajustar cada partida.', href: '/calculadora-presupuesto-lisboa', label: 'Calcular presupuesto para Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Cómo ahorrar sin convertir el viaje en una carrera' },
+      { tipo: 'lista', items: [
+        'Reserva el alojamiento con margen cuando tus fechas ya estén claras.',
+        'Agrupa cada día por zonas para no pagar transporte por trayectos innecesarios.',
+        'Camina cuando el recorrido tenga sentido, pero no fuerces las cuestas solo por ahorrar un billete.',
+        'Decide con antelación qué monumentos sí son prioritarios.',
+        'Evita cambiar dinero o aceptar conversiones de moneda sin revisar el coste.',
+      ]},
+      { tipo: 'enlace', texto: 'Si vas a pagar con tarjeta o retirar efectivo, revisa también cómo evitar comisiones innecesarias.', href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
+    ],
+  },
   'volta-portugal-devolucion-envases': {
     titulo: 'Volta en Portugal: cómo devolver envases y recuperar el depósito',
     descripcion: 'Qué significa el símbolo Volta, por qué algunas bebidas llevan un depósito de 10 céntimos y cómo devolver sus envases durante un viaje a Lisboa.',
