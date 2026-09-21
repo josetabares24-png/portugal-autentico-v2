@@ -13,25 +13,7 @@ import { blogPosts } from '@/data/blog-posts';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
-const presupuestoLisboaArticle: Article = {
-  titulo: 'Presupuesto para viajar a Lisboa en 2026: cuánto cuesta de verdad',
-  descripcion: 'Cómo calcular el presupuesto de un viaje a Lisboa en 2026 separando alojamiento, comida, transporte y entradas.',
-  seoTitle: 'Presupuesto Lisboa 2026: cuánto cuesta viajar',
-  metaDescription: 'Calcula tu presupuesto para Lisboa en 2026 con transporte, alojamiento, comida y entradas, sin depender de una cifra diaria genérica.',
-  imagen: '/images/bica-cafe-mapa.jpg',
-  categoria: 'Planificación',
-  fecha: '21 Sep 2026',
-  minutos: 8,
-  contenido: [
-    { tipo: 'parrafo', texto: 'No existe un único presupuesto diario fiable para Lisboa. El alojamiento y la época del viaje pueden cambiar mucho el total, así que conviene calcular cada partida por separado.' },
-    { tipo: 'subtitulo', texto: 'Empieza por los gastos que sí puedes calcular' },
-    { tipo: 'parrafo', texto: 'En 2026 el billete Carris/Metro cuesta 1,90 € y el billete de 24 horas Carris/Metro cuesta 7,25 €. Después añade el precio real de tu alojamiento y las actividades que hayas decidido hacer.' },
-    { tipo: 'enlace', texto: 'Haz el cálculo con tus propias fechas y prioridades.', href: '/calculadora-presupuesto-lisboa', label: 'Calcular presupuesto para Lisboa' },
-  ],
-};
-
 const articles: Record<string, Article> = {
-  'presupuesto-viajar-lisboa': presupuestoLisboaArticle,
   'lisboa-en-4-dias': {
     titulo: 'Lisboa en 4 días: itinerario para ver la ciudad y Sintra sin correr',
     descripcion: 'Itinerario de cuatro días por Lisboa con centro histórico, Belém, Sintra y una jornada más local, organizado para evitar trayectos innecesarios.',
@@ -3897,21 +3879,23 @@ function buildFallbackArticle(slug: string): Article | null {
       ],
     },
     'presupuesto-viajar-lisboa': {
-      intro: 'La clave es ajustar tu estilo: mochilero, medio o confort.',
+      intro: 'No existe un presupuesto diario único: calcula alojamiento, transporte, comida y entradas por separado con precios de tus fechas.',
       musts: [
-        'Mochilero: 35-50€ al día.',
-        'Medio: 60-90€ al día.',
-        'Confort: 120€+ al día.',
-        'La comida puede ser barata si eliges bien.',
+        'Billete Carris/Metro 2026: 1,90 €.',
+        'Billete 24 h Carris/Metro 2026: 7,25 €.',
+        'Zapping en Metro 2026: 1,72 € por viaje.',
+        'Tarjeta Navegante ocasional: 0,50 € y reutilizable durante un año.',
+        'Usa el precio real de tu alojamiento: es la partida que más cambia por fecha.',
       ],
       itinerary: [
-        'Mañana: desayuno local.',
-        'Mediodía: menú del día.',
-        'Noche: cena ligera o petiscos.',
+        'Primero: fija el coste real del alojamiento para tus fechas.',
+        'Después: calcula los trayectos y compara zapping con billetes de 24 horas.',
+        'Por último: añade comidas, entradas prioritarias y un margen para imprevistos.',
       ],
       localTips: [
-        'El alojamiento es el gasto principal.',
-        'Evita zonas turísticas para comer.',
+        'No uses rangos de alojamiento de años anteriores como referencia para 2026.',
+        'Agrupa las visitas por zonas: ahorrar trayectos también reduce el presupuesto.',
+        'Compara el resultado con la calculadora de presupuesto de la web.',
       ],
     },
     'mejores-mercados-lisboa': {
@@ -4153,8 +4137,8 @@ const articleExtras: Record<string, ArticleExtras> = {
     mejorHora: 'Entre 20:00 y 22:30. Jueves a sábado hay más ambiente.',
   },
   'presupuesto-viajar-lisboa': {
-    comoLlegar: 'Vuelos low cost desde España a Lisboa. Metro línea roja desde el aeropuerto al centro.',
-    mejorHora: 'Ahorra comiendo menús del día al mediodía y usando pases diarios.',
+    comoLlegar: 'Calcula por separado el traslado desde el aeropuerto y los trayectos urbanos; la guía de movilidad compara Metro, zapping y títulos de 24 horas.',
+    mejorHora: 'Haz el presupuesto cuando ya tengas fechas: el alojamiento cambia mucho más que las tarifas oficiales de transporte.',
   },
   'mejores-mercados-lisboa': {
     comoLlegar: 'Time Out Market en Cais do Sodré, Feira da Ladra en Santa Apolónia, Arroios con metro.',
