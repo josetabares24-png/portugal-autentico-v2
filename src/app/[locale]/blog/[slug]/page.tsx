@@ -14,6 +14,185 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'sintra-desde-lisboa': {
+    titulo: 'Sintra desde Lisboa: cómo ir y organizar un día sin correr',
+    descripcion: 'Cómo ir de Lisboa a Sintra en tren, organizar Pena y el centro histórico, moverse dentro de Sintra y evitar una jornada imposible de cuatro palacios.',
+    seoTitle: 'Sintra desde Lisboa: cómo ir y qué ver en un día',
+    metaDescription: 'Cómo ir a Sintra desde Lisboa: tren desde Rossio, acceso a Pena, bus 434, reserva horaria y una ruta realista para un día.',
+    imagen: '/images/estacion-sintra.jpg',
+    imageAlt: 'Estación de Sintra, punto de llegada habitual desde Lisboa para visitar la villa',
+    categoria: 'Guías',
+    fecha: '22 Ene 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 11,
+    links: [
+      { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
+      { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días con Sintra' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa' },
+    ],
+    fuentes: [
+      { label: 'CP: descubrir Sintra en tren', href: 'https://www.cp.pt/info/w/discover-sintra' },
+      { label: 'CP: Comboios Urbanos de Lisboa', href: 'https://cp.pt/info/lisbon' },
+      { label: 'Parques de Sintra: entrada y reserva del Palácio da Pena', href: 'https://www.parquesdesintra.pt/pt/planear-a-visita/bilhetes-palacio-da-pena/' },
+      { label: 'Parques de Sintra: acceso y transporte al Palácio da Pena', href: 'https://bilheteira.parquesdesintra.pt/info/parque-e-palacio-da-pena/1201/pt' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Sintra funciona mejor como excursión de un día independiente que como una parada añadida a Lisboa. El tren resuelve la llegada, pero dentro de Sintra las distancias, las pendientes y los accesos a los monumentos obligan a elegir. El error más común es comprar entradas para demasiados sitios y pasar el día mirando el reloj.' },
+      { tipo: 'subtitulo', texto: 'Cómo ir de Lisboa a Sintra en tren' },
+      { tipo: 'parrafo', texto: 'CP conecta Lisboa con Sintra dentro de su red de trenes urbanos. Para quien se aloja en el centro, Rossio es una de las salidas más prácticas y CP la presenta como punto de partida para visitar Sintra. Antes de salir, revisa el horario del día en CP porque obras, huelgas o ajustes de servicio pueden alterar la operación normal.' },
+      { tipo: 'parrafo', texto: 'Al llegar a la estación de Sintra ya estás cerca de la villa, pero no de todos los monumentos. Pena está en la sierra y requiere otro desplazamiento; por eso conviene organizar primero la hora de entrada que tengas reservada y construir el resto alrededor.' },
+
+      { tipo: 'subtitulo', texto: 'Palácio da Pena: la hora del billete manda' },
+      { tipo: 'parrafo', texto: 'La entrada al interior del Palácio da Pena requiere fecha y hora reservadas. La hora del billete corresponde a la entrada al interior del palacio, no a la entrada al parque. Parques de Sintra recomienda prever alrededor de 30 minutos entre la entrada principal del parque y el palacio.' },
+      { tipo: 'parrafo', texto: 'Si llegas tarde a la hora reservada, las condiciones oficiales indican que no podrás entrar al interior y el billete no se reembolsa por ese retraso. Por eso no colocaría Pena inmediatamente después de un tren con margen mínimo.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo subir a Pena desde Sintra' },
+      { tipo: 'parrafo', texto: 'Parques de Sintra señala el autobús 434 desde la estación ferroviaria como una de las opciones de transporte público hacia Pena. También existen recorridos peatonales, pero la subida exige tiempo y desnivel. El acceso en vehículo particular a las vías que llevan al monumento está restringido, así que no planifiques el día como si fueras a aparcar junto al palacio.' },
+
+      { tipo: 'subtitulo', texto: 'Una ruta realista para un día' },
+      { tipo: 'lista', items: [
+        'Llega a Sintra con margen y orienta primero el día según la hora reservada para Pena.',
+        'Visita Pena sin colocar otra entrada cronometrada inmediatamente después.',
+        'Reserva tiempo para el centro histórico y una pausa para comer.',
+        'Elige una segunda gran visita solo si el horario encaja de verdad.',
+        'Vuelve a Lisboa sin depender del último tren disponible.',
+      ] },
+      { tipo: 'parrafo', texto: 'Si tienes que elegir, prefiero dos visitas bien hechas a cuatro entradas encadenadas. Quinta da Regaleira, Castelo dos Mouros, Palácio Nacional de Sintra y otros lugares pueden justificar una segunda visita o sustituir a Pena según tus intereses; no necesitas verlos todos el mismo día.' },
+
+      { tipo: 'subtitulo', texto: '¿Conviene combinar Sintra y Cascais el mismo día?' },
+      { tipo: 'parrafo', texto: 'Para una primera visita no lo recomiendo como plan base. Es posible conectar ambos destinos, pero añadir Cascais reduce el margen en Sintra y convierte cualquier retraso en un problema. Si tienes cuatro o cinco días en Lisboa, dedica jornadas separadas cuando ambos lugares sean prioritarios.' },
+      { tipo: 'enlace', texto: 'Si también quieres conocer la costa, compara antes qué ofrece Cascais y decide si merece otro día.', href: '/blog/que-ver-cascais-desde-lisboa', label: 'Qué ver en Cascais desde Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Qué comprobar la noche anterior' },
+      { tipo: 'lista', items: [
+        'Horario de tu tren en CP.',
+        'Hora exacta de entrada al interior de Pena.',
+        'Estado del transporte local y tiempo estimado hasta el monumento.',
+        'Previsión meteorológica: la sierra puede tener condiciones distintas de Lisboa.',
+        'Batería y billetes accesibles en el móvil, además de un pequeño margen entre trayectos.',
+      ] },
+    ],
+  },
+
+  'aeropuerto-lisboa-al-centro': {
+    titulo: 'Cómo ir del aeropuerto de Lisboa al centro: Metro, taxi y apps',
+    descripcion: 'Opciones para ir del aeropuerto de Lisboa al centro según destino, equipaje y hora: Metro, autobús, taxi y Uber/Bolt con información oficial actualizada.',
+    seoTitle: 'Aeropuerto de Lisboa al centro: Metro, taxi y Uber',
+    metaDescription: 'Cómo ir del aeropuerto de Lisboa al centro: Línea Roja, transbordos, Navegante, buses, taxi y Uber/Bolt según equipaje y hora de llegada.',
+    imagen: '/images/funicular-bica-turistas.jpg',
+    imageAlt: 'Transporte urbano en Lisboa, parte de la red utilizada para desplazarse por la ciudad',
+    categoria: 'Transporte',
+    fecha: '19 Jun 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 8,
+    links: [
+      { href: '/blog/metro-lisboa-guia', label: 'Guía del Metro de Lisboa' },
+      { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y billetes' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Aeropuerto de Lisboa: transporte público y taxis', href: 'https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/public-transportation' },
+      { label: 'Metro de Lisboa: horarios y frecuencias', href: 'https://www.metrolisboa.pt/viajar/horarios-e-frequencias/' },
+      { label: 'Metro de Lisboa: comprar billetes', href: 'https://www.metrolisboa.pt/comprar/' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'El aeropuerto de Lisboa está dentro de la ciudad y tiene estación de Metro, así que llegar al alojamiento suele ser sencillo. La mejor opción cambia según dónde duermas: no es lo mismo ir a Saldanha que a Alfama, Belém o una calle empinada de Graça.' },
+
+      { tipo: 'subtitulo', texto: 'Metro: la opción más fácil de calcular' },
+      { tipo: 'parrafo', texto: 'La estación Aeroporto pertenece a la Línea Roja. El aeropuerto indica que el tramo Aeroporto–Saldanha ronda los 20 minutos. Para muchas zonas del centro histórico tendrás que hacer transbordo o completar el viaje a pie, así que “hay Metro al aeropuerto” no significa que todos los hoteles tengan una conexión directa.' },
+      { tipo: 'parrafo', texto: 'En condiciones normales, el Metro funciona de 06:30 a 01:00. Si llegas cerca del cierre, comprueba el horario y no bases el traslado en una conexión que quizá ya no puedas completar.' },
+      { tipo: 'enlace', texto: 'Aquí tienes las cuatro líneas, tarifas y conexiones explicadas con más detalle.', href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa 2026' },
+
+      { tipo: 'subtitulo', texto: 'Qué tarjeta necesitas para el Metro' },
+      { tipo: 'parrafo', texto: 'Para títulos recargables puedes usar la tarjeta Navegante ocasional. También existe pago contactless directamente en el Metro para trayectos individuales. Si vas a usar varios transportes durante el viaje, compara primero qué opción encaja mejor en vez de comprar un título por costumbre.' },
+      { tipo: 'enlace', texto: 'La diferencia entre Navegante, zapping, 24 horas y contactless está aquí.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Autobús urbano: revisa el equipaje' },
+      { tipo: 'parrafo', texto: 'El aeropuerto también tiene servicios de autobús. La información oficial advierte que en los buses urbanos el equipaje admitido está limitado a 50 × 40 × 20 cm. Si llevas una maleta grande, comprueba esa condición antes de plantearlo como alternativa al Metro.' },
+
+      { tipo: 'subtitulo', texto: 'Taxi: útil cuando el equipaje manda' },
+      { tipo: 'parrafo', texto: 'Hay taxis oficiales en el aeropuerto. Usa la parada habilitada, comprueba que el taxímetro esté en funcionamiento y pide recibo. El propio aeropuerto recuerda que cualquier transporte contratado en el lugar debe hacerse por canales autorizados, no con personas que se acerquen dentro de la terminal ofreciendo el servicio.' },
+
+      { tipo: 'subtitulo', texto: 'Uber y Bolt: dónde se recogen' },
+      { tipo: 'parrafo', texto: 'El aeropuerto mantiene una zona específica de recogida para plataformas como Uber y Bolt en P2, nivel 2. Confirma la ubicación que muestre la aplicación cuando aterrices, porque las áreas operativas de un aeropuerto pueden cambiar.' },
+
+      { tipo: 'subtitulo', texto: 'Qué elegir según tu situación' },
+      { tipo: 'lista', items: [
+        'Poco equipaje y alojamiento cerca del Metro: empieza comparando la Línea Roja y el transbordo necesario.',
+        'Varias maletas, niños o movilidad reducida: compara taxi o TVDE con el trayecto puerta a puerta.',
+        'Llegada muy tarde: comprueba primero si el Metro sigue operativo.',
+        'Alojamiento en Alfama o Graça: mira la pendiente y el acceso final, no solo la estación más cercana.',
+        'Alojamiento en Oriente o Saldanha: la Línea Roja resulta especialmente directa.',
+      ] },
+      { tipo: 'enlace', texto: 'La zona donde duermes cambia mucho el traslado. Compárala antes de reservar.', href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+    ],
+  },
+
+  'mejores-miradores-lisboa': {
+    titulo: 'Los mejores miradores de Lisboa: cuáles elegir y cómo combinarlos',
+    descripcion: 'Guía para elegir miradores de Lisboa según zona, vistas y recorrido: Senhora do Monte, Graça, Santa Luzia, Portas do Sol, São Pedro de Alcântara y Santa Catarina.',
+    seoTitle: 'Mejores miradores de Lisboa: cuáles elegir',
+    metaDescription: 'Los mejores miradores de Lisboa y cómo combinarlos: Graça, Senhora do Monte, Santa Luzia, Portas do Sol, São Pedro de Alcântara y Santa Catarina.',
+    imagen: '/images/miradouro-atardecer.jpg',
+    imageAlt: 'Vista panorámica de Lisboa desde uno de sus miradores',
+    categoria: 'Guías',
+    fecha: '10 Feb 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 10,
+    links: [
+      { href: '/blog/graca-lisboa-que-ver', label: 'Ruta por Graça' },
+      { href: '/blog/alfama-historia-guia', label: 'Guía de Alfama' },
+      { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
+      { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Planes gratis en Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Visit Lisboa: Miradouro de Santa Luzia', href: 'https://www.visitlisboa.com/pt-pt/locais/miradouro-de-santa-luzia' },
+      { label: 'Visit Lisboa: Miradouro da Senhora do Monte', href: 'https://www.visitlisboa.com/pt-pt/locais/miradouro-da-senhora-do-monte' },
+      { label: 'Câmara de Lisboa: Miradouro da Graça', href: 'https://www.lisboa.pt/pontos-de-interesse/detalhe/miradouro-sophia-de-mello-breyner-andresen-miradouro-da-graca-1' },
+      { label: 'Visit Lisboa: Miradouro de São Pedro de Alcântara', href: 'https://www.visitlisboa.com/pt-pt/locais/miradouro-de-s-pedro-de-alcantara' },
+      { label: 'Visit Lisboa: Miradouro de Santa Catarina', href: 'https://www.visitlisboa.com/pt-pt/locais/miradouro-de-santa-catarina' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Lisboa tiene tantos puntos de vista que intentar verlos todos suele producir el efecto contrario: más cuestas y menos tiempo mirando la ciudad. Para una primera visita elegiría miradores que encajen con los barrios que ya vas a recorrer.' },
+
+      { tipo: 'subtitulo', texto: 'Senhora do Monte: la panorámica más abierta de esta ruta' },
+      { tipo: 'parrafo', texto: 'Senhora do Monte está en Graça y ofrece una vista amplia hacia el castillo, la Baixa, el Tajo y otras zonas de la ciudad. Está por encima de buena parte del recorrido histórico, así que tiene sentido subir en transporte y empezar a bajar desde allí.' },
+
+      { tipo: 'subtitulo', texto: 'Miradouro da Graça: vista y una pausa más cómoda' },
+      { tipo: 'parrafo', texto: 'El Miradouro da Graça, oficialmente Sophia de Mello Breyner Andresen, está junto a la iglesia y antiguo convento. La Câmara de Lisboa indica que permanece abierto 24 horas. La sombra y los bancos lo convierten en una parada más fácil para descansar que otros puntos donde apenas hay espacio.' },
+      { tipo: 'enlace', texto: 'Ambos miradores encajan en la misma ruta por la colina.', href: '/blog/graca-lisboa-que-ver', label: 'Cómo recorrer Graça' },
+
+      { tipo: 'subtitulo', texto: 'Santa Luzia: Alfama, azulejos y el Tajo' },
+      { tipo: 'parrafo', texto: 'Santa Luzia está en el borde de Alfama y combina la vista con paneles de azulejos, jardín y la silueta de varias iglesias del barrio. Es una parada natural si ya vas a caminar por Alfama; no hace falta subir expresamente desde la otra punta de la ciudad.' },
+
+      { tipo: 'subtitulo', texto: 'Portas do Sol: la postal clásica de Alfama' },
+      { tipo: 'parrafo', texto: 'Portas do Sol está muy cerca de Santa Luzia, así que tratarlos como dos excursiones separadas no tiene sentido. Pasa por ambos en la misma caminata y dedica más tiempo al que tenga mejor ambiente o luz cuando llegues.' },
+
+      { tipo: 'subtitulo', texto: 'São Pedro de Alcântara: la ciudad desde el lado opuesto' },
+      { tipo: 'parrafo', texto: 'Desde São Pedro de Alcântara se mira hacia la Baixa y la colina del Castelo de São Jorge. Está junto a la parte alta del Elevador da Glória y encaja bien con Chiado, Príncipe Real o Bairro Alto.' },
+
+      { tipo: 'subtitulo', texto: 'Santa Catarina: Tajo, puente y ambiente al final del día' },
+      { tipo: 'parrafo', texto: 'Santa Catarina, también conocido por el Adamastor, mira hacia el estuario del Tajo y el puente 25 de Abril. Visit Lisboa destaca especialmente su ambiente de final de tarde. Si buscas un mirador para combinar con Cais do Sodré o Bica, tiene más sentido que cruzar hasta Graça solo para ver el atardecer.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo combinar los miradores sin repetir cuestas' },
+      { tipo: 'lista', items: [
+        'Ruta este: Senhora do Monte → Graça → Santa Luzia → Portas do Sol → Alfama.',
+        'Ruta oeste: São Pedro de Alcântara → Chiado/Bairro Alto → Santa Catarina.',
+        'No intentes hacer ambas rutas seguidas si ese mismo día ya recorres muchos barrios.',
+        'Si el clima está cubierto o llueve, mueve los miradores a otra franja en lugar de forzar la visita.',
+      ] },
+      { tipo: 'enlace', texto: 'Si la prioridad es la fotografía, la luz y la orientación de cada zona cambian la elección.', href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
+
+      { tipo: 'subtitulo', texto: '¿Hay que pagar para tener buenas vistas?' },
+      { tipo: 'parrafo', texto: 'No. Los miradores de esta selección son espacios públicos o se pueden disfrutar como parte del paseo por el barrio. Lisboa también tiene vistas desde monumentos y atracciones de pago, pero no necesitas comprarlas para construir una buena ruta panorámica.' },
+    ],
+  },
+
   'lisboa-en-5-dias': {
     titulo: 'Lisboa en 5 días: itinerario completo con Sintra y barrios',
     descripcion: 'Itinerario de cinco días por Lisboa con centro histórico, Belém, barrios, Parque das Nações y Sintra, organizado por zonas para reducir desplazamientos.',
