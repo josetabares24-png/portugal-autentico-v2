@@ -3304,30 +3304,74 @@ const articles: Record<string, Article> = {
     ]
   },
   "lisboa-vs-porto": {
-    titulo: "Lisboa vs Porto: ¿Cuál Visitar Primero?",
-    descripcion: "Diferencias reales entre las dos grandes ciudades portuguesas. Ambiente, precios, qué ver, cuánto tiempo necesitas. La comparativa definitiva.",
+    titulo: "Lisboa o Porto: diferencias y cuál elegir para tu viaje",
+    seoTitle: "Lisboa o Porto: cuál elegir y principales diferencias",
+    metaDescription: "Lisboa o Porto: compara ambiente, qué ver, cuántos días, excursiones y tipo de viaje para decidir cuál visitar o si conviene combinar las dos.",
+    descripcion: "Comparación práctica entre Lisboa y Porto para decidir según tus días, intereses y ritmo de viaje, sin convertirla en una competición.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Calle en cuesta de Lisboa entre fachadas de azulejo, con el Tajo al fondo",
     categoria: "Planificación",
     fecha: "5 Mar 2026",
-    minutos: 13,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-21",
+    minutos: 10,
+    links: [
+      { href: '/itinerarios', label: 'Itinerarios de Lisboa por días' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Cómo organizar Sintra desde Lisboa' },
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Qué ver en Cascais desde Lisboa' },
+      { href: '/blog/mejor-epoca-visitar-lisboa', label: 'Mejor época para visitar Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Visit Lisboa — información oficial de Lisboa', href: 'https://www.visitlisboa.com/en/regions/lisbon' },
+      { label: 'Visit Lisboa — por qué visitar Lisboa', href: 'https://www.visitlisboa.com/pt-pt/p/porque-lisboa' },
+      { label: 'Visit Porto — información oficial de Porto', href: 'https://visitporto.travel/pt-PT' },
+      { label: 'Visit Porto — información práctica y patrimonio', href: 'https://backoffice.visitporto.travel/pt-PT/plan-your-trip-essential' },
+      { label: 'Visit Porto — vino de Porto y bodegas', href: 'https://backoffice.visitporto.travel/pt-PT/savour-port-wine' },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Es la pregunta que me hacen constantemente los viajeros hispanohablantes que quieren conocer Portugal: ¿Lisboa o Porto? ¿Cuál primero? ¿Son muy diferentes? ¿Vale la pena visitar las dos? Vivo en Lisboa desde hace años, pero conozco bien Porto y la respuesta honesta es: depende totalmente de lo que busques. Esta comparativa no tiene ganador." },
-      { tipo: "subtitulo", texto: "El Ambiente: Lisboa Mediterránea, Porto Atlántica" },
-      { tipo: "parrafo", texto: "La diferencia más difícil de explicar pero la que más perciben los viajeros es atmosférica. Lisboa tiene algo de ciudad meridional, algo de Nápoles o Barcelona: callejuelas que suben y bajan, terrazas de café a cualquier hora, una cierta dulzura perezosa en la manera en que la gente habita los espacios públicos. El sol está casi siempre presente, la temperatura es suave, y hay una ligereza en el ambiente que se siente físicamente." },
-      { tipo: "parrafo", texto: "Porto es más gris, más atlántica, más severa en su belleza. La luz es diferente: más dramática, con más nubes y más contrastes. El río Duero es más estrecho y más encajado que el Tajo en Lisboa, creando un paisaje urbano más vertical y denso. Los portuenses tienen fama de ser más directos y menos diplomáticos que los lisboetas, aunque eso depende del barrio y del contexto." },
-      { tipo: "subtitulo", texto: "Qué Ver: Los Imprescindibles de Cada Ciudad" },
-      { tipo: "parrafo", texto: "En Lisboa, el corazón histórico es Alfama —callejuelas medievales, mirador de Santa Luzia, fado auténtico en pequeñas casas— seguido de Belém para los monumentos de los Descubrimientos (Jerónimos, Torre de Belém) y el Chiado para compras y cafés. El recorrido puede hacerse a pie en 2-3 días." },
-      { tipo: "parrafo", texto: "En Porto, las prioridades son la Ribeira (barrio junto al río, Patrimonio de la Humanidad por la UNESCO), el Cais de Gaia para las bodegas de vino de Oporto, la Livraria Lello (la librería más bonita del mundo), y las torres medievales. La ciudad es más compacta que Lisboa pero igual de rica en historia y arquitectura." },
-      { tipo: "subtitulo", texto: "Gastronomía: Pastéis vs Francesinha" },
-      { tipo: "parrafo", texto: "Lisboa y Porto tienen personalidades gastronómicas muy diferentes. Lisboa es bacalhau (bacalao), pastéis de nata, mariscos, caldos verdes. La comida lisboeta es más ligera, más mediterránea, con mucho pescado fresco del Atlántico y del Tajo. El vino verde frio con marisco en una terraza de Alfama es una de las experiencias gastronómicas más perfectas de Portugal." },
-      { tipo: "parrafo", texto: "Porto tiene la francesinha: un sándwich de carnes variadas cubierto de queso fundido bañado en una salsa especiada de cerveza y tomate que es un acto de valentía culinaria. Es el plato más contundente y distintivo de Portugal, y en Porto hay una religiosidad en torno a qué restaurante hace 'la mejor'. También tiene tripas à moda do Porto (que le valió a sus habitantes el apodo de 'tripeiros') y, claro, el vino de Oporto que se produce en las bodegas de Gaia." },
-      { tipo: "subtitulo", texto: "Precios: ¿Dónde Gasto Más?" },
-      { tipo: "parrafo", texto: "Lisboa es generalmente un poco más cara que Porto, especialmente en alojamiento y restaurantes turísticos. La demanda turística en Lisboa es mayor y los precios en el centro histórico lo reflejan. Sin embargo, la diferencia ya no es tan grande como hace cinco años: Porto ha crecido turísticamente y sus precios han subido en consecuencia." },
-      { tipo: "parrafo", texto: "En ambas ciudades, comer barato es fácil si evitas las zonas más turísticas. En Lisboa, el menú del día en una tasca de Mouraria o Arroios cuesta entre 7 y 10€. En Porto, el equivalente en el barrio de Bonfim o en las cafeterías del Mercado do Bolhão está en el mismo rango." },
-      { tipo: "subtitulo", texto: "Mi Recomendación Personal" },
-      { tipo: "parrafo", texto: "Si tienes que elegir solo una ciudad, mi consejo depende de tu perfil. Si buscas sol, monumentos históricos de escala mundial, vida de café y terraza, y planeas hacer excursiones (Sintra, Cascais), ve primero a Lisboa. Si prefieres una ciudad más compacta, más lluviosa pero con encanto poderoso, amante del vino, con una arquitectura más íntima y un ambiente de barrio más marcado, ve primero a Porto." },
-      { tipo: "tip", texto: "Si tienes 10 días en Portugal, la combinación perfecta es 5 días en Lisboa (con día en Sintra), tren o autocar a Porto (2,5 horas), y 4-5 días en Porto con excursión al Duero. Es uno de los mejores itinerarios de Europa." }
+      { tipo: "parrafo", texto: "Si estás organizando una primera visita a Portugal, la pregunta suele aparecer pronto: ¿Lisboa o Porto? No hay una ciudad objetivamente mejor. La decisión cambia según los días que tengas, si quieres hacer excursiones, cuánto valoras una ciudad compacta y qué tipo de experiencia buscas." },
+
+      { tipo: "subtitulo", texto: "Lisboa o Porto: respuesta rápida" },
+      { tipo: "lista", items: [
+        "Elige Lisboa si quieres una capital más extensa, varios barrios muy distintos y usar la ciudad como base para Sintra, Cascais u otras escapadas.",
+        "Elige Porto si prefieres concentrar gran parte de la visita alrededor del centro histórico, el Douro, Gaia y una experiencia muy ligada al vino de Porto.",
+        "Si tienes una semana o más para Portugal, no necesitas convertir la decisión en un ‘o’: ambas ciudades se complementan bien."
+      ]},
+
+      { tipo: "subtitulo", texto: "Qué cambia realmente entre Lisboa y Porto" },
+      { tipo: "parrafo", texto: "Lisboa se reparte entre colinas y zonas bastante separadas entre sí: Alfama, Baixa, Belém, Graça y Parque das Nações no forman un único paseo continuo. Porto concentra buena parte de su imagen histórica alrededor del centro, Ribeira, la Baixa portuense y la relación con Vila Nova de Gaia al otro lado del Douro." },
+      { tipo: "parrafo", texto: "Eso afecta al ritmo del viaje. En Lisboa es más importante agrupar cada día por zonas. En Porto resulta más fácil construir una primera visita alrededor de un núcleo central y después añadir Foz, Gaia o una salida al valle del Douro." },
+
+      { tipo: "subtitulo", texto: "Qué ver en Lisboa" },
+      { tipo: "parrafo", texto: "La primera visita suele combinar Alfama y Castelo de São Jorge, Baixa y Chiado, los miradores, Belém y el frente del Tajo. La oferta oficial de turismo también integra áreas como Oriente, Sintra, Cascais y Arrábida dentro de la región de Lisboa, lo que explica por qué la ciudad funciona bien como base para varios días." },
+      { tipo: "enlace", texto: "Si Lisboa entra en tu viaje, aquí puedes ver cómo repartirla según el número de días.", href: "/itinerarios", label: "Itinerarios de Lisboa" },
+
+      { tipo: "subtitulo", texto: "Qué ver en Porto" },
+      { tipo: "parrafo", texto: "En Porto, el centro histórico —Patrimonio Mundial de la UNESCO desde 1996—, la Ribeira, la zona de Clérigos y São Bento forman el núcleo de una primera visita. Al cruzar el Douro hacia Vila Nova de Gaia aparecen las bodegas históricamente vinculadas al vino de Porto, una de las experiencias que más diferencia el viaje respecto a Lisboa." },
+
+      { tipo: "subtitulo", texto: "Cuál necesita más días" },
+      { tipo: "parrafo", texto: "Para una primera toma de contacto, ambas pueden funcionar en un fin de semana largo. Lisboa suele agradecer más margen si quieres sumar Belém y una excursión como Sintra sin convertir cada jornada en una carrera. Porto, por su concentración del centro histórico, permite construir una visita urbana más compacta antes de añadir Gaia, Foz o el Douro." },
+      { tipo: "parrafo", texto: "Si solo tienes dos días completos, no intentaría dividirlos entre las dos ciudades. Si tienes siete o más para Portugal, combinarlas empieza a tener mucho más sentido." },
+
+      { tipo: "subtitulo", texto: "Excursiones: una diferencia importante" },
+      { tipo: "parrafo", texto: "Desde Lisboa, Sintra y Cascais son dos extensiones naturales del viaje y tienen conexiones regulares desde la ciudad. Porto, en cambio, se presta especialmente a completar la estancia con experiencias relacionadas con el Douro y el vino, además de otras zonas del norte." },
+      { tipo: "enlace", texto: "Si te inclinas por Lisboa por sus excursiones, este es el día que más planificación necesita.", href: "/blog/sintra-desde-lisboa", label: "Sintra desde Lisboa" },
+
+      { tipo: "subtitulo", texto: "Gastronomía: no se reduce a pastéis contra francesinha" },
+      { tipo: "parrafo", texto: "Las dos ciudades comparten una base amplia de cocina portuguesa, así que sería simplista asignar cada plato a una sola ciudad. Porto sí tiene una identidad especialmente visible alrededor del vino de Porto y de platos muy asociados al norte; Lisboa combina cocina tradicional portuguesa con una oferta urbana mucho más amplia por tamaño y diversidad." },
+
+      { tipo: "subtitulo", texto: "Clima y época del viaje" },
+      { tipo: "parrafo", texto: "Lisboa tiene un clima suave y soleado durante buena parte del año, algo que destaca la propia oficina de turismo. Porto, más al norte y expuesto al Atlántico, puede ofrecer una experiencia meteorológica distinta. Pero no elegiría una ciudad únicamente por una media climática: para una fecha concreta conviene mirar la previsión y decidir por el tipo de viaje que quieres hacer." },
+
+      { tipo: "subtitulo", texto: "¿Cuál es más barata?" },
+      { tipo: "parrafo", texto: "No usaría una regla fija de que una ciudad es siempre más barata que la otra. Alojamiento, vuelos y restaurantes cambian mucho según fechas, zona y anticipación. Para comparar de verdad, mira el coste de tus fechas concretas y no una cifra media que puede quedar desactualizada en pocos meses." },
+
+      { tipo: "subtitulo", texto: "Entonces, ¿Lisboa o Porto para una primera vez?" },
+      { tipo: "parrafo", texto: "Lisboa encaja mejor si buscas una capital con barrios muy distintos, quieres varios días de ciudad y te interesa añadir Sintra o Cascais. Porto encaja especialmente bien si prefieres una visita más concentrada alrededor del centro histórico y el Douro, con el vino como parte importante de la experiencia." },
+      { tipo: "parrafo", texto: "Y si tu viaje tiene tiempo suficiente, la mejor lectura no es decidir cuál ‘gana’, sino entender que muestran dos escalas y dos paisajes urbanos diferentes de Portugal." },
+
+      { tipo: "subtitulo", texto: "Cómo combinar Lisboa y Porto" },
+      { tipo: "parrafo", texto: "Con una semana o más, puedes repartir varios días en cada ciudad y evitar volver al mismo aeropuerto si tus vuelos permiten entrar por una y salir por la otra. Mantén al menos un bloque completo para cada ciudad antes de añadir excursiones: si llenas el viaje de traslados, pierdes justo la diferencia que querías experimentar." },
     ]
   },
   "monumentos-de-lisboa": {
