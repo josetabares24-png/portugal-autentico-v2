@@ -2986,48 +2986,94 @@ const articles: Record<string, Article> = {
     ]
   },
   "errores-turistas-lisboa": {
-    titulo: "15 Errores que Todo Turista Comete en Lisboa",
-    descripcion: "Desde comer en Rossio hasta ignorar el tranvía 15: errores comunes que arruinan el viaje y cómo evitarlos con alternativas reales.",
+    titulo: "15 errores comunes al visitar Lisboa y cómo evitarlos",
+    seoTitle: "15 errores al visitar Lisboa y cómo evitarlos",
+    metaDescription: "Errores comunes al viajar a Lisboa: transporte, tranvía 28, Lisboa Card, cuestas, Sintra, horarios y planificación. Consejos actualizados para 2026.",
+    descripcion: "Quince errores de planificación que pueden hacerte perder tiempo o dinero en Lisboa, con alternativas prácticas y datos actualizados de transporte.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
-    imageAlt: "Gente esperando en la acera mientras pasa el tranvía 28 por una calle estrecha de Lisboa",
+    imageAlt: "Gente esperando junto a una calle estrecha de Lisboa mientras pasa un tranvía",
     categoria: "Consejos",
     fecha: "28 Ene 2026",
-    minutos: 13,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-21",
+    minutos: 11,
+    links: [
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
+      { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Cómo organizar Sintra' },
+      { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Aeropuerto al centro' },
+      { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Metro de Lisboa: tarifas 2026', href: 'https://www.metrolisboa.pt/en/2025/12/19/new-fares-2026-2/' },
+      { label: 'Metro de Lisboa: compra de títulos', href: 'https://www.metrolisboa.pt/en/buy/' },
+      { label: 'CARRIS: línea 28E y alteraciones', href: 'https://www.carris.pt/viaje/carreiras/28e/' },
+      { label: 'Visit Lisboa Shop: Lisboa Card', href: 'https://shop.visitlisboa.com/es/products/lisboa-card' },
+      { label: 'Visit Lisboa Shop: cómo funciona la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/blogs/news/how-lisboa-card-works' },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Después de años viviendo en Lisboa y viendo a miles de visitantes cometer los mismos errores, he compilado esta lista con las meteduras de pata más comunes. No para juzgar a nadie —yo también las cometí todas cuando llegué— sino para que tú las evites y aproveches mejor cada minuto de tu viaje." },
-      { tipo: "subtitulo", texto: "1. Comer en las terrazas de Rossio y Praça do Comércio" },
-      { tipo: "parrafo", texto: "Es el error número uno y el más caro. Las terrazas de las plazas principales cobran el doble o el triple que un restaurante a cinco minutos caminando. Un bacalhau à brás que en Rossio cuesta 18€, en una tasca de Mouraria sale por 8-9€ y está mucho más bueno. La regla es simple: si el menú está en cinco idiomas y tiene fotos, huye." },
-      { tipo: "subtitulo", texto: "2. No llevar calzado cómodo" },
-      { tipo: "parrafo", texto: "Lisboa es la ciudad de las siete colinas, y esas colinas no son metafóricas. Vas a subir y bajar cuestas todo el día sobre calçada portuguesa, un empedrado precioso pero traicionero, especialmente cuando llueve. Chanclas, tacones y zapatillas con suela lisa son una receta para el desastre. Invierte en unas zapatillas cómodas con buena suela y tu espalda te lo agradecerá." },
-      { tipo: "subtitulo", texto: "3. Hacer cola para el Tranvía 28 sin conocer las alternativas" },
-      { tipo: "parrafo", texto: "El Tranvía 28 es icónico, sí. Pero entre las 10:00 y las 16:00, la cola puede ser de 45 minutos a una hora, el tranvía va tan lleno que ni te puedes mover, y los carteristas operan a sus anchas. El secreto: tómalo a primera hora (antes de las 9:00) o al final de la tarde (después de las 17:00), y siempre desde la parada inicial en Martim Moniz para asegurarte asiento. O mejor aún: el Tranvía 15E hacia Belém es igual de bonito, mucho más tranquilo y pasa cada 10 minutos." },
-      { tipo: "subtitulo", texto: "4. No descargar mapas offline" },
-      { tipo: "parrafo", texto: "El roaming en Europa funciona bien si vienes de la UE, pero si vienes de Latinoamérica o de fuera de Europa, los datos pueden costarte una fortuna. Descarga el mapa de Lisboa en Google Maps con WiFi del hotel antes de salir. Ocupa unos 100MB y tendrás GPS funcional todo el día sin gastar un byte de datos." },
-      { tipo: "subtitulo", texto: "5. Ignorar los horarios reales" },
-      { tipo: "parrafo", texto: "En Lisboa, muchos restaurantes cierran entre las 15:00 y las 19:00. Llegar a las 16:00 esperando comer es garantía de frustración. Las tiendas pequeñas cierran los domingos. Los museos cierran los lunes. Y la mayoría de monumentos dejan de vender entradas 30 minutos antes del cierre. Planifica con horarios reales, no con suposiciones." },
-      { tipo: "subtitulo", texto: "6. Gastar en la Lisboa Card sin calcular" },
-      { tipo: "parrafo", texto: "La Lisboa Card (24h: 27€, 48h: 44€, 72h: 54€) parece atractiva porque incluye transporte y entradas. Pero a menos que vayas a visitar tres o más monumentos de pago por día, no te sale rentable. Muchos de los mejores sitios de Lisboa son gratis: miradores, callejuelas de Alfama, playas, mercados. Haz números antes de comprar." },
-      { tipo: "subtitulo", texto: "7. No probar la comida portuguesa de verdad" },
-      { tipo: "parrafo", texto: "Muchos visitantes se quedan en las hamburguesas, la pizza y los brunch instagrameables. Error. La gastronomía portuguesa es espectacular: bacalhau à brás, arroz de marisco, caldo verde, bifana, francesinha (si vas a Oporto)... Entra en una tasca donde solo se oiga portugués, pide lo que pidan los locales, y descubrirás sabores que no olvidarás." },
-      { tipo: "subtitulo", texto: "8. Subestimar las distancias" },
-      { tipo: "parrafo", texto: "En el mapa, todo parece cerca. En la realidad, las cuestas multiplican el tiempo de caminata por dos. Lo que Google Maps marca como '10 minutos caminando' puede ser una subida brutal que te deja sin aliento. Planifica máximo tres o cuatro zonas por día, con descansos para café entre ellas." },
-      { tipo: "subtitulo", texto: "9. No reservar restaurantes populares" },
-      { tipo: "parrafo", texto: "Los restaurantes recomendados por locales se llenan rápido, especialmente viernes y sábados. Sitios como Cervejaria Ramiro, O Velho Eurico o Taberna da Rua das Flores necesitan reserva. TheFork tiene descuentos y reservas fáciles." },
-      { tipo: "subtitulo", texto: "10. Olvidar el protector solar" },
-      { tipo: "parrafo", texto: "Incluso en invierno, el sol de Lisboa pega fuerte. La latitud es similar a la de Túnez, no la de París. Si pasas todo el día en miradores y terrazas, acabarás quemado. Factor 30 mínimo, siempre." },
-      { tipo: "subtitulo", texto: "11-15: Errores rápidos" },
-      { tipo: "lista", items: [
-        "11. No probar los pastéis de nata fuera de Belém — las mejores pastelerías están en barrios locales",
-        "12. Comprar souvenirs en Rossio — precios inflados, ve a la Feira da Ladra o tiendas de artesanía en Alfama",
-        "13. No llevar efectivo — muchos bares y tascas pequeñas solo aceptan efectivo",
-        "14. Ignorar Graça y Mouraria — barrios auténticos que la mayoría de turistas se salta",
-        "15. No aprender 'obrigado/obrigada' — los portugueses valoran mucho el esfuerzo de hablar su idioma"
-      ]},
-      { tipo: "tip", texto: "Imprime o guarda offline este artículo antes de viajar. Son errores fáciles de evitar si los tienes presentes, pero muy fáciles de cometer si no los conoces." },
-      { tipo: "enlace", texto: "La mitad de estos errores se evitan simplemente entendiendo la ciudad el primer día en lugar del tercero.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
+      { tipo: "parrafo", texto: "Los errores que más estropean un viaje a Lisboa no suelen ser dramáticos. Son decisiones pequeñas: cruzar la ciudad varias veces el mismo día, comprar un pase sin calcularlo, reservar demasiado justo en Sintra o asumir que un tranvía funciona exactamente como viste en un vídeo antiguo. Esta lista se centra en esas decisiones corregibles." },
+
+      { tipo: "subtitulo", texto: "1. Organizar el día por atracciones y no por zonas" },
+      { tipo: "parrafo", texto: "Belém, Alfama, Graça, Parque das Nações y Chiado pueden parecer próximos cuando los miras como una lista de imprescindibles. En la práctica, saltar de una zona a otra añade transporte y cuestas. Agrupa cada jornada por barrios cercanos y deja los desplazamientos largos para uno o dos momentos concretos." },
+
+      { tipo: "subtitulo", texto: "2. Subestimar las cuestas y la calçada portuguesa" },
+      { tipo: "parrafo", texto: "Una distancia corta en el mapa puede incluir una subida fuerte o pavimento de piedra pulida. Elige calzado estable y, si el recorrido termina en Graça o Alfama, mira también el desnivel y no solo los minutos que marca la aplicación." },
+
+      { tipo: "subtitulo", texto: "3. Construir el itinerario alrededor del tranvía 28E" },
+      { tipo: "parrafo", texto: "El 28E es una experiencia histórica, pero no debería ser la pieza que sostiene todo tu día. CARRIS publica alteraciones temporales de recorrido y sustituciones por autobús cuando hay obras o cortes. Comprueba el estado de la línea el mismo día y ten una alternativa." },
+      { tipo: "enlace", texto: "Si quieres usarlo por la experiencia y no depender de él para llegar a tiempo a otra reserva, revisa primero su guía.", href: "/blog/tram-28-historia-guia", label: "Tranvía 28: ruta y consejos" },
+
+      { tipo: "subtitulo", texto: "4. Comprar el primer billete de transporte que ves" },
+      { tipo: "parrafo", texto: "En 2026 el billete Carris/Metro cuesta 1,90 €, el zapping en Metro descuenta 1,72 €, el billete de 24 horas Carris/Metro cuesta 7,25 € y el pago directo con tarjeta bancaria en Metro cuesta 1,92 €. Ninguna opción es automáticamente la mejor: depende de cuántos trayectos harás y de qué operadores vayas a utilizar." },
+      { tipo: "enlace", texto: "Compara títulos antes de cargar la tarjeta.", href: "/blog/tarjeta-navegante-lisboa", label: "Tarjeta Navegante en Lisboa" },
+
+      { tipo: "subtitulo", texto: "5. Comprar la Lisboa Card sin comparar tu itinerario" },
+      { tipo: "parrafo", texto: "La Lisboa Card puede incluir transporte y más de 50 museos o espacios culturales, además de descuentos, pero que tenga muchas inclusiones no significa que vayas a utilizarlas. Mira qué monumentos quieres visitar de verdad, comprueba sus condiciones actuales y compara el coste antes de comprar." },
+      { tipo: "parrafo", texto: "Además, algunas visitas tienen condiciones propias. La información oficial de 2026 indica que Torre de Belém y Mosteiro dos Jerónimos requieren reserva de fecha y hora con Lisboa Card. No asumas que tener la tarjeta elimina automáticamente toda reserva o espera." },
+      { tipo: "enlace", texto: "La comparación completa está separada para no convertir este artículo en una calculadora.", href: "/blog/lisboa-card-vale-la-pena", label: "¿Vale la pena la Lisboa Card?" },
+
+      { tipo: "subtitulo", texto: "6. Asumir que todos los museos y monumentos tienen el mismo horario" },
+      { tipo: "parrafo", texto: "No existe una regla útil del tipo “los museos cierran los lunes”. Cada espacio tiene su calendario, cierres puntuales y última admisión. Si una visita es importante para ti, comprueba la web oficial de ese lugar y no una captura antigua o una guía sin fecha." },
+
+      { tipo: "subtitulo", texto: "7. Reservar Sintra con márgenes demasiado pequeños" },
+      { tipo: "parrafo", texto: "El Palácio da Pena utiliza franjas horarias y llegar desde la estación de Sintra requiere otro desplazamiento. Colocar un tren, una subida y una entrada cronometrada sin margen convierte cualquier retraso en un problema. Reserva el día alrededor de la hora más rígida y no alrededor de una lista de cuatro palacios." },
+      { tipo: "enlace", texto: "Aquí tienes una ruta pensada precisamente para evitar ese problema.", href: "/blog/sintra-desde-lisboa", label: "Sintra desde Lisboa" },
+
+      { tipo: "subtitulo", texto: "8. Intentar hacer Sintra y Cascais como dos viajes completos el mismo día" },
+      { tipo: "parrafo", texto: "Se pueden conectar, pero eso no significa que sea la mejor forma de conocer ambos lugares. Si tu prioridad es entrar en palacios y caminar por Sintra, añadir Cascais reduce el margen. Con cuatro o cinco días en Lisboa, suele ser más fácil separar las jornadas." },
+
+      { tipo: "subtitulo", texto: "9. Elegir el traslado del aeropuerto solo por el precio" },
+      { tipo: "parrafo", texto: "El Metro es económico y la Línea Roja conecta el aeropuerto con la red, pero una maleta grande, una llegada cercana al cierre o un alojamiento con una fuerte subida pueden hacer que otra opción sea más práctica. Mira el trayecto completo hasta la puerta, no solo el primer tramo." },
+      { tipo: "enlace", texto: "Compara Metro, taxi y TVDE según tu destino y equipaje.", href: "/blog/aeropuerto-lisboa-al-centro", label: "Aeropuerto de Lisboa al centro" },
+
+      { tipo: "subtitulo", texto: "10. Reservar alojamiento mirando solo la distancia en kilómetros" },
+      { tipo: "parrafo", texto: "En Lisboa importan mucho la estación cercana, la pendiente y lo que harás por la noche. Un alojamiento que parece muy próximo al centro puede exigir una subida incómoda todos los días; otro algo más alejado puede estar mejor conectado." },
+      { tipo: "enlace", texto: "La comparación de zonas incluye precisamente transporte, cuestas y tipo de viaje.", href: "/blog/donde-alojarse-en-lisboa", label: "Dónde alojarse en Lisboa" },
+
+      { tipo: "subtitulo", texto: "11. Elegir dónde comer únicamente por estar en una plaza famosa" },
+      { tipo: "parrafo", texto: "No hace falta asumir que una terraza de Rossio es mala ni que una tasca escondida será buena. Mira el menú, los precios y reseñas recientes antes de sentarte. Si el local no encaja con lo que quieres gastar, caminar unos minutos puede darte más opciones sin convertirlo en una regla contra los lugares turísticos." },
+
+      { tipo: "subtitulo", texto: "12. Depender de una sola forma de pago" },
+      { tipo: "parrafo", texto: "Portugal acepta ampliamente pagos electrónicos, pero llevar una alternativa evita problemas si un terminal falla o un establecimiento tiene condiciones distintas. No necesitas cargar grandes cantidades de efectivo: basta con no depender de un único medio." },
+      { tipo: "enlace", texto: "Para tarjetas, cajeros y conversiones de moneda, usa la guía específica.", href: "/blog/como-pagar-en-portugal", label: "Cómo pagar en Portugal" },
+
+      { tipo: "subtitulo", texto: "13. Llenar cada hora con una reserva" },
+      { tipo: "parrafo", texto: "Lisboa funciona mejor con margen. Una cola, una cuesta, una comida larga o simplemente querer quedarse en un mirador pueden romper un itinerario cronometrado. Reserva lo que realmente exige hora y deja el resto del día suficientemente flexible." },
+
+      { tipo: "subtitulo", texto: "14. No tener plan B para lluvia" },
+      { tipo: "parrafo", texto: "La lluvia no obliga a perder el día, pero sí puede hacer menos agradables las colinas y la calçada. Guarda una visita cubierta y una zona plana como alternativa para mover el orden del itinerario sin improvisar desde cero." },
+      { tipo: "enlace", texto: "Tenemos una ruta completa de alternativas cubiertas.", href: "/blog/lisboa-cuando-llueve", label: "Qué hacer en Lisboa cuando llueve" },
+
+      { tipo: "subtitulo", texto: "15. Confundir “ver mucho” con aprovechar el viaje" },
+      { tipo: "parrafo", texto: "Diez monumentos en un día pueden producir muchas fotos y poca memoria de la ciudad. Lisboa también se entiende caminando por un barrio, sentándose junto al Tajo o dejando tiempo para una comida. El mejor itinerario no es el que tiene más paradas, sino el que puedes hacer sin correr." },
+
+      { tipo: "subtitulo", texto: "La regla que resume los quince" },
+      { tipo: "parrafo", texto: "Comprueba los datos que cambian, agrupa el día por zonas y deja margen. Con esas tres decisiones evitas buena parte de los problemas de transporte, reservas y presupuesto que más complican una primera visita." },
+      { tipo: "enlace", texto: "Si prefieres empezar con una ruta ya organizada por zonas, compara los itinerarios según los días que tengas.", href: "/itinerarios", label: "Ver itinerarios de Lisboa" },
     ]
-  },
-  "historia-de-lisboa": {
+  },  "historia-de-lisboa": {
     titulo: "Historia de Lisboa: De los Fenicios al Siglo XXI",
     descripcion: "Más de 3.000 años de historia en la ciudad más antigua de Europa occidental. Romanos, moros, el Imperio y el terremoto que lo cambió todo.",
     imagen: "/images/lisboa-originales/mural-historia-lisboa.jpg",
