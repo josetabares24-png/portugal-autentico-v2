@@ -14,6 +14,68 @@ import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
 const articles: Record<string, Article> = {
+  'sintra-desde-lisboa': {
+    titulo: 'Sintra desde Lisboa: cómo ir y organizar un día sin correr',
+    descripcion: 'Cómo ir de Lisboa a Sintra en tren, organizar Pena y el centro histórico, moverse dentro de Sintra y evitar una jornada imposible de cuatro palacios.',
+    seoTitle: 'Sintra desde Lisboa: cómo ir y qué ver en un día',
+    metaDescription: 'Cómo ir a Sintra desde Lisboa: tren desde Rossio, acceso a Pena, bus 434, reserva horaria y una ruta realista para un día.',
+    imagen: '/images/estacion-sintra.jpg',
+    imageAlt: 'Estación de Sintra, punto de llegada habitual desde Lisboa para visitar la villa',
+    categoria: 'Guías',
+    fecha: '22 Ene 2026',
+    fechaActualizacion: 'Actualizado en septiembre de 2026',
+    dateModified: '2026-09-21',
+    minutos: 11,
+    links: [
+      { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
+      { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días con Sintra' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa' },
+    ],
+    fuentes: [
+      { label: 'CP: descubrir Sintra en tren', href: 'https://www.cp.pt/info/w/discover-sintra' },
+      { label: 'CP: Comboios Urbanos de Lisboa', href: 'https://cp.pt/info/lisbon' },
+      { label: 'Parques de Sintra: entrada y reserva del Palácio da Pena', href: 'https://www.parquesdesintra.pt/pt/planear-a-visita/bilhetes-palacio-da-pena/' },
+      { label: 'Parques de Sintra: acceso y transporte al Palácio da Pena', href: 'https://bilheteira.parquesdesintra.pt/info/parque-e-palacio-da-pena/1201/pt' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Sintra funciona mejor como excursión de un día independiente que como una parada añadida a Lisboa. El tren resuelve la llegada, pero dentro de Sintra las distancias, las pendientes y los accesos a los monumentos obligan a elegir. El error más común es comprar entradas para demasiados sitios y pasar el día mirando el reloj.' },
+      { tipo: 'subtitulo', texto: 'Cómo ir de Lisboa a Sintra en tren' },
+      { tipo: 'parrafo', texto: 'CP conecta Lisboa con Sintra dentro de su red de trenes urbanos. Para quien se aloja en el centro, Rossio es una de las salidas más prácticas y CP la presenta como punto de partida para visitar Sintra. Antes de salir, revisa el horario del día en CP porque obras, huelgas o ajustes de servicio pueden alterar la operación normal.' },
+      { tipo: 'parrafo', texto: 'Al llegar a la estación de Sintra ya estás cerca de la villa, pero no de todos los monumentos. Pena está en la sierra y requiere otro desplazamiento; por eso conviene organizar primero la hora de entrada que tengas reservada y construir el resto alrededor.' },
+
+      { tipo: 'subtitulo', texto: 'Palácio da Pena: la hora del billete manda' },
+      { tipo: 'parrafo', texto: 'La entrada al interior del Palácio da Pena requiere fecha y hora reservadas. La hora del billete corresponde a la entrada al interior del palacio, no a la entrada al parque. Parques de Sintra recomienda prever alrededor de 30 minutos entre la entrada principal del parque y el palacio.' },
+      { tipo: 'parrafo', texto: 'Si llegas tarde a la hora reservada, las condiciones oficiales indican que no podrás entrar al interior y el billete no se reembolsa por ese retraso. Por eso no colocaría Pena inmediatamente después de un tren con margen mínimo.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo subir a Pena desde Sintra' },
+      { tipo: 'parrafo', texto: 'Parques de Sintra señala el autobús 434 desde la estación ferroviaria como una de las opciones de transporte público hacia Pena. También existen recorridos peatonales, pero la subida exige tiempo y desnivel. El acceso en vehículo particular a las vías que llevan al monumento está restringido, así que no planifiques el día como si fueras a aparcar junto al palacio.' },
+
+      { tipo: 'subtitulo', texto: 'Una ruta realista para un día' },
+      { tipo: 'lista', items: [
+        'Llega a Sintra con margen y orienta primero el día según la hora reservada para Pena.',
+        'Visita Pena sin colocar otra entrada cronometrada inmediatamente después.',
+        'Reserva tiempo para el centro histórico y una pausa para comer.',
+        'Elige una segunda gran visita solo si el horario encaja de verdad.',
+        'Vuelve a Lisboa sin depender del último tren disponible.',
+      ] },
+      { tipo: 'parrafo', texto: 'Si tienes que elegir, prefiero dos visitas bien hechas a cuatro entradas encadenadas. Quinta da Regaleira, Castelo dos Mouros, Palácio Nacional de Sintra y otros lugares pueden justificar una segunda visita o sustituir a Pena según tus intereses; no necesitas verlos todos el mismo día.' },
+
+      { tipo: 'subtitulo', texto: '¿Conviene combinar Sintra y Cascais el mismo día?' },
+      { tipo: 'parrafo', texto: 'Para una primera visita no lo recomiendo como plan base. Es posible conectar ambos destinos, pero añadir Cascais reduce el margen en Sintra y convierte cualquier retraso en un problema. Si tienes cuatro o cinco días en Lisboa, dedica jornadas separadas cuando ambos lugares sean prioritarios.' },
+      { tipo: 'enlace', texto: 'Si también quieres conocer la costa, compara antes qué ofrece Cascais y decide si merece otro día.', href: '/blog/que-ver-cascais-desde-lisboa', label: 'Qué ver en Cascais desde Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Qué comprobar la noche anterior' },
+      { tipo: 'lista', items: [
+        'Horario de tu tren en CP.',
+        'Hora exacta de entrada al interior de Pena.',
+        'Estado del transporte local y tiempo estimado hasta el monumento.',
+        'Previsión meteorológica: la sierra puede tener condiciones distintas de Lisboa.',
+        'Batería y billetes accesibles en el móvil, además de un pequeño margen entre trayectos.',
+      ] },
+    ],
+  },
+
   'lisboa-en-5-dias': {
     titulo: 'Lisboa en 5 días: itinerario completo con Sintra y barrios',
     descripcion: 'Itinerario de cinco días por Lisboa con centro histórico, Belém, barrios, Parque das Nações y Sintra, organizado por zonas para reducir desplazamientos.',
