@@ -3633,29 +3633,73 @@ const articles: Record<string, Article> = {
     ]
   },
   "arquitectura-manuelina-lisboa": {
-    titulo: "La Arquitectura Manuelina: El Arte Único que Nació en Lisboa",
-    seoTitle: "Arquitectura manuelina en Lisboa",
-    descripcion: "El estilo manuelino es la respuesta artística de Portugal a los descubrimientos. Cuerdas de piedra, cruz de Cristo, armillas estelares. Dónde verlo en Lisboa y qué significa cada detalle.",
+    titulo: "Estilo manuelino: qué es, características y ejemplos en Lisboa",
+    seoTitle: "Estilo manuelino: qué es y ejemplos en Lisboa",
+    metaDescription: "Qué es el estilo manuelino, cuáles son sus características y dónde verlo en Lisboa. Jerónimos, Torre de Belém, esfera armilar y Cruz de Cristo.",
+    descripcion: "Qué es el estilo manuelino, cuáles son sus símbolos y cómo reconocerlo en Lisboa, con los Jerónimos y la Torre de Belém como ejemplos principales.",
     imagen: "/images/actividades/mosteiro-dos-jeronimos-claustro.webp",
-    imageAlt: "Claustro del Mosteiro dos Jerónimos, con la piedra labrada característica del estilo manuelino",
+    imageAlt: "Claustro del Mosteiro dos Jerónimos, uno de los grandes ejemplos del estilo manuelino",
     categoria: "Cultura",
     fecha: "11 Mar 2026",
-    minutos: 10,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-21",
+    minutos: 9,
+    links: [
+      { href: "/blog/belem-barrio-guia", label: "Qué ver en Belém" },
+      { href: "/blog/monumentos-de-lisboa", label: "Monumentos de Lisboa" },
+      { href: "/blog/historia-de-lisboa", label: "Historia de Lisboa" },
+      { href: "/blog/descubrimientos-portugueses-lisboa", label: "Lisboa y la era de los Descubrimientos" },
+    ],
+    fuentes: [
+      { label: "Visit Portugal — Descubrir el estilo manuelino", href: "https://www.visitportugal.com/pt-pt/node/73866" },
+      { label: "Património Cultural — Mosteiro dos Jerónimos", href: "https://www.patrimoniocultural.gov.pt/pat_mun/mosteiros-dos-jeronimos-e-torre-de-belem-em-lisboa/" },
+      { label: "Visit Portugal — Patrimonio Mundial", href: "https://www.visitportugal.com/pt-pt/content/patrimonio-mundial" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Hay un momento en el claustro del Mosteiro dos Jerónimos en que el ojo no sabe dónde posarse. Las columnas están cubiertas de esculturas tan detalladas que cada metro cuadrado de piedra cuenta algo diferente: cuerdas trenzadas que recuerdan los aparejos de los barcos, esferas armilares que representan los instrumentos de navegación, cruces de la Orden de Cristo que identifican la misión religiosa de los descubrimientos, corales y algas marinas como si la piedra hubiera crecido en el fondo del océano. Eso es el estilo manuelino." },
-      { tipo: "parrafo", texto: "El manuelino —llamado así en honor al rey Manuel I (1495-1521), el monarca bajo cuyo reinado se desarrolló— es el único estilo arquitectónico que Portugal ha exportado al mundo. No es solo decoración: es la expresión artística de una época en que Portugal era la primera potencia marítima del mundo y necesitaba una forma de contar esa historia en piedra." },
-      { tipo: "subtitulo", texto: "Los Elementos Manuelinos: Lo que Ver Hay que Saber Leer" },
+      { tipo: "parrafo", texto: "El estilo manuelino es una expresión artística portuguesa desarrollada durante el reinado de D. Manuel I, entre finales del siglo XV y comienzos del XVI. Parte del gótico tardío, incorpora influencias renacentistas y una decoración muy ligada a la monarquía, la religión y el mundo marítimo de los Descubrimientos." },
+      { tipo: "parrafo", texto: "Si llegaste aquí buscando qué significa «manuelino» o cómo reconocerlo, quédate con una idea: no es simplemente piedra muy decorada. Sus edificios combinan una estructura heredada del gótico con símbolos que hablan del poder de D. Manuel I y de la expansión portuguesa de aquella época." },
+
+      { tipo: "subtitulo", texto: "Qué es el estilo manuelino" },
+      { tipo: "parrafo", texto: "Visit Portugal lo describe como una interpretación muy específica del gótico en estructura y decoración, nacida en Portugal durante el reinado de D. Manuel I. El término «manuelino» se adoptó más tarde, en el siglo XIX, para identificar este lenguaje artístico." },
+      { tipo: "parrafo", texto: "No todos los edificios de comienzos del siglo XVI son iguales ni todo elemento marítimo convierte una obra en manuelina. Lo útil es mirar el conjunto: arquitectura tardogótica, ornamentación naturalista, símbolos regios y religiosos y una decoración de gran densidad en portadas, ventanas, claustros y elementos estructurales." },
+
+      { tipo: "subtitulo", texto: "Características del estilo manuelino" },
       { tipo: "lista", items: [
-        "La esfera armilar: instrumento de navegación que representa el cosmos. Era el símbolo personal del rey Manuel I y aparece en los techos, columnas y portadas de todos los edificios del período",
-        "La Cruz de Cristo: la cruz de la Orden de Cristo, la orden militar portuguesa que financió muchos de los descubrimientos. Aparece en las velas de los barcos portugueses y en casi toda la decoración manuelina",
-        "Las cuerdas y los nodos marineros: esculpidos en piedra como si fueran cuerdas reales. Recuerdan el aparejo de los barcos y la habilidad marinera de los portugueses",
-        "Los corales, las algas y los elementos marinos: la naturaleza del océano trasladada a la piedra. Una forma de decir que Portugal miraba al mar",
-        "La decoración naturalista: hojas, flores, animales exóticos traídos de las colonias. El mundo nuevo que los navegantes descubrían, esculpido en los edificios del mundo viejo"
-      ]},
-      { tipo: "subtitulo", texto: "Dónde Ver el Mejor Manuelino en Lisboa" },
-      { tipo: "parrafo", texto: "El Mosteiro dos Jerónimos en Belém es el ejemplo más completo y más exuberante del manuelino. La portada de la iglesia, diseñada por João de Castilho en el siglo XVI, es tan rica en decoración que el ojo necesita varios minutos para procesarla. Los claustros son el manuelino en su estado más equilibrado: decoración extraordinaria dentro de una estructura arquitectónica de gran elegancia." },
-      { tipo: "parrafo", texto: "La Torre de Belém es más austera en decoración pero tiene algunos elementos manuelinos fascinantes: los matacanes en forma de escudos de la Orden de Cristo, los balcones con balaustradas de piedra tallada, y la cúpula del cuerpo superior con su decoración de esferas armilares. La Janela do Capítulo, una ventana decorada en el Convento de Cristo en Tomar (a 150 km de Lisboa), es la pieza cumbre del manuelino: dos horas de tren que merecen el viaje solo por verla." },
-      { tipo: "tip", texto: "En Lisboa también hay elementos manuelinos en la Sé Catedral (el claustro tiene añadidos del período), en la Iglesia de la Conceição Velha en la Baixa (la portada lateral sobrevivió al terremoto de 1755), y en varios edificios del convento de São Francisco en el Chiado." }
+        "Esfera armilar: símbolo personal de D. Manuel I y una de las imágenes más fáciles de identificar.",
+        "Cruz de la Orden de Cristo: aparece de forma recurrente y conecta la decoración con el poder espiritual y político de la época.",
+        "Cuerdas, nudos y formas de inspiración marítima: referencias visuales al mundo de la navegación.",
+        "Hojas, ramas, animales y otros motivos naturalistas: la piedra se llena de formas orgánicas y ornamentación.",
+        "Base gótica tardía con influencias renacentistas: el manuelino transforma el gótico con un repertorio portugués propio.",
+      ] },
+
+      { tipo: "subtitulo", texto: "La esfera armilar y la Cruz de Cristo: las dos pistas más útiles" },
+      { tipo: "parrafo", texto: "Cuando visites un edificio y quieras saber si estás viendo decoración manuelina, empieza por buscar la esfera armilar y la Cruz de Cristo. Visit Portugal las destaca como símbolos recurrentes de las obras de la época de D. Manuel I." },
+      { tipo: "parrafo", texto: "Después mira el resto: cuerdas talladas, vegetación, formas marinas y una ornamentación que parece envolver puertas, ventanas y columnas. Es más fácil reconocer el manuelino por la repetición de este vocabulario que por una sola pieza aislada." },
+
+      { tipo: "subtitulo", texto: "Mosteiro dos Jerónimos: el gran ejemplo en Lisboa" },
+      { tipo: "parrafo", texto: "El Mosteiro dos Jerónimos, en Belém, es el lugar más claro para entender el estilo. Património Cultural lo presenta como la «joya» del manuelino y explica que integra elementos del gótico final y del Renacimiento con simbología regia, cristológica y naturalista." },
+      { tipo: "parrafo", texto: "Los trabajos comenzaron en 1501. Para observar la decoración, no hace falta intentar verlo todo a la vez: fíjate primero en portadas y columnas, luego en el claustro y finalmente en los símbolos que se repiten. La lectura del edificio cambia cuando dejas de verlo como decoración abstracta y empiezas a reconocer su lenguaje." },
+      { tipo: "enlace", texto: "Si vas a dedicar tiempo a Belém, conviene organizar la zona como un bloque y no ir solo por una foto del monasterio.", href: "/blog/belem-barrio-guia", label: "Qué ver en Belém y cómo organizar la visita" },
+
+      { tipo: "subtitulo", texto: "Torre de Belém: manuelino junto al Tajo" },
+      { tipo: "parrafo", texto: "La Torre de Belém es el otro gran referente lisboeta. Fue mandada construir por D. Manuel I y forma, junto con los Jerónimos, uno de los conjuntos más asociados al manuelino. Aquí el lenguaje ornamental se mezcla con la función defensiva de una torre situada en la entrada del estuario del Tajo." },
+      { tipo: "parrafo", texto: "La visita sirve para comparar dos maneras de utilizar el mismo lenguaje artístico: un gran monasterio y una construcción defensiva. Ver ambos el mismo día ayuda más a entender el estilo que memorizar una lista de características." },
+
+      { tipo: "subtitulo", texto: "Otros lugares de Portugal donde aparece el manuelino" },
+      { tipo: "parrafo", texto: "El manuelino no pertenece solo a Lisboa. Visit Portugal destaca también el Mosteiro da Batalha, el Convento de Cristo en Tomar, el Mosteiro de Jesus en Setúbal y ejemplos en Sintra. Eso ayuda a entenderlo como un fenómeno artístico portugués de alcance nacional." },
+
+      { tipo: "subtitulo", texto: "Cómo reconocerlo en menos de un minuto" },
+      { tipo: "lista", items: [
+        "Busca primero la esfera armilar.",
+        "Comprueba si aparece la Cruz de Cristo.",
+        "Mira si hay cuerdas, nudos, vegetación o motivos marinos tallados.",
+        "Observa si la estructura sigue pareciendo gótica aunque la decoración sea muy exuberante.",
+        "Relaciona la fecha del edificio con el reinado de D. Manuel I y comienzos del siglo XVI.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Una ruta sencilla para verlo en Lisboa" },
+      { tipo: "parrafo", texto: "Si solo quieres entender el manuelino durante un viaje a Lisboa, no necesitas perseguir una docena de edificios. Dedica una mañana o una tarde a Belém, observa primero los Jerónimos y después la Torre de Belém. Con esos dos ejemplos ya tendrás suficiente contexto para reconocer sus símbolos cuando vuelvan a aparecer en otros lugares de Portugal." },
+      { tipo: "enlace", texto: "Si quieres colocar este estilo dentro de la historia de la ciudad y no verlo como una pieza aislada, continúa por la etapa de los Descubrimientos.", href: "/blog/descubrimientos-portugueses-lisboa", label: "Lisboa durante la era de los Descubrimientos" },
     ]
   }
 };
