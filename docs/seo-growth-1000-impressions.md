@@ -332,3 +332,5 @@ Cada semana revisar:
 - No afirmar causalidad entre un cambio de diseño y una caída de GSC sin evidencia.
 
 - 2026-09-21: se solicitó un nuevo intento de deployment de producción después de validar `npm run typecheck` con éxito en GitHub Actions. Este commit sirve también como disparador del Git deployment de Vercel.
+
+- 2026-09-22: segundo intento manual de disparar el deployment de producción desde `main` tras comprobar que el bloqueo anterior seguía registrado.
