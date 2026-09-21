@@ -140,6 +140,106 @@ Total de referencia: ~1.000 impresiones/día.
 
 La mezcla real debe salir de Search Console.
 
+## Línea base real de Search Console — 21 Sep 2026
+
+Datos extraídos de la propiedad `sc-domain:estabaenlisboa.com`. Se usan datos finalizados; no se mezclan con datos frescos parciales.
+
+### 28 días contra 28 días anteriores
+
+| Periodo | Clics | Impresiones | CTR | Posición media |
+|---|---:|---:|---:|---:|
+| 24 Ago–20 Sep 2026 | 53 | 6.296 | 0,84 % | 12,87 |
+| 27 Jul–23 Ago 2026 | 41 | 4.301 | 0,95 % | 11,91 |
+
+Lectura: en la ventana de 28 días, las impresiones suben aproximadamente un 46 % y los clics alrededor de un 29 %. No hay evidencia de un colapso global de visibilidad al comparar periodos completos.
+
+### Caída reciente dentro de la ventana
+
+| Periodo | Días | Impresiones | Media/día | Clics | Posición media |
+|---|---:|---:|---:|---:|---:|
+| 25 Ago–6 Sep | 13 | 3.889 | ~299 | 29 | 13,58 |
+| 7–19 Sep | 13 | 2.122 | ~163 | 20 | 12,07 |
+
+La caída reciente de impresiones es real: aproximadamente -45 % en impresiones diarias. Sin embargo, la posición media mejora. Eso no encaja con una penalización uniforme de rankings.
+
+La cobertura visible de consultas también se estrecha:
+
+| Medida | 25 Ago–6 Sep | 7–19 Sep |
+|---|---:|---:|
+| Filas de páginas en GSC | 62 | 76 |
+| Páginas con >=10 impresiones | 48 | 39 |
+| Filas de consultas visibles | 503 | 274 |
+| Consultas con >=5 impresiones | 43 | 19 |
+
+Search Console anonimiza parte de las consultas, por lo que estas filas no suman todas las impresiones del sitio. Sí sirven para comparar dirección entre periodos equivalentes.
+
+### Interpretación prudente
+
+El patrón observado es compatible con una pérdida de cobertura de consultas: Google siguió mostrando bastantes URLs y la posición media incluso mejoró, pero dejó de enseñar algunas páginas para muchas variantes de búsqueda.
+
+El historial del repositorio muestra rediseños importantes entre el 30 de agosto y el 3 de septiembre y, después, trabajos de recuperación editorial y de crawlabilidad entre el 7 y el 9 de septiembre. Los documentos de recuperación registran pérdida/restauración de enlaces editoriales y retirada de FAQs. La coincidencia temporal es relevante, pero no prueba causalidad. También pueden influir cambios de demanda, SERP o Google.
+
+### Páginas con mejor oportunidad observada
+
+- `/blog/como-moverse-por-lisboa`: 832 impresiones / 28 días, posición media ~9,7.
+- `/blog/como-pagar-en-portugal`: 781, posición ~6,9.
+- `/blog/time-out-market-lisboa`: 466, posición ~8,7.
+- `/blog/estacion-oriente-lisboa`: 446, posición ~9,9.
+- `/blog/arquitectura-manuelina-lisboa`: 330, posición ~9,0 antes de perder cobertura de sus consultas principales.
+- `/itinerarios/lisboa-1-dia-lo-esencial`: 257, posición ~12,4.
+- `/blog/mejores-apps-lisboa`: 133, posición ~5,4.
+- `/blog/vida-nocturna-lisboa`: 122, posición ~10,4.
+- `/blog/lisboa-vs-porto`: 122, posición ~13,7.
+- `/blog/chiado-bairro-alto-guia`: 119, posición ~14,4.
+- `/blog/fado-historia-origen`: alrededor de posición 9–10 antes de la última optimización.
+
+### Consultas concretas usadas para priorizar
+
+- `time out market lisboa`: 86 impresiones, posición ~10, 0 clics.
+- `menú de time out market lisboa`: 13, posición ~6, 0 clics.
+- `estilo manuelino`: 71 / 28 días; desapareció en el periodo reciente después de estar alrededor de posición 10.
+- `arte manuelino`: 23, posición ~8.
+- `arquitectura manuelina`: 16, posición ~9.
+- `como moverse en lisboa`: 25, posición ~11.
+- `que ver en lisboa en un dia`: 28, posición ~14.
+- `vida nocturna lisbon`: 14, posición ~13.
+- `gare do oriente`: 10, posición ~10.
+- `origen del fado` y `fado significado`: visibles previamente alrededor de posiciones 11–14 y luego perdidas en la ventana reciente.
+
+### Cambios aplicados a partir de estos datos
+
+1. **Arquitectura manuelina**: H1/title reorientados a “qué es el estilo manuelino”, características y ejemplos; fuentes oficiales; commit de main `b81f3f15d29529959ac062cb84109a92f306befa`.
+2. **Quick wins de snippet**: Time Out Market, cómo moverse y Estación de Oriente alineados con consultas reales; commit `d7c4fe040dbea0c2bc79ddc2fdbe9f42cc65b1c6`.
+3. **Lisboa en 1 día**: title/H1/meta/JSON-LD alineados con “qué ver en Lisboa en 1 día” e intención de mapa; commit `5a2614bbade3abd53e1ec649aff6925418b49823`.
+4. **Vida nocturna**: reescritura por intención “dónde salir / qué hacer de noche”, sin precios u horarios de locales rígidos; commit `72c8ed71cda2eb6e7bdf324fac890a24df139dd9`.
+5. **Fado**: reescritura para “significado / origen / historia”, separando hechos de hipótesis y usando UNESCO, Museu do Fado y Visit Lisboa; commit `bc5589d04c43767066e1c1c4b596bdba570e2dc0`.
+
+Además, antes de esta fase ya se había:
+- activado SSG para el árbol público mediante `setRequestLocale(locale)` y separado `/admin` como dinámico; commit `16b95d84f8db4e0af56d58f740398038eff7e243`;
+- eliminado el último fallback genérico del blog, dejando 60/60 publicaciones con contenido editorial explícito; commit `3bcf7d7cde590a84fdd1995215f9fa3e1adab35d`;
+- reescrito Sintra, aeropuerto y miradores como pilares editoriales; commit `24c3c7da0c96b7317b13acdd83b4cb446c214d1e`.
+
+### Estado de despliegue y protocolo de medición
+
+A 21 de septiembre estos cambios están en `main`, pero el límite de builds de Vercel ha bloqueado nuevos despliegues. No atribuir ningún cambio de GSC a estos commits hasta que exista un deployment de producción que los contenga.
+
+Después del deployment:
+
+1. confirmar que las páginas editoriales salen prerenderizadas/cachéables y ya no responden como `private, no-store`;
+2. registrar el SHA desplegado y la fecha exacta;
+3. comparar GSC en ventanas equivalentes de 7 y 14 días finalizados;
+4. medir por separado impresiones, cobertura de consultas, posición y CTR;
+5. no declarar éxito o fracaso por 1–3 días de datos;
+6. priorizar después únicamente las páginas que sigan mostrando demanda real.
+
+### Distancia al objetivo
+
+La línea base reciente es ~163 impresiones/día; el tramo anterior alcanzaba ~299/día. El primer objetivo operativo no debe ser saltar directamente a 1.000, sino recuperar de forma estable el rango de 300/día y después ampliar cobertura.
+
+Desde ~163/día hasta 1.000/día faltan ~837 impresiones diarias. Recuperar el nivel anterior cubriría ~136/día de esa diferencia; el resto exige más consultas y más URLs útiles, no solo mejorar CTR.
+
+El objetivo de 1.000/día sigue siendo una meta de crecimiento, no una previsión ni una garantía.
+
 ## Revisión semanal
 
 Cada semana revisar:
