@@ -3474,33 +3474,68 @@ const articles: Record<string, Article> = {
     ]
   },
   "fado-historia-origen": {
-    titulo: "El Fado: Historia, Origen y Por Qué Es el Alma de Lisboa",
-    seoTitle: "El fado | Historia y origen",
-    descripcion: "El fado no es folklore de postal. Es una forma de estar en el mundo que nació en las tabernas de Alfama en el siglo XIX. Su historia, sus cantores y cómo escucharlo de verdad.",
+    titulo: "Fado: qué significa, origen e historia en Lisboa",
+    seoTitle: "Fado: significado, origen e historia en Lisboa",
+    metaDescription: "Qué significa fado, cuál es su origen y cómo nació en la Lisboa del siglo XIX. Historia, guitarra portuguesa, Maria Severa, Amália y reconocimiento UNESCO.",
+    descripcion: "Qué significa fado, qué sabemos realmente sobre su origen y cómo una música nacida en la Lisboa popular se convirtió en símbolo de Portugal.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Mesa junto a la puerta de una tasca lisboeta con luz cálida, ya de noche",
     categoria: "Cultura",
     fecha: "22 Mar 2026",
-    minutos: 13,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-21",
+    minutos: 10,
+    links: [
+      { href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
+      { href: "/blog/mouraria-barrio-guia", label: "Guía de Mouraria" },
+      { href: "/blog/alfama-historia-guia", label: "Historia y guía de Alfama" },
+      { href: "/blog/historia-de-lisboa", label: "Historia de Lisboa" },
+    ],
+    fuentes: [
+      { label: "UNESCO — Fado, urban popular song of Portugal", href: "https://ich.unesco.org/en/RL/fado-urban-popular-song-of-portugal-00563" },
+      { label: "Museu do Fado — História do Fado", href: "https://www.museudofado.pt/historia-do-fado" },
+      { label: "Visit Lisboa — Rota do Fado", href: "https://www.visitlisboa.com/pt-pt/lisbon-stories/1-percorso-fado" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "La primera vez que escuché fado de verdad fue en una tasca pequeña de Alfama, en una mesa junto a la pared, con un vaso de vino tinto que nadie me había pedido permiso para traer. La fadista tenía unos sesenta años, llevaba un chal negro sobre los hombros, y cuando empezó a cantar el local entero se quedó sin hablar. No porque fuera una obligación —era una costumbre. El fado pide silencio no por protocolo sino porque es demasiado para compartirlo con ruido." },
-      { tipo: "parrafo", texto: "Esa experiencia define mejor el fado que cualquier definición académica. Pero entender su historia ayuda a entender por qué suena como suena, por qué habla de lo que habla, y por qué ha sobrevivido dos siglos sin perder su esencia." },
-      { tipo: "subtitulo", texto: "Origen: Tabernas del Siglo XIX, No Postal Turístico" },
-      { tipo: "parrafo", texto: "El fado nació en Lisboa a principios del siglo XIX, probablemente entre 1820 y 1840, en los barrios marineros del Mouraria y Alfama. No fue un invento de un compositor ni una creación cortesana: emergió de la mezcla de culturas que convivían en los barrios más pobres de la ciudad. Marineros que volvían de meses en el mar, trabajadoras de las lavanderas del Tajo, vendedores ambulantes, prostitutas, emigrantes del campo..." },
-      { tipo: "parrafo", texto: "Las influencias que se mezclan en el fado son difusas y debatidas: la modinha brasileña (canción romántica popular), el lundum africano (traído por los esclavos a través de Brasil), la música árabe que quedó en la memoria de los barrios que fueron moros, el canto gregoriano de las iglesias. Nadie sabe exactamente la proporción, y probablemente importa menos que el resultado." },
-      { tipo: "subtitulo", texto: "Saudade: La Palabra que Explica Todo y Nada" },
-      { tipo: "parrafo", texto: "El fado está indisolublemente ligado a la saudade, una palabra portuguesa que no tiene traducción exacta a ningún otro idioma. No es nostalgia, no es melancolía, no es tristeza: es algo más específico. Es el sentimiento de añoranza de algo que se fue, de algo que podría haber sido, de algo que se tiene pero se teme perder. Los portugueses dicen que solo se entiende del todo si eres portugués." },
-      { tipo: "parrafo", texto: "El fado es la música de la saudade: habla del mar y de los que esperan a los que navegan, de los amores que terminaron, de los barrios que ya no son como eran, de las madres que esperan a los hijos que no vuelven. No es exactamente triste —hay fados alegres, picarescos, incluso irónicos— pero tiene siempre esa carga de emoción contenida que te agarra por dentro y no te suelta hasta que termina." },
-      { tipo: "subtitulo", texto: "Los Grandes Nombres: Amália Rodrigues" },
-      { tipo: "parrafo", texto: "Cualquier conversación sobre fado empieza y termina con Amália Rodrigues (1920-1999). Nacida en Lisboa en una familia muy pobre, llegó a ser la cantante portuguesa más conocida del mundo. Amália no solo cantó fado: lo reinventó, le dio una profundidad lírica que antes no tenía, y lo llevó a los escenarios de todo el mundo en una época en que Portugal era un país pobre y cerrado." },
-      { tipo: "parrafo", texto: "Cuando murió, Portugal decretó tres días de luto nacional. Sus cenizas están en el Panteón Nacional de Lisboa, junto a los restos de Vasco de Gama y Luís de Camões. Para Portugal, Amália es de ese tamaño. Hoy, el Museu do Fado en Alfama tiene una sala entera dedicada a ella con grabaciones originales, vestidos, cartas y objetos personales." },
-      { tipo: "subtitulo", texto: "El Fado Hoy: Tradición y Renovación" },
-      { tipo: "parrafo", texto: "El fado fue declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2011. Ese reconocimiento podría haberlo convertido en pieza de museo, en actuación de hotel para turistas. No pasó. En Lisboa, el fado sigue siendo una música viva, con una generación de jóvenes fadistas que respetan la tradición pero no están encadenados a ella." },
-      { tipo: "parrafo", texto: "Ana Moura, Mariza, Camané, Cristina Branco, Mísia... Los nombres de los fadistas activos hoy llenarían una lista larga. Muchos de ellos actúan en las mismas tascas de Alfama donde cantaron sus maestros, y algunos en teatros de todo el mundo. El fado contemporáneo coexiste con el tradicional sin conflicto: Lisboa tiene espacio para los dos." },
-      { tipo: "tip", texto: "Para escuchar fado con presupuesto ajustado: busca las tasas de Mouraria los jueves por la noche (hay fado en vivo en algunos bares sin consumo mínimo), o el Museu do Fado, que organiza sesiones gratuitas algunos meses. Los grandes casas de fado de Alfama son estupendas pero cuestan entre 20-35€ de consumo mínimo." }
+      { tipo: "parrafo", texto: "El fado es un género musical y poético portugués estrechamente ligado a Lisboa. La palabra «fado» procede del latín y significa destino. Pero definir la música solo como tristeza o saudade se queda corto: sus letras pueden hablar de amor, pérdida, vida cotidiana, barrio, ironía, deseo o fatalidad." },
+      { tipo: "parrafo", texto: "Sobre su origen conviene ser preciso: no existe una teoría única demostrada. El Museu do Fado sitúa su aparición en los contextos populares de la Lisboa del siglo XIX, mientras UNESCO lo describe como una síntesis multicultural en la que confluyen tradiciones afrobrasileñas, géneros locales, músicas llegadas del interior de Portugal y modelos de canción urbana del siglo XIX." },
+
+      { tipo: "subtitulo", texto: "Qué significa la palabra fado" },
+      { tipo: "parrafo", texto: "Visit Lisboa explica que «fado» viene del latín y remite a la idea de destino. Esa raíz encaja con muchos de sus temas: amores y desamores, celos, tragedias, ausencias y situaciones que parecen escapar al control de quien canta." },
+      { tipo: "parrafo", texto: "Eso no significa que todo fado sea melancólico. La tradición incluye repertorios bohemios, satíricos y más ligeros. Por eso traducir fado simplemente como «música triste portuguesa» borra buena parte de lo que el género contiene." },
+
+      { tipo: "subtitulo", texto: "Cuál es el origen del fado" },
+      { tipo: "parrafo", texto: "Lo que sí está bien documentado es su presencia en la Lisboa popular del siglo XIX. El Museu do Fado lo sitúa en espacios de convivencia y ocio de la ciudad: calles, tabernas, retiros y otros lugares donde se cantaba de forma espontánea." },
+      { tipo: "parrafo", texto: "Las influencias anteriores son más difíciles de separar. Visit Lisboa recoge varias teorías históricas y UNESCO habla de una síntesis multicultural. La forma más rigurosa de contarlo es aceptar esa incertidumbre: el fado no tiene un único momento de invención ni un fundador conocido." },
+
+      { tipo: "subtitulo", texto: "Mouraria, Alfama y la Lisboa popular" },
+      { tipo: "parrafo", texto: "La historia del fado quedó especialmente asociada a los barrios antiguos de Lisboa. Mouraria aparece ligada a Maria Severa, una de las figuras míticas del género en el siglo XIX; Alfama conserva una fuerte relación con casas de fado y espacios de interpretación; y la tradición también se extendió a otros barrios y escenarios de la ciudad." },
+      { tipo: "enlace", texto: "Si quieres entender el barrio vinculado a la memoria de Maria Severa y a una parte esencial de la historia popular de Lisboa.", href: "/blog/mouraria-barrio-guia", label: "Qué ver en Mouraria" },
+
+      { tipo: "subtitulo", texto: "Cómo suena: voz, guitarra portuguesa y guitarra" },
+      { tipo: "parrafo", texto: "UNESCO describe la forma tradicional como una voz solista —masculina o femenina— acompañada por guitarra acústica y guitarra portuguesa. Esta última, con forma característica y doce cuerdas metálicas, es una de las sonoridades que permiten reconocer el género casi de inmediato." },
+      { tipo: "parrafo", texto: "La instrumentación puede ampliarse y el fado contemporáneo admite distintas interpretaciones, pero la relación entre voz, texto y guitarra sigue siendo central." },
+
+      { tipo: "subtitulo", texto: "Maria Severa: entre historia y mito" },
+      { tipo: "parrafo", texto: "Maria Severa Onofriana, nacida en 1820 y fallecida en 1846, ocupa un lugar fundacional en el imaginario del fado. El Museu do Fado y Visit Lisboa recogen la historia de su relación con el Conde de Vimioso, que terminó convertida en uno de los grandes mitos culturales asociados al género." },
+      { tipo: "parrafo", texto: "Su importancia no consiste en haber «inventado» el fado, algo que no puede sostenerse históricamente, sino en representar una etapa temprana en la que esta música circulaba por ambientes populares y bohemios de Lisboa." },
+
+      { tipo: "subtitulo", texto: "Amália Rodrigues y la internacionalización" },
+      { tipo: "parrafo", texto: "En el siglo XX, Amália Rodrigues llevó el fado mucho más allá de Lisboa y se convirtió en su figura internacional más reconocible. El Museu do Fado sitúa especialmente desde la década de 1950 la consolidación internacional del género a través de su carrera." },
+      { tipo: "parrafo", texto: "Después llegaron nuevas generaciones de fadistas y distintas formas de diálogo con otras músicas. Esa evolución explica por qué el fado puede ser al mismo tiempo patrimonio histórico y un género vivo." },
+
+      { tipo: "subtitulo", texto: "Por qué el fado es Patrimonio de la Humanidad" },
+      { tipo: "parrafo", texto: "UNESCO inscribió en 2011 el «Fado, urban popular song of Portugal» en la Lista Representativa del Patrimonio Cultural Inmaterial de la Humanidad. La candidatura destaca su papel como expresión de identidad, su transmisión entre generaciones y la comunidad de intérpretes, autores, músicos, asociaciones e instituciones que mantiene viva la práctica." },
+      { tipo: "parrafo", texto: "El reconocimiento no convierte el fado en una pieza congelada. Al contrario: UNESCO subraya que se practica profesionalmente, en casas de fado y también en asociaciones y contextos comunitarios." },
+
+      { tipo: "subtitulo", texto: "¿Fado significa saudade?" },
+      { tipo: "parrafo", texto: "No exactamente. La saudade es una idea recurrente en la cultura portuguesa y ayuda a explicar parte del repertorio, pero no es la traducción de «fado» ni describe todas sus canciones. Fado significa destino; la saudade es uno de los sentimientos que puede aparecer dentro de ese universo." },
+
+      { tipo: "subtitulo", texto: "Dónde escucharlo hoy en Lisboa" },
+      { tipo: "parrafo", texto: "Si después de entender la historia quieres escucharlo, conviene separar esta pregunta de la anterior: una casa de fado con cena, una tasca con sesiones informales y un concierto no ofrecen la misma experiencia. Por eso tenemos una guía aparte centrada en cómo elegir dónde escucharlo." },
+      { tipo: "enlace", texto: "Compara formatos y zonas antes de reservar una noche alrededor del fado.", href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
     ]
-  },
-  "belem-barrio-guia": {
+  },  "belem-barrio-guia": {
     titulo: "Belém: El Barrio de los Descubrimientos y los Pastéis de Nata",
     seoTitle: "Belém | Guía del barrio y qué ver",
     descripcion: "Belém es el barrio donde Portugal cambió la historia del mundo. Jerónimos, Torre de Belém, Padrão dos Descobrimentos y la pastelería más famosa del mundo. Cómo visitarlo sin prisas.",
