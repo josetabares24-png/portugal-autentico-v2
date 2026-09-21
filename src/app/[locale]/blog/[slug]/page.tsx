@@ -4429,10 +4429,6 @@ const articleExtras: Record<string, ArticleExtras> = {
     comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
     mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',
   },
-  'mejores-miradores-lisboa': {
-    comoLlegar: 'Empieza en Graça (tranvía 28/12 o bus 734) y baja caminando hacia Alfama y Baixa para encadenar miradores sin repetir cuestas.',
-    mejorHora: 'Amanecer o 30-45 minutos antes del atardecer para mejor luz y menos gente.',
-  },
   'donde-comer-barato-lisboa': {
     comoLlegar: 'Busca zonas locales como Mouraria, Arroios o Campo de Ourique (metro Martim Moniz o Arroios). Desde Baixa estás a 10-15 min caminando.',
     mejorHora: 'Entre 12:30 y 14:00 para aprovechar el “prato do dia” a buen precio.',
@@ -4452,10 +4448,6 @@ const articleExtras: Record<string, ArticleExtras> = {
   'mejor-epoca-visitar-lisboa': {
     comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
     mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
-  },
-  'aeropuerto-lisboa-al-centro': {
-    comoLlegar: 'Estación Aeroporto de la línea roja junto a la terminal; también hay autobuses Carris, taxis oficiales y recogida de Uber/Bolt en P2, piso 2.',
-    mejorHora: 'De día suele convenir comparar metro y autobús según el alojamiento; fuera del horario de transporte público, usa taxi o Uber/Bolt.',
   },
   'restaurantes-romanticos-lisboa': {
     comoLlegar: 'Muchos están en Príncipe Real, Alfama y Cais do Sodré. Metro a Rato/Baixa y luego Uber si prefieres.',
