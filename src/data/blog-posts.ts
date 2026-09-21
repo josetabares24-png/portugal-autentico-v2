@@ -490,10 +490,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'fado-historia-origen',
-    titulo: 'El Fado: Historia, Origen y Por Qué Es el Alma de Lisboa',
-    excerpt: 'El fado no es folklore de postal. Es una forma de estar en el mundo que nació en las tabernas de Alfama en el siglo XIX. Su historia, sus cantores y cómo escucharlo de verdad.',
+    titulo: 'Fado: qué significa, origen e historia en Lisboa',
+    excerpt: 'Qué significa fado, qué sabemos realmente sobre su origen y cómo una música de la Lisboa popular se convirtió en símbolo de Portugal.',
     categoria: 'Cultura',
     fecha: '22 Mar 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/fado-tasca-noche.jpg',
   },
