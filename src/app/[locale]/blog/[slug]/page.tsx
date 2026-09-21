@@ -1368,6 +1368,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-15',
     minutos: 12,
     links: [
+      { href: '/blog/tarjeta-navegante-lisboa', label: 'Entender la tarjeta Navegante y las tarifas 2026' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Aplicar el transporte a una ruta de 3 días' },
       { href: '/blog/donde-alojarse-en-lisboa', label: 'Elegir alojamiento según conexiones' },
@@ -1432,6 +1433,7 @@ const articles: Record<string, Article> = {
         'Pago con tarjeta bancaria contactless en Metro: 1,92 € por viaje, solo para un pasajero por tarjeta o dispositivo.',
       ] },
       { tipo: 'parrafo', texto: 'El contactless bancario del Metro es cómodo para viajes sueltos, pero no funciona igual que una tarjeta navegante ni necesariamente sirve del mismo modo en otros operadores. Si vas a combinar bus, tranvía, tren o barco, conviene decidir antes si usarás navegante ocasional, billete diario, zapping o una tarjeta turística.' },
+      { tipo: 'enlace', texto: 'Si quieres comparar las opciones sin mezclar conceptos, la guía de Navegante separa tarjeta ocasional, zapping, 24 horas y pases mensuales.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa: guía 2026' },
       { tipo: 'subtitulo', texto: 'Taxi, Uber y Bolt' },
       { tipo: 'parrafo', texto: 'Taxi, Uber y Bolt son buenos recursos para trayectos puntuales: llegar con maletas, volver tarde, salvar una subida o cruzar la ciudad cuando el transporte público te obliga a demasiados cambios. En el aeropuerto, la información oficial recuerda que taxis y TVDE se contratan en las zonas habilitadas o por app, no aceptando abordajes dentro de la terminal.' },
       { tipo: 'subtitulo', texto: 'Accesibilidad, cochecitos y cuestas' },
