@@ -4,7 +4,6 @@ import localFont from 'next/font/local';
 import { getLocale } from 'next-intl/server';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs';
 
 /*
  * Las tres familias van servidas desde el repositorio, no descargadas de
@@ -109,17 +108,14 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <ClerkProvider>
       <html lang={locale}>
         <head>
           {/* Sin preconnect a fonts.googleapis/gstatic: las tipografías se
               sirven desde el propio dominio. */}
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
-          <link rel="preconnect" href="https://clerk.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://api.brevo.com" />
-          <link rel="dns-prefetch" href="https://clerk.com" />
 
           <SchemaMarkup />
         </head>
@@ -150,6 +146,5 @@ export default async function RootLayout({
           {children}
         </body>
       </html>
-    </ClerkProvider>
   );
 }
