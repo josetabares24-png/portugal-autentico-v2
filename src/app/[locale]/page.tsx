@@ -37,12 +37,14 @@ const historias = [
 ].filter(Boolean);
 
 const barrios = [
-  { nombre: 'Alfama', href: '/blog/barrios-imprescindibles', imagen: '/images/alfama-panoramica.jpg' },
+  { nombre: 'Alfama', href: '/blog/alfama-historia-guia', imagen: '/images/alfama-panoramica.jpg' },
+  // Todavía no existe una guía exclusiva de Graça: mientras se publica, el
+  // destino más útil y semánticamente cercano es la guía de barrios.
   { nombre: 'Graça', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-grupo-atardecer.jpg' },
-  { nombre: 'Mouraria', href: '/blog/barrios-imprescindibles', imagen: '/images/bica-cafe-mapa.jpg' },
-  { nombre: 'Chiado', href: '/blog/barrios-imprescindibles', imagen: '/images/funicular-bica-turistas.jpg' },
-  { nombre: 'Bairro Alto', href: '/blog/barrios-imprescindibles', imagen: '/images/bairro-alto-calle-noche.jpg' },
-  { nombre: 'Belém', href: '/blog/barrios-imprescindibles', imagen: '/images/miradouro-atardecer.jpg' },
+  { nombre: 'Mouraria', href: '/blog/mouraria-barrio-guia', imagen: '/images/bica-cafe-mapa.jpg' },
+  { nombre: 'Chiado', href: '/blog/chiado-bairro-alto-guia', imagen: '/images/funicular-bica-turistas.jpg' },
+  { nombre: 'Bairro Alto', href: '/blog/chiado-bairro-alto-guia', imagen: '/images/bairro-alto-calle-noche.jpg' },
+  { nombre: 'Belém', href: '/blog/belem-barrio-guia', imagen: '/images/miradouro-atardecer.jpg' },
 ];
 
 const libreta: { texto: string; href?: string }[] = [
