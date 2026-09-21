@@ -6,7 +6,13 @@ import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
 import { blogPosts } from '@/data/blog-posts';
 
-const relatedReadingSlugs = ['como-moverse-por-lisboa', 'donde-alojarse-en-lisboa', 'presupuesto-viajar-lisboa'];
+const relatedReadingSlugs = [
+  'como-moverse-por-lisboa',
+  'tarjeta-navegante-lisboa',
+  'donde-alojarse-en-lisboa',
+  'presupuesto-viajar-lisboa',
+  'lisboa-en-4-dias',
+];
 
 export function generateStaticParams() {
   return guidePackSlugs.map((slug) => ({ slug }));
