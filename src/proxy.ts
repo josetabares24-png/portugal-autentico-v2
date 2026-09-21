@@ -1,5 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import createMiddleware from 'next-intl/middleware';
+import type { NextFetchEvent, NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { routing } from '@/i18n/routing';
 
@@ -16,39 +17,42 @@ const legacyLocaleRedirects: Record<string, string> = {
   '/ko/guia-practica': '/planifica-tu-viaje',
 };
 
-// Rutas privadas conocidas que requieren autenticacion.
 const isProtectedRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
+const isClerkRoute = createRouteMatcher([
+  '/admin(.*)',
+  '/app/(.*)',
+  '/api/admin(.*)',
+  '/api/reviews(.*)',
+]);
 
-// Rutas que no deben pasar por el proxy de i18n.
-const isNonIntlRoute = createRouteMatcher(['/admin(.*)', '/app/(.*)', '/api/admin(.*)']);
+const clerkOnlyMiddleware = clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) {
+    await auth.protect();
+  }
 
-export default clerkMiddleware(async (auth, req) => {
+  return NextResponse.next();
+});
+
+export default async function proxy(req: NextRequest, event: NextFetchEvent) {
   const legacyDestination = legacyLocaleRedirects[req.nextUrl.pathname];
 
   if (legacyDestination) {
     const redirectUrl = req.nextUrl.clone();
     redirectUrl.pathname = legacyDestination;
-
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  // Proteger solo rutas privadas conocidas; las desconocidas deben caer en el 404 editorial.
-  if (isProtectedRoute(req)) {
-    await auth.protect();
+  if (isClerkRoute(req)) {
+    return clerkOnlyMiddleware(req, event);
   }
 
-  // No aplicar i18n a rutas admin y legacy app.
-  if (isNonIntlRoute(req)) {
-    return;
-  }
-
-  // Aplicar proxy de i18n.
   return intlMiddleware(req);
-});
+}
 
 export const config = {
   matcher: [
     '/api/admin/:path*',
+    '/api/reviews/:path*',
     '/((?!_next|api|trpc|robots\\.txt|sitemap\\.xml|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
   ],
 };
