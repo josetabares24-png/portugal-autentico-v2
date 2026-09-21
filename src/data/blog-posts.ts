@@ -11,6 +11,42 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'lisboa-en-5-dias',
+    titulo: 'Lisboa en 5 días: itinerario completo con Sintra y barrios',
+    excerpt: 'Cinco días para combinar centro histórico, Belém, barrios, Parque das Nações y Sintra sin llenar cada jornada de traslados.',
+    categoria: 'Guías',
+    fecha: '21 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+  },
+  {
+    id: 'lisboa-cuando-llueve',
+    titulo: 'Qué hacer en Lisboa cuando llueve: planes cubiertos y ruta útil',
+    excerpt: 'Museos, Oceanário, mercados, cafés y una forma práctica de reorganizar el día cuando la lluvia cambia el plan.',
+    categoria: 'Guías',
+    fecha: '21 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
+  },
+  {
+    id: 'parque-das-nacoes-lisboa-que-ver',
+    titulo: 'Parque das Nações en Lisboa: qué ver y cuánto tiempo dedicar',
+    excerpt: 'Oceanário, paseo junto al Tajo, estación de Oriente, telecabina y una ruta clara por la Lisboa contemporánea.',
+    categoria: 'Guías',
+    fecha: '21 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/reserva/img_1415.jpg',
+  },
+  {
+    id: 'metro-lisboa-guia',
+    titulo: 'Metro de Lisboa 2026: mapa, horarios, billetes y líneas',
+    excerpt: 'Cómo usar las cuatro líneas del Metro de Lisboa, qué billete elegir, horarios normales y conexiones útiles para turistas.',
+    categoria: 'Transporte',
+    fecha: '21 Sep 2026',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
+  },
+  {
     id: 'lisboa-en-4-dias',
     titulo: 'Lisboa en 4 días: itinerario para ver la ciudad y Sintra sin correr',
     excerpt: 'Una ruta de cuatro días que reparte centro histórico, Belém, Sintra y una jornada más local sin repetir zonas ni convertir el viaje en una carrera.',
