@@ -189,6 +189,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Baixa, Chiado, Alfama, Graça, Saldanha y otras zonas explicadas según comodidad, ruido, cuestas y tipo de viaje.',
     categoria: 'Planificación',
     fecha: '23 Jul 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/barrio-calle-residencial.jpg',
   },
