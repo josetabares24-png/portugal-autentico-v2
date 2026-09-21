@@ -1444,7 +1444,7 @@ const articles: Record<string, Article> = {
       'Guía práctica para saber cómo pagar en Portugal: uso de tarjetas, cuánto efectivo llevar, cómo funcionan los cajeros y qué revisar antes de aceptar una conversión.',
     seoTitle: 'Cómo pagar en Portugal en 2026: tarjeta, efectivo y cajeros',
     metaDescription:
-      '¿Se puede pagar con tarjeta en Portugal? Qué efectivo llevar, cómo funcionan los cajeros y qué comisiones revisar al pagar o retirar dinero.'
+      '¿Se puede pagar con tarjeta en Portugal? Qué efectivo llevar, cómo funcionan los cajeros y qué comisiones revisar al pagar o retirar dinero.',
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
     imageAlt: 'Esquina con cafés y comercios en la Baixa de Lisboa',
     categoria: 'Planificación',
