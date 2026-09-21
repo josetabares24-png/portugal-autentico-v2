@@ -330,3 +330,5 @@ Cada semana revisar:
 - No rellenar artículos con FAQs por sistema.
 - No inventar precios, horarios, experiencia personal o “secretos”.
 - No afirmar causalidad entre un cambio de diseño y una caída de GSC sin evidencia.
+
+- 2026-09-21: se solicitó un nuevo intento de deployment de producción después de validar `npm run typecheck` con éxito en GitHub Actions. Este commit sirve también como disparador del Git deployment de Vercel.
