@@ -510,10 +510,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'chiado-bairro-alto-guia',
-    titulo: 'Chiado y Bairro Alto: Cafés Literarios, Vida Nocturna y Arte',
-    excerpt: 'El Chiado es el barrio intelectual de Lisboa. El Bairro Alto, su vecino nocturno. Los mejores cafés con historia, las librerías que vale la pena conocer y dónde cenar antes de salir.',
+    titulo: 'Chiado y Bairro Alto: qué ver de día y qué hacer de noche',
+    excerpt: 'Qué ver en Chiado, librerías y cafés históricos, cómo subir a Bairro Alto y cómo encajar la zona en una tarde y noche por Lisboa.',
     categoria: 'Guías',
     fecha: '19 Mar 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/tranvia-28.jpg',
   },
