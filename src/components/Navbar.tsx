@@ -1,13 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/Icon';
-
-const NavbarAuthSlot = dynamic(() => import('@/components/NavbarAuthSlot'), { ssr: false });
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,8 +64,6 @@ export default function Navbar() {
               Planifica tu viaje
               <Icon name="arrow_forward" size={16} />
             </Link>
-
-            <NavbarAuthSlot variant="desktop" pathname={pathname} />
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -108,8 +103,6 @@ export default function Navbar() {
                   <Icon name="arrow_forward" size={16} />
                 </Link>
               </div>
-
-              <NavbarAuthSlot variant="mobile" pathname={pathname} onNavigate={() => setMobileMenuOpen(false)} />
             </div>
           </div>
         )}
