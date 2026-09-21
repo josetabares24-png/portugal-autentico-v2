@@ -259,10 +259,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'errores-turistas-lisboa',
-    titulo: '15 Errores que Todo Turista Comete en Lisboa',
-    excerpt: 'Comer en Rossio, no llevar calzado cómodo, ignorar el tranvía 15... Errores que arruinan el viaje y cómo evitarlos.',
+    titulo: '15 errores comunes al visitar Lisboa y cómo evitarlos',
+    excerpt: 'Transporte, cuestas, tranvía 28, Lisboa Card, Sintra y reservas: decisiones pequeñas que pueden hacerte perder tiempo o dinero.',
     categoria: 'Consejos',
     fecha: '28 Ene 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/tranvia-28.jpg',
   },
