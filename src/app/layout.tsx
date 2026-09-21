@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
 import localFont from 'next/font/local';
-import { getLocale } from 'next-intl/server';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
 
@@ -100,15 +99,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocale();
-
   return (
-      <html lang={locale}>
+      <html lang="es">
         <head>
           {/* Sin preconnect a fonts.googleapis/gstatic: las tipografías se
               sirven desde el propio dominio. */}
