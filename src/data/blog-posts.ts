@@ -250,10 +250,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'vida-nocturna-lisboa',
-    titulo: 'Vida Nocturna en Lisboa: Guía Completa 2026',
-    excerpt: 'Bairro Alto, Cais do Sodré, Santos y LX Factory: zonas, bares, clubes y horarios para salir de noche.',
+    titulo: 'Vida nocturna en Lisboa: dónde salir y qué hacer de noche',
+    excerpt: 'Bairro Alto, Cais do Sodré, fado y otros planes nocturnos según el ambiente que busques, con consejos para moverte y volver.',
     categoria: 'Guías',
     fecha: '3 Feb 2026',
+    dateModified: '2026-09-21',
     autor: 'José Tabares',
     imagen: '/images/bairro-alto-calle-noche.jpg',
   },
