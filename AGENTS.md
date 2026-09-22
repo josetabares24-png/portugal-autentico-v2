@@ -1,29 +1,42 @@
 # Agent instructions — Estaba en Lisboa
 
-The project's operating system is called **Mente Lisboa**.
+El sistema operativo del proyecto se llama **Mente Lisboa**.
 
-Before changing public code, SEO, content, navigation, redirects, sitemap, metadata, design or monetization:
+## Antes de una tarea importante
 
-1. Read `brain/MENTE-LISBOA.md`.
-2. Read `brain/README.md`.
-3. Read `brain/00-MISSION.md`.
-4. Read `brain/07-NEXT-ACTIONS.md`.
-5. Read the latest file in `brain/data/`.
-6. If the task affects SEO or an indexed URL, follow `brain/03-SEO-DECISION-ENGINE.md`.
-7. If the task affects public UX, IA or navigation, read `brain/08-SITE-ORGANIZATION.md`.
+No propongas desde una hoja en blanco.
 
-## Non-negotiable rules
+Debes:
 
-- This project is **metrics-first, editorial-first and human-first**.
-- Apply the anti-AI writing and visual filters in `brain/MENTE-LISBOA.md`.
-- Do not redesign for aesthetics alone.
-- Prefer real project photography over generated imagery for factual places and experiences.
-- Do not mass-delete, noindex or redirect existing URLs without Search Console evidence and a migration plan.
-- Do not rewrite pages that are already near page 1 unless the hypothesis is explicit and measurable.
-- Prefer small, attributable experiments over broad simultaneous changes.
-- Record meaningful SEO/product changes in `brain/05-EXPERIMENTS.md` or `brain/06-DECISIONS.md`.
-- Live data beats old documentation when they conflict.
-- Preserve factual accuracy. Do not invent prices, opening hours, local experience, rankings or claims.
-- Before merging code changes, run the relevant checks. At minimum: `npm run typecheck`; use the appropriate smoke test when the changed surface has one.
+1. leer `brain/MENTE-LISBOA.md`;
+2. leer `brain/LOCKED-DECISIONS.md`;
+3. revisar `brain/01-CURRENT-STATE.md`;
+4. revisar `brain/02-METRICS.md` y el snapshot más reciente de `brain/data/`;
+5. revisar decisiones/aprendizajes relevantes;
+6. inspeccionar el código y/o producción real de la superficie afectada;
+7. separar HECHO / HIPÓTESIS / DECISIÓN / PREFERENCIA;
+8. solo entonces diagnosticar y proponer.
 
-Mente Lisboa is the decision authority. Historical docs remain evidence, not current strategy.
+Si una propuesta contradice una decisión LOCKED, señala el conflicto y argumenta por qué debería reconsiderarse. Nunca la sustituyas silenciosamente.
+
+## Reglas no negociables
+
+- Producto y crecimiento antes que actividad.
+- Datos reales antes que intuición cuando existan.
+- No rediseñar por estética.
+- Cambios visuales importantes requieren aprobación explícita antes de merge.
+- Voz humana: si José no lo diría hablando con alguien, no se publica así.
+- Fotografía real antes que IA cuando se representa una realidad.
+- No inventar experiencias, datos, precios, horarios o autoridad local.
+- No hacer SEO de relleno.
+- No conservar producto por coste hundido.
+- No borrar/noindexar/redirigir URLs con demanda sin revisar Search Console, enlaces y destino.
+- Registrar baseline antes de un cambio importante.
+- Preferir experimentos pequeños y atribuibles.
+- Antes de merge, ejecutar como mínimo `npm run typecheck` y los smoke tests relevantes.
+
+## Formato de análisis esperado
+
+Para revisiones importantes usar:
+
+DIAGNÓSTICO → EVIDENCIA → OPORTUNIDAD → PROPUESTA → RAZÓN → IMPACTO ESPERADO → ESFUERZO → RIESGO → PRUEBA → DECISIÓN → SIGUIENTE ACCIÓN.

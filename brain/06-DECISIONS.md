@@ -90,3 +90,13 @@ Major public visual changes must be previewed and explicitly approved before mer
 Reason: editorial/product direction and visual implementation are separate decisions. A strategy discussion or reference image does not authorize replacing an established design.
 
 Bug fixes, accessibility fixes and small layout corrections remain allowed without a separate visual-approval step.
+
+## D-013 — Mente Lisboa v2 y sistema LOCKED
+**Date:** 2026-09-23  
+**Status:** accepted
+
+La nueva Mente Lisboa v2 pasa a ser el marco principal de producto y crecimiento.
+
+Se crea `LOCKED-DECISIONS.md` para separar decisiones que requieren instrucción explícita antes de cambiarse.
+
+La recuperación de memoria, métricas, aprendizajes, decisiones LOCKED y estado real pasa a ser obligatoria antes de propuestas importantes.
