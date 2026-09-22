@@ -1,5 +1,6 @@
 import Icon from '@/components/Icon';
 import { ItineraryStopCta } from '@/components/itinerarios/ItineraryStopCta';
+import { ItineraryContextualCta } from '@/components/itinerarios/ItineraryContextualCta';
 import { findProductById, resolveBookingLink } from '@/data/bookings';
 import type { TimelineStop } from '@/data/itineraries';
 
@@ -131,9 +132,22 @@ export function ItineraryStop({ stop, numero, esUltima, itinerarySlug }: Itinera
             </aside>
           )}
 
-          {/* Acciones. Mapa y reserva en la misma fila y con el mismo peso: en
-              la planificación de un día son dos datos del mismo orden. */}
-          {(stop.googleMapsUrl || enlace) && (
+          {stop.bookingAdvice && (
+            <ItineraryContextualCta
+              advice={stop.bookingAdvice}
+              product={producto}
+              link={enlace}
+              itinerarySlug={itinerarySlug}
+              stopTitle={stop.title}
+              position={numero}
+            />
+          )}
+
+          {/* Acciones prácticas. El mapa sigue siendo una acción neutra. El
+              botón de reserva antiguo se conserva sólo en itinerarios que aún
+              no han optado al CTA contextual, para no cambiar 30 páginas de
+              golpe durante el experimento. */}
+          {(stop.googleMapsUrl || (enlace && !stop.bookingAdvice)) && (
             <div className="mt-5 flex flex-wrap items-center gap-2.5">
               {stop.googleMapsUrl && (
                 <a
@@ -152,7 +166,7 @@ export function ItineraryStop({ stop, numero, esUltima, itinerarySlug }: Itinera
                 </a>
               )}
 
-              {producto && enlace && (
+              {producto && enlace && !stop.bookingAdvice && (
                 <ItineraryStopCta
                   product={producto}
                   link={enlace}
