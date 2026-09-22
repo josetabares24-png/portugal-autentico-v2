@@ -6,7 +6,7 @@ import HomeNewsletter from '@/components/home/HomeNewsletter';
 import { blogPosts } from '@/data/blog-posts';
 
 export const metadata: Metadata = {
-  title: 'Estaba en Lisboa | Guías prácticas para entender Lisboa',
+  title: { absolute: 'Estaba en Lisboa | Guías prácticas para entender Lisboa' },
   description: 'Guías en español sobre Lisboa: qué ver, cómo moverte, dónde comer, barrios, planificación y excursiones con información práctica y criterio editorial.',
   alternates: { canonical: 'https://estabaenlisboa.com' },
   openGraph: {

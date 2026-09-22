@@ -4,16 +4,6 @@ import localFont from 'next/font/local';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
 
-/*
- * Las tres familias van servidas desde el repositorio, no descargadas de
- * Google en cada compilación. `next/font/google` las descarga durante el
- * build, así que un fallo de red en el servidor de compilación tumba el
- * despliegue entero: ya ocurrió una vez con Plus Jakarta Sans.
- *
- * Son los mismos ficheros que servía Google, en su versión variable y en el
- * subconjunto latino, que es el único que estaba activo. Un fichero por
- * familia y estilo cubre todo el rango de grosores.
- */
 const montserrat = localFont({
   src: [{ path: '../fonts/montserrat-latin.woff2', weight: '300 500', style: 'normal' }],
   variable: '--font-body',
@@ -41,11 +31,22 @@ const plusJakarta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://estabaenlisboa.com'),
   title: {
-    default: "Guías de Lisboa 2026 | Itinerarios, Rutas y Consejos",
+    default: "Estaba en Lisboa | Guías prácticas para entender Lisboa",
     template: "%s | Estaba en Lisboa",
   },
-  description: "Guías completas de Lisboa con itinerarios por jornadas, mapas y consejos prácticos. Qué ver en Lisboa, Alfama, Belém, miradores y dónde comer. Actualizado 2026.",
-  keywords: ["lisboa", "guia lisboa", "itinerario lisboa", "que ver lisboa", "viajar lisboa", "lisboa 2026", "alfama", "belem", "miradores lisboa", "restaurantes lisboa", "tranvia 28", "lisboa en 1 dia"],
+  description: "Guías en español sobre Lisboa: qué ver, cómo moverte, dónde comer, barrios, planificación y excursiones con información práctica y criterio editorial.",
+  keywords: [
+    "lisboa",
+    "guia lisboa",
+    "que ver lisboa",
+    "como moverse por lisboa",
+    "barrios lisboa",
+    "transporte lisboa",
+    "donde comer lisboa",
+    "viajar a lisboa",
+    "sintra desde lisboa",
+    "lisboa 2026"
+  ],
   authors: [{ name: "Estaba en Lisboa", url: "https://estabaenlisboa.com" }],
   creator: "Estaba en Lisboa",
   publisher: "Estaba en Lisboa",
@@ -61,8 +62,6 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    // El .ico lleva 16/32/48/64 px: Google exige al menos 48 px para
-    // mostrar el logotipo del sitio en resultados de búsqueda.
     icon: [
       { url: '/favicon.ico', sizes: '16x16 32x32 48x48 64x64' },
       { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
@@ -77,21 +76,21 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Guías de Lisboa 2026 - Itinerarios y Rutas',
-    description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
+    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
+    description: 'Guías prácticas en español para entender Lisboa y decidir mejor qué ver, cómo moverte y cómo organizar el viaje.',
     images: [
       {
         url: 'https://estabaenlisboa.com/og-default.jpg',
         width: 1200,
         height: 630,
-        alt: 'Estaba en Lisboa — guías de Lisboa escritas por un local',
+        alt: 'Estaba en Lisboa — guías prácticas sobre Lisboa',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guías de Lisboa 2026 - Itinerarios y Rutas',
-    description: 'Itinerarios por jornadas, mapas y recomendaciones. Qué ver en Lisboa, Alfama, Belém y alrededores.',
+    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
+    description: 'Guías prácticas en español para entender Lisboa y organizar mejor el viaje.',
     images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {
@@ -107,8 +106,6 @@ export default function RootLayout({
   return (
       <html lang="es">
         <head>
-          {/* Sin preconnect a fonts.googleapis/gstatic: las tipografías se
-              sirven desde el propio dominio. */}
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
