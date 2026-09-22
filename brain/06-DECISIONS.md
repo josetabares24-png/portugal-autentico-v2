@@ -79,3 +79,14 @@ This is not proof of revenue; it is the strongest current behavioral conversion 
 **Status:** accepted
 
 Weak product surfaces can be removed from navigation immediately without redirecting or deleting their URLs. URL retirement remains a separate SEO decision.
+
+
+## D-012 — Visual changes require explicit approval
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Major public visual changes must be previewed and explicitly approved before merge.
+
+Reason: editorial/product direction and visual implementation are separate decisions. A strategy discussion or reference image does not authorize replacing an established design.
+
+Bug fixes, accessibility fixes and small layout corrections remain allowed without a separate visual-approval step.

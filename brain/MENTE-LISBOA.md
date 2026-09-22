@@ -277,3 +277,34 @@ Before merging a public-facing change:
 - [ ] SEO risk has been checked when URLs/metadata/internal links change.
 - [ ] The next useful action is obvious but not aggressive.
 - [ ] The result feels like Estaba en Lisboa, not a template.
+
+
+# Visual approval gate
+
+Public visual redesigns require explicit approval before they are merged to production.
+
+This includes:
+- homepage redesigns;
+- major layout changes;
+- typography system changes;
+- substantial color/palette changes;
+- new visual language;
+- replacement of established visual sections.
+
+Allowed without separate visual approval:
+- bug fixes;
+- accessibility fixes;
+- broken responsive behavior;
+- small spacing/alignment fixes;
+- factual copy corrections;
+- SEO/metadata changes that do not materially change appearance.
+
+For a major visual change, the workflow is:
+
+1. Diagnose the problem.
+2. Produce a reference/mockup or preview.
+3. Show the user the proposed visual direction.
+4. Wait for explicit approval of that visual direction.
+5. Only then implement/merge.
+
+Strategic approval is **not** visual approval. A user agreeing with an editorial direction, information architecture or mockup exploration does not authorize replacing the current production design.
