@@ -1,0 +1,55 @@
+# Decision log
+
+Decisions here are intended to survive future chats and agent sessions.
+
+## D-001 — Blog-first strategy
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Estaba en Lisboa will prioritize the editorial/blog engine over expansion as a multi-feature tourism portal.
+
+Reason: current Search Console evidence shows the blog is already responsible for the large majority of visible page-level search demand and clicks.
+
+## D-002 — No mass deletion
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Non-blog routes will not be deleted in bulk. Each route must be measured and migrated deliberately.
+
+Reason: simplification is desirable, but destroying existing demand or link equity would work against the growth goal.
+
+## D-003 — No redesign work without a metric hypothesis
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Aesthetic redesign is not a priority. UI work must protect or improve readability, crawlability, performance, navigation, engagement or conversion.
+
+## D-004 — Live metrics are the authority
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Fresh Search Console / GA4 / production evidence overrides stale plans and old assumptions.
+
+## D-005 — 1,000 impressions/day means sustained performance
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Success is 28,000+ impressions in a 28-day window, not a one-day spike.
+
+## D-006 — Protect recently changed winners
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Priority pages changed around 2026-09-21 should enter an observation period before further material edits, once production deployment is confirmed.
+
+## D-007 — Small attributable experiments
+**Date:** 2026-09-23  
+**Status:** accepted
+
+SEO changes should be small enough to attribute. Broad simultaneous rewrites are reserved for clear technical/editorial recovery cases, not routine optimization.
+
+## D-008 — Legacy itinerary demand can outrank URL neatness
+**Date:** 2026-09-23  
+**Status:** accepted
+
+If an itinerary URL has meaningful organic demand, keep or editorialize that URL until a migration has evidence and a safe destination. "Everything under /blog" is not worth sacrificing rankings by itself.
