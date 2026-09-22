@@ -1,6 +1,7 @@
 'use client';
 
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
+import { trackEvent } from '@/lib/analytics';
 import { findProductById, resolveBookingLink } from '@/data/bookings';
 
 /*
@@ -36,9 +37,12 @@ interface AttractionTicketLinkProps {
    * para lectores de pantalla, que no ven esa proximidad visual.
    */
   etiqueta?: string;
+  /** Evento de producto adicional para medir el contexto que originó el clic. */
+  trackingEvent?: string;
+  trackingPosition?: string;
 }
 
-export function AttractionTicketLink({ productId, nombre, etiqueta }: AttractionTicketLinkProps) {
+export function AttractionTicketLink({ productId, nombre, etiqueta, trackingEvent, trackingPosition }: AttractionTicketLinkProps) {
   const product = findProductById(productId);
   const link = product ? resolveBookingLink(product, 'article') : null;
 
@@ -50,7 +54,16 @@ export function AttractionTicketLink({ productId, nombre, etiqueta }: Attraction
       target="_blank"
       rel="sponsored noopener noreferrer"
       className="font-body text-sm font-semibold text-terracotta underline-offset-4 hover:underline"
-      onClick={() =>
+      onClick={() => {
+        if (trackingEvent) {
+          trackEvent(trackingEvent, {
+            page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+            activity: productId,
+            provider: link.provider,
+            position: trackingPosition ?? 'recommendations',
+          });
+        }
+
         trackAffiliateClick({
           affiliate_partner: link.provider,
           affiliate_campaign: link.campaign,
@@ -59,8 +72,8 @@ export function AttractionTicketLink({ productId, nombre, etiqueta }: Attraction
           affiliate_link_placement: link.usedPlacement,
           destination: 'lisboa',
           page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-        })
-      }
+        });
+      }}
     >
       {etiqueta ? (
         <>

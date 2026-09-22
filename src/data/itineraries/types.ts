@@ -14,6 +14,23 @@ export interface Itinerary {
   };
 }
 
+export type ItineraryBookingStatus =
+  | 'conviene-reservar'
+  | 'puedes-comprar-alli'
+  | 'reserva-anticipada-recomendada'
+  | 'no-necesitas-entrada'
+  | 'solo-merece-pagar-si';
+
+export interface ItineraryBookingAdvice {
+  status: ItineraryBookingStatus;
+  title: string;
+  description: string;
+  /** Microetiqueta editorial opcional, por ejemplo «Consejo del itinerario». */
+  label?: string;
+  /** Permite ajustar el texto del botón sin tocar el producto central. */
+  buttonLabel?: string;
+}
+
 export interface TimelineStop {
   time: string;
   title: string;
@@ -48,6 +65,12 @@ export interface TimelineStop {
    * día que alguien edite un título. Sin este campo, la parada no lleva CTA.
    */
   productId?: string;
+  /**
+   * Consejo contextual de reserva. Puede existir sin producto: así el mismo
+   * componente sirve también para decir honestamente que no hace falta
+   * entrada o que se puede comprar allí.
+   */
+  bookingAdvice?: ItineraryBookingAdvice;
 }
 
 /**

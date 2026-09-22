@@ -32,6 +32,7 @@ import {
   type NivelTransporte,
 } from '@/lib/budget-calculator';
 import { generarSugerencias, type Sugerencia } from '@/lib/budget-optimizer';
+import { trackEvent } from '@/lib/analytics';
 
 /*
  * /calculadora-presupuesto-lisboa
@@ -389,6 +390,8 @@ export default function CalculadoraPresupuestoPage() {
   const personalizarRef = useRef<HTMLDivElement>(null);
   const optimizadorRef = useRef<HTMLDivElement>(null);
   const [resultadoVisible, setResultadoVisible] = useState(false);
+  const [calculatorTouched, setCalculatorTouched] = useState(false);
+  const calculatorCompletedTracked = useRef(false);
 
   function cambiarDias(nuevos: number) {
     setDiasEstado(nuevos);
@@ -542,6 +545,34 @@ export default function CalculadoraPresupuestoPage() {
   }, []);
 
   /*
+   * La calculadora actualiza el resultado en vivo, así que no existe un
+   * "submit" artificial en desktop. Consideramos completado el cálculo cuando
+   * el usuario ya ha interactuado con la configuración y el resultado está
+   * realmente a la vista. Se mide una sola vez por visita.
+   */
+  useEffect(() => {
+    if (!calculatorTouched || !resultadoVisible || calculatorCompletedTracked.current) return;
+
+    calculatorCompletedTracked.current = true;
+    trackEvent('calculator_completed', {
+      page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+      days: dias,
+      nights: noches,
+      travelers: personas,
+      selected_activities_count: atracciones.length,
+      includes_sintra: excursionSintra,
+    });
+  }, [
+    calculatorTouched,
+    resultadoVisible,
+    dias,
+    noches,
+    personas,
+    atracciones.length,
+    excursionSintra,
+  ]);
+
+  /*
    * Lo que el usuario ya ha rellenado no puede quedarse escondido sin más
    * detrás de un plegable cerrado. En vez de impedirle cerrarlo —que sería
    * pelearse con él—, el propio título lo dice: «con tus importes».
@@ -651,7 +682,11 @@ summary::-webkit-details-marker { display: none; }
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr,1fr] lg:items-start lg:gap-8">
             {/* ---------------------------------------- CONFIGURACIÓN ---- */}
-            <div className="space-y-4">
+            <div
+              className="space-y-4"
+              onClickCapture={() => setCalculatorTouched(true)}
+              onChangeCapture={() => setCalculatorTouched(true)}
+            >
               {/*
                 Los títulos de las dos columnas no se pintan: el diseño ya deja
                 clarísimo qué es cada una y una cabecera de sección aquí sólo
@@ -1087,7 +1122,11 @@ summary::-webkit-details-marker { display: none; }
               {resultado.total.max > 0 && <BudgetSaveCard input={inputActual} />}
 
               {resultado.atraccionesSeleccionadas.length > 0 && (
-                <Bloque titulo="Entradas seleccionadas">
+                <Bloque titulo="Para el viaje que acabas de calcular">
+                  <p className="mb-3 font-body text-[12px] leading-relaxed text-text-secondary">
+                    Sólo aparecen las visitas que tú has marcado. Si una no tiene una reserva
+                    exacta asociada, te lo digo en lugar de recomendarte otra cosa parecida.
+                  </p>
                   <ul className="space-y-2.5">
                     {conEntradas.map((atraccion) => (
                       <li
@@ -1101,6 +1140,8 @@ summary::-webkit-details-marker { display: none; }
                           productId={atraccion.bookingProductId as string}
                           nombre={atraccion.nombre}
                           etiqueta="Ver entradas"
+                          trackingEvent="calculator_recommendation_click"
+                          trackingPosition="selected-activities"
                         />
                       </li>
                     ))}

@@ -1,5 +1,5 @@
 // Types
-export type { Itinerary, ItineraryDayMeta, TimelineStop } from './types';
+export type { Itinerary, ItineraryDayMeta, TimelineStop, ItineraryBookingAdvice, ItineraryBookingStatus } from './types';
 
 // Card data
 export {
