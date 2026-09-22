@@ -1,45 +1,70 @@
 # Mente Lisboa
 
-**Mente Lisboa** is the operating brain of `estabaenlisboa.com`.
+Mente Lisboa es el cerebro operativo de `estabaenlisboa.com`.
 
-The technical folder remains `brain/`, but all editorial, product, SEO and design decisions should treat [[MENTE-LISBOA]] as the first source of judgment.
+## Preflight obligatorio antes de una tarea importante
 
-It is designed to be opened directly in Obsidian, while staying plain Markdown so GitHub, Codex, Claude, Cursor and other agents can read the same source of truth.
-
-## Start here
+Leer en este orden:
 
 1. [[MENTE-LISBOA]]
-2. [[00-MISSION]]
+2. [[LOCKED-DECISIONS]]
 3. [[01-CURRENT-STATE]]
 4. [[02-METRICS]]
-5. [[03-SEO-DECISION-ENGINE]]
-6. [[08-SITE-ORGANIZATION]]
-7. [[07-NEXT-ACTIONS]]
+5. último snapshot de `brain/data/`
+6. [[06-DECISIONS]]
+7. [[05-EXPERIMENTS]]
+8. [[07-NEXT-ACTIONS]]
+9. código/producción real de la superficie que se va a tocar
 
-Then use:
-- [[04-CONTENT-STRATEGY]] for editorial decisions.
-- [[05-EXPERIMENTS]] for hypotheses and tests.
-- [[06-DECISIONS]] for decisions that should survive future sessions.
-- `data/` for dated evidence snapshots.
-- `templates/` for repeatable operating formats.
+Si la tarea afecta SEO: [[03-SEO-DECISION-ENGINE]].
 
-## Source-of-truth hierarchy
+Si afecta navegación, Home, UX o arquitectura: [[08-SITE-ORGANIZATION]].
 
-When information conflicts, use this order:
+Si afecta contenido: [[04-CONTENT-STRATEGY]].
 
-1. **Live Search Console / GA4 / production evidence**
-2. [[MENTE-LISBOA]] for editorial/product/design judgment
-3. Latest dated snapshot in `brain/data/`
-4. Current files in `brain/`
-5. Existing project docs in `docs/` and root Markdown files
-6. Assumptions
+## Dos tipos de autoridad
 
-Never promote an assumption above measured evidence.
+### HECHOS Y MÉTRICAS
 
-## Strategic direction
+Para saber qué está ocurriendo realmente:
 
-The public product is a **focused editorial publication**, with the blog as the acquisition engine and contextual recommendations as the preferred monetization model.
+1. producción real;
+2. Search Console / GA4 / datos vivos;
+3. último snapshot fechado;
+4. código actual;
+5. documentación histórica;
+6. hipótesis.
 
-Existing non-blog URLs can disappear from global navigation immediately while remaining live for SEO/history. Redirect/delete decisions are made separately from navigation decisions.
+Los datos nuevos pueden invalidar una hipótesis o diagnóstico viejo.
 
-The site must feel human, edited and specific to Lisbon — never like a generic tourism template.
+### DECISIONES
+
+Para saber qué está permitido cambiar:
+
+1. instrucción explícita actual de José;
+2. [[LOCKED-DECISIONS]];
+3. decisiones activas en [[06-DECISIONS]];
+4. estrategia/documentación histórica.
+
+Un dato nuevo puede justificar reconsiderar una decisión LOCKED, pero no sustituirla silenciosamente.
+
+## Etiquetas mentales obligatorias
+
+Antes de proponer, separar:
+
+- **HECHO:** observado o medido.
+- **HIPÓTESIS:** explicación todavía no demostrada.
+- **DECISIÓN:** rumbo acordado.
+- **PREFERENCIA:** gusto o elección subjetiva.
+
+No presentar una hipótesis como hecho ni una preferencia como problema funcional.
+
+## Regla central
+
+No empezar preguntando “¿qué podemos añadir?”.
+
+Empezar preguntando:
+
+> ¿Qué está impidiendo que Estaba en Lisboa crezca ahora mismo?
+
+Y después buscar la intervención editorial, de producto o de negocio más pequeña que pueda mover una métrica o producir un aprendizaje.
