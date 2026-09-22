@@ -4,61 +4,83 @@ Updated: **2026-09-23**
 
 This is the only priority queue agents should use unless new live data invalidates it.
 
-## P0 — establish a trustworthy post-change baseline
+## P0 — make the product understandable
 
-### 1. Verify production deployment
-Record:
-- production SHA;
-- deployment date/time;
-- whether the 2026-09-21 SEO/content changes are actually live.
+### 1. Simplify global navigation
+Implement:
+- Logo → Inicio
+- Guías → /blog
+- Free tours → /free-tours-lisboa
 
-Do not attribute GSC movement until this is known.
+Footer:
+- Guías
+- Free tours
+- Contacto
+- Privacidad
+- Instagram
 
-### 2. Freeze repeated edits to the observation queue
-Do not materially rewrite:
+Status: **implemented in branch `growth/focus-editorial-nav`**.
+
+### 2. Stop globally promoting weak products
+Do not place these in header/footer CTAs while they are under evaluation:
+- Itinerarios
+- Actividades
+- Comprar entradas
+- Calculadora
+- Planifica tu viaje
+- Pack completo
+
+Their URLs remain live.
+
+## P0 — protect current SEO work
+
+Do not materially rewrite these recent priority pages until a clean post-deployment window exists:
 - como-moverse-por-lisboa
 - como-pagar-en-portugal
 - time-out-market-lisboa
 - estacion-oriente-lisboa
 - arquitectura-manuelina-lisboa
 
-until the minimum observation window in [[05-EXPERIMENTS]] is available.
+Continue measuring rather than repeatedly changing them.
 
-### 3. Capture the next finalized GSC snapshot
-Compare:
-- 28d vs previous 28d;
-- 7d vs previous 7d;
-- page-level winners/losers;
-- query coverage;
-- positions 4–10;
-- positions 11–20.
+## P1 — reorganize the site around reader intent
 
-## P1 — simplify safely toward blog-first
+Design editorial hubs based on existing articles:
 
-Create an inventory of every public non-blog route and add:
+1. Qué ver
+2. Cómo moverse
+3. Dónde comer
+4. Barrios
+5. Planificar
+6. Cultura e historia
+7. Excursiones
 
-- 90d impressions
-- 90d clicks
-- avg position
-- internal links
-- indexed/not indexed
-- closest editorial destination
-- decision: keep / editorialize / 301 / retire
+Do not create seven empty pages. First map existing articles to these needs and decide which hubs deserve indexable URLs.
 
-Start with:
-- /itinerarios/*
-- /actividades/*
-- /comprar-entradas
-- /calculadora-presupuesto-lisboa
-- /planifica-tu-viaje
-- /pack-completo
-- /free-tours-lisboa
+## P1 — legacy route inventory
 
-Do **not** execute mass redirects until the inventory is complete.
+Use 90-day GSC + GA4 to classify each non-blog route:
 
-## P1 — choose the next SEO experiment from evidence
+- KEEP
+- EDITORIALIZE
+- 301
+- RETIRE
 
-After the observation window, choose **one small batch** from:
+Known evidence already captured:
+- blog: 9,880 impressions / 85 clicks
+- itinerarios: 952 / 14
+- actividades: 682 / 3
+- comprar-entradas: 7 / 0
+- free-tours: 86 / 0 organic, but 23 affiliate_click events in GA4
+- calculadora: 5 / 0
+- planifica: 13 / 0
+- pack: 0 / 0
+
+Prioritize the weakest surfaces first, but preserve individual URLs with meaningful demand.
+
+## P1 — choose the next SEO experiment
+
+After recent changes have enough finalized data, choose a small evidence-based batch from:
 - aeropuerto-lisboa-al-centro
 - tram-28-historia-guia
 - lisboa-vs-porto
@@ -68,31 +90,38 @@ After the observation window, choose **one small batch** from:
 
 Use [[03-SEO-DECISION-ENGINE]].
 
-## P2 — measure blog monetization
+## P2 — move monetization into useful content
 
-Once GA4 data is trustworthy, establish:
-- organic blog sessions;
-- affiliate_click from blog;
-- affiliate clicks / 100 organic blog sessions;
-- pages producing useful commercial clicks.
+The preferred commercial loop is:
 
-Then improve contextual monetization only where it helps the reader.
+**organic article → contextual recommendation → affiliate click**
+
+Add/measure affiliate opportunities inside relevant articles before building more standalone commercial pages.
+
+Track:
+- organic article sessions
+- affiliate_click
+- page/path
+- provider
+- placement
+- clicks per 100 organic article sessions
 
 ## Explicitly NOT doing now
 
-- site-wide visual redesign;
+- site-wide aesthetic redesign;
 - new calculators/tools;
 - new private-user features;
 - dozens of new articles;
 - mass URL moves;
 - mass deletion/noindex;
-- repeated title changes every few days;
-- SEO work without a pre-change baseline.
+- rebuilding the commercial portal;
+- waiting months before simplifying navigation;
+- repeated SEO edits without observation windows.
 
 ## Immediate success condition
 
-The next session should be able to answer, from evidence:
+A first-time visitor should understand in seconds:
 
-> "Which 1–3 pages give us the best chance to gain additional organic clicks now, and why?"
+> Estaba en Lisboa is a useful editorial guide to Lisbon. Read the guides; book a free tour if it helps.
 
-If the brain cannot answer that, gather data before changing code.
+Everything else is secondary until data earns it a place.

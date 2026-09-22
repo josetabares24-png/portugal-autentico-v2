@@ -19,22 +19,16 @@ export default function Footer() {
 
           <nav className="flex flex-wrap items-center gap-6 md:gap-8">
             <Link
-              href="/planifica-tu-viaje"
+              href="/blog"
               className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
             >
-              Planifica tu Viaje
+              Guías
             </Link>
             <Link
               href="/free-tours-lisboa"
               className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
             >
               Free Tours
-            </Link>
-            <Link
-              href="/comprar-entradas"
-              className="font-body font-light text-sm text-white/70 hover:text-gold transition-colors"
-            >
-              Comprar Entradas
             </Link>
             <Link
               href="/contacto"
