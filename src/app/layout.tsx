@@ -31,10 +31,10 @@ const plusJakarta = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://estabaenlisboa.com'),
   title: {
-    default: "Estaba en Lisboa | Guías prácticas para entender Lisboa",
+    default: "Estaba en Lisboa | Guías de Lisboa en español",
     template: "%s | Estaba en Lisboa",
   },
-  description: "Guías en español sobre Lisboa: qué ver, cómo moverte, dónde comer, barrios, planificación y excursiones con información práctica y criterio editorial.",
+  description: "Guías sobre Lisboa: transporte, barrios, comida, qué ver, dónde alojarse y excursiones. Información práctica para organizar el viaje.",
   keywords: [
     "lisboa",
     "guia lisboa",
@@ -76,8 +76,8 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://estabaenlisboa.com',
     siteName: 'Estaba en Lisboa',
-    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
-    description: 'Guías prácticas en español para entender Lisboa y decidir mejor qué ver, cómo moverte y cómo organizar el viaje.',
+    title: 'Estaba en Lisboa | Guías de Lisboa',
+    description: 'Información en español sobre qué ver, transporte, barrios, comida, alojamiento y excursiones en Lisboa.',
     images: [
       {
         url: 'https://estabaenlisboa.com/og-default.jpg',
@@ -89,8 +89,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
-    description: 'Guías prácticas en español para entender Lisboa y organizar mejor el viaje.',
+    title: 'Estaba en Lisboa | Guías de Lisboa',
+    description: 'Información práctica en español para organizar un viaje a Lisboa.',
     images: ['https://estabaenlisboa.com/og-default.jpg'],
   },
   alternates: {

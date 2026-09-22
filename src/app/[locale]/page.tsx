@@ -4,11 +4,11 @@ import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Estaba en Lisboa | Guías prácticas para entender Lisboa' },
-  description: 'Guías en español sobre Lisboa: qué ver, cómo moverte, dónde comer, barrios, planificación y excursiones con información práctica y criterio editorial.',
+  title: { absolute: 'Estaba en Lisboa | Guías de Lisboa en español' },
+  description: 'Guías sobre Lisboa: transporte, barrios, comida, qué ver, dónde alojarse y excursiones. Información práctica para organizar el viaje.',
   openGraph: {
-    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
-    description: 'Qué ver, cómo moverte, dónde comer y qué conviene saber antes de viajar a Lisboa.',
+    title: 'Estaba en Lisboa | Guías de Lisboa',
+    description: 'Guías sobre Lisboa: qué ver, transporte, barrios, comida, alojamiento y excursiones.',
     url: 'https://estabaenlisboa.com',
     images: [
       {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estaba en Lisboa | Lisboa explicada sin ruido',
-    description: 'Guías prácticas en español para entender y recorrer Lisboa.',
+    title: 'Estaba en Lisboa | Guías de Lisboa',
+    description: 'Información práctica en español para organizar un viaje a Lisboa.',
     images: ['https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg'],
   },
   alternates: {

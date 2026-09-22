@@ -12,7 +12,7 @@ export default function SchemaMarkup() {
       "caption": "Estaba en Lisboa - Guías de Lisboa"
     },
     "image": "https://estabaenlisboa.com/logo.png",
-    "description": "Publicación en español con guías prácticas sobre Lisboa: transporte, barrios, gastronomía, planificación, cultura y excursiones.",
+    "description": "Guías en español sobre Lisboa: transporte, barrios, comida, alojamiento, lugares que visitar y excursiones.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lisboa",
@@ -23,7 +23,7 @@ export default function SchemaMarkup() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "editorial contact",
+      "contactType": "contact",
       "email": "hola@estabaenlisboa.com",
       "availableLanguage": ["Spanish"]
     }
@@ -34,7 +34,7 @@ export default function SchemaMarkup() {
     "@type": "WebSite",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
-    "description": "Guías en español para entender Lisboa, decidir qué ver, moverse mejor y organizar el viaje con información práctica.",
+    "description": "Información práctica en español para organizar un viaje a Lisboa.",
     "inLanguage": ["es"]
   };
 
