@@ -1,17 +1,20 @@
-# Estaba en Lisboa — Brain
+# Mente Lisboa
 
-This folder is the operating brain of `estabaenlisboa.com`.
+**Mente Lisboa** is the operating brain of `estabaenlisboa.com`.
 
-It is designed to be opened directly in Obsidian, but it is deliberately plain Markdown so GitHub, Codex, Claude, Cursor and other agents can read the same source of truth.
+The technical folder remains `brain/`, but all editorial, product, SEO and design decisions should treat [[MENTE-LISBOA]] as the first source of judgment.
+
+It is designed to be opened directly in Obsidian, while staying plain Markdown so GitHub, Codex, Claude, Cursor and other agents can read the same source of truth.
 
 ## Start here
 
-1. [[00-MISSION]]
-2. [[01-CURRENT-STATE]]
-3. [[02-METRICS]]
-4. [[03-SEO-DECISION-ENGINE]]
-5. [[08-SITE-ORGANIZATION]]
-6. [[07-NEXT-ACTIONS]]
+1. [[MENTE-LISBOA]]
+2. [[00-MISSION]]
+3. [[01-CURRENT-STATE]]
+4. [[02-METRICS]]
+5. [[03-SEO-DECISION-ENGINE]]
+6. [[08-SITE-ORGANIZATION]]
+7. [[07-NEXT-ACTIONS]]
 
 Then use:
 - [[04-CONTENT-STRATEGY]] for editorial decisions.
@@ -25,32 +28,18 @@ Then use:
 When information conflicts, use this order:
 
 1. **Live Search Console / GA4 / production evidence**
-2. Latest dated snapshot in `brain/data/`
-3. Current files in `brain/`
-4. Existing project docs in `docs/` and root Markdown files
-5. Assumptions
+2. [[MENTE-LISBOA]] for editorial/product/design judgment
+3. Latest dated snapshot in `brain/data/`
+4. Current files in `brain/`
+5. Existing project docs in `docs/` and root Markdown files
+6. Assumptions
 
 Never promote an assumption above measured evidence.
-
-## Operating rule
-
-Every meaningful change should answer four questions:
-
-1. What metric/problem are we trying to improve?
-2. What evidence says this is the right page or problem?
-3. What is the smallest change that tests the hypothesis?
-4. When and how will we know whether it helped?
-
-If those questions cannot be answered, do not make the change yet.
 
 ## Strategic direction
 
 The public product is a **focused editorial publication**, with the blog as the acquisition engine and contextual recommendations as the preferred monetization model.
 
-Existing non-blog URLs are not deleted merely because the direction changed. They can be removed from global navigation immediately, then measured and either:
-- retained because they earn demand or conversion;
-- converted into a more editorial format;
-- redirected to the strongest relevant article;
-- or retired when evidence shows it is safe.
+Existing non-blog URLs can disappear from global navigation immediately while remaining live for SEO/history. Redirect/delete decisions are made separately from navigation decisions.
 
-That distinction protects accumulated search equity while making the product understandable now.
+The site must feel human, edited and specific to Lisbon — never like a generic tourism template.
