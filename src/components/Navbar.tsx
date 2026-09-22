@@ -11,14 +11,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: '/blog', label: 'Blog' },
-    { href: '/itinerarios', label: 'Itinerarios' },
+    { href: '/blog', label: 'Guías' },
     { href: '/free-tours-lisboa', label: 'Free tours' },
-    { href: '/actividades', label: 'Actividades' },
-    // Justo después de Actividades: es el paso natural de «qué hago» a
-    // «cómo lo reservo», y así se leen como un par.
-    { href: '/comprar-entradas', label: 'Entradas' },
-    { href: '/contacto', label: 'Contacto' },
   ];
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
@@ -54,18 +48,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* DESKTOP ACTIONS */}
-          <div className="hidden xl:flex items-center gap-3">
-            <Link
-              href="/planifica-tu-viaje"
-              aria-current={isActive('/planifica-tu-viaje') ? 'page' : undefined}
-              className="btn-primary"
-            >
-              Planifica tu viaje
-              <Icon name="arrow_forward" size={16} />
-            </Link>
-          </div>
-
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -93,15 +75,6 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Link
-                  href="/planifica-tu-viaje"
-                  aria-current={isActive('/planifica-tu-viaje') ? 'page' : undefined}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="btn-primary mx-4 mt-4 w-[calc(100%-2rem)]"
-                >
-                  Planifica tu viaje
-                  <Icon name="arrow_forward" size={16} />
-                </Link>
               </div>
             </div>
           </div>

@@ -10,7 +10,8 @@ It is designed to be opened directly in Obsidian, but it is deliberately plain M
 2. [[01-CURRENT-STATE]]
 3. [[02-METRICS]]
 4. [[03-SEO-DECISION-ENGINE]]
-5. [[07-NEXT-ACTIONS]]
+5. [[08-SITE-ORGANIZATION]]
+6. [[07-NEXT-ACTIONS]]
 
 Then use:
 - [[04-CONTENT-STRATEGY]] for editorial decisions.
@@ -44,12 +45,12 @@ If those questions cannot be answered, do not make the change yet.
 
 ## Strategic direction
 
-The public product is moving toward a **focused editorial publication**, with the blog as the growth engine.
+The public product is a **focused editorial publication**, with the blog as the acquisition engine and contextual recommendations as the preferred monetization model.
 
-Existing non-blog URLs are not deleted merely because the direction changed. They are frozen, measured and then either:
-- retained because they earn demand;
+Existing non-blog URLs are not deleted merely because the direction changed. They can be removed from global navigation immediately, then measured and either:
+- retained because they earn demand or conversion;
 - converted into a more editorial format;
 - redirected to the strongest relevant article;
-- or retired only after evidence shows it is safe.
+- or retired when evidence shows it is safe.
 
-That distinction protects accumulated search equity while simplifying the product.
+That distinction protects accumulated search equity while making the product understandable now.

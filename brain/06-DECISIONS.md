@@ -53,3 +53,29 @@ SEO changes should be small enough to attribute. Broad simultaneous rewrites are
 **Status:** accepted
 
 If an itinerary URL has meaningful organic demand, keep or editorialize that URL until a migration has evidence and a safe destination. "Everything under /blog" is not worth sacrificing rankings by itself.
+
+## D-009 — Primary navigation becomes editorial
+**Date:** 2026-09-23  
+**Status:** accepted
+
+The global header will promote only **Guías** and **Free tours**. Contact and trust links move to the footer.
+
+Itinerarios, Actividades, Entradas and Planifica tu viaje lose global-navigation prominence immediately.
+
+Reason: 90-day evidence shows that the blog is the acquisition engine, while the prior navigation presented too many weak products as if they were equally important.
+
+## D-010 — Free tours is the current commercial exception
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Keep /free-tours-lisboa visible in primary navigation for now.
+
+Reason: GA4 recorded 23 affiliate_click events from that page in roughly 90 days, substantially more than any other commercial surface.
+
+This is not proof of revenue; it is the strongest current behavioral conversion signal.
+
+## D-011 — Demotion is not deletion
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Weak product surfaces can be removed from navigation immediately without redirecting or deleting their URLs. URL retirement remains a separate SEO decision.
