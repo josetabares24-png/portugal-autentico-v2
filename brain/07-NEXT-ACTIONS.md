@@ -213,3 +213,17 @@ Pending external audit:
 - verify the external Brevo subscription template separately.
 
 Do not add a newsletter checkbox to Planifica unless there is a real reason to grow that list from this funnel and the consent is explicit.
+
+
+## P1 — affiliate click observability
+
+Baseline: [[business/AFFILIATE-MEASUREMENT-2026-09-23]].
+
+The frontend now emits GA4-standard `link_url`, `link_domain` and `outbound` on `affiliate_click`.
+
+Next check:
+- wait for post-deployment affiliate clicks;
+- confirm `link_url` is populated in reporting;
+- then segment Free Tours by UTM campaign/content before changing commercial prominence.
+
+Do not change Free Tours layout or CTA density while this baseline is being established.

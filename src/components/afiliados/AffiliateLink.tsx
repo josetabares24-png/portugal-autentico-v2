@@ -70,6 +70,13 @@ export function AffiliateLink({
 
   const finalUrl = buildAffiliateUrl(href, campaign, utmContent);
 
+  let finalDomain = '';
+  try {
+    finalDomain = new URL(finalUrl).hostname;
+  } catch {
+    // URL inválida: el href se mantiene para no romper el CTA.
+  }
+
   return (
     <a
       href={finalUrl}
@@ -83,6 +90,9 @@ export function AffiliateLink({
           affiliate_content: utmContent,
           affiliate_placement: placement,
           destination: 'lisboa',
+          link_url: finalUrl,
+          link_domain: finalDomain,
+          outbound: 'true',
           ...(activitySlug ? { activity_slug: activitySlug } : {}),
           page_path:
             typeof window !== 'undefined' ? window.location.pathname : '',

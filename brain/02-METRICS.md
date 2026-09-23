@@ -97,3 +97,19 @@ Then write only three conclusions:
 1. What clearly improved?
 2. What clearly worsened?
 3. What single area deserves the next experiment?
+
+
+## Affiliate segmentation quality
+
+Commercial reporting is not complete if it only reports total `affiliate_click`.
+
+Preferred breakdown:
+- page_path
+- link_domain
+- link_url
+- UTM campaign/content parsed from link_url
+- activity/provider context when available
+
+Historical baseline through 2026-09-22 has empty `link_url` / `link_domain` for affiliate_click events.
+
+From the 2026-09-23 instrumentation change onward, verify that those standard dimensions populate before making provider/placement conclusions.
