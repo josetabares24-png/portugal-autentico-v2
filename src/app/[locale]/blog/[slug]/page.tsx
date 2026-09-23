@@ -3261,45 +3261,35 @@ const articles: Record<string, Article> = {
     contenido: [
       { tipo: "parrafo", texto: "Lisboa no se entiende bien como una línea de fechas. Se entiende por capas. Debajo de la Baixa pombalina aparecen restos romanos; alrededor del castillo sobreviven trazados heredados de la ciudad medieval; Belém habla de la expansión marítima portuguesa; y Parque das Nações explica una transformación urbana de finales del siglo XX. La historia sigue visible porque cada época reutilizó, destruyó o reconstruyó la anterior." },
       { tipo: "parrafo", texto: "Eso también obliga a ser prudentes con algunas frases repetidas en guías turísticas. La investigación arqueológica sobre Lisboa sigue avanzando y el propio Gabinete de Estudos Olisiponenses señala que nuevas excavaciones y estudios están ampliando lo que sabemos de la ciudad. Por eso aquí separo lo documentado de las leyendas y evito presentar una fecha única de «fundación» como si estuviera resuelta." },
-
       { tipo: "subtitulo", texto: "Antes de Roma: una ciudad con pasado, pero sin una fundación simple" },
       { tipo: "parrafo", texto: "La arqueología documenta ocupación y contactos comerciales anteriores al dominio romano en el área de Lisboa. Las conexiones con pueblos mediterráneos, incluidos los fenicios, forman parte de esa historia temprana, pero convertirlas en una escena exacta de fundación o afirmar con seguridad un nombre fenicio concreto simplifica un período que conocemos a partir de restos fragmentarios." },
       { tipo: "parrafo", texto: "La leyenda de Ulises pertenece a otra categoría: es una tradición cultural asociada al nombre de la ciudad, no una explicación arqueológica de su origen. Puede ser interesante como mito, pero no sustituye la evidencia material." },
-
       { tipo: "subtitulo", texto: "Olisipo: la Lisboa romana que todavía aparece bajo el centro" },
       { tipo: "parrafo", texto: "Con Roma, Olisipo quedó integrada en una red urbana y comercial mucho mayor. Lo importante para quien visita Lisboa hoy es que esa ciudad no desapareció por completo: algunos de sus restos siguen apareciendo bajo calles y edificios del centro histórico." },
       { tipo: "parrafo", texto: "El Museu de Lisboa — Teatro Romano permite ver uno de los ejemplos más claros. También existen el criptopórtico conocido como Galerias Romanas de la Rua da Prata y otros hallazgos documentados por la arqueología municipal. Mirar estos restos cambia la lectura de Lisboa: la Baixa y las colinas cercanas no empezaron con los edificios que vemos en superficie." },
-
       { tipo: "subtitulo", texto: "La Lisboa islámica y la forma de la ciudad medieval" },
       { tipo: "parrafo", texto: "Lisboa estuvo bajo dominio islámico durante varios siglos antes de 1147. La ciudad fortificada ocupaba la colina del castillo y se relacionaba con el río como espacio defensivo, comercial y de comunicación. Más que buscar una supuesta calle «intacta» de aquella época, conviene observar la lógica urbana: pendientes, callejones, recorridos irregulares y la relación entre la zona alta y el Tajo." },
       { tipo: "parrafo", texto: "Alfama y las áreas próximas al Castelo conservan mejor esa sensación de ciudad construida por acumulación que la cuadrícula posterior de la Baixa. No significa que cada casa sea medieval ni que el barrio haya quedado congelado durante siglos; significa que su estructura permite leer una etapa de Lisboa que la reconstrucción pombalina transformó en otras zonas." },
-
       { tipo: "subtitulo", texto: "1147: la conquista que cambió el poder de la ciudad" },
       { tipo: "parrafo", texto: "En 1147, Afonso Henriques conquistó Lisboa y la incorporó al reino portugués, con participación de cruzados que viajaban hacia Tierra Santa. La conquista puso fin al dominio islámico de la ciudad, pero no borró de un día para otro a la población ni las estructuras urbanas anteriores." },
       { tipo: "parrafo", texto: "Lisboa fue ganando peso político y económico y se convirtió en capital del reino en el siglo XIII. A partir de ahí, el crecimiento hacia el río y la consolidación de instituciones religiosas, comerciales y administrativas prepararon una ciudad muy distinta de la pequeña fortaleza de la colina." },
-
       { tipo: "subtitulo", texto: "Siglos XV y XVI: Lisboa como puerto de una red imperial" },
       { tipo: "parrafo", texto: "La expansión marítima portuguesa transformó Lisboa de manera profunda. El comercio con África, Asia y América concentró riqueza, mercancías y población en la capital y dejó una huella monumental visible sobre todo en Belém. El Mosteiro dos Jerónimos y la Torre de Belém pertenecen a ese contexto y ayudan a entender por qué el manuelino está tan ligado al reinado de D. Manuel I y al poder marítimo portugués." },
       { tipo: "parrafo", texto: "Esa etapa no debe contarse únicamente como una sucesión de navegantes y monumentos. La expansión también estuvo ligada a conquista, explotación colonial y esclavitud. Entender ambas dimensiones evita convertir la historia de Lisboa en una celebración sin contexto." },
       { tipo: "enlace", texto: "Si quieres reconocer en piedra los símbolos políticos y marítimos de este período, la guía del manuelino funciona mejor que memorizar fechas.", href: "/blog/arquitectura-manuelina-lisboa", label: "Qué es el estilo manuelino" },
-
       { tipo: "subtitulo", texto: "1755: el momento en que la ciudad tuvo que rediseñarse" },
       { tipo: "parrafo", texto: "El 1 de noviembre de 1755 Lisboa sufrió un gran terremoto, seguido por un tsunami e incendios. Las cifras exactas varían según la fuente y el método de estimación; una publicación de la Câmara Municipal de Lisboa sitúa las víctimas en torno a 10.000–12.000 para una ciudad de aproximadamente 250.000 habitantes. Lo esencial no es inflar el número: la destrucción cambió el centro urbano de manera irreversible." },
       { tipo: "parrafo", texto: "La reconstrucción de la zona baja produjo la Lisboa de calles rectas y manzanas regulares que hoy asociamos con la Baixa Pombalina. Por eso Rossio, Rua Augusta y Praça do Comércio se leen de forma distinta cuando sabes que su orden no es casual: forman parte de una respuesta urbana posterior a la catástrofe." },
       { tipo: "enlace", texto: "El terremoto merece una pieza aparte porque sus consecuencias fueron urbanísticas, políticas, científicas y culturales, no solo destructivas.", href: "/blog/terremoto-lisboa-1755", label: "El terremoto de Lisboa de 1755" },
-
       { tipo: "subtitulo", texto: "Del siglo XIX al Estado Novo: una capital que vuelve a expandirse" },
       { tipo: "parrafo", texto: "Durante los siglos XIX y XX Lisboa volvió a crecer fuera del núcleo histórico. La monarquía terminó en 1910 con la implantación de la República. Después, el Estado Novo consolidó un régimen autoritario que marcó Portugal durante buena parte del siglo XX y dejó huellas políticas, sociales y urbanas en la capital." },
       { tipo: "parrafo", texto: "Para leer esa Lisboa no basta con Alfama y Belém. La Avenida da Liberdade, las Avenidas Novas, edificios institucionales y barrios construidos durante distintas fases de expansión muestran cómo la ciudad fue dejando de concentrarse únicamente alrededor del castillo y la Baixa." },
-
       { tipo: "subtitulo", texto: "25 de abril de 1974: Lisboa como escenario de la revolución" },
       { tipo: "parrafo", texto: "El 25 de abril de 1974 el movimiento militar que derribó la dictadura tuvo algunos de sus episodios decisivos en Lisboa. El Largo do Carmo, la Baixa y otras zonas del centro siguen ligados a la memoria de aquel día. La imagen de los claveles en los fusiles no es solo una metáfora posterior: el Arquivo Municipal conserva testimonios y fotografías que documentan cómo la flor quedó asociada a los soldados y a la población." },
       { tipo: "parrafo", texto: "Conviene evitar otra simplificación frecuente: decir que la revolución «no disparó un solo tiro». La transición fue comparativamente poco sangrienta, pero en Lisboa hubo víctimas mortales causadas por disparos de agentes de la PIDE/DGS. Recordarlo hace la historia más precisa, no menos simbólica." },
-
       { tipo: "subtitulo", texto: "1986 y Expo 98: cómo aparece la Lisboa contemporánea" },
       { tipo: "parrafo", texto: "La entrada de Portugal en la Comunidad Económica Europea en 1986 y la Expo 98 forman parte de otra etapa de transformación. La exposición internacional impulsó la reconversión del frente oriental donde hoy están Oriente y Parque das Nações. Allí la ciudad se entiende de otra manera: grandes infraestructuras, paseo ribereño, arquitectura contemporánea y una relación con el Tajo muy distinta de la del casco antiguo." },
       { tipo: "enlace", texto: "Si quieres ver esa ruptura con la Lisboa histórica en un paseo corto, Oriente y Parque das Nações son el ejemplo más claro.", href: "/blog/parque-das-nacoes-lisboa-que-ver", label: "Qué ver en Parque das Nações" },
-
       { tipo: "subtitulo", texto: "Cómo leer la historia de Lisboa mientras caminas" },
       { tipo: "lista", items: [
         "Para la ciudad romana: Museu de Lisboa — Teatro Romano y el entorno de la Sé.",
@@ -4138,3 +4128,524 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Cómo reconocerlo en menos de un minuto" },
       { tipo: "lista", items: [
         "Busca primero la esfera armilar.",
+        "Comprueba si aparece la Cruz de Cristo.",
+        "Mira si hay cuerdas, nudos, vegetación o motivos marinos tallados.",
+        "Observa si la estructura sigue pareciendo gótica aunque la decoración sea muy exuberante.",
+        "Relaciona la fecha del edificio con el reinado de D. Manuel I y comienzos del siglo XVI.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Una ruta sencilla para verlo en Lisboa" },
+      { tipo: "parrafo", texto: "Si solo quieres entender el manuelino durante un viaje a Lisboa, no necesitas perseguir una docena de edificios. Dedica una mañana o una tarde a Belém, observa primero los Jerónimos y después la Torre de Belém. Con esos dos ejemplos ya tendrás suficiente contexto para reconocer sus símbolos cuando vuelvan a aparecer en otros lugares de Portugal." },
+      { tipo: "enlace", texto: "Si quieres colocar este estilo dentro de la historia de la ciudad y no verlo como una pieza aislada, continúa por la etapa de los Descubrimientos.", href: "/blog/descubrimientos-portugueses-lisboa", label: "Lisboa durante la era de los Descubrimientos" },
+    ]
+  }
+};
+
+const localImages: Record<string, string> = {
+  'donde-alojarse-en-lisboa': '/images/barrio-calle-residencial.jpg',
+  'lisboa-card-vale-la-pena': '/images/funicular-bica-turistas.jpg',
+  'que-hacer-gratis-en-lisboa': '/images/miradouro-grupo-atardecer.jpg',
+  'mejores-miradores-lisboa': '/images/alfama-panoramica.jpg',
+  'como-moverse-por-lisboa': '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
+  'barrios-imprescindibles': '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
+  'donde-comer-barato-lisboa': '/images/tasca-da-graca.jpg',
+  'evitar-turistadas-lisboa': '/images/alfama-panoramica.jpg',
+  'como-ir-sintra-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
+  'barrios-lisboa-donde-alojarse': '/images/barrio-calle-residencial.jpg',
+  'pasteles-de-belem': '/images/actividades/pasteis-de-belem.webp',
+  'mejor-epoca-visitar-lisboa': '/images/miradouro-atardecer.jpg',
+  'presupuesto-viajar-lisboa': '/images/bica-cafe-mapa.jpg',
+  'mejores-mercados-lisboa': '/images/barrio-calle-residencial.jpg',
+  'donde-tomar-cafe-lisboa': '/images/bica-cafe-mapa.jpg',
+  'miradores-atardecer-lisboa': '/images/mirador-tajo-amarras-atardecer.jpg',
+  'que-comprar-lisboa-souvenirs': '/images/lisboa-originales/postales-souvenirs-lisboa.jpg',
+  'viajar-ninos-lisboa': '/images/parque-nacoes-torres-atardecer.jpg',
+  'excursiones-desde-lisboa': '/images/sintra-palacio-turistas.jpg',
+  'restaurantes-romanticos-lisboa': '/images/fado-tasca-noche.jpg',
+  'donde-escuchar-fado-autentico': '/images/fado-tasca-noche.jpg',
+  'vida-nocturna-lisboa': '/images/bairro-alto-calle-noche.jpg',
+  'lisboa-en-invierno': '/images/ventana-alfama-tajo.jpg',
+  'errores-turistas-lisboa': '/images/tranvia-28.jpg',
+  'sintra-desde-lisboa': '/images/estacion-sintra.jpg',
+  'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
+  'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
+  'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+  'azulejos-portugueses-historia': '/images/aldaba-puerta-lisboa.jpg',
+  'novedades-lisboa-2026': '/images/parque-nacoes-torres-atardecer.jpg',
+  'festivales-eventos-lisboa-2026': '/images/festival-sardinhas-noche.jpg',
+  'lisboa-vs-porto': '/images/alfama-panoramica.jpg',
+  'monumentos-de-lisboa': '/images/estatua-praca-lisboa.jpg',
+  'semana-santa-lisboa': '/images/bairro-alto-calle-noche.jpg',
+  'alfama-historia-guia': '/images/alfama-panoramica.jpg',
+  'gastronomia-portuguesa-guia': '/images/tasca-da-graca.jpg',
+  'fado-historia-origen': '/images/fado-tasca-noche.jpg',
+  'belem-barrio-guia': '/images/actividades/torre-de-belem-lisboa.webp',
+  'chiado-bairro-alto-guia': '/images/tranvia-28.jpg',
+  'mouraria-barrio-guia': '/images/alfama-panoramica.jpg',
+  'vinos-portugueses-guia': '/images/fado-tasca-noche.jpg',
+  'tram-28-historia-guia': '/images/tranvia-28.jpg',
+  'bacalhau-plato-portugal': '/images/tasca-da-graca.jpg',
+  'arquitectura-manuelina-lisboa': '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+};
+
+const articleHeroImages: Record<string, string> = {
+  'mejores-miradores-lisboa': '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+};
+
+const SITE_URL = 'https://estabaenlisboa.com';
+const AUTHOR_NAME = 'José Tabares';
+
+/**
+ * Maquetación editorial v2.
+ *
+ * El blog completo comparte este sistema visual. Las fotos por sección siguen
+ * limitadas a los artículos que ya las tienen verificadas.
+ */
+const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Object.keys(articles)]);
+const BLOG_POST_BY_ID = new Map(blogPosts.map((post) => [post.id, post]));
+// Solo admite preguntas que aporten información adicional al cuerpo. La
+// auditoría actual no encontró ninguna que cumpliera ese criterio.
+const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {};
+
+/**
+ * Texto alternativo específico de la foto de portada.
+ *
+ * Vive aparte del objeto `articles` a propósito: si se guardara como
+ * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
+ */
+const heroAlt: Record<string, string> = {
+  'mejores-miradores-lisboa':
+    'Vista de Alfama desde Portas do Sol, con los tejados de Lisboa y el río Tajo al fondo',
+  'como-moverse-por-lisboa':
+    'Tranvía articulado moderno de la línea 15E de Carris, con destino Praça da Figueira, circulando por una calle estrecha de Lisboa',
+  'barrios-imprescindibles':
+    'Escalinata empedrada de la Rua da Adiça, en Alfama, con casas encaladas, azulejos junto a las puertas y macetas en la calle',
+};
+
+/**
+ * Fotos por sección, indexadas por el id del encabezado.
+ *
+ * Solo se incluyen los miradores cuya fotografía se ha verificado
+ * visualmente. Los que no tienen foto se quedan sin ella: no se rellena con
+ * imágenes genéricas ni se describe un lugar que no aparece en la imagen.
+ */
+const sectionPhotos: Record<string, Record<string, SectionPhoto>> = {
+  'estacion-oriente-lisboa': {
+    'la-arquitectura-de-santiago-calatrava': {
+      src: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-cubierta-calatrava-detalle.jpg',
+      alt: 'Detalle de la estructura de vidrio y acero diseñada por Santiago Calatrava en la estación de Oriente',
+      position: '50% 45%',
+    },
+  },
+  'estacion-olaias-lisboa': {
+    'que-tiene-de-especial-la-estacion-de-olaias': {
+      src: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-anden-columnas.jpg',
+      alt: 'Andén de la estación de Olaias con su columnata monumental y paneles de colores',
+    },
+    'arquitectura-y-arte-quien-hizo-que': {
+      src: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-techo-arte.jpg',
+      alt: 'Detalle del techo artístico y la iluminación de la estación de Olaias en Lisboa',
+    },
+  },
+  'mejores-miradores-lisboa': {
+    '3-mirador-das-portas-do-sol-el-vecino-relajado': {
+      src: '/images/actividades/portas-do-sol-alfama.webp',
+      alt: 'Tejados de Alfama con la cúpula del Panteão Nacional y el río Tajo al fondo, vistos desde una zona elevada de Lisboa',
+    },
+    '5-elevador-de-santa-justa-ingenieria-y-panoramicas-a-partes-iguales': {
+      src: '/images/actividades/elevador-santa-justa-lisboa.webp',
+      alt: 'Elevador de Santa Justa y tejados de la Baixa de Lisboa',
+    },
+    '6-castelo-de-sao-jorge-la-vista-que-lo-abarca-todo': {
+      src: '/images/actividades/castelo-sao-jorge-lisboa.webp',
+      alt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
+    },
+    '10-teleferico-del-parque-das-nacoes-la-lisboa-del-siglo-xxi': {
+      src: '/images/parque-nacoes-torres-atardecer.jpg',
+      alt: 'Torres São Gabriel y São Rafael sobre el frente ribereño del Parque das Nações, en Lisboa',
+      position: '50% 32%',
+    },
+  },
+};
+
+const MESES_ABREVIADOS: Record<string, string> = {
+  ene: '01', feb: '02', mar: '03', abr: '04', may: '05', jun: '06',
+  jul: '07', ago: '08', sep: '09', set: '09', oct: '10', nov: '11', dic: '12',
+};
+
+/**
+ * Convierte la fecha visible del artículo ("14 Mar 2026") a ISO 8601.
+ *
+ * El campo `fecha` se escribe en castellano porque es lo que se pinta bajo el
+ * titular, pero schema.org exige `2026-03-14` y Google no sabe leer la otra
+ * forma. Se traduce solo para el JSON-LD; el texto visible no se toca.
+ *
+ * Si el formato no encaja devuelve `undefined`, para omitir la propiedad en
+ * lugar de publicar una fecha inventada.
+ */
+function toIsoDate(fecha: string): string | undefined {
+  const m = fecha.trim().match(/^(\d{1,2})\s+([A-Za-zÁÉÍÓÚáéíóú]+)\s+(\d{4})$/);
+  if (!m) return undefined;
+  const mes = MESES_ABREVIADOS[m[2].slice(0, 3).toLowerCase()];
+  if (!mes) return undefined;
+  return `${m[3]}-${mes}-${m[1].padStart(2, '0')}`;
+}
+
+function toAbsoluteUrl(pathOrUrl: string) {
+  if (pathOrUrl.startsWith('http')) return pathOrUrl;
+  return `${SITE_URL}${pathOrUrl}`;
+}
+
+/**
+ * Título para buscadores cuando el artículo no define el suyo.
+ *
+ * Antes añadía " 2026 | Guía local" a cada título, y la plantilla del layout
+ * añade además " | Estaba en Lisboa". Eran 37 caracteres de relleno fijo que
+ * dejaban 43 de los 48 artículos por encima del corte de Google, de modo que
+ * lo que se truncaba era el tema del artículo y lo que sobrevivía, la
+ * coletilla.
+ *
+ * No se recorta aquí a propósito. Un título que llega al buscador con puntos
+ * suspensivos se lee como algo a medio hacer; Google ya corta por ancho real
+ * y lo hace mejor. Lo que sí se quita es el relleno, que no aportaba nada.
+ *
+ * El año tampoco se añade solo: los artículos que de verdad van de un año lo
+ * llevan en su propio título, y ponérselo al resto envejece el contenido.
+ */
+function getSeoTitle(title: string) {
+  const hasLisboa = title.toLowerCase().includes('lisboa');
+  return hasLisboa ? title : `${title} en Lisboa`;
+}
+
+/**
+ * Descripción para buscadores cuando el artículo no define la suya.
+ *
+ * Añadía una frase fija de 78 caracteres a cada descripción, idéntica en todo
+ * el blog, que dejaba a la mayoría por encima de 200 caracteres.
+ *
+ * Aquí sí se recorta, pero por final de frase: una descripción cortada a mitad
+ * de palabra queda peor que una más corta pero entera. Si ninguna frase cabe,
+ * se deja tal cual y que corte el buscador.
+ */
+function getSeoDescription(description: string) {
+  if (description.length <= 160) return description;
+  const corte = description.slice(0, 160);
+  const fin = Math.max(corte.lastIndexOf('. '), corte.lastIndexOf('? '), corte.lastIndexOf('! '));
+  return fin > 80 ? description.slice(0, fin + 1) : description;
+}
+
+function resolveBlogImage(slug: string, image?: string) {
+  const mapped = blogImageMap[slug];
+  const candidate = mapped || image || blogFallbackImage;
+  if (candidate.startsWith('http')) {
+    return blogFallbackImage;
+  }
+  return candidate;
+}
+
+
+function getArticle(slug: string): Article | null {
+  return articles[slug] ?? null;
+}
+
+const articleExtras: Record<string, ArticleExtras> = {
+  'time-out-market-lisboa': {
+    comoLlegar: 'Está en el Mercado da Ribeira, Avenida 24 de Julho, frente al intercambiador de Cais do Sodré. Se llega en metro, tren, bus, barco o a pie desde Chiado.',
+    mejorHora: 'Fuera de las horas habituales de comida y cena es más fácil encontrar mesa. Los fines de semana conviene evitar llegar justo en el pico.',
+  },
+  'estacion-oriente-lisboa': {
+    comoLlegar: 'Metro de Lisboa, Línea Roja, estación Oriente. El intercambiador reúne metro, trenes y terminal de autobuses junto al Parque das Nações.',
+    mejorHora: 'Si quieres mirar la arquitectura sin ir con una conexión pendiente, encájala a media mañana o en una tarde de paseo por el Parque das Nações.',
+  },
+  'estacion-olaias-lisboa': {
+    comoLlegar: 'Metro de Lisboa, Línea Roja. Olaias está entre Alameda y Bela Vista; la dirección oficial es Avenida Engenheiro Arantes e Oliveira.',
+    mejorHora: 'A media mañana o a primera hora de la tarde suele ser más fácil mirar y fotografiar sin coincidir con los principales desplazamientos laborales.',
+  },
+  'barrios-imprescindibles': {
+    comoLlegar: 'Arranca en Baixa-Chiado (metro) y conecta con Alfama por tranvía 28/12. Belém se alcanza con tranvía 15 desde Cais do Sodré.',
+    mejorHora: 'Mañanas para Baixa/Belém y tardes-noches para Alfama y Bairro Alto.',
+  },
+  'evitar-turistadas-lisboa': {
+    comoLlegar: 'Muévete en metro y a pie. Evita tours exprés y tuk-tuks en zonas saturadas.',
+    mejorHora: 'Visita lo más popular antes de las 10:00 o después de las 17:00.',
+  },
+  'pasteles-de-belem': {
+    comoLlegar: 'Tranvía 15E desde Cais do Sodré o tren a Belém. La pastelería está a 5 min de la estación.',
+    mejorHora: 'Antes de las 9:30 o a partir de las 17:00 para evitar colas largas.',
+  },
+  'mejor-epoca-visitar-lisboa': {
+    comoLlegar: 'Vuelos directos a LIS desde España; del aeropuerto al centro en metro (línea roja).',
+    mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
+  },
+  'que-ver-cascais-desde-lisboa': {
+    comoLlegar: 'Línea de Cascais desde Cais do Sodré. CP mantiene trenes con normalidad fuera de las franjas de obra, y usa autobús de sustitución entre Caxias y Cascais durante interrupciones totales; comprueba el horario del día si vuelves por la noche.',
+    mejorHora: 'Sal temprano para ver el centro y la costa sin prisas, sobre todo en verano.',
+  },
+  'playas-cerca-lisboa': {
+    comoLlegar: 'Cascais en tren, Caparica en bus y Arrábida en coche. Todas están a menos de 1 hora.',
+    mejorHora: 'Llega antes de las 10:30 en verano para evitar parking lleno.',
+  },
+  'donde-escuchar-fado-autentico': {
+    comoLlegar: 'Alfama y Bairro Alto se alcanzan con metro a Baixa-Chiado y luego caminando.',
+    mejorHora: 'Entre 20:00 y 22:30. Jueves a sábado hay más ambiente.',
+  },
+  'presupuesto-viajar-lisboa': {
+    comoLlegar: 'Calcula por separado el traslado desde el aeropuerto y los trayectos urbanos; la guía de movilidad compara Metro, zapping y títulos de 24 horas.',
+    mejorHora: 'Haz el presupuesto cuando ya tengas fechas: el alojamiento cambia mucho más que las tarifas oficiales de transporte.',
+  },
+  'mejores-mercados-lisboa': {
+    comoLlegar: 'Time Out Market en Cais do Sodré, Feira da Ladra en Santa Apolónia, Arroios con metro.',
+    mejorHora: 'Primera hora para mejor producto y menos gente.',
+  },
+  'miradores-atardecer-lisboa': {
+    comoLlegar: 'Para Graça usa el tranvía 28/12 o el bus 734. Portas do Sol queda cerca de Alfama.',
+    mejorHora: '30-45 minutos antes del atardecer para reservar buen sitio.',
+  },
+  'que-comprar-lisboa-souvenirs': {
+    comoLlegar: 'Feira da Ladra está cerca de Santa Apolónia (metro). Chiado es accesible desde Baixa.',
+    mejorHora: 'Martes o sábado por la mañana para Feira da Ladra.',
+  },
+  'viajar-ninos-lisboa': {
+    comoLlegar: 'El Oceanário está en Parque das Nações (metro línea roja). El resto se hace caminando o tranvía.',
+    mejorHora: 'Mañanas para el Oceanário y tardes para parques; evita 13:00-16:00 en verano.',
+  },
+  'excursiones-desde-lisboa': {
+    comoLlegar: 'Trenes desde Rossio (Sintra) o Cais do Sodré (Cascais). Buses desde Sete Rios para Óbidos y Nazaré.',
+    mejorHora: 'Salidas entre 8:00 y 9:00 para aprovechar el día completo.',
+  },
+};
+
+// Generar rutas estáticas para todos los posts del blog
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.id,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticle(slug);
+  if (!article) {
+    return {
+      title: 'Artículo no encontrado | Blog Lisboa',
+    };
+  }
+
+  const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
+  const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
+  const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
+  const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
+  /*
+   * Un artículo que no está en `blogPosts` no aparece en el listado ni en el
+   * sitemap ni se prerenderiza: es un borrador, aunque su URL responda. Se
+   * marca noindex para que no compita en buscadores con el artículo publicado
+   * que cubre el mismo tema. Publicarlo es añadirlo a `blogPosts`.
+   */
+  const publicado = blogPosts.some((post) => post.id === slug);
+  return {
+    title: seoTitle,
+    description: seoDescription,
+    keywords,
+    ...(publicado ? {} : { robots: { index: false, follow: true } }),
+    alternates: {
+      canonical: `${SITE_URL}/blog/${slug}`,
+    },
+    openGraph: {
+      title: seoTitle,
+      description: seoDescription,
+      url: `${SITE_URL}/blog/${slug}`,
+      images: [
+        {
+          url: toAbsoluteUrl(image),
+          width: 1200,
+          height: 630,
+          alt: article.imageAlt ?? article.titulo,
+        },
+      ],
+    },
+    /*
+     * Sin este bloque, cada artículo heredaba el `twitter:title` y el
+     * `twitter:description` del layout raíz, que hablan del sitio entero. Al
+     * compartir un artículo salía una tarjeta genérica mientras Open Graph
+     * mostraba el titular correcto.
+     *
+     * `card` e `images` se repiten a propósito: Next.js no fusiona el objeto
+     * `twitter` con el del layout, lo sustituye entero, así que declarar sólo
+     * título y descripción dejaría los artículos sin `summary_large_image` y
+     * sin imagen. La imagen es la misma que ya usa Open Graph aquí arriba.
+     */
+    twitter: {
+      card: 'summary_large_image',
+      title: seoTitle,
+      description: seoDescription,
+      images: [toAbsoluteUrl(image)],
+    },
+  };
+}
+
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = getArticle(slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  const heroImage = resolveBlogImage(slug, localImages[slug] || article.imagen);
+  const visualHeroImage = articleHeroImages[slug] ?? heroImage;
+  const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
+  const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
+  const extras = articleExtras[slug];
+  const baseHeadings = article.contenido
+    .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
+    .map((bloque) => ({
+      title: bloque.texto as string,
+      id: slugify(bloque.texto as string),
+    }));
+  const extraHeadings = [
+    ...(extras?.comoLlegar ? [{ title: 'Cómo llegar', id: 'como-llegar' }] : []),
+    ...(extras?.mejorHora ? [{ title: 'Mejor hora para ir', id: 'mejor-hora' }] : []),
+  ];
+  const headings = [...extraHeadings, ...baseHeadings];
+
+  const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
+  const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
+  const linkedArticleIds = (article.links ?? []).flatMap((link) => {
+    const match = link.href.match(/^\/blog\/([^/#?]+)/);
+    return match ? [match[1]] : [];
+  });
+  const relatedIds = BLOG_RELATED_POST_IDS[slug] ?? linkedArticleIds;
+  const relatedPosts = [
+    ...relatedIds,
+    ...blogPosts
+      .filter((post) => post.id !== slug && post.categoria === article.categoria)
+      .map((post) => post.id),
+  ]
+    .filter((postId, index, ids) => postId !== slug && ids.indexOf(postId) === index)
+    .flatMap((postId) => {
+      const post = BLOG_POST_BY_ID.get(postId);
+      return post ? [post] : [];
+    })
+    .slice(0, 3);
+  // Related and the body already expose some declared links; restore only the rest.
+  const renderedDestinations = new Set([
+    `/blog/${slug}`,
+    '/planifica-tu-viaje',
+    ...relatedPosts.map((post) => `/blog/${post.id}`),
+    ...article.contenido.flatMap((block) =>
+      block.tipo === 'enlace' && block.href ? [block.href] : [],
+    ),
+  ]);
+  const editorialLinks = (article.links ?? []).filter((link) => {
+    if (renderedDestinations.has(link.href)) return false;
+    renderedDestinations.add(link.href);
+    return true;
+  });
+  const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
+  const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
+  const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
+  const photos = sectionPhotos[slug] ?? {};
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: seoTitle,
+    description: seoDescription,
+    ...(toIsoDate(article.fecha) ? { datePublished: toIsoDate(article.fecha) } : {}),
+    ...(article.dateModified ? { dateModified: article.dateModified } : {}),
+    author: {
+      '@type': 'Person',
+      name: AUTHOR_NAME,
+    },
+    image: toAbsoluteUrl(heroImage),
+    mainEntityOfPage: toAbsoluteUrl(`/blog/${slug}`),
+    publisher: {
+      '@type': 'Organization',
+      name: 'Estaba en Lisboa',
+      url: SITE_URL,
+    },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: article.titulo, item: `${SITE_URL}/blog/${slug}` },
+    ],
+  };
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
+  return (
+    <main
+      id="main-content"
+      className={`article-page bg-background-light${isEditorialV2 ? ' article-v2' : ''}`}
+    >
+      <ArticleHero
+        article={article}
+        authorName={AUTHOR_NAME}
+        heroImage={visualHeroImage}
+        heroImageAlt={heroImageAlt}
+        isEditorialV2={isEditorialV2}
+      />
+
+      {/* Layout principal: contenido + sidebar */}
+      <div className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="grid lg:grid-cols-[1fr,320px] gap-10">
+          <ArticleBody
+            article={article}
+            extras={extras}
+            faqs={faqs}
+            isEditorialV2={isEditorialV2}
+            photos={photos}
+            seoDescription={seoDescription}
+            takeaways={takeaways}
+          />
+
+          <ArticleToc headings={headings} />
+        </div>
+
+        <ArticleRelated posts={relatedPosts} />
+        <ArticleEditorialLinks links={editorialLinks} />
+
+        <div className="article-compact-ending max-w-2xl mx-auto mt-10">
+          <ArticleFooter
+            authorName={AUTHOR_NAME}
+            beforeAuthor={
+              article.fuentes && article.fuentes.length > 0 ? (
+                <ArticleSources sources={article.fuentes} />
+              ) : null
+            }
+          />
+        </div>
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+    </main>
+  );
+}
