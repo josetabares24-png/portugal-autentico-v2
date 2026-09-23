@@ -92,3 +92,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[business/AFFILIATE-STRATEGY]] — estrategia comercial vigente para afiliación.
 
 - [[business/COMMERCIAL-ASSET-INVENTORY]] — qué activos/proveedores están realmente operativos y cuáles no.
+
+- [[business/COMMERCIAL-COPY-DEBT]] — claims comerciales a revisar sin contaminar baselines activos.
