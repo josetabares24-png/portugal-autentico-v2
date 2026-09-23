@@ -2377,16 +2377,18 @@ const articles: Record<string, Article> = {
     imageAlt: "Letras de Cascais sobre la calçada portuguesa, frente al ayuntamiento del centro histórico",
     categoria: "Guías",
     fecha: "18 Nov 2024",
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-23",
     minutos: 13,
     fuentes: [
-      { label: "Comboios de Portugal — línea de Cascais", href: "https://www.cp.pt/" },
+      { label: "Comboios de Portugal — línea de Cascais y servicio rodoviario de sustitución", href: "https://cp.pt/info/pt/w/linha-de-cascais-servico-rodoviario" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Cascais fue el refugio de verano de la familia real portuguesa a finales del siglo XIX, y esa herencia de elegancia todavía se percibe en sus calles. Aunque hoy es más accesible que entonces, mantiene un aire distinguido que la diferencia de otros pueblos costeros. A solo treinta minutos en tren desde Lisboa, es la excursión perfecta cuando necesitas un respiro del bullicio urbano." },
       { tipo: "parrafo", texto: "He venido aquí decenas de veces —a veces solo para pasear, otras para pasar el día en la playa, algunas para comer pescado fresco— y cada vez descubro algo nuevo. Cascais es pequeño pero tiene suficiente para llenar un día completo sin agobios, y el ritmo relajado del pueblo es el antídoto perfecto para el estrés de la capital." },
       { tipo: "subtitulo", texto: "El viaje en tren: un preludio con vistas" },
-      { tipo: "parrafo", texto: "La línea de tren que conecta Lisboa con Cascais es una de las más bonitas de Portugal. Sale de Cais do Sodré cada veinte minutos y sigue la costa durante todo el trayecto, ofreciendo vistas constantes al Atlántico. El viaje dura entre treinta y cuarenta minutos dependiendo de si coges el expreso o el que hace todas las paradas." },
-      { tipo: "parrafo", texto: "El precio es de 2,30 euros por trayecto (4,60 ida y vuelta), y puedes usar la tarjeta Viva Viagem que ya tienes del metro. Siéntate del lado izquierdo viniendo desde Lisboa para las mejores vistas al mar. El tren pasa por Estoril —donde se celebra el Grand Prix de Fórmula 1— y por playas que parecen sacadas de una postal antes de llegar a Cascais." },
+      { tipo: "parrafo", texto: "La línea de Cascais sale de Cais do Sodré y recorre la costa hasta el centro de Cascais. En la mayor parte del día los trenes circulan con normalidad, pero CP mantiene obras de modernización entre Caxias y Cascais y, durante los periodos de interrupción total, sustituye ese tramo por autobuses. A 23 de septiembre de 2026, el transbordo rodoviario funciona de lunes a viernes a partir de las 21:50, los sábados desde las 20:50 y los domingos de 05:30 a 08:50 y a partir de las 19:50." },
+      { tipo: "parrafo", texto: "Fuera de esas franjas, CP indica que la circulación ferroviaria se mantiene con normalidad. Si vuelves de Cascais por la noche o viajas un domingo temprano, revisa el horario oficial del día antes de salir: el trayecto con autobús de sustitución puede tardar más por el tráfico y CP no garantiza todas las conexiones programadas en Oeiras. Para tarifas y títulos de transporte, consulta también CP en lugar de depender de una cifra fija escrita meses antes." },
       { tipo: "tip", texto: "Los fines de semana en verano el tren puede ir lleno. Si puedes, viaja entre semana o a primera hora de la mañana para tener más espacio y mejores vistas." },
       { tipo: "subtitulo", texto: "El centro histórico: calles que invitan a perderse" },
       { tipo: "parrafo", texto: "Cascais es lo suficientemente pequeño para explorarlo a pie sin mapa. El centro histórico tiene calles peatonales adoquinadas, tiendas de artesanía local, y restaurantes con terrazas donde sentarse a observar el ritmo del pueblo. El ambiente es más relajado que el centro de Lisboa —menos turistas apresurados, más paseantes que se toman su tiempo—." },
@@ -2412,7 +2414,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Itinerario perfecto para un día" },
       { tipo: "parrafo", texto: "Si quieres aprovechar al máximo tu día en Cascais, aquí tienes una ruta optimizada:" },
       { tipo: "parrafo", texto: "Sal de Lisboa a las nueve de la mañana para llegar antes de las diez. Empieza paseando por el centro histórico, comprando algún recuerdo o simplemente disfrutando del ambiente. A las once, visita los jardines del Museo Condes de Castro Guimarães para hacer una pausa tranquila." },
-      { tipo: "parrafo", texto: "A las doce y media, come en Porto de Santa Maria o O Pescador. Después de comer, camina hacia Boca do Inferno —el paseo te ayudará a hacer la digestión y las vistas valen la pena. Vuelve al centro sobre las tres y media, tómate un helado en Santini, y si hace buen tiempo, dedica el resto de la tarde a la playa. El último tren de vuelta sale alrededor de las once de la noche, así que no hay prisa." },
+      { tipo: "parrafo", texto: "A las doce y media, come en Porto de Santa Maria o O Pescador. Después de comer, camina hacia Boca do Inferno —el paseo te ayudará a hacer la digestión y las vistas valen la pena. Vuelve al centro sobre las tres y media, tómate un helado en Santini, y si hace buen tiempo, dedica el resto de la tarde a la playa. Si piensas volver a Lisboa por la noche, revisa antes el horario de CP porque en determinadas franjas el tramo Cascais–Caxias funciona con autobús de sustitución." },
       { tipo: "tip", texto: "Si quieres combinar Cascais con Sintra en un día, no lo recomiendo. Cada lugar merece un día completo para disfrutarlo sin prisas. Mejor dedica un día a cada uno." }
     ]
   },
@@ -4169,7 +4171,7 @@ const articleExtras: Record<string, ArticleExtras> = {
     mejorHora: 'En verano, paseos temprano o al atardecer para evitar calor y multitudes.',
   },
   'que-ver-cascais-desde-lisboa': {
-    comoLlegar: 'Tren directo desde Cais do Sodré cada 20 minutos. El trayecto dura 30-40 minutos.',
+    comoLlegar: 'Línea de Cascais desde Cais do Sodré. CP mantiene trenes con normalidad fuera de las franjas de obra, y usa autobús de sustitución entre Caxias y Cascais durante interrupciones totales; comprueba el horario del día si vuelves por la noche.',
     mejorHora: 'Sal temprano para ver el centro y la costa sin prisas, sobre todo en verano.',
   },
   'playas-cerca-lisboa': {
