@@ -477,10 +477,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'semana-santa-lisboa',
-    titulo: 'Semana Santa en Lisboa: procesiones, tradiciones y qué visitar',
-    excerpt: 'La Semana Santa en Lisboa tiene una espiritualidad especial. Procesiones en Alfama, iglesias históricas, gastronomía de Cuaresma y cómo vivirlo como un local.',
+    titulo: 'Semana Santa en Lisboa 2027: fechas, tradiciones y qué esperar',
+    excerpt: 'Fechas de Semana Santa 2027, qué cambia para quien visita Lisboa y qué tradiciones requieren confirmar el programa anual.',
     categoria: 'Cultura',
     fecha: '1 Mar 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/bairro-alto-calle-noche.jpg',
   },
