@@ -185,3 +185,16 @@ Priority order when capacity opens:
 3. protect commercial signal: oceanario-lisboa.
 
 Do not redesign the Activities hub now.
+
+
+## P1 — newsletter asset
+
+Baseline: [[business/NEWSLETTER-FUNNEL-2026-09-23]].
+
+After deployment:
+- measure successful `sign_up` events;
+- measure `newsletter_unsubscribe` as a health signal, not a vanity failure;
+- compare signups to blog sessions;
+- verify the external Brevo subscription template if production uses `BREVO_SUBSCRIPTION_TEMPLATE_ID`.
+
+Do not add more newsletter placements until the existing one proves it can capture subscribers.

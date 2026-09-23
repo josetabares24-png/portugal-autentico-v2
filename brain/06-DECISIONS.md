@@ -129,3 +129,16 @@ Reason:
 - Oceanário has a measurable affiliate-click signal.
 
 The `/actividades` hub remains demoted, but individual URLs are reviewed selectively by search intent, freshness and commercial value.
+
+
+## D-016 — Newsletter must be a measured asset
+**Date:** 2026-09-23  
+**Status:** accepted
+
+A newsletter signup is not treated as business progress unless successful subscription requests are measurable.
+
+The blog form now emits GA4 `sign_up` only after the subscription API confirms success. This measures successful requests, not unique Brevo contacts.
+
+Unsubscribe must be functional before the site promises “Puedes darte de baja cuando quieras”.
+
+The Brevo-hosted template, if `BREVO_SUBSCRIPTION_TEMPLATE_ID` is configured in production, remains an external dependency and must be verified separately; repository cleanup does not prove its visible body copy changed.

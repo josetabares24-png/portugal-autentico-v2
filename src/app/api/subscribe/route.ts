@@ -1,112 +1,66 @@
 import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
-import { validateEmail, createErrorResponse, sendBrevoEmail, addBrevoContact } from '@/lib/api-utils';
+import { validateEmail, createErrorResponse, addBrevoContact } from '@/lib/api-utils';
 
-export async function POST(request: NextRequest) {
-  // Rate limiting
-  const identifier = getRequestIdentifier(request);
-  const rateLimitResult = await limitRequest(identifier);
-  if (!rateLimitResult.success) {
-    return createErrorResponse(
-      'Demasiadas solicitudes. Por favor, espera un momento e intenta de nuevo.',
-      429
-    );
-  }
+const NEWSLETTER_LIST_ID = Number(process.env.BREVO_NEWSLETTER_LIST_ID || 5);
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://estabaenlisboa.com';
 
-  try {
-    const body = await request.json();
-    const { name, email } = body;
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (char) => {
+    const entities: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;',
+    };
+    return entities[char];
+  });
+}
 
-    // Validación básica
-    if (!name || !email) {
-      return createErrorResponse('Nombre y email son requeridos', 400);
-    }
+function welcomeEmail(name: string) {
+  const safeName = escapeHtml(name);
 
-    // Validar formato de email
-    if (!validateEmail(email)) {
-      return createErrorResponse('Email no válido', 400);
-    }
+  return {
+    subject: 'Bienvenido a Estaba en Lisboa',
+    text: `Hola ${name},
 
-    // Intentar usar Brevo primero
-    try {
-      const brevoApiKey = process.env.BREVO_API_KEY;
-      const subscriptionTemplateId = process.env.BREVO_SUBSCRIPTION_TEMPLATE_ID;
-      
-      if (brevoApiKey && subscriptionTemplateId) {
-        // Usar plantilla de Brevo
-        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'api-key': brevoApiKey,
-          },
-          body: JSON.stringify({
-            templateId: parseInt(subscriptionTemplateId, 10),
-            to: [{ email, name }],
-            headers: {
-              'X-Mailer': 'Estaba en Lisboa',
-              'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
-              'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
-            },
-          }),
-        });
+Gracias por suscribirte a Estaba en Lisboa.
 
-        if (response.ok) {
-          // Agregar contacto a Brevo
-          await addBrevoContact({
-            email,
-            name: name || email.split('@')[0],
-            attributes: {
-              FUENTE: 'blog',
-            },
-            listIds: [5],
-          });
+Te escribiremos cuando publiquemos una guía nueva o actualicemos información importante sobre Lisboa.
 
-          return NextResponse.json({ 
-            success: true, 
-            message: 'Email de bienvenida enviado correctamente',
-            method: 'brevo_template'
-          });
-        }
-      }
+Puedes ver las guías aquí:
+${SITE_URL}/blog
 
-      // Si no hay template, usar método alternativo de Brevo
-      const senderName = process.env.BREVO_SENDER_NAME || 'Estaba en Lisboa';
-      const senderEmail = process.env.BREVO_SENDER_EMAIL;
-      
-      if (senderEmail) {
-        const htmlContent = `
+Si en algún momento no quieres recibir más correos:
+${SITE_URL}/unsubscribe
+
+Estaba en Lisboa`,
+    html: `
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+<body style="margin:0;padding:0;background:#F5EFE6;font-family:Arial,sans-serif;color:#1A2B4A;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background:#F5EFE6;">
     <tr>
-      <td align="center" style="padding: 20px 0;">
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <td align="center" style="padding:24px 16px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width:600px;background:#FFFFFF;">
           <tr>
-            <td style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 40px 30px; text-align: center;">
-              <img src="https://estabaenlisboa.com/logo.png" alt="Estaba en Lisboa" width="180" height="56" style="display: block; max-width: 180px; height: auto; border: 0; margin: 0 auto;" />
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 40px 30px;">
-              <h1 style="margin: 0 0 20px 0; font-size: 24px; font-weight: 700; color: #333;">¡Hola ${name}! 👋</h1>
-              <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #555;">Gracias por suscribirte a <strong style="color: #FF6B35;">Estaba en Lisboa</strong>.</p>
-              <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.6; color: #555;">Recibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.</p>
-              <div style="text-align: center; margin: 30px 0;">
-                <a href="https://estabaenlisboa.com/itinerarios" style="display: inline-block; background: #FF6B35; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 600;">Explorar guías →</a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="background: #f9f9f9; padding: 20px; text-align: center; border-top: 1px solid #eee;">
-              <p style="margin: 0; font-size: 12px; color: #999;"><a href="{{unsubscribe}}" style="color: #FF6B35; text-decoration: none;">Darse de baja</a></p>
+            <td style="padding:32px;">
+              <img src="${SITE_URL}/logo.png" alt="Estaba en Lisboa" width="160" style="display:block;max-width:160px;height:auto;border:0;margin-bottom:28px;" />
+              <h1 style="margin:0 0 18px;font-size:24px;line-height:1.25;color:#1A2B4A;">Hola ${safeName}</h1>
+              <p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#4a4a4a;">Gracias por suscribirte a Estaba en Lisboa.</p>
+              <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4a4a4a;">Te escribiremos cuando publiquemos una guía nueva o actualicemos información importante sobre Lisboa.</p>
+              <p style="margin:0 0 28px;">
+                <a href="${SITE_URL}/blog" style="display:inline-block;background:#1A2B4A;color:#FFFFFF;padding:12px 20px;text-decoration:none;font-weight:600;">Ver las guías</a>
+              </p>
+              <p style="margin:0;font-size:12px;line-height:1.6;color:#6F665D;">
+                Si no quieres recibir más correos, puedes <a href="${SITE_URL}/unsubscribe" style="color:#B8472E;">darte de baja aquí</a>.
+              </p>
             </td>
           </tr>
         </table>
@@ -114,53 +68,85 @@ export async function POST(request: NextRequest) {
     </tr>
   </table>
 </body>
-</html>
-        `;
+</html>`,
+  };
+}
 
-        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'api-key': process.env.BREVO_API_KEY || '',
+async function sendWelcomeEmail(email: string, name: string) {
+  const brevoApiKey = process.env.BREVO_API_KEY;
+  const subscriptionTemplateId = process.env.BREVO_SUBSCRIPTION_TEMPLATE_ID;
+
+  if (!brevoApiKey) return false;
+
+  if (subscriptionTemplateId) {
+    try {
+      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': brevoApiKey,
+        },
+        body: JSON.stringify({
+          templateId: Number(subscriptionTemplateId),
+          to: [{ email, name }],
+          params: {
+            name,
+            guides_url: `${SITE_URL}/blog`,
+            unsubscribe_url: `${SITE_URL}/unsubscribe`,
           },
-          body: JSON.stringify({
-            sender: { name: senderName, email: senderEmail },
-            to: [{ email, name }],
-            subject: '¡Bienvenido a Estaba en Lisboa!',
-            htmlContent,
-            textContent: `¡Hola ${name}!\n\nGracias por suscribirte a Estaba en Lisboa.\n\nRecibirás los mejores consejos, lugares secretos y novedades de Lisboa directamente en tu bandeja de entrada.\n\nExplora nuestras guías: https://estabaenlisboa.com/itinerarios\n\nDarse de baja: https://estabaenlisboa.com/unsubscribe\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
-            headers: {
-              'X-Mailer': 'Estaba en Lisboa',
-              'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
-              'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
-            },
-          }),
-        });
+          headers: {
+            'X-Mailer': 'Estaba en Lisboa',
+            'List-Unsubscribe': `<${SITE_URL}/unsubscribe>`,
+          },
+        }),
+      });
 
-        if (response.ok) {
-          // Agregar contacto a Brevo
-          await addBrevoContact({
-            email,
-            name: name || email.split('@')[0],
-            attributes: {
-              FUENTE: 'blog',
-            },
-            listIds: [5],
-          });
-
-          return NextResponse.json({ 
-            success: true, 
-            message: 'Email de bienvenida enviado correctamente',
-            method: 'brevo_html'
-          });
-        }
-      }
-    } catch (brevoError) {
-      logger.warn('[Subscribe] Brevo no disponible, usando fallback nodemailer:', brevoError);
+      if (response.ok) return true;
+      logger.warn('[Subscribe] Brevo template send failed; trying controlled fallback');
+    } catch (error) {
+      logger.warn('[Subscribe] Brevo template unavailable; trying controlled fallback:', error);
     }
+  }
 
-    // Fallback a nodemailer si Brevo no está disponible
+  const content = welcomeEmail(name);
+  const senderName = process.env.BREVO_SENDER_NAME || 'Estaba en Lisboa';
+  const senderEmail = process.env.BREVO_SENDER_EMAIL;
+
+  if (senderEmail) {
+    try {
+      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': brevoApiKey,
+        },
+        body: JSON.stringify({
+          sender: { name: senderName, email: senderEmail },
+          to: [{ email, name }],
+          subject: content.subject,
+          htmlContent: content.html,
+          textContent: content.text,
+          headers: {
+            'X-Mailer': 'Estaba en Lisboa',
+            'List-Unsubscribe': `<${SITE_URL}/unsubscribe>`,
+          },
+        }),
+      });
+
+      if (response.ok) return true;
+      logger.warn('[Subscribe] Brevo HTML welcome email failed');
+    } catch (error) {
+      logger.warn('[Subscribe] Brevo HTML welcome email unavailable:', error);
+    }
+  }
+
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    return false;
+  }
+
+  try {
     const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -172,131 +158,87 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Email de bienvenida con link de descarga (fallback nodemailer)
     await transporter.sendMail({
       from: `"Estaba en Lisboa" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: '📥 Tu Guía Gratuita de Lisboa está lista',
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <style>
-            body {
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-              line-height: 1.6;
-              color: #333;
-              max-width: 600px;
-              margin: 0 auto;
-              padding: 20px;
-            }
-            .header {
-              background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-              color: white;
-              padding: 30px 20px;
-              text-align: center;
-              border-radius: 8px 8px 0 0;
-            }
-            .content {
-              background: white;
-              padding: 30px;
-              border: 1px solid #e0e0e0;
-              border-top: none;
-            }
-            .button {
-              display: inline-block;
-              background: #FF6B35;
-              color: white;
-              padding: 15px 30px;
-              text-decoration: none;
-              border-radius: 8px;
-              font-weight: bold;
-              margin: 20px 0;
-            }
-            .footer {
-              text-align: center;
-              padding: 20px;
-              color: #666;
-              font-size: 14px;
-            }
-            ul {
-              padding-left: 20px;
-            }
-            li {
-              margin-bottom: 8px;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="header">
-            <h1>¡Hola ${name}! 👋</h1>
-            <p>Tu guía de Lisboa está lista</p>
-          </div>
-          
-          <div class="content">
-            <p>Gracias por confiar en Estaba en Lisboa.</p>
-            
-            <p>Acabas de dar el primer paso para descubrir Lisboa como un verdadero local. 
-            En esta guía encontrarás 15 consejos que te harán ahorrar tiempo, dinero y 
-            sobre todo, te harán vivir experiencias auténticas.</p>
-            
-            <p style="text-align: center;">
-              <a href="${process.env.NEXT_PUBLIC_SITE_URL}/downloads/guia-lisboa-gratis.pdf" class="button">
-                📥 Acceder a la guía
-              </a>
-            </p>
-            
-            <p><strong>Próximos pasos:</strong></p>
-            <ul>
-              <li>Lee la guía con calma (son solo 15 páginas)</li>
-              <li>Marca los consejos que más te interesen</li>
-              <li>Si quieres itinerarios completos día a día, echa un vistazo a nuestras 
-              <a href="${process.env.NEXT_PUBLIC_SITE_URL}">guías premium</a></li>
-            </ul>
-            
-            <p>¿Tienes alguna pregunta? Responde a este email, leo todos los mensajes personalmente.</p>
-            
-            <p>¡Buen viaje a Lisboa!</p>
-            
-            <p>Un abrazo,<br>
-            <strong>Jose</strong><br>
-            Estaba en Lisboa</p>
-          </div>
-          
-          <div class="footer">
-            <p>Estaba en Lisboa · Lisboa, Portugal</p>
-            <p>
-              <a href="${process.env.NEXT_PUBLIC_SITE_URL}">Web</a>
-            </p>
-          </div>
-        </body>
-        </html>
-      `,
-    });
-
-    // Opcional: Guardar en base de datos
-    // Si usas Prisma, descomentar esto:
-    /*
-    await prisma.subscriber.create({
-      data: {
-        name,
-        email,
-        subscribed_at: new Date(),
-        source: 'guia_gratis',
+      subject: content.subject,
+      html: content.html,
+      text: content.text,
+      headers: {
+        'List-Unsubscribe': `<${SITE_URL}/unsubscribe>`,
       },
     });
-    */
 
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Guía enviada correctamente' 
+    return true;
+  } catch (error) {
+    logger.warn('[Subscribe] SMTP welcome email failed:', error);
+    return false;
+  }
+}
+
+export async function POST(request: NextRequest) {
+  const identifier = getRequestIdentifier(request);
+  const rateLimitResult = await limitRequest(identifier);
+
+  if (!rateLimitResult.success) {
+    return createErrorResponse(
+      'Demasiadas solicitudes. Espera un momento e inténtalo de nuevo.',
+      429
+    );
+  }
+
+  try {
+    const body = await request.json();
+    const email = typeof body.email === 'string' ? body.email.trim() : '';
+    const name = typeof body.name === 'string' && body.name.trim()
+      ? body.name.trim()
+      : email.split('@')[0];
+
+    if (!validateEmail(email)) {
+      return createErrorResponse('Email no válido', 400);
+    }
+
+    if (!process.env.BREVO_API_KEY) {
+      logger.error('[Subscribe] BREVO_API_KEY is not configured');
+      return NextResponse.json(
+        { success: false, message: 'No pudimos completar la suscripción. Inténtalo de nuevo más tarde.' },
+        { status: 503 }
+      );
+    }
+
+    // Capturing the subscriber is the primary business action. The welcome
+    // email is useful, but a failed welcome email must never turn a stored
+    // subscriber into a false failure — or an unstored address into false success.
+    const contactResult = await addBrevoContact({
+      email,
+      name,
+      attributes: { FUENTE: 'blog' },
+      listIds: [NEWSLETTER_LIST_ID],
+      emailBlacklisted: false,
     });
 
+    if (!contactResult.success) {
+      logger.error('[Subscribe] Brevo contact write failed');
+      return NextResponse.json(
+        { success: false, message: 'No pudimos completar la suscripción. Inténtalo de nuevo más tarde.' },
+        { status: 502 }
+      );
+    }
+
+    const welcomeSent = await sendWelcomeEmail(email, name);
+    if (!welcomeSent) {
+      logger.warn('[Subscribe] Subscriber stored, but welcome email was not delivered');
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Suscripción completada',
+      welcomeSent,
+    });
   } catch (error) {
-    logger.error('Error al procesar suscripción:', error);
+    logger.error('[Subscribe] Error processing subscription:', error);
     return NextResponse.json(
-      { message: 'Error al procesar la solicitud' },
+      { success: false, message: 'No pudimos completar la suscripción. Inténtalo de nuevo más tarde.' },
       { status: 500 }
     );
   }
