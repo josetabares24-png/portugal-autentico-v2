@@ -105,3 +105,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[product/LEGACY-PRUNING-PLAN-2026-09-23]] — destination plan for calculator, Planifica, Itinerarios, Entradas, Actividades and other non-core surfaces.
 
 - [[business/AFFILIATE-MONETIZATION-ARCHITECTURE-2026-09-23]] — partner roles, placements and measurement rules for GuruWalk, GetYourGuide and Tiqets.
+
+- [[business/GURUWALK-MCP-2026-09-23]] — official GuruWalk affiliate MCP capability, security rules and future proof-of-concept plan.

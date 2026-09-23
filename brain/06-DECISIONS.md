@@ -260,3 +260,19 @@ Partner roles:
 A destination can use different providers in different placements if the exact product/campaign or conversion evidence differs.
 
 Do not turn the site into a generic ticket catalogue.
+
+
+## D-023 — GuruWalk MCP is enrichment, not a replacement
+**Date:** 2026-09-23  
+**Status:** accepted
+
+GuruWalk's official affiliate MCP is available as a server-side capability for live tour discovery and availability.
+
+Do not replace the current static GuruWalk affiliate funnel yet.
+
+Reason:
+- current Free Tours flow already has owned click evidence;
+- MCP usefulness must be proven before changing a working commercial surface;
+- API secrets must remain outside source control and Mente Lisboa.
+
+Reference: [[business/GURUWALK-MCP-2026-09-23]].

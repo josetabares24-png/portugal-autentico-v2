@@ -310,3 +310,19 @@ Current focus:
 4. Reconcile click data with partner dashboards before increasing CTA prominence.
 
 Do not add more partner widgets or new providers until current conversion is understood.
+
+
+## P2 — GuruWalk MCP proof of concept
+
+Reference: [[business/GURUWALK-MCP-2026-09-23]].
+
+Do not ship dynamic GuruWalk inventory yet.
+
+When current commercial baseline is mature:
+1. use server-side `GURUWALK_MCP_API_KEY`;
+2. query Lisbon via `discover_destination`;
+3. verify returned affiliate attribution;
+4. test category/tour availability;
+5. compare a date-aware CTA against the current static flow.
+
+Static GuruWalk links remain the fallback and current control.
