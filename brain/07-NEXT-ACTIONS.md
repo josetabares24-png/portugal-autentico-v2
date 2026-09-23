@@ -528,3 +528,13 @@ Batch 2 status:
 - Vercel rejected deployment checks because of `build-rate-limit`, so Souvenirs/Mouraria are not marked live/DONE.
 
 After batch 3, next non-protected high-debt candidate: `mejor-epoca-visitar-lisboa`.
+
+
+### Batch 3 merge status
+
+- PR #94 merged at `9a4c5512`.
+- TypeScript: SUCCESS.
+- SEO smoke: SUCCESS.
+- Preview content deployment returned HTTP 200 with the new canonical/title/content.
+- Production build for the merge is blocked by Vercel `build-rate-limit`; do not mark Semana Santa live/DONE until a READY production deployment contains this merge or a descendant.
+- Next non-protected candidate: `mejor-epoca-visitar-lisboa`.
