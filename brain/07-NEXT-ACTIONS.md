@@ -297,3 +297,16 @@ At each weekly review:
 - quantify gap to the next gate;
 - choose one bottleneck;
 - only update the long-term forecast when trajectory changes materially.
+
+
+## P1 — affiliate monetization architecture
+
+Reference: [[business/AFFILIATE-MONETIZATION-ARCHITECTURE-2026-09-23]].
+
+Current focus:
+1. GuruWalk — preserve and measure the proven Free Tours funnel.
+2. GetYourGuide — measure direct links by destination/placement.
+3. Tiqets — measure direct ticket links, especially Oceanário/Lisboa Card/Pena.
+4. Reconcile click data with partner dashboards before increasing CTA prominence.
+
+Do not add more partner widgets or new providers until current conversion is understood.

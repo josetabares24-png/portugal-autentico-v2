@@ -103,3 +103,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[prompts/1000-CLICKS-AUTOPROMPT]] — reusable Mente Lisboa growth engine for choosing the next SEO/editorial intervention.
 
 - [[product/LEGACY-PRUNING-PLAN-2026-09-23]] — destination plan for calculator, Planifica, Itinerarios, Entradas, Actividades and other non-core surfaces.
+
+- [[business/AFFILIATE-MONETIZATION-ARCHITECTURE-2026-09-23]] — partner roles, placements and measurement rules for GuruWalk, GetYourGuide and Tiqets.
