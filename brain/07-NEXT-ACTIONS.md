@@ -252,3 +252,18 @@ After enough post-deployment click data exists:
 1. review Free Tours claims;
 2. preserve/replace only one commercial variable at a time;
 3. re-check affiliate clicks + organic CTR where relevant.
+
+
+## P2 — European benchmark opportunities
+
+Reference: [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]].
+
+The benchmark does not override current P0 measurement.
+
+Backlog in order:
+1. maintain a visitor-impact factual update discipline on canonical pages;
+2. evaluate neighbourhood exploration after internal-click data;
+3. strengthen authorship/verification progressively on dynamic pages;
+4. revisit an owned paid Lisbon product only after newsletter/audience demand is proven.
+
+Do not create a "hidden gems/local secrets" positioning.
