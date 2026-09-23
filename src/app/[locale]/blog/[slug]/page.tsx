@@ -2787,47 +2787,65 @@ const articles: Record<string, Article> = {
     ]
   },
   "que-comprar-lisboa-souvenirs": {
-    titulo: "Que Comprar en Lisboa: Souvenirs Autenticos",
-    descripcion: "Azulejos, vino, conservas y artesania. Los mejores recuerdos que realmente valen la pena.",
+    titulo: "Qué comprar en Lisboa: recuerdos que sí tienen sentido",
+    seoTitle: "Qué comprar en Lisboa: souvenirs y regalos",
+    metaDescription: "Qué comprar en Lisboa sin caer en souvenirs genéricos: cerámica actual, conservas, tiendas históricas y qué evitar con los azulejos antiguos.",
+    descripcion: "Ideas de recuerdos de Lisboa elegidas por procedencia, facilidad para llevar y relación real con la ciudad, con una advertencia importante sobre azulejos antiguos.",
     imagen: "/images/lisboa-originales/postales-souvenirs-lisboa.jpg",
     imageAlt: "Expositor de postales de Lisboa en una tienda de souvenirs, con tranvías amarillos, azulejos y sardinas ilustradas",
     categoria: "Consejos",
     fecha: "1 Nov 2024",
-    minutos: 6,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-23",
+    minutos: 8,
+    links: [
+      { href: "/blog/azulejos-portugueses-historia", label: "Entender la historia de los azulejos portugueses" },
+      { href: "/blog/gastronomia-portuguesa-guia", label: "Qué comer en Portugal" },
+      { href: "/blog/pasteles-de-belem", label: "Pastéis de Belém" },
+    ],
+    fuentes: [
+      { label: "Visit Lisboa — Azulejos de Lisboa y advertencia sobre piezas antiguas", href: "https://www.visitlisboa.com/es/sitios/azulejos-de-lisboa" },
+      { label: "Visit Lisboa — Ruta de las Tiendas con Historia", href: "https://www.visitlisboa.com/es/lisbon-stories/21-rota-das-lojas-com-historia" },
+      { label: "Visit Lisboa — Conserveira de Lisboa", href: "https://www.visitlisboa.com/es/lisbon-stories/21-percorso-negozi-storici/pois" },
+      { label: "Visit Lisboa Shop — productos inspirados en azulejos y Lisboa", href: "https://shop.visitlisboa.com/es" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Los souvenirs tipicos de Lisboa son baratos y autenticos. Azulejos, vino, conservas, artesania. Aqui que comprar y donde encontrarlo sin turistadas." },
-      { tipo: "subtitulo", texto: "1. Azulejos" },
-      { tipo: "parrafo", texto: "Los azulejos son el souvenir mas tipico de Lisboa. Puedes comprar reproducciones modernas o azulejos antiguos en Feira da Ladra. Los modernos cuestan 5-15 EUR, los antiguos son mas caros." },
+      { tipo: "parrafo", texto: "Un buen recuerdo de Lisboa no necesita llevar un tranvía amarillo impreso. La forma más útil de elegir es pensar en tres cosas: si realmente está relacionado con Portugal, si sabes de dónde viene y si puedes llevarlo a casa sin convertir la maleta en un problema." },
+      { tipo: "parrafo", texto: "Por eso esta guía no ordena souvenirs del mejor al peor. Separa compras que tienen una relación clara con la ciudad de objetos genéricos que podrías encontrar en cualquier destino." },
+
+      { tipo: "subtitulo", texto: "Azulejos: compra piezas nuevas, no patrimonio arrancado de una fachada" },
+      { tipo: "parrafo", texto: "Los azulejos forman parte del paisaje de Lisboa, pero eso no convierte cualquier pieza antigua en un buen souvenir. Visit Lisboa advierte que azulejos históricos han desaparecido de sus lugares de origen por robos destinados a la venta ilícita y pide expresamente a los visitantes que no contribuyan comprándolos." },
+      { tipo: "parrafo", texto: "Si te gusta esa estética, busca cerámica contemporánea, reproducciones, posavasos, ilustraciones o piezas nuevas de procedencia clara. La tienda oficial de Visit Lisboa, por ejemplo, vende objetos actuales inspirados en azulejos; no necesitas comprar una pieza supuestamente antigua para llevarte ese lenguaje visual." },
+      { tipo: "enlace", texto: "Si quieres reconocer qué estás viendo antes de comprar una reproducción, esta guía explica cómo evolucionó la azulejería portuguesa.", href: "/blog/azulejos-portugueses-historia", label: "Historia de los azulejos portugueses" },
+
+      { tipo: "subtitulo", texto: "Conservas: un recuerdo fácil de transportar y fácil de comprobar" },
+      { tipo: "parrafo", texto: "Las conservas portuguesas funcionan bien como regalo porque ocupan poco, tienen larga duración y permiten leer claramente productor, especie e ingredientes antes de comprar. La Conserveira de Lisboa, abierta en 1930, forma parte de la ruta oficial de Lojas com História y mantiene una selección centrada en conservas de pescado." },
+      { tipo: "parrafo", texto: "No hace falta perseguir la lata más decorada. Si el objetivo es comerla, mira primero qué contiene y quién la produce; el diseño del envase debería ser secundario." },
+
+      { tipo: "subtitulo", texto: "Tiendas históricas: a veces el lugar importa más que el objeto" },
+      { tipo: "parrafo", texto: "Lisboa mantiene un programa de Lojas com História que reúne comercios con trayectoria y relación con la memoria de la ciudad. Hay librerías, conserveiras, droguerías, pastelerías, sombrererías y otros oficios. Si quieres comprar algo con contexto, esa ruta es un punto de partida más útil que entrar en la primera tienda de recuerdos de una plaza turística." },
+      { tipo: "parrafo", texto: "No significa que todo lo vendido en un comercio histórico sea automáticamente mejor. Significa que puedes saber algo sobre el negocio, su oficio y su continuidad antes de decidir." },
+
+      { tipo: "subtitulo", texto: "Corcho, textiles y artesanía: mira la etiqueta antes que el relato" },
+      { tipo: "parrafo", texto: "En Lisboa encontrarás bolsos, carteras, libretas, textiles y muchos objetos hechos o decorados con corcho. La palabra «portugués» en un escaparate no demuestra por sí sola dónde fue fabricado el producto. Si la procedencia te importa, revisa la etiqueta, el fabricante y los materiales o pregúntalo en la tienda." },
+      { tipo: "parrafo", texto: "La misma regla sirve para cerámica y artesanía: una pieza sencilla de un productor identificable tiene más sentido como recuerdo que un objeto genérico al que solo se le ha añadido la palabra Lisboa." },
+
+      { tipo: "subtitulo", texto: "Comida para regalar: piensa primero en el viaje de vuelta" },
+      { tipo: "parrafo", texto: "Conservas, dulces envasados y otros productos secos suelen ser más sencillos de transportar que comida fresca. Pastéis de nata o Pastéis de Belém están pensados para disfrutarse frescos; si el trayecto es largo, no los elegiría como regalo principal solo porque sean famosos." },
+      { tipo: "parrafo", texto: "Con vino, aceite u otros líquidos, comprueba las normas de equipaje de tu compañía y del aeropuerto antes de comprar. Ese detalle práctico importa más que una lista fija de precios, que puede quedar desactualizada rápido." },
+
+      { tipo: "subtitulo", texto: "Qué evitar" },
       { tipo: "lista", items: [
-        "Donde: Feira da Ladra (muebles antiguos) o tiendas de Chiado",
-        "Precio: 5-15 EUR (modernos), 20-50 EUR (antiguos)",
-        "Tip: Los azulejos grandes pesan mucho, compra pequeños"
-      ]},
-      { tipo: "subtitulo", texto: "2. Vino de Oporto" },
-      { tipo: "parrafo", texto: "El vino de Oporto es el mejor souvenir comestible. En cualquier supermercado o tienda especializada encuentras buenos vinos desde 10 EUR." },
-      { tipo: "lista", items: [
-        "Donde: Supermercados (Pingo Doce, Continente) o tiendas especializadas",
-        "Precio: 10-30 EUR",
-        "Tip: Compralo en el aeropuerto para evitar romperlo"
-      ]},
-      { tipo: "subtitulo", texto: "3. Conservas de pescado" },
-      { tipo: "parrafo", texto: "Portugal tiene las mejores conservas del mundo. Sardinas, atun, pulpo. Puedes comprar latas decorativas o simples. Las decorativas cuestan 5-10 EUR." },
-      { tipo: "lista", items: [
-        "Donde: Conservas de Portugal (Chiado) o supermercados",
-        "Precio: 2-5 EUR (simples), 5-10 EUR (decorativas)",
-        "Tip: Las latas decorativas son perfectas para regalos"
-      ]},
-      { tipo: "subtitulo", texto: "4. Artesania en corcho" },
-      { tipo: "parrafo", texto: "Portugal es el mayor productor de corcho del mundo. Encuentras carteras, bolsos, agendas hechas de corcho. Originales y ecologicas." },
-      { tipo: "lista", items: [
-        "Donde: Tiendas de artesania en Alfama o Principe Real",
-        "Precio: 10-30 EUR",
-        "Tip: Verifica que sea corcho real, no plastico"
-      ]},
-      { tipo: "subtitulo", texto: "5. Pasteles de nata" },
-      { tipo: "parrafo", texto: "No puedes llevarlos frescos, pero puedes comprar latas de conserva (no son iguales pero funcionan) o libros de recetas. Las latas cuestan 5-8 EUR." },
-      { tipo: "tip", texto: "Evita souvenirs baratos de Rossio o Baixa. Son de mala calidad y caros. Mejor comprar en tiendas locales o Feira da Ladra." }
-    ]
+        "Azulejos antiguos sin procedencia clara.",
+        "Objetos vendidos como artesanales sin información sobre quién los hizo o dónde fueron fabricados.",
+        "Comprar algo solo porque aparece junto a una atracción turística.",
+        "Líquidos o alimentos que no has comprobado que puedas transportar.",
+        "Pagar más por un envase decorativo cuando lo que quieres realmente es el producto.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Una regla sencilla para decidir" },
+      { tipo: "parrafo", texto: "Antes de pagar, pregúntate si el objeto te recuerda algo que realmente viste, comiste o entendiste en Lisboa. Si la respuesta es sí y además puedes identificar su procedencia, probablemente sea un recuerdo mejor que cualquier lista de «souvenirs imprescindibles»." },
+    ],
   },
   "viajar-ninos-lisboa": {
     titulo: "Viajar con niños a Lisboa: guía completa para familias",
@@ -3775,28 +3793,68 @@ const articles: Record<string, Article> = {
     ]
   },
   "mouraria-barrio-guia": {
-    titulo: "Mouraria: El Barrio Más Multicultural y Auténtico de Lisboa",
-    seoTitle: "Mouraria | Guía del barrio en Lisboa",
-    descripcion: "Mouraria fue el barrio moro de Lisboa durante siglos. Hoy es el lugar más multicultural, más auténtico y más gastronómico de la ciudad. Qué ver, comer y sentir.",
+    titulo: "Mouraria en Lisboa: historia, fado y cómo recorrer el barrio",
+    seoTitle: "Mouraria en Lisboa: qué ver, historia y ruta",
+    metaDescription: "Guía de Mouraria en Lisboa: origen tras 1147, relación con el fado, Rua do Capelão, diversidad de Martim Moniz y cómo recorrer la zona.",
+    descripcion: "Qué hace distinta a Mouraria, qué sabemos de su historia y del fado, y una ruta sencilla para recorrerla sin convertir el barrio en un cliché de autenticidad.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
-    imageAlt: "Tejados de Alfama y el Tajo al fondo, en la Lisboa antigua vecina de Mouraria",
+    imageAlt: "Tejados de la Lisboa histórica en la zona vecina a Mouraria",
     categoria: "Guías",
     fecha: "17 Mar 2026",
-    minutos: 10,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-23",
+    minutos: 9,
+    links: [
+      { href: "/blog/fado-historia-origen", label: "Historia y origen del fado" },
+      { href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
+      { href: "/blog/alfama-historia-guia", label: "Guía de Alfama" },
+      { href: "/blog/barrios-imprescindibles", label: "Comparar barrios de Lisboa" },
+    ],
+    fuentes: [
+      { label: "Câmara Municipal de Lisboa — historia y entorno de Martim Moniz", href: "https://informacao.lisboa.pt/dossies-tematicos/martim-moniz/sobre-a-praca" },
+      { label: "Gabinete de Estudos Olisiponenses — oficios e historia de Mouraria", href: "https://geo.lisboa.pt/atividades-e-difusao/investigacao/detalhe/o-oleiro" },
+      { label: "Visit Lisboa — Mouraria", href: "https://www.visitlisboa.com/es/sitios/mouraria" },
+      { label: "Visit Lisboa — Ruta de Fado", href: "https://www.visitlisboa.com/es/lisbon-stories/1-ruta-de-fado" },
+      { label: "Museu do Fado — história do fado", href: "https://www.museudofado.pt/historia-do-fado" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Mouraria es el barrio que más ha cambiado en Lisboa en los últimos diez años, pero también el que más ha conservado. Eso parece contradictorio hasta que lo visitas. El barrio donde los musulmanes vivieron durante siglos después de la reconquista de 1147 —segregados del resto de la ciudad por órdenes del rey— ha pasado de ser una de las zonas más deterioradas de Lisboa a convertirse en el epicentro gastronómico y cultural más interesante de la ciudad." },
-      { tipo: "subtitulo", texto: "Historia: El Barrio de los Mouros" },
-      { tipo: "parrafo", texto: "Cuando Afonso Henriques conquistó Lisboa a los árabes en 1147, la población musulmana que vivía en la ciudad no fue expulsada inmediatamente: fue relegada a un barrio específico, la Mouraria, fuera de las murallas de la Lisboa cristiana. Durante siglos, moros, judíos, y más tarde inmigrantes de las colonias africanas y asiáticas, compartieron este espacio al margen del resto de la ciudad." },
-      { tipo: "parrafo", texto: "Esa historia de marginalidad y mezcla cultural dejó una huella profunda. Mouraria es el barrio donde los géneros musicales se mezclaron para dar origen al fado: las influencias africanas de los esclavos, las melodías árabes de los moros, las canciones de los marineros... todo convergió en estas callejuelas en el siglo XIX." },
-      { tipo: "subtitulo", texto: "Mouraria Hoy: El Barrio Más Auténtico" },
-      { tipo: "parrafo", texto: "La renovación de Mouraria empezó en los años 2000 con inversión pública en mejora de edificios y espacios públicos, y se aceleró con la gentrificación que afecta a todo el centro de Lisboa. Pero a diferencia de otros barrios que han perdido a sus habitantes originales, Mouraria mantiene una mezcla poblacional única: vecinos portugueses de toda la vida, comunidades bangladeshíes, chinas, nepalesas y africanas, y una nueva generación de artistas y emprendedores que encontraron aquí precios todavía razonables." },
-      { tipo: "parrafo", texto: "El resultado es una diversidad que se nota en la calle, en los comercios y sobre todo en la comida. En un radio de doscientos metros puedes comer tascas portuguesas de toda la vida, currys bangladeshíes, dim sum cantonés, dosas indias del sur y restaurantes de nueva cocina portuguesa que usan ingredientes del mundo." },
-      { tipo: "subtitulo", texto: "Qué Comer en Mouraria" },
-      { tipo: "parrafo", texto: "El Intendente, la gran plaza que hace de centro de gravedad del barrio, tiene en sus alrededores algunos de los mejores restaurantes económicos de Lisboa. O Corvo es una taberna pequeña donde siempre hay lista de espera al mediodía. Las ruas da Mouraria que bajan hacia la Baixa tienen tascas que han servido el mismo menú del día durante décadas a los trabajadores del barrio." },
-      { tipo: "parrafo", texto: "El mercado de la zona — el Mercado de Arroios, a diez minutos a pie— tiene una sección de puestos de comida preparada donde almorzar por 6-7€ entre trabajadores locales. El restaurante del mercado sirve el mejor menú de precio fijo del centro de Lisboa según muchos locales que conozco." },
-      { tipo: "tip", texto: "Mouraria es mejor visitarla sin plan fijo: callejea, entra en los comercios que te llamen la atención, acepta el café que te ofrezcan. La calle da Mouraria tiene una vista inesperada del Castillo al final que merece la caminata." },
-      { tipo: "enlace", texto: "Mouraria y Alfama se recorren juntas y comparten historia, aunque casi nadie las cuente así.", href: "/free-tours-lisboa#ruta-alfama", label: "Ver los free tours por Alfama y alrededores" },
-    ]
+      { tipo: "parrafo", texto: "Mouraria se entiende mejor como un barrio de capas que como «la Lisboa auténtica». Su nombre remite a la comunidad musulmana que quedó fuera del núcleo cristiano después de la conquista de Lisboa en 1147; siglos después, la zona quedó asociada al fado y hoy el entorno de Martim Moniz también refleja una diversidad migratoria muy visible." },
+      { tipo: "parrafo", texto: "Esas tres historias —Lisboa islámica, fado y ciudad multicultural— conviven en pocas calles. La visita gana mucho cuando sabes qué estás mirando y pierde cuando el barrio se reduce a una lista de tascas o a la idea de que aquí vive una Lisboa «más real» que en otros lugares." },
+
+      { tipo: "subtitulo", texto: "Por qué se llama Mouraria" },
+      { tipo: "parrafo", texto: "La documentación municipal relaciona la antigua Mouraria con el espacio destinado a los «mouros» expulsados del interior de la ciudad después de la conquista cristiana de 1147. El Gabinete de Estudos Olisiponenses sitúa la fundación del barrio inmediatamente después de esa conquista y documenta, entre otras actividades, una presencia importante de alfareros durante siglos." },
+      { tipo: "parrafo", texto: "Eso no significa que el barrio actual sea una cápsula intacta del siglo XII. La zona cambió muchas veces: expansión urbana, demoliciones en el siglo XX, nuevas comunidades residentes, comercio y reurbanización han modificado su forma y su población." },
+
+      { tipo: "subtitulo", texto: "Mouraria y el fado: relación fuerte, origen discutido" },
+      { tipo: "parrafo", texto: "Mouraria está profundamente ligada a la memoria del fado, pero conviene evitar una frase demasiado rotunda: no existe una teoría única demostrada sobre el origen del género. Visit Lisboa señala que algunos estudiosos identifican Mouraria como posible cuna del fado, mientras su propia Ruta de Fado recoge varias hipótesis sobre cómo pudo formarse." },
+      { tipo: "parrafo", texto: "La conexión más concreta es Maria Severa, figura central de la historia temprana del fado, que vivió y murió en Mouraria. Rua do Capelão y Largo da Severa mantienen esa memoria en el recorrido urbano actual." },
+      { tipo: "enlace", texto: "Si quieres separar lo documentado de los mitos sobre el género, aquí está la historia completa.", href: "/blog/fado-historia-origen", label: "Qué sabemos sobre el origen del fado" },
+
+      { tipo: "subtitulo", texto: "Martim Moniz y la diversidad actual" },
+      { tipo: "parrafo", texto: "El entorno de Martim Moniz funciona como una de las puertas de Mouraria. La Câmara de Lisboa describe esta área como especialmente multicultural y señala una presencia visible de comercios vinculados a culturas del sur y sudoeste de Asia." },
+      { tipo: "parrafo", texto: "Para el visitante, eso se nota más en los idiomas, pequeños comercios y oferta de comida que en una atracción concreta. No necesitas convertir esa diversidad en espectáculo: basta con entender que forma parte de la Lisboa contemporánea y que el barrio no se explica solo por su pasado medieval." },
+
+      { tipo: "subtitulo", texto: "Una ruta sencilla por Mouraria" },
+      { tipo: "lista", items: [
+        "Empieza en Martim Moniz para entender la relación entre la plaza y el borde del barrio.",
+        "Entra por Rua da Mouraria y continúa hacia Rua do Capelão y Largo da Severa.",
+        "Busca las referencias al fado sin asumir que cada local de la zona ofrece una experiencia histórica.",
+        "Pasa por las Escadinhas de São Cristóvão si quieres ver el mural dedicado al fado.",
+        "Si aún tienes tiempo, continúa hacia Intendente como extensión del paseo, sabiendo que ya estás ampliando el recorrido más allá del núcleo histórico de Mouraria.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Cuánto tiempo dedicar" },
+      { tipo: "parrafo", texto: "Mouraria no necesita un día entero. Entre una y dos horas permiten recorrer sus calles principales con contexto y detenerte a comer o tomar algo. Si la combinas con Alfama, Graça o Intendente, entonces sí puede formar parte de medio día sin obligarte a cruzar Lisboa." },
+      { tipo: "enlace", texto: "Si quieres continuar por otro barrio histórico sin perder tiempo en desplazamientos largos, compara la ruta con Alfama.", href: "/blog/alfama-historia-guia", label: "Qué ver en Alfama y cómo recorrerla" },
+
+      { tipo: "subtitulo", texto: "Dónde comer sin convertir la guía en una lista que caduca" },
+      { tipo: "parrafo", texto: "La oferta alrededor de Mouraria, Martim Moniz y Benformoso cambia más rápido que la historia del barrio. En lugar de fijar aquí un ranking de restaurantes y precios que envejece, usa el tipo de comida que buscas y comprueba el negocio concreto antes de ir. La diversidad gastronómica del área es parte del interés; no hace falta llamarla «auténtica» para que lo sea." },
+
+      { tipo: "subtitulo", texto: "Mouraria o Alfama: qué cambia" },
+      { tipo: "parrafo", texto: "Alfama concentra más miradores y monumentos reconocibles; Mouraria se presta más a entender la historia social de Lisboa, el fado y la transformación del entorno de Martim Moniz. Están muy cerca, pero no resuelven exactamente la misma visita." },
+      { tipo: "enlace", texto: "Si tu prioridad es escuchar fado y no solo recorrer los lugares asociados a su historia, compara primero formatos y zonas.", href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
+      { tipo: "enlace", texto: "Si prefieres recorrer esta historia acompañado, la página de Free Tours reúne las rutas disponibles y su atribución comercial.", href: "/free-tours-lisboa", label: "Ver free tours en Lisboa" },
+    ],
   },
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",

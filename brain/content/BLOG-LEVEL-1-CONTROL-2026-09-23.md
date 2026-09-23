@@ -99,13 +99,13 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `mejor-epoca-visitar-lisboa` | P1 — DEUDA ALTA | 0 fuentes, voz personal y clima/precios; reconstruir con IPMA y decisiones por temporada. |
 | `aeropuerto-lisboa-al-centro` | PROTEGIDO / OBSERVE | Candidato SEO; no tocar hasta gate. |
 | `restaurantes-romanticos-lisboa` | N1 — PROVISIONAL | Criterio explícito + fuentes; proteger. |
-| `que-ver-cascais-desde-lisboa` | N1 — REBUILD EN PR | Reescrito 23/09 con CP + Visit Cascais; validar CI y producción. |
-| `playas-cerca-lisboa` | N1 — REBUILD EN PR | Reescrito 23/09 por acceso/tiempo/transporte; validar CI y producción. |
+| `que-ver-cascais-desde-lisboa` | N1 — MERGED / PROD BLOCKED | PR #92 fusionado en `6318da24`; CI verde. Vercel rechazó el build de producción por `build-rate-limit`; falta verificación live. |
+| `playas-cerca-lisboa` | N1 — MERGED / PROD BLOCKED | PR #92 fusionado en `6318da24`; CI verde. Vercel rechazó el build de producción por `build-rate-limit`; falta verificación live. |
 | `donde-escuchar-fado-autentico` | N1 — PROVISIONAL | Buen marco por formato; mantener fuentes vigentes. |
 | `presupuesto-viajar-lisboa` | N1 — PROVISIONAL / DINÁMICO | Mantener cifras oficiales y revisar por Visitor Impact. |
 | `mejores-mercados-lisboa` | PROTEGIDO / OBSERVE | Candidato SEO; cambio reciente. |
 | `donde-tomar-cafe-lisboa` | E-006 — ACTIVO | No tocar hasta cierre de experimento. |
-| `que-comprar-lisboa-souvenirs` | P1 — DEUDA ALTA | Muy corto, 0 fuentes, precios/azulejos delicados; reconstruir. |
+| `que-comprar-lisboa-souvenirs` | N1 — REBUILD EN PR | Rebuild 23/09: procedencia, tiendas históricas, conservas y advertencia oficial contra azulejos antiguos; validar CI/Preview. |
 | `excursiones-desde-lisboa` | P2 — PENDIENTE | Buen esqueleto; reducir superlativos y fortalecer fuentes por destino. |
 | `historia-de-lisboa` | P1 — DEUDA ALTA | Pilar cultural sin fuentes; reconstruir con bibliografía primaria/fiable. |
 | `terremoto-lisboa-1755` | P1 — DEUDA ALTA | Cifras y cronología sin fuentes; requiere pass histórico serio. |
@@ -121,7 +121,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `fado-historia-origen` | N1 — PROVISIONAL | UNESCO/Museu do Fado + buena cautela histórica. |
 | `belem-barrio-guia` | P2 — PENDIENTE | Buen tema; reforzar fuentes y bajar absolutos. |
 | `chiado-bairro-alto-guia` | PROTEGIDO / OBSERVE | Candidato futuro; mejora reciente. |
-| `mouraria-barrio-guia` | P1 — DEUDA ALTA | 0 fuentes, absolutos de autenticidad/origen del fado; reconstruir. |
+| `mouraria-barrio-guia` | N1 — REBUILD EN PR | Rebuild 23/09: historia 1147, fado como origen discutido, diversidad actual y ruta práctica; validar CI/Preview. |
 | `vinos-portugueses-guia` | P1 — DEUDA ALTA | 0 fuentes y generalizaciones; rehacer como guía de elección. |
 | `tram-28-historia-guia` | PROTEGIDO / OBSERVE | Candidato SEO; no tocar durante mejora reciente. |
 | `bacalhau-plato-portugal` | P1 — DEUDA ALTA | Historia y cifras sin fuentes; reconstruir con contexto y decisión culinaria. |
@@ -129,12 +129,13 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 
 ## Orden operativo
 
-1. Terminar y validar **Cascais + Playas**.
-2. No tocar E-006/E-007.
-3. No reescribir Barrios, Azulejos, Vida nocturna, Tram 28, Lisboa vs Porto, Chiado o Aeropuerto mientras sus ventanas estén contaminadas por cambios recientes.
-4. Siguiente P1 no protegido: **Semana Santa** o **Mejor época**, escogiendo por señal/estacionalidad al abrir el siguiente lote.
-5. Después: **Souvenirs, Mouraria, Historia, Terremoto, Gastronomía, Vinos, Bacalhau, Novedades y Festivales**.
-6. **Descubrimientos** recibe solo source pass quirúrgico mientras siga en page 1.
+1. Verificar en producción **Cascais + Playas** cuando Vercel acepte el build de `main`.
+2. Terminar y validar **Souvenirs + Mouraria**.
+3. No tocar E-006/E-007.
+4. No reescribir Barrios, Azulejos, Vida nocturna, Tram 28, Lisboa vs Porto, Chiado o Aeropuerto mientras sus ventanas estén contaminadas por cambios recientes.
+5. Siguiente P1 no protegido: **Semana Santa** o **Mejor época**, escogiendo por señal/estacionalidad al abrir el siguiente lote.
+6. Después: **Historia, Terremoto, Gastronomía, Vinos, Bacalhau, Novedades y Festivales**.
+7. **Descubrimientos** recibe solo source pass quirúrgico mientras siga en page 1.
 
 ## Regla de cierre
 
@@ -147,3 +148,21 @@ DONE requiere:
 - producción verificada;
 - registro de fecha/commit;
 - y, cuando haya señal SEO suficiente, observación posterior.
+
+
+## Batch 2 — 2026-09-23
+
+### Souvenirs
+- elimina la recomendación de comprar azulejos antiguos;
+- incorpora la advertencia oficial de Visit Lisboa sobre robos y venta ilícita;
+- sustituye precios y rankings por procedencia, transporte y criterios de compra;
+- usa Lojas com História y Conserveira de Lisboa como referencias verificables.
+
+### Mouraria
+- elimina "más auténtico" y otros absolutos;
+- documenta el origen pos-1147 con fuentes municipales;
+- trata Mouraria como posible cuna del fado, no como origen demostrado;
+- separa memoria del fado, historia medieval y diversidad contemporánea;
+- convierte la pieza en una ruta de decisión y contexto.
+
+Baseline GSC 2026-06-25 → 2026-09-22: la consulta por ambas URLs no devolvió filas visibles. Esto no demuestra demanda cero; significa que el lote se prioriza por riesgo de confianza/deuda editorial, no por señal SEO alta.
