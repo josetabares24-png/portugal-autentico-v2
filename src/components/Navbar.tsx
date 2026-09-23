@@ -10,12 +10,19 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // next-intl uses /es internally even though localePrefix='never'.
+  // Static HTML can therefore see /es/... while visitors see /...
+  // Normalize the internal locale prefix so aria-current is correct in
+  // both the server-rendered markup and after hydration.
+  const publicPathname = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
+
   const navLinks = [
     { href: '/blog', label: 'Guías' },
     { href: '/free-tours-lisboa', label: 'Free tours' },
   ];
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) =>
+    publicPathname === href || publicPathname.startsWith(`${href}/`);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-taupe/10 bg-cream/95 shadow-sm backdrop-blur-sm">

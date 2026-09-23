@@ -1,0 +1,66 @@
+name: SEO smoke validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'next.config.mjs'
+      - 'public/robots.txt'
+      - 'src/app/sitemap.ts'
+      - 'src/app/[locale]/page.tsx'
+      - 'src/app/[locale]/blog/**'
+      - 'src/app/[locale]/actividades/**'
+      - 'src/app/[locale]/free-tours-lisboa/**'
+      - 'src/app/[locale]/itinerarios/**'
+      - 'src/components/Navbar.tsx'
+      - 'src/data/blog-posts.ts'
+      - 'src/data/activities.ts'
+      - 'src/data/guide-packs.ts'
+      - 'scripts/smoke-sitemap.mjs'
+      - '.github/workflows/seo-smoke.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'next.config.mjs'
+      - 'public/robots.txt'
+      - 'src/app/sitemap.ts'
+      - 'src/app/[locale]/page.tsx'
+      - 'src/app/[locale]/blog/**'
+      - 'src/app/[locale]/actividades/**'
+      - 'src/app/[locale]/free-tours-lisboa/**'
+      - 'src/app/[locale]/itinerarios/**'
+      - 'src/components/Navbar.tsx'
+      - 'src/data/blog-posts.ts'
+      - 'src/data/activities.ts'
+      - 'src/data/guide-packs.ts'
+      - 'scripts/smoke-sitemap.mjs'
+      - '.github/workflows/seo-smoke.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  seo-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and validate SEO surface
+        run: npm run smoke:sitemap

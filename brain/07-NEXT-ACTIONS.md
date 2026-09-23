@@ -355,3 +355,15 @@ Still verify in a browser session when available:
 Treat GA4 sessions/pageviews across this deployment boundary as a measurement-method change.
 
 This does not alter E-006/E-007 or public commercial CTAs.
+
+
+## P0 — automated SEO regression gate
+
+Reference: [[seo/SEO-SMOKE-CI-2026-09-23]].
+
+The existing sitemap/canonical/robots smoke suite is now wired to GitHub Actions for indexation-critical changes.
+
+Operational rule:
+- TypeScript success alone is not enough for SEO-critical changes;
+- require the SEO smoke workflow when its path filter applies;
+- do not relax assertions to hide a regression.

@@ -109,3 +109,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[business/GURUWALK-MCP-2026-09-23]] — official GuruWalk affiliate MCP capability, security rules and future proof-of-concept plan.
 
 - [[privacy/ANALYTICS-CONSENT-GATE-2026-09-23]] — GA4 privacy/measurement baseline: Analytics loads only after explicit consent.
+
+- [[seo/SEO-SMOKE-CI-2026-09-23]] — automated indexation/canonical/sitemap regression gate in GitHub Actions.
