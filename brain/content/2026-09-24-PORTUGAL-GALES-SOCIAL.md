@@ -106,3 +106,16 @@ Metro: Campo Grande
 - Foto usada en esta versión: Estadio Jose Alvalade Pano 2025, Footballnerd2007, Wikimedia Commons.
 - Licencia de la foto: CC BY 4.0. Mantener atribución al publicar o sustituir por fotografía propia / Depositphotos con licencia válida.
 - Decisión visual aplicada: editorial de ciudad, no fan page deportiva; foto real + bloque crema + azul noche + terracota; logo real recuperado de public/logo.png.
+
+
+## Versión final Canva — 2026-09-23
+
+- Estado: FINAL.
+- Formato: Instagram feed 1080 × 1350.
+- Canva design ID: DAHWBZ1x9Ws
+- Edit URL: https://www.canva.com/d/2FdiG-eHluC8GUJ
+- View URL: https://www.canva.com/d/llk49Mlz_539xF1
+- Imagen principal: fotografía de afición portuguesa aportada por José en conversación; archivo original: pexels-omar-ramadan-1739260-27271574.jpg.
+- Decisión final: portada editorial con fotografía dominante, titular “Portugal juega en Lisboa.”, terracota solo en “Lisboa.”, información práctica del partido y acceso por Campo Grande.
+- Esta versión sustituye la ejecución Canva anterior basada en la foto del estadio.
+- Arte final preservado como una composición única para evitar reinterpretaciones automáticas del texto o de la fotografía.
