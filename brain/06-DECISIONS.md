@@ -142,3 +142,20 @@ The blog form now emits GA4 `sign_up` only after the subscription API confirms s
 Unsubscribe must be functional before the site promises “Puedes darte de baja cuando quieras”.
 
 The Brevo-hosted template, if `BREVO_SUBSCRIPTION_TEMPLATE_ID` is configured in production, remains an external dependency and must be verified separately; repository cleanup does not prove its visible body copy changed.
+
+
+## D-017 — Separate plan leads from newsletter
+**Date:** 2026-09-23  
+**Status:** accepted
+
+`/api/planifica-tu-viaje` no longer adds plan requests to Brevo newsletter list 5.
+
+Reason:
+- the public privacy policy says plan data is used to answer the request;
+- newsletter communications require a separate voluntary subscription;
+- the form has no newsletter opt-in;
+- service-request email and direct-marketing email are separate purposes.
+
+Transactional notification/confirmation email remains unchanged.
+
+Historical contacts previously added to list 5 with source `planifica-tu-viaje` require a separate Brevo-side audit before using the list for marketing.
