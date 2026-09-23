@@ -37,7 +37,7 @@ Los eventos de analítica requieren consentimiento explícito, así que los recu
 | /itinerarios | MEASURE | mantener URL, sin volver al menú principal | tiene demanda y tráfico; negocio no demostrado |
 | /itinerarios/lisboa-1-dia-lo-esencial | KEEP | proteger URL | tiene señal orgánica propia |
 | /itinerarios/lisboa-3-dias-premium | MEASURE | mantener mientras medimos | posición/search + 1 clic afiliado, volumen pequeño |
-| /actividades | DEMOTED | no promover globalmente | 20 URLs reparten 682 impresiones y solo 3 clics orgánicos |
+| /actividades | DEMOTED | mantener hub fuera de navegación principal; revisar fichas de forma selectiva | 20 URLs reparten ~682 impresiones y 3 clics; varias fichas tienen posiciones 7–12 y no hay evidencia de canibalización general |
 | /comprar-entradas | DEMOTED | candidato a fusionar/retirar, no ejecutar aún | casi sin adquisición orgánica pero sí algunos clics afiliados |
 | /planifica-tu-viaje | DEMOTED | medir CTA antes de decidir | recibe tráfico interno, solo 1 form_start medido |
 | /calculadora-presupuesto-lisboa | DEMOTED | candidato a integrar en contenido | poca adquisición; señal de uso demasiado pequeña |
@@ -96,3 +96,16 @@ Implementación:
 - archivos de la ruta retirados del árbol público.
 
 No se interpreta esta retirada como experimento SEO de crecimiento. Es consolidación de producto con riesgo orgánico muy bajo según la evidencia disponible.
+
+
+## Auditoría selectiva de /actividades
+
+Ver [[ACTIVITIES-AUDIT-2026-09-23]].
+
+Conclusión:
+- no hacer retirada masiva;
+- no hacer noindex masivo;
+- mantener el hub despromocionado;
+- proteger fichas con señal propia;
+- tratar Oceanário como excepción comercial;
+- revisar frescura y función página por página.

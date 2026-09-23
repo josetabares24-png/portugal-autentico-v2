@@ -171,3 +171,17 @@ Do not run a broad internal-link campaign now. Top-demand pages already have mul
 Revisit low-link opportunities only after:
 - recent edits finish observation; and
 - `select_content` shows what users actually follow.
+
+
+## P2 — activities selective audit
+
+Evidence: [[product/ACTIVITIES-AUDIT-2026-09-23]].
+
+Do not mass-retire activity URLs.
+
+Priority order when capacity opens:
+1. freshness check: cristo-rei / miradouro-senhora-do-monte / fado-en-alfama / cascais-cabo-da-roca;
+2. page-specific diagnosis: elevador-santa-justa;
+3. protect commercial signal: oceanario-lisboa.
+
+Do not redesign the Activities hub now.
