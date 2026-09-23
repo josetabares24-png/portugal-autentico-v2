@@ -356,3 +356,32 @@ Operational rule:
 - a rewrite is not DONE until code, sources, CI and production are verified.
 
 Control: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
+
+
+## Decisión — Sistema visual aprobado para videos cortos
+**Date:** 2026-09-23  
+**Status:** LOCKED por aprobación explícita de José
+
+José aprobó como línea visual base para Reels/Shorts de Estaba en Lisboa:
+
+- video real de Lisboa como base;
+- overlay editorial por encima, no póster estático;
+- logo pequeño arriba izquierda;
+- Playfair/serif editorial para hook o titular;
+- Montserrat/sans para texto de apoyo;
+- crema #F5EFE6 como color principal;
+- terracota #B8472E para palabras clave;
+- degradado oscuro inferior, progresivo, para proteger la lectura;
+- texto breve y escalonado en el tiempo;
+- estética limpia, cultural, elegante y reconocible como Estaba en Lisboa;
+- sin cajas, marcos, iconos ni adornos gratuitos.
+
+Aplicación inicial validada: Reel de D. José I en Praça do Comércio.
+
+Reglas:
+- priorizar legibilidad sobre cantidad de texto;
+- si el texto no se lee cómodo, dividirlo en bloques temporales;
+- mantener fotografía/video real visible y respirado;
+- el overlay debe acompañar al video, no taparlo;
+- reutilizar este lenguaje para microhistorias, estatuas, lugares, curiosidades y datos de Lisboa;
+- no convertirlo todavía en una serie rígida: primero medir retención, guardados y comentarios.
