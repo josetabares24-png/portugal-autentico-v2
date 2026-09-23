@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
+import Script from 'next/script';
+import { useCookieConsent } from '@/lib/consent';
 
 const GA_MEASUREMENT_ID = 'G-8F54LQ5862';
 
@@ -13,65 +15,53 @@ declare global {
 }
 
 export default function GoogleAnalytics() {
+  const hasConsent = useCookieConsent();
+
   useEffect(() => {
-    // Verificar consentimiento inicial
-    const checkConsent = () => {
-      if (typeof window === 'undefined') return false;
-      
-      const consent = localStorage.getItem('cookieConsent');
-      const explicit = localStorage.getItem('cookieConsentExplicit');
-      
-      return consent === 'accepted' && explicit === 'true';
-    };
+    if (typeof window === 'undefined') return;
 
-    // Controlar el tracking según consentimiento
-    const updateConsent = (granted: boolean) => {
-      if (typeof window === 'undefined' || !window.gtag) return;
+    window.disableAnalytics = !hasConsent;
 
-      if (granted) {
-        // Habilitar tracking
-        window.disableAnalytics = false;
-        window.gtag('consent', 'update', {
-          analytics_storage: 'granted',
-        });
-      } else {
-        // Deshabilitar tracking
-        window.disableAnalytics = true;
-        window.gtag('consent', 'update', {
-          analytics_storage: 'denied',
-        });
-      }
-    };
-
-    // Configurar consentimiento inicial
-    if (checkConsent()) {
-      updateConsent(true);
-    } else {
-      // Si no hay consentimiento, deshabilitar por defecto (modo de consentimiento)
-      if (window.gtag) {
-        window.gtag('consent', 'default', {
-          analytics_storage: 'denied',
-        });
-      }
+    // If Analytics was previously loaded and the user later revokes consent,
+    // stop subsequent storage/tracking immediately. Product events are also
+    // independently gated in src/lib/analytics.ts.
+    if (!hasConsent && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+      });
     }
+  }, [hasConsent]);
 
-    // Escuchar cambios en el consentimiento
-    const handleConsentChange = (e: CustomEvent) => {
-      if (e.detail === 'accepted') {
-        updateConsent(true);
-      } else if (e.detail === 'rejected') {
-        updateConsent(false);
-      }
-    };
+  // Privacy baseline: do not even request gtag.js before explicit consent.
+  // This keeps the implementation aligned with the public cookie policy and
+  // makes "accepted" the only state in which GA can initialize.
+  if (!hasConsent) return null;
 
-    window.addEventListener('cookie-consent', handleConsentChange as EventListener);
-
-    return () => {
-      window.removeEventListener('cookie-consent', handleConsentChange as EventListener);
-    };
-  }, []);
-
-  // Este componente no renderiza nada, solo controla el consentimiento
-  // El código base de gtag.js ya está en layout.tsx
-  return null;
+  return (
+    <>
+      <Script id="google-analytics-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+          window.disableAnalytics = false;
+          window.gtag('consent', 'default', {
+            analytics_storage: 'granted',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
+          window.gtag('js', new Date());
+          window.gtag('config', '${GA_MEASUREMENT_ID}', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+          });
+        `}
+      </Script>
+      <Script
+        id="google-analytics-loader"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+    </>
+  );
 }

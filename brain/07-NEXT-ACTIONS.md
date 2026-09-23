@@ -326,3 +326,22 @@ When current commercial baseline is mature:
 5. compare a date-aware CTA against the current static flow.
 
 Static GuruWalk links remain the fallback and current control.
+
+
+## P0 — measurement integrity / analytics consent
+
+Reference: [[privacy/ANALYTICS-CONSENT-GATE-2026-09-23]].
+
+Fix prepared 2026-09-23:
+- remove unconditional GA4 loading from root layout;
+- load GA4 only after explicit analytics consent;
+- keep product events consent-gated;
+- update public cookie-policy wording.
+
+After production deployment:
+- record production SHA/time;
+- verify no request to `googletagmanager.com/gtag/js` before acceptance;
+- verify GA initializes after acceptance;
+- treat GA4 sessions/pageviews across the deployment boundary as a measurement-method change.
+
+This does not alter E-006/E-007 or public commercial CTAs.

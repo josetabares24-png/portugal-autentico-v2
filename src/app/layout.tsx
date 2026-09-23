@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from 'next/script';
 import localFont from 'next/font/local';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import "./globals.css";
@@ -106,9 +105,7 @@ export default function RootLayout({
   return (
       <html lang="es">
         <head>
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://api.brevo.com" />
-          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://api.brevo.com" />
 
           <SchemaMarkup />
@@ -120,23 +117,6 @@ export default function RootLayout({
           >
             Saltar al contenido principal
           </a>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-8F54LQ5862"
-            strategy="afterInteractive"
-            async
-          />
-          <Script id="google-analytics-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-8F54LQ5862', {
-                anonymize_ip: true,
-                cookie_flags: 'SameSite=None;Secure'
-              });
-            `}
-          </Script>
-
           {children}
         </body>
       </html>
