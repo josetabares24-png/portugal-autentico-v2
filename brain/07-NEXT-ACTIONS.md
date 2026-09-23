@@ -402,7 +402,9 @@ retry Preview later; once READY, validate Lisbon discovery, availability and aff
 
 ## P1 — Visitor Impact Watch
 
-Reference: [[operations/VISITOR-IMPACT-WATCH-2026-09-23]].
+References:
+- [[operations/VISITOR-IMPACT-WATCH-2026-09-23]]
+- [[operations/VISITOR-IMPACT-PAGE-MAP-2026-09-23]]
 
 Active discipline:
 1. verify material visitor-impact changes against primary sources;
@@ -410,8 +412,15 @@ Active discipline:
 3. do not inject short-lived alerts into evergreen pages unless access is materially blocked;
 4. close expired temporary records instead of leaving stale warnings.
 
-First acted case:
+Acted cases:
 - VI-001 Santa Justa closure → Baixa guide corrected on 2026-09-23.
+- VI-006 Cascais line works → Cascais guide corrected on 2026-09-23 with a factual-only transport patch; title, CTA and SEO intent unchanged.
+
+Verified/no-edit cases added:
+- VI-007 Praça de Espanha phased works.
+- VI-008 Telheiras partial closures.
+
+Do not use Visitor Impact as a reason to reopen E-006 or E-007.
 
 
 ## P2 — neighborhood decision map
