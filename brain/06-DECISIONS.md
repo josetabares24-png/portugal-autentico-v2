@@ -314,3 +314,20 @@ Reason:
 Privacy behavior and measurement behavior must match the public cookie policy.
 
 Reference: [[privacy/ANALYTICS-CONSENT-GATE-2026-09-23]].
+
+
+## D-024 — Factual correctness can override observation windows
+**Date:** 2026-09-23  
+**Status:** accepted
+
+An SEO observation window protects attribution, not stale facts.
+
+If an official source proves that a current public statement is materially false about access, closure, price, timetable, reservation or another visitor-impact condition:
+- apply the smallest factual correction;
+- do not combine it with SEO/copy/CTA changes;
+- record it as a confound if the page is under experiment;
+- keep the official source and next-review trigger in Visitor Impact Watch.
+
+Short-lived changes should not be injected into evergreen content unless they materially block the visitor's plan.
+
+Reference: [[operations/VISITOR-IMPACT-WATCH-2026-09-23]].

@@ -398,3 +398,17 @@ Current state:
 
 Next action:
 retry Preview later; once READY, validate Lisbon discovery, availability and affiliate attribution before any merge.
+
+
+## P1 — Visitor Impact Watch
+
+Reference: [[operations/VISITOR-IMPACT-WATCH-2026-09-23]].
+
+Active discipline:
+1. verify material visitor-impact changes against primary sources;
+2. patch factual contradictions even during an SEO observation window, but keep the patch minimal and record the confound;
+3. do not inject short-lived alerts into evergreen pages unless access is materially blocked;
+4. close expired temporary records instead of leaving stale warnings.
+
+First acted case:
+- VI-001 Santa Justa closure → Baixa guide corrected on 2026-09-23.
