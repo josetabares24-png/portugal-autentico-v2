@@ -146,3 +146,23 @@ La ejecución anterior se consideró incorrecta porque no respetó las reglas so
 - Imagen: foto original aportada por José, sin recreación IA.
 - Estado: versión correcta para revisión final.
 - Las versiones DAHWBUoUAF4 y DAHWBZ1x9Ws NO deben usarse como referencia de identidad.
+
+
+## Iteración Masthead V2
+
+Decisión de diseño:
+- eliminar “ACTUALIDAD”;
+- mover el logo real de Estaba en Lisboa a la esquina superior izquierda;
+- mantener “24 SEP · LISBOA” arriba derecha;
+- mostrar la fotografía completa en proporción 3:2 para evitar zoom excesivo;
+- retirar el logo grande del pie;
+- usar bloque inferior azul noche con jerarquía editorial;
+- mantener terracota únicamente en “Lisboa.” y pequeños acentos;
+- pie reducido a estabaenlisboa.com.
+
+Canva:
+- Design ID: DAHWBu4xP-4
+- Edit URL: https://www.canva.com/d/xwp65NCRy5jfCOk
+- View URL: https://www.canva.com/d/2JMNfmYhT7lQaUQ
+- Tamaño: 1080 × 1350.
+- Estado: nueva versión para revisión; sustituye visualmente la iteración anterior si José la aprueba.
