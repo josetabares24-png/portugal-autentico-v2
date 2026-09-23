@@ -71,7 +71,6 @@ export async function sendBrevoEmail(config: {
       headers: {
         'X-Mailer': 'Estaba en Lisboa',
         'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
-        'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
       },
     };
 
@@ -130,6 +129,7 @@ export async function addBrevoContact(config: {
   name?: string;
   attributes?: Record<string, string>;
   listIds?: number[];
+  emailBlacklisted?: boolean;
 }): Promise<{ success: boolean; error?: string }> {
   const brevoApiKey = process.env.BREVO_API_KEY;
 
@@ -150,6 +150,7 @@ export async function addBrevoContact(config: {
         ...(config.name && { attributes: { NOMBRE: config.name, ...config.attributes } }),
         ...(config.attributes && !config.name && { attributes: config.attributes }),
         listIds: config.listIds || [5], // Lista ID 5 por defecto
+        ...(config.emailBlacklisted !== undefined && { emailBlacklisted: config.emailBlacklisted }),
         updateEnabled: true,
       }),
     });

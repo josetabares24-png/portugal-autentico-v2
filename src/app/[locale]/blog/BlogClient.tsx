@@ -6,6 +6,7 @@ import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
+import { trackEvent } from '@/lib/analytics';
 
 const POSTS_PER_PAGE = 9;
 
@@ -173,6 +174,11 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
                     return;
                   }
                   setStatus('success');
+                  trackEvent('sign_up', {
+                    method: 'newsletter',
+                    content_type: 'blog_newsletter',
+                    placement: 'blog_index',
+                  });
                   setEmail('');
                   setNombre('');
                 } catch {

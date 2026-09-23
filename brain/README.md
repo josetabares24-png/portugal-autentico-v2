@@ -82,3 +82,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[product/PACK-COMPLETO-RETIREMENT-2026-09-23]] — evidence and implementation record for the first completed legacy-route retirement.
 
 - [[product/ACTIVITIES-AUDIT-2026-09-23]] — selective evidence-based classification of the 20 activity pages.
+
+- [[business/NEWSLETTER-FUNNEL-2026-09-23]] — baseline, measurement and unsubscribe mechanics for the email-list asset.
