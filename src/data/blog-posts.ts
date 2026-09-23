@@ -404,10 +404,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'historia-de-lisboa',
-    titulo: 'Historia de Lisboa: De los Fenicios al Siglo XXI',
-    excerpt: 'Más de 3.000 años de historia en la ciudad más antigua de Europa occidental. Romanos, moros, el Imperio y el terremoto que lo cambió todo.',
+    titulo: 'Historia de Lisboa: de Olisipo al siglo XXI',
+    excerpt: 'Roma, la ciudad islámica, 1147, la expansión marítima, el terremoto de 1755 y la Lisboa contemporánea explicados por capas y lugares.',
     categoria: 'Cultura',
     fecha: '20 Mar 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/lisboa-originales/mural-historia-lisboa.jpg',
   },
