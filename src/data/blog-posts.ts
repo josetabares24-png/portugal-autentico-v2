@@ -330,6 +330,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Playas, centro histórico y miradores en un día perfecto desde Lisboa.',
     categoria: 'Guías',
     fecha: '12 Ene 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/actividades/cascais-centro-historico.webp',
   },
