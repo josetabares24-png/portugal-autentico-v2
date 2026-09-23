@@ -68,3 +68,9 @@ Empezar preguntando:
 > ¿Qué está impidiendo que Estaba en Lisboa crezca ahora mismo?
 
 Y después buscar la intervención editorial, de producto o de negocio más pequeña que pueda mover una métrica o producir un aprendizaje.
+
+
+## Mapas de control
+
+- [[content/EDITORIAL-MAP]] — organización del contenido existente por necesidad.
+- [[product/LEGACY-ROUTE-INVENTORY]] — estado y evidencia de productos/rutas no editoriales.

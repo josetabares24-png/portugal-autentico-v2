@@ -45,3 +45,19 @@ Registrar baseline antes de cambios importantes y no atribuir mejoras o caídas 
 Nada se conserva solo porque ya fue construido. Producto, sección o página debe justificar su existencia por utilidad, demanda, aprendizaje, confianza, conversión o valor como activo.
 
 Esto no autoriza borrar URLs con demanda orgánica sin revisar impacto SEO y destino.
+
+
+## L-006 — GitHub + memoria en cada cambio importante
+**Estado:** LOCKED  
+**Fecha:** 2026-09-23
+
+Todo cambio importante de producto, SEO, contenido, arquitectura, medición o negocio debe:
+
+1. partir del estado real del repositorio;
+2. ejecutarse mediante rama/commit/PR en GitHub;
+3. pasar las validaciones aplicables antes de merge;
+4. actualizar Mente Lisboa con el diagnóstico, decisión, baseline, experimento o aprendizaje relevante.
+
+El trabajo no se considera terminado si solo existe en el chat o en código sin memoria operativa.
+
+Cambios triviales de texto o correcciones menores pueden agruparse, pero las decisiones que afecten rumbo deben quedar registradas.
