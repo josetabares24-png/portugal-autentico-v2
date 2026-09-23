@@ -2599,50 +2599,57 @@ const articles: Record<string, Article> = {
     ]
   },
   "donde-tomar-cafe-lisboa": {
-    titulo: "Dónde tomar el mejor café en Lisboa: guía del café portugués",
-    seoTitle: "Dónde tomar café en Lisboa",
-    descripcion: "El café en Portugal es un ritual. Desde el bica tradicional hasta cafeterías de especialidad. Dónde encontrar el mejor café y cómo pedirlo como un local.",
+    titulo: "Dónde tomar café en Lisboa: bica, cafés históricos y especialidad",
+    seoTitle: "Dónde tomar café en Lisboa: bica y cafés recomendados",
+    metaDescription: "Dónde tomar café en Lisboa: qué es una bica, cuándo elegir un café tradicional, A Brasileira en Chiado y opciones de especialidad como Fábrica.",
+    descripcion: "Qué pedir en una cafetería portuguesa y qué tipo de lugar elegir en Lisboa: café tradicional, un café histórico o una opción de especialidad.",
     imagen: "/images/bica-cafe-mapa.jpg",
-    imageAlt: "Taza de café en primer plano sobre la mesa de una terraza en una calle de Lisboa",
+    imageAlt: "Taza de café sobre una mesa en una calle de Lisboa",
     categoria: "Gastronomía",
     fecha: "5 Nov 2024",
-    minutos: 10,
+    fechaActualizacion: "Actualizado en septiembre de 2026",
+    dateModified: "2026-09-23",
+    minutos: 7,
+    fuentes: [
+      { label: "Visit Portugal — información útil y precios orientativos", href: "https://www.visitportugal.com/es/sobre-portugal/info-util" },
+      { label: "A Brasileira do Chiado — historia y ubicación", href: "https://www.abrasileira.pt/" },
+      { label: "Fábrica Coffee Roasters — locales en Lisboa", href: "https://fabricacoffeeroasters.com/pt/pages/find-a-store" },
+    ],
+    links: [
+      { href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
+      { href: "/blog/donde-comer-barato-lisboa", label: "Dónde comer barato en Lisboa" },
+      { href: "/blog/como-pagar-en-portugal", label: "Cómo pagar en Portugal" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "El café en Portugal no es solo una bebida, es un ritual social. Los portugueses toman café constantemente —al despertar, después de comer, en las pausas del trabajo, antes de dormir—. Un bica (café expreso) cuesta menos de un euro y se bebe de pie en el mostrador de cualquier pastelería, en menos de dos minutos, y luego sigues con tu día." },
-      { tipo: "parrafo", texto: "Pero Lisboa también tiene una escena de café de especialidad que ha crecido en los últimos años, combinando la tradición portuguesa con técnicas modernas. Esta guía te lleva desde el café más tradicional hasta las cafeterías más innovadoras." },
-      { tipo: "subtitulo", texto: "Tipos de cafe en Portugal" },
-      { tipo: "parrafo", texto: "En Portugal el cafe tiene nombres diferentes. Un bica es un expreso. Una meia de leite es un cortado. Un galao es un cafe con leche largo." },
+      { tipo: "parrafo", texto: "Si buscas dónde tomar café en Lisboa, primero conviene separar dos planes. Una cosa es pedir una bica rápida en una pastelaria o café de barrio; otra es ir expresamente a un café histórico o a una cafetería de especialidad. Para lo primero no necesitas cruzar la ciudad." },
+      { tipo: "parrafo", texto: "Eso también cambia la forma de hacer una lista. No tiene mucho sentido llamar «el mejor café de Lisboa» a un solo sitio cuando una persona puede estar buscando historia, café de especialidad o simplemente una pausa barata cerca de donde está." },
+
+      { tipo: "subtitulo", texto: "Qué pedir: bica y galão" },
+      { tipo: "parrafo", texto: "Visit Portugal explica que el café expreso se conoce popularmente como «bica». También recoge el «galão», servido con leche en vaso. Los precios que publica son orientativos y pueden variar según el establecimiento y según tomes algo en barra, mesa o terraza." },
+      { tipo: "tip", texto: "Si solo quieres probar el café que se pide a diario en Portugal, entra en una pastelaria que te quede de camino y pide una bica. No hace falta convertirlo en una excursión." },
+
+      { tipo: "subtitulo", texto: "A Brasileira: si te interesa la historia del café en Lisboa" },
+      { tipo: "parrafo", texto: "A Brasileira está en Rua Garrett, en Chiado, y abrió en 1905. El local quedó ligado a la vida literaria y artística del barrio y a figuras como Fernando Pessoa. Tiene sentido incluirlo por esa historia y por el espacio, no porque podamos afirmar que sirve «el mejor café» de la ciudad." },
+      { tipo: "enlace", texto: "Si ya vas a pasar por esta zona, puedes encajarlo dentro del paseo por Chiado y Bairro Alto.", href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
+
+      { tipo: "subtitulo", texto: "Fábrica Coffee Roasters: si buscas café de especialidad" },
+      { tipo: "parrafo", texto: "Fábrica Coffee Roasters trabaja con café de especialidad y mantiene varios locales en Lisboa. Su web oficial lista, entre otros, espacios en Rua das Portas de Santo Antão, Rua das Flores, Rua do Comércio y Santos. Es una opción distinta a A Brasileira: aquí el interés principal está en el café y el tueste, no en visitar un café histórico." },
+
+      { tipo: "subtitulo", texto: "Y si solo quieres sentarte en una cafetería portuguesa" },
+      { tipo: "parrafo", texto: "No necesitas una dirección famosa. Una pastelaria o café tradicional puede resolver desayuno, una pausa a media mañana o el café después de comer. Mira primero dónde estás y qué harás después; atravesar Lisboa solo para tomar un expreso suele tener poco sentido." },
+      { tipo: "parrafo", texto: "También conviene mirar el precio antes de sentarte en terraza. Visit Portugal advierte que los valores varían según el tipo de establecimiento y el servicio, así que una referencia nacional no sustituye el precio que tenga cada local." },
+
+      { tipo: "subtitulo", texto: "Qué elegir según lo que buscas" },
       { tipo: "lista", items: [
-        "Bica: Cafe expreso (0.60-0.80 EUR)",
-        "Meia de leite: Cortado (1.20 EUR)",
-        "Galao: Cafe con leche largo (1.50 EUR)",
-        "Carioca: Expreso mas suave (0.70 EUR)"
+        "Una bica rápida: entra en una pastelaria o café que te quede de paso.",
+        "Un café con historia: A Brasileira encaja si ya estás recorriendo Chiado.",
+        "Café de especialidad: compara una de las ubicaciones de Fábrica con la zona donde estés.",
+        "Desayuno o merienda: busca primero una pastelaria cercana; no todo tiene que convertirse en una lista de cafeterías famosas.",
+        "Si un local concreto es importante para tu día, comprueba su horario oficial antes de desplazarte."
       ]},
-      { tipo: "subtitulo", texto: "Mejores cafeterias" },
-      { tipo: "subtitulo", texto: "1. A Brasileira (Chiado)" },
-      { tipo: "parrafo", texto: "La cafeteria historica de Lisboa. Inaugurada en 1905, terrazas en la calle, ambiente bohemio. Turistica pero autentica. El bica cuesta 1 EUR." },
-      { tipo: "lista", items: [
-        "Direccion: Rua Garrett 120",
-        "Precio: 1-2 EUR",
-        "Ambiente: Historico y bohemio"
-      ]},
-      { tipo: "subtitulo", texto: "2. Copenhagen Coffee Lab" },
-      { tipo: "parrafo", texto: "Cafeteria de especialidad con varias locales. Cafe de calidad, brunch bueno, ambiente moderno. El mejor cafe de especialidad de Lisboa." },
-      { tipo: "lista", items: [
-        "Direccion: Varias (Principe Real, Alfama)",
-        "Precio: 2-4 EUR",
-        "Ambiente: Moderno y trendy"
-      ]},
-      { tipo: "subtitulo", texto: "3. Fábrica Coffee Roasters" },
-      { tipo: "parrafo", texto: "Tostan su propio cafe. Varias locales, cafe excelente, brunch bueno. El mejor para cafe de especialidad." },
-      { tipo: "subtitulo", texto: "4. Padaria Portuguesa" },
-      { tipo: "parrafo", texto: "Cadena local de panaderia y cafeteria. Por toda Lisboa, cafe decente y pasteles frescos. Barato y conveniente." },
-      { tipo: "lista", items: [
-        "Direccion: Por toda la ciudad",
-        "Precio: 0.70-1.50 EUR",
-        "Ambiente: Local y conveniente"
-      ]},
-      { tipo: "tip", texto: "En cualquier pasteleria o panaderia local el cafe es bueno y barato. No necesitas ir a sitios caros para un buen bica." }
+
+      { tipo: "subtitulo", texto: "La diferencia importante no es solo el café" },
+      { tipo: "parrafo", texto: "En Lisboa puedes tomar un expreso de pie, sentarte en una esplanada histórica o buscar una extracción de especialidad. Son planes distintos. Elegir según el momento del viaje resulta más útil que intentar ordenar todos los cafés de la ciudad del primero al décimo." }
     ]
   },
   "miradores-atardecer-lisboa": {
@@ -4147,10 +4154,6 @@ const articleExtras: Record<string, ArticleExtras> = {
   'mejores-mercados-lisboa': {
     comoLlegar: 'Time Out Market en Cais do Sodré, Feira da Ladra en Santa Apolónia, Arroios con metro.',
     mejorHora: 'Primera hora para mejor producto y menos gente.',
-  },
-  'donde-tomar-cafe-lisboa': {
-    comoLlegar: 'Chiado y Príncipe Real están conectados por metro (Baixa-Chiado o Rato).',
-    mejorHora: 'Entre 8:00 y 11:00 para ver la rutina local con poca cola.',
   },
   'miradores-atardecer-lisboa': {
     comoLlegar: 'Para Graça usa el tranvía 28/12 o el bus 734. Portas do Sol queda cerca de Alfama.',

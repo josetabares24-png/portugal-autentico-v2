@@ -21,6 +21,7 @@ This is the active learning register.
 | E-003 | /blog/time-out-market-lisboa | Query-aligned title/content should lift clicks while holding page-1 visibility | CTR + clicks | OBSERVE | confirmed production deployment + 7 finalized days |
 | E-004 | /blog/estacion-oriente-lisboa | Better match to Gare do Oriente / transport intent should improve clicks at stable visibility | CTR + clicks | OBSERVE | confirmed production deployment + 7 finalized days |
 | E-005 | /blog/arquitectura-manuelina-lisboa | Reorientation to "qué es el estilo manuelino" should broaden/recover relevant query coverage | impressions + query coverage + clicks | OBSERVE | confirmed production deployment + 14 finalized days |
+| E-006 | /blog/donde-tomar-cafe-lisboa | Replacing stale/unsupported coffee claims with verified, intent-aligned content should protect page-1 momentum and improve useful query coverage | position + clicks + query coverage, with CTR protected | RUNNING | production deployment + 14 finalized days |
 
 ## Next candidate pool
 
@@ -48,3 +49,27 @@ Pick the next candidate only after the observation queue has a clean baseline.
 9. Keep/revert/iterate.
 
 Use [[templates/EXPERIMENT]] for detailed experiments.
+
+
+## E-006 baseline — dónde tomar café en Lisboa
+
+Pre-change Search Console:
+
+| Window | Clicks | Impressions | CTR | Position |
+|---|---:|---:|---:|---:|
+| 2026-08-26 → 2026-09-22 | 3 | 121 | 2.48% | 12.21 |
+| 2026-07-29 → 2026-08-25 | 1 | 140 | 0.71% | 9.01 |
+| 2026-09-16 → 2026-09-22 | 1 | 19 | 5.26% | 8.42 |
+| 2026-09-09 → 2026-09-15 | 0 | 31 | 0% | 11.65 |
+
+Important confound: the page was already improving in the latest 7-day window before this change. Do not attribute continued improvement automatically to E-006.
+
+Editorial debt found before change:
+- unsupported "best" claims;
+- "como un local" framing;
+- stale exact prices without source context;
+- incorrect simplification of Portuguese coffee terms;
+- generic/trendy language;
+- no source list.
+
+The experiment preserves the URL and topic while repairing trust and usefulness.

@@ -42,6 +42,25 @@ Do not materially rewrite these recent priority pages until a clean post-deploym
 
 Continue measuring rather than repeatedly changing them.
 
+## P1 — active SEO experiment
+
+### E-006 — café
+`/blog/donde-tomar-cafe-lisboa`
+
+Status: **RUNNING** after deployment.
+
+Do not materially edit this page again until the evaluation window closes.
+
+Measure:
+- clicks;
+- impressions;
+- CTR;
+- position;
+- query coverage;
+- internal continuation clicks once `select_content` data accumulates.
+
+Important: the last 7-day position was already improving before the experiment, so causal claims require caution.
+
 ## P1 — attack the acquisition leak
 
 After the observation window, choose the strongest page/query opportunity using:
