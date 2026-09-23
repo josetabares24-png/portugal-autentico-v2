@@ -96,7 +96,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `errores-turistas-lisboa` | N1 — PROVISIONAL | Alta utilidad práctica y fuentes; proteger. |
 | `pasteles-de-belem` | P1 — DEUDA ALTA | Eliminar mitos/rituales/autoridad local no verificada; ampliar fuentes. |
 | `sintra-desde-lisboa` | PROTEGIDO / N1 PROVISIONAL | Buena utilidad y fuentes oficiales; mantener. |
-| `mejor-epoca-visitar-lisboa` | P1 — DEUDA ALTA | 0 fuentes, voz personal y clima/precios; reconstruir con IPMA y decisiones por temporada. |
+| `mejor-epoca-visitar-lisboa` | N1 — REBUILD EN PR | Rebuild 23/09 con normales IPMA 1991–2020, decisiones por clima y sin promesas genéricas de precios/masificación; validar CI/Preview. |
 | `aeropuerto-lisboa-al-centro` | PROTEGIDO / OBSERVE | Candidato SEO; no tocar hasta gate. |
 | `restaurantes-romanticos-lisboa` | N1 — PROVISIONAL | Criterio explícito + fuentes; proteger. |
 | `que-ver-cascais-desde-lisboa` | N1 — MERGED / PROD BLOCKED | PR #92 fusionado en `6318da24`; CI verde. Vercel rechazó el build de producción por `build-rate-limit`; falta verificación live. |
@@ -134,7 +134,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 3. Terminar y validar **Semana Santa 2027**.
 4. No tocar E-006/E-007.
 5. No reescribir Barrios, Azulejos, Vida nocturna, Tram 28, Lisboa vs Porto, Chiado o Aeropuerto mientras sus ventanas estén contaminadas por cambios recientes.
-6. Siguiente P1 no protegido después de Semana Santa: **Mejor época**.
+6. Terminar y validar **Mejor época**.
 7. Después: **Historia, Terremoto, Gastronomía, Vinos, Bacalhau, Novedades y Festivales**.
 8. **Descubrimientos** recibe solo source pass quirúrgico mientras siga en page 1.
 
@@ -177,3 +177,13 @@ Baseline GSC 2026-06-25 → 2026-09-22: la consulta por ambas URLs no devolvió 
 - Mantiene el contenido evergreen con un trigger de revisión para febrero de 2027.
 - GSC 90d: 25 impresiones / 1 clic / posición media 16,64.
 - Deuda visual pendiente: la portada actual es una calle nocturna de Bairro Alto, no una imagen específica de Semana Santa; no se falsea el alt y se debe sustituir cuando exista una foto pertinente y verificable.
+
+
+## Batch 4 — Mejor época — 2026-09-23
+
+- Sustituye preferencias personales y afirmaciones de precios/colas por normales climáticas oficiales IPMA 1991–2020.
+- Explica la diferencia entre clima histórico, previsión meteorológica y precio real de reserva.
+- Mayo/septiembre se presentan como compromisos climáticos, no como una verdad universal.
+- Julio/agosto: tramo más seco; otoño/invierno: más lluvia, con cifras fechadas de IPMA.
+- Junio incorpora Festas de Lisboa como factor de decisión, indicando que el programa concreto cambia cada año.
+- GSC 90d: 6 impresiones / 0 clics / posición media 18,50; bajo riesgo de alterar un activo SEO consolidado.
