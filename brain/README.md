@@ -98,3 +98,6 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]] — direct Lisbon and European city-guide benchmark with product opportunities.
 
 - [[product/ACTIVITIES-FRESHNESS-2026-09-23]] — official-source freshness pass for the six priority activity pages.
+
+- [[strategy/1000-CLICKS-FORECAST-2026-09-23]] — scenario model from current Search Console baseline to the long-term 1,000 organic clicks/day north star.
+- [[prompts/1000-CLICKS-AUTOPROMPT]] — reusable Mente Lisboa growth engine for choosing the next SEO/editorial intervention.

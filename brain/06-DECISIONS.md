@@ -215,3 +215,32 @@ Priority order:
 Do not manufacture "the mistake everyone makes", "locals do this", crowd timing or authenticity heuristics unless supported by evidence or documented first-hand experience.
 
 The 2026-09-23 freshness pass on Cristo Rei, Senhora do Monte, Fado, Cascais/Cabo da Roca, Santa Justa and Oceanário is the reference implementation.
+
+
+## D-021 — 1,000 clicks/day is a north star, not the next KPI
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Long-term ambition:
+- 1,000 organic Google clicks/day.
+
+Current operating milestone remains:
+- 1,000 organic impressions/day sustained.
+
+Growth ladder:
+1. 1,000 impressions/day
+2. 10 clicks/day
+3. 30 clicks/day
+4. 100 clicks/day
+5. 300 clicks/day
+6. 1,000 clicks/day
+
+Reason:
+The current 28-day baseline is 49 clicks / 6,218 impressions. Jumping directly to 1,000 clicks/day would encourage volume vanity and poor prioritization.
+
+Planning model:
+- aggressive: ~30–36 months;
+- working/base: ~42–60 months;
+- conservative: ~60–84 months.
+
+These are scenario estimates, not promises, and must be revised as real growth compounds.

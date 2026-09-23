@@ -278,3 +278,22 @@ Backlog in order:
 4. revisit an owned paid Lisbon product only after newsletter/audience demand is proven.
 
 Do not create a "hidden gems/local secrets" positioning.
+
+
+## North star — 1,000 organic clicks/day
+
+Reference:
+- [[strategy/1000-CLICKS-FORECAST-2026-09-23]]
+- [[prompts/1000-CLICKS-AUTOPROMPT]]
+
+Current gate:
+**1,000 organic impressions/day sustained.**
+
+Do not replace current P0 experiments with long-horizon content production.
+
+At each weekly review:
+- update clicks/day and impressions/day;
+- state the current gate;
+- quantify gap to the next gate;
+- choose one bottleneck;
+- only update the long-term forecast when trajectory changes materially.
