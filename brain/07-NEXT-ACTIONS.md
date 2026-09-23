@@ -131,3 +131,23 @@ Orden actual:
 4. playas-cerca-lisboa — reparar después por menor señal.
 
 No hacer limpieza masiva anti-IA.
+
+
+## P1 — E-007 — comer barato
+
+`/blog/donde-comer-barato-lisboa`
+
+Status: **RUNNING** after production deployment.
+
+Do not materially edit again until the measurement window closes.
+
+Primary metrics:
+- average position;
+- impressions;
+- clicks;
+- query coverage around comer barato / restaurantes baratos.
+
+Guardrails:
+- no index/canonical regression;
+- no collapse in impressions;
+- internal continuation clicks should be observed with the new `select_content` tracking.

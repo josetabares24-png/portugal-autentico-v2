@@ -22,7 +22,7 @@ Prioridad:
 
 **Search Console 90d:** 525 impresiones / 5 clics / posición 19,55.
 
-**Estado:** CANDIDATO E-007.
+**Estado:** E-007 RUNNING desde 2026-09-23.
 
 Deuda confirmada:
 - abre con una anécdota concreta en primera persona sobre pagar 18 € por un bacalhau à brás en Rossio y luego cenar por 8 € en Mouraria;
@@ -36,8 +36,15 @@ Por qué importa:
 - está en segunda página;
 - mejorar confianza e intención puede ayudar a empujarla sin crear una URL nueva.
 
-Regla:
-No reparar mientras se altera otra variable de esa misma URL. Puede ejecutarse como experimento de página independiente con baseline propio.
+Reparación E-007 aplicada:
+- eliminada la anécdota personal no documentada;
+- eliminada la autoridad inventada sobre dónde comen “los lisboetas de verdad”;
+- añadidos ejemplos con precio y fecha de fuente;
+- añadida fuente oficial de ASAE para precios/couvert;
+- añadida lógica por zona y tipo de comida;
+- URL y diseño conservados.
+
+No volver a editar mientras corre el experimento.
 
 ### /blog/barrios-imprescindibles
 

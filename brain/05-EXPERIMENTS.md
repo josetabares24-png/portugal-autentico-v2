@@ -22,6 +22,7 @@ This is the active learning register.
 | E-004 | /blog/estacion-oriente-lisboa | Better match to Gare do Oriente / transport intent should improve clicks at stable visibility | CTR + clicks | OBSERVE | confirmed production deployment + 7 finalized days |
 | E-005 | /blog/arquitectura-manuelina-lisboa | Reorientation to "qué es el estilo manuelino" should broaden/recover relevant query coverage | impressions + query coverage + clicks | OBSERVE | confirmed production deployment + 14 finalized days |
 | E-006 | /blog/donde-tomar-cafe-lisboa | Replacing stale/unsupported coffee claims with verified, intent-aligned content should protect page-1 momentum and improve useful query coverage | position + clicks + query coverage, with CTR protected | RUNNING | production deployment + 14 finalized days |
+| E-007 | /blog/donde-comer-barato-lisboa | Replacing invented local-authority copy with dated, verifiable cheap-eating options should improve relevance for "comer barato" queries and recover page-2 visibility | position + impressions + clicks + query coverage | RUNNING | production deployment + 14 finalized days |
 
 ## Next candidate pool
 
@@ -73,3 +74,31 @@ Editorial debt found before change:
 - no source list.
 
 The experiment preserves the URL and topic while repairing trust and usefulness.
+
+
+## E-007 baseline — dónde comer barato en Lisboa
+
+Pre-change Search Console:
+
+| Window | Clicks | Impressions | CTR | Position |
+|---|---:|---:|---:|---:|
+| 2026-08-26 → 2026-09-22 | 0 | 194 | 0% | 22.72 |
+| 2026-07-29 → 2026-08-25 | 3 | 262 | 1.15% | 18.16 |
+| 2026-09-16 → 2026-09-22 | 0 | 16 | 0% | 19.50 |
+| 2026-09-09 → 2026-09-15 | 0 | 30 | 0% | 22.43 |
+
+90-day page total: 525 impressions / 5 clicks / position 19.55.
+
+Query evidence:
+- "comer barato en lisboa" — 20 impressions / position ~34.8 over 90d.
+- variants around restaurantes baratos / dónde comer bien y barato cluster mostly around positions 33–43.
+- "cuanto cuesta comer en lisboa 2026" appeared with very low volume but position 5.
+
+Editorial debt before change:
+- invented first-person restaurant story;
+- unsupported claim of mapping where locals "really eat";
+- vague authenticity framing;
+- stale prices without source/date;
+- no source list.
+
+The change keeps the URL and intent, but rebuilds the page around dated examples, official consumer-price rules, zone fit and verification.

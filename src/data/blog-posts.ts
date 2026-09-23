@@ -238,10 +238,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'donde-comer-barato-lisboa',
-    titulo: 'Dónde Comer Barato en Lisboa',
-    excerpt: 'Restaurantes económicos reales, tascas auténticas y sitios donde comen los locales (sin turistadas).',
+    titulo: 'Dónde comer barato en Lisboa: tascas y menús revisados en 2026',
+    excerpt: 'Opciones económicas con precios fechados, tascas, menús de almuerzo y una forma práctica de elegir según la zona donde estés.',
     categoria: 'Gastronomía',
     fecha: '8 Feb 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/tasca-da-graca.jpg',
   },
