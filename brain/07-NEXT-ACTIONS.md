@@ -554,3 +554,13 @@ GSC baseline: 0 clicks / 6 impressions / position 18.50 over the 90-day window u
 Batch 3 merged at `9a4c5512`; CI green; production still blocked by Vercel build-rate-limit.
 
 After batch 4, next editorial work should choose between `historia-de-lisboa`, `terremoto-lisboa-1755`, `gastronomia-portuguesa-guia`, `vinos-portugueses-guia` and `bacalhau-plato-portugal`, with source availability and trust risk deciding the order.
+
+
+### Batch 4 merge status
+
+- PR #95 merged at `87161fdf`.
+- TypeScript: SUCCESS.
+- SEO smoke: SUCCESS.
+- Vercel production checks: `build-rate-limit`; do not mark live/DONE yet.
+- Search Console 90d returned no visible rows for the next debt set (`historia-de-lisboa`, `terremoto-lisboa-1755`, `gastronomia-portuguesa-guia`, `vinos-portugueses-guia`, `bacalhau-plato-portugal`, `novedades-lisboa-2026`, `festivales-eventos-lisboa-2026`, `pasteles-de-belem`). This is not proof of zero demand.
+- Next order must be chosen by trust risk + sourceability, not traffic. Start with `historia-de-lisboa` or `terremoto-lisboa-1755` after verifying authoritative historical sources.
