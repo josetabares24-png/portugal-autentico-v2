@@ -482,3 +482,28 @@ Next non-protected editorial candidates after this batch:
 - mouraria-barrio-guia.
 
 Do not choose the next page by risk score alone; combine editorial debt with Search Console signal and seasonality.
+
+
+## P1 — Blog Level 1 batch 2
+
+Reference: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
+
+Current branch: `content/blog-level1-batch2-souvenirs-mouraria-2026-09-23`.
+
+Prepared:
+- `que-comprar-lisboa-souvenirs` — rebuild around provenance, historical shops and the official warning not to buy old tiles of unclear origin;
+- `mouraria-barrio-guia` — rebuild around documented history, cautious fado origin language, contemporary diversity and a practical route.
+
+GSC 90d query returned no visible rows for these two URLs. The reason for this batch is **trust/editorial debt**, not a claim of current SEO demand.
+
+Before merge:
+1. verify 60/60 article objects still resolve;
+2. verify E-006/E-007 unchanged;
+3. TypeScript success;
+4. SEO smoke success;
+5. Preview sanity check.
+
+Production note for batch 1:
+- PR #92 merged at `6318da24`;
+- Vercel production status for that merge is currently build-rate-limit failure;
+- Cascais/Playas remain pending live verification and are not DONE yet.
