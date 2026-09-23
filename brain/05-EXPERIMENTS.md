@@ -102,3 +102,17 @@ Editorial debt before change:
 - no source list.
 
 The change keeps the URL and intent, but rebuilds the page around dated examples, official consumer-price rules, zone fit and verification.
+
+
+## Candidate recheck — 2026-09-23 PM
+
+Fresh Search Console triage stored in:
+[[seo/NEXT-EXPERIMENT-SCORECARD-2026-09-23]].
+
+Important update:
+- vida-nocturna-lisboa is the first **diagnostic** candidate because 90d visibility is already near page 1 with zero clicks;
+- tram-28, Lisboa vs Porto and Chiado all show notable last-7-day position improvement;
+- therefore do not assume they need another edit;
+- airport core exact queries rank materially lower than its page-level average position suggests.
+
+The queue is now an inspection order, not an edit order.
