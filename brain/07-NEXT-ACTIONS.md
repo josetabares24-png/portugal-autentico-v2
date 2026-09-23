@@ -179,10 +179,21 @@ Evidence: [[product/ACTIVITIES-AUDIT-2026-09-23]].
 
 Do not mass-retire activity URLs.
 
-Priority order when capacity opens:
-1. freshness check: cristo-rei / miradouro-senhora-do-monte / fado-en-alfama / cascais-cabo-da-roca;
-2. page-specific diagnosis: elevador-santa-justa;
-3. protect commercial signal: oceanario-lisboa.
+Priority activity pass completed 2026-09-23:
+- cristo-rei verified;
+- miradouro-senhora-do-monte verified;
+- fado-en-alfama editorialized against UNESCO/Museu do Fado;
+- cascais-cabo-da-roca transport updated;
+- elevador-santa-justa current closure/status corrected;
+- oceanario-lisboa price/hours verified and commercial signal protected.
+
+Do not open another broad activity pass now.
+
+Next trigger:
+- material factual change;
+- enough post-deployment Search Console data;
+- enough affiliate destination data;
+- or a page-specific business/SEO threshold.
 
 Do not redesign the Activities hub now.
 

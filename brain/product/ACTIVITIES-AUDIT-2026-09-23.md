@@ -156,3 +156,102 @@ After E-006/E-007 are left untouched:
 3. preserve Oceanário as a commercial page while measuring conversion.
 
 Do not invest in redesigning the Activities hub before individual-page roles are resolved.
+
+
+## FRESHNESS PASS — 2026-09-23
+
+Six priority pages were checked against current public/official sources.
+
+### cristo-rei
+Sources:
+- https://cristorei.pt/contacto/
+- https://cristorei.pt/visitas/bilheteira/
+
+Changes:
+- verified current opening windows;
+- corrected access information to Carris Metropolitana 3001 from Cacilhas;
+- removed unsupported "faster/cheaper" transport claims;
+- added the important ticket rule: terrace/monument access tickets are sold in person.
+
+Decision: KEEP / VERIFIED.
+
+### miradouro-senhora-do-monte
+Sources:
+- https://www.lisboa.pt/pontos-de-interesse/detalhe/miradouro-da-senhora-do-monte
+- https://www.visitlisboa.com/pt-pt/locais/miradouro-da-senhora-do-monte
+
+Changes:
+- removed the unsupported "least crowded" / "locals own it" framing;
+- stored 24-hour opening;
+- kept only views and location supported by city/tourism sources.
+
+Decision: KEEP / VERIFIED.
+
+### fado-en-alfama
+Sources:
+- https://ich.unesco.org/en/RL/fado-urban-popular-song-of-portugal-00563
+- https://www.museudofado.pt/
+
+Changes:
+- removed invented heuristics about what counts as "real" fado;
+- removed universal time/day claims;
+- anchored history in UNESCO and visitor context in Museu do Fado;
+- made price/duration explicitly variable.
+
+Decision: KEEP / EDITORIALIZED.
+
+### cascais-cabo-da-roca
+Sources:
+- https://www.visitcascais.com/en/visitor-information
+- https://carrismetropolitana.pt/stops/171949
+
+Changes:
+- removed stale Scotturb reference;
+- removed stale fixed train-price claim;
+- updated transport language to current Carris Metropolitana lines serving the Cabo da Roca area.
+
+Decision: KEEP / VERIFIED.
+
+### elevador-santa-justa
+Sources:
+- https://www.carris.pt/viaje/alteracoes-de-servico/elevador-sta-justa-miradouro-encerrado/
+- https://equipamentos-historicos.carris.pt/
+
+Changes:
+- replaced the stale 2025 reopening URL;
+- current Carris information says the miradouro is temporarily closed;
+- kept status cautious because the wider equipment-reopening process is still being evaluated;
+- removed queue/time claims that no longer match a closed/uncertain operation.
+
+Decision: KEEP URL / CURRENT STATUS FIRST.
+
+SEO note:
+This page had the largest activity-page Search Console visibility (~175 impressions / 90d) but average position ~19. Do not run a second SEO rewrite immediately; first let factual freshness settle and monitor query behavior.
+
+### oceanario-lisboa
+Source:
+- https://oceanario.pt/planear-visita/
+
+Changes:
+- verified opening 10:00–20:00 and last entry 19:00;
+- updated adult price floor to 25.50 EUR based on current official online information;
+- recorded variable time-slot pricing;
+- recorded current 5% official online-purchase discount;
+- removed unsupported "one of the biggest/best in Europe" claim.
+
+Decision: COMMERCIAL PROTECT / VERIFIED.
+
+Commercial note:
+This remains the strongest activity-detail commercial signal in current GA4 (5 sessions / 3 recorded affiliate_click events in the prior audit). Do not remove its commercial path while measurement matures.
+
+## RESULT
+
+All six priority activity checks are complete.
+
+Next activity work should not be a new mass pass.
+
+Wait for:
+- new Search Console behavior;
+- affiliate destination data;
+- a material factual change;
+- or a specific page crossing a decision threshold.

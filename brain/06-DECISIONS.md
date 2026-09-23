@@ -197,3 +197,21 @@ Direction:
 - eventually, an owned product if demand is demonstrated.
 
 Reference: [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]].
+
+
+## D-020 — Activity freshness beats invented local authority
+**Date:** 2026-09-23  
+**Status:** accepted
+
+For dynamic attraction/activity pages, current operational facts outrank decorative "local" advice.
+
+Priority order:
+1. current official status;
+2. current access/transport;
+3. price/hours where verified;
+4. what the visitor actually needs to decide;
+5. editorial context.
+
+Do not manufacture "the mistake everyone makes", "locals do this", crowd timing or authenticity heuristics unless supported by evidence or documented first-hand experience.
+
+The 2026-09-23 freshness pass on Cristo Rei, Senhora do Monte, Fado, Cascais/Cabo da Roca, Santa Justa and Oceanário is the reference implementation.
