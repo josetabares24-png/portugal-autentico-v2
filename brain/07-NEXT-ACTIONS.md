@@ -240,3 +240,15 @@ Focus first on:
 - GetYourGuide/Tiqets direct-link measurement;
 - partner dashboard reconciliation;
 - newsletter as owned audience.
+
+
+## P2 — commercial copy debt
+
+Reference: [[business/COMMERCIAL-COPY-DEBT]].
+
+Do not repair Free Tours / Comprar Entradas copy during the fresh commercial-measurement baseline unless a claim is clearly false or legally risky.
+
+After enough post-deployment click data exists:
+1. review Free Tours claims;
+2. preserve/replace only one commercial variable at a time;
+3. re-check affiliate clicks + organic CTR where relevant.
