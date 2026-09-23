@@ -259,3 +259,35 @@ Aprendizaje confirmado por José el 2026-09-23:
 - Para carruseles nuevos, reutilizar/copiar una referencia Canva aprobada o usar generación nativa de Canva y luego adaptar, en lugar de importar JPG/PNG finales.
 - Etiquetas internas de producción como “POST 4”, “POST 5”, “VERSIÓN 2”, etc. NO deben aparecer en la pieza pública salvo que José lo pida expresamente.
 - Antes de entregar un Canva, verificar que el usuario pueda editar los textos y elementos principales por separado.
+
+
+## Formato aprobado — Overlay editorial para video
+
+Usar este patrón como referencia para Reels/Shorts de microhistoria y curiosidades de Lisboa cuando el material principal sea video real.
+
+### Estructura visual
+- Video real como base.
+- Logo pequeño arriba izquierda.
+- Hook/titular en Playfair Display o serif editorial aprobada.
+- Texto explicativo en Montserrat o sans aprobada.
+- Crema #F5EFE6 como color principal.
+- Terracota #B8472E para palabras o fechas clave.
+- Degradado oscuro inferior, progresivo y funcional.
+- Texto preferentemente en la zona inferior izquierda, respetando sujeto y composición.
+- Sin caja sólida salvo necesidad excepcional de legibilidad.
+
+### Estructura editorial
+- Hook corto primero.
+- Explicación en una o dos ideas máximas.
+- Cierre con dato útil, fecha, lugar o contexto.
+- Si no puede leerse con comodidad en el tiempo disponible, dividir en bloques temporales.
+- El video y la curiosidad deben seguir siendo protagonistas; el diseño acompaña.
+
+### Test de cierre para video
+Antes de exportar:
+1. ¿Se entiende el hook en menos de 2 segundos?
+2. ¿Puede leerse cada bloque sin correr?
+3. ¿El degradado protege la lectura sin comerse la imagen?
+4. ¿El logo está presente pero no compite?
+5. ¿El video sigue respirando?
+6. ¿Parece Estaba en Lisboa y no una plantilla genérica?
