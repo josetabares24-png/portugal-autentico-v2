@@ -41,11 +41,18 @@ Total observed affiliate clicks in this window: **33**.
 
 ## Change
 
-All direct affiliate-link components we control now send three GA4-standard parameters alongside the existing custom parameters:
+The direct affiliate-link surfaces now send three GA4-standard parameters alongside the existing custom parameters:
 
 - `AffiliateLink` — GuruWalk / Free Tours;
 - `BookingCta` — direct booking CTAs in activity pages;
-- `AttractionTicketLink` — direct ticket links used by calculator/editorial surfaces.
+- `AttractionTicketLink` — direct ticket links used by calculator/editorial surfaces;
+- `BookingCard` — native cards used by `/comprar-entradas` and consent fallbacks.
+
+### Correction discovered 2026-09-23
+
+The first instrumentation pass missed `BookingCard`. That mattered because the current `/comprar-entradas` products are rendered as native cards, so the hub could still emit `affiliate_click` without `link_url`, `link_domain` or `outbound`.
+
+The follow-up fix closes that gap and routes `BookingCard` through the centralized `trackAffiliateClick()` helper.
 
 Parameters:
 
