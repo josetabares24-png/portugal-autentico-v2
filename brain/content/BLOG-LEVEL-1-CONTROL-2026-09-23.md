@@ -96,7 +96,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `errores-turistas-lisboa` | N1 — PROVISIONAL | Alta utilidad práctica y fuentes; proteger. |
 | `pasteles-de-belem` | P1 — DEUDA ALTA | Eliminar mitos/rituales/autoridad local no verificada; ampliar fuentes. |
 | `sintra-desde-lisboa` | PROTEGIDO / N1 PROVISIONAL | Buena utilidad y fuentes oficiales; mantener. |
-| `mejor-epoca-visitar-lisboa` | N1 — REBUILD EN PR | Rebuild 23/09 con normales IPMA 1991–2020, decisiones por clima y sin promesas genéricas de precios/masificación; validar CI/Preview. |
+| `mejor-epoca-visitar-lisboa` | N1 — MERGED / PROD BLOCKED | PR #95 fusionado en `87161fdf`; TypeScript + SEO smoke verdes. Vercel bloqueó producción por `build-rate-limit`; falta verificación live. |
 | `aeropuerto-lisboa-al-centro` | PROTEGIDO / OBSERVE | Candidato SEO; no tocar hasta gate. |
 | `restaurantes-romanticos-lisboa` | N1 — PROVISIONAL | Criterio explícito + fuentes; proteger. |
 | `que-ver-cascais-desde-lisboa` | N1 — MERGED / PROD BLOCKED | PR #92 fusionado en `6318da24`; CI verde. Vercel rechazó el build de producción por `build-rate-limit`; falta verificación live. |
