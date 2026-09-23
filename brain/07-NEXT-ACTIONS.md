@@ -151,3 +151,14 @@ Guardrails:
 - no index/canonical regression;
 - no collapse in impressions;
 - internal continuation clicks should be observed with the new `select_content` tracking.
+
+
+## P2 — internal linking
+
+Baseline: [[seo/INTERNAL-LINK-GRAPH-2026-09-23]].
+
+Do not run a broad internal-link campaign now. Top-demand pages already have multiple relevant sources.
+
+Revisit low-link opportunities only after:
+- recent edits finish observation; and
+- `select_content` shows what users actually follow.

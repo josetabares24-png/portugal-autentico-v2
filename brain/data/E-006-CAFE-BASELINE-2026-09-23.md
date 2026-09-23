@@ -1,6 +1,15 @@
 # E-006 — Dónde tomar café en Lisboa
 
-Date started: **2026-09-23**  
+Date started: **2026-09-23**
+
+## Production deployment
+
+- Main commit: `a60e26157bd284fa5457ed2bb8643f466364e34e`
+- Vercel deployment: `dpl_jdT8UMe6jvdNkiTChXocv2Jo5HQ7`
+- Created: **2026-09-23 10:59 Europe/Lisbon** (09:59:58 UTC)
+- State checked: **READY / production**
+
+This timestamp starts the post-change observation window.  
 Page: `/blog/donde-tomar-cafe-lisboa`
 
 ## HECHOS

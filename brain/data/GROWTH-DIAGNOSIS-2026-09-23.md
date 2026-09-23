@@ -92,3 +92,15 @@ Then decide which CTA deserves global prominence and which legacy CTA should be 
 Do not wait months. Evaluate as soon as one of these is true:
 - 7 finalized days have passed; or
 - a placement reaches at least 30 measured click opportunities/events, whichever gives useful signal first.
+
+
+## Measurement deployment
+
+Internal-journey tracking went to production with:
+
+- Main commit: `2b950855fa1787bb80d257972e35f098c25bc1b5`
+- Vercel deployment: `dpl_DASsJNDY6CDsbCLLFpFSMuN42vSU`
+- Created: **2026-09-23 10:50 Europe/Lisbon** (09:50:56 UTC)
+- State checked: **READY / production**
+
+Do not expect `select_content` events before this point.
