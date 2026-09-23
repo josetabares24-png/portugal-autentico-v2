@@ -453,3 +453,32 @@ Key caution:
 the first four show recent position improvement, so the right decision may be to protect rather than launch another experiment.
 
 No new SEO experiment until finalized post-change evidence is sufficient.
+
+
+## P1 — Blog Level 1 program
+
+Reference: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
+
+Coverage: **60/60 public blog pages classified** with structural object boundaries.
+
+Method warning:
+- do not infer article boundaries from line breaks in `page.tsx`;
+- some article objects are concatenated on the same line;
+- use structural object boundaries / brace balance before declaring cross-article contamination.
+
+Current batch:
+1. `que-ver-cascais-desde-lisboa` — Level 1 rebuild prepared using CP + Visit Cascais.
+2. `playas-cerca-lisboa` — Level 1 rebuild prepared using Visit Cascais, Visit Portugal, Carris Metropolitana, Visit Sintra and Município de Setúbal.
+3. Require TypeScript + SEO smoke + production verification before marking either DONE.
+
+Protected:
+- E-006 and E-007 remain untouched;
+- Barrios/Azulejos and the current next-experiment queue are not rewritten during their observation windows.
+
+Next non-protected editorial candidates after this batch:
+- semana-santa-lisboa;
+- mejor-epoca-visitar-lisboa;
+- que-comprar-lisboa-souvenirs;
+- mouraria-barrio-guia.
+
+Do not choose the next page by risk score alone; combine editorial debt with Search Console signal and seasonality.

@@ -77,6 +77,8 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 
 - [[content/EDITORIAL-DEBT]] — deuda editorial verificada y priorizada por señal SEO.
 
+- [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]] — control 60/60 del estándar Nivel 1, pendientes, protegidas y páginas en rebuild.
+
 - [[seo/INTERNAL-LINK-GRAPH-2026-09-23]] — baseline of article-to-article structure before behavioral click data.
 
 - [[product/PACK-COMPLETO-RETIREMENT-2026-09-23]] — evidence and implementation record for the first completed legacy-route retirement.
