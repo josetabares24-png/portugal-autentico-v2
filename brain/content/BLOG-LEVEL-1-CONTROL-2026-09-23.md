@@ -105,7 +105,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `presupuesto-viajar-lisboa` | N1 — PROVISIONAL / DINÁMICO | Mantener cifras oficiales y revisar por Visitor Impact. |
 | `mejores-mercados-lisboa` | PROTEGIDO / OBSERVE | Candidato SEO; cambio reciente. |
 | `donde-tomar-cafe-lisboa` | E-006 — ACTIVO | No tocar hasta cierre de experimento. |
-| `que-comprar-lisboa-souvenirs` | N1 — REBUILD EN PR | Rebuild 23/09: procedencia, tiendas históricas, conservas y advertencia oficial contra azulejos antiguos; validar CI/Preview. |
+| `que-comprar-lisboa-souvenirs` | N1 — MERGED / PROD BLOCKED | PR #93 fusionado en `c167acc9`; TypeScript + SEO smoke verdes. Vercel bloqueó build por `build-rate-limit`; falta verificación live. |
 | `excursiones-desde-lisboa` | P2 — PENDIENTE | Buen esqueleto; reducir superlativos y fortalecer fuentes por destino. |
 | `historia-de-lisboa` | P1 — DEUDA ALTA | Pilar cultural sin fuentes; reconstruir con bibliografía primaria/fiable. |
 | `terremoto-lisboa-1755` | P1 — DEUDA ALTA | Cifras y cronología sin fuentes; requiere pass histórico serio. |
@@ -115,13 +115,13 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `festivales-eventos-lisboa-2026` | P1 — DEUDA ALTA / TEMPORAL | Calendario sin fuentes; rehacer con agenda oficial. |
 | `lisboa-vs-porto` | PROTEGIDO / OBSERVE | Mejora reciente; no tocar. |
 | `monumentos-de-lisboa` | P2 — DINÁMICO | Ampliar fuentes y Visitor Impact para horarios/precios de 15 monumentos. |
-| `semana-santa-lisboa` | P1 — DEUDA ALTA / ESTACIONAL | 25 imp/90d, pos ~16.64; verificar calendario/procesiones con fuentes oficiales. |
+| `semana-santa-lisboa` | N1 — REBUILD EN PR | Rebuild 23/09: fechas 2027, procesión de Passos corregida como tradición de Cuaresma, programa anual no inventado; validar CI/Preview. |
 | `alfama-historia-guia` | N1 — PROVISIONAL | Útil por ruta/decisión; proteger. |
 | `gastronomia-portuguesa-guia` | P1 — DEUDA ALTA | 0 fuentes + experiencia personal; reconstruir por platos/criterios verificables. |
 | `fado-historia-origen` | N1 — PROVISIONAL | UNESCO/Museu do Fado + buena cautela histórica. |
 | `belem-barrio-guia` | P2 — PENDIENTE | Buen tema; reforzar fuentes y bajar absolutos. |
 | `chiado-bairro-alto-guia` | PROTEGIDO / OBSERVE | Candidato futuro; mejora reciente. |
-| `mouraria-barrio-guia` | N1 — REBUILD EN PR | Rebuild 23/09: historia 1147, fado como origen discutido, diversidad actual y ruta práctica; validar CI/Preview. |
+| `mouraria-barrio-guia` | N1 — MERGED / PROD BLOCKED | PR #93 fusionado en `c167acc9`; TypeScript + SEO smoke verdes. Vercel bloqueó build por `build-rate-limit`; falta verificación live. Deuda visual: no hay hero propio de Mouraria verificado en el repo. |
 | `vinos-portugueses-guia` | P1 — DEUDA ALTA | 0 fuentes y generalizaciones; rehacer como guía de elección. |
 | `tram-28-historia-guia` | PROTEGIDO / OBSERVE | Candidato SEO; no tocar durante mejora reciente. |
 | `bacalhau-plato-portugal` | P1 — DEUDA ALTA | Historia y cifras sin fuentes; reconstruir con contexto y decisión culinaria. |
@@ -130,12 +130,13 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 ## Orden operativo
 
 1. Verificar en producción **Cascais + Playas** cuando Vercel acepte el build de `main`.
-2. Terminar y validar **Souvenirs + Mouraria**.
-3. No tocar E-006/E-007.
-4. No reescribir Barrios, Azulejos, Vida nocturna, Tram 28, Lisboa vs Porto, Chiado o Aeropuerto mientras sus ventanas estén contaminadas por cambios recientes.
-5. Siguiente P1 no protegido: **Semana Santa** o **Mejor época**, escogiendo por señal/estacionalidad al abrir el siguiente lote.
-6. Después: **Historia, Terremoto, Gastronomía, Vinos, Bacalhau, Novedades y Festivales**.
-7. **Descubrimientos** recibe solo source pass quirúrgico mientras siga en page 1.
+2. Verificar en producción **Souvenirs + Mouraria** cuando Vercel acepte el build de `main`.
+3. Terminar y validar **Semana Santa 2027**.
+4. No tocar E-006/E-007.
+5. No reescribir Barrios, Azulejos, Vida nocturna, Tram 28, Lisboa vs Porto, Chiado o Aeropuerto mientras sus ventanas estén contaminadas por cambios recientes.
+6. Siguiente P1 no protegido después de Semana Santa: **Mejor época**.
+7. Después: **Historia, Terremoto, Gastronomía, Vinos, Bacalhau, Novedades y Festivales**.
+8. **Descubrimientos** recibe solo source pass quirúrgico mientras siga en page 1.
 
 ## Regla de cierre
 
@@ -166,3 +167,13 @@ DONE requiere:
 - convierte la pieza en una ruta de decisión y contexto.
 
 Baseline GSC 2026-06-25 → 2026-09-22: la consulta por ambas URLs no devolvió filas visibles. Esto no demuestra demanda cero; significa que el lote se prioriza por riesgo de confianza/deuda editorial, no por señal SEO alta.
+
+
+## Batch 3 — Semana Santa 2027 — 2026-09-23
+
+- Corrige el error de presentar la Procissão do Senhor dos Passos da Graça como acto de Domingo de Ramos: la fuente municipal/Revelar Lisboa la sitúa tradicionalmente en el segundo domingo de Cuaresma.
+- Separa fechas litúrgicas conocidas de programación local anual aún no publicada.
+- Elimina afirmaciones no demostradas sobre rutas de otras procesiones, porcentajes de alojamiento y supuesta superioridad espiritual de Lisboa.
+- Mantiene el contenido evergreen con un trigger de revisión para febrero de 2027.
+- GSC 90d: 25 impresiones / 1 clic / posición media 16,64.
+- Deuda visual pendiente: la portada actual es una calle nocturna de Bairro Alto, no una imagen específica de Semana Santa; no se falsea el alt y se debe sustituir cuando exista una foto pertinente y verificable.
