@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
 import type { ArticleLink } from './article-types';
 
 export function ArticleEditorialLinks({ links }: { links: ArticleLink[] }) {
@@ -10,9 +11,14 @@ export function ArticleEditorialLinks({ links }: { links: ArticleLink[] }) {
       <ul className="space-y-2">
         {links.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="underline underline-offset-4 break-words">
+            <TrackedInternalLink
+              href={link.href}
+              contentType="article_editorial_link"
+              contentId={link.href}
+              className="underline underline-offset-4 break-words"
+            >
               {link.label}
-            </Link>
+            </TrackedInternalLink>
           </li>
         ))}
       </ul>
