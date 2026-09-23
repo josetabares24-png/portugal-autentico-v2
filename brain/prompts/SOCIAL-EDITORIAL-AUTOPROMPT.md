@@ -217,3 +217,27 @@ Antes de ejecutar:
 5. ¿El degradado sigue perteneciendo a la misma familia visual?
 6. ¿Estoy haciendo un microajuste o rediseñando?
 7. ¿Se ve más editorial y menos “plantilla”?
+
+
+## Referencias visuales canónicas en Canva
+
+Antes de diseñar una pieza nueva o ajustar una pieza existente, recuperar visualmente estos diseños de Canva. Son anclas reales de identidad y tienen prioridad sobre reinterpretaciones libres:
+
+### Primeros carruseles — referencia primaria
+1. **01 — El eléctrico de Lisboa** — Canva ID: `DAHV7NqCVQc`
+2. **02 — Errores al visitar Lisboa** — Canva ID: `DAHV7NFSBS0`
+3. **03 — Aeropuerto de Lisboa al centro** — Canva ID: `DAHV7XHPlkA`
+4. **04 — Lisboa Card** — Canva ID: `DAHV7ZTbM_s`
+5. **05 — Terremoto de Lisboa 1755** — Canva ID: `DAHV7S3ovNk`
+
+### Referencia editorial evolucionada
+- **Navegante — FINAL editorial 2026** — Canva ID: `DAHV8S_Vb14`
+
+### Regla
+No confiar únicamente en una descripción textual de la marca cuando estos diseños están disponibles. Antes de una ejecución importante:
+1. abrir las referencias;
+2. comparar tipografía, jerarquía, márgenes, degradado, ritmo y uso del logo;
+3. identificar qué rasgos son consistentes;
+4. preservar esos rasgos en la nueva pieza.
+
+Los primeros carruseles son la referencia principal para la sensación tipográfica y la familia visual social.
