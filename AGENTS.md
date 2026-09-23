@@ -40,3 +40,15 @@ Si una propuesta contradice una decisión LOCKED, señala el conflicto y argumen
 Para revisiones importantes usar:
 
 DIAGNÓSTICO → EVIDENCIA → OPORTUNIDAD → PROPUESTA → RAZÓN → IMPACTO ESPERADO → ESFUERZO → RIESGO → PRUEBA → DECISIÓN → SIGUIENTE ACCIÓN.
+
+
+## GitHub + memory writeback
+
+A meaningful task is not complete until the repository memory is updated.
+
+After a material change:
+- write the baseline/diagnosis/learning to `brain/`;
+- update experiments or decisions when applicable;
+- keep the code change and memory change in the same PR when practical.
+
+Do not leave important reasoning only in chat.
