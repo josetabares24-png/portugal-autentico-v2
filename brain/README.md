@@ -94,3 +94,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[business/COMMERCIAL-ASSET-INVENTORY]] — qué activos/proveedores están realmente operativos y cuáles no.
 
 - [[business/COMMERCIAL-COPY-DEBT]] — claims comerciales a revisar sin contaminar baselines activos.
+
+- [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]] — direct Lisbon and European city-guide benchmark with product opportunities.

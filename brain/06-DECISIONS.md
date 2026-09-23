@@ -175,3 +175,25 @@ Provider priority, revenue expectations, commission claims and placement strateg
 Current commercial exception with the clearest owned signal: Free Tours.
 
 Reference: `brain/business/AFFILIATE-STRATEGY.md`.
+
+
+## D-019 — Compete on useful current knowledge, not catalogue size
+**Date:** 2026-09-23  
+**Status:** accepted
+
+European/direct competitor benchmarking shows that Estaba en Lisboa should not compete by:
+- publishing the most pages;
+- building the biggest attraction catalogue;
+- claiming more "hidden gems";
+- copying ticket marketplaces;
+- imitating high-volume city-news networks.
+
+Direction:
+- factual freshness;
+- decision-useful editorial depth;
+- neighbourhood understanding;
+- recognisable human authorship;
+- owned audience;
+- eventually, an owned product if demand is demonstrated.
+
+Reference: [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]].
