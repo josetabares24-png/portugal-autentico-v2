@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
-import { validateEmail, createErrorResponse, sendBrevoEmail, addBrevoContact } from '@/lib/api-utils';
+import { validateEmail, createErrorResponse, sendBrevoEmail } from '@/lib/api-utils';
 
 export async function POST(request: NextRequest) {
   const identifier = getRequestIdentifier(request);
@@ -89,20 +89,6 @@ export async function POST(request: NextRequest) {
         logger.warn('[Planifica] Error enviando confirmación al usuario:', confirmationResult.error);
       }
 
-      await addBrevoContact({
-        email,
-        name: nombre,
-        attributes: {
-          FUENTE: 'planifica-tu-viaje',
-          FECHAS: fechas || '',
-          DIAS: String(dias || ''),
-          PERSONAS: String(personas || ''),
-          RITMO: ritmo || '',
-          PRESUPUESTO: presupuesto || '',
-          INTERESES: intereses || '',
-        },
-        listIds: [5],
-      });
     }
 
     if (!notificationSent && !confirmationSent) {

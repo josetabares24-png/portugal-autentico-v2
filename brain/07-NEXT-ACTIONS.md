@@ -198,3 +198,18 @@ After deployment:
 - verify the external Brevo subscription template if production uses `BREVO_SUBSCRIPTION_TEMPLATE_ID`.
 
 Do not add more newsletter placements until the existing one proves it can capture subscribers.
+
+
+## P1 — plan lead / newsletter separation
+
+Evidence: [[privacy/PLAN-LEAD-SEPARATION-2026-09-23]].
+
+Completed in code:
+- plan requests no longer join newsletter list 5 automatically.
+
+Pending external audit:
+- inspect Brevo contacts previously tagged/source-linked to `planifica-tu-viaje`;
+- do not assume they consented to newsletter marketing;
+- verify the external Brevo subscription template separately.
+
+Do not add a newsletter checkbox to Planifica unless there is a real reason to grow that list from this funnel and the consent is explicit.

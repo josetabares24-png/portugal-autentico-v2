@@ -61,3 +61,19 @@ Todo cambio importante de producto, SEO, contenido, arquitectura, medición o ne
 El trabajo no se considera terminado si solo existe en el chat o en código sin memoria operativa.
 
 Cambios triviales de texto o correcciones menores pueden agruparse, pero las decisiones que afecten rumbo deben quedar registradas.
+
+
+## L-007 — Service leads are not newsletter subscribers
+**Estado:** LOCKED  
+**Fecha:** 2026-09-23
+
+Enviar un formulario de contacto, pedir un presupuesto o solicitar un plan personalizado no autoriza por sí solo a añadir ese email a la newsletter.
+
+Marketing y prestación/respuesta del servicio son finalidades separadas.
+
+Si en el futuro queremos ofrecer newsletter dentro de un formulario de servicio:
+- debe existir una opción separada, clara y voluntaria;
+- no puede venir marcada por defecto;
+- el sistema debe poder demostrar qué consentimiento se obtuvo y en qué contexto.
+
+Nunca reutilizar silenciosamente una lista transaccional o de leads como lista de marketing.
