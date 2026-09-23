@@ -369,20 +369,32 @@ Operational rule:
 - do not relax assertions to hide a regression.
 
 
-## P0 — deploy validated main after Vercel rate limit
+## P0 — post-deploy measurement boundary
 
 Reference: [[data/WEB-AUDIT-2026-09-23-PM]].
 
-Latest validated GitHub main contains:
-- BookingCard affiliate standard dimensions;
-- 70 contextual article links tracked as `article_inline_link`;
-- Free Tours nav active-state normalization;
-- automated SEO smoke gate.
+Latest validated main is now live in production:
+- production deployment: `dpl_9XAUsoLKD33AGFHWnfB1h3hcuNZg`;
+- production commit/tree boundary: `cc4e1c5cc279e3c5c4d9545ae226bdf6e659d939`;
+- state: READY.
 
-Production is temporarily behind because Vercel rejected builds with `build-rate-limit`.
+Now collect post-deployment evidence for:
+1. BookingCard `affiliate_click` standard dimensions;
+2. contextual article `select_content/article_inline_link`;
+3. Free Tours navigation active state in real-browser verification when available.
 
-Next deployment action:
-1. deploy latest main when Vercel allows it;
-2. verify the three runtime behaviors above;
-3. record production SHA/time;
-4. only then treat those measurement improvements as live.
+Do not change CTA density or protected SEO pages while these baselines form.
+
+## P1 — GuruWalk MCP runtime validation
+
+PR #79 remains open.
+
+Current state:
+- server-side client prepared;
+- TypeScript passed;
+- Preview secret configured by the user;
+- Preview retried after production recovery;
+- Vercel still rejected the Preview with `build-rate-limit`.
+
+Next action:
+retry Preview later; once READY, validate Lisbon discovery, availability and affiliate attribution before any merge.
