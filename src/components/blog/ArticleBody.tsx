@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
 import type {
   Article,
   ArticleExtras,
@@ -172,9 +172,14 @@ export function ArticleBody({
             return (
               <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
                 {bloque.texto ? <p>{bloque.texto}</p> : null}
-                <Link href={bloque.href} className="article-inline-cta-link">
+                <TrackedInternalLink
+                  href={bloque.href}
+                  contentType="article_inline_link"
+                  contentId={bloque.href}
+                  className="article-inline-cta-link"
+                >
                   {bloque.label} →
-                </Link>
+                </TrackedInternalLink>
               </aside>
             );
           }

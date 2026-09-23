@@ -14,6 +14,7 @@ Instrument the important internal decisions with GA4 `select_content`:
 - article footer → Planifica tu viaje
 - article → related article
 - article → editorial link
+- article body → contextual inline link (`article_inline_link`)
 
 Baseline evidence and diagnosis: [[data/GROWTH-DIAGNOSIS-2026-09-23]].
 
