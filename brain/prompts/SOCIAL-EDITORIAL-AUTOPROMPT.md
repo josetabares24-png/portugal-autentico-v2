@@ -161,3 +161,59 @@ Cómo quedaría después de esos cambios.
 
 **APROBACIÓN**
 No ejecutar hasta recibir el visto bueno.
+
+
+## Refinamiento de acabado — versión Portugal
+
+Aprendizajes de la versión que mejor funciona hasta ahora:
+
+### Conservación
+- Mantener la estructura actual si ya funciona: logo arriba izquierda, fecha arriba derecha, foto dominante, degradado oscuro inferior, kicker, titular, datos y web.
+- No introducir nuevas líneas, marcos, iconos o bloques si no resuelven un problema real.
+- No alterar la familia tipográfica aprobada: serif editorial tipo Playfair/Bodoni/Didot para titulares y Montserrat o equivalente para información.
+- No sustituir el degradado; solo afinarlo.
+
+### Logo
+- En la ejecución final de Canva, usar el activo real de GitHub (`public/logo.svg` o `public/logo.png`).
+- No reconstruir el logo con IA ni reescribirlo manualmente si el activo oficial está disponible.
+- Si el logo se adapta a fondo fotográfico, preservar proporciones y forma; cualquier recolor debe ser una adaptación consciente y consistente.
+- El logo debe actuar como masthead y no competir con el titular.
+
+### Foto
+- No generar ni recrear la fotografía para la versión final.
+- Usar el archivo real seleccionado por José.
+- Evitar zoom excesivo; hacer crop mínimo y preservar bandera, bufanda y contexto de la multitud.
+- Antes de recortar, comprobar qué información narrativa se pierde.
+
+### Degradado
+- El degradado oscuro es un recurso de marca en piezas editoriales con foto.
+- Preferir negro o azul noche muy oscuro a transiciones decorativas.
+- Debe empezar de forma progresiva, sin parecer un bloque pegado.
+- La transición debe proteger caras y fotografía antes de oscurecer por completo la zona de texto.
+
+### Jerarquía
+- Titular primero; datos después.
+- Evitar que el masthead compita en escala con el titular.
+- Kicker y fecha son secundarios.
+- Sitio web: muy discreto; eliminarlo si empieza a parecer un tercer nivel de marca o ensucia el cierre.
+- No añadir información si ya está en caption y no mejora el valor de guardado del post.
+
+### Calidad final Canva
+La imagen generada por IA puede servir como moodboard/composición, pero NO como arte final cuando:
+- contiene texto;
+- contiene el logo;
+- recrea rostros o fotografía real;
+- altera la identidad tipográfica.
+
+La ejecución final debe preferir:
+FOTO ORIGINAL + LOGO ORIGINAL + TEXTOS EDITABLES + DEGRADADO/FORMAS NATIVAS EN CANVA.
+
+### Test de cierre
+Antes de ejecutar:
+1. ¿Estoy preservando lo que ya funciona?
+2. ¿El logo es el oficial?
+3. ¿La foto sigue siendo la original?
+4. ¿La tipografía sigue siendo la aprobada?
+5. ¿El degradado sigue perteneciendo a la misma familia visual?
+6. ¿Estoy haciendo un microajuste o rediseñando?
+7. ¿Se ve más editorial y menos “plantilla”?
