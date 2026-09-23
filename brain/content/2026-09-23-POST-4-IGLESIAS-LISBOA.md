@@ -77,3 +77,14 @@ Trabajo de generación nativa lanzado en Canva con job:
 `a2534858-5a4f-4257-b2c6-696d16097660`.
 
 No marcar una nueva versión como final hasta verificar que sus elementos sean editables.
+
+
+## Estado Canva editable — plantilla El eléctrico
+
+- Diseño editable actual: `DAHWCGPHeic`
+- Base visual: copia del carrusel aprobado `DAHV7NqCVQc` (“El eléctrico de Lisboa”).
+- Decisión de José: conservar esta estructura visual porque le gusta.
+- Cambio aplicado y guardado: textos adaptados al carrusel de 4 iglesias.
+- Fotos: se mantienen temporalmente las del carrusel del eléctrico.
+- Próximo paso: sustituir SOLO las fotos, sin rediseñar tipografías, degradado, logo, márgenes ni estructura.
+- No tocar el diseño original del eléctrico.
