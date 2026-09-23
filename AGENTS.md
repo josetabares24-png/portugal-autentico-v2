@@ -52,3 +52,10 @@ After a material change:
 - keep the code change and memory change in the same PR when practical.
 
 Do not leave important reasoning only in chat.
+
+
+## Deprecated commercial docs
+
+`GUIA-AFILIADOS.md` is historical only. Do not use its projections, provider rankings, commission claims or placement tactics as current strategy.
+
+Use `brain/business/AFFILIATE-STRATEGY.md` and live partner/data evidence instead.

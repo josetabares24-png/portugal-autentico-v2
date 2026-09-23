@@ -88,3 +88,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[privacy/PLAN-LEAD-SEPARATION-2026-09-23]] — separation of personalized-plan leads from newsletter marketing.
 
 - [[business/AFFILIATE-MEASUREMENT-2026-09-23]] — commercial click observability baseline and standard GA4 fallback dimensions.
+
+- [[business/AFFILIATE-STRATEGY]] — estrategia comercial vigente para afiliación.

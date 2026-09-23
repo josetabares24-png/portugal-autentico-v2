@@ -159,3 +159,19 @@ Reason:
 Transactional notification/confirmation email remains unchanged.
 
 Historical contacts previously added to list 5 with source `planifica-tu-viaje` require a separate Brevo-side audit before using the list for marketing.
+
+
+## D-014 — Affiliate strategy must use owned evidence
+**Date:** 2026-09-23  
+**Status:** accepted
+
+The old root `GUIA-AFILIADOS.md` is deprecated as an operating strategy.
+
+Provider priority, revenue expectations, commission claims and placement strategy must be based on:
+- current partner documentation;
+- our own click/conversion data;
+- product fit.
+
+Current commercial exception with the clearest owned signal: Free Tours.
+
+Reference: `brain/business/AFFILIATE-STRATEGY.md`.
