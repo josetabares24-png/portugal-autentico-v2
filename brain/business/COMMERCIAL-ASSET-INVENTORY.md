@@ -154,3 +154,17 @@ Current partner roles:
 - Tiqets → exact attraction tickets/passes where the product fit is strong.
 
 Provider selection is placement/product-specific, not site-wide.
+
+
+### GuruWalk MCP
+
+Estado: **CAPACIDAD DISPONIBLE / NO DESPLEGADA COMO PRODUCTO**
+
+Official affiliate MCP exists for destination discovery, category browsing and tour availability.
+
+Secret rule:
+- API key must remain server-side;
+- never store it in GitHub/Mente Lisboa;
+- recommended Vercel variable: `GURUWALK_MCP_API_KEY`.
+
+Reference: [[GURUWALK-MCP-2026-09-23]].
