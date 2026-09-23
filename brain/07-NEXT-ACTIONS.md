@@ -367,3 +367,22 @@ Operational rule:
 - TypeScript success alone is not enough for SEO-critical changes;
 - require the SEO smoke workflow when its path filter applies;
 - do not relax assertions to hide a regression.
+
+
+## P0 — deploy validated main after Vercel rate limit
+
+Reference: [[data/WEB-AUDIT-2026-09-23-PM]].
+
+Latest validated GitHub main contains:
+- BookingCard affiliate standard dimensions;
+- 70 contextual article links tracked as `article_inline_link`;
+- Free Tours nav active-state normalization;
+- automated SEO smoke gate.
+
+Production is temporarily behind because Vercel rejected builds with `build-rate-limit`.
+
+Next deployment action:
+1. deploy latest main when Vercel allows it;
+2. verify the three runtime behaviors above;
+3. record production SHA/time;
+4. only then treat those measurement improvements as live.
