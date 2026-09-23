@@ -115,7 +115,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `festivales-eventos-lisboa-2026` | P1 — DEUDA ALTA / TEMPORAL | Calendario sin fuentes; rehacer con agenda oficial. |
 | `lisboa-vs-porto` | PROTEGIDO / OBSERVE | Mejora reciente; no tocar. |
 | `monumentos-de-lisboa` | P2 — DINÁMICO | Ampliar fuentes y Visitor Impact para horarios/precios de 15 monumentos. |
-| `semana-santa-lisboa` | N1 — REBUILD EN PR | Rebuild 23/09: fechas 2027, procesión de Passos corregida como tradición de Cuaresma, programa anual no inventado; validar CI/Preview. |
+| `semana-santa-lisboa` | N1 — MERGED / PROD BLOCKED | PR #94 fusionado en `9a4c5512`; TypeScript + SEO smoke verdes y Preview 200. Vercel rechazó build de producción por `build-rate-limit`; falta verificación live. |
 | `alfama-historia-guia` | N1 — PROVISIONAL | Útil por ruta/decisión; proteger. |
 | `gastronomia-portuguesa-guia` | P1 — DEUDA ALTA | 0 fuentes + experiencia personal; reconstruir por platos/criterios verificables. |
 | `fado-historia-origen` | N1 — PROVISIONAL | UNESCO/Museu do Fado + buena cautela histórica. |
