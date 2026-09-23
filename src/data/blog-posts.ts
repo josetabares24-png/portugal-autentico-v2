@@ -80,6 +80,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Rossio, Rua Augusta, Praça do Comércio y Santa Justa en una ruta lógica por la parte más fácil de caminar del centro histórico.',
     categoria: 'Guías',
     fecha: '21 Sep 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/lisboa-originales/baixa-pombalina-lisboa-02.webp',
   },
