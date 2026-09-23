@@ -538,3 +538,19 @@ After batch 3, next non-protected high-debt candidate: `mejor-epoca-visitar-lisb
 - Preview content deployment returned HTTP 200 with the new canonical/title/content.
 - Production build for the merge is blocked by Vercel `build-rate-limit`; do not mark Semana Santa live/DONE until a READY production deployment contains this merge or a descendant.
 - Next non-protected candidate: `mejor-epoca-visitar-lisboa`.
+
+
+## P1 — Blog Level 1 batch 4 — Mejor época
+
+Current branch: `content/blog-level1-batch4-mejor-epoca-2026-09-23`.
+
+Prepared:
+- `mejor-epoca-visitar-lisboa` — rebuilt with IPMA 1991–2020 normals and decision-oriented seasonal guidance;
+- removes invented/unsupported claims about empty museums, one-hour tram queues, fixed winter savings and guaranteed short showers;
+- separates climate normals from short-term forecasts and real booking prices.
+
+GSC baseline: 0 clicks / 6 impressions / position 18.50 over the 90-day window used by the Level 1 audit.
+
+Batch 3 merged at `9a4c5512`; CI green; production still blocked by Vercel build-rate-limit.
+
+After batch 4, next editorial work should choose between `historia-de-lisboa`, `terremoto-lisboa-1755`, `gastronomia-portuguesa-guia`, `vinos-portugueses-guia` and `bacalhau-plato-portugal`, with source availability and trust risk deciding the order.

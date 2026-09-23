@@ -297,10 +297,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'mejor-epoca-visitar-lisboa',
-    titulo: 'Cuál es la Mejor Época para Visitar Lisboa',
-    excerpt: 'Clima mes a mes, precios reales y eventos para elegir cuándo viajar según tu estilo.',
+    titulo: 'Mejor época para visitar Lisboa: clima y qué cambia cada mes',
+    excerpt: 'Cuándo viajar a Lisboa según temperaturas, lluvia, playa, caminatas y eventos, usando las normales climáticas oficiales del IPMA.',
     categoria: 'Planificación',
     fecha: '20 Ene 2026',
+    dateModified: '2026-09-23',
     autor: 'José Tabares',
     imagen: '/images/miradouro-atardecer.jpg',
   },
