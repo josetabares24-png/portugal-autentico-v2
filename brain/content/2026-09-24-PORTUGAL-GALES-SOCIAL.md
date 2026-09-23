@@ -119,3 +119,30 @@ Metro: Campo Grande
 - Decisión final: portada editorial con fotografía dominante, titular “Portugal juega en Lisboa.”, terracota solo en “Lisboa.”, información práctica del partido y acceso por Campo Grande.
 - Esta versión sustituye la ejecución Canva anterior basada en la foto del estadio.
 - Arte final preservado como una composición única para evitar reinterpretaciones automáticas del texto o de la fotografía.
+
+
+## Corrección de identidad visual — FINAL APROBABLE
+
+La ejecución anterior se consideró incorrecta porque no respetó las reglas sociales más específicas de la marca.
+
+### Reglas recuperadas y aplicadas
+- Logo vigente: composición editorial “estaba en” + “Lisboa.” con punto naranja.
+- Foto real dominante; no sustituirla por recreación IA.
+- Composición editorial/periodística.
+- Serif grande sin cursiva recurrente.
+- Sans limpia para información práctica.
+- Degradado oscuro controlado, no decorativo.
+- Márgenes seguros.
+- Logo pequeño.
+- Terracota como acento, no como decoración general.
+- Un solo lenguaje visual; evitar look de plantilla deportiva o Canva genérico.
+- No repetir una fórmula “foto + degradado + texto” como sistema universal; esta pieza la usa solo porque el contenido lo justifica.
+
+### Canva correcto
+- Design ID: DAHWBSwhLJo
+- Tamaño: 1080 × 1350
+- Edit URL: https://www.canva.com/d/p8n6TiAEZnRmqfG
+- View URL: https://www.canva.com/d/ik-jdpKXRlcS1DO
+- Imagen: foto original aportada por José, sin recreación IA.
+- Estado: versión correcta para revisión final.
+- Las versiones DAHWBUoUAF4 y DAHWBZ1x9Ws NO deben usarse como referencia de identidad.
