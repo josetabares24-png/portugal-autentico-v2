@@ -107,7 +107,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `donde-tomar-cafe-lisboa` | E-006 — ACTIVO | No tocar hasta cierre de experimento. |
 | `que-comprar-lisboa-souvenirs` | N1 — MERGED / PROD BLOCKED | PR #93 fusionado en `c167acc9`; TypeScript + SEO smoke verdes. Vercel bloqueó build por `build-rate-limit`; falta verificación live. |
 | `excursiones-desde-lisboa` | P2 — PENDIENTE | Buen esqueleto; reducir superlativos y fortalecer fuentes por destino. |
-| `historia-de-lisboa` | N1 — PREPARED / BATCH 5 | Reconstruida con fuentes municipales, cautela arqueológica, contexto de 1147/1755/25 de Abril y lectura práctica por capas. Pendiente CI + Preview + merge + producción. |
+| `historia-de-lisboa` | N1 — MERGED / PROD BLOCKED | PR #96 fusionado en `28cecc7c`; TypeScript + SEO smoke verdes. Vercel bloqueó Preview/producción por `build-rate-limit`; falta verificación live. |
 | `terremoto-lisboa-1755` | P1 — DEUDA ALTA | Cifras y cronología sin fuentes; requiere pass histórico serio. |
 | `descubrimientos-portugueses-lisboa` | PAGE 1 — SOURCE PASS ONLY | 100 imp/90d, pos ~7.86. No reescribir; añadir fuentes y corregir absolutos quirúrgicamente. |
 | `azulejos-portugueses-historia` | PROTEGIDO / SOURCE PASS FUTURO | 95 imp/90d, pos ~9.88 y cambio reciente; esperar ventana. |
@@ -212,3 +212,15 @@ Antes de DONE:
 4. merge;
 5. producción READY que contenga el merge;
 6. verificación live.
+
+
+### Batch 5 merge status
+
+- PR #96 merged at `28cecc7c0895bd95e90cf9d20b855c6117adbf2c`.
+- TypeScript: SUCCESS.
+- SEO smoke: SUCCESS.
+- Structural check: 60/60 public article objects resolve.
+- E-006 and E-007: unchanged.
+- Vercel Preview and production checks: blocked by `build-rate-limit`.
+- Do not mark `historia-de-lisboa` DONE/live until a READY production deployment contains `28cecc7c` or a descendant and the public page is verified.
+- Next editorial candidate: `terremoto-lisboa-1755`.
