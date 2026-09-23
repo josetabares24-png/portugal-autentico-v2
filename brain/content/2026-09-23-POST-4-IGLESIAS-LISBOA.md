@@ -1,6 +1,6 @@
 # POST 4 — 4 iglesias de Lisboa que vale la pena ver por dentro
 
-**Estado:** CREADO EN CANVA · dirección visual aprobada por José
+**Estado:** EN REGENERACIÓN NATIVA EN CANVA · dirección visual aprobada por José
 **Fecha:** 2026-09-23
 **Canva design ID:** `DAHWCM4xreQ`
 **Edit URL:** https://www.canva.com/d/ukxq_lQ1Ycsh7ze
@@ -59,3 +59,21 @@ La versión en Canva preserva exactamente las cinco piezas visuales aprobadas en
 **diagnóstico → propuesta → aprobación → ejecución → microajustes**.
 
 No reinterpretar el sistema visual completo durante correcciones.
+
+
+## Corrección de producción — 2026-09-23
+
+La primera versión Canva `DAHWCM4xreQ` fue una importación de páginas aplanadas y queda **DEPRECADA como arte final**.
+
+Nueva regla aplicada:
+- generar nativamente dentro de Canva;
+- textos y elementos principales editables;
+- referencia visual: `DAHV7NqCVQc` (El eléctrico de Lisboa);
+- Brand Kit: `kAGc87FjZCw`;
+- sin etiqueta pública “POST 4”;
+- memoria GitHub MENTE LISBOA + SOCIAL-EDITORIAL-AUTOPROMPT como autoridad.
+
+Trabajo de generación nativa lanzado en Canva con job:
+`a2534858-5a4f-4257-b2c6-696d16097660`.
+
+No marcar una nueva versión como final hasta verificar que sus elementos sean editables.
