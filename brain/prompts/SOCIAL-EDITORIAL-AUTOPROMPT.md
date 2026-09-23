@@ -241,3 +241,21 @@ No confiar únicamente en una descripción textual de la marca cuando estos dise
 4. preservar esos rasgos en la nueva pieza.
 
 Los primeros carruseles son la referencia principal para la sensación tipográfica y la familia visual social.
+
+
+## Regla LOCKED — Canva nativo y editable
+
+Aprendizaje confirmado por José el 2026-09-23:
+
+- Cuando José pida crear una pieza **en Canva**, el arte final debe construirse/generarse dentro de Canva con elementos editables.
+- NO considerar final una importación donde cada página sea una imagen completa aplanada.
+- Una imagen generada fuera de Canva puede servir como **moodboard/referencia visual**, pero no debe sustituir la construcción editable final.
+- Priorizar siempre:
+  1. diseño o carrusel aprobado de Canva como referencia/template;
+  2. texto nativo editable;
+  3. imágenes/fills reemplazables;
+  4. logo nativo/asset oficial;
+  5. páginas separadas y editables.
+- Para carruseles nuevos, reutilizar/copiar una referencia Canva aprobada o usar generación nativa de Canva y luego adaptar, en lugar de importar JPG/PNG finales.
+- Etiquetas internas de producción como “POST 4”, “POST 5”, “VERSIÓN 2”, etc. NO deben aparecer en la pieza pública salvo que José lo pida expresamente.
+- Antes de entregar un Canva, verificar que el usuario pueda editar los textos y elementos principales por separado.
