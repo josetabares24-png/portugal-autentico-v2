@@ -227,3 +227,16 @@ Next check:
 - then segment Free Tours by UTM campaign/content before changing commercial prominence.
 
 Do not change Free Tours layout or CTA density while this baseline is being established.
+
+
+## P2 — commercial asset discipline
+
+Reference: [[business/COMMERCIAL-ASSET-INVENTORY]].
+
+Do not add Booking/Civitatis work to the priority queue unless current account status + product fit are verified.
+
+Focus first on:
+- GuruWalk signal;
+- GetYourGuide/Tiqets direct-link measurement;
+- partner dashboard reconciliation;
+- newsletter as owned audience.
