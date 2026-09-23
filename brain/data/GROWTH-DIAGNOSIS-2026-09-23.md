@@ -104,3 +104,23 @@ Internal-journey tracking went to production with:
 - State checked: **READY / production**
 
 Do not expect `select_content` events before this point.
+
+
+### Inline editorial-link coverage — audit 2026-09-23
+
+A code audit found **70** contextual `tipo: 'enlace'` blocks inside article bodies.
+
+These are different from:
+- the footer CTA;
+- the “Relacionadas” cards;
+- the “También te puede servir” block.
+
+Before the follow-up fix, those 70 inline links used plain Next.js `Link` and therefore did **not** emit `select_content`.
+
+Decision:
+- instrument them as `content_type = article_inline_link`;
+- use the destination path as `content_id`;
+- keep their copy, href and visual treatment unchanged.
+
+Reason:
+Contextual in-body recommendations are likely one of the strongest forms of editorial continuation. Leaving them invisible would bias the internal-journey baseline toward the more prominent modules.
