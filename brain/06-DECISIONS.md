@@ -115,3 +115,17 @@ Evidence:
 - only one confirmed internal entry point from `/itinerarios`.
 
 The old URL remains resolvable through a permanent redirect; it is removed from the sitemap and from direct internal linking.
+
+
+## D-015 — Activities require selective treatment
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Do not mass-retire, mass-noindex or mass-redirect the 20 activity-detail URLs.
+
+Reason:
+- exact-query overlap with blog pages is minimal in current Search Console data;
+- several activity pages have independent page-1/page-2 signals;
+- Oceanário has a measurable affiliate-click signal.
+
+The `/actividades` hub remains demoted, but individual URLs are reviewed selectively by search intent, freshness and commercial value.

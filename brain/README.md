@@ -80,3 +80,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[seo/INTERNAL-LINK-GRAPH-2026-09-23]] — baseline of article-to-article structure before behavioral click data.
 
 - [[product/PACK-COMPLETO-RETIREMENT-2026-09-23]] — evidence and implementation record for the first completed legacy-route retirement.
+
+- [[product/ACTIVITIES-AUDIT-2026-09-23]] — selective evidence-based classification of the 20 activity pages.
