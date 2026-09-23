@@ -309,6 +309,24 @@ Prioriza oportunidades donde ya exista señal.
 
 Objetivo operativo actual: construir una trayectoria capaz de superar 1.000 impresiones orgánicas diarias sostenidas, pero sin sacrificar utilidad o calidad editorial para alcanzar una cifra.
 
+### Growth ladder
+
+Long-term north star: **1,000 organic Google clicks/day**.
+
+This is not the current operating KPI.
+
+Order:
+1. 1,000 impressions/day sustained;
+2. 10 clicks/day;
+3. 30 clicks/day;
+4. 100 clicks/day;
+5. 300 clicks/day;
+6. 1,000 clicks/day.
+
+Forecast and assumptions: `brain/strategy/1000-CLICKS-FORECAST-2026-09-23.md`.
+
+Growth execution prompt: `brain/prompts/1000-CLICKS-AUTOPROMPT.md`.
+
 ---
 
 ## 9. CONVERSIÓN Y NEGOCIO
