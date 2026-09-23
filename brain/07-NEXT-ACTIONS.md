@@ -564,3 +564,32 @@ After batch 4, next editorial work should choose between `historia-de-lisboa`, `
 - Vercel production checks: `build-rate-limit`; do not mark live/DONE yet.
 - Search Console 90d returned no visible rows for the next debt set (`historia-de-lisboa`, `terremoto-lisboa-1755`, `gastronomia-portuguesa-guia`, `vinos-portugueses-guia`, `bacalhau-plato-portugal`, `novedades-lisboa-2026`, `festivales-eventos-lisboa-2026`, `pasteles-de-belem`). This is not proof of zero demand.
 - Next order must be chosen by trust risk + sourceability, not traffic. Start with `historia-de-lisboa` or `terremoto-lisboa-1755` after verifying authoritative historical sources.
+
+
+## P1 — Blog Level 1 batch 5 — Historia de Lisboa
+
+Reference: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
+
+Current branch: `content/blog-level1-batch5-historia-2026-09-23`.
+
+Prepared:
+- `historia-de-lisboa` — rebuilt as the cultural pillar using municipal/archaeological sources and a visible-city-by-layers structure;
+- removes unsupported personal authority, absolute founding claims and triumphalist framing;
+- preserves URL and routes readers into the existing Culture/History cluster.
+
+Do not mark DONE until:
+1. TypeScript + SEO smoke pass;
+2. Preview is verified;
+3. PR is merged;
+4. a READY production deployment contains the merge.
+
+After batch 5, choose the next non-protected debt item from:
+- `terremoto-lisboa-1755`;
+- `gastronomia-portuguesa-guia`;
+- `vinos-portugueses-guia`;
+- `bacalhau-plato-portugal`;
+- `novedades-lisboa-2026`;
+- `festivales-eventos-lisboa-2026`;
+- `pasteles-de-belem`.
+
+Preference: `terremoto-lisboa-1755` next because it is a high-trust historical article and now receives a stronger internal link from the rebuilt history pillar.
