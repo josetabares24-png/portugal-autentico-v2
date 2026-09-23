@@ -87,6 +87,9 @@ Si una página está protegida por una ventana de medición:
 | VI-003 | Pena: interior con fecha/hora; prever ~30 min entre entrada del parque y palacio; acceso particular restringido | https://www.parquesdesintra.pt/pt/planear-a-visita/bilhetes-palacio-da-pena/ | P1 | /blog/sintra-desde-lisboa; producto Pena; actividad Sintra | **VERIFICADO / SIN CAMBIO**: guía de Sintra ya explica estas reglas | mensual o ante aviso oficial |
 | VI-004 | 15E acortado temporalmente a Belém del 22–29 septiembre después de las 21h | https://www.carris.pt/ | P1 temporal corto | Belém; movilidad; Pastéis de Belém | **NO EDITAR EVERGREEN**: expira pronto y no bloquea acceso diurno | 2026-09-30: cerrar registro |
 | VI-005 | Oceanário: 10:00–20:00; última entrada 19:00; precios variables por franja; 5% online según web oficial | https://oceanario.pt/planear-visita/ | P1 | actividad Oceanário; tickets; contenido familiar | **VERIFICADO / SIN CAMBIO**: prioridad comercial ya usa fuente oficial y precio variable | mensual |
+| VI-006 | Línea de Cascais: durante interrupciones totales por obras, CP sustituye Cascais–Caxias por autobús; laborables desde 21:50, sábados desde 20:50, domingos 05:30–08:50 y desde 19:50; fuera de esas franjas los trenes circulan normalmente | https://cp.pt/info/pt/w/linha-de-cascais-servico-rodoviario | P1 temporal largo | /blog/que-ver-cascais-desde-lisboa; playas/costa como contexto | **ACTUADO 2026-09-23**: corregida la guía de Cascais sin cambiar título, estructura, CTA ni intención SEO; se eliminó la promesa de tren directo constante y el regreso nocturno genérico | mensual y al retirar CP el aviso |
+| VI-007 | Praça de Espanha: cais sentido Reboleira cerrado 3–28 sep; átrio Sul cerrado 14 sep–12 oct; estación sigue operativa con alternativas Jardim Zoológico/São Sebastião | https://www.metrolisboa.pt/institucional/2026/08/31/atualizacao-calendario-da-reabilitacao-da-estacao-praca-de-espanha-novos-elevadores-em-funcionamento/ | P1 temporal largo | metro-lisboa-guia; como-moverse (protegida en observación) | **VERIFICADO / SIN CAMBIO**: ninguna página revisada depende de esa estación para una instrucción canónica; no contaminar la guía general con una incidencia localizada | 2026-09-29 y 2026-10-13 |
+| VI-008 | Telheiras: cierres parciales por obras 15 sep–5 nov; viernes/sábados cierra a las 22:00 y sábados/domingos permanece cerrada hasta las 10:00 | https://projetos.metrolisboa.pt/metropolitano-de-lisboa-instala-cobertura-acustica-no-novo-viaduto-do-campo-grande/ | P1 temporal largo | metro-lisboa-guia; como-moverse (protegida en observación) | **VERIFICADO / SIN CAMBIO**: cambio localizado sin contradicción material en las páginas canónicas actuales | 2026-11-06 |
 
 ## Aprendizaje del primer pase
 
@@ -96,6 +99,13 @@ El valor aparece en tres decisiones:
 1. detectar una contradicción real antes de que envejezca;
 2. no tocar una página que ya está correcta;
 3. no meter una incidencia de una semana dentro de una guía que debe durar años.
+
+## Mapa página ↔ fuente
+
+El inventario operativo de qué fuente puede invalidar qué página vive en:
+[[VISITOR-IMPACT-PAGE-MAP-2026-09-23]].
+
+Regla: una coincidencia en el mapa abre una **revisión**, no una edición automática.
 
 ## Siguiente expansión
 
