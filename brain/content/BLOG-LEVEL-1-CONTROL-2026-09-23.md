@@ -107,7 +107,7 @@ Ambas deben pasar TypeScript + SEO smoke + revisión de producción antes de mar
 | `donde-tomar-cafe-lisboa` | E-006 — ACTIVO | No tocar hasta cierre de experimento. |
 | `que-comprar-lisboa-souvenirs` | N1 — MERGED / PROD BLOCKED | PR #93 fusionado en `c167acc9`; TypeScript + SEO smoke verdes. Vercel bloqueó build por `build-rate-limit`; falta verificación live. |
 | `excursiones-desde-lisboa` | P2 — PENDIENTE | Buen esqueleto; reducir superlativos y fortalecer fuentes por destino. |
-| `historia-de-lisboa` | P1 — DEUDA ALTA | Pilar cultural sin fuentes; reconstruir con bibliografía primaria/fiable. |
+| `historia-de-lisboa` | N1 — PREPARED / BATCH 5 | Reconstruida con fuentes municipales, cautela arqueológica, contexto de 1147/1755/25 de Abril y lectura práctica por capas. Pendiente CI + Preview + merge + producción. |
 | `terremoto-lisboa-1755` | P1 — DEUDA ALTA | Cifras y cronología sin fuentes; requiere pass histórico serio. |
 | `descubrimientos-portugueses-lisboa` | PAGE 1 — SOURCE PASS ONLY | 100 imp/90d, pos ~7.86. No reescribir; añadir fuentes y corregir absolutos quirúrgicamente. |
 | `azulejos-portugueses-historia` | PROTEGIDO / SOURCE PASS FUTURO | 95 imp/90d, pos ~9.88 y cambio reciente; esperar ventana. |
@@ -187,3 +187,28 @@ Baseline GSC 2026-06-25 → 2026-09-22: la consulta por ambas URLs no devolvió 
 - Julio/agosto: tramo más seco; otoño/invierno: más lluvia, con cifras fechadas de IPMA.
 - Junio incorpora Festas de Lisboa como factor de decisión, indicando que el programa concreto cambia cada año.
 - GSC 90d: 6 impresiones / 0 clics / posición media 18,50; bajo riesgo de alterar un activo SEO consolidado.
+
+
+## Batch 5 — Historia de Lisboa — 2026-09-23
+
+- Rama: `content/blog-level1-batch5-historia-2026-09-23`.
+- Convierte el pilar de una cronología grandilocuente en una lectura por capas visibles de la ciudad.
+- Elimina la experiencia personal no documentada y el claim de «ciudad más antigua de Europa occidental».
+- No presenta una fundación fenicia ni la etimología de Lisboa como hechos cerrados; separa arqueología de leyenda.
+- Corrige la simplificación de la Revolución de los Claveles como un día «sin un solo tiro» y reconoce las víctimas causadas por la PIDE/DGS.
+- Sustituye el rango inflado de víctimas de 1755 por una formulación cauta y una referencia municipal que sitúa aproximadamente 10.000–12.000 víctimas en una población cercana a 250.000.
+- Añade fuentes del Gabinete de Estudos Olisiponenses, Revelar Lisboa, Arquivo Municipal y Câmara Municipal de Lisboa.
+- Añade continuidad editorial hacia Terremoto de 1755, Manuelino, Descubrimientos, Alfama y Parque das Nações.
+- Mantiene URL y evita monetización forzada.
+
+Baseline:
+- la consulta GSC 90d usada por el programa Level 1 no devolvió fila visible para esta URL;
+- el lote se justifica por función de pilar + riesgo de confianza, no por una afirmación de demanda alta.
+
+Antes de DONE:
+1. TypeScript;
+2. SEO smoke;
+3. Preview 200 y contenido correcto;
+4. merge;
+5. producción READY que contenga el merge;
+6. verificación live.
