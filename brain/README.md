@@ -111,3 +111,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[privacy/ANALYTICS-CONSENT-GATE-2026-09-23]] — GA4 privacy/measurement baseline: Analytics loads only after explicit consent.
 
 - [[seo/SEO-SMOKE-CI-2026-09-23]] — automated indexation/canonical/sitemap regression gate in GitHub Actions.
+
+- [[data/WEB-AUDIT-2026-09-23-PM]] — afternoon production/code audit: privacy fix, measurement coverage, SEO smoke 47/47, Free Tours attribution, runtime health and deployment divergence.
