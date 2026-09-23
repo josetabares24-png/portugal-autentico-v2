@@ -439,3 +439,118 @@ Do not steal:
 - newsroom volume;
 - network-template language;
 - artificial first-person experience.
+
+
+## BENCHMARK EXPANSION — MEDIA + PRODUCT MODELS
+
+### Romeing — Rome / Florence
+Source:
+https://www.romeing.it/romeing-magazine/
+https://www.romeing.it/shop/about-us/
+
+Model:
+- English-language city magazine;
+- culture, food, nightlife, events and practical travel;
+- editorial content feeds direct experiences and a shop;
+- started as a free city magazine and expanded into tours, workshops, custom itineraries and transfers.
+
+Useful pattern:
+Content is not treated as a separate SEO warehouse. Editorial trust leads naturally into bookable experiences.
+
+What to adapt:
+- keep editorial and commercial surfaces connected by user need;
+- build direct products only after trust exists;
+- make current city culture part of the product without becoming a daily newsroom.
+
+What not to copy:
+- "live like a local" positioning;
+- broad event volume that requires a team.
+
+### Paris by Mouth — Paris
+Sources:
+https://parisbymouth.com/about-paris-by-mouth/
+https://parisbymouth.com/paris-restaurant-guide/
+
+Model:
+- narrow editorial authority around Paris food;
+- anonymous, paid-for restaurant reviews;
+- newsletter;
+- expert-led food tours;
+- a clear editorial methodology.
+
+Useful pattern:
+A focused publication can become commercially strong by being unusually trusted in one decision category.
+
+What to adapt:
+- transparent review/verification standards;
+- make methodology visible where recommendations involve money;
+- newsletter as owned editorial product;
+- services/products that emerge from proven editorial authority.
+
+Potential Lisbon analogue:
+Not "food only", but a future verified practical layer: places/activities tested or checked under a published standard.
+
+### Madrid Secreto — Madrid
+Sources:
+https://madridsecreto.co/quienes-somos/
+https://madridsecreto.co/guias-secretas/
+
+Model:
+- journalists covering city news, events, curiosities, architecture and food;
+- large social distribution;
+- branded content/commercial partnerships;
+- current city changes create repeat visits.
+
+Useful pattern:
+History/curiosity and current utility can coexist.
+
+What to adapt:
+- occasional stories that explain a building, change or mechanism in Lisbon;
+- visitor-impact current updates;
+- content that can travel to social without being written as clickbait.
+
+What not to copy:
+- high-volume "secret/unmissable" language;
+- newsroom cadence impossible for a one-person operation.
+
+### Time Out — city media
+Sources:
+https://www.timeout.com/about/investors/aim-rule-26
+https://www.timeout.com/about/history
+
+Model:
+- city journalism + discovery;
+- editorial curation;
+- events and experiences;
+- advertising/partnership ecosystem;
+- in some markets, physical hospitality through Time Out Market.
+
+Useful pattern:
+The brand is built around helping people make city decisions, not around a specific URL type.
+
+What to adapt:
+- organise around city decisions and moments;
+- treat editorial judgement as the product;
+- monetization can diversify later without turning the editorial layer into a store.
+
+What not to copy:
+- scale;
+- "best of the city" authority before we earn it.
+
+## SYNTHESIS AFTER EXPANSION
+
+The closest strategic model for Estaba en Lisboa is not one competitor.
+
+It is a combination:
+
+- **LisbonLisboaPortugal / Romewise:** factual responsibility and practical depth.
+- **Romeing:** editorial publication that can lead into experiences.
+- **Paris by Mouth:** trust + methodology + owned service.
+- **Madrid Secreto / Londonist:** selected current city relevance.
+- **This is Athens / Visit Copenhagen:** neighbourhoods as a mental model.
+- **Spotted by Locals / Earful Tower:** eventual paid/owned product.
+- **Time Out:** editorial judgement is more valuable than catalogue size.
+
+This reinforces the current direction:
+
+**Estaba en Lisboa should become a small Lisbon publication that is unusually useful, current and accountable — then turn that trust into owned audience and selective revenue.**
