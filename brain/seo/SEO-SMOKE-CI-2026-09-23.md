@@ -47,3 +47,22 @@ Do not weaken the test just to make a PR green. If an invariant is intentionally
 - the product/SEO decision first;
 - then the smoke assertion;
 - and document why.
+
+
+## First-run findings
+
+The first CI run proved the gate is useful rather than ceremonial.
+
+Result:
+- 46/47 assertions passed;
+- all 98 sitemap URLs returned 200 with no redirect/noindex/canonical error;
+- sitemap/robots/article/image checks passed;
+- one real accessibility/navigation defect was detected: Free Tours did not receive `aria-current="page"` in server-rendered HTML;
+- one smoke-test parser assumption was stale: it expected `indexable` immediately after an activity slug even though editorial `experiencia` blocks can sit between them.
+
+Follow-up:
+- normalize the internal `/es` rewrite before Navbar active-route comparison;
+- parse each activity block before reading its `indexable` flag;
+- rerun until the suite is fully green.
+
+This is the reference example for the rule: distinguish a real product defect from a stale test assertion; fix both rather than disabling the gate.
