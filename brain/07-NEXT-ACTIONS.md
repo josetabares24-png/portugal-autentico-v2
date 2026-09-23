@@ -412,3 +412,17 @@ Active discipline:
 
 First acted case:
 - VI-001 Santa Justa closure → Baixa guide corrected on 2026-09-23.
+
+
+## P2 — neighborhood decision map
+
+Reference: [[strategy/NEIGHBORHOOD-DECISION-MAP-2026-09-23]].
+
+Current conclusion from 90-day Search Console:
+- Chiado/Bairro Alto is the strongest **future** neighborhood experiment candidate (158 impressions, 0 clicks, avg position ~13.37);
+- Barrios pillar has the most cluster demand but dominant Spanish head terms remain around positions ~28–34;
+- Alfama and Belém are farther from a small-win intervention;
+- Graça, Baixa and Parque das Nações are too new to evaluate.
+
+Do not launch the Chiado experiment until the current observation queue has a clean decision point.
+Do not create a public neighborhood hub now.
