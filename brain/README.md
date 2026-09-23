@@ -90,3 +90,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[business/AFFILIATE-MEASUREMENT-2026-09-23]] — commercial click observability baseline and standard GA4 fallback dimensions.
 
 - [[business/AFFILIATE-STRATEGY]] — estrategia comercial vigente para afiliación.
+
+- [[business/COMMERCIAL-ASSET-INVENTORY]] — qué activos/proveedores están realmente operativos y cuáles no.
