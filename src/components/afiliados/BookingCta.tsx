@@ -89,6 +89,13 @@ export function BookingCta({ activitySlug, placement = 'activities' }: BookingCt
     );
   }
 
+  let linkDomain = '';
+  try {
+    linkDomain = new URL(link.url).hostname;
+  } catch {
+    // Medición best-effort: no bloquea el CTA.
+  }
+
   return (
     <div className="mb-10 overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
       <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
@@ -115,6 +122,9 @@ export function BookingCta({ activitySlug, placement = 'activities' }: BookingCt
               affiliate_placement: placement,
               affiliate_link_placement: link.usedPlacement,
               destination: 'lisboa',
+              link_url: link.url,
+              link_domain: linkDomain,
+              outbound: 'true',
               activity_slug: activitySlug,
               page_path: typeof window !== 'undefined' ? window.location.pathname : '',
             })

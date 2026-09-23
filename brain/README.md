@@ -86,3 +86,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[business/NEWSLETTER-FUNNEL-2026-09-23]] — baseline, measurement and unsubscribe mechanics for the email-list asset.
 
 - [[privacy/PLAN-LEAD-SEPARATION-2026-09-23]] — separation of personalized-plan leads from newsletter marketing.
+
+- [[business/AFFILIATE-MEASUREMENT-2026-09-23]] — commercial click observability baseline and standard GA4 fallback dimensions.
