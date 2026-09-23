@@ -84,3 +84,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[product/ACTIVITIES-AUDIT-2026-09-23]] — selective evidence-based classification of the 20 activity pages.
 
 - [[business/NEWSLETTER-FUNNEL-2026-09-23]] — baseline, measurement and unsubscribe mechanics for the email-list asset.
+
+- [[privacy/PLAN-LEAD-SEPARATION-2026-09-23]] — separation of personalized-plan leads from newsletter marketing.
