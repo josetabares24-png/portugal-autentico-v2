@@ -338,10 +338,17 @@ Fix prepared 2026-09-23:
 - keep product events consent-gated;
 - update public cookie-policy wording.
 
-After production deployment:
-- record production SHA/time;
-- verify no request to `googletagmanager.com/gtag/js` before acceptance;
-- verify GA initializes after acceptance;
-- treat GA4 sessions/pageviews across the deployment boundary as a measurement-method change.
+Production deployed and pre-consent HTML verified on 2026-09-23 15:26 Europe/Lisbon.
+
+Completed:
+- production SHA/time recorded;
+- no pre-consent `gtag.js` loader in production HTML;
+- root-layout GA initialization removed.
+
+Still verify in a browser session when available:
+- GA initializes after explicit acceptance;
+- rejection/revocation blocks subsequent product events.
+
+Treat GA4 sessions/pageviews across this deployment boundary as a measurement-method change.
 
 This does not alter E-006/E-007 or public commercial CTAs.
