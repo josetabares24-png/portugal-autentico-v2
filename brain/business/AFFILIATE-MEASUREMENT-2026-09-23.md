@@ -15,6 +15,15 @@ However, the GA4 field catalogue available through Windsor does not expose those
 
 That means the event contained context in the browser, but our reporting layer could not reliably segment it.
 
+## Production deployment
+
+- Main commit: `1b3553047fc7e71140f93b140d97b5b8659fab94`
+- Vercel deployment: `dpl_BpQwXK15VWdiNEdmhbshV6WX798j`
+- Created: **2026-09-23 12:50 Europe/Lisbon** (11:50:22 UTC)
+- State checked: **READY / production**
+
+Only affiliate clicks after this point should be expected to populate the new standard dimensions.
+
 ## Historical baseline
 
 GA4, 2026-06-25 → 2026-09-22:
