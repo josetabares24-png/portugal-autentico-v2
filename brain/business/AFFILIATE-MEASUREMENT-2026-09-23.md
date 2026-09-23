@@ -32,7 +32,13 @@ Total observed affiliate clicks in this window: **33**.
 
 ## Change
 
-`AffiliateLink` now sends three GA4-standard parameters alongside the existing custom parameters:
+All direct affiliate-link components we control now send three GA4-standard parameters alongside the existing custom parameters:
+
+- `AffiliateLink` — GuruWalk / Free Tours;
+- `BookingCta` — direct booking CTAs in activity pages;
+- `AttractionTicketLink` — direct ticket links used by calculator/editorial surfaces.
+
+Parameters:
 
 - `link_url` — the final affiliate URL, including preserved partner parameters and our UTM values when absent upstream;
 - `link_domain` — destination hostname;
@@ -55,6 +61,10 @@ For future clicks we can answer:
 - which source page sent the click.
 
 This is especially important for `/free-tours-lisboa`, where historical clicks are commercially meaningful but currently aggregated.
+
+## Known limitation
+
+Provider widgets (for example embedded GetYourGuide/Tiqets widgets) execute inside provider-controlled integrations and are not guaranteed to emit our `affiliate_click` event with these dimensions. Direct links are measurable; widget-to-sale reporting still depends on the partner dashboard.
 
 ## Guardrails
 

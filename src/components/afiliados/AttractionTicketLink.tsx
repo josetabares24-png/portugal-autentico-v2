@@ -48,6 +48,13 @@ export function AttractionTicketLink({ productId, nombre, etiqueta, trackingEven
 
   if (!product || !link) return null;
 
+  let linkDomain = '';
+  try {
+    linkDomain = new URL(link.url).hostname;
+  } catch {
+    // Medición best-effort: un enlace válido para navegar no debe romper el render.
+  }
+
   return (
     <a
       href={link.url}
@@ -71,6 +78,9 @@ export function AttractionTicketLink({ productId, nombre, etiqueta, trackingEven
           affiliate_placement: 'calculadora',
           affiliate_link_placement: link.usedPlacement,
           destination: 'lisboa',
+          link_url: link.url,
+          link_domain: linkDomain,
+          outbound: 'true',
           page_path: typeof window !== 'undefined' ? window.location.pathname : '',
         });
       }}
