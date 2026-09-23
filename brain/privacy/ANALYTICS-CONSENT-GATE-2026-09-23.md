@@ -51,3 +51,28 @@ No cambia:
 - afiliación.
 
 Es una corrección de infraestructura de privacidad y calidad de medición.
+
+
+## Production verification
+
+Deployed to production:
+
+- Main commit: `4cff855d6fb35130d73dcf1b9ddce41ab94d12d5`
+- Vercel deployment: `dpl_Htt1VXTZnQ7ztEEhPvFJdcfJpYTY`
+- READY: **2026-09-23 15:26 Europe/Lisbon**
+- Public alias: `estabaenlisboa.com`
+
+Verification performed against the real production HTML before any browser consent state:
+
+- response: HTTP 200;
+- no `googletagmanager.com/gtag/js` loader in the server response;
+- no root-layout GA initialization block;
+- Google Analytics remains available only through the consent-gated client component.
+
+The second half of the check — Analytics initializes after explicit acceptance — is guaranteed by the consent-gated component path and should also be browser-smoke-tested when a browser preview/debug session is available.
+
+### Measurement boundary
+
+Treat **2026-09-23 15:26 Europe/Lisbon** as the GA4 collection-method boundary for sessions/pageviews.
+
+Search Console has no such boundary.
