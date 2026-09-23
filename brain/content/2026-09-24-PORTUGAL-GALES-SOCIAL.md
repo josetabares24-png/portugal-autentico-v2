@@ -166,3 +166,24 @@ Canva:
 - View URL: https://www.canva.com/d/2JMNfmYhT7lQaUQ
 - Tamaño: 1080 × 1350.
 - Estado: nueva versión para revisión; sustituye visualmente la iteración anterior si José la aprueba.
+
+
+## Versión final aprobada — Canva
+
+- Estado: APROBADA PARA USO.
+- Canva design ID: DAHWBj9c_7E
+- Edit URL: https://www.canva.com/d/mWymkcbF6CzGcaX
+- View URL: https://www.canva.com/d/LAGY3CWycFUeCQ-
+- Pieza: Portugal vs País de Gales · 24 Sep 2026.
+- Esta versión es la referencia visual vigente para esta pieza.
+- Preservar en futuras iteraciones:
+  - masthead Estaba en Lisboa arriba izquierda;
+  - fecha arriba derecha;
+  - fotografía real dominante con encuadre respirado;
+  - degradado oscuro inferior como recurso de marca;
+  - serif editorial para titular;
+  - sans consistente para información;
+  - “Lisboa.” en terracota;
+  - web discreta;
+  - sin líneas, cajas, iconos ni adornos innecesarios.
+- No sustituir por versiones anteriores salvo instrucción explícita de José.
