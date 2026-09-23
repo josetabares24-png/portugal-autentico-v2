@@ -426,3 +426,21 @@ Current conclusion from 90-day Search Console:
 
 Do not launch the Chiado experiment until the current observation queue has a clean decision point.
 Do not create a public neighborhood hub now.
+
+
+## P1 — next SEO experiment gate
+
+Reference: [[seo/NEXT-EXPERIMENT-SCORECARD-2026-09-23]].
+
+When the current observation queue opens, **inspect before editing**:
+1. vida-nocturna-lisboa;
+2. tram-28-historia-guia;
+3. lisboa-vs-porto;
+4. chiado-bairro-alto-guia;
+5. aeropuerto-lisboa-al-centro;
+6. mejores-mercados-lisboa.
+
+Key caution:
+the first four show recent position improvement, so the right decision may be to protect rather than launch another experiment.
+
+No new SEO experiment until finalized post-change evidence is sufficient.
