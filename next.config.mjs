@@ -6,6 +6,12 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   async redirects() {
     return [
+      // `/pack-completo` duplicated the job of the editorial index and
+      // itinerary hub, but had no Search Console visibility in the last
+      // 12 months. Keep the old URL working while consolidating it into the
+      // actual guide index.
+      { source: '/pack-completo', destination: '/blog', permanent: true },
+      { source: '/:locale(en|ko|es)/pack-completo', destination: '/blog', permanent: true },
       // Commerce legacy routes now point to the free guide collection.
       { source: '/checkout/:path*', destination: '/itinerarios', permanent: true },
       { source: '/exito', destination: '/itinerarios', permanent: true },

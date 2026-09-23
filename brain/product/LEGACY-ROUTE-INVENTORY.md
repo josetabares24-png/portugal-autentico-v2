@@ -41,7 +41,7 @@ Los eventos de analítica requieren consentimiento explícito, así que los recu
 | /comprar-entradas | DEMOTED | candidato a fusionar/retirar, no ejecutar aún | casi sin adquisición orgánica pero sí algunos clics afiliados |
 | /planifica-tu-viaje | DEMOTED | medir CTA antes de decidir | recibe tráfico interno, solo 1 form_start medido |
 | /calculadora-presupuesto-lisboa | DEMOTED | candidato a integrar en contenido | poca adquisición; señal de uso demasiado pequeña |
-| /pack-completo | DEMOTED | candidato fuerte a retirar | 0 señal orgánica conocida y 9 sesiones |
+| /pack-completo | RETIRED | redirect permanente → /blog | 0 impresiones/clics en Search Console en 12 meses; tráfico mínimo; duplicaba el índice editorial y el hub de itinerarios |
  
 ## Conflicto detectado
 
@@ -74,3 +74,25 @@ La primera decisión esperada será sobre los CTAs globales hacia:
 - Free Tours
 
 No ejecutar una retirada masiva antes de esa lectura.
+
+
+## Retirada confirmada — /pack-completo
+
+**Fecha:** 2026-09-23  
+**Decisión:** RETIRE → redirect permanente a `/blog`.
+
+Evidencia previa:
+- Search Console 90 días: 0 filas para la URL.
+- Search Console 12 meses: 0 filas para la URL.
+- GA4 90 días: 8 sesiones sin referrer registradas, 1 sesión desde `/itinerarios`; existe además una fila de self-referrer que no debe sumarse como usuario único.
+- Único enlace interno confirmado en la revisión: `/itinerarios` → “Todas las guías gratuitas”.
+- La página repetía destinos que ya viven en `/itinerarios` y `/blog`.
+
+Implementación:
+- redirect permanente `/pack-completo` → `/blog`;
+- variantes de locale también llegan directamente a `/blog` para evitar cadenas;
+- retirada del sitemap;
+- enlace de `/itinerarios` actualizado para apuntar directamente a `/blog`;
+- archivos de la ruta retirados del árbol público.
+
+No se interpreta esta retirada como experimento SEO de crecimiento. Es consolidación de producto con riesgo orgánico muy bajo según la evidencia disponible.

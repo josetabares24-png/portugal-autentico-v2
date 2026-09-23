@@ -82,6 +82,15 @@ Use [[03-SEO-DECISION-ENGINE]].
 
 ## P1 — legacy route inventory
 
+### Completed: /pack-completo
+
+Retired on 2026-09-23 with permanent redirect to `/blog`.
+
+Reason: zero Search Console visibility over 12 months + minimal use + duplicated product job.
+
+Evidence: [[product/PACK-COMPLETO-RETIREMENT-2026-09-23]].
+
+
 Classify non-blog routes with 90-day GSC + GA4:
 
 - KEEP
