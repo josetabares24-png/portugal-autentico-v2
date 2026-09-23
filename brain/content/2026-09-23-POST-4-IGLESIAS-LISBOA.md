@@ -88,3 +88,12 @@ No marcar una nueva versión como final hasta verificar que sus elementos sean e
 - Fotos: se mantienen temporalmente las del carrusel del eléctrico.
 - Próximo paso: sustituir SOLO las fotos, sin rediseñar tipografías, degradado, logo, márgenes ni estructura.
 - No tocar el diseño original del eléctrico.
+
+
+## Corrección página 5 — 2026-09-23
+
+- Se corrigió el solapamiento de la página 5 en Canva `DAHWCGPHeic`.
+- Se preservó el diseño base del carrusel del eléctrico.
+- Se movieron el texto de apoyo y el CTA para recuperar jerarquía y aire.
+- Regla confirmada por José: para iglesias/lugares reales, usar fotografía real; NO usar imágenes generadas por IA como arte final.
+- Las fotos del eléctrico siguen siendo temporales hasta sustituirlas por fotografías reales de cada iglesia.
