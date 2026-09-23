@@ -190,3 +190,29 @@ When Vercel allows a production build:
 Do **not** respond to the build-rate limit by changing strategy or editing SEO pages.
 
 The site is technically healthy. The next growth decisions still require the active measurement windows to mature.
+
+
+## 12. Production recovery — 2026-09-23 16:05 Europe/Lisbon
+
+The Vercel production build limit cleared enough to deploy the validated latest main.
+
+Production deployment:
+- deployment: `dpl_9XAUsoLKD33AGFHWnfB1h3hcuNZg`;
+- production commit: `cc4e1c5cc279e3c5c4d9545ae226bdf6e659d939`;
+- source commit is an empty maintenance retrigger whose tree matches the previously validated main;
+- state: **READY**;
+- aliases include `estabaenlisboa.com`.
+
+Therefore the previously pending changes are now included in the production tree:
+- BookingCard standard affiliate dimensions;
+- contextual article `article_inline_link` tracking;
+- Free Tours active-state normalization;
+- automated SEO smoke gate code/config.
+
+Measurement boundary:
+use this production deployment as the live start for the previously pending instrumentation.
+
+GuruWalk MCP remains separate:
+- PR #79 was retriggered after production recovered;
+- Vercel Preview still returned `build-rate-limit`;
+- do not merge the MCP proof of concept until runtime validation succeeds.
