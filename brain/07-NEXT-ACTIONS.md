@@ -230,7 +230,9 @@ Do not add a newsletter checkbox to Planifica unless there is a real reason to g
 
 Baseline: [[business/AFFILIATE-MEASUREMENT-2026-09-23]].
 
-The frontend now emits GA4-standard `link_url`, `link_domain` and `outbound` on `affiliate_click`.
+The direct affiliate surfaces emit GA4-standard `link_url`, `link_domain` and `outbound` on `affiliate_click`.
+
+A 2026-09-23 audit found that `BookingCard` had been missed by the first pass; the follow-up fix adds those dimensions to the native cards used by `/comprar-entradas`.
 
 Next check:
 - wait for post-deployment affiliate clicks;

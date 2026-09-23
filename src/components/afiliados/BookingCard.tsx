@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
 
 /*
@@ -23,22 +24,6 @@ import { resolveBookingLink, type BookableProduct, type BookingPlacement } from 
  * ninguna parte.
  */
 
-function trackClick(params: Record<string, string>) {
-  try {
-    if (typeof window === 'undefined') return;
-    if (window.disableAnalytics === true) return;
-    if (typeof window.gtag !== 'function') return;
-
-    const consent = window.localStorage.getItem('cookieConsent');
-    const explicit = window.localStorage.getItem('cookieConsentExplicit');
-    if (consent !== 'accepted' || explicit !== 'true') return;
-
-    window.gtag('event', 'affiliate_click', params);
-  } catch {
-    // Medición best-effort: nunca impide que el enlace se abra.
-  }
-}
-
 interface BookingCardProps {
   product: BookableProduct;
   placement: BookingPlacement;
@@ -55,6 +40,13 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
   const ctaLabel = placementLabel.startsWith('comprar-entradas')
     ? 'Ver disponibilidad'
     : product.ctaLabel;
+
+  let linkDomain = '';
+  try {
+    linkDomain = new URL(link.url).hostname;
+  } catch {
+    // La navegación sigue funcionando aunque la dimensión no pueda parsearse.
+  }
 
   return (
     <article className="group flex h-full min-w-0 flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45">
@@ -98,7 +90,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           rel="sponsored noopener noreferrer"
           className="text-cta mt-auto self-start"
           onClick={() =>
-            trackClick({
+            trackAffiliateClick({
               affiliate_partner: link.provider,
               affiliate_campaign: link.campaign,
               affiliate_content: product.id,
@@ -107,6 +99,9 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
               // de cada ubicación, esto deja visible que se recurrió a otro.
               affiliate_link_placement: link.usedPlacement,
               destination: 'lisboa',
+              link_url: link.url,
+              link_domain: linkDomain,
+              outbound: 'true',
               page_path: typeof window !== 'undefined' ? window.location.pathname : '',
             })
           }
