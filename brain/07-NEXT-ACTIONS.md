@@ -593,3 +593,12 @@ After batch 5, choose the next non-protected debt item from:
 - `pasteles-de-belem`.
 
 Preference: `terremoto-lisboa-1755` next because it is a high-trust historical article and now receives a stronger internal link from the rebuilt history pillar.
+
+
+### Batch 5 merge status
+
+- `historia-de-lisboa` merged via PR #96 at `28cecc7c`.
+- GitHub TypeScript + SEO smoke passed.
+- Vercel rejected Preview/production because of `build-rate-limit`; this is a deployment blocker, not a code failure.
+- Production verification remains pending.
+- Next Level 1 candidate remains `terremoto-lisboa-1755`; do not start a conflicting edit in the same monolithic article file until the deployment boundary is reconciled or the next branch is based on current `main`.
