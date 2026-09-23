@@ -507,3 +507,24 @@ Production note for batch 1:
 - PR #92 merged at `6318da24`;
 - Vercel production status for that merge is currently build-rate-limit failure;
 - Cascais/Playas remain pending live verification and are not DONE yet.
+
+
+## P1 — Blog Level 1 batch 3 — Semana Santa 2027
+
+Reference: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
+
+Current branch: `content/blog-level1-batch3-semana-santa-2026-09-23`.
+
+Prepared:
+- `semana-santa-lisboa` — rebuilt around confirmed 2027 dates, the documented Procissão do Senhor dos Passos da Graça and explicit uncertainty about the still-unpublished 2027 local program.
+- Corrects prior false framing that placed the Passos procession on Palm Sunday.
+- Removes unsupported 20–30% accommodation inflation, generic 'authentic spirituality', and unverified procession routes.
+
+GSC baseline (2026-06-25 → 2026-09-22): 1 click / 25 impressions / position 16.64.
+
+Batch 2 status:
+- PR #93 merged at `c167acc9`;
+- TypeScript + SEO smoke passed;
+- Vercel rejected deployment checks because of `build-rate-limit`, so Souvenirs/Mouraria are not marked live/DONE.
+
+After batch 3, next non-protected high-debt candidate: `mejor-epoca-visitar-lisboa`.
