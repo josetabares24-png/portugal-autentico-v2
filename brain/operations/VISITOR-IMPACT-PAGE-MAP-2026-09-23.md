@@ -32,7 +32,7 @@ Una fuente activa no implica que todas las páginas asociadas deban cambiar. Pri
 | Fuente oficial | Páginas/activos reales | Relación | Qué puede invalidar | Regla de acción |
 |---|---|---|---|---|
 | Parques de Sintra | /blog/sintra-desde-lisboa; actividad/productos de Pena y Sintra | DIRECTA / COMERCIAL | hora reservada, acceso, cierres, transporte al monumento | actualizar regla operativa o producto exacto; evitar reescribir el resto del día |
-| Oceanário de Lisboa | /actividades/oceanario-lisboa; /blog/viajar-ninos-lisboa; /blog/parque-das-nacoes-lisboa-que-ver | DIRECTA / COMERCIAL / CONTEXTUAL | horario, última entrada, precio, reserva | prioridad a ficha comercial; contenido editorial solo si publica cifra/condición falsa |
+| Oceanário de Lisboa | /actividades/oceanario-lisboa; /blog/lisboa-con-ninos; /blog/parque-das-nacoes-lisboa-que-ver | DIRECTA / COMERCIAL / CONTEXTUAL | horario, última entrada, precio, reserva | prioridad a ficha comercial; contenido editorial solo si publica cifra/condición falsa |
 | Carris — Santa Justa | /actividades/elevador-santa-justa; /blog/baixa-lisboa-que-ver; /blog/monumentos-de-lisboa; /blog/mejores-miradores-lisboa | DIRECTA | cierre/reapertura, acceso al miradouro | P0: corregir inmediatamente contradicciones; retirar aviso al reabrir |
 | Museus e Monumentos / monumentos oficiales | /blog/monumentos-de-lisboa; /blog/belem-barrio-guia; fichas de Jerónimos/Torre de Belém | DIRECTA / COMERCIAL | cierres, precio, reserva, acceso | corregir solo el monumento afectado y revisar producto afiliado exacto |
 
