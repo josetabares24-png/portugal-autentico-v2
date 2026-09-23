@@ -296,3 +296,21 @@ Reglas asociadas:
 - priorizar continuidad de marca sobre novedad visual.
 
 Esta decisión debe consultarse antes de cualquier nueva ejecución en Canva.
+
+
+## D-024 — Analytics loads only after explicit consent
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Google Analytics must not be requested or initialized before the visitor has explicitly accepted analytics cookies.
+
+Implementation rule:
+- consent source is centralized;
+- no unconditional GA loader in the root layout;
+- product events remain independently consent-gated;
+- historical GA4 session/pageview levels across the deployment boundary require caution.
+
+Reason:
+Privacy behavior and measurement behavior must match the public cookie policy.
+
+Reference: [[privacy/ANALYTICS-CONSENT-GATE-2026-09-23]].

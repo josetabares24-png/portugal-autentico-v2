@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Cookies
 
-**Última actualización:** 5 de agosto de 2026
+**Última actualización:** 23 de septiembre de 2026
 
 ## 1. ¿Qué son las Cookies?
 
@@ -43,7 +43,7 @@ El sitio usa Clerk para gestionar el acceso al panel de administración. Clerk p
 **Requieren consentimiento:** no, son necesarias para el funcionamiento del panel al que están asociadas.
 
 ### 2.3. Cookies Analíticas (Google Analytics)
-**Requieren tu consentimiento explícito**, que pedimos mediante el aviso de cookies. Si no aceptas, no se activa el almacenamiento de analítica (usamos el modo de consentimiento de Google, que por defecto deniega el almacenamiento analítico hasta que aceptas).
+**Requieren tu consentimiento explícito**, que pedimos mediante el aviso de cookies. Si no aceptas, Google Analytics no se carga ni se inicia desde este sitio. Solo después de aceptar se solicita el script de Analytics y se habilita el almacenamiento analítico.
 
 - **Qué mide:** páginas visitadas, tiempo de permanencia, origen del tráfico, tipo de dispositivo, con la IP anonimizada.
 - **Proveedor:** Google LLC.
