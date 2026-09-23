@@ -142,3 +142,15 @@ Después usar datos de:
 - partner dashboards;
 
 para decidir qué proveedor/producto merece más espacio.
+
+
+## Monetization architecture
+
+See [[AFFILIATE-MONETIZATION-ARCHITECTURE-2026-09-23]].
+
+Current partner roles:
+- GuruWalk → free-tour intent.
+- GetYourGuide → experiences, excursions and exact attraction products.
+- Tiqets → exact attraction tickets/passes where the product fit is strong.
+
+Provider selection is placement/product-specific, not site-wide.

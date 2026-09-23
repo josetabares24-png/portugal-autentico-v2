@@ -244,3 +244,19 @@ Planning model:
 - conservative: ~60–84 months.
 
 These are scenario estimates, not promises, and must be revised as real growth compounds.
+
+
+## D-022 — Affiliate monetization is contextual, not a marketplace
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Estaba en Lisboa monetizes a travel decision only when a partner product exactly matches the user's intent.
+
+Partner roles:
+- GuruWalk: free tours.
+- GetYourGuide: experiences, excursions and selected attraction products.
+- Tiqets: selected attraction tickets and passes.
+
+A destination can use different providers in different placements if the exact product/campaign or conversion evidence differs.
+
+Do not turn the site into a generic ticket catalogue.
