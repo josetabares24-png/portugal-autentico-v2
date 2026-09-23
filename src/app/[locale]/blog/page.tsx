@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import BlogClient from './BlogClient';
 import { blogPosts } from '@/data/blog-posts';
 
-const BLOG_TITLE = 'Blog Lisboa 2026 | Consejos, Guías y Rutas de Local';
-const BLOG_DESCRIPTION = 'Consejos prácticos para Lisboa: miradores, restaurantes baratos, transporte, barrios, qué evitar. Guías escritas por quien vive en Lisboa.';
+const BLOG_TITLE = 'Guías de Lisboa | Estaba en Lisboa';
+const BLOG_DESCRIPTION = 'Guías sobre Lisboa: transporte, barrios, comida, alojamiento, historia y excursiones. Información práctica para organizar el viaje.';
 
 type BlogPageProps = {
   searchParams: Promise<{ page?: string | string[] }>;
@@ -29,8 +29,8 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
     keywords: ['blog lisboa', 'consejos lisboa', 'miradores lisboa', 'restaurantes lisboa', 'transporte lisboa'],
     alternates: { canonical },
     openGraph: {
-      title: currentPage === 1 ? 'Blog de Lisboa | Guías y Consejos de Locales' : `Blog de Lisboa — Página ${currentPage}`,
-      description: 'Historias, rutas auténticas y consejos prácticos para vivir Lisboa como un local.',
+      title: currentPage === 1 ? 'Guías de Lisboa | Estaba en Lisboa' : `Guías de Lisboa — Página ${currentPage}`,
+      description: BLOG_DESCRIPTION,
       url: canonical,
       images: [
         {
@@ -53,9 +53,9 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
-  name: 'Blog de Lisboa',
+  name: 'Guías de Lisboa',
   url: 'https://estabaenlisboa.com/blog',
-  description: 'Consejos de local, guías auténticas y planificación real para Lisboa.',
+  description: BLOG_DESCRIPTION,
   blogPost: blogPosts.map((post) => ({
     '@type': 'BlogPosting',
     headline: post.titulo,

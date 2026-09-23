@@ -78,3 +78,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[content/EDITORIAL-DEBT]] — deuda editorial verificada y priorizada por señal SEO.
 
 - [[seo/INTERNAL-LINK-GRAPH-2026-09-23]] — baseline of article-to-article structure before behavioral click data.
+
+- [[product/PACK-COMPLETO-RETIREMENT-2026-09-23]] — evidence and implementation record for the first completed legacy-route retirement.

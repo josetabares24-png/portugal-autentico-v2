@@ -139,10 +139,10 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
       <section className="relative bg-night bg-azulejo-pattern-gold py-12 md:py-16 overflow-hidden">
         <div className="relative max-w-xl mx-auto px-6 text-center">
           <h2 className="font-display not-italic leading-tight tracking-normal text-white text-3xl md:text-4xl mb-3">
-            Tips de local, directo a tu email
+            Nuevas guías por email
           </h2>
           <p className="text-white/80 mb-6 leading-relaxed">
-            Lo mejor de Lisboa sin spam. Sin publicidad. Solo lo que importa.
+            Cuando publiquemos una guía nueva o actualicemos algo importante, te lo enviamos por correo.
           </p>
 
           {status === 'success' ? (
@@ -219,7 +219,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
               {errorMessage && (
                 <p id="blog-newsletter-error" role="alert" className="text-red-200 text-sm">{errorMessage}</p>
               )}
-              <p className="text-white/75 text-xs">Sin spam. Cancela cuando quieras.</p>
+              <p className="text-white/75 text-xs">Puedes darte de baja cuando quieras.</p>
             </form>
           )}
         </div>

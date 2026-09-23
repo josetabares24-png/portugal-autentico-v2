@@ -100,3 +100,18 @@ La nueva Mente Lisboa v2 pasa a ser el marco principal de producto y crecimiento
 Se crea `LOCKED-DECISIONS.md` para separar decisiones que requieren instrucción explícita antes de cambiarse.
 
 La recuperación de memoria, métricas, aprendizajes, decisiones LOCKED y estado real pasa a ser obligatoria antes de propuestas importantes.
+
+
+## D-014 — Retire /pack-completo
+**Date:** 2026-09-23  
+**Status:** accepted
+
+`/pack-completo` is retired and permanently redirected to `/blog`.
+
+Evidence:
+- no Search Console rows in the previous 12 months;
+- negligible GA4 use;
+- duplicated the role of the editorial index and itinerary hub;
+- only one confirmed internal entry point from `/itinerarios`.
+
+The old URL remains resolvable through a permanent redirect; it is removed from the sitemap and from direct internal linking.

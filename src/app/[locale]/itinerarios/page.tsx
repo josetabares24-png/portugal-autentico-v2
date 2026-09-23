@@ -132,7 +132,7 @@ export default async function ItinerariosPage() {
             {[
               { href: '/actividades', label: 'Actividades sin gastar mucho' },
               { href: '/planifica-tu-viaje', label: 'Planifica tu viaje' },
-              { href: '/pack-completo', label: 'Todas las guías gratuitas' },
+              { href: '/blog', label: 'Guías de Lisboa' },
               { href: '/blog', label: 'Blog: historias y consejos' },
               { href: '/faq', label: 'Preguntas frecuentes' },
             ].map((link) => (
