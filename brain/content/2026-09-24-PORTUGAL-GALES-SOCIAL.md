@@ -94,3 +94,15 @@ Metro: Campo Grande
 - Actualidad útil.
 - Compartidos y guardados.
 - Reforzar a Estaba en Lisboa como publicación que explica qué está pasando en la ciudad.
+
+
+## Ejecución Canva
+
+- Estado: creado.
+- Canva design ID: DAHWBRBXt04
+- Tamaño: 1080 × 1350.
+- Edit URL: https://www.canva.com/d/wExMz0f8U-3Il7-
+- View URL: https://www.canva.com/d/FOtC7d19K9wm-9F
+- Foto usada en esta versión: Estadio Jose Alvalade Pano 2025, Footballnerd2007, Wikimedia Commons.
+- Licencia de la foto: CC BY 4.0. Mantener atribución al publicar o sustituir por fotografía propia / Depositphotos con licencia válida.
+- Decisión visual aplicada: editorial de ciudad, no fan page deportiva; foto real + bloque crema + azul noche + terracota; logo real recuperado de public/logo.png.
