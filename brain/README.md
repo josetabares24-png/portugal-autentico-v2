@@ -115,3 +115,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[data/WEB-AUDIT-2026-09-23-PM]] — afternoon production/code audit: privacy fix, measurement coverage, SEO smoke 47/47, Free Tours attribution, runtime health and deployment divergence.
 
 - [[operations/VISITOR-IMPACT-WATCH-2026-09-23]] — registro vivo de cierres, tarifas, accesos y cambios operativos que pueden volver obsoleto el contenido.
+
+- [[strategy/NEIGHBORHOOD-DECISION-MAP-2026-09-23]] — 90-day Search Console map of the Barrios cluster and the evidence-based order for future SEO investment.
