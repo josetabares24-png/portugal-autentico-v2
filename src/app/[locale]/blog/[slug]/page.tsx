@@ -2344,7 +2344,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Mucho sol, más gente y precios más altos. Perfecto si quieres playa." },
       { tipo: "subtitulo", texto: "Otoño (septiembre-noviembre)" },
       { tipo: "parrafo", texto: "Clima suave, atardeceres increíbles y menos masificación." },
-      { tipo: "subtitulo", texto: "Invierno (diciembre-febrero): mi época favorita" },
+      { tipo: "subtitulo", texto: "Invierno (diciembre-febrero): más lluvia y días más cortos" },
       { tipo: "parrafo", texto: "Cuando le digo a alguien que mi época favorita para estar en Lisboa es el invierno, me miran como si estuviera loco. «Pero si en verano es cuando hay que ir», responden. Y yo pienso: exacto, en verano es cuando van todos, y por eso en invierno es cuando se disfruta de verdad." },
       { tipo: "parrafo", texto: "El invierno en Lisboa no tiene nada que ver con el del norte de Europa o buena parte de Latinoamérica. Las temperaturas rara vez bajan de los 8-10 grados, hay una media de 5-6 horas de sol al día incluso en enero, y la luz tiene una cualidad dorada que los fotógrafos adoran. Sí, llueve, pero normalmente en chaparrones cortos que dan paso a cielos limpios." },
       { tipo: "subseccion", texto: "Menos turistas, más Lisboa" },
@@ -2381,7 +2381,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-23',
     minutos: 13,
     fuentes: [
-      { label: "Comboios de Portugal — línea de Cascais y servicio rodoviario de sustitución", href: "https://cp.pt/info/pt/w/linha-de-cascais-servico-rodoviario" },
+      { label: "IPMA — Normal Climatológica de Lisboa 1991-2020", href: "https://www.ipma.pt/opencms/bin/file.data/climate-normal/cn_91-20_LISBOA_GEOFISICO.pdf" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Cascais fue el refugio de verano de la familia real portuguesa a finales del siglo XIX, y esa herencia de elegancia todavía se percibe en sus calles. Aunque hoy es más accesible que entonces, mantiene un aire distinguido que la diferencia de otros pueblos costeros. A solo treinta minutos en tren desde Lisboa, es la excursión perfecta cuando necesitas un respiro del bullicio urbano." },
@@ -3559,8 +3559,6 @@ const articles: Record<string, Article> = {
     fecha: "21 Mar 2026",
     minutos: 12,
     fuentes: [
-      { label: "Museus e Monumentos de Portugal — Jerónimos y Torre de Belém", href: "https://www.museusemonumentos.pt/" },
-      { label: "Pastéis de Belém — la pastelería original", href: "https://pasteisdebelem.pt/" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "A finales del siglo XV, Belém no era un barrio de Lisboa: era una aldea de pescadores a las afueras de la ciudad, en la orilla del Tajo, a unos seis kilómetros del centro. Fue desde esta aldea desde donde Vasco de Gama zarpó en 1497 rumbo a India. Fue aquí donde el rey Manuel I construyó el monasterio más bello de Portugal para celebrar el descubrimiento de la ruta a las especias. Y fue aquí donde se instaló la pastelería que llevaría la crema de los monjes al mundo entero." },
