@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
 import type { ReactNode } from 'react';
 
 type ArticleFooterProps = {
@@ -20,12 +21,14 @@ export function ArticleFooter({
         <p className="relative text-white/70">
           Podemos revisar tu ruta y resolver las decisiones que más tiempo te están quitando.
         </p>
-        <Link
+        <TrackedInternalLink
           href="/planifica-tu-viaje"
+          contentType="article_footer_cta"
+          contentId="planifica_tu_viaje"
           className="btn-primary article-cta-button relative inline-flex min-h-11 px-8 py-3 text-sm"
         >
           Planifica tu viaje
-        </Link>
+        </TrackedInternalLink>
       </div>
 
       {beforeAuthor}

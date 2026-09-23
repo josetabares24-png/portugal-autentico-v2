@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
@@ -102,9 +103,14 @@ export default function HomePage() {
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
             Vivo en Lisboa desde hace más de tres años. Estas son mis rutas, lugares y consejos para recorrerla con sentido.
           </p>
-          <Link href="/itinerarios" className="btn-ghost-light btn-lg">
+          <TrackedInternalLink
+            href="/itinerarios"
+            contentType="home_primary_cta"
+            contentId="itinerarios"
+            className="btn-ghost-light btn-lg"
+          >
             Ver itinerarios →
-          </Link>
+          </TrackedInternalLink>
         </div>
       </section>
 
@@ -225,12 +231,14 @@ export default function HomePage() {
                 Compara recorridos por el centro, Alfama, Belém y otras zonas de Lisboa
                 antes de reservar.
               </p>
-              <Link
+              <TrackedInternalLink
                 href="/free-tours-lisboa"
+                contentType="home_commercial_cta"
+                contentId="free_tours"
                 className="btn-primary btn-lg"
               >
                 Ver free tours
-              </Link>
+              </TrackedInternalLink>
             </div>
           </div>
         </div>
@@ -298,9 +306,14 @@ export default function HomePage() {
           <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
             Si te sirve, también preparé rutas hora a hora para organizarte el viaje.
           </p>
-          <Link href="/itinerarios" className="btn-primary flex-shrink-0">
+          <TrackedInternalLink
+            href="/itinerarios"
+            contentType="home_secondary_cta"
+            contentId="itinerarios"
+            className="btn-primary flex-shrink-0"
+          >
             Ver itinerarios →
-          </Link>
+          </TrackedInternalLink>
         </div>
       </section>
     </main>

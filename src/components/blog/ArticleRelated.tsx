@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
 
 type RelatedPost = {
   id: string;
@@ -21,7 +22,13 @@ export function ArticleRelated({ posts }: { posts: RelatedPost[] }) {
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
         {posts.map((post) => (
-          <Link key={post.id} href={`/blog/${post.id}`} className="group">
+          <TrackedInternalLink
+            key={post.id}
+            href={`/blog/${post.id}`}
+            contentType="article_related"
+            contentId={post.id}
+            className="group"
+          >
             <div className="relative aspect-[16/10] overflow-hidden mb-3">
               <Image
                 src={post.imagen}
@@ -33,7 +40,7 @@ export function ArticleRelated({ posts }: { posts: RelatedPost[] }) {
             </div>
             <p className="article-related-category uppercase tracking-widest mb-1">{post.categoria}</p>
             <h4 className="transition-colors">{post.titulo}</h4>
-          </Link>
+          </TrackedInternalLink>
         ))}
       </div>
     </section>
