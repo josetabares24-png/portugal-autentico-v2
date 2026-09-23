@@ -87,3 +87,21 @@ Cuando José pida una pieza:
 5. fijar composición, tipografía, tamaños y colores;
 6. entregar una propuesta cerrada o el diseño listo;
 7. guardar el aprendizaje relevante en GitHub si crea una regla reutilizable.
+
+
+## Refinamiento Lunático — masthead y fotografía
+
+Reglas aprendidas de la iteración Portugal vs País de Gales:
+
+- Si una etiqueta genérica como “ACTUALIDAD” no añade información, eliminarla.
+- El logo debe aparecer UNA sola vez y funcionar como masthead/identidad, no como firma decorativa pegada al pie.
+- Para Estaba en Lisboa, priorizar logo arriba izquierda y fecha/ciudad arriba derecha cuando la pieza admita formato editorial.
+- Nunca sacrificar una buena fotografía por llenar el lienzo: si el original horizontal tiene información visual importante, preservar su relación de aspecto dentro de una franja fotográfica en lugar de hacer un crop agresivo.
+- Evitar la sensación de zoom excesivo sobre rostros.
+- Separar fotografía y bloque informativo cuando eso mejore aire, lectura y estética.
+- El pie no debe duplicar logo + slogan + web si el masthead ya resuelve identidad.
+- Un solo acento terracota por jerarquía; no decorar por decorar.
+- Antes de cerrar: test de marca → ¿parece una publicación editorial de Estaba en Lisboa o un póster deportivo genérico?
+
+Patrón recomendado para noticias/eventos:
+MASTHEAD DE MARCA → FOTO REAL RESPIRADA → KICKER → TITULAR → DATOS ÚTILES → SALIDA LIMPIA.
