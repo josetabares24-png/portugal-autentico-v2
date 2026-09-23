@@ -331,3 +331,28 @@ If an official source proves that a current public statement is materially false
 Short-lived changes should not be injected into evergreen content unless they materially block the visitor's plan.
 
 Reference: [[operations/VISITOR-IMPACT-WATCH-2026-09-23]].
+
+
+## D-025 — Every public blog page must earn Level 1
+**Date:** 2026-09-23  
+**Status:** accepted
+
+The public blog is managed as a 60-page editorial portfolio, not as a publishing counter.
+
+A page reaches **Level 1** only when it combines:
+- immediate intent fit;
+- decision-useful value;
+- differentiated editorial context;
+- trustworthy sourcing for strong or volatile claims;
+- human voice without invented first-hand authority;
+- useful internal continuation;
+- contextual, non-intrusive monetization;
+- a maintenance path for volatile information.
+
+Operational rule:
+- do not mass-rewrite the blog;
+- protect active SEO experiments and recent winners;
+- prioritize debt by **SEO signal × trust risk × editorial weakness × freshness need**;
+- a rewrite is not DONE until code, sources, CI and production are verified.
+
+Control: [[content/BLOG-LEVEL-1-CONTROL-2026-09-23]].
