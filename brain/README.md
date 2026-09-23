@@ -74,3 +74,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 
 - [[content/EDITORIAL-MAP]] — organización del contenido existente por necesidad.
 - [[product/LEGACY-ROUTE-INVENTORY]] — estado y evidencia de productos/rutas no editoriales.
+
+- [[content/EDITORIAL-DEBT]] — deuda editorial verificada y priorizada por señal SEO.
