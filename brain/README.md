@@ -76,3 +76,5 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[product/LEGACY-ROUTE-INVENTORY]] — estado y evidencia de productos/rutas no editoriales.
 
 - [[content/EDITORIAL-DEBT]] — deuda editorial verificada y priorizada por señal SEO.
+
+- [[seo/INTERNAL-LINK-GRAPH-2026-09-23]] — baseline of article-to-article structure before behavioral click data.

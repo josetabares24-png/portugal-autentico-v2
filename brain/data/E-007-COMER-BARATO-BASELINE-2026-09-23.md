@@ -1,6 +1,15 @@
 # E-007 — Dónde comer barato en Lisboa
 
-Inicio: **2026-09-23**  
+Inicio: **2026-09-23**
+
+## Production deployment
+
+- Main commit: `52a89ea66b77fce383ab2663fd9fb2982b27da0d`
+- Vercel deployment: `dpl_AzMbiDH5VkBiSnxmQdnZZvB9FkVu`
+- Created: **2026-09-23 11:12 Europe/Lisbon** (10:12:09 UTC)
+- State checked: **READY / production**
+
+This timestamp starts the post-change observation window.  
 URL: `/blog/donde-comer-barato-lisboa`
 
 ## HECHOS
