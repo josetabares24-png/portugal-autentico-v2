@@ -105,3 +105,59 @@ Reglas aprendidas de la iteración Portugal vs País de Gales:
 
 Patrón recomendado para noticias/eventos:
 MASTHEAD DE MARCA → FOTO REAL RESPIRADA → KICKER → TITULAR → DATOS ÚTILES → SALIDA LIMPIA.
+
+
+## Protocolo LOCKED de iteración visual
+
+Esta regla nace de las iteraciones del post Portugal vs País de Gales y debe aplicarse a TODO contenido social de Estaba en Lisboa.
+
+### Flujo obligatorio
+1. Recuperar memoria visual vigente y referencias aprobadas.
+2. Analizar la pieza actual.
+3. Separar claramente:
+   - qué funciona;
+   - qué falla;
+   - qué NO se debe tocar;
+   - qué cambio puntual se propone.
+4. Presentar la propuesta ANTES de modificar o ejecutar.
+5. Esperar aprobación explícita de José.
+6. Ejecutar únicamente los cambios aprobados.
+7. En la siguiente ronda, hacer microajustes; no reinterpretar ni rediseñar toda la pieza salvo petición expresa.
+
+### Estabilidad de marca
+- No rediseñar todo en cada iteración.
+- Mantener como referencia tipográfica los primeros carruseles aprobados de Estaba en Lisboa.
+- No cambiar tipografías por novedad o gusto momentáneo.
+- El degradado forma parte del lenguaje visual de la marca y NO debe eliminarse por defecto.
+- Se puede proponer ajustar el degradado (intensidad, dirección, negro/azul noche), pero debe aprobarse antes.
+- No añadir rayas, divisores, iconos, marcos, bloques, adornos o recursos gráficos nuevos sin una razón funcional y aprobación.
+- No mover, duplicar o reinterpretar el logo sin propuesta previa.
+- Evitar crop agresivo y zoom excesivo; preservar el valor documental de la fotografía.
+- Proteger continuidad visual antes que producir una “versión nueva”.
+- Una corrección debe mejorar la pieza existente, no borrar lo que ya funcionaba.
+
+### Test previo a ejecutar
+Antes de tocar Canva, responder internamente:
+- ¿Estoy ajustando o reinventando?
+- ¿Estoy preservando lo aprobado?
+- ¿Este cambio fue pedido o propuesto y aprobado?
+- ¿La pieza sigue pareciendo parte de la misma familia visual?
+- ¿Estoy introduciendo algo nuevo que José no aprobó?
+
+Si la respuesta indica reinvención innecesaria: NO ejecutar.
+
+### Formato de propuesta previo a Canva
+**DIAGNÓSTICO**
+Qué funciona y qué falla.
+
+**NO TOCARÍA**
+Elementos ya correctos que se preservan.
+
+**CAMBIARÍA**
+Máximo de cambios puntuales necesarios.
+
+**PROPUESTA**
+Cómo quedaría después de esos cambios.
+
+**APROBACIÓN**
+No ejecutar hasta recibir el visto bueno.
