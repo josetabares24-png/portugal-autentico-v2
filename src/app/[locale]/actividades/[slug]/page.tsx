@@ -184,14 +184,14 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
               </div>
 
               <div className="border-l-2 border-terracotta pl-5">
-                <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">El error que casi todos cometen</p>
+                <p className="text-xs uppercase tracking-widest text-text-secondary mb-2">Ten en cuenta</p>
                 <p className="text-text-secondary leading-relaxed">{activity.experiencia.elError}</p>
               </div>
             </div>
           )}
 
           <div className="relative bg-night bg-azulejo-pattern-gold rounded-lg px-6 py-6 mb-10 overflow-hidden">
-            <p className="relative text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Tip para ahorrar de un local</p>
+            <p className="relative text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Dato práctico</p>
             <p className="relative text-white leading-relaxed">{activity.savingTip}</p>
           </div>
 

@@ -156,3 +156,18 @@ After E-006/E-007 are left untouched:
 3. preserve Oceanário as a commercial page while measuring conversion.
 
 Do not invest in redesigning the Activities hub before individual-page roles are resolved.
+
+
+## Freshness pass completed — 2026-09-23
+
+Priority factual maintenance completed for:
+- cristo-rei
+- miradouro-senhora-do-monte
+- fado-en-alfama
+- cascais-cabo-da-roca
+- elevador-santa-justa
+- oceanario-lisboa
+
+Evidence and source log: [[PRIORITY-ACTIVITIES-FRESHNESS-2026-09-23]].
+
+This was not a mass rewrite and should not be evaluated as one SEO experiment.

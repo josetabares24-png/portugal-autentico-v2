@@ -197,3 +197,14 @@ Direction:
 - eventually, an owned product if demand is demonstrated.
 
 Reference: [[strategy/EUROPE-CITY-GUIDE-BENCHMARK-2026-09-23]].
+
+
+## D-018 — Activity freshness corrections are maintenance
+**Date:** 2026-09-23  
+**Status:** accepted
+
+Dynamic factual corrections to activity pages — opening status, prices, transport operator/line, official hours — are maintenance, not automatically SEO experiments.
+
+Correctness can override experiment purity when an operational fact is materially wrong, as with Elevador de Santa Justa being temporarily closed.
+
+For pages already near page 1, keep such maintenance narrow and do not combine it with speculative SEO rewriting.

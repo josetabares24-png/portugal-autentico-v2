@@ -179,10 +179,15 @@ Evidence: [[product/ACTIVITIES-AUDIT-2026-09-23]].
 
 Do not mass-retire activity URLs.
 
-Priority order when capacity opens:
-1. freshness check: cristo-rei / miradouro-senhora-do-monte / fado-en-alfama / cascais-cabo-da-roca;
-2. page-specific diagnosis: elevador-santa-justa;
-3. protect commercial signal: oceanario-lisboa.
+Completed 2026-09-23:
+- freshness check: cristo-rei / miradouro-senhora-do-monte / fado-en-alfama / cascais-cabo-da-roca;
+- operational correction: elevador-santa-justa;
+- pricing/factual refresh: oceanario-lisboa.
+
+Next:
+- observe these URLs; do not turn the freshness pass into repeated rewrites;
+- Elevador de Santa Justa can receive a page-specific SEO diagnosis later, but its current operational closure must remain accurate;
+- protect Oceanário's commercial signal and verify affiliate performance before increasing prominence.
 
 Do not redesign the Activities hub now.
 
