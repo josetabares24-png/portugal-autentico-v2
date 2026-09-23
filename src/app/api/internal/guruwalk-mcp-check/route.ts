@@ -13,6 +13,7 @@ function isoDate(date: Date): string {
 
 export async function GET() {
   // This endpoint exists only to validate the integration in Vercel Preview.
+  // Runtime retry requested after the Vercel build-rate-limit began clearing.
   // Production must never expose a test surface that spends partner API quota.
   if (process.env.VERCEL_ENV === 'production') {
     return new NextResponse(null, { status: 404 });
