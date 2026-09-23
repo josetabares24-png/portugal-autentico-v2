@@ -276,3 +276,23 @@ Reason:
 - API secrets must remain outside source control and Mente Lisboa.
 
 Reference: [[business/GURUWALK-MCP-2026-09-23]].
+
+
+### Decisión — Iteraciones visuales sociales
+
+**Estado:** LOCKED por preferencia operativa de José.
+
+Para Estaba en Lisboa, las piezas sociales no se rediseñan completamente en cada feedback. El flujo obligatorio es:
+
+**diagnóstico → propuesta → aprobación → ejecución → microajustes**
+
+Reglas asociadas:
+- mantener la tipografía de los primeros carruseles aprobados como referencia;
+- preservar el degradado como recurso de marca, salvo cambio previamente propuesto y aprobado;
+- no introducir rayas, adornos, iconos o recursos nuevos sin justificación y aprobación;
+- proteger el logo y su tratamiento;
+- evitar crops/zoom agresivos;
+- modificar solo lo acordado;
+- priorizar continuidad de marca sobre novedad visual.
+
+Esta decisión debe consultarse antes de cualquier nueva ejecución en Canva.
