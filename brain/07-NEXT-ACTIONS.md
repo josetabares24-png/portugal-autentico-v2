@@ -118,3 +118,16 @@ Do not create empty hubs before mapping the existing inventory.
 ## Single next priority
 
 **Measure where users actually choose to go next, then remove or replace the weakest global CTA.**
+
+
+## P1 — deuda editorial priorizada
+
+Registro: [[content/EDITORIAL-DEBT]]
+
+Orden actual:
+1. donde-comer-barato-lisboa — candidato E-007.
+2. barrios-imprescindibles — esperar ventana post-21/09.
+3. azulejos-portugueses-historia — esperar ventana post-21/09.
+4. playas-cerca-lisboa — reparar después por menor señal.
+
+No hacer limpieza masiva anti-IA.
