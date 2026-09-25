@@ -74,7 +74,7 @@ function VisitTool({ tool, portalId }: { tool: TravelerGuideToolData; portalId: 
   return (
     <div className="grid border-l border-t border-night/15 sm:grid-cols-2">
       {tool.rows.map((row) => (
-        <RowWrapper key={row.primary} row={row} portalId={portalId} className="min-h-60 border-b border-r border-night/15 p-6 pr-10 sm:p-8 sm:pr-11">
+        <RowWrapper key={row.primary} row={row} portalId={portalId} className="min-h-52 border-b border-r border-night/15 p-6 pr-10 sm:p-7 sm:pr-11">
           <span className="font-body text-xs uppercase tracking-[0.15em] text-[#A87830]">{row.primary}</span>
           <span className="mt-5 block font-display text-2xl font-semibold leading-tight text-night">{row.secondary}</span>
           <span className="mt-4 block font-body text-sm leading-relaxed text-text-secondary">{row.tertiary}</span>
@@ -126,8 +126,8 @@ function SpotsTool({ tool, portalId }: { tool: TravelerGuideToolData; portalId: 
       {tool.rows.map((row, index) => {
         const Icon = lightIcons[index] ?? Camera;
         return (
-          <RowWrapper key={row.primary} row={row} portalId={portalId} className="min-h-64 border-b border-r border-night/15 p-6 pr-10">
-            <Icon size={23} strokeWidth={1.6} className="mb-7 text-[#46647D]" aria-hidden="true" />
+          <RowWrapper key={row.primary} row={row} portalId={portalId} className="min-h-56 border-b border-r border-night/15 p-6 pr-10">
+            <Icon size={23} strokeWidth={1.6} className="mb-5 text-[#46647D]" aria-hidden="true" />
             <span className="font-body text-xs uppercase tracking-[0.15em] text-[#46647D]">{row.primary}</span>
             <span className="mt-3 block font-display text-xl font-semibold text-night">{row.secondary}</span>
             <span className="mt-4 block font-body text-sm leading-relaxed text-text-secondary">{row.tertiary}</span>
@@ -171,9 +171,9 @@ export default function TravelerGuideTool({ portalId, tool }: { portalId: string
   const Tool = tools[portalId as keyof typeof tools] ?? RoutesTool;
 
   return (
-    <section id="herramienta-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-16 md:py-22">
+    <section id="herramienta-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="mb-10 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-12">
+        <div className="mb-8 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-12">
           <div>
             <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">{tool.eyebrow}</p>
             <h2 className="max-w-xl font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-night md:text-4xl">

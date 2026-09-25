@@ -544,6 +544,8 @@ Visual validation standard for this refinement:
 
 ## Selective reservation layer
 
+> Superseded by the fourth refinement below after visual review showed that four commercial guide sections made the experience feel overloaded.
+
 The gateway now tests a restrained commercial continuation on four guide intents:
 - Rutas: Sintra complete and Palacio da Pena options;
 - Qué visitar: Castelo, Oceanário and a Tajo cruise;
@@ -554,3 +556,24 @@ Placement rule:
 **answer the question → explain trade-offs → show an exact reservable option**.
 
 The Home, Movilidad, Fotografías and Cuídate de esto remain non-commercial. Product cards reuse the existing GetYourGuide-attributed links and first-party visual system, remain usable after cookie rejection, expose no copied prices or ratings, and keep click measurement separated by guide placement.
+
+## Fourth refinement — answer first, one official widget
+
+Visual review rejected the custom product-card layer. The traveler already arrives with too many tabs open; the guide must reduce choices before asking for another decision.
+
+The revised flow is:
+
+**shorter hero → four immediate situations → one intent-specific tool → three human answers → optional direct widget → deeper reading**
+
+Implementation rules:
+- remove the table of contents and other interface that explains the page instead of helping with the trip;
+- reduce hero height and section spacing so useful answers arrive sooner on mobile;
+- retain the distinct practical tools and human questions because they provide the site's strongest original utility;
+- show the official GetYourGuide widget only on `Qué visitar`;
+- limit it to Castelo de São Jorge and one Tajo cruise, two different decisions with clear first-trip value;
+- do not imitate the provider's product cards or repeat titles, prices, ratings or urgency outside the widget;
+- if cookies are rejected, show one quiet consent explanation and a control that reopens preferences;
+- keep all other guide portals editorial and free from booking widgets;
+- leave the existing SEO gate, sitemap and production state unchanged.
+
+This is intentionally not a live catalog API integration. It is the official GetYourGuide partner widget, using tour IDs and campaign attribution already supported by the repository.

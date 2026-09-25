@@ -24,7 +24,7 @@ export async function generateMetadata({ searchParams }: BlogPageProps): Promise
   const title = currentPage === 1 ? BLOG_TITLE : `Blog Lisboa 2026 — Página ${currentPage}`;
 
   return {
-    title,
+    title: currentPage === 1 ? { absolute: title } : title,
     description: BLOG_DESCRIPTION,
     keywords: ['blog lisboa', 'consejos lisboa', 'miradores lisboa', 'restaurantes lisboa', 'transporte lisboa'],
     alternates: { canonical },

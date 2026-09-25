@@ -1,7 +1,6 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { travelerGuides } from '../src/data/traveler-guide-preview.ts';
-import { findProductById, resolveBookingLink } from '../src/data/bookings.ts';
 
 const failures = [];
 
@@ -18,12 +17,13 @@ function check(condition, message) {
 const slugs = travelerGuides.map((guide) => guide.slug);
 const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
-const commercialPortalIds = new Set(['routes', 'visit', 'food', 'drinks']);
+const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
 
 check(travelerGuides.length === 7, 'hay exactamente siete portales de viaje');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
 check(new Set(portalIds).size === portalIds.length, 'los identificadores de analítica no se repiten');
 check(new Set(practicalToolTitles).size === practicalToolTitles.length, 'cada guía tiene una herramienta práctica distinta');
+check(widgetGuides.length === 1, 'sólo una guía carga un widget de reservas');
 
 for (const guide of travelerGuides) {
   const prefix = `/guia/${guide.slug}`;
@@ -49,25 +49,23 @@ for (const guide of travelerGuides) {
   check(existsSync(imagePath), `${prefix} encuentra su fotografía en el repositorio`);
   check(!/deberíamos publicar|esta subguía|no quiero publicar|cuando hablemos/.test(completeCopy), `${prefix} no expone lenguaje editorial interno`);
 
-  if (guide.bookingSection) {
-    check(commercialPortalIds.has(guide.portalId), `${prefix} sólo monetiza una intención aprobada`);
+  if (guide.getYourGuideWidget) {
+    const tourIds = guide.getYourGuideWidget.tourIds.split(',');
+    check(guide.portalId === 'visit', `${prefix} reserva sólo donde existe intención de visita`);
+    check(tourIds.length === 2, `${prefix} limita el widget a dos actividades`);
+    check(tourIds.every((tourId) => /^\d+$/.test(tourId)), `${prefix} usa identificadores válidos de GetYourGuide`);
+    check(new Set(tourIds).size === tourIds.length, `${prefix} no repite actividades en el widget`);
     check(
-      guide.bookingSection.productIds.length >= 1 && guide.bookingSection.productIds.length <= 3,
-      `${prefix} mantiene una selección comercial breve`,
+      tourIds.join(',') === '424720,410732',
+      `${prefix} conserva la selección editorial aprobada`,
     );
+    check(Boolean(guide.getYourGuideWidget.campaign), `${prefix} identifica la campaña del widget`);
     check(
-      new Set(guide.bookingSection.productIds).size === guide.bookingSection.productIds.length,
-      `${prefix} no repite productos reservables`,
+      guide.getYourGuideWidget.fallbackHref.includes('getyourguide.es'),
+      `${prefix} mantiene un destino oficial de repliegue`,
     );
-
-    for (const productId of guide.bookingSection.productIds) {
-      const product = findProductById(productId);
-      const link = product ? resolveBookingLink(product, 'article') : null;
-      check(Boolean(product), `${prefix} encuentra el producto ${productId}`);
-      check(link?.provider === 'getyourguide', `${prefix} reserva ${productId} mediante GetYourGuide`);
-    }
   } else {
-    check(!commercialPortalIds.has(guide.portalId), `${prefix} permanece sin bloque comercial por decisión editorial`);
+    check(guide.portalId !== 'visit', `${prefix} permanece sin widget por decisión editorial`);
   }
 }
 

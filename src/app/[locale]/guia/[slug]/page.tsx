@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
-import TravelerGuideBookings from '@/components/traveler/TravelerGuideBookings';
+import TravelerGuideGetYourGuide from '@/components/traveler/TravelerGuideGetYourGuide';
 import TravelerGuideTool from '@/components/traveler/TravelerGuideTool';
 import { getTravelerGuide, travelerGuideSlugs } from '@/data/traveler-guide-preview';
 
@@ -53,7 +53,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
 
   return (
     <main id="main-content" className="bg-cream">
-      <section className="relative h-[76svh] min-h-[590px] max-h-[720px] overflow-hidden border-b border-taupe/20 bg-night">
+      <section className="relative h-[64svh] min-h-[520px] max-h-[640px] overflow-hidden border-b border-taupe/20 bg-night">
         <Image
           src={guide.heroImage}
           alt={guide.heroAlt}
@@ -97,7 +97,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
         </div>
       </section>
 
-      <section className="border-b border-taupe/20 bg-cream py-14 md:py-20">
+      <section className="border-b border-taupe/20 bg-cream py-12 md:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Empieza por tu situación</p>
@@ -105,43 +105,8 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
               {guide.decisionPrompt}
             </h2>
             <p className="mt-5 max-w-md font-body text-sm leading-relaxed text-text-secondary">
-              Cada opción parte de una necesidad concreta y te lleva a la respuesta más útil para ese momento.
+              Elige la situación que más se parece a la tuya. No necesitas leer toda la guía para encontrar un buen punto de partida.
             </p>
-
-            <nav aria-label="Contenido de esta guía" className="mt-10 border-t border-night/15 pt-5">
-              <p className="mb-4 font-body text-[0.65rem] uppercase tracking-[0.18em] text-taupe">En esta guía</p>
-              <div className="space-y-3">
-                <a
-                  href="#herramienta-practica"
-                  className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
-                >
-                  Una respuesta para cada situación
-                </a>
-                <a
-                  href="#dudas-reales"
-                  className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
-                >
-                  Las dudas que suelen aparecer
-                </a>
-                {guide.bookingSection ? (
-                  <a
-                    href="#reservas"
-                    className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
-                  >
-                    Opciones que sí conviene reservar
-                  </a>
-                ) : null}
-                {guide.sections.map((section) => (
-                  <a
-                    key={section.title}
-                    href={`#${sectionId(section.title)}`}
-                    className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
-                  >
-                    {section.title}
-                  </a>
-                ))}
-              </div>
-            </nav>
           </div>
 
           <div className="border-y border-night/15">
@@ -184,7 +149,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
 
       <TravelerGuideTool portalId={guide.portalId} tool={guide.practicalTool} />
 
-      <section id="dudas-reales" className="scroll-mt-20 border-b border-white/10 bg-night py-16 text-white md:py-20">
+      <section id="dudas-reales" className="scroll-mt-20 border-b border-white/10 bg-night py-12 text-white md:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/45">Lo que solemos preguntarnos</p>
@@ -198,7 +163,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
 
           <div className="border-y border-white/15">
             {guide.humanQuestions.map((item) => (
-              <div key={item.question} className="grid gap-3 border-b border-white/15 py-7 last:border-b-0 md:grid-cols-[0.8fr_1.2fr] md:gap-8 md:py-8">
+              <div key={item.question} className="grid gap-3 border-b border-white/15 py-6 last:border-b-0 md:grid-cols-[0.8fr_1.2fr] md:gap-8">
                 <h3 className="font-display text-xl font-semibold not-italic leading-snug tracking-normal text-white md:text-2xl">
                   {item.question}
                 </h3>
@@ -209,6 +174,10 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
         </div>
       </section>
 
+      {guide.getYourGuideWidget ? (
+        <TravelerGuideGetYourGuide section={guide.getYourGuideWidget} />
+      ) : null}
+
       <section className="bg-cream">
         {guide.sections.map((section, index) => (
           <article
@@ -216,7 +185,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
             id={sectionId(section.title)}
             className={`scroll-mt-24 border-b border-taupe/20 ${index % 2 === 1 ? 'bg-white/45' : 'bg-cream'}`}
           >
-            <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 md:grid-cols-[0.72fr_1.28fr] md:gap-16 md:px-10 md:py-22">
+            <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-[0.72fr_1.28fr] md:gap-16 md:px-10 md:py-16">
               <div>
                 {section.eyebrow ? (
                   <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">{section.eyebrow}</p>
@@ -280,11 +249,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
         ))}
       </section>
 
-      {guide.bookingSection ? (
-        <TravelerGuideBookings portalId={guide.portalId} section={guide.bookingSection} />
-      ) : null}
-
-      <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-16 md:py-20">
+      <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-12 md:py-16">
         <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
           <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/50">Para quedarte con una idea</p>
           <h2 className="font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-white md:text-4xl">{guide.closingTitle}</h2>

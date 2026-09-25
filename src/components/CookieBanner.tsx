@@ -26,6 +26,12 @@ export default function CookieBanner() {
     }
   }, []);
 
+  useEffect(() => {
+    const showCookiePreferences = () => setShow(true);
+    window.addEventListener('open-cookie-preferences', showCookiePreferences);
+    return () => window.removeEventListener('open-cookie-preferences', showCookiePreferences);
+  }, []);
+
   const applyConsent = (value: 'accepted' | 'rejected') => {
     localStorage.setItem('cookieConsent', value);
     localStorage.setItem('cookieConsentExplicit', 'true');

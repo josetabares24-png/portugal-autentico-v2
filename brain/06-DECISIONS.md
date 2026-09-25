@@ -420,7 +420,7 @@ Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 ## D-030 — Reservations appear only after the guide has resolved the decision
 **Date:** 2026-09-25
-**Status:** accepted Preview experiment; production requires explicit visual approval
+**Status:** superseded by D-031 after visual rejection
 
 The traveler gateway can include GetYourGuide recommendations, but only as a selective continuation of an already answered need.
 
@@ -437,6 +437,30 @@ Rules:
 - each guide shows one to three products maximum and includes the compact affiliate disclosure.
 
 This Preview uses the existing official GetYourGuide partner links and campaign attribution. It does not introduce or claim a separate live catalog API that is not present in the repository.
+
+
+## D-031 — One decision, one direct booking widget
+**Date:** 2026-09-25
+**Status:** accepted direction for a new Preview; production requires explicit visual approval
+
+The first reservation experiment made the traveler guides feel like catalogs. The correction is to reduce both the commercial surface and the amount of interface around the answer.
+
+Rules:
+- use the official GetYourGuide widget directly instead of recreating product cards in the site's design;
+- show one widget only in `Qué visitar`, where the visitor is already deciding what deserves time and a reservation;
+- limit the widget to two broad first-trip choices: Castelo de São Jorge and a Tajo cruise;
+- place it after the practical answer and human questions, before the longer supporting reading;
+- keep Home, Rutas, Movilidad, Dónde comer, Dónde tomar algo, Fotografías and Cuídate de esto free of booking widgets;
+- remove the guide table of contents: it advertised page length instead of resolving the immediate question;
+- shorten heroes and vertical spacing so decisions arrive sooner, especially on mobile;
+- load the third-party widget only after explicit cookie consent and provide a quiet way to reopen preferences;
+- keep the compact affiliate disclosure next to the widget;
+- `/guia/*` remains `noindex, follow`, outside the sitemap, until the canonical strategy is approved;
+- do not merge or deploy this experiment to production without explicit visual approval.
+
+Known data guardrail: the existing `sintra-completa` short link currently resolves to GetYourGuide tour `79596`, a Palacio da Pena product, so it must not be presented as a complete Sintra excursion until its destination is corrected.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 
 ## D-029 — Every traveler guide earns a distinct practical tool
