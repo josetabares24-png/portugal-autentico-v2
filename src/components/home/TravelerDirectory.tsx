@@ -18,7 +18,6 @@ import TrackedInternalLink from '@/components/TrackedInternalLink';
 type Portal = {
   slug: string;
   portalId: string;
-  number: string;
   shortTitle: string;
   eyebrow: string;
   portalSubtitle: string;
@@ -69,7 +68,7 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
             <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/65">
               {activePortal.eyebrow}
             </p>
-            <p className="max-w-xl font-display text-[3.4rem] italic leading-[1.02] text-white xl:text-[4rem]">
+            <p className="max-w-xl font-display text-[3rem] font-semibold not-italic leading-[1.04] tracking-normal text-white xl:text-[3.5rem]">
               {activePortal.shortTitle}
             </p>
             <p className="mt-5 max-w-lg font-body text-base leading-relaxed text-white/80">
@@ -127,12 +126,16 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <div className="mb-1 flex items-center gap-2 font-body text-[0.64rem] uppercase tracking-[0.16em]">
-                    <span style={{ color: isActive ? '#D8A95C' : presentation.accent }}>{portal.number}</span>
+                  <div className="mb-1.5 flex items-center gap-2.5 font-body text-[0.64rem] uppercase tracking-[0.16em]">
+                    <span
+                      className="h-px w-5 flex-none"
+                      style={{ backgroundColor: isActive ? '#D8A95C' : presentation.accent }}
+                      aria-hidden="true"
+                    />
                     <span className={isActive ? 'lg:text-white/45' : 'text-taupe'}>{presentation.label}</span>
                   </div>
                   <span
-                    className={`block font-display text-[1.55rem] italic leading-tight transition-colors sm:text-[1.7rem] lg:text-[1.6rem] ${
+                    className={`block font-display text-[1.35rem] font-semibold not-italic leading-tight tracking-normal transition-colors sm:text-[1.5rem] lg:text-[1.45rem] ${
                       isActive ? 'lg:text-white' : 'text-night group-hover:text-terracotta'
                     }`}
                   >

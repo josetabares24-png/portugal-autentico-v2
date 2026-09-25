@@ -82,8 +82,8 @@ export default function HomePage() {
             <div>
               <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Lisboa, sin complicarte</p>
               <h2
-                className="max-w-3xl font-display italic leading-tight text-night"
-                style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)', fontWeight: 400 }}
+                className="max-w-3xl font-display font-semibold not-italic leading-tight tracking-normal text-night"
+                style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)' }}
               >
                 Dime qué necesitas y empezamos por ahí.
               </h2>
