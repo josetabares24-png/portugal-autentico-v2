@@ -28,48 +28,45 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
 
   return (
     <main id="main-content" className="bg-cream">
-      <section className="relative overflow-hidden border-b border-taupe/20 bg-night">
-        <div className="mx-auto grid min-h-[560px] max-w-7xl lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="order-2 flex items-end px-6 py-12 sm:px-10 md:px-14 lg:order-1 lg:py-16">
-            <div className="max-w-xl">
-              <Link
-                href="/#guia-practica"
-                className="mb-8 inline-flex font-body text-xs uppercase tracking-[0.16em] text-white/55 transition-colors hover:text-white"
-              >
-                ← Volver a la guía de Lisboa
-              </Link>
+      <section className="relative h-[84svh] min-h-[650px] max-h-[780px] overflow-hidden border-b border-taupe/20 bg-night">
+        <Image
+          src={guide.heroImage}
+          alt={guide.heroAlt}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/55 to-night/10 lg:bg-gradient-to-r lg:from-night/95 lg:via-night/55 lg:to-night/5" />
+        <div className="absolute inset-0 bg-night/10" />
 
-              <p className="mb-4 font-body text-xs uppercase tracking-[0.2em] text-white/55">
-                {guide.number} · {guide.eyebrow}
-              </p>
+        <div className="relative mx-auto flex h-full max-w-7xl items-end px-6 py-10 sm:px-10 md:px-14 lg:py-16">
+          <div className="max-w-2xl">
+            <Link
+              href="/#guia-practica"
+              className="mb-7 inline-flex font-body text-xs uppercase tracking-[0.16em] text-white/65 transition-colors hover:text-white"
+            >
+              ← Volver a la guía de Lisboa
+            </Link>
 
-              <h1
-                className="font-display italic leading-[1.02] text-white"
-                style={{ fontSize: 'clamp(2.7rem, 5vw, 5rem)', fontWeight: 400 }}
-              >
-                {guide.title}
-              </h1>
+            <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-white/65">
+              {guide.number} · {guide.eyebrow}
+            </p>
 
-              <p className="mt-6 font-body text-lg leading-relaxed text-white/80">
-                {guide.lead}
-              </p>
+            <h1
+              className="font-display italic leading-[1.02] text-white"
+              style={{ fontSize: 'clamp(2.55rem, 5vw, 4.8rem)', fontWeight: 400 }}
+            >
+              {guide.title}
+            </h1>
 
-              <p className="mt-6 border-l-2 border-terracotta pl-5 font-display text-lg italic leading-relaxed text-white/80">
-                {guide.promise}
-              </p>
-            </div>
-          </div>
+            <p className="mt-5 max-w-xl font-body text-base leading-relaxed text-white/85 sm:text-lg">
+              {guide.lead}
+            </p>
 
-          <div className="relative order-1 min-h-[360px] lg:order-2 lg:min-h-full">
-            <Image
-              src={guide.heroImage}
-              alt={guide.heroAlt}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1023px) 100vw, 56vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-night/35 via-transparent to-transparent lg:bg-gradient-to-r lg:from-night/20 lg:via-transparent lg:to-transparent" />
+            <p className="mt-5 max-w-2xl border-l-2 border-terracotta pl-5 font-display text-base italic leading-relaxed text-white/82 sm:text-lg">
+              {guide.promise}
+            </p>
           </div>
         </div>
       </section>

@@ -43,8 +43,8 @@ export const travelerGuides: TravelerGuide[] = [
     eyebrow: 'Cómo entender Lisboa',
     portalSubtitle: 'Empieza por los días que tienes, no por una lista infinita de lugares.',
     portalTopics: ['1 día', '2 días', '3 días', '4–5 días', '1 semana', 'lluvia', 'con niños'],
-    heroImage: '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
-    heroAlt: 'Vista de los tejados de Alfama y el río Tajo en Lisboa',
+    heroImage: '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
+    heroAlt: 'Calle de Alfama descendiendo entre fachadas tradicionales de Lisboa',
     lead:
       'Lisboa se organiza mejor por tiempo y por zonas. Si empiezas intentando encajar monumentos aislados, terminas cruzando la ciudad varias veces y disfrutando menos.',
     promise:
@@ -106,8 +106,8 @@ export const travelerGuides: TravelerGuide[] = [
     eyebrow: 'Transportes, tarjetas, aeropuerto y atajos',
     portalSubtitle: 'Metro, tranvías, billetes y cuándo caminar tiene más sentido.',
     portalTopics: ['Metro', 'Tranvías', 'Navegante', 'Aeropuerto', 'Caminar', 'Apps', 'Atajos'],
-    heroImage: '/images/miradouro-grupo-atardecer.jpg',
-    heroAlt: 'Vista urbana de Lisboa desde una zona elevada',
+    heroImage: '/images/lisboa-originales/tranvia-turistico-baixa-lisboa-01.webp',
+    heroAlt: 'Tranvía amarillo circulando por la Baixa de Lisboa',
     lead:
       'Lisboa tiene una red de transporte sencilla de usar una vez que entiendes dos cosas: qué medio resuelve mejor cada trayecto y cuánto desnivel hay entre donde estás y donde quieres llegar.',
     promise:
@@ -167,8 +167,8 @@ export const travelerGuides: TravelerGuide[] = [
     eyebrow: 'Sitios, monumentos, entradas y experiencias',
     portalSubtitle: 'Qué merece tu tiempo, qué puedes hacer gratis y qué conviene reservar.',
     portalTopics: ['Imprescindibles', 'Monumentos', 'Gratis', 'Miradores', 'Entradas', 'Experiencias', 'Excursiones'],
-    heroImage: '/images/lisboa-originales/baixa-pombalina-lisboa-02.webp',
-    heroAlt: 'Calle de la Baixa Pombalina en el centro de Lisboa',
+    heroImage: '/images/actividades/castelo-sao-jorge-lisboa.webp',
+    heroAlt: 'Castelo de São Jorge sobre los tejados del centro de Lisboa',
     lead:
       'El problema en Lisboa no es encontrar cosas que hacer. Es distinguir qué cambia realmente tu viaje, qué depende de una reserva y qué puedes dejar abierto hasta ese mismo día.',
     promise:
@@ -392,8 +392,8 @@ export const travelerGuides: TravelerGuide[] = [
     eyebrow: 'Errores, trampas y situaciones prácticas',
     portalSubtitle: 'Carteristas, precios, restaurantes, reservas, transporte y errores comunes.',
     portalTopics: ['Carteristas', 'Precios', 'Restaurantes', 'Aeropuerto', 'Reservas', 'Pagos', 'Errores'],
-    heroImage: '/images/alfama-panoramica.jpg',
-    heroAlt: 'Vista urbana de Lisboa y sus calles históricas',
+    heroImage: '/images/tranvia-turistico-tuktuk-baixa.jpg',
+    heroAlt: 'Tráfico turístico con tranvía y tuk-tuk en el centro de Lisboa',
     lead:
       'Lisboa no necesita una guía alarmista. Sí conviene saber qué situaciones se repiten en zonas turísticas y qué detalles sorprenden cuando nadie te los explicó antes.',
     promise:

@@ -44,7 +44,7 @@ const secondaryPortals = travelerGuides.slice(1);
 export default function HomePage() {
   return (
     <main id="main-content" className="bg-cream">
-      <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] overflow-hidden md:min-h-[620px]">
+      <section className="relative h-[78svh] min-h-[540px] max-h-[680px] overflow-hidden md:h-[82svh] md:min-h-[600px] md:max-h-[760px]">
         <Image
           src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
           alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
@@ -62,7 +62,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="absolute bottom-0 left-0 max-w-3xl p-7 sm:p-10 md:p-16">
+        <div className="absolute bottom-0 left-0 max-w-3xl p-6 pb-8 sm:p-10 md:p-14 md:pb-16">
           <h1
             className="mb-4 font-display italic leading-[1.02] text-white"
             style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
@@ -78,14 +78,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-16 md:py-24">
+      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
-          <div className="mb-12 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
+          <div className="mb-10 grid gap-5 md:grid-cols-[1fr_0.7fr] md:items-end md:gap-8">
             <div>
               <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Lisboa, sin complicarte</p>
               <h2
                 className="max-w-3xl font-display italic leading-tight text-night"
-                style={{ fontSize: 'clamp(2.15rem, 4.2vw, 3.4rem)', fontWeight: 400 }}
+                style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)', fontWeight: 400 }}
               >
                 Dime qué necesitas y empezamos por ahí.
               </h2>
@@ -99,11 +99,11 @@ export default function HomePage() {
             href={`/guia/${featuredPortal.slug}`}
             contentType="home_guide_portal"
             contentId={featuredPortal.portalId}
-            className="group relative mb-px grid min-h-[320px] overflow-hidden bg-night md:grid-cols-[1.05fr_0.95fr]"
+            className="group relative mb-px grid overflow-hidden bg-night md:min-h-[340px] md:grid-cols-[1.05fr_0.95fr]"
           >
             <div className="relative z-10 flex flex-col justify-between p-7 sm:p-9 md:p-12">
               <div>
-                <div className="mb-10 flex items-center justify-between">
+                <div className="mb-7 flex items-center justify-between md:mb-10">
                   <span className="font-body text-xs tracking-[0.18em] text-white/45">{featuredPortal.number}</span>
                   <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </div>
@@ -112,14 +112,14 @@ export default function HomePage() {
                 <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-white/72">{featuredPortal.portalSubtitle}</p>
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-x-4 gap-y-2">
+              <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 md:mt-10">
                 {featuredPortal.portalTopics.map((topic) => (
                   <span key={topic} className="font-body text-xs text-white/55">{topic}</span>
                 ))}
               </div>
             </div>
 
-            <div className="relative min-h-[250px] overflow-hidden">
+            <div className="relative min-h-[190px] overflow-hidden sm:min-h-[230px] md:min-h-full">
               <Image
                 src={featuredPortal.heroImage}
                 alt={featuredPortal.heroAlt}
@@ -139,10 +139,10 @@ export default function HomePage() {
                 href={`/guia/${portal.slug}`}
                 contentType="home_guide_portal"
                 contentId={portal.portalId}
-                className="group relative min-h-[300px] overflow-hidden border-b border-r border-night/15 bg-cream p-7 transition-colors hover:bg-[#EDE7DA] sm:p-9"
+                className="group relative min-h-[248px] overflow-hidden border-b border-r border-night/15 bg-cream p-6 transition-colors hover:bg-[#EDE7DA] sm:min-h-[280px] sm:p-8"
               >
                 <div className="relative z-10 flex h-full flex-col">
-                  <div className="mb-10 flex items-center justify-between">
+                  <div className="mb-7 flex items-center justify-between sm:mb-9">
                     <span className="font-body text-xs tracking-[0.18em] text-taupe">{portal.number}</span>
                     <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </div>
@@ -155,7 +155,7 @@ export default function HomePage() {
                     {portal.portalSubtitle}
                   </p>
 
-                  <div className="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-9">
+                  <div className="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-7 sm:pt-8">
                     {portal.portalTopics.slice(0, 6).map((topic) => (
                       <span key={topic} className="font-body text-[0.72rem] text-night/55">{topic}</span>
                     ))}
@@ -170,6 +170,20 @@ export default function HomePage() {
                 </span>
               </TrackedInternalLink>
             ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 border-y border-taupe/25 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-body text-sm leading-relaxed text-text-secondary">
+              ¿Prefieres empezar caminando y situarte antes de decidir el resto del viaje?
+            </p>
+            <TrackedInternalLink
+              href="/free-tours-lisboa"
+              contentType="home_secondary_cta"
+              contentId="free_tours"
+              className="w-fit flex-shrink-0 border-b border-night pb-0.5 font-body text-sm font-semibold text-night transition-colors hover:border-terracotta hover:text-terracotta"
+            >
+              Ver free tours →
+            </TrackedInternalLink>
           </div>
         </div>
       </section>
