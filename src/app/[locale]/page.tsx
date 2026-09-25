@@ -4,6 +4,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 import { travelerGuides } from '@/data/traveler-guide-preview';
+import TravelerDirectory from '@/components/home/TravelerDirectory';
 
 export const metadata: Metadata = {
   title: { absolute: 'Estaba en Lisboa | Guías de Lisboa en español' },
@@ -37,9 +38,6 @@ const historias = [
   blogPosts.find((p) => p.id === 'estacion-oriente-lisboa') || blogPosts[1],
   blogPosts.find((p) => p.id === 'estacion-olaias-lisboa') || blogPosts[2],
 ].filter(Boolean);
-
-const featuredPortal = travelerGuides[0];
-const secondaryPortals = travelerGuides.slice(1);
 
 export default function HomePage() {
   return (
@@ -95,82 +93,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <TrackedInternalLink
-            href={`/guia/${featuredPortal.slug}`}
-            contentType="home_guide_portal"
-            contentId={featuredPortal.portalId}
-            className="group relative mb-px grid overflow-hidden bg-night md:min-h-[340px] md:grid-cols-[1.05fr_0.95fr]"
-          >
-            <div className="relative z-10 flex flex-col justify-between p-7 sm:p-9 md:p-12">
-              <div>
-                <div className="mb-7 flex items-center justify-between md:mb-10">
-                  <span className="font-body text-xs tracking-[0.18em] text-white/45">{featuredPortal.number}</span>
-                  <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </div>
-                <p className="mb-2 font-body text-xs uppercase tracking-[0.16em] text-white/50">{featuredPortal.eyebrow}</p>
-                <h3 className="font-display text-[2.2rem] italic leading-tight text-white md:text-[3rem]">{featuredPortal.shortTitle}</h3>
-                <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-white/72">{featuredPortal.portalSubtitle}</p>
-              </div>
-
-              <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 md:mt-10">
-                {featuredPortal.portalTopics.map((topic) => (
-                  <span key={topic} className="font-body text-xs text-white/55">{topic}</span>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative min-h-[190px] overflow-hidden sm:min-h-[230px] md:min-h-full">
-              <Image
-                src={featuredPortal.heroImage}
-                alt={featuredPortal.heroAlt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                sizes="(max-width: 768px) 100vw, 48vw"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent" />
-            </div>
-          </TrackedInternalLink>
-
-          <div className="grid border-l border-t border-night/15 md:grid-cols-2">
-            {secondaryPortals.map((portal, index) => (
-              <TrackedInternalLink
-                key={portal.slug}
-                href={`/guia/${portal.slug}`}
-                contentType="home_guide_portal"
-                contentId={portal.portalId}
-                className="group relative min-h-[248px] overflow-hidden border-b border-r border-night/15 bg-cream p-6 transition-colors hover:bg-[#EDE7DA] sm:min-h-[280px] sm:p-8"
-              >
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="mb-7 flex items-center justify-between sm:mb-9">
-                    <span className="font-body text-xs tracking-[0.18em] text-taupe">{portal.number}</span>
-                    <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
-                  </div>
-
-                  <p className="mb-2 font-body text-xs uppercase tracking-[0.16em] text-taupe">{portal.eyebrow}</p>
-                  <h3 className="font-display text-[1.7rem] italic leading-tight text-night transition-colors group-hover:text-terracotta md:text-[2rem]">
-                    {portal.shortTitle}
-                  </h3>
-                  <p className="mt-4 max-w-lg font-body text-sm leading-relaxed text-text-secondary">
-                    {portal.portalSubtitle}
-                  </p>
-
-                  <div className="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-7 sm:pt-8">
-                    {portal.portalTopics.slice(0, 6).map((topic) => (
-                      <span key={topic} className="font-body text-[0.72rem] text-night/55">{topic}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <span
-                  aria-hidden="true"
-                  className="absolute -bottom-8 -right-2 font-display text-[7rem] italic leading-none text-night/[0.035] transition-transform duration-500 group-hover:-translate-x-2"
-                >
-                  {index + 2}
-                </span>
-              </TrackedInternalLink>
-            ))}
-          </div>
+          <TravelerDirectory portals={travelerGuides} />
 
           <div className="mt-8 flex flex-col gap-3 border-y border-taupe/25 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-body text-sm leading-relaxed text-text-secondary">
