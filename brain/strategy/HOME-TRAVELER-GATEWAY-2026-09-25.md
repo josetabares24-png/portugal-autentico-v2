@@ -445,3 +445,76 @@ This is the bridge between:
 - an organic content engine;
 - a recognizable editorial brand;
 - and a measured commercial system.
+
+
+## Preview implementation v2 — 2026-09-25
+
+Status: **BUILT / VERCEL READY / NOT APPROVED FOR PRODUCTION**
+
+José asked to execute the traveler-gateway concept after rejecting retractable/accordion panels.
+
+Implementation:
+- branch: `exp/home-traveler-portals-v2`
+- implementation commit: `1e586a3b738c2890a49bdaa4356c93e2da99b46d`
+- Vercel deployment: `dpl_7iMSJ1tLahVzWT7t3D1fFegiqy7g`
+- deployment state checked: **READY**
+- production was not modified by this visual experiment.
+
+### What v2 tests
+
+Home:
+- preserves the current photographic hero and brand H1;
+- replaces accordion panels with seven **direct editorial portal-buttons**;
+- first portal (Rutas / Guías) receives a larger featured treatment;
+- remaining six portals use a restrained two-column editorial grid on desktop and vertical flow on mobile;
+- every portal surface is a crawlable internal link and emits `select_content` with `content_type=home_guide_portal`;
+- removes Barrios grid, Libreta and isolated Free Tours promo from the experimental Home;
+- restores the current editorial story treatment below the traveler utility layer.
+
+Preview guide system:
+- seven prototype destinations under `/guia/[slug]`:
+  - `/guia/rutas`
+  - `/guia/movilidad`
+  - `/guia/que-visitar`
+  - `/guia/comer`
+  - `/guia/tomar-algo`
+  - `/guia/spots`
+  - `/guia/cuidate`
+- each prototype contains:
+  - human editorial lead;
+  - decision-first navigation;
+  - several substantive explanatory sections;
+  - contextual links to current canonical deep articles/surfaces;
+  - a clear closing takeaway.
+- prototype guide metadata is `noindex, nofollow` so these experimental URLs are not being proposed as seven new SEO landing pages.
+
+### Important SEO interpretation
+
+These `/guia/*` pages are **visual/product prototypes only**.
+
+They do not override the pillar mapping already decided:
+- Movilidad should probably promote the existing `/blog/como-moverse-por-lisboa`;
+- Spots should probably promote `/blog/donde-fotografiar-lisboa`;
+- Rutas should evolve `/itinerarios`;
+- nightlife/safety require intent validation before any new indexable pillar;
+- Dónde comer remains the strongest candidate for a genuinely new broad pillar.
+
+Do not merge the preview branch to production simply because the build is green.
+
+### Visual gate
+
+Per L-003 / D-012:
+- José must review the Preview and explicitly approve the visual direction;
+- feedback should be applied as an iteration on this branch;
+- production Home remains unchanged until approval + SEO/measurement review.
+
+### Next action
+
+Review the Home first:
+1. portal scale and spacing;
+2. whether the seven buttons feel like an editorial travel product rather than cards;
+3. hierarchy of Rutas vs the other six;
+4. mobile scan speed;
+5. transition from utility layer to Stories.
+
+Then review one or two guide prototypes (especially `comer` and `movilidad`) before investing in all final pillar implementations.
