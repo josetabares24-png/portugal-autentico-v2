@@ -64,7 +64,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
               {guide.lead}
             </p>
 
-            <p className="mt-5 max-w-2xl border-l-2 border-terracotta pl-5 font-display text-base italic leading-relaxed text-white/82 sm:text-lg">
+            <p className="mt-5 max-w-2xl border-l-2 border-terracotta pl-5 font-display text-base italic leading-relaxed text-white/80 sm:text-lg">
               {guide.promise}
             </p>
           </div>

@@ -62,7 +62,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="absolute bottom-0 left-0 max-w-3xl p-6 pb-8 sm:p-10 md:p-14 md:pb-16">
+        <div className="absolute bottom-0 left-0 max-w-3xl p-6 pb-12 sm:p-10 md:p-14 md:pb-16">
           <h1
             className="mb-4 font-display italic leading-[1.02] text-white"
             style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
