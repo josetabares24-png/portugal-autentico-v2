@@ -69,7 +69,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
               href="/#guia-practica"
               className="mb-7 inline-flex font-body text-xs uppercase tracking-[0.16em] text-white/65 transition-colors hover:text-white"
             >
-              ← Volver a la guía de Lisboa
+              ← Volver a preparar Lisboa
             </Link>
 
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-white/65">
@@ -109,6 +109,12 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
             <nav aria-label="Contenido de esta guía" className="mt-10 border-t border-night/15 pt-5">
               <p className="mb-4 font-body text-[0.65rem] uppercase tracking-[0.18em] text-taupe">En esta guía</p>
               <div className="space-y-3">
+                <a
+                  href="#dudas-reales"
+                  className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
+                >
+                  Las dudas que suelen aparecer
+                </a>
                 {guide.sections.map((section) => (
                   <a
                     key={section.title}
@@ -156,6 +162,31 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="dudas-reales" className="scroll-mt-20 border-b border-white/10 bg-night py-16 text-white md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+          <div>
+            <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/45">Lo que solemos preguntarnos</p>
+            <h2 className="max-w-md font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-white md:text-4xl">
+              Las dudas que aparecen justo antes de decidir.
+            </h2>
+            <p className="mt-5 max-w-sm font-body text-sm leading-relaxed text-white/65">
+              Respuestas cortas, con contexto suficiente para que puedas elegir sin seguir abriendo pestañas.
+            </p>
+          </div>
+
+          <div className="border-y border-white/15">
+            {guide.humanQuestions.map((item) => (
+              <div key={item.question} className="grid gap-3 border-b border-white/15 py-7 last:border-b-0 md:grid-cols-[0.8fr_1.2fr] md:gap-8 md:py-8">
+                <h3 className="font-display text-xl font-semibold not-italic leading-snug tracking-normal text-white md:text-2xl">
+                  {item.question}
+                </h3>
+                <p className="font-body text-sm leading-[1.75] text-white/72 md:text-base">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -210,9 +241,16 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                         href={link.href}
                         contentType="guide_support_link"
                         contentId={link.href}
-                        className="group flex min-h-14 items-center justify-between gap-4 border-b border-taupe/25 py-3 font-body text-sm font-semibold text-night transition-colors hover:text-terracotta"
+                        className="group flex min-h-14 items-center justify-between gap-4 border-b border-taupe/25 py-3 text-night transition-colors hover:text-terracotta"
                       >
-                        <span>{link.label}</span>
+                        <span className="min-w-0">
+                          <span className="block font-body text-sm font-semibold">{link.label}</span>
+                          {link.description ? (
+                            <span className="mt-1 block font-body text-xs font-normal leading-relaxed text-text-secondary">
+                              {link.description}
+                            </span>
+                          ) : null}
+                        </span>
                         <ArrowUpRight size={17} strokeWidth={1.8} className="flex-none transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                       </TrackedInternalLink>
                     ))}

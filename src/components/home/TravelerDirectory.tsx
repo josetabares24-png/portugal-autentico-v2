@@ -19,6 +19,7 @@ type Portal = {
   slug: string;
   portalId: string;
   shortTitle: string;
+  portalQuestion: string;
   eyebrow: string;
   portalSubtitle: string;
   portalTopics: string[];
@@ -28,15 +29,15 @@ type Portal = {
 
 const portalPresentation: Record<
   string,
-  { icon: LucideIcon; accent: string; tint: string; label: string }
+  { icon: LucideIcon; accent: string }
 > = {
-  routes: { icon: Clock3, accent: '#B8472E', tint: '#F0DDD3', label: 'Organizar los días' },
-  mobility: { icon: TrainFront, accent: '#287080', tint: '#DCE9E8', label: 'Moverse mejor' },
-  visit: { icon: Landmark, accent: '#A87830', tint: '#EFE3C9', label: 'Elegir visitas' },
-  food: { icon: UtensilsCrossed, accent: '#617052', tint: '#E2E7DA', label: 'Comer bien' },
-  drinks: { icon: GlassWater, accent: '#765064', tint: '#E9DDE3', label: 'Encontrar ambiente' },
-  spots: { icon: Camera, accent: '#46647D', tint: '#DEE6EC', label: 'Guardar lugares' },
-  safety: { icon: ShieldAlert, accent: '#9B493F', tint: '#EBDDD8', label: 'Evitar problemas' },
+  routes: { icon: Clock3, accent: '#B8472E' },
+  mobility: { icon: TrainFront, accent: '#287080' },
+  visit: { icon: Landmark, accent: '#A87830' },
+  food: { icon: UtensilsCrossed, accent: '#617052' },
+  drinks: { icon: GlassWater, accent: '#765064' },
+  spots: { icon: Camera, accent: '#46647D' },
+  safety: { icon: ShieldAlert, accent: '#9B493F' },
 };
 
 export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
@@ -66,7 +67,7 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
               aria-hidden="true"
             />
             <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/65">
-              {activePortal.eyebrow}
+              {activePortal.portalQuestion}
             </p>
             <p className="max-w-xl font-display text-[3rem] font-semibold not-italic leading-[1.04] tracking-normal text-white xl:text-[3.5rem]">
               {activePortal.shortTitle}
@@ -114,12 +115,8 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                 </div>
 
                 <span
-                  className="hidden h-11 w-11 flex-none items-center justify-center border lg:flex"
-                  style={{
-                    borderColor: isActive ? `${presentation.accent}99` : `${presentation.accent}55`,
-                    backgroundColor: isActive ? presentation.accent : presentation.tint,
-                    color: isActive ? '#ffffff' : presentation.accent,
-                  }}
+                  className="hidden h-11 w-8 flex-none items-center justify-center lg:flex"
+                  style={{ color: isActive ? '#D8A95C' : presentation.accent }}
                   aria-hidden="true"
                 >
                   <Icon size={20} strokeWidth={1.7} />
@@ -132,7 +129,7 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                       style={{ backgroundColor: isActive ? '#D8A95C' : presentation.accent }}
                       aria-hidden="true"
                     />
-                    <span className={isActive ? 'lg:text-white/45' : 'text-taupe'}>{presentation.label}</span>
+                    <span className={isActive ? 'lg:text-white/55' : 'text-taupe'}>{portal.portalQuestion}</span>
                   </div>
                   <span
                     className={`block font-display text-[1.35rem] font-semibold not-italic leading-tight tracking-normal transition-colors sm:text-[1.5rem] lg:text-[1.45rem] ${

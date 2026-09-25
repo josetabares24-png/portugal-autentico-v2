@@ -85,11 +85,11 @@ export default function HomePage() {
                 className="max-w-3xl font-display font-semibold not-italic leading-tight tracking-normal text-night"
                 style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)' }}
               >
-                Dime qué necesitas y empezamos por ahí.
+                Empieza por la pregunta que tienes ahora.
               </h2>
             </div>
             <p className="max-w-md font-body text-sm leading-relaxed text-text-secondary md:justify-self-end md:text-right">
-              Cada puerta abre una guía completa. No una lista de artículos: una respuesta organizada para tomar decisiones.
+              Nadie prepara Lisboa de una sola vez. Elige la duda que te está frenando y encuentra una respuesta clara para seguir.
             </p>
           </div>
 

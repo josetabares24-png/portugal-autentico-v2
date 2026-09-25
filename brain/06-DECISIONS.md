@@ -436,3 +436,24 @@ Rules:
 - guide headings inherit the established Blog title typography rather than creating a separate visual language.
 
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-028 — Traveler guidance starts from human questions, not taxonomy
+**Date:** 2026-09-25
+**Status:** accepted design and editorial standard for the Preview iteration
+
+The gateway and its answer pages should sound like a knowledgeable person helping another person make a decision.
+
+Rules:
+- portal labels use short questions a traveler might genuinely ask, rather than category or product language;
+- display titles may be more human than the underlying SEO title and URL;
+- every guide includes three high-friction questions with direct, contextual answers;
+- answers should acknowledge trade-offs instead of pretending there is one universal recommendation;
+- internal editorial language such as "we should publish" or "this subguide will grow" must never appear in traveler-facing copy;
+- specialist terms such as "spots" should be replaced by ordinary Spanish when a clearer expression exists;
+- the question-and-answer treatment uses continuous editorial bands and rules, not repeated cards or accordions;
+- questions must remain short enough to scan on a 390 px viewport.
+
+This standard does not change the SEO gate in D-027: the seven prototypes remain `noindex, follow`, without canonicals or sitemap inclusion.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].

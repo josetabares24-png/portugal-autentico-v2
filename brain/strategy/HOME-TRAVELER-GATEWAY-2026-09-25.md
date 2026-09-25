@@ -349,6 +349,29 @@ The prototype answer pages should not repeat a hero plus numbered card grid. The
 
 This is a product/visual baseline, not permission to index seven new URLs.
 
+### Human-centered refinement — 2026-09-25
+
+The second visual/content pass moved the gateway from a content taxonomy to recognizable traveler questions.
+
+What changed:
+
+- `Rutas / Guías`, `Movilidad` and `Spots` were replaced by more natural display language such as `Rutas por días`, `Cómo moverte` and `Dónde hacer fotos`.
+- Each portal now begins with a short human question: `¿Cuántos días tienes?`, `¿Qué merece tu tiempo?`, `¿Qué te apetece hoy?`.
+- The boxed category-icon treatment was simplified to a lighter editorial line icon so the directory reads less like an application dashboard.
+- Every answer page now contains three real pre-decision questions with concise answers and explicit trade-offs.
+- Traveler-facing copy that exposed internal editorial policy was rewritten as practical advice.
+- Mobile review established a maximum of roughly two short lines for portal questions; longer taxonomy-like labels slow scanning.
+
+The reusable writing test is: **would a person who knows Lisboa say this to a friend who asked the question?** If the copy instead describes the information architecture, the publishing process or the feature itself, rewrite it.
+
+Verification notes for sensitive practical answers:
+
+- Metro de Lisboa confirms that occasional and frequent use require different ticket/card decisions; a pass should not be recommended only from trip duration.
+- Metro de Lisboa and current government travel advice both emphasize attention to belongings in crowded public transport and tourist-heavy stops, supporting situation-based safety guidance rather than neighborhood alarmism.
+- ASAE states that restaurant price lists must include couvert prices and that food or drink, including couvert, cannot be charged when it was neither requested nor consumed.
+
+Primary references: `https://www.metrolisboa.pt/viajar/perguntas-frequentes/`, `https://www.metrolisboa.pt/en/2023/07/14/make-your-journey-safer/`, `https://www.asae.gov.pt/perguntas-frequentes1/area-economica/precos/precos-em-servicos-de-restauracao.aspx`.
+
 ## SEO cannibalization guardrails
 
 Before publishing any new pillar:

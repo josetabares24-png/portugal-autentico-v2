@@ -18,6 +18,7 @@ export type TravelerGuide = {
   portalId: string;
   title: string;
   shortTitle: string;
+  portalQuestion: string;
   eyebrow: string;
   portalSubtitle: string;
   portalTopics: string[];
@@ -27,6 +28,7 @@ export type TravelerGuide = {
   promise: string;
   decisionPrompt: string;
   decisions: Array<{ title: string; text: string; href?: string }>;
+  humanQuestions: Array<{ question: string; answer: string }>;
   sections: TravelerGuideSection[];
   closingTitle: string;
   closingText: string;
@@ -37,7 +39,8 @@ export const travelerGuides: TravelerGuide[] = [
     slug: 'rutas',
     portalId: 'routes',
     title: 'Rutas y guías para organizar Lisboa',
-    shortTitle: 'Rutas / Guías',
+    shortTitle: 'Rutas por días',
+    portalQuestion: '¿Cuántos días tienes?',
     eyebrow: 'Cómo entender Lisboa',
     portalSubtitle: 'Empieza por los días que tienes, no por una lista infinita de lugares.',
     portalTopics: ['1 día', '2 días', '3 días', '4–5 días', '1 semana', 'lluvia', 'con niños'],
@@ -53,6 +56,20 @@ export const travelerGuides: TravelerGuide[] = [
       { title: '2–3 días', text: 'Ya puedes separar zonas y dejar un bloque completo para Belém o una excursión.', href: '/itinerarios' },
       { title: '4–5 días', text: 'Empieza a tener sentido combinar Lisboa con Sintra y barrios menos obvios.', href: '/blog/lisboa-en-4-dias' },
       { title: 'Una semana', text: 'Puedes bajar el ritmo y añadir costa, museos y días de lluvia sin rehacer todo el viaje.', href: '/blog/lisboa-en-7-dias' },
+    ],
+    humanQuestions: [
+      {
+        question: '¿Puedo ver Lisboa y Sintra en el mismo día?',
+        answer: 'Poder, puedes. Disfrutar de las dos, bastante menos. Si sólo tienes un día, quédate en Lisboa; Sintra funciona mejor cuando le das su propio día.',
+      },
+      {
+        question: '¿Cuántas cosas caben de verdad en una jornada?',
+        answer: 'Dos zonas bien conectadas y una visita con horario suelen ser una base razonable. El resto debería poder moverse sin romperte el día.',
+      },
+      {
+        question: '¿Tengo que reservarlo todo?',
+        answer: 'No. Reserva lo que tenga hora, aforo o traslado complicado. Deja paseos, miradores y comidas sencillas con margen para improvisar.',
+      },
     ],
     sections: [
       {
@@ -99,7 +116,8 @@ export const travelerGuides: TravelerGuide[] = [
     slug: 'movilidad',
     portalId: 'mobility',
     title: 'Cómo moverse por Lisboa sin perder tiempo',
-    shortTitle: 'Movilidad',
+    shortTitle: 'Cómo moverte',
+    portalQuestion: '¿Cómo te vas a mover?',
     eyebrow: 'Transportes, tarjetas, aeropuerto y atajos',
     portalSubtitle: 'Metro, tranvías, billetes y cuándo caminar tiene más sentido.',
     portalTopics: ['Metro', 'Tranvías', 'Navegante', 'Aeropuerto', 'Caminar', 'Apps', 'Atajos'],
@@ -115,6 +133,20 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Entender el metro', text: 'Líneas, conexiones y cuándo es la opción más previsible.', href: '/blog/metro-lisboa-guia' },
       { title: 'Elegir tarjeta', text: 'Navegante, títulos y qué comprar según el uso real que harás.', href: '/blog/tarjeta-navegante-lisboa' },
       { title: 'Subir al tranvía 28', text: 'Úsalo como experiencia, no como solución universal para moverte.', href: '/blog/tram-28-historia-guia' },
+    ],
+    humanQuestions: [
+      {
+        question: '¿Lisboa se puede recorrer sólo caminando?',
+        answer: 'El centro invita a caminar, pero las cuestas cambian la respuesta. Combinar una subida en transporte con una bajada a pie suele ser mucho más agradable.',
+      },
+      {
+        question: '¿Necesito un abono de transporte?',
+        answer: 'Depende de cuántos trayectos harás, no de cuántos días estarás. Si vas a caminar mucho, pagar viajes sueltos puede tener más sentido que comprar un pase por costumbre.',
+      },
+      {
+        question: '¿El tranvía 28 sirve para desplazarse?',
+        answer: 'Sí, pero conviene tratarlo como una experiencia popular y potencialmente lenta. Para llegar con hora a algún sitio, el metro o el bus suelen ser más previsibles.',
+      },
     ],
     sections: [
       {
@@ -159,7 +191,8 @@ export const travelerGuides: TravelerGuide[] = [
     slug: 'que-visitar',
     portalId: 'visit',
     title: 'Qué ver y hacer en Lisboa',
-    shortTitle: 'Qué visitar',
+    shortTitle: 'Qué merece la pena',
+    portalQuestion: '¿Qué merece tu tiempo?',
     eyebrow: 'Sitios, monumentos, entradas y experiencias',
     portalSubtitle: 'Qué merece tu tiempo, qué puedes hacer gratis y qué conviene reservar.',
     portalTopics: ['Imprescindibles', 'Monumentos', 'Gratis', 'Miradores', 'Entradas', 'Experiencias', 'Excursiones'],
@@ -175,6 +208,20 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Quiero gastar menos', text: 'Hay miradores, barrios, iglesias y paseos que no necesitan entrada.', href: '/blog/que-hacer-gratis-en-lisboa' },
       { title: 'Voy con niños', text: 'El tipo de plan cambia bastante: menos encadenar monumentos, más experiencias.', href: '/blog/lisboa-con-ninos' },
       { title: 'Tengo un día extra', text: 'Sintra suele ser la gran decisión; Cascais ofrece una experiencia distinta.', href: '/blog/sintra-desde-lisboa' },
+    ],
+    humanQuestions: [
+      {
+        question: '¿Qué no debería perderme en una primera visita?',
+        answer: 'Una mañana entre Baixa y Alfama, varias horas en Belém y al menos un mirador. Con eso entiendes mejor Lisboa que encadenando diez monumentos.',
+      },
+      {
+        question: '¿Qué entradas compraría con antelación?',
+        answer: 'Las que aseguran una hora importante o evitan una cola que condicionaría el día. Una entrada sólo merece anticipación cuando te compra tranquilidad o tiempo.',
+      },
+      {
+        question: '¿Y si no me interesan mucho los monumentos?',
+        answer: 'No pasa nada. Lisboa también se sostiene con barrios, mercados, miradores, azulejos y paseos junto al río. La ciudad no exige una ruta de taquillas.',
+      },
     ],
     sections: [
       {
@@ -216,6 +263,7 @@ export const travelerGuides: TravelerGuide[] = [
     portalId: 'food',
     title: 'Dónde comer en Lisboa',
     shortTitle: 'Dónde comer',
+    portalQuestion: '¿Qué te apetece hoy?',
     eyebrow: 'Gastronomía, presupuesto y necesidades',
     portalSubtitle: 'Portugués, barato, tascas, mercados, veggie, sin gluten y café.',
     portalTopics: ['Portugués', 'Barato', 'Tascas', 'Mercados', 'Veggie', 'Sin gluten', 'Brunch', 'Dulces'],
@@ -231,6 +279,20 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Comer barato', text: 'Busca precio, zona y formato de comida, no una lista eterna de “sitios secretos”.', href: '/blog/donde-comer-barato-lisboa' },
       { title: 'Mercados', text: 'Útiles para probar variedad y combinar comida con un paseo.', href: '/blog/mejores-mercados-lisboa' },
       { title: 'Café y dulce', text: 'Cafés, pastelerías y lugares históricos sirven para planes distintos.', href: '/blog/donde-tomar-cafe-lisboa' },
+    ],
+    humanQuestions: [
+      {
+        question: '¿Cómo reconozco una opción pensada sólo para turistas?',
+        answer: 'No por estar en el centro es mala. Mira la carta completa, el precio, el tamaño del menú y si el lugar ofrece algo más que una terraza visible en la calle principal.',
+      },
+      {
+        question: '¿Qué es una tasca?',
+        answer: 'Un local sencillo donde suele importar más comer bien que la puesta en escena. No todas son baratas ni todas son tradicionales, pero el formato ayuda a entender la cocina cotidiana.',
+      },
+      {
+        question: '¿Los aperitivos que dejan en la mesa son gratis?',
+        answer: 'No. El precio del couvert debe figurar en la carta y no pueden cobrarte algo que no hayas pedido ni consumido. Si no lo quieres, no lo pruebes y pide que lo retiren.',
+      },
     ],
     sections: [
       {
@@ -258,7 +320,7 @@ export const travelerGuides: TravelerGuide[] = [
         eyebrow: 'Necesidades',
         title: 'Veggie, vegano y sin gluten necesitan información útil, no etiquetas',
         paragraphs: [
-          'Estas subguías sólo deberían crecer cuando tengamos suficiente información verificada para que una persona pueda tomar una decisión real. No quiero publicar una página “sin gluten” con tres nombres y dejarla envejeciendo.',
+          'Que un lugar diga que tiene “opciones” no explica si podrás comer un plato completo, si adapta la cocina o si controla la contaminación cruzada. Para decidir bien necesitas ese nivel de detalle, especialmente cuando una restricción es médica.',
         ],
         bullets: [
           'Indicar qué tipo de opción existe, no sólo que “hay opciones”.',
@@ -276,6 +338,7 @@ export const travelerGuides: TravelerGuide[] = [
     portalId: 'drinks',
     title: 'Dónde tomar algo y salir en Lisboa',
     shortTitle: 'Dónde tomar algo',
+    portalQuestion: '¿Qué ambiente buscas?',
     eyebrow: 'Ambientes, cafés, rooftops, fado y noche',
     portalSubtitle: 'Elige por ambiente: tranquilo, cócteles, cerveza, fado o salir hasta tarde.',
     portalTopics: ['Tranquilo', 'Cerveza', 'Cócteles', 'Rooftops', 'Fado', 'Cafés', 'Salir tarde'],
@@ -292,13 +355,27 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Bairro Alto', text: 'Funciona mejor cuando entiendes que su ambiente cambia con la hora.', href: '/blog/chiado-bairro-alto-guia' },
       { title: 'Café', text: 'A veces “tomar algo” significa sentarte una hora y mirar la ciudad, no salir de fiesta.', href: '/blog/donde-tomar-cafe-lisboa' },
     ],
+    humanQuestions: [
+      {
+        question: '¿A qué hora empieza el ambiente?',
+        answer: 'Depende del plan. Una terraza puede funcionar desde la tarde; Bairro Alto y Cais do Sodré se entienden mejor cuando la cena ya ha terminado. No hace falta salir tarde para vivir la ciudad.',
+      },
+      {
+        question: '¿Puedo escuchar fado sin cenar?',
+        answer: 'Sí, aunque cada casa organiza la experiencia de forma distinta. Antes de reservar, comprueba si hay menú, consumo mínimo, entrada o sesiones con horarios concretos.',
+      },
+      {
+        question: '¿Bairro Alto o Cais do Sodré?',
+        answer: 'Bairro Alto concentra calles y pequeños locales; Cais do Sodré suele encajar mejor cuando quieres alargar la noche. Puedes combinar ambos sin convertirlo en una carrera.',
+      },
+    ],
     sections: [
       {
         eyebrow: 'Ambiente',
         title: 'El barrio importa tanto como el local',
         paragraphs: [
           'Bairro Alto concentra movimiento nocturno; Chiado es más de transición entre cena y copa; Cais do Sodré suele aparecer cuando la noche quiere alargarse; Graça puede funcionar mejor para algo tranquilo y con menos prisa.',
-          'No convierto esto en una regla absoluta: la oferta cambia y un buen local puede romper el patrón. Pero la zona te ayuda a saber qué esperar.',
+          'No es una regla absoluta: la oferta cambia y un buen local puede romper el patrón. Aun así, elegir primero la zona ayuda mucho a saber qué ambiente esperar.',
         ],
         links: [{ href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' }],
       },
@@ -328,7 +405,8 @@ export const travelerGuides: TravelerGuide[] = [
     slug: 'spots',
     portalId: 'spots',
     title: 'Dónde fotografiar Lisboa',
-    shortTitle: 'Spots',
+    shortTitle: 'Dónde hacer fotos',
+    portalQuestion: '¿Qué foto quieres?',
     eyebrow: 'Las fotos que te puedes llevar del viaje',
     portalSubtitle: 'Miradores, tranvías, azulejos, atardecer y puntos exactos para mirar la ciudad.',
     portalTopics: ['Miradores', 'Tranvías', 'Azulejos', 'Atardecer', 'Calles', 'Río', 'Panorámicas'],
@@ -344,6 +422,20 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Tranvía', text: 'Busca contexto, no sólo el vehículo: calles, fachadas y perspectiva.' },
       { title: 'Alfama', text: 'Tejados, callejones y capas de ciudad funcionan mejor con tiempo.', href: '/blog/alfama-historia-guia' },
       { title: 'Atardecer', text: 'La orientación importa. No todos los miradores reciben la luz igual.' },
+    ],
+    humanQuestions: [
+      {
+        question: '¿Cuál es la mejor hora para fotografiar Lisboa?',
+        answer: 'La primera y la última luz suelen suavizar fachadas y cielo. Pero las sombras duras del mediodía también pueden funcionar muy bien en calles estrechas y escaleras.',
+      },
+      {
+        question: '¿Dónde consigo una foto con tranvía?',
+        answer: 'Busca primero una calle con profundidad y un fondo reconocible. El tranvía dura unos segundos en el encuadre; la composición tiene que estar lista antes de que aparezca.',
+      },
+      {
+        question: '¿Hace falta ir a los lugares más famosos?',
+        answer: 'No. Una esquina con buena luz puede darte una foto más personal que un mirador lleno. Lisboa recompensa mirar despacio y cambiar de altura.',
+      },
     ],
     sections: [
       {
@@ -380,7 +472,8 @@ export const travelerGuides: TravelerGuide[] = [
     slug: 'cuidate',
     portalId: 'safety',
     title: 'Qué conviene evitar y vigilar en Lisboa',
-    shortTitle: 'Cuídate de esto',
+    shortTitle: 'Qué conviene evitar',
+    portalQuestion: '¿Qué quieres evitar?',
     eyebrow: 'Errores, trampas y situaciones prácticas',
     portalSubtitle: 'Carteristas, precios, restaurantes, reservas, transporte y errores comunes.',
     portalTopics: ['Carteristas', 'Precios', 'Restaurantes', 'Aeropuerto', 'Reservas', 'Pagos', 'Errores'],
@@ -397,13 +490,27 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Pagos', text: 'Tarjeta y efectivo funcionan de forma distinta según el comercio y la situación.', href: '/blog/como-pagar-en-portugal' },
       { title: 'Errores de planificación', text: 'Muchas malas experiencias empiezan por apretar demasiado la agenda.', href: '/blog/errores-turistas-lisboa' },
     ],
+    humanQuestions: [
+      {
+        question: '¿Lisboa es una ciudad segura para caminar?',
+        answer: 'En general se recorre con normalidad, también de noche en zonas transitadas. La atención más útil está en aglomeraciones, transportes turísticos y pertenencias fáciles de abrir.',
+      },
+      {
+        question: '¿Tengo que llevar efectivo?',
+        answer: 'La tarjeta está muy extendida, pero un poco de efectivo evita depender de que todos los comercios acepten el mismo medio de pago. Pregunta antes si tienes dudas.',
+      },
+      {
+        question: '¿Qué error estropea más viajes?',
+        answer: 'Planificar como si Lisboa fuera plana y todos los trayectos duraran lo que marca la distancia. Las cuestas, las colas y las paradas espontáneas necesitan margen.',
+      },
+    ],
     sections: [
       {
         eyebrow: 'Seguridad',
         title: 'Atención no significa alarma',
         paragraphs: [
           'En zonas muy concurridas conviene llevar pertenencias controladas, especialmente en transportes y espacios donde la gente se concentra. Eso es distinto a presentar barrios enteros como “peligrosos” sin contexto.',
-          'Cuando hablemos de seguridad, la regla será describir una situación concreta y una acción concreta.',
+          'La recomendación útil siempre une una situación concreta con una acción sencilla: cerrar bien el bolso, guardar el teléfono antes de subir o evitar llevar todo en el mismo bolsillo.',
         ],
       },
       {
