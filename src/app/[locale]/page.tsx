@@ -3,6 +3,7 @@ import TrackedInternalLink from '@/components/TrackedInternalLink';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
+import { travelerGuides } from '@/data/traveler-guide-preview';
 
 export const metadata: Metadata = {
   title: { absolute: 'Estaba en Lisboa | Guías de Lisboa en español' },
@@ -32,33 +33,17 @@ export const metadata: Metadata = {
 };
 
 const historias = [
-  blogPosts.find(p => p.id === 'time-out-market-lisboa') || blogPosts[0],
-  blogPosts.find(p => p.id === 'estacion-oriente-lisboa') || blogPosts[1],
-  blogPosts.find(p => p.id === 'estacion-olaias-lisboa') || blogPosts[2],
+  blogPosts.find((p) => p.id === 'time-out-market-lisboa') || blogPosts[0],
+  blogPosts.find((p) => p.id === 'estacion-oriente-lisboa') || blogPosts[1],
+  blogPosts.find((p) => p.id === 'estacion-olaias-lisboa') || blogPosts[2],
 ].filter(Boolean);
 
-const barrios = [
-  { nombre: 'Alfama', href: '/blog/alfama-historia-guia', imagen: '/images/alfama-panoramica.jpg' },
-  { nombre: 'Graça', href: '/blog/graca-lisboa-que-ver', imagen: '/images/miradouro-grupo-atardecer.jpg' },
-  { nombre: 'Mouraria', href: '/blog/mouraria-barrio-guia', imagen: '/images/bica-cafe-mapa.jpg' },
-  { nombre: 'Chiado y Bairro Alto', href: '/blog/chiado-bairro-alto-guia', imagen: '/images/bairro-alto-calle-noche.jpg' },
-  { nombre: 'Belém', href: '/blog/belem-barrio-guia', imagen: '/images/miradouro-atardecer.jpg' },
-  { nombre: 'Baixa', href: '/blog/baixa-lisboa-que-ver', imagen: '/images/lisboa-originales/baixa-pombalina-lisboa-02.webp' },
-];
-
-const libreta: { texto: string; href?: string }[] = [
-  { texto: 'Alfama se disfruta mejor sin intentar convertir cada calle en una parada.', href: '/blog/alfama-historia-guia' },
-  { texto: 'En los miradores, la hora importa casi tanto como el lugar.', href: '/blog/mejores-miradores-lisboa' },
-  { texto: 'Si subes a Graça en transporte y bajas a pie, ahorras una de las cuestas más pesadas.', href: '/blog/graca-lisboa-que-ver' },
-  { texto: 'El tranvía 28 funciona mejor como experiencia que como solución rápida para cruzar la ciudad.', href: '/blog/tram-28-historia-guia' },
-  { texto: 'Belém tiene más sentido como bloque de varias horas que como una parada rápida entre dos planes del centro.', href: '/blog/belem-barrio-guia' },
-  { texto: 'Desde el aeropuerto, la Línea Roja conecta con la red de Metro; la mejor opción depende de tu equipaje y alojamiento.', href: '/blog/aeropuerto-lisboa-al-centro' },
-];
+const featuredPortal = travelerGuides[0];
+const secondaryPortals = travelerGuides.slice(1);
 
 export default function HomePage() {
   return (
     <main id="main-content" className="bg-cream">
-      {/* ── HERO ── */}
       <section className="relative h-[calc(100svh-4rem)] min-h-[560px] max-h-[820px] overflow-hidden md:min-h-[620px]">
         <Image
           src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
@@ -67,25 +52,9 @@ export default function HomePage() {
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          /*
-           * 90 tenía sentido con el original de 1280, que se ampliaba x4 y
-           * necesitaba conservar cada píxel. Con 3840 la foto se dibuja a su
-           * tamaño o por debajo, así que 75 no se distingue a simple vista
-           * (1,22/255 de diferencia media) y pesa la mitad: 627 KB en vez de
-           * 1,4 MB. Es la imagen del LCP, así que el peso cuenta.
-           */
           quality={75}
-          /*
-           * La caja es más alta que ancha y la foto es apaisada, así que
-           * `object-cover` la pinta mucho más ancha que el viewport: en un
-           * móvil de 393 px se dibuja a ~1709 px CSS, no a 393. Con `100vw`
-           * el navegador pedía una variante cuatro veces más pequeña de la
-           * que necesita y la ampliaba él. Estos valores describen el ancho
-           * real de render, no el del hueco.
-           */
           sizes="(max-width: 767px) 450vw, (max-width: 1279px) 190vw, 100vw"
         />
-        {/* Overlay solo abajo-izquierda */}
         <div
           className="absolute inset-0"
           style={{
@@ -95,73 +64,138 @@ export default function HomePage() {
 
         <div className="absolute bottom-0 left-0 max-w-3xl p-7 sm:p-10 md:p-16">
           <h1
-            className="font-display italic text-white leading-[1.02] mb-4"
+            className="mb-4 font-display italic leading-[1.02] text-white"
             style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
           >
             La Lisboa que le enseño a quien viene a verme.
           </h1>
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            Vivo en Lisboa desde hace más de tres años. Estas son mis rutas, lugares y consejos para recorrerla con sentido.
+            Rutas, transporte, comida, lugares y consejos para entender la ciudad antes de empezar a correr de un sitio a otro.
           </p>
-          <TrackedInternalLink
-            href="/itinerarios"
-            contentType="home_primary_cta"
-            contentId="itinerarios"
-            className="btn-ghost-light btn-lg"
-          >
-            Ver itinerarios →
-          </TrackedInternalLink>
+          <a href="#guia-practica" className="btn-ghost-light btn-lg">
+            ¿Qué necesitas resolver? ↓
+          </a>
         </div>
       </section>
 
-      {/* ── QUÉ VER / HUB SEO ── */}
-      <section className="border-b border-taupe/20 bg-cream py-14 md:py-18">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Primera vez en la ciudad</p>
-          <h2
-            className="mb-5 font-display italic leading-tight text-night"
-            style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 400 }}
+      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
+          <div className="mb-12 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
+            <div>
+              <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Lisboa, sin complicarte</p>
+              <h2
+                className="max-w-3xl font-display italic leading-tight text-night"
+                style={{ fontSize: 'clamp(2.15rem, 4.2vw, 3.4rem)', fontWeight: 400 }}
+              >
+                Dime qué necesitas y empezamos por ahí.
+              </h2>
+            </div>
+            <p className="max-w-md font-body text-sm leading-relaxed text-text-secondary md:justify-self-end md:text-right">
+              Cada puerta abre una guía completa. No una lista de artículos: una respuesta organizada para tomar decisiones.
+            </p>
+          </div>
+
+          <TrackedInternalLink
+            href={`/guia/${featuredPortal.slug}`}
+            contentType="home_guide_portal"
+            contentId={featuredPortal.portalId}
+            className="group relative mb-px grid min-h-[320px] overflow-hidden bg-night md:grid-cols-[1.05fr_0.95fr]"
           >
-            Qué ver en Lisboa y por dónde empezar
-          </h2>
-          <p className="mb-8 max-w-3xl font-body text-base leading-relaxed text-text-secondary md:text-lg">
-            Si estás organizando el viaje, empieza por el tiempo que tienes y después baja a cada barrio.
-            Las rutas de 1, 2, 3, 4 y 5 días conectan lo esencial con guías específicas de Alfama, Belém,
-            Baixa, Graça, miradores, transporte, Sintra y planes alternativos si cambia el tiempo.
-          </p>
-          <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días', text: 'Rutas organizadas para una primera visita.' },
-              { href: '/blog/lisboa-en-4-dias', label: 'Lisboa en 4 días', text: 'Centro, Belém, Sintra y una jornada más local.' },
-              { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días', text: 'Más barrios, Parque das Nações y Sintra con calma.' },
-              { href: '/blog/barrios-imprescindibles', label: 'Barrios de Lisboa', text: 'Elige las zonas que mejor encajan con tu viaje.' },
-              { href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa', text: 'Líneas, horarios y billetes de 2026.' },
-              { href: '/blog/lisboa-cuando-llueve', label: 'Lisboa con lluvia', text: 'Planes cubiertos y cómo reorganizar el día.' },
-              { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa', text: 'Cómo dedicarle un día sin improvisar.' },
-            ].map((item) => (
-              <Link key={item.href} href={item.href} className="group border-t border-taupe/30 pt-4">
-                <span className="font-body text-sm font-semibold text-night transition-colors group-hover:text-terracotta">
-                  {item.label} →
+            <div className="relative z-10 flex flex-col justify-between p-7 sm:p-9 md:p-12">
+              <div>
+                <div className="mb-10 flex items-center justify-between">
+                  <span className="font-body text-xs tracking-[0.18em] text-white/45">{featuredPortal.number}</span>
+                  <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </div>
+                <p className="mb-2 font-body text-xs uppercase tracking-[0.16em] text-white/50">{featuredPortal.eyebrow}</p>
+                <h3 className="font-display text-[2.2rem] italic leading-tight text-white md:text-[3rem]">{featuredPortal.shortTitle}</h3>
+                <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-white/72">{featuredPortal.portalSubtitle}</p>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-x-4 gap-y-2">
+                {featuredPortal.portalTopics.map((topic) => (
+                  <span key={topic} className="font-body text-xs text-white/55">{topic}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative min-h-[250px] overflow-hidden">
+              <Image
+                src={featuredPortal.heroImage}
+                alt={featuredPortal.heroAlt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, 48vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-night/30 via-transparent to-transparent" />
+            </div>
+          </TrackedInternalLink>
+
+          <div className="grid border-l border-t border-night/15 md:grid-cols-2">
+            {secondaryPortals.map((portal, index) => (
+              <TrackedInternalLink
+                key={portal.slug}
+                href={`/guia/${portal.slug}`}
+                contentType="home_guide_portal"
+                contentId={portal.portalId}
+                className="group relative min-h-[300px] overflow-hidden border-b border-r border-night/15 bg-cream p-7 transition-colors hover:bg-[#EDE7DA] sm:p-9"
+              >
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="mb-10 flex items-center justify-between">
+                    <span className="font-body text-xs tracking-[0.18em] text-taupe">{portal.number}</span>
+                    <span className="font-body text-xl text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </div>
+
+                  <p className="mb-2 font-body text-xs uppercase tracking-[0.16em] text-taupe">{portal.eyebrow}</p>
+                  <h3 className="font-display text-[1.7rem] italic leading-tight text-night transition-colors group-hover:text-terracotta md:text-[2rem]">
+                    {portal.shortTitle}
+                  </h3>
+                  <p className="mt-4 max-w-lg font-body text-sm leading-relaxed text-text-secondary">
+                    {portal.portalSubtitle}
+                  </p>
+
+                  <div className="mt-auto flex flex-wrap gap-x-3 gap-y-2 pt-9">
+                    {portal.portalTopics.slice(0, 6).map((topic) => (
+                      <span key={topic} className="font-body text-[0.72rem] text-night/55">{topic}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-8 -right-2 font-display text-[7rem] italic leading-none text-night/[0.035] transition-transform duration-500 group-hover:-translate-x-2"
+                >
+                  {index + 2}
                 </span>
-                <span className="mt-1 block font-body text-sm leading-relaxed text-text-secondary">{item.text}</span>
-              </Link>
+              </TrackedInternalLink>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── HISTORIAS ── */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-display italic text-night mb-14"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-            Historias
-          </h2>
+      <section className="bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 md:px-10">
+          <div className="mb-14 max-w-2xl">
+            <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Después de lo práctico</p>
+            <h2
+              className="font-display italic leading-tight text-night"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400 }}
+            >
+              Lisboa también se entiende por sus historias.
+            </h2>
+            <p className="mt-4 font-body text-base leading-relaxed text-text-secondary">
+              Cuando ya sabes cómo moverte y qué hacer, empiezan las cosas que hacen que una ciudad deje de sentirse como un decorado.
+            </p>
+          </div>
 
           <div className="space-y-16 md:space-y-20">
             {historias.map((post, i) => (
-              <article key={post!.id} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-start`}>
-                <Link href={`/blog/${post!.id}`} className="block flex-shrink-0 w-full md:w-[45%]">
+              <article
+                key={post!.id}
+                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-8 md:gap-12`}
+              >
+                <Link href={`/blog/${post!.id}`} className="block w-full flex-shrink-0 md:w-[45%]">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={post!.imagen}
@@ -169,25 +203,25 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 45vw"
-                      loading={i === 0 ? 'eager' : 'lazy'}
+                      loading="lazy"
                     />
                   </div>
                 </Link>
 
                 <div className="flex-1 pt-2">
-                  <p className="text-taupe text-sm mb-3 font-body">{post!.fecha} — {post!.categoria}</p>
+                  <p className="mb-3 font-body text-sm text-taupe">{post!.fecha} — {post!.categoria}</p>
                   <Link href={`/blog/${post!.id}`}>
-                    <h3 className="font-display italic text-night leading-snug mb-4 hover:text-terracotta transition-colors"
-                      style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.75rem)', fontWeight: 400 }}>
+                    <h3
+                      className="mb-4 font-display italic leading-snug text-night transition-colors hover:text-terracotta"
+                      style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.75rem)', fontWeight: 400 }}
+                    >
                       {post!.titulo}
                     </h3>
                   </Link>
-                  <p className="text-text-secondary font-body leading-relaxed text-base mb-5 line-clamp-3">
-                    {post!.excerpt}
-                  </p>
+                  <p className="mb-5 line-clamp-3 font-body text-base leading-relaxed text-text-secondary">{post!.excerpt}</p>
                   <Link
                     href={`/blog/${post!.id}`}
-                    className="text-night font-body text-sm border-b border-night pb-0.5 hover:text-terracotta hover:border-terracotta transition-colors"
+                    className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
                   >
                     Leer
                   </Link>
@@ -196,124 +230,22 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-16 pt-10 border-t border-taupe/20">
+          <div className="mt-16 border-t border-taupe/20 pt-10">
             <Link
               href="/blog"
-              className="text-night font-body text-sm border-b border-night pb-0.5 hover:text-terracotta hover:border-terracotta transition-colors"
+              className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
             >
-              Todos los artículos
+              Todas las historias y guías →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── FREE TOURS ── */}
-      <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="/images/lisboa-originales/baixa-pombalina-lisboa-02.webp"
-                alt="Calle de la Baixa Pombalina descendiendo hacia el río Tajo, en el centro de Lisboa"
-                fill
-                className="object-cover"
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-
-            <div>
-              <h2 className="font-display italic text-night mb-4"
-                style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-                Free tours en Lisboa
-              </h2>
-              <p className="font-body font-light text-night/80 text-lg leading-relaxed mb-7">
-                Compara recorridos por el centro, Alfama, Belém y otras zonas de Lisboa
-                antes de reservar.
-              </p>
-              <TrackedInternalLink
-                href="/free-tours-lisboa"
-                contentType="home_commercial_cta"
-                contentId="free_tours"
-                className="btn-primary btn-lg"
-              >
-                Ver free tours
-              </TrackedInternalLink>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── LOS BARRIOS ── */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-display italic text-night mb-14"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-            Los barrios
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {barrios.map((barrio) => (
-              <Link key={barrio.nombre} href={barrio.href} className="group block">
-                <div className="relative aspect-square overflow-hidden mb-3 rounded-lg shadow-card group-hover:shadow-card-hover transition-shadow duration-300">
-                  <Image
-                    src={barrio.imagen}
-                    alt={barrio.nombre}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="font-display italic text-night group-hover:text-terracotta transition-colors"
-                  style={{ fontSize: '1.1rem', fontWeight: 400 }}>
-                  {barrio.nombre}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── LIBRETA ── */}
-      <section className="py-20 md:py-28" style={{ background: '#EDE7DA' }}>
-        <div className="max-w-2xl mx-auto px-6 md:px-10">
-          <h2 className="font-display italic text-night mb-12"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}>
-            Libreta
-          </h2>
-
-          <ul className="space-y-7">
-            {libreta.map((nota, i) => (
-              <li key={i} className="flex gap-5 items-start">
-                <span className="text-taupe font-body font-light text-sm mt-1 flex-shrink-0 w-5 text-right">{i + 1}</span>
-                {nota.href ? (
-                  <Link href={nota.href} className="text-night font-body font-light text-lg leading-relaxed border-b border-taupe/40 hover:border-terracotta hover:text-terracotta transition-colors">
-                    {nota.texto}
-                  </Link>
-                ) : (
-                  <p className="text-night font-body font-light text-lg leading-relaxed">{nota.texto}</p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ── GUÍAS ── */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-20 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto px-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <p className="font-body font-light text-white/80 text-base leading-relaxed max-w-lg">
-            Si te sirve, también preparé rutas hora a hora para organizarte el viaje.
+      <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-14">
+        <div className="relative mx-auto max-w-5xl px-6 text-center md:px-10">
+          <p className="font-display text-xl italic leading-relaxed text-white/80 md:text-2xl">
+            Arriba resolvemos el viaje. Abajo seguimos contando la ciudad.
           </p>
-          <TrackedInternalLink
-            href="/itinerarios"
-            contentType="home_secondary_cta"
-            contentId="itinerarios"
-            className="btn-primary flex-shrink-0"
-          >
-            Ver itinerarios →
-          </TrackedInternalLink>
         </div>
       </section>
     </main>
