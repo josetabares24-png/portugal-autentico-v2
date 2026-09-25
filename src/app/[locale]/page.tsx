@@ -70,8 +70,11 @@ export default function HomePage() {
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
             Rutas, transporte, comida, lugares y consejos para entender la ciudad antes de empezar a correr de un sitio a otro.
           </p>
-          <a href="#guia-practica" className="btn-ghost-light btn-lg">
-            ¿Qué necesitas resolver? ↓
+          <a
+            href="#guia-practica"
+            className="inline-flex min-h-12 max-w-full items-center justify-center bg-terracotta px-7 py-3 text-center font-body text-base font-semibold leading-tight text-white transition-colors duration-200 hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            Preparar mi viaje ↓
           </a>
         </div>
       </section>
@@ -85,11 +88,11 @@ export default function HomePage() {
                 className="max-w-3xl font-display font-semibold not-italic leading-tight tracking-normal text-night"
                 style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)' }}
               >
-                Empieza por la pregunta que tienes ahora.
+                ¿Qué necesitas resolver primero?
               </h2>
             </div>
             <p className="max-w-md font-body text-sm leading-relaxed text-text-secondary md:justify-self-end md:text-right">
-              Nadie prepara Lisboa de una sola vez. Elige la duda que te está frenando y encuentra una respuesta clara para seguir.
+              Elige una cosa. El resto puede esperar.
             </p>
           </div>
 

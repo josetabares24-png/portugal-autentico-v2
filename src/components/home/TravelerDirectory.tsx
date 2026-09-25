@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import {
-  ArrowUpRight,
+  ArrowRight,
+  CalendarDays,
   Camera,
-  Clock3,
   GlassWater,
   Landmark,
   ShieldAlert,
@@ -12,7 +12,6 @@ import {
   UtensilsCrossed,
   type LucideIcon,
 } from 'lucide-react';
-import { useState } from 'react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 
 type Portal = {
@@ -27,69 +26,93 @@ type Portal = {
   heroAlt: string;
 };
 
-const portalPresentation: Record<
-  string,
-  { icon: LucideIcon; accent: string }
-> = {
-  routes: { icon: Clock3, accent: '#B8472E' },
-  mobility: { icon: TrainFront, accent: '#287080' },
-  visit: { icon: Landmark, accent: '#A87830' },
-  food: { icon: UtensilsCrossed, accent: '#617052' },
-  drinks: { icon: GlassWater, accent: '#765064' },
-  spots: { icon: Camera, accent: '#46647D' },
-  safety: { icon: ShieldAlert, accent: '#9B493F' },
+type PortalPresentation = {
+  icon: LucideIcon;
+  actionTitle: string;
+  actionDetail: string;
 };
 
+const primaryPortalIds = ['routes', 'visit', 'mobility', 'food'];
+const secondaryPortalIds = ['drinks', 'spots', 'safety'];
+
+const portalPresentation: Record<string, PortalPresentation> = {
+  routes: {
+    icon: CalendarDays,
+    actionTitle: 'Organizar mis días',
+    actionDetail: 'Rutas de 1 a 7 días',
+  },
+  visit: {
+    icon: Landmark,
+    actionTitle: 'Elegir qué ver',
+    actionDetail: 'Esenciales, gratis y con niños',
+  },
+  mobility: {
+    icon: TrainFront,
+    actionTitle: 'Moverme por Lisboa',
+    actionDetail: 'Metro, tranvías y aeropuerto',
+  },
+  food: {
+    icon: UtensilsCrossed,
+    actionTitle: 'Comer bien',
+    actionDetail: 'Local, barato y sin trampas',
+  },
+  drinks: {
+    icon: GlassWater,
+    actionTitle: 'Tomar algo',
+    actionDetail: 'Bares y ambiente',
+  },
+  spots: {
+    icon: Camera,
+    actionTitle: 'Hacer fotos',
+    actionDetail: 'Luz y lugares',
+  },
+  safety: {
+    icon: ShieldAlert,
+    actionTitle: 'Evitar errores',
+    actionDetail: 'Consejos prácticos',
+  },
+};
+
+function sortPortals(portals: Portal[], ids: string[]) {
+  return ids.flatMap((id) => portals.filter((portal) => portal.portalId === id));
+}
+
 export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
-  const [activeId, setActiveId] = useState(portals[0]?.portalId ?? 'routes');
-  const activePortal = portals.find((portal) => portal.portalId === activeId) ?? portals[0];
-  const activeStyle = portalPresentation[activePortal.portalId] ?? portalPresentation.routes;
+  const primaryPortals = sortPortals(portals, primaryPortalIds);
+  const secondaryPortals = sortPortals(portals, secondaryPortalIds);
+  const photoPortal = portals.find((portal) => portal.portalId === 'routes') ?? portals[0];
 
   return (
-    <div className="overflow-hidden border border-night/15 bg-[#FBF8F2]">
-      <div className="lg:grid lg:grid-cols-[minmax(0,1.04fr)_minmax(390px,0.96fr)]">
-        <div className="relative hidden min-h-[610px] overflow-hidden lg:block">
+    <div className="overflow-hidden border border-night/15 bg-night/15">
+      <div className="grid gap-px lg:grid-cols-[minmax(300px,0.72fr)_minmax(0,1.28fr)]">
+        <div className="relative min-h-[210px] overflow-hidden bg-night sm:min-h-[260px] lg:min-h-[372px]">
           <Image
-            key={activePortal.heroImage}
-            src={activePortal.heroImage}
-            alt={activePortal.heroAlt}
+            src={photoPortal.heroImage}
+            alt={photoPortal.heroAlt}
             fill
-            className="object-cover"
-            sizes="56vw"
+            className="object-cover object-center"
+            sizes="(max-width: 1023px) 100vw, 40vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/20 to-transparent" />
 
-          <div className="absolute inset-x-0 bottom-0 p-10 xl:p-12">
-            <div
-              className="mb-6 h-1 w-14"
-              style={{ backgroundColor: activeStyle.accent }}
-              aria-hidden="true"
-            />
-            <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/65">
-              {activePortal.portalQuestion}
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-9">
+            <div className="mb-4 h-0.5 w-10 bg-terracotta" aria-hidden="true" />
+            <p className="mb-2 font-body text-[0.65rem] uppercase tracking-[0.17em] text-white/65">
+              Una forma sencilla de empezar
             </p>
-            <p className="max-w-xl font-display text-[3rem] font-semibold not-italic leading-[1.04] tracking-normal text-white xl:text-[3.5rem]">
-              {activePortal.shortTitle}
+            <p className="max-w-md font-display text-[1.85rem] font-semibold not-italic leading-[1.08] tracking-normal text-white sm:text-[2.25rem]">
+              Primero decide cuántos días tienes.
             </p>
-            <p className="mt-5 max-w-lg font-body text-base leading-relaxed text-white/80">
-              {activePortal.portalSubtitle}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2">
-              {activePortal.portalTopics.slice(0, 5).map((topic) => (
-                <span key={topic} className="font-body text-xs text-white/60">
-                  {topic}
-                </span>
-              ))}
-            </div>
+            <p className="mt-3 font-body text-sm text-white/75">Después todo encaja mejor.</p>
           </div>
         </div>
 
-        <nav aria-label="Guías para preparar Lisboa" className="divide-y divide-night/10">
-          {portals.map((portal) => {
-            const presentation = portalPresentation[portal.portalId] ?? portalPresentation.routes;
+        <nav aria-label="Decisiones principales para preparar Lisboa" className="grid grid-cols-2 gap-px bg-night/15">
+          {primaryPortals.map((portal, index) => {
+            const presentation = portalPresentation[portal.portalId];
             const Icon = presentation.icon;
-            const isActive = portal.portalId === activeId;
+            const isFeatured = index === 0;
 
             return (
               <TrackedInternalLink
@@ -97,65 +120,74 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                 href={`/guia/${portal.slug}`}
                 contentType="home_guide_portal"
                 contentId={portal.portalId}
-                onMouseEnter={() => setActiveId(portal.portalId)}
-                onFocus={() => setActiveId(portal.portalId)}
-                className={`group relative flex min-h-[92px] items-center gap-3 px-3 py-3 transition-colors duration-300 sm:min-h-[100px] sm:gap-4 sm:px-6 sm:py-4 lg:min-h-[87px] lg:gap-5 lg:px-7 lg:py-3 xl:px-9 ${
-                  isActive ? 'lg:bg-night' : 'hover:bg-white focus-visible:bg-white'
+                className={`group relative flex min-h-[148px] flex-col justify-between p-5 transition-colors duration-200 sm:min-h-[170px] sm:p-6 lg:min-h-[185px] lg:p-7 ${
+                  isFeatured
+                    ? 'bg-night text-white hover:bg-[#22395f]'
+                    : 'bg-[#FBF8F2] text-night hover:bg-white'
                 }`}
               >
-                <div className="relative h-16 w-16 flex-none overflow-hidden sm:h-[76px] sm:w-[76px] lg:hidden">
-                  <Image
-                    src={portal.heroImage}
-                    alt=""
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 639px) 64px, 76px"
-                    loading="lazy"
+                <div className="flex items-start justify-between gap-3">
+                  <Icon
+                    size={21}
+                    strokeWidth={1.65}
+                    className={isFeatured ? 'text-gold' : 'text-terracotta'}
+                    aria-hidden="true"
+                  />
+                  <ArrowRight
+                    size={19}
+                    strokeWidth={1.7}
+                    className={`transition-transform duration-200 group-hover:translate-x-1 ${
+                      isFeatured ? 'text-white/70' : 'text-night/55'
+                    }`}
+                    aria-hidden="true"
                   />
                 </div>
 
-                <span
-                  className="hidden h-11 w-8 flex-none items-center justify-center lg:flex"
-                  style={{ color: isActive ? '#D8A95C' : presentation.accent }}
-                  aria-hidden="true"
-                >
-                  <Icon size={20} strokeWidth={1.7} />
-                </span>
-
-                <div className="min-w-0 flex-1">
-                  <div className="mb-1.5 flex items-center gap-2.5 font-body text-[0.64rem] uppercase tracking-[0.16em]">
-                    <span
-                      className="h-px w-5 flex-none"
-                      style={{ backgroundColor: isActive ? '#D8A95C' : presentation.accent }}
-                      aria-hidden="true"
-                    />
-                    <span className={isActive ? 'lg:text-white/55' : 'text-taupe'}>{portal.portalQuestion}</span>
-                  </div>
+                <div className="mt-6">
+                  <span className="block font-display text-[1.08rem] font-semibold not-italic leading-[1.12] tracking-normal sm:text-[1.35rem] lg:text-[1.5rem]">
+                    {presentation.actionTitle}
+                  </span>
                   <span
-                    className={`block font-display text-[1.2rem] font-semibold not-italic leading-tight tracking-normal transition-colors sm:text-[1.5rem] lg:text-[1.45rem] ${
-                      isActive ? 'lg:text-white' : 'text-night group-hover:text-terracotta'
+                    className={`mt-2 block font-body text-[0.68rem] leading-relaxed sm:text-xs ${
+                      isFeatured ? 'text-white/65' : 'text-text-secondary'
                     }`}
                   >
-                    {portal.shortTitle}
-                  </span>
-                  <span className="mt-1.5 hidden font-body text-xs leading-relaxed text-text-secondary sm:block sm:line-clamp-2 lg:hidden">
-                    {portal.portalSubtitle}
+                    {presentation.actionDetail}
                   </span>
                 </div>
-
-                <span
-                  className={`flex h-10 w-10 flex-none items-center justify-center border transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${
-                    isActive ? 'lg:border-white/25 lg:bg-white lg:text-night' : 'border-night/15 text-night'
-                  }`}
-                  aria-hidden="true"
-                >
-                  <ArrowUpRight size={19} strokeWidth={1.8} />
-                </span>
               </TrackedInternalLink>
             );
           })}
         </nav>
       </div>
+
+      <nav aria-label="Más formas de preparar Lisboa" className="grid grid-cols-3 gap-px border-t border-night/15 bg-night/15">
+        {secondaryPortals.map((portal) => {
+          const presentation = portalPresentation[portal.portalId];
+          const Icon = presentation.icon;
+
+          return (
+            <TrackedInternalLink
+              key={portal.slug}
+              href={`/guia/${portal.slug}`}
+              contentType="home_guide_portal"
+              contentId={portal.portalId}
+              className="group flex min-h-[72px] items-center gap-2 bg-[#FBF8F2] px-3 py-3 text-night transition-colors duration-200 hover:bg-white sm:gap-3 sm:px-5"
+            >
+              <Icon size={17} strokeWidth={1.65} className="flex-none text-terracotta" aria-hidden="true" />
+              <span className="min-w-0 flex-1 font-body text-[0.68rem] font-semibold leading-tight sm:text-sm">
+                {presentation.actionTitle}
+              </span>
+              <ArrowRight
+                size={15}
+                strokeWidth={1.7}
+                className="hidden flex-none text-night/45 transition-transform duration-200 group-hover:translate-x-1 sm:block"
+                aria-hidden="true"
+              />
+            </TrackedInternalLink>
+          );
+        })}
+      </nav>
     </div>
   );
 }
