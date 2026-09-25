@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import TravelerGuideBookings from '@/components/traveler/TravelerGuideBookings';
 import TravelerGuideTool from '@/components/traveler/TravelerGuideTool';
 import { getTravelerGuide, travelerGuideSlugs } from '@/data/traveler-guide-preview';
 
@@ -122,6 +123,14 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                 >
                   Las dudas que suelen aparecer
                 </a>
+                {guide.bookingSection ? (
+                  <a
+                    href="#reservas"
+                    className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
+                  >
+                    Opciones que sí conviene reservar
+                  </a>
+                ) : null}
                 {guide.sections.map((section) => (
                   <a
                     key={section.title}
@@ -270,6 +279,10 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
           </article>
         ))}
       </section>
+
+      {guide.bookingSection ? (
+        <TravelerGuideBookings portalId={guide.portalId} section={guide.bookingSection} />
+      ) : null}
 
       <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-16 md:py-20">
         <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">

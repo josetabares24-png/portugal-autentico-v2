@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { travelerGuides } from '../src/data/traveler-guide-preview.ts';
+import { findProductById, resolveBookingLink } from '../src/data/bookings.ts';
 
 const failures = [];
 
@@ -17,6 +18,7 @@ function check(condition, message) {
 const slugs = travelerGuides.map((guide) => guide.slug);
 const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
+const commercialPortalIds = new Set(['routes', 'visit', 'food', 'drinks']);
 
 check(travelerGuides.length === 7, 'hay exactamente siete portales de viaje');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
@@ -46,6 +48,27 @@ for (const guide of travelerGuides) {
   check(guide.heroImage.startsWith('/images/lisboa-originales/'), `${prefix} usa fotografía propia`);
   check(existsSync(imagePath), `${prefix} encuentra su fotografía en el repositorio`);
   check(!/deberíamos publicar|esta subguía|no quiero publicar|cuando hablemos/.test(completeCopy), `${prefix} no expone lenguaje editorial interno`);
+
+  if (guide.bookingSection) {
+    check(commercialPortalIds.has(guide.portalId), `${prefix} sólo monetiza una intención aprobada`);
+    check(
+      guide.bookingSection.productIds.length >= 1 && guide.bookingSection.productIds.length <= 3,
+      `${prefix} mantiene una selección comercial breve`,
+    );
+    check(
+      new Set(guide.bookingSection.productIds).size === guide.bookingSection.productIds.length,
+      `${prefix} no repite productos reservables`,
+    );
+
+    for (const productId of guide.bookingSection.productIds) {
+      const product = findProductById(productId);
+      const link = product ? resolveBookingLink(product, 'article') : null;
+      check(Boolean(product), `${prefix} encuentra el producto ${productId}`);
+      check(link?.provider === 'getyourguide', `${prefix} reserva ${productId} mediante GetYourGuide`);
+    }
+  } else {
+    check(!commercialPortalIds.has(guide.portalId), `${prefix} permanece sin bloque comercial por decisión editorial`);
+  }
 }
 
 if (failures.length > 0) {

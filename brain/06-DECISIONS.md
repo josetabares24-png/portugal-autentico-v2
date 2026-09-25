@@ -418,6 +418,27 @@ SEO guardrails:
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 
+## D-030 — Reservations appear only after the guide has resolved the decision
+**Date:** 2026-09-25
+**Status:** accepted Preview experiment; production requires explicit visual approval
+
+The traveler gateway can include GetYourGuide recommendations, but only as a selective continuation of an already answered need.
+
+Rules:
+- keep the Home, Movilidad, Fotografías and Cuídate de esto free of booking product blocks;
+- Rutas may show exact Sintra options when the distinction between independent planning and removed friction is explained;
+- Qué visitar may show up to three exact reservations where a ticket, small group or chosen time solves a real problem;
+- Dónde comer may show one gastronomic tour as an orientation option, not as the default way to eat;
+- Dónde tomar algo may show fado when it is the principal timed plan for the night;
+- commercial sections render after the full editorial guide, never before the informational answer;
+- reuse `BOOKABLE_PRODUCTS`, `resolveBookingLink`, `BookingCard` and existing affiliate analytics instead of duplicating provider URLs;
+- do not copy volatile prices, ratings, availability or urgency claims;
+- direct links remain visible without third-party scripts, while partner widgets continue to require explicit cookie consent;
+- each guide shows one to three products maximum and includes the compact affiliate disclosure.
+
+This Preview uses the existing official GetYourGuide partner links and campaign attribution. It does not introduce or claim a separate live catalog API that is not present in the repository.
+
+
 ## D-029 — Every traveler guide earns a distinct practical tool
 **Date:** 2026-09-25
 **Status:** accepted Preview standard; production and indexing still require explicit approval

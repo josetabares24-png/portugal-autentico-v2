@@ -26,6 +26,13 @@ export type TravelerGuideTool = {
   }>;
 };
 
+export type TravelerGuideBookingSection = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  productIds: string[];
+};
+
 export type TravelerGuide = {
   slug: string;
   portalId: string;
@@ -44,6 +51,7 @@ export type TravelerGuide = {
   practicalTool: TravelerGuideTool;
   humanQuestions: Array<{ question: string; answer: string }>;
   sections: TravelerGuideSection[];
+  bookingSection?: TravelerGuideBookingSection;
   closingTitle: string;
   closingText: string;
 };
@@ -135,6 +143,13 @@ export const travelerGuides: TravelerGuide[] = [
         ],
       },
     ],
+    bookingSection: {
+      eyebrow: 'Sólo si te quita trabajo',
+      title: 'Dos formas de simplificar Sintra',
+      intro:
+        'Puedes organizarla por tu cuenta. Estas opciones tienen sentido cuando prefieres asegurar la entrada principal o quitarte de encima los traslados y el orden de las visitas.',
+      productIds: ['sintra-completa', 'sintra-palacio-pena'],
+    },
     closingTitle: 'Si no sabes por dónde empezar',
     closingText: 'Empieza por el número de días. Después elige zonas. Y sólo entonces añade entradas, comidas y excursiones.',
   },
@@ -305,6 +320,13 @@ export const travelerGuides: TravelerGuide[] = [
         ],
       },
     ],
+    bookingSection: {
+      eyebrow: 'Reservar con intención',
+      title: 'Tres planes donde reservar sí puede ayudarte',
+      intro:
+        'No hace falta comprar Lisboa por adelantado. Aquí la reserva sirve para evitar una cola, asegurar una experiencia pequeña o elegir una hora concreta junto al río.',
+      productIds: ['castelo-sao-jorge', 'oceanario', 'crucero-tajo'],
+    },
     closingTitle: 'La mejor selección depende de tu viaje',
     closingText: 'Empieza por el tiempo, después por el tipo de experiencia, y sólo entonces decide qué merece una entrada.',
   },
@@ -392,6 +414,13 @@ export const travelerGuides: TravelerGuide[] = [
         ],
       },
     ],
+    bookingSection: {
+      eyebrow: 'Si prefieres empezar acompañado',
+      title: 'Una forma de aprender qué pedir',
+      intro:
+        'Un tour gastronómico tiene más sentido al principio del viaje: te da referencias para elegir por tu cuenta durante los días siguientes.',
+      productIds: ['tour-gastronomico'],
+    },
     closingTitle: 'Comer es parte del viaje, no una tarea logística',
     closingText: 'El objetivo es que encuentres una opción que encaje con tu día sin convertir cada comida en una investigación de una hora.',
   },
@@ -472,6 +501,13 @@ export const travelerGuides: TravelerGuide[] = [
         ],
       },
     ],
+    bookingSection: {
+      eyebrow: 'Una noche con hora',
+      title: 'Cuando el fado es el plan principal',
+      intro:
+        'Si quieres escuchar fado de verdad, conviene tratarlo como una experiencia con hora y no como algo que aparecerá por casualidad al final de la noche.',
+      productIds: ['fado'],
+    },
     closingTitle: 'Primero el ambiente; después el lugar',
     closingText: 'Esa sola decisión hace que recomendar dónde tomar algo sea mucho más útil que darte una lista genérica de bares.',
   },

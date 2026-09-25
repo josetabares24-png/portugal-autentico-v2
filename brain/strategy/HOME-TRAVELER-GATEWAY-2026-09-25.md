@@ -541,3 +541,16 @@ Visual validation standard for this refinement:
 - safety hero recognisable and relevant;
 - cookie notice compact in both open and rejected states;
 - production, sitemap and canonical strategy unchanged until explicit approval.
+
+## Selective reservation layer
+
+The gateway now tests a restrained commercial continuation on four guide intents:
+- Rutas: Sintra complete and Palacio da Pena options;
+- Qué visitar: Castelo, Oceanário and a Tajo cruise;
+- Dónde comer: one gastronomic tour;
+- Dónde tomar algo: one fado experience.
+
+Placement rule:
+**answer the question → explain trade-offs → show an exact reservable option**.
+
+The Home, Movilidad, Fotografías and Cuídate de esto remain non-commercial. Product cards reuse the existing GetYourGuide-attributed links and first-party visual system, remain usable after cookie rejection, expose no copied prices or ratings, and keep click measurement separated by guide placement.
