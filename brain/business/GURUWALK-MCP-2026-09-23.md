@@ -78,14 +78,36 @@ Do not confuse inventory with conversion data.
 - keep current static affiliate fallback if MCP is unavailable;
 - measure any MCP-based CTA separately.
 
-## Next test
+## Runtime validation completed — 2026-09-25
 
-Create a server-side proof of concept ONLY after the current CTA baseline matures.
+The server-side proof of concept was validated in Vercel Preview before merge.
 
-Test goal:
-- query Lisbon;
-- retrieve current categories/tours;
-- verify affiliate attribution in returned URLs;
-- compare whether date-aware/real inventory improves click quality.
+Observed in the real GuruWalk MCP response:
+- destination: Lisboa, Portugal;
+- free tours available: yes;
+- categories returned: 19;
+- featured products reported: 25;
+- category/tour URLs preserved affiliate attribution;
+- availability test: 8 dates with events and 44 events in the tested window;
+- booking URLs preserved affiliate attribution.
 
-Do not ship dynamic inventory to production merely because the API exists.
+Operational cleanup:
+- the temporary Preview-only validation endpoint was removed before merge;
+- the final Preview returned 404 for that endpoint;
+- both Vercel checks passed;
+- PR #79 was merged to `main` at `5312dfb26198d832b7750d8636966182b1a6b7e2`;
+- the resulting production deployment reached READY.
+
+The reusable client lives server-side; no raw API key or public test surface was committed.
+
+## Next product step
+
+Do not replace the proven static GuruWalk funnel yet.
+
+When the commercial baseline is mature:
+1. choose one narrow MCP use case (date-aware availability or category-aware matching);
+2. keep static links as fallback/control;
+3. track the MCP CTA separately;
+4. compare click quality and partner conversion before increasing prominence.
+
+Do not ship dynamic inventory merely because the client is now validated.

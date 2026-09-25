@@ -1,6 +1,6 @@
 # Next actions
 
-Updated: **2026-09-23**
+Updated: **2026-09-25**
 
 This is the only priority queue agents should use unless new live data invalidates it.
 
@@ -387,17 +387,32 @@ Do not change CTA density or protected SEO pages while these baselines form.
 
 ## P1 — GuruWalk MCP runtime validation
 
-PR #79 remains open.
+Status: **VALIDATED / MERGED / LIVE — 2026-09-25**.
 
-Current state:
-- server-side client prepared;
-- TypeScript passed;
-- Preview secret configured by the user;
-- Preview retried after production recovery;
-- Vercel still rejected the Preview with `build-rate-limit`.
+Completed:
+- PR #79 runtime-validated in Vercel Preview;
+- Lisbon discovery returned 19 categories and 25 featured products;
+- affiliate attribution was present on category/tour URLs;
+- availability check returned 8 dates with events and 44 events in the tested window;
+- booking URLs preserved affiliate attribution;
+- temporary validation route was removed before merge and verified 404 in the final Preview;
+- final Preview checks were green;
+- PR #79 merged to `main` at `5312dfb26198d832b7750d8636966182b1a6b7e2`;
+- production deployment for that commit reached READY.
 
-Next action:
-retry Preview later; once READY, validate Lisbon discovery, availability and affiliate attribution before any merge.
+Product rule remains unchanged:
+- keep the current static GuruWalk funnel as control;
+- do not ship dynamic inventory merely because the MCP client is available;
+- next use should be a measured, date-aware or category-aware experiment after the current commercial baseline matures.
+
+### Deployment cleanup — 2026-09-25
+
+Closed as superseded/obsolete:
+- PR #71 — activity freshness branch; current `main` already contains evolved versions of the corrections;
+- PR #28 — public Clerk/performance branch; current `main` already contains the relevant architecture changes;
+- PR #9 — old home hero branch; current home already uses the newer own-photo implementation.
+
+Historical failed Preview deployments from superseded content branches are not production incidents and require no repair.
 
 
 ## P1 — Visitor Impact Watch
