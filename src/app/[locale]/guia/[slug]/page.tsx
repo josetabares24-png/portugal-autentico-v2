@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: { absolute: `${guide.title} | Estaba en Lisboa` },
     description: guide.lead,
+    alternates: { canonical: null },
     robots: { index: false, follow: true },
     openGraph: {
       title: guide.title,

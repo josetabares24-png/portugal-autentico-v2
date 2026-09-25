@@ -326,6 +326,7 @@ This creates a measurable answer to: **what do Home visitors actually need?**
 - `/guia/*` remains **noindex** during the visual/content validation gate.
 - Links are allowed to be followed so the prototypes retain a useful internal path to canonical support content.
 - No canonical URL is assigned until each portal is classified as PROMOTE EXISTING, NEW PILLAR or UX-ONLY.
+- Preview QA found that the root canonical was otherwise inherited from the Home; prototypes must explicitly clear that inherited value while this decision is open.
 - Current intended outcomes remain:
   - Rutas → evolve `/itinerarios`.
   - Movilidad → promote `/blog/como-moverse-por-lisboa`.
