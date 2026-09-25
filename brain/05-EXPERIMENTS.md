@@ -23,6 +23,7 @@ This is the active learning register.
 | E-005 | /blog/arquitectura-manuelina-lisboa | Reorientation to "qué es el estilo manuelino" should broaden/recover relevant query coverage | impressions + query coverage + clicks | OBSERVE | confirmed production deployment + 14 finalized days |
 | E-006 | /blog/donde-tomar-cafe-lisboa | Replacing stale/unsupported coffee claims with verified, intent-aligned content should protect page-1 momentum and improve useful query coverage | position + clicks + query coverage, with CTR protected | RUNNING | deployed 2026-09-23 10:59 Lisbon; +14 finalized days |
 | E-007 | /blog/donde-comer-barato-lisboa | Replacing invented local-authority copy with dated, verifiable cheap-eating options should improve relevance for "comer barato" queries and recover page-2 visibility | position + impressions + clicks + query coverage | RUNNING | deployed 2026-09-23 11:12 Lisbon; +14 finalized days |
+| E-008 | Home traveler gateway | A need-first editorial directory will help visitors reach a useful answer more often than a blog-index Home without weakening the publication identity | portal selection rate + downstream guide/support clicks | PLANNED | explicit visual approval + production deployment + 14 finalized days |
 
 ## Next candidate pool
 

@@ -50,7 +50,7 @@ The seven portals are **not cards in a startup dashboard** and are **not accordi
 They should feel like large editorial navigation objects:
 
 - clickable across the full surface;
-- number / title / human subtitle;
+- intent label / title / human subtitle;
 - a short line of subtopics so the traveler knows what lives behind the portal;
 - an explicit arrow/verb;
 - strong typography as the primary visual device;
@@ -65,7 +65,6 @@ They should feel like large editorial navigation objects:
 Example anatomy:
 
 ```
-02
 MOVILIDAD
 Transportes, tarjetas, aeropuerto y atajos
 
@@ -295,6 +294,59 @@ Suggested content IDs:
 - safety
 
 This creates a measurable answer to: **what do Home visitors actually need?**
+
+## Implementation learning — 2026-09-25
+
+**Branch:** `design/home-traveler-portals-polish`
+**Status:** Preview iteration; not approved for production yet.
+
+### Visual decisions confirmed through review
+
+- The first grid of seven equal cards still felt generated/template-like.
+- The preferred direction is an editorial directory: one documentary image area plus a direct vertical index on desktop; compact image-led rows on mobile.
+- Portal numbering was removed because it implied a sequence that does not exist and added visual noise without helping the decision.
+- Portal titles now use the same Playfair treatment as Blog landing/article-card titles: stronger weight, non-italic and normal tracking.
+- Every portal image must come from `public/images/lisboa-originales`; no generated or generic stock imagery is needed for this surface.
+- Color is functional orientation, not decoration: a restrained category accent appears in the icon/line treatment while the base remains cream/night.
+
+### Selected owned photography
+
+| Portal | Repository image |
+|---|---|
+| Rutas / Guías | `alfama-rua-da-adica-lisboa.jpg` |
+| Movilidad | `tranvia-turistico-baixa-lisboa-01.webp` |
+| Qué visitar | `rua-augusta-arco-lisboa.webp` |
+| Dónde comer | `time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg` |
+| Dónde tomar algo | `rua-baixa-lisboa-entardecer.webp` |
+| Spots | `rio-tejo-por-do-sol-lisboa.webp` |
+| Cuídate de esto | `postales-souvenirs-lisboa.jpg` |
+
+### SEO state of the seven guide prototypes
+
+- `/guia/*` remains **noindex** during the visual/content validation gate.
+- Links are allowed to be followed so the prototypes retain a useful internal path to canonical support content.
+- No canonical URL is assigned until each portal is classified as PROMOTE EXISTING, NEW PILLAR or UX-ONLY.
+- Current intended outcomes remain:
+  - Rutas → evolve `/itinerarios`.
+  - Movilidad → promote `/blog/como-moverse-por-lisboa`.
+  - Qué visitar → candidate new pillar after query validation.
+  - Comer → candidate new `/comer-en-lisboa` pillar after query validation.
+  - Tomar algo → protect/promote `/blog/vida-nocturna-lisboa`.
+  - Spots → promote `/blog/donde-fotografiar-lisboa`.
+  - Cuídate → start from `/blog/errores-turistas-lisboa` and validate separate safety intent.
+
+### Guide-page product standard learned in this iteration
+
+The prototype answer pages should not repeat a hero plus numbered card grid. Their shared structure is now:
+
+1. direct editorial answer over owned photography;
+2. situation-based decision rows without artificial numbering;
+3. visible in-page contents;
+4. continuous explanatory sections using Blog typography;
+5. contextual links at the moment a specific answer is needed;
+6. a clear closing idea and route back to the traveler gateway.
+
+This is a product/visual baseline, not permission to index seven new URLs.
 
 ## SEO cannibalization guardrails
 

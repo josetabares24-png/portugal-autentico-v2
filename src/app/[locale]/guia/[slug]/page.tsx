@@ -2,8 +2,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 import { getTravelerGuide, travelerGuideSlugs } from '@/data/traveler-guide-preview';
+
+function sectionId(title: string) {
+  return title
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
 
 export function generateStaticParams() {
   return travelerGuideSlugs.map((slug) => ({ slug }));
@@ -15,9 +25,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!guide) return { title: 'Guía no encontrada', robots: { index: false, follow: false } };
 
   return {
-    title: `${guide.title} | Estaba en Lisboa — Preview`,
+    title: { absolute: `${guide.title} | Estaba en Lisboa` },
     description: guide.lead,
-    robots: { index: false, follow: false },
+    robots: { index: false, follow: true },
+    openGraph: {
+      title: guide.title,
+      description: guide.lead,
+      type: 'article',
+      images: [{ url: `https://estabaenlisboa.com${guide.heroImage}`, alt: guide.heroAlt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: guide.title,
+      description: guide.lead,
+      images: [`https://estabaenlisboa.com${guide.heroImage}`],
+    },
   };
 }
 
@@ -28,7 +50,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
 
   return (
     <main id="main-content" className="bg-cream">
-      <section className="relative h-[84svh] min-h-[650px] max-h-[780px] overflow-hidden border-b border-taupe/20 bg-night">
+      <section className="relative h-[76svh] min-h-[590px] max-h-[720px] overflow-hidden border-b border-taupe/20 bg-night">
         <Image
           src={guide.heroImage}
           alt={guide.heroAlt}
@@ -40,8 +62,8 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
         <div className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/55 to-night/10 lg:bg-gradient-to-r lg:from-night/95 lg:via-night/55 lg:to-night/5" />
         <div className="absolute inset-0 bg-night/10" />
 
-        <div className="relative mx-auto flex h-full max-w-7xl items-end px-6 py-10 sm:px-10 md:px-14 lg:py-16">
-          <div className="max-w-2xl">
+        <div className="relative mx-auto flex h-full max-w-7xl items-end px-6 py-10 sm:px-10 md:px-14 lg:py-14">
+          <div className="max-w-3xl">
             <Link
               href="/#guia-practica"
               className="mb-7 inline-flex font-body text-xs uppercase tracking-[0.16em] text-white/65 transition-colors hover:text-white"
@@ -50,12 +72,12 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
             </Link>
 
             <p className="mb-3 font-body text-xs uppercase tracking-[0.2em] text-white/65">
-              {guide.number} · {guide.eyebrow}
+              {guide.eyebrow}
             </p>
 
             <h1
-              className="font-display italic leading-[1.02] text-white"
-              style={{ fontSize: 'clamp(2.55rem, 5vw, 4.8rem)', fontWeight: 400 }}
+              className="max-w-[18ch] font-display font-semibold not-italic leading-[1.04] tracking-normal text-white"
+              style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)' }}
             >
               {guide.title}
             </h1>
@@ -64,29 +86,56 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
               {guide.lead}
             </p>
 
-            <p className="mt-5 max-w-2xl border-l-2 border-terracotta pl-5 font-display text-base italic leading-relaxed text-white/80 sm:text-lg">
-              {guide.promise}
-            </p>
+            <div className="mt-6 max-w-2xl border-t border-white/30 pt-5">
+              <p className="mb-2 font-body text-[0.65rem] uppercase tracking-[0.18em] text-white/55">La respuesta corta</p>
+              <p className="font-body text-sm leading-relaxed text-white/85 sm:text-base">{guide.promise}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-taupe/20 bg-cream py-14 md:py-18">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">
-            {guide.decisionPrompt}
-          </p>
+      <section className="border-b border-taupe/20 bg-cream py-14 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+          <div>
+            <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Empieza por tu situación</p>
+            <h2 className="max-w-md font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-night md:text-4xl">
+              {guide.decisionPrompt}
+            </h2>
+            <p className="mt-5 max-w-md font-body text-sm leading-relaxed text-text-secondary">
+              Cada opción parte de una necesidad concreta y te lleva a la respuesta más útil para ese momento.
+            </p>
 
-          <div className="grid border-l border-t border-night/15 sm:grid-cols-2">
+            <nav aria-label="Contenido de esta guía" className="mt-10 border-t border-night/15 pt-5">
+              <p className="mb-4 font-body text-[0.65rem] uppercase tracking-[0.18em] text-taupe">En esta guía</p>
+              <div className="space-y-3">
+                {guide.sections.map((section) => (
+                  <a
+                    key={section.title}
+                    href={`#${sectionId(section.title)}`}
+                    className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
+                  >
+                    {section.title}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          </div>
+
+          <div className="border-y border-night/15">
             {guide.decisions.map((decision, index) => {
               const content = (
                 <>
-                  <div className="mb-8 flex items-center justify-between">
-                    <span className="font-body text-xs tracking-[0.16em] text-taupe">0{index + 1}</span>
-                    <span className="font-body text-lg text-terracotta transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  <div className="min-w-0">
+                    <h3 className="font-display text-[1.3rem] font-semibold not-italic leading-tight tracking-normal text-night md:text-[1.45rem]">
+                      {decision.title}
+                    </h3>
+                    <p className="mt-2 max-w-2xl font-body text-sm leading-relaxed text-text-secondary">{decision.text}</p>
                   </div>
-                  <h2 className="font-display text-[1.35rem] italic leading-tight text-night">{decision.title}</h2>
-                  <p className="mt-3 font-body text-sm leading-relaxed text-text-secondary">{decision.text}</p>
+                  {decision.href ? (
+                    <span className="flex h-10 w-10 flex-none items-center justify-center border border-night/15 text-night transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-terracotta group-hover:text-terracotta" aria-hidden="true">
+                      <ArrowUpRight size={18} strokeWidth={1.8} />
+                    </span>
+                  ) : null}
                 </>
               );
 
@@ -96,12 +145,12 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                   href={decision.href}
                   contentType="guide_decision"
                   contentId={`${guide.portalId}_${index + 1}`}
-                  className="group block min-h-[210px] border-b border-r border-night/15 p-6 transition-colors hover:bg-[#EDE7DA] md:p-8"
+                  className="group grid min-h-[126px] grid-cols-[1fr_auto] items-center gap-5 border-b border-night/15 px-1 py-6 transition-colors last:border-b-0 hover:bg-white/55 sm:px-5"
                 >
                   {content}
                 </TrackedInternalLink>
               ) : (
-                <div key={decision.title} className="group min-h-[210px] border-b border-r border-night/15 p-6 md:p-8">
+                <div key={decision.title} className="grid min-h-[126px] grid-cols-[1fr_auto] items-center gap-5 border-b border-night/15 px-1 py-6 last:border-b-0 sm:px-5">
                   {content}
                 </div>
               );
@@ -114,17 +163,17 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
         {guide.sections.map((section, index) => (
           <article
             key={section.title}
-            className={index % 2 === 0 ? 'border-b border-taupe/20 bg-cream' : 'border-b border-taupe/20'}
-            style={index % 2 === 1 ? { background: '#EDE7DA' } : undefined}
+            id={sectionId(section.title)}
+            className={`scroll-mt-24 border-b border-taupe/20 ${index % 2 === 1 ? 'bg-white/45' : 'bg-cream'}`}
           >
-            <div className="mx-auto grid max-w-5xl gap-8 px-6 py-16 md:grid-cols-[0.75fr_1.25fr] md:gap-16 md:px-10 md:py-22">
+            <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 md:grid-cols-[0.72fr_1.28fr] md:gap-16 md:px-10 md:py-22">
               <div>
                 {section.eyebrow ? (
                   <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">{section.eyebrow}</p>
                 ) : null}
                 <h2
-                  className="font-display italic leading-tight text-night"
-                  style={{ fontSize: 'clamp(1.9rem, 3.3vw, 2.8rem)', fontWeight: 400 }}
+                  className="max-w-md font-display font-semibold not-italic leading-tight tracking-normal text-night"
+                  style={{ fontSize: 'clamp(1.8rem, 3.1vw, 2.65rem)' }}
                 >
                   {section.title}
                 </h2>
@@ -136,7 +185,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                 ) : null}
 
                 {section.paragraphs?.map((paragraph) => (
-                  <p key={paragraph} className="mb-5 font-body text-base leading-relaxed text-text-secondary">
+                  <p key={paragraph} className="mb-5 font-body text-base leading-[1.78] text-text-secondary">
                     {paragraph}
                   </p>
                 ))}
@@ -153,16 +202,17 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
                 ) : null}
 
                 {section.links ? (
-                  <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3">
+                  <div className="mt-8 border-t border-taupe/25">
                     {section.links.map((link) => (
                       <TrackedInternalLink
                         key={link.href}
                         href={link.href}
                         contentType="guide_support_link"
                         contentId={link.href}
-                        className="font-body text-sm font-semibold text-night underline decoration-taupe/40 underline-offset-4 transition-colors hover:text-terracotta"
+                        className="group flex min-h-14 items-center justify-between gap-4 border-b border-taupe/25 py-3 font-body text-sm font-semibold text-night transition-colors hover:text-terracotta"
                       >
-                        {link.label} →
+                        <span>{link.label}</span>
+                        <ArrowUpRight size={17} strokeWidth={1.8} className="flex-none transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                       </TrackedInternalLink>
                     ))}
                   </div>
@@ -176,7 +226,7 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
       <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-16 md:py-20">
         <div className="relative mx-auto max-w-4xl px-6 text-center md:px-10">
           <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-white/50">Para quedarte con una idea</p>
-          <h2 className="font-display text-3xl italic leading-tight text-white md:text-4xl">{guide.closingTitle}</h2>
+          <h2 className="font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-white md:text-4xl">{guide.closingTitle}</h2>
           <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-relaxed text-white/75">{guide.closingText}</p>
           <Link
             href="/#guia-practica"

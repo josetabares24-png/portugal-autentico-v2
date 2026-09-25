@@ -388,7 +388,7 @@ Reglas:
 
 
 ## D-026 — Home becomes a traveler gateway, not an accordion or blog index
-**Date:** 2026-09-25  
+**Date:** 2026-09-25
 **Status:** accepted architecture direction; visual implementation still requires explicit approval
 
 José explicitly chose the next Home architecture direction:
@@ -414,5 +414,25 @@ SEO guardrails:
 - Home portal links must be server-rendered crawlable links;
 - record/measure portal clicks with `select_content`;
 - visual changes still require José's explicit Preview approval before production.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-027 — Traveler-guide prototypes stay noindex until the canonical map is resolved
+**Date:** 2026-09-25
+**Status:** accepted implementation guardrail; visual/content review in progress
+
+The seven `/guia/*` destinations are product prototypes, not seven automatically approved SEO pages.
+
+Rules:
+- keep them `noindex` while their visual and editorial role is reviewed;
+- use `follow` so useful links to established editorial answers remain crawlable;
+- do not add them to the sitemap;
+- do not assign canonicals or migrate ranking URLs before intent/query comparison;
+- promote an existing URL when it already owns the broad intent;
+- only `Qué visitar` and `Dónde comer` remain credible new-pillar candidates, pending validation;
+- all portal/guide hero photography must use José's files from `public/images/lisboa-originales`;
+- portal and decision numbering is removed because the choices are parallel, not sequential;
+- guide headings inherit the established Blog title typography rather than creating a separate visual language.
 
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].

@@ -16,7 +16,6 @@ export type TravelerGuideSection = {
 export type TravelerGuide = {
   slug: string;
   portalId: string;
-  number: string;
   title: string;
   shortTitle: string;
   eyebrow: string;
@@ -37,7 +36,6 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'rutas',
     portalId: 'routes',
-    number: '01',
     title: 'Rutas y guías para organizar Lisboa',
     shortTitle: 'Rutas / Guías',
     eyebrow: 'Cómo entender Lisboa',
@@ -100,7 +98,6 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'movilidad',
     portalId: 'mobility',
-    number: '02',
     title: 'Cómo moverse por Lisboa sin perder tiempo',
     shortTitle: 'Movilidad',
     eyebrow: 'Transportes, tarjetas, aeropuerto y atajos',
@@ -161,14 +158,13 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'que-visitar',
     portalId: 'visit',
-    number: '03',
     title: 'Qué ver y hacer en Lisboa',
     shortTitle: 'Qué visitar',
     eyebrow: 'Sitios, monumentos, entradas y experiencias',
     portalSubtitle: 'Qué merece tu tiempo, qué puedes hacer gratis y qué conviene reservar.',
     portalTopics: ['Imprescindibles', 'Monumentos', 'Gratis', 'Miradores', 'Entradas', 'Experiencias', 'Excursiones'],
-    heroImage: '/images/actividades/castelo-sao-jorge-lisboa.webp',
-    heroAlt: 'Castelo de São Jorge sobre los tejados del centro de Lisboa',
+    heroImage: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
+    heroAlt: 'Rua Augusta llena de visitantes con el Arco da Rua Augusta al fondo',
     lead:
       'El problema en Lisboa no es encontrar cosas que hacer. Es distinguir qué cambia realmente tu viaje, qué depende de una reserva y qué puedes dejar abierto hasta ese mismo día.',
     promise:
@@ -218,14 +214,13 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'comer',
     portalId: 'food',
-    number: '04',
     title: 'Dónde comer en Lisboa',
     shortTitle: 'Dónde comer',
     eyebrow: 'Gastronomía, presupuesto y necesidades',
     portalSubtitle: 'Portugués, barato, tascas, mercados, veggie, sin gluten y café.',
     portalTopics: ['Portugués', 'Barato', 'Tascas', 'Mercados', 'Veggie', 'Sin gluten', 'Brunch', 'Dulces'],
-    heroImage: '/images/bica-cafe-mapa.jpg',
-    heroAlt: 'Café y mesa en Lisboa',
+    heroImage: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
+    heroAlt: 'Interior del Time Out Market Lisboa con sus mesas y puestos de comida',
     lead:
       'Para comer bien en Lisboa no necesitas una lista de cien restaurantes. Necesitas saber qué te apetece, cuánto quieres gastar y qué tipo de experiencia buscas.',
     promise:
@@ -279,14 +274,13 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'tomar-algo',
     portalId: 'drinks',
-    number: '05',
     title: 'Dónde tomar algo y salir en Lisboa',
     shortTitle: 'Dónde tomar algo',
     eyebrow: 'Ambientes, cafés, rooftops, fado y noche',
     portalSubtitle: 'Elige por ambiente: tranquilo, cócteles, cerveza, fado o salir hasta tarde.',
     portalTopics: ['Tranquilo', 'Cerveza', 'Cócteles', 'Rooftops', 'Fado', 'Cafés', 'Salir tarde'],
-    heroImage: '/images/bairro-alto-calle-noche.jpg',
-    heroAlt: 'Calle de Bairro Alto por la noche en Lisboa',
+    heroImage: '/images/lisboa-originales/rua-baixa-lisboa-entardecer.webp',
+    heroAlt: 'Calle de la Baixa al atardecer con las vías del tranvía hacia el río',
     lead:
       'La noche de Lisboa cambia mucho según la zona y la hora. Un plan tranquilo en Graça, una copa en Chiado y terminar en Cais do Sodré son experiencias distintas aunque estén relativamente cerca.',
     promise:
@@ -333,14 +327,13 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'spots',
     portalId: 'spots',
-    number: '06',
     title: 'Dónde fotografiar Lisboa',
     shortTitle: 'Spots',
     eyebrow: 'Las fotos que te puedes llevar del viaje',
     portalSubtitle: 'Miradores, tranvías, azulejos, atardecer y puntos exactos para mirar la ciudad.',
     portalTopics: ['Miradores', 'Tranvías', 'Azulejos', 'Atardecer', 'Calles', 'Río', 'Panorámicas'],
-    heroImage: '/images/miradouro-atardecer.jpg',
-    heroAlt: 'Atardecer sobre Lisboa desde un mirador',
+    heroImage: '/images/lisboa-originales/rio-tejo-por-do-sol-lisboa.webp',
+    heroAlt: 'Puesta de sol naranja sobre el río Tajo en Lisboa',
     lead:
       'Lisboa cambia muchísimo con la luz. Un lugar puede ser espectacular al final de la tarde y bastante plano dos horas antes. Por eso un buen spot es lugar + punto de vista + momento.',
     promise:
@@ -386,14 +379,13 @@ export const travelerGuides: TravelerGuide[] = [
   {
     slug: 'cuidate',
     portalId: 'safety',
-    number: '07',
     title: 'Qué conviene evitar y vigilar en Lisboa',
     shortTitle: 'Cuídate de esto',
     eyebrow: 'Errores, trampas y situaciones prácticas',
     portalSubtitle: 'Carteristas, precios, restaurantes, reservas, transporte y errores comunes.',
     portalTopics: ['Carteristas', 'Precios', 'Restaurantes', 'Aeropuerto', 'Reservas', 'Pagos', 'Errores'],
-    heroImage: '/images/tranvia-turistico-tuktuk-baixa.jpg',
-    heroAlt: 'Tráfico turístico con tranvía y tuk-tuk en el centro de Lisboa',
+    heroImage: '/images/lisboa-originales/postales-souvenirs-lisboa.jpg',
+    heroAlt: 'Expositor de postales y recuerdos turísticos de Lisboa',
     lead:
       'Lisboa no necesita una guía alarmista. Sí conviene saber qué situaciones se repiten en zonas turísticas y qué detalles sorprenden cuando nadie te los explicó antes.',
     promise:
