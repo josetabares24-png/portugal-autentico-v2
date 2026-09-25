@@ -385,3 +385,34 @@ Reglas:
 - el overlay debe acompañar al video, no taparlo;
 - reutilizar este lenguaje para microhistorias, estatuas, lugares, curiosidades y datos de Lisboa;
 - no convertirlo todavía en una serie rígida: primero medir retención, guardados y comentarios.
+
+
+## D-026 — Home becomes a traveler gateway, not an accordion or blog index
+**Date:** 2026-09-25  
+**Status:** accepted architecture direction; visual implementation still requires explicit approval
+
+José explicitly chose the next Home architecture direction:
+
+- no accordion/retractable panels as the final Home model;
+- use seven direct, visually elaborate editorial portal-buttons:
+  - Rutas / Guías
+  - Movilidad
+  - Qué visitar / Actividades
+  - Dónde comer
+  - Dónde tomar algo
+  - Spots
+  - Cuídate de esto
+- each portal must lead to a substantive guide/pillar page, not a thin list of posts;
+- the blog/editorial archive remains the SEO acquisition engine but is not the product model the visitor must navigate;
+- the lower Home returns to the existing editorial/photo identity as an abre-boca of Lisbon stories/guides;
+- do not create seven new URLs automatically: reuse/promote existing high-signal pages where intent already exists and create new pillars only where they serve a distinct job.
+
+SEO guardrails:
+- no mass URL migration;
+- no duplicate generic transport/nightlife/safety pages without intent evidence;
+- preserve active SEO experiment pages;
+- Home portal links must be server-rendered crawlable links;
+- record/measure portal clicks with `select_content`;
+- visual changes still require José's explicit Preview approval before production.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
