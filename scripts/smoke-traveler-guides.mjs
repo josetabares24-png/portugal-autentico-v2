@@ -16,10 +16,12 @@ function check(condition, message) {
 
 const slugs = travelerGuides.map((guide) => guide.slug);
 const portalIds = travelerGuides.map((guide) => guide.portalId);
+const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
 
 check(travelerGuides.length === 7, 'hay exactamente siete portales de viaje');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
 check(new Set(portalIds).size === portalIds.length, 'los identificadores de analítica no se repiten');
+check(new Set(practicalToolTitles).size === practicalToolTitles.length, 'cada guía tiene una herramienta práctica distinta');
 
 for (const guide of travelerGuides) {
   const prefix = `/guia/${guide.slug}`;
@@ -29,6 +31,12 @@ for (const guide of travelerGuides) {
   check(guide.portalQuestion.startsWith('¿') && guide.portalQuestion.endsWith('?'), `${prefix} abre con una pregunta`);
   check(guide.portalQuestion.length <= 28, `${prefix} mantiene la pregunta breve para móvil`);
   check(guide.decisions.length === 4, `${prefix} ofrece cuatro decisiones iniciales`);
+  check(guide.practicalTool.rows.length === 4, `${prefix} incluye una herramienta práctica completa`);
+  check(guide.practicalTool.columns.length === 3, `${prefix} define las tres dimensiones de su herramienta`);
+  check(
+    guide.practicalTool.rows.every((row) => !row.href || row.href.startsWith('/')),
+    `${prefix} sólo enlaza internamente desde su herramienta práctica`,
+  );
   check(guide.humanQuestions.length === 3, `${prefix} responde tres dudas humanas`);
   check(
     guide.humanQuestions.every((item) => item.question.startsWith('¿') && item.question.endsWith('?') && item.answer.length >= 70),

@@ -99,17 +99,17 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                 contentId={portal.portalId}
                 onMouseEnter={() => setActiveId(portal.portalId)}
                 onFocus={() => setActiveId(portal.portalId)}
-                className={`group relative flex min-h-[104px] items-center gap-4 px-4 py-4 transition-colors duration-300 sm:px-6 lg:min-h-[87px] lg:gap-5 lg:px-7 lg:py-3 xl:px-9 ${
+                className={`group relative flex min-h-[92px] items-center gap-3 px-3 py-3 transition-colors duration-300 sm:min-h-[100px] sm:gap-4 sm:px-6 sm:py-4 lg:min-h-[87px] lg:gap-5 lg:px-7 lg:py-3 xl:px-9 ${
                   isActive ? 'lg:bg-night' : 'hover:bg-white focus-visible:bg-white'
                 }`}
               >
-                <div className="relative h-[76px] w-[76px] flex-none overflow-hidden lg:hidden">
+                <div className="relative h-16 w-16 flex-none overflow-hidden sm:h-[76px] sm:w-[76px] lg:hidden">
                   <Image
                     src={portal.heroImage}
                     alt=""
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="76px"
+                    sizes="(max-width: 639px) 64px, 76px"
                     loading="lazy"
                   />
                 </div>
@@ -132,13 +132,13 @@ export default function TravelerDirectory({ portals }: { portals: Portal[] }) {
                     <span className={isActive ? 'lg:text-white/55' : 'text-taupe'}>{portal.portalQuestion}</span>
                   </div>
                   <span
-                    className={`block font-display text-[1.35rem] font-semibold not-italic leading-tight tracking-normal transition-colors sm:text-[1.5rem] lg:text-[1.45rem] ${
+                    className={`block font-display text-[1.2rem] font-semibold not-italic leading-tight tracking-normal transition-colors sm:text-[1.5rem] lg:text-[1.45rem] ${
                       isActive ? 'lg:text-white' : 'text-night group-hover:text-terracotta'
                     }`}
                   >
                     {portal.shortTitle}
                   </span>
-                  <span className="mt-1.5 line-clamp-2 font-body text-xs leading-relaxed text-text-secondary lg:hidden">
+                  <span className="mt-1.5 hidden font-body text-xs leading-relaxed text-text-secondary sm:block sm:line-clamp-2 lg:hidden">
                     {portal.portalSubtitle}
                   </span>
                 </div>

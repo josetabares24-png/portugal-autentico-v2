@@ -418,6 +418,32 @@ SEO guardrails:
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 
+## D-029 — Every traveler guide earns a distinct practical tool
+**Date:** 2026-09-25
+**Status:** accepted Preview standard; production and indexing still require explicit approval
+
+The seven traveler guides must not differ only through copy and photography. Each destination needs one useful decision aid that matches the job the traveler is trying to solve.
+
+Rules:
+- Rutas translates available days into a realistic travel rhythm and base;
+- Movilidad maps common situations to the most sensible transport choice;
+- Qué visitar helps decide what fits in the time actually available;
+- Dónde comer connects the moment of the day with a useful eating format;
+- Dónde tomar algo plans the rhythm of an evening instead of listing venues;
+- Rincones para fotografiar connects light and time with scene and technique;
+- Cuídate de esto pairs a real situation with what to do and what to avoid;
+- tools use continuous editorial layouts rather than a repeated card template;
+- links inside tools remain internal and are measured as `guide_practical_tool`;
+- each tool contains four concise scenarios and remains readable at 390 px;
+- the Home directory uses compact 92 px mobile rows and hides secondary descriptions on the narrowest viewport;
+- guide photography continues to come from `public/images/lisboa-originales`;
+- the rejected-cookie state uses a small settings control instead of a text pill that competes with content.
+
+The SEO gate remains unchanged: `/guia/*` stays `noindex, follow`, without canonicals or sitemap inclusion, until each destination is mapped against established search intent and existing ranking URLs.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
 ## D-027 — Traveler-guide prototypes stay noindex until the canonical map is resolved
 **Date:** 2026-09-25
 **Status:** accepted implementation guardrail; visual/content review in progress

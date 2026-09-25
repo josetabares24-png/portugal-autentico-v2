@@ -13,6 +13,19 @@ export type TravelerGuideSection = {
   links?: TravelerGuideLink[];
 };
 
+export type TravelerGuideTool = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  columns: [string, string, string];
+  rows: Array<{
+    primary: string;
+    secondary: string;
+    tertiary: string;
+    href?: string;
+  }>;
+};
+
 export type TravelerGuide = {
   slug: string;
   portalId: string;
@@ -28,6 +41,7 @@ export type TravelerGuide = {
   promise: string;
   decisionPrompt: string;
   decisions: Array<{ title: string; text: string; href?: string }>;
+  practicalTool: TravelerGuideTool;
   humanQuestions: Array<{ question: string; answer: string }>;
   sections: TravelerGuideSection[];
   closingTitle: string;
@@ -57,6 +71,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: '4–5 días', text: 'Empieza a tener sentido combinar Lisboa con Sintra y barrios menos obvios.', href: '/blog/lisboa-en-4-dias' },
       { title: 'Una semana', text: 'Puedes bajar el ritmo y añadir costa, museos y días de lluvia sin rehacer todo el viaje.', href: '/blog/lisboa-en-7-dias' },
     ],
+    practicalTool: {
+      eyebrow: 'Una ruta realista',
+      title: 'Reparte el viaje antes de llenar la agenda',
+      intro: 'El número de días cambia el ritmo, no sólo la cantidad de lugares. Esta es una base que deja margen para caminar, comer y cambiar de idea.',
+      columns: ['Tiempo', 'Ritmo', 'Una buena base'],
+      rows: [
+        { primary: '1 día', secondary: 'Selectivo', tertiary: 'Baixa y Alfama, o Belém si es tu prioridad. No las tres zonas a la carrera.', href: '/itinerarios/lisboa-1-dia-lo-esencial' },
+        { primary: '2–3 días', secondary: 'Equilibrado', tertiary: 'Centro histórico, Alfama y Belém en bloques separados. Sintra sólo con un día propio.', href: '/itinerarios' },
+        { primary: '4–5 días', secondary: 'Con pausas', tertiary: 'Añade Sintra, un museo o barrios menos obvios sin sacrificar sobremesas y miradores.', href: '/blog/lisboa-en-4-dias' },
+        { primary: '1 semana', secondary: 'Más local', tertiary: 'Alterna días intensos con costa, mercados, lluvia o una mañana sin reservas.', href: '/blog/lisboa-en-7-dias' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Puedo ver Lisboa y Sintra en el mismo día?',
@@ -134,6 +160,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Elegir tarjeta', text: 'Navegante, títulos y qué comprar según el uso real que harás.', href: '/blog/tarjeta-navegante-lisboa' },
       { title: 'Subir al tranvía 28', text: 'Úsalo como experiencia, no como solución universal para moverte.', href: '/blog/tram-28-historia-guia' },
     ],
+    practicalTool: {
+      eyebrow: 'El trayecto manda',
+      title: 'Qué transporte elegir según la situación',
+      intro: 'La mejor opción cambia con la pendiente, el equipaje y la hora. No hace falta aprender toda la red para resolver bien cuatro trayectos habituales.',
+      columns: ['Situación', 'Primera opción', 'Por qué'],
+      rows: [
+        { primary: 'Aeropuerto, poco equipaje', secondary: 'Metro', tertiary: 'Es previsible y sencillo si tu alojamiento queda bien conectado con la línea roja.', href: '/blog/aeropuerto-lisboa-al-centro' },
+        { primary: 'Aeropuerto, maletas o llegada tardía', secondary: 'Taxi o aplicación', tertiary: 'Evita transbordos y cuestas cuando la comodidad pesa más que ahorrar unos euros.', href: '/blog/aeropuerto-lisboa-al-centro' },
+        { primary: 'Subir a un mirador', secondary: 'Bus, tranvía o funicular', tertiary: 'Ahorra la parte más dura; puedes regresar caminando y disfrutar la bajada.' },
+        { primary: 'Moverte por Baixa y Chiado', secondary: 'A pie', tertiary: 'Las distancias son cortas y caminar te ayuda a entender cómo se conectan las zonas.' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Lisboa se puede recorrer sólo caminando?',
@@ -209,6 +247,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Voy con niños', text: 'El tipo de plan cambia bastante: menos encadenar monumentos, más experiencias.', href: '/blog/lisboa-con-ninos' },
       { title: 'Tengo un día extra', text: 'Sintra suele ser la gran decisión; Cascais ofrece una experiencia distinta.', href: '/blog/sintra-desde-lisboa' },
     ],
+    practicalTool: {
+      eyebrow: 'Elige por tiempo disponible',
+      title: 'Una visita que cabe es mejor que tres a medias',
+      intro: 'Antes de comprar entradas, decide cuánto tiempo quieres dedicar y qué tipo de recuerdo te gustaría llevarte de ese bloque del día.',
+      columns: ['Tiempo', 'Qué elegir', 'Qué dejar fuera'],
+      rows: [
+        { primary: '2 horas', secondary: 'Un barrio o un monumento', tertiary: 'No cruces la ciudad. Elige una sola experiencia cerca de donde ya estás.' },
+        { primary: 'Media jornada', secondary: 'Alfama o Belém', tertiary: 'Combina paseo con una visita principal; evita sumar otra zona distante.' },
+        { primary: 'Día completo', secondary: 'Dos zonas conectadas', tertiary: 'Añade como máximo una reserva con hora y deja el resto flexible.', href: '/blog/monumentos-de-lisboa' },
+        { primary: 'Un día extra', secondary: 'Sintra o Cascais', tertiary: 'Elige palacios e interior, o costa y paseo. Son días con ritmos distintos.', href: '/blog/sintra-desde-lisboa' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Qué no debería perderme en una primera visita?',
@@ -280,6 +330,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Mercados', text: 'Útiles para probar variedad y combinar comida con un paseo.', href: '/blog/mejores-mercados-lisboa' },
       { title: 'Café y dulce', text: 'Cafés, pastelerías y lugares históricos sirven para planes distintos.', href: '/blog/donde-tomar-cafe-lisboa' },
     ],
+    practicalTool: {
+      eyebrow: 'Según el momento',
+      title: 'No todas las comidas tienen que ser el gran plan del día',
+      intro: 'Elegir el formato correcto evita comparar una tasca, un mercado y un restaurante como si ofrecieran la misma experiencia.',
+      columns: ['Momento', 'Qué buscar', 'La pista útil'],
+      rows: [
+        { primary: 'Almuerzo rápido', secondary: 'Tasca o prato do dia', tertiary: 'Carta corta, rotación y platos del día suelen importar más que una decoración perfecta.', href: '/blog/donde-comer-barato-lisboa' },
+        { primary: 'Probar varias cosas', secondary: 'Mercado', tertiary: 'Funciona bien para grupos con gustos distintos, aunque comodidad y ubicación también se pagan.', href: '/blog/mejores-mercados-lisboa' },
+        { primary: 'Comida como experiencia', secondary: 'Restaurante con reserva', tertiary: 'Aquí sí merece la pena elegir por cocina, servicio y tiempo disponible, no sólo por cercanía.' },
+        { primary: 'Pausa dulce', secondary: 'Pastelaria o café', tertiary: 'Decide si buscas probar un dulce, sentarte con calma o conocer un local histórico.', href: '/blog/donde-tomar-cafe-lisboa' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Cómo reconozco una opción pensada sólo para turistas?',
@@ -355,6 +417,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Bairro Alto', text: 'Funciona mejor cuando entiendes que su ambiente cambia con la hora.', href: '/blog/chiado-bairro-alto-guia' },
       { title: 'Café', text: 'A veces “tomar algo” significa sentarte una hora y mirar la ciudad, no salir de fiesta.', href: '/blog/donde-tomar-cafe-lisboa' },
     ],
+    practicalTool: {
+      eyebrow: 'Una noche, varios ritmos',
+      title: 'El ambiente cambia con la hora y con el barrio',
+      intro: 'No necesitas completar toda la secuencia. Elige el tramo que se parezca a tu noche y deja que el siguiente plan dependa de cómo te sientas.',
+      columns: ['Momento', 'Ambiente', 'Dónde encaja'],
+      rows: [
+        { primary: 'Atardecer', secondary: 'Terraza o mirador', tertiary: 'Una bebida tranquila y vistas antes de cenar; Graça y zonas altas funcionan bien.' },
+        { primary: 'Después de cenar', secondary: 'Copa o fado', tertiary: 'Chiado y Alfama ofrecen noches muy distintas: conversación o escucha atenta.', href: '/blog/donde-escuchar-fado-autentico' },
+        { primary: 'Noche animada', secondary: 'Bairro Alto', tertiary: 'Calles pequeñas y mucho movimiento; conviene llegar sabiendo que el ambiente está fuera y dentro.', href: '/blog/chiado-bairro-alto-guia' },
+        { primary: 'Seguir más tarde', secondary: 'Cais do Sodré', tertiary: 'Tiene sentido si quieres alargar la noche, no como parada obligatoria para todo el mundo.', href: '/blog/vida-nocturna-lisboa' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿A qué hora empieza el ambiente?',
@@ -423,6 +497,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Alfama', text: 'Tejados, callejones y capas de ciudad funcionan mejor con tiempo.', href: '/blog/alfama-historia-guia' },
       { title: 'Atardecer', text: 'La orientación importa. No todos los miradores reciben la luz igual.' },
     ],
+    practicalTool: {
+      eyebrow: 'Lisboa cambia con la luz',
+      title: 'El mismo lugar puede darte cuatro fotografías distintas',
+      intro: 'Piensa en la escena y en la hora como una sola decisión. La luz indica dónde colocarte y qué detalle merece protagonismo.',
+      columns: ['Momento', 'Escena', 'Cómo aprovecharlo'],
+      rows: [
+        { primary: 'Primera hora', secondary: 'Alfama y calles', tertiary: 'Hay menos gente y la luz lateral ayuda a separar fachadas, cuestas y capas.' },
+        { primary: 'Mediodía', secondary: 'Azulejos y geometría', tertiary: 'Busca soportales, sombras duras y detalles; evita luchar contra un cielo sin textura.' },
+        { primary: 'Última luz', secondary: 'Miradores y río', tertiary: 'Elige orientación antes de llegar y deja margen para que el color cambie.', href: '/blog/mejores-miradores-lisboa' },
+        { primary: 'Hora azul', secondary: 'Tranvías y calles', tertiary: 'Las luces urbanas equilibran el cielo; apóyate bien si baja la velocidad de la cámara.' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Cuál es la mejor hora para fotografiar Lisboa?',
@@ -477,8 +563,8 @@ export const travelerGuides: TravelerGuide[] = [
     eyebrow: 'Errores, trampas y situaciones prácticas',
     portalSubtitle: 'Carteristas, precios, restaurantes, reservas, transporte y errores comunes.',
     portalTopics: ['Carteristas', 'Precios', 'Restaurantes', 'Aeropuerto', 'Reservas', 'Pagos', 'Errores'],
-    heroImage: '/images/lisboa-originales/postales-souvenirs-lisboa.jpg',
-    heroAlt: 'Expositor de postales y recuerdos turísticos de Lisboa',
+    heroImage: '/images/lisboa-originales/rua-augusta-lisboa-01.webp',
+    heroAlt: 'Calle turística de la Baixa con terrazas, comercios y peatones',
     lead:
       'Lisboa no necesita una guía alarmista. Sí conviene saber qué situaciones se repiten en zonas turísticas y qué detalles sorprenden cuando nadie te los explicó antes.',
     promise:
@@ -490,6 +576,18 @@ export const travelerGuides: TravelerGuide[] = [
       { title: 'Pagos', text: 'Tarjeta y efectivo funcionan de forma distinta según el comercio y la situación.', href: '/blog/como-pagar-en-portugal' },
       { title: 'Errores de planificación', text: 'Muchas malas experiencias empiezan por apretar demasiado la agenda.', href: '/blog/errores-turistas-lisboa' },
     ],
+    practicalTool: {
+      eyebrow: 'Situación y respuesta',
+      title: 'La precaución útil siempre termina en una acción',
+      intro: 'No necesitas una lista de amenazas. Necesitas reconocer cuatro momentos en los que conviene prestar un poco más de atención.',
+      columns: ['Situación', 'Qué hacer', 'Qué evitar'],
+      rows: [
+        { primary: 'Tranvía o parada llena', secondary: 'Bolso cerrado y delante', tertiary: 'No dejes móvil y cartera en bolsillos fáciles mientras subes o bajas.' },
+        { primary: 'Terraza concurrida', secondary: 'Objetos contigo', tertiary: 'No dejes el teléfono en el borde de la mesa ni el bolso colgado hacia el paso.' },
+        { primary: 'Restaurante turístico', secondary: 'Lee carta y couvert', tertiary: 'No consumas algo sin saber el precio si luego no quieres pagarlo.' },
+        { primary: 'Llegada con prisa', secondary: 'Usa opciones identificadas', tertiary: 'No aceptes transportes, entradas o cambios de plan ofrecidos sin contexto.', href: '/blog/aeropuerto-lisboa-al-centro' },
+      ],
+    },
     humanQuestions: [
       {
         question: '¿Lisboa es una ciudad segura para caminar?',

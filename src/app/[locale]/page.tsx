@@ -76,9 +76,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-14 md:py-20">
+      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
-          <div className="mb-10 grid gap-5 md:grid-cols-[1fr_0.7fr] md:items-end md:gap-8">
+          <div className="mb-8 grid gap-5 md:grid-cols-[1fr_0.7fr] md:items-end md:gap-8">
             <div>
               <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Lisboa, sin complicarte</p>
               <h2

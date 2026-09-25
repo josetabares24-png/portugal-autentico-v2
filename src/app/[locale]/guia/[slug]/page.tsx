@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import TravelerGuideTool from '@/components/traveler/TravelerGuideTool';
 import { getTravelerGuide, travelerGuideSlugs } from '@/data/traveler-guide-preview';
 
 function sectionId(title: string) {
@@ -110,6 +111,12 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
               <p className="mb-4 font-body text-[0.65rem] uppercase tracking-[0.18em] text-taupe">En esta guía</p>
               <div className="space-y-3">
                 <a
+                  href="#herramienta-practica"
+                  className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
+                >
+                  Una respuesta para cada situación
+                </a>
+                <a
                   href="#dudas-reales"
                   className="block font-body text-sm leading-snug text-night transition-colors hover:text-terracotta"
                 >
@@ -165,6 +172,8 @@ export default async function TravelerGuidePreviewPage({ params }: { params: Pro
           </div>
         </div>
       </section>
+
+      <TravelerGuideTool portalId={guide.portalId} tool={guide.practicalTool} />
 
       <section id="dudas-reales" className="scroll-mt-20 border-b border-white/10 bg-night py-16 text-white md:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">

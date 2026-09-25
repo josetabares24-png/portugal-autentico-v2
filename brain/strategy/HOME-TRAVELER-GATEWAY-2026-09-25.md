@@ -521,3 +521,23 @@ This is the bridge between:
 - an organic content engine;
 - a recognizable editorial brand;
 - and a measured commercial system.
+
+## Third refinement — distinct tools and less obstruction
+
+The Preview moved from a shared guide template to seven intent-specific practical tools. This is the minimum product depth required before any guide can be considered for indexing or production.
+
+Implemented learning:
+- the portal directory is faster to scan on mobile with 92 px rows and no secondary description below 640 px;
+- guide introductions, decision shortcuts and human questions can share one visual system, but the central utility must differ by intent;
+- a busy Rua Augusta photograph communicates tourist awareness better than a static souvenir image for the safety guide;
+- cookie controls should remain accessible without occupying the visual weight of a content action;
+- the transition from the Home hero to the directory benefits from tighter vertical spacing, keeping a visible hint of the next task;
+- practical-tool links are measured separately so we can distinguish navigation curiosity from resolved user intent.
+
+Visual validation standard for this refinement:
+- Home and representative guides at 390 px and 1440 px;
+- no horizontal overflow;
+- all practical rows readable without clipped labels;
+- safety hero recognisable and relevant;
+- cookie notice compact in both open and rejected states;
+- production, sitemap and canonical strategy unchanged until explicit approval.
