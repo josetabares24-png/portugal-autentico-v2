@@ -49,6 +49,9 @@ type GuidePanel = {
   kicker: string;
   intro: string;
   body: string;
+  topics: string[];
+  guideHref: string;
+  guideLabel: string;
   links: PanelLink[];
   note?: string;
 };
@@ -62,6 +65,9 @@ const guidePanels: GuidePanel[] = [
       'Empieza por el tiempo que tienes. Lisboa se disfruta mejor cuando agrupas zonas y aceptas que una cuesta puede cambiarte media tarde.',
     body:
       'Para una primera visita, suele funcionar mejor pensar por bloques que por monumentos sueltos: Baixa y Chiado pueden compartir jornada; Belém merece varias horas; Alfama y Graça agradecen un ritmo más lento. Las rutas de Estaba en Lisboa parten de esa lógica y después te llevan a las guías específicas de cada zona.',
+    topics: ['1 día', '2 días', '3 días', '4–5 días', '1 semana', 'Con lluvia', 'Con niños'],
+    guideHref: '/itinerarios',
+    guideLabel: 'Ver la guía de rutas',
     links: [
       { href: '/itinerarios', label: 'Lisboa en 1, 2 y 3 días' },
       { href: '/blog/lisboa-en-4-dias', label: 'Lisboa en 4 días' },
@@ -78,6 +84,9 @@ const guidePanels: GuidePanel[] = [
       'Metro, tranvías, buses y caminar funcionan bien, pero no sirven igual para todos los recorridos.',
     body:
       'El metro resuelve gran parte de la ciudad y suele ser la opción más previsible. Los tranvías son parte de la experiencia, pero no siempre son el camino más rápido. Si llevas equipaje, subes hacia Graça o vienes del aeropuerto, conviene decidir antes qué combinación te ahorra tiempo y cuestas.',
+    topics: ['Metro', 'Tranvías', 'Aeropuerto', 'Tarjetas', 'Caminar', 'Apps', 'Atajos'],
+    guideHref: '/blog/como-moverse-por-lisboa',
+    guideLabel: 'Ver la guía de movilidad',
     links: [
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa' },
@@ -95,6 +104,9 @@ const guidePanels: GuidePanel[] = [
       'Lisboa tiene más planes que tiempo. La clave no es ver todo: es saber qué merece una reserva y qué puedes decidir allí.',
     body:
       'Jerónimos, Castelo de São Jorge, Oceanário, miradores, Sintra y experiencias guiadas compiten por el mismo tiempo de viaje. Antes de comprar entradas, conviene separar lo imprescindible de lo opcional y entender qué visita funciona mejor por la mañana, cuál necesita traslado y cuál puede encajar de forma espontánea.',
+    topics: ['Imprescindibles', 'Monumentos', 'Gratis', 'Entradas', 'Con niños', 'Excursiones', 'Experiencias'],
+    guideHref: '/actividades',
+    guideLabel: 'Ver qué visitar y hacer',
     links: [
       { href: '/blog/monumentos-de-lisboa', label: 'Monumentos de Lisboa' },
       { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis' },
@@ -111,6 +123,9 @@ const guidePanels: GuidePanel[] = [
       'No quiero darte una lista infinita de restaurantes. Quiero ayudarte a elegir según precio, tipo de comida y lo que realmente buscas.',
     body:
       'Lisboa es bacalhau, bifanas, sardinas y pastéis, pero también tascas de barrio, mercados, brunch, cocina contemporánea y cada vez más opciones vegetarianas, veganas y sin gluten. La idea es separar recomendaciones por intención para que no termines pagando de más sólo porque estabas en la calle más turística.',
+    topics: ['Portugués', 'Barato', 'Tascas', 'Mercados', 'Veggie', 'Vegano', 'Sin gluten', 'Brunch'],
+    guideHref: '/comer-en-lisboa',
+    guideLabel: 'Ver la guía para comer en Lisboa',
     links: [
       { href: '/blog/gastronomia-portuguesa-guia', label: 'Gastronomía portuguesa' },
       { href: '/blog/donde-comer-barato-lisboa', label: 'Dónde comer barato' },
@@ -128,6 +143,9 @@ const guidePanels: GuidePanel[] = [
       'Bairro Alto, Graça y Cais do Sodré pueden formar parte de la misma noche y sentirse como tres ciudades distintas.',
     body:
       'Aquí la recomendación cambia según el ambiente: una cerveza tranquila, un rooftop, un cóctel, una casa de fado o una zona para seguir hasta tarde. En vez de un ranking genérico de bares, la idea es ayudarte a escoger el tipo de noche que buscas y después bajar a lugares concretos.',
+    topics: ['Tranquilo', 'Cerveza', 'Cócteles', 'Rooftops', 'Fado', 'Cafés', 'Salir hasta tarde'],
+    guideHref: '/blog/vida-nocturna-lisboa',
+    guideLabel: 'Ver la guía para salir',
     links: [
       { href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' },
       { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado' },
@@ -143,6 +161,9 @@ const guidePanels: GuidePanel[] = [
       'No sólo dónde hacer la foto: también desde qué punto, a qué hora y cuándo merece la pena desviarte.',
     body:
       'Lisboa tiene miradores, tranvías, azulejos, tejados y calles que cambian completamente con la luz. Queremos convertir esta sección en una guía práctica para fotografiar la ciudad sin caer en una colección de lugares “instagrameables” sin contexto.',
+    topics: ['Miradores', 'Tranvías', 'Azulejos', 'Atardecer', 'Calles', 'Puentes', 'Panorámicas'],
+    guideHref: '/blog/donde-fotografiar-lisboa',
+    guideLabel: 'Ver la guía de spots',
     links: [
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
       { href: '/blog/mejores-miradores-lisboa', label: 'Mejores miradores' },
@@ -158,6 +179,9 @@ const guidePanels: GuidePanel[] = [
       'Lisboa no necesita una guía alarmista. Sí contexto para no decidir con prisa cuando algo no conoces.',
     body:
       'En una ciudad turística se repiten algunas situaciones: carteristas en zonas concurridas, servicios poco claros, precios pensados para quien no mira la carta y costumbres como el couvert que sorprenden si nadie te las explicó. La idea es decirte qué suele pasar y cómo reducir el riesgo sin convertir el viaje en una lista de miedos.',
+    topics: ['Carteristas', 'Precios', 'Restaurantes', 'Aeropuerto', 'Transporte', 'Reservas', 'Errores comunes'],
+    guideHref: '/blog/errores-turistas-lisboa',
+    guideLabel: 'Ver la guía para evitar problemas',
     links: [
       { href: '/blog/errores-turistas-lisboa', label: 'Errores comunes de turistas' },
       { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
@@ -262,22 +286,49 @@ export default function HomePage() {
                     {panel.body}
                   </p>
 
+                  <div className="mt-6">
+                    <p className="mb-3 font-body text-[0.68rem] uppercase tracking-[0.16em] text-taupe">
+                      Dentro de esta guía
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {panel.topics.map((topic) => (
+                        <span
+                          key={topic}
+                          className="rounded-full border border-night/15 px-3 py-1.5 font-body text-xs text-night/80"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
                   {panel.note ? (
                     <p className="mt-5 max-w-2xl border-l-2 border-terracotta pl-4 font-display text-[1rem] italic leading-relaxed text-night">
                       {panel.note}
                     </p>
                   ) : null}
 
-                  <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">
-                    {panel.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="font-body text-sm font-semibold text-night underline decoration-taupe/40 underline-offset-4 transition-colors hover:text-terracotta"
-                      >
-                        {link.label} →
-                      </Link>
-                    ))}
+                  <div className="mt-7 flex flex-col gap-5 border-t border-taupe/20 pt-6">
+                    <TrackedInternalLink
+                      href={panel.guideHref}
+                      contentType="home_guide_hub"
+                      contentId={panel.title.toLowerCase().replaceAll(' ', '_')}
+                      className="inline-flex w-fit items-center rounded-full bg-night px-5 py-3 font-body text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    >
+                      {panel.guideLabel} →
+                    </TrackedInternalLink>
+
+                    <div className="flex flex-wrap gap-x-5 gap-y-3">
+                      {panel.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="font-body text-sm text-night underline decoration-taupe/40 underline-offset-4 transition-colors hover:text-terracotta"
+                        >
+                          {link.label} →
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </details>
