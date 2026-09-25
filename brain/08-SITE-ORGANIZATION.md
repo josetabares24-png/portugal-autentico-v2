@@ -107,3 +107,31 @@ A standalone commercial page remains justified only when it converts or has mean
 Do not confuse **visibility in navigation** with **existence of URL**.
 
 A route can disappear from navigation immediately while its URL remains live for SEO/history. Redirect/delete decisions are made separately using 90-day evidence and a replacement map.
+
+
+## 2026-09-25 evolution — traveler gateway
+
+José has explicitly refined the future Home model beyond the 2026-09-23 navigation simplification.
+
+Preferred Home experience:
+
+**Hero → seven direct traveler portals → editorial story preview**
+
+The seven portals are:
+1. Rutas / Guías
+2. Movilidad
+3. Qué visitar / Actividades
+4. Dónde comer
+5. Dónde tomar algo
+6. Spots
+7. Cuídate de esto
+
+They are direct links, not accordion panels.
+
+Each destination must be a useful pillar/guide that explains the subject and routes to deeper answers.
+
+Important: this does **not** authorize creating seven new URLs. Existing high-signal pages should be promoted to pillar status where their intent already matches. New hubs require a distinct user/search job.
+
+The editorial archive remains the acquisition engine even if "Blog" is no longer the dominant way the Home asks visitors to navigate.
+
+Detailed architecture and rollout: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
