@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import TrackedInternalLink from '@/components/TrackedInternalLink';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
@@ -68,7 +67,7 @@ export default function HomePage() {
             La Lisboa que le enseño a quien viene a verme.
           </h1>
           <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            Rutas, transporte, comida, lugares y consejos para entender la ciudad antes de empezar a correr de un sitio a otro.
+            Rutas, transporte, comida y consejos para aprovechar la ciudad sin convertir el viaje en una carrera.
           </p>
           <a
             href="#guia-practica"
@@ -79,113 +78,95 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="guia-practica" className="scroll-mt-20 border-b border-taupe/20 bg-cream py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
-          <div className="mb-8 grid gap-5 md:grid-cols-[1fr_0.7fr] md:items-end md:gap-8">
-            <div>
-              <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Lisboa, sin complicarte</p>
-              <h2
-                className="max-w-3xl font-display font-semibold not-italic leading-tight tracking-normal text-night"
-                style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)' }}
-              >
-                ¿Qué necesitas resolver primero?
-              </h2>
-            </div>
-            <p className="max-w-md font-body text-sm leading-relaxed text-text-secondary md:justify-self-end md:text-right">
-              Elige una cosa. El resto puede esperar.
-            </p>
-          </div>
-
-          <TravelerDirectory portals={travelerGuides} />
-
-          <div className="mt-8 flex flex-col gap-3 border-y border-taupe/25 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-body text-sm leading-relaxed text-text-secondary">
-              ¿Prefieres empezar caminando y situarte antes de decidir el resto del viaje?
-            </p>
-            <TrackedInternalLink
-              href="/free-tours-lisboa"
-              contentType="home_secondary_cta"
-              contentId="free_tours"
-              className="w-fit flex-shrink-0 border-b border-night pb-0.5 font-body text-sm font-semibold text-night transition-colors hover:border-terracotta hover:text-terracotta"
-            >
-              Ver free tours →
-            </TrackedInternalLink>
-          </div>
-        </div>
+      <section id="guia-practica" className="scroll-mt-20">
+        <TravelerDirectory portals={travelerGuides} />
       </section>
 
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <div className="mb-14 max-w-2xl">
-            <p className="mb-3 font-body text-xs uppercase tracking-[0.18em] text-taupe">Después de lo práctico</p>
-            <h2
-              className="font-display italic leading-tight text-night"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400 }}
+      <section className="bg-[#FBF8F2] py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
+          <div className="mb-10 flex flex-col gap-6 border-b border-taupe/25 pb-8 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
+                Lisboa, más allá de la lista
+              </p>
+              <h2 className="font-display text-[2.05rem] font-semibold not-italic leading-[1.1] tracking-normal text-night sm:text-[2.7rem]">
+                Historias para mirar la ciudad de otra manera.
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="hidden min-h-11 items-center justify-center rounded-[4px] bg-terracotta px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-primary-dark md:inline-flex"
             >
-              Lisboa también se entiende por sus historias.
-            </h2>
-            <p className="mt-4 font-body text-base leading-relaxed text-text-secondary">
-              Cuando ya sabes cómo moverte y qué hacer, empiezan las cosas que hacen que una ciudad deje de sentirse como un decorado.
-            </p>
+              Ver todas las guías
+            </Link>
           </div>
 
-          <div className="space-y-16 md:space-y-20">
-            {historias.map((post, i) => (
-              <article
-                key={post!.id}
-                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-8 md:gap-12`}
-              >
-                <Link href={`/blog/${post!.id}`} className="block w-full flex-shrink-0 md:w-[45%]">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+          {historias[0] ? (
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+              <article className="lg:col-span-7">
+                <Link href={`/blog/${historias[0].id}`} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[6px] sm:aspect-[16/10]">
                     <Image
-                      src={post!.imagen}
-                      alt={post!.titulo}
+                      src={historias[0].imagen}
+                      alt={historias[0].titulo}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                      sizes="(max-width: 1023px) 100vw, 58vw"
                       loading="lazy"
                     />
                   </div>
+                  <p className="mt-5 font-body text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-terracotta">
+                    {historias[0].categoria}
+                  </p>
+                  <h3 className="mt-2 max-w-2xl font-display text-[1.7rem] font-semibold not-italic leading-[1.15] tracking-normal text-night transition-colors group-hover:text-terracotta sm:text-[2.15rem]">
+                    {historias[0].titulo}
+                  </h3>
+                  <p className="mt-3 max-w-2xl font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+                    {historias[0].excerpt}
+                  </p>
                 </Link>
-
-                <div className="flex-1 pt-2">
-                  <p className="mb-3 font-body text-sm text-taupe">{post!.fecha} — {post!.categoria}</p>
-                  <Link href={`/blog/${post!.id}`}>
-                    <h3
-                      className="mb-4 font-display italic leading-snug text-night transition-colors hover:text-terracotta"
-                      style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.75rem)', fontWeight: 400 }}
-                    >
-                      {post!.titulo}
-                    </h3>
-                  </Link>
-                  <p className="mb-5 line-clamp-3 font-body text-base leading-relaxed text-text-secondary">{post!.excerpt}</p>
-                  <Link
-                    href={`/blog/${post!.id}`}
-                    className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
-                  >
-                    Leer
-                  </Link>
-                </div>
               </article>
-            ))}
-          </div>
 
-          <div className="mt-16 border-t border-taupe/20 pt-10">
+              <div className="space-y-10 lg:col-span-5">
+                {historias.slice(1).map((post) => (
+                  <article key={post!.id} className="border-b border-taupe/25 pb-10 last:border-b-0 last:pb-0">
+                    <Link href={`/blog/${post!.id}`} className="group grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:items-start lg:grid-cols-1">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-[6px]">
+                        <Image
+                          src={post!.imagen}
+                          alt={post!.titulo}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 45vw, 42vw"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-terracotta">
+                          {post!.categoria}
+                        </p>
+                        <h3 className="mt-2 font-display text-[1.35rem] font-semibold not-italic leading-[1.18] tracking-normal text-night transition-colors group-hover:text-terracotta sm:text-[1.55rem]">
+                          {post!.titulo}
+                        </h3>
+                        <p className="mt-3 line-clamp-2 font-body text-sm leading-relaxed text-text-secondary">
+                          {post!.excerpt}
+                        </p>
+                      </div>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-12 md:hidden">
             <Link
               href="/blog"
-              className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
+              className="inline-flex min-h-12 items-center justify-center rounded-[4px] bg-terracotta px-6 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
             >
-              Todas las historias y guías →
+              Ver todas las guías
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-night bg-azulejo-pattern-gold py-14">
-        <div className="relative mx-auto max-w-5xl px-6 text-center md:px-10">
-          <p className="font-display text-xl italic leading-relaxed text-white/80 md:text-2xl">
-            Arriba resolvemos el viaje. Abajo seguimos contando la ciudad.
-          </p>
         </div>
       </section>
     </main>
