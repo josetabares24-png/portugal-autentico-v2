@@ -583,3 +583,38 @@ Cuando dudes:
 **EDITORIAL > PLANTILLA**  
 **PRODUCTO > PÁGINAS**  
 **NEGOCIO > VANIDAD**
+
+
+## 18. SUBCEREBRO TUTABARES
+
+Tutabares forma parte del ecosistema **Estaba en Lisboa / Lisboa / Portugal** y su memoria editorial vive en:
+
+- `brain/tutabares/README.md`
+- `brain/tutabares/TUTABARES_MAESTRO.md`
+- `brain/tutabares/01_IDENTIDAD_NARRATIVA.md`
+- `brain/tutabares/02_ESTADO_OPERATIVO.md`
+
+Cuando una tarea sea específicamente de vídeos, guiones, voz o estrategia de **Tutabares**, leer ese subcerebro además del preflight general de Mente Lisboa.
+
+### Separación de voz
+
+Compartir entre Estaba en Lisboa y Tutabares:
+- conocimiento de Lisboa;
+- cambios operativos y actualidad local;
+- criterios anti-IA;
+- honestidad editorial;
+- utilidad;
+- decisiones de marca cuando realmente sean comunes.
+
+No asumir que comparten:
+- formato;
+- ritmo;
+- redacción literal;
+- tono de cámara;
+- cierres;
+- música;
+- tratamiento visual.
+
+**Estaba en Lisboa** es producto/editorial web.  
+**Tutabares** es marca personal audiovisual.  
+Se alimentan entre sí, pero no son la misma voz.
