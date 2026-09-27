@@ -71,3 +71,14 @@ Prioridad de identidad:
 Necesitamos acumular al menos varias correcciones reales de José en Tutabares antes de considerar totalmente calibrada la voz de este proyecto.
 
 No copiar automáticamente la voz true crime palabra por palabra. Solo transferir principios de oralidad.
+
+
+## Convención visual de guiones en Notion — 27/09/2026
+
+Regla fija:
+- cada carpeta de guiones reinicia numeración en **01**;
+- formato: **NN — Título del guion**;
+- páginas de guiones sin emoji/icono;
+- los nuevos guiones toman el siguiente número disponible en su carpeta;
+- no renumerar por cambios de estado salvo instrucción expresa;
+- la numeración no modifica el contenido del guion.
