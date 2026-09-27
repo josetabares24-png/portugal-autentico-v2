@@ -618,3 +618,15 @@ No asumir que comparten:
 **Estaba en Lisboa** es producto/editorial web.  
 **Tutabares** es marca personal audiovisual.  
 Se alimentan entre sí, pero no son la misma voz.
+
+
+## Decisión — Amazon Afiliados (2026-09-27)
+
+- Amazon NO es prioridad inmediata para Estaba en Lisboa.
+- No crear ahora una sección de Amazon ni llenar artículos existentes de enlaces.
+- Prioridad actual de monetización: SEO + alojamiento + entradas/experiencias.
+- Amazon queda como monetización secundaria futura.
+- Antes de activarlo: configurar correctamente Amazon Afiliados España y OneLink.
+- Primer experimento cuando toque: una sola página comercial/editorial de alta intención, por ejemplo “Qué llevar a Lisboa”, con productos realmente útiles para el viaje.
+- Medir conversión antes de escalar enlaces a otros artículos.
+- Mantener enfoque editorial: resolver problemas primero, monetizar después.
