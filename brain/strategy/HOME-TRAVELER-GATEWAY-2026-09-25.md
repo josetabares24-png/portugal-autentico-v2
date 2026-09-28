@@ -649,3 +649,38 @@ Implementation rules:
 - leave the existing SEO gate, sitemap and production state unchanged.
 
 This is intentionally not a live catalog API integration. It is the official GetYourGuide partner widget, using tour IDs and campaign attribution already supported by the repository.
+
+## Fifth refinement — photographic tourism gateway
+
+Status: **BUILT / VERCEL READY / AWAITING VISUAL APPROVAL**
+
+The bordered decision-panel direction was rejected after mobile review. Even after removing numbering and improving typography, the equal boxes still felt generated, administrative and too close to an app dashboard. The useful part of that direction was retained: the terracotta action colour, the direct links and the need-first information architecture.
+
+The revised Home distributes the seven traveler needs across an editorial journey instead of forcing them into one module:
+
+1. keep the existing full-bleed Lisbon hero and the terracotta `Preparar mi viaje` action;
+2. begin with a navy itinerary band organised around one human question: `¿Cuánto tiempo tienes para Lisboa?`;
+3. give the three highest-priority decisions — what to see, how to move and where to eat — large photographic surfaces using only first-party Lisbon images;
+4. move drinks, photography and common mistakes into one quieter panoramic continuation;
+5. finish with an asymmetric editorial story layout so the Home returns naturally to the publication rather than ending as a directory.
+
+Design principles learned from this iteration:
+- a travel Home should show the place before it explains the information architecture;
+- hierarchy is more useful than seven equal choices;
+- photographs should carry meaning and navigation, not sit inside decorative cards;
+- one strong question is more human than category labels or numbered portal names;
+- the `Preparar mi viaje` terracotta treatment is a keeper unless later evidence contradicts it;
+- borders, icons and repeated small boxes should be used sparingly because they quickly make the experience feel synthetic;
+- the first screen and the first decision must remain visually simple for visitors already comparing many tabs.
+
+Implementation record:
+- branch: `design/home-tourism-editorial-v4`;
+- implementation commit: `85b1dbf`;
+- Vercel deployment: `dpl_Dr11FeFZyaoAD9HfSnwfp1e3dfAd`;
+- immutable Preview: `https://portugal-autentico-v2-lxrowmn4u-estabaenlisboa.vercel.app/`;
+- visual QA: 375, 768 and 1440 px, without horizontal overflow;
+- all seven direct portal links and their existing analytics identifiers remain present;
+- `/guia/*` indexing, canonicals, sitemap and production remain unchanged;
+- production was not modified.
+
+The visual gate remains open. Do not merge this branch until José explicitly approves this direction in the Preview.

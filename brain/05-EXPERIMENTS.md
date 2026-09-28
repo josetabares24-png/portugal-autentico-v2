@@ -25,6 +25,12 @@ This is the active learning register.
 | E-007 | /blog/donde-comer-barato-lisboa | Replacing invented local-authority copy with dated, verifiable cheap-eating options should improve relevance for "comer barato" queries and recover page-2 visibility | position + impressions + clicks + query coverage | RUNNING | deployed 2026-09-23 11:12 Lisbon; +14 finalized days |
 | E-008 | Home traveler gateway | A need-first editorial directory will help visitors reach a useful answer more often than a blog-index Home without weakening the publication identity | portal selection rate + downstream guide/support clicks | PLANNED | explicit visual approval + production deployment + 14 finalized days |
 
+### E-008 visual iteration note — 2026-09-26
+
+The equal bordered portal grid was rejected during mobile visual review because it still read as an AI-made dashboard. The current candidate is the distributed photographic gateway on `design/home-tourism-editorial-v4`: itinerary decision first, three primary photo-led choices, three quieter secondary choices and an editorial story close.
+
+Keep E-008 as `PLANNED`. The Preview being technically ready is not visual approval, and no production observation window starts until the branch is explicitly approved and deployed to production.
+
 ## Next candidate pool
 
 Do not edit all of these at once.
