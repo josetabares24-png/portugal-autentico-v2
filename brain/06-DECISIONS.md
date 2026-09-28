@@ -528,3 +528,17 @@ Rules:
 This standard does not change the SEO gate in D-027: the seven prototypes remain `noindex, follow`, without canonicals or sitemap inclusion.
 
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## 2026-09-27 — Tutabares pasa a Mente Lisboa
+
+**DECISIÓN:** la memoria de prompts, identidad narrativa, estado y aprendizajes de Tutabares vive en `brain/tutabares/` dentro de `josetabares24-png/portugal-autentico-v2`.
+
+**Razón:** Tutabares comparte Lisboa, Portugal, actualidad local, turismo, audiencia y oportunidades de contenido con Estaba en Lisboa. Mantenerla en el repositorio de Estaba Investigando mezclaba dos sistemas editoriales que deben permanecer separados.
+
+**Fuente de verdad:**
+- Notion = cuerpos vigentes de guiones.
+- GitHub / Mente Lisboa = prompts, reglas, decisiones, estados y aprendizaje de Tutabares.
+- GitHub / Estaba Investigando = memoria exclusiva del proyecto true crime/historias reales.
+
+**Regla:** no mantener copias activas de la memoria Tutabares en ambos repositorios.

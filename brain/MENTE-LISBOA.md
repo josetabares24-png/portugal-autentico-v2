@@ -583,3 +583,92 @@ Cuando dudes:
 **EDITORIAL > PLANTILLA**  
 **PRODUCTO > PÁGINAS**  
 **NEGOCIO > VANIDAD**
+
+
+## 18. SUBCEREBRO TUTABARES
+
+Tutabares forma parte del ecosistema **Estaba en Lisboa / Lisboa / Portugal** y su memoria editorial vive en:
+
+- `brain/tutabares/README.md`
+- `brain/tutabares/TUTABARES_MAESTRO.md`
+- `brain/tutabares/01_IDENTIDAD_NARRATIVA.md`
+- `brain/tutabares/02_ESTADO_OPERATIVO.md`
+
+Cuando una tarea sea específicamente de vídeos, guiones, voz o estrategia de **Tutabares**, leer ese subcerebro además del preflight general de Mente Lisboa.
+
+### Separación de voz
+
+Compartir entre Estaba en Lisboa y Tutabares:
+- conocimiento de Lisboa;
+- cambios operativos y actualidad local;
+- criterios anti-IA;
+- honestidad editorial;
+- utilidad;
+- decisiones de marca cuando realmente sean comunes.
+
+No asumir que comparten:
+- formato;
+- ritmo;
+- redacción literal;
+- tono de cámara;
+- cierres;
+- música;
+- tratamiento visual.
+
+**Estaba en Lisboa** es producto/editorial web.
+**Tutabares** es marca personal audiovisual.
+Se alimentan entre sí, pero no son la misma voz.
+
+
+## Decisión — Amazon Afiliados (2026-09-27)
+
+- Amazon NO es prioridad inmediata para Estaba en Lisboa.
+- No crear ahora una sección de Amazon ni llenar artículos existentes de enlaces.
+- Prioridad actual de monetización: SEO + alojamiento + entradas/experiencias.
+- Amazon queda como monetización secundaria futura.
+- Antes de activarlo: configurar correctamente Amazon Afiliados España y OneLink.
+- Primer experimento cuando toque: una sola página comercial/editorial de alta intención, por ejemplo “Qué llevar a Lisboa”, con productos realmente útiles para el viaje.
+- Medir conversión antes de escalar enlaces a otros artículos.
+- Mantener enfoque editorial: resolver problemas primero, monetizar después.
+
+
+## 19. BLOQUEO TEMPORAL DE FOCO — 28/09 → 04/10/2026
+
+Durante esta semana, Estaba en Lisboa entra en **modo vídeo + web controlada**.
+
+### Prioridad
+- producción audiovisual de Estaba en Lisboa / Tutabares;
+- guiones;
+- grabación;
+- B-roll;
+- edición;
+- publicación;
+- SEO de publicación;
+- aprendizaje de retención, guardados, comentarios y distribución.
+
+### Excepción web
+José puede seguir editando estabaenlisboa.com.
+
+Se permiten:
+- mantenimiento;
+- correcciones;
+- SEO ya planificado;
+- medición;
+- actualizaciones editoriales;
+- resolver fallos;
+- cambios alineados con decisiones y experimentos ya existentes en Mente Lisboa.
+
+No usar esta excepción para abrir:
+- nuevas herramientas;
+- nuevos bots;
+- nuevas líneas comerciales;
+- rediseños;
+- nuevos experimentos de afiliación;
+- proyectos laterales que desplacen el foco audiovisual.
+
+### Regla operativa
+Hasta el 05/10/2026, una idea nueva que no sea vídeo ni trabajo permitido de la web:
+**se registra y se pospone. No se ejecuta.**
+
+La prioridad de esta semana es:
+**PRODUCIR → PUBLICAR → MEDIR → APRENDER.**

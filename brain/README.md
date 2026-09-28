@@ -122,3 +122,13 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[strategy/NEIGHBORHOOD-DECISION-MAP-2026-09-23]] — 90-day Search Console map of the Barrios cluster and the evidence-based order for future SEO investment.
 
 - [[seo/NEXT-EXPERIMENT-SCORECARD-2026-09-23]] — fresh 90d/28d/7d Search Console scorecard for the next SEO experiment gate.
+
+
+## Subcerebro de vídeo / marca personal
+
+- [[tutabares/README]] — entrada y preflight de Tutabares.
+- [[tutabares/TUTABARES_MAESTRO]] — autoprompt editorial de guiones y contenido.
+- [[tutabares/01_IDENTIDAD_NARRATIVA]] — voz, oralidad, humor, opinión y diferencias frente a true crime.
+- [[tutabares/02_ESTADO_OPERATIVO]] — guiones activos, decisiones y aprendizaje vivo.
+
+**Regla:** Tutabares pertenece a Mente Lisboa porque comparte ciudad, turismo, actualidad local, audiencia y ecosistema de marca con Estaba en Lisboa. Su voz de vídeo se mantiene diferenciada de la voz editorial de la web y de Estaba Investigando.
