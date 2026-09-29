@@ -31,6 +31,12 @@ The equal bordered portal grid was rejected during mobile visual review because 
 
 Keep E-008 as `PLANNED`. The Preview being technically ready is not visual approval, and no production observation window starts until the branch is explicitly approved and deployed to production.
 
+### E-008 visual iteration note — 2026-09-29
+
+The itinerary-duration band and editorial-story close were removed after mobile review. They added decisions and mixed practical trip planning with the Blog. The current candidate uses seven independent first-party photographs, seven literal need titles and exactly one destination per block: days, sights, movement, food, drinks, photographs and mistakes.
+
+The keeper is the photographic tourism direction, not the previous composition. Direct language replaces rhetorical headlines, and Blog/Free Tours remain available through global navigation instead of being repeated inside the gateway. Keep E-008 as `PLANNED` until this simplified candidate receives explicit visual approval and a production deployment.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

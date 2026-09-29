@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { travelerGuides } from '../src/data/traveler-guide-preview.ts';
 
@@ -18,12 +18,24 @@ const slugs = travelerGuides.map((guide) => guide.slug);
 const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
 const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
+const homeDirectory = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'TravelerDirectory.tsx'), 'utf8');
+const directHomeTitles = [
+  'Organizar mis días',
+  'Qué ver',
+  'Cómo moverte',
+  'Dónde comer',
+  'Dónde tomar algo',
+  'Dónde hacer fotos',
+  'Qué evitar',
+];
 
 check(travelerGuides.length === 7, 'hay exactamente siete portales de viaje');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
 check(new Set(portalIds).size === portalIds.length, 'los identificadores de analítica no se repiten');
 check(new Set(practicalToolTitles).size === practicalToolTitles.length, 'cada guía tiene una herramienta práctica distinta');
 check(widgetGuides.length === 1, 'sólo una guía carga un widget de reservas');
+check(directHomeTitles.every((title) => homeDirectory.includes(title)), 'la Home nombra directamente las siete necesidades');
+check(!homeDirectory.includes('¿Cuánto tiempo tienes para Lisboa?'), 'la Home no recupera el bloque intermedio de duración');
 
 for (const guide of travelerGuides) {
   const prefix = `/guia/${guide.slug}`;

@@ -684,3 +684,35 @@ Implementation record:
 - production was not modified.
 
 The visual gate remains open. Do not merge this branch until José explicitly approves this direction in the Preview.
+
+## Sixth refinement — one photograph, one travel need
+
+Status: **BUILT / AWAITING VISUAL APPROVAL**
+
+Mobile review confirmed that the photographic direction was right, but the Home still asked visitors to process too many layers. The itinerary band duplicated a decision that belongs inside the itinerary experience, the rhetorical card headlines were slower to understand, and the editorial stories made practical travel navigation feel mixed with the Blog.
+
+The revised gateway follows one rule:
+
+**one photograph → one literal travel need → one destination**
+
+The Home now presents seven separate photographic entrances:
+- `Organizar mis días`;
+- `Qué ver`;
+- `Cómo moverte`;
+- `Dónde comer`;
+- `Dónde tomar algo`;
+- `Dónde hacer fotos`;
+- `Qué evitar`.
+
+Product and design decisions:
+- remove the complete `¿Cuánto tiempo tienes para Lisboa?` band from the Home;
+- use large direct titles instead of rhetorical advertising lines;
+- give every travel need its own first-party photograph;
+- keep exactly one link per photographic entrance;
+- remove contextual Free Tours and itinerary shortcuts from this gateway;
+- remove Blog-story cards from the Home so practical planning and editorial reading remain distinct;
+- retain Blog and Free Tours in global navigation;
+- preserve the existing Lisbon hero and terracotta `Preparar mi viaje` action;
+- keep all `/guia/*` pages in prototype state until their information architecture is approved individually.
+
+This iteration deliberately reduces Home depth. The page is a clear traveler gateway, while Blog remains a separate publication destination. E-008 remains `PLANNED`; no production merge is authorized by this implementation.

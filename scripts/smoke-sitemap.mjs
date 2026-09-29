@@ -453,7 +453,6 @@ async function checkNavigation(baseUrl) {
   // El Navbar usa un único array para escritorio y móvil: dos apariciones.
   const navHits = [...visible.matchAll(/href="\/free-tours-lisboa"/g)].length;
   record('la portada enlaza /free-tours-lisboa en nav de escritorio y móvil', navHits >= 2, `${navHits} enlaces en la portada`);
-  record('la portada muestra el acceso editorial a free tours', visible.includes('Ver free tours'), 'CTA de portada');
 
   // Estado activo en la propia landing
   const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
