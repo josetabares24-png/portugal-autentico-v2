@@ -42,6 +42,15 @@ function isAllowedBookingUrl(value: string) {
   }
 }
 
+function normalizeTourName(value: string) {
+  const cleaned = value
+    .replace(/^[\s\p{Extended_Pictographic}\p{Emoji_Presentation}\uFE0F\u200D]+/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return cleaned || value.trim();
+}
+
 const getLiveToursForDate = unstable_cache(
   async (date: string): Promise<LiveFreeTour[]> => {
     const destination = await discoverGuruWalkDestination({
@@ -87,7 +96,7 @@ const getLiveToursForDate = unstable_cache(
 
       return {
         id: product.id,
-        name: product.name,
+        name: normalizeTourName(product.name),
         rating: product.rating_out_of_5,
         reviews: product.reviews_count,
         url: product.url,
