@@ -64,7 +64,7 @@ export default function WhatToSeeInLisbonPage() {
   return (
     <TravelPillarPage
       guide={whatToSeeGuide}
-      reservation={<TravelerGuideGetYourGuide section={reservationSection} />}
+      reservation={<TravelerGuideGetYourGuide section={reservationSection} variant="article" />}
     />
   );
 }

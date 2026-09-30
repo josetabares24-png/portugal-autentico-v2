@@ -587,3 +587,26 @@ Rules:
 This decision supersedes only the 4 × 2 desktop layout in D-032. Canonical ownership, redirects and the rule against thin bridge pages remain in force.
 
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-034 — Pillar pages inherit the Blog reading language; Free Tours gets one date tool
+**Date:** 2026-09-30
+**Status:** accepted Preview candidate; production requires explicit visual approval
+
+User review found that `/que-ver-en-lisboa` and `/donde-comer-en-lisboa` looked like a separate product even though the rest of the gateway resolved into established Blog articles. Their canonical role and full content remain correct; the mismatch was presentation.
+
+Rules:
+- keep both pillar URLs, indexability, complete answers, metadata and structured data;
+- present them with the established Blog system: cream paper, editorial header, panoramic first-party photograph, narrow reading column, article typography, restrained table of contents, visible FAQs, sources and author block;
+- do not turn either page into a thin Blog index or require another click to get the answer;
+- keep the single official GetYourGuide widget only in `Qué ver`, inside the article rhythm and behind consent;
+- on `/free-tours-lisboa`, use GuruWalk's official affiliate MCP/API rather than describing paid GetYourGuide products as free tours;
+- add one user-initiated date finder, capped at three live results and three times per result;
+- keep the API key server-side, validate dates and returned domains, cache requests and preserve the static category links as fallback/control;
+- do not add a live marketplace, automatic page-load request, invented availability, price or urgency claim;
+- measure live-result clicks separately with placement `live-date-finder`;
+- keep production untouched until responsive Preview approval.
+
+This is an explicit, narrow exception to the 28/09–04/10 web focus freeze requested by José. It extends the existing Free Tours surface, which already has the clearest owned affiliate-click signal, instead of opening a new provider or commercial line.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]] and [[business/GURUWALK-MCP-2026-09-23]].

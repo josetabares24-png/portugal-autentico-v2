@@ -518,9 +518,9 @@ async function checkTravelerPillars(baseUrl) {
         && ['Article', 'BreadcrumbList'].every((type) => schemaTypes.includes(type))
         && !schemaTypes.includes('FAQPage')
         && html.includes('José Tabares')
-        && html.includes('Datos contrastados con fuentes oficiales')
-        && html.includes('Preguntas reales')
-        && html.includes('Fuentes y revisión'),
+        && html.includes('Revisado el')
+        && html.includes('Preguntas frecuentes')
+        && (html.includes('Fuentes oficiales consultadas') || html.includes('Fuentes consultadas')),
       `HTTP ${res.status}, H1 ${h1Count}, schema ${schemaTypes.join(' + ') || 'ausente'}`,
     );
   }

@@ -14,10 +14,10 @@
  * inertes a propósito: enlazar a la URL pública sin `ref` perdería la
  * atribución de la comisión.
  *
- * Como las rutas son dinámicas (se renderizan por petición), un único
- * build sirve para probar los dos estados: se arranca el servidor primero
- * SIN ID (para comprobar que los nueve CTA quedan inertes) y después CON
- * un ID sintético de prueba (para comprobar toda la cadena de enlaces).
+ * La landing se prerenderiza. Por eso el estado de afiliación se fija durante
+ * el build y no al arrancar `next start`: la prueba local hace dos builds,
+ * primero SIN ID y después CON un ID sintético. Cambiar sólo el entorno del
+ * servidor probaría HTML ya compilado y daría un resultado falso.
  *
  * También admite probar contra un servidor ya arrancado:
  *   SMOKE_BASE_URL=https://mi-preview.vercel.app
@@ -38,10 +38,11 @@ const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 // ID de referido SINTÉTICO, solo para pruebas. No es un ID real de nadie.
 const TEST_REF = 'SMOKETESTREF123';
 
-// Nueve CTA afiliados en total: 1 hero + 6 tarjetas + 1 CTA final en la
-// landing, y 1 en la ficha del free tour.
-const TOTAL_AFFILIATE_CTAS = 9;
-const LANDING_AFFILIATE_CTAS = 8;
+// Ocho CTA afiliados estáticos en total: 5 rutas + acceso general + CTA
+// final en la landing, y 1 en la ficha del free tour. El hero ahora baja al
+// buscador de fecha; sus resultados dinámicos se prueban por separado.
+const TOTAL_AFFILIATE_CTAS = 8;
+const LANDING_AFFILIATE_CTAS = 7;
 
 // Las cinco RUTAS de la cuadrícula del comparador.
 const ROUTES = [
@@ -291,14 +292,10 @@ async function checkLanding(baseUrl) {
   const jsonLd = extractJsonLd(html);
   record('todos los bloques JSON-LD parsean', jsonLd.every((b) => !b.__parseError), `${jsonLd.length} bloques`);
 
-  const faq = jsonLd.find((b) => b['@type'] === 'FAQPage');
   record(
-    'FAQPage schema válido',
-    !!faq &&
-      Array.isArray(faq.mainEntity) &&
-      faq.mainEntity.length > 0 &&
-      faq.mainEntity.every((q) => q['@type'] === 'Question' && q.name && q.acceptedAnswer?.text),
-    faq ? `${faq.mainEntity?.length} preguntas` : 'ausente'
+    'las FAQ siguen visibles sin schema FAQPage decorativo',
+    !jsonLd.some((b) => b['@type'] === 'FAQPage') && html.includes('Preguntas frecuentes sobre los free tours'),
+    'contenido visible, schema ausente'
   );
 
   const breadcrumb = jsonLd.find((b) => b['@type'] === 'BreadcrumbList');
@@ -381,6 +378,20 @@ async function checkLanding(baseUrl) {
     'el hero muestra los tres microbeneficios',
     missingBenefits.length === 0,
     missingBenefits.length ? `faltan: ${missingBenefits.join(', ')}` : 'los tres'
+  );
+
+  record(
+    'el hero lleva al buscador de fecha y no abre otro catálogo',
+    html.includes('href="#disponibilidad"') && html.includes('Consultar mi fecha'),
+    'enlace interno presente'
+  );
+
+  record(
+    'la página incluye el buscador de disponibilidad real',
+    html.includes('Mira qué recorridos salen el día que vas.') &&
+      html.includes('id="free-tour-date"') &&
+      html.includes('Ver horarios'),
+    'módulo de fecha presente'
   );
 
   record(
@@ -652,11 +663,17 @@ async function main() {
       log('');
       await checkActividades(explicitBaseUrl);
     } else {
-      log('== Modo local: next build + dos arranques de next start ==');
-      await runStep('npx', ['next', 'build']);
+      log('== Modo local: dos builds + dos arranques de next start ==');
 
       // Fase 1: sin identificador de afiliado.
       log('\n== Fase 1: servidor SIN GURUWALK_AFFILIATE_REF ==');
+      await runStep('npx', ['next', 'build'], {
+        env: {
+          ...process.env,
+          GURUWALK_AFFILIATE_REF: '',
+          GURUWALK_AFFILIATE_URL_LISBOA: '',
+        },
+      });
       let server = await startServer({
         GURUWALK_AFFILIATE_REF: '',
         GURUWALK_AFFILIATE_URL_LISBOA: '',
@@ -669,6 +686,13 @@ async function main() {
 
       // Fase 2: con identificador sintético de prueba.
       log(`\n== Fase 2: servidor CON GURUWALK_AFFILIATE_REF=${TEST_REF} ==`);
+      await runStep('npx', ['next', 'build'], {
+        env: {
+          ...process.env,
+          GURUWALK_AFFILIATE_REF: TEST_REF,
+          GURUWALK_AFFILIATE_URL_LISBOA: '',
+        },
+      });
       server = await startServer({
         GURUWALK_AFFILIATE_REF: TEST_REF,
         GURUWALK_AFFILIATE_URL_LISBOA: '',

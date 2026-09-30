@@ -783,3 +783,21 @@ The two new broad pillars are strengthened as complete answers rather than hubs:
 The trust layer is explicit: /sobre-nosotros now identifies José Tabares and explains how personal judgment, source verification and changing information are separated.
 
 No canonical owner changes. No new indexed micro-pages. No production deployment without approval.
+
+## Ninth refinement — one editorial language and one useful live tool
+
+Status: **BUILT / LOCAL VALIDATION IN PROGRESS / AWAITING VISUAL APPROVAL**
+
+Visual review showed that the two new pillars were complete but felt detached from the established publication. They now use the same reading system as the strongest Blog articles while keeping their broader pillar content and canonical ownership.
+
+The Free Tours refinement is deliberately narrow:
+- the hero points to a date choice instead of opening generic inventory immediately;
+- a visitor submits one date;
+- GuruWalk's official MCP returns up to three relevant tours and current times;
+- every live link preserves partner attribution and is measured separately;
+- static route/category links remain below as fallback and control;
+- a failed API request never breaks the editorial guide;
+- no third-party script or cookie consent is required to query the server-side API;
+- no production deployment is authorized before visual approval.
+
+The governing principle is unchanged: **answer first, then help with the next real decision**.
