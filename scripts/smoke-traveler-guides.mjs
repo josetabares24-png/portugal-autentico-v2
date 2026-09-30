@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { travelerGuides } from '../src/data/traveler-guide-preview.ts';
+import { whatToSeeGuide, whereToEatGuide } from '../src/data/travel-pillar-guides.ts';
 
 const failures = [];
 
@@ -23,19 +24,36 @@ const directHomeTitles = [
   'Organizar mis días',
   'Qué ver',
   'Cómo moverte',
+  'Dónde alojarte',
   'Dónde comer',
   'Dónde tomar algo',
   'Dónde hacer fotos',
   'Qué evitar',
 ];
 
-check(travelerGuides.length === 7, 'hay exactamente siete portales de viaje');
+check(travelerGuides.length === 7, 'se conservan exactamente siete prototipos heredados');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
 check(new Set(portalIds).size === portalIds.length, 'los identificadores de analítica no se repiten');
 check(new Set(practicalToolTitles).size === practicalToolTitles.length, 'cada guía tiene una herramienta práctica distinta');
 check(widgetGuides.length === 1, 'sólo una guía carga un widget de reservas');
-check(directHomeTitles.every((title) => homeDirectory.includes(title)), 'la Home nombra directamente las siete necesidades');
+check(directHomeTitles.every((title) => homeDirectory.includes(title)), 'la Home nombra directamente las ocho necesidades');
 check(!homeDirectory.includes('¿Cuánto tiempo tienes para Lisboa?'), 'la Home no recupera el bloque intermedio de duración');
+check(!homeDirectory.includes('/guia/'), 'la Home no enlaza páginas-puente');
+check(
+  ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'].every((href) => homeDirectory.includes(href)),
+  'la Home enlaza directamente los dos nuevos pilares',
+);
+
+for (const pillar of [whatToSeeGuide, whereToEatGuide]) {
+  check(pillar.sections.length >= 5, `${pillar.url} ofrece una respuesta editorial completa`);
+  check(pillar.faqs.length >= 5, `${pillar.url} responde dudas visibles`);
+  check(pillar.sources.length >= 4, `${pillar.url} documenta fuentes primarias`);
+  check(pillar.heroImage.startsWith('/images/lisboa-originales/'), `${pillar.url} usa fotografía propia`);
+  check(
+    existsSync(join(process.cwd(), 'public', pillar.heroImage.replace(/^\//, ''))),
+    `${pillar.url} encuentra su fotografía en el repositorio`,
+  );
+}
 
 for (const guide of travelerGuides) {
   const prefix = `/guia/${guide.slug}`;
@@ -86,4 +104,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`\n${travelerGuides.length} guías y ${travelerGuides.length * 3} respuestas humanas verificadas.`);
+console.log(`\n${travelerGuides.length} prototipos heredados y ${travelerGuides.length * 3} respuestas humanas verificadas.`);

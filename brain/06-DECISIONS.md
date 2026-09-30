@@ -530,6 +530,26 @@ This standard does not change the SEO gate in D-027: the seven prototypes remain
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 
+## D-032 — Eight traveler needs have eight canonical owners
+**Date:** 2026-09-30
+**Status:** accepted implementation direction; production requires explicit visual approval
+
+The Home traveler gateway uses eight balanced photographic entrances after adding `Dónde alojarte`, a real planning need that already has a canonical article.
+
+Rules:
+- desktop uses a balanced 4 × 2 directory, tablet 2 × 4 and mobile one full photographic entrance at a time;
+- each entrance links directly to the complete canonical answer;
+- no `/guia/*` route remains a public intermediate destination;
+- preserve `/itinerarios` and the established movement, accommodation, nightlife, photography and mistakes articles;
+- create only `/que-ver-en-lisboa` and `/donde-comer-en-lisboa`, because those broad intents lacked a clear owner;
+- both new pillars must be indexable, self-canonical, present in the sitemap, sourced and complete without a required second click;
+- redirect every legacy `/guia/*` prototype permanently to the relevant owner URL;
+- do not split subtopics into more indexable pages without distinct intent and evidence;
+- keep the official GetYourGuide widget only in `Qué ver`, after the editorial answer.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
 ## 2026-09-27 — Tutabares pasa a Mente Lisboa
 
 **DECISIÓN:** la memoria de prompts, identidad narrativa, estado y aprendizajes de Tutabares vive en `brain/tutabares/` dentro de `josetabares24-png/portugal-autentico-v2`.

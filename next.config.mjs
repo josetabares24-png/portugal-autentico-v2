@@ -21,6 +21,23 @@ const nextConfig = {
       { source: '/:locale(en|ko|es)/mis-guias', destination: '/itinerarios', permanent: true },
       // Default locale (no prefix)
       { source: '/transporte', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      // Las siete `/guia/*` nacieron como prototipos noindex para validar la
+      // navegación de la Home. Ya no deben actuar como páginas-puente: cada
+      // intención llega en un salto a la URL canónica que contiene la respuesta.
+      { source: '/guia/rutas', destination: '/itinerarios', permanent: true },
+      { source: '/guia/que-visitar', destination: '/que-ver-en-lisboa', permanent: true },
+      { source: '/guia/movilidad', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      { source: '/guia/comer', destination: '/donde-comer-en-lisboa', permanent: true },
+      { source: '/guia/tomar-algo', destination: '/blog/vida-nocturna-lisboa', permanent: true },
+      { source: '/guia/spots', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
+      { source: '/guia/cuidate', destination: '/blog/errores-turistas-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/rutas', destination: '/itinerarios', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/que-visitar', destination: '/que-ver-en-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/movilidad', destination: '/blog/como-moverse-por-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/comer', destination: '/donde-comer-en-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/tomar-algo', destination: '/blog/vida-nocturna-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/spots', destination: '/blog/donde-fotografiar-lisboa', permanent: true },
+      { source: '/:locale(en|ko|es)/guia/cuidate', destination: '/blog/errores-turistas-lisboa', permanent: true },
       // Los dos artículos de transporte cubrían lo mismo y competían entre sí
       // por las mismas búsquedas. Se fusionan en la guía general, que era la
       // más completa y la que ya recibía el doble de enlaces internos.

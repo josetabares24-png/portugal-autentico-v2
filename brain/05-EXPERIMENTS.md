@@ -37,6 +37,14 @@ The itinerary-duration band and editorial-story close were removed after mobile 
 
 The keeper is the photographic tourism direction, not the previous composition. Direct language replaces rhetorical headlines, and Blog/Free Tours remain available through global navigation instead of being repeated inside the gateway. Keep E-008 as `PLANNED` until this simplified candidate receives explicit visual approval and a production deployment.
 
+### E-008 canonical-owner iteration — 2026-09-30
+
+Desktop review exposed a structural problem rather than a styling detail: seven entrances left the photographic directory visually unbalanced. `Dónde alojarte` was added as the eighth need because it resolves a genuine trip decision and can reuse the existing ranking article instead of inventing content.
+
+The candidate now uses an 8-entry 4 × 2 desktop directory and direct canonical links. Six established destinations are preserved; only `/que-ver-en-lisboa` and `/donde-comer-en-lisboa` are new broad pillars. All former `/guia/*` paths redirect permanently to an intent owner, so they cannot become thin bridge pages or competing search results.
+
+Keep E-008 as `PLANNED`. The visual and SEO implementation is ready for Preview review, but the experiment clock starts only after explicit approval and production deployment.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

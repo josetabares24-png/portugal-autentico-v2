@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { travelerGuides } from '@/data/traveler-guide-preview';
 import TravelerDirectory from '@/components/home/TravelerDirectory';
 
 export const metadata: Metadata = {
@@ -71,7 +70,7 @@ export default function HomePage() {
       </section>
 
       <section id="guia-practica" className="scroll-mt-20">
-        <TravelerDirectory portals={travelerGuides} />
+        <TravelerDirectory />
       </section>
     </main>
   );

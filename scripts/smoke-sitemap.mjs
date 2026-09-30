@@ -31,6 +31,8 @@ const MANDATORY = [
   `${PROD_ORIGIN}/`,
   `${PROD_ORIGIN}/blog`,
   `${PROD_ORIGIN}/itinerarios`,
+  `${PROD_ORIGIN}/que-ver-en-lisboa`,
+  `${PROD_ORIGIN}/donde-comer-en-lisboa`,
   `${PROD_ORIGIN}/actividades`,
   `${PROD_ORIGIN}/free-tours-lisboa`,
   `${PROD_ORIGIN}/planifica-tu-viaje`,
@@ -113,6 +115,7 @@ const extract = (html, re) => {
 const getCanonical = (html) => extract(html, /<link rel="canonical" href="([^"]*)"/i);
 const getRobotsMeta = (html) => extract(html, /<meta name="robots" content="([^"]*)"/i);
 const getTitle = (html) => extract(html, /<title>([^<]*)<\/title>/i);
+const getDescription = (html) => extract(html, /<meta name="description" content="([^"]*)"/i);
 
 /* ------------------------------------------------------------------ */
 /* Duplicados de slug en los datos fuente                              */
@@ -454,6 +457,27 @@ async function checkNavigation(baseUrl) {
   const navHits = [...visible.matchAll(/href="\/free-tours-lisboa"/g)].length;
   record('la portada enlaza /free-tours-lisboa en nav de escritorio y móvil', navHits >= 2, `${navHits} enlaces en la portada`);
 
+  const directGuideHrefs = [
+    '/itinerarios',
+    '/que-ver-en-lisboa',
+    '/blog/como-moverse-por-lisboa',
+    '/blog/donde-alojarse-en-lisboa',
+    '/donde-comer-en-lisboa',
+    '/blog/vida-nocturna-lisboa',
+    '/blog/donde-fotografiar-lisboa',
+    '/blog/errores-turistas-lisboa',
+  ];
+  record(
+    'la portada enlaza directamente las ocho respuestas canónicas',
+    directGuideHrefs.every((href) => visible.includes(`href="${href}"`)),
+    `${directGuideHrefs.length} destinos`,
+  );
+  record(
+    'la portada no enlaza prototipos /guia',
+    !visible.includes('href="/guia/'),
+    'sin páginas-puente',
+  );
+
   // Estado activo en la propia landing
   const landing = await (await fetch(`${baseUrl}/free-tours-lisboa`)).text();
   // React no garantiza el orden de los atributos, así que se busca la
@@ -462,6 +486,67 @@ async function checkNavigation(baseUrl) {
     (m) => m[1].includes('href="/free-tours-lisboa"') && m[1].includes('aria-current="page"')
   );
   record('la landing marca su entrada de menú como activa', activeLink, 'aria-current="page"');
+}
+
+async function checkTravelerPillars(baseUrl) {
+  const paths = ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'];
+
+  for (const path of paths) {
+    const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+    const html = await res.text();
+    const schemaTypes = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)]
+      .flatMap((match) => {
+        try {
+          const parsed = JSON.parse(match[1]);
+          return Array.isArray(parsed) ? parsed.map((item) => item?.['@type']) : [parsed?.['@type']];
+        } catch {
+          return [];
+        }
+      })
+      .filter(Boolean);
+    const h1Count = [...html.matchAll(/<h1[\s>]/gi)].length;
+    const robots = getRobotsMeta(html);
+
+    record(
+      `${path} conserva la base SEO completa`,
+      res.status === 200
+        && getCanonical(html) === `${PROD_ORIGIN}${path}`
+        && Boolean(getTitle(html))
+        && Boolean(getDescription(html))
+        && (!robots || !/noindex/i.test(robots))
+        && h1Count === 1
+        && ['Article', 'BreadcrumbList', 'FAQPage'].every((type) => schemaTypes.includes(type))
+        && html.includes('Preguntas reales')
+        && html.includes('Fuentes y revisión'),
+      `HTTP ${res.status}, H1 ${h1Count}, schema ${schemaTypes.join(' + ') || 'ausente'}`,
+    );
+  }
+}
+
+async function checkLegacyGuideRedirects(baseUrl) {
+  const redirects = new Map([
+    ['/guia/rutas', '/itinerarios'],
+    ['/guia/que-visitar', '/que-ver-en-lisboa'],
+    ['/guia/movilidad', '/blog/como-moverse-por-lisboa'],
+    ['/guia/comer', '/donde-comer-en-lisboa'],
+    ['/guia/tomar-algo', '/blog/vida-nocturna-lisboa'],
+    ['/guia/spots', '/blog/donde-fotografiar-lisboa'],
+    ['/guia/cuidate', '/blog/errores-turistas-lisboa'],
+  ]);
+  const problems = [];
+
+  for (const [source, destination] of redirects) {
+    const res = await fetch(`${baseUrl}${source}`, { redirect: 'manual' });
+    if (res.status !== 308 || res.headers.get('location') !== destination) {
+      problems.push(`${source} -> ${res.status} ${res.headers.get('location') ?? '(sin destino)'}`);
+    }
+  }
+
+  record(
+    'las siete páginas-puente redirigen permanentemente a su URL propietaria',
+    problems.length === 0,
+    problems.length ? problems.join(' | ') : '7 redirecciones 308 correctas',
+  );
 }
 
 async function checkArticle(baseUrl) {
@@ -608,6 +693,10 @@ async function main() {
     await checkRobots(baseUrl);
     log('');
     await checkNavigation(baseUrl);
+    log('');
+    await checkTravelerPillars(baseUrl);
+    log('');
+    await checkLegacyGuideRedirects(baseUrl);
     log('');
     await checkArticle(baseUrl);
     log('');

@@ -716,3 +716,45 @@ Product and design decisions:
 - keep all `/guia/*` pages in prototype state until their information architecture is approved individually.
 
 This iteration deliberately reduces Home depth. The page is a clear traveler gateway, while Blog remains a separate publication destination. E-008 remains `PLANNED`; no production merge is authorized by this implementation.
+
+## Seventh refinement — eight direct answers, no bridge pages
+
+Status: **BUILT / AWAITING VISUAL APPROVAL**
+
+Desktop review showed that seven photographic entrances produced an unbalanced final row. The useful correction is not decorative filler: `Dónde alojarte` is a distinct, high-friction travel need and already has a canonical article with organic value.
+
+The Home gateway now follows a balanced responsive system:
+- desktop: four columns by two rows;
+- tablet: two columns by four rows;
+- mobile: one photographic answer at a time;
+- all eight titles are literal needs, never slogans or internal taxonomy;
+- every surface has one direct crawlable link and one first-party Lisbon photograph.
+
+Canonical ownership is fixed as follows:
+
+| Traveler need | Canonical destination |
+|---|---|
+| Organizar mis días | `/itinerarios` |
+| Qué ver | `/que-ver-en-lisboa` |
+| Cómo moverte | `/blog/como-moverse-por-lisboa` |
+| Dónde alojarte | `/blog/donde-alojarse-en-lisboa` |
+| Dónde comer | `/donde-comer-en-lisboa` |
+| Dónde tomar algo | `/blog/vida-nocturna-lisboa` |
+| Dónde hacer fotos | `/blog/donde-fotografiar-lisboa` |
+| Qué evitar | `/blog/errores-turistas-lisboa` |
+
+SEO decisions:
+- preserve six established URLs instead of moving or duplicating them;
+- create only the two missing broad answers: `Qué ver` and `Dónde comer`;
+- make both new pages substantive enough to answer the query without requiring another click;
+- give both self-canonicals, index/follow metadata, Article + BreadcrumbList + FAQPage structured data, first-party imagery, visible FAQs and primary sources;
+- include only those two new canonical URLs in the sitemap;
+- permanently redirect every former `/guia/*` prototype to its intent owner;
+- keep specific supporting articles specific, especially the active `donde-comer-barato` experiment;
+- do not keyword-stuff, create dietary micro-pages or change protected ranking URLs for visual neatness.
+
+The reusable architecture rule is now:
+
+**one visible need → one owner URL → one complete answer**
+
+This supersedes the earlier seven-prototype navigation model. The old prototypes may remain as implementation history, but they are not public destinations and must redirect permanently.
