@@ -5,22 +5,45 @@ import { whatToSeeGuide } from '@/data/travel-pillar-guides';
 
 const PAGE_URL = 'https://estabaenlisboa.com/que-ver-en-lisboa';
 const IMAGE_URL = `https://estabaenlisboa.com${whatToSeeGuide.heroImage}`;
+const AUTHOR_URL = 'https://estabaenlisboa.com/sobre-nosotros';
+const PUBLISHED_TIME = `${whatToSeeGuide.datePublished}T09:00:00+01:00`;
+const MODIFIED_TIME = `${whatToSeeGuide.dateModified}T09:00:00+01:00`;
 
 export const metadata: Metadata = {
-  title: 'Qué ver en Lisboa: lugares, barrios y ruta práctica',
+  title: 'Qué ver en Lisboa: imprescindibles y ruta por días',
   description: whatToSeeGuide.description,
   alternates: { canonical: PAGE_URL },
-  robots: { index: true, follow: true },
+  authors: [{ name: 'José Tabares', url: AUTHOR_URL }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
-    title: 'Qué ver en Lisboa: lugares, barrios y ruta práctica',
+    title: 'Qué ver en Lisboa: imprescindibles y ruta por días',
     description: whatToSeeGuide.description,
     url: PAGE_URL,
     type: 'article',
-    images: [{ url: IMAGE_URL, alt: whatToSeeGuide.heroAlt }],
+    publishedTime: PUBLISHED_TIME,
+    modifiedTime: MODIFIED_TIME,
+    authors: [AUTHOR_URL],
+    section: 'Guías de Lisboa',
+    images: [{
+      url: IMAGE_URL,
+      width: whatToSeeGuide.heroWidth,
+      height: whatToSeeGuide.heroHeight,
+      alt: whatToSeeGuide.heroAlt,
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Qué ver en Lisboa: lugares, barrios y ruta práctica',
+    title: 'Qué ver en Lisboa: imprescindibles y ruta por días',
     description: whatToSeeGuide.description,
     images: [IMAGE_URL],
   },

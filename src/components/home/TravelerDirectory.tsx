@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 
@@ -91,51 +92,72 @@ export default function TravelerDirectory() {
               Prepara tu viaje
             </p>
             <h2 className="max-w-3xl font-display text-[2.35rem] font-semibold not-italic leading-[1.04] tracking-normal text-night sm:text-5xl lg:text-6xl">
-              Todo lo que necesitas para Lisboa.
+              Organiza Lisboa sin abrir veinte pestañas.
             </h2>
           </div>
           <p className="max-w-xl font-body text-base leading-relaxed text-text-secondary md:justify-self-end md:text-lg">
-            Empieza por la pregunta que necesitas resolver hoy. Lo demás puede esperar.
+            Empieza por la decisión que necesitas resolver hoy. Cada entrada lleva a una respuesta completa, no a otro menú.
           </p>
         </div>
 
         <nav
           aria-label="Guías completas para preparar Lisboa"
-          className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4"
+          className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4"
         >
-          {homeGuides.map((guide) => (
+          {homeGuides.map((guide, index) => {
+            const featured = index < 2;
+            return (
             <TrackedInternalLink
               key={guide.id}
               href={guide.href}
               contentType="home_guide_portal"
               contentId={guide.id}
-              className="group relative flex aspect-[4/5] min-h-[320px] overflow-hidden rounded-[6px] bg-night focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta sm:min-h-[350px] lg:min-h-0"
+              className={`group relative flex aspect-[5/4] min-h-[260px] overflow-hidden rounded-[6px] bg-night focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta sm:aspect-[4/3] sm:min-h-[280px] lg:min-h-0 ${featured ? 'lg:col-span-3 lg:aspect-[16/9]' : 'lg:col-span-2 lg:aspect-[4/3]'}`}
             >
               <Image
                 src={guide.image}
                 alt={guide.imageAlt}
                 fill
                 className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] ${guide.imagePosition ?? 'object-center'}`}
-                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                sizes={featured
+                  ? '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 50vw'
+                  : '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw'}
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-night via-night/35 to-night/5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-night/0 transition-colors duration-300 group-hover:via-night/40" />
 
-              <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/55 bg-night/20 text-white backdrop-blur-sm transition-colors duration-200 group-hover:border-terracotta group-hover:bg-terracotta sm:right-5 sm:top-5">
+              <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-night/20 text-white backdrop-blur-sm transition-colors duration-200 group-hover:border-terracotta group-hover:bg-terracotta sm:right-5 sm:top-5">
                 <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
               </div>
 
-              <div className="relative mt-auto p-5 sm:p-6 lg:p-5 xl:p-6">
-                <h3 className="font-display text-[2rem] font-semibold not-italic leading-[1.02] tracking-normal text-white lg:text-[1.85rem] xl:text-[2.15rem]">
+              <div className="relative mt-auto max-w-xl p-5 sm:p-6 lg:p-6 xl:p-7">
+                <h3 className={`font-display font-semibold not-italic leading-[1.02] tracking-normal text-white ${featured ? 'text-[2.2rem] sm:text-[2.45rem] lg:text-[2.75rem]' : 'text-[2rem] lg:text-[2.05rem] xl:text-[2.25rem]'}`}>
                   {guide.title}
                 </h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-white/80">
+                <p className={`mt-3 font-body leading-relaxed text-white/90 ${featured ? 'max-w-md text-sm sm:text-base' : 'text-sm'}`}>
                   {guide.detail}
                 </p>
               </div>
             </TrackedInternalLink>
-          ))}
+            );
+          })}
         </nav>
+
+        <aside className="mt-10 grid gap-5 border-y border-night/15 py-7 font-body md:grid-cols-[1fr_1fr_auto] md:items-center md:gap-10">
+          <p className="text-sm font-semibold text-night">
+            Guías escritas y revisadas desde Lisboa.
+          </p>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            Fotografías propias, fuentes oficiales y recomendaciones con contexto.
+          </p>
+          <Link
+            href="/sobre-nosotros"
+            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-terracotta underline decoration-terracotta/35 underline-offset-4 hover:text-primary-dark"
+          >
+            Cómo trabajamos
+            <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
+          </Link>
+        </aside>
       </div>
     </div>
   );

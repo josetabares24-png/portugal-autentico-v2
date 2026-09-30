@@ -515,7 +515,10 @@ async function checkTravelerPillars(baseUrl) {
         && Boolean(getDescription(html))
         && (!robots || !/noindex/i.test(robots))
         && h1Count === 1
-        && ['Article', 'BreadcrumbList', 'FAQPage'].every((type) => schemaTypes.includes(type))
+        && ['Article', 'BreadcrumbList'].every((type) => schemaTypes.includes(type))
+        && !schemaTypes.includes('FAQPage')
+        && html.includes('José Tabares')
+        && html.includes('Datos contrastados con fuentes oficiales')
         && html.includes('Preguntas reales')
         && html.includes('Fuentes y revisión'),
       `HTTP ${res.status}, H1 ${h1Count}, schema ${schemaTypes.join(' + ') || 'ausente'}`,

@@ -20,6 +20,9 @@ const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
 const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
 const homeDirectory = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'TravelerDirectory.tsx'), 'utf8');
+const pillarComponent = readFileSync(join(process.cwd(), 'src', 'components', 'traveler', 'TravelPillarPage.tsx'), 'utf8');
+const blogArticlePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'blog', '[slug]', 'page.tsx'), 'utf8');
+const authorPage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'sobre-nosotros', 'page.tsx'), 'utf8');
 const directHomeTitles = [
   'Organizar mis días',
   'Qué ver',
@@ -39,21 +42,41 @@ check(widgetGuides.length === 1, 'sólo una guía carga un widget de reservas');
 check(directHomeTitles.every((title) => homeDirectory.includes(title)), 'la Home nombra directamente las ocho necesidades');
 check(!homeDirectory.includes('¿Cuánto tiempo tienes para Lisboa?'), 'la Home no recupera el bloque intermedio de duración');
 check(!homeDirectory.includes('/guia/'), 'la Home no enlaza páginas-puente');
+check(homeDirectory.includes('lg:grid-cols-6'), 'la Home usa una composición editorial 2 + 3 + 3 en escritorio');
 check(
   ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'].every((href) => homeDirectory.includes(href)),
   'la Home enlaza directamente los dos nuevos pilares',
 );
 
 for (const pillar of [whatToSeeGuide, whereToEatGuide]) {
-  check(pillar.sections.length >= 5, `${pillar.url} ofrece una respuesta editorial completa`);
+  check(pillar.sections.length >= 6, `${pillar.url} ofrece una respuesta editorial completa`);
   check(pillar.faqs.length >= 5, `${pillar.url} responde dudas visibles`);
   check(pillar.sources.length >= 4, `${pillar.url} documenta fuentes primarias`);
+  check(pillar.relatedGuides.length === 4, `${pillar.url} limita la profundización a cuatro decisiones útiles`);
+  check(
+    pillar.relatedGuides.every((item) => item.href.startsWith('/')) && new Set(pillar.relatedGuides.map((item) => item.href)).size === 4,
+    `${pillar.url} enlaza destinos internos únicos y rastreables`,
+  );
+  check(pillar.topics.length >= 4, `${pillar.url} declara sus temas principales para Article`);
+  check(pillar.heroWidth > 0 && pillar.heroHeight > 0, `${pillar.url} declara dimensiones reales de la imagen principal`);
   check(pillar.heroImage.startsWith('/images/lisboa-originales/'), `${pillar.url} usa fotografía propia`);
   check(
     existsSync(join(process.cwd(), 'public', pillar.heroImage.replace(/^\//, ''))),
     `${pillar.url} encuentra su fotografía en el repositorio`,
   );
 }
+
+check(!pillarComponent.includes("'@type': 'FAQPage'"), 'los pilares no publican FAQPage sin posibilidad de rich result');
+check(!blogArticlePage.includes("'@type': 'FAQPage'"), 'el Blog conserva preguntas visibles sin schema FAQ decorativo');
+check(
+  (blogArticlePage.match(/href: ['"]\/que-ver-en-lisboa['"]/g) ?? []).length >= 3,
+  'el pilar Qué ver recibe enlaces desde al menos tres guías contextuales',
+);
+check(
+  (blogArticlePage.match(/href: ['"]\/donde-comer-en-lisboa['"]/g) ?? []).length >= 2,
+  'el pilar Dónde comer recibe enlaces desde al menos dos guías contextuales',
+);
+check(authorPage.includes("'@type': 'ProfilePage'") && authorPage.includes("#jose-tabares"), 'la página de autor identifica a José con ProfilePage');
 
 for (const guide of travelerGuides) {
   const prefix = `/guia/${guide.slug}`;

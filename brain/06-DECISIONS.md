@@ -562,3 +562,28 @@ Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 - GitHub / Estaba Investigando = memoria exclusiva del proyecto true crime/historias reales.
 
 **Regla:** no mantener copias activas de la memoria Tutabares en ambos repositorios.
+
+
+## D-033 — Complete pillars, visible authorship and a 2 + 3 + 3 Home
+**Date:** 2026-09-30
+**Status:** accepted candidate implementation; production requires explicit visual approval
+
+The eight canonical owners from D-032 remain unchanged. This decision refines presentation and authority without creating more public destinations.
+
+Rules:
+- desktop uses an editorial 2 + 3 + 3 photographic rhythm: two broad first decisions, followed by six specific needs;
+- tablet remains two columns and mobile remains one direct photographic entrance;
+- every Home entrance still has exactly one canonical destination and uses a first-party photograph;
+- /que-ver-en-lisboa and /donde-comer-en-lisboa must answer the broad need on the page itself, including concrete trade-offs, visible FAQs, review date and primary sources;
+- optional deep reading appears only after the complete answer and is limited to four specific next decisions;
+- each new pillar receives a small number of contextual backlinks from relevant support articles; do not run a site-wide exact-match linking campaign;
+- protected ranking pages keep their titles, main copy and intent;
+- visible authorship points to José Tabares, and /sobre-nosotros identifies the author and editorial method with ProfilePage markup;
+- Article and BreadcrumbList are the useful structured-data types for these guides;
+- keep FAQs visible for humans, but do not publish FAQPage markup as decorative schema because ordinary travel sites are not eligible for its rich result;
+- the official GetYourGuide widget remains only on Qué ver, after the editorial answer and behind consent;
+- do not merge or deploy to production until the responsive Preview is explicitly approved.
+
+This decision supersedes only the 4 × 2 desktop layout in D-032. Canonical ownership, redirects and the rule against thin bridge pages remain in force.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].

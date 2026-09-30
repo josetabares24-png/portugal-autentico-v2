@@ -758,3 +758,28 @@ The reusable architecture rule is now:
 **one visible need → one owner URL → one complete answer**
 
 This supersedes the earlier seven-prototype navigation model. The old prototypes may remain as implementation history, but they are not public destinations and must redirect permanently.
+
+## Eighth refinement — premium editorial rhythm and pillar authority
+
+Status: **BUILT / LOCAL VALIDATION IN PROGRESS / AWAITING VISUAL APPROVAL**
+
+The eight needs remain correct, but eight identical portrait tiles still read like a generated directory on wide screens. The new candidate keeps all eight direct destinations and changes only their rhythm:
+- two wider first decisions: days and sights;
+- three practical decisions in the next row;
+- three practical decisions in the final row;
+- one column on mobile and two on tablet;
+- shorter image surfaces so the Home remains useful without becoming an endless gallery.
+
+The two new broad pillars are strengthened as complete answers rather than hubs:
+- visible author, review date and editorial method;
+- a concrete 1/2/3/4-day sequence in Qué ver;
+- concrete, source-backed food stops in Dónde comer;
+- four optional next decisions only after the broad question is already resolved;
+- contextual backlinks from a small set of relevant support guides;
+- Article and BreadcrumbList markup with author and publisher identity;
+- visible FAQs retained, FAQPage markup removed;
+- GetYourGuide remains a single consent-gated widget on Qué ver.
+
+The trust layer is explicit: /sobre-nosotros now identifies José Tabares and explains how personal judgment, source verification and changing information are separated.
+
+No canonical owner changes. No new indexed micro-pages. No production deployment without approval.

@@ -1,14 +1,18 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ArrowDown } from 'lucide-react';
 import TravelerDirectory from '@/components/home/TravelerDirectory';
 
+const HOME_URL = 'https://estabaenlisboa.com';
+const HOME_DESCRIPTION = 'Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.';
+
 export const metadata: Metadata = {
-  title: { absolute: 'Estaba en Lisboa | Guías de Lisboa en español' },
-  description: 'Guías sobre Lisboa: transporte, barrios, comida, qué ver, dónde alojarse y excursiones. Información práctica para organizar el viaje.',
+  title: { absolute: 'Guía de Lisboa en español | Estaba en Lisboa' },
+  description: HOME_DESCRIPTION,
   openGraph: {
-    title: 'Estaba en Lisboa | Guías de Lisboa',
-    description: 'Guías sobre Lisboa: qué ver, transporte, barrios, comida, alojamiento y excursiones.',
-    url: 'https://estabaenlisboa.com',
+    title: 'Guía de Lisboa en español | Estaba en Lisboa',
+    description: HOME_DESCRIPTION,
+    url: HOME_URL,
     images: [
       {
         url: 'https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
@@ -20,18 +24,37 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estaba en Lisboa | Guías de Lisboa',
-    description: 'Información práctica en español para organizar un viaje a Lisboa.',
+    title: 'Guía de Lisboa en español | Estaba en Lisboa',
+    description: HOME_DESCRIPTION,
     images: ['https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg'],
   },
   alternates: {
-    canonical: 'https://estabaenlisboa.com',
+    canonical: HOME_URL,
   },
 };
 
 export default function HomePage() {
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${HOME_URL}/#webpage`,
+    url: HOME_URL,
+    name: 'Guía de Lisboa en español',
+    description: HOME_DESCRIPTION,
+    inLanguage: 'es-ES',
+    isPartOf: { '@id': `${HOME_URL}/#website` },
+    about: {
+      '@type': 'City',
+      name: 'Lisboa',
+      sameAs: 'https://www.wikidata.org/wiki/Q597',
+    },
+    author: { '@id': `${HOME_URL}/sobre-nosotros#jose-tabares` },
+  };
+
   return (
     <main id="main-content" className="bg-cream">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
+
       <section className="relative h-[78svh] min-h-[540px] max-h-[680px] overflow-hidden md:h-[82svh] md:min-h-[600px] md:max-h-[760px]">
         <Image
           src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
@@ -40,8 +63,8 @@ export default function HomePage() {
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          quality={75}
-          sizes="(max-width: 767px) 450vw, (max-width: 1279px) 190vw, 100vw"
+          quality={82}
+          sizes="100vw"
         />
         <div
           className="absolute inset-0"
@@ -51,6 +74,9 @@ export default function HomePage() {
         />
 
         <div className="absolute bottom-0 left-0 max-w-3xl p-6 pb-12 sm:p-10 md:p-14 md:pb-16">
+          <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+            Guía local de Lisboa
+          </p>
           <h1
             className="mb-4 font-display italic leading-[1.02] text-white"
             style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
@@ -62,9 +88,10 @@ export default function HomePage() {
           </p>
           <a
             href="#guia-practica"
-            className="inline-flex min-h-12 max-w-full items-center justify-center bg-terracotta px-7 py-3 text-center font-body text-base font-semibold leading-tight text-white transition-colors duration-200 hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-[4px] bg-terracotta px-7 py-3 text-center font-body text-base font-semibold leading-tight text-white transition-colors duration-200 hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
-            Preparar mi viaje ↓
+            Preparar mi viaje
+            <ArrowDown size={18} strokeWidth={2} aria-hidden="true" />
           </a>
         </div>
       </section>

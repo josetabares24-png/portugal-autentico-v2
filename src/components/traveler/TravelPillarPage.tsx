@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 
 export type TravelPillarGuide = {
   url: string;
@@ -12,8 +12,11 @@ export type TravelPillarGuide = {
   shortAnswer: string;
   heroImage: string;
   heroAlt: string;
+  heroWidth: number;
+  heroHeight: number;
   datePublished: string;
   dateModified: string;
+  topics: string[];
   quickAnswers: Array<{
     label: string;
     title: string;
@@ -45,11 +48,32 @@ export type TravelPillarGuide = {
     label: string;
     href: string;
   }>;
+  relatedGuides: Array<{
+    eyebrow: string;
+    title: string;
+    text: string;
+    href: string;
+  }>;
   closingTitle: string;
   closingText: string;
 };
 
 const SITE_URL = 'https://estabaenlisboa.com';
+const AUTHOR_URL = `${SITE_URL}/sobre-nosotros`;
+const AUTHOR_ID = `${AUTHOR_URL}#jose-tabares`;
+
+function toLisbonDateTime(date: string) {
+  return `${date}T09:00:00+01:00`;
+}
+
+function formatReviewDate(date: string) {
+  return new Intl.DateTimeFormat('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Europe/Lisbon',
+  }).format(new Date(`${date}T12:00:00Z`));
+}
 
 export function TravelPillarPage({
   guide,
@@ -60,26 +84,50 @@ export function TravelPillarPage({
 }) {
   const pageUrl = `${SITE_URL}${guide.url}`;
   const imageUrl = `${SITE_URL}${guide.heroImage}`;
+  const reviewDate = formatReviewDate(guide.dateModified);
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': `${pageUrl}#article`,
     headline: guide.title,
     description: guide.description,
-    image: imageUrl,
-    datePublished: guide.datePublished,
-    dateModified: guide.dateModified,
-    inLanguage: 'es',
-    mainEntityOfPage: pageUrl,
+    image: {
+      '@type': 'ImageObject',
+      url: imageUrl,
+      width: guide.heroWidth,
+      height: guide.heroHeight,
+      caption: guide.heroAlt,
+    },
+    datePublished: toLisbonDateTime(guide.datePublished),
+    dateModified: toLisbonDateTime(guide.dateModified),
+    inLanguage: 'es-ES',
+    articleSection: 'Guías de Lisboa',
+    keywords: guide.topics.join(', '),
+    isAccessibleForFree: true,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': pageUrl,
+    },
     author: {
       '@type': 'Person',
+      '@id': AUTHOR_ID,
       name: 'José Tabares',
-      url: `${SITE_URL}/sobre-nosotros`,
+      url: AUTHOR_URL,
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: 'Estaba en Lisboa',
       url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+        width: 600,
+        height: 188,
+      },
     },
+    about: guide.topics.map((topic) => ({ '@type': 'Thing', name: topic })),
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   };
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -89,26 +137,12 @@ export function TravelPillarPage({
       { '@type': 'ListItem', position: 2, name: guide.title, item: pageUrl },
     ],
   };
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: guide.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <main id="main-content" className="bg-cream">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <section className="relative flex h-[72svh] min-h-[560px] max-h-[720px] items-end overflow-hidden bg-night">
+      <section className="relative flex h-[68svh] min-h-[520px] max-h-[680px] items-end overflow-hidden bg-night">
         <Image
           src={guide.heroImage}
           alt={guide.heroAlt}
@@ -133,6 +167,24 @@ export function TravelPillarPage({
           </h1>
           <p className="mt-5 max-w-2xl font-body text-base leading-relaxed text-white/85 sm:text-lg">
             {guide.lead}
+          </p>
+        </div>
+      </section>
+
+      <section aria-label="Información editorial" className="border-b border-night/15 bg-white/70">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 font-body text-xs text-text-secondary sm:flex-row sm:items-center sm:justify-between md:px-10">
+          <p>
+            Por{' '}
+            <Link href="/sobre-nosotros#jose-tabares" className="font-semibold text-night underline decoration-night/25 underline-offset-4 hover:text-terracotta">
+              José Tabares
+            </Link>
+            <span className="mx-2 text-night/30" aria-hidden="true">·</span>
+            Escrito y editado desde Lisboa
+          </p>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 sm:justify-end">
+            <time dateTime={guide.dateModified}>Revisado el {reviewDate}</time>
+            <span className="text-night/30" aria-hidden="true">·</span>
+            <span>Datos contrastados con fuentes oficiales</span>
           </p>
         </div>
       </section>
@@ -246,6 +298,45 @@ export function TravelPillarPage({
 
       {reservation}
 
+      <section className="border-b border-night/10 bg-cream py-14 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-9 px-6 md:px-10 lg:grid-cols-[0.58fr_1.42fr] lg:gap-16">
+          <div>
+            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
+              Para afinar el viaje
+            </p>
+            <h2 className="max-w-md font-display text-[2rem] font-semibold not-italic leading-[1.08] tracking-normal text-night sm:text-4xl lg:text-[2.8rem]">
+              Sigue sólo por donde lo necesites.
+            </h2>
+            <p className="mt-5 max-w-md font-body text-sm leading-relaxed text-text-secondary sm:text-base">
+              Esta guía ya resuelve el mapa general. Estas lecturas sirven para una decisión concreta, no para mandarte a empezar de nuevo.
+            </p>
+          </div>
+
+          <nav aria-label="Guías relacionadas para profundizar" className="grid border-y border-night/15 sm:grid-cols-2">
+            {guide.relatedGuides.map((related, index) => (
+              <Link
+                key={related.href}
+                href={related.href}
+                className={`group flex min-h-[174px] flex-col justify-between gap-6 border-b border-night/15 py-6 transition-colors hover:bg-white/60 sm:px-6 ${index % 2 === 1 ? 'sm:border-l sm:border-night/15' : ''} ${index >= guide.relatedGuides.length - 2 ? 'sm:border-b-0' : ''}`}
+              >
+                <div>
+                  <p className="font-body text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-terracotta">
+                    {related.eyebrow}
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold not-italic leading-tight tracking-normal text-night">
+                    {related.title}
+                  </h3>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-text-secondary">
+                    {related.text}
+                  </p>
+                </div>
+                <ArrowUpRight size={19} strokeWidth={1.8} className="text-night transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-terracotta" aria-hidden="true" />
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </section>
+
       <section className="bg-night py-14 text-white md:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:px-10 lg:grid-cols-[0.58fr_1.42fr] lg:gap-16">
           <div>
@@ -281,7 +372,7 @@ export function TravelPillarPage({
               Información comprobable.
             </h2>
             <p className="mt-4 font-body text-sm leading-relaxed text-text-secondary">
-              Revisado el 30 de septiembre de 2026. Los horarios y condiciones pueden cambiar; compruébalos en la fuente oficial antes de ir.
+              Revisión editorial: {reviewDate}. Los horarios y condiciones pueden cambiar; compruébalos en la fuente oficial antes de ir.
             </p>
           </div>
           <ul className="border-y border-night/15">

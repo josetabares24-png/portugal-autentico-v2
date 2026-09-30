@@ -12,8 +12,17 @@ export const whatToSeeGuide = {
     'En una primera visita, empieza por Baixa y Chiado, dedica otro bloque a Alfama, reserva media jornada para Belém y elige al menos un mirador. Con más tiempo, añade Parque das Nações o una excursión de día completo.',
   heroImage: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
   heroAlt: 'Rua Augusta de Lisboa con el arco monumental al fondo',
+  heroWidth: 900,
+  heroHeight: 675,
   datePublished: '2026-09-30',
   dateModified: '2026-09-30',
+  topics: [
+    'Qué ver en Lisboa',
+    'Barrios de Lisboa',
+    'Monumentos de Lisboa',
+    'Miradores de Lisboa',
+    'Itinerarios por Lisboa',
+  ],
   quickAnswers: [
     {
       label: 'Si tienes 1 día',
@@ -107,6 +116,35 @@ export const whatToSeeGuide = {
       note: {
         title: 'Una regla que funciona',
         text: 'Una reserva con hora por cada medio día es suficiente. El resto debe poder moverse si llueve, aparece una cola o simplemente quieres quedarte más tiempo.',
+      },
+    },
+    {
+      id: 'por-dias',
+      eyebrow: 'Un orden que sí cabe',
+      title: 'Qué ver en Lisboa en 1, 2, 3 o 4 días',
+      intro:
+        'La diferencia entre una ruta agradable y una carrera no suele ser la cantidad de lugares: es el orden. Cada día añade una zona completa sin deshacer lo anterior.',
+      items: [
+        {
+          title: '1 día: centro + Alfama',
+          text: 'Empieza en Praça do Comércio, recorre Baixa y Chiado, y dedica la tarde a Alfama con un mirador. Es una Lisboa reconocible, caminable y sin dos grandes desplazamientos.',
+        },
+        {
+          title: '2 días: suma Belém',
+          text: 'Reserva el segundo día para Jerónimos, el entorno de la Torre y el paseo junto al Tajo. Volver al centro después es opcional; Belém ya sostiene media jornada larga.',
+        },
+        {
+          title: '3 días: elige contraste',
+          text: 'Añade Graça si quieres más barrio y vistas, o Parque das Nações si prefieres río, arquitectura contemporánea y un recorrido menos empinado.',
+        },
+        {
+          title: '4 días: sal de Lisboa',
+          text: 'Dedica una jornada completa a Sintra o Cascais. Sintra exige más planificación; Cascais permite un día costero más flexible. No intentaría comprimir ambas.',
+        },
+      ],
+      note: {
+        title: 'La decisión difícil',
+        text: 'Con sólo dos días, elegiría Lisboa antes que Sintra. Con tres, Sintra puede entrar si los palacios son una prioridad, pero perderás una jornada urbana completa.',
       },
     },
     {
@@ -217,6 +255,32 @@ export const whatToSeeGuide = {
     { label: 'Oceanário de Lisboa — planear la visita', href: 'https://oceanario.pt/planear-visita/' },
     { label: 'Museus e Monumentos de Portugal — Mosteiro dos Jerónimos', href: 'https://www.museusemonumentos.pt/en/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo' },
   ],
+  relatedGuides: [
+    {
+      eyebrow: 'Ruta completa',
+      title: 'Elegir itinerario por días',
+      text: 'Rutas cerradas para 1, 2 y 3 días, con horarios y trayectos realistas.',
+      href: '/itinerarios',
+    },
+    {
+      eyebrow: 'Vistas',
+      title: 'Comparar los miradores',
+      text: 'Qué panorámica ofrece cada uno y cómo combinarlos sin repetir cuestas.',
+      href: '/blog/mejores-miradores-lisboa',
+    },
+    {
+      eyebrow: 'Presupuesto',
+      title: 'Planes gratis que sí compensan',
+      text: 'Barrios, jardines, río y miradores que no necesitan entrada.',
+      href: '/blog/que-hacer-gratis-en-lisboa',
+    },
+    {
+      eyebrow: 'Logística',
+      title: 'Moverte sin cruzar Lisboa de más',
+      text: 'Metro, tranvía, tren y caminatas elegidos según el trayecto.',
+      href: '/blog/como-moverse-por-lisboa',
+    },
+  ],
   closingTitle: 'No necesitas verlo todo para entender Lisboa.',
   closingText:
     'Elige pocas zonas, deja margen entre ellas y reserva sólo aquello que de verdad cambiaría tu día. La ciudad se disfruta mejor cuando todavía queda espacio para detenerse.',
@@ -227,15 +291,24 @@ export const whereToEatGuide = {
   eyebrow: 'Comer bien sin investigar una hora',
   title: 'Dónde comer en Lisboa',
   description:
-    'Dónde comer en Lisboa según zona, presupuesto y momento: tascas, mercados, platos portugueses, horarios, couvert y consejos para elegir bien.',
+    'Dónde comer en Lisboa según zona, presupuesto y momento: tascas, mercados, platos portugueses, sitios concretos, couvert y consejos para elegir bien.',
   lead:
     'No existe un único restaurante que resuelva Lisboa. Lo útil es reconocer qué formato necesitas, qué se come en cada zona y qué conviene mirar antes de sentarte.',
   shortAnswer:
     'Para una comida cotidiana, busca una tasca o un prato do dia fuera de la primera línea turística. Usa los mercados cuando el grupo quiera cosas distintas y reserva sólo cuando la comida sea uno de los planes importantes del viaje.',
   heroImage: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
   heroAlt: 'Mesas y puestos de comida dentro del Mercado da Ribeira de Lisboa',
+  heroWidth: 1280,
+  heroHeight: 720,
   datePublished: '2026-09-30',
   dateModified: '2026-09-30',
+  topics: [
+    'Dónde comer en Lisboa',
+    'Gastronomía portuguesa',
+    'Tascas de Lisboa',
+    'Mercados de Lisboa',
+    'Platos típicos de Lisboa',
+  ],
   quickAnswers: [
     {
       label: 'Para el mediodía',
@@ -352,6 +425,35 @@ export const whereToEatGuide = {
       ],
     },
     {
+      id: 'lugares-concretos',
+      eyebrow: 'Si no quieres empezar de cero',
+      title: 'Cuatro paradas que resuelven situaciones distintas',
+      intro:
+        'No son “los mejores restaurantes de Lisboa”. Son lugares fáciles de situar y con una utilidad clara. Comprueba carta, horario y disponibilidad antes de desplazarte.',
+      items: [
+        {
+          title: 'Time Out Market',
+          text: 'En Cais do Sodré. Útil para un grupo que quiere pedir cosas diferentes y comer a una hora flexible. La contrapartida es el ruido, las mesas compartidas y un precio que prioriza comodidad y ubicación.',
+        },
+        {
+          title: 'Mercado de Campo de Ourique',
+          text: 'Combina mercado municipal y restauración en un barrio menos centrado en la visita monumental. Encaja cuando quieres variedad y después pasear por Campo de Ourique o Estrela.',
+        },
+        {
+          title: 'Pastéis de Belém',
+          text: 'Es una parada de pastelería, no una comida completa. Tiene sentido dentro de una mañana o tarde en Belém; cruzar la ciudad sólo por un pastel rara vez mejora un itinerario corto.',
+        },
+        {
+          title: 'Tapisco',
+          text: 'En Príncipe Real, con petiscos portugueses y tapas españolas para compartir. Es una opción de mesa pequeña y plan más definido; conviene reservar si la cena importa especialmente.',
+        },
+      ],
+      note: {
+        title: 'Cómo usar esta selección',
+        text: 'Elige por zona y por formato. Un lugar excelente al otro lado de la ciudad puede ser una peor comida si obliga a romper todo el día.',
+      },
+    },
+    {
       id: 'precios-y-couvert',
       eyebrow: 'Antes de pedir',
       title: 'Cuatro detalles que evitan sorpresas en la cuenta',
@@ -438,7 +540,36 @@ export const whereToEatGuide = {
     { label: 'ASAE — precios y couvert en restauración', href: 'https://www.asae.gov.pt/perguntas-frequentes1/area-economica/precos/precos-em-servicos-de-restauracao.aspx' },
     { label: 'Lisboa Comércio — ferias y mercados municipales', href: 'https://comercio.lisboa.pt/feiras-e-mercados/' },
     { label: 'Câmara Municipal de Lisboa — Mercado da Ribeira', href: 'https://www.lisboa.pt/pontos-de-interesse/detalhe/mercado-da-ribeira' },
+    { label: 'Câmara Municipal de Lisboa — Mercado de Campo de Ourique', href: 'https://www.lisboa.pt/espacos-e-servicos/detalhe/mercado-campo-de-ourique' },
+    { label: 'Pastéis de Belém — información oficial', href: 'https://pasteisdebelem.pt/en/contact/' },
+    { label: 'Visit Lisboa — Tapisco', href: 'https://www.visitlisboa.com/es/sitios/tapisco' },
     { label: 'Visit Portugal — gastronomía portuguesa', href: 'https://www.visitportugal.com/es/experiencias/gastronomia-e-vinhos' },
+  ],
+  relatedGuides: [
+    {
+      eyebrow: 'Presupuesto',
+      title: 'Comer barato con precios revisados',
+      text: 'Tascas, menús de almuerzo y ejemplos fechados para elegir por zona.',
+      href: '/blog/donde-comer-barato-lisboa',
+    },
+    {
+      eyebrow: 'Qué pedir',
+      title: 'Entender la cocina portuguesa',
+      text: 'Platos, ingredientes y formas de comer que aparecen una y otra vez en las cartas.',
+      href: '/blog/gastronomia-portuguesa-guia',
+    },
+    {
+      eyebrow: 'Para grupos',
+      title: 'Comparar mercados de Lisboa',
+      text: 'Mercados gastronómicos, de abastos y ferias: no todos sirven para lo mismo.',
+      href: '/blog/mejores-mercados-lisboa',
+    },
+    {
+      eyebrow: 'Una pausa',
+      title: 'Pedir café sin dudar',
+      text: 'Bica, galão, cafés históricos y especialidad explicados con claridad.',
+      href: '/blog/donde-tomar-cafe-lisboa',
+    },
   ],
   closingTitle: 'La mejor comida es la que encaja con ese día.',
   closingText:

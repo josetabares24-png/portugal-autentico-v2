@@ -2,6 +2,7 @@ export default function SchemaMarkup() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://estabaenlisboa.com/#organization",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
     "logo": {
@@ -32,10 +33,14 @@ export default function SchemaMarkup() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://estabaenlisboa.com/#website",
     "name": "Estaba en Lisboa",
     "url": "https://estabaenlisboa.com",
     "description": "Información práctica en español para organizar un viaje a Lisboa.",
-    "inLanguage": ["es"]
+    "inLanguage": "es-ES",
+    "publisher": {
+      "@id": "https://estabaenlisboa.com/#organization"
+    }
   };
 
   return (

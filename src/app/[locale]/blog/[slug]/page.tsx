@@ -31,6 +31,7 @@ const articles: Record<string, Article> = {
       { href: '/blog/vida-nocturna-lisboa', label: 'Vida nocturna en Lisboa' },
       { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
       { href: '/blog/mejores-miradores-lisboa', label: 'Miradores para antes de cenar' },
+      { href: '/donde-comer-en-lisboa', label: 'Guía completa para comer en Lisboa' },
     ],
     fuentes: [
       { label: 'Guía MICHELIN: Fifty Seconds', href: 'https://guide.michelin.com/pt/pt_PT/lisboa-region/lisboa/restaurant/fifty-seconds' },
@@ -217,6 +218,7 @@ const articles: Record<string, Article> = {
       { href: '/blog/alfama-historia-guia', label: 'Guía de Alfama' },
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
       { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Planes gratis en Lisboa' },
+      { href: '/que-ver-en-lisboa', label: 'Qué ver en Lisboa en una primera visita' },
     ],
     fuentes: [
       { label: 'Visit Lisboa: Miradouro de Santa Luzia', href: 'https://www.visitlisboa.com/pt-pt/locais/miradouro-de-santa-luzia' },
@@ -549,6 +551,7 @@ const articles: Record<string, Article> = {
       { href: '/blog/chiado-bairro-alto-guia', label: 'Chiado y Bairro Alto' },
       { href: '/blog/alfama-historia-guia', label: 'Alfama' },
       { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Lisboa en 1 día' },
+      { href: '/que-ver-en-lisboa', label: 'Guía completa de qué ver en Lisboa' },
     ],
     fuentes: [
       { label: 'Carris: estado del Elevador de Santa Justa', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/elevador-sta-justa-miradouro-encerrado/' },
@@ -2679,6 +2682,7 @@ const articles: Record<string, Article> = {
     links: [
       { href: "/blog/time-out-market-lisboa", label: "Guía del Time Out Market Lisboa" },
       { href: "/blog/donde-comer-barato-lisboa", label: "Dónde comer barato en Lisboa" },
+      { href: "/donde-comer-en-lisboa", label: "Dónde comer en Lisboa según zona y momento" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Buscar «mercados de Lisboa» mezcla lugares muy distintos. Hay mercados municipales de abastos, espacios gastronómicos dentro de mercados históricos y ferias de calle. Elegir bien depende de si quieres comer, comprar producto fresco, buscar objetos usados o simplemente ver un mercado de barrio." },
@@ -3657,6 +3661,7 @@ const articles: Record<string, Article> = {
       { href: "/blog/tram-28-historia-guia", label: "Guía del Tranvía 28" },
       { href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
       { href: "/blog/mejores-miradores-lisboa", label: "Mejores miradores de Lisboa" },
+      { href: "/que-ver-en-lisboa", label: "Qué ver en Lisboa y cómo ordenarlo" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Alfama es uno de los barrios históricos más conocidos de Lisboa y se recorre mejor a pie. Su trama de calles estrechas, escaleras y pendientes conecta la zona de la Sé con miradores como Santa Luzia y Portas do Sol y con las subidas hacia el Castelo de São Jorge." },
@@ -4194,6 +4199,8 @@ const articleHeroImages: Record<string, string> = {
 
 const SITE_URL = 'https://estabaenlisboa.com';
 const AUTHOR_NAME = 'José Tabares';
+const AUTHOR_PROFILE_URL = `${SITE_URL}/sobre-nosotros`;
+const AUTHOR_ID = `${AUTHOR_PROFILE_URL}#jose-tabares`;
 
 /**
  * Maquetación editorial v2.
@@ -4434,6 +4441,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
+  const publishedDate = toIsoDate(article.fecha);
   const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
   /*
    * Un artículo que no está en `blogPosts` no aparece en el listado ni en el
@@ -4446,14 +4454,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: seoTitle,
     description: seoDescription,
     keywords,
+    authors: [{ name: AUTHOR_NAME, url: AUTHOR_PROFILE_URL }],
     ...(publicado ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `${SITE_URL}/blog/${slug}`,
     },
     openGraph: {
+      type: 'article',
       title: seoTitle,
       description: seoDescription,
       url: `${SITE_URL}/blog/${slug}`,
+      ...(publishedDate ? { publishedTime: publishedDate } : {}),
+      ...(article.dateModified ? { modifiedTime: article.dateModified } : {}),
+      authors: [AUTHOR_PROFILE_URL],
+      section: article.categoria,
       images: [
         {
           url: toAbsoluteUrl(image),
@@ -4549,21 +4563,41 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${SITE_URL}/blog/${slug}#article`,
     headline: seoTitle,
     description: seoDescription,
     ...(toIsoDate(article.fecha) ? { datePublished: toIsoDate(article.fecha) } : {}),
     ...(article.dateModified ? { dateModified: article.dateModified } : {}),
     author: {
       '@type': 'Person',
+      '@id': AUTHOR_ID,
       name: AUTHOR_NAME,
+      url: AUTHOR_PROFILE_URL,
     },
-    image: toAbsoluteUrl(heroImage),
-    mainEntityOfPage: toAbsoluteUrl(`/blog/${slug}`),
+    image: {
+      '@type': 'ImageObject',
+      url: toAbsoluteUrl(heroImage),
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': toAbsoluteUrl(`/blog/${slug}`),
+    },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: 'Estaba en Lisboa',
       url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+        width: 600,
+        height: 188,
+      },
     },
+    inLanguage: 'es-ES',
+    articleSection: article.categoria,
+    isAccessibleForFree: true,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   };
 
   const breadcrumbLd = {
@@ -4574,19 +4608,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
       { '@type': 'ListItem', position: 3, name: article.titulo, item: `${SITE_URL}/blog/${slug}` },
     ],
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
-    })),
   };
 
   return (
@@ -4640,12 +4661,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      {faqs.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
-      )}
     </main>
   );
 }

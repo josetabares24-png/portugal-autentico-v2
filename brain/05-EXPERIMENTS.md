@@ -45,6 +45,14 @@ The candidate now uses an 8-entry 4 × 2 desktop directory and direct canonical 
 
 Keep E-008 as `PLANNED`. The visual and SEO implementation is ready for Preview review, but the experiment clock starts only after explicit approval and production deployment.
 
+### E-008 premium-pillar iteration — 2026-09-30
+
+The 4 × 2 grid solved balance but still repeated one visual module eight times. The candidate now uses a 2 + 3 + 3 desktop rhythm while preserving the same eight canonical destinations and analytics identifiers.
+
+The experiment also closes an SEO dependency found during review: the two new pillars no longer rely only on the Home and sitemap. They receive limited contextual backlinks, visible author/review signals and precise Article markup. FAQs stay visible but FAQPage markup is removed because it has no ordinary travel-site rich-result opportunity.
+
+Keep E-008 as PLANNED. Local checks and Preview QA do not start the measurement window; only an explicitly approved production deployment does.
+
 ## Next candidate pool
 
 Do not edit all of these at once.
