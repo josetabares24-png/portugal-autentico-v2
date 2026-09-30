@@ -615,8 +615,8 @@ No asumir que comparten:
 - música;
 - tratamiento visual.
 
-**Estaba en Lisboa** es producto/editorial web.  
-**Tutabares** es marca personal audiovisual.  
+**Estaba en Lisboa** es producto/editorial web.
+**Tutabares** es marca personal audiovisual.
 Se alimentan entre sí, pero no son la misma voz.
 
 

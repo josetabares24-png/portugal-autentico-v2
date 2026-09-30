@@ -50,7 +50,7 @@ The seven portals are **not cards in a startup dashboard** and are **not accordi
 They should feel like large editorial navigation objects:
 
 - clickable across the full surface;
-- number / title / human subtitle;
+- intent label / title / human subtitle;
 - a short line of subtopics so the traveler knows what lives behind the portal;
 - an explicit arrow/verb;
 - strong typography as the primary visual device;
@@ -65,7 +65,6 @@ They should feel like large editorial navigation objects:
 Example anatomy:
 
 ```
-02
 MOVILIDAD
 Transportes, tarjetas, aeropuerto y atajos
 
@@ -296,6 +295,83 @@ Suggested content IDs:
 
 This creates a measurable answer to: **what do Home visitors actually need?**
 
+## Implementation learning — 2026-09-25
+
+**Branch:** `design/home-traveler-portals-polish`
+**Status:** Preview iteration; not approved for production yet.
+
+### Visual decisions confirmed through review
+
+- The first grid of seven equal cards still felt generated/template-like.
+- The preferred direction is an editorial directory: one documentary image area plus a direct vertical index on desktop; compact image-led rows on mobile.
+- Portal numbering was removed because it implied a sequence that does not exist and added visual noise without helping the decision.
+- Portal titles now use the same Playfair treatment as Blog landing/article-card titles: stronger weight, non-italic and normal tracking.
+- Every portal image must come from `public/images/lisboa-originales`; no generated or generic stock imagery is needed for this surface.
+- Color is functional orientation, not decoration: a restrained category accent appears in the icon/line treatment while the base remains cream/night.
+
+### Selected owned photography
+
+| Portal | Repository image |
+|---|---|
+| Rutas / Guías | `alfama-rua-da-adica-lisboa.jpg` |
+| Movilidad | `tranvia-turistico-baixa-lisboa-01.webp` |
+| Qué visitar | `rua-augusta-arco-lisboa.webp` |
+| Dónde comer | `time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg` |
+| Dónde tomar algo | `rua-baixa-lisboa-entardecer.webp` |
+| Spots | `rio-tejo-por-do-sol-lisboa.webp` |
+| Cuídate de esto | `postales-souvenirs-lisboa.jpg` |
+
+### SEO state of the seven guide prototypes
+
+- `/guia/*` remains **noindex** during the visual/content validation gate.
+- Links are allowed to be followed so the prototypes retain a useful internal path to canonical support content.
+- No canonical URL is assigned until each portal is classified as PROMOTE EXISTING, NEW PILLAR or UX-ONLY.
+- Preview QA found that the root canonical was otherwise inherited from the Home; prototypes must explicitly clear that inherited value while this decision is open.
+- Current intended outcomes remain:
+  - Rutas → evolve `/itinerarios`.
+  - Movilidad → promote `/blog/como-moverse-por-lisboa`.
+  - Qué visitar → candidate new pillar after query validation.
+  - Comer → candidate new `/comer-en-lisboa` pillar after query validation.
+  - Tomar algo → protect/promote `/blog/vida-nocturna-lisboa`.
+  - Spots → promote `/blog/donde-fotografiar-lisboa`.
+  - Cuídate → start from `/blog/errores-turistas-lisboa` and validate separate safety intent.
+
+### Guide-page product standard learned in this iteration
+
+The prototype answer pages should not repeat a hero plus numbered card grid. Their shared structure is now:
+
+1. direct editorial answer over owned photography;
+2. situation-based decision rows without artificial numbering;
+3. visible in-page contents;
+4. continuous explanatory sections using Blog typography;
+5. contextual links at the moment a specific answer is needed;
+6. a clear closing idea and route back to the traveler gateway.
+
+This is a product/visual baseline, not permission to index seven new URLs.
+
+### Human-centered refinement — 2026-09-25
+
+The second visual/content pass moved the gateway from a content taxonomy to recognizable traveler questions.
+
+What changed:
+
+- `Rutas / Guías`, `Movilidad` and `Spots` were replaced by more natural display language such as `Rutas por días`, `Cómo moverte` and `Dónde hacer fotos`.
+- Each portal now begins with a short human question: `¿Cuántos días tienes?`, `¿Qué merece tu tiempo?`, `¿Qué te apetece hoy?`.
+- The boxed category-icon treatment was simplified to a lighter editorial line icon so the directory reads less like an application dashboard.
+- Every answer page now contains three real pre-decision questions with concise answers and explicit trade-offs.
+- Traveler-facing copy that exposed internal editorial policy was rewritten as practical advice.
+- Mobile review established a maximum of roughly two short lines for portal questions; longer taxonomy-like labels slow scanning.
+
+The reusable writing test is: **would a person who knows Lisboa say this to a friend who asked the question?** If the copy instead describes the information architecture, the publishing process or the feature itself, rewrite it.
+
+Verification notes for sensitive practical answers:
+
+- Metro de Lisboa confirms that occasional and frequent use require different ticket/card decisions; a pass should not be recommended only from trip duration.
+- Metro de Lisboa and current government travel advice both emphasize attention to belongings in crowded public transport and tourist-heavy stops, supporting situation-based safety guidance rather than neighborhood alarmism.
+- ASAE states that restaurant price lists must include couvert prices and that food or drink, including couvert, cannot be charged when it was neither requested nor consumed.
+
+Primary references: `https://www.metrolisboa.pt/viajar/perguntas-frequentes/`, `https://www.metrolisboa.pt/en/2023/07/14/make-your-journey-safer/`, `https://www.asae.gov.pt/perguntas-frequentes1/area-economica/precos/precos-em-servicos-de-restauracao.aspx`.
+
 ## SEO cannibalization guardrails
 
 Before publishing any new pillar:
@@ -446,7 +522,6 @@ This is the bridge between:
 - a recognizable editorial brand;
 - and a measured commercial system.
 
-
 ## Preview implementation v2 — 2026-09-25
 
 Status: **BUILT / VERCEL READY / NOT APPROVED FOR PRODUCTION**
@@ -518,3 +593,211 @@ Review the Home first:
 5. transition from utility layer to Stories.
 
 Then review one or two guide prototypes (especially `comer` and `movilidad`) before investing in all final pillar implementations.
+
+## Third refinement — distinct tools and less obstruction
+
+The Preview moved from a shared guide template to seven intent-specific practical tools. This is the minimum product depth required before any guide can be considered for indexing or production.
+
+Implemented learning:
+- the portal directory is faster to scan on mobile with 92 px rows and no secondary description below 640 px;
+- guide introductions, decision shortcuts and human questions can share one visual system, but the central utility must differ by intent;
+- a busy Rua Augusta photograph communicates tourist awareness better than a static souvenir image for the safety guide;
+- cookie controls should remain accessible without occupying the visual weight of a content action;
+- the transition from the Home hero to the directory benefits from tighter vertical spacing, keeping a visible hint of the next task;
+- practical-tool links are measured separately so we can distinguish navigation curiosity from resolved user intent.
+
+Visual validation standard for this refinement:
+- Home and representative guides at 390 px and 1440 px;
+- no horizontal overflow;
+- all practical rows readable without clipped labels;
+- safety hero recognisable and relevant;
+- cookie notice compact in both open and rejected states;
+- production, sitemap and canonical strategy unchanged until explicit approval.
+
+## Selective reservation layer
+
+> Superseded by the fourth refinement below after visual review showed that four commercial guide sections made the experience feel overloaded.
+
+The gateway now tests a restrained commercial continuation on four guide intents:
+- Rutas: Sintra complete and Palacio da Pena options;
+- Qué visitar: Castelo, Oceanário and a Tajo cruise;
+- Dónde comer: one gastronomic tour;
+- Dónde tomar algo: one fado experience.
+
+Placement rule:
+**answer the question → explain trade-offs → show an exact reservable option**.
+
+The Home, Movilidad, Fotografías and Cuídate de esto remain non-commercial. Product cards reuse the existing GetYourGuide-attributed links and first-party visual system, remain usable after cookie rejection, expose no copied prices or ratings, and keep click measurement separated by guide placement.
+
+## Fourth refinement — answer first, one official widget
+
+Visual review rejected the custom product-card layer. The traveler already arrives with too many tabs open; the guide must reduce choices before asking for another decision.
+
+The revised flow is:
+
+**shorter hero → four immediate situations → one intent-specific tool → three human answers → optional direct widget → deeper reading**
+
+Implementation rules:
+- remove the table of contents and other interface that explains the page instead of helping with the trip;
+- reduce hero height and section spacing so useful answers arrive sooner on mobile;
+- retain the distinct practical tools and human questions because they provide the site's strongest original utility;
+- show the official GetYourGuide widget only on `Qué visitar`;
+- limit it to Castelo de São Jorge and one Tajo cruise, two different decisions with clear first-trip value;
+- do not imitate the provider's product cards or repeat titles, prices, ratings or urgency outside the widget;
+- if cookies are rejected, show one quiet consent explanation and a control that reopens preferences;
+- keep all other guide portals editorial and free from booking widgets;
+- leave the existing SEO gate, sitemap and production state unchanged.
+
+This is intentionally not a live catalog API integration. It is the official GetYourGuide partner widget, using tour IDs and campaign attribution already supported by the repository.
+
+## Fifth refinement — photographic tourism gateway
+
+Status: **BUILT / VERCEL READY / AWAITING VISUAL APPROVAL**
+
+The bordered decision-panel direction was rejected after mobile review. Even after removing numbering and improving typography, the equal boxes still felt generated, administrative and too close to an app dashboard. The useful part of that direction was retained: the terracotta action colour, the direct links and the need-first information architecture.
+
+The revised Home distributes the seven traveler needs across an editorial journey instead of forcing them into one module:
+
+1. keep the existing full-bleed Lisbon hero and the terracotta `Preparar mi viaje` action;
+2. begin with a navy itinerary band organised around one human question: `¿Cuánto tiempo tienes para Lisboa?`;
+3. give the three highest-priority decisions — what to see, how to move and where to eat — large photographic surfaces using only first-party Lisbon images;
+4. move drinks, photography and common mistakes into one quieter panoramic continuation;
+5. finish with an asymmetric editorial story layout so the Home returns naturally to the publication rather than ending as a directory.
+
+Design principles learned from this iteration:
+- a travel Home should show the place before it explains the information architecture;
+- hierarchy is more useful than seven equal choices;
+- photographs should carry meaning and navigation, not sit inside decorative cards;
+- one strong question is more human than category labels or numbered portal names;
+- the `Preparar mi viaje` terracotta treatment is a keeper unless later evidence contradicts it;
+- borders, icons and repeated small boxes should be used sparingly because they quickly make the experience feel synthetic;
+- the first screen and the first decision must remain visually simple for visitors already comparing many tabs.
+
+Implementation record:
+- branch: `design/home-tourism-editorial-v4`;
+- implementation commit: `85b1dbf`;
+- Vercel deployment: `dpl_Dr11FeFZyaoAD9HfSnwfp1e3dfAd`;
+- immutable Preview: `https://portugal-autentico-v2-lxrowmn4u-estabaenlisboa.vercel.app/`;
+- visual QA: 375, 768 and 1440 px, without horizontal overflow;
+- all seven direct portal links and their existing analytics identifiers remain present;
+- `/guia/*` indexing, canonicals, sitemap and production remain unchanged;
+- production was not modified.
+
+The visual gate remains open. Do not merge this branch until José explicitly approves this direction in the Preview.
+
+## Sixth refinement — one photograph, one travel need
+
+Status: **BUILT / AWAITING VISUAL APPROVAL**
+
+Mobile review confirmed that the photographic direction was right, but the Home still asked visitors to process too many layers. The itinerary band duplicated a decision that belongs inside the itinerary experience, the rhetorical card headlines were slower to understand, and the editorial stories made practical travel navigation feel mixed with the Blog.
+
+The revised gateway follows one rule:
+
+**one photograph → one literal travel need → one destination**
+
+The Home now presents seven separate photographic entrances:
+- `Organizar mis días`;
+- `Qué ver`;
+- `Cómo moverte`;
+- `Dónde comer`;
+- `Dónde tomar algo`;
+- `Dónde hacer fotos`;
+- `Qué evitar`.
+
+Product and design decisions:
+- remove the complete `¿Cuánto tiempo tienes para Lisboa?` band from the Home;
+- use large direct titles instead of rhetorical advertising lines;
+- give every travel need its own first-party photograph;
+- keep exactly one link per photographic entrance;
+- remove contextual Free Tours and itinerary shortcuts from this gateway;
+- remove Blog-story cards from the Home so practical planning and editorial reading remain distinct;
+- retain Blog and Free Tours in global navigation;
+- preserve the existing Lisbon hero and terracotta `Preparar mi viaje` action;
+- keep all `/guia/*` pages in prototype state until their information architecture is approved individually.
+
+This iteration deliberately reduces Home depth. The page is a clear traveler gateway, while Blog remains a separate publication destination. E-008 remains `PLANNED`; no production merge is authorized by this implementation.
+
+## Seventh refinement — eight direct answers, no bridge pages
+
+Status: **BUILT / AWAITING VISUAL APPROVAL**
+
+Desktop review showed that seven photographic entrances produced an unbalanced final row. The useful correction is not decorative filler: `Dónde alojarte` is a distinct, high-friction travel need and already has a canonical article with organic value.
+
+The Home gateway now follows a balanced responsive system:
+- desktop: four columns by two rows;
+- tablet: two columns by four rows;
+- mobile: one photographic answer at a time;
+- all eight titles are literal needs, never slogans or internal taxonomy;
+- every surface has one direct crawlable link and one first-party Lisbon photograph.
+
+Canonical ownership is fixed as follows:
+
+| Traveler need | Canonical destination |
+|---|---|
+| Organizar mis días | `/itinerarios` |
+| Qué ver | `/que-ver-en-lisboa` |
+| Cómo moverte | `/blog/como-moverse-por-lisboa` |
+| Dónde alojarte | `/blog/donde-alojarse-en-lisboa` |
+| Dónde comer | `/donde-comer-en-lisboa` |
+| Dónde tomar algo | `/blog/vida-nocturna-lisboa` |
+| Dónde hacer fotos | `/blog/donde-fotografiar-lisboa` |
+| Qué evitar | `/blog/errores-turistas-lisboa` |
+
+SEO decisions:
+- preserve six established URLs instead of moving or duplicating them;
+- create only the two missing broad answers: `Qué ver` and `Dónde comer`;
+- make both new pages substantive enough to answer the query without requiring another click;
+- give both self-canonicals, index/follow metadata, Article + BreadcrumbList + FAQPage structured data, first-party imagery, visible FAQs and primary sources;
+- include only those two new canonical URLs in the sitemap;
+- permanently redirect every former `/guia/*` prototype to its intent owner;
+- keep specific supporting articles specific, especially the active `donde-comer-barato` experiment;
+- do not keyword-stuff, create dietary micro-pages or change protected ranking URLs for visual neatness.
+
+The reusable architecture rule is now:
+
+**one visible need → one owner URL → one complete answer**
+
+This supersedes the earlier seven-prototype navigation model. The old prototypes may remain as implementation history, but they are not public destinations and must redirect permanently.
+
+## Eighth refinement — premium editorial rhythm and pillar authority
+
+Status: **BUILT / LOCAL VALIDATION IN PROGRESS / AWAITING VISUAL APPROVAL**
+
+The eight needs remain correct, but eight identical portrait tiles still read like a generated directory on wide screens. The new candidate keeps all eight direct destinations and changes only their rhythm:
+- two wider first decisions: days and sights;
+- three practical decisions in the next row;
+- three practical decisions in the final row;
+- one column on mobile and two on tablet;
+- shorter image surfaces so the Home remains useful without becoming an endless gallery.
+
+The two new broad pillars are strengthened as complete answers rather than hubs:
+- visible author, review date and editorial method;
+- a concrete 1/2/3/4-day sequence in Qué ver;
+- concrete, source-backed food stops in Dónde comer;
+- four optional next decisions only after the broad question is already resolved;
+- contextual backlinks from a small set of relevant support guides;
+- Article and BreadcrumbList markup with author and publisher identity;
+- visible FAQs retained, FAQPage markup removed;
+- GetYourGuide remains a single consent-gated widget on Qué ver.
+
+The trust layer is explicit: /sobre-nosotros now identifies José Tabares and explains how personal judgment, source verification and changing information are separated.
+
+No canonical owner changes. No new indexed micro-pages. No production deployment without approval.
+
+## Ninth refinement — one editorial language and one useful live tool
+
+Status: **BUILT / LOCAL VALIDATION IN PROGRESS / AWAITING VISUAL APPROVAL**
+
+Visual review showed that the two new pillars were complete but felt detached from the established publication. They now use the same reading system as the strongest Blog articles while keeping their broader pillar content and canonical ownership.
+
+The Free Tours refinement is deliberately narrow:
+- the hero points to a date choice instead of opening generic inventory immediately;
+- a visitor submits one date;
+- GuruWalk's official MCP returns up to three relevant tours and current times;
+- every live link preserves partner attribution and is measured separately;
+- static route/category links remain below as fallback and control;
+- a failed API request never breaks the editorial guide;
+- no third-party script or cookie consent is required to query the server-side API;
+- no production deployment is authorized before visual approval.
+
+The governing principle is unchanged: **answer first, then help with the next real decision**.

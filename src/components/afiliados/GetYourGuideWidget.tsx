@@ -25,7 +25,7 @@ interface GetYourGuideWidgetProps {
   campaign: string;
   /** Destino del enlace de repliegue, si el script no llega a cargar. */
   fallbackHref: string;
-  /** `data-gyg-number-of-items`. Una sola actividad por tarjeta. */
+  /** `data-gyg-number-of-items`. Cuántas actividades muestra el widget. */
   numberOfItems?: string;
   /** `data-gyg-locale-code`. El idioma en el que el widget se pinta. */
   localeCode?: string;

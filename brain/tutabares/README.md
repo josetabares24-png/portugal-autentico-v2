@@ -48,7 +48,7 @@ Comparten la **voz humana de José**, pero no necesariamente:
 
 ## Fuente canónica de guiones
 
-**Notion = texto vigente de los guiones.**  
+**Notion = texto vigente de los guiones.**
 **GitHub = cerebro editorial, reglas, decisiones, estado y aprendizaje.**
 
 No duplicar cuerpos completos de guiones aquí si ya viven en Notion.

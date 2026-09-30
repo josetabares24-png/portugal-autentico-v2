@@ -23,6 +23,42 @@ This is the active learning register.
 | E-005 | /blog/arquitectura-manuelina-lisboa | Reorientation to "qué es el estilo manuelino" should broaden/recover relevant query coverage | impressions + query coverage + clicks | OBSERVE | confirmed production deployment + 14 finalized days |
 | E-006 | /blog/donde-tomar-cafe-lisboa | Replacing stale/unsupported coffee claims with verified, intent-aligned content should protect page-1 momentum and improve useful query coverage | position + clicks + query coverage, with CTR protected | RUNNING | deployed 2026-09-23 10:59 Lisbon; +14 finalized days |
 | E-007 | /blog/donde-comer-barato-lisboa | Replacing invented local-authority copy with dated, verifiable cheap-eating options should improve relevance for "comer barato" queries and recover page-2 visibility | position + impressions + clicks + query coverage | RUNNING | deployed 2026-09-23 11:12 Lisbon; +14 finalized days |
+| E-008 | Home traveler gateway | A need-first editorial directory will help visitors reach a useful answer more often than a blog-index Home without weakening the publication identity | portal selection rate + downstream guide/support clicks | PLANNED | explicit visual approval + production deployment + 14 finalized days |
+| E-009 | /free-tours-lisboa live date finder | A single date-aware availability tool will produce more qualified outbound clicks than asking every visitor to browse generic inventory | live-date-finder affiliate clicks + partner bookings, with existing static clicks protected | PLANNED | explicit visual approval + production deployment + 14 finalized days |
+
+### E-008 visual iteration note — 2026-09-26
+
+The equal bordered portal grid was rejected during mobile visual review because it still read as an AI-made dashboard. The current candidate is the distributed photographic gateway on `design/home-tourism-editorial-v4`: itinerary decision first, three primary photo-led choices, three quieter secondary choices and an editorial story close.
+
+Keep E-008 as `PLANNED`. The Preview being technically ready is not visual approval, and no production observation window starts until the branch is explicitly approved and deployed to production.
+
+### E-008 visual iteration note — 2026-09-29
+
+The itinerary-duration band and editorial-story close were removed after mobile review. They added decisions and mixed practical trip planning with the Blog. The current candidate uses seven independent first-party photographs, seven literal need titles and exactly one destination per block: days, sights, movement, food, drinks, photographs and mistakes.
+
+The keeper is the photographic tourism direction, not the previous composition. Direct language replaces rhetorical headlines, and Blog/Free Tours remain available through global navigation instead of being repeated inside the gateway. Keep E-008 as `PLANNED` until this simplified candidate receives explicit visual approval and a production deployment.
+
+### E-008 canonical-owner iteration — 2026-09-30
+
+Desktop review exposed a structural problem rather than a styling detail: seven entrances left the photographic directory visually unbalanced. `Dónde alojarte` was added as the eighth need because it resolves a genuine trip decision and can reuse the existing ranking article instead of inventing content.
+
+The candidate now uses an 8-entry 4 × 2 desktop directory and direct canonical links. Six established destinations are preserved; only `/que-ver-en-lisboa` and `/donde-comer-en-lisboa` are new broad pillars. All former `/guia/*` paths redirect permanently to an intent owner, so they cannot become thin bridge pages or competing search results.
+
+Keep E-008 as `PLANNED`. The visual and SEO implementation is ready for Preview review, but the experiment clock starts only after explicit approval and production deployment.
+
+### E-008 premium-pillar iteration — 2026-09-30
+
+The 4 × 2 grid solved balance but still repeated one visual module eight times. The candidate now uses a 2 + 3 + 3 desktop rhythm while preserving the same eight canonical destinations and analytics identifiers.
+
+The experiment also closes an SEO dependency found during review: the two new pillars no longer rely only on the Home and sitemap. They receive limited contextual backlinks, visible author/review signals and precise Article markup. FAQs stay visible but FAQPage markup is removed because it has no ordinary travel-site rich-result opportunity.
+
+Keep E-008 as PLANNED. Local checks and Preview QA do not start the measurement window; only an explicitly approved production deployment does.
+
+### E-009 Preview note — 2026-09-30
+
+The candidate uses GuruWalk's official affiliate MCP only after the visitor submits a date. It shows at most three tours and three times each, keeps the current static category links as fallback/control and does not request live inventory on initial page load.
+
+This is not a GetYourGuide widget experiment: paid activity inventory must not be presented as free-tour availability. Keep E-009 as `PLANNED` until visual approval and production deployment. Compare live-result clicks and partner bookings against the established static funnel; do not declare a win from interaction volume alone.
 
 ## Next candidate pool
 

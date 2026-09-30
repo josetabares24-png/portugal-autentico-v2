@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
-import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import { PageIntro } from '@/components/PageIntro';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
+import FreeTourLiveFinder from '@/components/free-tours/FreeTourLiveFinder';
 import {
   FREE_TOUR_ROUTES,
   getFreeTourAffiliateUrl,
@@ -112,16 +112,6 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
-};
-
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -158,7 +148,6 @@ export default function FreeToursLisboaPage() {
   return (
     <main id="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
       <PageIntro
@@ -175,15 +164,9 @@ export default function FreeToursLisboaPage() {
         )}
       >
           <div className="mt-5">
-            <AffiliateLink
-              href={allToursUrl}
-              campaign={allTours.campaign}
-              content="hero"
-              placement="hero"
-              className="text-cta"
-            >
-              Ver free tours disponibles
-            </AffiliateLink>
+            <Link href="#disponibilidad" className="text-cta">
+              Consultar mi fecha ↓
+            </Link>
           </div>
 
           <ul className="mt-4 grid gap-2.5 border-t border-border-soft pt-5 sm:grid-cols-3">
@@ -195,6 +178,8 @@ export default function FreeToursLisboaPage() {
             ))}
           </ul>
       </PageIntro>
+
+      <FreeTourLiveFinder />
 
       {/* ---------------------------------------------------------------
           Comparador de rutas
@@ -309,7 +294,6 @@ export default function FreeToursLisboaPage() {
             </AffiliateLink>
           </div>
 
-          <AffiliateDisclosure variant="compact" className="mt-6 max-w-2xl text-text-secondary" />
         </div>
       </section>
 

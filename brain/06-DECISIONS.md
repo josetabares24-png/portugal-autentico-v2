@@ -388,7 +388,7 @@ Reglas:
 
 
 ## D-026 — Home becomes a traveler gateway, not an accordion or blog index
-**Date:** 2026-09-25  
+**Date:** 2026-09-25
 **Status:** accepted architecture direction; visual implementation still requires explicit approval
 
 José explicitly chose the next Home architecture direction:
@@ -418,6 +418,138 @@ SEO guardrails:
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 
 
+## D-030 — Reservations appear only after the guide has resolved the decision
+**Date:** 2026-09-25
+**Status:** superseded by D-031 after visual rejection
+
+The traveler gateway can include GetYourGuide recommendations, but only as a selective continuation of an already answered need.
+
+Rules:
+- keep the Home, Movilidad, Fotografías and Cuídate de esto free of booking product blocks;
+- Rutas may show exact Sintra options when the distinction between independent planning and removed friction is explained;
+- Qué visitar may show up to three exact reservations where a ticket, small group or chosen time solves a real problem;
+- Dónde comer may show one gastronomic tour as an orientation option, not as the default way to eat;
+- Dónde tomar algo may show fado when it is the principal timed plan for the night;
+- commercial sections render after the full editorial guide, never before the informational answer;
+- reuse `BOOKABLE_PRODUCTS`, `resolveBookingLink`, `BookingCard` and existing affiliate analytics instead of duplicating provider URLs;
+- do not copy volatile prices, ratings, availability or urgency claims;
+- direct links remain visible without third-party scripts, while partner widgets continue to require explicit cookie consent;
+- each guide shows one to three products maximum and includes the compact affiliate disclosure.
+
+This Preview uses the existing official GetYourGuide partner links and campaign attribution. It does not introduce or claim a separate live catalog API that is not present in the repository.
+
+
+## D-031 — One decision, one direct booking widget
+**Date:** 2026-09-25
+**Status:** accepted direction for a new Preview; production requires explicit visual approval
+
+The first reservation experiment made the traveler guides feel like catalogs. The correction is to reduce both the commercial surface and the amount of interface around the answer.
+
+Rules:
+- use the official GetYourGuide widget directly instead of recreating product cards in the site's design;
+- show one widget only in `Qué visitar`, where the visitor is already deciding what deserves time and a reservation;
+- limit the widget to two broad first-trip choices: Castelo de São Jorge and a Tajo cruise;
+- place it after the practical answer and human questions, before the longer supporting reading;
+- keep Home, Rutas, Movilidad, Dónde comer, Dónde tomar algo, Fotografías and Cuídate de esto free of booking widgets;
+- remove the guide table of contents: it advertised page length instead of resolving the immediate question;
+- shorten heroes and vertical spacing so decisions arrive sooner, especially on mobile;
+- load the third-party widget only after explicit cookie consent and provide a quiet way to reopen preferences;
+- keep the compact affiliate disclosure next to the widget;
+- `/guia/*` remains `noindex, follow`, outside the sitemap, until the canonical strategy is approved;
+- do not merge or deploy this experiment to production without explicit visual approval.
+
+Known data guardrail: the existing `sintra-completa` short link currently resolves to GetYourGuide tour `79596`, a Palacio da Pena product, so it must not be presented as a complete Sintra excursion until its destination is corrected.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-029 — Every traveler guide earns a distinct practical tool
+**Date:** 2026-09-25
+**Status:** accepted Preview standard; production and indexing still require explicit approval
+
+The seven traveler guides must not differ only through copy and photography. Each destination needs one useful decision aid that matches the job the traveler is trying to solve.
+
+Rules:
+- Rutas translates available days into a realistic travel rhythm and base;
+- Movilidad maps common situations to the most sensible transport choice;
+- Qué visitar helps decide what fits in the time actually available;
+- Dónde comer connects the moment of the day with a useful eating format;
+- Dónde tomar algo plans the rhythm of an evening instead of listing venues;
+- Rincones para fotografiar connects light and time with scene and technique;
+- Cuídate de esto pairs a real situation with what to do and what to avoid;
+- tools use continuous editorial layouts rather than a repeated card template;
+- links inside tools remain internal and are measured as `guide_practical_tool`;
+- each tool contains four concise scenarios and remains readable at 390 px;
+- the Home directory uses compact 92 px mobile rows and hides secondary descriptions on the narrowest viewport;
+- guide photography continues to come from `public/images/lisboa-originales`;
+- the rejected-cookie state uses a small settings control instead of a text pill that competes with content.
+
+The SEO gate remains unchanged: `/guia/*` stays `noindex, follow`, without canonicals or sitemap inclusion, until each destination is mapped against established search intent and existing ranking URLs.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-027 — Traveler-guide prototypes stay noindex until the canonical map is resolved
+**Date:** 2026-09-25
+**Status:** accepted implementation guardrail; visual/content review in progress
+
+The seven `/guia/*` destinations are product prototypes, not seven automatically approved SEO pages.
+
+Rules:
+- keep them `noindex` while their visual and editorial role is reviewed;
+- use `follow` so useful links to established editorial answers remain crawlable;
+- do not add them to the sitemap;
+- do not assign canonicals or migrate ranking URLs before intent/query comparison;
+- promote an existing URL when it already owns the broad intent;
+- only `Qué visitar` and `Dónde comer` remain credible new-pillar candidates, pending validation;
+- all portal/guide hero photography must use José's files from `public/images/lisboa-originales`;
+- portal and decision numbering is removed because the choices are parallel, not sequential;
+- guide headings inherit the established Blog title typography rather than creating a separate visual language.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-028 — Traveler guidance starts from human questions, not taxonomy
+**Date:** 2026-09-25
+**Status:** accepted design and editorial standard for the Preview iteration
+
+The gateway and its answer pages should sound like a knowledgeable person helping another person make a decision.
+
+Rules:
+- portal labels use short questions a traveler might genuinely ask, rather than category or product language;
+- display titles may be more human than the underlying SEO title and URL;
+- every guide includes three high-friction questions with direct, contextual answers;
+- answers should acknowledge trade-offs instead of pretending there is one universal recommendation;
+- internal editorial language such as "we should publish" or "this subguide will grow" must never appear in traveler-facing copy;
+- specialist terms such as "spots" should be replaced by ordinary Spanish when a clearer expression exists;
+- the question-and-answer treatment uses continuous editorial bands and rules, not repeated cards or accordions;
+- questions must remain short enough to scan on a 390 px viewport.
+
+This standard does not change the SEO gate in D-027: the seven prototypes remain `noindex, follow`, without canonicals or sitemap inclusion.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-032 — Eight traveler needs have eight canonical owners
+**Date:** 2026-09-30
+**Status:** accepted implementation direction; production requires explicit visual approval
+
+The Home traveler gateway uses eight balanced photographic entrances after adding `Dónde alojarte`, a real planning need that already has a canonical article.
+
+Rules:
+- desktop uses a balanced 4 × 2 directory, tablet 2 × 4 and mobile one full photographic entrance at a time;
+- each entrance links directly to the complete canonical answer;
+- no `/guia/*` route remains a public intermediate destination;
+- preserve `/itinerarios` and the established movement, accommodation, nightlife, photography and mistakes articles;
+- create only `/que-ver-en-lisboa` and `/donde-comer-en-lisboa`, because those broad intents lacked a clear owner;
+- both new pillars must be indexable, self-canonical, present in the sitemap, sourced and complete without a required second click;
+- redirect every legacy `/guia/*` prototype permanently to the relevant owner URL;
+- do not split subtopics into more indexable pages without distinct intent and evidence;
+- keep the official GetYourGuide widget only in `Qué ver`, after the editorial answer.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
 ## 2026-09-27 — Tutabares pasa a Mente Lisboa
 
 **DECISIÓN:** la memoria de prompts, identidad narrativa, estado y aprendizajes de Tutabares vive en `brain/tutabares/` dentro de `josetabares24-png/portugal-autentico-v2`.
@@ -430,3 +562,51 @@ Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
 - GitHub / Estaba Investigando = memoria exclusiva del proyecto true crime/historias reales.
 
 **Regla:** no mantener copias activas de la memoria Tutabares en ambos repositorios.
+
+
+## D-033 — Complete pillars, visible authorship and a 2 + 3 + 3 Home
+**Date:** 2026-09-30
+**Status:** accepted candidate implementation; production requires explicit visual approval
+
+The eight canonical owners from D-032 remain unchanged. This decision refines presentation and authority without creating more public destinations.
+
+Rules:
+- desktop uses an editorial 2 + 3 + 3 photographic rhythm: two broad first decisions, followed by six specific needs;
+- tablet remains two columns and mobile remains one direct photographic entrance;
+- every Home entrance still has exactly one canonical destination and uses a first-party photograph;
+- /que-ver-en-lisboa and /donde-comer-en-lisboa must answer the broad need on the page itself, including concrete trade-offs, visible FAQs, review date and primary sources;
+- optional deep reading appears only after the complete answer and is limited to four specific next decisions;
+- each new pillar receives a small number of contextual backlinks from relevant support articles; do not run a site-wide exact-match linking campaign;
+- protected ranking pages keep their titles, main copy and intent;
+- visible authorship points to José Tabares, and /sobre-nosotros identifies the author and editorial method with ProfilePage markup;
+- Article and BreadcrumbList are the useful structured-data types for these guides;
+- keep FAQs visible for humans, but do not publish FAQPage markup as decorative schema because ordinary travel sites are not eligible for its rich result;
+- the official GetYourGuide widget remains only on Qué ver, after the editorial answer and behind consent;
+- do not merge or deploy to production until the responsive Preview is explicitly approved.
+
+This decision supersedes only the 4 × 2 desktop layout in D-032. Canonical ownership, redirects and the rule against thin bridge pages remain in force.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]].
+
+
+## D-034 — Pillar pages inherit the Blog reading language; Free Tours gets one date tool
+**Date:** 2026-09-30
+**Status:** accepted Preview candidate; production requires explicit visual approval
+
+User review found that `/que-ver-en-lisboa` and `/donde-comer-en-lisboa` looked like a separate product even though the rest of the gateway resolved into established Blog articles. Their canonical role and full content remain correct; the mismatch was presentation.
+
+Rules:
+- keep both pillar URLs, indexability, complete answers, metadata and structured data;
+- present them with the established Blog system: cream paper, editorial header, panoramic first-party photograph, narrow reading column, article typography, restrained table of contents, visible FAQs, sources and author block;
+- do not turn either page into a thin Blog index or require another click to get the answer;
+- keep the single official GetYourGuide widget only in `Qué ver`, inside the article rhythm and behind consent;
+- on `/free-tours-lisboa`, use GuruWalk's official affiliate MCP/API rather than describing paid GetYourGuide products as free tours;
+- add one user-initiated date finder, capped at three live results and three times per result;
+- keep the API key server-side, validate dates and returned domains, cache requests and preserve the static category links as fallback/control;
+- do not add a live marketplace, automatic page-load request, invented availability, price or urgency claim;
+- measure live-result clicks separately with placement `live-date-finder`;
+- keep production untouched until responsive Preview approval.
+
+This is an explicit, narrow exception to the 28/09–04/10 web focus freeze requested by José. It extends the existing Free Tours surface, which already has the clearest owned affiliate-click signal, instead of opening a new provider or commercial line.
+
+Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]] and [[business/GURUWALK-MCP-2026-09-23]].

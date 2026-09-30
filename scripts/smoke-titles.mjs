@@ -26,9 +26,11 @@ const npxCommand = isWindows ? 'npx.cmd' : 'npx';
 // Known public pages whose title should contain the brand exactly once.
 const PAGES = [
   '/',
+  '/blog',
   '/actividades',
   '/itinerarios',
-  '/pack-completo',
+  '/que-ver-en-lisboa',
+  '/donde-comer-en-lisboa',
   '/planifica-tu-viaje',
   '/calculadora-presupuesto-lisboa',
   '/aviso-legal',
