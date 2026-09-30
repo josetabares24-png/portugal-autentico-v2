@@ -20,6 +20,7 @@ const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
 const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
 const homeDirectory = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'TravelerDirectory.tsx'), 'utf8');
+const homePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'page.tsx'), 'utf8');
 const pillarComponent = readFileSync(join(process.cwd(), 'src', 'components', 'traveler', 'TravelPillarPage.tsx'), 'utf8');
 const blogArticlePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'blog', '[slug]', 'page.tsx'), 'utf8');
 const authorPage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'sobre-nosotros', 'page.tsx'), 'utf8');
@@ -46,6 +47,11 @@ check(homeDirectory.includes('lg:grid-cols-6'), 'la Home usa una composición ed
 check(
   ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'].every((href) => homeDirectory.includes(href)),
   'la Home enlaza directamente los dos nuevos pilares',
+);
+check(
+  homePage.includes('Artículos que te pueden interesar')
+    && ['time-out-market-lisboa', 'estacion-oriente-lisboa', 'estacion-olaias-lisboa'].every((slug) => homePage.includes(slug)),
+  'la Home conserva al final los tres artículos editoriales aprobados',
 );
 
 for (const pillar of [whatToSeeGuide, whereToEatGuide]) {
