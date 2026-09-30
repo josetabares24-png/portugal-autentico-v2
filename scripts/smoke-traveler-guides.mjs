@@ -21,6 +21,7 @@ const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.ti
 const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
 const homeDirectory = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'TravelerDirectory.tsx'), 'utf8');
 const homePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'page.tsx'), 'utf8');
+const navbar = readFileSync(join(process.cwd(), 'src', 'components', 'Navbar.tsx'), 'utf8');
 const pillarComponent = readFileSync(join(process.cwd(), 'src', 'components', 'traveler', 'TravelPillarPage.tsx'), 'utf8');
 const blogArticlePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'blog', '[slug]', 'page.tsx'), 'utf8');
 const authorPage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'sobre-nosotros', 'page.tsx'), 'utf8');
@@ -52,6 +53,10 @@ check(
   homePage.includes('Artículos que te pueden interesar')
     && ['time-out-market-lisboa', 'estacion-oriente-lisboa', 'estacion-olaias-lisboa'].every((slug) => homePage.includes(slug)),
   'la Home conserva al final los tres artículos editoriales aprobados',
+);
+check(
+  navbar.includes("{ href: '/comprar-entradas', label: 'Entradas' }"),
+  'el header conserva Entradas como acceso principal',
 );
 
 for (const pillar of [whatToSeeGuide, whereToEatGuide]) {

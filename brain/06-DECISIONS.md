@@ -64,6 +64,8 @@ Itinerarios, Actividades, Entradas and Planifica tu viaje lose global-navigation
 
 Reason: 90-day evidence shows that the blog is the acquisition engine, while the prior navigation presented too many weak products as if they were equally important.
 
+**Amendment — 2026-10-01:** Restore **Entradas** as a third primary-navigation destination at `/comprar-entradas`. Ticket purchase is a distinct, high-intent traveler need and should remain discoverable while the product is improved incrementally. This does not restore the previous broad navigation. The next iteration should strengthen the existing destination with curated ticket inventory, the tickets API and GetYourGuide, without turning the header into a catalog.
+
 ## D-010 — Free tours is the current commercial exception
 **Date:** 2026-09-23  
 **Status:** accepted

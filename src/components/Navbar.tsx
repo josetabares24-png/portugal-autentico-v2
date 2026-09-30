@@ -19,6 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/blog', label: 'Guías' },
     { href: '/free-tours-lisboa', label: 'Free tours' },
+    { href: '/comprar-entradas', label: 'Entradas' },
   ];
 
   const isActive = (href: string) =>
