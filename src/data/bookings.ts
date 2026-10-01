@@ -181,7 +181,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       },
     },
     activitySlug: 'oceanario-lisboa',
-    ctaLabel: 'Ver entradas',
+    ctaLabel: 'Comprar entrada al Oceanário',
   },
   {
     id: 'castelo-sao-jorge',
@@ -211,7 +211,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       },
     },
     activitySlug: 'castelo-sao-jorge',
-    ctaLabel: 'Ver entradas',
+    ctaLabel: 'Comprar entrada al Castelo',
   },
   {
     id: 'sintra-palacio-pena',
@@ -244,7 +244,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     // vende la de Pena, así que como CTA de esa ficha sería una
     // correspondencia parcial. Queda disponible para artículos que
     // recomienden exactamente la entrada al Palacio da Pena y su parque.
-    ctaLabel: 'Ver entradas al Palacio da Pena',
+    ctaLabel: 'Comprar entrada a Pena',
   },
   {
     id: 'lisboa-card',
@@ -268,7 +268,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
         campaign: 'web_activ_lisboa-card',
       },
     },
-    ctaLabel: 'Ver Lisboa Card',
+    ctaLabel: 'Comprar Lisboa Card',
   },
 
   // ------------------------------------------------------------ experiencias
@@ -300,7 +300,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       },
     },
     activitySlug: 'crucero-atardecer-tajo',
-    ctaLabel: 'Consultar disponibilidad',
+    ctaLabel: 'Reservar paseo por el Tajo',
   },
   {
     id: 'fado',
@@ -330,7 +330,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       },
     },
     activitySlug: 'fado-en-alfama',
-    ctaLabel: 'Ver opciones',
+    ctaLabel: 'Reservar espectáculo de fado',
   },
   {
     id: 'tour-gastronomico',
@@ -362,7 +362,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     // tasca tradicional», que va justo de lo contrario: comer barato y por tu
     // cuenta. Un tour guiado ahí contradiría su tip de ahorro, así que este
     // producto vive sólo en el hub.
-    ctaLabel: 'Ver opciones',
+    ctaLabel: 'Reservar tour gastronómico',
   },
 
   // ------------------------------------------------------------ excursiones
@@ -389,7 +389,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       },
     },
     activitySlug: 'sintra-dia-completo',
-    ctaLabel: 'Consultar disponibilidad',
+    ctaLabel: 'Reservar excursión a Sintra',
   },
 ];
 

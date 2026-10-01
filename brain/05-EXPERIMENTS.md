@@ -86,6 +86,16 @@ The free-tour date finder remains because it answers a genuinely date-dependent 
 
 Keep E-009 as `PLANNED`. This refinement reduces friction but is not evidence of conversion improvement until production measurement begins.
 
+### E-009 transactional clarity and search-intent iteration — 2026-10-01
+
+The ticket and free-tour candidates now state the action the traveler can actually complete. Ticket cards use product-specific labels such as “Comprar entrada al Oceanário” and “Comprar Lisboa Card”; free-tour routes and live time slots use explicit reservation labels. Hero copy, title metadata and trust signals align with the same intent while keeping checkout on Tiqets, GetYourGuide or GuruWalk.
+
+The pages must remain editorial selectors rather than simulated merchant pages. Do not add fabricated urgency, stock, rankings or `Product`/`Offer` structured data when Estaba en Lisboa is not the seller and does not control the final offer. Keep visible provider/payment context, affiliate disclosure and “Desde” qualification for API prices.
+
+The date finder records only coarse days-ahead buckets, result count and success/error state; it never sends the exact travel date. These events diagnose finder usefulness. The commercial result remains attributable outbound clicks and confirmed partner bookings by page, provider and product/campaign.
+
+Keep E-009 as `PLANNED` until explicit visual approval and production deployment. A stronger CTA is a hypothesis, not conversion proof.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

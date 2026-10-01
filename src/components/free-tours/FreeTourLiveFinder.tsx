@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { ArrowUpRight, CalendarDays, LoaderCircle, Star } from 'lucide-react';
 import Link from 'next/link';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
+import { trackEvent } from '@/lib/analytics';
 import type { LiveFreeTour, LiveFreeToursResponse } from '@/types/guruwalk-live';
 
 type FinderState = 'idle' | 'loading' | 'success' | 'error';
@@ -47,6 +48,18 @@ function formatDate(date: string) {
     day: 'numeric',
     month: 'long',
   }).format(new Date(`${date}T12:00:00Z`));
+}
+
+function daysAheadBucket(date: string) {
+  const today = new Date(`${lisbonDate()}T12:00:00Z`);
+  const selected = new Date(`${date}T12:00:00Z`);
+  const days = Math.max(0, Math.round((selected.getTime() - today.getTime()) / 86_400_000));
+
+  if (days <= 2) return '0-2';
+  if (days <= 7) return '3-7';
+  if (days <= 30) return '8-30';
+  if (days <= 90) return '31-90';
+  return '91-180';
 }
 
 function trackLiveClick(tour: LiveFreeTour, url: string, content: string) {
@@ -115,6 +128,11 @@ export default function FreeTourLiveFinder() {
 
     setState('loading');
     setMessage('');
+    const searchWindow = daysAheadBucket(date);
+    trackEvent('free_tour_search', {
+      placement: 'live-date-finder',
+      days_ahead_bucket: searchWindow,
+    });
 
     try {
       const response = await fetch(`/api/free-tours?date=${encodeURIComponent(date)}`, {
@@ -128,12 +146,22 @@ export default function FreeTourLiveFinder() {
 
       setTours(payload.tours);
       setState('success');
+      trackEvent('free_tour_search_result', {
+        placement: 'live-date-finder',
+        days_ahead_bucket: searchWindow,
+        result_count: payload.tours.length,
+        has_results: payload.tours.length > 0,
+      });
       if (payload.tours.length === 0) {
         setMessage('No aparecieron recorridos para ese día. Prueba otra fecha o compara las zonas que encontrarás más abajo.');
       }
     } catch {
       setTours([]);
       setState('error');
+      trackEvent('free_tour_search_error', {
+        placement: 'live-date-finder',
+        days_ahead_bucket: searchWindow,
+      });
       setMessage('Ahora mismo no pudimos traer los horarios. La comparación de rutas y los enlaces de reserva siguen disponibles debajo.');
     }
   }
@@ -144,13 +172,14 @@ export default function FreeTourLiveFinder() {
         <div className="grid gap-6 border-y border-border-soft py-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 lg:py-7">
           <div>
             <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
-              Horarios actualizados
+              Reserva tu plaza
             </p>
             <h2 className="max-w-xl font-display text-[2rem] font-semibold not-italic leading-[1.08] text-night md:text-4xl">
-              Mira qué tours hay ese día
+              Encuentra un free tour para tu fecha
             </h2>
             <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Elige tu fecha y compara hasta tres recorridos con horario.
+              Te mostramos hasta tres recorridos disponibles, con sus horarios y
+              enlace directo de reserva.
             </p>
           </div>
 
@@ -179,7 +208,7 @@ export default function FreeTourLiveFinder() {
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-terracotta px-6 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark disabled:cursor-wait disabled:opacity-70"
               >
                 {state === 'loading' ? <LoaderCircle className="animate-spin" size={18} aria-hidden="true" /> : null}
-                {state === 'loading' ? 'Consultando' : 'Ver horarios'}
+                {state === 'loading' ? 'Buscando' : 'Ver tours disponibles'}
               </button>
             </div>
             <p
@@ -210,7 +239,7 @@ export default function FreeTourLiveFinder() {
           {state === 'success' && tours.length > 0 ? (
             <div className="mt-9">
               <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">
-                Opciones para {formatDate(date)}
+                Disponibles para {formatDate(date)}
               </p>
               <div className="grid gap-6 md:grid-cols-3">
                 {tours.map((tour, index) => {
@@ -229,7 +258,7 @@ export default function FreeTourLiveFinder() {
                         <p className="mb-2 font-body text-[10px] font-bold uppercase tracking-[0.15em] text-terracotta">
                           Free tour en español
                         </p>
-                        <h3 className="font-display text-xl font-semibold leading-snug text-night">
+                        <h3 className="font-display text-xl font-semibold not-italic leading-snug text-night">
                           {tour.name}
                         </h3>
                         {tour.rating > 0 && tour.reviews > 0 ? (
@@ -246,10 +275,11 @@ export default function FreeTourLiveFinder() {
                               href={slot.url}
                               target="_blank"
                               rel="sponsored noopener noreferrer"
+                              aria-label={`Reservar ${tour.name} a las ${formatSlotTime(slot.time)}`}
                               onClick={() => trackLiveClick(tour, slot.url, `${tour.id}-${slot.eventId}`)}
                               className="inline-flex min-h-10 items-center gap-1.5 rounded-md border border-night/20 px-3 font-body text-xs font-bold text-night transition-colors hover:border-terracotta hover:bg-terracotta hover:text-white"
                             >
-                              {formatSlotTime(slot.time)}
+                              Reservar {formatSlotTime(slot.time)}
                               <ArrowUpRight size={14} aria-hidden="true" />
                             </a>
                           )) : (
@@ -260,7 +290,7 @@ export default function FreeTourLiveFinder() {
                               onClick={() => trackLiveClick(tour, tour.url, String(tour.id))}
                               className="inline-flex min-h-10 items-center gap-1.5 rounded-md bg-terracotta px-4 font-body text-xs font-bold text-white transition-colors hover:bg-primary-dark"
                             >
-                              Ver recorrido
+                              Ver tour y reservar
                               <ArrowUpRight size={14} aria-hidden="true" />
                             </a>
                           )}

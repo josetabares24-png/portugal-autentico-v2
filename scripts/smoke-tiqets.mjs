@@ -15,12 +15,16 @@ const clientPath = path.join(
   'comprar-entradas',
   'ComprarEntradasClient.tsx'
 );
+const bookingCardPath = path.join(root, 'src', 'components', 'afiliados', 'BookingCard.tsx');
+const bookingsPath = path.join(root, 'src', 'data', 'bookings.ts');
 const envExamplePath = path.join(root, '.env.example');
 
-const [adapter, page, client, envExample] = await Promise.all([
+const [adapter, page, client, bookingCard, bookings, envExample] = await Promise.all([
   readFile(adapterPath, 'utf8'),
   readFile(pagePath, 'utf8'),
   readFile(clientPath, 'utf8'),
+  readFile(bookingCardPath, 'utf8'),
+  readFile(bookingsPath, 'utf8'),
   readFile(envExamplePath, 'utf8'),
 ]);
 
@@ -43,6 +47,23 @@ assert.doesNotMatch(
   'ocho recomendaciones curadas no deben convertirse en un catálogo con filtros'
 );
 assert.match(client, /HUB_PRODUCTS\.map/, 'las ocho recomendaciones deben mostrarse directamente');
+assert.match(
+  bookingCard,
+  /const ctaLabel = isUnavailable[\s\S]*: product\.ctaLabel/,
+  'cada tarjeta debe conservar su CTA de compra específico'
+);
+for (const label of [
+  'Comprar entrada al Oceanário',
+  'Comprar entrada al Castelo',
+  'Comprar entrada a Pena',
+  'Comprar Lisboa Card',
+  'Reservar paseo por el Tajo',
+  'Reservar espectáculo de fado',
+  'Reservar tour gastronómico',
+  'Reservar excursión a Sintra',
+]) {
+  assert.match(bookings, new RegExp(label), `falta el CTA transaccional: ${label}`);
+}
 assert.match(envExample, /^TIQETS_API_TOKEN=$/m, 'falta documentar la variable de entorno');
 assert.doesNotMatch(envExample, /tqat-[A-Za-z0-9_-]+/, 'la clave real no puede estar en .env.example');
 

@@ -90,7 +90,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     description:
       'La mejor opción para una primera visita: Baixa, Chiado, Rossio y los principales episodios de la historia de Lisboa.',
     duration: 'Normalmente 2-3 horas',
-    ctaLabel: 'Ver tours por el centro',
+    ctaLabel: 'Reservar tour por el centro',
     campaign: 'free-tour-centro',
     publicUrl: `${GURUWALK_LISBOA}/tag/imprescindible`,
   },
@@ -106,7 +106,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
       'Calles estrechas, miradores, fado, historia medieval y algunas de las cuestas más conocidas de Lisboa.',
     notice:
       'No es la mejor ruta para personas con movilidad reducida o dificultad para caminar por pendientes.',
-    ctaLabel: 'Ver tours por Alfama',
+    ctaLabel: 'Reservar free tour por Alfama',
     campaign: 'free-tour-alfama',
     publicUrl: `${GURUWALK_LISBOA}/tag/alfama`,
   },
@@ -120,7 +120,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     imageAlt: 'Torre de Belém junto al río Tajo',
     description:
       'Una ruta centrada en los Descubrimientos, los Jerónimos, la Torre de Belém y la historia marítima portuguesa.',
-    ctaLabel: 'Ver tours por Belém',
+    ctaLabel: 'Reservar free tour por Belém',
     campaign: 'free-tour-belem',
     publicUrl: `${GURUWALK_LISBOA}/tag/belem`,
   },
@@ -134,7 +134,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     imageAlt: 'Terraza con azulejos sobre los tejados de Alfama y el río Tajo al anochecer',
     description:
       'Historias menos conocidas, leyendas, secretos y episodios oscuros de la ciudad.',
-    ctaLabel: 'Ver tours de misterios',
+    ctaLabel: 'Reservar tour de misterios',
     campaign: 'free-tour-misterios',
     publicUrl: `${GURUWALK_LISBOA}/tag/leyendas-secretos-y-misterios`,
   },
@@ -148,7 +148,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     imageAlt: 'Vista nocturna de la Baixa de Lisboa y el puente 25 de Abril',
     description:
       'Una forma distinta de recorrer Alfama y el centro cuando bajan las temperaturas y cambia el ambiente de las calles.',
-    ctaLabel: 'Ver tours nocturnos',
+    ctaLabel: 'Reservar tour nocturno',
     campaign: 'free-tour-nocturno',
     publicUrl: `${GURUWALK_LISBOA}/tag/nocturno`,
   },

@@ -28,6 +28,8 @@ const PAGES = [
   '/',
   '/blog',
   '/actividades',
+  '/comprar-entradas',
+  '/free-tours-lisboa',
   '/itinerarios',
   '/que-ver-en-lisboa',
   '/donde-comer-en-lisboa',

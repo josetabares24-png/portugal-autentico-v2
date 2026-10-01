@@ -4,9 +4,9 @@ export const metadata: Metadata = {
   // Sin sufijo de marca: la plantilla del layout raíz ya añade
   // «| Estaba en Lisboa», y ponerlo aquí lo duplicaría. Hay una suite
   // (`smoke:titles`) que vigila justo eso.
-  title: 'Comprar Entradas en Lisboa',
+  title: 'Comprar entradas en Lisboa: precios y reservas',
   description:
-    'Entradas para monumentos, atracciones, experiencias y excursiones desde Lisboa, seleccionadas una a una por Estaba en Lisboa. Con nuestro criterio sobre cuándo merece la pena reservar por adelantado.',
+    'Compra entradas para el Oceanário, Castelo de São Jorge, Palacio da Pena y Lisboa Card. Compara qué reservar antes, precios y disponibilidad.',
   keywords: [
     'comprar entradas lisboa',
     'entradas monumentos lisboa',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
-    title: 'Comprar Entradas en Lisboa',
+    title: 'Comprar entradas en Lisboa: precios y reservas',
     description:
-      'Monumentos, atracciones, experiencias y excursiones desde Lisboa que merecen reservarse por adelantado, con el criterio de un local.',
+      'Ocho reservas útiles, con criterio local, precio y disponibilidad en el proveedor antes de pagar.',
     url: 'https://estabaenlisboa.com/comprar-entradas',
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entradas y experiencias en Lisboa',
+    title: 'Comprar entradas en Lisboa',
     description:
-      'Qué merece reservar por adelantado en Lisboa y qué puedes dejar para decidir allí.',
+      'Qué conviene reservar antes y dónde comprar cada entrada o experiencia.',
     images: ['https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg'],
   },
   alternates: {

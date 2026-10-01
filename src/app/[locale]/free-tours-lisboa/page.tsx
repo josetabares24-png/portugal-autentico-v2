@@ -15,9 +15,9 @@ const PAGE_URL = 'https://estabaenlisboa.com/free-tours-lisboa';
 const HERO_IMAGE = '/images/lisboa-originales/rua-augusta-arco-lisboa.webp';
 
 export const metadata: Metadata = {
-  title: 'Free tours en Lisboa: rutas y consejos de un local',
+  title: 'Free tours en Lisboa: horarios y reserva',
   description:
-    'Comparamos las rutas de free tour por el centro, Alfama, Belém y otros recorridos de Lisboa: se reservan con antelación y no tienen precio fijo, al final decides tú la propina.',
+    'Consulta free tours en Lisboa para tu fecha, compara rutas por el Centro, Alfama y Belém y reserva plaza sin pago previo. Tú decides la propina.',
   keywords: [
     'free tour lisboa',
     'free tours lisboa',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'visita guiada lisboa',
   ],
   openGraph: {
-    title: 'Free tours en Lisboa: rutas y consejos de un local',
+    title: 'Free tours en Lisboa: horarios y reserva',
     description:
-      'Rutas de free tour por el centro, Alfama, Belém y más, explicadas por alguien que vive en Lisboa. Reserva previa y pago libre mediante propina.',
+      'Compara rutas, consulta horarios reales para tu fecha y reserva plaza sin pago previo.',
     url: PAGE_URL,
     images: [
       {
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free tours en Lisboa: rutas y horarios',
+    title: 'Free tours en Lisboa: horarios y reserva',
     description:
-      'Compara recorridos por el centro, Alfama y Belém y consulta horarios reales para tu fecha.',
+      'Consulta recorridos disponibles y reserva tu plaza sin pago previo.',
     images: [`https://estabaenlisboa.com${HERO_IMAGE}`],
   },
   alternates: { canonical: PAGE_URL },
@@ -155,14 +155,14 @@ export default function FreeToursLisboaPage() {
         image={HERO_IMAGE}
         imageAlt="Arco da Rua Augusta y viajeros caminando por la Baixa de Lisboa"
         objectPosition="center 45%"
-        eyebrow="Lisboa con contexto"
+        eyebrow="Reserva sin pago previo"
         title="Free tours en Lisboa"
-        description="Encuentra un recorrido para tu fecha, mira los horarios reales y elige la zona que de verdad quieres entender. Reservas sin pago previo y decides la propina al final."
+        description="Elige fecha, compara recorridos en español y reserva tu plaza. No pagas por adelantado; al terminar decides la propina."
         primaryHref="#disponibilidad"
-        primaryLabel="Buscar por fecha"
+        primaryLabel="Ver tours y horarios"
         secondaryHref="#comparar-rutas"
         secondaryLabel="Comparar zonas"
-        signals={['Centro y Baixa', 'Alfama y miradores', 'Belém y su historia']}
+        signals={['Horarios reales', 'Sin pago previo', 'Propina al terminar']}
         breadcrumb={(
           <nav aria-label="Breadcrumb" className="mb-auto flex items-center gap-2 pt-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">
             <Link href="/" className="transition-colors hover:text-gold">Inicio</Link>
@@ -179,14 +179,13 @@ export default function FreeToursLisboaPage() {
       ---------------------------------------------------------------- */}
       <section id="comparar-rutas" className="scroll-mt-20 bg-background-light pb-8 pt-7 md:pb-10 md:pt-7">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Comparar rutas</p>
+          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Elige tu recorrido</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Qué ruta encaja mejor con tu viaje
+            Compara la zona antes de reservar
           </h2>
           <p className="mb-7 max-w-2xl leading-relaxed text-text-secondary">
-            Cada recorrido cuenta una Lisboa distinta. La disponibilidad, los horarios
-            y los idiomas cambian según la fecha, así que conviene consultarlos para
-            tus días concretos antes de decidir.
+            Centro, Alfama y Belém cuentan historias distintas. Elige la zona que
+            realmente quieres conocer y consulta después sus horarios para tu fecha.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -246,7 +245,7 @@ export default function FreeToursLisboaPage() {
                         campaign={route.campaign}
                         content={`card-${route.id}`}
                         placement="category-card"
-                        className="inline-flex min-h-10 items-center font-body text-sm font-bold text-terracotta underline decoration-terracotta/40 underline-offset-4 hover:text-primary-dark"
+                        className="inline-flex min-h-11 w-full items-center justify-center rounded-md border border-terracotta/45 px-4 text-center font-body text-sm font-bold text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta hover:text-white"
                       >
                         {route.ctaLabel}
                       </AffiliateLink>
@@ -283,7 +282,7 @@ export default function FreeToursLisboaPage() {
                 placement="category-card"
                 className="mt-5 inline-flex min-h-11 items-center self-start rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark"
               >
-                Ver todos los recorridos
+                Ver horarios y reservar
               </AffiliateLink>
             </article>
           </div>
@@ -391,11 +390,11 @@ export default function FreeToursLisboaPage() {
       <section className="border-y border-border-soft bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="mb-4 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            ¿Ya sabes qué zona quieres conocer?
+            Reserva tu plaza para conocer Lisboa
           </h2>
           <p className="mb-7 leading-relaxed text-text-secondary">
-            Comprueba qué recorridos están disponibles durante tu viaje y elige el que
-            mejor encaje con tus días.
+            Revisa las rutas disponibles para tus fechas y termina la reserva en
+            GuruWalk sin pago previo.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
@@ -406,7 +405,7 @@ export default function FreeToursLisboaPage() {
               placement="final-cta"
               className="text-cta w-full justify-center sm:w-auto"
             >
-              Consultar disponibilidad en Lisboa
+              Ver todos los free tours
             </AffiliateLink>
             <Link href="/actividades" className="text-cta w-full justify-center sm:w-auto">
               Ver todas las actividades

@@ -673,3 +673,23 @@ Rules:
 - review control density and section spacing at 390 px and desktop before Preview approval.
 
 This decision applies the broader calm, human-first interface principles from D-034 to the two booking surfaces.
+
+
+## D-038 — Commercial intent must be explicit without impersonating the seller
+**Date:** 2026-10-01
+**Status:** accepted Preview guardrail; production requires explicit visual approval
+
+Booking pages should help a traveler act, not hide the transaction behind generic “see options” language. That clarity must remain accurate about who provides and charges for the booking.
+
+Rules:
+- use concise search titles that match the real task: buying Lisbon tickets or finding and reserving a free tour;
+- make each CTA name the exact action and product or route, such as “Comprar entrada al Oceanário” or “Reservar free tour por Alfama”;
+- keep the final price and payment with the named provider and say so visibly before the catalog;
+- preserve `sponsored noopener noreferrer`, referral validation and product/campaign-level attribution on outbound links;
+- never add fake scarcity, countdowns, “best seller” claims, invented savings or unsupported rankings;
+- do not publish merchant `Product` or `Offer` markup unless Estaba en Lisboa genuinely controls and can keep the required offer data accurate;
+- preserve useful editorial structure, first-hand photographs, visible questions, sources and internal links so the page remains a complete answer rather than a doorway;
+- record exact travel dates neither in analytics nor campaign parameters; use coarse planning-window buckets for finder diagnostics;
+- judge the experiment by attributable outbound clicks and partner bookings, not by button impressions or finder submissions alone.
+
+This decision extends D-035 through D-037 and applies specifically to `/comprar-entradas` and `/free-tours-lisboa`.

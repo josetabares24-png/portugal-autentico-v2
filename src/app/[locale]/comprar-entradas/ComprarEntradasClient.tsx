@@ -91,14 +91,14 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
         image="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
         imageAlt="Tejados de Alfama y el río Tajo fotografiados desde un mirador de Lisboa"
         objectPosition="center 58%"
-        eyebrow="Reserva solo lo que compensa"
-        title="Entradas y experiencias en Lisboa"
-        description="Una selección corta para evitar colas, asegurar una buena hora y no llenar el viaje de reservas que no necesitas."
+        eyebrow="Compra solo lo que compensa"
+        title="Comprar entradas en Lisboa"
+        description="Ocho reservas útiles para evitar colas, asegurar una buena hora y pagar solo por lo que realmente cabe en tu viaje."
         primaryHref="#catalogo"
-        primaryLabel="Ver opciones"
+        primaryLabel="Elegir y comprar entradas"
         secondaryHref="/free-tours-lisboa"
         secondaryLabel="Prefiero empezar con un free tour"
-        signals={['Entradas con hora', 'Planes con plazas limitadas', 'Excursiones de un día']}
+        signals={['Precio antes de pagar', 'Pago en el proveedor', 'Sin coste adicional']}
         breadcrumb={(
           <nav aria-label="Breadcrumb" className="mb-auto flex items-center gap-2 pt-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">
             <Link href="/" className="transition-colors hover:text-gold">Inicio</Link>
@@ -113,15 +113,16 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
           <div className="grid gap-4 border-b border-border-soft pb-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16">
             <div>
               <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
-                Elige sin perder tiempo
+                Reserva con criterio
               </p>
-              <h2 className="font-display text-3xl font-semibold leading-tight text-night md:text-4xl">
-                Qué merece reservar en Lisboa
+              <h2 className="font-display text-3xl font-semibold not-italic leading-tight text-night md:text-4xl">
+                Entradas que sí conviene comprar antes
               </h2>
             </div>
             <p className="max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Ocho opciones, no ochenta. Cada una responde a una decisión real del viaje:
-              entrar, vivir una experiencia o resolver una salida de un día.
+              Ocho opciones, no ochenta. Abre la que te interesa, elige fecha y
+              completa la compra en Tiqets o GetYourGuide con el precio final visible
+              antes de pagar.
             </p>
           </div>
 

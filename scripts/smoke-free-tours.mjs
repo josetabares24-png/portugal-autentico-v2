@@ -368,8 +368,8 @@ async function checkLanding(baseUrl) {
 
   record(
     'el CTA final es distinto del hero',
-    html.includes('¿Ya sabes qué zona quieres conocer?') &&
-      html.includes('Consultar disponibilidad en Lisboa'),
+    html.includes('Reserva tu plaza para conocer Lisboa') &&
+      html.includes('Ver todos los free tours'),
     'CTA de cierre propio'
   );
 
@@ -383,15 +383,15 @@ async function checkLanding(baseUrl) {
 
   record(
     'el hero lleva al buscador de fecha y no abre otro catálogo',
-    html.includes('href="#disponibilidad"') && html.includes('Buscar por fecha'),
+    html.includes('href="#disponibilidad"') && html.includes('Ver tours y horarios'),
     'enlace interno presente'
   );
 
   record(
     'la página incluye el buscador de disponibilidad real',
-    html.includes('Mira qué tours hay ese día') &&
+    html.includes('Encuentra un free tour para tu fecha') &&
       html.includes('id="free-tour-date"') &&
-      html.includes('Ver horarios'),
+      html.includes('Ver tours disponibles'),
     'módulo de fecha presente'
   );
 

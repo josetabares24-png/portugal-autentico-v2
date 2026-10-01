@@ -82,9 +82,7 @@ export function BookingCard({
 
   const ctaLabel = isUnavailable
     ? 'Consultar otras fechas'
-    : placementLabel.startsWith('comprar-entradas')
-      ? 'Ver disponibilidad'
-      : product.ctaLabel;
+    : product.ctaLabel;
 
   let linkDomain = '';
   try {
