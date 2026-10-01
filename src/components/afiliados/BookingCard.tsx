@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
+import type { TiqetsProductSnapshot } from '@/types/tiqets-live';
 
 /*
  * Tarjeta comercial de Estaba en Lisboa.
@@ -32,15 +33,58 @@ interface BookingCardProps {
   placementLabel: string;
   /** Sólo la primera tarjeta: es la que compite por ser el LCP. */
   priority?: boolean;
+  /** Información pública y saneada por el servidor. */
+  tiqetsProduct?: TiqetsProductSnapshot;
 }
 
-export function BookingCard({ product, placement, placementLabel, priority = false }: BookingCardProps) {
-  const link = resolveBookingLink(product, placement);
-  if (!link) return null;
+const priceFormatter = new Intl.NumberFormat('es-ES', {
+  style: 'currency',
+  currency: 'EUR',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
+});
 
-  const ctaLabel = placementLabel.startsWith('comprar-entradas')
-    ? 'Ver disponibilidad'
-    : product.ctaLabel;
+function formatPrice(price: number, currency: string): string {
+  try {
+    return new Intl.NumberFormat('es-ES', {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: Number.isInteger(price) ? 0 : 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  } catch {
+    return priceFormatter.format(price);
+  }
+}
+
+export function BookingCard({
+  product,
+  placement,
+  placementLabel,
+  priority = false,
+  tiqetsProduct,
+}: BookingCardProps) {
+  const baseLink = resolveBookingLink(product, placement);
+  if (!baseLink) return null;
+
+  const link = tiqetsProduct?.bookingUrl
+    ? { ...baseLink, url: tiqetsProduct.bookingUrl }
+    : baseLink;
+  const isUnavailable = tiqetsProduct?.saleStatus === 'unavailable';
+  const livePrice =
+    typeof tiqetsProduct?.price === 'number' && tiqetsProduct.currency
+      ? formatPrice(tiqetsProduct.price, tiqetsProduct.currency)
+      : null;
+  const hasLiveDetails = Boolean(
+    tiqetsProduct &&
+      (livePrice || tiqetsProduct.smartphoneTicket || tiqetsProduct.saleStatus === 'unavailable')
+  );
+
+  const ctaLabel = isUnavailable
+    ? 'Consultar otras fechas'
+    : placementLabel.startsWith('comprar-entradas')
+      ? 'Ver disponibilidad'
+      : product.ctaLabel;
 
   let linkDomain = '';
   try {
@@ -84,32 +128,52 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           {product.blurb}
         </p>
 
-        <a
-          href={link.url}
-          target="_blank"
-          rel="sponsored noopener noreferrer"
-          className="mt-auto inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-          onClick={() =>
-            trackAffiliateClick({
-              affiliate_partner: link.provider,
-              affiliate_campaign: link.campaign,
-              affiliate_content: product.id,
-              affiliate_placement: placementLabel,
-              // Qué enlace se usó de verdad: mientras no existan los propios
-              // de cada ubicación, esto deja visible que se recurrió a otro.
-              affiliate_link_placement: link.usedPlacement,
-              destination: 'lisboa',
-              link_url: link.url,
-              link_domain: linkDomain,
-              outbound: 'true',
-              page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-            })
-          }
-        >
-          {ctaLabel}
-          <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
-          <span className="sr-only"> (se abre en una pestaña nueva)</span>
-        </a>
+        <div className="mt-auto">
+          {hasLiveDetails ? (
+            <div className="mb-3 flex min-h-10 flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border-soft pt-3 font-body">
+              {livePrice ? (
+                <p className="text-xs text-text-secondary">
+                  Desde{' '}
+                  <strong className="text-sm font-bold text-night">{livePrice}</strong>
+                </p>
+              ) : (
+                <span className="text-xs font-semibold text-night">
+                  {isUnavailable ? 'Sin fechas abiertas ahora' : 'Disponible para reservar'}
+                </span>
+              )}
+              {tiqetsProduct?.smartphoneTicket ? (
+                <span className="text-[11px] font-semibold text-text-secondary">Entrada móvil</span>
+              ) : null}
+            </div>
+          ) : null}
+
+          <a
+            href={link.url}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            onClick={() =>
+              trackAffiliateClick({
+                affiliate_partner: link.provider,
+                affiliate_campaign: link.campaign,
+                affiliate_content: product.id,
+                affiliate_placement: placementLabel,
+                // Qué enlace se usó de verdad: mientras no existan los propios
+                // de cada ubicación, esto deja visible que se recurrió a otro.
+                affiliate_link_placement: link.usedPlacement,
+                destination: 'lisboa',
+                link_url: link.url,
+                link_domain: linkDomain,
+                outbound: 'true',
+                page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+              })
+            }
+          >
+            {ctaLabel}
+            <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
+        </div>
       </div>
     </article>
   );

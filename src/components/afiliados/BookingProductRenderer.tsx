@@ -6,6 +6,7 @@ import { TiqetsWidget } from '@/components/afiliados/TiqetsWidget';
 import { BookingCard } from '@/components/afiliados/BookingCard';
 import { useCookieConsent } from '@/lib/consent';
 import { resolveBookingLink, type BookableProduct } from '@/data/bookings';
+import type { TiqetsProductSnapshot } from '@/types/tiqets-live';
 
 /*
  * Decide con qué mecanismo se pinta un producto del catálogo.
@@ -26,9 +27,15 @@ interface BookingProductRendererProps {
   product: BookableProduct;
   /** Sólo el primero: es el que compite por ser el LCP. */
   priority?: boolean;
+  /** Datos ya saneados por el servidor; nunca contiene la clave de Tiqets. */
+  tiqetsProduct?: TiqetsProductSnapshot;
 }
 
-export function BookingProductRenderer({ product, priority = false }: BookingProductRendererProps) {
+export function BookingProductRenderer({
+  product,
+  priority = false,
+  tiqetsProduct,
+}: BookingProductRendererProps) {
   const consent = useCookieConsent();
   const { hub } = product;
   if (!hub) return null;
@@ -40,7 +47,15 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
        * queda vacío. Ocho huecos vacíos parecen una página rota, así que ahí
        * se pinta lo nuestro, que no necesita cookies de nadie.
        */
-      if (!consent) return <SinConsentimiento product={product} priority={priority} />;
+      if (!consent) {
+        return (
+          <SinConsentimiento
+            product={product}
+            priority={priority}
+            tiqetsProduct={tiqetsProduct}
+          />
+        );
+      }
 
       switch (hub.provider) {
         case 'getyourguide':
@@ -100,6 +115,7 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
           placement="activities"
           placementLabel="comprar-entradas"
           priority={priority}
+          tiqetsProduct={tiqetsProduct}
         />
       );
 
@@ -119,7 +135,15 @@ export function BookingProductRenderer({ product, priority = false }: BookingPro
  * botón que funciona. Un enlace no necesita permiso de nadie, así que ahí no
  * se pierde ni la venta ni la comisión.
  */
-function SinConsentimiento({ product, priority }: { product: BookableProduct; priority: boolean }) {
+function SinConsentimiento({
+  product,
+  priority,
+  tiqetsProduct,
+}: {
+  product: BookableProduct;
+  priority: boolean;
+  tiqetsProduct?: TiqetsProductSnapshot;
+}) {
   const link = resolveBookingLink(product, 'activities');
 
   if (link) {
@@ -129,6 +153,7 @@ function SinConsentimiento({ product, priority }: { product: BookableProduct; pr
         placement="activities"
         placementLabel="comprar-entradas-sin-consentimiento"
         priority={priority}
+        tiqetsProduct={tiqetsProduct}
       />
     );
   }

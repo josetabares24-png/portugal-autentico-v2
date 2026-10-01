@@ -70,6 +70,14 @@ Both existing canonical URLs remain indexable and in the sitemap; their `lastMod
 
 Keep E-009 as `PLANNED`. Preview readiness is not a result. After explicit visual approval and production deployment, compare `live-date-finder` outbound clicks and partner bookings with static free-tour clicks. Evaluate `/comprar-entradas` through attributable affiliate clicks segmented by provider, product and page path; do not claim improvement from card views or search/filter use alone.
 
+### E-009 Tiqets live-data iteration — 2026-10-01
+
+The ticket candidate now enriches only the three already selected Tiqets products: Oceanário, Palacio da Pena and Lisboa Card. A server-only adapter retrieves current starting price, general sale status, mobile-ticket support and the partner-attributed product URL. The API response never changes editorial order, images or copy, and a failed or missing API response falls back to the existing direct link without leaving an empty card.
+
+The visible treatment is deliberately small: one quiet row with “Desde”, the current amount and “Entrada móvil”. It does not add a date picker, review content, urgency, extra products or a Tiqets-styled marketplace. First-party photographs remain the visual source. API URLs are accepted only over HTTPS from a Tiqets host and only when they contain partner `estaba_en_lisboa-189233`; the existing product campaign is then preserved.
+
+Keep E-009 as `PLANNED`. The API token is an environment secret and is never committed or serialized to the browser. Start measurement only after explicit Preview approval and production deployment. Compare Tiqets outbound clicks and completed partner bookings by product/campaign; price visibility alone is not a success metric.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

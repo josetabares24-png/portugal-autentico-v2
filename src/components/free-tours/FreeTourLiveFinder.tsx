@@ -80,11 +80,9 @@ function LiveTourImage({
   fallback: string;
   alt: string;
 }) {
-  const [currentSource, setCurrentSource] = useState(source || fallback);
-
-  useEffect(() => {
-    setCurrentSource(source || fallback);
-  }, [source, fallback]);
+  const preferredSource = source || fallback;
+  const [failedSource, setFailedSource] = useState<string | null>(null);
+  const currentSource = failedSource === preferredSource ? fallback : preferredSource;
 
   return (
     <img
@@ -92,7 +90,7 @@ function LiveTourImage({
       alt={alt}
       loading="lazy"
       referrerPolicy="no-referrer"
-      onError={() => setCurrentSource(fallback)}
+      onError={() => setFailedSource(preferredSource)}
       className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
     />
   );

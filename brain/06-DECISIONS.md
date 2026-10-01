@@ -633,3 +633,26 @@ Rules:
 - production remains untouched until the responsive Preview and live referral behavior receive explicit approval.
 
 This decision extends D-010 and D-034. It does not authorize a site-wide booking marketplace or a new provider integration.
+
+
+## D-036 — Tiqets enriches curated cards; it does not own checkout UX
+**Date:** 2026-10-01
+**Status:** accepted implementation guardrail; production requires explicit visual approval
+
+Tiqets API data may reduce uncertainty on `/comprar-entradas`, but Estaba en Lisboa remains the editorial and visual owner of the page. The integration is a server-side enrichment layer, not a replicated booking engine.
+
+Rules:
+- enrich only Oceanário (`975260`), Palacio da Pena (`1120392`) and Lisboa Card (`974847`) while they remain selected editorial products;
+- keep the API credential server-only in `TIQETS_API_TOKEN`; never commit it, prefix it with `NEXT_PUBLIC`, log it or pass it to a client component;
+- keep first-party photography and Estaba en Lisboa copy; do not import Tiqets imagery unless its refresh and credit rules are implemented;
+- expose only the minimum useful snapshot: starting price, general sale status, mobile-ticket support and a sanitized booking URL;
+- accept booking URLs only from HTTPS Tiqets hosts with partner `estaba_en_lisboa-189233`, then preserve the existing `tq_campaign` for product-level attribution;
+- describe prices as “Desde” and make clear that the final amount and conditions are confirmed by the provider;
+- do not publish Tiqets review text, artificial scarcity or inferred urgency;
+- cache product calls, fetch the three records in parallel and fail independently so one provider error cannot break the page;
+- fall back to the existing static attributed URL whenever the token, API or product response is unavailable;
+- continue checkout on Tiqets. Do not create or confirm orders through the Booking API without a separate, explicitly approved integration and production-order safety plan;
+- do not expand the eight-card catalog automatically from API search results;
+- no merge or production deployment until the responsive Preview is approved.
+
+This decision narrows the provider integration allowed by D-035. It preserves the calm eight-choice experience while making three exact ticket decisions more transparent.
