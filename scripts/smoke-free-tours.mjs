@@ -389,7 +389,7 @@ async function checkLanding(baseUrl) {
 
   record(
     'la página incluye el buscador de disponibilidad real',
-    html.includes('¿Qué tours hay el día que vas?') &&
+    html.includes('Mira qué tours hay ese día') &&
       html.includes('id="free-tour-date"') &&
       html.includes('Ver horarios'),
     'módulo de fecha presente'

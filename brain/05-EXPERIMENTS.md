@@ -78,6 +78,14 @@ The visible treatment is deliberately small: one quiet row with “Desde”, the
 
 Keep E-009 as `PLANNED`. The API token is an environment secret and is never committed or serialized to the browser. Start measurement only after explicit Preview approval and production deployment. Compare Tiqets outbound clicks and completed partner bookings by product/campaign; price visibility alone is not a success metric.
 
+### E-009 mobile simplification — 2026-10-01
+
+Mobile review showed that search and category chips made an eight-item editorial selection feel like a large marketplace, clipped the last category and delayed the first useful recommendation. They were removed. The eight products now follow the editorial introduction directly, in fixed editorial order, while Tiqets enrichment and attributed destinations remain unchanged.
+
+The free-tour date finder remains because it answers a genuinely date-dependent question. Its heading is now direct and upright, the explanation is shorter, and provider/payment context plus affiliate disclosure are combined into one compact note. Mobile spacing between the finder and route comparison is reduced; desktop keeps enough separation without treating them as unrelated sections.
+
+Keep E-009 as `PLANNED`. This refinement reduces friction but is not evidence of conversion improvement until production measurement begins.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

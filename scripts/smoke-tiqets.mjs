@@ -37,6 +37,12 @@ for (const productId of ['975260', '1120392', '974847']) {
 
 assert.match(page, /getTiqetsProductSnapshots/, 'la página servidor debe consultar Tiqets');
 assert.match(client, /tiqetsProducts\[product\.id\]/, 'el cliente debe enlazar cada producto con su snapshot');
+assert.doesNotMatch(
+  client,
+  /ExperienceSearch|FilterChip|useState/,
+  'ocho recomendaciones curadas no deben convertirse en un catálogo con filtros'
+);
+assert.match(client, /HUB_PRODUCTS\.map/, 'las ocho recomendaciones deben mostrarse directamente');
 assert.match(envExample, /^TIQETS_API_TOKEN=$/m, 'falta documentar la variable de entorno');
 assert.doesNotMatch(envExample, /tqat-[A-Za-z0-9_-]+/, 'la clave real no puede estar en .env.example');
 

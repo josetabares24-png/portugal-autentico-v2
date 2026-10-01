@@ -656,3 +656,20 @@ Rules:
 - no merge or production deployment until the responsive Preview is approved.
 
 This decision narrows the provider integration allowed by D-035. It preserves the calm eight-choice experience while making three exact ticket decisions more transparent.
+
+
+## D-037 — Controls must be proportional to the choice set
+**Date:** 2026-10-01
+**Status:** accepted
+
+Small curated travel selections should not inherit marketplace controls by default. On `/comprar-entradas`, eight fixed recommendations are faster to scan directly than through search, category chips, result counts and empty states.
+
+Rules:
+- show the eight curated ticket and experience recommendations directly after their editorial introduction;
+- do not restore search or category filters unless the useful inventory grows enough that direct scanning demonstrably fails;
+- keep date input on `/free-tours-lisboa` because availability and schedules actually change by travel date;
+- give each transactional block one main action and one concise explanatory/disclosure note on mobile;
+- prefer direct, upright headings for functional tools and reserve expressive display treatment for editorial storytelling;
+- review control density and section spacing at 390 px and desktop before Preview approval.
+
+This decision applies the broader calm, human-first interface principles from D-034 to the two booking surfaces.

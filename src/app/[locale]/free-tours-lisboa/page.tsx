@@ -177,7 +177,7 @@ export default function FreeToursLisboaPage() {
       {/* ---------------------------------------------------------------
           Comparador de rutas
       ---------------------------------------------------------------- */}
-      <section id="comparar-rutas" className="scroll-mt-20 bg-background-light py-8 md:py-10">
+      <section id="comparar-rutas" className="scroll-mt-20 bg-background-light pb-8 pt-7 md:pb-10 md:pt-7">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Comparar rutas</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">

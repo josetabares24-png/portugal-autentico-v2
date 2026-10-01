@@ -3,7 +3,7 @@
 
 import { FormEvent, useEffect, useState } from 'react';
 import { ArrowUpRight, CalendarDays, LoaderCircle, Star } from 'lucide-react';
-import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Link from 'next/link';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import type { LiveFreeTour, LiveFreeToursResponse } from '@/types/guruwalk-live';
 
@@ -139,18 +139,18 @@ export default function FreeTourLiveFinder() {
   }
 
   return (
-    <section id="disponibilidad" className="scroll-mt-20 bg-background-light py-11 md:py-14">
+    <section id="disponibilidad" className="scroll-mt-20 bg-background-light pb-5 pt-9 md:pb-7 md:pt-12">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="grid gap-7 border-y border-border-soft py-7 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16">
+        <div className="grid gap-6 border-y border-border-soft py-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 lg:py-7">
           <div>
             <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
               Horarios actualizados
             </p>
-            <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-night md:text-4xl">
-              ¿Qué tours hay el día que vas?
+            <h2 className="max-w-xl font-display text-[2rem] font-semibold not-italic leading-[1.08] text-night md:text-4xl">
+              Mira qué tours hay ese día
             </h2>
             <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Elige una fecha. Te enseñamos un máximo de tres recorridos disponibles para decidir rápido.
+              Elige tu fecha y compara hasta tres recorridos con horario.
             </p>
           </div>
 
@@ -182,8 +182,20 @@ export default function FreeTourLiveFinder() {
                 {state === 'loading' ? 'Consultando' : 'Ver horarios'}
               </button>
             </div>
-            <p className="mt-2 font-body text-xs text-text-secondary">
-              Reservas en GuruWalk. Sin pago previo; tú decides la propina al terminar.
+            <p
+              role="note"
+              aria-label="Información sobre la reserva y los enlaces afiliados"
+              className="mt-3 max-w-2xl font-body text-xs leading-relaxed text-text-secondary"
+            >
+              Reserva en GuruWalk sin pago previo; al terminar decides la propina.
+              Algunos enlaces son afiliados.{' '}
+              <Link
+                href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+                className="underline underline-offset-2 hover:no-underline"
+              >
+                Más información
+              </Link>
+              .
             </p>
           </form>
         </div>
@@ -262,7 +274,6 @@ export default function FreeTourLiveFinder() {
           ) : null}
         </div>
 
-        <AffiliateDisclosure variant="compact" className="mt-6 max-w-2xl text-text-secondary" />
       </div>
     </section>
   );

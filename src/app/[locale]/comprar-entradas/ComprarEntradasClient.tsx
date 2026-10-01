@@ -1,30 +1,11 @@
-'use client';
-
-import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Clock3, Route, TicketCheck } from 'lucide-react';
-import { ExperienceSearch } from '@/components/ExperienceSearch';
-import { FilterChip } from '@/components/FilterChip';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
-import { HUB_PRODUCTS, type BookingCategory } from '@/data/bookings';
-import { coincide } from '@/lib/search';
+import { HUB_PRODUCTS } from '@/data/bookings';
 import type { TiqetsSnapshotMap } from '@/types/tiqets-live';
 
 const PAGE_URL = 'https://estabaenlisboa.com/comprar-entradas';
-
-const CATEGORIAS: { id: BookingCategory | 'todo'; label: string }[] = [
-  { id: 'todo', label: 'Todo' },
-  { id: 'entradas', label: 'Entradas' },
-  { id: 'experiencias', label: 'Experiencias' },
-  { id: 'excursiones', label: 'Excursiones' },
-];
-
-const NOTA_CATEGORIA: Record<BookingCategory, string> = {
-  entradas: 'Reserva cuando te asegure una hora o te evite una cola larga.',
-  experiencias: 'Los grupos pequeños y los buenos horarios suelen agotarse primero.',
-  excursiones: 'Una forma cómoda de salir de Lisboa sin coordinar varios transportes.',
-};
 
 const bookingRules = [
   {
@@ -95,31 +76,6 @@ interface ComprarEntradasClientProps {
 }
 
 export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntradasClientProps) {
-  const [consulta, setConsulta] = useState('');
-  const [categoria, setCategoria] = useState<BookingCategory | 'todo'>('todo');
-
-  const filtrados = useMemo(
-    () =>
-      HUB_PRODUCTS.filter((product) => {
-        const porCategoria = categoria === 'todo' || product.category === categoria;
-        const porTexto = coincide(consulta, [
-          product.name,
-          product.kind,
-          product.blurb,
-          ...product.searchTerms,
-        ]);
-        return porCategoria && porTexto;
-      }),
-    [consulta, categoria]
-  );
-
-  const hayFiltros = consulta !== '' || categoria !== 'todo';
-  const limpiarTodo = () => {
-    setConsulta('');
-    setCategoria('todo');
-  };
-  const categoriaElegida = categoria === 'todo' ? null : categoria;
-
   return (
     <main id="main-content">
       <script
@@ -154,7 +110,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
 
       <section id="catalogo" className="scroll-mt-20 bg-background-light py-10 md:py-14">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-8 grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16">
+          <div className="grid gap-4 border-b border-border-soft pb-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16">
             <div>
               <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
                 Elige sin perder tiempo
@@ -169,72 +125,16 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
             </p>
           </div>
 
-          <div className="border-y border-border-soft py-5">
-            <ExperienceSearch
-              id="buscar-entradas"
-              value={consulta}
-              onChange={setConsulta}
-              label="Buscar entradas y experiencias en Lisboa"
-              placeholder="Busca Castelo, Sintra, fado, barco..."
-              className="max-w-2xl"
-            />
-
-            <div className="-mx-6 mt-3 flex snap-x snap-mandatory items-center gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:mt-4 sm:flex-wrap sm:overflow-visible sm:px-0">
-              {CATEGORIAS.map((item) => (
-                <FilterChip
-                  key={item.id}
-                  active={categoria === item.id}
-                  onClick={() => setCategoria(item.id)}
-                  className="snap-start"
-                >
-                  {item.label}
-                </FilterChip>
-              ))}
-
-              {hayFiltros ? (
-                <button type="button" onClick={limpiarTodo} className="filter-clear">
-                  Limpiar filtros
-                </button>
-              ) : null}
-            </div>
-
-            <p className="mt-3 font-article text-xs text-text-secondary" aria-live="polite">
-              {filtrados.length} {filtrados.length === 1 ? 'opción' : 'opciones'}
-            </p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {HUB_PRODUCTS.map((product, index) => (
+              <BookingProductRenderer
+                key={product.id}
+                product={product}
+                priority={index === 0}
+                tiqetsProduct={tiqetsProducts[product.id]}
+              />
+            ))}
           </div>
-
-          {categoriaElegida && filtrados.length > 0 ? (
-            <div className="mb-5 mt-7">
-              <h2 className="font-display text-2xl font-semibold leading-tight text-night">
-                {CATEGORIAS.find((item) => item.id === categoriaElegida)?.label}
-              </h2>
-              <p className="mt-1 font-article text-sm text-text-secondary">
-                {NOTA_CATEGORIA[categoriaElegida]}
-              </p>
-            </div>
-          ) : null}
-
-          {filtrados.length === 0 ? (
-            <div className="mt-8 border-y border-border-soft py-12 text-center">
-              <p className="mb-4 font-article text-text-main">
-                No encontramos una opción con esa búsqueda.
-              </p>
-              <button type="button" onClick={limpiarTodo} className="btn-secondary btn-lg">
-                Ver todas las opciones
-              </button>
-            </div>
-          ) : (
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filtrados.map((product, index) => (
-                <BookingProductRenderer
-                  key={product.id}
-                  product={product}
-                  priority={index === 0}
-                  tiqetsProduct={tiqetsProducts[product.id]}
-                />
-              ))}
-            </div>
-          )}
 
           <p className="mt-8 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
             Algunos enlaces son de afiliado. Si reservas a través de ellos podemos recibir
