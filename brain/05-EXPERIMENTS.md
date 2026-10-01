@@ -60,6 +60,16 @@ The candidate uses GuruWalk's official affiliate MCP only after the visitor subm
 
 This is not a GetYourGuide widget experiment: paid activity inventory must not be presented as free-tour availability. Keep E-009 as `PLANNED` until visual approval and production deployment. Compare live-result clicks and partner bookings against the established static funnel; do not declare a win from interaction volume alone.
 
+### E-009 tourism-surface iteration — 2026-10-01
+
+The branch `design/tickets-free-tours-tourism-v1` turns the two booking surfaces into a hybrid editorial/direct-booking experience without creating another marketplace. `/comprar-entradas` keeps its existing attributable partner URLs and presents eight curated options in a photographic 4 × 2 desktop grid. `/free-tours-lisboa` keeps five static route owners plus one general browsing option and gives the date finder a real provider image when the API supplies one, with a first-party Lisbon photograph as fallback.
+
+The live request still occurs only after the visitor submits a date and remains capped at three tours and three times per tour. Provider images are sanitized as HTTPS, loaded only with the submitted results and never replace the referral-validated booking URL. No price, scarcity or urgency claim is inferred.
+
+Both existing canonical URLs remain indexable and in the sitemap; their `lastModified` value is updated to the real implementation date. Local responsive review found one H1 per page, no horizontal overflow and a 4 × 2 ticket grid on desktop / one column on mobile. Typecheck, lint, build, affiliate smoke tests and sitemap smoke tests pass.
+
+Keep E-009 as `PLANNED`. Preview readiness is not a result. After explicit visual approval and production deployment, compare `live-date-finder` outbound clicks and partner bookings with static free-tour clicks. Evaluate `/comprar-entradas` through attributable affiliate clicks segmented by provider, product and page path; do not claim improvement from card views or search/filter use alone.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

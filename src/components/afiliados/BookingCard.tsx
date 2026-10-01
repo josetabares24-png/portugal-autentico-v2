@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
 
@@ -49,8 +50,11 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
   }
 
   return (
-    <article className="group flex h-full min-w-0 flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45">
-      <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
+    <article
+      id={product.id}
+      className="group flex h-full min-w-0 scroll-mt-24 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card transition-transform duration-300 motion-safe:hover:-translate-y-1"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-background-light">
         <Image
           src={product.image}
           alt={product.imageAlt}
@@ -60,27 +64,23 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           priority={priority}
           loading={priority ? undefined : 'lazy'}
         />
+
+        {product.badge ? (
+          <span className="absolute left-3 top-3 rounded-sm bg-white/95 px-2.5 py-1 font-body text-[10px] font-bold uppercase tracking-[0.11em] text-night shadow-sm">
+            {product.badge}
+          </span>
+        ) : null}
       </div>
 
-      <div className="flex flex-1 flex-col">
-        <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-          <p className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-terracotta">
-            {product.kind}
-          </p>
-          {product.badge && (
-            <>
-              <span aria-hidden="true" className="h-px w-4 bg-border-soft" />
-              <span className="font-body text-[10px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
-                {product.badge}
-              </span>
-            </>
-          )}
-        </div>
+      <div className="flex flex-1 flex-col p-5">
+        <p className="mb-2 font-body text-[10px] font-bold uppercase tracking-[0.16em] text-terracotta">
+          {product.kind}
+        </p>
 
-        <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
+        <h3 className="mb-2 font-display text-xl font-semibold not-italic leading-snug text-text-main">
           {product.name}
         </h3>
-        <p className="mb-5 font-article text-sm leading-relaxed text-text-secondary">
+        <p className="mb-5 font-article text-sm leading-[1.65] text-text-secondary">
           {product.blurb}
         </p>
 
@@ -88,7 +88,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           href={link.url}
           target="_blank"
           rel="sponsored noopener noreferrer"
-          className="text-cta mt-auto self-start"
+          className="mt-auto inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
           onClick={() =>
             trackAffiliateClick({
               affiliate_partner: link.provider,
@@ -107,7 +107,7 @@ export function BookingCard({ product, placement, placementLabel, priority = fal
           }
         >
           {ctaLabel}
-          <span aria-hidden="true">→</span>
+          <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
           <span className="sr-only"> (se abre en una pestaña nueva)</span>
         </a>
       </div>

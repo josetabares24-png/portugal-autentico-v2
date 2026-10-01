@@ -51,6 +51,17 @@ function normalizeTourName(value: string) {
   return cleaned || value.trim();
 }
 
+function normalizeImageUrl(value: string | null) {
+  if (!value) return undefined;
+
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' ? url.toString() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 const getLiveToursForDate = unstable_cache(
   async (date: string): Promise<LiveFreeTour[]> => {
     const destination = await discoverGuruWalkDestination({
@@ -99,12 +110,13 @@ const getLiveToursForDate = unstable_cache(
         name: normalizeTourName(product.name),
         rating: product.rating_out_of_5,
         reviews: product.reviews_count,
+        imageUrl: normalizeImageUrl(product.image_url),
         url: product.url,
         slots,
       };
     });
   },
-  ['guruwalk-lisboa-live-v1'],
+  ['guruwalk-lisboa-live-v2'],
   { revalidate: 900, tags: ['guruwalk-lisboa-live'] }
 );
 

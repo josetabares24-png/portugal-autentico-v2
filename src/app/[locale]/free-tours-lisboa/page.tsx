@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
-import { PageIntro } from '@/components/PageIntro';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
+import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
 import FreeTourLiveFinder from '@/components/free-tours/FreeTourLiveFinder';
 import {
   FREE_TOUR_ROUTES,
@@ -39,15 +39,16 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free tours en Lisboa: rutas y horarios',
+    description:
+      'Compara recorridos por el centro, Alfama y Belém y consulta horarios reales para tu fecha.',
+    images: [`https://estabaenlisboa.com${HERO_IMAGE}`],
+  },
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
 };
-
-const heroBenefits = [
-  { icon: 'event_available', text: 'Reserva anticipada' },
-  { icon: 'local_offer', text: 'Sin precio fijo' },
-  { icon: 'volunteer_activism', text: 'Tú decides la propina' },
-];
 
 const steps = [
   {
@@ -150,34 +151,26 @@ export default function FreeToursLisboaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
-      <PageIntro
-        eyebrow="Free tours en Lisboa"
-        title="Free tours en Lisboa para descubrir la ciudad a pie"
-        description="Compara rutas por el centro, Alfama, Belém y otras zonas de Lisboa. Reserva tu plaza y decide la propina al terminar."
-        className="py-8 md:py-10"
+      <TourismBookingHero
+        image={HERO_IMAGE}
+        imageAlt="Arco da Rua Augusta y viajeros caminando por la Baixa de Lisboa"
+        objectPosition="center 45%"
+        eyebrow="Lisboa con contexto"
+        title="Free tours en Lisboa"
+        description="Encuentra un recorrido para tu fecha, mira los horarios reales y elige la zona que de verdad quieres entender. Reservas sin pago previo y decides la propina al final."
+        primaryHref="#disponibilidad"
+        primaryLabel="Buscar por fecha"
+        secondaryHref="#comparar-rutas"
+        secondaryLabel="Comparar zonas"
+        signals={['Centro y Baixa', 'Alfama y miradores', 'Belém y su historia']}
         breadcrumb={(
-          <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-2 font-body text-[11px] uppercase tracking-widest text-text-secondary">
-            <Link href="/actividades" className="transition-colors hover:text-terracotta">Actividades</Link>
+          <nav aria-label="Breadcrumb" className="mb-auto flex items-center gap-2 pt-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">
+            <Link href="/" className="transition-colors hover:text-gold">Inicio</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-text-main">Free tours</span>
+            <span className="text-white">Free tours</span>
           </nav>
         )}
-      >
-          <div className="mt-5">
-            <Link href="#disponibilidad" className="text-cta">
-              Consultar mi fecha ↓
-            </Link>
-          </div>
-
-          <ul className="mt-4 grid gap-2.5 border-t border-border-soft pt-5 sm:grid-cols-3">
-            {heroBenefits.map((b) => (
-              <li key={b.text} className="flex items-center gap-2.5 font-body text-sm text-text-secondary">
-                <Icon name={b.icon} size={17} className="flex-shrink-0 text-gold" />
-                {b.text}
-              </li>
-            ))}
-          </ul>
-      </PageIntro>
+      />
 
       <FreeTourLiveFinder />
 
@@ -196,17 +189,17 @@ export default function FreeToursLisboaPage() {
             tus días concretos antes de decidir.
           </p>
 
-          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FREE_TOUR_ROUTES.map((route) => {
               const affiliateUrl = getFreeTourAffiliateUrl(route);
               return (
                 <article
                   key={route.id}
                   id={route.anchor}
-                  className="group relative flex scroll-mt-24 flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45"
+                  className="group relative flex scroll-mt-24 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card transition-transform duration-300 motion-safe:hover:-translate-y-1"
                 >
                   {route.image && (
-                    <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-md bg-white/60">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-white/60">
                       <Image
                         src={route.image}
                         alt={route.imageAlt ?? ''}
@@ -218,7 +211,7 @@ export default function FreeToursLisboaPage() {
                     </div>
                   )}
 
-                  <div className="flex flex-1 flex-col">
+                  <div className="flex flex-1 flex-col p-5">
                     <div className="mb-2 flex items-center gap-2">
                       <Icon name={route.icon} size={15} className="flex-shrink-0 text-terracotta" />
                       <span className="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-text-secondary">
@@ -247,13 +240,13 @@ export default function FreeToursLisboaPage() {
                       </p>
                     )}
 
-                    <div className="mt-auto pt-2">
+                    <div className="mt-auto border-t border-border-soft pt-4">
                       <AffiliateLink
                         href={affiliateUrl}
                         campaign={route.campaign}
                         content={`card-${route.id}`}
                         placement="category-card"
-                        className="text-cta"
+                        className="inline-flex min-h-10 items-center font-body text-sm font-bold text-terracotta underline decoration-terracotta/40 underline-offset-4 hover:text-primary-dark"
                       >
                         {route.ctaLabel}
                       </AffiliateLink>
@@ -262,36 +255,37 @@ export default function FreeToursLisboaPage() {
                 </article>
               );
             })}
-          </div>
-
-          {/* Acceso general: no es una ruta más, así que va aparte */}
-          <div
-            id={allTours.anchor}
-            className="mt-10 flex scroll-mt-24 flex-col gap-5 border-y border-border-soft py-5 md:flex-row md:items-center md:justify-between"
-          >
-            <div className="flex gap-4">
-              <span className="hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold sm:flex">
-                <Icon name={allTours.icon} size={21} />
-              </span>
-              <div>
-                <h3 className="mb-1.5 font-display text-xl font-semibold not-italic leading-snug text-text-main">
-                  ¿Ninguna de estas rutas encaja exactamente?
-                </h3>
-                <p className="max-w-xl text-sm leading-relaxed text-text-secondary">
-                  Consulta todos los recorridos disponibles para tus fechas, horarios e idioma.
-                </p>
-              </div>
-            </div>
-
-            <AffiliateLink
-              href={allToursUrl}
-              campaign={allTours.campaign}
-              content="destacado-todos"
-              placement="category-card"
-              className="text-cta w-full flex-shrink-0 md:w-auto"
+            <article
+              id={allTours.anchor}
+              className="relative isolate flex min-h-[340px] scroll-mt-24 flex-col justify-end overflow-hidden rounded-lg bg-night p-6 text-white shadow-card"
             >
-              Ver todos los free tours de Lisboa
-            </AffiliateLink>
+              <Image
+                src="/images/lisboa-originales/rua-baixa-lisboa-entardecer.webp"
+                alt="Rua da Baixa de Lisboa al atardecer"
+                fill
+                className="-z-20 object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 -z-10 bg-night/75" aria-hidden="true" />
+              <p className="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.16em] text-gold">
+                Todas las zonas
+              </p>
+              <h3 className="font-display text-2xl font-semibold leading-tight text-white">
+                ¿Buscas otro recorrido?
+              </h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-white/72">
+                Revisa toda la oferta para tu fecha, idioma y horario sin recorrer decenas de páginas.
+              </p>
+              <AffiliateLink
+                href={allToursUrl}
+                campaign={allTours.campaign}
+                content="destacado-todos"
+                placement="category-card"
+                className="mt-5 inline-flex min-h-11 items-center self-start rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark"
+              >
+                Ver todos los recorridos
+              </AffiliateLink>
+            </article>
           </div>
 
         </div>

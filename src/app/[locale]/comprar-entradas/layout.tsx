@@ -23,6 +23,21 @@ export const metadata: Metadata = {
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'website',
+    images: [
+      {
+        url: 'https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg',
+        width: 3840,
+        height: 2160,
+        alt: 'Tejados de Alfama y el río Tajo en Lisboa',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Entradas y experiencias en Lisboa',
+    description:
+      'Qué merece reservar por adelantado en Lisboa y qué puedes dejar para decidir allí.',
+    images: ['https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg'],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com/comprar-entradas',

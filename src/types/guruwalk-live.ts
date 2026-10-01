@@ -9,6 +9,7 @@ export interface LiveFreeTour {
   name: string;
   rating: number;
   reviews: number;
+  imageUrl?: string;
   url: string;
   slots: LiveFreeTourSlot[];
 }

@@ -238,7 +238,7 @@ async function checkInertState(baseUrl) {
 
   record(
     'la landing sigue respondiendo 200 sin ID',
-    landing.includes('Free tours en Lisboa para descubrir la ciudad a pie'),
+    landing.includes('<h1') && landing.includes('Free tours en Lisboa'),
     'H1 presente'
   );
 }
@@ -284,7 +284,7 @@ async function checkLanding(baseUrl) {
   record('hay exactamente un H1', h1s.length === 1, `H1s=${h1s.length}`);
   record(
     'H1 correcto',
-    h1s[0] === 'Free tours en Lisboa para descubrir la ciudad a pie',
+    h1s[0] === 'Free tours en Lisboa',
     `h1="${h1s[0] ?? '-'}"`
   );
 
@@ -341,10 +341,11 @@ async function checkLanding(baseUrl) {
   record('la cuadrícula muestra 5 tarjetas de ruta', routeCards === ROUTES.length, `${routeCards} tarjetas`);
 
   record(
-    'el acceso general va en su propio bloque, fuera de la cuadrícula',
-    html.includes('¿Ninguna de estas rutas encaja exactamente?') &&
-      !/<article[^>]*id="todos-los-free-tours"/.test(html),
-    'bloque destacado separado'
+    'el acceso general completa la cuadrícula sin entrar en el ItemList de rutas',
+    html.includes('¿Buscas otro recorrido?') &&
+      /<article[^>]*id="todos-los-free-tours"/.test(html) &&
+      itemList?.itemListElement?.length === ROUTES.length,
+    'sexta tarjeta visual, cinco rutas en schema'
   );
 
   // Sin los <script>: el payload de Next repite el texto de la página y
@@ -372,23 +373,23 @@ async function checkLanding(baseUrl) {
     'CTA de cierre propio'
   );
 
-  const benefits = ['Reserva anticipada', 'Sin precio fijo', 'Tú decides la propina'];
+  const benefits = ['Centro y Baixa', 'Alfama y miradores', 'Belém y su historia'];
   const missingBenefits = benefits.filter((b) => !html.includes(b));
   record(
-    'el hero muestra los tres microbeneficios',
+    'el hero muestra las tres zonas principales',
     missingBenefits.length === 0,
     missingBenefits.length ? `faltan: ${missingBenefits.join(', ')}` : 'los tres'
   );
 
   record(
     'el hero lleva al buscador de fecha y no abre otro catálogo',
-    html.includes('href="#disponibilidad"') && html.includes('Consultar mi fecha'),
+    html.includes('href="#disponibilidad"') && html.includes('Buscar por fecha'),
     'enlace interno presente'
   );
 
   record(
     'la página incluye el buscador de disponibilidad real',
-    html.includes('Mira qué recorridos salen el día que vas.') &&
+    html.includes('¿Qué tours hay el día que vas?') &&
       html.includes('id="free-tour-date"') &&
       html.includes('Ver horarios'),
     'módulo de fecha presente'

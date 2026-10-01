@@ -612,3 +612,24 @@ Rules:
 This is an explicit, narrow exception to the 28/09–04/10 web focus freeze requested by José. It extends the existing Free Tours surface, which already has the clearest owned affiliate-click signal, instead of opening a new provider or commercial line.
 
 Reference: [[strategy/HOME-TRAVELER-GATEWAY-2026-09-25]] and [[business/GURUWALK-MCP-2026-09-23]].
+
+
+## D-035 — Booking pages use a hybrid editorial/direct-link model
+**Date:** 2026-10-01
+**Status:** accepted Preview candidate; production requires explicit visual approval
+
+The ticket and free-tour pages should feel like useful Lisbon guidance while preserving the shortest measurable path to an exact booking. They should not imitate a generic affiliate marketplace or force every product through an embedded widget.
+
+Rules:
+- use a real first-party Lisbon photograph and direct traveler language at the top of both booking pages;
+- keep native, attributable direct-link cards as the primary ticket catalog because they preserve exact products, referral parameters and product-level measurement;
+- retain only curated options that solve recognizable trip decisions; do not inflate the catalog to create visual density;
+- keep the GuruWalk live date finder user-initiated, capped at three results and three times per result;
+- allow a sanitized provider image only inside submitted live results, with a first-party photograph as fallback;
+- preserve the validated affiliate destination and referral parameters independently from the image source;
+- keep static free-tour routes as the editorial fallback/control and disclose affiliate relationships visibly;
+- do not invent price, availability, urgency, ratings or review counts;
+- keep `/comprar-entradas` and `/free-tours-lisboa` as their existing canonical, indexable sitemap owners; do not create support pages for this visual iteration;
+- production remains untouched until the responsive Preview and live referral behavior receive explicit approval.
+
+This decision extends D-010 and D-034. It does not authorize a site-wide booking marketplace or a new provider integration.
