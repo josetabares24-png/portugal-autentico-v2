@@ -96,6 +96,14 @@ The date finder records only coarse days-ahead buckets, result count and success
 
 Keep E-009 as `PLANNED` until explicit visual approval and production deployment. A stronger CTA is a hypothesis, not conversion proof.
 
+### E-009 production activation — 2026-10-01
+
+José explicitly approved execution. The candidate was fast-forwarded to `main` at `a2d7472` and deployed to production as `dpl_AyqmSZ5yaHiTr2E67jDR2rsdZtqH`. `TIQETS_API_TOKEN` is configured as a Vercel Production secret; GuruWalk Production credentials were already present.
+
+Post-deployment verification confirmed eight product-specific ticket CTAs, three live Tiqets starting prices, valid Tiqets partner attribution, three GuruWalk tours with nine bookable times, valid GuruWalk referral parameters, and both canonical URLs in the 100-URL production sitemap. The full Free Tours HTTP suite passes 65/65 after correcting its remote-mode expectation so it accepts the configured production ref while still requiring the exact synthetic ref in local tests.
+
+E-009 is now `RUNNING`. Do not claim a conversion result yet. Compare attributable outbound clicks and confirmed partner bookings against the pre-change baseline after a finalized observation window; finder submissions and page views remain diagnostic only.
+
 ## Next candidate pool
 
 Do not edit all of these at once.

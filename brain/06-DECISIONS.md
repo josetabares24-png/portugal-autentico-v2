@@ -677,7 +677,7 @@ This decision applies the broader calm, human-first interface principles from D-
 
 ## D-038 — Commercial intent must be explicit without impersonating the seller
 **Date:** 2026-10-01
-**Status:** accepted Preview guardrail; production requires explicit visual approval
+**Status:** accepted production guardrail
 
 Booking pages should help a traveler act, not hide the transaction behind generic “see options” language. That clarity must remain accurate about who provides and charges for the booking.
 

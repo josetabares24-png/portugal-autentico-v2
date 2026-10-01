@@ -247,7 +247,16 @@ async function checkInertState(baseUrl) {
 /* Estado CON identificador de afiliado                                */
 /* ------------------------------------------------------------------ */
 
-async function checkLanding(baseUrl) {
+function hasAffiliateRef(href, expectedRef) {
+  try {
+    const ref = new URL(href).searchParams.get('ref');
+    return expectedRef ? ref === expectedRef : Boolean(ref?.trim());
+  } catch {
+    return false;
+  }
+}
+
+async function checkLanding(baseUrl, expectedRef = null) {
   const res = await fetch(baseUrl + PAGE_PATH, { redirect: 'manual' });
   const html = await res.text();
 
@@ -373,10 +382,10 @@ async function checkLanding(baseUrl) {
     'CTA de cierre propio'
   );
 
-  const benefits = ['Centro y Baixa', 'Alfama y miradores', 'Belém y su historia'];
+  const benefits = ['Horarios reales', 'Sin pago previo', 'Propina al terminar'];
   const missingBenefits = benefits.filter((b) => !html.includes(b));
   record(
-    'el hero muestra las tres zonas principales',
+    'el hero muestra las tres condiciones de reserva',
     missingBenefits.length === 0,
     missingBenefits.length ? `faltan: ${missingBenefits.join(', ')}` : 'los tres'
   );
@@ -436,12 +445,12 @@ async function checkLanding(baseUrl) {
   const missingTarget = affiliate.filter((a) => a.target !== '_blank');
   record('todos abren en pestaña nueva', missingTarget.length === 0, missingTarget.length ? `${missingTarget.length} sin target` : 'todos');
 
-  // 2. ref=<ID> en todos
-  const missingRef = affiliate.filter((a) => !a.href.includes(`ref=${TEST_REF}`));
+  // 2. `ref` no vacío en remoto; ID sintético exacto en la fase local.
+  const missingRef = affiliate.filter((a) => !hasAffiliateRef(a.href, expectedRef));
   record(
     'todos los enlaces llevan ref=<ID>',
     missingRef.length === 0,
-    missingRef.length ? `${missingRef.length} sin ref` : `ref=${TEST_REF} en los ${affiliate.length}`
+    missingRef.length ? `${missingRef.length} sin ref` : `ref válido en los ${affiliate.length}`
   );
 
   // 3. pro=true en todos
@@ -560,7 +569,7 @@ async function checkActividades(baseUrl) {
   record('/actividades no rompe el catálogo (20 fichas)', fichas.size === 20, `${fichas.size} fichas enlazadas`);
 }
 
-async function checkActivityFiche(baseUrl) {
+async function checkActivityFiche(baseUrl, expectedRef = null) {
   const res = await fetch(baseUrl + FICHA_PATH, { redirect: 'manual' });
   const html = await res.text();
 
@@ -597,7 +606,7 @@ async function checkActivityFiche(baseUrl) {
   );
   record(
     'free-walking-tour-centro: lleva ref y pro',
-    affiliate.every((a) => a.href.includes(`ref=${TEST_REF}`) && a.href.includes('pro=true')),
+    affiliate.every((a) => hasAffiliateRef(a.href, expectedRef) && a.href.includes('pro=true')),
     'ref + pro=true'
   );
 }
@@ -701,7 +710,7 @@ async function main() {
       child = server.child;
       log('Servidor listo.\n');
 
-      await checkLanding(server.baseUrl);
+      await checkLanding(server.baseUrl, TEST_REF);
       log('');
       await checkHeroImage(server.baseUrl);
       log('');
@@ -709,7 +718,7 @@ async function main() {
       log('');
       await checkActividades(server.baseUrl);
       log('');
-      await checkActivityFiche(server.baseUrl);
+      await checkActivityFiche(server.baseUrl, TEST_REF);
     }
 
     log(`\n${results.length - failures}/${results.length} comprobaciones OK.`);
