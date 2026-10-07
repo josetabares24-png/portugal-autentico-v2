@@ -154,6 +154,21 @@ La continuidad vale más que una imagen individual “más bonita”.
 
 ---
 
+## BLOQUEO DE ESTÉTICA ENTRE CAPÍTULOS — 2026-10-07
+
+Regla fija de serie:
+- la historia, época, paleta secundaria y atmósfera pueden cambiar entre capítulos;
+- **el lenguaje de render NO cambia**;
+- mantener exactamente la estética premium stylized 3D adulta establecida en el Capítulo 01;
+- piel suave y simplificada, rasgos ligeramente estilizados, manos limpias, proporciones naturales, materiales detallados y luz cinematográfica;
+- evitar deriva hacia fotorealismo, live-action CGI, glamour publicitario o póster de espías hiperrealista;
+- Jota debe conservar el mismo diseño de personaje entre capítulos;
+- personajes históricos deben sentirse del mismo “universo de animación” que Jota y Celeste, aunque su vestuario y época cambien;
+- una nueva historia puede tener una paleta propia (por ejemplo, Capítulo 02: verdes de mesa, ámbar nocturno, negro elegante), pero nunca una estética de render distinta.
+
+Aprendizaje Capítulo 02:
+Una primera tanda de imágenes de James Bond/Estoril derivó hacia un look demasiado fotorealista y de glamour de espionaje. Esa dirección queda **DESCARTADA como estética final**. Solo pueden rescatarse algunas composiciones o ideas de encuadre. Antes de continuar el Capítulo 02, regenerar las tomas históricas y modernas usando como referencia visual directa imágenes finales del Capítulo 01.
+
 ## Storyboard y ritmo
 
 ### Regla fija
