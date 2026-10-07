@@ -16,6 +16,21 @@ Primero seguir el preflight general de `brain/README.md` cuando la tarea dependa
 
 Si José ha corregido personalmente un guion reciente, leer también sus decisiones como aprendizaje de voz antes de escribir otro.
 
+## Preflight adicional — serie Historia Animada
+
+Para cualquier capítulo histórico animado, además leer:
+
+4. `03_SERIE_HISTORIA_ANIMADA.md`
+
+Ese archivo es la fuente canónica de:
+- biblia visual;
+- reglas de continuidad;
+- ritmo de storyboard;
+- flujo imagen → Flow → Premiere;
+- audio, subtítulos y publicación;
+- aprendizajes de capítulos anteriores;
+- control de versiones de tomas.
+
 ## Separación de proyectos
 
 ### Estaba Investigando
