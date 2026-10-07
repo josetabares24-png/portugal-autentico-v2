@@ -2,6 +2,10 @@
 
 Updated: **2026-09-23**
 
+## Home PC candidate — 2026-10-07
+
+The desktop audit led to a requested preview on branch `preview/home-pc-rhythm`. It preserves the eight canonical destinations and the brand, reduces the opening and changes the desktop photographic/editorial hierarchy. **Candidate only: production remains unchanged; explicit visual approval is required before merge.** Evidence and validation: [[ux/HOME-PC-PREVIEW-2026-10-07]]. E-010 is not running.
+
 ## Technical base
 
 - Next.js 16.3.5

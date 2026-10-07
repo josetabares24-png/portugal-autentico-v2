@@ -9,9 +9,9 @@ const HOME_URL = 'https://estabaenlisboa.com';
 const HOME_DESCRIPTION = 'Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.';
 
 const suggestedArticles = [
-  blogPosts.find((post) => post.id === 'time-out-market-lisboa') || blogPosts[0],
-  blogPosts.find((post) => post.id === 'estacion-oriente-lisboa') || blogPosts[1],
-  blogPosts.find((post) => post.id === 'estacion-olaias-lisboa') || blogPosts[2],
+  blogPosts.find((post) => post.id === 'historia-de-lisboa') || blogPosts[0],
+  blogPosts.find((post) => post.id === 'time-out-market-lisboa') || blogPosts[1],
+  blogPosts.find((post) => post.id === 'que-comprar-lisboa-souvenirs') || blogPosts[2],
 ].filter(Boolean);
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export default function HomePage() {
     <main id="main-content" className="bg-cream">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
 
-      <section className="relative h-[78svh] min-h-[540px] max-h-[680px] overflow-hidden md:h-[82svh] md:min-h-[600px] md:max-h-[760px]">
+      <section className="relative h-[78svh] min-h-[540px] max-h-[680px] overflow-hidden md:h-[62svh] md:min-h-[480px] md:max-h-[620px]">
         <Image
           src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
           alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
@@ -81,17 +81,18 @@ export default function HomePage() {
           }}
         />
 
-        <div className="absolute bottom-0 left-0 max-w-3xl p-6 pb-12 sm:p-10 md:p-14 md:pb-16">
+        <div className="absolute inset-0 mx-auto flex max-w-[1280px] items-end px-6 pb-12 sm:px-10 md:pb-12">
+          <div className="max-w-[720px]">
           <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.18em] text-gold">
             Guía local de Lisboa
           </p>
           <h1
             className="mb-4 font-display italic leading-[1.02] text-white"
-            style={{ fontSize: 'clamp(2.45rem, 5.2vw, 4.6rem)', fontWeight: 400 }}
+            style={{ fontSize: 'clamp(2.45rem, 4.2vw, 4rem)', fontWeight: 400 }}
           >
             La Lisboa que le enseño a quien viene a verme.
           </h1>
-          <p className="mb-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
+          <p className="mb-6 max-w-[620px] text-base leading-relaxed text-white/90 sm:text-lg">
             Rutas, transporte, comida y consejos para aprovechar la ciudad sin convertir el viaje en una carrera.
           </p>
           <a
@@ -101,6 +102,7 @@ export default function HomePage() {
             Preparar mi viaje
             <ArrowDown size={18} strokeWidth={2} aria-hidden="true" />
           </a>
+          </div>
         </div>
       </section>
 
@@ -108,50 +110,56 @@ export default function HomePage() {
         <TravelerDirectory />
       </section>
 
-      <section aria-labelledby="articulos-sugeridos" className="border-t border-night/10 bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6 md:px-10">
-          <h2
-            id="articulos-sugeridos"
-            className="mb-14 font-display italic text-night"
-            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 400 }}
-          >
-            Artículos que te pueden interesar
-          </h2>
+      <section aria-labelledby="articulos-sugeridos" className="bg-cream pb-16 pt-4 md:pb-20 md:pt-8">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10">
+          <div className="mb-8 flex flex-col gap-5 border-b border-night/15 pb-6 sm:flex-row sm:items-end sm:justify-between md:mb-10">
+            <div>
+              <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
+                Para mirar la ciudad con otros ojos
+              </p>
+              <h2 id="articulos-sugeridos" className="font-display text-[2rem] not-italic leading-tight text-night md:text-[2.5rem]">
+                Lisboa, un poco más cerca.
+              </h2>
+            </div>
+            <Link href="/blog" className="w-fit border-b border-night pb-1 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta">
+              Todos los artículos
+            </Link>
+          </div>
 
-          <div className="space-y-16 md:space-y-20">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-x-12 lg:gap-y-8">
             {suggestedArticles.map((post, index) => (
               <article
                 key={post.id}
-                className={`flex flex-col items-start gap-8 md:gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                className={index === 0 ? 'lg:row-span-2' : 'border-t border-night/15 pt-6 lg:grid lg:grid-cols-[120px_1fr] lg:gap-6 lg:border-t-0 lg:pt-0 xl:grid-cols-[156px_1fr]'}
               >
-                <Link href={`/blog/${post.id}`} className="block w-full flex-shrink-0 md:w-[45%]">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                <Link href={`/blog/${post.id}`} className="group block w-full">
+                  <div className={`relative overflow-hidden ${index === 0 ? 'aspect-[16/9]' : 'aspect-[16/9] lg:aspect-[4/5]'}`}>
                     <Image
                       src={post.imagen}
                       alt={post.titulo}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.025]"
+                      sizes={index === 0 ? '(max-width: 1023px) 100vw, 650px' : '(max-width: 1023px) 100vw, 156px'}
                       loading="lazy"
                     />
                   </div>
                 </Link>
 
-                <div className="flex-1 pt-2">
-                  <p className="mb-3 font-body text-sm text-taupe">{post.fecha} — {post.categoria}</p>
+                <div className={index === 0 ? 'pt-6' : 'pt-5 lg:pt-0'}>
+                  <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.12em] text-taupe">{post.categoria}</p>
                   <Link href={`/blog/${post.id}`}>
                     <h3
-                      className="mb-4 font-display italic leading-snug text-night transition-colors hover:text-terracotta"
-                      style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.75rem)', fontWeight: 400 }}
+                      className={`mb-3 font-display not-italic leading-[1.15] text-night transition-colors hover:text-terracotta ${index === 0 ? 'text-[1.9rem] md:text-[2.35rem]' : 'text-[1.6rem] lg:text-[1.4rem]'}`}
                     >
                       {post.titulo}
                     </h3>
                   </Link>
-                  <p className="mb-5 line-clamp-3 font-body text-base leading-relaxed text-text-secondary">
+                  <p className={`mb-4 font-body leading-relaxed text-text-secondary ${index === 0 ? 'text-base' : 'line-clamp-3 text-sm'}`}>
                     {post.excerpt}
                   </p>
                   <Link
                     href={`/blog/${post.id}`}
+                    aria-label={`Leer artículo: ${post.titulo}`}
                     className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
                   >
                     Leer artículo
@@ -161,14 +169,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-16 border-t border-taupe/20 pt-10">
-            <Link
-              href="/blog"
-              className="border-b border-night pb-0.5 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta"
-            >
-              Todos los artículos
-            </Link>
-          </div>
         </div>
       </section>
     </main>

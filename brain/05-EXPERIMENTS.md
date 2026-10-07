@@ -196,3 +196,11 @@ Important update:
 - airport core exact queries rank materially lower than its page-level average position suggests.
 
 The queue is now an inspection order, not an edit order.
+
+## E-010 — Home PC composition preview, 2026-10-07
+
+**Status: PREVIEW CANDIDATE / NOT RUNNING / VISUAL APPROVAL REQUIRED.**
+
+José requested a concrete preview after the desktop audit. Preserve D-033's eight photographic canonical entrances and 2 + 3 + 3 rhythm; reduce opening height, align sections, show secondary photography with cream captions on desktop, and use one main story plus two secondary reads. Mobile retains direct photographic entrances. No production release or SEO causality claim is authorized by the preview request.
+
+Baseline, candidate details, limits, validation and later measurement plan: [[ux/HOME-PC-PREVIEW-2026-10-07]]. Local checks pass: typecheck, targeted lint and sitemap smoke 51/51, including 100 sitemap URLs. Next action: show the responsive candidate and collect visual feedback before any merge.
