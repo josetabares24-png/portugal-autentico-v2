@@ -28,10 +28,10 @@ La auditoría SEO del mismo día, con datos cerrados hasta 2026-10-04, encontró
 - Mantener 2 + 3 + 3, ocho entradas fotográficas, destinos canónicos, IDs y `TrackedInternalLink`.
 - Mantener dos entradas principales con texto sobre foto; presentar seis secundarias con fotografía limpia y texto sobre crema en escritorio.
 - En móvil mantener una entrada fotográfica completa por necesidad y en tableta dos columnas. Usar altura mínima en vez de altura fija para que el texto pueda crecer.
-- Sustituir el tranvía turístico por el 15E, el cielo de la entrada fotográfica por Olaias y ajustar el encuadre de la calle al atardecer. Todas son fotografías propias existentes.
+- Sustituir el tranvía turístico por el 15E y ajustar la selección y encuadre de cada entrada según su necesidad. La segunda pasada fotográfica queda registrada abajo. Todas son fotografías propias existentes.
 - Corregir la promesa de itinerarios a 1, 2 o 3 días, que coincide con las opciones visibles del destino.
 - Identificar a José Tabares en la franja editorial y reducir el espacio hasta el cierre.
-- Cierre con una historia principal y dos piezas secundarias: Historia de Lisboa, Time Out Market y recuerdos con procedencia. Se reutilizan títulos, fotografías y resúmenes existentes; no se modifica el contenido de artículos.
+- Cierre con una historia principal y dos piezas secundarias: Historia de Lisboa, Olaias y recuerdos con procedencia. Se reutilizan títulos, fotografías y resúmenes existentes; no se modifica el contenido de artículos.
 - Reducir movimiento para quienes lo solicitan y dar nombre accesible específico a cada enlace «Leer artículo».
 
 Metadata, canonical, JSON-LD, sitemap, redirects y las ocho URLs propietarias permanecen iguales. No se añaden herramientas, filtros, URLs ni proveedores.
@@ -49,3 +49,18 @@ Revisión independiente de los dos TSX y prueba real del CTA. Navegador a 320, 3
 Typecheck, lint de los dos archivos y `git diff --check` pasan. Smoke contra el servidor local: **51/51 comprobaciones OK**, incluidas las 100 URLs del sitemap, los ocho destinos canónicos, metadatos de los pilares y redirecciones existentes. La previa local funciona con `localhost`; una apertura con `127.0.0.1` encontró una redirección de desarrollo y no se cambió el routing del producto.
 
 **Decisión: mostrar y revisar. No fusionar, promover ni publicar en producción sin aprobación visual explícita de José.** El candidato debe conservarse en rama/PR para que una aprobación o revisión futura parta de GitHub y Mente Lisboa.
+
+## Segunda pasada fotográfica — 2026-10-07
+
+José autorizó «hazlo» después de revisar la selección y pedir nuestro criterio. Esta autorización aplica a la segunda pasada de la previa, no a un merge ni a producción. Se mantiene el PR borrador [#101](https://github.com/josetabares24-png/portugal-autentico-v2/pull/101).
+
+| Uso | Fotografía propia | Posición del recorte | Criterio |
+|---|---|---|---|
+| Alojamiento | `arquitetura-baixa-pombalina-lisboa-01.webp` | 50% 0% | Fachadas, azulejos y balcones explican el entorno sin presentar un hotel concreto. |
+| Tomar algo | `esquina-baixa-pombalina-lisboa-01.webp` | 50% 70% | La antigua foto de alojamiento muestra una terraza real; su nuevo uso corresponde a lo visible. No constituye recomendación del negocio fotografiado. |
+| Fotografía | `lisboa-baixa-rio-tejo-entardecer.webp` | 50% 35% | Los edificios enmarcan el río; el recorte elimina el primer plano dominante de coches y conserva la escena. Coincide con la fotografía del artículo propietario. |
+| Cierre secundario | Artículo `estacion-olaias-lisboa`, fotografía propia de su techo multicolor | Centro | Olaias vuelve a su contexto de arte y arquitectura; se retira Time Out del cierre para evitar repetir la imagen del portal de comida. |
+
+Procedencia: carpeta `public/images/lisboa-originales`, según D-027/D-033. Imágenes inspeccionadas antes de seleccionar; no se añadieron fotografías de stock, generadas o con procedencia pendiente. Las ocho entradas y sus destinos no cambian. Las 11 fotografías de entradas y artículos son distintas por archivo.
+
+La nueva selección se revisó en el navegador a 1280 × 720 y 390 × 844. Las imágenes cargan, mantienen el recorte previsto y los textos no se recortan; sin desbordamiento horizontal observado. Typecheck, lint de ambos TSX y diff check pasan de nuevo. El smoke completo 51/51 pertenece a la primera iteración del mismo candidato; esta segunda pasada solo cambia fotografías, alt, posiciones y una selección editorial existente.

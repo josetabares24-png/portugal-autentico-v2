@@ -10,7 +10,7 @@ const HOME_DESCRIPTION = 'Organiza Lisboa con rutas por días, qué ver, transpo
 
 const suggestedArticles = [
   blogPosts.find((post) => post.id === 'historia-de-lisboa') || blogPosts[0],
-  blogPosts.find((post) => post.id === 'time-out-market-lisboa') || blogPosts[1],
+  blogPosts.find((post) => post.id === 'estacion-olaias-lisboa') || blogPosts[1],
   blogPosts.find((post) => post.id === 'que-comprar-lisboa-souvenirs') || blogPosts[2],
 ].filter(Boolean);
 
