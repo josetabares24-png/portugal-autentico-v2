@@ -483,6 +483,23 @@ Ejemplos relevantes para este capítulo:
 - `[deeply emotional]`
 - `[gentle, not whispered]`
 
+### PRE-GENERATION LOCK — Capítulo 02 (2026-10-08)
+
+Antes de generar CUALQUIER nueva toma de Pedro e Inês:
+1. revisar la toma anterior FINAL y la imagen maestra del personaje implicado;
+2. preservar EXACTAMENTE el lenguaje visual del Capítulo 01: premium stylized 3D adulto, piel suave/simplificada, rasgos ligeramente estilizados, manos limpias, proporciones naturales, telas/arquitectura detalladas y luz cinematográfica;
+3. prohibido aceptar resultados con deriva a fotorealismo, live-action CGI, glamour histórico hiperrealista o “concept art” distinto;
+4. Pedro debe conservar mismo rostro, edad, pelo y vestuario dentro de la misma etapa;
+5. Inês debe conservar mismo rostro, edad, pelo y vestuario dentro de la misma etapa;
+6. Constança debe ser visualmente distinta de Inês y conservar su propia identidad;
+7. extras deben pertenecer al MISMO universo de animación, nunca verse más realistas que protagonistas;
+8. si una generación rompe estética o continuidad, marcarla DESCARTADA y NO usarla como referencia para la siguiente;
+9. no generar collages/storyboards cuando José pida tomas individuales;
+10. variar ángulo/escala entre tomas consecutivas sin cambiar identidad ni ropa.
+
+Regla de control:
+**continuidad > belleza aislada. Si una imagen es bonita pero no parece del mismo capítulo, se descarta.**
+
 ### Producción visual — reglas aprendidas
 - mantener estética animada 3D estilizada adulta en TODAS las tomas y extras;
 - no derivar a fotorealismo;
