@@ -441,7 +441,13 @@ Aprendizajes clave:
 
 ## CAPÍTULO 02 — Pedro e Inês de Castro
 
-Estado: **APROBADO / EN PRODUCCIÓN — 2026-10-08**
+Estado: **GUION CORTO BLOQUEADO / EN EDICIÓN / PAUSA SOLICITADA — 2026-10-09**
+
+**Texto vigente en Notion:** [03 — Capítulo 02 — Pedro e Inês de Castro](https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b).
+**Manifiesto de tomas e incidencias (leer obligatorio antes de nuevas imágenes):** [04_CAPITULO_02_PEDRO_INES_PRODUCCION.md](./04_CAPITULO_02_PEDRO_INES_PRODUCCION.md).
+**Última composición aprobada:** 15B — Pedro discutiendo, contraplano observado por la corte.
+**Pendiente inmediato:** revisar 15A y 16, crear 17; no repetir rey señalando mapa; mantener estética/ropa/rostro estrictos.
+**No continuar en segundo plano:** esperar instrucción del usuario para retomar.
 
 Ámbito:
 - Coimbra / Alcobaça;
