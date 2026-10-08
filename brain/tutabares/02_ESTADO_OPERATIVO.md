@@ -1,6 +1,6 @@
 # 02 — Estado operativo de Tutabares
 
-Actualizado: **2026-10-07 — Europe/Lisbon**
+Actualizado: **2026-10-09 — Europe/Lisbon**
 
 ## Arquitectura editorial
 
@@ -27,10 +27,15 @@ Fuente canónica:
 - Identidad: recreación animada 3D cinematográfica, narración en off, capítulo numerado
 - Aprendizajes de producción y publicación guardados en la biblia de serie
 
-**CAPÍTULO 02**
-- Estado: Planificación
-- Tema: todavía no bloqueado
-- Regla: no generar imágenes hasta aprobar investigación, hook, guion y storyboard
+**CAPÍTULO 02 — Pedro e Inês de Castro**
+- Estado: **En edición / pausa de producción solicitada**
+- Tema bloqueado: Coimbra / Alcobaça; amor, conflicto político, asesinato, venganza y leyenda macabra NO demostrada.
+- Texto vigente: [guion corto en Notion](https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b), con etiquetas ElevenLabs; sustituye versión antigua de 2:48.
+- Manifiesto operativo y normas de continuidad: [04_CAPITULO_02_PEDRO_INES_PRODUCCION.md](./04_CAPITULO_02_PEDRO_INES_PRODUCCION.md).
+- Drive: [carpeta de imágenes](https://drive.google.com/drive/folders/1OSOKtqhqfh-ZC1OPNoIdDqCBP4uUyt-L/).
+- Última imagen aprobada: **15B**, contraplano de Pedro molesto observado por Afonso IV y corte; [Drive 15B](https://drive.google.com/file/d/1utgGdyXzr9kKL1PZSd17CPHx_M5E-yjh/view?usp=drivesdk).
+- **Para la próxima sesión**: cerrar 15A y 16 sin repetir encuadre, crear Toma 17 (orden de 1355) y continuar escenas faltantes; revisar continuidad rostro/ropa 12–13.
+- No continuar solo: esperar a que el usuario pida retomar.
 
 ### Guiones cortos
 
