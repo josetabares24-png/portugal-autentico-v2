@@ -199,8 +199,8 @@ The queue is now an inspection order, not an edit order.
 
 ## E-010 — Home PC composition preview, 2026-10-07
 
-**Status: PREVIEW CANDIDATE / NOT RUNNING / VISUAL APPROVAL REQUIRED.**
+**Status: APPROVED FOR RELEASE on 2026-10-08 / START MEASUREMENT AT VERIFIED PRODUCTION DEPLOYMENT.**
 
-José requested a concrete preview after the desktop audit. Preserve D-033's eight photographic canonical entrances and 2 + 3 + 3 rhythm; reduce opening height, align sections, show secondary photography with cream captions on desktop, and use one main story plus two secondary reads. Mobile retains direct photographic entrances. No production release or SEO causality claim is authorized by the preview request.
+José requested a concrete preview after the desktop audit and approved publishing it on 2026-10-08 after seeing the Vercel preview and clarifying that the larger visual improvement is on desktop. Preserve D-033's eight photographic canonical entrances and 2 + 3 + 3 rhythm; reduce opening height, align sections, show secondary photography with cream captions on desktop, and use one main story plus two secondary reads. Mobile retains direct photographic entrances. The approved visual code is `8b7040e`; release is tracked in PR #101. Do not attribute SEO growth or preliminary Search Console data to this change.
 
-Baseline, candidate details, limits, validation and later measurement plan: [[ux/HOME-PC-PREVIEW-2026-10-07]]. Local checks pass: typecheck, targeted lint and sitemap smoke 51/51, including 100 sitemap URLs. Next action: show the responsive candidate and collect visual feedback before any merge.
+Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-PC-PREVIEW-2026-10-07]]. Pre-preview local checks passed: typecheck, targeted lint and sitemap smoke 51/51, including 100 sitemap URLs. Release checks must pass before merge. Start E-010's 14/28-day observation window at the verified production deployment; evaluate Home navigation by device, not property-wide impressions alone. Final merge and deployment evidence: [PR #101](https://github.com/josetabares24-png/portugal-autentico-v2/pull/101).

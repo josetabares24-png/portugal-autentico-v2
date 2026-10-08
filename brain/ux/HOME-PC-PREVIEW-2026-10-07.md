@@ -1,6 +1,6 @@
 # Home PC — previa de composición, 2026-10-07
 
-**Estado: PREVIEW CANDIDATE / NO APROBADA PARA PRODUCCIÓN.**
+**Estado: APROBADA PARA PUBLICAR el 2026-10-08; el despliegue y su verificación se siguen en PR #101.**
 
 José pidió una auditoría profunda de estética y utilidad, señaló la composición en PC y pidió una previa de las mejoras. Esta autorización permite construir y mostrar el candidato; no equivale a aprobación visual ni a autorización de merge. Aplican L-003, L-004, L-006 y D-033.
 
@@ -48,7 +48,7 @@ Revisión independiente de los dos TSX y prueba real del CTA. Navegador a 320, 3
 
 Typecheck, lint de los dos archivos y `git diff --check` pasan. Smoke contra el servidor local: **51/51 comprobaciones OK**, incluidas las 100 URLs del sitemap, los ocho destinos canónicos, metadatos de los pilares y redirecciones existentes. La previa local funciona con `localhost`; una apertura con `127.0.0.1` encontró una redirección de desarrollo y no se cambió el routing del producto.
 
-**Decisión: mostrar y revisar. No fusionar, promover ni publicar en producción sin aprobación visual explícita de José.** El candidato debe conservarse en rama/PR para que una aprobación o revisión futura parta de GitHub y Mente Lisboa.
+**Decisión del 7 de octubre: mostrar y revisar, sin publicar antes de la aprobación visual explícita de José.** El candidato se conserva en rama/PR para que cualquier revisión parta de GitHub y Mente Lisboa. La aprobación posterior queda registrada debajo.
 
 ## Segunda pasada fotográfica — 2026-10-07
 
@@ -64,3 +64,15 @@ José autorizó «hazlo» después de revisar la selección y pedir nuestro crit
 Procedencia: carpeta `public/images/lisboa-originales`, según D-027/D-033. Imágenes inspeccionadas antes de seleccionar; no se añadieron fotografías de stock, generadas o con procedencia pendiente. Las ocho entradas y sus destinos no cambian. Las 11 fotografías de entradas y artículos son distintas por archivo.
 
 La nueva selección se revisó en el navegador a 1280 × 720 y 390 × 844. Las imágenes cargan, mantienen el recorte previsto y los textos no se recortan; sin desbordamiento horizontal observado. Typecheck, lint de ambos TSX y diff check pasan de nuevo. El smoke completo 51/51 pertenece a la primera iteración del mismo candidato; esta segunda pasada solo cambia fotografías, alt, posiciones y una selección editorial existente.
+
+## Aprobación de publicación — 2026-10-08
+
+José recibió el enlace de Vercel del commit visual `8b7040ea38b937ac55fd26e275d64cbe6a33cfb5`, aclaró el alcance en móvil y pidió publicar: «Entonces hacemos deploy?». Esta instrucción autoriza publicar esta misma previa mediante [PR #101](https://github.com/josetabares24-png/portugal-autentico-v2/pull/101). No se incorpora un nuevo diseño móvil ni cambios de SEO, URLs o contenido de artículos.
+
+La autorización y esta actualización de memoria no cambian los dos componentes aprobados. Antes de merge se comprueban el HEAD actual, CI y las pruebas aplicables. Producción debe confirmarse por el alias `estabaenlisboa.com` y el SHA del merge en Vercel; una solicitud de merge o un build en curso no equivale a publicación completada. El registro final de merge, fecha y deployment se mantiene en PR #101, enlazado desde esta memoria.
+
+Baseline de disponibilidad SEO verificada el 8/10 antes de publicar: Home, robots.txt y sitemap.xml responden 200; Home permite `index, follow`, tiene un H1 y canonical de producción; sitemap conserva 100 URLs. Search Console finalizado llegaba al 5/10 (últimos siete días cerrados: 34 clics / 2.547 impresiones). Los registros 6–7/10 eran preliminares: no son evidencia de una caída causada por la previa, que aún no estaba en producción al comprobarlos.
+
+La ventana de observación de E-010 se cuenta desde el despliegue verificado. Medir sesiones de Home y clics de portal por dispositivo en 14/28 días equivalentes, con los mismos IDs; la mejora estética no prueba un aumento de SEO o conversión.
+
+Validación de publicación del 8/10: `npm run typecheck`, lint de ambos TSX y `git diff --check` pasan. `npm run smoke:sitemap` compiló la versión optimizada de producción (128 páginas estáticas) y pasó 51/51 comprobaciones, incluidas las 100 URLs del sitemap, las ocho entradas canónicas, base SEO y redirecciones. No hubo que modificar código para esta validación.
