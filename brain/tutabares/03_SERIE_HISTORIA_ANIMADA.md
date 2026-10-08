@@ -1,6 +1,6 @@
 # 03 — Serie Historia Animada de Lisboa y Portugal
 
-Versión: **1.0 — 2026-10-07**
+Versión: **1.1 — 2026-10-08**
 
 ## Rol de esta memoria
 
@@ -288,6 +288,44 @@ No sobreanimar.
 - ElevenLabs v4 funcionó bien;
 - voz usada con buen resultado: Alberto Rodríguez — Serious, Narrative.
 
+#### Dirección de voz para máxima retención — BLOQUEO 2026-10-08
+No usar etiquetas genéricas como `[storytelling]`, `[narrator voice]` o `[calm]` cuando podamos dirigir una emoción concreta.
+
+Usar etiquetas de intención dramática, por ejemplo:
+- `[strong, immediate]` para abrir con autoridad;
+- `[with rising intensity]` para escalar;
+- `[revelatory]` para una revelación;
+- `[sharp turn]` para un giro;
+- `[building tension]` para amenaza;
+- `[short, cold]` para una frase dura y breve;
+- `[anger building]` para transformar dolor en rabia;
+- `[with growing menace]` para venganza/peligro;
+- `[with disbelief]` para elementos macabros o increíbles;
+- `[deeply emotional]` solo en el payoff;
+- `[gentle, not whispered]` para cierres emotivos sin perder presencia.
+
+Reglas:
+1. **Nunca empezar susurrando, demasiado suave ni calmado.** Los primeros 5–8 s deben entrar con presencia y urgencia.
+2. El hook debe usar frases cortas, pausas y cambios de intención.
+3. La voz debe recorrer una montaña emocional: **impacto → curiosidad → romance → amenaza → golpe → rabia → poder → misterio → emoción**.
+4. No mantener la misma intensidad todo el vídeo; el contraste aumenta la retención.
+5. `[softly]` queda reservado para un cierre muy concreto y nunca para el hook.
+6. Generar la voz por bloques narrativos, no necesariamente todo el capítulo en una sola generación. Recomendación: 3–4 bloques para poder elegir interpretaciones mejores.
+7. Como punto de partida para Alberto Rodríguez: Stability aprox. 40–45 % en piezas de alta actuación y Similarity aprox. 75 %, ajustando según resultado.
+8. Las etiquetas deben dirigir **la emoción exacta**, no describir solo el género de narración.
+
+#### Escritura para voz / retención
+Cada pocos segundos debe aparecer una nueva razón para seguir:
+- revelación;
+- pregunta implícita;
+- amenaza;
+- consecuencia;
+- cambio de poder;
+- contraste historia/leyenda;
+- objeto o lugar real que todavía existe.
+
+Evitar narración puramente cronológica sin reinicios de atención.
+
 ### Música
 Una pieza continua puede sostener todo el capítulo.
 Debe:
@@ -401,15 +439,90 @@ Aprendizajes clave:
 
 ---
 
-## Capítulo 02
+## CAPÍTULO 02 — Pedro e Inês de Castro
 
-Estado: **POR DEFINIR**
+Estado: **APROBADO / EN PRODUCCIÓN — 2026-10-08**
 
-Antes de bloquearlo:
-1. investigar fuentes;
-2. definir hook;
-3. escribir guion de voz completo;
-4. comprobar que el arco cabe en 60–90 s;
-5. aprobar storyboard;
-6. solo entonces generar imágenes.
+Ámbito:
+- Coimbra / Alcobaça;
+- historia real + leyenda claramente diferenciadas;
+- no presentar como hecho probado la coronación póstuma del cadáver.
+
+### Estructura narrativa aprobada
+El capítulo debe maximizar retención con esta progresión:
+**asesinato → “eso no es lo más extraño” → leyenda macabra → regreso al siglo XIV → romance → amenaza política → asesinato → rebelión → Pedro rey → venganza → “aquí empieza la leyenda” → coronación póstuma como tradición no demostrada → tumbas reales en Alcobaça.**
+
+Regla clave:
+- historia primero;
+- leyenda claramente señalada después;
+- terminar con algo real que todavía puede verse hoy.
+
+### Hook aprobado de intención
+No abrir suave. El comienzo debe entrar con autoridad:
+> “La mujer que amaba el futuro rey de Portugal fue asesinada. Pero eso no es lo más extraño de esta historia.”
+
+Después revelar gradualmente la leyenda del cuerpo vestido como reina, el trono y el beso de la mano.
+
+### Dirección ElevenLabs aprobada
+La versión de voz debe usar etiquetas emocionales específicas, no `[storytelling]` genérico.
+Ejemplos relevantes para este capítulo:
+- `[strong, immediate]`
+- `[with rising intensity]`
+- `[revelatory]`
+- `[slight anticipation]`
+- `[sharp turn]`
+- `[building tension]`
+- `[short, cold]`
+- `[pained, controlled]`
+- `[anger building]`
+- `[forceful]`
+- `[authoritative]`
+- `[with growing menace]`
+- `[ominous]`
+- `[with disbelief, controlled]`
+- `[deeply emotional]`
+- `[gentle, not whispered]`
+
+### Producción visual — reglas aprendidas
+- mantener estética animada 3D estilizada adulta en TODAS las tomas y extras;
+- no derivar a fotorealismo;
+- Pedro e Inês deben conservar identidad;
+- conservar vestuario dentro de una misma etapa narrativa;
+- no cambiar ropa por capricho entre planos;
+- evitar varias imágenes casi idénticas;
+- secuencia cinematográfica = variar escala, eje y función del plano;
+- generar suficientes planos de 2–4 s para no estirar una imagen;
+- una imagen = una función narrativa;
+- si una toma falla, corregir esa toma; no generar tres versiones de la misma antes de avanzar;
+- no usar storyboard/collage cuando se pidan imágenes individuales;
+- los planos deben construirse a partir de la historia, no de poses repetidas de personajes.
+
+### Flujo de tomas
+Combinar:
+- establishing shot;
+- plano medio;
+- primer plano;
+- detalle de manos/objeto;
+- sobrehombro;
+- perfil;
+- espalda;
+- plano general de acción;
+- reacción;
+- plano simbólico/cierre.
+
+No repetir dos o tres tomas consecutivas con Pedro e Inês en la misma posición.
+
+### Drive
+Carpeta operativa:
+**02 - Pedro e Inês de Castro**
+ID: `1OSOKtqhqfh-ZC1OPNoIdDqCBP4uUyt-L`
+
+La carpeta fue organizada con archivos numerados. Si se reemplaza una toma, debe conservar su lugar lógico y eliminarse/reemplazarse la versión floja para evitar duplicados y confusión.
+
+### Cierre visual
+Alcobaça debe funcionar como payoff:
+- tumbas frente a frente;
+- planos distintos y no duplicados;
+- conectar la leyenda con el objeto/lugar real;
+- cierre emotivo, no melodramático.
 
