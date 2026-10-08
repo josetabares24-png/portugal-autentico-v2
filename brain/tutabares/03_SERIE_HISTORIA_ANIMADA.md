@@ -543,3 +543,11 @@ Alcobaça debe funcionar como payoff:
 - conectar la leyenda con el objeto/lugar real;
 - cierre emotivo, no melodramático.
 
+
+### Continuidad obligatoria — tomas 12 → 14 (auditoría 2026-10-08)
+- **Toma 12**: funeral de Constança, Pedro de luto con rostro juvenil y prácticamente sin barba, atuendo azul-negro con bordados dorados.
+- **Toma 13**: “Pedro e Inês siguieron juntos”. La imagen romántica previa de terraza con Pedro de barba marcada y capa roja genera un salto fuerte de rostro, vestuario, atmósfera y gesto. **NO VALIDARLA como final** hasta resolver continuidad.
+- Solución preferida: escena de transición en galería/patio del palacio, Pedro con **el mismo rostro, pelo y barba/afeitado exactos de la toma 12**; vestuario compatible con la toma 12 (sin cambios arbitrarios); Inês conserva su identidad y vestido marfil/burdeos. Paleta cálida moderada, encuentro sobrio sin poses exageradas. Alternar encuadre respecto al funeral.
+- **Toma 14**: “Tuvieron hijos”. Plano familiar nuevo y distinto; mantener las identidades adultas bloqueadas y la estética 3D estilizada. No validar un resultado horizontal ni un collage: imágenes finales individuales verticales 9:16.
+- Regla: un cambio de locación/luz explica paso de tiempo, pero **no justifica cambio accidental de cara/barba**. Flow no debe encargarse de solucionar inconsistencias de la imagen fija.
+- **Estado actual**: 13 y 14 pendientes de una versión coherente; pruebas con collage u horizontal descartadas.
