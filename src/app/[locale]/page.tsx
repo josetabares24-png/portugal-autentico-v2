@@ -83,7 +83,7 @@ export default function HomePage() {
 
         <div className="absolute inset-0 mx-auto flex max-w-[1280px] items-end px-6 pb-12 sm:px-10 md:pb-12">
           <div className="max-w-[720px]">
-          <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+          <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
             Guía local de Lisboa
           </p>
           <h1

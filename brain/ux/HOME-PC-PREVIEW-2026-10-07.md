@@ -76,3 +76,7 @@ Baseline de disponibilidad SEO verificada el 8/10 antes de publicar: Home, robot
 La ventana de observación de E-010 se cuenta desde el despliegue verificado. Medir sesiones de Home y clics de portal por dispositivo en 14/28 días equivalentes, con los mismos IDs; la mejora estética no prueba un aumento de SEO o conversión.
 
 Validación de publicación del 8/10: `npm run typecheck`, lint de ambos TSX y `git diff --check` pasan. `npm run smoke:sitemap` compiló la versión optimizada de producción (128 páginas estáticas) y pasó 51/51 comprobaciones, incluidas las 100 URLs del sitemap, las ocho entradas canónicas, base SEO y redirecciones. No hubo que modificar código para esta validación.
+
+## Corrección de la etiqueta del hero — 2026-10-08
+
+Después de publicar, José señaló: «no me gusta el texto amarillo de guia local en lisboa». La corrección puntual cambia `text-gold` a `text-white/90` en «Guía local de Lisboa». Mantiene texto, tamaño, posición y el resto de la composición revisada; se aplica por igual en PC y móvil. No cambia H1, metadatos, enlaces ni medición. Es una preferencia visual solicitada, sin atribución de impacto SEO. Parte del merge de producción `8fc9a25` y se prepara en `fix/home-hero-label-color` para revisión y publicación por PR.
