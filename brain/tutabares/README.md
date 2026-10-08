@@ -21,6 +21,7 @@ Si José ha corregido personalmente un guion reciente, leer también sus decisio
 Para cualquier capítulo histórico animado, además leer:
 
 4. `03_SERIE_HISTORIA_ANIMADA.md`
+5. Si el capítulo en curso es **Pedro e Inês de Castro**, leer también `04_CAPITULO_02_PEDRO_INES_PRODUCCION.md` (guion vigente, estado plano a plano, descartes, Drive y punto de reanudación).
 
 Ese archivo es la fuente canónica de:
 - biblia visual;
