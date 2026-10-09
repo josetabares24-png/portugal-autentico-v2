@@ -706,3 +706,11 @@ En las páginas donde la siguiente decisión del lector es comprar (Jerónimos, 
 **Status:** accepted
 
 José ordered the public contact email changed from `contacto@estabaenlisboa.com` (and any `hola@estabaenlisboa.com`) to `estabaenlisboa@gmail.com` across legal pages, schema, contact/planifica APIs and user-facing mailto. Published same day.
+
+## D-040 — Página de precios de transporte y newsletter con PDF en los artículos
+**Date:** 2026-10-09
+**Status:** proposed (rama `feat/transporte-newsletter`, sin publicar; pendiente de José)
+
+Se crea `/transporte-lisboa` como tabla de tarifas oficiales y directorio de las guías de transporte. No es una guía genérica más: no repite el «qué uso según la situación» de `como-moverse-por-lisboa` (E-001). Lleva un único bloque de Lisboa Card en la sección que hace la cuenta, lo que es una excepción explícita a D-031 que José debe aprobar o quitar. El pie gana una columna «Planificar» y los enlaces legales completos; la cabecera no cambia.
+
+Los artículos llevan un formulario de newsletter con casilla de consentimiento y un PDF de regalo, «Qué reservar antes de ir a Lisboa». No lo llevan E-006 ni E-007. El PDF se entrega en la web porque la plantilla de bienvenida vive en Brevo. Detalle: [[seo/TRANSPORTE-NEWSLETTER-2026-10-09]].

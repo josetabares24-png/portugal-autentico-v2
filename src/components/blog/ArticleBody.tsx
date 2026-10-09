@@ -9,6 +9,7 @@ import type {
 import { ArticleBookingBlock, type ArticleBookingBlockProps } from './ArticleBookingBlock';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
+import { ArticleNewsletter } from './ArticleNewsletter';
 import { renderEditorialHeading, slugify } from './article-utils';
 
 type ArticleBodyProps = {
@@ -25,6 +26,8 @@ type ArticleBodyProps = {
    * no encuentran su encabezado caen al final del cuerpo.
    */
   bookings?: (ArticleBookingBlockProps & { beforeHeading?: string; position?: 'after-summary' })[];
+  /** Slug del artículo si lleva newsletter; sin él no se pinta el formulario. */
+  newsletterSlug?: string;
 };
 
 export function ArticleBody({
@@ -36,6 +39,7 @@ export function ArticleBody({
   seoDescription,
   takeaways,
   bookings = [],
+  newsletterSlug,
 }: ArticleBodyProps) {
   const headingIds = new Set(
     article.contenido
@@ -51,6 +55,185 @@ export function ArticleBody({
       .filter((b) => b.beforeHeading === headingId)
       .map((b) => <ArticleBookingBlock key={b.contentId} {...b} />);
   const trailingBookings = bodyBookings.filter((b) => !b.beforeHeading || !headingIds.has(b.beforeHeading));
+  /*
+   * El formulario de newsletter va antes del primer subtítulo que esté a
+   * partir del 60 % del texto y que no tenga ya un bloque de reserva ni un
+   * enlace destacado delante: dos cajas seguidas se leen como publicidad.
+   * Si no hay ninguno, el último hueco válido desde el 40 %; si tampoco,
+   * al final.
+   */
+  const bodyBlocks = article.contenido.slice(1);
+  // El 60 % se mide en texto, no en número de bloques: una tabla o una lista
+  // larga pesan más que un subtítulo.
+  const blockWeight = (b: (typeof bodyBlocks)[number]) =>
+    (b.texto?.length ?? 0) +
+    (b.items?.join('').length ?? 0) +
+    (b.filas?.flat().join('').length ?? 0);
+  const totalWeight = bodyBlocks.reduce((sum, b) => sum + blockWeight(b), 0);
+  const weightBefore = bodyBlocks.map((_, i) =>
+    bodyBlocks.slice(0, i).reduce((sum, b) => sum + blockWeight(b), 0),
+  );
+  const newsletterCandidates = newsletterSlug
+    ? bodyBlocks.flatMap((b, i) =>
+        (b.tipo === 'subtitulo' || b.tipo === 'subseccion') &&
+        !bodyBookings.some((booking) => booking.beforeHeading === slugify(b.texto || '')) &&
+        bodyBlocks[i - 1]?.tipo !== 'enlace'
+          ? [i]
+          : [],
+      )
+    : [];
+  const newsletterIndex =
+    newsletterCandidates.find((i) => weightBefore[i] >= totalWeight * 0.6) ??
+    [...newsletterCandidates].reverse().find((i) => weightBefore[i] >= totalWeight * 0.4) ??
+    -1;
+  const newsletterAtEnd = Boolean(newsletterSlug) && newsletterIndex === -1;
+  const newsletter = newsletterSlug ? (
+    <ArticleNewsletter slug={newsletterSlug} placement="article_inline" />
+  ) : null;
+  const renderBlock = (bloque: (typeof bodyBlocks)[number], index: number) => {
+    if (bloque.tipo === 'parrafo') {
+      const paragraphIndex = article.contenido
+        .slice(1, index + 1)
+        .filter((item) => item.tipo === 'parrafo').length;
+      // Cada 3 párrafos, añadir destacado estilo cita.
+      // En la maquetación v2 no se aplica: convertía en cita un
+      // párrafo corriente solo por su posición.
+      if (!isEditorialV2 && paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
+        return (
+          <blockquote key={index} className="article-quote border-l-4 border-gold">
+            <p>
+              {bloque.texto}
+            </p>
+          </blockquote>
+        );
+      }
+      return (
+        <p key={index}>
+          {bloque.texto}
+        </p>
+      );
+    }
+    if (bloque.tipo === 'subtitulo') {
+      const headingId = slugify(bloque.texto || '');
+      const photo = isEditorialV2 ? photos[headingId] : undefined;
+      return (
+        <Fragment key={index}>
+          {bookingsBefore(headingId)}
+          <h2 id={headingId} className="scroll-mt-28">
+            {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
+          </h2>
+          {photo && <ArticleFigure photo={photo} />}
+        </Fragment>
+      );
+    }
+    if (bloque.tipo === 'subseccion') {
+      const headingId = slugify(bloque.texto || '');
+      return (
+        <Fragment key={index}>
+          {bookingsBefore(headingId)}
+          <h3 id={headingId} className="scroll-mt-28">
+            {bloque.texto}
+          </h3>
+        </Fragment>
+      );
+    }
+    if (bloque.tipo === 'lista') {
+      return (
+        <ul key={index} className="article-list">
+          {bloque.items?.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    if (bloque.tipo === 'tip') {
+      return (
+        <ArticleCallout
+          key={index}
+          label="Tip local"
+          className="article-info-box article-tip border-l-2 border-gold"
+        >
+          <p>{bloque.texto}</p>
+        </ArticleCallout>
+      );
+    }
+    if (bloque.tipo === 'nota') {
+      return (
+        <ArticleCallout key={index} label="Dato verificado">
+          <p>{bloque.texto}</p>
+        </ArticleCallout>
+      );
+    }
+    // Advertencia sobre el estado de un lugar: cierres, obras o
+    // cualquier cosa que convenga comprobar antes de ir. Reutiliza
+    // los estilos de `nota`; solo cambia la etiqueta.
+    if (bloque.tipo === 'aviso') {
+      return (
+        <ArticleCallout key={index} label="Antes de ir">
+          <p>{bloque.texto}</p>
+        </ArticleCallout>
+      );
+    }
+    // Comparativas con datos (precios, opciones). En pantallas
+    // estrechas (<640px) cada fila se apila como una tarjeta y cada
+    // celda muestra su cabecera (data-label), sin scroll horizontal.
+    if (bloque.tipo === 'tabla' && bloque.columnas && bloque.filas) {
+      return (
+        <div key={index} className="article-table-wrap">
+          <table className="article-table">
+            {bloque.texto ? <caption>{bloque.texto}</caption> : null}
+            <thead>
+              <tr>
+                {bloque.columnas.map((col, i) => (
+                  <th key={i} scope="col">{col}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bloque.filas.map((fila, r) => (
+                <tr key={r}>
+                  {fila.map((celda, c) =>
+                    c === 0 ? (
+                      <th key={c} scope="row">{celda}</th>
+                    ) : (
+                      <td key={c} data-label={bloque.columnas?.[c] ?? ''}>{celda}</td>
+                    ),
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    /*
+     * Sugerencia dentro del texto, para los free tours. Va deliberadamente
+     * sobria —un filete lateral y un enlace, sin botón ni fondo— porque
+     * aparece en mitad de la lectura y un banner ahí resta credibilidad
+     * al artículo. Enlaza siempre a una sección de la web propia, nunca
+     * a un afiliado directo.
+     */
+    if (bloque.tipo === 'enlace' && bloque.href && bloque.label) {
+      return (
+        <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
+          {bloque.texto ? <p>{bloque.texto}</p> : null}
+          <TrackedInternalLink
+            href={bloque.href}
+            contentType="article_inline_link"
+            contentId={bloque.href}
+            className="article-inline-cta-link"
+          >
+            {bloque.label} →
+          </TrackedInternalLink>
+        </aside>
+      );
+    }
+    return null;
+  };
+
   return (
     <article className="article-surface min-w-0">
       {/* Lead paragraph - primer párrafo destacado */}
@@ -110,152 +293,21 @@ export function ArticleBody({
 
       {/* Contenido del artículo */}
       <div className="article-content article-reading">
-        {article.contenido.slice(1).map((bloque, index) => {
-          if (bloque.tipo === 'parrafo') {
-            const paragraphIndex = article.contenido
-              .slice(1, index + 1)
-              .filter((item) => item.tipo === 'parrafo').length;
-            // Cada 3 párrafos, añadir destacado estilo cita.
-            // En la maquetación v2 no se aplica: convertía en cita un
-            // párrafo corriente solo por su posición.
-            if (!isEditorialV2 && paragraphIndex % 4 === 0 && bloque.texto && bloque.texto.length > 50) {
-              return (
-                <blockquote key={index} className="article-quote border-l-4 border-gold">
-                  <p>
-                    {bloque.texto}
-                  </p>
-                </blockquote>
-              );
-            }
+        {bodyBlocks.map((bloque, index) => {
+          if (index === newsletterIndex) {
             return (
-              <p key={index}>
-                {bloque.texto}
-              </p>
-            );
-          }
-          if (bloque.tipo === 'subtitulo') {
-            const headingId = slugify(bloque.texto || '');
-            const photo = isEditorialV2 ? photos[headingId] : undefined;
-            return (
-              <Fragment key={index}>
-                {bookingsBefore(headingId)}
-                <h2 id={headingId} className="scroll-mt-28">
-                  {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
-                </h2>
-                {photo && <ArticleFigure photo={photo} />}
+              <Fragment key={`newsletter-${index}`}>
+                {newsletter}
+                {renderBlock(bloque, index)}
               </Fragment>
             );
           }
-          if (bloque.tipo === 'subseccion') {
-            const headingId = slugify(bloque.texto || '');
-            return (
-              <Fragment key={index}>
-                {bookingsBefore(headingId)}
-                <h3 id={headingId} className="scroll-mt-28">
-                  {bloque.texto}
-                </h3>
-              </Fragment>
-            );
-          }
-          if (bloque.tipo === 'lista') {
-            return (
-              <ul key={index} className="article-list">
-                {bloque.items?.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-terracotta mt-0.5 flex-shrink-0">&#10003;</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            );
-          }
-          if (bloque.tipo === 'tip') {
-            return (
-              <ArticleCallout
-                key={index}
-                label="Tip local"
-                className="article-info-box article-tip border-l-2 border-gold"
-              >
-                <p>{bloque.texto}</p>
-              </ArticleCallout>
-            );
-          }
-          if (bloque.tipo === 'nota') {
-            return (
-              <ArticleCallout key={index} label="Dato verificado">
-                <p>{bloque.texto}</p>
-              </ArticleCallout>
-            );
-          }
-          // Advertencia sobre el estado de un lugar: cierres, obras o
-          // cualquier cosa que convenga comprobar antes de ir. Reutiliza
-          // los estilos de `nota`; solo cambia la etiqueta.
-          if (bloque.tipo === 'aviso') {
-            return (
-              <ArticleCallout key={index} label="Antes de ir">
-                <p>{bloque.texto}</p>
-              </ArticleCallout>
-            );
-          }
-          // Comparativas con datos (precios, opciones). En pantallas
-          // estrechas (<640px) cada fila se apila como una tarjeta y cada
-          // celda muestra su cabecera (data-label), sin scroll horizontal.
-          if (bloque.tipo === 'tabla' && bloque.columnas && bloque.filas) {
-            return (
-              <div key={index} className="article-table-wrap">
-                <table className="article-table">
-                  {bloque.texto ? <caption>{bloque.texto}</caption> : null}
-                  <thead>
-                    <tr>
-                      {bloque.columnas.map((col, i) => (
-                        <th key={i} scope="col">{col}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bloque.filas.map((fila, r) => (
-                      <tr key={r}>
-                        {fila.map((celda, c) =>
-                          c === 0 ? (
-                            <th key={c} scope="row">{celda}</th>
-                          ) : (
-                            <td key={c} data-label={bloque.columnas?.[c] ?? ''}>{celda}</td>
-                          ),
-                        )}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            );
-          }
-          /*
-           * Sugerencia dentro del texto, para los free tours. Va deliberadamente
-           * sobria —un filete lateral y un enlace, sin botón ni fondo— porque
-           * aparece en mitad de la lectura y un banner ahí resta credibilidad
-           * al artículo. Enlaza siempre a una sección de la web propia, nunca
-           * a un afiliado directo.
-           */
-          if (bloque.tipo === 'enlace' && bloque.href && bloque.label) {
-            return (
-              <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
-                {bloque.texto ? <p>{bloque.texto}</p> : null}
-                <TrackedInternalLink
-                  href={bloque.href}
-                  contentType="article_inline_link"
-                  contentId={bloque.href}
-                  className="article-inline-cta-link"
-                >
-                  {bloque.label} →
-                </TrackedInternalLink>
-              </aside>
-            );
-          }
-          return null;
+          return renderBlock(bloque, index);
         })}
         {trailingBookings.map((b) => (
           <ArticleBookingBlock key={b.contentId} {...b} />
         ))}
+        {newsletterAtEnd && newsletter}
       </div>
 
       {faqs.length > 0 && (

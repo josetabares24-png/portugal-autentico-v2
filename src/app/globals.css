@@ -1366,6 +1366,138 @@ button:active:not(:disabled) {
   text-decoration: underline;
 }
 
+/* Enlaces a las guías al final de una sección de página central
+   (TravelPillarPage). Lista sin viñetas, con el mismo filete que el enlace
+   dentro del texto. */
+.article-content ul.pillar-guide-links {
+  margin: 1.5rem 0 2rem;
+  padding: 0.25rem 0 0.25rem 1.125rem;
+  list-style: none;
+  border-left: 2px solid var(--color-terracotta, #b8472e);
+}
+
+.article-content ul.pillar-guide-links li {
+  margin: 0.4rem 0;
+  padding: 0;
+}
+
+.article-content ul.pillar-guide-links li::before {
+  content: none;
+}
+
+/* ── Newsletter dentro de los artículos (ArticleNewsletter) ──
+   Caja sobria sobre fondo crema: aparece en mitad de la lectura y no debe
+   competir con el texto ni con los bloques de reserva. */
+.article-newsletter {
+  margin: 2.5rem 0;
+  padding: 1.25rem 1.25rem 1.1rem;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-terracotta);
+  border-radius: 0.5rem;
+}
+
+.article-newsletter-footer {
+  margin: 0 0 2rem;
+}
+
+.article-newsletter .article-newsletter-title {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  color: var(--color-night);
+}
+
+.article-newsletter .article-newsletter-text {
+  margin: 0 0 0.9rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.article-newsletter-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-newsletter-row input {
+  min-height: 2.875rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid #b9b0a3;
+  border-radius: 0.5rem;
+  color: var(--color-night);
+}
+
+.article-newsletter-row input:focus-visible,
+.article-newsletter-consent input:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.article-newsletter-row .btn-primary {
+  min-height: 2.875rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .article-newsletter-row {
+    flex-direction: row;
+  }
+}
+
+.article-newsletter-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.article-newsletter-consent input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--color-terracotta);
+}
+
+.article-newsletter-consent label {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-taupe);
+}
+
+.article-newsletter-consent a {
+  color: var(--color-terracotta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-newsletter .article-newsletter-error {
+  margin: 0.6rem 0 0;
+  font-size: 0.875rem;
+  color: #9b2c1a;
+}
+
+.article-newsletter-success p {
+  margin: 0 0 0.4rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.article-newsletter-success .article-newsletter-fine {
+  margin-top: 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--color-taupe);
+}
+
+
 /* ---- Bloque de reserva dentro del artículo (ArticleBookingBlock) ----
    Las reglas de .article-content p / a pesan más que las utilidades de
    Tailwind, así que el bloque fija aquí su propia tipografía. */

@@ -41,6 +41,17 @@ export type TravelPillarGuide = {
       title: string;
       text: string;
     };
+    /** Tabla de datos (precios, horarios). En móvil cada fila se apila. */
+    table?: {
+      caption: string;
+      columns: string[];
+      rows: string[][];
+    };
+    /** Enlaces a las guías que desarrollan la sección. */
+    links?: Array<{
+      href: string;
+      label: string;
+    }>;
     image?: string;
     imageAlt?: string;
     imagePosition?: string;
@@ -246,6 +257,51 @@ export function TravelPillarPage({
                       <p>{item.text}</p>
                     </div>
                   ))}
+
+                  {section.table ? (
+                    <div className="article-table-wrap">
+                      <table className="article-table">
+                        <caption>{section.table.caption}</caption>
+                        <thead>
+                          <tr>
+                            {section.table.columns.map((column) => (
+                              <th key={column} scope="col">{column}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row[0]}>
+                              {row.map((cell, index) =>
+                                index === 0 ? (
+                                  <th key={index} scope="row">{cell}</th>
+                                ) : (
+                                  <td key={index} data-label={section.table?.columns[index] ?? ''}>{cell}</td>
+                                ),
+                              )}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+
+                  {section.links?.length ? (
+                    <ul className="pillar-guide-links">
+                      {section.links.map((link) => (
+                        <li key={link.href}>
+                          <TrackedInternalLink
+                            href={link.href}
+                            contentType="pillar_section_link"
+                            contentId={link.href}
+                            className="article-inline-cta-link"
+                          >
+                            {link.label} →
+                          </TrackedInternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
 
                   {section.note ? (
                     <aside className="article-info-box my-7">

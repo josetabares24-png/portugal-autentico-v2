@@ -33,6 +33,7 @@ const MANDATORY = [
   `${PROD_ORIGIN}/itinerarios`,
   `${PROD_ORIGIN}/que-ver-en-lisboa`,
   `${PROD_ORIGIN}/donde-comer-en-lisboa`,
+  `${PROD_ORIGIN}/transporte-lisboa`,
   `${PROD_ORIGIN}/actividades`,
   `${PROD_ORIGIN}/free-tours-lisboa`,
   `${PROD_ORIGIN}/planifica-tu-viaje`,
@@ -489,7 +490,7 @@ async function checkNavigation(baseUrl) {
 }
 
 async function checkTravelerPillars(baseUrl) {
-  const paths = ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'];
+  const paths = ['/que-ver-en-lisboa', '/donde-comer-en-lisboa', '/transporte-lisboa'];
 
   for (const path of paths) {
     const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });

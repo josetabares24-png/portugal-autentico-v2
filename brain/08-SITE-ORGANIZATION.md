@@ -61,11 +61,11 @@ Nothing else gets primary-navigation weight for now.
 
 ### Footer
 
-- Guías
-- Free tours
-- Contacto
-- Privacidad
-- Instagram
+Actualizado el 2026-10-09 (D-040, pendiente de José):
+
+- Planificar: Qué ver en Lisboa, Transporte en Lisboa, Dónde comer en Lisboa
+- Estaba en Lisboa: Guías, Free tours, Contacto, Instagram
+- Legal: Privacidad, Cookies, Aviso legal, Términos y condiciones
 
 ## What remains live but is demoted
 

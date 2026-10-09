@@ -33,6 +33,7 @@ const PAGES = [
   '/itinerarios',
   '/que-ver-en-lisboa',
   '/donde-comer-en-lisboa',
+  '/transporte-lisboa',
   '/planifica-tu-viaje',
   '/calculadora-presupuesto-lisboa',
   '/aviso-legal',

@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
 import { ArticleEditorialLinks } from '@/components/blog/ArticleEditorialLinks';
+import { ArticleNewsletter } from '@/components/blog/ArticleNewsletter';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleRelated } from '@/components/blog/ArticleRelated';
@@ -14,6 +15,7 @@ import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
 import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import { articleHasNewsletter } from '@/lib/newsletter';
 
 const articles: Record<string, Article> = {
   'restaurantes-romanticos-lisboa': {
@@ -98,6 +100,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 11,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
       { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
       { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días con Sintra' },
@@ -164,6 +167,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 8,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/metro-lisboa-guia', label: 'Guía del Metro de Lisboa' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y billetes' },
       { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
@@ -401,6 +405,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-08',
     minutos: 9,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Aeropuerto al centro' },
@@ -492,6 +497,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-09',
     minutos: 12,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/metro-lisboa-guia', label: 'Horario y líneas del Metro de Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto de Lisboa al centro' },
@@ -1356,6 +1362,7 @@ const articles: Record<string, Article> = {
     fecha: '18 Sep 2026',
     minutos: 4,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Comparar las formas de moverse por Lisboa' },
       { href: '/blog/mejores-apps-lisboa', label: 'Apps útiles durante el viaje' },
       { href: '/itinerarios', label: 'Elegir un itinerario gratuito por Lisboa' },
@@ -1482,6 +1489,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 10,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/estacion-olaias-lisboa', label: 'Arte y arquitectura en la estación de Olaias' },
       { href: '/actividades/oceanario-lisboa', label: 'Oceanário de Lisboa' },
@@ -1550,6 +1558,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-08-28',
     minutos: 9,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
       { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente' },
@@ -2386,6 +2395,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 11,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Entender el transporte antes de decidir' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Ver cómo encaja en una ruta de 3 días' },
       { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Alternativas gratuitas y de bajo coste' },
@@ -2479,6 +2489,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 12,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Entender la tarjeta Navegante y las tarifas 2026' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Aplicar el transporte a una ruta de 3 días' },
@@ -3117,6 +3128,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Marzo y abril: primavera temprana con más incertidumbre" },
       { tipo: "parrafo", texto: "Marzo y abril ya suben hacia máximas medias de 18,9 °C y 20,4 °C, pero mantienen alrededor de 7,6 y 7,9 días al mes con al menos 1 mm de lluvia. Son meses razonables si prefieres temperaturas suaves y aceptas adaptar alguna jornada al tiempo." },
       { tipo: "parrafo", texto: "Semana Santa puede caer en marzo o abril y cambia de fecha cada año. Si viajas por esa celebración, mira el calendario específico y no reutilices programas de años anteriores." },
+      { tipo: "enlace", texto: "En 2027 cae en marzo: Domingo de Ramos el 21 y Pascua el 28. Qué está confirmado y qué cambia para quien visita la ciudad.", href: "/blog/semana-santa-lisboa", label: "Semana Santa en Lisboa 2027" },
 
       { tipo: "subtitulo", texto: "Qué mes elegir según el viaje que quieres" },
       { tipo: "lista", items: [
@@ -3146,6 +3158,7 @@ const articles: Record<string, Article> = {
     dateModified: "2026-09-23",
     minutos: 10,
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
       { href: "/blog/playas-cerca-lisboa", label: "Qué playa elegir cerca de Lisboa" },
       { href: "/blog/excursiones-desde-lisboa", label: "Comparar excursiones desde Lisboa" },
@@ -4199,6 +4212,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Enero - Marzo: Cultura y Carnaval" },
       { tipo: "parrafo", texto: "Los primeros meses del año son la temporada baja de turismo, lo que significa Lisboa más tranquila, precios más bajos y un ritmo de vida más local. El punto alto de este período es el Carnaval (febrero o marzo según el año), que en Lisboa no tiene la masividad de Cádiz o Río, pero tiene su encanto propio: desfiles en la Avenida da Liberdade, fiestas en los bares del Bairro Alto, y una relajación general de la ciudad que se nota en el ambiente." },
       { tipo: "parrafo", texto: "Para los amantes del cine, el IndieLisboa (festival de cine independiente, generalmente en abril) y el Monstra (festival de cine de animación, marzo) son los eventos culturales más interesantes del invierno-primavera. Las entradas son económicas y la calidad de la programación es muy alta." },
+      { tipo: "enlace", texto: "La Semana Santa de 2027 cae en marzo, con Pascua el 28. Fechas y qué esperar en la ciudad.", href: "/blog/semana-santa-lisboa", label: "Semana Santa en Lisboa 2027" },
       { tipo: "subtitulo", texto: "Abril - Mayo: Primavera y el 25 de Abril" },
       { tipo: "parrafo", texto: "El 25 de abril es la fecha más cargada de emoción en el calendario portugués: el aniversario de la Revolución de los Claveles de 1974. En Lisboa, el día se celebra con manifestaciones (siempre pacíficas y festivas), conciertos en la Avenida da Liberdade, y una emotividad colectiva que los visitantes rara vez olvidan. Algunos bares y locales tocan música de resistencia y fado político que vuelve a sonar cada año en esta fecha." },
       { tipo: "parrafo", texto: "Mayo es uno de los mejores meses para visitar Lisboa: temperatura perfecta (18-22°C), jardines en flor, sin las multitudes del verano, y la ciudad saliendo del invierno con energía renovada. Los mercados callejeros y los conciertos al aire libre empiezan a poblar parques y plazas." },
@@ -4784,6 +4798,7 @@ const articles: Record<string, Article> = {
       { label: "CARRIS — tarifas en vigor durante 2026", href: "https://www.carris.pt/descubra/novo-tarifario-2026/" },
     ],
     links: [
+      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
       { href: "/blog/alfama-historia-guia", label: "Qué ver en Alfama" },
       { href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
@@ -5419,6 +5434,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return true;
   });
   const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
+  const showNewsletter = articleHasNewsletter(slug);
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
   const photos = sectionPhotos[slug] ?? {};
@@ -5511,6 +5527,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             seoDescription={seoDescription}
             takeaways={takeaways}
             bookings={resolveArticleBookings(slug)}
+            newsletterSlug={showNewsletter ? slug : undefined}
           />
 
           <ArticleToc headings={headings} />
@@ -5520,6 +5537,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <ArticleEditorialLinks links={editorialLinks} />
 
         <div className="article-compact-ending max-w-2xl mx-auto mt-10">
+          {showNewsletter && (
+            <div className="article-reading">
+              <ArticleNewsletter slug={slug} placement="article_footer" />
+            </div>
+          )}
           <ArticleFooter
             authorName={AUTHOR_NAME}
             beforeAuthor={

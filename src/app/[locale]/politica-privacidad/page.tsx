@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Privacidad
 
-**Última actualización:** 5 de agosto de 2026
+**Última actualización:** 9 de octubre de 2026
 
 ## 1. Responsable del Tratamiento
 
@@ -38,7 +38,7 @@ async function getLegalContent() {
 Este sitio no tiene actualmente tienda ni checkout: no recopilamos datos de compra, facturación ni de pago porque no se procesan.
 
 ### 2.1. Datos que envías voluntariamente
-Cuando usas el formulario de contacto, el de planifica-tu-viaje, o te suscribes a novedades por email, recopilamos los datos que introduces en ese formulario (por ejemplo, nombre y correo electrónico, y el contenido de tu mensaje o consulta). Se usan solo para responderte o, si te suscribes, para enviarte las comunicaciones que hayas solicitado.
+Cuando usas el formulario de contacto, el de planifica-tu-viaje, o te suscribes a novedades por email, recopilamos los datos que introduces en ese formulario (por ejemplo, nombre y correo electrónico, y el contenido de tu mensaje o consulta). Se usan solo para responderte o, si te suscribes, para enviarte las comunicaciones que hayas solicitado. Si te suscribes desde un artículo, te damos el enlace a la lista en PDF «Qué reservar antes de ir a Lisboa». Es el mismo archivo para todo el mundo: no se genera con tus datos.
 
 ### 2.2. Envío de tu presupuesto por email
 Si pides que te enviemos el presupuesto de la calculadora en PDF, usamos tu dirección de correo solo para ese envío. No guardamos ni el PDF ni el presupuesto: se generan en el momento de la petición y no quedan almacenados en ningún sitio. Tampoco te damos de alta en ninguna lista de correo: es un envío puntual y transaccional, y para recibir novedades hay que suscribirse aparte y a propósito. Descargar el PDF directamente no requiere email ni deja ningún dato.

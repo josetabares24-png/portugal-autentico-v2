@@ -5,6 +5,15 @@ import { validateEmail, createErrorResponse, addBrevoContact } from '@/lib/api-u
 
 const NEWSLETTER_LIST_ID = Number(process.env.BREVO_NEWSLETTER_LIST_ID || 5);
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://estabaenlisboa.com';
+// Regalo que se ofrece en los artículos. Solo se acepta este identificador:
+// el cliente no puede pedir que enlacemos cualquier URL en el email.
+const LEAD_MAGNETS: Record<string, { title: string; path: string }> = {
+  'que-reservar': {
+    title: 'Qué reservar antes de ir a Lisboa',
+    path: '/que-reservar-antes-de-ir-a-lisboa.pdf',
+  },
+};
+type LeadMagnet = (typeof LEAD_MAGNETS)[string];
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (char) => {
@@ -19,8 +28,9 @@ function escapeHtml(value: string) {
   });
 }
 
-function welcomeEmail(name: string) {
+function welcomeEmail(name: string, leadMagnet?: LeadMagnet) {
   const safeName = escapeHtml(name);
+  const pdfUrl = leadMagnet ? `${SITE_URL}${leadMagnet.path}` : '';
 
   return {
     subject: 'Bienvenido a Estaba en Lisboa',
@@ -29,7 +39,7 @@ function welcomeEmail(name: string) {
 Gracias por suscribirte a Estaba en Lisboa.
 
 Te escribiremos cuando publiquemos una guía nueva o actualicemos información importante sobre Lisboa.
-
+${leadMagnet ? `\nLa lista que pediste, ${leadMagnet.title}, está aquí:\n${pdfUrl}\n` : ''}
 Puedes ver las guías aquí:
 ${SITE_URL}/blog
 
@@ -55,6 +65,7 @@ Estaba en Lisboa`,
               <h1 style="margin:0 0 18px;font-size:24px;line-height:1.25;color:#1A2B4A;">Hola ${safeName}</h1>
               <p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#4a4a4a;">Gracias por suscribirte a Estaba en Lisboa.</p>
               <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4a4a4a;">Te escribiremos cuando publiquemos una guía nueva o actualicemos información importante sobre Lisboa.</p>
+              ${leadMagnet ? `<p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4a4a4a;">La lista que pediste: <a href="${pdfUrl}" style="color:#B8472E;">${escapeHtml(leadMagnet.title)} (PDF)</a>.</p>` : ''}
               <p style="margin:0 0 28px;">
                 <a href="${SITE_URL}/blog" style="display:inline-block;background:#1A2B4A;color:#FFFFFF;padding:12px 20px;text-decoration:none;font-weight:600;">Ver las guías</a>
               </p>
@@ -72,7 +83,7 @@ Estaba en Lisboa`,
   };
 }
 
-async function sendWelcomeEmail(email: string, name: string) {
+async function sendWelcomeEmail(email: string, name: string, leadMagnet?: LeadMagnet) {
   const brevoApiKey = process.env.BREVO_API_KEY;
   const subscriptionTemplateId = process.env.BREVO_SUBSCRIPTION_TEMPLATE_ID;
 
@@ -94,6 +105,12 @@ async function sendWelcomeEmail(email: string, name: string) {
             name,
             guides_url: `${SITE_URL}/blog`,
             unsubscribe_url: `${SITE_URL}/unsubscribe`,
+            // Brevo ignora los parámetros que la plantilla no usa. Para que el
+            // email lleve el PDF hay que añadir {{ params.lead_magnet_url }} a
+            // la plantilla en Brevo; mientras tanto el enlace sale en la web.
+            ...(leadMagnet
+              ? { lead_magnet_title: leadMagnet.title, lead_magnet_url: `${SITE_URL}${leadMagnet.path}` }
+              : {}),
           },
           headers: {
             'X-Mailer': 'Estaba en Lisboa',
@@ -109,7 +126,7 @@ async function sendWelcomeEmail(email: string, name: string) {
     }
   }
 
-  const content = welcomeEmail(name);
+  const content = welcomeEmail(name, leadMagnet);
   const senderName = process.env.BREVO_SENDER_NAME || 'Estaba en Lisboa';
   const senderEmail = process.env.BREVO_SENDER_EMAIL;
 
@@ -193,6 +210,10 @@ export async function POST(request: NextRequest) {
     const name = typeof body.name === 'string' && body.name.trim()
       ? body.name.trim()
       : email.split('@')[0];
+    const leadMagnet =
+      typeof body.leadMagnet === 'string' && Object.prototype.hasOwnProperty.call(LEAD_MAGNETS, body.leadMagnet)
+        ? LEAD_MAGNETS[body.leadMagnet]
+        : undefined;
 
     if (!validateEmail(email)) {
       return createErrorResponse('Email no válido', 400);
@@ -225,7 +246,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const welcomeSent = await sendWelcomeEmail(email, name);
+    const welcomeSent = await sendWelcomeEmail(email, name, leadMagnet);
     if (!welcomeSent) {
       logger.warn('[Subscribe] Subscriber stored, but welcome email was not delivered');
     }
