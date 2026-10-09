@@ -178,8 +178,8 @@ export default function FreeTourLiveFinder() {
               Encuentra un free tour para tu fecha
             </h2>
             <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Te mostramos hasta tres recorridos disponibles, con sus horarios y
-              enlace directo de reserva.
+              Elige el día y te enseño hasta tres free tours en español con plaza
+              libre, con su hora y el enlace para reservar.
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export default function FreeTourLiveFinder() {
                 href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
                 className="underline underline-offset-2 hover:no-underline"
               >
-                Más información
+                Cómo funcionan los enlaces de afiliado
               </Link>
               .
             </p>
@@ -264,7 +264,7 @@ export default function FreeTourLiveFinder() {
                         {tour.rating > 0 && tour.reviews > 0 ? (
                           <p className="mt-2 flex items-center gap-2 font-body text-xs text-text-secondary">
                             <Star size={14} fill="currentColor" className="text-gold" aria-hidden="true" />
-                            {tour.rating.toLocaleString('es-ES', { maximumFractionDigits: 1 })} · {tour.reviews.toLocaleString('es-ES')} opiniones
+                            {tour.rating.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} · {tour.reviews.toLocaleString('es-ES')} opiniones
                           </p>
                         ) : null}
 

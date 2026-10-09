@@ -54,7 +54,9 @@ export function TourismBookingHero({
       <div className="absolute inset-0 -z-10 bg-night/70" aria-hidden="true" />
 
       <div className="mx-auto flex min-h-[470px] max-w-6xl flex-col justify-end px-6 py-9 sm:min-h-[500px] md:px-10 md:py-11 lg:min-h-[510px]">
-        {breadcrumb}
+        {/* En móvil el texto llena la altura mínima y `mb-auto` deja de
+            separar; el `pb` evita que la miga toque el antetítulo. */}
+        {breadcrumb ? <div className="mb-auto pb-7">{breadcrumb}</div> : null}
 
         <p className="mb-3 font-body text-xs font-bold uppercase tracking-[0.18em] text-gold">
           {eyebrow}
@@ -84,13 +86,15 @@ export function TourismBookingHero({
           ) : null}
         </div>
 
-        <ul className="mt-7 grid border-y border-white/25 sm:grid-cols-3">
-          {signals.map((signal, index) => (
+        {/* Tres garantías cortas en una sola línea. Sin numerar: no son
+            pasos, y los «01 02 03» parecían un contador. */}
+        <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/25 pt-4">
+          {signals.map((signal) => (
             <li
               key={signal}
-              className={`flex min-h-12 items-center py-3 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white/78 sm:px-4 ${index > 0 ? 'border-t border-white/20 sm:border-l sm:border-t-0' : ''}`}
+              className="flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white/85"
             >
-              <span className="mr-2 text-gold" aria-hidden="true">0{index + 1}</span>
+              <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" aria-hidden="true" />
               {signal}
             </li>
           ))}

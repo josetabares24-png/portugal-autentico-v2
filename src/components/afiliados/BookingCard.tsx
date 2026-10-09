@@ -85,6 +85,8 @@ export function BookingCard({
     ? 'Consultar otras fechas'
     : product.ctaLabel;
 
+  const providerName = link.provider === 'tiqets' ? 'Tiqets' : 'GetYourGuide';
+
   let linkDomain = '';
   try {
     linkDomain = new URL(link.url).hostname;
@@ -158,11 +160,19 @@ export function BookingCard({
             </div>
           ) : null}
 
+          {/* Sin precio que enseñar, la fila no desaparece: así todas las
+              tarjetas tienen la misma estructura y queda claro dónde se paga. */}
+          {!officialPrice && !hasLiveDetails ? (
+            <p className="mb-3 flex min-h-10 items-center border-t border-border-soft pt-3 font-body text-xs text-text-secondary">
+              Precio y horarios en {providerName}
+            </p>
+          ) : null}
+
           <a
             href={link.url}
             target="_blank"
             rel="sponsored noopener noreferrer"
-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-4 py-2 text-center font-body text-sm font-bold leading-snug text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             onClick={() =>
               trackAffiliateClick({
                 affiliate_partner: link.provider,

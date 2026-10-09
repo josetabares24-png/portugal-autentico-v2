@@ -207,7 +207,6 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'La panorámica más completa del centro histórico, y la cola de la puerta se salta llevando la entrada comprada.',
     kind: 'Entrada',
-    badge: 'Nuestra selección',
     image: '/images/actividades/castelo-sao-jorge-lisboa.webp',
     imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
     searchTerms: ['castelo', 'castillo', 'sao jorge', 'san jorge', 'alfama', 'muralla', 'mirador', 'historia', 'monumento'],
@@ -243,8 +242,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta.',
     kind: 'Entrada',
-    image: '/images/sintra-palacio-turistas.jpg',
-    imageAlt: 'Palacio de Sintra con visitantes en la entrada',
+    // Antes llevaba la foto de la Quinta da Regaleira, que no es la Pena. Hasta
+    // tener una foto propia del palacio, la de la estación de Sintra: es
+    // honesta y es por donde empieza quien sube por su cuenta.
+    image: '/images/estacion-sintra.jpg',
+    imageAlt: 'Estación de tren de Sintra, de donde sale el autobús 434 hacia la Pena',
     searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
     hub: {
       render: 'native-card',
@@ -419,7 +421,6 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Puede compensar si concentras transporte y monumentos en pocos días; conviene revisar condiciones antes de comprar.',
     kind: 'Pase',
-    badge: 'Para planificar',
     image: '/images/funicular-bica-turistas.jpg',
     imageAlt: 'Funicular de Bica subiendo una calle empinada de Lisboa',
     searchTerms: ['lisboa card', 'tarjeta lisboa', 'transporte', 'museos', 'monumentos', 'pase', 'descuentos', 'belem'],

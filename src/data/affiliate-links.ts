@@ -85,8 +85,9 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Lisboa imprescindible',
     label: 'Primera visita',
     icon: 'attractions',
-    image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
-    imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
+    // Distinta de la hero de /free-tours-lisboa, que ya usa la del Arco.
+    image: '/images/lisboa-originales/rua-augusta-lisboa-01.webp',
+    imageAlt: 'Rua Augusta peatonal, con terrazas y gente paseando por la Baixa',
     description:
       'La mejor opción para una primera visita: Baixa, Chiado, Rossio y los principales episodios de la historia de Lisboa.',
     duration: 'Normalmente 2-3 horas',

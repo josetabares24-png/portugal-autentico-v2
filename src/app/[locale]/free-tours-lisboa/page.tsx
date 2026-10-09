@@ -53,23 +53,23 @@ export const metadata: Metadata = {
 const steps = [
   {
     icon: 'event_available',
-    title: 'Reserva tu plaza',
-    text: 'No pagas por adelantado y el guía sabe cuántas personas asistirán.',
+    title: 'Reservas tu plaza',
+    text: 'No pagas nada al reservar. Sirve para que el guía sepa cuántos vais.',
   },
   {
     icon: 'directions_walk',
-    title: 'Recorre la ciudad',
-    text: 'El guía realiza el recorrido y explica la zona.',
+    title: 'Haces el recorrido',
+    text: 'A pie, con un guía en español que te va contando la zona.',
   },
   {
     icon: 'recommend',
-    title: 'Valora la experiencia',
-    text: 'Al terminar, considera la duración y calidad del tour.',
+    title: 'Al final, tú decides',
+    text: 'Le das al guía lo que te parezca justo según cómo haya ido.',
   },
   {
     icon: 'savings',
-    title: 'Decide la propina',
-    text: 'No existe una cantidad fija obligatoria.',
+    title: 'Cuánto se suele dar',
+    text: 'No hay mínimo. Como referencia, mucha gente deja entre 5 y 10 € por persona.',
   },
 ];
 
@@ -179,13 +179,13 @@ export default function FreeToursLisboaPage() {
       ---------------------------------------------------------------- */}
       <section id="comparar-rutas" className="scroll-mt-20 bg-background-light pb-8 pt-7 md:pb-10 md:pt-7">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Elige tu recorrido</p>
+          <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">Elige tu recorrido</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Compara la zona antes de reservar
           </h2>
           <p className="mb-7 max-w-2xl leading-relaxed text-text-secondary">
-            Centro, Alfama y Belém cuentan historias distintas. Elige la zona que
-            realmente quieres conocer y consulta después sus horarios para tu fecha.
+            Centro, Alfama y Belém cuentan historias distintas. Elige la zona que de
+            verdad te apetece y luego mira sus horarios para tu fecha.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -245,7 +245,7 @@ export default function FreeToursLisboaPage() {
                         campaign={route.campaign}
                         content={`card-${route.id}`}
                         placement="category-card"
-                        className="inline-flex min-h-11 w-full items-center justify-center rounded-md border border-terracotta/45 px-4 text-center font-body text-sm font-bold text-terracotta transition-colors hover:border-terracotta hover:bg-terracotta hover:text-white"
+                        className="inline-flex min-h-12 w-full items-center justify-center gap-1 rounded-md bg-terracotta px-4 py-2 text-center font-body text-sm font-bold leading-snug text-white transition-colors hover:bg-primary-dark"
                       >
                         {route.ctaLabel}
                       </AffiliateLink>
@@ -280,7 +280,7 @@ export default function FreeToursLisboaPage() {
                 campaign={allTours.campaign}
                 content="destacado-todos"
                 placement="category-card"
-                className="mt-5 inline-flex min-h-11 items-center self-start rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark"
+                className="mt-5 inline-flex min-h-12 items-center gap-1 self-start rounded-md bg-white px-4 font-body text-sm font-bold text-night transition-colors hover:bg-background-light"
               >
                 Ver horarios y reservar
               </AffiliateLink>
@@ -291,17 +291,59 @@ export default function FreeToursLisboaPage() {
       </section>
 
       {/* ---------------------------------------------------------------
+          Recomendación personal
+      ---------------------------------------------------------------- */}
+      <section className="bg-background-light pb-4 pt-2 md:pb-6">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="border-y border-border-soft py-6 md:py-7">
+            <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
+              Mi recomendación
+            </p>
+            <h2 className="mb-4 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-3xl">
+              ¿Cuál elegiría yo para una primera visita?
+            </h2>
+            <p className="leading-relaxed text-text-secondary">
+              Para una primera visita elegiría una ruta por Baixa y Chiado. Te da el
+              contexto necesario para entender el terremoto de 1755, la reconstrucción
+              de la ciudad y la relación entre los barrios del centro. Después haría
+              Alfama o Belém como segundo recorrido, según prefieras calles históricas
+              o la época de los Descubrimientos.
+            </p>
+
+            <div className="mt-7 flex items-center gap-3 border-t border-border-soft pt-5">
+              <span
+                aria-hidden="true"
+                className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-terracotta font-display text-sm italic text-white"
+              >
+                JT
+              </span>
+              <div>
+                <p className="flex items-center gap-1.5 text-sm font-semibold text-text-main">
+                  José
+                  <span aria-hidden="true" className="text-text-secondary/60">·</span>
+                  <span className="inline-flex items-center gap-1 font-normal text-text-secondary">
+                    <Icon name="location_on" size={13} className="text-gold" />
+                    vive en Lisboa
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------
           Cómo funciona + consejos
       ---------------------------------------------------------------- */}
       <section className="bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Antes de reservar</p>
+          <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">Antes de reservar</p>
           <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
             Cómo funciona realmente un free tour
           </h2>
           <p className="mb-10 max-w-2xl leading-relaxed text-text-secondary">
-            Conviene entender el sistema antes de apuntarse, sobre todo si es la
-            primera vez: «free» no significa que el guía trabaje gratis.
+            «Free» no quiere decir que el guía trabaje gratis: cobra de la propina.
+            Si es tu primer free tour, esto es lo que conviene saber.
           </p>
 
           <ol className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
@@ -342,59 +384,45 @@ export default function FreeToursLisboaPage() {
       </section>
 
       {/* ---------------------------------------------------------------
-          Recomendación personal
+          Preguntas frecuentes
       ---------------------------------------------------------------- */}
       <section className="bg-background-light py-10 md:py-12">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="border-y border-border-soft py-6 md:py-7">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-text-secondary">
-              La opinión de la casa
-            </p>
-            <h2 className="mb-4 font-display text-2xl font-semibold not-italic leading-tight text-text-main md:text-3xl">
-              ¿Cuál elegiría yo para una primera visita?
-            </h2>
-            <p className="leading-relaxed text-text-secondary">
-              Para una primera visita elegiría una ruta por Baixa y Chiado. Te da el
-              contexto necesario para entender el terremoto de 1755, la reconstrucción
-              de la ciudad y la relación entre los barrios del centro. Después haría
-              Alfama o Belém como segundo recorrido, según prefieras calles históricas
-              o la época de los Descubrimientos.
-            </p>
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">Dudas habituales</p>
+          <h2 className="mb-8 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
+            Preguntas frecuentes sobre los free tours
+          </h2>
 
-            <div className="mt-7 flex items-center gap-3 border-t border-border-soft pt-5">
-              <span
-                aria-hidden="true"
-                className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-terracotta font-display text-sm italic text-white"
-              >
-                JT
-              </span>
-              <div>
-                <p className="flex items-center gap-1.5 text-sm font-semibold text-text-main">
-                  José
-                  <span aria-hidden="true" className="text-text-secondary/60">·</span>
-                  <span className="inline-flex items-center gap-1 font-normal text-text-secondary">
-                    <Icon name="location_on" size={13} className="text-gold" />
-                    vive en Lisboa
-                  </span>
+          <div className="divide-y divide-border-soft border-y border-border-soft">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5 text-[15px] font-semibold text-text-main transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+                  {faq.question}
+                  <Icon
+                    name="expand_more"
+                    size={20}
+                    className="mt-0.5 flex-shrink-0 text-terracotta motion-safe:transition-transform motion-safe:duration-200 group-open:rotate-180"
+                  />
+                </summary>
+                <p className="pb-5 pr-8 text-sm leading-relaxed text-text-secondary">
+                  {faq.answer}
                 </p>
-                <p className="text-xs text-text-secondary">Recomendación de Estaba en Lisboa</p>
-              </div>
-            </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
-
       {/* ---------------------------------------------------------------
           CTA final
       ---------------------------------------------------------------- */}
-      <section className="border-y border-border-soft bg-background-light py-10 md:py-12">
+      <section className="border-t border-border-soft bg-background-light py-10 md:py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="mb-4 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Reserva tu plaza para conocer Lisboa
+            ¿Ya sabes qué día vas?
           </h2>
           <p className="mb-7 leading-relaxed text-text-secondary">
-            Revisa las rutas disponibles para tus fechas y termina la reserva en
-            GuruWalk sin pago previo.
+            Mira los recorridos de ese día y reserva en GuruWalk. No pagas nada
+            hasta el final, y lo que pagas es la propina.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
@@ -422,35 +450,6 @@ export default function FreeToursLisboaPage() {
         </div>
       </section>
 
-      {/* ---------------------------------------------------------------
-          Preguntas frecuentes
-      ---------------------------------------------------------------- */}
-      <section className="bg-background-light py-10 md:py-12">
-        <div className="mx-auto max-w-3xl px-6">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-secondary">Dudas habituales</p>
-          <h2 className="mb-8 font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Preguntas frecuentes sobre los free tours
-          </h2>
-
-          <div className="divide-y divide-border-soft border-y border-border-soft">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-5 text-[15px] font-semibold text-text-main transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
-                  {faq.question}
-                  <Icon
-                    name="expand_more"
-                    size={20}
-                    className="mt-0.5 flex-shrink-0 text-terracotta motion-safe:transition-transform motion-safe:duration-200 group-open:rotate-180"
-                  />
-                </summary>
-                <p className="pb-5 pr-8 text-sm leading-relaxed text-text-secondary">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

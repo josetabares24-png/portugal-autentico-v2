@@ -371,13 +371,13 @@ async function checkLanding(baseUrl, expectedRef = null) {
 
   record(
     'la recomendación lleva la firma de José',
-    html.includes('vive en Lisboa') && html.includes('Recomendación de Estaba en Lisboa'),
+    html.includes('vive en Lisboa') && html.includes('Mi recomendación'),
     'firma presente'
   );
 
   record(
     'el CTA final es distinto del hero',
-    html.includes('Reserva tu plaza para conocer Lisboa') &&
+    html.includes('¿Ya sabes qué día vas?') &&
       html.includes('Ver todos los free tours'),
     'CTA de cierre propio'
   );

@@ -44,7 +44,7 @@ const faqs = [
   {
     question: '¿Los precios que veo aquí son definitivos?',
     answer:
-      'Cuando Tiqets nos facilita un precio actualizado lo mostramos como “Desde”, porque puede cambiar según la fecha, el horario y la modalidad elegida. Donde pone “Taquilla oficial” es el precio de la web del monumento; el proveedor puede cobrar algo más por la gestión. El botón abre su ficha con el importe y las condiciones definitivas antes de pagar.',
+      'Cuando Tiqets me da un precio actualizado, lo enseño como “Desde”, porque puede cambiar según la fecha, el horario y la modalidad elegida. Donde pone “Taquilla oficial” es el precio de la web del monumento; el proveedor puede cobrar algo más por la gestión. El botón abre su ficha con el importe y las condiciones definitivas antes de pagar.',
   },
 ];
 
@@ -120,13 +120,15 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
               </h2>
             </div>
             <p className="max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Diez opciones, no cien. Abre la que te interesa, elige fecha y
-              completa la compra en Tiqets o GetYourGuide con el precio final visible
-              antes de pagar.
+              He dejado diez, no cien: las que dejaría resueltas antes de ir, por
+              las colas o porque la entrada va con hora. Pagas en Tiqets o
+              GetYourGuide y ves el precio final antes de confirmar.
             </p>
           </div>
 
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {/* Tres columnas como máximo: con cuatro, los botones partían en
+              dos líneas y las fotos quedaban demasiado pequeñas. */}
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {HUB_PRODUCTS.map((product, index) => (
               <BookingProductRenderer
                 key={product.id}
@@ -138,14 +140,14 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
           </div>
 
           <p className="mt-8 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
-            Algunos enlaces son de afiliado. Si reservas a través de ellos podemos recibir
-            una comisión sin coste adicional para ti. La selección y la opinión editorial
-            no dependen del proveedor.{' '}
+            Algunos enlaces son de afiliado: si reservas desde aquí me llevo una pequeña
+            comisión y a ti te cuesta lo mismo. Lo que aparece en esta página lo elijo yo,
+            no el proveedor.{' '}
             <Link
               href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
               className="underline underline-offset-2 hover:no-underline"
             >
-              Más información
+              Cómo funcionan los enlaces de afiliado
             </Link>
             .
           </p>
