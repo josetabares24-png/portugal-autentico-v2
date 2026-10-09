@@ -318,12 +318,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'La entrada al palacio y su parque, para quien sube a Sintra por su cuenta.',
     kind: 'Entrada',
-    // Antes llevaba la foto de la Quinta da Regaleira, que no es la Pena. Hasta
-    // tener una foto propia del palacio, la de la estación de Sintra: es
-    // honesta y es por donde empieza quien sube por su cuenta.
-    image: '/images/estacion-sintra.jpg',
-    imageAlt: 'Estación de tren de Sintra, de donde sale el autobús 434 hacia la Pena',
-    preferProviderImage: true,
+    // Antes llevaba la foto de la Quinta da Regaleira y luego la de la estación
+    // de Sintra. Hasta tener una foto propia del palacio, una de Wikimedia
+    // Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/sintra-palacio-pena-wikimedia.webp',
+    imageAlt: 'El Palacio da Pena, amarillo y rojo, sobre el bosque de la sierra de Sintra',
     searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
     hub: {
       render: 'native-card',
@@ -501,7 +500,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día. La Torre entra por franjas horarias desde su reapertura en mayo de 2026.',
     kind: 'Entrada combinada',
-    // Sin foto: la de la Torre ya la lleva su propia tarjeta, justo al lado.
+    // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/jeronimos-torre-belem-wikimedia.webp',
+    imageAlt: 'El Monasterio de los Jerónimos y la plaza del Imperio vistos desde lo alto del Padrão dos Descobrimentos',
     searchTerms: ['jeronimos', 'torre de belem', 'belem', 'combinada', 'entrada'],
     hub: {
       render: 'native-card',
@@ -537,6 +538,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'El mayor palacio de Lisboa, y recibe muchas menos visitas que los Jerónimos o el castillo. Cierra los miércoles.',
     kind: 'Entrada',
+    // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/palacio-ajuda-wikimedia.webp',
+    imageAlt: 'El comedor de gala del Palacio da Ajuda, con la mesa larga puesta y las lámparas de araña',
     searchTerms: ['ajuda', 'palacio', 'palacio da ajuda', 'museo', 'lluvia', 'belem'],
     hub: {
       render: 'native-card',
@@ -567,6 +571,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Las joyas de la Corona portuguesa, en el ala nueva del Palacio da Ajuda.',
     kind: 'Entrada',
+    // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/tesouro-real-wikimedia.webp',
+    imageAlt: 'Corona real portuguesa de 1817 expuesta sobre un cojín en el Museo del Tesoro Real',
     searchTerms: ['tesoro real', 'tesouro real', 'joyas', 'corona', 'ajuda', 'museo', 'lluvia'],
     hub: {
       render: 'native-card',
@@ -751,6 +758,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Muralla del siglo X en lo alto de la sierra, con vistas a la Pena y, en días claros, al Atlántico.',
     kind: 'Entrada',
+    // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/castelo-mouros-wikimedia.webp',
+    imageAlt: 'La muralla del Castelo dos Mouros recorriendo la cresta de la sierra, con Sintra y la llanura detrás',
     searchTerms: ['castelo dos mouros', 'castillo de los moros', 'sintra', 'muralla', 'vistas', 'entrada'],
     hub: {
       render: 'native-card',
@@ -781,6 +791,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'El de las dos chimeneas blancas, en el centro histórico y a 10-15 minutos a pie de la estación de tren.',
     kind: 'Entrada',
+    // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
+    image: '/images/commons/palacio-nacional-sintra-wikimedia.webp',
+    imageAlt: 'Fachada blanca del Palacio Nacional de Sintra con sus dos grandes chimeneas cónicas',
     searchTerms: ['palacio nacional de sintra', 'palacio da vila', 'sintra', 'centro', 'entrada'],
     hub: {
       render: 'native-card',

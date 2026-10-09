@@ -6,6 +6,7 @@ import { ArrowUpRight, Landmark } from 'lucide-react';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
 import type { TiqetsProductSnapshot } from '@/types/tiqets-live';
+import { formatPhotoCreditShort, getPhotoCredit } from '@/data/photo-credits';
 
 /*
  * Tarjeta comercial de Estaba en Lisboa.
@@ -107,13 +108,20 @@ export function BookingCard({
   const providerName = link.provider === 'tiqets' ? 'Tiqets' : 'GetYourGuide';
 
   /*
-   * Foto de la tarjeta, por orden: la nuestra; la de producto de Tiqets si
-   * no hay nuestra (o si la nuestra es un apaño, `preferProviderImage`); y si
-   * no hay ninguna, el hueco de color. La de Tiqets siempre lleva crédito.
+   * Foto de la tarjeta, por orden: la del sitio (de José o, si no hay, una de
+   * Wikimedia Commons con licencia libre); la de producto de Tiqets si no hay
+   * ninguna (o si la del sitio es un apaño, `preferProviderImage`); y si no
+   * hay ninguna o no carga, el hueco de color. Toda foto que no es de José
+   * lleva su crédito encima.
    */
   const providerImage = tiqetsProduct?.image;
+  const sitePhotoCredit = getPhotoCredit(product.image);
   const ownVisual = product.image
-    ? { src: product.image, alt: product.imageAlt ?? product.name, credit: undefined as string | undefined }
+    ? {
+        src: product.image,
+        alt: product.imageAlt ?? product.name,
+        credit: sitePhotoCredit ? formatPhotoCreditShort(sitePhotoCredit) : undefined,
+      }
     : null;
   const providerVisual = providerImage
     ? {
@@ -157,7 +165,7 @@ export function BookingCard({
               onError={() => setImageFailed(true)}
             />
             {visual.credit ? (
-              <span className="absolute bottom-1 right-1 rounded-sm bg-night/60 px-1 font-body text-[9px] leading-tight text-white/90 sm:bottom-2 sm:right-2 sm:px-1.5 sm:text-[10px]">
+              <span className="absolute bottom-2 right-2 hidden max-w-[calc(100%-1rem)] rounded-sm bg-night/65 px-1.5 py-0.5 text-right font-body text-[10px] leading-tight text-white/95 sm:block">
                 {visual.credit}
               </span>
             ) : null}
@@ -192,6 +200,14 @@ export function BookingCard({
         <h4 className="font-display text-lg font-semibold not-italic leading-snug text-text-main sm:mb-2 sm:text-xl">
           {product.name}
         </h4>
+
+        {/* En móvil la miniatura es demasiado pequeña para llevar el crédito
+            encima: va debajo del título, igual de visible. */}
+        {visual?.credit && !imageFailed ? (
+          <p className="mt-1 font-body text-[10px] leading-tight text-text-secondary sm:hidden">
+            {visual.credit}
+          </p>
+        ) : null}
       </div>
 
       <div className="col-span-2 mt-3 flex flex-1 flex-col sm:mt-0 sm:px-5 sm:pb-5">

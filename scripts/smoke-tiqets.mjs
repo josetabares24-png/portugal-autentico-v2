@@ -102,6 +102,30 @@ assert.match(bookingCard, /Foto: Tiqets/, 'las fotos de Tiqets deben llevar cré
 assert.match(bookingCard, /onError=\{\(\) => setImageFailed\(true\)\}/, 'una foto que no carga debe caer al hueco propio');
 assert.doesNotMatch(bookingCard, /bg-night bg-azulejo/, 'el bloque navy sin foto ya no se usa');
 
+// D-043: todas las tarjetas del hub llevan foto del sitio; las de Wikimedia
+// Commons, con crédito sobre la imagen y atribución completa al pie.
+const photoCredits = await readFile(path.join(root, 'src', 'data', 'photo-credits.ts'), 'utf8');
+for (const block of hubBlocks) {
+  const id = block.match(/id: '([^']+)'/)?.[1] ?? '?';
+  const image = block.match(/^    image: '([^']+)'/m)?.[1];
+  assert.ok(image, `${id}: la tarjeta del hub no tiene foto`);
+  assert.match(block, /^    imageAlt: '.{20,}'/m, `${id}: falta un alt que describa la foto`);
+  const file = path.join(root, 'public', image);
+  await readFile(file).catch(() => assert.fail(`${id}: no existe ${image}`));
+  if (image.startsWith('/images/commons/')) {
+    assert.ok(photoCredits.includes(`'${image}': {`), `${id}: foto de Commons sin crédito en photo-credits.ts`);
+  }
+}
+for (const match of photoCredits.matchAll(/'(\/images\/commons\/[^']+)': \{[\s\S]*?sourceUrl:\s*'(https:\/\/commons\.wikimedia\.org\/wiki\/File:[^']+)'/g)) {
+  assert.ok(match[2], `${match[1]}: falta el enlace a Commons`);
+}
+const creditsMd = await readFile(path.join(root, 'public', 'images', 'commons', 'CREDITOS.md'), 'utf8');
+for (const image of photoCredits.matchAll(/'\/images\/commons\/([^']+)': \{/g)) {
+  assert.match(creditsMd, new RegExp(image[1].replace('.', '\\.')), `${image[1]}: falta en CREDITOS.md`);
+}
+assert.match(bookingCard, /formatPhotoCreditShort/, 'las fotos de Commons deben llevar el crédito corto en la tarjeta');
+assert.match(client, /Créditos de las fotos/, 'falta la nota de créditos al pie de la página');
+
 assert.match(envExample, /^TIQETS_API_TOKEN=$/m, 'falta documentar la variable de entorno');
 assert.doesNotMatch(envExample, /tqat-[A-Za-z0-9_-]+/, 'la clave real no puede estar en .env.example');
 

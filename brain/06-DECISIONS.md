@@ -740,10 +740,27 @@ A José no le gustaban los bloques azul noche de las tarjetas sin foto y pidió 
 Reglas:
 - solo la imagen; nunca un widget visible de un proveedor en el hub, porque trae su propio diseño. Si un producto tiene enlace directo, se pinta siempre la tarjeta propia, haya o no consentimiento de cookies;
 - la foto llega por la API (`images[0]`, el tamaño más grande), solo si es HTTPS de `aws-tiqets-cdn.imgix.net`, y se renueva con el snapshot (6 h). No se copian URLs de imágenes al código;
-- orden: foto propia; si no hay, la de Tiqets; si la propia es un apaño (`preferProviderImage`, hoy solo la Pena con la foto de la estación), la de Tiqets va primero; si no hay ninguna o no carga (`onError`), un hueco crema con el mismo recorte y un icono, a juego con la tarjeta;
+- orden (actualizado por D-043): foto del sitio (de José o de Wikimedia Commons con crédito); si no hay, la de Tiqets; si la propia es un apaño (`preferProviderImage`, hoy solo la Pena con la foto de la estación), la de Tiqets va primero; si no hay ninguna o no carga (`onError`), un hueco crema con el mismo recorte y un icono, a juego con la tarjeta;
 - toda foto de Tiqets lleva el crédito «Foto: Tiqets» (o «Foto: autor / Tiqets») encima de la imagen, y la página lo aclara: no son fotos de José;
 - alt: el `alt_text` de Tiqets o, si falta, «{producto}, foto de producto de Tiqets»;
 - `TIQETS_API_BASE_URL` solo puede apuntar a `localhost`/`127.0.0.1`, para probar en local con un servidor simulado; en cualquier otro caso se usa la API real;
 - ojo: según la documentación de Tiqets, las claves de afiliado «Essential» no reciben imágenes salvo que Tiqets las active. Si la cuenta no las tiene, en producción se ven los huecos de color. Hay que pedir a Tiqets que active las imágenes.
 
 Detalle: [[content/2026-10-09-ENTRADAS-V2]].
+
+
+## D-043 — Fotos de Wikimedia Commons para las tarjetas sin foto de José
+**Date:** 2026-10-09
+**Status:** proposed (rama `feat/estetica-entradas-freetours`, sin publicar; pendiente de aprobación visual de José, D-012)
+
+José quiere que las dieciséis tarjetas de `/comprar-entradas` tengan foto real sin depender de que Tiqets active imágenes en su API. Las seis que no tenían foto propia (Castelo dos Mouros, Palacio Nacional de Sintra, Palacio da Ajuda, Tesoro Real, Jerónimos + Torre y la Pena, que llevaba la de la estación) usan una foto de Wikimedia Commons.
+
+Reglas:
+- solo licencias que permiten reutilizar: CC BY, CC BY-SA, CC0 o dominio público; nunca «uso justo» ni fotos sin licencia clara;
+- el tema se comprueba en la ficha del archivo (descripción y categorías de Commons): tiene que ser ese monumento, no otro parecido;
+- copia optimizada en `public/images/commons/` (1280 px, WebP), con `CREDITOS.md` en la carpeta y los datos en `src/data/photo-credits.ts`;
+- sobre la imagen, crédito corto «Foto: Autor / Wikimedia Commons, licencia» (en móvil, debajo del título); al pie de la página, atribución completa con autor, licencia enlazada y enlace al archivo original;
+- nunca se presentan como fotos de José; si un día hay foto suya del sitio, sustituye a la de Commons;
+- van por delante de la foto de Tiqets; el hueco crema queda solo para cuando una foto no carga;
+- `smoke:tiqets` falla si una tarjeta del hub no tiene foto, si una de Commons no tiene crédito o si falta en `CREDITOS.md`.
+

@@ -3,9 +3,16 @@ import { Clock3, Route, TicketCheck } from 'lucide-react';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
 import { HUB_PRODUCTS, HUB_SECTIONS } from '@/data/bookings';
+import { getPhotoCredit, type PhotoCredit } from '@/data/photo-credits';
 import type { TiqetsSnapshotMap } from '@/types/tiqets-live';
 
 const PAGE_URL = 'https://estabaenlisboa.com/comprar-entradas';
+
+/** Fotos de terceros que usan las tarjetas de esta página, con su producto. */
+const hubPhotoCredits = HUB_PRODUCTS.flatMap((product) => {
+  const credit = getPhotoCredit(product.image);
+  return credit ? [{ productName: product.name, credit }] : [];
+}) satisfies { productName: string; credit: PhotoCredit }[];
 
 const bookingRules = [
   {
@@ -260,6 +267,52 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
           </div>
         </div>
       </section>
+
+      {hubPhotoCredits.length > 0 ? (
+        <section aria-labelledby="creditos-fotos" className="border-t border-border-soft bg-background-light pb-10 pt-8">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 id="creditos-fotos" className="font-body text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">
+              Créditos de las fotos
+            </h2>
+            <p className="mt-2 font-article text-xs leading-relaxed text-text-secondary">
+              Estas fotos no son mías: son de Wikimedia Commons, con licencia libre. Las he
+              reducido de tamaño; por lo demás, están como las publicó su autor.
+            </p>
+            <ul className="mt-3 space-y-1.5 font-body text-xs leading-relaxed text-text-secondary">
+              {hubPhotoCredits.map(({ productName, credit }) => (
+                <li key={credit.sourceUrl}>
+                  <span className="font-semibold text-night">{productName}:</span>{' '}
+                  {credit.subject}. Foto de {credit.author},{' '}
+                  <a
+                    href={credit.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-terracotta"
+                  >
+                    Wikimedia Commons
+                    <span className="sr-only"> (se abre en una pestaña nueva)</span>
+                  </a>
+                  ,{' '}
+                  {credit.licenseUrl ? (
+                    <a
+                      href={credit.licenseUrl}
+                      target="_blank"
+                      rel="noopener noreferrer license"
+                      className="underline underline-offset-2 hover:text-terracotta"
+                    >
+                      {credit.license}
+                      <span className="sr-only"> (se abre en una pestaña nueva)</span>
+                    </a>
+                  ) : (
+                    credit.license
+                  )}
+                  .
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }
