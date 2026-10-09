@@ -75,6 +75,30 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
         'Si prefieres no cuadrar tren, autobús y hora de entrada, hay excursiones de día completo desde Lisboa. Mira en la ficha si incluyen la entrada a la Pena y cuánto tiempo dejan allí.',
     },
   ],
+  // obidos-vila-natal · artículo nuevo (9/10/2026), sin datos aún.
+  'obidos-vila-natal': [
+    {
+      offer: { type: 'product', productId: 'obidos-fatima-excursion' },
+      position: 'after-summary',
+      intro:
+        'Si no quieres cuadrar el autobús, hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
+    },
+  ],
+  // nochevieja-lisboa · artículo nuevo (9/10/2026), sin datos aún. El
+  // Oceanário va sin `beforeHeading`: se pinta al final, tras «Año Nuevo».
+  'nochevieja-lisboa': [
+    {
+      offer: { type: 'product', productId: 'nochevieja-velero' },
+      position: 'after-summary',
+      intro:
+        'Si prefieres ver los fuegos desde el río, hay salidas en velero esa noche. Mira en la ficha el precio, la hora y el punto de salida y qué incluye, que cambian de un año a otro.',
+    },
+    {
+      offer: { type: 'product', productId: 'oceanario' },
+      intro:
+        'El 1 de enero cierran casi todos los monumentos, pero el Oceanário abre con horario especial. Mira las horas de ese día en su web antes de comprar.',
+    },
+  ],
   // lisboa-en-navidad · artículo nuevo (9/10/2026), sin datos aún.
   'lisboa-en-navidad': [
     {

@@ -12,6 +12,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'obidos-vila-natal',
+    titulo: 'Óbidos Vila Natal 2026: fechas, entradas y cómo ir desde Lisboa',
+    excerpt: 'Del 27 de noviembre de 2026 al 3 de enero de 2027. Precios de 2025 como referencia, el autobús Rápida Verde desde Campo Grande y por qué este invierno no compensa el tren.',
+    categoria: 'Guías',
+    fecha: '9 Oct 2026',
+    dateModified: '2026-10-09',
+    autor: 'José Tabares',
+    imagen: '/images/obidos-calle-casas-encaladas.webp',
+  },
+  {
+    id: 'nochevieja-lisboa',
+    titulo: 'Nochevieja en Lisboa 2026: dónde ver los fuegos y qué hacer',
+    excerpt: 'La fiesta gratis de la Praça do Comércio, otros sitios para ver los fuegos, metro y trenes esa noche, la norma del alcohol de 2026 y qué abre el 1 de enero.',
+    categoria: 'Planificación',
+    fecha: '9 Oct 2026',
+    dateModified: '2026-10-09',
+    autor: 'José Tabares',
+    imagen: '/images/free-tours/lisboa-nocturna.webp',
+  },
+  {
     id: 'palacio-da-pena-entradas',
     titulo: 'Palacio da Pena: entradas, horarios y cómo ir desde Lisboa (2026)',
     excerpt: 'Entrada desde 20 € con hora fija y sin tolerancia de retraso, qué incluye cada billete, web oficial o Tiqets y cómo subir en tren desde Rossio y autobús 434.',

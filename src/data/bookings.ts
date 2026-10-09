@@ -295,6 +295,52 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Comprar entrada a Pena',
   },
   {
+    // Excursión de día para el artículo `obidos-vila-natal`. Sin `hub`: solo da
+    // botón a ese artículo. Ficha t67767 (Lanetours): Óbidos es la última
+    // parada de un día largo y no incluye la entrada a la Vila Natal.
+    id: 'obidos-fatima-excursion',
+    name: 'Fátima, Batalha, Nazaré y Óbidos desde Lisboa',
+    provider: 'getyourguide',
+    category: 'excursiones',
+    blurb:
+      'Excursión guiada de día completo desde Lisboa con cuatro paradas al norte de Lisboa. Óbidos es la última.',
+    kind: 'Excursión',
+    image: '/images/obidos-calle-casas-encaladas.webp',
+    imageAlt: 'Calle empedrada de Óbidos con casas encaladas y zócalos azules',
+    searchTerms: ['obidos', 'fatima', 'nazare', 'batalha', 'excursion', 'dia completo'],
+    links: {
+      article: {
+        url: 'https://www.getyourguide.es/lisboa-l42/desde-lisboa-tour-guiado-a-fatima-nazare-batalha-y-obidos-t67767/?partner_id=J2Z24GU&utm_medium=online_publisher',
+        provider: 'getyourguide',
+        campaign: 'web_blog_obidos-vila-natal',
+      },
+    },
+    ctaLabel: 'Ver la excursión',
+  },
+  {
+    // Velero de Nochevieja para el artículo `nochevieja-lisboa`. Sin `hub`.
+    // Ficha t438806 (Bloo Boat Charter). Precio, salida e inclusiones no se
+    // repiten en la web: el lector los mira en la ficha, porque cambian.
+    id: 'nochevieja-velero',
+    name: 'Nochevieja en velero por el Tajo',
+    provider: 'getyourguide',
+    category: 'experiencias',
+    blurb:
+      'Ver los fuegos de fin de año desde un velero en el río, en lugar de entre la multitud de la plaza.',
+    kind: 'Experiencia',
+    image: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+    imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
+    searchTerms: ['nochevieja', 'fin de año', 'fuegos artificiales', 'velero', 'barco', 'tajo'],
+    links: {
+      article: {
+        url: 'https://www.getyourguide.es/lisboa-l42/nochevieja-y-fuegos-artificiales-t438806/?partner_id=J2Z24GU&utm_medium=online_publisher',
+        provider: 'getyourguide',
+        campaign: 'web_blog_nochevieja-lisboa',
+      },
+    },
+    ctaLabel: 'Ver el velero',
+  },
+  {
     id: 'jeronimos',
     name: 'Monasterio de los Jerónimos: entrada al claustro',
     provider: 'tiqets',
