@@ -244,6 +244,7 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Senhora do Monte: la panorámica más abierta de esta ruta' },
       { tipo: 'parrafo', texto: 'Senhora do Monte está en Graça y ofrece una vista amplia hacia el castillo, la Baixa, el Tajo y otras zonas de la ciudad. Está por encima de buena parte del recorrido histórico, así que tiene sentido subir en transporte y empezar a bajar desde allí.' },
+      { tipo: 'parrafo', texto: 'Es mi mirador favorito, sobre todo al atardecer.' },
 
       { tipo: 'subtitulo', texto: 'Miradouro da Graça: vista y una pausa más cómoda' },
       { tipo: 'parrafo', texto: 'El Miradouro da Graça, oficialmente Sophia de Mello Breyner Andresen, está junto a la iglesia y antiguo convento. La Câmara de Lisboa indica que permanece abierto 24 horas. La sombra y los bancos lo convierten en una parada más fácil para descansar que otros puntos donde apenas hay espacio.' },
@@ -516,6 +517,8 @@ const articles: Record<string, Article> = {
     contenido: [
       { tipo: 'parrafo', texto: 'Si vienes unos días a Lisboa, compra una tarjeta Navegante ocasional por persona (0,50 €) y cárgala con zapping: cada viaje en Metro, autobús o tranvía te sale a 1,72 €. El día que vayas a hacer cuatro o cinco trayectos o más, cámbiate al billete de 24 horas (7,25 €). Y no subas al tranvía sin tarjeta: pagando a bordo, el mismo viaje cuesta 3,30 €.' },
 
+      { tipo: 'parrafo', texto: 'Yo me muevo en metro con la Navegante.' },
+
       { tipo: 'subtitulo', texto: 'Qué comprar según tu viaje' },
       { tipo: 'lista', items: [
         'Un día con mucho transporte: Navegante + billete de 24 horas Carris/Metro (7,25 €). Compensa desde el cuarto trayecto con billete sencillo o desde el quinto con zapping.',
@@ -772,6 +775,7 @@ const articles: Record<string, Article> = {
       ] },
       { tipo: 'parrafo', texto: 'El del Rossio es mi favorito y el más céntrico: casetas de madera con artesanía y comida, la Casa de Papá Noel y un tren eléctrico gratuito que recorre la Baixa. Lo organiza la Associação de Dinamização da Baixa Pombalina. El tren funcionaba de 15:00 a 22:00, y hasta las 23:00 los viernes, sábados y vísperas de festivo.' },
       { tipo: 'parrafo', texto: 'El de Campo Pequeno solo se monta dos fines de semana largos.' },
+      { tipo: 'parrafo', texto: 'En los mercados, lo clásico es la ginjinha, las castañas asadas, el vino caliente y el bolo-rei. Hay que probarlos, aunque a mí personalmente no me encantan.' },
       { tipo: 'enlace', texto: 'Para los mercados que abren todo el año, tienes la guía de mercados.', href: '/blog/mejores-mercados-lisboa', label: 'Mercados de Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Wonderland Lisboa' },
@@ -1006,7 +1010,7 @@ const articles: Record<string, Article> = {
       ] },
 
       { tipo: "subtitulo", texto: "La fiesta de la Praça do Comércio" },
-      { tipo: "parrafo", texto: "Yo pasé un fin de año en la Praça do Comércio y es de las noches que más recuerdo de Lisboa." },
+      { tipo: "parrafo", texto: "Yo pasé un fin de año en la Praça do Comércio y es de las noches que más recuerdo de Lisboa. Los fuegos sobre el río son preciosos, y me acuerdo sobre todo de la energía de la música en directo y de la gente contenta." },
       { tipo: "parrafo", texto: "La fiesta la organiza la Câmara Municipal de Lisboa en la gran plaza junto al Tajo, y la entrada es libre. El programa de 2026 no está publicado todavía. Así fue la de 2025, según la Câmara y Visit Lisboa, que reunió a unas 135.000 personas:" },
       { tipo: 'tabla', texto: "Programa de la Nochevieja 2025 («Viva 2026!»), como referencia.", columnas: ["Hora", "Qué hubo"], filas: [
         ["19:30", "Apertura del recinto al público"],
@@ -1247,7 +1251,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Miradouro da Graça' },
       { tipo: 'parrafo', texto: 'El Miradouro da Graça está junto a la iglesia y ofrece una vista amplia de la ciudad y el Tajo. Es una parada cómoda porque tiene sombra y espacio para sentarse; no hace falta convertirlo en una visita larga.' },
       { tipo: 'subtitulo', texto: 'Senhora do Monte' },
-      { tipo: 'parrafo', texto: 'A pocos minutos cuesta arriba está Senhora do Monte, uno de los puntos más altos de esta parte de Lisboa. Desde allí se distinguen el castillo, la Baixa, el estuario del Tajo y buena parte del centro.' },
+      { tipo: 'parrafo', texto: 'A pocos minutos cuesta arriba está Senhora do Monte, uno de los puntos más altos de esta parte de Lisboa. Desde allí se distinguen el castillo, la Baixa, el estuario del Tajo y buena parte del centro. Es mi mirador favorito de Lisboa; si puedes, sube al atardecer.' },
       { tipo: 'subtitulo', texto: 'Una ruta sencilla para no repetir cuestas' },
       { tipo: 'lista', items: ['Sube a Graça en transporte si quieres ahorrar piernas.', 'Empieza por Largo da Graça e iglesia.', 'Continúa al Miradouro da Graça.', 'Sube a Senhora do Monte.', 'Baja después hacia Mouraria o Alfama en lugar de volver por el mismo camino.'] },
       { tipo: 'enlace', texto: 'Si quieres comparar estas vistas con otras zonas de la ciudad, revisa la guía de miradores.', href: '/blog/mejores-miradores-lisboa', label: 'Mejores miradores de Lisboa' },
@@ -2159,6 +2163,7 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Google Translate, con una función concreta' },
       { tipo: 'parrafo', texto: 'En Lisboa se defiende mucha gente en inglés y bastante en español, así que no vas a necesitar traductor para pedir un café. Donde sí sirve es en la cámara: apuntar a una carta manuscrita en una tasca de barrio, o a un cartel de horarios, y leerlo al momento. Descarga el portugués sin conexión y funciona aunque no tengas datos.' },
+      { tipo: 'parrafo', texto: 'A mí el portugués me costó un poco al llegar, pero no es tan difícil.' },
 
       { tipo: 'subtitulo', texto: 'Las que puedes ahorrarte' },
       { tipo: 'lista', items: [
@@ -2750,6 +2755,14 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Lisboa no es una ciudad que se entienda en plano. Hay que caminarla para comprender cómo cada colina guarda una personalidad distinta, cómo la luz cambia según la orientación de las calles, cómo el sonido del fado en Alfama da paso al bullicio juvenil del Bairro Alto apenas cruzas unas manzanas." },
       // TODO(José): si has vivido o dormido en varios barrios, cuenta aquí cuáles y qué cambió. Solo si es real.
       { tipo: "parrafo", texto: "La Lisboa que vas a conocer depende mucho de dónde duermas y por dónde camines. Esta guía es para elegir bien el barrio, porque cambia bastante el viaje." },
+      { tipo: "personal", label: "Lo que le enseño a un amigo", texto: "Cuando un amigo viene a Lisboa por primera vez, le llevo a estos sitios:", enlaces: [
+        { href: "/blog/chiado-bairro-alto-guia", label: "Bairro Alto" },
+        { href: "/blog/time-out-market-lisboa", label: "Time Out Market" },
+        { href: "/actividades/lx-factory", label: "LX Factory" },
+        { href: "/blog/vida-nocturna-lisboa", label: "Pink Street (Rua Nova do Carvalho)" },
+        { href: "/blog/alfama-historia-guia", label: "Alfama" },
+        { href: "/blog/mejores-miradores-lisboa", label: "Los miradouros" },
+      ] },
       { tipo: "subtitulo", texto: "Baixa-Chiado: el corazón comercial con siglos de historia" },
       { tipo: "parrafo", texto: "El Marqués de Pombal reconstruyó este barrio desde cero después de que el terremoto de 1755 arrasara la ciudad. El resultado es una cuadrícula ordenada de calles anchas, edificios uniformes y plazas monumentales que contrastan con el caos medieval del resto de Lisboa. Aquí todo es llano —rareza absoluta en esta ciudad— y las conexiones de transporte son inmejorables." },
       { tipo: "parrafo", texto: "La Rua Augusta es el eje peatonal que conecta el Rossio con la Praça do Comércio, atravesando bajo un arco triunfal que enmarca el río Tajo. A ambos lados se suceden tiendas de cadena, cafeterías y restaurantes orientados al turismo. No es el Lisboa más auténtico, pero tiene una grandiosidad innegable que merece experimentarse al menos una vez." },
@@ -3006,6 +3019,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Esta distinción genera confusión entre los visitantes, pero los portugueses la tienen clarísima. Pastel de nata es el nombre genérico del dulce: base de hojaldre, crema de huevo, toque caramelizado arriba. Puedes encontrarlo en cualquier pastelería del país, con calidades que van de lo sublime a lo industrial." },
       { tipo: "parrafo", texto: "Pastel de Belém, en cambio, es una marca registrada (Pastéis de Belém®), no una denominación de origen. Solo se vende con ese nombre el que sale de esta fábrica concreta, elaborado con la receta original del monasterio. La diferencia se nota al morder: el hojaldre es más delicado, con capas finísimas que crujen sin deshacerse; la crema tiene una textura más densa y un sabor que recuerda vagamente a canela aunque no la lleve dentro; el caramelizado superior forma burbujas doradas que contrastan con la suavidad del relleno." },
       { tipo: "parrafo", texto: "¿Merece la pena la cola por esa diferencia? Depende de lo que busques. Un buen pastel de nata de Manteigaria puede gustarte igual, pero comerlo en el salón centenario de Belém, rodeado de azulejos del siglo XIX y con casi dos siglos de oficio detrás (la casa abrió en 1837), no se repite en otro sitio. Yo no me voy de Belém sin comerme unos pastéis de nata." },
+      { tipo: "parrafo", texto: "Yo me los como en cualquier sitio: para mí es el dulce más rico que hay." },
       { tipo: "subtitulo", texto: "Cómo funciona la cola (y cómo esquivarla)" },
       { tipo: "parrafo", texto: "El local tiene dos colas separadas que la mayoría de visitantes no distingue. La cola exterior, la que serpentea por la calle, es para comprar pasteles para llevar. Aquí puedes pedir una caja de seis, doce o más unidades, pagar, y marcharte. Suele moverse relativamente rápido porque las transacciones son breves." },
       { tipo: "parrafo", texto: "La otra cola, menos visible, da acceso al salón interior. Aquí te sientas, te traen los pasteles calientes en un plato con los dispensadores de canela y azúcar, y puedes acompañarlos de café, zumo o incluso un vino de Madeira si te sientes decadente a media mañana. Esta cola paradójicamente suele ser más corta, porque muchos visitantes no saben que existe." },
@@ -4651,6 +4665,8 @@ const articles: Record<string, Article> = {
 
       { tipo: "subtitulo", texto: "Livraria Bertrand: la parada literaria más clara" },
       { tipo: "parrafo", texto: "La Bertrand del Chiado es reconocida por Guinness World Records como la librería más antigua del mundo todavía en funcionamiento. La propia librería sitúa su historia en el siglo XVIII y explica que volvió a instalarse en Rua Garrett después del terremoto de 1755. Es una visita sencilla de integrar porque está en pleno eje peatonal del barrio." },
+      // PENDIENTE (José): confirmar el nombre de la librería de antigüedades. Candidata más probable: Livraria Sá da Costa (Rua Garrett 100). No nombrarla hasta que lo confirmes.
+      { tipo: "parrafo", texto: "Mi opinión: la Bertrand está sobrevalorada. Yo prefiero una librería que hay un poco más arriba, llena de antigüedades." },
 
       { tipo: "subtitulo", texto: "A Brasileira y la memoria de los cafés del Chiado" },
       { tipo: "parrafo", texto: "A Brasileira abrió en 1905 y forma parte de la ruta oficial de comercios históricos de Lisboa. Su vínculo con Fernando Pessoa y con la vida literaria del Chiado explica por qué sigue siendo una referencia cultural, más allá de si decides sentarte o simplemente verla desde fuera." },

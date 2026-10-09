@@ -4,10 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 
 const SITE_URL = 'https://estabaenlisboa.com';
 
-// PENDIENTE (José): 2-3 frases tuyas sobre cómo conoces Lisboa (desde cuándo,
-// cómo llegaste, qué haces allí). Mientras esté vacío no se muestra nada.
-// No rellenar con texto inventado.
-const JOSE_LISBOA_INTRO: string[] = [];
+// Frases de José (respuestas del 9/10/2026). Solo datos que ha dado él; no
+// añadir nada inventado. «Desde 2023» para que no caduque.
+const JOSE_LISBOA_INTRO: string[] = [
+  'Vivo en Lisboa desde 2023. Lo que más me sorprendió al llegar fueron los atardeceres y las vistas. Me muevo en metro con la Navegante, y mi mirador favorito es el de Senhora do Monte, en Graça, al atardecer.',
+];
 
 export default function SobreNosotrosPage() {
   const profileJsonLd = {
@@ -92,7 +93,7 @@ export default function SobreNosotrosPage() {
               <p key={sentence}>{sentence}</p>
             ))}
             <p>
-              Vivo en Lisboa y escribo Estaba en Lisboa para ayudar a tomar decisiones concretas: qué cabe en tus días, qué trayecto evita una cuesta innecesaria o cuándo una reserva realmente aporta algo.
+              Escribo Estaba en Lisboa para ayudar a tomar decisiones concretas: qué cabe en tus días, qué trayecto evita una cuesta innecesaria o cuándo una reserva realmente aporta algo.
             </p>
             <p>
               Lo que he vivido aquí me sirve para opinar, pero no sustituye a los datos. Horarios, precios, normas y accesos los compruebo en las fuentes oficiales siempre que existen. Y si algo es opinión mía, lo digo.

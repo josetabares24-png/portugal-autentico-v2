@@ -203,6 +203,32 @@ export function ArticleBody({
         </ArticleCallout>
       );
     }
+    // Lista personal de José, con enlaces a las páginas del sitio.
+    if (bloque.tipo === 'personal' && bloque.label && bloque.enlaces?.length) {
+      return (
+        <ArticleCallout
+          key={index}
+          label={bloque.label}
+          className="article-info-box article-tip border-l-2 border-gold"
+        >
+          {bloque.texto ? <p>{bloque.texto}</p> : null}
+          <ul className="mt-2 space-y-1.5">
+            {bloque.enlaces.map((link) => (
+              <li key={link.href + link.label}>
+                <TrackedInternalLink
+                  href={link.href}
+                  contentType="article_personal_link"
+                  contentId={link.href}
+                  className="underline underline-offset-2 hover:text-terracotta"
+                >
+                  {link.label}
+                </TrackedInternalLink>
+              </li>
+            ))}
+          </ul>
+        </ArticleCallout>
+      );
+    }
     // Advertencia sobre el estado de un lugar: cierres, obras o
     // cualquier cosa que convenga comprobar antes de ir. Reutiliza
     // los estilos de `nota`; solo cambia la etiqueta.

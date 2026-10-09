@@ -20,6 +20,13 @@ export type ArticleBlock = {
    */
   columnas?: string[];
   filas?: string[][];
+  /**
+   * Bloque `personal`: una lista corta de José con enlaces a las páginas del
+   * sitio (por ejemplo, lo que le enseña a un amigo). `label` es el título de
+   * la caja y `texto`, una frase opcional antes de la lista. Solo con datos
+   * que ha dado él.
+   */
+  enlaces?: ArticleLink[];
 };
 
 export type ArticleLink = {

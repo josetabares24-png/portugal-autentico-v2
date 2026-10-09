@@ -131,7 +131,7 @@ export const activities: Activity[] = [
         'Mouraria y las zonas históricas que bajan hacia el centro',
         'Árboles que dan sombra junto al mirador',
       ],
-      cuandoIr: 'Está abierto las 24 horas. Si quieres ver la puesta de sol, llega con margen porque es un mirador conocido y puede concentrar bastante gente.',
+      cuandoIr: 'Está abierto las 24 horas. Si quieres ver la puesta de sol, llega con margen porque es un mirador conocido y puede concentrar bastante gente. Es mi mirador favorito, y al atardecer es cuando más me gusta.',
       elError: 'Llegar justo a la puesta de sol esperando encontrarlo vacío. Es uno de los miradores más conocidos de la ciudad y a esa hora se llena.',
       comoLlegar: 'Está en Largo do Monte, en Graça. El tranvía 28 para en Graça, a unos cinco minutos cuesta arriba. El Funicular da Graça, reabierto en abril de 2026, sube desde Rua dos Lagares (Mouraria) hasta la Calçada do Monte.',
     },
