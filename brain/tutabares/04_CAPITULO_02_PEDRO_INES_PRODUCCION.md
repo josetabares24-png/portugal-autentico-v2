@@ -41,8 +41,8 @@ Los enlaces siguientes son a recursos ya generados. **No implican aprobación fi
 | 14 | “Tuvieron hijos.” | [Drive 14 — Pedro e Inês con tres niños](https://drive.google.com/file/d/1X2_KEeXpVi9SELEkULZLRwB3Q_s5RCEi/view?usp=drivesdk). Individual vertical; familia y mismo universo 3D animado |
 | 15 | “Pero la relación se volvió un problema político.” | Se discutieron propuestas: rey preocupado/consejeros y escena simbólica de confrontación. **No hay versión 15A inequívocamente final; revisar antes de usar.** El mapa NO pertenece a esta frase si va a usarse en 16 |
 | 15B | **Contraplano de reacción dentro del conflicto**: Pedro molesto, observado por cortesanos, vista sobre el hombro de Afonso IV | **APROBADA por el usuario como cambio de cámara**; [Drive 15B](https://drive.google.com/file/d/1utgGdyXzr9kKL1PZSd17CPHx_M5E-yjh/view?usp=drivesdk). Tratar como recreación simbólica y **no presentar discusión literal como hecho probado** |
-| 16 | “Inês pertenecía a una familia poderosa vinculada a Castilla.” | Plano político / mapa de Portugal y Castilla propuesto varias veces; **SIN imagen final cerrada** por repetición de encuadre y caras. Elegir un plano contrastado o detalle sin rey repitiendo el gesto |
-| 17 | “En 1355, el rey Afonso IV ordenó matarla.” | **PENDIENTE**. Intentos de rey señalando mapa = descartados; propuesta mejor: detalle de orden / mensajero / carta sellada, expresamente recreación simbólica |
+| 16 | “Inês pertenecía a una familia poderosa vinculada a Castilla.” | **PENDIENTE de aprobación definitiva**: imágenes del mapa o discusión se repitieron demasiado. Evitar reciclar rey apuntando. Recursos antiguos con número 16 archivados sin numeración vigente en Drive |
+| 17 | “En 1355, el rey Afonso IV ordenó matarla.” | **IMAGEN GENERADA / PENDIENTE DE APROBACIÓN DEL USUARIO**: [Drive 17 — pergamino sellado ante Afonso IV](https://drive.google.com/file/d/1UImdS0s0PhuIkNHNUc-YtVb6EmktV4B3/view?usp=drivesdk). Plano de orden sellada sin mapa, con mano de mensajero; recreación simbólica, no documento histórico constatado. Flujo recomendado: push-in mínimo o rack focus del sello al rey, SIN intercambio físico complejo |
 
 ## Resto del guion todavía por asegurar visualmente
 
@@ -74,3 +74,9 @@ Tras 17:
 - Último asset aprobado 15B subido a Drive.
 - No dar por concluido ni publicado el Capítulo 02.
 - Próximo paso concreto: **revisar y cerrar 15A y 16 (ángulos distintos), crear 17 con otra puesta en escena, y después continuar la tragedia**.
+
+## Actualización de archivo Drive — 2026-10-09
+- La antigua `16_Pedro_de_luto_con_el_velo_de_Ines.png` pasó a `ARCHIVO_SIN_NUMERO_Pedro_de_luto_velo_Ines.png`, no corresponde a la frase actual de Toma 16.
+- La antigua `17_Procesion_funebre.png` pasó a `ARCHIVO_SIN_NUMERO_Procesion_funebre.png`, no corresponde a la frase actual de Toma 17.
+- Nueva imagen `17_Orden_sellada_de_Afonso_IV.png` subida a Drive, pendiente de aceptación visual explícita.
+- **Autoprompt obligatorio:** aplicar el control de 8 puntos de `03_SERIE_HISTORIA_ANIMADA.md` antes de cada futura generación.
