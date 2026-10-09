@@ -572,3 +572,21 @@ Alcobaça debe funcionar como payoff:
 - **Toma 14**: “Tuvieron hijos”. Plano familiar nuevo y distinto; mantener las identidades adultas bloqueadas y la estética 3D estilizada. No validar un resultado horizontal ni un collage: imágenes finales individuales verticales 9:16.
 - Regla: un cambio de locación/luz explica paso de tiempo, pero **no justifica cambio accidental de cara/barba**. Flow no debe encargarse de solucionar inconsistencias de la imagen fija.
 - **Estado actual**: 13 y 14 pendientes de una versión coherente; pruebas con collage u horizontal descartadas.
+
+
+## PLANTILLA FIJA DE ENTREGA PARA TODOS LOS CAPÍTULOS — 2026-10-09
+
+**DECISIÓN APROBADA EXPLÍCITAMENTE POR EL USUARIO:** tras aprobar la entrega completa del Capítulo 02 (Producción V3, 40 tomas, Grok + Flow), exige que **TODOS los próximos capítulos de la serie histórica animada se entreguen CON ESTE MISMO NIVEL DE DETALLE Y ORGANIZACIÓN**, sin tener que pedirlo otra vez. La cantidad concreta de imágenes/tomas se ajusta a cada historia: 40 fue el caso específico del Capítulo 02, NO cuota universal.
+
+### Contrato de entrega por capítulo
+
+1. **Guion de voz completo** con tono de cuento humano, cálido, bonito, natural y claro; inicio que atraiga y final emotivo cuando encaje. Distinguir entre propuesta y versión final aprobada; no sustituir unilateralmente narración vigente.
+2. **Plan completo de principio a fin**, escenas numeradas consecutivamente; frase exacta o fragmento de narración, función visual, descripción y ángulo cinematográfico distinto a escenas cercanas. Sin saltar tomas ni dejar 'la siguiente te la doy luego'.
+3. **Fichas / imágenes maestras de cada personaje recurrente** con edad, cara, pelo, barba, vestuario y estética fijos; generarlas y aprobarlas antes de producir escenas (tantas como requiera el relato).
+4. **Dos prompts INDIVIDUALES, completos y en inglés por cada toma**: (A) imagen estática para Grok y (B) animación image-to-video para Grok / Google Flow. La guía será autocontenida y copiable toma por toma, incluyendo estilo, encuadre, personajes, acción, negativas y movimiento de cámara.
+5. **ADN visual inmutable**: premium stylized adult 3D animated feature film, continuidad con Capítulo 01 y frame de estilo aprobado, mismo lenguaje de render en TODAS las tomas, vertical 9:16, sin fotorealismo, sin estéticas infantiles ni cambio de rostros. Usar references visuales en generación, no confiar únicamente en prompt textual. Cortes y cámaras variados, una acción animable por plano.
+6. **Historial y fuentes**: acontecimientos confirmados separados de leyendas/recreaciones; siempre que aparezcan lugares reales (como Alcobaça), usar fotos verificadas de arquitectura real; nunca inventar pruebas o presentar mitos como hechos.
+7. **Guía de producción y montaje al final**: pasos para Grok/Flow, duraciones orientativas y ajuste al audio final, ritmo y música, Premiere, subtítulos, control de calidad y nomenclatura de archivos.
+8. **Entregarlo en UNA página clara de Notion, vinculada al capítulo**, sin fragmentarlo en docenas de páginas dispersas. Registrar enlaces, versión operativa y decisiones clave en GitHub. Confirmar que están todos los prompts antes de afirmar «listo».
+
+**Modelo de entrega aprobado:** [Notion — Producción V3 Pedro e Inês, 40 tomas](https://app.notion.com/p/3f41ed051c4d81e88ae0e4263d682a14). Replicar su estructura, calidad, facilidad de copiar y flujo de trabajo para futuros capítulos, sin copiar automáticamente las escenas ni el número de tomas.
