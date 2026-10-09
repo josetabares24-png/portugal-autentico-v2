@@ -24,7 +24,7 @@ type ArticleBodyProps = {
    * encabezado indicado (al cierre de la sección que los justifica); los que
    * no encuentran su encabezado caen al final del cuerpo.
    */
-  bookings?: (ArticleBookingBlockProps & { beforeHeading?: string })[];
+  bookings?: (ArticleBookingBlockProps & { beforeHeading?: string; position?: 'after-summary' })[];
 };
 
 export function ArticleBody({
@@ -42,11 +42,15 @@ export function ArticleBody({
       .filter((b) => (b.tipo === 'subtitulo' || b.tipo === 'subseccion') && b.texto)
       .map((b) => slugify(b.texto as string)),
   );
+  // Bloques que van justo debajo de «Lo esencial»: solo en las páginas donde
+  // la siguiente decisión del lector es comprar (ver blog-booking-placements).
+  const summaryBookings = bookings.filter((b) => b.position === 'after-summary');
+  const bodyBookings = bookings.filter((b) => b.position !== 'after-summary');
   const bookingsBefore = (headingId: string) =>
-    bookings
+    bodyBookings
       .filter((b) => b.beforeHeading === headingId)
       .map((b) => <ArticleBookingBlock key={b.contentId} {...b} />);
-  const trailingBookings = bookings.filter((b) => !b.beforeHeading || !headingIds.has(b.beforeHeading));
+  const trailingBookings = bodyBookings.filter((b) => !b.beforeHeading || !headingIds.has(b.beforeHeading));
   return (
     <article className="article-surface min-w-0">
       {/* Lead paragraph - primer párrafo destacado */}
@@ -69,13 +73,21 @@ export function ArticleBody({
               </li>
             ))}
           </ul>
-          {bookings[0] && (
+          {bookings[0] && summaryBookings.length === 0 && (
             <p className="article-essential-booking">
               Si vas a reservar:{' '}
               <a href={`#reserva-${bookings[0].contentId}`}>{bookings[0].ctaLabel} ↓</a>
             </p>
           )}
         </ArticleCallout>
+      )}
+
+      {summaryBookings.length > 0 && (
+        <div className="article-reading">
+          {summaryBookings.map((b) => (
+            <ArticleBookingBlock key={b.contentId} {...b} />
+          ))}
+        </div>
       )}
 
       {/* Cómo llegar / Mejor hora */}

@@ -10,11 +10,8 @@ import { ArticleToc } from '@/components/blog/ArticleToc';
 import type { Article, ArticleExtras, ArticleFaq, SectionPhoto } from '@/components/blog/article-types';
 import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
-import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
-import { BLOG_BOOKING_PLACEMENTS, blogBookingContentId } from '@/data/blog-booking-placements';
-import { findProductById, resolveBookingLink } from '@/data/bookings';
-import { buildAffiliateUrl, withTiqetsCampaign } from '@/lib/affiliate';
-import type { ArticleBookingBlockProps } from '@/components/blog/ArticleBookingBlock';
+import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
+import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
@@ -126,6 +123,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Cómo subir a Pena desde Sintra' },
       { tipo: 'parrafo', texto: 'Parques de Sintra señala el autobús 434 desde la estación ferroviaria como una de las opciones de transporte público hacia Pena. También existen recorridos peatonales, pero la subida exige tiempo y desnivel. El acceso en vehículo particular a las vías que llevan al monumento está restringido, así que no planifiques el día como si fueras a aparcar junto al palacio.' },
 
+      { tipo: 'enlace', texto: 'En la ficha de Sintra tienes el resumen del día: qué ver, cuánto tiempo pide y el error que más se repite con la hora de la Pena.', href: '/actividades/sintra-dia-completo', label: 'Ficha de Sintra: Pena y Regaleira' },
       { tipo: 'subtitulo', texto: 'Una ruta realista para un día' },
       { tipo: 'lista', items: [
         'Llega a Sintra con margen y orienta primero el día según la hora reservada para Pena.',
@@ -220,6 +218,9 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 10,
     links: [
+      { href: '/actividades/miradouro-santa-luzia', label: 'Ficha: Santa Luzia' },
+      { href: '/actividades/miradouro-portas-do-sol', label: 'Ficha: Portas do Sol' },
+      { href: '/actividades/miradouro-senhora-do-monte', label: 'Ficha: Senhora do Monte' },
       { href: '/blog/graca-lisboa-que-ver', label: 'Ruta por Graça' },
       { href: '/blog/alfama-historia-guia', label: 'Guía de Alfama' },
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
@@ -312,7 +313,7 @@ const articles: Record<string, Article> = {
   'lisboa-cuando-llueve': {
     titulo: 'Qué hacer en Lisboa cuando llueve: planes cubiertos y ruta útil',
     descripcion: 'Ideas para reorganizar un día de lluvia en Lisboa con Oceanário, museos, mercados, cafés y zonas cubiertas sin perder horas cruzando la ciudad.',
-    seoTitle: 'Qué hacer en Lisboa cuando llueve | Planes cubiertos',
+    seoTitle: 'Qué hacer en Lisboa cuando llueve: planes a cubierto',
     metaDescription: 'Qué hacer en Lisboa con lluvia: Oceanário, museos, mercados, cafés y una estrategia para reorganizar el itinerario sin desperdiciar el día.',
     imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
     imageAlt: 'Cubierta de la estación de Oriente en Lisboa',
@@ -594,6 +595,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-09',
     minutos: 10,
     links: [
+      { href: '/actividades/mosteiro-jeronimos', label: 'Ficha rápida del Mosteiro dos Jerónimos' },
       { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
       { href: '/blog/pasteles-de-belem', label: 'Pastéis de Belém' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
@@ -694,6 +696,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Yo no me voy de Belém sin comerme unos pastéis de nata.' },
       { tipo: 'enlace', texto: 'Si prefieres que alguien te cuente la historia del barrio mientras lo recorres, hay free tours por Belém.', href: '/free-tours-lisboa#ruta-belem', label: 'Ver los free tours por Belém' },
 
+      { tipo: 'enlace', texto: 'Si vas a juntar Jerónimos y Torre en la misma mañana, en la ficha de la Torre tienes cómo funciona ahora el acceso por franjas horarias.', href: '/actividades/torre-de-belem', label: 'Ficha de la Torre de Belém' },
       { tipo: 'subtitulo', texto: 'Qué ves con cada entrada' },
       { tipo: 'parrafo', texto: 'Con el billete recorres el claustro, los dos pisos de arcos con decoración manuelina (cuerdas, conchas, esferas armilares, motivos marinos), y el antiguo refectorio, con las paredes de azulejos. El piso de arriba no es accesible en silla de ruedas ni con carrito.' },
       { tipo: 'parrafo', texto: 'En la iglesia, gratis, están la nave con columnas muy finas para su altura, las tumbas de Vasco da Gama y de Camões junto a la entrada y los sepulcros reales del altar. No hay audioguía oficial: si quieres contexto, lleva algo leído o ve con guía.' },
@@ -750,6 +753,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-23',
     minutos: 7,
     links: [
+      { href: '/actividades/free-walking-tour-centro', label: 'Free tour por el centro' },
       { href: '/blog/chiado-bairro-alto-guia', label: 'Chiado y Bairro Alto' },
       { href: '/blog/alfama-historia-guia', label: 'Alfama' },
       { href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Lisboa en 1 día' },
@@ -771,6 +775,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Santa Justa y Carmo' },
       { tipo: 'aviso', texto: 'A 23 de septiembre de 2026, Carris mantiene el Elevador de Santa Justa temporalmente cerrado. Puedes verlo desde la Baixa, pero no cuentes con él para subir hacia Carmo mientras siga este aviso oficial.' },
       { tipo: 'parrafo', texto: 'El elevador fue construido para salvar el desnivel entre la Baixa y la zona del Carmo. Mientras permanezca cerrado, continúa a pie hacia Chiado y Carmo y comprueba el estado oficial de Carris si quieres saber si ya ha reabierto.' },
+      { tipo: 'enlace', texto: 'El estado del elevador cambia a menudo. En su ficha tienes lo último que publica CARRIS y cómo subir al Carmo andando si está cerrado.', href: '/actividades/elevador-santa-justa', label: 'Ficha del Elevador de Santa Justa' },
       { tipo: 'subtitulo', texto: 'Ruta rápida por la Baixa' },
       { tipo: 'lista', items: ['Rossio.', 'Praça da Figueira.', 'Rua Augusta.', 'Elevador de Santa Justa por fuera; mientras siga cerrado, continúa a Carmo a pie.', 'Praça do Comércio.', 'Continuación hacia Chiado o Alfama.'] },
       { tipo: 'enlace', texto: 'Si solo tienes un día en Lisboa, esta zona ya está integrada en una ruta completa.', href: '/itinerarios/lisboa-1-dia-lo-esencial', label: 'Ver Lisboa en 1 día' },
@@ -1485,6 +1490,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-08-23',
     minutos: 10,
     links: [
+      { href: '/actividades/crucero-atardecer-tajo', label: 'Paseo en barco al atardecer por el Tajo' },
       { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, uno por uno' },
       { href: '/blog/restaurantes-romanticos-lisboa', label: 'Restaurantes para una cena especial' },
       { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado sin acabar en un espectáculo para turistas' },
@@ -2060,6 +2066,9 @@ const articles: Record<string, Article> = {
     dateModified: '2026-07-24',
     minutos: 11,
     links: [
+      { href: '/actividades/parque-eduardo-vii', label: 'Parque Eduardo VII' },
+      { href: '/actividades/jardim-estrela-principe-real', label: 'Jardim da Estrela y Príncipe Real' },
+      { href: '/actividades/lx-factory', label: 'LX Factory' },
       { href: '/blog/mejores-miradores-lisboa', label: 'Miradores de Lisboa para completar el plan' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Encajar planes gratis en una ruta de 3 días' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo pagar entradas y cuándo no' },
@@ -2784,6 +2793,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Alfama: casas de fado y Museu do Fado" },
       { tipo: "parrafo", texto: "Alfama concentra varias casas históricas y el Museu do Fado. Entre los lugares recogidos por fuentes oficiales de turismo aparecen Parreirinha de Alfama y Casa de Fado Marquês da Sé. Si eliges una casa con cena, revisa antes la reserva, el consumo mínimo, la hora de inicio y si el programa musical está incluido en el precio." },
 
+      { tipo: "enlace", texto: "Si te quedas en Alfama, la ficha de fado en Alfama resume qué comparar entre casas antes de reservar.", href: "/actividades/fado-en-alfama", label: "Fado en Alfama" },
       { tipo: "subtitulo", texto: "Mouraria: contexto histórico del fado" },
       { tipo: "parrafo", texto: "La Rota do Fado de Visit Lisboa incluye puntos de Mouraria vinculados a Maria Severa y a la memoria histórica del género. Es una zona especialmente útil si quieres combinar una ruta cultural durante el día con música por la noche." },
 
@@ -3896,6 +3906,8 @@ const articles: Record<string, Article> = {
       { label: "Castelo de São Jorge — información oficial de visita", href: "https://castelodesaojorge.pt/como-visitar/horarios/" },
     ],
     links: [
+      { href: "/actividades/miradouro-portas-do-sol", label: "Miradouro das Portas do Sol" },
+      { href: "/actividades/miradouro-santa-luzia", label: "Miradouro de Santa Luzia" },
       { href: "/blog/tram-28-historia-guia", label: "Guía del Tranvía 28" },
       { href: "/blog/donde-escuchar-fado-autentico", label: "Dónde escuchar fado en Lisboa" },
       { href: "/blog/mejores-miradores-lisboa", label: "Mejores miradores de Lisboa" },
@@ -3925,6 +3937,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Castelo de São Jorge: cuándo añadirlo a la ruta" },
       { tipo: "parrafo", texto: "El castillo requiere una visita propia y tiene entrada de pago. Si vas a entrar, reserva margen adicional en el itinerario; si solo quieres recorrer Alfama, puedes dejarlo para otro momento y concentrarte en las calles, la Sé y los miradores. La web oficial del Castelo publica horarios, cierres y precios vigentes." },
 
+      { tipo: "enlace", texto: "En la ficha del castillo tienes el precio de la entrada, a qué hora ir para no pasar calor en las murallas y el autobús que te ahorra la cuesta.", href: "/actividades/castelo-sao-jorge", label: "Ficha del Castelo de São Jorge" },
       { tipo: "subtitulo", texto: "Cómo llegar a Alfama" },
       { tipo: "parrafo", texto: "Puedes acercarte por Santa Apolónia, por la Baixa o utilizando líneas de CARRIS que atraviesan el centro histórico. El Tranvía 28E pasa por zonas de Alfama, aunque su recorrido puede sufrir alteraciones temporales; comprueba CARRIS si quieres usarlo como parte de la visita." },
 
@@ -3961,6 +3974,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Carne y Embutidos" },
       { tipo: "parrafo", texto: "La alheira es uno de los embutidos más curiosos de la gastronomía europea: una salchicha inventada por los judíos portugueses del siglo XV para aparentar que comían cerdo cuando en realidad usaban pollo o caza. Hoy es un producto de charcutería habitual, disponible en cualquier supermercado, y deliciosa frita o a la plancha con huevo y arroz." },
       { tipo: "parrafo", texto: "El leitão (lechón asado) es el plato festivo por excelencia, especialmente en la región de Bairrada al norte del país. En Lisboa se encuentra en algunas tascas especializadas. La carne de porco à alentejana —cerdo con almejas, tomate y cilantro— es la combinación más sorprendente de la cocina portuguesa: un plato de interior con producto de la costa que funciona de manera inexplicable." },
+      { tipo: "enlace", texto: "Para probar casi todo esto sin gastar mucho, lo más fácil es el prato do dia de una tasca de barrio al mediodía.", href: "/actividades/tasca-tradicional", label: "Comer en una tasca tradicional" },
       { tipo: "subtitulo", texto: "Dulces y Pastelería — El Legado Conventual" },
       { tipo: "parrafo", texto: "La pastelería portuguesa tiene un origen muy específico: los conventos. Durante siglos, las monjas portuguesas utilizaban las claras de huevo para almidonar la ropa del clero, y con las yemas sobrantes desarrollaron una pastelería de azúcar y huevo extraordinariamente rica. Queijadas, barrigas de freira, papos de anjo, toucinho do céu... Los nombres son tan evocadores como los sabores." },
       { tipo: "parrafo", texto: "Los ovos moles de Aveiro (cápsulas de oblea rellenas de crema de yema) son el souvenir gastronómico más deseado del país. Los travesseiros de Sintra, los queijadas de Sintra, los pastéis de Tentúgal... cada región tiene su especialidad conventual. En Lisboa, el café A Brasileira (1905), en el Chiado, es histórico aunque turístico; para pastelería de verdad, busca cualquier pastelería de barrio." },
@@ -4282,6 +4296,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "La demanda cambia mucho según la hora, la temporada y las incidencias del servicio. En lugar de perseguir una supuesta hora perfecta, mira la cola y decide en el momento: si el vehículo llega lleno o la espera rompe tu itinerario, continúa a pie o usa otra conexión de CARRIS/Metro y vuelve al 28E en otro tramo." },
       { tipo: "parrafo", texto: "Las primeras horas del día y la parte final de la jornada suelen ser más fáciles que las franjas de máxima visita, pero no hay garantía de asiento. El objetivo debería ser que el tranvía encaje en tu ruta, no perder una parte importante del día esperando solo por subir." },
 
+      { tipo: "enlace", texto: "En la ficha del tranvía 28 tienes lo rápido: precio del billete, dónde subirte para ir sentado y a qué horas evitarlo.", href: "/actividades/tranvia-28", label: "Ficha del tranvía 28" },
       { tipo: "subtitulo", texto: "Antes de subir: revisa el servicio oficial" },
       { tipo: "parrafo", texto: "Consulta la página de la línea 28E de CARRIS el mismo día. Ahí aparecen el recorrido, los horarios y los avisos temporales. Es especialmente importante porque una obra o un evento puede cambiar terminales, dividir el servicio o sustituir parte del trayecto." }
     ]
@@ -4583,6 +4598,22 @@ function toAbsoluteUrl(pathOrUrl: string) {
  * El año tampoco se añade solo: los artículos que de verdad van de un año lo
  * llevan en su propio título, y ponérselo al resto envejece el contenido.
  */
+const BRAND_SUFFIX = ' | Estaba en Lisboa';
+const MAX_TITLE_LENGTH = 65;
+/** Páginas con experimento en curso (brain/05-EXPERIMENTS.md): su título no se toca. */
+const TITLE_FROZEN_SLUGS = new Set(['donde-tomar-cafe-lisboa', 'donde-comer-barato-lisboa']);
+
+/**
+ * El layout añade « | Estaba en Lisboa» a todos los títulos. Cuando con la
+ * marca el título pasa de 65 caracteres, Google lo corta y se pierde justo
+ * el final, que es donde va lo que la página resuelve. En ese caso se
+ * publica sin la marca.
+ */
+function getDocumentTitle(slug: string, seoTitle: string): Metadata['title'] {
+  if (TITLE_FROZEN_SLUGS.has(slug)) return seoTitle;
+  return `${seoTitle}${BRAND_SUFFIX}`.length > MAX_TITLE_LENGTH ? { absolute: seoTitle } : seoTitle;
+}
+
 function getSeoTitle(title: string) {
   const hasLisboa = title.toLowerCase().includes('lisboa');
   return hasLisboa ? title : `${title} en Lisboa`;
@@ -4626,52 +4657,8 @@ function resolveBlogImage(slug: string, image?: string) {
  *   - GetYourGuide: el enlace corto se usa tal cual (lleva su campaña dentro);
  *     el desglose por artículo queda en el evento `affiliate_click` de GA4.
  */
-type ResolvedArticleBooking = ArticleBookingBlockProps & { beforeHeading?: string };
-
-function resolveArticleBookings(slug: string): ResolvedArticleBooking[] {
-  const placements = BLOG_BOOKING_PLACEMENTS[slug] ?? [];
-  return placements.flatMap<ResolvedArticleBooking>((placement) => {
-    const contentId = blogBookingContentId(slug, placement.offer);
-    const { offer } = placement;
-
-    if (offer.type === 'free-tour') {
-      const category = getFreeTourCategory(offer.categoryId);
-      const href = getFreeTourAffiliateUrl(category);
-      if (!href) return [];
-      return [{
-        intro: placement.intro,
-        kind: 'Free tour',
-        name: category.name,
-        ctaLabel: category.ctaLabel,
-        url: buildAffiliateUrl(href, category.campaign, contentId),
-        partner: 'guruwalk',
-        campaign: category.campaign,
-        contentId,
-        linkPlacement: 'article',
-        articleSlug: slug,
-        beforeHeading: placement.beforeHeading,
-      }];
-    }
-
-    const product = findProductById(offer.productId);
-    const link = product ? resolveBookingLink(product, 'article') : null;
-    if (!product || !link) return [];
-    const campaign = link.provider === 'tiqets' ? `web_blog_${slug}` : link.campaign;
-    const url = link.provider === 'tiqets' ? withTiqetsCampaign(link.url, campaign) : link.url;
-    return [{
-      intro: placement.intro,
-      kind: product.kind,
-      name: product.name,
-      ctaLabel: product.ctaLabel,
-      url,
-      partner: link.provider,
-      campaign,
-      contentId,
-      linkPlacement: link.usedPlacement,
-      articleSlug: slug,
-      beforeHeading: placement.beforeHeading,
-    }];
-  });
+function resolveArticleBookings(slug: string): ResolvedBookingBlock[] {
+  return resolveBookingBlocks(slug, BLOG_BOOKING_PLACEMENTS[slug] ?? [], 'blog');
 }
 
 function getArticle(slug: string): Article | null {
@@ -4774,7 +4761,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
    */
   const publicado = blogPosts.some((post) => post.id === slug);
   return {
-    title: seoTitle,
+    title: getDocumentTitle(slug, seoTitle),
     description: seoDescription,
     keywords,
     authors: [{ name: AUTHOR_NAME, url: AUTHOR_PROFILE_URL }],

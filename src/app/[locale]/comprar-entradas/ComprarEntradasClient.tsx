@@ -151,7 +151,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
           </p>
 
           {Object.keys(tiqetsProducts).length > 0 ? (
-            <p className="mt-3 max-w-2xl font-article text-[11px] leading-relaxed text-text-secondary/85">
+            <p className="mt-3 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
               Los precios marcados como “Desde” y la disponibilidad general de las entradas
               de Tiqets se consultan en su API. El importe final depende de la fecha y la opción
               elegida, y se confirma antes del pago.

@@ -76,11 +76,11 @@ export default function CookieBanner() {
                 </h3>
                 <p className="text-[10px] leading-[1.35] text-text-secondary sm:text-[11px] sm:leading-snug">
                   Usamos cookies para medir el tráfico y mejorar la web. Puedes aceptar, rechazar o leer la{' '}
-                  <Link href="/politica-cookies" className="text-terracotta hover:underline underline-offset-2">
+                  <Link href="/politica-cookies" className="text-terracotta underline underline-offset-2 hover:no-underline">
                     Política de Cookies
                   </Link>
                   {' '}y la{' '}
-                  <Link href="/politica-privacidad" className="text-terracotta hover:underline underline-offset-2">
+                  <Link href="/politica-privacidad" className="text-terracotta underline underline-offset-2 hover:no-underline">
                     Privacidad
                   </Link>.
                 </p>

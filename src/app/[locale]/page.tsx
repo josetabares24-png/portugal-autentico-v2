@@ -17,10 +17,10 @@ const suggestedArticles = [
 ].filter(Boolean);
 
 export const metadata: Metadata = {
-  title: { absolute: 'Guía de Lisboa en español | Estaba en Lisboa' },
+  title: { absolute: 'Guía de Lisboa: qué ver, rutas y transporte | Estaba en Lisboa' },
   description: HOME_DESCRIPTION,
   openGraph: {
-    title: 'Guía de Lisboa en español | Estaba en Lisboa',
+    title: 'Guía de Lisboa: qué ver, rutas y transporte | Estaba en Lisboa',
     description: HOME_DESCRIPTION,
     url: HOME_URL,
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guía de Lisboa en español | Estaba en Lisboa',
+    title: 'Guía de Lisboa: qué ver, rutas y transporte | Estaba en Lisboa',
     description: HOME_DESCRIPTION,
     images: ['https://estabaenlisboa.com/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg'],
   },

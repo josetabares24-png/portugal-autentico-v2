@@ -83,9 +83,15 @@ function formatReviewDate(date: string) {
 export function TravelPillarPage({
   guide,
   reservation,
+  afterShortAnswer,
+  afterSection,
 }: {
   guide: TravelPillarGuide;
   reservation?: ReactNode;
+  /** Se pinta justo debajo de «La respuesta corta». */
+  afterShortAnswer?: ReactNode;
+  /** Contenido extra al final de una sección concreta, por `section.id`. */
+  afterSection?: Record<string, ReactNode>;
 }) {
   const pageUrl = `${SITE_URL}${guide.url}`;
   const imageUrl = `${SITE_URL}${guide.heroImage}`;
@@ -210,6 +216,7 @@ export function TravelPillarPage({
                   </div>
                 ))}
               </div>
+              {afterShortAnswer}
             </section>
 
             <div className="article-content article-reading">
@@ -248,6 +255,8 @@ export function TravelPillarPage({
                       <p>{section.note.text}</p>
                     </aside>
                   ) : null}
+
+                  {afterSection?.[section.id]}
                 </section>
               ))}
 

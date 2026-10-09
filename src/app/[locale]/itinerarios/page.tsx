@@ -16,7 +16,7 @@ import { CORE_ITINERARIES } from '@/data/itineraries';
  * funcionalidad que no está implementada.
  */
 export const metadata: Metadata = {
-  title: 'Itinerarios en Lisboa 2026: rutas de 1, 2 y 3 días',
+  title: { absolute: 'Itinerarios en Lisboa 2026: rutas de 1, 2 y 3 días' },
   description: 'Itinerarios de Lisboa para 1, 2 y 3 días, con rutas hora a hora, mapas y consejos prácticos. Incluye una opción de 3 días con Sintra.',
   keywords: ['itinerario lisboa 1 dia', 'lisboa 2 dias', 'lisboa 3 dias', 'guia lisboa', 'que ver lisboa', 'ruta lisboa'],
   openGraph: {

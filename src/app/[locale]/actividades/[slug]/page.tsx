@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!activity) return { title: 'Actividad no encontrada', robots: { index: false, follow: false } };
 
   return {
-    title: `${activity.title} | Estaba en Lisboa`,
+    title: activity.seoTitle ? { absolute: activity.seoTitle } : `${activity.title} | Estaba en Lisboa`,
     description: activity.description,
     keywords: [activity.title.toLowerCase(), `${activity.title.toLowerCase()} lisboa`, activity.category.toLowerCase(), 'que ver en lisboa'],
     openGraph: {
-      title: activity.title,
+      title: activity.seoTitle ?? activity.title,
       description: activity.description,
       url: `https://estabaenlisboa.com/actividades/${slug}`,
       // Sin foto verificada del lugar todavía: se usa el logo del sitio en
@@ -188,6 +188,18 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
                 <p className="text-text-secondary leading-relaxed">{activity.experiencia.elError}</p>
               </div>
             </div>
+          )}
+
+          {activity.guide && (
+            <p className="mb-10 border-l-2 border-terracotta pl-5 text-text-secondary leading-relaxed">
+              <span className="block text-xs uppercase tracking-widest mb-1">Guía completa</span>
+              <Link
+                href={activity.guide.href}
+                className="font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
+              >
+                {activity.guide.label} →
+              </Link>
+            </p>
           )}
 
           <div className="relative bg-night bg-azulejo-pattern-gold rounded-lg px-6 py-6 mb-10 overflow-hidden">

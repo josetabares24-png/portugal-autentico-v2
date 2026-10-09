@@ -12,6 +12,14 @@ export type ActivityCategory =
 export interface Activity {
   slug: string;
   title: string;
+  /**
+   * Título para Google (etiqueta <title>), sin el sufijo de marca. Dice solo
+   * lo que la ficha cuenta de verdad: «horario» únicamente donde la ficha da
+   * el horario (Oceanário, Cristo Rei, Senhora do Monte).
+   */
+  seoTitle?: string;
+  /** Guía del blog que desarrolla esta ficha. Enlace en los dos sentidos. */
+  guide?: { href: string; label: string };
   category: ActivityCategory;
   zone: string;
   isFree: boolean;
@@ -84,6 +92,8 @@ export const ACTIVITY_CATEGORIES: ActivityCategory[] = [
 export const activities: Activity[] = [
   {
     slug: 'miradouro-santa-luzia',
+    seoTitle: 'Miradouro de Santa Luzia: gratis, cuándo ir y cómo llegar',
+    guide: { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, comparados' },
     experiencia: {
       intro: 'El más fotografiado de Lisboa, y con motivo: una pérgola cubierta de buganvilla, paneles de azulejo del siglo XVIII y los tejados de Alfama cayendo hacia el río. Es pequeño, así que se ve en un cuarto de hora.',
       queVeras: [
@@ -109,6 +119,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'miradouro-senhora-do-monte',
+    seoTitle: 'Miradouro da Senhora do Monte: horario y cómo llegar',
+    guide: { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, comparados' },
     experiencia: {
       intro: 'El Miradouro da Senhora do Monte está junto a la capilla del mismo nombre, en Graça. Desde allí se ven el Castelo de São Jorge, la Baixa, el Tajo, Mouraria y buena parte de las avenidas al norte de la ciudad.',
       queVeras: [
@@ -136,6 +148,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'miradouro-portas-do-sol',
+    seoTitle: 'Miradouro das Portas do Sol: cuándo ir y cómo llegar',
+    guide: { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, comparados' },
     experiencia: {
       intro: 'Es la postal de Alfama: la terraza mira hacia el barrio y los tejados descienden en cascada hasta el río. Está justo en el recorrido del tranvía 28, así que es difícil no pasar por delante.',
       queVeras: [
@@ -161,6 +175,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'castelo-sao-jorge',
+    seoTitle: 'Castelo de São Jorge: precio de la entrada y cuándo ir',
+    guide: { href: '/blog/alfama-historia-guia', label: 'Qué ver en Alfama, con el castillo en la ruta' },
     experiencia: {
       intro: 'El castillo no es solo una fortaleza: es el sitio donde empezó Lisboa. Desde esta colina se domina el río, y por eso lleva ocupada casi tres mil años —fenicios, romanos, visigodos, moros y finalmente los cristianos en 1147—. Lo que se visita hoy es sobre todo la muralla musulmana del siglo XI, pero la vista es la misma que decidió que aquí hubiera una ciudad.',
       queVeras: [
@@ -191,6 +207,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'mosteiro-jeronimos',
+    seoTitle: 'Mosteiro dos Jerónimos: entradas, precio y cuándo ir',
+    guide: { href: '/blog/monasterio-jeronimos-entradas', label: 'Jerónimos: entradas, precios 2026 y horarios' },
     experiencia: {
       intro: 'Se construyó con el impuesto sobre las especias que llegaban de la India, y se nota: es el edificio donde Portugal enseñó lo rico que se había hecho. Lo llamativo es que la iglesia, que es la parte más impresionante, no cuesta nada.',
       queVeras: [
@@ -220,6 +238,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'torre-de-belem',
+    seoTitle: 'Torre de Belém: entradas, precio y franjas horarias',
+    guide: { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
     experiencia: {
       intro: 'Es la imagen que todo el mundo tiene en la cabeza cuando piensa en Lisboa. Se construyó hacia 1515 para vigilar la entrada del puerto, y entonces estaba rodeada de agua: el terremoto de 1755 movió el cauce del río y hoy queda pegada a la orilla.',
       queVeras: [
@@ -250,6 +270,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'pasteis-de-belem',
+    seoTitle: 'Pastéis de Belém: precio, cola y cuándo ir',
+    guide: { href: '/blog/pasteles-de-belem', label: 'Pastéis de Belém: la guía completa' },
     experiencia: {
       intro: 'La receta viene del Monasterio de los Jerónimos y se hace en el mismo local desde 1837. Es secreta de verdad: solo la conocen unos pocos maestros pasteleros que la preparan en una sala cerrada. Por eso solo los de esta casa se venden como pastéis de Belém (es marca registrada); en el resto del país son pastéis de nata.',
       queVeras: [
@@ -279,6 +301,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'tranvia-28',
+    seoTitle: 'Tranvía 28 de Lisboa: precio, ruta y dónde subir',
+    guide: { href: '/blog/tram-28-historia-guia', label: 'Tranvía 28: ruta, paradas y colas' },
     experiencia: {
       intro: 'No es una atracción turística: es una línea de transporte público que lleva funcionando desde 1914 y que resulta que atraviesa media Lisboa histórica. Los coches son los Remodelado de los años treinta, de madera, y siguen en servicio porque ningún tranvía moderno cabe por esas curvas.',
       queVeras: [
@@ -307,6 +331,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'lx-factory',
+    seoTitle: 'LX Factory Lisboa: qué ver, cuándo ir y cómo llegar',
+    guide: { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis en Lisboa' },
     experiencia: {
       intro: 'Un complejo industrial de 1846 —hubo hilaturas y luego una imprenta— que estuvo abandonado décadas y hoy es una calle de tiendas, estudios y restaurantes bajo el puente 25 de Abril. Se conservó la nave tal cual, con la estructura de hierro y los rótulos antiguos.',
       queVeras: [
@@ -333,6 +359,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'elevador-santa-justa',
+    seoTitle: 'Elevador de Santa Justa: estado actual y cómo llegar',
+    guide: { href: '/blog/baixa-lisboa-que-ver', label: 'Qué ver en la Baixa' },
     experiencia: {
       intro: 'El Elevador de Santa Justa conecta la Baixa con la zona del Carmo. En 2026 su operación sigue condicionada por el proceso de revisión de los ascensores y funiculares históricos de Lisboa.',
       queVeras: [
@@ -361,6 +389,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'oceanario-lisboa',
+    seoTitle: 'Oceanário de Lisboa: entradas, horario y precio',
+    guide: { href: '/blog/parque-das-nacoes-lisboa-que-ver', label: 'Qué ver en Parque das Nações' },
     experiencia: {
       intro: 'El Oceanário de Lisboa está en Parque das Nações y organiza la visita alrededor de un gran acuario central y distintos hábitats marinos. La visita media indicada por el propio Oceanário es de entre una hora y media y dos horas.',
       queVeras: [
@@ -389,6 +419,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'sintra-dia-completo',
+    seoTitle: 'Sintra desde Lisboa: entrada a la Pena y cómo ir',
+    guide: { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa en un día' },
     experiencia: {
       intro: 'Sintra es una sierra con microclima propio a cuarenta minutos de Lisboa, y por eso la nobleza portuguesa se construyó ahí sus caprichos. El resultado es una concentración de palacios excéntricos entre bosque de niebla que no se parece a nada más en Portugal.',
       queVeras: [
@@ -416,6 +448,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'cascais-cabo-da-roca',
+    seoTitle: 'Cascais y Cabo da Roca desde Lisboa: cómo ir en el día',
+    guide: { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Qué ver en Cascais desde Lisboa' },
     experiencia: {
       intro: 'Cascais se puede visitar desde Lisboa en tren y combinar con el Cabo da Roca si quieres añadir costa y acantilados al mismo día. Son dos paradas distintas, así que conviene calcular el transporte antes de salir.',
       queVeras: [
@@ -444,6 +478,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'fado-en-alfama',
+    seoTitle: 'Fado en Alfama: qué comprobar antes de reservar',
+    guide: { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado en Lisboa' },
     experiencia: {
       intro: 'El fado combina música y poesía y forma parte del Patrimonio Cultural Inmaterial de la Humanidad desde 2011. Se interpreta profesionalmente en casas de fado y también de forma informal en asociaciones y espacios tradicionales de los barrios antiguos de Lisboa.',
       queVeras: [
@@ -470,6 +506,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'crucero-atardecer-tajo',
+    seoTitle: 'Barco al atardecer por el Tajo en Lisboa: precio y cuándo ir',
+    guide: { href: '/blog/lisboa-en-pareja', label: 'Lisboa en pareja' },
     experiencia: {
       intro: 'Lisboa se construyó mirando al río, así que verla desde el agua es verla como estaba pensada. El recorrido pasa por delante de la Baixa, cruza bajo el puente 25 de Abril y llega a la altura de Belém.',
       queVeras: [
@@ -497,6 +535,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'free-walking-tour-centro',
+    seoTitle: 'Free tour por el centro de Lisboa: cómo funciona y propina',
+    guide: { href: '/free-tours-lisboa', label: 'Free tours de Lisboa, comparados' },
     experiencia: {
       intro: 'Un recorrido a pie por el centro histórico con guía local, sin precio fijo: se paga al final lo que uno considere. Es la forma más eficiente de entender la ciudad el primer día, porque te da el contexto que hace que todo lo demás del viaje cunda más.',
       queVeras: [
@@ -523,6 +563,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'jardim-estrela-principe-real',
+    seoTitle: 'Jardim da Estrela y Príncipe Real: jardines gratis',
+    guide: { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis en Lisboa' },
     experiencia: {
       intro: 'Dos jardines a quince minutos andando uno del otro, en la zona más residencial y tranquila del centro. Es donde se ve a los lisboetas haciendo lo que hacen un domingo, que es bastante distinto de lo que hace un turista.',
       queVeras: [
@@ -549,6 +591,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'parque-eduardo-vii',
+    seoTitle: 'Parque Eduardo VII: la vista gratis sobre la Avenida',
+    guide: { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Qué hacer gratis en Lisboa' },
     experiencia: {
       intro: 'El parque más grande del centro de Lisboa, en cuesta desde la Praça Marquês de Pombal hacia arriba. Su gracia no es el parque en sí, sino que desde lo alto se ve la Avenida da Liberdade en línea recta hasta el río.',
       queVeras: [
@@ -574,6 +618,8 @@ export const activities: Activity[] = [
   },
   {
     slug: 'tasca-tradicional',
+    seoTitle: 'Comer en una tasca de Lisboa: precio del menú y dónde',
+    guide: { href: '/blog/gastronomia-portuguesa-guia', label: 'Qué comer en Portugal' },
     experiencia: {
       intro: 'La tasca es el comedor de barrio portugués: mantel de papel, carta corta, vino de la casa a granel y un menú del día que cambia según lo que hubiera en el mercado. No es una experiencia gastronómica: es donde come la gente que trabaja cerca.',
       queVeras: [
@@ -600,6 +646,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'cristo-rei',
+    seoTitle: 'Cristo Rei desde Lisboa: horario, ferry y cómo subir',
     experiencia: {
       intro: 'El Santuário de Cristo Rei está en Almada, frente a Lisboa, y su terraza permite ver el Tajo, el puente 25 de Abril y gran parte de la ciudad desde la otra orilla. El monumento fue inaugurado en 1959.',
       queVeras: [

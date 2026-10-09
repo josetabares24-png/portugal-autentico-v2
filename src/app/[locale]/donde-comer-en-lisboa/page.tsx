@@ -9,7 +9,7 @@ const PUBLISHED_TIME = `${whereToEatGuide.datePublished}T09:00:00+01:00`;
 const MODIFIED_TIME = `${whereToEatGuide.dateModified}T09:00:00+01:00`;
 
 export const metadata: Metadata = {
-  title: 'Dónde comer en Lisboa: zonas, platos y sitios concretos',
+  title: { absolute: 'Dónde comer en Lisboa: zonas, platos y sitios concretos' },
   description: whereToEatGuide.description,
   alternates: { canonical: PAGE_URL },
   authors: [{ name: 'José Tabares', url: AUTHOR_URL }],

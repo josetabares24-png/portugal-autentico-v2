@@ -25,7 +25,7 @@ export default function SchemaMarkup() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "contact",
-      "email": "hola@estabaenlisboa.com",
+      "email": "contacto@estabaenlisboa.com",
       "availableLanguage": ["Spanish"]
     }
   };

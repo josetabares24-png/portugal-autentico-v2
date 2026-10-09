@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'website',
+    images: [{ url: 'https://estabaenlisboa.com/og-default.jpg', width: 1200, height: 630, alt: 'Estaba en Lisboa — guías prácticas sobre Lisboa' }],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com/planifica-tu-viaje',

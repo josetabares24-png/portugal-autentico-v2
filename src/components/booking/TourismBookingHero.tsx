@@ -46,6 +46,7 @@ export function TourismBookingHero({
         alt={imageAlt}
         fill
         priority
+        fetchPriority="high"
         className="-z-20 object-cover"
         style={{ objectPosition }}
         sizes="100vw"

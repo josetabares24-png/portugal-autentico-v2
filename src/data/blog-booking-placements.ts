@@ -16,6 +16,14 @@ import type { FreeTourCategoryId } from '@/data/affiliate-links';
  *   - Lista explícita por artículo, nunca detección por palabras.
  *   - Como mucho dos bloques por artículo, colocados al final de la sección
  *     que los justifica, no en la cabecera ni repartidos «por si acaso».
+ *   - Excepción `position: 'after-summary'` (aprobada por José el 9/10/2026,
+ *     auditoría máxima, acción 1): en las páginas donde la siguiente decisión
+ *     del lector ES comprar (Sintra, Jerónimos, Lisboa Card, Navegante y
+ *     Oriente), un bloque va justo debajo de «Lo esencial». Antes el primer
+ *     botón quedaba a 8-11 pantallas de móvil. Sigue el tope de dos bloques
+ *     por artículo: en Sintra y Jerónimos el bloque principal se ha subido,
+ *     no duplicado; en las otras tres el de abajo se mantiene porque cierra
+ *     la cuenta que hace el artículo.
  *   - El texto de entrada (`intro`) sale de lo que el propio artículo ya
  *     dice. Sin precios, valoraciones, «mejor precio», urgencia inventada ni
  *     experiencia personal no documentada.
@@ -32,9 +40,14 @@ export type BlogBookingOffer =
   | { type: 'product'; productId: string }
   | { type: 'free-tour'; categoryId: FreeTourCategoryId };
 
+/** Dónde va el bloque cuando no depende de un encabezado concreto. */
+export type BookingBlockPosition = 'after-summary';
+
 export interface BlogBookingPlacement {
   offer: BlogBookingOffer;
   beforeHeading?: string;
+  /** `after-summary`: justo debajo del resumen «Lo esencial». */
+  position?: BookingBlockPosition;
   /** Una o dos frases con el porqué, en la voz del artículo. */
   intro: string;
 }
@@ -47,7 +60,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'monasterio-jeronimos-entradas': [
     {
       offer: { type: 'product', productId: 'jeronimos' },
-      beforeHeading: 'horarios-y-cierres',
+      position: 'after-summary',
       intro:
         'Es el billete oficial del claustro con franja horaria, comprado en español. No se puede devolver ni cambiar de fecha: cómpralo cuando tengas el día decidido.',
     },
@@ -60,6 +73,12 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   ],
   // tarjeta-navegante-lisboa · 1.060 impresiones / 23 clics (28 d a 07/10)
   'tarjeta-navegante-lisboa': [
+    {
+      offer: { type: 'product', productId: 'lisboa-card' },
+      position: 'after-summary',
+      intro:
+        'Para moverte en metro, autobús y tranvía basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; más abajo tienes las cuentas.',
+    },
     {
       offer: { type: 'product', productId: 'lisboa-card' },
       beforeHeading: 'donde-comprar-y-recargar-la-navegante',
@@ -89,6 +108,12 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   ],
   // estacion-oriente-lisboa · 494 impresiones
   'estacion-oriente-lisboa': [
+    {
+      offer: { type: 'product', productId: 'oceanario' },
+      position: 'after-summary',
+      intro:
+        'Si bajas en Oriente para pasar el día en Parque das Nações, el Oceanário es lo que más tiempo pide. El precio cambia según la franja horaria, así que compáralas antes de comprar.',
+    },
     {
       offer: { type: 'product', productId: 'oceanario' },
       beforeHeading: 'merece-la-pena-aunque-no-tomes-un-tren',
@@ -142,7 +167,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'sintra-desde-lisboa': [
     {
       offer: { type: 'product', productId: 'sintra-palacio-pena' },
-      beforeHeading: 'como-subir-a-pena-desde-sintra',
+      position: 'after-summary',
       intro:
         'Como el interior de Pena se visita con fecha y hora, conviene llevar la entrada comprada antes de coger el tren y elegir una hora con margen.',
     },
@@ -160,6 +185,12 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
     },
   ],
   'lisboa-card-vale-la-pena': [
+    {
+      offer: { type: 'product', productId: 'lisboa-card' },
+      position: 'after-summary',
+      intro:
+        'Antes de comprarla, haz la cuenta de más abajo con lo que de verdad vas a visitar. Si te sale a favor, aquí la puedes dejar comprada antes del viaje.',
+    },
     {
       offer: { type: 'product', productId: 'lisboa-card' },
       beforeHeading: 'reservas-cupos-y-tarjeta-fisica',
@@ -208,8 +239,22 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   ],
 };
 
-/** Identificador de contenido para medir cada bloque por artículo. */
-export function blogBookingContentId(slug: string, offer: BlogBookingOffer): string {
+/**
+ * Identificador de contenido para medir cada bloque por página. Los bloques
+ * de arriba llevan `-arriba` para distinguirlos del bloque del mismo
+ * producto que queda más abajo en el artículo.
+ */
+export function bookingBlockContentId(
+  surface: string,
+  slug: string,
+  offer: BlogBookingOffer,
+  position?: BookingBlockPosition,
+): string {
   const target = offer.type === 'product' ? offer.productId : `free-tour-${offer.categoryId}`;
-  return `blog-${slug}-${target}`;
+  return `${surface}-${slug}-${target}${position === 'after-summary' ? '-arriba' : ''}`;
+}
+
+/** Compatibilidad: identificador de los bloques del blog. */
+export function blogBookingContentId(slug: string, offer: BlogBookingOffer, position?: BookingBlockPosition): string {
+  return bookingBlockContentId('blog', slug, offer, position);
 }
