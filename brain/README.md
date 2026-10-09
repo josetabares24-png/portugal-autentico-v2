@@ -1,5 +1,8 @@
 # Mente Lisboa
 
+> **Gobierno de memorias:** la única memoria madre transversal está en el repositorio **privado** `rumbo-al-millon/MEMORIA-MADRE.md`. Este árbol `brain/` es documentación operativa **especializada de Estaba en Lisboa**, no otra memoria madre global. Mantener vigentes las reglas **LOCKED** específicas de Lisboa y verificar el estado real antes de ejecutar.
+
+
 Mente Lisboa es el cerebro operativo de `estabaenlisboa.com`.
 
 ## Preflight obligatorio antes de una tarea importante
@@ -126,9 +129,11 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 
 ## Subcerebro de vídeo / marca personal
 
-- [[tutabares/README]] — entrada y preflight de Tutabares.
+**Identidad vigente:** Tu Tabares. La ruta `brain/tutabares/` conserva su nombre histórico para no romper enlaces; no usar “tutabares” ni “Estaba Sin Rumbo” como nombres públicos vigentes.
+
+- [[tutabares/README]] — entrada y preflight de Tu Tabares.
 - [[tutabares/TUTABARES_MAESTRO]] — autoprompt editorial de guiones y contenido.
 - [[tutabares/01_IDENTIDAD_NARRATIVA]] — voz, oralidad, humor, opinión y diferencias frente a true crime.
 - [[tutabares/02_ESTADO_OPERATIVO]] — guiones activos, decisiones y aprendizaje vivo.
 
-**Regla:** Tutabares pertenece a Mente Lisboa porque comparte ciudad, turismo, actualidad local, audiencia y ecosistema de marca con Estaba en Lisboa. Su voz de vídeo se mantiene diferenciada de la voz editorial de la web y de Estaba Investigando.
+**Regla:** Tu Tabares pertenece a Mente Lisboa porque comparte ciudad, turismo, actualidad local, audiencia y ecosistema de marca con Estaba en Lisboa. Su voz de vídeo se mantiene diferenciada de la voz editorial de la web y de Estaba Investigando.
