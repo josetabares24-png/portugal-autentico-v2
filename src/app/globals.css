@@ -1571,3 +1571,30 @@ button:active:not(:disabled) {
   padding: 0.65rem 1.25rem;
   text-decoration: none;
 }
+
+/* Bloque de alojamiento por barrio (Stay22): botones secundarios en
+   rejilla. Mismo marco que el bloque de reserva; el color del enlace del
+   artículo no debe pisar el del botón. */
+.article-content aside.article-booking ul.article-booking-options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-content aside.article-booking ul.article-booking-options li {
+  margin: 0;
+  padding: 0;
+}
+
+.article-content aside.article-booking ul.article-booking-options li::before {
+  content: none;
+}
+
+.article-content aside.article-booking a.article-booking-option {
+  color: var(--color-night);
+  text-decoration: none;
+}
+
+.article-content aside.article-booking a.article-booking-option:hover {
+  color: #fff;
+}

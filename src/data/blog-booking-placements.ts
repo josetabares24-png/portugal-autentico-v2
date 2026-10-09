@@ -1,4 +1,5 @@
 import type { FreeTourCategoryId } from '@/data/affiliate-links';
+import type { Stay22BarrioId } from '@/data/stay22';
 
 /**
  * Bloques de reserva dentro de los artículos del blog.
@@ -40,7 +41,9 @@ import type { FreeTourCategoryId } from '@/data/affiliate-links';
 
 export type BlogBookingOffer =
   | { type: 'product'; productId: string }
-  | { type: 'free-tour'; categoryId: FreeTourCategoryId };
+  | { type: 'free-tour'; categoryId: FreeTourCategoryId }
+  /** Alojamiento por barrio vía Stay22: un bloque con un botón por barrio. */
+  | { type: 'stay22-barrios'; barrios: Stay22BarrioId[] };
 
 /** Dónde va el bloque cuando no depende de un encabezado concreto. */
 export type BookingBlockPosition = 'after-summary';
@@ -336,6 +339,20 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
         'La entrada de Sintra que más se agota es la de la Pena. Aquí va con hora fija y parque incluido. No se devuelve ni se cambia de fecha: si quieres poder moverla por el tiempo, cómprala en la web oficial.',
     },
   ],
+  // donde-alojarse-en-lisboa · Stay22 (9/10/2026). Un solo bloque con un
+  // botón por barrio, en el orden del artículo, al cerrar «Cómo elegir zona».
+  // Son búsquedas por barrio, no hoteles: José no ha dormido en ellos.
+  'donde-alojarse-en-lisboa': [
+    {
+      offer: {
+        type: 'stay22-barrios',
+        barrios: ['baixa', 'chiado', 'alfama', 'graca', 'avenida', 'principe-real', 'saldanha', 'parque-nacoes', 'intendente', 'belem'],
+      },
+      beforeHeading: 'baixa-practica-para-una-primera-visita',
+      intro:
+        'Si ya tienes la zona clara, aquí ves qué alojamiento queda libre en cada barrio para tus fechas. Antes de reservar, mira en el mapa si está en cuesta o encima de una calle con ruido: es lo que más cambia la estancia.',
+    },
+  ],
   'belem-barrio-guia': [
     {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
@@ -358,7 +375,12 @@ export function bookingBlockContentId(
   offer: BlogBookingOffer,
   position?: BookingBlockPosition,
 ): string {
-  const target = offer.type === 'product' ? offer.productId : `free-tour-${offer.categoryId}`;
+  const target =
+    offer.type === 'product'
+      ? offer.productId
+      : offer.type === 'free-tour'
+        ? `free-tour-${offer.categoryId}`
+        : 'alojamiento';
   return `${surface}-${slug}-${target}${position === 'after-summary' ? '-arriba' : ''}`;
 }
 

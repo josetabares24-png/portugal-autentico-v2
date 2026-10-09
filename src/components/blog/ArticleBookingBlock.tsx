@@ -21,7 +21,7 @@ export interface ArticleBookingBlockProps {
   name: string;
   ctaLabel: string;
   url: string;
-  partner: 'getyourguide' | 'tiqets' | 'guruwalk';
+  partner: 'getyourguide' | 'tiqets' | 'guruwalk' | 'stay22';
   campaign: string;
   /** `blog-<slug>-<producto>`: identifica artículo y oferta en la medición. */
   contentId: string;
@@ -34,12 +34,18 @@ export interface ArticleBookingBlockProps {
    * único bloque nunca se quede sin aviso.
    */
   disclosure?: 'full' | 'short';
+  /**
+   * Varias opciones en un mismo bloque (alojamiento por barrio). Si viene,
+   * sustituye al botón único: un botón por opción, mismo marco.
+   */
+  options?: { id: string; label: string; url: string; campaign: string }[];
 }
 
 const PARTNER_LABEL: Record<ArticleBookingBlockProps['partner'], string> = {
   getyourguide: 'GetYourGuide',
   tiqets: 'Tiqets',
   guruwalk: 'GuruWalk',
+  stay22: 'Stay22',
 };
 
 export function ArticleBookingBlock({
@@ -54,6 +60,7 @@ export function ArticleBookingBlock({
   linkPlacement,
   articleSlug,
   disclosure = 'full',
+  options,
 }: ArticleBookingBlockProps) {
   let linkDomain = '';
   try {
@@ -71,32 +78,80 @@ export function ArticleBookingBlock({
           {kind} · {name}
         </p>
         <p className="article-booking-intro">{intro}</p>
-        <a
-          href={url}
-          target="_blank"
-          rel="sponsored noopener noreferrer"
-          className="article-booking-button btn-primary w-full px-6 py-3 text-base sm:w-auto"
-          onClick={() =>
-            trackAffiliateClick({
-              affiliate_partner: partner,
-              affiliate_campaign: campaign,
-              affiliate_content: contentId,
-              affiliate_placement: 'article-body',
-              affiliate_link_placement: linkPlacement,
-              destination: 'lisboa',
-              link_url: url,
-              link_domain: linkDomain,
-              outbound: 'true',
-              article_slug: articleSlug,
-              page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-            })
-          }
-        >
-          {ctaLabel}
-          <span aria-hidden="true"> ↗</span>
-          <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
-        </a>
-        {disclosure === 'full' ? (
+        {options && options.length > 0 ? (
+          <ul className="article-booking-options grid grid-cols-2 gap-2" role="list">
+            {options.map((option) => (
+              <li key={option.id} className="h-full">
+                <a
+                  href={option.url}
+                  target="_blank"
+                  rel="sponsored nofollow noopener noreferrer"
+                  className="article-booking-option btn-outline h-full w-full px-3 py-2.5 text-sm"
+                  onClick={() =>
+                    trackAffiliateClick({
+                      affiliate_partner: partner,
+                      affiliate_campaign: option.campaign,
+                      affiliate_content: `${contentId}-${option.id}`,
+                      affiliate_placement: 'article-body',
+                      affiliate_link_placement: linkPlacement,
+                      destination: 'lisboa',
+                      link_url: option.url,
+                      link_domain: 'www.stay22.com',
+                      outbound: 'true',
+                      article_slug: articleSlug,
+                      page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+                    })
+                  }
+                >
+                  {option.label}
+                  <span aria-hidden="true"> ↗</span>
+                  <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <a
+            href={url}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="article-booking-button btn-primary w-full px-6 py-3 text-base sm:w-auto"
+            onClick={() =>
+              trackAffiliateClick({
+                affiliate_partner: partner,
+                affiliate_campaign: campaign,
+                affiliate_content: contentId,
+                affiliate_placement: 'article-body',
+                affiliate_link_placement: linkPlacement,
+                destination: 'lisboa',
+                link_url: url,
+                link_domain: linkDomain,
+                outbound: 'true',
+                article_slug: articleSlug,
+                page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+              })
+            }
+          >
+            {ctaLabel}
+            <span aria-hidden="true"> ↗</span>
+            <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
+          </a>
+        )}
+        {partner === 'stay22' ? (
+          <p className="article-booking-disclosure">
+            Cada botón abre la búsqueda de alojamiento en ese barrio en Booking u otra web de
+            reservas, a través de Stay22. Si reservas desde aquí, me llevo una pequeña comisión
+            y a ti te cuesta lo mismo. Son búsquedas por zona, no hoteles en los que haya
+            dormido: vivo en Lisboa.{' '}
+            <Link
+              href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+              className="underline underline-offset-2 hover:text-terracotta"
+            >
+              Cómo funciona
+            </Link>
+            .
+          </p>
+        ) : disclosure === 'full' ? (
           <p className="article-booking-disclosure">
             Reservas en {PARTNER_LABEL[partner]}. Si lo haces desde aquí, me llevo una pequeña
             comisión y a ti te cuesta lo mismo. Solo enlazo lo que le recomendaría a un amigo.{' '}

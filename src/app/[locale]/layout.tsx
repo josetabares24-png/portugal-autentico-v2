@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import Stay22Script from '@/components/afiliados/Stay22Script';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import messages from '@/messages/es.json';
 
@@ -37,6 +38,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Footer />
         <CookieBanner />
         <GoogleAnalytics />
+        <Stay22Script />
       </ErrorBoundary>
     </NextIntlClientProvider>
   );

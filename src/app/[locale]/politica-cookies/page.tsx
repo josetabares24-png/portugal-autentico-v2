@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Cookies
 
-**Última actualización:** 23 de septiembre de 2026
+**Última actualización:** 9 de octubre de 2026
 
 ## 1. ¿Qué son las Cookies?
 
@@ -59,14 +59,26 @@ Algunas páginas incluyen módulos de reserva de GetYourGuide y Tiqets, con los 
 - **Proveedores:** GetYourGuide Deutschland GmbH y Tiqets International B.V.
 - **Duración exacta:** la determina cada proveedor; no fijamos nosotros esos plazos. Consulta la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para el detalle actualizado.
 
-### 2.5. Google Maps (mapas incrustados)
+### 2.5. Enlaces de alojamiento (Stay22)
+Los enlaces de alojamiento de la web (hoteles y apartamentos por barrio) pasan por Stay22, que te manda a Booking, Expedia u otra web de reservas y atribuye la reserva a este sitio. Seguir uno de esos enlaces funciona igual aceptes o no las cookies.
+
+Además, si aceptas las cookies, se carga un script de Stay22 que convierte en enlaces de afiliado los enlaces a webs de reserva de alojamiento que haya en la página y guarda en tu navegador un identificador de sesión.
+
+**Requiere tu consentimiento explícito**, el mismo del aviso de cookies. Si no aceptas, ese script no se carga.
+
+- **Qué hace:** atribuir la reserva de alojamiento a este sitio, que es de donde sale nuestra comisión.
+- **Proveedor:** Stay22.
+- **Duración exacta:** la determina Stay22. Consulta su [política de privacidad](https://www.stay22.com/privacy).
+
+### 2.6. Google Maps (mapas incrustados)
 Algunas guías e itinerarios incluyen un mapa de Google Maps incrustado directamente en la página. Al cargarse, Google puede establecer sus propias cookies de terceros, igual que si visitaras maps.google.com directamente. Esto ocurre al abrir una página con mapa, independientemente de tu elección en el aviso de cookies de este sitio, porque es un contenido embebido de Google, no una cookie que gestionemos nosotros.
 
 ## 3. Servicios de Terceros que Pueden Establecer Cookies
 
 - **Google Analytics:** análisis de tráfico web, solo si aceptas las cookies analíticas.
 - **GetYourGuide y Tiqets:** módulos de reserva de actividades, solo si aceptas las cookies (ver punto 2.4).
-- **Google Maps:** mapas incrustados en guías e itinerarios (ver punto 2.5).
+- **Stay22:** enlaces de alojamiento; su script solo se carga si aceptas las cookies (ver punto 2.5).
+- **Google Maps:** mapas incrustados en guías e itinerarios (ver punto 2.6).
 - **Clerk:** autenticación del panel de administración.
 - **Vercel:** alojamiento y ejecución del sitio web; puede usar cookies técnicas propias de su infraestructura.
 
@@ -98,11 +110,12 @@ Si rechazas las cookies:
 - El sitio web seguirá funcionando correctamente y podrás leer todo el contenido.
 - No se activará Google Analytics, así que no analizaremos el uso agregado del sitio.
 - No se cargarán los módulos de reserva de GetYourGuide o Tiqets, así que no podrás ver algunos módulos incrustados desde aquí (ver 2.4). Cuando exista enlace directo, podrás abrir igualmente la reserva en el sitio del proveedor.
-- Los mapas de Google incrustados en guías e itinerarios seguirán cargándose igual (ver 2.5), porque no dependen de esta elección.
+- No se cargará el script de Stay22. Los enlaces de alojamiento siguen funcionando (ver 2.5).
+- Los mapas de Google incrustados en guías e itinerarios seguirán cargándose igual (ver 2.6), porque no dependen de esta elección.
 
 ## 5. Nombres y Duración Exactos de las Cookies
 
-Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Tiqets, Clerk, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para los módulos de reserva, y la documentación de [Clerk](https://clerk.com/privacy) para las cookies de autenticación.
+Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Tiqets, Stay22, Clerk, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para los módulos de reserva, la [política de privacidad de Stay22](https://www.stay22.com/privacy) para los enlaces de alojamiento, y la documentación de [Clerk](https://clerk.com/privacy) para las cookies de autenticación.
 
 ## 6. Actualizaciones
 

@@ -28,6 +28,7 @@ This is the active learning register.
 | E-011 | Blog: bloques de reserva en 16 artículos | Un bloque de reserva dentro de la sección que lo justifica genera clics de afiliado cualificados sin empeorar SEO ni lectura | affiliate_click (article-body) por artículo | PLANNED (rama local, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
 | E-012 | Títulos/metas de 7 páginas + horario del Metro + botón free tours en Home | Títulos con la consulta principal delante y metas que dicen qué resuelve la página suben el CTR sin perder posición | CTR + clics por página y consulta | PLANNED (rama local, pendiente de decisión de José) | producción verificada + 28 días finalizados |
 | E-013 | 9 páginas con bloque de reserva nuevo + 4 botones subidos | Ofrecer la entrada exacta en las páginas con intención de compra que no la tenían, y subir el botón a las primeras pantallas, sube los clics de afiliado sin empeorar la lectura | affiliate_click por página | PLANNED (rama local `feat/reserva-20`, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
+| E-014 | Stay22: alojamiento por barrio en donde-alojarse + script LinkSwap | Un bloque de alojamiento por barrio en la guía de alojamiento genera reservas de hotel sin tocar las comisiones de GetYourGuide, Tiqets ni GuruWalk | clics `affiliate_click` partner stay22 + reservas en Stay22 Hub | PLANNED (rama local `feat/stay22`, pendiente de aprobación L-003 y de confirmar con Stay22 la exclusión de GetYourGuide) | producción verificada + 28 días finalizados |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -219,3 +220,7 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 ## E-013 — Bloques de reserva en páginas sin ninguno y botones subidos, 2026-10-09
 
 **Status: PLANNED. Rama local `feat/reserva-20`; no publicado. Necesita aprobación visual de José (L-003).** Detalle: [[business/RESERVA-20-2026-10-09]]. Mueve bloques en páginas de E-001 y E-003; E-006 y E-007 quedan fuera.
+
+## E-014 — Stay22, 2026-10-09
+
+**Status: PLANNED. Rama local `feat/stay22`; no publicado.** El script de Stay22 tal cual reescribe los enlaces de GetYourGuide; va con `excludes: ['getyourguide']`. Detalle: [[business/STAY22-2026-10-09]].

@@ -4,6 +4,7 @@ import type { BlogBookingPlacement, BookingBlockPosition } from '@/data/blog-boo
 import { bookingBlockContentId } from '@/data/blog-booking-placements';
 import { findProductById, resolveBookingLink } from '@/data/bookings';
 import { buildAffiliateUrl, withTiqetsCampaign } from '@/lib/affiliate';
+import { STAY22_BARRIOS, buildStay22Url, stay22Campaign } from '@/data/stay22';
 
 export type ResolvedBookingBlock = ArticleBookingBlockProps & {
   beforeHeading?: string;
@@ -30,6 +31,30 @@ export function resolveBookingBlocks(
   return placements.flatMap<ResolvedBookingBlock>((placement) => {
     const contentId = bookingBlockContentId(surface, slug, placement.offer, placement.position);
     const { offer } = placement;
+
+    if (offer.type === 'stay22-barrios') {
+      const options = offer.barrios.map((id) => {
+        const barrio = STAY22_BARRIOS[id];
+        const campaign = stay22Campaign(surface, slug, barrio.id);
+        return { id: barrio.id, label: barrio.label, url: buildStay22Url(barrio, campaign), campaign };
+      });
+      if (options.length === 0) return [];
+      return [{
+        intro: placement.intro,
+        kind: 'Alojamiento',
+        name: 'por barrio',
+        ctaLabel: options[0].label,
+        url: options[0].url,
+        partner: 'stay22',
+        campaign: stay22Campaign(surface, slug),
+        contentId,
+        linkPlacement: 'article',
+        articleSlug: slug,
+        options,
+        beforeHeading: placement.beforeHeading,
+        position: placement.position,
+      }];
+    }
 
     if (offer.type === 'free-tour') {
       const category = getFreeTourCategory(offer.categoryId);

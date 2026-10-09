@@ -84,6 +84,7 @@ Según el tipo de dato, puede ser tratado por:
 - **Clerk:** Autenticación del panel de administración.
 - **Google Analytics:** Análisis de tráfico web (con IP anonimizada), solo si aceptas las cookies analíticas.
 - **GetYourGuide y Tiqets:** Módulos de reserva de actividades incrustados en algunas páginas, solo si aceptas las cookies. Al cargarse reciben tu dirección IP y los datos de navegación propios de cualquier contenido incrustado, y registran que la visita llega desde este sitio para atribuir la reserva.
+- **Stay22:** Enlaces de alojamiento. Al pulsar uno, Stay22 recibe tu visita y te redirige a la web de reservas. Si aceptas las cookies, además se carga su script, que guarda un identificador de sesión en tu navegador para atribuir la reserva a este sitio.
 - **Vercel:** Alojamiento y ejecución del sitio web.
 
 No vendemos tus datos a terceros con fines de marketing.

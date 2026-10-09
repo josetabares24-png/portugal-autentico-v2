@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Aviso Legal
 
-**Última actualización:** 5 de agosto de 2026 (revisado para reflejar que el sitio funciona actualmente como contenido editorial gratuito)
+**Última actualización:** 9 de octubre de 2026
 
 ## 1. Datos del Responsable
 
@@ -44,7 +44,7 @@ Estaba en Lisboa **no organiza ni presta directamente** tours, excursiones, aloj
 
 ## 3. Afiliados y Enlaces a Terceros
 
-Este sitio web puede incluir enlaces de afiliado a plataformas externas de reserva de actividades, tours o alojamiento (por ejemplo, GuruWalk u otras). Esto significa que algunos enlaces del sitio son enlaces de afiliado: si el usuario reserva o compra a través de ellos, Estaba en Lisboa puede recibir una comisión del proveedor, **sin coste adicional para el usuario**.
+Este sitio web puede incluir enlaces de afiliado a plataformas externas de reserva de actividades, tours o alojamiento (por ejemplo, GuruWalk, GetYourGuide, Tiqets o Stay22 para alojamiento). Esto significa que algunos enlaces del sitio son enlaces de afiliado: si el usuario reserva o compra a través de ellos, Estaba en Lisboa puede recibir una comisión del proveedor, **sin coste adicional para el usuario**.
 
 **Estaba en Lisboa no gestiona la reserva ni el cobro de estos servicios.** El contrato de compra o reserva se formaliza directamente entre el usuario y la plataforma o proveedor externo, que es quien procesa el pago, gestiona la disponibilidad y responde ante el usuario por el servicio prestado.
 
