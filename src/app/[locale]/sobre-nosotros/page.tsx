@@ -4,6 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 
 const SITE_URL = 'https://estabaenlisboa.com';
 
+// PENDIENTE (José): 2-3 frases tuyas sobre cómo conoces Lisboa (desde cuándo,
+// cómo llegaste, qué haces allí). Mientras esté vacío no se muestra nada.
+// No rellenar con texto inventado.
+const JOSE_LISBOA_INTRO: string[] = [];
+
 export default function SobreNosotrosPage() {
   const profileJsonLd = {
     '@context': 'https://schema.org',
@@ -18,6 +23,7 @@ export default function SobreNosotrosPage() {
       '@id': `${SITE_URL}/sobre-nosotros#jose-tabares`,
       name: 'José Tabares',
       url: `${SITE_URL}/sobre-nosotros`,
+      image: `${SITE_URL}/images/jose/jose-tabares-oporto.jpg`,
       jobTitle: 'Autor y editor de Estaba en Lisboa',
       worksFor: { '@id': `${SITE_URL}/#organization` },
       knowsAbout: [
@@ -52,7 +58,7 @@ export default function SobreNosotrosPage() {
             Detrás de las guías
           </p>
           <h1 className="max-w-4xl font-display text-[2.7rem] font-semibold not-italic leading-[1.02] tracking-normal text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Una persona en Lisboa, no una fábrica de listas.
+            Soy José y escribo estas guías desde Lisboa.
           </h1>
         </div>
       </section>
@@ -64,10 +70,27 @@ export default function SobreNosotrosPage() {
               José Tabares
             </p>
             <h2 className="mt-3 font-display text-[2rem] font-semibold not-italic leading-[1.08] tracking-normal text-night sm:text-4xl">
-              Escribo desde la ciudad que estás preparando.
+              Quién escribe y cómo trabajo.
             </h2>
+            <figure className="mt-8 max-w-[360px]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-night/5">
+                <Image
+                  src="/images/jose/jose-tabares-oporto.jpg"
+                  alt="José Tabares con gorra y una cámara Nikon colgada, apoyado en un muro con el puente Dom Luís I iluminado de fondo, en Oporto"
+                  fill
+                  className="object-cover object-[38%_50%]"
+                  sizes="(min-width: 1024px) 360px, (min-width: 400px) 360px, 90vw"
+                />
+              </div>
+              <figcaption className="mt-3 border-l-2 border-terracotta pl-3 font-body text-xs leading-relaxed text-text-secondary">
+                En Oporto, junto al puente Dom Luís I.
+              </figcaption>
+            </figure>
           </div>
           <div className="space-y-6 font-body text-base leading-[1.85] text-text-secondary">
+            {JOSE_LISBOA_INTRO.map((sentence) => (
+              <p key={sentence}>{sentence}</p>
+            ))}
             <p>
               Vivo en Lisboa y escribo Estaba en Lisboa para ayudar a tomar decisiones concretas: qué cabe en tus días, qué trayecto evita una cuesta innecesaria o cuándo una reserva realmente aporta algo.
             </p>
@@ -75,7 +98,7 @@ export default function SobreNosotrosPage() {
               La experiencia propia orienta el criterio, pero no sustituye los datos. Horarios, tarifas, normas y accesos se comprueban en fuentes oficiales siempre que existen. Si algo es una valoración editorial, lo presento como tal.
             </p>
             <p>
-              No publico una recomendación sólo porque suene local, secreta o imprescindible. Prefiero explicar para quién funciona, qué inconveniente tiene y cómo encaja en un viaje real.
+              No recomiendo algo solo porque suene local, secreto o imprescindible. Prefiero explicar para quién funciona, qué inconveniente tiene y cómo encaja en un viaje real.
             </p>
           </div>
         </div>
