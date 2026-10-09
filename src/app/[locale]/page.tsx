@@ -135,10 +135,10 @@ export default function HomePage() {
           <div className="mb-8 flex flex-col gap-5 border-b border-night/15 pb-6 sm:flex-row sm:items-end sm:justify-between md:mb-10">
             <div>
               <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
-                Para mirar la ciudad con otros ojos
+                Del blog
               </p>
               <h2 id="articulos-sugeridos" className="font-display text-[2rem] not-italic leading-tight text-night md:text-[2.5rem]">
-                Lisboa, un poco más cerca.
+                Para leer antes de ir.
               </h2>
             </div>
             <Link href="/blog" className="w-fit border-b border-night pb-1 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta">

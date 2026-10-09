@@ -23,7 +23,7 @@ export function ArticleSources({ sources }: { sources: ArticleSource[] }) {
         <SourceList sources={sources} />
       </details>
       <section className="article-sources article-reading hidden lg:block">
-        <h3>Fuentes oficiales consultadas</h3>
+        <h3>Fuentes consultadas</h3>
         <SourceList sources={sources} />
       </section>
     </>

@@ -157,13 +157,13 @@ export default function TravelerDirectory() {
             Guías de José Tabares, revisadas desde Lisboa.
           </p>
           <p className="text-sm leading-relaxed text-text-secondary">
-            Fotografías propias, fuentes oficiales y recomendaciones con contexto.
+            Datos de fuentes oficiales con fecha de revisión, y recomendaciones con sus pegas.
           </p>
           <Link
             href="/sobre-nosotros"
             className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-terracotta underline decoration-terracotta/35 underline-offset-4 hover:text-primary-dark"
           >
-            Cómo trabajamos
+            Cómo trabajo
             <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
           </Link>
         </aside>

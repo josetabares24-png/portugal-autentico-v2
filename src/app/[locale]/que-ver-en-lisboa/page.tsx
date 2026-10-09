@@ -94,10 +94,15 @@ const PLACEMENTS: Record<'arriba' | 'imprescindibles', BlogBookingPlacement[]> =
   ],
 };
 
-function renderBlocks(blocks: ResolvedBookingBlock[]) {
+// La nota de afiliado completa va solo en el primer bloque de la página.
+function renderBlocks(blocks: ResolvedBookingBlock[], firstOnPage: boolean) {
   if (blocks.length === 0) return null;
-  return blocks.map(({ beforeHeading: _beforeHeading, position: _position, ...block }) => (
-    <ArticleBookingBlock key={block.contentId} {...block} />
+  return blocks.map(({ beforeHeading: _beforeHeading, position: _position, ...block }, i) => (
+    <ArticleBookingBlock
+      key={block.contentId}
+      {...block}
+      disclosure={firstOnPage && i === 0 ? 'full' : 'short'}
+    />
   ));
 }
 
@@ -107,8 +112,8 @@ export default function WhatToSeeInLisbonPage() {
   return (
     <TravelPillarPage
       guide={whatToSeeGuide}
-      afterShortAnswer={renderBlocks(topBlocks)}
-      afterSection={{ imprescindibles: renderBlocks(mustSeeBlocks) }}
+      afterShortAnswer={renderBlocks(topBlocks, true)}
+      afterSection={{ imprescindibles: renderBlocks(mustSeeBlocks, topBlocks.length === 0) }}
       reservation={<TravelerGuideGetYourGuide section={reservationSection} variant="article" />}
     />
   );

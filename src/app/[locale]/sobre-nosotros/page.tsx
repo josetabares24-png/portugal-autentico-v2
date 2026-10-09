@@ -95,7 +95,7 @@ export default function SobreNosotrosPage() {
               Vivo en Lisboa y escribo Estaba en Lisboa para ayudar a tomar decisiones concretas: qué cabe en tus días, qué trayecto evita una cuesta innecesaria o cuándo una reserva realmente aporta algo.
             </p>
             <p>
-              La experiencia propia orienta el criterio, pero no sustituye los datos. Horarios, tarifas, normas y accesos se comprueban en fuentes oficiales siempre que existen. Si algo es una valoración editorial, lo presento como tal.
+              Lo que he vivido aquí me sirve para opinar, pero no sustituye a los datos. Horarios, precios, normas y accesos los compruebo en las fuentes oficiales siempre que existen. Y si algo es opinión mía, lo digo.
             </p>
             <p>
               No recomiendo algo solo porque suene local, secreto o imprescindible. Prefiero explicar para quién funciona, qué inconveniente tiene y cómo encaja en un viaje real.
@@ -111,22 +111,22 @@ export default function SobreNosotrosPage() {
               Método editorial
             </p>
             <h2 className="mt-3 font-display text-[2rem] font-semibold not-italic leading-[1.08] tracking-normal text-night sm:text-4xl">
-              Cómo se construye una guía.
+              Cómo escribo cada guía.
             </h2>
           </div>
           <div className="grid border-y border-night/15 md:grid-cols-3">
             {[
               {
-                title: 'Primero, la decisión',
-                text: 'La guía debe resolver una pregunta del viajero antes de ampliar el contexto o sugerir otra lectura.',
+                title: 'Lo que vienes a buscar',
+                text: 'Empiezo por responder a lo que preguntas: si merece la pena, cuánto cuesta, cómo se llega. La historia y el contexto, después.',
               },
               {
-                title: 'Después, la evidencia',
-                text: 'Los datos que cambian se fechan, se enlazan a su fuente y se revisan cuando aparece información nueva.',
+                title: 'Datos con fecha',
+                text: 'Los precios y horarios los saco de la fuente, pongo cuándo los comprobé y los cambio cuando cambian.',
               },
               {
-                title: 'Por último, el criterio',
-                text: 'Una recomendación explica ventajas y límites. No hay una respuesta universal para todos los viajes.',
+                title: 'Pegas incluidas',
+                text: 'Si algo no compensa o tiene inconvenientes, te lo cuento. No hay un plan que sirva para todos los viajes.',
               },
             ].map((item, index) => (
               <article

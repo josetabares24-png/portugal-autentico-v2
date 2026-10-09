@@ -18,12 +18,14 @@ import type { FreeTourCategoryId } from '@/data/affiliate-links';
  *     que los justifica, no en la cabecera ni repartidos «por si acaso».
  *   - Excepción `position: 'after-summary'` (aprobada por José el 9/10/2026,
  *     auditoría máxima, acción 1): en las páginas donde la siguiente decisión
- *     del lector ES comprar (Sintra, Jerónimos, Lisboa Card, Navegante y
- *     Oriente), un bloque va justo debajo de «Lo esencial». Antes el primer
- *     botón quedaba a 8-11 pantallas de móvil. Sigue el tope de dos bloques
- *     por artículo: en Sintra y Jerónimos el bloque principal se ha subido,
- *     no duplicado; en las otras tres el de abajo se mantiene porque cierra
- *     la cuenta que hace el artículo.
+ *     del lector ES comprar, un bloque va arriba. Antes el primer botón
+ *     quedaba a 8-11 pantallas de móvil.
+ *   - Revisión «lado humano» (9/10/2026): como mucho UN bloque arriba por
+ *     artículo, y nunca antes del contenido. ArticleBody lo pinta al cerrar
+ *     la primera sección con texto propio (no debajo de «Lo esencial», que
+ *     ya no sale si el artículo no tiene resumen propio). El resto de bloques
+ *     va al final de la sección que los justifica. La nota de afiliado sale
+ *     una vez por artículo, en el primer bloque.
  *   - El texto de entrada (`intro`) sale de lo que el propio artículo ya
  *     dice. Sin precios, valoraciones, «mejor precio», urgencia inventada ni
  *     experiencia personal no documentada.
@@ -46,7 +48,7 @@ export type BookingBlockPosition = 'after-summary';
 export interface BlogBookingPlacement {
   offer: BlogBookingOffer;
   beforeHeading?: string;
-  /** `after-summary`: justo debajo del resumen «Lo esencial». */
+  /** `after-summary`: el bloque de arriba, al cerrar la primera sección con texto. Uno por artículo. */
   position?: BookingBlockPosition;
   /** Una o dos frases con el porqué, en la voz del artículo. */
   intro: string;
@@ -58,9 +60,9 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   // cifra del snapshot 2026-09-22 cuando no hay dato más reciente.
   // monasterio-jeronimos-entradas · artículo nuevo (9/10/2026), sin datos aún.
   // palacio-da-pena-entradas · artículo nuevo (9/10/2026), sin datos aún.
-  // Los dos bloques van bajo «Lo esencial» por indicación de José (9/10/2026):
-  // la entrada con hora es la siguiente decisión del lector, y la excursión es
-  // la alternativa para quien no quiere organizar tren, autobús y hora.
+  // La entrada con hora es la siguiente decisión del lector: va arriba. La
+  // excursión es la alternativa para quien no quiere organizar tren, autobús
+  // y hora, y va al final de la sección «Si prefieres una excursión».
   'palacio-da-pena-entradas': [
     {
       offer: { type: 'product', productId: 'pena-tiqets' },
@@ -70,7 +72,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
     },
     {
       offer: { type: 'product', productId: 'sintra-completa' },
-      position: 'after-summary',
+      beforeHeading: 'que-dia-ir-mira-el-tiempo',
       intro:
         'Si prefieres no cuadrar tren, autobús y hora de entrada, hay excursiones de día completo desde Lisboa. Mira en la ficha si incluyen la entrada a la Pena y cuánto tiempo dejan allí.',
     },
@@ -79,7 +81,8 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'obidos-vila-natal': [
     {
       offer: { type: 'product', productId: 'obidos-fatima-excursion' },
-      position: 'after-summary',
+      // Alternativa al autobús: al cerrar «Cómo ir desde Lisboa».
+      beforeHeading: 'y-en-tren',
       intro:
         'Si no quieres cuadrar el autobús, hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
     },
@@ -89,7 +92,8 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'nochevieja-lisboa': [
     {
       offer: { type: 'product', productId: 'nochevieja-velero' },
-      position: 'after-summary',
+      // Es otra forma de ver los fuegos: al cerrar «Otros sitios para verlos».
+      beforeHeading: 'como-moverte-esa-noche',
       intro:
         'Si prefieres ver los fuegos desde el río, hay salidas en velero esa noche. Mira en la ficha el precio, la hora y el punto de salida y qué incluye, que cambian de un año a otro.',
     },
@@ -131,16 +135,11 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   // tarjeta-navegante-lisboa · 1.060 impresiones / 23 clics (28 d a 07/10)
   'tarjeta-navegante-lisboa': [
     {
+      // Un solo bloque de Lisboa Card (antes había dos).
       offer: { type: 'product', productId: 'lisboa-card' },
       position: 'after-summary',
       intro:
         'Para moverte en metro, autobús y tranvía basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; más abajo tienes las cuentas.',
-    },
-    {
-      offer: { type: 'product', productId: 'lisboa-card' },
-      beforeHeading: 'donde-comprar-y-recargar-la-navegante',
-      intro:
-        'Si en los mismos días vas a encadenar transporte y entradas a monumentos, compara el billete de 24 horas con la Lisboa Card, que incluye el transporte público. Haz la cuenta con lo que de verdad vas a visitar.',
     },
   ],
   // time-out-market-lisboa · 616 impresiones (28 d a 07/10)

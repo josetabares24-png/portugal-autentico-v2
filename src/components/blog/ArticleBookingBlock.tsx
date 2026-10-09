@@ -27,6 +27,13 @@ export interface ArticleBookingBlockProps {
   contentId: string;
   linkPlacement: string;
   articleSlug: string;
+  /**
+   * `full`: nota de afiliado completa, en primera persona. Va una sola vez por
+   * página, en el primer bloque. `short`: solo dice dónde se reserva; la nota
+   * ya se ha leído más arriba. Por defecto `full`, para que una página con un
+   * único bloque nunca se quede sin aviso.
+   */
+  disclosure?: 'full' | 'short';
 }
 
 const PARTNER_LABEL: Record<ArticleBookingBlockProps['partner'], string> = {
@@ -46,6 +53,7 @@ export function ArticleBookingBlock({
   contentId,
   linkPlacement,
   articleSlug,
+  disclosure = 'full',
 }: ArticleBookingBlockProps) {
   let linkDomain = '';
   try {
@@ -88,17 +96,21 @@ export function ArticleBookingBlock({
           <span aria-hidden="true"> ↗</span>
           <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
         </a>
-        <p className="article-booking-disclosure">
-          Reserva en {PARTNER_LABEL[partner]}. Precios y condiciones, en su web. Es un enlace de
-          afiliado: reservar desde aquí no te cuesta más.{' '}
-          <Link
-            href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
-            className="underline underline-offset-2 hover:text-terracotta"
-          >
-            Más información
-          </Link>
-          .
-        </p>
+        {disclosure === 'full' ? (
+          <p className="article-booking-disclosure">
+            Reservas en {PARTNER_LABEL[partner]}. Si lo haces desde aquí, me llevo una pequeña
+            comisión y a ti te cuesta lo mismo. Solo enlazo lo que le recomendaría a un amigo.{' '}
+            <Link
+              href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+              className="underline underline-offset-2 hover:text-terracotta"
+            >
+              Cómo funciona
+            </Link>
+            .
+          </p>
+        ) : (
+          <p className="article-booking-disclosure">Reservas en {PARTNER_LABEL[partner]}.</p>
+        )}
       </div>
     </aside>
   );

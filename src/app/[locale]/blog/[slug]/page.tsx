@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
 import { ArticleEditorialLinks } from '@/components/blog/ArticleEditorialLinks';
-import { ArticleNewsletter } from '@/components/blog/ArticleNewsletter';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleRelated } from '@/components/blog/ArticleRelated';
@@ -742,43 +741,43 @@ const articles: Record<string, Article> = {
       { label: 'Confeitaria Nacional: historia del bolo-rei', href: 'https://confeitarianacional.com/sobre-nos/' },
     ],
     contenido: [
-      { tipo: 'parrafo', texto: 'Lo que más me gusta de Lisboa en Navidad es el mercado del Rossio, pasear al anochecer por las calles iluminadas de la Baixa y Wonderland, en el Parque Eduardo VII. Los tres son gratis. A 9 de octubre de 2026 no hay fechas oficiales de ninguno de los tres, así que te pongo lo que ya se ha anunciado, las fechas de 2025 como referencia y qué abre los días 24, 25 y 31.' },
+      { tipo: 'parrafo', texto: 'Lo que más me gusta de Lisboa en Navidad es el mercado del Rossio, pasear al anochecer por las calles iluminadas de la Baixa y Wonderland, en el Parque Eduardo VII. Los tres son gratis. Ninguno ha confirmado todavía las fechas de 2026, así que te pongo lo que ya se ha anunciado y, como referencia, cómo fue en 2025. Las reviso a mediados de noviembre. También tienes qué abre los días 24, 25 y 31.' },
       { tipo: 'lista', items: [
-        'Mercado del Rossio: la prensa anuncia del 13 de noviembre al 21 de diciembre de 2026, pero la organización aún no lo ha publicado. En 2025 fue del 14 de noviembre al 21 de diciembre.',
-        'Luces: sin fecha oficial de encendido para 2026. En 2025 se encendieron el 22 de noviembre y estuvieron hasta el 6 de enero.',
-        'Wonderland Lisboa: la organización no ha dado fechas. En 2025 fue del 28 de noviembre al 4 de enero, con entrada libre al recinto.',
+        'Mercado del Rossio: la prensa da del 13 de noviembre al 21 de diciembre, pero la organización aún no lo ha confirmado. En 2025 fue del 14 de noviembre al 21 de diciembre.',
+        'Luces: aún no hay fecha de encendido. En 2025 estuvieron del 22 de noviembre al 6 de enero.',
+        'Wonderland Lisboa: sin fechas todavía. En 2025 fue del 28 de noviembre al 4 de enero, con entrada libre al recinto.',
         'El 25 de diciembre y el 1 de enero cierran el Castelo de São Jorge, los Jerónimos y la Torre de Belém. El Oceanário abre, con horario especial.',
         'Nochevieja: fiesta gratuita en la Praça do Comércio, con fuegos sobre el Tajo a medianoche.',
         'Diciembre: unos 15 °C de máxima, 9 °C de mínima y una media de 10 días de lluvia.',
       ] },
 
       { tipo: 'subtitulo', texto: 'Una tarde de diciembre: Rossio, luces y Praça do Comércio' },
-      { tipo: 'parrafo', texto: 'Es el plan que más me gusta. Se hace a pie, es llano, son menos de un kilómetro y no hay que reservar nada.' },
+      { tipo: 'parrafo', texto: 'Es el plan que más me gusta. Se hace a pie, es llano, son menos de un kilómetro y no hay que reservar nada. Los horarios son los de 2025:' },
       { tipo: 'lista', items: [
-        'Empieza en el Rossio al caer la tarde, en el mercado de Navidad. En 2025 abría de domingo a jueves de 10:00 a 22:00, y viernes, sábados y vísperas de festivo hasta las 23:00.',
-        'Baja por la Rua Augusta cuando ya sea de noche. En 2025 las luces se encendían todos los días a las 17:30.',
-        'Termina en la Praça do Comércio, pasando bajo el Arco da Rua Augusta. En 2025 el árbol de Navidad, de 30 metros, estaba en esa plaza.',
+        'Empieza en el Rossio al caer la tarde, en el mercado de Navidad, que abría de domingo a jueves de 10:00 a 22:00, y viernes, sábados y vísperas de festivo hasta las 23:00.',
+        'Baja por la Rua Augusta cuando ya sea de noche. Las luces se encendían todos los días a las 17:30.',
+        'Termina en la Praça do Comércio, pasando bajo el Arco da Rua Augusta. Ahí estaba el árbol de Navidad, de 30 metros.',
       ] },
       { tipo: 'parrafo', texto: 'Si llueve se puede hacer igual, pero con calzado que agarre: el empedrado mojado resbala. Wonderland pide otra tarde: está en el Parque Eduardo VII (metro Parque o Marquês de Pombal) y a la vuelta puedes bajar andando por la Avenida da Liberdade hasta el Rossio.' },
 
       { tipo: 'subtitulo', texto: 'Las luces de Navidad' },
-      { tipo: 'parrafo', texto: '2026: desde mediados de septiembre se montan las estructuras en el Rossio, la Praça da Figueira, la Rua Ferreira Borges y la Avenida António Augusto Aguiar, pero a 9 de octubre no hay fecha oficial de encendido. Este año la instalación la gestiona la Associação Turismo de Lisboa.' },
-      { tipo: 'parrafo', texto: '2025, como referencia: según la Câmara Municipal de Lisboa, se encendieron el 22 de noviembre en el Terreiro do Paço y estuvieron hasta el 6 de enero en 46 calles, plazas y avenidas. Se encendían a las 17:30 y se apagaban a medianoche de domingo a jueves, a la 01:00 los viernes y sábados, y a las 02:00 el día de Navidad y en Nochevieja.' },
+      { tipo: 'parrafo', texto: 'Desde mediados de septiembre se están montando las estructuras en el Rossio, la Praça da Figueira, la Rua Ferreira Borges y la Avenida António Augusto Aguiar, pero todavía no hay fecha de encendido. Este año la instalación la gestiona la Associação Turismo de Lisboa.' },
+      { tipo: 'parrafo', texto: 'En 2025, según la Câmara Municipal de Lisboa, se encendieron el 22 de noviembre en el Terreiro do Paço y estuvieron hasta el 6 de enero en 46 calles, plazas y avenidas. Se encendían a las 17:30 y se apagaban a medianoche de domingo a jueves, a la 01:00 los viernes y sábados, y a las 02:00 el día de Navidad y en Nochevieja.' },
 
       { tipo: 'subtitulo', texto: 'Mercados de Navidad' },
-      { tipo: 'tabla', texto: 'Fechas de 2025 de la ADBP, TVI y Visit Lisboa. Situación de 2026 a 9 de octubre de 2026.', columnas: ['Mercado', 'Dónde', '2025', '2026'], filas: [
-        ['Rossio Christmas Market', 'Praça Dom Pedro IV (Rossio)', 'Del 14 de noviembre al 21 de diciembre. Gratis', 'Anunciado en prensa del 13 de noviembre al 21 de diciembre; la organización aún no lo ha publicado'],
-        ['Wonderland Lisboa', 'Parque Eduardo VII', 'Del 28 de noviembre al 4 de enero. Entrada libre al recinto', 'Sin fechas de la organización'],
+      { tipo: 'tabla', texto: 'Fechas de 2025 y lo que se sabe de 2026.', columnas: ['Mercado', 'Dónde', '2025', '2026'], filas: [
+        ['Rossio Christmas Market', 'Praça Dom Pedro IV (Rossio)', 'Del 14 de noviembre al 21 de diciembre. Gratis', 'La prensa da del 13 de noviembre al 21 de diciembre; falta que lo confirme la organización'],
+        ['Wonderland Lisboa', 'Parque Eduardo VII', 'Del 28 de noviembre al 4 de enero. Entrada libre al recinto', 'Sin fechas todavía'],
         ['Mercado de Natal do Campo Pequeno', 'Campo Pequeno', 'Del 28 de noviembre al 1 de diciembre y del 5 al 8 de diciembre', 'Sin anunciar'],
       ] },
-      { tipo: 'parrafo', texto: 'El del Rossio es mi favorito y el más céntrico: casetas de madera con artesanía y comida, la Casa de Papá Noel y un tren eléctrico gratuito que recorre la Baixa. Lo organiza la Associação de Dinamização da Baixa Pombalina. En 2025 el tren funcionaba de 15:00 a 22:00, y hasta las 23:00 los viernes, sábados y vísperas de festivo.' },
+      { tipo: 'parrafo', texto: 'El del Rossio es mi favorito y el más céntrico: casetas de madera con artesanía y comida, la Casa de Papá Noel y un tren eléctrico gratuito que recorre la Baixa. Lo organiza la Associação de Dinamização da Baixa Pombalina. El tren funcionaba de 15:00 a 22:00, y hasta las 23:00 los viernes, sábados y vísperas de festivo.' },
       { tipo: 'parrafo', texto: 'El de Campo Pequeno solo se monta dos fines de semana largos.' },
       { tipo: 'enlace', texto: 'Para los mercados que abren todo el año, tienes la guía de mercados.', href: '/blog/mejores-mercados-lisboa', label: 'Mercados de Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Wonderland Lisboa' },
       { tipo: 'parrafo', texto: 'Es otro de mis planes de diciembre. Visit Lisboa lo presenta como el mayor mercado de Navidad del país: noria, pista de hielo, puestos de artesanía y comida en el Parque Eduardo VII. Entrar al recinto es gratis; la noria y otras atracciones se pagan aparte.' },
-      { tipo: 'parrafo', texto: 'Fechas de 2026: la organización (TVI) todavía no las ha anunciado. La web Europe\'s Best Destinations publica del 27 de noviembre de 2026 al 3 de enero de 2027, pero no es una fuente oficial. En 2025 fue del 28 de noviembre al 4 de enero.' },
-      { tipo: 'parrafo', texto: 'Horario de 2025: entre semana abría por la tarde, a las 16:00 (a las 15:00 desde el 15 de diciembre), y cerraba a las 22:00 de lunes a jueves; los viernes, más tarde. Los sábados abría de 10:00 a 23:00 y los domingos de 10:00 a 22:00. Si quieres ir por la mañana, tiene que ser en fin de semana o festivo.' },
+      { tipo: 'parrafo', texto: 'La organización (TVI) todavía no ha dado las fechas de 2026. Una web de viajes, Europe\'s Best Destinations, publica del 27 de noviembre al 3 de enero, pero no es la organización. En 2025 fue del 28 de noviembre al 4 de enero.' },
+      { tipo: 'parrafo', texto: 'Con el horario de 2025, entre semana abría por la tarde, a las 16:00 (a las 15:00 desde el 15 de diciembre), y cerraba a las 22:00 de lunes a jueves; los viernes, más tarde. Los sábados abría de 10:00 a 23:00 y los domingos de 10:00 a 22:00. Si quieres ir por la mañana, tiene que ser en fin de semana o festivo.' },
       { tipo: 'enlace', texto: 'Si vas con niños, tienes más planes en la guía de Lisboa con niños.', href: '/blog/lisboa-con-ninos', label: 'Lisboa con niños' },
 
       { tipo: 'subtitulo', texto: 'Excursión: Óbidos Vila Natal' },
@@ -798,7 +797,7 @@ const articles: Record<string, Article> = {
       { tipo: 'enlace', texto: 'Qué más pedir en la mesa portuguesa.', href: '/blog/gastronomia-portuguesa-guia', label: 'Gastronomía portuguesa' },
 
       { tipo: 'subtitulo', texto: 'Qué abre el 24, el 25, el 31 y el 1 de enero' },
-      { tipo: 'tabla', texto: 'Castillo, Jerónimos y Oceanário: webs oficiales y comunicado de 2025. Wonderland, Óbidos y Metro: horarios de 2025, a falta de los de 2026.', columnas: ['Sitio', '24 dic', '25 dic', '31 dic', '1 ene'], filas: [
+      { tipo: 'tabla', texto: 'Las filas marcadas con (2025) aún no tienen horario de 2026.', columnas: ['Sitio', '24 dic', '25 dic', '31 dic', '1 ene'], filas: [
         ['Castelo de São Jorge', 'Cerrado', 'Cerrado', 'Cerrado', 'Cerrado'],
         ['Jerónimos y Torre de Belém', 'En 2025, cerrados', 'Cerrados', 'En 2025, cerrados', 'Cerrados'],
         ['Oceanário', 'Horario especial', 'Horario especial', 'Horario especial', 'Horario especial'],
@@ -860,7 +859,7 @@ const articles: Record<string, Article> = {
       { label: "Foto de portada: «Óbidos -1», de Art Prof (Flickr), licencia CC BY 2.0, vía Wikimedia Commons", href: "https://commons.wikimedia.org/wiki/File:%C3%93bidos_-1_(52113575953).jpg" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027. Los precios y el horario por días de 2026 todavía no están publicados, así que te doy los de 2025 como referencia." },
+      { tipo: "parrafo", texto: "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027. Los precios y el horario por días de 2026 todavía no están publicados, así que te doy los de 2025 como referencia. Yo todavía no he estado en Óbidos: esta guía no sale de mi experiencia, sino de lo que publican el Ayuntamiento, la propia Vila Natal, Rodoviária do Oeste y CP." },
       { tipo: 'lista', items: [
         "Fechas 2026: del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos.",
         "Precio de 2025, como referencia: 10 € la entrada general, 8 € de 3 a 11 años y 9 € estudiantes y mayores de 65. Los de 2026 no se han publicado.",
@@ -1039,7 +1038,7 @@ const articles: Record<string, Article> = {
 
       { tipo: "subtitulo", texto: "Cómo moverte esa noche" },
       { tipo: "parrafo", texto: "Todo lo que sigue es de la Nochevieja 2025. Los planes de 2026 se publican a finales de diciembre." },
-      { tipo: "parrafo", texto: "Calles cortadas: en 2025 los cortes de tráfico empezaron a las 16:00 del día 31 en la Baixa, el Cais do Sodré, la Avenida 24 de Julho y la Avenida Infante Dom Henrique, entre otras zonas. Taxis y autobuses tuvieron el acceso limitado y los VTC (Uber, Bolt) no podían circular dentro del perímetro de la fiesta. Si piensas volver en Uber, tendrás que alejarte andando." },
+      { tipo: "parrafo", texto: "Calles cortadas: los cortes de tráfico empezaron a las 16:00 del día 31 en la Baixa, el Cais do Sodré, la Avenida 24 de Julho y la Avenida Infante Dom Henrique, entre otras zonas. Taxis y autobuses tuvieron el acceso limitado y los VTC (Uber, Bolt) no podían circular dentro del perímetro de la fiesta. Si piensas volver en Uber, tendrás que alejarte andando." },
       { tipo: 'lista', items: [
         "Metro: funcionó de 6:30 del 31 a la 01:00 del 1 de enero, el horario de siempre, con más trenes, y reabrió a las 6:30 del día 1.",
         "La estación Terreiro do Paço cerró a las 17:00 del 31. En Restauradores, el paso a la estación de tren del Rossio se cerró a las 22:00. Las más cercanas abiertas fueron Baixa-Chiado y Rossio.",
@@ -1077,7 +1076,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "En 2025 la Câmara desplegó unos 130 efectivos de protección civil, policía, bomberos, INEM y Cruz Roja, con dos puestos médicos avanzados, y registró unas 50 incidencias sin impacto relevante en la fiesta. Lo que conviene tener en cuenta:" },
       { tipo: 'lista', items: [
         "Queda en un punto fijo con tu grupo antes de entrar, por si os separáis. Con tanta gente junta, puede costar encontrarse por teléfono.",
-        "Carteras y móviles en bolsillos delanteros o en una bolsa cerrada por delante. Las autoridades lo pidieron expresamente en 2025.",
+        "Carteras y móviles en bolsillos delanteros o en una bolsa cerrada por delante. Las autoridades lo pidieron expresamente.",
         "Con niños pequeños, mejor lejos del escenario y cerca de una salida.",
         "Ropa de abrigo y chubasquero: en diciembre la mínima media en Lisboa ronda los 9 °C y llueve unos 10 días al mes, según el IPMA.",
         "Calzado que agarre: el empedrado mojado resbala, y a la 01:00 la salida es lenta.",
@@ -1085,7 +1084,7 @@ const articles: Record<string, Article> = {
 
       { tipo: "subtitulo", texto: "Año Nuevo: qué abre el 1 de enero" },
       { tipo: "parrafo", texto: "El 1 de enero de 2027 es viernes y festivo. Muchos museos y monumentos cierran. Con tiendas y restaurantes, no des nada por hecho: mira su horario antes de ir." },
-      { tipo: 'tabla', texto: "Horarios oficiales consultados el 9 de octubre de 2026. Metro: horario de 2025.", columnas: ["Sitio", "1 de enero"], filas: [
+      { tipo: 'tabla', texto: "Qué abre el 1 de enero. El metro, con el horario de 2025.", columnas: ["Sitio", "1 de enero"], filas: [
         ["Castelo de São Jorge", "Cerrado"],
         ["Jerónimos y Torre de Belém", "Cerrados"],
         ["Museo Gulbenkian", "Cerrado (el jardín abre todos los días y es gratis)"],
@@ -1102,7 +1101,7 @@ const articles: Record<string, Article> = {
 
   'monasterio-jeronimos-entradas': {
     titulo: 'Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)',
-    descripcion: 'Qué se paga y qué es gratis en los Jerónimos, precios oficiales de 2026, dónde comprar la entrada con hora, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
+    descripcion: 'Qué se paga y qué es gratis en los Jerónimos, precios de 2026, dónde comprar la entrada con hora, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
     seoTitle: 'Monasterio de los Jerónimos: entradas y horario 2026',
     metaDescription: 'Claustro 18 € con hora, iglesia gratis y cerrado los lunes. Dónde comprar, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré en 8 minutos.',
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
@@ -1149,7 +1148,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Si quieres ver las dos partes, ten en cuenta que cada una tiene su cola y su horario. El claustro abre a las 9:30; la iglesia, a las 10:30 de martes a sábado y a las 14:00 los domingos.' },
 
       { tipo: 'subtitulo', texto: 'Precios 2026' },
-      { tipo: 'tabla', texto: 'Tarifas de la web oficial del Mosteiro dos Jerónimos, consultadas el 9 de octubre de 2026.', columnas: ['Entrada', 'Precio'], filas: [
+      { tipo: 'tabla', texto: 'Precios de 2026.', columnas: ['Entrada', 'Precio'], filas: [
         ['Claustro, billete normal', '18 €'],
         ['Mayores de 65 años', '9 € (50 %)'],
         ['Jóvenes de 13 a 24 años', '9 € (50 %)'],
@@ -1159,28 +1158,28 @@ const articles: Record<string, Article> = {
         ['Iglesia', 'Gratis'],
       ] },
       { tipo: 'parrafo', texto: '¿Y los domingos? Muchas guías siguen diciendo que es gratis los domingos hasta las 14:00. Ya no: los residentes tienen el Acesso 52 y los turistas pagan cualquier día de la semana. Las excepciones para todo el mundo son tres días al año: el Día Internacional de los Monumentos (18 de abril), el Día Internacional de los Museos (18 de mayo) y las Jornadas Europeas del Patrimonio (septiembre), según las instrucciones de cada año.' },
-      { tipo: 'parrafo', texto: 'La lista oficial recoge otros casos gratuitos, como desempleados residentes en la UE o personas con discapacidad igual o superior al 60 % y un acompañante. Si crees que es tu caso, lleva el justificante. La Torre de Belém cuesta 15 €, con los mismos descuentos y los mismos días de cierre, y es un billete aparte.' },
+      { tipo: 'parrafo', texto: 'Hay otros casos gratuitos, como desempleados residentes en la UE o personas con discapacidad igual o superior al 60 % y un acompañante. Si crees que es tu caso, lleva el justificante. La Torre de Belém cuesta 15 €, con los mismos descuentos y los mismos días de cierre, y es un billete aparte.' },
 
       { tipo: 'subtitulo', texto: 'Dónde comprar la entrada' },
-      { tipo: 'parrafo', texto: 'El billete del claustro se compra para un día y una franja. Las franjas oficiales son de una hora: 9:30-10:30, 10:30-11:30 y así hasta la última, de 15:30 a 17:00. La web oficial avisa de que las entradas se agotan a menudo y entonces no se pueden comprar en el mismo día.' },
-      { tipo: 'tabla', texto: 'Precios consultados el 9 de octubre de 2026.', columnas: ['Dónde', 'Precio', 'Para quién'], filas: [
+      { tipo: 'parrafo', texto: 'El billete del claustro se compra para un día y una franja. Las franjas son de una hora: 9:30-10:30, 10:30-11:30 y así hasta la última, de 15:30 a 17:00. Las entradas se agotan a menudo, y entonces ya no quedan para el mismo día.' },
+      { tipo: 'tabla', texto: 'Dónde comprar y cuánto cuesta en cada sitio.', columnas: ['Dónde', 'Precio', 'Para quién'], filas: [
         ['Web oficial (MEO Blueticket)', '18 € + gastos de gestión (19,11 € en total)', 'Quien quiere pagar lo mínimo'],
         ['Taquilla, en el quiosco frente al monasterio', '18 €', 'Familias (el billete familia solo se vende aquí) y residentes con Acesso 52. Cierra a las 16:30 y se agota'],
         ['Tiqets', '19,50 €', 'Quien prefiere comprar en español y tener el QR en la app'],
         ['Tiqets, Jerónimos + Torre de Belém', '34 €', 'Quien hace los dos el mismo día. Incluye una audioguía de Lisboa para el móvil'],
       ] },
-      { tipo: 'parrafo', texto: 'En Tiqets, el proveedor es el propio organismo público, Museus e Monumentos de Portugal, así que es el mismo billete oficial. Esa entrada no se puede devolver ni cambiar de fecha, así que cómprala cuando tengas el día claro. El combinado con la Torre sale 1 € más caro que comprar las dos entradas en la taquilla.' },
-      { tipo: 'aviso', texto: 'Las entradas “sin colas” no existen aquí. Comprar por adelantado te ahorra la cola de la taquilla, pero la cola de acceso la hace todo el mundo, y la web de venta oficial avisa de que en los momentos de más gente puede pasar de 2 horas.' },
+      { tipo: 'parrafo', texto: 'En Tiqets, el proveedor es el propio organismo público, Museus e Monumentos de Portugal, así que es el mismo billete que en la taquilla. Esa entrada no se puede devolver ni cambiar de fecha, así que cómprala cuando tengas el día claro. El combinado con la Torre sale 1 € más caro que comprar las dos entradas en la taquilla.' },
+      { tipo: 'aviso', texto: 'Las entradas “sin colas” no existen aquí. Comprar por adelantado te ahorra la cola de la taquilla, pero la cola de acceso la hace todo el mundo, y en los momentos de más gente puede pasar de 2 horas.' },
       { tipo: 'parrafo', texto: 'Con la Lisboa Card el claustro entra en la tarjeta, pero hay que reservar día y hora con el número de la tarjeta. Esa reserva solo se puede hacer después de cambiar el bono por la tarjeta física, y los cupos para la Lisboa Card son limitados.' },
 
       { tipo: 'subtitulo', texto: 'Horarios y cierres' },
-      { tipo: 'tabla', texto: 'Horario oficial vigente en octubre de 2026.', columnas: ['', 'Abre', 'Cierra', 'Última entrada'], filas: [
+      { tipo: 'tabla', texto: 'Horario de octubre de 2026.', columnas: ['', 'Abre', 'Cierra', 'Última entrada'], filas: [
         ['Claustro (martes a domingo)', '9:30', '17:30', '17:00'],
         ['Iglesia (martes a sábado)', '10:30', '17:00', '17:00'],
         ['Iglesia (domingos y festivos religiosos)', '14:00', '17:00', '17:00'],
         ['Taquilla', '—', '16:30', '—'],
       ] },
-      { tipo: 'parrafo', texto: 'Cierra los lunes, el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio (San Antonio, fiesta de Lisboa) y el 25 de diciembre. Además puede cerrar con poco aviso por actos de Estado, porque el monasterio se usa para actos oficiales del protocolo portugués. Si solo tienes ese día, mira la web oficial esa misma mañana.' },
+      { tipo: 'parrafo', texto: 'Cierra los lunes, el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio (San Antonio, fiesta de Lisboa) y el 25 de diciembre. Además puede cerrar con poco aviso por actos de Estado, porque el monasterio se usa para actos protocolarios. Si solo tienes ese día, mira la web oficial esa misma mañana.' },
 
       { tipo: 'subtitulo', texto: 'Cómo reducir la espera' },
       { tipo: 'lista', items: [
@@ -1217,7 +1216,7 @@ const articles: Record<string, Article> = {
       { tipo: 'enlace', texto: 'Si vas a juntar Jerónimos y Torre en la misma mañana, en la ficha de la Torre tienes cómo funciona ahora el acceso por franjas horarias.', href: '/actividades/torre-de-belem', label: 'Ficha de la Torre de Belém' },
       { tipo: 'subtitulo', texto: 'Qué ves con cada entrada' },
       { tipo: 'parrafo', texto: 'Con el billete recorres el claustro, los dos pisos de arcos con decoración manuelina (cuerdas, conchas, esferas armilares, motivos marinos), y el antiguo refectorio, con las paredes de azulejos. El piso de arriba no es accesible en silla de ruedas ni con carrito.' },
-      { tipo: 'parrafo', texto: 'En la iglesia, gratis, están la nave con columnas muy finas para su altura, las tumbas de Vasco da Gama y de Camões junto a la entrada y los sepulcros reales del altar. No hay audioguía oficial: si quieres contexto, lleva algo leído o ve con guía.' },
+      { tipo: 'parrafo', texto: 'En la iglesia, gratis, están la nave con columnas muy finas para su altura, las tumbas de Vasco da Gama y de Camões junto a la entrada y los sepulcros reales del altar. El monasterio no tiene audioguía propia: si quieres contexto, lleva algo leído o ve con guía.' },
       { tipo: 'enlace', texto: 'Si te interesa el estilo, aquí está la guía del manuelino en Lisboa.', href: '/blog/arquitectura-manuelina-lisboa', label: 'Arquitectura manuelina en Lisboa' },
     ],
   },
@@ -2825,13 +2824,13 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "El tranvía 28 a las horas equivocadas" },
       { tipo: "parrafo", texto: "El tranvía amarillo serpenteando por las calles de Alfama es una de las imágenes más icónicas de Lisboa. También es una de las experiencias más frustrantes si no sabes cómo abordarla. Entre las diez de la mañana y las seis de la tarde, las colas en las paradas principales pueden superar la media hora, los vagones van atestados, y los carteristas aprovechan el caos para hacer su agosto." },
       { tipo: "parrafo", texto: "Hay varias formas de disfrutar el tranvía sin sufrimiento. La primera es madrugar: antes de las nueve de la mañana los vagones van medio vacíos y puedes elegir asiento junto a la ventanilla. La segunda es subir en paradas intermedias, no en las terminales: Campo de Ourique o Prazeres tienen mucha menos demanda que Martim Moniz." },
-      { tipo: "parrafo", texto: "Y la tercera, mi favorita, es olvidarte del 28 y probar el tranvía 12, que hace un recorrido similar por Alfama pero sin el aura turística. Mismo encanto, mismas cuestas, una décima parte de la gente." },
+      { tipo: "parrafo", texto: "Y la tercera es olvidarte del 28 y coger el tranvía 12, que hace un circuito corto desde la Praça da Figueira y comparte con el 28 el tramo de Santa Luzia y la Sé. Suele ir bastante menos lleno." },
       { tipo: "subtitulo", texto: "El Castillo al mediodía de agosto" },
       { tipo: "parrafo", texto: "El Castelo de São Jorge merece una visita: las vistas son las más completas de la ciudad, la historia es fascinante, y los jardines ofrecen sombra y pavos reales. Pero la experiencia puede ser gloriosa o terrible según cuándo vayas." },
       { tipo: "parrafo", texto: "A las doce del mediodía en verano, el sol cae vertical, no hay sombra en las murallas, las colas para entrar se alargan, y los grupos de cincuenta personas con auriculares se amontonan en los mismos puntos panorámicos. La magia se evapora entre el calor y las aglomeraciones." },
       { tipo: "parrafo", texto: "La alternativa es visitar a primera hora de la mañana —las puertas abren a las nueve— o al final de la tarde, cuando la luz es más suave y los grupos organizados ya se han marchado. El atardecer desde las murallas, con la ciudad dorándose bajo tus pies, es uno de esos momentos que justifican haber pagado la entrada." },
       { tipo: "subtitulo", texto: "El error del mirador sin estrategia" },
-      { tipo: "parrafo", texto: "Lisboa tiene decenas de miradores repartidos por sus siete colinas. Intentar verlos todos en un día es una receta para terminar agotado, con las piernas destrozadas y sin haber disfrutado ninguno. He visto viajeros que suben y bajan colinas al azar, repitiendo desniveles innecesarios y llegando a cada mirador cuando la luz ya no es favorable." },
+      { tipo: "parrafo", texto: "Lisboa tiene decenas de miradores repartidos por sus siete colinas. Intentar verlos todos en un día es una receta para terminar agotado, con las piernas destrozadas y sin haber disfrutado ninguno. Es fácil acabar subiendo y bajando colinas al azar, repitiendo cuestas y llegando a cada mirador cuando ya no hay buena luz." },
       { tipo: "parrafo", texto: "Lo que funciona es planificar rutas que conecten miradores cercanos aprovechando la gravedad: empieza arriba, ve bajando, y deja los que están en otras colinas para otro día. El Mirador da Senhora do Monte, Graça, Portas do Sol y Santa Luzia pueden encadenarse en un paseo descendente que te deposita en Alfama sin subidas innecesarias." },
       { tipo: "subtitulo", texto: "Pagar sesenta euros por fado turístico" },
       { tipo: "parrafo", texto: "El fado es el alma musical de Lisboa, una expresión artística que UNESCO declaró Patrimonio Inmaterial de la Humanidad. Pero la versión que se ofrece en muchos locales turísticos tiene poco que ver con el fado real: cenas obligatorias de menú fijo, canciones interpretadas sin emoción, y precios que rondan los cincuenta o sesenta euros por persona." },
@@ -2840,7 +2839,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Señales de alarma que nunca fallan" },
       { tipo: "parrafo", texto: "Después de años observando, he identificado patrones que casi siempre indican trampa turística. Si hay alguien en la puerta invitándote a entrar, desconfía: los buenos restaurantes no necesitan captar clientes en la calle. Si ves fotos de paella en Lisboa, sal corriendo: estás ante un lugar que prioriza lo que los turistas creen querer sobre lo que la ciudad realmente ofrece." },
       { tipo: "parrafo", texto: "Si el menú está traducido a más idiomas de los que puedes contar con una mano, probablemente no sea donde comen los vecinos. Si la terraza tiene vistas perfectas pero no hay ningún portugués sentado, algo falla. Confía en tu instinto: la diferencia entre experiencia auténtica y parque temático suele percibirse desde la puerta." },
-      { tipo: "tip", texto: "Mi consejo definitivo: pregunta a cualquier lisboeta dónde come él. No dónde llevaría a su madre de visita, sino dónde cena un martes cualquiera. Esa respuesta vale más que cien reseñas de TripAdvisor." }
+      { tipo: "tip", texto: "Si tienes ocasión, pregunta a alguien que viva aquí dónde cena un martes cualquiera, no dónde llevaría a una visita. Esa respuesta suele valer más que muchas reseñas." }
     ]
   },
   "como-ir-sintra-desde-lisboa": {
@@ -3006,7 +3005,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Pastel de Belém versus pastel de nata: no son lo mismo" },
       { tipo: "parrafo", texto: "Esta distinción genera confusión entre los visitantes, pero los portugueses la tienen clarísima. Pastel de nata es el nombre genérico del dulce: base de hojaldre, crema de huevo, toque caramelizado arriba. Puedes encontrarlo en cualquier pastelería del país, con calidades que van de lo sublime a lo industrial." },
       { tipo: "parrafo", texto: "Pastel de Belém, en cambio, es una marca registrada (Pastéis de Belém®), no una denominación de origen. Solo se vende con ese nombre el que sale de esta fábrica concreta, elaborado con la receta original del monasterio. La diferencia se nota al morder: el hojaldre es más delicado, con capas finísimas que crujen sin deshacerse; la crema tiene una textura más densa y un sabor que recuerda vagamente a canela aunque no la lleve dentro; el caramelizado superior forma burbujas doradas que contrastan con la suavidad del relleno." },
-      { tipo: "parrafo", texto: "¿Merece la pena la cola por esa diferencia? Depende de lo que busques. Un buen pastel de nata de Manteigaria puede gustarte igual, pero comerlo en el salón centenario de Belém, rodeado de azulejos del siglo XIX y con casi dos siglos de oficio detrás (la casa abrió en 1837), no se repite en otro sitio." },
+      { tipo: "parrafo", texto: "¿Merece la pena la cola por esa diferencia? Depende de lo que busques. Un buen pastel de nata de Manteigaria puede gustarte igual, pero comerlo en el salón centenario de Belém, rodeado de azulejos del siglo XIX y con casi dos siglos de oficio detrás (la casa abrió en 1837), no se repite en otro sitio. Yo no me voy de Belém sin comerme unos pastéis de nata." },
       { tipo: "subtitulo", texto: "Cómo funciona la cola (y cómo esquivarla)" },
       { tipo: "parrafo", texto: "El local tiene dos colas separadas que la mayoría de visitantes no distingue. La cola exterior, la que serpentea por la calle, es para comprar pasteles para llevar. Aquí puedes pedir una caja de seis, doce o más unidades, pagar, y marcharte. Suele moverse relativamente rápido porque las transacciones son breves." },
       { tipo: "parrafo", texto: "La otra cola, menos visible, da acceso al salón interior. Aquí te sientas, te traen los pasteles calientes en un plato con los dispensadores de canela y azúcar, y puedes acompañarlos de café, zumo o incluso un vino de Madeira si te sientes decadente a media mañana. Esta cola paradójicamente suele ser más corta, porque muchos visitantes no saben que existe." },
@@ -3023,21 +3022,21 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Más allá del mostrador de venta, el local se extiende en una serie de salones que parecen congelados en el tiempo. Los azulejos azules y blancos que cubren las paredes datan del siglo XIX. Las mesas de mármol han sostenido millones de platitos con pasteles. La luz natural que entra por los patios interiores crea una atmósfera de café literario antiguo." },
       { tipo: "parrafo", texto: "Hay varios salones con ambientes diferentes: el primero es el más concurrido, el del fondo el más tranquilo, y hay uno con vistas a la fábrica donde puedes observar a los pasteleros trabajando a través de un cristal. Este último suele tener una cola específica pero merece la espera si te interesa ver el proceso artesanal." },
       { tipo: "subtitulo", texto: "¿Cuántos pedir? La eterna pregunta" },
-      { tipo: "parrafo", texto: "Mi consejo: empieza por dos. Son pequeños —caben en la palma de la mano— pero más contundentes de lo que parecen. La crema de huevo llena bastante, y después de tres o cuatro empiezas a perder la capacidad de apreciar los matices." },
+      { tipo: "parrafo", texto: "Para empezar, con dos suele bastar. Son pequeños, caben en la palma de la mano, pero la crema de huevo llena más de lo que parece." },
       { tipo: "parrafo", texto: "Si compras para llevar, ten en cuenta que aguantan bien unas horas pero pierden mucho al día siguiente. El hojaldre se humedece con el tiempo y la magia del crujiente desaparece. Lo ideal es comprarlos justo antes de consumirlos, aunque eso implique hacer cola dos veces si quieres repetir por la tarde." },
       { tipo: "parrafo", texto: "Algunos visitantes compran cajas para llevar a casa de regalo. Funcionan si el viaje es corto, pero atravesar un aeropuerto y un vuelo en bodega no les sienta bien. Si quieres regalar la experiencia, mejor compra la lata decorativa que venden en la tienda: no incluye pasteles reales, pero al menos no llegarán aplastados." }
     ]
   },
   "mejores-pasteles-nata-lisboa": {
     titulo: "Los mejores pasteles de nata de Lisboa",
-    descripcion: "Probamos 15 pastelerias para encontrar el pastel de nata perfecto.",
+    descripcion: "Qué hace bueno un pastel de nata y algunas pastelerías conocidas de Lisboa donde probarlo.",
     imagen: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200",
     imageAlt: "Calle empinada de Lisboa entre fachadas de azulejo, bajando hacia el río Tajo",
     categoria: "Gastronomía",
     fecha: "8 Dic 2024",
     minutos: 5,
     contenido: [
-      { tipo: "parrafo", texto: "El pastel de nata es el dulce mas famoso de Portugal, y en Lisboa hay cientos de sitios donde probarlo. Pero no todos son iguales. He probado 15 pastelerias para encontrar los mejores." },
+      { tipo: "parrafo", texto: "El pastel de nata es el dulce mas famoso de Portugal, y en Lisboa hay cientos de sitios donde probarlo. Pero no todos son iguales. Aquí tienes qué mirar y algunas de las pastelerías más conocidas." },
       { tipo: "subtitulo", texto: "Que hace un buen pastel de nata?" },
       { tipo: "lista", items: [
         "Hojaldre crujiente, no blando ni aceitoso",
@@ -3045,8 +3044,8 @@ const articles: Record<string, Article> = {
         "Puntos quemados arriba (caramelizado)",
         "Recien hecho, templado, no frio de nevera"
       ]},
-      { tipo: "subtitulo", texto: "1. Manteigaria (el mejor)" },
-      { tipo: "parrafo", texto: "Para mi, el mejor de Lisboa. Los hacen delante de ti, siempre calientes, hojaldre perfecto. Hay dos locales: Chiado y Time Out Market. El de Chiado es mas autentico." },
+      { tipo: "subtitulo", texto: "1. Manteigaria" },
+      { tipo: "parrafo", texto: "Los hacen a la vista, siempre calientes, hojaldre perfecto. Hay dos locales: Chiado y Time Out Market. El de Chiado es mas autentico." },
       { tipo: "lista", items: [
         "Precio: 1.40 EUR",
         "Direccion: Rua do Loreto 2, Chiado",
@@ -3524,7 +3523,7 @@ const articles: Record<string, Article> = {
     fecha: "3 Nov 2024",
     minutos: 11,
     contenido: [
-      { tipo: "parrafo", texto: "Hay algo mágico en los atardeceres de Lisboa. El sol se pone sobre el Tajo, tiñendo los tejados rojizos de tonos dorados y naranjas que parecen imposibles. La ciudad se ilumina gradualmente, y por unos minutos todo parece perfecto. He visto cientos de atardeceres desde diferentes miradores, y cada uno tiene su momento especial." },
+      { tipo: "parrafo", texto: "En Lisboa el sol se pone por el oeste, río abajo, y no todos los miradores miran hacia allí. Para ver el atardecer conviene elegir uno que sí y llegar con tiempo." },
       { tipo: "parrafo", texto: "Esta guía te lleva a los mejores lugares para ver el sunset, con información sobre cuándo llegar, qué llevar, y qué esperar en cada uno. Porque el atardecer perfecto requiere un poco de planificación, pero la recompensa vale cada minuto de espera." },
       { tipo: "subtitulo", texto: "Mirador da Senhora do Monte — El favorito de los locales" },
       { tipo: "parrafo", texto: "Este es, sin duda, el mejor mirador para el atardecer. Las vistas son de 360 grados —ves toda Lisboa desplegándose a tus pies—, y al estar alejado del circuito turístico, suele tener menos gente que otros miradores. El sol se pone justo frente a ti, creando un espectáculo que parece diseñado para este lugar." },
@@ -3636,7 +3635,7 @@ const articles: Record<string, Article> = {
     fecha: "28 Oct 2024",
     minutos: 12,
     contenido: [
-      { tipo: "parrafo", texto: "Lisboa es sorprendentemente amigable para familias. Tiene actividades que encantan a los niños —tranvías que suben colinas como montañas rusas, acuarios gigantes, castillos con murallas que explorar—, y muchas de las mejores cosas que hacer son gratis o muy baratas. He visto familias disfrutar Lisboa tanto como parejas o grupos de amigos." },
+      { tipo: "parrafo", texto: "Lisboa es sorprendentemente amigable para familias. Tiene actividades que encantan a los niños —tranvías que suben colinas como montañas rusas, acuarios gigantes, castillos con murallas que explorar—, y muchas de las mejores cosas que hacer son gratis o muy baratas." },
       { tipo: "parrafo", texto: "Esta guía está pensada para ayudarte a planificar un viaje donde los niños se diviertan sin que los adultos tengan que renunciar a disfrutar la ciudad. Porque la mejor forma de viajar con niños es encontrar el equilibrio entre lo que les gusta a ellos y lo que te gusta a ti." },
       { tipo: "subtitulo", texto: "Actividades para ninos" },
       { tipo: "subtitulo", texto: "1. Oceanario de Lisboa" },
@@ -3874,7 +3873,7 @@ const articles: Record<string, Article> = {
     fecha: "1 Feb 2026",
     minutos: 10,
     contenido: [
-      { tipo: "parrafo", texto: "Cuando le digo a alguien que mi época favorita para estar en Lisboa es el invierno, me miran como si estuviera loco. 'Pero si en verano es cuando hay que ir', responden. Y yo pienso: exacto, en verano es cuando van todos, y por eso en invierno es cuando se disfruta de verdad." },
+      { tipo: "parrafo", texto: "Mucha gente da por hecho que a Lisboa hay que ir en verano. Justo por eso el invierno tiene ventajas: hay menos gente y la ciudad se recorre con más calma." },
       { tipo: "parrafo", texto: "El invierno en Lisboa no tiene nada que ver con el invierno del norte de Europa o de buena parte de Latinoamérica. Las temperaturas rara vez bajan de los 8-10 grados, hay una media de 5-6 horas de sol al día incluso en enero, y la luz tiene una cualidad dorada que los fotógrafos adoran. Sí, llueve, pero normalmente en chaparrones cortos que dan paso a cielos limpios." },
       { tipo: "subtitulo", texto: "Menos turistas, más Lisboa" },
       { tipo: "parrafo", texto: "La diferencia más brutal entre verano e invierno es la cantidad de gente. En julio y agosto, el Tranvía 28 tiene colas de una hora, los miradores están atestados y es imposible pasear por Alfama sin esquivar grupos de turistas con selfie sticks. En enero puedes subirte al tranvía 28 en la primera parada sin esperar, sentarte tranquilamente en el Mirador de Santa Luzia, y caminar por las callejuelas de Alfama escuchando solo tus pasos y el fado que sale de alguna ventana." },
@@ -4322,9 +4321,9 @@ const articles: Record<string, Article> = {
     contenido: [
       { tipo: "parrafo", texto: "Lisboa es una ciudad de monumentos. No del tipo de monumentos que se erigen en honor a batallas olvidadas, sino de edificios y estructuras que cuentan directamente la historia de la ciudad y del país: los monasterios construidos con el oro de las especias de India, las torres que vigilaban la entrada al río, los puentes y ascensores que conectaban las colinas. Esta guía te ayuda a priorizar qué ver, cómo evitar colas, y cuánto tiempo necesitas en cada lugar." },
       { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino" },
-      { tipo: "parrafo", texto: "Construido a partir de 1501 con el dinero del impuesto sobre las especias traídas de India, el Mosteiro dos Jerónimos es la obra cumbre del estilo manuelino y uno de los edificios más bellos de Europa. La nave de la iglesia, con sus columnas decoradas con motivos marinos y tropicales, es de una elegancia que no cansa. Los claustros, en el piso superior, son todavía más impresionantes: una galería de dos pisos de arcos decorados con una delicadeza escultórica extraordinaria." },
+      { tipo: "parrafo", texto: "Construido a partir de 1501 con el dinero del impuesto sobre las especias traídas de India, el Mosteiro dos Jerónimos es la obra cumbre del estilo manuelino. La nave de la iglesia, con sus columnas decoradas con motivos marinos y tropicales, es de una elegancia que no cansa. Los claustros, en el piso superior, son todavía más impresionantes: una galería de dos pisos de arcos decorados con una delicadeza escultórica extraordinaria." },
       { tipo: "enlace", texto: "Qué se paga, qué es gratis y cómo llegar en tren desde Cais do Sodré.", href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
-      { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro, 18€. Si hay billete combinado con la Torre de Belém, compruébalo en la web oficial antes de comprar por separado. Compra online para evitar colas. Tiempo recomendado: 1,5-2 horas." },
+      { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro, 18€. Hay entrada combinada con la Torre de Belém. Llevarla comprada te ahorra la cola de la taquilla, pero no la de acceso, que hace todo el mundo. Tiempo recomendado: 1,5-2 horas." },
       { tipo: "subtitulo", texto: "2. Torre de Belém — El Icono de Lisboa" },
       { tipo: "parrafo", texto: "La Torre de Belém es la imagen más reconocible de Lisboa y uno de los iconos de Portugal. Construida entre 1516 y 1521 como fortaleza defensiva a la entrada del estuario del Tajo, la torre combina elementos militares con decoración manuelina de una sofisticación sorprendente. Las troneras en forma de cruz de Cristo, las torres de vigilancia octogonales y los balcones con barandillas de piedra tallada hacen que el edificio parezca más un sueño de piedra que una fortaleza." },
       { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15 €, en un billete aparte del de los Jerónimos. El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
@@ -4336,19 +4335,19 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Este ascensor de hierro forjado, con una estructura de 45 metros de altura, fue diseñado por Raoul Mesnier du Ponsard y conecta la Baixa con el Largo do Carmo, en el Chiado. Construido en 1902, es una pieza de ingeniería y arquitectura que parece sacada de un libro de Jules Verne. La terraza superior ofrece vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el Tajo." },
       { tipo: "nota", texto: "Conviene distinguir dos cosas que suelen confundirse: el viaje en el ascensor, que forma parte de la red de transporte de Carris, y la entrada al miradouro de la torre, que se paga aparte —cinco euros— y no está incluida en la Lisboa Card. No hay un acceso gratuito por el Convento do Carmo." },
       { tipo: "subtitulo", texto: "5. Palácio Nacional da Ajuda — El palacio que tardó 226 años en terminarse" },
-      { tipo: "parrafo", texto: "El mayor palacio de Lisboa es también uno de sus secretos mejor guardados. Construido para la familia real a partir de 1795, la obra se paró cuando la corte huyó a Brasil y el palacio pasó más de dos siglos inacabado. La ala oeste no se cerró hasta 2021, y desde junio de 2022 alberga el Museu do Tesouro Real con las joyas de la Corona. El interior, sin embargo, está entre los más ricos de Europa: salones de azulejos del siglo XIX, muebles de época, colecciones de pintura y porcelana. La visita es mucho menos masificada que los Jerónimos o el Castillo." },
+      { tipo: "parrafo", texto: "Es el mayor palacio de Lisboa y recibe muchas menos visitas que los Jerónimos o el castillo. Se empezó a construir para la familia real en 1795; la obra se paró cuando la corte huyó a Brasil y el palacio pasó más de dos siglos inacabado. El ala oeste no se cerró hasta 2021, y desde junio de 2022 alberga el Museu do Tesouro Real con las joyas de la Corona. El interior conserva salones de azulejos del siglo XIX, muebles de época, colecciones de pintura y porcelana." },
       { tipo: "subtitulo", texto: "6-15. Los Monumentos Esenciales" },
       { tipo: "lista", items: [
         "Praça do Comércio: La plaza más grande de Lisboa, frente al Tajo, diseñada por el Marqués de Pombal tras el terremoto de 1755",
         "Convento do Carmo: Las ruinas góticas abiertas al cielo, memorial del terremoto. Ahora tiene un pequeño museo arqueológico",
-        "Panteón Nacional: La cúpula barroca más impresionante de Portugal, con los cenotafios de Vasco de Gama y Camões (sus túmulos están en los Jerónimos) y tumbas de presidentes de la República",
+        "Panteón Nacional: La antigua iglesia de Santa Engrácia, con su gran cúpula blanca, que guarda los cenotafios de Vasco de Gama y Camões (sus túmulos están en los Jerónimos) y tumbas de presidentes de la República",
         "Museu do Azulejo (Convento de Madre de Deus): cerrado por obras desde el 1 de noviembre de 2025, sin fecha de reapertura confirmada",
         "Padrão dos Descobrimentos: La escultura monumental de los grandes navegantes en la orilla del Tajo en Belém",
         "Aqueduto das Águas Livres: El acueducto del siglo XVIII (lo mandó construir João V en 1731; no es romano) que cruza el valle de Alcântara. Visitable a pie en algunos tramos",
-        "Palácio da Pena (Sintra): El palacio más fotogénico de Portugal, a 40 minutos de Lisboa en tren",
+        "Palácio da Pena (Sintra): El palacio de colores en lo alto de la sierra, a 40 minutos de Lisboa en tren",
         "Museu Calouste Gulbenkian: El museo de arte más importante de Portugal, con colección desde el Antiguo Egipto hasta el siglo XX",
         "Teatro Nacional de Dona Maria II: El teatro neoclásico de la Praça do Rossio, frente a la estación",
-        "Estação do Oriente (Santiago Calatrava): La estación de tren más bonita de Portugal, en Parque das Nações"
+        "Estação do Oriente (Santiago Calatrava): La estación de columnas de acero y cubierta de vidrio que abre el Parque das Nações"
       ]},
       { tipo: "enlace", texto: "Para los monumentos que sí requieren billete, compara las opciones de entrada antes de decidir cuáles encajan en tu ruta.", href: "/comprar-entradas", label: "Ver entradas y experiencias en Lisboa" },
       { tipo: "enlace", texto: "Muchos de estos monumentos se entienden mucho mejor con contexto histórico que leyendo el cartel de la entrada.", href: "/free-tours-lisboa#ruta-imprescindible", label: "Ver los free tours por el centro histórico" },
@@ -5017,9 +5016,9 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
     { q: '¿Merece la pena ir con niebla?', a: 'Yo cambiaría el día. Con niebla se pierden buena parte de las vistas. Si tu entrada lo permite (las de la web oficial se pueden cambiar), pásala al día más despejado.' },
   ],
   'lisboa-en-navidad': [
-    { q: '¿Cuándo se encienden las luces de Navidad de Lisboa en 2026?', a: 'A 9 de octubre de 2026 no hay fecha oficial. En 2025 se encendieron el 22 de noviembre y estuvieron hasta el 6 de enero, cada día desde las 17:30.' },
-    { q: '¿Cuándo es el mercado de Navidad del Rossio en 2026?', a: 'La prensa anuncia del 13 de noviembre al 21 de diciembre de 2026, pero la organización (ADBP) aún no lo ha publicado. En 2025 fue del 14 de noviembre al 21 de diciembre.' },
-    { q: '¿Cuándo es Wonderland Lisboa 2026?', a: 'La organización todavía no ha dado fechas. Europe\'s Best Destinations publica del 27 de noviembre de 2026 al 3 de enero de 2027, pero no es una fuente oficial. En 2025 fue del 28 de noviembre al 4 de enero. Entrar al recinto es gratis.' },
+    { q: '¿Cuándo se encienden las luces de Navidad de Lisboa en 2026?', a: 'Todavía no hay fecha. En 2025 se encendieron el 22 de noviembre y estuvieron hasta el 6 de enero, cada día desde las 17:30.' },
+    { q: '¿Cuándo es el mercado de Navidad del Rossio en 2026?', a: 'La prensa da del 13 de noviembre al 21 de diciembre de 2026, pero la organización (ADBP) aún no lo ha confirmado. En 2025 fue del 14 de noviembre al 21 de diciembre.' },
+    { q: '¿Cuándo es Wonderland Lisboa 2026?', a: 'La organización todavía no ha dado fechas. Una web de viajes publica del 27 de noviembre de 2026 al 3 de enero de 2027, pero no es la organización. En 2025 fue del 28 de noviembre al 4 de enero. Entrar al recinto es gratis.' },
     { q: '¿Qué está abierto en Lisboa el 25 de diciembre?', a: 'Poco de lo turístico: cierran el Castelo de São Jorge, los Jerónimos y la Torre de Belém. El Oceanário abre con horario especial. Las luces de la Baixa se pueden ver igual.' },
     { q: '¿Cómo es la Nochevieja en Lisboa?', a: 'Hay una fiesta gratuita en la Praça do Comércio con fuegos artificiales sobre el Tajo a medianoche. En 2025 la estación de metro Terreiro do Paço cerró a las 17:00 del día 31, así que conviene llegar andando desde Baixa-Chiado o Rossio.' },
     { q: '¿Hace frío en Lisboa en diciembre?', a: 'Poco: la máxima media es de unos 15 °C y la mínima de unos 9 °C. Lo que hace falta es ropa para la lluvia, porque llueve una media de 10 días al mes.' },
@@ -5043,7 +5042,7 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
   'monasterio-jeronimos-entradas': [
     { q: '¿Cuánto cuesta entrar en los Jerónimos?', a: 'El claustro cuesta 18 € (9 € para mayores de 65 y jóvenes de 13 a 24 años). Los menores de 12 entran gratis. La iglesia es gratuita para todo el mundo.' },
     { q: '¿Es gratis los domingos?', a: 'No. Esa norma desapareció. Los residentes en Portugal tienen 52 días gratis al año, a elegir, sacando el billete en la taquilla. Para turistas solo es gratis el 18 de abril, el 18 de mayo y las Jornadas Europeas del Patrimonio.' },
-    { q: '¿Hay que reservar?', a: 'Es lo recomendable. La entrada va con franja horaria y la web oficial avisa de que se agotan y a menudo no se pueden comprar en el día.' },
+    { q: '¿Hay que reservar?', a: 'Es lo recomendable. La entrada va con franja horaria, y se agota a menudo: muchas veces ya no quedan para el mismo día.' },
     { q: '¿Abre los lunes?', a: 'No. Cierra todos los lunes, igual que la Torre de Belém.' },
     { q: '¿Se puede entrar solo a la iglesia?', a: 'Sí, sin billete, de martes a sábado de 10:30 a 17:00 y los domingos de 14:00 a 17:00.' },
     { q: '¿Existe una entrada sin colas?', a: 'No. Con el billete comprado te ahorras la taquilla, pero la cola de entrada es para todos.' },
@@ -5400,8 +5399,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   ];
   const headings = [...extraHeadings, ...baseHeadings];
 
-  const firstList = article.contenido.find((bloque) => bloque.tipo === 'lista');
-  const takeaways = Array.isArray(firstList?.items) ? firstList?.items?.slice(0, 3) : [];
+  // «Lo esencial» solo con un resumen propio del artículo (`resumen`). Antes
+  // copiaba los tres primeros puntos de la primera lista, que se volvían a
+  // leer enteros justo debajo: el lector veía lo mismo dos veces en la
+  // primera pantalla. Sin resumen propio, la entradilla ya hace de respuesta
+  // rápida y la caja no se pinta.
+  const takeaways = article.resumen ?? [];
   const linkedArticleIds = (article.links ?? []).flatMap((link) => {
     const match = link.href.match(/^\/blog\/([^/#?]+)/);
     return match ? [match[1]] : [];
@@ -5536,12 +5539,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <ArticleRelated posts={relatedPosts} />
         <ArticleEditorialLinks links={editorialLinks} />
 
+        {/* La newsletter va una sola vez, dentro del cuerpo (ArticleBody). */}
         <div className="article-compact-ending max-w-2xl mx-auto mt-10">
-          {showNewsletter && (
-            <div className="article-reading">
-              <ArticleNewsletter slug={slug} placement="article_footer" />
-            </div>
-          )}
           <ArticleFooter
             authorName={AUTHOR_NAME}
             beforeAuthor={

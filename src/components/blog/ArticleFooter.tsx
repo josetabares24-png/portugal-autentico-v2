@@ -21,7 +21,7 @@ export function ArticleFooter({
           ¿Quieres ayuda para ordenar tu viaje?
         </h3>
         <p className="relative text-white/70">
-          Podemos revisar tu ruta y resolver las decisiones que más tiempo te están quitando.
+          Puedo revisar tu ruta y ayudarte con las decisiones que más tiempo te están quitando.
         </p>
         <TrackedInternalLink
           href="/planifica-tu-viaje"

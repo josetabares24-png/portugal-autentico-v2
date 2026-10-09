@@ -46,15 +46,51 @@ export function ArticleBody({
       .filter((b) => (b.tipo === 'subtitulo' || b.tipo === 'subseccion') && b.texto)
       .map((b) => slugify(b.texto as string)),
   );
-  // Bloques que van justo debajo de «Lo esencial»: solo en las páginas donde
-  // la siguiente decisión del lector es comprar (ver blog-booking-placements).
-  const summaryBookings = bookings.filter((b) => b.position === 'after-summary');
-  const bodyBookings = bookings.filter((b) => b.position !== 'after-summary');
+  /*
+   * Bloque de arriba (`position: 'after-summary'`): solo en las páginas donde
+   * la siguiente decisión del lector es comprar (ver blog-booking-placements).
+   * Como mucho uno, y nunca antes del contenido: se pinta al cerrar la primera
+   * sección que tenga texto propio (antes del primer subtítulo que viene
+   * después de un párrafo del cuerpo). Si hubiera más de uno marcado arriba,
+   * el resto baja al final del cuerpo.
+   */
+  const topBooking = bookings.find((b) => b.position === 'after-summary');
+  const bodyBookings = bookings.filter((b) => b !== topBooking);
+  const bodyBlocks = article.contenido.slice(1);
+  const firstBodyParagraph = bodyBlocks.findIndex((b) => b.tipo === 'parrafo');
+  const topBookingIndex = !topBooking || firstBodyParagraph === -1
+    ? -1
+    : bodyBlocks.findIndex(
+        (b, i) => i > firstBodyParagraph && (b.tipo === 'subtitulo' || b.tipo === 'subseccion'),
+      );
+  // Sin subtítulo después del primer párrafo: justo detrás de ese párrafo.
+  const topBookingAfter = topBooking && topBookingIndex === -1 && firstBodyParagraph !== -1
+    ? firstBodyParagraph
+    : -1;
+  const isLowered = (b: (typeof bookings)[number]) => b.position === 'after-summary';
   const bookingsBefore = (headingId: string) =>
     bodyBookings
-      .filter((b) => b.beforeHeading === headingId)
-      .map((b) => <ArticleBookingBlock key={b.contentId} {...b} />);
-  const trailingBookings = bodyBookings.filter((b) => !b.beforeHeading || !headingIds.has(b.beforeHeading));
+      .filter((b) => !isLowered(b) && b.beforeHeading === headingId)
+      .map((b) => renderBooking(b));
+  const trailingBookings = [
+    ...(topBooking && topBookingIndex === -1 && topBookingAfter === -1 ? [topBooking] : []),
+    ...bodyBookings.filter(
+      (b) => isLowered(b) || !b.beforeHeading || !headingIds.has(b.beforeHeading),
+    ),
+  ];
+  // La nota de afiliado sale una vez por artículo, en el primer bloque que se
+  // ve al bajar (el de arriba si existe).
+  const firstBookingId = topBooking?.contentId
+    ?? bodyBlocks
+      .flatMap((b) =>
+        b.tipo === 'subtitulo' || b.tipo === 'subseccion'
+          ? bodyBookings.filter((x) => !isLowered(x) && x.beforeHeading === slugify(b.texto || ''))
+          : [],
+      )[0]?.contentId
+    ?? trailingBookings[0]?.contentId;
+  const renderBooking = (b: (typeof bookings)[number]) => (
+    <ArticleBookingBlock key={b.contentId} {...b} disclosure={b.contentId === firstBookingId ? 'full' : 'short'} />
+  );
   /*
    * El formulario de newsletter va antes del primer subtítulo que esté a
    * partir del 60 % del texto y que no tenga ya un bloque de reserva ni un
@@ -62,7 +98,6 @@ export function ArticleBody({
    * Si no hay ninguno, el último hueco válido desde el 40 %; si tampoco,
    * al final.
    */
-  const bodyBlocks = article.contenido.slice(1);
   // El 60 % se mide en texto, no en número de bloques: una tabla o una lista
   // larga pesan más que un subtítulo.
   const blockWeight = (b: (typeof bodyBlocks)[number]) =>
@@ -77,6 +112,7 @@ export function ArticleBody({
     ? bodyBlocks.flatMap((b, i) =>
         (b.tipo === 'subtitulo' || b.tipo === 'subseccion') &&
         !bodyBookings.some((booking) => booking.beforeHeading === slugify(b.texto || '')) &&
+        i !== topBookingIndex &&
         bodyBlocks[i - 1]?.tipo !== 'enlace'
           ? [i]
           : [],
@@ -256,21 +292,7 @@ export function ArticleBody({
               </li>
             ))}
           </ul>
-          {bookings[0] && summaryBookings.length === 0 && (
-            <p className="article-essential-booking">
-              Si vas a reservar:{' '}
-              <a href={`#reserva-${bookings[0].contentId}`}>{bookings[0].ctaLabel} ↓</a>
-            </p>
-          )}
         </ArticleCallout>
-      )}
-
-      {summaryBookings.length > 0 && (
-        <div className="article-reading">
-          {summaryBookings.map((b) => (
-            <ArticleBookingBlock key={b.contentId} {...b} />
-          ))}
-        </div>
       )}
 
       {/* Cómo llegar / Mejor hora */}
@@ -294,19 +316,21 @@ export function ArticleBody({
       {/* Contenido del artículo */}
       <div className="article-content article-reading">
         {bodyBlocks.map((bloque, index) => {
-          if (index === newsletterIndex) {
+          const top = topBooking && index === topBookingIndex ? renderBooking(topBooking) : null;
+          const afterTop = topBooking && index === topBookingAfter ? renderBooking(topBooking) : null;
+          if (index === newsletterIndex || top || afterTop) {
             return (
-              <Fragment key={`newsletter-${index}`}>
-                {newsletter}
+              <Fragment key={`block-${index}`}>
+                {top}
+                {index === newsletterIndex ? newsletter : null}
                 {renderBlock(bloque, index)}
+                {afterTop}
               </Fragment>
             );
           }
           return renderBlock(bloque, index);
         })}
-        {trailingBookings.map((b) => (
-          <ArticleBookingBlock key={b.contentId} {...b} />
-        ))}
+        {trailingBookings.map(renderBooking)}
         {newsletterAtEnd && newsletter}
       </div>
 

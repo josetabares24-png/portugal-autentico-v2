@@ -66,6 +66,11 @@ export type Article = {
   fuentes?: ArticleSource[];
   cta?: ArticleCta;
   contenido: ArticleBlock[];
+  /**
+   * Resumen propio para la caja «Lo esencial». Solo cuando aporta algo que la
+   * entradilla y la primera lista no dicen ya; sin él, la caja no sale.
+   */
+  resumen?: string[];
 };
 
 export type ArticleFaq = {
