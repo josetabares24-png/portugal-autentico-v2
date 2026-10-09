@@ -372,37 +372,31 @@ ElevenLabs Sound Effects es válido para diseñar ambientes específicos.
 
 ---
 
-## Subtítulos — preset oficial de esta serie
+## Subtítulos — preset oficial actualizado de esta serie (decisión del usuario, 2026-10-09)
+
+**CAMBIO APROBADO:** el usuario prefiere **UNA sola línea siempre** para este estilo de narración histórica; esta preferencia sustituye el preset anterior de 2 líneas y Acumin Pro. No volver a recomendar dos líneas como valor por defecto.
 
 Premiere, secuencia 1080 × 1920:
 
 Generación:
-- Diseño: **Línea doble**;
-- longitud máxima: **28 caracteres**;
-- duración mínima: **1,2 s**;
-- espacio entre subtítulos: **0 fotogramas**;
-- conservar puntuación.
+- máximo **1 línea por subtítulo**; segmentar según respiración y sintaxis, no palabra por palabra;
+- longitud orientativa: **18–30 caracteres**, siempre sujeto a que quepa en margen seguro móvil;
+- duración típica: **1,3–2,4 segundos** por bloque, ajustada al audio y legibilidad (no forzar cambios excesivamente rápidos);
+- espacio entre subtítulos: 0 fotogramas cuando la narración sea continua; respetar silencios intencionales;
+- conservar puntuación y ritmo de la historia.
 
 Diseño:
-- fuente: **Acumin Pro Medium**;
-- tamaño: **60 px**;
-- color: **#F5F3EE**;
-- alineación: centrada;
-- tracking: 0;
-- máximo: 2 líneas;
-- contorno negro: 2 px;
-- sombra suave ~60 %;
-- distancia sombra: ~3 px;
-- blur: ~6 px;
-- sin caja;
-- aproximadamente 240–260 px desde el borde inferior.
+- tipografía **Lora SemiBold**, serif literaria y cinematográfica;
+- tamaño inicial **58 px**, reducir si alguna frase se acerca a los límites laterales; color **#F5F3EE** marfil;
+- centrado: X **540**, Y **1530** (ajustable si tapa un elemento narrativo), secuencia 1080×1920;
+- tracking 0;
+- contorno negro 2 px, 75 %;
+- sombra negra suave 40 %, distancia 2 px, desenfoque 8 px;
+- SIN caja de fondo;
+- **máximo una línea** incluso en escenas emocionales.
 
-No usar:
-- una palabra por pantalla;
-- karaoke;
-- subtítulo TikTok gigante.
+No usar karaoke, subtítulo TikTok gigante, palabras por pantalla ni entradas/salidas llamativas. Debe sentirse cine narrativo. Probar en pantalla móvil sobre plano claro y oscuro.
 
-La estética debe sentirse documental/cinematográfica.
 
 ---
 
