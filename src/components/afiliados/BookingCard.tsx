@@ -75,6 +75,7 @@ export function BookingCard({
     typeof tiqetsProduct?.price === 'number' && tiqetsProduct.currency
       ? formatPrice(tiqetsProduct.price, tiqetsProduct.currency)
       : null;
+  const officialPrice = !livePrice ? product.officialPrice : undefined;
   const hasLiveDetails = Boolean(
     tiqetsProduct &&
       (livePrice || tiqetsProduct.smartphoneTicket || tiqetsProduct.saleStatus === 'unavailable')
@@ -127,6 +128,18 @@ export function BookingCard({
         </p>
 
         <div className="mt-auto">
+          {officialPrice ? (
+            <div className="mb-3 border-t border-border-soft pt-3 font-body">
+              <p className="text-xs text-text-secondary">
+                Taquilla oficial{' '}
+                <strong className="text-sm font-bold text-night">{officialPrice.amount}</strong>
+              </p>
+              {officialPrice.note ? (
+                <p className="mt-1 text-[11px] leading-snug text-text-secondary">{officialPrice.note}</p>
+              ) : null}
+            </div>
+          ) : null}
+
           {hasLiveDetails ? (
             <div className="mb-3 flex min-h-10 flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border-soft pt-3 font-body">
               {livePrice ? (

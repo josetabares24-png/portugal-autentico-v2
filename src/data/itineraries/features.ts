@@ -36,7 +36,7 @@ export const includedFeatures = [
   },
   {
     icon: 'M5 13l4 4L19 7',
-    title: 'Actualizaciones 2025',
+    title: 'Revisión periódica',
     description: 'Contenido revisado y mejorado con datos recientes'
   }
 ];

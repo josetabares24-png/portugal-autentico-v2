@@ -115,12 +115,13 @@ const articles: Record<string, Article> = {
     contenido: [
       { tipo: 'parrafo', texto: 'Sintra funciona mejor como excursión de un día independiente que como una parada añadida a Lisboa. El tren resuelve la llegada, pero dentro de Sintra las distancias, las pendientes y los accesos a los monumentos obligan a elegir. El error más común es comprar entradas para demasiados sitios y pasar el día mirando el reloj.' },
       { tipo: 'subtitulo', texto: 'Cómo ir de Lisboa a Sintra en tren' },
-      { tipo: 'parrafo', texto: 'CP conecta Lisboa con Sintra dentro de su red de trenes urbanos. Para quien se aloja en el centro, Rossio es una de las salidas más prácticas y CP la presenta como punto de partida para visitar Sintra. Antes de salir, revisa el horario del día en CP porque obras, huelgas o ajustes de servicio pueden alterar la operación normal.' },
+      { tipo: 'parrafo', texto: 'CP conecta Lisboa con Sintra dentro de su red de trenes urbanos. Para quien se aloja en el centro, Rossio es una de las salidas más prácticas y CP la presenta como punto de partida para visitar Sintra. Antes de salir, revisa el horario del día en CP porque obras, huelgas o ajustes de servicio pueden alterar la operación normal. El billete sencillo Rossio–Sintra cuesta 2,55 € (5,10 € ida y vuelta); con saldo zapping en la tarjeta Navegante, 2,05 € por trayecto.' },
       { tipo: 'parrafo', texto: 'Al llegar a la estación de Sintra ya estás cerca de la villa, pero no de todos los monumentos. Pena está en la sierra y requiere otro desplazamiento; por eso conviene organizar primero la hora de entrada que tengas reservada y construir el resto alrededor.' },
 
       { tipo: 'subtitulo', texto: 'Palácio da Pena: la hora del billete manda' },
       { tipo: 'parrafo', texto: 'La entrada al interior del Palácio da Pena requiere fecha y hora reservadas. La hora del billete corresponde a la entrada al interior del palacio, no a la entrada al parque. Parques de Sintra recomienda prever alrededor de 30 minutos entre la entrada principal del parque y el palacio.' },
       { tipo: 'parrafo', texto: 'Si llegas tarde a la hora reservada, las condiciones oficiales indican que no podrás entrar al interior y el billete no se reembolsa por ese retraso. Por eso no colocaría Pena inmediatamente después de un tren con margen mínimo.' },
+      { tipo: 'tip', texto: 'Dos cosas que me han funcionado: compra la entrada de la Pena con tiempo, para elegir hora y no hacer cola, y si el día sale muy frío y con niebla en la sierra, deja la Pena para otro día, porque arriba no se aprecia igual. Yo he ido en tren y autobús.' },
 
       { tipo: 'subtitulo', texto: 'Cómo subir a Pena desde Sintra' },
       { tipo: 'parrafo', texto: 'Parques de Sintra señala el autobús 434 desde la estación ferroviaria como una de las opciones de transporte público hacia Pena. También existen recorridos peatonales, pero la subida exige tiempo y desnivel. El acceso en vehículo particular a las vías que llevan al monumento está restringido, así que no planifiques el día como si fueras a aparcar junto al palacio.' },
@@ -1260,7 +1261,7 @@ const articles: Record<string, Article> = {
       { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
     ],
     fuentes: [
-      { label: 'Mosteiro dos Jerónimos - preguntas frecuentes', href: 'http://www.mosteirojeronimos.gov.pt/pt/index.php?pid=233&s=white' },
+      { label: 'Mosteiro dos Jerónimos - preguntas frecuentes', href: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo' },
       { label: 'Património Cultural - Mosteiro dos Jerónimos', href: 'https://www.patrimoniocultural.gov.pt/pt/museus-e-monumentos/dgpc/m/mosteiro-dos-jeronimos/' },
       { label: 'Carris - alteraciones de servicio', href: 'https://www.carris.pt/viaje/alteracoes-de-servico/' },
       { label: 'MAAT - planear la visita', href: 'https://www.maat.pt/en/plan-a-visit' },
@@ -1382,7 +1383,7 @@ const articles: Record<string, Article> = {
       { label: 'Oceanário de Lisboa - planear la visita', href: 'https://oceanario.pt/en/plan-your-visit/' },
       { label: 'Metropolitano de Lisboa - cómo utilizar el metro', href: 'https://www.metrolisboa.pt/viajar/como-utilizar-o-metro/' },
       { label: 'Pavilhão do Conhecimento - información general', href: 'https://www.pavconhecimento.pt/visite-nos/informacoes-gerais/' },
-      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/viaje/tarifarios/' },
+      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/compre/tarifario/' },
     ],
     cta: {
       href: '/itinerarios/lisboa-1-dia-lo-esencial',
@@ -1491,7 +1492,7 @@ const articles: Record<string, Article> = {
       { href: '/itinerarios', label: 'Itinerarios de 1, 2 y 3 días' },
     ],
     fuentes: [
-      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/viaje/tarifarios/' },
+      { label: 'Carris - tarifas y títulos de transporte', href: 'https://www.carris.pt/compre/tarifario/' },
       { label: 'Transtejo · Soflusa - horarios de los barcos', href: 'https://ttsl.pt/' },
       { label: 'CP - trenes urbanos de Lisboa', href: 'https://www.cp.pt/passageiros/pt/como-viajar/horarios' },
       { label: 'Parques de Sintra - visitar', href: 'https://www.parquesdesintra.pt/' },
@@ -2226,7 +2227,7 @@ const articles: Record<string, Article> = {
         "Para quién: Primera visita, movilidad reducida, viajes cortos donde prima la comodidad",
         "Puntos fuertes: Todo llano, metro en cada esquina, monumentos a pie",
         "Puntos débiles: Precios inflados en restaurantes, ambiente más turístico que local",
-        "Hora mágica: Amanecer en la Praça do Comércio, cuando la plaza está vacía y el río brilla"
+        "Mejor momento: temprano, cuando la Praça do Comércio aún está vacía"
       ]},
       { tipo: "subtitulo", texto: "Alfama: el barrio que sobrevivió al terremoto" },
       { tipo: "parrafo", texto: "Mientras el resto de Lisboa quedó reducido a escombros en 1755, Alfama —construida sobre roca sólida— resistió el temblor. Por eso aquí pervive el trazado medieval de callejuelas estrechas, escaleras imposibles y casas que parecen sostenerse unas a otras. Perderse es inevitable y forma parte de la experiencia." },
@@ -2236,7 +2237,7 @@ const articles: Record<string, Article> = {
         "Para quién: Parejas románticas, fotógrafos, amantes del fado, segunda visita",
         "Puntos fuertes: El barrio más fotogénico, fado auténtico, miradores espectaculares",
         "Puntos débiles: Cuestas agotadoras, ruido de tranvías, difícil con movilidad reducida",
-        "Hora mágica: Atardecer desde cualquier mirador, cuando el sol tiñe los tejados de oro"
+        "Mejor momento: el atardecer desde uno de sus miradores"
       ]},
       { tipo: "subtitulo", texto: "Bairro Alto: donde Lisboa sale de fiesta" },
       { tipo: "parrafo", texto: "De día, el Bairro Alto parece un barrio residencial cualquiera: edificios con ropa tendida, tiendas de barrio, vecinos que se saludan por la calle. Pero cuando cae el sol, las persianas de metal de decenas de bares se levantan y las calles se llenan de gente con vasos en la mano. La fiesta se desborda a las aceras, la música se mezcla, y Lisboa muestra su cara más desinhibida." },
@@ -2246,7 +2247,7 @@ const articles: Record<string, Article> = {
         "Para quién: Jóvenes, grupos de amigos, noctámbulos, viajeros que vienen a la fiesta",
         "Puntos fuertes: Mejor vida nocturna de la ciudad, bares únicos, ambiente joven",
         "Puntos débiles: Ruido hasta muy tarde, calles sucias por la mañana, no ideal para familias",
-        "Hora mágica: Medianoche de un viernes, cuando las calles vibran con energía"
+        "Mejor momento: un viernes a partir de medianoche"
       ]},
       { tipo: "subtitulo", texto: "Belém: monumentos junto al agua" },
       { tipo: "parrafo", texto: "Desde aquí partieron las carabelas que expandieron el imperio portugués por medio mundo. Los Jerónimos, la Torre de Belém y el Padrão dos Descobrimentos conmemoran esa era de navegantes y exploradores. Es el Lisboa monumental, el de las postales históricas y los libros de texto." },
@@ -2256,7 +2257,7 @@ const articles: Record<string, Article> = {
         "Para quién: Amantes de la historia, familias con niños, días de paseo tranquilo",
         "Puntos fuertes: Monumentos impresionantes, paseo junto al río, Pastéis de Belém",
         "Puntos débiles: Alejado del centro (20 min en tranvía), poco ambiente nocturno",
-        "Hora mágica: Mañana temprano, antes de que lleguen los autobuses turísticos"
+        "Mejor momento: temprano, antes de que lleguen los autobuses turísticos"
       ]},
       { tipo: "subtitulo", texto: "Príncipe Real: el barrio que todo el mundo querría como vecino" },
       { tipo: "parrafo", texto: "Si Lisboa tuviera un barrio de revista de tendencias, sería este. Tiendas de diseño portugués, cafeterías de especialidad, restaurantes con carta de autor, boutiques de moda sostenible... Príncipe Real concentra lo más contemporáneo de la ciudad sin perder el encanto de los edificios centenarios." },
@@ -2266,7 +2267,7 @@ const articles: Record<string, Article> = {
         "Para quién: Hipsters, foodies, viajeros LGTB+, estancias largas, nómadas digitales",
         "Puntos fuertes: Tiendas y restaurantes de diseño, jardín precioso, ambiente tolerante",
         "Puntos débiles: Precios más altos, alejado de monumentos principales, cuestas para llegar",
-        "Hora mágica: Domingo a mediodía, brunch en cualquier terraza del jardín"
+        "Mejor momento: domingo a mediodía, en alguna terraza junto al jardín"
       ]},
       { tipo: "subtitulo", texto: "Cómo elegir tu barrio base" },
       { tipo: "parrafo", texto: "Si es tu primera vez y tienes pocos días, Baixa-Chiado te permite moverte con facilidad y ver lo esencial sin complicaciones. Si vienes a enamorarte de Lisboa, Alfama tiene la magia que buscas aunque cueste algunas cuestas. Si la noche es tu prioridad, Bairro Alto no tiene rival. Y si prefieres un Lisboa más contemporáneo y tranquilo, Príncipe Real te espera." },
@@ -2468,7 +2469,7 @@ const articles: Record<string, Article> = {
     ],
     contenido: [
       { tipo: "parrafo", texto: "Hay una imagen que se repite cada mañana frente al número 84-92 de la Rua de Belém: decenas de personas formando una cola que serpentea por la acera, consultando relojes, estirando cuellos para calcular cuánto falta. Desde 1837, la Fábrica dos Pastéis de Belém lleva provocando esta escena con un producto aparentemente simple: un hojaldre crujiente relleno de crema de huevo." },
-      { tipo: "parrafo", texto: "Pero llamarlo 'simple' sería injusto. La receta original, creada por los monjes del Monasterio de los Jerónimos antes de la extinción de las órdenes religiosas, permanece guardada bajo siete llaves. Solo tres personas en el mundo conocen la fórmula completa, y nunca viajan juntas por si ocurriera una desgracia. El secreto lleva casi dos siglos transmitiéndose de maestro a aprendiz, y la empresa defiende que jamás ha sido replicado con exactitud." },
+      { tipo: "parrafo", texto: "Pero llamarlo 'simple' sería injusto. La receta original, creada por los monjes del Monasterio de los Jerónimos antes de la extinción de las órdenes religiosas, se sigue guardando en secreto. Según la propia casa, solo la conocen los maestros pasteleros que trabajan en la «oficina do segredo», la sala cerrada donde se prepara. Lo de que solo la saben tres personas que nunca viajan juntas es una leyenda que se repite mucho, pero la casa no lo confirma." },
       { tipo: "enlace", texto: "La ficha de la pastelería reúne la ubicación y los datos prácticos para combinar la parada con los monumentos de Belém.", href: "/actividades/pasteis-de-belem", label: "Planificar la visita a Pastéis de Belém" },
       { tipo: "subtitulo", texto: "Pastel de Belém versus pastel de nata: no son lo mismo" },
       { tipo: "parrafo", texto: "Esta distinción genera confusión entre los visitantes, pero los portugueses la tienen clarísima. Pastel de nata es el nombre genérico del dulce: base de hojaldre, crema de huevo, toque caramelizado arriba. Puedes encontrarlo en cualquier pastelería del país, con calidades que van de lo sublime a lo industrial." },
@@ -2477,7 +2478,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Cómo funciona la cola (y cómo esquivarla)" },
       { tipo: "parrafo", texto: "El local tiene dos colas separadas que la mayoría de visitantes no distingue. La cola exterior, la que serpentea por la calle, es para comprar pasteles para llevar. Aquí puedes pedir una caja de seis, doce o más unidades, pagar, y marcharte. Suele moverse relativamente rápido porque las transacciones son breves." },
       { tipo: "parrafo", texto: "La otra cola, menos visible, da acceso al salón interior. Aquí te sientas, te traen los pasteles calientes en un plato con los dispensadores de canela y azúcar, y puedes acompañarlos de café, zumo o incluso un vino de Madeira si te sientes decadente a media mañana. Esta cola paradójicamente suele ser más corta, porque muchos visitantes no saben que existe." },
-      { tipo: "parrafo", texto: "Mi recomendación: olvida la cola de la calle y ve directo al salón. Sí, tardarás un poco más en ser atendido una vez sentado, pero la experiencia es infinitamente superior. Además, los pasteles del salón vienen recién salidos del horno, mientras que los de llevar pueden llevar unos minutos en la vitrina." },
+      { tipo: "parrafo", texto: "Si vas a comerlos allí, no hagas la cola de la calle, que es la de llevar: entra directo a las salas. Una vez sentado tardan algo más en servirte, pero el precio es el mismo (1,60 € el pastel)." },
       { tipo: "subtitulo", texto: "Los horarios que los lisboetas conocen" },
       { tipo: "parrafo", texto: "Abre todos los días de 08:00 a 21:00; del 1 de julio al 30 de septiembre cierra a las 22:00, y el 24, 25 y 31 de diciembre y el 1 de enero cierra a las 19:00. Pero no todas las horas son iguales. El pico máximo de afluencia ocurre entre las once de la mañana y las cuatro de la tarde, cuando coinciden los grupos organizados que visitan el monasterio, las familias que vienen de excursión, y los cruceristas que desembarcan en masa." },
       { tipo: "parrafo", texto: "Las ventanas de tranquilidad son predecibles: primera hora de la mañana (entre ocho y nueve y media) y última hora de la tarde (a partir de las siete). Entre semana siempre hay menos gente que los fines de semana. Y los días de lluvia, curiosamente, son los mejores: muchos visitantes cancelan planes de exterior, y el local queda sorprendentemente vacío para lo habitual." },
@@ -3216,7 +3217,7 @@ const articles: Record<string, Article> = {
         "Cuándo: olas gigantes entre octubre y marzo; playa en verano"
       ]},
       { tipo: "subtitulo", texto: "6. Évora: la parada romana y medieval" },
-      { tipo: "parrafo", texto: "Évora es la excursión que casi nadie hace y la que más sorprende. Es Patrimonio de la Humanidad y tiene, dentro de la muralla, un templo romano del siglo I en pie, una catedral gótica que se puede subir hasta el tejado, y la Capela dos Ossos, forrada con los huesos de unos cinco mil monjes y un letrero en la entrada que traduce: «nosotros, los huesos que aquí estamos, por los vuestros esperamos»." },
+      { tipo: "parrafo", texto: "Évora es la excursión que casi nadie hace y la que más sorprende. Es Patrimonio de la Humanidad y tiene, dentro de la muralla, un templo romano del siglo I en pie, una catedral gótica que se puede subir hasta el tejado, y la Capela dos Ossos, forrada con los huesos de unas cinco mil personas, sacados de los cementerios de iglesias y conventos de la ciudad y un letrero en la entrada que traduce: «nosotros, los huesos que aquí estamos, por los vuestros esperamos»." },
       { tipo: "parrafo", texto: "Está en pleno Alentejo, así que el viaje es más largo y el paisaje cambia por completo: llanura, alcornoques y olivos. Se llega en autobús o en tren, y necesita día completo. Si tienes cuatro días en Lisboa y ya has hecho Sintra, esta es la segunda." },
       { tipo: "lista", items: [
         "Cómo llegar: autobús desde Sete Rios o tren desde Oriente",
@@ -3525,16 +3526,19 @@ const articles: Record<string, Article> = {
     categoria: "Cultura",
     fecha: "18 Mar 2026",
     minutos: 15,
+    fuentes: [
+      { label: "Lisboa Interativa (CML) — O terramoto de 1 de novembro de 1755", href: "https://geo.lisboa.pt/atividades-e-difusao/investigacao/detalhe/o-terramoto-de-1-de-novembro-de-1755" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "El 1 de noviembre de 1755 era Día de Todos los Santos. A las 9:40 de la mañana, las iglesias de Lisboa estaban llenas. La ciudad era una de las más ricas del mundo: sus almacenes guardaban especias de India, su bahía rebosaba barcos cargados de oro brasileño, sus iglesias tenían techos dorados. En ese momento exacto, la tierra empezó a moverse. Y no paró durante diez minutos." },
-      { tipo: "parrafo", texto: "Lo que pasó en las siguientes horas —el terremoto, el tsunami, el incendio de cinco días— destruyó el 85% de la ciudad y mató a entre 30.000 y 60.000 personas. Pero la historia del terremoto de Lisboa no termina en la catástrofe. Termina en la reconstrucción más rápida y moderna de la historia europea, y en un debate filosófico que todavía hoy no tiene respuesta definitiva." },
+      { tipo: "parrafo", texto: "Lo que pasó en las siguientes horas —el terremoto, el tsunami, el incendio de cinco días— arrasó buena parte de la ciudad y mató a miles de personas. Pero la historia del terremoto de Lisboa no termina en la catástrofe. Termina en la reconstrucción más rápida y moderna de la historia europea, y en un debate filosófico que todavía hoy no tiene respuesta definitiva." },
       { tipo: "subtitulo", texto: "El Día más Oscuro: 1 de Noviembre de 1755" },
       { tipo: "parrafo", texto: "Era el Día de Todos los Santos. Prácticamente toda la población católica de Lisboa estaba en misa cuando el primer temblor sacudió la ciudad a las 9:40. Los testigos describen un rugido sordo que vino de bajo tierra, seguido de tres sacudidas violentas durante nueve o diez minutos. Las iglesias, llenas de fieles, se derrumbaron. Los palacios se agrietaron. Las calles se abrieron." },
       { tipo: "parrafo", texto: "Pero lo peor estaba por llegar. El terremoto generó un tsunami que llegó al estuario del Tajo unos cuarenta minutos después. Una ola de seis metros entró por el río y barrió el barrio de Belém y la orilla del Tajo. Quienes habían sobrevivido al terremoto corriendo hacia el río para alejarse de los edificios fueron engullidos por el agua." },
       { tipo: "parrafo", texto: "Luego llegaron los incendios. Las velas encendidas en los altares durante la misa, las cocinas que ardían preparando el festín de Todos los Santos, los braseros encendidos por el frío de noviembre... En ausencia de suministro de agua (la red de tuberías se había destruido), los incendios ardieron durante cinco días. La Lisboa medieval, con sus edificios de madera y sus calles estrechas, fue consumida por el fuego." },
       { tipo: "subtitulo", texto: "Las Cifras de la Tragedia" },
-      { tipo: "parrafo", texto: "Los historiadores debaten todavía las cifras exactas, pero los cálculos más aceptados hablan de entre 30.000 y 60.000 muertos solo en Lisboa, de una población de aproximadamente 200.000 habitantes. Algunos cálculos llegan hasta 100.000 si se incluyen las víctimas del tsunami en la costa algarvia y en Marruecos, donde también causó daños enormes." },
-      { tipo: "parrafo", texto: "El 85% de los edificios de Lisboa quedó destruido o gravemente dañado. Desaparecieron bajo los escombros la mayoría de las grandes bibliotecas con manuscritos únicos, archivos históricos, colecciones de arte reunidas durante siglos, y decenas de iglesias con siglos de historia. Es imposible calcular lo que se perdió en términos de patrimonio cultural e histórico." },
+      { tipo: "parrafo", texto: "Los historiadores todavía no se ponen de acuerdo en la cifra. Joaquim José Moreira de Mendonça, que vivió el terremoto, contó unos 10.000 muertos en Lisboa (5.000 ese mismo día y otros 5.000 durante noviembre), en una ciudad de unos 200.000 habitantes; otras estimaciones posteriores la elevan por encima de 30.000. Fuera de Lisboa, el tsunami también causó víctimas en el Algarve, en Cádiz y en la costa de Marruecos." },
+      { tipo: "parrafo", texto: "El incendio arrasó cerca de un tercio de la ciudad y dos tercios de las casas quedaron inhabitables. Desaparecieron bajo los escombros la mayoría de las grandes bibliotecas con manuscritos únicos, archivos históricos, colecciones de arte reunidas durante siglos, y decenas de iglesias con siglos de historia. Es imposible calcular lo que se perdió en términos de patrimonio cultural e histórico." },
       { tipo: "subtitulo", texto: "Pombal: El Hombre que Rehízo Lisboa" },
       { tipo: "parrafo", texto: "La leyenda dice que cuando el rey José I preguntó a su primer ministro, Sebastião José de Carvalho e Melo (más conocido como el Marqués de Pombal), qué debía hacerse, este respondió: 'Enterrar a los muertos y cuidar a los vivos'. Acertada o no, la anécdota captura perfectamente el pragmatismo de Pombal." },
       { tipo: "parrafo", texto: "Pombal organizó en días lo que hubiera tardado años en cualquier otra administración de la época. Militarizó la ciudad para evitar el saqueo. Instaló campos de refugiados en las colinas. Creó brigadas para enterrar los cadáveres (algunos fueron enterrados en el mar para evitar epidemias). Y luego se puso a diseñar la nueva Lisboa." },
@@ -3619,13 +3623,14 @@ const articles: Record<string, Article> = {
   },
   "novedades-lisboa-2026": {
     titulo: "Lisboa 2026: Todas las Novedades para Viajeros",
-    descripcion: "Nuevas atracciones, restaurantes que abren, cambios en el transporte y eventos imperdibles. La guía de novedades más completa para visitar Lisboa en 2026.",
+    descripcion: "Qué cambia en Lisboa en 2026: museos, reapertura de la Torre de Belém, transporte y los eventos del año, con lo que conviene comprobar antes de viajar.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "El Parque das Nações al anochecer, con sus torres de oficinas junto al agua",
     categoria: "Planificación",
     fecha: "10 Mar 2026",
     minutos: 11,
     fuentes: [
+      { label: "Museus e Monumentos de Portugal — Reapertura de la Torre de Belém", href: "https://www.museusemonumentos.pt/pt/noticia-com/torre-de-belem-reabre-ao-publico" },
       { label: "Metro de Lisboa — Prolongamento da linha Vermelha a Alcântara (previsto 2030)", href: "https://projetos.metrolisboa.pt/expansao/linha-vermelha/" },
       { label: "Público — La Linha Circular abrirá en el 1.er trimestre de 2027", href: "https://www.publico.pt/2026/03/31/local/noticia/abertura-linha-circular-metro-lisboa-sera-trimestre-2027-2169843" },
       { label: "MNAC — Horarios y entradas (gratuidad solo para residentes)", href: "https://museuartecontemporanea.gov.pt/pt/informacao/horarios-e-ingresso" },
@@ -3634,15 +3639,16 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Lisboa en 2026 no es la misma que hace cinco años. La ciudad ha cambiado con más rapidez de lo que la mayoría de los viajeros imagina: nuevos barrios en transformación, museos renovados, cambios en el transporte, y una escena gastronómica que no para de sorprender. Si viniste hace dos o tres años, esta guía te dará motivos para volver. Si es tu primera vez, aquí están todas las novedades que hacen de 2026 un año especialmente bueno para visitar Lisboa." },
       { tipo: "subtitulo", texto: "Nuevas Atracciones y Museos" },
       { tipo: "parrafo", texto: "El Museu Nacional de Arte Contemporânea, en el Chiado, es la parada para ver arte portugués moderno y contemporáneo sin salir del centro. Abre de martes a domingo de 10:00 a 18:00 y la entrada cuesta 10 €. Ojo: ya no hay domingos gratis para turistas; los 52 días gratis al año son solo para portugueses y residentes en Portugal." },
-      { tipo: "parrafo", texto: "En Belém, el Museu de Arte, Arquitectura e Tecnologia (MAAT) tiene en 2026 su programación más ambiciosa, con exposiciones que combinan arte digital, arquitectura sostenible y tecnología. El edificio en sí —una construcción baja y curva junto al Tajo, con una cubierta por la que se puede caminar— es ya un icono de la arquitectura contemporánea de Lisboa." },
+      { tipo: "parrafo", texto: "En Belém, el Museu de Arte, Arquitectura e Tecnologia (MAAT) programa exposiciones temporales de arte, arquitectura y tecnología. El edificio —bajo y curvo junto al Tajo, con una cubierta por la que se puede caminar— se ve desde todo el paseo." },
+      { tipo: "parrafo", texto: "También en Belém, la Torre de Belém reabrió el 27 de mayo de 2026 después de casi un año de obras. La entrada ahora va por franjas horarias, con un máximo de unas 900 personas al día (60 por franja), de martes a domingo de 9:30 a 17:30 y última entrada a las 17:00. Reserva la franja antes de ir." },
       { tipo: "subtitulo", texto: "Gastronomía: Lo Nuevo en 2026" },
       { tipo: "parrafo", texto: "La escena gastronómica de Lisboa lleva años en ebullición y 2026 no es excepción. La tendencia más marcada es la de chefs portugueses jóvenes que reinterpretan la cocina tradicional con técnicas contemporáneas, usando ingredientes locales y de temporada. El barrio de Mouraria, durante años olvidado turísticamente, se ha convertido en el epicentro de esta nueva gastronomía: en sus calles coexisten tascas de toda la vida con restaurantes de nueva generación." },
-      { tipo: "parrafo", texto: "LX Factory, el espacio industrial reconvertido en Alcântara, ha incorporado nuevos restaurantes y bares en sus naves con vistas al Puente 25 de Abril. El Mercado de Arroios, en expansión desde 2023, tiene en 2026 más de veinte puestos de productores locales además de su restaurante de menú. Y en Parque das Nações, varios restaurantes junto al río han renovado carta con énfasis en el pescado fresco del Atlántico." },
+      { tipo: "parrafo", texto: "LX Factory, el espacio industrial reconvertido en Alcântara, ha incorporado nuevos restaurantes y bares en sus naves con vistas al Puente 25 de Abril. Y en Parque das Nações, varios restaurantes junto al río han renovado carta con énfasis en el pescado fresco del Atlántico." },
       { tipo: "subtitulo", texto: "Cambios en el Transporte en 2026" },
       { tipo: "parrafo", texto: "En el Metro no hay estaciones nuevas en 2026. La próxima novedad es la línea circular (Rato–Cais do Sodré, con dos estaciones nuevas, Estrela y Santos), que el Metro prevé inaugurar en el primer trimestre de 2027. La llegada a Alcântara será con la prolongación de la línea roja desde São Sebastião, prevista para 2030. Hasta entonces, a LX Factory se va en tren desde Cais do Sodré, en tranvía 15E o en autobús." },
-      { tipo: "parrafo", texto: "El sistema de bicicletas eléctricas compartidas (Gira) ha ampliado su red hasta cubrir prácticamente toda la ciudad dentro de las Avenidas Novas. La aplicación mejorada de 2025 facilita localizar y reservar bicicletas. Para distancias medias en terreno llano (Baixa, Belém, Parque das Nações), la bicicleta eléctrica es hoy la opción más rápida y barata." },
-      { tipo: "subtitulo", texto: "Eventos Imperdibles en 2026" },
-      { tipo: "parrafo", texto: "El gran evento del año en Lisboa es la NOS Alive, el festival de música que se celebra en Algés cada julio con artistas internacionales de primer nivel. Las entradas se agotan meses antes. En junio, las Festas de Lisboa transforman todos los barrios históricos en escenarios de conciertos, marchas populares y arraiais (verbenas de barrio): es el mejor momento del año para sentir la Lisboa más auténtica y festiva." },
+      { tipo: "parrafo", texto: "Lisboa tiene un sistema de bicicletas compartidas, Gira, con estaciones repartidas por buena parte de la ciudad; se usa desde su aplicación. Para distancias medias en terreno llano (Baixa, Belém, Parque das Nações), la bicicleta eléctrica es hoy la opción más rápida y barata." },
+      { tipo: "subtitulo", texto: "Eventos de 2026" },
+      { tipo: "parrafo", texto: "El festival grande del año es NOS Alive, en el Passeio Marítimo de Algés: en 2026 se celebró del 9 al 11 de julio. En junio, las Festas de Lisboa llenan los barrios históricos de conciertos, marchas populares y arraiais (verbenas de barrio)." },
       { tipo: "parrafo", texto: "Para los amantes de la cultura, el Doclisboa (festival de cine documental, octubre) y el Jazz em Agosto (Fundação Gulbenkian, agosto) son los eventos más recomendables del otoño-verano. Y para los amantes del running, la Maratona de Lisboa en octubre ofrece una de las rutas más espectaculares de Europa: el recorrido pasa por Belém, el Chiado y la orilla del Tajo." },
       { tipo: "subtitulo", texto: "Alojamiento: Nuevas Opciones en 2026" },
       { tipo: "parrafo", texto: "El mapa de alojamiento en Lisboa ha cambiado. Los precios en el centro histórico (Alfama, Chiado, Baixa) siguen siendo los más altos, pero barrios como Penha de França, Mouraria alta, Arroios e Intendente ofrecen opciones más económicas con transporte excelente al centro. El Airbnb tiene restricciones desde 2023 en zonas residenciales protegidas, lo que ha reducido la oferta pero también ha frenado la turistificación extrema de algunos barrios." },
@@ -3659,6 +3665,7 @@ const articles: Record<string, Article> = {
     fecha: "8 Mar 2026",
     minutos: 12,
     fuentes: [
+      { label: "NOS Alive 2026 — web oficial", href: "https://nosalive.com/" },
       { label: "Visit Lisboa — Mercado de Natal no Rossio (edición 2025)", href: "https://www.visitlisboa.com/pt-pt/eventos/mercado-de-natal-no-rossio" },
     ],
     contenido: [
@@ -3674,7 +3681,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "La noche del 12 al 13 de junio es la gran noche de Santo António, patrón de Lisboa. Es el Día de San Juan y San Pedro en España, pero en versión lisboeta: las calles del barrio histórico se llenan hasta la imposibilidad de circular. Los manjericos (pequeñas plantas de albahaca decoradas con un poema y un clavel rojo) se regalan como símbolo de amor. Las sardinhas assadas —sardinas a la brasa— llenan el aire de un olor inconfundible. El ambiente es extraordinario, aunque caótico para quien no lo espera." },
       { tipo: "tip", texto: "Para la noche de Santo António (12 junio), llega a Alfama o Mouraria antes de las 20:00 para conseguir mesa en un arraial. Después de las 22:00, las calles están llenas hasta el punto de ser difícil moverse. Lleva calzado cómodo y prepárate para no cenar hasta las 23:00." },
       { tipo: "subtitulo", texto: "Julio - Agosto: Festivales de Música" },
-      { tipo: "parrafo", texto: "El verano lisboeta es la temporada de los grandes festivales de música al aire libre. NOS Alive (julio, Algés) es el más importante: tres días con artistas internacionales de primer nivel, capacidad para 50.000 personas y una combinación de stages que va desde el indie y el rock hasta el hip-hop y la electrónica. En 2026 la programación no está todavía completa, pero las últimas ediciones han incluido artistas como Arctic Monkeys, Billie Eilish y Stromae." },
+      { tipo: "parrafo", texto: "El verano lisboeta es la temporada de los grandes festivales de música al aire libre. NOS Alive (julio, Passeio Marítimo de Algés) es el más importante: tres días con varios escenarios, del indie y el rock a la electrónica. La edición de 2026 fue del 9 al 11 de julio, con Foo Fighters, Florence + The Machine, Nick Cave & The Bad Seeds y Pixies, entre otros. Las fechas de 2027 se anuncian en nosalive.com." },
       { tipo: "parrafo", texto: "Jazz em Agosto (Fundação Gulbenkian, agosto) es el festival para los amantes del jazz: dos semanas de conciertos en el jardín del museo Gulbenkian, con programación de artistas internacionales de altísimo nivel. La combinación del jardín (uno de los más bellos de Lisboa) con la música en directo es incomparable." },
       { tipo: "subtitulo", texto: "Septiembre - Diciembre: Otoño Cultural" },
       { tipo: "parrafo", texto: "Septiembre marca el regreso de los lisboetas de las vacaciones y un otoño cultural intenso. La Doclisboa (festival de cine documental, octubre) es uno de los mejores festivales de documentales del mundo en términos de programación." },
@@ -3956,12 +3963,12 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "El leitão (lechón asado) es el plato festivo por excelencia, especialmente en la región de Bairrada al norte del país. En Lisboa se encuentra en algunas tascas especializadas. La carne de porco à alentejana —cerdo con almejas, tomate y cilantro— es la combinación más sorprendente de la cocina portuguesa: un plato de interior con producto de la costa que funciona de manera inexplicable." },
       { tipo: "subtitulo", texto: "Dulces y Pastelería — El Legado Conventual" },
       { tipo: "parrafo", texto: "La pastelería portuguesa tiene un origen muy específico: los conventos. Durante siglos, las monjas portuguesas utilizaban las claras de huevo para almidonar la ropa del clero, y con las yemas sobrantes desarrollaron una pastelería de azúcar y huevo extraordinariamente rica. Queijadas, barrigas de freira, papos de anjo, toucinho do céu... Los nombres son tan evocadores como los sabores." },
-      { tipo: "parrafo", texto: "Los ovos moles de Aveiro (cápsulas de oblea rellenas de crema de yema) son el souvenir gastronómico más deseado del país. Los travesseiros de Sintra, los queijadas de Sintra, los pastéis de Tentúgal... cada región tiene su especialidad conventual. En Lisboa, la pastelería A Brasileira en el Chiado es histórica aunque turística; para pastelería de verdad, busca cualquier pastelería de barrio." },
+      { tipo: "parrafo", texto: "Los ovos moles de Aveiro (cápsulas de oblea rellenas de crema de yema) son el souvenir gastronómico más deseado del país. Los travesseiros de Sintra, los queijadas de Sintra, los pastéis de Tentúgal... cada región tiene su especialidad conventual. En Lisboa, el café A Brasileira (1905), en el Chiado, es histórico aunque turístico; para pastelería de verdad, busca cualquier pastelería de barrio." },
       { tipo: "subtitulo", texto: "Dónde Comer Bien en Lisboa — Por Tipo de Plato" },
       { tipo: "lista", items: [
         "Pastéis de nata: Pastéis de Belém (histórico, siempre con cola), o cualquier Manteigaria en Chiado/Príncipe Real",
-        "Bacalhau: A Cevicheria (versión moderna), Solar dos Presuntos (tradicional, cara pero vale), o cualquier tasca con menú del día",
-        "Marisco: Cervejaria Ramiro si tienes presupuesto, o el mercado de Arroios para opciones más económicas",
+        "Bacalhau: Solar dos Presuntos (tradicional, cara) o cualquier tasca con menú del día",
+        "Marisco: Cervejaria Ramiro si tienes presupuesto; para algo más económico, una marisquería de barrio con precio por kilo a la vista",
         "Sardinas: solo en junio durante las festas, en cualquier arraial de barrio",
         "Pastelería conventual: Confeitaria Nacional en Praça da Figueira (desde 1829)"
       ]}
@@ -4288,11 +4295,14 @@ const articles: Record<string, Article> = {
     categoria: "Gastronomía",
     fecha: "13 Mar 2026",
     minutos: 11,
+    fuentes: [
+      { label: "Norwegian Seafood Council — mercado del bacalao en Portugal", href: "https://seafood.no/landsider/portugal/" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "Hay una paradoja en el corazón de la cocina portuguesa: el plato nacional de un país con 850 kilómetros de costa atlántica es un pescado que viene de Noruega y Terranova. El bacalhau —bacalao salado y secado— no es un pescado fresco del Atlántico ibérico. Es el resultado de cinco siglos de historia marítima que empezó cuando los pescadores portugueses cruzaron el Atlántico en el siglo XV para pescar en los bancos de Terranova y Labrador, y resolvieron el problema de la conservación salando el pescado directamente en el barco." },
-      { tipo: "parrafo", texto: "Hoy Portugal importa más del 80% del bacalao que consume de Noruega e Islandia. Y sin embargo el bacalhau sigue siendo el ingrediente más consumido del país, el plato más cargado de significado cultural, y el objeto de un orgullo culinario que a veces raya el chauvinismo. 'Temos 365 receitas de bacalhau, uma por cada dia do ano' es una frase que escuchas en cualquier conversación sobre gastronomía portuguesa." },
+      { tipo: "parrafo", texto: "Hay una paradoja en el corazón de la cocina portuguesa: el plato nacional de un país con 850 kilómetros de costa atlántica es un pescado que viene de Noruega y Terranova. El bacalhau —bacalao salado y secado— no es un pescado fresco del Atlántico ibérico. Es el resultado de cinco siglos de historia marítima que empezó cuando los pescadores portugueses cruzaron el Atlántico a principios del siglo XVI para pescar en los bancos de Terranova y Labrador, y resolvieron el problema de la conservación salando el pescado directamente en el barco." },
+      { tipo: "parrafo", texto: "Hoy casi todo el bacalao que se consume en Portugal es importado: según el Consejo Noruego de Productos del Mar, Noruega cubre alrededor del 62% del mercado, Islandia un 15% y Rusia un 10%. Y sin embargo el bacalhau sigue siendo el ingrediente más consumido del país, el plato más cargado de significado cultural, y el objeto de un orgullo culinario que a veces raya el chauvinismo. 'Temos 365 receitas de bacalhau, uma por cada dia do ano' es una frase que escuchas en cualquier conversación sobre gastronomía portuguesa." },
       { tipo: "subtitulo", texto: "La Historia: Del Atlántico Norte a la Mesa Portuguesa" },
-      { tipo: "parrafo", texto: "Los pescadores portugueses llegaron a los bancos de Terranova antes que ningún otro europeo, posiblemente en la década de 1470, antes del viaje oficial de Cabral a Brasil en 1500. Lo que encontraron fue una abundancia de bacalao tan extraordinaria que los primeros cronistas escribían que el mar estaba 'lleno de peces hasta poder caminar sobre ellos'." },
+      { tipo: "parrafo", texto: "Los pescadores portugueses empezaron a faenar en los bancos de Terranova a principios del siglo XVI, poco después de los viajes de los hermanos Corte-Real (1500-1502). Lo que encontraron fue una abundancia de bacalao tan extraordinaria que los primeros cronistas escribían que el mar estaba 'lleno de peces hasta poder caminar sobre ellos'." },
       { tipo: "parrafo", texto: "El problema era la distancia: Terranova está a dos meses de navegación. La solución fue la salazón: el bacalao salado y secado podía conservarse durante meses y aguantaba el viaje de vuelta sin estropearse. Durante los siglos de los descubrimientos, el bacalhau fue la proteína que alimentó a los marineros en los viajes más largos de la historia. Cuando volvían, lo traían también para vender. Y así se convirtió en alimento cotidiano." },
       { tipo: "subtitulo", texto: "Las Recetas Imprescindibles" },
       { tipo: "lista", items: [
@@ -4305,7 +4315,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Cómo Reconocer el Bacalhau de Calidad" },
       { tipo: "parrafo", texto: "El bacalhau se vende en varias calidades: o bacalhau graúdo (el más caro, lombo grueso de bacalao grande), o bacalhau corrente (talla media, lo que comes en la mayoría de tascas), y o bacalhau miúdo (pequeño y fino, para las pataniscas y el bacalhau à brás). El mejor bacalao es siempre el que tiene un color uniforme crema-amarillento, sin manchas oscuras, y una textura densa al tacto." },
       { tipo: "parrafo", texto: "En los supermercados portugueses hay siempre una sección entera de bacalao salado. Los mejores establecimientos especializados son las bacalhoeiros (bacalajeros) del Mercado da Ribeira y del Mercado do Bolhão en Oporto. En casa, el bacalao salado hay que desalarlo en agua fría durante 24-48 horas cambiando el agua cada 8 horas." },
-      { tipo: "tip", texto: "Para comer el mejor bacalhau à brás de Lisboa sin pagar precio de restaurante turístico: ve al Mercado de Arroios al mediodía y pide el prato do dia en el restaurante del mercado. Sale por 7-8€ y es comida hecha esa mañana." }
+      { tipo: "tip", texto: "Para comer bacalhau sin pagar precio de restaurante turístico, busca una tasca de barrio a mediodía y mira si el prato do dia es de bacalao: el precio está en la pizarra de la puerta." }
     ]
   },
   "arquitectura-manuelina-lisboa": {

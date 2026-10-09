@@ -24,7 +24,10 @@ export const metadata = {
   title: 'Qué ver en Lisboa en 1 día: itinerario y mapa',
   description: 'Qué ver en Lisboa en 1 día: ruta por Alfama, castillo, Baixa, Belém y más, con horarios, orden de paradas y mapa para aprovechar el día sin correr.',
   keywords: ['que ver en lisboa en un dia', 'lisboa 1 dia', 'itinerario lisboa 1 dia', 'mapa lisboa 1 dia'],
-  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
+  openGraph: {
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial',
+    images: [{ url: 'https://estabaenlisboa.com/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg', alt: 'Una calle de Alfama, en Lisboa' }],
+  },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial' },
 };
 

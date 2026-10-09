@@ -34,7 +34,10 @@ export const metadata = {
   title: 'Lisboa en 2 Días: Itinerario Completo 2026',
   description: DESCRIPCION,
   keywords: ['lisboa 2 dias', 'itinerario lisboa dos dias', 'belem alfama chiado'],
-  openGraph: { url: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo' },
+  openGraph: {
+    url: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo',
+    images: [{ url: 'https://estabaenlisboa.com/images/tranvia-28.jpg', alt: 'El tranvía 28 en Lisboa' }],
+  },
   alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo' },
 };
 

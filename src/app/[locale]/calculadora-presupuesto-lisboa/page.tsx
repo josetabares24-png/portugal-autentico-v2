@@ -1276,7 +1276,7 @@ summary::-webkit-details-marker { display: none; }
 
           <p className="mt-8 border-l-2 border-border-soft pl-4 font-body text-[13px] leading-relaxed text-text-secondary">
             Con el presupuesto ya en la cabeza, el siguiente paso es el itinerario:{' '}
-            <Link href="/pack-completo" className="text-terracotta underline-offset-2 hover:underline">
+            <Link href="/itinerarios" className="text-terracotta underline-offset-2 hover:underline">
               elige según los días que tengas
             </Link>
             .

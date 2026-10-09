@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Comprar entradas en Lisboa: precios y reservas',
     description:
-      'Ocho reservas útiles, con criterio local, precio y disponibilidad en el proveedor antes de pagar.',
+      'Diez reservas útiles, con criterio local, precio y disponibilidad en el proveedor antes de pagar.',
     url: 'https://estabaenlisboa.com/comprar-entradas',
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',

@@ -13,7 +13,7 @@ const faqs = [
       },
       {
         question: '¿Puedo usar el itinerario sin internet?',
-        answer: 'Sí. Puedes descargar mapas offline, coordenadas GPS y un checklist en formato PNG para usarlo sin conexión. Recomendamos descargar estos recursos antes de viajar para tenerlos disponibles siempre.',
+        answer: 'No hay una versión descargable. Cada parada lleva su enlace a Google Maps: si antes de salir guardas la zona de Lisboa como mapa sin conexión en la app de Google Maps, podrás orientarte sin datos.',
       },
       {
         question: '¿Necesito crear una cuenta?',
@@ -26,7 +26,7 @@ const faqs = [
     questions: [
       {
         question: '¿Los precios de restaurantes son exactos?',
-        answer: 'Los precios son aproximados basados en nuestra última visita. Pueden variar ligeramente, pero te damos una idea muy cercana de lo que gastarás en cada lugar.',
+        answer: 'Son orientativos. Los precios de entradas y transporte se contrastan con las webs oficiales; los de restaurantes cambian más a menudo, así que tómalos como referencia y comprueba la carta al llegar.',
       },
       {
         question: '¿Los itinerarios están actualizados?',
@@ -34,7 +34,7 @@ const faqs = [
       },
       {
         question: '¿Incluye entradas a monumentos?',
-        answer: 'No, el itinerario no incluye entradas. Pero te indicamos precios exactos y dónde comprarlas online para evitar colas y ahorrar tiempo.',
+        answer: 'No, el itinerario no incluye entradas. Te indicamos el precio oficial y dónde comprarlas online. Algunos enlaces de reserva son de afiliado (GetYourGuide, Tiqets, GuruWalk).',
       },
     ],
   },

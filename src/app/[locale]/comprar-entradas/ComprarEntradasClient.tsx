@@ -11,7 +11,7 @@ const bookingRules = [
   {
     icon: Clock3,
     title: 'Reserva por tiempo',
-    text: 'Castelo, Oceanário y Pena son los que más pueden desordenarte el día si llegas sin hora.',
+    text: 'Castelo, Torre de Belém, Oceanário y Pena son los que más pueden desordenarte el día si llegas sin hora.',
   },
   {
     icon: TicketCheck,
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: '¿Qué entradas de Lisboa conviene comprar antes?',
     answer:
-      'El Castelo de São Jorge y el Oceanário son las reservas más fáciles de justificar dentro de Lisboa. Para una excursión a Sintra, la entrada del Palacio da Pena exige todavía más previsión porque funciona con una hora de acceso concreta.',
+      'El Castelo de São Jorge, el Oceanário y la Torre de Belém, que desde su reapertura en mayo de 2026 funciona por franjas horarias con aforo limitado, son las reservas más fáciles de justificar dentro de Lisboa. Para una excursión a Sintra, la entrada del Palacio da Pena exige todavía más previsión porque funciona con una hora de acceso concreta.',
   },
   {
     question: '¿La Lisboa Card compensa?',
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: '¿Los precios que veo aquí son definitivos?',
     answer:
-      'Cuando Tiqets nos facilita un precio actualizado lo mostramos como “Desde”, porque puede cambiar según la fecha, el horario y la modalidad elegida. El botón abre la ficha del proveedor con el importe y las condiciones definitivas antes de pagar.',
+      'Cuando Tiqets nos facilita un precio actualizado lo mostramos como “Desde”, porque puede cambiar según la fecha, el horario y la modalidad elegida. Donde pone “Taquilla oficial” es el precio de la web del monumento; el proveedor puede cobrar algo más por la gestión. El botón abre su ficha con el importe y las condiciones definitivas antes de pagar.',
   },
 ];
 
@@ -93,7 +93,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
         objectPosition="center 58%"
         eyebrow="Compra solo lo que compensa"
         title="Comprar entradas en Lisboa"
-        description="Ocho reservas útiles para evitar colas, asegurar una buena hora y pagar solo por lo que realmente cabe en tu viaje."
+        description="Diez reservas útiles para evitar colas, asegurar una buena hora y pagar solo por lo que realmente cabe en tu viaje."
         primaryHref="#catalogo"
         primaryLabel="Elegir y comprar entradas"
         secondaryHref="/free-tours-lisboa"
@@ -120,7 +120,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
               </h2>
             </div>
             <p className="max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Ocho opciones, no ochenta. Abre la que te interesa, elige fecha y
+              Diez opciones, no cien. Abre la que te interesa, elige fecha y
               completa la compra en Tiqets o GetYourGuide con el precio final visible
               antes de pagar.
             </p>

@@ -140,6 +140,22 @@ export interface BookableProduct {
   activitySlug?: string;
   /** Texto del botón. Se elige según la naturaleza del producto. */
   ctaLabel: string;
+  /**
+   * Precio de la taquilla oficial, comprobado en la web del monumento. Se
+   * pinta sólo cuando no hay precio en directo del proveedor, y siempre
+   * rotulado como «taquilla oficial»: el proveedor puede cobrar otra cosa,
+   * y el importe definitivo se ve en su ficha antes de pagar.
+   */
+  officialPrice?: {
+    /** Importe tal y como se pinta, p. ej. «17 €». */
+    amount: string;
+    /** Una línea con a quién se aplica o qué incluye. */
+    note?: string;
+    /** Web oficial donde se comprobó. */
+    sourceUrl: string;
+    /** Fecha de la comprobación, AAAA-MM-DD. */
+    verified: string;
+  };
 }
 
 /** Cuenta de partner de GetYourGuide. De ella depende la atribución. */
@@ -212,6 +228,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     },
     activitySlug: 'castelo-sao-jorge',
     ctaLabel: 'Comprar entrada al Castelo',
+    officialPrice: {
+      amount: '17 €',
+      note: 'Adultos. De 13 a 25 años, 8,50 €; mayores de 65, 14 €; gratis hasta 12.',
+      sourceUrl: 'https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket',
+      verified: '2026-10-09',
+    },
   },
   {
     id: 'sintra-palacio-pena',
@@ -257,17 +279,31 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     image: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
     imageAlt: 'Claustro del Monasterio de los Jerónimos en Belém',
     searchTerms: ['jeronimos', 'monasterio', 'mosteiro', 'claustro', 'belem', 'entrada'],
-    // Sin `hub`: de momento sólo da botón al artículo de entradas
-    // (monasterio-jeronimos-entradas). Proveedor real: Museus e Monumentos
-    // de Portugal; no reembolsable ni cambia de fecha (ficha Tiqets, 9/10/2026).
+    // Proveedor real: Museus e Monumentos de Portugal; no reembolsable ni
+    // cambia de fecha (ficha Tiqets, 9/10/2026). Desde el 9/10/2026 también
+    // está en `/comprar-entradas`, con su propia campaña.
+    hub: {
+      render: 'native-card',
+    },
     links: {
       article: {
         url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos',
         provider: 'tiqets',
         campaign: 'web_blog_jeronimos',
       },
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_jeronimos',
+        provider: 'tiqets',
+        campaign: 'web_hub_jeronimos',
+      },
     },
     ctaLabel: 'Comprar entrada a los Jerónimos',
+    officialPrice: {
+      amount: '18 €',
+      note: 'Claustro. La iglesia es gratis. Cierra los lunes.',
+      sourceUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo',
+      verified: '2026-10-09',
+    },
   },
   {
     id: 'jeronimos-torre-belem',
@@ -275,19 +311,33 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'tiqets',
     category: 'entradas',
     blurb:
-      'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día.',
+      'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día. La Torre entra por franjas horarias desde su reapertura en mayo de 2026.',
     kind: 'Entrada combinada',
     image: '/images/actividades/torre-de-belem-lisboa.webp',
     imageAlt: 'Torre de Belém junto al río Tajo',
     searchTerms: ['jeronimos', 'torre de belem', 'belem', 'combinada', 'entrada'],
+    hub: {
+      render: 'native-card',
+    },
     links: {
       article: {
         url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos_combo',
         provider: 'tiqets',
         campaign: 'web_blog_jeronimos_combo',
       },
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_jeronimos_combo',
+        provider: 'tiqets',
+        campaign: 'web_hub_jeronimos_combo',
+      },
     },
     ctaLabel: 'Comprar Jerónimos + Torre',
+    officialPrice: {
+      amount: '33 €',
+      note: 'Por separado: Jerónimos 18 € y Torre de Belém 15 €. Ambos cierran los lunes.',
+      sourceUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
+      verified: '2026-10-09',
+    },
   },
   {
     id: 'lisboa-card',

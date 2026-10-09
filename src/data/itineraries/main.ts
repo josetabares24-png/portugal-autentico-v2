@@ -13,7 +13,7 @@ export const mainItineraries: Itinerary[] = [
       'Mapa con puntos GPS y accesos',
       'Restaurantes locales por presupuesto',
       'Spots fotográficos con mejor luz',
-      'Tips locales y secretos de la ciudad'
+      'Consejos prácticos en cada parada'
     ],
     href: '/itinerarios/lisboa-1-dia-lo-esencial',
     featured: false,
@@ -26,7 +26,7 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-2-dias',
     slug: 'lisboa-2-dias-completo',
     title: 'Lisboa Completa',
-    description: 'Dos días redondos con Lisboa clásica y barrios con encanto, sin perder tiempo ni caer en trampas turísticas.',
+    description: 'Dos días: Alfama, el castillo y la Baixa el primero; Belém, LX Factory y fado el segundo.',
     duration: '2 días completos',
     image: '/images/funicular-bica-turistas.jpg',
     features: [
@@ -49,13 +49,13 @@ export const mainItineraries: Itinerary[] = [
     id: 'lisboa-3-dias',
     slug: 'lisboa-3-dias-premium',
     title: 'Lisboa + Alrededores',
-    description: 'Tres días completos con Lisboa, Sintra y la costa: rutas cerradas, logística clara y tiempos reales.',
+    description: 'Tres días: dos en Lisboa (centro y Belém) y uno en Sintra, con horarios y transporte resueltos.',
     duration: '3 días + Sintra',
     image: '/images/tranvia-28.jpg',
     features: [
       'Ruta completa de Lisboa en 2 días',
-      'Sintra con orden ideal de visita',
-      'Cascais y Cabo da Roca optimizados',
+      'Sintra con el orden de visita pensado',
+      'Belém y LX Factory en un día',
       'Consejos de transporte interurbano',
       'Ritmo equilibrado sin prisas'
     ],
@@ -125,7 +125,7 @@ export const specialItineraries: Itinerary[] = [
       'Parques y zonas de descanso',
       'Restaurantes kid-friendly',
       'Transporte sencillo con carrito',
-      'Tips locales y secretos de la ciudad'
+      'Consejos prácticos en cada parada'
     ],
     // La URL antigua redirige de forma permanente al artículo. Se apunta
     // directo al destino para que ningún enlace dependa del redirect.

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
     type: 'website',
+    images: [{ url: 'https://estabaenlisboa.com/images/alfama-panoramica.jpg', alt: 'Los tejados de Alfama y el río Tajo, en Lisboa' }],
   },
   alternates: {
     canonical: 'https://estabaenlisboa.com/actividades',
