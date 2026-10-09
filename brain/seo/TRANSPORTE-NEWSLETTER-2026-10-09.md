@@ -63,3 +63,14 @@ Hay que esperar a que la página esté publicada y tenga 28 días finalizados. D
 
 - `src/proxy.ts` excluye ahora `.pdf` del matcher. Sin ese cambio, next-intl reescribía `/que-reservar-antes-de-ir-a-lisboa.pdf` a `/es/...` y la URL daba 404.
 - El pie deja más espacio abajo en móvil (`pb-24`) para que el botón flotante de cookies no tape los enlaces legales.
+
+## Arreglo del 9/10/2026 por la tarde: Brevo rechaza la API key
+
+En producción, Brevo respondía «API Key is not enabled» y cada alta acababa en error, así que el lector no recibía el PDF. Desde este arreglo:
+
+- `/api/subscribe` responde `success: true, stored: false` cuando Brevo no guarda el contacto.
+- En ese caso envía a estabaenlisboa@gmail.com el email del lector, el artículo, el formulario, si marcó la casilla, la hora del consentimiento (UTC) y el texto aceptado. Usa la misma cadena que `/api/contact`, primero Brevo y luego SMTP, ahora en `src/lib/admin-notify.ts`.
+- Si tampoco sale ese email, los datos del alta quedan en el log de Vercel, con la etiqueta «ALTA NO GUARDADA NI ENVIADA».
+- El formulario abre el PDF solo con un enlace `download` del mismo origen y además muestra el botón «Descargar la lista (PDF)».
+
+**Pendiente de José:** reactivar o regenerar la API key en Brevo y añadir a mano a la lista 5 las altas que lleguen por email.

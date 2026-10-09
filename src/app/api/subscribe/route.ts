@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
 import { validateEmail, createErrorResponse, addBrevoContact } from '@/lib/api-utils';
+import { notifyAdmin } from '@/lib/admin-notify';
 
 const NEWSLETTER_LIST_ID = Number(process.env.BREVO_NEWSLETTER_LIST_ID || 5);
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://estabaenlisboa.com';
@@ -193,6 +194,50 @@ async function sendWelcomeEmail(email: string, name: string, leadMagnet?: LeadMa
   }
 }
 
+type Lead = {
+  email: string;
+  name: string;
+  slug: string;
+  placement: string;
+  consent: boolean;
+  consentAt: string;
+  consentText: string;
+  leadMagnet: string;
+};
+
+function cleanField(value: unknown, max: number) {
+  return typeof value === 'string' ? value.replace(/[\r\n]+/g, ' ').trim().slice(0, max) : '';
+}
+
+function leadNotification(lead: Lead) {
+  const rows: Array<[string, string]> = [
+    ['Email', lead.email],
+    ['Nombre', lead.name],
+    ['Artículo', lead.slug ? `${SITE_URL}/blog/${lead.slug}` : '(índice del blog)'],
+    ['Formulario', lead.placement],
+    ['Consentimiento marcado', lead.consent ? 'sí' : 'no (formulario sin casilla)'],
+    ['Fecha del consentimiento (UTC)', lead.consentAt],
+    ['Texto aceptado', lead.consentText || '(no enviado)'],
+    ['PDF', lead.leadMagnet || '(ninguno)'],
+  ];
+  const text = [
+    'Brevo no ha aceptado el alta (revisa la API key en Brevo). Añade este contacto a la lista de la newsletter a mano:',
+    '',
+    ...rows.map(([k, v]) => `${k}: ${v}`),
+  ].join('\n');
+  const html = `<div style="font-family:Arial,sans-serif;max-width:600px">
+<p>Brevo no ha aceptado el alta (revisa la API key en Brevo). Añade este contacto a la lista de la newsletter a mano:</p>
+<table cellpadding="6" style="border-collapse:collapse">${rows
+    .map(([k, v]) => `<tr><td style="color:#6F665D">${escapeHtml(k)}</td><td><strong>${escapeHtml(v)}</strong></td></tr>`)
+    .join('')}</table></div>`;
+  return {
+    subject: `[Newsletter] Alta pendiente de Brevo: ${lead.email}`,
+    text,
+    html,
+    replyTo: lead.email,
+  };
+}
+
 export async function POST(request: NextRequest) {
   const identifier = getRequestIdentifier(request);
   const rateLimitResult = await limitRequest(identifier);
@@ -219,31 +264,54 @@ export async function POST(request: NextRequest) {
       return createErrorResponse('Email no válido', 400);
     }
 
-    if (!process.env.BREVO_API_KEY) {
-      logger.error('[Subscribe] BREVO_API_KEY is not configured');
-      return NextResponse.json(
-        { success: false, message: 'No pudimos completar la suscripción. Inténtalo de nuevo más tarde.' },
-        { status: 503 }
-      );
-    }
-
-    // Capturing the subscriber is the primary business action. The welcome
-    // email is useful, but a failed welcome email must never turn a stored
-    // subscriber into a false failure — or an unstored address into false success.
-    const contactResult = await addBrevoContact({
+    const consent = body.consent === true;
+    const consentAt = new Date().toISOString();
+    const lead: Lead = {
       email,
       name,
-      attributes: { FUENTE: 'blog' },
-      listIds: [NEWSLETTER_LIST_ID],
-      emailBlacklisted: false,
-    });
+      slug: cleanField(body.slug, 120),
+      placement: cleanField(body.placement, 40) || 'blog_index',
+      consent,
+      consentAt,
+      consentText: cleanField(body.consentText, 400),
+      leadMagnet: leadMagnet?.title ?? '',
+    };
+
+    // Guardar el contacto en Brevo es lo principal. Si Brevo falla (por
+    // ejemplo, la API key desactivada), el alta no se pierde: se avisa a José
+    // por email con los datos y el consentimiento, y el lector recibe igual
+    // su PDF. La respuesta lleva stored:false para distinguir el caso.
+    const contactResult = process.env.BREVO_API_KEY
+      ? await addBrevoContact({
+          email,
+          name,
+          attributes: { FUENTE: 'blog' },
+          listIds: [NEWSLETTER_LIST_ID],
+          emailBlacklisted: false,
+        })
+      : { success: false, error: 'BREVO_API_KEY no configurada' };
 
     if (!contactResult.success) {
-      logger.error('[Subscribe] Brevo contact write failed');
-      return NextResponse.json(
-        { success: false, message: 'No pudimos completar la suscripción. Inténtalo de nuevo más tarde.' },
-        { status: 502 }
-      );
+      logger.error('[Subscribe] No se pudo guardar el contacto en Brevo; enviando el alta por email a José', {
+        reason: contactResult.error,
+        slug: lead.slug,
+        placement: lead.placement,
+      });
+      const notified = await notifyAdmin(leadNotification(lead));
+      if (notified.sent) {
+        logger.warn(`[Subscribe] Alta enviada a José por email (via ${notified.via}); contacto pendiente de importar en Brevo`);
+      } else {
+        // Último recurso para no perder el alta: queda en el log de Vercel.
+        logger.error('[Subscribe] ALTA NO GUARDADA NI ENVIADA. Datos para importarla a mano:', JSON.stringify(lead));
+      }
+      const welcomeSent = await sendWelcomeEmail(email, name, leadMagnet);
+      return NextResponse.json({
+        success: true,
+        stored: false,
+        notified: notified.sent,
+        welcomeSent,
+        message: 'Suscripción recibida',
+      });
     }
 
     const welcomeSent = await sendWelcomeEmail(email, name, leadMagnet);
@@ -253,6 +321,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
+      stored: true,
       message: 'Suscripción completada',
       welcomeSent,
     });

@@ -165,7 +165,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
                   const response = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, name: nombre || email.split('@')[0] }),
+                    body: JSON.stringify({ email, name: nombre || email.split('@')[0], placement: 'blog_index' }),
                   });
                   const data = await response.json();
                   if (!response.ok || !data.success) {

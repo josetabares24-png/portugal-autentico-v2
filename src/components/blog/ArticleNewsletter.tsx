@@ -11,6 +11,28 @@ type ArticleNewsletterProps = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const CONSENT_TEXT =
+  'Acepto recibir por email las novedades de Estaba en Lisboa. Los envíos se hacen con Brevo y puedes darte de baja cuando quieras.';
+
+/**
+ * Abre el PDF en cuanto el alta responde. Un enlace del mismo origen con
+ * `download` no lo bloquea el navegador aunque llegue después del fetch: en
+ * escritorio descarga el archivo y en iPhone Safari lo abre o pregunta qué
+ * hacer. Si nada de eso ocurre, queda el botón visible.
+ */
+function openPdf() {
+  try {
+    const link = document.createElement('a');
+    link.href = LEAD_MAGNET_PDF;
+    link.download = LEAD_MAGNET_PDF.split('/').pop() || 'lista.pdf';
+    link.rel = 'noopener';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  } catch {
+    // Sin descarga automática: el botón del mensaje de éxito sigue ahí.
+  }
+}
 
 /**
  * Suscripción a novedades con la lista en PDF como regalo. Va sobria a
@@ -46,7 +68,14 @@ export function ArticleNewsletter({ slug, placement }: ArticleNewsletterProps) {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), leadMagnet: 'que-reservar' }),
+        body: JSON.stringify({
+          email: email.trim(),
+          leadMagnet: 'que-reservar',
+          slug,
+          placement,
+          consent: true,
+          consentText: CONSENT_TEXT,
+        }),
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok || !data.success) {
@@ -56,6 +85,7 @@ export function ArticleNewsletter({ slug, placement }: ArticleNewsletterProps) {
       }
       setStatus('success');
       setEmail('');
+      openPdf();
       trackEvent('sign_up', {
         method: 'newsletter',
         content_type: 'article_newsletter',
@@ -79,17 +109,18 @@ export function ArticleNewsletter({ slug, placement }: ArticleNewsletterProps) {
 
       {status === 'success' ? (
         <div role="status" className="article-newsletter-success">
-          <p>Hecho. Aquí tienes la lista:</p>
+          <p className="article-newsletter-ok">Aquí tienes la lista.</p>
           <a
             href={LEAD_MAGNET_PDF}
-            className="article-inline-cta-link"
-            download
+            target="_blank"
+            rel="noopener"
+            className="btn-primary article-newsletter-download"
             onClick={() => trackEvent('file_download', { file_name: LEAD_MAGNET_PDF, placement, content_id: slug })}
           >
-            Descargar el PDF →
+            Descargar la lista (PDF)
           </a>
           <p className="article-newsletter-fine">
-            Te escribiré cuando publique una guía nueva o cambie algo importante. Si no ves el email de bienvenida, mira en spam.
+            Si no se ha abierto sola, pulsa el botón. Te escribiré cuando publique una guía nueva o cambie algo importante.
           </p>
         </div>
       ) : (
