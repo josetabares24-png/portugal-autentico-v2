@@ -185,8 +185,9 @@ export function ArticleBody({
               </ArticleCallout>
             );
           }
-          // Comparativas con datos (precios, opciones). La tabla hace scroll
-          // horizontal en móvil en vez de comprimir las columnas.
+          // Comparativas con datos (precios, opciones). En pantallas
+          // estrechas (<640px) cada fila se apila como una tarjeta y cada
+          // celda muestra su cabecera (data-label), sin scroll horizontal.
           if (bloque.tipo === 'tabla' && bloque.columnas && bloque.filas) {
             return (
               <div key={index} className="article-table-wrap">
@@ -206,7 +207,7 @@ export function ArticleBody({
                           c === 0 ? (
                             <th key={c} scope="row">{celda}</th>
                           ) : (
-                            <td key={c}>{celda}</td>
+                            <td key={c} data-label={bloque.columnas?.[c] ?? ''}>{celda}</td>
                           ),
                         )}
                       </tr>
