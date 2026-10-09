@@ -120,3 +120,12 @@ https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b
 **Autoprompt interno:** aplicar siempre el checklist de 8 puntos del archivo `03_SERIE_HISTORIA_ANIMADA.md`. El guion del principio de página permanece INALTERADO. Anclar a referencias finales de rostros y al Capítulo 01, no resultados descartados. Cinematografía dinámica, no escenas repetidas; Grok imagen ≠ Flow movimiento.
 
 **Nota de precisión para edición:** Toma 18 corresponde al dolor por el asesinato de Inês en 1355, cuando Pedro todavía era príncipe; si imagen 18 aparece coronada, no usarla como representación literal de 1355. La corona encaja simbólicamente en Toma 19 (ya rey desde 1357).
+
+## Remake Grok + voz de cuento V2 — propuesta 2026-10-09
+
+- **Estado: BORRADOR NO APROBADO.** El guion narrado corto V1 existente en Notion sigue siendo la versión vigente hasta que el usuario apruebe V2. Evitar mezclar el audio o declarar cerradas las tomas.
+- [Notion Capítulo 02](https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b): al final de la página se añadió **«PROPUESTA V2 — Voz de cuento + Remake tomas 01–18»**, una narración alternativa de 260 palabras con tono cercano, cálido y narrativo, sin tono de noticiero/true crime, junto a **20 pares de prompts en inglés** (generación imagen Grok + animación Grok/Flow) para 01, 02, 02B, 03–15, 15B, 16–18.
+- Se conserva numeración histórica mientras se prueban las versiones nuevas; **no borrar** los PNG de las escenas anteriores hasta que estén reemplazados y aprobados.
+- V2 abre con la **leyenda de coronación póstuma**, por lo que el montaje 01–06 se reparte el hook legendario, 07–18 la cronología. La narración, si se aprueba, debe cronometrarse y enlazarse a los prompts V1 19–31 que ya están en Notion y **requieren ajuste**.
+- Detalle clave: Pedro príncipe **sin corona** hasta su ascenso en 1357 (Toma 19); Inês con la misma identidad y traje crema/burdeos; Constança azul/velo; jamás presentar la coronación de Inês como hecho probado.
+- Objetivo operativo: acelerar el flujo copiando un prompt de imagen y otro de animación por toma, adjuntando refs visuales del capítulo 01 y personajes maestros.
