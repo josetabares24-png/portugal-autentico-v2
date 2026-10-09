@@ -220,6 +220,21 @@ Desde ahora:
 
 ---
 
+## AUTOPROMPT INTERNO OBLIGATORIO — antes de cada toma (2026-10-09)
+
+Esta revisión se ejecuta internamente antes de **CADA** imagen de esta serie, sin que el usuario tenga que repetirla. No mostrar un gran prompt interno salvo que lo solicite. No generar antes de responder estas preguntas:
+
+1. **GUIÓN LITERAL**: ¿cuál es el segmento exacto de voz vigente en Notion y qué hecho narra?
+2. **ACCIÓN NARRATIVA**: ¿qué debe entender el espectador al ver esta imagen? ¿Es hecho histórico, símbolo o leyenda? Indicarlo cuando haga falta.
+3. **CONTINUIDAD**: ¿coinciden identidad, edad, pelo, barba, accesorios, ropa y época con los recursos finales previos? Referenciar tomas aprobadas.
+4. **RITMO**: ¿el ángulo/escala/acción difieren de las DOS tomas anteriores? Evitar rey señalando mapas repetidamente y retratos románticos consecutivos.
+5. **ESTÉTICA**: 9:16 vertical, premium 3D estilizado adulto, piel simplificada, rostros estilizados, nada fotorealista, sin collages.
+6. **FLOW**: ¿hay una sola acción principal simple y cámara que pueda animarse? Priorizar movimiento de cámara y microexpresiones.
+7. **CONTROL DE VERSIONES**: fijar número y archivo; las versiones descartadas nunca servirán de ancla; mantener Drive y manifiesto alineados.
+8. **VALIDACIÓN**: examinar resultado contra los 7 puntos. Si falla, DESCARTAR, redefinir composición; no continuar generando clones del mismo encuadre. No proclamar imagen final si el usuario no la aprobó.
+
+En entregas: dar el número, frase exacta, imagen individual (y enlace Drive cuando esté subida), y **prompt para animar en Flow en inglés** cuando se solicite. No confundir prompt de animación con prompt de generación.
+
 ## Generación de imagen — regla de simplicidad
 
 Antes de generar:
