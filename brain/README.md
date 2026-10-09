@@ -1,5 +1,8 @@
 # Mente Lisboa
 
+> **Gobierno de memorias:** la única memoria madre transversal está en el repositorio **privado** `rumbo-al-millon/MEMORIA-MADRE.md`. Este árbol `brain/` es documentación operativa **especializada de Estaba en Lisboa**, no otra memoria madre global. Mantener vigentes las reglas **LOCKED** específicas de Lisboa y verificar el estado real antes de ejecutar.
+
+
 Mente Lisboa es el cerebro operativo de `estabaenlisboa.com`.
 
 ## Preflight obligatorio antes de una tarea importante
