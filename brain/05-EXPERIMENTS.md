@@ -27,6 +27,7 @@ This is the active learning register.
 | E-009 | /free-tours-lisboa live date finder | A single date-aware availability tool will produce more qualified outbound clicks than asking every visitor to browse generic inventory | live-date-finder affiliate clicks + partner bookings, with existing static clicks protected | PLANNED | explicit visual approval + production deployment + 14 finalized days |
 | E-011 | Blog: bloques de reserva en 16 artículos | Un bloque de reserva dentro de la sección que lo justifica genera clics de afiliado cualificados sin empeorar SEO ni lectura | affiliate_click (article-body) por artículo | PLANNED (rama local, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
 | E-012 | Títulos/metas de 7 páginas + horario del Metro + botón free tours en Home | Títulos con la consulta principal delante y metas que dicen qué resuelve la página suben el CTR sin perder posición | CTR + clics por página y consulta | PLANNED (rama local, pendiente de decisión de José) | producción verificada + 28 días finalizados |
+| E-013 | 9 páginas con bloque de reserva nuevo + 4 botones subidos | Ofrecer la entrada exacta en las páginas con intención de compra que no la tenían, y subir el botón a las primeras pantallas, sube los clics de afiliado sin empeorar la lectura | affiliate_click por página | PLANNED (rama local `feat/reserva-20`, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -214,3 +215,7 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 ## E-012 — Títulos/metas y free tours en la Home, 2026-10-08
 
 **Status: PLANNED. Rama local `feat/seo-titles-top-pages`; no publicado.** Toca E-001 a E-004 (reinicia su lectura) y la Home de E-010. Detalle: [[seo/SEO-SNIPPETS-HOME-FREE-TOURS-2026-10-08]].
+
+## E-013 — Bloques de reserva en páginas sin ninguno y botones subidos, 2026-10-09
+
+**Status: PLANNED. Rama local `feat/reserva-20`; no publicado. Necesita aprobación visual de José (L-003).** Detalle: [[business/RESERVA-20-2026-10-09]]. Mueve bloques en páginas de E-001 y E-003; E-006 y E-007 quedan fuera.

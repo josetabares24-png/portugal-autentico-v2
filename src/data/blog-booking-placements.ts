@@ -81,10 +81,12 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'obidos-vila-natal': [
     {
       offer: { type: 'product', productId: 'obidos-fatima-excursion' },
-      // Alternativa al autobús: al cerrar «Cómo ir desde Lisboa».
-      beforeHeading: 'y-en-tren',
+      // Alternativa al autobús. Subido el 9/10/2026: antes cerraba «Cómo ir
+      // desde Lisboa» (pantalla 8-9); ahora va justo antes. No va arriba del
+      // todo porque la excursión no incluye la Vila Natal.
+      beforeHeading: 'como-ir-desde-lisboa-autobus-rapida-verde-desde-campo-grande',
       intro:
-        'Si no quieres cuadrar el autobús, hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
+        'Si no quieres cuadrar el autobús (abajo tienes cómo ir por tu cuenta), hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
     },
   ],
   // nochevieja-lisboa · artículo nuevo (9/10/2026), sin datos aún. El
@@ -148,7 +150,10 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'time-out-market-lisboa': [
     {
       offer: { type: 'product', productId: 'tour-gastronomico' },
-      beforeHeading: 'alternativas-antes-de-decidir',
+      // Subido el 9/10/2026 (antes antes de «Alternativas antes de decidir»,
+      // pantalla 7-8). No va arriba del todo porque no es la respuesta a la
+      // búsqueda: el mercado no se reserva.
+      beforeHeading: 'menu-y-puestos-que-comida-hay-y-cuanto-puedes-gastar',
       intro:
         'Si más que un food hall buscas probar cocina portuguesa con alguien que te explique qué pides, un tour gastronómico es otra forma de hacerlo. No es lo mismo que comer en el mercado: revisa en la ficha qué incluye.',
     },
@@ -157,7 +162,9 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'como-moverse-por-lisboa': [
     {
       offer: { type: 'product', productId: 'lisboa-card' },
-      beforeHeading: 'taxi-uber-y-bolt',
+      // Subido el 9/10/2026: antes iba antes de «Taxi, Uber y Bolt», en la
+      // pantalla 11-12 del móvil. Ahora cierra el resumen inicial.
+      position: 'after-summary',
       intro:
         'Si en los mismos días vas a usar mucho el transporte y entrar en varios monumentos, la Lisboa Card junta las dos cosas. Solo compensa si la aprovechas: haz la cuenta antes de comprarla.',
     },
@@ -291,6 +298,51 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       offer: { type: 'product', productId: 'oceanario' },
       beforeHeading: 'parque-das-nacoes-y-el-paseo-junto-al-rio',
       intro: 'Si el Oceanário entra en vuestro plan, podéis llevar la entrada comprada y no depender de la taquilla ese día.',
+    },
+  ],
+  // Itinerarios del blog y Belém · bloques nuevos (9/10/2026), sin datos aún.
+  // Un bloque por artículo; dos en el de 7 días, que es largo.
+  'lisboa-en-4-dias': [
+    {
+      offer: { type: 'product', productId: 'jeronimos' },
+      // Al cerrar el día 2 (Belém).
+      beforeHeading: 'dia-3-sintra-sin-intentar-verlo-todo',
+      intro:
+        'El claustro de los Jerónimos es la entrada del día 2 que más cola tiene. Puedes llevarla comprada con hora, pero no se devuelve ni se cambia de fecha: cómprala cuando tengas el día decidido.',
+    },
+  ],
+  'lisboa-en-5-dias': [
+    {
+      offer: { type: 'product', productId: 'jeronimos-torre-belem' },
+      // Al cerrar el día 2 (Belém).
+      beforeHeading: 'dia-3-graca-mouraria-y-miradores',
+      intro:
+        'Si el día 2 entras en los Jerónimos y en la Torre, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
+    },
+  ],
+  'lisboa-en-7-dias': [
+    {
+      offer: { type: 'product', productId: 'jeronimos-torre-belem' },
+      // Al cerrar el bloque 1 (centro, Belém y miradores).
+      beforeHeading: 'bloque-2-las-escapadas-uno-o-dos-dias',
+      intro:
+        'Si en esos tres días entras en los Jerónimos y en la Torre de Belém, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
+    },
+    {
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      // Al cerrar «Sintra, la única que es obligatoria».
+      beforeHeading: 'la-costa-cascais-y-el-atlantico',
+      intro:
+        'La entrada de Sintra que más se agota es la de la Pena. Aquí va con hora fija y parque incluido. No se devuelve ni se cambia de fecha: si quieres poder moverla por el tiempo, cómprala en la web oficial.',
+    },
+  ],
+  'belem-barrio-guia': [
+    {
+      offer: { type: 'product', productId: 'jeronimos-torre-belem' },
+      // Después de Jerónimos y Torre, antes de los Pastéis.
+      beforeHeading: 'pasteis-de-belem-la-fila-que-vale-la-pena',
+      intro:
+        'Si vas a entrar en los Jerónimos y en la Torre el mismo día, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
     },
   ],
 };

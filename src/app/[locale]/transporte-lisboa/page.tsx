@@ -41,15 +41,20 @@ export const metadata: Metadata = {
 };
 
 /**
- * Un solo bloque de reserva, y solo en la sección que hace la cuenta de la
- * Lisboa Card. El resto de la página no vende nada: el transporte se paga
- * en la taquilla o en la máquina y no hay comisión que ganar ahí.
+ * Un solo bloque de reserva, el de la Lisboa Card. El resto de la página no
+ * vende nada: el transporte se paga en la taquilla o en la máquina y no hay
+ * comisión que ganar ahí.
+ *
+ * Desde el 9/10/2026 va justo después de la respuesta corta, no al final de
+ * la sección «Lisboa Card» (pantalla 9-10 del móvil). Por eso el texto
+ * recuerda que la cuenta está más abajo y que para moverse basta la Navegante.
  */
 const LISBOA_CARD: BlogBookingPlacement[] = [
   {
     offer: { type: 'product', productId: 'lisboa-card' },
+    position: 'after-summary',
     intro:
-      'Si después de hacer la cuenta te sale a favor, aquí la puedes comprar antes del viaje. Te llega un bono por email que cambias por la tarjeta en un mostrador Ask Me Lisboa. Hasta que no tengas la tarjeta física no puedes reservar hora en los Jerónimos ni en la Torre.',
+      'Para moverte por la ciudad basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; más abajo tienes la cuenta. Si te sale a favor, te llega un bono por email que cambias por la tarjeta en un mostrador Ask Me Lisboa. Hasta tener la tarjeta física no puedes reservar hora en los Jerónimos ni en la Torre.',
   },
 ];
 
@@ -58,11 +63,9 @@ export default function TransportInLisbonPage() {
   return (
     <TravelPillarPage
       guide={transportGuide}
-      afterSection={{
-        'lisboa-card': cardBlocks.map(({ beforeHeading: _beforeHeading, position: _position, ...block }) => (
-          <ArticleBookingBlock key={block.contentId} {...block} />
-        )),
-      }}
+      afterShortAnswer={cardBlocks.map(({ beforeHeading: _beforeHeading, position: _position, ...block }) => (
+        <ArticleBookingBlock key={block.contentId} {...block} />
+      ))}
     />
   );
 }

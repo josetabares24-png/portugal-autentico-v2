@@ -445,6 +445,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
         campaign: 'web_hub_torre-belem',
       },
     },
+    // Botón de la ficha /actividades/torre-de-belem (9/10/2026). Usa el
+    // enlace `activities` de arriba, la misma campaña que el hub.
+    activitySlug: 'torre-de-belem',
     ctaLabel: 'Comprar entrada a la Torre',
     officialPrice: {
       amount: '15 €',
@@ -484,6 +487,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
         campaign: 'web_hub_jeronimos',
       },
     },
+    // Botón de la ficha /actividades/mosteiro-jeronimos (9/10/2026). Usa el
+    // enlace `activities` de arriba, la misma campaña que el hub.
+    activitySlug: 'mosteiro-jeronimos',
     ctaLabel: 'Comprar entrada a los Jerónimos',
     officialPrice: {
       amount: '18 €',
