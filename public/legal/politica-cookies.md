@@ -100,7 +100,7 @@ Esta política de cookies puede actualizarse periódicamente. Te recomendamos re
 
 Para cualquier consulta sobre nuestro uso de cookies:
 
-**Email:** contacto@estabaenlisboa.com
+**Email:** estabaenlisboa@gmail.com
 
 **Política de Privacidad:** [/politica-privacidad](/politica-privacidad)
 

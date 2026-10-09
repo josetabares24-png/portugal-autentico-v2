@@ -33,7 +33,7 @@ De conformidad con lo dispuesto en la legislación portuguesa y europea aplicabl
 
 - **Nombre:** Jose Tabares
 - **Dirección:** Lisboa, Portugal
-- **Email de contacto:** contacto@estabaenlisboa.com
+- **Email de contacto:** estabaenlisboa@gmail.com
 - **Sitio web:** https://estabaenlisboa.com
 
 ## 2. Objeto y Actividad

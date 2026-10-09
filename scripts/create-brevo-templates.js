@@ -1137,7 +1137,7 @@ const contactConfirmationTemplate = {
                   <td style="padding-top: 20px; border-top: 1px solid #eee;">
                     <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #666; text-align: center;">
                       Si tienes alguna urgencia, puedes escribirnos directamente a 
-                      <a href="mailto:contacto@estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">contacto@estabaenlisboa.com</a>
+                      <a href="mailto:estabaenlisboa@gmail.com" style="color: #FF6B35; text-decoration: none;">estabaenlisboa@gmail.com</a>
                     </p>
                   </td>
                 </tr>

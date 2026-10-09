@@ -66,7 +66,7 @@ Este documento no sustituye asesoramiento legal, fiscal o profesional específic
 
 ## 6. Contacto
 
-Para cualquier consulta sobre estas condiciones: **contacto@estabaenlisboa.com**
+Para cualquier consulta sobre estas condiciones: **estabaenlisboa@gmail.com**
 
 ## 7. Modificaciones
 

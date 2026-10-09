@@ -700,3 +700,9 @@ This decision extends D-035 through D-037 and applies specifically to `/comprar-
 **Status:** accepted (aprobado por José, auditoría máxima, acción 1)
 
 En las páginas donde la siguiente decisión del lector es comprar (Jerónimos, Sintra, Lisboa Card, Navegante y Oriente), un bloque de reserva va justo debajo del resumen «Lo esencial». Antes, el primer botón quedaba a 8-11 pantallas de móvil. El resto de artículos siguen con la regla de E-011: el bloque va en la sección que lo justifica. Se mantiene el máximo de dos bloques por artículo y E-006/E-007 quedan fuera. Detalle: [[seo/AUDIT-ACTIONS-1-3-4-2026-10-09]].
+
+## D-EMAIL — Contact email → Gmail
+**Date:** 2026-10-09  
+**Status:** accepted
+
+José ordered the public contact email changed from `contacto@estabaenlisboa.com` (and any `hola@estabaenlisboa.com`) to `estabaenlisboa@gmail.com` across legal pages, schema, contact/planifica APIs and user-facing mailto. Published same day.

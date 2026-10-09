@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     if (process.env.BREVO_API_KEY) {
       const notificationResult = await sendBrevoEmail({
         templateId: notificationTemplateId ? parseInt(notificationTemplateId, 10) : undefined,
-        to: [{ email: 'contacto@estabaenlisboa.com', name: 'Estaba en Lisboa' }],
+        to: [{ email: 'estabaenlisboa@gmail.com', name: 'Estaba en Lisboa' }],
         replyTo: { email, name: nombre },
         subject: `[Plan a medida] ${nombre} - ${dias || '?'} días`,
         htmlContent: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;"><h2 style="color: #C84B31;">Nueva solicitud de plan a medida</h2><div style="background: #f7f4ef; padding: 20px; border-radius: 8px;">${resumenHtml}</div></div>`,
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
 
       await transporter.sendMail({
         from: `"Formulario Web" <${process.env.SMTP_USER}>`,
-        to: 'contacto@estabaenlisboa.com',
+        to: 'estabaenlisboa@gmail.com',
         replyTo: email,
         subject: `[Plan a medida] ${nombre} - ${dias || '?'} días`,
         html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;"><h2 style="color: #C84B31;">Nueva solicitud de plan a medida</h2>${resumenHtml}</div>`,

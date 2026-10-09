@@ -31,7 +31,7 @@ async function getLegalContent() {
 
 - **Nombre:** Jose Tabares
 - **Dirección:** Lisboa, Portugal
-- **Email:** contacto@estabaenlisboa.com
+- **Email:** estabaenlisboa@gmail.com
 
 ## 2. Datos que Recopilamos
 
@@ -104,7 +104,7 @@ Tienes derecho a:
 - **Portabilidad:** Recibir tus datos en formato estructurado
 - **Retirar consentimiento:** En cualquier momento, sin que afecte a tratamientos anteriores
 
-Para ejercer estos derechos, contacta: **contacto@estabaenlisboa.com**
+Para ejercer estos derechos, contacta: **estabaenlisboa@gmail.com**
 
 ## 9. Reclamaciones
 

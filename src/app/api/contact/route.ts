@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
             },
             body: JSON.stringify({
               templateId: parseInt(notificationTemplateId, 10),
-              to: [{ email: 'contacto@estabaenlisboa.com', name: 'Estaba en Lisboa' }],
+              to: [{ email: 'estabaenlisboa@gmail.com', name: 'Estaba en Lisboa' }],
               replyTo: { email, name: nombre },
               params: {
                 NOMBRE: nombre,
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
             },
             body: JSON.stringify({
               sender: { name: senderName, email: senderEmail },
-              to: [{ email: 'contacto@estabaenlisboa.com', name: 'Estaba en Lisboa' }],
+              to: [{ email: 'estabaenlisboa@gmail.com', name: 'Estaba en Lisboa' }],
               replyTo: { email, name: nombre },
               subject: `[Contacto Web] ${asuntoTexto} - ${nombre}`,
               htmlContent: `
@@ -188,14 +188,14 @@ export async function POST(request: NextRequest) {
                   </div>
                   <p style="color: #666; font-size: 14px; margin-top: 30px;">
                     Si tienes alguna urgencia, puedes escribirnos directamente a 
-                    <a href="mailto:contacto@estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">contacto@estabaenlisboa.com</a>
+                    <a href="mailto:estabaenlisboa@gmail.com" style="color: #FF6B35; text-decoration: none;">estabaenlisboa@gmail.com</a>
                   </p>
                   <p style="color: #999; font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
                     © 2026 Estaba en Lisboa. Todos los derechos reservados.
                   </p>
                 </div>
               `,
-              textContent: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
+              textContent: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a estabaenlisboa@gmail.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
               headers: {
                 'X-Mailer': 'Estaba en Lisboa',
                 'List-Unsubscribe': '<https://estabaenlisboa.com/unsubscribe>',
@@ -247,7 +247,7 @@ export async function POST(request: NextRequest) {
     // Enviar notificación al admin
     await transporter.sendMail({
       from: `"Formulario Web" <${process.env.SMTP_USER}>`,
-      to: 'contacto@estabaenlisboa.com',
+      to: 'estabaenlisboa@gmail.com',
       replyTo: email,
       subject: `[Contacto Web] ${asuntoTexto} - ${nombre}`,
       html: `
@@ -288,14 +288,14 @@ export async function POST(request: NextRequest) {
           </div>
           <p style="color: #666; font-size: 14px; margin-top: 30px;">
             Si tienes alguna urgencia, puedes escribirnos directamente a 
-            <a href="mailto:contacto@estabaenlisboa.com" style="color: #FF6B35; text-decoration: none;">contacto@estabaenlisboa.com</a>
+            <a href="mailto:estabaenlisboa@gmail.com" style="color: #FF6B35; text-decoration: none;">estabaenlisboa@gmail.com</a>
           </p>
           <p style="color: #999; font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
             © 2026 Estaba en Lisboa. Todos los derechos reservados.
           </p>
         </div>
       `,
-      text: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a contacto@estabaenlisboa.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
+      text: `Hola ${nombre},\n\nHemos recibido tu mensaje sobre ${asuntoTexto} y te responderemos en menos de 24 horas.\n\nResumen de tu mensaje:\n${mensaje}\n\nSi tienes alguna urgencia, puedes escribirnos directamente a estabaenlisboa@gmail.com\n\n© 2026 Estaba en Lisboa. Todos los derechos reservados.`,
     });
 
     return NextResponse.json(

@@ -100,7 +100,7 @@ La compra otorga una **licencia de uso personal, no exclusiva e intransferible**
 
 Para cualquier consulta o problema:
 
-**Email:** contacto@estabaenlisboa.com
+**Email:** estabaenlisboa@gmail.com
 
 Nos comprometemos a responder en un plazo máximo de 48 horas laborables.
 
