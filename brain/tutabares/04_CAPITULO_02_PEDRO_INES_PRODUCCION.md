@@ -44,10 +44,19 @@ Los enlaces siguientes son a recursos ya generados. **No implican aprobación fi
 | 16 | “Inês pertenecía a una familia poderosa vinculada a Castilla.” | **PENDIENTE de aprobación definitiva**: imágenes del mapa o discusión se repitieron demasiado. Evitar reciclar rey apuntando. Recursos antiguos con número 16 archivados sin numeración vigente en Drive |
 | 17 | “En 1355, el rey Afonso IV ordenó matarla.” | **IMAGEN GENERADA / PENDIENTE DE APROBACIÓN DEL USUARIO**: [Drive 17 — pergamino sellado ante Afonso IV](https://drive.google.com/file/d/1UImdS0s0PhuIkNHNUc-YtVb6EmktV4B3/view?usp=drivesdk). Plano de orden sellada sin mapa, con mano de mensajero; recreación simbólica, no documento histórico constatado. Flujo recomendado: push-in mínimo o rack focus del sello al rey, SIN intercambio físico complejo |
 
+## Toma 18 — nueva propuesta (2026-10-09)
+
+- **Voz exacta:** “[pained, controlled] Pedro quedó destrozado.”
+- **Imagen**: [18_Pedro_destrozado_ante_Ines.png](https://drive.google.com/file/d/15JK0om2M8cBmlEaMstkyWF9JWEQeK9xo/view?usp=drivesdk); imagen individual vertical ya existente recuperada del archivo previo porque las nuevas generaciones repetían la toma 17 (rey y pergamino).
+- **Composición:** primer plano 3/4 de Pedro, destrozado, llorando ante Inês desenfocada al frente; NO es funeral de Constança.
+- **Estado:** propuesta de imagen, pendiente aprobación explícita; revisar continuidad final cara/ropa de Pedro frente a 15B.
+- **Flow:** mínimo push-in y microexpresión, lágrimas muy sutiles, velas al fondo; no mover cuerpos, no lip-sync, no deformaciones.
+- **Archivo antiguo 18** “Leyenda_coronacion_postuma” fue renombrado en Drive a `ARCHIVO_SIN_NUMERO_Leyenda_coronacion_postuma.png` para evitar coincidencia errónea entre guion y numeración.
+
 ## Resto del guion todavía por asegurar visualmente
 
 Tras 17:
-- “Pedro quedó destrozado.”
+- “Pedro quedó destrozado.” — ver **Toma 18** arriba; imagen recuperada y subida como propuesta.
 - “Dos años después se convirtió en rey… y buscó a los responsables.”
 - “Dos fueron capturados y ejecutados.”
 - “Pedro afirmó después que él e Inês se habían casado en secreto.”
