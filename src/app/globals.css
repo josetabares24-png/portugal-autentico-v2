@@ -1256,3 +1256,55 @@ button:active:not(:disabled) {
 .article-inline-cta-link:hover {
   text-decoration: underline;
 }
+
+/* ---- Bloque de reserva dentro del artículo (ArticleBookingBlock) ----
+   Las reglas de .article-content p / a pesan más que las utilidades de
+   Tailwind, así que el bloque fija aquí su propia tipografía. */
+.article-content aside.article-booking p {
+  font-family: var(--font-body), system-ui, sans-serif;
+  color: var(--article-main);
+}
+
+.article-content aside.article-booking p.article-booking-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: #6f665d;
+}
+
+.article-content aside.article-booking p.article-booking-intro {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.article-content aside.article-booking a.article-booking-button,
+.article-content aside.article-booking a.article-booking-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.article-content aside.article-booking p.article-booking-disclosure {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #6f665d;
+}
+
+/* Acceso desde «Lo esencial» al primer bloque de reserva del artículo
+   (salto interno; el enlace de afiliado y su aviso están en el bloque). */
+.article-content .article-essential-booking,
+.article-info-box .article-essential-booking {
+  margin: 0.75rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.article-essential-booking a {
+  font-weight: 600;
+  color: var(--article-link);
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+}

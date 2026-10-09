@@ -92,10 +92,10 @@ export const lisboaFotografiaTimeline: TimelineStop[] = [
     googleMapsUrl: 'https://maps.google.com/?q=38.6916,-9.2158'
   },
   {
-    time: 'Mañana Belém (10:00-12:00)',
+    time: 'Mañana Belém (10:30-12:30)',
     title: 'Jerónimos Interior - Arquitectura gótica',
-    description: 'Entra al Monasterio dos Jerónimos cuando abren (10:00). La IGLESIA ES GRATIS y es donde están las fotos más espectaculares: techos abovedados de 25 metros que parecen palmeras de piedra, columnas octogonales con tallados marinos increíbles, luz natural entrando por ventanas creando rayos de luz (god rays), y la tumba de Vasco da Gama con detalles en piedra brutal. TÉCNICA: Ultra wide (16-24mm) disparando hacia arriba para capturar los techos completos. Trípode opcional pero el suelo de mármol es perfecto para apoyar cámara. ISO 800-3200 (interior oscuro), f/2.8-5.6 (dejar entrar luz), 1/60-1/125s. BLANCO Y NEGRO funciona perfecto aquí - la arquitectura, las sombras, el contraste.',
-    tip: '📸 SETTINGS: ISO 1600-3200, f/2.8-5.6, 1/60-1/125s. Focal: 16-24mm ultra wide. ESTABILIZACIÓN ON si no llevas trípode. RAW obligatorio (sombras recuperables). HORARIO: 10:00-17:00, mejor 10:00-11:00 (menos gente, luz suave entrando). RESPETO: Silencio, es lugar religioso activo.',
+    description: 'Entra al Monasterio dos Jerónimos cuando abre la iglesia (10:30 de martes a sábado; domingos desde las 14:00; el claustro abre a las 9:30). La IGLESIA ES GRATIS y es donde están las mejores fotos de la visita: techos abovedados de 25 metros que parecen palmeras de piedra, columnas octogonales con tallas de motivos marinos, luz natural entrando por ventanas creando rayos de luz (god rays), y la tumba de Vasco da Gama, con mucho detalle tallado en piedra. TÉCNICA: Ultra wide (16-24mm) disparando hacia arriba para capturar los techos completos. Trípode opcional pero el suelo de mármol es perfecto para apoyar cámara. ISO 800-3200 (interior oscuro), f/2.8-5.6 (dejar entrar luz), 1/60-1/125s. BLANCO Y NEGRO funciona perfecto aquí - la arquitectura, las sombras, el contraste.',
+    tip: '📸 SETTINGS: ISO 1600-3200, f/2.8-5.6, 1/60-1/125s. Focal: 16-24mm ultra wide. ESTABILIZACIÓN ON si no llevas trípode. RAW obligatorio (sombras recuperables). HORARIO de la iglesia: martes a sábado 10:30-17:00, domingos 14:00-17:00, lunes cerrado. Mejor a primera hora (menos gente, luz suave entrando). RESPETO: Silencio, es lugar religioso activo.',
     type: 'visit',
     image: 'https://images.unsplash.com/photo-1599052518715-4106f84fc9f6?w=800',
     coordinates: { lat: 38.6977, lng: -9.2062 },

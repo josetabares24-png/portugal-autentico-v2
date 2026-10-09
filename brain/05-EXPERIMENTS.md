@@ -25,6 +25,8 @@ This is the active learning register.
 | E-007 | /blog/donde-comer-barato-lisboa | Replacing invented local-authority copy with dated, verifiable cheap-eating options should improve relevance for "comer barato" queries and recover page-2 visibility | position + impressions + clicks + query coverage | RUNNING | deployed 2026-09-23 11:12 Lisbon; +14 finalized days |
 | E-008 | Home traveler gateway | A need-first editorial directory will help visitors reach a useful answer more often than a blog-index Home without weakening the publication identity | portal selection rate + downstream guide/support clicks | PLANNED | explicit visual approval + production deployment + 14 finalized days |
 | E-009 | /free-tours-lisboa live date finder | A single date-aware availability tool will produce more qualified outbound clicks than asking every visitor to browse generic inventory | live-date-finder affiliate clicks + partner bookings, with existing static clicks protected | PLANNED | explicit visual approval + production deployment + 14 finalized days |
+| E-011 | Blog: bloques de reserva en 16 artículos | Un bloque de reserva dentro de la sección que lo justifica genera clics de afiliado cualificados sin empeorar SEO ni lectura | affiliate_click (article-body) por artículo | PLANNED (rama local, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
+| E-012 | Títulos/metas de 7 páginas + horario del Metro + botón free tours en Home | Títulos con la consulta principal delante y metas que dicen qué resuelve la página suben el CTR sin perder posición | CTR + clics por página y consulta | PLANNED (rama local, pendiente de decisión de José) | producción verificada + 28 días finalizados |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -204,3 +206,11 @@ The queue is now an inspection order, not an edit order.
 José requested a concrete preview after the desktop audit and approved publishing it on 2026-10-08 after seeing the Vercel preview and clarifying that the larger visual improvement is on desktop. Preserve D-033's eight photographic canonical entrances and 2 + 3 + 3 rhythm; reduce opening height, align sections, show secondary photography with cream captions on desktop, and use one main story plus two secondary reads. Mobile retains direct photographic entrances. The approved visual code is `8b7040e`; release is tracked in PR #101. Do not attribute SEO growth or preliminary Search Console data to this change.
 
 Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-PC-PREVIEW-2026-10-07]]. Pre-preview local checks passed: typecheck, targeted lint and sitemap smoke 51/51, including 100 sitemap URLs. Release checks must pass before merge. Start E-010's 14/28-day observation window at the verified production deployment; evaluate Home navigation by device, not property-wide impressions alone. Final merge and deployment evidence: [PR #101](https://github.com/josetabares24-png/portugal-autentico-v2/pull/101).
+
+## E-011 — Bloques de reserva en artículos del blog, 2026-10-08
+
+**Status: PLANNED. Preparado en rama local `feat/blog-affiliate-ctas`; no publicado. Necesita aprobación visual de José (L-003).** Detalle, artículos, ofertas y medición: [[business/BLOG-BOOKING-BLOCKS-2026-10-08]]. Toca páginas de E-001, E-003, E-004 y E-005 sin cambiar título ni descripción; E-006 y E-007 quedan fuera.
+
+## E-012 — Títulos/metas y free tours en la Home, 2026-10-08
+
+**Status: PLANNED. Rama local `feat/seo-titles-top-pages`; no publicado.** Toca E-001 a E-004 (reinicia su lectura) y la Home de E-010. Detalle: [[seo/SEO-SNIPPETS-HOME-FREE-TOURS-2026-10-08]].

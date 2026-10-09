@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import { PLAN_PRICE_FROM } from '@/lib/commercial-config';
 import type { ReactNode } from 'react';
 
 type ArticleFooterProps = {
@@ -29,15 +30,17 @@ export function ArticleFooter({
         >
           Planifica tu viaje
         </TrackedInternalLink>
+        {/* Mismo criterio que /planifica-tu-viaje: el precio solo se muestra si
+            NEXT_PUBLIC_PLAN_PRICE_FROM está definido; si no, no se inventa. */}
+        {PLAN_PRICE_FROM && (
+          <p className="relative mt-3 text-xs text-white/60">Desde {PLAN_PRICE_FROM}</p>
+        )}
       </div>
 
       {beforeAuthor}
 
       {/* Sobre el autor */}
-      <div className="article-author article-reading border-t border-border-soft flex items-start gap-4">
-        <div className="w-12 h-12 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-display italic text-xl flex-shrink-0">
-          JT
-        </div>
+      <div className="article-author article-reading border-t border-border-soft">
         <div>
           <p className="article-author-name">Escrito por {authorName}</p>
           <p className="article-author-bio">

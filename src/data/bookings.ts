@@ -383,7 +383,11 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     },
     links: {
       activities: {
-        url: 'https://gyg.me/zgpDrBr1',
+        // Excursión de día completo Sintra + Pena + Regaleira + Cabo da Roca +
+        // Cascais (ficha t440176). Enlace propio de José, tal cual (2026-10-08);
+        // sustituye al corto gyg.me/zgpDrBr1. No añadir parámetros. El enlace
+        // de la entrada a Pena (sintra-palacio-pena) no cambia.
+        url: 'https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher',
         provider: 'getyourguide',
         campaign: 'web_actividades_sintra-completa',
       },

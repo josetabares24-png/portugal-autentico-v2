@@ -90,3 +90,27 @@ export function buildAffiliateUrl(
     return baseUrl;
   }
 }
+
+/**
+ * Etiqueta de campaña propia de Tiqets (`tq_campaign`) para medir por
+ * artículo en su panel de partner.
+ *
+ * `tq_campaign` no atribuye la comisión —eso lo hace `partner`—, es una
+ * etiqueta libre nuestra. Aun así sólo se toca en URLs de tiqets.com que ya
+ * llevan `partner`, y el resto de parámetros se conservan intactos.
+ *
+ * Los enlaces cortos de GetYourGuide (`gyg.me`) NO pasan por aquí: la
+ * campaña va dentro del propio enlace corto y añadirle parámetros no
+ * garantiza que lleguen al destino. Para medir por artículo en GYG hay que
+ * crear un enlace corto por campaña en su panel.
+ */
+export function withTiqetsCampaign(baseUrl: string, campaign: string): string {
+  try {
+    const url = new URL(baseUrl);
+    if (!url.hostname.endsWith('tiqets.com') || !url.searchParams.has('partner')) return baseUrl;
+    url.searchParams.set('tq_campaign', campaign);
+    return url.toString();
+  } catch {
+    return baseUrl;
+  }
+}

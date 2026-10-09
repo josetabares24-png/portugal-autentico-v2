@@ -10,6 +10,11 @@ import { ArticleToc } from '@/components/blog/ArticleToc';
 import type { Article, ArticleExtras, ArticleFaq, SectionPhoto } from '@/components/blog/article-types';
 import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
+import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
+import { BLOG_BOOKING_PLACEMENTS, blogBookingContentId } from '@/data/blog-booking-placements';
+import { findProductById, resolveBookingLink } from '@/data/bookings';
+import { buildAffiliateUrl, withTiqetsCampaign } from '@/lib/affiliate';
+import type { ArticleBookingBlockProps } from '@/components/blog/ArticleBookingBlock';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 
@@ -382,13 +387,14 @@ const articles: Record<string, Article> = {
   'metro-lisboa-guia': {
     titulo: 'Metro de Lisboa 2026: mapa, horarios, billetes y líneas',
     descripcion: 'Guía práctica del Metro de Lisboa con líneas, horario normal, precios 2026, Navegante, contactless y conexiones útiles para aeropuerto, centro y Oriente.',
-    seoTitle: 'Metro Lisboa 2026: mapa, horarios y billetes',
-    metaDescription: 'Metro de Lisboa 2026: horario 06:30-01:00, cuatro líneas, billete 1,90 €, zapping 1,72 €, contactless y conexiones útiles.',
+    seoTitle: 'Metro de Lisboa: horario, mapa y billetes 2026',
+    metaDescription: '¿A qué hora abre y cierra el Metro de Lisboa? De 06:30 a 01:00 todos los días. Las cuatro líneas, billete 1,90 €, zapping, contactless y conexiones.',
     imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
     imageAlt: 'Interior colorido de la estación de Metro de Olaias en Lisboa',
     categoria: 'Transporte',
     fecha: '21 Sep 2026',
-    dateModified: '2026-09-21',
+    fechaActualizacion: 'Actualizado el 8 de octubre de 2026',
+    dateModified: '2026-10-08',
     minutos: 9,
     links: [
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante' },
@@ -403,8 +409,14 @@ const articles: Record<string, Article> = {
     ],
     contenido: [
       { tipo: 'parrafo', texto: 'El Metro es la forma más sencilla de cruzar Lisboa cuando las zonas están bien conectadas. No sustituye caminar por Alfama, Graça o Belém, pero resuelve aeropuerto, Oriente, Saldanha, Marquês, Baixa-Chiado y otros desplazamientos largos con bastante previsibilidad.' },
-      { tipo: 'subtitulo', texto: 'Horario normal del Metro de Lisboa' },
+      { tipo: 'subtitulo', texto: '¿A qué hora abre y cierra el Metro de Lisboa?' },
       { tipo: 'parrafo', texto: 'En condiciones normales, el Metro abre a las 06:30 y funciona hasta la 01:00 todos los días, incluidos fines de semana y festivos. Puede haber prolongaciones especiales o alteraciones por obras y eventos, así que comprueba el estado de las líneas si tienes un trayecto importante.' },
+      { tipo: 'lista', items: [
+        'Último acceso: Metro de Lisboa garantiza el viaje hasta cualquier estación de la línea si entras antes de la 01:00.',
+        'Por la noche pasan menos trenes: a partir de las 22:30, la frecuencia media publicada ronda los 9-10 minutos según la línea.',
+        'Algunos accesos secundarios cierran a las 21:30, aunque la estación siga abierta. Si una boca está cerrada, busca la entrada principal.',
+      ] },
+      { tipo: 'nota', texto: 'Horario y frecuencias según la página oficial de Metro de Lisboa, consultada el 8 de octubre de 2026.' },
       { tipo: 'subtitulo', texto: 'Las cuatro líneas' },
       { tipo: 'lista', items: ['Azul: útil para Marquês de Pombal, Avenida y Baixa-Chiado.', 'Amarilla: conecta zonas del norte con Marquês y Rato.', 'Verde: pasa por Rossio, Baixa-Chiado, Cais do Sodré y otros puntos centrales.', 'Roja: conecta Aeroporto, Oriente, Olaias, Alameda y Saldanha.'] },
       { tipo: 'parrafo', texto: 'No memorices la red entera antes del viaje. Mira la estación de origen, la línea, el sentido por la estación terminal y el punto de transbordo si hace falta. El mapa oficial actualizado es más útil que una captura antigua guardada en el móvil.' },
@@ -466,21 +478,24 @@ const articles: Record<string, Article> = {
   'tarjeta-navegante-lisboa': {
     titulo: 'Tarjeta Navegante en Lisboa: cuál comprar y cuánto cuesta en 2026',
     descripcion: 'Qué es la tarjeta Navegante, diferencia entre ocasional y personalizada, precios 2026, zapping y cuándo conviene un billete de 24 horas.',
-    seoTitle: 'Tarjeta Navegante Lisboa 2026: precios y cuál comprar',
-    metaDescription: 'Navegante Lisboa 2026: tarjeta ocasional, zapping, billete Carris/Metro, 24 horas y pases mensuales explicados con tarifas oficiales.',
+    seoTitle: 'Tarjeta Navegante Lisboa 2026: qué incluye y cuál comprar',
+    metaDescription: 'Qué incluye la Navegante ocasional (0,50 €): billete Carris/Metro, zapping y pases de 24 horas con tarifas oficiales 2026, y cuándo compensa cada uno.',
     imagen: '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
     imageAlt: 'Tranvía 15E de Lisboa utilizado por viajeros con títulos Navegante y Carris',
     categoria: 'Transporte',
     fecha: '21 Sep 2026',
-    dateModified: '2026-09-21',
+    fechaActualizacion: 'Actualizado el 8 de octubre de 2026',
+    dateModified: '2026-10-08',
     minutos: 8,
     links: [
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/metro-lisboa-guia', label: 'Horario y líneas del Metro de Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto de Lisboa al centro' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
     ],
     fuentes: [
-      { label: 'Metro de Lisboa: tarjeta Navegante ocasional', href: 'https://www.metrolisboa.pt/comprar/cartao-viva-viagem/' },
+      { label: 'Metro de Lisboa: tarjeta Navegante ocasional', href: 'https://www.metrolisboa.pt/comprar/cartao-navegante-ocasional/' },
+      { label: 'Metro de Lisboa: tarifas ocasionales y zapping', href: 'https://www.metrolisboa.pt/comprar/' },
       { label: 'Metro de Lisboa: tarifas 2026', href: 'https://www.metrolisboa.pt/2025/12/19/novas-tarifas-2026/' },
       { label: 'Carris: tarifas 2026', href: 'https://www.carris.pt/descubra/novo-tarifario-2026/' },
     ],
@@ -488,7 +503,16 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Para un visitante, “Navegante” puede significar dos cosas distintas: la tarjeta ocasional donde cargas billetes o zapping, y la tarjeta personalizada usada sobre todo por quienes viajan con frecuencia o necesitan pases mensuales. Si vienes unos días, normalmente te interesa la primera.' },
       { tipo: 'subtitulo', texto: 'Navegante ocasional: la tarjeta para viajes sueltos' },
       { tipo: 'parrafo', texto: 'La tarjeta Navegante ocasional cuesta 0,50 € y puede recargarse durante un año. Es individual durante cada viaje: no sirve para que dos personas validen con la misma tarjeta al mismo tiempo.' },
-      { tipo: 'lista', items: ['Billete Carris/Metro: 1,90 €.', 'Zapping en Metro: 1,72 € por viaje.', '24 horas Carris/Metro: 7,25 €.', '24 horas Carris/Metro/Transtejo: 10,35 €.', '24 horas Carris/Metro/CP: 11,40 €.'] },
+      { tipo: 'subtitulo', texto: '¿Qué incluye la tarjeta Navegante ocasional?' },
+      { tipo: 'parrafo', texto: 'La tarjeta en sí no incluye viajes: es el soporte donde cargas el billete. Según Metro de Lisboa, en la Navegante ocasional puedes cargar estos títulos:' },
+      { tipo: 'lista', items: [
+        'Billete Carris/Metro (1,90 €): viajes ilimitados en Carris y Metro durante 60 minutos desde la primera validación. No vale para dos entradas seguidas en el Metro.',
+        'Zapping: saldo que cargas por importes de 3 € a 40 € y se descuenta en cada viaje. En el Metro, cada viaje cuesta 1,72 €. Cada viaje zapping vale para un solo operador; si cambias de operador, se descuenta otro.',
+        '24 horas Carris/Metro (7,25 €): viajes ilimitados en toda la red de Carris y Metro durante 24 horas desde la primera validación.',
+        '24 horas Carris/Metro/Transtejo (10,35 €): lo mismo, más el barco entre Cais do Sodré y Cacilhas.',
+        '24 horas Carris/Metro/CP (11,40 €): lo mismo, más los trenes urbanos de CP, incluidas las líneas de Sintra y Cascais.',
+      ] },
+      { tipo: 'nota', texto: 'Títulos y tarifas comprobados en la web de Metro de Lisboa el 8 de octubre de 2026. Puedes comprar y recargar la tarjeta en las máquinas y taquillas del Metro; guarda el comprobante de carga por si la tarjeta falla.' },
       { tipo: 'subtitulo', texto: '¿Billete sencillo, zapping o 24 horas?' },
       { tipo: 'parrafo', texto: 'Si ese día vas a caminar mucho y hacer pocos trayectos, zapping o billetes sueltos pueden tener más sentido. Si vas a encadenar Metro, autobuses, tranvías o ascensores durante todo el día, compara el coste con el billete de 24 horas antes de cargar la tarjeta.' },
       { tipo: 'subtitulo', texto: '¿Y pagar directamente con tarjeta bancaria?' },
@@ -502,8 +526,8 @@ const articles: Record<string, Article> = {
   'graca-lisboa-que-ver': {
     titulo: 'Graça en Lisboa: qué ver, miradores y cómo recorrer el barrio',
     descripcion: 'Ruta por Graça con el Miradouro da Graça, Senhora do Monte y calles del barrio, pensada para evitar subidas innecesarias y terminar con vistas.',
-    seoTitle: 'Graça Lisboa: qué ver, miradores y ruta a pie',
-    metaDescription: 'Qué ver en Graça, Lisboa: Miradouro da Graça, Senhora do Monte, tranvía 28, ruta a pie y consejos para recorrer el barrio sin repetir cuestas.',
+    seoTitle: 'Qué ver en Graça, Lisboa: miradores y ruta a pie',
+    metaDescription: 'Miradouro da Graça, Senhora do Monte y una ruta a pie para bajar a Mouraria o Alfama sin repetir cuestas. El tranvía 28 llega, pero no dependas de él.',
     imagen: '/images/miradouro-grupo-atardecer.jpg',
     imageAlt: 'Personas contemplando Lisboa desde un mirador de Graça al atardecer',
     categoria: 'Guías',
@@ -680,8 +704,8 @@ const articles: Record<string, Article> = {
   'time-out-market-lisboa': {
     titulo: 'Time Out Market Lisboa: menú, restaurantes, precios y si merece la pena',
     descripcion: 'Guía independiente del Time Out Market Lisboa: menú, restaurantes, cómo funcionan los puestos, qué esperar de los precios y cuándo conviene ir.',
-    seoTitle: 'Time Out Market Lisboa: menú, restaurantes y precios',
-    metaDescription: 'Time Out Market Lisboa: menú, restaurantes, precios, cómo funciona y si merece la pena. Qué esperar antes de ir al Mercado da Ribeira.',
+    seoTitle: 'Time Out Market Lisboa: menú, precios y si merece la pena',
+    metaDescription: 'Cómo funciona el Time Out Market de Lisboa: puestos, qué comer, cómo calcular lo que vas a gastar, cuándo ir y qué alternativas tienes cerca en Cais do Sodré.',
     imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
     imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
     categoria: 'Gastronomía',
@@ -753,8 +777,8 @@ const articles: Record<string, Article> = {
   'estacion-oriente-lisboa': {
     titulo: 'Estación de Oriente de Lisboa (Gare do Oriente): tren, metro y qué ver',
     descripcion: 'Guía de la Estación de Oriente o Gare do Oriente: trenes, Metro, autobuses, arquitectura de Santiago Calatrava y qué ver en Parque das Nações.',
-    seoTitle: 'Estación de Oriente (Gare do Oriente): tren y metro',
-    metaDescription: 'Estación de Oriente de Lisboa o Gare do Oriente: tren, Metro, autobuses, arquitectura de Calatrava y qué ver cerca en Parque das Nações.',
+    seoTitle: 'Estación de Oriente Lisboa: trenes, metro, buses y qué ver',
+    metaDescription: 'Gare do Oriente en Lisboa: cómo combinar trenes, Metro (Línea Roja) y autobuses sin perderte en el intercambiador, y qué ver al lado en Parque das Nações.',
     imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
     imageAlt: 'Tren detenido bajo la cubierta de vidrio y acero de la estación de Oriente en Lisboa',
     categoria: 'Transporte',
@@ -1081,7 +1105,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Miran al sureste, sobre el barrio y el río, así que funcionan de mañana: el sol sale por delante-izquierda y va iluminando los tejados de frente en lugar de recortarlos. A media mañana la luz ya cae desde arriba y aplana el relieve, que es justo lo que da carácter a esta vista.' },
 
       { tipo: 'subseccion', texto: 'Los tranvías y las calles empinadas' },
-      { tipo: 'parrafo', texto: 'El tranvía amarillo subiendo una cuesta estrecha es el otro gran tema de Lisboa. La Rua da Bica es la más conocida —el ascensor amarillo en una calle muy inclinada, con casas a los lados—, pero no es la única: cualquier tramo del 28 por Graça o Alfama da la misma escena con menos gente delante.' },
+      { tipo: 'parrafo', texto: 'El tranvía amarillo subiendo una cuesta estrecha es el otro gran tema de Lisboa. La Rua da Bica es la más conocida —el ascensor amarillo en una calle muy inclinada, con casas a los lados—, aunque el ascensor está parado desde septiembre de 2025 y sin fecha de vuelta, así que hoy solo verás la cabina quieta. No es la única: cualquier tramo del 28 por Graça o Alfama da la misma escena con menos gente delante.' },
       { tipo: 'parrafo', texto: 'La clave aquí no es la hora de la luz sino la de la gente. A primera hora hay poca, y en una calle estrecha eso cambia la foto más que cualquier otra cosa. Y conviene dar tiempo: pasan cada pocos minutos, así que puedes componer el encuadre y esperar a que entre en cuadro en vez de disparar a la carrera.' },
 
       { tipo: 'subseccion', texto: 'La Baixa: simetría y perspectiva' },
@@ -1448,9 +1472,9 @@ const articles: Record<string, Article> = {
     titulo: 'Cómo pagar en Portugal en 2026: tarjeta, efectivo y cajeros',
     descripcion:
       'Guía práctica para saber cómo pagar en Portugal: uso de tarjetas, cuánto efectivo llevar, cómo funcionan los cajeros y qué revisar antes de aceptar una conversión.',
-    seoTitle: 'Cómo pagar en Portugal en 2026: tarjeta, efectivo y cajeros',
+    seoTitle: 'Cómo pagar en Portugal (2026): tarjeta, efectivo y comisiones',
     metaDescription:
-      '¿Se puede pagar con tarjeta en Portugal? Qué efectivo llevar, cómo funcionan los cajeros y qué comisiones revisar al pagar o retirar dinero.',
+      'En Lisboa se paga con tarjeta con normalidad, pero no todos los comercios aceptan todas las marcas. Cuánto efectivo llevar, cajeros y qué comisiones revisar.',
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
     imageAlt: 'Esquina con cafés y comercios en la Baixa de Lisboa',
     categoria: 'Planificación',
@@ -1749,8 +1773,8 @@ const articles: Record<string, Article> = {
   'como-moverse-por-lisboa': {
     titulo: 'Cómo moverse por Lisboa en 2026: metro, tranvía, bus y tren',
     descripcion: 'Cómo moverse por Lisboa en transporte público: Metro, tranvías, buses, trenes, billetes y alternativas según la zona y el tipo de trayecto.',
-    seoTitle: 'Cómo moverse por Lisboa en 2026: transporte y billetes',
-    metaDescription: 'Cómo moverse por Lisboa en 2026: Metro, tranvía, autobús y tren. Qué billetes usar, cuánto cuestan y cómo llegar a Belém, Sintra y Cascais.',
+    seoTitle: 'Cómo moverse por Lisboa: metro, tranvía, bus y billetes 2026',
+    metaDescription: 'Qué transporte usar en Lisboa según el trayecto: metro, tranvías, autobuses y tren a Belém, Sintra y Cascais. Qué billete comprar y cuánto cuesta en 2026.',
     imagen: '/images/turista-tranvia-28.jpg',
     imageAlt: 'Tranvía articulado moderno de la línea 15E de Carris circulando por una calle de Lisboa',
     categoria: 'Transporte',
@@ -1788,6 +1812,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Metro: rápido para distancias claras' },
       { tipo: 'parrafo', texto: 'El metro es la forma más previsible de moverte entre zonas conectadas: aeropuerto, Saldanha, Marquês, Baixa-Chiado, Cais do Sodré y Oriente, entre otras. Es limpio, sencillo de leer y útil cuando tienes que cruzar ciudad. No resuelve todos los barrios históricos, pero evita muchos trayectos largos en superficie.' },
       { tipo: 'parrafo', texto: 'Para llegar desde el aeropuerto suele ser una opción práctica si llevas equipaje manejable y tu alojamiento queda cerca de una estación. El aeropuerto tiene estación de metro y la conexión Aeroporto-Saldanha se anuncia como unos 20 minutos, pero eso no significa que llegue directo a todas las zonas céntricas: muchas rutas necesitan transbordo.' },
+      { tipo: 'enlace', texto: 'En condiciones normales, el Metro funciona de 06:30 a 01:00 todos los días. Si tu último trayecto es tarde, revisa antes la frecuencia nocturna y qué accesos siguen abiertos.', href: '/blog/metro-lisboa-guia', label: 'Horario, líneas y billetes del Metro' },
       { tipo: 'enlace', texto: 'Si estás decidiendo cómo llegar al alojamiento con maletas o a última hora, compara las opciones de llegada antes de elegir el transporte para el resto del viaje.', href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto de Lisboa al centro: qué opción elegir' },
       { tipo: 'enlace', texto: 'Si vas hacia el Parque das Nações o vas a tomar un tren, Oriente funciona como intercambiador y también merece una mirada por su arquitectura.', href: '/blog/estacion-oriente-lisboa', label: 'Guía de la estación de Oriente' },
       { tipo: 'subtitulo', texto: 'Tranvías: icono, no siempre transporte eficiente' },
@@ -1799,7 +1824,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Los autobuses no salen tanto en las fotos, pero salvan rutas que el metro no cubre bien. Son útiles para conectar miradores, zonas residenciales y puntos que quedan incómodos a pie. El problema es que dependen más del tráfico y pueden ser menos intuitivos para una primera visita.' },
       { tipo: 'parrafo', texto: 'Mi consejo es usarlos cuando Google Maps o la app de transporte los muestre claramente como mejor opción, pero no planificar todo el viaje solo con buses. La aplicación de Carris muestra rutas y horarios en tiempo real, y ahí se nota la diferencia: sin ella el bus es adivinar, con ella es una opción más. Si vienes desde el aeropuerto en bus urbano, recuerda que el propio aeropuerto limita el equipaje permitido a 50 x 40 x 20 cm; con maletas grandes, metro, taxi o app suelen ser más cómodos.' },
       { tipo: 'subtitulo', texto: 'Elevadores y funiculares' },
-      { tipo: 'parrafo', texto: 'Los elevadores y funiculares existen por una razón: Lisboa sube de verdad. Bica, Glória, Lavra y Santa Justa no son solo atracciones, también cuentan cómo la ciudad resolvió sus desniveles. Pueden ahorrar esfuerzo, aunque en horas turísticas quizá haya más cola que ventaja.' },
+      { tipo: 'parrafo', texto: 'Los elevadores y funiculares existen por una razón: Lisboa sube de verdad. Bica, Glória, Lavra y Santa Justa no son solo atracciones, también cuentan cómo la ciudad resolvió sus desniveles. Ahora mismo (octubre de 2026) Bica, Lavra y Santa Justa siguen cerrados sin fecha de reapertura, y Carris prevé un elevador nuevo para la Glória hacia 2029. El único que funciona es el Funicular da Graça, reabierto el 30 de abril de 2026.' },
       { tipo: 'parrafo', texto: 'Si vas con poco tiempo, úsalos cuando encajen en tu ruta, no como una lista obligatoria. A veces una calle paralela, una pausa o una combinación con metro resuelve mejor que esperar media hora por una foto.' },
       { tipo: 'aviso', texto: 'Tras el accidente del Elevador da Glória en septiembre de 2025, los elevadores y funiculares históricos de Lisboa quedaron sujetos a cierres. Algunos han vuelto a funcionar y otros siguen parados sin fecha de reapertura. Consulta el estado de cada uno en la web de Carris antes de contar con ellos para subir una cuesta, y ten preparada una alternativa a pie o en bus.' },
       { tipo: 'subtitulo', texto: 'Trenes urbanos: Belém, Sintra y Cascais' },
@@ -2014,7 +2039,8 @@ const articles: Record<string, Article> = {
     minutos: 15,
     contenido: [
       { tipo: "parrafo", texto: "Lisboa no es una ciudad que se entienda en plano. Hay que caminarla para comprender cómo cada colina guarda una personalidad distinta, cómo la luz cambia según la orientación de las calles, cómo el sonido del fado en Alfama da paso al bullicio juvenil del Bairro Alto apenas cruzas unas manzanas." },
-      { tipo: "parrafo", texto: "He vivido en tres barrios diferentes durante mis años aquí, y cada mudanza fue como descubrir una ciudad nueva. El Lisboa que conoces depende enormemente de dónde duermas y por dónde camines. Esta guía intenta ayudarte a elegir bien, porque acertar con el barrio puede transformar completamente tu experiencia." },
+      // TODO(José): si has vivido o dormido en varios barrios, cuenta aquí cuáles y qué cambió. Solo si es real.
+      { tipo: "parrafo", texto: "La Lisboa que vas a conocer depende mucho de dónde duermas y por dónde camines. Esta guía es para elegir bien el barrio, porque cambia bastante el viaje." },
       { tipo: "subtitulo", texto: "Baixa-Chiado: el corazón comercial con siglos de historia" },
       { tipo: "parrafo", texto: "El Marqués de Pombal reconstruyó este barrio desde cero después de que el terremoto de 1755 arrasara la ciudad. El resultado es una cuadrícula ordenada de calles anchas, edificios uniformes y plazas monumentales que contrastan con el caos medieval del resto de Lisboa. Aquí todo es llano —rareza absoluta en esta ciudad— y las conexiones de transporte son inmejorables." },
       { tipo: "parrafo", texto: "La Rua Augusta es el eje peatonal que conecta el Rossio con la Praça do Comércio, atravesando bajo un arco triunfal que enmarca el río Tajo. A ambos lados se suceden tiendas de cadena, cafeterías y restaurantes orientados al turismo. No es el Lisboa más auténtico, pero tiene una grandiosidad innegable que merece experimentarse al menos una vez." },
@@ -2080,8 +2106,8 @@ const articles: Record<string, Article> = {
     fecha: "1 Dic 2024",
     minutos: 13,
     contenido: [
-      { tipo: "parrafo", texto: "Hay una escena que presencio casi cada día desde mi ventana en Alfama: grupos de turistas sudando bajo el sol del mediodía, arrastrando maletas por calles empedradas, siguiendo un paraguas mientras un guía recita datos que podrían leer en Wikipedia. Van a comer a restaurantes con menús plastificados, van a hacer cola dos horas para subir a un tranvía, y al final del día habrán gastado el triple de lo necesario viendo la mitad de lo que podrían." },
-      { tipo: "parrafo", texto: "No es culpa suya. Lisboa se ha convertido en un destino masivo, y la industria turística ha respondido creando circuitos optimizados para extraer dinero, no para ofrecer experiencias memorables. Pero con algunos ajustes simples —de horarios, de rutas, de actitud— puedes escapar de esa maquinaria y descubrir la ciudad que los lisboetas habitamos a diario." },
+      { tipo: "parrafo", texto: "Hay una escena que se repite cada día en Alfama: grupos de turistas sudando bajo el sol del mediodía, arrastrando maletas por calles empedradas, siguiendo un paraguas mientras un guía recita datos que podrían leer en Wikipedia. Van a comer a restaurantes con menús plastificados, van a hacer cola dos horas para subir a un tranvía, y al final del día habrán gastado el triple de lo necesario viendo la mitad de lo que podrían." },
+      { tipo: "parrafo", texto: "No es culpa suya. Lisboa se ha convertido en un destino masivo, y la industria turística ha respondido montando circuitos pensados para cobrar, no para que conozcas la ciudad. Pero con algunos ajustes simples —de horarios, de rutas, de actitud— puedes escapar de esa maquinaria y ver la ciudad en la que viven los lisboetas a diario." },
       { tipo: "subtitulo", texto: "El error del restaurante con fotos en la puerta" },
       { tipo: "parrafo", texto: "Hay una correlación casi perfecta entre la cantidad de fotos de platos en la entrada de un restaurante y la probabilidad de que la comida sea mediocre y cara. Los locales donde comen los portugueses no necesitan mostrar imágenes de lo que sirven: su clientela ya lo sabe, lleva años viniendo." },
       { tipo: "parrafo", texto: "La Rua Augusta y sus alrededores concentran docenas de establecimientos con menús traducidos a seis idiomas, camareros en la puerta invitándote a entrar, y precios que duplican o triplican lo normal. El mismo bacalhau que aquí cuesta veinte euros lo encuentras por nueve en Mouraria o Graça, cocinado con más cariño y servido en porciones más generosas." },
@@ -2257,6 +2283,7 @@ const articles: Record<string, Article> = {
     minutos: 11,
     fuentes: [
       { label: "Pastéis de Belém — horarios y la pastelería original", href: "https://pasteisdebelem.pt/" },
+      { label: "Pastéis de Belém — contacto y horario oficial", href: "https://pasteisdebelem.pt/contactos/" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Hay una imagen que se repite cada mañana frente al número 84-92 de la Rua de Belém: decenas de personas formando una cola que serpentea por la acera, consultando relojes, estirando cuellos para calcular cuánto falta. Desde 1837, la Fábrica dos Pastéis de Belém lleva provocando esta escena con un producto aparentemente simple: un hojaldre crujiente relleno de crema de huevo." },
@@ -2264,14 +2291,14 @@ const articles: Record<string, Article> = {
       { tipo: "enlace", texto: "La ficha de la pastelería reúne la ubicación y los datos prácticos para combinar la parada con los monumentos de Belém.", href: "/actividades/pasteis-de-belem", label: "Planificar la visita a Pastéis de Belém" },
       { tipo: "subtitulo", texto: "Pastel de Belém versus pastel de nata: no son lo mismo" },
       { tipo: "parrafo", texto: "Esta distinción genera confusión entre los visitantes, pero los portugueses la tienen clarísima. Pastel de nata es el nombre genérico del dulce: base de hojaldre, crema de huevo, toque caramelizado arriba. Puedes encontrarlo en cualquier pastelería del país, con calidades que van de lo sublime a lo industrial." },
-      { tipo: "parrafo", texto: "Pastel de Belém, en cambio, es una denominación de origen. Solo puede llamarse así el que sale de esta fábrica concreta, elaborado con la receta original del monasterio. La diferencia se nota al morder: el hojaldre es más delicado, con capas finísimas que crujen sin deshacerse; la crema tiene una textura más densa y un sabor que recuerda vagamente a canela aunque no la lleve dentro; el caramelizado superior forma burbujas doradas que contrastan con la suavidad del relleno." },
-      { tipo: "parrafo", texto: "¿Merece la pena la cola por esa diferencia? Depende de cuánto valores la autenticidad y la historia. Un buen pastel de nata de Manteigaria puede ser igual de delicioso, pero la experiencia de comerlo en el salón centenario de Belém, rodeado de azulejos del siglo XIX y con el rumor de tres siglos de tradición pastelera, es irreplicable." },
+      { tipo: "parrafo", texto: "Pastel de Belém, en cambio, es una marca registrada (Pastéis de Belém®), no una denominación de origen. Solo se vende con ese nombre el que sale de esta fábrica concreta, elaborado con la receta original del monasterio. La diferencia se nota al morder: el hojaldre es más delicado, con capas finísimas que crujen sin deshacerse; la crema tiene una textura más densa y un sabor que recuerda vagamente a canela aunque no la lleve dentro; el caramelizado superior forma burbujas doradas que contrastan con la suavidad del relleno." },
+      { tipo: "parrafo", texto: "¿Merece la pena la cola por esa diferencia? Depende de lo que busques. Un buen pastel de nata de Manteigaria puede gustarte igual, pero comerlo en el salón centenario de Belém, rodeado de azulejos del siglo XIX y con casi dos siglos de oficio detrás (la casa abrió en 1837), no se repite en otro sitio." },
       { tipo: "subtitulo", texto: "Cómo funciona la cola (y cómo esquivarla)" },
       { tipo: "parrafo", texto: "El local tiene dos colas separadas que la mayoría de visitantes no distingue. La cola exterior, la que serpentea por la calle, es para comprar pasteles para llevar. Aquí puedes pedir una caja de seis, doce o más unidades, pagar, y marcharte. Suele moverse relativamente rápido porque las transacciones son breves." },
       { tipo: "parrafo", texto: "La otra cola, menos visible, da acceso al salón interior. Aquí te sientas, te traen los pasteles calientes en un plato con los dispensadores de canela y azúcar, y puedes acompañarlos de café, zumo o incluso un vino de Madeira si te sientes decadente a media mañana. Esta cola paradójicamente suele ser más corta, porque muchos visitantes no saben que existe." },
       { tipo: "parrafo", texto: "Mi recomendación: olvida la cola de la calle y ve directo al salón. Sí, tardarás un poco más en ser atendido una vez sentado, pero la experiencia es infinitamente superior. Además, los pasteles del salón vienen recién salidos del horno, mientras que los de llevar pueden llevar unos minutos en la vitrina." },
       { tipo: "subtitulo", texto: "Los horarios que los lisboetas conocen" },
-      { tipo: "parrafo", texto: "El establecimiento abre a las ocho de la mañana y cierra a las once de la noche. Pero no todas las horas son iguales. El pico máximo de afluencia ocurre entre las once de la mañana y las cuatro de la tarde, cuando coinciden los grupos organizados que visitan el monasterio, las familias que vienen de excursión, y los cruceristas que desembarcan en masa." },
+      { tipo: "parrafo", texto: "Abre todos los días de 08:00 a 21:00; del 1 de julio al 30 de septiembre cierra a las 22:00, y el 24, 25 y 31 de diciembre y el 1 de enero cierra a las 19:00. Pero no todas las horas son iguales. El pico máximo de afluencia ocurre entre las once de la mañana y las cuatro de la tarde, cuando coinciden los grupos organizados que visitan el monasterio, las familias que vienen de excursión, y los cruceristas que desembarcan en masa." },
       { tipo: "parrafo", texto: "Las ventanas de tranquilidad son predecibles: primera hora de la mañana (entre ocho y nueve y media) y última hora de la tarde (a partir de las siete). Entre semana siempre hay menos gente que los fines de semana. Y los días de lluvia, curiosamente, son los mejores: muchos visitantes cancelan planes de exterior, y el local queda sorprendentemente vacío para lo habitual." },
       { tipo: "tip", texto: "Si llegas temprano entre semana, puedes sentarte en el salón del fondo —el menos conocido— y disfrutar de los pasteles en soledad casi monástica." },
       { tipo: "subtitulo", texto: "El ritual de comerlos correctamente" },
@@ -2949,6 +2976,8 @@ const articles: Record<string, Article> = {
     fuentes: [
       { label: "Comboios de Portugal — horarios y billetes de tren", href: "https://www.cp.pt/" },
       { label: "Rede Expressos — autobuses de largo recorrido", href: "https://rede-expressos.pt/" },
+      { label: "Rodoviária do Oeste — Rápida Verde Lisboa (Campo Grande)–Óbidos", href: "https://rodoviariadooeste.pt/wp-content/uploads/rapida_linha_verde.pdf" },
+      { label: "Parques de Sintra — Pena solo con reserva de día y hora", href: "https://www.parquesdesintra.pt/pt/planear-a-visita/bilhetes-palacio-da-pena/" },
       { label: "Parques de Sintra — monumentos y precios oficiales", href: "https://www.parquesdesintra.pt/" },
     ],
     contenido: [
@@ -2956,7 +2985,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Esta guía ordena las siete escapadas que de verdad merecen el día, con lo que importa para decidir: cómo se llega, cuánto tiempo necesitas de verdad y cuáles se pueden encadenar. No siempre necesitas un tour: una excursión organizada puede encajar si prefieres llevar los desplazamientos y las visitas resueltos. Los precios de entradas y billetes cambian cada temporada, así que doy el mecanismo y te enlazo a quien los publica, en vez de una cifra que caduque." },
       { tipo: "subtitulo", texto: "1. Sintra: la que hay que hacer sí o sí" },
       { tipo: "parrafo", texto: "Si solo puedes hacer una excursión, es esta. Palacios de cuento entre bosques de niebla, jardines con pozos iniciáticos y túneles, y una atmósfera que Lord Byron llamó «el Edén glorioso». Está a cuarenta minutos en tren desde la estación de Rossio, en pleno centro." },
-      { tipo: "parrafo", texto: "El problema de Sintra es su éxito: en verano las colas del Palacio da Pena pueden ser de dos horas. La diferencia entre un día perfecto y uno agotador está en el orden de las visitas, no en levantarse pronto solamente." },
+      { tipo: "parrafo", texto: "El problema de Sintra es su éxito: la entrada al Palacio da Pena va con día y hora reservados, sin tolerancia de retraso, y en temporada alta las franjas buenas se agotan. Lo que más cambia el día es el orden de las visitas, más que madrugar." },
       { tipo: "lista", items: [
         "Cómo llegar: tren desde Rossio, cada 20-30 minutos",
         "Duración del trayecto: 40 minutos",
@@ -2989,7 +3018,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Óbidos es una villa amurallada del siglo XII que se conserva prácticamente intacta: casas encaladas con cenefas azules y amarillas, calles empedradas de un metro de ancho y una muralla que se puede recorrer entera por arriba, sin barandilla. La muralla es la visita, y es gratis." },
       { tipo: "parrafo", texto: "Se bebe ginjinha, un licor de guinda, servida en un vasito de chocolate que te comes al final. Es turístico y da igual: está bueno. Con medio día se ve bien; un día completo solo si vas sin prisa a comer." },
       { tipo: "lista", items: [
-        "Cómo llegar: autobús desde la estación de Sete Rios",
+        "Cómo llegar: autobús Rápida Verde (Rodoviária do Oeste) desde Campo Grande",
         "Duración del trayecto: alrededor de una hora",
         "Tiempo necesario: media jornada",
         "Qué ver: la muralla completa, el castillo, las calles del interior",
@@ -3143,7 +3172,7 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Si te interesa la fotografía, el invierno en Lisboa es un regalo. El sol está más bajo, lo que crea sombras largas y una luz dorada que dura más tiempo. La golden hour de verano dura quince minutos; en invierno puede durar más de una hora. Los atardeceres sobre el Tajo son más dramáticos, con cielos que pasan del rosa al morado con nubes que añaden textura." },
       { tipo: "parrafo", texto: "Los mejores miradores para fotografía invernal son el Mirador da Senhora do Monte (sin nadie, luz perfecta a las cuatro de la tarde), Santa Catarina (el sol se pone detrás del puente) y el Castelo de São Jorge (la luz rasante ilumina los tejados de Alfama de forma espectacular)." },
       { tipo: "subtitulo", texto: "Qué hacer en un día de lluvia" },
-      { tipo: "parrafo", texto: "Cuando llueve —y lloverá algún día— Lisboa tiene opciones de sobra. El Oceanário de Lisboa es uno de los mejores acuarios de Europa y está genial para pasar una mañana. El Museo Nacional del Azulejo es fascinante y nunca está lleno. El Time Out Market es perfecto para comer de todo bajo techo. Y simplemente sentarte en un café histórico como A Brasileira o Café Nicola a ver llover mientras tomas una bica (espresso portugués) es una de las experiencias más lisboetas que existen." },
+      { tipo: "parrafo", texto: "Si te toca un día de lluvia, hay planes bajo techo. El Oceanário de Lisboa da para una mañana entera. El Museo Nacional del Azulejo está cerrado por obras desde noviembre de 2025, así que este invierno no cuentes con él. En el Time Out Market puedes comer de varios puestos sin salir a la calle. Y sentarte en un café histórico como A Brasileira o Café Nicola a ver llover con una bica (el espresso portugués) también es un buen plan." },
       { tipo: "tip", texto: "Lleva un paraguas plegable y zapatos impermeables. La calçada portuguesa (el empedrado típico) es muy resbaladiza cuando se moja. Las chaparrones suelen durar 20-30 minutos y luego sale el sol." },
       { tipo: "subtitulo", texto: "Eventos de invierno" },
       { tipo: "parrafo", texto: "Lisboa en invierno tiene eventos únicos: los mercados navideños de diciembre, la celebración de Año Nuevo con fuegos artificiales sobre el Tajo (uno de los mejores de Europa), el carnaval en febrero con desfiles por la Avenida da Liberdade, y el festival de fado en varios locales durante todo el invierno. La programación cultural es intensa porque los lisboetas, sin playa, se refugian en conciertos, teatro y exposiciones." }
@@ -3199,7 +3228,7 @@ const articles: Record<string, Article> = {
       { tipo: "enlace", texto: "La comparación completa está separada para no convertir este artículo en una calculadora.", href: "/blog/lisboa-card-vale-la-pena", label: "¿Vale la pena la Lisboa Card?" },
 
       { tipo: "subtitulo", texto: "6. Asumir que todos los museos y monumentos tienen el mismo horario" },
-      { tipo: "parrafo", texto: "No existe una regla útil del tipo “los museos cierran los lunes”. Cada espacio tiene su calendario, cierres puntuales y última admisión. Si una visita es importante para ti, comprueba la web oficial de ese lugar y no una captura antigua o una guía sin fecha." },
+      { tipo: "parrafo", texto: "Los lunes, ojo: los grandes monumentos y museos nacionales cierran ese día, entre ellos el Monasterio de los Jerónimos, la Torre de Belém y el Museu Nacional de Arte Contemporânea. El Castelo de São Jorge y Pastéis de Belém, en cambio, abren todos los días. Cada espacio tiene además sus cierres puntuales y su última admisión. Si una visita es importante para ti, comprueba la web oficial de ese lugar y no una captura antigua o una guía sin fecha." },
 
       { tipo: "subtitulo", texto: "7. Reservar Sintra con márgenes demasiado pequeños" },
       { tipo: "parrafo", texto: "El Palácio da Pena utiliza franjas horarias y llegar desde la estación de Sintra requiere otro desplazamiento. Colocar un tren, una subida y una entrada cronometrada sin margen convierte cualquier retraso en un problema. Reserva el día alrededor de la hora más rígida y no alrededor de una lista de cuatro palacios." },
@@ -3351,7 +3380,7 @@ const articles: Record<string, Article> = {
     minutos: 16,
     contenido: [
       { tipo: "parrafo", texto: "Hubo un período de poco más de cien años, entre 1415 y 1542, en que Portugal —un pequeño reino en el extremo occidental de Europa, con apenas un millón de habitantes— conectó el mundo. Comerciantes portugueses llegaron a Brasil, a India, a China, a Japón, a las costas de África. Vasco de Gama encontró la ruta marítima a las especias. Pedro Álvares Cabral llegó a Brasil. Fernando de Magallanes (Fernando Magalhães), aunque al servicio de España, era portugués y su expedición completó la primera vuelta al mundo." },
-      { tipo: "parrafo", texto: "Todo partió de Lisboa. El barrio de Belém, hoy un suburbio pacífico con el mejor jardín de la ciudad y el mejor museo de azulejos del mundo, fue durante ese período el lugar más importante del planeta: desde sus muelles partían los barcos que cambiaban la historia de la humanidad." },
+      { tipo: "parrafo", texto: "Todo partió de Lisboa. El barrio de Belém, hoy un barrio tranquilo de museos y jardines junto al río, era entonces el puerto del que salían las expediciones portuguesas." },
       { tipo: "subtitulo", texto: "El Infante Don Henrique y el Principio de Todo" },
       { tipo: "parrafo", texto: "La historia de los descubrimientos empieza en 1415 con la conquista de Ceuta, la primera posesión portuguesa en África. El artífice fue el Infante Dom Henrique, hijo del rey João I y de Felipa de Lancaster (inglesa). Henrique no era un navegante: era un organizador, un financiador, un visionario. Instalado en Sagres, en el extremo suroeste de Portugal, reunió cartógrafos, navegantes, matemáticos y astrónomos, y creó lo que podría llamarse el primer centro de investigación aplicada de la historia." },
       { tipo: "parrafo", texto: "Bajo su patrocinio, los barcos portugueses fueron avanzando cada año un poco más hacia el sur por la costa africana, cartografiando lo desconocido. En 1444, Nuno Tristão llegó al río Senegal, el primer europeo en cruzar el Trópico de Cáncer. En 1460, cuando murió Henrique, los portugueses habían llegado a Sierra Leona. El camino a India estaba trazado." },
@@ -3360,8 +3389,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "El viaje duró dos años. Rodearon el Cabo de Buena Esperanza (que Bartolomeu Dias había doblado diez años antes), subieron por la costa oriental de África, cruzaron el Índico con la ayuda de un piloto árabe, y llegaron a Calicut (India) el 20 de mayo de 1498. Volvieron a Lisboa en septiembre de 1499 con la bodega llena de pimienta, clavo, canela y jengibre." },
       { tipo: "parrafo", texto: "El valor de la carga era sesenta veces el coste del viaje. La ruta marítima a India rompió el monopolio de los mercaderes árabes y venecianos en el comercio de especias y creó el primer sistema de comercio global. Lisboa se convirtió en el centro de ese sistema." },
       { tipo: "subtitulo", texto: "Belém: El Barrio que Partió al Mundo" },
-      { tipo: "parrafo", texto: "El Mosteiro dos Jerónimos, en Belém, fue construido para conmemorar el descubrimiento de la ruta a India. Financiado con el impuesto de la pimenta (el quinto real sobre las especias), es la obra cumbre del estilo manuelino: el arte portugués del Renacimiento, con su mezcla única de decoración gótica, elementos marinos (cuerdas, armillas, cruces de la Orden de Cristo) y motivos exóticos traídos de Asia." },
-      { tipo: "parrafo", texto: "En la iglesia del monasterio están enterrados Vasco de Gama y el poeta Luís de Camões, el autor de Os Lusíadas, la epopeya que narró los descubrimientos y se convirtió en el libro fundacional de la identidad portuguesa. La Torre de Belém, al borde del río, fue construida como fortaleza y ceremonial: desde aquí se despedía y recibía a los barcos." },
+      { tipo: "parrafo", texto: "El Mosteiro dos Jerónimos, en Belém, fue construido para conmemorar el descubrimiento de la ruta a India. Financiado en buena parte con la «vintena da pimenta» (un impuesto del 5 % sobre el comercio con África y Oriente), es la obra cumbre del estilo manuelino: el gótico final portugués, con su mezcla única de decoración gótica, elementos marinos (cuerdas, armillas, cruces de la Orden de Cristo) y motivos exóticos traídos de Asia." },
+      { tipo: "parrafo", texto: "En la iglesia del monasterio están los túmulos de Vasco de Gama y del poeta Luís de Camões, el autor de Os Lusíadas, la epopeya que narró los descubrimientos y se convirtió en el libro fundacional de la identidad portuguesa. La Torre de Belém, al borde del río, fue construida como fortaleza y ceremonial: desde aquí se despedía y recibía a los barcos." },
       { tipo: "tip", texto: "El Padrão dos Descobrimentos, la escultura monumental en la orilla del Tajo en Belém, fue construida en 1960 para conmemorar el quinto centenario de la muerte del Infante Henrique. Sobre la proa del barco de piedra, las figuras de los grandes navegantes miran al río desde donde partieron." },
       { tipo: "subtitulo", texto: "El Imperio y su Precio" },
       { tipo: "parrafo", texto: "En su momento álgido, el Imperio Português controlaba el comercio marítimo entre Europa, África, Asia y América. Lisboa era la ciudad más cosmopolita del mundo: en sus calles se escuchaban el árabe, el swahili, el hindi, el japonés, el tupí. El comercio con Brasil trajo azúcar; con África, especias y, tristemente, esclavos; con India, telas y piedras preciosas." },
@@ -3382,6 +3411,12 @@ const articles: Record<string, Article> = {
     fechaActualizacion: "Actualizado en septiembre de 2026",
     dateModified: "2026-09-21",
     minutos: 13,
+    fuentes: [
+      { label: "MMP — Museu Nacional do Azulejo (ficha oficial, estado: cerrado por obras)", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-do-azulejo" },
+      { label: "MMP — El Museu Nacional do Azulejo cierra por obras desde el 1/11/2025", href: "https://www.museusemonumentos.pt/pt/noticia-com/museu-nacional-do-azulejo-e-museu-nacional-do-teatro-e-da-danca-encerram-para-obras-de-requalificacao" },
+      { label: "CARRIS — línea 742 (parada Igreja Madre Deus)", href: "https://www.carris.pt/viaje/carreiras/742/" },
+      { label: "Visit Lisboa — Azulejos de Lisboa y advertencia sobre piezas antiguas", href: "https://www.visitlisboa.com/es/sitios/azulejos-de-lisboa" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Hay una imagen de Lisboa que no aparece en las postales pero que cualquier visitante lleva consigo para siempre: la pared de una casa cubierta de azulejos azules y blancos, desgastados por el tiempo, con pequeñas grietas donde crece una planta diminuta. O la fachada de una iglesia entera vestida de cerámica policromada, brillando bajo el sol de la tarde. O el interior de una estación de metro decorada con paneles narrativos del siglo XX que parecen miniaturizaciones de la historia de Portugal." },
       { tipo: "parrafo", texto: "Los azulejos son el arte más democrático de Portugal: están en los palacios y en las fachadas de los edificios modestos, en las estaciones de tren y en los bares de barrio, en las iglesias más ricas y en las escaleras de las casas de vecinos. Entender los azulejos es entender Portugal." },
@@ -3393,11 +3428,12 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "En Lisboa, el mejor ejemplo de este período son los paneles del Mirador de Santa Luzia, en Alfama, que representan la Praça do Comércio antes del terremoto de 1755 y la reconquista del castillo a los moros. Los azulejos en la fachada de la Iglesia de São Vicente de Fora narran las fábulas de La Fontaine en 38 paneles." },
       { tipo: "subtitulo", texto: "El Museo Nacional do Azulejo: La Visita Imprescindible" },
       { tipo: "parrafo", texto: "El Museu Nacional do Azulejo en Lisboa es, sin discusión, el mejor lugar del mundo para entender el azulejo portugués. Instalado en el antiguo convento de Madre de Deus (siglo XVI), el museo tiene una colección de 23.000 piezas que cubre toda la historia del azulejo desde el siglo XV hasta el arte contemporáneo. La visita más emocionante es el Gran Panorama de Lisboa, un panel de 23 metros de largo que representa el skyline de Lisboa antes del terremoto de 1755. Es la única imagen fiel de cómo era la ciudad antes de la catástrofe." },
-      { tipo: "tip", texto: "El Museu do Azulejo está a 20 minutos del centro en el bus 718 o el tranvía 28E. Vale muchísimo la pena la visita, aunque sea solo para ver el Gran Panorama. La tienda del museo tiene azulejos originales de todas las épocas y reproducciones de calidad." },
+      { tipo: "aviso", texto: "Ahora mismo no se puede visitar: el Museu Nacional do Azulejo está cerrado por obras de rehabilitación desde el 1 de noviembre de 2025 y no hay fecha de reapertura confirmada (octubre de 2026). Mientras tanto, los azulejos de la calle, de las iglesias y del metro se ven gratis." },
+      { tipo: "tip", texto: "Cuando reabra, el museo está en Madre de Deus (Xabregas), al este del centro: se llega en los autobuses 718 o 742 de Carris (parada Igreja Madre Deus). El tranvía 28E no pasa por allí. Merece la visita aunque sea solo por el Gran Panorama." },
       { tipo: "subtitulo", texto: "Los Mejores Azulejos de Lisboa: Una Ruta" },
       { tipo: "parrafo", texto: "Además del museo, Lisboa es en sí misma un museo de azulejos al aire libre. En Alfama, casi cada esquina tiene su sorpresa: fachadas de casas cubiertas de azulejos desgastados, escaleras interiores decoradas, pequeñas capillas con retablos de cerámica. El Mirador de Santa Luzia tiene los paneles históricos más fotografiados de la ciudad. La Iglesia de São Vicente de Fora tiene los paneles más narrativos." },
       { tipo: "parrafo", texto: "En las estaciones de metro de Lisboa, los azulejos del siglo XX son una galería de arte gratuita. La estación de Parque tiene murales de Maria Keil; Picoas tiene obras de Eduardo Nery; Olaias tiene una decoración total que convierte el andén en una obra de arte contemporáneo. Muchos lisboetas van específicamente a visitar las estaciones de metro por su valor artístico." },
-      { tipo: "parrafo", texto: "Y en los mercados de antigüedades —la Feira da Ladra los martes y sábados, varios anticuarios en Alfama— se pueden comprar azulejos históricos auténticos, rescatados de edificios en demolición, que son el souvenir más genuino que puedes llevarte de Lisboa." }
+      { tipo: "parrafo", texto: "En la Feira da Ladra (martes y sábados) y en algunos anticuarios verás azulejos antiguos a la venta. Mejor no comprarlos: Visit Lisboa advierte de que muchas piezas históricas desaparecen de las fachadas por robos destinados a la venta ilegal. Si quieres llevarte uno, elige reproducciones o cerámica actual de procedencia clara." }
     ]
   },
   "novedades-lisboa-2026": {
@@ -3408,16 +3444,21 @@ const articles: Record<string, Article> = {
     categoria: "Planificación",
     fecha: "10 Mar 2026",
     minutos: 11,
+    fuentes: [
+      { label: "Metro de Lisboa — Prolongamento da linha Vermelha a Alcântara (previsto 2030)", href: "https://projetos.metrolisboa.pt/expansao/linha-vermelha/" },
+      { label: "Público — La Linha Circular abrirá en el 1.er trimestre de 2027", href: "https://www.publico.pt/2026/03/31/local/noticia/abertura-linha-circular-metro-lisboa-sera-trimestre-2027-2169843" },
+      { label: "MNAC — Horarios y entradas (gratuidad solo para residentes)", href: "https://museuartecontemporanea.gov.pt/pt/informacao/horarios-e-ingresso" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa en 2026 no es la misma que hace cinco años. La ciudad ha cambiado con más rapidez de lo que la mayoría de los viajeros imagina: nuevos barrios en transformación, museos renovados, cambios en el transporte, y una escena gastronómica que no para de sorprender. Si viniste hace dos o tres años, esta guía te dará motivos para volver. Si es tu primera vez, aquí están todas las novedades que hacen de 2026 un año especialmente bueno para visitar Lisboa." },
       { tipo: "subtitulo", texto: "Nuevas Atracciones y Museos" },
-      { tipo: "parrafo", texto: "El Museu de Arte Contemporânea do Chiado completó en 2025 su ampliación más importante en décadas, incorporando nuevas galerías permanentes con colección portuguesa de los siglos XX y XXI, y un espacio de exposiciones temporales internacionales que lo pone al nivel de los mejores museos europeos de arte contemporáneo. La entrada es gratuita los domingos por la mañana." },
-      { tipo: "parrafo", texto: "En Belém, el Museu de Arte, Arquitectura e Tecnologia (MAAT) tiene en 2026 su programación más ambiciosa, con exposiciones que combinan arte digital, arquitectura sostenible y tecnología. El edificio en sí —un cubo blanco flotando sobre el Tajo con una cubierta transitable— es ya un icono de la arquitectura contemporánea de Lisboa." },
+      { tipo: "parrafo", texto: "El Museu Nacional de Arte Contemporânea, en el Chiado, es la parada para ver arte portugués moderno y contemporáneo sin salir del centro. Abre de martes a domingo de 10:00 a 18:00 y la entrada cuesta 10 €. Ojo: ya no hay domingos gratis para turistas; los 52 días gratis al año son solo para portugueses y residentes en Portugal." },
+      { tipo: "parrafo", texto: "En Belém, el Museu de Arte, Arquitectura e Tecnologia (MAAT) tiene en 2026 su programación más ambiciosa, con exposiciones que combinan arte digital, arquitectura sostenible y tecnología. El edificio en sí —una construcción baja y curva junto al Tajo, con una cubierta por la que se puede caminar— es ya un icono de la arquitectura contemporánea de Lisboa." },
       { tipo: "subtitulo", texto: "Gastronomía: Lo Nuevo en 2026" },
       { tipo: "parrafo", texto: "La escena gastronómica de Lisboa lleva años en ebullición y 2026 no es excepción. La tendencia más marcada es la de chefs portugueses jóvenes que reinterpretan la cocina tradicional con técnicas contemporáneas, usando ingredientes locales y de temporada. El barrio de Mouraria, durante años olvidado turísticamente, se ha convertido en el epicentro de esta nueva gastronomía: en sus calles coexisten tascas de toda la vida con restaurantes de nueva generación." },
       { tipo: "parrafo", texto: "LX Factory, el espacio industrial reconvertido en Alcântara, ha incorporado nuevos restaurantes y bares en sus naves con vistas al Puente 25 de Abril. El Mercado de Arroios, en expansión desde 2023, tiene en 2026 más de veinte puestos de productores locales además de su restaurante de menú. Y en Parque das Nações, varios restaurantes junto al río han renovado carta con énfasis en el pescado fresco del Atlántico." },
       { tipo: "subtitulo", texto: "Cambios en el Transporte en 2026" },
-      { tipo: "parrafo", texto: "La extensión de la línea verde del Metro hasta Alcântara, prevista para mediados de 2026, cambia significativamente la conectividad de LX Factory, el barrio de Santos y la zona del Aterro. Si tu visita es después de junio, comprueba el nuevo mapa de metro antes de planificar tus rutas." },
+      { tipo: "parrafo", texto: "En el Metro no hay estaciones nuevas en 2026. La próxima novedad es la línea circular (Rato–Cais do Sodré, con dos estaciones nuevas, Estrela y Santos), que el Metro prevé inaugurar en el primer trimestre de 2027. La llegada a Alcântara será con la prolongación de la línea roja desde São Sebastião, prevista para 2030. Hasta entonces, a LX Factory se va en tren desde Cais do Sodré, en tranvía 15E o en autobús." },
       { tipo: "parrafo", texto: "El sistema de bicicletas eléctricas compartidas (Gira) ha ampliado su red hasta cubrir prácticamente toda la ciudad dentro de las Avenidas Novas. La aplicación mejorada de 2025 facilita localizar y reservar bicicletas. Para distancias medias en terreno llano (Baixa, Belém, Parque das Nações), la bicicleta eléctrica es hoy la opción más rápida y barata." },
       { tipo: "subtitulo", texto: "Eventos Imperdibles en 2026" },
       { tipo: "parrafo", texto: "El gran evento del año en Lisboa es la NOS Alive, el festival de música que se celebra en Algés cada julio con artistas internacionales de primer nivel. Las entradas se agotan meses antes. En junio, las Festas de Lisboa transforman todos los barrios históricos en escenarios de conciertos, marchas populares y arraiais (verbenas de barrio): es el mejor momento del año para sentir la Lisboa más auténtica y festiva." },
@@ -3436,6 +3477,9 @@ const articles: Record<string, Article> = {
     categoria: "Planificación",
     fecha: "8 Mar 2026",
     minutos: 12,
+    fuentes: [
+      { label: "Visit Lisboa — Mercado de Natal no Rossio (edición 2025)", href: "https://www.visitlisboa.com/pt-pt/eventos/mercado-de-natal-no-rossio" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa es una ciudad de fiestas. Hay una razón por la que el mes de junio es el más concurrido del año: las Festas de Lisboa, que culminan la noche del 12 al 13 de junio con la festividad de Santo António, convierten toda la ciudad en una fiesta interminable de sardinas asadas, vino verde, música y danza. Pero las celebraciones lisboetas no se limitan al verano: a lo largo del año hay una agenda de festivales culturales, musicales y gastronómicos que justificaría un viaje en cualquier mes." },
       { tipo: "subtitulo", texto: "Enero - Marzo: Cultura y Carnaval" },
@@ -3452,8 +3496,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "El verano lisboeta es la temporada de los grandes festivales de música al aire libre. NOS Alive (julio, Algés) es el más importante: tres días con artistas internacionales de primer nivel, capacidad para 50.000 personas y una combinación de stages que va desde el indie y el rock hasta el hip-hop y la electrónica. En 2026 la programación no está todavía completa, pero las últimas ediciones han incluido artistas como Arctic Monkeys, Billie Eilish y Stromae." },
       { tipo: "parrafo", texto: "Jazz em Agosto (Fundação Gulbenkian, agosto) es el festival para los amantes del jazz: dos semanas de conciertos en el jardín del museo Gulbenkian, con programación de artistas internacionales de altísimo nivel. La combinación del jardín (uno de los más bellos de Lisboa) con la música en directo es incomparable." },
       { tipo: "subtitulo", texto: "Septiembre - Diciembre: Otoño Cultural" },
-      { tipo: "parrafo", texto: "Septiembre marca el regreso de los lisboetas de las vacaciones y un otoño cultural intenso. La Doclisboa (festival de cine documental, octubre) es uno de los mejores festivales de documentales del mundo en términos de programación. El Festival de Literatura de Lisboa (noviembre) trae escritores portugueses e internacionales a librerías, teatros y espacios culturales de toda la ciudad." },
-      { tipo: "parrafo", texto: "Diciembre tiene la magia de las luces de Navidad en la Avenida da Liberdade y el Rossio, el mercado de Navidad del Terreiro do Paço junto al río, y una atmósfera más íntima que en los meses de verano. La Nochevieja en Lisboa es espectacular: fuegos artificiales sobre el Tejo, miles de personas en la Praça do Comércio, y la tradición de comer las uvas de la medianoche en el Rossio." }
+      { tipo: "parrafo", texto: "Septiembre marca el regreso de los lisboetas de las vacaciones y un otoño cultural intenso. La Doclisboa (festival de cine documental, octubre) es uno de los mejores festivales de documentales del mundo en términos de programación." },
+      { tipo: "parrafo", texto: "En diciembre se encienden las luces de Navidad en las calles de la Baixa y el Rossio monta su mercado de Navidad, con casetas de madera de artesanía y comida (en 2025 fue del 14 de noviembre al 21 de diciembre). La Nochevieja se celebra con una fiesta gratuita en la Praça do Comércio y fuegos artificiales sobre el Tajo a medianoche." }
     ]
   },
   "lisboa-vs-porto": {
@@ -3539,15 +3583,20 @@ const articles: Record<string, Article> = {
     fuentes: [
       { label: "Museus e Monumentos de Portugal — horarios y entradas", href: "https://www.museusemonumentos.pt/" },
       { label: "Castelo de São Jorge — visita y billetes", href: "https://castelodesaojorge.pt/" },
+      { label: "MMP — Mosteiro dos Jerónimos: horario y cierres", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo" },
+      { label: "MMP — Torre de Belém: horario y cierres", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem" },
+      { label: "EPAL / Museu da Água — Aqueduto das Águas Livres", href: "https://www.epal.pt/EPAL/menu/museu-da-%C3%A1gua/exposi%C3%A7%C3%A3o-permanente-patrim%C3%B3nio-associado/aqueduto-das-%C3%A1guas-livres" },
+      { label: "Gobierno de Portugal — Inauguración del Museu do Tesouro Real (2022)", href: "https://portugal.gov.pt/gc23/comunicacao/noticias/inauguracao-do-museu-do-tesouro-real" },
+      { label: "Panteão Nacional — el monumento y sus homenajeados", href: "https://www.panteaonacional.gov.pt/monumento" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa es una ciudad de monumentos. No del tipo de monumentos que se erigen en honor a batallas olvidadas, sino de edificios y estructuras que cuentan directamente la historia de la ciudad y del país: los monasterios construidos con el oro de las especias de India, las torres que vigilaban la entrada al río, los puentes y ascensores que conectaban las colinas. Esta guía te ayuda a priorizar qué ver, cómo evitar colas, y cuánto tiempo necesitas en cada lugar." },
-      { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La Joya del Renacimiento Portugués" },
+      { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino" },
       { tipo: "parrafo", texto: "Construido a partir de 1501 con el dinero del impuesto sobre las especias traídas de India, el Mosteiro dos Jerónimos es la obra cumbre del estilo manuelino y uno de los edificios más bellos de Europa. La nave de la iglesia, con sus columnas decoradas con motivos marinos y tropicales, es de una elegancia que no cansa. Los claustros, en el piso superior, son todavía más impresionantes: una galería de dos pisos de arcos decorados con una delicadeza escultórica extraordinaria." },
-      { tipo: "parrafo", texto: "Datos prácticos: abre a las 10:00, cierra a las 17:30 (18:30 en verano). La iglesia es gratuita; lo que se paga es el claustro, 18€. Si hay billete combinado con la Torre de Belém, compruébalo en la web oficial antes de comprar por separado. Compra online para evitar colas. Tiempo recomendado: 1,5-2 horas." },
+      { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro, 18€. Si hay billete combinado con la Torre de Belém, compruébalo en la web oficial antes de comprar por separado. Compra online para evitar colas. Tiempo recomendado: 1,5-2 horas." },
       { tipo: "subtitulo", texto: "2. Torre de Belém — El Icono de Lisboa" },
       { tipo: "parrafo", texto: "La Torre de Belém es la imagen más reconocible de Lisboa y uno de los iconos de Portugal. Construida entre 1516 y 1521 como fortaleza defensiva a la entrada del estuario del Tajo, la torre combina elementos militares con decoración manuelina de una sofisticación sorprendente. Las troneras en forma de cruz de Cristo, las torres de vigilancia octogonales y los balcones con barandillas de piedra tallada hacen que el edificio parezca más un sueño de piedra que una fortaleza." },
-      { tipo: "parrafo", texto: "Datos prácticos: abre a las 10:00. Precio: 15€ (consulta en la web oficial si sigue habiendo combinado con Jerónimos). El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
+      { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15€ (consulta en la web oficial si sigue habiendo combinado con Jerónimos). El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
       { tipo: "subtitulo", texto: "3. Castelo de São Jorge — La Historia de Lisboa en Piedra" },
       { tipo: "parrafo", texto: "El castillo que corona Alfama tiene casi mil años de historia visible en sus murallas. Construido por los moros en el siglo XI sobre asentamientos anteriores, fue reconquistado por Afonso Henriques en 1147 con ayuda de cruzados del norte de Europa. Desde las almenas hay la panorámica más completa de Lisboa: los tejados de Alfama, el Tajo brillando al fondo, el Puente 25 de Abril en la distancia." },
       { tipo: "parrafo", texto: "La entrada general cuesta 17 euros, con tarifas reducidas para jóvenes y mayores de 65 años y entrada gratuita para menores de 13. Vale la pena por las vistas y por el tour arqueológico (incluido en el precio) que muestra restos de la Lisboa fenicia, romana y mora bajo el recinto. Los pavos reales que deambulan por los jardines son un bonus inesperado." },
@@ -3555,16 +3604,16 @@ const articles: Record<string, Article> = {
       { tipo: "aviso", texto: "Carris lo ha marcado como cerrado temporalmente. Conviene consultar su web oficial antes de acercarse, porque el estado ha ido cambiando desde 2025." },
       { tipo: "parrafo", texto: "Este ascensor de hierro forjado, con una estructura de 45 metros de altura, fue diseñado por Raoul Mesnier du Ponsard y conecta la Baixa con el Largo do Carmo, en el Chiado. Construido en 1902, es una pieza de ingeniería y arquitectura que parece sacada de un libro de Jules Verne. La terraza superior ofrece vistas de 360 grados sobre los tejados de la Baixa, la colina del Castillo y el Tajo." },
       { tipo: "nota", texto: "Conviene distinguir dos cosas que suelen confundirse: el viaje en el ascensor, que forma parte de la red de transporte de Carris, y la entrada al miradouro de la torre, que se paga aparte —cinco euros— y no está incluida en la Lisboa Card. No hay un acceso gratuito por el Convento do Carmo." },
-      { tipo: "subtitulo", texto: "5. Palácio Nacional da Ajuda — El Palacio que Nunca Terminó" },
-      { tipo: "parrafo", texto: "El mayor palacio de Lisboa es también uno de sus secretos mejor guardados. Construido para la familia real a partir de 1795, nunca llegó a completarse (la corte huyó a Brasil antes de que terminara la obra), lo que le da un curioso estatus de palacio inacabado. El interior, sin embargo, está entre los más ricos de Europa: salones de azulejos del siglo XIX, muebles de época, colecciones de pintura y porcelana. La visita es mucho menos masificada que los Jerónimos o el Castillo." },
+      { tipo: "subtitulo", texto: "5. Palácio Nacional da Ajuda — El palacio que tardó 226 años en terminarse" },
+      { tipo: "parrafo", texto: "El mayor palacio de Lisboa es también uno de sus secretos mejor guardados. Construido para la familia real a partir de 1795, la obra se paró cuando la corte huyó a Brasil y el palacio pasó más de dos siglos inacabado. La ala oeste no se cerró hasta 2021, y desde junio de 2022 alberga el Museu do Tesouro Real con las joyas de la Corona. El interior, sin embargo, está entre los más ricos de Europa: salones de azulejos del siglo XIX, muebles de época, colecciones de pintura y porcelana. La visita es mucho menos masificada que los Jerónimos o el Castillo." },
       { tipo: "subtitulo", texto: "6-15. Los Monumentos Esenciales" },
       { tipo: "lista", items: [
         "Praça do Comércio: La plaza más grande de Lisboa, frente al Tajo, diseñada por el Marqués de Pombal tras el terremoto de 1755",
         "Convento do Carmo: Las ruinas góticas abiertas al cielo, memorial del terremoto. Ahora tiene un pequeño museo arqueológico",
-        "Panteón Nacional: La cúpula barroca más impresionante de Portugal, con las tumbas de Vasco de Gama, Camões y presidentes de la República",
-        "Museu do Azulejo (Convento de Madre de Deus): 23.000 azulejos en un convento del siglo XVI",
+        "Panteón Nacional: La cúpula barroca más impresionante de Portugal, con los cenotafios de Vasco de Gama y Camões (sus túmulos están en los Jerónimos) y tumbas de presidentes de la República",
+        "Museu do Azulejo (Convento de Madre de Deus): cerrado por obras desde el 1 de noviembre de 2025, sin fecha de reapertura confirmada",
         "Padrão dos Descobrimentos: La escultura monumental de los grandes navegantes en la orilla del Tajo en Belém",
-        "Aqueduto das Águas Livres: El acueducto romano del siglo XVIII que cruza el valle de Alcântara. Visitable a pie en algunos tramos",
+        "Aqueduto das Águas Livres: El acueducto del siglo XVIII (lo mandó construir João V en 1731; no es romano) que cruza el valle de Alcântara. Visitable a pie en algunos tramos",
         "Palácio da Pena (Sintra): El palacio más fotogénico de Portugal, a 40 minutos de Lisboa en tren",
         "Museu Calouste Gulbenkian: El museo de arte más importante de Portugal, con colección desde el Antiguo Egipto hasta el siglo XX",
         "Teatro Nacional de Dona Maria II: El teatro neoclásico de la Praça do Rossio, frente a la estación",
@@ -3706,7 +3755,8 @@ const articles: Record<string, Article> = {
     minutos: 14,
     contenido: [
       { tipo: "parrafo", texto: "La cocina portuguesa tiene un problema de imagen. En un continente donde Francia, Italia y España acaparan toda la atención gastronómica, Portugal lleva siglos cocinando en silencio platos que llevan 500 años perfeccionándose. El bacalhau que los pescadores portugueses salaban en los barcos camino de Terranova, la pastelería conventual que las monjas desarrollaron durante siglos con yema de huevo y azúcar, el vino verde que se bebe frío y espumoso en verano..." },
-      { tipo: "parrafo", texto: "Vine a Lisboa sin conocer nada de su gastronomía y en tres años se ha convertido en una de las razones por las que no me quiero ir. Esta guía es el mapa que me habría gustado tener al principio." },
+      // TODO(José): tu relación real con la comida de Lisboa (qué te sorprendió, tu plato favorito). Solo si es real.
+      { tipo: "parrafo", texto: "Esta guía explica la cocina portuguesa de forma práctica: qué platos pedir, qué es cada cosa en la carta y dónde probarlos en Lisboa." },
       { tipo: "subtitulo", texto: "Los Imprescindibles — Empieza por Aquí" },
       { tipo: "lista", items: [
         "Pastel de nata: el rey indiscutible. Hojaldre crujiente, crema de huevo con canela. Come el primero caliente en Pastéis de Belém o en cualquier pastelería de barrio",
@@ -3808,19 +3858,21 @@ const articles: Record<string, Article> = {
     minutos: 12,
     fuentes: [
       { label: "Museus e Monumentos de Portugal — Jerónimos y Torre de Belém", href: "https://www.museusemonumentos.pt/" },
+      { label: "MMP — Mosteiro dos Jerónimos: horario y cierres", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo" },
+      { label: "MMP — Torre de Belém: horario y cierres", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem" },
       { label: "Pastéis de Belém — la pastelería original", href: "https://pasteisdebelem.pt/" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "A finales del siglo XV, Belém no era un barrio de Lisboa: era una aldea de pescadores a las afueras de la ciudad, en la orilla del Tajo, a unos seis kilómetros del centro. Fue desde esta aldea desde donde Vasco de Gama zarpó en 1497 rumbo a India. Fue aquí donde el rey Manuel I construyó el monasterio más bello de Portugal para celebrar el descubrimiento de la ruta a las especias. Y fue aquí donde se instaló la pastelería que llevaría la crema de los monjes al mundo entero." },
       { tipo: "parrafo", texto: "Hoy Belém es un barrio tranquilo integrado en la ciudad, accesible en tranvía o en bicicleta desde el centro, con los monumentos más visitados de Portugal y también con algunos de los mejores museos del país. Merece al menos medio día, mejor uno completo." },
       { tipo: "subtitulo", texto: "El Mosteiro dos Jerónimos — La Obra Maestra" },
-      { tipo: "parrafo", texto: "Construido entre 1501 y 1572 en estilo manuelino —el Renacimiento portugués con decoración de cuerdas, cruces de Cristo y motivos marinos— los Jerónimos son probablemente el edificio más bello de Portugal. La nave de la iglesia tiene columnas tan esbeltas y tan decoradas que el ojo no sabe por dónde empezar. Los claustros, arriba, tienen una armonía de proporciones que hace que la gente se siente en el suelo y no quiera levantarse." },
-      { tipo: "parrafo", texto: "El monasterio fue construido con el 'quinto real', el impuesto del 5% sobre todas las especias traídas de India. En otras palabras: los Jerónimos están hechos con pimienta, clavo, canela y jengibre. La ironía es que el monasterio era el lugar de oración de la Orden de San Jerónimo, una orden conocida por su sobriedad. Los monjes rezaban en el edificio más opulento de su tiempo, costeado por el comercio más lucrativo del mundo." },
+      { tipo: "parrafo", texto: "Construido entre 1501 y 1572 en estilo manuelino —el gótico final portugués, con decoración de cuerdas, cruces de Cristo y motivos marinos— los Jerónimos son el gran ejemplo del manuelino en Lisboa. La nave de la iglesia tiene columnas muy finas y muy trabajadas, y cuesta decidir dónde mirar primero. En el claustro es habitual ver gente sentada en el suelo, sin prisa por irse." },
+      { tipo: "parrafo", texto: "El monasterio se pagó en buena parte con la «vintena da pimenta», un impuesto del 5 % sobre el comercio con África y Oriente. En otras palabras: los Jerónimos están hechos con pimienta, clavo, canela y jengibre. La ironía es que el monasterio era el lugar de oración de la Orden de San Jerónimo, una orden conocida por su sobriedad. Los monjes rezaban en el edificio más opulento de su tiempo, costeado por el comercio más lucrativo del mundo." },
       { tipo: "enlace", texto: "Antes de fijar la mañana alrededor del claustro, revisa la ficha práctica del monasterio y confirma las condiciones vigentes.", href: "/actividades/mosteiro-jeronimos", label: "Planificar la visita al Monasterio de los Jerónimos" },
-      { tipo: "tip", texto: "Entra a primera hora (las puertas abren a las 10:00) y ve directo al claustro antes de que lleguen los grupos organizados. Compra siempre la entrada online en museusemonumentos.pt para evitar colas. Si sigue existiendo el billete combinado con la Torre de Belém, lo verás ahí: sale mejor que comprar los dos por separado." },
+      { tipo: "tip", texto: "Entra a primera hora (el claustro abre a las 9:30, de martes a domingo; los lunes está cerrado) y ve directo al claustro antes de que lleguen los grupos organizados. Compra siempre la entrada online en museusemonumentos.pt para evitar colas. Si sigue existiendo el billete combinado con la Torre de Belém, lo verás ahí: sale mejor que comprar los dos por separado." },
       { tipo: "subtitulo", texto: "La Torre de Belém — El Ícono Fotográfico" },
       { tipo: "parrafo", texto: "La Torre de Belém es el monumento más fotografiado de Portugal y uno de los más reconocibles de Europa. Construida entre 1516 y 1521 como fortaleza en mitad del Tajo (hoy la orilla ha cambiado y está junto a la orilla), el edificio combina arquitectura militar con decoración manuelina de una finura extraordinaria: troneras en forma de cruz de la Orden de Cristo, balcones con barandillas de piedra tallada, una torre de vigía con cupulín esférico que parece una fantasía arquitectónica." },
-      { tipo: "parrafo", texto: "El interior tiene cinco pisos con escaleras estrechísimas. Las vistas desde la terraza superior valen la espera. Las colas en verano pueden ser de una hora; llegar al abrir (10:00) o comprar online resuelve el problema." },
+      { tipo: "parrafo", texto: "El interior tiene cinco pisos con escaleras estrechísimas. Las vistas desde la terraza superior valen la espera. Abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Las colas en verano pueden ser de una hora; llegar al abrir o comprar online resuelve el problema." },
       { tipo: "enlace", texto: "La ficha de la Torre de Belém permite comprobar la visita por separado antes de encajarla en esta ruta.", href: "/actividades/torre-de-belem", label: "Consultar la Torre de Belém" },
       { tipo: "subtitulo", texto: "Pastéis de Belém — La Fila que Vale la Pena" },
       { tipo: "parrafo", texto: "La Pastéis de Belém lleva abierta desde 1837. Ocupa el mismo edificio desde entonces, un laberinto de salas azulejadas que conectan entre sí, con el olor de la crema de huevo y el hojaldre recién horneado impregnando hasta la acera. La receta original la guardan en secreto tres personas en el mundo: se llama la Receita Secreta." },
@@ -4017,10 +4069,10 @@ const articles: Record<string, Article> = {
     ],
     contenido: [
       { tipo: "parrafo", texto: "El Tranvía 28 —la línea 28E de CARRIS— atraviesa varios de los barrios históricos más visitados de Lisboa. Es útil como transporte, pero mucha gente lo busca también por el recorrido entre calles estrechas, cuestas y zonas como Graça, Alfama, Chiado, Estrela y Campo de Ourique." },
-      { tipo: "parrafo", texto: "Hay una precaución importante: el 28E sufre alteraciones temporales por obras, eventos y cortes de circulación. La ficha oficial de CARRIS consultada para esta actualización publica el servicio entre Graça y Campo de Ourique y muestra avisos asociados. Antes de organizar el día alrededor del tranvía, comprueba el recorrido del momento." },
+      { tipo: "parrafo", texto: "Hay una precaución importante: el 28E sufre alteraciones temporales por obras, eventos y cortes de circulación. La ficha oficial de CARRIS (consultada en octubre de 2026) da el recorrido Martim Moniz – Campo Ourique (Prazeres) y muestra avisos asociados. Antes de organizar el día alrededor del tranvía, comprueba el recorrido del momento." },
 
       { tipo: "subtitulo", texto: "Ruta del Tranvía 28: qué zonas conecta" },
-      { tipo: "parrafo", texto: "En su recorrido oficial aparecen paradas y zonas como Graça, Voz do Operário, Portas do Sol, Miradouro de Santa Luzia, Sé, Baixa, Chiado, Praça Luís de Camões, Estrela y Campo de Ourique. Es una sucesión muy útil para entender por qué el 28E concentra tanta demanda turística." },
+      { tipo: "parrafo", texto: "En su recorrido oficial aparecen paradas y zonas como Martim Moniz, Graça, Voz do Operário, Portas do Sol, Miradouro de Santa Luzia, Sé, Baixa, Chiado, Praça Luís de Camões, Estrela y Campo de Ourique. Es una sucesión muy útil para entender por qué el 28E concentra tanta demanda turística." },
       { tipo: "parrafo", texto: "No necesitas hacer el trayecto completo para aprovecharlo. Si tu itinerario ya pasa por Alfama, Chiado o Estrela, puedes usar el 28E solo en el tramo que realmente te ahorre una subida o conecte dos visitas." },
 
       { tipo: "subtitulo", texto: "Paradas del 28E más útiles para una primera visita" },
@@ -4351,6 +4403,65 @@ function resolveBlogImage(slug: string, image?: string) {
 }
 
 
+/**
+ * Resuelve en el servidor los bloques de reserva de un artículo
+ * (`blog-booking-placements.ts`). Un bloque sin producto, sin enlace o sin
+ * ref de GuruWalk configurado simplemente no se pinta.
+ *
+ * Medición por artículo:
+ *   - GuruWalk: `utm_campaign` = campaña de la ruta, `utm_content` = blog-<slug>-…
+ *   - Tiqets:   `tq_campaign` = web_blog_<slug> (etiqueta propia; `partner` intacto).
+ *   - GetYourGuide: el enlace corto se usa tal cual (lleva su campaña dentro);
+ *     el desglose por artículo queda en el evento `affiliate_click` de GA4.
+ */
+type ResolvedArticleBooking = ArticleBookingBlockProps & { beforeHeading?: string };
+
+function resolveArticleBookings(slug: string): ResolvedArticleBooking[] {
+  const placements = BLOG_BOOKING_PLACEMENTS[slug] ?? [];
+  return placements.flatMap<ResolvedArticleBooking>((placement) => {
+    const contentId = blogBookingContentId(slug, placement.offer);
+    const { offer } = placement;
+
+    if (offer.type === 'free-tour') {
+      const category = getFreeTourCategory(offer.categoryId);
+      const href = getFreeTourAffiliateUrl(category);
+      if (!href) return [];
+      return [{
+        intro: placement.intro,
+        kind: 'Free tour',
+        name: category.name,
+        ctaLabel: category.ctaLabel,
+        url: buildAffiliateUrl(href, category.campaign, contentId),
+        partner: 'guruwalk',
+        campaign: category.campaign,
+        contentId,
+        linkPlacement: 'article',
+        articleSlug: slug,
+        beforeHeading: placement.beforeHeading,
+      }];
+    }
+
+    const product = findProductById(offer.productId);
+    const link = product ? resolveBookingLink(product, 'article') : null;
+    if (!product || !link) return [];
+    const campaign = link.provider === 'tiqets' ? `web_blog_${slug}` : link.campaign;
+    const url = link.provider === 'tiqets' ? withTiqetsCampaign(link.url, campaign) : link.url;
+    return [{
+      intro: placement.intro,
+      kind: product.kind,
+      name: product.name,
+      ctaLabel: product.ctaLabel,
+      url,
+      partner: link.provider,
+      campaign,
+      contentId,
+      linkPlacement: link.usedPlacement,
+      articleSlug: slug,
+      beforeHeading: placement.beforeHeading,
+    }];
+  });
+}
+
 function getArticle(slug: string): Article | null {
   return articles[slug] ?? null;
 }
@@ -4417,7 +4528,7 @@ const articleExtras: Record<string, ArticleExtras> = {
     mejorHora: 'Mañanas para el Oceanário y tardes para parques; evita 13:00-16:00 en verano.',
   },
   'excursiones-desde-lisboa': {
-    comoLlegar: 'Trenes desde Rossio (Sintra) o Cais do Sodré (Cascais). Buses desde Sete Rios para Óbidos y Nazaré.',
+    comoLlegar: 'Trenes desde Rossio (Sintra) o Cais do Sodré (Cascais). Bus a Óbidos desde Campo Grande (Rápida Verde); a Nazaré, desde Sete Rios.',
     mejorHora: 'Salidas entre 8:00 y 9:00 para aprovechar el día completo.',
   },
 };
@@ -4634,6 +4745,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             photos={photos}
             seoDescription={seoDescription}
             takeaways={takeaways}
+            bookings={resolveArticleBookings(slug)}
           />
 
           <ArticleToc headings={headings} />

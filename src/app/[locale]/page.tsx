@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import TrackedInternalLink from '@/components/TrackedInternalLink';
+import HomeEssentials from '@/components/home/HomeEssentials';
 import TravelerDirectory from '@/components/home/TravelerDirectory';
 import { blogPosts } from '@/data/blog-posts';
 
@@ -80,6 +82,13 @@ export default function HomePage() {
             background: 'linear-gradient(to top right, rgba(10,15,30,0.82) 0%, rgba(10,15,30,0.45) 35%, transparent 65%)',
           }}
         />
+        {/* Móvil: el titular cae sobre fachadas claras; refuerzo inferior para
+            que el texto blanco mantenga contraste en todo el ancho. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-[70%] md:hidden"
+          style={{ background: 'linear-gradient(to top, rgba(10,15,30,0.78) 0%, rgba(10,15,30,0.5) 45%, transparent 100%)' }}
+        />
 
         <div className="absolute inset-0 mx-auto flex max-w-[1280px] items-end px-6 pb-12 sm:px-10 md:pb-12">
           <div className="max-w-[720px]">
@@ -99,9 +108,23 @@ export default function HomePage() {
             Preparar mi viaje
             <ArrowDown size={18} strokeWidth={2} aria-hidden="true" />
           </a>
+          {/* Segunda salida del hero: /free-tours-lisboa es la página que más
+              clics de afiliado genera. Enlace interno (la reserva se hace allí,
+              con su aviso de proveedor), medido como home_hero_secondary. */}
+          <TrackedInternalLink
+            href="/free-tours-lisboa"
+            contentType="home_hero_secondary"
+            contentId="free_tours_lisboa"
+            className="mt-3 inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-[4px] border border-white/70 px-6 py-3 text-center font-body text-base font-semibold leading-tight text-white transition-colors duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:ml-3 sm:mt-0"
+          >
+            Free tours por fecha
+            <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+          </TrackedInternalLink>
           </div>
         </div>
       </section>
+
+      <HomeEssentials />
 
       <section id="guia-practica" className="scroll-mt-20">
         <TravelerDirectory />

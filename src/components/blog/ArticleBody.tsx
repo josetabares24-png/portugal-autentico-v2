@@ -6,6 +6,7 @@ import type {
   ArticleFaq,
   SectionPhoto,
 } from './article-types';
+import { ArticleBookingBlock, type ArticleBookingBlockProps } from './ArticleBookingBlock';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
 import { renderEditorialHeading, slugify } from './article-utils';
@@ -18,6 +19,12 @@ type ArticleBodyProps = {
   photos: Record<string, SectionPhoto>;
   seoDescription: string;
   takeaways: string[];
+  /**
+   * Bloques de reserva ya resueltos en el servidor. Se pintan antes del
+   * encabezado indicado (al cierre de la sección que los justifica); los que
+   * no encuentran su encabezado caen al final del cuerpo.
+   */
+  bookings?: (ArticleBookingBlockProps & { beforeHeading?: string })[];
 };
 
 export function ArticleBody({
@@ -28,7 +35,18 @@ export function ArticleBody({
   photos,
   seoDescription,
   takeaways,
+  bookings = [],
 }: ArticleBodyProps) {
+  const headingIds = new Set(
+    article.contenido
+      .filter((b) => (b.tipo === 'subtitulo' || b.tipo === 'subseccion') && b.texto)
+      .map((b) => slugify(b.texto as string)),
+  );
+  const bookingsBefore = (headingId: string) =>
+    bookings
+      .filter((b) => b.beforeHeading === headingId)
+      .map((b) => <ArticleBookingBlock key={b.contentId} {...b} />);
+  const trailingBookings = bookings.filter((b) => !b.beforeHeading || !headingIds.has(b.beforeHeading));
   return (
     <article className="article-surface min-w-0">
       {/* Lead paragraph - primer párrafo destacado */}
@@ -51,6 +69,12 @@ export function ArticleBody({
               </li>
             ))}
           </ul>
+          {bookings[0] && (
+            <p className="article-essential-booking">
+              Si vas a reservar:{' '}
+              <a href={`#reserva-${bookings[0].contentId}`}>{bookings[0].ctaLabel} ↓</a>
+            </p>
+          )}
         </ArticleCallout>
       )}
 
@@ -102,6 +126,7 @@ export function ArticleBody({
             const photo = isEditorialV2 ? photos[headingId] : undefined;
             return (
               <Fragment key={index}>
+                {bookingsBefore(headingId)}
                 <h2 id={headingId} className="scroll-mt-28">
                   {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
                 </h2>
@@ -112,13 +137,12 @@ export function ArticleBody({
           if (bloque.tipo === 'subseccion') {
             const headingId = slugify(bloque.texto || '');
             return (
-              <h3
-                key={index}
-                id={headingId}
-                className="scroll-mt-28"
-              >
-                {bloque.texto}
-              </h3>
+              <Fragment key={index}>
+                {bookingsBefore(headingId)}
+                <h3 id={headingId} className="scroll-mt-28">
+                  {bloque.texto}
+                </h3>
+              </Fragment>
             );
           }
           if (bloque.tipo === 'lista') {
@@ -185,6 +209,9 @@ export function ArticleBody({
           }
           return null;
         })}
+        {trailingBookings.map((b) => (
+          <ArticleBookingBlock key={b.contentId} {...b} />
+        ))}
       </div>
 
       {faqs.length > 0 && (
