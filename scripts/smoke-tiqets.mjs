@@ -44,9 +44,31 @@ assert.match(client, /tiqetsProducts\[product\.id\]/, 'el cliente debe enlazar c
 assert.doesNotMatch(
   client,
   /ExperienceSearch|FilterChip|useState/,
-  'ocho recomendaciones curadas no deben convertirse en un catálogo con filtros'
+  'el catálogo curado no debe convertirse en un buscador con filtros'
 );
-assert.match(client, /HUB_PRODUCTS\.map/, 'las ocho recomendaciones deben mostrarse directamente');
+assert.match(client, /HUB_SECTIONS\.map/, 'el catálogo debe pintarse por secciones con ancla');
+assert.match(
+  client,
+  /HUB_PRODUCTS\.filter\(\(product\) => product\.hubSection === section\.id\)/,
+  'cada sección debe mostrar directamente sus productos'
+);
+for (const anchor of ['imprescindibles', 'belem', 'sintra', 'museos', 'experiencias']) {
+  assert.match(bookings, new RegExp(`anchor: '${anchor}'`), `falta la sección con ancla #${anchor}`);
+}
+
+// Cada producto del catálogo tiene sección, y cada enlace de Tiqets del
+// catálogo lleva la cuenta de partner y su propia campaña.
+const hubBlocks = bookings.split(/\n  \{\n/).filter((block) => /hub: \{\n\s+render:/.test(block));
+assert.ok(hubBlocks.length >= 16, `el catálogo debería tener al menos 16 productos (tiene ${hubBlocks.length})`);
+for (const block of hubBlocks) {
+  const id = block.match(/id: '([^']+)'/)?.[1] ?? '¿?';
+  assert.match(block, /hubSection: '/, `${id}: falta hubSection`);
+  for (const url of block.match(/https:\/\/www\.tiqets\.com\/[^']+/g) ?? []) {
+    assert.match(url, /partner=estaba_en_lisboa-189233/, `${id}: enlace de Tiqets sin partner`);
+    assert.match(url, /tq_campaign=[a-z0-9_-]+/, `${id}: enlace de Tiqets sin tq_campaign`);
+  }
+}
+assert.match(bookingCard, /rel="sponsored noopener noreferrer"/, 'el botón de compra debe llevar rel=sponsored');
 assert.match(
   bookingCard,
   /const ctaLabel = isUnavailable[\s\S]*: product\.ctaLabel/,
@@ -61,6 +83,12 @@ for (const label of [
   'Reservar espectáculo de fado',
   'Reservar tour gastronómico',
   'Reservar excursión a Sintra',
+  'Comprar entrada a la Torre',
+  'Comprar entrada al Castelo dos Mouros',
+  'Comprar entrada al Palacio de Sintra',
+  'Comprar entrada al Palacio da Ajuda',
+  'Comprar entrada al Tesoro Real',
+  'Reservar el tranvía turístico',
 ]) {
   assert.match(bookings, new RegExp(label), `falta el CTA transaccional: ${label}`);
 }

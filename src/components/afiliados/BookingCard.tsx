@@ -57,6 +57,13 @@ function formatPrice(price: number, currency: string): string {
   }
 }
 
+/** «2026-10-09» → «9/10/2026», tal y como se lee en España. */
+function formatVerified(date: string): string {
+  const [year, month, day] = date.split('-');
+  if (!year || !month || !day) return date;
+  return `${Number(day)}/${Number(month)}/${year}`;
+}
+
 export function BookingCard({
   product,
   placement,
@@ -95,37 +102,62 @@ export function BookingCard({
   }
 
   return (
+    /*
+     * En móvil la tarjeta es compacta: miniatura a la izquierda del título y
+     * el resto debajo, a todo el ancho. Así cada producto ocupa la mitad de
+     * alto y la página no se hace eterna. Desde `sm` vuelve a ser la tarjeta
+     * vertical de siempre, con la foto arriba.
+     */
     <article
       id={product.id}
-      className="group flex h-full min-w-0 scroll-mt-24 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card transition-transform duration-300 motion-safe:hover:-translate-y-1"
+      className="group grid h-full min-w-0 scroll-mt-24 grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 overflow-hidden rounded-lg border border-border-soft bg-white p-4 shadow-card transition-transform duration-300 motion-safe:hover:-translate-y-1 sm:flex sm:flex-col sm:p-0"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-background-light">
-        <Image
-          src={product.image}
-          alt={product.imageAlt}
-          fill
-          className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority={priority}
-          loading={priority ? undefined : 'lazy'}
-        />
+      <div className="relative h-[5.5rem] w-[5.5rem] overflow-hidden rounded-md bg-background-light sm:aspect-[16/10] sm:h-auto sm:w-full sm:rounded-none">
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.imageAlt ?? ''}
+            fill
+            className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
+            sizes="(max-width: 640px) 88px, (max-width: 1024px) 50vw, 33vw"
+            priority={priority}
+            loading={priority ? undefined : 'lazy'}
+          />
+        ) : (
+          /*
+           * Sin foto propia del sitio, un bloque tipográfico. Es mejor que
+           * poner la foto de otro lugar o una de banco de imágenes.
+           */
+          <div
+            aria-hidden="true"
+            className="flex h-full w-full items-end bg-night bg-azulejo-pattern-gold p-2.5 sm:p-5"
+          >
+            <span className="font-display text-[0.8rem] italic leading-tight text-white/90 sm:text-2xl">
+              {product.name}
+            </span>
+          </div>
+        )}
 
         {product.badge ? (
-          <span className="absolute left-3 top-3 rounded-sm bg-white/95 px-2.5 py-1 font-body text-[10px] font-bold uppercase tracking-[0.11em] text-night shadow-sm">
+          <span className="absolute left-3 top-3 hidden rounded-sm bg-white/95 px-2.5 py-1 font-body text-[10px] font-bold uppercase tracking-[0.11em] text-night shadow-sm sm:inline">
             {product.badge}
           </span>
         ) : null}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <p className="mb-2 font-body text-[10px] font-bold uppercase tracking-[0.16em] text-terracotta">
+      <div className="self-center sm:self-auto sm:px-5 sm:pt-5">
+        <p className="mb-1.5 font-body text-[10px] font-bold uppercase tracking-[0.16em] text-terracotta sm:mb-2">
           {product.kind}
+          {product.badge ? <span className="font-semibold text-text-secondary sm:hidden"> · {product.badge}</span> : null}
         </p>
 
-        <h3 className="mb-2 font-display text-xl font-semibold not-italic leading-snug text-text-main">
+        <h4 className="font-display text-lg font-semibold not-italic leading-snug text-text-main sm:mb-2 sm:text-xl">
           {product.name}
-        </h3>
-        <p className="mb-5 font-article text-sm leading-[1.65] text-text-secondary">
+        </h4>
+      </div>
+
+      <div className="col-span-2 mt-3 flex flex-1 flex-col sm:mt-0 sm:px-5 sm:pb-5">
+        <p className="mb-4 font-article text-sm leading-[1.6] text-text-secondary sm:mb-5">
           {product.blurb}
         </p>
 
@@ -136,9 +168,18 @@ export function BookingCard({
                 Taquilla oficial{' '}
                 <strong className="text-sm font-bold text-night">{officialPrice.amount}</strong>
               </p>
-              {officialPrice.note ? (
-                <p className="mt-1 text-[11px] leading-snug text-text-secondary">{officialPrice.note}</p>
-              ) : null}
+              <p className="mt-1 text-[11px] leading-snug text-text-secondary">
+                {officialPrice.note ? `${officialPrice.note} ` : null}
+                <a
+                  href={officialPrice.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-terracotta"
+                >
+                  Precio de la web oficial, {formatVerified(officialPrice.verified)}
+                  <span className="sr-only"> (se abre en una pestaña nueva)</span>
+                </a>
+              </p>
             </div>
           ) : null}
 
@@ -165,6 +206,12 @@ export function BookingCard({
           {!officialPrice && !hasLiveDetails ? (
             <p className="mb-3 flex min-h-10 items-center border-t border-border-soft pt-3 font-body text-xs text-text-secondary">
               Precio y horarios en {providerName}
+            </p>
+          ) : null}
+
+          {product.terms ? (
+            <p className="-mt-1 mb-3 font-body text-[11px] leading-snug text-text-secondary">
+              {product.terms}
             </p>
           ) : null}
 

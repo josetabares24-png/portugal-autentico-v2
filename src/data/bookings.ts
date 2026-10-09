@@ -25,6 +25,61 @@ export type BookingProvider = 'getyourguide' | 'tiqets';
 export type BookingCategory = 'entradas' | 'experiencias' | 'excursiones';
 
 /**
+ * Secciones de `/comprar-entradas`, en orden de aparición. Cada producto del
+ * catálogo vive en una sola: así no hay tarjetas repetidas ni anclas dobles.
+ */
+export type HubSection = 'imprescindibles' | 'belem' | 'sintra' | 'museos' | 'experiencias';
+
+export interface HubSectionInfo {
+  id: HubSection;
+  /** Ancla de la sección: `/comprar-entradas#belem`. */
+  anchor: string;
+  /** Texto corto del índice de secciones. */
+  navLabel: string;
+  title: string;
+  /** Una línea, en la voz de José. Sólo hechos comprobados. */
+  intro: string;
+}
+
+export const HUB_SECTIONS: readonly HubSectionInfo[] = [
+  {
+    id: 'imprescindibles',
+    anchor: 'imprescindibles',
+    navLabel: 'Imprescindibles',
+    title: 'Imprescindibles',
+    intro: 'Las que van con hora de entrada o tienen más cola. Si solo compras algo antes de ir, empieza por aquí.',
+  },
+  {
+    id: 'belem',
+    anchor: 'belem',
+    navLabel: 'Belém',
+    title: 'Belém',
+    intro: 'La Torre y los Jerónimos están a un paseo junto al río, y los dos cierran los lunes.',
+  },
+  {
+    id: 'sintra',
+    anchor: 'sintra',
+    navLabel: 'Sintra',
+    title: 'Sintra',
+    intro: 'La Pena está arriba, en imprescindibles. Aquí va el resto de Sintra y la excursión para quien no quiere organizarse.',
+  },
+  {
+    id: 'museos',
+    anchor: 'museos',
+    navLabel: 'Museos y palacios',
+    title: 'Museos y palacios',
+    intro: 'El Palacio da Ajuda y el Tesoro Real están en el mismo edificio: se ven en una mañana, también si llueve. Si vas a encadenar muchos museos, mira antes la Lisboa Card.',
+  },
+  {
+    id: 'experiencias',
+    anchor: 'experiencias',
+    navLabel: 'Experiencias',
+    title: 'Experiencias',
+    intro: 'Planes con hora: el río, el fado, la comida y el tranvía por las colinas.',
+  },
+];
+
+/**
  * Ubicación desde la que se pulsa. Cada una puede tener su propio enlace
  * para poder medirlas por separado en el panel del partner.
  */
@@ -106,9 +161,13 @@ export interface BookableProduct {
   blurb: string;
   /** Etiqueta del tipo, para que la tarjeta se lea de un vistazo. */
   kind: string;
-  /** Imagen nuestra, de las que ya usan las fichas de actividades. */
-  image: string;
-  imageAlt: string;
+  /**
+   * Imagen nuestra, de las que ya usan las fichas de actividades. Opcional a
+   * propósito: si no hay una foto del sitio correcto, la tarjeta pinta un
+   * bloque tipográfico. Mejor eso que la foto de otro lugar.
+   */
+  image?: string;
+  imageAlt?: string;
   /**
    * Distintivo editorial opcional. Sólo cosas que sostenemos nosotros: nunca
    * «más vendido», «últimas plazas» ni descuentos, que no tenemos datos para
@@ -127,6 +186,14 @@ export interface BookableProduct {
    * dar botón a un artículo, no para venderse en el catálogo.
    */
   hub?: BookingMechanism;
+  /** Sección de `/comprar-entradas` en la que aparece. Obligatoria si hay `hub`. */
+  hubSection?: HubSection;
+  /**
+   * Condiciones de cancelación tal y como las publica el proveedor, en una
+   * línea corta. Sólo cuando se han comprobado en su ficha (todas las
+   * actuales, en Tiqets el 9/10/2026).
+   */
+  terms?: string;
   /**
    * Enlaces directos por ubicación. Sólo se usa el de la ubicación desde la
    * que se pulsa; si esa no tiene el suyo todavía, se recurre al que haya.
@@ -184,6 +251,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'imprescindibles',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
     links: {
       article: {
         url: 'https://gyg.me/OIHaINA6',
@@ -213,6 +282,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'imprescindibles',
     links: {
       article: {
         url: 'https://gyg.me/xsuIYU11',
@@ -251,6 +321,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'imprescindibles',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
     links: {
       article: {
         url: 'https://gyg.me/9i00hN0O',
@@ -343,6 +415,39 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Ver el velero',
   },
   {
+    // Ficha p1012361 comprobada el 9/10/2026. Proveedor: Museus e Monumentos
+    // de Portugal (el propio monumento), a través de Tiqets.
+    id: 'torre-belem',
+    name: 'Torre de Belém',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'Desde que reabrió en mayo de 2026 se entra por franjas horarias con aforo limitado. Cierra los lunes.',
+    kind: 'Entrada',
+    image: '/images/actividades/torre-de-belem-lisboa.webp',
+    imageAlt: 'Torre de Belém junto al río Tajo',
+    searchTerms: ['torre de belem', 'torre', 'belem', 'entrada', 'monumento'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'belem',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-torre-de-belem-entrada-p1012361/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_torre-belem',
+        provider: 'tiqets',
+        campaign: 'web_hub_torre-belem',
+      },
+    },
+    ctaLabel: 'Comprar entrada a la Torre',
+    officialPrice: {
+      amount: '15 €',
+      note: 'Entrada general. Cierra los lunes.',
+      sourceUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
+      verified: '2026-10-09',
+    },
+  },
+  {
     id: 'jeronimos',
     name: 'Monasterio de los Jerónimos: entrada al claustro',
     provider: 'tiqets',
@@ -359,6 +464,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'belem',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
     links: {
       article: {
         url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos',
@@ -387,12 +494,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día. La Torre entra por franjas horarias desde su reapertura en mayo de 2026.',
     kind: 'Entrada combinada',
-    image: '/images/actividades/torre-de-belem-lisboa.webp',
-    imageAlt: 'Torre de Belém junto al río Tajo',
+    // Sin foto: la de la Torre ya la lleva su propia tarjeta, justo al lado.
     searchTerms: ['jeronimos', 'torre de belem', 'belem', 'combinada', 'entrada'],
     hub: {
       render: 'native-card',
     },
+    hubSection: 'belem',
     links: {
       article: {
         url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos_combo',
@@ -414,6 +521,68 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     },
   },
   {
+    // Ficha p1020546 comprobada el 9/10/2026. Proveedor: Museus e Monumentos
+    // de Portugal. Sin foto propia del palacio: tarjeta tipográfica.
+    id: 'palacio-ajuda',
+    name: 'Palacio Nacional da Ajuda',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'El mayor palacio de Lisboa, y recibe muchas menos visitas que los Jerónimos o el castillo. Cierra los miércoles.',
+    kind: 'Entrada',
+    searchTerms: ['ajuda', 'palacio', 'palacio da ajuda', 'museo', 'lluvia', 'belem'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'museos',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-palacio-nacional-de-ajuda-entrada-p1020546/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_palacio-ajuda',
+        provider: 'tiqets',
+        campaign: 'web_hub_palacio-ajuda',
+      },
+    },
+    ctaLabel: 'Comprar entrada al Palacio da Ajuda',
+    officialPrice: {
+      amount: '15 €',
+      note: 'Entrada general. Cierra los miércoles.',
+      sourceUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/palacio-nacional-da-ajuda',
+      verified: '2026-10-09',
+    },
+  },
+  {
+    // Ficha p1026160 comprobada el 9/10/2026. Proveedor: Tiqets International.
+    id: 'tesouro-real',
+    name: 'Museo del Tesoro Real',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'Las joyas de la Corona portuguesa, en el ala nueva del Palacio da Ajuda.',
+    kind: 'Entrada',
+    searchTerms: ['tesoro real', 'tesouro real', 'joyas', 'corona', 'ajuda', 'museo', 'lluvia'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'museos',
+    terms: 'Cancelación y cambio de fecha gratis hasta las 23:59 del día anterior.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-royal-treasure-museum-p1026160/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_tesouro-real',
+        provider: 'tiqets',
+        campaign: 'web_hub_tesouro-real',
+      },
+    },
+    ctaLabel: 'Comprar entrada al Tesoro Real',
+    officialPrice: {
+      amount: '11 €',
+      note: 'Adultos de 25 a 64 años. De 7 a 24 y mayores de 65, 7,50 €.',
+      sourceUrl: 'https://www.tesouroreal.pt/paginas/acf04850',
+      verified: '2026-10-09',
+    },
+  },
+
+  {
     id: 'lisboa-card',
     name: 'Lisboa Card',
     provider: 'tiqets',
@@ -427,6 +596,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'museos',
+    terms: 'Cancelación y cambio de fecha gratis hasta las 23:59 del día anterior.',
     links: {
       activities: {
         url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_activ_lisboa-card',
@@ -436,6 +607,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     },
     ctaLabel: 'Comprar Lisboa Card',
   },
+
 
   // ------------------------------------------------------------ experiencias
   {
@@ -453,6 +625,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'experiencias',
     links: {
       article: {
         url: 'https://gyg.me/IL8SaMuw',
@@ -483,6 +656,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'experiencias',
     links: {
       article: {
         url: 'https://gyg.me/8aL5dndR',
@@ -512,6 +686,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'experiencias',
     links: {
       article: {
         url: 'https://gyg.me/9USjIETP',
@@ -531,7 +706,95 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Reservar tour gastronómico',
   },
 
+  {
+    // Ficha p974765 (Carristur) comprobada el 9/10/2026. Incluye el Museu da
+    // Carris; no incluye el Elevador de Santa Justa, que además sigue cerrado.
+    id: 'tranvia-colinas',
+    name: 'Tranvía turístico por las colinas',
+    provider: 'tiqets',
+    category: 'experiencias',
+    blurb:
+      '24 horas de tranvía turístico con paradas libres por las colinas. Incluye también los tranvías públicos de Carris.',
+    kind: 'Experiencia',
+    image: '/images/lisboa-originales/tranvia-turistico-baixa-lisboa-01.webp',
+    imageAlt: 'Tranvía turístico rojo por una calle de la Baixa de Lisboa',
+    searchTerms: ['tranvia', 'tranvía', 'electrico', 'carris', 'colinas', 'hop on hop off', 'alfama', 'tour'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'experiencias',
+    terms: 'Cancelación y cambio de fecha gratis hasta las 23:59 del día anterior.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-recorrido-en-tranvia-por-las-colinas-historicas-con-paradas-libres-p974765/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_tranvia-colinas',
+        provider: 'tiqets',
+        campaign: 'web_hub_tranvia-colinas',
+      },
+    },
+    ctaLabel: 'Reservar el tranvía turístico',
+  },
+
   // ------------------------------------------------------------ excursiones
+  {
+    // Ficha p975020 comprobada el 9/10/2026. Audioguía opcional. Sin foto propia.
+    id: 'castelo-mouros',
+    name: 'Castelo dos Mouros',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'Muralla del siglo X en lo alto de la sierra, con vistas a la Pena y, en días claros, al Atlántico.',
+    kind: 'Entrada',
+    searchTerms: ['castelo dos mouros', 'castillo de los moros', 'sintra', 'muralla', 'vistas', 'entrada'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'sintra',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-castelo-dos-mouros-en-sintra-entrada-audioguia-opcional-p975020/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_castelo-mouros',
+        provider: 'tiqets',
+        campaign: 'web_hub_castelo-mouros',
+      },
+    },
+    ctaLabel: 'Comprar entrada al Castelo dos Mouros',
+    officialPrice: {
+      amount: '12 €',
+      note: 'Adultos de 18 a 64 años. De 6 a 17 y mayores de 65, 10 €.',
+      sourceUrl: 'https://www.parquesdesintra.pt/pt/parques-monumentos/castelo-dos-mouros/',
+      verified: '2026-10-09',
+    },
+  },
+  {
+    // Ficha p975024 comprobada el 9/10/2026. Sin foto propia.
+    id: 'palacio-nacional-sintra',
+    name: 'Palacio Nacional de Sintra',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'El de las dos chimeneas blancas, en el centro histórico y a 10-15 minutos a pie de la estación de tren.',
+    kind: 'Entrada',
+    searchTerms: ['palacio nacional de sintra', 'palacio da vila', 'sintra', 'centro', 'entrada'],
+    hub: {
+      render: 'native-card',
+    },
+    hubSection: 'sintra',
+    terms: 'No reembolsable ni se puede cambiar la fecha.',
+    links: {
+      activities: {
+        url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-de-sintra-entrada-p975024/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_palacio-sintra',
+        provider: 'tiqets',
+        campaign: 'web_hub_palacio-sintra',
+      },
+    },
+    ctaLabel: 'Comprar entrada al Palacio de Sintra',
+    officialPrice: {
+      amount: '13 €',
+      note: 'Visita esencial, adultos de 18 a 64 años. De 6 a 17 y mayores de 65, 10 €.',
+      sourceUrl: 'https://www.parquesdesintra.pt/pt/parques-monumentos/palacio-nacional-sintra/',
+      verified: '2026-10-09',
+    },
+  },
   {
     id: 'sintra-completa',
     name: 'Sintra completa desde Lisboa',
@@ -547,6 +810,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     hub: {
       render: 'native-card',
     },
+    hubSection: 'sintra',
     links: {
       activities: {
         // Excursión de día completo Sintra + Pena + Regaleira + Cabo da Roca +

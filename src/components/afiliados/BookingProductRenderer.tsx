@@ -84,7 +84,7 @@ export function BookingProductRenderer({
                * widget ya lo trae dentro, y repetirlo fuera dejaba el mismo
                * título dos veces seguidas.
                */}
-              <h3 className="sr-only">{product.name}</h3>
+              <h4 className="sr-only">{product.name}</h4>
               <GetYourGuideWidget
                 campaign={hub.widget.campaign}
                 tourIds={hub.widget.tourId}
@@ -96,7 +96,7 @@ export function BookingProductRenderer({
         case 'tiqets':
           return (
             <div className="flex h-full min-w-0 flex-col">
-              <h3 className="sr-only">{product.name}</h3>
+              <h4 className="sr-only">{product.name}</h4>
               <TiqetsWidget
                 productId={hub.widget.productId}
                 partner={hub.widget.partner}
@@ -161,24 +161,26 @@ function SinConsentimiento({
   return (
     <article className="flex h-full min-w-0 flex-col border-t border-border-soft bg-white/25 px-1 pt-3">
       <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
+        {product.image ? (
         <Image
           src={product.image}
-          alt={product.imageAlt}
+          alt={product.imageAlt ?? ''}
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           priority={priority}
           loading={priority ? undefined : 'lazy'}
         />
+        ) : null}
       </div>
 
       <div className="flex flex-1 flex-col">
         <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-terracotta">
           {product.kind}
         </p>
-        <h3 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
+        <h4 className="mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main">
           {product.name}
-        </h3>
+        </h4>
         <p className="mb-4 font-article text-sm leading-relaxed text-text-secondary">
           {product.blurb}
         </p>

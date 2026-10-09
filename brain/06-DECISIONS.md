@@ -652,10 +652,10 @@ Rules:
 - cache product calls, fetch the three records in parallel and fail independently so one provider error cannot break the page;
 - fall back to the existing static attributed URL whenever the token, API or product response is unavailable;
 - continue checkout on Tiqets. Do not create or confirm orders through the Booking API without a separate, explicitly approved integration and production-order safety plan;
-- do not expand the eight-card catalog automatically from API search results;
+- do not expand the curated catalog automatically from API search results (it was eight cards when this was written; see D-041 for the current sixteen, added by hand and verified one by one);
 - no merge or production deployment until the responsive Preview is approved.
 
-This decision narrows the provider integration allowed by D-035. It preserves the calm eight-choice experience while making three exact ticket decisions more transparent.
+This decision narrows the provider integration allowed by D-035. It preserves a calm, curated experience while making three exact ticket decisions more transparent. Live enrichment still covers only those three products; the products added in D-041 show the official box-office price with its source, or «Precio y horarios en …».
 
 
 ## D-037 — Controls must be proportional to the choice set
@@ -665,7 +665,7 @@ This decision narrows the provider integration allowed by D-035. It preserves th
 Small curated travel selections should not inherit marketplace controls by default. On `/comprar-entradas`, eight fixed recommendations are faster to scan directly than through search, category chips, result counts and empty states.
 
 Rules:
-- show the eight curated ticket and experience recommendations directly after their editorial introduction;
+- show the curated ticket and experience recommendations directly after their editorial introduction (amended by D-041: with sixteen products they are grouped into anchored sections, but there is still no search, filter state or result counts);
 - do not restore search or category filters unless the useful inventory grows enough that direct scanning demonstrably fails;
 - keep date input on `/free-tours-lisboa` because availability and schedules actually change by travel date;
 - give each transactional block one main action and one concise explanatory/disclosure note on mobile;
@@ -714,3 +714,19 @@ José ordered the public contact email changed from `contacto@estabaenlisboa.com
 Se crea `/transporte-lisboa` como tabla de tarifas oficiales y directorio de las guías de transporte. No es una guía genérica más: no repite el «qué uso según la situación» de `como-moverse-por-lisboa` (E-001). Lleva un único bloque de Lisboa Card en la sección que hace la cuenta, lo que es una excepción explícita a D-031 que José debe aprobar o quitar. El pie gana una columna «Planificar» y los enlaces legales completos; la cabecera no cambia.
 
 Los artículos llevan un formulario de newsletter con casilla de consentimiento y un PDF de regalo, «Qué reservar antes de ir a Lisboa». No lo llevan E-006 ni E-007. El PDF se entrega en la web porque la plantilla de bienvenida vive en Brevo. Detalle: [[seo/TRANSPORTE-NEWSLETTER-2026-10-09]].
+
+## D-041 — /comprar-entradas pasa a dieciséis productos por secciones
+**Date:** 2026-10-09
+**Status:** proposed (rama `feat/estetica-entradas-freetours`, sin publicar; pendiente de aprobación visual de José, D-012)
+
+José pidió más entradas y actividades. El catálogo pasa de 10 a 16 productos, añadidos a mano y comprobados uno a uno en su ficha (no salen de la API). Se agrupan en cinco secciones con ancla: Imprescindibles, Belém, Sintra, Museos y palacios, Experiencias. Cada producto está en una sola sección. Encima hay un índice de enlaces (no son filtros: no esconden nada ni guardan estado). En móvil la tarjeta es compacta, con la miniatura junto al título.
+
+Reglas:
+- un producto solo entra si su ficha existe y responde, lleva `partner=estaba_en_lisboa-189233` y su propio `tq_campaign` (Tiqets) o `partner_id=J2Z24GU` (GetYourGuide), y el monumento está abierto;
+- precio: «Desde» solo con dato de la API de Tiqets; si no, la taquilla oficial con enlace a la web y fecha de comprobación; si no, «Precio y horarios en …»; nunca valoraciones;
+- condiciones de cancelación en una línea, solo si se han comprobado en la ficha;
+- sin foto propia del sitio correcto, la tarjeta lleva un bloque tipográfico, nunca la foto de otro lugar ni una de banco de imágenes;
+- se quedan fuera, de momento: Elevador de Santa Justa (cerrado), MAAT y Gulbenkian (sin ficha en Tiqets), Quinta da Regaleira (la Fundação dice que su única taquilla autorizada es la suya; Tiqets la vende un intermediario), tuk-tuk (la web desaconseja los tuk-tuks en zonas saturadas) y Museu Nacional do Azulejo (cerrado por obras).
+
+Detalle: [[content/2026-10-09-ENTRADAS-V2]].
+

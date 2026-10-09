@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Clock3, Route, TicketCheck } from 'lucide-react';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
-import { HUB_PRODUCTS } from '@/data/bookings';
+import { HUB_PRODUCTS, HUB_SECTIONS } from '@/data/bookings';
 import type { TiqetsSnapshotMap } from '@/types/tiqets-live';
 
 const PAGE_URL = 'https://estabaenlisboa.com/comprar-entradas';
@@ -93,7 +93,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
         objectPosition="center 58%"
         eyebrow="Compra solo lo que compensa"
         title="Comprar entradas en Lisboa"
-        description="Diez reservas útiles para evitar colas, asegurar una buena hora y pagar solo por lo que realmente cabe en tu viaje."
+        description="Las entradas y planes que conviene reservar antes, ordenados por zona: Lisboa, Belém, Sintra, museos y experiencias."
         primaryHref="#catalogo"
         primaryLabel="Elegir y comprar entradas"
         secondaryHref="/free-tours-lisboa"
@@ -120,26 +120,68 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
               </h2>
             </div>
             <p className="max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              He dejado diez, no cien: las que dejaría resueltas antes de ir, por
-              las colas o porque la entrada va con hora. Pagas en Tiqets o
+              He dejado {HUB_PRODUCTS.length}, no cien: las que dejaría resueltas antes
+              de ir, por las colas o porque la entrada va con hora. Pagas en Tiqets o
               GetYourGuide y ves el precio final antes de confirmar.
             </p>
           </div>
 
-          {/* Tres columnas como máximo: con cuatro, los botones partían en
-              dos líneas y las fotos quedaban demasiado pequeñas. */}
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {HUB_PRODUCTS.map((product, index) => (
-              <BookingProductRenderer
-                key={product.id}
-                product={product}
-                priority={index === 0}
-                tiqetsProduct={tiqetsProducts[product.id]}
-              />
-            ))}
-          </div>
+          {/* Índice de secciones: en móvil se desliza en horizontal y cada
+              botón mide al menos 44 px de alto. */}
+          <nav aria-label="Secciones del catálogo" className="-mx-6 mt-6 overflow-x-auto px-6 md:mx-0 md:px-0">
+            <ul className="flex w-max gap-2 md:w-auto md:flex-wrap">
+              {HUB_SECTIONS.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.anchor}`}
+                    className="inline-flex min-h-11 items-center rounded-full border border-border-soft bg-white px-4 font-body text-sm font-semibold text-night transition-colors hover:border-terracotta hover:text-terracotta"
+                  >
+                    {section.navLabel}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          <p className="mt-8 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
+          {HUB_SECTIONS.map((section) => {
+            const products = HUB_PRODUCTS.filter((product) => product.hubSection === section.id);
+            if (products.length === 0) return null;
+            return (
+              <section
+                key={section.id}
+                id={section.anchor}
+                aria-labelledby={`${section.anchor}-titulo`}
+                className="scroll-mt-20 pt-10 md:pt-12"
+              >
+                <div className="mb-5 flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-8">
+                  <h3
+                    id={`${section.anchor}-titulo`}
+                    className="font-display text-2xl font-semibold not-italic leading-tight text-night md:text-3xl"
+                  >
+                    {section.title}
+                  </h3>
+                  <p className="max-w-xl font-body text-sm leading-relaxed text-text-secondary">
+                    {section.intro}
+                  </p>
+                </div>
+
+                {/* Tres columnas como máximo: con cuatro, los botones partían
+                    en dos líneas y las fotos quedaban demasiado pequeñas. */}
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+                  {products.map((product) => (
+                    <BookingProductRenderer
+                      key={product.id}
+                      product={product}
+                      priority={product.id === HUB_PRODUCTS[0]?.id}
+                      tiqetsProduct={tiqetsProducts[product.id]}
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+
+          <p className="mt-10 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
             Algunos enlaces son de afiliado: si reservas desde aquí me llevo una pequeña
             comisión y a ti te cuesta lo mismo. Lo que aparece en esta página lo elijo yo,
             no el proveedor.{' '}
