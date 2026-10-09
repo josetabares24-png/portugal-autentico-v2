@@ -165,6 +165,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'estabaenlisboa.com',
       },
+      // Fotos de producto de la API de Tiqets en /comprar-entradas (D-042).
+      {
+        protocol: 'https',
+        hostname: 'aws-tiqets-cdn.imgix.net',
+        pathname: '/images/**',
+      },
     ],
   },
   async headers() {

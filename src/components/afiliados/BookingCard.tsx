@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowUpRight, Landmark } from 'lucide-react';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
 import type { TiqetsProductSnapshot } from '@/types/tiqets-live';
@@ -57,6 +58,16 @@ function formatPrice(price: number, currency: string): string {
   }
 }
 
+/**
+ * «Foto: Tiqets», o «Foto: Nombre / Tiqets» cuando Tiqets da el nombre del
+ * fotógrafo. Nunca se atribuye a José.
+ */
+function tiqetsCredit(credit?: string): string {
+  const name = credit?.replace(/^(photo|foto)\s*(by|de|:)?\s*/i, '').trim();
+  if (!name || /^tiqets$/i.test(name)) return 'Foto: Tiqets';
+  return `Foto: ${name} / Tiqets`;
+}
+
 /** «2026-10-09» → «9/10/2026», tal y como se lee en España. */
 function formatVerified(date: string): string {
   const [year, month, day] = date.split('-');
@@ -71,6 +82,7 @@ export function BookingCard({
   priority = false,
   tiqetsProduct,
 }: BookingCardProps) {
+  const [imageFailed, setImageFailed] = useState(false);
   const baseLink = resolveBookingLink(product, placement);
   if (!baseLink) return null;
 
@@ -94,6 +106,25 @@ export function BookingCard({
 
   const providerName = link.provider === 'tiqets' ? 'Tiqets' : 'GetYourGuide';
 
+  /*
+   * Foto de la tarjeta, por orden: la nuestra; la de producto de Tiqets si
+   * no hay nuestra (o si la nuestra es un apaño, `preferProviderImage`); y si
+   * no hay ninguna, el hueco de color. La de Tiqets siempre lleva crédito.
+   */
+  const providerImage = tiqetsProduct?.image;
+  const ownVisual = product.image
+    ? { src: product.image, alt: product.imageAlt ?? product.name, credit: undefined as string | undefined }
+    : null;
+  const providerVisual = providerImage
+    ? {
+        src: providerImage.url,
+        alt: providerImage.alt || `${product.name}, foto de producto de Tiqets`,
+        credit: tiqetsCredit(providerImage.credit),
+      }
+    : null;
+  const visual =
+    product.preferProviderImage && providerVisual ? providerVisual : ownVisual ?? providerVisual;
+
   let linkDomain = '';
   try {
     linkDomain = new URL(link.url).hostname;
@@ -113,28 +144,35 @@ export function BookingCard({
       className="group grid h-full min-w-0 scroll-mt-24 grid-cols-[5.5rem_minmax(0,1fr)] gap-x-4 overflow-hidden rounded-lg border border-border-soft bg-white p-4 shadow-card transition-transform duration-300 motion-safe:hover:-translate-y-1 sm:flex sm:flex-col sm:p-0"
     >
       <div className="relative h-[5.5rem] w-[5.5rem] overflow-hidden rounded-md bg-background-light sm:aspect-[16/10] sm:h-auto sm:w-full sm:rounded-none">
-        {product.image ? (
-          <Image
-            src={product.image}
-            alt={product.imageAlt ?? ''}
-            fill
-            className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
-            sizes="(max-width: 640px) 88px, (max-width: 1024px) 50vw, 33vw"
-            priority={priority}
-            loading={priority ? undefined : 'lazy'}
-          />
+        {visual && !imageFailed ? (
+          <>
+            <Image
+              src={visual.src}
+              alt={visual.alt}
+              fill
+              className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
+              sizes="(max-width: 640px) 88px, (max-width: 1024px) 50vw, 33vw"
+              priority={priority}
+              loading={priority ? undefined : 'lazy'}
+              onError={() => setImageFailed(true)}
+            />
+            {visual.credit ? (
+              <span className="absolute bottom-1 right-1 rounded-sm bg-night/60 px-1 font-body text-[9px] leading-tight text-white/90 sm:bottom-2 sm:right-2 sm:px-1.5 sm:text-[10px]">
+                {visual.credit}
+              </span>
+            ) : null}
+          </>
         ) : (
           /*
-           * Sin foto propia del sitio, un bloque tipográfico. Es mejor que
-           * poner la foto de otro lugar o una de banco de imágenes.
+           * Sin foto (o si la de Tiqets no carga): mismo hueco, mismo
+           * recorte, en los colores de la tarjeta. No se rellena con la foto
+           * de otro sitio ni con una de banco de imágenes.
            */
           <div
             aria-hidden="true"
-            className="flex h-full w-full items-end bg-night bg-azulejo-pattern-gold p-2.5 sm:p-5"
+            className="flex h-full w-full items-center justify-center bg-[#EFE6D8] bg-azulejo-pattern-gold"
           >
-            <span className="font-display text-[0.8rem] italic leading-tight text-white/90 sm:text-2xl">
-              {product.name}
-            </span>
+            <Landmark className="h-7 w-7 text-terracotta/70 sm:h-10 sm:w-10" strokeWidth={1.4} />
           </div>
         )}
 

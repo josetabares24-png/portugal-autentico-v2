@@ -201,6 +201,12 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
               elegida, y se confirma antes del pago.
             </p>
           ) : null}
+
+          {Object.values(tiqetsProducts).some((snapshot) => snapshot?.image) ? (
+            <p className="mt-3 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
+              Las fotos que llevan «Foto: Tiqets» son las de cada entrada en Tiqets, no mías.
+            </p>
+          ) : null}
         </div>
       </section>
 

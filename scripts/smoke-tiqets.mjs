@@ -92,6 +92,16 @@ for (const label of [
 ]) {
   assert.match(bookings, new RegExp(label), `falta el CTA transaccional: ${label}`);
 }
+// Fotos de producto de Tiqets (D-042): sólo de su CDN, con crédito y con
+// hueco propio si no hay foto. Nada de widgets visibles ni bloques navy.
+const nextConfig = await readFile(path.join(root, 'next.config.mjs'), 'utf8');
+assert.match(adapter, /TIQETS_IMAGE_HOST = 'aws-tiqets-cdn\.imgix\.net'/, 'las fotos sólo pueden venir del CDN de Tiqets');
+assert.match(adapter, /hostname === 'localhost' \|\| url\.hostname === '127\.0\.0\.1'/, 'el cambio de base de la API sólo puede apuntar a localhost');
+assert.match(nextConfig, /hostname: 'aws-tiqets-cdn\.imgix\.net'/, 'falta el CDN de Tiqets en images.remotePatterns');
+assert.match(bookingCard, /Foto: Tiqets/, 'las fotos de Tiqets deben llevar crédito');
+assert.match(bookingCard, /onError=\{\(\) => setImageFailed\(true\)\}/, 'una foto que no carga debe caer al hueco propio');
+assert.doesNotMatch(bookingCard, /bg-night bg-azulejo/, 'el bloque navy sin foto ya no se usa');
+
 assert.match(envExample, /^TIQETS_API_TOKEN=$/m, 'falta documentar la variable de entorno');
 assert.doesNotMatch(envExample, /tqat-[A-Za-z0-9_-]+/, 'la clave real no puede estar en .env.example');
 

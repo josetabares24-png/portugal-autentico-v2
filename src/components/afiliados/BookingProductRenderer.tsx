@@ -47,7 +47,13 @@ export function BookingProductRenderer({
        * queda vacío. Ocho huecos vacíos parecen una página rota, así que ahí
        * se pinta lo nuestro, que no necesita cookies de nadie.
        */
-      if (!consent) {
+      /*
+       * Con enlace directo, siempre la tarjeta propia, haya o no
+       * consentimiento: todas las tarjetas del hub tienen que verse iguales
+       * (D-042) y un enlace no necesita cookies. El widget queda sólo para
+       * productos que no tienen otra forma de reservarse.
+       */
+      if (!consent || resolveBookingLink(product, 'activities')) {
         return (
           <SinConsentimiento
             product={product}

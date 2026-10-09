@@ -642,20 +642,20 @@ This decision extends D-010 and D-034. It does not authorize a site-wide booking
 Tiqets API data may reduce uncertainty on `/comprar-entradas`, but Estaba en Lisboa remains the editorial and visual owner of the page. The integration is a server-side enrichment layer, not a replicated booking engine.
 
 Rules:
-- enrich only Oceanário (`975260`), Palacio da Pena (`1120392`) and Lisboa Card (`974847`) while they remain selected editorial products;
+- enrich only products that are selected editorially on the hub: originally Oceanário (`975260`), Palacio da Pena (`1120392`) and Lisboa Card (`974847`); since D-042, every Tiqets product in the hub (eleven, listed by hand in `TIQETS_CURATED_PRODUCTS`);
 - keep the API credential server-only in `TIQETS_API_TOKEN`; never commit it, prefix it with `NEXT_PUBLIC`, log it or pass it to a client component;
-- keep first-party photography and Estaba en Lisboa copy; do not import Tiqets imagery unless its refresh and credit rules are implemented;
-- expose only the minimum useful snapshot: starting price, general sale status, mobile-ticket support and a sanitized booking URL;
+- keep first-party photography and Estaba en Lisboa copy; Tiqets product photos are allowed only under the rules of D-042 (API only, their CDN only, credited, refreshed with the snapshot);
+- expose only the minimum useful snapshot: starting price, general sale status, mobile-ticket support, a sanitized booking URL and (D-042) one product image;
 - accept booking URLs only from HTTPS Tiqets hosts with partner `estaba_en_lisboa-189233`, then preserve the existing `tq_campaign` for product-level attribution;
 - describe prices as “Desde” and make clear that the final amount and conditions are confirmed by the provider;
 - do not publish Tiqets review text, artificial scarcity or inferred urgency;
-- cache product calls, fetch the three records in parallel and fail independently so one provider error cannot break the page;
+- cache product calls, fetch the curated records in parallel and fail independently so one provider error cannot break the page;
 - fall back to the existing static attributed URL whenever the token, API or product response is unavailable;
 - continue checkout on Tiqets. Do not create or confirm orders through the Booking API without a separate, explicitly approved integration and production-order safety plan;
 - do not expand the curated catalog automatically from API search results (it was eight cards when this was written; see D-041 for the current sixteen, added by hand and verified one by one);
 - no merge or production deployment until the responsive Preview is approved.
 
-This decision narrows the provider integration allowed by D-035. It preserves a calm, curated experience while making three exact ticket decisions more transparent. Live enrichment still covers only those three products; the products added in D-041 show the official box-office price with its source, or «Precio y horarios en …».
+This decision narrows the provider integration allowed by D-035. It preserves a calm, curated experience while making three exact ticket decisions more transparent. Since D-042 live enrichment covers every Tiqets product in the hub; when the API gives no price, the card shows the official box-office price with its source, or «Precio y horarios en …».
 
 
 ## D-037 — Controls must be proportional to the choice set
@@ -725,8 +725,25 @@ Reglas:
 - un producto solo entra si su ficha existe y responde, lleva `partner=estaba_en_lisboa-189233` y su propio `tq_campaign` (Tiqets) o `partner_id=J2Z24GU` (GetYourGuide), y el monumento está abierto;
 - precio: «Desde» solo con dato de la API de Tiqets; si no, la taquilla oficial con enlace a la web y fecha de comprobación; si no, «Precio y horarios en …»; nunca valoraciones;
 - condiciones de cancelación en una línea, solo si se han comprobado en la ficha;
-- sin foto propia del sitio correcto, la tarjeta lleva un bloque tipográfico, nunca la foto de otro lugar ni una de banco de imágenes;
+- sin foto propia del sitio correcto, la tarjeta usa la foto de producto de Tiqets o el hueco de color de D-042, nunca la foto de otro lugar ni una de banco de imágenes;
 - se quedan fuera, de momento: Elevador de Santa Justa (cerrado), MAAT y Gulbenkian (sin ficha en Tiqets), Quinta da Regaleira (la Fundação dice que su única taquilla autorizada es la suya; Tiqets la vende un intermediario), tuk-tuk (la web desaconseja los tuk-tuks en zonas saturadas) y Museu Nacional do Azulejo (cerrado por obras).
 
 Detalle: [[content/2026-10-09-ENTRADAS-V2]].
 
+
+## D-042 — Fotos de producto de Tiqets dentro de la tarjeta propia
+**Date:** 2026-10-09
+**Status:** proposed (rama `feat/estetica-entradas-freetours`, sin publicar; pendiente de aprobación visual de José, D-012)
+
+A José no le gustaban los bloques azul noche de las tarjetas sin foto y pidió que todas las tarjetas se vean iguales. Las que no tienen foto propia usan la foto de producto que Tiqets da en su API, dentro de nuestra tarjeta: mismo tamaño, recorte, tipografía, fila de precio y botón.
+
+Reglas:
+- solo la imagen; nunca un widget visible de un proveedor en el hub, porque trae su propio diseño. Si un producto tiene enlace directo, se pinta siempre la tarjeta propia, haya o no consentimiento de cookies;
+- la foto llega por la API (`images[0]`, el tamaño más grande), solo si es HTTPS de `aws-tiqets-cdn.imgix.net`, y se renueva con el snapshot (6 h). No se copian URLs de imágenes al código;
+- orden: foto propia; si no hay, la de Tiqets; si la propia es un apaño (`preferProviderImage`, hoy solo la Pena con la foto de la estación), la de Tiqets va primero; si no hay ninguna o no carga (`onError`), un hueco crema con el mismo recorte y un icono, a juego con la tarjeta;
+- toda foto de Tiqets lleva el crédito «Foto: Tiqets» (o «Foto: autor / Tiqets») encima de la imagen, y la página lo aclara: no son fotos de José;
+- alt: el `alt_text` de Tiqets o, si falta, «{producto}, foto de producto de Tiqets»;
+- `TIQETS_API_BASE_URL` solo puede apuntar a `localhost`/`127.0.0.1`, para probar en local con un servidor simulado; en cualquier otro caso se usa la API real;
+- ojo: según la documentación de Tiqets, las claves de afiliado «Essential» no reciben imágenes salvo que Tiqets las active. Si la cuenta no las tiene, en producción se ven los huecos de color. Hay que pedir a Tiqets que active las imágenes.
+
+Detalle: [[content/2026-10-09-ENTRADAS-V2]].

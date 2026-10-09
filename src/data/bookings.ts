@@ -169,6 +169,12 @@ export interface BookableProduct {
   image?: string;
   imageAlt?: string;
   /**
+   * Si es `true`, la foto de producto de Tiqets (cuando llega) pasa por
+   * delante de `image`. Para los casos en que nuestra foto es un apaño, como
+   * la estación de Sintra en la tarjeta de la Pena.
+   */
+  preferProviderImage?: boolean;
+  /**
    * Distintivo editorial opcional. Sólo cosas que sostenemos nosotros: nunca
    * «más vendido», «últimas plazas» ni descuentos, que no tenemos datos para
    * afirmarlos.
@@ -317,6 +323,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     // honesta y es por donde empieza quien sube por su cuenta.
     image: '/images/estacion-sintra.jpg',
     imageAlt: 'Estación de tren de Sintra, de donde sale el autobús 434 hacia la Pena',
+    preferProviderImage: true,
     searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
     hub: {
       render: 'native-card',
