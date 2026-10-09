@@ -185,6 +185,37 @@ export function ArticleBody({
               </ArticleCallout>
             );
           }
+          // Comparativas con datos (precios, opciones). La tabla hace scroll
+          // horizontal en móvil en vez de comprimir las columnas.
+          if (bloque.tipo === 'tabla' && bloque.columnas && bloque.filas) {
+            return (
+              <div key={index} className="article-table-wrap">
+                <table className="article-table">
+                  {bloque.texto ? <caption>{bloque.texto}</caption> : null}
+                  <thead>
+                    <tr>
+                      {bloque.columnas.map((col, i) => (
+                        <th key={i} scope="col">{col}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bloque.filas.map((fila, r) => (
+                      <tr key={r}>
+                        {fila.map((celda, c) =>
+                          c === 0 ? (
+                            <th key={c} scope="row">{celda}</th>
+                          ) : (
+                            <td key={c}>{celda}</td>
+                          ),
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
           /*
            * Sugerencia dentro del texto, para los free tours. Va deliberadamente
            * sobria —un filete lateral y un enlace, sin botón ni fondo— porque

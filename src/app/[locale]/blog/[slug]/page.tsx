@@ -477,49 +477,226 @@ const articles: Record<string, Article> = {
 
   'tarjeta-navegante-lisboa': {
     titulo: 'Tarjeta Navegante en Lisboa: cuál comprar y cuánto cuesta en 2026',
-    descripcion: 'Qué es la tarjeta Navegante, diferencia entre ocasional y personalizada, precios 2026, zapping y cuándo conviene un billete de 24 horas.',
-    seoTitle: 'Tarjeta Navegante Lisboa 2026: qué incluye y cuál comprar',
-    metaDescription: 'Qué incluye la Navegante ocasional (0,50 €): billete Carris/Metro, zapping y pases de 24 horas con tarifas oficiales 2026, y cuándo compensa cada uno.',
+    descripcion: 'Qué tarjeta o billete comprar en Lisboa según tu viaje: Navegante ocasional con zapping, billete de 24 horas, contactless o Lisboa Card, con las tarifas oficiales de 2026 y las cuentas hechas.',
+    seoTitle: 'Tarjeta Navegante Lisboa 2026: cuál comprar y precios',
+    metaDescription: 'La Navegante cuesta 0,50 € y con zapping cada viaje sale a 1,72 €. Cuándo compensa el billete de 24 h (7,25 €), el de CP para Sintra y la Lisboa Card.',
     imagen: '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
     imageAlt: 'Tranvía 15E de Lisboa utilizado por viajeros con títulos Navegante y Carris',
     categoria: 'Transporte',
     fecha: '21 Sep 2026',
-    fechaActualizacion: 'Actualizado el 8 de octubre de 2026',
-    dateModified: '2026-10-08',
-    minutos: 8,
+    fechaActualizacion: 'Actualizado el 9 de octubre de 2026',
+    dateModified: '2026-10-09',
+    minutos: 12,
     links: [
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/metro-lisboa-guia', label: 'Horario y líneas del Metro de Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto de Lisboa al centro' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa' },
     ],
     fuentes: [
       { label: 'Metro de Lisboa: tarjeta Navegante ocasional', href: 'https://www.metrolisboa.pt/comprar/cartao-navegante-ocasional/' },
-      { label: 'Metro de Lisboa: tarifas ocasionales y zapping', href: 'https://www.metrolisboa.pt/comprar/' },
-      { label: 'Metro de Lisboa: tarifas 2026', href: 'https://www.metrolisboa.pt/2025/12/19/novas-tarifas-2026/' },
-      { label: 'Carris: tarifas 2026', href: 'https://www.carris.pt/descubra/novo-tarifario-2026/' },
+      { label: 'Metro de Lisboa: tarifas ocasionales, zapping y tarjeta bancaria', href: 'https://www.metrolisboa.pt/comprar/' },
+      { label: 'Carris: tarifas 2026 (incluye precios a bordo)', href: 'https://www.carris.pt/descubra/novo-tarifario-2026/' },
+      { label: 'Carris: viajes ocasionales y condiciones de la tarjeta', href: 'https://carris.pt/compre/viagens-ocasionais/' },
+      { label: 'CP: tarjeta Navegante ocasional en los trenes urbanos', href: 'https://www.cp.pt/info/w/cartao-recarregavel-navegante-ocasional' },
+      { label: 'CP: precios de los trenes urbanos de Lisboa 2026 (PDF)', href: 'https://cp.pt/info/documents/d/cp/precos-comboios-urbanos-lisboa' },
+      { label: 'Visit Lisboa Shop: Lisboa Card, precios y condiciones', href: 'https://shop.visitlisboa.com/pt/products/lisboa-card' },
     ],
     contenido: [
-      { tipo: 'parrafo', texto: 'Para un visitante, “Navegante” puede significar dos cosas distintas: la tarjeta ocasional donde cargas billetes o zapping, y la tarjeta personalizada usada sobre todo por quienes viajan con frecuencia o necesitan pases mensuales. Si vienes unos días, normalmente te interesa la primera.' },
-      { tipo: 'subtitulo', texto: 'Navegante ocasional: la tarjeta para viajes sueltos' },
-      { tipo: 'parrafo', texto: 'La tarjeta Navegante ocasional cuesta 0,50 € y puede recargarse durante un año. Es individual durante cada viaje: no sirve para que dos personas validen con la misma tarjeta al mismo tiempo.' },
-      { tipo: 'subtitulo', texto: '¿Qué incluye la tarjeta Navegante ocasional?' },
-      { tipo: 'parrafo', texto: 'La tarjeta en sí no incluye viajes: es el soporte donde cargas el billete. Según Metro de Lisboa, en la Navegante ocasional puedes cargar estos títulos:' },
+      { tipo: 'parrafo', texto: 'Si vienes unos días a Lisboa, compra una tarjeta Navegante ocasional por persona (0,50 €) y cárgala con zapping: cada viaje en Metro, autobús o tranvía te sale a 1,72 €. El día que vayas a hacer cuatro o cinco trayectos o más, cámbiate al billete de 24 horas (7,25 €). Y no subas al tranvía sin tarjeta: pagando a bordo, el mismo viaje cuesta 3,30 €.' },
+
+      { tipo: 'subtitulo', texto: 'Qué comprar según tu viaje' },
       { tipo: 'lista', items: [
-        'Billete Carris/Metro (1,90 €): viajes ilimitados en Carris y Metro durante 60 minutos desde la primera validación. No vale para dos entradas seguidas en el Metro.',
-        'Zapping: saldo que cargas por importes de 3 € a 40 € y se descuenta en cada viaje. En el Metro, cada viaje cuesta 1,72 €. Cada viaje zapping vale para un solo operador; si cambias de operador, se descuenta otro.',
-        '24 horas Carris/Metro (7,25 €): viajes ilimitados en toda la red de Carris y Metro durante 24 horas desde la primera validación.',
-        '24 horas Carris/Metro/Transtejo (10,35 €): lo mismo, más el barco entre Cais do Sodré y Cacilhas.',
-        '24 horas Carris/Metro/CP (11,40 €): lo mismo, más los trenes urbanos de CP, incluidas las líneas de Sintra y Cascais.',
+        'Un día con mucho transporte: Navegante + billete de 24 horas Carris/Metro (7,25 €). Compensa desde el cuarto trayecto con billete sencillo o desde el quinto con zapping.',
+        'De 3 a 7 días, moviéndote sobre todo a pie: Navegante + zapping. Carga 10 o 15 € y recarga cuando haga falta. Es lo más barato si haces menos de cinco trayectos al día.',
+        'Llegada al aeropuerto: compra la Navegante en las máquinas de la estación de Metro Aeroporto (línea roja) y carga zapping. El trayecto al centro cuesta 1,72 €.',
+        'Día en Sintra o Cascais: zapping también vale en el tren de CP (2,05 € cada trayecto). Si ese día vas a moverte mucho también por Lisboa, mira el de 24 horas Carris/Metro/CP (11,40 €).',
+        'Muchos museos en 1-3 días: haz la cuenta con la Lisboa Card (31 € las 24 horas), que incluye el transporte y la entrada a monumentos como los Jerónimos o la Torre de Belém.',
+        'Un trayecto suelto en Metro y nada más: paga con tu tarjeta bancaria contactless en el torniquete (1,92 €). No necesitas comprar nada.',
       ] },
-      { tipo: 'nota', texto: 'Títulos y tarifas comprobados en la web de Metro de Lisboa el 8 de octubre de 2026. Puedes comprar y recargar la tarjeta en las máquinas y taquillas del Metro; guarda el comprobante de carga por si la tarjeta falla.' },
-      { tipo: 'subtitulo', texto: '¿Billete sencillo, zapping o 24 horas?' },
-      { tipo: 'parrafo', texto: 'Si ese día vas a caminar mucho y hacer pocos trayectos, zapping o billetes sueltos pueden tener más sentido. Si vas a encadenar Metro, autobuses, tranvías o ascensores durante todo el día, compara el coste con el billete de 24 horas antes de cargar la tarjeta.' },
+
+      { tipo: 'subtitulo', texto: 'Qué es la Navegante ocasional (y qué no es)' },
+      { tipo: 'parrafo', texto: 'Es una tarjeta de cartón con chip. Cuesta 0,50 € y no incluye ningún viaje: es el soporte donde cargas el billete o el saldo. Sirve en Metro, en los autobuses y tranvías de Carris, en los trenes urbanos de CP y en los barcos, según lo que cargues. Se puede recargar durante un año desde la compra.' },
+      { tipo: 'parrafo', texto: 'La otra Navegante, la personalizada, lleva tu foto y sirve para los pases mensuales (40 € el metropolitano, 30 € el municipal). Está pensada para quien vive aquí. Si vienes de viaje, no la necesitas.' },
+      { tipo: 'aviso', texto: 'Una tarjeta por persona. La Navegante ocasional es individual: aunque le cargues varios viajes, no puedes pasar el torniquete y dársela a la persona que va detrás. Si viajáis dos, comprad dos tarjetas.' },
+
+      { tipo: 'subtitulo', texto: 'Precios 2026: billete sencillo, zapping, 24 horas y Lisboa Card' },
+      { tipo: 'tabla', texto: 'Tarifas oficiales de Metro de Lisboa, Carris, CP y Visit Lisboa, comprobadas el 9 de octubre de 2026.', columnas: ['Opción', 'Precio', 'Qué cubre', 'Le conviene a'], filas: [
+        ['Billete Carris/Metro', '1,90 €', '60 minutos de viajes ilimitados en Carris y Metro desde la primera validación. No permite dos entradas seguidas al Metro.', 'Quien hace un trayecto con transbordo, por ejemplo Metro y luego tranvía'],
+        ['Zapping', '1,72 € por viaje (Metro y Carris); 2,05 € en CP', 'Saldo que se descuenta en cada viaje. Cada viaje vale para un solo operador.', 'Casi todos los visitantes, de 1 a 4 trayectos al día'],
+        ['24 horas Carris/Metro', '7,25 €', 'Metro, autobuses, tranvías y elevadores de Carris durante 24 horas', 'Días de 4 o más trayectos'],
+        ['24 horas Carris/Metro/Transtejo', '10,35 €', 'Lo anterior más el barco Cais do Sodré-Cacilhas', 'El día que cruzas a Almada'],
+        ['24 horas Carris/Metro/CP', '11,40 €', 'Lo anterior (sin barco) más los trenes urbanos de CP, incluidas las líneas de Sintra y Cascais', 'Día de Sintra o Cascais con mucho movimiento también en Lisboa'],
+        ['Contactless (tarjeta bancaria)', '1,92 € por viaje en Metro', 'Un viaje de Metro, pagando en el torniquete', 'Un trayecto suelto sin comprar tarjeta'],
+        ['Pago a bordo', '2,30 € autobús · 3,30 € tranvía', 'Un viaje, comprado al conductor', 'Nadie, si puedes evitarlo'],
+        ['Lisboa Card', '31 € (24 h) · 51 € (48 h) · 62 € (72 h)', 'Transporte público, incluidos los trenes de CP a Sintra y Cascais, y entrada a más de 50 museos y monumentos', 'Quien va a encadenar muchos monumentos en pocos días'],
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Las cuentas: cuándo compensa el billete de 24 horas' },
+      { tipo: 'parrafo', texto: 'El billete de 24 horas Carris/Metro cuesta 7,25 €. Con billetes sencillos de 1,90 €, lo superas en el cuarto trayecto (4 × 1,90 = 7,60 €). Con zapping a 1,72 €, cuatro viajes son 6,88 € y siguen saliendo más baratos; el quinto ya suma 8,60 €. Resumiendo: hasta cuatro trayectos en un día, zapping; cinco o más, 24 horas.' },
+      { tipo: 'parrafo', texto: 'Ojo con los transbordos. Un viaje zapping vale para un solo operador, así que Metro y luego tranvía son dos descuentos (3,44 €). El billete sencillo de 1,90 € cubre los dos si los haces dentro de 60 minutos. Si un día vas a encadenar Metro y tranvía varias veces, el billete de 24 horas te quita el problema.' },
+      { tipo: 'parrafo', texto: 'Las 24 horas cuentan desde la primera validación, no por día natural. Si lo activas a las 15:00, te sirve hasta las 15:00 del día siguiente, y puedes aprovechar dos tardes.' },
+
+      { tipo: 'subtitulo', texto: 'Sintra, Cascais y el barco a Cacilhas' },
+      { tipo: 'parrafo', texto: 'Los trenes a Sintra (desde Rossio) y a Cascais (desde Cais do Sodré) son de CP, y la Navegante también funciona en ellos. Con zapping, cada trayecto en tren cuesta 2,05 €. Si no cargas zapping, el ida y vuelta Lisboa-Sintra o Lisboa-Cascais cuesta 5,10 €.' },
+      { tipo: 'parrafo', texto: 'El billete de 24 horas Carris/Metro/CP (11,40 €) cuesta 4,15 € más que el de Carris/Metro. Esa diferencia es casi lo que pagarías por los dos trenes con zapping (4,10 €). Así que solo compensa si ese día también te vas a mover mucho por Lisboa. Si vas a Sintra por la mañana y vuelves a cenar, zapping suele salir mejor.' },
+      { tipo: 'parrafo', texto: 'En Sintra, el autobús 434 que sube a la Pena no entra en ninguno de estos billetes. CP vende un billete combinado “Train & Bus” por 14 € al día, que incluye la línea de Sintra y los autobuses 434 y 435. Para Cacilhas, al otro lado del río, tienes el de 24 horas con Transtejo (10,35 €) o zapping.' },
+      { tipo: 'enlace', texto: 'Cómo encajar el tren, el 434 y la hora de entrada a la Pena en un solo día.', href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+
       { tipo: 'subtitulo', texto: '¿Y pagar directamente con tarjeta bancaria?' },
-      { tipo: 'parrafo', texto: 'En 2026 el viaje de Metro pagado directamente con tarjeta bancaria contactless cuesta 1,92 €. Es cómodo para un trayecto aislado, pero no sustituye automáticamente a Navegante si vas a usar varios operadores o quieres un título de 24 horas.' },
+      { tipo: 'parrafo', texto: 'En el Metro puedes pasar el torniquete con tu tarjeta bancaria o el móvil, si tienen contactless. Cada viaje cuesta 1,92 €, apenas unos céntimos más que el billete sencillo, y te ahorras comprar la Navegante. Sale peor que el zapping (1,72 €) y, como pasa con la Navegante, cada tarjeta o móvil vale para una sola persona.' },
+      { tipo: 'parrafo', texto: 'Para un trayecto suelto en Metro, contactless. Si vas a coger también tranvías y autobuses o vas a estar varios días, la Navegante con zapping sigue siendo más barata.' },
+
+      { tipo: 'subtitulo', texto: '¿Y la Lisboa Card?' },
+      { tipo: 'parrafo', texto: 'La Lisboa Card no es una Navegante: es la tarjeta turística de Turismo de Lisboa. Incluye el transporte público (Metro, Carris y los trenes de CP a Sintra y Cascais) y la entrada a más de 50 museos y monumentos. Cuesta 31 € las 24 horas, 51 € las 48 y 62 € las 72. Para niños de 4 a 15 años, 21, 28 y 35 €.' },
+      { tipo: 'parrafo', texto: 'Un ejemplo con precios oficiales: los Jerónimos (18 €), la Torre de Belém (15 €) y un día de transporte (7,25 €) suman 40,25 €. La de 24 horas cuesta 31 €. Si ese día solo vas a pasear y ver un museo, no compensa: con zapping te mueves por unos 7 €.' },
+      { tipo: 'parrafo', texto: 'Dos detalles antes de comprarla. Para los Jerónimos y la Torre de Belém tienes que reservar hora con el número de tu tarjeta, y no puedes hacerlo hasta que hayas cambiado el bono por la tarjeta física. Además, los grandes monumentos y museos nacionales cierran los lunes, así que no actives la tarjeta un lunes.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde comprar y recargar la Navegante' },
+      { tipo: 'lista', items: [
+        'En las máquinas automáticas de las estaciones de Metro, incluida la del aeropuerto, y en los puestos de venta del Metro.',
+        'En las taquillas y máquinas de las estaciones de CP, como Rossio o Cais do Sodré.',
+        'Compras la tarjeta y cargas el título en la misma operación.',
+        'El zapping se carga desde 3 € y el saldo máximo es de 40 €. En la misma máquina puedes ver cuánto saldo te queda.',
+        'Guarda el recibo de la recarga. Si la tarjeta deja de funcionar, te lo piden para pasar el saldo a una nueva.',
+      ] },
+      { tipo: 'tip', texto: 'Si llegas en avión, compra la tarjeta en la estación de Metro del aeropuerto y carga ya zapping para varios días: con 15 € por persona tienes para unos ocho trayectos y no vuelves a la máquina hasta mitad del viaje.' },
+
+      { tipo: 'subtitulo', texto: 'Errores que cuestan dinero' },
+      { tipo: 'lista', items: [
+        'Cargar zapping y pretender añadir después un billete de 24 horas. La tarjeta solo admite un tipo de título a la vez: hasta que gastes el saldo zapping, la máquina no te deja cargar el de 24 horas. Solución: carga zapping en cantidades pequeñas o compra una segunda tarjeta (0,50 €) para el día de 24 horas.',
+        'Compartir una tarjeta entre dos. No funciona: es individual.',
+        'Pagar el tranvía a bordo. 3,30 € frente a 1,72 € con zapping. En el 28 o el 15E, sube con la tarjeta cargada.',
+        'Olvidarse de validar en el tranvía o el autobús. Hay que acercar la tarjeta al lector en cada viaje, también con el billete de 24 horas: las condiciones de CP lo dicen expresamente para CP, Carris y Metro.',
+        'Comprar algo con la tarjeta en mitad del viaje. CP avisa de que, mientras dura un viaje validado, cargar un título nuevo en la misma tarjeta puede anular la validación.',
+        'Tirar la tarjeta al irte. Vale un año: si vuelves a Lisboa o se la das a alguien que viene, sigue funcionando.',
+      ] },
+
       { tipo: 'subtitulo', texto: 'Pases mensuales Navegante' },
-      { tipo: 'parrafo', texto: 'Los pases mensuales están pensados para uso frecuente. El Navegante Metropolitano normal cuesta 40 € al mes y cubre el área metropolitana; el municipal normal cuesta 30 € y se limita al municipio correspondiente. Para un viaje turístico corto normalmente no son la primera opción.' },
+      { tipo: 'parrafo', texto: 'El Navegante Metropolitano cuesta 40 € al mes y vale en todo el área metropolitana; el Municipal, 30 € y solo dentro de un municipio. Van en la tarjeta personalizada y son por mes natural. Solo compensan si te quedas varias semanas y coges transporte casi a diario.' },
       { tipo: 'enlace', texto: 'Si quieres ver cómo encaja Navegante con Metro, tranvías, buses y trenes, aquí está la guía general.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+    ],
+  },
+
+  'monasterio-jeronimos-entradas': {
+    titulo: 'Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)',
+    descripcion: 'Qué se paga y qué es gratis en los Jerónimos, precios oficiales de 2026, dónde comprar la entrada con hora, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
+    seoTitle: 'Monasterio de los Jerónimos: entradas y horario 2026',
+    metaDescription: 'Claustro 18 € con hora, iglesia gratis y cerrado los lunes. Dónde comprar, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré en 8 minutos.',
+    imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+    imageAlt: 'Claustro del Monasterio de los Jerónimos en Belém',
+    categoria: 'Cultura',
+    fecha: '9 Oct 2026',
+    fechaActualizacion: 'Verificado el 9 de octubre de 2026',
+    dateModified: '2026-10-09',
+    minutos: 10,
+    links: [
+      { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
+      { href: '/blog/pasteles-de-belem', label: 'Pastéis de Belém' },
+      { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
+      { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
+      { href: '/blog/arquitectura-manuelina-lisboa', label: 'Arquitectura manuelina en Lisboa' },
+      { href: '/blog/monumentos-de-lisboa', label: 'Monumentos de Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Mosteiro dos Jerónimos y Torre de Belém: visitar (horarios, precios y gratuidades)', href: 'https://mosteirojeronimos.torrebelem.gov.pt/visitar' },
+      { label: 'Mosteiro dos Jerónimos y Torre de Belém: reglamento interno', href: 'https://mosteirojeronimos.torrebelem.gov.pt/regulamento-interno' },
+      { label: 'Museus e Monumentos de Portugal: Mosteiro dos Jerónimos', href: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo' },
+      { label: 'Venta oficial MEO Blueticket: claustro', href: 'https://mmp.bymeoblueticket.pt/pt/event/14759/mosteiro-dos-jeronimos-claustro' },
+      { label: 'CP: horario de la línea de Cascais', href: 'https://www.cp.pt/info/documents/d/cp/comboios-urbanos-lisboa-cascais' },
+      { label: 'CP: precios de los trenes urbanos de Lisboa 2026 (PDF)', href: 'https://cp.pt/info/documents/d/cp/precos-comboios-urbanos-lisboa' },
+      { label: 'Carris: línea 15E', href: 'https://www.carris.pt/viaje/carreiras/15E' },
+      { label: 'Pastéis de Belém: horario', href: 'https://pasteisdebelem.pt/contactos/' },
+      { label: 'Visit Lisboa Shop: condiciones de la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/products/lisboa-card' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'En los Jerónimos se paga el claustro: 18 €, con día y franja horaria, y conviene comprarlo antes porque se agota. La iglesia es gratis y tiene su propia entrada. Abre de martes a domingo y cierra todos los lunes. Para llegar, lo más cómodo es el tren de Cais do Sodré a Belém: 8 minutos.' },
+      { tipo: 'lista', items: [
+        'Claustro: 18 € (9 € para mayores de 65 y jóvenes de 13 a 24). Menores de 12, gratis. Iglesia, gratis.',
+        'Claustro de martes a domingo, de 9:30 a 17:30 (última entrada 17:00). La taquilla cierra a las 16:30. Lunes, cerrado.',
+        'Ya no hay domingos gratis: los residentes en Portugal tienen 52 días gratis al año (Acesso 52) y los turistas pagan cualquier día.',
+        'Iglesia: de martes a sábado, de 10:30 a 17:00; domingos y festivos religiosos, de 14:00 a 17:00.',
+        'También cierra el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio y el 25 de diciembre.',
+        'Cómo llegar: tren de la línea de Cascais hasta Belém (cada 20 minutos durante el día), tranvía 15E o autobuses 728 y 729.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'La iglesia es gratis; el claustro se paga' },
+      { tipo: 'parrafo', texto: 'Son dos visitas distintas, con dos entradas y dos colas. La iglesia de Santa María de Belém no necesita billete. Dentro están las tumbas de Vasco da Gama y de Camões y las columnas que se abren en la bóveda como palmeras. Tiene horario propio y se cierra durante el culto.' },
+      { tipo: 'parrafo', texto: 'El claustro de dos pisos y el antiguo refectorio de los monjes son la parte de pago. Las fotos del monasterio que conoces casi siempre son del claustro. Si vas con poco tiempo o sin presupuesto para entradas, la iglesia ya justifica la parada. Si quieres el claustro, cuenta al menos una hora de visita, sin contar la espera.' },
+      { tipo: 'parrafo', texto: 'Si quieres ver las dos partes, ten en cuenta que cada una tiene su cola y su horario. El claustro abre a las 9:30; la iglesia, a las 10:30 de martes a sábado y a las 14:00 los domingos.' },
+
+      { tipo: 'subtitulo', texto: 'Precios 2026' },
+      { tipo: 'tabla', texto: 'Tarifas de la web oficial del Mosteiro dos Jerónimos, consultadas el 9 de octubre de 2026.', columnas: ['Entrada', 'Precio'], filas: [
+        ['Claustro, billete normal', '18 €'],
+        ['Mayores de 65 años', '9 € (50 %)'],
+        ['Jóvenes de 13 a 24 años', '9 € (50 %)'],
+        ['Billete familia (al menos 1 adulto y 1 menor)', '50 %, solo en la taquilla'],
+        ['Menores de 12 años (incluidos)', 'Gratis'],
+        ['Residentes en Portugal', 'Gratis 52 días al año, a elegir (Acesso 52), con documento con NIF y solo en la taquilla'],
+        ['Iglesia', 'Gratis'],
+      ] },
+      { tipo: 'parrafo', texto: '¿Y los domingos? Muchas guías siguen diciendo que es gratis los domingos hasta las 14:00. Ya no: los residentes tienen el Acesso 52 y los turistas pagan cualquier día de la semana. Las excepciones para todo el mundo son tres días al año: el Día Internacional de los Monumentos (18 de abril), el Día Internacional de los Museos (18 de mayo) y las Jornadas Europeas del Patrimonio (septiembre), según las instrucciones de cada año.' },
+      { tipo: 'parrafo', texto: 'La lista oficial recoge otros casos gratuitos, como desempleados residentes en la UE o personas con discapacidad igual o superior al 60 % y un acompañante. Si crees que es tu caso, lleva el justificante. La Torre de Belém cuesta 15 €, con los mismos descuentos y los mismos días de cierre, y es un billete aparte.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde comprar la entrada' },
+      { tipo: 'parrafo', texto: 'El billete del claustro se compra para un día y una franja. Las franjas oficiales son de una hora: 9:30-10:30, 10:30-11:30 y así hasta la última, de 15:30 a 17:00. La web oficial avisa de que las entradas se agotan a menudo y entonces no se pueden comprar en el mismo día.' },
+      { tipo: 'tabla', texto: 'Precios consultados el 9 de octubre de 2026.', columnas: ['Dónde', 'Precio', 'Para quién'], filas: [
+        ['Web oficial (MEO Blueticket)', '18 € + gastos de gestión (19,11 € en total)', 'Quien quiere pagar lo mínimo'],
+        ['Taquilla, en el quiosco frente al monasterio', '18 €', 'Familias (el billete familia solo se vende aquí) y residentes con Acesso 52. Cierra a las 16:30 y se agota'],
+        ['Tiqets', '19,50 €', 'Quien prefiere comprar en español y tener el QR en la app'],
+        ['Tiqets, Jerónimos + Torre de Belém', '34 €', 'Quien hace los dos el mismo día. Incluye una audioguía de Lisboa para el móvil'],
+      ] },
+      { tipo: 'parrafo', texto: 'En Tiqets, el proveedor es el propio organismo público, Museus e Monumentos de Portugal, así que es el mismo billete oficial. Esa entrada no se puede devolver ni cambiar de fecha, así que cómprala cuando tengas el día claro. El combinado con la Torre sale 1 € más caro que comprar las dos entradas en la taquilla.' },
+      { tipo: 'aviso', texto: 'Las entradas “sin colas” no existen aquí. Comprar por adelantado te ahorra la cola de la taquilla, pero la cola de acceso la hace todo el mundo, y la web de venta oficial avisa de que en los momentos de más gente puede pasar de 2 horas.' },
+      { tipo: 'parrafo', texto: 'Con la Lisboa Card el claustro entra en la tarjeta, pero hay que reservar día y hora con el número de la tarjeta. Esa reserva solo se puede hacer después de cambiar el bono por la tarjeta física, y los cupos para la Lisboa Card son limitados.' },
+
+      { tipo: 'subtitulo', texto: 'Horarios y cierres' },
+      { tipo: 'tabla', texto: 'Horario oficial vigente en octubre de 2026.', columnas: ['', 'Abre', 'Cierra', 'Última entrada'], filas: [
+        ['Claustro (martes a domingo)', '9:30', '17:30', '17:00'],
+        ['Iglesia (martes a sábado)', '10:30', '17:00', '17:00'],
+        ['Iglesia (domingos y festivos religiosos)', '14:00', '17:00', '17:00'],
+        ['Taquilla', '—', '16:30', '—'],
+      ] },
+      { tipo: 'parrafo', texto: 'Cierra los lunes, el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio (San Antonio, fiesta de Lisboa) y el 25 de diciembre. Además puede cerrar con poco aviso por actos de Estado, porque el monasterio se usa para actos oficiales del protocolo portugués. Si solo tienes ese día, mira la web oficial esa misma mañana.' },
+
+      { tipo: 'subtitulo', texto: 'Cómo reducir la espera' },
+      { tipo: 'lista', items: [
+        'Lleva el billete comprado. Te ahorras la cola de la taquilla, que además se agota.',
+        'Ve entre semana y evita los puentes.',
+        'Ten en cuenta que de 9:30 a 10:30 el monasterio reserva un acceso para grupos guiados, así que la primera franja no siempre es la más tranquila.',
+        'Ve ligero. No se puede entrar con maletas, mochilas grandes, comida ni bebida, y tampoco se permiten palos de selfi ni trípodes.',
+        'No dejes la compra para el final del día: la taquilla cierra a las 16:30 aunque se pueda entrar hasta las 17:00.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Cómo llegar: en tren desde Cais do Sodré' },
+      { tipo: 'parrafo', texto: 'Yo a Belém suelo ir en tren desde Cais do Sodré: son ocho minutos y no dependes del tráfico.' },
+      { tipo: 'lista', items: [
+        'Línea: la de Cascais, de CP. Sale de la estación de Cais do Sodré (Metro línea verde y parada del 15E). Vale cualquier tren hacia Oeiras o Cascais que pare en Belém; en hora punta algunos rápidos no paran, así que mira la pantalla.',
+        'Trayecto: 8 minutos, según el horario de CP.',
+        'Frecuencia: un tren cada 20 minutos durante el día, más a menudo en hora punta entre semana y cada 30 minutos por la noche.',
+        'Precio: billete sencillo de 1 zona, 1,50 €, cargado en la tarjeta Navegante (0,50 € si aún no la tienes). Con zapping, el viaje en CP cuesta 2,05 €. La tarjeta solo admite un tipo de título a la vez.',
+        'De la estación al monasterio: unos 10 minutos a pie, cruzando hacia el jardín de la Praça do Império, con el monasterio enfrente.',
+      ] },
+      { tipo: 'subseccion', texto: 'Otras opciones' },
+      { tipo: 'parrafo', texto: 'El tranvía 15E sale de Praça da Figueira y pasa por Praça do Comércio y Cais do Sodré; bájate en la parada Mosteiro Jerónimos, justo delante. Los autobuses 728 y 729 también paran ahí; el 728 viene de Santa Apolónia por Praça do Comércio y Cais do Sodré. Con zapping, tranvía y bus cuestan 1,72 €; pagando el tranvía a bordo, 3,30 €.' },
+      { tipo: 'enlace', texto: 'Todas las tarifas y qué cargar en la tarjeta según tu viaje.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Jerónimos, Torre de Belém y Pastéis de Belém en una mañana' },
+      { tipo: 'parrafo', texto: 'Los tres están en la misma calle larga junto al río, y se pueden hacer en una mañana si llevas las entradas compradas.' },
+      { tipo: 'lista', items: [
+        'Jerónimos a primera hora, con el billete del claustro comprado. Calcula una hora dentro.',
+        'Pastéis de Belém, a unos cinco minutos a pie, en la Rua de Belém 84-92. Abre todos los días de 8:00 a 21:00 (hasta las 22:00 de julio a septiembre; hasta las 19:00 el 24, 25 y 31 de diciembre y el 1 de enero).',
+        'Torre de Belém, a algo más de 1 km a pie siguiendo el río, pasando por el Padrão dos Descobrimentos. La torre también va con franja, de media hora, así que compra una que te dé margen después de los Jerónimos.',
+      ] },
+      { tipo: 'parrafo', texto: 'Yo no me voy de Belém sin comerme unos pastéis de nata.' },
+      { tipo: 'enlace', texto: 'Si prefieres que alguien te cuente la historia del barrio mientras lo recorres, hay free tours por Belém.', href: '/free-tours-lisboa#ruta-belem', label: 'Ver los free tours por Belém' },
+
+      { tipo: 'subtitulo', texto: 'Qué ves con cada entrada' },
+      { tipo: 'parrafo', texto: 'Con el billete recorres el claustro, los dos pisos de arcos con decoración manuelina (cuerdas, conchas, esferas armilares, motivos marinos), y el antiguo refectorio, con las paredes de azulejos. El piso de arriba no es accesible en silla de ruedas ni con carrito.' },
+      { tipo: 'parrafo', texto: 'En la iglesia, gratis, están la nave con columnas muy finas para su altura, las tumbas de Vasco da Gama y de Camões junto a la entrada y los sepulcros reales del altar. No hay audioguía oficial: si quieres contexto, lleva algo leído o ve con guía.' },
+      { tipo: 'enlace', texto: 'Si te interesa el estilo, aquí está la guía del manuelino en Lisboa.', href: '/blog/arquitectura-manuelina-lisboa', label: 'Arquitectura manuelina en Lisboa' },
     ],
   },
 
@@ -2281,6 +2458,10 @@ const articles: Record<string, Article> = {
     categoria: "Gastronomía",
     fecha: "28 Nov 2024",
     minutos: 11,
+    links: [
+      { href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
+      { href: "/blog/belem-barrio-guia", label: "Qué ver en Belém" },
+    ],
     fuentes: [
       { label: "Pastéis de Belém — horarios y la pastelería original", href: "https://pasteisdebelem.pt/" },
       { label: "Pastéis de Belém — contacto y horario oficial", href: "https://pasteisdebelem.pt/contactos/" },
@@ -3593,10 +3774,11 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Lisboa es una ciudad de monumentos. No del tipo de monumentos que se erigen en honor a batallas olvidadas, sino de edificios y estructuras que cuentan directamente la historia de la ciudad y del país: los monasterios construidos con el oro de las especias de India, las torres que vigilaban la entrada al río, los puentes y ascensores que conectaban las colinas. Esta guía te ayuda a priorizar qué ver, cómo evitar colas, y cuánto tiempo necesitas en cada lugar." },
       { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino" },
       { tipo: "parrafo", texto: "Construido a partir de 1501 con el dinero del impuesto sobre las especias traídas de India, el Mosteiro dos Jerónimos es la obra cumbre del estilo manuelino y uno de los edificios más bellos de Europa. La nave de la iglesia, con sus columnas decoradas con motivos marinos y tropicales, es de una elegancia que no cansa. Los claustros, en el piso superior, son todavía más impresionantes: una galería de dos pisos de arcos decorados con una delicadeza escultórica extraordinaria." },
+      { tipo: "enlace", texto: "Qué se paga, qué es gratis y cómo llegar en tren desde Cais do Sodré.", href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
       { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro, 18€. Si hay billete combinado con la Torre de Belém, compruébalo en la web oficial antes de comprar por separado. Compra online para evitar colas. Tiempo recomendado: 1,5-2 horas." },
       { tipo: "subtitulo", texto: "2. Torre de Belém — El Icono de Lisboa" },
       { tipo: "parrafo", texto: "La Torre de Belém es la imagen más reconocible de Lisboa y uno de los iconos de Portugal. Construida entre 1516 y 1521 como fortaleza defensiva a la entrada del estuario del Tajo, la torre combina elementos militares con decoración manuelina de una sofisticación sorprendente. Las troneras en forma de cruz de Cristo, las torres de vigilancia octogonales y los balcones con barandillas de piedra tallada hacen que el edificio parezca más un sueño de piedra que una fortaleza." },
-      { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15€ (consulta en la web oficial si sigue habiendo combinado con Jerónimos). El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
+      { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15 €, en un billete aparte del de los Jerónimos. El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
       { tipo: "subtitulo", texto: "3. Castelo de São Jorge — La Historia de Lisboa en Piedra" },
       { tipo: "parrafo", texto: "El castillo que corona Alfama tiene casi mil años de historia visible en sus murallas. Construido por los moros en el siglo XI sobre asentamientos anteriores, fue reconquistado por Afonso Henriques en 1147 con ayuda de cruzados del norte de Europa. Desde las almenas hay la panorámica más completa de Lisboa: los tejados de Alfama, el Tajo brillando al fondo, el Puente 25 de Abril en la distancia." },
       { tipo: "parrafo", texto: "La entrada general cuesta 17 euros, con tarifas reducidas para jóvenes y mayores de 65 años y entrada gratuita para menores de 13. Vale la pena por las vistas y por el tour arqueológico (incluido en el precio) que muestra restos de la Lisboa fenicia, romana y mora bajo el recinto. Los pavos reales que deambulan por los jardines son un bonus inesperado." },
@@ -3868,7 +4050,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "El Mosteiro dos Jerónimos — La Obra Maestra" },
       { tipo: "parrafo", texto: "Construido entre 1501 y 1572 en estilo manuelino —el gótico final portugués, con decoración de cuerdas, cruces de Cristo y motivos marinos— los Jerónimos son el gran ejemplo del manuelino en Lisboa. La nave de la iglesia tiene columnas muy finas y muy trabajadas, y cuesta decidir dónde mirar primero. En el claustro es habitual ver gente sentada en el suelo, sin prisa por irse." },
       { tipo: "parrafo", texto: "El monasterio se pagó en buena parte con la «vintena da pimenta», un impuesto del 5 % sobre el comercio con África y Oriente. En otras palabras: los Jerónimos están hechos con pimienta, clavo, canela y jengibre. La ironía es que el monasterio era el lugar de oración de la Orden de San Jerónimo, una orden conocida por su sobriedad. Los monjes rezaban en el edificio más opulento de su tiempo, costeado por el comercio más lucrativo del mundo." },
-      { tipo: "enlace", texto: "Antes de fijar la mañana alrededor del claustro, revisa la ficha práctica del monasterio y confirma las condiciones vigentes.", href: "/actividades/mosteiro-jeronimos", label: "Planificar la visita al Monasterio de los Jerónimos" },
+      { tipo: "enlace", texto: "Precios, franjas horarias, la iglesia gratis y cómo reducir la cola del claustro, en la guía de entradas.", href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
       { tipo: "tip", texto: "Entra a primera hora (el claustro abre a las 9:30, de martes a domingo; los lunes está cerrado) y ve directo al claustro antes de que lleguen los grupos organizados. Compra siempre la entrada online en museusemonumentos.pt para evitar colas. Si sigue existiendo el billete combinado con la Torre de Belém, lo verás ahí: sale mejor que comprar los dos por separado." },
       { tipo: "subtitulo", texto: "La Torre de Belém — El Ícono Fotográfico" },
       { tipo: "parrafo", texto: "La Torre de Belém es el monumento más fotografiado de Portugal y uno de los más reconocibles de Europa. Construida entre 1516 y 1521 como fortaleza en mitad del Tajo (hoy la orilla ha cambiado y está junto a la orilla), el edificio combina arquitectura militar con decoración manuelina de una finura extraordinaria: troneras en forma de cruz de la Orden de Cristo, balcones con barandillas de piedra tallada, una torre de vigía con cupulín esférico que parece una fantasía arquitectónica." },
@@ -4264,7 +4446,27 @@ const EDITORIAL_V2_SLUGS = new Set([...blogPosts.map((post) => post.id), ...Obje
 const BLOG_POST_BY_ID = new Map(blogPosts.map((post) => [post.id, post]));
 // Solo admite preguntas que aporten información adicional al cuerpo. La
 // auditoría actual no encontró ninguna que cumpliera ese criterio.
-const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {};
+const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
+  'monasterio-jeronimos-entradas': [
+    { q: '¿Cuánto cuesta entrar en los Jerónimos?', a: 'El claustro cuesta 18 € (9 € para mayores de 65 y jóvenes de 13 a 24 años). Los menores de 12 entran gratis. La iglesia es gratuita para todo el mundo.' },
+    { q: '¿Es gratis los domingos?', a: 'No. Esa norma desapareció. Los residentes en Portugal tienen 52 días gratis al año, a elegir, sacando el billete en la taquilla. Para turistas solo es gratis el 18 de abril, el 18 de mayo y las Jornadas Europeas del Patrimonio.' },
+    { q: '¿Hay que reservar?', a: 'Es lo recomendable. La entrada va con franja horaria y la web oficial avisa de que se agotan y a menudo no se pueden comprar en el día.' },
+    { q: '¿Abre los lunes?', a: 'No. Cierra todos los lunes, igual que la Torre de Belém.' },
+    { q: '¿Se puede entrar solo a la iglesia?', a: 'Sí, sin billete, de martes a sábado de 10:30 a 17:00 y los domingos de 14:00 a 17:00.' },
+    { q: '¿Existe una entrada sin colas?', a: 'No. Con el billete comprado te ahorras la taquilla, pero la cola de entrada es para todos.' },
+    { q: '¿Está incluido en la Lisboa Card?', a: 'Sí, pero tienes que reservar franja con el número de la tarjeta una vez la hayas recogido, y los cupos son limitados.' },
+    { q: '¿Cuánto tiempo hace falta?', a: 'Una hora para el claustro y otros 20 o 30 minutos para la iglesia, más la espera.' },
+    { q: '¿Cómo llego desde el centro?', a: 'Lo más cómodo es el tren de la línea de Cascais desde Cais do Sodré hasta Belém: 8 minutos, un tren cada 20 minutos durante el día y 1,50 € el billete sencillo. Desde la estación son unos 10 minutos a pie. También llegan el tranvía 15E y los autobuses 728 y 729.' },
+  ],
+  'tarjeta-navegante-lisboa': [
+    { q: '¿Cuánto cuesta la tarjeta Navegante en Lisboa?', a: 'La Navegante ocasional cuesta 0,50 € y sirve para recargar durante un año. Los viajes se pagan aparte: 1,72 € con zapping o 1,90 € con billete sencillo Carris/Metro, o 7,25 € por el billete de 24 horas.' },
+    { q: '¿Qué es el zapping?', a: 'Es saldo prepagado que cargas en la Navegante, desde 3 € hasta un máximo de 40 €. Cada vez que validas se descuenta el viaje: 1,72 € en Metro y Carris y 2,05 € en los trenes de CP. Cada viaje vale para un solo operador.' },
+    { q: '¿Puedo usar la misma Navegante para dos personas?', a: 'No. La tarjeta es individual: cada persona necesita la suya, aunque la tarjeta tenga cargados varios viajes.' },
+    { q: '¿Puedo tener zapping y un billete de 24 horas en la misma tarjeta?', a: 'No a la vez. La Navegante ocasional solo admite un tipo de título cada vez, así que primero tienes que gastar lo que tengas cargado. Si quieres combinar, compra una segunda tarjeta.' },
+    { q: '¿La Navegante sirve para el tren a Sintra y Cascais?', a: 'Sí. Puedes cargar zapping (2,05 € por trayecto en CP) o el billete de 24 horas Carris/Metro/CP (11,40 €). El autobús 434 de Sintra no está incluido.' },
+    { q: '¿Sirve la Navegante en el tranvía 28 y en los elevadores?', a: 'Sí, en todo lo que opera Carris: tranvías, autobuses y elevadores. Con el billete de 24 horas Carris/Metro también entran. Comprueba antes qué elevadores están funcionando, porque varios están cerrados desde 2025.' },
+  ],
+};
 
 /**
  * Texto alternativo específico de la foto de portada.
@@ -4711,6 +4913,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     isPartOf: { '@id': `${SITE_URL}/#website` },
   };
 
+  // Las preguntas visibles, también como datos estructurados.
+  const faqLd = faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: { '@type': 'Answer', text: faq.a },
+        })),
+      }
+    : null;
+
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -4773,6 +4988,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
     </main>
   );
 }

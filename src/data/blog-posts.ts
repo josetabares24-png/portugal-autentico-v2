@@ -12,6 +12,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'monasterio-jeronimos-entradas',
+    titulo: 'Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)',
+    excerpt: 'Claustro 18 € con hora, iglesia gratis y cerrado los lunes. Dónde comprar la entrada, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
+    categoria: 'Cultura',
+    fecha: '9 Oct 2026',
+    dateModified: '2026-10-09',
+    autor: 'José Tabares',
+    imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+  },
+  {
     id: 'lisboa-en-5-dias',
     titulo: 'Lisboa en 5 días: itinerario completo con Sintra y barrios',
     excerpt: 'Cinco días para combinar centro histórico, Belém, barrios, Parque das Nações y Sintra sin llenar cada jornada de traslados.',
@@ -59,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'tarjeta-navegante-lisboa',
     titulo: 'Tarjeta Navegante en Lisboa: cuál comprar y cuánto cuesta en 2026',
-    excerpt: 'Navegante ocasional, zapping, billete de 24 horas y pase mensual explicados con las tarifas oficiales de 2026.',
+    excerpt: 'Qué tarjeta o billete comprar según tu viaje: Navegante con zapping, 24 horas, contactless o Lisboa Card, con las tarifas oficiales de 2026 y las cuentas hechas.',
     categoria: 'Transporte',
     fecha: '21 Sep 2026',
     autor: 'José Tabares',

@@ -214,9 +214,9 @@ export const activities: Activity[] = [
     image: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
     imageAlt: 'Claustro del Mosteiro dos Jerónimos en Belém',
     description: 'Joya del manuelino portugués; el claustro es la parte de pago, considerada imprescindible por su detalle.',
-    savingTip: 'La iglesia del monasterio (con la tumba de Vasco da Gama) es gratuita, solo se paga la entrada al claustro. Los domingos hasta las 14h la entrada al claustro también es gratuita.',
-    officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/mosteiro-dos-jeronimos-e-capela-de-sao-jeronimo',
-    lastVerified: '2026-08-05',
+    savingTip: 'La iglesia del monasterio (con la tumba de Vasco da Gama) es gratuita: solo se paga el claustro. Ya no hay domingos gratis. Entran gratis los menores de 12 años, y los residentes en Portugal 52 días al año (Acesso 52, solo en taquilla). Mayores de 65 y jóvenes de 13 a 24 pagan la mitad.',
+    officialUrl: 'https://mosteirojeronimos.torrebelem.gov.pt/visitar',
+    lastVerified: '2026-10-09',
   },
   {
     slug: 'torre-de-belem',

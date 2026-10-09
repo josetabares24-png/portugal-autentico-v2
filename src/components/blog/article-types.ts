@@ -13,6 +13,13 @@ export type ArticleBlock = {
   href?: string;
   /** Texto del enlace del bloque `enlace`. */
   label?: string;
+  /**
+   * Bloque `tabla`: cabecera y filas de una comparativa (precios, opciones).
+   * Cada fila tiene tantas celdas como `columnas`. `texto` se usa como
+   * leyenda accesible de la tabla.
+   */
+  columnas?: string[];
+  filas?: string[][];
 };
 
 export type ArticleLink = {

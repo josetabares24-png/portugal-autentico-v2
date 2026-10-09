@@ -381,6 +381,48 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration-thickness: 0.12em;
 }
 
+.article-table-wrap {
+  margin: 0 0 1.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-family: var(--font-article), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--article-main);
+}
+
+.article-table caption {
+  caption-side: bottom;
+  padding-top: 0.5rem;
+  text-align: left;
+  font-size: 0.8125rem;
+  color: var(--color-taupe);
+}
+
+.article-table th,
+.article-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--article-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-table thead th {
+  font-weight: 700;
+  border-bottom: 2px solid var(--article-border);
+  white-space: nowrap;
+}
+
+.article-table tbody th {
+  font-weight: 600;
+}
+
 .article-list {
   margin: 0 0 1.75rem;
   padding: 0;

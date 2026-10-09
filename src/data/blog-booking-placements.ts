@@ -43,11 +43,26 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   // ── Prioridad por impresiones. Fuente: GSC 28 días hasta 2026-10-07
   // (datos facilitados por José); el comentario de cada artículo conserva la
   // cifra del snapshot 2026-09-22 cuando no hay dato más reciente.
+  // monasterio-jeronimos-entradas · artículo nuevo (9/10/2026), sin datos aún.
+  'monasterio-jeronimos-entradas': [
+    {
+      offer: { type: 'product', productId: 'jeronimos' },
+      beforeHeading: 'horarios-y-cierres',
+      intro:
+        'Es el billete oficial del claustro con franja horaria, comprado en español. No se puede devolver ni cambiar de fecha: cómpralo cuando tengas el día decidido.',
+    },
+    {
+      offer: { type: 'product', productId: 'jeronimos-torre-belem' },
+      beforeHeading: 'que-ves-con-cada-entrada',
+      intro:
+        'Si haces Jerónimos y Torre el mismo día, puedes comprar las dos entradas juntas. Sale 1 € más caro que comprarlas por separado en la taquilla; revisa en la ficha las condiciones de cambio.',
+    },
+  ],
   // tarjeta-navegante-lisboa · 1.060 impresiones / 23 clics (28 d a 07/10)
   'tarjeta-navegante-lisboa': [
     {
       offer: { type: 'product', productId: 'lisboa-card' },
-      beforeHeading: 'y-pagar-directamente-con-tarjeta-bancaria',
+      beforeHeading: 'donde-comprar-y-recargar-la-navegante',
       intro:
         'Si en los mismos días vas a encadenar transporte y entradas a monumentos, compara el billete de 24 horas con la Lisboa Card, que incluye el transporte público. Haz la cuenta con lo que de verdad vas a visitar.',
     },

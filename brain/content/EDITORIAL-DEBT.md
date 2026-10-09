@@ -175,3 +175,19 @@ No volver a tocar mientras corre el experimento.
 Reducir deuda editorial al mismo tiempo que fortalecemos páginas que ya tienen oportunidad de crecer.
 
 La calidad editorial es una herramienta de producto y confianza, no una campaña de limpieza estética.
+
+## Registro 2026-10-09 — tarjeta-navegante-lisboa (rama feat/navegante-expand)
+
+- **Baseline:** GSC 28 d a 07/10: 1.060 impresiones, 23 clics. Texto anterior de unas 460 palabras sin respuesta a "cuál comprar".
+- **Cambio:** respuesta directa en el primer párrafo, una lista por tipo de viajero, una tabla de tarifas oficiales y el umbral de las 24 h (4 trayectos con billete sencillo y 5 con zapping), además de Sintra/Cascais con CP, contactless, Lisboa Card, dónde comprar, errores y FAQ visibles. El bloque Lisboa Card se mueve antes de "Dónde comprar y recargar".
+- **Componente:** nuevo bloque `tabla` en ArticleBody, con scroll horizontal en móvil.
+- **Fuentes:** metrolisboa.pt/comprar, carris.pt (tarifas 2026 y viajes ocasionales), cp.pt (tarjeta ocasional y PDF de precios 2026) y shop.visitlisboa.com (Lisboa Card), consultadas el 09/10/2026.
+- **Medir:** CTR y posición de la URL 28 días después de publicar, comparados con este baseline.
+- **Corrección relacionada:** `/actividades` Jerónimos ya no dice "domingos gratis hasta las 14h". Ahora remite a Acesso 52 y a los menores de 12.
+
+## Registro 2026-10-09: monasterio-jeronimos-entradas (artículo nuevo)
+
+- **Qué es:** una guía de entradas de compra directa (plan-100-clics, idea 3), con publicación aprobada por José. Lleva tablas de precios, horarios y dónde comprar, FAQ visible con FAQPage JSON-LD, el tren desde Cais do Sodré como opción recomendada (es como va José) y dos bloques de Tiqets: la entrada (p1012358) y el combinado con la Torre (p1013486).
+- **Qué se quitó por no estar verificado:** la política de devolución de la web oficial y del combinado de Tiqets, el tour de GYG t768848 (no se pudo abrir la ficha) y el consejo de la cola de Pastéis. No se recomienda el producto GYG t1382125, la entrada "sin colas" valorada con un 2,9/5.
+- **Enlaces internos desde:** belem-barrio-guia (sustituye al enlace a /actividades), monumentos-de-lisboa y pasteles-de-belem.
+- **Medir:** impresiones de "monasterio de los jeronimos entradas" y clics de las campañas Tiqets `web_blog_monasterio-jeronimos-entradas`.

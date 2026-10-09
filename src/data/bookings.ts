@@ -247,6 +247,49 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Comprar entrada a Pena',
   },
   {
+    id: 'jeronimos',
+    name: 'Monasterio de los Jerónimos: entrada al claustro',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'La entrada oficial al claustro con franja horaria, para quien ya tiene el día de Belém decidido.',
+    kind: 'Entrada',
+    image: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+    imageAlt: 'Claustro del Monasterio de los Jerónimos en Belém',
+    searchTerms: ['jeronimos', 'monasterio', 'mosteiro', 'claustro', 'belem', 'entrada'],
+    // Sin `hub`: de momento sólo da botón al artículo de entradas
+    // (monasterio-jeronimos-entradas). Proveedor real: Museus e Monumentos
+    // de Portugal; no reembolsable ni cambia de fecha (ficha Tiqets, 9/10/2026).
+    links: {
+      article: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos',
+        provider: 'tiqets',
+        campaign: 'web_blog_jeronimos',
+      },
+    },
+    ctaLabel: 'Comprar entrada a los Jerónimos',
+  },
+  {
+    id: 'jeronimos-torre-belem',
+    name: 'Jerónimos + Torre de Belém',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día.',
+    kind: 'Entrada combinada',
+    image: '/images/actividades/torre-de-belem-lisboa.webp',
+    imageAlt: 'Torre de Belém junto al río Tajo',
+    searchTerms: ['jeronimos', 'torre de belem', 'belem', 'combinada', 'entrada'],
+    links: {
+      article: {
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos_combo',
+        provider: 'tiqets',
+        campaign: 'web_blog_jeronimos_combo',
+      },
+    },
+    ctaLabel: 'Comprar Jerónimos + Torre',
+  },
+  {
     id: 'lisboa-card',
     name: 'Lisboa Card',
     provider: 'tiqets',
