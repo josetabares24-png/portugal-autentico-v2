@@ -129,3 +129,21 @@ https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b
 - V2 abre con la **leyenda de coronación póstuma**, por lo que el montaje 01–06 se reparte el hook legendario, 07–18 la cronología. La narración, si se aprueba, debe cronometrarse y enlazarse a los prompts V1 19–31 que ya están en Notion y **requieren ajuste**.
 - Detalle clave: Pedro príncipe **sin corona** hasta su ascenso en 1357 (Toma 19); Inês con la misma identidad y traje crema/burdeos; Constança azul/velo; jamás presentar la coronación de Inês como hecho probado.
 - Objetivo operativo: acelerar el flujo copiando un prompt de imagen y otro de animación por toma, adjuntando refs visuales del capítulo 01 y personajes maestros.
+
+## CAMBIO DE DIRECCIÓN ACTUAL — REMAKE V3 DESDE CERO · 2026-10-09
+
+**Decisión explícita del usuario:** «Prefiero hacerlo de 0 ... especificando que no cambie estética para que lo hagamos profundamente profesional». Se descarta REUTILIZAR cualquier fotograma antiguo como plano final. Las imágenes antiguas en Drive deben conservarse solo como archivo histórico o, cuando encajen con estética aprobada, referencia de estilo, pero jamás mezclarse en el montaje V3.
+
+**FUENTE DE VERDAD VISUAL (VIGENTE):** [Notion — PRODUCCIÓN V3 — 40 TOMAS DESDE CERO — Pedro e Inês (Grok + Flow)](https://app.notion.com/p/3f41ed051c4d81e88ae0e4263d682a14). Página HIJA del guion original, para no crear otro guion competitivo.
+
+**Comprobado al crearla:** 4 fichas maestras M1 Pedro (príncipe sin corona hasta 1357), M2 Inês (crema/burdeos y mismo rostro incluso en la leyenda), M3 Constança (azul/velo claro, distinta a Inês), M4 Afonso IV (rey mayor, barba gris). Hay **40 tomas numeradas 01–40 y 80 prompts completos**: 40 para generar imágenes verticales en Grok y 40 para animarlas en Flow o Grok image-to-video. Todas las tomas tienen una frase de narración asociada, ángulo distintivo, continuidad de rostros y vestuario, regla firme premium adult stylized 3D animated film, negativas de fotorealismo, una acción principal sencilla y cámara cinematográfica precisa. El documento incluye una guía completa para Premiere, control de calidad, historicidad y carpeta Drive.
+
+**Audio aún NO aprobado como final:** se trabaja contra propuesta **V2 voz de cuento** alojada en [Notion guion Capítulo 02](https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b); NO declarar aprobado ni borrar guion de voz V1 bloqueado. Una vez grabado audio final, ajustar duraciones y frases según locución real. Voz V2 ~260 palabras => probablemente ~105–125 segundos a ritmo natural de cuento; duración exacta depende de ElevenLabs.
+
+**Nueva numeración V3 es intencional y EXCLUSIVA de remake:** 01–40, sin tomas 02B/15B del manifiesto anterior. No reutilizar numeración histórica para archivos V3 sin prefijo; PNG finales `C02_01.png` .. `C02_40.png`, vídeo `C02_01.mp4` etc; retratos `C02_M1_Pedro.png` y demás.
+
+**Reglas críticas:** usar en CADA generación el fotograma de estética aprobado en Grok y los retratos maestros ya aceptados (no solo texto). No permitir cambios en los rostros, estilo, corona, época y luz. 01–05 y 31–34 muestran leyenda / duda, no coronación histórica probada. Alcobaça 35–40 requiere fotos reales de fachada y tumbas, enfrentadas como en el lugar y piedra inmóvil. Respeto histórico y ausencia de gore.
+
+**Próximo paso:** generar y APROBAR M1 Pedro, M2 Inês, M3 Constança, M4 Afonso. Después generar TOMA V3 01 secuencialmente. **Aún no se han creado los 44 PNG de V3.** El documento Notion contiene los PROMPTS, no resultados visuales ni Flow MP4.
+
+**Jerarquía de versiones:** V3 storyboard Notion = plan visual operativo; V2 cuento Notion = locución de prueba; V1 narración corta permanece como respaldo; antiguos storyboards 01–31 y manifest de tomas = archivo histórico no vigente.
