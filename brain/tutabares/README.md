@@ -1,4 +1,7 @@
-# TU TABARES — Memoria editorial
+# TU TABARES — Manual editorial especializado
+
+> La única memoria madre transversal es `MEMORIA-MADRE.md` del repositorio privado `rumbo-al-millon`. Este directorio conserva reglas de guiones, serie animada y aprendizaje de voz, pero no funciona como otro cerebro madre.
+
 
 Creado: **2026-09-27**
 
