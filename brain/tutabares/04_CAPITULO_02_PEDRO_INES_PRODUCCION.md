@@ -89,3 +89,34 @@ Tras 17:
 - La antigua `17_Procesion_funebre.png` pasó a `ARCHIVO_SIN_NUMERO_Procesion_funebre.png`, no corresponde a la frase actual de Toma 17.
 - Nueva imagen `17_Orden_sellada_de_Afonso_IV.png` subida a Drive, pendiente de aceptación visual explícita.
 - **Autoprompt obligatorio:** aplicar el control de 8 puntos de `03_SERIE_HISTORIA_ANIMADA.md` antes de cada futura generación.
+
+
+## PLAN AUTOMÁTICO DE IMAGEN + FLOW — tomas 19–31 (2026-10-09)
+
+El usuario aprobó trabajar más rápido con prompts automáticos por toma. Desde ahora, entregar siempre por defecto **DOS prompts AUTOCONTENIDOS EN INGLÉS** por cada toma:
+1. **Generación de imagen en Grok:** exacta línea del guion, composición decidida por dirección artística, ángulo distinto de tomas vecinas, personajes y vestuario bloqueados, una acción sencilla, estética premium 3D estilizada adulta, vertical 9:16, negativos.
+2. **Animación en Flow:** continuidad con la imagen base, movimiento principal preciso, cámara clara, ambiente mínimo, negativos para evitar transformaciones.
+
+**Guía completa operativa:** la página vigente del guion de Notion ahora contiene, AL FINAL, la sección `Producción visual automática — TOMAS 19–31 (9 octubre 2026)`, con **13 tomas (19 a 31), 26 prompts autocontenidos y guía final de Premiere**:
+https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b
+
+**Importante:** estas tomas del 19 al 31 están PLANIFICADAS con prompts, todavía **no son imágenes creadas ni aprobadas**. El usuario puede generarlas secuencialmente en Grok y Flow. No decir que Drive ya las contiene.
+
+**Mini-manifiesto aprobado para el PLAN (no estado de creación):**
+- 19: “Dos años después se convirtió en rey...” — Pedro como rey, con corona solo como símbolo artístico; Portugal 1357, sin inventar ceremonia de coronación;
+- 20: “y buscó a los responsables.” — mensajeros a caballo vistos desde atrás;
+- 21: “Dos fueron capturados...” — exactamente dos hombres escoltados por dos guardias, plano alto;
+- 22: “...y ejecutados.” — consecuencia simbólica no gráfica;
+- 23: “Pedro afirmó después que él e Inês se habían casado en secreto.” — declaración a un escribano, NO boda comprobada;
+- 24: “Y con los siglos nació la historia de aquella coronación macabra.” — emblema tejido de la leyenda, no repetición literal de apertura;
+- 25: “¿Ocurrió realmente?” — macro de corona como símbolo;
+- 26: “No podemos demostrarlo.” — archivo/manuscrito, sin evidencia histórica falsa;
+- 27: “Pero sus tumbas sí existen.” — primer detalle de sepulcro con REFERENCIA FOTOGRÁFICA real;
+- 28: “Están en Alcobaça, frente a frente.” — posición opuesta real de dos tumbas;
+- 29: “Según la tradición, para que en la resurrección...” — piedra tallada inmóvil;
+- 30: “lo primero que vean sea el uno al otro.” — encuadre por encima de una tumba hacia la otra, no resurrección literal;
+- 31: “Más de seis siglos después... siguen allí.” — plano general presente de Alcobaça, cierre.
+
+**Autoprompt interno:** aplicar siempre el checklist de 8 puntos del archivo `03_SERIE_HISTORIA_ANIMADA.md`. El guion del principio de página permanece INALTERADO. Anclar a referencias finales de rostros y al Capítulo 01, no resultados descartados. Cinematografía dinámica, no escenas repetidas; Grok imagen ≠ Flow movimiento.
+
+**Nota de precisión para edición:** Toma 18 corresponde al dolor por el asesinato de Inês en 1355, cuando Pedro todavía era príncipe; si imagen 18 aparece coronada, no usarla como representación literal de 1355. La corona encaja simbólicamente en Toma 19 (ya rey desde 1357).
