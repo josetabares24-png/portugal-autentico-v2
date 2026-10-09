@@ -269,6 +269,32 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Comprar entrada a Pena',
   },
   {
+    // Entrada de Tiqets a la Pena para el artículo `palacio-da-pena-entradas`.
+    // Va aparte de `sintra-palacio-pena`, cuyo enlace de artículo es el de
+    // GetYourGuide (acceso prioritario) que usa `sintra-desde-lisboa`. Sin
+    // `hub`: existe para dar botón a ese artículo, no para el catálogo.
+    // Condiciones comprobadas en la ficha p1120392 el 9/10/2026: no
+    // reembolsable y sin cambio de fecha (la web oficial sí permite cambiar).
+    id: 'pena-tiqets',
+    name: 'Palacio da Pena + Parque',
+    provider: 'tiqets',
+    category: 'entradas',
+    blurb:
+      'La entrada al palacio y su parque con hora fija, para quien sube a Sintra por su cuenta y ya tiene el día decidido.',
+    kind: 'Entrada',
+    image: '/images/estacion-sintra.jpg',
+    imageAlt: 'Estación de tren de Sintra, de donde sale el autobús 434 hacia la Pena',
+    searchTerms: ['pena', 'palacio da pena', 'sintra', 'parque', 'entrada'],
+    links: {
+      article: {
+        url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_palacio-da-pena-entradas',
+        provider: 'tiqets',
+        campaign: 'web_blog_palacio-da-pena-entradas',
+      },
+    },
+    ctaLabel: 'Comprar entrada a Pena',
+  },
+  {
     id: 'jeronimos',
     name: 'Monasterio de los Jerónimos: entrada al claustro',
     provider: 'tiqets',

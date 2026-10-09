@@ -5,6 +5,8 @@
  * recomendando las tres publicaciones más recientes aunque no compartan tema.
  */
 export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
+  'palacio-da-pena-entradas': ['sintra-desde-lisboa', 'excursiones-desde-lisboa', 'tarjeta-navegante-lisboa'],
+  'lisboa-en-navidad': ['festivales-eventos-lisboa-2026', 'mejor-epoca-visitar-lisboa', 'lisboa-cuando-llueve'],
   'lisboa-en-5-dias': ['lisboa-en-4-dias', 'sintra-desde-lisboa', 'parque-das-nacoes-lisboa-que-ver'],
   'lisboa-cuando-llueve': ['parque-das-nacoes-lisboa-que-ver', 'mejores-mercados-lisboa', 'donde-tomar-cafe-lisboa'],
   'parque-das-nacoes-lisboa-que-ver': ['estacion-oriente-lisboa', 'metro-lisboa-guia', 'lisboa-con-ninos'],
@@ -30,7 +32,7 @@ export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
   'vida-nocturna-lisboa': ['chiado-bairro-alto-guia', 'donde-escuchar-fado-autentico', 'time-out-market-lisboa'],
   'errores-turistas-lisboa': ['evitar-turistadas-lisboa', 'mejores-apps-lisboa', 'como-moverse-por-lisboa'],
   'pasteles-de-belem': ['belem-barrio-guia', 'gastronomia-portuguesa-guia', 'donde-tomar-cafe-lisboa'],
-  'sintra-desde-lisboa': ['excursiones-desde-lisboa', 'que-ver-cascais-desde-lisboa', 'arquitectura-manuelina-lisboa'],
+  'sintra-desde-lisboa': ['palacio-da-pena-entradas', 'excursiones-desde-lisboa', 'que-ver-cascais-desde-lisboa'],
   'mejor-epoca-visitar-lisboa': ['lisboa-cuando-llueve', 'festivales-eventos-lisboa-2026', 'playas-cerca-lisboa'],
   'aeropuerto-lisboa-al-centro': ['como-moverse-por-lisboa', 'donde-alojarse-en-lisboa', 'mejores-apps-lisboa'],
   'restaurantes-romanticos-lisboa': ['lisboa-en-pareja', 'donde-escuchar-fado-autentico', 'vinos-portugueses-guia'],
@@ -47,7 +49,7 @@ export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
   'descubrimientos-portugueses-lisboa': ['belem-barrio-guia', 'arquitectura-manuelina-lisboa', 'historia-de-lisboa'],
   'azulejos-portugueses-historia': ['arquitectura-manuelina-lisboa', 'historia-de-lisboa', 'donde-fotografiar-lisboa'],
   'novedades-lisboa-2026': ['festivales-eventos-lisboa-2026', 'mejor-epoca-visitar-lisboa', 'mejores-apps-lisboa'],
-  'festivales-eventos-lisboa-2026': ['novedades-lisboa-2026', 'mejor-epoca-visitar-lisboa', 'vida-nocturna-lisboa'],
+  'festivales-eventos-lisboa-2026': ['lisboa-en-navidad', 'novedades-lisboa-2026', 'mejor-epoca-visitar-lisboa'],
   'lisboa-vs-porto': ['lisboa-en-7-dias', 'mejor-epoca-visitar-lisboa', 'presupuesto-viajar-lisboa'],
   'monumentos-de-lisboa': ['historia-de-lisboa', 'belem-barrio-guia', 'arquitectura-manuelina-lisboa'],
   'semana-santa-lisboa': ['festivales-eventos-lisboa-2026', 'historia-de-lisboa', 'fado-historia-origen'],

@@ -20,6 +20,8 @@ export interface Activity {
   seoTitle?: string;
   /** Guía del blog que desarrolla esta ficha. Enlace en los dos sentidos. */
   guide?: { href: string; label: string };
+  /** Otras guías del blog que amplían una parte concreta de la ficha. */
+  moreGuides?: { href: string; label: string }[];
   category: ActivityCategory;
   zone: string;
   isFree: boolean;
@@ -421,6 +423,7 @@ export const activities: Activity[] = [
     slug: 'sintra-dia-completo',
     seoTitle: 'Sintra desde Lisboa: entrada a la Pena y cómo ir',
     guide: { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa en un día' },
+    moreGuides: [{ href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas, horarios y cómo ir' }],
     experiencia: {
       intro: 'Sintra es una sierra con microclima propio a cuarenta minutos de Lisboa, y por eso la nobleza portuguesa se construyó ahí sus caprichos. El resultado es una concentración de palacios excéntricos entre bosque de niebla que no se parece a nada más en Portugal.',
       queVeras: [

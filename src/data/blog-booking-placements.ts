@@ -57,6 +57,39 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   // (datos facilitados por José); el comentario de cada artículo conserva la
   // cifra del snapshot 2026-09-22 cuando no hay dato más reciente.
   // monasterio-jeronimos-entradas · artículo nuevo (9/10/2026), sin datos aún.
+  // palacio-da-pena-entradas · artículo nuevo (9/10/2026), sin datos aún.
+  // Los dos bloques van bajo «Lo esencial» por indicación de José (9/10/2026):
+  // la entrada con hora es la siguiente decisión del lector, y la excursión es
+  // la alternativa para quien no quiere organizar tren, autobús y hora.
+  'palacio-da-pena-entradas': [
+    {
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      position: 'after-summary',
+      intro:
+        'Entrada al palacio y al parque con hora fija, comprada en español. Ojo: en Tiqets no se devuelve ni se puede cambiar de fecha. Si quieres poder moverla por el tiempo, cómprala en la web oficial.',
+    },
+    {
+      offer: { type: 'product', productId: 'sintra-completa' },
+      position: 'after-summary',
+      intro:
+        'Si prefieres no cuadrar tren, autobús y hora de entrada, hay excursiones de día completo desde Lisboa. Mira en la ficha si incluyen la entrada a la Pena y cuánto tiempo dejan allí.',
+    },
+  ],
+  // lisboa-en-navidad · artículo nuevo (9/10/2026), sin datos aún.
+  'lisboa-en-navidad': [
+    {
+      offer: { type: 'free-tour', categoryId: 'imprescindible' },
+      position: 'after-summary',
+      intro:
+        'Si quieres recorrer la Baixa, el Chiado y el Rossio con alguien que te cuente su historia, hay free tours por el centro. Si eliges uno que acabe al anochecer, terminas con las luces encendidas.',
+    },
+    {
+      offer: { type: 'product', productId: 'oceanario' },
+      beforeHeading: 'nochevieja-en-la-praca-do-comercio',
+      intro:
+        'El 25 de diciembre y el 1 de enero cierran casi todos los monumentos, pero el Oceanário abre con horario especial. Mira las horas de ese día en su web antes de comprar.',
+    },
+  ],
   'monasterio-jeronimos-entradas': [
     {
       offer: { type: 'product', productId: 'jeronimos' },

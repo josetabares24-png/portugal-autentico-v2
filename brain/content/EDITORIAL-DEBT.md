@@ -191,3 +191,11 @@ La calidad editorial es una herramienta de producto y confianza, no una campaña
 - **Qué se quitó por no estar verificado:** la política de devolución de la web oficial y del combinado de Tiqets, el tour de GYG t768848 (no se pudo abrir la ficha) y el consejo de la cola de Pastéis. No se recomienda el producto GYG t1382125, la entrada "sin colas" valorada con un 2,9/5.
 - **Enlaces internos desde:** belem-barrio-guia (sustituye al enlace a /actividades), monumentos-de-lisboa y pasteles-de-belem.
 - **Medir:** impresiones de "monasterio de los jeronimos entradas" y clics de las campañas Tiqets `web_blog_monasterio-jeronimos-entradas`.
+
+## Registro 2026-10-09: palacio-da-pena-entradas y lisboa-en-navidad (artículos nuevos)
+
+- **Pena:** guía de entradas con precios y horarios de Parques de Sintra, tren desde Rossio + 434 (como va José), compra con antelación y "si hay niebla y frío, cambia el día" (consejos de José). Tabla web oficial vs Tiqets: la oficial se puede cambiar hasta las 18:00 del día anterior; Tiqets p1120392 no es reembolsable ni admite cambio de fecha. Bloques bajo «Lo esencial»: nuevo producto `pena-tiqets` y `sintra-completa` (GYG t440176). 434: 13,50 € (−8 % online) según Sintra434; Train & Bus de CP 14 €.
+- **Navidad:** favoritos de José (Rossio, luces de la Baixa, Wonderland). Sin fechas oficiales de 2026 a 9/10 para luces, Rossio ni Wonderland: se dan las de 2025 con fuente y lo anunciado en prensa marcado como no oficial. Horario de luces 2025 corregido con la CML (17:30-24:00 / 01:00 / 02:00, no 17:30-23:00). Óbidos 2026 con fechas del Ayuntamiento y precios de 2025. Bloques: free tour del centro (GuruWalk) y Oceanário antes de Nochevieja.
+- **Quitado del borrador:** huecos [JOSÉ] (parada en la ruta, pastelería, noche del 24, fuegos), "Mi resumen" de Pena, enlaces GYG de Óbidos, tour gastronómico, barco y fado, horas concretas del Oceanário el 24/25/31/1 (la web oficial solo dice "horario especial"), duración del Rápida Verde.
+- **Revisar:** en noviembre, fechas oficiales de luces, Rossio, Wonderland, tolerância de ponto 2026 y programa de Nochevieja; foto propia de Navidad y de la Pena (ahora se usan la Rua Augusta y la estación de Sintra).
+- **Medir:** impresiones de "palacio da pena entradas" y "lisboa en navidad"; clics `web_blog_palacio-da-pena-entradas`.

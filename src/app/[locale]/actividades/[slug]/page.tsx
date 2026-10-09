@@ -199,6 +199,15 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
               >
                 {activity.guide.label} →
               </Link>
+              {activity.moreGuides?.map((g) => (
+                <Link
+                  key={g.href}
+                  href={g.href}
+                  className="mt-2 block font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
+                >
+                  {g.label} →
+                </Link>
+              ))}
             </p>
           )}
 

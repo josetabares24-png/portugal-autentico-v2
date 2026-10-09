@@ -12,6 +12,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'palacio-da-pena-entradas',
+    titulo: 'Palacio da Pena: entradas, horarios y cómo ir desde Lisboa (2026)',
+    excerpt: 'Entrada desde 20 € con hora fija y sin tolerancia de retraso, qué incluye cada billete, web oficial o Tiqets y cómo subir en tren desde Rossio y autobús 434.',
+    categoria: 'Guías',
+    fecha: '9 Oct 2026',
+    dateModified: '2026-10-09',
+    autor: 'José Tabares',
+    imagen: '/images/estacion-sintra.jpg',
+  },
+  {
+    id: 'lisboa-en-navidad',
+    titulo: 'Lisboa en Navidad 2026: luces, mercados y qué abre cada día',
+    excerpt: 'El mercado del Rossio, las luces de la Baixa y Wonderland, con las fechas de 2026 que ya se conocen, qué abre el 24, 25 y 31 y cómo es la Nochevieja.',
+    categoria: 'Planificación',
+    fecha: '9 Oct 2026',
+    dateModified: '2026-10-09',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
+  },
+  {
     id: 'monasterio-jeronimos-entradas',
     titulo: 'Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)',
     excerpt: 'Claustro 18 € con hora, iglesia gratis y cerrado los lunes. Dónde comprar la entrada, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
