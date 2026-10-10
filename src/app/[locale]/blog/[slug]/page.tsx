@@ -4482,7 +4482,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Castelo de São Jorge: cuándo añadirlo a la ruta" },
       { tipo: "parrafo", texto: "El castillo requiere una visita propia y tiene entrada de pago. Si vas a entrar, reserva margen adicional en el itinerario; si solo quieres recorrer Alfama, puedes dejarlo para otro momento y concentrarte en las calles, la Sé y los miradores. La web oficial del Castelo publica horarios, cierres y precios vigentes." },
 
-      { tipo: "enlace", texto: "En la ficha del castillo tienes el precio de la entrada, a qué hora ir para no pasar calor en las murallas y el autobús que te ahorra la cuesta.", href: "/actividades/castelo-sao-jorge", label: "Ficha del Castelo de São Jorge" },
+      { tipo: "enlace", texto: "Precios de 2026, quién entra gratis, a qué hora cierran las murallas y el autobús que te ahorra la cuesta.", href: "/actividades/castelo-sao-jorge", label: "Castillo de San Jorge: entradas, precio y horario" },
       { tipo: "subtitulo", texto: "Cómo llegar a Alfama" },
       { tipo: "parrafo", texto: "Puedes acercarte por Santa Apolónia, por la Baixa o utilizando líneas de CARRIS que atraviesan el centro histórico. El Tranvía 28E pasa por zonas de Alfama, aunque su recorrido puede sufrir alteraciones temporales; comprueba CARRIS si quieres usarlo como parte de la visita." },
 

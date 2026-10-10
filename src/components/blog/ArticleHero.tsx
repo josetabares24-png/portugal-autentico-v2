@@ -8,6 +8,11 @@ type ArticleHeroProps = {
   heroImage: string;
   heroImageAlt?: string;
   isEditorialV2: boolean;
+  /**
+   * Sección de la miga de pan. Por defecto, Blog. Las guías de entradas que
+   * viven en una ficha de actividad la cambian por Actividades.
+   */
+  breadcrumb?: { href: string; label: string; current?: string };
 };
 
 export function ArticleHero({
@@ -16,6 +21,7 @@ export function ArticleHero({
   heroImage,
   heroImageAlt,
   isEditorialV2,
+  breadcrumb = { href: '/blog', label: 'Blog' },
 }: ArticleHeroProps) {
   return (
     <>
@@ -25,9 +31,9 @@ export function ArticleHero({
           <nav className="article-breadcrumb flex items-center gap-2">
             <Link href="/" className="hover:text-terracotta transition-colors">Inicio</Link>
             <span>›</span>
-            <Link href="/blog" className="hover:text-terracotta transition-colors">Blog</Link>
+            <Link href={breadcrumb.href} className="hover:text-terracotta transition-colors">{breadcrumb.label}</Link>
             <span>›</span>
-            <span className="font-semibold text-text-main">{article.categoria}</span>
+            <span className="font-semibold text-text-main">{breadcrumb.current ?? article.categoria}</span>
           </nav>
         </div>
       </div>

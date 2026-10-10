@@ -177,7 +177,7 @@ export const activities: Activity[] = [
   },
   {
     slug: 'castelo-sao-jorge',
-    seoTitle: 'Castelo de São Jorge: precio de la entrada y cuándo ir',
+    seoTitle: 'Castillo de San Jorge: entradas, precio y horario 2026',
     guide: { href: '/blog/alfama-historia-guia', label: 'Qué ver en Alfama, con el castillo en la ruta' },
     experiencia: {
       intro: 'El castillo no es solo una fortaleza: es el sitio donde empezó Lisboa. Desde esta colina se domina el río, y por eso lleva ocupada casi tres mil años —fenicios, romanos, visigodos, moros y finalmente los cristianos en 1147—. Lo que se visita hoy es sobre todo la muralla musulmana del siglo XI, pero la vista es la misma que decidió que aquí hubiera una ciudad.',
@@ -189,8 +189,8 @@ export const activities: Activity[] = [
         'La cámara oscura de la Torre de Ulises, que proyecta la ciudad en tiempo real',
       ],
       cuandoIr: 'A primera hora, cuando abre, o las dos últimas del día. Al mediodía en verano no hay sombra en las murallas y se pasa mal. La luz de la tarde, rasante sobre los tejados de Alfama, es la que hace las fotos.',
-      elError: 'Subir andando desde la Baixa dando por hecho que son cuatro calles. Es una cuesta larga y empinada, y se llega agotado antes de empezar la visita. La otra: no reservar y encontrarse una hora de cola en agosto.',
-      comoLlegar: 'Tranvía 28 hasta Miradouro Santa Luzia y diez minutos de subida, o el autobús 737 desde Praça da Figueira, que deja en la puerta y se ahorra toda la cuesta.',
+      elError: 'Subir andando desde la Baixa dando por hecho que son cuatro calles. Es una cuesta larga y empinada, y se llega agotado antes de empezar la visita. La otra: dejar la visita para el final de la tarde y encontrarse las murallas ya cerradas.',
+      comoLlegar: 'Tranvía 28 hasta Miradouro Santa Luzia y unos cinco minutos a pie, o el autobús 737 desde Praça da Figueira, que deja en la puerta y se ahorra toda la cuesta.',
     },
     indexable: true,
     title: 'Castelo de São Jorge',
@@ -203,9 +203,9 @@ export const activities: Activity[] = [
     image: '/images/actividades/castelo-sao-jorge-lisboa.webp',
     imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
     description: 'Castillo medieval con murallas, torres y la mejor panorámica de 360º sobre la ciudad y el río.',
-    savingTip: 'Compra la entrada online para evitar la cola; los jardines exteriores con vistas son gratuitos sin entrar al recinto.',
+    savingTip: 'Con la entrada comprada vas directo a la puerta sin pasar por la taquilla. Y si no quieres pagar, los miradores de Santa Luzia y Portas do Sol, de camino al castillo, son gratis.',
     officialUrl: 'https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket/',
-    lastVerified: '2026-10-09',
+    lastVerified: '2026-10-10',
   },
   {
     slug: 'mosteiro-jeronimos',

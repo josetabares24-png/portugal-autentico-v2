@@ -305,9 +305,9 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     ctaLabel: 'Comprar entrada al Castelo',
     officialPrice: {
       amount: '17 €',
-      note: 'Adultos. De 13 a 25 años, 8,50 €; mayores de 65, 14 €; gratis hasta 12.',
+      note: 'Adultos. De 13 a 25 años, 8,50 €; mayores de 65, 14 €; menores de 12, gratis.',
       sourceUrl: 'https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket',
-      verified: '2026-10-09',
+      verified: '2026-10-10',
     },
   },
   {

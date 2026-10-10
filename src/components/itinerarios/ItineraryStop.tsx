@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { ItineraryStopCta } from '@/components/itinerarios/ItineraryStopCta';
 import { ItineraryContextualCta } from '@/components/itinerarios/ItineraryContextualCta';
@@ -130,6 +131,18 @@ export function ItineraryStop({ stop, numero, esUltima, itinerarySlug }: Itinera
                 {stop.tip}
               </p>
             </aside>
+          )}
+
+          {stop.guide && (
+            <p className="mt-4 max-w-[68ch] font-body text-sm leading-relaxed text-text-secondary">
+              Guía:{' '}
+              <Link
+                href={stop.guide.href}
+                className="font-semibold text-terracotta underline underline-offset-2 hover:no-underline"
+              >
+                {stop.guide.label} →
+              </Link>
+            </p>
           )}
 
           {stop.bookingAdvice && (

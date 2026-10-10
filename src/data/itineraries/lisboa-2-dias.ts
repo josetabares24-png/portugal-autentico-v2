@@ -149,10 +149,11 @@ export const lisboa2DiasTimeline: TimelineStop[] = [
     time: '09:00',
     day: 1,
     title: 'Alfama + Castillo São Jorge',
-    description: 'Empezamos fuerte en Alfama, el barrio más antiguo de Lisboa que sobrevivió al terremoto de 1755. Sal temprano (9:00) cuando las calles todavía están tranquilas y solo ves vecinos abriendo tiendas. Camina sin rumbo por las callejuelas empinadas - perderte aquí es parte de la experiencia. Ves ropa tendida, azulejos centenarios, gatos durmiendo al sol, y fado saliendo de alguna ventana. Después sube al Castillo São Jorge (entrada 17 €, gratis hasta 12 años). Las murallas tienen 2000 años de historia, hay pavos reales sueltos, y las vistas de 360° sobre Lisboa son brutales. Dedica 1.5 horas a explorar las torres, los jardines, y el mirador panorámico. El castillo abre a las 9:00 así que si llegas temprano lo tienes casi vacío.',
-    tip: '🎫 Entrada: 17 € adultos, 8,50 € de 13 a 25 años, 14 € mayores de 65 y gratis hasta 12 años. Para colas, mejor 9:00-10:30 entre semana. Y en Alfama no uses Google Maps: todas las calles acaban subiendo al castillo o bajando al río.',
+    description: 'Empezamos fuerte en Alfama, el barrio más antiguo de Lisboa que sobrevivió al terremoto de 1755. Sal temprano (9:00) cuando las calles todavía están tranquilas y solo ves vecinos abriendo tiendas. Camina sin rumbo por las callejuelas empinadas - perderte aquí es parte de la experiencia. Ves ropa tendida, azulejos centenarios, gatos durmiendo al sol, y fado saliendo de alguna ventana. Después sube al Castillo São Jorge (entrada 17 €, gratis para menores de 12). Las murallas tienen 2000 años de historia, hay pavos reales sueltos, y las vistas de 360° sobre Lisboa son brutales. Dedica 1.5 horas a explorar las torres, los jardines, y el mirador panorámico. El castillo abre a las 9:00 así que si llegas temprano lo tienes casi vacío.',
+    tip: '🎫 Entrada: 17 € adultos, 8,50 € de 13 a 25 años, 14 € mayores de 65; menores de 12, gratis. Para colas, mejor 9:00-10:30 entre semana. Y en Alfama no uses Google Maps: todas las calles acaban subiendo al castillo o bajando al río.',
     type: 'visit',
     productId: 'castelo-sao-jorge',
+    guide: { href: '/actividades/castelo-sao-jorge', label: 'Castillo de San Jorge: entradas, precio y horario' },
     image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800',
     coordinates: { lat: 38.7139, lng: -9.1334 },
     googleMapsUrl: 'https://maps.google.com/?q=38.7139,-9.1334'

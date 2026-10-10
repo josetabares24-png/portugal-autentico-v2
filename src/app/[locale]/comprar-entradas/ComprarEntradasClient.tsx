@@ -188,7 +188,24 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
             );
           })}
 
-          <p className="mt-10 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
+          <p className="mt-10 max-w-2xl font-body text-sm leading-relaxed text-text-secondary">
+            Antes de comprar, los precios oficiales, los horarios y quién entra gratis están en
+            las guías de entradas del{' '}
+            <Link href="/actividades/castelo-sao-jorge" className="font-semibold text-terracotta underline underline-offset-2 hover:no-underline">
+              Castillo de San Jorge
+            </Link>
+            , los{' '}
+            <Link href="/blog/monasterio-jeronimos-entradas" className="font-semibold text-terracotta underline underline-offset-2 hover:no-underline">
+              Jerónimos
+            </Link>{' '}
+            y el{' '}
+            <Link href="/blog/palacio-da-pena-entradas" className="font-semibold text-terracotta underline underline-offset-2 hover:no-underline">
+              Palacio da Pena
+            </Link>
+            .
+          </p>
+
+          <p className="mt-4 max-w-2xl font-article text-xs leading-relaxed text-text-secondary">
             Algunos enlaces son de afiliado: si reservas desde aquí me llevo una pequeña
             comisión y a ti te cuesta lo mismo. Lo que aparece en esta página lo elijo yo,
             no el proveedor.{' '}

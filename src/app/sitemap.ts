@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blog-posts'
 import { guidePackSlugs } from '@/data/guide-packs'
 import { activities } from '@/data/activities'
+import { getTicketGuide } from '@/data/ticket-guides'
 
 const baseUrl = 'https://estabaenlisboa.com'
 
@@ -98,8 +99,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((activity) => activity.indexable)
     .map((activity) => ({
       url: `${baseUrl}/actividades/${activity.slug}`,
+      // Las fichas convertidas en guía de entradas declaran su fecha real.
+      ...(getTicketGuide(activity.slug)?.article.dateModified
+        ? { lastModified: new Date(`${getTicketGuide(activity.slug)!.article.dateModified}T00:00:00.000Z`) }
+        : {}),
       changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      priority: getTicketGuide(activity.slug) ? 0.8 : 0.6,
     }));
 
   // URLs dinámicas del blog

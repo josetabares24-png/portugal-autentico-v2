@@ -71,6 +71,11 @@ export interface TimelineStop {
    * entrada o que se puede comprar allí.
    */
   bookingAdvice?: ItineraryBookingAdvice;
+  /**
+   * Guía propia del sitio para esta parada (precios, horarios, cómo llegar).
+   * Enlace interno, nunca de afiliado.
+   */
+  guide?: { href: string; label: string };
 }
 
 /**

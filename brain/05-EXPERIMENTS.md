@@ -219,8 +219,12 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 
 ## E-013 — Bloques de reserva en páginas sin ninguno y botones subidos, 2026-10-09
 
-**Status: PLANNED. Rama local `feat/reserva-20`; no publicado. Necesita aprobación visual de José (L-003).** Detalle: [[business/RESERVA-20-2026-10-09]]. Mueve bloques en páginas de E-001 y E-003; E-006 y E-007 quedan fuera.
+**Status: LIVE desde 2026-10-09 (commit b86b436).** Detalle: [[business/RESERVA-20-2026-10-09]]. Mueve bloques en páginas de E-001 y E-003; E-006 y E-007 quedan fuera.
 
 ## E-014 — Stay22, 2026-10-09
 
-**Status: PLANNED. Rama local `feat/stay22`; no publicado.** El script de Stay22 tal cual reescribe los enlaces de GetYourGuide; va con `excludes: ['getyourguide']`. Detalle: [[business/STAY22-2026-10-09]].
+**Status: LIVE desde 2026-10-09 (commit 8f63889).** El script de Stay22 tal cual reescribe los enlaces de GetYourGuide; va con `excludes: ['getyourguide']`. Detalle: [[business/STAY22-2026-10-09]].
+
+## E-015 — Guía de entradas del Castelo en la URL de su ficha, 2026-10-10
+
+**Status: LIVE desde 2026-10-10. Aprobado por José.** /actividades/castelo-sao-jorge pasa de ficha corta a guía completa de entradas (formato de Pena y Jerónimos) para atacar «castillo san jorge entradas» sin abrir una URL nueva. Medir en GSC a 28 días: impresiones, CTR y posición de la ficha frente a los 28 días anteriores, y clics al bloque `guia-castelo-sao-jorge-castelo-sao-jorge-arriba`. Detalle: [[seo/CASTELO-ENTRADAS-2026-10-10]].

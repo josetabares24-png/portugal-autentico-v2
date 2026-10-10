@@ -10,6 +10,20 @@ import Icon from '@/components/Icon';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
 import { BookingCta } from '@/components/afiliados/BookingCta';
 import { getFreeTourAffiliateUrl, getFreeTourCategory } from '@/data/affiliate-links';
+import { ArticleBody } from '@/components/blog/ArticleBody';
+import { ArticleEditorialLinks } from '@/components/blog/ArticleEditorialLinks';
+import { ArticleFooter } from '@/components/blog/ArticleFooter';
+import { ArticleHero } from '@/components/blog/ArticleHero';
+import { ArticleSources } from '@/components/blog/ArticleSources';
+import { ArticleToc } from '@/components/blog/ArticleToc';
+import { slugify } from '@/components/blog/article-utils';
+import { getTicketGuide } from '@/data/ticket-guides';
+import { resolveBookingBlocks } from '@/lib/booking-blocks';
+
+const SITE_URL = 'https://estabaenlisboa.com';
+const AUTHOR_NAME = 'José Tabares';
+const AUTHOR_PROFILE_URL = `${SITE_URL}/sobre-nosotros`;
+const AUTHOR_ID = `${AUTHOR_PROFILE_URL}#jose-tabares`;
 
 export function generateStaticParams() {
   return activitySlugs.map((slug) => ({ slug }));
@@ -20,13 +34,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) return { title: 'Actividad no encontrada', robots: { index: false, follow: false } };
 
+  // Si la ficha tiene guía de entradas, título y descripción son los de la guía.
+  const guide = getTicketGuide(slug);
+  const seoTitle = guide?.article.seoTitle ?? activity.seoTitle;
+  const description = guide?.article.metaDescription ?? activity.description;
+
   return {
-    title: activity.seoTitle ? { absolute: activity.seoTitle } : `${activity.title} | Estaba en Lisboa`,
-    description: activity.description,
+    title: seoTitle ? { absolute: seoTitle } : `${activity.title} | Estaba en Lisboa`,
+    description,
     keywords: [activity.title.toLowerCase(), `${activity.title.toLowerCase()} lisboa`, activity.category.toLowerCase(), 'que ver en lisboa'],
     openGraph: {
-      title: activity.seoTitle ?? activity.title,
-      description: activity.description,
+      title: seoTitle ?? activity.title,
+      description,
       url: `https://estabaenlisboa.com/actividades/${slug}`,
       // Sin foto verificada del lugar todavía: se usa el logo del sitio en
       // vez de arriesgarnos a mostrar la imagen de otro monumento o barrio.
@@ -51,6 +70,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
   const activity = activities.find((a) => a.slug === slug);
   if (!activity) notFound();
 
+  const guide = getTicketGuide(slug);
   const related = activities.filter((a) => a.category === activity.category && a.slug !== activity.slug).slice(0, 3);
 
   // Enlace de reserva: si la ficha declara una categoría de free tour, la
@@ -100,6 +120,110 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
       { '@type': 'ListItem', position: 3, name: activity.title, item: `https://estabaenlisboa.com/actividades/${slug}` },
     ],
   };
+
+  if (guide) {
+    const { article, faqs } = guide;
+    const pageUrl = `${SITE_URL}/actividades/${slug}`;
+    const headings = article.contenido
+      .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
+      .map((bloque) => ({ title: bloque.texto as string, id: slugify(bloque.texto as string) }));
+    const bodyHrefs = new Set(
+      article.contenido.flatMap((block) => (block.tipo === 'enlace' && block.href ? [block.href] : [])),
+    );
+    const editorialLinks = (article.links ?? []).filter((link) => !bodyHrefs.has(link.href));
+    const articleJsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${pageUrl}#article`,
+      headline: article.seoTitle ?? article.titulo,
+      description: article.metaDescription ?? article.descripcion,
+      ...(article.dateModified ? { datePublished: article.dateModified, dateModified: article.dateModified } : {}),
+      author: { '@type': 'Person', '@id': AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_PROFILE_URL },
+      image: { '@type': 'ImageObject', url: `${SITE_URL}${article.imagen}` },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Estaba en Lisboa',
+        url: SITE_URL,
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png`, width: 600, height: 188 },
+      },
+      inLanguage: 'es-ES',
+      isAccessibleForFree: true,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+    };
+    const faqJsonLd = faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: { '@type': 'Answer', text: faq.a },
+          })),
+        }
+      : null;
+
+    return (
+      <main id="main-content" className="article-page bg-background-light article-v2">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(touristAttractionJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+        {faqJsonLd && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+        )}
+
+        <ArticleHero
+          article={article}
+          authorName={AUTHOR_NAME}
+          heroImage={article.imagen}
+          heroImageAlt={article.imageAlt ?? activity.imageAlt ?? activity.title}
+          isEditorialV2
+          breadcrumb={{ href: '/actividades', label: 'Actividades', current: guide.breadcrumbLabel }}
+        />
+
+        <div className="max-w-6xl mx-auto px-4 pb-16">
+          <div className="grid lg:grid-cols-[1fr,320px] gap-10">
+            <ArticleBody
+              article={article}
+              faqs={faqs}
+              isEditorialV2
+              photos={{}}
+              seoDescription={article.metaDescription ?? article.descripcion}
+              takeaways={article.resumen ?? []}
+              bookings={resolveBookingBlocks(slug, guide.placements, 'guia')}
+            />
+
+            <ArticleToc headings={headings} />
+          </div>
+
+          <ArticleEditorialLinks links={editorialLinks} />
+
+          <div className="article-compact-ending max-w-2xl mx-auto mt-10">
+            <ArticleFooter
+              authorName={AUTHOR_NAME}
+              beforeAuthor={
+                article.fuentes && article.fuentes.length > 0 ? <ArticleSources sources={article.fuentes} /> : null
+              }
+            />
+          </div>
+        </div>
+
+        {related.length > 0 && (
+          <section className="bg-background-light py-20 border-t border-border-soft">
+            <div className="max-w-6xl mx-auto px-6">
+              <p className="text-xs text-text-secondary uppercase tracking-widest mb-8">Más en {activity.category}</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                {related.map((a) => (
+                  <ActivityCard key={a.slug} activity={a} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
+    );
+  }
 
   return (
     <main id="main-content">
