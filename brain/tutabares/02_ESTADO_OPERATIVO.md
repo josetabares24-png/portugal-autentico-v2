@@ -123,3 +123,10 @@ Regla fija:
 - los nuevos guiones toman el siguiente número disponible en su carpeta;
 - no renumerar por cambios de estado salvo instrucción expresa;
 - la numeración no modifica el contenido del guion.
+
+
+## Actualización — publicación Capítulo 02 y próximo episodio (2026-10-10)
+
+- **Pedro e Inês de Castro (Cap. 02)**: el usuario ha llevado el vídeo a la pantalla de exportación de Premiere (1080×1920, 25 fps, aprox. 1:34). No consta publicación real. **Paquete completo de publicación LISTO Y VERIFICADO EN NOTION** en la misma página de guion: [Notion Pedro e Inês](https://app.notion.com/p/3f31ed051c4d8135910bc12f4f5b5f2b), sección **«PUBLICACIÓN FINAL — CAPÍTULO 02»**. Incluye título SEO/CTR, portada con pregunta que no presenta leyenda como historia, copy Instagram corto 300 caracteres, opción Facebook vinculada + copy individual, copy TikTok 187 caracteres, título/descripcion/tags YouTube Shorts, tres/5 hashtags, ubicación contextual, comentarios fijados, historias, checklist exportación, SEO y derechos de música. Queda **listo para publicar**, no «publicado».
+- **Principio editorial obligatorio**: Inês de Castro y Pedro I, leyenda de coronación después de morir NO demostrada; sepulcros reales en Alcobaça. Mantener voz de cuento anti-IA y estética serie.
+- **Capítulo 03 — propuesta pendiente de aprobación**: *«El día que Lisboa quedó en ruinas»* (terremoto del 1 de noviembre de 1755). Es potencialmente fuerte por conexión directa con Lisboa, terremoto + tsunami + incendios + reconstrucción y cercanía de efeméride. Fuentes iniciales: geo.lisboa.pt, RTP Ensina, Museo Medeiros e Almeida, Torre do Tombo. **No crear 40 tomas ni cambiar el guion antes de aprobación.** En próximo capítulo mantener plantilla de prompts imagen/movimiento completa y personajes maestros según necesidad.
