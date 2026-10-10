@@ -764,3 +764,8 @@ Reglas:
 - van por delante de la foto de Tiqets; el hueco crema queda solo para cuando una foto no carga;
 - `smoke:tiqets` falla si una tarjeta del hub no tiene foto, si una de Commons no tiene crédito o si falta en `CREDITOS.md`.
 
+## D-044 — Newsletter pausada por decisión del usuario
+**Date:** 2026-10-10  
+**Status:** accepted
+
+Retirar los formularios de suscripción del índice del blog y de todos los artículos de Estaba en Lisboa. Dejar de aceptar altas nuevas en `/api/subscribe`; conservar la ruta `/unsubscribe` para quienes se registraron antes y no borrar datos ni configurar envíos a suscriptores existentes. Conservar el PDF ya publicado para no romper enlaces históricos. No tocar contenido editorial, SEO, reservas ni afiliados. Solo reactivar la newsletter con nueva instrucción explícita del usuario.

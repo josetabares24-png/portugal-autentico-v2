@@ -9,7 +9,6 @@ import type {
 import { ArticleBookingBlock, type ArticleBookingBlockProps } from './ArticleBookingBlock';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
-import { ArticleNewsletter } from './ArticleNewsletter';
 import { renderEditorialHeading, slugify } from './article-utils';
 
 type ArticleBodyProps = {
@@ -26,7 +25,7 @@ type ArticleBodyProps = {
    * no encuentran su encabezado caen al final del cuerpo.
    */
   bookings?: (ArticleBookingBlockProps & { beforeHeading?: string; position?: 'after-summary' })[];
-  /** Slug del artículo si lleva newsletter; sin él no se pinta el formulario. */
+  /** Propiedad heredada por compatibilidad; sin formulario mientras la newsletter esté pausada. */
   newsletterSlug?: string;
 };
 
@@ -39,7 +38,6 @@ export function ArticleBody({
   seoDescription,
   takeaways,
   bookings = [],
-  newsletterSlug,
 }: ArticleBodyProps) {
   const headingIds = new Set(
     article.contenido
@@ -91,41 +89,6 @@ export function ArticleBody({
   const renderBooking = (b: (typeof bookings)[number]) => (
     <ArticleBookingBlock key={b.contentId} {...b} disclosure={b.contentId === firstBookingId ? 'full' : 'short'} />
   );
-  /*
-   * El formulario de newsletter va antes del primer subtítulo que esté a
-   * partir del 60 % del texto y que no tenga ya un bloque de reserva ni un
-   * enlace destacado delante: dos cajas seguidas se leen como publicidad.
-   * Si no hay ninguno, el último hueco válido desde el 40 %; si tampoco,
-   * al final.
-   */
-  // El 60 % se mide en texto, no en número de bloques: una tabla o una lista
-  // larga pesan más que un subtítulo.
-  const blockWeight = (b: (typeof bodyBlocks)[number]) =>
-    (b.texto?.length ?? 0) +
-    (b.items?.join('').length ?? 0) +
-    (b.filas?.flat().join('').length ?? 0);
-  const totalWeight = bodyBlocks.reduce((sum, b) => sum + blockWeight(b), 0);
-  const weightBefore = bodyBlocks.map((_, i) =>
-    bodyBlocks.slice(0, i).reduce((sum, b) => sum + blockWeight(b), 0),
-  );
-  const newsletterCandidates = newsletterSlug
-    ? bodyBlocks.flatMap((b, i) =>
-        (b.tipo === 'subtitulo' || b.tipo === 'subseccion') &&
-        !bodyBookings.some((booking) => booking.beforeHeading === slugify(b.texto || '')) &&
-        i !== topBookingIndex &&
-        bodyBlocks[i - 1]?.tipo !== 'enlace'
-          ? [i]
-          : [],
-      )
-    : [];
-  const newsletterIndex =
-    newsletterCandidates.find((i) => weightBefore[i] >= totalWeight * 0.6) ??
-    [...newsletterCandidates].reverse().find((i) => weightBefore[i] >= totalWeight * 0.4) ??
-    -1;
-  const newsletterAtEnd = Boolean(newsletterSlug) && newsletterIndex === -1;
-  const newsletter = newsletterSlug ? (
-    <ArticleNewsletter slug={newsletterSlug} placement="article_inline" />
-  ) : null;
   const renderBlock = (bloque: (typeof bodyBlocks)[number], index: number) => {
     if (bloque.tipo === 'parrafo') {
       const paragraphIndex = article.contenido
@@ -344,11 +307,10 @@ export function ArticleBody({
         {bodyBlocks.map((bloque, index) => {
           const top = topBooking && index === topBookingIndex ? renderBooking(topBooking) : null;
           const afterTop = topBooking && index === topBookingAfter ? renderBooking(topBooking) : null;
-          if (index === newsletterIndex || top || afterTop) {
+          if (top || afterTop) {
             return (
               <Fragment key={`block-${index}`}>
                 {top}
-                {index === newsletterIndex ? newsletter : null}
                 {renderBlock(bloque, index)}
                 {afterTop}
               </Fragment>
@@ -357,7 +319,6 @@ export function ArticleBody({
           return renderBlock(bloque, index);
         })}
         {trailingBookings.map(renderBooking)}
-        {newsletterAtEnd && newsletter}
       </div>
 
       {faqs.length > 0 && (

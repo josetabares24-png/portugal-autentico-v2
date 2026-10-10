@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Privacidad
 
-**Última actualización:** 9 de octubre de 2026
+**Última actualización:** 10 de octubre de 2026
 
 ## 1. Responsable del Tratamiento
 
@@ -38,10 +38,10 @@ async function getLegalContent() {
 Este sitio no tiene actualmente tienda ni checkout: no recopilamos datos de compra, facturación ni de pago porque no se procesan.
 
 ### 2.1. Datos que envías voluntariamente
-Cuando usas el formulario de contacto, el de planifica-tu-viaje, o te suscribes a novedades por email, recopilamos los datos que introduces en ese formulario (por ejemplo, nombre y correo electrónico, y el contenido de tu mensaje o consulta). Se usan solo para responderte o, si te suscribes, para enviarte las comunicaciones que hayas solicitado. Si te suscribes desde un artículo, te damos el enlace a la lista en PDF «Qué reservar antes de ir a Lisboa». Es el mismo archivo para todo el mundo: no se genera con tus datos.
+Cuando usas el formulario de contacto o el de planifica-tu-viaje, recopilamos los datos que introduces (por ejemplo, nombre, correo electrónico y el contenido de tu consulta) para poder responderte. La suscripción a novedades está pausada y el sitio no acepta altas nuevas. Si te suscribiste anteriormente, puedes seguir solicitando la baja y ejercer tus derechos sobre los datos que se hayan conservado.
 
 ### 2.2. Envío de tu presupuesto por email
-Si pides que te enviemos el presupuesto de la calculadora en PDF, usamos tu dirección de correo solo para ese envío. No guardamos ni el PDF ni el presupuesto: se generan en el momento de la petición y no quedan almacenados en ningún sitio. Tampoco te damos de alta en ninguna lista de correo: es un envío puntual y transaccional, y para recibir novedades hay que suscribirse aparte y a propósito. Descargar el PDF directamente no requiere email ni deja ningún dato.
+Si pides que te enviemos el presupuesto de la calculadora en PDF, usamos tu dirección de correo solo para ese envío. No guardamos ni el PDF ni el presupuesto: se generan en el momento de la petición y no quedan almacenados en ningún sitio. Tampoco te damos de alta en ninguna lista de correo: es un envío puntual y transaccional. Descargar el PDF directamente no requiere email ni deja ningún dato.
 
 ### 2.3. Cuentas de administración
 El panel de administración del sitio usa Clerk para el inicio de sesión. Esto solo afecta a quienes acceden a ese panel (el equipo del sitio), no a la navegación pública.
@@ -57,7 +57,7 @@ Consulta la [Política de Cookies](/politica-cookies) para el detalle de qué se
 Tus datos se utilizan para:
 
 - **Atención al usuario:** Responder a tu mensaje de contacto o solicitud a través de planifica-tu-viaje.
-- **Comunicaciones que solicitas:** Enviarte novedades si te suscribes voluntariamente.
+- **Suscripciones anteriores:** Gestionar las preferencias y las solicitudes de baja de quienes se suscribieron antes de que se pausara la newsletter.
 - **Envío de tu presupuesto:** Mandarte por email, una sola vez, el PDF que has pedido desde la calculadora.
 - **Administración del sitio:** Autenticar a quien gestiona el contenido a través de Clerk.
 - **Mejora del servicio:** Analizar el uso del sitio web de forma agregada, si aceptas las cookies analíticas (Google Analytics).
@@ -72,7 +72,7 @@ Tratamos tus datos basándonos en:
 ## 5. Conservación de Datos
 
 - **Mensajes de contacto:** Se conservan el tiempo necesario para atender tu consulta y un periodo razonable posterior por si hay seguimiento.
-- **Suscripción a novedades:** Hasta que te des de baja o retires tu consentimiento.
+- **Suscripciones anteriores:** Mientras exista una finalidad legítima y consentimiento vigente; puedes solicitar la baja o la supresión de tus datos en cualquier momento.
 - **Presupuesto enviado por email:** No se conserva. Ni el PDF ni los datos del cálculo se guardan; la dirección se usa para ese envío y no se añade a ninguna lista.
 - **Datos de navegación (analítica):** Según la configuración por defecto de Google Analytics para esta propiedad; consulta la política de privacidad de Google para el detalle exacto, ya que ese plazo lo determina el proveedor, no nosotros.
 
@@ -80,7 +80,7 @@ Tratamos tus datos basándonos en:
 
 Según el tipo de dato, puede ser tratado por:
 
-- **Brevo:** Envío de emails de contacto, del presupuesto en PDF que pidas desde la calculadora, y de la newsletter si te suscribes.
+- **Brevo:** Envío de emails de contacto, del presupuesto en PDF que pidas desde la calculadora y gestión de contactos históricos de la newsletter (altas nuevas pausadas).
 - **Clerk:** Autenticación del panel de administración.
 - **Google Analytics:** Análisis de tráfico web (con IP anonimizada), solo si aceptas las cookies analíticas.
 - **GetYourGuide y Tiqets:** Módulos de reserva de actividades incrustados en algunas páginas, solo si aceptas las cookies. Al cargarse reciben tu dirección IP y los datos de navegación propios de cualquier contenido incrustado, y registran que la visita llega desde este sitio para atribuir la reserva.

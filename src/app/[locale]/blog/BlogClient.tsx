@@ -6,7 +6,6 @@ import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
 import { blogPosts } from '@/data/blog-posts';
-import { trackEvent } from '@/lib/analytics';
 
 const POSTS_PER_PAGE = 9;
 
@@ -18,10 +17,6 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
   const [paginaFiltrada, setPaginaFiltrada] = useState(1);
   const paginaActual = categoriaActiva === 'Todos' ? initialPage : paginaFiltrada;
-  const [email, setEmail] = useState('');
-  const [nombre, setNombre] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const categorias = useMemo(
     () => ['Todos', 'Guías', 'Gastronomía', 'Consejos', 'Planificación', 'Transporte', 'Cultura'],
@@ -136,100 +131,6 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
         </div>
       </section>}
 
-      {/* Newsletter */}
-      <section className="relative bg-night bg-azulejo-pattern-gold py-12 md:py-16 overflow-hidden">
-        <div className="relative max-w-xl mx-auto px-6 text-center">
-          <h2 className="font-display not-italic leading-tight tracking-normal text-white text-3xl md:text-4xl mb-3">
-            Nuevas guías por email
-          </h2>
-          <p className="text-white/80 mb-6 leading-relaxed">
-            Cuando publiquemos una guía nueva o actualicemos algo importante, te lo enviamos por correo.
-          </p>
-
-          {status === 'success' ? (
-            <p role="status" className="text-white font-semibold rounded-lg border border-white/20 bg-white/10 py-4 px-6">
-              Gracias por suscribirte. Revisa tu bandeja de entrada.
-            </p>
-          ) : (
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                  setErrorMessage('Introduce un email válido');
-                  setStatus('error');
-                  return;
-                }
-                setStatus('loading');
-                setErrorMessage(null);
-                try {
-                  const response = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, name: nombre || email.split('@')[0], placement: 'blog_index' }),
-                  });
-                  const data = await response.json();
-                  if (!response.ok || !data.success) {
-                    setStatus('error');
-                    setErrorMessage(data.message || 'Error al suscribirse. Inténtalo de nuevo.');
-                    return;
-                  }
-                  setStatus('success');
-                  trackEvent('sign_up', {
-                    method: 'newsletter',
-                    content_type: 'blog_newsletter',
-                    placement: 'blog_index',
-                  });
-                  setEmail('');
-                  setNombre('');
-                } catch {
-                  setStatus('error');
-                  setErrorMessage('Error de conexión. Inténtalo de nuevo.');
-                }
-              }}
-              className="flex flex-col gap-4 text-left"
-            >
-              <label htmlFor="blog-newsletter-name" className="text-sm font-medium text-white">Nombre <span className="font-normal text-white/80">(opcional)</span></label>
-              <input
-                id="blog-newsletter-name"
-                name="name"
-                autoComplete="given-name"
-                type="text"
-                placeholder="Tu nombre (opcional)"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                className="-mt-2 min-h-12 w-full px-4 py-3 rounded-lg bg-white/10 border border-white/40 text-white placeholder-white/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white text-base"
-              />
-              <label htmlFor="blog-newsletter-email" className="text-sm font-medium text-white">Email</label>
-              <div className="-mt-2 flex flex-col sm:flex-row gap-3">
-                <input
-                  id="blog-newsletter-email"
-                  name="email"
-                  autoComplete="email"
-                  aria-invalid={status === 'error'}
-                  aria-describedby={errorMessage ? 'blog-newsletter-error' : undefined}
-                  type="email"
-                  placeholder="tu@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="min-h-12 flex-1 min-w-0 px-4 py-3 rounded-lg bg-white/10 border border-white/40 text-white placeholder-white/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white text-base"
-                />
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="btn-primary flex-shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-                >
-                  {status === 'loading' ? 'Enviando…' : 'Suscribirse'}
-                </button>
-              </div>
-              {errorMessage && (
-                <p id="blog-newsletter-error" role="alert" className="text-red-200 text-sm">{errorMessage}</p>
-              )}
-              <p className="text-white/75 text-xs">Puedes darte de baja cuando quieras.</p>
-            </form>
-          )}
-        </div>
-      </section>
     </main>
   );
 }
