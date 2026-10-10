@@ -584,3 +584,16 @@ Alcobaça debe funcionar como payoff:
 8. **Entregarlo en UNA página clara de Notion, vinculada al capítulo**, sin fragmentarlo en docenas de páginas dispersas. Registrar enlaces, versión operativa y decisiones clave en GitHub. Confirmar que están todos los prompts antes de afirmar «listo».
 
 **Modelo de entrega aprobado:** [Notion — Producción V3 Pedro e Inês, 40 tomas](https://app.notion.com/p/3f41ed051c4d81e88ae0e4263d682a14). Replicar su estructura, calidad, facilidad de copiar y flujo de trabajo para futuros capítulos, sin copiar automáticamente las escenas ni el número de tomas.
+
+
+## CAPÍTULO 03 — Estoril: espías y Casino Royale (2026-10-11)
+
+**Decidido por el usuario:** es el Capítulo 03, no el terremoto de 1755 (que quedará para un remake futuro). El guion de voz exacto previamente aprobado vive [en Notion](https://app.notion.com/p/3f51ed051c4d81329b1bf591666ca1fc).
+
+**Entregado y verificado:** [PRODUCCIÓN — 54 TOMAS, 108 PROMPTS EN INGLÉS (Grok/Flow), 4 PERSONAJES MAESTROS, MÚSICA, PORTADA y GUÍA](https://app.notion.com/p/3f51ed051c4d817988a3ea2ca833cb31). La anterior primera propuesta de solo 20 tomas está SUPERADA. Estos prompts son el plan visual, no material ya generado. Cámara y acción distinta por toma, 9:16 en todos los casos, misma identidad de render adulta 3D premium del Capítulo 02 y Capítulo 01.
+
+**Personajes maestros:** Ian Fleming, John Godfrey, supuesto jugador alemán (composición artística sin identificar persona real), huésped elegante ficticia (no afirmar que fue agente real).
+
+**Verificaciones históricas para diseño:** el Casino Estoril de la guerra era el edificio ORIGINAL inaugurado en 1931, sustituido por remodelación en 1968; prohibido dibujar el casino moderno en escenas de 1941. Hotel Palácio Estoril abrió en 1930; usar fotos históricas originales y actuales según época. Fleming visitó Portugal en 1941 con su superior; su anécdota de una partida en Estoril inspira la escena de apuestas de la novela *Casino Royale*, no nacimiento literal del agente 007. [Testimonio propio de Fleming](https://ianfleming.com/the-story-behind-the-casino-royale-baccarat-scene/). No copiar música, gunbarrel, marcas o rostros de actores de películas Bond.
+
+**Siguiente paso**: confirmar 4 retratos maestros antes de iniciar la Toma C03_01. Ajustar duraciones reales con voz final, no inventar 3 minutos como duración fija. Guardar nuevas salidas como C03_XX, no mezclar archivos de capítulos o versiones descartadas.
