@@ -17,6 +17,7 @@ export const NEWSLETTER_EXCLUDED_SLUGS = new Set([
   'donde-comer-barato-lisboa',
 ]);
 
-export function articleHasNewsletter(slug: string) {
-  return !NEWSLETTER_EXCLUDED_SLUGS.has(slug);
+// D-044: la newsletter permanece pausada. No mostrar formularios en artículos.
+export function articleHasNewsletter(_slug: string) {
+  return false;
 }
