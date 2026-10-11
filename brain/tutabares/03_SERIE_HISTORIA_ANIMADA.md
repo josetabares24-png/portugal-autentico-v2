@@ -597,3 +597,18 @@ Alcobaça debe funcionar como payoff:
 **Verificaciones históricas para diseño:** el Casino Estoril de la guerra era el edificio ORIGINAL inaugurado en 1931, sustituido por remodelación en 1968; prohibido dibujar el casino moderno en escenas de 1941. Hotel Palácio Estoril abrió en 1930; usar fotos históricas originales y actuales según época. Fleming visitó Portugal en 1941 con su superior; su anécdota de una partida en Estoril inspira la escena de apuestas de la novela *Casino Royale*, no nacimiento literal del agente 007. [Testimonio propio de Fleming](https://ianfleming.com/the-story-behind-the-casino-royale-baccarat-scene/). No copiar música, gunbarrel, marcas o rostros de actores de películas Bond.
 
 **Siguiente paso**: confirmar 4 retratos maestros antes de iniciar la Toma C03_01. Ajustar duraciones reales con voz final, no inventar 3 minutos como duración fija. Guardar nuevas salidas como C03_XX, no mezclar archivos de capítulos o versiones descartadas.
+
+
+## Capítulo 03 — excepción visual APROBADA y auditoría de imágenes 01–10 (2026-10-11)
+
+**Aclaración posterior explícita del usuario:** «Es que este creo que es una animación que necesitaba una estética más realista pero animada». Esta decisión corrige cualquier instrucción anterior que exigiera que el Capítulo 03 copiara el grado de caricatura estilizada de Pedro e Inês. **Estoril/espías = 3D SEMIRREALISTA ANIMADO CINEMATOGRÁFICO**, adulto, detallado, luz, rostros y materiales creíbles, aunque siga siendo claramente una película animada y no una fotografía de acción real. Los capítulos 01/02 no cambian por esto.
+
+**AUDITORÍA REAL, con 10 imágenes recibidas y archivadas:**
+- [Auditoría visual de Notion 01–10](https://app.notion.com/p/3f61ed051c4d812a94ebdc9fdf39995a) — incluye links individuales a 10 imágenes, narración exacta de cada toma, estado, diagnóstico y dos prompts corregidos para 01 y 07.
+- [Drive imágenes originales recibidas 01–10](https://drive.google.com/drive/folders/10T8RPp22v7kl6972Ag_seHH4eKWmVezq). Se subieron y verificaron 10 originales C03_Toma_01…C03_Toma_10.jpeg; conservar intactos.
+- **CONSERVAR** 02, 03, 04, 05, 06, 08, 09, 10. Nunca rechazarlas solo por ser más realistas que el Capítulo 02.
+- **REHACER** 01 (costa que parece Riviera inventada, verificar geografía de Estoril), 07 (tren de vapor incorrecto para línea Estoril/Cascais en 1941: electrificada desde 1926).
+- 05 estación gris con tren de vapor se conserva porque evoca **Europa durante la guerra**, no afirma que sea Estoril.
+- Los números y narraciones siguen el **guion maestro de 54 tomas**, no un borrador alternativo de tomas 17–26 sobre Duško Popov. No mezclar guiones.
+- Las imágenes **11–54 no están auditadas todavía**, pendientes de envío por usuario; no decir que les faltan por generar sin evidencia.
+- **Prompts futuros:** priorizar nueva norma SEMI-REALISTIC PREMIUM 3D ANIMATED FEATURE FILM, pero no devolver foto hiperrealista. Mismo rostro, peinados, vestuario y acabado a través de todos los planos del capítulo; el generador debe recibir frames ya aprobados como referencia de ese capítulo.
