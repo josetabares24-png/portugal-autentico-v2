@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 /*
- * Pie de página. La cabecera no se toca (decisión registrada en brain/); el
- * pie enlaza las tres guías centrales indexables. Itinerarios, calculadora y
- * planifica siguen degradadas (brain/08) y no se promocionan aquí.
+ * Pie de página. Enlaza los pilares editoriales que queremos reforzar:
+ * Portugal y las guías centrales de Lisboa. Itinerarios, calculadora y
+ * planifica no se promocionan aquí para no dispersar autoridad.
  */
 const PLAN_LINKS = [
   { href: '/portugal', label: 'Viajar por Portugal' },
