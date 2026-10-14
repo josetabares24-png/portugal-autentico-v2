@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '14 Oct 2026',
     dateModified: '2026-10-14',
     autor: 'José Tabares',
-    imagen: '/images/jose/jose-tabares-oporto.jpg',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
   },
   {
     id: 'como-moverse-por-portugal',
