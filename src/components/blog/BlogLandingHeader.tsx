@@ -22,13 +22,13 @@ export function BlogLandingHeader() {
         <div className="grid items-end gap-7 md:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] md:gap-10 lg:gap-14">
           <div className="max-w-xl pb-1 md:pb-3">
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-terracotta">
-              Historias, lugares y consejos
+              Lisboa, Portugal y consejos
             </p>
             <h1 className="font-display text-[2.75rem] font-semibold leading-[1.02] text-text-main sm:text-5xl lg:text-6xl">
-              El blog de Lisboa
+              Guías de Lisboa y Portugal
             </h1>
             <p className="mt-4 max-w-[36rem] text-base leading-relaxed text-text-secondary md:text-lg">
-              Guías, rincones, ideas y contexto para entender mejor la ciudad.
+              Rutas, transporte, lugares e historias para entender Lisboa y seguir viajando por Portugal.
             </p>
           </div>
 
