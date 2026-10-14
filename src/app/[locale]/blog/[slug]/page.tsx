@@ -164,6 +164,7 @@ const articles: Record<string, Article> = {
       'El coche empieza a compensar cuando la ruta tiene varias paradas, zonas rurales, playas o pueblos fuera de los grandes ejes.',
     ],
     links: [
+      { href: '/blog/portugal-en-7-dias', label: 'Portugal en 7 días: ruta completa' },
       { href: '/portugal', label: 'Guía de Portugal: rutas y consejos' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/estacion-oriente-lisboa', label: 'Cómo usar la estación de Oriente' },
