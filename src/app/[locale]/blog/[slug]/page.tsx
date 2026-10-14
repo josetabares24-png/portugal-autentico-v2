@@ -17,6 +17,104 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 import { articleHasNewsletter } from '@/lib/newsletter';
 
 const articles: Record<string, Article> = {
+  'como-moverse-por-portugal': {
+    titulo: 'Cómo moverse por Portugal en 2026: tren, bus o coche',
+    descripcion: 'Cómo moverte por Portugal en 2026: trenes CP, autobuses, coche, peajes y qué opción elegir para Lisboa, Oporto, Coimbra, Algarve y otras rutas.',
+    subtitulo: 'Portugal parece pequeño en el mapa, pero elegir mal el transporte puede hacerte perder horas. Esta guía separa los trayectos donde el tren funciona muy bien de los que salen mejor en bus o coche.',
+    seoTitle: 'Cómo moverse por Portugal en 2026: tren, bus o coche',
+    metaDescription: 'Cómo moverse por Portugal en 2026: trenes CP, autobuses, coche, peajes y qué opción elegir para Lisboa, Oporto, Coimbra, Algarve y otras rutas.',
+    imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
+    imageAlt: 'Andenes y cubierta de la estación de Oriente, uno de los grandes nudos ferroviarios de Portugal',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    fechaActualizacion: 'Actualizado en octubre de 2026',
+    dateModified: '2026-10-14',
+    minutos: 12,
+    resumen: [
+      'Para unir Lisboa, Coimbra y Oporto, el tren suele ser la opción más cómoda para un primer viaje.',
+      'El autobús gana valor cuando buscas precio o vas a localidades donde el ferrocarril no llega de forma directa.',
+      'El coche empieza a compensar cuando la ruta tiene varias paradas, zonas rurales, playas o pueblos fuera de los grandes ejes.',
+    ],
+    links: [
+      { href: '/portugal', label: 'Guía de Portugal: rutas y consejos' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/estacion-oriente-lisboa', label: 'Cómo usar la estación de Oriente' },
+      { href: '/blog/como-pagar-en-portugal', label: 'Cómo pagar en Portugal' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa' },
+    ],
+    fuentes: [
+      { label: 'Visit Portugal: cómo llegar y moverse por Portugal', href: 'https://www.visitportugal.com/es/sobre-portugal/como-chegar' },
+      { label: 'CP: Alfa Pendular', href: 'https://www.cp.pt/info/alfa-pendular' },
+      { label: 'CP: Intercidades', href: 'https://www.cp.pt/info/intercidades' },
+      { label: 'CP: Bilhete Promo', href: 'https://www.cp.pt/info/w/bilhete-promo' },
+      { label: 'Portugal Tolls: peajes y medios de pago', href: 'https://www.portugaltolls.com/pt-pt' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Si vienes a Portugal por primera vez, mi consejo es no alquilar coche automáticamente ni asumir que todo se resuelve en tren. La red funciona muy bien en algunos corredores y bastante peor para ciertos pueblos, playas o rutas con varias paradas. La decisión correcta depende más del recorrido que del país en general.' },
+
+      { tipo: 'subtitulo', texto: 'La respuesta corta: qué transporte elegir en Portugal' },
+      { tipo: 'tabla', texto: 'Comparativa rápida de transportes para viajar por Portugal', columnas: ['Opción', 'Cuándo la elegiría', 'Lo que debes tener en cuenta'], filas: [
+        ['Tren', 'Lisboa–Coimbra–Oporto, Lisboa–Faro y ciudades conectadas por los grandes ejes', 'Muy cómodo entre centros urbanos; los mejores precios de larga distancia dependen de antelación y disponibilidad.'],
+        ['Autobús', 'Pueblos sin tren directo, viajes baratos y rutas donde la estación ferroviaria queda mal situada', 'Compara horarios: frecuencia y punto de salida cambian mucho según el destino.'],
+        ['Coche', 'Alentejo, costa, interior, playas y rutas con varias paradas', 'Aparcamiento, combustible y peajes pueden cambiar por completo el coste real.'],
+        ['Avión', 'Madeira, Azores o conexiones donde el tiempo pesa más que el coste', 'No lo usaría entre Lisboa y Oporto salvo una necesidad concreta: aeropuerto y controles eliminan buena parte de la ventaja.'],
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Viajar en tren por Portugal' },
+      { tipo: 'parrafo', texto: 'CP, Comboios de Portugal, opera los servicios ferroviarios del país. Para un viajero hay tres nombres que conviene reconocer: Alfa Pendular, Intercidades y los servicios regionales o urbanos. Visit Portugal identifica al Alfa Pendular como el enlace ferroviario más rápido entre Lisboa, el norte y el Algarve, con paradas en ciudades como Coimbra y Aveiro; Intercidades cubre varios de los grandes ejes nacionales.' },
+      { tipo: 'parrafo', texto: 'En una ruta clásica Lisboa–Coimbra–Oporto, yo miraría primero el tren. Sales de una estación conectada al transporte urbano, llegas a otra ciudad sin conducir y evitas sumar aparcamiento, peajes y devolución de coche. Para Lisboa–Faro también existen servicios de larga distancia, aunque la mejor opción cambia si después quieres recorrer muchas playas del Algarve.' },
+      { tipo: 'parrafo', texto: 'Hay una diferencia importante entre comprar el tren cuando ya estás allí y planificarlo. CP mantiene Bilhetes Promo para Alfa Pendular e Intercidades: en octubre de 2026 informa de descuentos de hasta el 65 % para determinados lugares promocionales comprados con al menos 5 días de antelación, dentro de una ventana de hasta 60 días. Son plazas limitadas, así que no usaría ese porcentaje como precio garantizado.' },
+
+      { tipo: 'subtitulo', texto: 'Cuándo elegir autobús' },
+      { tipo: 'parrafo', texto: 'El autobús deja de ser una opción secundaria en cuanto sales de los grandes ejes ferroviarios. Visit Portugal señala servicios regulares que conectan ciudades, pueblos y localidades del país y remite, entre otros, a Rede Expressos y FlixBus para consultar rutas y precios.' },
+      { tipo: 'parrafo', texto: 'Para destinos como Óbidos o Nazaré desde Lisboa, el bus puede resultar mucho más práctico que intentar construir el viaje alrededor del tren. También merece la pena comparar autobús y tren cuando el precio importa más que unos minutos de diferencia.' },
+      { tipo: 'parrafo', texto: 'No compraría un billete por la marca sin mirar el punto exacto de salida y llegada. Dos servicios que parecen equivalentes pueden dejarte en lugares bastante distintos, y ese último tramo puede ser la diferencia entre una ruta cómoda y empezar el día buscando otro transporte.' },
+
+      { tipo: 'subtitulo', texto: 'Cuándo alquilar coche en Portugal' },
+      { tipo: 'parrafo', texto: 'El coche tiene sentido cuando quieres que el trayecto sea parte del viaje. Si vas a enlazar pueblos del Alentejo, playas, zonas rurales o varias paradas pequeñas en un mismo día, la libertad puede compensar claramente. Para hacer únicamente Lisboa, Coimbra y Oporto, en cambio, yo no lo alquilaría por sistema.' },
+      { tipo: 'parrafo', texto: 'Antes de reservar, suma el coste completo: alquiler, combustible, aparcamiento y peajes. Portugal combina autopistas con distintos sistemas de cobro y Portugal Tolls mantiene la información oficial para vehículos con matrícula extranjera y los medios de pago disponibles en las vías con peaje electrónico. Si alquilas el coche dentro de Portugal, pregunta a la compañía cómo se gestionan los peajes antes de salir del mostrador.' },
+
+      { tipo: 'subtitulo', texto: 'Qué elegir en las rutas más habituales' },
+      { tipo: 'lista', items: [
+        'Lisboa → Oporto: empezaría comparando Alfa Pendular e Intercidades; para la mayoría de primeros viajes, el tren es mi opción base.',
+        'Lisboa → Coimbra: el tren encaja muy bien si la ciudad forma parte de una ruta hacia el norte.',
+        'Lisboa → Sintra: tren suburbano; no necesitas alquilar coche solo por esta excursión.',
+        'Lisboa → Cascais: tren desde Cais do Sodré para una visita normal; luego puedes resolver la costa con transporte local, bici, taxi o VTC según el plan.',
+        'Lisboa → Évora: compara tren y autobús por horario; el coche gana si Évora es solo una parada dentro de una ruta por el Alentejo.',
+        'Lisboa → Óbidos o Nazaré: mira primero las conexiones de autobús; suelen encajar mejor en una excursión que el ferrocarril.',
+        'Lisboa → Algarve: tren o bus si vas a una base concreta; coche si tu prioridad es recorrer varias playas y pueblos.',
+        'Portugal continental → Madeira o Azores: aquí ya hablamos de avión; son archipiélagos y no forman parte de la red ferroviaria continental.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Lisboa, Oriente y Santa Apolónia: no reserves sin mirar la estación' },
+      { tipo: 'parrafo', texto: 'Uno de los errores más fáciles es buscar “tren Lisboa Oporto” y fijarse solo en la hora. Lisboa tiene más de una estación relevante para larga distancia. Oriente es un gran nudo de tren, Metro y autobuses; Santa Apolónia también aparece en numerosas conexiones. Revisa siempre desde qué estación sale tu servicio y cuál te conviene según el alojamiento.' },
+      { tipo: 'enlace', texto: 'Si tu tren sale o llega por Oriente, tengo una guía aparte para entender la estación sin perder tiempo cambiando entre Metro, tren y autobús.', href: '/blog/estacion-oriente-lisboa', label: 'Ver la guía de la estación de Oriente' },
+
+      { tipo: 'subtitulo', texto: 'Cómo comprar más barato sin complicarte el viaje' },
+      { tipo: 'lista', items: [
+        'Mira primero el recorrido completo y después el precio: ahorrar unos euros no compensa si añades dos transbordos absurdos.',
+        'En Alfa Pendular e Intercidades, comprueba los Bilhetes Promo de CP con antelación; la disponibilidad es limitada.',
+        'Compara tren y autobús en rutas interurbanas, sobre todo si viajas solo y llevas poco equipaje.',
+        'Si alquilas coche, calcula aparcamiento y peajes antes de decidir que es la opción barata.',
+        'No alquiles coche para los días completos en el centro de Lisboa solo porque lo necesitarás más adelante: muchas veces sale mejor recogerlo al abandonar la ciudad.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Los errores que intentaría evitar' },
+      { tipo: 'lista', items: [
+        'Montar una ruta Lisboa–Oporto–Algarve en pocos días solo porque Portugal se ve pequeño en el mapa.',
+        'Comprar el tren sin comprobar la estación exacta de salida.',
+        'Asumir que todos los pueblos turísticos tienen una conexión ferroviaria cómoda.',
+        'Entrar en una autopista de peaje con un coche extranjero sin haber entendido antes el sistema de pago.',
+        'Quedarte únicamente con el precio del billete y olvidar el tiempo y coste para llegar a la terminal.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Cómo organizaría un primer viaje por Portugal' },
+      { tipo: 'parrafo', texto: 'Si tienes una semana y es tu primera vez, prefiero construir la ruta alrededor de pocas bases y buenos enlaces antes que coleccionar ciudades. Lisboa puede cubrir varios días y además darte acceso a Sintra y Cascais. Desde ahí, Coimbra y Oporto encajan de forma natural hacia el norte. El Algarve, el Alentejo o las islas merecen entrar cuando el número de días permite hacerlo sin convertir el viaje en una mudanza diaria.' },
+      { tipo: 'parrafo', texto: 'Esta página será una de las bases de la nueva sección de Portugal de Estaba en Lisboa. La iré actualizando cuando cambien condiciones relevantes de CP, carreteras o conexiones, y desde el hub de Portugal podrás ir saltando a las guías concretas de cada lugar.' },
+      { tipo: 'enlace', texto: 'Si todavía no tienes clara la ruta, empieza por la nueva portada de Portugal: reúne las guías nacionales y las escapadas que ya están publicadas.', href: '/portugal', label: 'Abrir la guía de Portugal' },
+    ],
+  },
   'casa-cristiano-ronaldo-portugal-quinta-da-marinha': {
     titulo: 'La zona de Portugal donde Cristiano Ronaldo tiene una mansión: así es Quinta da Marinha',
     descripcion: 'Quinta da Marinha, en Cascais, es la zona donde medios portugueses sitúan una de las mansiones de Cristiano Ronaldo. Te cuento dónde queda, por qué es una de las áreas más exclusivas de Portugal y qué puedes conocer alrededor.',
