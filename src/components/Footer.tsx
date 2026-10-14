@@ -7,6 +7,7 @@ import Image from 'next/image';
  * planifica siguen degradadas (brain/08) y no se promocionan aquí.
  */
 const PLAN_LINKS = [
+  { href: '/portugal', label: 'Viajar por Portugal' },
   { href: '/que-ver-en-lisboa', label: 'Qué ver en Lisboa' },
   { href: '/transporte-lisboa', label: 'Transporte en Lisboa' },
   { href: '/donde-comer-en-lisboa', label: 'Dónde comer en Lisboa' },
