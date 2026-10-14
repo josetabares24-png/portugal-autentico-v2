@@ -5,7 +5,8 @@
  * recomendando las tres publicaciones más recientes aunque no compartan tema.
  */
 export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
-  'como-moverse-por-portugal': ['como-pagar-en-portugal', 'estacion-oriente-lisboa', 'lisboa-vs-porto'],
+  'portugal-en-7-dias': ['como-moverse-por-portugal', 'sintra-desde-lisboa', 'lisboa-vs-porto'],
+  'como-moverse-por-portugal': ['portugal-en-7-dias', 'como-pagar-en-portugal', 'estacion-oriente-lisboa'],
   'casa-cristiano-ronaldo-portugal-quinta-da-marinha': ['que-ver-cascais-desde-lisboa', 'como-moverse-por-portugal', 'como-pagar-en-portugal'],
   'palacio-da-pena-entradas': ['sintra-desde-lisboa', 'excursiones-desde-lisboa', 'tarjeta-navegante-lisboa'],
   'obidos-vila-natal': ['lisboa-en-navidad', 'excursiones-desde-lisboa', 'lisboa-con-ninos'],
