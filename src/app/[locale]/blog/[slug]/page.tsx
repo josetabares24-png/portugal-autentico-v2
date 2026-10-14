@@ -17,6 +17,75 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 import { articleHasNewsletter } from '@/lib/newsletter';
 
 const articles: Record<string, Article> = {
+  'casa-cristiano-ronaldo-portugal-quinta-da-marinha': {
+    titulo: 'La zona de Portugal donde Cristiano Ronaldo tiene una mansión: así es Quinta da Marinha',
+    descripcion: 'Quinta da Marinha, en Cascais, es la zona donde medios portugueses sitúan una de las mansiones de Cristiano Ronaldo. Te cuento dónde queda, por qué es una de las áreas más exclusivas de Portugal y qué puedes conocer alrededor.',
+    subtitulo: 'Cristiano Ronaldo es el gancho, pero lo interesante está alrededor: costa atlántica, campos de golf, naturaleza y una parte de Cascais que muchos visitantes ni siquiera ubican en el mapa.',
+    seoTitle: 'Casa de Cristiano Ronaldo en Portugal: Quinta da Marinha',
+    metaDescription: 'La mansión de Cristiano Ronaldo en Portugal está vinculada a Quinta da Marinha, Cascais. Dónde queda, cómo es la zona y qué puedes visitar cerca.',
+    imagen: '/images/actividades/cascais-centro-historico.webp',
+    imageAlt: 'Costa y centro de Cascais, municipio donde se encuentra Quinta da Marinha',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    fechaActualizacion: 'Actualizado en octubre de 2026',
+    dateModified: '2026-10-14',
+    minutos: 7,
+    resumen: [
+      'Medios portugueses sitúan la mansión de Cristiano Ronaldo en Quinta da Marinha, una zona de Cascais junto al Atlántico.',
+      'Quinta da Marinha no es una atracción dedicada a Ronaldo: es una zona residencial y turística con hoteles, golf y espacios junto a la costa.',
+      'Si vas desde Lisboa, tiene más sentido combinar la curiosidad con un día completo por Cascais y la costa que desplazarte únicamente por la casa.',
+    ],
+    links: [
+      { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa: qué ver y cómo organizar el día' },
+      { href: '/blog/playas-cerca-lisboa', label: 'Playas cerca de Lisboa: cuál elegir' },
+      { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
+    ],
+    fuentes: [
+      { label: 'A Bola: Ronaldo disfruta de la mansión de Cascais (14 julio 2026)', href: 'https://www.abola.pt/noticias/cristiano-ronaldo-descontrai-na-pista-de-bowling-da-mansao-de-cascais-2026071419552939962' },
+      { label: 'Idealista: mansión de Ronaldo en Cascais terminada (7 enero 2026)', href: 'https://www.idealista.pt/news/imobiliario/habitacao/2026/01/07/73335-mansao-de-ronaldo-em-cascais-esta-pronta-custou-mais-que-o-previsto' },
+      { label: 'Visit Cascais: Quinta da Marinha', href: 'https://www.visitcascais.com/pt/partners/kimpton-quinta-da-marinha' },
+      { label: 'Visit Cascais: Quinta da Marinha Golf Course', href: 'https://www.visitcascais.com/pt/partners/quinta-da-marinha-golf-course' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Cristiano Ronaldo podía tener una casa prácticamente en cualquier parte de Portugal. Una de las propiedades que más atención ha generado en los últimos años está en Cascais, concretamente en Quinta da Marinha. Y aunque el nombre del futbolista es lo que hace que mucha gente busque esta zona, a mí me parece más interesante entender por qué alguien con tantas opciones termina mirando hacia esta parte de la costa portuguesa.' },
+
+      { tipo: 'subtitulo', texto: '¿Dónde está la casa de Cristiano Ronaldo en Portugal?' },
+      { tipo: 'parrafo', texto: 'Medios portugueses como A Bola e Idealista sitúan la propiedad en Quinta da Marinha, dentro del municipio de Cascais. En enero de 2026 se informó de que las obras estaban terminadas después de varios años de construcción, y en julio A Bola publicó que Ronaldo y su familia estaban pasando unos días allí.' },
+      { tipo: 'parrafo', texto: 'No voy a publicar una dirección privada ni indicaciones para acercarse a una vivienda particular. Para un viajero, lo útil es saber dónde está Quinta da Marinha y qué tiene alrededor, porque esa parte sí se puede conocer sin convertir la visita en una búsqueda de la casa de nadie.' },
+
+      { tipo: 'subtitulo', texto: 'Qué es Quinta da Marinha' },
+      { tipo: 'parrafo', texto: 'Quinta da Marinha está en Cascais, en una franja verde cercana al Atlántico. La zona combina viviendas de alto nivel, hoteles, golf, clubes deportivos y naturaleza. Visit Cascais presenta el área precisamente alrededor de esa mezcla de océano, bosque, deporte y alojamiento de gama alta.' },
+      { tipo: 'parrafo', texto: 'No tiene el ambiente del centro histórico de Cascais. Aquí hay más espacio, menos calles comerciales y una sensación mucho más residencial. Si llegas esperando una plaza llena de cafés y fachadas portuguesas, esta no es esa parte de Cascais.' },
+
+      { tipo: 'subtitulo', texto: 'Por qué esta zona se asocia al lujo en Portugal' },
+      { tipo: 'parrafo', texto: 'Quinta da Marinha lleva años vinculada al mercado residencial de alta gama de Cascais. Hay campos de golf con vistas al Atlántico y a la Serra de Sintra, hoteles de cinco estrellas y urbanizaciones rodeadas de zonas verdes. Esa combinación de costa, privacidad relativa y proximidad a Lisboa ayuda a entender por qué la zona aparece con frecuencia cuando se habla de vivienda de lujo en Portugal.' },
+      { tipo: 'parrafo', texto: 'Sobre la casa de Ronaldo circulan cifras muy distintas. Idealista informó en enero de 2026 de un coste aproximado de 35 millones de euros y A Bola volvió a citar esa cifra en julio. Prefiero tratarla como una estimación publicada, no como un precio oficial confirmado por el propio futbolista.' },
+
+      { tipo: 'subtitulo', texto: '¿Se puede visitar Quinta da Marinha?' },
+      { tipo: 'parrafo', texto: 'Sí puedes pasar por la zona y utilizar negocios, hoteles o instalaciones abiertas al público, pero Quinta da Marinha no funciona como una atracción turística dedicada a Cristiano Ronaldo. No existe una visita oficial a su vivienda ni tendría sentido organizar el día alrededor de una propiedad privada.' },
+      { tipo: 'parrafo', texto: 'Si te genera curiosidad, úsala como una excusa para conocer otra cara de Cascais: la parte atlántica, los pinares, los campos de golf y la carretera que continúa hacia Guincho. Ahí el paseo empieza a tener mucho más sentido.' },
+
+      { tipo: 'subtitulo', texto: 'Qué ver cerca de Quinta da Marinha' },
+      { tipo: 'lista', items: [
+        'Centro de Cascais: para caminar, comer y ver la parte más urbana e histórica de la visita.',
+        'Boca do Inferno: uno de los puntos costeros más conocidos de Cascais y una parada lógica antes de continuar hacia el oeste.',
+        'Praia do Guincho: una playa abierta al Atlántico, muy distinta de las pequeñas playas del centro de Cascais.',
+        'Parque Natural de Sintra-Cascais: el paisaje alrededor explica mejor esta zona que cualquier recorrido buscando mansiones.',
+        'La costa entre Cascais y Guincho: si el tiempo acompaña, es la parte del día que yo priorizaría.',
+      ] },
+      { tipo: 'enlace', texto: 'Si quieres convertir esta curiosidad en un día que realmente merezca la pena, aquí tienes cómo organizar Cascais desde Lisboa.', href: '/blog/que-ver-cascais-desde-lisboa', label: 'Ver mi guía de Cascais desde Lisboa' },
+
+      { tipo: 'subtitulo', texto: 'Cómo llegar desde Lisboa' },
+      { tipo: 'parrafo', texto: 'Para una visita turística normal, lo más sencillo es llegar primero a Cascais en tren desde Cais do Sodré y organizar desde allí el resto del día. Quinta da Marinha queda fuera del centro y para continuar hacia esa zona o Guincho tendrás que combinar con transporte local, taxi, VTC, bicicleta o una ruta preparada de antemano.' },
+      { tipo: 'parrafo', texto: 'Yo no plantearía el viaje como “Lisboa → casa de Cristiano → Lisboa”. Haría Lisboa → Cascais → costa → Guincho, y Quinta da Marinha quedaría dentro de ese recorrido si de verdad te interesa conocer la zona.' },
+
+      { tipo: 'subtitulo', texto: '¿Merece la pena ir solo por Cristiano Ronaldo?' },
+      { tipo: 'parrafo', texto: 'Para mí, no. Si tu única razón para desplazarte hasta esta parte de Cascais es intentar ver una casa privada desde fuera, hay planes mucho mejores para ese tiempo. Pero si ya vas a Cascais o a Guincho, saber que esta es la zona elegida para una de las propiedades de Cristiano Ronaldo añade una curiosidad y ayuda a entender el perfil que ha adquirido esta parte de Portugal.' },
+      { tipo: 'parrafo', texto: 'Y justamente por eso quería contarlo: Portugal no es solo Lisboa, Oporto y monumentos. También hay lugares que la gente termina descubriendo porque una persona conocida los pone en el mapa. Quinta da Marinha es uno de esos casos.' },
+
+      { tipo: 'enlace', texto: 'Si estás ampliando el viaje más allá de Lisboa, puedes seguir por estas escapadas que sí están pensadas para encajar en una ruta real.', href: '/blog/excursiones-desde-lisboa', label: 'Ver excursiones desde Lisboa' },
+    ],
+  },
   'restaurantes-romanticos-lisboa': {
     titulo: 'Restaurantes románticos en Lisboa: 6 opciones según el tipo de cita',
     descripcion: 'Seis restaurantes para una cena especial en Lisboa, elegidos por ambiente, vistas o formato de la experiencia, con fuentes actuales y sin asumir que lo más caro es siempre lo más romántico.',
