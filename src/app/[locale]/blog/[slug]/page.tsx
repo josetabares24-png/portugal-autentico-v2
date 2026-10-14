@@ -17,6 +17,134 @@ import { blogFallbackImage, blogImageMap } from '@/lib/media';
 import { articleHasNewsletter } from '@/lib/newsletter';
 
 const articles: Record<string, Article> = {
+  'portugal-en-7-dias': {
+    titulo: 'Portugal en 7 días: una ruta realista por Lisboa, Sintra y Oporto',
+    descripcion: 'Itinerario de Portugal en 7 días para una primera visita: Lisboa, Sintra y Oporto con dos bases, un solo traslado grande y alternativas para Coimbra o el Duero.',
+    subtitulo: '7 días · 2 bases · 1 gran traslado. Lisboa → Sintra → Oporto, con margen para disfrutar el viaje en vez de pasar la semana haciendo y deshaciendo maletas.',
+    seoTitle: 'Portugal en 7 días: ruta por Lisboa, Sintra y Oporto',
+    metaDescription: 'Portugal en 7 días: ruta realista por Lisboa, Sintra y Oporto. Qué hacer cada día, dónde dormir, cómo moverte y qué quitar para no ir corriendo.',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
+    imageAlt: 'Palácio da Pena en Sintra, una de las paradas de la ruta de siete días por Portugal',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    fechaActualizacion: 'Actualizado en octubre de 2026',
+    dateModified: '2026-10-14',
+    minutos: 15,
+    resumen: [
+      'Para una primera semana, haría dos bases: Lisboa y Oporto. Sintra funciona como excursión desde Lisboa y evita una tercera mudanza.',
+      'La ruta más limpia es entrar por Lisboa y salir por Oporto, o al revés, para no perder el último día regresando al punto de partida.',
+      'Coimbra y el valle del Duero pueden entrar, pero no los metería a los dos a la fuerza si solo tienes siete días completos.',
+    ],
+    links: [
+      { href: '/portugal', label: 'Guía de Portugal: rutas y consejos' },
+      { href: '/blog/como-moverse-por-portugal', label: 'Cómo moverse por Portugal' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
+      { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente: trenes y conexiones' },
+      { href: '/blog/lisboa-vs-porto', label: 'Lisboa vs Oporto' },
+    ],
+    fuentes: [
+      { label: 'Visit Portugal: cómo llegar y moverse por Portugal', href: 'https://www.visitportugal.com/es/sobre-portugal/como-chegar' },
+      { label: 'CP: Bilhete Promo en Alfa Pendular e Intercidades', href: 'https://www.cp.pt/info/w/bilhete-promo' },
+      { label: 'CP: Alfa Pendular', href: 'https://www.cp.pt/info/alfa-pendular' },
+      { label: 'Parques de Sintra: billetes del Palácio da Pena', href: 'https://www.parquesdesintra.pt/pt/planear-a-visita/bilhetes-palacio-da-pena/' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'Si tienes siete días para conocer Portugal por primera vez, el error más fácil es mirar el mapa y pensar que cabe todo. Lisboa, Sintra, Óbidos, Coimbra, Oporto, Braga, Guimarães y el Duero aparecen relativamente cerca, pero una semana así termina siendo una colección de estaciones, check-ins y maletas.' },
+      { tipo: 'parrafo', texto: 'Yo haría algo más simple: Lisboa como primera base, Sintra como excursión y Oporto como segunda base. Con eso conoces dos ciudades muy distintas, haces una de las excursiones más importantes del país y solo necesitas un traslado largo entre hoteles.' },
+
+      { tipo: 'subtitulo', texto: 'Portugal en 7 días: la ruta que recomiendo' },
+      { tipo: 'tabla', texto: 'Ruta de una semana por Portugal', columnas: ['Día', 'Base', 'Plan', 'Movimiento'], filas: [
+        ['1', 'Lisboa', 'Llegada + Baixa, Chiado y primer mirador', 'A pie + Metro si hace falta'],
+        ['2', 'Lisboa', 'Alfama, Castelo y Graça', 'Principalmente a pie'],
+        ['3', 'Lisboa', 'Belém + ribera + tarde libre', 'Tranvía, tren o bus según la zona'],
+        ['4', 'Lisboa', 'Sintra: Pena + centro + una segunda visita bien elegida', 'Tren urbano desde Lisboa'],
+        ['5', 'Oporto', 'Tren Lisboa → Oporto + Ribeira al llegar', 'Alfa Pendular o Intercidades'],
+        ['6', 'Oporto', 'Centro, Clérigos, Bolhão, São Bento y Gaia', 'A pie + Metro si hace falta'],
+        ['7', 'Oporto', 'Oporto con calma o Duero si tu vuelo sale tarde/al día siguiente', 'Según el plan elegido'],
+      ] },
+      { tipo: 'nota', texto: 'Esta ruta supone siete días de viaje y seis noches. Si tus vuelos te dejan solo cinco días útiles, elimina antes una excursión que recortar Lisboa y Oporto hasta convertirlas en escalas.' },
+
+      { tipo: 'subtitulo', texto: 'La mejor jugada: entrar por Lisboa y salir por Oporto' },
+      { tipo: 'parrafo', texto: 'Si el precio del vuelo lo permite, buscaría un billete multidestino: llegada a Lisboa y regreso desde Oporto, o al revés. Así el trayecto entre ambas ciudades forma parte natural del viaje y no tienes que gastar medio día regresando al aeropuerto inicial.' },
+      { tipo: 'parrafo', texto: 'Si tus vuelos son ida y vuelta por Lisboa, la ruta sigue funcionando, pero dejaría margen suficiente el último día para volver desde Oporto. No compraría un tren que llegue a Lisboa pegado a la salida del vuelo: una incidencia ferroviaria puede convertir el ahorro en un problema.' },
+
+      { tipo: 'subtitulo', texto: 'Día 1: llegar a Lisboa sin querer verlo todo' },
+      { tipo: 'parrafo', texto: 'El primer día lo usaría para orientarte. Si llegas antes de media tarde, Baixa, Chiado y uno de los miradores te dan una primera lectura de la ciudad sin obligarte a cruzarla varias veces. Si llegas tarde, cena cerca del alojamiento y guarda energía.' },
+      { tipo: 'parrafo', texto: 'Lisboa tiene desnivel y adoquines; eso cambia mucho la sensación de las distancias. El primer día no es el momento de encadenar Belém, Alfama y Bairro Alto solo porque Google Maps diga que todo está relativamente cerca.' },
+      { tipo: 'enlace', texto: 'Si todavía no sabes qué transporte usar según la zona, aquí está la guía que compara Metro, tranvía, bus y tren.', href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa en 2026' },
+
+      { tipo: 'subtitulo', texto: 'Día 2: Alfama, Castelo y Graça' },
+      { tipo: 'parrafo', texto: 'Dedicaría el segundo día a la parte histórica y más inclinada de Lisboa. Alfama funciona mucho mejor cuando la recorres con tiempo que cuando intentas tachar cinco miradores seguidos. Empieza abajo o arriba según dónde duermas y construye el recorrido para no subir la misma cuesta dos veces.' },
+      { tipo: 'lista', items: [
+        'Alfama y sus calles interiores.',
+        'Sé de Lisboa y entorno de Portas do Sol.',
+        'Castelo de São Jorge si te interesa entrar; si no, aprovecha ese tiempo en el barrio.',
+        'Graça y un mirador para terminar la tarde.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Día 3: Belém y una tarde menos programada' },
+      { tipo: 'parrafo', texto: 'Belém merece un bloque propio porque está apartado del casco histórico. Jerónimos, la ribera, Torre de Belém y los pasteles pueden ocupar buena parte del día si entras a monumentos y hay colas.' },
+      { tipo: 'parrafo', texto: 'No llenaría además la noche de reservas. Una tarde con margen para volver al centro, sentarte a comer o repetir una zona que te gustó es precisamente lo que evita que el viaje se sienta como un itinerario escolar.' },
+
+      { tipo: 'subtitulo', texto: 'Día 4: Sintra sin intentar visitar cuatro palacios' },
+      { tipo: 'parrafo', texto: 'Sintra es la excursión que sí mantendría en una primera semana. Puedes llegar en tren desde Lisboa y dormir otra vez en la misma habitación, así que ganas un destino importante sin añadir equipaje ni otro check-in.' },
+      { tipo: 'parrafo', texto: 'La hora del Palácio da Pena condiciona el día. Parques de Sintra trabaja con entrada fechada y con hora para el interior del palacio, así que organizaría la excursión alrededor de esa reserva. Después elegiría solo una segunda visita fuerte o el centro histórico.' },
+      { tipo: 'tip', texto: 'Pena + Quinta da Regaleira ya pueden llenar un día. Añadir además Castelo dos Mouros, Palácio Nacional y Cabo da Roca porque “están cerca” es exactamente el tipo de plan que evitaría.' },
+      { tipo: 'enlace', texto: 'Tengo una guía aparte con el tren, la reserva de Pena y cómo ordenar el día para no correr.', href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa: cómo organizar un día' },
+
+      { tipo: 'subtitulo', texto: 'Día 5: Lisboa a Oporto en tren' },
+      { tipo: 'parrafo', texto: 'Aquí haría el único traslado grande entre alojamientos. CP opera Alfa Pendular e Intercidades entre los grandes ejes del país, y para una ruta Lisboa–Oporto el tren evita alquilar coche, conducir varias horas y buscar aparcamiento en dos ciudades donde no lo necesitas para visitar el centro.' },
+      { tipo: 'parrafo', texto: 'Comprueba siempre la estación exacta. En Lisboa pueden aparecer Oriente y Santa Apolónia según el servicio; en el área de Oporto, Campanhã es la gran estación ferroviaria y desde allí continúas hacia el centro según tu alojamiento.' },
+      { tipo: 'parrafo', texto: 'CP mantiene Bilhetes Promo para Alfa Pendular e Intercidades con compra anticipada. En octubre de 2026 la oferta regular anuncia descuentos de hasta el 65 % para plazas promocionales compradas con al menos cinco días de antelación, sujetas a disponibilidad. No construiría el presupuesto suponiendo que ese descuento estará disponible en tu tren.' },
+      { tipo: 'enlace', texto: 'Si quieres comparar tren, bus y coche antes de decidir, esta guía explica cuándo elegir cada opción en Portugal.', href: '/blog/como-moverse-por-portugal', label: 'Cómo moverse por Portugal en 2026' },
+
+      { tipo: 'subtitulo', texto: '¿Parar en Coimbra el día 5?' },
+      { tipo: 'parrafo', texto: 'Se puede, pero no lo convertiría en obligación. Coimbra está en el eje entre Lisboa y Oporto y es una ciudad con suficiente peso para merecer una visita. El problema no es la distancia: es que una parada intermedia añade gestión de equipaje, tiempos de conexión y otra jornada estructurada alrededor del reloj.' },
+      { tipo: 'parrafo', texto: 'Si Coimbra te interesa especialmente, sí la incluiría y aceptaría que el día 5 sea de traslado y ciudad. Si lo que quieres es una primera semana equilibrada, iría directo a Oporto y guardaría Coimbra para una ruta de 10 días.' },
+
+      { tipo: 'subtitulo', texto: 'Día 6: Oporto sin cruzar el Duero cinco veces' },
+      { tipo: 'parrafo', texto: 'Oporto invita a caminar, pero también tiene desnivel. Organizaría el día por zonas: Bolhão y Santa Catarina, São Bento y Clérigos, bajada hacia Ribeira y, cuando tenga sentido, cruzar a Gaia. El objetivo es evitar subir y bajar entre los mismos puntos únicamente porque una lista de imprescindibles los ordenó así.' },
+      { tipo: 'parrafo', texto: 'No necesitas llenar cada hora con bodegas. Si quieres visitar una, reserva una que de verdad te interese y deja tiempo para caminar por la ribera. Oporto funciona mejor con espacio entre visitas.' },
+
+      { tipo: 'subtitulo', texto: 'Día 7: Oporto tranquilo o valle del Duero' },
+      { tipo: 'parrafo', texto: 'Aquí depende de tu vuelo y de lo que te motive. Si sales ese mismo día, me quedaría en Oporto. Si duermes una noche más o vuelas muy tarde, puedes valorar una salida hacia el Duero, pero sabiendo que ya convierte el último día en otra excursión con horarios.' },
+      { tipo: 'parrafo', texto: 'Muchos itinerarios de siete días presentan el Duero como obligatorio. Yo no. Si te interesa especialmente el vino y el paisaje, mételo. Si tu prioridad son las ciudades y viajar sin correr, quédate en Oporto y úsalo como motivo para volver.' },
+
+      { tipo: 'subtitulo', texto: 'La alternativa si tus vuelos son ida y vuelta por Lisboa' },
+      { tipo: 'tabla', texto: 'Versión circular de la ruta', columnas: ['Día', 'Plan'], filas: [
+        ['1–3', 'Lisboa'],
+        ['4', 'Sintra y regreso a Lisboa'],
+        ['5', 'Tren temprano a Oporto'],
+        ['6', 'Oporto'],
+        ['7', 'Regreso a Lisboa con margen amplio antes del vuelo o noche final en Lisboa'],
+      ] },
+      { tipo: 'parrafo', texto: 'Pierdes algo de tiempo frente al billete multidestino, pero sigue siendo mucho más limpio que añadir Coimbra, Braga y Óbidos solo para decir que los viste.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde dormir para perder menos tiempo' },
+      { tipo: 'lista', items: [
+        'Lisboa: prioriza una zona conectada a Metro o a un eje útil para tu ruta, no solo el precio del hotel.',
+        'Oporto: si vas a caminar el centro, no necesitas dormir junto a Campanhã; mira cómo llegarás desde la estación y al aeropuerto.',
+        'Sintra: en esta propuesta no cambiaría de hotel; vuelves a Lisboa el mismo día.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Cuánto reservar con antelación' },
+      { tipo: 'lista', items: [
+        'Palácio da Pena: reserva con hora si vas a entrar al interior.',
+        'Tren Lisboa–Oporto: compara horarios cuando tengas vuelos y hoteles definidos; los descuentos promocionales de CP dependen de antelación y plazas.',
+        'Alojamiento: cuanto más rígidas sean tus fechas, menos dejaría Lisboa y Oporto para última hora.',
+        'Bodega o experiencia concreta en Oporto: reserva solo lo que realmente quieras hacer; no llenes el viaje de horarios cerrados.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué no metería en esta semana' },
+      { tipo: 'parrafo', texto: 'No intentaría sumar Algarve, Braga, Guimarães, Óbidos, Nazaré y Évora a esta misma ruta. Todos pueden merecer el viaje; el problema es el tiempo. Portugal no se disfruta mejor por haber dormido cada noche en un sitio distinto.' },
+      { tipo: 'parrafo', texto: 'Si tienes diez días, el escenario cambia y ahí sí podemos abrir la ruta con Coimbra, Duero, Alentejo o una tercera base. Con siete, prefiero que recuerdes Lisboa y Oporto antes que recordar siete estaciones.' },
+
+      { tipo: 'subtitulo', texto: 'Mi recomendación final para una primera vez' },
+      { tipo: 'parrafo', texto: 'Entraría por Lisboa, dormiría cuatro noches allí contando la excursión a Sintra, viajaría a Oporto el quinto día y pasaría las dos últimas noches en Oporto. Si puedo salir del país desde Oporto, mejor. Esa es la versión que menos energía desperdicia y la que deja margen para que el viaje se sienta como un viaje, no como una lista.' },
+      { tipo: 'enlace', texto: 'Desde la portada de Portugal puedes seguir con transporte, pagos y escapadas según vayas cerrando la ruta.', href: '/portugal', label: 'Volver a la guía de Portugal' },
+    ],
+  },
   'como-moverse-por-portugal': {
     titulo: 'Cómo moverse por Portugal en 2026: tren, bus o coche',
     descripcion: 'Cómo moverte por Portugal en 2026: trenes CP, autobuses, coche, peajes y qué opción elegir para Lisboa, Oporto, Coimbra, Algarve y otras rutas.',
@@ -36,6 +164,7 @@ const articles: Record<string, Article> = {
       'El coche empieza a compensar cuando la ruta tiene varias paradas, zonas rurales, playas o pueblos fuera de los grandes ejes.',
     ],
     links: [
+      { href: '/blog/portugal-en-7-dias', label: 'Portugal en 7 días: ruta completa' },
       { href: '/portugal', label: 'Guía de Portugal: rutas y consejos' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/estacion-oriente-lisboa', label: 'Cómo usar la estación de Oriente' },

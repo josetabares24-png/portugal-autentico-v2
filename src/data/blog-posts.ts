@@ -12,6 +12,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'portugal-en-7-dias',
+    titulo: 'Portugal en 7 días: una ruta realista por Lisboa, Sintra y Oporto',
+    excerpt: 'Una semana en Portugal sin convertir el viaje en una carrera: Lisboa, Sintra y Oporto con un solo traslado grande, trenes, noches recomendadas y alternativas.',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    dateModified: '2026-10-14',
+    autor: 'José Tabares',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
+  },
+  {
     id: 'como-moverse-por-portugal',
     titulo: 'Cómo moverse por Portugal en 2026: tren, bus o coche',
     excerpt: 'Qué transporte conviene según el trayecto: trenes CP, autobuses, coche, peajes y decisiones prácticas para Lisboa, Oporto, Coimbra, Algarve y otras rutas.',

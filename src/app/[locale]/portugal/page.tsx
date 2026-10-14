@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, BusFront, CreditCard, MapPinned, TrainFront } from 'lucide-react';
+import { ArrowUpRight, BusFront, CalendarDays, CreditCard, MapPinned, TrainFront } from 'lucide-react';
 
 const PAGE_URL = 'https://estabaenlisboa.com/portugal';
 const TITLE = 'Viajar a Portugal 2026: rutas, transporte y consejos';
 const DESCRIPTION = 'Guías para viajar por Portugal desde Lisboa: transporte, pagos, escapadas, ciudades y rutas prácticas con información revisada y enlaces a fuentes oficiales.';
 
 const quickGuides = [
+  {
+    title: 'Portugal en 7 días',
+    text: 'Una ruta realista por Lisboa, Sintra y Oporto, sin convertir la semana en una carrera.',
+    href: '/blog/portugal-en-7-dias',
+    icon: CalendarDays,
+  },
   {
     title: 'Cómo moverse por Portugal',
     text: 'Trenes, autobuses, coche y qué elegir según el trayecto.',
@@ -98,6 +104,7 @@ export default function PortugalPage() {
       sameAs: 'https://www.wikidata.org/wiki/Q45',
     },
     hasPart: [
+      'https://estabaenlisboa.com/blog/portugal-en-7-dias',
       'https://estabaenlisboa.com/blog/como-moverse-por-portugal',
       'https://estabaenlisboa.com/blog/como-pagar-en-portugal',
       'https://estabaenlisboa.com/blog/sintra-desde-lisboa',
@@ -160,10 +167,10 @@ export default function PortugalPage() {
         <div className="mb-7 max-w-3xl">
           <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">Lo primero</p>
           <h2 id="por-donde-empezar" className="font-display text-[2.2rem] font-semibold leading-tight md:text-[3rem]">
-            Tres cosas que conviene resolver antes de montar la ruta.
+            Cuatro cosas que conviene resolver antes de montar la ruta.
           </h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {quickGuides.map((guide) => {
             const Icon = guide.icon;
             return (
