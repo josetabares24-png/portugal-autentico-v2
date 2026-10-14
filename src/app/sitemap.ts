@@ -42,6 +42,7 @@ function parseSpanishDate(date: string): Date | undefined {
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticUrls: MetadataRoute.Sitemap = [
     { url: baseUrl, changeFrequency: 'weekly', priority: 1 },
+    { url: `${baseUrl}/portugal`, lastModified: new Date('2026-10-14T00:00:00.000Z'), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/itinerarios`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${baseUrl}/que-ver-en-lisboa`, lastModified: new Date('2026-09-30T00:00:00.000Z'), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/donde-comer-en-lisboa`, lastModified: new Date('2026-09-30T00:00:00.000Z'), changeFrequency: 'monthly', priority: 0.9 },

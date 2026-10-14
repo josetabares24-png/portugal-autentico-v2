@@ -18,6 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/blog', label: 'Guías' },
+    { href: '/portugal', label: 'Portugal' },
     { href: '/free-tours-lisboa', label: 'Free tours' },
     { href: '/comprar-entradas', label: 'Entradas' },
   ];

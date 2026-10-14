@@ -12,6 +12,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'como-moverse-por-portugal',
+    titulo: 'Cómo moverse por Portugal en 2026: tren, bus o coche',
+    excerpt: 'Qué transporte conviene según el trayecto: trenes CP, autobuses, coche, peajes y decisiones prácticas para Lisboa, Oporto, Coimbra, Algarve y otras rutas.',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    dateModified: '2026-10-14',
+    autor: 'José Tabares',
+    imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
+  },
+  {
     id: 'casa-cristiano-ronaldo-portugal-quinta-da-marinha',
     titulo: 'La zona de Portugal donde Cristiano Ronaldo tiene una mansión: así es Quinta da Marinha',
     excerpt: 'Quinta da Marinha, en Cascais, es la zona donde medios portugueses sitúan una de las mansiones de Cristiano Ronaldo. Dónde queda, cómo es y qué puedes ver cerca.',
