@@ -29,7 +29,7 @@ HIPÓTESIS: el cambio de recogida contribuye a la divergencia que se amplía des
 
 DECISIÓN: mantener D-024 (aceptación explícita), limitar GA4 a `estabaenlisboa.com` y `www.estabaenlisboa.com`, bloquear carga y eventos en localhost/previews, y sincronizar rechazo/reaceptación con el flag oficial `ga-disable-G-8F54LQ5862` y `consent update`. La cola se prepara antes de cargar gtag.js y se configura una sola vez por documento; reaceptar no duplica la configuración ni su pageview inicial.
 
-No se cambia el ID de medición, se recolecta sin aceptación, se borra historia ni se activan filtros destructivos de GA4. La correspondencia administrativa entre el measurement ID y la propiedad todavía requiere confirmación en GA4 Admin; hostname/stream de las consultas son evidencia de actividad, no sustituyen esa comprobación.
+Se mantienen el ID de medición y la aceptación explícita. No se borra historia ni se activan filtros destructivos de GA4. La correspondencia administrativa entre el measurement ID y la propiedad todavía requiere confirmación en GA4 Admin; hostname/stream de las consultas son evidencia de actividad, no sustituyen esa comprobación.
 
 ## Impacto esperado / esfuerzo / riesgo
 
@@ -42,5 +42,9 @@ Regresión de hostnames permitidos, aceptación explícita, almacenamiento bloqu
 Validación local completada: TypeScript sin errores; seis regresiones de analítica pasan; lint de los tres módulos sin errores; build de producción completado; smoke de sitemap **52/52 comprobaciones** y **110 URLs** públicas correctas. Esto valida la corrección local, no certifica publicación ni procesamiento posterior de GA4.
 
 Después del despliegue confirmado, anotar fecha/SHA y evaluar 7–14 días sin comparar ingenuamente el total con la baseline contaminada. Verificar en GA4 la ausencia de hostnames de prueba posteriores a esa fecha y conservar Search Console como scoreboard de crecimiento. Esto no crea un seguimiento automático.
+
+## Publicación confirmada — 14/10/2026
+
+José autorizó expresamente el PR #109 y el head `b9eebf7f2e876c40e9b755bf144e80e02afca2b1`. El watcher confirmó MERGED para ese head; merge `50be9c2cd696753a20b784410018e7f86097b713`. El despliegue de producción `dpl_CjX1k6174H5AE1NedGKqXU4XwYwV` está READY y el dominio verificado pertenece al proyecto `portugal-autentico-v2`. El JavaScript obtenido desde `https://estabaenlisboa.com` contiene la restricción de hostnames, el flag oficial de exclusión y la actualización de consentimiento en ambos sentidos. Esto confirma la publicación; no certifica aún los datos procesados de los próximos días ni la correspondencia administrativa del measurement ID.
 
 Referencias: [[ANALYTICS-CONSENT-GATE-2026-09-23]], [[../02-METRICS]], [Google: privacidad de etiquetas](https://developers.google.com/tag-platform/security/guides/privacy), [Google: cambios de consentimiento](https://developers.google.com/tag-platform/security/guides/consent).
