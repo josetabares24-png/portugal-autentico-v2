@@ -1,5 +1,7 @@
 'use client';
 
+import { isProductionAnalyticsHost } from './analytics-runtime';
+
 export type AnalyticsParam = string | number | boolean | null | undefined;
 
 /**
@@ -18,6 +20,7 @@ export function trackEvent(
 ) {
   try {
     if (typeof window === 'undefined') return;
+    if (!isProductionAnalyticsHost(window.location.hostname)) return;
     if (window.disableAnalytics === true) return;
     if (typeof window.gtag !== 'function') return;
 
