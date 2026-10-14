@@ -1,10 +1,14 @@
 # Current state
 
-Updated: **2026-10-08**
+Updated: **2026-10-14**
 
-## GA4 correction prepared — 2026-10-14
+## Portugal editorial revision prepared — 2026-10-14
 
-The public GA4 property includes localhost and Vercel preview traffic. The finalized-window comparison shows Google clicks growing (52 → 109) while recorded Google organic sessions fall (75 → 45). Collection changed on 2026-09-23 at 15:26 Europe/Lisbon to require explicit consent; do not treat the GA4 drop as proof of an SEO decline. A correction on `codex/ga4-production-consent` restricts tracking to public hostnames and fixes revoke/reaccept behavior while preserving D-024. Publication is pending. Baseline, decision, limitations and validation: [[privacy/ANALYTICS-PRODUCTION-HOSTS-2026-10-14]].
+José requested removal of his Porto portrait and a developed, factual `/portugal` page. The proposed revision covers the seven tourist regions, route durations, transport and existing guides; public draft language and the portrait in visible/social images are removed. Real CC BY 4.0 photography has visible credits. The URL, canonical and indexing remain. Visual approval is pending under L-003: [[ux/PORTUGAL-EDITORIAL-2026-10-14]].
+
+## GA4 correction published — 2026-10-14
+
+The public GA4 property includes historical localhost and Vercel preview traffic. The finalized-window comparison shows Google clicks growing (52 → 109) while recorded Google organic sessions fall (75 → 45). Collection changed on 2026-09-23 at 15:26 Europe/Lisbon to require explicit consent; do not treat the GA4 drop as proof of an SEO decline. José approved PR #109 for head `b9eebf7`; it merged as `50be9c2cd696753a20b784410018e7f86097b713`. Vercel production `dpl_CjX1k6174H5AE1NedGKqXU4XwYwV` is READY; `estabaenlisboa.com` is verified on project `prj_oIbYIcpY2pf4SuS9GelrYEYBAtyP`, and public JavaScript serves the production hostname gate, official opt-out flag and two-way consent update. Baseline and limitations: [[privacy/ANALYTICS-PRODUCTION-HOSTS-2026-10-14]].
 
 ## Home PC candidate — 2026-10-07
 

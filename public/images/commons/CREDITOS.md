@@ -1,9 +1,18 @@
 # Créditos de las fotos de esta carpeta
 
 Fotos de Wikimedia Commons con licencia libre. No son de José Tabares ni de Estaba en Lisboa.
-Se han reducido a 1280 px de ancho y convertido a WebP; no se han modificado de otra forma.
-En la web, cada una lleva el crédito corto sobre la imagen y la atribución completa al pie de /comprar-entradas.
-Datos en `src/data/photo-credits.ts`. Descargadas y comprobadas el 9/10/2026.
+Se sirven versiones de 1280 px de ancho, en WebP o JPEG según se indica en cada ficha.
+En la web, cada una lleva el crédito corto junto a la imagen y la atribución completa en la página donde aparece.
+Datos en `src/data/photo-credits.ts`. Las seis primeras se descargaron y comprobaron el 9/10/2026; las incorporaciones posteriores llevan su fecha.
+
+## porto-douro-wikimedia.jpg — incorporada el 14/10/2026
+
+- Qué muestra: la Ribeira de Oporto y el puente de Dom Luís I, vistos desde Gaia. Inspección visual realizada.
+- Autor: Michael Gaylard.
+- Licencia: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+- Ficha original: https://commons.wikimedia.org/wiki/File:Panoramic_View_of_Porto%27s_Ribeira_District_and_Dom_Lu%C3%ADs_I_Bridge_(55245842707).jpg
+- Fuente descargada: versión JPEG de 1280 × 853 proporcionada por Wikimedia Commons; no se ha generado ni retocado. La página adapta el encuadre con CSS.
+- Se usa en `/portugal` y sus metadatos sociales. Atribución corta junto a la imagen y completa en el pie de esa página.
 
 ## castelo-mouros-wikimedia.webp
 

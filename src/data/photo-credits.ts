@@ -19,6 +19,13 @@ export interface PhotoCredit {
 }
 
 export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
+  '/images/commons/porto-douro-wikimedia.jpg': {
+    subject: 'La Ribeira de Oporto y el puente de Dom Luís I',
+    author: 'Michael Gaylard',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Panoramic_View_of_Porto%27s_Ribeira_District_and_Dom_Lu%C3%ADs_I_Bridge_(55245842707).jpg',
+  },
   '/images/commons/castelo-mouros-wikimedia.webp': {
     subject: 'Muralla del Castelo dos Mouros, Sintra',
     author: 'Diego Delso',
