@@ -130,31 +130,6 @@ export default function HomePage() {
         <TravelerDirectory />
       </section>
 
-      <section className="bg-cream pb-10 md:pb-14" aria-labelledby="portugal-desde-lisboa">
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10">
-          <Link
-            href="/portugal"
-            className="group flex flex-col gap-4 border-y border-night/15 py-6 md:flex-row md:items-center md:justify-between md:gap-8"
-          >
-            <div>
-              <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
-                Más allá de Lisboa
-              </p>
-              <h2 id="portugal-desde-lisboa" className="mt-2 font-display text-[1.9rem] font-semibold leading-tight text-night md:text-[2.35rem]">
-                ¿Vas a seguir viajando por Portugal?
-              </h2>
-              <p className="mt-2 max-w-2xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-                Transporte entre ciudades, pagos, escapadas y las nuevas guías para organizar el resto del país desde Lisboa.
-              </p>
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-2 font-body text-sm font-semibold text-night group-hover:text-terracotta">
-              Abrir Portugal
-              <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
-            </span>
-          </Link>
-        </div>
-      </section>
-
       <section aria-labelledby="articulos-sugeridos" className="bg-cream pb-16 pt-4 md:pb-20 md:pt-8">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10">
           <div className="mb-8 flex flex-col gap-5 border-b border-night/15 pb-6 sm:flex-row sm:items-end sm:justify-between md:mb-10">
