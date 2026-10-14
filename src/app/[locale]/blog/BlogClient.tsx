@@ -19,7 +19,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   const paginaActual = categoriaActiva === 'Todos' ? initialPage : paginaFiltrada;
 
   const categorias = useMemo(
-    () => ['Todos', 'Guías', 'Gastronomía', 'Consejos', 'Planificación', 'Transporte', 'Cultura'],
+    () => ['Todos', 'Portugal', 'Guías', 'Gastronomía', 'Consejos', 'Planificación', 'Transporte', 'Cultura'],
     []
   );
 
