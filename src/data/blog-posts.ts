@@ -12,6 +12,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'casa-cristiano-ronaldo-portugal-quinta-da-marinha',
+    titulo: 'La zona de Portugal donde Cristiano Ronaldo tiene una mansión: así es Quinta da Marinha',
+    excerpt: 'Quinta da Marinha, en Cascais, es la zona donde medios portugueses sitúan una de las mansiones de Cristiano Ronaldo. Dónde queda, cómo es y qué puedes ver cerca.',
+    categoria: 'Portugal',
+    fecha: '14 Oct 2026',
+    dateModified: '2026-10-14',
+    autor: 'José Tabares',
+    imagen: '/images/actividades/cascais-centro-historico.webp',
+  },
+  {
     id: 'obidos-vila-natal',
     titulo: 'Óbidos Vila Natal 2026: fechas, entradas y cómo ir desde Lisboa',
     excerpt: 'Del 27 de noviembre de 2026 al 3 de enero de 2027. Precios de 2025 como referencia, el autobús Rápida Verde desde Campo Grande y por qué este invierno no compensa el tren.',
