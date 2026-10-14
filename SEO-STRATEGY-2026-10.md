@@ -228,3 +228,16 @@ Cada 28 días:
 6. decidir máximo 3–5 intervenciones para el siguiente ciclo.
 
 Menos cambios, mejor medidos.
+
+
+## Expansión Portugal — ejecutada 14 Oct 2026
+
+Primera implementación del clúster nacional:
+- Nuevo hub indexable `/portugal`, enlazado desde navegación, home y footer.
+- Primera guía nacional: `/blog/como-moverse-por-portugal`.
+- Categoría `Portugal` visible en el blog.
+- Interlinking desde páginas con autoridad existente: pagos, movilidad de Lisboa, Oriente y Sintra.
+- El artículo de Cristiano Ronaldo / Quinta da Marinha pasa a actuar como satélite de descubrimiento del clúster Portugal.
+- `/portugal` entra en sitemap con prioridad 0.9; los artículos entran automáticamente desde `blogPosts`.
+
+Principio: ampliar la superficie temática sin cambiar el foco SEO principal de la home, que sigue siendo Lisboa. Portugal se construye como segundo clúster coherente y no como publicación masiva de temas inconexos.
