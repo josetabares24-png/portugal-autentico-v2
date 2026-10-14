@@ -134,6 +134,7 @@ const articles: Record<string, Article> = {
       'Si vas desde Lisboa, tiene más sentido combinar la curiosidad con un día completo por Cascais y la costa que desplazarte únicamente por la casa.',
     ],
     links: [
+      { href: '/portugal', label: 'Viajar por Portugal: rutas y consejos' },
       { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa: qué ver y cómo organizar el día' },
       { href: '/blog/playas-cerca-lisboa', label: 'Playas cerca de Lisboa: cuál elegir' },
       { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
@@ -266,6 +267,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 11,
     links: [
+      { href: '/portugal', label: 'Más guías para viajar por Portugal' },
       { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
       { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
@@ -1659,6 +1661,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 10,
     links: [
+      { href: '/blog/como-moverse-por-portugal', label: 'Trenes, buses y coche para recorrer Portugal' },
       { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/estacion-olaias-lisboa', label: 'Arte y arquitectura en la estación de Olaias' },
@@ -2365,6 +2368,8 @@ const articles: Record<string, Article> = {
       { label: 'Banco de Portugal — aceptación de tarjetas en comercios', href: 'https://clientebancario.bportugal.pt/pt-pt/aceitacao-de-cartoes' },
     ],
     links: [
+      { href: '/blog/como-moverse-por-portugal', label: 'Cómo moverse por Portugal' },
+      { href: '/portugal', label: 'Guía de Portugal' },
       { href: '/planifica-tu-viaje', label: 'Planifica tu viaje a Lisboa' },
       { href: '/itinerarios', label: 'Itinerarios gratuitos de Lisboa' },
       { href: '/actividades', label: 'Actividades en Lisboa' },
@@ -2660,6 +2665,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 12,
     links: [
+      { href: '/blog/como-moverse-por-portugal', label: 'Cómo moverse por Portugal entre ciudades' },
       { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Entender la tarjeta Navegante y las tarifas 2026' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
