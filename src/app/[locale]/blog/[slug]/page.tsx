@@ -5508,7 +5508,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const image = resolveBlogImage(slug, localImages[slug] || article.imagen);
   const publishedDate = toIsoDate(article.fecha);
-  const keywords = ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
+  const keywords = article.categoria === 'Portugal'
+    ? ['portugal', 'viajar a portugal', 'guia portugal', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')]
+    : ['lisboa', 'blog lisboa', article.categoria.toLowerCase(), slug.replace(/-/g, ' ')];
   /*
    * Un artículo que no está en `blogPosts` no aparece en el listado ni en el
    * sitemap ni se prerenderiza: es un borrador, aunque su URL responda. Se
