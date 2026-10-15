@@ -1,10 +1,16 @@
 # Current state
 
-Updated: **2026-10-08**
+## Actualización 15 octubre 2026 — mejoras del blog en preparación
 
-## GA4 correction prepared — 2026-10-14
+Petición de José: revisar artículos débiles en Search y mejorarlos. E-016 prepara aeropuerto al centro (96 impresiones / 0 clics / posición 24,11), Metro (1.023 / 3 / 8,77) y Time Out (608 / 4 / 8,80), con datos cerrados 14 sep–11 oct. Rutas/costes, mapa oficial y oferta de puestos, respectivamente; sin cambiar títulos/metas ni URLs. Baseline, criterios y fuentes: [[seo/BLOG-SEARCH-IMPROVEMENTS-2026-10-15]]. Aún sin despliegue; no contar ventana de evaluación desde el push.
 
-The public GA4 property includes localhost and Vercel preview traffic. The finalized-window comparison shows Google clicks growing (52 → 109) while recorded Google organic sessions fall (75 → 45). Collection changed on 2026-09-23 at 15:26 Europe/Lisbon to require explicit consent; do not treat the GA4 drop as proof of an SEO decline. A correction on `codex/ga4-production-consent` restricts tracking to public hostnames and fixes revoke/reaccept behavior while preserving D-024. Publication is pending. Baseline, decision, limitations and validation: [[privacy/ANALYTICS-PRODUCTION-HOSTS-2026-10-14]].
+La corrección GA4 de PR #109 ya se fusionó en `50be9c2` y se verificó en producción. La revisión visual de Portugal permanece separada en PR #110, pendiente de aprobación de José.
+
+Updated: **2026-10-15**
+
+## GA4 correction published — 2026-10-14
+
+The GA4 history includes localhost and Vercel preview traffic. The finalized-window comparison shows Google clicks growing (52 → 109) while recorded Google organic sessions fall (75 → 45). Collection changed on 2026-09-23 at 15:26 Europe/Lisbon to require explicit consent; do not treat the GA4 drop as proof of an SEO decline. The correction from `codex/ga4-production-consent` restricts tracking to public hostnames and fixes revoke/reaccept behavior while preserving D-024. PR #109 was approved by José, merged as `50be9c2`, and verified on the production deployment `dpl_CjX1k6174H5AE1NedGKqXU4XwYwV` (READY). Baseline, decision, limitations and validation: [[privacy/ANALYTICS-PRODUCTION-HOSTS-2026-10-14]].
 
 ## Home PC candidate — 2026-10-07
 

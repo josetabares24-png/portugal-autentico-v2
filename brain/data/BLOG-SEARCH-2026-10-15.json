@@ -1,0 +1,1143 @@
+{
+  "source": "Google Search Console via Windsor.ai",
+  "account": "sc-domain:estabaenlisboa.com",
+  "captured": "2026-10-15",
+  "include_fresh_data": false,
+  "windows": {
+    "current": [
+      "2026-09-14",
+      "2026-10-11"
+    ],
+    "previous": [
+      "2026-08-17",
+      "2026-09-13"
+    ]
+  },
+  "dailyPageRows": 1554,
+  "queryPull": {
+    "window": [
+      "2026-09-14",
+      "2026-10-11"
+    ],
+    "requestedSlugs": [
+      "aeropuerto-lisboa-al-centro",
+      "como-pagar-en-portugal",
+      "time-out-market-lisboa",
+      "tram-28-historia-guia",
+      "donde-tomar-cafe-lisboa",
+      "metro-lisboa-guia",
+      "arquitectura-manuelina-lisboa"
+    ],
+    "returnedRows": 174,
+    "note": "Visible query rows are incomplete and do not reconcile to page totals. No rows is not proof of no searches."
+  },
+  "aggregation": "Sum clicks/impressions; CTR=100*clicks/impressions; average position weighted by impressions, rounded to 2 decimals.",
+  "pages": [
+    {
+      "slug": "tarjeta-navegante-lisboa",
+      "current": {
+        "clicks": 30,
+        "impressions": 1453,
+        "ctr": 2.06,
+        "position": 6.46
+      }
+    },
+    {
+      "slug": "metro-lisboa-guia",
+      "current": {
+        "clicks": 3,
+        "impressions": 1023,
+        "ctr": 0.29,
+        "position": 8.77
+      }
+    },
+    {
+      "slug": "estacion-oriente-lisboa",
+      "previous": {
+        "clicks": 3,
+        "impressions": 302,
+        "ctr": 0.99,
+        "position": 9.71
+      },
+      "current": {
+        "clicks": 8,
+        "impressions": 662,
+        "ctr": 1.21,
+        "position": 9.22
+      }
+    },
+    {
+      "slug": "como-pagar-en-portugal",
+      "previous": {
+        "clicks": 7,
+        "impressions": 896,
+        "ctr": 0.78,
+        "position": 6.81
+      },
+      "current": {
+        "clicks": 5,
+        "impressions": 609,
+        "ctr": 0.82,
+        "position": 7.41
+      }
+    },
+    {
+      "slug": "time-out-market-lisboa",
+      "previous": {
+        "clicks": 4,
+        "impressions": 300,
+        "ctr": 1.33,
+        "position": 8.9
+      },
+      "current": {
+        "clicks": 4,
+        "impressions": 608,
+        "ctr": 0.66,
+        "position": 8.8
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa",
+      "previous": {
+        "clicks": 3,
+        "impressions": 1028,
+        "ctr": 0.29,
+        "position": 9.55
+      },
+      "current": {
+        "clicks": 5,
+        "impressions": 521,
+        "ctr": 0.96,
+        "position": 8.67
+      }
+    },
+    {
+      "slug": "volta-portugal-devolucion-envases",
+      "current": {
+        "clicks": 17,
+        "impressions": 421,
+        "ctr": 4.04,
+        "position": 3.88
+      }
+    },
+    {
+      "slug": "donde-tomar-cafe-lisboa",
+      "previous": {
+        "clicks": 2,
+        "impressions": 156,
+        "ctr": 1.28,
+        "position": 11.36
+      },
+      "current": {
+        "clicks": 2,
+        "impressions": 284,
+        "ctr": 0.7,
+        "position": 10.86
+      }
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "current": {
+        "clicks": 2,
+        "impressions": 260,
+        "ctr": 0.77,
+        "position": 10.26
+      }
+    },
+    {
+      "slug": "tram-28-historia-guia",
+      "previous": {
+        "clicks": 0,
+        "impressions": 143,
+        "ctr": 0,
+        "position": 19.26
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 187,
+        "ctr": 0,
+        "position": 12.67
+      }
+    },
+    {
+      "slug": "mejores-apps-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 134,
+        "ctr": 0.75,
+        "position": 5.34
+      },
+      "current": {
+        "clicks": 3,
+        "impressions": 150,
+        "ctr": 2,
+        "position": 6.67
+      }
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 69,
+        "ctr": 0,
+        "position": 6.96
+      },
+      "current": {
+        "clicks": 3,
+        "impressions": 143,
+        "ctr": 2.1,
+        "position": 7.11
+      }
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "previous": {
+        "clicks": 1,
+        "impressions": 154,
+        "ctr": 0.65,
+        "position": 18.75
+      },
+      "current": {
+        "clicks": 2,
+        "impressions": 136,
+        "ctr": 1.47,
+        "position": 15.76
+      }
+    },
+    {
+      "slug": "mejores-mercados-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 65,
+        "ctr": 0,
+        "position": 15.68
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 125,
+        "ctr": 0,
+        "position": 14.09
+      }
+    },
+    {
+      "slug": "aeropuerto-lisboa-al-centro",
+      "previous": {
+        "clicks": 1,
+        "impressions": 234,
+        "ctr": 0.43,
+        "position": 15.32
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 96,
+        "ctr": 0,
+        "position": 24.11
+      }
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "current": {
+        "clicks": 1,
+        "impressions": 96,
+        "ctr": 1.04,
+        "position": 12.41
+      }
+    },
+    {
+      "slug": "patinetes-electricos-lisboa",
+      "current": {
+        "clicks": 6,
+        "impressions": 90,
+        "ctr": 6.67,
+        "position": 4.84
+      }
+    },
+    {
+      "slug": "donde-comer-barato-lisboa",
+      "previous": {
+        "clicks": 2,
+        "impressions": 241,
+        "ctr": 0.83,
+        "position": 19.6
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 76,
+        "ctr": 0,
+        "position": 27.01
+      }
+    },
+    {
+      "slug": "lisboa-en-5-dias",
+      "current": {
+        "clicks": 1,
+        "impressions": 75,
+        "ctr": 1.33,
+        "position": 11.89
+      }
+    },
+    {
+      "slug": "lisboa-card-vale-la-pena",
+      "previous": {
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0,
+        "position": 9.07
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 74,
+        "ctr": 1.35,
+        "position": 8.74
+      }
+    },
+    {
+      "slug": "fado-historia-origen",
+      "previous": {
+        "clicks": 1,
+        "impressions": 162,
+        "ctr": 0.62,
+        "position": 10.72
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 65,
+        "ctr": 0,
+        "position": 7.45
+      }
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "current": {
+        "clicks": 2,
+        "impressions": 60,
+        "ctr": 3.33,
+        "position": 8.57
+      }
+    },
+    {
+      "slug": "presupuesto-viajar-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 137,
+        "ctr": 0,
+        "position": 16.74
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 59,
+        "ctr": 0,
+        "position": 8.86
+      }
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "previous": {
+        "clicks": 0,
+        "impressions": 31,
+        "ctr": 0,
+        "position": 17.06
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 56,
+        "ctr": 1.79,
+        "position": 15.39
+      }
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "previous": {
+        "clicks": 2,
+        "impressions": 518,
+        "ctr": 0.39,
+        "position": 9.09
+      },
+      "current": {
+        "clicks": 1,
+        "impressions": 55,
+        "ctr": 1.82,
+        "position": 7.96
+      }
+    },
+    {
+      "slug": "vida-nocturna-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 271,
+        "ctr": 0,
+        "position": 10.06
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 54,
+        "ctr": 0,
+        "position": 8.98
+      }
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 77,
+        "ctr": 1.3,
+        "position": 7.96
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 50,
+        "ctr": 0,
+        "position": 7.74
+      }
+    },
+    {
+      "slug": "lisboa-vs-porto",
+      "previous": {
+        "clicks": 0,
+        "impressions": 93,
+        "ctr": 0,
+        "position": 15.62
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 49,
+        "ctr": 0,
+        "position": 7.08
+      }
+    },
+    {
+      "slug": "mejores-miradores-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 45,
+        "ctr": 0,
+        "position": 25.89
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 47,
+        "ctr": 0,
+        "position": 23.45
+      }
+    },
+    {
+      "slug": "lisboa-en-7-dias",
+      "previous": {
+        "clicks": 3,
+        "impressions": 19,
+        "ctr": 15.79,
+        "position": 7
+      },
+      "current": {
+        "clicks": 3,
+        "impressions": 44,
+        "ctr": 6.82,
+        "position": 6.48
+      }
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "previous": {
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 27.38
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 43,
+        "ctr": 0,
+        "position": 7.6
+      }
+    },
+    {
+      "slug": "que-hacer-gratis-en-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 30,
+        "ctr": 3.33,
+        "position": 8.2
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0,
+        "position": 19.3
+      }
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 35,
+        "ctr": 2.86,
+        "position": 7.11
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 37,
+        "ctr": 0,
+        "position": 7.62
+      }
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "previous": {
+        "clicks": 0,
+        "impressions": 153,
+        "ctr": 0,
+        "position": 13.52
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 7.82
+      }
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "previous": {
+        "clicks": 1,
+        "impressions": 99,
+        "ctr": 1.01,
+        "position": 19.38
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 6.85
+      }
+    },
+    {
+      "slug": "lisboa-en-4-dias",
+      "current": {
+        "clicks": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "position": 56.09
+      }
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "current": {
+        "clicks": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "position": 7.65
+      }
+    },
+    {
+      "slug": "viajar-ninos-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 20,
+        "ctr": 0,
+        "position": 77.55
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 72.06
+      }
+    },
+    {
+      "slug": "que-comprar-lisboa-souvenirs",
+      "current": {
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 9.31
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#tarjetas-y-sistemas-de-pago",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 10.1
+      }
+    },
+    {
+      "slug": "tarjeta-lisboa-card-vale-pena",
+      "previous": {
+        "clicks": 1,
+        "impressions": 6,
+        "ctr": 16.67,
+        "position": 8.67
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 11.11
+      }
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "previous": {
+        "clicks": 0,
+        "impressions": 92,
+        "ctr": 0,
+        "position": 10.08
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 7.56
+      }
+    },
+    {
+      "slug": "que-hacer-en-lisboa-en-3-dias",
+      "previous": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 9.88
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 5.89
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#tranvias-icono-no-siempre-transporte-eficiente",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 10.33
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#metro-rapido-para-distancias-claras",
+      "previous": {
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 10.5
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "slug": "lisboa-cuando-llueve",
+      "current": {
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 25.56
+      }
+    },
+    {
+      "slug": "barrios-lisboa-donde-alojarse",
+      "previous": {
+        "clicks": 1,
+        "impressions": 18,
+        "ctr": 5.56,
+        "position": 32.78
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 9
+      }
+    },
+    {
+      "slug": "que-ver-cascais-desde-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 41,
+        "ctr": 0,
+        "position": 25.34
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 8.38
+      }
+    },
+    {
+      "slug": "donde-fotografiar-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 15,
+        "ctr": 6.67,
+        "position": 5
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 7.13
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#autobuses-menos-romanticos-muy-utiles",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 10.25
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#como-llegar-a-belem-sin-perder-media-manana",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 10.25
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#elevadores-y-funiculares",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 10.25
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#trenes-urbanos-belem-sintra-y-cascais",
+      "previous": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.71
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 10.29
+      }
+    },
+    {
+      "slug": "sintra-desde-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 78,
+        "ctr": 1.28,
+        "position": 24.36
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 7.5
+      }
+    },
+    {
+      "slug": "semana-santa-lisboa",
+      "previous": {
+        "clicks": 1,
+        "impressions": 23,
+        "ctr": 4.35,
+        "position": 17.3
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.6
+      }
+    },
+    {
+      "slug": "lisboa-con-ninos",
+      "previous": {
+        "clicks": 0,
+        "impressions": 35,
+        "ctr": 0,
+        "position": 13
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 8.2
+      }
+    },
+    {
+      "slug": "donde-tomar-cafe-lisboa#a-brasileira-si-te-interesa-la-historia-del-cafe-en-lisboa",
+      "current": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "slug": "donde-tomar-cafe-lisboa#que-pedir-bica-y-galao",
+      "current": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "slug": "donde-tomar-cafe-lisboa#y-si-solo-quieres-sentarte-en-una-cafeteria-portuguesa",
+      "current": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "slug": "mejor-epoca-visitar-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 18.5
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10.5
+      }
+    },
+    {
+      "slug": "errores-turistas-lisboa",
+      "previous": {
+        "clicks": 2,
+        "impressions": 18,
+        "ctr": 11.11,
+        "position": 10.72
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      }
+    },
+    {
+      "slug": "como-moverse-por-lisboa#caminar-necesario-pero-con-estrategia",
+      "previous": {
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 11
+      },
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      }
+    },
+    {
+      "slug": "descubridores-portugueses",
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      }
+    },
+    {
+      "slug": "oriente-estacion-estacao-lisboa-tren-autobus-metro-es.html",
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      }
+    },
+    {
+      "slug": "monasterio-jeronimos-entradas",
+      "current": {
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      }
+    },
+    {
+      "slug": "playas-cerca-lisboa",
+      "previous": {
+        "clicks": 0,
+        "impressions": 45,
+        "ctr": 0,
+        "position": 16.91
+      }
+    }
+  ],
+  "selectedQueries": [
+    {
+      "slug": "aeropuerto-lisboa-al-centro",
+      "visibleQueryRows": 18,
+      "topQueries": [
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir del aeropuerto de lisboa al centro",
+          "clicks": 0,
+          "impressions": 8,
+          "position": 31.875
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "transporte aeropuerto lisboa",
+          "clicks": 0,
+          "impressions": 7,
+          "position": 62.7143
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "aeropuerto de lisboa al centro",
+          "clicks": 0,
+          "impressions": 2,
+          "position": 35.5
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "aeropuerto lisboa a centro",
+          "clicks": 0,
+          "impressions": 2,
+          "position": 35.5
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "aeropuerto lisboa al centro",
+          "clicks": 0,
+          "impressions": 2,
+          "position": 21
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir del aeropuerto a lisboa",
+          "clicks": 0,
+          "impressions": 2,
+          "position": 44.5
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir del aeropuerto de lisboa al centro de la ciudad",
+          "clicks": 0,
+          "impressions": 2,
+          "position": 28
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir del aeropuerto al centro de lisboa",
+          "clicks": 0,
+          "impressions": 1,
+          "position": 53
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir del aeropuerto de lisboa a la ciudad",
+          "clicks": 0,
+          "impressions": 1,
+          "position": 56
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+          "query": "como ir desde el aeropuerto de lisboa al centro",
+          "clicks": 0,
+          "impressions": 1,
+          "position": 47
+        }
+      ]
+    },
+    {
+      "slug": "metro-lisboa-guia",
+      "visibleQueryRows": 70,
+      "topQueries": [
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "mapa metro lisboa 2026",
+          "clicks": 1,
+          "impressions": 62,
+          "position": 3.5484
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "plano metro lisboa 2026",
+          "clicks": 0,
+          "impressions": 61,
+          "position": 6.7049
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "horario metro lisboa",
+          "clicks": 0,
+          "impressions": 59,
+          "position": 8.8475
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "metro lisboa",
+          "clicks": 0,
+          "impressions": 40,
+          "position": 13.825
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "hasta que hora funciona el metro en lisboa",
+          "clicks": 0,
+          "impressions": 32,
+          "position": 8
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "metro lisboa horario",
+          "clicks": 0,
+          "impressions": 30,
+          "position": 8.4667
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "a que hora abre el metro de lisboa",
+          "clicks": 0,
+          "impressions": 12,
+          "position": 8.6667
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "a que hora cierra el metro de lisboa",
+          "clicks": 0,
+          "impressions": 11,
+          "position": 9.6364
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "como funciona el metro en lisboa",
+          "clicks": 0,
+          "impressions": 11,
+          "position": 9.3636
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+          "query": "horario metro de lisboa",
+          "clicks": 0,
+          "impressions": 9,
+          "position": 9.3333
+        }
+      ]
+    },
+    {
+      "slug": "time-out-market-lisboa",
+      "visibleQueryRows": 37,
+      "topQueries": [
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "time out market lisboa",
+          "clicks": 0,
+          "impressions": 133,
+          "position": 9.6992
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "mercado time out lisboa",
+          "clicks": 0,
+          "impressions": 39,
+          "position": 10.9231
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "menú de time out market lisboa",
+          "clicks": 0,
+          "impressions": 17,
+          "position": 8.1176
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "timeout market lisboa",
+          "clicks": 0,
+          "impressions": 7,
+          "position": 10.1429
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "time out lisboa",
+          "clicks": 0,
+          "impressions": 6,
+          "position": 13.5
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "comer bien y barato en lisboa",
+          "clicks": 0,
+          "impressions": 4,
+          "position": 4.5
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "mercado gastronomico lisboa",
+          "clicks": 0,
+          "impressions": 4,
+          "position": 10.25
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "time out market menú",
+          "clicks": 0,
+          "impressions": 4,
+          "position": 8
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "donde comer en lisboa no turístico",
+          "clicks": 0,
+          "impressions": 3,
+          "position": 9
+        },
+        {
+          "page": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+          "query": "mercado lisboa para comer",
+          "clicks": 0,
+          "impressions": 3,
+          "position": 13.3333
+        }
+      ]
+    }
+  ]
+}

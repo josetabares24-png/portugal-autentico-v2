@@ -29,6 +29,7 @@ This is the active learning register.
 | E-012 | Títulos/metas de 7 páginas + horario del Metro + botón free tours en Home | Títulos con la consulta principal delante y metas que dicen qué resuelve la página suben el CTR sin perder posición | CTR + clics por página y consulta | PLANNED (rama local, pendiente de decisión de José) | producción verificada + 28 días finalizados |
 | E-013 | 9 páginas con bloque de reserva nuevo + 4 botones subidos | Ofrecer la entrada exacta en las páginas con intención de compra que no la tenían, y subir el botón a las primeras pantallas, sube los clics de afiliado sin empeorar la lectura | affiliate_click por página | PLANNED (rama local `feat/reserva-20`, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
 | E-014 | Stay22: alojamiento por barrio en donde-alojarse + script LinkSwap | Un bloque de alojamiento por barrio en la guía de alojamiento genera reservas de hotel sin tocar las comisiones de GetYourGuide, Tiqets ni GuruWalk | clics `affiliate_click` partner stay22 + reservas en Stay22 Hub | PLANNED (rama local `feat/stay22`, pendiente de aprobación L-003 y de confirmar con Stay22 la exclusión de GetYourGuide) | producción verificada + 28 días finalizados |
+| E-016 | Blog: aeropuerto, Metro y Time Out Market | Responder rutas/coste, mapa oficial y menú/puestos dentro de las URLs existentes mejora el ajuste a consultas | clics + impresiones + CTR + posición + consultas por página | PREPARADO, sin desplegar | producción confirmada + 14/28 días finalizados; ampliar con bajo volumen |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -228,3 +229,7 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 ## E-015 — Guía de entradas del Castelo en la URL de su ficha, 2026-10-10
 
 **Status: LIVE desde 2026-10-10. Aprobado por José.** /actividades/castelo-sao-jorge pasa de ficha corta a guía completa de entradas (formato de Pena y Jerónimos) para atacar «castillo san jorge entradas» sin abrir una URL nueva. Medir en GSC a 28 días: impresiones, CTR y posición de la ficha frente a los 28 días anteriores, y clics al bloque `guia-castelo-sao-jorge-castelo-sao-jorge-arriba`. Detalle: [[seo/CASTELO-ENTRADAS-2026-10-10]].
+
+## E-016 — Respuestas a consultas del blog, 2026-10-15
+
+**Status: PREPARADO; no desplegado.** Tres páginas, conservando títulos/metas, URLs y diseño. Aeropuerto pierde visibilidad; Metro tiene demanda de mapa/horario y Time Out de menú. Se desarrollan esas respuestas con fuentes oficiales. Baseline cerrado 14 sep–11 oct frente a 17 ago–13 sep y límites de atribución: [[seo/BLOG-SEARCH-IMPROVEMENTS-2026-10-15]]. Datos: [[data/BLOG-SEARCH-2026-10-15.json]]. Iniciar observación solo al confirmar despliegue de producción. No evaluar E-003/E-012 como cambios aislados después de este lote; E-006/E-007 quedan intactos.
