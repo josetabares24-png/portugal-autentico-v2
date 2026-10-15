@@ -460,8 +460,8 @@ const articles: Record<string, Article> = {
     imageAlt: 'Transporte urbano en Lisboa, parte de la red utilizada para desplazarse por la ciudad',
     categoria: 'Transporte',
     fecha: '19 Jun 2026',
-    fechaActualizacion: 'Actualizado en septiembre de 2026',
-    dateModified: '2026-09-21',
+    fechaActualizacion: 'Actualizado el 15 de octubre de 2026',
+    dateModified: '2026-10-15',
     minutos: 8,
     links: [
       { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
@@ -474,27 +474,54 @@ const articles: Record<string, Article> = {
       { label: 'Aeropuerto de Lisboa: transporte público y taxis', href: 'https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/public-transportation' },
       { label: 'Metro de Lisboa: horarios y frecuencias', href: 'https://www.metrolisboa.pt/viajar/horarios-e-frequencias/' },
       { label: 'Metro de Lisboa: comprar billetes', href: 'https://www.metrolisboa.pt/comprar/' },
+      { label: 'Metro de Lisboa: mapa oficial de la red', href: 'https://www.metrolisboa.pt/viajar/mapas-e-diagramas/' },
+      { label: 'CARRIS: autobús nocturno 208, recorrido y horario', href: 'https://www.carris.pt/viaje/carreiras/208/' },
+      { label: 'Aeropuerto de Lisboa: conexión con la Terminal 2', href: 'https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/terminal-2' },
     ],
     contenido: [
-      { tipo: 'parrafo', texto: 'El aeropuerto de Lisboa está dentro de la ciudad y tiene estación de Metro, así que llegar al alojamiento suele ser sencillo. La mejor opción cambia según dónde duermas: no es lo mismo ir a Saldanha que a Alfama, Belém o una calle empinada de Graça.' },
+      { tipo: 'parrafo', texto: 'Para ir del aeropuerto de Lisboa al centro en Metro, toma la Línea Roja y cambia en Alameda a la Verde si vas a Rossio, Baixa-Chiado o Cais do Sodré. El viaje cuesta 1,90 € con billete Carris/Metro, más 0,50 € si necesitas una Navegante ocasional, o 1,92 € pagando con tarjeta bancaria contactless. Con varias maletas o fuera del horario del Metro, compara taxi y Uber/Bolt hasta la puerta del alojamiento.' },
+
+      { tipo: 'subtitulo', texto: 'Metro, taxi o Uber/Bolt: qué comparar antes de salir' },
+      { tipo: 'tabla', texto: 'Opciones desde el aeropuerto. Tarifas del Metro consultadas el 15 de octubre de 2026; los coches no tienen un precio único para todos los destinos.', columnas: ['Opción', 'Coste de referencia', 'Cuándo encaja'], filas: [
+        ['Metro', '1,90 € por persona + 0,50 € de tarjeta si no la tienes; contactless 1,92 €', 'Poco equipaje y alojamiento cerca de una estación. Revisa el transbordo y la caminata final.'],
+        ['Taxi oficial', 'Taxímetro y suplementos aplicables; pide recibo', 'Equipaje, niños o un destino alejado del Metro. Compara el coste del grupo.'],
+        ['Uber / Bolt', 'Importe que muestre la app para ese viaje', 'Trayecto puerta a puerta. Confirma la recogida en P2, nivel 2.'],
+      ] },
 
       { tipo: 'subtitulo', texto: 'Metro: la opción más fácil de calcular' },
       { tipo: 'parrafo', texto: 'La estación Aeroporto pertenece a la Línea Roja. El aeropuerto indica que el tramo Aeroporto–Saldanha ronda los 20 minutos. Para muchas zonas del centro histórico tendrás que hacer transbordo o completar el viaje a pie, así que “hay Metro al aeropuerto” no significa que todos los hoteles tengan una conexión directa.' },
       { tipo: 'parrafo', texto: 'En condiciones normales, el Metro funciona de 06:30 a 01:00. Si llegas cerca del cierre, comprueba el horario y no bases el traslado en una conexión que quizá ya no puedas completar.' },
+      { tipo: 'subtitulo', texto: 'Cómo llegar a Rossio, Baixa-Chiado, Cais do Sodré y Oriente' },
+      { tipo: 'lista', items: [
+        'Rossio: Línea Roja desde Aeroporto hasta Alameda; cambia a la Verde en dirección Cais do Sodré y baja en Rossio.',
+        'Baixa-Chiado: el mismo transbordo en Alameda a la Verde, en dirección Cais do Sodré, hasta Baixa-Chiado.',
+        'Cais do Sodré: Roja hasta Alameda y Verde hasta su terminal Cais do Sodré; allí puedes enlazar con el tren de Cascais.',
+        'Oriente: Línea Roja directa desde Aeroporto en dirección São Sebastião; no necesitas transbordo.',
+        'Saldanha: Línea Roja directa. Los 20 minutos que indica el aeropuerto se refieren a este tramo, no al traslado completo a cualquier hotel.',
+      ] },
+      { tipo: 'parrafo', texto: 'Para Alfama o Graça, calcula también la caminata con equipaje desde la estación hasta la dirección exacta: la pendiente puede pesar más que un transbordo. Belém queda fuera de la red de Metro; necesitarás otra conexión. Si eliges ir en tren desde Cais do Sodré, comprueba que el servicio pare en Belém y que tu billete cubra también CP.' },
       { tipo: 'enlace', texto: 'Aquí tienes las cuatro líneas, tarifas y conexiones explicadas con más detalle.', href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa 2026' },
 
       { tipo: 'subtitulo', texto: 'Qué tarjeta necesitas para el Metro' },
       { tipo: 'parrafo', texto: 'Para títulos recargables puedes usar la tarjeta Navegante ocasional. También existe pago contactless directamente en el Metro para trayectos individuales. Si vas a usar varios transportes durante el viaje, compara primero qué opción encaja mejor en vez de comprar un título por costumbre.' },
+      { tipo: 'parrafo', texto: 'Si solo necesitas este traslado, el billete Carris/Metro más una tarjeta nueva suma 2,40 € por persona. El transbordo entre líneas, sin salir de la zona de pago, forma parte del viaje. La tarjeta bancaria contactless cuesta 1,92 € para un viaje en Metro y no equivale a un pase para todos los transportes. Cada persona necesita su propio medio de validación; conserva el mismo para entrar y salir.' },
       { tipo: 'enlace', texto: 'La diferencia entre Navegante, zapping, 24 horas y contactless está aquí.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Autobús urbano: revisa el equipaje' },
       { tipo: 'parrafo', texto: 'El aeropuerto también tiene servicios de autobús. La información oficial advierte que en los buses urbanos el equipaje admitido está limitado a 50 × 40 × 20 cm. Si llevas una maleta grande, comprueba esa condición antes de plantearlo como alternativa al Metro.' },
+      { tipo: 'subtitulo', texto: 'Si aterrizas de noche, cuando el Metro ya ha cerrado' },
+      { tipo: 'parrafo', texto: 'La línea 208 de CARRIS pertenece a la red de madrugada y pasa por Aeroporto en su recorrido entre Oriente y Cais do Sodré. Puede servir con equipaje pequeño, pero tiene muchas paradas y el horario depende del día y del sentido. Consulta la parada Aeroporto hacia Cais do Sodré, no la hora de salida desde la cabecera de Oriente. Si no encaja con tu llegada o llevas una maleta grande, compara taxi y TVDE.' },
+      { tipo: 'enlace', texto: 'Revisa el sentido, la parada Aeroporto y los avisos para la fecha de tu llegada.', href: 'https://www.carris.pt/viaje/carreiras/208/', label: 'Consultar recorrido y horario oficial del 208' },
 
       { tipo: 'subtitulo', texto: 'Taxi: útil cuando el equipaje manda' },
       { tipo: 'parrafo', texto: 'Hay taxis oficiales en el aeropuerto. Usa la parada habilitada, comprueba que el taxímetro esté en funcionamiento y pide recibo. El propio aeropuerto recuerda que cualquier transporte contratado en el lugar debe hacerse por canales autorizados, no con personas que se acerquen dentro de la terminal ofreciendo el servicio.' },
 
       { tipo: 'subtitulo', texto: 'Uber y Bolt: dónde se recogen' },
       { tipo: 'parrafo', texto: 'El aeropuerto mantiene una zona específica de recogida para plataformas como Uber y Bolt en P2, nivel 2. Confirma la ubicación que muestre la aplicación cuando aterrices, porque las áreas operativas de un aeropuerto pueden cambiar.' },
+
+      { tipo: 'subtitulo', texto: 'Para la vuelta: comprueba si tu vuelo sale de la Terminal 2' },
+      { tipo: 'parrafo', texto: 'La Terminal 2 se utiliza para salidas. Si vuelves al aeropuerto en Metro y tu vuelo sale de allí, tendrás que enlazar desde la Terminal 1 con el shuttle gratuito. ANA publica una frecuencia de 12 minutos y unos 3 minutos de recorrido, entre las 03:30 y las 00:30 del día siguiente. Suma la espera y el cambio de terminal al margen que necesites para facturar y pasar seguridad; confirma tu terminal en el billete.' },
+      { tipo: 'nota', texto: 'Tarifas, red del Metro, línea 208 y conexión entre terminales comprobadas en sus fuentes oficiales el 15 de octubre de 2026. Revisa incidencias y horarios para el día del viaje.' },
 
       { tipo: 'subtitulo', texto: 'Qué elegir según tu situación' },
       { tipo: 'lista', items: [
@@ -699,8 +726,8 @@ const articles: Record<string, Article> = {
     imageAlt: 'Interior colorido de la estación de Metro de Olaias en Lisboa',
     categoria: 'Transporte',
     fecha: '21 Sep 2026',
-    fechaActualizacion: 'Actualizado el 8 de octubre de 2026',
-    dateModified: '2026-10-08',
+    fechaActualizacion: 'Actualizado el 15 de octubre de 2026',
+    dateModified: '2026-10-15',
     minutos: 9,
     links: [
       { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
@@ -715,7 +742,10 @@ const articles: Record<string, Article> = {
       { label: 'Metro de Lisboa: comprar billetes', href: 'https://www.metrolisboa.pt/comprar/' },
     ],
     contenido: [
-      { tipo: 'parrafo', texto: 'El Metro es la forma más sencilla de cruzar Lisboa cuando las zonas están bien conectadas. No sustituye caminar por Alfama, Graça o Belém, pero resuelve aeropuerto, Oriente, Saldanha, Marquês, Baixa-Chiado y otros desplazamientos largos con bastante previsibilidad.' },
+      { tipo: 'parrafo', texto: 'El Metro de Lisboa funciona normalmente de 06:30 a 01:00 todos los días. Tiene cuatro líneas y el billete Carris/Metro cuesta 1,90 € en 2026, más 0,50 € de tarjeta Navegante ocasional si no la tienes. Para orientarte, abre el mapa oficial y busca la estación, el sentido y el transbordo: el aeropuerto está en la Línea Roja; Rossio y Cais do Sodré, en la Verde.' },
+      { tipo: 'subtitulo', texto: 'Mapa del Metro de Lisboa: plano oficial actualizado' },
+      { tipo: 'enlace', texto: 'La web del Metro ofrece el diagrama de líneas, el mapa sobre la ciudad y el plano de accesibilidad. Desde allí puedes descargar el documento vigente.', href: 'https://www.metrolisboa.pt/viajar/mapas-e-diagramas/', label: 'Abrir el mapa oficial del Metro de Lisboa' },
+      { tipo: 'parrafo', texto: 'El diagrama sirve para elegir línea y transbordo; el mapa de la ciudad ayuda a comprobar qué estación queda cerca de tu alojamiento. Si viajas con silla de ruedas o carrito, consulta también el plano de accesibilidad y el estado de los ascensores antes de salir.' },
       { tipo: 'subtitulo', texto: '¿A qué hora abre y cierra el Metro de Lisboa?' },
       { tipo: 'parrafo', texto: 'En condiciones normales, el Metro abre a las 06:30 y funciona hasta la 01:00 todos los días, incluidos fines de semana y festivos. Puede haber prolongaciones especiales o alteraciones por obras y eventos, así que comprueba el estado de las líneas si tienes un trayecto importante.' },
       { tipo: 'lista', items: [
@@ -1713,8 +1743,8 @@ const articles: Record<string, Article> = {
     imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
     categoria: 'Gastronomía',
     fecha: '28 Ago 2026',
-    fechaActualizacion: 'Actualizado en septiembre de 2026',
-    dateModified: '2026-09-21',
+    fechaActualizacion: 'Actualizado el 15 de octubre de 2026',
+    dateModified: '2026-10-15',
     minutos: 10,
     links: [
       { href: '/blog/mejores-mercados-lisboa', label: 'Los mercados de Lisboa' },
@@ -1724,6 +1754,8 @@ const articles: Record<string, Article> = {
     ],
     fuentes: [
       { label: 'Time Out Market Lisboa - información oficial', href: 'https://www.timeout.com/time-out-market-lisboa' },
+      { label: 'Time Out Market Lisboa: directorio oficial de restaurantes', href: 'https://www.timeout.com/time-out-market-lisboa/restaurants' },
+      { label: 'Time Out Market Lisboa: reservas, pagos y preguntas frecuentes', href: 'https://www.timeout.com/time-out-market-lisboa/faqs' },
       { label: 'Câmara Municipal de Lisboa - Mercado da Ribeira', href: 'https://www.lisboa.pt/pontos-de-interesse/detalhe/mercado-da-ribeira' },
       { label: 'Comércio de Lisboa - ferias y mercados', href: 'https://comercio.lisboa.pt/feiras-e-mercados/' },
     ],
@@ -1747,12 +1779,23 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'Cada puesto gestiona su cola, su pago y su preparación. Pides en el mostrador y buscas sitio en las mesas comunes, que no se reservan según la información oficial. Si vais en grupo, elegid primero una zona de referencia y asumid que los platos pueden quedar listos a tiempos distintos.' },
 
       { tipo: 'subtitulo', texto: 'Menú y puestos: qué comida hay y cuánto puedes gastar' },
-      { tipo: 'parrafo', texto: 'La oferta cambia con los operadores, pero suele mezclar cocina portuguesa, pescado y marisco, carnes, bocados informales, propuestas internacionales, dulces y bebidas. Si tienes una necesidad alimentaria concreta, confírmala directamente en el puesto antes de pedir.' },
+      { tipo: 'parrafo', texto: 'El menú se elige por puesto: mira primero qué te apetece y después compara la carta de ese local. Estos son algunos ejemplos del directorio oficial consultado el 15 de octubre de 2026:' },
+      { tipo: 'lista', items: [
+        'Marisqueira Azul: pescado y marisco.',
+        'Duro de Matar: cocina mexicana, incluidos tacos y quesadillas.',
+        'Manteigaria Silva: tablas de quesos y embutidos. Es un negocio distinto de la pastelería Manteigaria.',
+        'Terra do Bacalhau: pastéis de bacalhau.',
+        'Manteigaria: pastéis de nata; Gelato Davvero: helados.',
+      ] },
+      { tipo: 'enlace', texto: 'Consulta los puestos que siguen en el mercado y abre la ficha del que te interese antes de ir.', href: 'https://www.timeout.com/time-out-market-lisboa/restaurants', label: 'Ver los restaurantes y la oferta oficial de Time Out Market' },
+      { tipo: 'parrafo', texto: 'Si tienes una alergia o necesitas una opción vegana o sin gluten, confírmala con el personal del puesto. La variedad del mercado no garantiza que todas las preparaciones sean adecuadas para ti.' },
       { tipo: 'parrafo', texto: 'No existe un precio único útil. Cada carta cambia y la cuenta depende de si añades bebida, acompañamiento o postre. Como criterio, el mercado suele competir por variedad, ubicación y facilidad para grupos, no por ser la opción más barata de Lisboa. Mira el importe completo antes de hacer cola.' },
+      { tipo: 'parrafo', texto: 'Para hacerte una cuenta antes de pedir, suma plato + bebida + acompañamiento o postre. Una tabla para compartir, unos tacos y un plato de marisco no son presupuestos equivalentes. Las fichas del directorio pueden conservar referencias antiguas: el precio que debes comprobar es el de la carta actual del puesto.' },
       { tipo: 'tip', texto: 'Da una vuelta completa antes de ponerte en una cola. El primer puesto visible recibe mucha atención por pura posición, y a pocos metros puede haber una opción que encaje mejor con lo que quieres comer.' },
       { tipo: 'enlace', texto: 'Si el presupuesto manda, compara esta experiencia con tascas, mercados de barrio y platos del día antes de decidir.', href: '/blog/donde-comer-barato-lisboa', label: 'Dónde comer barato en Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Cuándo ir y cómo llegar' },
+      { tipo: 'parrafo', texto: 'La web oficial publica apertura diaria de 10:00 a 00:00. Ese horario general no garantiza que cada puesto sirva toda su carta hasta medianoche. Las mesas comunes no se reservan, y las preguntas frecuentes del mercado indican pago con tarjeta de crédito o débito; lleva una y confirma las condiciones del puesto.' },
       { tipo: 'parrafo', texto: 'Las horas normales de comida y cena concentran más demanda, y los fines de semana se nota especialmente. No hace falta perseguir una hora exacta porque cambia según la temporada y los eventos, pero llegar un poco antes o después del pico habitual facilita encontrar mesa y reduce las colas.' },
       { tipo: 'parrafo', texto: 'El mercado está en la Avenida 24 de Julho, frente al intercambiador de Cais do Sodré, conectado por metro, tren, autobuses y barco. Desde Chiado también se puede bajar andando. Si vas a tomar el tren hacia Cascais o una conexión fluvial, encaja la comida antes o después del trayecto en lugar de cruzar la ciudad solo para entrar al mercado.' },
       { tipo: 'nota', texto: 'Los horarios, operadores y menús pueden cambiar. Consulta la web oficial y la información expuesta en el mercado antes de organizar el día alrededor de un puesto concreto.' },
