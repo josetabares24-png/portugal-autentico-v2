@@ -17,6 +17,9 @@
 
 import { spawn } from 'node:child_process';
 import net from 'node:net';
+import fs from 'node:fs';
+
+const policy = JSON.parse(fs.readFileSync(new URL('../src/data/seo-url-policy.json', import.meta.url), 'utf8'));
 
 const BRAND = 'Estaba en Lisboa';
 const DUPLICATE_PATTERN = `${BRAND} | ${BRAND}`;
@@ -106,6 +109,14 @@ function record(name, pass, detail) {
 
 async function checkPage(baseUrl, path) {
   const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+  const migration = policy.redirects.find((rule) => rule.source === path);
+  if (migration) {
+    const location = res.headers.get('location');
+    record(`${path}: redirect editorial autorizado`, res.status === 301 && location && new URL(location, baseUrl).pathname === migration.destination, `HTTP ${res.status} -> ${location}`);
+    const final = await fetch(`${baseUrl}${migration.destination}`, { redirect: 'manual' });
+    record(`${path}: destino final 200 con título`, final.status === 200 && Boolean(getTitle(await final.text())), `HTTP ${final.status}`);
+    return;
+  }
   if (res.status !== 200) {
     record(`${path}: HTTP 200`, false, `HTTP ${res.status}`);
     return;

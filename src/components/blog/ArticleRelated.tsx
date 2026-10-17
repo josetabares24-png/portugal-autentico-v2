@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import { resolveInternalHref } from '@/lib/seo-url-policy';
 
 type RelatedPost = {
   id: string;
@@ -24,7 +25,7 @@ export function ArticleRelated({ posts }: { posts: RelatedPost[] }) {
         {posts.map((post) => (
           <TrackedInternalLink
             key={post.id}
-            href={`/blog/${post.id}`}
+            href={resolveInternalHref(`/blog/${post.id}`)}
             contentType="article_related"
             contentId={post.id}
             className="group"

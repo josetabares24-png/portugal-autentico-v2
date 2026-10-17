@@ -136,7 +136,7 @@ export const transportGuide = {
       ],
       links: [
         { href: '/blog/tram-28-historia-guia', label: 'Tranvía 28: ruta, paradas y cómo evitar colas' },
-        { href: '/actividades/tranvia-28', label: 'Ficha del tranvía 28' },
+        { href: '/blog/tram-28-historia-guia', label: 'Ficha del tranvía 28' },
         { href: '/actividades/elevador-santa-justa', label: 'Elevador de Santa Justa: estado actual' },
       ],
     },
@@ -163,7 +163,7 @@ export const transportGuide = {
       links: [
         { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa: tren, autobús 434 y hora de la Pena' },
         { href: '/blog/que-ver-cascais-desde-lisboa', label: 'Cascais desde Lisboa: tren y qué ver' },
-        { href: '/actividades/sintra-dia-completo', label: 'Ficha de Sintra: Pena y Regaleira' },
+        { href: '/blog/sintra-desde-lisboa', label: 'Ficha de Sintra: Pena y Regaleira' },
         { href: '/actividades/cascais-cabo-da-roca', label: 'Ficha de Cascais y Cabo da Roca' },
         { href: '/actividades/cristo-rei', label: 'Ficha de Cristo Rei' },
       ],

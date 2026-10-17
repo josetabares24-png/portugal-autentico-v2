@@ -1,11 +1,15 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import { readFileSync } from 'node:fs';
+
+const seoPolicy = JSON.parse(readFileSync(new URL('./src/data/seo-url-policy.json', import.meta.url), 'utf8'));
+const migratedSources = new Set(seoPolicy.redirects.map(({ source }) => source));
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
-    return [
+    const historicalRedirects = [
       // `/pack-completo` duplicated the job of the editorial index and
       // itinerary hub, but had no Search Console visibility in the last
       // 12 months. Keep the old URL working while consolidating it into the
@@ -139,6 +143,22 @@ const nextConfig = {
       { source: '/ko', destination: '/', permanent: true },
       { source: '/en/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
       { source: '/ko/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
+    ];
+
+    // This phase's explicit contract supersedes matching historical rules.
+    // Match locale aliases here, before the language catch-all, to avoid chains.
+    const editorialRedirects = seoPolicy.redirects.flatMap(({ source, destination }) => [
+      { source, destination, statusCode: 301 },
+      { source: `/:locale(en|ko|es)${source}`, destination, statusCode: 301 },
+    ]);
+    return [
+      ...editorialRedirects,
+      ...historicalRedirects.filter(({ source }) => {
+        const unprefixed = source
+          .replace(/^\/:locale\(en\|ko\|es\)/, '')
+          .replace(/^\/(?:en|ko|es)(?=\/)/, '');
+        return !migratedSources.has(unprefixed);
+      }),
     ];
   },
   typescript: {

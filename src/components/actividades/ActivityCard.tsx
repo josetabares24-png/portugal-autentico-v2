@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Activity } from '@/data/activities';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
+import { resolveInternalHref } from '@/lib/seo-url-policy';
 import styles from './ActivityCard.module.css';
 
 function formatPrice(n: number) {
@@ -17,7 +18,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
 
   return (
     <Link
-      href={`/actividades/${activity.slug}`}
+      href={resolveInternalHref(`/actividades/${activity.slug}`)}
       className={`group flex h-full flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45 ${compactMobile ? styles.compact : ''}`}
     >
       <article className={`flex h-full flex-col ${styles.content}`}>

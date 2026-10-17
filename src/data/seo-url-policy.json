@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "redirects": [
+    { "source": "/transporte", "destination": "/blog/como-moverse-por-lisboa" },
+    { "source": "/transporte-lisboa", "destination": "/blog/como-moverse-por-lisboa" },
+    { "source": "/apps", "destination": "/blog/mejores-apps-lisboa" },
+    { "source": "/presupuesto", "destination": "/calculadora-presupuesto-lisboa" },
+    { "source": "/blog/tarjeta-lisboa-card-vale-pena", "destination": "/blog/lisboa-card-vale-la-pena" },
+    { "source": "/blog/barrios-lisboa-donde-alojarse", "destination": "/blog/donde-alojarse-en-lisboa" },
+    { "source": "/blog/viajar-ninos-lisboa", "destination": "/blog/lisboa-con-ninos" },
+    { "source": "/blog/como-ir-sintra-desde-lisboa", "destination": "/blog/sintra-desde-lisboa" },
+    { "source": "/blog/descubridores-portugueses", "destination": "/blog/descubrimientos-portugueses-lisboa" },
+    { "source": "/blog/que-hacer-en-lisboa-en-3-dias", "destination": "/itinerarios/lisboa-3-dias-premium" },
+    { "source": "/itinerarios/lisboa-fotografia", "destination": "/blog/donde-fotografiar-lisboa" },
+    { "source": "/itinerarios/lisboa-romantica", "destination": "/blog/lisboa-en-pareja" },
+    { "source": "/free-tour", "destination": "/free-tours-lisboa" },
+    { "source": "/actividades/tranvia-28", "destination": "/blog/tram-28-historia-guia" },
+    { "source": "/actividades/mosteiro-jeronimos", "destination": "/blog/monasterio-jeronimos-entradas" },
+    { "source": "/actividades/sintra-dia-completo", "destination": "/blog/sintra-desde-lisboa" }
+  ],
+  "noindexPaths": [
+    "/comprar-entradas",
+    "/planifica-tu-viaje",
+    "/faq",
+    "/aviso-legal",
+    "/politica-privacidad",
+    "/politica-cookies",
+    "/terminos-condiciones",
+    "/actividades"
+  ],
+  "deferredRedirects": [
+    { "source": "/blog/restaurantes-romanticos-lisboa", "destination": "/blog/lisboa-en-pareja", "reason": "WAIT: revisión editorial completa en Fase 7" },
+    { "source": "/blog/novedades-lisboa-2026", "destination": "/blog/festivales-eventos-lisboa-2026", "reason": "WAIT: revisión editorial completa en Fase 7" }
+  ]
+}

@@ -80,11 +80,9 @@ const puertoLibre = () =>
 async function levantarServidor() {
   const puerto = await puertoLibre();
   const esWindows = process.platform === 'win32';
-  const npx = esWindows ? 'npx.cmd' : 'npx';
-  const hijo = spawn(npx, ['next', 'start', '-p', String(puerto)], {
+  const hijo = spawn(process.execPath, [path.join(RAIZ, 'node_modules/next/dist/bin/next'), 'start', '-p', String(puerto)], {
     cwd: RAIZ,
     detached: !esWindows,
-    shell: esWindows,
     stdio: 'ignore',
     env: {
       ...process.env,
@@ -250,7 +248,7 @@ async function capturar(nombre) {
   console.log(`\nSnapshot guardado en .snapshots/${nombre}.json`);
   console.log(`  ${Object.keys(datos).length} artículos`);
   console.log(`  ${Object.values(datos).filter((v) => v.estado === 200).length} con HTTP 200`);
-  console.log(`  ${Object.values(datos).filter((v) => v.estado === 308).length} con redirección`);
+  console.log(`  ${Object.values(datos).filter((v) => v.estado >= 300 && v.estado < 400).length} con redirección`);
   if (conError.length) {
     console.log(`  ${conError.length} CON ERROR: ${conError.map(([k]) => k).join(', ')}`);
   }
