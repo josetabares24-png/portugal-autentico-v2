@@ -2,7 +2,7 @@
 
 ## 17 octubre 2026 — Fase 1 editorial en rama, revisión de Preview
 
-Las continuaciones de José autorizan Fase 1 con dos límites: fusiones de restaurantes románticos/novedades en WAIT hasta Fase 7 y checkout ya retirado sin reconstrucción. Candidato en `editorial-rebuild`, PR #112: 16 redirects 301, ocho noindex/follow, 98 URLs en sitemap y 17 fichas indexables conservadas. QA local pasa; Preview y SHA verificados se registran en el PR. No merge ni producción. STOP antes de Fase 2. Decisión, evidencia y límites: [[seo/EDITORIAL-REBUILD-PHASE-1-2026-10-17]].
+Las continuaciones de José autorizan Fase 1 con dos límites: fusiones de restaurantes románticos/novedades en WAIT hasta Fase 7 y checkout ya retirado sin reconstrucción. Candidato en `editorial-rebuild`, PR #112: 16 redirects 301, ocho noindex/follow, 98 URLs en sitemap y 17 fichas indexables conservadas. QA local y remoto pasan: Preview `861aa95` / `dpl_Fswp4Rgmsho56SfoF5HRsbFbwfCq`, 1.328 checks remotos de migración sin fallos y sitemap 64/64, más revisión responsive. El enlace temporal fue autorizado expresamente; no se guarda su token en el repo. No merge ni producción. STOP antes de Fase 2. Decisión, evidencia y límites: [[seo/EDITORIAL-REBUILD-PHASE-1-2026-10-17]].
 
 ## 17 octubre 2026 — reconstrucción editorial, Fase 0
 

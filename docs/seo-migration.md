@@ -79,6 +79,20 @@ Validación local del build candidato:
 - `smoke:itineraries`: **26/26**; `smoke:titles`: **19/19**.
 - `smoke:blog`: 69 artículos, 828 invariantes, 97 enlaces internos, cero rotos. El comparador estricto detecta los cambios de navegación previstos; no se declara byte a byte idéntico.
 
+### Cierre de QA remoto — 17/10/2026
+
+Preview comprobada: `https://portugal-autentico-v2-pwm59famq-estabaenlisboa.vercel.app`, deployment `dpl_Fswp4Rgmsho56SfoF5HRsbFbwfCq`, commit **`861aa95d415dd8b901b2219e4668e8888bee7a8b`**, rama `editorial-rebuild`, estado READY y entorno Preview (`target: null`). Los commits posteriores que añaden esta evidencia son solo documentación; no cambian el código comprobado.
+
+José autorizó expresamente el enlace temporal al responder «Continua si» a la pregunta sobre acceso sin login durante unas 23 horas. Se creó para esta Preview, sin desactivar la protección del proyecto. El token de acceso se entrega en la conversación, no se guarda en GitHub, brain, capturas ni informes. El adaptador local de HTTP conserva la cookie solo en memoria y la envía únicamente al origen aprobado; no es código de la aplicación.
+
+- Migración remota: **1.328 comprobaciones, cero fallos**, 16 fuentes y 64 variantes con 301 → 200 en un salto, query conservada, 98 URLs en sitemap, ocho noindex, 106 páginas y 113 destinos internos correctos.
+- Sitemap remoto: **64/64**. El XML servido también pasó el parser XML de .NET, con 98 elementos URL.
+- Las 98 comprobaciones de cabecera que sí existen en local se omiten en Preview por la política de cabeceras de ese entorno. En las respuestas observadas, 102 páginas incorporan `X-Robots-Tag: noindex`; cuatro de itinerarios conservan `index, follow`. Por eso 1.426 local y 1.328 remoto no son coberturas distintas de URLs: las etiquetas HTML de aplicación se verifican en ambos. Cada cabecera queda registrada en la evidencia; no se afirma que sea uniforme.
+- Revisión visual de Home en 390 y 1440 px; catálogo y artículo del Tranvía 28 en 390, 412, 768 y 1440 px, sin desbordamiento horizontal. Menú móvil abre/cierra. Buscar «tranvía» en el catálogo devuelve su tarjeta y abre directamente `/blog/tram-28-historia-guia`, que conserva canonical propio e indexación en HTML.
+- Capturas de Preview: [escritorio](qa/2026-10-17/phase1-preview-desktop.png) y [móvil](qa/2026-10-17/phase1-preview-mobile.png). No representan un nuevo rediseño: verifican la interfaz conservada.
+
+Evidencia, comparación local/Preview y límites: [editorial-phase1-preview-qa.md](editorial-phase1-preview-qa.md) y [JSON](editorial-phase1-preview-qa.json). Los checks de GitHub TypeScript y SEO smoke pasaron para el commit comprobado. No se ejecutaron compras, formularios, endpoints de campaña, acceso al panel ni cambios de producción.
+
 Archivos de ejecución: `next.config.mjs`, `src/proxy.ts`, `src/data/seo-url-policy.json`, `src/lib/seo-url-policy.ts`, `src/app/sitemap.ts`, metadata de las ocho páginas y componentes de enlaces enumerados en el diff del PR. QA: cuatro scripts existentes ajustados, nuevo `smoke-seo-migration.mjs` y `package.json`.
 
 **Límite de CI:** GitHub rechazó el primer push porque la conexión OAuth carece de scope `workflow`. Se conservó el workflow original y se guardó la mejora propuesta en [seo-ci-workflow.patch](seo-ci-workflow.patch), sin aplicarla a GitHub Actions. El workflow existente sí se activa en este PR por `next.config.mjs` y ejecuta el smoke de sitemap reforzado. La nueva prueba `smoke:seo-migration` se valida localmente y en Preview; aún no está conectada al workflow. El parche amplía los paths y añade esa prueba para una intervención futura con permisos adecuados. No se amplían permisos ni se eluden protecciones.
