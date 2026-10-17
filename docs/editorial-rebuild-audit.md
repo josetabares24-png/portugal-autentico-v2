@@ -2,6 +2,8 @@
 
 **Cierre:** 17 de octubre de 2026. **Estado:** auditoría terminada; STOP + REVIEW antes de Fase 1.
 
+**Continuación posterior:** José autorizó continuar con las dos excepciones descritas en [seo-migration.md](seo-migration.md). Ese informe registra Fase 1 y su gate; el contenido siguiente conserva el diagnóstico previo a implementar.
+
 **Repositorio:** `josetabares24-png/portugal-autentico-v2`. **Rama de trabajo:** `editorial-rebuild`. **Base auditada:** `83ca369b477d578f5a63004b461550bdcf706f89`, también HEAD de `origin/main` al comprobarlo de nuevo el 17/10. Árbol inicialmente limpio.
 
 El dominio público sirve esa misma revisión: deployment Vercel `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, `READY`, entorno `production`, listo el **15/10 a las 14:21:48 de Lisboa**. El alias se volvió a consultar el 17/10 y no había cambiado. Consultar despliegues no ha publicado nada.

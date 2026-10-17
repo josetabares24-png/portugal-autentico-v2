@@ -21,13 +21,18 @@ import { spawn } from 'node:child_process';
 import net from 'node:net';
 import fs from 'node:fs';
 import path from 'node:path';
+import ts from 'typescript';
 
 const PROD_ORIGIN = 'https://estabaenlisboa.com';
 const isWindows = process.platform === 'win32';
 const npxCommand = isWindows ? 'npx.cmd' : 'npx';
+const URL_POLICY = JSON.parse(fs.readFileSync(new URL('../src/data/seo-url-policy.json', import.meta.url), 'utf8'));
+const REDIRECTS = new Map(URL_POLICY.redirects.map(({ source, destination }) => [source, destination]));
+const NOINDEX_PATHS = new Set(URL_POLICY.noindexPaths);
+const excludedPath = (route) => REDIRECTS.has(route) || NOINDEX_PATHS.has(route);
 
 /** Páginas públicas que deben estar en el sitemap exactamente una vez. */
-const MANDATORY = [
+const MANDATORY = [...new Set([
   `${PROD_ORIGIN}/`,
   `${PROD_ORIGIN}/blog`,
   `${PROD_ORIGIN}/itinerarios`,
@@ -41,7 +46,11 @@ const MANDATORY = [
   `${PROD_ORIGIN}/contacto`,
   `${PROD_ORIGIN}/sobre-nosotros`,
   `${PROD_ORIGIN}/blog/como-pagar-en-portugal`,
-];
+  ...URL_POLICY.redirects.map(({ destination }) => `${PROD_ORIGIN}${destination}`),
+].map((url) => {
+  const route = new URL(url).pathname;
+  return REDIRECTS.has(route) ? `${PROD_ORIGIN}${REDIRECTS.get(route)}` : url;
+}).filter((url) => !NOINDEX_PATHS.has(new URL(url).pathname)))];
 
 /**
  * Artículo previsto que todavía no existe. Mientras su slug no esté en
@@ -118,6 +127,72 @@ const getRobotsMeta = (html) => extract(html, /<meta name="robots" content="([^"
 const getTitle = (html) => extract(html, /<title>([^<]*)<\/title>/i);
 const getDescription = (html) => extract(html, /<meta name="description" content="([^"]*)"/i);
 
+function attributes(tag) {
+  return Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)].map((m) => [m[1].toLowerCase(), m[3]]));
+}
+
+function metaValues(html, name) {
+  return [...html.matchAll(/<meta\b[^>]*>/gi)]
+    .map((m) => attributes(m[0]))
+    .filter((attrs) => attrs.name?.toLowerCase() === name)
+    .map((attrs) => attrs.content ?? '');
+}
+
+function selfCanonical(html, expected) {
+  const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)]
+    .map((m) => attributes(m[0]))
+    .filter((attrs) => attrs.rel?.toLowerCase() === 'canonical');
+  if (canonicals.length !== 1) return false;
+  try {
+    return new URL(canonicals[0].href).href === new URL(expected).href;
+  } catch {
+    return false;
+  }
+}
+
+const blocksIndexing = (value) => /\b(?:noindex|none)\b/i.test(value);
+const blocksFollowing = (value) => /\b(?:nofollow|none)\b/i.test(value);
+
+function headerDirective(res) {
+  const value = res.headers.get('x-robots-tag') ?? '';
+  // Vercel adds a platform noindex on previews; application metadata remains strict.
+  const preview = new URL(res.url).hostname.endsWith('.vercel.app');
+  return preview && blocksIndexing(value) ? '' : value;
+}
+
+function indexingBlocks(html, res) {
+  return [
+    ...metaValues(html, 'robots').map((value) => ['robots', value]),
+    ...metaValues(html, 'googlebot').map((value) => ['googlebot', value]),
+    ['X-Robots-Tag', headerDirective(res)],
+  ].filter(([, value]) => blocksIndexing(value));
+}
+
+function readActivityEntries() {
+  const file = 'src/data/activities.ts';
+  const source = ts.createSourceFile(file, fs.readFileSync(file, 'utf8'), ts.ScriptTarget.Latest, true);
+  let entries;
+  function visit(node) {
+    if (ts.isVariableDeclaration(node) && node.name.getText(source) === 'activities') {
+      if (!node.initializer || !ts.isArrayLiteralExpression(node.initializer)) throw new Error('activities no es un array literal');
+      entries = node.initializer.elements.map((entry) => {
+        if (!ts.isObjectLiteralExpression(entry)) throw new Error('Ficha de actividad no reconocida');
+        const prop = (key) => entry.properties.find((p) => ts.isPropertyAssignment(p) && p.name.getText(source) === key)?.initializer;
+        const slug = prop('slug');
+        const indexable = prop('indexable');
+        if (!slug || !ts.isStringLiteral(slug) || !indexable || ![ts.SyntaxKind.TrueKeyword, ts.SyntaxKind.FalseKeyword].includes(indexable.kind)) {
+          throw new Error('Cada ficha debe declarar slug e indexable explícitos');
+        }
+        return { slug: slug.text, indexable: indexable.kind === ts.SyntaxKind.TrueKeyword };
+      });
+    }
+    ts.forEachChild(node, visit);
+  }
+  visit(source);
+  if (!entries?.length) throw new Error('No se extrajeron actividades; no se admite una comprobación vacía');
+  return entries;
+}
+
 /* ------------------------------------------------------------------ */
 /* Duplicados de slug en los datos fuente                              */
 /* ------------------------------------------------------------------ */
@@ -137,7 +212,7 @@ function checkSourceSlugDuplicates() {
     const dupes = slugs.filter((s, i) => slugs.indexOf(s) !== i);
     record(
       `${label}: sin slugs duplicados`,
-      dupes.length === 0,
+      slugs.length > 0 && dupes.length === 0,
       dupes.length ? `duplicados: ${[...new Set(dupes)].join(', ')}` : `${slugs.length} slugs únicos`
     );
   }
@@ -268,6 +343,9 @@ function checkUrls(locs) {
   const withParams = locs.filter((u) => u.includes('?') || u.includes('#'));
   record('ninguna URL con parámetros ni fragmentos', withParams.length === 0, withParams.slice(0, 3).join(', ') || 'ninguna');
 
+  const excluded = locs.filter((url) => excludedPath(new URL(url).pathname));
+  record('ninguna fuente redirigida ni página noindex está en el sitemap', excluded.length === 0, excluded.join(', ') || 'ninguna');
+
   const doubleSlash = locs.filter((u) => u.slice('https://'.length).includes('//'));
   record('ninguna URL con barras dobles', doubleSlash.length === 0, doubleSlash.slice(0, 3).join(', ') || 'ninguna');
 
@@ -299,15 +377,13 @@ function checkUrls(locs) {
 }
 
 function checkActivities(locs) {
-  const src = fs.readFileSync(path.join(process.cwd(), 'src/data/activities.ts'), 'utf8');
-  // Cada ficha declara `slug` y, dos líneas después, `indexable`.
-  const entries = [...src.matchAll(/slug:\s*'([^']+)',\s*\n\s*indexable:\s*(true|false)/g)].map((m) => ({
-    slug: m[1],
-    indexable: m[2] === 'true',
-  }));
-
-  const included = entries.filter((e) => e.indexable).map((e) => e.slug);
-  const excluded = entries.filter((e) => !e.indexable).map((e) => e.slug);
+  const entries = readActivityEntries();
+  const activityPath = (entry) => `/actividades/${entry.slug}`;
+  const retired = entries.filter((entry) => REDIRECTS.has(activityPath(entry)));
+  const live = entries.filter((entry) => !REDIRECTS.has(activityPath(entry)));
+  const included = live.filter((e) => e.indexable && !NOINDEX_PATHS.has(activityPath(e))).map((e) => e.slug);
+  const excluded = entries.filter((e) => !e.indexable || excludedPath(activityPath(e))).map((e) => e.slug);
+  record('se clasifican las 20 fichas: tres redirects y 17 indexables vivas', entries.length === 20 && retired.length === 3 && live.length === 17 && included.length === 17, `${entries.length} fichas, ${retired.length} retiradas, ${live.length} vivas, ${included.length} indexables`);
 
   const inSitemap = locs
     .filter((u) => u.startsWith(`${PROD_ORIGIN}/actividades/`))
@@ -315,7 +391,7 @@ function checkActivities(locs) {
 
   const leaked = inSitemap.filter((s) => excluded.includes(s));
   record(
-    'ninguna actividad noindex está en el sitemap',
+    'ninguna actividad noindex o redirigida está en el sitemap',
     leaked.length === 0,
     leaked.length ? `filtradas: ${leaked.join(', ')}` : `${excluded.length} excluidas correctamente`
   );
@@ -327,8 +403,11 @@ function checkActivities(locs) {
     missing.length ? `faltan: ${missing.join(', ')}` : `${included.length} incluidas`
   );
 
+  const unknown = inSitemap.filter((slug) => !included.includes(slug));
+  record('el sitemap no inventa fichas fuera de las indexables vivas', unknown.length === 0, unknown.join(', ') || 'ninguna');
+
   info('actividades incluidas', included.length ? included.join(', ') : 'ninguna');
-  info('actividades excluidas (indexable: false)', `${excluded.length}: ${excluded.join(', ')}`);
+  info('actividades excluidas (noindex/redirect)', `${excluded.length}: ${excluded.join(', ')}`);
   return { included, excluded };
 }
 
@@ -340,11 +419,12 @@ function checkBlog(locs) {
     .filter((u) => u.startsWith(`${PROD_ORIGIN}/blog/`))
     .map((u) => u.replace(`${PROD_ORIGIN}/blog/`, ''));
 
-  const missing = slugs.filter((s) => !inSitemap.includes(s));
+  const expectedSlugs = slugs.filter((slug) => !excludedPath(`/blog/${slug}`));
+  const missing = expectedSlugs.filter((s) => !inSitemap.includes(s));
   record(
     'todos los artículos están en el sitemap',
     missing.length === 0,
-    missing.length ? `faltan: ${missing.join(', ')}` : `${slugs.length} artículos`
+    missing.length ? `faltan: ${missing.join(', ')}` : `${expectedSlugs.length} artículos publicables`
   );
 
   const dupes = inSitemap.filter((s, i) => inSitemap.indexOf(s) !== i);
@@ -389,22 +469,19 @@ async function checkEveryUrl(locs, baseUrl) {
       continue;
     }
 
-    const robots = getRobotsMeta(html);
-    if (robots && /noindex/i.test(robots)) {
-      problems.push(`${localPath} -> noindex ("${robots}") pero está en el sitemap`);
+    const blocked = indexingBlocks(html, res);
+    if (blocked.length) {
+      problems.push(`${localPath} -> bloqueo de indexación ${JSON.stringify(blocked)}`);
       continue;
     }
 
     const canonical = getCanonical(html);
     if (!canonical) {
       noCanonical++;
-    } else {
-      const expected = loc.endsWith('/') && loc !== `${PROD_ORIGIN}/` ? loc.slice(0, -1) : loc;
-      const got = canonical.endsWith('/') && canonical !== `${PROD_ORIGIN}/` ? canonical.slice(0, -1) : canonical;
-      if (got !== expected && got !== `${PROD_ORIGIN}` && expected !== `${PROD_ORIGIN}/`) {
-        problems.push(`${localPath} -> canonical "${canonical}" != "${loc}"`);
-        continue;
-      }
+    }
+    if (!selfCanonical(html, loc)) {
+      problems.push(`${localPath} -> canonical ausente, duplicado o distinto: "${canonical}" != "${loc}"`);
+      continue;
     }
 
     if (!getTitle(html)) problems.push(`${localPath} -> sin <title>`);
@@ -417,7 +494,7 @@ async function checkEveryUrl(locs, baseUrl) {
   );
 
   if (noCanonical > 0) {
-    info('URLs sin etiqueta canonical', `${noCanonical} de ${checked} (no bloquea indexación, pero conviene añadirla)`);
+    info('URLs sin etiqueta canonical', `${noCanonical} de ${checked} (error del contrato de sitemap)`);
   }
   return { checked, problems, noCanonical };
 }
@@ -494,6 +571,23 @@ async function checkTravelerPillars(baseUrl) {
 
   for (const path of paths) {
     const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+    const destination = REDIRECTS.get(path);
+    if (destination) {
+      const location = res.headers.get('location');
+      record(`${path} cumple su redirect autorizado`, res.status === 301 && location !== null && new URL(location, baseUrl).href === new URL(destination, baseUrl).href, `HTTP ${res.status} -> ${location}`);
+      const final = await fetch(`${baseUrl}${destination}`, { redirect: 'manual' });
+      const content = await final.text();
+      record(
+        `${destination} conserva la respuesta indexable del pilar retirado`,
+        final.status === 200 && selfCanonical(content, `${PROD_ORIGIN}${destination}`)
+          && indexingBlocks(content, final).length === 0
+          && Boolean(getTitle(content)) && Boolean(getDescription(content))
+          && [...content.matchAll(/<h1[\s>]/gi)].length === 1
+          && content.includes('José Tabares'),
+        `HTTP ${final.status}, canonical="${getCanonical(content)}"`,
+      );
+      continue;
+    }
     const html = await res.text();
     const schemaTypes = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)]
       .flatMap((match) => {
@@ -511,10 +605,10 @@ async function checkTravelerPillars(baseUrl) {
     record(
       `${path} conserva la base SEO completa`,
       res.status === 200
-        && getCanonical(html) === `${PROD_ORIGIN}${path}`
+        && selfCanonical(html, `${PROD_ORIGIN}${path}`)
         && Boolean(getTitle(html))
         && Boolean(getDescription(html))
-        && (!robots || !/noindex/i.test(robots))
+        && (!robots || !/noindex/i.test(robots)) && indexingBlocks(html, res).length === 0
         && h1Count === 1
         && ['Article', 'BreadcrumbList'].every((type) => schemaTypes.includes(type))
         && !schemaTypes.includes('FAQPage')
@@ -523,6 +617,27 @@ async function checkTravelerPillars(baseUrl) {
         && html.includes('Preguntas frecuentes')
         && (html.includes('Fuentes oficiales consultadas') || html.includes('Fuentes consultadas')),
       `HTTP ${res.status}, H1 ${h1Count}, schema ${schemaTypes.join(' + ') || 'ausente'}`,
+    );
+  }
+}
+
+async function checkNoindexPages(baseUrl, locs) {
+  for (const path of NOINDEX_PATHS) {
+    const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+    const html = await res.text();
+    const noindexFollow = (name) => {
+      const values = metaValues(html, name);
+      return values.length > 0 && values.every((value) => blocksIndexing(value) && /\bfollow\b/i.test(value) && !blocksFollowing(value) && !/\bindex\b/i.test(value));
+    };
+    const header = headerDirective(res);
+    record(
+      `${path} sigue accesible con noindex/follow y canonical propio`,
+      res.status === 200 && Boolean(getTitle(html))
+        && selfCanonical(html, `${PROD_ORIGIN}${path}`)
+        && noindexFollow('robots') && noindexFollow('googlebot')
+        && !blocksFollowing(header) && !/\bindex\b/i.test(header)
+        && !locs.includes(`${PROD_ORIGIN}${path}`),
+      `HTTP ${res.status}, robots=${JSON.stringify(metaValues(html, 'robots'))}, googlebot=${JSON.stringify(metaValues(html, 'googlebot'))}, X-Robots-Tag="${res.headers.get('x-robots-tag') ?? ''}"`,
     );
   }
 }
@@ -583,9 +698,11 @@ async function checkArticle(baseUrl) {
 async function checkActivityImages(baseUrl) {
   const html = await (await fetch(`${baseUrl}/actividades`)).text();
   const missing = ACTIVITIES_WITH_IMAGE.filter((slug) => {
-    const i = html.indexOf(`href="/actividades/${slug}"`);
-    if (i === -1) return true;
-    return !html.slice(i, i + 1200).includes('images%2Factividades');
+    const route = `/actividades/${slug}`;
+    const destination = REDIRECTS.get(route) ?? route;
+    const cards = [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)]
+      .filter((match) => attributes(match[0].slice(0, match[0].indexOf('>') + 1)).href === destination);
+    return !cards.some((card) => card[1].includes('<article') && card[1].includes('images%2Factividades'));
   });
   record(
     'las 13 actividades muestran imagen y no placeholder',
@@ -672,6 +789,10 @@ async function main() {
       log(`== Modo remoto: ${baseUrl} ==\n`);
     }
 
+    if (new URL(baseUrl).hostname.endsWith('.vercel.app')) {
+      info('protección de Preview', 'se registra X-Robots-Tag noindex de Vercel; robots/googlebot de la aplicación siguen siendo estrictos');
+    }
+
     const { xml, ok } = await fetchSitemap(baseUrl);
     if (!ok) throw new Error('El sitemap no responde 200; no se puede continuar.');
 
@@ -695,6 +816,8 @@ async function main() {
     checkBlog(locs);
     log('');
     await checkRobots(baseUrl);
+    log('');
+    await checkNoindexPages(baseUrl, locs);
     log('');
     await checkNavigation(baseUrl);
     log('');

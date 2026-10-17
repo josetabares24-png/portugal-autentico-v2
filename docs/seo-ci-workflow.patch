@@ -1,0 +1,59 @@
+diff --git a/.github/workflows/seo-smoke.yml b/.github/workflows/seo-smoke.yml
+index d8660c5..f17bde5 100644
+--- a/.github/workflows/seo-smoke.yml
++++ b/.github/workflows/seo-smoke.yml
+@@ -6,17 +6,15 @@ on:
+     paths:
+       - 'next.config.mjs'
+       - 'public/robots.txt'
+-      - 'src/app/sitemap.ts'
+-      - 'src/app/[locale]/page.tsx'
+-      - 'src/app/[locale]/blog/**'
+-      - 'src/app/[locale]/actividades/**'
+-      - 'src/app/[locale]/free-tours-lisboa/**'
+-      - 'src/app/[locale]/itinerarios/**'
+-      - 'src/components/Navbar.tsx'
++      - 'src/app/**'
++      - 'src/proxy.ts'
++      - 'src/lib/seo-url-policy.ts'
++      - 'src/data/seo-url-policy.json'
++      - 'src/components/**'
+       - 'src/data/blog-posts.ts'
+       - 'src/data/activities.ts'
+       - 'src/data/guide-packs.ts'
+-      - 'scripts/smoke-sitemap.mjs'
++      - 'scripts/smoke-*.mjs'
+       - '.github/workflows/seo-smoke.yml'
+   push:
+     branches:
+@@ -24,17 +22,15 @@ on:
+     paths:
+       - 'next.config.mjs'
+       - 'public/robots.txt'
+-      - 'src/app/sitemap.ts'
+-      - 'src/app/[locale]/page.tsx'
+-      - 'src/app/[locale]/blog/**'
+-      - 'src/app/[locale]/actividades/**'
+-      - 'src/app/[locale]/free-tours-lisboa/**'
+-      - 'src/app/[locale]/itinerarios/**'
+-      - 'src/components/Navbar.tsx'
++      - 'src/app/**'
++      - 'src/proxy.ts'
++      - 'src/lib/seo-url-policy.ts'
++      - 'src/data/seo-url-policy.json'
++      - 'src/components/**'
+       - 'src/data/blog-posts.ts'
+       - 'src/data/activities.ts'
+       - 'src/data/guide-packs.ts'
+-      - 'scripts/smoke-sitemap.mjs'
++      - 'scripts/smoke-*.mjs'
+       - '.github/workflows/seo-smoke.yml'
+ 
+ permissions:
+@@ -64,3 +60,6 @@ jobs:
+ 
+       - name: Build and validate SEO surface
+         run: npm run smoke:sitemap
++
++      - name: Validate migration and all public internal links
++        run: npm run smoke:seo-migration
