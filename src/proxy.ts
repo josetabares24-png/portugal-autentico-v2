@@ -7,10 +7,6 @@ import { routing } from '@/i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 const legacyLocaleRedirects: Record<string, string> = {
-  '/en/presupuesto': '/blog/presupuesto-viajar-lisboa',
-  '/ko/presupuesto': '/blog/presupuesto-viajar-lisboa',
-  '/en/transporte': '/blog/como-moverse-por-lisboa',
-  '/ko/transporte': '/blog/como-moverse-por-lisboa',
   '/en/tours': '/itinerarios',
   '/ko/tours': '/itinerarios',
   '/en/guia-practica': '/planifica-tu-viaje',

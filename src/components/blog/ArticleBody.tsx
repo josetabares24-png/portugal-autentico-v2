@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import { resolveInternalHref } from '@/lib/seo-url-policy';
 import type {
   Article,
   ArticleExtras,
@@ -179,7 +180,7 @@ export function ArticleBody({
             {bloque.enlaces.map((link) => (
               <li key={link.href + link.label}>
                 <TrackedInternalLink
-                  href={link.href}
+                  href={resolveInternalHref(link.href)}
                   contentType="article_personal_link"
                   contentId={link.href}
                   className="underline underline-offset-2 hover:text-terracotta"
@@ -246,7 +247,7 @@ export function ArticleBody({
         <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
           {bloque.texto ? <p>{bloque.texto}</p> : null}
           <TrackedInternalLink
-            href={bloque.href}
+            href={resolveInternalHref(bloque.href)}
             contentType="article_inline_link"
             contentId={bloque.href}
             className="article-inline-cta-link"

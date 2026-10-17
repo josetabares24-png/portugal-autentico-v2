@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://estabaenlisboa.com/faq',
   },
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
 };
 
 export default function FAQLayout({ children }: { children: React.ReactNode }) {

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { BlogPost } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import { resolveInternalHref } from '@/lib/seo-url-policy';
 
 type EditorialArticleCardVariant = 'feature' | 'compact' | 'grid';
 
@@ -20,7 +21,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
   if (variant === 'feature') {
     return (
       <article className="min-w-0">
-        <Link href={`/blog/${post.id}`} className="group block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
+        <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
           <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-white/60">
             <Image
               src={imageSrc}
@@ -49,7 +50,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
   if (variant === 'compact') {
     return (
       <article className="min-w-0">
-        <Link href={`/blog/${post.id}`} className="group grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
+        <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-white/60">
             <Image
               src={imageSrc}
@@ -75,7 +76,7 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
 
   return (
     <article className="min-w-0">
-      <Link href={`/blog/${post.id}`} className="group block rounded-md border-t border-border-soft pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
+      <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group block rounded-md border-t border-border-soft pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
         <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
           <Image
             src={imageSrc}

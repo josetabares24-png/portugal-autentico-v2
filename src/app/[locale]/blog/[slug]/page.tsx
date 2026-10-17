@@ -397,7 +397,7 @@ const articles: Record<string, Article> = {
     minutos: 11,
     links: [
       { href: '/portugal', label: 'Más guías para viajar por Portugal' },
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
       { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
       { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días con Sintra' },
@@ -425,7 +425,6 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Cómo subir a Pena desde Sintra' },
       { tipo: 'parrafo', texto: 'Parques de Sintra señala el autobús 434 desde la estación ferroviaria como una de las opciones de transporte público hacia Pena. También existen recorridos peatonales, pero la subida exige tiempo y desnivel. El acceso en vehículo particular a las vías que llevan al monumento está restringido, así que no planifiques el día como si fueras a aparcar junto al palacio.' },
 
-      { tipo: 'enlace', texto: 'En la ficha de Sintra tienes el resumen del día: qué ver, cuánto tiempo pide y el error que más se repite con la hora de la Pena.', href: '/actividades/sintra-dia-completo', label: 'Ficha de Sintra: Pena y Regaleira' },
       { tipo: 'subtitulo', texto: 'Una ruta realista para un día' },
       { tipo: 'lista', items: [
         'Llega a Sintra con margen y orienta primero el día según la hora reservada para Pena.',
@@ -464,7 +463,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-15',
     minutos: 8,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/metro-lisboa-guia', label: 'Guía del Metro de Lisboa' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y billetes' },
       { href: '/blog/donde-alojarse-en-lisboa', label: 'Dónde alojarse en Lisboa' },
@@ -730,7 +729,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-15',
     minutos: 9,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Aeropuerto al centro' },
@@ -825,7 +824,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-09',
     minutos: 12,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/metro-lisboa-guia', label: 'Horario y líneas del Metro de Lisboa' },
       { href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto de Lisboa al centro' },
@@ -934,7 +933,7 @@ const articles: Record<string, Article> = {
     minutos: 9,
     links: [
       { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa en un día' },
-      { href: '/actividades/sintra-dia-completo', label: 'Ficha de Sintra: Pena y Regaleira' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Ficha de Sintra: Pena y Regaleira' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y zapping' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
       { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
@@ -1017,7 +1016,7 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Si prefieres una excursión organizada' },
       { tipo: 'parrafo', texto: 'Si no quieres cuadrar tren, autobús y hora de entrada, hay excursiones de día completo desde Lisboa con el transporte incluido. Antes de reservar, mira en la ficha si incluyen la entrada a la Pena (y a qué parte) y cuánto tiempo dejan allí.' },
-      { tipo: 'enlace', texto: 'En la ficha de Sintra tienes el día resumido: qué ver, cuánto tiempo pide y el error más común con la hora de la Pena.', href: '/actividades/sintra-dia-completo', label: 'Ficha de Sintra: Pena y Regaleira' },
+      { tipo: 'enlace', texto: 'En la ficha de Sintra tienes el día resumido: qué ver, cuánto tiempo pide y el error más común con la hora de la Pena.', href: '/blog/sintra-desde-lisboa', label: 'Ficha de Sintra: Pena y Regaleira' },
 
       { tipo: 'subtitulo', texto: 'Qué día ir: mira el tiempo' },
       { tipo: 'parrafo', texto: 'Si el día amanece frío y con niebla en la sierra, yo no iría a la Pena ese día. Con niebla no se aprecian igual el palacio ni las vistas, que son buena parte de la visita. Mira la previsión y, si puedes, deja la Pena para el día más despejado.' },
@@ -1444,7 +1443,6 @@ const articles: Record<string, Article> = {
     dateModified: '2026-10-09',
     minutos: 10,
     links: [
-      { href: '/actividades/mosteiro-jeronimos', label: 'Ficha rápida del Mosteiro dos Jerónimos' },
       { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
       { href: '/blog/pasteles-de-belem', label: 'Pastéis de Belém' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
@@ -1693,7 +1691,7 @@ const articles: Record<string, Article> = {
     fecha: '18 Sep 2026',
     minutos: 4,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Comparar las formas de moverse por Lisboa' },
       { href: '/blog/mejores-apps-lisboa', label: 'Apps útiles durante el viaje' },
       { href: '/itinerarios', label: 'Elegir un itinerario gratuito por Lisboa' },
@@ -1834,7 +1832,7 @@ const articles: Record<string, Article> = {
     minutos: 10,
     links: [
       { href: '/blog/como-moverse-por-portugal', label: 'Trenes, buses y coche para recorrer Portugal' },
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/estacion-olaias-lisboa', label: 'Arte y arquitectura en la estación de Olaias' },
       { href: '/actividades/oceanario-lisboa', label: 'Oceanário de Lisboa' },
@@ -1903,7 +1901,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-08-28',
     minutos: 9,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
       { href: '/blog/donde-fotografiar-lisboa', label: 'Dónde fotografiar Lisboa' },
       { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente' },
@@ -2743,7 +2741,7 @@ const articles: Record<string, Article> = {
     dateModified: '2026-09-21',
     minutos: 11,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Entender el transporte antes de decidir' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Ver cómo encaja en una ruta de 3 días' },
       { href: '/blog/que-hacer-gratis-en-lisboa', label: 'Alternativas gratuitas y de bajo coste' },
@@ -2838,7 +2836,6 @@ const articles: Record<string, Article> = {
     minutos: 12,
     links: [
       { href: '/blog/como-moverse-por-portugal', label: 'Cómo moverse por Portugal entre ciudades' },
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Entender la tarjeta Navegante y las tarifas 2026' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Decidir si la Lisboa Card compensa' },
       { href: '/itinerarios/lisboa-3-dias-premium', label: 'Aplicar el transporte a una ruta de 3 días' },
@@ -2874,7 +2871,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Tranvías: icono, no siempre transporte eficiente' },
       { tipo: 'parrafo', texto: 'El tranvía 28 es famoso por una razón: atraviesa calles estrechas, sube colinas y condensa una imagen muy reconocible de Lisboa. Pero también puede ir lleno, lento y con colas. Si lo quieres vivir como experiencia, intenta hacerlo temprano o al final de la tarde. Si solo quieres llegar rápido, quizá no es la mejor herramienta.' },
       { tipo: 'parrafo', texto: 'Para Belém, consulta el 15E: el recorrido publicado por Carris une Praça da Figueira y Algés, pasando por Cais do Sodré y Belém. No sale de Martim Moniz. Las obras pueden modificar paradas o sustituir tramos por autobús, así que comprueba el servicio del día. No diseñes el viaje alrededor de un tranvía si te obliga a esperar demasiado.' },
-      { tipo: 'enlace', texto: 'Si quieres subir al 28 como parte de la visita y no solo como transporte, revisa antes su recorrido, las paradas útiles y las horas con más demanda.', href: '/actividades/tranvia-28', label: 'Planificar el recorrido en el tranvía 28' },
+      { tipo: 'enlace', texto: 'Si quieres subir al 28 como parte de la visita y no solo como transporte, revisa antes su recorrido, las paradas útiles y las horas con más demanda.', href: '/blog/tram-28-historia-guia', label: 'Planificar el recorrido en el tranvía 28' },
       { tipo: 'tip', texto: 'Si la cola del 28 no encaja en tu día, continúa la visita a pie o busca otro transporte. Subir en una parada intermedia no garantiza sitio: el tranvía puede llegar lleno.' },
       { tipo: 'subtitulo', texto: 'Autobuses: menos románticos, muy útiles' },
       { tipo: 'parrafo', texto: 'Los autobuses no salen tanto en las fotos, pero salvan rutas que el metro no cubre bien. Son útiles para conectar miradores, zonas residenciales y puntos que quedan incómodos a pie. El problema es que dependen más del tráfico y pueden ser menos intuitivos para una primera visita.' },
@@ -3516,7 +3513,7 @@ const articles: Record<string, Article> = {
     dateModified: "2026-09-23",
     minutos: 10,
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
       { href: "/blog/playas-cerca-lisboa", label: "Qué playa elegir cerca de Lisboa" },
       { href: "/blog/excursiones-desde-lisboa", label: "Comparar excursiones desde Lisboa" },
@@ -5158,7 +5155,7 @@ const articles: Record<string, Article> = {
       { label: "CARRIS — tarifas en vigor durante 2026", href: "https://www.carris.pt/descubra/novo-tarifario-2026/" },
     ],
     links: [
-      { href: '/transporte-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
+      { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: "/blog/como-moverse-por-lisboa", label: "Cómo moverse por Lisboa" },
       { href: "/blog/alfama-historia-guia", label: "Qué ver en Alfama" },
       { href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
@@ -5189,7 +5186,6 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "La demanda cambia mucho según la hora, la temporada y las incidencias del servicio. En lugar de perseguir una supuesta hora perfecta, mira la cola y decide en el momento: si el vehículo llega lleno o la espera rompe tu itinerario, continúa a pie o usa otra conexión de CARRIS/Metro y vuelve al 28E en otro tramo." },
       { tipo: "parrafo", texto: "Las primeras horas del día y la parte final de la jornada suelen ser más fáciles que las franjas de máxima visita, pero no hay garantía de asiento. El objetivo debería ser que el tranvía encaje en tu ruta, no perder una parte importante del día esperando solo por subir." },
 
-      { tipo: "enlace", texto: "En la ficha del tranvía 28 tienes lo rápido: precio del billete, dónde subirte para ir sentado y a qué horas evitarlo.", href: "/actividades/tranvia-28", label: "Ficha del tranvía 28" },
       { tipo: "subtitulo", texto: "Antes de subir: revisa el servicio oficial" },
       { tipo: "parrafo", texto: "Consulta la página de la línea 28E de CARRIS el mismo día. Ahí aparecen el recorrido, los horarios y los avisos temporales. Es especialmente importante porque una obra o un evento puede cambiar terminales, dividir el servicio o sustituir parte del trayecto." }
     ]
