@@ -1,5 +1,11 @@
 # Current state
 
+## 17 octubre 2026 — reconstrucción editorial, Fase 0
+
+Auditoría terminada en `editorial-rebuild`, base `83ca369`. No se han cambiado páginas, URLs ni configuración de producción. La instrucción de José es evolucionar hacia una publicación editorial, con fases pequeñas y gates de revisión. Fase 1 no arranca automáticamente por el orden contradictorio de dos consolidaciones y la petición de noindex sobre checkout ya retirado. Informe y plan: [editorial-rebuild-audit](../docs/editorial-rebuild-audit.md). Baseline y decisión: [[seo/EDITORIAL-REBUILD-PHASE-0-2026-10-17]].
+
+Producción confirmada en `83ca369`, READY desde **15/10, 14:21:48 Lisboa**, deployment `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`. Por tanto, E-016 ya está publicado, aunque las notas contemporáneas del 15/10 que siguen abajo aún lo describan como preparado. Clerk ya devuelve noindex/nofollow en su propio host; no introducir un proxy por SEO.
+
 ## Actualización 15 octubre 2026 — mejoras del blog en preparación
 
 Petición de José: revisar artículos débiles en Search y mejorarlos. E-016 prepara aeropuerto al centro (96 impresiones / 0 clics / posición 24,11), Metro (1.023 / 3 / 8,77) y Time Out (608 / 4 / 8,80), con datos cerrados 14 sep–11 oct. Rutas/costes, mapa oficial y oferta de puestos, respectivamente; sin cambiar títulos/metas ni URLs. Baseline, criterios y fuentes: [[seo/BLOG-SEARCH-IMPROVEMENTS-2026-10-15]]. Aún sin despliegue; no contar ventana de evaluación desde el push.
