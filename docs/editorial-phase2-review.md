@@ -41,4 +41,14 @@ Baselines local y Preview independientes: GuruWalk tiene configuración distinta
 
 Menor exposición comercial puede afectar ingresos. No existe medición causal sin publicación. El índice único adapta su apertura tras hidratación. Lo esencial, jerarquía inicial y siete pilotos corresponden a Fases 3/4 y no se implementan aquí.
 
-Preview remota y QA remoto pendientes de completar sobre el commit publicado. Este documento no autoriza producción.
+## Preview y cierre de QA
+
+Preview READY: https://portugal-autentico-v2-atql6so0h-estabaenlisboa.vercel.app
+
+Código comprobado: `643683b9d45f5570fddb52f917cfe28ba27d2a6d`, deployment `dpl_HNvQk6YGd1Zx8Wac91G2AUry168K`, rama editorial-rebuild, target null. El acceso temporal autorizado se entrega solo en conversación, nunca su token en Git. No se desactiva protección.
+
+18/10/2026, 09:15 UTC: plantilla remota 1.443/1.443, migración 1.328/1.328 y sitemap 64/64. XML parseado con .NET: 98 URLs. La diferencia local/remoto de 98 checks corresponde al tratamiento de cabeceras de Preview, nunca a relajar el HTML indexable. CI TypeScript 39114399766 y SEO smoke 39114399659: success para ese SHA.
+
+Navegante móvil 390 px y Oriente escritorio 1.440 px revisados también en Preview: sin overflow, índice único y apertura adaptada. Fuentes operables con Enter. [Captura móvil](qa/2026-10-18/phase2-preview-mobile.png) y [captura escritorio](qa/2026-10-18/phase2-preview-desktop.png). [Resultados por comprobación](qa/2026-10-18/phase2-checks.json).
+
+Producción reconsultada: permanece en `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz` / `83ca369`. Los commits de cierre solo añaden documentación y evidencia. STOP + REVIEW: no Fase 3, merge ni producción sin aprobación.

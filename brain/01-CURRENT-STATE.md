@@ -2,7 +2,7 @@
 
 ## 18 octubre 2026 — Fase 2, candidato para revisión
 
-Continuación autorizada por José: fuentes e índice únicos, reservas después de cuerpo y FAQ, retirada del banner editorial automático. 72 superficies comprobadas; sin cambios de URLs ni reglas SEO de Fase 1. Build y QA local pasan. D-045 reemplaza D-039 solo en este candidato. Preview y QA remoto en preparación. STOP antes de Fase 3, sin merge ni producción. [Informe](../docs/editorial-phase2-review.md).
+Continuación autorizada por José: fuentes e índice únicos, reservas después de cuerpo y FAQ, retirada del banner editorial automático. 72 superficies comprobadas; sin cambios de URLs ni reglas SEO de Fase 1. Build y QA local/remoto pasan: plantilla 1.443, migración remota 1.328, sitemap 64/64. Preview READY `643683b` / `dpl_HNvQk6YGd1Zx8Wac91G2AUry168K`; CI success. D-045 reemplaza D-039 solo en este candidato. STOP antes de Fase 3, sin merge ni producción. [Informe](../docs/editorial-phase2-review.md).
 
 ## 17 octubre 2026 — Fase 1 editorial en rama, revisión de Preview
 
