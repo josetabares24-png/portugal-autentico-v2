@@ -40,3 +40,15 @@ Build final correcto: 137 páginas; TypeScript correcto. Lint: cero errores y wa
 Integridad de datos: siete inicializadores originales conservan SHA-256 frente a 4a6f8ad y las tres listas de bloques de origen son válidas: 10/10. En las tres páginas nuevas se exige conservar también el orden de párrafos, ítems, celdas y enlaces; solo se admite mover la firma tras la bajada/imagen. Los siete pilotos anteriores permanecen iguales.
 
 Navegador local: tres guías y la nacional conservada, 390/412/768/1440 px; 16 vistas sin overflow, una H1, seis/seis/cinco pares en las tres nuevas y cero cajas añadidas a la nacional. Preview y QA remoto pendientes de cierre. No Lighthouse ejecutado ni afirmaciones de Core Web Vitals. Mantener la PR draft.
+
+## Cierre de Preview
+
+Preview READY: https://portugal-autentico-v2-3d7v8pnlc-estabaenlisboa.vercel.app
+
+Commit comprobado `130b792425cb7c30d5cbde887b1604bee8177c56`, deployment `dpl_CHaajzvU7so6wrRCwPCk6gLKyHY4`, rama editorial-rebuild, target null. El cierre posterior añade solo documentos y evidencia. El acceso temporal autorizado se entrega solo en conversación; no se guarda token ni cookies en Git ni se desactiva protección.
+
+18/10/2026, 21:46 UTC: plantilla remota 1.617/1.617 y migración 1.328/1.328, sin fallos. Sitemap 64/64, XML parseado: 98 URLs. La diferencia de migración frente a local corresponde a cabeceras Preview; HTML estricto. CI TypeScript 39169009977 y SEO smoke 39169010098: success para el SHA comprobado.
+
+Navegador remoto: 16 vistas (las tres nuevas y la guía nacional × cuatro anchos), sin overflow y una H1. Se mantienen seis/seis/cinco pares y ninguna caja nueva en la nacional. [Matriz](qa/2026-10-18/phase6a-responsive.json), [captura PC](qa/2026-10-18/phase6a-preview-desktop.png), [captura móvil](qa/2026-10-18/phase6a-preview-mobile.png), [controles](qa/2026-10-18/phase6a-checks.json), [integridad](qa/2026-10-18/phase6a-data-integrity.json), [antes/después](qa/2026-10-18/phase6a-change-summary.json).
+
+Producción reconsultada: conserva `83ca369` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`. PR #112 abierta y draft, sin merge. Siguiente lote del plan: barrios, con inspección individual y su propia Preview/QA.

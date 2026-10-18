@@ -2,7 +2,7 @@
 
 ## 18 octubre 2026 — Fase 6A, transporte
 
-José autoriza continuar tras la entrega del piloto. Tres adiciones explícitas: aeropuerto, 28E y patinetes. La guía nacional conserva su tabla; Olaias queda para cultura. Sin cambios de URLs, datos originales ni reglas SEO. QA/Preview en preparación, sin merge ni producción. [Informe](../docs/editorial-phase6-transport-review.md).
+José autoriza continuar tras la entrega del piloto. Tres adiciones explícitas: aeropuerto, 28E y patinetes. La guía nacional conserva su tabla; Olaias queda para cultura. Sin cambios de URLs, datos originales ni reglas SEO. Preview READY 130b792 / dpl_CHaajzvU7so6wrRCwPCk6gLKyHY4: plantilla 1.617, migración remota 1.328, sitemap 64/64 y 16 vistas responsive sin fallos; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-transport-review.md). Siguiente lote: barrios.
 
 ## 18 octubre 2026 — Fases 3/4, piloto de siete guías
 
