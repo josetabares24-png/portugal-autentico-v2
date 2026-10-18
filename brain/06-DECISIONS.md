@@ -1,5 +1,11 @@
 # Decision log
 
+## D-045 — Respuesta antes de reservas, Fase 2 editorial
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de aprobación visual y publicación
+
+La instrucción expresa de José para la reconstrucción editorial reemplaza la colocación temprana admitida por D-039 en este candidato. Un módulo final después de cuerpo y FAQ, máximo dos ofertas distintas y alternativa plegada. No banner comercial automático universal. Fuentes discretas sin perder referencias; índice único. D-039 se conserva como antecedente, no como autorización actual para adelantar CTA. D-044 sigue vigente. STOP antes de Fase 3; no merge ni producción. Detalle: [revisión](../docs/editorial-phase2-review.md).
+
 Decisions here are intended to survive future chats and agent sessions.
 
 ## D-001 — Blog-first strategy

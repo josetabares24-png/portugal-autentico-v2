@@ -615,7 +615,7 @@ async function checkTravelerPillars(baseUrl) {
         && html.includes('José Tabares')
         && html.includes('Revisado el')
         && html.includes('Preguntas frecuentes')
-        && (html.includes('Fuentes oficiales consultadas') || html.includes('Fuentes consultadas')),
+        && (html.includes('Fuentes oficiales consultadas') || html.includes('Fuentes consultadas') || html.includes('Datos verificados')),
       `HTTP ${res.status}, H1 ${h1Count}, schema ${schemaTypes.join(' + ') || 'ausente'}`,
     );
   }
