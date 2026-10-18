@@ -22,6 +22,11 @@ const transportPaths = process.env.SMOKE_EDITORIAL_TRANSPORT === '1' ? new Set([
   'aeropuerto-lisboa-al-centro', 'tram-28-historia-guia', 'patinetes-electricos-lisboa',
 ].map((slug) => `/blog/${slug}`)) : new Set();
 for (const url of transportPaths) pilotPaths.add(url);
+const neighborhoodPaths = process.env.SMOKE_EDITORIAL_NEIGHBORHOODS === '1' ? new Set([
+  'baixa-lisboa-que-ver', 'alfama-historia-guia', 'graca-lisboa-que-ver',
+  'chiado-bairro-alto-guia', 'mouraria-barrio-guia', 'parque-das-nacoes-lisboa-que-ver',
+].map((slug) => `/blog/${slug}`)) : new Set();
+for (const url of neighborhoodPaths) pilotPaths.add(url);
 const planningLabels = {
   '/blog/como-pagar-en-portugal': 'Planifica tu viaje a Lisboa',
   '/blog/donde-alojarse-en-lisboa': 'Planificar el viaje según tus días',
@@ -125,8 +130,8 @@ for (const url of paths) {
     // the complete metadata multiset, including duplicate tags and all values.
     const canonicalize = (value) => {
       if (key === 'metadata') return value.map((item) => JSON.stringify(item)).sort();
-      if (transportPaths.has(url)) {
-        // Phase 6A only moves the byline past the description. Keep every
+      if (transportPaths.has(url) || neighborhoodPaths.has(url)) {
+        // Phases 6A/6B only move the byline past the description. Keep every
         // remaining paragraph/list/cell, heading and link in its original order.
         if (key === 'blocks') return [value.slice(0, 2).map((item) => JSON.stringify(item)).sort(), value.slice(2)];
         if (key === 'text') return [...value.replace(/\s/g, '')].sort();

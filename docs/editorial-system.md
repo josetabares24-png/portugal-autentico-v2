@@ -23,3 +23,7 @@ Las tarifas copiadas a un resumen requieren revisar el bloque original y el perf
 ## Rollout autorizado — Fase 6A
 
 Después de entregar el piloto, José indicó continuar. El grupo de transporte añade tres perfiles explícitos en src/data/editorial-transport.ts: aeropuerto, 28E y patinetes. Se conserva la tabla ya útil de Cómo moverse por Portugal. El modo de QA suma esas tres activaciones a las siete del piloto. No expandir a otras categorías por una condición genérica ni usar el registro como generador de contenido. [Revisión del lote](editorial-phase6-transport-review.md).
+
+## Rollout autorizado — Fase 6B
+
+Continuación de José: seis perfiles manuales de barrios en src/data/editorial-neighborhoods.ts. Resumen de visita, sin imponer precio o duración donde no existen datos. No nueva entradilla ni cambio de orden del cuerpo. Se conserva la intención de alojamiento en su página propia; Belém y la comparativa general quedan REVIEW por dudas documentadas, sin fusionar ni borrar. QA espera exactamente 16 perfiles entre 72 superficies, con conservación estricta del orden en los dos lotes de Fase 6. [Revisión del lote](editorial-phase6-neighborhoods-review.md).
