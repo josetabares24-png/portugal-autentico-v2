@@ -19,3 +19,7 @@ CTA: D-045, después de resolver la intención; candidato conservador de módulo
 ## Mantenimiento y límites
 
 Las tarifas copiadas a un resumen requieren revisar el bloque original y el perfil juntos. No generar perfiles automáticamente. En el piloto, los tests comprueban siete activaciones exactas, 4–7 filas, ausencia de afiliación en el resumen y conservación del contenido factual, metadata y schema. Ningún rollout a otras URLs hasta aprobación. No nuevos slugs, FAQ ni ratings. Navegación, home, portada del blog y demás grupos siguen fuera de estas fases.
+
+## Rollout autorizado — Fase 6A
+
+Después de entregar el piloto, José indicó continuar. El grupo de transporte añade tres perfiles explícitos en src/data/editorial-transport.ts: aeropuerto, 28E y patinetes. Se conserva la tabla ya útil de Cómo moverse por Portugal. El modo de QA suma esas tres activaciones a las siete del piloto. No expandir a otras categorías por una condición genérica ni usar el registro como generador de contenido. [Revisión del lote](editorial-phase6-transport-review.md).

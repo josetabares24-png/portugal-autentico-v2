@@ -1,5 +1,11 @@
 # Decision log
 
+## D-047 — Rollout editorial por lotes, transporte primero
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual del lote
+
+Tras entregar la Preview de siete pilotos, José indica continuar. Se inicia grupo A con tres perfiles manuales y se mantiene la guía nacional que ya responde. No activación masiva por categoría. Mantener URLs/intención/datos y validar cada lote en Preview; no merge ni producción. No se interpreta como autorización de fusiones ni publicación. [Informe](../docs/editorial-phase6-transport-review.md).
+
 ## D-046 — Sistema editorial con piloto acotado a siete guías
 **Date:** 2026-10-18
 **Status:** candidate, pendiente de revisión visual de Fase 5

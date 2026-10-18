@@ -13,11 +13,15 @@ const blog = JSON.parse(fs.readFileSync('.snapshots/editorial-phase2-base.json',
 const paths = [...Object.entries(blog).filter(([,p]) => p.estado === 200).map(([s]) => `/blog/${s}`), '/que-ver-en-lisboa', '/donde-comer-en-lisboa', '/actividades/castelo-sao-jorge'];
 const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim();
 const attrs = (el) => Object.fromEntries([...el.attributes].map((a) => [a.name, a.value]).sort(([a],[b]) => a.localeCompare(b)));
-// Explicit Phase 4 mode: reordering is allowed on these seven pages only.
+// Explicit reviewed scopes; no category-driven activation.
 const pilotPaths = process.env.SMOKE_EDITORIAL_PHASE4 === '1' ? new Set([
   'metro-lisboa-guia', 'tarjeta-navegante-lisboa', 'como-pagar-en-portugal',
   'como-moverse-por-lisboa', 'time-out-market-lisboa', 'estacion-oriente-lisboa', 'vida-nocturna-lisboa',
 ].map((slug) => `/blog/${slug}`)) : new Set();
+const transportPaths = process.env.SMOKE_EDITORIAL_TRANSPORT === '1' ? new Set([
+  'aeropuerto-lisboa-al-centro', 'tram-28-historia-guia', 'patinetes-electricos-lisboa',
+].map((slug) => `/blog/${slug}`)) : new Set();
+for (const url of transportPaths) pilotPaths.add(url);
 const planningLabels = {
   '/blog/como-pagar-en-portugal': 'Planifica tu viaje a Lisboa',
   '/blog/donde-alojarse-en-lisboa': 'Planificar el viaje según tus días',
@@ -121,6 +125,13 @@ for (const url of paths) {
     // the complete metadata multiset, including duplicate tags and all values.
     const canonicalize = (value) => {
       if (key === 'metadata') return value.map((item) => JSON.stringify(item)).sort();
+      if (transportPaths.has(url)) {
+        // Phase 6A only moves the byline past the description. Keep every
+        // remaining paragraph/list/cell, heading and link in its original order.
+        if (key === 'blocks') return [value.slice(0, 2).map((item) => JSON.stringify(item)).sort(), value.slice(2)];
+        if (key === 'text') return [...value.replace(/\s/g, '')].sort();
+        return value;
+      }
       if (pilotPaths.has(url)) {
         // A multiset preserves every word and its multiplicity while allowing
         // the documented byline/section moves. SEO, images and schema stay exact.
