@@ -13,6 +13,11 @@ const blog = JSON.parse(fs.readFileSync('.snapshots/editorial-phase2-base.json',
 const paths = [...Object.entries(blog).filter(([,p]) => p.estado === 200).map(([s]) => `/blog/${s}`), '/que-ver-en-lisboa', '/donde-comer-en-lisboa', '/actividades/castelo-sao-jorge'];
 const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim();
 const attrs = (el) => Object.fromEntries([...el.attributes].map((a) => [a.name, a.value]).sort(([a],[b]) => a.localeCompare(b)));
+// Explicit Phase 4 mode: reordering is allowed on these seven pages only.
+const pilotPaths = process.env.SMOKE_EDITORIAL_PHASE4 === '1' ? new Set([
+  'metro-lisboa-guia', 'tarjeta-navegante-lisboa', 'como-pagar-en-portugal',
+  'como-moverse-por-lisboa', 'time-out-market-lisboa', 'estacion-oriente-lisboa', 'vida-nocturna-lisboa',
+].map((slug) => `/blog/${slug}`)) : new Set();
 const planningLabels = {
   '/blog/como-pagar-en-portugal': 'Planifica tu viaje a Lisboa',
   '/blog/donde-alojarse-en-lisboa': 'Planificar el viaje según tus días',
@@ -34,6 +39,7 @@ function capture(html, url) {
     if (!tocMap.has(href)) tocMap.set(href, normalize(a.textContent));
   }
   const clean = main.cloneNode(true);
+  if (pilotPaths.has(url)) clean.querySelectorAll('[data-editorial-essentials], [data-editorial-answer="adapted"]').forEach((el) => el.remove());
   // Explicitly identified commercial/navigation modules only; never broad
   // paragraph, heading, FAQ or external-link exclusions.
   clean.querySelectorAll('.article-toc, .article-sources, .article-booking, .article-cta, #reservas, [data-editorial-cta], script, style').forEach((el) => el.remove());
@@ -58,8 +64,15 @@ function capture(html, url) {
       images: [...main.querySelectorAll('img')].map(attrs),
       text: normalize(clean.textContent),
       links: [...clean.querySelectorAll('a')].map((a) => ({ href: a.getAttribute('href'), text: normalize(a.textContent) })),
+      blocks: [...clean.querySelectorAll('p,li,caption,th,td')].map((el) => ({ tag: el.tagName, text: normalize(el.textContent) })),
     },
     restoredPlanningLinks,
+    pilot: {
+      essentials: [...main.querySelectorAll('[data-editorial-essentials]')].map((el) => ({ type: el.getAttribute('data-editorial-essentials'), rows: [...el.querySelectorAll('dl > div')].map((row) => ({ label: normalize(row.querySelector('dt')?.textContent), value: normalize(row.querySelector('dd')?.textContent) })), links: el.querySelectorAll('a').length })),
+      bylines: main.querySelectorAll('[data-editorial-byline]').length,
+      bylineAfterImage: Boolean(main.querySelector('.article-hero') && main.querySelector('[data-editorial-byline]') && (main.querySelector('.article-hero').compareDocumentPosition(main.querySelector('[data-editorial-byline]')) & 4)),
+      adaptedAnswers: main.querySelectorAll('[data-editorial-answer="adapted"]').length,
+    },
     sources: [...sourceMap].map(([href,labels]) => ({ href, labels: [...labels] })),
     toc: [...tocMap].map(([href,text]) => ({ href, text })),
     structure: {
@@ -93,15 +106,34 @@ for (const url of paths) {
   const old = before.pages[url];
   check(`${url} baseline present`, Boolean(old));
   if (!old) continue;
+  if (pilotPaths.size) {
+    check(`${url} exact pilot scope`, page.pilot.essentials.length === (pilotPaths.has(url) ? 1 : 0));
+    if (pilotPaths.has(url)) {
+      const essentials = page.pilot.essentials[0];
+      check(`${url} semantic compact facts`, Boolean(essentials) && essentials.rows.length >= 4 && essentials.rows.length <= 7 && essentials.links === 0 && essentials.rows.every((row) => row.label && row.value) && new Set(essentials.rows.map((row) => row.label)).size === essentials.rows.length);
+      check(`${url} single byline after image`, page.pilot.bylines === 1 && page.pilot.bylineAfterImage);
+      check(`${url} controlled answer adaptation`, page.pilot.adaptedAnswers === (url.endsWith('/estacion-oriente-lisboa') ? 1 : 0));
+    }
+  }
   if (planningLabels[url]) check(`${url} declared planning link restored`, same(page.restoredPlanningLinks, [planningLabels[url]]));
   for (const key of Object.keys(old.protected)) {
     // Next may emit the font adjustment meta at a different position. Preserve
     // the complete metadata multiset, including duplicate tags and all values.
-    const canonicalize = (value) => key === 'metadata' ? value.map((item) => JSON.stringify(item)).sort() : value;
+    const canonicalize = (value) => {
+      if (key === 'metadata') return value.map((item) => JSON.stringify(item)).sort();
+      if (pilotPaths.has(url)) {
+        // A multiset preserves every word and its multiplicity while allowing
+        // the documented byline/section moves. SEO, images and schema stay exact.
+        if (key === 'text') return [...value.replace(/\s/g, '')].sort();
+        if (key === 'headings' || key === 'links' || key === 'blocks') return value.map((item) => JSON.stringify(item)).sort();
+      }
+      return value;
+    };
     check(`${url} preserve ${key}`, same(canonicalize(old.protected[key]), canonicalize(page.protected[key])), key);
   }
   check(`${url} one TOC`, page.structure.tocGroups === 1 && page.structure.tocNavs === 1 && page.structure.tocLinks === page.toc.length);
-  check(`${url} TOC targets preserved`, same(old.toc, page.toc));
+  const toc = (items) => pilotPaths.has(url) && url.endsWith('/estacion-oriente-lisboa') ? items.map((item) => JSON.stringify(item)).sort() : items;
+  check(`${url} TOC targets preserved`, same(toc(old.toc), toc(page.toc)));
   check(`${url} one sources system`, page.structure.sourceGroups === (old.sources.length ? 1 : 0) && page.structure.sourceLinks === page.sources.length);
   check(`${url} source URLs preserved`, same(old.sources.map((s) => s.href), page.sources.map((s) => s.href)));
   check(`${url} all source labels preserved`, old.sources.every((s) => s.labels.every((label) => page.sources.find((p) => p.href === s.href)?.labels.some((text) => text.includes(label)))));

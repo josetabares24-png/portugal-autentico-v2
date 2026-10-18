@@ -1,5 +1,9 @@
 # Current state
 
+## 18 octubre 2026 — Fases 3/4, piloto de siete guías
+
+José autoriza seguir tras Fase 2. Componente Lo esencial semántico y perfiles revisados en Metro, Navegante, pagos, movilidad, Time Out, Oriente y vida nocturna. Sin cambio de URLs/metadata ni rollout. Se conservan artículos originales; Oriente adelanta uso y pagos desplaza disclaimer. QA y Preview en preparación. [Informe](../docs/editorial-phase4-review.md). STOP antes de Fase 6; no merge ni producción.
+
 ## 18 octubre 2026 — Fase 2, candidato para revisión
 
 Continuación autorizada por José: fuentes e índice únicos, reservas después de cuerpo y FAQ, retirada del banner editorial automático. 72 superficies comprobadas; sin cambios de URLs ni reglas SEO de Fase 1. Build y QA local/remoto pasan: plantilla 1.443, migración remota 1.328, sitemap 64/64. Preview READY `643683b` / `dpl_HNvQk6YGd1Zx8Wac91G2AUry168K`; CI success. D-045 reemplaza D-039 solo en este candidato. STOP antes de Fase 3, sin merge ni producción. [Informe](../docs/editorial-phase2-review.md).
