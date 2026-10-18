@@ -1,5 +1,9 @@
 # Current state
 
+## 18 octubre 2026 — Fase 6B, barrios
+
+José indica seguir tras transporte. Seis perfiles manuales de visita: Baixa, Alfama, Graça, Chiado/Bairro Alto, Mouraria y Parque das Nações. Originales/orden/SEO conservados. Alojamiento KEEP; comparativa general y Belém REVIEW por dudas concretas, sin migración ni cambios en esas páginas. Preview READY 3cad0d8 / dpl_3a2pae6c2bs2K7BgPdBHEbpzfzoC: plantilla 1.635 y migración remota 1.328 sin fallos; 36 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-neighborhoods-review.md). Siguiente grupo: comida; conservar pendientes de Fase 7.
+
 ## 18 octubre 2026 — Fase 6A, transporte
 
 José autoriza continuar tras la entrega del piloto. Tres adiciones explícitas: aeropuerto, 28E y patinetes. La guía nacional conserva su tabla; Olaias queda para cultura. Sin cambios de URLs, datos originales ni reglas SEO. Preview READY 130b792 / dpl_CHaajzvU7so6wrRCwPCk6gLKyHY4: plantilla 1.617, migración remota 1.328, sitemap 64/64 y 16 vistas responsive sin fallos; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-transport-review.md). Siguiente lote: barrios.

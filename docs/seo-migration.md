@@ -108,3 +108,7 @@ La Preview de Vercel puede llevar noindex de plataforma. Las pruebas distinguen 
 Riesgos residuales: retirada de URLs que antes eran 200 requiere que Google recrawlee; no se garantiza crecimiento automático ni ausencia de fluctuación. Los datos propios conservados de las fuentes requieren revisión editorial antes de reutilizarlos. Las dos fusiones WAIT y el conflicto Cascais siguen pendientes. El endpoint Brevo sin control de acceso detectado en Fase 0 es deuda separada; no se ejecutó ni se cambió.
 
 Si José aprueba publicar en una fase posterior: verificar build/CI, revisar matriz en la Preview exacta, merge mediante proceso normal y volver a comprobar en el alias real redirects/sitemap/robots/noindex/canonicals/schema y páginas protegidas. No solicitar indexación ni reenviar sitemap como parte de esta Preview. Si surge una URL dudosa fuera del contrato, dejarla sin migración y reportarla.
+
+## Revisión de contenido detectada en Fase 6B
+
+El manifest marca como REVIEW /blog/barrios-imprescindibles y /blog/belem-barrio-guia por contradicciones/datos variables documentados en el [informe de barrios](editorial-phase6-neighborhoods-review.md). Ambas conservan 200, indexabilidad y canonical propio; no se cambia contenido, intención ni enlaces. REVIEW no autoriza fusionar, eliminar o redirigir. El contrato de 16 redirects y ocho noindex de Fase 1 permanece intacto.

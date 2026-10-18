@@ -44,3 +44,15 @@ Riesgo de mantenimiento: actualizar a la vez resumen y cuerpo cuando cambie un d
 Se registran baselines local y Preview separados antes de modificar. Integridad: siete inicializadores originales idénticos por SHA-256 frente a d1ef498, más seis listas de procedencia válidas: 13 comprobaciones. Build, checks HTTP, revisión responsive y Preview se anotan en el cierre tras ejecutarse. No Lighthouse ni afirmaciones de Core Web Vitals sin medición.
 
 Build local correcto: 137 páginas; TypeScript pasa. Lint: cero errores y un warning preexistente en ItineraryContextualCta/analyticsParams. El primer build restringido quedó sin progreso; se interrumpió y se ejecutó correctamente fuera del sandbox, sin cambios de código para evitarlo. Plantilla: 1.635/1.635; migración: 1.426/1.426; sitemap: 64/64 y 98 URLs. Navegador local: seis guías × 390/412/768/1440 px, 24 vistas sin overflow, una H1 y una caja de 5–6 filas por página. Preview pendiente de cierre.
+
+## Cierre de Preview
+
+Preview READY: https://portugal-autentico-v2-r6vqgwb1t-estabaenlisboa.vercel.app
+
+Commit comprobado `3cad0d82132721d864966082a2f6aaf24d1381ee`, deployment `dpl_3a2pae6c2bs2K7BgPdBHEbpzfzoC`, rama editorial-rebuild, target null. Implementación en `88d5bc2`; contrato de QA y documentación en `3cad0d8`. El cierre posterior contiene solo memoria/documentos/evidencia. Acceso temporal autorizado, sin guardar tokens o cookies en Git ni desactivar protección.
+
+18/10/2026: plantilla remota 1.635/1.635 y migración 1.328/1.328; cero fallos. Sitemap remoto 64/64; XML de 98 URLs parseado. Los 98 controles menos que en local corresponden a cabeceras de Preview; robots HTML se comprueba estrictamente. Blog local: 69 HTML y cinco redirects, 828 invariantes; 97 enlaces internos sin rotos. CI TypeScript 39170427943 y SEO smoke 39170428166: success para el SHA comprobado. Workflows sin cambios; nuevos modos editoriales ejecutados manualmente, no afirmar que CI los ejecuta.
+
+Navegador: 36 vistas locales y 36 remotas, seis modificadas y tres reservadas × cuatro anchos. Sin overflow ni H1 duplicada; exactamente una caja de 5–6 filas en las seis y ninguna nueva en las otras tres. [Matriz](qa/2026-10-18/phase6b-responsive.json), [captura PC](qa/2026-10-18/phase6b-preview-desktop.png), [captura móvil](qa/2026-10-18/phase6b-preview-mobile.png), [controles](qa/2026-10-18/phase6b-checks.json), [integridad](qa/2026-10-18/phase6b-data-integrity.json), [antes/después](qa/2026-10-18/phase6b-change-summary.json).
+
+Producción reconsultada: `83ca369b477d578f5a63004b461550bdcf706f89` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, READY. PR #112 abierta y draft, sin merge. Siguiente grupo previsto: comida, con revisión individual y su propia Preview/QA. Las dos dudas de este lote deben resolverse antes de modificar esas URLs.

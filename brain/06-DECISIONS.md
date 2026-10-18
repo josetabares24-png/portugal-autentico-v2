@@ -1,5 +1,11 @@
 # Decision log
 
+## D-048 — Barrios: presentación por guía y dudas aisladas
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual del lote
+
+José indica seguir tras transporte. Se añaden seis resúmenes manuales de barrio, conservando originales y su orden. No extender intención de alojamiento ni reactivar su duplicado. Comparativa general y Belém quedan REVIEW por contradicciones/datos variables pendientes de verificar; se detiene solo en esas URLs y se reporta. Sin fusiones, merge ni producción. [Informe](../docs/editorial-phase6-neighborhoods-review.md).
+
 ## D-047 — Rollout editorial por lotes, transporte primero
 **Date:** 2026-10-18
 **Status:** candidate, pendiente de revisión visual del lote
