@@ -327,8 +327,6 @@ export function TravelPillarPage({
               </section>
             </div>
 
-            {reservation}
-
             <hr className="my-12 border-border-soft" />
             <section id="preguntas-frecuentes" className="article-faq article-reading scroll-mt-28">
               <h3>Preguntas frecuentes</h3>
@@ -344,6 +342,7 @@ export function TravelPillarPage({
                 ))}
               </div>
             </section>
+            {reservation}
           </article>
 
           <ArticleToc headings={headings} />

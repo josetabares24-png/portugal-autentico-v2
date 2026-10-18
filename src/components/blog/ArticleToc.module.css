@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+  .toc {
+    margin-bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .toc .summary {
+    min-height: 2.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--article-border);
+  }
+}

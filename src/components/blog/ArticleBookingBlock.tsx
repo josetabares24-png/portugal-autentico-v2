@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Icon from '@/components/Icon';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 
 /*
@@ -34,6 +33,8 @@ export interface ArticleBookingBlockProps {
    * único bloque nunca se quede sin aviso.
    */
   disclosure?: 'full' | 'short';
+  /** Actual visual placement; historical content/campaign identifiers stay intact. */
+  slot?: 'body' | 'final' | 'alternative';
   /**
    * Varias opciones en un mismo bloque (alojamiento por barrio). Si viene,
    * sustituye al botón único: un botón por opción, mismo marco.
@@ -61,6 +62,7 @@ export function ArticleBookingBlock({
   articleSlug,
   disclosure = 'full',
   options,
+  slot = 'body',
 }: ArticleBookingBlockProps) {
   let linkDomain = '';
   try {
@@ -70,11 +72,9 @@ export function ArticleBookingBlock({
   }
 
   return (
-    <aside id={`reserva-${contentId}`} className="article-booking not-prose my-8 scroll-mt-28 overflow-hidden rounded-xl border border-border-soft/70 bg-white shadow-card">
-      <span aria-hidden="true" className="block h-1 w-full bg-gradient-to-r from-terracotta to-gold" />
-      <div className="p-5">
+    <aside id={`reserva-${contentId}`} data-cta-slot={slot} className="article-booking not-prose my-6 scroll-mt-28 border-l-2 border-terracotta pl-5">
+      <div>
         <p className="article-booking-label flex items-center gap-2 font-semibold uppercase tracking-widest">
-          <Icon name="confirmation_number" size={15} className="flex-shrink-0 text-gold" />
           {kind} · {name}
         </p>
         <p className="article-booking-intro">{intro}</p>
@@ -92,7 +92,7 @@ export function ArticleBookingBlock({
                       affiliate_partner: partner,
                       affiliate_campaign: option.campaign,
                       affiliate_content: `${contentId}-${option.id}`,
-                      affiliate_placement: 'article-body',
+                      affiliate_placement: slot === 'body' ? 'article-body' : 'article-final',
                       affiliate_link_placement: linkPlacement,
                       destination: 'lisboa',
                       link_url: option.url,
@@ -121,7 +121,7 @@ export function ArticleBookingBlock({
                 affiliate_partner: partner,
                 affiliate_campaign: campaign,
                 affiliate_content: contentId,
-                affiliate_placement: 'article-body',
+                affiliate_placement: slot === 'body' ? 'article-body' : 'article-final',
                 affiliate_link_placement: linkPlacement,
                 destination: 'lisboa',
                 link_url: url,
@@ -132,7 +132,7 @@ export function ArticleBookingBlock({
               })
             }
           >
-            {ctaLabel}
+            {ctaLabel.replace(/^Comprar\b/, 'Ver')}
             <span aria-hidden="true"> ↗</span>
             <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
           </a>

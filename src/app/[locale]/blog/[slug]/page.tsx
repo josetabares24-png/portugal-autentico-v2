@@ -5784,7 +5784,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   // Related and the body already expose some declared links; restore only the rest.
   const renderedDestinations = new Set([
     `/blog/${slug}`,
-    '/planifica-tu-viaje',
     ...relatedPosts.map((post) => `/blog/${post.id}`),
     ...article.contenido.flatMap((block) =>
       block.tipo === 'enlace' && block.href ? [block.href] : [],
@@ -5904,7 +5903,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             authorName={AUTHOR_NAME}
             beforeAuthor={
               article.fuentes && article.fuentes.length > 0 ? (
-                <ArticleSources sources={article.fuentes} />
+                <ArticleSources sources={article.fuentes} verifiedDate={article.fechaActualizacion?.startsWith('Verificado el ') ? article.dateModified : undefined} />
               ) : null
             }
           />

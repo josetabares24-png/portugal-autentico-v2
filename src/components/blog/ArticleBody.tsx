@@ -7,7 +7,8 @@ import type {
   ArticleFaq,
   SectionPhoto,
 } from './article-types';
-import { ArticleBookingBlock, type ArticleBookingBlockProps } from './ArticleBookingBlock';
+import type { ArticleBookingBlockProps } from './ArticleBookingBlock';
+import { ArticleBookingRecommendations } from './ArticleBookingRecommendations';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
 import { renderEditorialHeading, slugify } from './article-utils';
@@ -21,9 +22,8 @@ type ArticleBodyProps = {
   seoDescription: string;
   takeaways: string[];
   /**
-   * Bloques de reserva ya resueltos en el servidor. Se pintan antes del
-   * encabezado indicado (al cierre de la sección que los justifica); los que
-   * no encuentran su encabezado caen al final del cuerpo.
+   * Ofertas resueltas en servidor. Fase 2: módulo final tras contenido y FAQ;
+   * las antiguas posiciones se conservan solo para compatibilidad de datos.
    */
   bookings?: (ArticleBookingBlockProps & { beforeHeading?: string; position?: 'after-summary' })[];
   /** Propiedad heredada por compatibilidad; sin formulario mientras la newsletter esté pausada. */
@@ -40,56 +40,7 @@ export function ArticleBody({
   takeaways,
   bookings = [],
 }: ArticleBodyProps) {
-  const headingIds = new Set(
-    article.contenido
-      .filter((b) => (b.tipo === 'subtitulo' || b.tipo === 'subseccion') && b.texto)
-      .map((b) => slugify(b.texto as string)),
-  );
-  /*
-   * Bloque de arriba (`position: 'after-summary'`): solo en las páginas donde
-   * la siguiente decisión del lector es comprar (ver blog-booking-placements).
-   * Como mucho uno, y nunca antes del contenido: se pinta al cerrar la primera
-   * sección que tenga texto propio (antes del primer subtítulo que viene
-   * después de un párrafo del cuerpo). Si hubiera más de uno marcado arriba,
-   * el resto baja al final del cuerpo.
-   */
-  const topBooking = bookings.find((b) => b.position === 'after-summary');
-  const bodyBookings = bookings.filter((b) => b !== topBooking);
   const bodyBlocks = article.contenido.slice(1);
-  const firstBodyParagraph = bodyBlocks.findIndex((b) => b.tipo === 'parrafo');
-  const topBookingIndex = !topBooking || firstBodyParagraph === -1
-    ? -1
-    : bodyBlocks.findIndex(
-        (b, i) => i > firstBodyParagraph && (b.tipo === 'subtitulo' || b.tipo === 'subseccion'),
-      );
-  // Sin subtítulo después del primer párrafo: justo detrás de ese párrafo.
-  const topBookingAfter = topBooking && topBookingIndex === -1 && firstBodyParagraph !== -1
-    ? firstBodyParagraph
-    : -1;
-  const isLowered = (b: (typeof bookings)[number]) => b.position === 'after-summary';
-  const bookingsBefore = (headingId: string) =>
-    bodyBookings
-      .filter((b) => !isLowered(b) && b.beforeHeading === headingId)
-      .map((b) => renderBooking(b));
-  const trailingBookings = [
-    ...(topBooking && topBookingIndex === -1 && topBookingAfter === -1 ? [topBooking] : []),
-    ...bodyBookings.filter(
-      (b) => isLowered(b) || !b.beforeHeading || !headingIds.has(b.beforeHeading),
-    ),
-  ];
-  // La nota de afiliado sale una vez por artículo, en el primer bloque que se
-  // ve al bajar (el de arriba si existe).
-  const firstBookingId = topBooking?.contentId
-    ?? bodyBlocks
-      .flatMap((b) =>
-        b.tipo === 'subtitulo' || b.tipo === 'subseccion'
-          ? bodyBookings.filter((x) => !isLowered(x) && x.beforeHeading === slugify(b.texto || ''))
-          : [],
-      )[0]?.contentId
-    ?? trailingBookings[0]?.contentId;
-  const renderBooking = (b: (typeof bookings)[number]) => (
-    <ArticleBookingBlock key={b.contentId} {...b} disclosure={b.contentId === firstBookingId ? 'full' : 'short'} />
-  );
   const renderBlock = (bloque: (typeof bodyBlocks)[number], index: number) => {
     if (bloque.tipo === 'parrafo') {
       const paragraphIndex = article.contenido
@@ -118,7 +69,6 @@ export function ArticleBody({
       const photo = isEditorialV2 ? photos[headingId] : undefined;
       return (
         <Fragment key={index}>
-          {bookingsBefore(headingId)}
           <h2 id={headingId} className="scroll-mt-28">
             {isEditorialV2 ? renderEditorialHeading(bloque.texto || '') : bloque.texto}
           </h2>
@@ -130,7 +80,6 @@ export function ArticleBody({
       const headingId = slugify(bloque.texto || '');
       return (
         <Fragment key={index}>
-          {bookingsBefore(headingId)}
           <h3 id={headingId} className="scroll-mt-28">
             {bloque.texto}
           </h3>
@@ -305,21 +254,7 @@ export function ArticleBody({
 
       {/* Contenido del artículo */}
       <div className="article-content article-reading">
-        {bodyBlocks.map((bloque, index) => {
-          const top = topBooking && index === topBookingIndex ? renderBooking(topBooking) : null;
-          const afterTop = topBooking && index === topBookingAfter ? renderBooking(topBooking) : null;
-          if (top || afterTop) {
-            return (
-              <Fragment key={`block-${index}`}>
-                {top}
-                {renderBlock(bloque, index)}
-                {afterTop}
-              </Fragment>
-            );
-          }
-          return renderBlock(bloque, index);
-        })}
-        {trailingBookings.map(renderBooking)}
+        {bodyBlocks.map(renderBlock)}
       </div>
 
       {faqs.length > 0 && (
@@ -343,6 +278,7 @@ export function ArticleBody({
           </section>
         </>
       )}
+      <ArticleBookingRecommendations bookings={bookings} />
     </article>
   );
 }

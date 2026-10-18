@@ -203,7 +203,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
             <ArticleFooter
               authorName={AUTHOR_NAME}
               beforeAuthor={
-                article.fuentes && article.fuentes.length > 0 ? <ArticleSources sources={article.fuentes} /> : null
+                article.fuentes && article.fuentes.length > 0 ? <ArticleSources sources={article.fuentes} verifiedDate={article.fechaActualizacion?.startsWith('Verificado el ') ? article.dateModified : undefined} /> : null
               }
             />
           </div>
