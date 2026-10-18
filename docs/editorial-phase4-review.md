@@ -38,7 +38,7 @@ Cero slugs, redirects o noindex nuevos. Sitemap 98, robots, canonicals, schema, 
 
 ## QA y evidencia
 
-Build final y Preview pendientes de cierre. Primer build: 137 páginas; TypeScript correcto. Lint: cero errores, warning preexistente ItineraryContextualCta/analyticsParams. Primer QA local: 1.536 controles de plantilla, 1.426 migración, 828 invariantes de blog y cero enlaces rotos.
+Build final correcto: 137 páginas; TypeScript correcto. Lint: cero errores, warning preexistente ItineraryContextualCta/analyticsParams. QA local final: 1.608 controles de plantilla contra baseline remoto de Fase 2, sin fallos; migración 1.426, sitemap 64/64, blog 828 y cero enlaces rotos. Comparación AST: siete inicializadores (artículos, FAQ, extras, fotos por sección, alt y mapas de fotos) con hashes SHA-256 idénticos a a569a29, más siete validaciones de índices de origen: 14/14.
 
 El contrato final añade comparación exacta de cada párrafo, ítem y celda. En las siete páginas admite solo reordenar bloques y añadir los resúmenes/una respuesta identificados. En las otras 65 conserva orden y texto exactos. Metadatos, schema, imágenes y canonicals son estrictos en todas. No basta con contar palabras.
 
@@ -49,3 +49,16 @@ Revisión local: siete páginas × 390/412/768/1440 px, una H1, 4–7 pares y ce
 Los resúmenes replican algunos hechos del cuerpo: al actualizar tarifas hay que revisar ambos, sin scripts ciegos. El índice único conserva su adaptación tras hidratación. No se mide CTR/ranking sobre una rama sin publicar. Objetivo del piloto: poder resolver las decisiones iniciales sin buscar entre párrafos y conservar exactitud. Esfuerzo medio; riesgo acotado a siete activaciones.
 
 Fase 5: entregar Preview READY, evidencia y revisión; esperar aprobación antes de Fase 6. No merge ni producción.
+
+## Cierre remoto y gate de revisión
+
+Preview READY: https://portugal-autentico-v2-fas2cz23y-estabaenlisboa.vercel.app
+
+Código comprobado `f51e4ce6d98dd1a7850ab3657a1b7c475b3ce38c`; deployment `dpl_CdFs9k2esuhRaB3jZ9QbC7bYVRyt`, rama editorial-rebuild, target null. El acceso temporal ya autorizado se entrega únicamente en conversación; no se guarda su token ni cookies en Git. Los commits posteriores de cierre solo añaden documentación y evidencia.
+
+- QA remoto: plantilla 1.608/1.608, migración 1.328/1.328, sitemap 64/64; cero fallos. XML parseado, 98 URLs. Cabeceras Preview se tratan como plataforma; robots/canonical HTML siguen estrictos.
+- CI del SHA comprobado: TypeScript 39115147238 y SEO smoke 39115147234, success. Las pruebas nuevas siguen manuales, sin ampliar permisos de workflows.
+- Navegador remoto: 28 vistas (siete páginas × cuatro anchos), cero overflow y una H1 en todas. Índice de Oriente probado: el ancla conserva su ID y deja el encabezado a unos 112 px del borde superior. Firma alineada con el ancho de lectura.
+- [Captura Metro móvil](qa/2026-10-18/phase4-preview-mobile.png), [vida nocturna en PC](qa/2026-10-18/phase4-preview-desktop.png), [matriz responsive](qa/2026-10-18/phase4-responsive.json), [controles](qa/2026-10-18/phase4-checks.json), [integridad de datos](qa/2026-10-18/phase4-data-integrity.json).
+
+Producción reconsultada al cierre: `83ca369` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, sin cambios. STOP en Fase 5: el siguiente paso requiere revisar este candidato, no ampliar automáticamente a las demás URLs.

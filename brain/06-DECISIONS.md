@@ -1,5 +1,11 @@
 # Decision log
 
+## D-046 — Sistema editorial con piloto acotado a siete guías
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual de Fase 5
+
+La continuación de José autoriza Fases 3/4 sobre Metro, Navegante, pagos, movilidad, Time Out, Oriente y vida nocturna. Datos por página en pares semánticos, sin reescribir los objetos originales; presentación y dos reordenaciones controladas. No cifras sin evidencia, nuevos slugs ni activación por categoría. No se modifica el resto de URLs. D-045 y D-044 siguen vigentes. Entregar Preview y detenerse antes de rollout, merge o producción. [Informe](../docs/editorial-phase4-review.md).
+
 ## D-045 — Respuesta antes de reservas, Fase 2 editorial
 **Date:** 2026-10-18
 **Status:** candidate, pendiente de aprobación visual y publicación

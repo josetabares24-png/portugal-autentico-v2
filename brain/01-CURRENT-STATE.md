@@ -2,7 +2,7 @@
 
 ## 18 octubre 2026 — Fases 3/4, piloto de siete guías
 
-José autoriza seguir tras Fase 2. Componente Lo esencial semántico y perfiles revisados en Metro, Navegante, pagos, movilidad, Time Out, Oriente y vida nocturna. Sin cambio de URLs/metadata ni rollout. Se conservan artículos originales; Oriente adelanta uso y pagos desplaza disclaimer. QA y Preview en preparación. [Informe](../docs/editorial-phase4-review.md). STOP antes de Fase 6; no merge ni producción.
+José autoriza seguir tras Fase 2. Componente Lo esencial semántico y perfiles revisados en Metro, Navegante, pagos, movilidad, Time Out, Oriente y vida nocturna. Sin cambio de URLs/metadata ni rollout. Se conservan artículos originales; Oriente adelanta uso y pagos desplaza disclaimer. Preview READY f51e4ce / dpl_CdFs9k2esuhRaB3jZ9QbC7bYVRyt: plantilla 1.608, migración remota 1.328, sitemap 64/64, 28 vistas responsive sin overflow; CI success. [Informe](../docs/editorial-phase4-review.md). STOP en Fase 5 antes de Fase 6; no merge ni producción.
 
 ## 18 octubre 2026 — Fase 2, candidato para revisión
 
