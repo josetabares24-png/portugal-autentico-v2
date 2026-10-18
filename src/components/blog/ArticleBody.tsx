@@ -11,6 +11,8 @@ import type { ArticleBookingBlockProps } from './ArticleBookingBlock';
 import { ArticleBookingRecommendations } from './ArticleBookingRecommendations';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
+import { ArticleEssentials } from './ArticleEssentials';
+import type { EditorialPilot } from '@/data/editorial-pilot';
 import { renderEditorialHeading, slugify } from './article-utils';
 
 type ArticleBodyProps = {
@@ -21,6 +23,7 @@ type ArticleBodyProps = {
   photos: Record<string, SectionPhoto>;
   seoDescription: string;
   takeaways: string[];
+  editorial?: EditorialPilot;
   /**
    * Ofertas resueltas en servidor. Fase 2: módulo final tras contenido y FAQ;
    * las antiguas posiciones se conservan solo para compatibilidad de datos.
@@ -39,8 +42,22 @@ export function ArticleBody({
   seoDescription,
   takeaways,
   bookings = [],
+  editorial,
 }: ArticleBodyProps) {
-  const bodyBlocks = article.contenido.slice(1);
+  let bodyBlocks = article.contenido.slice(1);
+  const originalLead = article.contenido.find((block) => block.tipo === 'parrafo');
+  if (editorial?.answer && originalLead) bodyBlocks = [originalLead, ...bodyBlocks];
+  if (editorial?.prioritizeHeading) {
+    const start = bodyBlocks.findIndex((block) => block.tipo === 'subtitulo' && block.texto === editorial.prioritizeHeading);
+    if (start >= 0) {
+      const next = bodyBlocks.findIndex((block, index) => index > start && block.tipo === 'subtitulo');
+      const end = next < 0 ? bodyBlocks.length : next;
+      bodyBlocks = [...bodyBlocks.slice(start, end), ...bodyBlocks.slice(0, start), ...bodyBlocks.slice(end)];
+    }
+  }
+  if (editorial?.deferOpeningDisclaimer && bodyBlocks[0]?.tipo === 'parrafo') {
+    bodyBlocks = [...bodyBlocks.slice(1), bodyBlocks[0]];
+  }
   const renderBlock = (bloque: (typeof bodyBlocks)[number], index: number) => {
     if (bloque.tipo === 'parrafo') {
       const paragraphIndex = article.contenido
@@ -212,12 +229,14 @@ export function ArticleBody({
   return (
     <article className="article-surface min-w-0">
       {/* Lead paragraph - primer párrafo destacado */}
-      <p className="article-lead">
-        {article.contenido.find(b => b.tipo === 'parrafo')?.texto || seoDescription}
+      <p className="article-lead" data-editorial-answer={editorial?.answer ? 'adapted' : undefined}>
+        {editorial?.answer ?? originalLead?.texto ?? seoDescription}
       </p>
 
+      {editorial && <ArticleEssentials rows={editorial.rows} type={editorial.type} title={editorial.title} />}
+
       {/* Resumen */}
-      {takeaways.length > 0 && (
+      {!editorial && takeaways.length > 0 && (
         <ArticleCallout
           label="Lo esencial"
           className="article-info-box article-reading border-l-2 border-gold"

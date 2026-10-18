@@ -15,6 +15,7 @@ import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-b
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 import { articleHasNewsletter } from '@/lib/newsletter';
+import { EDITORIAL_PILOT } from '@/data/editorial-pilot';
 
 const articles: Record<string, Article> = {
   'portugal-en-7-dias': {
@@ -5746,6 +5747,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
+  const editorial = EDITORIAL_PILOT[slug];
   const baseHeadings = article.contenido
     .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
     .map((bloque) => ({
@@ -5756,7 +5758,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ...(extras?.comoLlegar ? [{ title: 'Cómo llegar', id: 'como-llegar' }] : []),
     ...(extras?.mejorHora ? [{ title: 'Mejor hora para ir', id: 'mejor-hora' }] : []),
   ];
-  const headings = [...extraHeadings, ...baseHeadings];
+  const orderedHeadings = editorial?.prioritizeHeading
+    ? [...baseHeadings.filter((heading) => heading.title === editorial.prioritizeHeading), ...baseHeadings.filter((heading) => heading.title !== editorial.prioritizeHeading)]
+    : baseHeadings;
+  const headings = [...extraHeadings, ...orderedHeadings];
 
   // «Lo esencial» solo con un resumen propio del artículo (`resumen`). Antes
   // copiaba los tres primeros puntos de la primera lista, que se volvían a
@@ -5874,6 +5879,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         heroImage={visualHeroImage}
         heroImageAlt={heroImageAlt}
         isEditorialV2={isEditorialV2}
+        editorialPilot={Boolean(editorial)}
       />
 
       {/* Layout principal: contenido + sidebar */}
@@ -5887,6 +5893,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             photos={photos}
             seoDescription={seoDescription}
             takeaways={takeaways}
+            editorial={editorial}
             bookings={resolveArticleBookings(slug)}
             newsletterSlug={showNewsletter ? slug : undefined}
           />
