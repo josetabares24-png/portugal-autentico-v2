@@ -19,6 +19,7 @@ import { EDITORIAL_PILOT } from '@/data/editorial-pilot';
 import { EDITORIAL_TRANSPORT } from '@/data/editorial-transport';
 import { EDITORIAL_NEIGHBORHOODS } from '@/data/editorial-neighborhoods';
 import { EDITORIAL_FOOD } from '@/data/editorial-food';
+import { EDITORIAL_ATTRACTIONS } from '@/data/editorial-attractions';
 
 const articles: Record<string, Article> = {
   'portugal-en-7-dias': {
@@ -5750,7 +5751,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const seoTitle = article.seoTitle ?? getSeoTitle(article.titulo);
   const seoDescription = article.metaDescription ?? getSeoDescription(article.descripcion);
   const extras = articleExtras[slug];
-  const editorial = EDITORIAL_PILOT[slug] ?? EDITORIAL_TRANSPORT[slug] ?? EDITORIAL_NEIGHBORHOODS[slug] ?? EDITORIAL_FOOD[slug];
+  const editorial = EDITORIAL_PILOT[slug] ?? EDITORIAL_TRANSPORT[slug] ?? EDITORIAL_NEIGHBORHOODS[slug] ?? EDITORIAL_FOOD[slug] ?? EDITORIAL_ATTRACTIONS[slug];
   const baseHeadings = article.contenido
     .filter((bloque) => bloque.tipo === 'subtitulo' && bloque.texto)
     .map((bloque) => ({
