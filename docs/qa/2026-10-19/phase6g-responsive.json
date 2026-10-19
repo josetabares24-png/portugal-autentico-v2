@@ -1,362 +1,726 @@
-[
-  {
-    "slug": "historia-de-lisboa",
-    "width": 390,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 6,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "historia-de-lisboa",
-    "width": 412,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 6,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "historia-de-lisboa",
-    "width": 768,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 6,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "historia-de-lisboa",
-    "width": 1440,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 6,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "fado-historia-origen",
-    "width": 390,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 4,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "fado-historia-origen",
-    "width": 412,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 4,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "fado-historia-origen",
-    "width": 768,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 4,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "fado-historia-origen",
-    "width": 1440,
-    "essentials": 1,
-    "h1": 1,
-    "overflow": false,
-    "rows": 4,
-    "title": "En 30 segundos",
-    "type": "culture"
-  },
-  {
-    "slug": "arquitectura-manuelina-lisboa",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "arquitectura-manuelina-lisboa",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "arquitectura-manuelina-lisboa",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "arquitectura-manuelina-lisboa",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "estacion-olaias-lisboa",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "estacion-olaias-lisboa",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "estacion-olaias-lisboa",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "estacion-olaias-lisboa",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "azulejos-portugueses-historia",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "azulejos-portugueses-historia",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "azulejos-portugueses-historia",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "azulejos-portugueses-historia",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "terremoto-lisboa-1755",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "terremoto-lisboa-1755",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "terremoto-lisboa-1755",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "terremoto-lisboa-1755",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "descubrimientos-portugueses-lisboa",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "descubrimientos-portugueses-lisboa",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "descubrimientos-portugueses-lisboa",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "descubrimientos-portugueses-lisboa",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "donde-escuchar-fado-autentico",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "donde-escuchar-fado-autentico",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "donde-escuchar-fado-autentico",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "donde-escuchar-fado-autentico",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "monumentos-de-lisboa",
-    "width": 390,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "monumentos-de-lisboa",
-    "width": 412,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "monumentos-de-lisboa",
-    "width": 768,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  },
-  {
-    "slug": "monumentos-de-lisboa",
-    "width": 1440,
-    "essentials": 0,
-    "h1": 1,
-    "overflow": false,
-    "rows": 0,
-    "title": null,
-    "type": null
-  }
-]
+{
+  "local": [
+    {
+      "slug": "historia-de-lisboa",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    }
+  ],
+  "preview": [
+    {
+      "slug": "historia-de-lisboa",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "historia-de-lisboa",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "fado-historia-origen",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 4,
+      "title": "En 30 segundos",
+      "type": "culture"
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "arquitectura-manuelina-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "estacion-olaias-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "donde-escuchar-fado-autentico",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    },
+    {
+      "slug": "monumentos-de-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0,
+      "title": null,
+      "type": null
+    }
+  ]
+}

@@ -56,4 +56,16 @@ Baselines local/remoto registrados antes de editar, con los 25 perfiles anterior
 
 Aplicación `5502da2`. QA local: build 137 páginas, TypeScript correcto y lint sin errores, con warning preexistente de analyticsParams en ItineraryContextualCta. Plantilla 1.670/1.670 en 72 superficies; migración 1.426/1.426, 106 páginas, 113 enlaces internos y 16 redirects; sitemap 64/64 y 98 URLs. Blog: 828 invariantes, 69 HTML y cinco redirects, 97 enlaces internos sin rotos. Navegador: nueve piezas × 390/412/768/1440 px, 36 vistas sin overflow y H1 única; solo las dos seleccionadas reciben caja culture de seis/cuatro filas. Manuelino y Olaias intactos.
 
-Al cerrar, actualizar este informe con resultados reales, SHA comprobado, Preview, archivos/evidencia y estado de producción. Sin merge. Siguiente etapa después del gate del grupo G: revisiones/consolidaciones de Fase 7, sin fusiones automáticas ni rediseño de navegación no aprobado.
+## Cierre de Preview — 19 octubre
+
+Preview READY: https://portugal-autentico-v2-k1pns67wa-estabaenlisboa.vercel.app
+
+SHA comprobado `3f47e5bd6b4b5bf9b2653e70c79646dcf4d07f8f`, deployment `dpl_6X8YrbSNybjDXFQwqc97zwTFSyLq`, rama editorial-rebuild, target null. Aplicación `5502da2`; tests/memoria `3f47e5b`. El cierre posterior solo contiene documentos/evidencia. Acceso temporal autorizado entregado en conversación y enlace directo a Historia comprobado en navegador; sin credenciales en Git ni cambios de protección.
+
+QA remoto: plantilla 1.670/1.670 en 72 superficies, migración 1.328/1.328 en 106 páginas y sitemap 64/64 con 98 URLs. Los 16 redirects mantienen un salto y destino 200; los 113 enlaces internos comprobados no dependen de redirects. La diferencia de 98 controles de migración frente a local corresponde a cabeceras de Preview; robots HTML se verifica en ambos. Sin nuevos fallos ni reparaciones de contenido durante QA. CI TypeScript 39309419962 y SEO smoke 39309420307: success para el SHA comprobado; modos editoriales nuevos ejecutados manualmente y workflows intactos.
+
+Navegador remoto: nueve piezas × cuatro anchos, 36 vistas sin overflow ni H1 duplicada. Exactamente dos cajas culture, de seis/cuatro filas; las siete superficies de control no reciben cajas. Capturas inspeccionadas: [PC, Historia](qa/2026-10-19/phase6g-preview-desktop.png) y [móvil, Fado](qa/2026-10-19/phase6g-preview-mobile.png). [Matriz local/remota](qa/2026-10-19/phase6g-responsive.json), [controles](qa/2026-10-19/phase6g-checks.json), [integridad](qa/2026-10-19/phase6g-data-integrity.json), [antes/después de estructura y preservación](qa/2026-10-19/phase6g-change-summary.json).
+
+Memoria actualizada en D-053, CURRENT-STATE y registro del lote; reglas editoriales y migración incorporan alcance/límites. CSV de 128 filas válido, sin URLs duplicadas y con campos entrecomillados leídos correctamente. Los siete inicializadores completos originales conservan sus hashes frente a f230e62; datos de Manuelino/Olaias y de las páginas REVIEW intactos, además de metadata/schema/orden/enlaces por HTTP.
+
+Producción reconsultada al cerrar: `83ca369b477d578f5a63004b461550bdcf706f89` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, READY. PR #112 abierta y draft. Sin merge ni producción; no Lighthouse ejecutado. Siguiente etapa después del gate de este lote: revisiones/consolidaciones de Fase 7, sin fusiones automáticas ni rediseño de navegación no aprobado. El cierre del grupo no equivale a una reverificación factual de todo el sitio ni resuelve las dudas anteriores.

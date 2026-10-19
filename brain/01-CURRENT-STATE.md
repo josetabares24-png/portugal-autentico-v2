@@ -1,8 +1,8 @@
 # Current state
 
-## 19 octubre 2026 — Fase 6G, historia y cultura en revisión
+## 19 octubre 2026 — Fase 6G, historia y cultura
 
-José indica continuar tras eventos. Historia de Lisboa y Fado reciben perfiles culture de seis/cuatro pares; originales/orden/SEO conservados, 27 perfiles en total. Manuelino y Olaias protegidos KEEP. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas, sin cambios de contenido ni migración. [Informe](../docs/editorial-phase6-culture-review.md), D-053. Baselines local/remoto capturados; QA/Preview pendientes de cierre. Sin merge ni producción; Fase 7 no se ejecuta automáticamente.
+José indica continuar tras eventos. Historia de Lisboa y Fado reciben perfiles culture de seis/cuatro pares; originales/orden/SEO conservados, 27 perfiles en total. Manuelino y Olaias protegidos KEEP. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas, sin cambios de contenido ni migración. Preview READY 3f47e5b / dpl_6X8YrbSNybjDXFQwqc97zwTFSyLq: plantilla 1.670 y migración remota 1.328 sin fallos, sitemap 64/64, 36 vistas remotas sin overflow y CI success. [Informe](../docs/editorial-phase6-culture-review.md), D-053. Producción conserva 83ca369. Sin merge ni producción; Fase 7 no se ejecuta automáticamente.
 
 ## 19 octubre 2026 — Fase 6F, eventos y temporada
 
