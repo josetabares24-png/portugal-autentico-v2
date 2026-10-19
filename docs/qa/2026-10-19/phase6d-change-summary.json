@@ -1,0 +1,55 @@
+{
+  "baselineSha": "7c24bae",
+  "pages": [
+    {
+      "url": "/blog/mejores-miradores-lisboa",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Mejores miradores de Lisboa: cuáles elegir | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/mejores-miradores-lisboa",
+      "sources": 5
+    },
+    {
+      "url": "/blog/mejores-mercados-lisboa",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Mercados de Lisboa: 5 mercados y ferias que visitar",
+      "canonical": "https://estabaenlisboa.com/blog/mejores-mercados-lisboa",
+      "sources": 3
+    },
+    {
+      "url": "/blog/lisboa-cuando-llueve",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Qué hacer en Lisboa cuando llueve: planes a cubierto",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-cuando-llueve",
+      "sources": 1
+    },
+    {
+      "url": "/blog/que-hacer-gratis-en-lisboa",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Qué hacer gratis en Lisboa | Planes útiles | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/que-hacer-gratis-en-lisboa",
+      "sources": 4
+    }
+  ],
+  "keep": "/actividades/cristo-rei",
+  "review": [
+    "/actividades/oceanario-lisboa",
+    "/actividades/castelo-sao-jorge"
+  ],
+  "protected": [
+    "/blog/palacio-da-pena-entradas",
+    "/blog/monasterio-jeronimos-entradas"
+  ],
+  "baselineHash": "483026bc92d5dce43799884d2209a204097a4bb99a6a57a98eca529df3e6ea84"
+}

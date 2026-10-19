@@ -116,3 +116,7 @@ El manifest marca como REVIEW /blog/barrios-imprescindibles y /blog/belem-barrio
 ## Revisión de contenido detectada en Fase 6C
 
 Café y gastronomía pasan a REVIEW por las dudas concretas del [informe de comida](editorial-phase6-food-review.md). Conservan contenido, intención, 200, indexabilidad y canonical propio. Pastéis recibe únicamente presentación: su revisión de cluster en Fase 7 sigue pendiente. La ruta antigua de mejores natas ya tiene 308 histórico a Pastéis y no se reactiva. Sin nuevas migraciones, noindex o cambios de sitemap.
+
+## Revisión de contenido detectada en Fase 6D
+
+Las fichas de Oceanário y Castelo pasan a REVIEW por campaña de descuento y aviso fechado, respectivamente, según el [informe de atracciones](editorial-phase6-attractions-review.md). Conservan archivos de datos, contenido, 200, indexabilidad y canonical propio. No se corrigen ni migran silenciosamente. El antiguo artículo de atardeceres ya redirige históricamente a mejores miradores y no se reactiva. Pena/Jerónimos siguen protegidos sin cambios.

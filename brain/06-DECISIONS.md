@@ -1,5 +1,11 @@
 # Decision log
 
+## D-050 — Atracciones: elección útil y dudas aisladas por URL
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras comida. Cuatro perfiles de elección, sin reescritura ni migración. No duplicar respuestas iniciales de fichas ni adaptar por categoría. Oceanário y Castelo quedan REVIEW por campaña/aviso fechado; Pena y Jerónimos protegidos sin cambios. No reactivar rutas históricas ni consolidar monumentos. [Informe](../docs/editorial-phase6-attractions-review.md). Sin merge ni producción.
+
 ## D-049 — Comida: dos resúmenes contrastados y revisión de dudas por URL
 **Date:** 2026-10-19
 **Status:** candidate, pendiente de revisión visual del lote

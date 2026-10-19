@@ -50,3 +50,17 @@ Baselines local y remoto separados antes de modificar. Trece controles de integr
 Build correcto: 137 páginas; TypeScript correcto. Lint sin errores, un warning preexistente en ItineraryContextualCta/analyticsParams. Plantilla: 1.653/1.653 en 72 superficies; migración: 1.426/1.426; sitemap: 64/64 y 98 URLs. Blog: 828 invariantes, 69 HTML y cinco redirects; 97 enlaces internos sin rotos. Integridad: 13/13. Los cuatro registros editoriales anteriores y los archivos de las fichas no cambian.
 
 Navegador local: cuatro guías nuevas, tres fichas, dos guías recientes y el pilar de qué ver × 390/412/768/1440 px: 40 vistas sin overflow ni H1 duplicada. Una caja de seis pares en cada guía nueva y ninguna activación añadida a las seis superficies de control. Preview pendiente de cierre.
+
+## Cierre de Preview — 19 octubre
+
+Preview READY: https://portugal-autentico-v2-luy4blgiw-estabaenlisboa.vercel.app
+
+SHA comprobado `cf8961fd412010132e9f27fbd7c25254b04f4fb5`, deployment `dpl_GTzyYtMsjbRNJHxW6nfvLVGtsEw3`, rama editorial-rebuild, target null. Implementación `762951b`, contrato QA/documentación `cf8961f`; el cierre posterior es solo documental. Acceso temporal autorizado entregado en conversación; sin tokens/cookies en Git ni cambios de protección.
+
+QA remoto: plantilla 1.653/1.653, migración 1.328/1.328, sitemap 64/64 con 98 URLs y XML parseado; cero fallos. La diferencia de 98 controles de migración respecto a local es la política de cabeceras de Preview; robots HTML estricto. CI TypeScript 39216625104 y SEO smoke 39216625218: success para el SHA comprobado. Los modos editoriales nuevos se ejecutan manualmente; workflows sin cambios.
+
+Navegador remoto: las mismas 40 vistas que en local, sin overflow, una H1 y exactamente cuatro nuevas cajas de seis filas. [Matriz](qa/2026-10-19/phase6d-responsive.json), [captura PC](qa/2026-10-19/phase6d-preview-desktop.png), [captura móvil](qa/2026-10-19/phase6d-preview-mobile.png), [controles](qa/2026-10-19/phase6d-checks.json), [integridad](qa/2026-10-19/phase6d-data-integrity.json), [antes/después](qa/2026-10-19/phase6d-change-summary.json).
+
+Memoria/documentación: editorial-system, seo-migration, seo-url-manifest, CURRENT-STATE, D-050 y registro de Fase 6D actualizados. Se reutiliza ArticleEssentials de servidor, sin componentes ni JavaScript cliente nuevos. No Lighthouse ejecutado. Producción reconsultada conserva `83ca369b477d578f5a63004b461550bdcf706f89` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, READY. PR #112 abierta y draft; sin merge ni producción.
+
+Las incidencias de Oceanário/Castelo y las dudas previas permanecen visibles en manifest/memoria; terminar esta presentación no las da por resueltas. El siguiente lote es itinerarios, con revisión individual y su propia Preview/QA.

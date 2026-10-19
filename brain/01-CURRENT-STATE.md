@@ -1,5 +1,9 @@
 # Current state
 
+## 19 octubre 2026 — Fase 6D, elección de atracciones
+
+José indica seguir tras comida. Cuatro perfiles manuales: miradores, mercados, lluvia y planes gratuitos, seis pares cada uno. Originales/orden/SEO conservados; sin adaptación masiva de fichas. Oceanário y Castelo REVIEW por campaña de descuento y aviso fechado; Pena/Jerónimos protegidos sin cambios. Preview READY cf8961f / dpl_GTzyYtMsjbRNJHxW6nfvLVGtsEw3: plantilla 1.653 y migración remota 1.328 sin fallos; 40 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-attractions-review.md). Siguiente grupo: itinerarios, sin consolidaciones automáticas.
+
 ## 19 octubre 2026 — Fase 6C, comida
 
 Continuación de José tras barrios; trabajo iniciado el 18/10 y reanudado el 19/10. Dos perfiles manuales: comer barato y Pastéis, seis pares cada uno, sin reescribir originales ni SEO. Time Out conserva el piloto. Café y gastronomía REVIEW por dudas documentadas; consolidaciones de Fase 7 pendientes. Preview READY ace0d6d / dpl_HTMzZzkyKhak3K3fjSSgvYTwJpes: plantilla 1.641 y migración remota 1.328 sin fallos; 24 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-food-review.md). Siguiente grupo: atracciones; proteger páginas recientes y dudas anteriores.
