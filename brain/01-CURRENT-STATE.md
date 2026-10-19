@@ -1,5 +1,9 @@
 # Current state
 
+## 19 octubre 2026 — Fase 6C, comida
+
+Continuación de José tras barrios; trabajo iniciado el 18/10 y reanudado el 19/10. Dos perfiles manuales: comer barato y Pastéis, seis pares cada uno, sin reescribir originales ni SEO. Time Out conserva el piloto. Café y gastronomía REVIEW por dudas documentadas; consolidaciones de Fase 7 pendientes. Preview READY ace0d6d / dpl_HTMzZzkyKhak3K3fjSSgvYTwJpes: plantilla 1.641 y migración remota 1.328 sin fallos; 24 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-food-review.md). Siguiente grupo: atracciones; proteger páginas recientes y dudas anteriores.
+
 ## 18 octubre 2026 — Fase 6B, barrios
 
 José indica seguir tras transporte. Seis perfiles manuales de visita: Baixa, Alfama, Graça, Chiado/Bairro Alto, Mouraria y Parque das Nações. Originales/orden/SEO conservados. Alojamiento KEEP; comparativa general y Belém REVIEW por dudas concretas, sin migración ni cambios en esas páginas. Preview READY 3cad0d8 / dpl_3a2pae6c2bs2K7BgPdBHEbpzfzoC: plantilla 1.635 y migración remota 1.328 sin fallos; 36 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-neighborhoods-review.md). Siguiente grupo: comida; conservar pendientes de Fase 7.

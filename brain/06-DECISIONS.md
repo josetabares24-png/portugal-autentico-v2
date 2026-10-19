@@ -1,5 +1,11 @@
 # Decision log
 
+## D-049 — Comida: dos resúmenes contrastados y revisión de dudas por URL
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras barrios. Presentación en comer barato y Pastéis de Belém, conservando originales, orden y SEO. Consulta puntual de importes/horario a negocios, sin renovar fechas ni prometer precios futuros. Café y gastronomía quedan REVIEW por dudas específicas; Time Out y consolidaciones mantienen su estado. No reactivar mejores natas ni decidir fusiones. [Informe](../docs/editorial-phase6-food-review.md). Sin merge ni producción.
+
 ## D-048 — Barrios: presentación por guía y dudas aisladas
 **Date:** 2026-10-18
 **Status:** candidate, pendiente de revisión visual del lote

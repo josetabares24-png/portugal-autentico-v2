@@ -1,0 +1,438 @@
+{
+  "local": [
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ],
+  "preview": [
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ]
+}

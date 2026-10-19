@@ -1,0 +1,31 @@
+{
+  "baselineSha": "1d1c470",
+  "pages": [
+    {
+      "url": "/blog/donde-comer-barato-lisboa",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Dónde comer barato en Lisboa: tascas y restaurantes | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/donde-comer-barato-lisboa",
+      "sources": 7
+    },
+    {
+      "url": "/blog/pasteles-de-belem",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Pastéis de Belém | Historia y secretos | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/pasteles-de-belem",
+      "sources": 2
+    }
+  ],
+  "keep": "/blog/time-out-market-lisboa",
+  "review": [
+    "/blog/donde-tomar-cafe-lisboa",
+    "/blog/gastronomia-portuguesa-guia"
+  ],
+  "baselineHash": "c384981c4bd30972a12fd1d910b8858c1a97dea8801a77a013def59db60e6a51"
+}

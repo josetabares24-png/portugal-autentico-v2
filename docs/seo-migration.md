@@ -112,3 +112,7 @@ Si José aprueba publicar en una fase posterior: verificar build/CI, revisar mat
 ## Revisión de contenido detectada en Fase 6B
 
 El manifest marca como REVIEW /blog/barrios-imprescindibles y /blog/belem-barrio-guia por contradicciones/datos variables documentados en el [informe de barrios](editorial-phase6-neighborhoods-review.md). Ambas conservan 200, indexabilidad y canonical propio; no se cambia contenido, intención ni enlaces. REVIEW no autoriza fusionar, eliminar o redirigir. El contrato de 16 redirects y ocho noindex de Fase 1 permanece intacto.
+
+## Revisión de contenido detectada en Fase 6C
+
+Café y gastronomía pasan a REVIEW por las dudas concretas del [informe de comida](editorial-phase6-food-review.md). Conservan contenido, intención, 200, indexabilidad y canonical propio. Pastéis recibe únicamente presentación: su revisión de cluster en Fase 7 sigue pendiente. La ruta antigua de mejores natas ya tiene 308 histórico a Pastéis y no se reactiva. Sin nuevas migraciones, noindex o cambios de sitemap.

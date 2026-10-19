@@ -50,3 +50,17 @@ Build correcto de 137 páginas, TypeScript y lint sin errores; permanece un warn
 La orden de sitemap/blog/typecheck del 18/10 no llegó a ejecutarse por agotarse el límite del servicio de revisión automática de permisos. Tras la continuación de José y el reinicio del límite, se ejecutó el 19/10: sitemap 64/64, blog 828 invariantes en 69 HTML y cinco redirects, 97 enlaces sin rotos; TypeScript correcto. No se eludió la revisión de permisos.
 
 Navegador local: dos guías adaptadas, Time Out conservado, dos páginas REVIEW y el pilar de comida × 390/412/768/1440 px: 24 vistas sin overflow ni H1 duplicada. Exactamente seis filas nuevas en cada guía adaptada y ninguna activación adicional fuera del contrato. Preview pendiente de cierre.
+
+## Cierre de Preview — 19 octubre
+
+Preview READY: https://portugal-autentico-v2-hwx6tfb14-estabaenlisboa.vercel.app
+
+SHA comprobado `ace0d6dfdb938084e760b93b75a72bbe21a6f128`, deployment `dpl_HTMzZzkyKhak3K3fjSSgvYTwJpes`, rama editorial-rebuild, target null. Implementación en `d7188c2`, contrato de QA/documentación en `ace0d6d`; cierre posterior solo de documentos, memoria y evidencia. Enlace temporal autorizado entregado en conversación; sin tokens/cookies en Git ni cambios de protección.
+
+QA remoto: plantilla 1.641/1.641, migración 1.328/1.328 y sitemap 64/64; cero fallos, 98 URLs y XML parseado. La diferencia de 98 comprobaciones frente a migración local corresponde a cabeceras de Preview; robots HTML sigue estricto. CI TypeScript 39215091463 y SEO smoke 39215091525: success para el SHA comprobado. Workflows no modificados; los nuevos modos editoriales se ejecutaron manualmente, no se atribuyen a CI.
+
+Navegador remoto: mismas 24 vistas que en local, sin overflow ni H1 duplicada; dos nuevas cajas de seis filas y Time Out conservado, ninguna nueva en café/gastronomía/pilar. [Matriz](qa/2026-10-19/phase6c-responsive.json), [captura PC](qa/2026-10-19/phase6c-preview-desktop.png), [captura móvil](qa/2026-10-19/phase6c-preview-mobile.png), [controles](qa/2026-10-19/phase6c-checks.json), [integridad](qa/2026-10-19/phase6c-data-integrity.json), [antes/después](qa/2026-10-19/phase6c-change-summary.json).
+
+Documentación y memoria actualizadas: editorial-system, seo-migration, seo-url-manifest, CURRENT-STATE, D-049 y registro de Fase 6C. No componente nuevo: se reutiliza ArticleEssentials de servidor, sin JavaScript cliente añadido. No Lighthouse ejecutado. Producción reconsultada conserva `83ca369b477d578f5a63004b461550bdcf706f89` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, READY. PR #112 abierta y draft; sin merge ni producción.
+
+Siguiente grupo del plan: atracciones, con revisión individual y especial protección de páginas recientes. Las dudas de café/gastronomía no se resuelven mediante una migración ni se ocultan por terminar este lote.
