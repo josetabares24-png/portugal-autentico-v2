@@ -1,5 +1,9 @@
 # Current state
 
+## 19 octubre 2026 — publicación del candidato autorizada
+
+José solicita publicar todo lo revisado antes de seguir. Alcance: PR #112, aplicación comprobada 3f47e5b y cierres documentales; no nuevas fases, fusiones o correcciones factuales. La restricción previa de solo Preview queda sustituida para este candidato por la instrucción de publicación. [Autorización y protocolo](seo/EDITORIAL-REBUILD-RELEASE-2026-10-19.md). Estado definitivo, SHA/deployment y QA de producción: [registro de cierre de PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Consultarlo antes de afirmar que la publicación terminó o medir impacto; las notas históricas siguientes describen el estado previo.
+
 ## 19 octubre 2026 — Fase 6G, historia y cultura
 
 José indica continuar tras eventos. Historia de Lisboa y Fado reciben perfiles culture de seis/cuatro pares; originales/orden/SEO conservados, 27 perfiles en total. Manuelino y Olaias protegidos KEEP. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas, sin cambios de contenido ni migración. Preview READY 3f47e5b / dpl_6X8YrbSNybjDXFQwqc97zwTFSyLq: plantilla 1.670 y migración remota 1.328 sin fallos, sitemap 64/64, 36 vistas remotas sin overflow y CI success. [Informe](../docs/editorial-phase6-culture-review.md), D-053. Producción conserva 83ca369. Sin merge ni producción; Fase 7 no se ejecuta automáticamente.
