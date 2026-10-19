@@ -31,6 +31,10 @@ const foodPaths = process.env.SMOKE_EDITORIAL_FOOD === '1' ? new Set([
   'donde-comer-barato-lisboa', 'pasteles-de-belem',
 ].map((slug) => `/blog/${slug}`)) : new Set();
 for (const url of foodPaths) pilotPaths.add(url);
+const attractionPaths = process.env.SMOKE_EDITORIAL_ATTRACTIONS === '1' ? new Set([
+  'mejores-miradores-lisboa', 'mejores-mercados-lisboa', 'lisboa-cuando-llueve', 'que-hacer-gratis-en-lisboa',
+].map((slug) => `/blog/${slug}`)) : new Set();
+for (const url of attractionPaths) pilotPaths.add(url);
 const planningLabels = {
   '/blog/como-pagar-en-portugal': 'Planifica tu viaje a Lisboa',
   '/blog/donde-alojarse-en-lisboa': 'Planificar el viaje según tus días',
@@ -134,7 +138,7 @@ for (const url of paths) {
     // the complete metadata multiset, including duplicate tags and all values.
     const canonicalize = (value) => {
       if (key === 'metadata') return value.map((item) => JSON.stringify(item)).sort();
-      if (transportPaths.has(url) || neighborhoodPaths.has(url) || foodPaths.has(url)) {
+      if (transportPaths.has(url) || neighborhoodPaths.has(url) || foodPaths.has(url) || attractionPaths.has(url)) {
         // Phase 6 only moves the byline past the description. Keep every
         // remaining paragraph/list/cell, heading and link in its original order.
         if (key === 'blocks') return [value.slice(0, 2).map((item) => JSON.stringify(item)).sort(), value.slice(2)];

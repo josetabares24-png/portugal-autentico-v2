@@ -31,3 +31,7 @@ Continuación de José: seis perfiles manuales de barrios en src/data/editorial-
 ## Rollout autorizado — Fase 6C
 
 Continuación de José: comer barato y Pastéis de Belém reciben seis pares cada uno en src/data/editorial-food.ts. Importes y horario contrastados puntualmente con los negocios; no generalizar referencias históricas a precios garantizados. Time Out conserva el piloto. Café y gastronomía quedan pendientes de dudas específicas; vinos/bacalhau y las consolidaciones conservan Fase 7. No reactivar el antiguo artículo de natas, que ya redirige. QA espera 18 perfiles exactos y mantiene contenido/orden/SEO. [Revisión del lote](editorial-phase6-food-review.md).
+
+## Rollout autorizado — Fase 6D
+
+Cuatro guías de elección en src/data/editorial-attractions.ts: miradores, mercados, lluvia y planes gratuitos. Seis pares por página; no forzar precios a una selección de lugares ni prometer coste cero cuando hay transporte/consumo. Las fichas usan otra plantilla; no duplicar datos iniciales ni adaptarlas por categoría. Oceanário y Castelo quedan REVIEW por dudas concretas; Pena/Jerónimos protegidos sin cambios. QA espera 22 perfiles exactos y conserva los archivos de las fichas. [Revisión del lote](editorial-phase6-attractions-review.md).
