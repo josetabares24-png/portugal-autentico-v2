@@ -1,5 +1,11 @@
 # Decision log
 
+## D-053 — Cultura: orientación sin convertir la historia en ficha de entradas
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras eventos. Dos perfiles culture manuales para Historia y Fado, manteniendo originales/orden y las aperturas ya útiles de Manuelino y Olaias. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas documentadas; no reescribirlos ni migrarlos. No tablas de precios ni supresión de contexto colonial o incertidumbre histórica. [Informe](../docs/editorial-phase6-culture-review.md). Sin merge ni producción.
+
 ## D-052 — Eventos: conservar respuestas y distinguir edición confirmada de referencia
 **Date:** 2026-10-19
 **Status:** revisión de lote documentada; correcciones por URL pendientes

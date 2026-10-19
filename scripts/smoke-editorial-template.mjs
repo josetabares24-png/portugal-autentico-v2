@@ -39,6 +39,10 @@ const itineraryPaths = process.env.SMOKE_EDITORIAL_ITINERARIES === '1' ? new Set
   'lisboa-en-4-dias', 'lisboa-en-5-dias', 'lisboa-en-7-dias',
 ].map((slug) => `/blog/${slug}`)) : new Set();
 for (const url of itineraryPaths) pilotPaths.add(url);
+const culturePaths = process.env.SMOKE_EDITORIAL_CULTURE === '1' ? new Set([
+  'historia-de-lisboa', 'fado-historia-origen',
+].map((slug) => `/blog/${slug}`)) : new Set();
+for (const url of culturePaths) pilotPaths.add(url);
 const planningLabels = {
   '/blog/como-pagar-en-portugal': 'Planifica tu viaje a Lisboa',
   '/blog/donde-alojarse-en-lisboa': 'Planificar el viaje según tus días',
@@ -89,7 +93,7 @@ function capture(html, url) {
     },
     restoredPlanningLinks,
     pilot: {
-      essentials: [...main.querySelectorAll('[data-editorial-essentials]')].map((el) => ({ type: el.getAttribute('data-editorial-essentials'), rows: [...el.querySelectorAll('dl > div')].map((row) => ({ label: normalize(row.querySelector('dt')?.textContent), value: normalize(row.querySelector('dd')?.textContent) })), links: el.querySelectorAll('a').length })),
+      essentials: [...main.querySelectorAll('[data-editorial-essentials]')].map((el) => ({ type: el.getAttribute('data-editorial-essentials'), title: normalize(el.querySelector('h2')?.textContent), rows: [...el.querySelectorAll('dl > div')].map((row) => ({ label: normalize(row.querySelector('dt')?.textContent), value: normalize(row.querySelector('dd')?.textContent) })), links: el.querySelectorAll('a').length })),
       bylines: main.querySelectorAll('[data-editorial-byline]').length,
       bylineAfterImage: Boolean(main.querySelector('.article-hero') && main.querySelector('[data-editorial-byline]') && (main.querySelector('.article-hero').compareDocumentPosition(main.querySelector('[data-editorial-byline]')) & 4)),
       adaptedAnswers: main.querySelectorAll('[data-editorial-answer="adapted"]').length,
@@ -134,6 +138,7 @@ for (const url of paths) {
       check(`${url} semantic compact facts`, Boolean(essentials) && essentials.rows.length >= 4 && essentials.rows.length <= 7 && essentials.links === 0 && essentials.rows.every((row) => row.label && row.value) && new Set(essentials.rows.map((row) => row.label)).size === essentials.rows.length);
       check(`${url} single byline after image`, page.pilot.bylines === 1 && page.pilot.bylineAfterImage);
       check(`${url} controlled answer adaptation`, page.pilot.adaptedAnswers === (url.endsWith('/estacion-oriente-lisboa') ? 1 : 0));
+      if (culturePaths.has(url)) check(`${url} cultural overview`, essentials?.type === 'culture' && essentials.title === 'En 30 segundos');
     }
   }
   if (planningLabels[url]) check(`${url} declared planning link restored`, same(page.restoredPlanningLinks, [planningLabels[url]]));
@@ -142,7 +147,7 @@ for (const url of paths) {
     // the complete metadata multiset, including duplicate tags and all values.
     const canonicalize = (value) => {
       if (key === 'metadata') return value.map((item) => JSON.stringify(item)).sort();
-      if (transportPaths.has(url) || neighborhoodPaths.has(url) || foodPaths.has(url) || attractionPaths.has(url) || itineraryPaths.has(url)) {
+      if (transportPaths.has(url) || neighborhoodPaths.has(url) || foodPaths.has(url) || attractionPaths.has(url) || itineraryPaths.has(url) || culturePaths.has(url)) {
         // Phase 6 only moves the byline past the description. Keep every
         // remaining paragraph/list/cell, heading and link in its original order.
         if (key === 'blocks') return [value.slice(0, 2).map((item) => JSON.stringify(item)).sort(), value.slice(2)];

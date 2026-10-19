@@ -43,3 +43,7 @@ Tres perfiles itinerary para Lisboa en cuatro, cinco y siete días en src/data/e
 ## Revisión autorizada — Fase 6F
 
 Eventos/temporada conserva las aperturas útiles de siete artículos vivos: no forzar Lo esencial cuando repite una lista inicial. Cero perfiles nuevos; se mantienen 25. Una fecha municipal, una noticia de prensa, un programa anterior y una tradición recurrente tienen distinto grado de confirmación. No renovar dateModified por revisar presentación ni sustituir años globalmente. Óbidos y festivales REVIEW; Novedades WAIT. Invierno ya redirige a Mejor época y su cuerpo histórico no se reutiliza. [Informe y límites](editorial-phase6-events-review.md).
+
+## Rollout autorizado — Fase 6G
+
+Historia de Lisboa y Fado usan culture con En 30 segundos: seis capas y cuatro pares de origen/sonido/temas/evolución en src/data/editorial-culture.ts. No precios ni un formato práctico obligatorio. Preservar contexto, incertidumbre, voz y orden originales; resumen no sustituye desarrollo. Manuelino/Olaias mantienen respuestas existentes. Azulejos/Terremoto/Descubrimientos REVIEW por dudas puntuales. QA espera 27 perfiles explícitos; no activar todo Cultura por categoría ni ejecutar consolidaciones. [Informe](editorial-phase6-culture-review.md).

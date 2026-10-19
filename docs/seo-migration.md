@@ -128,3 +128,7 @@ Se adelanta el reparto de cuatro/cinco/siete días sin nuevas decisiones de URL.
 ## Revisión de eventos en Fase 6F
 
 Óbidos y festivales pasan a REVIEW documental, conservando contenido, 200, indexabilidad y canonical propio. Novedades sigue WAIT. Sin cambios de aplicación, redirects, noindex, robots o sitemap. Se añade al inventario el alias histórico /blog/lisboa-en-invierno:308 directo a /blog/mejor-epoca-visitar-lisboa:200, ya configurado antes de este lote; no es un redirect nuevo ni parte de los 16 de Fase 1. Manifest pasa de 127 a 128 registros por documentar ese alias. [Informe y fuentes](editorial-phase6-events-review.md). REVIEW no autoriza una migración o reescritura automática.
+
+## Revisión de cultura en Fase 6G
+
+Historia/Fado reciben únicamente presentación. Azulejos, Terremoto y Descubrimientos pasan a REVIEW documental por atribuciones/precisión/marco cronológico; conservan contenido, 200, indexabilidad y canonical propio. Sin redirects/noindex nuevos ni cambios de sitemap/robots. El 301 de Descubridores mantiene su destino directo aunque el ganador tenga una revisión factual pendiente: esa duda no autoriza cambiar destino o reactivar el alias. Manifest conserva 128 filas y las consolidaciones siguen en Fase 7. [Informe](editorial-phase6-culture-review.md).

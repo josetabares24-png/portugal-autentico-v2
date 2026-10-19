@@ -1,0 +1,7 @@
+# Rollout editorial, grupo G historia y cultura
+
+José indica continuar tras eventos. Base f230e62. Dos perfiles culture: Historia de Lisboa con seis capas y Fado con cuatro pares de origen/sonido/temas/evolución. Reutilizar En 30 segundos, sin precios o relato nuevo. Originales, orden, fechas, metadata y schema conservados; 27 perfiles totales.
+
+Manuelino y Olaias protegidos KEEP por respuestas iniciales útiles. Azulejos REVIEW por atribución de Picoas frente a Metro; Terremoto REVIEW por precisión no calificada y primacías; Descubrimientos REVIEW por marco hasta 1542 que incluye Japón frente a 1543 de Marinha. Detener solo esas URLs y reportar, sin corregir contenido o migrar. Monumentos y consolidaciones de Fase 7 pendientes. Escuchar fado mantiene intención práctica independiente; no fusionar con historia.
+
+Fuentes institucionales consultadas puntualmente con límites, sin renovar fecha de verificación ni certificar todo el cuerpo. UNESCO exige verificación humana al extractor: no resolverla ni interpretar retirada; fuente original conservada. Baselines local/remoto antes de editar; integridad 9/9. Aplicación 5502da2: build/TypeScript/lint sin errores, plantilla local 1.670 y migración 1.426 sin fallos, sitemap 64/64, blog 828 invariantes y 36 vistas sin overflow. Preview se incorpora al cierre en el [informe](../../docs/editorial-phase6-culture-review.md). Sin nueva extracción GSC, causalidad, merge o producción.

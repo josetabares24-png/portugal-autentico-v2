@@ -1,5 +1,9 @@
 # Current state
 
+## 19 octubre 2026 — Fase 6G, historia y cultura en revisión
+
+José indica continuar tras eventos. Historia de Lisboa y Fado reciben perfiles culture de seis/cuatro pares; originales/orden/SEO conservados, 27 perfiles en total. Manuelino y Olaias protegidos KEEP. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas, sin cambios de contenido ni migración. [Informe](../docs/editorial-phase6-culture-review.md), D-053. Baselines local/remoto capturados; QA/Preview pendientes de cierre. Sin merge ni producción; Fase 7 no se ejecuta automáticamente.
+
 ## 19 octubre 2026 — Fase 6F, eventos y temporada
 
 Siete guías vivas y un cuerpo histórico revisados. Se conservan respuestas iniciales útiles: cero cambios de aplicación y 25 perfiles. Óbidos y festivales REVIEW por dudas de edición/comparación; detener solo esas URLs, sin cambios de contenido o SEO. Navidad/Nochevieja protegidas KEEP; Novedades WAIT. Invierno ya es 308 directo a Mejor época y se registra ese alias existente en manifest. Preview de aplicación 9d704c2: QA puntual 76/76 y 28 vistas responsive sin overflow. [Informe y fuentes](../docs/editorial-phase6-events-review.md), D-052. Sin merge ni producción. Siguiente grupo: historia/cultura.
