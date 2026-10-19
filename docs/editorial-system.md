@@ -27,3 +27,7 @@ Después de entregar el piloto, José indicó continuar. El grupo de transporte 
 ## Rollout autorizado — Fase 6B
 
 Continuación de José: seis perfiles manuales de barrios en src/data/editorial-neighborhoods.ts. Resumen de visita, sin imponer precio o duración donde no existen datos. No nueva entradilla ni cambio de orden del cuerpo. Se conserva la intención de alojamiento en su página propia; Belém y la comparativa general quedan REVIEW por dudas documentadas, sin fusionar ni borrar. QA espera exactamente 16 perfiles entre 72 superficies, con conservación estricta del orden en los dos lotes de Fase 6. [Revisión del lote](editorial-phase6-neighborhoods-review.md).
+
+## Rollout autorizado — Fase 6C
+
+Continuación de José: comer barato y Pastéis de Belém reciben seis pares cada uno en src/data/editorial-food.ts. Importes y horario contrastados puntualmente con los negocios; no generalizar referencias históricas a precios garantizados. Time Out conserva el piloto. Café y gastronomía quedan pendientes de dudas específicas; vinos/bacalhau y las consolidaciones conservan Fase 7. No reactivar el antiguo artículo de natas, que ya redirige. QA espera 18 perfiles exactos y mantiene contenido/orden/SEO. [Revisión del lote](editorial-phase6-food-review.md).
