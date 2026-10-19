@@ -1,0 +1,43 @@
+{
+  "baselineSha": "55feb02",
+  "pages": [
+    {
+      "url": "/blog/lisboa-en-4-dias",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Lisboa en 4 días: itinerario completo sin correr",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-4-dias",
+      "sources": 0
+    },
+    {
+      "url": "/blog/lisboa-en-5-dias",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Lisboa en 5 días: itinerario completo sin correr",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-5-dias",
+      "sources": 0
+    },
+    {
+      "url": "/blog/lisboa-en-7-dias",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Lisboa en 7 días: cómo organizar la semana | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-7-dias",
+      "sources": 4
+    }
+  ],
+  "keep": [
+    "/itinerarios/lisboa-1-dia-lo-esencial",
+    "/itinerarios/lisboa-2-dias-completo",
+    "/itinerarios/lisboa-3-dias-premium",
+    "/blog/portugal-en-7-dias",
+    "/itinerarios"
+  ],
+  "baselineHash": "b161068db4545f00952fc8569dcf3ff1c2da7e52f57571d1a018d857817a0ecd"
+}

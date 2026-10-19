@@ -120,3 +120,7 @@ Café y gastronomía pasan a REVIEW por las dudas concretas del [informe de comi
 ## Revisión de contenido detectada en Fase 6D
 
 Las fichas de Oceanário y Castelo pasan a REVIEW por campaña de descuento y aviso fechado, respectivamente, según el [informe de atracciones](editorial-phase6-attractions-review.md). Conservan archivos de datos, contenido, 200, indexabilidad y canonical propio. No se corrigen ni migran silenciosamente. El antiguo artículo de atardeceres ya redirige históricamente a mejores miradores y no se reactiva. Pena/Jerónimos siguen protegidos sin cambios.
+
+## Presentación de itinerarios en Fase 6E
+
+Se adelanta el reparto de cuatro/cinco/siete días sin nuevas decisiones de URL. Las rutas principales de uno/dos/tres días conservan sus páginas y datos; los cinco aliases retirados mantienen destinos directos y el 404 dinámico se comprueba. Manifest, robots, sitemap, metadata y canonicals sin cambios. [Informe](editorial-phase6-itineraries-review.md). Sin reactivar rutas ni consolidar por coincidencia de duración.

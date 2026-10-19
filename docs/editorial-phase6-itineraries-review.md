@@ -51,3 +51,19 @@ Baselines local y remoto registrados antes de modificar. Integridad de 25 contro
 Build correcto: 137 páginas; TypeScript correcto. Lint sin errores y un warning preexistente en ItineraryContextualCta/analyticsParams. Plantilla: 1.662/1.662 en 72 superficies; migración: 1.426/1.426; sitemap 64/64 y 98 URLs. Blog: 828 invariantes en 69 HTML y cinco redirects; 97 enlaces sin rotos. Itinerarios: 26/26 por HTTP, incluidas rutas principales, cinco aliases y 404. Integridad: 25/25.
 
 Navegador local: tres guías adaptadas, tres rutas principales, Portugal y el índice × 390/412/768/1440 px: 32 vistas sin overflow ni H1 duplicada. Exactamente tres cajas nuevas de seis filas; ninguna caja duplicada en las cinco superficies conservadas. Preview pendiente de cierre.
+
+La primera ejecución remota completó plantilla/migración, pero sitemap se interrumpió por ECONNRESET y el siguiente proceso por ENOTFOUND. Se repiten solo esas dos pruebas, sin cambiar código, desactivar controles ni atribuir la desconexión a un fallo de la aplicación. El resultado del reintento se registra en el cierre.
+
+## Cierre de Preview — 19 octubre
+
+Preview READY: https://portugal-autentico-v2-3si81g8ta-estabaenlisboa.vercel.app
+
+SHA comprobado `9d704c256aea5451459bfc24e1a39f8790f309fe`, deployment `dpl_GZnSH5mkuV75s16x7458GzG1EwwE`, rama editorial-rebuild, target null. Implementación `45d046e`, QA/documentación `9d704c2`; el cierre posterior contiene solo documentos y evidencia. Acceso temporal autorizado entregado en conversación, sin tokens/cookies en Git ni cambios de protección.
+
+QA remoto final: plantilla 1.662/1.662 y migración 1.328/1.328. El reintento de sitemap termina 64/64, 98 URLs y XML parseado; itinerarios termina 26/26, sin fallos. No cambios de código para resolver la interrupción de red. La diferencia de 98 controles de migración frente a local corresponde a cabeceras Preview; robots HTML sigue estricto. CI TypeScript 39217986524 y SEO smoke 39217986616: success para el SHA comprobado; modos editoriales nuevos verificados manualmente y workflows sin cambios.
+
+Navegador remoto: mismas 32 vistas que en local, sin overflow ni H1 duplicada. Tres cajas nuevas de seis filas, cinco superficies conservadas sin cajas añadidas. [Matriz](qa/2026-10-19/phase6e-responsive.json), [captura PC](qa/2026-10-19/phase6e-preview-desktop.png), [captura móvil](qa/2026-10-19/phase6e-preview-mobile.png), [controles](qa/2026-10-19/phase6e-checks.json), [integridad](qa/2026-10-19/phase6e-data-integrity.json), [antes/después](qa/2026-10-19/phase6e-change-summary.json).
+
+Memoria/documentación: editorial-system, seo-migration, CURRENT-STATE, D-051 y registro de Fase 6E actualizados. Manifest sin nuevas decisiones. Se reutiliza ArticleEssentials de servidor, sin componentes o JavaScript cliente nuevos. No Lighthouse ejecutado. Producción reconsultada al cerrar conserva `83ca369b477d578f5a63004b461550bdcf706f89` / `dpl_FcVmwVr8u8p5zzdwiUmDNeNo36jz`, READY. PR #112 abierta y draft; sin merge ni producción.
+
+Siguiente grupo: eventos, con atención a fechas y datos mutables. No se dan por resueltas las dudas de otros lotes ni se autoriza ninguna consolidación por terminar esta presentación.

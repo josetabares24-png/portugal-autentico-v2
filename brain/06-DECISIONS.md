@@ -1,5 +1,11 @@
 # Decision log
 
+## D-051 — Itinerarios: adelantar el reparto sin duplicar lo que ya responde
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras atracciones. Tres perfiles de cuatro/cinco/siete días, con el reparto original y seis pares. Uno/dos/tres días y Portugal en una semana mantienen sus resúmenes existentes. No tiempos, kilómetros, presupuestos, mapas o cronologías nuevos; no reactivar aliases ni fusionar páginas. [Informe](../docs/editorial-phase6-itineraries-review.md). Sin merge ni producción.
+
 ## D-050 — Atracciones: elección útil y dudas aisladas por URL
 **Date:** 2026-10-19
 **Status:** candidate, pendiente de revisión visual del lote

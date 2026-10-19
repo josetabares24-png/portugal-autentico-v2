@@ -1,5 +1,9 @@
 # Current state
 
+## 19 octubre 2026 — Fase 6E, itinerarios
+
+José indica seguir tras atracciones. Tres perfiles de cuatro/cinco/siete días, seis pares cada uno, conservando reparto, originales y SEO. Uno/dos/tres días, Portugal en una semana e índice KEEP; sin cambios a mapas, cronologías o paradas. Preview READY 9d704c2 / dpl_GZnSH5mkuV75s16x7458GzG1EwwE: plantilla 1.662 y migración remota 1.328 sin fallos; sitemap 64/64 e itinerarios 26/26 tras reintentar dos pruebas interrumpidas por red; 32 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-itineraries-review.md). Siguiente grupo: eventos, protegiendo páginas estacionales.
+
 ## 19 octubre 2026 — Fase 6D, elección de atracciones
 
 José indica seguir tras comida. Cuatro perfiles manuales: miradores, mercados, lluvia y planes gratuitos, seis pares cada uno. Originales/orden/SEO conservados; sin adaptación masiva de fichas. Oceanário y Castelo REVIEW por campaña de descuento y aviso fechado; Pena/Jerónimos protegidos sin cambios. Preview READY cf8961f / dpl_GTzyYtMsjbRNJHxW6nfvLVGtsEw3: plantilla 1.653 y migración remota 1.328 sin fallos; 40 vistas responsive sin overflow; CI success. Sin merge ni producción. [Informe](../docs/editorial-phase6-attractions-review.md). Siguiente grupo: itinerarios, sin consolidaciones automáticas.

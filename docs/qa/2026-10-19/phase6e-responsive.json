@@ -1,0 +1,582 @@
+{
+  "local": [
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ],
+  "preview": [
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/itinerarios",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ]
+}
