@@ -1,5 +1,11 @@
 # Decision log
 
+## D-052 — Eventos: conservar respuestas y distinguir edición confirmada de referencia
+**Date:** 2026-10-19
+**Status:** revisión de lote documentada; correcciones por URL pendientes
+
+Continuación de José tras itinerarios. Las aperturas de las páginas recientes ya responden; no forzar cajas ni cambiar sus títulos/datos por uniformidad. Óbidos y festivales REVIEW por dudas específicas; detener intervención y reportar. Novedades WAIT hasta Fase 7. Invierno ya redirige históricamente a Mejor época: no reactivar un cuerpo antiguo por encontrarlo en datos. Cero cambios de aplicación y 25 perfiles conservados. [Informe](../docs/editorial-phase6-events-review.md). Sin merge ni producción.
+
 ## D-051 — Itinerarios: adelantar el reparto sin duplicar lo que ya responde
 **Date:** 2026-10-19
 **Status:** candidate, pendiente de revisión visual del lote

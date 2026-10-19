@@ -124,3 +124,7 @@ Las fichas de Oceanário y Castelo pasan a REVIEW por campaña de descuento y av
 ## Presentación de itinerarios en Fase 6E
 
 Se adelanta el reparto de cuatro/cinco/siete días sin nuevas decisiones de URL. Las rutas principales de uno/dos/tres días conservan sus páginas y datos; los cinco aliases retirados mantienen destinos directos y el 404 dinámico se comprueba. Manifest, robots, sitemap, metadata y canonicals sin cambios. [Informe](editorial-phase6-itineraries-review.md). Sin reactivar rutas ni consolidar por coincidencia de duración.
+
+## Revisión de eventos en Fase 6F
+
+Óbidos y festivales pasan a REVIEW documental, conservando contenido, 200, indexabilidad y canonical propio. Novedades sigue WAIT. Sin cambios de aplicación, redirects, noindex, robots o sitemap. Se añade al inventario el alias histórico /blog/lisboa-en-invierno:308 directo a /blog/mejor-epoca-visitar-lisboa:200, ya configurado antes de este lote; no es un redirect nuevo ni parte de los 16 de Fase 1. Manifest pasa de 127 a 128 registros por documentar ese alias. [Informe y fuentes](editorial-phase6-events-review.md). REVIEW no autoriza una migración o reescritura automática.

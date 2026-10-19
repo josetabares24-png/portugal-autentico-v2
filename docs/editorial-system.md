@@ -39,3 +39,7 @@ Cuatro guías de elección en src/data/editorial-attractions.ts: miradores, merc
 ## Rollout autorizado — Fase 6E
 
 Tres perfiles itinerary para Lisboa en cuatro, cinco y siete días en src/data/editorial-itineraries.ts. Seis filas de reparto por página, sin tiempos, kilómetros o presupuesto inventados. Las rutas de uno/dos/tres días conservan su resumen generado de paradas; Portugal en siete días conserva su tabla. No duplicar cajas ni reactivar itinerarios retirados. QA espera 25 perfiles exactos; paradas, mapas, cronologías y páginas principales intactos. [Revisión del lote](editorial-phase6-itineraries-review.md).
+
+## Revisión autorizada — Fase 6F
+
+Eventos/temporada conserva las aperturas útiles de siete artículos vivos: no forzar Lo esencial cuando repite una lista inicial. Cero perfiles nuevos; se mantienen 25. Una fecha municipal, una noticia de prensa, un programa anterior y una tradición recurrente tienen distinto grado de confirmación. No renovar dateModified por revisar presentación ni sustituir años globalmente. Óbidos y festivales REVIEW; Novedades WAIT. Invierno ya redirige a Mejor época y su cuerpo histórico no se reutiliza. [Informe y límites](editorial-phase6-events-review.md).
