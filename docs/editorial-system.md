@@ -35,3 +35,7 @@ Continuación de José: comer barato y Pastéis de Belém reciben seis pares cad
 ## Rollout autorizado — Fase 6D
 
 Cuatro guías de elección en src/data/editorial-attractions.ts: miradores, mercados, lluvia y planes gratuitos. Seis pares por página; no forzar precios a una selección de lugares ni prometer coste cero cuando hay transporte/consumo. Las fichas usan otra plantilla; no duplicar datos iniciales ni adaptarlas por categoría. Oceanário y Castelo quedan REVIEW por dudas concretas; Pena/Jerónimos protegidos sin cambios. QA espera 22 perfiles exactos y conserva los archivos de las fichas. [Revisión del lote](editorial-phase6-attractions-review.md).
+
+## Rollout autorizado — Fase 6E
+
+Tres perfiles itinerary para Lisboa en cuatro, cinco y siete días en src/data/editorial-itineraries.ts. Seis filas de reparto por página, sin tiempos, kilómetros o presupuesto inventados. Las rutas de uno/dos/tres días conservan su resumen generado de paradas; Portugal en siete días conserva su tabla. No duplicar cajas ni reactivar itinerarios retirados. QA espera 25 perfiles exactos; paradas, mapas, cronologías y páginas principales intactos. [Revisión del lote](editorial-phase6-itineraries-review.md).
