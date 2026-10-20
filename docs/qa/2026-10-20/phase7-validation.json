@@ -1,5 +1,5 @@
 {
-  "captured": "2026-10-20T20:11:23.807354+00:00",
+  "captured": "2026-10-20T20:25:15.003155+00:00",
   "method": "Independent Python recomputation from retained connector rows; no shared JS aggregation helper. Documentary integrity compared with production Git base. Browser observations reused, not rerun.",
   "passed": 108,
   "failed": 0,
@@ -537,7 +537,7 @@
       "details": null
     },
     {
-      "name": "production base SHA",
+      "name": "production base is branch ancestor",
       "pass": true,
       "details": null
     },
@@ -573,6 +573,16 @@
         [
           "docs\\editorial-phase7-consolidation-review.md",
           "qa/2026-10-20/phase7-validation.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-preview-sanity.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-preview-mobile.png",
           true
         ],
         [

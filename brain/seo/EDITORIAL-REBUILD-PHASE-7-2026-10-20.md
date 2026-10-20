@@ -24,6 +24,6 @@ D-054: mantener dos WAIT con excepción razonada; no revocar la orden de migraci
 
 Impacto de fusionar en SEO todavía incierto. Oportunidad concreta: resolver promesas incoherentes y mantener datos factuales sin duplicar errores. Esfuerzo bajo para enlace Cascais, medio para revisar mapas/contenido. Riesgo: perder respuesta específica por una reducción de URLs sin equivalencia ni señales suficientes.
 
-26 vistas móvil/PC sin overflow. Cero cambios de aplicación/URL/SEO/Clerk. Conservados 27 perfiles, 16 redirects, ocho noindex, dos WAIT y 98 sitemap. Integridad y cifras se validan en la evidencia del lote; resultados de build de producción son históricos, no nuevas pruebas. Sin Lighthouse nuevo ni cambios de producción.
+26 vistas móvil/PC sin overflow y 108 controles independientes correctos. Cero cambios de aplicación/URL/SEO/Clerk. Conservados 27 perfiles, 16 redirects, ocho noindex, dos WAIT y 98 sitemap. [PR #113](https://github.com/josetabares24-png/portugal-autentico-v2/pull/113) borrador; Preview 50c5311 / dpl_AaLxMMQnMoR467HCJfFLFbnxvSyp READY, cinco checks correctos incluido TypeScript. Nueva observación móvil de Cascais en Preview; código idéntico a producción. No repetir ni presentar como nuevos los smoke tests de producción. Sin Lighthouse nuevo ni cambios de producción. Cierre posterior solo documental.
 
 Siguiente acción: resolver el alcance de las dos WAIT con el informe concreto antes de migrar. No continuar navegación/Home automáticamente.
