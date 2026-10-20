@@ -1,5 +1,9 @@
 # Current state
 
+## 20 octubre 2026 — aprobada la conservación temporal de las cuatro URLs
+
+José responde «sí, ahora dime qué sigue» a mantener separadas por ahora Restaurantes/Pareja y Novedades/Festivales. Queda resuelta esa decisión pendiente de D-054: no ejecutar sus dos 301 mientras siga vigente esta excepción. Conservar los cuatro 200 y canonicals propios; las dudas factuales permanecen pendientes y los otros casos REVIEW no reciben autorización de migración. D-055. Próximo lote recomendado: correcciones puntuales de utilidad y exactitud (Cascais, Festivales, Monumentos y Vinos/Gastronomía), con Preview antes de publicación; después propuesta de navegación y portada editorial del blog. Esta respuesta solicita el orden siguiente; no inicia todavía una reescritura ni autoriza merge/producción.
+
 ## 20 octubre 2026 — Fase 7 revisada; dos fusiones WAIT por equivalencia incompleta
 
 Siete casos comparados completos con contenido, producción, enlaces y GSC/Windsor hasta 17/10. Restaurantes/Pareja y Novedades/Festivales mantienen WAIT: los destinos no entregan toda la respuesta de las fuentes, y no hay señal suficiente de canibalización. No se revoca la orden de fusión ni se cambian destinos; se reportan las excepciones y el mapa de conservación. Cascais: artículo recomendado para intención general; discrepancia entre enlace comercial y ficha de transporte público. Pastéis: artículo recomendado como referencia, sin retirar ficha ni reactivar alias. [Informe](../docs/editorial-phase7-consolidation-review.md), D-054. [PR #113](https://github.com/josetabares24-png/portugal-autentico-v2/pull/113) borrador; Preview 50c5311 READY, CI correcta, 108 controles y 26 vistas sin fallos. Solo documentación/evidencia; sin nuevas migraciones ni publicación. Resolver esas decisiones antes de avanzar a navegación/Home.

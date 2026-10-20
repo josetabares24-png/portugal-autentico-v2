@@ -1,5 +1,11 @@
 # Decision log
 
+## D-055 — Mantener separadas por ahora las dos parejas de Fase 7
+**Date:** 2026-10-20
+**Status:** accepted, conservación temporal aprobada por José
+
+José responde «sí, ahora dime qué sigue» a la propuesta concreta de conservar separadas Restaurantes románticos/Lisboa en pareja y Novedades 2026/Festivales 2026. Esta excepción temporal resuelve el gate de D-054 sin revocar definitivamente la planificación histórica: no ejecutar los dos 301 mientras no haya una nueva decisión expresa respaldada por equivalencia. Cuatro URLs accesibles e indexables con canonical propio, sin cambios de intención. Las etiquetas WAIT documentan la fusión aplazada; no son órdenes listas para ejecutar. Las dudas factuales y los otros REVIEW siguen pendientes. No autorización adicional de migraciones, reescritura, merge o producción. Siguiente prioridad propuesta: correcciones concretas antes de navegación/portada; conservar medición posterior a la publicación.
+
 ## D-054 — Consolidaciones: equivalencia antes de ejecutar los 301 previstos
 **Date:** 2026-10-20
 **Status:** revisión terminada; ejecución de dos fusiones en WAIT, propuestas de alcance pendientes de José

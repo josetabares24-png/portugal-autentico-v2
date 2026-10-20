@@ -1,5 +1,7 @@
 # Fase 7 — revisión de consolidaciones
 
+**Resolución posterior, 20/10/2026:** José aprueba mantener separadas por ahora Restaurantes/Pareja y Novedades/Festivales (D-055). La decisión pendiente descrita en la revisión queda resuelta con conservación temporal: no ejecutar los dos 301. Los cuatro 200/canonicals siguen vigentes; las dudas factuales permanecen y no se autorizan migraciones de otros REVIEW. Las propuestas de fusión siguientes se conservan como alternativas históricas, no como instrucciones de ejecución.
+
 20 octubre 2026. Rama `editorial-rebuild-phase-7`, desde producción `5ad2c4083934c2f35e81aba12275566341f219ee` (PR #112). Revisión completa de los siete casos solicitados: once cuerpos de blog, incluido el de natas ya retirado, el pilar Qué ver y las dos fichas de Pastéis/Cascais. La revisión termina con decisiones de conservación y dos excepciones a las fusiones previstas: **no se ejecuta ninguna migración ni reescritura**. No confundir terminar la auditoría con haber ejecutado las fusiones.
 
 ## Diagnóstico → evidencia → decisión
@@ -135,4 +137,4 @@ Validación independiente en Python: **108 comprobaciones correctas**, cero fall
 
 Comprobación adicional en navegador de la guía Cascais en esa Preview a 390 px: abre la página de aplicación, H1 y canonical correctos, robots HTML index/follow y sin overflow. La indexabilidad de la Preview sigue condicionada por protección/cabeceras de plataforma; no se altera. [Observación](qa/2026-10-20/phase7-preview-sanity.json), [captura móvil de la promesa de enlace pendiente de corregir](qa/2026-10-20/phase7-preview-mobile.png). Es el estado existente, no un antes/después de una mejora implementada. El cierre posterior añade solo documentación/evidencia al mismo código. Sin merge ni publicación adicional.
 
-**Gate:** revisión de Fase 7 terminada; ejecución de fusiones pendiente por las contradicciones descritas. No continuar a navegación/Home como si se hubieran resuelto. El siguiente paso concreto es decidir el alcance de las dos WAIT a partir de este informe, sin una confirmación genérica para migrar las demás URLs.
+**Gate actualizado por D-055:** revisión terminada y conservación temporal de las cuatro URLs aprobada; no ejecutar fusiones. La decisión ya no bloquea proponer las fases siguientes. Prioridad recomendada: corregir las incoherencias puntuales documentadas, con Preview, y después preparar navegación y portada editorial. No supone aprobación de cambios visuales, reescrituras extensas, otras migraciones ni publicación.
