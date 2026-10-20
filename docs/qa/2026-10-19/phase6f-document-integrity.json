@@ -1,0 +1,56 @@
+{
+  "baseline": "a609f3438cf0d6cd76c19c7d3c4b93313b7c9eee",
+  "applicationSha": "9d704c256aea5451459bfc24e1a39f8790f309fe",
+  "date": "2026-10-19T19:05:05.738Z",
+  "changed": [
+    "brain/01-CURRENT-STATE.md",
+    "brain/06-DECISIONS.md",
+    "docs/editorial-system.md",
+    "docs/seo-migration.md",
+    "docs/seo-url-manifest.csv",
+    "brain/seo/EDITORIAL-REBUILD-PHASE-6F-2026-10-19.md",
+    "docs/editorial-phase6-events-review.md",
+    "docs/qa/2026-10-19/phase6f-document-integrity.json",
+    "docs/qa/2026-10-19/phase6f-events-http.json",
+    "docs/qa/2026-10-19/phase6f-preview-desktop.png",
+    "docs/qa/2026-10-19/phase6f-preview-mobile.png",
+    "docs/qa/2026-10-19/phase6f-responsive.json"
+  ],
+  "summary": {
+    "checks": 6,
+    "failures": 0
+  },
+  "checks": [
+    {
+      "name": "Only documentation/evidence changes",
+      "pass": true
+    },
+    {
+      "name": "128 manifest rows and 9 columns",
+      "pass": true,
+      "parser": "Python csv.reader; quoted fields supported"
+    },
+    {
+      "name": "Manifest URLs unique",
+      "pass": true
+    },
+    {
+      "name": "src tree matches tested application",
+      "pass": true,
+      "baseline": "68b758ab7d0fd1f00d79f4b1fdb0fd9038e6372d",
+      "tested": "68b758ab7d0fd1f00d79f4b1fdb0fd9038e6372d"
+    },
+    {
+      "name": "public tree matches tested application",
+      "pass": true,
+      "baseline": "dbb197d517a74b59af8832b26a3a40f8c5d21bfa",
+      "tested": "dbb197d517a74b59af8832b26a3a40f8c5d21bfa"
+    },
+    {
+      "name": "scripts tree matches tested application",
+      "pass": true,
+      "baseline": "55b908a40206abce0e9bf9b658f0ebdcbd9335c2",
+      "tested": "55b908a40206abce0e9bf9b658f0ebdcbd9335c2"
+    }
+  ]
+}

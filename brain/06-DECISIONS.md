@@ -1,5 +1,59 @@
 # Decision log
 
+## D-053 — Cultura: orientación sin convertir la historia en ficha de entradas
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras eventos. Dos perfiles culture manuales para Historia y Fado, manteniendo originales/orden y las aperturas ya útiles de Manuelino y Olaias. Azulejos, Terremoto y Descubrimientos REVIEW por dudas concretas documentadas; no reescribirlos ni migrarlos. No tablas de precios ni supresión de contexto colonial o incertidumbre histórica. [Informe](../docs/editorial-phase6-culture-review.md). Sin merge ni producción.
+
+## D-052 — Eventos: conservar respuestas y distinguir edición confirmada de referencia
+**Date:** 2026-10-19
+**Status:** revisión de lote documentada; correcciones por URL pendientes
+
+Continuación de José tras itinerarios. Las aperturas de las páginas recientes ya responden; no forzar cajas ni cambiar sus títulos/datos por uniformidad. Óbidos y festivales REVIEW por dudas específicas; detener intervención y reportar. Novedades WAIT hasta Fase 7. Invierno ya redirige históricamente a Mejor época: no reactivar un cuerpo antiguo por encontrarlo en datos. Cero cambios de aplicación y 25 perfiles conservados. [Informe](../docs/editorial-phase6-events-review.md). Sin merge ni producción.
+
+## D-051 — Itinerarios: adelantar el reparto sin duplicar lo que ya responde
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras atracciones. Tres perfiles de cuatro/cinco/siete días, con el reparto original y seis pares. Uno/dos/tres días y Portugal en una semana mantienen sus resúmenes existentes. No tiempos, kilómetros, presupuestos, mapas o cronologías nuevos; no reactivar aliases ni fusionar páginas. [Informe](../docs/editorial-phase6-itineraries-review.md). Sin merge ni producción.
+
+## D-050 — Atracciones: elección útil y dudas aisladas por URL
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras comida. Cuatro perfiles de elección, sin reescritura ni migración. No duplicar respuestas iniciales de fichas ni adaptar por categoría. Oceanário y Castelo quedan REVIEW por campaña/aviso fechado; Pena y Jerónimos protegidos sin cambios. No reactivar rutas históricas ni consolidar monumentos. [Informe](../docs/editorial-phase6-attractions-review.md). Sin merge ni producción.
+
+## D-049 — Comida: dos resúmenes contrastados y revisión de dudas por URL
+**Date:** 2026-10-19
+**Status:** candidate, pendiente de revisión visual del lote
+
+Continuación de José tras barrios. Presentación en comer barato y Pastéis de Belém, conservando originales, orden y SEO. Consulta puntual de importes/horario a negocios, sin renovar fechas ni prometer precios futuros. Café y gastronomía quedan REVIEW por dudas específicas; Time Out y consolidaciones mantienen su estado. No reactivar mejores natas ni decidir fusiones. [Informe](../docs/editorial-phase6-food-review.md). Sin merge ni producción.
+
+## D-048 — Barrios: presentación por guía y dudas aisladas
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual del lote
+
+José indica seguir tras transporte. Se añaden seis resúmenes manuales de barrio, conservando originales y su orden. No extender intención de alojamiento ni reactivar su duplicado. Comparativa general y Belém quedan REVIEW por contradicciones/datos variables pendientes de verificar; se detiene solo en esas URLs y se reporta. Sin fusiones, merge ni producción. [Informe](../docs/editorial-phase6-neighborhoods-review.md).
+
+## D-047 — Rollout editorial por lotes, transporte primero
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual del lote
+
+Tras entregar la Preview de siete pilotos, José indica continuar. Se inicia grupo A con tres perfiles manuales y se mantiene la guía nacional que ya responde. No activación masiva por categoría. Mantener URLs/intención/datos y validar cada lote en Preview; no merge ni producción. No se interpreta como autorización de fusiones ni publicación. [Informe](../docs/editorial-phase6-transport-review.md).
+
+## D-046 — Sistema editorial con piloto acotado a siete guías
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de revisión visual de Fase 5
+
+La continuación de José autoriza Fases 3/4 sobre Metro, Navegante, pagos, movilidad, Time Out, Oriente y vida nocturna. Datos por página en pares semánticos, sin reescribir los objetos originales; presentación y dos reordenaciones controladas. No cifras sin evidencia, nuevos slugs ni activación por categoría. No se modifica el resto de URLs. D-045 y D-044 siguen vigentes. Entregar Preview y detenerse antes de rollout, merge o producción. [Informe](../docs/editorial-phase4-review.md).
+
+## D-045 — Respuesta antes de reservas, Fase 2 editorial
+**Date:** 2026-10-18
+**Status:** candidate, pendiente de aprobación visual y publicación
+
+La instrucción expresa de José para la reconstrucción editorial reemplaza la colocación temprana admitida por D-039 en este candidato. Un módulo final después de cuerpo y FAQ, máximo dos ofertas distintas y alternativa plegada. No banner comercial automático universal. Fuentes discretas sin perder referencias; índice único. D-039 se conserva como antecedente, no como autorización actual para adelantar CTA. D-044 sigue vigente. STOP antes de Fase 3; no merge ni producción. Detalle: [revisión](../docs/editorial-phase2-review.md).
+
 Decisions here are intended to survive future chats and agent sessions.
 
 ## D-001 — Blog-first strategy

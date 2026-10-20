@@ -1,0 +1,37 @@
+{
+  "baselineSha": "4a6f8ad",
+  "pages": [
+    {
+      "url": "/blog/aeropuerto-lisboa-al-centro",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Aeropuerto de Lisboa al centro: Metro, taxi y Uber",
+      "canonical": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+      "sources": 6
+    },
+    {
+      "url": "/blog/tram-28-historia-guia",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Tranvía 28 de Lisboa: ruta, paradas y consejos | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/tram-28-historia-guia",
+      "sources": 2
+    },
+    {
+      "url": "/blog/patinetes-electricos-lisboa",
+      "beforeRows": [],
+      "afterRows": [
+        5
+      ],
+      "title": "Patinetes en Lisboa: precios, apps y dónde aparcar",
+      "canonical": "https://estabaenlisboa.com/blog/patinetes-electricos-lisboa",
+      "sources": 3
+    }
+  ],
+  "keep": "/blog/como-moverse-por-portugal",
+  "baselineHash": "f303b4bc5c2d71b89c22b1b83b3673e24648abb867ee662828bb4784dd3bb4e9"
+}

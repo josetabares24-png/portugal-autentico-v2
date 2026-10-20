@@ -8,8 +8,12 @@ export const metadata: Metadata = {
     canonical: 'https://estabaenlisboa.com/terminos-condiciones',
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
   },
   openGraph: {
     title: 'Términos y Condiciones | Estaba en Lisboa',

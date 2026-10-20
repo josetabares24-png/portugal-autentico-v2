@@ -1,0 +1,726 @@
+{
+  "local": [
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ],
+  "preview": [
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "expected": 1,
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "expected": 0,
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ]
+}

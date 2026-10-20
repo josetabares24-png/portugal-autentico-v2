@@ -8,8 +8,12 @@ export const metadata: Metadata = {
     canonical: 'https://estabaenlisboa.com/aviso-legal',
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
   },
   openGraph: {
     title: 'Aviso Legal | Estaba en Lisboa',

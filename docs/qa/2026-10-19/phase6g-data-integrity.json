@@ -1,0 +1,56 @@
+{
+  "baseline": "f230e62",
+  "date": "2026-10-19T19:11:00.827Z",
+  "checks": [
+    {
+      "name": "articles",
+      "before": "eb459ef230848620015b4026982cf37bfd85db51249ea6c3fa6cb7a68ac7f33e",
+      "after": "eb459ef230848620015b4026982cf37bfd85db51249ea6c3fa6cb7a68ac7f33e",
+      "pass": true
+    },
+    {
+      "name": "AUDITED_ARTICLE_FAQS",
+      "before": "10f408dc058fd39b65a0189d06ca30dc1f45a06888a8857e98e0475bcb921ac5",
+      "after": "10f408dc058fd39b65a0189d06ca30dc1f45a06888a8857e98e0475bcb921ac5",
+      "pass": true
+    },
+    {
+      "name": "articleExtras",
+      "before": "439c72049179152a93f0bc07e769abed590cf7ea1053d0001efc2a7c236346a6",
+      "after": "439c72049179152a93f0bc07e769abed590cf7ea1053d0001efc2a7c236346a6",
+      "pass": true
+    },
+    {
+      "name": "sectionPhotos",
+      "before": "71f8bf4f36a0c87ed51b2163dd653599d496d202ab59b5c443bdd85223af5234",
+      "after": "71f8bf4f36a0c87ed51b2163dd653599d496d202ab59b5c443bdd85223af5234",
+      "pass": true
+    },
+    {
+      "name": "heroAlt",
+      "before": "e2a92f6c4b42d8499fee4663b5b6cbd9038dca6a902f4bb13a3fe781a374ba17",
+      "after": "e2a92f6c4b42d8499fee4663b5b6cbd9038dca6a902f4bb13a3fe781a374ba17",
+      "pass": true
+    },
+    {
+      "name": "localImages",
+      "before": "564e008e9f27c0e1021f00037af40d53f9e878c63366df2efbd99da770f21006",
+      "after": "564e008e9f27c0e1021f00037af40d53f9e878c63366df2efbd99da770f21006",
+      "pass": true
+    },
+    {
+      "name": "articleHeroImages",
+      "before": "9e74624d91bcb5f4c23083bd664762dc7946cff0d031f20100c7bf32680d0a82",
+      "after": "9e74624d91bcb5f4c23083bd664762dc7946cff0d031f20100c7bf32680d0a82",
+      "pass": true
+    },
+    {
+      "name": "historia-de-lisboa source block references",
+      "pass": true
+    },
+    {
+      "name": "fado-historia-origen source block references",
+      "pass": true
+    }
+  ]
+}

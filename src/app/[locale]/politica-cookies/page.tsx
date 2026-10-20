@@ -8,8 +8,12 @@ export const metadata: Metadata = {
     canonical: 'https://estabaenlisboa.com/politica-cookies',
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
   },
   openGraph: {
     title: 'Política de Cookies | Estaba en Lisboa',

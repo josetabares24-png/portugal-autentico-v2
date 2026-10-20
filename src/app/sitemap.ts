@@ -3,6 +3,7 @@ import { blogPosts } from '@/data/blog-posts'
 import { guidePackSlugs } from '@/data/guide-packs'
 import { activities } from '@/data/activities'
 import { getTicketGuide } from '@/data/ticket-guides'
+import { isExcludedFromSitemap } from '@/lib/seo-url-policy'
 
 const baseUrl = 'https://estabaenlisboa.com'
 
@@ -127,5 +128,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return entry;
   });
 
-  return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls];
+  return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls].filter(({ url }) => {
+    const { pathname, search, hash } = new URL(url);
+    return !search && !hash && !isExcludedFromSitemap(pathname);
+  });
 }

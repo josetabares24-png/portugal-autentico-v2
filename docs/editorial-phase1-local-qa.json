@@ -1,0 +1,2091 @@
+{
+  "date": "2026-10-17T13:31:44.009Z",
+  "baseUrl": "http://127.0.0.1:5198",
+  "previewEdgeNoindex": false,
+  "summary": {
+    "checks": 1426,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "pages": 106,
+    "uniqueInternalLinks": 113,
+    "redirects": 16
+  },
+  "redirects": [
+    {
+      "old": "/transporte",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/transporte",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/transporte",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/transporte",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/transporte-lisboa",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/transporte-lisboa",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/transporte-lisboa",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/transporte-lisboa",
+      "status": 301,
+      "final": "/blog/como-moverse-por-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/apps",
+      "status": 301,
+      "final": "/blog/mejores-apps-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/apps",
+      "status": 301,
+      "final": "/blog/mejores-apps-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/apps",
+      "status": 301,
+      "final": "/blog/mejores-apps-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/apps",
+      "status": 301,
+      "final": "/blog/mejores-apps-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/presupuesto",
+      "status": 301,
+      "final": "/calculadora-presupuesto-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/presupuesto",
+      "status": 301,
+      "final": "/calculadora-presupuesto-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/presupuesto",
+      "status": 301,
+      "final": "/calculadora-presupuesto-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/presupuesto",
+      "status": 301,
+      "final": "/calculadora-presupuesto-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/tarjeta-lisboa-card-vale-pena",
+      "status": 301,
+      "final": "/blog/lisboa-card-vale-la-pena",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/tarjeta-lisboa-card-vale-pena",
+      "status": 301,
+      "final": "/blog/lisboa-card-vale-la-pena",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/tarjeta-lisboa-card-vale-pena",
+      "status": 301,
+      "final": "/blog/lisboa-card-vale-la-pena",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/tarjeta-lisboa-card-vale-pena",
+      "status": 301,
+      "final": "/blog/lisboa-card-vale-la-pena",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/barrios-lisboa-donde-alojarse",
+      "status": 301,
+      "final": "/blog/donde-alojarse-en-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/barrios-lisboa-donde-alojarse",
+      "status": 301,
+      "final": "/blog/donde-alojarse-en-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/barrios-lisboa-donde-alojarse",
+      "status": 301,
+      "final": "/blog/donde-alojarse-en-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/barrios-lisboa-donde-alojarse",
+      "status": 301,
+      "final": "/blog/donde-alojarse-en-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/viajar-ninos-lisboa",
+      "status": 301,
+      "final": "/blog/lisboa-con-ninos",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/viajar-ninos-lisboa",
+      "status": 301,
+      "final": "/blog/lisboa-con-ninos",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/viajar-ninos-lisboa",
+      "status": 301,
+      "final": "/blog/lisboa-con-ninos",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/viajar-ninos-lisboa",
+      "status": 301,
+      "final": "/blog/lisboa-con-ninos",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/como-ir-sintra-desde-lisboa",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/como-ir-sintra-desde-lisboa",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/como-ir-sintra-desde-lisboa",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/como-ir-sintra-desde-lisboa",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/descubridores-portugueses",
+      "status": 301,
+      "final": "/blog/descubrimientos-portugueses-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/descubridores-portugueses",
+      "status": 301,
+      "final": "/blog/descubrimientos-portugueses-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/descubridores-portugueses",
+      "status": 301,
+      "final": "/blog/descubrimientos-portugueses-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/descubridores-portugueses",
+      "status": 301,
+      "final": "/blog/descubrimientos-portugueses-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/blog/que-hacer-en-lisboa-en-3-dias",
+      "status": 301,
+      "final": "/itinerarios/lisboa-3-dias-premium",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/blog/que-hacer-en-lisboa-en-3-dias",
+      "status": 301,
+      "final": "/itinerarios/lisboa-3-dias-premium",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/blog/que-hacer-en-lisboa-en-3-dias",
+      "status": 301,
+      "final": "/itinerarios/lisboa-3-dias-premium",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/blog/que-hacer-en-lisboa-en-3-dias",
+      "status": 301,
+      "final": "/itinerarios/lisboa-3-dias-premium",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/itinerarios/lisboa-fotografia",
+      "status": 301,
+      "final": "/blog/donde-fotografiar-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/itinerarios/lisboa-fotografia",
+      "status": 301,
+      "final": "/blog/donde-fotografiar-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/itinerarios/lisboa-fotografia",
+      "status": 301,
+      "final": "/blog/donde-fotografiar-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/itinerarios/lisboa-fotografia",
+      "status": 301,
+      "final": "/blog/donde-fotografiar-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/itinerarios/lisboa-romantica",
+      "status": 301,
+      "final": "/blog/lisboa-en-pareja",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/itinerarios/lisboa-romantica",
+      "status": 301,
+      "final": "/blog/lisboa-en-pareja",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/itinerarios/lisboa-romantica",
+      "status": 301,
+      "final": "/blog/lisboa-en-pareja",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/itinerarios/lisboa-romantica",
+      "status": 301,
+      "final": "/blog/lisboa-en-pareja",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/free-tour",
+      "status": 301,
+      "final": "/free-tours-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/free-tour",
+      "status": 301,
+      "final": "/free-tours-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/free-tour",
+      "status": 301,
+      "final": "/free-tours-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/free-tour",
+      "status": 301,
+      "final": "/free-tours-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/actividades/tranvia-28",
+      "status": 301,
+      "final": "/blog/tram-28-historia-guia",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/actividades/tranvia-28",
+      "status": 301,
+      "final": "/blog/tram-28-historia-guia",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/actividades/tranvia-28",
+      "status": 301,
+      "final": "/blog/tram-28-historia-guia",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/actividades/tranvia-28",
+      "status": 301,
+      "final": "/blog/tram-28-historia-guia",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/actividades/mosteiro-jeronimos",
+      "status": 301,
+      "final": "/blog/monasterio-jeronimos-entradas",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/actividades/mosteiro-jeronimos",
+      "status": 301,
+      "final": "/blog/monasterio-jeronimos-entradas",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/actividades/mosteiro-jeronimos",
+      "status": 301,
+      "final": "/blog/monasterio-jeronimos-entradas",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/actividades/mosteiro-jeronimos",
+      "status": 301,
+      "final": "/blog/monasterio-jeronimos-entradas",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/actividades/sintra-dia-completo",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/en/actividades/sintra-dia-completo",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/ko/actividades/sintra-dia-completo",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    },
+    {
+      "old": "/es/actividades/sintra-dia-completo",
+      "status": 301,
+      "final": "/blog/sintra-desde-lisboa",
+      "finalStatus": 200,
+      "chainLength": 1
+    }
+  ],
+  "pages": {
+    "/itinerarios": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/itinerarios",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "index, follow",
+      "indexable": true
+    },
+    "/free-tours-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/free-tours-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/portugal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/portugal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/calculadora-presupuesto-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/calculadora-presupuesto-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/que-ver-en-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/que-ver-en-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/donde-comer-en-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/donde-comer-en-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/itinerarios/lisboa-3-dias-premium": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "index, follow",
+      "indexable": true
+    },
+    "/contacto": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/contacto",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/sobre-nosotros": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/sobre-nosotros",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/miradouro-santa-luzia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-santa-luzia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/miradouro-senhora-do-monte": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-senhora-do-monte",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/itinerarios/lisboa-2-dias-completo": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "index, follow",
+      "indexable": true
+    },
+    "/itinerarios/lisboa-1-dia-lo-esencial": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "index, follow",
+      "indexable": true
+    },
+    "/actividades/miradouro-portas-do-sol": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-portas-do-sol",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/castelo-sao-jorge": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/castelo-sao-jorge",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/pasteis-de-belem": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/torre-de-belem": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/torre-de-belem",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/lx-factory": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/lx-factory",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/elevador-santa-justa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/elevador-santa-justa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/cascais-cabo-da-roca": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/oceanario-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/oceanario-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/fado-en-alfama": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/fado-en-alfama",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/crucero-atardecer-tajo": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/crucero-atardecer-tajo",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/free-walking-tour-centro": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/free-walking-tour-centro",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/jardim-estrela-principe-real": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/jardim-estrela-principe-real",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/parque-eduardo-vii": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/parque-eduardo-vii",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/tasca-tradicional": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/tasca-tradicional",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/actividades/cristo-rei": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades/cristo-rei",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/como-moverse-por-portugal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/como-moverse-por-portugal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/portugal-en-7-dias": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/portugal-en-7-dias",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/monasterio-jeronimos-entradas": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/monasterio-jeronimos-entradas",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/obidos-vila-natal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/obidos-vila-natal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/nochevieja-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/nochevieja-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-en-5-dias": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-5-dias",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/palacio-da-pena-entradas": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/palacio-da-pena-entradas",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-cuando-llueve": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-cuando-llueve",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-en-navidad": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-navidad",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/parque-das-nacoes-lisboa-que-ver": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/parque-das-nacoes-lisboa-que-ver",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/metro-lisboa-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-en-4-dias": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-4-dias",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/tarjeta-navegante-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/tarjeta-navegante-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/graca-lisboa-que-ver": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/graca-lisboa-que-ver",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/baixa-lisboa-que-ver": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/baixa-lisboa-que-ver",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/volta-portugal-devolucion-envases": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/volta-portugal-devolucion-envases",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/patinetes-electricos-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/patinetes-electricos-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/donde-fotografiar-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/donde-fotografiar-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-con-ninos": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-con-ninos",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-en-pareja": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-pareja",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/mejores-apps-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/mejores-apps-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/time-out-market-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/donde-alojarse-en-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/donde-alojarse-en-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-card-vale-la-pena": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-card-vale-la-pena",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/como-moverse-por-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/como-moverse-por-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/estacion-olaias-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/estacion-olaias-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/estacion-oriente-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/estacion-oriente-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-en-7-dias": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-7-dias",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/como-pagar-en-portugal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/como-pagar-en-portugal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/mejores-miradores-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/mejores-miradores-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/donde-comer-barato-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/donde-comer-barato-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/que-hacer-gratis-en-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/que-hacer-gratis-en-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/sintra-desde-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/sintra-desde-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/barrios-imprescindibles": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/barrios-imprescindibles",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/vida-nocturna-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/vida-nocturna-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/pasteles-de-belem": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/pasteles-de-belem",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/errores-turistas-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/errores-turistas-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/mejor-epoca-visitar-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/mejor-epoca-visitar-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/aeropuerto-lisboa-al-centro": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/restaurantes-romanticos-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/restaurantes-romanticos-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/playas-cerca-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/playas-cerca-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/que-ver-cascais-desde-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/donde-escuchar-fado-autentico": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/donde-escuchar-fado-autentico",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/presupuesto-viajar-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/presupuesto-viajar-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/mejores-mercados-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/mejores-mercados-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/donde-tomar-cafe-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/donde-tomar-cafe-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/descubrimientos-portugueses-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/descubrimientos-portugueses-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/que-comprar-lisboa-souvenirs": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/que-comprar-lisboa-souvenirs",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/excursiones-desde-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/excursiones-desde-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/historia-de-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/historia-de-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/terremoto-lisboa-1755": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/terremoto-lisboa-1755",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/azulejos-portugueses-historia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/azulejos-portugueses-historia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/novedades-lisboa-2026": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/novedades-lisboa-2026",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/festivales-eventos-lisboa-2026": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/festivales-eventos-lisboa-2026",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/lisboa-vs-porto": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-vs-porto",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/monumentos-de-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/monumentos-de-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/semana-santa-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/semana-santa-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/gastronomia-portuguesa-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/gastronomia-portuguesa-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/alfama-historia-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/alfama-historia-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/fado-historia-origen": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/fado-historia-origen",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/tram-28-historia-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/tram-28-historia-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/belem-barrio-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/belem-barrio-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/chiado-bairro-alto-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/chiado-bairro-alto-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/mouraria-barrio-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/mouraria-barrio-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/vinos-portugueses-guia": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/vinos-portugueses-guia",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/bacalhau-plato-portugal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/bacalhau-plato-portugal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/blog/arquitectura-manuelina-lisboa": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/blog/arquitectura-manuelina-lisboa",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": true
+    },
+    "/planifica-tu-viaje": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/planifica-tu-viaje",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/faq": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/faq",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/aviso-legal": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/aviso-legal",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/politica-privacidad": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/politica-privacidad",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/comprar-entradas": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/comprar-entradas",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/terminos-condiciones": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/terminos-condiciones",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/politica-cookies": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/politica-cookies",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    },
+    "/actividades": {
+      "status": 200,
+      "canonical": "https://estabaenlisboa.com/actividades",
+      "robots": [
+        {
+          "name": "robots",
+          "content": "noindex, follow"
+        },
+        {
+          "name": "googlebot",
+          "content": "noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        }
+      ],
+      "xRobots": "",
+      "indexable": false
+    }
+  },
+  "scope": "Local build HTTP evidence, not production. Complete checks reproducible via smoke:seo-migration.",
+  "xmlValidation": {
+    "parser": ".NET System.Xml via PowerShell [xml]",
+    "valid": true,
+    "urls": 98
+  }
+}

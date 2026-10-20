@@ -1,0 +1,9 @@
+# Rollout editorial, grupo F eventos y temporada
+
+José indica continuar tras itinerarios. Base a609f34; código de aplicación 9d704c2 sin cambios. Lectura completa de siete artículos vivos y del cuerpo histórico de invierno. Las guías recientes ya tienen respuesta/lista al principio: no añadir una caja redundante ni copiar referencias 2025 como fechas 2026 confirmadas. Cero perfiles nuevos; se conservan los 25 anteriores.
+
+Óbidos REVIEW: fechas municipales contrastadas, pero consejo de evitar 25/12 y 01/01 basado en cierres de 2025 necesita calendario de la edición nueva. Festivales REVIEW: comparación confusa Santo António/San Juan/San Pedro y promesa de calendario frente a guía general. Detener solo esas URLs y reportar, sin corregirlas ni migrarlas silenciosamente. Navidad/Nochevieja protegidas KEEP; Semana Santa y Mejor época KEEP; Novedades WAIT hasta Fase 7. Invierno es 308 histórico a Mejor época, no artículo vivo adicional: incorporar alias al manifest, no reactivarlo ni reutilizar sus promesas de ahorro/colas/lluvia.
+
+Consulta puntual a municipio, organizadores, turismo oficial, Liturgia e IPMA, con límites explícitos. No revalidación total ni fechas de verificación renovadas; 403 o falta de texto extraíble no prueban cierre/cancelación. No nuevo GSC, causalidad ni proyecciones. Baseline 15/10 y objetivo 28.000 impresiones/28 días junto con clics se mantienen.
+
+QA puntual en Preview de aplicación ya comprobada: 76/76 HTTP, siete páginas y alias de invierno; sitemap de 98 URLs. Navegador: 28 vistas a cuatro anchos sin overflow. Documentación/evidencia únicamente; build/CI anteriores identificados como anteriores. Producción conserva 83ca369. [Informe, fuentes y prioridades](../../docs/editorial-phase6-events-review.md). Sin merge ni producción. Siguiente grupo: historia/cultura; dudas y consolidaciones de Fase 7 permanecen.

@@ -1,0 +1,71 @@
+{
+  "baselineSha": "d1ef498",
+  "pages": [
+    {
+      "url": "/blog/baixa-lisboa-que-ver",
+      "beforeRows": [],
+      "afterRows": [
+        5
+      ],
+      "title": "Baixa de Lisboa: qué ver y ruta a pie | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/baixa-lisboa-que-ver",
+      "sources": 3
+    },
+    {
+      "url": "/blog/alfama-historia-guia",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Alfama en Lisboa: qué ver, miradores y ruta a pie",
+      "canonical": "https://estabaenlisboa.com/blog/alfama-historia-guia",
+      "sources": 2
+    },
+    {
+      "url": "/blog/graca-lisboa-que-ver",
+      "beforeRows": [],
+      "afterRows": [
+        5
+      ],
+      "title": "Qué ver en Graça, Lisboa: miradores y ruta a pie",
+      "canonical": "https://estabaenlisboa.com/blog/graca-lisboa-que-ver",
+      "sources": 3
+    },
+    {
+      "url": "/blog/chiado-bairro-alto-guia",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Chiado y Bairro Alto en Lisboa: qué ver y qué hacer",
+      "canonical": "https://estabaenlisboa.com/blog/chiado-bairro-alto-guia",
+      "sources": 5
+    },
+    {
+      "url": "/blog/mouraria-barrio-guia",
+      "beforeRows": [],
+      "afterRows": [
+        5
+      ],
+      "title": "Mouraria en Lisboa: qué ver, historia y ruta | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/mouraria-barrio-guia",
+      "sources": 5
+    },
+    {
+      "url": "/blog/parque-das-nacoes-lisboa-que-ver",
+      "beforeRows": [],
+      "afterRows": [
+        6
+      ],
+      "title": "Parque das Nações Lisboa: qué ver y ruta | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/parque-das-nacoes-lisboa-que-ver",
+      "sources": 2
+    }
+  ],
+  "keep": "/blog/donde-alojarse-en-lisboa",
+  "review": [
+    "/blog/barrios-imprescindibles",
+    "/blog/belem-barrio-guia"
+  ],
+  "baselineHash": "388136802eb7f4d2df930afc7dab0b62c9bccd2bc5fbab144dc393bade43c82b"
+}

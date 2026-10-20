@@ -1,0 +1,150 @@
+{
+  "baseline": "55feb02",
+  "date": "2026-10-19T07:44:49.446Z",
+  "checks": [
+    {
+      "name": "articles",
+      "before": "eb459ef230848620015b4026982cf37bfd85db51249ea6c3fa6cb7a68ac7f33e",
+      "after": "eb459ef230848620015b4026982cf37bfd85db51249ea6c3fa6cb7a68ac7f33e",
+      "pass": true
+    },
+    {
+      "name": "AUDITED_ARTICLE_FAQS",
+      "before": "10f408dc058fd39b65a0189d06ca30dc1f45a06888a8857e98e0475bcb921ac5",
+      "after": "10f408dc058fd39b65a0189d06ca30dc1f45a06888a8857e98e0475bcb921ac5",
+      "pass": true
+    },
+    {
+      "name": "articleExtras",
+      "before": "439c72049179152a93f0bc07e769abed590cf7ea1053d0001efc2a7c236346a6",
+      "after": "439c72049179152a93f0bc07e769abed590cf7ea1053d0001efc2a7c236346a6",
+      "pass": true
+    },
+    {
+      "name": "sectionPhotos",
+      "before": "71f8bf4f36a0c87ed51b2163dd653599d496d202ab59b5c443bdd85223af5234",
+      "after": "71f8bf4f36a0c87ed51b2163dd653599d496d202ab59b5c443bdd85223af5234",
+      "pass": true
+    },
+    {
+      "name": "heroAlt",
+      "before": "e2a92f6c4b42d8499fee4663b5b6cbd9038dca6a902f4bb13a3fe781a374ba17",
+      "after": "e2a92f6c4b42d8499fee4663b5b6cbd9038dca6a902f4bb13a3fe781a374ba17",
+      "pass": true
+    },
+    {
+      "name": "localImages",
+      "before": "564e008e9f27c0e1021f00037af40d53f9e878c63366df2efbd99da770f21006",
+      "after": "564e008e9f27c0e1021f00037af40d53f9e878c63366df2efbd99da770f21006",
+      "pass": true
+    },
+    {
+      "name": "articleHeroImages",
+      "before": "9e74624d91bcb5f4c23083bd664762dc7946cff0d031f20100c7bf32680d0a82",
+      "after": "9e74624d91bcb5f4c23083bd664762dc7946cff0d031f20100c7bf32680d0a82",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-4-dias source block references",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-5-dias source block references",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-7-dias source block references",
+      "pass": true
+    },
+    {
+      "name": "src/app/[locale]/itinerarios/page.tsx",
+      "before": "f21a1ccac99d3ad84ce0038aff5470773de24a7986443541fc374880cc3c91a4",
+      "after": "f21a1ccac99d3ad84ce0038aff5470773de24a7986443541fc374880cc3c91a4",
+      "pass": true
+    },
+    {
+      "name": "src/app/[locale]/itinerarios/lisboa-1-dia-lo-esencial/page.tsx",
+      "before": "cdfc530dca46b4920c30ba396d760f7791feb512388b1285a07fc7a8a333c084",
+      "after": "cdfc530dca46b4920c30ba396d760f7791feb512388b1285a07fc7a8a333c084",
+      "pass": true
+    },
+    {
+      "name": "src/app/[locale]/itinerarios/lisboa-2-dias-completo/page.tsx",
+      "before": "c5e22a36230af57dd90109f6f216727e7fda713b86d065cf113cbb7f975a1c57",
+      "after": "c5e22a36230af57dd90109f6f216727e7fda713b86d065cf113cbb7f975a1c57",
+      "pass": true
+    },
+    {
+      "name": "src/app/[locale]/itinerarios/lisboa-3-dias-premium/page.tsx",
+      "before": "47d2205d5a2ae9219862a2391aa7319feca6fa72e97cb93cb3d01130659ab613",
+      "after": "47d2205d5a2ae9219862a2391aa7319feca6fa72e97cb93cb3d01130659ab613",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/features.ts",
+      "before": "52ed062213df6b20d3da2c38318bd4c94d1287bce33052744fe9c4a55b4f83cd",
+      "after": "52ed062213df6b20d3da2c38318bd4c94d1287bce33052744fe9c4a55b4f83cd",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/index.ts",
+      "before": "be866145eb4dfce9ff63ecbaf09909c37b8b9e69d272f584dc26f534e642ca33",
+      "after": "be866145eb4dfce9ff63ecbaf09909c37b8b9e69d272f584dc26f534e642ca33",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-1-dia.ts",
+      "before": "b9445c2146c62a00cd0f0937328fb34906ce209c647347ed0757e14dc43cc3df",
+      "after": "b9445c2146c62a00cd0f0937328fb34906ce209c647347ed0757e14dc43cc3df",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-2-dias.ts",
+      "before": "03a0e444388da5caed3df26f0f8c4c4fb9436355fd8f3c7595b8795a911e590b",
+      "after": "03a0e444388da5caed3df26f0f8c4c4fb9436355fd8f3c7595b8795a911e590b",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-3-dias.ts",
+      "before": "35b67f103a4eebe157bf671bd3e0db60c383f35bca452d63e2c49b9aa7a5116f",
+      "after": "35b67f103a4eebe157bf671bd3e0db60c383f35bca452d63e2c49b9aa7a5116f",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-familiar.ts",
+      "before": "5df53c8322c02e78545d57f2e2d4048c83ac795fc76723910703ec2419e96897",
+      "after": "5df53c8322c02e78545d57f2e2d4048c83ac795fc76723910703ec2419e96897",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-fotografia.ts",
+      "before": "461a6ab9e49fa85f1f3646850230e600b50b7d8f7add80c5d47d38155c4bdf49",
+      "after": "461a6ab9e49fa85f1f3646850230e600b50b7d8f7add80c5d47d38155c4bdf49",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-full-week.ts",
+      "before": "8c15443ee3eadcf9663b8ced87f604bb369f602e512f0d03b42e6d656eaddbab",
+      "after": "8c15443ee3eadcf9663b8ced87f604bb369f602e512f0d03b42e6d656eaddbab",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/lisboa-romantica.ts",
+      "before": "7408dcd83ffda4d63bf88715ae1ede8271eb4c32147bd83e2ce7a29d5ffa91df",
+      "after": "7408dcd83ffda4d63bf88715ae1ede8271eb4c32147bd83e2ce7a29d5ffa91df",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/main.ts",
+      "before": "69ad5340ca60e8ab5a1a76d3d9d117c5099df139759ae002edc16aa89974e7ef",
+      "after": "69ad5340ca60e8ab5a1a76d3d9d117c5099df139759ae002edc16aa89974e7ef",
+      "pass": true
+    },
+    {
+      "name": "src/data/itineraries/types.ts",
+      "before": "f31466a798c27320cb35e9fa67a363ee0a6fb49104a3ee2d4d42e09d0187196a",
+      "after": "f31466a798c27320cb35e9fa67a363ee0a6fb49104a3ee2d4d42e09d0187196a",
+      "pass": true
+    }
+  ]
+}

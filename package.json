@@ -14,6 +14,8 @@
     "smoke:free-tours": "node scripts/smoke-free-tours.mjs",
     "smoke:tiqets": "node scripts/smoke-tiqets.mjs",
     "smoke:sitemap": "node scripts/smoke-sitemap.mjs",
+    "smoke:seo-migration": "node scripts/smoke-seo-migration.mjs",
+    "smoke:editorial-template": "node scripts/smoke-editorial-template.mjs",
     "smoke:blog": "node scripts/smoke-blog.mjs",
     "smoke:traveler-guides": "node --import ./scripts/register-ts.mjs scripts/smoke-traveler-guides.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
@@ -55,6 +57,7 @@
     "@types/react-dom": "^18",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.5",
+    "linkedom": "^0.18.13",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

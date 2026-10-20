@@ -10,7 +10,14 @@ import type { Stay22BarrioId } from '@/data/stay22';
  * de actividad. Este registro conecta los artículos con lo que ya existe en
  * `bookings.ts` y `affiliate-links.ts`, sin crear productos nuevos.
  *
- * Reglas (las mismas de AFFILIATE-MONETIZATION-ARCHITECTURE):
+ * Fase 2 editorial (18/10/2026): respuesta completa antes de monetización.
+ * ArticleBookingRecommendations agrupa como máximo dos ofertas distintas
+ * en un módulo final, después del cuerpo y FAQ; la segunda es desplegable.
+ * Las posiciones históricas siguientes solo conservan atribución/compatibilidad;
+ * ya no autorizan una reserva temprana. D-039 queda superada en esta rama
+ * por la instrucción editorial expresa de José.
+ *
+ * Antecedentes conservados (NO son la política de colocación actual):
  *
  *   - El bloque vende EXACTAMENTE lo que trata la sección en la que aparece.
  *     Si no hay producto exacto, el artículo se queda sin bloque.
@@ -89,7 +96,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       // todo porque la excursión no incluye la Vila Natal.
       beforeHeading: 'como-ir-desde-lisboa-autobus-rapida-verde-desde-campo-grande',
       intro:
-        'Si no quieres cuadrar el autobús (abajo tienes cómo ir por tu cuenta), hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
+        'Si no quieres cuadrar el autobús (en esta guía tienes cómo ir por tu cuenta), hay excursiones guiadas de un día que paran en Óbidos. Esta termina allí después de Fátima, Batalha y Nazaré, con poco tiempo en el pueblo y sin la entrada a la Vila Natal: compruébalo en la ficha antes de reservar.',
     },
   ],
   // nochevieja-lisboa · artículo nuevo (9/10/2026), sin datos aún. El
@@ -144,7 +151,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       offer: { type: 'product', productId: 'lisboa-card' },
       position: 'after-summary',
       intro:
-        'Para moverte en metro, autobús y tranvía basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; más abajo tienes las cuentas.',
+        'Para moverte en metro, autobús y tranvía basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; en esta guía tienes las cuentas.',
     },
   ],
   // time-out-market-lisboa · 616 impresiones (28 d a 07/10)
@@ -255,7 +262,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       offer: { type: 'product', productId: 'lisboa-card' },
       position: 'after-summary',
       intro:
-        'Antes de comprarla, haz la cuenta de más abajo con lo que de verdad vas a visitar. Si te sale a favor, aquí la puedes dejar comprada antes del viaje.',
+        'Antes de comprarla, haz la cuenta de esta guía con lo que de verdad vas a visitar. Si te sale a favor, aquí la puedes dejar comprada antes del viaje.',
     },
     {
       offer: { type: 'product', productId: 'lisboa-card' },

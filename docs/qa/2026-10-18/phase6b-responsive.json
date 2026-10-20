@@ -1,0 +1,570 @@
+{
+  "local": [
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false
+    }
+  ],
+  "preview": [
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "baixa-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "alfama-historia-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "graca-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "chiado-bairro-alto-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "mouraria-barrio-guia",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 5
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 390,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 412,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 768,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "parque-das-nacoes-lisboa-que-ver",
+      "width": 1440,
+      "essentials": 1,
+      "h1": 1,
+      "overflow": false,
+      "rows": 6
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "donde-alojarse-en-lisboa",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 390,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 412,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 768,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    },
+    {
+      "slug": "belem-barrio-guia",
+      "width": 1440,
+      "essentials": 0,
+      "h1": 1,
+      "overflow": false,
+      "rows": 0
+    }
+  ]
+}

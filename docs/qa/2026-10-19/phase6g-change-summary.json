@@ -1,0 +1,100 @@
+[
+  {
+    "path": "/blog/historia-de-lisboa",
+    "before": {
+      "title": "Historia de Lisboa: de Olisipo al siglo XXI | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/historia-de-lisboa",
+      "boxes": 0
+    },
+    "after": {
+      "title": "Historia de Lisboa: de Olisipo al siglo XXI | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/historia-de-lisboa",
+      "essentials": [
+        {
+          "type": "culture",
+          "title": "En 30 segundos",
+          "rows": [
+            {
+              "label": "Olisipo",
+              "value": "El Teatro Romano y los restos bajo el centro muestran una ciudad anterior a las fachadas actuales."
+            },
+            {
+              "label": "Ciudad medieval",
+              "value": "Alfama y el entorno del Castelo ayudan a leer el trazado; no todas sus casas son medievales."
+            },
+            {
+              "label": "Expansión marítima",
+              "value": "Belém refleja la riqueza imperial, vinculada también a conquista, explotación y esclavitud."
+            },
+            {
+              "label": "Reconstrucción",
+              "value": "La cuadrícula de la Baixa responde a la destrucción del terremoto de 1755."
+            },
+            {
+              "label": "25 de Abril",
+              "value": "El Largo do Carmo conserva la memoria de la revolución de 1974."
+            },
+            {
+              "label": "Expo 98",
+              "value": "Oriente y Parque das Nações muestran la transformación del frente oriental de Lisboa."
+            }
+          ],
+          "links": 0
+        }
+      ],
+      "bylines": 1,
+      "bylineAfterImage": true
+    },
+    "metadataPreserved": true,
+    "schemasPreserved": true,
+    "blocksPreserved": true,
+    "linksPreserved": true,
+    "headingsPreserved": true,
+    "imagesPreserved": true
+  },
+  {
+    "path": "/blog/fado-historia-origen",
+    "before": {
+      "title": "Fado: significado, origen e historia en Lisboa | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/fado-historia-origen",
+      "boxes": 0
+    },
+    "after": {
+      "title": "Fado: significado, origen e historia en Lisboa | Estaba en Lisboa",
+      "canonical": "https://estabaenlisboa.com/blog/fado-historia-origen",
+      "essentials": [
+        {
+          "type": "culture",
+          "title": "En 30 segundos",
+          "rows": [
+            {
+              "label": "Origen",
+              "value": "Lisboa popular del siglo XIX; no hay un fundador ni una teoría única demostrada."
+            },
+            {
+              "label": "Sonido",
+              "value": "Voz, guitarra portuguesa y guitarra; el texto y la interpretación son centrales."
+            },
+            {
+              "label": "Temas",
+              "value": "Amor, pérdida, vida cotidiana e ironía: no se limita a tristeza o saudade."
+            },
+            {
+              "label": "Evolución",
+              "value": "Maria Severa forma parte de su memoria; Amália impulsó su difusión internacional y hoy sigue cambiando."
+            }
+          ],
+          "links": 0
+        }
+      ],
+      "bylines": 1,
+      "bylineAfterImage": true
+    },
+    "metadataPreserved": true,
+    "schemasPreserved": true,
+    "blocksPreserved": true,
+    "linksPreserved": true,
+    "headingsPreserved": true,
+    "imagesPreserved": true
+  }
+]

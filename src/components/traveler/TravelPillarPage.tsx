@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import { resolveInternalHref } from '@/lib/seo-url-policy';
 import { ArticleFigure } from '@/components/blog/ArticleFigure';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleSources } from '@/components/blog/ArticleSources';
@@ -288,10 +289,14 @@ export function TravelPillarPage({
 
                   {section.links?.length ? (
                     <ul className="pillar-guide-links">
-                      {section.links.map((link) => (
+                      {section.links.filter((link, index, links) => (
+                        links.findIndex((candidate) => (
+                          resolveInternalHref(candidate.href) === resolveInternalHref(link.href)
+                        )) === index
+                      )).map((link) => (
                         <li key={link.href}>
                           <TrackedInternalLink
-                            href={link.href}
+                            href={resolveInternalHref(link.href)}
                             contentType="pillar_section_link"
                             contentId={link.href}
                             className="article-inline-cta-link"
@@ -322,8 +327,6 @@ export function TravelPillarPage({
               </section>
             </div>
 
-            {reservation}
-
             <hr className="my-12 border-border-soft" />
             <section id="preguntas-frecuentes" className="article-faq article-reading scroll-mt-28">
               <h3>Preguntas frecuentes</h3>
@@ -339,6 +342,7 @@ export function TravelPillarPage({
                 ))}
               </div>
             </section>
+            {reservation}
           </article>
 
           <ArticleToc headings={headings} />
@@ -356,7 +360,7 @@ export function TravelPillarPage({
             {guide.relatedGuides.map((related, index) => (
               <TrackedInternalLink
                 key={related.href}
-                href={related.href}
+                href={resolveInternalHref(related.href)}
                 contentType="pillar_related"
                 contentId={related.href}
                 className={`group flex min-h-[164px] flex-col justify-between gap-5 border-b border-border-soft py-6 transition-colors hover:bg-white/35 sm:px-6 ${index % 2 === 1 ? 'sm:border-l sm:border-border-soft' : ''} ${index >= guide.relatedGuides.length - 2 ? 'sm:border-b-0' : ''}`}

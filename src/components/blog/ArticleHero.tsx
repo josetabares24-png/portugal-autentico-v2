@@ -8,6 +8,7 @@ type ArticleHeroProps = {
   heroImage: string;
   heroImageAlt?: string;
   isEditorialV2: boolean;
+  editorialPilot?: boolean;
   /**
    * Sección de la miga de pan. Por defecto, Blog. Las guías de entradas que
    * viven en una ficha de actividad la cambian por Actividades.
@@ -21,8 +22,16 @@ export function ArticleHero({
   heroImage,
   heroImageAlt,
   isEditorialV2,
+  editorialPilot = false,
   breadcrumb = { href: '/blog', label: 'Blog' },
 }: ArticleHeroProps) {
+  const byline = (
+    <p className="article-meta uppercase tracking-widest mb-3">
+      {article.categoria} &mdash; {article.fecha}
+      {article.fechaActualizacion ? <> &mdash; {article.fechaActualizacion}</> : null}
+      {' '}&mdash; {article.minutos} min lectura &mdash; Por {authorName}
+    </p>
+  );
   return (
     <>
       {/* Breadcrumb minimalista */}
@@ -43,11 +52,7 @@ export function ArticleHero({
         <div className="grid lg:grid-cols-[1fr,320px] gap-10">
           <div className="article-header-content min-w-0">
             {/* Categoría + meta */}
-            <p className="article-meta uppercase tracking-widest mb-3">
-              {article.categoria} &mdash; {article.fecha}
-              {article.fechaActualizacion ? <> &mdash; {article.fechaActualizacion}</> : null}
-              {' '}&mdash; {article.minutos} min lectura &mdash; Por {authorName}
-            </p>
+            {!editorialPilot && byline}
 
             {/* Título */}
             <h1 className="article-title font-display text-text-main mb-5">
@@ -86,6 +91,13 @@ export function ArticleHero({
             />
           </div>
         </figure>
+      )}
+      {editorialPilot && (
+        <div className="max-w-6xl mx-auto px-4 pt-5 pb-2" data-editorial-byline>
+          <div className="grid lg:grid-cols-[1fr,320px] gap-10">
+            <div className="article-reading w-full">{byline}</div>
+          </div>
+        </div>
       )}
     </>
   );
