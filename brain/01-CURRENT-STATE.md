@@ -1,5 +1,9 @@
 # Current state
 
+## 20 octubre 2026 — Fase 7A, enlace de Cascais corregido en candidato
+
+José indica «ok continúa». Se aclara únicamente la explicación y etiqueta del enlace final de Cascais: lleva a una ficha para combinar tren/autobús por libre, no a una actividad organizada. Href y ambas URLs conservados; sin cambios de datos, fechas, metadata, canonical, schema o diseño. [Informe](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Validación y Preview pendientes de cierre; sin merge ni producción. Cascais conserva REVIEW por el cluster y D-055 sigue vigente. Después: correcciones puntuales de Festivales, no fusión ni cambio de año automático.
+
 ## 20 octubre 2026 — aprobada la conservación temporal de las cuatro URLs
 
 José responde «sí, ahora dime qué sigue» a mantener separadas por ahora Restaurantes/Pareja y Novedades/Festivales. Queda resuelta esa decisión pendiente de D-054: no ejecutar sus dos 301 mientras siga vigente esta excepción. Conservar los cuatro 200 y canonicals propios; las dudas factuales permanecen pendientes y los otros casos REVIEW no reciben autorización de migración. D-055. Próximo lote recomendado: correcciones puntuales de utilidad y exactitud (Cascais, Festivales, Monumentos y Vinos/Gastronomía), con Preview antes de publicación; después propuesta de navegación y portada editorial del blog. Esta respuesta solicita el orden siguiente; no inicia todavía una reescritura ni autoriza merge/producción.

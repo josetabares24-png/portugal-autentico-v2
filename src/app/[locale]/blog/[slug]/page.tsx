@@ -3570,7 +3570,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Cascais o Sintra: no resuelven el mismo día" },
       { tipo: "parrafo", texto: "Sintra exige reservas, desnivel y decisiones sobre palacios. Cascais funciona con un ritmo mucho más flexible. Si solo tienes un día libre fuera de Lisboa, elige según lo que te falte en el viaje: patrimonio monumental y sierra en Sintra; costa, paseo y una jornada más abierta en Cascais." },
       { tipo: "enlace", texto: "Si estás comparando más escapadas, esta guía las organiza por tiempo y logística.", href: "/blog/excursiones-desde-lisboa", label: "Excursiones desde Lisboa" },
-      { tipo: "enlace", texto: "Si prefieres resolver transporte y varias paradas costeras en una actividad organizada, revisa la opción comercial solo después de comparar el plan por libre.", href: "/actividades/cascais-cabo-da-roca", label: "Ver opción Cascais y Cabo da Roca" },
+      { tipo: "enlace", texto: "Para añadir Cabo da Roca a tu día en Cascais, esta ficha explica cómo combinar tren y autobús por libre.", href: "/actividades/cascais-cabo-da-roca", label: "Cómo ir a Cascais y Cabo da Roca por libre" },
     ],
   },
   "playas-cerca-lisboa": {

@@ -1,5 +1,11 @@
 # Decision log
 
+## D-056 — Cascais: enlace coherente con una ficha por libre
+**Date:** 2026-10-20
+**Status:** candidate, pendiente de QA/Preview; sin autorización de publicación
+
+José indica «ok continúa» tras priorizar la corrección de Cascais. Cambiar solo explicación y etiqueta del enlace final: describir tren/autobús por libre; conservar href, URLs y contexto. No tocar datos cambiantes ni fechas, SEO, ficha, diseño o afiliados. Cascais mantiene REVIEW por la posible consolidación; no autoriza esa migración. [Informe](../docs/editorial-phase7a-cascais-fix.md). D-055 conserva las cuatro URLs separadas por ahora. Validar antes de publicar, sin merge automático.
+
 ## D-055 — Mantener separadas por ahora las dos parejas de Fase 7
 **Date:** 2026-10-20
 **Status:** accepted, conservación temporal aprobada por José

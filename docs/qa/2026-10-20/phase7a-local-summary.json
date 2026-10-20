@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-20T20:31:47.995Z",
+  "environment": "local build",
+  "baseline": "6fe7b9b; application production base 5ad2c40",
+  "applicationScope": "Two text fields in the final Cascais link; same href",
+  "build": {
+    "exitCode": 0,
+    "generatedPages": 137
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "errors": 0,
+    "existingWarnings": 1,
+    "warning": "ItineraryContextualCta.tsx:84 analyticsParams"
+  },
+  "blog": {
+    "articles": 69,
+    "redirected": 5,
+    "invariants": 828,
+    "internalLinks": 97,
+    "broken": 0
+  },
+  "migration": {
+    "checks": 1426,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "pages": 106,
+    "uniqueInternalLinks": 113,
+    "redirects": 16
+  },
+  "sitemap": {
+    "checks": 64,
+    "failures": 0,
+    "urls": 98
+  },
+  "browser": {
+    "pages": 2,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ],
+    "views": 8,
+    "overflow": 0,
+    "clickDestination": "/actividades/cascais-cabo-da-roca"
+  },
+  "domComparison": {
+    "checks": 7,
+    "failures": 0
+  },
+  "limits": [
+    "No Lighthouse or new Search Console extraction",
+    "Migration full details retained locally; this file is a summary, not all individual checks",
+    "Not a production publication"
+  ]
+}
