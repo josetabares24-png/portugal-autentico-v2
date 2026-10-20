@@ -47,3 +47,6 @@ Eventos/temporada conserva las aperturas útiles de siete artículos vivos: no f
 ## Rollout autorizado — Fase 6G
 
 Historia de Lisboa y Fado usan culture con En 30 segundos: seis capas y cuatro pares de origen/sonido/temas/evolución en src/data/editorial-culture.ts. No precios ni un formato práctico obligatorio. Preservar contexto, incertidumbre, voz y orden originales; resumen no sustituye desarrollo. Manuelino/Olaias mantienen respuestas existentes. Azulejos/Terremoto/Descubrimientos REVIEW por dudas puntuales. QA espera 27 perfiles explícitos; no activar todo Cultura por categoría ni ejecutar consolidaciones. [Informe](editorial-phase6-culture-review.md).
+## Revisión de consolidaciones — Fase 7
+
+La versión de Fases 1–6 está publicada desde 20/10/2026 (PR #112, SHA 5ad2c40). Una fusión exige equivalencia de respuesta, no solo un destino 200/canonical propio. No usar poca demanda visible como permiso para borrar intención específica. Restaurantes/Pareja y Novedades/Festivales siguen WAIT por las contradicciones del [informe](editorial-phase7-consolidation-review.md). Comparados los otros cinco casos; recomendaciones de dueño de intención sin migraciones ni reescrituras. La regla de detener/reportar una URL dudosa limita la intervención en ella. Sin nuevos perfiles ni cambios visuales; 27 conservados.

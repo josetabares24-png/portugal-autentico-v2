@@ -1,5 +1,13 @@
 # Current state
 
+## 20 octubre 2026 — Fase 7 revisada; dos fusiones WAIT por equivalencia incompleta
+
+Siete casos comparados completos con contenido, producción, enlaces y GSC/Windsor hasta 17/10. Restaurantes/Pareja y Novedades/Festivales mantienen WAIT: los destinos no entregan toda la respuesta de las fuentes, y no hay señal suficiente de canibalización. No se revoca la orden de fusión ni se cambian destinos; se reportan las excepciones y el mapa de conservación. Cascais: artículo recomendado para intención general; discrepancia entre enlace comercial y ficha de transporte público. Pastéis: artículo recomendado como referencia, sin retirar ficha ni reactivar alias. [Informe](../docs/editorial-phase7-consolidation-review.md), D-054. Solo documentación/evidencia; sin nuevas migraciones ni publicación. Resolver esas decisiones antes de avanzar a navegación/Home.
+
+## 20 octubre 2026 — producción verificada tras PR #112
+
+PR #112 fusionada a las 20:47, hora de Lisboa. Producción **5ad2c4083934c2f35e81aba12275566341f219ee**, Vercel **dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes**, READY y alias estabaenlisboa.com verificados. QA posterior: plantilla 1.670/1.670, migración 1.426/1.426, sitemap 64/64 (98 URLs), blog 828 invariantes y 64 vistas responsive sin fallos. Registro definitivo: [cierre del PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Esto supera las notas históricas de solo Preview de Fases 1–6 para el candidato publicado, incluidos D-045 a D-053; no autoriza futuras fases en producción. Aún no existe ventana posterior suficiente para medir efecto SEO.
+
 ## 19 octubre 2026 — publicación del candidato autorizada
 
 José solicita publicar todo lo revisado antes de seguir. Alcance: PR #112, aplicación comprobada 3f47e5b y cierres documentales; no nuevas fases, fusiones o correcciones factuales. La restricción previa de solo Preview queda sustituida para este candidato por la instrucción de publicación. [Autorización y protocolo](seo/EDITORIAL-REBUILD-RELEASE-2026-10-19.md). Estado definitivo, SHA/deployment y QA de producción: [registro de cierre de PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Consultarlo antes de afirmar que la publicación terminó o medir impacto; las notas históricas siguientes describen el estado previo.

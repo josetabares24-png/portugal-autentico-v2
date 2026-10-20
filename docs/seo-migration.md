@@ -132,3 +132,8 @@ Se adelanta el reparto de cuatro/cinco/siete días sin nuevas decisiones de URL.
 ## Revisión de cultura en Fase 6G
 
 Historia/Fado reciben únicamente presentación. Azulejos, Terremoto y Descubrimientos pasan a REVIEW documental por atribuciones/precisión/marco cronológico; conservan contenido, 200, indexabilidad y canonical propio. Sin redirects/noindex nuevos ni cambios de sitemap/robots. El 301 de Descubridores mantiene su destino directo aunque el ganador tenga una revisión factual pendiente: esa duda no autoriza cambiar destino o reactivar el alias. Manifest conserva 128 filas y las consolidaciones siguen en Fase 7. [Informe](editorial-phase6-culture-review.md).
+## Revisión posterior a publicación — 20/10/2026
+
+Fases 1–6 publicadas como PR #112, SHA 5ad2c40; el cierre definitivo de QA está en [GitHub](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Las restricciones históricas de Preview del texto siguiente corresponden a ese estado anterior. No se amplía la autorización a nuevas fases.
+
+Fase 7 revisa los siete casos completos y conserva las dos fusiones WAIT por equivalencia incompleta. Sin cambios de contrato ejecutable, rutas, noindex, sitemap, robots o canonicals. Los destinos expresos no se sustituyen ni se revocan: se documenta por qué no ejecutar todavía y cómo preservar respuestas antes de hacerlo. Manifest mantiene acciones; solo aclara notas. [Comparación, datos y decisiones por URL](editorial-phase7-consolidation-review.md).

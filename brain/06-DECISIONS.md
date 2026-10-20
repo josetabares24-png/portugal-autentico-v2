@@ -1,5 +1,13 @@
 # Decision log
 
+## D-054 — Consolidaciones: equivalencia antes de ejecutar los 301 previstos
+**Date:** 2026-10-20
+**Status:** revisión terminada; ejecución de dos fusiones en WAIT, propuestas de alcance pendientes de José
+
+Tras la publicación autorizada de PR #112, «sigue» inicia la revisión de Fase 7 en rama nueva. Restaurantes aporta seis locales que Pareja delega; Novedades incluye información no festiva que el calendario no responde. Aplicar la regla expresa de detener/reportar la URL dudosa: mantener WAIT sin revocar ni sustituir destinos ordenados. Los otros casos siguen REVIEW, con ganadores de intención recomendados y condiciones de conservación; no usar ausencia de filas GSC como prueba de cero demanda o como permiso de retirada. [Informe](../docs/editorial-phase7-consolidation-review.md) y [memoria](seo/EDITORIAL-REBUILD-PHASE-7-2026-10-20.md). Cero migraciones/contenido público nuevos. No merge ni publicación de esta fase; resolver el alcance antes de navegación/Home.
+
+**Cierre histórico:** D-045 a D-053 describen candidaturas previas. El lote conjunto fue aprobado para publicación por José y está en producción desde 20/10, SHA 5ad2c40. [Cierre de PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Esa publicación no aprueba nuevas consolidaciones ni confirma exactitud de las URLs REVIEW.
+
 ## D-053 — Cultura: orientación sin convertir la historia en ficha de entradas
 **Date:** 2026-10-19
 **Status:** candidate, pendiente de revisión visual del lote
