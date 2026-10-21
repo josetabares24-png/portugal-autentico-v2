@@ -1,0 +1,38 @@
+{
+  "checked": "2026-10-22",
+  "sha": "93c7a5a78671c15b17a1cdc2231cbf62ba6c40d1",
+  "deployment": "dpl_27MhFsLywmBFLycsJLyyB3BSo7ZS",
+  "origin": "https://portugal-autentico-v2-8yav1bvdy-estabaenlisboa.vercel.app",
+  "state": "READY",
+  "target": null,
+  "ci": { "total": 6, "success": 6 },
+  "local": {
+    "buildPages": 137,
+    "typecheck": "pass",
+    "lintErrors": 0,
+    "preexistingLintWarnings": 1,
+    "navigationChecks": 152,
+    "sitemapChecks": 64,
+    "sitemapUrls": 98,
+    "blogInvariants": 828,
+    "blogLinks": 97,
+    "brokenBlogLinks": 0,
+    "responsiveDomViews": 16
+  },
+  "preview": {
+    "navigationChecks": 152,
+    "failures": 0,
+    "fetchedPages": 38,
+    "responsiveDomViews": 16,
+    "overflowViews": 0,
+    "desktopDestinations": 3,
+    "mobileDestinations": 4,
+    "menuHeight": 539,
+    "menuAvailableHeight": 780,
+    "escapeFocusRestored": true
+  },
+  "productionSha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+  "productionChanged": false,
+  "visualApproval": "pending",
+  "lighthouse": "not run"
+}

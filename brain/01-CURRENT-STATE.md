@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — Feedback de navegación verificado en Preview
+
+D-061 cerrada como candidato: código 93c7a5a / dpl_27MhFsLywmBFLycsJLyyB3BSo7ZS READY, seis checks correctos. Escapadas usa la foto de Pena; Entradas está en primer nivel; Planifica abre su página propia y Historias la selección del blog. Smoke editorial local/remoto 152/152; build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 con 98 URLs y blog 828/97 enlaces sin rotos. Dieciséis vistas DOM por entorno sin overflow, tres destinos desktop y cuatro móviles comprobados, panel 539 px y Escape/foco correctos. [Cierre y capturas](../docs/editorial-phase9-10-preview.md#cierre-del-ajuste-en-preview). Producción consultada sigue 5ad2c40 READY. PR #113 en borrador; sin merge ni publicación, revisión visual del conjunto pendiente. No iniciar el cuerpo de Home ni ejecutar fusiones WAIT.
+
 ## 22 octubre 2026 — Feedback de navegación en revisión
 
 José pide retirar su retrato de Escapadas, aclarar Entradas y separar el destino de Historias/Planifica. D-061: foto del Palacio da Pena en `/portugal` y sus imágenes sociales, Entradas en primer nivel, Planifica a su página existente; Historias mantiene su sección del blog. No URLs nuevas ni cambios de intención/indexación. Cambios locales; build/QA/Preview del código final pendientes. El intento de compilación del 21/10 quedó bloqueado por límite de uso de la revisión automática de permisos; validación retomada el 22/10. PR #113 sigue en borrador y producción no se modifica.

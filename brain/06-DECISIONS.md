@@ -2,7 +2,7 @@
 
 ## D-061 — Revisión de Escapadas, Entradas y destinos de navegación
 **Date:** 2026-10-22
-**Status:** candidate; validación y nueva Preview pendientes, sin autorización de publicación
+**Status:** candidate verificado en Preview 93c7a5a; aprobación visual del conjunto pendiente, sin autorización de publicación
 
 José rechaza su retrato como apertura de Escapadas, pregunta por Entradas y señala que Historias/Planifica llevan a la misma página. Sustituir solo la fotografía principal/social de `/portugal` por el Palacio da Pena ya disponible, con crédito/licencia visibles. Mantener la foto personal en sus otros usos. Entradas pasa al primer nivel, en desktop y móvil, hacia `/comprar-entradas`; retirar la copia secundaria móvil. Planifica abre la página existente `/planifica-tu-viaje` (servicio a medida y herramientas gratuitas); Historias conserva `/blog#historias`, selección de lecturas culturales. No se crea landing ni se modifica la intención de ninguna URL. Mantener noindex,follow de los dos destinos funcionales, canonicals, sitemap y redirects. Esto revisa esos detalles de D-060; no implica aprobación visual del conjunto. [Seguimiento](../docs/editorial-phase9-10-preview.md#revisión-tras-feedback-de-josé--22-octubre).
 
