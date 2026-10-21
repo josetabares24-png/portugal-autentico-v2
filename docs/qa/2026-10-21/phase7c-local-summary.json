@@ -1,0 +1,52 @@
+{
+  "checked": "2026-10-21",
+  "base": "c145415",
+  "environment": "local",
+  "build": {
+    "pages": 137,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 1,
+    "warning": "ItineraryContextualCta.tsx:84 analyticsParams"
+  },
+  "blog": {
+    "articles": 69,
+    "invariants": 828,
+    "links": 97,
+    "broken": 0
+  },
+  "migration": {
+    "checks": 1426,
+    "failures": 0,
+    "redirects": 16
+  },
+  "sitemap": {
+    "checks": 64,
+    "urls": 98,
+    "changedRecord": "Monumentos lastmod; inherited Festivales lastmod retained"
+  },
+  "integrity": {
+    "checks": 26,
+    "failures": 0
+  },
+  "browser": {
+    "views": 8,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ],
+    "overflow": 0
+  },
+  "limits": [
+    "No Lighthouse",
+    "No post-release SEO measurement",
+    "Partial ticket correction; other facts remain REVIEW"
+  ]
+}

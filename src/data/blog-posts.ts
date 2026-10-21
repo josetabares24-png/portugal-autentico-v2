@@ -556,6 +556,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Torre de Belém, Jerónimos, Castelo de São Jorge, el Elevador de Santa Justa... Los monumentos imprescindibles con horarios, precios y cómo evitar las colas.',
     categoria: 'Guías',
     fecha: '3 Mar 2026',
+    dateModified: '2026-10-21',
     autor: 'José Tabares',
     imagen: '/images/estatua-praca-lisboa.jpg',
   },

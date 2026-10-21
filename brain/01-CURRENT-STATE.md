@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fase 7C, corrección de entradas de Belém en candidato
+
+Se corrigen en Monumentos las afirmaciones incompatibles de combinado/billete aparte; dos fichas de la taquilla oficial respaldan tarifas base y totales online. Comprobar inclusiones y disponibilidad por fecha, sin certificar reapertura/sesiones ni otros datos del artículo. Dos párrafos de veintiuno; títulos/URL/intención conservados, corrección parcial fechada. [Informe](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. QA/Preview pendientes; REVIEW permanece. Sin consolidación, merge ni producción; guía protegida de Jerónimos intacta.
+
 ## 21 octubre 2026 — Fase 7B verificada en Preview, sin publicar
 
 Preview conjunta Cascais/Festivales READY: 94e922c / dpl_1pE3XGAGCsffxDFqHH6aKoVoGAwN. Seis checks correctos incluido SEO smoke; build 137, TypeScript y lint 0 errores/1 warning previo; migración local 1.426 y sitemap 64/64. Integridad local/remota 26 controles y 20 vistas en cada entorno sin fallos. [Informe, fuentes y capturas](../docs/editorial-phase7b-festivals-fix.md), D-057, PR #113. H1/meta de Festivales ajustados a selección por temporadas, título HTML/URL/intención conservados y corrección parcial fechada 21/10. REVIEW residual; Novedades separada. Producción comprobada sigue 5ad2c40 READY; sin merge. Siguiente grupo: resolver discrepancia de entradas en Monumentos, sin autorizar consolidación.

@@ -1,0 +1,112 @@
+{
+  "checked": "2026-10-21",
+  "origin": "http://127.0.0.1:5201",
+  "base": "c145415",
+  "scope": "Monumentos only; inherited Cascais/Festivales corrections retained",
+  "checks": [
+    {
+      "name": "all other article objects preserved",
+      "pass": true
+    },
+    {
+      "name": "21 body blocks retained; 19 unedited blocks exact",
+      "pass": true
+    },
+    {
+      "name": "other article fields preserved",
+      "pass": true
+    },
+    {
+      "name": "preserve AUDITED_ARTICLE_FAQS",
+      "pass": true
+    },
+    {
+      "name": "preserve articleExtras",
+      "pass": true
+    },
+    {
+      "name": "preserve sectionPhotos",
+      "pass": true
+    },
+    {
+      "name": "preserve heroAlt",
+      "pass": true
+    },
+    {
+      "name": "preserve localImages",
+      "pass": true
+    },
+    {
+      "name": "preserve articleHeroImages",
+      "pass": true
+    },
+    {
+      "name": "seven previous source URLs retained; nine total",
+      "pass": true
+    },
+    {
+      "name": "all other blog cards preserved",
+      "pass": true
+    },
+    {
+      "name": "card/article title, description, modification agree",
+      "pass": true
+    },
+    {
+      "name": "publication date preserved",
+      "pass": true
+    },
+    {
+      "name": "HTML title unchanged",
+      "pass": true
+    },
+    {
+      "name": "H1 matches corrected editorial title; unique",
+      "pass": true
+    },
+    {
+      "name": "meta description matches corrected scope",
+      "pass": true
+    },
+    {
+      "name": "canonical and robots preserved",
+      "pass": true
+    },
+    {
+      "name": "section headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "nine source URLs rendered",
+      "pass": true
+    },
+    {
+      "name": "internal hrefs preserved",
+      "pass": true
+    },
+    {
+      "name": "article schema published/modified dates truthful",
+      "pass": true
+    },
+    {
+      "name": "OG modified date matches",
+      "pass": true
+    },
+    {
+      "name": "no contradictory combined/separate ticket claims; both online totals rendered",
+      "pass": true
+    },
+    {
+      "name": "sitemap URL membership preserved at 98",
+      "pass": true
+    },
+    {
+      "name": "all other sitemap records preserved",
+      "pass": true
+    },
+    {
+      "name": "only corrected article lastmod updated",
+      "pass": true
+    }
+  ]
+}
