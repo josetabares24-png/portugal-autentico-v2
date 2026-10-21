@@ -10,5 +10,6 @@ export const editorialNavigation = [
   { href: '/portugal', label: 'Escapadas' },
   { href: '/blog#historias', label: 'Historias' },
   { href: '/planifica-tu-viaje', label: 'Planifica' },
+  { href: '/free-tours-lisboa', label: 'Free tours' },
   { href: '/comprar-entradas', label: 'Entradas' },
 ] as const;

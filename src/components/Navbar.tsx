@@ -70,7 +70,6 @@ export default function Navbar() {
           {editorialNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-mobile focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">{link.label}</Link>)}
           <div className="mt-2 flex flex-wrap gap-x-5 border-t border-border-soft pt-2 text-sm text-text-secondary">
             <Link href="/blog#catalogo" onClick={closeMenus} className="inline-flex min-h-11 items-center underline underline-offset-4">Todas las guías</Link>
-            <Link href="/free-tours-lisboa" onClick={closeMenus} aria-current={isActive('/free-tours-lisboa') ? 'page' : undefined} className="inline-flex min-h-11 items-center underline underline-offset-4">Free tours</Link>
           </div>
         </div>
       </div>

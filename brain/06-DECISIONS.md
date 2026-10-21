@@ -1,5 +1,11 @@
 # Decision log
 
+## D-062 — Menos tarjetas y Free tours visible
+**Date:** 2026-10-22
+**Status:** candidate; QA local correcta, Preview pendiente
+
+José rechaza visualmente el bloque de cuatro tarjetas de Portugal, pide tenerlo presente en las fases siguientes y pregunta por Free tours. Cambiar ese bloque a una lista de enlaces con separadores, títulos menores y rectos, sin iconos ni cuatro llamadas repetidas. Conservar sus cuatro destinos/textos, H1 e intención. Reducir también el siguiente H2 desproporcionado. Restaurar Free tours al primer nivel de desktop/móvil y retirar su copia secundaria móvil; no tocar la landing, proveedor, afiliación ni fecha/SEO. La señal comercial histórica de esta superficie no justifica esconderla para hacer editorial la cabecera. Este feedback fija un criterio visual para los siguientes cambios, no una orden de modificar todas las plantillas a la vez. Sin merge ni producción.
+
 ## D-061 — Revisión de Escapadas, Entradas y destinos de navegación
 **Date:** 2026-10-22
 **Status:** candidate verificado en Preview 93c7a5a; aprobación visual del conjunto pendiente, sin autorización de publicación
