@@ -532,10 +532,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'festivales-eventos-lisboa-2026',
-    titulo: 'Festivales y Eventos en Lisboa 2026: Calendario Completo',
-    excerpt: 'Santo António, NOS Alive, Festas de Lisboa, Arraiais y mucho más. El calendario completo de eventos y festivales de Lisboa para 2026.',
+    titulo: 'Festivales y eventos en Lisboa 2026: guía por temporadas',
+    excerpt: 'Santo António, NOS Alive y otras citas culturales de Lisboa: una selección por temporadas con referencias a las ediciones de 2026 y anteriores.',
     categoria: 'Planificación',
     fecha: '8 Mar 2026',
+    dateModified: '2026-10-21',
     autor: 'José Tabares',
     imagen: '/images/festival-sardinhas-noche.jpg',
   },

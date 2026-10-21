@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fase 7B, correcciones puntuales de Festivales en candidato
+
+Tras cerrar Cascais se corrigen Santo António/comparación de santos y la afirmación sin respaldo sobre afluencia de junio. H1/meta/tarjeta prometen selección por temporadas; seoTitle, URL/año/intención conservados. Cinco fuentes, incluidas las tres previas y programa EGEAC 2026. Fecha de modificación 21/10 con etiqueta explícita de corrección parcial; no verificación integral. [Informe](../docs/editorial-phase7b-festivals-fix.md), D-057, PR #113. QA/Preview pendientes de cierre; REVIEW permanece por otras afirmaciones, Novedades sigue separada. Sin merge ni producción.
+
 ## 21 octubre 2026 — Cascais verificado en Preview; siguiente Festivales
 
 Cierre de Fase 7A: código 9568ed6 / dpl_6py1Yu7FDW8edLcToJr9Uo2Ho6YP READY; cinco checks correctos, migración remota 1.328 sin fallos, comparación DOM siete controles y ocho vistas remotas sin overflow. Clic abre la ficha por libre anunciada; solo cambian explicación y etiqueta del enlace. [Informe y captura](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Producción conserva 5ad2c40; sin merge. José indica seguir el 21/10: siguiente revisión/corrección acotada de Festivales, manteniendo Novedades separada y fuentes por edición. No ampliar a otras migraciones ni navegación/Home sin Preview.

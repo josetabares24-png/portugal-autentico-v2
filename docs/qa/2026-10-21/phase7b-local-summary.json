@@ -1,0 +1,65 @@
+{
+  "checked": "2026-10-21",
+  "environment": "local",
+  "base": "f76c3e9",
+  "build": {
+    "pages": 137,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 1,
+    "warning": "ItineraryContextualCta.tsx:84 analyticsParams"
+  },
+  "blog": {
+    "articles": 69,
+    "retiredRedirects": 5,
+    "invariants": 828,
+    "links": 97,
+    "broken": 0
+  },
+  "migration": {
+    "checks": 1426,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "pages": 106,
+    "uniqueInternalLinks": 113,
+    "redirects": 16
+  },
+  "sitemap": {
+    "checks": 64,
+    "failures": 0,
+    "urls": 98,
+    "changedRecord": "Only Festivales lastmod to 2026-10-21"
+  },
+  "integrity": {
+    "checks": 26,
+    "failures": 0,
+    "note": "Initial six initializer mismatches came from LF/CRLF representation; rerun normalizes line endings only."
+  },
+  "browser": {
+    "views": 20,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ],
+    "overflow": 0,
+    "pages": [
+      "Festivales",
+      "Blog index",
+      "Novedades",
+      "Navidad",
+      "Nochevieja"
+    ]
+  },
+  "limits": [
+    "No Lighthouse",
+    "No new Search Console extraction or causal SEO claim",
+    "Only three festival body blocks corrected; other assertions remain REVIEW"
+  ]
+}
