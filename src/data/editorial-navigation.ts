@@ -9,5 +9,6 @@ export const lisboaNavigation = [
 export const editorialNavigation = [
   { href: '/portugal', label: 'Escapadas' },
   { href: '/blog#historias', label: 'Historias' },
-  { href: '/blog#planea-tu-viaje', label: 'Planifica' },
+  { href: '/planifica-tu-viaje', label: 'Planifica' },
+  { href: '/comprar-entradas', label: 'Entradas' },
 ] as const;

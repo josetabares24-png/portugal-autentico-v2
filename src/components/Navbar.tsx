@@ -71,7 +71,6 @@ export default function Navbar() {
           <div className="mt-2 flex flex-wrap gap-x-5 border-t border-border-soft pt-2 text-sm text-text-secondary">
             <Link href="/blog#catalogo" onClick={closeMenus} className="inline-flex min-h-11 items-center underline underline-offset-4">Todas las guías</Link>
             <Link href="/free-tours-lisboa" onClick={closeMenus} aria-current={isActive('/free-tours-lisboa') ? 'page' : undefined} className="inline-flex min-h-11 items-center underline underline-offset-4">Free tours</Link>
-            <Link href="/comprar-entradas" onClick={closeMenus} aria-current={isActive('/comprar-entradas') ? 'page' : undefined} className="inline-flex min-h-11 items-center underline underline-offset-4">Entradas y visitas</Link>
           </div>
         </div>
       </div>

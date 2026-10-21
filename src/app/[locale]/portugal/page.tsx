@@ -73,17 +73,17 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: PAGE_URL,
     images: [{
-      url: 'https://estabaenlisboa.com/images/jose/jose-tabares-oporto.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'José Tabares en Oporto, Portugal',
+      url: 'https://estabaenlisboa.com/images/commons/sintra-palacio-pena-wikimedia.webp',
+      width: 1280,
+      height: 854,
+      alt: 'Palacio da Pena en Sintra, Portugal',
     }],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: ['https://estabaenlisboa.com/images/jose/jose-tabares-oporto.jpg'],
+    images: ['https://estabaenlisboa.com/images/commons/sintra-palacio-pena-wikimedia.webp'],
   },
 };
 
@@ -148,8 +148,8 @@ export default function PortugalPage() {
 
           <div className="relative min-h-[340px] overflow-hidden rounded-[3px] bg-night md:min-h-[460px]">
             <Image
-              src="/images/jose/jose-tabares-oporto.jpg"
-              alt="José Tabares en Oporto durante un viaje por Portugal"
+              src="/images/commons/sintra-palacio-pena-wikimedia.webp"
+              alt="Palacio da Pena en Sintra, Portugal"
               fill
               priority
               className="object-cover"
@@ -158,6 +158,10 @@ export default function PortugalPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent" />
             <p className="absolute bottom-5 left-5 right-5 max-w-md font-body text-sm leading-relaxed text-white/90">
               La idea es sencilla: usar lo que ya conocemos bien de Lisboa para construir una guía cada vez más útil del resto de Portugal.
+              <span className="mt-2 block text-xs">
+                Foto: <a href="https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg" className="underline underline-offset-2">CEphoto, Uwe Aranas</a>
+                {' · '}<a href="https://creativecommons.org/licenses/by-sa/3.0/" className="underline underline-offset-2">CC BY-SA 3.0</a>
+              </span>
             </p>
           </div>
         </div>

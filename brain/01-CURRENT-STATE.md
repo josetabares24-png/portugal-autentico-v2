@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — Feedback de navegación en revisión
+
+José pide retirar su retrato de Escapadas, aclarar Entradas y separar el destino de Historias/Planifica. D-061: foto del Palacio da Pena en `/portugal` y sus imágenes sociales, Entradas en primer nivel, Planifica a su página existente; Historias mantiene su sección del blog. No URLs nuevas ni cambios de intención/indexación. Cambios locales; build/QA/Preview del código final pendientes. El intento de compilación del 21/10 quedó bloqueado por límite de uso de la revisión automática de permisos; validación retomada el 22/10. PR #113 sigue en borrador y producción no se modifica.
+
 ## 21 octubre 2026 — Fases 9–10 verificadas en Preview; revisión visual pendiente
 
 Navegación Lisboa/Escapadas/Historias/Planifica y portada editorial con 22 artículos reales, catálogo/filtros y ocho páginas conservados. Código 69ec128 / dpl_8BzzpxL5djXs3H8DTsDZ5vbKn4oz READY, seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; 74 huellas idénticas y nueve archivos protegidos sin cambios. Blog 828 invariantes/97 enlaces sin rotos; sitemap 64/64, 98 URLs. Migración 1.426 local/1.328 remota; nuevo smoke editorial 146/146 en ambos. Dieciséis vistas y trece interacciones por entorno más dos menús abiertos, sin overflow. Paginación HTML completa conserva metadata propia tras clic; estados activos restaurados sin relajar checks. [Informe y antes/después](../docs/editorial-phase9-10-preview.md), D-060, PR #113. Producción comprobada sigue 5ad2c40 READY. Revisión visual de José pendiente según L-003; sin merge/publicación ni cambios del cuerpo de Home. Mantener REVIEW/WAIT y revisar selección estacional antes de publicar.

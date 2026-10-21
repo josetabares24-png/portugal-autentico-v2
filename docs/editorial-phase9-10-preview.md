@@ -10,7 +10,7 @@ HIPÓTESIS: ordenar entradas por necesidad reduce esfuerzo para encontrar una gu
 
 ## Navegación propuesta
 
-Cuatro entradas principales: **Lisboa · Escapadas · Historias · Planifica**.
+Propuesta inicial (21/10): cuatro entradas principales: **Lisboa · Escapadas · Historias · Planifica**. Revisada tras feedback de José: véase el apartado del 22/10 al final.
 
 - Lisboa abre cinco destinos: Moverse → guía maestra; Comer → hub existente; Barrios → sección de portada; Qué ver → pilar existente; Rutas → itinerarios.
 - Escapadas abre `/portugal`, que ya organiza rutas y destinos desde Lisboa.
@@ -83,3 +83,19 @@ Migración remota **1.328 controles, cero fallos**, 98 URLs sitemap, 106 página
 [Resumen](qa/2026-10-21/phase9-preview-summary.json), [navegación](qa/2026-10-21/phase9-preview-navigation.json), [vistas](qa/2026-10-21/phase9-preview-responsive.json), [interacciones](qa/2026-10-21/phase9-preview-interactions.json). Capturas: [antes](qa/2026-10-21/phase9-before-desktop.png), [portada escritorio](qa/2026-10-21/phase9-preview-desktop.png), [secciones](qa/2026-10-21/phase9-preview-sections.png), [portada móvil](qa/2026-10-21/phase9-preview-mobile.png), [menú móvil](qa/2026-10-21/phase9-preview-menu-mobile.png).
 
 Producción consultada conserva **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**. Sin merge ni publicación. El commit posterior de cierre solo documenta el mismo código probado. Queda la revisión visual de José según L-003, incluida la cabecera compartida y el coste de carga completa al paginar. No iniciar el cuerpo de Home ni publicar por inferir aprobación de «sigue» a este trabajo de Preview. Las correcciones de cinco guías de Fase 7 están incluidas en el mismo candidato; REVIEW/WAIT del manifest permanecen.
+
+## Revisión tras feedback de José — 22 octubre
+
+Baseline: Preview 69ec128. El hub `/portugal`, enlazado como Escapadas, abría con un retrato grande de José en Oporto. Entradas quedaba entre recursos de Planifica y en el pie del menú móvil. Historias y Planifica eran dos anclas del mismo `/blog`. José pide corregir esos tres puntos; «sigue» autoriza continuar la revisión, no publicar.
+
+Menú revisado: **Lisboa · Escapadas · Historias · Planifica · Entradas**. Entradas es enlace ordinario de primer nivel en ambas versiones hacia `/comprar-entradas`; no botón comercial destacado ni enlace móvil duplicado. Planifica abre `/planifica-tu-viaje`, página existente del servicio personal con alternativas gratuitas; se conserva su contenido y formulario sin enviar datos durante QA. Historias sigue abriendo la selección cultural `/blog#historias`, ahora con un destino distinto de Planifica. No se inventa una landing cultural ni se replica contenido del blog.
+
+Escapadas sustituye el retrato de apertura y las imágenes Open Graph/Twitter por la foto existente del Palacio da Pena. Crédito visible CEphoto, Uwe Aranas / CC BY-SA 3.0 con enlaces a ficha y licencia; registro previo en `public/images/commons/CREDITOS.md`. No se modifica ni elimina el archivo personal ni sus otros usos. No se cambia el texto, H1, intención, canonical, schema o política SEO del hub. La única metadata diferente es la imagen social y sus dimensiones/ALT, coherentes con el nuevo recurso 1280×854.
+
+Archivos de aplicación: `src/data/editorial-navigation.ts`, `src/components/Navbar.tsx`, `src/app/[locale]/portugal/page.tsx`; controles adicionales en `scripts/smoke-editorial-navigation.mjs` para destinos distintos, Entradas en ambos menús, fotografía de destino y conservación de noindex,follow. Sitemap, robots, redirects, artículos y sus datos no se tocan. Baseline visual: [Escapadas anterior](qa/2026-10-21/phase9-feedback-before.png).
+
+El intento previo de compilación fue rechazado por un límite de uso de la revisión automática de permisos, no por una conclusión de inseguridad. Se reanuda tras la continuación de José el 22/10. Build del código final, checks, QA visual y nueva Preview pendientes. Riesgo: cambia un enlace global; comprobar llegada real, estado activo y cierre móvil. Sin merge ni producción; aprobación visual del conjunto pendiente según L-003.
+
+Validación local del ajuste: build 137 páginas, TypeScript correcto y lint cero errores/un warning previo de ItineraryContextualCta. Smoke editorial 152 controles, 38 páginas consultadas y cero fallos; sitemap 64/64 con 98 URLs; blog 828 invariantes y 97 enlaces sin rotos. Dieciséis vistas DOM (Escapadas/Planifica/Entradas/blog × 390/412/768/1440 px), todas sin overflow y con una H1. Navegador confirma tres destinos desktop y cuatro móviles, cierre del panel al navegar y estados activos de Planifica/Entradas. Menú móvil con Lisboa expandido: 539 px dentro de los 780 disponibles a 390×844. Imagen de Pena cargada y crédito visible. No se envían formularios ni se inicia una compra. Archivos de artículos/datos y contratos SEO sin cambios frente a 9b6bc16.
+
+Evidencia: [smoke local](qa/2026-10-22/navigation-feedback-local.json), [vistas](qa/2026-10-22/navigation-feedback-local-views.json), [clics](qa/2026-10-22/navigation-feedback-local-clicks.json). Preview del código final pendiente; la captura anterior no demuestra el resultado nuevo.

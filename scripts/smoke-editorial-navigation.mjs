@@ -41,6 +41,17 @@ for (const id of ['lisboa', 'planea-tu-viaje', 'moverse', 'barrios', 'comer', 'h
 check('selected articles have crawlable links', selected.every((id) => cover.querySelector(`main a[href="/blog/${id}"]`)));
 const nav = cover.querySelector('nav[aria-label="Navegación principal"]');
 check('primary navigation exists', nav);
+const navLink = (label) => [...nav.querySelectorAll('a')].find((link) => link.textContent.trim() === label);
+check('Historias and Planifica open distinct pages', new URL(navLink('Historias')?.getAttribute('href'), origin).pathname !== new URL(navLink('Planifica')?.getAttribute('href'), origin).pathname);
+check('planning opens its existing page', navLink('Planifica')?.getAttribute('href') === '/planifica-tu-viaje');
+check('tickets accessible from both navigation layouts', [...nav.querySelectorAll('a[href="/comprar-entradas"]')].filter((link) => link.textContent.trim() === 'Entradas').length === 2);
+for (const href of ['/planifica-tu-viaje', '/comprar-entradas']) {
+  const { document } = await page(href);
+  check(`functional destination retains noindex, follow: ${href}`, document.querySelector('meta[name=robots]')?.getAttribute('content') === 'noindex, follow');
+}
+const { document: trips } = await page('/portugal');
+check('Escapadas opens with a destination photograph', trips.querySelector('main img')?.getAttribute('alt') === 'Palacio da Pena en Sintra, Portugal');
+check('Escapadas has no author portrait in main or social cover', ![...trips.querySelectorAll('main img, meta[property="og:image"], meta[name="twitter:image"]')].some((image) => /jose-tabares-oporto/.test(image.getAttribute('src') || image.getAttribute('content') || '')));
 for (const control of nav?.querySelectorAll('[aria-controls]') || []) check(`navigation control has target: ${control.getAttribute('aria-controls')}`, cover.getElementById(control.getAttribute('aria-controls')));
 for (const script of cover.querySelectorAll('script[type="application/ld+json"]')) {
   let valid = true;
