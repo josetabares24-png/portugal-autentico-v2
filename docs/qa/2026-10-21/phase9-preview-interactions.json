@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "test": "desktop Tab enters Lisboa links"
+    },
+    {
+      "pass": true,
+      "test": "desktop Escape closes and restores focus"
+    },
+    {
+      "test": "desktop outside click dismisses Lisboa",
+      "pass": true
+    },
+    {
+      "pass": true,
+      "test": "desktop section link historias"
+    },
+    {
+      "pass": true,
+      "test": "desktop section link planea-tu-viaje"
+    },
+    {
+      "test": "desktop Barrios link closes dropdown",
+      "pass": true
+    },
+    {
+      "test": "mobile Lisboa links visible",
+      "pass": true
+    },
+    {
+      "pass": true,
+      "test": "mobile Escape closes and restores focus"
+    },
+    {
+      "test": "mobile link navigates and closes menu",
+      "pass": true
+    },
+    {
+      "pass": true,
+      "test": "transport filter limits archive to its seven articles"
+    },
+    {
+      "pass": true,
+      "test": "filtered page two remains in catalog"
+    },
+    {
+      "pass": true,
+      "test": "archive page two canonical and cover omitted"
+    },
+    {
+      "pass": true,
+      "test": "page two menu reaches stories and root metadata"
+    }
+  ],
+  "menuViews": [
+    {
+      "availableHeight": 780,
+      "menuHeight": 495,
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "availableHeight": 936,
+      "menuHeight": 495,
+      "overflow": false,
+      "width": 768
+    }
+  ],
+  "notes": [
+    "Awaited root canonical after client navigation back from page two."
+  ]
+}

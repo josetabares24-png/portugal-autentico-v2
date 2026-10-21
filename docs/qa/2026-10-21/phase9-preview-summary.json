@@ -1,0 +1,63 @@
+{
+  "checked": "2026-10-21",
+  "environment": "preview",
+  "sha": "69ec1281b4e038753f30157e17a57838c1471162",
+  "deployment": "dpl_8BzzpxL5djXs3H8DTsDZ5vbKn4oz",
+  "url": "https://portugal-autentico-v2-qifmofubp-estabaenlisboa.vercel.app",
+  "state": "READY",
+  "target": null,
+  "ci": {
+    "total": 6,
+    "success": 6,
+    "checks": [
+      "seo-smoke",
+      "typecheck",
+      "GitGuardian Security Checks",
+      "Vercel Preview Comments",
+      "Vercel – portugal-autentico-v2",
+      "Vercel – portugal-autentico-v2-prod-merge-phase2"
+    ]
+  },
+  "migration": {
+    "checks": 1328,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "pages": 106,
+    "redirects": 16,
+    "note": "98 Preview edge-header checks omitted by existing smoke; HTML policy still validated. Platform noindex preserved."
+  },
+  "navigation": {
+    "checks": 146,
+    "failures": 0,
+    "selectedArticles": 22,
+    "fetchedPages": 37
+  },
+  "browser": {
+    "views": 16,
+    "menuViews": 2,
+    "interactionChecks": 13,
+    "failures": 0,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ]
+  },
+  "production": {
+    "sha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+    "deployment": "dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes",
+    "state": "READY",
+    "unchanged": true
+  },
+  "approval": {
+    "visual": "pending Jose",
+    "merge": false
+  },
+  "limits": [
+    "No Lighthouse/CWV or screen reader audit",
+    "No SEO outcome claim",
+    "Seasonal selection requires manual maintenance",
+    "Home body not redesigned"
+  ]
+}

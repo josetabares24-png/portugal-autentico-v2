@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fases 9–10 verificadas en Preview; revisión visual pendiente
+
+Navegación Lisboa/Escapadas/Historias/Planifica y portada editorial con 22 artículos reales, catálogo/filtros y ocho páginas conservados. Código 69ec128 / dpl_8BzzpxL5djXs3H8DTsDZ5vbKn4oz READY, seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; 74 huellas idénticas y nueve archivos protegidos sin cambios. Blog 828 invariantes/97 enlaces sin rotos; sitemap 64/64, 98 URLs. Migración 1.426 local/1.328 remota; nuevo smoke editorial 146/146 en ambos. Dieciséis vistas y trece interacciones por entorno más dos menús abiertos, sin overflow. Paginación HTML completa conserva metadata propia tras clic; estados activos restaurados sin relajar checks. [Informe y antes/después](../docs/editorial-phase9-10-preview.md), D-060, PR #113. Producción comprobada sigue 5ad2c40 READY. Revisión visual de José pendiente según L-003; sin merge/publicación ni cambios del cuerpo de Home. Mantener REVIEW/WAIT y revisar selección estacional antes de publicar.
+
 ## 21 octubre 2026 — Fases 9–10: navegación y portada en candidato
 
 Tras «sigue», propuesta funcional Lisboa/Escapadas/Historias/Planifica; portada por necesidades con 22 artículos reales y catálogo/filtros/paginación conservados. Baseline de 74 rutas antes de editar. [Informe](../docs/editorial-phase9-10-preview.md), D-060, PR #113. Cambia cabecera compartida de Preview; cuerpos/metadata/URLs y Home intactos. QA/Preview pendientes; requiere aprobación visual antes de merge según L-003. Sin producción ni nuevas migraciones.
