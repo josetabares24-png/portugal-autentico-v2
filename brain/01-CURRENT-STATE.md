@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fase 7D verificada en Preview; correcciones de cinco guías reunidas
+
+Vinos/Gastronomía conservan URLs e intenciones; cuatro/tres bloques corregidos y fuentes añadidas con fechas parciales. Código 1b4c104 / dpl_CzJ8NWfCLGgJiXfAtRe4oZYu3FEV READY, seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; blog 828/97 enlaces sin rotos, migración local 1.426, sitemap 64/64. Integridad local/remota 45/45; dieciséis vistas por entorno sin overflow, acordeones y navegación relacionada comprobados. [Informe y capturas](../docs/editorial-phase7d-wine-food-fix.md), D-059, PR #113. REVIEW residual de otros hechos; no fusión con Bacalhau. La Preview incluye también Cascais/Festivales/Monumentos. Producción comprobada conserva 5ad2c40 READY; sin merge. Próximo grupo: propuesta funcional de navegación y portada editorial con contenido real y Preview/aprobación visual antes de merge.
+
 ## 21 octubre 2026 — Fase 7D, correcciones de Vinos/Gastronomía en candidato
 
 Vinho Verde corregido como región y diversidad de estilos; consejos de compra/catas sin precios ni gratuidad universal. Gastronomía ajusta promesa a selección real y retira absolutos puntuales de las listas. Cuatro/tres bloques; URLs/intenciones separadas, H1/seoTitle de Vinos intactos y fecha parcial 21/10. [Informe](../docs/editorial-phase7d-wine-food-fix.md), D-059, PR #113. Fuentes primarias añadidas; REVIEW residual de otros datos. QA/Preview pendientes. Sin fusiones, cambios de navegación, merge ni producción.
