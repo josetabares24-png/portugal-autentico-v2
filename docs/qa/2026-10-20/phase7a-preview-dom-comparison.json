@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-20T20:38:51.565Z",
+  "baseline": "5ad2c40, production HTML captured during phase 7",
+  "candidate": "https://portugal-autentico-v2-84xbmfd5a-estabaenlisboa.vercel.app",
+  "changes": {
+    "explanation": [
+      "Si prefieres resolver transporte y varias paradas costeras en una actividad organizada, revisa la opción comercial solo después de comparar el plan por libre.",
+      "Para añadir Cabo da Roca a tu día en Cascais, esta ficha explica cómo combinar tren y autobús por libre."
+    ],
+    "label": [
+      "Ver opción Cascais y Cabo da Roca",
+      "Cómo ir a Cascais y Cabo da Roca por libre"
+    ]
+  },
+  "checks": [
+    {
+      "name": "preserve title",
+      "pass": true
+    },
+    {
+      "name": "preserve h1",
+      "pass": true
+    },
+    {
+      "name": "preserve metadata",
+      "pass": true
+    },
+    {
+      "name": "preserve canonical",
+      "pass": true
+    },
+    {
+      "name": "preserve schema",
+      "pass": true
+    },
+    {
+      "name": "preserve links",
+      "pass": true
+    },
+    {
+      "name": "all other visible main text preserved",
+      "pass": true
+    }
+  ]
+}

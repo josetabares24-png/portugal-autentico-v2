@@ -1,0 +1,56 @@
+{
+  "checked": "2026-10-21",
+  "sha": "9568ed6eaa98b089549b24d46271f3186d1cbced",
+  "deployment": "dpl_6py1Yu7FDW8edLcToJr9Uo2Ho6YP",
+  "url": "https://portugal-autentico-v2-84xbmfd5a-estabaenlisboa.vercel.app",
+  "state": "READY",
+  "target": null,
+  "migration": {
+    "checks": 1328,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "pages": 106,
+    "uniqueInternalLinks": 113,
+    "redirects": 16
+  },
+  "browser": {
+    "views": 8,
+    "overflows": 0,
+    "clickDestination": "/actividades/cascais-cabo-da-roca"
+  },
+  "domChecks": [
+    {
+      "name": "preserve title",
+      "pass": true
+    },
+    {
+      "name": "preserve h1",
+      "pass": true
+    },
+    {
+      "name": "preserve metadata",
+      "pass": true
+    },
+    {
+      "name": "preserve canonical",
+      "pass": true
+    },
+    {
+      "name": "preserve schema",
+      "pass": true
+    },
+    {
+      "name": "preserve links",
+      "pass": true
+    },
+    {
+      "name": "all other visible main text preserved",
+      "pass": true
+    }
+  ],
+  "limits": [
+    "Preview platform noindex headers distinct from HTML robots",
+    "Authentication cookie only held in memory; no tokens retained",
+    "No production publication"
+  ]
+}

@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Cascais verificado en Preview; siguiente Festivales
+
+Cierre de Fase 7A: código 9568ed6 / dpl_6py1Yu7FDW8edLcToJr9Uo2Ho6YP READY; cinco checks correctos, migración remota 1.328 sin fallos, comparación DOM siete controles y ocho vistas remotas sin overflow. Clic abre la ficha por libre anunciada; solo cambian explicación y etiqueta del enlace. [Informe y captura](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Producción conserva 5ad2c40; sin merge. José indica seguir el 21/10: siguiente revisión/corrección acotada de Festivales, manteniendo Novedades separada y fuentes por edición. No ampliar a otras migraciones ni navegación/Home sin Preview.
+
 ## 20 octubre 2026 — Fase 7A, enlace de Cascais corregido en candidato
 
 José indica «ok continúa». Se aclara únicamente la explicación y etiqueta del enlace final de Cascais: lleva a una ficha para combinar tren/autobús por libre, no a una actividad organizada. Href y ambas URLs conservados; sin cambios de datos, fechas, metadata, canonical, schema o diseño. [Informe](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Validación y Preview pendientes de cierre; sin merge ni producción. Cascais conserva REVIEW por el cluster y D-055 sigue vigente. Después: correcciones puntuales de Festivales, no fusión ni cambio de año automático.
