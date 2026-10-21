@@ -44,4 +44,12 @@ Integridad/HTML: **26 controles correctos**. Los otros objetos de artículos y t
 
 Navegador local: Festivales, índice y las relacionadas Novedades/Navidad/Nochevieja en 390/412/768/1440 px, **20 vistas sin overflow**, H1 única y canonical propio. [Matriz](qa/2026-10-21/phase7b-local-responsive.json). No se presenta el contrato de conservación byte a byte de refactors como prueba de una corrección de contenido. Sin Lighthouse nuevo ni atribución de Core Web Vitals. Preview pendiente de cierre.
 
-Preview y revisión antes de merge/publicación. Próximo grupo pendiente: discrepancia de entradas en Monumentos y conservación de su contexto antes de cualquier decisión de URL. No fusionar para resolver una duda factual.
+## Cierre de Preview — 21/10/2026
+
+Código **94e922cc40eca749f7a045491727ed98b5d59c1b**, deployment **dpl_1pE3XGAGCsffxDFqHH6aKoVoGAwN**, Preview **READY**, `target:null`: https://portugal-autentico-v2-8loik76jq-estabaenlisboa.vercel.app . Esta Preview reúne la corrección de Cascais y la de Festivales. Acceso temporal entregado en conversación; credenciales/cookies no se guardan en Git ni se desactiva protección.
+
+Los **seis checks** del SHA pasan, incluidos TypeScript y SEO smoke. QA remota dirigida: **26 controles correctos**, cinco fuentes visibles con las tres anteriores conservadas, H1/meta/fechas coherentes, título HTML/canonical/robots e intención preservados, misma lista de 98 URLs y solo lastmod de Festivales distinto. No se elimina el noindex de plataforma Preview ni se confunde con robots HTML. [Integridad remota](qa/2026-10-21/phase7b-preview-integrity.json), [resumen y alcance](qa/2026-10-21/phase7b-preview-summary.json).
+
+Navegador remoto: las mismas cinco superficies × cuatro tamaños, **20 vistas**, H1 única/canonical propio y sin overflow. El acordeón nativo de fuentes abre y muestra las cinco referencias. [Matriz](qa/2026-10-21/phase7b-preview-responsive.json), [captura PC](qa/2026-10-21/phase7b-preview-desktop.png), [móvil](qa/2026-10-21/phase7b-preview-mobile.png). Los primeros selectores por rol button no reconocían summary; se inspeccionó su semántica y se abrió el control nativo, sin cambios al componente. No se presenta como prueba completa de accesibilidad.
+
+Los commits posteriores al código verificado cierran documentación/evidencia. Producción comprobada permanece `5ad2c40` / `dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes`, READY. Sin merge, publicación ni nuevas migraciones. Riesgos factuales residuales conservan REVIEW. Próximo grupo: discrepancia de entradas en Monumentos y conservación de su contexto antes de cualquier decisión de URL. No fusionar para resolver una duda factual.

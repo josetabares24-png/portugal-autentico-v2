@@ -2,7 +2,7 @@
 
 ## D-057 — Festivales: corrección factual y alcance de selección
 **Date:** 2026-10-21
-**Status:** candidate, pendiente de QA/Preview; sin autorización de publicación
+**Status:** candidate verificado en Preview 94e922c, 21/10; sin autorización de publicación
 
 La continuación de José autoriza las correcciones puntuales priorizadas tras D-055. Conservar Festivales/Novedades separadas. Corregir comparación de santos y patronazgo en el bloque de junio; retirar superlativos/horas garantizadas sin evidencia y describir una selección por temporadas en H1/meta/índice. Mantener seoTitle, slug, año, intención, estructura y el resto del cuerpo. Fuentes primarias de Turismo de Portugal/EGEAC por edición; conservar las tres URLs previas. Etiquetar dateModified como corrección parcial real, sin certificar el artículo completo ni extrapolar programas. [Informe](../docs/editorial-phase7b-festivals-fix.md). REVIEW residual y Preview antes de publicar; sin otras migraciones ni cambios en páginas estacionales protegidas.
 

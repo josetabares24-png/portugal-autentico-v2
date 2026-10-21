@@ -1,0 +1,46 @@
+{
+  "checked": "2026-10-21",
+  "sha": "94e922cc40eca749f7a045491727ed98b5d59c1b",
+  "deployment": "dpl_1pE3XGAGCsffxDFqHH6aKoVoGAwN",
+  "origin": "https://portugal-autentico-v2-8loik76jq-estabaenlisboa.vercel.app",
+  "state": "READY",
+  "target": null,
+  "integrity": {
+    "checks": 26,
+    "failures": 0
+  },
+  "browser": {
+    "views": 20,
+    "pages": 5,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ],
+    "overflows": 0,
+    "sourcesAccordion": "Native summary opened; five source references rendered"
+  },
+  "ci": {
+    "sha": "94e922cc40eca749f7a045491727ed98b5d59c1b",
+    "passed": [
+      "seo-smoke",
+      "typecheck",
+      "GitGuardian Security Checks",
+      "Vercel Preview Comments",
+      "Vercel primary",
+      "Vercel secondary"
+    ]
+  },
+  "production": {
+    "sha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+    "deployment": "dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes",
+    "state": "READY"
+  },
+  "limits": [
+    "Preview platform noindex kept",
+    "Only corrected content scope verified; other factual assertions remain REVIEW",
+    "No Lighthouse or production publication",
+    "Post-QA commits are documentation only"
+  ]
+}
