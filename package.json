@@ -17,6 +17,7 @@
     "smoke:seo-migration": "node scripts/smoke-seo-migration.mjs",
     "smoke:editorial-template": "node scripts/smoke-editorial-template.mjs",
     "smoke:blog": "node scripts/smoke-blog.mjs",
+    "smoke:editorial-navigation": "node --import ./scripts/register-ts.mjs scripts/smoke-editorial-navigation.mjs",
     "smoke:traveler-guides": "node --import ./scripts/register-ts.mjs scripts/smoke-traveler-guides.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",

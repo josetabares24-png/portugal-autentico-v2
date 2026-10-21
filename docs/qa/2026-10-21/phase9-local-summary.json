@@ -1,0 +1,68 @@
+{
+  "checked": "2026-10-21",
+  "base": "a4c64b0",
+  "environment": "local",
+  "build": {
+    "pages": 137,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 1,
+    "warning": "ItineraryContextualCta.tsx:84 analyticsParams"
+  },
+  "blog": {
+    "invariants": 828,
+    "articles": 69,
+    "retiredRedirects": 5,
+    "internalLinks": 97,
+    "broken": 0,
+    "archivePages": 8,
+    "snapshotIdentical": 74
+  },
+  "migration": {
+    "checks": 1426,
+    "failures": 0
+  },
+  "sitemap": {
+    "checks": 64,
+    "urls": 98,
+    "failures": 0
+  },
+  "navigation": {
+    "checks": 146,
+    "selectedArticles": 22,
+    "fetchedPages": 37,
+    "failures": 0
+  },
+  "preservation": {
+    "files": 9,
+    "failures": 0
+  },
+  "browser": {
+    "views": 16,
+    "menuViews": 2,
+    "interactionChecks": 13,
+    "failures": 0,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ]
+  },
+  "repairs": [
+    "Native archive links apply query-specific SSR metadata after real click; URLs unchanged.",
+    "Secondary links retain aria-current; existing sitemap check preserved."
+  ],
+  "limits": [
+    "No Lighthouse/CWV or screen-reader audit",
+    "No SEO outcome claim",
+    "Visual approval required before merge",
+    "Seasonal selection requires manual review before publication"
+  ],
+  "production": false
+}

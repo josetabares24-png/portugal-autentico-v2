@@ -1,5 +1,11 @@
 # Decision log
 
+## D-060 — Navegación y portada editorial como propuesta funcional
+**Date:** 2026-10-21
+**Status:** candidate; QA/Preview y aprobación visual pendientes
+
+José indica seguir con navegación/portada tras D-059. Proponer Lisboa/Escapadas/Historias/Planifica con cinco enlaces bajo Lisboa; mantener recursos de entradas/free tours accesibles. Portada por necesidades usando 22 artículos reales y selección estacional explícita, sin nuevas categorías/URLs/textos de artículos. Conservar catálogo, filtros, reparto de ocho páginas, metadata y contratos SEO. [Informe](../docs/editorial-phase9-10-preview.md). Navegación global cambia también en Home/artículos de Preview, pero no sus cuerpos. L-003 exige aprobación visual antes de merge; no producción ni inicio del rediseño de Home. Mantener REVIEW/WAIT de migración.
+
 ## D-059 — Vinos/Gastronomía: corrección parcial, mantener intenciones separadas
 **Date:** 2026-10-21
 **Status:** candidate verificado en Preview 1b4c104, 21/10; sin autorización de publicación

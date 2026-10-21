@@ -9,14 +9,16 @@ type EditorialArticleCardVariant = 'feature' | 'compact' | 'grid';
 interface EditorialArticleCardProps {
   post: BlogPost;
   variant?: EditorialArticleCardVariant;
+  headingLevel?: 2 | 3;
 }
 
 export function getArticleImage(post: BlogPost) {
   return blogImageMap[post.id] || post.imagen || blogFallbackImage;
 }
 
-export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticleCardProps) {
+export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 }: EditorialArticleCardProps) {
   const imageSrc = getArticleImage(post);
+  const Heading = headingLevel === 3 ? 'h3' : 'h2';
 
   if (variant === 'feature') {
     return (
@@ -36,9 +38,9 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
           <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
             {post.categoria} &mdash; {post.fecha}
           </p>
-          <h2 className="mb-3 break-words font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-text-main transition-colors group-hover:text-terracotta md:text-4xl">
+          <Heading className="mb-3 break-words font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-text-main transition-colors group-hover:text-terracotta md:text-4xl">
             {post.titulo}
-          </h2>
+          </Heading>
           <p className="max-w-3xl font-body text-base leading-relaxed text-text-secondary md:text-lg">
             {post.excerpt}
           </p>
@@ -65,9 +67,9 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
             <p className="mb-1 font-body text-[11px] uppercase tracking-[0.14em] text-text-secondary">
               {post.categoria}
             </p>
-            <h2 className="break-words font-body text-[0.95rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
+            <Heading className="break-words font-body text-[0.95rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
               {post.titulo}
-            </h2>
+            </Heading>
           </div>
         </Link>
       </article>
@@ -90,9 +92,9 @@ export function EditorialArticleCard({ post, variant = 'grid' }: EditorialArticl
         <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
           {post.categoria} &mdash; {post.fecha}
         </p>
-        <h2 className="mb-2 break-words font-display text-[1.375rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
+        <Heading className="mb-2 break-words font-display text-[1.375rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
           {post.titulo}
-        </h2>
+        </Heading>
         <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">{post.excerpt}</p>
       </Link>
     </article>

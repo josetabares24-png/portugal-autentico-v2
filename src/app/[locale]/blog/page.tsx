@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import BlogClient from './BlogClient';
 import { blogPosts } from '@/data/blog-posts';
+import { BlogEditorialCover } from '@/components/blog/BlogEditorialCover';
 
 const BLOG_TITLE = 'Guías de Lisboa y Portugal | Estaba en Lisboa';
 const BLOG_DESCRIPTION = 'Guías de Lisboa y Portugal: transporte, rutas, barrios, escapadas, comida y consejos prácticos para organizar el viaje desde una base local.';
@@ -79,7 +80,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogClient key={initialPage} initialPage={initialPage} />
+      <BlogClient key={initialPage} initialPage={initialPage} editorialCover={initialPage === 1 ? <BlogEditorialCover /> : undefined} />
     </>
   );
 }
