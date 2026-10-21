@@ -2,7 +2,7 @@
 
 ## D-058 — Monumentos: aclarar entradas de Belém sin consolidación
 **Date:** 2026-10-21
-**Status:** candidate; QA/Preview pendientes, sin autorización de publicación
+**Status:** candidate verificado en Preview 00168de, 21/10; sin autorización de publicación
 
 José indica seguir con la corrección priorizada. Sustituir las afirmaciones contradictorias de combinado/billete aparte por comprobar inclusiones de cada opción. Conservar tarifas base y mostrar los totales online de las dos fichas oficiales comprobadas el 21/10; disponibilidad por fecha no garantizada. Solo dos párrafos, fuentes y fecha de corrección parcial; conservar títulos, URL, intención y resto del artículo. [Informe](../docs/editorial-phase7c-monuments-fix.md). REVIEW residual de hechos y posible consolidación; no tocar guía protegida de Jerónimos/Qué ver, ni ejecutar migraciones. Preview antes de publicar.
 

@@ -31,3 +31,12 @@ Baseline: [extracción GSC hasta 17/10](../brain/data/CONSOLIDATION-SEARCH-2026-
 ## Validación y Preview
 
 QA local correcto: build 137 páginas, TypeScript, lint cero errores/un warning previo en ItineraryContextualCta.tsx:84. Blog: 828 invariantes y 97 enlaces sin rotos. Migración: 1.426 controles; sitemap 64/64 con 98 URLs. Comparación de conservación/HTML: 26 controles correctos; diecinueve bloques y otros artículos/tarjetas conservados, metadata/títulos/canonical/robots y enlaces internos iguales, nueve fuentes renderizadas, publicación original intacta y fecha de modificación coherente. Solo cambia el lastmod de Monumentos respecto a F7B (se conserva la modificación previa de Festivales). Navegador local: ocho vistas de Monumentos/Jerónimos a 390/412/768/1440 px, sin overflow y una H1. [Resumen](qa/2026-10-21/phase7c-local-summary.json), [integridad](qa/2026-10-21/phase7c-local-integrity.json), [vistas](qa/2026-10-21/phase7c-local-responsive.json). No se relaja el contrato de plantilla para aceptar cambios de contenido. Preview pendiente; sin merge ni producción.
+
+
+## Cierre de Preview — 21/10
+
+Código **00168de0f756ec7d90900bdaf7f415e54512077c**, deployment **dpl_AKx7F1tpDE1XSB5iECRMSSczcNfg**, READY, entorno Preview (`target:null`): https://portugal-autentico-v2-6w1lwjhmo-estabaenlisboa.vercel.app . Seis checks correctos: SEO smoke, TypeScript, GitGuardian, comentario automático de Preview y los dos proyectos Vercel. Enlace temporal de acceso entregado en conversación; token/cookie fuera de Git y cookie del QA solo en memoria. No se modifica la protección/noindex de plataforma.
+
+QA remoto: 26 controles de integridad/HTML/sitemap correctos, ocho vistas en los cuatro tamaños sin overflow/H1 duplicada; desplegables de fuentes abiertos y fichas oficiales accesibles. [Resumen](qa/2026-10-21/phase7c-preview-summary.json), [integridad](qa/2026-10-21/phase7c-preview-integrity.json), [vistas](qa/2026-10-21/phase7c-preview-responsive.json), [escritorio](qa/2026-10-21/phase7c-preview-desktop.png), [móvil](qa/2026-10-21/phase7c-preview-mobile.png). La comprobación remota se centra en contenido/SEO de este cambio; no se presenta como otra ejecución completa del smoke de migración local.
+
+Producción consultada al cierre: **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**, sin cambios desde PR #112. Sin merge ni publicación. Este cierre solo añade documentación/evidencia al mismo código probado. Siguiente pendiente: correcciones puntuales de Vinos/Gastronomía; no redirecciones ni nueva navegación todavía.

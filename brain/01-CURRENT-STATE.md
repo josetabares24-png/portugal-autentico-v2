@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fase 7C verificada en Preview, sin publicar
+
+Entradas de Belém corregidas en Monumentos: dos párrafos de veintiuno; títulos/URL/meta conservados, nueve fuentes y fecha parcial coherente. Código 00168de / dpl_AKx7F1tpDE1XSB5iECRMSSczcNfg READY; seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; blog 828 invariantes/97 enlaces sin rotos, migración local 1.426, sitemap 64/64. Integridad local/remota 26 controles; ocho vistas por entorno sin overflow. [Informe y capturas](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. REVIEW residual; no consolidación. Producción comprobada sigue 5ad2c40 READY; sin merge. Siguiente: Vinos/Gastronomía con fuentes primarias y alcance conservador.
+
 ## 21 octubre 2026 — Fase 7C, corrección de entradas de Belém en candidato
 
 Se corrigen en Monumentos las afirmaciones incompatibles de combinado/billete aparte; dos fichas de la taquilla oficial respaldan tarifas base y totales online. Comprobar inclusiones y disponibilidad por fecha, sin certificar reapertura/sesiones ni otros datos del artículo. Dos párrafos de veintiuno; títulos/URL/intención conservados, corrección parcial fechada. [Informe](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. QA/Preview pendientes; REVIEW permanece. Sin consolidación, merge ni producción; guía protegida de Jerónimos intacta.
