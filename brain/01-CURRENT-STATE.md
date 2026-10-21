@@ -1,5 +1,9 @@
 # Current state
 
+## 21 octubre 2026 — Fase 7D, correcciones de Vinos/Gastronomía en candidato
+
+Vinho Verde corregido como región y diversidad de estilos; consejos de compra/catas sin precios ni gratuidad universal. Gastronomía ajusta promesa a selección real y retira absolutos puntuales de las listas. Cuatro/tres bloques; URLs/intenciones separadas, H1/seoTitle de Vinos intactos y fecha parcial 21/10. [Informe](../docs/editorial-phase7d-wine-food-fix.md), D-059, PR #113. Fuentes primarias añadidas; REVIEW residual de otros datos. QA/Preview pendientes. Sin fusiones, cambios de navegación, merge ni producción.
+
 ## 21 octubre 2026 — Fase 7C verificada en Preview, sin publicar
 
 Entradas de Belém corregidas en Monumentos: dos párrafos de veintiuno; títulos/URL/meta conservados, nueve fuentes y fecha parcial coherente. Código 00168de / dpl_AKx7F1tpDE1XSB5iECRMSSczcNfg READY; seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; blog 828 invariantes/97 enlaces sin rotos, migración local 1.426, sitemap 64/64. Integridad local/remota 26 controles; ocho vistas por entorno sin overflow. [Informe y capturas](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. REVIEW residual; no consolidación. Producción comprobada sigue 5ad2c40 READY; sin merge. Siguiente: Vinos/Gastronomía con fuentes primarias y alcance conservador.

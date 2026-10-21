@@ -1,0 +1,66 @@
+{
+  "checked": "2026-10-21",
+  "base": "50b7790",
+  "environment": "local",
+  "build": {
+    "pages": 137,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "errors": 0,
+    "existingWarnings": 1,
+    "warning": "ItineraryContextualCta.tsx:84 analyticsParams"
+  },
+  "blog": {
+    "articles": 69,
+    "invariants": 828,
+    "links": 97,
+    "broken": 0
+  },
+  "migration": {
+    "checks": 1426,
+    "failures": 0,
+    "redirects": 16
+  },
+  "sitemap": {
+    "checks": 64,
+    "urls": 98,
+    "changedRecords": [
+      "Vinos lastmod",
+      "Gastronomia lastmod"
+    ],
+    "priorChangesPreserved": [
+      "Festivales",
+      "Monumentos"
+    ]
+  },
+  "integrity": {
+    "checks": 45,
+    "failures": 0,
+    "note": "Initial helper aborted on assumed src/app/robots.ts; corrected to actual public/robots.txt. No app change required."
+  },
+  "browser": {
+    "views": 16,
+    "widths": [
+      390,
+      412,
+      768,
+      1440
+    ],
+    "overflow": 0,
+    "pages": [
+      "Vinos",
+      "Gastronomia",
+      "Bacalhau",
+      "Blog index"
+    ]
+  },
+  "limits": [
+    "No Lighthouse",
+    "No outcome/causal SEO claim",
+    "Both articles retain residual REVIEW facts"
+  ]
+}

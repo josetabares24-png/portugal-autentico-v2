@@ -4849,24 +4849,31 @@ const articles: Record<string, Article> = {
     ]
   },
   "gastronomia-portuguesa-guia": {
-    titulo: "Gastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
-    seoTitle: "Gastronomía portuguesa | 20 platos",
-    descripcion: "Bacalhau, pastéis de nata, bifanas, caldo verde, amêijoas à bulhão pato... La guía definitiva de la cocina portuguesa con dónde comer cada plato en Lisboa.",
+    titulo: "Gastronomía portuguesa: qué comer y dónde probarlo en Lisboa",
+    seoTitle: "Gastronomía portuguesa: qué comer en Lisboa",
+    descripcion: "Bacalhau à brás, pastéis de nata, bifanas y caldo verde: qué significa cada plato en la carta y algunas referencias para probar la cocina portuguesa en Lisboa.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     imageAlt: "Fachada de la Tasca da Graça, un bar de barrio de Lisboa, con clientes en las mesas de fuera",
     categoria: "Gastronomía",
     fecha: "23 Mar 2026",
+    fechaActualizacion: "Corrección de alcance y recomendaciones: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 14,
+    fuentes: [
+      { label: "Visit Portugal — platos de la cocina portuguesa", href: "https://www.visitportugal.com/en/content/the-portuguese-menu-fish-coriander-and-fantasy" },
+      { label: "Visit Lisboa — arraiais y sardinas en las fiestas de junio", href: "https://www.visitlisboa.com/es/eventos/verbenas-populares-de-lisboa" },
+      { label: "CVRVV — estilos de Vinho Verde y maridajes", href: "https://www.vinhoverde.pt/fotos/documentacao/flyer_vinhos_verdes_eng_755552762686e8c83d0e70.pdf" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "La cocina portuguesa tiene un problema de imagen. En un continente donde Francia, Italia y España acaparan toda la atención gastronómica, Portugal lleva siglos cocinando en silencio platos que llevan 500 años perfeccionándose. El bacalhau que los pescadores portugueses salaban en los barcos camino de Terranova, la pastelería conventual que las monjas desarrollaron durante siglos con yema de huevo y azúcar, el vino verde que se bebe frío y espumoso en verano..." },
+      { tipo: "parrafo", texto: "La cocina portuguesa tiene un problema de imagen. En un continente donde Francia, Italia y España acaparan toda la atención gastronómica, Portugal lleva siglos cocinando en silencio platos que llevan 500 años perfeccionándose. El bacalhau que los pescadores portugueses salaban en los barcos camino de Terranova, la pastelería conventual que las monjas desarrollaron durante siglos con yema de huevo y azúcar, los blancos de Vinho Verde que acompañan pescado y marisco..." },
       // TODO(José): tu relación real con la comida de Lisboa (qué te sorprendió, tu plato favorito). Solo si es real.
       { tipo: "parrafo", texto: "Esta guía explica la cocina portuguesa de forma práctica: qué platos pedir, qué es cada cosa en la carta y dónde probarlos en Lisboa." },
       { tipo: "subtitulo", texto: "Los Imprescindibles — Empieza por Aquí" },
       { tipo: "lista", items: [
         "Pastel de nata: el rey indiscutible. Hojaldre crujiente, crema de huevo con canela. Come el primero caliente en Pastéis de Belém o en cualquier pastelería de barrio",
-        "Bacalhau à brás: bacalao desmenuzado con patatas fritas finas y huevo. El plato más vendido de Portugal",
+        "Bacalhau à brás: bacalao desmenuzado con patatas fritas finas y huevo. Una de las preparaciones tradicionales del bacalao",
         "Bifana: bocadillo de cerdo marinado en ajo y vino blanco. Un clásico de bar que se come de pie",
-        "Caldo verde: sopa de col rizada con chouriço. El primer plato de cualquier celebración portuguesa",
+        "Caldo verde: sopa de col con chouriço. Un clásico de la cocina portuguesa",
         "Amêijoas à bulhão pato: almejas en aceite de oliva con ajo, cilantro y limón. El plato de mariscos más sencillo y más perfecto de la costa atlántica",
         "Frango assado: pollo asado con piri-piri. Sencillo, barato y adictivo"
       ]},
@@ -4882,10 +4889,10 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Los ovos moles de Aveiro (cápsulas de oblea rellenas de crema de yema) son el souvenir gastronómico más deseado del país. Los travesseiros de Sintra, los queijadas de Sintra, los pastéis de Tentúgal... cada región tiene su especialidad conventual. En Lisboa, el café A Brasileira (1905), en el Chiado, es histórico aunque turístico; para pastelería de verdad, busca cualquier pastelería de barrio." },
       { tipo: "subtitulo", texto: "Dónde Comer Bien en Lisboa — Por Tipo de Plato" },
       { tipo: "lista", items: [
-        "Pastéis de nata: Pastéis de Belém (histórico, siempre con cola), o cualquier Manteigaria en Chiado/Príncipe Real",
+        "Pastéis de nata: Pastéis de Belém (histórico), o Manteigaria en Chiado/Príncipe Real",
         "Bacalhau: Solar dos Presuntos (tradicional, cara) o cualquier tasca con menú del día",
         "Marisco: Cervejaria Ramiro si tienes presupuesto; para algo más económico, una marisquería de barrio con precio por kilo a la vista",
-        "Sardinas: solo en junio durante las festas, en cualquier arraial de barrio",
+        "Sardinas: en junio, los arraiais de las Festas de Lisboa son una ocasión para probarlas; consulta el programa del barrio",
         "Pastelería conventual: Confeitaria Nacional en Praça da Figueira (desde 1829)"
       ]}
     ]
@@ -5128,30 +5135,38 @@ const articles: Record<string, Article> = {
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
     seoTitle: "Vinos portugueses | Guía para entender",
-    descripcion: "Portugal tiene uno de los patrimonios vinícolas más ignorados de Europa. Vinho verde, vino de Oporto, Douro, Alentejo, Madeira... qué pedir, cómo pedirlo y dónde beberlo en Lisboa.",
+    descripcion: "Vinho Verde, vino de Oporto y tintos del Alentejo: estilos para orientarte en la carta, expresiones para pedir vino en Lisboa y cómo comprobar las condiciones de una cata.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Cena en la terraza de una tasca de Lisboa a la luz de la noche",
     categoria: "Gastronomía",
     fecha: "16 Mar 2026",
+    fechaActualizacion: "Corrección de Vinho Verde y consejos de compra: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 12,
+    fuentes: [
+      { label: "CVRVV — región, colores y vinos jóvenes o envejecidos", href: "https://www.vinhoverde.pt/fotos/documentacao/flyer_vinhos_verdes_eng_755552762686e8c83d0e70.pdf" },
+      { label: "CVRVV — variedades y evolución en botella", href: "https://portal.vinhoverde.pt/fotos/documentacao/monosheet_vinhos_verdes_eng_868021771686e8c913cc09.pdf" },
+      { label: "Garrafeira Nacional — agenda de catas y condiciones por evento", href: "https://www.garrafeiranacional.com/garrafeira/events/" },
+      { label: "Garrafeira Nacional — tiendas y horarios", href: "https://www.garrafeiranacional.com/garrafeira/ajuda/lojas" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Portugal tiene más variedades de uva autóctonas que cualquier otro país del mundo de tamaño comparable. La touriga nacional, la aragonez, la trincadeira, la alvarinho, la loureiro... nombres que no suenan en las cartas de vino de otros países pero que producen vinos de una personalidad que deja a mucha gente sorprendida. El problema es que Portugal lleva siglos siendo discreto sobre sus vinos, y el mundo tardó en prestar atención." },
       { tipo: "subtitulo", texto: "Vinho Verde: El Vino del Verano" },
-      { tipo: "parrafo", texto: "El Vinho Verde es el vino más refrescante del mundo para días de calor. Viene del Minho, el noroeste verde y lluvioso de Portugal, y su nombre no describe el color (hay blancos, rosados y tintos) sino la juventud: se cosecha joven, se embotella joven, y se bebe joven con su frescura intacta. Tiene una ligera efervescencia natural, baja graduación alcohólica (entre 8% y 11%), y una acidez que lo hace perfecto con mariscos, pescado fresco y el calor de Lisboa en julio." },
-      { tipo: "parrafo", texto: "En los bares y restaurantes de Lisboa, pedir 'um vinho verde' es pedir uno blanco, fresco, servido muy frío. Cuesta entre 3€ y 5€ la copa en un bar normal. El Alvarinho es la variedad más prestigiosa del Vinho Verde, más compleja y cara, con aromas de melocotón y flores que recuerdan vagamente al riesling alemán." },
+      { tipo: "parrafo", texto: "Vinho Verde es el nombre de una región demarcada del noroeste de Portugal, no una indicación de color o de edad: hay blancos, rosados y tintos. Los blancos jóvenes suelen ser frescos y ligeros, y pueden acompañar pescado y marisco. También hay vinos con crianza que ganan complejidad con el tiempo. La graduación y la presencia de gas dependen del vino; no todos son espumosos ni tienen el mismo grado alcohólico." },
+      { tipo: "parrafo", texto: "Si quieres uno blanco por copa, pide 'um copo de vinho verde branco' y pregunta qué referencia sirven y cuánto cuesta. Alvarinho y Loureiro son dos de las variedades de la región; el estilo y el precio dependen de la botella, no solo del nombre de la uva." },
       { tipo: "subtitulo", texto: "Vino de Oporto (Porto): Mucho Más que el Digestivo Dulce" },
       { tipo: "parrafo", texto: "El Vinho do Porto tiene en el mundo hispánico una imagen de vino dulce de sobremesa para abuelas. Esa imagen es completamente equivocada o, en el mejor caso, parcialmente cierta. El Porto Ruby —el más común— es efectivamente dulce y afrutado. Pero el Porto Tawny envejecido (especialmente los de 20 o 30 años) tiene una complejidad de fruta seca, caramelo y madera que está entre las experiencias vinícolas más sofisticadas que existen. Y el Porto Blanco, servido frío con agua tónica, es uno de los aperitivos más perfectos del mundo." },
       { tipo: "subtitulo", texto: "Alentejo: Los Tintos que Se Beben en Lisboa" },
       { tipo: "parrafo", texto: "El Alentejo es la región vinícola que más ha crecido en reputación en las últimas dos décadas. Sus tintos, hechos con uvas como la aragonez (la tempranillo portuguesa), la trincadeira y la alicante bouschet, tienen cuerpo, color intenso y aromas de fruta madura y especias que los hacen perfectos para las carnes y los guisos de la cocina portuguesa. Son los tintos que más se beben en los restaurantes de Lisboa." },
       { tipo: "subtitulo", texto: "Cómo Pedir Vino en Lisboa" },
       { tipo: "lista", items: [
-        "'Um copo de vinho verde' — un vaso de vinho verde (blanco, fresco). Para verano y mariscos",
-        "'Um tinto alentejano' — un tinto de Alentejo. La elección más segura para carnes",
+        "'Um copo de vinho verde branco' — una copa de Vinho Verde blanco. Pregunta qué vino sirven y a qué precio",
+        "'Um tinto alentejano' — un tinto de Alentejo. Una opción para acompañar carnes",
         "'Um porto tawny de 20 anos' — un Porto Tawny de 20 años. Para después de cenar, con queso",
-        "'Um branco fresco' — un blanco frío. Genérico pero funciona en cualquier situación",
-        "En las tascas, pide siempre 'o vinho da casa' (vino de la casa). Suele ser un alentejano básico pero honesto a 2-3€ la jarra"
+        "'Um branco fresco' — un blanco servido frío. Pregunta por el estilo si tienes alguna preferencia",
+        "'O vinho da casa' — el vino de la casa. Antes de pedir una jarra, pregunta qué vino es, su capacidad y el precio"
       ]},
-      { tipo: "tip", texto: "La LX Factory los domingos tiene varias bodegas y tiendas de vino con catas gratuitas. La zona del Príncipe Real tiene varios wine bars con buena selección de vinos portugueses por copa. Para comprar para llevar: la cadena Garrafeira Nacional tiene tiendas en toda Lisboa con excelente selección y precios sin marca turística." }
+      { tipo: "tip", texto: "Si quieres hacer una cata, consulta la agenda del organizador y comprueba la fecha, el lugar, el precio y si requiere reserva. Garrafeira Nacional publica eventos con condiciones propias y un listado de sus tiendas. Para comprar vino para llevar, compara referencias y precios; no des por hecha una cata gratuita cada domingo ni un precio especial por estar fuera de una zona turística." }
     ]
   },
   "tram-28-historia-guia": {

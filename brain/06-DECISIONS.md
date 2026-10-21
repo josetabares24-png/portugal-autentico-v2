@@ -1,5 +1,11 @@
 # Decision log
 
+## D-059 — Vinos/Gastronomía: corrección parcial, mantener intenciones separadas
+**Date:** 2026-10-21
+**Status:** candidate; QA/Preview pendientes, sin autorización de publicación
+
+José indica continuar. Corregir Vinho Verde como región con estilos jóvenes/envejecidos; no garantizar graduación, gas, precios de copas/jarras ni catas gratuitas recurrentes. Ajustar descripción de Vinos y promesa de Gastronomía a su contenido real; retirar absolutos concretos de sus listas sin añadir platos/regiones de relleno. Cuatro bloques de once y tres de dieciséis respectivamente; fuentes explícitas y fechas parciales coherentes. [Informe](../docs/editorial-phase7d-wine-food-fix.md). Conservar URLs/intención/enlaces y siete/trece bloques restantes; ambas REVIEW por datos residuales, sin fusionar con Bacalhau ni migraciones. Preview antes de publicar; no merge ni producción.
+
 ## D-058 — Monumentos: aclarar entradas de Belém sin consolidación
 **Date:** 2026-10-21
 **Status:** candidate verificado en Preview 00168de, 21/10; sin autorización de publicación
