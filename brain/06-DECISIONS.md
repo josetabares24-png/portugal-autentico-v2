@@ -1,5 +1,11 @@
 # Decision log
 
+## D-064 — QA técnico: corregir contratos confirmados sin perseguir una cifra
+**Date:** 2026-10-22
+**Status:** candidate; QA local correcta, Preview pendiente
+
+José indica continuar Fases 13–18. Auditoría HTTP de 113 páginas encuentra ocho archivos del blog con fechas de schema no ISO; convertir fechas existentes sin cambiar publicación/actualización visibles. No derivar primera publicación desde dateModified en la guía de ficha. Quitar hints globales de Brevo usados solo en servidor y quality=82 ajena a configuración; mantener fotos/prioridades. Controles de cookies a 44 px, sin cambiar consentimiento. PageSpeed de producción: Home móvil 98/LCP2,3, desktop99/LCP0,8; Metro móvil92/LCP3,3, CLS0 en las tres ejecuciones. No CrUX; no medición INP ni comparación causal con Preview. Mantener la imagen ya priorizada de Metro y repetir medición consistente tras eventual publicación. [Informe, fuentes y límites](../docs/editorial-phase13-18-technical-qa.md). No nuevas URLs, migraciones, precios o claims; WAIT/REVIEW conservados. Aprobación visual y producción siguen pendientes.
+
 ## D-063 — Home móvil: utilidad antes de reservas, perfil de autor conservado
 **Date:** 2026-10-22
 **Status:** candidate verificado en Preview 5b0e210; aprobación visual del conjunto pendiente, sin publicación

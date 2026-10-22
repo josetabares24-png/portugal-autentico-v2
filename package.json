@@ -18,6 +18,8 @@
     "smoke:editorial-template": "node scripts/smoke-editorial-template.mjs",
     "smoke:blog": "node scripts/smoke-blog.mjs",
     "smoke:editorial-navigation": "node --import ./scripts/register-ts.mjs scripts/smoke-editorial-navigation.mjs",
+    "smoke:technical-quality": "node scripts/smoke-technical-quality.mjs",
+    "test:editorial-date": "node --import ./scripts/register-ts.mjs scripts/test-editorial-date.mjs",
     "smoke:traveler-guides": "node --import ./scripts/register-ts.mjs scripts/smoke-traveler-guides.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",
