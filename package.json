@@ -29,6 +29,7 @@
     "test:budget-recommended": "node --import ./scripts/register-ts.mjs scripts/test-budget-recommended.mjs",
     "test:ux": "node --import ./scripts/register-ts.mjs scripts/test-ux-calculadora.mjs",
     "test:mailer": "node --test scripts/test-mailer-compat.mjs",
+    "test:planning": "node --import ./scripts/register-ts.mjs --test scripts/test-planning-request.mjs",
     "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs"
   },
   "dependencies": {
