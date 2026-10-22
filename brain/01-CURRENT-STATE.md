@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — José confirma prueba funcional de Planifica
+
+José comunica «si y si sirve ya probe»: prueba real del formulario satisfactoria reportada por el propietario, sin repetir el envío. No inspección independiente de bandeja ni confirmación detallada de ambos emails/Reply-To. D-065 permanece; código probado cd9f8f9, HEAD e9c321b documental y seis checks correctos, PR #113 MERGEABLE/CLEAN en borrador. Sin autorización explícita de merge/publicación del conjunto. Siguiente: aprobación final del lote Home/navegación/Planifica/QA y correcciones de cinco guías; después flujo de publicación y QA de producción. [Registro y límites](../docs/editorial-planifica-contact.md#validación-humana-comunicada).
+
 ## 22 octubre 2026 — Planifica como contacto personal verificado en Preview
 
 D-065: José quiere preparar los viajes personalmente. Formulario breve y correo directo, condiciones acordadas antes del plan, sin prometer 24–48 h; recursos propios secundarios. Éxito de envío depende del aviso aceptado para José, confirmación secundaria; no marketing ni emails de QA. Ocho pruebas offline y cinco de mailer correctas; build137, TypeScript, lint cero errores/un warning previo, navegación171, técnico1.130/113páginas y calculadora92. Ocho anchos por entorno sin overflow, teclado/validación nativa sin envío. Preview cd9f8f9 / dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF READY, seis checks; navegación171, técnico1.130, calculadora92 y sitemap64/98 URLs correctos también remotos. [Informe](../docs/editorial-planifica-contact.md). URL/canonical/H1/noindex/sitemap intactos. PR #113 sigue en borrador, sin producción ni autorización de merge. Producción consultada sigue5ad2c40 READY. Siguiente: revisión visual conjunta antes de publicar; no interpretar aceptación del proveedor como entrega real comprobada.

@@ -52,9 +52,18 @@
     "whatsAppAdded": false
   },
   "limits": [
-    "Transport acceptance and inbox delivery are not verified with a real email.",
+    "Owner reports a successful real form test; inbox contents and Reply-To were not independently inspected.",
     "Visual approval remains pending.",
     "No conversion or SEO gain measured.",
     "Old days/pace/budget analytics dimensions are no longer collected in the UI."
-  ]
+  ],
+  "humanValidation": {
+    "date": "2026-10-22",
+    "reportedBy": "José",
+    "statement": "si y si sirve ya probe",
+    "formReportedWorking": true,
+    "independentInboxInspection": false,
+    "bothEmailsAndReplyToExplicitlyConfirmed": false,
+    "productionApproval": false
+  }
 }

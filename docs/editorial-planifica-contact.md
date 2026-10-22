@@ -30,7 +30,7 @@ Se usan mensajes transaccionales del repositorio para esta ruta. Deja de emplear
 
 ## Validación y límites
 
-Ocho pruebas de parsing, escape, orden de envíos, confirmación fallida, ambos proveedores fallidos, respaldo y API real con HTTP interceptado. Nunca se envía un correo real de QA. La validación de aceptación real/bandeja del proveedor no se deduce de estas pruebas; se deberá comprobar con una solicitud autorizada o con una consulta real tras publicar.
+Ocho pruebas de parsing, escape, orden de envíos, confirmación fallida, ambos proveedores fallidos, respaldo y API real con HTTP interceptado. El agente no envió correos reales de QA. La aceptación real/bandeja del proveedor no se deduce de estas pruebas automatizadas; la prueba posterior comunicada por José se registra por separado abajo.
 
 Validación local: build 137 páginas, TypeScript correcto, lint sin errores/un warning previo en `ItineraryContextualCta.tsx:84`, ocho pruebas de planificación y cinco de compatibilidad mailer correctas. Navegación 171/171; calidad técnica 1.130/1.130 en 113 páginas; calculadora/recursos 92/92. Este último smoke tenía un contrato obsoleto: esperaba 200 de `/pack-completo`, retirado antes de este cambio; ahora exige su 308 directo a `/blog` y 200 final, sin modificar configuración ni producto.
 
@@ -42,7 +42,11 @@ Código probado **cd9f8f936a6b4aca8702f9087242d1d587a0129d**, Preview **dpl_Epjg
 
 Seis checks de PR #113 correctos. Remoto: navegación171, técnico1.130/113 páginas, calculadora92 y sitemap64/98 URLs, sin fallos. Ocho vistas 320–1440 sin overflow, campos etiquetados, canonical/noindex/H1 conservados y teclado nombre→email; bloqueo de envío vacío comprobado sin correo real. Capturas de escritorio, móvil y formulario móvil e informes JSON guardados en QA. Build/mailer/API simulada y TypeScript locales descritos arriba. El commit de cierre solo añade documentación/evidencia y no cambia el código probado.
 
-Producción consultada conserva **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**. Sin merge ni publicación. Sigue pendiente aprobación visual del conjunto y eventual validación de entrega con solicitud autorizada o real. No se mide ganancia comercial/SEO ni se certifica accesibilidad completa.
+Producción consultada conserva **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**. Sin merge ni publicación. Sigue pendiente aprobación visual del conjunto. José comunica después que ya probó el formulario y funciona; ver validación humana abajo. No se mide ganancia comercial/SEO ni se certifica accesibilidad completa.
+
+## Validación humana comunicada
+
+El 22/10/2026 José confirma: «si y si sirve ya probe», en respuesta a la propuesta de una solicitud real de prueba. Se registra como prueba funcional satisfactoria **reportada por el propietario**. No se afirma inspección independiente de su bandeja, dos correos recibidos o respuesta Reply-To comprobada, porque no detalló esos extremos. No hace falta duplicar el envío de prueba. Esta confirmación no constituye por sí sola autorización de merge/publicación del lote completo de PR #113.
 
 ## Siguiente paso
 

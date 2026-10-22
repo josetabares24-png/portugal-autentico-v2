@@ -6,6 +6,8 @@
 
 José pide contactar directamente con él para que prepare el viaje personalmente. Conservar URL/H1, ancla y noindex/follow. Formulario breve de nombre/email/mensaje, fechas/personas opcionales y correo público existente como alternativa; recursos gratuitos secundarios. Acordar alcance/precio antes de preparar el plan, sin precio ni plazo inventados; retirar promesas automáticas 24–48 h tanto de web como del acuse. Corregir éxito del backend: depende del aviso aceptado para José, no de la confirmación al visitante; fallback SMTP si falla el aviso Brevo y confirmación secundaria sin duplicar lead. L-007 conservada, sin newsletter. Ocho pruebas offline incluida ruta API con HTTP interceptado; no correos reales de QA. Las dimensiones días/ritmo/presupuesto de analytics dejan de recogerse en la UI y no son comparables. [Diagnóstico, alcance y límites](../docs/editorial-planifica-contact.md). Preview dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF READY, seis checks; navegación171, técnico1.130/113 páginas, calculadora92 y sitemap64/98 URLs correctos local/remoto. Ocho vistas por entorno sin overflow y teclado/validación sin envío. Mismo PR #113; no merge ni producción.
 
+**Validación humana posterior, 22/10:** José informa «si y si sirve ya probe». Prueba funcional satisfactoria reportada por él; no afirmar inspección independiente de bandeja o Reply-To ni enviar duplicado. Falta autorización explícita de publicación del lote completo.
+
 ## D-064 — QA técnico: corregir contratos confirmados sin perseguir una cifra
 **Date:** 2026-10-22
 **Status:** candidate verificado en Preview 5b83dbc; aprobación visual del conjunto pendiente, sin publicación
