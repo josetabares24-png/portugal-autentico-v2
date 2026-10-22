@@ -36,7 +36,13 @@ Validación local: build 137 páginas, TypeScript correcto, lint sin errores/un 
 
 Ocho vistas DOM 320/360/390/430/768/1024/1280/1440 sin overflow, cinco campos etiquetados, canonical/noindex y un H1 conservados. A 1.440 px, inicio del formulario y≈464 frente a≈1.419 previo. Teclado nombre→email y bloqueo nativo de campos vacíos/email inválido comprobados sin envíos. No certificación de accesibilidad completa. Capturas e informes en `docs/qa/2026-10-22/planifica-personal/`.
 
-Preview y QA remota: pendientes de cierre.
+## Cierre de Preview
+
+Código probado **cd9f8f936a6b4aca8702f9087242d1d587a0129d**, Preview **dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF**, READY, target null: https://portugal-autentico-v2-nosxbfxq9-estabaenlisboa.vercel.app/planifica-tu-viaje . Acceso temporal entregado en conversación, credenciales fuera de Git.
+
+Seis checks de PR #113 correctos. Remoto: navegación171, técnico1.130/113 páginas, calculadora92 y sitemap64/98 URLs, sin fallos. Ocho vistas 320–1440 sin overflow, campos etiquetados, canonical/noindex/H1 conservados y teclado nombre→email; bloqueo de envío vacío comprobado sin correo real. Capturas de escritorio, móvil y formulario móvil e informes JSON guardados en QA. Build/mailer/API simulada y TypeScript locales descritos arriba. El commit de cierre solo añade documentación/evidencia y no cambia el código probado.
+
+Producción consultada conserva **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**. Sin merge ni publicación. Sigue pendiente aprobación visual del conjunto y eventual validación de entrega con solicitud autorizada o real. No se mide ganancia comercial/SEO ni se certifica accesibilidad completa.
 
 ## Siguiente paso
 

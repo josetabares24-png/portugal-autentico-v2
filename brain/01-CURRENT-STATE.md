@@ -1,8 +1,8 @@
 # Current state
 
-## 22 octubre 2026 — Planifica como contacto personal, candidato
+## 22 octubre 2026 — Planifica como contacto personal verificado en Preview
 
-D-065: José quiere preparar los viajes personalmente. Formulario breve y correo directo, condiciones acordadas antes del plan, sin prometer 24–48 h; recursos propios secundarios. Éxito de envío depende del aviso aceptado para José, confirmación secundaria; no marketing ni emails de QA. Ocho pruebas offline y cinco de mailer correctas; build137, TypeScript, lint cero errores/un warning previo, navegación171, técnico1.130/113páginas y calculadora92. Ocho anchos sin overflow, teclado/validación nativa sin envío; Preview pendiente. [Informe](../docs/editorial-planifica-contact.md). URL/canonical/H1/noindex/sitemap intactos. PR #113 sigue en borrador, sin producción ni autorización de merge. Siguiente: completar Preview y revisión visual conjunta.
+D-065: José quiere preparar los viajes personalmente. Formulario breve y correo directo, condiciones acordadas antes del plan, sin prometer 24–48 h; recursos propios secundarios. Éxito de envío depende del aviso aceptado para José, confirmación secundaria; no marketing ni emails de QA. Ocho pruebas offline y cinco de mailer correctas; build137, TypeScript, lint cero errores/un warning previo, navegación171, técnico1.130/113páginas y calculadora92. Ocho anchos por entorno sin overflow, teclado/validación nativa sin envío. Preview cd9f8f9 / dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF READY, seis checks; navegación171, técnico1.130, calculadora92 y sitemap64/98 URLs correctos también remotos. [Informe](../docs/editorial-planifica-contact.md). URL/canonical/H1/noindex/sitemap intactos. PR #113 sigue en borrador, sin producción ni autorización de merge. Producción consultada sigue5ad2c40 READY. Siguiente: revisión visual conjunta antes de publicar; no interpretar aceptación del proveedor como entrega real comprobada.
 
 ## 22 octubre 2026 — QA de Fases 13–18 verificada en Preview
 
