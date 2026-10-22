@@ -2,13 +2,13 @@
 
 ## D-063 — Home móvil: utilidad antes de reservas, perfil de autor conservado
 **Date:** 2026-10-22
-**Status:** candidate; QA local correcta, Preview pendiente
+**Status:** candidate verificado en Preview 5b0e210; aprobación visual del conjunto pendiente, sin publicación
 
 José pide continuar las demás fases. Evolucionar Home sin cambiar la marca: guías antes de reservas, hero móvil más corto y ocho accesos con miniatura/texto frente a bloques de 250 px. Conservar ocho destinos, medición, fotografías, H1 y metadata/schema. Añadir selección manual de tres guías existentes de lluvia/Navidad/Nochevieja sin tocar su contenido ni fechas. Mantener Free tours en hero y reservas además de la cabecera restaurada. A 390 px, directorio de y≈1.260 a ≈555; medidas de layout, no causalidad SEO. Fase 12 inspecciona y conserva el perfil/biografía respaldada por respuestas de José, sin claims nuevos. [Informe](../docs/editorial-phase11-home.md). Esta continuación permite preparar Home frente al estado anterior; no equivale a aprobación visual ni publicación. Fases 13–18 requieren revisión transversal posterior.
 
 ## D-062 — Menos tarjetas y Free tours visible
 **Date:** 2026-10-22
-**Status:** candidate; QA local correcta, Preview pendiente
+**Status:** candidate verificado en Preview 5b0e210; aprobación visual del conjunto pendiente, sin publicación
 
 José rechaza visualmente el bloque de cuatro tarjetas de Portugal, pide tenerlo presente en las fases siguientes y pregunta por Free tours. Cambiar ese bloque a una lista de enlaces con separadores, títulos menores y rectos, sin iconos ni cuatro llamadas repetidas. Conservar sus cuatro destinos/textos, H1 e intención. Reducir también el siguiente H2 desproporcionado. Restaurar Free tours al primer nivel de desktop/móvil y retirar su copia secundaria móvil; no tocar la landing, proveedor, afiliación ni fecha/SEO. La señal comercial histórica de esta superficie no justifica esconderla para hacer editorial la cabecera. Este feedback fija un criterio visual para los siguientes cambios, no una orden de modificar todas las plantillas a la vez. Sin merge ni producción.
 

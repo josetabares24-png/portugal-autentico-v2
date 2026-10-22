@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — Fase 11 y Free tours verificados en Preview
+
+Código 5b0e210 / dpl_3BfYGzwfVZdBnaMB4P9BA4NuVLeG READY, seis checks correctos. D-062/D-063: bloque de Portugal sin cuatro tarjetas repetidas, Free tours en primer nivel y Home móvil con utilidad antes de reservas, ocho accesos compactos y temporada manual. Perfil de autor revisado/conservado (Fase 12). Navegación local/remota 171/171; Free tours remota 66/66 con siete enlaces afiliados en landing, sin inertes. Build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 (98), blog 828/97 sin rotos y migración local 1.426. Dieciséis vistas DOM por entorno sin overflow; clic a Free tours desde móvil/desktop, menú 583 px, ocho href y metadata/schema/H1 de Home idénticos al baseline. [Informe y capturas](../docs/editorial-phase11-home.md#cierre-de-preview). Producción comprobada conserva 5ad2c40 READY y Free tours activo; sin merge/publicación. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes; no ejecutar fusiones WAIT.
+
 ## 22 octubre 2026 — Home Fase 11 y corrección de Free tours en candidato
 
 José rechaza el bloque de cuatro tarjetas de Portugal y pide seguir otras fases. D-062: lista compacta, H2 menores/rectos y Free tours en primer nivel. D-063: Home adelanta ocho guías, compacta sus accesos móviles y hero; temporada con tres artículos existentes. Metadata/schema/H1 y ocho href de Home idénticos al baseline. Fase 12 inspecciona y conserva la biografía/perfil, sin experiencias nuevas. Build 137, TypeScript, lint cero errores/un warning previo; navegación 171, Free tours 12/12 sin ID local, sitemap 64/64 (98), blog 828/97 sin rotos y migración 1.426. Dieciséis vistas DOM sin overflow. [Informe](../docs/editorial-phase11-home.md). Preview/QA remota pendientes; no merge ni producción. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes.
