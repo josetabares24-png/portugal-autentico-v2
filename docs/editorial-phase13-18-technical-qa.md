@@ -51,3 +51,17 @@ Evidencia local en `docs/qa/2026-10-22/phase13-18/`: antes/después del nuevo au
 ## Gate y alcance pendiente
 
 Este lote cierra los contratos automatizados y las comprobaciones manuales descritas, con una medición de laboratorio de dos superficies. No equivale a certificar todo schema en Google, todos los hechos/precios, todos los navegadores o accesibilidad completa. La aprobación visual del conjunto sigue pendiente por L-003. El gate de Fase 21 no se salta; después de una publicación explícitamente autorizada habrá que repetir redirects/sitemap/robots/noindex/canonicals/schema y páginas prioritarias en producción.
+
+## Cierre de Preview
+
+Código **5b83dbc8360c9110084dec3e0f2a179eacb14fce**, deployment **dpl_By26Cn7YTbCkBNcAEii5GQ87A328**, READY, `target:null`: https://portugal-autentico-v2-ns1s62i6a-estabaenlisboa.vercel.app . Seis checks correctos (SEO smoke, TypeScript, GitGuardian, comentario automático y ambos proyectos Vercel). Nuevo audit técnico ejecutado manualmente contra build/Preview; no se afirma que se haya añadido al workflow CI. Acceso temporal entregado en chat, sin token/cookie en Git ni cambios a protección/noindex de plataforma.
+
+Audit remoto **1.130/1.130**, 113 respuestas y cero fechas inválidas. Migración remota **1.328** sin fallos, 98 URLs y 106 páginas; omite solo los 98 checks de noindex de plataforma que sí aplica el modo local, conservando la política HTML. Matriz remota: **64/64**, todas 301→200, cadena 1. Artículos/datos, URLs, políticas SEO y manifest intactos respecto a 1579a08; no se inventan reviews, precios o primeras publicaciones.
+
+Navegador local y remoto: veinte vistas por entorno (Home/Metro/calculadora/entradas × 320/390/412/768/1440), sin overflow, H1 duplicada, clipping del H1 de Home ni referencias aria-controls/labelledby rotas. Cookies cerrar/aceptar/rechazar y preferencias: mínimo 44 px; sin scripts GA/Stay22 en el DOM antes de consentimiento. Se prueba rechazo y apertura/cierre por teclado, sin aceptar trackers para generar una reserva o evento. Seis tests analytics cubren aceptación/revocación de forma aislada.
+
+Teclado remoto: salto a main seguido de Tab llega a «Preparar mi viaje», evitando cabecera; Tab entra a Moverse en Lisboa, Escape cierra/restaura foco; Enter opera índice y fuentes. El salto nativo dejó activeElement sin ID, pero el siguiente Tab confirmó la posición correcta; no confundir ese primer dato con un fallo ni cambiar el código innecesariamente. El TOC abierto por desktop se cierra con Enter, las fuentes se abren. No prueba completa con lector de pantalla ni contraste certificado sobre imágenes.
+
+Evidencia: [audit remoto](qa/2026-10-22/phase13-18/preview-technical.json), [matriz](qa/2026-10-22/phase13-18/preview-redirect-matrix.csv), [vistas](qa/2026-10-22/phase13-18/preview-responsive.json), [teclado](qa/2026-10-22/phase13-18/preview-keyboard.json), [controles](qa/2026-10-22/phase13-18/preview-cookie-targets.json) y [captura](qa/2026-10-22/phase13-18/preview-cookie-controls.png). Los resultados de PageSpeed corresponden a producción, no a la Preview protegida; no se enviaron credenciales al servicio de medición.
+
+Producción consultada conserva **5ad2c40 / dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes READY**. Sin merge ni publicación. El commit posterior de cierre solo guarda evidencia/documentación de este código probado. Fases 19/20 conservan manifest/sistema documental; gate visual y proceso de Fase21 pendientes. Próxima decisión es revisar el conjunto de PR113 antes de publicar, no abrir otra migración o un rollout de textos.

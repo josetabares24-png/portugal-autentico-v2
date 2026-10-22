@@ -1,0 +1,52 @@
+{
+  "checked": "2026-10-22",
+  "sha": "5b83dbc8360c9110084dec3e0f2a179eacb14fce",
+  "deployment": "dpl_By26Cn7YTbCkBNcAEii5GQ87A328",
+  "origin": "https://portugal-autentico-v2-ns1s62i6a-estabaenlisboa.vercel.app",
+  "state": "READY",
+  "target": null,
+  "ci": { "total": 6, "success": 6 },
+  "local": {
+    "buildPages": 137,
+    "typecheck": "pass",
+    "lintErrors": 0,
+    "preexistingLintWarnings": 1,
+    "dateCases": 24,
+    "analyticsTests": 6,
+    "technicalChecks": 1130,
+    "technicalPages": 113,
+    "migrationChecks": 1426,
+    "editorialNavigationChecks": 171,
+    "blogInvariants": 828,
+    "blogLinks": 97,
+    "brokenBlogLinks": 0,
+    "responsiveViews": 20
+  },
+  "preview": {
+    "technicalChecks": 1130,
+    "technicalPages": 113,
+    "migrationChecks": 1328,
+    "failures": 0,
+    "sitemapUrls": 98,
+    "redirectRows": 64,
+    "redirectFailures": 0,
+    "responsiveViews": 20,
+    "overflowViews": 0,
+    "brokenAriaReferences": 0,
+    "cookieMinimumControlSize": 44,
+    "trackingScriptsBeforeConsent": 0
+  },
+  "schemaDates": { "beforeOccurrences": 544, "affectedArchivePages": 8, "afterOccurrences": 0 },
+  "productionLighthouse": {
+    "homeMobile": { "performance": 98, "lcpSeconds": 2.3, "tbtMs": 0, "cls": 0 },
+    "homeDesktop": { "performance": 99, "lcpSeconds": 0.8, "tbtMs": 50, "cls": 0 },
+    "metroMobile": { "performance": 92, "lcpSeconds": 3.3, "tbtMs": 0, "cls": 0 },
+    "fieldDataAvailable": false,
+    "runsPerScenario": 1,
+    "candidatePerformanceComparison": false,
+    "fullAccessibilityCertification": false
+  },
+  "productionSha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+  "productionChanged": false,
+  "visualApproval": "pending"
+}

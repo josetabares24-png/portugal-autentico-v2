@@ -1,0 +1,33 @@
+[
+  {
+    "step": "skip link",
+    "focusedId": "",
+    "hash": "#main-content"
+  },
+  {
+    "step": "Tab into Lisboa",
+    "href": "/blog/como-moverse-por-lisboa",
+    "label": "Moverse"
+  },
+  {
+    "step": "Escape returns focus",
+    "control": "lisboa-desktop-links",
+    "expanded": "false"
+  },
+  {
+    "step": "TOC toggle",
+    "focused": "SUMMARY",
+    "open": false
+  },
+  {
+    "step": "Sources toggle",
+    "focused": "SUMMARY",
+    "open": true
+  },
+  {
+    "step": "Tab after skip link enters main content",
+    "href": "#guia-practica",
+    "tag": "A",
+    "text": "Preparar mi viaje"
+  }
+]

@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — QA de Fases 13–18 verificada en Preview
+
+D-064, código 5b83dbc / dpl_By26Cn7YTbCkBNcAEii5GQ87A328 READY; seis checks correctos. Técnico local/remoto 1.130/1.130 en 113 páginas, cero fechas ISO inválidas tras corregir catálogo; publicación de ficha usa fecha original, no modificación. Brevo hints retirados, Home usa calidad admitida y controles cookies de 44 px. Build137, TypeScript, lint cero errores/un warning previo; fechas24/analytics6; migración 1.426 local/1.328 remota, 64 filas de redirects todas 301→200 en un salto. Veinte vistas por entorno desde320 hasta1440, sin overflow/ARIA rota; teclado y controles comprobados. Mediciones de producción: Home98 móvil/99desktop y Metro92 móvil; no CrUX, no efecto del candidato demostrado. [Informe y límites](../docs/editorial-phase13-18-technical-qa.md#cierre-de-preview). Producción comprobada sigue5ad2c40 READY. PR113 en borrador, revisión visual del conjunto pendiente; sin merge/publicación. Mantener WAIT/REVIEW y revisar LCP de Metro con condiciones repetidas tras un eventual despliegue; no afirmar certificación completa de accesibilidad/schema o exactitud de precios.
+
 ## 22 octubre 2026 — QA técnico de Fases 13–18 en candidato
 
 D-064: fechas ISO del catálogo, publicación separada de modificación en ficha, hints Brevo retirados, quality Home alineada y controles cookies 44 px. Nuevo smoke 113 páginas/1.130 controles: ocho fallos de plantilla antes, cero después. Build 137, TypeScript, lint cero errores/un warning previo; 24 fechas, seis analytics, migración 1.426, navegación171, blog828/97 sin rotos. PageSpeed sobre producción: Home98 móvil/99desktop, Metro92 móvil; sin CrUX ni prueba de efecto del candidato. [Informe](../docs/editorial-phase13-18-technical-qa.md). Preview/QA remota pendientes; no merge/publicación. Preservar WAIT/REVIEW, URLs y contenido protegido; futura medición repetida del LCP de Metro y revisión visual integral siguen pendientes.
