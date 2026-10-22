@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-22T17:33:31.458Z",
+  "baseUrl": "http://127.0.0.1:5210",
+  "summary": {
+    "pages": 72,
+    "checks": 1659,
+    "failures": 0
+  },
+  "failures": []
+}

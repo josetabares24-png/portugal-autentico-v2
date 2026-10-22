@@ -1,5 +1,12 @@
 # Decision log
 
+## D-067 — Reservas existentes donde se decide, piloto de tres páginas
+**Date:** 2026-10-22
+**Status:** candidato; requiere Preview/revisión, sin publicación
+
+José pide mejorar venta de entradas y Free tours. Revisión explícita y acotada de D-045 en Pena, Jerónimos y Alfama: mover una oferta existente después de la sección que resuelve compra/ruta; máximo una en cuerpo y una final, sin duplicar destinos ni adelantar a la respuesta. Fallback final intacto en el resto. Conservar contenido protegido, URLs, SEO, referidos/campañas, privacidad y fuentes. Buscador: una URL compartida por varias horas recibe un botón «Elegir hora y reservar», sin fingir selección de hora; conservar todas las URLs distintas. No hay evidencia de ventas perdidas o efecto en impresiones; Windsor bloqueado y reservas desconocidas. No cambiar Stay22 ni noindex de Entradas sin revisar por separado. [Evidencia, plan y medición](../docs/commercial-booking-audit-2026-10-22.md). No sustituye ninguna LOCKED; L-003 exige aprobación antes de producción. PR #113 está publicado y su cierre D-066 se documenta en PR #114, que no se fusiona automáticamente aquí.
+
+
 ## D-065 — Planifica como contacto personal para preparar el viaje
 **Date:** 2026-10-22
 **Status:** candidato verificado en Preview cd9f8f9; aprobación visual pendiente, sin publicación

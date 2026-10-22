@@ -12,6 +12,13 @@ const [mode = 'check', baselineFile = '.snapshots/editorial-phase2-dom-base.json
 const blog = JSON.parse(fs.readFileSync('.snapshots/editorial-phase2-base.json', 'utf8'));
 const paths = [...Object.entries(blog).filter(([,p]) => p.estado === 200).map(([s]) => `/blog/${s}`), '/que-ver-en-lisboa', '/donde-comer-en-lisboa', '/actividades/castelo-sao-jorge'];
 const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim();
+// D-067: only these three existing offers may move into the body, after the
+// complete purchasing/walking answer. Every other page keeps the final policy.
+const contextualContracts = {
+  '/blog/palacio-da-pena-entradas': { id: 'reserva-blog-palacio-da-pena-entradas-pena-tiqets-arriba', after: 'donde-comprar-web-oficial-o-tiqets', before: 'horarios-y-dias-de-cierre' },
+  '/blog/monasterio-jeronimos-entradas': { id: 'reserva-blog-monasterio-jeronimos-entradas-jeronimos-arriba', after: 'donde-comprar-la-entrada', before: 'horarios-y-cierres' },
+  '/blog/alfama-historia-guia': { id: 'reserva-blog-alfama-historia-guia-free-tour-alfama', after: 'ruta-a-pie-por-alfama-sin-repetir-demasiadas-cuestas', before: 'miradores-de-alfama-santa-luzia-y-portas-do-sol' },
+};
 const attrs = (el) => Object.fromEntries([...el.attributes].map((a) => [a.name, a.value]).sort(([a],[b]) => a.localeCompare(b)));
 // Explicit reviewed scopes; no category-driven activation.
 const pilotPaths = process.env.SMOKE_EDITORIAL_PHASE4 === '1' ? new Set([
@@ -101,6 +108,11 @@ function capture(html, url) {
     sources: [...sourceMap].map(([href,labels]) => ({ href, labels: [...labels] })),
     toc: [...tocMap].map(([href,text]) => ({ href, text })),
     structure: {
+      contextual: [...main.querySelectorAll('.article-booking[data-cta-slot="body"]')].map((el) => {
+        let previous = el.previousElementSibling;
+        while (previous && previous.tagName !== 'H2') previous = previous.previousElementSibling;
+        return { id: el.id, after: previous?.id, before: el.nextElementSibling?.id, links: el.querySelectorAll('a[rel~="sponsored"]').length };
+      }),
       tocGroups: main.querySelectorAll('.article-toc').length,
       tocNavs: main.querySelectorAll('.article-toc nav').length,
       tocLinks: main.querySelectorAll('.article-toc nav a').length,
@@ -171,10 +183,16 @@ for (const url of paths) {
   check(`${url} source URLs preserved`, same(old.sources.map((s) => s.href), page.sources.map((s) => s.href)));
   check(`${url} all source labels preserved`, old.sources.every((s) => s.labels.every((label) => page.sources.find((p) => p.href === s.href)?.labels.some((text) => text.includes(label)))));
   check(`${url} no generic footer CTA/widget`, page.structure.oldFooterCta === 0 && page.structure.automaticWidget === 0);
-  check(`${url} one final recommendation module`, page.structure.finalModules <= 1 && page.structure.bookingBlocks <= 2 && page.structure.finalIsLast && page.structure.outsideAffiliate === 0);
+  const contextual = contextualContracts[url];
+  const bodyLinks = page.structure.contextual.reduce((sum, item) => sum + item.links, 0);
+  check(`${url} bounded contextual and final recommendations`, page.structure.finalModules <= 1 && page.structure.bookingBlocks <= 2 && page.structure.finalIsLast && page.structure.outsideAffiliate === bodyLinks);
+  check(`${url} exact contextual scope and answer first`, contextual
+    ? page.structure.contextual.length === 1 && ['id','after','before'].every((key) => page.structure.contextual[0][key] === contextual[key]) && bodyLinks === 1
+    : page.structure.contextual.length === 0 && bodyLinks === 0);
   check(`${url} affiliate disclosure`, !page.structure.bookingBlocks || page.structure.disclosures >= 1);
   const oldUrls = new Set(old.affiliateLinks.map((a) => a.href));
   check(`${url} no new affiliate destinations`, page.affiliateLinks.every((a) => oldUrls.has(a.href)));
+  check(`${url} no existing affiliate destination lost`, [...oldUrls].every((href) => page.affiliateLinks.some((a) => a.href === href)));
   check(`${url} protected affiliate attributes`, page.affiliateLinks.every((a) => /\bsponsored\b/.test(a.rel) && /\bnoopener\b/.test(a.rel) && /\bnoreferrer\b/.test(a.rel)));
 }
 const report = { date: new Date().toISOString(), baseUrl: base, baseline: baselineFile, pages, checks, summary: { pages: Object.keys(pages).length, checks: checks.length, failures: checks.filter((c) => !c.pass).length } };

@@ -233,3 +233,8 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 ## E-016 — Respuestas a consultas del blog, 2026-10-15
 
 **Status: PREPARADO; no desplegado.** Tres páginas, conservando títulos/metas, URLs y diseño. Aeropuerto pierde visibilidad; Metro tiene demanda de mapa/horario y Time Out de menú. Se desarrollan esas respuestas con fuentes oficiales. Baseline cerrado 14 sep–11 oct frente a 17 ago–13 sep y límites de atribución: [[seo/BLOG-SEARCH-IMPROVEMENTS-2026-10-15]]. Datos: [[data/BLOG-SEARCH-2026-10-15.json]]. Iniciar observación solo al confirmar despliegue de producción. No evaluar E-003/E-012 como cambios aislados después de este lote; E-006/E-007 quedan intactos.
+
+
+## E-018 — Reserva contextual y horario honesto, 22/10/2026
+
+**Status: CANDIDATO, D0 no iniciado.** D-067, rama `commercial-booking-paths`. Tres páginas explícitas: Pena/Jerónimos/Alfama; una oferta existente tras responder, otra final. Buscador agrupa solo URLs idénticas sin perder fechas/ref. Baseline de HTML/layout guardado; baseline de conversiones no disponible (Windsor bloqueado, partner dashboards desconocidos). No evaluar contra ceros de sustitución. Si se publica con aprobación, registrar D0/SHA y comparar14/28 días, por página/proveedor/dispositivo; bajo volumen → inconcluso. No atribuir variaciones orgánicas a placement. [Contrato y límites](../docs/commercial-booking-audit-2026-10-22.md).

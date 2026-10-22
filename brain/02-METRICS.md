@@ -1,5 +1,10 @@
 # Metrics system
 
+## 22 octubre 2026 — Límites del diagnóstico comercial
+
+Inventario HTML, no conversiones: 69 enlaces reconocidos en 100 páginas (GuruWalk14, Tiqets27, GetYourGuide28); identificadores presentes/patrocinio correcto. Producción base5d3573d. Buscador real devuelve tres tours/siete horarios para23/10 con referido. Windsor rechaza lecturas: tres conexiones con plan gratuito de una; sus ceros son sustitución inválida. No desconectar fuentes ni actualizar plan automáticamente. José desconoce reservas/comisiones: DESCONOCIDAS, no cero. El recuento histórico33 hasta septiembre no representa rendimiento actual. [Informe y fuentes](../docs/commercial-booking-audit-2026-10-22.md). Medidas de scroll son layout de QA, no comportamiento de usuarios.
+
+
 ## Latest snapshot — 20 octubre 2026
 
 [GSC/Windsor, consolidaciones y baseline de publicación](data/CONSOLIDATION-SEARCH-2026-10-20.json). Corte conservador hasta 17/10, web, datos finalizados solicitados. Totales de propiedad: 28 días 125 clics / 10.023 impresiones / 1,25 % CTR / 9,48 posición frente a 55 / 6.565 / 0,84 % / 12,80. En 7 días: 33 clics frente a 40, con 2.989 frente a 2.955 impresiones. No resumir la última semana como mejora uniforme. 35,8 % del hito de 28.000 impresiones/28 días. Todo precede al despliegue del 20/10: no atribuirlo a PR #112. Filas ausentes de candidatas no son demanda medida cero. Periodos, posiciones ponderadas y límites en el JSON y el informe de Fase 7.
