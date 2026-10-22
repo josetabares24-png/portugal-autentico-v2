@@ -1,5 +1,11 @@
 # Decision log
 
+## D-065 — Planifica como contacto personal para preparar el viaje
+**Date:** 2026-10-22
+**Status:** candidato; validación/Preview y aprobación visual pendientes, sin publicación
+
+José pide contactar directamente con él para que prepare el viaje personalmente. Conservar URL/H1, ancla y noindex/follow. Formulario breve de nombre/email/mensaje, fechas/personas opcionales y correo público existente como alternativa; recursos gratuitos secundarios. Acordar alcance/precio antes de preparar el plan, sin precio ni plazo inventados; retirar promesas automáticas 24–48 h tanto de web como del acuse. Corregir éxito del backend: depende del aviso aceptado para José, no de la confirmación al visitante; fallback SMTP si falla el aviso Brevo y confirmación secundaria sin duplicar lead. L-007 conservada, sin newsletter. Ocho pruebas offline incluida ruta API con HTTP interceptado; no correos reales de QA. Las dimensiones días/ritmo/presupuesto de analytics dejan de recogerse en la UI y no son comparables. [Diagnóstico, alcance y límites](../docs/editorial-planifica-contact.md). Mismo PR #113; no merge ni producción.
+
 ## D-064 — QA técnico: corregir contratos confirmados sin perseguir una cifra
 **Date:** 2026-10-22
 **Status:** candidate verificado en Preview 5b83dbc; aprobación visual del conjunto pendiente, sin publicación

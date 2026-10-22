@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Planifica tu Viaje a Lisboa',
-  description: 'Herramientas gratuitas para organizar Lisboa y un plan a medida 1:1 adaptado a tus días, ritmo, presupuesto e intereses.',
+  description: 'Contacta directamente con José para preparar tu viaje a Lisboa personalmente, según tus días, intereses y presupuesto.',
   keywords: [
     'planificar viaje lisboa',
     'itinerario personalizado lisboa',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Estaba en Lisboa' }],
   openGraph: {
     title: 'Planifica tu Viaje a Lisboa',
-    description: 'Herramientas gratuitas para organizar Lisboa y un plan a medida 1:1 adaptado a tu viaje.',
+    description: 'Escribe a José y habla con él para preparar tu viaje a Lisboa personalmente.',
     url: 'https://estabaenlisboa.com/planifica-tu-viaje',
     siteName: 'Estaba en Lisboa',
     locale: 'es_ES',
