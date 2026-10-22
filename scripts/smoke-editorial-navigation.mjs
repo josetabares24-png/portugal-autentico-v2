@@ -45,6 +45,7 @@ const navLink = (label) => [...nav.querySelectorAll('a')].find((link) => link.te
 check('Historias and Planifica open distinct pages', new URL(navLink('Historias')?.getAttribute('href'), origin).pathname !== new URL(navLink('Planifica')?.getAttribute('href'), origin).pathname);
 check('planning opens its existing page', navLink('Planifica')?.getAttribute('href') === '/planifica-tu-viaje');
 check('tickets accessible from both navigation layouts', [...nav.querySelectorAll('a[href="/comprar-entradas"]')].filter((link) => link.textContent.trim() === 'Entradas').length === 2);
+check('free tours accessible from both primary navigation layouts', [...nav.querySelectorAll('a[href="/free-tours-lisboa"]')].filter((link) => link.textContent.trim() === 'Free tours').length === 2 && editorialNavigation.some((link) => link.href === '/free-tours-lisboa'));
 for (const href of ['/planifica-tu-viaje', '/comprar-entradas']) {
   const { document } = await page(href);
   check(`functional destination retains noindex, follow: ${href}`, document.querySelector('meta[name=robots]')?.getAttribute('content') === 'noindex, follow');
@@ -52,6 +53,26 @@ for (const href of ['/planifica-tu-viaje', '/comprar-entradas']) {
 const { document: trips } = await page('/portugal');
 check('Escapadas opens with a destination photograph', trips.querySelector('main img')?.getAttribute('alt') === 'Palacio da Pena en Sintra, Portugal');
 check('Escapadas has no author portrait in main or social cover', ![...trips.querySelectorAll('main img, meta[property="og:image"], meta[name="twitter:image"]')].some((image) => /jose-tabares-oporto/.test(image.getAttribute('src') || image.getAttribute('content') || '')));
+const { document: home } = await page('/');
+check('home retains one H1 and its brand promise', home.querySelectorAll('h1').length === 1 && home.querySelector('h1')?.textContent.trim() === 'La Lisboa que le enseño a quien viene a verme.');
+check('home retains its canonical', home.querySelector('link[rel=canonical]')?.getAttribute('href') === 'https://estabaenlisboa.com');
+const homeSections = [...home.querySelectorAll('main section')];
+check('home practical guides precede reservations', homeSections.indexOf(home.getElementById('guia-practica')) >= 0 && homeSections.indexOf(home.getElementById('guia-practica')) < homeSections.indexOf(home.querySelector('section[aria-labelledby=imprescindibles]')));
+const homePortals = [...home.querySelectorAll('nav[aria-label="Guías completas para preparar Lisboa"] a')];
+check('home retains eight direct guide destinations', homePortals.length === 8 && new Set(homePortals.map((link) => link.getAttribute('href'))).size === 8);
+for (const link of homePortals) {
+  const href = link.getAttribute('href');
+  const destination = await page(href);
+  check(`home guide opens directly: ${href}`, destination.status === 200);
+}
+check('home retains a visible author destination', home.querySelector('main a[href="/sobre-nosotros"]'));
+check('home has a seasonal selection using existing guides', home.querySelectorAll('section[aria-labelledby=home-seasonal-title] a[href^="/blog/"]').length >= 2);
+check('home preserves internal free tour access', home.querySelector('main a[href="/free-tours-lisboa"]'));
+for (const script of home.querySelectorAll('script[type="application/ld+json"]')) {
+  let valid = true;
+  try { JSON.parse(script.textContent); } catch { valid = false; }
+  check('home schema parses', valid);
+}
 for (const control of nav?.querySelectorAll('[aria-controls]') || []) check(`navigation control has target: ${control.getAttribute('aria-controls')}`, cover.getElementById(control.getAttribute('aria-controls')));
 for (const script of cover.querySelectorAll('script[type="application/ld+json"]')) {
   let valid = true;

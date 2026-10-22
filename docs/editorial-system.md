@@ -1,5 +1,9 @@
 # Sistema editorial — candidato Fases 3/4
 
+## Evolución de navegación/Home — 22/10/2026
+
+D-062/D-063: reducir tarjetas repetidas y H2 desproporcionados; no aplicar una sustitución global sin revisar cada superficie. Free tours conserva un enlace claro en ambos menús, sin urgencia comercial. Home responde necesidades antes de reservas: ocho guías directas, miniatura/texto compactos en móvil, selección de temporada manual y autor real. Mantener marca, seguimiento de enlaces y metadata; las fechas de artículos no cambian por CSS. [Fase 11 y revisión de autor](editorial-phase11-home.md). Es propuesta en Preview, sin aprobación de publicación.
+
 Respuesta primero, contexto y experiencia después, monetización contextual al final. La voz procede del sitio; las fuentes verifican hechos y permanecen accesibles en Datos verificados. No inventar experiencias ni fechas de comprobación.
 
 ## Componentes y tipos

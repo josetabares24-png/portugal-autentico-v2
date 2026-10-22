@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — Home Fase 11 y corrección de Free tours en candidato
+
+José rechaza el bloque de cuatro tarjetas de Portugal y pide seguir otras fases. D-062: lista compacta, H2 menores/rectos y Free tours en primer nivel. D-063: Home adelanta ocho guías, compacta sus accesos móviles y hero; temporada con tres artículos existentes. Metadata/schema/H1 y ocho href de Home idénticos al baseline. Fase 12 inspecciona y conserva la biografía/perfil, sin experiencias nuevas. Build 137, TypeScript, lint cero errores/un warning previo; navegación 171, Free tours 12/12 sin ID local, sitemap 64/64 (98), blog 828/97 sin rotos y migración 1.426. Dieciséis vistas DOM sin overflow. [Informe](../docs/editorial-phase11-home.md). Preview/QA remota pendientes; no merge ni producción. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes.
+
 ## 22 octubre 2026 — Feedback de navegación verificado en Preview
 
 D-061 cerrada como candidato: código 93c7a5a / dpl_27MhFsLywmBFLycsJLyyB3BSo7ZS READY, seis checks correctos. Escapadas usa la foto de Pena; Entradas está en primer nivel; Planifica abre su página propia y Historias la selección del blog. Smoke editorial local/remoto 152/152; build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 con 98 URLs y blog 828/97 enlaces sin rotos. Dieciséis vistas DOM por entorno sin overflow, tres destinos desktop y cuatro móviles comprobados, panel 539 px y Escape/foco correctos. [Cierre y capturas](../docs/editorial-phase9-10-preview.md#cierre-del-ajuste-en-preview). Producción consultada sigue 5ad2c40 READY. PR #113 en borrador; sin merge ni publicación, revisión visual del conjunto pendiente. No iniciar el cuerpo de Home ni ejecutar fusiones WAIT.

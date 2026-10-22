@@ -1,0 +1,692 @@
+{
+  "origin": "http://127.0.0.1:5207",
+  "selectedArticles": 22,
+  "fetchedPages": 42,
+  "checks": [
+    {
+      "name": "selection exists in article catalog: lisboa-cuando-llueve",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: lisboa-en-navidad",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: obidos-vila-natal",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: nochevieja-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: donde-alojarse-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: aeropuerto-lisboa-al-centro",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: presupuesto-viajar-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: como-moverse-por-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: metro-lisboa-guia",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: tarjeta-navegante-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: graca-lisboa-que-ver",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: alfama-historia-guia",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: mouraria-barrio-guia",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: gastronomia-portuguesa-guia",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: time-out-market-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: donde-tomar-cafe-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: azulejos-portugueses-historia",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: historia-de-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: fado-historia-origen",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: sintra-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: que-ver-cascais-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selection exists in article catalog: portugal-en-7-dias",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/lisboa-cuando-llueve",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/lisboa-cuando-llueve",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/lisboa-cuando-llueve",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/lisboa-en-navidad",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/lisboa-en-navidad",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/lisboa-en-navidad",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/obidos-vila-natal",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/obidos-vila-natal",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/obidos-vila-natal",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/nochevieja-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/nochevieja-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/nochevieja-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/donde-alojarse-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/donde-alojarse-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/donde-alojarse-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/aeropuerto-lisboa-al-centro",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/aeropuerto-lisboa-al-centro",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/aeropuerto-lisboa-al-centro",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/presupuesto-viajar-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/presupuesto-viajar-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/presupuesto-viajar-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/como-moverse-por-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/como-moverse-por-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/como-moverse-por-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/metro-lisboa-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/metro-lisboa-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/metro-lisboa-guia",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/tarjeta-navegante-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/tarjeta-navegante-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/tarjeta-navegante-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/graca-lisboa-que-ver",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/graca-lisboa-que-ver",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/graca-lisboa-que-ver",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/alfama-historia-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/alfama-historia-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/alfama-historia-guia",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/mouraria-barrio-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/mouraria-barrio-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/mouraria-barrio-guia",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/gastronomia-portuguesa-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/gastronomia-portuguesa-guia",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/gastronomia-portuguesa-guia",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/time-out-market-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/time-out-market-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/time-out-market-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/donde-tomar-cafe-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/donde-tomar-cafe-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/donde-tomar-cafe-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/azulejos-portugueses-historia",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/azulejos-portugueses-historia",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/azulejos-portugueses-historia",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/historia-de-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/historia-de-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/historia-de-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/fado-historia-origen",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/fado-historia-origen",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/fado-historia-origen",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/sintra-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/sintra-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/sintra-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/que-ver-cascais-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/que-ver-cascais-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/que-ver-cascais-desde-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog/portugal-en-7-dias",
+      "pass": true
+    },
+    {
+      "name": "selected article canonical: /blog/portugal-en-7-dias",
+      "pass": true
+    },
+    {
+      "name": "selected article indexable: /blog/portugal-en-7-dias",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /donde-comer-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog#barrios",
+      "pass": true
+    },
+    {
+      "name": "destination anchor exists: /blog#barrios",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /que-ver-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /itinerarios",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /portugal",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /blog#historias",
+      "pass": true
+    },
+    {
+      "name": "destination anchor exists: /blog#historias",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /planifica-tu-viaje",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /free-tours-lisboa",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /comprar-entradas",
+      "pass": true
+    },
+    {
+      "name": "direct 200 destination: /calculadora-presupuesto-lisboa",
+      "pass": true
+    },
+    {
+      "name": "cover has one H1 and retains its SEO promise",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: lisboa",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: planea-tu-viaje",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: moverse",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: barrios",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: comer",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: historias",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: escapadas",
+      "pass": true
+    },
+    {
+      "name": "cover section target exists: catalogo",
+      "pass": true
+    },
+    {
+      "name": "selected articles have crawlable links",
+      "pass": true
+    },
+    {
+      "name": "primary navigation exists",
+      "pass": true
+    },
+    {
+      "name": "Historias and Planifica open distinct pages",
+      "pass": true
+    },
+    {
+      "name": "planning opens its existing page",
+      "pass": true
+    },
+    {
+      "name": "tickets accessible from both navigation layouts",
+      "pass": true
+    },
+    {
+      "name": "free tours accessible from both primary navigation layouts",
+      "pass": true
+    },
+    {
+      "name": "functional destination retains noindex, follow: /planifica-tu-viaje",
+      "pass": true
+    },
+    {
+      "name": "functional destination retains noindex, follow: /comprar-entradas",
+      "pass": true
+    },
+    {
+      "name": "Escapadas opens with a destination photograph",
+      "pass": true
+    },
+    {
+      "name": "Escapadas has no author portrait in main or social cover",
+      "pass": true
+    },
+    {
+      "name": "home retains one H1 and its brand promise",
+      "pass": true
+    },
+    {
+      "name": "home retains its canonical",
+      "pass": true
+    },
+    {
+      "name": "home practical guides precede reservations",
+      "pass": true
+    },
+    {
+      "name": "home retains eight direct guide destinations",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /itinerarios",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /que-ver-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /blog/como-moverse-por-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /blog/donde-alojarse-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /donde-comer-en-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /blog/vida-nocturna-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /blog/donde-fotografiar-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home guide opens directly: /blog/errores-turistas-lisboa",
+      "pass": true
+    },
+    {
+      "name": "home retains a visible author destination",
+      "pass": true
+    },
+    {
+      "name": "home has a seasonal selection using existing guides",
+      "pass": true
+    },
+    {
+      "name": "home preserves internal free tour access",
+      "pass": true
+    },
+    {
+      "name": "home schema parses",
+      "pass": true
+    },
+    {
+      "name": "home schema parses",
+      "pass": true
+    },
+    {
+      "name": "home schema parses",
+      "pass": true
+    },
+    {
+      "name": "navigation control has target: lisboa-desktop-links",
+      "pass": true
+    },
+    {
+      "name": "navigation control has target: editorial-mobile-links",
+      "pass": true
+    },
+    {
+      "name": "cover schema parses",
+      "pass": true
+    },
+    {
+      "name": "cover schema parses",
+      "pass": true
+    },
+    {
+      "name": "cover schema parses",
+      "pass": true
+    },
+    {
+      "name": "pagination remains linked",
+      "pass": true
+    },
+    {
+      "name": "archive page 2 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 2 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 2 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 2 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 3 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 3 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 3 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 3 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 4 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 4 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 4 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 4 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 5 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 5 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 5 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 5 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 6 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 6 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 6 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 6 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 7 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 7 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 7 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 7 omits cover, keeps one H1",
+      "pass": true
+    },
+    {
+      "name": "archive page 8 returns 200",
+      "pass": true
+    },
+    {
+      "name": "archive page 8 canonical includes query",
+      "pass": true
+    },
+    {
+      "name": "archive page 8 title includes page",
+      "pass": true
+    },
+    {
+      "name": "archive page 8 omits cover, keeps one H1",
+      "pass": true
+    }
+  ],
+  "failures": []
+}

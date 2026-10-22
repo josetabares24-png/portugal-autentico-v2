@@ -1,5 +1,11 @@
 # Decision log
 
+## D-063 — Home móvil: utilidad antes de reservas, perfil de autor conservado
+**Date:** 2026-10-22
+**Status:** candidate; QA local correcta, Preview pendiente
+
+José pide continuar las demás fases. Evolucionar Home sin cambiar la marca: guías antes de reservas, hero móvil más corto y ocho accesos con miniatura/texto frente a bloques de 250 px. Conservar ocho destinos, medición, fotografías, H1 y metadata/schema. Añadir selección manual de tres guías existentes de lluvia/Navidad/Nochevieja sin tocar su contenido ni fechas. Mantener Free tours en hero y reservas además de la cabecera restaurada. A 390 px, directorio de y≈1.260 a ≈555; medidas de layout, no causalidad SEO. Fase 12 inspecciona y conserva el perfil/biografía respaldada por respuestas de José, sin claims nuevos. [Informe](../docs/editorial-phase11-home.md). Esta continuación permite preparar Home frente al estado anterior; no equivale a aprobación visual ni publicación. Fases 13–18 requieren revisión transversal posterior.
+
 ## D-062 — Menos tarjetas y Free tours visible
 **Date:** 2026-10-22
 **Status:** candidate; QA local correcta, Preview pendiente

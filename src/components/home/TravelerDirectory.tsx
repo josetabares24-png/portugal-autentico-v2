@@ -104,7 +104,7 @@ export default function TravelerDirectory() {
 
         <nav
           aria-label="Guías completas para preparar Lisboa"
-          className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-6 lg:gap-y-7"
+          className="grid gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-y-7"
         >
           {homeGuides.map((guide, index) => {
             const featured = index < 2;
@@ -114,36 +114,30 @@ export default function TravelerDirectory() {
                 href={guide.href}
                 contentType="home_guide_portal"
                 contentId={guide.id}
-                className={`group relative flex min-h-[250px] overflow-hidden rounded-[2px] bg-night focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta sm:min-h-[280px] ${featured ? 'lg:col-span-3 lg:min-h-[310px]' : 'lg:col-span-2 lg:block lg:min-h-0 lg:rounded-none lg:border-b lg:border-night/15 lg:bg-cream'}`}
+                className={`group relative grid grid-cols-[80px_minmax(0,1fr)] items-start gap-4 border-b border-night/15 py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta sm:grid-cols-[96px_minmax(0,1fr)] lg:gap-0 lg:py-0 ${featured ? 'lg:col-span-3 lg:flex lg:min-h-[310px] lg:items-stretch lg:overflow-hidden lg:border-0 lg:bg-night' : 'lg:col-span-2 lg:block'}`}
               >
-                <div className={`absolute inset-0 overflow-hidden ${featured ? '' : 'lg:relative lg:inset-auto lg:aspect-[16/9]'}`}>
+                <div className={`relative aspect-square w-20 overflow-hidden sm:w-24 ${featured ? 'lg:absolute lg:inset-0 lg:aspect-auto lg:w-auto' : 'lg:aspect-[16/9] lg:w-full'}`}>
                   <Image
                     src={guide.image}
                     alt={guide.imageAlt}
                     fill
                     className={`object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] motion-reduce:transition-none ${guide.imagePosition ?? 'object-center'}`}
                     sizes={featured
-                      ? '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 50vw, 588px'
-                      : '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 384px'}
+                      ? '(max-width: 639px) 80px, (max-width: 1023px) 96px, (max-width: 1279px) 50vw, 588px'
+                      : '(max-width: 639px) 80px, (max-width: 1023px) 96px, (max-width: 1279px) 33vw, 384px'}
                     loading="lazy"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-night via-night/30 to-night/0 ${featured ? '' : 'lg:hidden'}`} />
+                  {featured && <div className="absolute inset-0 hidden bg-gradient-to-t from-night via-night/30 to-night/0 lg:block" />}
                 </div>
 
-                <div className={`absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-night/20 text-white backdrop-blur-sm transition-colors duration-200 group-hover:border-terracotta group-hover:bg-terracotta sm:right-5 sm:top-5 ${featured ? '' : 'lg:hidden'}`}>
-                  <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
-                </div>
-
-                <div className={`relative mt-auto max-w-xl p-5 sm:p-6 ${featured ? 'lg:p-7' : 'lg:mt-0 lg:px-0 lg:pb-5 lg:pt-4'}`}>
+                <div className={`relative min-w-0 ${featured ? 'lg:mt-auto lg:max-w-xl lg:p-7' : 'lg:pb-5 lg:pt-4'}`}>
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className={`font-display font-semibold not-italic leading-[1.08] tracking-normal text-white ${featured ? 'text-[2rem] sm:text-[2.2rem] lg:text-[2.25rem]' : 'text-[2rem] lg:text-[1.75rem] lg:text-night lg:transition-colors lg:group-hover:text-terracotta'}`}>
+                    <h3 className={`font-display text-xl font-semibold not-italic leading-snug tracking-normal text-night group-hover:text-terracotta ${featured ? 'lg:text-[2.25rem] lg:leading-tight lg:text-white lg:group-hover:text-white' : 'lg:text-[1.75rem]'}`}>
                       {guide.title}
                     </h3>
-                    {!featured && (
-                      <ArrowUpRight size={20} strokeWidth={1.6} aria-hidden="true" className="mt-1 hidden shrink-0 text-terracotta lg:block" />
-                    )}
+                    <ArrowUpRight size={18} strokeWidth={1.6} aria-hidden="true" className={`mt-1 shrink-0 text-terracotta ${featured ? 'lg:text-white' : ''}`} />
                   </div>
-                  <p className={`mt-3 font-body text-sm leading-relaxed text-white/90 ${featured ? 'max-w-md sm:text-base' : 'lg:mt-2 lg:text-text-secondary'}`}>
+                  <p className={`mt-2 font-body text-sm leading-relaxed text-text-secondary ${featured ? 'lg:max-w-md lg:text-base lg:text-white/90' : ''}`}>
                     {guide.detail}
                   </p>
                 </div>
