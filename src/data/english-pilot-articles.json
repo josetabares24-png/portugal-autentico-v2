@@ -1,0 +1,471 @@
+[
+  {
+    "slug": "lisbon-airport-to-city-centre",
+    "category": "Arriving",
+    "title": "Lisbon Airport to the city centre: Metro, taxis and apps",
+    "description": "Choose the Metro, a taxi or an app-based ride according to your address, luggage and arrival time.",
+    "image": "/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-anden-columnas.jpg",
+    "imageAlt": "Platform at Olaias, on the Red Metro line from Lisbon Airport",
+    "answer": "The Metro is a practical first choice when your accommodation is close to a station and you arrive while it is running. A taxi or app-based ride can be easier with heavy luggage, a late arrival or an address up a steep hill. Choose for your final address, not just for the word “centre”.",
+    "essentials": [
+      ["Metro line", "Red line from Aeroporto"],
+      ["Usual Metro hours", "06:30–01:00; check service notices"],
+      ["Single Carris/Metro ticket", "€1.90, plus the reusable card if needed"],
+      ["Contactless Metro fare", "€1.92 per journey"],
+      ["For late arrivals", "Check a taxi or app-based ride"],
+      ["Before leaving", "Save your accommodation’s exact address"]
+    ],
+    "sections": [
+      {
+        "id": "choose-your-transfer",
+        "title": "Choose by where you are staying",
+        "paragraphs": [
+          "Baixa, Chiado, Alfama and the Avenida area do not have the same final walk. A station can look close on a flat map and still leave you with stairs or a climb. Ask your host which entrance or drop-off point works best with luggage.",
+          "For one or two travellers with manageable bags and a station near the door, start by checking the Metro route. For a family, several large cases or a late flight, compare the total price of a car with the work of changing trains and walking."
+        ],
+        "rows": [
+          ["Near a Metro station", "Metro, after checking the line changes"],
+          [
+            "Several bags or a steep final walk",
+            "Compare a car to the exact address"
+          ],
+          ["Arrival after Metro service", "Taxi or app-based ride"],
+          [
+            "Continuing by train",
+            "Plan for Oriente or the station on your actual ticket"
+          ]
+        ]
+      },
+      {
+        "id": "metro-route",
+        "title": "Taking the Metro from Aeroporto",
+        "paragraphs": [
+          "Aeroporto is on the Red line. Choose the connection using the official journey planner: the Red line connects with other lines rather than taking every visitor directly into the historic centre. For example, Alameda connects with the Green line and São Sebastião with the Blue line.",
+          "Read the destination shown on the platform and check your final station before boarding. Keep your card or payment device accessible until you have left the network; you need to validate at the gates. A journey estimate is not a guarantee of the time from the aircraft to your hotel."
+        ],
+        "links": [
+          [
+            "Plan the route on the official Metro map",
+            "https://www.metrolisboa.pt/en/travel/diagrams-and-maps/"
+          ],
+          ["Read the English Metro guide", "/en/lisbon-metro-guide"]
+        ]
+      },
+      {
+        "id": "paying",
+        "title": "Paying for the first journey",
+        "paragraphs": [
+          "A reusable navegante occasional card can hold a Carris/Metro ticket, a day ticket or zapping credit. These products work differently: pick one before loading the card. The €1.90 ticket and the €1.92 contactless Metro journey are separate options, not two names for the same ticket.",
+          "A bank card or supported payment device can avoid the vending-machine queue. Each traveller needs their own contactless means of payment. Use the same card or device to enter and leave; a physical card and its phone-wallet version are not interchangeable for that journey. Check your bank’s foreign-currency fees separately."
+        ],
+        "links": [
+          ["Current official fares", "https://www.metrolisboa.pt/en/buy/"]
+        ]
+      },
+      {
+        "id": "car-and-luggage",
+        "title": "Taxi, app-based ride and the last stretch",
+        "paragraphs": [
+          "Use the signed taxi rank or the pick-up point specified by the app and airport. Check the car and driver details before getting in. For a taxi, confirm how the fare and luggage supplements are calculated rather than assuming one fixed price for all central addresses.",
+          "Traffic, demand, the number of travellers and luggage can change the comparison. A door-to-door ride is particularly useful when the alternative leaves you below your accommodation with suitcases and steps. Keep the street address and door number ready, not only the property’s marketing name."
+        ]
+      },
+      {
+        "id": "return-flight",
+        "title": "Planning the return to the airport",
+        "paragraphs": [
+          "Check the departure terminal on your airline booking, then allow for transport, terminal access and the airline’s check-in or bag-drop deadline. The time a Metro journey takes is only one part of the calculation.",
+          "For a very early departure, make the transport decision the day before. Check service notices and confirm that a booked car has the correct pick-up address. Keep a backup option if the first plan depends on a single early connection."
+        ]
+      }
+    ],
+    "sources": [
+      ["Metro Lisboa: fares", "https://www.metrolisboa.pt/en/buy/"],
+      [
+        "Metro Lisboa: hours",
+        "https://www.metrolisboa.pt/en/travel/timetables-and-frequency/"
+      ],
+      [
+        "Lisbon Airport: transport",
+        "https://www.lisbonairport.pt/en/lis/access-parking/getting-to-and-from-the-airport/public-transportation"
+      ]
+    ],
+    "caption": "Olaias, on the Red line that serves the airport."
+  },
+  {
+    "slug": "lisbon-metro-guide",
+    "category": "Getting around",
+    "title": "Lisbon Metro: tickets, lines, opening hours and the airport",
+    "description": "How to choose a ticket, use contactless payment and navigate the four Metro lines without confusing the fare options.",
+    "image": "/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg",
+    "imageAlt": "The colourful ceiling of Olaias Metro station in Lisbon",
+    "answer": "Lisbon has four Metro lines: Blue, Yellow, Green and Red. Normal operating hours are 06:30–01:00. For occasional travel, compare a €1.90 Carris/Metro ticket, €1.72 Metro zapping journey or €1.92 contactless journey; the way you load and use them differs.",
+    "essentials": [
+      ["Lines", "Blue · Yellow · Green · Red"],
+      ["Normal hours", "06:30–01:00"],
+      ["Carris/Metro ticket", "€1.90"],
+      ["Zapping Metro journey", "€1.72"],
+      ["Contactless journey", "€1.92"],
+      ["Carris/Metro 24-hour ticket", "€7.25"]
+    ],
+    "sections": [
+      {
+        "id": "map-and-lines",
+        "title": "Start with the map and your final walk",
+        "paragraphs": [
+          "The Red line serves the airport. The Blue and Green lines are useful for several central areas, while the Yellow line connects other parts of the city. Choose the station nearest a practical entrance to your accommodation, not just the nearest dot on a map.",
+          "Transfer stations let you change lines without leaving the paid network. On the platform, use the end-station name to check direction. Count line changes as well as stops when planning with children, luggage or limited mobility."
+        ],
+        "links": [
+          [
+            "Open the official Metro map",
+            "https://www.metrolisboa.pt/en/travel/diagrams-and-maps/"
+          ]
+        ]
+      },
+      {
+        "id": "which-ticket",
+        "title": "Which ticket should you choose?",
+        "paragraphs": [
+          "For a small number of Metro journeys, a bank card is simple because you can tap at the gates. Zapping can make sense if you already have a reusable card and want credit for compatible operators; each operator applies its own rules and fare.",
+          "The Carris/Metro 24-hour ticket is a different product. At €7.25 it is worth comparing with the journeys you will actually make, especially if you combine Metro and Carris. A day spent walking through Baixa and Alfama may not justify it. Do not assume the Metro-only contactless fare pays for buses or trams too."
+        ],
+        "rows": [
+          ["Occasional Metro ride", "€1.92 contactless"],
+          ["Reusable card with Metro credit", "€1.72 per zapping journey"],
+          ["Single Carris/Metro ticket", "€1.90; check its validity rules"],
+          [
+            "Several Carris and Metro journeys",
+            "Compare the €7.25 24-hour ticket"
+          ]
+        ]
+      },
+      {
+        "id": "navegante",
+        "title": "The navegante occasional card",
+        "paragraphs": [
+          "The occasional card is reusable and is separate from a monthly resident pass. Keep it after your first journey and use the machines to check the balance or ticket type before loading more. Each traveller needs their own card when travelling together.",
+          "A card with one ticket type already loaded may not accept a different product until the first is used. Check the screen rather than buying another card immediately. Keep the loading receipt until you know the product works; it helps explain a problem to station staff."
+        ],
+        "links": [
+          [
+            "Official occasional-card information",
+            "https://www.metrolisboa.pt/en/buy/viva-viagem-card/"
+          ]
+        ]
+      },
+      {
+        "id": "contactless",
+        "title": "Using a bank card or phone",
+        "paragraphs": [
+          "Use the same payment method at both sets of gates. Tapping a physical card on entry and a phone wallet on exit can be treated as different payment methods even if both relate to the same bank account.",
+          "Take the card out of your wallet so the reader does not pick another one. Each person needs a separate card or supported device; do not try to pass a group through with repeated taps of one card. If a gate does not open, ask staff rather than following someone through."
+        ],
+        "links": [
+          [
+            "Contactless rules from Metro Lisboa",
+            "https://www.metrolisboa.pt/en/ride-on-metro-lisboa-with-contactless-payment-card/"
+          ]
+        ]
+      },
+      {
+        "id": "hours-and-airport",
+        "title": "Opening hours, airport trips and accessibility",
+        "paragraphs": [
+          "Normal service runs from 06:30 to 01:00. Frequency changes by line and time, and temporary works can affect routes or station entrances. Check notices on the day if you depend on a late connection.",
+          "The airport station is on the Red line. Add your line change, the walk to the hotel and any escalators or lifts to the travel plan. If step-free access matters, check the actual stations and current lift status: a Metro symbol on the map is not a promise that every entrance is accessible."
+        ],
+        "links": [
+          [
+            "Official hours and frequency",
+            "https://www.metrolisboa.pt/en/travel/timetables-and-frequency/"
+          ],
+          ["Airport arrival guide", "/en/lisbon-airport-to-city-centre"]
+        ]
+      }
+    ],
+    "sources": [
+      ["Metro Lisboa: fares", "https://www.metrolisboa.pt/en/buy/"],
+      [
+        "Metro Lisboa: map",
+        "https://www.metrolisboa.pt/en/travel/diagrams-and-maps/"
+      ],
+      [
+        "Metro Lisboa: hours",
+        "https://www.metrolisboa.pt/en/travel/timetables-and-frequency/"
+      ],
+      [
+        "Metro Lisboa: occasional card",
+        "https://www.metrolisboa.pt/en/buy/viva-viagem-card/"
+      ]
+    ]
+  },
+  {
+    "slug": "lisbon-3-day-itinerary",
+    "category": "Your first visit",
+    "title": "Three days in Lisbon: a route with time to enjoy it",
+    "description": "A practical three-day plan for Baixa, Chiado, Alfama and Belém, with a clear choice about adding Sintra.",
+    "image": "/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg",
+    "imageAlt": "Alfama rooftops and the River Tagus in Lisbon",
+    "answer": "For three days, keep day one around Baixa and Chiado, day two around Alfama and the castle hill, and day three for Belém. If Pena Palace is a priority, use a full day for Sintra and shorten the Lisbon plan rather than squeezing the excursion into a spare afternoon.",
+    "essentials": [
+      ["Time", "Three full sightseeing days"],
+      ["Pace", "Walking, hills and breaks"],
+      ["Day 1", "Baixa · Chiado · riverside"],
+      ["Day 2", "Alfama · castle hill"],
+      ["Day 3", "Belém, or a full day in Sintra"],
+      ["Reserve first", "Any timed monument entry you decide to include"]
+    ],
+    "sections": [
+      {
+        "id": "before-you-start",
+        "title": "Build the plan around your actual days",
+        "paragraphs": [
+          "Three nights are not always three full days. Keep the arrival and departure half-days separate before adding reservations. If your flight arrives late on day one, choose the parts of this route that matter most instead of rushing to catch up.",
+          "Save the accommodation address, check the weather and put the fixed bookings into your calendar first. Leave space between a walking tour and a timed monument visit. A route through Lisbon works better when you group nearby places than when you follow a long list of attractions."
+        ]
+      },
+      {
+        "id": "day-one",
+        "title": "Day one: Baixa, Chiado and the river",
+        "paragraphs": [
+          "Begin with the lower centre around Rossio, Rua Augusta and Praça do Comércio. These streets help you understand how the centre fits together before moving onto the hills. Continue towards Chiado when you are ready for the climb, using transport if that suits your mobility better.",
+          "A walking tour can provide context at the start of the trip. Pick one whose route and meeting point match this part of the city, then leave the rest of the afternoon flexible. You do not need to reserve several overlapping tours of the same centre.",
+          "Keep lunch near the route and return to the riverside later if the weather is good. The important choice is which neighbourhood to spend time in, not how many streets you can cross off."
+        ],
+        "links": [
+          ["Compare English walking tours", "/en/lisbon-free-walking-tours"]
+        ]
+      },
+      {
+        "id": "day-two",
+        "title": "Day two: Alfama and the castle hill",
+        "paragraphs": [
+          "Use this day for Alfama, its small streets and the viewpoints around Santa Luzia and Portas do Sol. There are stairs, slopes and uneven paving. Plan a route that gradually comes down towards the river instead of repeatedly climbing back to the same viewpoint.",
+          "If you want to enter Castelo de São Jorge, check its current entry conditions and make it one of the day’s main visits. Leave a gap afterwards rather than placing another timed booking immediately below the hill.",
+          "For a guided alternative, check that the tour actually covers Alfama and that its walking difficulty suits everyone. An evening fado performance is a separate choice: compare the programme, meal requirements and finish time before reserving. It is not necessary to book it just because you are in Alfama."
+        ]
+      },
+      {
+        "id": "day-three",
+        "title": "Day three: Belém with a manageable number of visits",
+        "paragraphs": [
+          "Belém works best as one part of the trip rather than a quick stop between distant neighbourhoods. Decide which interior you really want to visit, then arrange the riverside walk and a meal around it. Check opening days before assigning this day in your calendar.",
+          "Jerónimos and the riverfront are geographically close, but queues and timed entries can still consume the morning. Leave room to walk and sit down. A photograph outside a monument and a complete interior visit are different commitments.",
+          "Return to central Lisbon with time for the evening. If rain or tiredness changes the plan, shorten the outdoor walk or choose one indoor visit rather than trying to recover every missed stop."
+        ]
+      },
+      {
+        "id": "sintra-option",
+        "title": "If Sintra is the main priority",
+        "paragraphs": [
+          "Treat Sintra as a full-day alternative to the Belém day. Pena Palace sits above the town: the train ride, local transfer and walk through the park are all part of reaching your palace slot.",
+          "Reserve the visit you actually want and then build the day backwards from its entry time. Pena plus another long interior visit can make the day crowded. Keep the town centre and lunch as flexible parts, and do not plan a tight evening booking back in Lisbon."
+        ],
+        "links": [["Choose a Pena Palace ticket", "/en/pena-palace-tickets"]]
+      },
+      {
+        "id": "moving-and-budget",
+        "title": "Transport and budget decisions",
+        "paragraphs": [
+          "Use walking for short stretches within one area and compare public transport for the longer connections. The Metro does not solve every journey, particularly towards places whose final approach is by bus, tram or foot. Check the official journey planner for the day’s actual addresses.",
+          "A transport pass makes sense only when the included travel matches your plans. Add the paid visits you genuinely want before considering a sightseeing card. Keep meals, local transfers and any optional guided visit visible in the budget; avoid counting the same inclusion twice."
+        ],
+        "links": [["Understand Metro tickets", "/en/lisbon-metro-guide"]]
+      }
+    ],
+    "sources": [
+      [
+        "Metro Lisboa: transport planning",
+        "https://www.metrolisboa.pt/en/travel/"
+      ],
+      [
+        "Parques de Sintra: getting there",
+        "https://www.parquesdesintra.pt/en/plan-your-visit/how-to-get-there/"
+      ]
+    ]
+  },
+  {
+    "slug": "pena-palace-tickets",
+    "category": "Sintra",
+    "title": "Pena Palace tickets: choose the visit before choosing the time",
+    "description": "What to check before booking Pena Palace, how the timed entry works and how to allow for the journey up from Sintra.",
+    "image": "/images/commons/sintra-palacio-pena-wikimedia.webp",
+    "imageAlt": "The colourful towers of Pena Palace in Sintra",
+    "answer": "Choose a ticket that includes the palace if you want to go inside; a park-only ticket is a different visit. The palace entry time is not the time to arrive at Sintra station or the park gate. Leave a generous margin for the local transfer and the uphill approach.",
+    "essentials": [
+      ["Essential adult visit", "€20 on the official price list"],
+      ["Park-only adult visit", "€12 on the official price list"],
+      ["Palace hours", "09:30–18:30; check your entry slot"],
+      ["Park hours", "09:00–19:00"],
+      ["From Sintra station", "Local transfer, including bus 434"],
+      [
+        "Main booking decision",
+        "Visit included · entry time · change conditions"
+      ]
+    ],
+    "sections": [
+      {
+        "id": "choose-the-visit",
+        "title": "Palace and park, or park only?",
+        "paragraphs": [
+          "The essential visit and the park-only visit are different products. The current official adult prices are €20 and €12 respectively; other visit types and age categories have their own prices. Read the inclusions before comparing two offers with similar photographs.",
+          "A park ticket is not a cheaper way to obtain the same interior visit. If the palace rooms are the reason you are travelling to Sintra, choose the appropriate palace-inclusive ticket. If your interest is the landscape and gardens, check what park access currently includes.",
+          "For a first visit, choose the experience you actually want before searching for the lowest displayed price. A guided visit, a full visit and an excursion from Lisbon may include different things. Transport up to Pena is not automatically included in a monument ticket."
+        ],
+        "links": [
+          [
+            "Compare official visit types and prices",
+            "https://www.parquesdesintra.pt/en/plan-your-visit/opening-times-and-prices/"
+          ]
+        ]
+      },
+      {
+        "id": "entry-time",
+        "title": "Work backwards from your palace entry",
+        "paragraphs": [
+          "Your selected time relates to the palace visit. Getting off the train in Sintra at that time leaves you too late for the local transfer and the park approach. Allow for queues, traffic, walking and the exact instructions on your ticket.",
+          "Keep the ticket ready and arrive with enough margin to reach the correct entrance. The distance between the park access and the palace matters, especially with children or anyone who walks slowly. The official site lists a separate internal transfer supplement; check what it does and whether your ticket includes it.",
+          "Avoid stacking a second timed monument booking close to Pena. A delayed arrival affects the rest of the day, and a tour operator’s cancellation rules are not necessarily the same as the monument’s own rules."
+        ]
+      },
+      {
+        "id": "where-to-book",
+        "title": "Official ticket office or a reseller?",
+        "paragraphs": [
+          "Compare the official ticket office with any reseller on the exact visit, date, entry time and cancellation or change conditions. A translated checkout can be convenient, but the payment language does not make two tickets equivalent.",
+          "Read the final terms before paying, including what happens if you arrive late or your plans change. The existing Tiqets product used by this site is for palace and park; its booking page currently opens in Spanish. Check the checkout language and conditions yourself before purchase. No lowest-price or flexible-change promise is made here."
+        ],
+        "links": [
+          [
+            "Official Pena ticket office",
+            "https://bilheteira.parquesdesintra.pt/"
+          ]
+        ],
+        "booking": "pena"
+      },
+      {
+        "id": "from-lisbon",
+        "title": "Getting from Lisbon to Pena",
+        "paragraphs": [
+          "Take a Sintra-line train from a suitable Lisbon station, then continue from Sintra to Pena. The official access information lists bus 434 for the local connection. Check current service information rather than assuming the train takes you to the palace gate.",
+          "Private-car access to the monument is restricted. Do not plan to drive straight to the entrance. Parking, a transfer or an uphill walk can still be necessary. A transfer included in a guided day trip is a different product from admission alone."
+        ],
+        "links": [
+          [
+            "Official routes and access restrictions",
+            "https://www.parquesdesintra.pt/en/plan-your-visit/how-to-get-there/"
+          ]
+        ]
+      },
+      {
+        "id": "weather-and-walking",
+        "title": "Weather, walking and whether it suits your day",
+        "paragraphs": [
+          "Pena is in the Sintra hills. Check the forecast and official closure notices, and take footwear suitable for slopes and wet surfaces. A clear day in Lisbon does not remove the need to check conditions in Sintra.",
+          "For reduced mobility, read the monument’s accessibility information before choosing a ticket. A shuttle does not mean every part of a historic palace and its grounds is step-free. If the approach itself is a problem, choose your visit with that limitation in mind."
+        ],
+        "links": [
+          [
+            "Official accessibility information",
+            "https://www.parquesdesintra.pt/en/plan-your-visit/accessibility/"
+          ]
+        ]
+      }
+    ],
+    "sources": [
+      [
+        "Parques de Sintra: opening times and prices",
+        "https://www.parquesdesintra.pt/en/plan-your-visit/opening-times-and-prices/"
+      ],
+      [
+        "Parques de Sintra: access",
+        "https://www.parquesdesintra.pt/en/plan-your-visit/how-to-get-there/"
+      ],
+      [
+        "Parques de Sintra: official tickets",
+        "https://bilheteira.parquesdesintra.pt/"
+      ]
+    ]
+  },
+  {
+    "slug": "lisbon-free-walking-tours",
+    "category": "Walk with a guide",
+    "title": "Lisbon free walking tours in English: routes and dates",
+    "description": "Compare the centre, Alfama, Belém, evening walks and history tours, then check English-language availability.",
+    "image": "/images/lisboa-originales/rua-augusta-arco-lisboa.webp",
+    "imageAlt": "The Rua Augusta arch and central Lisbon",
+    "answer": "For a first visit, a tour of Baixa and Chiado is a useful starting point. Choose Alfama for hills and older streets, or Belém for the riverside and maritime history. A free tour has no fixed admission price: reserve a place and plan to tip the guide after the walk.",
+    "essentials": [
+      ["Language", "Check the actual booking is in English"],
+      ["Payment", "No advance payment for the free-tour booking"],
+      ["Guide’s payment", "A tip after the walk"],
+      ["Choose by", "Route · walking difficulty · meeting point"],
+      ["Availability", "Checked for your selected date"],
+      ["Booking", "Completed on GuruWalk"]
+    ],
+    "sections": [
+      {
+        "id": "choose-a-route",
+        "title": "Five ways to choose a walk",
+        "paragraphs": [
+          "These are types of route, not five individual operators ranked as the best. The right one depends on what you have already seen and how much walking you want to do. Check the actual stop list before booking two tours with similar names."
+        ],
+        "rows": [
+          [
+            "Centre / Baixa and Chiado",
+            "A starting point for a first visit and the rebuilding of the city"
+          ],
+          ["Alfama", "Older streets, viewpoints, slopes and stairs"],
+          ["Belém", "The riverside, monuments and maritime history"],
+          [
+            "Mysteries and legends",
+            "A themed option; read the actual historical focus"
+          ],
+          [
+            "Evening walk",
+            "A different time of day; check finish point and return transport"
+          ]
+        ]
+      },
+      {
+        "id": "how-free-tours-work",
+        "title": "How a free tour is paid for",
+        "paragraphs": [
+          "“Free” does not mean that the guide works without payment. The model relies on tips after the walk. Decide what you can reasonably contribute and read the operator’s booking conditions before reserving. We do not publish a mandatory or supposedly universal tip amount.",
+          "Reserve the correct number of places and cancel through the provider if your plans change. Keep the confirmation and the guide’s meeting-point instructions available offline. Arriving at a general square is not enough if several guides meet there."
+        ]
+      },
+      {
+        "id": "check-language",
+        "title": "The website language and the tour language are different checks",
+        "paragraphs": [
+          "A page written in English can still list tours operated in other languages. In the date finder above, the request is specifically for English tours; before confirming, check the language on the actual booking. Availability and route names come from GuruWalk.",
+          "Several departure times may share one booking URL for that date. The button opens the provider’s booking flow, where you choose and confirm the time. It does not mean a place has already been reserved by clicking it."
+        ]
+      },
+      {
+        "id": "mobility-and-time",
+        "title": "Walking difficulty and practical preparation",
+        "paragraphs": [
+          "Alfama has slopes, uneven paving and stairs. Read the individual route’s accessibility information if anyone has mobility limits, a pushchair or difficulty standing for a long explanation. A “walking tour” label does not specify an easy route.",
+          "Wear suitable shoes, carry water and check the weather. Leave a gap before any timed monument entry after the tour. For an evening route, check how you will get back from the finish point rather than assuming it ends where it started."
+        ]
+      },
+      {
+        "id": "guided-or-independent",
+        "title": "When to choose a guide, and when to go independently",
+        "paragraphs": [
+          "A guide can help connect the streets with their history, especially at the start of a trip. Independent walking is more flexible if you want frequent stops, are travelling with tired children or prefer to choose your own pace.",
+          "Our three-day route is an alternative for planning those days yourself. You can also combine one guided introduction with independent visits later, instead of booking several similar tours of the same central streets."
+        ],
+        "links": [
+          ["Plan three days independently", "/en/lisbon-3-day-itinerary"]
+        ]
+      }
+    ],
+    "sources": [
+      ["GuruWalk: Lisbon tours in English", "https://www.guruwalk.com/lisbon"]
+    ]
+  }
+]

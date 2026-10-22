@@ -1,3 +1,4 @@
+import { englishPilotRoutes } from '@/lib/language-alternates'
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blog-posts'
 import { guidePackSlugs } from '@/data/guide-packs'
@@ -128,7 +129,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return entry;
   });
 
-  return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls].filter(({ url }) => {
+  const englishUrls: MetadataRoute.Sitemap = englishPilotRoutes.map(({path}) => ({ url: baseUrl + path, changeFrequency: 'monthly', priority: 0.6 }));
+
+  return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls, ...englishUrls].filter(({ url }) => {
     const { pathname, search, hash } = new URL(url);
     return !search && !hash && !isExcludedFromSitemap(pathname);
   });

@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/en",
+    "es": "/",
+    "label": "Start here"
+  },
+  {
+    "path": "/en/lisbon-airport-to-city-centre",
+    "es": "/blog/aeropuerto-lisboa-al-centro",
+    "label": "From the airport"
+  },
+  {
+    "path": "/en/lisbon-metro-guide",
+    "es": "/blog/metro-lisboa-guia",
+    "label": "Metro"
+  },
+  {
+    "path": "/en/lisbon-3-day-itinerary",
+    "es": "/itinerarios/lisboa-3-dias-premium",
+    "label": "Three days"
+  },
+  {
+    "path": "/en/pena-palace-tickets",
+    "es": "/blog/palacio-da-pena-entradas",
+    "label": "Pena Palace"
+  },
+  {
+    "path": "/en/lisbon-free-walking-tours",
+    "es": "/free-tours-lisboa",
+    "label": "Walking tours"
+  }
+]

@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/language-alternates';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
       'Consulta recorridos disponibles y reserva tu plaza sin pago previo.',
     images: [`https://estabaenlisboa.com${HERO_IMAGE}`],
   },
-  alternates: { canonical: PAGE_URL },
+  alternates: { canonical: PAGE_URL, languages: languageAlternates('/free-tours-lisboa') },
   robots: { index: true, follow: true },
 };
 

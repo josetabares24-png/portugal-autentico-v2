@@ -1,9 +1,12 @@
+import DocumentShell from '@/components/DocumentShell';
+import { spanishSiteMetadata } from '@/lib/spanish-site-metadata';
 import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
+  ...spanishSiteMetadata,
   title: 'Admin',
   description: 'Área privada de administración de Estaba en Lisboa.',
   alternates: {
@@ -20,5 +23,5 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <ClerkProvider>{children}</ClerkProvider>;
+  return <DocumentShell><ClerkProvider>{children}</ClerkProvider></DocumentShell>;
 }
