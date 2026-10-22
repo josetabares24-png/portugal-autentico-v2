@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — PR #113 publicado y verificado en producción
+
+D-066: José aprueba explícitamente el lote completo tras Preview y su prueba de Planifica. Head e59c5af, seis checks, cero hilos; merge protegido 5d3573d a las11:18:49UTC. Vercel dpl_9RvX95KAwsrfswTKRaBbmMMieNn5 READY/production, dominio estabaenlisboa.com y www confirmados. QA pública: migración1.426, técnico1.130/113páginas, navegación171, sitemap64/98URLs, Free tours66 y calculadora92, todos correctos. Matriz64 variantes de16reglas 301→200, cadena1;32vistas sin overflow/imágenes visibles rotas, teclado y acceso móvil comprobados. API GET405/POSTvacío400 antes del correo; agente sin emails reales/reservas. [Cierre, alcance y límites](../docs/editorial-release-pr113.md). Aplicación publicada idéntica a la probada; este registro posterior es documental. Este cierre sustituye estados históricos de candidatura D-060–D-065 solo para el lote de PR113. WAIT/REVIEW y dos redirecciones aplazadas siguen vigentes. Próximo paso: observar días completos/finalizados desde23/10, solicitudes útiles y navegación por dispositivo antes de nuevos cambios; sin causalidad SEO demostrada ni Lighthouse nuevo.
+
 ## 22 octubre 2026 — José confirma prueba funcional de Planifica
 
 José comunica «si y si sirve ya probe»: prueba real del formulario satisfactoria reportada por el propietario, sin repetir el envío. No inspección independiente de bandeja ni confirmación detallada de ambos emails/Reply-To. D-065 permanece; código probado cd9f8f9, HEAD e9c321b documental y seis checks correctos, PR #113 MERGEABLE/CLEAN en borrador. Sin autorización explícita de merge/publicación del conjunto. Siguiente: aprobación final del lote Home/navegación/Planifica/QA y correcciones de cinco guías; después flujo de publicación y QA de producción. [Registro y límites](../docs/editorial-planifica-contact.md#validación-humana-comunicada).

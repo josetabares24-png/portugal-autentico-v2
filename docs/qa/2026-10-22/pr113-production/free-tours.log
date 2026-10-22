@@ -1,0 +1,78 @@
+
+> portugal-autentico@0.1.0 smoke:free-tours
+> node scripts/smoke-free-tours.mjs
+
+== Modo remoto: probando https://estabaenlisboa.com (sin build/start local) ==
+
+OK   /free-tours-lisboa responde 200 - HTTP 200
+OK   title correcto - title="Free tours en Lisboa: horarios y reserva | Estaba en Lisboa"
+OK   title no duplica la marca - apariciones=1
+OK   description presente y con longitud razonable - 144 caracteres
+OK   canonical correcto - canonical="https://estabaenlisboa.com/free-tours-lisboa"
+OK   robots es indexable - robots="index, follow"
+OK   hay exactamente un H1 - H1s=1
+OK   H1 correcto - h1="Free tours en Lisboa"
+OK   todos los bloques JSON-LD parsean - 4 bloques
+OK   las FAQ siguen visibles sin schema FAQPage decorativo - contenido visible, schema ausente
+OK   BreadcrumbList schema válido - 3 niveles
+OK   ItemList schema presente y solo de las 5 rutas - 5 rutas
+OK   ningún schema declara Offer ni price - sin Offer/price
+OK   breadcrumb visible presente - nav[aria-label=Breadcrumb]
+OK   todas las rutas y el acceso general tienen su ancla - 6 anclas
+OK   divulgación de afiliación visible - variante compacta con enlace legal
+OK   la cuadrícula muestra 5 tarjetas de ruta - 5 tarjetas
+OK   el acceso general completa la cuadrícula sin entrar en el ItemList de rutas - sexta tarjeta visual, cinco rutas en schema
+OK   el funcionamiento se explica en 4 pasos - 4 pasos
+OK   hay bloque de consejos prácticos - presente
+OK   la recomendación lleva la firma de José - firma presente
+OK   el CTA final es distinto del hero - CTA de cierre propio
+OK   el hero muestra las tres condiciones de reserva - los tres
+OK   el hero lleva al buscador de fecha y no abre otro catálogo - enlace interno presente
+OK   la página incluye el buscador de disponibilidad real - módulo de fecha presente
+OK   no afirma rankings ni datos volátiles - sin rankings ni disponibilidad inventada
+OK   ningún enlace contiene placeholders - 49 enlaces revisados
+OK   se renderizan los 8 CTA afiliados de la landing - 7 enlaces afiliados
+OK   ningún CTA queda inerte con ID configurado - 0 inertes
+OK   todos llevan rel="sponsored" - todos
+OK   todos llevan noopener y noreferrer - todos
+OK   todos abren en pestaña nueva - todos
+OK   todos los enlaces llevan ref=<ID> - ref válido en los 7
+OK   todos los enlaces llevan pro=true - todos
+OK   todos llevan las cuatro UTMs - todas
+OK   ningún enlace duplica parámetros - ninguno
+OK   tarjeta imprescindible: enlaza a su categoría - /es/lisboa/tag/imprescindible
+OK   tarjeta imprescindible: campaña correcta - utm_campaign=free-tour-centro
+OK   tarjeta alfama: enlaza a su categoría - /es/lisboa/tag/alfama
+OK   tarjeta alfama: campaña correcta - utm_campaign=free-tour-alfama
+OK   tarjeta belem: enlaza a su categoría - /es/lisboa/tag/belem
+OK   tarjeta belem: campaña correcta - utm_campaign=free-tour-belem
+OK   tarjeta misterios: enlaza a su categoría - /es/lisboa/tag/leyendas-secretos-y-misterios
+OK   tarjeta misterios: campaña correcta - utm_campaign=free-tour-misterios
+OK   tarjeta nocturno: enlaza a su categoría - /es/lisboa/tag/nocturno
+OK   tarjeta nocturno: campaña correcta - utm_campaign=free-tour-nocturno
+OK   el bloque general conserva su enlace afiliado - /es/lisboa
+OK   el bloque general conserva campaña y utm_content propio - utm_content=destacado-todos
+OK   están presentes todas las campañas esperadas - 6 campañas
+OK   no se enlaza a ningún tour individual - solo destino y categorías
+
+OK   free-walking-tour-centro: HTTP 200 - HTTP 200
+OK   free-walking-tour-centro: robots index, follow - robots="index, follow"
+OK   free-walking-tour-centro: CTA actualizado - texto del CTA
+OK   free-walking-tour-centro: enlaza la landing - enlace interno
+OK   free-walking-tour-centro: mantiene la foto del Arco - imagen propia
+OK   free-walking-tour-centro: 1 CTA afiliado con sponsored - 1 enlaces
+OK   free-walking-tour-centro: enlaza a la categoría imprescindible - /es/lisboa/tag/imprescindible
+OK   free-walking-tour-centro: lleva ref y pro - ref + pro=true
+
+OK   la foto del hero no da 404 - HTTP 200 /images/lisboa-originales/rua-augusta-arco-lisboa.webp
+
+OK   /sitemap.xml responde 200 - HTTP 200
+OK   la landing está en el sitemap - presente
+
+OK   /actividades sigue respondiendo 200 - HTTP 200
+OK   /actividades enlaza la landing de free tours - enlace presente
+OK   /actividades enlaza las 3 rutas destacadas - 3/3
+OK   /actividades conserva las 17 fichas vivas - 17 fichas enlazadas
+OK   /actividades no enlaza las tres fichas redirigidas - sin dependencias de 301
+
+66/66 comprobaciones OK.

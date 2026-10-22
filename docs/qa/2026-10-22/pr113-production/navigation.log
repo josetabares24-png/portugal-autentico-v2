@@ -1,0 +1,5 @@
+
+> portugal-autentico@0.1.0 smoke:editorial-navigation
+> node --import ./scripts/register-ts.mjs scripts/smoke-editorial-navigation.mjs
+
+{"checks":171,"failures":[],"selectedArticles":22,"fetchedPages":42}

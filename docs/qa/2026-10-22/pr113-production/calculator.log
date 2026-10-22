@@ -1,0 +1,106 @@
+
+> portugal-autentico@0.1.0 smoke:calculadora
+> node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs
+
+== Modo remoto: probando https://estabaenlisboa.com (sin build/start local) ==
+
+OK   /calculadora-presupuesto-lisboa: HTTP 200 sin redirección - HTTP 200
+OK   un solo H1 - 1 encontrados
+OK   el H1 es el de la herramienta - Calculadora de presupuesto para Lisboa
+OK   el H1 no invade la intención del artículo de presupuesto - Calculadora de presupuesto para Lisboa
+OK   tiene secciones (H2) - 4 H2
+OK   no se salta niveles de encabezado: hay H2 antes que H3
+OK   los dos pasos están titulados
+OK   title propio y con la marca una sola vez - title="Calculadora de presupuesto para Lisboa | Estaba en Lisboa"
+OK   canonical propio - https://estabaenlisboa.com/calculadora-presupuesto-lisboa
+OK   indexable - index, follow
+OK   og:title propio - Calculadora de presupuesto para Lisboa
+OK   twitter:card es summary_large_image - summary_large_image
+OK   twitter:title alineado con og:title - Calculadora de presupuesto para Lisboa
+OK   están los controles del alcance completo - 7 controles
+OK   los contadores tienen sus botones + / − con etiqueta accesible - 6 botones
+OK   hay un atajo al resultado en móvil
+OK   el anillo de reparto se sirve renderizado - 3 tramos
+OK   el anillo tiene alternativa en texto y no depende del color
+OK   el anillo declara de dónde salen sus proporciones
+OK   el anillo dice qué pasa con los vuelos
+OK   dice qué partida pesa más
+OK   el optimizador está en la página
+OK   el selector de estilo de viaje está presente
+OK   lo secundario queda plegado, pero en el HTML - 6 plegables
+OK   el dock móvil existe y no aparece en escritorio
+OK   el dock respeta el área segura del dispositivo
+OK   las microanimaciones respetan prefers-reduced-motion
+OK   el formulario ofrece todas las atracciones destacadas - 8 destacadas
+OK   las actividades adicionales no cargan el formulario - 3 detrás del panel
+OK   hay un «Ver más actividades» si hay algo detrás - 3 adicionales
+OK   los nombres de Lisboa se ven completos dentro del selector
+OK   ningún nombre se recorta
+OK   Lisboa y Sintra van agrupadas
+OK   cada atracción destacada dice cuánto contamos por ella
+OK   las cifras de entrada no se presentan como tarifas oficiales
+OK   hay una casilla por atracción destacada, más la del día en Sintra - 9 casillas
+OK   sirve renderizado el presupuesto recomendado - 565 €
+OK   sirve renderizado el por persona recomendado - 283 €
+OK   sirve renderizado el por persona y día recomendado - 94 €
+OK   sigue sirviendo el rango estimado del total - 385 – 675 €
+OK   sigue sirviendo el gasto en destino sin alojamiento ni vuelos - 215 – 375 €
+OK   el resultado dice días, noches y personas en ese orden
+OK   dice qué incluye el total sin abrir el desglose
+OK   el optimizador va antes de «Guardar mi presupuesto» - optimizador 47140 · guardar 50071
+OK   ofrece descargar el PDF
+OK   el envío por email no aparece mientras está desactivado
+OK   no se cuentan al usuario problemas internos
+OK   la FAQ ya no dice que la herramienta sólo da un rango
+OK   el gasto en destino también se da como cifra cerrada - 315 €
+OK   el rango explica de qué depende, sin prometer probabilidades
+OK   el ejemplo de días y noches usa un viaje real
+OK   no se explica el funcionamiento interno al usuario
+OK   Sintra explica que las entradas van aparte
+OK   la cifra principal es cerrada y cae dentro del rango - 565 € en 385 – 675 €
+OK   el rango sigue existiendo y sigue siendo un rango - 385 – 675 €
+OK   el desglose recomendado reconstruye el total - 565 + 0 = 565
+OK   etiqueta el gasto en destino como sin alojamiento ni vuelos
+OK   el gasto en destino excluye de verdad el alojamiento - destino 215 – 375 € · total 385 – 675 €
+OK   el desglose muestra todas las categorías - 4/4
+OK   sin importe de vuelos, lo dice expresamente
+OK   publica las reglas del cálculo - 10 reglas
+OK   publica lo que no está contado - 5 exclusiones
+OK   explica que las noches las decide el usuario
+OK   no promete precisión que no tiene
+OK   no se vende como producto con IA
+OK   tiene FAQPage - 6 preguntas
+OK   cada pregunta del FAQPage está visible
+OK   cada respuesta del FAQPage está visible
+OK   la FAQ describe la herramienta real
+OK   dos peticiones idénticas devuelven el mismo total - "565 €" / "565 €"
+OK   dos peticiones idénticas devuelven la misma página
+
+-- Enlaces internos --
+OK   enlace /blog/presupuesto-viajar-lisboa: 200 sin redirección - HTTP 200
+OK   enlace /blog/como-moverse-por-lisboa: 200 sin redirección - HTTP 200
+OK   enlace /blog/donde-alojarse-en-lisboa: 200 sin redirección - HTTP 200
+OK   enlace /comprar-entradas: 200 sin redirección - HTTP 200
+OK   enlace /free-tours-lisboa: 200 sin redirección - HTTP 200
+OK   /pack-completo: 308 directo a /blog - HTTP 308
+OK   /pack-completo: destino final 200 sin cadena - HTTP 200
+
+-- Páginas que enlazan a la calculadora --
+OK   /planifica-tu-viaje enlaza a la calculadora
+OK   /blog/presupuesto-viajar-lisboa enlaza a la calculadora
+
+-- /planifica-tu-viaje como hub (sin calculadora antigua) --
+OK   /planifica-tu-viaje responde 200
+OK   /planifica-tu-viaje sin sliders
+OK   /planifica-tu-viaje sin perfil «Mochilero»
+OK   /planifica-tu-viaje sin descripción del perfil Mochilero
+OK   /planifica-tu-viaje sin descripción del perfil Medio
+OK   /planifica-tu-viaje sin descripción del perfil Confort
+OK   /planifica-tu-viaje sin cifra única «Presupuesto estimado»
+OK   /planifica-tu-viaje sin promedio por persona y día
+OK   /planifica-tu-viaje sin actividades recomendadas por perfil
+OK   /planifica-tu-viaje ofrece «Calculadora de presupuesto»
+OK   /planifica-tu-viaje ofrece «Itinerarios gratuitos»
+OK   /planifica-tu-viaje ofrece «Actividades»
+
+92/92 comprobaciones OK.

@@ -1,5 +1,9 @@
 # Metrics system
 
+## Marca de publicación — 22 octubre 2026
+
+PR #113 se publica en `5d3573d` (merge22/10 a11:18:49UTC), Vercel `dpl_9RvX95KAwsrfswTKRaBbmMMieNn5` READY/production, dominio comprobado. [Cierre y QA](../docs/editorial-release-pr113.md), D-066. No hay lectura posterior al release en este registro: los datos de17/10 del snapshot siguiente siguen siendo previos. Primera ventana de siete días completos23–29/10, una vez finalizada; excluir el22 parcial. Comparar solicitudes útiles de Planifica y recorrido por dispositivo además de los cuatro indicadores orgánicos; no atribuir causalidad al lote y no comparar dimensiones días/ritmo/presupuesto retiradas del formulario como si fueran estables.
+
 ## Latest snapshot — 20 octubre 2026
 
 [GSC/Windsor, consolidaciones y baseline de publicación](data/CONSOLIDATION-SEARCH-2026-10-20.json). Corte conservador hasta 17/10, web, datos finalizados solicitados. Totales de propiedad: 28 días 125 clics / 10.023 impresiones / 1,25 % CTR / 9,48 posición frente a 55 / 6.565 / 0,84 % / 12,80. En 7 días: 33 clics frente a 40, con 2.989 frente a 2.955 impresiones. No resumir la última semana como mejora uniforme. 35,8 % del hito de 28.000 impresiones/28 días. Todo precede al despliegue del 20/10: no atribuirlo a PR #112. Filas ausentes de candidatas no son demanda medida cero. Periodos, posiciones ponderadas y límites en el JSON y el informe de Fase 7.

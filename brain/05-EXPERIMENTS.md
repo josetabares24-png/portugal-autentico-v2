@@ -1,5 +1,9 @@
 # Experiments
 
+## Marca de intervención — 22 octubre 2026, PR #113
+
+LIVE5d3573d, Vercel dpl_9RvX95KAwsrfswTKRaBbmMMieNn5 READY/production (D-066). Cambia Home móvil, navegación/portada, Planifica personal, correcciones de cinco guías y contratos técnicos; no es un experimento aislado. [Registro](../docs/editorial-release-pr113.md). Reiniciar la lectura del recorrido de Home/navegación por dispositivo y observar solicitudes útiles. `personal_plan_submit` confirma aceptación del aviso, no contratación; mailto no es envío, días/ritmo/presupuesto no siguen recogiéndose. Primera ventana completa23–29/10 cuando esté finalizada y lectura28d después; no se declaran WIN/LOSS ahora ni se aplican estados PLANNED históricos al lote ya publicado. Mantener WAIT/REVIEW y no ejecutar nuevas consolidaciones automáticamente.
+
 This is the active learning register.
 
 ## Status vocabulary

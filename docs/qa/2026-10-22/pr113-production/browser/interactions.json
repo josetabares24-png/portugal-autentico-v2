@@ -1,0 +1,22 @@
+{
+  "emptyForm": {
+    "busy": "false",
+    "focused": "nombre",
+    "missing": true
+  },
+  "tabFocus": "email",
+  "desktopMenuEscape": {
+    "expanded": "false",
+    "focus": "Lisboa +"
+  },
+  "mobileFreeTours": {
+    "h1": "Free tours en Lisboa",
+    "menuExpanded": "false",
+    "path": "/free-tours-lisboa"
+  },
+  "mobilePlanifica": {
+    "h1": "Planifica tu viaje",
+    "menuExpanded": "false",
+    "path": "/planifica-tu-viaje"
+  }
+}

@@ -1,0 +1,5 @@
+
+> portugal-autentico@0.1.0 smoke:technical-quality
+> node scripts/smoke-technical-quality.mjs
+
+{"pages":113,"checks":1130,"failures":[],"badSchemaDates":0,"offers":6,"ratings":0}

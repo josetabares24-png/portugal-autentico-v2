@@ -1,0 +1,67 @@
+{
+  "actions": [],
+  "errors": [],
+  "observedAt": "2026-10-22T11:18:13.127951Z",
+  "policy": {
+    "checkPolicy": "all",
+    "configPath": null,
+    "requiredReviewers": [],
+    "source": "defaults",
+    "strictChangesRequested": false
+  },
+  "schemaVersion": 1,
+  "state": "ready",
+  "targets": [
+    {
+      "actions": [],
+      "checks": {
+        "fail": [],
+        "malformed": [],
+        "pass": [
+          "Vercel Preview Comments",
+          "seo-smoke",
+          "typecheck",
+          "GitGuardian Security Checks",
+          "Vercel \u2013 portugal-autentico-v2",
+          "Vercel \u2013 portugal-autentico-v2-prod-merge-phase2"
+        ],
+        "pending": [],
+        "skipping": [],
+        "total": 6,
+        "unknown": []
+      },
+      "kind": "explicit",
+      "landingAuthorization": null,
+      "path": "C:\\Users\\estab\\.codex\\.chatgpt-projects\\g-p-6a664562cd2881919592b4c2b3d453f1\\audit-github",
+      "pending": [],
+      "pr": {
+        "autoMerge": null,
+        "autoMergeEnabled": false,
+        "baseRefName": "main",
+        "baseSha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+        "headRefName": "editorial-rebuild-phase-7",
+        "headSha": "e59c5af0965e216e28c0273f883e4603306c75f1",
+        "isMergeQueueEnabled": false,
+        "mergeQueueEntry": null,
+        "mergeStateStatus": "CLEAN",
+        "mergeable": "MERGEABLE",
+        "number": 113,
+        "reviewDecision": null,
+        "state": "OPEN",
+        "url": "https://github.com/josetabares24-png/portugal-autentico-v2/pull/113"
+      },
+      "repository": "josetabares24-png/portugal-autentico-v2",
+      "repositoryPolicy": {
+        "mergeCommitAllowed": true,
+        "rebaseMergeAllowed": true,
+        "squashMergeAllowed": true
+      },
+      "reviews": {
+        "missingRequiredReviewers": [],
+        "requiredReviewers": [],
+        "unresolvedThreadCount": 0
+      },
+      "state": "ready"
+    }
+  ]
+}
