@@ -23,8 +23,8 @@ Probar tres traslados manuales de ofertas existentes, sin aumentar su número y 
 | Página | Tras responder | Oferta trasladada | Resto |
 |---|---|---|---|
 | `/blog/palacio-da-pena-entradas` | Dónde comprar: web oficial o Tiqets | Pena + parque, Tiqets | Excursión de Sintra al final |
-| `/blog/monasterio-jeronimos-entradas` | Dónde comprar la entrada | Jerónimos, Tiqets | Lisboa Card al final |
-| `/blog/alfama-historia-guia` | Ruta a pie por Alfama | Free tour de Alfama, GuruWalk | Fado al final |
+| `/blog/monasterio-jeronimos-entradas` | Dónde comprar la entrada | Jerónimos, Tiqets | Combinada Jerónimos + Torre de Belém al final |
+| `/blog/alfama-historia-guia` | Ruta a pie por Alfama | Free tour de Alfama, GuruWalk | Castelo de São Jorge al final |
 
 Máximo una oferta en cuerpo y otra final. La respuesta, comparación con la web oficial, restricciones y fuentes se mantienen. Etiqueta de entradas: «Ver disponibilidad y reservar». Aviso afiliado visible. Pena/Jerónimos son páginas protegidas: sin reescritura, cambios SEO o datos nuevos. El resto del blog conserva D-045. Si desaparece el heading o ID configurado, la oferta vuelve al módulo final y no se pierde.
 
@@ -101,3 +101,25 @@ No se ha repetido Lighthouse: no nuevas imágenes, scripts externos ni peticione
 ## Decisión
 
 **PROBAR**, sin merge ni publicación automática. Una oferta contextual existente en tres páginas y un buscador más claro. Conservar URLs protegidas, navegación comercial visible, afiliación, privacidad y política SEO. No intentar compensar falta de métricas añadiendo más enlaces. Siguiente acción concreta: comprobar la Preview y mostrarla a José.
+
+
+## Cierre del candidato en Preview
+
+[PR #115, borrador](https://github.com/josetabares24-png/portugal-autentico-v2/pull/115). Aplicación comprobada **48b778dfef16d37d1e7050ca455aa4dae49b5922**; deployment **dpl_8MX88g47VxgX4GFVxFYQZypWBbSd**, READY, entorno Preview. [URL del deployment](https://portugal-autentico-v2-c5cfcyxpx-estabaenlisboa.vercel.app/free-tours-lisboa); requiere sesión Vercel o enlace temporal, que no se guarda en Git. Los cinco checks publicados por GitHub para este SHA están correctos, sin pendientes. No se fusiona el PR ni se publica.
+
+QA remota: preservación editorial1.659/72, migración1.328, técnico1.130/113 y Free tours66, cero fallos. La diferencia de98 checks de migración frente al local corresponde a la cabecera noindex de protección de Preview; las reglas del HTML siguen comprobándose. [Resumen y límites](qa/2026-10-22/commercial/summary.json).
+
+| Inicio de la reserva principal a390 px | Producción antes | Preview después |
+|---|---:|---:|
+| Pena | 11.458 px | 6.571 px |
+| Jerónimos | 12.303 px | 6.330 px |
+| Alfama | 5.221 px | 3.194 px |
+
+Coordenadas desde el comienzo del documento, mismo ancho y fuente; no CTR ni scroll observado de visitantes. Doce vistas remotas de artículos a320/390/768/1440 sin overflow, un H1 y botones de48 px o más. Cuatro vistas adicionales del buscador con tres resultados reales: tres botones, destinos/ref/fecha intactos y44 px o más. Capturas verificadas en móvil y escritorio. Teclado: foco visible en la divulgación del bloque de Pena; no se abrió checkout ni se enviaron eventos de producto desde Preview (host excluido).
+
+El resultado dinámico del 23/10 mantiene tres tours y siete horas; solo las URLs idénticas se agrupan. Disponibilidad y opiniones pueden variar, no son catálogo hardcodeado. No se repite Lighthouse ni se afirma mejora de rendimiento/conversión. Cierre documental posterior conserva exactamente los archivos de aplicación del SHA probado. D0 de E-018 sigue sin iniciar.
+
+![Buscador en escritorio](qa/2026-10-22/commercial/finder-preview-desktop.png)
+![Reserva contextual de Pena](qa/2026-10-22/commercial/pena-preview-desktop.png)
+
+Producción continúa en5d3573d (PR113). La próxima acción es revisión visual del candidato por José; la limitación de Windsor y los dashboards desconocidos no se convierten en un permiso para cambiar cuentas, atribución o SEO.

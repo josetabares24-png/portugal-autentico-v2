@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-22",
+  "applicationSha": "48b778dfef16d37d1e7050ca455aa4dae49b5922",
+  "deployment": "dpl_8MX88g47VxgX4GFVxFYQZypWBbSd",
+  "state": "READY",
+  "target": "preview",
+  "origin": "https://portugal-autentico-v2-c5cfcyxpx-estabaenlisboa.vercel.app",
+  "pr": "https://github.com/josetabares24-png/portugal-autentico-v2/pull/115",
+  "githubChecks": {
+    "passed": 5,
+    "failed": 0,
+    "pending": 0
+  },
+  "local": {
+    "build": 137,
+    "typecheck": "pass",
+    "lintErrors": 0,
+    "existingLintWarnings": 1,
+    "editorial": 1659,
+    "migration": 1426,
+    "technical": 1130,
+    "navigation": 171,
+    "sitemap": 64,
+    "sitemapUrls": 98,
+    "freeTours": 66,
+    "tiqets": "pass",
+    "unitBookingOptions": 3,
+    "unitAnalytics": 6,
+    "responsiveViews": 12
+  },
+  "preview": {
+    "editorial": 1659,
+    "migration": 1328,
+    "technical": 1130,
+    "freeTours": 66,
+    "articleResponsiveViews": 12,
+    "finderResponsiveViews": 4,
+    "overflows": 0,
+    "liveTours": 3,
+    "liveDate": "2026-10-23",
+    "liveUniqueDestinations": 3,
+    "minFinderTargetHeight": 44,
+    "minArticleTargetHeight": 48
+  },
+  "limits": [
+    "No production release or merge",
+    "No actual booking or affiliate test click",
+    "Partner reservations and commissions unknown",
+    "Windsor free-plan limit blocks real reads; zero placeholders invalid",
+    "Stay22 unchanged",
+    "No Lighthouse rerun or conversion-effect claim"
+  ],
+  "productionUnchanged": "5d3573d3c09ae9d804d0636fc47feac8ed28f563"
+}

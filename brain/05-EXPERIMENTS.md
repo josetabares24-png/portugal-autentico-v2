@@ -238,3 +238,5 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 ## E-018 — Reserva contextual y horario honesto, 22/10/2026
 
 **Status: CANDIDATO, D0 no iniciado.** D-067, rama `commercial-booking-paths`. Tres páginas explícitas: Pena/Jerónimos/Alfama; una oferta existente tras responder, otra final. Buscador agrupa solo URLs idénticas sin perder fechas/ref. Baseline de HTML/layout guardado; baseline de conversiones no disponible (Windsor bloqueado, partner dashboards desconocidos). No evaluar contra ceros de sustitución. Si se publica con aprobación, registrar D0/SHA y comparar14/28 días, por página/proveedor/dispositivo; bajo volumen → inconcluso. No atribuir variaciones orgánicas a placement. [Contrato y límites](../docs/commercial-booking-audit-2026-10-22.md).
+
+Cierre E-018: Preview48b778d READY/PR115, cinco checks correctos y QA remota sin fallos; tres resultados reales conservan referido y fecha. Producción5d3573d intacta, D0 no iniciado. Capturas y contratos en el informe comercial.
