@@ -1,0 +1,140 @@
+[
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_palacio-da-pena-entradas"
+        ],
+        "id": "reserva-blog-palacio-da-pena-entradas-pena-tiqets-arriba",
+        "slot": "final",
+        "top": 11458.4375
+      },
+      {
+        "hrefs": [
+          "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher"
+        ],
+        "id": "reserva-blog-palacio-da-pena-entradas-sintra-completa",
+        "slot": "alternative",
+        "top": 11854.828125
+      }
+    ],
+    "height": 14135,
+    "path": "/blog/palacio-da-pena-entradas",
+    "width": 390
+  },
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_palacio-da-pena-entradas"
+        ],
+        "id": "reserva-blog-palacio-da-pena-entradas-pena-tiqets-arriba",
+        "slot": "final",
+        "top": 7837.3125
+      },
+      {
+        "hrefs": [
+          "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher"
+        ],
+        "id": "reserva-blog-palacio-da-pena-entradas-sintra-completa",
+        "slot": "alternative",
+        "top": 8149.703125
+      }
+    ],
+    "height": 9372,
+    "path": "/blog/palacio-da-pena-entradas",
+    "width": 1440
+  },
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas"
+        ],
+        "id": "reserva-blog-monasterio-jeronimos-entradas-jeronimos-arriba",
+        "slot": "final",
+        "top": 12303.296875
+      },
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas"
+        ],
+        "id": "reserva-blog-monasterio-jeronimos-entradas-jeronimos-torre-belem",
+        "slot": "alternative",
+        "top": 12691.078125
+      }
+    ],
+    "height": 15003,
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "width": 390
+  },
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas"
+        ],
+        "id": "reserva-blog-monasterio-jeronimos-entradas-jeronimos-arriba",
+        "slot": "final",
+        "top": 8436.921875
+      },
+      {
+        "hrefs": [
+          "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas"
+        ],
+        "id": "reserva-blog-monasterio-jeronimos-entradas-jeronimos-torre-belem",
+        "slot": "alternative",
+        "top": 8725.3125
+      }
+    ],
+    "height": 9980,
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "width": 1440
+  },
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.guruwalk.com/es/lisboa/tag/alfama?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-alfama&utm_content=blog-alfama-historia-guia-free-tour-alfama"
+        ],
+        "id": "reserva-blog-alfama-historia-guia-free-tour-alfama",
+        "slot": "final",
+        "top": 5220.859375
+      },
+      {
+        "hrefs": [
+          "https://gyg.me/xsuIYU11"
+        ],
+        "id": "reserva-blog-alfama-historia-guia-castelo-sao-jorge",
+        "slot": "alternative",
+        "top": 5569.25
+      }
+    ],
+    "height": 7969,
+    "path": "/blog/alfama-historia-guia",
+    "width": 390
+  },
+  {
+    "cta": [
+      {
+        "hrefs": [
+          "https://www.guruwalk.com/es/lisboa/tag/alfama?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-alfama&utm_content=blog-alfama-historia-guia-free-tour-alfama"
+        ],
+        "id": "reserva-blog-alfama-historia-guia-free-tour-alfama",
+        "slot": "final",
+        "top": 4426.734375
+      },
+      {
+        "hrefs": [
+          "https://gyg.me/xsuIYU11"
+        ],
+        "id": "reserva-blog-alfama-historia-guia-castelo-sao-jorge",
+        "slot": "alternative",
+        "top": 4715.125
+      }
+    ],
+    "height": 6033,
+    "path": "/blog/alfama-historia-guia",
+    "width": 1440
+  }
+]

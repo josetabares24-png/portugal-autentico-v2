@@ -1,0 +1,4734 @@
+{
+  "date": "2026-10-22T17:32:00.133Z",
+  "summary": {
+    "pages": 100,
+    "links": 69,
+    "sponsoredLinkIssues": [],
+    "byPartner": {
+      "guruwalk": 14,
+      "tiqets": 27,
+      "getyourguide": 28
+    },
+    "blogPagesWithAffiliate": 25
+  },
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com",
+      "headings": [
+        {
+          "id": "",
+          "text": "¿Qué necesitas resolver en Lisboa?"
+        },
+        {
+          "id": "imprescindibles",
+          "text": "Imprescindibles para reservar"
+        },
+        {
+          "id": "home-seasonal-title",
+          "text": "Si vienes en otoño o invierno"
+        },
+        {
+          "id": "articulos-sugeridos",
+          "text": "Para leer antes de ir."
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 4,
+      "affiliate": [],
+      "words": 347
+    },
+    {
+      "path": "/actividades",
+      "status": 200,
+      "robots": "noindex, follow",
+      "canonical": "https://estabaenlisboa.com/actividades",
+      "headings": [
+        {
+          "id": "",
+          "text": "Free tours para orientarte el primer día"
+        },
+        {
+          "id": "",
+          "text": "¿Ya sabes qué quieres reservar?"
+        },
+        {
+          "id": "",
+          "text": "¿Prefieres que te lo organice yo?"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 4,
+      "affiliate": [],
+      "words": 1261
+    },
+    {
+      "path": "/actividades/cascais-cabo-da-roca",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 371
+    },
+    {
+      "path": "/actividades/castelo-sao-jorge",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/castelo-sao-jorge",
+      "headings": [
+        {
+          "id": "precios-2026",
+          "text": "Precios 2026"
+        },
+        {
+          "id": "donde-comprar-la-entrada",
+          "text": "Dónde comprar la entrada"
+        },
+        {
+          "id": "horarios-y-cierres",
+          "text": "Horarios y cierres"
+        },
+        {
+          "id": "que-incluye-la-entrada",
+          "text": "Qué incluye la entrada"
+        },
+        {
+          "id": "cuando-ir",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "con-la-lisboa-card",
+          "text": "Con la Lisboa Card"
+        },
+        {
+          "id": "si-no-quieres-pagar-la-entrada",
+          "text": "Si no quieres pagar la entrada"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Ver entrada al Castelo ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 2058
+    },
+    {
+      "path": "/actividades/cristo-rei",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/cristo-rei",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 398
+    },
+    {
+      "path": "/actividades/crucero-atardecer-tajo",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/crucero-atardecer-tajo",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/TJA6VUJa",
+          "text": "Reservar paseo por el Tajo ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 502
+    },
+    {
+      "path": "/actividades/elevador-santa-justa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/elevador-santa-justa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 434
+    },
+    {
+      "path": "/actividades/fado-en-alfama",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/fado-en-alfama",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/jH9FtGc7",
+          "text": "Reservar espectáculo de fado ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 475
+    },
+    {
+      "path": "/actividades/free-walking-tour-centro",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/free-walking-tour-centro",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 2,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/imprescindible?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-centro&utm_content=activity-free-walking-tour-centro",
+          "text": "Consultar free tours y horarios ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 570
+    },
+    {
+      "path": "/actividades/jardim-estrela-principe-real",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/jardim-estrela-principe-real",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 298
+    },
+    {
+      "path": "/actividades/lx-factory",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/lx-factory",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 474
+    },
+    {
+      "path": "/actividades/miradouro-portas-do-sol",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-portas-do-sol",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 406
+    },
+    {
+      "path": "/actividades/miradouro-santa-luzia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-santa-luzia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 399
+    },
+    {
+      "path": "/actividades/miradouro-senhora-do-monte",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/miradouro-senhora-do-monte",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 419
+    },
+    {
+      "path": "/actividades/oceanario-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/oceanario-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-oceanario-de-lisboa-entrada-p975260/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_oceanario",
+          "text": "Comprar entrada al Oceanário ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 279
+    },
+    {
+      "path": "/actividades/parque-eduardo-vii",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/parque-eduardo-vii",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 291
+    },
+    {
+      "path": "/actividades/pasteis-de-belem",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 358
+    },
+    {
+      "path": "/actividades/tasca-tradicional",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/tasca-tradicional",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 337
+    },
+    {
+      "path": "/actividades/torre-de-belem",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/actividades/torre-de-belem",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "id": "",
+          "text": "Cómo llegar"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-torre-de-belem-entrada-p1012361/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_torre-belem",
+          "text": "Comprar entrada a la Torre ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 563
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué hacer en Lisboa cuando llueve: planes cubiertos y ruta útil"
+        },
+        {
+          "id": "seasonal-title",
+          "text": "Para los próximos meses"
+        },
+        {
+          "id": "planning-title",
+          "text": "Planea tu viaje"
+        },
+        {
+          "id": "transport-title",
+          "text": "Moverse por Lisboa"
+        },
+        {
+          "id": "barrios-title",
+          "text": "Barrios, a pie"
+        },
+        {
+          "id": "comer-title",
+          "text": "Dónde y qué comer"
+        },
+        {
+          "id": "stories-title",
+          "text": "Historias para entender Lisboa"
+        },
+        {
+          "id": "trips-title",
+          "text": "Escapadas desde Lisboa"
+        },
+        {
+          "id": "",
+          "text": "Todas las guías"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 1,
+      "affiliate": [],
+      "words": 758
+    },
+    {
+      "path": "/blog/aeropuerto-lisboa-al-centro",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/aeropuerto-lisboa-al-centro",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "metro-taxi-o-uber-bolt-que-comparar-antes-de-salir",
+          "text": "Metro, taxi o Uber/Bolt: qué comparar antes de salir"
+        },
+        {
+          "id": "metro-la-opcion-mas-facil-de-calcular",
+          "text": "Metro: la opción más fácil de calcular"
+        },
+        {
+          "id": "como-llegar-a-rossio-baixa-chiado-cais-do-sodre-y-oriente",
+          "text": "Cómo llegar a Rossio, Baixa-Chiado, Cais do Sodré y Oriente"
+        },
+        {
+          "id": "que-tarjeta-necesitas-para-el-metro",
+          "text": "Qué tarjeta necesitas para el Metro"
+        },
+        {
+          "id": "autobus-urbano-revisa-el-equipaje",
+          "text": "Autobús urbano: revisa el equipaje"
+        },
+        {
+          "id": "si-aterrizas-de-noche-cuando-el-metro-ya-ha-cerrado",
+          "text": "Si aterrizas de noche, cuando el Metro ya ha cerrado"
+        },
+        {
+          "id": "taxi-util-cuando-el-equipaje-manda",
+          "text": "Taxi: útil cuando el equipaje manda"
+        },
+        {
+          "id": "uber-y-bolt-donde-se-recogen",
+          "text": "Uber y Bolt: dónde se recogen"
+        },
+        {
+          "id": "para-la-vuelta-comprueba-si-tu-vuelo-sale-de-la-terminal-2",
+          "text": "Para la vuelta: comprueba si tu vuelo sale de la Terminal 2"
+        },
+        {
+          "id": "que-elegir-segun-tu-situacion",
+          "text": "Qué elegir según tu situación"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1333
+    },
+    {
+      "path": "/blog/alfama-historia-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/alfama-historia-guia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "que-ver-en-alfama",
+          "text": "Qué ver en Alfama"
+        },
+        {
+          "id": "ruta-a-pie-por-alfama-sin-repetir-demasiadas-cuestas",
+          "text": "Ruta a pie por Alfama sin repetir demasiadas cuestas"
+        },
+        {
+          "id": "miradores-de-alfama-santa-luzia-y-portas-do-sol",
+          "text": "Miradores de Alfama: Santa Luzia y Portas do Sol"
+        },
+        {
+          "id": "castelo-de-sao-jorge-cuando-anadirlo-a-la-ruta",
+          "text": "Castelo de São Jorge: cuándo añadirlo a la ruta"
+        },
+        {
+          "id": "como-llegar-a-alfama",
+          "text": "Cómo llegar a Alfama"
+        },
+        {
+          "id": "alfama-y-el-fado",
+          "text": "Alfama y el fado"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/alfama?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-alfama&utm_content=blog-alfama-historia-guia-free-tour-alfama",
+          "text": "Reservar free tour por Alfama ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Ver entrada al Castelo ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 947
+    },
+    {
+      "path": "/blog/arquitectura-manuelina-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/arquitectura-manuelina-lisboa",
+      "headings": [
+        {
+          "id": "que-es-el-estilo-manuelino",
+          "text": "Qué es el estilo manuelino"
+        },
+        {
+          "id": "caracteristicas-del-estilo-manuelino",
+          "text": "Características del estilo manuelino"
+        },
+        {
+          "id": "la-esfera-armilar-y-la-cruz-de-cristo-las-dos-pistas-mas-utiles",
+          "text": "La esfera armilar y la Cruz de Cristo: las dos pistas más útiles"
+        },
+        {
+          "id": "mosteiro-dos-jeronimos-el-gran-ejemplo-en-lisboa",
+          "text": "Mosteiro dos Jerónimos: el gran ejemplo en Lisboa"
+        },
+        {
+          "id": "torre-de-belem-manuelino-junto-al-tajo",
+          "text": "Torre de Belém: manuelino junto al Tajo"
+        },
+        {
+          "id": "otros-lugares-de-portugal-donde-aparece-el-manuelino",
+          "text": "Otros lugares de Portugal donde aparece el manuelino"
+        },
+        {
+          "id": "como-reconocerlo-en-menos-de-un-minuto",
+          "text": "Cómo reconocerlo en menos de un minuto"
+        },
+        {
+          "id": "una-ruta-sencilla-para-verlo-en-lisboa",
+          "text": "Una ruta sencilla para verlo en Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/belem?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-belem&utm_content=blog-arquitectura-manuelina-lisboa-free-tour-belem",
+          "text": "Reservar free tour por Belém ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1064
+    },
+    {
+      "path": "/blog/azulejos-portugueses-historia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/azulejos-portugueses-historia",
+      "headings": [
+        {
+          "id": "historia-cinco-siglos-de-arte-ceramico",
+          "text": "Historia: Cinco Siglos de Arte Cerámico"
+        },
+        {
+          "id": "el-siglo-de-oro-del-azulejo-1700-1750",
+          "text": "El Siglo de Oro del Azulejo: 1700-1750"
+        },
+        {
+          "id": "el-museo-nacional-do-azulejo-la-visita-imprescindible",
+          "text": "El Museo Nacional do Azulejo: La Visita Imprescindible"
+        },
+        {
+          "id": "los-mejores-azulejos-de-lisboa-una-ruta",
+          "text": "Los Mejores Azulejos de Lisboa: Una Ruta"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 984
+    },
+    {
+      "path": "/blog/bacalhau-plato-portugal",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/bacalhau-plato-portugal",
+      "headings": [
+        {
+          "id": "la-historia-del-atlantico-norte-a-la-mesa-portuguesa",
+          "text": "La Historia: Del Atlántico Norte a la Mesa Portuguesa"
+        },
+        {
+          "id": "las-recetas-imprescindibles",
+          "text": "Las Recetas Imprescindibles"
+        },
+        {
+          "id": "como-reconocer-el-bacalhau-de-calidad",
+          "text": "Cómo Reconocer el Bacalhau de Calidad"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 740
+    },
+    {
+      "path": "/blog/baixa-lisboa-que-ver",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/baixa-lisboa-que-ver",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "empieza-en-rossio",
+          "text": "Empieza en Rossio"
+        },
+        {
+          "id": "rua-augusta-y-el-eje-de-la-baixa",
+          "text": "Rua Augusta y el eje de la Baixa"
+        },
+        {
+          "id": "praca-do-comercio-y-el-tajo",
+          "text": "Praça do Comércio y el Tajo"
+        },
+        {
+          "id": "santa-justa-y-carmo",
+          "text": "Santa Justa y Carmo"
+        },
+        {
+          "id": "ruta-rapida-por-la-baixa",
+          "text": "Ruta rápida por la Baixa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 561
+    },
+    {
+      "path": "/blog/barrios-imprescindibles",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/barrios-imprescindibles",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "baixa-chiado-el-corazon-comercial-con-siglos-de-historia",
+          "text": "Baixa-Chiado: el corazón comercial con siglos de historia"
+        },
+        {
+          "id": "alfama-el-barrio-que-sobrevivio-al-terremoto",
+          "text": "Alfama: el barrio que sobrevivió al terremoto"
+        },
+        {
+          "id": "bairro-alto-donde-lisboa-sale-de-fiesta",
+          "text": "Bairro Alto: donde Lisboa sale de fiesta"
+        },
+        {
+          "id": "belem-monumentos-junto-al-agua",
+          "text": "Belém: monumentos junto al agua"
+        },
+        {
+          "id": "principe-real-el-barrio-que-todo-el-mundo-querria-como-vecino",
+          "text": "Príncipe Real: el barrio que todo el mundo querría como vecino"
+        },
+        {
+          "id": "como-elegir-tu-barrio-base",
+          "text": "Cómo elegir tu barrio base"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 1,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/imprescindible?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-centro&utm_content=blog-barrios-imprescindibles-free-tour-imprescindible",
+          "text": "Reservar tour por el centro ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/alfama?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-alfama&utm_content=blog-barrios-imprescindibles-free-tour-alfama",
+          "text": "Reservar free tour por Alfama ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 1588
+    },
+    {
+      "path": "/blog/belem-barrio-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/belem-barrio-guia",
+      "headings": [
+        {
+          "id": "el-mosteiro-dos-jeronimos-la-obra-maestra",
+          "text": "El Mosteiro dos Jerónimos — La Obra Maestra"
+        },
+        {
+          "id": "la-torre-de-belem-el-icono-fotografico",
+          "text": "La Torre de Belém — El Ícono Fotográfico"
+        },
+        {
+          "id": "pasteis-de-belem-la-fila-que-vale-la-pena",
+          "text": "Pastéis de Belém — La Fila que Vale la Pena"
+        },
+        {
+          "id": "el-padrao-dos-descobrimentos-y-los-museos-de-belem",
+          "text": "El Padrão dos Descobrimentos y los Museos de Belém"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 1,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_belem-barrio-guia",
+          "text": "Ver Jerónimos + Torre ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1154
+    },
+    {
+      "path": "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha",
+      "headings": [
+        {
+          "id": "donde-esta-la-casa-de-cristiano-ronaldo-en-portugal",
+          "text": "¿Dónde está la casa de Cristiano Ronaldo en Portugal?"
+        },
+        {
+          "id": "que-es-quinta-da-marinha",
+          "text": "Qué es Quinta da Marinha"
+        },
+        {
+          "id": "por-que-esta-zona-se-asocia-al-lujo-en-portugal",
+          "text": "Por qué esta zona se asocia al lujo en Portugal"
+        },
+        {
+          "id": "se-puede-visitar-quinta-da-marinha",
+          "text": "¿Se puede visitar Quinta da Marinha?"
+        },
+        {
+          "id": "que-ver-cerca-de-quinta-da-marinha",
+          "text": "Qué ver cerca de Quinta da Marinha"
+        },
+        {
+          "id": "como-llegar-desde-lisboa",
+          "text": "Cómo llegar desde Lisboa"
+        },
+        {
+          "id": "merece-la-pena-ir-solo-por-cristiano-ronaldo",
+          "text": "¿Merece la pena ir solo por Cristiano Ronaldo?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1152
+    },
+    {
+      "path": "/blog/chiado-bairro-alto-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/chiado-bairro-alto-guia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "chiado-que-ver-durante-el-dia",
+          "text": "Chiado: qué ver durante el día"
+        },
+        {
+          "id": "livraria-bertrand-la-parada-literaria-mas-clara",
+          "text": "Livraria Bertrand: la parada literaria más clara"
+        },
+        {
+          "id": "a-brasileira-y-la-memoria-de-los-cafes-del-chiado",
+          "text": "A Brasileira y la memoria de los cafés del Chiado"
+        },
+        {
+          "id": "que-mas-encaja-en-un-paseo-por-chiado",
+          "text": "Qué más encaja en un paseo por Chiado"
+        },
+        {
+          "id": "bairro-alto-que-cambia-al-subir",
+          "text": "Bairro Alto: qué cambia al subir"
+        },
+        {
+          "id": "donde-empieza-la-noche-en-lisboa",
+          "text": "Dónde empieza la noche en Lisboa"
+        },
+        {
+          "id": "miradouro-de-sao-pedro-de-alcantara",
+          "text": "Miradouro de São Pedro de Alcântara"
+        },
+        {
+          "id": "chiado-y-bairro-alto-se-pueden-ver-juntos",
+          "text": "¿Chiado y Bairro Alto se pueden ver juntos?"
+        },
+        {
+          "id": "cuanto-tiempo-dedicar",
+          "text": "Cuánto tiempo dedicar"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "la-idea-clave-para-no-perder-tiempo",
+          "text": "La idea clave para no perder tiempo"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/imprescindible?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-centro&utm_content=blog-chiado-bairro-alto-guia-free-tour-imprescindible",
+          "text": "Reservar tour por el centro ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1115
+    },
+    {
+      "path": "/blog/como-moverse-por-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/como-moverse-por-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué transporte elegir"
+        },
+        {
+          "id": "metro-rapido-para-distancias-claras",
+          "text": "Metro: rápido para distancias claras"
+        },
+        {
+          "id": "tranvias-icono-no-siempre-transporte-eficiente",
+          "text": "Tranvías: icono, no siempre transporte eficiente"
+        },
+        {
+          "id": "autobuses-menos-romanticos-muy-utiles",
+          "text": "Autobuses: menos románticos, muy útiles"
+        },
+        {
+          "id": "elevadores-y-funiculares",
+          "text": "Elevadores y funiculares"
+        },
+        {
+          "id": "trenes-urbanos-belem-sintra-y-cascais",
+          "text": "Trenes urbanos: Belém, Sintra y Cascais"
+        },
+        {
+          "id": "como-llegar-a-belem-sin-perder-media-manana",
+          "text": "Cómo llegar a Belém sin perder media mañana"
+        },
+        {
+          "id": "sintra-y-cascais-de-forma-introductoria",
+          "text": "Sintra y Cascais, de forma introductoria"
+        },
+        {
+          "id": "caminar-necesario-pero-con-estrategia",
+          "text": "Caminar: necesario, pero con estrategia"
+        },
+        {
+          "id": "tarjetas-y-sistemas-de-pago",
+          "text": "Tarjetas y sistemas de pago"
+        },
+        {
+          "id": "taxi-uber-y-bolt",
+          "text": "Taxi, Uber y Bolt"
+        },
+        {
+          "id": "accesibilidad-cochecitos-y-cuestas",
+          "text": "Accesibilidad, cochecitos y cuestas"
+        },
+        {
+          "id": "moverse-de-noche",
+          "text": "Moverse de noche"
+        },
+        {
+          "id": "errores-frecuentes",
+          "text": "Errores frecuentes"
+        },
+        {
+          "id": "conclusion",
+          "text": "Conclusión"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_como-moverse-por-lisboa",
+          "text": "Ver Lisboa Card ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 2137
+    },
+    {
+      "path": "/blog/como-moverse-por-portugal",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/como-moverse-por-portugal",
+      "headings": [
+        {
+          "id": "la-respuesta-corta-que-transporte-elegir-en-portugal",
+          "text": "La respuesta corta: qué transporte elegir en Portugal"
+        },
+        {
+          "id": "viajar-en-tren-por-portugal",
+          "text": "Viajar en tren por Portugal"
+        },
+        {
+          "id": "cuando-elegir-autobus",
+          "text": "Cuándo elegir autobús"
+        },
+        {
+          "id": "cuando-alquilar-coche-en-portugal",
+          "text": "Cuándo alquilar coche en Portugal"
+        },
+        {
+          "id": "que-elegir-en-las-rutas-mas-habituales",
+          "text": "Qué elegir en las rutas más habituales"
+        },
+        {
+          "id": "lisboa-oriente-y-santa-apolonia-no-reserves-sin-mirar-la-estacion",
+          "text": "Lisboa, Oriente y Santa Apolónia: no reserves sin mirar la estación"
+        },
+        {
+          "id": "como-comprar-mas-barato-sin-complicarte-el-viaje",
+          "text": "Cómo comprar más barato sin complicarte el viaje"
+        },
+        {
+          "id": "los-errores-que-intentaria-evitar",
+          "text": "Los errores que intentaría evitar"
+        },
+        {
+          "id": "como-organizaria-un-primer-viaje-por-portugal",
+          "text": "Cómo organizaría un primer viaje por Portugal"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1487
+    },
+    {
+      "path": "/blog/como-pagar-en-portugal",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/como-pagar-en-portugal",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "cuanto-efectivo-conviene-llevar",
+          "text": "¿Cuánto efectivo conviene llevar?"
+        },
+        {
+          "id": "donde-se-paga-con-tarjeta-y-donde-no",
+          "text": "Dónde se paga con tarjeta y dónde no"
+        },
+        {
+          "id": "debito-o-credito-que-cambia-en-la-practica",
+          "text": "Débito o crédito: qué cambia en la práctica"
+        },
+        {
+          "id": "cajeros-en-portugal-como-funcionan",
+          "text": "Cajeros en Portugal: cómo funcionan"
+        },
+        {
+          "id": "las-dos-comisiones-que-se-suelen-confundir",
+          "text": "Las dos comisiones que se suelen confundir"
+        },
+        {
+          "id": "la-pregunta-del-terminal-euros-o-tu-moneda",
+          "text": "La pregunta del terminal: ¿euros o tu moneda?"
+        },
+        {
+          "id": "pagos-sin-contacto-y-desde-el-movil",
+          "text": "Pagos sin contacto y desde el móvil"
+        },
+        {
+          "id": "enviar-y-recibir-dinero",
+          "text": "Enviar y recibir dinero"
+        },
+        {
+          "id": "cuentas-multidivisa-que-son-y-que-no-son",
+          "text": "Cuentas multidivisa: qué son y qué no son"
+        },
+        {
+          "id": "cambiar-moneda-donde-tener-cuidado",
+          "text": "Cambiar moneda: dónde tener cuidado"
+        },
+        {
+          "id": "antes-de-salir-de-casa",
+          "text": "Antes de salir de casa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 2024
+    },
+    {
+      "path": "/blog/descubrimientos-portugueses-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/descubrimientos-portugueses-lisboa",
+      "headings": [
+        {
+          "id": "el-infante-don-henrique-y-el-principio-de-todo",
+          "text": "El Infante Don Henrique y el Principio de Todo"
+        },
+        {
+          "id": "vasco-de-gama-la-ruta-que-cambio-el-comercio-mundial",
+          "text": "Vasco de Gama: La Ruta que Cambió el Comercio Mundial"
+        },
+        {
+          "id": "belem-el-barrio-que-partio-al-mundo",
+          "text": "Belém: El Barrio que Partió al Mundo"
+        },
+        {
+          "id": "el-imperio-y-su-precio",
+          "text": "El Imperio y su Precio"
+        },
+        {
+          "id": "como-recorrer-la-historia-de-los-descubrimientos-en-lisboa",
+          "text": "Cómo Recorrer la Historia de los Descubrimientos en Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1041
+    },
+    {
+      "path": "/blog/donde-alojarse-en-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/donde-alojarse-en-lisboa",
+      "headings": [
+        {
+          "id": "como-elegir-zona-sin-complicarte",
+          "text": "Cómo elegir zona sin complicarte"
+        },
+        {
+          "id": "baixa-practica-para-una-primera-visita",
+          "text": "Baixa: práctica para una primera visita"
+        },
+        {
+          "id": "chiado-centrico-bonito-y-algo-mas-elegante",
+          "text": "Chiado: céntrico, bonito y algo más elegante"
+        },
+        {
+          "id": "alfama-mucho-encanto-poca-comodidad",
+          "text": "Alfama: mucho encanto, poca comodidad"
+        },
+        {
+          "id": "graca-vistas-y-barrio-con-cuestas-serias",
+          "text": "Graça: vistas y barrio, con cuestas serias"
+        },
+        {
+          "id": "avenida-da-liberdade-y-marques-de-pombal",
+          "text": "Avenida da Liberdade y Marquês de Pombal"
+        },
+        {
+          "id": "bairro-alto-y-principe-real",
+          "text": "Bairro Alto y Príncipe Real"
+        },
+        {
+          "id": "saldanha-y-parque-das-nacoes",
+          "text": "Saldanha y Parque das Nações"
+        },
+        {
+          "id": "intendente-y-mouraria-centricos-y-con-otro-ritmo",
+          "text": "Intendente y Mouraria: céntricos y con otro ritmo"
+        },
+        {
+          "id": "belem-monumentos-y-paseo-junto-al-rio",
+          "text": "Belém: monumentos y paseo junto al río"
+        },
+        {
+          "id": "conexion-con-aeropuerto-y-transporte",
+          "text": "Conexión con aeropuerto y transporte"
+        },
+        {
+          "id": "zonas-que-pueden-resultar-incomodas",
+          "text": "Zonas que pueden resultar incómodas"
+        },
+        {
+          "id": "recomendacion-final-segun-tu-viaje",
+          "text": "Recomendación final según tu viaje"
+        },
+        {
+          "id": "conclusion",
+          "text": "Conclusión"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1882
+    },
+    {
+      "path": "/blog/donde-comer-barato-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/donde-comer-barato-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "tasca-do-tretas-en-alameda-menu-sencillo-y-precios-bajos",
+          "text": "Tasca do Tretas, en Alameda: menú sencillo y precios bajos"
+        },
+        {
+          "id": "maca-verde-junto-a-santa-apolonia-platos-portugueses-con-precio-publicado-en-2026",
+          "text": "Maçã Verde, junto a Santa Apolónia: platos portugueses con precio publicado en 2026"
+        },
+        {
+          "id": "tasca-do-carlos-en-graca-otra-opcion-por-debajo-de-10-publicada-en-2026",
+          "text": "Tasca do Carlos, en Graça: otra opción por debajo de 10 € publicada en 2026"
+        },
+        {
+          "id": "mama-shelter-un-menu-de-almuerzo-con-precio-publicado-por-el-propio-restaurante",
+          "text": "Mama Shelter: un menú de almuerzo con precio publicado por el propio restaurante"
+        },
+        {
+          "id": "mercado-de-arroios-util-si-quieres-varias-opciones-en-la-misma-zona",
+          "text": "Mercado de Arroios: útil si quieres varias opciones en la misma zona"
+        },
+        {
+          "id": "como-encontrar-un-almuerzo-barato-sin-depender-de-una-lista",
+          "text": "Cómo encontrar un almuerzo barato sin depender de una lista"
+        },
+        {
+          "id": "couvert-y-precios-que-pueden-cobrarte",
+          "text": "Couvert y precios: qué pueden cobrarte"
+        },
+        {
+          "id": "que-opcion-elegir-segun-donde-estes",
+          "text": "Qué opción elegir según dónde estés"
+        },
+        {
+          "id": "una-ultima-comprobacion-antes-de-ir",
+          "text": "Una última comprobación antes de ir"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1295
+    },
+    {
+      "path": "/blog/donde-escuchar-fado-autentico",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/donde-escuchar-fado-autentico",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "que-significa-buscar-fado-autentico-en-lisboa",
+          "text": "Qué significa buscar «fado auténtico» en Lisboa"
+        },
+        {
+          "id": "tres-formatos-para-escuchar-fado",
+          "text": "Tres formatos para escuchar fado"
+        },
+        {
+          "id": "alfama-casas-de-fado-y-museu-do-fado",
+          "text": "Alfama: casas de fado y Museu do Fado"
+        },
+        {
+          "id": "mouraria-contexto-historico-del-fado",
+          "text": "Mouraria: contexto histórico del fado"
+        },
+        {
+          "id": "bairro-alto-y-chiado-opciones-centricas",
+          "text": "Bairro Alto y Chiado: opciones céntricas"
+        },
+        {
+          "id": "lugares-con-referencia-oficial-para-empezar-a-comparar",
+          "text": "Lugares con referencia oficial para empezar a comparar"
+        },
+        {
+          "id": "que-comprobar-antes-de-reservar",
+          "text": "Qué comprobar antes de reservar"
+        },
+        {
+          "id": "como-comportarse-durante-el-fado",
+          "text": "Cómo comportarse durante el fado"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/8aL5dndR",
+          "text": "Reservar espectáculo de fado ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 850
+    },
+    {
+      "path": "/blog/donde-fotografiar-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/donde-fotografiar-lisboa",
+      "headings": [
+        {
+          "id": "que-se-fotografia-en-cada-zona",
+          "text": "Qué se fotografía en cada zona"
+        },
+        {
+          "id": "donde-fotografiar-lisboa-al-amanecer",
+          "text": "Dónde fotografiar Lisboa al amanecer"
+        },
+        {
+          "id": "donde-fotografiar-al-atardecer-y-en-la-hora-azul",
+          "text": "Dónde fotografiar al atardecer y en la hora azul"
+        },
+        {
+          "id": "lisboa-de-noche",
+          "text": "Lisboa de noche"
+        },
+        {
+          "id": "fotografiar-tranvias-sin-estorbar",
+          "text": "Fotografiar tranvías sin estorbar"
+        },
+        {
+          "id": "que-llevar-y-que-no-hace-falta",
+          "text": "Qué llevar y qué no hace falta"
+        },
+        {
+          "id": "como-agrupar-los-sitios-por-zonas",
+          "text": "Cómo agrupar los sitios por zonas"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1948
+    },
+    {
+      "path": "/blog/donde-tomar-cafe-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/donde-tomar-cafe-lisboa",
+      "headings": [
+        {
+          "id": "que-pedir-bica-y-galao",
+          "text": "Qué pedir: bica y galão"
+        },
+        {
+          "id": "a-brasileira-si-te-interesa-la-historia-del-cafe-en-lisboa",
+          "text": "A Brasileira: si te interesa la historia del café en Lisboa"
+        },
+        {
+          "id": "fabrica-coffee-roasters-si-buscas-cafe-de-especialidad",
+          "text": "Fábrica Coffee Roasters: si buscas café de especialidad"
+        },
+        {
+          "id": "y-si-solo-quieres-sentarte-en-una-cafeteria-portuguesa",
+          "text": "Y si solo quieres sentarte en una cafetería portuguesa"
+        },
+        {
+          "id": "que-elegir-segun-lo-que-buscas",
+          "text": "Qué elegir según lo que buscas"
+        },
+        {
+          "id": "la-diferencia-importante-no-es-solo-el-cafe",
+          "text": "La diferencia importante no es solo el café"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 747
+    },
+    {
+      "path": "/blog/errores-turistas-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/errores-turistas-lisboa",
+      "headings": [
+        {
+          "id": "1-organizar-el-dia-por-atracciones-y-no-por-zonas",
+          "text": "1. Organizar el día por atracciones y no por zonas"
+        },
+        {
+          "id": "2-subestimar-las-cuestas-y-la-calcada-portuguesa",
+          "text": "2. Subestimar las cuestas y la calçada portuguesa"
+        },
+        {
+          "id": "3-construir-el-itinerario-alrededor-del-tranvia-28e",
+          "text": "3. Construir el itinerario alrededor del tranvía 28E"
+        },
+        {
+          "id": "4-comprar-el-primer-billete-de-transporte-que-ves",
+          "text": "4. Comprar el primer billete de transporte que ves"
+        },
+        {
+          "id": "5-comprar-la-lisboa-card-sin-comparar-tu-itinerario",
+          "text": "5. Comprar la Lisboa Card sin comparar tu itinerario"
+        },
+        {
+          "id": "6-asumir-que-todos-los-museos-y-monumentos-tienen-el-mismo-horario",
+          "text": "6. Asumir que todos los museos y monumentos tienen el mismo horario"
+        },
+        {
+          "id": "7-reservar-sintra-con-margenes-demasiado-pequenos",
+          "text": "7. Reservar Sintra con márgenes demasiado pequeños"
+        },
+        {
+          "id": "8-intentar-hacer-sintra-y-cascais-como-dos-viajes-completos-el-mismo-dia",
+          "text": "8. Intentar hacer Sintra y Cascais como dos viajes completos el mismo día"
+        },
+        {
+          "id": "9-elegir-el-traslado-del-aeropuerto-solo-por-el-precio",
+          "text": "9. Elegir el traslado del aeropuerto solo por el precio"
+        },
+        {
+          "id": "10-reservar-alojamiento-mirando-solo-la-distancia-en-kilometros",
+          "text": "10. Reservar alojamiento mirando solo la distancia en kilómetros"
+        },
+        {
+          "id": "11-elegir-donde-comer-unicamente-por-estar-en-una-plaza-famosa",
+          "text": "11. Elegir dónde comer únicamente por estar en una plaza famosa"
+        },
+        {
+          "id": "12-depender-de-una-sola-forma-de-pago",
+          "text": "12. Depender de una sola forma de pago"
+        },
+        {
+          "id": "13-llenar-cada-hora-con-una-reserva",
+          "text": "13. Llenar cada hora con una reserva"
+        },
+        {
+          "id": "14-no-tener-plan-b-para-lluvia",
+          "text": "14. No tener plan B para lluvia"
+        },
+        {
+          "id": "15-confundir-ver-mucho-con-aprovechar-el-viaje",
+          "text": "15. Confundir “ver mucho” con aprovechar el viaje"
+        },
+        {
+          "id": "la-regla-que-resume-los-quince",
+          "text": "La regla que resume los quince"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1389
+    },
+    {
+      "path": "/blog/estacion-olaias-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/estacion-olaias-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "que-tiene-de-especial-la-estacion-de-olaias",
+          "text": "Qué tiene de especial la estación de Olaias"
+        },
+        {
+          "id": "arquitectura-y-arte-quien-hizo-que",
+          "text": "Arquitectura y arte: quién hizo qué"
+        },
+        {
+          "id": "como-visitarla-y-fotografiarla",
+          "text": "Cómo visitarla y fotografiarla"
+        },
+        {
+          "id": "que-combinar-con-la-visita",
+          "text": "Qué combinar con la visita"
+        },
+        {
+          "id": "merece-la-pena-desviarse",
+          "text": "¿Merece la pena desviarse?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 958
+    },
+    {
+      "path": "/blog/estacion-oriente-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/estacion-oriente-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "como-usar-el-intercambiador-sin-perder-tiempo",
+          "text": "Cómo usar el intercambiador sin perder tiempo"
+        },
+        {
+          "id": "que-es-la-estacion-de-oriente",
+          "text": "Qué es la estación de Oriente"
+        },
+        {
+          "id": "la-arquitectura-de-santiago-calatrava",
+          "text": "La arquitectura de Santiago Calatrava"
+        },
+        {
+          "id": "que-ver-alrededor-de-la-estacion",
+          "text": "Qué ver alrededor de la estación"
+        },
+        {
+          "id": "merece-la-pena-aunque-no-tomes-un-tren",
+          "text": "¿Merece la pena aunque no tomes un tren?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1347
+    },
+    {
+      "path": "/blog/excursiones-desde-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/excursiones-desde-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "1-sintra-la-que-hay-que-hacer-si-o-si",
+          "text": "1. Sintra: la que hay que hacer sí o sí"
+        },
+        {
+          "id": "2-cascais-medio-dia-que-sabe-a-mas",
+          "text": "2. Cascais: medio día que sabe a más"
+        },
+        {
+          "id": "3-cabo-da-roca-el-punto-mas-occidental-de-europa",
+          "text": "3. Cabo da Roca: el punto más occidental de Europa"
+        },
+        {
+          "id": "4-obidos-un-pueblo-medieval-entero",
+          "text": "4. Óbidos: un pueblo medieval entero"
+        },
+        {
+          "id": "5-nazare-el-pueblo-de-las-olas-gigantes",
+          "text": "5. Nazaré: el pueblo de las olas gigantes"
+        },
+        {
+          "id": "6-evora-la-parada-romana-y-medieval",
+          "text": "6. Évora: la parada romana y medieval"
+        },
+        {
+          "id": "7-arrabida-el-agua-turquesa-que-nadie-espera-en-portugal",
+          "text": "7. Arrábida: el agua turquesa que nadie espera en Portugal"
+        },
+        {
+          "id": "cuales-se-pueden-combinar-y-cuales-no",
+          "text": "Cuáles se pueden combinar y cuáles no"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Reservar excursión a Sintra ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1721
+    },
+    {
+      "path": "/blog/fado-historia-origen",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/fado-historia-origen",
+      "headings": [
+        {
+          "id": "",
+          "text": "En 30 segundos"
+        },
+        {
+          "id": "que-significa-la-palabra-fado",
+          "text": "Qué significa la palabra fado"
+        },
+        {
+          "id": "cual-es-el-origen-del-fado",
+          "text": "Cuál es el origen del fado"
+        },
+        {
+          "id": "mouraria-alfama-y-la-lisboa-popular",
+          "text": "Mouraria, Alfama y la Lisboa popular"
+        },
+        {
+          "id": "como-suena-voz-guitarra-portuguesa-y-guitarra",
+          "text": "Cómo suena: voz, guitarra portuguesa y guitarra"
+        },
+        {
+          "id": "maria-severa-entre-historia-y-mito",
+          "text": "Maria Severa: entre historia y mito"
+        },
+        {
+          "id": "amalia-rodrigues-y-la-internacionalizacion",
+          "text": "Amália Rodrigues y la internacionalización"
+        },
+        {
+          "id": "por-que-el-fado-es-patrimonio-de-la-humanidad",
+          "text": "Por qué el fado es Patrimonio de la Humanidad"
+        },
+        {
+          "id": "fado-significa-saudade",
+          "text": "¿Fado significa saudade?"
+        },
+        {
+          "id": "donde-escucharlo-hoy-en-lisboa",
+          "text": "Dónde escucharlo hoy en Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1051
+    },
+    {
+      "path": "/blog/festivales-eventos-lisboa-2026",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/festivales-eventos-lisboa-2026",
+      "headings": [
+        {
+          "id": "enero-marzo-cultura-y-carnaval",
+          "text": "Enero - Marzo: Cultura y Carnaval"
+        },
+        {
+          "id": "abril-mayo-primavera-y-el-25-de-abril",
+          "text": "Abril - Mayo: Primavera y el 25 de Abril"
+        },
+        {
+          "id": "junio-las-festas-de-lisboa-y-santo-antonio",
+          "text": "Junio: Las Festas de Lisboa y Santo António"
+        },
+        {
+          "id": "julio-agosto-festivales-de-musica",
+          "text": "Julio - Agosto: Festivales de Música"
+        },
+        {
+          "id": "septiembre-diciembre-otono-cultural",
+          "text": "Septiembre - Diciembre: Otoño Cultural"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1002
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/gastronomia-portuguesa-guia",
+      "headings": [
+        {
+          "id": "los-imprescindibles-empieza-por-aqui",
+          "text": "Los Imprescindibles — Empieza por Aquí"
+        },
+        {
+          "id": "pescados-y-mariscos-la-despensa-del-atlantico",
+          "text": "Pescados y Mariscos — La Despensa del Atlántico"
+        },
+        {
+          "id": "carne-y-embutidos",
+          "text": "Carne y Embutidos"
+        },
+        {
+          "id": "dulces-y-pasteleria-el-legado-conventual",
+          "text": "Dulces y Pastelería — El Legado Conventual"
+        },
+        {
+          "id": "donde-comer-bien-en-lisboa-por-tipo-de-plato",
+          "text": "Dónde Comer Bien en Lisboa — Por Tipo de Plato"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 897
+    },
+    {
+      "path": "/blog/graca-lisboa-que-ver",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/graca-lisboa-que-ver",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "miradouro-da-graca",
+          "text": "Miradouro da Graça"
+        },
+        {
+          "id": "senhora-do-monte",
+          "text": "Senhora do Monte"
+        },
+        {
+          "id": "una-ruta-sencilla-para-no-repetir-cuestas",
+          "text": "Una ruta sencilla para no repetir cuestas"
+        },
+        {
+          "id": "merece-la-pena-subir-en-el-tranvia-28",
+          "text": "¿Merece la pena subir en el tranvía 28?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 487
+    },
+    {
+      "path": "/blog/historia-de-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/historia-de-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "En 30 segundos"
+        },
+        {
+          "id": "antes-de-roma-una-ciudad-con-pasado-pero-sin-una-fundacion-simple",
+          "text": "Antes de Roma: una ciudad con pasado, pero sin una fundación simple"
+        },
+        {
+          "id": "olisipo-la-lisboa-romana-que-todavia-aparece-bajo-el-centro",
+          "text": "Olisipo: la Lisboa romana que todavía aparece bajo el centro"
+        },
+        {
+          "id": "la-lisboa-islamica-y-la-forma-de-la-ciudad-medieval",
+          "text": "La Lisboa islámica y la forma de la ciudad medieval"
+        },
+        {
+          "id": "1147-la-conquista-que-cambio-el-poder-de-la-ciudad",
+          "text": "1147: la conquista que cambió el poder de la ciudad"
+        },
+        {
+          "id": "siglos-xv-y-xvi-lisboa-como-puerto-de-una-red-imperial",
+          "text": "Siglos XV y XVI: Lisboa como puerto de una red imperial"
+        },
+        {
+          "id": "1755-el-momento-en-que-la-ciudad-tuvo-que-redisenarse",
+          "text": "1755: el momento en que la ciudad tuvo que rediseñarse"
+        },
+        {
+          "id": "del-siglo-xix-al-estado-novo-una-capital-que-vuelve-a-expandirse",
+          "text": "Del siglo XIX al Estado Novo: una capital que vuelve a expandirse"
+        },
+        {
+          "id": "25-de-abril-de-1974-lisboa-como-escenario-de-la-revolucion",
+          "text": "25 de abril de 1974: Lisboa como escenario de la revolución"
+        },
+        {
+          "id": "1986-y-expo-98-como-aparece-la-lisboa-contemporanea",
+          "text": "1986 y Expo 98: cómo aparece la Lisboa contemporánea"
+        },
+        {
+          "id": "como-leer-la-historia-de-lisboa-mientras-caminas",
+          "text": "Cómo leer la historia de Lisboa mientras caminas"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1679
+    },
+    {
+      "path": "/blog/lisboa-card-vale-la-pena",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-card-vale-la-pena",
+      "headings": [
+        {
+          "id": "que-es-la-lisboa-card",
+          "text": "Qué es la Lisboa Card"
+        },
+        {
+          "id": "que-suele-incluir",
+          "text": "Qué suele incluir"
+        },
+        {
+          "id": "cuando-puede-compensar",
+          "text": "Cuándo puede compensar"
+        },
+        {
+          "id": "cuando-probablemente-no-compensa",
+          "text": "Cuándo probablemente no compensa"
+        },
+        {
+          "id": "ejemplo-practico-dia-intenso",
+          "text": "Ejemplo práctico: día intenso"
+        },
+        {
+          "id": "ejemplo-practico-viaje-tranquilo",
+          "text": "Ejemplo práctico: viaje tranquilo"
+        },
+        {
+          "id": "comprar-tarjeta-o-pagar-por-separado",
+          "text": "Comprar tarjeta o pagar por separado"
+        },
+        {
+          "id": "como-calcularlo-en-cinco-minutos",
+          "text": "Cómo calcularlo en cinco minutos"
+        },
+        {
+          "id": "reservas-cupos-y-tarjeta-fisica",
+          "text": "Reservas, cupos y tarjeta física"
+        },
+        {
+          "id": "errores-al-usar-la-lisboa-card",
+          "text": "Errores al usar la Lisboa Card"
+        },
+        {
+          "id": "alternativas-gratuitas-o-de-bajo-coste",
+          "text": "Alternativas gratuitas o de bajo coste"
+        },
+        {
+          "id": "advertencia-antes-de-comprar",
+          "text": "Advertencia antes de comprar"
+        },
+        {
+          "id": "conclusion",
+          "text": "Conclusión"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_lisboa-card-vale-la-pena",
+          "text": "Ver Lisboa Card ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1834
+    },
+    {
+      "path": "/blog/lisboa-con-ninos",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-con-ninos",
+      "headings": [
+        {
+          "id": "que-hacer-en-lisboa-con-ninos",
+          "text": "Qué hacer en Lisboa con niños"
+        },
+        {
+          "id": "lisboa-con-carrito-de-bebe",
+          "text": "Lisboa con carrito de bebé"
+        },
+        {
+          "id": "como-moverse-por-lisboa-con-ninos",
+          "text": "Cómo moverse por Lisboa con niños"
+        },
+        {
+          "id": "planes-segun-la-edad",
+          "text": "Planes según la edad"
+        },
+        {
+          "id": "que-hacer-si-llueve",
+          "text": "Qué hacer si llueve"
+        },
+        {
+          "id": "planes-gratis-o-baratos-en-familia",
+          "text": "Planes gratis o baratos en familia"
+        },
+        {
+          "id": "cuantos-dias-hacen-falta",
+          "text": "Cuántos días hacen falta"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1852
+    },
+    {
+      "path": "/blog/lisboa-cuando-llueve",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-cuando-llueve",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "oceanario-y-parque-das-nacoes",
+          "text": "Oceanário y Parque das Nações"
+        },
+        {
+          "id": "museos-elige-uno-por-zona",
+          "text": "Museos: elige uno por zona"
+        },
+        {
+          "id": "mercados-y-comida-sin-depender-del-clima",
+          "text": "Mercados y comida sin depender del clima"
+        },
+        {
+          "id": "cafes-y-pastelerias-usa-la-lluvia-como-pausa",
+          "text": "Cafés y pastelerías: usa la lluvia como pausa"
+        },
+        {
+          "id": "una-estrategia-simple-para-reorganizar-el-dia",
+          "text": "Una estrategia simple para reorganizar el día"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 654
+    },
+    {
+      "path": "/blog/lisboa-en-4-dias",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-4-dias",
+      "headings": [
+        {
+          "id": "",
+          "text": "Cuatro días de un vistazo"
+        },
+        {
+          "id": "dia-1-baixa-chiado-y-alfama",
+          "text": "Día 1: Baixa, Chiado y Alfama"
+        },
+        {
+          "id": "dia-2-belem-y-el-oeste-de-lisboa",
+          "text": "Día 2: Belém y el oeste de Lisboa"
+        },
+        {
+          "id": "dia-3-sintra-sin-intentar-verlo-todo",
+          "text": "Día 3: Sintra sin intentar verlo todo"
+        },
+        {
+          "id": "dia-4-graca-y-parque-das-nacoes",
+          "text": "Día 4: Graça y Parque das Nações"
+        },
+        {
+          "id": "como-adaptar-la-ruta-si-llueve-o-vas-mas-lento",
+          "text": "Cómo adaptar la ruta si llueve o vas más lento"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_lisboa-en-4-dias",
+          "text": "Ver entrada a los Jerónimos ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 779
+    },
+    {
+      "path": "/blog/lisboa-en-5-dias",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-5-dias",
+      "headings": [
+        {
+          "id": "",
+          "text": "Cinco días de un vistazo"
+        },
+        {
+          "id": "dia-1-baixa-chiado-y-alfama",
+          "text": "Día 1: Baixa, Chiado y Alfama"
+        },
+        {
+          "id": "dia-2-belem-y-el-tajo",
+          "text": "Día 2: Belém y el Tajo"
+        },
+        {
+          "id": "dia-3-graca-mouraria-y-miradores",
+          "text": "Día 3: Graça, Mouraria y miradores"
+        },
+        {
+          "id": "dia-4-parque-das-nacoes",
+          "text": "Día 4: Parque das Nações"
+        },
+        {
+          "id": "dia-5-sintra",
+          "text": "Día 5: Sintra"
+        },
+        {
+          "id": "si-llueve-cambia-el-orden-no-el-viaje",
+          "text": "Si llueve, cambia el orden, no el viaje"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_lisboa-en-5-dias",
+          "text": "Ver Jerónimos + Torre ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 671
+    },
+    {
+      "path": "/blog/lisboa-en-7-dias",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-7-dias",
+      "headings": [
+        {
+          "id": "",
+          "text": "Una semana de un vistazo"
+        },
+        {
+          "id": "que-cambia-de-verdad-cuando-tienes-siete-dias",
+          "text": "Qué cambia de verdad cuando tienes siete días"
+        },
+        {
+          "id": "la-estructura-que-funciona-tres-bloques",
+          "text": "La estructura que funciona: tres bloques"
+        },
+        {
+          "id": "un-reparto-que-funciona",
+          "text": "Un reparto que funciona"
+        },
+        {
+          "id": "las-escapadas-cuantas-caben-y-cual-elegir",
+          "text": "Las escapadas: cuántas caben y cuál elegir"
+        },
+        {
+          "id": "lo-que-solo-cabe-en-una-semana",
+          "text": "Lo que sólo cabe en una semana"
+        },
+        {
+          "id": "los-tres-errores-de-planificar-siete-dias",
+          "text": "Los tres errores de planificar siete días"
+        },
+        {
+          "id": "alojamiento-transporte-y-presupuesto-para-una-semana",
+          "text": "Alojamiento, transporte y presupuesto para una semana"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_lisboa-en-7-dias",
+          "text": "Ver Jerónimos + Torre ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_lisboa-en-7-dias",
+          "text": "Ver entrada a Pena ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 2284
+    },
+    {
+      "path": "/blog/lisboa-en-navidad",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-navidad",
+      "headings": [
+        {
+          "id": "una-tarde-de-diciembre-rossio-luces-y-praca-do-comercio",
+          "text": "Una tarde de diciembre: Rossio, luces y Praça do Comércio"
+        },
+        {
+          "id": "las-luces-de-navidad",
+          "text": "Las luces de Navidad"
+        },
+        {
+          "id": "mercados-de-navidad",
+          "text": "Mercados de Navidad"
+        },
+        {
+          "id": "wonderland-lisboa",
+          "text": "Wonderland Lisboa"
+        },
+        {
+          "id": "excursion-obidos-vila-natal",
+          "text": "Excursión: Óbidos Vila Natal"
+        },
+        {
+          "id": "que-comer-bolo-rei-y-otros-dulces-de-navidad",
+          "text": "Qué comer: bolo-rei y otros dulces de Navidad"
+        },
+        {
+          "id": "que-abre-el-24-el-25-el-31-y-el-1-de-enero",
+          "text": "Qué abre el 24, el 25, el 31 y el 1 de enero"
+        },
+        {
+          "id": "nochevieja-en-la-praca-do-comercio",
+          "text": "Nochevieja en la Praça do Comércio"
+        },
+        {
+          "id": "tiempo-en-diciembre-y-que-llevar",
+          "text": "Tiempo en diciembre y qué llevar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/imprescindible?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-centro&utm_content=blog-lisboa-en-navidad-free-tour-imprescindible-arriba",
+          "text": "Reservar tour por el centro ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 2553
+    },
+    {
+      "path": "/blog/lisboa-en-pareja",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-pareja",
+      "headings": [
+        {
+          "id": "que-hacer-en-lisboa-en-pareja",
+          "text": "Qué hacer en Lisboa en pareja"
+        },
+        {
+          "id": "planes-segun-el-momento-del-dia",
+          "text": "Planes según el momento del día"
+        },
+        {
+          "id": "planes-baratos-o-gratis-para-dos",
+          "text": "Planes baratos o gratis para dos"
+        },
+        {
+          "id": "lisboa-en-pareja-si-llueve",
+          "text": "Lisboa en pareja si llueve"
+        },
+        {
+          "id": "donde-cenar",
+          "text": "Dónde cenar"
+        },
+        {
+          "id": "cuantos-dias-hacen-falta",
+          "text": "Cuántos días hacen falta"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1704
+    },
+    {
+      "path": "/blog/lisboa-vs-porto",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-vs-porto",
+      "headings": [
+        {
+          "id": "lisboa-o-porto-respuesta-rapida",
+          "text": "Lisboa o Porto: respuesta rápida"
+        },
+        {
+          "id": "que-cambia-realmente-entre-lisboa-y-porto",
+          "text": "Qué cambia realmente entre Lisboa y Porto"
+        },
+        {
+          "id": "que-ver-en-lisboa",
+          "text": "Qué ver en Lisboa"
+        },
+        {
+          "id": "que-ver-en-porto",
+          "text": "Qué ver en Porto"
+        },
+        {
+          "id": "cual-necesita-mas-dias",
+          "text": "Cuál necesita más días"
+        },
+        {
+          "id": "excursiones-una-diferencia-importante",
+          "text": "Excursiones: una diferencia importante"
+        },
+        {
+          "id": "gastronomia-no-se-reduce-a-pasteis-contra-francesinha",
+          "text": "Gastronomía: no se reduce a pastéis contra francesinha"
+        },
+        {
+          "id": "clima-y-epoca-del-viaje",
+          "text": "Clima y época del viaje"
+        },
+        {
+          "id": "cual-es-mas-barata",
+          "text": "¿Cuál es más barata?"
+        },
+        {
+          "id": "entonces-lisboa-o-porto-para-una-primera-vez",
+          "text": "Entonces, ¿Lisboa o Porto para una primera vez?"
+        },
+        {
+          "id": "como-combinar-lisboa-y-porto",
+          "text": "Cómo combinar Lisboa y Porto"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1055
+    },
+    {
+      "path": "/blog/mejor-epoca-visitar-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/mejor-epoca-visitar-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "que-dicen-los-datos-oficiales-del-clima-de-lisboa",
+          "text": "Qué dicen los datos oficiales del clima de Lisboa"
+        },
+        {
+          "id": "mayo-y-septiembre-el-equilibrio-mas-facil-para-caminar",
+          "text": "Mayo y septiembre: el equilibrio más fácil para caminar"
+        },
+        {
+          "id": "junio-clima-seco-y-una-lisboa-distinta-por-las-fiestas",
+          "text": "Junio: clima seco y una Lisboa distinta por las fiestas"
+        },
+        {
+          "id": "julio-y-agosto-los-mas-secos-pero-tambien-los-mas-calurosos",
+          "text": "Julio y agosto: los más secos, pero también los más calurosos"
+        },
+        {
+          "id": "octubre-y-noviembre-baja-la-temperatura-y-sube-claramente-la-lluvia",
+          "text": "Octubre y noviembre: baja la temperatura y sube claramente la lluvia"
+        },
+        {
+          "id": "diciembre-enero-y-febrero-invierno-suave-no-significa-invierno-seco",
+          "text": "Diciembre, enero y febrero: invierno suave no significa invierno seco"
+        },
+        {
+          "id": "marzo-y-abril-primavera-temprana-con-mas-incertidumbre",
+          "text": "Marzo y abril: primavera temprana con más incertidumbre"
+        },
+        {
+          "id": "que-mes-elegir-segun-el-viaje-que-quieres",
+          "text": "Qué mes elegir según el viaje que quieres"
+        },
+        {
+          "id": "clima-no-es-lo-mismo-que-prevision",
+          "text": "Clima no es lo mismo que previsión"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1335
+    },
+    {
+      "path": "/blog/mejores-apps-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/mejores-apps-lisboa",
+      "headings": [
+        {
+          "id": "para-el-transporte-una-que-las-une-y-dos-oficiales",
+          "text": "Para el transporte: una que las une y dos oficiales"
+        },
+        {
+          "id": "google-maps-pero-descargando-el-mapa-antes-de-salir",
+          "text": "Google Maps, pero descargando el mapa antes de salir"
+        },
+        {
+          "id": "bolt-y-uber-y-la-que-ya-no-existe-en-portugal",
+          "text": "Bolt y Uber, y la que ya no existe en Portugal"
+        },
+        {
+          "id": "para-comer-reservar-y-si-no-te-apetece-salir-pedir",
+          "text": "Para comer: reservar y, si no te apetece salir, pedir"
+        },
+        {
+          "id": "dinero-para-no-perder-en-cada-pago",
+          "text": "Dinero: para no perder en cada pago"
+        },
+        {
+          "id": "google-translate-con-una-funcion-concreta",
+          "text": "Google Translate, con una función concreta"
+        },
+        {
+          "id": "las-que-puedes-ahorrarte",
+          "text": "Las que puedes ahorrarte"
+        },
+        {
+          "id": "en-resumen",
+          "text": "En resumen"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1079
+    },
+    {
+      "path": "/blog/mejores-mercados-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/mejores-mercados-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué mercado elegir"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "1-mercado-da-ribeira-y-time-out-market",
+          "text": "1. Mercado da Ribeira y Time Out Market"
+        },
+        {
+          "id": "2-mercado-de-campo-de-ourique",
+          "text": "2. Mercado de Campo de Ourique"
+        },
+        {
+          "id": "3-feira-da-ladra",
+          "text": "3. Feira da Ladra"
+        },
+        {
+          "id": "4-mercado-de-arroios",
+          "text": "4. Mercado de Arroios"
+        },
+        {
+          "id": "5-feira-do-relogio",
+          "text": "5. Feira do Relógio"
+        },
+        {
+          "id": "que-mercado-de-lisboa-elegir",
+          "text": "Qué mercado de Lisboa elegir"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 731
+    },
+    {
+      "path": "/blog/mejores-miradores-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/mejores-miradores-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Qué mirador elegir"
+        },
+        {
+          "id": "senhora-do-monte-la-panoramica-mas-abierta-de-esta-ruta",
+          "text": "Senhora do Monte: la panorámica más abierta de esta ruta"
+        },
+        {
+          "id": "miradouro-da-graca-vista-y-una-pausa-mas-comoda",
+          "text": "Miradouro da Graça: vista y una pausa más cómoda"
+        },
+        {
+          "id": "santa-luzia-alfama-azulejos-y-el-tajo",
+          "text": "Santa Luzia: Alfama, azulejos y el Tajo"
+        },
+        {
+          "id": "portas-do-sol-la-postal-clasica-de-alfama",
+          "text": "Portas do Sol: la postal clásica de Alfama"
+        },
+        {
+          "id": "sao-pedro-de-alcantara-la-ciudad-desde-el-lado-opuesto",
+          "text": "São Pedro de Alcântara: la ciudad desde el lado opuesto"
+        },
+        {
+          "id": "santa-catarina-tajo-puente-y-ambiente-al-final-del-dia",
+          "text": "Santa Catarina: Tajo, puente y ambiente al final del día"
+        },
+        {
+          "id": "como-combinar-los-miradores-sin-repetir-cuestas",
+          "text": "Cómo combinar los miradores sin repetir cuestas"
+        },
+        {
+          "id": "hay-que-pagar-para-tener-buenas-vistas",
+          "text": "¿Hay que pagar para tener buenas vistas?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 847
+    },
+    {
+      "path": "/blog/metro-lisboa-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "mapa-del-metro-de-lisboa-plano-oficial-actualizado",
+          "text": "Mapa del Metro de Lisboa: plano oficial actualizado"
+        },
+        {
+          "id": "a-que-hora-abre-y-cierra-el-metro-de-lisboa",
+          "text": "¿A qué hora abre y cierra el Metro de Lisboa?"
+        },
+        {
+          "id": "las-cuatro-lineas",
+          "text": "Las cuatro líneas"
+        },
+        {
+          "id": "precios-2026",
+          "text": "Precios 2026"
+        },
+        {
+          "id": "aeropuerto-y-oriente",
+          "text": "Aeropuerto y Oriente"
+        },
+        {
+          "id": "errores-faciles-de-evitar",
+          "text": "Errores fáciles de evitar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 742
+    },
+    {
+      "path": "/blog/monasterio-jeronimos-entradas",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/monasterio-jeronimos-entradas",
+      "headings": [
+        {
+          "id": "la-iglesia-es-gratis-el-claustro-se-paga",
+          "text": "La iglesia es gratis; el claustro se paga"
+        },
+        {
+          "id": "precios-2026",
+          "text": "Precios 2026"
+        },
+        {
+          "id": "donde-comprar-la-entrada",
+          "text": "Dónde comprar la entrada"
+        },
+        {
+          "id": "horarios-y-cierres",
+          "text": "Horarios y cierres"
+        },
+        {
+          "id": "como-reducir-la-espera",
+          "text": "Cómo reducir la espera"
+        },
+        {
+          "id": "como-llegar-en-tren-desde-cais-do-sodre",
+          "text": "Cómo llegar: en tren desde Cais do Sodré"
+        },
+        {
+          "id": "jeronimos-torre-de-belem-y-pasteis-de-belem-en-una-manana",
+          "text": "Jerónimos, Torre de Belém y Pastéis de Belém en una mañana"
+        },
+        {
+          "id": "que-ves-con-cada-entrada",
+          "text": "Qué ves con cada entrada"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 1,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas",
+          "text": "Ver entrada a los Jerónimos ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_monasterio-jeronimos-entradas",
+          "text": "Ver Jerónimos + Torre ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 2419
+    },
+    {
+      "path": "/blog/monumentos-de-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/monumentos-de-lisboa",
+      "headings": [
+        {
+          "id": "1-mosteiro-dos-jeronimos-la-obra-cumbre-del-manuelino",
+          "text": "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino"
+        },
+        {
+          "id": "2-torre-de-belem-el-icono-de-lisboa",
+          "text": "2. Torre de Belém — El Icono de Lisboa"
+        },
+        {
+          "id": "3-castelo-de-sao-jorge-la-historia-de-lisboa-en-piedra",
+          "text": "3. Castelo de São Jorge — La Historia de Lisboa en Piedra"
+        },
+        {
+          "id": "4-elevador-de-santa-justa-hierro-forjado-sobre-la-baixa",
+          "text": "4. Elevador de Santa Justa — Hierro forjado sobre la Baixa"
+        },
+        {
+          "id": "5-palacio-nacional-da-ajuda-el-palacio-que-tardo-226-anos-en-terminarse",
+          "text": "5. Palácio Nacional da Ajuda — El palacio que tardó 226 años en terminarse"
+        },
+        {
+          "id": "6-15-los-monumentos-esenciales",
+          "text": "6-15. Los Monumentos Esenciales"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 1,
+      "affiliate": [],
+      "words": 1369
+    },
+    {
+      "path": "/blog/mouraria-barrio-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/mouraria-barrio-guia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "por-que-se-llama-mouraria",
+          "text": "Por qué se llama Mouraria"
+        },
+        {
+          "id": "mouraria-y-el-fado-relacion-fuerte-origen-discutido",
+          "text": "Mouraria y el fado: relación fuerte, origen discutido"
+        },
+        {
+          "id": "martim-moniz-y-la-diversidad-actual",
+          "text": "Martim Moniz y la diversidad actual"
+        },
+        {
+          "id": "una-ruta-sencilla-por-mouraria",
+          "text": "Una ruta sencilla por Mouraria"
+        },
+        {
+          "id": "cuanto-tiempo-dedicar",
+          "text": "Cuánto tiempo dedicar"
+        },
+        {
+          "id": "donde-comer-sin-convertir-la-guia-en-una-lista-que-caduca",
+          "text": "Dónde comer sin convertir la guía en una lista que caduca"
+        },
+        {
+          "id": "mouraria-o-alfama-que-cambia",
+          "text": "Mouraria o Alfama: qué cambia"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 1,
+      "affiliate": [],
+      "words": 1022
+    },
+    {
+      "path": "/blog/nochevieja-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/nochevieja-lisboa",
+      "headings": [
+        {
+          "id": "la-fiesta-de-la-praca-do-comercio",
+          "text": "La fiesta de la Praça do Comércio"
+        },
+        {
+          "id": "otros-sitios-para-ver-los-fuegos",
+          "text": "Otros sitios para ver los fuegos"
+        },
+        {
+          "id": "como-moverte-esa-noche",
+          "text": "Cómo moverte esa noche"
+        },
+        {
+          "id": "cenar-en-nochevieja",
+          "text": "Cenar en Nochevieja"
+        },
+        {
+          "id": "alcohol-lo-que-cambio-en-2026",
+          "text": "Alcohol: lo que cambió en 2026"
+        },
+        {
+          "id": "seguridad",
+          "text": "Seguridad"
+        },
+        {
+          "id": "ano-nuevo-que-abre-el-1-de-enero",
+          "text": "Año Nuevo: qué abre el 1 de enero"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/nochevieja-y-fuegos-artificiales-t438806/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Ver el velero ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 2476
+    },
+    {
+      "path": "/blog/novedades-lisboa-2026",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/novedades-lisboa-2026",
+      "headings": [
+        {
+          "id": "nuevas-atracciones-y-museos",
+          "text": "Nuevas Atracciones y Museos"
+        },
+        {
+          "id": "gastronomia-lo-nuevo-en-2026",
+          "text": "Gastronomía: Lo Nuevo en 2026"
+        },
+        {
+          "id": "cambios-en-el-transporte-en-2026",
+          "text": "Cambios en el Transporte en 2026"
+        },
+        {
+          "id": "eventos-de-2026",
+          "text": "Eventos de 2026"
+        },
+        {
+          "id": "alojamiento-nuevas-opciones-en-2026",
+          "text": "Alojamiento: Nuevas Opciones en 2026"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 888
+    },
+    {
+      "path": "/blog/obidos-vila-natal",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/obidos-vila-natal",
+      "headings": [
+        {
+          "id": "fechas-y-horario",
+          "text": "Fechas y horario"
+        },
+        {
+          "id": "entradas-y-precios",
+          "text": "Entradas y precios"
+        },
+        {
+          "id": "como-ir-desde-lisboa-autobus-rapida-verde-desde-campo-grande",
+          "text": "Cómo ir desde Lisboa: autobús Rápida Verde desde Campo Grande"
+        },
+        {
+          "id": "y-en-tren",
+          "text": "¿Y en tren?"
+        },
+        {
+          "id": "en-coche",
+          "text": "En coche"
+        },
+        {
+          "id": "que-ver-en-el-pueblo-antes-o-despues",
+          "text": "Qué ver en el pueblo antes o después"
+        },
+        {
+          "id": "la-ginja-de-obidos",
+          "text": "La ginja de Óbidos"
+        },
+        {
+          "id": "consejos-para-que-el-dia-salga-bien",
+          "text": "Consejos para que el día salga bien"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/desde-lisboa-tour-guiado-a-fatima-nazare-batalha-y-obidos-t67767/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Ver la excursión ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 2526
+    },
+    {
+      "path": "/blog/palacio-da-pena-entradas",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/palacio-da-pena-entradas",
+      "headings": [
+        {
+          "id": "que-entrada-elegir",
+          "text": "Qué entrada elegir"
+        },
+        {
+          "id": "como-funciona-la-hora-de-entrada",
+          "text": "Cómo funciona la hora de entrada"
+        },
+        {
+          "id": "donde-comprar-web-oficial-o-tiqets",
+          "text": "Dónde comprar: web oficial o Tiqets"
+        },
+        {
+          "id": "horarios-y-dias-de-cierre",
+          "text": "Horarios y días de cierre"
+        },
+        {
+          "id": "como-ir-desde-lisboa-tren-desde-rossio-y-autobus-434",
+          "text": "Cómo ir desde Lisboa: tren desde Rossio y autobús 434"
+        },
+        {
+          "id": "si-prefieres-una-excursion-organizada",
+          "text": "Si prefieres una excursión organizada"
+        },
+        {
+          "id": "que-dia-ir-mira-el-tiempo",
+          "text": "Qué día ir: mira el tiempo"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_palacio-da-pena-entradas",
+          "text": "Ver entrada a Pena ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Reservar excursión a Sintra ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 2474
+    },
+    {
+      "path": "/blog/parque-das-nacoes-lisboa-que-ver",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/parque-das-nacoes-lisboa-que-ver",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "empieza-por-la-estacion-de-oriente",
+          "text": "Empieza por la estación de Oriente"
+        },
+        {
+          "id": "oceanario-la-visita-que-mas-tiempo-necesita",
+          "text": "Oceanário: la visita que más tiempo necesita"
+        },
+        {
+          "id": "paseo-junto-al-tajo",
+          "text": "Paseo junto al Tajo"
+        },
+        {
+          "id": "telecabina-opcional-no-imprescindible",
+          "text": "Telecabina: opcional, no imprescindible"
+        },
+        {
+          "id": "cuanto-tiempo-dedicar",
+          "text": "Cuánto tiempo dedicar"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/OIHaINA6",
+          "text": "Ver entrada al Oceanário ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 597
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/pasteles-de-belem",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "pastel-de-belem-versus-pastel-de-nata-no-son-lo-mismo",
+          "text": "Pastel de Belém versus pastel de nata: no son lo mismo"
+        },
+        {
+          "id": "como-funciona-la-cola-y-como-esquivarla",
+          "text": "Cómo funciona la cola (y cómo esquivarla)"
+        },
+        {
+          "id": "los-horarios-que-los-lisboetas-conocen",
+          "text": "Los horarios que los lisboetas conocen"
+        },
+        {
+          "id": "el-ritual-de-comerlos-correctamente",
+          "text": "El ritual de comerlos correctamente"
+        },
+        {
+          "id": "los-salones-interiores-viaje-en-el-tiempo",
+          "text": "Los salones interiores: viaje en el tiempo"
+        },
+        {
+          "id": "cuantos-pedir-la-eterna-pregunta",
+          "text": "¿Cuántos pedir? La eterna pregunta"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1451
+    },
+    {
+      "path": "/blog/patinetes-electricos-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/patinetes-electricos-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "cuanto-cuesta-mira-el-precio-antes-de-desbloquear",
+          "text": "Cuánto cuesta: mira el precio antes de desbloquear"
+        },
+        {
+          "id": "como-elegir-app-y-preparar-el-trayecto",
+          "text": "Cómo elegir app y preparar el trayecto"
+        },
+        {
+          "id": "por-donde-circular-y-donde-aparcar",
+          "text": "Por dónde circular y dónde aparcar"
+        },
+        {
+          "id": "terminar-el-viaje-sin-dejar-el-contador-abierto",
+          "text": "Terminar el viaje sin dejar el contador abierto"
+        },
+        {
+          "id": "cuando-compensa-y-cuando-elegir-otra-cosa",
+          "text": "Cuándo compensa y cuándo elegir otra cosa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1025
+    },
+    {
+      "path": "/blog/playas-cerca-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/playas-cerca-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "carcavelos-la-opcion-sencilla-si-no-quieres-complicar-el-transporte",
+          "text": "Carcavelos: la opción sencilla si no quieres complicar el transporte"
+        },
+        {
+          "id": "costa-da-caparica-mas-opciones-y-mas-arenal",
+          "text": "Costa da Caparica: más opciones y más arenal"
+        },
+        {
+          "id": "praia-da-adraga-paisaje-primero-logistica-despues",
+          "text": "Praia da Adraga: paisaje primero, logística después"
+        },
+        {
+          "id": "arrabida-gran-paisaje-pero-no-es-la-playa-facil-de-lisboa",
+          "text": "Arrábida: gran paisaje, pero no es la playa fácil de Lisboa"
+        },
+        {
+          "id": "y-las-playas-del-propio-cascais",
+          "text": "¿Y las playas del propio Cascais?"
+        },
+        {
+          "id": "que-elegir-segun-tu-dia",
+          "text": "Qué elegir según tu día"
+        },
+        {
+          "id": "tres-comprobaciones-antes-de-salir",
+          "text": "Tres comprobaciones antes de salir"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1008
+    },
+    {
+      "path": "/blog/portugal-en-7-dias",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/portugal-en-7-dias",
+      "headings": [
+        {
+          "id": "portugal-en-7-dias-la-ruta-que-recomiendo",
+          "text": "Portugal en 7 días: la ruta que recomiendo"
+        },
+        {
+          "id": "la-mejor-jugada-entrar-por-lisboa-y-salir-por-oporto",
+          "text": "La mejor jugada: entrar por Lisboa y salir por Oporto"
+        },
+        {
+          "id": "dia-1-llegar-a-lisboa-sin-querer-verlo-todo",
+          "text": "Día 1: llegar a Lisboa sin querer verlo todo"
+        },
+        {
+          "id": "dia-2-alfama-castelo-y-graca",
+          "text": "Día 2: Alfama, Castelo y Graça"
+        },
+        {
+          "id": "dia-3-belem-y-una-tarde-menos-programada",
+          "text": "Día 3: Belém y una tarde menos programada"
+        },
+        {
+          "id": "dia-4-sintra-sin-intentar-visitar-cuatro-palacios",
+          "text": "Día 4: Sintra sin intentar visitar cuatro palacios"
+        },
+        {
+          "id": "dia-5-lisboa-a-oporto-en-tren",
+          "text": "Día 5: Lisboa a Oporto en tren"
+        },
+        {
+          "id": "parar-en-coimbra-el-dia-5",
+          "text": "¿Parar en Coimbra el día 5?"
+        },
+        {
+          "id": "dia-6-oporto-sin-cruzar-el-duero-cinco-veces",
+          "text": "Día 6: Oporto sin cruzar el Duero cinco veces"
+        },
+        {
+          "id": "dia-7-oporto-tranquilo-o-valle-del-duero",
+          "text": "Día 7: Oporto tranquilo o valle del Duero"
+        },
+        {
+          "id": "la-alternativa-si-tus-vuelos-son-ida-y-vuelta-por-lisboa",
+          "text": "La alternativa si tus vuelos son ida y vuelta por Lisboa"
+        },
+        {
+          "id": "donde-dormir-para-perder-menos-tiempo",
+          "text": "Dónde dormir para perder menos tiempo"
+        },
+        {
+          "id": "cuanto-reservar-con-antelacion",
+          "text": "Cuánto reservar con antelación"
+        },
+        {
+          "id": "que-no-meteria-en-esta-semana",
+          "text": "Qué no metería en esta semana"
+        },
+        {
+          "id": "mi-recomendacion-final-para-una-primera-vez",
+          "text": "Mi recomendación final para una primera vez"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1879
+    },
+    {
+      "path": "/blog/presupuesto-viajar-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/presupuesto-viajar-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "lisboa-es-cara-o-barata-en-2026",
+          "text": "¿Lisboa es cara o barata en 2026?"
+        },
+        {
+          "id": "1-alojamiento-la-partida-que-mas-cambia-el-total",
+          "text": "1. Alojamiento: la partida que más cambia el total"
+        },
+        {
+          "id": "2-comida-decide-cuantas-comidas-quieres-pagar-fuera",
+          "text": "2. Comida: decide cuántas comidas quieres pagar fuera"
+        },
+        {
+          "id": "3-transporte-tarifas-oficiales-de-lisboa-en-2026",
+          "text": "3. Transporte: tarifas oficiales de Lisboa en 2026"
+        },
+        {
+          "id": "4-entradas-y-excursiones-presupuesta-solo-lo-que-realmente-haras",
+          "text": "4. Entradas y excursiones: presupuesta solo lo que realmente harás"
+        },
+        {
+          "id": "tres-maneras-de-construir-tu-presupuesto",
+          "text": "Tres maneras de construir tu presupuesto"
+        },
+        {
+          "id": "formula-rapida-para-calcular-cuanto-te-costara-lisboa",
+          "text": "Fórmula rápida para calcular cuánto te costará Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 789
+    },
+    {
+      "path": "/blog/que-comprar-lisboa-souvenirs",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/que-comprar-lisboa-souvenirs",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "azulejos-compra-piezas-nuevas-no-patrimonio-arrancado-de-una-fachada",
+          "text": "Azulejos: compra piezas nuevas, no patrimonio arrancado de una fachada"
+        },
+        {
+          "id": "conservas-un-recuerdo-facil-de-transportar-y-facil-de-comprobar",
+          "text": "Conservas: un recuerdo fácil de transportar y fácil de comprobar"
+        },
+        {
+          "id": "tiendas-historicas-a-veces-el-lugar-importa-mas-que-el-objeto",
+          "text": "Tiendas históricas: a veces el lugar importa más que el objeto"
+        },
+        {
+          "id": "corcho-textiles-y-artesania-mira-la-etiqueta-antes-que-el-relato",
+          "text": "Corcho, textiles y artesanía: mira la etiqueta antes que el relato"
+        },
+        {
+          "id": "comida-para-regalar-piensa-primero-en-el-viaje-de-vuelta",
+          "text": "Comida para regalar: piensa primero en el viaje de vuelta"
+        },
+        {
+          "id": "que-evitar",
+          "text": "Qué evitar"
+        },
+        {
+          "id": "una-regla-sencilla-para-decidir",
+          "text": "Una regla sencilla para decidir"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 906
+    },
+    {
+      "path": "/blog/que-hacer-gratis-en-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/que-hacer-gratis-en-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "miradores-gratuitos",
+          "text": "Miradores gratuitos"
+        },
+        {
+          "id": "barrios-para-caminar-sin-pagar-entrada",
+          "text": "Barrios para caminar sin pagar entrada"
+        },
+        {
+          "id": "plazas-jardines-y-pausas-con-aire",
+          "text": "Plazas, jardines y pausas con aire"
+        },
+        {
+          "id": "el-rio-el-plan-mas-sencillo",
+          "text": "El río: el plan más sencillo"
+        },
+        {
+          "id": "mercados-y-espacios-de-acceso-libre",
+          "text": "Mercados y espacios de acceso libre"
+        },
+        {
+          "id": "arte-urbano-y-calles-con-caracter",
+          "text": "Arte urbano y calles con carácter"
+        },
+        {
+          "id": "planes-al-atardecer-sin-pagar-terraza",
+          "text": "Planes al atardecer sin pagar terraza"
+        },
+        {
+          "id": "que-hacer-gratis-si-llueve",
+          "text": "Qué hacer gratis si llueve"
+        },
+        {
+          "id": "presupuesto-minimo-sin-sentir-que-renuncias",
+          "text": "Presupuesto mínimo sin sentir que renuncias"
+        },
+        {
+          "id": "planes-gratuitos-que-combinan-bien-con-una-entrada-de-pago",
+          "text": "Planes gratuitos que combinan bien con una entrada de pago"
+        },
+        {
+          "id": "ruta-gratuita-sugerida-de-medio-dia",
+          "text": "Ruta gratuita sugerida de medio día"
+        },
+        {
+          "id": "cuidado-con-lo-que-parece-gratis",
+          "text": "Cuidado con lo que parece gratis"
+        },
+        {
+          "id": "conclusion",
+          "text": "Conclusión"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1513
+    },
+    {
+      "path": "/blog/que-ver-cascais-desde-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "headings": [
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "como-ir-de-lisboa-a-cascais-ahora",
+          "text": "Cómo ir de Lisboa a Cascais ahora"
+        },
+        {
+          "id": "empieza-por-el-centro-y-decide-despues-cuanto-mar-quieres",
+          "text": "Empieza por el centro y decide después cuánto mar quieres"
+        },
+        {
+          "id": "si-quieres-cultura-elige-un-museo-no-tres",
+          "text": "Si quieres cultura: elige un museo, no tres"
+        },
+        {
+          "id": "boca-do-inferno-cuando-anadirla",
+          "text": "Boca do Inferno: cuándo añadirla"
+        },
+        {
+          "id": "y-la-playa",
+          "text": "¿Y la playa?"
+        },
+        {
+          "id": "una-ruta-realista-para-un-dia",
+          "text": "Una ruta realista para un día"
+        },
+        {
+          "id": "cascais-o-sintra-no-resuelven-el-mismo-dia",
+          "text": "Cascais o Sintra: no resuelven el mismo día"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1036
+    },
+    {
+      "path": "/blog/restaurantes-romanticos-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/restaurantes-romanticos-lisboa",
+      "headings": [
+        {
+          "id": "fifty-seconds-para-una-cena-panoramica-de-alta-gama",
+          "text": "Fifty Seconds: para una cena panorámica de alta gama"
+        },
+        {
+          "id": "suba-palacio-historico-y-terraza-sobre-la-ciudad",
+          "text": "Suba: palacio histórico y terraza sobre la ciudad"
+        },
+        {
+          "id": "henrique-sa-pessoa-para-una-experiencia-gastronomica-centrada-en-la-mesa",
+          "text": "Henrique Sá Pessoa: para una experiencia gastronómica centrada en la mesa"
+        },
+        {
+          "id": "1147-lisboa-cenar-dentro-del-castelo-con-vistas",
+          "text": "1147 Lisboa: cenar dentro del Castelo con vistas"
+        },
+        {
+          "id": "cafe-sao-bento-una-cena-clasica-e-intima",
+          "text": "Café São Bento: una cena clásica e íntima"
+        },
+        {
+          "id": "pateo-alfacinha-para-vistas-al-tajo-con-un-ambiente-mas-portugues",
+          "text": "Páteo Alfacinha: para vistas al Tajo con un ambiente más portugués"
+        },
+        {
+          "id": "como-elegir-sin-equivocarte-de-restaurante",
+          "text": "Cómo elegir sin equivocarte de restaurante"
+        },
+        {
+          "id": "hace-falta-reservar",
+          "text": "¿Hace falta reservar?"
+        },
+        {
+          "id": "una-noche-romantica-no-tiene-que-empezar-en-el-restaurante",
+          "text": "Una noche romántica no tiene que empezar en el restaurante"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1022
+    },
+    {
+      "path": "/blog/semana-santa-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/semana-santa-lisboa",
+      "headings": [
+        {
+          "id": "fechas-de-semana-santa-2027-en-lisboa",
+          "text": "Fechas de Semana Santa 2027 en Lisboa"
+        },
+        {
+          "id": "la-procesion-historica-que-conviene-no-confundir-con-el-domingo-de-ramos",
+          "text": "La procesión histórica que conviene no confundir con el Domingo de Ramos"
+        },
+        {
+          "id": "entonces-que-se-puede-planificar-ya",
+          "text": "Entonces, ¿qué se puede planificar ya?"
+        },
+        {
+          "id": "que-cambia-en-la-ciudad-durante-esos-dias",
+          "text": "Qué cambia en la ciudad durante esos días"
+        },
+        {
+          "id": "que-comer-en-pascua-sin-inventar-una-tradicion-lisboeta-exclusiva",
+          "text": "Qué comer en Pascua sin inventar una tradición lisboeta exclusiva"
+        },
+        {
+          "id": "como-organizar-una-visita-de-semana-santa",
+          "text": "Cómo organizar una visita de Semana Santa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1037
+    },
+    {
+      "path": "/blog/sintra-desde-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/sintra-desde-lisboa",
+      "headings": [
+        {
+          "id": "como-ir-de-lisboa-a-sintra-en-tren",
+          "text": "Cómo ir de Lisboa a Sintra en tren"
+        },
+        {
+          "id": "palacio-da-pena-la-hora-del-billete-manda",
+          "text": "Palácio da Pena: la hora del billete manda"
+        },
+        {
+          "id": "como-subir-a-pena-desde-sintra",
+          "text": "Cómo subir a Pena desde Sintra"
+        },
+        {
+          "id": "una-ruta-realista-para-un-dia",
+          "text": "Una ruta realista para un día"
+        },
+        {
+          "id": "conviene-combinar-sintra-y-cascais-el-mismo-dia",
+          "text": "¿Conviene combinar Sintra y Cascais el mismo día?"
+        },
+        {
+          "id": "que-comprobar-la-noche-anterior",
+          "text": "Qué comprobar la noche anterior"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/9i00hN0O",
+          "text": "Ver entrada a Pena ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Reservar excursión a Sintra ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 995
+    },
+    {
+      "path": "/blog/tarjeta-navegante-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/tarjeta-navegante-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "que-comprar-segun-tu-viaje",
+          "text": "Qué comprar según tu viaje"
+        },
+        {
+          "id": "que-es-la-navegante-ocasional-y-que-no-es",
+          "text": "Qué es la Navegante ocasional (y qué no es)"
+        },
+        {
+          "id": "precios-2026-billete-sencillo-zapping-24-horas-y-lisboa-card",
+          "text": "Precios 2026: billete sencillo, zapping, 24 horas y Lisboa Card"
+        },
+        {
+          "id": "las-cuentas-cuando-compensa-el-billete-de-24-horas",
+          "text": "Las cuentas: cuándo compensa el billete de 24 horas"
+        },
+        {
+          "id": "sintra-cascais-y-el-barco-a-cacilhas",
+          "text": "Sintra, Cascais y el barco a Cacilhas"
+        },
+        {
+          "id": "y-pagar-directamente-con-tarjeta-bancaria",
+          "text": "¿Y pagar directamente con tarjeta bancaria?"
+        },
+        {
+          "id": "y-la-lisboa-card",
+          "text": "¿Y la Lisboa Card?"
+        },
+        {
+          "id": "donde-comprar-y-recargar-la-navegante",
+          "text": "Dónde comprar y recargar la Navegante"
+        },
+        {
+          "id": "errores-que-cuestan-dinero",
+          "text": "Errores que cuestan dinero"
+        },
+        {
+          "id": "pases-mensuales-navegante",
+          "text": "Pases mensuales Navegante"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_tarjeta-navegante-lisboa",
+          "text": "Ver Lisboa Card ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 2494
+    },
+    {
+      "path": "/blog/terremoto-lisboa-1755",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/terremoto-lisboa-1755",
+      "headings": [
+        {
+          "id": "el-dia-mas-oscuro-1-de-noviembre-de-1755",
+          "text": "El Día más Oscuro: 1 de Noviembre de 1755"
+        },
+        {
+          "id": "las-cifras-de-la-tragedia",
+          "text": "Las Cifras de la Tragedia"
+        },
+        {
+          "id": "pombal-el-hombre-que-rehizo-lisboa",
+          "text": "Pombal: El Hombre que Rehízo Lisboa"
+        },
+        {
+          "id": "el-impacto-filosofico-voltaire-y-el-problema-del-mal",
+          "text": "El Impacto Filosófico: Voltaire y el Problema del Mal"
+        },
+        {
+          "id": "que-ver-hoy-las-huellas-del-terremoto-en-lisboa",
+          "text": "Qué Ver Hoy: Las Huellas del Terremoto en Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1211
+    },
+    {
+      "path": "/blog/time-out-market-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/time-out-market-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "id": "que-es-y-como-funciona",
+          "text": "Qué es y cómo funciona"
+        },
+        {
+          "id": "menu-y-puestos-que-comida-hay-y-cuanto-puedes-gastar",
+          "text": "Menú y puestos: qué comida hay y cuánto puedes gastar"
+        },
+        {
+          "id": "cuando-ir-y-como-llegar",
+          "text": "Cuándo ir y cómo llegar"
+        },
+        {
+          "id": "lo-bueno-y-lo-malo",
+          "text": "Lo bueno y lo malo"
+        },
+        {
+          "id": "merece-la-pena",
+          "text": "¿Merece la pena?"
+        },
+        {
+          "id": "alternativas-antes-de-decidir",
+          "text": "Alternativas antes de decidir"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/9USjIETP",
+          "text": "Reservar tour gastronómico ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 1470
+    },
+    {
+      "path": "/blog/tram-28-historia-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/tram-28-historia-guia",
+      "headings": [
+        {
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "id": "ruta-del-tranvia-28-que-zonas-conecta",
+          "text": "Ruta del Tranvía 28: qué zonas conecta"
+        },
+        {
+          "id": "paradas-del-28e-mas-utiles-para-una-primera-visita",
+          "text": "Paradas del 28E más útiles para una primera visita"
+        },
+        {
+          "id": "cuanto-cuesta-el-tranvia-28-en-2026",
+          "text": "Cuánto cuesta el Tranvía 28 en 2026"
+        },
+        {
+          "id": "como-evitar-colas-y-esperas-innecesarias",
+          "text": "Cómo evitar colas y esperas innecesarias"
+        },
+        {
+          "id": "antes-de-subir-revisa-el-servicio-oficial",
+          "text": "Antes de subir: revisa el servicio oficial"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_tram-28-historia-guia",
+          "text": "Ver Lisboa Card ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        }
+      ],
+      "words": 873
+    },
+    {
+      "path": "/blog/vida-nocturna-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/vida-nocturna-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Elige por ambiente"
+        },
+        {
+          "id": "bairro-alto-donde-empezar-una-noche-de-bares",
+          "text": "Bairro Alto: dónde empezar una noche de bares"
+        },
+        {
+          "id": "bica-y-cais-do-sodre-bajar-hacia-bares-restaurantes-y-pink-street",
+          "text": "Bica y Cais do Sodré: bajar hacia bares, restaurantes y Pink Street"
+        },
+        {
+          "id": "bairro-alto-o-cais-do-sodre-cual-elegir",
+          "text": "Bairro Alto o Cais do Sodré: cuál elegir"
+        },
+        {
+          "id": "fado-una-noche-distinta-en-alfama-mouraria-o-madragoa",
+          "text": "Fado: una noche distinta en Alfama, Mouraria o Madragoa"
+        },
+        {
+          "id": "que-hacer-en-lisboa-de-noche-si-no-quieres-salir-de-fiesta",
+          "text": "Qué hacer en Lisboa de noche si no quieres salir de fiesta"
+        },
+        {
+          "id": "como-volver-metro-y-transporte-nocturno",
+          "text": "Cómo volver: Metro y transporte nocturno"
+        },
+        {
+          "id": "consejos-para-una-primera-noche",
+          "text": "Consejos para una primera noche"
+        },
+        {
+          "id": "una-ruta-sencilla-para-una-primera-noche",
+          "text": "Una ruta sencilla para una primera noche"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1223
+    },
+    {
+      "path": "/blog/vinos-portugueses-guia",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/vinos-portugueses-guia",
+      "headings": [
+        {
+          "id": "vinho-verde-el-vino-del-verano",
+          "text": "Vinho Verde: El Vino del Verano"
+        },
+        {
+          "id": "vino-de-oporto-porto-mucho-mas-que-el-digestivo-dulce",
+          "text": "Vino de Oporto (Porto): Mucho Más que el Digestivo Dulce"
+        },
+        {
+          "id": "alentejo-los-tintos-que-se-beben-en-lisboa",
+          "text": "Alentejo: Los Tintos que Se Beben en Lisboa"
+        },
+        {
+          "id": "como-pedir-vino-en-lisboa",
+          "text": "Cómo Pedir Vino en Lisboa"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 745
+    },
+    {
+      "path": "/blog/volta-portugal-devolucion-envases",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/blog/volta-portugal-devolucion-envases",
+      "headings": [
+        {
+          "id": "que-es-volta-y-por-que-te-cobran-10-centimos",
+          "text": "Qué es Volta y por qué te cobran 10 céntimos"
+        },
+        {
+          "id": "como-preparar-y-devolver-la-botella-o-la-lata",
+          "text": "Cómo preparar y devolver la botella o la lata"
+        },
+        {
+          "id": "donde-devolver-envases-en-lisboa",
+          "text": "Dónde devolver envases en Lisboa"
+        },
+        {
+          "id": "como-recuperar-el-dinero-sin-otra-compra-obligatoria",
+          "text": "Cómo recuperar el dinero, sin otra compra obligatoria"
+        },
+        {
+          "id": "si-la-maquina-rechaza-el-envase",
+          "text": "Si la máquina rechaza el envase"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 890
+    },
+    {
+      "path": "/calculadora-presupuesto-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/calculadora-presupuesto-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Configura tu viaje"
+        },
+        {
+          "id": "",
+          "text": "Tu presupuesto"
+        },
+        {
+          "id": "",
+          "text": "Más información"
+        },
+        {
+          "id": "",
+          "text": "Preguntas frecuentes"
+        }
+      ],
+      "linksToEntradas": 1,
+      "linksToFreeTours": 1,
+      "affiliate": [],
+      "words": 1779
+    },
+    {
+      "path": "/comprar-entradas",
+      "status": 200,
+      "robots": "noindex, follow",
+      "canonical": "https://estabaenlisboa.com/comprar-entradas",
+      "headings": [
+        {
+          "id": "",
+          "text": "Entradas que sí conviene comprar antes"
+        },
+        {
+          "id": "",
+          "text": "Compra tiempo, no entradas por comprar"
+        },
+        {
+          "id": "",
+          "text": "Preguntas que sí cambian la decisión"
+        },
+        {
+          "id": "creditos-fotos",
+          "text": "Créditos de las fotos"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 1,
+      "affiliate": [
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-oceanario-de-lisboa-entrada-p975260/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_oceanario",
+          "text": "Comprar entrada al Oceanário (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/C9HzQNsh",
+          "text": "Comprar entrada al Castelo (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_pena",
+          "text": "Comprar entrada a Pena (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-torre-de-belem-entrada-p1012361/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_torre-belem",
+          "text": "Comprar entrada a la Torre (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-monasterio-de-los-jeronimos-de-belem-entrada-p1012358/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_jeronimos",
+          "text": "Comprar entrada a los Jerónimos (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_jeronimos_combo",
+          "text": "Comprar Jerónimos + Torre (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-castelo-dos-mouros-en-sintra-entrada-audioguia-opcional-p975020/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_castelo-mouros",
+          "text": "Comprar entrada al Castelo dos Mouros (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-de-sintra-entrada-p975024/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_palacio-sintra",
+          "text": "Comprar entrada al Palacio de Sintra (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://www.getyourguide.es/lisboa-l42/lisboa-sintra-pena-regaleira-cabo-da-roca-y-cascaes-t440176/?partner_id=J2Z24GU&utm_medium=online_publisher",
+          "text": "Reservar excursión a Sintra (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-palacio-nacional-de-ajuda-entrada-p1020546/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_palacio-ajuda",
+          "text": "Comprar entrada al Palacio da Ajuda (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-royal-treasure-museum-p1026160/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_tesouro-real",
+          "text": "Comprar entrada al Tesoro Real (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-card-51-atracciones-y-transporte-publico-p974847/?partner=estaba_en_lisboa-189233&tq_campaign=web_activ_lisboa-card",
+          "text": "Comprar Lisboa Card (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/TJA6VUJa",
+          "text": "Reservar paseo por el Tajo (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/jH9FtGc7",
+          "text": "Reservar espectáculo de fado (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/jO1KCAoG",
+          "text": "Reservar tour gastronómico (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-lisboa-recorrido-en-tranvia-por-las-colinas-historicas-con-paradas-libres-p974765/?partner=estaba_en_lisboa-189233&tq_campaign=web_hub_tranvia-colinas",
+          "text": "Reservar el tranvía turístico (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 1886
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/contacto",
+      "headings": [],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 57
+    },
+    {
+      "path": "/donde-comer-en-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/donde-comer-en-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Tasca o prato do dia"
+        },
+        {
+          "id": "",
+          "text": "Cocina tradicional"
+        },
+        {
+          "id": "",
+          "text": "Mercado"
+        },
+        {
+          "id": "",
+          "text": "Reserva concreta"
+        },
+        {
+          "id": "formatos",
+          "text": "Tasca, mercado y restaurante no prometen lo mismo"
+        },
+        {
+          "id": "que-comer",
+          "text": "Platos que ayudan a entender la cocina portuguesa"
+        },
+        {
+          "id": "por-zonas",
+          "text": "Dónde buscar según dónde estés"
+        },
+        {
+          "id": "lugares-concretos",
+          "text": "Cuatro paradas que resuelven situaciones distintas"
+        },
+        {
+          "id": "precios-y-couvert",
+          "text": "Cuatro detalles que evitan sorpresas en la cuenta"
+        },
+        {
+          "id": "necesidades-alimentarias",
+          "text": "“Hay opciones” no siempre es información suficiente"
+        },
+        {
+          "id": "cierre-guia",
+          "text": "La mejor comida es la que encaja con ese día."
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 1579
+    },
+    {
+      "path": "/free-tours-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/free-tours-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Encuentra un free tour para tu fecha"
+        },
+        {
+          "id": "",
+          "text": "Compara la zona antes de reservar"
+        },
+        {
+          "id": "",
+          "text": "¿Cuál elegiría yo para una primera visita?"
+        },
+        {
+          "id": "",
+          "text": "Cómo funciona realmente un free tour"
+        },
+        {
+          "id": "",
+          "text": "Preguntas frecuentes sobre los free tours"
+        },
+        {
+          "id": "",
+          "text": "¿Ya sabes qué día vas?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/imprescindible?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-centro&utm_content=card-imprescindible",
+          "text": "Reservar tour por el centro ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/alfama?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-alfama&utm_content=card-alfama",
+          "text": "Reservar free tour por Alfama ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/belem?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-belem&utm_content=card-belem",
+          "text": "Reservar free tour por Belém ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/leyendas-secretos-y-misterios?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-misterios&utm_content=card-misterios",
+          "text": "Reservar tour de misterios ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa/tag/nocturno?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tour-nocturno&utm_content=card-nocturno",
+          "text": "Reservar tour nocturno ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tours-lisboa&utm_content=destacado-todos",
+          "text": "Ver horarios y reservar ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "guruwalk",
+          "url": "https://www.guruwalk.com/es/lisboa?ref=ran99ahl1dp8bfbqj413&pro=true&utm_source=estabaenlisboa&utm_medium=affiliate&utm_campaign=free-tours-lisboa&utm_content=final-cta",
+          "text": "Ver todos los free tours ↗ (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 891
+    },
+    {
+      "path": "/itinerarios",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/itinerarios",
+      "headings": [
+        {
+          "id": "",
+          "text": "¿Cuántos días tienes?"
+        },
+        {
+          "id": "",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "id": "",
+          "text": "¿No sabes cuál elegir?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 309
+    },
+    {
+      "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
+      "headings": [
+        {
+          "id": "",
+          "text": "Tu día de un vistazo"
+        },
+        {
+          "id": "",
+          "text": "Antes de salir"
+        },
+        {
+          "id": "",
+          "text": "De Alfama a Belém, y cierre en Bairro Alto"
+        },
+        {
+          "id": "",
+          "text": "La ruta en el mapa"
+        },
+        {
+          "id": "",
+          "text": "¿Vienes menos días, o más?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Ver entrada del castillo (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 2594
+    },
+    {
+      "path": "/itinerarios/lisboa-2-dias-completo",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo",
+      "headings": [
+        {
+          "id": "",
+          "text": "Tu viaje de un vistazo"
+        },
+        {
+          "id": "",
+          "text": "Alfama, el 28 y la Baixa"
+        },
+        {
+          "id": "",
+          "text": "Belém, LX Factory y fado"
+        },
+        {
+          "id": "",
+          "text": "La ruta en el mapa"
+        },
+        {
+          "id": "",
+          "text": "¿Vienes menos días, o más?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Comprar entrada al Castelo (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_blog_jeronimos_combo",
+          "text": "Comprar Jerónimos + Torre (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 2346
+    },
+    {
+      "path": "/itinerarios/lisboa-3-dias-premium",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium",
+      "headings": [
+        {
+          "id": "",
+          "text": "Tu viaje de un vistazo"
+        },
+        {
+          "id": "",
+          "text": "Cuánto tiempo pide cada zona"
+        },
+        {
+          "id": "",
+          "text": "Alfama, el castillo y la Baixa"
+        },
+        {
+          "id": "",
+          "text": "Belém, el Tajo y LX Factory"
+        },
+        {
+          "id": "",
+          "text": "Sintra, de excursión"
+        },
+        {
+          "id": "",
+          "text": "El tercer día: Sintra o seguir en Lisboa"
+        },
+        {
+          "id": "",
+          "text": "Qué cambiar si llueve"
+        },
+        {
+          "id": "",
+          "text": "Comer sin montar una ruta gastronómica"
+        },
+        {
+          "id": "",
+          "text": "Errores frecuentes en una ruta de 3 días"
+        },
+        {
+          "id": "",
+          "text": "La ruta en el mapa"
+        },
+        {
+          "id": "",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "id": "",
+          "text": "¿Vienes menos días, o más?"
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Comprar entrada al Castelo (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        },
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/9i00hN0O",
+          "text": "Comprar entrada a Pena (se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": null,
+          "finalModule": false
+        }
+      ],
+      "words": 7221
+    },
+    {
+      "path": "/portugal",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/portugal",
+      "headings": [
+        {
+          "id": "por-donde-empezar",
+          "text": "Cuatro cosas que conviene resolver antes de montar la ruta."
+        },
+        {
+          "id": "",
+          "text": "Empieza cerca antes de intentar recorrer todo Portugal."
+        },
+        {
+          "id": "",
+          "text": "Tren, autobús o coche: no hay una respuesta única."
+        },
+        {
+          "id": "",
+          "text": "Historias que te llevan a conocer un lugar."
+        },
+        {
+          "id": "",
+          "text": "No publicar Portugal por publicar."
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 365
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/que-ver-en-lisboa",
+      "headings": [
+        {
+          "id": "",
+          "text": "Centro y Alfama"
+        },
+        {
+          "id": "",
+          "text": "Añade Belém"
+        },
+        {
+          "id": "",
+          "text": "Elige otra Lisboa"
+        },
+        {
+          "id": "",
+          "text": "Sintra o Cascais"
+        },
+        {
+          "id": "imprescindibles",
+          "text": "Los lugares que mejor explican Lisboa"
+        },
+        {
+          "id": "zonas",
+          "text": "Visita por zonas, no por popularidad"
+        },
+        {
+          "id": "por-dias",
+          "text": "Qué ver en Lisboa en 1, 2, 3 o 4 días"
+        },
+        {
+          "id": "gratis-o-de-pago",
+          "text": "Lisboa no necesita una agenda llena de entradas"
+        },
+        {
+          "id": "reservar",
+          "text": "Qué reservar antes y qué dejar abierto"
+        },
+        {
+          "id": "segun-tu-viaje",
+          "text": "La mejor selección cambia contigo"
+        },
+        {
+          "id": "cierre-guia",
+          "text": "No necesitas verlo todo para entender Lisboa."
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [
+        {
+          "partner": "getyourguide",
+          "url": "https://gyg.me/xsuIYU11",
+          "text": "Ver entrada al Castelo ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "final",
+          "finalModule": true
+        },
+        {
+          "partner": "tiqets",
+          "url": "https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-entrada-para-la-torre-de-belem-y-el-monasterio-de-los-jeronimos-p1013486/?partner=estaba_en_lisboa-189233&tq_campaign=web_guia_que-ver-en-lisboa",
+          "text": "Ver Jerónimos + Torre ↗ (enlace de afiliado, se abre en una pestaña nueva)",
+          "rel": "sponsored noopener noreferrer",
+          "target": "_blank",
+          "tagged": true,
+          "slot": "alternative",
+          "finalModule": true
+        }
+      ],
+      "words": 1677
+    },
+    {
+      "path": "/sobre-nosotros",
+      "status": 200,
+      "robots": "index, follow",
+      "canonical": "https://estabaenlisboa.com/sobre-nosotros",
+      "headings": [
+        {
+          "id": "",
+          "text": "Quién escribe y cómo trabajo."
+        },
+        {
+          "id": "",
+          "text": "Cómo escribo cada guía."
+        },
+        {
+          "id": "",
+          "text": "Si una guía no te responde, dímelo."
+        }
+      ],
+      "linksToEntradas": 0,
+      "linksToFreeTours": 0,
+      "affiliate": [],
+      "words": 261
+    }
+  ]
+}

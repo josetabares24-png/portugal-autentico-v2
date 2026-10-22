@@ -18,14 +18,16 @@ const clientPath = path.join(
 const bookingCardPath = path.join(root, 'src', 'components', 'afiliados', 'BookingCard.tsx');
 const bookingsPath = path.join(root, 'src', 'data', 'bookings.ts');
 const envExamplePath = path.join(root, '.env.example');
+// Windows checkouts use CRLF; source-format assertions must be platform neutral.
+const readSource = async (file) => (await readFile(file, 'utf8')).replace(/\r\n/g, '\n');
 
 const [adapter, page, client, bookingCard, bookings, envExample] = await Promise.all([
-  readFile(adapterPath, 'utf8'),
-  readFile(pagePath, 'utf8'),
-  readFile(clientPath, 'utf8'),
-  readFile(bookingCardPath, 'utf8'),
-  readFile(bookingsPath, 'utf8'),
-  readFile(envExamplePath, 'utf8'),
+  readSource(adapterPath),
+  readSource(pagePath),
+  readSource(clientPath),
+  readSource(bookingCardPath),
+  readSource(bookingsPath),
+  readSource(envExamplePath),
 ]);
 
 assert.match(adapter, /^import 'server-only';/m, 'el adaptador debe ser exclusivamente servidor');

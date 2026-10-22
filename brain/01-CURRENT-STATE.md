@@ -1,5 +1,10 @@
 # Current state
 
+## 22 octubre 2026 — Candidato de entradas y Free tours, sin publicar
+
+Producción sigue en `5d3573d` (PR #113 ya aprobado/fusionado; cierre documental en PR #114). Esta nota supera los estados históricos de solo Preview de ese lote, sin autorizar este nuevo candidato. José pide vender entradas/free tours y confirma que desconoce reservas/comisiones. Auditoría: 69 enlaces reconocidos/100 páginas, sin incidencias de patrocinio/ID; reservas DESCONOCIDAS y Windsor bloqueado por límite de cuenta (ceros no válidos). D-067: tres ofertas existentes trasladadas tras su respuesta y horarios con un botón por destino real; nada de nuevas URLs/indexación o cambios factuales. Build137, TypeScript, lint cero errores/un warning previo, preservación1.659/72, migración1.426, técnico1.130/113, sitemap64/98, navegación171, Free tours66, Tiqets y pruebas3+6 correctos. [Informe](../docs/commercial-booking-audit-2026-10-22.md). Preview48b778d / dpl_8MX88g47VxgX4GFVxFYQZypWBbSd READY, PR115 borrador, cinco checks correctos; remoto editorial1.659, migración1.328, técnico1.130 y Free tours66. Dieciséis vistas remotas sin overflow; tres tours reales/23 de octubre con referido preservado. Capturas en informe. Sin merge ni producción; revisión visual pendiente. Stay22 Spark observado insertando alojamiento en Free tours; sin cambios, opt-out externo por verificar.
+
+
 ## 22 octubre 2026 — José confirma prueba funcional de Planifica
 
 José comunica «si y si sirve ya probe»: prueba real del formulario satisfactoria reportada por el propietario, sin repetir el envío. No inspección independiente de bandeja ni confirmación detallada de ambos emails/Reply-To. D-065 permanece; código probado cd9f8f9, HEAD e9c321b documental y seis checks correctos, PR #113 MERGEABLE/CLEAN en borrador. Sin autorización explícita de merge/publicación del conjunto. Siguiente: aprobación final del lote Home/navegación/Planifica/QA y correcciones de cinco guías; después flujo de publicación y QA de producción. [Registro y límites](../docs/editorial-planifica-contact.md#validación-humana-comunicada).

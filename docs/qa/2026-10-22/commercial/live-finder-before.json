@@ -1,0 +1,57 @@
+{
+  "automaticAccommodationLinks": [
+    {
+      "host": "www.stay22.com",
+      "text": "Centro"
+    },
+    {
+      "host": "www.stay22.com",
+      "text": "Alfama"
+    },
+    {
+      "host": "www.stay22.com",
+      "text": "Belém"
+    },
+    {
+      "host": "www.stay22.com",
+      "text": "Baixa"
+    },
+    {
+      "host": "www.stay22.com",
+      "text": "Chiado"
+    }
+  ],
+  "cards": 3,
+  "date": "2026-10-23",
+  "links": [
+    {
+      "href": "https://www.guruwalk.com/walks/30696-free-tour-de-lisboa-historia-datos-divertidos-y-degustaciones-gratis?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 09:30"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/30696-free-tour-de-lisboa-historia-datos-divertidos-y-degustaciones-gratis?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 10:30"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/30696-free-tour-de-lisboa-historia-datos-divertidos-y-degustaciones-gratis?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 14:30"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/33198-free-tour-lisboa-esencial-el-mas-completo?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 10:30"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/33198-free-tour-lisboa-esencial-el-mas-completo?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 17:00"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/69664-free-tour-de-alfama-y-ciudad-vieja?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 10:00"
+    },
+    {
+      "href": "https://www.guruwalk.com/walks/69664-free-tour-de-alfama-y-ciudad-vieja?beginsAt=2026-10-23&endsAt=2026-10-23&ref=ran99ahl1dp8bfbqj413",
+      "text": "Reservar 17:00"
+    }
+  ],
+  "path": "/free-tours-lisboa"
+}

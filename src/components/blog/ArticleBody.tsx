@@ -8,6 +8,8 @@ import type {
   SectionPhoto,
 } from './article-types';
 import type { ArticleBookingBlockProps } from './ArticleBookingBlock';
+import { ArticleBookingBlock } from './ArticleBookingBlock';
+import { CONTEXTUAL_BOOKING_PLACEMENTS } from '@/data/contextual-booking-placements';
 import { ArticleBookingRecommendations } from './ArticleBookingRecommendations';
 import { ArticleCallout } from './ArticleCallout';
 import { ArticleFigure } from './ArticleFigure';
@@ -25,8 +27,8 @@ type ArticleBodyProps = {
   takeaways: string[];
   editorial?: EditorialPilot;
   /**
-   * Ofertas resueltas en servidor. Fase 2: módulo final tras contenido y FAQ;
-   * las antiguas posiciones se conservan solo para compatibilidad de datos.
+   * Ofertas resueltas en servidor. Fallback final tras contenido y FAQ;
+   * D-067 permite un único traslado contextual en tres páginas explícitas.
    */
   bookings?: (ArticleBookingBlockProps & { beforeHeading?: string; position?: 'after-summary' })[];
   /** Propiedad heredada por compatibilidad; sin formulario mientras la newsletter esté pausada. */
@@ -58,6 +60,14 @@ export function ArticleBody({
   if (editorial?.deferOpeningDisclaimer && bodyBlocks[0]?.tipo === 'parrafo') {
     bodyBlocks = [...bodyBlocks.slice(1), bodyBlocks[0]];
   }
+  const placement = CONTEXTUAL_BOOKING_PLACEMENTS[bookings[0]?.articleSlug ?? ''];
+  const contextualBooking = placement ? bookings.find((booking) => booking.contentId === placement.contentId) : undefined;
+  const contextualIndex = contextualBooking ? bodyBlocks.findIndex((block) =>
+    block.tipo === 'subtitulo' && slugify(block.texto || '') === placement.beforeHeading
+  ) : -1;
+  // Never put a commercial option before the first answer or silently drop it.
+  const hasContextualBooking = contextualIndex > 0 && Boolean(contextualBooking);
+  const finalBookings = hasContextualBooking ? bookings.filter((booking) => booking !== contextualBooking) : bookings;
   const renderBlock = (bloque: (typeof bodyBlocks)[number], index: number) => {
     if (bloque.tipo === 'parrafo') {
       const paragraphIndex = article.contenido
@@ -273,7 +283,19 @@ export function ArticleBody({
 
       {/* Contenido del artículo */}
       <div className="article-content article-reading">
-        {bodyBlocks.map(renderBlock)}
+        {bodyBlocks.map((block, index) => (
+          <Fragment key={index}>
+            {hasContextualBooking && index === contextualIndex && contextualBooking && (
+              <ArticleBookingBlock
+                {...contextualBooking}
+                ctaLabel={contextualBooking.partner === 'guruwalk' ? contextualBooking.ctaLabel : 'Ver disponibilidad y reservar'}
+                slot="body"
+                disclosure="full"
+              />
+            )}
+            {renderBlock(block, index)}
+          </Fragment>
+        ))}
       </div>
 
       {faqs.length > 0 && (
@@ -297,7 +319,7 @@ export function ArticleBody({
           </section>
         </>
       )}
-      <ArticleBookingRecommendations bookings={bookings} />
+      <ArticleBookingRecommendations bookings={finalBookings} />
     </article>
   );
 }

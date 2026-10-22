@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { trackEvent } from '@/lib/analytics';
 import type { LiveFreeTour, LiveFreeToursResponse } from '@/types/guruwalk-live';
+import { freeTourBookingOptions, formatFreeTourTime } from '@/lib/free-tour-booking-options';
 
 type FinderState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -36,10 +37,6 @@ function addDays(date: string, days: number) {
 function dateBounds() {
   const min = lisbonDate();
   return { min, max: addDays(min, 180), suggested: addDays(min, 1) };
-}
-
-function formatSlotTime(time: string) {
-  return time.match(/(?:T|\b)([01]\d|2[0-3]):([0-5]\d)/)?.[0].replace('T', '') ?? time;
 }
 
 function formatDate(date: string) {
@@ -244,6 +241,7 @@ export default function FreeTourLiveFinder() {
               <div className="grid gap-6 md:grid-cols-3">
                 {tours.map((tour, index) => {
                   const fallback = FALLBACK_IMAGES[index % FALLBACK_IMAGES.length];
+                  const bookingOptions = freeTourBookingOptions(tour);
                   return (
                     <article key={tour.id} className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card">
                       <div className="aspect-[16/10] overflow-hidden bg-border-soft">
@@ -268,33 +266,28 @@ export default function FreeTourLiveFinder() {
                           </p>
                         ) : null}
 
+                        {tour.slots.length > 0 && (
+                          <p className="mt-4 font-body text-sm leading-relaxed text-text-secondary">
+                            Horarios disponibles: {tour.slots.map((slot) => formatFreeTourTime(slot.time)).join(' · ')}
+                          </p>
+                        )}
                         <div className="mt-5 flex flex-wrap gap-2 border-t border-border-soft pt-4">
-                          {tour.slots.length > 0 ? tour.slots.map((slot) => (
+                          {bookingOptions.map((option) => (
                             <a
-                              key={slot.eventId}
-                              href={slot.url}
+                              key={option.url}
+                              href={option.url}
                               target="_blank"
                               rel="sponsored noopener noreferrer"
-                              aria-label={`Reservar ${tour.name} a las ${formatSlotTime(slot.time)}`}
-                              onClick={() => trackLiveClick(tour, slot.url, `${tour.id}-${slot.eventId}`)}
-                              className="inline-flex min-h-10 items-center gap-1.5 rounded-md border border-night/20 px-3 font-body text-xs font-bold text-night transition-colors hover:border-terracotta hover:bg-terracotta hover:text-white"
+                              aria-label={option.accessibleLabel}
+                              onClick={() => trackLiveClick(tour, option.url, option.content)}
+                              className="inline-flex min-h-11 items-center gap-1.5 rounded-md bg-terracotta px-4 py-2.5 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark"
                             >
-                              Reservar {formatSlotTime(slot.time)}
+                              {option.label}
                               <ArrowUpRight size={14} aria-hidden="true" />
                             </a>
-                          )) : (
-                            <a
-                              href={tour.url}
-                              target="_blank"
-                              rel="sponsored noopener noreferrer"
-                              onClick={() => trackLiveClick(tour, tour.url, String(tour.id))}
-                              className="inline-flex min-h-10 items-center gap-1.5 rounded-md bg-terracotta px-4 font-body text-xs font-bold text-white transition-colors hover:bg-primary-dark"
-                            >
-                              Ver tour y reservar
-                              <ArrowUpRight size={14} aria-hidden="true" />
-                            </a>
-                          )}
+                          ))}
                         </div>
+                        <p className="mt-3 font-body text-xs leading-relaxed text-text-secondary">Confirmas la hora y la reserva en GuruWalk.</p>
                       </div>
                     </article>
                   );
