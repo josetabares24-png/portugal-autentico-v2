@@ -9,6 +9,8 @@ import { trackEvent } from '@/lib/analytics';
 import type { LiveFreeTour, LiveFreeToursResponse } from '@/types/guruwalk-live';
 import { freeTourBookingOptions, formatFreeTourTime } from '@/lib/free-tour-booking-options';
 
+import { finderCopy } from './finder-copy';
+
 type FinderState = 'idle' | 'loading' | 'success' | 'error';
 
 const FALLBACK_IMAGES = [
@@ -39,8 +41,8 @@ function dateBounds() {
   return { min, max: addDays(min, 180), suggested: addDays(min, 1) };
 }
 
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat('es-ES', {
+function formatDate(date: string, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
@@ -59,7 +61,7 @@ function daysAheadBucket(date: string) {
   return '91-180';
 }
 
-function trackLiveClick(tour: LiveFreeTour, url: string, content: string) {
+function trackLiveClick(tour: LiveFreeTour, url: string, content: string, language: 'es' | 'en') {
   let linkDomain = '';
   try {
     linkDomain = new URL(url).hostname;
@@ -69,7 +71,7 @@ function trackLiveClick(tour: LiveFreeTour, url: string, content: string) {
 
   trackAffiliateClick({
     affiliate_partner: 'guruwalk',
-    affiliate_campaign: 'free-tours-live-date',
+    affiliate_campaign: language === 'en' ? 'free-tours-live-date-en' : 'free-tours-live-date',
     affiliate_content: content,
     affiliate_placement: 'live-date-finder',
     destination: 'lisboa',
@@ -106,7 +108,8 @@ function LiveTourImage({
   );
 }
 
-export default function FreeTourLiveFinder() {
+export default function FreeTourLiveFinder({ language = 'es' }: { language?: 'es' | 'en' }) {
+  const copy = finderCopy[language];
   const [date, setDate] = useState('');
   const [validDates, setValidDates] = useState({ min: '', max: '' });
   const [state, setState] = useState<FinderState>('idle');
@@ -132,7 +135,7 @@ export default function FreeTourLiveFinder() {
     });
 
     try {
-      const response = await fetch(`/api/free-tours?date=${encodeURIComponent(date)}`, {
+      const response = await fetch(`/api/free-tours?date=${encodeURIComponent(date)}${language === 'en' ? '&language=en' : ''}`, {
         cache: 'no-store',
       });
       const payload = await response.json() as LiveFreeToursResponse | { error?: string };
@@ -150,7 +153,7 @@ export default function FreeTourLiveFinder() {
         has_results: payload.tours.length > 0,
       });
       if (payload.tours.length === 0) {
-        setMessage('No aparecieron recorridos para ese día. Prueba otra fecha o compara las zonas que encontrarás más abajo.');
+        setMessage(copy.empty);
       }
     } catch {
       setTours([]);
@@ -159,7 +162,7 @@ export default function FreeTourLiveFinder() {
         placement: 'live-date-finder',
         days_ahead_bucket: searchWindow,
       });
-      setMessage('Ahora mismo no pudimos traer los horarios. La comparación de rutas y los enlaces de reserva siguen disponibles debajo.');
+      setMessage(copy.error);
     }
   }
 
@@ -169,20 +172,19 @@ export default function FreeTourLiveFinder() {
         <div className="grid gap-6 border-y border-border-soft py-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 lg:py-7">
           <div>
             <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
-              Reserva tu plaza
+              {copy.eyebrow}
             </p>
             <h2 className="max-w-xl font-display text-[2rem] font-semibold not-italic leading-[1.08] text-night md:text-4xl">
-              Encuentra un free tour para tu fecha
+              {copy.title}
             </h2>
             <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
-              Elige el día y te enseño hasta tres free tours en español con plaza
-              libre, con su hora y el enlace para reservar.
+              {copy.intro}
             </p>
           </div>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="free-tour-date" className="mb-2 block font-body text-xs font-bold uppercase tracking-[0.14em] text-text-secondary">
-              Día del recorrido
+              {copy.date}
             </label>
             <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
               <div className="relative">
@@ -205,21 +207,20 @@ export default function FreeTourLiveFinder() {
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-terracotta px-6 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark disabled:cursor-wait disabled:opacity-70"
               >
                 {state === 'loading' ? <LoaderCircle className="animate-spin" size={18} aria-hidden="true" /> : null}
-                {state === 'loading' ? 'Buscando' : 'Ver tours disponibles'}
+                {state === 'loading' ? copy.loading : copy.search}
               </button>
             </div>
             <p
               role="note"
-              aria-label="Información sobre la reserva y los enlaces afiliados"
+              aria-label={copy.noteLabel}
               className="mt-3 max-w-2xl font-body text-xs leading-relaxed text-text-secondary"
             >
-              Reserva en GuruWalk sin pago previo; al terminar decides la propina.
-              Algunos enlaces son afiliados.{' '}
+              {copy.note}{' '}
               <Link
                 href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
                 className="underline underline-offset-2 hover:no-underline"
               >
-                Cómo funcionan los enlaces de afiliado
+                {copy.disclosure}
               </Link>
               .
             </p>
@@ -236,25 +237,25 @@ export default function FreeTourLiveFinder() {
           {state === 'success' && tours.length > 0 ? (
             <div className="mt-9">
               <p className="mb-4 font-body text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">
-                Disponibles para {formatDate(date)}
+                {copy.available} {formatDate(date, copy.locale)}
               </p>
               <div className="grid gap-6 md:grid-cols-3">
                 {tours.map((tour, index) => {
                   const fallback = FALLBACK_IMAGES[index % FALLBACK_IMAGES.length];
-                  const bookingOptions = freeTourBookingOptions(tour);
+                  const bookingOptions = freeTourBookingOptions(tour, language);
                   return (
                     <article key={tour.id} className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card">
                       <div className="aspect-[16/10] overflow-hidden bg-border-soft">
                         <LiveTourImage
                           source={tour.imageUrl}
                           fallback={fallback}
-                          alt={`Recorrido de ${tour.name} en Lisboa`}
+                          alt={language === 'en' ? `${tour.name}, walking tour in Lisbon` : `Recorrido de ${tour.name} en Lisboa`}
                         />
                       </div>
 
                       <div className="flex flex-1 flex-col p-5">
                         <p className="mb-2 font-body text-[10px] font-bold uppercase tracking-[0.15em] text-terracotta">
-                          Free tour en español
+                          {copy.tourLabel}
                         </p>
                         <h3 className="font-display text-xl font-semibold not-italic leading-snug text-night">
                           {tour.name}
@@ -262,13 +263,13 @@ export default function FreeTourLiveFinder() {
                         {tour.rating > 0 && tour.reviews > 0 ? (
                           <p className="mt-2 flex items-center gap-2 font-body text-xs text-text-secondary">
                             <Star size={14} fill="currentColor" className="text-gold" aria-hidden="true" />
-                            {tour.rating.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} · {tour.reviews.toLocaleString('es-ES')} opiniones
+                            {tour.rating.toLocaleString(copy.locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} · {tour.reviews.toLocaleString(copy.locale)} {copy.reviews}
                           </p>
                         ) : null}
 
                         {tour.slots.length > 0 && (
                           <p className="mt-4 font-body text-sm leading-relaxed text-text-secondary">
-                            Horarios disponibles: {tour.slots.map((slot) => formatFreeTourTime(slot.time)).join(' · ')}
+                            {copy.times} {tour.slots.map((slot) => formatFreeTourTime(slot.time)).join(' · ')}
                           </p>
                         )}
                         <div className="mt-5 flex flex-wrap gap-2 border-t border-border-soft pt-4">
@@ -279,7 +280,7 @@ export default function FreeTourLiveFinder() {
                               target="_blank"
                               rel="sponsored noopener noreferrer"
                               aria-label={option.accessibleLabel}
-                              onClick={() => trackLiveClick(tour, option.url, option.content)}
+                              onClick={() => trackLiveClick(tour, option.url, option.content, language)}
                               className="inline-flex min-h-11 items-center gap-1.5 rounded-md bg-terracotta px-4 py-2.5 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark"
                             >
                               {option.label}
@@ -287,7 +288,7 @@ export default function FreeTourLiveFinder() {
                             </a>
                           ))}
                         </div>
-                        <p className="mt-3 font-body text-xs leading-relaxed text-text-secondary">Confirmas la hora y la reserva en GuruWalk.</p>
+                        <p className="mt-3 font-body text-xs leading-relaxed text-text-secondary">{copy.confirmation}</p>
                       </div>
                     </article>
                   );
