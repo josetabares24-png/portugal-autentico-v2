@@ -60,10 +60,10 @@ export default function CookieBanner() {
     <>
       {show && (
         <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-4 sm:right-4 sm:w-[min(360px,calc(100vw-2rem))] sm:p-0">
-          <div className="relative rounded-lg border border-border-soft bg-background-light/95 p-2.5 pr-9 shadow-soft backdrop-blur sm:p-3 sm:pr-9">
+          <div className="relative rounded-lg border border-border-soft bg-background-light/95 p-2.5 pr-14 shadow-soft backdrop-blur sm:p-3 sm:pr-14">
             <button
               onClick={closeBanner}
-              className="absolute right-1.5 top-1.5 flex h-7 w-7 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main"
+              className="absolute right-1.5 top-1.5 flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main"
               aria-label="Cerrar banner de cookies"
             >
               ✕
@@ -89,14 +89,14 @@ export default function CookieBanner() {
               <div className="grid w-full grid-cols-2 gap-2">
                 <button
                   onClick={rejectCookies}
-                  className="min-h-8 rounded-md border border-border-soft px-3 py-1 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main sm:min-h-9 sm:py-1.5"
+                  className="min-h-11 rounded-md border border-border-soft px-3 py-1.5 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
                   aria-label="Rechazar cookies"
                 >
                   Rechazar
                 </button>
                 <button
                   onClick={acceptCookies}
-                  className="min-h-8 rounded-md bg-terracotta px-3 py-1 font-body text-xs font-semibold text-white transition-colors hover:bg-primary-dark sm:min-h-9 sm:py-1.5"
+                  className="min-h-11 rounded-md bg-terracotta px-3 py-1.5 font-body text-xs font-semibold text-white transition-colors hover:bg-primary-dark"
                   aria-label="Aceptar cookies"
                 >
                   Aceptar
@@ -110,7 +110,7 @@ export default function CookieBanner() {
       {!show && consent === 'rejected' && explicitConsent && (
         <button
           onClick={openPreferences}
-          className="fixed bottom-3 left-3 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-border-soft bg-background-light text-terracotta shadow-soft transition-colors hover:border-terracotta hover:bg-white"
+          className="fixed bottom-3 left-3 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border-soft bg-background-light text-terracotta shadow-soft transition-colors hover:border-terracotta hover:bg-white"
           aria-label="Cambiar preferencias de cookies"
           title="Cambiar preferencias de cookies"
         >

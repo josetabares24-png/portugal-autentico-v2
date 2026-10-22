@@ -1,0 +1,2833 @@
+{
+  "captured": "2026-10-20T19:59:00.979Z",
+  "origin": "https://estabaenlisboa.com",
+  "productionSha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+  "method": "GET of all sitemap URLs plus candidate URLs. Incoming links count distinct fetched source pages, excluding self. Main includes related modules inside main; not all are authored contextual links. External backlinks not measured.",
+  "sitemapCount": 98,
+  "fetched": 99,
+  "non200": [
+    {
+      "path": "/blog/mejores-pasteles-nata-lisboa",
+      "status": 308,
+      "location": "/blog/pasteles-de-belem"
+    }
+  ],
+  "candidates": [
+    {
+      "pathname": "/blog/restaurantes-romanticos-lisboa",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/restaurantes-romanticos-lisboa",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Restaurantes románticos en Lisboa: 6 opciones | Estaba en Lisboa",
+      "description": "Restaurantes románticos en Lisboa para una cena especial: vistas, ambiente íntimo, cocina portuguesa y experiencias de alta gama según tu tipo de cita.",
+      "h1": [
+        "Restaurantes románticos en Lisboa: 6 opciones según el tipo de cita"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "fifty-seconds-para-una-cena-panoramica-de-alta-gama",
+          "text": "Fifty Seconds: para una cena panorámica de alta gama"
+        },
+        {
+          "tag": "H2",
+          "id": "suba-palacio-historico-y-terraza-sobre-la-ciudad",
+          "text": "Suba: palacio histórico y terraza sobre la ciudad"
+        },
+        {
+          "tag": "H2",
+          "id": "henrique-sa-pessoa-para-una-experiencia-gastronomica-centrada-en-la-mesa",
+          "text": "Henrique Sá Pessoa: para una experiencia gastronómica centrada en la mesa"
+        },
+        {
+          "tag": "H2",
+          "id": "1147-lisboa-cenar-dentro-del-castelo-con-vistas",
+          "text": "1147 Lisboa: cenar dentro del Castelo con vistas"
+        },
+        {
+          "tag": "H2",
+          "id": "cafe-sao-bento-una-cena-clasica-e-intima",
+          "text": "Café São Bento: una cena clásica e íntima"
+        },
+        {
+          "tag": "H2",
+          "id": "pateo-alfacinha-para-vistas-al-tajo-con-un-ambiente-mas-portugues",
+          "text": "Páteo Alfacinha: para vistas al Tajo con un ambiente más portugués"
+        },
+        {
+          "tag": "H2",
+          "id": "como-elegir-sin-equivocarte-de-restaurante",
+          "text": "Cómo elegir sin equivocarte de restaurante"
+        },
+        {
+          "tag": "H2",
+          "id": "hace-falta-reservar",
+          "text": "¿Hace falta reservar?"
+        },
+        {
+          "tag": "H2",
+          "id": "una-noche-romantica-no-tiene-que-empezar-en-el-restaurante",
+          "text": "Una noche romántica no tiene que empezar en el restaurante"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1022,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/mejores-miradores-lisboa",
+          "hash": "",
+          "label": "Mejores miradores de Lisboa →",
+          "inMain": true,
+          "href": "/blog/mejores-miradores-lisboa"
+        },
+        {
+          "target": "/blog/lisboa-en-pareja",
+          "hash": "",
+          "label": "Lisboa en pareja →",
+          "inMain": true,
+          "href": "/blog/lisboa-en-pareja"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/lisboa-en-pareja",
+          "hash": "",
+          "label": "GuíasLisboa en pareja: qué hacer, planes y lugares para dos",
+          "inMain": true,
+          "href": "/blog/lisboa-en-pareja"
+        },
+        {
+          "target": "/blog/donde-escuchar-fado-autentico",
+          "hash": "",
+          "label": "CulturaDónde Escuchar Fado Auténtico en Lisboa",
+          "inMain": true,
+          "href": "/blog/donde-escuchar-fado-autentico"
+        },
+        {
+          "target": "/blog/vinos-portugueses-guia",
+          "hash": "",
+          "label": "GastronomíaVinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
+          "inMain": true,
+          "href": "/blog/vinos-portugueses-guia"
+        },
+        {
+          "target": "/blog/vida-nocturna-lisboa",
+          "hash": "",
+          "label": "Vida nocturna en Lisboa",
+          "inMain": true,
+          "href": "/blog/vida-nocturna-lisboa"
+        },
+        {
+          "target": "/blog/donde-alojarse-en-lisboa",
+          "hash": "",
+          "label": "Dónde alojarse en Lisboa",
+          "inMain": true,
+          "href": "/blog/donde-alojarse-en-lisboa"
+        },
+        {
+          "target": "/donde-comer-en-lisboa",
+          "hash": "",
+          "label": "Guía completa para comer en Lisboa",
+          "inMain": true,
+          "href": "/donde-comer-en-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 3,
+      "incomingMainPages": 3,
+      "incoming": [
+        {
+          "source": "/blog/lisboa-en-pareja",
+          "main": [
+            "Restaurantes para una cena especial en Lisboa →",
+            "GastronomíaRestaurantes románticos en Lisboa: 6 opciones según el tipo de cita"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/vida-nocturna-lisboa",
+          "main": [
+            "Restaurantes para una cena especial en Lisboa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/vinos-portugueses-guia",
+          "main": [
+            "GastronomíaRestaurantes románticos en Lisboa: 6 opciones según el tipo de cita"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/lisboa-en-pareja",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/lisboa-en-pareja",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Lisboa en pareja: qué hacer y mejores planes | Estaba en Lisboa",
+      "description": "Ideas para disfrutar Lisboa en pareja: miradores, paseos, fado, el Tajo, Belém, Sintra y planes para distintos presupuestos y momentos del día.",
+      "h1": [
+        "Lisboa en pareja: qué hacer, planes y lugares para dos"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "que-hacer-en-lisboa-en-pareja",
+          "text": "Qué hacer en Lisboa en pareja"
+        },
+        {
+          "tag": "H3",
+          "id": "ver-el-atardecer-desde-un-mirador",
+          "text": "Ver el atardecer desde un mirador"
+        },
+        {
+          "tag": "H3",
+          "id": "caminar-por-alfama-sin-una-ruta-fija",
+          "text": "Caminar por Alfama sin una ruta fija"
+        },
+        {
+          "tag": "H3",
+          "id": "escuchar-fado",
+          "text": "Escuchar fado"
+        },
+        {
+          "tag": "H3",
+          "id": "cruzar-el-tajo-en-barco",
+          "text": "Cruzar el Tajo en barco"
+        },
+        {
+          "tag": "H3",
+          "id": "pasar-una-tarde-en-belem",
+          "text": "Pasar una tarde en Belém"
+        },
+        {
+          "tag": "H3",
+          "id": "ir-a-sintra-por-el-dia",
+          "text": "Ir a Sintra por el día"
+        },
+        {
+          "tag": "H2",
+          "id": "planes-segun-el-momento-del-dia",
+          "text": "Planes según el momento del día"
+        },
+        {
+          "tag": "H2",
+          "id": "planes-baratos-o-gratis-para-dos",
+          "text": "Planes baratos o gratis para dos"
+        },
+        {
+          "tag": "H2",
+          "id": "lisboa-en-pareja-si-llueve",
+          "text": "Lisboa en pareja si llueve"
+        },
+        {
+          "tag": "H2",
+          "id": "donde-cenar",
+          "text": "Dónde cenar"
+        },
+        {
+          "tag": "H2",
+          "id": "cuantos-dias-hacen-falta",
+          "text": "Cuántos días hacen falta"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1704,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/mejores-miradores-lisboa",
+          "hash": "",
+          "label": "Ver la guía de miradores →",
+          "inMain": true,
+          "href": "/blog/mejores-miradores-lisboa"
+        },
+        {
+          "target": "/blog/donde-escuchar-fado-autentico",
+          "hash": "",
+          "label": "Dónde escuchar fado en Lisboa →",
+          "inMain": true,
+          "href": "/blog/donde-escuchar-fado-autentico"
+        },
+        {
+          "target": "/blog/sintra-desde-lisboa",
+          "hash": "",
+          "label": "Guía de Sintra desde Lisboa →",
+          "inMain": true,
+          "href": "/blog/sintra-desde-lisboa"
+        },
+        {
+          "target": "/blog/restaurantes-romanticos-lisboa",
+          "hash": "",
+          "label": "Restaurantes para una cena especial en Lisboa →",
+          "inMain": true,
+          "href": "/blog/restaurantes-romanticos-lisboa"
+        },
+        {
+          "target": "/itinerarios",
+          "hash": "",
+          "label": "Ver los itinerarios de 1, 2 y 3 días →",
+          "inMain": true,
+          "href": "/itinerarios"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/restaurantes-romanticos-lisboa",
+          "hash": "",
+          "label": "GastronomíaRestaurantes románticos en Lisboa: 6 opciones según el tipo de cita",
+          "inMain": true,
+          "href": "/blog/restaurantes-romanticos-lisboa"
+        },
+        {
+          "target": "/blog/mejores-miradores-lisboa",
+          "hash": "",
+          "label": "GuíasLos mejores miradores de Lisboa: cuáles elegir y cómo combinarlos",
+          "inMain": true,
+          "href": "/blog/mejores-miradores-lisboa"
+        },
+        {
+          "target": "/blog/donde-escuchar-fado-autentico",
+          "hash": "",
+          "label": "CulturaDónde Escuchar Fado Auténtico en Lisboa",
+          "inMain": true,
+          "href": "/blog/donde-escuchar-fado-autentico"
+        },
+        {
+          "target": "/actividades/crucero-atardecer-tajo",
+          "hash": "",
+          "label": "Paseo en barco al atardecer por el Tajo",
+          "inMain": true,
+          "href": "/actividades/crucero-atardecer-tajo"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 2,
+      "incomingMainPages": 2,
+      "incoming": [
+        {
+          "source": "/actividades/crucero-atardecer-tajo",
+          "main": [
+            "Lisboa en pareja →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/restaurantes-romanticos-lisboa",
+          "main": [
+            "Lisboa en pareja →",
+            "GuíasLisboa en pareja: qué hacer, planes y lugares para dos"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/novedades-lisboa-2026",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/novedades-lisboa-2026",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Lisboa 2026: Todas las Novedades para Viajeros | Estaba en Lisboa",
+      "description": "Qué cambia en Lisboa en 2026: museos, reapertura de la Torre de Belém, transporte y los eventos del año, con lo que conviene comprobar antes de viajar.",
+      "h1": [
+        "Lisboa 2026: Todas las Novedades para Viajeros"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "nuevas-atracciones-y-museos",
+          "text": "Nuevas Atracciones y Museos"
+        },
+        {
+          "tag": "H2",
+          "id": "gastronomia-lo-nuevo-en-2026",
+          "text": "Gastronomía: Lo Nuevo en 2026"
+        },
+        {
+          "tag": "H2",
+          "id": "cambios-en-el-transporte-en-2026",
+          "text": "Cambios en el Transporte en 2026"
+        },
+        {
+          "tag": "H2",
+          "id": "eventos-de-2026",
+          "text": "Eventos de 2026"
+        },
+        {
+          "tag": "H2",
+          "id": "alojamiento-nuevas-opciones-en-2026",
+          "text": "Alojamiento: Nuevas Opciones en 2026"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 887,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/festivales-eventos-lisboa-2026",
+          "hash": "",
+          "label": "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo",
+          "inMain": true,
+          "href": "/blog/festivales-eventos-lisboa-2026"
+        },
+        {
+          "target": "/blog/mejor-epoca-visitar-lisboa",
+          "hash": "",
+          "label": "PlanificaciónMejor época para visitar Lisboa: clima y qué cambia cada mes",
+          "inMain": true,
+          "href": "/blog/mejor-epoca-visitar-lisboa"
+        },
+        {
+          "target": "/blog/mejores-apps-lisboa",
+          "hash": "",
+          "label": "ConsejosMejores apps para Lisboa: transporte, mapas y pagos",
+          "inMain": true,
+          "href": "/blog/mejores-apps-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 1,
+      "incomingMainPages": 1,
+      "incoming": [
+        {
+          "source": "/blog/festivales-eventos-lisboa-2026",
+          "main": [
+            "PlanificaciónLisboa 2026: Todas las Novedades para Viajeros"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/festivales-eventos-lisboa-2026",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/festivales-eventos-lisboa-2026",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Festivales y eventos en Lisboa 2026 | Estaba en Lisboa",
+      "description": "Santo António, NOS Alive, Festas de Lisboa, Arraiais y mucho más. El calendario completo de eventos y festivales de Lisboa para 2026.",
+      "h1": [
+        "Festivales y Eventos en Lisboa 2026: Calendario Completo"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "enero-marzo-cultura-y-carnaval",
+          "text": "Enero - Marzo: Cultura y Carnaval"
+        },
+        {
+          "tag": "H2",
+          "id": "abril-mayo-primavera-y-el-25-de-abril",
+          "text": "Abril - Mayo: Primavera y el 25 de Abril"
+        },
+        {
+          "tag": "H2",
+          "id": "junio-las-festas-de-lisboa-y-santo-antonio",
+          "text": "Junio: Las Festas de Lisboa y Santo António"
+        },
+        {
+          "tag": "H2",
+          "id": "julio-agosto-festivales-de-musica",
+          "text": "Julio - Agosto: Festivales de Música"
+        },
+        {
+          "tag": "H2",
+          "id": "septiembre-diciembre-otono-cultural",
+          "text": "Septiembre - Diciembre: Otoño Cultural"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1023,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/semana-santa-lisboa",
+          "hash": "",
+          "label": "Semana Santa en Lisboa 2027 →",
+          "inMain": true,
+          "href": "/blog/semana-santa-lisboa"
+        },
+        {
+          "target": "/blog/lisboa-en-navidad",
+          "hash": "",
+          "label": "Lisboa en Navidad 2026 →",
+          "inMain": true,
+          "href": "/blog/lisboa-en-navidad"
+        },
+        {
+          "target": "/blog/nochevieja-lisboa",
+          "hash": "",
+          "label": "Nochevieja en Lisboa 2026 →",
+          "inMain": true,
+          "href": "/blog/nochevieja-lisboa"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/lisboa-en-navidad",
+          "hash": "",
+          "label": "PlanificaciónLisboa en Navidad 2026: luces, mercados y qué abre cada día",
+          "inMain": true,
+          "href": "/blog/lisboa-en-navidad"
+        },
+        {
+          "target": "/blog/nochevieja-lisboa",
+          "hash": "",
+          "label": "PlanificaciónNochevieja en Lisboa 2026: dónde ver los fuegos y qué hacer",
+          "inMain": true,
+          "href": "/blog/nochevieja-lisboa"
+        },
+        {
+          "target": "/blog/novedades-lisboa-2026",
+          "hash": "",
+          "label": "PlanificaciónLisboa 2026: Todas las Novedades para Viajeros",
+          "inMain": true,
+          "href": "/blog/novedades-lisboa-2026"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 5,
+      "incomingMainPages": 5,
+      "incoming": [
+        {
+          "source": "/blog/lisboa-en-navidad",
+          "main": [
+            "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/mejor-epoca-visitar-lisboa",
+          "main": [
+            "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/nochevieja-lisboa",
+          "main": [
+            "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/novedades-lisboa-2026",
+          "main": [
+            "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/semana-santa-lisboa",
+          "main": [
+            "PlanificaciónFestivales y Eventos en Lisboa 2026: Calendario Completo"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/monumentos-de-lisboa",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/monumentos-de-lisboa",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Los monumentos de Lisboa que no fallan | Estaba en Lisboa",
+      "description": "Torre de Belém, Jerónimos, Castelo de São Jorge, el Elevador de Santa Justa... Los monumentos imprescindibles con horarios, precios y cómo evitar las colas.",
+      "h1": [
+        "Los 15 Monumentos de Lisboa que No Te Puedes Perder"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "1-mosteiro-dos-jeronimos-la-obra-cumbre-del-manuelino",
+          "text": "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino"
+        },
+        {
+          "tag": "H2",
+          "id": "2-torre-de-belem-el-icono-de-lisboa",
+          "text": "2. Torre de Belém — El Icono de Lisboa"
+        },
+        {
+          "tag": "H2",
+          "id": "3-castelo-de-sao-jorge-la-historia-de-lisboa-en-piedra",
+          "text": "3. Castelo de São Jorge — La Historia de Lisboa en Piedra"
+        },
+        {
+          "tag": "H2",
+          "id": "4-elevador-de-santa-justa-hierro-forjado-sobre-la-baixa",
+          "text": "4. Elevador de Santa Justa — Hierro forjado sobre la Baixa"
+        },
+        {
+          "tag": "H2",
+          "id": "5-palacio-nacional-da-ajuda-el-palacio-que-tardo-226-anos-en-terminarse",
+          "text": "5. Palácio Nacional da Ajuda — El palacio que tardó 226 años en terminarse"
+        },
+        {
+          "tag": "H2",
+          "id": "6-15-los-monumentos-esenciales",
+          "text": "6-15. Los Monumentos Esenciales"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1299,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/monasterio-jeronimos-entradas",
+          "hash": "",
+          "label": "Monasterio de los Jerónimos: entradas y horarios →",
+          "inMain": true,
+          "href": "/blog/monasterio-jeronimos-entradas"
+        },
+        {
+          "target": "/comprar-entradas",
+          "hash": "",
+          "label": "Ver entradas y experiencias en Lisboa →",
+          "inMain": true,
+          "href": "/comprar-entradas"
+        },
+        {
+          "target": "/free-tours-lisboa",
+          "hash": "#ruta-imprescindible",
+          "label": "Ver los free tours por el centro histórico →",
+          "inMain": true,
+          "href": "/free-tours-lisboa#ruta-imprescindible"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/historia-de-lisboa",
+          "hash": "",
+          "label": "CulturaHistoria de Lisboa: de Olisipo al siglo XXI",
+          "inMain": true,
+          "href": "/blog/historia-de-lisboa"
+        },
+        {
+          "target": "/blog/belem-barrio-guia",
+          "hash": "",
+          "label": "GuíasBelém: El Barrio de los Descubrimientos y los Pastéis de Nata",
+          "inMain": true,
+          "href": "/blog/belem-barrio-guia"
+        },
+        {
+          "target": "/blog/arquitectura-manuelina-lisboa",
+          "hash": "",
+          "label": "CulturaEstilo manuelino en Portugal: qué es, características y ejemplos",
+          "inMain": true,
+          "href": "/blog/arquitectura-manuelina-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 4,
+      "incomingMainPages": 4,
+      "incoming": [
+        {
+          "source": "/blog/arquitectura-manuelina-lisboa",
+          "main": [
+            "GuíasLos 15 Monumentos de Lisboa que No Te Puedes Perder"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/lisboa-card-vale-la-pena",
+          "main": [
+            "GuíasLos 15 Monumentos de Lisboa que No Te Puedes Perder"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/monasterio-jeronimos-entradas",
+          "main": [
+            "Monumentos de Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/terremoto-lisboa-1755",
+          "main": [
+            "GuíasLos 15 Monumentos de Lisboa que No Te Puedes Perder"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/que-ver-en-lisboa",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/que-ver-en-lisboa",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Qué ver en Lisboa: imprescindibles y ruta por días",
+      "description": "Qué ver en Lisboa según tus días: Alfama, Baixa, Belém, miradores, monumentos, planes gratis y qué reservar para organizar una primera visita.",
+      "h1": [
+        "Qué ver en Lisboa"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Centro y Alfama"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Añade Belém"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Elige otra Lisboa"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Sintra o Cascais"
+        },
+        {
+          "tag": "H2",
+          "id": "imprescindibles",
+          "text": "Los lugares que mejor explican Lisboa"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Praça do Comércio y Baixa"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Chiado y Largo do Carmo"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Alfama y la Sé"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Castelo de São Jorge"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Belém"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Un mirador"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Parque das Nações"
+        },
+        {
+          "tag": "H2",
+          "id": "zonas",
+          "text": "Visita por zonas, no por popularidad"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Baixa + Chiado"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Alfama + Graça"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Belém"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Parque das Nações"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Sintra"
+        },
+        {
+          "tag": "H2",
+          "id": "por-dias",
+          "text": "Qué ver en Lisboa en 1, 2, 3 o 4 días"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "1 día: centro + Alfama"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "2 días: suma Belém"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "3 días: elige contraste"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "4 días: sal de Lisboa"
+        },
+        {
+          "tag": "H2",
+          "id": "gratis-o-de-pago",
+          "text": "Lisboa no necesita una agenda llena de entradas"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Gratis y esencial"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Historia y arquitectura"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Familias y lluvia"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Vistas"
+        },
+        {
+          "tag": "H2",
+          "id": "reservar",
+          "text": "Qué reservar antes y qué dejar abierto"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Reserva antes"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Comprueba el mismo día"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Deja flexible"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "No encadenes"
+        },
+        {
+          "tag": "H2",
+          "id": "segun-tu-viaje",
+          "text": "La mejor selección cambia contigo"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Primera vez"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Con niños"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Movilidad reducida"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Ya conoces Lisboa"
+        },
+        {
+          "tag": "H2",
+          "id": "cierre-guia",
+          "text": "No necesitas verlo todo para entender Lisboa."
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Preguntas frecuentes"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Lecturas relacionadas"
+        }
+      ],
+      "mainWords": 1677,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/aviso-legal",
+          "hash": "#3-afiliados-y-enlaces-a-terceros",
+          "label": "Cómo funciona",
+          "inMain": true,
+          "href": "/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+        },
+        {
+          "target": "/aviso-legal",
+          "hash": "#3-afiliados-y-enlaces-a-terceros",
+          "label": "Cómo funciona",
+          "inMain": true,
+          "href": "/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver el Blog →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/itinerarios",
+          "hash": "",
+          "label": "Ruta completaElegir itinerario por díasRutas cerradas para 1, 2 y 3 días, con horarios y trayectos realistas.",
+          "inMain": true,
+          "href": "/itinerarios"
+        },
+        {
+          "target": "/blog/mejores-miradores-lisboa",
+          "hash": "",
+          "label": "VistasComparar los miradoresQué panorámica ofrece cada uno y cómo combinarlos sin repetir cuestas.",
+          "inMain": true,
+          "href": "/blog/mejores-miradores-lisboa"
+        },
+        {
+          "target": "/blog/que-hacer-gratis-en-lisboa",
+          "hash": "",
+          "label": "PresupuestoPlanes gratis que sí compensanBarrios, jardines, río y miradores que no necesitan entrada.",
+          "inMain": true,
+          "href": "/blog/que-hacer-gratis-en-lisboa"
+        },
+        {
+          "target": "/blog/como-moverse-por-lisboa",
+          "hash": "",
+          "label": "LogísticaMoverte sin cruzar Lisboa de másMetro, tranvía, tren y caminatas elegidos según el trayecto.",
+          "inMain": true,
+          "href": "/blog/como-moverse-por-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 97,
+      "incomingMainPages": 5,
+      "incoming": [
+        {
+          "source": "/",
+          "main": [
+            "Qué verBarrios, monumentos, miradores y qué merece reserva."
+          ],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/cascais-cabo-da-roca",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/castelo-sao-jorge",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/cristo-rei",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/crucero-atardecer-tajo",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/elevador-santa-justa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/fado-en-alfama",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/free-walking-tour-centro",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/jardim-estrela-principe-real",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/lx-factory",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/miradouro-portas-do-sol",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/miradouro-santa-luzia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/miradouro-senhora-do-monte",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/oceanario-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/parque-eduardo-vii",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/pasteis-de-belem",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/tasca-tradicional",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/actividades/torre-de-belem",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/aeropuerto-lisboa-al-centro",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/alfama-historia-guia",
+          "main": [
+            "Qué ver en Lisboa y cómo ordenarlo"
+          ],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/arquitectura-manuelina-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/azulejos-portugueses-historia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/bacalhau-plato-portugal",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/baixa-lisboa-que-ver",
+          "main": [
+            "Guía completa de qué ver en Lisboa"
+          ],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/barrios-imprescindibles",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/belem-barrio-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/chiado-bairro-alto-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/como-moverse-por-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/como-moverse-por-portugal",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/como-pagar-en-portugal",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/descubrimientos-portugueses-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/donde-alojarse-en-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/donde-comer-barato-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/donde-escuchar-fado-autentico",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/donde-fotografiar-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/donde-tomar-cafe-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/errores-turistas-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/estacion-olaias-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/estacion-oriente-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/excursiones-desde-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/fado-historia-origen",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/festivales-eventos-lisboa-2026",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/gastronomia-portuguesa-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/graca-lisboa-que-ver",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/historia-de-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-card-vale-la-pena",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-con-ninos",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-cuando-llueve",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-en-4-dias",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-en-5-dias",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-en-7-dias",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-en-navidad",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-en-pareja",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/lisboa-vs-porto",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/mejor-epoca-visitar-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/mejores-apps-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/mejores-mercados-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/mejores-miradores-lisboa",
+          "main": [
+            "Qué ver en Lisboa en una primera visita"
+          ],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/metro-lisboa-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/monasterio-jeronimos-entradas",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/monumentos-de-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/mouraria-barrio-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/nochevieja-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/novedades-lisboa-2026",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/obidos-vila-natal",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/palacio-da-pena-entradas",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/parque-das-nacoes-lisboa-que-ver",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/pasteles-de-belem",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/patinetes-electricos-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/playas-cerca-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/portugal-en-7-dias",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/presupuesto-viajar-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/que-comprar-lisboa-souvenirs",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/que-hacer-gratis-en-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/que-ver-cascais-desde-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/restaurantes-romanticos-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/semana-santa-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/sintra-desde-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/tarjeta-navegante-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/terremoto-lisboa-1755",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/time-out-market-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/tram-28-historia-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/vida-nocturna-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/vinos-portugueses-guia",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/blog/volta-portugal-devolucion-envases",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/calculadora-presupuesto-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/contacto",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/donde-comer-en-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/free-tours-lisboa",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/itinerarios",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/itinerarios/lisboa-1-dia-lo-esencial",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/itinerarios/lisboa-2-dias-completo",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/itinerarios/lisboa-3-dias-premium",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/portugal",
+          "main": [
+            "Lisboa como baseQué ver, cómo moverte y cómo organizar la ciudad antes de salir al resto del país.Abrir guía"
+          ],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        },
+        {
+          "source": "/sobre-nosotros",
+          "main": [],
+          "global": [
+            "Qué ver en Lisboa"
+          ]
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/bacalhau-plato-portugal",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/bacalhau-plato-portugal",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "El bacalhau | Guía del plato portugués | Estaba en Lisboa",
+      "description": "Un pescado noruego, un país atlántico y 500 años de historia marítima. Cómo el bacalhau se convirtió en el plato nacional de Portugal y las mejores recetas que tienes que probar.",
+      "h1": [
+        "El Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "la-historia-del-atlantico-norte-a-la-mesa-portuguesa",
+          "text": "La Historia: Del Atlántico Norte a la Mesa Portuguesa"
+        },
+        {
+          "tag": "H2",
+          "id": "las-recetas-imprescindibles",
+          "text": "Las Recetas Imprescindibles"
+        },
+        {
+          "tag": "H2",
+          "id": "como-reconocer-el-bacalhau-de-calidad",
+          "text": "Cómo Reconocer el Bacalhau de Calidad"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 742,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/gastronomia-portuguesa-guia",
+          "hash": "",
+          "label": "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
+          "inMain": true,
+          "href": "/blog/gastronomia-portuguesa-guia"
+        },
+        {
+          "target": "/blog/donde-comer-barato-lisboa",
+          "hash": "",
+          "label": "GastronomíaDónde comer barato en Lisboa: tascas y menús revisados en 2026",
+          "inMain": true,
+          "href": "/blog/donde-comer-barato-lisboa"
+        },
+        {
+          "target": "/blog/mejores-mercados-lisboa",
+          "hash": "",
+          "label": "GuíasLos Mejores Mercados de Lisboa",
+          "inMain": true,
+          "href": "/blog/mejores-mercados-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 1,
+      "incomingMainPages": 1,
+      "incoming": [
+        {
+          "source": "/blog/gastronomia-portuguesa-guia",
+          "main": [
+            "GastronomíaEl Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/vinos-portugueses-guia",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/vinos-portugueses-guia",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Vinos portugueses | Guía para entender | Estaba en Lisboa",
+      "description": "Portugal tiene uno de los patrimonios vinícolas más ignorados de Europa. Vinho verde, vino de Oporto, Douro, Alentejo, Madeira...",
+      "h1": [
+        "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "vinho-verde-el-vino-del-verano",
+          "text": "Vinho Verde: El Vino del Verano"
+        },
+        {
+          "tag": "H2",
+          "id": "vino-de-oporto-porto-mucho-mas-que-el-digestivo-dulce",
+          "text": "Vino de Oporto (Porto): Mucho Más que el Digestivo Dulce"
+        },
+        {
+          "tag": "H2",
+          "id": "alentejo-los-tintos-que-se-beben-en-lisboa",
+          "text": "Alentejo: Los Tintos que Se Beben en Lisboa"
+        },
+        {
+          "tag": "H2",
+          "id": "como-pedir-vino-en-lisboa",
+          "text": "Cómo Pedir Vino en Lisboa"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 695,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/gastronomia-portuguesa-guia",
+          "hash": "",
+          "label": "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
+          "inMain": true,
+          "href": "/blog/gastronomia-portuguesa-guia"
+        },
+        {
+          "target": "/blog/restaurantes-romanticos-lisboa",
+          "hash": "",
+          "label": "GastronomíaRestaurantes románticos en Lisboa: 6 opciones según el tipo de cita",
+          "inMain": true,
+          "href": "/blog/restaurantes-romanticos-lisboa"
+        },
+        {
+          "target": "/blog/que-comprar-lisboa-souvenirs",
+          "hash": "",
+          "label": "ConsejosQué comprar en Lisboa: recuerdos que sí tienen sentido",
+          "inMain": true,
+          "href": "/blog/que-comprar-lisboa-souvenirs"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 3,
+      "incomingMainPages": 3,
+      "incoming": [
+        {
+          "source": "/blog/gastronomia-portuguesa-guia",
+          "main": [
+            "GastronomíaVinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/que-comprar-lisboa-souvenirs",
+          "main": [
+            "GastronomíaVinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/restaurantes-romanticos-lisboa",
+          "main": [
+            "GastronomíaVinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/gastronomia-portuguesa-guia",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/gastronomia-portuguesa-guia",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Gastronomía portuguesa | 20 platos | Estaba en Lisboa",
+      "description": "Bacalhau, pastéis de nata, bifanas, caldo verde, amêijoas à bulhão pato... La guía definitiva de la cocina portuguesa con dónde comer cada plato en Lisboa.",
+      "h1": [
+        "Gastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "los-imprescindibles-empieza-por-aqui",
+          "text": "Los Imprescindibles — Empieza por Aquí"
+        },
+        {
+          "tag": "H2",
+          "id": "pescados-y-mariscos-la-despensa-del-atlantico",
+          "text": "Pescados y Mariscos — La Despensa del Atlántico"
+        },
+        {
+          "tag": "H2",
+          "id": "carne-y-embutidos",
+          "text": "Carne y Embutidos"
+        },
+        {
+          "tag": "H2",
+          "id": "dulces-y-pasteleria-el-legado-conventual",
+          "text": "Dulces y Pastelería — El Legado Conventual"
+        },
+        {
+          "tag": "H2",
+          "id": "donde-comer-bien-en-lisboa-por-tipo-de-plato",
+          "text": "Dónde Comer Bien en Lisboa — Por Tipo de Plato"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 857,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/actividades/tasca-tradicional",
+          "hash": "",
+          "label": "Comer en una tasca tradicional →",
+          "inMain": true,
+          "href": "/actividades/tasca-tradicional"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/bacalhau-plato-portugal",
+          "hash": "",
+          "label": "GastronomíaEl Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa",
+          "inMain": true,
+          "href": "/blog/bacalhau-plato-portugal"
+        },
+        {
+          "target": "/blog/pasteles-de-belem",
+          "hash": "",
+          "label": "GastronomíaPastéis de Belém: La Guía Definitiva",
+          "inMain": true,
+          "href": "/blog/pasteles-de-belem"
+        },
+        {
+          "target": "/blog/vinos-portugueses-guia",
+          "hash": "",
+          "label": "GastronomíaVinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
+          "inMain": true,
+          "href": "/blog/vinos-portugueses-guia"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 10,
+      "incomingMainPages": 10,
+      "incoming": [
+        {
+          "source": "/actividades/tasca-tradicional",
+          "main": [
+            "Qué comer en Portugal →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/bacalhau-plato-portugal",
+          "main": [
+            "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/donde-comer-barato-lisboa",
+          "main": [
+            "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/donde-tomar-cafe-lisboa",
+          "main": [
+            "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/lisboa-en-navidad",
+          "main": [
+            "Gastronomía portuguesa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/pasteles-de-belem",
+          "main": [
+            "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/que-comprar-lisboa-souvenirs",
+          "main": [
+            "Qué comer en Portugal"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/semana-santa-lisboa",
+          "main": [
+            "Gastronomía portuguesa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/vinos-portugueses-guia",
+          "main": [
+            "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/donde-comer-en-lisboa",
+          "main": [
+            "Qué pedirEntender la cocina portuguesaPlatos, ingredientes y formas de comer que aparecen una y otra vez en las cartas."
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/pasteles-de-belem",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/pasteles-de-belem",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Pastéis de Belém | Historia y secretos | Estaba en Lisboa",
+      "description": "La receta que llevan custodiando desde 1837, por qué no es lo mismo que un pastel de nata cualquiera, y cómo evitar la cola sin renunciar a la experiencia.",
+      "h1": [
+        "Pastéis de Belém: historia, secretos y la forma correcta de comerlos"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Lo esencial"
+        },
+        {
+          "tag": "H2",
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "tag": "H2",
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "tag": "H2",
+          "id": "pastel-de-belem-versus-pastel-de-nata-no-son-lo-mismo",
+          "text": "Pastel de Belém versus pastel de nata: no son lo mismo"
+        },
+        {
+          "tag": "H2",
+          "id": "como-funciona-la-cola-y-como-esquivarla",
+          "text": "Cómo funciona la cola (y cómo esquivarla)"
+        },
+        {
+          "tag": "H2",
+          "id": "los-horarios-que-los-lisboetas-conocen",
+          "text": "Los horarios que los lisboetas conocen"
+        },
+        {
+          "tag": "H2",
+          "id": "el-ritual-de-comerlos-correctamente",
+          "text": "El ritual de comerlos correctamente"
+        },
+        {
+          "tag": "H2",
+          "id": "los-salones-interiores-viaje-en-el-tiempo",
+          "text": "Los salones interiores: viaje en el tiempo"
+        },
+        {
+          "tag": "H2",
+          "id": "cuantos-pedir-la-eterna-pregunta",
+          "text": "¿Cuántos pedir? La eterna pregunta"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1453,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/actividades/pasteis-de-belem",
+          "hash": "",
+          "label": "Planificar la visita a Pastéis de Belém →",
+          "inMain": true,
+          "href": "/actividades/pasteis-de-belem"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/belem-barrio-guia",
+          "hash": "",
+          "label": "GuíasBelém: El Barrio de los Descubrimientos y los Pastéis de Nata",
+          "inMain": true,
+          "href": "/blog/belem-barrio-guia"
+        },
+        {
+          "target": "/blog/gastronomia-portuguesa-guia",
+          "hash": "",
+          "label": "GastronomíaGastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
+          "inMain": true,
+          "href": "/blog/gastronomia-portuguesa-guia"
+        },
+        {
+          "target": "/blog/donde-tomar-cafe-lisboa",
+          "hash": "",
+          "label": "GastronomíaDónde tomar café en Lisboa: bica, cafés históricos y especialidad",
+          "inMain": true,
+          "href": "/blog/donde-tomar-cafe-lisboa"
+        },
+        {
+          "target": "/blog/monasterio-jeronimos-entradas",
+          "hash": "",
+          "label": "Monasterio de los Jerónimos: entradas y horarios",
+          "inMain": true,
+          "href": "/blog/monasterio-jeronimos-entradas"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 5,
+      "incomingMainPages": 5,
+      "incoming": [
+        {
+          "source": "/actividades/pasteis-de-belem",
+          "main": [
+            "Pastéis de Belém: la guía completa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/belem-barrio-guia",
+          "main": [
+            "GastronomíaPastéis de Belém: La Guía Definitiva"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/gastronomia-portuguesa-guia",
+          "main": [
+            "GastronomíaPastéis de Belém: La Guía Definitiva"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/monasterio-jeronimos-entradas",
+          "main": [
+            "GastronomíaPastéis de Belém: La Guía Definitiva"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/que-comprar-lisboa-souvenirs",
+          "main": [
+            "Pastéis de Belém"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/actividades/pasteis-de-belem",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Pastéis de Belém: precio, cola y cuándo ir",
+      "description": "La pastelería original (desde 1837): pastéis recién hechos, con canela y azúcar en la mesa.",
+      "h1": [
+        "Pastéis de Belém"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Cómo llegar"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Comer en una tasca tradicional"
+        }
+      ],
+      "mainWords": 358,
+      "links": [
+        {
+          "target": "/actividades",
+          "hash": "",
+          "label": "Actividades",
+          "inMain": true,
+          "href": "/actividades"
+        },
+        {
+          "target": "/blog/pasteles-de-belem",
+          "hash": "",
+          "label": "Pastéis de Belém: la guía completa →",
+          "inMain": true,
+          "href": "/blog/pasteles-de-belem"
+        },
+        {
+          "target": "/planifica-tu-viaje",
+          "hash": "",
+          "label": "Incluir en mi plan de viaje",
+          "inMain": true,
+          "href": "/planifica-tu-viaje"
+        },
+        {
+          "target": "/itinerarios",
+          "hash": "",
+          "label": "Ver itinerarios gratuitos",
+          "inMain": true,
+          "href": "/itinerarios"
+        },
+        {
+          "target": "/actividades",
+          "hash": "",
+          "label": "← Ver todas las actividades",
+          "inMain": true,
+          "href": "/actividades"
+        },
+        {
+          "target": "/actividades/tasca-tradicional",
+          "hash": "",
+          "label": "GastronomíaDesde 8 €Comer en una tasca tradicionalEl \"prato do dia\" (plato del día) en una tasca de barrio es la forma más barata de comer bien en Lisboa.Desde 8-12 € el menú1 hTip para ahorrar: Aléjate dos calles de las zonas turísticas (Baixa, Alfama central): el mismo plato puede costar hasta 3 veces menos.",
+          "inMain": true,
+          "href": "/actividades/tasca-tradicional"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 2,
+      "incomingMainPages": 2,
+      "incoming": [
+        {
+          "source": "/actividades/tasca-tradicional",
+          "main": [
+            "GastronomíaDesde 1,60 €Pastéis de BelémLa pastelería original (desde 1837): pastéis recién hechos, con canela y azúcar en la mesa.1,60 € / pastel20 minTip para ahorrar: La cola de la calle es la de llevar. Si vas a comerlos allí, entra directo a las salas: el pastel cuesta lo mismo (1,60 €) y casi siempre hay mesa."
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/pasteles-de-belem",
+          "main": [
+            "Planificar la visita a Pastéis de Belém →"
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/blog/mejores-pasteles-nata-lisboa",
+      "status": 308,
+      "location": "/blog/pasteles-de-belem",
+      "canonical": null,
+      "robots": null,
+      "xRobotsTag": null,
+      "title": "",
+      "h1": [],
+      "headings": [],
+      "mainWords": 1,
+      "links": [],
+      "schemaCount": 0,
+      "schemaParseable": true,
+      "inSitemap": false,
+      "incomingPages": 0,
+      "incomingMainPages": 0,
+      "incoming": []
+    },
+    {
+      "pathname": "/blog/que-ver-cascais-desde-lisboa",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Cascais desde Lisboa: qué ver y cómo ir | Estaba en Lisboa",
+      "description": "Qué ver en Cascais desde Lisboa: tren, centro, Boca do Inferno, museos, playa y una ruta realista para organizar un día.",
+      "h1": [
+        "Cascais desde Lisboa: qué ver y cómo organizar el día"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "como-llegar",
+          "text": "Cómo llegar"
+        },
+        {
+          "tag": "H2",
+          "id": "mejor-hora",
+          "text": "Mejor hora para ir"
+        },
+        {
+          "tag": "H2",
+          "id": "como-ir-de-lisboa-a-cascais-ahora",
+          "text": "Cómo ir de Lisboa a Cascais ahora"
+        },
+        {
+          "tag": "H2",
+          "id": "empieza-por-el-centro-y-decide-despues-cuanto-mar-quieres",
+          "text": "Empieza por el centro y decide después cuánto mar quieres"
+        },
+        {
+          "tag": "H2",
+          "id": "si-quieres-cultura-elige-un-museo-no-tres",
+          "text": "Si quieres cultura: elige un museo, no tres"
+        },
+        {
+          "tag": "H2",
+          "id": "boca-do-inferno-cuando-anadirla",
+          "text": "Boca do Inferno: cuándo añadirla"
+        },
+        {
+          "tag": "H2",
+          "id": "y-la-playa",
+          "text": "¿Y la playa?"
+        },
+        {
+          "tag": "H2",
+          "id": "una-ruta-realista-para-un-dia",
+          "text": "Una ruta realista para un día"
+        },
+        {
+          "tag": "H2",
+          "id": "cascais-o-sintra-no-resuelven-el-mismo-dia",
+          "text": "Cascais o Sintra: no resuelven el mismo día"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Relacionadas"
+        }
+      ],
+      "mainWords": 1037,
+      "links": [
+        {
+          "target": "/",
+          "hash": "",
+          "label": "Inicio",
+          "inMain": true,
+          "href": "/"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Blog",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/como-moverse-por-lisboa",
+          "hash": "",
+          "label": "Cómo moverse por Lisboa en 2026 →",
+          "inMain": true,
+          "href": "/blog/como-moverse-por-lisboa"
+        },
+        {
+          "target": "/blog/playas-cerca-lisboa",
+          "hash": "",
+          "label": "Playas cerca de Lisboa: cuál elegir →",
+          "inMain": true,
+          "href": "/blog/playas-cerca-lisboa"
+        },
+        {
+          "target": "/blog/excursiones-desde-lisboa",
+          "hash": "",
+          "label": "Excursiones desde Lisboa →",
+          "inMain": true,
+          "href": "/blog/excursiones-desde-lisboa"
+        },
+        {
+          "target": "/actividades/cascais-cabo-da-roca",
+          "hash": "",
+          "label": "Ver opción Cascais y Cabo da Roca →",
+          "inMain": true,
+          "href": "/actividades/cascais-cabo-da-roca"
+        },
+        {
+          "target": "/blog",
+          "hash": "",
+          "label": "Ver todo →",
+          "inMain": true,
+          "href": "/blog"
+        },
+        {
+          "target": "/blog/playas-cerca-lisboa",
+          "hash": "",
+          "label": "GuíasPlayas cerca de Lisboa: cuál elegir según tiempo y transporte",
+          "inMain": true,
+          "href": "/blog/playas-cerca-lisboa"
+        },
+        {
+          "target": "/blog/excursiones-desde-lisboa",
+          "hash": "",
+          "label": "GuíasLas Mejores Excursiones desde Lisboa",
+          "inMain": true,
+          "href": "/blog/excursiones-desde-lisboa"
+        },
+        {
+          "target": "/blog/mejor-epoca-visitar-lisboa",
+          "hash": "",
+          "label": "PlanificaciónMejor época para visitar Lisboa: clima y qué cambia cada mes",
+          "inMain": true,
+          "href": "/blog/mejor-epoca-visitar-lisboa"
+        },
+        {
+          "target": "/blog/sintra-desde-lisboa",
+          "hash": "",
+          "label": "Cómo organizar Sintra",
+          "inMain": true,
+          "href": "/blog/sintra-desde-lisboa"
+        },
+        {
+          "target": "/sobre-nosotros",
+          "hash": "",
+          "label": "Más sobre mí",
+          "inMain": true,
+          "href": "/sobre-nosotros"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 11,
+      "incomingMainPages": 11,
+      "incoming": [
+        {
+          "source": "/actividades/cascais-cabo-da-roca",
+          "main": [
+            "Qué ver en Cascais desde Lisboa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha",
+          "main": [
+            "Ver mi guía de Cascais desde Lisboa →",
+            "GuíasCascais desde Lisboa: qué ver y cómo organizar el día"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/como-moverse-por-portugal",
+          "main": [
+            "Cascais desde Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/excursiones-desde-lisboa",
+          "main": [
+            "GuíasCascais desde Lisboa: qué ver y cómo organizar el día"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/lisboa-en-7-dias",
+          "main": [
+            "Qué ver en Cascais desde Lisboa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/lisboa-vs-porto",
+          "main": [
+            "Qué ver en Cascais desde Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/nochevieja-lisboa",
+          "main": [
+            "Cascais desde Lisboa →"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/playas-cerca-lisboa",
+          "main": [
+            "Qué ver en Cascais desde Lisboa →",
+            "GuíasCascais desde Lisboa: qué ver y cómo organizar el día"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/sintra-desde-lisboa",
+          "main": [
+            "Qué ver en Cascais desde Lisboa →",
+            "GuíasCascais desde Lisboa: qué ver y cómo organizar el día"
+          ],
+          "global": []
+        },
+        {
+          "source": "/blog/tarjeta-navegante-lisboa",
+          "main": [
+            "Cascais desde Lisboa"
+          ],
+          "global": []
+        },
+        {
+          "source": "/portugal",
+          "main": [
+            "CostaCascaisCentro histórico, paseo junto al mar y cómo combinarlo sin perder el día en traslados."
+          ],
+          "global": []
+        }
+      ]
+    },
+    {
+      "pathname": "/actividades/cascais-cabo-da-roca",
+      "status": 200,
+      "location": null,
+      "canonical": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "robots": "index, follow",
+      "xRobotsTag": null,
+      "title": "Cascais y Cabo da Roca desde Lisboa: cómo ir en el día",
+      "description": "Excursión por Cascais y Cabo da Roca combinando tren desde Lisboa y autobús hacia la costa de Sintra.",
+      "h1": [
+        "Cascais y Cabo da Roca"
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Qué vas a ver"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Cuándo ir"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "text": "Cómo llegar"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "text": "Sintra: Palacio da Pena + Quinta da Regaleira"
+        }
+      ],
+      "mainWords": 371,
+      "links": [
+        {
+          "target": "/actividades",
+          "hash": "",
+          "label": "Actividades",
+          "inMain": true,
+          "href": "/actividades"
+        },
+        {
+          "target": "/blog/que-ver-cascais-desde-lisboa",
+          "hash": "",
+          "label": "Qué ver en Cascais desde Lisboa →",
+          "inMain": true,
+          "href": "/blog/que-ver-cascais-desde-lisboa"
+        },
+        {
+          "target": "/planifica-tu-viaje",
+          "hash": "",
+          "label": "Incluir en mi plan de viaje",
+          "inMain": true,
+          "href": "/planifica-tu-viaje"
+        },
+        {
+          "target": "/itinerarios",
+          "hash": "",
+          "label": "Ver itinerarios gratuitos",
+          "inMain": true,
+          "href": "/itinerarios"
+        },
+        {
+          "target": "/actividades",
+          "hash": "",
+          "label": "← Ver todas las actividades",
+          "inMain": true,
+          "href": "/actividades"
+        },
+        {
+          "target": "/blog/sintra-desde-lisboa",
+          "hash": "",
+          "label": "ExcursionesDe pagoSintra: Palacio da Pena + Quinta da RegaleiraExcursión clásica desde Lisboa: palacios de cuento, jardines y la sierra más verde de la región.Pena desde 20 € (con hora); Regaleira aparteDía completoTip para ahorrar: Ve en tren desde Rossio (2,55 € el billete sencillo, 5,10 € ida y vuelta o 2,05 € por trayecto con zapping) en vez de un tour organizado: mismo destino, una fracción del precio. Palácio da Pena y Quinta da Regaleira venden entrada por separado y sus tarifas cambian con cierta frecuencia.",
+          "inMain": true,
+          "href": "/blog/sintra-desde-lisboa"
+        }
+      ],
+      "schemaCount": 4,
+      "schemaParseable": true,
+      "inSitemap": true,
+      "incomingPages": 1,
+      "incomingMainPages": 1,
+      "incoming": [
+        {
+          "source": "/blog/que-ver-cascais-desde-lisboa",
+          "main": [
+            "Ver opción Cascais y Cabo da Roca →"
+          ],
+          "global": []
+        }
+      ]
+    }
+  ]
+}

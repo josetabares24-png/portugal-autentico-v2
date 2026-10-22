@@ -120,11 +120,11 @@ const RASTROS_CALCULADORA_ANTIGUA = [
   { patron: /Actividades para perfil/, que: 'actividades recomendadas por perfil' },
 ];
 
-/** Los tres caminos del hub, con su destino exacto. */
+/** D-065: contacto personal primero; recursos conservados como enlaces secundarios. */
 const CAMINOS_HUB = [
-  { texto: 'Calcular mi presupuesto', href: '/calculadora-presupuesto-lisboa' },
-  { texto: 'Ver itinerarios', href: '/itinerarios' },
-  { texto: 'Ver actividades', href: '/actividades' },
+  { texto: 'Calculadora de presupuesto', href: '/calculadora-presupuesto-lisboa' },
+  { texto: 'Itinerarios gratuitos', href: '/itinerarios' },
+  { texto: 'Actividades', href: '/actividades' },
 ];
 
 /** Vocabulario prohibido: promete una exactitud que la herramienta no tiene. */
@@ -737,6 +737,16 @@ async function comprobarDeterminismo(baseUrl) {
 
 async function comprobarEnlace(baseUrl, ruta) {
   const res = await fetch(`${baseUrl}${ruta}`, { redirect: 'manual' });
+  // Legacy route retired before D-065: next.config.mjs sends it to /blog.
+  // Preserve that redirect contract instead of expecting the removed page.
+  if (ruta === '/pack-completo') {
+    const location = res.headers.get('location');
+    const target = location ? new URL(location, baseUrl) : null;
+    record(`${ruta}: 308 directo a /blog`, res.status === 308 && target?.origin === new URL(baseUrl).origin && target.pathname === '/blog', `HTTP ${res.status}`);
+    const final = await fetch(`${baseUrl}/blog`, { redirect: 'manual' });
+    record(`${ruta}: destino final 200 sin cadena`, final.status === 200, `HTTP ${final.status}`);
+    return;
+  }
   record(`enlace ${ruta}: 200 sin redirección`, res.status === 200, `HTTP ${res.status}`);
 }
 
@@ -751,8 +761,8 @@ async function comprobarEntrada(baseUrl, ruta) {
 }
 
 /**
- * /planifica-tu-viaje debe ser un hub, no una segunda calculadora: sin rastro
- * del widget antiguo y con los tres caminos apuntando a donde toca.
+ * /planifica-tu-viaje mantiene contacto personal y tres recursos secundarios,
+ * sin recuperar una segunda calculadora (D-065).
  */
 async function comprobarHubPlanifica(baseUrl) {
   const res = await fetch(`${baseUrl}${PLANIFICA}`, { redirect: 'manual' });

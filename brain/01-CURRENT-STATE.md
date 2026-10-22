@@ -1,5 +1,89 @@
 # Current state
 
+## 22 octubre 2026 — José confirma prueba funcional de Planifica
+
+José comunica «si y si sirve ya probe»: prueba real del formulario satisfactoria reportada por el propietario, sin repetir el envío. No inspección independiente de bandeja ni confirmación detallada de ambos emails/Reply-To. D-065 permanece; código probado cd9f8f9, HEAD e9c321b documental y seis checks correctos, PR #113 MERGEABLE/CLEAN en borrador. Sin autorización explícita de merge/publicación del conjunto. Siguiente: aprobación final del lote Home/navegación/Planifica/QA y correcciones de cinco guías; después flujo de publicación y QA de producción. [Registro y límites](../docs/editorial-planifica-contact.md#validación-humana-comunicada).
+
+## 22 octubre 2026 — Planifica como contacto personal verificado en Preview
+
+D-065: José quiere preparar los viajes personalmente. Formulario breve y correo directo, condiciones acordadas antes del plan, sin prometer 24–48 h; recursos propios secundarios. Éxito de envío depende del aviso aceptado para José, confirmación secundaria; no marketing ni emails de QA. Ocho pruebas offline y cinco de mailer correctas; build137, TypeScript, lint cero errores/un warning previo, navegación171, técnico1.130/113páginas y calculadora92. Ocho anchos por entorno sin overflow, teclado/validación nativa sin envío. Preview cd9f8f9 / dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF READY, seis checks; navegación171, técnico1.130, calculadora92 y sitemap64/98 URLs correctos también remotos. [Informe](../docs/editorial-planifica-contact.md). URL/canonical/H1/noindex/sitemap intactos. PR #113 sigue en borrador, sin producción ni autorización de merge. Producción consultada sigue5ad2c40 READY. Siguiente: revisión visual conjunta antes de publicar; no interpretar aceptación del proveedor como entrega real comprobada.
+
+## 22 octubre 2026 — QA de Fases 13–18 verificada en Preview
+
+D-064, código 5b83dbc / dpl_By26Cn7YTbCkBNcAEii5GQ87A328 READY; seis checks correctos. Técnico local/remoto 1.130/1.130 en 113 páginas, cero fechas ISO inválidas tras corregir catálogo; publicación de ficha usa fecha original, no modificación. Brevo hints retirados, Home usa calidad admitida y controles cookies de 44 px. Build137, TypeScript, lint cero errores/un warning previo; fechas24/analytics6; migración 1.426 local/1.328 remota, 64 filas de redirects todas 301→200 en un salto. Veinte vistas por entorno desde320 hasta1440, sin overflow/ARIA rota; teclado y controles comprobados. Mediciones de producción: Home98 móvil/99desktop y Metro92 móvil; no CrUX, no efecto del candidato demostrado. [Informe y límites](../docs/editorial-phase13-18-technical-qa.md#cierre-de-preview). Producción comprobada sigue5ad2c40 READY. PR113 en borrador, revisión visual del conjunto pendiente; sin merge/publicación. Mantener WAIT/REVIEW y revisar LCP de Metro con condiciones repetidas tras un eventual despliegue; no afirmar certificación completa de accesibilidad/schema o exactitud de precios.
+
+## 22 octubre 2026 — QA técnico de Fases 13–18 en candidato
+
+D-064: fechas ISO del catálogo, publicación separada de modificación en ficha, hints Brevo retirados, quality Home alineada y controles cookies 44 px. Nuevo smoke 113 páginas/1.130 controles: ocho fallos de plantilla antes, cero después. Build 137, TypeScript, lint cero errores/un warning previo; 24 fechas, seis analytics, migración 1.426, navegación171, blog828/97 sin rotos. PageSpeed sobre producción: Home98 móvil/99desktop, Metro92 móvil; sin CrUX ni prueba de efecto del candidato. [Informe](../docs/editorial-phase13-18-technical-qa.md). Preview/QA remota pendientes; no merge/publicación. Preservar WAIT/REVIEW, URLs y contenido protegido; futura medición repetida del LCP de Metro y revisión visual integral siguen pendientes.
+
+## 22 octubre 2026 — Fase 11 y Free tours verificados en Preview
+
+Código 5b0e210 / dpl_3BfYGzwfVZdBnaMB4P9BA4NuVLeG READY, seis checks correctos. D-062/D-063: bloque de Portugal sin cuatro tarjetas repetidas, Free tours en primer nivel y Home móvil con utilidad antes de reservas, ocho accesos compactos y temporada manual. Perfil de autor revisado/conservado (Fase 12). Navegación local/remota 171/171; Free tours remota 66/66 con siete enlaces afiliados en landing, sin inertes. Build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 (98), blog 828/97 sin rotos y migración local 1.426. Dieciséis vistas DOM por entorno sin overflow; clic a Free tours desde móvil/desktop, menú 583 px, ocho href y metadata/schema/H1 de Home idénticos al baseline. [Informe y capturas](../docs/editorial-phase11-home.md#cierre-de-preview). Producción comprobada conserva 5ad2c40 READY y Free tours activo; sin merge/publicación. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes; no ejecutar fusiones WAIT.
+
+## 22 octubre 2026 — Home Fase 11 y corrección de Free tours en candidato
+
+José rechaza el bloque de cuatro tarjetas de Portugal y pide seguir otras fases. D-062: lista compacta, H2 menores/rectos y Free tours en primer nivel. D-063: Home adelanta ocho guías, compacta sus accesos móviles y hero; temporada con tres artículos existentes. Metadata/schema/H1 y ocho href de Home idénticos al baseline. Fase 12 inspecciona y conserva la biografía/perfil, sin experiencias nuevas. Build 137, TypeScript, lint cero errores/un warning previo; navegación 171, Free tours 12/12 sin ID local, sitemap 64/64 (98), blog 828/97 sin rotos y migración 1.426. Dieciséis vistas DOM sin overflow. [Informe](../docs/editorial-phase11-home.md). Preview/QA remota pendientes; no merge ni producción. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes.
+
+## 22 octubre 2026 — Feedback de navegación verificado en Preview
+
+D-061 cerrada como candidato: código 93c7a5a / dpl_27MhFsLywmBFLycsJLyyB3BSo7ZS READY, seis checks correctos. Escapadas usa la foto de Pena; Entradas está en primer nivel; Planifica abre su página propia y Historias la selección del blog. Smoke editorial local/remoto 152/152; build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 con 98 URLs y blog 828/97 enlaces sin rotos. Dieciséis vistas DOM por entorno sin overflow, tres destinos desktop y cuatro móviles comprobados, panel 539 px y Escape/foco correctos. [Cierre y capturas](../docs/editorial-phase9-10-preview.md#cierre-del-ajuste-en-preview). Producción consultada sigue 5ad2c40 READY. PR #113 en borrador; sin merge ni publicación, revisión visual del conjunto pendiente. No iniciar el cuerpo de Home ni ejecutar fusiones WAIT.
+
+## 22 octubre 2026 — Feedback de navegación en revisión
+
+José pide retirar su retrato de Escapadas, aclarar Entradas y separar el destino de Historias/Planifica. D-061: foto del Palacio da Pena en `/portugal` y sus imágenes sociales, Entradas en primer nivel, Planifica a su página existente; Historias mantiene su sección del blog. No URLs nuevas ni cambios de intención/indexación. Cambios locales; build/QA/Preview del código final pendientes. El intento de compilación del 21/10 quedó bloqueado por límite de uso de la revisión automática de permisos; validación retomada el 22/10. PR #113 sigue en borrador y producción no se modifica.
+
+## 21 octubre 2026 — Fases 9–10 verificadas en Preview; revisión visual pendiente
+
+Navegación Lisboa/Escapadas/Historias/Planifica y portada editorial con 22 artículos reales, catálogo/filtros y ocho páginas conservados. Código 69ec128 / dpl_8BzzpxL5djXs3H8DTsDZ5vbKn4oz READY, seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; 74 huellas idénticas y nueve archivos protegidos sin cambios. Blog 828 invariantes/97 enlaces sin rotos; sitemap 64/64, 98 URLs. Migración 1.426 local/1.328 remota; nuevo smoke editorial 146/146 en ambos. Dieciséis vistas y trece interacciones por entorno más dos menús abiertos, sin overflow. Paginación HTML completa conserva metadata propia tras clic; estados activos restaurados sin relajar checks. [Informe y antes/después](../docs/editorial-phase9-10-preview.md), D-060, PR #113. Producción comprobada sigue 5ad2c40 READY. Revisión visual de José pendiente según L-003; sin merge/publicación ni cambios del cuerpo de Home. Mantener REVIEW/WAIT y revisar selección estacional antes de publicar.
+
+## 21 octubre 2026 — Fases 9–10: navegación y portada en candidato
+
+Tras «sigue», propuesta funcional Lisboa/Escapadas/Historias/Planifica; portada por necesidades con 22 artículos reales y catálogo/filtros/paginación conservados. Baseline de 74 rutas antes de editar. [Informe](../docs/editorial-phase9-10-preview.md), D-060, PR #113. Cambia cabecera compartida de Preview; cuerpos/metadata/URLs y Home intactos. QA/Preview pendientes; requiere aprobación visual antes de merge según L-003. Sin producción ni nuevas migraciones.
+
+## 21 octubre 2026 — Fase 7D verificada en Preview; correcciones de cinco guías reunidas
+
+Vinos/Gastronomía conservan URLs e intenciones; cuatro/tres bloques corregidos y fuentes añadidas con fechas parciales. Código 1b4c104 / dpl_CzJ8NWfCLGgJiXfAtRe4oZYu3FEV READY, seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; blog 828/97 enlaces sin rotos, migración local 1.426, sitemap 64/64. Integridad local/remota 45/45; dieciséis vistas por entorno sin overflow, acordeones y navegación relacionada comprobados. [Informe y capturas](../docs/editorial-phase7d-wine-food-fix.md), D-059, PR #113. REVIEW residual de otros hechos; no fusión con Bacalhau. La Preview incluye también Cascais/Festivales/Monumentos. Producción comprobada conserva 5ad2c40 READY; sin merge. Próximo grupo: propuesta funcional de navegación y portada editorial con contenido real y Preview/aprobación visual antes de merge.
+
+## 21 octubre 2026 — Fase 7D, correcciones de Vinos/Gastronomía en candidato
+
+Vinho Verde corregido como región y diversidad de estilos; consejos de compra/catas sin precios ni gratuidad universal. Gastronomía ajusta promesa a selección real y retira absolutos puntuales de las listas. Cuatro/tres bloques; URLs/intenciones separadas, H1/seoTitle de Vinos intactos y fecha parcial 21/10. [Informe](../docs/editorial-phase7d-wine-food-fix.md), D-059, PR #113. Fuentes primarias añadidas; REVIEW residual de otros datos. QA/Preview pendientes. Sin fusiones, cambios de navegación, merge ni producción.
+
+## 21 octubre 2026 — Fase 7C verificada en Preview, sin publicar
+
+Entradas de Belém corregidas en Monumentos: dos párrafos de veintiuno; títulos/URL/meta conservados, nueve fuentes y fecha parcial coherente. Código 00168de / dpl_AKx7F1tpDE1XSB5iECRMSSczcNfg READY; seis checks correctos. Build 137, TypeScript, lint cero errores/un warning previo; blog 828 invariantes/97 enlaces sin rotos, migración local 1.426, sitemap 64/64. Integridad local/remota 26 controles; ocho vistas por entorno sin overflow. [Informe y capturas](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. REVIEW residual; no consolidación. Producción comprobada sigue 5ad2c40 READY; sin merge. Siguiente: Vinos/Gastronomía con fuentes primarias y alcance conservador.
+
+## 21 octubre 2026 — Fase 7C, corrección de entradas de Belém en candidato
+
+Se corrigen en Monumentos las afirmaciones incompatibles de combinado/billete aparte; dos fichas de la taquilla oficial respaldan tarifas base y totales online. Comprobar inclusiones y disponibilidad por fecha, sin certificar reapertura/sesiones ni otros datos del artículo. Dos párrafos de veintiuno; títulos/URL/intención conservados, corrección parcial fechada. [Informe](../docs/editorial-phase7c-monuments-fix.md), D-058, PR #113. QA/Preview pendientes; REVIEW permanece. Sin consolidación, merge ni producción; guía protegida de Jerónimos intacta.
+
+## 21 octubre 2026 — Fase 7B verificada en Preview, sin publicar
+
+Preview conjunta Cascais/Festivales READY: 94e922c / dpl_1pE3XGAGCsffxDFqHH6aKoVoGAwN. Seis checks correctos incluido SEO smoke; build 137, TypeScript y lint 0 errores/1 warning previo; migración local 1.426 y sitemap 64/64. Integridad local/remota 26 controles y 20 vistas en cada entorno sin fallos. [Informe, fuentes y capturas](../docs/editorial-phase7b-festivals-fix.md), D-057, PR #113. H1/meta de Festivales ajustados a selección por temporadas, título HTML/URL/intención conservados y corrección parcial fechada 21/10. REVIEW residual; Novedades separada. Producción comprobada sigue 5ad2c40 READY; sin merge. Siguiente grupo: resolver discrepancia de entradas en Monumentos, sin autorizar consolidación.
+
+## 21 octubre 2026 — Fase 7B, correcciones puntuales de Festivales en candidato
+
+Tras cerrar Cascais se corrigen Santo António/comparación de santos y la afirmación sin respaldo sobre afluencia de junio. H1/meta/tarjeta prometen selección por temporadas; seoTitle, URL/año/intención conservados. Cinco fuentes, incluidas las tres previas y programa EGEAC 2026. Fecha de modificación 21/10 con etiqueta explícita de corrección parcial; no verificación integral. [Informe](../docs/editorial-phase7b-festivals-fix.md), D-057, PR #113. QA/Preview pendientes de cierre; REVIEW permanece por otras afirmaciones, Novedades sigue separada. Sin merge ni producción.
+
+## 21 octubre 2026 — Cascais verificado en Preview; siguiente Festivales
+
+Cierre de Fase 7A: código 9568ed6 / dpl_6py1Yu7FDW8edLcToJr9Uo2Ho6YP READY; cinco checks correctos, migración remota 1.328 sin fallos, comparación DOM siete controles y ocho vistas remotas sin overflow. Clic abre la ficha por libre anunciada; solo cambian explicación y etiqueta del enlace. [Informe y captura](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Producción conserva 5ad2c40; sin merge. José indica seguir el 21/10: siguiente revisión/corrección acotada de Festivales, manteniendo Novedades separada y fuentes por edición. No ampliar a otras migraciones ni navegación/Home sin Preview.
+
+## 20 octubre 2026 — Fase 7A, enlace de Cascais corregido en candidato
+
+José indica «ok continúa». Se aclara únicamente la explicación y etiqueta del enlace final de Cascais: lleva a una ficha para combinar tren/autobús por libre, no a una actividad organizada. Href y ambas URLs conservados; sin cambios de datos, fechas, metadata, canonical, schema o diseño. [Informe](../docs/editorial-phase7a-cascais-fix.md), D-056, PR #113. Validación y Preview pendientes de cierre; sin merge ni producción. Cascais conserva REVIEW por el cluster y D-055 sigue vigente. Después: correcciones puntuales de Festivales, no fusión ni cambio de año automático.
+
+## 20 octubre 2026 — aprobada la conservación temporal de las cuatro URLs
+
+José responde «sí, ahora dime qué sigue» a mantener separadas por ahora Restaurantes/Pareja y Novedades/Festivales. Queda resuelta esa decisión pendiente de D-054: no ejecutar sus dos 301 mientras siga vigente esta excepción. Conservar los cuatro 200 y canonicals propios; las dudas factuales permanecen pendientes y los otros casos REVIEW no reciben autorización de migración. D-055. Próximo lote recomendado: correcciones puntuales de utilidad y exactitud (Cascais, Festivales, Monumentos y Vinos/Gastronomía), con Preview antes de publicación; después propuesta de navegación y portada editorial del blog. Esta respuesta solicita el orden siguiente; no inicia todavía una reescritura ni autoriza merge/producción.
+
+## 20 octubre 2026 — Fase 7 revisada; dos fusiones WAIT por equivalencia incompleta
+
+Siete casos comparados completos con contenido, producción, enlaces y GSC/Windsor hasta 17/10. Restaurantes/Pareja y Novedades/Festivales mantienen WAIT: los destinos no entregan toda la respuesta de las fuentes, y no hay señal suficiente de canibalización. No se revoca la orden de fusión ni se cambian destinos; se reportan las excepciones y el mapa de conservación. Cascais: artículo recomendado para intención general; discrepancia entre enlace comercial y ficha de transporte público. Pastéis: artículo recomendado como referencia, sin retirar ficha ni reactivar alias. [Informe](../docs/editorial-phase7-consolidation-review.md), D-054. [PR #113](https://github.com/josetabares24-png/portugal-autentico-v2/pull/113) borrador; Preview 50c5311 READY, CI correcta, 108 controles y 26 vistas sin fallos. Solo documentación/evidencia; sin nuevas migraciones ni publicación. Resolver esas decisiones antes de avanzar a navegación/Home.
+
+## 20 octubre 2026 — producción verificada tras PR #112
+
+PR #112 fusionada a las 20:47, hora de Lisboa. Producción **5ad2c4083934c2f35e81aba12275566341f219ee**, Vercel **dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes**, READY y alias estabaenlisboa.com verificados. QA posterior: plantilla 1.670/1.670, migración 1.426/1.426, sitemap 64/64 (98 URLs), blog 828 invariantes y 64 vistas responsive sin fallos. Registro definitivo: [cierre del PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Esto supera las notas históricas de solo Preview de Fases 1–6 para el candidato publicado, incluidos D-045 a D-053; no autoriza futuras fases en producción. Aún no existe ventana posterior suficiente para medir efecto SEO.
+
 ## 19 octubre 2026 — publicación del candidato autorizada
 
 José solicita publicar todo lo revisado antes de seguir. Alcance: PR #112, aplicación comprobada 3f47e5b y cierres documentales; no nuevas fases, fusiones o correcciones factuales. La restricción previa de solo Preview queda sustituida para este candidato por la instrucción de publicación. [Autorización y protocolo](seo/EDITORIAL-REBUILD-RELEASE-2026-10-19.md). Estado definitivo, SHA/deployment y QA de producción: [registro de cierre de PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Consultarlo antes de afirmar que la publicación terminó o medir impacto; las notas históricas siguientes describen el estado previo.

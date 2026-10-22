@@ -1,7 +1,6 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 type BlogPaginationProps = {
@@ -26,9 +25,10 @@ export function BlogPagination({ currentPage, totalPages, linkPages, onPageChang
     }
 
     return linkPages ? (
-      <Link href={page === 1 ? '/blog' : `/blog?page=${page}`} aria-label={label} aria-current={current ? 'page' : undefined} className={className}>
+      // Load the archive's full SSR response so query-specific metadata is applied.
+      <a href={page === 1 ? '/blog' : `/blog?page=${page}`} aria-label={label} aria-current={current ? 'page' : undefined} className={className}>
         {children}
-      </Link>
+      </a>
     ) : (
       <button type="button" onClick={() => onPageChange(page)} aria-label={label} aria-current={current ? 'page' : undefined} className={className}>
         {children}

@@ -1,5 +1,81 @@
 # Decision log
 
+## D-065 — Planifica como contacto personal para preparar el viaje
+**Date:** 2026-10-22
+**Status:** candidato verificado en Preview cd9f8f9; aprobación visual pendiente, sin publicación
+
+José pide contactar directamente con él para que prepare el viaje personalmente. Conservar URL/H1, ancla y noindex/follow. Formulario breve de nombre/email/mensaje, fechas/personas opcionales y correo público existente como alternativa; recursos gratuitos secundarios. Acordar alcance/precio antes de preparar el plan, sin precio ni plazo inventados; retirar promesas automáticas 24–48 h tanto de web como del acuse. Corregir éxito del backend: depende del aviso aceptado para José, no de la confirmación al visitante; fallback SMTP si falla el aviso Brevo y confirmación secundaria sin duplicar lead. L-007 conservada, sin newsletter. Ocho pruebas offline incluida ruta API con HTTP interceptado; no correos reales de QA. Las dimensiones días/ritmo/presupuesto de analytics dejan de recogerse en la UI y no son comparables. [Diagnóstico, alcance y límites](../docs/editorial-planifica-contact.md). Preview dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF READY, seis checks; navegación171, técnico1.130/113 páginas, calculadora92 y sitemap64/98 URLs correctos local/remoto. Ocho vistas por entorno sin overflow y teclado/validación sin envío. Mismo PR #113; no merge ni producción.
+
+**Validación humana posterior, 22/10:** José informa «si y si sirve ya probe». Prueba funcional satisfactoria reportada por él; no afirmar inspección independiente de bandeja o Reply-To ni enviar duplicado. Falta autorización explícita de publicación del lote completo.
+
+## D-064 — QA técnico: corregir contratos confirmados sin perseguir una cifra
+**Date:** 2026-10-22
+**Status:** candidate verificado en Preview 5b83dbc; aprobación visual del conjunto pendiente, sin publicación
+
+José indica continuar Fases 13–18. Auditoría HTTP de 113 páginas encuentra ocho archivos del blog con fechas de schema no ISO; convertir fechas existentes sin cambiar publicación/actualización visibles. No derivar primera publicación desde dateModified en la guía de ficha. Quitar hints globales de Brevo usados solo en servidor y quality=82 ajena a configuración; mantener fotos/prioridades. Controles de cookies a 44 px, sin cambiar consentimiento. PageSpeed de producción: Home móvil 98/LCP2,3, desktop99/LCP0,8; Metro móvil92/LCP3,3, CLS0 en las tres ejecuciones. No CrUX; no medición INP ni comparación causal con Preview. Mantener la imagen ya priorizada de Metro y repetir medición consistente tras eventual publicación. [Informe, fuentes y límites](../docs/editorial-phase13-18-technical-qa.md). No nuevas URLs, migraciones, precios o claims; WAIT/REVIEW conservados. Aprobación visual y producción siguen pendientes.
+
+## D-063 — Home móvil: utilidad antes de reservas, perfil de autor conservado
+**Date:** 2026-10-22
+**Status:** candidate verificado en Preview 5b0e210; aprobación visual del conjunto pendiente, sin publicación
+
+José pide continuar las demás fases. Evolucionar Home sin cambiar la marca: guías antes de reservas, hero móvil más corto y ocho accesos con miniatura/texto frente a bloques de 250 px. Conservar ocho destinos, medición, fotografías, H1 y metadata/schema. Añadir selección manual de tres guías existentes de lluvia/Navidad/Nochevieja sin tocar su contenido ni fechas. Mantener Free tours en hero y reservas además de la cabecera restaurada. A 390 px, directorio de y≈1.260 a ≈555; medidas de layout, no causalidad SEO. Fase 12 inspecciona y conserva el perfil/biografía respaldada por respuestas de José, sin claims nuevos. [Informe](../docs/editorial-phase11-home.md). Esta continuación permite preparar Home frente al estado anterior; no equivale a aprobación visual ni publicación. Fases 13–18 requieren revisión transversal posterior.
+
+## D-062 — Menos tarjetas y Free tours visible
+**Date:** 2026-10-22
+**Status:** candidate verificado en Preview 5b0e210; aprobación visual del conjunto pendiente, sin publicación
+
+José rechaza visualmente el bloque de cuatro tarjetas de Portugal, pide tenerlo presente en las fases siguientes y pregunta por Free tours. Cambiar ese bloque a una lista de enlaces con separadores, títulos menores y rectos, sin iconos ni cuatro llamadas repetidas. Conservar sus cuatro destinos/textos, H1 e intención. Reducir también el siguiente H2 desproporcionado. Restaurar Free tours al primer nivel de desktop/móvil y retirar su copia secundaria móvil; no tocar la landing, proveedor, afiliación ni fecha/SEO. La señal comercial histórica de esta superficie no justifica esconderla para hacer editorial la cabecera. Este feedback fija un criterio visual para los siguientes cambios, no una orden de modificar todas las plantillas a la vez. Sin merge ni producción.
+
+## D-061 — Revisión de Escapadas, Entradas y destinos de navegación
+**Date:** 2026-10-22
+**Status:** candidate verificado en Preview 93c7a5a; aprobación visual del conjunto pendiente, sin autorización de publicación
+
+José rechaza su retrato como apertura de Escapadas, pregunta por Entradas y señala que Historias/Planifica llevan a la misma página. Sustituir solo la fotografía principal/social de `/portugal` por el Palacio da Pena ya disponible, con crédito/licencia visibles. Mantener la foto personal en sus otros usos. Entradas pasa al primer nivel, en desktop y móvil, hacia `/comprar-entradas`; retirar la copia secundaria móvil. Planifica abre la página existente `/planifica-tu-viaje` (servicio a medida y herramientas gratuitas); Historias conserva `/blog#historias`, selección de lecturas culturales. No se crea landing ni se modifica la intención de ninguna URL. Mantener noindex,follow de los dos destinos funcionales, canonicals, sitemap y redirects. Esto revisa esos detalles de D-060; no implica aprobación visual del conjunto. [Seguimiento](../docs/editorial-phase9-10-preview.md#revisión-tras-feedback-de-josé--22-octubre).
+
+## D-060 — Navegación y portada editorial como propuesta funcional
+**Date:** 2026-10-21
+**Status:** candidate verificado en Preview 69ec128; aprobación visual de José pendiente, sin autorización de publicación
+
+José indica seguir con navegación/portada tras D-059. Proponer Lisboa/Escapadas/Historias/Planifica con cinco enlaces bajo Lisboa; mantener recursos de entradas/free tours accesibles. Portada por necesidades usando 22 artículos reales y selección estacional explícita, sin nuevas categorías/URLs/textos de artículos. Conservar catálogo, filtros, reparto de ocho páginas, metadata y contratos SEO. [Informe](../docs/editorial-phase9-10-preview.md). Navegación global cambia también en Home/artículos de Preview, pero no sus cuerpos. L-003 exige aprobación visual antes de merge; no producción ni inicio del rediseño de Home. Mantener REVIEW/WAIT de migración.
+
+## D-059 — Vinos/Gastronomía: corrección parcial, mantener intenciones separadas
+**Date:** 2026-10-21
+**Status:** candidate verificado en Preview 1b4c104, 21/10; sin autorización de publicación
+
+José indica continuar. Corregir Vinho Verde como región con estilos jóvenes/envejecidos; no garantizar graduación, gas, precios de copas/jarras ni catas gratuitas recurrentes. Ajustar descripción de Vinos y promesa de Gastronomía a su contenido real; retirar absolutos concretos de sus listas sin añadir platos/regiones de relleno. Cuatro bloques de once y tres de dieciséis respectivamente; fuentes explícitas y fechas parciales coherentes. [Informe](../docs/editorial-phase7d-wine-food-fix.md). Conservar URLs/intención/enlaces y siete/trece bloques restantes; ambas REVIEW por datos residuales, sin fusionar con Bacalhau ni migraciones. Preview antes de publicar; no merge ni producción.
+
+## D-058 — Monumentos: aclarar entradas de Belém sin consolidación
+**Date:** 2026-10-21
+**Status:** candidate verificado en Preview 00168de, 21/10; sin autorización de publicación
+
+José indica seguir con la corrección priorizada. Sustituir las afirmaciones contradictorias de combinado/billete aparte por comprobar inclusiones de cada opción. Conservar tarifas base y mostrar los totales online de las dos fichas oficiales comprobadas el 21/10; disponibilidad por fecha no garantizada. Solo dos párrafos, fuentes y fecha de corrección parcial; conservar títulos, URL, intención y resto del artículo. [Informe](../docs/editorial-phase7c-monuments-fix.md). REVIEW residual de hechos y posible consolidación; no tocar guía protegida de Jerónimos/Qué ver, ni ejecutar migraciones. Preview antes de publicar.
+
+## D-057 — Festivales: corrección factual y alcance de selección
+**Date:** 2026-10-21
+**Status:** candidate verificado en Preview 94e922c, 21/10; sin autorización de publicación
+
+La continuación de José autoriza las correcciones puntuales priorizadas tras D-055. Conservar Festivales/Novedades separadas. Corregir comparación de santos y patronazgo en el bloque de junio; retirar superlativos/horas garantizadas sin evidencia y describir una selección por temporadas en H1/meta/índice. Mantener seoTitle, slug, año, intención, estructura y el resto del cuerpo. Fuentes primarias de Turismo de Portugal/EGEAC por edición; conservar las tres URLs previas. Etiquetar dateModified como corrección parcial real, sin certificar el artículo completo ni extrapolar programas. [Informe](../docs/editorial-phase7b-festivals-fix.md). REVIEW residual y Preview antes de publicar; sin otras migraciones ni cambios en páginas estacionales protegidas.
+
+## D-056 — Cascais: enlace coherente con una ficha por libre
+**Date:** 2026-10-20
+**Status:** candidate verificado en Preview 9568ed6, cierre 21/10; sin autorización de publicación
+
+José indica «ok continúa» tras priorizar la corrección de Cascais. Cambiar solo explicación y etiqueta del enlace final: describir tren/autobús por libre; conservar href, URLs y contexto. No tocar datos cambiantes ni fechas, SEO, ficha, diseño o afiliados. Cascais mantiene REVIEW por la posible consolidación; no autoriza esa migración. [Informe](../docs/editorial-phase7a-cascais-fix.md). D-055 conserva las cuatro URLs separadas por ahora. Validar antes de publicar, sin merge automático.
+
+## D-055 — Mantener separadas por ahora las dos parejas de Fase 7
+**Date:** 2026-10-20
+**Status:** accepted, conservación temporal aprobada por José
+
+José responde «sí, ahora dime qué sigue» a la propuesta concreta de conservar separadas Restaurantes románticos/Lisboa en pareja y Novedades 2026/Festivales 2026. Esta excepción temporal resuelve el gate de D-054 sin revocar definitivamente la planificación histórica: no ejecutar los dos 301 mientras no haya una nueva decisión expresa respaldada por equivalencia. Cuatro URLs accesibles e indexables con canonical propio, sin cambios de intención. Las etiquetas WAIT documentan la fusión aplazada; no son órdenes listas para ejecutar. Las dudas factuales y los otros REVIEW siguen pendientes. No autorización adicional de migraciones, reescritura, merge o producción. Siguiente prioridad propuesta: correcciones concretas antes de navegación/portada; conservar medición posterior a la publicación.
+
+## D-054 — Consolidaciones: equivalencia antes de ejecutar los 301 previstos
+**Date:** 2026-10-20
+**Status:** revisión terminada; ejecución de dos fusiones en WAIT, propuestas de alcance pendientes de José
+
+Tras la publicación autorizada de PR #112, «sigue» inicia la revisión de Fase 7 en rama nueva. Restaurantes aporta seis locales que Pareja delega; Novedades incluye información no festiva que el calendario no responde. Aplicar la regla expresa de detener/reportar la URL dudosa: mantener WAIT sin revocar ni sustituir destinos ordenados. Los otros casos siguen REVIEW, con ganadores de intención recomendados y condiciones de conservación; no usar ausencia de filas GSC como prueba de cero demanda o como permiso de retirada. [Informe](../docs/editorial-phase7-consolidation-review.md) y [memoria](seo/EDITORIAL-REBUILD-PHASE-7-2026-10-20.md). Cero migraciones/contenido público nuevos. No merge ni publicación de esta fase; resolver el alcance antes de navegación/Home.
+
+**Cierre histórico:** D-045 a D-053 describen candidaturas previas. El lote conjunto fue aprobado para publicación por José y está en producción desde 20/10, SHA 5ad2c40. [Cierre de PR #112](https://github.com/josetabares24-png/portugal-autentico-v2/pull/112). Esa publicación no aprueba nuevas consolidaciones ni confirma exactitud de las URLs REVIEW.
+
 ## D-053 — Cultura: orientación sin convertir la historia en ficha de entradas
 **Date:** 2026-10-19
 **Status:** candidate, pendiente de revisión visual del lote

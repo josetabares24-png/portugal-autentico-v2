@@ -1,0 +1,41 @@
+{
+  "base": "a4c64b0",
+  "checks": [
+    {
+      "name": "preserve src/app/[locale]/blog/[slug]/page.tsx",
+      "pass": true
+    },
+    {
+      "name": "preserve src/data/blog-posts.ts",
+      "pass": true
+    },
+    {
+      "name": "preserve src/app/[locale]/page.tsx",
+      "pass": true
+    },
+    {
+      "name": "preserve src/app/sitemap.ts",
+      "pass": true
+    },
+    {
+      "name": "preserve public/robots.txt",
+      "pass": true
+    },
+    {
+      "name": "preserve src/data/seo-url-policy.json",
+      "pass": true
+    },
+    {
+      "name": "preserve docs/seo-url-manifest.csv",
+      "pass": true
+    },
+    {
+      "name": "preserve next.config.mjs",
+      "pass": true
+    },
+    {
+      "name": "preserve src/components/Footer.tsx",
+      "pass": true
+    }
+  ]
+}

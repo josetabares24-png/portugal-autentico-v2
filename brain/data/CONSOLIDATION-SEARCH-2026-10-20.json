@@ -1,0 +1,2828 @@
+{
+  "source": "Google Search Console via Windsor.ai",
+  "account": "sc-domain:estabaenlisboa.com",
+  "captured": "2026-10-20",
+  "searchType": "web",
+  "includeFreshData": false,
+  "productionBaseline": {
+    "sha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+    "deployedAt": "2026-10-20",
+    "note": "All metric dates precede the release. No attribution."
+  },
+  "windows": {
+    "current7": [
+      "2026-10-11",
+      "2026-10-17"
+    ],
+    "previous7": [
+      "2026-10-04",
+      "2026-10-10"
+    ],
+    "current28": [
+      "2026-09-20",
+      "2026-10-17"
+    ],
+    "previous28": [
+      "2026-08-23",
+      "2026-09-19"
+    ],
+    "current90": [
+      "2026-07-20",
+      "2026-10-17"
+    ],
+    "previous90": [
+      "2026-04-21",
+      "2026-07-19"
+    ]
+  },
+  "method": "Sum daily clicks/impressions; CTR=100*clicks/impressions; position weighted by daily impressions. Missing page rows are no returned signal, not proof of no demand. Site totals use separate property/date pull, not page sums.",
+  "site": {
+    "current7": {
+      "rows": 7,
+      "clicks": 33,
+      "impressions": 2989,
+      "ctrPercent": 1.104,
+      "position": 8.862
+    },
+    "previous7": {
+      "rows": 7,
+      "clicks": 40,
+      "impressions": 2955,
+      "ctrPercent": 1.354,
+      "position": 10.246
+    },
+    "current28": {
+      "rows": 28,
+      "clicks": 125,
+      "impressions": 10023,
+      "ctrPercent": 1.247,
+      "position": 9.479
+    },
+    "previous28": {
+      "rows": 28,
+      "clicks": 55,
+      "impressions": 6565,
+      "ctrPercent": 0.838,
+      "position": 12.804
+    },
+    "current90": {
+      "rows": 90,
+      "clicks": 225,
+      "impressions": 21154,
+      "ctrPercent": 1.064,
+      "position": 11.708
+    },
+    "previous90": {
+      "rows": 90,
+      "clicks": 29,
+      "impressions": 3468,
+      "ctrPercent": 0.836,
+      "position": 34.245
+    }
+  },
+  "pages": [
+    {
+      "path": "/blog/restaurantes-romanticos-lisboa",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/lisboa-en-pareja",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/novedades-lisboa-2026",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/festivales-eventos-lisboa-2026",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/monumentos-de-lisboa",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/que-ver-en-lisboa",
+      "windows": {
+        "current7": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctrPercent": 0,
+          "position": 78
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctrPercent": 0,
+          "position": 78
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctrPercent": 0,
+          "position": 78
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/bacalhau-plato-portugal",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/vinos-portugueses-guia",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/gastronomia-portuguesa-guia",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/pasteles-de-belem",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/blog/mejores-pasteles-nata-lisboa",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous28": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous90": {
+          "rows": 17,
+          "clicks": 0,
+          "impressions": 37,
+          "ctrPercent": 0,
+          "position": 10.541
+        }
+      }
+    },
+    {
+      "path": "/blog/que-ver-cascais-desde-lisboa",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctrPercent": 0,
+          "position": 11
+        },
+        "current28": {
+          "rows": 6,
+          "clicks": 0,
+          "impressions": 7,
+          "ctrPercent": 0,
+          "position": 8.571
+        },
+        "previous28": {
+          "rows": 8,
+          "clicks": 0,
+          "impressions": 24,
+          "ctrPercent": 0,
+          "position": 21.792
+        },
+        "current90": {
+          "rows": 22,
+          "clicks": 0,
+          "impressions": 55,
+          "ctrPercent": 0,
+          "position": 23.6
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/actividades/cascais-cabo-da-roca",
+      "windows": {
+        "current7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "previous7": {
+          "rows": 3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctrPercent": 0,
+          "position": 7.333
+        },
+        "current28": {
+          "rows": 5,
+          "clicks": 0,
+          "impressions": 5,
+          "ctrPercent": 0,
+          "position": 7.6
+        },
+        "previous28": {
+          "rows": 5,
+          "clicks": 0,
+          "impressions": 8,
+          "ctrPercent": 0,
+          "position": 7.25
+        },
+        "current90": {
+          "rows": 14,
+          "clicks": 0,
+          "impressions": 20,
+          "ctrPercent": 0,
+          "position": 8.85
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    },
+    {
+      "path": "/actividades/pasteis-de-belem",
+      "windows": {
+        "current7": {
+          "rows": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctrPercent": 0,
+          "position": 11
+        },
+        "previous7": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        },
+        "current28": {
+          "rows": 4,
+          "clicks": 0,
+          "impressions": 5,
+          "ctrPercent": 0,
+          "position": 6.2
+        },
+        "previous28": {
+          "rows": 3,
+          "clicks": 0,
+          "impressions": 5,
+          "ctrPercent": 0,
+          "position": 17.4
+        },
+        "current90": {
+          "rows": 7,
+          "clicks": 0,
+          "impressions": 10,
+          "ctrPercent": 0,
+          "position": 11.8
+        },
+        "previous90": {
+          "rows": 0,
+          "clicks": 0,
+          "impressions": 0,
+          "ctrPercent": null,
+          "position": null
+        }
+      }
+    }
+  ],
+  "pageDailyRows": [
+    {
+      "date": "2026-04-22",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-23",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 12,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-25",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 12,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-26",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-27",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 12.3333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-28",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-29",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-30",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 9,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-01",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 10.4,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-02",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-03",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-05",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-08",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-09",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 13,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-10",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-11",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 7.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-13",
+      "page": "https://estabaenlisboa.com/blog/mejores-pasteles-nata-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 12.3333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-15",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 37.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-16",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 21.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 49.75,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-18",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-18",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 37,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-19",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-19",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 24,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-20",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 18,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-20",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 15.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-21",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 13.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-22",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-22",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 37,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-23",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 8.6667,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-23",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 17.6667,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-24",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-24",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 13,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-25",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 33,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-26",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-26",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 9.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-27",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-27",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 35,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-28",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 18.3333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-29",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 9,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-18",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-18",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-20",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-21",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-23",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-26",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-27",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-27",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-01",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-05",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-05",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-09",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-10",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-17",
+      "page": "https://estabaenlisboa.com/que-ver-en-lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 78,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-16",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-17",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 26,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-19",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 20,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-21",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-25",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-28",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 12,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-11",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11,
+      "search_type": "web"
+    }
+  ],
+  "visibleQueryDailyRows": [
+    {
+      "date": "2026-08-15",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 31,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-15",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "lisboa a cascais distancia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 37,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-15",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "lisboa cascais distancia",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 40.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-16",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 33,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais a lisboa",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 63,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais lisbon",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 45,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 36,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "lisboa cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 55,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-18",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 27,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-18",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "ir a cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-19",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 24,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-20",
+      "page": "https://estabaenlisboa.com/actividades/cascais-cabo-da-roca",
+      "query": "cabo da roca cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 40,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-20",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 33,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-21",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 34,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-22",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 37,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-23",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 34,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-25",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais lisboa distancia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 33,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-25",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "cascais portugal como llegar",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 39.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-25",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "de lisboa a cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 42,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-27",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "distancia entre lisboa y cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 36,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-27",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "que ver en cascais en un día",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 59.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-28",
+      "page": "https://estabaenlisboa.com/blog/que-ver-cascais-desde-lisboa",
+      "query": "distancia entre lisboa y cascais",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 36,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-17",
+      "page": "https://estabaenlisboa.com/que-ver-en-lisboa",
+      "query": "que ver en lisboa y alrededores",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 78,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-17",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "query": "pasteleria belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 26,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-19",
+      "page": "https://estabaenlisboa.com/actividades/pasteis-de-belem",
+      "query": "lisboa pasteis de belem",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 28,
+      "search_type": "web"
+    }
+  ],
+  "siteDailyRows": [
+    {
+      "date": "2026-04-21",
+      "clicks": 0,
+      "impressions": 55,
+      "position": 26.7273,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-22",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 33.0278,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-23",
+      "clicks": 1,
+      "impressions": 25,
+      "position": 25.92,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-24",
+      "clicks": 0,
+      "impressions": 23,
+      "position": 13.2174,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-25",
+      "clicks": 0,
+      "impressions": 16,
+      "position": 12.625,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-26",
+      "clicks": 1,
+      "impressions": 16,
+      "position": 15.125,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-27",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 12.6818,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-28",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 13.95,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-29",
+      "clicks": 0,
+      "impressions": 15,
+      "position": 13.1333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-04-30",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 10.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-01",
+      "clicks": 0,
+      "impressions": 27,
+      "position": 9.5185,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-02",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 11.2,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-03",
+      "clicks": 0,
+      "impressions": 19,
+      "position": 18.2632,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-04",
+      "clicks": 1,
+      "impressions": 50,
+      "position": 32.98,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-05",
+      "clicks": 0,
+      "impressions": 49,
+      "position": 34.6327,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-06",
+      "clicks": 0,
+      "impressions": 30,
+      "position": 19.4,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-07",
+      "clicks": 0,
+      "impressions": 32,
+      "position": 17.875,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-08",
+      "clicks": 0,
+      "impressions": 40,
+      "position": 15.075,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-09",
+      "clicks": 0,
+      "impressions": 23,
+      "position": 13.1304,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-10",
+      "clicks": 0,
+      "impressions": 26,
+      "position": 20,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-11",
+      "clicks": 0,
+      "impressions": 44,
+      "position": 17.7955,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-12",
+      "clicks": 2,
+      "impressions": 22,
+      "position": 17.2273,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-13",
+      "clicks": 1,
+      "impressions": 38,
+      "position": 15.2368,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-14",
+      "clicks": 0,
+      "impressions": 41,
+      "position": 17.0732,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-15",
+      "clicks": 0,
+      "impressions": 29,
+      "position": 25.0345,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-16",
+      "clicks": 0,
+      "impressions": 41,
+      "position": 16.4878,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-17",
+      "clicks": 0,
+      "impressions": 37,
+      "position": 23.2162,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-18",
+      "clicks": 0,
+      "impressions": 30,
+      "position": 13.2,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-19",
+      "clicks": 1,
+      "impressions": 17,
+      "position": 11.2353,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-20",
+      "clicks": 0,
+      "impressions": 21,
+      "position": 21.5238,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-21",
+      "clicks": 0,
+      "impressions": 9,
+      "position": 13.8889,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-22",
+      "clicks": 0,
+      "impressions": 10,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-23",
+      "clicks": 0,
+      "impressions": 23,
+      "position": 19.4783,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-24",
+      "clicks": 0,
+      "impressions": 19,
+      "position": 8.8947,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-25",
+      "clicks": 1,
+      "impressions": 21,
+      "position": 12.8571,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-26",
+      "clicks": 1,
+      "impressions": 26,
+      "position": 17.1538,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-27",
+      "clicks": 0,
+      "impressions": 26,
+      "position": 13.7692,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-28",
+      "clicks": 2,
+      "impressions": 8,
+      "position": 7.375,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-29",
+      "clicks": 0,
+      "impressions": 17,
+      "position": 12.5882,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-30",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 15.6364,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-05-31",
+      "clicks": 0,
+      "impressions": 29,
+      "position": 17.3793,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-01",
+      "clicks": 1,
+      "impressions": 19,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-02",
+      "clicks": 0,
+      "impressions": 21,
+      "position": 12.0952,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-03",
+      "clicks": 1,
+      "impressions": 26,
+      "position": 17.1923,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-04",
+      "clicks": 0,
+      "impressions": 23,
+      "position": 16.4783,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-05",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 24.1389,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-06",
+      "clicks": 0,
+      "impressions": 77,
+      "position": 32.974,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-07",
+      "clicks": 1,
+      "impressions": 31,
+      "position": 17.0645,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-08",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 11.6,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-09",
+      "clicks": 0,
+      "impressions": 15,
+      "position": 10.2,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-10",
+      "clicks": 1,
+      "impressions": 28,
+      "position": 15.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-11",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 13.35,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-12",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 13.3333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-13",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-14",
+      "clicks": 1,
+      "impressions": 29,
+      "position": 15.931,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-15",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 12.1538,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-16",
+      "clicks": 1,
+      "impressions": 30,
+      "position": 16.9,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-17",
+      "clicks": 2,
+      "impressions": 25,
+      "position": 10.72,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-18",
+      "clicks": 0,
+      "impressions": 15,
+      "position": 17.8,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-19",
+      "clicks": 1,
+      "impressions": 22,
+      "position": 15.7273,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-20",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 16.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-21",
+      "clicks": 2,
+      "impressions": 37,
+      "position": 10.3514,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-22",
+      "clicks": 0,
+      "impressions": 37,
+      "position": 13.3514,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-23",
+      "clicks": 0,
+      "impressions": 25,
+      "position": 9.76,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-24",
+      "clicks": 0,
+      "impressions": 25,
+      "position": 14,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-25",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 29.3333,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-26",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 47.1364,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-27",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 20.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-28",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 35.5,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-29",
+      "clicks": 0,
+      "impressions": 11,
+      "position": 28.6364,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-06-30",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 25.2273,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-01",
+      "clicks": 1,
+      "impressions": 28,
+      "position": 18.8214,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-02",
+      "clicks": 0,
+      "impressions": 31,
+      "position": 18.9355,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-03",
+      "clicks": 0,
+      "impressions": 25,
+      "position": 25.84,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-04",
+      "clicks": 0,
+      "impressions": 34,
+      "position": 22.8529,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-05",
+      "clicks": 1,
+      "impressions": 44,
+      "position": 33.5909,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-06",
+      "clicks": 0,
+      "impressions": 323,
+      "position": 65.5728,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-07",
+      "clicks": 0,
+      "impressions": 222,
+      "position": 48.4955,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-08",
+      "clicks": 0,
+      "impressions": 137,
+      "position": 46.0365,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-09",
+      "clicks": 0,
+      "impressions": 61,
+      "position": 52.459,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-10",
+      "clicks": 0,
+      "impressions": 91,
+      "position": 53.5275,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-11",
+      "clicks": 0,
+      "impressions": 90,
+      "position": 56.7778,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-12",
+      "clicks": 0,
+      "impressions": 86,
+      "position": 60.7326,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-13",
+      "clicks": 0,
+      "impressions": 77,
+      "position": 51.5065,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-14",
+      "clicks": 0,
+      "impressions": 45,
+      "position": 51.7556,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-15",
+      "clicks": 0,
+      "impressions": 67,
+      "position": 53.2985,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-16",
+      "clicks": 1,
+      "impressions": 84,
+      "position": 48.7738,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-17",
+      "clicks": 0,
+      "impressions": 63,
+      "position": 49.8889,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-18",
+      "clicks": 2,
+      "impressions": 74,
+      "position": 47.527,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-19",
+      "clicks": 0,
+      "impressions": 59,
+      "position": 47.3051,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-20",
+      "clicks": 1,
+      "impressions": 77,
+      "position": 42.2857,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-21",
+      "clicks": 0,
+      "impressions": 63,
+      "position": 42.4921,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-22",
+      "clicks": 1,
+      "impressions": 79,
+      "position": 40.8101,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-23",
+      "clicks": 1,
+      "impressions": 67,
+      "position": 39.791,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-24",
+      "clicks": 1,
+      "impressions": 70,
+      "position": 43.0429,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-25",
+      "clicks": 0,
+      "impressions": 85,
+      "position": 40.0588,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-26",
+      "clicks": 2,
+      "impressions": 93,
+      "position": 23.1505,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-27",
+      "clicks": 3,
+      "impressions": 86,
+      "position": 10.8256,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-28",
+      "clicks": 0,
+      "impressions": 81,
+      "position": 15.9012,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-29",
+      "clicks": 0,
+      "impressions": 91,
+      "position": 16.4835,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-30",
+      "clicks": 1,
+      "impressions": 58,
+      "position": 23.1552,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-07-31",
+      "clicks": 1,
+      "impressions": 94,
+      "position": 26.9468,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-01",
+      "clicks": 0,
+      "impressions": 77,
+      "position": 10.3247,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-02",
+      "clicks": 1,
+      "impressions": 64,
+      "position": 20.3906,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-03",
+      "clicks": 2,
+      "impressions": 66,
+      "position": 16.697,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-04",
+      "clicks": 0,
+      "impressions": 80,
+      "position": 19.875,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-05",
+      "clicks": 1,
+      "impressions": 105,
+      "position": 20.2286,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-06",
+      "clicks": 1,
+      "impressions": 60,
+      "position": 20.25,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-07",
+      "clicks": 1,
+      "impressions": 111,
+      "position": 8.2613,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-08",
+      "clicks": 2,
+      "impressions": 208,
+      "position": 11.4375,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-09",
+      "clicks": 2,
+      "impressions": 190,
+      "position": 10.0789,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-10",
+      "clicks": 5,
+      "impressions": 212,
+      "position": 9.7594,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-11",
+      "clicks": 1,
+      "impressions": 197,
+      "position": 9.2183,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-12",
+      "clicks": 4,
+      "impressions": 186,
+      "position": 11.5376,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-13",
+      "clicks": 0,
+      "impressions": 174,
+      "position": 10.2701,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-14",
+      "clicks": 0,
+      "impressions": 155,
+      "position": 8.4968,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-15",
+      "clicks": 2,
+      "impressions": 150,
+      "position": 10.0733,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-16",
+      "clicks": 2,
+      "impressions": 123,
+      "position": 9.8374,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-17",
+      "clicks": 3,
+      "impressions": 170,
+      "position": 11.5059,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-18",
+      "clicks": 1,
+      "impressions": 209,
+      "position": 13.0861,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-19",
+      "clicks": 1,
+      "impressions": 245,
+      "position": 10.8367,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-20",
+      "clicks": 2,
+      "impressions": 277,
+      "position": 10.0144,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-21",
+      "clicks": 2,
+      "impressions": 308,
+      "position": 9.7273,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-22",
+      "clicks": 1,
+      "impressions": 255,
+      "position": 9.0078,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-23",
+      "clicks": 2,
+      "impressions": 269,
+      "position": 11.29,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-24",
+      "clicks": 4,
+      "impressions": 285,
+      "position": 9.1228,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-25",
+      "clicks": 7,
+      "impressions": 330,
+      "position": 10.8394,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-26",
+      "clicks": 5,
+      "impressions": 368,
+      "position": 12.8424,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-27",
+      "clicks": 1,
+      "impressions": 317,
+      "position": 12.2397,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-28",
+      "clicks": 4,
+      "impressions": 317,
+      "position": 12.1293,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-29",
+      "clicks": 2,
+      "impressions": 293,
+      "position": 10.0785,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-30",
+      "clicks": 3,
+      "impressions": 283,
+      "position": 11.5936,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-08-31",
+      "clicks": 1,
+      "impressions": 305,
+      "position": 10.9705,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-01",
+      "clicks": 3,
+      "impressions": 309,
+      "position": 10.7961,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-02",
+      "clicks": 0,
+      "impressions": 257,
+      "position": 13.4747,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-03",
+      "clicks": 0,
+      "impressions": 222,
+      "position": 12.6802,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-04",
+      "clicks": 3,
+      "impressions": 197,
+      "position": 12.401,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-05",
+      "clicks": 0,
+      "impressions": 330,
+      "position": 19.0424,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-06",
+      "clicks": 0,
+      "impressions": 361,
+      "position": 24.5596,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-07",
+      "clicks": 1,
+      "impressions": 209,
+      "position": 21.1388,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-08",
+      "clicks": 1,
+      "impressions": 138,
+      "position": 10.3696,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-09",
+      "clicks": 1,
+      "impressions": 132,
+      "position": 10.5833,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-10",
+      "clicks": 1,
+      "impressions": 110,
+      "position": 10.5636,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-11",
+      "clicks": 1,
+      "impressions": 128,
+      "position": 11.6875,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-12",
+      "clicks": 1,
+      "impressions": 180,
+      "position": 12.5111,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-13",
+      "clicks": 1,
+      "impressions": 163,
+      "position": 10.3926,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-14",
+      "clicks": 2,
+      "impressions": 191,
+      "position": 12.5602,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-15",
+      "clicks": 3,
+      "impressions": 181,
+      "position": 11.5967,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-16",
+      "clicks": 1,
+      "impressions": 164,
+      "position": 12.0488,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-17",
+      "clicks": 2,
+      "impressions": 174,
+      "position": 10.4713,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-18",
+      "clicks": 4,
+      "impressions": 186,
+      "position": 10.5968,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-19",
+      "clicks": 1,
+      "impressions": 166,
+      "position": 8.9578,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-20",
+      "clicks": 3,
+      "impressions": 184,
+      "position": 7.9457,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-21",
+      "clicks": 1,
+      "impressions": 150,
+      "position": 7.5867,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-22",
+      "clicks": 3,
+      "impressions": 216,
+      "position": 9.2731,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-23",
+      "clicks": 3,
+      "impressions": 292,
+      "position": 8.863,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-24",
+      "clicks": 2,
+      "impressions": 309,
+      "position": 8.1197,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-25",
+      "clicks": 2,
+      "impressions": 286,
+      "position": 8.9056,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-26",
+      "clicks": 6,
+      "impressions": 342,
+      "position": 7.9298,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-27",
+      "clicks": 3,
+      "impressions": 325,
+      "position": 8.2585,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-28",
+      "clicks": 4,
+      "impressions": 261,
+      "position": 7.9464,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-29",
+      "clicks": 8,
+      "impressions": 340,
+      "position": 8.9118,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-09-30",
+      "clicks": 4,
+      "impressions": 306,
+      "position": 9.3203,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-01",
+      "clicks": 5,
+      "impressions": 261,
+      "position": 8.7586,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-02",
+      "clicks": 5,
+      "impressions": 370,
+      "position": 11.8784,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-03",
+      "clicks": 3,
+      "impressions": 437,
+      "position": 13.6568,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-04",
+      "clicks": 5,
+      "impressions": 498,
+      "position": 15.3092,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-05",
+      "clicks": 4,
+      "impressions": 335,
+      "position": 10.8299,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-06",
+      "clicks": 7,
+      "impressions": 365,
+      "position": 9.6082,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-07",
+      "clicks": 9,
+      "impressions": 411,
+      "position": 9.9976,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-08",
+      "clicks": 7,
+      "impressions": 417,
+      "position": 9.1247,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-09",
+      "clicks": 3,
+      "impressions": 440,
+      "position": 7.7341,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-10",
+      "clicks": 5,
+      "impressions": 489,
+      "position": 8.591,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-11",
+      "clicks": 4,
+      "impressions": 446,
+      "position": 8.3744,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-12",
+      "clicks": 5,
+      "impressions": 482,
+      "position": 7.8465,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-13",
+      "clicks": 6,
+      "impressions": 458,
+      "position": 8.3406,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-14",
+      "clicks": 2,
+      "impressions": 335,
+      "position": 11.8119,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-15",
+      "clicks": 5,
+      "impressions": 385,
+      "position": 8.8987,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-16",
+      "clicks": 3,
+      "impressions": 428,
+      "position": 8.6285,
+      "search_type": "web"
+    },
+    {
+      "date": "2026-10-17",
+      "clicks": 8,
+      "impressions": 455,
+      "position": 8.956,
+      "search_type": "web"
+    }
+  ],
+  "limitations": [
+    "GSC Wizard list_sites returned INVALID_ARGUMENT; no Wizard corroboration.",
+    "No external backlink authority data available.",
+    "Query rows are privacy limited and do not reconcile to page totals.",
+    "No same-query overlap observed in returned candidate query rows; insufficient to rule out cannibalization."
+  ],
+  "opportunityPageRows28": [
+  {
+    "page": "https://estabaenlisboa.com/blog/tarjeta-navegante-lisboa",
+    "clicks": 34,
+    "impressions": 1652,
+    "position": 6.454,
+    "search_type": "web"
+  },
+  {
+    "page": "https://estabaenlisboa.com/blog/volta-portugal-devolucion-envases",
+    "clicks": 17,
+    "impressions": 422,
+    "position": 3.8791,
+    "search_type": "web"
+  },
+  {
+    "page": "https://estabaenlisboa.com/blog/obidos-vila-natal",
+    "clicks": 12,
+    "impressions": 402,
+    "position": 6.6816,
+    "search_type": "web"
+  },
+  {
+    "page": "https://estabaenlisboa.com/blog/estacion-oriente-lisboa",
+    "clicks": 8,
+    "impressions": 708,
+    "position": 8.9576,
+    "search_type": "web"
+  },
+  {
+    "page": "https://estabaenlisboa.com/blog/metro-lisboa-guia",
+    "clicks": 3,
+    "impressions": 1141,
+    "position": 8.7879,
+    "search_type": "web"
+  }
+],
+  "pulls": {
+    "site": {
+      "fields": [
+        "date",
+        "clicks",
+        "impressions",
+        "position",
+        "search_type"
+      ],
+      "dateFrom": "2026-04-21",
+      "dateTo": "2026-10-17",
+      "filters": [
+        [
+          "search_type",
+          "eq",
+          "web"
+        ]
+      ],
+      "returnedRows": 180
+    },
+    "pages": {
+      "fields": [
+        "date",
+        "page",
+        "clicks",
+        "impressions",
+        "position",
+        "search_type"
+      ],
+      "dateFrom": "2026-04-21",
+      "dateTo": "2026-10-17",
+      "filters": "page in exact canonical URLs listed in pages; search_type=web; Pastéis activity fetched separately",
+      "returnedRows": 61
+    },
+    "queries": {
+      "fields": [
+        "date",
+        "page",
+        "query",
+        "clicks",
+        "impressions",
+        "position",
+        "search_type"
+      ],
+      "dateFrom": "2026-07-20",
+      "dateTo": "2026-10-17",
+      "filters": "same candidate scope; Pastéis activity fetched separately",
+      "returnedRows": 25
+    },
+    "unfilteredPageCrosscheck": {
+      "fields": [
+        "page",
+        "clicks",
+        "impressions",
+        "position",
+        "search_type"
+      ],
+      "dateFrom": "2026-09-20",
+      "dateTo": "2026-10-17",
+      "returnedRows": 99,
+      "note": "Absent candidate URLs also absent in unfiltered response; no reconciliation to site totals because grain is page, not property."
+    }
+  }
+}

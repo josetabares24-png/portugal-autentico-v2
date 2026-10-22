@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-22",
+  "decision": "D-065",
+  "testedSha": "cd9f8f936a6b4aca8702f9087242d1d587a0129d",
+  "preview": {
+    "id": "dpl_Epjg9Ch1r3AsY9H3oi3Hu97nTctF",
+    "url": "https://portugal-autentico-v2-nosxbfxq9-estabaenlisboa.vercel.app",
+    "state": "READY",
+    "target": null
+  },
+  "production": {
+    "sha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+    "id": "dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes",
+    "state": "READY",
+    "changed": false
+  },
+  "pr": {
+    "number": 113,
+    "draft": true,
+    "checksPassed": 6,
+    "merged": false
+  },
+  "local": {
+    "buildPages": 137,
+    "typecheck": "pass",
+    "lintErrors": 0,
+    "lintWarnings": 1,
+    "planningTests": 8,
+    "mailerTests": 5,
+    "navigationChecks": 171,
+    "technicalChecks": 1130,
+    "technicalPages": 113,
+    "calculatorChecks": 92,
+    "sitemapChecks": 64,
+    "sitemapUrls": 98,
+    "responsiveViews": 8
+  },
+  "remote": {
+    "navigationChecks": 171,
+    "technicalChecks": 1130,
+    "technicalPages": 113,
+    "calculatorChecks": 92,
+    "sitemapChecks": 64,
+    "sitemapUrls": 98,
+    "responsiveViews": 8
+  },
+  "interaction": {
+    "emptyFormBlocked": true,
+    "invalidEmailBlockedLocal": true,
+    "tabNameToEmail": true,
+    "realMessagesSent": 0,
+    "whatsAppAdded": false
+  },
+  "limits": [
+    "Owner reports a successful real form test; inbox contents and Reply-To were not independently inspected.",
+    "Visual approval remains pending.",
+    "No conversion or SEO gain measured.",
+    "Old days/pace/budget analytics dimensions are no longer collected in the UI."
+  ],
+  "humanValidation": {
+    "date": "2026-10-22",
+    "reportedBy": "José",
+    "statement": "si y si sirve ya probe",
+    "formReportedWorking": true,
+    "independentInboxInspection": false,
+    "bothEmailsAndReplyToExplicitlyConfirmed": false,
+    "productionApproval": false
+  }
+}

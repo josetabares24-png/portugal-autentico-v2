@@ -1,0 +1,52 @@
+[
+  {
+    "active": [
+      "Planifica",
+      "Planifica"
+    ],
+    "h1": "Planifica tu viaje",
+    "menuOpen": "false",
+    "url": "/planifica-tu-viaje"
+  },
+  {
+    "active": [
+      "Entradas",
+      "Entradas"
+    ],
+    "h1": "Comprar entradas en Lisboa",
+    "menuOpen": "false",
+    "url": "/comprar-entradas"
+  },
+  {
+    "active": [
+      "1"
+    ],
+    "h1": "Guías de Lisboa y Portugal",
+    "menuOpen": "false",
+    "url": "/blog#historias"
+  },
+  {
+    "h1": "Comprar entradas en Lisboa",
+    "menuOpen": "false",
+    "url": "/comprar-entradas",
+    "width": 390
+  },
+  {
+    "h1": "Planifica tu viaje",
+    "menuOpen": "false",
+    "url": "/planifica-tu-viaje",
+    "width": 390
+  },
+  {
+    "h1": "Guías de Lisboa y Portugal",
+    "menuOpen": "false",
+    "url": "/blog#historias",
+    "width": 390
+  },
+  {
+    "h1": "Viajar a Portugal sin ir a ciegas.",
+    "menuOpen": "false",
+    "url": "/portugal",
+    "width": 390
+  }
+]

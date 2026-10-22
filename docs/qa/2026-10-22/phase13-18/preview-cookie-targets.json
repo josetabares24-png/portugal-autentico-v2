@@ -1,0 +1,26 @@
+{
+  "brevoHints": 0,
+  "buttons": [
+    {
+      "height": 44,
+      "label": "Cerrar banner de cookies",
+      "width": 44
+    },
+    {
+      "height": 44,
+      "label": "Rechazar cookies",
+      "width": 141
+    },
+    {
+      "height": 44,
+      "label": "Aceptar cookies",
+      "width": 141
+    }
+  ],
+  "heroLoaded": true,
+  "trackingScripts": 0,
+  "preferences": {
+    "height": 44,
+    "width": 44
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "checked": "2026-10-21",
+  "origin": "https://portugal-autentico-v2-64c57b7gi-estabaenlisboa.vercel.app",
+  "base": "50b7790",
+  "scope": "Vinos/Gastronomia only; prior three corrections retained",
+  "checks": [
+    {
+      "name": "all other article objects preserved",
+      "pass": true
+    },
+    {
+      "name": "preserve AUDITED_ARTICLE_FAQS",
+      "pass": true
+    },
+    {
+      "name": "preserve articleExtras",
+      "pass": true
+    },
+    {
+      "name": "preserve sectionPhotos",
+      "pass": true
+    },
+    {
+      "name": "preserve heroAlt",
+      "pass": true
+    },
+    {
+      "name": "preserve localImages",
+      "pass": true
+    },
+    {
+      "name": "preserve articleHeroImages",
+      "pass": true
+    },
+    {
+      "name": "preserve src/data/seo-url-policy.json",
+      "pass": true
+    },
+    {
+      "name": "preserve src/app/sitemap.ts",
+      "pass": true
+    },
+    {
+      "name": "preserve public/robots.txt",
+      "pass": true
+    },
+    {
+      "name": "preserve next.config.mjs",
+      "pass": true
+    },
+    {
+      "name": "all other blog cards preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: body count/order and unedited blocks exact",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: all other article fields preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: explicit primary sources and partial update label",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: only intended card fields modified",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: publication date retained",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: HTML title matches scope",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: one H1 with intended title",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: meta description matches corrected scope",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: canonical/robots preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: section headings/anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: internal hrefs preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: all primary sources rendered in one system",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: schema original publication and partial modification coherent",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: OG modified date coherent",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia: targeted unsupported claims removed",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: body count/order and unedited blocks exact",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: all other article fields preserved",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: explicit primary sources and partial update label",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: only intended card fields modified",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: publication date retained",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: HTML title matches scope",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: one H1 with intended title",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: meta description matches corrected scope",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: canonical/robots preserved",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: section headings/anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: internal hrefs preserved",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: all primary sources rendered in one system",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: schema original publication and partial modification coherent",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: OG modified date coherent",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia: targeted unsupported claims removed",
+      "pass": true
+    },
+    {
+      "name": "sitemap membership remains 98",
+      "pass": true
+    },
+    {
+      "name": "all other sitemap records preserved including prior corrections",
+      "pass": true
+    },
+    {
+      "name": "only two corrected lastmod values updated",
+      "pass": true
+    }
+  ]
+}

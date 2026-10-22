@@ -1,0 +1,22 @@
+[
+  {
+    "step": "Tab enters Lisboa links",
+    "href": "/blog/como-moverse-por-lisboa",
+    "label": "Moverse"
+  },
+  {
+    "step": "Escape closes and restores menu focus",
+    "control": "lisboa-desktop-links",
+    "expanded": "false"
+  },
+  {
+    "step": "TOC keyboard toggle",
+    "focused": "SUMMARY",
+    "open": false
+  },
+  {
+    "step": "Sources keyboard toggle",
+    "focused": "SUMMARY",
+    "open": true
+  }
+]

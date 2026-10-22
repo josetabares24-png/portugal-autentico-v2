@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import BlogClient from './BlogClient';
 import { blogPosts } from '@/data/blog-posts';
+import { BlogEditorialCover } from '@/components/blog/BlogEditorialCover';
+import { toIsoEditorialDate } from '@/lib/editorial-date';
 
 const BLOG_TITLE = 'Guías de Lisboa y Portugal | Estaba en Lisboa';
 const BLOG_DESCRIPTION = 'Guías de Lisboa y Portugal: transporte, rutas, barrios, escapadas, comida y consejos prácticos para organizar el viaje desde una base local.';
@@ -59,7 +61,7 @@ const jsonLd = {
   blogPost: blogPosts.map((post) => ({
     '@type': 'BlogPosting',
     headline: post.titulo,
-    datePublished: post.fecha,
+    ...(toIsoEditorialDate(post.fecha) ? { datePublished: toIsoEditorialDate(post.fecha) } : {}),
     author: {
       '@type': 'Person',
       name: post.autor,
@@ -79,7 +81,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogClient key={initialPage} initialPage={initialPage} />
+      <BlogClient key={initialPage} initialPage={initialPage} editorialCover={initialPage === 1 ? <BlogEditorialCover /> : undefined} />
     </>
   );
 }

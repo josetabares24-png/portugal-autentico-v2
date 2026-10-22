@@ -1,0 +1,3 @@
+Browser tab: 4, Title: "PageSpeed Insights", URL: "https://pagespeed.web.dev/analysis/https-estabaenlisboa-com/2cad4qo4yb?form_factor=mobile".
+There has been no change in the accessibility tree.
+The focused UI element is 521 button (expanded) Desglose de LCP, Secondary Actions: Collapse

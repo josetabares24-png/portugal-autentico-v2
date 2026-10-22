@@ -1,0 +1,112 @@
+{
+  "checked": "2026-10-21",
+  "origin": "https://portugal-autentico-v2-8loik76jq-estabaenlisboa.vercel.app",
+  "base": "f76c3e9",
+  "scope": "Festivals only; inherited Cascais correction retained",
+  "checks": [
+    {
+      "name": "all other article objects preserved",
+      "pass": true
+    },
+    {
+      "name": "20 body blocks retained; 17 unedited blocks exact",
+      "pass": true
+    },
+    {
+      "name": "other article fields preserved",
+      "pass": true
+    },
+    {
+      "name": "preserve AUDITED_ARTICLE_FAQS",
+      "pass": true
+    },
+    {
+      "name": "preserve articleExtras",
+      "pass": true
+    },
+    {
+      "name": "preserve sectionPhotos",
+      "pass": true
+    },
+    {
+      "name": "preserve heroAlt",
+      "pass": true
+    },
+    {
+      "name": "preserve localImages",
+      "pass": true
+    },
+    {
+      "name": "preserve articleHeroImages",
+      "pass": true
+    },
+    {
+      "name": "three previous source URLs retained; five total",
+      "pass": true
+    },
+    {
+      "name": "all other blog cards preserved",
+      "pass": true
+    },
+    {
+      "name": "card/article title, description, modification agree",
+      "pass": true
+    },
+    {
+      "name": "publication date preserved",
+      "pass": true
+    },
+    {
+      "name": "HTML title unchanged",
+      "pass": true
+    },
+    {
+      "name": "H1 matches corrected editorial title; unique",
+      "pass": true
+    },
+    {
+      "name": "meta description matches corrected scope",
+      "pass": true
+    },
+    {
+      "name": "canonical and robots preserved",
+      "pass": true
+    },
+    {
+      "name": "section headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "five source URLs rendered",
+      "pass": true
+    },
+    {
+      "name": "internal hrefs preserved",
+      "pass": true
+    },
+    {
+      "name": "article schema published/modified dates truthful",
+      "pass": true
+    },
+    {
+      "name": "OG modified date matches",
+      "pass": true
+    },
+    {
+      "name": "no wrong saint comparison or month superlative in main",
+      "pass": true
+    },
+    {
+      "name": "sitemap URL membership preserved at 98",
+      "pass": true
+    },
+    {
+      "name": "all other sitemap records preserved",
+      "pass": true
+    },
+    {
+      "name": "only corrected article lastmod updated",
+      "pass": true
+    }
+  ]
+}

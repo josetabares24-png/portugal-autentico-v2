@@ -566,7 +566,10 @@ async function checkActividades(baseUrl) {
   record('/actividades enlaza las 3 rutas destacadas', anchorLinks.length === 3, `${anchorLinks.length}/3`);
 
   const fichas = new Set([...html.matchAll(/href="\/actividades\/([a-z0-9-]+)"/g)].map((m) => m[1]));
-  record('/actividades no rompe el catálogo (20 fichas)', fichas.size === 20, `${fichas.size} fichas enlazadas`);
+  // Fase 1 retiró estas tres fichas mediante los 301 expresamente aprobados.
+  record('/actividades conserva las 17 fichas vivas', fichas.size === 17, `${fichas.size} fichas enlazadas`);
+  const retired = ['tranvia-28', 'mosteiro-jeronimos', 'sintra-dia-completo'];
+  record('/actividades no enlaza las tres fichas redirigidas', retired.every((slug) => !fichas.has(slug)), 'sin dependencias de 301');
 }
 
 async function checkActivityFiche(baseUrl, expectedRef = null) {

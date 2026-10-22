@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, BusFront, CalendarDays, CreditCard, MapPinned, TrainFront } from 'lucide-react';
+import { ArrowUpRight, BusFront } from 'lucide-react';
 
 const PAGE_URL = 'https://estabaenlisboa.com/portugal';
 const TITLE = 'Viajar a Portugal 2026: rutas, transporte y consejos';
@@ -12,25 +12,21 @@ const quickGuides = [
     title: 'Portugal en 7 días',
     text: 'Una ruta realista por Lisboa, Sintra y Oporto, sin convertir la semana en una carrera.',
     href: '/blog/portugal-en-7-dias',
-    icon: CalendarDays,
   },
   {
     title: 'Cómo moverse por Portugal',
     text: 'Trenes, autobuses, coche y qué elegir según el trayecto.',
     href: '/blog/como-moverse-por-portugal',
-    icon: TrainFront,
   },
   {
     title: 'Cómo pagar en Portugal',
     text: 'Tarjeta, efectivo, cajeros y qué revisar para evitar comisiones.',
     href: '/blog/como-pagar-en-portugal',
-    icon: CreditCard,
   },
   {
     title: 'Lisboa como base',
     text: 'Qué ver, cómo moverte y cómo organizar la ciudad antes de salir al resto del país.',
     href: '/que-ver-en-lisboa',
-    icon: MapPinned,
   },
 ] as const;
 
@@ -73,17 +69,17 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: PAGE_URL,
     images: [{
-      url: 'https://estabaenlisboa.com/images/jose/jose-tabares-oporto.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'José Tabares en Oporto, Portugal',
+      url: 'https://estabaenlisboa.com/images/commons/sintra-palacio-pena-wikimedia.webp',
+      width: 1280,
+      height: 854,
+      alt: 'Palacio da Pena en Sintra, Portugal',
     }],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
-    images: ['https://estabaenlisboa.com/images/jose/jose-tabares-oporto.jpg'],
+    images: ['https://estabaenlisboa.com/images/commons/sintra-palacio-pena-wikimedia.webp'],
   },
 };
 
@@ -148,8 +144,8 @@ export default function PortugalPage() {
 
           <div className="relative min-h-[340px] overflow-hidden rounded-[3px] bg-night md:min-h-[460px]">
             <Image
-              src="/images/jose/jose-tabares-oporto.jpg"
-              alt="José Tabares en Oporto durante un viaje por Portugal"
+              src="/images/commons/sintra-palacio-pena-wikimedia.webp"
+              alt="Palacio da Pena en Sintra, Portugal"
               fill
               priority
               className="object-cover"
@@ -158,39 +154,38 @@ export default function PortugalPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-night/55 via-transparent to-transparent" />
             <p className="absolute bottom-5 left-5 right-5 max-w-md font-body text-sm leading-relaxed text-white/90">
               La idea es sencilla: usar lo que ya conocemos bien de Lisboa para construir una guía cada vez más útil del resto de Portugal.
+              <span className="mt-2 block text-xs">
+                Foto: <a href="https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg" className="underline underline-offset-2">CEphoto, Uwe Aranas</a>
+                {' · '}<a href="https://creativecommons.org/licenses/by-sa/3.0/" className="underline underline-offset-2">CC BY-SA 3.0</a>
+              </span>
             </p>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1280px] px-5 py-12 sm:px-6 md:px-10 md:py-16" aria-labelledby="por-donde-empezar">
-        <div className="mb-7 max-w-3xl">
+      <section className="mx-auto max-w-[1280px] px-5 py-8 sm:px-6 md:px-10 md:py-10" aria-labelledby="por-donde-empezar">
+        <div className="mb-3 max-w-3xl">
           <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">Lo primero</p>
-          <h2 id="por-donde-empezar" className="font-display text-[2.2rem] font-semibold leading-tight md:text-[3rem]">
+          <h2 id="por-donde-empezar" className="max-w-2xl font-display text-2xl font-semibold not-italic leading-snug md:text-3xl">
             Cuatro cosas que conviene resolver antes de montar la ruta.
           </h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {quickGuides.map((guide) => {
-            const Icon = guide.icon;
-            return (
+        <ul className="grid gap-x-10 md:grid-cols-2">
+          {quickGuides.map((guide) => (
+            <li key={guide.href} className="border-b border-night/15">
               <Link
-                key={guide.href}
                 href={guide.href}
-                className="group rounded-[3px] border border-night/10 bg-white p-6 transition-colors hover:border-terracotta/60"
+                className="group flex min-h-11 items-start justify-between gap-5 rounded-sm py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
               >
-                <Icon size={24} strokeWidth={1.7} className="text-terracotta" aria-hidden="true" />
-                <h3 className="mt-5 font-display text-[1.65rem] font-semibold leading-tight group-hover:text-terracotta">
-                  {guide.title}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-text-secondary">{guide.text}</p>
-                <span className="mt-5 inline-flex items-center gap-1 font-body text-sm font-semibold text-night group-hover:text-terracotta">
-                  Abrir guía <ArrowUpRight size={15} aria-hidden="true" />
-                </span>
+                <div>
+                  <h3 className="font-display text-xl font-semibold not-italic leading-snug group-hover:text-terracotta">{guide.title}</h3>
+                  <p className="mt-2 max-w-md font-body text-sm leading-relaxed text-text-secondary">{guide.text}</p>
+                </div>
+                <ArrowUpRight size={18} className="mt-1 shrink-0 text-terracotta" aria-hidden="true" />
               </Link>
-            );
-          })}
-        </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="border-y border-night/10 bg-white/50">
@@ -198,7 +193,7 @@ export default function PortugalPage() {
           <div className="mb-8 grid gap-4 lg:grid-cols-[1fr_0.65fr] lg:items-end">
             <div>
               <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">Salir de Lisboa</p>
-              <h2 className="font-display text-[2.2rem] font-semibold leading-tight md:text-[3rem]">
+              <h2 className="max-w-xl font-display text-2xl font-semibold not-italic leading-snug md:text-3xl">
                 Empieza cerca antes de intentar recorrer todo Portugal.
               </h2>
             </div>

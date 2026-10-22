@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
@@ -11,9 +11,10 @@ const POSTS_PER_PAGE = 9;
 
 type BlogClientProps = {
   initialPage?: number;
+  editorialCover?: ReactNode;
 };
 
-export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
+export default function BlogClient({ initialPage = 1, editorialCover }: BlogClientProps) {
   const [categoriaActiva, setCategoriaActiva] = useState('Todos');
   const [paginaFiltrada, setPaginaFiltrada] = useState(1);
   const paginaActual = categoriaActiva === 'Todos' ? initialPage : paginaFiltrada;
@@ -33,8 +34,6 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
 
   const totalPaginas = Math.ceil(Math.max(0, postsFiltrados.length - 4) / POSTS_PER_PAGE);
 
-  const featured = postsFiltrados[0];
-  const secondary = postsFiltrados.slice(1, 4);
   const allRemaining = postsFiltrados.slice(4);
   const remaining = allRemaining.slice((paginaActual - 1) * POSTS_PER_PAGE, paginaActual * POSTS_PER_PAGE);
 
@@ -46,6 +45,13 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
   return (
     <main id="main-content">
       <BlogLandingHeader />
+
+      {editorialCover}
+
+      <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-8">
+        <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Todas las guías</h2>
+        <p className="mt-2 text-sm text-text-secondary">Explora el catálogo por tema o sigue las páginas del archivo.</p>
+      </div>
 
       {/* Filtros por categoría */}
       <section className="bg-background-light border-b border-border-soft py-3 sticky top-16 z-10">
@@ -74,25 +80,10 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
         </div>
       </section>
 
-      {/* Artículo destacado + recientes */}
-      {paginaActual === 1 && featured && <section className="bg-background-light py-8 md:py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          {featured && (
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr),minmax(320px,1.35fr)] lg:gap-12 lg:items-start">
-              <EditorialArticleCard post={featured} variant="feature" />
-
-              {secondary.length > 0 && <aside className="border-t border-border-soft pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-                <p className="mb-5 border-b border-border-soft pb-3 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
-                  Últimas entradas
-                </p>
-                <div className="space-y-5">
-                  {secondary.map((post) => (
-                    <EditorialArticleCard key={post.id} post={post} variant="compact" />
-                  ))}
-                </div>
-              </aside>}
-            </div>
-          )}
+      {/* The first four archive records stay crawlable on page one. */}
+      {paginaActual === 1 && postsFiltrados.length > 0 && <section className="bg-background-light py-6" aria-label="Primeras guías del catálogo">
+        <div className="site-container grid gap-6 md:grid-cols-2">
+          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="compact" headingLevel={3} />)}
         </div>
       </section>}
 
@@ -112,7 +103,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
           )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => (
-              <EditorialArticleCard key={post.id} post={post} />
+              <EditorialArticleCard key={post.id} post={post} headingLevel={3} />
             ))}
           </div>
 
@@ -126,7 +117,7 @@ export default function BlogClient({ initialPage = 1 }: BlogClientProps) {
             currentPage={paginaActual}
             totalPages={totalPaginas}
             linkPages={categoriaActiva === 'Todos'}
-            onPageChange={(page) => { setPaginaFiltrada(page); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onPageChange={(page) => { setPaginaFiltrada(page); requestAnimationFrame(() => document.getElementById('catalogo')?.scrollIntoView({ block: 'start', behavior: 'smooth' })); }}
           />
         </div>
       </section>}

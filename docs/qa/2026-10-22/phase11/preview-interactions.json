@@ -1,0 +1,19 @@
+{
+  "mobileMenu": {
+    "available": 780,
+    "freeToursVisible": true,
+    "height": 583,
+    "overflow": false
+  },
+  "mobileFreeTours": {
+    "closed": true,
+    "providerLinks": 7,
+    "url": "/free-tours-lisboa"
+  },
+  "desktopFreeTours": {
+    "navFits": true,
+    "providerLinks": 7,
+    "url": "/free-tours-lisboa",
+    "width": 1280
+  }
+}

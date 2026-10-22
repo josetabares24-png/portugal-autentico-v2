@@ -1,0 +1,114 @@
+{
+  "seoUnchanged": true,
+  "sameDestinations": true,
+  "beforeTop": 1260.265625,
+  "afterTop": 554.515625,
+  "after": {
+    "canonical": "https://estabaenlisboa.com/",
+    "description": "Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.",
+    "directoryTop": 554.515625,
+    "h1": "La Lisboa que le enseño a quien viene a verme.",
+    "portals": [
+      {
+        "height": 113,
+        "href": "/itinerarios"
+      },
+      {
+        "height": 114,
+        "href": "/que-ver-en-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/blog/como-moverse-por-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/blog/donde-alojarse-en-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/donde-comer-en-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/blog/vida-nocturna-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/blog/donde-fotografiar-lisboa"
+      },
+      {
+        "height": 114,
+        "href": "/blog/errores-turistas-lisboa"
+      }
+    ],
+    "robots": "index, follow",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://estabaenlisboa.com/#organization",
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PT",
+          "addressLocality": "Lisboa"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "availableLanguage": [
+            "Spanish"
+          ],
+          "contactType": "contact",
+          "email": "estabaenlisboa@gmail.com"
+        },
+        "description": "Guías en español sobre Lisboa: transporte, barrios, comida, alojamiento, lugares que visitar y excursiones.",
+        "image": "https://estabaenlisboa.com/logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "caption": "Estaba en Lisboa - Guías de Lisboa",
+          "height": 188,
+          "url": "https://estabaenlisboa.com/logo.png",
+          "width": 600
+        },
+        "name": "Estaba en Lisboa",
+        "sameAs": [
+          "https://instagram.com/estabaenlisboa"
+        ],
+        "url": "https://estabaenlisboa.com"
+      },
+      {
+        "@context": "https://schema.org",
+        "@id": "https://estabaenlisboa.com/#website",
+        "@type": "WebSite",
+        "description": "Información práctica en español para organizar un viaje a Lisboa.",
+        "inLanguage": "es-ES",
+        "name": "Estaba en Lisboa",
+        "publisher": {
+          "@id": "https://estabaenlisboa.com/#organization"
+        },
+        "url": "https://estabaenlisboa.com"
+      },
+      {
+        "@context": "https://schema.org",
+        "@id": "https://estabaenlisboa.com/#webpage",
+        "@type": "CollectionPage",
+        "about": {
+          "@type": "City",
+          "name": "Lisboa",
+          "sameAs": "https://www.wikidata.org/wiki/Q597"
+        },
+        "author": {
+          "@id": "https://estabaenlisboa.com/sobre-nosotros#jose-tabares"
+        },
+        "description": "Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.",
+        "inLanguage": "es-ES",
+        "isPartOf": {
+          "@id": "https://estabaenlisboa.com/#website"
+        },
+        "name": "Guía de Lisboa en español",
+        "url": "https://estabaenlisboa.com"
+      }
+    ],
+    "title": "Guía de Lisboa: qué ver, rutas y transporte | Estaba en Lisboa"
+  }
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { toIsoEditorialDate } from '@/lib/editorial-date';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { activities, activitySlugs } from '@/data/activities';
@@ -137,7 +138,8 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
       '@id': `${pageUrl}#article`,
       headline: article.seoTitle ?? article.titulo,
       description: article.metaDescription ?? article.descripcion,
-      ...(article.dateModified ? { datePublished: article.dateModified, dateModified: article.dateModified } : {}),
+      ...(toIsoEditorialDate(article.fecha) ? { datePublished: toIsoEditorialDate(article.fecha) } : {}),
+      ...(article.dateModified ? { dateModified: article.dateModified } : {}),
       author: { '@type': 'Person', '@id': AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_PROFILE_URL },
       image: { '@type': 'ImageObject', url: `${SITE_URL}${article.imagen}` },
       mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },

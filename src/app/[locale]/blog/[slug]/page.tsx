@@ -3570,7 +3570,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Cascais o Sintra: no resuelven el mismo día" },
       { tipo: "parrafo", texto: "Sintra exige reservas, desnivel y decisiones sobre palacios. Cascais funciona con un ritmo mucho más flexible. Si solo tienes un día libre fuera de Lisboa, elige según lo que te falte en el viaje: patrimonio monumental y sierra en Sintra; costa, paseo y una jornada más abierta en Cascais." },
       { tipo: "enlace", texto: "Si estás comparando más escapadas, esta guía las organiza por tiempo y logística.", href: "/blog/excursiones-desde-lisboa", label: "Excursiones desde Lisboa" },
-      { tipo: "enlace", texto: "Si prefieres resolver transporte y varias paradas costeras en una actividad organizada, revisa la opción comercial solo después de comparar el plan por libre.", href: "/actividades/cascais-cabo-da-roca", label: "Ver opción Cascais y Cabo da Roca" },
+      { tipo: "enlace", texto: "Para añadir Cabo da Roca a tu día en Cascais, esta ficha explica cómo combinar tren y autobús por libre.", href: "/actividades/cascais-cabo-da-roca", label: "Cómo ir a Cascais y Cabo da Roca por libre" },
     ],
   },
   "playas-cerca-lisboa": {
@@ -4556,21 +4556,25 @@ const articles: Record<string, Article> = {
     ]
   },
   "festivales-eventos-lisboa-2026": {
-    titulo: "Festivales y Eventos en Lisboa 2026: Calendario Completo",
+    titulo: "Festivales y eventos en Lisboa 2026: guía por temporadas",
     seoTitle: "Festivales y eventos en Lisboa 2026",
-    descripcion: "Santo António, NOS Alive, Festas de Lisboa, Arraiais y mucho más. El calendario completo de eventos y festivales de Lisboa para 2026.",
+    descripcion: "Santo António, NOS Alive y otras citas culturales de Lisboa: una selección por temporadas con referencias a las ediciones de 2026 y anteriores.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Parrilla de sardinas humeando en una fiesta de calle de Lisboa, con la gente sentada en mesas al aire libre",
     categoria: "Planificación",
     fecha: "8 Mar 2026",
+    fechaActualizacion: "Corrección de Santo António y alcance: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 12,
     fuentes: [
-      { label: "NOS Alive 2026 — web oficial", href: "https://nosalive.com/" },
+      { label: "NOS Alive — web del organizador (consulta la edición)", href: "https://nosalive.com/" },
       { label: "Visit Lisboa — Mercado de Natal no Rossio (edición 2025)", href: "https://www.visitlisboa.com/pt-pt/eventos/mercado-de-natal-no-rossio" },
       { label: "Câmara Municipal de Lisboa — encendido de las luces de Navidad 2025", href: "https://informacao.lisboa.pt/noticias/detalhe/lisboa-celebra-o-inicio-do-natal" },
+      { label: "Visit Portugal — Santos Populares y fechas de cada celebración", href: "https://www.visitportugal.com/en/destinos/lisboa-regi%C3%A3o/210955" },
+      { label: "EGEAC — programa de las Festas de Lisboa 2026", href: "https://egeac.pt/wp-content/uploads/2026/05/festas-de-lisboa-2026-web.pdf" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "Lisboa es una ciudad de fiestas. Hay una razón por la que el mes de junio es el más concurrido del año: las Festas de Lisboa, que culminan la noche del 12 al 13 de junio con la festividad de Santo António, convierten toda la ciudad en una fiesta interminable de sardinas asadas, vino verde, música y danza. Pero las celebraciones lisboetas no se limitan al verano: a lo largo del año hay una agenda de festivales culturales, musicales y gastronómicos que justificaría un viaje en cualquier mes." },
+      { tipo: "parrafo", texto: "Las Festas de Lisboa tienen su gran noche del 12 al 13 de junio, cuando los barrios celebran Santo António con arraiais, sardinas y música. Esta guía reúne una selección de fiestas y festivales por temporadas; no es una agenda completa. Cada edición tiene su propio programa: consulta al organizador antes de reservar el viaje alrededor de un evento." },
       { tipo: "subtitulo", texto: "Enero - Marzo: Cultura y Carnaval" },
       { tipo: "parrafo", texto: "Los primeros meses del año son la temporada baja de turismo, lo que significa Lisboa más tranquila, precios más bajos y un ritmo de vida más local. El punto alto de este período es el Carnaval (febrero o marzo según el año), que en Lisboa no tiene la masividad de Cádiz o Río, pero tiene su encanto propio: desfiles en la Avenida da Liberdade, fiestas en los bares del Bairro Alto, y una relajación general de la ciudad que se nota en el ambiente." },
       { tipo: "parrafo", texto: "Para los amantes del cine, el IndieLisboa (festival de cine independiente, generalmente en abril) y el Monstra (festival de cine de animación, marzo) son los eventos culturales más interesantes del invierno-primavera. Las entradas son económicas y la calidad de la programación es muy alta." },
@@ -4580,8 +4584,8 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Mayo es uno de los mejores meses para visitar Lisboa: temperatura perfecta (18-22°C), jardines en flor, sin las multitudes del verano, y la ciudad saliendo del invierno con energía renovada. Los mercados callejeros y los conciertos al aire libre empiezan a poblar parques y plazas." },
       { tipo: "subtitulo", texto: "Junio: Las Festas de Lisboa y Santo António" },
       { tipo: "parrafo", texto: "Junio es el mes de Lisboa por antonomasia. Las Festas de Lisboa ocupan todo el mes con eventos culturales, conciertos, exposiciones y los famosos Arraiais (fiestas de barrio) que llenan Alfama, Mouraria y el Bairro Alto de mesas en la calle, sardinas a la brasa y música hasta el amanecer." },
-      { tipo: "parrafo", texto: "La noche del 12 al 13 de junio es la gran noche de Santo António, patrón de Lisboa. Es el Día de San Juan y San Pedro en España, pero en versión lisboeta: las calles del barrio histórico se llenan hasta la imposibilidad de circular. Los manjericos (pequeñas plantas de albahaca decoradas con un poema y un clavel rojo) se regalan como símbolo de amor. Las sardinhas assadas —sardinas a la brasa— llenan el aire de un olor inconfundible. El ambiente es extraordinario, aunque caótico para quien no lo espera." },
-      { tipo: "tip", texto: "Para la noche de Santo António (12 junio), llega a Alfama o Mouraria antes de las 20:00 para conseguir mesa en un arraial. Después de las 22:00, las calles están llenas hasta el punto de ser difícil moverse. Lleva calzado cómodo y prepárate para no cenar hasta las 23:00." },
+      { tipo: "parrafo", texto: "La noche del 12 al 13 de junio es la gran noche de Santo António. Las marchas populares recorren la Avenida da Liberdade y los arraiais animan barrios como Alfama, Mouraria y Graça. Los manjericos, pequeñas plantas de albahaca acompañadas de un poema, se regalan como símbolo de amor. Las sardinhas assadas —sardinas a la brasa— llenan el aire de un olor inconfundible. El ambiente es extraordinario, aunque caótico para quien no lo espera." },
+      { tipo: "tip", texto: "Si quieres cenar en un arraial la noche del 12 de junio, consulta el programa del barrio y llega con margen. Lleva calzado cómodo: las celebraciones se recorren a pie y las calles pueden estar muy concurridas." },
       { tipo: "subtitulo", texto: "Julio - Agosto: Festivales de Música" },
       { tipo: "parrafo", texto: "El verano lisboeta es la temporada de los grandes festivales de música al aire libre. NOS Alive (julio, Passeio Marítimo de Algés) es el más importante: tres días con varios escenarios, del indie y el rock a la electrónica. La edición de 2026 fue del 9 al 11 de julio, con Foo Fighters, Florence + The Machine, Nick Cave & The Bad Seeds y Pixies, entre otros. Las fechas de 2027 se anuncian en nosalive.com." },
       { tipo: "parrafo", texto: "Jazz em Agosto (Fundação Gulbenkian, agosto) es el festival para los amantes del jazz: dos semanas de conciertos en el jardín del museo Gulbenkian, con programación de artistas internacionales de altísimo nivel. La combinación del jardín (uno de los más bellos de Lisboa) con la música en directo es incomparable." },
@@ -4671,6 +4675,8 @@ const articles: Record<string, Article> = {
     imageAlt: "Estatua de bronce sobre pedestal de piedra en una plaza arbolada de Lisboa",
     categoria: "Guías",
     fecha: "3 Mar 2026",
+    fechaActualizacion: "Corrección de entradas de Belém: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 16,
     fuentes: [
       { label: "Museus e Monumentos de Portugal — horarios y entradas", href: "https://www.museusemonumentos.pt/" },
@@ -4680,16 +4686,18 @@ const articles: Record<string, Article> = {
       { label: "EPAL / Museu da Água — Aqueduto das Águas Livres", href: "https://www.epal.pt/EPAL/menu/museu-da-%C3%A1gua/exposi%C3%A7%C3%A3o-permanente-patrim%C3%B3nio-associado/aqueduto-das-%C3%A1guas-livres" },
       { label: "Gobierno de Portugal — Inauguración del Museu do Tesouro Real (2022)", href: "https://portugal.gov.pt/gc23/comunicacao/noticias/inauguracao-do-museu-do-tesouro-real" },
       { label: "Panteão Nacional — el monumento y sus homenajeados", href: "https://www.panteaonacional.gov.pt/monumento" },
+      { label: "MMP / MEO Blueticket — entrada del claustro de los Jerónimos", href: "https://mmp.bymeoblueticket.pt/pt/event/14759/mosteiro-dos-jeronimos-claustro" },
+      { label: "MMP / MEO Blueticket — entrada de la Torre de Belém", href: "https://mmp.bymeoblueticket.pt/pt/event/14776/torre-de-belem" },
     ],
     contenido: [
       { tipo: "parrafo", texto: "Lisboa es una ciudad de monumentos. No del tipo de monumentos que se erigen en honor a batallas olvidadas, sino de edificios y estructuras que cuentan directamente la historia de la ciudad y del país: los monasterios construidos con el oro de las especias de India, las torres que vigilaban la entrada al río, los puentes y ascensores que conectaban las colinas. Esta guía te ayuda a priorizar qué ver, cómo evitar colas, y cuánto tiempo necesitas en cada lugar." },
       { tipo: "subtitulo", texto: "1. Mosteiro dos Jerónimos — La obra cumbre del manuelino" },
       { tipo: "parrafo", texto: "Construido a partir de 1501 con el dinero del impuesto sobre las especias traídas de India, el Mosteiro dos Jerónimos es la obra cumbre del estilo manuelino. La nave de la iglesia, con sus columnas decoradas con motivos marinos y tropicales, es de una elegancia que no cansa. Los claustros, en el piso superior, son todavía más impresionantes: una galería de dos pisos de arcos decorados con una delicadeza escultórica extraordinaria." },
       { tipo: "enlace", texto: "Qué se paga, qué es gratis y cómo llegar en tren desde Cais do Sodré.", href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
-      { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro, 18€. Hay entrada combinada con la Torre de Belém. Llevarla comprada te ahorra la cola de la taquilla, pero no la de acceso, que hace todo el mundo. Tiempo recomendado: 1,5-2 horas." },
+      { tipo: "parrafo", texto: "Datos prácticos: el claustro abre de martes a domingo de 9:30 a 17:30 (última entrada a las 17:00) y cierra los lunes. La iglesia es gratuita; lo que se paga es el claustro: 18 € de tarifa base; la taquilla online consultada muestra 19,11 €. Antes de comprar un paquete para visitar también la Torre de Belém, comprueba que incluye ambas entradas y las condiciones de cada visita. Llevarla comprada te ahorra la cola de la taquilla, pero no la de acceso, que hace todo el mundo. Tiempo recomendado: 1,5-2 horas." },
       { tipo: "subtitulo", texto: "2. Torre de Belém — El Icono de Lisboa" },
       { tipo: "parrafo", texto: "La Torre de Belém es la imagen más reconocible de Lisboa y uno de los iconos de Portugal. Construida entre 1516 y 1521 como fortaleza defensiva a la entrada del estuario del Tajo, la torre combina elementos militares con decoración manuelina de una sofisticación sorprendente. Las troneras en forma de cruz de Cristo, las torres de vigilancia octogonales y los balcones con barandillas de piedra tallada hacen que el edificio parezca más un sueño de piedra que una fortaleza." },
-      { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15 €, en un billete aparte del de los Jerónimos. El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
+      { tipo: "parrafo", texto: "Datos prácticos: abre de martes a domingo de 9:30 a 17:30 y cierra los lunes. Precio: 15 € de tarifa base; la taquilla online consultada muestra 15,92 €. Consulta la disponibilidad para tu fecha antes de organizar la visita. El interior tiene 5 pisos con vistas al río desde la terraza superior, pero las escaleras son muy estrechas. Tiempo: 45 minutos." },
       { tipo: "subtitulo", texto: "3. Castelo de São Jorge — La Historia de Lisboa en Piedra" },
       { tipo: "parrafo", texto: "El castillo que corona Alfama tiene casi mil años de historia visible en sus murallas. Construido por los moros en el siglo XI sobre asentamientos anteriores, fue reconquistado por Afonso Henriques en 1147 con ayuda de cruzados del norte de Europa. Desde las almenas hay la panorámica más completa de Lisboa: los tejados de Alfama, el Tajo brillando al fondo, el Puente 25 de Abril en la distancia." },
       { tipo: "parrafo", texto: "La entrada general cuesta 17 euros, con tarifas reducidas para jóvenes y mayores de 65 años y entrada gratuita para menores de 13. Vale la pena por las vistas y por el tour arqueológico (incluido en el precio) que muestra restos de la Lisboa fenicia, romana y mora bajo el recinto. Los pavos reales que deambulan por los jardines son un bonus inesperado." },
@@ -4841,24 +4849,31 @@ const articles: Record<string, Article> = {
     ]
   },
   "gastronomia-portuguesa-guia": {
-    titulo: "Gastronomía Portuguesa: Los 20 Platos que Tienes que Probar en Lisboa",
-    seoTitle: "Gastronomía portuguesa | 20 platos",
-    descripcion: "Bacalhau, pastéis de nata, bifanas, caldo verde, amêijoas à bulhão pato... La guía definitiva de la cocina portuguesa con dónde comer cada plato en Lisboa.",
+    titulo: "Gastronomía portuguesa: qué comer y dónde probarlo en Lisboa",
+    seoTitle: "Gastronomía portuguesa: qué comer en Lisboa",
+    descripcion: "Bacalhau à brás, pastéis de nata, bifanas y caldo verde: qué significa cada plato en la carta y algunas referencias para probar la cocina portuguesa en Lisboa.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     imageAlt: "Fachada de la Tasca da Graça, un bar de barrio de Lisboa, con clientes en las mesas de fuera",
     categoria: "Gastronomía",
     fecha: "23 Mar 2026",
+    fechaActualizacion: "Corrección de alcance y recomendaciones: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 14,
+    fuentes: [
+      { label: "Visit Portugal — platos de la cocina portuguesa", href: "https://www.visitportugal.com/en/content/the-portuguese-menu-fish-coriander-and-fantasy" },
+      { label: "Visit Lisboa — arraiais y sardinas en las fiestas de junio", href: "https://www.visitlisboa.com/es/eventos/verbenas-populares-de-lisboa" },
+      { label: "CVRVV — estilos de Vinho Verde y maridajes", href: "https://www.vinhoverde.pt/fotos/documentacao/flyer_vinhos_verdes_eng_755552762686e8c83d0e70.pdf" },
+    ],
     contenido: [
-      { tipo: "parrafo", texto: "La cocina portuguesa tiene un problema de imagen. En un continente donde Francia, Italia y España acaparan toda la atención gastronómica, Portugal lleva siglos cocinando en silencio platos que llevan 500 años perfeccionándose. El bacalhau que los pescadores portugueses salaban en los barcos camino de Terranova, la pastelería conventual que las monjas desarrollaron durante siglos con yema de huevo y azúcar, el vino verde que se bebe frío y espumoso en verano..." },
+      { tipo: "parrafo", texto: "La cocina portuguesa tiene un problema de imagen. En un continente donde Francia, Italia y España acaparan toda la atención gastronómica, Portugal lleva siglos cocinando en silencio platos que llevan 500 años perfeccionándose. El bacalhau que los pescadores portugueses salaban en los barcos camino de Terranova, la pastelería conventual que las monjas desarrollaron durante siglos con yema de huevo y azúcar, los blancos de Vinho Verde que acompañan pescado y marisco..." },
       // TODO(José): tu relación real con la comida de Lisboa (qué te sorprendió, tu plato favorito). Solo si es real.
       { tipo: "parrafo", texto: "Esta guía explica la cocina portuguesa de forma práctica: qué platos pedir, qué es cada cosa en la carta y dónde probarlos en Lisboa." },
       { tipo: "subtitulo", texto: "Los Imprescindibles — Empieza por Aquí" },
       { tipo: "lista", items: [
         "Pastel de nata: el rey indiscutible. Hojaldre crujiente, crema de huevo con canela. Come el primero caliente en Pastéis de Belém o en cualquier pastelería de barrio",
-        "Bacalhau à brás: bacalao desmenuzado con patatas fritas finas y huevo. El plato más vendido de Portugal",
+        "Bacalhau à brás: bacalao desmenuzado con patatas fritas finas y huevo. Una de las preparaciones tradicionales del bacalao",
         "Bifana: bocadillo de cerdo marinado en ajo y vino blanco. Un clásico de bar que se come de pie",
-        "Caldo verde: sopa de col rizada con chouriço. El primer plato de cualquier celebración portuguesa",
+        "Caldo verde: sopa de col con chouriço. Un clásico de la cocina portuguesa",
         "Amêijoas à bulhão pato: almejas en aceite de oliva con ajo, cilantro y limón. El plato de mariscos más sencillo y más perfecto de la costa atlántica",
         "Frango assado: pollo asado con piri-piri. Sencillo, barato y adictivo"
       ]},
@@ -4874,10 +4889,10 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "Los ovos moles de Aveiro (cápsulas de oblea rellenas de crema de yema) son el souvenir gastronómico más deseado del país. Los travesseiros de Sintra, los queijadas de Sintra, los pastéis de Tentúgal... cada región tiene su especialidad conventual. En Lisboa, el café A Brasileira (1905), en el Chiado, es histórico aunque turístico; para pastelería de verdad, busca cualquier pastelería de barrio." },
       { tipo: "subtitulo", texto: "Dónde Comer Bien en Lisboa — Por Tipo de Plato" },
       { tipo: "lista", items: [
-        "Pastéis de nata: Pastéis de Belém (histórico, siempre con cola), o cualquier Manteigaria en Chiado/Príncipe Real",
+        "Pastéis de nata: Pastéis de Belém (histórico), o Manteigaria en Chiado/Príncipe Real",
         "Bacalhau: Solar dos Presuntos (tradicional, cara) o cualquier tasca con menú del día",
         "Marisco: Cervejaria Ramiro si tienes presupuesto; para algo más económico, una marisquería de barrio con precio por kilo a la vista",
-        "Sardinas: solo en junio durante las festas, en cualquier arraial de barrio",
+        "Sardinas: en junio, los arraiais de las Festas de Lisboa son una ocasión para probarlas; consulta el programa del barrio",
         "Pastelería conventual: Confeitaria Nacional en Praça da Figueira (desde 1829)"
       ]}
     ]
@@ -5120,30 +5135,38 @@ const articles: Record<string, Article> = {
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
     seoTitle: "Vinos portugueses | Guía para entender",
-    descripcion: "Portugal tiene uno de los patrimonios vinícolas más ignorados de Europa. Vinho verde, vino de Oporto, Douro, Alentejo, Madeira... qué pedir, cómo pedirlo y dónde beberlo en Lisboa.",
+    descripcion: "Vinho Verde, vino de Oporto y tintos del Alentejo: estilos para orientarte en la carta, expresiones para pedir vino en Lisboa y cómo comprobar las condiciones de una cata.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Cena en la terraza de una tasca de Lisboa a la luz de la noche",
     categoria: "Gastronomía",
     fecha: "16 Mar 2026",
+    fechaActualizacion: "Corrección de Vinho Verde y consejos de compra: 21 de octubre de 2026",
+    dateModified: "2026-10-21",
     minutos: 12,
+    fuentes: [
+      { label: "CVRVV — región, colores y vinos jóvenes o envejecidos", href: "https://www.vinhoverde.pt/fotos/documentacao/flyer_vinhos_verdes_eng_755552762686e8c83d0e70.pdf" },
+      { label: "CVRVV — variedades y evolución en botella", href: "https://portal.vinhoverde.pt/fotos/documentacao/monosheet_vinhos_verdes_eng_868021771686e8c913cc09.pdf" },
+      { label: "Garrafeira Nacional — agenda de catas y condiciones por evento", href: "https://www.garrafeiranacional.com/garrafeira/events/" },
+      { label: "Garrafeira Nacional — tiendas y horarios", href: "https://www.garrafeiranacional.com/garrafeira/ajuda/lojas" },
+    ],
     contenido: [
       { tipo: "parrafo", texto: "Portugal tiene más variedades de uva autóctonas que cualquier otro país del mundo de tamaño comparable. La touriga nacional, la aragonez, la trincadeira, la alvarinho, la loureiro... nombres que no suenan en las cartas de vino de otros países pero que producen vinos de una personalidad que deja a mucha gente sorprendida. El problema es que Portugal lleva siglos siendo discreto sobre sus vinos, y el mundo tardó en prestar atención." },
       { tipo: "subtitulo", texto: "Vinho Verde: El Vino del Verano" },
-      { tipo: "parrafo", texto: "El Vinho Verde es el vino más refrescante del mundo para días de calor. Viene del Minho, el noroeste verde y lluvioso de Portugal, y su nombre no describe el color (hay blancos, rosados y tintos) sino la juventud: se cosecha joven, se embotella joven, y se bebe joven con su frescura intacta. Tiene una ligera efervescencia natural, baja graduación alcohólica (entre 8% y 11%), y una acidez que lo hace perfecto con mariscos, pescado fresco y el calor de Lisboa en julio." },
-      { tipo: "parrafo", texto: "En los bares y restaurantes de Lisboa, pedir 'um vinho verde' es pedir uno blanco, fresco, servido muy frío. Cuesta entre 3€ y 5€ la copa en un bar normal. El Alvarinho es la variedad más prestigiosa del Vinho Verde, más compleja y cara, con aromas de melocotón y flores que recuerdan vagamente al riesling alemán." },
+      { tipo: "parrafo", texto: "Vinho Verde es el nombre de una región demarcada del noroeste de Portugal, no una indicación de color o de edad: hay blancos, rosados y tintos. Los blancos jóvenes suelen ser frescos y ligeros, y pueden acompañar pescado y marisco. También hay vinos con crianza que ganan complejidad con el tiempo. La graduación y la presencia de gas dependen del vino; no todos son espumosos ni tienen el mismo grado alcohólico." },
+      { tipo: "parrafo", texto: "Si quieres uno blanco por copa, pide 'um copo de vinho verde branco' y pregunta qué referencia sirven y cuánto cuesta. Alvarinho y Loureiro son dos de las variedades de la región; el estilo y el precio dependen de la botella, no solo del nombre de la uva." },
       { tipo: "subtitulo", texto: "Vino de Oporto (Porto): Mucho Más que el Digestivo Dulce" },
       { tipo: "parrafo", texto: "El Vinho do Porto tiene en el mundo hispánico una imagen de vino dulce de sobremesa para abuelas. Esa imagen es completamente equivocada o, en el mejor caso, parcialmente cierta. El Porto Ruby —el más común— es efectivamente dulce y afrutado. Pero el Porto Tawny envejecido (especialmente los de 20 o 30 años) tiene una complejidad de fruta seca, caramelo y madera que está entre las experiencias vinícolas más sofisticadas que existen. Y el Porto Blanco, servido frío con agua tónica, es uno de los aperitivos más perfectos del mundo." },
       { tipo: "subtitulo", texto: "Alentejo: Los Tintos que Se Beben en Lisboa" },
       { tipo: "parrafo", texto: "El Alentejo es la región vinícola que más ha crecido en reputación en las últimas dos décadas. Sus tintos, hechos con uvas como la aragonez (la tempranillo portuguesa), la trincadeira y la alicante bouschet, tienen cuerpo, color intenso y aromas de fruta madura y especias que los hacen perfectos para las carnes y los guisos de la cocina portuguesa. Son los tintos que más se beben en los restaurantes de Lisboa." },
       { tipo: "subtitulo", texto: "Cómo Pedir Vino en Lisboa" },
       { tipo: "lista", items: [
-        "'Um copo de vinho verde' — un vaso de vinho verde (blanco, fresco). Para verano y mariscos",
-        "'Um tinto alentejano' — un tinto de Alentejo. La elección más segura para carnes",
+        "'Um copo de vinho verde branco' — una copa de Vinho Verde blanco. Pregunta qué vino sirven y a qué precio",
+        "'Um tinto alentejano' — un tinto de Alentejo. Una opción para acompañar carnes",
         "'Um porto tawny de 20 anos' — un Porto Tawny de 20 años. Para después de cenar, con queso",
-        "'Um branco fresco' — un blanco frío. Genérico pero funciona en cualquier situación",
-        "En las tascas, pide siempre 'o vinho da casa' (vino de la casa). Suele ser un alentejano básico pero honesto a 2-3€ la jarra"
+        "'Um branco fresco' — un blanco servido frío. Pregunta por el estilo si tienes alguna preferencia",
+        "'O vinho da casa' — el vino de la casa. Antes de pedir una jarra, pregunta qué vino es, su capacidad y el precio"
       ]},
-      { tipo: "tip", texto: "La LX Factory los domingos tiene varias bodegas y tiendas de vino con catas gratuitas. La zona del Príncipe Real tiene varios wine bars con buena selección de vinos portugueses por copa. Para comprar para llevar: la cadena Garrafeira Nacional tiene tiendas en toda Lisboa con excelente selección y precios sin marca turística." }
+      { tipo: "tip", texto: "Si quieres hacer una cata, consulta la agenda del organizador y comprueba la fecha, el lugar, el precio y si requiere reserva. Garrafeira Nacional publica eventos con condiciones propias y un listado de sus tiendas. Para comprar vino para llevar, compara referencias y precios; no des por hecha una cata gratuita cada domingo ni un precio especial por estar fuera de una zona turística." }
     ]
   },
   "tram-28-historia-guia": {

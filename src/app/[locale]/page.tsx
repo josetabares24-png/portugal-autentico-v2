@@ -16,6 +16,12 @@ const suggestedArticles = [
   blogPosts.find((post) => post.id === 'que-comprar-lisboa-souvenirs') || blogPosts[2],
 ].filter(Boolean);
 
+const seasonalArticles = ['lisboa-cuando-llueve', 'lisboa-en-navidad', 'nochevieja-lisboa'].map((id) => {
+  const post = blogPosts.find((article) => article.id === id);
+  if (!post) throw new Error(`Home seasonal selection refers to missing article: ${id}`);
+  return post;
+});
+
 export const metadata: Metadata = {
   title: { absolute: 'Guía de Lisboa: qué ver, rutas y transporte | Estaba en Lisboa' },
   description: HOME_DESCRIPTION,
@@ -65,7 +71,7 @@ export default function HomePage() {
     <main id="main-content" className="bg-cream">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }} />
 
-      <section className="relative h-[78svh] min-h-[540px] max-h-[680px] overflow-hidden md:h-[62svh] md:min-h-[480px] md:max-h-[620px]">
+      <section className="relative h-[58svh] min-h-[460px] max-h-[540px] overflow-hidden md:h-[62svh] md:min-h-[480px] md:max-h-[620px]">
         <Image
           src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
           alt="Vista de Alfama y del río Tajo desde un mirador de Lisboa"
@@ -73,7 +79,6 @@ export default function HomePage() {
           className="scale-[1.22] object-cover object-[52%_50%] md:scale-100 md:object-center"
           priority
           fetchPriority="high"
-          quality={82}
           sizes="100vw"
         />
         <div
@@ -124,10 +129,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HomeEssentials />
-
       <section id="guia-practica" className="scroll-mt-20">
         <TravelerDirectory />
+      </section>
+
+      <HomeEssentials />
+
+      <section aria-labelledby="home-seasonal-title" className="bg-cream py-10 md:py-12">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10">
+          <h2 id="home-seasonal-title" className="font-display text-2xl font-semibold not-italic leading-snug text-night md:text-3xl">Si vienes en otoño o invierno</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">Lluvia, Navidad y fin de año. Revisa las fechas y condiciones de cada guía antes de organizar esos días.</p>
+          <ul className="mt-5 grid gap-x-8 md:grid-cols-3">
+            {seasonalArticles.map((post) => <li key={post.id} className="border-t border-night/15">
+              <Link href={`/blog/${post.id}`} className="group flex min-h-11 items-start justify-between gap-4 rounded-sm py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
+                <h3 className="font-body text-sm font-semibold not-italic leading-relaxed text-night group-hover:text-terracotta">{post.titulo}</h3>
+                <ArrowUpRight size={17} className="mt-1 shrink-0 text-terracotta" aria-hidden="true" />
+              </Link>
+            </li>)}
+          </ul>
+        </div>
       </section>
 
       <section aria-labelledby="articulos-sugeridos" className="bg-cream pb-16 pt-4 md:pb-20 md:pt-8">

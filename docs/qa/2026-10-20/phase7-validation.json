@@ -1,0 +1,601 @@
+{
+  "captured": "2026-10-20T20:25:15.003155+00:00",
+  "method": "Independent Python recomputation from retained connector rows; no shared JS aggregation helper. Documentary integrity compared with production Git base. Browser observations reused, not rerun.",
+  "passed": 108,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "180 distinct property/date rows; no missing dates",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "page/day unique rows",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "page/day metrics eligible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "query/page/day unique rows",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "query/page/day metrics eligible",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "7 day windows equal and adjacent",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "28 day windows equal and adjacent",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "90 day windows equal and adjacent",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "property arithmetic previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/lisboa-en-pareja previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/que-ver-en-lisboa previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/pasteles-de-belem previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/mejores-pasteles-nata-lisboa previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/cascais-cabo-da-roca previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem current7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem previous7",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem current28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem previous28",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem current90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "/actividades/pasteis-de-belem previous90",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "current 28 growth and milestone",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no shared query among returned rows (not full demand)",
+      "pass": true,
+      "details": {
+        "visibleDistinctQueries": 15
+      }
+    },
+    {
+      "name": "98 sitemap URLs plus historical alias",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "13 candidate pages; canonical/robots/H1/schema/sitemap",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "26 mobile/PC browser observations",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "manifest 128 rows; only notes differ",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "migration contract unchanged: 16/2/8",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "application and workflow trees unchanged",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "production base is branch ancestor",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "authored report local links resolve",
+      "pass": true,
+      "details": [
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-production-audit.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "../brain/data/CONSOLIDATION-SEARCH-2026-10-20.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "editorial-phase6-events-review.md",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-responsive.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-cascais-desktop.png",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-validation.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-preview-sanity.json",
+          true
+        ],
+        [
+          "docs\\editorial-phase7-consolidation-review.md",
+          "qa/2026-10-20/phase7-preview-mobile.png",
+          true
+        ],
+        [
+          "brain\\seo\\EDITORIAL-REBUILD-PHASE-7-2026-10-20.md",
+          "../../docs/editorial-phase7-consolidation-review.md",
+          true
+        ],
+        [
+          "brain\\seo\\EDITORIAL-REBUILD-PHASE-7-2026-10-20.md",
+          "../data/CONSOLIDATION-SEARCH-2026-10-20.json",
+          true
+        ]
+      ]
+    }
+  ]
+}
