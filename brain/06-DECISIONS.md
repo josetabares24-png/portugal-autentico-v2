@@ -1,5 +1,11 @@
 # Decision log
 
+## D-066 — Publicar PR #113 y observar el lote antes de abrir otra migración
+**Date:** 2026-10-22
+**Status:** LIVE — merge 5d3573d, producción Vercel READY verificada
+
+José responde «si» a publicar el lote completo Home/navegación/Planifica/ajustes editoriales/QA, después de Preview y prueba funcional reportada por él. Cerrar L-003 para este lote. Head autorizado e59c5af; seis checks, sin hilos/conflictos, helper exact-head con política normal y watcher merged; método merge, sin bypass. Vercel dpl_9RvX95KAwsrfswTKRaBbmMMieNn5 READY/production y dominio real. QA pública: migración1.426, técnico1.130/113páginas, navegación171, sitemap64/98URLs, Free tours66 y calculadora92;64variantes 301→200/cadena1;32vistas y teclado sin fallos. No envíos reales/reservas de QA, no datos Search Console posteriores ni Lighthouse nuevo. [Informe y evidencia](../docs/editorial-release-pr113.md). D-060–D-065 dejan de estar pendientes de publicación para el lote fusionado; preservar límites factuales REVIEW, dos redirects WAIT, slugs y separación newsletter. Observar ventanas completas/finalizadas y solicitudes útiles antes de otro cambio; no inferir ganancia SEO de estos checks. Documentación de cierre posterior al merge sin cambios de aplicación.
+
 ## D-065 — Planifica como contacto personal para preparar el viaje
 **Date:** 2026-10-22
 **Status:** candidato verificado en Preview cd9f8f9; aprobación visual pendiente, sin publicación

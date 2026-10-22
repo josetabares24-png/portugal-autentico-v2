@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-22T11:24:00.518Z",
+  "noEmailTransportReached": true,
+  "results": [
+    {
+      "path": "/api/planifica-tu-viaje",
+      "method": "GET",
+      "status": 405,
+      "expected": 405,
+      "pass": true
+    },
+    {
+      "path": "/api/planifica-tu-viaje",
+      "method": "POST",
+      "status": 400,
+      "expected": 400,
+      "pass": true,
+      "error": "Revisa tu nombre, email y la longitud del mensaje."
+    },
+    {
+      "url": "https://www.estabaenlisboa.com/",
+      "status": 308,
+      "location": "https://estabaenlisboa.com/",
+      "pass": true
+    }
+  ]
+}

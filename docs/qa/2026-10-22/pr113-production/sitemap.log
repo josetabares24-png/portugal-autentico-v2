@@ -1,0 +1,91 @@
+
+> portugal-autentico@0.1.0 smoke:sitemap
+> node scripts/smoke-sitemap.mjs
+
+== Comprobaciones sobre los datos fuente ==
+OK   blogPosts: sin slugs duplicados - 68 slugs únicos
+OK   activities: sin slugs duplicados - 20 slugs únicos
+OK   los 12 meses en español se interpretan bien - Ene..Dic OK
+OK   una fecha inválida no produce lastModified - devuelve undefined
+OK   todas las fechas de blogPosts se interpretan - 68 fechas válidas
+OK   ninguna fecha de artículo está en el futuro - todas en el pasado
+
+== Modo remoto: https://estabaenlisboa.com ==
+
+OK   /sitemap.xml responde 200 - HTTP 200
+OK   /sitemap.xml se sirve como XML - content-type: application/xml
+OK   contiene <urlset> - urlset presente
+OK   usa el namespace correcto - xmlns sitemaps.org 0.9
+OK   no contiene HTML - sin marcado HTML
+OK   no contiene mensajes de error - sin errores embebidos
+OK   sin caracteres mal escapados en <loc> - ninguno
+
+OK   el sitemap no está vacío - 98 URLs
+OK   no supera el límite de Google (50.000) - 98 URLs
+OK   todas las URLs son absolutas HTTPS - todas
+OK   todas usan el dominio de producción - https://estabaenlisboa.com
+OK   ninguna URL de preview ni localhost - ninguna
+OK   ninguna URL con parámetros ni fragmentos - ninguna
+OK   ninguna fuente redirigida ni página noindex está en el sitemap - ninguna
+OK   ninguna URL con barras dobles - ninguna
+OK   sin URLs duplicadas - ninguna
+OK   sin duplicados por barra final - ninguna
+OK   están todas las páginas obligatorias - 22 presentes
+OK   ninguna obligatoria está repetida - una vez cada una
+
+OK   se clasifican las 20 fichas: tres redirects y 17 indexables vivas - 20 fichas, 3 retiradas, 17 vivas, 17 indexables
+OK   ninguna actividad noindex o redirigida está en el sitemap - 3 excluidas correctamente
+OK   todas las actividades indexables están en el sitemap - 17 incluidas
+OK   el sitemap no inventa fichas fuera de las indexables vivas - ninguna
+INFO actividades incluidas - miradouro-santa-luzia, miradouro-senhora-do-monte, miradouro-portas-do-sol, castelo-sao-jorge, torre-de-belem, pasteis-de-belem, lx-factory, elevador-santa-justa, oceanario-lisboa, cascais-cabo-da-roca, fado-en-alfama, crucero-atardecer-tajo, free-walking-tour-centro, jardim-estrela-principe-real, parque-eduardo-vii, tasca-tradicional, cristo-rei
+INFO actividades excluidas (noindex/redirect) - 3: mosteiro-jeronimos, tranvia-28, sintra-dia-completo
+
+OK   todos los artículos están en el sitemap - 68 artículos publicables
+OK   cada artículo aparece una sola vez - sin repeticiones
+OK   /blog/como-pagar-en-portugal está en el sitemap - generado desde blogPosts
+
+OK   /robots.txt responde 200 - HTTP 200
+OK   robots declara el sitemap de producción - Sitemap: https://estabaenlisboa.com/sitemap.xml
+OK   robots no declara ningún sitemap de preview - sin URLs de preview
+OK   robots no bloquea las rutas del sitemap - Disallow: /api/, /preview/
+
+OK   /comprar-entradas sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"], X-Robots-Tag=""
+OK   /planifica-tu-viaje sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"], X-Robots-Tag=""
+OK   /faq sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow"], X-Robots-Tag=""
+OK   /aviso-legal sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow"], X-Robots-Tag=""
+OK   /politica-privacidad sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow"], X-Robots-Tag=""
+OK   /politica-cookies sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow"], X-Robots-Tag=""
+OK   /terminos-condiciones sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow"], X-Robots-Tag=""
+OK   /actividades sigue accesible con noindex/follow y canonical propio - HTTP 200, robots=["noindex, follow"], googlebot=["noindex, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"], X-Robots-Tag=""
+
+OK   la portada enlaza /free-tours-lisboa en nav de escritorio y móvil - 5 enlaces en la portada
+OK   la portada enlaza directamente las ocho respuestas canónicas - 8 destinos
+OK   la portada no enlaza prototipos /guia - sin páginas-puente
+OK   la landing marca su entrada de menú como activa - aria-current="page"
+
+OK   /que-ver-en-lisboa conserva la base SEO completa - HTTP 200, H1 1, schema Organization + WebSite + Article + BreadcrumbList
+OK   /donde-comer-en-lisboa conserva la base SEO completa - HTTP 200, H1 1, schema Organization + WebSite + Article + BreadcrumbList
+OK   /transporte-lisboa cumple su redirect autorizado - HTTP 301 -> /blog/como-moverse-por-lisboa
+OK   /blog/como-moverse-por-lisboa conserva la respuesta indexable del pilar retirado - HTTP 200, canonical="https://estabaenlisboa.com/blog/como-moverse-por-lisboa"
+
+OK   las siete páginas-puente redirigen permanentemente a su URL propietaria - 7 redirecciones 308 correctas
+
+OK   /blog/como-pagar-en-portugal responde 200 - HTTP 200
+OK   el artículo no lleva noindex - robots="index, follow"
+OK   el artículo tiene title - Cómo pagar en Portugal (2026): tarjeta, efectivo y comisiones
+OK   el artículo tiene canonical correcto - canonical="https://estabaenlisboa.com/blog/como-pagar-en-portugal"
+OK   el artículo no menciona Wise - sin menciones
+OK   el artículo no contiene enlaces afiliados - sin afiliación
+OK   el artículo no publica FAQPage sin preguntas adicionales visibles - sin FAQ redundante ni schema huérfano
+
+OK   las 13 actividades muestran imagen y no placeholder - 13 con imagen
+OK   las 5 tarjetas de ruta llevan fotografía - 5/5 con <img>
+
+OK   las 15 imágenes nuevas se sirven sin 404 - 15 imágenes
+
+== Comprobando las 98 URLs una a una ==
+OK   las 98 URLs del sitemap responden 200 sin redirección, noindex ni error - 98 URLs verificadas
+
+TOTAL DE URLS EN EL SITEMAP: 98
+
+64/64 comprobaciones OK.

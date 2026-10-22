@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-22",
+  "decision": "D-066",
+  "pr": {
+    "number": 113,
+    "state": "MERGED",
+    "head": "e59c5af0965e216e28c0273f883e4603306c75f1",
+    "mergedAt": "2026-10-22T11:18:49Z",
+    "method": "merge",
+    "mergeSha": "5d3573d3c09ae9d804d0636fc47feac8ed28f563",
+    "authorization": "Explicit yes from Jose to publishing the complete PR113 lot in this conversation.",
+    "premergeChecks": 6,
+    "unresolvedReviewThreads": 0
+  },
+  "deployment": {
+    "id": "dpl_9RvX95KAwsrfswTKRaBbmMMieNn5",
+    "state": "READY",
+    "target": "production",
+    "sha": "5d3573d3c09ae9d804d0636fc47feac8ed28f563",
+    "origin": "https://estabaenlisboa.com",
+    "aliases": [
+      "estabaenlisboa.com",
+      "www.estabaenlisboa.com"
+    ]
+  },
+  "previousProduction": {
+    "sha": "5ad2c4083934c2f35e81aba12275566341f219ee",
+    "id": "dpl_BdGSFAuvGY1dudTfLHSU6MYdoWes"
+  },
+  "productionQA": {
+    "migration": {
+      "checks": 1426,
+      "failures": 0,
+      "sitemapUrls": 98,
+      "pages": 106,
+      "uniqueInternalLinks": 113,
+      "redirects": 16
+    },
+    "redirectMatrixRows": 64,
+    "technicalPages": 113,
+    "technicalChecks": 1130,
+    "technicalFailures": 0,
+    "navigationChecks": 171,
+    "sitemapChecks": 64,
+    "sitemapUrls": 98,
+    "freeToursChecks": 66,
+    "calculatorChecks": 92,
+    "responsiveViews": 32,
+    "overflowViews": 0,
+    "brokenVisibleImages": 0
+  },
+  "mail": {
+    "ownerReportedWorkingBeforeRelease": true,
+    "agentSentRealEmails": 0,
+    "productionRuntimeGetStatus": 405,
+    "productionEmptyPostStatus": 400,
+    "productionInboxIndependentlyVerified": false
+  },
+  "seo": {
+    "redirectRules": 16,
+    "newRedirectsInRelease": 0,
+    "newNoindexRoutesInRelease": 0,
+    "deferredRedirects": 2,
+    "waitReviewPreserved": true,
+    "postReleaseSearchDataAvailable": false
+  },
+  "limits": [
+    "No new Lighthouse run or field performance result for this release.",
+    "No claims of SEO or conversion improvement.",
+    "Automated schema/accessibility checks are not full certification.",
+    "No reservations, external affiliate clicks or duplicate real email test."
+  ]
+}
