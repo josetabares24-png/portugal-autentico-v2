@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://portugal-autentico-v2-i58rr0sw5-estabaenlisboa.vercel.app",
+  "summary": {
+    "checks": 1386,
+    "failures": 0,
+    "sitemapUrls": 104,
+    "pages": 112,
+    "uniqueInternalLinks": 119,
+    "redirects": 16
+  },
+  "source_file": "../audit-evidence/english-pilot-2026-10-22/preview/seo-migration-report.json"
+}

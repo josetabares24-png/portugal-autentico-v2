@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-27",
+  "requests": [
+    {
+      "language": "en",
+      "status": 200,
+      "date": "2026-10-27",
+      "source": "guruwalk",
+      "tours": [
+        {
+          "id": 30696,
+          "name": "Free Tour Lisbon: Essential History, Fun Facts and Free Tastings",
+          "slots": 3,
+          "refValid": true
+        },
+        {
+          "id": 34987,
+          "name": "Unmissable Lisbon Free Tour: Rossio, Carmo, Chiado and 3,000 Years of History",
+          "slots": 3,
+          "refValid": true
+        },
+        {
+          "id": 28691,
+          "name": "Lisbon Essentials: Baixa, Chiado & the 1755 Earthquake",
+          "slots": 3,
+          "refValid": true
+        }
+      ]
+    },
+    {
+      "language": "es",
+      "status": 200,
+      "date": "2026-10-27",
+      "source": "guruwalk",
+      "tours": [
+        {
+          "id": 30696,
+          "name": "Free Tour de Lisboa: Historia, Datos Divertidos y Degustaciones Gratis",
+          "slots": 3,
+          "refValid": true
+        },
+        {
+          "id": 33198,
+          "name": "Free Tour Lisboa Esencial, el más completo",
+          "slots": 3,
+          "refValid": true
+        },
+        {
+          "id": 35074,
+          "name": "Free Tour Era de los Descubrimientos (Belém)",
+          "slots": 3,
+          "refValid": true
+        }
+      ]
+    }
+  ],
+  "cacheMatchesEnglish": true,
+  "adminApiStatus": 500,
+  "adminPageStatus": 500,
+  "legacyApp": {
+    "status": 308,
+    "location": "/itinerarios/lisboa-1-dia-lo-esencial"
+  },
+  "bookingClicks": 0,
+  "secretValuesStored": false
+}

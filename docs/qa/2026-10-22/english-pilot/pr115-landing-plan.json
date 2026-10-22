@@ -1,0 +1,22 @@
+{
+  "headSha": "68898f2bb40ddc014094a589a6bd2ea0c5d3398b",
+  "method": "merge",
+  "mode": "auto",
+  "pr": {
+    "number": 115,
+    "url": "https://github.com/josetabares24-png/portugal-autentico-v2/pull/115"
+  },
+  "readinessPolicy": {
+    "checkPolicy": "all",
+    "configPath": null,
+    "requiredReviewers": [],
+    "source": "defaults",
+    "strictChangesRequested": false
+  },
+  "readinessPolicyDigest": "70b3b0605cddc6f2e6abe9331942e469e32758fbc1abb1474b3af09fdda825df",
+  "repository": "josetabares24-png/portugal-autentico-v2",
+  "requiresConfirmation": true,
+  "schemaVersion": 1,
+  "state": "confirmation_required",
+  "warning": "This landing request may merge the pull request immediately."
+}

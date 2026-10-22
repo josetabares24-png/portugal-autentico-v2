@@ -69,4 +69,3 @@ export const spanishSiteMetadata: Metadata = {
     canonical: 'https://estabaenlisboa.com',
   },
 };
-

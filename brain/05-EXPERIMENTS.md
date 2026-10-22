@@ -240,3 +240,13 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 **Status: CANDIDATO, D0 no iniciado.** D-067, rama `commercial-booking-paths`. Tres páginas explícitas: Pena/Jerónimos/Alfama; una oferta existente tras responder, otra final. Buscador agrupa solo URLs idénticas sin perder fechas/ref. Baseline de HTML/layout guardado; baseline de conversiones no disponible (Windsor bloqueado, partner dashboards desconocidos). No evaluar contra ceros de sustitución. Si se publica con aprobación, registrar D0/SHA y comparar14/28 días, por página/proveedor/dispositivo; bajo volumen → inconcluso. No atribuir variaciones orgánicas a placement. [Contrato y límites](../docs/commercial-booking-audit-2026-10-22.md).
 
 Cierre E-018: Preview48b778d READY/PR115, cinco checks correctos y QA remota sin fallos; tres resultados reales conservan referido y fecha. Producción5d3573d intacta, D0 no iniciado. Capturas y contratos en el informe comercial.
+
+
+Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head68898f2. Producción4be9054 / dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY. Iniciar lectura posterior desde este D0; reservas siguen desconocidas y Windsor bloqueado, no cero.
+
+## E-019 — Piloto inglés, 22/10/2026
+
+**Status: DESARROLLO AUTORIZADO; D0 no iniciado.** Seis páginas bajo/en/, sin nueva marca o dominio. Baseline español de72superficies posterior aPR115. [Contrato](../docs/english-pilot-phase1.md), D069. No demanda inglesa cuantificada: GSC/Windsor bloqueados. Medir rastreo/indexación30d, consultas/clics60d y reservas verificadas90d solo después de aprobación y despliegue; muestra escasa=>inconcluso. Mantener URLs españolas y definir cada equivalencia explícitamente.
+
+
+**E019 — Preview verificada:** PR116/app4bffd9c. Inglés149, preservación1659/72, técnico1190 y tours reales por idioma pasan. D0 sigue SIN EMPEZAR; no hay efecto SEO o ventas atribuible al inglés. Gate visual/editorial y configuración privada pendientes. [Evidencia](../docs/english-pilot-phase1.md).

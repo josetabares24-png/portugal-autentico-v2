@@ -1,5 +1,18 @@
 # Decision log
 
+## D-069 — Piloto inglés de seis URLs bajo /en/
+**Date:** 2026-10-22
+**Status:** desarrollo autorizado; Preview/revisión pendientes, sin publicación inglesa
+
+José acepta mismo dominio tras comparar dominio independiente y pide empezar. Portada + aeropuerto + Metro + tres días + Pena + Free tours; equivalencias explícitas en manifiesto. Conservar español, root layouts estáticos por idioma, seis hreflang recíprocos y reservas con idioma real. No activar automáticamente todas las páginas en next-intl ni redirigir porIP. Factores comerciales/país no se convierten en demanda inglesa medida; fuentes actuales bloqueadas. No promover servicio personal en inglés sin confirmar atención. [Contrato, fuentes, arquitectura y QA](../docs/english-pilot-phase1.md). L003 exige mostrar el resultado antes de producción.
+
+## D-068 — Publicación comercial PR115 autorizada y verificada
+**Date:** 2026-10-22
+**Status:** LIVE
+
+Autorización estructurada de José: publicar PR115/head68898f2 y empezar inglés. Merge4be9054, Vercel dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY/production. Cinco checks y cero hilos sin resolver antes del merge; QA editorial1.659/72, migración1.426 y Free tours66 después. D067 ya está publicado; conservar campañas/ref y comenzar E018 en ese D0. Esta aprobación no se extiende a PR114 ni al piloto inglés. [Evidencia](../docs/english-pilot-phase1.md#cierre-comercial-pr115).
+
+
 ## D-067 — Reservas existentes donde se decide, piloto de tres páginas
 **Date:** 2026-10-22
 **Status:** candidato verificado en Preview48b778d, PR115; revisión visual pendiente, sin publicación
@@ -906,3 +919,8 @@ Reglas:
 **Status:** accepted
 
 Retirar los formularios de suscripción del índice del blog y de todos los artículos de Estaba en Lisboa. Dejar de aceptar altas nuevas en `/api/subscribe`; conservar la ruta `/unsubscribe` para quienes se registraron antes y no borrar datos ni configurar envíos a suscriptores existentes. Conservar el PDF ya publicado para no romper enlaces históricos. No tocar contenido editorial, SEO, reservas ni afiliados. Solo reactivar la newsletter con nueva instrucción explícita del usuario.
+
+
+### Cierre D069 — Preview inglés, no producción
+
+PR116 borrador; aplicación4bffd9c, seis versiones explícitas y equivalencias reales, no traducción masiva. QA SEO/editorial y disponibilidad real pasan; aprobación visual/editorial sigue pendiente. Incidencia externa previa de Clerk confirmada en producción y Preview: Missing secretKey. No se presenta autenticación como operativa ni se la elimina. Resolver configuración y repetir QA privada antes de publicar layouts. Pena aún abre checkout español, divulgado. Informe: docs/english-pilot-phase1.md.

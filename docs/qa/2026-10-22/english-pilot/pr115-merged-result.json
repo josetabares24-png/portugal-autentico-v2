@@ -1,0 +1,65 @@
+{
+  "actions": [],
+  "errors": [],
+  "observedAt": "2026-10-22T18:09:03.671209Z",
+  "policy": {
+    "checkPolicy": "all",
+    "configPath": null,
+    "requiredReviewers": [],
+    "source": "defaults",
+    "strictChangesRequested": false
+  },
+  "schemaVersion": 1,
+  "state": "merged",
+  "targets": [
+    {
+      "actions": [],
+      "checks": {
+        "fail": [],
+        "malformed": [],
+        "pass": [],
+        "pending": [],
+        "skipping": [],
+        "total": 0,
+        "unknown": []
+      },
+      "kind": "explicit",
+      "landingAuthorization": {
+        "current": true,
+        "currentHead": "68898f2bb40ddc014094a589a6bd2ea0c5d3398b",
+        "expectedHead": "68898f2bb40ddc014094a589a6bd2ea0c5d3398b",
+        "mode": "auto"
+      },
+      "path": "C:\\Users\\estab\\.codex\\.chatgpt-projects\\g-p-6a664562cd2881919592b4c2b3d453f1\\audit-github",
+      "pending": [],
+      "pr": {
+        "autoMerge": null,
+        "autoMergeEnabled": false,
+        "baseRefName": "main",
+        "baseSha": "5d3573d3c09ae9d804d0636fc47feac8ed28f563",
+        "headRefName": "commercial-booking-paths",
+        "headSha": "68898f2bb40ddc014094a589a6bd2ea0c5d3398b",
+        "isMergeQueueEnabled": null,
+        "mergeQueueEntry": null,
+        "mergeStateStatus": "UNKNOWN",
+        "mergeable": "UNKNOWN",
+        "number": 115,
+        "reviewDecision": null,
+        "state": "MERGED",
+        "url": "https://github.com/josetabares24-png/portugal-autentico-v2/pull/115"
+      },
+      "repository": "josetabares24-png/portugal-autentico-v2",
+      "repositoryPolicy": {
+        "mergeCommitAllowed": true,
+        "rebaseMergeAllowed": true,
+        "squashMergeAllowed": true
+      },
+      "reviews": {
+        "missingRequiredReviewers": [],
+        "requiredReviewers": [],
+        "unresolvedThreadCount": 0
+      },
+      "state": "merged"
+    }
+  ]
+}

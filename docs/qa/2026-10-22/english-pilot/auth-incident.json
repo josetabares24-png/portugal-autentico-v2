@@ -1,0 +1,14 @@
+{
+  "production_sha": "4be905413d20432ad506fa81ebaad63131e1f740",
+  "preview_sha": "4bffd9ca5603ffdb1f28007a7813970839cc0fc9",
+  "production_status": {
+    "/admin": 500,
+    "/api/admin/guides": 500
+  },
+  "preview_status": {
+    "/admin": 500,
+    "/api/admin/guides": 500
+  },
+  "verified_runtime_error": "@clerk/nextjs: Missing secretKey",
+  "interpretation": "Pre-existing external configuration failure, not an English route regression. Auth success cannot be certified. No protection disabled or credentials changed."
+}
