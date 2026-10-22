@@ -1,0 +1,36 @@
+{
+  "before": [
+    {
+      "height": 28,
+      "label": "Cerrar banner de cookies",
+      "width": 28
+    },
+    {
+      "height": 36,
+      "label": "Rechazar cookies",
+      "width": 151
+    },
+    {
+      "height": 36,
+      "label": "Aceptar cookies",
+      "width": 151
+    }
+  ],
+  "after": [
+    {
+      "height": 44,
+      "label": "Cerrar banner de cookies",
+      "width": 44
+    },
+    {
+      "height": 44,
+      "label": "Rechazar cookies",
+      "width": 141
+    },
+    {
+      "height": 44,
+      "label": "Aceptar cookies",
+      "width": 141
+    }
+  ]
+}

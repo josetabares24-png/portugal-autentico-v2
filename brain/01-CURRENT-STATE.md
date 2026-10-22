@@ -1,5 +1,9 @@
 # Current state
 
+## 22 octubre 2026 — QA técnico de Fases 13–18 en candidato
+
+D-064: fechas ISO del catálogo, publicación separada de modificación en ficha, hints Brevo retirados, quality Home alineada y controles cookies 44 px. Nuevo smoke 113 páginas/1.130 controles: ocho fallos de plantilla antes, cero después. Build 137, TypeScript, lint cero errores/un warning previo; 24 fechas, seis analytics, migración 1.426, navegación171, blog828/97 sin rotos. PageSpeed sobre producción: Home98 móvil/99desktop, Metro92 móvil; sin CrUX ni prueba de efecto del candidato. [Informe](../docs/editorial-phase13-18-technical-qa.md). Preview/QA remota pendientes; no merge/publicación. Preservar WAIT/REVIEW, URLs y contenido protegido; futura medición repetida del LCP de Metro y revisión visual integral siguen pendientes.
+
 ## 22 octubre 2026 — Fase 11 y Free tours verificados en Preview
 
 Código 5b0e210 / dpl_3BfYGzwfVZdBnaMB4P9BA4NuVLeG READY, seis checks correctos. D-062/D-063: bloque de Portugal sin cuatro tarjetas repetidas, Free tours en primer nivel y Home móvil con utilidad antes de reservas, ocho accesos compactos y temporada manual. Perfil de autor revisado/conservado (Fase 12). Navegación local/remota 171/171; Free tours remota 66/66 con siete enlaces afiliados en landing, sin inertes. Build 137, TypeScript, lint cero errores/un warning previo; sitemap 64/64 (98), blog 828/97 sin rotos y migración local 1.426. Dieciséis vistas DOM por entorno sin overflow; clic a Free tours desde móvil/desktop, menú 583 px, ocho href y metadata/schema/H1 de Home idénticos al baseline. [Informe y capturas](../docs/editorial-phase11-home.md#cierre-de-preview). Producción comprobada conserva 5ad2c40 READY y Free tours activo; sin merge/publicación. Revisión visual del conjunto y revisión transversal de Fases 13–18 pendientes; no ejecutar fusiones WAIT.
