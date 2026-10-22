@@ -105,9 +105,6 @@ export default function RootLayout({
   return (
       <html lang="es">
         <head>
-          <link rel="preconnect" href="https://api.brevo.com" />
-          <link rel="dns-prefetch" href="https://api.brevo.com" />
-
           <SchemaMarkup />
         </head>
         <body className={`${montserrat.variable} ${playfair.variable} ${plusJakarta.variable} antialiased`}>
