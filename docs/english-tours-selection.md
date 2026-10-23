@@ -1,5 +1,7 @@
 # English walking tours — five useful choices
 
+Visual presentation superseded by [D072 / Spanish design alignment](english-tours-visual-alignment.md), at José’s explicit request. The five-product selection, booking behaviour and historical QA below remain valid; the text-accordion presentation is historical.
+
 23 October 2026. Scope: PR116 / English Preview only. Baseline41f8a24; production4be9054.
 
 ## Diagnosis before changes

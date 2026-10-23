@@ -1,5 +1,14 @@
 "use client";
 import { trackAffiliateClick } from "@/lib/affiliate-analytics";
+
+const variantStyles = {
+  button:
+    "justify-center rounded-md bg-terracotta px-5 py-3 text-center text-white hover:bg-primary-dark focus-visible:outline-night",
+  text: "text-terracotta underline underline-offset-4 hover:no-underline focus-visible:outline-night",
+  card: "w-full justify-center rounded-md bg-terracotta px-4 py-2 text-center text-white hover:bg-primary-dark focus-visible:outline-night",
+  light:
+    "justify-center rounded-md bg-white px-4 py-2 text-center text-night hover:bg-background-light focus-visible:outline-white",
+};
 export default function EnglishBookingLink({
   href,
   partner,
@@ -14,7 +23,7 @@ export default function EnglishBookingLink({
   campaign: string;
   placement?: string;
   content?: string;
-  variant?: "button" | "text";
+  variant?: "button" | "text" | "card" | "light";
   children: React.ReactNode;
 }) {
   if (!href)
@@ -29,7 +38,7 @@ export default function EnglishBookingLink({
       href={href}
       target="_blank"
       rel="sponsored noopener noreferrer"
-      className={`inline-flex min-h-12 items-center gap-2 font-body text-sm font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-night ${variant === "text" ? "text-terracotta underline underline-offset-4 hover:no-underline" : "justify-center rounded-md bg-terracotta px-5 py-3 text-center text-white hover:bg-primary-dark"}`}
+      className={`inline-flex min-h-12 items-center gap-2 font-body text-sm font-bold leading-snug transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variantStyles[variant]}`}
       onClick={() =>
         trackAffiliateClick({
           affiliate_partner: partner,

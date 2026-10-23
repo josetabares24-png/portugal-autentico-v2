@@ -1,3 +1,7 @@
+## 23 octubre 2026 — Tours ingleses alineados al diseño español, QA local
+
+D072: José pide igualar estética con español. Cabecera compartida TourismBookingHero, cinco tarjetas con fotografías y acceso general; mismos estilos/grid/botones y navegación visual. Productos ingleses, referido, calendario y contenido práctico conservados; el H1 visible se acorta sin cambiar SEO title/URL. Build143, TypeScript/lint sin errores, inglés222, preservación1659/72, Free tours66 y migración1490 correctos. Preview remota pendiente de este lote; móvil no certificado por control de viewport no aplicado. PR116 sigue borrador y producción4be9054. [Informe](../docs/english-tours-visual-alignment.md).
+
 ## 23 octubre 2026 — Pulido inglés y reservas, Preview verificada
 
 José pide mejorar estética y facilitar entradas/tours. Aplicación `8d3ff35`, [PR116](https://github.com/josetabares24-png/portugal-autentico-v2/pull/116) borrador: respuestas antes de foto, dos accesos de Home a visitas reales, bloques más compactos, navegación ES conserva artículo. Pena enlaza al mismo producto p1120392 en inglés con partner conservado, comprobado también en navegador. No nuevas URLs ni cambios en español.

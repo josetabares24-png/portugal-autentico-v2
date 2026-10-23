@@ -9,7 +9,10 @@
     "description": "An introduction across Chiado, Baixa and the old city. Choose this if you want context for the rest of your stay.",
     "consideration": "It overlaps with parts of Alfama. Compare the stops before booking both walks.",
     "url": "https://www.guruwalk.com/walks/30696-free-tour-lisbon-essential-history-fun-facts-and-free-tastings",
-    "image": "/images/lisboa-originales/rua-augusta-arco-lisboa.webp"
+    "image": "/images/lisboa-originales/rua-augusta-lisboa-01.webp",
+    "imageAlt": "Rua Augusta in the centre of Lisbon",
+    "eyebrow": "First visit",
+    "icon": "attractions"
   },
   {
     "id": 7501,
@@ -21,7 +24,10 @@
     "description": "Focus on Alfama and Mouraria, with the cathedral area and viewpoints. A more concentrated look at the older neighbourhoods.",
     "consideration": "Expect slopes and uneven paving; check the operator’s accessibility details.",
     "url": "https://www.guruwalk.com/walks/7501-the-unmissable-alfama-secrets-of-lisbon-s-oldest-district",
-    "image": "/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg"
+    "image": "/images/actividades/portas-do-sol-alfama.webp",
+    "imageAlt": "The rooftops of Alfama and the Tagus from Portas do Sol",
+    "eyebrow": "Old streets",
+    "icon": "directions_walk"
   },
   {
     "id": 35074,
@@ -33,7 +39,10 @@
     "description": "A separate riverside walk in Belém, rather than another tour of the city centre. Pair it with the visit you have planned in that area.",
     "consideration": "Allow time to reach Belém. Do not assume monument admission is included in the walk.",
     "url": "https://www.guruwalk.com/walks/35074-free-tour-age-of-discoveries-belem",
-    "image": "/images/actividades/torre-de-belem-lisboa.webp"
+    "image": "/images/actividades/torre-de-belem-lisboa.webp",
+    "imageAlt": "Belém Tower beside the Tagus",
+    "eyebrow": "Maritime history",
+    "icon": "sailing"
   },
   {
     "id": 68040,
@@ -45,7 +54,10 @@
     "description": "A walk about African presence, slavery and colonial history in Lisbon. Choose it for a specific historical perspective rather than a general introduction.",
     "consideration": "Read the full theme and itinerary before deciding whether it suits your group.",
     "url": "https://www.guruwalk.com/walks/68040-black-history-tour-the-forgotten-story",
-    "image": "/images/lisboa-originales/rua-augusta-arco-lisboa.webp"
+    "image": "/images/lisboa-originales/arquitetura-baixa-pombalina-lisboa-01.webp",
+    "imageAlt": "Historic buildings in central Lisbon",
+    "eyebrow": "A different perspective",
+    "icon": "history_edu"
   },
   {
     "id": 53664,
@@ -57,6 +69,9 @@
     "description": "A route linking several viewpoints, with more emphasis on walking and city views. Compare its stops with any central tour you have already taken.",
     "consideration": "The guide describes a long, hilly route unsuitable for pushchairs. Check the route and finish point carefully.",
     "url": "https://www.guruwalk.com/walks/53664-top-8-panoramic-views-miradouros",
-    "image": "/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg"
+    "image": "/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg",
+    "imageAlt": "Alfama rooftops and the Tagus River",
+    "eyebrow": "Views and hills",
+    "icon": "landscape"
   }
 ]

@@ -120,18 +120,27 @@ for (const route of routes) {
     const answer = [...main.querySelectorAll("p")].filter(
       (p) => p.textContent.trim() === article.answer,
     );
-    check(
-      route.path,
-      "direct answer appears once before hero photograph",
-      answer.length === 1 &&
-        Boolean(answer[0].closest("header")) &&
-        [...main.querySelector("header").querySelectorAll("p,img")].indexOf(
-          answer[0],
-        ) <
-          [...main.querySelector("header").querySelectorAll("p,img")].findIndex(
-            (e) => e.tagName === "IMG",
-          ),
-    );
+    if (route.path === "/en/lisbon-free-walking-tours") {
+      check(
+        route.path,
+        "tour answer remains visible once in photographic hero before booking",
+        answer.length === 1 &&
+          Boolean(answer[0].closest("[data-english-tours-hero]")) &&
+          Boolean(main.querySelector('header a[href="#disponibilidad"]')),
+      );
+    } else
+      check(
+        route.path,
+        "direct answer appears once before hero photograph",
+        answer.length === 1 &&
+          Boolean(answer[0].closest("header")) &&
+          [...main.querySelector("header").querySelectorAll("p,img")].indexOf(
+            answer[0],
+          ) <
+            [
+              ...main.querySelector("header").querySelectorAll("p,img"),
+            ].findIndex((e) => e.tagName === "IMG"),
+      );
   } else {
     check(
       route.path,
@@ -181,7 +190,11 @@ for (const route of routes) {
       await fs.readFile("src/data/english-walking-tours.json", "utf8"),
     );
     const comparison = d.querySelector("[data-english-tour-selection]");
-    const choices = [...comparison.querySelectorAll('a[rel~="sponsored"]')];
+    const choices = [
+      ...comparison.querySelectorAll(
+        '[data-english-tour-id] a[rel~="sponsored"]',
+      ),
+    ];
     check(
       route.path,
       "five individual walks with attributed English destinations",
@@ -199,14 +212,40 @@ for (const route of routes) {
     );
     check(
       route.path,
-      "compact accessible comparison",
-      comparison.querySelectorAll("details > summary").length === 5,
+      "five photographed walks with visible booking actions",
+      comparison.querySelectorAll("[data-english-tour-id] img").length === 5 &&
+        comparison.querySelectorAll("details").length === 0,
     );
     check(
       route.path,
       "directory fallback is an existing jump",
       Boolean(d.getElementById("english-tour-directory")),
     );
+    check(
+      route.path,
+      "directory access is separate from the five walks",
+      comparison.querySelectorAll("article").length === 6 &&
+        !d
+          .getElementById("english-tour-directory")
+          .hasAttribute("data-english-tour-id"),
+    );
+    for (const tour of selected) {
+      const card = comparison.querySelector(
+        `[data-english-tour-id="${tour.id}"]`,
+      );
+      const photo = card?.querySelector("img");
+      const imageSource = photo?.getAttribute("src") || "";
+      const actualSource = imageSource.startsWith("/_next/image")
+        ? new URL(imageSource, site).searchParams.get("url")
+        : imageSource;
+      const imageResponse = await fetch(base + actualSource);
+      check(
+        route.path,
+        `tour ${tour.id} photograph loads with descriptive ALT`,
+        imageResponse.status === 200 &&
+          photo.getAttribute("alt") === tour.imageAlt,
+      );
+    }
   }
   const words = (main?.textContent || "").trim().split(/\s+/).length;
   check(

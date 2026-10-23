@@ -9,10 +9,10 @@ export default function EnglishNavigation() {
   const spanishPath =
     routes.find((route) => route.path === pathname)?.es ?? "/";
   return (
-    <header className="sticky top-0 z-50 border-b border-border-soft bg-cream/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-taupe/10 bg-cream/95 shadow-sm backdrop-blur-sm">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6"
       >
         <Link
           href="/en"
