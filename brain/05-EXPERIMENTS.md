@@ -1,5 +1,9 @@
 # Experiments
 
+### 23 octubre — D071, selección inglesa de cinco recorridos
+
+E019 sigue sin D0. PR116 en Preview ofrece cinco recorridos concretos, consulta hasta cinco disponibilidades y muestra hasta tres confirmadas; edición de fecha retira resultados anteriores. QA prueba utilidad técnica, no ventas. No declarar mejora de conversión ni expansión del piloto hasta publicación aprobada y reservas reconciliadas. Escritorio observado; móvil pendiente por fallo del control de viewport, documentado en docs/english-tours-selection.md.
+
 This is the active learning register.
 
 ## Status vocabulary

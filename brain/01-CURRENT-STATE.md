@@ -14,9 +14,9 @@ RIESGO PREVIO CONFIRMADO: admin/API admin500 en producción y Preview; logs de a
 
 # Current state
 
-## 23 octubre 2026 — Cinco tours ingleses en validación
+## 23 octubre 2026 — Cinco tours ingleses listos en Preview
 
-PR116 sigue en borrador y Preview. D-071 incorpora cinco recorridos ingleses concretos y disponibilidad de esa selección; corrige resultados de fecha anterior al editar el calendario. QA local221 inglés/66 free tours/1490 migración; build y tests pasan. Falta cerrar QA remota y visual antes de presentar enlace actualizado. Producción4be9054; piloto inglés sin D0. [Informe](../docs/english-tours-selection.md).
+PR116 sigue en borrador y Preview. D-071 incorpora cinco recorridos ingleses concretos y disponibilidad de esa selección; corrige resultados de fecha anterior al editar el calendario. Aplicación37be060, Preview READY bogpw9m6w y seis CI correctos. QA remota221 inglés/66 free tours/1386 migración/1659 preservación española; build y tests pasan. GuruWalk27/10 devuelve3 recorridos/7 horarios ingleses con fecha/ref correctos. Escritorio revisado; móvil pendiente porque el override del navegador no cambió las dimensiones reales, sin certificarlo ni reutilizar recuentos anteriores. Producción4be9054; piloto inglés sin D0. [Informe](../docs/english-tours-selection.md).
 
 ## 22 octubre 2026 — PR115 publicado; piloto inglés en desarrollo
 
