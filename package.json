@@ -33,7 +33,8 @@
     "smoke:english-pilot": "node scripts/smoke-english-pilot.mjs",
     "test:english-tours": "node --import ./scripts/register-ts.mjs --test scripts/test-english-tours.mjs",
     "test:free-tour-options": "node --import ./scripts/register-ts.mjs --test scripts/test-free-tour-options.mjs",
-    "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs"
+    "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs",
+    "test:english-bookings": "node --import ./scripts/register-ts.mjs --test scripts/test-english-bookings.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.39.6",
