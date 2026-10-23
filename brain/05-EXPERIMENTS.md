@@ -250,3 +250,6 @@ Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head6
 
 
 **E019 — Preview verificada:** PR116/app4bffd9c. Inglés149, preservación1659/72, técnico1190 y tours reales por idioma pasan. D0 sigue SIN EMPEZAR; no hay efecto SEO o ventas atribuible al inglés. Gate visual/editorial y configuración privada pendientes. [Evidencia](../docs/english-pilot-phase1.md).
+
+
+**E019 — Actualización23/10/2026:** D-070, aplicación8d3ff35 pulida en Preview, inglés208/preservación1.659 y24vistas remotas sin fallos. Pena abre ficha inglesa; GuruWalk conserva idioma/fecha/ref. booking_guide_click cubre solo dos accesos de Home y dos del itinerario; affiliate_click sigue como paso posterior. D0 inglés SIN INICIAR; las ventas siguen desconocidas. No atribuir efecto al diseño sin datos posteriores y costes de mantenimiento. [Contrato](../docs/english-pilot-polish.md).

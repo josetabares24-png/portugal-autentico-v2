@@ -1,5 +1,9 @@
 # Piloto inglés en el mismo dominio
 
+## Estado actualizado — 23 octubre 2026
+
+José pide pulir la estética y facilitar reservas. [Pulido editorial y recorrido comercial](english-pilot-polish.md): aplicación8d3ff35, nueva Preview verificada,208controles ingleses y conservación española1.659/72. La ficha inglesa del mismo producto Pena se ha comprobado también en navegador; se resuelve la limitación del destino español descrita en el cierre histórico siguiente. Se mantienen solo seis páginas, sin producción ni nuevas migraciones. Clerk administrativo sigue pendiente de configuración externa.
+
 ## Alcance autorizado y estado
 
 José acepta probar inglés bajo `/en/`, después de comparar dominio separado frente a la misma publicación. «Ok cierra preview y empezamos» y la respuesta estructurada posterior autorizan publicar **solo PR115** y desarrollar inglés en una rama independiente. **No autorizan publicar este piloto inglés** sin mostrarlo y revisar L003.
@@ -43,7 +47,7 @@ Fotos de Olaias para Metro/aeropuerto con ALT y pie que identifican la estación
 
 El buscador compartido mantiene español por defecto y solicita en explícito en la página inglesa. La caché de Next usa fecha e idioma como argumentos; CDN distingue la query. El inglés exige un horario confirmado de idioma inglés antes de mostrar el tour. El español conserva su fallback anterior. Destinos originales completos, HTTPS/GuruWalk/ref requeridos; sin mutar fecha, evento o referido. Agrupación por URL y etiquetas en ambos idiomas, mínimo44px. Cuatro pruebas offline inyectan cliente ficticio, sin clave ni red real, para comprobar idiomas, fallback y rechazo de enlaces inseguros. La prueba real en Preview devuelve tres tours y nueve horarios en inglés, y tres tours y nueve horarios en español para 27/10/2026, con el referido esperado. Repetir inglés tras español conserva IDs ingleses. Los fixtures siguen siendo pruebas offline separadas.
 
-El directorio inglés general es `https://www.guruwalk.com/lisbon`, comprobado públicamente; añade el referido existente desde configuración de servidor. La reserva de Pena reutiliza el producto y partner Tiqets existentes con una campaña EN separada. **Ese destino aún abre en español**, y se indica antes del botón: no se inventa una URL inglesa o una nueva condición de cancelación. Mejorar ese checkout requiere validar primero el enlace inglés del mismo producto.
+El directorio inglés general es `https://www.guruwalk.com/lisbon`, comprobado públicamente; añade el referido existente desde configuración de servidor. La reserva de Pena reutiliza el producto y partner Tiqets existentes con una campaña EN separada. En el cierre del22/10 abría en español. **Desde el pulido del23/10, el mismo producto enlaza a su ficha inglesa comprobada**, conservando partner y parámetros; véase english-pilot-polish.md. No se inventa una condición de cancelación ni se presenta la lectura de la ficha como una compra verificada.
 
 No se usa el valor de la clave pegada en chat ni se guardan secretos en Git/evidencias. La rotación de una clave privada compartida se gestiona en configuración del proveedor/Vercel, según la regla de seguridad existente; no se afirma que se haya realizado. No emails, reservas o clics afiliados reales de QA. Las páginas inglesas no cargan Stay22 al no ofrecer alojamiento; la integración española permanece intacta.
 

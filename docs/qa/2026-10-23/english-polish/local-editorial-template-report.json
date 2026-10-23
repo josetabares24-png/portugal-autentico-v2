@@ -1,0 +1,9 @@
+{
+  "summary": {
+    "pages": 72,
+    "checks": 1659,
+    "failures": 0
+  },
+  "source": "../audit-evidence/english-polish-2026-10-23/local/editorial-template-report.json",
+  "baseUrl": "http://127.0.0.1:5230"
+}

@@ -1,0 +1,9 @@
+{
+  "summary": {
+    "pages": 6,
+    "checks": 208,
+    "failures": []
+  },
+  "source": "../audit-evidence/english-polish-2026-10-23/preview/english-pilot-report.json",
+  "base": "https://portugal-autentico-v2-bhwsnuax9-estabaenlisboa.vercel.app"
+}

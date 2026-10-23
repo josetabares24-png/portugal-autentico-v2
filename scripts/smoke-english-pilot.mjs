@@ -4,7 +4,9 @@ import { parseHTML } from "linkedom";
 const routes = JSON.parse(
   await fs.readFile("src/data/english-pilot-routes.json", "utf8"),
 );
-const articles = JSON.parse(await fs.readFile("src/data/english-pilot-articles.json", "utf8"));
+const articles = JSON.parse(
+  await fs.readFile("src/data/english-pilot-articles.json", "utf8"),
+);
 const base = (process.env.SMOKE_BASE_URL || "http://127.0.0.1:5220").replace(
   /\/$/,
   "",
@@ -88,28 +90,91 @@ for (const route of routes) {
     es.document.documentElement.lang === "es",
   );
   const main = d.querySelector("main");
-  const ids = [...main.querySelectorAll("[id]")].map(e => e.id);
-  check(route.path, "unique main-content IDs", ids.length === new Set(ids).size);
+  const ids = [...main.querySelectorAll("[id]")].map((e) => e.id);
+  check(
+    route.path,
+    "unique main-content IDs",
+    ids.length === new Set(ids).size,
+  );
   for (const a of main.querySelectorAll('a[href*="#"]')) {
     const href = a.getAttribute("href");
-    if (href.startsWith("#")) check(route.path, "working jump " + href, Boolean(d.getElementById(href.slice(1))));
+    if (href.startsWith("#"))
+      check(
+        route.path,
+        "working jump " + href,
+        Boolean(d.getElementById(href.slice(1))),
+      );
     else if (href.startsWith("/")) anchorTargets.add(href);
   }
-  const spanishNavLinks = [...d.querySelectorAll('nav[aria-label="Main navigation"] a')].filter(a => a.textContent.trim() === "Español");
-  check(route.path, "language switch retains article context", spanishNavLinks.length === 2 && spanishNavLinks.every(a => a.getAttribute("href") === route.es));
+  const spanishNavLinks = [
+    ...d.querySelectorAll('nav[aria-label="Main navigation"] a'),
+  ].filter((a) => a.textContent.trim() === "Español");
+  check(
+    route.path,
+    "language switch retains article context",
+    spanishNavLinks.length === 2 &&
+      spanishNavLinks.every((a) => a.getAttribute("href") === route.es),
+  );
   if (route.path !== "/en") {
-    const article = articles.find(a => route.path.endsWith('/' + a.slug));
-    const answer = [...main.querySelectorAll("p")].filter(p => p.textContent.trim() === article.answer);
-    check(route.path, "direct answer appears once before hero photograph", answer.length === 1 && Boolean(answer[0].closest("header")) && [...main.querySelector('header').querySelectorAll('p,img')].indexOf(answer[0]) < [...main.querySelector('header').querySelectorAll('p,img')].findIndex(e => e.tagName === 'IMG'));
+    const article = articles.find((a) => route.path.endsWith("/" + a.slug));
+    const answer = [...main.querySelectorAll("p")].filter(
+      (p) => p.textContent.trim() === article.answer,
+    );
+    check(
+      route.path,
+      "direct answer appears once before hero photograph",
+      answer.length === 1 &&
+        Boolean(answer[0].closest("header")) &&
+        [...main.querySelector("header").querySelectorAll("p,img")].indexOf(
+          answer[0],
+        ) <
+          [...main.querySelector("header").querySelectorAll("p,img")].findIndex(
+            (e) => e.tagName === "IMG",
+          ),
+    );
   } else {
-    check(route.path, "home offers two contextual booking decisions", d.querySelectorAll('#book-your-visit a[href^="/en/"]').length === 2);
-    check(route.path, "Pena photograph retains source and licence", Boolean(d.querySelector('#book-your-visit a[href^="https://commons.wikimedia.org/"]')) && Boolean(d.querySelector('#book-your-visit a[href^="https://creativecommons.org/"]')));
+    check(
+      route.path,
+      "home offers two contextual booking decisions",
+      d.querySelectorAll('#book-your-visit a[href^="/en/"]').length === 2,
+    );
+    check(
+      route.path,
+      "Pena photograph retains source and licence",
+      Boolean(
+        d.querySelector(
+          '#book-your-visit a[href^="https://commons.wikimedia.org/"]',
+        ),
+      ) &&
+        Boolean(
+          d.querySelector(
+            '#book-your-visit a[href^="https://creativecommons.org/"]',
+          ),
+        ),
+    );
   }
-  if (route.path === '/en/pena-palace-tickets') {
+  if (route.path === "/en/pena-palace-tickets") {
     const bookingLinks = d.querySelectorAll('#booking a[rel~="sponsored"]');
-    const destination = bookingLinks.length === 1 ? new URL(bookingLinks[0].getAttribute('href')) : null;
-    check(route.path, "Pena English product and attribution preserved", destination?.pathname === '/en/sintra-attractions-c76496/tickets-for-national-palace-of-pena-park-entry-ticket-p1120392/' && destination.searchParams.get('partner') === 'estaba_en_lisboa-189233' && destination.searchParams.get('tq_campaign') === 'web_en_pena-palace-tickets');
-    check(route.path, "one affiliate CTA after booking comparison", bookingLinks.length === 1 && Boolean(bookingLinks[0].closest('#where-to-book')) && d.querySelectorAll('a[rel~="sponsored"]').length === 1);
+    const destination =
+      bookingLinks.length === 1
+        ? new URL(bookingLinks[0].getAttribute("href"))
+        : null;
+    check(
+      route.path,
+      "Pena English product and attribution preserved",
+      destination?.pathname ===
+        "/en/sintra-attractions-c76496/tickets-for-national-palace-of-pena-park-entry-ticket-p1120392/" &&
+        destination.searchParams.get("partner") === "estaba_en_lisboa-189233" &&
+        destination.searchParams.get("tq_campaign") ===
+          "web_en_pena-palace-tickets",
+    );
+    check(
+      route.path,
+      "one affiliate CTA after booking comparison",
+      bookingLinks.length === 1 &&
+        Boolean(bookingLinks[0].closest("#where-to-book")) &&
+        d.querySelectorAll('a[rel~="sponsored"]').length === 1,
+    );
   }
   const words = (main?.textContent || "").trim().split(/\s+/).length;
   check(
@@ -193,9 +258,13 @@ for (const route of routes) {
   });
 }
 for (const href of anchorTargets) {
-  const [pathname, id] = href.split('#');
+  const [pathname, id] = href.split("#");
   const { document } = await get(pathname);
-  check(href, "cross-page jump points to an existing section", Boolean(document.getElementById(id)));
+  check(
+    href,
+    "cross-page jump points to an existing section",
+    Boolean(document.getElementById(id)),
+  );
 }
 for (const href of links) {
   const r = await fetch(base + href, { redirect: "manual" });

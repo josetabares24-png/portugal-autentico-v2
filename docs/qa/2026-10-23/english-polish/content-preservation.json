@@ -1,0 +1,30 @@
+{
+  "articles": [
+    {
+      "slug": "lisbon-airport-to-city-centre",
+      "protectedFieldsUnchanged": true,
+      "sectionIdsUnchanged": true
+    },
+    {
+      "slug": "lisbon-metro-guide",
+      "protectedFieldsUnchanged": true,
+      "sectionIdsUnchanged": true
+    },
+    {
+      "slug": "lisbon-3-day-itinerary",
+      "protectedFieldsUnchanged": true,
+      "sectionIdsUnchanged": true
+    },
+    {
+      "slug": "pena-palace-tickets",
+      "protectedFieldsUnchanged": true,
+      "sectionIdsUnchanged": true
+    },
+    {
+      "slug": "lisbon-free-walking-tours",
+      "protectedFieldsUnchanged": true,
+      "sectionIdsUnchanged": true
+    }
+  ],
+  "intentionalChange": "One Pena booking paragraph now describes the verified English supplier page. Existing factual answers, prices, hours, titles and sources are unchanged."
+}

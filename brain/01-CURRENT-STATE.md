@@ -1,3 +1,11 @@
+## 23 octubre 2026 — Pulido inglés y reservas, Preview verificada
+
+José pide mejorar estética y facilitar entradas/tours. Aplicación `8d3ff35`, [PR116](https://github.com/josetabares24-png/portugal-autentico-v2/pull/116) borrador: respuestas antes de foto, dos accesos de Home a visitas reales, bloques más compactos, navegación ES conserva artículo. Pena enlaza al mismo producto p1120392 en inglés con partner conservado, comprobado también en navegador. No nuevas URLs ni cambios en español.
+
+QA: build/TypeScript/lint sin errores (un warning previo), inglés208 local/remoto, preservación1.659/72, migración1.490 local/1.386 remota, técnico1.190 local, Free tours66 local;24vistas por entorno sin overflow. GuruWalk real27/10: tres tours por idioma; nueve slots ingleses/ocho españoles, fecha/ref conservados en botones. Los eventos nuevos solo miden dos accesos de Home y dos del itinerario; reservas/comisiones siguen DESCONOCIDAS. [Informe y capturas](../docs/english-pilot-polish.md).
+
+Estado: Preview de aplicación READY y seis checks correctos. Inglés NO publicado. Producción sigue PR115/4be9054 según la última verificación; falta revisión del nuevo candidato y resolver la configuración Clerk privada ya documentada.
+
 ## 22 octubre 2026 — Piloto inglés en Preview; gate visual pendiente
 
 HECHO: [PR116 borrador](https://github.com/josetabares24-png/portugal-autentico-v2/pull/116), aplicación `4bffd9c`, seis páginas /en, Preview READY. Inglés149, preservación española1659/72, técnico1190, migración1386 remota, Free tours66 pasan. GuruWalk real27/10: tres tours/nueve horarios por idioma, referido conservado y caché inglesa diferenciada. 24 vistas responsive remotas sin overflow. [Informe y límites](../docs/english-pilot-phase1.md).

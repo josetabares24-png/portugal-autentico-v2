@@ -1,0 +1,9 @@
+{
+  "summary": {
+    "pages": 6,
+    "checks": 208,
+    "failures": []
+  },
+  "source": "../audit-evidence/english-polish-2026-10-23/local/english-pilot-report.json",
+  "base": "http://127.0.0.1:5230"
+}

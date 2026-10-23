@@ -924,3 +924,8 @@ Retirar los formularios de suscripción del índice del blog y de todos los art�
 ### Cierre D069 — Preview inglés, no producción
 
 PR116 borrador; aplicación4bffd9c, seis versiones explícitas y equivalencias reales, no traducción masiva. QA SEO/editorial y disponibilidad real pasan; aprobación visual/editorial sigue pendiente. Incidencia externa previa de Clerk confirmada en producción y Preview: Missing secretKey. No se presenta autenticación como operativa ni se la elimina. Resolver configuración y repetir QA privada antes de publicar layouts. Pena aún abre checkout español, divulgado. Informe: docs/english-pilot-phase1.md.
+
+
+## D-070 — Pulido del piloto inglés y reserva en el idioma del lector, 23/10/2026
+
+**Autorizado para Preview; sin autorización de producción.** José pide una presentación cuidada y facilitar entradas/tours. Mantener seis URLs y marca; respuesta antes de imagen, accesos claros y contextualidad comercial. Pena usa una correspondencia verificada del mismo p1120392 en inglés, conservando partner/parámetros y campaña propia. No traducción genérica de URLs ni nuevos productos. Un CTA de Pena tras comparar, sin precio inventado o promesa de cancelación. Home e itinerario conducen a las guías existentes. Medir los cuatro accesos instrumentados como un subconjunto; no son ventas ni todos los accesos. No cambios al español, sitemap, redirects o protección privada. [Informe](../docs/english-pilot-polish.md).
