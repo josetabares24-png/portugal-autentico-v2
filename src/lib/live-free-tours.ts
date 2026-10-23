@@ -1,4 +1,5 @@
 import type { LiveFreeTour } from "@/types/guruwalk-live";
+import englishTours from "../data/english-walking-tours.json" with { type: "json" };
 import type {
   GuruWalkDiscoverDestination,
   GuruWalkAvailability,
@@ -63,6 +64,39 @@ export async function loadLiveTours(
   language: Language,
   client: Client,
 ): Promise<LiveFreeTour[]> {
+  if (language === "en") {
+    const results = await Promise.allSettled(
+      englishTours.map((tour) =>
+        client.availability({
+          tourId: tour.id,
+          fromDate: date,
+          toDate: date,
+          language: "en",
+        }),
+      ),
+    );
+    // A supplier failure is not evidence that every selected walk is sold out.
+    if (results.every((result) => result.status === "rejected")) {
+      throw new Error("English tour availability is unavailable");
+    }
+    return englishTours
+      .flatMap((tour, index) => {
+        const result = results[index];
+        if (result.status !== "fulfilled") return [];
+        const slots = confirmedSlots(result.value.dates[date] ?? [], "en");
+        if (slots.length === 0) return [];
+        return [
+          {
+            id: tour.id,
+            name: tour.name,
+            imageUrl: tour.image,
+            url: slots[0].url,
+            slots,
+          },
+        ];
+      })
+      .slice(0, 3);
+  }
   const destination = await client.discover({
     destination: "Lisboa",
     language,
@@ -90,33 +124,8 @@ export async function loadLiveTours(
     const result = availability[index];
     const events =
       result.status === "fulfilled" ? (result.value.dates[date] ?? []) : [];
-    const seenTimes = new Set<string>();
-    const slots = events
-      .flatMap((event) => {
-        const eventLanguage = (event.language ?? "").toLowerCase();
-        const englishEvent = ["en", "english", "inglés", "ingles"].includes(
-          eventLanguage,
-        );
-        if (
-          !isAllowedBookingUrl(event.booking_url) ||
-          seenTimes.has(event.start_time) ||
-          (language === "en" && !englishEvent)
-        ) {
-          return [];
-        }
-        seenTimes.add(event.start_time);
-        return [
-          {
-            eventId: event.event_id,
-            time: event.start_time,
-            url: event.booking_url,
-          },
-        ];
-      })
-      .slice(0, 3);
+    const slots = confirmedSlots(events, language);
 
-    // English results must have a confirmed English slot. Spanish keeps its existing fallback.
-    if (language === "en" && slots.length === 0) return [];
     return [
       {
         id: product.id,
@@ -129,4 +138,34 @@ export async function loadLiveTours(
       },
     ];
   });
+}
+
+function confirmedSlots(
+  events: GuruWalkAvailability["dates"][string],
+  language: Language,
+) {
+  const seenTimes = new Set<string>();
+  return events
+    .flatMap((event) => {
+      const eventLanguage = (event.language ?? "").trim().toLowerCase();
+      const englishEvent = ["en", "english", "inglés", "ingles"].includes(
+        eventLanguage,
+      );
+      if (
+        !isAllowedBookingUrl(event.booking_url) ||
+        seenTimes.has(event.start_time) ||
+        (language === "en" && !englishEvent)
+      ) {
+        return [];
+      }
+      seenTimes.add(event.start_time);
+      return [
+        {
+          eventId: event.event_id,
+          time: event.start_time,
+          url: event.booking_url,
+        },
+      ];
+    })
+    .slice(0, 3);
 }

@@ -392,7 +392,7 @@
     "slug": "lisbon-free-walking-tours",
     "category": "Walk with a guide",
     "title": "Lisbon free walking tours in English: routes and dates",
-    "description": "Compare the centre, Alfama, Belém, evening walks and history tours, then check English-language availability.",
+    "description": "Compare five English walking tours in Lisbon: the centre, Alfama, Belém, Black history and viewpoints. Check available times for your date.",
     "image": "/images/lisboa-originales/rua-augusta-arco-lisboa.webp",
     "imageAlt": "The Rua Augusta arch and central Lisbon",
     "answer": "For a first visit, a tour of Baixa and Chiado is a useful starting point. Choose Alfama for hills and older streets, or Belém for the riverside and maritime history. A free tour has no fixed admission price: reserve a place and plan to tip the guide after the walk.",
@@ -407,26 +407,8 @@
     "sections": [
       {
         "id": "choose-a-route",
-        "title": "Five ways to choose a walk",
-        "paragraphs": [
-          "These are types of route, not five individual operators ranked as the best. The right one depends on what you have already seen and how much walking you want to do. Check the actual stop list before booking two tours with similar names."
-        ],
-        "rows": [
-          [
-            "Centre / Baixa and Chiado",
-            "A starting point for a first visit and the rebuilding of the city"
-          ],
-          ["Alfama", "Older streets, viewpoints, slopes and stairs"],
-          ["Belém", "The riverside, monuments and maritime history"],
-          [
-            "Mysteries and legends",
-            "A themed option; read the actual historical focus"
-          ],
-          [
-            "Evening walk",
-            "A different time of day; check finish point and return transport"
-          ]
-        ]
+        "title": "Five English walks, and who each one suits",
+        "paragraphs": []
       },
       {
         "id": "how-free-tours-work",
@@ -449,7 +431,7 @@
         "title": "Walking difficulty and practical preparation",
         "paragraphs": [
           "Alfama has slopes, uneven paving and stairs. Read the individual route’s accessibility information if anyone has mobility limits, a pushchair or difficulty standing for a long explanation. A “walking tour” label does not specify an easy route.",
-          "Wear suitable shoes, carry water and check the weather. Leave a gap before any timed monument entry after the tour. For an evening route, check how you will get back from the finish point rather than assuming it ends where it started."
+          "Wear suitable shoes, carry water and check the weather. Leave a gap before any timed monument entry after the tour. Check how you will get back from the finish point rather than assuming it ends where it started."
         ]
       },
       {

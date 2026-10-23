@@ -176,6 +176,38 @@ for (const route of routes) {
         d.querySelectorAll('a[rel~="sponsored"]').length === 1,
     );
   }
+  if (route.path === "/en/lisbon-free-walking-tours") {
+    const selected = JSON.parse(
+      await fs.readFile("src/data/english-walking-tours.json", "utf8"),
+    );
+    const comparison = d.querySelector("[data-english-tour-selection]");
+    const choices = [...comparison.querySelectorAll('a[rel~="sponsored"]')];
+    check(
+      route.path,
+      "five individual walks with attributed English destinations",
+      choices.length === 5 &&
+        selected.every((t) =>
+          choices.some((a) => {
+            const u = new URL(a.getAttribute("href"));
+            return (
+              u.pathname === new URL(t.url).pathname &&
+              u.searchParams.get("ref") === "ran99ahl1dp8bfbqj413" &&
+              u.searchParams.get("utm_content") === t.key
+            );
+          }),
+        ),
+    );
+    check(
+      route.path,
+      "compact accessible comparison",
+      comparison.querySelectorAll("details > summary").length === 5,
+    );
+    check(
+      route.path,
+      "directory fallback is an existing jump",
+      Boolean(d.getElementById("english-tour-directory")),
+    );
+  }
   const words = (main?.textContent || "").trim().split(/\s+/).length;
   check(
     route.path,

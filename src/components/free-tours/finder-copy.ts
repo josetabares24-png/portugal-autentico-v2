@@ -26,7 +26,7 @@ export const finderCopy = {
     eyebrow: "Choose your date",
     title: "Find an English walking tour",
     intro:
-      "Check up to three tours for your date. Available times come from GuruWalk; confirm the language and booking details before reserving.",
+      "Check the five walks compared below. We show up to three with confirmed English times for your date; choose and confirm your departure on GuruWalk.",
     date: "Tour date",
     loading: "Searching",
     search: "Find available tours",
@@ -39,7 +39,7 @@ export const finderCopy = {
     times: "Available times:",
     confirmation: "Choose and confirm your time on GuruWalk.",
     empty:
-      "No tours appeared for this date. Try another day or use the English tour directory below.",
+      "We could not confirm English times for these five walks on this date. Try another day or check the full directory on GuruWalk.",
     error:
       "We could not load times just now. You can still check English tours through the GuruWalk link below.",
   },

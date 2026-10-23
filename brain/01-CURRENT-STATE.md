@@ -14,6 +14,10 @@ RIESGO PREVIO CONFIRMADO: admin/API admin500 en producción y Preview; logs de a
 
 # Current state
 
+## 23 octubre 2026 — Cinco tours ingleses en validación
+
+PR116 sigue en borrador y Preview. D-071 incorpora cinco recorridos ingleses concretos y disponibilidad de esa selección; corrige resultados de fecha anterior al editar el calendario. QA local221 inglés/66 free tours/1490 migración; build y tests pasan. Falta cerrar QA remota y visual antes de presentar enlace actualizado. Producción4be9054; piloto inglés sin D0. [Informe](../docs/english-tours-selection.md).
+
 ## 22 octubre 2026 — PR115 publicado; piloto inglés en desarrollo
 
 José autoriza explícitamente publicar PR115/head68898f2 por merge normal y empezar inglés. Merge4be9054 a18:08:47UTC, Vercel dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY/production con alias públicos. QA posterior editorial1.659/72, migración1.426 y Free tours66 sin fallos. E018 inicia observación; no efecto medido todavía. D068/D069: piloto de seis URLs bajo /en/ en rama separada, sin publicación inglesa autorizada. Baseline español posterior a115 capturado. Build143 inicial; conservación editorial1.659 y técnico1.190/119 correctos. QA final/Preview pendientes. [Informe](../docs/english-pilot-phase1.md). No dominio aparte, slugs españoles movidos o traducción masiva; claves de chat no usadas.

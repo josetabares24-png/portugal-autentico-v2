@@ -6,6 +6,7 @@ export default function EnglishBookingLink({
   campaign,
   placement = "english-contextual",
   content = "english-pilot",
+  variant = "button",
   children,
 }: {
   href: string | null;
@@ -13,6 +14,7 @@ export default function EnglishBookingLink({
   campaign: string;
   placement?: string;
   content?: string;
+  variant?: "button" | "text";
   children: React.ReactNode;
 }) {
   if (!href)
@@ -27,7 +29,7 @@ export default function EnglishBookingLink({
       href={href}
       target="_blank"
       rel="sponsored noopener noreferrer"
-      className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-terracotta px-5 py-3 text-center font-body text-sm font-bold text-white hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-night"
+      className={`inline-flex min-h-12 items-center gap-2 font-body text-sm font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-night ${variant === "text" ? "text-terracotta underline underline-offset-4 hover:no-underline" : "justify-center rounded-md bg-terracotta px-5 py-3 text-center text-white hover:bg-primary-dark"}`}
       onClick={() =>
         trackAffiliateClick({
           affiliate_partner: partner,

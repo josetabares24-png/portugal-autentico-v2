@@ -34,7 +34,7 @@ const getLiveToursForDate = unstable_cache(
       discover: discoverGuruWalkDestination,
       availability: checkGuruWalkAvailability,
     }),
-  ["guruwalk-lisboa-live-v3-language"],
+  ["guruwalk-lisboa-live-v4-english-selection"],
   { revalidate: 900, tags: ["guruwalk-lisboa-live"] },
 );
 

@@ -13,6 +13,7 @@ import {
 import FreeTourLiveFinder from "@/components/free-tours/FreeTourLiveFinder";
 import EnglishBookingLink from "./EnglishBookingLink";
 import EnglishGuideLink from "./EnglishGuideLink";
+import EnglishTourSelection from "./EnglishTourSelection";
 
 type Article = (typeof articles)[number];
 const SITE = "https://estabaenlisboa.com";
@@ -63,6 +64,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
       )
     : null;
   const isTours = article.slug === "lisbon-free-walking-tours";
+  const reviewedDate = isTours ? "2026-10-23" : "2026-10-22";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -72,7 +74,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
     url,
     mainEntityOfPage: url,
     inLanguage: "en",
-    dateModified: "2026-10-22",
+    dateModified: reviewedDate,
     author: {
       "@type": "Person",
       "@id": SITE + "/sobre-nosotros#jose-tabares",
@@ -140,7 +142,9 @@ export default function EnglishArticle({ article }: { article: Article }) {
                   José Tabares
                 </Link>{" "}
                 · English edition reviewed{" "}
-                <time dateTime="2026-10-22">22 October 2026</time>
+                <time dateTime={reviewedDate}>
+                  {isTours ? "23" : "22"} October 2026
+                </time>
               </p>
               <nav
                 aria-label="Quick guide links"
@@ -234,6 +238,9 @@ export default function EnglishArticle({ article }: { article: Article }) {
                     {p}
                   </p>
                 ))}
+                {isTours && section.id === "choose-a-route" ? (
+                  <EnglishTourSelection />
+                ) : null}
                 {"rows" in section && section.rows ? (
                   <dl className="my-5 border-y border-border-soft">
                     {section.rows.map(([label, value]) => (
@@ -329,7 +336,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
             ))}
             <details className="mt-6 border-y border-border-soft py-5">
               <summary className="min-h-11 cursor-pointer text-sm font-semibold">
-                Facts checked · 22 October 2026
+                Facts checked · {isTours ? "23" : "22"} October 2026
               </summary>
               <ul className="mt-3 space-y-3 text-sm">
                 {article.sources.map(([label, href]) => (
@@ -366,7 +373,10 @@ export default function EnglishArticle({ article }: { article: Article }) {
       </article>
       {isTours ? (
         <>
-          <section className="mx-auto max-w-6xl px-6 py-10">
+          <section
+            id="english-tour-directory"
+            className="mx-auto max-w-6xl scroll-mt-24 px-6 py-10"
+          >
             <h2 className="mb-4 font-display text-2xl font-semibold not-italic">
               Check more English routes
             </h2>

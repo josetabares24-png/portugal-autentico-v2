@@ -7,8 +7,8 @@ export interface LiveFreeTourSlot {
 export interface LiveFreeTour {
   id: number;
   name: string;
-  rating: number;
-  reviews: number;
+  rating?: number;
+  reviews?: number;
   imageUrl?: string;
   url: string;
   slots: LiveFreeTourSlot[];
