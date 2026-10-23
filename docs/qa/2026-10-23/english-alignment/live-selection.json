@@ -1,0 +1,89 @@
+{
+  "dateChecked": "2026-10-23T20:10:10.864Z",
+  "checks": [
+    {
+      "language": "en",
+      "status": 200,
+      "date": "2026-10-27",
+      "tours": [
+        {
+          "id": 30696,
+          "name": "Free Tour Lisbon: Essential History, Fun Facts and Free Tastings",
+          "slots": 3,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        },
+        {
+          "id": 7501,
+          "name": "The Unmissable Alfama: Secrets of Lisbon’s Oldest District",
+          "slots": 3,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        },
+        {
+          "id": 35074,
+          "name": "Free Tour Age of Discoveries (Belém)",
+          "slots": 1,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    {
+      "language": "es",
+      "status": 200,
+      "date": "2026-10-27",
+      "tours": [
+        {
+          "id": 30696,
+          "name": "Free Tour de Lisboa: Historia, Datos Divertidos y Degustaciones Gratis",
+          "slots": 3,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        },
+        {
+          "id": 33198,
+          "name": "Free Tour Lisboa Esencial, el más completo",
+          "slots": 3,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        },
+        {
+          "id": 34987,
+          "name": "Free Tour Lisboa Imperdible: Rossio, Carmo y Chiado",
+          "slots": 3,
+          "buttons": [
+            {
+              "ref": true,
+              "date": true
+            }
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "affiliateClicks": 0,
+  "reservationsMade": 0
+}

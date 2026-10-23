@@ -1,0 +1,25 @@
+{
+  "button": {
+    "background": "rgb(184, 71, 46)",
+    "color": "rgb(255, 255, 255)",
+    "minHeight": "48px",
+    "radius": "6px"
+  },
+  "card": {
+    "background": "rgb(255, 255, 255)",
+    "border": "rgb(232, 226, 217)",
+    "radius": "8px",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 1px 3px 0px, rgba(0, 0, 0, 0.08) 0px 8px 24px -8px",
+    "width": 352
+  },
+  "heading": {
+    "font": "playfair, \"playfair Fallback\", \"Playfair Display\", Georgia, serif",
+    "size": "60px",
+    "style": "italic"
+  },
+  "imageRatio": "relative aspect-[16/10] w-full overflow-hidden bg-white/60",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

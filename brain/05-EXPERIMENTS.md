@@ -1,5 +1,9 @@
 # Experiments
 
+### 23 octubre — D072, estética inglesa igualada al español
+
+Preferencia explícita de José: usar cabecera compartida y tarjetas fotográficas españolas, conservando los cinco productos ingleses de D071. Preview76c37d6 verificada; estilos comparados en escritorio y reservas por fecha/ref comprobadas. Móvil pendiente, no certificarlo. E019 continúa sin D0; seis CI correctos no demuestran ingresos ni autorizan producción. [Contrato](../docs/english-tours-visual-alignment.md).
+
 ### 23 octubre — D071, selección inglesa de cinco recorridos
 
 E019 sigue sin D0. PR116 en Preview ofrece cinco recorridos concretos, consulta hasta cinco disponibilidades y muestra hasta tres confirmadas; edición de fecha retira resultados anteriores. QA prueba utilidad técnica, no ventas. No declarar mejora de conversión ni expansión del piloto hasta publicación aprobada y reservas reconciliadas. Escritorio observado; móvil pendiente por fallo del control de viewport, documentado en docs/english-tours-selection.md.

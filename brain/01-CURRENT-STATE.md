@@ -1,6 +1,6 @@
-## 23 octubre 2026 — Tours ingleses alineados al diseño español, QA local
+## 23 octubre 2026 — Tours ingleses alineados al diseño español, Preview verificada
 
-D072: José pide igualar estética con español. Cabecera compartida TourismBookingHero, cinco tarjetas con fotografías y acceso general; mismos estilos/grid/botones y navegación visual. Productos ingleses, referido, calendario y contenido práctico conservados; el H1 visible se acorta sin cambiar SEO title/URL. Build143, TypeScript/lint sin errores, inglés222, preservación1659/72, Free tours66 y migración1490 correctos. Preview remota pendiente de este lote; móvil no certificado por control de viewport no aplicado. PR116 sigue borrador y producción4be9054. [Informe](../docs/english-tours-visual-alignment.md).
+D072: José pide igualar estética con español. Cabecera compartida TourismBookingHero, cinco tarjetas con fotografías y acceso general; mismos estilos/grid/botones y navegación visual. Productos ingleses, referido, calendario y contenido práctico conservados; el H1 visible se acorta sin cambiar SEO title/URL. Aplicación76c37d6 / Preview64t3nxhtl READY, seis CI correctos. Build143, TypeScript/lint sin errores; inglés222 y preservación1659/72 local/remota, Free tours66 local y migración1490 local/1386 remota correctos. Estilos computados y fotos comparados con español en escritorio. Tres tours/siete horarios ingleses reales27/10; fecha/ref correctos y cambio de fecha retira resultados. Móvil no certificado por control de viewport no aplicado. PR116 sigue borrador y producción4be9054. [Informe y capturas](../docs/english-tours-visual-alignment.md).
 
 ## 23 octubre 2026 — Pulido inglés y reservas, Preview verificada
 
