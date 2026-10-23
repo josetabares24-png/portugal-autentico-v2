@@ -4,11 +4,15 @@ export default function EnglishBookingLink({
   href,
   partner,
   campaign,
+  placement = "english-contextual",
+  content = "english-pilot",
   children,
 }: {
   href: string | null;
   partner: "guruwalk" | "tiqets";
   campaign: string;
+  placement?: string;
+  content?: string;
   children: React.ReactNode;
 }) {
   if (!href)
@@ -28,8 +32,8 @@ export default function EnglishBookingLink({
         trackAffiliateClick({
           affiliate_partner: partner,
           affiliate_campaign: campaign,
-          affiliate_content: "english-pilot",
-          affiliate_placement: "english-contextual",
+          affiliate_content: content,
+          affiliate_placement: placement,
           page_path: window.location.pathname,
           link_url: href,
           link_domain: new URL(href).hostname,

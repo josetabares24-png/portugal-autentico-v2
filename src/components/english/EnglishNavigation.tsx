@@ -2,8 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import routes from "@/data/english-pilot-routes.json";
 export default function EnglishNavigation() {
+  const pathname = usePathname();
+  const spanishPath =
+    routes.find((route) => route.path === pathname)?.es ?? "/";
   return (
     <header className="sticky top-0 z-50 border-b border-border-soft bg-cream/95 backdrop-blur">
       <nav
@@ -29,13 +33,14 @@ export default function EnglishNavigation() {
             <Link
               key={r.path}
               href={r.path}
-              className="inline-flex min-h-11 items-center text-sm font-semibold text-night hover:text-terracotta"
+              aria-current={pathname === r.path ? "page" : undefined}
+              className="inline-flex min-h-11 items-center border-b-2 border-transparent text-sm font-semibold text-night hover:text-terracotta aria-[current=page]:border-terracotta aria-[current=page]:text-terracotta"
             >
               {r.label}
             </Link>
           ))}
           <Link
-            href="/"
+            href={spanishPath}
             lang="es"
             className="inline-flex min-h-11 items-center border-l border-border-soft pl-5 text-xs font-bold"
           >
@@ -59,13 +64,14 @@ export default function EnglishNavigation() {
               <Link
                 key={r.path}
                 href={r.path}
-                className="flex min-h-11 items-center border-b border-border-soft px-3 text-sm text-night"
+                aria-current={pathname === r.path ? "page" : undefined}
+                className="flex min-h-11 items-center border-b border-border-soft px-3 text-sm text-night aria-[current=page]:font-bold aria-[current=page]:text-terracotta"
               >
                 {r.label}
               </Link>
             ))}
             <Link
-              href="/"
+              href={spanishPath}
               lang="es"
               className="flex min-h-11 items-center px-3 text-sm"
             >

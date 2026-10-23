@@ -4,27 +4,29 @@ import articles from "@/data/english-pilot-articles.json";
 import { getPhotoCredit } from "@/data/photo-credits";
 import { englishPilotRoutes } from "@/lib/language-alternates";
 import { findProductById } from "@/data/bookings";
+import { withGuruwalkRef, buildAffiliateUrl } from "@/lib/affiliate";
 import {
-  withTiqetsCampaign,
-  withGuruwalkRef,
-  buildAffiliateUrl,
-} from "@/lib/affiliate";
+  englishPenaBookingUrl,
+  ENGLISH_PENA_CAMPAIGN,
+  ENGLISH_TOURS_CAMPAIGN,
+} from "@/lib/english-bookings";
 import FreeTourLiveFinder from "@/components/free-tours/FreeTourLiveFinder";
 import EnglishBookingLink from "./EnglishBookingLink";
+import EnglishGuideLink from "./EnglishGuideLink";
 
 type Article = (typeof articles)[number];
 const SITE = "https://estabaenlisboa.com";
-function EnglishAnswer({ article }: { article: Article }) {
+function EnglishEssentials({ article }: { article: Article }) {
   return (
     <>
-      <p className="text-lg leading-relaxed">{article.answer}</p>
       <section
+        id="essentials"
         aria-labelledby="essentials-title"
-        className="my-8 border-y border-border-soft py-5"
+        className="mb-8 scroll-mt-24 border-y border-border-soft py-5"
       >
         <h2
           id="essentials-title"
-          className="mb-4 font-display text-2xl font-semibold"
+          className="mb-4 font-display text-2xl font-semibold not-italic"
         >
           The essentials
         </h2>
@@ -51,14 +53,12 @@ export default function EnglishArticle({ article }: { article: Article }) {
   )!;
   const credit = getPhotoCredit(article.image);
   const ticket = findProductById("pena-tiqets")?.links.article?.url;
-  const ticketUrl = ticket
-    ? withTiqetsCampaign(ticket, "web_en_pena-palace-tickets")
-    : null;
+  const ticketUrl = englishPenaBookingUrl(ticket);
   const tourRef = process.env.GURUWALK_AFFILIATE_REF?.trim();
   const toursUrl = tourRef
     ? buildAffiliateUrl(
         withGuruwalkRef("https://www.guruwalk.com/lisbon", tourRef),
-        "free-tours-lisbon-en",
+        ENGLISH_TOURS_CAMPAIGN,
         "final-cta",
       )
     : null;
@@ -123,61 +123,92 @@ export default function EnglishArticle({ article }: { article: Article }) {
               Leer en español
             </Link>
           </nav>
-          <p className="mt-5 text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
-            {article.category}
-          </p>
-          <h1 className="mt-3 max-w-4xl font-display text-4xl font-semibold not-italic leading-[1.12] md:text-5xl">
-            {article.title}
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-text-secondary">
-            {article.description}
-          </p>
-          <figure className="mt-8">
-            <div className="relative aspect-[16/9] max-h-[420px] overflow-hidden">
-              <Image
-                src={article.image}
-                alt={article.imageAlt}
-                fill
-                sizes="(max-width:768px) 100vw, 1100px"
-                priority
-                className="object-cover"
-              />
-            </div>
-            {credit ? (
-              <figcaption className="mt-2 text-xs leading-relaxed text-text-secondary">
-                Photo: {credit.author} /{" "}
-                <Link className="underline" href={credit.sourceUrl}>
-                  Wikimedia Commons
-                </Link>
-                ,{" "}
+          <div className="mt-5 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
+                {article.category}
+              </p>
+              <h1 className="mt-3 font-display text-[2rem] font-semibold not-italic leading-[1.12] sm:text-4xl xl:text-5xl">
+                {article.title}
+              </h1>
+              <p className="mt-5 text-base leading-relaxed text-night md:text-lg">
+                {article.answer}
+              </p>
+              <p className="mt-5 text-xs leading-relaxed text-text-secondary">
+                By{" "}
+                <Link href="/sobre-nosotros" className="underline">
+                  José Tabares
+                </Link>{" "}
+                · English edition reviewed{" "}
+                <time dateTime="2026-10-22">22 October 2026</time>
+              </p>
+              <nav
+                aria-label="Quick guide links"
+                className="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold"
+              >
                 <Link
-                  className="underline"
-                  href={credit.licenseUrl || credit.sourceUrl}
+                  href="#essentials"
+                  className="inline-flex min-h-11 items-center gap-2 border-b border-border-soft"
                 >
-                  {credit.license}
+                  The essentials <span aria-hidden="true">↓</span>
                 </Link>
-                . Used in this crop.
-              </figcaption>
-            ) : "caption" in article && article.caption ? (
-              <figcaption className="mt-2 text-xs text-text-secondary">
-                {article.caption}
-              </figcaption>
-            ) : null}
-          </figure>
-          <p className="mt-5 text-sm text-text-secondary">
-            By{" "}
-            <Link href="/sobre-nosotros" className="underline">
-              José Tabares
-            </Link>{" "}
-            · English edition reviewed{" "}
-            <time dateTime="2026-10-22">22 October 2026</time>
-          </p>
+                {isTours ? (
+                  <Link
+                    href="#disponibilidad"
+                    className="inline-flex min-h-11 items-center gap-2 border-b border-terracotta text-terracotta"
+                  >
+                    Find English tours <span aria-hidden="true">↓</span>
+                  </Link>
+                ) : null}
+                {article.slug === "pena-palace-tickets" ? (
+                  <Link
+                    href="#where-to-book"
+                    className="inline-flex min-h-11 items-center gap-2 border-b border-terracotta text-terracotta"
+                  >
+                    Compare booking options <span aria-hidden="true">↓</span>
+                  </Link>
+                ) : null}
+              </nav>
+            </div>
+            <figure className="lg:pt-1">
+              <div className="relative aspect-[2/1] overflow-hidden sm:aspect-[16/10] lg:aspect-[4/3]">
+                <Image
+                  src={article.image}
+                  alt={article.imageAlt}
+                  fill
+                  sizes="(max-width:1024px) 100vw, 520px"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+              {credit ? (
+                <figcaption className="mt-2 text-xs leading-relaxed text-text-secondary">
+                  Photo: {credit.author} /{" "}
+                  <Link className="underline" href={credit.sourceUrl}>
+                    Wikimedia Commons
+                  </Link>
+                  ,{" "}
+                  <Link
+                    className="underline"
+                    href={credit.licenseUrl || credit.sourceUrl}
+                  >
+                    {credit.license}
+                  </Link>
+                  . Used in this crop.
+                </figcaption>
+              ) : "caption" in article && article.caption ? (
+                <figcaption className="mt-2 text-xs text-text-secondary">
+                  {article.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          </div>
         </header>
         {isTours ? (
           <>
             <div className="mx-auto max-w-6xl px-6">
               <div className="max-w-[740px]">
-                <EnglishAnswer article={article} />
+                <EnglishEssentials article={article} />
               </div>
             </div>
             <FreeTourLiveFinder language="en" />
@@ -185,7 +216,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
         ) : null}
         <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-12 lg:grid-cols-[minmax(0,740px)_1fr] lg:gap-16">
           <div className="min-w-0">
-            {!isTours ? <EnglishAnswer article={article} /> : null}
+            {!isTours ? <EnglishEssentials article={article} /> : null}
             {article.sections.map((section) => (
               <section
                 key={section.id}
@@ -222,29 +253,68 @@ export default function EnglishArticle({ article }: { article: Article }) {
                   <ul className="space-y-2">
                     {section.links.map(([label, href]) => (
                       <li key={href}>
-                        <Link
-                          href={href}
-                          className="inline-flex min-h-11 items-center text-sm font-semibold text-terracotta underline underline-offset-4"
-                        >
-                          {label}
-                        </Link>
+                        {article.slug === "lisbon-3-day-itinerary" &&
+                        href.startsWith("/en/") &&
+                        ["day-one", "sintra-option"].includes(section.id) ? (
+                          <EnglishGuideLink
+                            href={href}
+                            placement={`itinerary-${section.id}`}
+                            className="inline-flex min-h-12 items-center gap-3 border-b border-terracotta text-sm font-bold text-terracotta"
+                          >
+                            {label} <span aria-hidden="true">→</span>
+                          </EnglishGuideLink>
+                        ) : (
+                          <Link
+                            href={href}
+                            className="inline-flex min-h-11 items-center text-sm font-semibold text-terracotta underline underline-offset-4"
+                          >
+                            {label}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>
                 ) : null}
                 {"booking" in section && section.booking === "pena" ? (
-                  <aside className="mt-6 border-l-2 border-terracotta pl-5">
-                    <p className="mb-3 text-sm leading-relaxed">
-                      Palace and park ticket through Tiqets. The current linked
-                      product opens in Spanish; check the conditions before
-                      paying.
+                  <aside
+                    id="booking"
+                    aria-labelledby="pena-booking-title"
+                    className="mt-7 scroll-mt-24 border border-border-soft bg-white/70 p-5 sm:p-7"
+                  >
+                    <p className="text-xs font-bold uppercase tracking-[0.12em] text-terracotta">
+                      Pena Palace · book with Tiqets
                     </p>
+                    <h3
+                      id="pena-booking-title"
+                      className="mt-3 font-display text-2xl font-semibold not-italic"
+                    >
+                      Check tickets for your date
+                    </h3>
+                    <p className="my-4 text-sm leading-relaxed text-text-secondary">
+                      Palace-and-park options, with the booking page in English.
+                      Check the selected visit, entry time and any transfer
+                      option before paying.
+                    </p>
+                    <dl className="mb-5 grid gap-3 border-y border-border-soft py-4 text-sm sm:grid-cols-2">
+                      <div>
+                        <dt className="font-semibold">Booking provider</dt>
+                        <dd className="mt-1 text-text-secondary">Tiqets</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold">Before payment</dt>
+                        <dd className="mt-1 text-text-secondary">
+                          Review inclusions and change terms
+                        </dd>
+                      </div>
+                    </dl>
                     <EnglishBookingLink
                       href={ticketUrl}
                       partner="tiqets"
-                      campaign="web_en_pena-palace-tickets"
+                      campaign={ENGLISH_PENA_CAMPAIGN}
+                      placement="pena-after-comparison"
+                      content="palace-park-english"
                     >
-                      Check availability on Tiqets
+                      Check Pena dates on Tiqets
                     </EnglishBookingLink>
                     <p className="mt-3 text-xs leading-relaxed text-text-secondary">
                       Affiliate link. Your booking is handled by Tiqets.{" "}
@@ -297,7 +367,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
       {isTours ? (
         <>
           <section className="mx-auto max-w-6xl px-6 py-10">
-            <h2 className="mb-4 font-display text-2xl font-semibold">
+            <h2 className="mb-4 font-display text-2xl font-semibold not-italic">
               Check more English routes
             </h2>
             <p className="mb-5 max-w-2xl leading-relaxed">
@@ -308,7 +378,8 @@ export default function EnglishArticle({ article }: { article: Article }) {
             <EnglishBookingLink
               href={toursUrl}
               partner="guruwalk"
-              campaign="free-tours-lisboa-en"
+              campaign={ENGLISH_TOURS_CAMPAIGN}
+              placement="walking-tours-final"
             >
               Browse Lisbon tours on GuruWalk
             </EnglishBookingLink>
@@ -319,7 +390,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
         </>
       ) : null}
       <section className="mx-auto max-w-6xl border-t border-border-soft px-6 py-10">
-        <h2 className="mb-4 font-display text-2xl font-semibold">
+        <h2 className="mb-4 font-display text-2xl font-semibold not-italic">
           Plan the next part of your trip
         </h2>
         <div className="grid gap-x-8 sm:grid-cols-2">
