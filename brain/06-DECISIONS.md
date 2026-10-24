@@ -1,5 +1,11 @@
 # Decision log
 
+## D-073 — Publicación inglesa autorizada con incidencia privada aceptada
+**Date:** 2026-10-24
+**Status:** LIVE
+
+José elige expresamente «Publicar y reparar Clerk después» para PR116/headf53ba4b por merge normal. Mergeffe27e6 y despliegue dpl_5kX4uJor2dbtbBEU6JZRv4J3YF8U READY/production con alias públicos verificados. Seis checks antes de fusionar; QA posterior inglés222/preservación1.659/migración1.490/Free tours66 correctos. Se acepta temporalmente el500 previo del panel por clave privada ausente, sin debilitar autenticación; no equivale a login validado. D0E01924/10; no expansión masiva ni efecto SEO/ventas atribuido. Siguiente propuesta limitada: pulir elección de entradas con guías e inclusiones comprobadas. [Registro](../docs/english-pilot-production.md).
+
 ## D-069 — Piloto inglés de seis URLs bajo /en/
 **Date:** 2026-10-22
 **Status:** desarrollo autorizado; Preview/revisión pendientes, sin publicación inglesa

@@ -1,5 +1,9 @@
 # Experiments
 
+### 24 octubre — E019 inicia observación en producción
+
+PR116/headf53ba4b autorizado expresamente, mergeffe27e6 y Vercel producción READY con alias públicos. D0 **24/10/2026**. Inglés222/preservación1.659/migración1.490/Free tours66 pasan en dominio. No demuestra indexación, incremento de tráfico ni reservas. Revisiones propuestas30/60/90d:23/11,23/12 y22/01/2027, ampliando si no hay muestra. Clerk privado sigue pendiente por decisión explícita; móvil no certificado. [Evidencia](../docs/english-pilot-production.md).
+
 ### 23 octubre — D072, estética inglesa igualada al español
 
 Preferencia explícita de José: usar cabecera compartida y tarjetas fotográficas españolas, conservando los cinco productos ingleses de D071. Preview76c37d6 verificada; estilos comparados en escritorio y reservas por fecha/ref comprobadas. Móvil pendiente, no certificarlo. E019 continúa sin D0; seis CI correctos no demuestran ingresos ni autorizan producción. [Contrato](../docs/english-tours-visual-alignment.md).
@@ -254,7 +258,7 @@ Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head6
 
 ## E-019 — Piloto inglés, 22/10/2026
 
-**Status: DESARROLLO AUTORIZADO; D0 no iniciado.** Seis páginas bajo/en/, sin nueva marca o dominio. Baseline español de72superficies posterior aPR115. [Contrato](../docs/english-pilot-phase1.md), D069. No demanda inglesa cuantificada: GSC/Windsor bloqueados. Medir rastreo/indexación30d, consultas/clics60d y reservas verificadas90d solo después de aprobación y despliegue; muestra escasa=>inconcluso. Mantener URLs españolas y definir cada equivalencia explícitamente.
+**Status: OBSERVE; D0 24/10/2026.** Seis páginas bajo/en/, sin nueva marca o dominio. Baseline español de72superficies posterior aPR115 conservado tras publicar. [Producción verificada](../docs/english-pilot-production.md), D073. No demanda inglesa cuantificada: GSC/Windsor bloqueados. Medir rastreo/indexación30d, consultas/clics60d y reservas verificadas90d; muestra escasa=>inconcluso. Mantener URLs españolas y equivalencias explícitas. Los registros de Preview siguientes son históricos.
 
 
 **E019 — Preview verificada:** PR116/app4bffd9c. Inglés149, preservación1659/72, técnico1190 y tours reales por idioma pasan. D0 sigue SIN EMPEZAR; no hay efecto SEO o ventas atribuible al inglés. Gate visual/editorial y configuración privada pendientes. [Evidencia](../docs/english-pilot-phase1.md).
