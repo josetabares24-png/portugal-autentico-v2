@@ -1,0 +1,903 @@
+{
+  "base": "ffe27e6ae5ae24338aa8becfa521daff5d59fdd8",
+  "changedArticles": [
+    {
+      "slug": "lisboa-en-navidad",
+      "fields": [
+        "fechaActualizacion",
+        "dateModified",
+        "contenido"
+      ],
+      "blocks": [
+        22,
+        30
+      ]
+    },
+    {
+      "slug": "obidos-vila-natal",
+      "fields": [
+        "descripcion",
+        "fechaActualizacion",
+        "dateModified",
+        "fuentes",
+        "contenido"
+      ],
+      "blocks": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        33
+      ]
+    },
+    {
+      "slug": "barrios-imprescindibles",
+      "fields": [
+        "dateModified",
+        "contenido",
+        "fechaActualizacion",
+        "fuentes"
+      ],
+      "blocks": [
+        4,
+        7,
+        10
+      ]
+    },
+    {
+      "slug": "donde-tomar-cafe-lisboa",
+      "fields": [
+        "fechaActualizacion",
+        "dateModified",
+        "contenido"
+      ],
+      "blocks": [
+        9
+      ]
+    },
+    {
+      "slug": "terremoto-lisboa-1755",
+      "fields": [
+        "descripcion",
+        "fuentes",
+        "contenido",
+        "dateModified",
+        "fechaActualizacion"
+      ],
+      "blocks": [
+        1,
+        13,
+        20
+      ]
+    },
+    {
+      "slug": "descubrimientos-portugueses-lisboa",
+      "fields": [
+        "contenido",
+        "dateModified",
+        "fechaActualizacion",
+        "fuentes"
+      ],
+      "blocks": [
+        0
+      ]
+    },
+    {
+      "slug": "azulejos-portugueses-historia",
+      "fields": [
+        "fechaActualizacion",
+        "dateModified",
+        "fuentes",
+        "contenido"
+      ],
+      "blocks": [
+        14
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Article URL set preserved",
+      "pass": true
+    },
+    {
+      "name": "portugal-en-7-dias entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "como-moverse-por-portugal entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "casa-cristiano-ronaldo-portugal-quinta-da-marinha entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "restaurantes-romanticos-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "sintra-desde-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "aeropuerto-lisboa-al-centro entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mejores-miradores-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-5-dias entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-cuando-llueve entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "parque-das-nacoes-lisboa-que-ver entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "metro-lisboa-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-4-dias entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "tarjeta-navegante-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "palacio-da-pena-entradas entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad preserve links",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal preserve links",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "nochevieja-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "monasterio-jeronimos-entradas entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "graca-lisboa-que-ver entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "baixa-lisboa-que-ver entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "volta-portugal-devolucion-envases entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "patinetes-electricos-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "time-out-market-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "estacion-oriente-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "estacion-olaias-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-7-dias entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "donde-fotografiar-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-con-ninos entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-pareja entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mejores-apps-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "como-pagar-en-portugal entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "donde-alojarse-en-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-card-vale-la-pena entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "como-moverse-por-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "que-hacer-gratis-en-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "donde-comer-barato-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles preserve links",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "barrios-imprescindibles body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "evitar-turistadas-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "como-ir-sintra-desde-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "barrios-lisboa-donde-alojarse entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "pasteles-de-belem entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mejores-pasteles-nata-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mejor-epoca-visitar-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "que-ver-cascais-desde-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "playas-cerca-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "donde-escuchar-fado-autentico entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "presupuesto-viajar-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mejores-mercados-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa preserve links",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "donde-tomar-cafe-lisboa body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "miradores-atardecer-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "que-comprar-lisboa-souvenirs entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "viajar-ninos-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "excursiones-desde-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "vida-nocturna-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-invierno entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "errores-turistas-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "historia-de-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 preserve links",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "terremoto-lisboa-1755 body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa preserve links",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "descubrimientos-portugueses-lisboa body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve titulo",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve seoTitle",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve metaDescription",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve imagen",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve imageAlt",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve categoria",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve fecha",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve minutos",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia preserve links",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia publication preserved / partial update dated",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia block count unchanged except one extra Obidos timetable row",
+      "pass": true
+    },
+    {
+      "name": "azulejos-portugueses-historia body headings and anchors preserved",
+      "pass": true
+    },
+    {
+      "name": "novedades-lisboa-2026 entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "festivales-eventos-lisboa-2026 entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-vs-porto entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "monumentos-de-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "semana-santa-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "alfama-historia-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "gastronomia-portuguesa-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "fado-historia-origen entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "belem-barrio-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "chiado-bairro-alto-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "mouraria-barrio-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "vinos-portugueses-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "tram-28-historia-guia entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "bacalhau-plato-portugal entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "arquitectura-manuelina-lisboa entire object preserved",
+      "pass": true
+    },
+    {
+      "name": "FAQ URL set preserved",
+      "pass": true
+    },
+    {
+      "name": "palacio-da-pena-entradas FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "lisboa-en-navidad FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "obidos-vila-natal FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "nochevieja-lisboa FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "monasterio-jeronimos-entradas FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "tarjeta-navegante-lisboa FAQ scope",
+      "pass": true
+    },
+    {
+      "name": "No product added or removed",
+      "pass": true
+    },
+    {
+      "name": "oceanario booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "oceanario description scope",
+      "pass": true
+    },
+    {
+      "name": "castelo-sao-jorge booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "castelo-sao-jorge description scope",
+      "pass": true
+    },
+    {
+      "name": "sintra-palacio-pena booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "sintra-palacio-pena description scope",
+      "pass": true
+    },
+    {
+      "name": "pena-tiqets booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "pena-tiqets description scope",
+      "pass": true
+    },
+    {
+      "name": "obidos-fatima-excursion booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "obidos-fatima-excursion description scope",
+      "pass": true
+    },
+    {
+      "name": "nochevieja-velero booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "nochevieja-velero description scope",
+      "pass": true
+    },
+    {
+      "name": "torre-belem booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "torre-belem description scope",
+      "pass": true
+    },
+    {
+      "name": "jeronimos booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "jeronimos description scope",
+      "pass": true
+    },
+    {
+      "name": "jeronimos-torre-belem booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "jeronimos-torre-belem description scope",
+      "pass": true
+    },
+    {
+      "name": "palacio-ajuda booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "palacio-ajuda description scope",
+      "pass": true
+    },
+    {
+      "name": "tesouro-real booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "tesouro-real description scope",
+      "pass": true
+    },
+    {
+      "name": "lisboa-card booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "lisboa-card description scope",
+      "pass": true
+    },
+    {
+      "name": "crucero-tajo booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "crucero-tajo description scope",
+      "pass": true
+    },
+    {
+      "name": "fado booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "fado description scope",
+      "pass": true
+    },
+    {
+      "name": "tour-gastronomico booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "tour-gastronomico description scope",
+      "pass": true
+    },
+    {
+      "name": "tranvia-colinas booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "tranvia-colinas description scope",
+      "pass": true
+    },
+    {
+      "name": "castelo-mouros booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "castelo-mouros description scope",
+      "pass": true
+    },
+    {
+      "name": "palacio-nacional-sintra booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "palacio-nacional-sintra description scope",
+      "pass": true
+    },
+    {
+      "name": "sintra-completa booking destinations IDs campaigns images and conditions preserved",
+      "pass": true
+    },
+    {
+      "name": "sintra-completa description scope",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "checks": 199,
+    "failures": []
+  }
+}

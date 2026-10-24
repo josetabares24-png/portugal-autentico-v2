@@ -1,5 +1,23 @@
 # Decision log
 
+## D-075 — Pulir la edición inglesa existente
+**Date:** 2026-10-24
+**Status:** candidato; revisión en Preview
+
+José pide «pule version ingles». Conservar las seisURLs y el diseño fotográfico de tours aprobado enD072. Mejorar lectura con la fuente española ya cargada, un único índice responsive, recorte móvil de portada y siete sustituciones inglesas sin cambiar hechos, títulosSEO, fuentes o fechas factuales. No ampliar catálogo/idiomas, tocar español, cambiar campañas o iniciar otra migración. Baseline2e88526; mismoPR118, commits separados y memoria. [Contrato y QA](../docs/english-refinement.md). L003 mantiene revisión visual antes de merge; ninguna nueva autorización de producción.
+
+## D-074 — Priorizar móvil, Entradas, SEO medido y correcciones concretas
+**Date:** 2026-10-24
+**Status:** candidato verificado en Preview; revisión visual antes de publicar
+
+José ordena hacer primero4/5/6/7. Conservar diseño, catálogo16 y enlaces/campañas; acercar cinco guías y precisar tres productos. Reproducir/corregir Escape del menú inglés con QA en dimensiones reales. Resolver solo hechos comprobados de las URLsREVIEW y la nueva información oficial2026 de Óbidos, sin cambiar títulos protegidos ni inventar visitas; actualizar únicamente la referencia afectada de Navidad. Mantener las dosfusionesWAIT y el resto de dudas delimitadas. Métricas nuevas bloqueadas: no ajustar cuentas/plan ni usar ceros. José autoriza crear el enlace temporal compartible de la Preview118 tras explicarle acceso por posesión/expiración; no es autorización de producción. [Contrato y fuentes](../docs/entries-mobile-editorial-polish.md). No autorización de merge, producción o reparación de Brevo/Clerk dentro de este lote.
+
+## D-073 — Publicación inglesa autorizada con incidencia privada aceptada
+**Date:** 2026-10-24
+**Status:** LIVE
+
+José elige expresamente «Publicar y reparar Clerk después» para PR116/headf53ba4b por merge normal. Mergeffe27e6 y despliegue dpl_5kX4uJor2dbtbBEU6JZRv4J3YF8U READY/production con alias públicos verificados. Seis checks antes de fusionar; QA posterior inglés222/preservación1.659/migración1.490/Free tours66 correctos. Se acepta temporalmente el500 previo del panel por clave privada ausente, sin debilitar autenticación; no equivale a login validado. D0E01924/10; no expansión masiva ni efecto SEO/ventas atribuido. Siguiente propuesta limitada: pulir elección de entradas con guías e inclusiones comprobadas. [Registro](../docs/english-pilot-production.md).
+
 ## D-069 — Piloto inglés de seis URLs bajo /en/
 **Date:** 2026-10-22
 **Status:** desarrollo autorizado; Preview/revisión pendientes, sin publicación inglesa

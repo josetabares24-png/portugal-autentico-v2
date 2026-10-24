@@ -415,7 +415,7 @@ export const activities: Activity[] = [
     image: '/images/actividades/oceanario-de-lisboa.webp',
     imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
     description: 'Acuario en Parque das Nações con precios variables según la franja horaria y una visita media de 1,5 a 2 horas.',
-    savingTip: 'La web oficial anuncia un 5 % de descuento para compra online y precios distintos según la hora. Compara franjas antes de elegir.',
+    savingTip: 'Revisado el 24/10/2026: la web oficial anuncia un 10 % con el código ONLINE10 para su producto Visita ao Oceanário. Solo en su propia taquilla online, sujeto a disponibilidad y no acumulable. Compara el precio final; no es un descuento de Tiqets.',
     officialUrl: 'https://oceanario.pt/planear-visita/',
     lastVerified: '2026-09-23',
   },

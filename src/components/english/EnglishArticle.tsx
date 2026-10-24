@@ -14,6 +14,7 @@ import FreeTourLiveFinder from "@/components/free-tours/FreeTourLiveFinder";
 import EnglishBookingLink from "./EnglishBookingLink";
 import EnglishGuideLink from "./EnglishGuideLink";
 import EnglishTourSelection from "./EnglishTourSelection";
+import EnglishContents from "./EnglishContents";
 import { TourismBookingHero } from "@/components/booking/TourismBookingHero";
 
 type Article = (typeof articles)[number];
@@ -36,10 +37,10 @@ function EnglishEssentials({ article }: { article: Article }) {
           {article.essentials.map(([label, value]) => (
             <div
               key={label}
-              className="grid grid-cols-[minmax(100px,0.8fr)_1.5fr] gap-4 border-t border-border-soft py-3 text-sm leading-relaxed first:border-0"
+              className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 border-t border-border-soft py-3 text-sm leading-relaxed first:border-0"
             >
               <dt className="font-semibold">{label}</dt>
-              <dd>{value}</dd>
+              <dd className="min-w-0 break-words">{value}</dd>
             </div>
           ))}
         </dl>
@@ -148,7 +149,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
             />
           </header>
         ) : (
-          <header className="mx-auto max-w-6xl px-6 pb-8 pt-8 md:pt-12">
+          <header className="mx-auto max-w-6xl px-6 pb-8 pt-8 [font-family:var(--font-article)] md:pt-12">
             <nav
               aria-label="Breadcrumb"
               className="flex flex-wrap items-center gap-3 text-xs text-text-secondary"
@@ -266,7 +267,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
                   Choose your walk
                 </p>
                 <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-                  Five English walks, and who each one suits
+                  Choose your walking tour
                 </h2>
                 <EnglishTourSelection directoryUrl={toursUrl} />
               </div>
@@ -280,7 +281,12 @@ export default function EnglishArticle({ article }: { article: Article }) {
               : "mx-auto grid max-w-6xl gap-10 px-6 pb-12 lg:grid-cols-[minmax(0,740px)_1fr] lg:gap-16"
           }
         >
-          <div className="min-w-0">
+          {!isTours ? (
+            <aside className="min-w-0 lg:col-start-2 lg:row-start-1">
+              <EnglishContents sections={article.sections} />
+            </aside>
+          ) : null}
+          <div className="min-w-0 [font-family:var(--font-article)] lg:col-start-1 lg:row-start-1">
             {isTours ? (
               <p className="mb-5 font-body text-xs leading-relaxed text-text-secondary">
                 By{" "}
@@ -423,24 +429,6 @@ export default function EnglishArticle({ article }: { article: Article }) {
               </p>
             </details>
           </div>
-          {!isTours ? (
-            <aside className="hidden lg:block">
-              <nav aria-label="On this page" className="sticky top-24">
-                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-text-secondary">
-                  On this page
-                </p>
-                {article.sections.map((s) => (
-                  <Link
-                    key={s.id}
-                    href={"#" + s.id}
-                    className="block border-t border-border-soft py-3 text-sm leading-relaxed hover:text-terracotta"
-                  >
-                    {s.title}
-                  </Link>
-                ))}
-              </nav>
-            </aside>
-          ) : null}
         </div>
       </article>
       <section className="mx-auto max-w-6xl border-t border-border-soft px-6 py-10">

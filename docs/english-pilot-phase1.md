@@ -1,3 +1,5 @@
+> Actualización 24/10/2026: PR116 publicado con autorización expresa y Clerk privado pendiente aceptado. [Registro de producción](english-pilot-production.md). Los estados de Preview y gates siguientes describen el historial anterior.
+
 # Piloto inglés en el mismo dominio
 
 ## Estado actualizado — 23 octubre 2026

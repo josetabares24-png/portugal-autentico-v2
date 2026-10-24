@@ -42,12 +42,21 @@ export default function EnglishNavigation() {
           <Link
             href={spanishPath}
             lang="es"
+            hrefLang="es"
             className="inline-flex min-h-11 items-center border-l border-border-soft pl-5 text-xs font-bold"
           >
             Español
           </Link>
         </div>
-        <details className="relative xl:hidden">
+        <details
+          className="relative xl:hidden"
+          onKeyDown={(event) => {
+            if (event.key !== "Escape" || !event.currentTarget.open) return;
+            event.preventDefault();
+            event.currentTarget.open = false;
+            event.currentTarget.querySelector("summary")?.focus();
+          }}
+        >
           <summary className="flex min-h-11 cursor-pointer items-center rounded border border-border-soft px-3 text-sm font-semibold">
             Menu
           </summary>
@@ -73,6 +82,7 @@ export default function EnglishNavigation() {
             <Link
               href={spanishPath}
               lang="es"
+              hrefLang="es"
               className="flex min-h-11 items-center px-3 text-sm"
             >
               Español
