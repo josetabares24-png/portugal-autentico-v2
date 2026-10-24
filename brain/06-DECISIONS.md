@@ -1,5 +1,18 @@
 # Decision log
 
+## D-069 — Piloto inglés de seis URLs bajo /en/
+**Date:** 2026-10-22
+**Status:** desarrollo autorizado; Preview/revisión pendientes, sin publicación inglesa
+
+José acepta mismo dominio tras comparar dominio independiente y pide empezar. Portada + aeropuerto + Metro + tres días + Pena + Free tours; equivalencias explícitas en manifiesto. Conservar español, root layouts estáticos por idioma, seis hreflang recíprocos y reservas con idioma real. No activar automáticamente todas las páginas en next-intl ni redirigir porIP. Factores comerciales/país no se convierten en demanda inglesa medida; fuentes actuales bloqueadas. No promover servicio personal en inglés sin confirmar atención. [Contrato, fuentes, arquitectura y QA](../docs/english-pilot-phase1.md). L003 exige mostrar el resultado antes de producción.
+
+## D-068 — Publicación comercial PR115 autorizada y verificada
+**Date:** 2026-10-22
+**Status:** LIVE
+
+Autorización estructurada de José: publicar PR115/head68898f2 y empezar inglés. Merge4be9054, Vercel dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY/production. Cinco checks y cero hilos sin resolver antes del merge; QA editorial1.659/72, migración1.426 y Free tours66 después. D067 ya está publicado; conservar campañas/ref y comenzar E018 en ese D0. Esta aprobación no se extiende a PR114 ni al piloto inglés. [Evidencia](../docs/english-pilot-phase1.md#cierre-comercial-pr115).
+
+
 ## D-067 — Reservas existentes donde se decide, piloto de tres páginas
 **Date:** 2026-10-22
 **Status:** candidato verificado en Preview48b778d, PR115; revisión visual pendiente, sin publicación
@@ -906,3 +919,21 @@ Reglas:
 **Status:** accepted
 
 Retirar los formularios de suscripción del índice del blog y de todos los artículos de Estaba en Lisboa. Dejar de aceptar altas nuevas en `/api/subscribe`; conservar la ruta `/unsubscribe` para quienes se registraron antes y no borrar datos ni configurar envíos a suscriptores existentes. Conservar el PDF ya publicado para no romper enlaces históricos. No tocar contenido editorial, SEO, reservas ni afiliados. Solo reactivar la newsletter con nueva instrucción explícita del usuario.
+
+
+### Cierre D069 — Preview inglés, no producción
+
+PR116 borrador; aplicación4bffd9c, seis versiones explícitas y equivalencias reales, no traducción masiva. QA SEO/editorial y disponibilidad real pasan; aprobación visual/editorial sigue pendiente. Incidencia externa previa de Clerk confirmada en producción y Preview: Missing secretKey. No se presenta autenticación como operativa ni se la elimina. Resolver configuración y repetir QA privada antes de publicar layouts. Pena aún abre checkout español, divulgado. Informe: docs/english-pilot-phase1.md.
+
+
+## D-070 — Pulido del piloto inglés y reserva en el idioma del lector, 23/10/2026
+
+**Autorizado para Preview; sin autorización de producción.** José pide una presentación cuidada y facilitar entradas/tours. Mantener seis URLs y marca; respuesta antes de imagen, accesos claros y contextualidad comercial. Pena usa una correspondencia verificada del mismo p1120392 en inglés, conservando partner/parámetros y campaña propia. No traducción genérica de URLs ni nuevos productos. Un CTA de Pena tras comparar, sin precio inventado o promesa de cancelación. Home e itinerario conducen a las guías existentes. Medir los cuatro accesos instrumentados como un subconjunto; no son ventas ni todos los accesos. No cambios al español, sitemap, redirects o protección privada. [Informe](../docs/english-pilot-polish.md).
+
+## D-071 — Cinco recorridos ingleses concretos, 23/10/2026
+
+José pide poner tours en inglés y revisar mejoras. **Preview únicamente, PR116.** Sustituir las cinco categorías inglesas genéricas por cinco recorridos verificados: introducción30696, Alfama7501, Belém35074, historia negra68040 y miradores53664. No forzar equivalentes ficticios de misterios/nocturno. Una comparación compacta explica para quién y limitación de cada uno. El buscador consulta esos cinco y muestra hasta tres con horario inglés confirmado; conserva fecha/ref del proveedor. Sin ratings estáticos ni nuevas URLs. Al editar fecha, retirar resultados anteriores para evitar reservar otro día. Selección española conservada. No activar D0 ni atribuir ingresos sin datos. [Contrato y QA](../docs/english-tours-selection.md).
+
+## D-072 — Igualar tours ingleses con la estética española, 23/10/2026
+
+**Preferencia explícita de José, Preview sin publicación.** La lista desplegable inglesa se percibe como otra web; sustituir esa presentación por la misma cabecera fotográfica compartida y tarjetas con foto, proporción, tipografía, colores, anchos y botones de `/free-tours-lisboa`. Esta decisión supera solo la presentación de D071: conservar los cinco productos ingleses verificados, fechas, referido y comportamiento funcional. Cinco tarjetas más acceso general, sin inventar misterios/nocturno en inglés. H1 visible más corto en la hero; SEO title y rutas preservados. Español intacto. [Detalle y QA](../docs/english-tours-visual-alignment.md).

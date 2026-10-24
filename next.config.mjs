@@ -139,9 +139,9 @@ const nextConfig = {
       { source: '/en/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       { source: '/ko/blog/mejores-pasteles-nata-lisboa', destination: '/blog/pasteles-de-belem', permanent: true },
       // Redirecciones de versiones en/ko a español (sitio monoidioma)
-      { source: '/en', destination: '/', permanent: true },
+      // /en is the explicitly approved English pilot; other legacy aliases remain.
       { source: '/ko', destination: '/', permanent: true },
-      { source: '/en/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
+      { source: '/en/:path((?!lisbon-airport-to-city-centre$|lisbon-metro-guide$|lisbon-3-day-itinerary$|pena-palace-tickets$|lisbon-free-walking-tours$|presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
       { source: '/ko/:path((?!presupuesto$|transporte$|tours$|guia-practica$|blog/tarjeta-lisboa-card-vale-pena$).*)', destination: '/:path', permanent: true },
     ];
 

@@ -1,0 +1,16 @@
+{
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "observedMain": {
+    "height": 1000,
+    "width": 1440
+  },
+  "observedNewTab": {
+    "height": 720,
+    "width": 1280
+  },
+  "mobileVerified": false,
+  "reason": "The documented browser viewport override returned successfully but did not change the observed dimensions."
+}

@@ -1,3 +1,5 @@
+import DocumentShell from '@/components/DocumentShell';
+import { spanishSiteMetadata } from '@/lib/spanish-site-metadata';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -9,6 +11,8 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import Stay22Script from '@/components/afiliados/Stay22Script';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import messages from '@/messages/es.json';
+
+export const metadata = spanishSiteMetadata;
 
 type Props = {
   children: React.ReactNode;
@@ -31,6 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
+    <DocumentShell>
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ErrorBoundary>
         <Navbar />
@@ -41,5 +46,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Stay22Script />
       </ErrorBoundary>
     </NextIntlClientProvider>
+    </DocumentShell>
   );
 }

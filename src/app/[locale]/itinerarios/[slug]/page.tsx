@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/language-alternates';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://estabaenlisboa.com/itinerarios/${slug}`,
       images: [{ url: pack.image.startsWith('http') ? pack.image : `https://estabaenlisboa.com${pack.image}`, width: 1200, height: 630, alt: pack.title }],
     },
-    alternates: { canonical: `https://estabaenlisboa.com/itinerarios/${slug}` },
+    alternates: { canonical: `https://estabaenlisboa.com/itinerarios/${slug}`, languages: languageAlternates(`/itinerarios/${slug}`) },
   };
 }
 

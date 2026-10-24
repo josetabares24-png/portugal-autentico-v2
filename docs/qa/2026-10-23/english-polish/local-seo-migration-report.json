@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "checks": 1490,
+    "failures": 0,
+    "sitemapUrls": 104,
+    "pages": 112,
+    "uniqueInternalLinks": 119,
+    "redirects": 16
+  },
+  "source": "../audit-evidence/english-polish-2026-10-23/local/seo-migration-report.json",
+  "baseUrl": "http://127.0.0.1:5230"
+}

@@ -1,0 +1,9 @@
+{
+  "base": "http://127.0.0.1:5223",
+  "summary": {
+    "pages": 6,
+    "checks": 149,
+    "failures": []
+  },
+  "source_file": "../audit-evidence/english-pilot-2026-10-22/local/english-pilot-report.json"
+}

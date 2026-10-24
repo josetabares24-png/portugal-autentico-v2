@@ -1,4 +1,31 @@
+## 23 octubre 2026 — Tours ingleses alineados al diseño español, Preview verificada
+
+D072: José pide igualar estética con español. Cabecera compartida TourismBookingHero, cinco tarjetas con fotografías y acceso general; mismos estilos/grid/botones y navegación visual. Productos ingleses, referido, calendario y contenido práctico conservados; el H1 visible se acorta sin cambiar SEO title/URL. Aplicación76c37d6 / Preview64t3nxhtl READY, seis CI correctos. Build143, TypeScript/lint sin errores; inglés222 y preservación1659/72 local/remota, Free tours66 local y migración1490 local/1386 remota correctos. Estilos computados y fotos comparados con español en escritorio. Tres tours/siete horarios ingleses reales27/10; fecha/ref correctos y cambio de fecha retira resultados. Móvil no certificado por control de viewport no aplicado. PR116 sigue borrador y producción4be9054. [Informe y capturas](../docs/english-tours-visual-alignment.md).
+
+## 23 octubre 2026 — Pulido inglés y reservas, Preview verificada
+
+José pide mejorar estética y facilitar entradas/tours. Aplicación `8d3ff35`, [PR116](https://github.com/josetabares24-png/portugal-autentico-v2/pull/116) borrador: respuestas antes de foto, dos accesos de Home a visitas reales, bloques más compactos, navegación ES conserva artículo. Pena enlaza al mismo producto p1120392 en inglés con partner conservado, comprobado también en navegador. No nuevas URLs ni cambios en español.
+
+QA: build/TypeScript/lint sin errores (un warning previo), inglés208 local/remoto, preservación1.659/72, migración1.490 local/1.386 remota, técnico1.190 local, Free tours66 local;24vistas por entorno sin overflow. GuruWalk real27/10: tres tours por idioma; nueve slots ingleses/ocho españoles, fecha/ref conservados en botones. Los eventos nuevos solo miden dos accesos de Home y dos del itinerario; reservas/comisiones siguen DESCONOCIDAS. [Informe y capturas](../docs/english-pilot-polish.md).
+
+Estado: Preview de aplicación READY y seis checks correctos. Inglés NO publicado. Producción sigue PR115/4be9054 según la última verificación; falta revisión del nuevo candidato y resolver la configuración Clerk privada ya documentada.
+
+## 22 octubre 2026 — Piloto inglés en Preview; gate visual pendiente
+
+HECHO: [PR116 borrador](https://github.com/josetabares24-png/portugal-autentico-v2/pull/116), aplicación `4bffd9c`, seis páginas /en, Preview READY. Inglés149, preservación española1659/72, técnico1190, migración1386 remota, Free tours66 pasan. GuruWalk real27/10: tres tours/nueve horarios por idioma, referido conservado y caché inglesa diferenciada. 24 vistas responsive remotas sin overflow. [Informe y límites](../docs/english-pilot-phase1.md).
+
+RIESGO PREVIO CONFIRMADO: admin/API admin500 en producción y Preview; logs de ambos indican Clerk Missing secretKey. No se desactiva protección; autenticación pendiente de configuración externa y QA autorizado. Producción continúa4be9054/PR115. Inglés no publicado ni aprobado visualmente.
+
 # Current state
+
+## 23 octubre 2026 — Cinco tours ingleses listos en Preview
+
+PR116 sigue en borrador y Preview. D-071 incorpora cinco recorridos ingleses concretos y disponibilidad de esa selección; corrige resultados de fecha anterior al editar el calendario. Aplicación37be060, Preview READY bogpw9m6w y seis CI correctos. QA remota221 inglés/66 free tours/1386 migración/1659 preservación española; build y tests pasan. GuruWalk27/10 devuelve3 recorridos/7 horarios ingleses con fecha/ref correctos. Escritorio revisado; móvil pendiente porque el override del navegador no cambió las dimensiones reales, sin certificarlo ni reutilizar recuentos anteriores. Producción4be9054; piloto inglés sin D0. [Informe](../docs/english-tours-selection.md).
+
+## 22 octubre 2026 — PR115 publicado; piloto inglés en desarrollo
+
+José autoriza explícitamente publicar PR115/head68898f2 por merge normal y empezar inglés. Merge4be9054 a18:08:47UTC, Vercel dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY/production con alias públicos. QA posterior editorial1.659/72, migración1.426 y Free tours66 sin fallos. E018 inicia observación; no efecto medido todavía. D068/D069: piloto de seis URLs bajo /en/ en rama separada, sin publicación inglesa autorizada. Baseline español posterior a115 capturado. Build143 inicial; conservación editorial1.659 y técnico1.190/119 correctos. QA final/Preview pendientes. [Informe](../docs/english-pilot-phase1.md). No dominio aparte, slugs españoles movidos o traducción masiva; claves de chat no usadas.
+
 
 ## 22 octubre 2026 — Candidato de entradas y Free tours, sin publicar
 

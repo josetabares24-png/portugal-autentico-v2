@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/language-alternates';
 import Link from 'next/link';
 import { ItineraryHero } from '@/components/itinerarios/ItineraryHero';
 import { ItineraryDayOverview } from '@/components/itinerarios/ItineraryDayOverview';
@@ -84,7 +85,7 @@ export const metadata = {
     description: DESCRIPCION,
     images: [OG_IMAGE],
   },
-  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium' },
+  alternates: { canonical: 'https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium', languages: languageAlternates('/itinerarios/lisboa-3-dias-premium') },
 };
 
 const SLUG = 'lisboa-3-dias-premium';

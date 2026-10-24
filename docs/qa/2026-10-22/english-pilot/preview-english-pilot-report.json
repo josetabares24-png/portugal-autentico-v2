@@ -1,0 +1,9 @@
+{
+  "base": "https://portugal-autentico-v2-i58rr0sw5-estabaenlisboa.vercel.app",
+  "summary": {
+    "pages": 6,
+    "checks": 149,
+    "failures": []
+  },
+  "source_file": "../audit-evidence/english-pilot-2026-10-22/preview/english-pilot-report.json"
+}

@@ -1,0 +1,27 @@
+{
+  "head": "76c37d69b519cfca737954fed46537cbe1f85821",
+  "state": "blocked",
+  "actions": [
+    {
+      "reason": "pull request is draft",
+      "type": "blocked"
+    }
+  ],
+  "checks": {
+    "fail": [],
+    "malformed": [],
+    "pass": [
+      "Vercel Preview Comments",
+      "GitGuardian Security Checks",
+      "seo-smoke",
+      "typecheck",
+      "Vercel \u2013 portugal-autentico-v2",
+      "Vercel \u2013 portugal-autentico-v2-prod-merge-phase2"
+    ],
+    "pending": [],
+    "skipping": [],
+    "total": 6,
+    "unknown": []
+  },
+  "unresolvedThreads": 0
+}

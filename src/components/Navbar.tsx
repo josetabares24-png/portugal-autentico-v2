@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/Icon';
+import { englishCounterpart } from '@/lib/language-alternates';
 import { editorialNavigation, lisboaNavigation } from '@/data/editorial-navigation';
 
 export default function Navbar() {
@@ -16,6 +17,7 @@ export default function Navbar() {
   const pathname = usePathname();
   // next-intl's internal /es prefix is absent from public URLs.
   const publicPathname = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
+  const englishHref = englishCounterpart(publicPathname);
   const isActive = (href: string) => !href.includes('#') &&
     (publicPathname === href || publicPathname.startsWith(`${href}/`));
 
@@ -57,6 +59,7 @@ export default function Navbar() {
               </div>
             </div>
             {editorialNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-desktop rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">{link.label}</Link>)}
+            {englishHref ? <a href={englishHref} hrefLang="en" lang="en" className="inline-flex min-h-11 items-center border-l border-border-soft pl-4 text-xs font-bold text-night" aria-label="Read this page in English">EN</a> : null}
           </div>
           <button ref={mobileButton} type="button" onClick={() => { setMobileMenuOpen((open) => !open); setLisboaOpen(false); }} className="flex min-h-11 min-w-11 items-center justify-center rounded-md text-night hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta xl:hidden" aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'} aria-controls="editorial-mobile-links" aria-expanded={mobileMenuOpen}>
             <Icon name={mobileMenuOpen ? 'close' : 'menu'} size={28} aria-hidden="true" />
@@ -69,6 +72,7 @@ export default function Navbar() {
           </details>
           {editorialNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-mobile focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">{link.label}</Link>)}
           <div className="mt-2 flex flex-wrap gap-x-5 border-t border-border-soft pt-2 text-sm text-text-secondary">
+            {englishHref ? <a href={englishHref} hrefLang="en" lang="en" className="inline-flex min-h-11 items-center underline underline-offset-4">Read this page in English</a> : null}
             <Link href="/blog#catalogo" onClick={closeMenus} className="inline-flex min-h-11 items-center underline underline-offset-4">Todas las guías</Link>
           </div>
         </div>

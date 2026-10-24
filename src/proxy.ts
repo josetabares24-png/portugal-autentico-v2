@@ -38,6 +38,11 @@ export default async function proxy(req: NextRequest, event: NextFetchEvent) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
+  // English pilot has its own root layout. Do not rewrite it into Spanish.
+  if (req.nextUrl.pathname === '/en' || req.nextUrl.pathname.startsWith('/en/')) {
+    return NextResponse.next();
+  }
+
   if (isClerkRoute(req)) {
     return clerkOnlyMiddleware(req, event);
   }

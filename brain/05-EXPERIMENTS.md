@@ -1,5 +1,13 @@
 # Experiments
 
+### 23 octubre — D072, estética inglesa igualada al español
+
+Preferencia explícita de José: usar cabecera compartida y tarjetas fotográficas españolas, conservando los cinco productos ingleses de D071. Preview76c37d6 verificada; estilos comparados en escritorio y reservas por fecha/ref comprobadas. Móvil pendiente, no certificarlo. E019 continúa sin D0; seis CI correctos no demuestran ingresos ni autorizan producción. [Contrato](../docs/english-tours-visual-alignment.md).
+
+### 23 octubre — D071, selección inglesa de cinco recorridos
+
+E019 sigue sin D0. PR116 en Preview ofrece cinco recorridos concretos, consulta hasta cinco disponibilidades y muestra hasta tres confirmadas; edición de fecha retira resultados anteriores. QA prueba utilidad técnica, no ventas. No declarar mejora de conversión ni expansión del piloto hasta publicación aprobada y reservas reconciliadas. Escritorio observado; móvil pendiente por fallo del control de viewport, documentado en docs/english-tours-selection.md.
+
 This is the active learning register.
 
 ## Status vocabulary
@@ -240,3 +248,16 @@ Baseline, candidate details, limits, validation and measurement plan: [[ux/HOME-
 **Status: CANDIDATO, D0 no iniciado.** D-067, rama `commercial-booking-paths`. Tres páginas explícitas: Pena/Jerónimos/Alfama; una oferta existente tras responder, otra final. Buscador agrupa solo URLs idénticas sin perder fechas/ref. Baseline de HTML/layout guardado; baseline de conversiones no disponible (Windsor bloqueado, partner dashboards desconocidos). No evaluar contra ceros de sustitución. Si se publica con aprobación, registrar D0/SHA y comparar14/28 días, por página/proveedor/dispositivo; bajo volumen → inconcluso. No atribuir variaciones orgánicas a placement. [Contrato y límites](../docs/commercial-booking-audit-2026-10-22.md).
 
 Cierre E-018: Preview48b778d READY/PR115, cinco checks correctos y QA remota sin fallos; tres resultados reales conservan referido y fecha. Producción5d3573d intacta, D0 no iniciado. Capturas y contratos en el informe comercial.
+
+
+Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head68898f2. Producción4be9054 / dpl_aftEFD6LdCAJ44UviPvs1Aa27sUx READY. Iniciar lectura posterior desde este D0; reservas siguen desconocidas y Windsor bloqueado, no cero.
+
+## E-019 — Piloto inglés, 22/10/2026
+
+**Status: DESARROLLO AUTORIZADO; D0 no iniciado.** Seis páginas bajo/en/, sin nueva marca o dominio. Baseline español de72superficies posterior aPR115. [Contrato](../docs/english-pilot-phase1.md), D069. No demanda inglesa cuantificada: GSC/Windsor bloqueados. Medir rastreo/indexación30d, consultas/clics60d y reservas verificadas90d solo después de aprobación y despliegue; muestra escasa=>inconcluso. Mantener URLs españolas y definir cada equivalencia explícitamente.
+
+
+**E019 — Preview verificada:** PR116/app4bffd9c. Inglés149, preservación1659/72, técnico1190 y tours reales por idioma pasan. D0 sigue SIN EMPEZAR; no hay efecto SEO o ventas atribuible al inglés. Gate visual/editorial y configuración privada pendientes. [Evidencia](../docs/english-pilot-phase1.md).
+
+
+**E019 — Actualización23/10/2026:** D-070, aplicación8d3ff35 pulida en Preview, inglés208/preservación1.659 y24vistas remotas sin fallos. Pena abre ficha inglesa; GuruWalk conserva idioma/fecha/ref. booking_guide_click cubre solo dos accesos de Home y dos del itinerario; affiliate_click sigue como paso posterior. D0 inglés SIN INICIAR; las ventas siguen desconocidas. No atribuir efecto al diseño sin datos posteriores y costes de mantenimiento. [Contrato](../docs/english-pilot-polish.md).

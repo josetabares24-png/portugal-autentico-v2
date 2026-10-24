@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Settings2 } from 'lucide-react';
 
-export default function CookieBanner() {
+export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'en' }) {
+  const english = language === 'en';
   const [show, setShow] = useState(false);
   const [consent, setConsent] = useState<string | null>(null);
   const [explicitConsent, setExplicitConsent] = useState(false);
@@ -54,7 +55,7 @@ export default function CookieBanner() {
   const closeBanner = () => setShow(false);
   const openPreferences = () => setShow(true);
 
-  if (!show && consent !== 'rejected') return null;
+  if (!show && !explicitConsent) return null;
 
   return (
     <>
@@ -64,7 +65,7 @@ export default function CookieBanner() {
             <button
               onClick={closeBanner}
               className="absolute right-1.5 top-1.5 flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main"
-              aria-label="Cerrar banner de cookies"
+              aria-label={english ? 'Close cookie banner' : 'Cerrar banner de cookies'}
             >
               ✕
             </button>
@@ -75,13 +76,13 @@ export default function CookieBanner() {
                   Cookies
                 </h3>
                 <p className="text-[10px] leading-[1.35] text-text-secondary sm:text-[11px] sm:leading-snug">
-                  Usamos cookies para medir el tráfico y mejorar la web. Puedes aceptar, rechazar o leer la{' '}
+                  {english ? 'We use cookies to measure traffic and improve the site. You can accept, reject or read our' : 'Usamos cookies para medir el tráfico y mejorar la web. Puedes aceptar, rechazar o leer la'}{' '}
                   <Link href="/politica-cookies" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    Política de Cookies
+                    {english ? 'Cookie policy (Spanish)' : 'Política de Cookies'}
                   </Link>
-                  {' '}y la{' '}
+                  {' '}{english ? 'and' : 'y la'}{' '}
                   <Link href="/politica-privacidad" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    Privacidad
+                    {english ? 'Privacy policy (Spanish)' : 'Privacidad'}
                   </Link>.
                 </p>
               </div>
@@ -90,16 +91,16 @@ export default function CookieBanner() {
                 <button
                   onClick={rejectCookies}
                   className="min-h-11 rounded-md border border-border-soft px-3 py-1.5 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
-                  aria-label="Rechazar cookies"
+                  aria-label={english ? 'Reject cookies' : 'Rechazar cookies'}
                 >
-                  Rechazar
+                  {english ? 'Reject' : 'Rechazar'}
                 </button>
                 <button
                   onClick={acceptCookies}
                   className="min-h-11 rounded-md bg-terracotta px-3 py-1.5 font-body text-xs font-semibold text-white transition-colors hover:bg-primary-dark"
-                  aria-label="Aceptar cookies"
+                  aria-label={english ? 'Accept cookies' : 'Aceptar cookies'}
                 >
-                  Aceptar
+                  {english ? 'Accept' : 'Aceptar'}
                 </button>
               </div>
             </div>
@@ -107,12 +108,12 @@ export default function CookieBanner() {
         </div>
       )}
 
-      {!show && consent === 'rejected' && explicitConsent && (
+      {!show && consent !== null && explicitConsent && (
         <button
           onClick={openPreferences}
           className="fixed bottom-3 left-3 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border-soft bg-background-light text-terracotta shadow-soft transition-colors hover:border-terracotta hover:bg-white"
-          aria-label="Cambiar preferencias de cookies"
-          title="Cambiar preferencias de cookies"
+          aria-label={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
+          title={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
         >
           <Settings2 size={17} strokeWidth={1.8} aria-hidden="true" />
         </button>

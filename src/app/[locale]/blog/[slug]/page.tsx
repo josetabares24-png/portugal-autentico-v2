@@ -1,3 +1,4 @@
+import { languageAlternates } from '@/lib/language-alternates';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
@@ -5724,6 +5725,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ...(publicado ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `${SITE_URL}/blog/${slug}`,
+      languages: languageAlternates(`/blog/${slug}`),
     },
     openGraph: {
       type: 'article',
