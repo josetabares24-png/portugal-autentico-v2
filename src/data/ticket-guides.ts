@@ -11,8 +11,8 @@
  * comprobados el 10/10/2026. No hay frase personal de José sobre el castillo:
  * nada en primera persona.
  *
- * Avisos con fecha: la huelga del 17/10/2026 y el museo cerrado por obras.
- * Quitar el de la huelga después del 17 de octubre y revisar el del museo.
+ * Revisión parcial 24/10/2026: aviso de huelga vencido retirado; el cierre
+ * temporal del museo sigue publicado en la página oficial de horarios.
  */
 import type { Article, ArticleFaq } from '@/components/blog/article-types';
 import type { BlogBookingPlacement } from '@/data/blog-booking-placements';
@@ -41,8 +41,8 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
       categoria: 'Entradas',
       fecha: '10 Oct 2026',
-      fechaActualizacion: 'Verificado el 10 de octubre de 2026',
-      dateModified: '2026-10-10',
+      fechaActualizacion: 'Aviso del museo revisado el 24 de octubre de 2026',
+      dateModified: '2026-10-24',
       minutos: 7,
       links: [
         { href: '/blog/alfama-historia-guia', label: 'Qué ver en Alfama' },
@@ -81,7 +81,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'aviso',
           texto:
-            'Avisos de octubre de 2026: el museo del castillo está cerrado temporalmente por obras en los aseos. Y para el 17 de octubre hay convocada una huelga que puede afectar a la visita; si vas ese día, mira la web del castillo antes de salir.',
+            'Aviso revisado el 24 de octubre de 2026: el museo del castillo sigue cerrado temporalmente por obras en los aseos, según la página oficial de horarios. El resto del recinto tiene sus propios horarios; compruébalos antes de ir.',
         },
 
         { tipo: 'subtitulo', texto: 'Precios 2026' },
