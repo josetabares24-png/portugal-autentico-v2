@@ -1,0 +1,2369 @@
+{
+  "date": "2026-10-24T20:49:41.492Z",
+  "baseline": "https://estabaenlisboa.com",
+  "candidate": "https://portugal-autentico-v2-nmkxl70h0-estabaenlisboa.vercel.app",
+  "scope": [
+    "/blog/barrios-imprescindibles",
+    "/blog/donde-tomar-cafe-lisboa",
+    "/blog/terremoto-lisboa-1755",
+    "/blog/descubrimientos-portugueses-lisboa",
+    "/blog/azulejos-portugueses-historia",
+    "/blog/obidos-vila-natal",
+    "/blog/lisboa-en-navidad",
+    "/actividades/castelo-sao-jorge"
+  ],
+  "methodology": "All 64 unaffected captures remain fully exact. Eight scoped captures are transformed from the baseline only through explicit source-derived reviewed blocks, descriptions, bylines, FAQ answers, schema dates and exact source lists. Full protected text, table cells and all remaining fields must equal the candidate; metadata is an exact multiset to tolerate tag emission order.",
+  "checks": [
+    {
+      "name": "Both snapshots contain exactly the same 72 paths",
+      "pass": true
+    },
+    {
+      "name": "/blog/aeropuerto-lisboa-al-centro entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/alfama-historia-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/arquitectura-manuelina-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          14
+        ],
+        "expected": [
+          14
+        ]
+      }
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia block 14 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          14
+        ]
+      }
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia block 14 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/azulejos-portugueses-historia exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/bacalhau-plato-portugal entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/baixa-lisboa-que-ver entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          4,
+          7,
+          10
+        ],
+        "expected": [
+          4,
+          7,
+          10
+        ]
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 4 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          14
+        ]
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 4 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 7 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          17
+        ]
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 7 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 10 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          22
+        ]
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles block 10 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/barrios-imprescindibles baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/barrios-imprescindibles exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/belem-barrio-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/chiado-bairro-alto-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/como-moverse-por-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/como-moverse-por-portugal entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/como-pagar-en-portugal entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0
+        ],
+        "expected": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa block 0 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          2
+        ]
+      }
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa block 0 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/descubrimientos-portugueses-lisboa exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-alojarse-en-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-comer-barato-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-escuchar-fado-autentico entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-fotografiar-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          9
+        ],
+        "expected": [
+          9
+        ]
+      }
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa block 9 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          9
+        ]
+      }
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa block 9 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/donde-tomar-cafe-lisboa exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/errores-turistas-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/estacion-olaias-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/estacion-oriente-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/evitar-turistadas-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/excursiones-desde-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/fado-historia-origen entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/festivales-eventos-lisboa-2026 entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/gastronomia-portuguesa-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/graca-lisboa-que-ver entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/historia-de-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-card-vale-la-pena entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-con-ninos entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-cuando-llueve entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-4-dias entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-5-dias entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-7-dias entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          22,
+          30
+        ],
+        "expected": [
+          22,
+          30
+        ]
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad block 22 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          42
+        ]
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad block 22 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad block 30 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          51
+        ]
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad block 30 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/lisboa-en-navidad baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-navidad exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-en-pareja entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/lisboa-vs-porto entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/mejor-epoca-visitar-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/mejores-apps-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/mejores-mercados-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/mejores-miradores-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/metro-lisboa-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/monasterio-jeronimos-entradas entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/monumentos-de-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/mouraria-barrio-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/nochevieja-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/novedades-lisboa-2026 entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          8,
+          33
+        ],
+        "expected": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          8,
+          33
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal description change has explicit scope",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal description unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal description unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 0 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          2
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 0 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 1 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 1 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 3 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          10
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 3 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 4 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          11
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 4 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 5 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          24
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 5 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 7 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          25
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 7 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 8 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          26
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 8 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 33 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          86
+        ]
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal block 33 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal FAQ questions preserved",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exactly reviewed FAQ answers",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal FAQ 0 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal FAQ 1 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal FAQ 4 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/obidos-vila-natal baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/obidos-vila-natal exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/palacio-da-pena-entradas entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/parque-das-nacoes-lisboa-que-ver entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/pasteles-de-belem entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/patinetes-electricos-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/playas-cerca-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/portugal-en-7-dias entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/presupuesto-viajar-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/que-comprar-lisboa-souvenirs entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/que-hacer-gratis-en-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/que-ver-cascais-desde-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/restaurantes-romanticos-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/semana-santa-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/sintra-desde-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/tarjeta-navegante-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact reviewed source block scope",
+      "pass": true,
+      "detail": {
+        "actual": [
+          1,
+          13,
+          20
+        ],
+        "expected": [
+          1,
+          13,
+          20
+        ]
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 description change has explicit scope",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 description unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 description unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 1 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 1 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 13 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          13
+        ]
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 13 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 20 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          18
+        ]
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 block 20 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/blog/terremoto-lisboa-1755 exact expected affiliateLinks",
+      "pass": true
+    },
+    {
+      "name": "/blog/time-out-market-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/tram-28-historia-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/vida-nocturna-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/vinos-portugueses-guia entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/blog/volta-portugal-devolucion-envases entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/que-ver-en-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/donde-comer-en-lisboa entire capture unchanged",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge one notice paragraph only",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge original byline is exact source",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge byline unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge block 2 unique original block sequence",
+      "pass": true,
+      "detail": {
+        "indices": [
+          11
+        ]
+      }
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge block 2 unique original text",
+      "pass": true,
+      "detail": {
+        "occurrences": 1
+      }
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge baseline sources equal original source data",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.title",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.metadata",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.canonical",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.schemas",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.headings",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.images",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.text",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.links",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected protected.blocks",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected restoredPlanningLinks",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected pilot",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected sources",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected toc",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected structure",
+      "pass": true
+    },
+    {
+      "name": "/actividades/castelo-sao-jorge exact expected affiliateLinks",
+      "pass": true
+    }
+  ],
+  "deltas": [
+    {
+      "url": "/blog/azulejos-portugueses-historia",
+      "changedSourceFields": [
+        "fechaActualizacion",
+        "dateModified",
+        "fuentes",
+        "contenido"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Cultura — 12 Mar 2026 — Actualizado en septiembre de 2026 — 13 min lectura — Por José Tabares",
+          "after": "Cultura — 12 Mar 2026 — Corrección parcial revisada el 24 de octubre de 2026 — 13 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 14,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "En las estaciones de metro de Lisboa, los azulejos del siglo XX son una galería de arte gratuita. La estación de Parque tiene murales de Maria Keil; Picoas tiene obras de Eduardo Nery; Olaias tiene una decoración total que convierte el andén en una obra de arte contemporáneo. Muchos lisboetas van específicamente a visitar las estaciones de metro por su valor artístico."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "El arte también forma parte de las estaciones del Metro. Picoas tiene intervenciones de Maria Keil y Martins Correia; Parque reúne obras de Maria Keil, Françoise Schein y Federica Matta. Olaias destaca por la integración de arquitectura y arte. Consulta las fichas del Metro para identificar a los autores de cada estación; para entrar en la zona de andenes necesitas un título de transporte válido."
+          }
+        },
+        {
+          "kind": "sources",
+          "before": [
+            {
+              "href": "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-do-azulejo",
+              "labels": [
+                "MMP — Museu Nacional do Azulejo (ficha oficial, estado: cerrado por obras)"
+              ]
+            },
+            {
+              "href": "https://www.museusemonumentos.pt/pt/noticia-com/museu-nacional-do-azulejo-e-museu-nacional-do-teatro-e-da-danca-encerram-para-obras-de-requalificacao",
+              "labels": [
+                "MMP — El Museu Nacional do Azulejo cierra por obras desde el 1/11/2025"
+              ]
+            },
+            {
+              "href": "https://www.carris.pt/viaje/carreiras/742/",
+              "labels": [
+                "CARRIS — línea 742 (parada Igreja Madre Deus)"
+              ]
+            },
+            {
+              "href": "https://www.visitlisboa.com/es/sitios/azulejos-de-lisboa",
+              "labels": [
+                "Visit Lisboa — Azulejos de Lisboa y advertencia sobre piezas antiguas"
+              ]
+            }
+          ],
+          "after": [
+            {
+              "href": "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-do-azulejo",
+              "labels": [
+                "MMP — Museu Nacional do Azulejo (ficha oficial, estado: cerrado por obras)"
+              ]
+            },
+            {
+              "href": "https://www.museusemonumentos.pt/pt/noticia-com/museu-nacional-do-azulejo-e-museu-nacional-do-teatro-e-da-danca-encerram-para-obras-de-requalificacao",
+              "labels": [
+                "MMP — El Museu Nacional do Azulejo cierra por obras desde el 1/11/2025"
+              ]
+            },
+            {
+              "href": "https://www.carris.pt/viaje/carreiras/742/",
+              "labels": [
+                "CARRIS — línea 742 (parada Igreja Madre Deus)"
+              ]
+            },
+            {
+              "href": "https://www.visitlisboa.com/es/sitios/azulejos-de-lisboa",
+              "labels": [
+                "Visit Lisboa — Azulejos de Lisboa y advertencia sobre piezas antiguas"
+              ]
+            },
+            {
+              "href": "https://www.metrolisboa.pt/viajar/picoas/",
+              "labels": [
+                "Metro Lisboa — arte de la estación Picoas"
+              ]
+            },
+            {
+              "href": "https://www.metrolisboa.pt/viajar/parque/",
+              "labels": [
+                "Metro Lisboa — arte de la estación Parque"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/blog/barrios-imprescindibles",
+      "changedSourceFields": [
+        "dateModified",
+        "contenido",
+        "fechaActualizacion",
+        "fuentes"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Guías — 5 Dic 2024 — 15 min lectura — Por José Tabares",
+          "after": "Guías — 5 Dic 2024 — Corrección parcial revisada el 24 de octubre de 2026 — 15 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 4,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "El Marqués de Pombal reconstruyó este barrio desde cero después de que el terremoto de 1755 arrasara la ciudad. El resultado es una cuadrícula ordenada de calles anchas, edificios uniformes y plazas monumentales que contrastan con el caos medieval del resto de Lisboa. Aquí todo es llano —rareza absoluta en esta ciudad— y las conexiones de transporte son inmejorables."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "La reconstrucción posterior al terremoto de 1755 dio a la Baixa su cuadrícula de calles, edificios uniformes y plazas monumentales. La Baixa es relativamente llana; desde ella se sube hacia Chiado. Conviene distinguir ambas zonas al elegir alojamiento o preparar un paseo."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 7,
+          "before": {
+            "tipo": "lista",
+            "items": [
+              "Para quién: Primera visita, movilidad reducida, viajes cortos donde prima la comodidad",
+              "Puntos fuertes: Todo llano, metro en cada esquina, monumentos a pie",
+              "Puntos débiles: Precios inflados en restaurantes, ambiente más turístico que local",
+              "Mejor momento: temprano, cuando la Praça do Comércio aún está vacía"
+            ]
+          },
+          "after": {
+            "tipo": "lista",
+            "items": [
+              "Para quién: Primera visita, movilidad reducida, viajes cortos donde prima la comodidad",
+              "Puntos fuertes: Baixa relativamente llana, conexiones de metro y monumentos a pie; Chiado tiene cuestas",
+              "Puntos débiles: Precios inflados en restaurantes, ambiente más turístico que local",
+              "Mejor momento: temprano, cuando la Praça do Comércio aún está vacía"
+            ]
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 10,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "El fado nació en estas calles. Por las noches, desde las ventanas de las tascas escapan las voces melancólicas que cantan a la saudade, esa nostalgia portuguesa imposible de traducir. Los miradores de Santa Luzia y Portas do Sol ofrecen postales perfectas de tejados rojizos descendiendo hacia el río. El Castelo de São Jorge corona la colina como un guardián de piedra."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Alfama está muy ligada al fado, pero no hay un único barrio de origen demostrado: Mouraria también ocupa un lugar central en su historia. Por las noches puedes escucharlo en sus casas de fado. Santa Luzia y Portas do Sol ofrecen vistas de los tejados y el río, y el Castelo de São Jorge está en lo alto de la colina."
+          }
+        },
+        {
+          "kind": "sources",
+          "before": [],
+          "after": [
+            {
+              "href": "https://www.museudofado.pt/historia-do-fado",
+              "labels": [
+                "Museu do Fado — história e formação do género"
+              ]
+            },
+            {
+              "href": "https://www.lisboa.pt/temas/seguranca-e-prevencao/sismos/programa-resist/divulgacao-e-sensibilizacao/apresentacao",
+              "labels": [
+                "CML — ReSist: terremoto de 1755 e reconstrução"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/blog/descubrimientos-portugueses-lisboa",
+      "changedSourceFields": [
+        "contenido",
+        "dateModified",
+        "fechaActualizacion",
+        "fuentes"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Cultura — 15 Mar 2026 — 16 min lectura — Por José Tabares",
+          "after": "Cultura — 15 Mar 2026 — Corrección parcial revisada el 24 de octubre de 2026 — 16 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 0,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Hubo un período de poco más de cien años, entre 1415 y 1542, en que Portugal —un pequeño reino en el extremo occidental de Europa, con apenas un millón de habitantes— conectó el mundo. Comerciantes portugueses llegaron a Brasil, a India, a China, a Japón, a las costas de África. Vasco de Gama encontró la ruta marítima a las especias. Pedro Álvares Cabral llegó a Brasil. Fernando de Magallanes (Fernando Magalhães), aunque al servicio de España, era portugués y su expedición completó la primera vuelta al mundo."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Durante los siglos XV y XVI, la expansión marítima portuguesa conectó rutas de Europa, África, Asia y América, mediante comercio, conquista y colonización. La llegada portuguesa a Japón se fecha en 1543, según el Museu de Marinha. Vasco de Gama abrió la ruta marítima a India alrededor de África y Pedro Álvares Cabral llegó a Brasil. La expedición iniciada por Fernando de Magallanes, portugués al servicio de España, completó la primera vuelta al mundo."
+          }
+        },
+        {
+          "kind": "sources",
+          "before": [],
+          "after": [
+            {
+              "href": "https://cultura.marinha.pt/pt/museumarinha_web/multimedia_web/Paginas/espingarda-tanegashima.aspx",
+              "labels": [
+                "Museu de Marinha — llegada portuguesa a Tanegashima en 1543"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/blog/donde-tomar-cafe-lisboa",
+      "changedSourceFields": [
+        "fechaActualizacion",
+        "dateModified",
+        "contenido"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Gastronomía — 5 Nov 2024 — Actualizado en septiembre de 2026 — 7 min lectura — Por José Tabares",
+          "after": "Gastronomía — 5 Nov 2024 — Corrección parcial revisada el 24 de octubre de 2026 — 7 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 9,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Fábrica Coffee Roasters trabaja con café de especialidad y mantiene varios locales en Lisboa. Su web oficial lista, entre otros, espacios en Rua das Portas de Santo Antão, Rua das Flores, Rua do Comércio y Santos. Es una opción distinta a A Brasileira: aquí el interés principal está en el café y el tueste, no en visitar un café histórico."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Fábrica Coffee Roasters trabaja con café de especialidad y mantiene varios locales en Lisboa. El directorio oficial consultado el 24 de octubre de 2026 incluye Rua das Portas de Santo Antão, Rua do Comércio, Santos y São Mamede. Comprueba allí el local y su horario antes de ir. Es una opción distinta a A Brasileira: aquí el interés principal está en el café y el tueste, no en visitar un café histórico."
+          }
+        }
+      ]
+    },
+    {
+      "url": "/blog/lisboa-en-navidad",
+      "changedSourceFields": [
+        "fechaActualizacion",
+        "dateModified",
+        "contenido"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Planificación — 9 Oct 2026 — Verificado el 9 de octubre de 2026 — 9 min lectura — Por José Tabares",
+          "after": "Planificación — 9 Oct 2026 — Referencia de Óbidos revisada el 24 de octubre de 2026 — 9 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 22,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Entrar al pueblo es gratis; el recinto de la Vila Natal es de pago, por sesiones y con aforo limitado. Los precios de 2026 aún no están publicados. En 2025 la entrada general costaba 10 €; la de niños de 3 a 11 años, 8 €, y la de estudiantes y mayores de 65, 9 €. Abría de lunes a jueves de 11:00 a 20:00 y de viernes a domingo de 10:00 a 21:00; el 24 y el 31, de 11:00 a 18:00, y cerraba el 25 y el 1."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Entrar al pueblo es gratis; el recinto de la Vila Natal es de pago, por sesiones y con aforo limitado. La organización ya publica los precios y horarios de 2026: el desglose actualizado está en nuestra guía de Óbidos, enlazada a continuación."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 30,
+          "before": {
+            "tipo": "tabla",
+            "texto": "Las filas marcadas con (2025) aún no tienen horario de 2026.",
+            "columnas": [
+              "Sitio",
+              "24 dic",
+              "25 dic",
+              "31 dic",
+              "1 ene"
+            ],
+            "filas": [
+              [
+                "Castelo de São Jorge",
+                "Cerrado",
+                "Cerrado",
+                "Cerrado",
+                "Cerrado"
+              ],
+              [
+                "Jerónimos y Torre de Belém",
+                "En 2025, cerrados",
+                "Cerrados",
+                "En 2025, cerrados",
+                "Cerrados"
+              ],
+              [
+                "Oceanário",
+                "Horario especial",
+                "Horario especial",
+                "Horario especial",
+                "Horario especial"
+              ],
+              [
+                "Wonderland (2025)",
+                "10:00-16:00",
+                "16:00-22:00",
+                "10:00-16:00",
+                "16:00-22:00"
+              ],
+              [
+                "Óbidos Vila Natal (2025)",
+                "11:00-18:00",
+                "Cerrado",
+                "11:00-18:00",
+                "Cerrado"
+              ],
+              [
+                "Metro (2025)",
+                "Hasta la 01:00",
+                "Desde las 6:30",
+                "Hasta la 01:00",
+                "Desde las 6:30"
+              ]
+            ]
+          },
+          "after": {
+            "tipo": "tabla",
+            "texto": "Las filas marcadas con (2025) aún no tienen horario de 2026.",
+            "columnas": [
+              "Sitio",
+              "24 dic",
+              "25 dic",
+              "31 dic",
+              "1 ene"
+            ],
+            "filas": [
+              [
+                "Castelo de São Jorge",
+                "Cerrado",
+                "Cerrado",
+                "Cerrado",
+                "Cerrado"
+              ],
+              [
+                "Jerónimos y Torre de Belém",
+                "En 2025, cerrados",
+                "Cerrados",
+                "En 2025, cerrados",
+                "Cerrados"
+              ],
+              [
+                "Oceanário",
+                "Horario especial",
+                "Horario especial",
+                "Horario especial",
+                "Horario especial"
+              ],
+              [
+                "Wonderland (2025)",
+                "10:00-16:00",
+                "16:00-22:00",
+                "10:00-16:00",
+                "16:00-22:00"
+              ],
+              [
+                "Óbidos Vila Natal (2026)",
+                "10:00-17:00",
+                "Cerrado",
+                "10:00-17:00",
+                "Cerrado"
+              ],
+              [
+                "Metro (2025)",
+                "Hasta la 01:00",
+                "Desde las 6:30",
+                "Hasta la 01:00",
+                "Desde las 6:30"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url": "/blog/obidos-vila-natal",
+      "changedSourceFields": [
+        "descripcion",
+        "fechaActualizacion",
+        "dateModified",
+        "fuentes",
+        "contenido"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Guías — 9 Oct 2026 — Verificado el 9 de octubre de 2026 — 9 min lectura — Por José Tabares",
+          "after": "Guías — 9 Oct 2026 — Precios y horarios revisados el 24 de octubre de 2026 — 9 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "description",
+          "before": "Fechas oficiales de Óbidos Vila Natal 2026, precios de 2025 como referencia, el autobús Rápida Verde desde Campo Grande, por qué este invierno no compensa el tren y qué ver en el pueblo.",
+          "after": "Fechas oficiales de Óbidos Vila Natal 2026, precios y horarios publicados, el autobús Rápida Verde desde Campo Grande, por qué este invierno no compensa el tren y qué ver en el pueblo."
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 0,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027. Los precios y el horario por días de 2026 todavía no están publicados, así que te doy los de 2025 como referencia. Yo todavía no he estado en Óbidos: esta guía no sale de mi experiencia, sino de lo que publican el Ayuntamiento, la propia Vila Natal, Rodoviária do Oeste y CP."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027. La organización ya publica sus precios y horarios. Yo todavía no he estado en Óbidos: esta guía no sale de mi experiencia, sino de lo que publican el Ayuntamiento, la propia Vila Natal, Rodoviária do Oeste y CP."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 1,
+          "before": {
+            "tipo": "lista",
+            "items": [
+              "Fechas 2026: del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos.",
+              "Precio de 2025, como referencia: 10 € la entrada general, 8 € de 3 a 11 años y 9 € estudiantes y mayores de 65. Los de 2026 no se han publicado.",
+              "Sin coche: autobús Rápida Verde desde Campo Grande. Tarda 1 hora, el billete sencillo cuesta 9,45 € y el último de vuelta sale de Óbidos a las 21:45.",
+              "Entrar al pueblo es gratis. Solo se paga el recinto navideño, que está arriba, junto al castillo.",
+              "La entrada es para un día y una hora de entrada concretos; una vez dentro, no hay límite de tiempo.",
+              "El tren no compensa este invierno: el tramo hasta Óbidos se hace en autobús de sustitución de CP y tarda más del doble.",
+              "En 2025 cerró el 25 de diciembre y el 1 de enero."
+            ]
+          },
+          "after": {
+            "tipo": "lista",
+            "items": [
+              "Fechas 2026: del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos.",
+              "Precios 2026: general 12 €, niños de 3 a 11 años 8 €, estudiantes y séniores 11 €.",
+              "Sin coche: autobús Rápida Verde desde Campo Grande. Tarda 1 hora, el billete sencillo cuesta 9,45 € y el último de vuelta sale de Óbidos a las 21:45.",
+              "Entrar al pueblo es gratis. Solo se paga el recinto navideño, que está arriba, junto al castillo.",
+              "La entrada es para un día y una hora de entrada concretos; una vez dentro, no hay límite de tiempo.",
+              "El tren no compensa este invierno: el tramo hasta Óbidos se hace en autobús de sustitución de CP y tarda más del doble.",
+              "La organización confirma cierre el 25 de diciembre y el 1 de enero."
+            ]
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 3,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "2026: el Ayuntamiento de Óbidos ya ha publicado las fechas, del 27 de noviembre de 2026 al 3 de enero de 2027. Su agenda da un horario general de 10:00 a 20:00, pero el desglose por días todavía no está publicado."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "El horario de 2026 cambia según el día. Para elegir la sesión, usa el desglose de la organización:"
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 4,
+          "before": {
+            "tipo": "tabla",
+            "texto": "Horario de la edición 2025 (del 28 de noviembre de 2025 al 4 de enero de 2026), según la web oficial de Óbidos Vila Natal.",
+            "columnas": [
+              "Día",
+              "Horario 2025"
+            ],
+            "filas": [
+              [
+                "Lunes a jueves",
+                "11:00-20:00"
+              ],
+              [
+                "Viernes, sábado y domingo",
+                "10:00-21:00"
+              ],
+              [
+                "24 y 31 de diciembre",
+                "11:00-18:00"
+              ],
+              [
+                "25 de diciembre y 1 de enero",
+                "Cerrado"
+              ]
+            ]
+          },
+          "after": {
+            "tipo": "tabla",
+            "texto": "Horario oficial 2026/27, revisado el 24/10/2026.",
+            "columnas": [
+              "Día",
+              "Horario 2026"
+            ],
+            "filas": [
+              [
+                "Lunes a jueves, del 30/11 al 17/12",
+                "10:00-18:00"
+              ],
+              [
+                "Lunes a jueves, del 21 al 30/12",
+                "10:00-20:00"
+              ],
+              [
+                "Viernes, fines de semana y festivos",
+                "10:00-21:00"
+              ],
+              [
+                "24 y 31 de diciembre",
+                "10:00-17:00"
+              ],
+              [
+                "25 de diciembre y 1 de enero",
+                "Cerrado"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 5,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Las puertas cierran una hora antes que el recinto, así que si llegas a las 19:30 un martes ya no entras."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "La taquilla puede cerrar antes que el recinto. Comprueba el acceso de tu sesión antes de desplazarte."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 7,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Los precios de 2026 no están publicados. Estos son los de la tabla de precios oficial de la edición 2025:"
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "La organización publica estas tarifas para 2026:"
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 8,
+          "before": {
+            "tipo": "tabla",
+            "texto": "Tabla de precios oficial de Óbidos Vila Natal, edición 2025. Los menores de 3 años no pagan.",
+            "columnas": [
+              "Entrada",
+              "Precio 2025",
+              "Para quién"
+            ],
+            "filas": [
+              [
+                "General",
+                "10 €",
+                "A partir de 12 años"
+              ],
+              [
+                "Niño",
+                "8 €",
+                "De 3 a 11 años"
+              ],
+              [
+                "Estudiante",
+                "9 €",
+                "De 12 a 25 años, con carné de estudiante"
+              ],
+              [
+                "Sénior",
+                "9 €",
+                "Mayores de 65"
+              ],
+              [
+                "Familia",
+                "32 € / 39 € / 45 €",
+                "2 adultos con 2, 3 o 4 niños"
+              ],
+              [
+                "Discapacidad",
+                "5 € (niño, 4 €)",
+                "Grado igual o superior al 60 %; el mismo descuento para el acompañante"
+              ]
+            ]
+          },
+          "after": {
+            "tipo": "tabla",
+            "texto": "Tarifas oficiales 2026; confirma categoría y condiciones al comprar.",
+            "columnas": [
+              "Entrada",
+              "Precio 2026",
+              "Para quién"
+            ],
+            "filas": [
+              [
+                "General",
+                "12 €",
+                "Comprueba la categoría por edad al reservar"
+              ],
+              [
+                "Niño",
+                "8 €",
+                "De 3 a 11 años"
+              ],
+              [
+                "Estudiante",
+                "11 €",
+                "De 12 a 25 años, con carné de estudiante"
+              ],
+              [
+                "Sénior",
+                "11 €",
+                "Mayores de 65"
+              ],
+              [
+                "Familia",
+                "36 € / 42 € / 48 €",
+                "2 adultos con 2, 3 o 4 niños"
+              ],
+              [
+                "Discapacidad",
+                "Condiciones específicas",
+                "Consulta la tarifa del visitante y su acompañante en la fuente oficial"
+              ]
+            ]
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 33,
+          "before": {
+            "tipo": "lista",
+            "items": [
+              "Si puedes, ve entre semana: la Rápida Verde tiene más salidas desde Lisboa de lunes a viernes.",
+              "Compra la entrada antes y elige una hora con margen desde el autobús: de la puerta del pueblo al castillo es todo cuesta arriba.",
+              "Abrigo y calzado que agarre. Es al aire libre, en diciembre, y el empedrado mojado resbala.",
+              "Dentro del recinto hay zona de comidas con mesas, y la organización permite llevar tu propia comida.",
+              "Los perros pueden entrar con correa y bozal, según las normas del evento.",
+              "No vayas el 25 de diciembre ni el 1 de enero: en 2025 el recinto cerró esos días."
+            ]
+          },
+          "after": {
+            "tipo": "lista",
+            "items": [
+              "Si puedes, ve entre semana: la Rápida Verde tiene más salidas desde Lisboa de lunes a viernes.",
+              "Compra la entrada antes y elige una hora con margen desde el autobús: de la puerta del pueblo al castillo es todo cuesta arriba.",
+              "Abrigo y calzado que agarre. Es al aire libre, en diciembre, y el empedrado mojado resbala.",
+              "Dentro del recinto hay zona de comidas con mesas, y la organización permite llevar tu propia comida.",
+              "Los perros pueden entrar con correa y bozal, según las normas del evento.",
+              "No vayas el 25 de diciembre ni el 1 de enero: el calendario oficial confirma esos cierres."
+            ]
+          }
+        },
+        {
+          "kind": "FAQ",
+          "index": 0,
+          "before": "Del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos. El horario por días de 2026 aún no está publicado; en 2025 abría de 11:00 a 20:00 de lunes a jueves y de 10:00 a 21:00 de viernes a domingo.",
+          "after": "Del 27 de noviembre de 2026 al 3 de enero de 2027. Consulta en la tabla de esta guía el horario de tu día."
+        },
+        {
+          "kind": "FAQ",
+          "index": 1,
+          "before": "Los precios de 2026 no se han publicado. En 2025 costaba 10 € la general, 8 € de 3 a 11 años y 9 € estudiantes y mayores de 65. Entrar al pueblo de Óbidos es gratis.",
+          "after": "La entrada general de 2026 cuesta 12 €. Hay categorías de niños, estudiantes, séniores y familias; consulta la tabla de precios y las condiciones oficiales."
+        },
+        {
+          "kind": "FAQ",
+          "index": 4,
+          "before": "En 2025 abrió el 24 y el 31 de 11:00 a 18:00 y cerró el 25 de diciembre y el 1 de enero.",
+          "after": "En 2026, el 24 y el 31 abre de 10:00 a 17:00. Cierra el 25 de diciembre y el 1 de enero."
+        },
+        {
+          "kind": "sources",
+          "before": [
+            {
+              "href": "https://agenda.obidos.pt/evento/obidos-vila-natal/",
+              "labels": [
+                "Município de Óbidos: Óbidos Vila Natal 2026/27 (fechas y lugar)"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/horarios-e-precos/",
+              "labels": [
+                "Óbidos Vila Natal: horarios y precios (edición 2025)"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/perguntas-frequentes/",
+              "labels": [
+                "Óbidos Vila Natal: preguntas frecuentes (qué incluye, sesiones, cambios, accesibilidad)"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/informacoes-uteis/",
+              "labels": [
+                "Óbidos Vila Natal: información útil (aparcamientos, cajeros, accesos)"
+              ]
+            },
+            {
+              "href": "https://obidos.bol.pt/",
+              "labels": [
+                "Taquilla online oficial de Óbidos (BOL)"
+              ]
+            },
+            {
+              "href": "https://rodoviariadooeste.pt/wp-content/uploads/rapida_linha_verde.pdf",
+              "labels": [
+                "Rodoviária do Oeste: Rápida Verde, horario desde el 6/10/2026 y precios (PDF)"
+              ]
+            },
+            {
+              "href": "https://www.cp.pt/info/documents/d/cp/comboios-regionais-lisboa-figueira-da-foz-oeste",
+              "labels": [
+                "CP: horario regional de la Línea del Oeste desde el 19/7/2026 (PDF)"
+              ]
+            },
+            {
+              "href": "https://www.cp.pt/info/documents/d/cp/locais-paragem-oeste",
+              "labels": [
+                "CP: autobús de sustitución entre Caldas da Rainha y Mira Sintra-Meleças (PDF)"
+              ]
+            },
+            {
+              "href": "https://onfm.pt/2026/08/14/comboios-da-linha-do-oeste-regressam-em-2027/",
+              "labels": [
+                "ON FM (14/8/2026): previsión de reapertura de la Línea del Oeste"
+              ]
+            },
+            {
+              "href": "https://24noticias.sapo.pt/atualidade/artigos/comboios-voltam-ao-oeste-em-janeiro-apos-arranjos-de-40-milhoes",
+              "labels": [
+                "24notícias: obras y regreso de los trenes al Oeste"
+              ]
+            },
+            {
+              "href": "https://tradicional.dgadr.gov.pt/pt/cat/frutos-frescos/563-ginja-de-obidos-e-alcobaca-igp",
+              "labels": [
+                "DGADR: Ginja de Óbidos e Alcobaça IGP"
+              ]
+            },
+            {
+              "href": "https://www.gov.uk/protected-food-drink-names/ginja-de-bidos-e-alcobaca",
+              "labels": [
+                "GOV.UK: registro de Ginja de Óbidos e Alcobaça como IGP (29/6/2016)"
+              ]
+            },
+            {
+              "href": "https://ginjadeobidos.com/ginja-com-chocolate-050/",
+              "labels": [
+                "Oppidum: historia de la ginja en vasito de chocolate (versión del productor)"
+              ]
+            },
+            {
+              "href": "https://tvi.iol.pt/noticias/sociedade/11-12-2015/obidos-entra-nas-cidades-da-literatura-da-unesco",
+              "labels": [
+                "TVI (11/12/2015): Óbidos entra en la red de Ciudades de la Literatura de la UNESCO"
+              ]
+            },
+            {
+              "href": "https://www.cm-obidos.pt/viver/cultura-e-patrimonio/eventos-culturais/obidos-vila-literaria-folio-latitudes/rede-literaria-de-obidos/poi/livraria-de-santiago",
+              "labels": [
+                "Câmara Municipal de Óbidos: Livraria de Santiago"
+              ]
+            },
+            {
+              "href": "https://commons.wikimedia.org/wiki/File:%C3%93bidos_-1_(52113575953).jpg",
+              "labels": [
+                "Foto de portada: «Óbidos -1», de Art Prof (Flickr), licencia CC BY 2.0, vía Wikimedia Commons"
+              ]
+            }
+          ],
+          "after": [
+            {
+              "href": "https://agenda.obidos.pt/evento/obidos-vila-natal/",
+              "labels": [
+                "Município de Óbidos: Óbidos Vila Natal 2026/27 (fechas y lugar)"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/en/hours-and-prices",
+              "labels": [
+                "Óbidos Vila Natal: horarios y precios de 2026"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/perguntas-frequentes/",
+              "labels": [
+                "Óbidos Vila Natal: preguntas frecuentes (qué incluye, sesiones, cambios, accesibilidad)"
+              ]
+            },
+            {
+              "href": "https://obidosvilanatal.pt/informacoes-uteis/",
+              "labels": [
+                "Óbidos Vila Natal: información útil (aparcamientos, cajeros, accesos)"
+              ]
+            },
+            {
+              "href": "https://obidos.bol.pt/",
+              "labels": [
+                "Taquilla online oficial de Óbidos (BOL)"
+              ]
+            },
+            {
+              "href": "https://rodoviariadooeste.pt/wp-content/uploads/rapida_linha_verde.pdf",
+              "labels": [
+                "Rodoviária do Oeste: Rápida Verde, horario desde el 6/10/2026 y precios (PDF)"
+              ]
+            },
+            {
+              "href": "https://www.cp.pt/info/documents/d/cp/comboios-regionais-lisboa-figueira-da-foz-oeste",
+              "labels": [
+                "CP: horario regional de la Línea del Oeste desde el 19/7/2026 (PDF)"
+              ]
+            },
+            {
+              "href": "https://www.cp.pt/info/documents/d/cp/locais-paragem-oeste",
+              "labels": [
+                "CP: autobús de sustitución entre Caldas da Rainha y Mira Sintra-Meleças (PDF)"
+              ]
+            },
+            {
+              "href": "https://onfm.pt/2026/08/14/comboios-da-linha-do-oeste-regressam-em-2027/",
+              "labels": [
+                "ON FM (14/8/2026): previsión de reapertura de la Línea del Oeste"
+              ]
+            },
+            {
+              "href": "https://24noticias.sapo.pt/atualidade/artigos/comboios-voltam-ao-oeste-em-janeiro-apos-arranjos-de-40-milhoes",
+              "labels": [
+                "24notícias: obras y regreso de los trenes al Oeste"
+              ]
+            },
+            {
+              "href": "https://tradicional.dgadr.gov.pt/pt/cat/frutos-frescos/563-ginja-de-obidos-e-alcobaca-igp",
+              "labels": [
+                "DGADR: Ginja de Óbidos e Alcobaça IGP"
+              ]
+            },
+            {
+              "href": "https://www.gov.uk/protected-food-drink-names/ginja-de-bidos-e-alcobaca",
+              "labels": [
+                "GOV.UK: registro de Ginja de Óbidos e Alcobaça como IGP (29/6/2016)"
+              ]
+            },
+            {
+              "href": "https://ginjadeobidos.com/ginja-com-chocolate-050/",
+              "labels": [
+                "Oppidum: historia de la ginja en vasito de chocolate (versión del productor)"
+              ]
+            },
+            {
+              "href": "https://tvi.iol.pt/noticias/sociedade/11-12-2015/obidos-entra-nas-cidades-da-literatura-da-unesco",
+              "labels": [
+                "TVI (11/12/2015): Óbidos entra en la red de Ciudades de la Literatura de la UNESCO"
+              ]
+            },
+            {
+              "href": "https://www.cm-obidos.pt/viver/cultura-e-patrimonio/eventos-culturais/obidos-vila-literaria-folio-latitudes/rede-literaria-de-obidos/poi/livraria-de-santiago",
+              "labels": [
+                "Câmara Municipal de Óbidos: Livraria de Santiago"
+              ]
+            },
+            {
+              "href": "https://commons.wikimedia.org/wiki/File:%C3%93bidos_-1_(52113575953).jpg",
+              "labels": [
+                "Foto de portada: «Óbidos -1», de Art Prof (Flickr), licencia CC BY 2.0, vía Wikimedia Commons"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/blog/terremoto-lisboa-1755",
+      "changedSourceFields": [
+        "descripcion",
+        "fuentes",
+        "contenido",
+        "dateModified",
+        "fechaActualizacion"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Cultura — 18 Mar 2026 — 15 min lectura — Por José Tabares",
+          "after": "Cultura — 18 Mar 2026 — Corrección parcial revisada el 24 de octubre de 2026 — 15 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "description",
+          "before": "El 1 de noviembre de 1755, un terremoto de magnitud 8,5 destruyó Lisboa. Así fue el desastre, la reconstrucción y el impacto filosófico en todo el mundo.",
+          "after": "El 1 de noviembre de 1755, un terremoto de magnitud estimada en torno a 8,7 devastó buena parte de Lisboa. El desastre, la reconstrucción y su impacto filosófico."
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 1,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "Lo que pasó en las siguientes horas —el terremoto, el tsunami, el incendio de cinco días— arrasó buena parte de la ciudad y mató a miles de personas. Pero la historia del terremoto de Lisboa no termina en la catástrofe. Termina en la reconstrucción más rápida y moderna de la historia europea, y en un debate filosófico que todavía hoy no tiene respuesta definitiva."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "Lo que pasó en las siguientes horas —el terremoto, el tsunami y los incendios— arrasó buena parte de la ciudad y mató a miles de personas. La historia continúa en la reconstrucción de la Baixa y en el debate filosófico que provocó la catástrofe. La Câmara Municipal de Lisboa emplea una magnitud estimada de 8,7: no es una medición instrumental de 1755."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 13,
+          "before": {
+            "tipo": "tip",
+            "texto": "La Baixa Pombalina —el corazón moderno de Lisboa— fue construida sobre los escombros del terremoto. Cada vez que caminas por la Rua Augusta o la Praça do Comércio, estás en un barrio que fue diseñado de cero hace menos de 270 años."
+          },
+          "after": {
+            "tipo": "tip",
+            "texto": "La Baixa Pombalina se reconstruyó después del terremoto. Al caminar por la Rua Augusta o la Praça do Comércio puedes reconocer la cuadrícula y las plazas de aquel proyecto."
+          }
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 20,
+          "before": {
+            "tipo": "parrafo",
+            "texto": "La Praça do Comércio, la gran plaza frente al Tajo, fue diseñada por Pombal como entrada triunfal a la nueva Lisboa. Antes se llamaba Terreiro do Paço porque ahí estaba el Palácio da Ribeira, la residencia real destruida por el terremoto. La estatua ecuestre del rey José I en el centro fue la primera estatua pública de un monarca europeo fundida en bronce."
+          },
+          "after": {
+            "tipo": "parrafo",
+            "texto": "La Praça do Comércio forma parte de la reconstrucción posterior al terremoto. El nombre Terreiro do Paço recuerda el Palácio da Ribeira, la residencia real destruida en 1755. La estatua ecuestre de bronce de José I preside el centro de la plaza."
+          }
+        },
+        {
+          "kind": "sources",
+          "before": [
+            {
+              "href": "https://geo.lisboa.pt/atividades-e-difusao/investigacao/detalhe/o-terramoto-de-1-de-novembro-de-1755",
+              "labels": [
+                "Lisboa Interativa (CML) — O terramoto de 1 de novembro de 1755"
+              ]
+            }
+          ],
+          "after": [
+            {
+              "href": "https://geo.lisboa.pt/atividades-e-difusao/investigacao/detalhe/o-terramoto-de-1-de-novembro-de-1755",
+              "labels": [
+                "Lisboa Interativa (CML) — O terramoto de 1 de novembro de 1755"
+              ]
+            },
+            {
+              "href": "https://www.lisboa.pt/temas/seguranca-e-prevencao/sismos/programa-resist/divulgacao-e-sensibilizacao/apresentacao",
+              "labels": [
+                "CML — ReSist: magnitud estimada del terremoto de 1755"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "/actividades/castelo-sao-jorge",
+      "changedSourceFields": [
+        "fechaActualizacion",
+        "dateModified",
+        "contenido"
+      ],
+      "changes": [
+        {
+          "kind": "byline",
+          "before": "Entradas — 10 Oct 2026 — Verificado el 10 de octubre de 2026 — 7 min lectura — Por José Tabares",
+          "after": "Entradas — 10 Oct 2026 — Aviso del museo revisado el 24 de octubre de 2026 — 7 min lectura — Por José Tabares"
+        },
+        {
+          "kind": "content",
+          "sourceIndex": 2,
+          "before": {
+            "tipo": "aviso",
+            "texto": "Avisos de octubre de 2026: el museo del castillo está cerrado temporalmente por obras en los aseos. Y para el 17 de octubre hay convocada una huelga que puede afectar a la visita; si vas ese día, mira la web del castillo antes de salir."
+          },
+          "after": {
+            "tipo": "aviso",
+            "texto": "Aviso revisado el 24 de octubre de 2026: el museo del castillo sigue cerrado temporalmente por obras en los aseos, según la página oficial de horarios. El resto del recinto tiene sus propios horarios; compruébalos antes de ir."
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pages": 72,
+    "unchanged": 64,
+    "scoped": 8,
+    "checks": 268,
+    "failures": 0
+  },
+  "failures": []
+}

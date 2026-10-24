@@ -2,9 +2,9 @@
 
 ## D-074 — Priorizar móvil, Entradas, SEO medido y correcciones concretas
 **Date:** 2026-10-24
-**Status:** candidato; Preview antes de publicar
+**Status:** candidato verificado en Preview; revisión visual antes de publicar
 
-José ordena hacer primero4/5/6/7. Conservar diseño, catálogo16 y enlaces/campañas; acercar cinco guías y precisar tres productos. Reproducir/corregir Escape del menú inglés con QA en dimensiones reales. Resolver solo hechos comprobados de las URLsREVIEW y la nueva información oficial2026 de Óbidos, sin cambiar títulos protegidos ni inventar visitas; actualizar únicamente la referencia afectada de Navidad. Mantener las dosfusionesWAIT y el resto de dudas delimitadas. Métricas nuevas bloqueadas: no ajustar cuentas/plan ni usar ceros. [Contrato y fuentes](../docs/entries-mobile-editorial-polish.md). No autorización de merge, producción o reparación de Brevo/Clerk dentro de este lote.
+José ordena hacer primero4/5/6/7. Conservar diseño, catálogo16 y enlaces/campañas; acercar cinco guías y precisar tres productos. Reproducir/corregir Escape del menú inglés con QA en dimensiones reales. Resolver solo hechos comprobados de las URLsREVIEW y la nueva información oficial2026 de Óbidos, sin cambiar títulos protegidos ni inventar visitas; actualizar únicamente la referencia afectada de Navidad. Mantener las dosfusionesWAIT y el resto de dudas delimitadas. Métricas nuevas bloqueadas: no ajustar cuentas/plan ni usar ceros. José autoriza crear el enlace temporal compartible de la Preview118 tras explicarle acceso por posesión/expiración; no es autorización de producción. [Contrato y fuentes](../docs/entries-mobile-editorial-polish.md). No autorización de merge, producción o reparación de Brevo/Clerk dentro de este lote.
 
 ## D-073 — Publicación inglesa autorizada con incidencia privada aceptada
 **Date:** 2026-10-24

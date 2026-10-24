@@ -1,5 +1,9 @@
 # Pendientes reales — 24 octubre 2026
 
+## Actualización de puntos4–7 en Preview
+
+PR118 entrega QA móvil real en cuatro tamaños, ayudas de elección de Entradas y correcciones factuales acotadas. Build y controles remotos pasan. La lectura SEO sigue bloqueada por Windsor/GSCWizard; se descartaron sus ceros de ejemplo. Las17REVIEW fueron triadas, con dudas residuales y fusionesWAIT conservadas. [Resultados, fuentes y capturas](entries-mobile-editorial-polish.md). Este lote está en Preview, no en producción; el inventario siguiente describe el punto de partida y los pendientes de acceso/seguridad siguen vigentes.
+
 Revisión de repositorio, Mente Lisboa, manifiesto, PR abiertos y producción. Solo lectura de aplicación; no cambios de contenido, URL, configuración o campañas. Producción confirmada: PR116, merge `ffe27e6ae5ae24338aa8becfa521daff5d59fdd8`, Vercel `dpl_5kX4uJor2dbtbBEU6JZRv4J3YF8U`, READY/production.
 
 ## Qué está terminado y publicado
