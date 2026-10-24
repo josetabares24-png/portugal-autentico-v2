@@ -1,5 +1,11 @@
 # Decision log
 
+## D-075 — Pulir la edición inglesa existente
+**Date:** 2026-10-24
+**Status:** candidato; revisión en Preview
+
+José pide «pule version ingles». Conservar las seisURLs y el diseño fotográfico de tours aprobado enD072. Mejorar lectura con la fuente española ya cargada, un único índice responsive, recorte móvil de portada y siete sustituciones inglesas sin cambiar hechos, títulosSEO, fuentes o fechas factuales. No ampliar catálogo/idiomas, tocar español, cambiar campañas o iniciar otra migración. Baseline2e88526; mismoPR118, commits separados y memoria. [Contrato y QA](../docs/english-refinement.md). L003 mantiene revisión visual antes de merge; ninguna nueva autorización de producción.
+
 ## D-074 — Priorizar móvil, Entradas, SEO medido y correcciones concretas
 **Date:** 2026-10-24
 **Status:** candidato verificado en Preview; revisión visual antes de publicar

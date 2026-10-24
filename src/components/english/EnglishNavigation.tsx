@@ -42,6 +42,7 @@ export default function EnglishNavigation() {
           <Link
             href={spanishPath}
             lang="es"
+            hrefLang="es"
             className="inline-flex min-h-11 items-center border-l border-border-soft pl-5 text-xs font-bold"
           >
             Español
@@ -81,6 +82,7 @@ export default function EnglishNavigation() {
             <Link
               href={spanishPath}
               lang="es"
+              hrefLang="es"
               className="flex min-h-11 items-center px-3 text-sm"
             >
               Español

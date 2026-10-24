@@ -30,7 +30,7 @@ export default function EnglishTourSelection({
                 src={tour.image}
                 alt={tour.imageAlt}
                 fill
-                className="object-cover motion-safe:transition-transform motion-safe:duration-500 group-hover:scale-[1.03]"
+                className="object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.03]"
                 loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
