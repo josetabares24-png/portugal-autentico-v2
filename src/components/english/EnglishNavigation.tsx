@@ -47,7 +47,15 @@ export default function EnglishNavigation() {
             Español
           </Link>
         </div>
-        <details className="relative xl:hidden">
+        <details
+          className="relative xl:hidden"
+          onKeyDown={(event) => {
+            if (event.key !== "Escape" || !event.currentTarget.open) return;
+            event.preventDefault();
+            event.currentTarget.open = false;
+            event.currentTarget.querySelector("summary")?.focus();
+          }}
+        >
           <summary className="flex min-h-11 cursor-pointer items-center rounded border border-border-soft px-3 text-sm font-semibold">
             Menu
           </summary>

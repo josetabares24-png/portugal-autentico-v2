@@ -1,12 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowUpRight, Landmark } from 'lucide-react';
 import { trackAffiliateClick } from '@/lib/affiliate-analytics';
 import { resolveBookingLink, type BookableProduct, type BookingPlacement } from '@/data/bookings';
 import type { TiqetsProductSnapshot } from '@/types/tiqets-live';
 import { formatPhotoCreditShort, getPhotoCredit } from '@/data/photo-credits';
+import { TICKET_DECISION_GUIDES } from '@/data/ticket-decision-guides';
 
 /*
  * Tarjeta comercial de Estaba en Lisboa.
@@ -106,6 +108,9 @@ export function BookingCard({
     : product.ctaLabel;
 
   const providerName = link.provider === 'tiqets' ? 'Tiqets' : 'GetYourGuide';
+  const decisionGuide = placementLabel.startsWith('comprar-entradas')
+    ? TICKET_DECISION_GUIDES[product.id]
+    : undefined;
 
   /*
    * Foto de la tarjeta, por orden: la del sitio (de José o, si no hay, una de
@@ -216,6 +221,20 @@ export function BookingCard({
         </p>
 
         <div className="mt-auto">
+          {decisionGuide?.includes ? (
+            <dl className="mb-4 space-y-2 font-body text-xs leading-relaxed">
+              <div>
+                <dt className="font-semibold text-night">Incluye</dt>
+                <dd className="text-text-secondary">{decisionGuide.includes}</dd>
+              </div>
+              {decisionGuide.check ? (
+                <div>
+                  <dt className="font-semibold text-night">Ten en cuenta</dt>
+                  <dd className="text-text-secondary">{decisionGuide.check}</dd>
+                </div>
+              ) : null}
+            </dl>
+          ) : null}
           {officialPrice ? (
             <div className="mb-3 border-t border-border-soft pt-3 font-body">
               <p className="text-xs text-text-secondary">
@@ -295,6 +314,14 @@ export function BookingCard({
             <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
             <span className="sr-only"> (se abre en una pestaña nueva)</span>
           </a>
+          {decisionGuide ? (
+            <Link
+              href={decisionGuide.guide.href}
+              className="mt-1 inline-flex min-h-11 w-full items-center justify-center px-2 text-center font-body text-xs font-semibold leading-relaxed text-night underline decoration-border-soft underline-offset-4 transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              {decisionGuide.guide.label}
+            </Link>
+          ) : null}
         </div>
       </div>
     </article>
