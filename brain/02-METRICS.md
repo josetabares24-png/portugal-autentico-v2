@@ -1,5 +1,9 @@
 # Metrics system
 
+## 24 octubre 2026 — Lectura posterior solicitada, sin datos nuevos válidos
+
+José prioriza puntos4/5/6/7. Windsor descubre cuentas/campos pero bloquea lectura por3cuentas frente a1del plan; descartar fila cero con aviso explícito. GSCWizard sigue subscription_required. No cambios de plan/conexiones. [Registro y ventanas](data/SEARCH-ACCESS-2026-10-24.json). Último dato válido sigue17/10; no medir el efecto de PR116 ni contar /en como fracaso el día de publicar. Comparaciones7/28/90d hasta21/10 preparadas, no ejecutadas con datos válidos. Reservas/comisiones desconocidas.
+
 ## 22 octubre 2026 — Límites del diagnóstico comercial
 
 Inventario HTML, no conversiones: 69 enlaces reconocidos en 100 páginas (GuruWalk14, Tiqets27, GetYourGuide28); identificadores presentes/patrocinio correcto. Producción base5d3573d. Buscador real devuelve tres tours/siete horarios para23/10 con referido. Windsor rechaza lecturas: tres conexiones con plan gratuito de una; sus ceros son sustitución inválida. No desconectar fuentes ni actualizar plan automáticamente. José desconoce reservas/comisiones: DESCONOCIDAS, no cero. El recuento histórico33 hasta septiembre no representa rendimiento actual. [Informe y fuentes](../docs/commercial-booking-audit-2026-10-22.md). Medidas de scroll son layout de QA, no comportamiento de usuarios.
