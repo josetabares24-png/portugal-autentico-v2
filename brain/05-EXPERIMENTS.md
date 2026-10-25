@@ -38,6 +38,7 @@ This is the active learning register.
 | E-013 | 9 páginas con bloque de reserva nuevo + 4 botones subidos | Ofrecer la entrada exacta en las páginas con intención de compra que no la tenían, y subir el botón a las primeras pantallas, sube los clics de afiliado sin empeorar la lectura | affiliate_click por página | PLANNED (rama local `feat/reserva-20`, pendiente de aprobación L-003) | producción verificada + 28 días finalizados |
 | E-014 | Stay22: alojamiento por barrio en donde-alojarse + script LinkSwap | Un bloque de alojamiento por barrio en la guía de alojamiento genera reservas de hotel sin tocar las comisiones de GetYourGuide, Tiqets ni GuruWalk | clics `affiliate_click` partner stay22 + reservas en Stay22 Hub | PLANNED (rama local `feat/stay22`, pendiente de aprobación L-003 y de confirmar con Stay22 la exclusión de GetYourGuide) | producción verificada + 28 días finalizados |
 | E-016 | Blog: aeropuerto, Metro y Time Out Market | Responder rutas/coste, mapa oficial y menú/puestos dentro de las URLs existentes mejora el ajuste a consultas | clics + impresiones + CTR + posición + consultas por página | PREPARADO, sin desplegar | producción confirmada + 14/28 días finalizados; ampliar con bajo volumen |
+| E-021 | Óbidos, Navidad, Nochevieja, Regaleira nueva, título de dónde-alojarse | Datos 2026 verificados en las páginas de temporada con impresiones, una guía de entradas con intención de compra y alojamiento por barrio en Nochevieja suben clics orgánicos y clics de afiliado sin canibalizar | clics + impresiones + posición por página; affiliate_click (Stay22, Tiqets) | PREPARADO, rama local `feat/seo-posicionamiento`, sin push | producción + 14 días finalizados |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -265,3 +266,7 @@ Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head6
 ## E-020 — Guías de entradas de Oceanário y Torre de Belém + «Lisboa en enero», 25/10/2026
 
 **Status: PREPARADO en la rama local `feat/guias-entradas-2`; no desplegado, sin push.** Mismo formato que E-015: /actividades/oceanario-lisboa y /actividades/torre-de-belem pasan de ficha corta a guía completa en su URL (título, meta, FAQ y lastmod nuevos; canónica sin cambios). Artículo nuevo /blog/lisboa-en-enero (plan: publicar antes del 15/11). Baseline: GSC de las dos fichas a 25/10 antes de publicar; medir clics e impresiones a 28 y 56 días. Detalle y fuentes en [la nota](content/2026-10-25-GUIAS-ENTRADAS-2.md). Necesita L-003 (visto bueno visual de José) antes de merge.
+
+## E-021 — Temporada de invierno + Regaleira, 25/10/2026
+
+**Status: PREPARADO en la rama local `feat/seo-posicionamiento`; no desplegado, sin push.** Óbidos Vila Natal con datos oficiales 2026, Navidad y Nochevieja actualizadas (Stay22 por barrio en Nochevieja), artículo nuevo `/blog/quinta-da-regaleira-entradas` y título/meta de `donde-alojarse-en-lisboa`. Baseline: 142 clics/28 días en todo el sitio, sin desglose por página en esta sesión: pedir export de GSC antes de desplegar. Detalle: [[seo/AUDITORIA-POSICIONAMIENTO-2026-10-25]]. Toca la página de E-014 solo en título y meta (no el bloque Stay22).
