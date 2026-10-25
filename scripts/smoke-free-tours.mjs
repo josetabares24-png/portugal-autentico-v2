@@ -621,11 +621,6 @@ async function startServer(extraEnv) {
   const baseUrl = `http://localhost:${port}`;
   const env = { ...process.env, ...extraEnv, PORT: String(port) };
 
-  if (!env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-    env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'pk_test_bm9pbmRleC1zbW9rZXRlc3QuY2xlcmsuYWNjb3VudHMuZGV2JA==';
-    env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
-  }
-
   // `detached` crea un grupo de procesos propio: al terminar podemos matar
   // el grupo entero. Si sólo se señaliza al proceso de `npx`, el
   // `next-server` hijo sobrevive y deja colgada cualquier tubería que lea

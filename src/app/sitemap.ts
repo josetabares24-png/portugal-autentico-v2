@@ -126,9 +126,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   /*
    * Itinerarios retirados: su URL redirige de forma permanente a su sustituto
    * editorial, así que no puede seguir en el sitemap —un sitemap no debe
-   * declarar URLs que redirigen—. El dato se conserva en `guidePacks` porque
-   * el panel de administración sigue leyéndolo; lo que se retira es la URL
-   * pública, no el registro.
+   * declarar URLs que redirigen—. El dato se conserva en `guidePacks`; lo
+   * que se retira es la URL pública, no el registro.
    *
    * lisboa-romantica -> /blog/lisboa-en-pareja   (redirect en next.config.mjs)
    * lisboa-familiar  -> /blog/lisboa-con-ninos   (redirect en next.config.mjs)

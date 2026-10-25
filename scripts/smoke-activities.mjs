@@ -352,17 +352,6 @@ async function main() {
       baseUrl = `http://localhost:${port}`;
 
       const env = { ...process.env, PORT: String(port) };
-      // Clerk's middleware throws if no publishable key is configured at
-      // all, which would 500 every route before we even reach the routes
-      // under test. If the environment doesn't already have real Clerk
-      // keys (e.g. this sandbox), fall back to a syntactically-valid but
-      // inert local placeholder so the app boots. Never overrides real
-      // keys if they're already present (e.g. in Vercel/CI).
-      if (!env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-        log('NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY no está definido: usando una clave local ficticia solo para poder arrancar el servidor de pruebas.');
-        env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'pk_test_bm9pbmRleC1zbW9rZXRlc3QuY2xlcmsuYWNjb3VudHMuZGV2JA==';
-        env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
-      }
 
       log(`== Arrancando next start en ${baseUrl} ==`);
       child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {

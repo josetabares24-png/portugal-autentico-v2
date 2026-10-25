@@ -788,10 +788,6 @@ async function main() {
       const port = await getFreePort();
       baseUrl = `http://localhost:${port}`;
       const env = { ...process.env, PORT: String(port) };
-      if (!env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-        env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'pk_test_bm9pbmRleC1zbW9rZXRlc3QuY2xlcmsuYWNjb3VudHMuZGV2JA==';
-        env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
-      }
       log(`== Arrancando next start en ${baseUrl} ==`);
       child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {
         stdio: 'inherit',

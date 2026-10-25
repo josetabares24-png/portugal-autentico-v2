@@ -86,12 +86,6 @@ async function levantarServidor() {
     stdio: 'ignore',
     env: {
       ...process.env,
-      // Claves de juguete: la ruta del blog no usa autenticación, pero el
-      // proveedor necesita que existan para arrancar.
-      CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY || 'sk_test_dummy',
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
-        process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
-        'pk_test_ZHVtbXkuY2xlcmsuYWNjb3VudHMuZGV2JA',
     },
   });
 

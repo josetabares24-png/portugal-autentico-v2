@@ -30,8 +30,6 @@
    Ve a **"Environment Variables"** y agrega **TODAS** estas variables:
 
    ```
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=tu_valor_aquí
-   CLERK_SECRET_KEY=tu_valor_aquí
    NEXT_PUBLIC_SUPABASE_URL=tu_valor_aquí
    SUPABASE_SERVICE_ROLE_KEY=tu_valor_aquí
    STRIPE_SECRET_KEY=tu_valor_aquí
@@ -87,8 +85,6 @@ vercel --prod
 
 **Agregar variables de entorno con CLI:**
 ```bash
-vercel env add NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-vercel env add CLERK_SECRET_KEY
 vercel env add NEXT_PUBLIC_SUPABASE_URL
 vercel env add SUPABASE_SERVICE_ROLE_KEY
 vercel env add STRIPE_SECRET_KEY
