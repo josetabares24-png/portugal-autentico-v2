@@ -45,3 +45,9 @@ Mismo mecanismo que D-067 (un bloque en el cuerpo, al cerrar la sección que lo 
 - 4 y 5 días no llevan Stay22: no hablan de alojamiento y ya tienen sus dos bloques.
 - Navegante: la Pena no va dentro de «Sintra, Cascais y el barco» porque eso serían dos bloques en el cuerpo; va al final.
 - `smoke-editorial-template.mjs`: contratos de las cuatro páginas nuevas.
+
+## Paso 3 — Arreglos pequeños
+
+- /en/lisbon-free-walking-tours: el enlace «GuruWalk: Lisbon tours in English» de las fuentes ahora lleva `ref`, `pro=true` y UTM (`utm_content=sources`), `rel="sponsored"` y medición de clic (`EnglishBookingLink`). Comprobado en Chrome con idioma español: GuruWalk abre /lisbon y conserva el ref.
+- Fichas de /actividades con botón directo (`BookingCta`: crucero y fado): aviso de afiliado junto al botón con el mismo texto que los artículos y enlace a /aviso-legal#3-afiliados-y-enlaces-a-terceros. Oceanário, Torre y Castelo ya lo tienen porque son guías y usan el bloque de los artículos.
+- Sitemap: no cambia (sin URL nuevas).
