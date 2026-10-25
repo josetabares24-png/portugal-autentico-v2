@@ -359,8 +359,8 @@ const xml = await (await fetch(base + "/sitemap.xml")).text();
 const sitemap = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
 check(
   "/sitemap.xml",
-  "98 Spanish plus6 English URLs",
-  sitemap.length === 104,
+  "99 Spanish plus6 English URLs",
+  sitemap.length === 105,
   String(sitemap.length),
 );
 for (const route of routes)

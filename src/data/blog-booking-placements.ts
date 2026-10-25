@@ -115,6 +115,17 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
         'El 1 de enero cierran casi todos los monumentos, pero el Oceanário abre con horario especial. Mira las horas de ese día en su web antes de comprar.',
     },
   ],
+  // lisboa-en-enero · artículo nuevo (25/10/2026), sin datos aún. Va sin
+  // `beforeHeading`: con la política final (D-045/D-067) se pinta al final.
+  // El Oceanário es el plan bajo techo que abre todos los días, también el
+  // 1 de enero.
+  'lisboa-en-enero': [
+    {
+      offer: { type: 'product', productId: 'oceanario' },
+      intro:
+        'Si te toca un día de lluvia, el Oceanário es toda la visita bajo techo y abre todos los días, el 1 de enero de 11:00 a 20:00. En la web oficial hay un 10 % menos con el código ONLINE10; si prefieres comprar en español, esta es la entrada que pone el propio Oceanário.',
+    },
+  ],
   // lisboa-en-navidad · artículo nuevo (9/10/2026), sin datos aún.
   'lisboa-en-navidad': [
     {

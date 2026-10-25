@@ -11,6 +11,7 @@ export const BLOG_RELATED_POST_IDS: Record<string, readonly string[]> = {
   'palacio-da-pena-entradas': ['sintra-desde-lisboa', 'excursiones-desde-lisboa', 'tarjeta-navegante-lisboa'],
   'obidos-vila-natal': ['lisboa-en-navidad', 'excursiones-desde-lisboa', 'lisboa-con-ninos'],
   'nochevieja-lisboa': ['lisboa-en-navidad', 'vida-nocturna-lisboa', 'festivales-eventos-lisboa-2026'],
+  'lisboa-en-enero': ['nochevieja-lisboa', 'lisboa-cuando-llueve', 'mejor-epoca-visitar-lisboa'],
   'lisboa-en-navidad': ['nochevieja-lisboa', 'obidos-vila-natal', 'festivales-eventos-lisboa-2026'],
   'lisboa-en-5-dias': ['lisboa-en-4-dias', 'sintra-desde-lisboa', 'parque-das-nacoes-lisboa-que-ver'],
   'lisboa-cuando-llueve': ['parque-das-nacoes-lisboa-que-ver', 'mejores-mercados-lisboa', 'donde-tomar-cafe-lisboa'],

@@ -261,3 +261,7 @@ Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head6
 
 
 **E019 — Actualización23/10/2026:** D-070, aplicación8d3ff35 pulida en Preview, inglés208/preservación1.659 y24vistas remotas sin fallos. Pena abre ficha inglesa; GuruWalk conserva idioma/fecha/ref. booking_guide_click cubre solo dos accesos de Home y dos del itinerario; affiliate_click sigue como paso posterior. D0 inglés SIN INICIAR; las ventas siguen desconocidas. No atribuir efecto al diseño sin datos posteriores y costes de mantenimiento. [Contrato](../docs/english-pilot-polish.md).
+
+## E-020 — Guías de entradas de Oceanário y Torre de Belém + «Lisboa en enero», 25/10/2026
+
+**Status: PREPARADO en la rama local `feat/guias-entradas-2`; no desplegado, sin push.** Mismo formato que E-015: /actividades/oceanario-lisboa y /actividades/torre-de-belem pasan de ficha corta a guía completa en su URL (título, meta, FAQ y lastmod nuevos; canónica sin cambios). Artículo nuevo /blog/lisboa-en-enero (plan: publicar antes del 15/11). Baseline: GSC de las dos fichas a 25/10 antes de publicar; medir clics e impresiones a 28 y 56 días. Detalle y fuentes en [la nota](content/2026-10-25-GUIAS-ENTRADAS-2.md). Necesita L-003 (visto bueno visual de José) antes de merge.

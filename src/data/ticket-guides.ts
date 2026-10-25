@@ -8,11 +8,18 @@
  * Jerónimos, en la misma dirección.
  *
  * Todos los datos salen de castelodesaojorge.pt (precios, horarios, accesos),
- * comprobados el 10/10/2026. No hay frase personal de José sobre el castillo:
- * nada en primera persona.
+ * comprobados el 10/10/2026 y otra vez el 25/10/2026. No hay frase personal de
+ * José sobre el castillo: nada en primera persona.
  *
- * Avisos con fecha: la huelga del 17/10/2026 y el museo cerrado por obras.
- * Quitar el de la huelga después del 17 de octubre y revisar el del museo.
+ * Aviso con fecha: el museo cerrado por obras (sigue en la web oficial el
+ * 25/10/2026). El de la huelga del 17/10 se quitó al pasar la fecha.
+ *
+ * Oceanário y Torre de Belém (25/10/2026) siguen el mismo formato en la URL de
+ * su ficha. Precios y horarios de oceanario.pt, museusemonumentos.pt,
+ * mosteirojeronimos.torrebelem.gov.pt y la venta oficial (MEO Blueticket),
+ * comprobados ese día. Tampoco hay frases personales de José: nada en primera
+ * persona. Los precios de GetYourGuide y Tiqets no se escriben: cambian con la
+ * fecha y la moneda.
  */
 import type { Article, ArticleFaq } from '@/components/blog/article-types';
 import type { BlogBookingPlacement } from '@/data/blog-booking-placements';
@@ -26,6 +33,8 @@ export interface TicketGuide {
 }
 
 const CASTELO_OFICIAL = 'https://castelodesaojorge.pt';
+const OCEANARIO_OFICIAL = 'https://oceanario.pt';
+const BELEM_OFICIAL = 'https://mosteirojeronimos.torrebelem.gov.pt';
 
 export const TICKET_GUIDES: Record<string, TicketGuide> = {
   'castelo-sao-jorge': {
@@ -41,8 +50,8 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',
       categoria: 'Entradas',
       fecha: '10 Oct 2026',
-      fechaActualizacion: 'Verificado el 10 de octubre de 2026',
-      dateModified: '2026-10-10',
+      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+      dateModified: '2026-10-25',
       minutos: 7,
       links: [
         { href: '/blog/alfama-historia-guia', label: 'Qué ver en Alfama' },
@@ -81,7 +90,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'aviso',
           texto:
-            'Avisos de octubre de 2026: el museo del castillo está cerrado temporalmente por obras en los aseos. Y para el 17 de octubre hay convocada una huelga que puede afectar a la visita; si vas ese día, mira la web del castillo antes de salir.',
+            'Aviso, comprobado el 25 de octubre de 2026: el museo del castillo está cerrado temporalmente por obras en los aseos. El resto del recinto abre con normalidad.',
         },
 
         { tipo: 'subtitulo', texto: 'Precios 2026' },
@@ -289,6 +298,479 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         position: 'after-summary',
         intro:
           'Si prefieres comprarla en español, GetYourGuide vende la entrada con audioguía. Mira el precio y las condiciones de cancelación en su ficha antes de pagar; la venta oficial del castillo es BOL.',
+      },
+    ],
+  },
+  'oceanario-lisboa': {
+    breadcrumbLabel: 'Oceanário de Lisboa',
+    article: {
+      titulo: 'Oceanário de Lisboa: entradas, precios y horario (2026)',
+      descripcion:
+        'Cuánto cuesta la entrada al Oceanário de Lisboa en 2026 según la hora, el descuento de la compra online, el horario de los días especiales, qué incluye el billete y cómo llegar en metro.',
+      seoTitle: 'Oceanário de Lisboa: entradas, precio y horario 2026',
+      metaDescription:
+        'Entrada de 25,50 € a 29,90 € según la hora, y un 10 % menos online con ONLINE10. Horario, días especiales, qué incluye y cómo llegar en metro.',
+      imagen: '/images/actividades/oceanario-de-lisboa.webp',
+      imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
+      categoria: 'Entradas',
+      fecha: '25 Oct 2026',
+      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+      dateModified: '2026-10-25',
+      minutos: 6,
+      links: [
+        { href: '/blog/parque-das-nacoes-lisboa-que-ver', label: 'Qué ver en Parque das Nações' },
+        { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente' },
+        { href: '/blog/lisboa-con-ninos', label: 'Lisboa con niños' },
+        { href: '/blog/lisboa-cuando-llueve', label: 'Qué hacer en Lisboa cuando llueve' },
+        { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
+        { href: '/comprar-entradas', label: 'Entradas de Lisboa' },
+      ],
+      fuentes: [
+        { label: 'Oceanário de Lisboa: planear la visita (precios, horarios, normas)', href: `${OCEANARIO_OFICIAL}/planear-visita/` },
+        { label: 'Oceanário de Lisboa: preguntas frecuentes', href: `${OCEANARIO_OFICIAL}/perguntas-frequentes/` },
+        { label: 'Oceanário de Lisboa: venta oficial de entradas', href: 'https://tickets.oceanario.pt/' },
+      ],
+      contenido: [
+        {
+          tipo: 'parrafo',
+          texto:
+            'La entrada al Oceanário de Lisboa cuesta entre 25,50 € y 29,90 € para un adulto: depende de la hora a la que entres, y la franja más barata es la de la tarde. Comprando en la web oficial con el código ONLINE10 hay un 10 % de descuento. Abre todos los días de 10:00 a 20:00, con última entrada a las 19:00, y se llega en metro: línea roja hasta Oriente.',
+        },
+        {
+          tipo: 'lista',
+          items: [
+            'Adulto (13 a 64 años): 29,90 € por la mañana, 27,70 € a mediodía y 25,50 € por la tarde.',
+            'Niños de 3 a 12 años, de 15,50 € a 17,70 €. Mayores de 65, de 17,70 € a 19,90 €. Hasta 2 años, gratis.',
+            'Online, en tickets.oceanario.pt, un 10 % menos con el código ONLINE10.',
+            'Todos los días de 10:00 a 20:00, última entrada a las 19:00. El 24, el 25 y el 31 de diciembre y el 1 de enero tienen horario especial.',
+            'La visita lleva entre hora y media y dos horas, según el propio Oceanário.',
+            'Cómo llegar: metro línea roja hasta Oriente y unos minutos a pie por el Parque das Nações.',
+          ],
+        },
+
+        { tipo: 'subtitulo', texto: 'Precios 2026 según la hora' },
+        {
+          tipo: 'tabla',
+          texto: 'Precios de la visita al Oceanário de Lisboa en 2026, según la franja de entrada.',
+          columnas: ['Franja de entrada', 'Adulto (13-64)', 'Niño (3-12)', 'Mayor de 65'],
+          filas: [
+            ['10:00 a 11:30', '29,90 €', '17,70 €', '19,90 €'],
+            ['12:00 a 15:30', '27,70 €', '16,60 €', '18,80 €'],
+            ['16:00 a 18:30', '25,50 €', '15,50 €', '17,70 €'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Los bebés de hasta 2 años entran gratis a cualquier hora. Con precio reducido te pueden pedir un documento que acredite la edad, y los menores de 12 años tienen que ir con un adulto.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Si puedes elegir la hora, la tarde sale más barata: un adulto paga 4,40 € menos que por la mañana. La franja de tarde empieza a las 16:00 y la última entrada es a las 19:00, así que hay tiempo para la visita entera.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Con una incapacidad igual o superior al 60 % se entra gratis, y un acompañante tiene un 60 % de descuento. Solo se concede en la taquilla del Oceanário, el día de la visita, presentando el Atestado Médico de Incapacidade Multiusos.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Dónde comprar la entrada' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La venta oficial es la web tickets.oceanario.pt y la taquilla del propio Oceanário. Online, el código ONLINE10 descuenta un 10 %, y se paga con tarjeta, MB Way o PayPal.',
+        },
+        {
+          tipo: 'tabla',
+          texto: 'Dónde comprar la entrada al Oceanário de Lisboa.',
+          columnas: ['Dónde', 'Precio adulto', 'Para quién'],
+          filas: [
+            ['Web oficial (tickets.oceanario.pt)', 'De 25,50 € a 29,90 €, con un 10 % menos usando ONLINE10', 'Quien quiere pagar lo mínimo'],
+            ['Taquilla del Oceanário', 'De 25,50 € a 29,90 €', 'Quien decide el mismo día, y quien tiene derecho a la entrada gratis por incapacidad, que solo se da aquí'],
+            ['GetYourGuide', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio Oceanário'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La entrada de GetYourGuide no es reembolsable. Si compras ahí, cualquier problema con esa entrada se resuelve con GetYourGuide, no con el Oceanário.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Horarios y días especiales' },
+        {
+          tipo: 'tabla',
+          texto: 'Horario del Oceanário de Lisboa.',
+          columnas: ['Días', 'Abierto', 'Última entrada'],
+          filas: [
+            ['Todos los días', '10:00 a 20:00', '19:00'],
+            ['24 y 31 de diciembre', '10:00 a 19:00', '18:00'],
+            ['25 de diciembre y 1 de enero', '11:00 a 20:00', '19:00'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Abre todos los días, también los lunes y los festivos. El 25 de diciembre y el 1 de enero abre, mientras el castillo, los Jerónimos y la Torre de Belém están cerrados.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Qué incluye la entrada' },
+        {
+          tipo: 'lista',
+          items: [
+            'La exposición permanente, «Um Planeta, Um Oceano», con el gran acuario central y los hábitats de distintos océanos alrededor.',
+            'Las exposiciones temporales. En octubre de 2026 están «Universo Submerso» y «Monstros Marinhos», con modelos a tamaño real de grandes depredadores prehistóricos del mar, que se puede ver hasta el 1 de noviembre. Van cambiando a lo largo del año.',
+            'Los textos de las exposiciones están en portugués y en inglés.',
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Las visitas guiadas, también las de bastidores, se reservan y se pagan aparte.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Normas y consigna' },
+        {
+          tipo: 'lista',
+          items: [
+            'Se pueden hacer fotos, pero sin flash ni palos de selfi.',
+            'No se puede comer ni entrar con comida en el recorrido. Hay restaurante y cafetería en la planta baja para antes o después.',
+            'Hay 39 taquillas de pago en la planta 0, en tres tamaños. Una maleta más grande que la taquilla mayor (98 × 40 × 75 cm) no se puede guardar.',
+            'Todo el recorrido tiene rampas y ascensores, y se puede ir con carrito de bebé.',
+            'No se puede fumar dentro, tampoco cigarrillos electrónicos.',
+          ],
+        },
+
+        { tipo: 'subtitulo', texto: 'Cuándo ir' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Si el precio importa, por la tarde: de 16:00 a 18:30 es la franja más barata. Y es un buen plan para un día de lluvia, porque toda la visita es bajo techo.',
+        },
+        {
+          tipo: 'enlace',
+          texto: 'Más planes bajo techo para los días de lluvia.',
+          href: '/blog/lisboa-cuando-llueve',
+          label: 'Qué hacer en Lisboa cuando llueve',
+        },
+
+        { tipo: 'subtitulo', texto: 'Cómo llegar' },
+        {
+          tipo: 'lista',
+          items: [
+            'Metro: línea roja hasta Oriente. Desde la estación son unos minutos a pie.',
+            'Autobuses de Carris: 705, 708, 725, 728, 744, 750, 759, 782 y 794.',
+            'En coche: hay varios aparcamientos en la zona. El más cercano, el Parque Oceanário, tiene 274 plazas.',
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Con la tarjeta Navegante y saldo zapping, el metro cuesta 1,72 € por viaje.',
+        },
+        {
+          tipo: 'enlace',
+          texto: 'Cómo cargar la Navegante y cuánto cuesta cada viaje.',
+          href: '/blog/tarjeta-navegante-lisboa',
+          label: 'Tarjeta Navegante y tarifas 2026',
+        },
+
+        { tipo: 'subtitulo', texto: 'Qué más hacer en el Parque das Nações' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'El Oceanário está en el paseo junto al río del Parque das Nações, el barrio de la Expo 98. Al salir se puede seguir andando por la orilla.',
+        },
+        {
+          tipo: 'enlace',
+          texto: 'Qué ver en el barrio antes o después del Oceanário.',
+          href: '/blog/parque-das-nacoes-lisboa-que-ver',
+          label: 'Qué ver en Parque das Nações',
+        },
+      ],
+    },
+    faqs: [
+      {
+        q: '¿Cuánto cuesta la entrada al Oceanário de Lisboa en 2026?',
+        a: 'Depende de la hora. Un adulto paga 29,90 € de 10:00 a 11:30, 27,70 € de 12:00 a 15:30 y 25,50 € de 16:00 a 18:30. Los niños de 3 a 12 años, de 15,50 € a 17,70 €, y los mayores de 65, de 17,70 € a 19,90 €. Hasta 2 años, gratis.',
+      },
+      {
+        q: '¿Hay descuento comprando online?',
+        a: 'Sí. En la web oficial, tickets.oceanario.pt, el código ONLINE10 descuenta un 10 %.',
+      },
+      {
+        q: '¿A qué hora es más barato?',
+        a: 'Por la tarde, de 16:00 a 18:30: un adulto paga 25,50 €, 4,40 € menos que por la mañana.',
+      },
+      {
+        q: '¿Abre los lunes y los festivos?',
+        a: 'Sí, todos los días de 10:00 a 20:00. El 24 y el 31 de diciembre cierra a las 19:00, y el 25 de diciembre y el 1 de enero abre de 11:00 a 20:00.',
+      },
+      {
+        q: '¿Cuánto dura la visita?',
+        a: 'Entre hora y media y dos horas, según el propio Oceanário.',
+      },
+      {
+        q: '¿Las exposiciones temporales se pagan aparte?',
+        a: 'No. La entrada da acceso a la exposición permanente y a las temporales. Las visitas guiadas sí se pagan aparte.',
+      },
+      {
+        q: '¿Puedo dejar la maleta?',
+        a: 'Hay 39 taquillas de pago en la planta 0, la mayor de 98 × 40 × 75 cm. Si tu maleta es más grande, no se puede guardar.',
+      },
+      {
+        q: '¿Cómo llego en metro?',
+        a: 'Con la línea roja hasta Oriente. El Oceanário está a unos minutos a pie, en la Doca dos Olivais.',
+      },
+    ],
+    placements: [
+      {
+        offer: { type: 'product', productId: 'oceanario' },
+        position: 'after-summary',
+        intro:
+          'Si prefieres comprarla en español, GetYourGuide vende la entrada que pone el propio Oceanário. No es reembolsable. En la web oficial tienes un 10 % menos con el código ONLINE10.',
+      },
+    ],
+  },
+
+  'torre-de-belem': {
+    breadcrumbLabel: 'Torre de Belém',
+    article: {
+      titulo: 'Torre de Belém: entradas, precio y horario (2026)',
+      descripcion:
+        'Cuánto cuesta la entrada a la Torre de Belém en 2026, cómo funcionan las franjas horarias desde la reapertura, dónde comprarla si en la Torre ya no hay taquilla, quién entra gratis y cuándo cierra.',
+      seoTitle: 'Torre de Belém: entradas, precio y horario 2026',
+      metaDescription:
+        'Entrada 15 €, con franja horaria y unas 900 plazas al día. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, horario y días de cierre.',
+      imagen: '/images/actividades/torre-de-belem-lisboa.webp',
+      imageAlt: 'Torre de Belém junto al río Tajo',
+      categoria: 'Entradas',
+      fecha: '25 Oct 2026',
+      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+      dateModified: '2026-10-25',
+      minutos: 6,
+      links: [
+        { href: '/blog/monasterio-jeronimos-entradas', label: 'Monasterio de los Jerónimos: entradas y horarios' },
+        { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
+        { href: '/blog/pasteles-de-belem', label: 'Pastéis de Belém' },
+        { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
+        { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y tarifas 2026' },
+        { href: '/comprar-entradas', label: 'Entradas de Lisboa' },
+      ],
+      fuentes: [
+        { label: 'Museus e Monumentos de Portugal: Torre de Belém (precio y horario)', href: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem' },
+        { label: 'Jerónimos y Torre de Belém: visitar (precios, descuentos, gratuidades, accesibilidad)', href: `${BELEM_OFICIAL}/visitar` },
+        { label: 'Jerónimos y Torre de Belém: la Torre', href: `${BELEM_OFICIAL}/torre-de-belem` },
+        { label: 'MEO Blueticket: venta oficial de la Torre de Belém', href: 'https://mmp.bymeoblueticket.pt/pt/event/14776/torre-de-belem' },
+        { label: 'Museus e Monumentos de Portugal: la Torre de Belém reabre (mayo de 2026)', href: 'https://www.museusemonumentos.pt/en/noticia-com/torre-de-belem-reabre-ao-publico' },
+        { label: 'Renascença: entrevista a la directora sobre aforo y venta (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
+        { label: 'Observador: franjas de 60 personas cada media hora (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
+        { label: 'Visit Lisboa Shop: preguntas frecuentes de la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/blogs/news/lisboa-card-f-a-q' },
+      ],
+      contenido: [
+        {
+          tipo: 'parrafo',
+          texto:
+            'La entrada a la Torre de Belém cuesta 15 € y va con día y franja horaria. Desde que reabrió el 27 de mayo de 2026 entran unas 60 personas cada media hora, unas 900 al día. En la Torre ya no hay taquilla: se compra online o en el quiosco frente al Monasterio de los Jerónimos. Abre de martes a domingo de 9:30 a 17:30, con última entrada a las 17:00, y cierra los lunes.',
+        },
+        {
+          tipo: 'lista',
+          items: [
+            '15 €. Mayores de 65 y jóvenes de 13 a 24 años, la mitad. Menores de 12 años (incluidos), gratis.',
+            'Venta oficial online: 15 € más gastos de gestión, 15,92 € en total.',
+            'En la Torre no se vende. La venta en persona está en el quiosco frente a los Jerónimos, que cierra a las 16:30.',
+            'De martes a domingo, de 9:30 a 17:30. Última entrada a las 17:00.',
+            'Cierra los lunes, el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio y el 25 de diciembre.',
+            'Con la Lisboa Card es gratis, pero hay que reservar franja con el número de la tarjeta.',
+          ],
+        },
+
+        { tipo: 'subtitulo', texto: 'Precios 2026' },
+        {
+          tipo: 'tabla',
+          texto: 'Precios de la entrada a la Torre de Belém en 2026.',
+          columnas: ['Entrada', 'Precio'],
+          filas: [
+            ['Billete normal', '15 €'],
+            ['Mayores de 65 años', '7,50 € (50 %)'],
+            ['Jóvenes de 13 a 24 años', '7,50 € (50 %)'],
+            ['Billete familia (al menos 1 adulto y 1 menor)', '50 %, solo en la taquilla'],
+            ['Menores de 12 años (incluidos)', 'Gratis'],
+            ['Residentes en Portugal', 'Gratis 52 días al año, a elegir (Acesso 52)'],
+            ['Con Lisboa Card', 'Gratis, reservando franja'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Hay más casos gratuitos, como los desempleados residentes en la Unión Europea o las personas con una incapacidad igual o superior al 60 % y un acompañante. Hay que llevar el justificante. La lista completa está en la página oficial, enlazada al final.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La Torre y los Jerónimos son dos entradas distintas, con los mismos descuentos y los mismos días de cierre. El claustro de los Jerónimos cuesta 18 €.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Franjas horarias y aforo' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La Torre reabrió el 27 de mayo de 2026, después de la primera obra de conservación a fondo desde 1998. Desde entonces se entra por franjas de media hora, a partir de las 9:30, con unas 60 personas por franja y un máximo de unas 900 al día. La escalera de caracol de la torre es muy estrecha y no deja subir a mucha gente a la vez.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La web oficial avisa de que las entradas se agotan a menudo y de que entonces ya no quedan para el mismo día. Cómprala en cuanto tengas el día decidido.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Sobre la espera fuera hay dos versiones. La directora del monumento calculó en la reapertura que, con las franjas, sería de unos 20 minutos como mucho. La ficha de Tiqets avisa de que, incluso con hora reservada, en temporada alta puede pasar de una hora, y de que hay muy pocos sitios para sentarse. Lleva agua y algo para el sol o la lluvia.',
+        },
+        {
+          tipo: 'aviso',
+          texto:
+            'La Torre está expuesta al tiempo y puede cerrar cuando la seguridad de los visitantes está en riesgo. Si hay temporal ese día, mira la web oficial antes de ir.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Dónde comprar la entrada' },
+        {
+          tipo: 'tabla',
+          texto: 'Dónde comprar la entrada a la Torre de Belém.',
+          columnas: ['Dónde', 'Precio', 'Para quién'],
+          filas: [
+            ['Web oficial (MEO Blueticket)', '15 € + gastos (15,92 € en total)', 'Quien quiere pagar lo mínimo y poder cambiar la franja'],
+            ['Quiosco frente a los Jerónimos', '15 €', 'Familias (el billete familia solo se vende aquí) y residentes con Acesso 52. Cierra a las 16:30'],
+            ['Tiqets', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio organismo, Museus e Monumentos de Portugal'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'En la venta oficial se puede cambiar la franja con al menos 24 horas de antelación, desde el botón «(Re)agendamento». La entrada de Tiqets no se puede devolver ni cambiar de fecha.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'El monumento no tiene audioguías. Tiqets vende también un combinado de Jerónimos y Torre para quien hace los dos el mismo día.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Horarios y cierres' },
+        {
+          tipo: 'tabla',
+          texto: 'Horario de la Torre de Belém.',
+          columnas: ['', 'Abre', 'Cierra', 'Última entrada'],
+          filas: [
+            ['Martes a domingo', '9:30', '17:30', '17:00'],
+            ['Quiosco de venta (frente a los Jerónimos)', '—', '16:30', '—'],
+            ['Lunes', 'Cerrado', '—', '—'],
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Además de los lunes, cierra el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio (San Antonio, fiesta de Lisboa) y el 25 de diciembre.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Qué se ve dentro' },
+        {
+          tipo: 'lista',
+          items: [
+            'El baluarte, la parte baja que da al río, con la batería de cañones.',
+            'La torre, de varios pisos unidos por una escalera de caracol muy estrecha: la Sala del Gobernador, la del Rey, la de Audiencias y la capilla.',
+            'La terraza de arriba, con el Tajo a la altura del agua.',
+            'Por fuera, los detalles manuelinos tallados en la piedra y el rinoceronte de la base de una garita.',
+          ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Con movilidad reducida solo se puede visitar la planta baja del baluarte: a la torre se sube por la escalera de caracol. Por dentro se ve en unos 45 minutos.',
+        },
+
+        { tipo: 'subtitulo', texto: 'Con la Lisboa Card' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La Lisboa Card incluye la entrada, pero hay que reservar día y hora. Primero se cambia el bono por la tarjeta física; luego, en la venta oficial, se elige la opción «Torre de Belém – Lisboa Card» y se mete el número de la tarjeta. No se puede reservar antes de tener la tarjeta, y los cupos para la Lisboa Card son limitados.',
+        },
+        {
+          tipo: 'enlace',
+          texto: 'La cuenta hecha con los precios de 2026.',
+          href: '/blog/lisboa-card-vale-la-pena',
+          label: 'Cuándo compensa la Lisboa Card',
+        },
+
+        { tipo: 'subtitulo', texto: 'Cómo llegar' },
+        {
+          tipo: 'lista',
+          items: [
+            'Tren de la línea de Cascais desde Cais do Sodré hasta Belém: 8 minutos.',
+            'Tranvía 15E desde Praça da Figueira o Cais do Sodré.',
+            'Desde el Monasterio de los Jerónimos, unos 10 minutos a pie. Lo normal es hacer los dos el mismo día.',
+          ],
+        },
+        {
+          tipo: 'enlace',
+          texto: 'Precios, franjas y la iglesia gratis, en la guía de entradas de los Jerónimos.',
+          href: '/blog/monasterio-jeronimos-entradas',
+          label: 'Monasterio de los Jerónimos: entradas y horarios',
+        },
+
+        { tipo: 'subtitulo', texto: 'Si no quieres pagar la entrada' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Desde el paseo junto al río la Torre se ve entera y gratis, y es desde donde salen casi todas las fotos. Si el día va justo, verla por fuera y seguir por Belém es una opción razonable.',
+        },
+        {
+          tipo: 'enlace',
+          texto: 'Qué más ver en Belém en el mismo paseo.',
+          href: '/blog/belem-barrio-guia',
+          label: 'Qué ver en Belém',
+        },
+      ],
+    },
+    faqs: [
+      {
+        q: '¿Cuánto cuesta la entrada a la Torre de Belém en 2026?',
+        a: '15 €. Mayores de 65 y jóvenes de 13 a 24 años pagan la mitad, y los menores de 12 entran gratis. En la venta oficial online se suman los gastos de gestión: 15,92 € en total.',
+      },
+      {
+        q: '¿Se puede comprar la entrada en la Torre?',
+        a: 'No. Desde la reapertura de mayo de 2026 la Torre no tiene taquilla. Se compra online o en el quiosco frente al Monasterio de los Jerónimos, que cierra a las 16:30.',
+      },
+      {
+        q: '¿Hay que reservar hora?',
+        a: 'Sí. Se entra por franjas de media hora, con unas 60 personas por franja y unas 900 al día. Las entradas se agotan a menudo.',
+      },
+      {
+        q: '¿Abre los lunes?',
+        a: 'No. Abre de martes a domingo de 9:30 a 17:30, con última entrada a las 17:00.',
+      },
+      {
+        q: '¿Es gratis con la Lisboa Card?',
+        a: 'Sí, pero hay que reservar día y hora en la venta oficial con el número de la tarjeta física, y los cupos son limitados.',
+      },
+      {
+        q: '¿Puedo cambiar la hora de mi entrada?',
+        a: 'Si la compraste en la venta oficial, sí, con al menos 24 horas de antelación. La de Tiqets no se puede cambiar ni devolver.',
+      },
+      {
+        q: '¿Se puede visitar con movilidad reducida?',
+        a: 'Solo la planta baja del baluarte. A la torre se sube por una escalera de caracol muy estrecha.',
+      },
+      {
+        q: '¿Cuánto tiempo hace falta?',
+        a: 'Unos 45 minutos dentro, más la espera para entrar.',
+      },
+    ],
+    placements: [
+      {
+        offer: { type: 'product', productId: 'torre-belem' },
+        position: 'after-summary',
+        intro:
+          'Si prefieres comprarla en español, Tiqets vende la entrada con franja horaria, y el proveedor es el propio Museus e Monumentos de Portugal. No se puede devolver ni cambiar de fecha, así que elige la franja con el día claro.',
       },
     ],
   },

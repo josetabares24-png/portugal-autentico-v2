@@ -62,6 +62,16 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/free-tours/lisboa-nocturna.webp',
   },
   {
+    id: 'lisboa-en-enero',
+    titulo: 'Lisboa en enero: tiempo, qué hacer y qué está cerrado (2027)',
+    excerpt: 'Máximas de 15 °C y unos 10 días de lluvia, atardecer hacia las 17:30, qué cierra el 1 de enero y los lunes, qué pasa en la ciudad y los horarios de invierno.',
+    categoria: 'Planificación',
+    fecha: '25 Oct 2026',
+    dateModified: '2026-10-25',
+    autor: 'José Tabares',
+    imagen: '/images/miradouro-atardecer.jpg',
+  },
+  {
     id: 'palacio-da-pena-entradas',
     titulo: 'Palacio da Pena: entradas, horarios y cómo ir desde Lisboa (2026)',
     excerpt: 'Entrada desde 20 € con hora fija y sin tolerancia de retraso, qué incluye cada billete, web oficial o Tiqets y cómo subir en tren desde Rossio y autobús 434.',

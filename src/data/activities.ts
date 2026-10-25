@@ -267,7 +267,7 @@ export const activities: Activity[] = [
     description: 'Torre-fortaleza junto al río, símbolo de la Era de los Descubrimientos y Patrimonio de la Humanidad.',
     savingTip: 'Combina la visita con los Jerónimos en la misma mañana: están a 10 minutos a pie y ahorras un desplazamiento. Reserva con antelación: desde la reapertura de mayo de 2026 el acceso es por franjas horarias limitadas (unas 900 entradas al día).',
     officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
-    lastVerified: '2026-10-09',
+    lastVerified: '2026-10-25',
     statusNote: 'Reabierta el 27 de mayo de 2026 tras un año de obras (PRR), con nuevo sistema de acceso por franjas horarias para reducir las colas.',
   },
   {
@@ -415,9 +415,9 @@ export const activities: Activity[] = [
     image: '/images/actividades/oceanario-de-lisboa.webp',
     imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
     description: 'Acuario en Parque das Nações con precios variables según la franja horaria y una visita media de 1,5 a 2 horas.',
-    savingTip: 'La web oficial anuncia un 5 % de descuento para compra online y precios distintos según la hora. Compara franjas antes de elegir.',
+    savingTip: 'La web oficial anuncia un 10 % de descuento comprando online con el código ONLINE10, y el precio cambia según la hora: la franja de 16:00 a 18:30 es la más barata.',
     officialUrl: 'https://oceanario.pt/planear-visita/',
-    lastVerified: '2026-09-23',
+    lastVerified: '2026-10-25',
   },
   {
     slug: 'sintra-dia-completo',
