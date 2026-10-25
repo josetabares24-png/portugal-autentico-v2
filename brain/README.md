@@ -123,6 +123,7 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 
 - [[seo/NEXT-EXPERIMENT-SCORECARD-2026-09-23]] — fresh 90d/28d/7d Search Console scorecard for the next SEO experiment gate.
 - [[seo/2026-10-25-SEO-TECNICO]] — lastmod real en las 29 URL sin fecha, títulos ≤ 60 y metas ≤ 155 (D-076).
+- [[operations/2026-10-25-QUITAR-CLERK]] — fuera Clerk, panel /admin y /api/reviews; campaign con secreto (D-077).
 
 
 ## Subcerebro de vídeo / marca personal

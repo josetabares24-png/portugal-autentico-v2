@@ -1,5 +1,12 @@
 # Indexación del host de Clerk
 
+> **Actualización 25/10/2026 (D-077, rama `fix/quitar-clerk`, sin publicar):** José no usa el panel /admin y se retira Clerk de la web. Tras el deploy, este documento queda como histórico. Lo que cambia respecto a la decisión de abajo:
+>
+> - El código ya no carga Clerk: /admin, /api/admin y /api/reviews responden 404 (en producción daban 500 por `Missing secretKey`).
+> - El host `clerk.estabaenlisboa.com` lo sirve Clerk, no Next.js, así que seguirá respondiendo mientras exista el CNAME. Se deja de «mantener el CNAME»: José lo borra **después** de publicar la rama y de quitar las variables `CLERK_*` en Vercel, junto con `accounts`, `clkmail`, `clk._domainkey` y `clk2._domainkey`, todos en Vercel DNS.
+> - Sin CNAME el host deja de resolver y Google lo retira solo. Si Search Console lo sigue mostrando, se puede pedir la retirada temporal en Eliminaciones (propiedad de dominio). No hace falta robots.txt ni proxy.
+> - Pasos y orden: [brain/operations/2026-10-25-QUITAR-CLERK.md](../brain/operations/2026-10-25-QUITAR-CLERK.md).
+
 **Verificado:** 17 de octubre de 2026, durante la auditoría de Fase 0. **Host:** `clerk.estabaenlisboa.com`. No se modificaron DNS, autenticación, endpoints ni configuración de Clerk.
 
 ## Hechos comprobados
