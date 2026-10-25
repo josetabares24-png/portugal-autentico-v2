@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Cookies
 
-**Última actualización:** 9 de octubre de 2026
+**Última actualización:** 25 de octubre de 2026
 
 ## 1. ¿Qué son las Cookies?
 
@@ -42,10 +42,8 @@ Cuando aceptas o rechazas las cookies en el aviso de este sitio, tu elección se
 
 **Duración:** Hasta que borres los datos de navegación de tu navegador para este sitio, o cambies tu elección desde el propio aviso.
 
-### 2.2. Autenticación (Clerk)
-El sitio usa Clerk para gestionar el acceso al panel de administración. Clerk puede establecer cookies técnicas necesarias para mantener una sesión iniciada. Solo son relevantes para quien accede al panel de administración, no para la navegación pública del sitio.
-
-**Requieren consentimiento:** no, son necesarias para el funcionamiento del panel al que están asociadas.
+### 2.2. Inicio de sesión
+El sitio no tiene cuentas ni inicio de sesión, así que no usa cookies de sesión ni de autenticación.
 
 ### 2.3. Cookies Analíticas (Google Analytics)
 **Requieren tu consentimiento explícito**, que pedimos mediante el aviso de cookies. Si no aceptas, Google Analytics no se carga ni se inicia desde este sitio. Solo después de aceptar se solicita el script de Analytics y se habilita el almacenamiento analítico.
@@ -83,7 +81,6 @@ Algunas guías e itinerarios incluyen un mapa de Google Maps incrustado directam
 - **GetYourGuide y Tiqets:** módulos de reserva de actividades, solo si aceptas las cookies (ver punto 2.4).
 - **Stay22:** enlaces de alojamiento; su script solo se carga si aceptas las cookies (ver punto 2.5).
 - **Google Maps:** mapas incrustados en guías e itinerarios (ver punto 2.6).
-- **Clerk:** autenticación del panel de administración.
 - **Vercel:** alojamiento y ejecución del sitio web; puede usar cookies técnicas propias de su infraestructura.
 
 Estos terceros tienen sus propias políticas de privacidad y cookies, que no controlamos.
@@ -119,7 +116,7 @@ Si rechazas las cookies:
 
 ## 5. Nombres y Duración Exactos de las Cookies
 
-Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Tiqets, Stay22, Clerk, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para los módulos de reserva, la [política de privacidad de Stay22](https://www.stay22.com/privacy) para los enlaces de alojamiento, y la documentación de [Clerk](https://clerk.com/privacy) para las cookies de autenticación.
+Los nombres exactos de cookie y su duración concreta los define cada proveedor (Google, GetYourGuide, Tiqets, Stay22, Vercel) y pueden cambiar sin que dependa de nosotros. En vez de listar aquí valores que no controlamos y podrían quedar desactualizados, te remitimos a la documentación oficial de cada proveedor: la [política de privacidad de Google](https://policies.google.com/privacy) para Analytics y Maps, la [política de privacidad de GetYourGuide](https://www.getyourguide.com/privacy_policy) y la [política de privacidad de Tiqets](https://www.tiqets.com/es/privacy-policy/) para los módulos de reserva, la [política de privacidad de Stay22](https://www.stay22.com/privacy) para los enlaces de alojamiento.
 
 ## 6. Actualizaciones
 
