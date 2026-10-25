@@ -309,7 +309,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         'Cuánto cuesta la entrada al Oceanário de Lisboa en 2026 según la hora, el descuento de la compra online, el horario de los días especiales, qué incluye el billete y cómo llegar en metro.',
       seoTitle: 'Oceanário de Lisboa: entradas, precio y horario 2026',
       metaDescription:
-        'Entrada de 25,50 € a 29,90 € según la hora, y un 10 % menos online con ONLINE10. Horario, días especiales, qué incluye y cómo llegar en metro.',
+        'Entrada de 25,50 € a 29,90 € según la hora. Horario, días especiales, qué incluye y cómo llegar en metro.',
       imagen: '/images/actividades/oceanario-de-lisboa.webp',
       imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
       categoria: 'Entradas',
@@ -334,14 +334,14 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'La entrada al Oceanário de Lisboa cuesta entre 25,50 € y 29,90 € para un adulto: depende de la hora a la que entres, y la franja más barata es la de la tarde. Comprando en la web oficial con el código ONLINE10 hay un 10 % de descuento. Abre todos los días de 10:00 a 20:00, con última entrada a las 19:00, y se llega en metro: línea roja hasta Oriente.',
+            'La entrada al Oceanário de Lisboa cuesta entre 25,50 € y 29,90 € para un adulto: depende de la hora a la que entres, y la franja más barata es la de la tarde. Abre todos los días de 10:00 a 20:00, con última entrada a las 19:00, y se llega en metro: línea roja hasta Oriente.',
         },
         {
           tipo: 'lista',
           items: [
             'Adulto (13 a 64 años): 29,90 € por la mañana, 27,70 € a mediodía y 25,50 € por la tarde.',
             'Niños de 3 a 12 años, de 15,50 € a 17,70 €. Mayores de 65, de 17,70 € a 19,90 €. Hasta 2 años, gratis.',
-            'Online, en tickets.oceanario.pt, un 10 % menos con el código ONLINE10.',
+            'Online, en tickets.oceanario.pt, la web oficial puede tener ofertas puntuales: mira antes de pagar.',
             'Todos los días de 10:00 a 20:00, última entrada a las 19:00. El 24, el 25 y el 31 de diciembre y el 1 de enero tienen horario especial.',
             'La visita lleva entre hora y media y dos horas, según el propio Oceanário.',
             'Cómo llegar: metro línea roja hasta Oriente y unos minutos a pie por el Parque das Nações.',
@@ -379,14 +379,14 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'La venta oficial es la web tickets.oceanario.pt y la taquilla del propio Oceanário. Online, el código ONLINE10 descuenta un 10 %, y se paga con tarjeta, MB Way o PayPal.',
+            'La venta oficial es la web tickets.oceanario.pt y la taquilla del propio Oceanário. Online se paga con tarjeta, MB Way o PayPal.',
         },
         {
           tipo: 'tabla',
           texto: 'Dónde comprar la entrada al Oceanário de Lisboa.',
           columnas: ['Dónde', 'Precio adulto', 'Para quién'],
           filas: [
-            ['Web oficial (tickets.oceanario.pt)', 'De 25,50 € a 29,90 €, con un 10 % menos usando ONLINE10', 'Quien quiere pagar lo mínimo'],
+            ['Web oficial (tickets.oceanario.pt)', 'De 25,50 € a 29,90 €, con las ofertas que tenga la web ese día', 'Quien quiere pagar lo mínimo'],
             ['Taquilla del Oceanário', 'De 25,50 € a 29,90 €', 'Quien decide el mismo día, y quien tiene derecho a la entrada gratis por incapacidad, que solo se da aquí'],
             ['GetYourGuide', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio Oceanário'],
           ],
@@ -496,7 +496,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       },
       {
         q: '¿Hay descuento comprando online?',
-        a: 'Sí. En la web oficial, tickets.oceanario.pt, el código ONLINE10 descuenta un 10 %.',
+        a: 'Puede haberlo. La web oficial, tickets.oceanario.pt, publica ofertas puntuales, así que conviene mirarla antes de pagar.',
       },
       {
         q: '¿A qué hora es más barato?',
@@ -528,7 +528,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         offer: { type: 'product', productId: 'oceanario' },
         position: 'after-summary',
         intro:
-          'Si prefieres comprarla en español, GetYourGuide vende la entrada que pone el propio Oceanário. No es reembolsable. En la web oficial tienes un 10 % menos con el código ONLINE10.',
+          'Si prefieres comprarla en español, GetYourGuide vende la entrada que pone el propio Oceanário. No es reembolsable.',
       },
     ],
   },
