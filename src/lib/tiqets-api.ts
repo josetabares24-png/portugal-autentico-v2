@@ -46,6 +46,7 @@ const TIQETS_REQUEST_TIMEOUT_MS = 5_000;
 const TIQETS_CURATED_PRODUCTS = [
   { productKey: 'oceanario', productId: '975260' },
   { productKey: 'sintra-palacio-pena', productId: '1120392' },
+  { productKey: 'castelo-sao-jorge', productId: '1106063' },
   { productKey: 'lisboa-card', productId: '974847' },
   { productKey: 'torre-belem', productId: '1012361' },
   { productKey: 'jeronimos', productId: '1012358' },

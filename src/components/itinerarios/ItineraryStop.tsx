@@ -3,6 +3,7 @@ import Icon from '@/components/Icon';
 import { ItineraryStopCta } from '@/components/itinerarios/ItineraryStopCta';
 import { ItineraryContextualCta } from '@/components/itinerarios/ItineraryContextualCta';
 import { findProductById, resolveBookingLink } from '@/data/bookings';
+import { withTiqetsCampaign } from '@/lib/affiliate';
 import type { TimelineStop } from '@/data/itineraries';
 
 /*
@@ -69,7 +70,13 @@ export function ItineraryStop({ stop, numero, esUltima, itinerarySlug }: Itinera
    * el emparejamiento no se adivina nunca por el nombre de la parada.
    */
   const producto = stop.productId ? findProductById(stop.productId) : undefined;
-  const enlace = producto ? resolveBookingLink(producto, 'article') : null;
+  const enlaceBase = producto ? resolveBookingLink(producto, 'article') : null;
+  // Tiqets mide por página con `tq_campaign`; GetYourGuide se queda tal cual.
+  const campanaTiqets = `web_itinerario_${itinerarySlug}`;
+  const enlace =
+    enlaceBase && enlaceBase.provider === 'tiqets'
+      ? { ...enlaceBase, url: withTiqetsCampaign(enlaceBase.url, campanaTiqets), campaign: campanaTiqets }
+      : enlaceBase;
 
   return (
     <article className="relative scroll-mt-24 pb-9 last:pb-0 md:pb-11">

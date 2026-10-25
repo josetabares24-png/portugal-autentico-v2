@@ -261,8 +261,12 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     terms: 'No reembolsable ni se puede cambiar la fecha.',
     links: {
       article: {
-        url: 'https://gyg.me/OIHaINA6',
-        provider: 'getyourguide',
+        // Hasta el 25/10/2026 era gyg.me/OIHaINA6 (GetYourGuide). Con nuestro
+        // partner_id ese enlace abría una búsqueda genérica (`/s?…&et=…`) y no
+        // la ficha; con otro partner_id sí abría la ficha. Se pasa a Tiqets,
+        // que vende la misma entrada (proveedor: Oceanário de Lisboa S.A.) y abre su ficha con nuestro partner.
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-oceanario-de-lisboa-entrada-p975260/?partner=estaba_en_lisboa-189233&tq_campaign=web_articulo_oceanario',
+        provider: 'tiqets',
         campaign: 'web_articulo_oceanario',
       },
       activities: {
@@ -277,7 +281,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
   {
     id: 'castelo-sao-jorge',
     name: 'Castelo de São Jorge',
-    provider: 'getyourguide',
+    provider: 'tiqets',
     category: 'entradas',
     blurb:
       'La panorámica más completa del centro histórico, y la cola de la puerta se salta llevando la entrada comprada.',
@@ -289,15 +293,23 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       render: 'native-card',
     },
     hubSection: 'imprescindibles',
+    // Ficha p1106063 comprobada el 25/10/2026: entrada + audioguía (en
+    // inglés), proveedor Planaltos e Enseadas Lda, cancelación gratis hasta
+    // 24 h antes. La venta oficial del castillo sigue siendo BOL.
+    terms: 'Cancelación gratis hasta 24 horas antes.',
     links: {
       article: {
-        url: 'https://gyg.me/xsuIYU11',
-        provider: 'getyourguide',
+        // Hasta el 25/10/2026 era gyg.me/xsuIYU11 (y gyg.me/C9HzQNsh en la ficha) (GetYourGuide). Con nuestro
+        // partner_id ese enlace abría una búsqueda genérica (`/s?…&et=…`) y no
+        // la ficha; con otro partner_id sí abría la ficha. Se pasa a Tiqets,
+        // que vende la entrada con audioguía y abre su ficha con nuestro partner.
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-castillo-de-sao-jorge-entrada-audioguia-p1106063/?partner=estaba_en_lisboa-189233&tq_campaign=web_articulo_castelo-sao-jorge',
+        provider: 'tiqets',
         campaign: 'web_articulo_castelo-sao-jorge',
       },
       activities: {
-        url: 'https://gyg.me/C9HzQNsh',
-        provider: 'getyourguide',
+        url: 'https://www.tiqets.com/es/atracciones-lisboa-c76528/entradas-para-castillo-de-sao-jorge-entrada-audioguia-p1106063/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_castelo-sao-jorge',
+        provider: 'tiqets',
         campaign: 'web_actividades_castelo-sao-jorge',
       },
     },
@@ -331,9 +343,13 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     terms: 'No reembolsable ni se puede cambiar la fecha.',
     links: {
       article: {
-        url: 'https://gyg.me/9i00hN0O',
-        provider: 'getyourguide',
-        campaign: 'web_sintra_palacio-pena',
+        // Hasta el 25/10/2026 era gyg.me/9i00hN0O (GetYourGuide). Con nuestro
+        // partner_id ese enlace abría una búsqueda genérica (`/s?…&et=…`) y no
+        // la ficha; con otro partner_id sí abría la ficha. Se pasa a Tiqets,
+        // que vende la entrada al palacio y su parque (ficha p1120392) y abre su ficha con nuestro partner.
+        url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_articulo_pena',
+        provider: 'tiqets',
+        campaign: 'web_articulo_pena',
       },
       activities: {
         url: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-palacio-nacional-da-pena-y-parque-entrada-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_actividades_pena',
@@ -350,8 +366,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
   },
   {
     // Entrada de Tiqets a la Pena para el artículo `palacio-da-pena-entradas`.
-    // Va aparte de `sintra-palacio-pena`, cuyo enlace de artículo es el de
-    // GetYourGuide (acceso prioritario) que usa `sintra-desde-lisboa`. Sin
+    // Va aparte de `sintra-palacio-pena`, cuyo enlace de artículo era el de
+    // GetYourGuide hasta el 25/10/2026 (ahora también Tiqets p1120392). Sin
     // `hub`: existe para dar botón a ese artículo, no para el catálogo.
     // Condiciones comprobadas en la ficha p1120392 el 9/10/2026: no
     // reembolsable y sin cambio de fecha (la web oficial sí permite cambiar).

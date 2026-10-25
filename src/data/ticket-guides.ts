@@ -136,13 +136,13 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
           filas: [
             ['BOL, venta online oficial', '17 €', 'Quien quiere comprar en el canal oficial'],
             ['Taquilla del castillo', '17 €', 'Quien llega sin billete o quiere enseñar el justificante del descuento allí mismo'],
-            ['GetYourGuide', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español; esta entrada lleva audioguía'],
+            ['Tiqets', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español; esta entrada lleva audioguía en inglés'],
           ],
         },
         {
           tipo: 'parrafo',
           texto:
-            'Con el billete comprado no pasas por la taquilla: vas directo a la entrada. Si lo compras en GetYourGuide, cualquier problema con esa entrada se resuelve con GetYourGuide, no con el castillo.',
+            'Con el billete comprado no pasas por la taquilla: vas directo a la entrada. Si lo compras en Tiqets, cualquier problema con esa entrada se resuelve con Tiqets, no con el castillo.',
         },
 
         { tipo: 'subtitulo', texto: 'Horarios y cierres' },
@@ -297,7 +297,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         offer: { type: 'product', productId: 'castelo-sao-jorge' },
         position: 'after-summary',
         intro:
-          'Si prefieres comprarla en español, GetYourGuide vende la entrada con audioguía. Mira el precio y las condiciones de cancelación en su ficha antes de pagar; la venta oficial del castillo es BOL.',
+          'Si prefieres comprarla en español, Tiqets vende la entrada con audioguía en inglés y se puede cancelar gratis hasta 24 horas antes. Mira el precio en su ficha antes de pagar; la venta oficial del castillo es BOL.',
       },
     ],
   },
@@ -388,13 +388,13 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
           filas: [
             ['Web oficial (tickets.oceanario.pt)', 'De 25,50 € a 29,90 €, con las ofertas que tenga la web ese día', 'Quien quiere pagar lo mínimo'],
             ['Taquilla del Oceanário', 'De 25,50 € a 29,90 €', 'Quien decide el mismo día, y quien tiene derecho a la entrada gratis por incapacidad, que solo se da aquí'],
-            ['GetYourGuide', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio Oceanário'],
+            ['Tiqets', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio Oceanário'],
           ],
         },
         {
           tipo: 'parrafo',
           texto:
-            'La entrada de GetYourGuide no es reembolsable. Si compras ahí, cualquier problema con esa entrada se resuelve con GetYourGuide, no con el Oceanário.',
+            'La entrada de Tiqets no es reembolsable ni se puede cambiar de fecha. Si compras ahí, cualquier problema con esa entrada se resuelve con Tiqets, no con el Oceanário.',
         },
 
         { tipo: 'subtitulo', texto: 'Horarios y días especiales' },
@@ -528,7 +528,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         offer: { type: 'product', productId: 'oceanario' },
         position: 'after-summary',
         intro:
-          'Si prefieres comprarla en español, GetYourGuide vende la entrada que pone el propio Oceanário. No es reembolsable.',
+          'Si prefieres comprarla en español, Tiqets vende la entrada que pone el propio Oceanário. No es reembolsable.',
       },
     ],
   },
