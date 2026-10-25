@@ -12,6 +12,7 @@ import type { Article, ArticleExtras, ArticleFaq, SectionPhoto } from '@/compone
 import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
 import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
+import Stay22Script from '@/components/afiliados/Stay22Script';
 import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
@@ -1816,7 +1817,7 @@ const articles: Record<string, Article> = {
   'graca-lisboa-que-ver': {
     titulo: 'Graça en Lisboa: qué ver, miradores y cómo recorrer el barrio',
     descripcion: 'Ruta por Graça con el Miradouro da Graça, Senhora do Monte y calles del barrio, pensada para evitar subidas innecesarias y terminar con vistas.',
-    seoTitle: 'Qué ver en Graça, Lisboa: miradores y ruta a pie',
+    seoTitle: 'Graça, Lisboa: qué ver, Miradouro da Graça y ruta a pie',
     metaDescription: 'Miradouro da Graça, Senhora do Monte y una ruta a pie para bajar a Mouraria o Alfama sin repetir cuestas. El tranvía 28 llega, pero no dependas de él.',
     imagen: '/images/miradouro-grupo-atardecer.jpg',
     imageAlt: 'Personas contemplando Lisboa desde un mirador de Graça al atardecer',
@@ -1997,8 +1998,8 @@ const articles: Record<string, Article> = {
   'time-out-market-lisboa': {
     titulo: 'Time Out Market Lisboa: menú, restaurantes, precios y si merece la pena',
     descripcion: 'Guía independiente del Time Out Market Lisboa: menú, restaurantes, cómo funcionan los puestos, qué esperar de los precios y cuándo conviene ir.',
-    seoTitle: 'Time Out Market Lisboa: menú, precios y si merece la pena',
-    metaDescription: 'Cómo funciona el Time Out Market de Lisboa: puestos, qué comer, cómo calcular lo que vas a gastar, cuándo ir y qué alternativas tienes cerca en Cais do Sodré.',
+    seoTitle: 'Time Out Market Lisboa: menú, horario y si merece la pena',
+    metaDescription: 'Abre todos los días de 10:00 a 00:00 en el Mercado da Ribeira (Cais do Sodré). Cómo funcionan los puestos, qué hay en el menú y cómo calcular el gasto.',
     imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
     imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
     categoria: 'Gastronomía',
@@ -2083,8 +2084,8 @@ const articles: Record<string, Article> = {
   'estacion-oriente-lisboa': {
     titulo: 'Estación de Oriente de Lisboa (Gare do Oriente): tren, metro y qué ver',
     descripcion: 'Guía de la Estación de Oriente o Gare do Oriente: trenes, Metro, autobuses, arquitectura de Santiago Calatrava y qué ver en Parque das Nações.',
-    seoTitle: 'Estación de Oriente Lisboa: trenes, metro, buses y qué ver',
-    metaDescription: 'Gare do Oriente en Lisboa: cómo combinar trenes, Metro (Línea Roja) y autobuses sin perderte en el intercambiador, y qué ver al lado en Parque das Nações.',
+    seoTitle: 'Gare do Oriente Lisboa: trenes, metro, autobuses y qué ver',
+    metaDescription: 'La Estación de Oriente junta trenes, la Línea Roja del Metro y autobuses. Cómo moverte por el intercambiador y qué ver al lado, en el Parque das Nações.',
     imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
     imageAlt: 'Tren detenido bajo la cubierta de vidrio y acero de la estación de Oriente en Lisboa',
     categoria: 'Transporte',
@@ -2753,6 +2754,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Bolt y Uber, y la que ya no existe en Portugal' },
       { tipo: 'parrafo', texto: 'Para trayectos puntuales —llegar con maletas, volver tarde, salvar una subida— las dos que funcionan en Lisboa son Bolt y Uber. Suelen tener precios parecidos, así que merece la pena mirar las dos antes de pedir. La disponibilidad es buena incluso en horas punta.' },
       { tipo: 'aviso', texto: 'Free Now dejó de operar en Portugal el 3 de abril de 2023. Sigue apareciendo en muchas listas de apps para Lisboa, incluidas guías que se presentan como actualizadas. Si la instalas no te va a servir de nada aquí.' },
+      { tipo: 'enlace', texto: 'Bolt también alquila patinetes eléctricos, igual que Lime. Cómo comprobar el precio antes de arrancar y dónde aparcarlos.', href: '/blog/patinetes-electricos-lisboa', label: 'Patinetes eléctricos en Lisboa' },
       { tipo: 'parrafo', texto: 'El taxi tradicional sigue existiendo y es perfectamente válido, sobre todo desde el aeropuerto, donde hay parada oficial. Lo que conviene evitar es aceptar un trayecto de alguien que se ofrece dentro de la terminal.' },
 
       { tipo: 'subtitulo', texto: 'Para comer: reservar y, si no te apetece salir, pedir' },
@@ -2783,9 +2785,9 @@ const articles: Record<string, Article> = {
     titulo: 'Cómo pagar en Portugal en 2026: tarjeta, efectivo y cajeros',
     descripcion:
       'Guía práctica para saber cómo pagar en Portugal: uso de tarjetas, cuánto efectivo llevar, cómo funcionan los cajeros y qué revisar antes de aceptar una conversión.',
-    seoTitle: 'Cómo pagar en Portugal (2026): tarjeta, efectivo y comisiones',
+    seoTitle: 'Cómo pagar en Portugal 2026: ¿tarjeta o efectivo?',
     metaDescription:
-      'En Lisboa se paga con tarjeta con normalidad, pero no todos los comercios aceptan todas las marcas. Cuánto efectivo llevar, cajeros y qué comisiones revisar.',
+      'Sí, se paga con tarjeta con normalidad, pero que acepten Multibanco no significa que acepten la tuya. Cuánto efectivo llevar, cajeros y euros o tu moneda.',
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
     imageAlt: 'Esquina con cafés y comercios en la Baixa de Lisboa',
     categoria: 'Planificación',
@@ -3087,8 +3089,8 @@ const articles: Record<string, Article> = {
   'como-moverse-por-lisboa': {
     titulo: 'Cómo moverse por Lisboa en 2026: metro, tranvía, bus y tren',
     descripcion: 'Cómo moverse por Lisboa en transporte público: Metro, tranvías, buses, trenes, billetes y alternativas según la zona y el tipo de trayecto.',
-    seoTitle: 'Cómo moverse por Lisboa: metro, tranvía, bus y billetes 2026',
-    metaDescription: 'Qué transporte usar en Lisboa según el trayecto: metro, tranvías, autobuses y tren a Belém, Sintra y Cascais. Qué billete comprar y cuánto cuesta en 2026.',
+    seoTitle: 'Cómo moverse por Lisboa: qué transporte usar y cuánto cuesta',
+    metaDescription: 'Metro para cruzar la ciudad, tren a Belém, Sintra y Cascais, y el billete que sale más barato: 1,90 € el sencillo, 1,72 € con zapping o 7,25 € el día.',
     imagen: '/images/turista-tranvia-28.jpg',
     imageAlt: 'Tranvía articulado moderno de la línea 15E de Carris circulando por una calle de Lisboa',
     categoria: 'Transporte',
@@ -3167,6 +3169,7 @@ const articles: Record<string, Article> = {
       { tipo: 'enlace', texto: 'Si quieres comparar las opciones sin mezclar conceptos, la guía de Navegante separa tarjeta ocasional, zapping, 24 horas y pases mensuales.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa: guía 2026' },
       { tipo: 'subtitulo', texto: 'Taxi, Uber y Bolt' },
       { tipo: 'parrafo', texto: 'Taxi, Uber y Bolt son buenos recursos para trayectos puntuales: llegar con maletas, volver tarde, salvar una subida o cruzar la ciudad cuando el transporte público te obliga a demasiados cambios. En el aeropuerto, la información oficial recuerda que taxis y TVDE se contratan en las zonas habilitadas o por app, no aceptando abordajes dentro de la terminal.' },
+      { tipo: 'enlace', texto: 'Para trayectos cortos y llanos también hay patinetes eléctricos de alquiler. Cómo se pagan y dónde se pueden dejar.', href: '/blog/patinetes-electricos-lisboa', label: 'Patinetes eléctricos en Lisboa' },
       { tipo: 'subtitulo', texto: 'Accesibilidad, cochecitos y cuestas' },
       { tipo: 'parrafo', texto: 'Lisboa no siempre es fácil para movilidad reducida, cochecitos o rodillas cansadas. Antes de elegir alojamiento o ruta, mira si hay ascensor, pendiente, escaleras y transporte cercano. Baixa, parte de Avenida da Liberdade, Parque das Nações y algunos tramos junto al río son más amables. Alfama, Graça y Bairro Alto requieren más paciencia.' },
       { tipo: 'subtitulo', texto: 'Moverse de noche' },
@@ -3741,6 +3744,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Diciembre, enero y febrero: invierno suave no significa invierno seco" },
       { tipo: "parrafo", texto: "En enero, la máxima media diaria es 15,1 °C y la mínima media 8,6 °C; en febrero, 16,4 °C y 9,1 °C. Son cifras mucho más suaves que las de muchas ciudades europeas, pero la lluvia es parte real del invierno: enero promedia 103,8 mm y unos 10 días con al menos 1 mm de precipitación." },
       { tipo: "parrafo", texto: "Por eso no prometería «chaparrones de veinte minutos» ni sol inmediato después de cada lluvia. Lleva una capa impermeable y calzado que agarre bien: la calçada portuguesa mojada puede ser incómoda, especialmente en pendientes." },
+      { tipo: "enlace", texto: "Si vienes en enero: horas de luz, qué cierra el 1 de enero y los lunes, y horarios de invierno de las visitas principales.", href: "/blog/lisboa-en-enero", label: "Lisboa en enero" },
 
       { tipo: "subtitulo", texto: "Marzo y abril: primavera temprana con más incertidumbre" },
       { tipo: "parrafo", texto: "Marzo y abril ya suben hacia máximas medias de 18,9 °C y 20,4 °C, pero mantienen alrededor de 7,6 y 7,9 días al mes con al menos 1 mm de lluvia. Son meses razonables si prefieres temperaturas suaves y aceptas adaptar alguna jornada al tiempo." },
@@ -4404,7 +4408,7 @@ const articles: Record<string, Article> = {
   },
   "vida-nocturna-lisboa": {
     titulo: "Vida nocturna en Lisboa: Bairro Alto, Cais do Sodré y dónde salir",
-    seoTitle: "Vida nocturna en Lisboa: Bairro Alto y Cais do Sodré",
+    seoTitle: "Vida nocturna en Lisboa: dónde salir de noche por zonas",
     metaDescription: "Vida nocturna en Lisboa: dónde salir en Bairro Alto y Cais do Sodré, dónde escuchar fado y qué hacer de noche según el ambiente que buscas.",
     descripcion: "Bairro Alto, Cais do Sodré, fado y otros planes para salir de noche en Lisboa según el ambiente que busques.",
     imagen: "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1200",
@@ -5511,7 +5515,7 @@ const articles: Record<string, Article> = {
   },
   "arquitectura-manuelina-lisboa": {
     titulo: "Estilo manuelino en Portugal: qué es, características y ejemplos",
-    seoTitle: "Estilo manuelino en Portugal: características y ejemplos",
+    seoTitle: "Estilo manuelino: qué es, características y dónde verlo",
     metaDescription: "Qué es el estilo manuelino en Portugal, sus características y símbolos, y dónde verlo: Jerónimos, Torre de Belém, esfera armilar y Cruz de Cristo.",
     descripcion: "Qué es el estilo manuelino en Portugal, cuáles son sus características y cómo reconocerlo, con los Jerónimos y la Torre de Belém como ejemplos principales.",
     imagen: "/images/actividades/mosteiro-dos-jeronimos-claustro.webp",
@@ -6104,6 +6108,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return true;
   });
   const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
+  /*
+   * Stay22 (LinkSwap) solo en los artículos con intención de alojamiento, que
+   * son los que llevan un bloque de alojamiento por barrio (D-080). En el
+   * resto no hay nada que convertir y el script sólo añadía peso.
+   */
+  const loadStay22 = (BLOG_BOOKING_PLACEMENTS[slug] ?? []).some(
+    (placement) => placement.offer.type === 'stay22-barrios',
+  );
   const showNewsletter = articleHasNewsletter(slug);
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
@@ -6234,6 +6246,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
         />
       )}
+      {loadStay22 && <Stay22Script />}
     </main>
   );
 }

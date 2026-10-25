@@ -34,12 +34,14 @@ Then make one product decision: keep, replace or remove the weakest global CTA.
 
 ## P0 — protect current SEO work
 
-Do not materially rewrite these recent priority pages until a clean post-deployment window exists:
+**25/10/2026:** E-001 a E-007 cerrados (D-080). Estas páginas tienen títulos nuevos de E-023 desde el despliegue del 25/10; no tocarlas hasta tener 28 días cerrados después de ese despliegue:
 - como-moverse-por-lisboa
 - como-pagar-en-portugal
 - time-out-market-lisboa
 - estacion-oriente-lisboa
 - arquitectura-manuelina-lisboa
+- graca-lisboa-que-ver, vida-nocturna-lisboa y /free-tours-lisboa (E-023)
+- metro, Navegante, Navidad, Óbidos (E-022) y Nochevieja (E-021)
 
 Continue measuring rather than repeatedly changing them.
 

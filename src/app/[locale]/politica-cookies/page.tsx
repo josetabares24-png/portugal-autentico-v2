@@ -64,7 +64,7 @@ Algunas páginas incluyen módulos de reserva de GetYourGuide y Tiqets, con los 
 ### 2.5. Enlaces de alojamiento (Stay22)
 Los enlaces de alojamiento de la web (hoteles y apartamentos por barrio) pasan por Stay22, que te manda a Booking, Expedia u otra web de reservas y atribuye la reserva a este sitio. Seguir uno de esos enlaces funciona igual aceptes o no las cookies.
 
-Además, si aceptas las cookies, se carga un script de Stay22 que convierte en enlaces de afiliado los enlaces a webs de reserva de alojamiento que haya en la página y guarda en tu navegador un identificador de sesión.
+Además, en las guías de alojamiento, y solo si aceptas las cookies, se carga un script de Stay22 que convierte en enlaces de afiliado los enlaces a webs de reserva de alojamiento que haya en la página y guarda en tu navegador un identificador de sesión.
 
 **Requiere tu consentimiento explícito**, el mismo del aviso de cookies. Si no aceptas, ese script no se carga.
 

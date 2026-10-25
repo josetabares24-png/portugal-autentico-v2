@@ -729,6 +729,12 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
           href: '/blog/belem-barrio-guia',
           label: 'Qué ver en Belém',
         },
+        {
+          tipo: 'enlace',
+          texto: 'Si prefieres recorrer Belém con guía, hay free tours por el barrio centrados en los Descubrimientos, los Jerónimos y la Torre. Reservar no cuesta nada y al final das lo que quieras.',
+          href: '/free-tours-lisboa#ruta-belem',
+          label: 'Free tour por Belém',
+        },
       ],
     },
     faqs: [
