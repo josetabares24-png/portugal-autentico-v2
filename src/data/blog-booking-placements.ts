@@ -87,6 +87,18 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
         'Si prefieres no cuadrar tren, autobús y hora de entrada, hay excursiones de día completo desde Lisboa. Mira en la ficha si incluyen la entrada a la Pena y cuánto tiempo dejan allí.',
     },
   ],
+  // quinta-da-regaleira-entradas · artículo nuevo (25/10/2026), sin datos.
+  // No se vende la entrada de la Regaleira: su web oficial dice que su
+  // taquilla es la única autorizada. Se ofrece la otra mitad del día (Pena,
+  // Tiqets), que el artículo explica en «Pena y Regaleira el mismo día».
+  'quinta-da-regaleira-entradas': [
+    {
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      beforeHeading: 'como-ir-desde-lisboa',
+      intro:
+        'Si haces Pena y Regaleira el mismo día, la entrada que marca el horario es la de la Pena. Esta es la del palacio y el parque con hora fija, en español. En Tiqets no se devuelve ni se cambia de fecha; si quieres poder moverla, cómprala en la web de Parques de Sintra.',
+    },
+  ],
   // obidos-vila-natal · artículo nuevo (9/10/2026), sin datos aún.
   'obidos-vila-natal': [
     {
@@ -102,17 +114,23 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   // nochevieja-lisboa · artículo nuevo (9/10/2026), sin datos aún. El
   // Oceanário va sin `beforeHeading`: se pinta al final, tras «Año Nuevo».
   'nochevieja-lisboa': [
+    // 25/10/2026: el alojamiento sustituye al Oceanário (máximo dos ofertas
+    // por artículo). La sección «Dónde dormir si vienes por la Nochevieja»
+    // explica por qué conviene dormir a un paseo de la plaza (metro
+    // Terreiro do Paço cerrado desde las 17:00 y VTC fuera del perímetro en
+    // 2025). El Oceanário del 1 de enero sigue en el texto y en su ficha.
+    {
+      offer: { type: 'stay22-barrios', barrios: ['baixa', 'chiado', 'alfama'] },
+      beforeHeading: 'cenar-en-nochevieja',
+      intro:
+        'Si quieres volver a pie después de los fuegos, aquí ves qué alojamiento queda libre en la Baixa, el Chiado y Alfama para tus fechas.',
+    },
     {
       offer: { type: 'product', productId: 'nochevieja-velero' },
       // Es otra forma de ver los fuegos: al cerrar «Otros sitios para verlos».
       beforeHeading: 'como-moverte-esa-noche',
       intro:
         'Si prefieres ver los fuegos desde el río, hay salidas en velero esa noche. Mira en la ficha el precio, la hora y el punto de salida y qué incluye, que cambian de un año a otro.',
-    },
-    {
-      offer: { type: 'product', productId: 'oceanario' },
-      intro:
-        'El 1 de enero cierran casi todos los monumentos, pero el Oceanário abre con horario especial. Mira las horas de ese día en su web antes de comprar.',
     },
   ],
   // lisboa-en-enero · artículo nuevo (25/10/2026), sin datos aún. Va sin

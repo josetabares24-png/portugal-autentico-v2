@@ -11,6 +11,11 @@ export const CONTEXTUAL_BOOKING_PLACEMENTS: Record<string, { contentId: string; 
     contentId: 'blog-palacio-da-pena-entradas-pena-tiqets-arriba',
     beforeHeading: 'horarios-y-dias-de-cierre',
   },
+  // Pena al cerrar «Pena y Regaleira el mismo día» (25/10/2026).
+  'quinta-da-regaleira-entradas': {
+    contentId: 'blog-quinta-da-regaleira-entradas-pena-tiqets',
+    beforeHeading: 'como-ir-desde-lisboa',
+  },
   'monasterio-jeronimos-entradas': {
     contentId: 'blog-monasterio-jeronimos-entradas-jeronimos-arriba',
     beforeHeading: 'horarios-y-cierres',
