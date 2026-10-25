@@ -5684,13 +5684,13 @@ function toAbsoluteUrl(pathOrUrl: string) {
  * llevan en su propio título, y ponérselo al resto envejece el contenido.
  */
 const BRAND_SUFFIX = ' | Estaba en Lisboa';
-const MAX_TITLE_LENGTH = 65;
+const MAX_TITLE_LENGTH = 60;
 /** Páginas con experimento en curso (brain/05-EXPERIMENTS.md): su título no se toca. */
 const TITLE_FROZEN_SLUGS = new Set(['donde-tomar-cafe-lisboa', 'donde-comer-barato-lisboa']);
 
 /**
  * El layout añade « | Estaba en Lisboa» a todos los títulos. Cuando con la
- * marca el título pasa de 65 caracteres, Google lo corta y se pierde justo
+ * marca el título pasa de 60 caracteres, Google lo corta y se pierde justo
  * el final, que es donde va lo que la página resuelve. En ese caso se
  * publica sin la marca.
  */
