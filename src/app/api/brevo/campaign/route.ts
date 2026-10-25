@@ -1,3 +1,4 @@
+import { timingSafeEqual } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/lib/logger';
 import { limitRequest, getRequestIdentifier } from '@/lib/ratelimit';
@@ -14,8 +15,31 @@ type CampaignPayload = {
 
 const BREVO_API_URL = 'https://api.brevo.com/v3';
 
+/**
+ * Crear campañas no es una función pública, pero este endpoint no comprobaba
+ * nada: ni Clerk ni el proxy lo cubrían. Ahora solo responde si
+ * BREVO_CAMPAIGN_SECRET está definido y la petición trae
+ * `Authorization: Bearer <secreto>`. Sin esa variable queda apagado (404).
+ */
+function isAuthorized(request: NextRequest): boolean | null {
+  const secret = process.env.BREVO_CAMPAIGN_SECRET;
+  if (!secret) return null;
+  const header = request.headers.get('authorization') ?? '';
+  const given = Buffer.from(header.replace(/^Bearer\s+/i, ''));
+  const expected = Buffer.from(secret);
+  return given.length === expected.length && timingSafeEqual(given, expected);
+}
+
 export async function POST(request: NextRequest) {
-  // Rate limiting (más permisivo para admin - 30 requests/minuto)
+  const authorized = isAuthorized(request);
+  if (authorized === null) {
+    return NextResponse.json({ success: false, error: 'No encontrado' }, { status: 404 });
+  }
+  if (!authorized) {
+    return NextResponse.json({ success: false, error: 'No autorizado' }, { status: 401 });
+  }
+
+  // Rate limiting
   const identifier = getRequestIdentifier(request);
   const rateLimitResult = await limitRequest(identifier);
   if (!rateLimitResult.success) {
