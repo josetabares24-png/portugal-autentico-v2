@@ -122,6 +122,7 @@ Y después buscar la intervención editorial, de producto o de negocio más pequ
 - [[strategy/NEIGHBORHOOD-DECISION-MAP-2026-09-23]] — 90-day Search Console map of the Barrios cluster and the evidence-based order for future SEO investment.
 
 - [[seo/NEXT-EXPERIMENT-SCORECARD-2026-09-23]] — fresh 90d/28d/7d Search Console scorecard for the next SEO experiment gate.
+- [[seo/2026-10-25-SEO-TECNICO]] — lastmod real en las 29 URL sin fecha, títulos ≤ 60 y metas ≤ 155 (D-076).
 
 
 ## Subcerebro de vídeo / marca personal

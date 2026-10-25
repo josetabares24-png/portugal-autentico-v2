@@ -949,3 +949,7 @@ José pide poner tours en inglés y revisar mejoras. **Preview únicamente, PR11
 ## D-075 — Un bloque en el cuerpo también en Navegante y en 4, 5 y 7 días, 25/10/2026
 
 **Rama local, pendiente de visto bueno de José (L-003).** Amplía D-067 a cuatro páginas más tras la auditoría de conversión («soluciona todo»), sin cambiar sus límites: un bloque en el cuerpo al cerrar la sección que lo justifica y uno al final. Navegante: Lisboa Card en «¿Y la Lisboa Card?», Pena al final. 4 y 5 días: Pena al cerrar el día de Sintra. 7 días: Pena al cerrar «Las escapadas» y alojamiento por barrio con Stay22 al final (sale el combinado Jerónimos + Torre). [Detalle](business/2026-10-25-ARREGLOS-CONVERSION.md).
+
+## D-076 — Sitemap con fecha real en todas las URL, títulos ≤ 60 y metas ≤ 155, 25/10/2026
+
+**Rama local `fix/seo-tecnico`, pendiente de visto bueno de José (L-003).** José: «Arregla todo». Las 29 URL sin `lastmod` llevan la fecha del último cambio de su texto según git (mapa fijo en `sitemap.ts`, nunca la fecha del build; /blog toma la de su artículo más reciente). El blog quita la marca del título a partir de 60 caracteres (antes 65) y la versión inglesa sigue la misma regla; home, sobre nosotros, 1 y 2 días y /en acortan su texto con la marca. Cinco metas de más de 160 bajan a ≤ 155 sin tocar el texto visible. No se tocan como-pagar (E-002), comer barato (E-007) ni café (E-006). Stay22 sigue fuera de /en, intencional según docs/english-pilot-phase1.md. [Detalle](seo/2026-10-25-SEO-TECNICO.md).
