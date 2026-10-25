@@ -47,6 +47,8 @@ export interface Activity {
   officialUrl?: string;
   /** Fecha (YYYY-MM-DD) de la última verificación de los datos frente a la fuente oficial. */
   lastVerified?: string;
+  /** Meta description cuando `description` pasa de 155 caracteres. */
+  metaDescription?: string;
   /**
    * Si la ficha puede indexarse como página independiente (index, follow) en
    * sitemap.xml y metadata.robots. Mientras sea false, la ficha sigue siendo
@@ -561,6 +563,7 @@ export const activities: Activity[] = [
     image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
     imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
     description: 'Recorrido guiado a pie por la historia de la Baixa y el Chiado, con guías locales que viven de las propinas. La disponibilidad y los horarios dependen de la fecha que elijas.',
+    metaDescription: 'Recorrido a pie por la historia de la Baixa y el Chiado con guías locales que viven de las propinas. Los horarios dependen de la fecha que elijas.',
     savingTip: 'No tiene coste fijo: al final paga lo que consideres justo (5-10 € por persona es lo habitual).',
     affiliateCategory: 'imprescindible',
   },

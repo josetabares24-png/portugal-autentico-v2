@@ -5258,6 +5258,7 @@ const articles: Record<string, Article> = {
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
     seoTitle: "Vinos portugueses | Guía para entender",
+    metaDescription: "Vinho Verde, Oporto y tintos del Alentejo: qué estilo pedir en la carta, cómo pedir vino en Lisboa y qué comprobar antes de reservar una cata.",
     descripcion: "Vinho Verde, vino de Oporto y tintos del Alentejo: estilos para orientarte en la carta, expresiones para pedir vino en Lisboa y cómo comprobar las condiciones de una cata.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Cena en la terraza de una tasca de Lisboa a la luz de la noche",
@@ -5346,6 +5347,7 @@ const articles: Record<string, Article> = {
   "bacalhau-plato-portugal": {
     titulo: "El Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa",
     seoTitle: "El bacalhau | Guía del plato portugués",
+    metaDescription: "Cómo un pescado que llega de Noruega acabó siendo el plato nacional de Portugal: 500 años de historia del bacalhau y las recetas que puedes probar.",
     descripcion: "Un pescado noruego, un país atlántico y 500 años de historia marítima. Cómo el bacalhau se convirtió en el plato nacional de Portugal y las mejores recetas que tienes que probar.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     imageAlt: "Tasca de barrio en Lisboa con mesas en la calle y ropa tendida arriba",
