@@ -417,9 +417,28 @@ export default function EnglishArticle({ article }: { article: Article }) {
               <ul className="mt-3 space-y-3 text-sm">
                 {article.sources.map(([label, href]) => (
                   <li key={href}>
-                    <Link className="underline underline-offset-4" href={href}>
-                      {label}
-                    </Link>
+                    {/* GuruWalk como fuente también lleva el ref (25/10/2026):
+                        sin él, quien reserva desde aquí no cuenta. */}
+                    {tourRef && /(^|\.)guruwalk\.com$/.test(new URL(href, SITE).hostname) ? (
+                      <EnglishBookingLink
+                        href={buildAffiliateUrl(
+                          withGuruwalkRef(href, tourRef),
+                          ENGLISH_TOURS_CAMPAIGN,
+                          "sources",
+                        )}
+                        partner="guruwalk"
+                        campaign={ENGLISH_TOURS_CAMPAIGN}
+                        placement="walking-tours-sources"
+                        content="sources"
+                        variant="text"
+                      >
+                        {label}
+                      </EnglishBookingLink>
+                    ) : (
+                      <Link className="underline underline-offset-4" href={href}>
+                        {label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

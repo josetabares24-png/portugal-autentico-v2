@@ -132,14 +132,24 @@ export function BookingCta({ activitySlug, placement = 'activities' }: BookingCt
         >
           {product.ctaLabel}
           <span aria-hidden="true"> ↗</span>
-          <span className="sr-only"> (se abre en una pestaña nueva)</span>
+          <span className="sr-only"> (enlace de afiliado, se abre en una pestaña nueva)</span>
         </a>
 
         {/* Precios y horarios no se copian: los pone el proveedor y cambian
-            por temporada. Una segunda copia se desactualiza sola. */}
+            por temporada. Una segunda copia se desactualiza sola.
+            Aviso de afiliado junto al botón (25/10/2026), con el mismo texto
+            que los bloques de reserva de los artículos. */}
         <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-          Precios y horarios actualizados en la web del proveedor. Reservar desde aquí no
-          te cuesta más.{' '}
+          Reservas en {link.provider === 'tiqets' ? 'Tiqets' : 'GetYourGuide'}. Si lo haces desde
+          aquí, me llevo una pequeña comisión y a ti te cuesta lo mismo. Precios y horarios,
+          actualizados en su web.{' '}
+          <Link
+            href="/aviso-legal#3-afiliados-y-enlaces-a-terceros"
+            className="text-terracotta underline underline-offset-2 hover:no-underline"
+          >
+            Cómo funciona
+          </Link>
+          {' · '}
           <Link href="/comprar-entradas" className="text-terracotta underline underline-offset-2 hover:no-underline">
             Ver todas las entradas y experiencias
           </Link>

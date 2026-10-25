@@ -16,7 +16,7 @@ import type { Metadata } from 'next';
  * es la herramienta, y las dos se enlazan entre sí.
  */
 const TITULO = 'Calculadora de presupuesto para Lisboa';
-const DESCRIPCION = 'Calcula cuánto puede costarte tu viaje a Lisboa: días, noches, personas, qué piensas visitar y, si ya lo sabes, tu alojamiento y tus vuelos. Da un rango orientativo, no un precio cerrado, y explica de dónde sale cada cifra.';
+const DESCRIPCION = 'Calcula cuánto puede costarte Lisboa según días, personas y visitas, con alojamiento y vuelos si ya los tienes. Da un rango, no un precio cerrado.';
 const IMAGEN = 'https://estabaenlisboa.com/images/bica-cafe-mapa.jpg';
 
 export const metadata: Metadata = {

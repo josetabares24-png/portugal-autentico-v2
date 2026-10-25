@@ -17,7 +17,7 @@ const faqs = [
       },
       {
         question: '¿Necesito crear una cuenta?',
-        answer: 'No necesitas iniciar sesión para leer las guías públicas. El acceso con cuenta se mantiene solo para funciones internas de administración.',
+        answer: 'No. La web no tiene cuentas ni inicio de sesión: todas las guías se leen directamente.',
       },
     ],
   },

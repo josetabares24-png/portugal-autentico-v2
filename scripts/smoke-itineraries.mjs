@@ -203,7 +203,7 @@ async function main() {
   log('literal). Esta prueba confirma que esas 7 páginas funcionan, y que la');
   log('rama "no encontrado" del route dinámico responde 404 correctamente.');
   log('La rama "encontrado" de itinerarios/[slug]/page.tsx (una guía real');
-  log('creada desde /admin en Supabase) no se puede probar aquí: este');
+  log('guardada en Supabase) no se puede probar aquí: este');
   log('entorno no tiene una conexión Supabase activa con datos de prueba.\n');
 
   try {
@@ -215,11 +215,6 @@ async function main() {
       baseUrl = `http://localhost:${port}`;
 
       const env = { ...process.env, PORT: String(port) };
-      if (!env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-        log('NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY no está definido: usando una clave local ficticia solo para poder arrancar el servidor de pruebas.');
-        env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'pk_test_bm9pbmRleC1zbW9rZXRlc3QuY2xlcmsuYWNjb3VudHMuZGV2JA==';
-        env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
-      }
 
       log(`== Arrancando next start en ${baseUrl} ==`);
       child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {

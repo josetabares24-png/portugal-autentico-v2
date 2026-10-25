@@ -16,9 +16,9 @@ const PAGE_URL = 'https://estabaenlisboa.com/free-tours-lisboa';
 const HERO_IMAGE = '/images/lisboa-originales/rua-augusta-arco-lisboa.webp';
 
 export const metadata: Metadata = {
-  title: 'Free tours en Lisboa: horarios y reserva',
+  title: 'Free tours en Lisboa: Centro, Alfama y Belém, reserva gratis',
   description:
-    'Consulta free tours en Lisboa para tu fecha, compara rutas por el Centro, Alfama y Belém y reserva plaza sin pago previo. Tú decides la propina.',
+    'Free walking tours por el Centro, Alfama y Belém: mira los horarios de tu fecha y reserva plaza sin pagar nada. Al final das la propina que quieras.',
   keywords: [
     'free tour lisboa',
     'free tours lisboa',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'visita guiada lisboa',
   ],
   openGraph: {
-    title: 'Free tours en Lisboa: horarios y reserva',
+    title: 'Free tours en Lisboa: Centro, Alfama y Belém, reserva gratis',
     description:
       'Compara rutas, consulta horarios reales para tu fecha y reserva plaza sin pago previo.',
     url: PAGE_URL,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free tours en Lisboa: horarios y reserva',
+    title: 'Free tours en Lisboa: Centro, Alfama y Belém, reserva gratis',
     description:
       'Consulta recorridos disponibles y reserva tu plaza sin pago previo.',
     images: [`https://estabaenlisboa.com${HERO_IMAGE}`],

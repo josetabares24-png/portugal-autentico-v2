@@ -315,6 +315,22 @@ function checkXmlShape(xml) {
     .map((m) => m[1])
     .filter((u) => /&(?!amp;|lt;|gt;|quot;|apos;)/.test(u));
   record('sin caracteres mal escapados en <loc>', rawAmp.length === 0, rawAmp.length ? rawAmp.join(', ') : 'ninguno');
+
+  // lastmod: todas las URL lo llevan, es una fecha válida y no está en el
+  // futuro. Una fecha generada en cada build (new Date()) caería en "hoy"
+  // para todas a la vez; se avisa si más de la mitad comparten el día actual.
+  const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+  const sinLastmod = blocks
+    .filter((b) => !/<lastmod>[^<]+<\/lastmod>/.test(b))
+    .map((b) => (b.match(/<loc>([^<]*)<\/loc>/) || [])[1]);
+  record('todas las URL llevan <lastmod>', sinLastmod.length === 0, sinLastmod.length ? `sin fecha: ${sinLastmod.join(', ')}` : `${blocks.length} con fecha`);
+  const fechas = blocks.map((b) => (b.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1]).filter(Boolean);
+  const invalidas = fechas.filter((f) => isNaN(new Date(f).getTime()));
+  const futuras = fechas.filter((f) => new Date(f).getTime() > Date.now());
+  record('ningún <lastmod> inválido ni en el futuro', invalidas.length === 0 && futuras.length === 0, [...invalidas, ...futuras].join(', ') || 'todas válidas');
+  const hoy = new Date().toISOString().slice(0, 10);
+  const deHoy = fechas.filter((f) => f.startsWith(hoy)).length;
+  record('los <lastmod> no son la fecha del build', deHoy <= fechas.length / 2, `${deHoy} de ${fechas.length} con fecha de hoy`);
 }
 
 function parseLocs(xml) {
@@ -772,10 +788,6 @@ async function main() {
       const port = await getFreePort();
       baseUrl = `http://localhost:${port}`;
       const env = { ...process.env, PORT: String(port) };
-      if (!env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-        env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'pk_test_bm9pbmRleC1zbW9rZXRlc3QuY2xlcmsuYWNjb3VudHMuZGV2JA==';
-        env.CLERK_SECRET_KEY = env.CLERK_SECRET_KEY || 'sk_test_localsmoketestdummykeyfor000000000000000000';
-      }
       log(`== Arrancando next start en ${baseUrl} ==`);
       child = spawn(npxCommand, ['next', 'start', '-p', String(port)], {
         stdio: 'inherit',

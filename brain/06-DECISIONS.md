@@ -1,18 +1,20 @@
 # Decision log
 
-## D-075 — Pulir la edición inglesa existente
+Los IDs D-081 a D-083 preservan los tres registros del PR118 del24/10, renumerados el25/10 para evitar colisiones con D-073–D-080 incorporados desde main. Sus fechas y autorizaciones originales se conservan; los registros de main no se renumeran.
+
+## D-083 — Pulir la edición inglesa existente
 **Date:** 2026-10-24
 **Status:** candidato; revisión en Preview
 
 José pide «pule version ingles». Conservar las seisURLs y el diseño fotográfico de tours aprobado enD072. Mejorar lectura con la fuente española ya cargada, un único índice responsive, recorte móvil de portada y siete sustituciones inglesas sin cambiar hechos, títulosSEO, fuentes o fechas factuales. No ampliar catálogo/idiomas, tocar español, cambiar campañas o iniciar otra migración. Baseline2e88526; mismoPR118, commits separados y memoria. [Contrato y QA](../docs/english-refinement.md). L003 mantiene revisión visual antes de merge; ninguna nueva autorización de producción.
 
-## D-074 — Priorizar móvil, Entradas, SEO medido y correcciones concretas
+## D-082 — Priorizar móvil, Entradas, SEO medido y correcciones concretas
 **Date:** 2026-10-24
 **Status:** candidato verificado en Preview; revisión visual antes de publicar
 
 José ordena hacer primero4/5/6/7. Conservar diseño, catálogo16 y enlaces/campañas; acercar cinco guías y precisar tres productos. Reproducir/corregir Escape del menú inglés con QA en dimensiones reales. Resolver solo hechos comprobados de las URLsREVIEW y la nueva información oficial2026 de Óbidos, sin cambiar títulos protegidos ni inventar visitas; actualizar únicamente la referencia afectada de Navidad. Mantener las dosfusionesWAIT y el resto de dudas delimitadas. Métricas nuevas bloqueadas: no ajustar cuentas/plan ni usar ceros. José autoriza crear el enlace temporal compartible de la Preview118 tras explicarle acceso por posesión/expiración; no es autorización de producción. [Contrato y fuentes](../docs/entries-mobile-editorial-polish.md). No autorización de merge, producción o reparación de Brevo/Clerk dentro de este lote.
 
-## D-073 — Publicación inglesa autorizada con incidencia privada aceptada
+## D-081 — Publicación inglesa autorizada con incidencia privada aceptada
 **Date:** 2026-10-24
 **Status:** LIVE
 
@@ -955,3 +957,40 @@ José pide poner tours en inglés y revisar mejoras. **Preview únicamente, PR11
 ## D-072 — Igualar tours ingleses con la estética española, 23/10/2026
 
 **Preferencia explícita de José, Preview sin publicación.** La lista desplegable inglesa se percibe como otra web; sustituir esa presentación por la misma cabecera fotográfica compartida y tarjetas con foto, proporción, tipografía, colores, anchos y botones de `/free-tours-lisboa`. Esta decisión supera solo la presentación de D071: conservar los cinco productos ingleses verificados, fechas, referido y comportamiento funcional. Cinco tarjetas más acceso general, sin inventar misterios/nocturno en inglés. H1 visible más corto en la hero; SEO title y rutas preservados. Español intacto. [Detalle y QA](../docs/english-tours-visual-alignment.md).
+
+## D-073 — Oceanário y Torre de Belém como guías de entradas en su URL, 25/10/2026
+
+**Rama local, pendiente de visto bueno de José (L-003).** Se repite lo hecho con el Castelo (E-015): guía completa en la ficha, sin URL nueva. Datos comprobados el 25/10/2026 en las webs oficiales; sin primera persona (José no tiene frases propias sobre estos dos sitios); precios de GetYourGuide/Tiqets sin cifra. Se aparta de la regla «detener y reportar» de `docs/editorial-phase6-attractions-review.md` para el Oceanário porque el encargo pedía la guía con datos verificados: la discrepancia 5 % → 10 % (ONLINE10) se corrige con la fuente oficial y queda señalada. Se quita del Castelo el aviso de la huelga del 17/10 (pasado); el del museo sigue en la web oficial. `smoke-english-pilot` pasa a esperar 105 URLs en el sitemap (99 ES + 6 EN) por el artículo nuevo.
+
+## D-074 — Oceanário, Castelo y Pena pasan de GetYourGuide a Tiqets, 25/10/2026
+
+**Rama local, pendiente de visto bueno de José (L-003).** José aprobó «soluciona todo» tras la auditoría de conversión. Con nuestro partner_id, los enlaces de GYG del Oceanário, el Castelo y la Pena abrían una búsqueda genérica (`/s?…&et=<id>`) en vez de la ficha. Donde Tiqets vende el mismo producto y su ficha abre con nuestro partner, se cambia: Oceanário p975260, Castelo p1106063 (entrada + audioguía en inglés, cancelación 24 h) y Pena p1120392. La campaña la pone cada página (`web_blog_`, `web_guia_`, `web_itinerario_`). Excursión de Sintra, fado, tour gastronómico y Fátima se quedan en GYG porque no hay equivalente exacto; no se cambia J2Z24GU. [Detalle](business/2026-10-25-ARREGLOS-CONVERSION.md).
+
+## D-075 — Un bloque en el cuerpo también en Navegante y en 4, 5 y 7 días, 25/10/2026
+
+**Rama local, pendiente de visto bueno de José (L-003).** Amplía D-067 a cuatro páginas más tras la auditoría de conversión («soluciona todo»), sin cambiar sus límites: un bloque en el cuerpo al cerrar la sección que lo justifica y uno al final. Navegante: Lisboa Card en «¿Y la Lisboa Card?», Pena al final. 4 y 5 días: Pena al cerrar el día de Sintra. 7 días: Pena al cerrar «Las escapadas» y alojamiento por barrio con Stay22 al final (sale el combinado Jerónimos + Torre). [Detalle](business/2026-10-25-ARREGLOS-CONVERSION.md).
+
+## D-076 — Sitemap con fecha real en todas las URL, títulos ≤ 60 y metas ≤ 155, 25/10/2026
+
+**Rama local `fix/seo-tecnico`, pendiente de visto bueno de José (L-003).** José: «Arregla todo». Las 29 URL sin `lastmod` llevan la fecha del último cambio de su texto según git (mapa fijo en `sitemap.ts`, nunca la fecha del build; /blog toma la de su artículo más reciente). El blog quita la marca del título a partir de 60 caracteres (antes 65) y la versión inglesa sigue la misma regla; home, sobre nosotros, 1 y 2 días y /en acortan su texto con la marca. Cinco metas de más de 160 bajan a ≤ 155 sin tocar el texto visible. No se tocan como-pagar (E-002), comer barato (E-007) ni café (E-006). Stay22 sigue fuera de /en, intencional según docs/english-pilot-phase1.md. [Detalle](seo/2026-10-25-SEO-TECNICO.md).
+
+## D-077 — Quitar Clerk y el panel /admin, 25/10/2026
+
+**Rama local `fix/quitar-clerk`, pendiente de visto bueno de José (L-003).** José no usa el panel y pide quitar Clerk. Sustituye la línea de D-069 («no se presenta autenticación como operativa ni se la elimina»): la web deja de tener inicio de sesión. Fuera el panel /admin, /api/admin, /api/reviews (sin formulario en ninguna página), el botón de usuario y `@clerk/nextjs`; /admin queda en 404 noindex. Las guías de Supabase se siguen sirviendo y la tabla `guide_reviews` no se borra. `/api/brevo/campaign`, que no tenía protección, solo responde con `BREVO_CAMPAIGN_SECRET`. Políticas sin Clerk ni cookies de sesión. DNS, variables de Vercel y la cuenta de Clerk los toca José después del deploy. [Detalle](operations/2026-10-25-QUITAR-CLERK.md).
+
+## D-078 — Refrescar la temporada en sus URL y una guía nueva de la Regaleira, 25/10/2026
+
+**Rama local `feat/seo-posicionamiento`, pendiente de visto bueno de José (L-003).** José pide auditoría SEO para subir a las primeras posiciones y vender con contenido útil. Se actualizan Óbidos, Navidad y Nochevieja en sus URL en vez de crear «Lisboa en diciembre» (canibalizaría a Navidad). Se añade una sola URL nueva, la guía de entradas de la Quinta da Regaleira, porque no había página para esa búsqueda de compra. La entrada de la Regaleira no se enlaza a reventa: su web dice que la taquilla oficial es la única autorizada. Nochevieja gana un bloque Stay22 por barrio (no en páginas EN). No se tocan títulos en observación (E-001 a E-004, E-012) ni E-006/E-007. Detalle: [[seo/AUDITORIA-POSICIONAMIENTO-2026-10-25]].
+
+## D-079 — Títulos y metas por CTR solo donde no hay experimento abierto, 25/10/2026
+
+**Rama local `feat/seo-titulos-ctr`, pendiente de visto bueno de José (L-003).** José aprueba empezar por títulos y metas de las páginas con muchas impresiones y CTR bajo. Con el export de GSC de 3 meses se cambian Metro (horario 06:30–01:00 en el título), Navegante («precio y qué incluye»), Navidad («qué abre» y la fecha de las luces de 2025) y la meta de Óbidos («Navidad de Óbidos»). Cifras comprobadas el 25/10 en metrolisboa.pt, obidosvilanatal.pt y BOL. Nochevieja se queda igual (CTR 4,2 %). Las cuatro páginas de E-001 a E-004 no se tocan; sus propuestas quedan escritas en el informe. Se añaden cuatro enlaces internos a las guías de entradas del Oceanário y la Torre de Belém. No cambian slugs ni texto del cuerpo. Medición: E-022.
+
+## D-080 — Cerrar E-001–E-007/E-012, títulos de E-023 y Stay22 solo en páginas de alojamiento, 25/10/2026
+
+**Aprobado y publicado por José** («Sí, publícalos y termina el experimento… si crees que tener Tiqets, Stay22 y GuruWalk es mucha confusión quitamos Stay22, tú decides»). Se publican juntas las ramas de D-078 y D-079. Se cierran los experimentos de títulos con su veredicto (E-002, E-003, E-005 y E-007 no funcionaron; E-001, E-004 y E-006 sin conclusión; E-012 cancelado) y se aplican los títulos de E-023.
+
+Stay22 no se quita: los bloques manuales ya solo estaban en tres páginas con intención de alojamiento (dónde alojarse, Nochevieja y 7 días) y no confunden con Tiqets (entradas) ni GuruWalk (free tours). Lo que se quita es el script LinkSwap global: no había en el sitio ni un enlace a Booking, Expedia u otra web de reservas que convertir, así que solo añadía JS y un identificador en `localStorage` en todas las páginas. Ahora lo pinta la página del artículo solo cuando el artículo lleva un bloque `stay22-barrios`. Se mantienen `excludes: ['getyourguide']`, el consentimiento y `aid=estabaenlisboa`; Stay22 sigue fuera de /en. Reparto: Tiqets para entradas, GuruWalk para free tours, GetYourGuide solo donde no hay equivalente (excursión de Sintra, fado, gastronómico, Fátima) y Stay22 para alojamiento.
+
+También: `/llms.txt` (excluido del proxy de idioma), enlaces internos a patinetes, Lisboa en enero y el free tour de Belém, y títulos de manuelino, Graça, vida nocturna y free tours. Detalle: [[seo/2026-10-25-CIERRE-EXPERIMENTOS-Y-SEO]].
+

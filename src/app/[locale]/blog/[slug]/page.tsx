@@ -12,6 +12,7 @@ import type { Article, ArticleExtras, ArticleFaq, SectionPhoto } from '@/compone
 import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
 import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
+import Stay22Script from '@/components/afiliados/Stay22Script';
 import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
@@ -442,6 +443,7 @@ const articles: Record<string, Article> = {
         'Vuelve a Lisboa sin depender del último tren disponible.',
       ] },
       { tipo: 'parrafo', texto: 'Si tienes que elegir, prefiero dos visitas bien hechas a cuatro entradas encadenadas. Quinta da Regaleira, Castelo dos Mouros, Palácio Nacional de Sintra y otros lugares pueden justificar una segunda visita o sustituir a Pena según tus intereses; no necesitas verlos todos el mismo día.' },
+      { tipo: 'enlace', texto: 'Si la segunda visita es la Regaleira: precios de 2026, franjas y por qué comprar en su web oficial.', href: '/blog/quinta-da-regaleira-entradas', label: 'Quinta da Regaleira: entradas y horarios' },
 
       { tipo: 'subtitulo', texto: '¿Conviene combinar Sintra y Cascais el mismo día?' },
       { tipo: 'parrafo', texto: 'Para una primera visita no lo recomiendo como plan base. Es posible conectar ambos destinos, pero añadir Cascais reduce el margen en Sintra y convierte cualquier retraso en un problema. Si tienes cuatro o cinco días en Lisboa, dedica jornadas separadas cuando ambos lugares sean prioritarios.' },
@@ -727,8 +729,8 @@ const articles: Record<string, Article> = {
   'metro-lisboa-guia': {
     titulo: 'Metro de Lisboa 2026: mapa, horarios, billetes y líneas',
     descripcion: 'Guía práctica del Metro de Lisboa con líneas, horario normal, precios 2026, Navegante, contactless y conexiones útiles para aeropuerto, centro y Oriente.',
-    seoTitle: 'Metro de Lisboa: horario, mapa y billetes 2026',
-    metaDescription: '¿A qué hora abre y cierra el Metro de Lisboa? De 06:30 a 01:00 todos los días. Las cuatro líneas, billete 1,90 €, zapping, contactless y conexiones.',
+    seoTitle: 'Metro Lisboa 2026: horario 06:30–01:00, mapa y precios',
+    metaDescription: 'Abre a las 06:30 y cierra a la 01:00 todos los días. Plano oficial de las 4 líneas, billete 1,90 €, zapping 1,72 €, contactless y Línea Roja al aeropuerto.',
     imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
     imageAlt: 'Interior colorido de la estación de Metro de Olaias en Lisboa',
     categoria: 'Transporte',
@@ -770,6 +772,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Aeropuerto y Oriente' },
       { tipo: 'parrafo', texto: 'Aeroporto y Oriente están en la Línea Roja. Es una conexión especialmente útil si llegas en avión, vas al Parque das Nações o necesitas enlazar con trenes y autobuses en Oriente.' },
       { tipo: 'enlace', texto: 'Si llegas con maletas, compara Metro con taxi y apps antes de decidir.', href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto al centro' },
+      { tipo: 'enlace', texto: 'Oriente es también la estación del Oceanário, a unos minutos a pie. Precio según la hora, horario y qué incluye la entrada.', href: '/actividades/oceanario-lisboa', label: 'Entradas del Oceanário de Lisboa' },
       { tipo: 'subtitulo', texto: 'Errores fáciles de evitar' },
       { tipo: 'lista', items: ['No validar correctamente el título al entrar.', 'Usar una sola Navegante para varias personas en el mismo viaje.', 'Depender del Metro para barrios donde caminar o usar bus tiene más sentido.', 'Guardar un mapa viejo y no revisar cierres o cambios.', 'Confundir el pago contactless del Metro con un pase válido en todos los operadores.'] },
     ],
@@ -822,8 +825,8 @@ const articles: Record<string, Article> = {
   'tarjeta-navegante-lisboa': {
     titulo: 'Tarjeta Navegante en Lisboa: cuál comprar y cuánto cuesta en 2026',
     descripcion: 'Qué tarjeta o billete comprar en Lisboa según tu viaje: Navegante ocasional con zapping, billete de 24 horas, contactless o Lisboa Card, con las tarifas oficiales de 2026 y las cuentas hechas.',
-    seoTitle: 'Tarjeta Navegante Lisboa 2026: cuál comprar y precios',
-    metaDescription: 'La Navegante cuesta 0,50 € y con zapping cada viaje sale a 1,72 €. Cuándo compensa el billete de 24 h (7,25 €), el de CP para Sintra y la Lisboa Card.',
+    seoTitle: 'Tarjeta Navegante Lisboa 2026: precio y qué incluye',
+    metaDescription: 'La Navegante ocasional cuesta 0,50 € y no trae viajes: se carga con zapping (1,72 € por trayecto) o 24 h (7,25 €). Dónde comprarla y cuándo compensa.',
     imagen: '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
     imageAlt: 'Tranvía 15E de Lisboa utilizado por viajeros con títulos Navegante y Carris',
     categoria: 'Transporte',
@@ -900,6 +903,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'La Lisboa Card no es una Navegante: es la tarjeta turística de Turismo de Lisboa. Incluye el transporte público (Metro, Carris y los trenes de CP a Sintra y Cascais) y la entrada a más de 50 museos y monumentos. Cuesta 31 € las 24 horas, 51 € las 48 y 62 € las 72. Para niños de 4 a 15 años, 21, 28 y 35 €.' },
       { tipo: 'parrafo', texto: 'Un ejemplo con precios oficiales: los Jerónimos (18 €), la Torre de Belém (15 €) y un día de transporte (7,25 €) suman 40,25 €. La de 24 horas cuesta 31 €. Si ese día solo vas a pasear y ver un museo, no compensa: con zapping te mueves por unos 7 €.' },
       { tipo: 'parrafo', texto: 'Dos detalles antes de comprarla. Para los Jerónimos y la Torre de Belém tienes que reservar hora con el número de tu tarjeta, y no puedes hacerlo hasta que hayas cambiado el bono por la tarjeta física. Además, los grandes monumentos y museos nacionales cierran los lunes, así que no actives la tarjeta un lunes.' },
+      { tipo: 'enlace', texto: 'En la Torre de Belém la Lisboa Card entra gratis, pero hay que reservar franja con el número de la tarjeta. Precio, horario y cómo reservar.', href: '/actividades/torre-de-belem', label: 'Entradas de la Torre de Belém' },
 
       { tipo: 'subtitulo', texto: 'Dónde comprar y recargar la Navegante' },
       { tipo: 'lista', items: [
@@ -941,7 +945,7 @@ const articles: Record<string, Article> = {
     minutos: 9,
     links: [
       { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa en un día' },
-      { href: '/blog/sintra-desde-lisboa', label: 'Ficha de Sintra: Pena y Regaleira' },
+      { href: '/blog/quinta-da-regaleira-entradas', label: 'Quinta da Regaleira: entradas y horarios' },
       { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y zapping' },
       { href: '/blog/lisboa-card-vale-la-pena', label: 'Cuándo compensa la Lisboa Card' },
       { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
@@ -1036,14 +1040,14 @@ const articles: Record<string, Article> = {
   'lisboa-en-navidad': {
     titulo: 'Lisboa en Navidad 2026: luces, mercados y qué abre cada día',
     descripcion: 'El mercado del Rossio, las luces de la Baixa y Wonderland, con las fechas de 2026 que ya se conocen y las de 2025 como referencia. Qué abre el 24, 25 y 31 y cómo es la Nochevieja.',
-    seoTitle: 'Lisboa en Navidad 2026: luces, mercados y qué hacer',
-    metaDescription: 'Mercado del Rossio, luces de la Baixa y Wonderland: fechas de 2026 anunciadas y de 2025 como referencia, qué abre el 24, 25 y 31 y la Nochevieja.',
+    seoTitle: 'Navidad en Lisboa 2026: luces, mercados y qué abre',
+    metaDescription: 'Cuándo se encienden las luces (en 2025, el 22 de noviembre), fechas del mercado del Rossio y Wonderland, y qué abre el 24, el 25 y el 31 de diciembre.',
     imagen: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
     imageAlt: 'Rua Augusta con el Arco al fondo, el tramo central del paseo de las luces de Navidad en la Baixa',
     categoria: 'Planificación',
     fecha: '9 Oct 2026',
-    fechaActualizacion: "Referencia de Óbidos revisada el 24 de octubre de 2026",
-    dateModified: "2026-10-24",
+    fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+    dateModified: '2026-10-25',
     minutos: 9,
     links: [
       { href: '/blog/festivales-eventos-lisboa-2026', label: 'Festivales y eventos en Lisboa 2026' },
@@ -1066,7 +1070,7 @@ const articles: Record<string, Article> = {
       { label: 'Europe\'s Best Destinations: Wonderland Lisboa 2026 (no oficial)', href: 'https://www.europeanbestdestinations.com/christmas-markets/lisbon/' },
       { label: 'Visit Lisboa: Mercado de Natal do Campo Pequeno 2025', href: 'https://www.visitlisboa.com/pt-pt/eventos/mercado-de-natal-campo-pequeno' },
       { label: 'Município de Óbidos: Óbidos Vila Natal 2026/27', href: 'https://agenda.obidos.pt/evento/obidos-vila-natal/' },
-      { label: 'Óbidos Vila Natal: horarios y precios (edición 2025)', href: 'https://obidosvilanatal.pt/horarios-e-precos/' },
+      { label: 'Óbidos Vila Natal: horarios y precios 2026', href: 'https://obidosvilanatal.pt/horarios-e-precos/' },
       { label: 'Rodoviária do Oeste: Rápida Verde (PDF)', href: 'https://rodoviariadooeste.pt/wp-content/uploads/rapida_linha_verde.pdf' },
       { label: 'Castelo de São Jorge: horarios y cierres', href: 'https://castelodesaojorge.pt/como-visitar/horarios/' },
       { label: 'Observador/Lusa: cierres del 24 y el 31 de diciembre de 2025', href: 'https://observador.pt/2025/12/23/museus-e-monumentos-publicos-encerrados-nos-dias-24-e-31/' },
@@ -1121,9 +1125,9 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Excursión: Óbidos Vila Natal' },
       { tipo: 'parrafo', texto: 'Óbidos, un pueblo amurallado al norte de Lisboa, monta en Navidad un recinto con atracciones y actividades para familias en la Cerca do Castelo. Según el Ayuntamiento de Óbidos, la edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027.' },
-      { tipo: 'parrafo', texto: 'Entrar al pueblo es gratis; el recinto de la Vila Natal es de pago, por sesiones y con aforo limitado. La organización ya publica los precios y horarios de 2026: el desglose actualizado está en nuestra guía de Óbidos, enlazada a continuación.' },
+      { tipo: 'parrafo', texto: 'Entrar al pueblo es gratis; el recinto de la Vila Natal es de pago, por sesiones y con aforo limitado. En 2026 la entrada general cuesta 12 €; la de niños de 3 a 11 años, 8 €, y la de estudiantes y mayores de 65, 11 €. En la taquilla online hay un vale de preventa a 6 €. Abre de 10:00 a 18:00 de lunes a jueves hasta el 17 de diciembre (hasta las 20:00 del 21 al 30) y de 10:00 a 21:00 los viernes, fines de semana y festivos; el 24 y el 31, de 10:00 a 17:00, y cierra el 25 y el 1.' },
       { tipo: 'parrafo', texto: 'Por tu cuenta, el autobús Rápida Verde de Rodoviária do Oeste une Óbidos con Campo Grande, en Lisboa, en 1 hora; el billete sencillo cuesta 9,45 €. El tren no compensa este invierno: desde marzo de 2026 CP cubre el tramo entre Mira Sintra-Meleças y Caldas da Rainha, que incluye Óbidos, con un autobús de sustitución bastante más lento.' },
-      { tipo: 'enlace', texto: 'Horarios del autobús, precios de referencia y qué ver en el pueblo.', href: '/blog/obidos-vila-natal', label: 'Óbidos Vila Natal 2026' },
+      { tipo: 'enlace', texto: 'Horarios del autobús, precios de 2026, la preventa y qué ver en el pueblo.', href: '/blog/obidos-vila-natal', label: 'Óbidos Vila Natal 2026' },
       { tipo: 'enlace', texto: 'Más ideas para salir de Lisboa un día.', href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
 
       { tipo: 'subtitulo', texto: 'Qué comer: bolo-rei y otros dulces de Navidad' },
@@ -1145,6 +1149,7 @@ const articles: Record<string, Article> = {
         ['Metro (2025)', 'Hasta la 01:00', 'Desde las 6:30', 'Hasta la 01:00', 'Desde las 6:30'],
       ] },
       { tipo: 'parrafo', texto: 'En 2025 el Gobierno dio tolerância de ponto (un día libre para los funcionarios) el 24 y el 31, y por eso los museos y monumentos de Museus e Monumentos de Portugal, entre ellos los Jerónimos y la Torre de Belém, cerraron también esos días. Para 2026 todavía no se sabe. El Oceanário no publica aún las horas exactas de esos cuatro días: míralas en su web antes de ir.' },
+      { tipo: 'enlace', texto: 'El 25 de diciembre, con el castillo y los Jerónimos cerrados, el Oceanário abre de 11:00 a 20:00. Precio según la hora y cómo comprar la entrada.', href: '/actividades/oceanario-lisboa', label: 'Entradas del Oceanário de Lisboa' },
       { tipo: 'parrafo', texto: 'Si quieres cenar fuera el 24 o el 25, confirma antes que el restaurante abre y reserva: en Portugal la noche del 24 es de cena familiar en casa.' },
       { tipo: 'enlace', texto: 'Esos días el metro es lo más fiable para moverte.', href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa' },
 
@@ -1157,20 +1162,21 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Tiempo en diciembre y qué llevar' },
       { tipo: 'parrafo', texto: 'Según la normal climatológica del IPMA (1991-2020, Lisboa), en diciembre la máxima media es de 15,4 °C, la mínima de 9,4 °C y llueve de media 10 días, con 108,5 mm en el mes. Lleva calzado con suela que agarre, chubasquero o paraguas plegable y algo de abrigo para la noche.' },
       { tipo: 'enlace', texto: 'Para los días que no para de llover.', href: '/blog/lisboa-cuando-llueve', label: 'Qué hacer en Lisboa cuando llueve' },
+      { tipo: 'enlace', texto: 'Si te quedas hasta después de Reyes: el tiempo, qué cierra y qué hacer en enero.', href: '/blog/lisboa-en-enero', label: 'Lisboa en enero' },
     ],
   },
 
   'obidos-vila-natal': {
     titulo: "Óbidos Vila Natal 2026: fechas, entradas y cómo ir desde Lisboa",
-    descripcion: "Fechas oficiales de Óbidos Vila Natal 2026, precios y horarios publicados, el autobús Rápida Verde desde Campo Grande, por qué este invierno no compensa el tren y qué ver en el pueblo.",
+    descripcion: "Fechas, horarios y precios oficiales de Óbidos Vila Natal 2026, la preventa a 6 €, el autobús Rápida Verde desde Campo Grande, por qué este invierno no compensa el tren y qué ver en el pueblo.",
     seoTitle: "Óbidos Vila Natal 2026: fechas, entradas y cómo ir",
-    metaDescription: "Del 27 de noviembre de 2026 al 3 de enero de 2027. Precios de referencia, autobús Rápida Verde desde Campo Grande (1 hora, 9,45 €) y qué ver en Óbidos.",
+    metaDescription: "La Navidad de Óbidos, del 27 de noviembre al 3 de enero: entrada 12 € (preventa a 6 €), horario 2026 y autobús desde Campo Grande, 1 h y 9,45 €.",
     imagen: "/images/obidos-calle-casas-encaladas.webp",
     imageAlt: "Calle empedrada de Óbidos con casas encaladas y zócalos azules",
     categoria: "Guías",
     fecha: "9 Oct 2026",
-    fechaActualizacion: "Precios y horarios revisados el 24 de octubre de 2026",
-    dateModified: "2026-10-24",
+    fechaActualizacion: "Verificado el 25 de octubre de 2026",
+    dateModified: "2026-10-25",
     minutos: 9,
     links: [
       { href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
@@ -1182,6 +1188,7 @@ const articles: Record<string, Article> = {
     fuentes: [
       { label: "Município de Óbidos: Óbidos Vila Natal 2026/27 (fechas y lugar)", href: "https://agenda.obidos.pt/evento/obidos-vila-natal/" },
       { label: "Óbidos Vila Natal: horarios y precios de 2026", href: "https://obidosvilanatal.pt/en/hours-and-prices" },
+      { label: "BOL: vale de preventa de Óbidos Vila Natal 2026 (6 €)", href: "https://www.bol.pt/Comprar/Cartoes/6669-9583-0-voucher_pre_venda_vila_natal_26-obidos_criativa_e_m/" },
       { label: "Óbidos Vila Natal: preguntas frecuentes (qué incluye, sesiones, cambios, accesibilidad)", href: "https://obidosvilanatal.pt/perguntas-frequentes/" },
       { label: "Óbidos Vila Natal: información útil (aparcamientos, cajeros, accesos)", href: "https://obidosvilanatal.pt/informacoes-uteis/" },
       { label: "Taquilla online oficial de Óbidos (BOL)", href: "https://obidos.bol.pt/" },
@@ -1198,39 +1205,46 @@ const articles: Record<string, Article> = {
       { label: "Foto de portada: «Óbidos -1», de Art Prof (Flickr), licencia CC BY 2.0, vía Wikimedia Commons", href: "https://commons.wikimedia.org/wiki/File:%C3%93bidos_-1_(52113575953).jpg" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027. La organización ya publica sus precios y horarios. Yo todavía no he estado en Óbidos: esta guía no sale de mi experiencia, sino de lo que publican el Ayuntamiento, la propia Vila Natal, Rodoviária do Oeste y CP." },
+      { tipo: "parrafo", texto: "Óbidos Vila Natal es el recinto de Navidad que el Ayuntamiento de Óbidos monta cada año dentro de la Cerca do Castelo, en lo alto del pueblo amurallado. La edición de 2026 va del 27 de noviembre de 2026 al 3 de enero de 2027, y este año gira en torno a Pinocho y las marionetas. Los precios y el horario de 2026 ya están publicados: abajo los tienes tal como los da la organización. Yo todavía no he estado en Óbidos: esta guía no sale de mi experiencia, sino de lo que publican el Ayuntamiento, la propia Vila Natal, Rodoviária do Oeste y CP." },
       { tipo: 'lista', items: [
         "Fechas 2026: del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos.",
-        "Precios 2026: general 12 €, niños de 3 a 11 años 8 €, estudiantes y séniores 11 €.",
+        "Precio 2026: 12 € la entrada general, 8 € de 3 a 11 años y 11 € estudiantes y mayores de 65. La familia de 2 adultos y 2 niños, 36 €.",
+        "Preventa: en la taquilla oficial (BOL) se vende un vale a 6 €, la mitad de la general, que luego cambias por una entrada con día y hora. La organización no dice hasta cuándo estará a la venta.",
         "Sin coche: autobús Rápida Verde desde Campo Grande. Tarda 1 hora, el billete sencillo cuesta 9,45 € y el último de vuelta sale de Óbidos a las 21:45.",
         "Entrar al pueblo es gratis. Solo se paga el recinto navideño, que está arriba, junto al castillo.",
         "La entrada es para un día y una hora de entrada concretos; una vez dentro, no hay límite de tiempo.",
         "El tren no compensa este invierno: el tramo hasta Óbidos se hace en autobús de sustitución de CP y tarda más del doble.",
-        "La organización confirma cierre el 25 de diciembre y el 1 de enero.",
+        "Cierra el 25 de diciembre y el 1 de enero. El 24 y el 31 abre de 10:00 a 17:00.",
       ] },
 
       { tipo: "subtitulo", texto: "Fechas y horario" },
-      { tipo: "parrafo", texto: "El horario de 2026 cambia según el día. Para elegir la sesión, usa el desglose de la organización:" },
-      { tipo: 'tabla', texto: "Horario oficial 2026/27, revisado el 24/10/2026.", columnas: ["Día", "Horario 2026"], filas: [
-        ["Lunes a jueves, del 30/11 al 17/12", "10:00-18:00"],
-        ["Lunes a jueves, del 21 al 30/12", "10:00-20:00"],
-        ["Viernes, fines de semana y festivos", "10:00-21:00"],
+      { tipo: "parrafo", texto: "Del 27 de noviembre de 2026 al 3 de enero de 2027. Este es el horario de 2026 que publica la web oficial de Óbidos Vila Natal:" },
+      { tipo: 'tabla', texto: "Horario de Óbidos Vila Natal 2026, según su web oficial (consultada el 25 de octubre de 2026).", columnas: ["Día", "Horario 2026"], filas: [
+        ["Lunes a jueves, del 30 de noviembre al 17 de diciembre", "10:00-18:00"],
+        ["Lunes a jueves, del 21 al 30 de diciembre", "10:00-20:00"],
+        ["Viernes, sábados, domingos y festivos (1 y 8 de diciembre incluidos)", "10:00-21:00"],
         ["24 y 31 de diciembre", "10:00-17:00"],
         ["25 de diciembre y 1 de enero", "Cerrado"],
       ] },
-      { tipo: "parrafo", texto: "La taquilla puede cerrar antes que el recinto. Comprueba el acceso de tu sesión antes de desplazarte." },
+      { tipo: "parrafo", texto: "Las puertas cierran una hora antes que el recinto. Un martes de principios de diciembre cierra a las 18:00, así que si llegas a las 17:30 ya no entras." },
+      { tipo: "parrafo", texto: "Si compras en el pueblo, hay dos taquillas. La de la Porta da Vila abre una hora antes que el recinto y cierra dos horas antes del cierre. La que está junto a la entrada abre media hora antes y cierra hora y media antes del cierre." },
 
       { tipo: "subtitulo", texto: "Entradas y precios" },
-      { tipo: "parrafo", texto: "La organización publica estas tarifas para 2026:" },
-      { tipo: 'tabla', texto: "Tarifas oficiales 2026; confirma categoría y condiciones al comprar.", columnas: ["Entrada", "Precio 2026", "Para quién"], filas: [
-        ["General", "12 €", "Comprueba la categoría por edad al reservar"],
+      { tipo: "parrafo", texto: "Precios oficiales de 2026. Subieron respecto a 2025, cuando la general costaba 10 €:" },
+      { tipo: 'tabla', texto: "Tabla de precios oficial de Óbidos Vila Natal 2026 (consultada el 25 de octubre de 2026). Los menores de 3 años no pagan.", columnas: ["Entrada", "Precio 2026", "Para quién"], filas: [
+        ["General", "12 €", "Mayores de 12 años"],
         ["Niño", "8 €", "De 3 a 11 años"],
-        ["Estudiante", "11 €", "De 12 a 25 años, con carné de estudiante"],
-        ["Sénior", "11 €", "Mayores de 65"],
+        ["Estudiante", "11 €", "De 12 a 25 años, con justificante de estudiante"],
+        ["Sénior", "11 €", "Mayores de 65, con justificante"],
         ["Familia", "36 € / 42 € / 48 €", "2 adultos con 2, 3 o 4 niños"],
-        ["Discapacidad", "Condiciones específicas", "Consulta la tarifa del visitante y su acompañante en la fuente oficial"],
+        ["Discapacidad", "6 € la general", "Grado igual o superior al 60 %, para la persona y su acompañante. Si es un niño: 50 % sobre la entrada de niño y sobre la del acompañante"],
+        ["Vale de preventa", "6 €", "Solo en la taquilla online (BOL). Hay que canjearlo después por una entrada con día y hora"],
       ] },
-      { tipo: "parrafo", texto: "Según la web oficial, la entrada de 2025 incluía la casa de Papá Noel, la rampa de hielo, los espectáculos, los talleres para niños, el pintacaras, la pista de obstáculos, la zona de videojuegos y el mercado de Navidad. La pista de patinaje, el carrusel, el trenecito, los simuladores de realidad virtual y el escape room se pagaban aparte, cada uno en su taquilla." },
+      { tipo: "parrafo", texto: "Según la web oficial, la entrada de 2026 incluye la Casa de Papá Noel, la rampa de hielo (el «Mergulho do Pinocchio»), los teatros de marionetas, los talleres, el pintacaras, la oficina de correos, las zonas de juego y el mercado de Navidad. La pista de patinaje, el carrusel, el trenecito y la noria pequeña se pagan aparte, cada uno en su taquilla." },
+      { tipo: 'lista', items: [
+        "El vale de preventa cuesta la mitad de la general y vale para una visita. Con el código de 15 cifras que te llega, entras en obidos.bol.pt y eliges día y hora. Sin ese canje, no entras.",
+        "Si vas a ir seguro, es lo más barato que hay ahora. Lo que no sé es hasta cuándo lo venden: la organización no da fecha de fin.",
+      ] },
       { tipo: 'lista', items: [
         "La entrada vale para un día y una hora de entrada. Dentro puedes quedarte el tiempo que quieras.",
         "Puedes salir y volver a entrar el mismo día, avisando al personal de seguridad en la salida.",
@@ -1288,7 +1302,7 @@ const articles: Record<string, Article> = {
         "Abrigo y calzado que agarre. Es al aire libre, en diciembre, y el empedrado mojado resbala.",
         "Dentro del recinto hay zona de comidas con mesas, y la organización permite llevar tu propia comida.",
         "Los perros pueden entrar con correa y bozal, según las normas del evento.",
-        "No vayas el 25 de diciembre ni el 1 de enero: el calendario oficial confirma esos cierres.",
+        "No vayas el 25 de diciembre ni el 1 de enero: el recinto cierra esos días.",
       ] },
       { tipo: "enlace", texto: "Las fechas de luces, mercados y qué abre cada día en Lisboa durante las fiestas.", href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
       { tipo: "enlace", texto: "Otras salidas de un día desde Lisboa, y cuáles se pueden combinar.", href: "/blog/excursiones-desde-lisboa", label: "Excursiones desde Lisboa" },
@@ -1304,8 +1318,8 @@ const articles: Record<string, Article> = {
     imageAlt: "Lisboa iluminada de noche vista desde lo alto, con el Tajo al fondo",
     categoria: "Planificación",
     fecha: "9 Oct 2026",
-    fechaActualizacion: "Verificado el 9 de octubre de 2026",
-    dateModified: "2026-10-09",
+    fechaActualizacion: "Verificado el 25 de octubre de 2026",
+    dateModified: "2026-10-25",
     minutos: 9,
     links: [
       { href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
@@ -1389,6 +1403,16 @@ const articles: Record<string, Article> = {
       ] },
       { tipo: "enlace", texto: "Si es tu primera vez en el metro de Lisboa, aquí tienes horarios, líneas y billetes.", href: "/blog/metro-lisboa-guia", label: "Metro de Lisboa" },
 
+      { tipo: "subtitulo", texto: "Dónde dormir si vienes por la Nochevieja" },
+      { tipo: "parrafo", texto: "Con lo de arriba, la cuenta es sencilla: si duermes a un paseo de la Praça do Comércio, no dependes del metro, ni de un Uber que no puede entrar, ni de los trenes de madrugada. La Baixa está pegada a la plaza; el Chiado y Alfama, a unos 10 o 15 minutos andando." },
+      { tipo: 'lista', items: [
+        "Baixa: lo más cerca de la fiesta y todo llano. También es lo más ruidoso esa noche, hasta bien tarde.",
+        "Chiado: a un paseo cuesta abajo de la plaza. A la vuelta es cuesta arriba.",
+        "Alfama: cerca del río y de la plaza, pero con escaleras y cuestas. Con tacones o con niños, piénsalo.",
+        "Si duermes lejos del centro, mira que tu hotel quede cerca de una estación de metro de las que siguen abiertas, y planea volver antes de la 01:00.",
+      ] },
+      { tipo: "parrafo", texto: "Si ya tienes las fechas, al final de esta guía puedes ver qué queda libre en cada barrio para esa noche." },
+
       { tipo: "subtitulo", texto: "Cenar en Nochevieja" },
       { tipo: 'lista', items: [
         "Reserva con antelación: esa noche los restaurantes del centro se llenan.",
@@ -1434,8 +1458,238 @@ const articles: Record<string, Article> = {
         ["Metro", "Desde las 6:30"],
       ] },
       { tipo: "parrafo", texto: "Un plan para el día 1: dormir, comer tarde y pasar la tarde en el Parque das Nações, con el Oceanário y el paseo junto al río." },
+      { tipo: "enlace", texto: "El 1 de enero el Oceanário abre de 11:00 a 20:00. Precio según la hora y cómo comprar la entrada.", href: "/actividades/oceanario-lisboa", label: "Entradas del Oceanário de Lisboa" },
       { tipo: "enlace", texto: "Qué ver en el Parque das Nações y cómo organizar la tarde.", href: "/blog/parque-das-nacoes-lisboa-que-ver", label: "Parque das Nações" },
       { tipo: "enlace", texto: "Luces, mercados y qué abre el 24, el 25 y el 31.", href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
+      { tipo: "enlace", texto: "Si te quedas unos días más: tiempo, horas de luz y qué cierra en enero.", href: "/blog/lisboa-en-enero", label: "Lisboa en enero" },
+    ],
+  },
+
+  'lisboa-en-enero': {
+    titulo: "Lisboa en enero: tiempo, qué hacer y qué está cerrado (2027)",
+    descripcion: "Qué tiempo hace en Lisboa en enero según el IPMA, a qué hora se pone el sol, qué cierra el 1 de enero y los lunes, qué pasa en la ciudad ese mes y los precios y horarios de invierno de las visitas principales.",
+    seoTitle: "Lisboa en enero 2027: tiempo, qué hacer y qué cierra",
+    metaDescription: "Máximas de 15 °C y 10 días de lluvia de media. Atardecer hacia las 17:30, qué cierra el 1 de enero y los lunes, qué hacer y precios de las entradas.",
+    imagen: "/images/miradouro-atardecer.jpg",
+    imageAlt: "Gente sentada al atardecer en un mirador de Lisboa, con el Castelo de São Jorge al fondo",
+    categoria: "Planificación",
+    fecha: "25 Oct 2026",
+    fechaActualizacion: "Verificado el 25 de octubre de 2026",
+    dateModified: "2026-10-25",
+    minutos: 7,
+    links: [
+      { href: "/blog/nochevieja-lisboa", label: "Nochevieja en Lisboa 2026" },
+      { href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
+      { href: "/blog/lisboa-cuando-llueve", label: "Qué hacer en Lisboa cuando llueve" },
+      { href: "/blog/mejor-epoca-visitar-lisboa", label: "Mejor época para visitar Lisboa" },
+      { href: "/blog/mejores-miradores-lisboa", label: "Miradores de Lisboa" },
+      { href: "/blog/tarjeta-navegante-lisboa", label: "Tarjeta Navegante y tarifas 2026" },
+    ],
+    fuentes: [
+      { label: "IPMA: normal climatológica 1991-2020, Lisboa (PDF)", href: "https://www.ipma.pt/bin/file.data/climate-normal/cn_91-20_LISBOA_GEOFISICO.pdf" },
+      { label: "timeanddate: salida y puesta del sol en Lisboa, enero de 2027", href: "https://www.timeanddate.com/sun/portugal/lisbon?month=1&year=2027" },
+      { label: "Diário da República: Código do Trabalho, artículo 234 (festivos nacionales)", href: "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475" },
+      { label: "Castelo de São Jorge: horarios y cierres", href: "https://castelodesaojorge.pt/como-visitar/horarios/" },
+      { label: "Castelo de São Jorge: precios", href: "https://castelodesaojorge.pt/como-visitar/escolher-o-bilhete/" },
+      { label: "Jerónimos y Torre de Belém: horarios, precios y cierres", href: "https://mosteirojeronimos.torrebelem.gov.pt/visitar" },
+      { label: "Oceanário de Lisboa: precios, horario y días especiales", href: "https://oceanario.pt/planear-visita/" },
+      { label: "Fundação Gulbenkian: horarios", href: "https://gulbenkian.pt/informacoes-uteis/horarios/" },
+      { label: "MAAT: horario", href: "https://www.maat.pt/pt/visitar" },
+      { label: "Parques de Sintra: preguntas frecuentes (días de cierre)", href: "https://www.parquesdesintra.pt/pt/planear-a-visita/faqs/" },
+      { label: "Câmara Municipal de Lisboa: luces de Navidad 2025", href: "https://informacao.lisboa.pt/noticias/detalhe/lisboa-celebra-o-inicio-do-natal" },
+      { label: "Visit Lisboa: Wonderland Lisboa 2025", href: "https://www.visitlisboa.com/pt-pt/eventos/wonderland-lisboa_" },
+      { label: "Visit Lisboa: Feira da Ladra (fechas de 2027)", href: "https://www.visitlisboa.com/pt-pt/eventos/feira-da-ladra" },
+      { label: "Visit Lisboa: Sábados da Ribeira (fechas de 2027)", href: "https://www.visitlisboa.com/pt-pt/eventos/sabados-da-ribeira" },
+      { label: "Metro de Lisboa: tarifas ocasionales y zapping", href: "https://www.metrolisboa.pt/comprar/" },
+    ],
+    contenido: [
+      { tipo: "parrafo", texto: "Enero en Lisboa es fresco y lluvioso, pero no frío: la máxima media ronda los 15 °C y la mínima los 9 °C, y llueve una media de 10 días al mes, según el IPMA. El sol se pone entre las 17:25 y las 17:56. El 1 de enero cierran casi todos los monumentos, y los lunes cierran los Jerónimos y la Torre de Belém." },
+      { tipo: 'lista', items: [
+        "Tiempo: máxima media de 15,1 °C y mínima de 8,6 °C. Unos 104 mm de lluvia repartidos en unos 10 días (IPMA, 1991-2020).",
+        "Luz: amanece hacia las 7:54 y anochece entre las 17:25 del día 1 y las 17:56 del 31.",
+        "1 de enero de 2027 (viernes, festivo): cierran el Castelo, los Jerónimos, la Torre de Belém, la Gulbenkian, el MAAT y la Pena. El Oceanário abre de 11:00 a 20:00.",
+        "El 6 de enero, Reyes, no es festivo en Portugal: todo abre con su horario normal.",
+        "Lunes: cierran los Jerónimos y la Torre de Belém. El Castelo y el Oceanário abren todos los días.",
+        "Castelo en invierno: de 9:00 a 18:00, y las murallas cierran a las 17:30.",
+      ] },
+
+      { tipo: "subtitulo", texto: "El tiempo en enero" },
+      { tipo: 'tabla', texto: "Normales de enero en Lisboa (estación Lisboa/Instituto Geofísico), IPMA, 1991-2020.", columnas: ["Dato", "Enero"], filas: [
+        ["Máxima media", "15,1 °C"],
+        ["Mínima media", "8,6 °C"],
+        ["Temperatura media", "11,8 °C"],
+        ["Lluvia", "103,8 mm"],
+        ["Días con lluvia (1 mm o más)", "10"],
+        ["Días con mínima bajo cero", "0"],
+      ] },
+      { tipo: "parrafo", texto: "Con octubre, noviembre y diciembre, es de los meses más lluviosos del año, pero no llueve todos los días: en la media, dos de cada tres días son secos. Lo que no hay es frío de verdad. En la serie del IPMA, la mínima más baja registrada en enero fue de 1,3 °C, en 2009." },
+      { tipo: 'lista', items: [
+        "Un chubasquero o un paraguas plegable, mejor que un abrigo muy grueso.",
+        "Capas: a mediodía, al sol, sobra el abrigo; al caer la tarde, en un mirador con viento, no.",
+        "Calzado que agarre. El empedrado de Lisboa resbala mucho cuando está mojado.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Horas de luz y atardeceres" },
+      { tipo: 'tabla', texto: "Salida y puesta del sol en Lisboa, enero de 2027 (hora local).", columnas: ["Día", "Amanece", "Anochece"], filas: [
+        ["1 de enero", "7:54", "17:25"],
+        ["15 de enero", "7:53", "17:38"],
+        ["31 de enero", "7:43", "17:56"],
+      ] },
+      { tipo: "parrafo", texto: "Me encantan los atardeceres y los miradores, y mi favorito es el Miradouro da Senhora do Monte, en Graça. En enero el sol se pone pronto, así que el plan de la puesta de sol cae a las cinco y pico de la tarde: llega con margen, que es un mirador conocido y a esa hora se llena." },
+      { tipo: "enlace", texto: "Cómo llegar y qué se ve desde allí.", href: "/actividades/miradouro-senhora-do-monte", label: "Miradouro da Senhora do Monte" },
+      { tipo: "parrafo", texto: "Con unas nueve horas y media o diez de luz, conviene empezar las visitas por la mañana y dejar para el final del día lo que se puede hacer de noche o bajo techo." },
+
+      { tipo: "subtitulo", texto: "Qué cierra el 1 de enero y los lunes" },
+      { tipo: "parrafo", texto: "El 1 de enero de 2027 es viernes y festivo nacional. Muchos museos y monumentos cierran, y con tiendas y restaurantes no des nada por hecho: mira su horario antes de ir." },
+      { tipo: 'tabla', texto: "Qué abre el 1 de enero de 2027.", columnas: ["Sitio", "1 de enero"], filas: [
+        ["Castelo de São Jorge", "Cerrado"],
+        ["Jerónimos y Torre de Belém", "Cerrados"],
+        ["Museo Gulbenkian", "Cerrado (el jardín abre todos los días y es gratis)"],
+        ["MAAT", "Cerrado"],
+        ["Palacio da Pena (Sintra)", "Cerrado"],
+        ["Oceanário", "Abierto, de 11:00 a 20:00 (última entrada a las 19:00)"],
+      ] },
+      { tipo: "parrafo", texto: "El resto de enero, el día que más cuidado pide es el lunes: los Jerónimos y la Torre de Belém cierran todos los lunes del año. El Castelo de São Jorge y el Oceanário abren todos los días." },
+      { tipo: "parrafo", texto: "La noche anterior, la del 31, la pasé una vez en la Praça do Comércio, con los fuegos sobre el río y música en directo. Si llegas a Lisboa antes de fin de año, tienes la fiesta, los horarios del metro y qué abre esa noche en la guía de Nochevieja." },
+      { tipo: "enlace", texto: "Dónde ver los fuegos, cómo moverte esa noche y qué abre el 1 de enero.", href: "/blog/nochevieja-lisboa", label: "Nochevieja en Lisboa 2026" },
+
+      { tipo: "subtitulo", texto: "Qué pasa en Lisboa en enero" },
+      { tipo: "subseccion", texto: "Lo que queda de la Navidad" },
+      { tipo: "parrafo", texto: "Las fechas de esta temporada aún no están publicadas. En la de 2025, las luces de Navidad de la Baixa siguieron encendidas hasta el 6 de enero, y Wonderland Lisboa, en el Parque Eduardo VII, cerró el 4 de enero. Si el calendario se repite, la primera semana del mes aún queda algo; a partir del día 7, ya no." },
+      { tipo: "enlace", texto: "Luces, mercados y Wonderland, con las fechas que se van conociendo.", href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
+      { tipo: "subseccion", texto: "Reyes y el bolo-rei" },
+      { tipo: "parrafo", texto: "El 6 de enero no es festivo en Portugal, así que ese día todo funciona con normalidad. Hasta Reyes, en las pastelerías verás el bolo-rei, la rosca de Navidad portuguesa, con fruta confitada y frutos secos." },
+      { tipo: "subseccion", texto: "Mercadillos" },
+      { tipo: 'lista', items: [
+        "Feira da Ladra: martes y sábados, en el Campo de Santa Clara, detrás de São Vicente de Fora. Visit Lisboa ya da sus fechas de enero de 2027.",
+        "Sábados da Ribeira: todos los sábados de 10:00 a 19:00, un mercado de artesanía, libros y antigüedades en el Mercado da Ribeira.",
+      ] },
+
+      { tipo: "subtitulo", texto: "Entradas y horarios de invierno" },
+      { tipo: "parrafo", texto: "Son los precios vigentes en octubre de 2026. Algunos sitios los cambian con el año nuevo, así que míralos antes de ir." },
+      { tipo: 'tabla', texto: "Precio de adulto y horario de invierno de las visitas principales.", columnas: ["Sitio", "Adulto", "Horario en enero", "Cierra"], filas: [
+        ["Castelo de São Jorge", "17 €", "9:00 a 18:00 (murallas hasta las 17:30)", "1 de enero"],
+        ["Torre de Belém", "15 €, con franja horaria", "Martes a domingo, 9:30 a 17:30", "Lunes y 1 de enero"],
+        ["Jerónimos (claustro)", "18 €, con franja horaria", "Martes a domingo, 9:30 a 17:30", "Lunes y 1 de enero"],
+        ["Oceanário", "De 25,50 € a 29,90 €, según la hora", "Todos los días, 10:00 a 20:00", "Abre todos los días"],
+      ] },
+      { tipo: "parrafo", texto: "Con estos horarios y el sol poniéndose antes de las seis, el castillo es mejor por la mañana: sus murallas cierran a las 17:30. La Torre y los Jerónimos tienen la última entrada a las 17:00." },
+      { tipo: "enlace", texto: "Precios, franjas y dónde comprar, en la guía de la Torre.", href: "/actividades/torre-de-belem", label: "Torre de Belém: entradas y horario" },
+      { tipo: "enlace", texto: "Precios por franja y el descuento online, en la guía del Oceanário.", href: "/actividades/oceanario-lisboa", label: "Oceanário de Lisboa: entradas y horario" },
+
+      { tipo: "subtitulo", texto: "Si llueve" },
+      { tipo: "parrafo", texto: "Con unos 10 días de lluvia al mes, lo normal es que te toque alguno. Sirve tener pensados un par de planes bajo techo y mover los miradores y los paseos a los ratos secos. El Oceanário es una buena opción, porque toda la visita es cubierta y abre todos los días." },
+      { tipo: "enlace", texto: "Museos, mercados y otros planes bajo techo.", href: "/blog/lisboa-cuando-llueve", label: "Qué hacer en Lisboa cuando llueve" },
+
+      { tipo: "subtitulo", texto: "Cómo moverte" },
+      { tipo: "parrafo", texto: "Yo me muevo en metro con la Navegante. La tarjeta cuesta 0,50 € y, cargada con saldo zapping, cada viaje en metro, autobús o tranvía sale a 1,72 €. El billete de 24 horas de Carris y Metro cuesta 7,25 €. Son las tarifas de 2026; las de 2027 aún no se han publicado." },
+      { tipo: "enlace", texto: "Qué tarjeta comprar y cuándo compensa el billete de 24 horas.", href: "/blog/tarjeta-navegante-lisboa", label: "Tarjeta Navegante y tarifas 2026" },
+      { tipo: "enlace", texto: "Cómo es Lisboa el resto del año, mes a mes.", href: "/blog/mejor-epoca-visitar-lisboa", label: "Mejor época para visitar Lisboa" },
+    ],
+  },
+  'quinta-da-regaleira-entradas': {
+    titulo: 'Quinta da Regaleira: entradas, horarios y cómo ir desde Lisboa (2026)',
+    descripcion: 'Precios oficiales de 2026 de la Quinta da Regaleira, cómo funcionan las franjas de entrada, por qué conviene comprar en la taquilla oficial, qué se visita y cómo llegar en tren y autobús 435.',
+    seoTitle: 'Quinta da Regaleira 2026: entradas, precio y horarios',
+    metaDescription: 'Entrada 20 € con franja y 1 hora de margen. Solo vende la web oficial, cierra el 24, 25 y 31 de diciembre y el 1 de enero. Cómo ir desde Lisboa.',
+    imagen: '/images/sintra-palacio-turistas.jpg',
+    imageAlt: 'Fachada del palacio de la Quinta da Regaleira, en Sintra, con visitantes en la terraza',
+    categoria: 'Guías',
+    fecha: '25 Oct 2026',
+    fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+    dateModified: '2026-10-25',
+    minutos: 8,
+    links: [
+      { href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
+      { href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa en un día' },
+      { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones desde Lisboa' },
+      { href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante y zapping' },
+      { href: '/blog/lisboa-cuando-llueve', label: 'Planes para un día de lluvia' },
+    ],
+    fuentes: [
+      { label: 'Quinta da Regaleira: visitas, horarios, franjas y precios 2026', href: 'https://www.regaleira.pt/es/visitas' },
+      { label: 'Quinta da Regaleira: avisos (acuario cerrado, taquilla oficial, precios 2026)', href: 'https://www.regaleira.pt/es/' },
+      { label: 'Taquilla online oficial de la Quinta da Regaleira (BlueTicket)', href: 'https://regaleira.byblueticket.pt' },
+      { label: 'Sintra434: autobuses 434 y 435 y billete diario', href: 'https://www.sintra434.com/pt/route/sintra-todos-os-palacios-e-castelos-hop-on-hop-off' },
+      { label: 'CP: precios de los trenes urbanos de Lisboa 2026 (PDF)', href: 'https://cp.pt/info/documents/d/cp/precos-comboios-urbanos-lisboa' },
+      { label: 'Ayuntamiento de Sintra: aparcamientos', href: 'https://parking.sintra.pt' },
+      { label: 'Tiqets: Quinta da Regaleira, entrada con audioguía (condiciones)', href: 'https://www.tiqets.com/es/atracciones-sintra-c76496/entradas-para-quinta-da-regaleira-entrada-audioguia-digital-p1106027/' },
+    ],
+    contenido: [
+      { tipo: 'parrafo', texto: 'La entrada de adulto a la Quinta da Regaleira cuesta 20 € en 2026. Se compra para una franja de inicio, cada media hora entre las 10:00 y las 16:30, y te dan hasta una hora de margen si llegas tarde. Una vez dentro puedes quedarte hasta el cierre. La Fundação Cultursintra, que la gestiona, dice que su taquilla online es la única autorizada para vender entradas.' },
+      { tipo: 'lista', items: [
+        'Precios 2026: adulto (18-64) 20 €; de 6 a 17 años y mayores de 65, 15 €; menores de 6, gratis. Familia de 2 adultos y 2 jóvenes, 60 €.',
+        'Franjas de entrada: cada 30 minutos de 10:00 a 16:30, con una hora de tolerancia de retraso.',
+        'De octubre a marzo abre a las 10:00 y cierra a las 18:30. De abril a septiembre, de 9:00 a 19:30. La última entrada es a las 17:30 todo el año.',
+        'Cierra el 1 de enero y el 24, el 25 y el 31 de diciembre.',
+        'Compra en regaleira.byblueticket.pt. La Fundação no se hace responsable de entradas compradas en otras webs.',
+        'Sin coche: tren desde Rossio hasta Sintra y, en Sintra, autobús 435 o a pie desde el centro.',
+        'El acuario de la quinta está cerrado por obras de conservación.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Precios de 2026' },
+      { tipo: 'parrafo', texto: 'Los precios cambiaron en enero de 2026. Estos son los de la web oficial:' },
+      { tipo: 'tabla', texto: 'Precios oficiales de la Quinta da Regaleira desde enero de 2026 (consultados el 25 de octubre de 2026).', columnas: ['Entrada', 'Precio'], filas: [
+        ['Adulto (18 a 64 años)', '20 €'],
+        ['Joven (6 a 17 años)', '15 €'],
+        ['Mayor de 65', '15 €'],
+        ['Niño hasta 5 años', 'Gratis (tiene que llevar su entrada)'],
+        ['Persona con discapacidad y un acompañante', '12 € cada uno, con documento que lo acredite'],
+        ['Familia: 2 adultos o mayores + 2 jóvenes', '60 €'],
+        ['Audioguía', '5 €, solo en la taquilla de la quinta'],
+      ] },
+      { tipo: 'parrafo', texto: 'Los residentes en el municipio de Sintra entran gratis. La entrada gratis de los domingos para residentes en Portugal no vale aquí: esa medida es de los museos y monumentos del Estado, y la Regaleira no forma parte de ellos.' },
+      { tipo: 'parrafo', texto: 'En la taquilla se puede pagar en efectivo o con tarjeta, salvo American Express.' },
+
+      { tipo: 'subtitulo', texto: 'Horarios y franjas de entrada' },
+      { tipo: 'tabla', texto: 'Horario oficial de la Quinta da Regaleira (consultado el 25 de octubre de 2026).', columnas: ['Meses', 'Abre', 'Última entrada', 'Cierra'], filas: [
+        ['Enero a marzo', '10:00', '17:30', '18:30'],
+        ['Abril a septiembre', '9:00', '17:30', '19:30'],
+        ['Octubre a diciembre', '10:00', '17:30', '18:30'],
+      ] },
+      { tipo: 'lista', items: [
+        'Las franjas de inicio de visita son a las 10:00, 10:30, 11:00 y así cada media hora hasta las 16:30.',
+        'Si llegas tarde, tienes como mucho una hora de margen sobre la hora de tu entrada.',
+        'El palacio, la capilla y las salas de exposición cierran media hora antes que el jardín.',
+        'Cerrado el 1 de enero y el 24, el 25 y el 31 de diciembre.',
+      ] },
+      { tipo: 'parrafo', texto: 'Ojo si vas en Navidad: la Pena también cierra el 24, el 25 y el 31 de diciembre y el 1 de enero, así que esos cuatro días Sintra no es buen plan.' },
+
+      { tipo: 'subtitulo', texto: 'Dónde comprar la entrada' },
+      { tipo: 'parrafo', texto: 'La web de la Regaleira es muy clara: su taquilla online oficial, regaleira.byblueticket.pt, es la única plataforma autorizada para vender entradas, y no se hace responsable de los problemas con entradas compradas en otros canales. En su portada avisa además de que llegan muchos visitantes con entradas compradas en otras webs.' },
+      { tipo: 'lista', items: [
+        'Web oficial: puedes cambiar la fecha o la hora con al menos 48 horas de antelación. No hay devoluciones, salvo si la quinta cierra sin estar previsto.',
+        'Hay webs que revenden la entrada con audioguía y con cancelación gratis hasta 24 horas antes. Tiqets, por ejemplo, la vende así. Aun así, con el aviso de la propia Regaleira, yo la compraría en la web oficial.',
+        'Hay webs con nombres parecidos al de la quinta que no son la oficial. La oficial es regaleira.pt, y su taquilla, regaleira.byblueticket.pt.',
+      ] },
+
+      { tipo: 'subtitulo', texto: 'Qué se visita' },
+      { tipo: 'parrafo', texto: 'La visita es libre, sin guía, con un mapa que se descarga en la web oficial. Lo que más tiempo pide es el jardín: grutas, torres, lagos, pasadizos y el pozo iniciático, una escalera de caracol que baja bajo tierra y conecta con túneles.' },
+      { tipo: 'lista', items: [
+        'Del palacio solo se visita la planta principal.',
+        'La capilla entra en el recorrido, pero cierra media hora antes que el jardín.',
+        'El acuario está cerrado por obras de conservación (aviso de la web oficial, octubre de 2026). Si una web de reventa lo anuncia, no cuentes con él.',
+        'La audioguía se alquila en la taquilla por 5 €.',
+        'Hay sitios cerrados o con acceso limitado según el día: la entrada da acceso a lo que esté abierto.',
+      ] },
+      { tipo: 'tip', texto: 'Con lluvia, el empedrado del jardín y las escaleras del pozo resbalan. Calzado que agarre.' },
+
+      { tipo: 'subtitulo', texto: 'Pena y Regaleira el mismo día' },
+      { tipo: 'parrafo', texto: 'Las dos caben en un día, pero las dos entradas funcionan distinto. La de la Pena tiene hora fija para el interior del palacio y no admite retraso. La de la Regaleira te da una hora de margen. Por eso conviene fijar primero la Pena y poner la Regaleira después, con holgura.' },
+      { tipo: 'lista', items: [
+        'Mañana: Pena, con entrada a primera hora. Se sube en el 434.',
+        'Tarde: bajas al centro y vas a la Regaleira en el 435 o a pie. La última franja es a las 16:30.',
+        'Un solo billete diario sirve para el 434 y el 435.',
+        'Con la Pena y la Regaleira el día ya está lleno. No metería una tercera visita.',
+      ] },
+      { tipo: 'enlace', texto: 'Las cuatro entradas de la Pena, la hora fija y cómo subir.', href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
+
+      { tipo: 'subtitulo', texto: 'Cómo ir desde Lisboa' },
+      { tipo: 'parrafo', texto: 'El tren de la Línea de Sintra sale de Rossio y llega a la estación de Sintra en unos 40 minutos. El billete sencillo cuesta 2,55 € y la ida y vuelta, 5,10 €. También puedes pagar con zapping desde la tarjeta Navegante.' },
+      { tipo: 'parrafo', texto: 'Desde la estación, el autobús 435 va a la Regaleira, a Seteais y a Monserrate. El billete diario de los autobuses 434 y 435 cuesta 13,50 € y vale 24 horas. Si además vas en tren, CP vende el billete Train & Bus por 14 € al día, con la Línea de Sintra y los dos autobuses. También se puede ir andando: la quinta está en la Rua Barbosa du Bocage, a la salida del centro histórico.' },
+      { tipo: 'parrafo', texto: 'La Regaleira no tiene aparcamiento. Si vas en coche, mira antes en la web de aparcamientos del Ayuntamiento de Sintra (parking.sintra.pt).' },
+      { tipo: 'enlace', texto: 'Billetes, zapping y qué tarjeta te conviene para el tren.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante' },
+      { tipo: 'enlace', texto: 'El día entero en Sintra, con lo que cabe y lo que no.', href: '/blog/sintra-desde-lisboa', label: 'Sintra desde Lisboa' },
     ],
   },
 
@@ -1563,7 +1817,7 @@ const articles: Record<string, Article> = {
   'graca-lisboa-que-ver': {
     titulo: 'Graça en Lisboa: qué ver, miradores y cómo recorrer el barrio',
     descripcion: 'Ruta por Graça con el Miradouro da Graça, Senhora do Monte y calles del barrio, pensada para evitar subidas innecesarias y terminar con vistas.',
-    seoTitle: 'Qué ver en Graça, Lisboa: miradores y ruta a pie',
+    seoTitle: 'Graça, Lisboa: qué ver, Miradouro da Graça y ruta a pie',
     metaDescription: 'Miradouro da Graça, Senhora do Monte y una ruta a pie para bajar a Mouraria o Alfama sin repetir cuestas. El tranvía 28 llega, pero no dependas de él.',
     imagen: '/images/miradouro-grupo-atardecer.jpg',
     imageAlt: 'Personas contemplando Lisboa desde un mirador de Graça al atardecer',
@@ -1744,8 +1998,8 @@ const articles: Record<string, Article> = {
   'time-out-market-lisboa': {
     titulo: 'Time Out Market Lisboa: menú, restaurantes, precios y si merece la pena',
     descripcion: 'Guía independiente del Time Out Market Lisboa: menú, restaurantes, cómo funcionan los puestos, qué esperar de los precios y cuándo conviene ir.',
-    seoTitle: 'Time Out Market Lisboa: menú, precios y si merece la pena',
-    metaDescription: 'Cómo funciona el Time Out Market de Lisboa: puestos, qué comer, cómo calcular lo que vas a gastar, cuándo ir y qué alternativas tienes cerca en Cais do Sodré.',
+    seoTitle: 'Time Out Market Lisboa: menú, horario y si merece la pena',
+    metaDescription: 'Abre todos los días de 10:00 a 00:00 en el Mercado da Ribeira (Cais do Sodré). Cómo funcionan los puestos, qué hay en el menú y cómo calcular el gasto.',
     imagen: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
     imageAlt: 'Interior del Time Out Market Lisboa con puestos de comida y mesas compartidas',
     categoria: 'Gastronomía',
@@ -1830,8 +2084,8 @@ const articles: Record<string, Article> = {
   'estacion-oriente-lisboa': {
     titulo: 'Estación de Oriente de Lisboa (Gare do Oriente): tren, metro y qué ver',
     descripcion: 'Guía de la Estación de Oriente o Gare do Oriente: trenes, Metro, autobuses, arquitectura de Santiago Calatrava y qué ver en Parque das Nações.',
-    seoTitle: 'Estación de Oriente Lisboa: trenes, metro, buses y qué ver',
-    metaDescription: 'Gare do Oriente en Lisboa: cómo combinar trenes, Metro (Línea Roja) y autobuses sin perderte en el intercambiador, y qué ver al lado en Parque das Nações.',
+    seoTitle: 'Gare do Oriente Lisboa: trenes, metro, autobuses y qué ver',
+    metaDescription: 'La Estación de Oriente junta trenes, la Línea Roja del Metro y autobuses. Cómo moverte por el intercambiador y qué ver al lado, en el Parque das Nações.',
     imagen: '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',
     imageAlt: 'Tren detenido bajo la cubierta de vidrio y acero de la estación de Oriente en Lisboa',
     categoria: 'Transporte',
@@ -2500,6 +2754,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Bolt y Uber, y la que ya no existe en Portugal' },
       { tipo: 'parrafo', texto: 'Para trayectos puntuales —llegar con maletas, volver tarde, salvar una subida— las dos que funcionan en Lisboa son Bolt y Uber. Suelen tener precios parecidos, así que merece la pena mirar las dos antes de pedir. La disponibilidad es buena incluso en horas punta.' },
       { tipo: 'aviso', texto: 'Free Now dejó de operar en Portugal el 3 de abril de 2023. Sigue apareciendo en muchas listas de apps para Lisboa, incluidas guías que se presentan como actualizadas. Si la instalas no te va a servir de nada aquí.' },
+      { tipo: 'enlace', texto: 'Bolt también alquila patinetes eléctricos, igual que Lime. Cómo comprobar el precio antes de arrancar y dónde aparcarlos.', href: '/blog/patinetes-electricos-lisboa', label: 'Patinetes eléctricos en Lisboa' },
       { tipo: 'parrafo', texto: 'El taxi tradicional sigue existiendo y es perfectamente válido, sobre todo desde el aeropuerto, donde hay parada oficial. Lo que conviene evitar es aceptar un trayecto de alguien que se ofrece dentro de la terminal.' },
 
       { tipo: 'subtitulo', texto: 'Para comer: reservar y, si no te apetece salir, pedir' },
@@ -2530,9 +2785,9 @@ const articles: Record<string, Article> = {
     titulo: 'Cómo pagar en Portugal en 2026: tarjeta, efectivo y cajeros',
     descripcion:
       'Guía práctica para saber cómo pagar en Portugal: uso de tarjetas, cuánto efectivo llevar, cómo funcionan los cajeros y qué revisar antes de aceptar una conversión.',
-    seoTitle: 'Cómo pagar en Portugal (2026): tarjeta, efectivo y comisiones',
+    seoTitle: 'Cómo pagar en Portugal 2026: ¿tarjeta o efectivo?',
     metaDescription:
-      'En Lisboa se paga con tarjeta con normalidad, pero no todos los comercios aceptan todas las marcas. Cuánto efectivo llevar, cajeros y qué comisiones revisar.',
+      'Sí, se paga con tarjeta con normalidad, pero que acepten Multibanco no significa que acepten la tuya. Cuánto efectivo llevar, cajeros y euros o tu moneda.',
     imagen: '/images/lisboa-originales/esquina-baixa-pombalina-lisboa-01.webp',
     imageAlt: 'Esquina con cafés y comercios en la Baixa de Lisboa',
     categoria: 'Planificación',
@@ -2639,8 +2894,8 @@ const articles: Record<string, Article> = {
   'donde-alojarse-en-lisboa': {
     titulo: 'Dónde alojarse en Lisboa: mejores zonas según tu viaje',
     descripcion: 'Baixa, Chiado, Alfama, Graça, Saldanha y otras zonas explicadas según comodidad, ruido, cuestas y tipo de viaje.',
-    seoTitle: 'Dónde alojarse en Lisboa | Mejores zonas',
-    metaDescription: 'Guía honesta para elegir dónde dormir en Lisboa según tu viaje: primera visita, pareja, familia, vida nocturna, presupuesto y transporte.',
+    seoTitle: 'Dónde alojarse en Lisboa: mejores zonas y barrios (2026)',
+    metaDescription: 'Baixa, Chiado, Alfama, Graça o Saldanha: qué zona te conviene según el viaje, el ruido, las cuestas y el transporte, y qué queda libre en cada una.',
     imagen: '/images/barrio-calle-residencial.jpg',
     imageAlt: 'Calle residencial de Lisboa con viajeros caminando entre fachadas de azulejo',
     categoria: 'Planificación',
@@ -2834,8 +3089,8 @@ const articles: Record<string, Article> = {
   'como-moverse-por-lisboa': {
     titulo: 'Cómo moverse por Lisboa en 2026: metro, tranvía, bus y tren',
     descripcion: 'Cómo moverse por Lisboa en transporte público: Metro, tranvías, buses, trenes, billetes y alternativas según la zona y el tipo de trayecto.',
-    seoTitle: 'Cómo moverse por Lisboa: metro, tranvía, bus y billetes 2026',
-    metaDescription: 'Qué transporte usar en Lisboa según el trayecto: metro, tranvías, autobuses y tren a Belém, Sintra y Cascais. Qué billete comprar y cuánto cuesta en 2026.',
+    seoTitle: 'Cómo moverse por Lisboa: qué transporte usar y cuánto cuesta',
+    metaDescription: 'Metro para cruzar la ciudad, tren a Belém, Sintra y Cascais, y el billete que sale más barato: 1,90 € el sencillo, 1,72 € con zapping o 7,25 € el día.',
     imagen: '/images/turista-tranvia-28.jpg',
     imageAlt: 'Tranvía articulado moderno de la línea 15E de Carris circulando por una calle de Lisboa',
     categoria: 'Transporte',
@@ -2914,6 +3169,7 @@ const articles: Record<string, Article> = {
       { tipo: 'enlace', texto: 'Si quieres comparar las opciones sin mezclar conceptos, la guía de Navegante separa tarjeta ocasional, zapping, 24 horas y pases mensuales.', href: '/blog/tarjeta-navegante-lisboa', label: 'Tarjeta Navegante en Lisboa: guía 2026' },
       { tipo: 'subtitulo', texto: 'Taxi, Uber y Bolt' },
       { tipo: 'parrafo', texto: 'Taxi, Uber y Bolt son buenos recursos para trayectos puntuales: llegar con maletas, volver tarde, salvar una subida o cruzar la ciudad cuando el transporte público te obliga a demasiados cambios. En el aeropuerto, la información oficial recuerda que taxis y TVDE se contratan en las zonas habilitadas o por app, no aceptando abordajes dentro de la terminal.' },
+      { tipo: 'enlace', texto: 'Para trayectos cortos y llanos también hay patinetes eléctricos de alquiler. Cómo se pagan y dónde se pueden dejar.', href: '/blog/patinetes-electricos-lisboa', label: 'Patinetes eléctricos en Lisboa' },
       { tipo: 'subtitulo', texto: 'Accesibilidad, cochecitos y cuestas' },
       { tipo: 'parrafo', texto: 'Lisboa no siempre es fácil para movilidad reducida, cochecitos o rodillas cansadas. Antes de elegir alojamiento o ruta, mira si hay ascensor, pendiente, escaleras y transporte cercano. Baixa, parte de Avenida da Liberdade, Parque das Nações y algunos tramos junto al río son más amables. Alfama, Graça y Bairro Alto requieren más paciencia.' },
       { tipo: 'subtitulo', texto: 'Moverse de noche' },
@@ -3490,6 +3746,7 @@ const articles: Record<string, Article> = {
       { tipo: "subtitulo", texto: "Diciembre, enero y febrero: invierno suave no significa invierno seco" },
       { tipo: "parrafo", texto: "En enero, la máxima media diaria es 15,1 °C y la mínima media 8,6 °C; en febrero, 16,4 °C y 9,1 °C. Son cifras mucho más suaves que las de muchas ciudades europeas, pero la lluvia es parte real del invierno: enero promedia 103,8 mm y unos 10 días con al menos 1 mm de precipitación." },
       { tipo: "parrafo", texto: "Por eso no prometería «chaparrones de veinte minutos» ni sol inmediato después de cada lluvia. Lleva una capa impermeable y calzado que agarre bien: la calçada portuguesa mojada puede ser incómoda, especialmente en pendientes." },
+      { tipo: "enlace", texto: "Si vienes en enero: horas de luz, qué cierra el 1 de enero y los lunes, y horarios de invierno de las visitas principales.", href: "/blog/lisboa-en-enero", label: "Lisboa en enero" },
 
       { tipo: "subtitulo", texto: "Marzo y abril: primavera temprana con más incertidumbre" },
       { tipo: "parrafo", texto: "Marzo y abril ya suben hacia máximas medias de 18,9 °C y 20,4 °C, pero mantienen alrededor de 7,6 y 7,9 días al mes con al menos 1 mm de lluvia. Son meses razonables si prefieres temperaturas suaves y aceptas adaptar alguna jornada al tiempo." },
@@ -4153,7 +4410,7 @@ const articles: Record<string, Article> = {
   },
   "vida-nocturna-lisboa": {
     titulo: "Vida nocturna en Lisboa: Bairro Alto, Cais do Sodré y dónde salir",
-    seoTitle: "Vida nocturna en Lisboa: Bairro Alto y Cais do Sodré",
+    seoTitle: "Vida nocturna en Lisboa: dónde salir de noche por zonas",
     metaDescription: "Vida nocturna en Lisboa: dónde salir en Bairro Alto y Cais do Sodré, dónde escuchar fado y qué hacer de noche según el ambiente que buscas.",
     descripcion: "Bairro Alto, Cais do Sodré, fado y otros planes para salir de noche en Lisboa según el ambiente que busques.",
     imagen: "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1200",
@@ -5147,6 +5404,7 @@ const articles: Record<string, Article> = {
   "vinos-portugueses-guia": {
     titulo: "Vinos Portugueses: Guía para Entender el Vinho Verde, el Oporto y el Alentejo",
     seoTitle: "Vinos portugueses | Guía para entender",
+    metaDescription: "Vinho Verde, Oporto y tintos del Alentejo: qué estilo pedir en la carta, cómo pedir vino en Lisboa y qué comprobar antes de reservar una cata.",
     descripcion: "Vinho Verde, vino de Oporto y tintos del Alentejo: estilos para orientarte en la carta, expresiones para pedir vino en Lisboa y cómo comprobar las condiciones de una cata.",
     imagen: "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=1200",
     imageAlt: "Cena en la terraza de una tasca de Lisboa a la luz de la noche",
@@ -5235,6 +5493,7 @@ const articles: Record<string, Article> = {
   "bacalhau-plato-portugal": {
     titulo: "El Bacalhau: Por Qué el Bacalao Seco Es el Alma de la Cocina Portuguesa",
     seoTitle: "El bacalhau | Guía del plato portugués",
+    metaDescription: "Cómo un pescado que llega de Noruega acabó siendo el plato nacional de Portugal: 500 años de historia del bacalhau y las recetas que puedes probar.",
     descripcion: "Un pescado noruego, un país atlántico y 500 años de historia marítima. Cómo el bacalhau se convirtió en el plato nacional de Portugal y las mejores recetas que tienes que probar.",
     imagen: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200",
     imageAlt: "Tasca de barrio en Lisboa con mesas en la calle y ropa tendida arriba",
@@ -5266,7 +5525,7 @@ const articles: Record<string, Article> = {
   },
   "arquitectura-manuelina-lisboa": {
     titulo: "Estilo manuelino en Portugal: qué es, características y ejemplos",
-    seoTitle: "Estilo manuelino en Portugal: características y ejemplos",
+    seoTitle: "Estilo manuelino: qué es, características y dónde verlo",
     metaDescription: "Qué es el estilo manuelino en Portugal, sus características y símbolos, y dónde verlo: Jerónimos, Torre de Belém, esfera armilar y Cruz de Cristo.",
     descripcion: "Qué es el estilo manuelino en Portugal, cuáles son sus características y cómo reconocerlo, con los Jerónimos y la Torre de Belém como ejemplos principales.",
     imagen: "/images/actividades/mosteiro-dos-jeronimos-claustro.webp",
@@ -5424,10 +5683,10 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
   ],
   'obidos-vila-natal': [
     { q: "¿Cuándo es Óbidos Vila Natal 2026?", a: "Del 27 de noviembre de 2026 al 3 de enero de 2027. Consulta en la tabla de esta guía el horario de tu día." },
-    { q: "¿Cuánto cuesta la entrada?", a: "La entrada general de 2026 cuesta 12 €. Hay categorías de niños, estudiantes, séniores y familias; consulta la tabla de precios y las condiciones oficiales." },
+    { q: "¿Cuánto cuesta la entrada?", a: "En 2026, 12 € la general, 8 € de 3 a 11 años y 11 € estudiantes y mayores de 65. La familia de 2 adultos y 2 niños cuesta 36 €. En la taquilla online hay un vale de preventa a 6 €. Entrar al pueblo de Óbidos es gratis." },
     { q: "¿Cómo voy de Lisboa a Óbidos sin coche?", a: "En el autobús Rápida Verde de Rodoviária do Oeste, desde Campo Grande. Tarda 1 hora y el billete sencillo cuesta 9,45 €. El último de vuelta sale de Óbidos a las 21:45." },
     { q: "¿Puedo ir en tren?", a: "Se puede, pero no compensa: desde marzo de 2026 el tramo entre Meleças y Caldas da Rainha se hace en autobús de sustitución de CP, que tarda unas 2 horas y 10 minutos solo desde Meleças." },
-    { q: "¿Abre el 24, el 25, el 31 y el 1?", a: "En 2026, el 24 y el 31 abre de 10:00 a 17:00. Cierra el 25 de diciembre y el 1 de enero." },
+    { q: "¿Abre el 24, el 25, el 31 y el 1?", a: "El 24 y el 31 abre de 10:00 a 17:00. El 25 de diciembre y el 1 de enero está cerrado." },
     { q: "¿Vale la pena sin niños?", a: "El recinto está pensado para niños. Sin ellos, pasear por el pueblo, subir a la muralla y tomar una ginja ya justifica el viaje, y es gratis." },
   ],
   'nochevieja-lisboa': [
@@ -5437,6 +5696,23 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
     { q: "¿Se puede comprar alcohol para beber en la calle?", a: "Desde el 15 de febrero de 2026, los comercios de Lisboa no pueden venderlo para tomar fuera a partir de medianoche los viernes, sábados y vísperas de festivo, como el 31 de diciembre, ni a partir de las 23:00 el resto de días. Dentro de bares y restaurantes, y en terraza sentado, sí." },
     { q: "¿Dónde más se ven fuegos artificiales?", a: "En 2025 Almada hizo una fiesta gratuita con fuegos en Cacilhas, al otro lado del río, y Cascais lanzó fuegos en siete puntos de su costa." },
     { q: "¿Qué abre el 1 de enero en Lisboa?", a: "Poco de lo turístico. Cierran el Castelo, los Jerónimos, la Torre de Belém, la Gulbenkian y el MAAT. El Oceanário abre, con horario especial." },
+  ],
+  'lisboa-en-enero': [
+    { q: "¿Qué tiempo hace en Lisboa en enero?", a: "Fresco y con lluvia, pero sin frío de verdad. Según el IPMA, la máxima media es de 15,1 °C y la mínima de 8,6 °C, y llueve una media de 10 días al mes." },
+    { q: "¿A qué hora anochece en enero?", a: "El 1 de enero el sol se pone a las 17:25 y el 31 a las 17:56. Amanece hacia las 7:50." },
+    { q: "¿Qué está cerrado el 1 de enero?", a: "Casi todos los monumentos: el Castelo, los Jerónimos, la Torre de Belém, la Gulbenkian, el MAAT y la Pena. El Oceanário abre de 11:00 a 20:00." },
+    { q: "¿El 6 de enero es festivo en Lisboa?", a: "No. Reyes no es festivo en Portugal, así que ese día todo abre con su horario normal." },
+    { q: "¿Siguen las luces de Navidad en enero?", a: "Las fechas de esta temporada aún no están publicadas. En la de 2025 estuvieron encendidas hasta el 6 de enero." },
+    { q: "¿Qué cierra los lunes?", a: "Los Jerónimos y la Torre de Belém cierran todos los lunes. El Castelo de São Jorge y el Oceanário abren todos los días." },
+  ],
+  'quinta-da-regaleira-entradas': [
+    { q: '¿Cuánto cuesta la entrada a la Quinta da Regaleira?', a: 'En 2026, 20 € los adultos de 18 a 64 años y 15 € de 6 a 17 años y mayores de 65. Los menores de 6 no pagan. La familia de 2 adultos y 2 jóvenes cuesta 60 €.' },
+    { q: '¿Dónde se compra la entrada oficial?', a: 'En la taquilla online oficial, regaleira.byblueticket.pt, o en la taquilla de la quinta. La Fundação Cultursintra dice que su taquilla online es la única plataforma autorizada y que no responde por entradas compradas en otras webs.' },
+    { q: '¿Qué pasa si llego tarde a mi franja?', a: 'Tienes como mucho una hora de margen sobre la hora de la entrada. Una vez dentro, puedes quedarte hasta el cierre.' },
+    { q: '¿Se puede cambiar la fecha?', a: 'Si la compraste en la web oficial, sí, con al menos 48 horas de antelación. No hay devoluciones salvo cierre no previsto de la quinta.' },
+    { q: '¿Qué días cierra?', a: 'El 1 de enero y el 24, el 25 y el 31 de diciembre.' },
+    { q: '¿Cómo llego desde la estación de Sintra?', a: 'En el autobús 435, que va a la Regaleira, Seteais y Monserrate, o andando desde el centro histórico. El billete diario de los autobuses 434 y 435 cuesta 13,50 €.' },
+    { q: '¿Está abierto el acuario?', a: 'No. En octubre de 2026 la web oficial avisa de que está cerrado por obras de conservación.' },
   ],
   'monasterio-jeronimos-entradas': [
     { q: '¿Cuánto cuesta entrar en los Jerónimos?', a: 'El claustro cuesta 18 € (9 € para mayores de 65 y jóvenes de 13 a 24 años). Los menores de 12 entran gratis. La iglesia es gratuita para todo el mundo.' },
@@ -5565,13 +5841,13 @@ function toAbsoluteUrl(pathOrUrl: string) {
  * llevan en su propio título, y ponérselo al resto envejece el contenido.
  */
 const BRAND_SUFFIX = ' | Estaba en Lisboa';
-const MAX_TITLE_LENGTH = 65;
+const MAX_TITLE_LENGTH = 60;
 /** Páginas con experimento en curso (brain/05-EXPERIMENTS.md): su título no se toca. */
 const TITLE_FROZEN_SLUGS = new Set(['donde-tomar-cafe-lisboa', 'donde-comer-barato-lisboa']);
 
 /**
  * El layout añade « | Estaba en Lisboa» a todos los títulos. Cuando con la
- * marca el título pasa de 65 caracteres, Google lo corta y se pierde justo
+ * marca el título pasa de 60 caracteres, Google lo corta y se pierde justo
  * el final, que es donde va lo que la página resuelve. En ese caso se
  * publica sin la marca.
  */
@@ -5842,6 +6118,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return true;
   });
   const faqs = AUDITED_ARTICLE_FAQS[slug] ?? [];
+  /*
+   * Stay22 (LinkSwap) solo en los artículos con intención de alojamiento, que
+   * son los que llevan un bloque de alojamiento por barrio (D-080). En el
+   * resto no hay nada que convertir y el script sólo añadía peso.
+   */
+  const loadStay22 = (BLOG_BOOKING_PLACEMENTS[slug] ?? []).some(
+    (placement) => placement.offer.type === 'stay22-barrios',
+  );
   const showNewsletter = articleHasNewsletter(slug);
   const isEditorialV2 = EDITORIAL_V2_SLUGS.has(slug);
   const heroImageAlt = heroAlt[slug] ?? article.imageAlt ?? article.titulo;
@@ -5972,6 +6256,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
         />
       )}
+      {loadStay22 && <Stay22Script />}
     </main>
   );
 }

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Si la ficha tiene guía de entradas, título y descripción son los de la guía.
   const guide = getTicketGuide(slug);
   const seoTitle = guide?.article.seoTitle ?? activity.seoTitle;
-  const description = guide?.article.metaDescription ?? activity.description;
+  const description = guide?.article.metaDescription ?? activity.metaDescription ?? activity.description;
 
   return {
     title: seoTitle ? { absolute: seoTitle } : `${activity.title} | Estaba en Lisboa`,

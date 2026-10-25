@@ -31,7 +31,7 @@ import { agruparPorDia } from '@/lib/itinerary-days';
 const DESCRIPCION = '2 días completos en Lisboa con Belém, Alfama, Chiado y más. Rutas por jornadas, restaurantes recomendados y consejos prácticos.';
 
 export const metadata = {
-  title: 'Lisboa en 2 Días: Itinerario Completo 2026',
+  title: 'Lisboa en 2 días: itinerario completo',
   description: DESCRIPCION,
   keywords: ['lisboa 2 dias', 'itinerario lisboa dos dias', 'belem alfama chiado'],
   openGraph: {

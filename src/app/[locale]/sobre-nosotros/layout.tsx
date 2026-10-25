@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'José Tabares: autor y guía local en Lisboa',
+  title: 'José Tabares: autor y guía en Lisboa',
   description: 'Soy José Tabares y escribo Estaba en Lisboa. Cómo preparo las guías: datos de fuentes oficiales con fecha, opinión cuando la hay y las pegas de cada plan.',
   alternates: {
     canonical: 'https://estabaenlisboa.com/sobre-nosotros',

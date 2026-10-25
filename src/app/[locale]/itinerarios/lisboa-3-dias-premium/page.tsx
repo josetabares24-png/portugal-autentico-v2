@@ -48,7 +48,7 @@ import { agruparPorDia } from '@/lib/itinerary-days';
  * Y Sintra deja de encabezar la promesa: la intención principal de la página
  * es Lisboa en 3 días, y Sintra es la variante del tercer día.
  */
-const DESCRIPCION = 'Ruta de 3 días por Lisboa con el casco histórico, Belém y el río, más de 20 paradas con horas, mapa, y un tercer día que puedes dedicar a Sintra o a seguir en la ciudad.';
+const DESCRIPCION = 'Ruta de 3 días por Lisboa: casco histórico, Belém y el río, más de 20 paradas con horas y mapa, y un tercer día para Sintra o para seguir en la ciudad.';
 
 const OG_TITLE = 'Lisboa en 3 días: itinerario completo';
 const OG_IMAGE = 'https://estabaenlisboa.com/images/alfama-panoramica.jpg';

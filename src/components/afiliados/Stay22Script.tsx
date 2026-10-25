@@ -4,7 +4,9 @@ import Script from 'next/script';
 import { useCookieConsent } from '@/lib/consent';
 
 /*
- * Script de Stay22 (LinkSwap), en todo el sitio.
+ * Script de Stay22 (LinkSwap). Desde el 25/10/2026 (D-080) solo se carga en
+ * los artículos con bloque de alojamiento por barrio (lo pinta la página del
+ * artículo), no en todo el sitio.
  *
  * Qué hace: al cargar la página cambia los enlaces de Booking, Expedia,
  * Hotels.com, Vrbo, Agoda y similares por enlaces de Stay22 con nuestro aid.

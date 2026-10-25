@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 async function getLegalContent() {
   const content = `# Política de Privacidad
 
-**Última actualización:** 10 de octubre de 2026
+**Última actualización:** 25 de octubre de 2026
 
 ## 1. Responsable del Tratamiento
 
@@ -47,8 +47,8 @@ Cuando usas el formulario de contacto o el de planifica-tu-viaje, recopilamos lo
 ### 2.2. Envío de tu presupuesto por email
 Si pides que te enviemos el presupuesto de la calculadora en PDF, usamos tu dirección de correo solo para ese envío. No guardamos ni el PDF ni el presupuesto: se generan en el momento de la petición y no quedan almacenados en ningún sitio. Tampoco te damos de alta en ninguna lista de correo: es un envío puntual y transaccional. Descargar el PDF directamente no requiere email ni deja ningún dato.
 
-### 2.3. Cuentas de administración
-El panel de administración del sitio usa Clerk para el inicio de sesión. Esto solo afecta a quienes acceden a ese panel (el equipo del sitio), no a la navegación pública.
+### 2.3. Cuentas de usuario
+El sitio no tiene cuentas ni inicio de sesión. No pedimos registrarse para leer nada.
 
 ### 2.4. Datos de navegación
 Si aceptas las cookies analíticas, recopilamos de forma automática datos de uso del sitio (páginas visitadas, origen del tráfico, tipo de dispositivo) a través de Google Analytics, con la IP anonimizada.
@@ -63,7 +63,6 @@ Tus datos se utilizan para:
 - **Atención al usuario:** Responder a tu mensaje de contacto o solicitud a través de planifica-tu-viaje.
 - **Suscripciones anteriores:** Gestionar las preferencias y las solicitudes de baja de quienes se suscribieron antes de que se pausara la newsletter.
 - **Envío de tu presupuesto:** Mandarte por email, una sola vez, el PDF que has pedido desde la calculadora.
-- **Administración del sitio:** Autenticar a quien gestiona el contenido a través de Clerk.
 - **Mejora del servicio:** Analizar el uso del sitio web de forma agregada, si aceptas las cookies analíticas (Google Analytics).
 
 ## 4. Base Legal
@@ -85,10 +84,9 @@ Tratamos tus datos basándonos en:
 Según el tipo de dato, puede ser tratado por:
 
 - **Brevo:** Envío de emails de contacto, del presupuesto en PDF que pidas desde la calculadora y gestión de contactos históricos de la newsletter (altas nuevas pausadas).
-- **Clerk:** Autenticación del panel de administración.
 - **Google Analytics:** Análisis de tráfico web (con IP anonimizada), solo si aceptas las cookies analíticas.
 - **GetYourGuide y Tiqets:** Módulos de reserva de actividades incrustados en algunas páginas, solo si aceptas las cookies. Al cargarse reciben tu dirección IP y los datos de navegación propios de cualquier contenido incrustado, y registran que la visita llega desde este sitio para atribuir la reserva.
-- **Stay22:** Enlaces de alojamiento. Al pulsar uno, Stay22 recibe tu visita y te redirige a la web de reservas. Si aceptas las cookies, además se carga su script, que guarda un identificador de sesión en tu navegador para atribuir la reserva a este sitio.
+- **Stay22:** Enlaces de alojamiento. Al pulsar uno, Stay22 recibe tu visita y te redirige a la web de reservas. En las guías de alojamiento, si aceptas las cookies, además se carga su script, que guarda un identificador de sesión en tu navegador para atribuir la reserva a este sitio.
 - **Vercel:** Alojamiento y ejecución del sitio web.
 
 No vendemos tus datos a terceros con fines de marketing.

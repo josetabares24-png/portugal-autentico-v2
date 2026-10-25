@@ -7,7 +7,7 @@ import { languageAlternates } from "@/lib/language-alternates";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Lisbon travel guides: transport, routes and tickets | Estaba en Lisboa",
+      "Lisbon guides: transport, routes, tickets | Estaba en Lisboa",
   },
   description:
     "Plan a Lisbon trip with practical guides by José Tabares: airport transfers, Metro tickets, three-day routes, Pena Palace and English walking tours.",

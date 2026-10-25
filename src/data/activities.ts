@@ -47,6 +47,8 @@ export interface Activity {
   officialUrl?: string;
   /** Fecha (YYYY-MM-DD) de la última verificación de los datos frente a la fuente oficial. */
   lastVerified?: string;
+  /** Meta description cuando `description` pasa de 155 caracteres. */
+  metaDescription?: string;
   /**
    * Si la ficha puede indexarse como página independiente (index, follow) en
    * sitemap.xml y metadata.robots. Mientras sea false, la ficha sigue siendo
@@ -267,7 +269,7 @@ export const activities: Activity[] = [
     description: 'Torre-fortaleza junto al río, símbolo de la Era de los Descubrimientos y Patrimonio de la Humanidad.',
     savingTip: 'Combina la visita con los Jerónimos en la misma mañana: están a 10 minutos a pie y ahorras un desplazamiento. Reserva con antelación: desde la reapertura de mayo de 2026 el acceso es por franjas horarias limitadas (unas 900 entradas al día).',
     officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
-    lastVerified: '2026-10-09',
+    lastVerified: '2026-10-25',
     statusNote: 'Reabierta el 27 de mayo de 2026 tras un año de obras (PRR), con nuevo sistema de acceso por franjas horarias para reducir las colas.',
   },
   {
@@ -415,9 +417,9 @@ export const activities: Activity[] = [
     image: '/images/actividades/oceanario-de-lisboa.webp',
     imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
     description: 'Acuario en Parque das Nações con precios variables según la franja horaria y una visita media de 1,5 a 2 horas.',
-    savingTip: 'Revisado el 24/10/2026: la web oficial anuncia un 10 % con el código ONLINE10 para su producto Visita ao Oceanário. Solo en su propia taquilla online, sujeto a disponibilidad y no acumulable. Compara el precio final; no es un descuento de Tiqets.',
+    savingTip: 'La web oficial publica ofertas puntuales comprando online, y el precio cambia según la hora: la franja de 16:00 a 18:30 es la más barata.',
     officialUrl: 'https://oceanario.pt/planear-visita/',
-    lastVerified: '2026-09-23',
+    lastVerified: '2026-10-25',
   },
   {
     slug: 'sintra-dia-completo',
@@ -561,6 +563,7 @@ export const activities: Activity[] = [
     image: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
     imageAlt: 'Arco da Rua Augusta visto desde la Baixa de Lisboa',
     description: 'Recorrido guiado a pie por la historia de la Baixa y el Chiado, con guías locales que viven de las propinas. La disponibilidad y los horarios dependen de la fecha que elijas.',
+    metaDescription: 'Recorrido a pie por la historia de la Baixa y el Chiado con guías locales que viven de las propinas. Los horarios dependen de la fecha que elijas.',
     savingTip: 'No tiene coste fijo: al final paga lo que consideres justo (5-10 € por persona es lo habitual).',
     affiliateCategory: 'imprescindible',
   },
