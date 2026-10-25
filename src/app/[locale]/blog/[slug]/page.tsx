@@ -728,8 +728,8 @@ const articles: Record<string, Article> = {
   'metro-lisboa-guia': {
     titulo: 'Metro de Lisboa 2026: mapa, horarios, billetes y líneas',
     descripcion: 'Guía práctica del Metro de Lisboa con líneas, horario normal, precios 2026, Navegante, contactless y conexiones útiles para aeropuerto, centro y Oriente.',
-    seoTitle: 'Metro de Lisboa: horario, mapa y billetes 2026',
-    metaDescription: '¿A qué hora abre y cierra el Metro de Lisboa? De 06:30 a 01:00 todos los días. Las cuatro líneas, billete 1,90 €, zapping, contactless y conexiones.',
+    seoTitle: 'Metro Lisboa 2026: horario 06:30–01:00, mapa y precios',
+    metaDescription: 'Abre a las 06:30 y cierra a la 01:00 todos los días. Plano oficial de las 4 líneas, billete 1,90 €, zapping 1,72 €, contactless y Línea Roja al aeropuerto.',
     imagen: '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
     imageAlt: 'Interior colorido de la estación de Metro de Olaias en Lisboa',
     categoria: 'Transporte',
@@ -771,6 +771,7 @@ const articles: Record<string, Article> = {
       { tipo: 'subtitulo', texto: 'Aeropuerto y Oriente' },
       { tipo: 'parrafo', texto: 'Aeroporto y Oriente están en la Línea Roja. Es una conexión especialmente útil si llegas en avión, vas al Parque das Nações o necesitas enlazar con trenes y autobuses en Oriente.' },
       { tipo: 'enlace', texto: 'Si llegas con maletas, compara Metro con taxi y apps antes de decidir.', href: '/blog/aeropuerto-lisboa-al-centro', label: 'Del aeropuerto al centro' },
+      { tipo: 'enlace', texto: 'Oriente es también la estación del Oceanário, a unos minutos a pie. Precio según la hora, horario y qué incluye la entrada.', href: '/actividades/oceanario-lisboa', label: 'Entradas del Oceanário de Lisboa' },
       { tipo: 'subtitulo', texto: 'Errores fáciles de evitar' },
       { tipo: 'lista', items: ['No validar correctamente el título al entrar.', 'Usar una sola Navegante para varias personas en el mismo viaje.', 'Depender del Metro para barrios donde caminar o usar bus tiene más sentido.', 'Guardar un mapa viejo y no revisar cierres o cambios.', 'Confundir el pago contactless del Metro con un pase válido en todos los operadores.'] },
     ],
@@ -823,8 +824,8 @@ const articles: Record<string, Article> = {
   'tarjeta-navegante-lisboa': {
     titulo: 'Tarjeta Navegante en Lisboa: cuál comprar y cuánto cuesta en 2026',
     descripcion: 'Qué tarjeta o billete comprar en Lisboa según tu viaje: Navegante ocasional con zapping, billete de 24 horas, contactless o Lisboa Card, con las tarifas oficiales de 2026 y las cuentas hechas.',
-    seoTitle: 'Tarjeta Navegante Lisboa 2026: cuál comprar y precios',
-    metaDescription: 'La Navegante cuesta 0,50 € y con zapping cada viaje sale a 1,72 €. Cuándo compensa el billete de 24 h (7,25 €), el de CP para Sintra y la Lisboa Card.',
+    seoTitle: 'Tarjeta Navegante Lisboa 2026: precio y qué incluye',
+    metaDescription: 'La Navegante ocasional cuesta 0,50 € y no trae viajes: se carga con zapping (1,72 € por trayecto) o 24 h (7,25 €). Dónde comprarla y cuándo compensa.',
     imagen: '/images/lisboa-originales/electrico-15e-caf-lisboa.jpg',
     imageAlt: 'Tranvía 15E de Lisboa utilizado por viajeros con títulos Navegante y Carris',
     categoria: 'Transporte',
@@ -901,6 +902,7 @@ const articles: Record<string, Article> = {
       { tipo: 'parrafo', texto: 'La Lisboa Card no es una Navegante: es la tarjeta turística de Turismo de Lisboa. Incluye el transporte público (Metro, Carris y los trenes de CP a Sintra y Cascais) y la entrada a más de 50 museos y monumentos. Cuesta 31 € las 24 horas, 51 € las 48 y 62 € las 72. Para niños de 4 a 15 años, 21, 28 y 35 €.' },
       { tipo: 'parrafo', texto: 'Un ejemplo con precios oficiales: los Jerónimos (18 €), la Torre de Belém (15 €) y un día de transporte (7,25 €) suman 40,25 €. La de 24 horas cuesta 31 €. Si ese día solo vas a pasear y ver un museo, no compensa: con zapping te mueves por unos 7 €.' },
       { tipo: 'parrafo', texto: 'Dos detalles antes de comprarla. Para los Jerónimos y la Torre de Belém tienes que reservar hora con el número de tu tarjeta, y no puedes hacerlo hasta que hayas cambiado el bono por la tarjeta física. Además, los grandes monumentos y museos nacionales cierran los lunes, así que no actives la tarjeta un lunes.' },
+      { tipo: 'enlace', texto: 'En la Torre de Belém la Lisboa Card entra gratis, pero hay que reservar franja con el número de la tarjeta. Precio, horario y cómo reservar.', href: '/actividades/torre-de-belem', label: 'Entradas de la Torre de Belém' },
 
       { tipo: 'subtitulo', texto: 'Dónde comprar y recargar la Navegante' },
       { tipo: 'lista', items: [
@@ -1037,8 +1039,8 @@ const articles: Record<string, Article> = {
   'lisboa-en-navidad': {
     titulo: 'Lisboa en Navidad 2026: luces, mercados y qué abre cada día',
     descripcion: 'El mercado del Rossio, las luces de la Baixa y Wonderland, con las fechas de 2026 que ya se conocen y las de 2025 como referencia. Qué abre el 24, 25 y 31 y cómo es la Nochevieja.',
-    seoTitle: 'Lisboa en Navidad 2026: luces, mercados y qué hacer',
-    metaDescription: 'Mercado del Rossio, luces de la Baixa y Wonderland: fechas de 2026 anunciadas y de 2025 como referencia, qué abre el 24, 25 y 31 y la Nochevieja.',
+    seoTitle: 'Navidad en Lisboa 2026: luces, mercados y qué abre',
+    metaDescription: 'Cuándo se encienden las luces (en 2025, el 22 de noviembre), fechas del mercado del Rossio y Wonderland, y qué abre el 24, el 25 y el 31 de diciembre.',
     imagen: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
     imageAlt: 'Rua Augusta con el Arco al fondo, el tramo central del paseo de las luces de Navidad en la Baixa',
     categoria: 'Planificación',
@@ -1146,6 +1148,7 @@ const articles: Record<string, Article> = {
         ['Metro (2025)', 'Hasta la 01:00', 'Desde las 6:30', 'Hasta la 01:00', 'Desde las 6:30'],
       ] },
       { tipo: 'parrafo', texto: 'En 2025 el Gobierno dio tolerância de ponto (un día libre para los funcionarios) el 24 y el 31, y por eso los museos y monumentos de Museus e Monumentos de Portugal, entre ellos los Jerónimos y la Torre de Belém, cerraron también esos días. Para 2026 todavía no se sabe. El Oceanário no publica aún las horas exactas de esos cuatro días: míralas en su web antes de ir.' },
+      { tipo: 'enlace', texto: 'El 25 de diciembre, con el castillo y los Jerónimos cerrados, el Oceanário abre de 11:00 a 20:00. Precio según la hora y cómo comprar la entrada.', href: '/actividades/oceanario-lisboa', label: 'Entradas del Oceanário de Lisboa' },
       { tipo: 'parrafo', texto: 'Si quieres cenar fuera el 24 o el 25, confirma antes que el restaurante abre y reserva: en Portugal la noche del 24 es de cena familiar en casa.' },
       { tipo: 'enlace', texto: 'Esos días el metro es lo más fiable para moverte.', href: '/blog/metro-lisboa-guia', label: 'Metro de Lisboa' },
 
@@ -1166,7 +1169,7 @@ const articles: Record<string, Article> = {
     titulo: "Óbidos Vila Natal 2026: fechas, entradas y cómo ir desde Lisboa",
     descripcion: "Fechas, horarios y precios oficiales de Óbidos Vila Natal 2026, la preventa a 6 €, el autobús Rápida Verde desde Campo Grande, por qué este invierno no compensa el tren y qué ver en el pueblo.",
     seoTitle: "Óbidos Vila Natal 2026: fechas, entradas y cómo ir",
-    metaDescription: "Del 27 de noviembre al 3 de enero. Entrada 12 € (6 € en preventa), horarios de 2026 y el autobús desde Campo Grande: 1 hora, 9,45 €.",
+    metaDescription: "La Navidad de Óbidos, del 27 de noviembre al 3 de enero: entrada 12 € (preventa a 6 €), horario 2026 y autobús desde Campo Grande, 1 h y 9,45 €.",
     imagen: "/images/obidos-calle-casas-encaladas.webp",
     imageAlt: "Calle empedrada de Óbidos con casas encaladas y zócalos azules",
     categoria: "Guías",
@@ -1454,6 +1457,7 @@ const articles: Record<string, Article> = {
         ["Metro", "Desde las 6:30"],
       ] },
       { tipo: "parrafo", texto: "Un plan para el día 1: dormir, comer tarde y pasar la tarde en el Parque das Nações, con el Oceanário y el paseo junto al río." },
+      { tipo: "enlace", texto: "El 1 de enero el Oceanário abre de 11:00 a 20:00. Precio según la hora y cómo comprar la entrada.", href: "/actividades/oceanario-lisboa", label: "Entradas del Oceanário de Lisboa" },
       { tipo: "enlace", texto: "Qué ver en el Parque das Nações y cómo organizar la tarde.", href: "/blog/parque-das-nacoes-lisboa-que-ver", label: "Parque das Nações" },
       { tipo: "enlace", texto: "Luces, mercados y qué abre el 24, el 25 y el 31.", href: "/blog/lisboa-en-navidad", label: "Lisboa en Navidad 2026" },
       { tipo: "enlace", texto: "Si te quedas unos días más: tiempo, horas de luz y qué cierra en enero.", href: "/blog/lisboa-en-enero", label: "Lisboa en enero" },

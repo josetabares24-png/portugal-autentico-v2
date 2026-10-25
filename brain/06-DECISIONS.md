@@ -961,3 +961,8 @@ José pide poner tours en inglés y revisar mejoras. **Preview únicamente, PR11
 ## D-078 — Refrescar la temporada en sus URL y una guía nueva de la Regaleira, 25/10/2026
 
 **Rama local `feat/seo-posicionamiento`, pendiente de visto bueno de José (L-003).** José pide auditoría SEO para subir a las primeras posiciones y vender con contenido útil. Se actualizan Óbidos, Navidad y Nochevieja en sus URL en vez de crear «Lisboa en diciembre» (canibalizaría a Navidad). Se añade una sola URL nueva, la guía de entradas de la Quinta da Regaleira, porque no había página para esa búsqueda de compra. La entrada de la Regaleira no se enlaza a reventa: su web dice que la taquilla oficial es la única autorizada. Nochevieja gana un bloque Stay22 por barrio (no en páginas EN). No se tocan títulos en observación (E-001 a E-004, E-012) ni E-006/E-007. Detalle: [[seo/AUDITORIA-POSICIONAMIENTO-2026-10-25]].
+
+## D-079 — Títulos y metas por CTR solo donde no hay experimento abierto, 25/10/2026
+
+**Rama local `feat/seo-titulos-ctr`, pendiente de visto bueno de José (L-003).** José aprueba empezar por títulos y metas de las páginas con muchas impresiones y CTR bajo. Con el export de GSC de 3 meses se cambian Metro (horario 06:30–01:00 en el título), Navegante («precio y qué incluye»), Navidad («qué abre» y la fecha de las luces de 2025) y la meta de Óbidos («Navidad de Óbidos»). Cifras comprobadas el 25/10 en metrolisboa.pt, obidosvilanatal.pt y BOL. Nochevieja se queda igual (CTR 4,2 %). Las cuatro páginas de E-001 a E-004 no se tocan; sus propuestas quedan escritas en el informe. Se añaden cuatro enlaces internos a las guías de entradas del Oceanário y la Torre de Belém. No cambian slugs ni texto del cuerpo. Medición: E-022.
+

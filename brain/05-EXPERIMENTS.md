@@ -39,6 +39,7 @@ This is the active learning register.
 | E-014 | Stay22: alojamiento por barrio en donde-alojarse + script LinkSwap | Un bloque de alojamiento por barrio en la guía de alojamiento genera reservas de hotel sin tocar las comisiones de GetYourGuide, Tiqets ni GuruWalk | clics `affiliate_click` partner stay22 + reservas en Stay22 Hub | PLANNED (rama local `feat/stay22`, pendiente de aprobación L-003 y de confirmar con Stay22 la exclusión de GetYourGuide) | producción verificada + 28 días finalizados |
 | E-016 | Blog: aeropuerto, Metro y Time Out Market | Responder rutas/coste, mapa oficial y menú/puestos dentro de las URLs existentes mejora el ajuste a consultas | clics + impresiones + CTR + posición + consultas por página | PREPARADO, sin desplegar | producción confirmada + 14/28 días finalizados; ampliar con bajo volumen |
 | E-021 | Óbidos, Navidad, Nochevieja, Regaleira nueva, título de dónde-alojarse | Datos 2026 verificados en las páginas de temporada con impresiones, una guía de entradas con intención de compra y alojamiento por barrio en Nochevieja suben clics orgánicos y clics de afiliado sin canibalizar | clics + impresiones + posición por página; affiliate_click (Stay22, Tiqets) | PREPARADO, rama local `feat/seo-posicionamiento`, sin push | producción + 14 días finalizados |
+| E-022 | Títulos/metas de Metro, Navegante, Navidad y meta de Óbidos + 4 enlaces internos a guías de entradas | Un título que responde a la consulta dominante con un dato comprobado (horario, precio, qué incluye) sube el CTR en posición 6–9 sin perder impresiones | CTR + clics por página y consulta; clics a /actividades/oceanario-lisboa y /actividades/torre-de-belem | PREPARADO, rama local `feat/seo-titulos-ctr`, sin push | producción + 28 días finalizados |
 
 ### E-008 visual iteration note — 2026-09-26
 
@@ -270,3 +271,8 @@ Actualización E018 —22/10/2026: LIVE tras autorización exacta de PR115/head6
 ## E-021 — Temporada de invierno + Regaleira, 25/10/2026
 
 **Status: PREPARADO en la rama local `feat/seo-posicionamiento`; no desplegado, sin push.** Óbidos Vila Natal con datos oficiales 2026, Navidad y Nochevieja actualizadas (Stay22 por barrio en Nochevieja), artículo nuevo `/blog/quinta-da-regaleira-entradas` y título/meta de `donde-alojarse-en-lisboa`. Baseline: 142 clics/28 días en todo el sitio, sin desglose por página en esta sesión: pedir export de GSC antes de desplegar. Detalle: [[seo/AUDITORIA-POSICIONAMIENTO-2026-10-25]]. Toca la página de E-014 solo en título y meta (no el bloque Stay22).
+
+## E-022 — Títulos por CTR con datos de GSC de 3 meses, 25/10/2026
+
+**Status: PREPARADO en la rama local `feat/seo-titulos-ctr` (sobre `feat/seo-posicionamiento`); no desplegado, sin push.** Baseline (GSC, 3 meses hasta el 25/10, web): Metro 3/1.155/0,26 %/8,8; Navegante 34/1.667/2,04 %/6,5; Navidad 9/911/0,99 %/8,0; Óbidos 21/860/2,44 %/7,0; Nochevieja 16/379/4,22 %/6,7 (solo enlace). No se tocan como-pagar (E-002), como-moverse (E-001), Time Out (E-003) ni Oriente (E-004): las propuestas para ellas quedan escritas en `/workspace/titulos-ctr-antes-despues.md` hasta que José decida cerrar esos experimentos, cuya ventana de 7 días ya pasó. Óbidos, Navidad y Nochevieja también son de E-021: medir las dos cosas juntas, sin atribuir el cambio solo al título. Google puede reescribir títulos: mirar la SERP real antes de juzgar.
+
