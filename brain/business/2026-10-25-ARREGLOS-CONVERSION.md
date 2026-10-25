@@ -27,3 +27,21 @@ Se quedan en GetYourGuide (no hay producto equivalente verificado en Tiqets o se
 - Widget de GYG con el tour 424720 en `traveler-guide-preview.ts` (/guia/que-visitar): no está en producción (redirige a /que-ver-en-lisboa).
 
 Pendiente de José: preguntar al soporte de GYG Partner si esas actividades están excluidas de su cuenta (`et=`) y si comisionan.
+
+## Paso 2 — Botones donde se decide: Navegante y 4, 5 y 7 días (D-075)
+
+Mismo mecanismo que D-067 (un bloque en el cuerpo, al cerrar la sección que lo justifica, y uno al final; nunca antes de la respuesta). `contextual-booking-placements.ts` pasa de 3 a 7 páginas.
+
+| Página | En el cuerpo | Al final | Primer botón (390 px), antes → después |
+|---|---|---|---|
+| tarjeta-navegante-lisboa | Lisboa Card, al cerrar «¿Y la Lisboa Card?» | Pena (Tiqets), nuevo | y=12.507 de 15.026 → y=9.456 de 15.317 |
+| lisboa-en-7-dias | Pena, al cerrar «Las escapadas» | Alojamiento por barrio (Stay22, 8 barrios), nuevo | y=11.772 → y=7.688 |
+| lisboa-en-4-dias | Pena, al cerrar el día 3 (Sintra), nuevo | Jerónimos (sin cambio) | y=5.227 → y=3.812 |
+| lisboa-en-5-dias | Pena, al cerrar el día 5 (Sintra), nuevo | Jerónimos + Torre (sin cambio) | y=4.456 → y=3.955 |
+
+- Stay22: `/allez/roam?aid=estabaenlisboa&address=…&campaign=blog_lisboa_en_7_dias_<barrio>&lang=es`. Comprobado: llega a Booking con el barrio.
+- 7 días: sale el combinado Jerónimos + Torre (no caben tres ofertas: D-067). Sigue en 5 días, Belém, Jerónimos y /que-ver-en-lisboa.
+- La Pena del 7 días no puede ir justo tras «Sintra: la única…» porque ese encabezado es h3 y el cuerpo solo ancla en h2; va al cerrar «Las escapadas».
+- 4 y 5 días no llevan Stay22: no hablan de alojamiento y ya tienen sus dos bloques.
+- Navegante: la Pena no va dentro de «Sintra, Cascais y el barco» porque eso serían dos bloques en el cuerpo; va al final.
+- `smoke-editorial-template.mjs`: contratos de las cuatro páginas nuevas.

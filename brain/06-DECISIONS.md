@@ -945,3 +945,7 @@ José pide poner tours en inglés y revisar mejoras. **Preview únicamente, PR11
 ## D-074 — Oceanário, Castelo y Pena pasan de GetYourGuide a Tiqets, 25/10/2026
 
 **Rama local, pendiente de visto bueno de José (L-003).** José aprobó «soluciona todo» tras la auditoría de conversión. Con nuestro partner_id, los enlaces de GYG del Oceanário, el Castelo y la Pena abrían una búsqueda genérica (`/s?…&et=<id>`) en vez de la ficha. Donde Tiqets vende el mismo producto y su ficha abre con nuestro partner, se cambia: Oceanário p975260, Castelo p1106063 (entrada + audioguía en inglés, cancelación 24 h) y Pena p1120392. La campaña la pone cada página (`web_blog_`, `web_guia_`, `web_itinerario_`). Excursión de Sintra, fado, tour gastronómico y Fátima se quedan en GYG porque no hay equivalente exacto; no se cambia J2Z24GU. [Detalle](business/2026-10-25-ARREGLOS-CONVERSION.md).
+
+## D-075 — Un bloque en el cuerpo también en Navegante y en 4, 5 y 7 días, 25/10/2026
+
+**Rama local, pendiente de visto bueno de José (L-003).** Amplía D-067 a cuatro páginas más tras la auditoría de conversión («soluciona todo»), sin cambiar sus límites: un bloque en el cuerpo al cerrar la sección que lo justifica y uno al final. Navegante: Lisboa Card en «¿Y la Lisboa Card?», Pena al final. 4 y 5 días: Pena al cerrar el día de Sintra. 7 días: Pena al cerrar «Las escapadas» y alojamiento por barrio con Stay22 al final (sale el combinado Jerónimos + Torre). [Detalle](business/2026-10-25-ARREGLOS-CONVERSION.md).

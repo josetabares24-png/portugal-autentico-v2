@@ -164,6 +164,14 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       intro:
         'Para moverte en metro, autobús y tranvía basta la Navegante. La Lisboa Card solo compensa si en los mismos días vas a entrar en varios museos o monumentos; en esta guía tienes las cuentas.',
     },
+    {
+      // 25/10/2026 (D-075): la Lisboa Card pasa al cuerpo, al cerrar
+      // «¿Y la Lisboa Card?» (contextual-booking-placements.ts), y al final
+      // queda la entrada a la Pena para quien usa el tren a Sintra.
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      intro:
+        'Si usas el tren para ir a Sintra, la entrada a la Pena va con fecha y hora. No se devuelve ni se cambia de fecha: cómprala cuando sepas a qué hora llegas arriba con el 434.',
+    },
   ],
   // time-out-market-lisboa · 616 impresiones (28 d a 07/10)
   // Coincidencia más débil que el resto: el mercado no se reserva. Se ofrece
@@ -323,6 +331,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   ],
   // Itinerarios del blog y Belém · bloques nuevos (9/10/2026), sin datos aún.
   // Un bloque por artículo; dos en el de 7 días, que es largo.
+  // 25/10/2026 (D-075): uno en el cuerpo (Pena, al cerrar Sintra) y uno al final.
   'lisboa-en-4-dias': [
     {
       offer: { type: 'product', productId: 'jeronimos' },
@@ -330,6 +339,13 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       beforeHeading: 'dia-3-sintra-sin-intentar-verlo-todo',
       intro:
         'El claustro de los Jerónimos es la entrada del día 2 que más cola tiene. Puedes llevarla comprada con hora, pero no se devuelve ni se cambia de fecha: cómprala cuando tengas el día decidido.',
+    },
+    {
+      // 25/10/2026 (D-075): en el cuerpo, al cerrar el día 3 (Sintra).
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      beforeHeading: 'dia-4-graca-y-parque-das-nacoes',
+      intro:
+        'Si una de tus dos visitas en Sintra es la Pena, su entrada va con fecha y hora. No se devuelve ni se cambia de fecha: cómprala cuando tengas el día decidido.',
     },
   ],
   'lisboa-en-5-dias': [
@@ -340,21 +356,32 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       intro:
         'Si el día 2 entras en los Jerónimos y en la Torre, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
     },
+    {
+      // 25/10/2026 (D-075): en el cuerpo, al cerrar el día 5 (Sintra).
+      offer: { type: 'product', productId: 'pena-tiqets' },
+      beforeHeading: 'si-llueve-cambia-el-orden-no-el-viaje',
+      intro:
+        'Si una de tus dos visitas en Sintra es la Pena, su entrada va con fecha y hora. No se devuelve ni se cambia de fecha: cómprala cuando tengas el día decidido.',
+    },
   ],
   'lisboa-en-7-dias': [
-    {
-      offer: { type: 'product', productId: 'jeronimos-torre-belem' },
-      // Al cerrar el bloque 1 (centro, Belém y miradores).
-      beforeHeading: 'bloque-2-las-escapadas-uno-o-dos-dias',
-      intro:
-        'Si en esos tres días entras en los Jerónimos y en la Torre de Belém, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
-    },
+    // 25/10/2026 (D-075): Pena en el cuerpo, al cerrar «Las escapadas: cuántas
+    // caben y cuál elegir»; al final, alojamiento por barrio (la última sección es
+    // «Alojamiento, transporte y presupuesto»). Sale el combinado Jerónimos +
+    // Torre, que ya no cabe: un bloque en el cuerpo y uno al final (D-067).
     {
       offer: { type: 'product', productId: 'pena-tiqets' },
-      // Al cerrar «Sintra, la única que es obligatoria».
-      beforeHeading: 'la-costa-cascais-y-el-atlantico',
+      beforeHeading: 'lo-que-solo-cabe-en-una-semana',
       intro:
-        'La entrada de Sintra que más se agota es la de la Pena. Aquí va con hora fija y parque incluido. No se devuelve ni se cambia de fecha: si quieres poder moverla por el tiempo, cómprala en la web oficial.',
+        'Si de las escapadas eliges Sintra, la entrada que más se agota es la de la Pena. Aquí va con hora fija y parque incluido. No se devuelve ni se cambia de fecha: si quieres poder moverla por el tiempo, cómprala en la web oficial.',
+    },
+    {
+      offer: {
+        type: 'stay22-barrios',
+        barrios: ['baixa', 'chiado', 'alfama', 'graca', 'avenida', 'saldanha', 'principe-real', 'parque-nacoes'],
+      },
+      intro:
+        'Si aún no tienes alojamiento, aquí ves qué queda libre en cada barrio para tus fechas. Para siete noches, antes de reservar mira en el mapa si la calle es tranquila: el centro es lo más ruidoso de noche.',
     },
   ],
   // donde-alojarse-en-lisboa · Stay22 (9/10/2026). Un solo bloque con un

@@ -18,6 +18,11 @@ const contextualContracts = {
   '/blog/palacio-da-pena-entradas': { id: 'reserva-blog-palacio-da-pena-entradas-pena-tiqets-arriba', after: 'donde-comprar-web-oficial-o-tiqets', before: 'horarios-y-dias-de-cierre' },
   '/blog/monasterio-jeronimos-entradas': { id: 'reserva-blog-monasterio-jeronimos-entradas-jeronimos-arriba', after: 'donde-comprar-la-entrada', before: 'horarios-y-cierres' },
   '/blog/alfama-historia-guia': { id: 'reserva-blog-alfama-historia-guia-free-tour-alfama', after: 'ruta-a-pie-por-alfama-sin-repetir-demasiadas-cuestas', before: 'miradores-de-alfama-santa-luzia-y-portas-do-sol' },
+  // D-075 (25/10/2026): Navegante y los itinerarios de 4, 5 y 7 días.
+  '/blog/tarjeta-navegante-lisboa': { id: 'reserva-blog-tarjeta-navegante-lisboa-lisboa-card-arriba', after: 'y-la-lisboa-card', before: 'donde-comprar-y-recargar-la-navegante' },
+  '/blog/lisboa-en-4-dias': { id: 'reserva-blog-lisboa-en-4-dias-pena-tiqets', after: 'dia-3-sintra-sin-intentar-verlo-todo', before: 'dia-4-graca-y-parque-das-nacoes' },
+  '/blog/lisboa-en-5-dias': { id: 'reserva-blog-lisboa-en-5-dias-pena-tiqets', after: 'dia-5-sintra', before: 'si-llueve-cambia-el-orden-no-el-viaje' },
+  '/blog/lisboa-en-7-dias': { id: 'reserva-blog-lisboa-en-7-dias-pena-tiqets', after: 'las-escapadas-cuantas-caben-y-cual-elegir', before: 'lo-que-solo-cabe-en-una-semana' },
 };
 const attrs = (el) => Object.fromEntries([...el.attributes].map((a) => [a.name, a.value]).sort(([a],[b]) => a.localeCompare(b)));
 // Explicit reviewed scopes; no category-driven activation.
