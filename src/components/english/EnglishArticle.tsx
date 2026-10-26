@@ -7,7 +7,6 @@ import { findProductById } from "@/data/bookings";
 import { withGuruwalkRef, buildAffiliateUrl } from "@/lib/affiliate";
 import {
   englishPenaBookingUrl,
-  ENGLISH_PENA_CAMPAIGN,
   ENGLISH_TOURS_CAMPAIGN,
 } from "@/lib/english-bookings";
 import FreeTourLiveFinder from "@/components/free-tours/FreeTourLiveFinder";
@@ -15,6 +14,8 @@ import EnglishBookingLink from "./EnglishBookingLink";
 import EnglishGuideLink from "./EnglishGuideLink";
 import EnglishTourSelection from "./EnglishTourSelection";
 import EnglishContents from "./EnglishContents";
+import EnglishPenaBooking from "./EnglishPenaBooking";
+import { englishPenaTicket } from "@/data/english-pena-ticket";
 import { TourismBookingHero } from "@/components/booking/TourismBookingHero";
 
 type Article = (typeof articles)[number];
@@ -66,7 +67,9 @@ export default function EnglishArticle({ article }: { article: Article }) {
       )
     : null;
   const isTours = article.slug === "lisbon-free-walking-tours";
-  const reviewedDate = isTours ? "2026-10-23" : "2026-10-22";
+  const isPena = article.slug === "pena-palace-tickets";
+  const reviewedDate = isPena ? englishPenaTicket.checkedAt : isTours ? "2026-10-23" : "2026-10-22";
+  const reviewedDay = isPena ? "25" : isTours ? "23" : "22";
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -76,7 +79,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
     url,
     mainEntityOfPage: url,
     inLanguage: "en",
-    dateModified: reviewedDate,
+    dateModified: isPena ? englishPenaTicket.updatedAt : reviewedDate,
     author: {
       "@type": "Person",
       "@id": SITE + "/sobre-nosotros#jose-tabares",
@@ -187,9 +190,9 @@ export default function EnglishArticle({ article }: { article: Article }) {
                   <Link href="/sobre-nosotros" className="underline">
                     José Tabares
                   </Link>{" "}
-                  · English edition reviewed{" "}
+                  · {isPena ? "Ticket details reviewed" : "English edition reviewed"}{" "}
                   <time dateTime={reviewedDate}>
-                    {isTours ? "23" : "22"} October 2026
+                    {reviewedDay} October 2026
                   </time>
                 </p>
                 <nav
@@ -359,60 +362,13 @@ export default function EnglishArticle({ article }: { article: Article }) {
                     </ul>
                   ) : null}
                   {"booking" in section && section.booking === "pena" ? (
-                    <aside
-                      id="booking"
-                      aria-labelledby="pena-booking-title"
-                      className="mt-7 scroll-mt-24 border border-border-soft bg-white/70 p-5 sm:p-7"
-                    >
-                      <p className="text-xs font-bold uppercase tracking-[0.12em] text-terracotta">
-                        Pena Palace · book with Tiqets
-                      </p>
-                      <h3
-                        id="pena-booking-title"
-                        className="mt-3 font-display text-2xl font-semibold not-italic"
-                      >
-                        Check tickets for your date
-                      </h3>
-                      <p className="my-4 text-sm leading-relaxed text-text-secondary">
-                        Palace-and-park options, with the booking page in
-                        English. Check the selected visit, entry time and any
-                        transfer option before paying.
-                      </p>
-                      <dl className="mb-5 grid gap-3 border-y border-border-soft py-4 text-sm sm:grid-cols-2">
-                        <div>
-                          <dt className="font-semibold">Booking provider</dt>
-                          <dd className="mt-1 text-text-secondary">Tiqets</dd>
-                        </div>
-                        <div>
-                          <dt className="font-semibold">Before payment</dt>
-                          <dd className="mt-1 text-text-secondary">
-                            Review inclusions and change terms
-                          </dd>
-                        </div>
-                      </dl>
-                      <EnglishBookingLink
-                        href={ticketUrl}
-                        partner="tiqets"
-                        campaign={ENGLISH_PENA_CAMPAIGN}
-                        placement="pena-after-comparison"
-                        content="palace-park-english"
-                      >
-                        Check Pena dates on Tiqets
-                      </EnglishBookingLink>
-                      <p className="mt-3 text-xs leading-relaxed text-text-secondary">
-                        Affiliate link. Your booking is handled by Tiqets.{" "}
-                        <Link className="underline" href="#affiliate-policy">
-                          How these links work
-                        </Link>
-                        .
-                      </p>
-                    </aside>
+                    <EnglishPenaBooking url={ticketUrl} />
                   ) : null}
                 </section>
               ))}
             <details className="mt-6 border-y border-border-soft py-5">
               <summary className="min-h-11 cursor-pointer text-sm font-semibold">
-                Facts checked · {isTours ? "23" : "22"} October 2026
+                {isPena ? "Ticket details checked" : "Facts checked"} · {reviewedDay} October 2026
               </summary>
               <ul className="mt-3 space-y-3 text-sm">
                 {article.sources.map(([label, href]) => (

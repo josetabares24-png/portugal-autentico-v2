@@ -309,9 +309,12 @@
         "id": "choose-the-visit",
         "title": "Palace and park, or park only?",
         "paragraphs": [
-          "The essential visit and the park-only visit are different products. The current official adult prices are €20 and €12 respectively; other visit types and age categories have their own prices. Read the inclusions before comparing two offers with similar photographs.",
-          "A park ticket is not a cheaper way to obtain the same interior visit. If the palace rooms are the reason you are travelling to Sintra, choose the appropriate palace-inclusive ticket. If your interest is the landscape and gardens, check what park access currently includes.",
-          "For a first visit, choose the experience you actually want before searching for the lowest displayed price. A guided visit, a full visit and an excursion from Lisbon may include different things. Transport up to Pena is not automatically included in a monument ticket."
+          "The official adult Essential Visit costs €20; the park visit costs €12. Other visit types and age categories have their own prices. Decide whether you want palace interiors before comparing offers.",
+          "A guided visit or a day trip from Lisbon is a different product. Transport to Pena is not automatically included in admission."
+        ],
+        "rows": [
+          ["Palace interiors", "The official Essential Visit includes the New Palace, park and terraces."],
+          ["Gardens and terraces", "The official park ticket includes the grounds and terraces, without the palace rooms."]
         ],
         "links": [
           [
@@ -333,8 +336,8 @@
         "id": "where-to-book",
         "title": "Official ticket office or a reseller?",
         "paragraphs": [
-          "Compare the official ticket office with any reseller on the exact visit, date, entry time and cancellation or change conditions. A translated checkout can be convenient, but the payment language does not make two tickets equivalent.",
-          "Tiqets offers palace-and-park ticket options through an English-language booking page. Before paying, check your selected option, any transport included, and the rules for changes, cancellations and late arrival."
+          "Compare the visit and the change conditions, as well as the price. An English-language checkout does not make two tickets equivalent.",
+          "For online purchases of the official Essential Visit, the date and time may be changed within one year, subject to the official conditions. The Tiqets listing below has different rules."
         ],
         "links": [
           [
@@ -374,6 +377,10 @@
       }
     ],
     "sources": [
+      [
+        "Pena Essential Visit: inclusions and date changes",
+        "https://bilheteira.parquesdesintra.pt/info/parque-e-palacio-da-pena-visita-essencial/1198/en"
+      ],
       [
         "Parques de Sintra: opening times and prices",
         "https://www.parquesdesintra.pt/en/plan-your-visit/opening-times-and-prices/"
