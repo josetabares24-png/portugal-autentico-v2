@@ -1,5 +1,7 @@
 # Entradas en inglés — 26/10/2026
 
+**Estado posterior:** José autoriza «publica» después de recibir la Preview; PR118 fusionado y producción comprobada el26/10. [Registro de publicación](pr118-production.md). Las referencias a candidato/gate siguientes documentan el proceso anterior a esa aprobación.
+
 José pide pulir las entradas en inglés. Se trabaja sobre el piloto existente de seisURLs: guía de Pena y su acceso desde la portada. No se crea un catálogo nuevo ni se traduce automáticamente la oferta española.
 
 ## Baseline y decisión
