@@ -84,8 +84,8 @@ export default function EnglishVisitChoices() {
                 Choose your Pena Palace visit
               </h3>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">
-                Palace and park, entry time and the journey up from Sintra:
-                check what you need before comparing booking options.
+                Palace rooms or park only? Compare admission, change conditions
+                and the journey up from Sintra before choosing your ticket.
               </p>
               <span className="mt-4 inline-flex min-h-11 items-center gap-3 border-b border-terracotta text-sm font-bold">
                 Compare Pena tickets <span aria-hidden="true">→</span>

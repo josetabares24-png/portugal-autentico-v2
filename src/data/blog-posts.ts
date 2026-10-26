@@ -356,6 +356,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '5 Feb 2026',
     autor: 'José Tabares',
     imagen: '/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg',
+      dateModified: '2026-10-24',
   },
   {
     id: 'vida-nocturna-lisboa',
@@ -480,7 +481,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Qué pedir en una cafetería portuguesa y cómo elegir entre una bica rápida, un café histórico o una opción de especialidad.',
     categoria: 'Gastronomía',
     fecha: '5 Nov 2024',
-    dateModified: '2026-09-23',
+    dateModified: '2026-10-24',
     autor: 'José Tabares',
     imagen: '/images/bica-cafe-mapa.jpg',
   },
@@ -521,6 +522,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '18 Mar 2026',
     autor: 'José Tabares',
     imagen: '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
+      dateModified: '2026-10-24',
   },
   {
     id: 'descubrimientos-portugueses-lisboa',
@@ -530,6 +532,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '15 Mar 2026',
     autor: 'José Tabares',
     imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+      dateModified: '2026-10-24',
   },
   {
     id: 'azulejos-portugueses-historia',
@@ -537,7 +540,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Historia y significado de los azulejos portugueses, cómo cambiaron con los siglos y dónde ver ejemplos destacados en Lisboa.',
     categoria: 'Cultura',
     fecha: '12 Mar 2026',
-    dateModified: '2026-09-21',
+    dateModified: '2026-10-24',
     autor: 'José Tabares',
     imagen: '/images/aldaba-puerta-lisboa.jpg',
   },

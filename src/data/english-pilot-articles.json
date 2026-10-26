@@ -6,7 +6,7 @@
     "description": "Choose the Metro, a taxi or an app-based ride according to your address, luggage and arrival time.",
     "image": "/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-anden-columnas.jpg",
     "imageAlt": "Platform at Olaias, on the Red Metro line from Lisbon Airport",
-    "answer": "The Metro is a practical first choice when your accommodation is close to a station and you arrive while it is running. A taxi or app-based ride can be easier with heavy luggage, a late arrival or an address up a steep hill. Choose for your final address, not just for the word “centre”.",
+    "answer": "The Metro is a practical first choice when your accommodation is close to a station and you arrive while it is running. A taxi or app-based ride can be easier with heavy luggage, a late arrival or an address up a steep hill. Plan the journey to your accommodation’s exact address, including the final walk.",
     "essentials": [
       ["Metro line", "Red line from Aeroporto"],
       ["Usual Metro hours", "06:30–01:00; check service notices"],
@@ -99,7 +99,7 @@
     "description": "How to choose a ticket, use contactless payment and navigate the four Metro lines without confusing the fare options.",
     "image": "/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg",
     "imageAlt": "The colourful ceiling of Olaias Metro station in Lisbon",
-    "answer": "Lisbon has four Metro lines: Blue, Yellow, Green and Red. Normal operating hours are 06:30–01:00. For occasional travel, compare a €1.90 Carris/Metro ticket, €1.72 Metro zapping journey or €1.92 contactless journey; the way you load and use them differs.",
+    "answer": "Lisbon has four Metro lines: Blue, Yellow, Green and Red. Normal operating hours are 06:30–01:00. For occasional travel, compare a €1.90 Carris/Metro ticket, €1.72 Metro zapping journey or €1.92 contactless journey; each option has different payment and validity rules.",
     "essentials": [
       ["Lines", "Blue · Yellow · Green · Red"],
       ["Normal hours", "06:30–01:00"],
@@ -268,7 +268,7 @@
         "id": "moving-and-budget",
         "title": "Transport and budget decisions",
         "paragraphs": [
-          "Use walking for short stretches within one area and compare public transport for the longer connections. The Metro does not solve every journey, particularly towards places whose final approach is by bus, tram or foot. Check the official journey planner for the day’s actual addresses.",
+          "Walk between nearby stops and use public transport for longer journeys. The Metro does not solve every journey, particularly towards places whose final approach is by bus, tram or foot. Check the official journey planner for the day’s actual addresses.",
           "A transport pass makes sense only when the included travel matches your plans. Add the paid visits you genuinely want before considering a sightseeing card. Keep meals, local transfers and any optional guided visit visible in the budget; avoid counting the same inclusion twice."
         ],
         "links": [["Understand Metro tickets", "/en/lisbon-metro-guide"]]
@@ -309,9 +309,12 @@
         "id": "choose-the-visit",
         "title": "Palace and park, or park only?",
         "paragraphs": [
-          "The essential visit and the park-only visit are different products. The current official adult prices are €20 and €12 respectively; other visit types and age categories have their own prices. Read the inclusions before comparing two offers with similar photographs.",
-          "A park ticket is not a cheaper way to obtain the same interior visit. If the palace rooms are the reason you are travelling to Sintra, choose the appropriate palace-inclusive ticket. If your interest is the landscape and gardens, check what park access currently includes.",
-          "For a first visit, choose the experience you actually want before searching for the lowest displayed price. A guided visit, a full visit and an excursion from Lisbon may include different things. Transport up to Pena is not automatically included in a monument ticket."
+          "The official adult Essential Visit costs €20; the park visit costs €12. Other visit types and age categories have their own prices. Decide whether you want palace interiors before comparing offers.",
+          "A guided visit or a day trip from Lisbon is a different product. Transport to Pena is not automatically included in admission."
+        ],
+        "rows": [
+          ["Palace interiors", "The official Essential Visit includes the New Palace, park and terraces."],
+          ["Gardens and terraces", "The official park ticket includes the grounds and terraces, without the palace rooms."]
         ],
         "links": [
           [
@@ -333,8 +336,8 @@
         "id": "where-to-book",
         "title": "Official ticket office or a reseller?",
         "paragraphs": [
-          "Compare the official ticket office with any reseller on the exact visit, date, entry time and cancellation or change conditions. A translated checkout can be convenient, but the payment language does not make two tickets equivalent.",
-          "Read the final terms before paying, including what happens if you arrive late or your plans change. The linked Tiqets page is available in English and offers palace-and-park ticket options. Check the exact option, transport inclusions and final cancellation or change terms before paying."
+          "Compare the visit and the change conditions, as well as the price. An English-language checkout does not make two tickets equivalent.",
+          "For online purchases of the official Essential Visit, the date and time may be changed within one year, subject to the official conditions. The Tiqets listing below has different rules."
         ],
         "links": [
           [
@@ -375,6 +378,10 @@
     ],
     "sources": [
       [
+        "Pena Essential Visit: inclusions and date changes",
+        "https://bilheteira.parquesdesintra.pt/info/parque-e-palacio-da-pena-visita-essencial/1198/en"
+      ],
+      [
         "Parques de Sintra: opening times and prices",
         "https://www.parquesdesintra.pt/en/plan-your-visit/opening-times-and-prices/"
       ],
@@ -407,7 +414,7 @@
     "sections": [
       {
         "id": "choose-a-route",
-        "title": "Five English walks, and who each one suits",
+        "title": "Choose your walking tour",
         "paragraphs": []
       },
       {
@@ -422,8 +429,8 @@
         "id": "check-language",
         "title": "The website language and the tour language are different checks",
         "paragraphs": [
-          "A page written in English can still list tours operated in other languages. In the date finder above, the request is specifically for English tours; before confirming, check the language on the actual booking. Availability and route names come from GuruWalk.",
-          "Several departure times may share one booking URL for that date. The button opens the provider’s booking flow, where you choose and confirm the time. It does not mean a place has already been reserved by clicking it."
+          "The finder above shows English-language departures for your chosen date. Check the language again on GuruWalk before confirming your booking. Tour names and availability come from GuruWalk.",
+          "Several departure times may lead to the same GuruWalk booking page. Choose your preferred time there and complete the reservation."
         ]
       },
       {

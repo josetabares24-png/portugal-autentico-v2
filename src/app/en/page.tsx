@@ -50,8 +50,8 @@ export default function EnglishHome() {
             The Lisbon I show friends who come to visit.
           </h1>
           <p className="mt-5 max-w-lg text-base leading-relaxed md:text-lg text-text-secondary">
-            Getting around, choosing what to see and leaving enough time between
-            the two. Practical guides by José Tabares, who lives in Lisbon.
+            Practical help with transport, places to visit and a route that leaves
+            time to enjoy Lisbon. Written by José Tabares, who lives in the city.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link
@@ -68,7 +68,7 @@ export default function EnglishHome() {
             </Link>
           </div>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden md:aspect-[5/4]">
+        <div className="relative aspect-[2/1] overflow-hidden sm:aspect-[4/3] md:aspect-[5/4]">
           <Image
             src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg"
             alt="Alfama rooftops and the River Tagus in Lisbon"

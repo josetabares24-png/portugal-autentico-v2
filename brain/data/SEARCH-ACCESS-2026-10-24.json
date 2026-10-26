@@ -1,0 +1,35 @@
+{
+  "captured": "2026-10-24",
+  "property": "sc-domain:estabaenlisboa.com",
+  "status": "BLOCKED_NO_VALID_NEW_METRICS",
+  "windsor": {
+    "discoverySucceeded": true,
+    "connector": "searchconsole",
+    "requestedFrom": "2026-08-27",
+    "requestedTo": "2026-10-21",
+    "requestedGrain": "property/date/web",
+    "reason": "Reads paused: three connected accounts, Free plan includes one account.",
+    "returnedPlaceholderRowDate": "2026-10-24",
+    "placeholderZerosDiscarded": true
+  },
+  "gscWizard": {
+    "requestedFrom": "2026-10-15",
+    "requestedTo": "2026-10-21",
+    "reason": "payment_required / subscription_required",
+    "validMetricsReturned": false
+  },
+  "plannedFinalizedWindows": {
+    "current7": ["2026-10-15", "2026-10-21"],
+    "previous7": ["2026-10-08", "2026-10-14"],
+    "current28": ["2026-09-24", "2026-10-21"],
+    "previous28": ["2026-08-27", "2026-09-23"],
+    "current90": ["2026-07-24", "2026-10-21"],
+    "previous90": ["2026-04-25", "2026-07-23"]
+  },
+  "latestUsableSnapshot": "CONSOLIDATION-SEARCH-2026-10-20.json",
+  "latestUsableMetricsThrough": "2026-10-17",
+  "englishProductionD0": "2026-10-24",
+  "englishPostReleaseMeasurementAvailable": false,
+  "reservationsAndCommissions": "UNKNOWN",
+  "accountOrSubscriptionChangesMade": false
+}

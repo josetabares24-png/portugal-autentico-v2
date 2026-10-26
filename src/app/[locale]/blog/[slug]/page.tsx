@@ -1145,7 +1145,7 @@ const articles: Record<string, Article> = {
         ['Jerónimos y Torre de Belém', 'En 2025, cerrados', 'Cerrados', 'En 2025, cerrados', 'Cerrados'],
         ['Oceanário', 'Horario especial', 'Horario especial', 'Horario especial', 'Horario especial'],
         ['Wonderland (2025)', '10:00-16:00', '16:00-22:00', '10:00-16:00', '16:00-22:00'],
-        ['Óbidos Vila Natal', '10:00-17:00', 'Cerrado', '10:00-17:00', 'Cerrado'],
+        ['Óbidos Vila Natal (2026)', '10:00-17:00', 'Cerrado', '10:00-17:00', 'Cerrado'],
         ['Metro (2025)', 'Hasta la 01:00', 'Desde las 6:30', 'Hasta la 01:00', 'Desde las 6:30'],
       ] },
       { tipo: 'parrafo', texto: 'En 2025 el Gobierno dio tolerância de ponto (un día libre para los funcionarios) el 24 y el 31, y por eso los museos y monumentos de Museus e Monumentos de Portugal, entre ellos los Jerónimos y la Torre de Belém, cerraron también esos días. Para 2026 todavía no se sabe. El Oceanário no publica aún las horas exactas de esos cuatro días: míralas en su web antes de ir.' },
@@ -1187,7 +1187,7 @@ const articles: Record<string, Article> = {
     ],
     fuentes: [
       { label: "Município de Óbidos: Óbidos Vila Natal 2026/27 (fechas y lugar)", href: "https://agenda.obidos.pt/evento/obidos-vila-natal/" },
-      { label: "Óbidos Vila Natal: horarios y precios 2026", href: "https://obidosvilanatal.pt/horarios-e-precos/" },
+      { label: "Óbidos Vila Natal: horarios y precios de 2026", href: "https://obidosvilanatal.pt/en/hours-and-prices" },
       { label: "BOL: vale de preventa de Óbidos Vila Natal 2026 (6 €)", href: "https://www.bol.pt/Comprar/Cartoes/6669-9583-0-voucher_pre_venda_vila_natal_26-obidos_criativa_e_m/" },
       { label: "Óbidos Vila Natal: preguntas frecuentes (qué incluye, sesiones, cambios, accesibilidad)", href: "https://obidosvilanatal.pt/perguntas-frequentes/" },
       { label: "Óbidos Vila Natal: información útil (aparcamientos, cajeros, accesos)", href: "https://obidosvilanatal.pt/informacoes-uteis/" },
@@ -3348,6 +3348,8 @@ const articles: Record<string, Article> = {
     ],
   },
   "barrios-imprescindibles": {
+    fechaActualizacion: "Corrección parcial revisada el 24 de octubre de 2026",
+    fuentes: [{"label":"Museu do Fado — história e formação do género","href":"https://www.museudofado.pt/historia-do-fado"},{"label":"CML — ReSist: terremoto de 1755 e reconstrução","href":"https://www.lisboa.pt/temas/seguranca-e-prevencao/sismos/programa-resist/divulgacao-e-sensibilizacao/apresentacao"}],
     titulo: "Barrios de Lisboa: 5 zonas que merece la pena conocer",
     seoTitle: "Barrios de Lisboa: 5 zonas que merece la pena conocer",
     metaDescription: "Guía de 5 barrios de Lisboa: Baixa-Chiado, Alfama, Bairro Alto, Belém y Príncipe Real. Qué ver en cada zona y cuál encaja mejor en tu visita.",
@@ -3356,7 +3358,7 @@ const articles: Record<string, Article> = {
     imageAlt: "Callejón escalonado de Alfama con casas encaladas, macetas junto a las puertas y tejados de teja",
     categoria: "Guías",
     fecha: "5 Dic 2024",
-    dateModified: "2026-09-21",
+    dateModified: "2026-10-24",
     minutos: 15,
     contenido: [
       { tipo: "parrafo", texto: "Lisboa no es una ciudad que se entienda en plano. Hay que caminarla para comprender cómo cada colina guarda una personalidad distinta, cómo la luz cambia según la orientación de las calles, cómo el sonido del fado en Alfama da paso al bullicio juvenil del Bairro Alto apenas cruzas unas manzanas." },
@@ -3371,18 +3373,18 @@ const articles: Record<string, Article> = {
         { href: "/blog/mejores-miradores-lisboa", label: "Los miradouros" },
       ] },
       { tipo: "subtitulo", texto: "Baixa-Chiado: el corazón comercial con siglos de historia" },
-      { tipo: "parrafo", texto: "El Marqués de Pombal reconstruyó este barrio desde cero después de que el terremoto de 1755 arrasara la ciudad. El resultado es una cuadrícula ordenada de calles anchas, edificios uniformes y plazas monumentales que contrastan con el caos medieval del resto de Lisboa. Aquí todo es llano —rareza absoluta en esta ciudad— y las conexiones de transporte son inmejorables." },
+      { tipo: "parrafo", texto: "La reconstrucción posterior al terremoto de 1755 dio a la Baixa su cuadrícula de calles, edificios uniformes y plazas monumentales. La Baixa es relativamente llana; desde ella se sube hacia Chiado. Conviene distinguir ambas zonas al elegir alojamiento o preparar un paseo." },
       { tipo: "parrafo", texto: "La Rua Augusta es el eje peatonal que conecta el Rossio con la Praça do Comércio, atravesando bajo un arco triunfal que enmarca el río Tajo. A ambos lados se suceden tiendas de cadena, cafeterías y restaurantes orientados al turismo. No es el Lisboa más auténtico, pero tiene una grandiosidad innegable que merece experimentarse al menos una vez." },
       { tipo: "parrafo", texto: "El Chiado, colina arriba, añade sofisticación literaria: aquí escribieron Pessoa y Eça de Queirós, aquí están las librerías más antiguas de la ciudad, los teatros, las tiendas de diseño portugués. El café A Brasileira, donde una estatua de Pessoa invita a sentarse a su lado, es parada obligatoria aunque solo sea para una foto." },
       { tipo: "lista", items: [
         "Para quién: Primera visita, movilidad reducida, viajes cortos donde prima la comodidad",
-        "Puntos fuertes: Todo llano, metro en cada esquina, monumentos a pie",
+        "Puntos fuertes: Baixa relativamente llana, conexiones de metro y monumentos a pie; Chiado tiene cuestas",
         "Puntos débiles: Precios inflados en restaurantes, ambiente más turístico que local",
         "Mejor momento: temprano, cuando la Praça do Comércio aún está vacía"
       ]},
       { tipo: "subtitulo", texto: "Alfama: el barrio que sobrevivió al terremoto" },
       { tipo: "parrafo", texto: "Mientras el resto de Lisboa quedó reducido a escombros en 1755, Alfama —construida sobre roca sólida— resistió el temblor. Por eso aquí pervive el trazado medieval de callejuelas estrechas, escaleras imposibles y casas que parecen sostenerse unas a otras. Perderse es inevitable y forma parte de la experiencia." },
-      { tipo: "parrafo", texto: "El fado nació en estas calles. Por las noches, desde las ventanas de las tascas escapan las voces melancólicas que cantan a la saudade, esa nostalgia portuguesa imposible de traducir. Los miradores de Santa Luzia y Portas do Sol ofrecen postales perfectas de tejados rojizos descendiendo hacia el río. El Castelo de São Jorge corona la colina como un guardián de piedra." },
+      { tipo: "parrafo", texto: "Alfama está muy ligada al fado, pero no hay un único barrio de origen demostrado: Mouraria también ocupa un lugar central en su historia. Por las noches puedes escucharlo en sus casas de fado. Santa Luzia y Portas do Sol ofrecen vistas de los tejados y el río, y el Castelo de São Jorge está en lo alto de la colina." },
       { tipo: "parrafo", texto: "Pero Alfama exige sacrificios. Las cuestas son brutales, no hay forma de evitarlas. Subir con maletas es una odisea. El ruido del tranvía 28 puede colarse en tu habitación a las siete de la mañana. Y en temporada alta, las calles principales se convierten en ríos de visitantes siguiendo paraguas de guías turísticos." },
       { tipo: "lista", items: [
         "Para quién: Parejas románticas, fotógrafos, amantes del fado, segunda visita",
@@ -4090,8 +4092,8 @@ const articles: Record<string, Article> = {
     imageAlt: "Taza de café sobre una mesa en una calle de Lisboa",
     categoria: "Gastronomía",
     fecha: "5 Nov 2024",
-    fechaActualizacion: "Actualizado en septiembre de 2026",
-    dateModified: "2026-09-23",
+    fechaActualizacion: "Corrección parcial revisada el 24 de octubre de 2026",
+    dateModified: "2026-10-24",
     minutos: 7,
     fuentes: [
       { label: "Visit Portugal — información útil y precios orientativos", href: "https://www.visitportugal.com/es/sobre-portugal/info-util" },
@@ -4116,7 +4118,7 @@ const articles: Record<string, Article> = {
       { tipo: "enlace", texto: "Si ya vas a pasar por esta zona, puedes encajarlo dentro del paseo por Chiado y Bairro Alto.", href: "/blog/chiado-bairro-alto-guia", label: "Qué ver en Chiado y Bairro Alto" },
 
       { tipo: "subtitulo", texto: "Fábrica Coffee Roasters: si buscas café de especialidad" },
-      { tipo: "parrafo", texto: "Fábrica Coffee Roasters trabaja con café de especialidad y mantiene varios locales en Lisboa. Su web oficial lista, entre otros, espacios en Rua das Portas de Santo Antão, Rua das Flores, Rua do Comércio y Santos. Es una opción distinta a A Brasileira: aquí el interés principal está en el café y el tueste, no en visitar un café histórico." },
+      { tipo: "parrafo", texto: "Fábrica Coffee Roasters trabaja con café de especialidad y mantiene varios locales en Lisboa. El directorio oficial consultado el 24 de octubre de 2026 incluye Rua das Portas de Santo Antão, Rua do Comércio, Santos y São Mamede. Comprueba allí el local y su horario antes de ir. Es una opción distinta a A Brasileira: aquí el interés principal está en el café y el tueste, no en visitar un café histórico." },
 
       { tipo: "subtitulo", texto: "Y si solo quieres sentarte en una cafetería portuguesa" },
       { tipo: "parrafo", texto: "No necesitas una dirección famosa. Una pastelaria o café tradicional puede resolver desayuno, una pausa a media mañana o el café después de comer. Mira primero dónde estás y qué harás después; atravesar Lisboa solo para tomar un expreso suele tener poco sentido." },
@@ -4677,9 +4679,11 @@ const articles: Record<string, Article> = {
     ],
   },
   "terremoto-lisboa-1755": {
+    dateModified: "2026-10-24",
+    fechaActualizacion: "Corrección parcial revisada el 24 de octubre de 2026",
     titulo: "El Terremoto de Lisboa de 1755: La Catástrofe que Rehízo Europa",
     seoTitle: "El terremoto de Lisboa de 1755",
-    descripcion: "El 1 de noviembre de 1755, un terremoto de magnitud 8,5 destruyó Lisboa. Así fue el desastre, la reconstrucción y el impacto filosófico en todo el mundo.",
+    descripcion: "El 1 de noviembre de 1755, un terremoto de magnitud estimada en torno a 8,7 devastó buena parte de Lisboa. El desastre, la reconstrucción y su impacto filosófico.",
     imagen: "/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png",
     imageAlt: "Panel de azulejos que representa el Terreiro do Paço a comienzos del siglo XVIII, con soldados y carruajes en la plaza, tal como era antes del terremoto de 1755",
     categoria: "Cultura",
@@ -4687,10 +4691,11 @@ const articles: Record<string, Article> = {
     minutos: 15,
     fuentes: [
       { label: "Lisboa Interativa (CML) — O terramoto de 1 de novembro de 1755", href: "https://geo.lisboa.pt/atividades-e-difusao/investigacao/detalhe/o-terramoto-de-1-de-novembro-de-1755" },
-    ],
+          {"label":"CML — ReSist: magnitud estimada del terremoto de 1755","href":"https://www.lisboa.pt/temas/seguranca-e-prevencao/sismos/programa-resist/divulgacao-e-sensibilizacao/apresentacao"},
+],
     contenido: [
       { tipo: "parrafo", texto: "El 1 de noviembre de 1755 era Día de Todos los Santos. A las 9:40 de la mañana, las iglesias de Lisboa estaban llenas. La ciudad era una de las más ricas del mundo: sus almacenes guardaban especias de India, su bahía rebosaba barcos cargados de oro brasileño, sus iglesias tenían techos dorados. En ese momento exacto, la tierra empezó a moverse. Y no paró durante diez minutos." },
-      { tipo: "parrafo", texto: "Lo que pasó en las siguientes horas —el terremoto, el tsunami, el incendio de cinco días— arrasó buena parte de la ciudad y mató a miles de personas. Pero la historia del terremoto de Lisboa no termina en la catástrofe. Termina en la reconstrucción más rápida y moderna de la historia europea, y en un debate filosófico que todavía hoy no tiene respuesta definitiva." },
+      { tipo: "parrafo", texto: "Lo que pasó en las siguientes horas —el terremoto, el tsunami y los incendios— arrasó buena parte de la ciudad y mató a miles de personas. La historia continúa en la reconstrucción de la Baixa y en el debate filosófico que provocó la catástrofe. La Câmara Municipal de Lisboa emplea una magnitud estimada de 8,7: no es una medición instrumental de 1755." },
       { tipo: "subtitulo", texto: "El Día más Oscuro: 1 de Noviembre de 1755" },
       { tipo: "parrafo", texto: "Era el Día de Todos los Santos. Prácticamente toda la población católica de Lisboa estaba en misa cuando el primer temblor sacudió la ciudad a las 9:40. Los testigos describen un rugido sordo que vino de bajo tierra, seguido de tres sacudidas violentas durante nueve o diez minutos. Las iglesias, llenas de fieles, se derrumbaron. Los palacios se agrietaron. Las calles se abrieron." },
       { tipo: "parrafo", texto: "Pero lo peor estaba por llegar. El terremoto generó un tsunami que llegó al estuario del Tajo unos cuarenta minutos después. Una ola de seis metros entró por el río y barrió el barrio de Belém y la orilla del Tajo. Quienes habían sobrevivido al terremoto corriendo hacia el río para alejarse de los edificios fueron engullidos por el agua." },
@@ -4702,18 +4707,21 @@ const articles: Record<string, Article> = {
       { tipo: "parrafo", texto: "La leyenda dice que cuando el rey José I preguntó a su primer ministro, Sebastião José de Carvalho e Melo (más conocido como el Marqués de Pombal), qué debía hacerse, este respondió: 'Enterrar a los muertos y cuidar a los vivos'. Acertada o no, la anécdota captura perfectamente el pragmatismo de Pombal." },
       { tipo: "parrafo", texto: "Pombal organizó en días lo que hubiera tardado años en cualquier otra administración de la época. Militarizó la ciudad para evitar el saqueo. Instaló campos de refugiados en las colinas. Creó brigadas para enterrar los cadáveres (algunos fueron enterrados en el mar para evitar epidemias). Y luego se puso a diseñar la nueva Lisboa." },
       { tipo: "parrafo", texto: "El plan de Pombal para reconstruir la Baixa (el barrio más destruido) fue revolucionario. Calles rectilíneas trazadas en cuadrícula, lo que en 1755 era una modernidad urbanística extraordinaria. Edificios estandarizados con estructuras de madera llamadas 'gaiola pombalina' (jaula pombalina), un sistema antisísmico que los ingenieros modernos todavía admiran. Plazas regulares que conectaban la nueva ciudad con el río." },
-      { tipo: "tip", texto: "La Baixa Pombalina —el corazón moderno de Lisboa— fue construida sobre los escombros del terremoto. Cada vez que caminas por la Rua Augusta o la Praça do Comércio, estás en un barrio que fue diseñado de cero hace menos de 270 años." },
+      { tipo: "tip", texto: "La Baixa Pombalina se reconstruyó después del terremoto. Al caminar por la Rua Augusta o la Praça do Comércio puedes reconocer la cuadrícula y las plazas de aquel proyecto." },
       { tipo: "subtitulo", texto: "El Impacto Filosófico: Voltaire y el Problema del Mal" },
       { tipo: "parrafo", texto: "El terremoto de Lisboa no solo destruyó edificios: sacudió los cimientos intelectuales del siglo XVIII. En un período en que filósofos como Leibniz argumentaban que vivimos en 'el mejor de los mundos posibles' gracias a la providencia divina, la destrucción de una ciudad el Día de Todos los Santos mientras sus habitantes estaban en misa fue un argumento poderoso en contra." },
       { tipo: "parrafo", texto: "Voltaire escribió su célebre 'Poème sur le désastre de Lisbonne' solo tres semanas después del terremoto, atacando la filosofía del optimismo: ¿Cómo puede ser este el mejor mundo posible si en él ocurren estas catástrofes? Su novela Cándido, publicada cuatro años después, tiene en el terremoto de Lisboa uno de sus episodios centrales y sigue siendo hoy la crítica literaria más brillante del optimismo irreflexivo." },
       { tipo: "parrafo", texto: "El debate filosófico generado por el terremoto de Lisboa contribuyó al desarrollo de lo que llamamos la teodicea moderna (el problema de cómo puede existir el mal si Dios es todopoderoso y bueno) y al nacimiento de una visión más secular del mundo que caracterizaría la Ilustración." },
       { tipo: "subtitulo", texto: "Qué Ver Hoy: Las Huellas del Terremoto en Lisboa" },
       { tipo: "parrafo", texto: "La Lisboa que visitas hoy fue construida en su mayor parte después de 1755. Pero hay rastros visibles de la catástrofe y la reconstrucción en toda la ciudad. Las ruinas del Convento do Carmo, en el Chiado, fueron dejadas deliberadamente como memorial del terremoto: la nave de la iglesia está abierta al cielo, con las columnas góticas supervivientes apuntando hacia arriba como dedos. Es el monumento accidental más elocuente de Lisboa." },
-      { tipo: "parrafo", texto: "La Praça do Comércio, la gran plaza frente al Tajo, fue diseñada por Pombal como entrada triunfal a la nueva Lisboa. Antes se llamaba Terreiro do Paço porque ahí estaba el Palácio da Ribeira, la residencia real destruida por el terremoto. La estatua ecuestre del rey José I en el centro fue la primera estatua pública de un monarca europeo fundida en bronce." },
+      { tipo: "parrafo", texto: "La Praça do Comércio forma parte de la reconstrucción posterior al terremoto. El nombre Terreiro do Paço recuerda el Palácio da Ribeira, la residencia real destruida en 1755. La estatua ecuestre de bronce de José I preside el centro de la plaza." },
       { tipo: "tip", texto: "En el Museu de Lisboa (Palácio Pimenta) hay maquetas y grabados que muestran la Lisboa pre y post-terremoto. Es la mejor manera de entender qué cambió y qué se perdió ese 1 de noviembre de 1755." }
     ]
   },
   "descubrimientos-portugueses-lisboa": {
+    dateModified: "2026-10-24",
+    fechaActualizacion: "Corrección parcial revisada el 24 de octubre de 2026",
+    fuentes: [{"label":"Museu de Marinha — llegada portuguesa a Tanegashima en 1543","href":"https://cultura.marinha.pt/pt/museumarinha_web/multimedia_web/Paginas/espingarda-tanegashima.aspx"}],
     titulo: "La Era de los Descubrimientos: Cómo Lisboa Dominó el Mundo",
     seoTitle: "La era de los Descubrimientos",
     descripcion: "En el siglo XV, Lisboa era la capital del mundo. Vasco de Gama, Cabral, Magallanes: todo partió desde aquí. La historia de cuando Portugal cambió la historia de la humanidad.",
@@ -4723,7 +4731,7 @@ const articles: Record<string, Article> = {
     fecha: "15 Mar 2026",
     minutos: 16,
     contenido: [
-      { tipo: "parrafo", texto: "Hubo un período de poco más de cien años, entre 1415 y 1542, en que Portugal —un pequeño reino en el extremo occidental de Europa, con apenas un millón de habitantes— conectó el mundo. Comerciantes portugueses llegaron a Brasil, a India, a China, a Japón, a las costas de África. Vasco de Gama encontró la ruta marítima a las especias. Pedro Álvares Cabral llegó a Brasil. Fernando de Magallanes (Fernando Magalhães), aunque al servicio de España, era portugués y su expedición completó la primera vuelta al mundo." },
+      { tipo: "parrafo", texto: "Durante los siglos XV y XVI, la expansión marítima portuguesa conectó rutas de Europa, África, Asia y América, mediante comercio, conquista y colonización. La llegada portuguesa a Japón se fecha en 1543, según el Museu de Marinha. Vasco de Gama abrió la ruta marítima a India alrededor de África y Pedro Álvares Cabral llegó a Brasil. La expedición iniciada por Fernando de Magallanes, portugués al servicio de España, completó la primera vuelta al mundo." },
       { tipo: "parrafo", texto: "Todo partió de Lisboa. El barrio de Belém, hoy un barrio tranquilo de museos y jardines junto al río, era entonces el puerto del que salían las expediciones portuguesas." },
       { tipo: "subtitulo", texto: "El Infante Don Henrique y el Principio de Todo" },
       { tipo: "parrafo", texto: "La historia de los descubrimientos empieza en 1415 con la conquista de Ceuta, la primera posesión portuguesa en África. El artífice fue el Infante Dom Henrique, hijo del rey João I y de Felipa de Lancaster (inglesa). Henrique no era un navegante: era un organizador, un financiador, un visionario. Instalado en Sagres, en el extremo suroeste de Portugal, reunió cartógrafos, navegantes, matemáticos y astrónomos, y creó lo que podría llamarse el primer centro de investigación aplicada de la historia." },
@@ -4752,15 +4760,17 @@ const articles: Record<string, Article> = {
     imageAlt: "Aldaba de bronce con cabeza de león en una puerta antigua de Lisboa",
     categoria: "Cultura",
     fecha: "12 Mar 2026",
-    fechaActualizacion: "Actualizado en septiembre de 2026",
-    dateModified: "2026-09-21",
+    fechaActualizacion: "Corrección parcial revisada el 24 de octubre de 2026",
+    dateModified: "2026-10-24",
     minutos: 13,
     fuentes: [
       { label: "MMP — Museu Nacional do Azulejo (ficha oficial, estado: cerrado por obras)", href: "https://www.museusemonumentos.pt/pt/museus-e-monumentos/museu-nacional-do-azulejo" },
       { label: "MMP — El Museu Nacional do Azulejo cierra por obras desde el 1/11/2025", href: "https://www.museusemonumentos.pt/pt/noticia-com/museu-nacional-do-azulejo-e-museu-nacional-do-teatro-e-da-danca-encerram-para-obras-de-requalificacao" },
       { label: "CARRIS — línea 742 (parada Igreja Madre Deus)", href: "https://www.carris.pt/viaje/carreiras/742/" },
       { label: "Visit Lisboa — Azulejos de Lisboa y advertencia sobre piezas antiguas", href: "https://www.visitlisboa.com/es/sitios/azulejos-de-lisboa" },
-    ],
+          {"label":"Metro Lisboa — arte de la estación Picoas","href":"https://www.metrolisboa.pt/viajar/picoas/"},
+      {"label":"Metro Lisboa — arte de la estación Parque","href":"https://www.metrolisboa.pt/viajar/parque/"},
+],
     contenido: [
       { tipo: "parrafo", texto: "Hay una imagen de Lisboa que no aparece en las postales pero que cualquier visitante lleva consigo para siempre: la pared de una casa cubierta de azulejos azules y blancos, desgastados por el tiempo, con pequeñas grietas donde crece una planta diminuta. O la fachada de una iglesia entera vestida de cerámica policromada, brillando bajo el sol de la tarde. O el interior de una estación de metro decorada con paneles narrativos del siglo XX que parecen miniaturizaciones de la historia de Portugal." },
       { tipo: "parrafo", texto: "Los azulejos son el arte más democrático de Portugal: están en los palacios y en las fachadas de los edificios modestos, en las estaciones de tren y en los bares de barrio, en las iglesias más ricas y en las escaleras de las casas de vecinos. Entender los azulejos es entender Portugal." },
@@ -4776,7 +4786,7 @@ const articles: Record<string, Article> = {
       { tipo: "tip", texto: "Cuando reabra, el museo está en Madre de Deus (Xabregas), al este del centro: se llega en los autobuses 718 o 742 de Carris (parada Igreja Madre Deus). El tranvía 28E no pasa por allí. Merece la visita aunque sea solo por el Gran Panorama." },
       { tipo: "subtitulo", texto: "Los Mejores Azulejos de Lisboa: Una Ruta" },
       { tipo: "parrafo", texto: "Además del museo, Lisboa es en sí misma un museo de azulejos al aire libre. En Alfama, casi cada esquina tiene su sorpresa: fachadas de casas cubiertas de azulejos desgastados, escaleras interiores decoradas, pequeñas capillas con retablos de cerámica. El Mirador de Santa Luzia tiene los paneles históricos más fotografiados de la ciudad. La Iglesia de São Vicente de Fora tiene los paneles más narrativos." },
-      { tipo: "parrafo", texto: "En las estaciones de metro de Lisboa, los azulejos del siglo XX son una galería de arte gratuita. La estación de Parque tiene murales de Maria Keil; Picoas tiene obras de Eduardo Nery; Olaias tiene una decoración total que convierte el andén en una obra de arte contemporáneo. Muchos lisboetas van específicamente a visitar las estaciones de metro por su valor artístico." },
+      { tipo: "parrafo", texto: "El arte también forma parte de las estaciones del Metro. Picoas tiene intervenciones de Maria Keil y Martins Correia; Parque reúne obras de Maria Keil, Françoise Schein y Federica Matta. Olaias destaca por la integración de arquitectura y arte. Consulta las fichas del Metro para identificar a los autores de cada estación; para entrar en la zona de andenes necesitas un título de transporte válido." },
       { tipo: "parrafo", texto: "En la Feira da Ladra (martes y sábados) y en algunos anticuarios verás azulejos antiguos a la venta. Mejor no comprarlos: Visit Lisboa advierte de que muchas piezas históricas desaparecen de las fachadas por robos destinados a la venta ilegal. Si quieres llevarte uno, elige reproducciones o cerámica actual de procedencia clara." }
     ]
   },
@@ -5672,7 +5682,7 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
     { q: '¿Hace frío en Lisboa en diciembre?', a: 'Poco: la máxima media es de unos 15 °C y la mínima de unos 9 °C. Lo que hace falta es ropa para la lluvia, porque llueve una media de 10 días al mes.' },
   ],
   'obidos-vila-natal': [
-    { q: "¿Cuándo es Óbidos Vila Natal 2026?", a: "Del 27 de noviembre de 2026 al 3 de enero de 2027, según la agenda del Ayuntamiento de Óbidos. El horario por días de 2026 aún no está publicado; en 2025 abría de 11:00 a 20:00 de lunes a jueves y de 10:00 a 21:00 de viernes a domingo." },
+    { q: "¿Cuándo es Óbidos Vila Natal 2026?", a: "Del 27 de noviembre de 2026 al 3 de enero de 2027. Consulta en la tabla de esta guía el horario de tu día." },
     { q: "¿Cuánto cuesta la entrada?", a: "En 2026, 12 € la general, 8 € de 3 a 11 años y 11 € estudiantes y mayores de 65. La familia de 2 adultos y 2 niños cuesta 36 €. En la taquilla online hay un vale de preventa a 6 €. Entrar al pueblo de Óbidos es gratis." },
     { q: "¿Cómo voy de Lisboa a Óbidos sin coche?", a: "En el autobús Rápida Verde de Rodoviária do Oeste, desde Campo Grande. Tarda 1 hora y el billete sencillo cuesta 9,45 €. El último de vuelta sale de Óbidos a las 21:45." },
     { q: "¿Puedo ir en tren?", a: "Se puede, pero no compensa: desde marzo de 2026 el tramo entre Meleças y Caldas da Rainha se hace en autobús de sustitución de CP, que tarda unas 2 horas y 10 minutos solo desde Meleças." },

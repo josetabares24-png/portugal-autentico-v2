@@ -1,0 +1,457 @@
+{
+  "date": "2026-10-26",
+  "head": "f6db655b656c371c3a1966aacba8a6f067d334d4",
+  "origin": "https://portugal-autentico-v2-odr51y8n4-estabaenlisboa.vercel.app",
+  "views": [
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en",
+      "scrollWidth": 312,
+      "toc": 0,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-airport-to-city-centre",
+      "scrollWidth": 312,
+      "toc": 1,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-metro-guide",
+      "scrollWidth": 312,
+      "toc": 1,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-3-day-itinerary",
+      "scrollWidth": 312,
+      "toc": 1,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/pena-palace-tickets",
+      "scrollWidth": 312,
+      "toc": 1,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-free-walking-tours",
+      "scrollWidth": 312,
+      "toc": 0,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en",
+      "scrollWidth": 382,
+      "toc": 0,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-airport-to-city-centre",
+      "scrollWidth": 382,
+      "toc": 1,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-metro-guide",
+      "scrollWidth": 382,
+      "toc": 1,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-3-day-itinerary",
+      "scrollWidth": 382,
+      "toc": 1,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/pena-palace-tickets",
+      "scrollWidth": 382,
+      "toc": 1,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 844,
+      "lang": "en",
+      "path": "/en/lisbon-free-walking-tours",
+      "scrollWidth": 382,
+      "toc": 0,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en",
+      "scrollWidth": 404,
+      "toc": 0,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en/lisbon-airport-to-city-centre",
+      "scrollWidth": 404,
+      "toc": 1,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en/lisbon-metro-guide",
+      "scrollWidth": 404,
+      "toc": 1,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en/lisbon-3-day-itinerary",
+      "scrollWidth": 404,
+      "toc": 1,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en/pena-palace-tickets",
+      "scrollWidth": 404,
+      "toc": 1,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 915,
+      "lang": "en",
+      "path": "/en/lisbon-free-walking-tours",
+      "scrollWidth": 404,
+      "toc": 0,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en",
+      "scrollWidth": 760,
+      "toc": 0,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en/lisbon-airport-to-city-centre",
+      "scrollWidth": 760,
+      "toc": 1,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en/lisbon-metro-guide",
+      "scrollWidth": 760,
+      "toc": 1,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en/lisbon-3-day-itinerary",
+      "scrollWidth": 760,
+      "toc": 1,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en/pena-palace-tickets",
+      "scrollWidth": 760,
+      "toc": 1,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1024,
+      "lang": "en",
+      "path": "/en/lisbon-free-walking-tours",
+      "scrollWidth": 760,
+      "toc": 0,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en",
+      "scrollWidth": 1432,
+      "toc": 0,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en/lisbon-airport-to-city-centre",
+      "scrollWidth": 1432,
+      "toc": 1,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en/lisbon-metro-guide",
+      "scrollWidth": 1432,
+      "toc": 1,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en/lisbon-3-day-itinerary",
+      "scrollWidth": 1432,
+      "toc": 1,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en/pena-palace-tickets",
+      "scrollWidth": 1432,
+      "toc": 1,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    },
+    {
+      "brokenImages": [],
+      "h1": 1,
+      "height": 1000,
+      "lang": "en",
+      "path": "/en/lisbon-free-walking-tours",
+      "scrollWidth": 1432,
+      "toc": 0,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    }
+  ]
+}

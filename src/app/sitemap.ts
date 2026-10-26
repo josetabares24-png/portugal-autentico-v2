@@ -81,11 +81,11 @@ const CONTENT_LAST_MODIFIED: Record<string, string> = {
   '/actividades/tasca-tradicional': '2026-10-09',
   '/actividades/cristo-rei': '2026-10-09',
   // Versión inglesa: publicada y retocada el 23/10 (PR #116).
-  '/en': '2026-10-23',
+  '/en': '2026-10-26',
   '/en/lisbon-airport-to-city-centre': '2026-10-23',
   '/en/lisbon-metro-guide': '2026-10-23',
   '/en/lisbon-3-day-itinerary': '2026-10-23',
-  '/en/pena-palace-tickets': '2026-10-23',
+  '/en/pena-palace-tickets': '2026-10-26',
   '/en/lisbon-free-walking-tours': '2026-10-23',
 };
 

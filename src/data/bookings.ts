@@ -284,7 +284,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     provider: 'tiqets',
     category: 'entradas',
     blurb:
-      'La panorámica más completa del centro histórico, y la cola de la puerta se salta llevando la entrada comprada.',
+      'Murallas, jardines y vistas sobre el centro. Comprar antes evita la taquilla; comprueba las condiciones de acceso de tu billete.',
     kind: 'Entrada',
     image: '/images/actividades/castelo-sao-jorge-lisboa.webp',
     imageAlt: 'Murallas y torres del Castelo de São Jorge sobre Lisboa',

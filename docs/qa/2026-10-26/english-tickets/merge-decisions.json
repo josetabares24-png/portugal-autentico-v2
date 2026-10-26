@@ -1,0 +1,82 @@
+[
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 1,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 2,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 3,
+    "decision": "ours: retain explicit 2026 row label, same hours"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 4,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 5,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 6,
+    "decision": "combined: canonical official source plus new presale source"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 7,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 8,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 9,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/app/[locale]/blog/[slug]/page.tsx",
+    "hunk": 10,
+    "decision": "combined: published-hours FAQ plus latest transport/prices/closures"
+  },
+  {
+    "file": "src/data/activities.ts",
+    "hunk": 1,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/data/blog-posts.ts",
+    "hunk": 1,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/data/blog-posts.ts",
+    "hunk": 2,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/data/ticket-guides.ts",
+    "hunk": 1,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/data/ticket-guides.ts",
+    "hunk": 2,
+    "decision": "main: newer published verification"
+  },
+  {
+    "file": "src/data/ticket-guides.ts",
+    "hunk": 3,
+    "decision": "main: newer published verification"
+  }
+]

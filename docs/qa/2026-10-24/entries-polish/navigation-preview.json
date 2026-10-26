@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "menuOpen": false,
+    "path": "/en/pena-palace-tickets"
+  },
+  "escape": {
+    "closed": true,
+    "focusReturnedToSummary": true
+  },
+  "guideTouchHeight": 44
+}
