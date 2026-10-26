@@ -16,10 +16,6 @@ export default function EnglishPenaBooking({ url }: { url: string | null }) {
       <h3 id="pena-booking-title" className="mt-3 font-display text-2xl font-semibold not-italic">
         Palace and park tickets
       </h3>
-      <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-        An English-language booking page for the palace-and-park visit. Check
-        these details before choosing your date.
-      </p>
       <dl className="my-5 border-y border-border-soft">
         {englishPenaTicket.facts.map(([label, value]) => (
           <div
@@ -50,7 +46,6 @@ export default function EnglishPenaBooking({ url }: { url: string | null }) {
       </p>
       <p className="mt-3 text-xs leading-relaxed text-text-secondary">
         Ticket conditions checked <time dateTime={englishPenaTicket.checkedAt}>25 October 2026</time>.
-        Confirm the terms of your selected option before paying.
       </p>
     </aside>
   );
