@@ -35,6 +35,14 @@ No se comparan productos como si fueran idénticos solo por tener fotos parecida
 
 Control de fuente34/34: cuatro artículos ingleses enteros intactos; en Pena solo dos secciones y una fuente añadida; títulos, descripciónSEO, imágenes, esenciales, precios/horarios y enlaces existentes preservados. Manifiesto inglés, selección de tours, helper de reservas y componente de medición sin cambios respecto a670e9f3.
 
-Se validan build/TypeScript/lint, contrato inglés, preservación española y reservas. QA visual en anchos reales320/390/412/768/1440, un solo índice, anchors y CTA visible/comprensible sin overflow. No compras, formularios enviados o reservas simuladas. Resultados y Preview se registrarán al cerrar la comprobación.
+Aplicación verificada: `f6db655b656c371c3a1966aacba8a6f067d334d4`. [Preview READY](https://portugal-autentico-v2-odr51y8n4-estabaenlisboa.vercel.app/en/pena-palace-tickets), Next.js; acceso temporal entregado a José fuera de Git. No confundir el SHA de aplicación con el commit posterior que solo registra esta evidencia.
+
+- Build local genera142rutas; TypeScript y lint sin errores (un warning previo en ItineraryContextualCta: analyticsParams). Vercel compila el SHA final; seis checks de GitHub correctos, incluidos typecheck y seo-smoke.
+- Preview final: inglés224/224 en seisURLs, preservación española1659/1659 sobre72superficies del main integrado; migración1414/1414,106URLs de sitemap,114páginas y16redirects sin fallos. La Preview lleva noindex de plataforma; por ello no se ejecutan allí los106checks de indexabilidad pública que sí forman parte de los1520locales.
+- Treinta vistas reales: seisURLs inglesas por320/390/412/768/1440px. Dimensiones comprobadas, sin overflow horizontal, unaH1, lang=en, máximo un índice y sin imágenes cargadas rotas observadas. Es emulación de viewport, no prueba en dispositivos físicos ni Lighthouse.
+- Interacciones: abrir índice, Escape devuelve foco/cierra, elegir sección cierra en móvil, acordeón de cuatro fuentes y retorno repetido a la misma hash. El destino queda a96px bajo la cabecera. Un CTA afiliado de48px conserva producto, partner y campaña; no se pulsa.
+- Dos pruebas de reservas offline correctas; control de fuente34/34. Revisión React: componente de reserva en servidor, sin dependencia nueva; índice cliente con listener limpiado, un árbol DOM, anclas/semántica/foco nativos y animación que respeta movimiento reducido.
+
+[Evidencia, capturas y límites](qa/2026-10-26/english-tickets/README.md). No compras, clics afiliados, formularios enviados o reservas simuladas. No se ha medido un efecto sobre ventas o SEO.
 
 L003: Preview y revisión visual antes de merge. PR118 sigue en borrador, sin autorización de producción. Las dos URLs rechazadas por cuota de SearchConsole son una operación aparte; este trabajo no las reenvía automáticamente ni mide tráfico nuevo.

@@ -2,9 +2,9 @@
 
 ## D-084 — Claridad de las entradas inglesas antes de reservar
 **Date:** 2026-10-26
-**Status:** candidato PR118; Preview antes de producción
+**Status:** candidato PR118 verificado en Preview f6db655; revisión visual antes de producción
 
-José pide «pule entradas en ingles ahora» y continuar. Mantener piloto de seisURLs y pulir Pena/entrada desde Home. Comparación de alcance oficial, cambios y productoTiqets verificados con fuentes; un único CTA afiliado tras la respuesta/comparación. No nuevasURLs/productos, traducción masiva o cambio de atribución. Integrar main06d9e14 para conservar publicaciones recientes; resolver conflictos por contenido e intención, sin revertir la retirada de Clerk o la protección de Brevo. [Contrato y QA](../docs/english-ticket-polish.md). L003 mantiene revisión visual; no publicación autorizada.
+José pide «pule entradas en ingles ahora» y continuar. Mantener piloto de seisURLs y pulir Pena/entrada desde Home. Comparación de alcance oficial, cambios y productoTiqets verificados con fuentes; un único CTA afiliado tras la respuesta/comparación. No nuevasURLs/productos, traducción masiva o cambio de atribución. Integrar main06d9e14 para conservar publicaciones recientes; resolver conflictos por contenido e intención, sin revertir la retirada de Clerk o la protección de Brevo. Previewf6db655 READY: inglés224/español1659/migración1414 y30vistas correctos, con índice y navegación repetida verificados. [Contrato y QA](../docs/english-ticket-polish.md). L003 mantiene revisión visual; no publicación autorizada.
 
 Los IDs D-081 a D-083 preservan los tres registros del PR118 del24/10, renumerados el25/10 para evitar colisiones con D-073–D-080 incorporados desde main. Sus fechas y autorizaciones originales se conservan; los registros de main no se renumeran.
 

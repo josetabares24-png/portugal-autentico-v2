@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "head": "f6db655b656c371c3a1966aacba8a6f067d334d4",
+  "sameHashResult": {
+    "hash": "#where-to-book",
+    "targetTop": 95.859375
+  },
+  "escape": {
+    "closed": true,
+    "focused": true
+  },
+  "mobileLinkClosed": true,
+  "sourcesOpened": true,
+  "sourceCount": 4,
+  "booking": {
+    "affiliateButtons": 1,
+    "cardBottom": 722.953125,
+    "cardTop": 96.203125,
+    "ctaHeight": 48,
+    "href": "https://www.tiqets.com/en/sintra-attractions-c76496/tickets-for-national-palace-of-pena-park-entry-ticket-p1120392/?partner=estaba_en_lisboa-189233&tq_campaign=web_en_pena-palace-tickets",
+    "overflow": false
+  },
+  "purchaseOrAffiliateClick": false
+}

@@ -30,3 +30,7 @@ Validar build, TypeScript y lint; smoke inglés y preservación española contra
 ## Gate y riesgos
 
 L003: Preview y revisión visual antes de producción. No autorización de merge de118 por esta petición. Fuentes y fechas factuales permanecen22/23octubre; no afirmar revisión de precios hoy. Riesgo: desplazamiento de líneas por cambio de fuente; se verificará en anchos pequeños. Nuevo índice es un componente cliente pequeño, sin dependencias y sin duplicar enlaces en dos árboles.
+
+## Cierre de QA — 26 octubre
+
+El lote se integra con main06d9e14 y con el pulido específico de Pena, en la mismaPR118. La nota de fechas anterior describe el alcance del24/10; el lote de entradas diferencia comprobación factual25/10 y cambio26/10. Preview final de aplicaciónf6db655 READY: seisURLs por cinco anchos reales,30vistas sin overflow; índice, Escape, cierre móvil y retorno a la misma hash verificados. Inglés224, preservación española1659/72 y migración1414 pasan. [Resultados y capturas](english-ticket-polish.md#qa-y-entrega). La aplicación sigue sin publicar; la revisión visual del conjunto continúa pendiente.

@@ -1,0 +1,142 @@
+{
+  "base": "670e9f3ad805c8990be77c22744ef055b283fb40",
+  "checks": [
+    {
+      "name": "same five English article slugs",
+      "pass": true
+    },
+    {
+      "name": "lisbon-airport-to-city-centre whole article unchanged",
+      "pass": true
+    },
+    {
+      "name": "lisbon-metro-guide whole article unchanged",
+      "pass": true
+    },
+    {
+      "name": "lisbon-3-day-itinerary whole article unchanged",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved slug",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved category",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved title",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved description",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved image",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved imageAlt",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved answer",
+      "pass": true
+    },
+    {
+      "name": "Pena preserved essentials",
+      "pass": true
+    },
+    {
+      "name": "Pena section ID preserved choose-the-visit",
+      "pass": true
+    },
+    {
+      "name": "Pena section heading preserved choose-the-visit",
+      "pass": true
+    },
+    {
+      "name": "Pena existing official links preserved",
+      "pass": true
+    },
+    {
+      "name": "Pena two decision rows",
+      "pass": true
+    },
+    {
+      "name": "Pena section ID preserved entry-time",
+      "pass": true
+    },
+    {
+      "name": "Pena section heading preserved entry-time",
+      "pass": true
+    },
+    {
+      "name": "Pena section unchanged entry-time",
+      "pass": true
+    },
+    {
+      "name": "Pena section ID preserved where-to-book",
+      "pass": true
+    },
+    {
+      "name": "Pena section heading preserved where-to-book",
+      "pass": true
+    },
+    {
+      "name": "Pena booking placement and links preserved",
+      "pass": true
+    },
+    {
+      "name": "Pena section ID preserved from-lisbon",
+      "pass": true
+    },
+    {
+      "name": "Pena section heading preserved from-lisbon",
+      "pass": true
+    },
+    {
+      "name": "Pena section unchanged from-lisbon",
+      "pass": true
+    },
+    {
+      "name": "Pena section ID preserved weather-and-walking",
+      "pass": true
+    },
+    {
+      "name": "Pena section heading preserved weather-and-walking",
+      "pass": true
+    },
+    {
+      "name": "Pena section unchanged weather-and-walking",
+      "pass": true
+    },
+    {
+      "name": "Pena sources add exactly one precise official source",
+      "pass": true
+    },
+    {
+      "name": "lisbon-free-walking-tours whole article unchanged",
+      "pass": true
+    },
+    {
+      "name": "src/data/english-walking-tours.json byte content preserved",
+      "pass": true
+    },
+    {
+      "name": "src/data/english-pilot-routes.json byte content preserved",
+      "pass": true
+    },
+    {
+      "name": "src/lib/english-bookings.ts byte content preserved",
+      "pass": true
+    },
+    {
+      "name": "src/components/english/EnglishBookingLink.tsx byte content preserved",
+      "pass": true
+    }
+  ],
+  "failures": []
+}

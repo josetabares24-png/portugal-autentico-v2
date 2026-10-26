@@ -11,3 +11,5 @@ Combinaciones deliberadas: conservar la etiqueta2026 de la fila Óbidos; conserv
 Los IDs de decisiones locales073–075 colisionaban con los incorporados de main. Sus registros pasan a081–083 con nota explícita y sus fechas originales;073–080 de main permanecen intactos. No se reescribe la historia de autorizaciones.
 
 La comparación y los checks se ejecutan antes de completar el merge de rama. El pulido de entradas irá en otro commit, con su Preview y QA. El reenvío de indexación en Search Console del25/10 fue una operación separada:11solicitudes aceptadas, Torre/enero rechazadas por cuota y sitemap reenviadoCorrecto. Solicitud no equivale a indexación confirmada.
+
+Cierre26/10: merge670e9f3 completado y aplicación posteriorf6db655 verificada en Preview. Preservación española1659/72 contra el baseline recién integrado, inglés224 y migración1414/106URLs/16redirects sin fallos. [Informe de entradas](english-ticket-polish.md). Producción06d9e14 no modificada por este trabajo.
