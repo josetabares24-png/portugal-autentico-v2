@@ -1,8 +1,14 @@
 # Decision log
 
+## D-085 — Publicar PR118 después de revisar la Preview
+**Date:** 2026-10-26
+**Status:** publicado y verificado
+
+José responde «publica» tras recibir la Preview/captura final y el estado de PR118. Autoriza ese candidato; no una expansión del piloto o cambios nuevos. Se mantiene el headed5eb7e, seisCI correctos, sin conflictos ni hilos pendientes; merge normal96162fe y Vercel READY/production con alias públicos. QA posterior224inglés/1659español/1520migración/66free tours y16vistas correctos. El pulido previo de entradas/móvil/editorial del PR y las decisiones D082/D083/D084 quedan publicados. [Registro, alcance y límites](../docs/pr118-production.md). No compras, configuración externa ni más URLs; aprobación no transferida a futuros cambios funcionales.
+
 ## D-084 — Claridad de las entradas inglesas antes de reservar
 **Date:** 2026-10-26
-**Status:** candidato PR118 verificado en Preview f6db655; revisión visual antes de producción
+**Status:** publicado el26/10 mediante PR118; ver D085
 
 José pide «pule entradas en ingles ahora» y continuar. Mantener piloto de seisURLs y pulir Pena/entrada desde Home. Comparación de alcance oficial, cambios y productoTiqets verificados con fuentes; un único CTA afiliado tras la respuesta/comparación. No nuevasURLs/productos, traducción masiva o cambio de atribución. Integrar main06d9e14 para conservar publicaciones recientes; resolver conflictos por contenido e intención, sin revertir la retirada de Clerk o la protección de Brevo. Previewf6db655 READY: inglés224/español1659/migración1414 y30vistas correctos, con índice y navegación repetida verificados. [Contrato y QA](../docs/english-ticket-polish.md). L003 mantiene revisión visual; no publicación autorizada.
 

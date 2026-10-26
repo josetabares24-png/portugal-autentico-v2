@@ -1,5 +1,9 @@
 # Experiments
 
+### 26 octubre — E019: pulido de PR118 publicado
+
+Autorización «publica» después de la Preview. Merge96162fe/PR118, Vercel READY/production, QA posterior correcto; [registro](../docs/pr118-production.md). E019 conserva D0 **24/10/2026** y sus fechas de observación. Anotar26/10 como cambio de presentación, índice y claridad de entradas; separar cohortes antes/después si aparece muestra suficiente, sin atribución causal con dos días de piloto. La QA de viewport móvil ahora sí verifica dimensiones reales; no equivale a prueba en teléfono físico. Reservas/comisiones siguen desconocidas. No se abre otro experimento SEO ni se alteran las conclusiones cerradas de main.
+
 ### 24 octubre — E019 inicia observación en producción
 
 PR116/headf53ba4b autorizado expresamente, mergeffe27e6 y Vercel producción READY con alias públicos. D0 **24/10/2026**. Inglés222/preservación1.659/migración1.490/Free tours66 pasan en dominio. No demuestra indexación, incremento de tráfico ni reservas. Revisiones propuestas30/60/90d:23/11,23/12 y22/01/2027, ampliando si no hay muestra. Clerk privado sigue pendiente por decisión explícita; móvil no certificado. [Evidencia](../docs/english-pilot-production.md).
