@@ -199,27 +199,27 @@ export default function EnglishArticle({ article }: { article: Article }) {
                   aria-label="Quick guide links"
                   className="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold"
                 >
-                  <Link
+                  <a
                     href="#essentials"
                     className="inline-flex min-h-11 items-center gap-2 border-b border-border-soft"
                   >
                     The essentials <span aria-hidden="true">↓</span>
-                  </Link>
+                  </a>
                   {isTours ? (
-                    <Link
+                    <a
                       href="#disponibilidad"
                       className="inline-flex min-h-11 items-center gap-2 border-b border-terracotta text-terracotta"
                     >
                       Find English tours <span aria-hidden="true">↓</span>
-                    </Link>
+                    </a>
                   ) : null}
                   {article.slug === "pena-palace-tickets" ? (
-                    <Link
+                    <a
                       href="#where-to-book"
                       className="inline-flex min-h-11 items-center gap-2 border-b border-terracotta text-terracotta"
                     >
                       Compare booking options <span aria-hidden="true">↓</span>
-                    </Link>
+                    </a>
                   ) : null}
                 </nav>
               </div>

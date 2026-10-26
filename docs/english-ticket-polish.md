@@ -17,6 +17,7 @@ DECISIÓN: conservar el productoTiqets p1120392, partner/campaña/eventos, un so
 - EnglishPenaBooking muestra admisión, transferencias opcionales y ausencia de reembolso/reprogramación publicada en el productoTiqets enlazado. Precio final consultado en el proveedor para fecha/opción; no cifra comercial hardcodeada, promesa de ahorro, disponibilidad inventada o prioridad para todas las modalidades.
 - CTA de48px mínimo, ancho de la tarjeta, aviso afiliado y proveedor nombrado. Mismos valores de atribución, partner, campaña y placement. Nuevo contenido específico en english-pena-ticket.ts, separado del componente.
 - Portada: descripción de la guía orientada a admisión, cambios y llegada. Misma foto, destino y medición.
+- Enlaces a secciones con anclas nativas: volver a elegir la misma sección después de desplazarse sigue desplazando hasta ella. Se corrige el fallo observado con la misma hash en la navegación de Next, conservando todos los destinos y el cierre del índice móvil.
 - Fecha de comprobación factual25/10 y presentación actualizada26/10 diferenciadas. Pena muestra «Ticket details reviewed/checked25October»; BlogPosting.dateModified y sitemap de Pena/Home reflejan el cambio real del26/10. Resto de fechas/fuentes inglesas conservadas.
 
 ## Fuentes y alcance de comprobación

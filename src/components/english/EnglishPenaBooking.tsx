@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { englishPenaTicket } from "@/data/english-pena-ticket";
 import { ENGLISH_PENA_CAMPAIGN } from "@/lib/english-bookings";
 import EnglishBookingLink from "./EnglishBookingLink";
@@ -42,7 +41,7 @@ export default function EnglishPenaBooking({ url }: { url: string | null }) {
       </EnglishBookingLink>
       <p className="mt-3 text-xs leading-relaxed text-text-secondary">
         Affiliate link. Your booking is handled by Tiqets.{" "}
-        <Link className="underline" href="#affiliate-policy">How these links work</Link>.
+        <a className="underline" href="#affiliate-policy">How these links work</a>.
       </p>
       <p className="mt-3 text-xs leading-relaxed text-text-secondary">
         Ticket conditions checked <time dateTime={englishPenaTicket.checkedAt}>25 October 2026</time>.

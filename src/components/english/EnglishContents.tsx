@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 type EnglishContentsProps = {
@@ -49,7 +48,7 @@ export default function EnglishContents({ sections }: EnglishContentsProps) {
       </summary>
       <nav aria-label="On this page" className="pb-2">
         {sections.map((section) => (
-          <Link
+          <a
             key={section.id}
             href={`#${section.id}`}
             className="flex min-h-11 items-center border-t border-border-soft py-3 font-body text-sm leading-relaxed transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
@@ -60,7 +59,7 @@ export default function EnglishContents({ sections }: EnglishContentsProps) {
             }}
           >
             {section.title}
-          </Link>
+          </a>
         ))}
       </nav>
     </details>
