@@ -1,8 +1,10 @@
-# 02 — Estado operativo de Tutabares
+# 02 — Estado operativo de Tu Tabares
 
 Actualizado: **2026-10-09 — Europe/Lisbon**
 
 ## Arquitectura editorial
+
+**Marca vigente:** Tu Tabares. El título histórico de la página Notion “Guiones — Tutabares” y las rutas antiguas de GitHub se conservan únicamente para localizar los materiales existentes.
 
 Notion:
 - **Guiones — Tutabares**
@@ -64,7 +66,7 @@ Sin guiones activos registrados al crear esta memoria.
 
 ## Decisiones vigentes
 
-Tutabares no será simplemente “turismo de Lisboa”.
+Tu Tabares no será simplemente “turismo de Lisboa”.
 
 Debe mezclar:
 - curiosidades;
@@ -110,7 +112,7 @@ Para Historia Animada:
 
 ## Próximo aprendizaje prioritario
 
-Necesitamos acumular al menos varias correcciones reales de José en Tutabares antes de considerar totalmente calibrada la voz de este proyecto.
+Necesitamos acumular al menos varias correcciones reales de José en Tu Tabares antes de considerar totalmente calibrada la voz de este proyecto.
 
 No copiar automáticamente la voz true crime palabra por palabra. Solo transferir principios de oralidad.
 

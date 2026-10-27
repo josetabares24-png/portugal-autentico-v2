@@ -1,14 +1,19 @@
-# TUTABARES — Memoria editorial
+# TU TABARES — Manual editorial especializado
+
+> La única memoria madre transversal es `MEMORIA-MADRE.md` del repositorio privado `rumbo-al-millon`. Este directorio conserva reglas de guiones, serie animada y aprendizaje de voz, pero no funciona como otro cerebro madre.
+
 
 Creado: **2026-09-27**
 
-Esta carpeta es el subcerebro editorial de **Tutabares**, marca personal de José ligada a Lisboa y Portugal, dentro de **Mente Lisboa**.
+**Nombre vigente de marca:** Tu Tabares. La carpeta `brain/tutabares/` mantiene una ruta histórica por compatibilidad con enlaces y documentación; no es el nombre público de la marca.
+
+Esta carpeta es el subcerebro editorial de **Tu Tabares**, marca personal de José ligada a Lisboa y Portugal, dentro de **Mente Lisboa**.
 
 Comparte contexto de ciudad, actualidad local, turismo y marca con `estabaenlisboa.com`, pero conserva una voz de vídeo propia. No mezclar automáticamente con el cerebro de true crime de `Estaba Investigando`.
 
 ## Preflight obligatorio
 
-Primero seguir el preflight general de `brain/README.md` cuando la tarea dependa del estado, estrategia o datos de Estaba en Lisboa. Después, antes de crear, revisar o proponer un guion de Tutabares, leer en este orden:
+Primero seguir el preflight general de `brain/README.md` cuando la tarea dependa del estado, estrategia o datos de Estaba en Lisboa. Después, antes de crear, revisar o proponer un guion de Tu Tabares, leer en este orden:
 
 1. `TUTABARES_MAESTRO.md`
 2. `01_IDENTIDAD_NARRATIVA.md`
@@ -42,7 +47,7 @@ Ese archivo es la fuente canónica de:
 - tensión cuando la historia la contiene;
 - rigor judicial.
 
-### Tutabares
+### Tu Tabares
 - Lisboa / Portugal;
 - curiosidades;
 - actualidad útil;

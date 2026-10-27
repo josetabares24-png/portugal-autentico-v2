@@ -1,10 +1,10 @@
-# 01 — Identidad narrativa de Tutabares
+# 01 — Identidad narrativa de Tu Tabares
 
 Versión: **1.0 — 2026-09-27**
 
 ## Voz
 
-Tutabares debe sonar:
+Tu Tabares debe sonar:
 - cercano;
 - curioso;
 - venezolano;
@@ -65,7 +65,7 @@ Compartida con Estaba Investigando:
 
 ## Humor
 
-Tutabares admite mucho más humor que true crime.
+Tu Tabares admite mucho más humor que true crime.
 
 Puede aparecer:
 - ironía;
@@ -154,7 +154,7 @@ Buenos cierres:
 
 La marca no necesita una muletilla fija.
 
-Tutabares debe reconocerse por:
+Tu Tabares debe reconocerse por:
 - la selección del tema;
 - la observación;
 - cómo José lo cuenta;
