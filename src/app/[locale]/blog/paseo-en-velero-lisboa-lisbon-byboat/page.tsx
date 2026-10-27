@@ -98,7 +98,7 @@ export default function LisbonByBoatArticle() {
             />
             <section className="article-surface mt-8" aria-label="Reservas de Lisbon ByBoat">
               <div className="article-content article-reading">
-                <h2>Consultar disponibilidad y reservar</h2>
+                <h2 id="reservas" className="scroll-mt-28">Consultar disponibilidad y reservar</h2>
                 <p>Los dos paseos se reservan directamente con Lisbon ByBoat. Puedes comprobar las fechas, las condiciones y el precio final antes de confirmar.</p>
                 <ul className="article-list">
                   <li><TourLink href={dayUrl}>Lisbon Sailing Tour · desde 45 €</TourLink></li>
