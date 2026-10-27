@@ -195,6 +195,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticUrls, ...guideUrls, ...activityUrls, ...blogUrls, ...englishUrls].map(withContentDate).filter(({ url }) => {
     const { pathname, search, hash } = new URL(url);
+    // Colaboración todavía en revisión: su ruta propia sirve noindex.
+    // Solo se incorpora al sitemap cuando se autorice su publicación.
+    if (pathname === '/blog/paseo-en-velero-lisboa-lisbon-byboat') return false;
     return !search && !hash && !isExcludedFromSitemap(pathname);
   });
 }

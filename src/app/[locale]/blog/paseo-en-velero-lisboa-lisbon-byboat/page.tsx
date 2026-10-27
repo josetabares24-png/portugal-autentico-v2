@@ -1,12 +1,8 @@
-import Image from 'next/image';
+import LisbonByBoatStory from '@/components/blog/LisbonByBoatStory';
 import type { Metadata } from 'next';
-import { ArticleHero } from '@/components/blog/ArticleHero';
-import { ArticleBody } from '@/components/blog/ArticleBody';
-import { ArticleToc } from '@/components/blog/ArticleToc';
 import { ArticleRelated } from '@/components/blog/ArticleRelated';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import type { Article } from '@/components/blog/article-types';
-import { slugify } from '@/components/blog/article-utils';
 import { blogPosts } from '@/data/blog-posts';
 
 const dayUrl = 'https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97-91056bb16516/experience/1163355';
@@ -58,10 +54,6 @@ const article: Article = {
   ],
 };
 
-const headings = article.contenido.filter((block) => block.tipo === 'subtitulo' && block.texto).map((block) => ({
-  title: block.texto!,
-  id: slugify(block.texto!),
-}));
 const relatedPosts = ['belem-barrio-guia', 'lisboa-en-pareja', 'como-moverse-por-lisboa'].flatMap((id) => {
   const post = blogPosts.find((post) => post.id === id);
   return post ? [post] : [];
@@ -70,74 +62,17 @@ const relatedPosts = ['belem-barrio-guia', 'lisboa-en-pareja', 'como-moverse-por
 export const metadata: Metadata = {
   title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat | Vista previa',
   description: article.descripcion,
+  alternates: { canonical: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat' },
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 };
-
-function TourLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="sponsored nofollow noopener noreferrer" className="inline-flex items-center gap-2 underline underline-offset-4 font-semibold text-terracotta hover:opacity-80">
-      {children} <span aria-hidden="true">↗</span>
-    </a>
-  );
-}
 
 export default function LisbonByBoatArticle() {
   return (
     <main id="main-content" className="article-page article-v2 bg-background-light">
-      <ArticleHero
-        article={article}
-        authorName="José Tabares"
-        heroImage={heroImage}
-        heroImageAlt={article.imageAlt}
-        isEditorialV2={true}
-      />
-      <div className="max-w-6xl mx-auto px-4 pb-16">
-        <div className="grid lg:grid-cols-[1fr,320px] gap-10">
-          <div className="min-w-0">
-            <div className="article-reading text-sm mb-6">
-              <p className="text-text-muted">Colaboración comercial con Lisbon ByBoat · Vista previa pendiente de aprobación</p>
-            </div>
-            <ArticleBody
-              article={article}
-              faqs={[]}
-              isEditorialV2={true}
-              photos={{}}
-              seoDescription={article.descripcion}
-              takeaways={[]}
-            />
-            <figure className="article-figure article-reading mt-8">
-              <Image src={photos.sailing} alt="Velero de Lisbon ByBoat navegando frente a Lisboa" width={980} height={551} unoptimized loading="lazy" className="article-figure-img" />
-              <figcaption className="mt-2 text-xs text-text-muted">Fotografía: Lisbon ByBoat</figcaption>
-            </figure>
-            <section className="article-surface mt-8" aria-label="Reservas de Lisbon ByBoat">
-              <div className="article-content article-reading">
-                <h2 id="reservas" className="scroll-mt-28">Consultar disponibilidad y reservar</h2>
-                <p>Los dos paseos se reservan directamente con Lisbon ByBoat. Puedes comprobar las fechas, las condiciones y el precio final antes de confirmar.</p>
-                <ul className="article-list">
-                  <li><TourLink href={dayUrl}>Lisbon Sailing Tour · desde 45 €</TourLink></li>
-                  <li><TourLink href={sunsetUrl}>Lisbon Sunset Sailing Tour · desde 60 €</TourLink></li>
-                  <li><TourLink href={allToursUrl}>Ver todas las experiencias</TourLink></li>
-                </ul>
-                <h2 id="mapa-embarque" className="scroll-mt-28">Mapa del punto de encuentro</h2>
-                <p>La zona de embarque habitual está junto al Padrão dos Descobrimentos. Comprueba siempre la ubicación exacta indicada en tu reserva.</p>
-                <div className="overflow-hidden rounded-md border border-border-soft">
-                  <iframe
-                    title="Mapa interactivo de Doca de Belém, Lisboa"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-9.215%2C38.690%2C-9.197%2C38.700&layer=mapnik&marker=38.694336%2C-9.20562"
-                    className="w-full h-[320px] border-0"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-                <p><a href={mapUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 text-terracotta">Abrir indicaciones en Google Maps ↗</a></p>
-                <p className="text-sm text-text-muted">Este contenido es una colaboración comercial. No constituye una reseña basada en una experiencia personal a bordo.</p>
-              </div>
-            </section>
-          </div>
-          <ArticleToc headings={[...headings, { title: 'Consultar disponibilidad y reservar', id: 'reservas' }, { title: 'Mapa del punto de encuentro', id: 'mapa-embarque' }]} />
-        </div>
+      <LisbonByBoatStory article={article} photos={photos} links={{ day: dayUrl, sunset: sunsetUrl, all: allToursUrl, map: mapUrl }} />
+      <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
         <ArticleRelated posts={relatedPosts} />
-        <div className="article-compact-ending max-w-2xl mx-auto mt-10">
+        <div className="article-compact-ending mx-auto mt-10 max-w-2xl">
           <ArticleFooter authorName="José Tabares" />
         </div>
       </div>
