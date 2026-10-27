@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Estaba en Lisboa · Bot de viaje</title>
+<style>
+:root{--n:#1A2B4A;--c:#F5EFE6;--t:#B8472E;--g:#6F665D;--l:#ddd4ca}
+*{box-sizing:border-box}body{margin:0;background:#f7f3ec;color:#222;font-family:Arial,sans-serif}.w{max-width:980px;margin:auto;padding:18px}
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--l);padding:10px 0 18px}
+.logo{font:18px Georgia;color:var(--n)}.logo b{font-size:32px;color:var(--t);font-weight:400}.tag{font-size:11px;color:var(--g)}
+.hero{padding:30px 0}.hero h1{font:50px/1 Georgia;margin:0 0 12px;color:var(--n)}.hero h1 em{color:var(--t);font-style:normal}.hero p{font:19px/1.5 Georgia;color:#4a4a4a;max-width:720px}
+.app{display:grid;grid-template-columns:1fr 290px;gap:18px}.chat,.side{background:#fff;border:1px solid var(--l)}
+.chat{min-height:650px;display:flex;flex-direction:column}.ch{padding:14px 16px;border-bottom:1px solid var(--l);font-weight:700;color:var(--n)}
+#msgs{flex:1;padding:18px;display:flex;flex-direction:column;gap:10px;overflow:auto;max-height:500px}.m{max-width:84%;padding:11px 13px;border-radius:14px;line-height:1.5;font-size:14px;white-space:pre-wrap}.b{background:#f0ece6}.u{background:var(--n);color:#fff;align-self:flex-end}
+#q{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}#q button{border:1px solid var(--l);background:white;padding:8px 10px;border-radius:999px;color:var(--n);font-size:12px}
+.composer{display:flex;gap:8px;border-top:1px solid var(--l);padding:12px}.composer input{flex:1;padding:12px;border:1px solid var(--l)}.composer button{border:0;background:var(--t);color:#fff;padding:0 16px;font-weight:700}
+.side{padding:16px;height:max-content}.side h2{font:24px Georgia;color:var(--n);margin:0 0 12px}.r{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #eee}.r span{color:var(--g);font-size:12px}.r b{font-size:12px;color:var(--n);text-align:right}.note{font-size:11px;line-height:1.5;color:var(--g);margin-top:16px}
+@media(max-width:760px){.app{grid-template-columns:1fr}.hero h1{font-size:40px}.tag{display:none}.chat{min-height:600px}}
+</style></head>
+<body><div class="w">
+<header><div class="logo">estaba en <b>Lisboa.</b></div><div class="tag">BOT LAB · página aislada</div></header>
+<section class="hero"><h1>Háblame de tu viaje.<br><em>Yo ordeno Lisboa.</em></h1><p>Escribe normal: “voy 4 días con mi novia, primera vez, presupuesto medio y quiero Sintra”. El bot recuerda el contexto, pregunta lo que falta y arma un plan con criterio.</p></section>
+<section class="app">
+<div class="chat"><div class="ch">Planificador de Lisboa</div><div id="msgs"></div><div id="q"></div><div class="composer"><input id="i" placeholder="Escribe aquí…"><button onclick="send()">Enviar</button></div></div>
+<aside class="side"><h2>Lo que entendí</h2>
+<div class="r"><span>Días</span><b id="days">—</b></div><div class="r"><span>Compañía</span><b id="party">—</b></div><div class="r"><span>Primera vez</span><b id="first">—</b></div><div class="r"><span>Presupuesto</span><b id="budget">—</b></div><div class="r"><span>Ritmo</span><b id="pace">—</b></div><div class="r"><span>Intereses</span><b id="ints">—</b></div><div class="r"><span>Cuestas</span><b id="mob">—</b></div>
+<p class="note">Reglas: utilidad antes que catálogo; no meter Sintra a la fuerza; movilidad puede bloquear rutas bonitas; afiliación solo cuando encaja con una decisión real.</p></aside>
+</section></div>
+<script>
+const S={days:null,party:null,first:null,budget:null,pace:null,ints:[],mob:null};
+const $=id=>document.getElementById(id), n=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function say(t,who='b'){const d=document.createElement('div');d.className='m '+who;d.textContent=t;$('msgs').appendChild(d);d.scrollIntoView({behavior:'smooth',block:'end'})}
+function quick(a=[]){$('q').innerHTML='';a.forEach(x=>{const b=document.createElement('button');b.textContent=x;b.onclick=()=>ask(x);$('q').appendChild(b)})}
+function parse(x){const t=n(x);let m=t.match(/\b([1-9])\s*dias?\b/);if(m)S.days=+m[1];
+if(/novia|novio|pareja|esposa|esposo/.test(t))S.party='pareja'; if(/ninos|hijos|familia/.test(t))S.party='familia'; if(/amigos|amigas/.test(t))S.party='amigos'; if(/voy solo|viajo solo|sola/.test(t))S.party='solo';
+if(/primera vez|nunca he ido|no conozco lisboa/.test(t))S.first='sí'; if(/ya fui|ya he ido|ya conozco|segunda vez/.test(t))S.first='no';
+if(/presupuesto bajo|ajustado|barato|economico|ahorrar/.test(t))S.budget='ajustado'; if(/presupuesto medio|medio/.test(t))S.budget='medio'; if(/comodo|presupuesto alto|puedo gastar/.test(t))S.budget='cómodo';
+if(/sin correr|tranquilo|con calma/.test(t))S.pace='tranquilo'; if(/equilibrado|ritmo medio/.test(t))S.pace='equilibrado'; if(/aprovechar mucho|intenso|ver mucho/.test(t))S.pace='intenso';
+if(/movilidad reducida|no puedo caminar/.test(t))S.mob='limitada'; else if(/evitar cuestas|no quiero cuestas|odio las cuestas/.test(t))S.mob='evitar'; else if(/camino bien|cuestas bien|me gusta caminar/.test(t))S.mob='bien';
+[['Sintra',/sintra|pena/],['historia',/historia|monumento|castillo|castelo/],['miradores',/mirador|fotos|fotografia/],['comida',/comida|gastronomia|restaurante|tasca/],['noche',/vida nocturna|bares|copas|discoteca/],['barrios',/barrios|alfama|graca|chiado/]].forEach(([k,r])=>{if(r.test(t)&&!S.ints.includes(k))S.ints.push(k)});draw()}
+function draw(){['days','party','first','budget','pace'].forEach(k=>$(k).textContent=S[k]??'—');$('ints').textContent=S.ints.length?S.ints.join(', '):'—';$('mob').textContent=S.mob??'—'}
+function missing(){return ['days','party','first','budget','pace','ints','mob'].filter(k=>k==='ints'?!S.ints.length:!S[k])}
+function askMissing(){const k=missing()[0];if(!k)return false;const q={days:['¿Cuántos días tendrás para recorrer Lisboa?',['2 días','4 días','6 días']],party:['¿Con quién viajas?',['Con mi pareja','Con amigos','Con niños','Voy solo']],first:['¿Es tu primera vez en Lisboa?',['Sí, primera vez','No, ya fui']],budget:['¿Cómo quieres cuidar el presupuesto?',['Presupuesto ajustado','Presupuesto medio','Puedo gastar un poco más']],pace:['¿Qué ritmo prefieres?',['Sin correr','Equilibrado','Quiero aprovechar mucho']],ints:['¿Qué te interesa más?',['Historia y barrios','Miradores y fotos','Comida','Sintra','Vida nocturna']],mob:['¿Cómo llevas las cuestas?',['Camino bien','Prefiero evitar cuestas','Movilidad reducida']]}[k];say(q[0]);quick(q[1]);return true}
+function plan(){let p=[];if(S.first==='sí')p.push('Día 1: Baixa + Chiado + Praça do Comércio');if(S.mob==='bien'&&(S.first==='sí'||S.ints.includes('historia')||S.ints.includes('barrios')))p.push('Día 2: Alfama + Castelo o miradores, en una sola subida');if((S.days||0)>=2)p.push('Belém: una visita interior fuerte + paseo junto al Tajo');if(S.party==='familia')p.push('Parque das Nações + Oceanário');if(S.ints.includes('miradores')&&S.mob!=='limitada')p.push('Graça + miradores agrupados');if(S.ints.includes('Sintra')&&(S.days||0)>=3)p.push('Sintra como día propio: Pena + centro + una segunda visita fuerte');if(S.first==='no')p.push('Lisboa menos monumental: barrios y ciudad cotidiana');
+p=[...new Set(p)].slice(0,Math.min(S.days||3,5));if(!p.length)p=['Día 1: centro histórico compacto','Día 2: Belém o Parque das Nações según interés'];
+let extra='';if(S.ints.includes('Sintra')&&(S.days||0)<3)extra='\n\nNo metería Sintra con tan pocos días: prefiero que Lisboa no se convierta en traslados.';
+return 'Yo lo ordenaría así:\n\n'+p.join('\n')+extra+'\n\nSi quieres, ahora te digo qué reservaría y qué dejaría gratis.'}
+function reserve(){let r=[];if(S.first==='sí')r.push('Free tours por zona: https://estabaenlisboa.com/free-tours-lisboa');if(S.mob==='bien'&&(S.ints.includes('historia')||S.first==='sí'))r.push('Castelo de São Jorge: https://gyg.me/xsuIYU11');if(S.ints.includes('Sintra')&&(S.days||0)>=3)r.push('Palacio da Pena + Parque: https://gyg.me/9i00hN0O');if(S.party==='familia')r.push('Oceanário: https://gyg.me/OIHaINA6');return r.length?'Para tu viaje sí veo sentido en:\n\n'+r.join('\n')+'\n\nNo compraría todo: son opciones contextuales.':'Ahora mismo no te empujaría a reservar nada. Primero cerraría la ruta.'}
+function respond(raw){const t=n(raw);if(/hazme.*plan|plan completo|organiza.*viaje|armame/.test(t)){if(!askMissing())say(plan());return}if(/que reservar|qué reservar|reservar/.test(t)){if(missing().length>2){say('Puedo decirte qué reservar, pero me faltan datos para no venderte cosas porque sí.');askMissing()}else say(reserve());return}if(/sintra/.test(t)){if(!S.days)say('Sin saber cuántos días tienes no te diría sí automáticamente. Para mí Sintra empieza a encajar de verdad a partir de 3 días.');else if(S.days<3)say('Con '+S.days+' días, yo no metería Sintra. Te roba demasiado tiempo de Lisboa.');else say('Sí la metería, pero como día propio: Pena si quieres entrar, centro de Sintra y como mucho una segunda visita fuerte.');return}if(/pagar|tarjeta|efectivo|cajero/.test(t)){say('Para pagos, usaría nuestra guía específica: https://estabaenlisboa.com/blog/como-pagar-en-portugal');return}if(/metro|transporte|mover/.test(t)){say('Para transporte, la base es esta guía: https://estabaenlisboa.com/blog/como-moverse-por-lisboa');return}if(missing().length){say('Perfecto, lo voy teniendo.');askMissing()}else{say('Ya tengo suficiente contexto. Pídeme “hazme mi plan completo” o “qué reservar”.');quick(['Hazme mi plan completo','¿Qué reservar?','¿Me conviene Sintra?'])}}
+function send(){const v=$('i').value.trim();if(!v)return;$('i').value='';say(v,'u');parse(v);quick([]);setTimeout(()=>respond(v),250)}
+function ask(x){$('i').value=x;send()}
+$('i').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+say('Hola. Cuéntame tu viaje como te salga. No hace falta seguir un formulario. Yo voy recordando el contexto y te pregunto lo que falte.');
+quick(['Voy 4 días con mi pareja, primera vez','Voy 2 días y quiero gastar poco','Ya conozco Lisboa y vuelvo 5 días']);
+</script></body></html>
