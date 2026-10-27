@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleBody } from '@/components/blog/ArticleBody';
@@ -13,6 +14,11 @@ const sunsetUrl = 'https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97
 const allToursUrl = 'https://www.lisbonbyboat.com/toursbyboat';
 const mapUrl = 'https://maps.app.goo.gl/kFC7h23W5V6RbtJV9';
 const heroImage = '/images/actividades/passeio-barco-rio-tejo-lisboa.webp';
+const photos = {
+  hero: 'https://static.wixstatic.com/media/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg/v1/fill/w_980,h_490,al_c,q_85/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg',
+  boat: 'https://static.wixstatic.com/media/79e18a_cd62c06ff9cd4d0c9b1ffb4a351f2ace.jpg/v1/fill/w_980,h_477,al_c,q_85/79e18a_cd62c06ff9cd4d0c9b1ffb4a351f2ace.jpg',
+  sailing: 'https://static.wixstatic.com/media/79e18a_641fb43002a542c6aecb5235a20edcf6~mv2_d_4096_2304_s_2.jpg/v1/fill/w_980,h_551,al_c,q_85/79e18a_641fb43002a542c6aecb5235a20edcf6~mv2_d_4096_2304_s_2.jpg',
+};
 const article: Article = {
   titulo: 'Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat',
   descripcion: 'Cómo descubrir Lisboa desde el río Tajo: dos paseos en velero de dos horas, precios, monumentos, embarque en Belém y reservas.',
@@ -56,7 +62,10 @@ const headings = article.contenido.filter((block) => block.tipo === 'subtitulo' 
   title: block.texto!,
   id: slugify(block.texto!),
 }));
-const relatedPosts = blogPosts.filter((post) => post.id !== 'paseo-en-velero-lisboa-lisbon-byboat' && /bel[eé]m|barco|tajo|crucero|actividades/i.test(post.id + ' ' + post.titulo)).slice(0, 3);
+const relatedPosts = ['belem-barrio-guia', 'lisboa-en-pareja', 'como-moverse-por-lisboa'].flatMap((id) => {
+  const post = blogPosts.find((post) => post.id === id);
+  return post ? [post] : [];
+});
 
 export const metadata: Metadata = {
   title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat | Vista previa',
@@ -74,7 +83,7 @@ function TourLink({ href, children }: { href: string; children: React.ReactNode 
 
 export default function LisbonByBoatArticle() {
   return (
-    <main id="main-content" className="article-page bg-background-light">
+    <main id="main-content" className="article-page article-v2 bg-background-light">
       <ArticleHero
         article={article}
         authorName="José Tabares"
@@ -96,6 +105,10 @@ export default function LisbonByBoatArticle() {
               seoDescription={article.descripcion}
               takeaways={[]}
             />
+            <figure className="article-figure article-reading mt-8">
+              <Image src={photos.sailing} alt="Velero de Lisbon ByBoat navegando frente a Lisboa" width={980} height={551} unoptimized loading="lazy" className="article-figure-img" />
+              <figcaption className="mt-2 text-xs text-text-muted">Fotografía: Lisbon ByBoat</figcaption>
+            </figure>
             <section className="article-surface mt-8" aria-label="Reservas de Lisbon ByBoat">
               <div className="article-content article-reading">
                 <h2 id="reservas" className="scroll-mt-28">Consultar disponibilidad y reservar</h2>
@@ -105,7 +118,7 @@ export default function LisbonByBoatArticle() {
                   <li><TourLink href={sunsetUrl}>Lisbon Sunset Sailing Tour · desde 60 €</TourLink></li>
                   <li><TourLink href={allToursUrl}>Ver todas las experiencias</TourLink></li>
                 </ul>
-                <h2>Mapa del punto de encuentro</h2>
+                <h2 id="mapa-embarque" className="scroll-mt-28">Mapa del punto de encuentro</h2>
                 <p>La zona de embarque habitual está junto al Padrão dos Descobrimentos. Comprueba siempre la ubicación exacta indicada en tu reserva.</p>
                 <div className="overflow-hidden rounded-md border border-border-soft">
                   <iframe
@@ -121,7 +134,7 @@ export default function LisbonByBoatArticle() {
               </div>
             </section>
           </div>
-          <ArticleToc headings={[...headings, { title: 'Consultar disponibilidad y reservar', id: 'reservas' }]} />
+          <ArticleToc headings={[...headings, { title: 'Consultar disponibilidad y reservar', id: 'reservas' }, { title: 'Mapa del punto de encuentro', id: 'mapa-embarque' }]} />
         </div>
         <ArticleRelated posts={relatedPosts} />
         <div className="article-compact-ending max-w-2xl mx-auto mt-10">
