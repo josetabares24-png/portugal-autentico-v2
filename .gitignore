@@ -44,3 +44,7 @@ next-env.d.ts
 
 # Snapshots de smoke-blog: se regeneran, no se versionan
 .snapshots/
+
+# Web Quality Bot: resultados generados, no versionados
+/.quality-reports/
+/.unlighthouse/
