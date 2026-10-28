@@ -3,7 +3,8 @@ import path from 'node:path';
 import { parseHTML } from 'linkedom';
 import { blogPosts } from '../src/data/blog-posts.ts';
 import { blogEditorialSelection } from '../src/data/blog-editorial-selection.ts';
-import { editorialNavigation, lisboaNavigation } from '../src/data/editorial-navigation.ts';
+import { editorialNavigation, lisboaNavigation, bookingNavigation, primaryNavigation } from '../src/data/editorial-navigation.ts';
+import { latestHomeArticles } from '../src/lib/home-latest-articles.ts';
 
 const origin = process.env.SMOKE_BASE_URL;
 if (!origin) throw new Error('Set SMOKE_BASE_URL to the build or Preview being checked.');
@@ -24,7 +25,7 @@ const selected = Object.values(blogEditorialSelection).flat();
 for (const id of selected) check(`selection exists in article catalog: ${id}`, blogPosts.some((post) => post.id === id));
 const targets = [...new Set([
   ...selected.map((id) => `/blog/${id}`), ...lisboaNavigation.map((link) => link.href),
-  ...editorialNavigation.map((link) => link.href), '/calculadora-presupuesto-lisboa', '/free-tours-lisboa', '/comprar-entradas',
+  ...editorialNavigation.map((link) => link.href), ...bookingNavigation.map((link) => link.href), '/calculadora-presupuesto-lisboa', '/free-tours-lisboa', '/comprar-entradas',
 ])];
 for (const href of targets) {
   const { status, document, url } = await page(href);
@@ -42,10 +43,14 @@ check('selected articles have crawlable links', selected.every((id) => cover.que
 const nav = cover.querySelector('nav[aria-label="Navegación principal"]');
 check('primary navigation exists', nav);
 const navLink = (label) => [...nav.querySelectorAll('a')].find((link) => link.textContent.trim() === label);
-check('Historias and Planifica open distinct pages', new URL(navLink('Historias')?.getAttribute('href'), origin).pathname !== new URL(navLink('Planifica')?.getAttribute('href'), origin).pathname);
+check('guides and planning open distinct pages', navLink('Guías e historias')?.getAttribute('href') === '/blog' && navLink('Planifica')?.getAttribute('href') === '/planifica-tu-viaje');
+check('four primary navigation sections', primaryNavigation.length === 4 && primaryNavigation.map((item) => item.label).join('|') === 'Lisboa|Escapadas|Planifica|Entradas y tours');
+check('four desktop primary controls', nav.querySelectorAll('[data-navigation-layout="desktop"] [data-primary-nav]').length === 4);
+check('four mobile primary controls', nav.querySelectorAll('#editorial-mobile-links [data-primary-nav]').length === 4);
 check('planning opens its existing page', navLink('Planifica')?.getAttribute('href') === '/planifica-tu-viaje');
 check('tickets accessible from both navigation layouts', [...nav.querySelectorAll('a[href="/comprar-entradas"]')].filter((link) => link.textContent.trim() === 'Entradas').length === 2);
-check('free tours accessible from both primary navigation layouts', [...nav.querySelectorAll('a[href="/free-tours-lisboa"]')].filter((link) => link.textContent.trim() === 'Free tours').length === 2 && editorialNavigation.some((link) => link.href === '/free-tours-lisboa'));
+check('free tours accessible from both grouped navigation layouts', [...nav.querySelectorAll('a[href="/free-tours-lisboa"]')].filter((link) => link.textContent.trim() === 'Free tours').length === 2 && bookingNavigation.some((link) => link.href === '/free-tours-lisboa'));
+check('tickets and free tours share the desktop group', nav.querySelector('#experiencias-desktop-links a[href="/comprar-entradas"]') && nav.querySelector('#experiencias-desktop-links a[href="/free-tours-lisboa"]'));
 for (const href of ['/planifica-tu-viaje', '/comprar-entradas']) {
   const { document } = await page(href);
   check(`functional destination retains noindex, follow: ${href}`, document.querySelector('meta[name=robots]')?.getAttribute('content') === 'noindex, follow');
@@ -68,6 +73,11 @@ for (const link of homePortals) {
 check('home retains a visible author destination', home.querySelector('main a[href="/sobre-nosotros"]'));
 check('home has a seasonal selection using existing guides', home.querySelectorAll('section[aria-labelledby=home-seasonal-title] a[href^="/blog/"]').length >= 2);
 check('home preserves internal free tour access', home.querySelector('main a[href="/free-tours-lisboa"]'));
+const latest = latestHomeArticles(blogPosts);
+const news = home.querySelector('section[aria-labelledby="articulos-sugeridos"]');
+check('home identifies its latest-publication section', news?.querySelector('h2')?.textContent.trim() === 'Lo último del blog');
+check('home contains exactly three latest published articles', news?.querySelectorAll('article').length === latest.length && latest.length === 3);
+check('home news uses catalog publication dates and destinations', latest.every((post) => news?.querySelector(`article a[href="/blog/${post.id}"]`) && [...news.querySelectorAll('time')].some((time) => time.textContent.trim() === post.fecha)));
 for (const script of home.querySelectorAll('script[type="application/ld+json"]')) {
   let valid = true;
   try { JSON.parse(script.textContent); } catch { valid = false; }

@@ -1,5 +1,9 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Ampliación solicitada —28 octubre
+
+José pregunta por la ausencia en Home y pide menos confusión en el header. Se prepara selección automática de publicaciones recientes y cuatro entradas principales, en commits separados de este mismo candidato. ByBoat continúa noindex y se excluye del feed hasta su publicación autorizada; el nuevo selector no convierte un borrador en artículo publicado. [Detalle y QA](../docs/home-latest-navigation-preview.md). La nueva revisión de portada/navegación también requiere Preview; no producción.
+
 ## Cierre de Preview — 28 octubre
 
 Aplicación09936f0, Previewayhzhtemq READY y seisCI correctos; PR120 borrador, revisión visual pendiente. Build144rutas, TypeScript y ESLint sin errores;39checks de contenido renderizado/fuente correctos (incluidos los diez párrafos/notas, objetoArticle y destinos/fotos existentes). QA SEO remota1424/1424:106URLs de sitemap,115páginas,16redirects; la nueva ruta noindex también se inspecciona. Cinco anchos reales320/390/412/768/1440 sin overflow, unaH1 y un índice; colores computados coinciden con la marca y los dos botones miden48px. Índice cerrado en móvil/abierto en escritorio, apertura con teclado y salto al mapa verificados; mapaOSM visible. [Informe y capturas](../docs/lisbon-byboat-brand-preview.md). Sin publicación, compra o correo. El bloqueo anterior de revisión automática fue por uso disponible, no por una acción insegura; al reanudar se aplicó la corrección por el flujo normal.
