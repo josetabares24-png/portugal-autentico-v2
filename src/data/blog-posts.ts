@@ -12,6 +12,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'paseo-en-velero-lisboa-lisbon-byboat',
+    titulo: 'Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat',
+    excerpt: 'Cómo es navegar por Lisboa en velero: recorridos de dos horas, opciones de día y al atardecer, precios y punto de embarque en Belém. Colaboración comercial.',
+    categoria: 'Guías',
+    fecha: '27 Oct 2026',
+    dateModified: '2026-10-27',
+    autor: 'José Tabares',
+    imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+  },
+  {
     id: 'portugal-en-7-dias',
     titulo: 'Portugal en 7 días: una ruta realista por Lisboa, Sintra y Oporto',
     excerpt: 'Una semana en Portugal sin convertir el viaje en una carrera: Lisboa, Sintra y Oporto con un solo traslado grande, trenes, noches recomendadas y alternativas.',

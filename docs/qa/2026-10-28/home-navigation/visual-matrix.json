@@ -1,0 +1,152 @@
+[
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/",
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/blog",
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/",
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/blog",
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 844,
+    "mobileToggleVisible": true,
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": true,
+    "path": "/",
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": true,
+    "path": "/blog",
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 0,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": true,
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/",
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/blog",
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/",
+    "scrollWidth": 1432,
+    "width": 1440
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/blog",
+    "scrollWidth": 1432,
+    "width": 1440
+  },
+  {
+    "brokenLoadedImages": 0,
+    "desktopPrimary": 4,
+    "h1": 1,
+    "height": 1000,
+    "mobileToggleVisible": false,
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "scrollWidth": 1432,
+    "width": 1440
+  }
+]

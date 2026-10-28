@@ -7,15 +7,13 @@ import TrackedInternalLink from '@/components/TrackedInternalLink';
 import HomeEssentials from '@/components/home/HomeEssentials';
 import TravelerDirectory from '@/components/home/TravelerDirectory';
 import { blogPosts } from '@/data/blog-posts';
+import { latestHomeArticles } from '@/lib/home-latest-articles';
+import { toIsoEditorialDate } from '@/lib/editorial-date';
 
 const HOME_URL = 'https://estabaenlisboa.com';
 const HOME_DESCRIPTION = 'Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.';
 
-const suggestedArticles = [
-  blogPosts.find((post) => post.id === 'historia-de-lisboa') || blogPosts[0],
-  blogPosts.find((post) => post.id === 'estacion-olaias-lisboa') || blogPosts[1],
-  blogPosts.find((post) => post.id === 'que-comprar-lisboa-souvenirs') || blogPosts[2],
-].filter(Boolean);
+const suggestedArticles = latestHomeArticles(blogPosts);
 
 const seasonalArticles = ['lisboa-cuando-llueve', 'lisboa-en-navidad', 'nochevieja-lisboa'].map((id) => {
   const post = blogPosts.find((article) => article.id === id);
@@ -156,11 +154,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10">
           <div className="mb-8 flex flex-col gap-5 border-b border-night/15 pb-6 sm:flex-row sm:items-end sm:justify-between md:mb-10">
             <div>
-              <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
-                Del blog
-              </p>
               <h2 id="articulos-sugeridos" className="font-display text-[2rem] not-italic leading-tight text-night md:text-[2.5rem]">
-                Para leer antes de ir.
+                Lo último del blog
               </h2>
             </div>
             <Link href="/blog" className="w-fit border-b border-night pb-1 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta">
@@ -188,7 +183,10 @@ export default function HomePage() {
                 </Link>
 
                 <div className={index === 0 ? 'pt-6' : 'pt-5 lg:pt-0'}>
-                  <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.12em] text-taupe">{post.categoria}</p>
+                  <p className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-body text-xs text-taupe">
+                    <span className="font-semibold uppercase tracking-[0.12em]">{post.categoria}</span>
+                    <time dateTime={toIsoEditorialDate(post.fecha)}>{post.fecha}</time>
+                  </p>
                   <Link href={`/blog/${post.id}`}>
                     <h3
                       className={`mb-3 font-display not-italic leading-[1.15] text-night transition-colors hover:text-terracotta ${index === 0 ? 'text-[1.9rem] md:text-[2.35rem]' : 'text-[1.6rem] lg:text-[1.4rem]'}`}
