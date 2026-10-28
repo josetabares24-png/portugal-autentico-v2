@@ -16,7 +16,7 @@ El objetoArticle completo y las constantes de fotos/enlaces son idénticos al ba
 
 ## Límites SEO del borrador
 
-URL: /blog/paseo-en-velero-lisboa-lisbon-byboat. Se conserva noindex/nofollow, metadata título/descripción y el acceso anterior que redirige a esta ruta. El DOM de la Preview anterior heredaba canonical de Home: se declara ahora canonical propio. El sitemap anterior incorporaba el registro de blog pese al noindex; se excluye solo este borrador. No cambios de URLs existentes, redirecciones de migración, indexabilidad del resto o robots.txt.
+URL: /blog/paseo-en-velero-lisboa-lisbon-byboat. Se conserva noindex, metadata título/descripción y el acceso anterior que redirige a esta ruta. El DOM de la Preview anterior heredaba canonical de Home: se declara ahora canonical propio. El sitemap anterior incorporaba el registro de blog pese al noindex; el borrador se añade a noindexPaths en la política SEO existente, para que página, sitemap y smoke compartan la decisión. Follow pasa a true conforme al contrato común de esas páginas; las reservas conservan rel sponsored/nofollow. No cambios de URLs existentes, redirecciones de migración, indexabilidad del resto o robots.txt.
 
 La publicación sigue requiriendo aprobación expresa y preparación específica: visibilidad/indexación, sitemap, documentación comercial y fotografías definitivas autorizadas. No debe activarse index por el mero hecho de aprobar la estética.
 

@@ -4,7 +4,7 @@
 
 Baselinee8f2830 de preview/lisbon-byboat-editorial; producción conocida96162fe (PR118 publicado). Nuevo componente servidor y CSSmodule local; ArticleToc/ArticleRelated/ArticleFooter y navegación/pie globales compartidos intactos. Datos del objetoArticle, precios45/60, enlaces Bokun/operador/mapa y URLs de las tres fotos exactamente preservados. Son fotos del sitio oficial ya usadas por la primera Preview; no se presentan como adjuntos del correo importados o experiencia personal de José. No nuevos datos/claims o integración comercial.
 
-Se corrigen dos límites del borrador: canonical heredado de Home pasa a la propia ruta; el artículo noindex se excluye del sitemap. Conserva noindex/nofollow y la redirección previa desde /colaboraciones. BlogClient sigue mostrándolo en la Preview. Sin publicación ni correo a Pedro autorizados por esta petición. Fuente/TypeScript/ESLint pasan; build y QA visual/Preview final se registrarán al cierre. No pago de50€ confirmado ni ingresos medidos.
+Se corrigen dos límites del borrador: canonical heredado de Home pasa a la propia ruta; el artículo noindex se declara en seo-url-policy.json y se excluye del sitemap usando el sistema existente. Noindex se conserva y follow se alinea con esa política común; los enlaces comerciales siguen sponsored/nofollow. Se conserva la redirección previa desde /colaboraciones. BlogClient sigue mostrándolo en la Preview. Sin publicación ni correo a Pedro autorizados por esta petición. Fuente/TypeScript/ESLint pasan; build y QA visual/Preview final se registrarán al cierre. No pago de50€ confirmado ni ingresos medidos.
 
 ## Historial — adaptación anterior
 
