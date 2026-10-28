@@ -1,5 +1,9 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Desplegado para feedback — 28 octubre
+
+José autoriza «Súbelo despliega…» sobre la entrega corregida de ByBoat. PR121 fusionado normalmente, head `1d20a26`, merge `006f698`, Vercel production `dpl_8H77vxVaLbYoSo4Uaq485CLokPX4` READY. URL pública estable `/blog/paseo-en-velero-lisboa-lisbon-byboat`, HTTP200; revisión visible/noindex/follow y fuera del sitemap hasta cerrar feedback del operador. Conservación39/SEO1530 en producción y QA visual remota en cinco anchos correctos. Home/header de PR120 siguen sin aprobar ni publicar. [Registro, evidencia y texto para José](../docs/byboat-public-review-release.md). No correo enviado ni pago/reserva inferidos. Esta publicación supersede las restricciones históricas de solo Preview de las notas siguientes; no autoriza activar indexación o el lote de Home/navegación.
+
 ## Corrección solicitada desde iPhone — 28 octubre
 
 Entrega corregida: aplicación `ae79d0f`, PR121 borrador independiente y Preview `njaxvlns1` READY; seis CI, build144/TypeScript/ESLint correctos. Conservación39 local/remota; SEO1530 local y1424 remoto con106URLs/16redirects, sin fallos. Cinco anchos locales320–1440 sin overflow ni cursivas en H1/H2/H3, precios en lectura26px y CTA48px sin flechas. El navegador no abrió el nuevo origen de Preview por fallo de revisión automática/cuota; QA visual local y controles HTTP remotos se distinguen en el informe. Producción intacta, sin correo ni pago. PR120 conserva el experimento Home/header pendiente y no debe fusionarse junto a esta revisión.

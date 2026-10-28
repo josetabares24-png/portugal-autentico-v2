@@ -1,3 +1,7 @@
+## 28 octubre 2026 — ByBoat público para feedback del operador
+
+José pide desplegarlo para poder enviar el correo y recibir comentarios. PR121/head `1d20a26` fusionado normalmente en `006f698`, seis checks correctos, sin conflictos/hilos pendientes. Vercel `dpl_8H77vxVaLbYoSo4Uaq485CLokPX4` READY/production y alias públicos asignados. [Artículo](https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat) HTTP200; queda noindex/follow, fuera del sitemap y con el aviso de revisión mientras el operador responde. QA pública39 conservación/1530 SEO,106URLs/115páginas/16redirects y cinco anchos reales sin overflow/cursivas/flechas; precios26px/botones48px. [Registro y correo sugerido](../docs/byboat-public-review-release.md). Home/header/globals intactos; PR120 sigue pendiente y no debe fusionarse para publicar ByBoat. Ningún correo enviado; feedback, pago y reservas no confirmados. Esta nota supera los estados de solo Preview que siguen como historial.
+
 ## 28 octubre 2026 — ByBoat: redonda, precios sobrios y botones sin iconos
 
 Aplicación `ae79d0f`, PR121 borrador, Preview `njaxvlns1` READY y seis CI correctos. Build144/TypeScript/ESLint, conservación39 local/remota y SEO remoto1424/106URLs/16redirects pasan. Cinco anchos locales sin overflow/cursivas/flechas; 26px para precios y botones48px. Apertura visual del nuevo origen remoto bloqueada por revisión automática/cuota, registrada sin sortearla; la evidencia visual es local. [Entrega y capturas](../docs/byboat-final-polish.md). Producción sigue `96162fe`; Home/header de PR120 no aprobados.
