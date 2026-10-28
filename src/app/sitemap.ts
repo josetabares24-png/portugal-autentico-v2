@@ -56,7 +56,7 @@ function parseSpanishDate(date: string): Date | undefined {
  * fechar, así que esa es la fecha más antigua posible.
  */
 const CONTENT_LAST_MODIFIED: Record<string, string> = {
-  '/': '2026-10-22',
+  '/': '2026-10-28',
   '/itinerarios': '2026-10-09',
   '/calculadora-presupuesto-lisboa': '2026-10-09',
   '/sobre-nosotros': '2026-10-09',

@@ -1,4 +1,4 @@
-import policy from '@/data/seo-url-policy.json';
+import policy from '@/data/seo-url-policy.json' with { type: 'json' };
 
 const destinationBySource = new Map(
   policy.redirects.map(({ source, destination }) => [source, destination]),
