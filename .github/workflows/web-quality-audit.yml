@@ -5,8 +5,6 @@ on:
     paths:
       - '.github/workflows/web-quality-audit.yml'
       - 'scripts/quality-report.mjs'
-      - 'docs/web-quality-audit.md'
-      - 'brain/operations/2026-10-28-WEB-QUALITY-BOT.md'
   workflow_dispatch:
     inputs:
       scope:
@@ -109,6 +107,7 @@ jobs:
             --out .quality-reports/summary.md
           if [[ -f .quality-reports/summary.md ]]; then
             cat .quality-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+            cat .quality-reports/summary.md
           fi
 
       - name: Guardar resultados descargables (30 días)
@@ -118,7 +117,8 @@ jobs:
           name: web-quality-${{ github.run_id }}
           path: .quality-reports/
           retention-days: 30
-          if-no-files-found: warn
+          include-hidden-files: true
+          if-no-files-found: error
 
       - name: Mostrar si el escaneo ha fallado
         if: always() && github.event_name != 'pull_request'
