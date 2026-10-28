@@ -5,19 +5,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/Icon';
-import { englishCounterpart } from '@/lib/language-alternates';
 
 const navLinks = [
   { href: '/blog', label: 'Guías' },
-  { href: '/comprar-entradas', label: 'Entradas' },
   { href: '/free-tours-lisboa', label: 'Free tours' },
+  { href: '/comprar-entradas', label: 'Entradas' },
 ] as const;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const publicPathname = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
-  const englishHref = englishCounterpart(publicPathname);
   const isActive = (href: string) =>
     publicPathname === href || publicPathname.startsWith(`${href}/`);
 
@@ -64,18 +62,6 @@ export default function Navbar() {
                 ) : null}
               </Link>
             ))}
-
-            {englishHref ? (
-              <a
-                href={englishHref}
-                hrefLang="en"
-                lang="en"
-                className="inline-flex min-h-11 items-center border-l border-night/10 pl-5 font-body text-xs font-semibold text-text-secondary transition-colors hover:text-night"
-                aria-label="Read this page in English"
-              >
-                EN
-              </a>
-            ) : null}
           </div>
 
           <button
@@ -101,24 +87,11 @@ export default function Navbar() {
               href={link.href}
               onClick={closeMenu}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className="flex min-h-12 items-center justify-between border-b border-night/10 py-3 font-body text-base font-semibold text-night last:border-b-0 aria-[current=page]:text-terracotta"
+              className="flex min-h-12 items-center border-b border-night/10 py-3 font-body text-base font-semibold text-night last:border-b-0 aria-[current=page]:text-terracotta"
             >
               {link.label}
-              <span aria-hidden="true" className="text-terracotta">↗</span>
             </Link>
           ))}
-
-          {englishHref ? (
-            <a
-              href={englishHref}
-              hrefLang="en"
-              lang="en"
-              onClick={closeMenu}
-              className="mt-2 inline-flex min-h-11 items-center font-body text-sm text-text-secondary underline underline-offset-4"
-            >
-              Read this page in English
-            </a>
-          ) : null}
         </div>
       </div>
     </nav>
