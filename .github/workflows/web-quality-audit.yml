@@ -64,7 +64,7 @@ jobs:
             --timeout 20000 \
             --retry --retry-errors --retry-errors-count 2 \
             --redirects warn --require-https warn \
-            --format JSON --verbosity ERROR \
+            --format JSON --verbosity INFO \
             > .quality-reports/linkinator.json 2> .quality-reports/linkinator.log
           result=$?
           echo "exit_code=$result" >> "$GITHUB_OUTPUT"
