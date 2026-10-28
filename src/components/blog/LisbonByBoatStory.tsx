@@ -31,7 +31,7 @@ function Copy({ blocks }: { blocks: ArticleBlock[] }) {
 }
 
 function ReservationLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <a className={styles.reserve} href={href} target="_blank" rel="sponsored nofollow noopener noreferrer">{children}<span aria-hidden="true">↗</span><span className="sr-only"> (enlace patrocinado, abre en otra pestaña)</span></a>;
+  return <a className={styles.reserve} href={href} target="_blank" rel="sponsored nofollow noopener noreferrer">{children}<span className="sr-only"> (enlace patrocinado, abre en otra pestaña)</span></a>;
 }
 
 export default function LisbonByBoatStory({ article, photos, links }: Props) {
@@ -108,7 +108,7 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
               <Copy blocks={sectionBlocks(article, 'Dónde embarcar en Doca de Belém')} />
               <div className={styles.map}>
                 <iframe title="Mapa interactivo de Doca de Belém, Lisboa" src="https://www.openstreetmap.org/export/embed.html?bbox=-9.215%2C38.690%2C-9.197%2C38.700&layer=mapnik&marker=38.694336%2C-9.20562" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-                <div><span>Doca de Belém</span><a href={links.map} target="_blank" rel="noopener noreferrer">Abrir indicaciones <span aria-hidden="true">↗</span></a></div>
+                <div><span>Doca de Belém</span><a href={links.map} target="_blank" rel="noopener noreferrer">Abrir indicaciones<span className="sr-only"> (abre en otra pestaña)</span></a></div>
               </div>
             </section>
             <section id="consejos">
@@ -118,7 +118,7 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
             <section className={styles.ending}>
               <h2>¿Merece la pena incluirlo en tu viaje?</h2>
               <Copy blocks={sectionBlocks(article, '¿Merece la pena incluirlo en tu viaje?')} />
-              <a className={styles.allTours} href={links.all} target="_blank" rel="sponsored nofollow noopener noreferrer">Ver todas las experiencias de Lisbon ByBoat <span aria-hidden="true">↗</span></a>
+              <a className={styles.allTours} href={links.all} target="_blank" rel="sponsored nofollow noopener noreferrer">Ver todas las experiencias de Lisbon ByBoat<span className="sr-only"> (enlace patrocinado, abre en otra pestaña)</span></a>
               <p className={styles.small}>Este contenido es una colaboración comercial. No constituye una reseña basada en una experiencia personal a bordo.</p>
             </section>
           </article>

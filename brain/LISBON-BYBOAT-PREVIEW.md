@@ -1,5 +1,19 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Corrección solicitada desde iPhone — 28 octubre
+
+José rechaza cursiva, flechas que se presentan como emoji y cifras decorativas en los precios. Se corrige únicamente ByBoat en `preview/byboat-final-polish`, rama desde `cc61ffe` sin los commits Home/header. H1/H2/H3 en redonda, CTA solo con texto y precios en la fuente de lectura a 26px con cifras alineadas; mismos importes/destinos/fotos/contenido. [Contrato y QA](../docs/byboat-final-polish.md). La cabecera anterior se conserva; Home y navegación nuevas siguen pendientes. Solo Preview, sin aprobación de publicación.
+
+## Entrega independiente — 28 octubre
+
+José no está convencido de la propuesta Home/header y pide recibir primero la versión final de ByBoat. No existe aprobación de esas superficies ni de producción. Se entrega el reportaje de aplicación `09936f0`, Preview `ayhzhtemq`, con la cabecera anterior: su diseño/contenido ByBoat coincide con el candidato posterior, sin incluir la propuesta nueva de navegación/Home. Enlace temporal renovado y entregado fuera de Git. Verificados en navegador título, foto, comparación de salidas y destinos patrocinados; canonical propio y noindex/follow conservados. Esta entrega es para revisión, no publicación. PR120 aún reúne ambos lotes: una futura autorización limitada a ByBoat requiere aislar ese lote antes de fusionar; no incluir silenciosamente Home/header. La reconsideración del menú queda pendiente después de esta entrega.
+
+## Ampliación solicitada —28 octubre
+
+Nuevo cierre de aplicación `adf76c7`: Preview `7938lei1b` READY, seis CI y revisión visual en 15 vistas correctos; navegación178/SEO1424/inglés224/conservaciónByBoat39 sin fallos. Home automática y menú de cuatro opciones listos para revisión de José, con capturas en el informe enlazado. La Preview anterior `ayhzhtemq` queda como evidencia histórica del diseño ByBoat. Producción no modificada; PR120 sigue borrador.
+
+José pregunta por la ausencia en Home y pide menos confusión en el header. Se prepara selección automática de publicaciones recientes y cuatro entradas principales, en commits separados de este mismo candidato. ByBoat continúa noindex y se excluye del feed hasta su publicación autorizada; el nuevo selector no convierte un borrador en artículo publicado. [Detalle y QA](../docs/home-latest-navigation-preview.md). La nueva revisión de portada/navegación también requiere Preview; no producción.
+
 ## Cierre de Preview — 28 octubre
 
 Aplicación09936f0, Previewayhzhtemq READY y seisCI correctos; PR120 borrador, revisión visual pendiente. Build144rutas, TypeScript y ESLint sin errores;39checks de contenido renderizado/fuente correctos (incluidos los diez párrafos/notas, objetoArticle y destinos/fotos existentes). QA SEO remota1424/1424:106URLs de sitemap,115páginas,16redirects; la nueva ruta noindex también se inspecciona. Cinco anchos reales320/390/412/768/1440 sin overflow, unaH1 y un índice; colores computados coinciden con la marca y los dos botones miden48px. Índice cerrado en móvil/abierto en escritorio, apertura con teclado y salto al mapa verificados; mapaOSM visible. [Informe y capturas](../docs/lisbon-byboat-brand-preview.md). Sin publicación, compra o correo. El bloqueo anterior de revisión automática fue por uso disponible, no por una acción insegura; al reanudar se aplicó la corrección por el flujo normal.

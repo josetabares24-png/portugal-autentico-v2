@@ -1,3 +1,7 @@
+## 28 octubre 2026 — ByBoat: redonda, precios sobrios y botones sin iconos
+
+José señala en iPhone cursivas ajenas al blog, flechas renderizadas como emoji y cifras decorativas. Corrección aislada en `preview/byboat-final-polish`, desde `cc61ffe`, sin las propuestas Home/header del PR120 que no están aprobadas. Alcance solo componente/CSS ByBoat, con los importes y datos intactos; [contrato y QA](../docs/byboat-final-polish.md). No publicación ni correo. El estado anterior siguiente es historial de la primera entrega visual.
+
 ## 28 octubre 2026 — Lisbon ByBoat con identidad propia, solo Preview
 
 José prefiere la primera composición y pide mejorarla con su identidad. PR120 borrador en preview/lisbon-byboat-editorial: crema/azul noche/terracota, fotos existentes del operador, comparación visual de las dos salidas y cabecera móvil compacta. Artículo/fotos/destinos preservados; componentes compartidos y resto de artículos intactos. Aplicación09936f0/Previewayhzhtemq READY, seisCI correctos, build144/TypeScript/ESLint y39checks de conservación/renderizado pasan. QA SEO remota1424/106URLs/115páginas/16redirects sin fallos; cinco anchos reales sin overflow, índice/teclado/mapa y CTA48px verificados. Canonical propio y borrador noindex/follow en la política central, fuera del sitemap. [Decisión y evidencia](LISBON-BYBOAT-PREVIEW.md). No publicación ni correo o pago autorizados; requiere revisión visual y preparación comercial antes de producción. Producción base96162fe corresponde a PR118 publicado; las notas siguientes de candidato118 son historial.
