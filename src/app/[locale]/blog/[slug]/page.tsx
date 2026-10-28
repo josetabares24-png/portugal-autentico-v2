@@ -249,8 +249,8 @@ const articles: Record<string, Article> = {
 
       { tipo: 'subtitulo', texto: 'Cómo organizaría un primer viaje por Portugal' },
       { tipo: 'parrafo', texto: 'Si tienes una semana y es tu primera vez, prefiero construir la ruta alrededor de pocas bases y buenos enlaces antes que coleccionar ciudades. Lisboa puede cubrir varios días y además darte acceso a Sintra y Cascais. Desde ahí, Coimbra y Oporto encajan de forma natural hacia el norte. El Algarve, el Alentejo o las islas merecen entrar cuando el número de días permite hacerlo sin convertir el viaje en una mudanza diaria.' },
-      { tipo: 'parrafo', texto: 'Esta página será una de las bases de la nueva sección de Portugal de Estaba en Lisboa. La iré actualizando cuando cambien condiciones relevantes de CP, carreteras o conexiones, y desde el hub de Portugal podrás ir saltando a las guías concretas de cada lugar.' },
-      { tipo: 'enlace', texto: 'Si todavía no tienes clara la ruta, empieza por la nueva portada de Portugal: reúne las guías nacionales y las escapadas que ya están publicadas.', href: '/portugal', label: 'Abrir la guía de Portugal' },
+      { tipo: 'parrafo', texto: 'Si todavía no tienes clara la ruta, empezaría por decidir cuántos días vas a dedicar a Lisboa y si después quieres seguir hacia el norte, el Algarve o hacer solo escapadas de un día. Esa decisión cambia bastante qué transporte compensa.' },
+      { tipo: 'enlace', texto: 'En la guía de Portugal tienes juntas las rutas, escapadas y consejos prácticos para seguir organizando el viaje.', href: '/portugal', label: 'Ver la guía de Portugal' },
     ],
   },
   'casa-cristiano-ronaldo-portugal-quinta-da-marinha': {
