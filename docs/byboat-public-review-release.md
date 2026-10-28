@@ -32,9 +32,19 @@ Já está disponível a versão do artigo sobre a Lisbon ByBoat para a vossa rev
 
 https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat
 
-Gostaria de saber a vossa opinião sobre o conteúdo e a apresentação, e se há algo que gostariam de alterar. Agradeço também que confirmem as fotografias, os preços, o que está incluído em cada passeio, o ponto de encontro e os links de reserva.
+Gostaria de saber a vossa opinião sobre o conteúdo e a apresentação, e se há algo que gostariam de alterar. Agradeço também que confirmem as fotografias, os preços, o que está incluído em cada passeio, o ponto de encontro e os links de reserva. Podem confirmar os idiomas disponíveis em cada passeio e se é necessário solicitar espanhol ao reservar? Na ficha do passeio ao pôr do sol, a descrição menciona francês, mas esse idioma não aparece no campo «Live tour guide».
 
 Com os vossos comentários, poderei finalizar a versão do artigo.
 
 Muito obrigado,
 José
+
+## Idiomas a bordo — verificación específica del 28/10
+
+Son tres cuestiones distintas: artículo en español, correspondencia con Pedro en portugués e idiomas de las explicaciones a bordo. Pedro confirma expresamente explicaciones en español en su correo del 27/10; no se dedujo del idioma del artículo o de la comunicación comercial.
+
+Se abrieron en navegador las dos reservas oficiales enlazadas por el operador, sin seleccionar fecha ni avanzar a checkout. [Paseo diurno, producto1163355](https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97-91056bb16516/experience/1163355): el campo «Live tour guide» enumera inglés, francés, portugués y español. [Atardecer, producto1163354](https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97-91056bb16516/experience/1163354): ese campo enumera portugués, inglés y español, aunque la descripción de inclusiones también menciona francés. Ambas fichas indican guía multilingüe.
+
+Conclusión: español confirmado en ambos, junto a inglés y portugués; francés confirmado en diurno y pendiente de aclarar para atardecer. La ficha no permite prometer exclusividad de idioma ni que los cuatro se utilicen simultáneamente en cualquier salida. No se ha comprobado disponibilidad de idioma para una fecha concreta. Las páginas antiguas de Experiences también listan cuatro idiomas, pero muestran precios antiguos: se prioriza el producto actual de reserva y la confirmación directa de Pedro.
+
+Redacción recomendada para el artículo: «Guía multilingüe, con explicaciones en español disponibles. Confirma el idioma al reservar». No afirmar «tour exclusivamente en español». Esta revisión registra fuentes y una corrección propuesta; no ha cambiado el artículo publicado ni enviado un correo al operador. [Extractos de las reservas](qa/2026-10-28/byboat-public-review/official-booking-languages.json).
