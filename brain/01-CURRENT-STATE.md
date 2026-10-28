@@ -1,5 +1,7 @@
 ## 28 octubre 2026 — Home reciente y menú de cuatro entradas, candidato
 
+QA cerrada: aplicación `adf76c7`, Preview `7938lei1b` READY y seis CI pasan. Build144/TypeScript/ESLint, tres pruebas de selección, navegación remota178, SEO1424/106URLs/16redirects, inglés224 y ByBoat39 correctos. Quince vistas reales de Home/blog/ByBoat en cinco anchos320–1440 sin overflow; Escape/foco, clic fuera, cierre móvil y acceso /blog verificados. [Informe y capturas](../docs/home-latest-navigation-preview.md). Producción `96162fe` intacta, PR120 borrador; revisión visual de José y autorización de publicación pendientes. ByBoat todavía noindex y fuera del feed.
+
 José espera que los artículos nuevos aparezcan automáticamente en Home y se confunde con seis entradas del header. El código tenía tresIDs fijos. Nuevo lote en el mismoPR120: selección de tres publicaciones por fecha original, sin noindex/redirect/futuras/inválidas; bloque final con fecha visible. ByBoat sigue borrador, no se promociona como publicado. Menú español: Lisboa, Escapadas, Planifica, Entradas y tours; Guías e historias dentro de Lisboa, reservas/free tours agrupados. Destinos/URLs e inglés intactos; desktop desde1024px. La solicitud revisa D060/D061, no L003: solo Preview. [Contrato y baseline](../docs/home-latest-navigation-preview.md). Tres pruebas de orden/fecha/estado pasan; build y QA del conjunto se registrarán antes de entrega. No producción ni cambios comerciales autorizados.
 
 ## 28 octubre 2026 — Lisbon ByBoat con identidad propia, solo Preview

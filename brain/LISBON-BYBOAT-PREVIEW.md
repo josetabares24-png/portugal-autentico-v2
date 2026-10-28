@@ -2,6 +2,8 @@
 
 ## Ampliación solicitada —28 octubre
 
+Nuevo cierre de aplicación `adf76c7`: Preview `7938lei1b` READY, seis CI y revisión visual en 15 vistas correctos; navegación178/SEO1424/inglés224/conservaciónByBoat39 sin fallos. Home automática y menú de cuatro opciones listos para revisión de José, con capturas en el informe enlazado. La Preview anterior `ayhzhtemq` queda como evidencia histórica del diseño ByBoat. Producción no modificada; PR120 sigue borrador.
+
 José pregunta por la ausencia en Home y pide menos confusión en el header. Se prepara selección automática de publicaciones recientes y cuatro entradas principales, en commits separados de este mismo candidato. ByBoat continúa noindex y se excluye del feed hasta su publicación autorizada; el nuevo selector no convierte un borrador en artículo publicado. [Detalle y QA](../docs/home-latest-navigation-preview.md). La nueva revisión de portada/navegación también requiere Preview; no producción.
 
 ## Cierre de Preview — 28 octubre
