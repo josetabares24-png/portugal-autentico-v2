@@ -10,7 +10,7 @@ El workflow [Web Quality Bot](../.github/workflows/web-quality-audit.yml) añade
 | Unlighthouse 0.19.1 | Lighthouse móvil en páginas representativas del sitemap (muestreo por plantillas) | Día 1 de cada mes, 06:50 UTC | JSON, log, puntuaciones y grupos de prioridad |
 | `smoke:sitemap` existente | Sitemap, canonical, noindex, redirecciones, contenido y otras invariantes | CI SEO ya existente | Aserciones técnicas sobre Next.js |
 
-Los cambios de esta PR también ejecutan un test autónomo del generador de informes. No se instalan dependencias en la aplicación, no cambia `package.json` ni se añade JavaScript al navegador.
+Las PR que cambian el propio bot ejecutan además una auditoría de línea base en modo de observación (no bloqueante por enlaces ya existentes), junto con un test autónomo del generador. No se instalan dependencias en la aplicación, no cambia `package.json` ni se añade JavaScript al navegador.
 
 ### Lanzarlo manualmente
 
@@ -21,7 +21,7 @@ Después de incorporar el workflow a `main`:
 3. Selecciona **links** o **links-and-performance**.
 4. Abre la ejecución terminada: **Summary** para el diagnóstico y **Artifacts → web-quality-…** para `summary.md`, resultados JSON y logs (30 días).
 
-El workflow no puede programarse en GitHub Actions hasta que exista en la rama por defecto. Esta PR permanece sin fusionar hasta revisión. La primera ejecución real será la línea base; **no hay recuentos comprobados todavía**.
+El workflow no puede programarse en GitHub Actions hasta que exista en la rama por defecto. Esta PR permanece sin fusionar hasta revisión. Esta PR ejecuta una primera auditoría de prueba de solo lectura. Mientras no termine, **no hay recuentos comprobados todavía**. Los calendarios recurrentes solo se activan al incorporar el workflow a la rama por defecto.
 
 ## Interpretar bien el resultado
 
