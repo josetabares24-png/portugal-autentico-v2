@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [
         activity.image
           ? { url: `https://estabaenlisboa.com${activity.image}`, width: 1200, height: 630, alt: activity.title }
-          : { url: 'https://estabaenlisboa.com/logo.png', width: 600, height: 188, alt: 'Estaba en Lisboa' },
+          : { url: 'https://estabaenlisboa.com/logo.png', width: 1200, height: 500, alt: 'Estaba en Lisboa' },
       ],
     },
     alternates: { canonical: `https://estabaenlisboa.com/actividades/${slug}` },
@@ -148,7 +148,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
         '@id': `${SITE_URL}/#organization`,
         name: 'Estaba en Lisboa',
         url: SITE_URL,
-        logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png`, width: 600, height: 188 },
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png`, width: 1200, height: 500 },
       },
       inLanguage: 'es-ES',
       isAccessibleForFree: true,
