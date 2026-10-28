@@ -11,11 +11,19 @@ import { blogPosts } from '@/data/blog-posts';
 const HOME_URL = 'https://estabaenlisboa.com';
 const HOME_DESCRIPTION = 'Organiza Lisboa con rutas por días, qué ver, transporte, zonas donde alojarte, comida y consejos prácticos, escritos y revisados desde la ciudad.';
 
-const suggestedArticles = [
-  blogPosts.find((post) => post.id === 'historia-de-lisboa') || blogPosts[0],
-  blogPosts.find((post) => post.id === 'estacion-olaias-lisboa') || blogPosts[1],
-  blogPosts.find((post) => post.id === 'que-comprar-lisboa-souvenirs') || blogPosts[2],
-].filter(Boolean);
+const MONTHS: Record<string, number> = {
+  Ene: 0, Feb: 1, Mar: 2, Abr: 3, May: 4, Jun: 5,
+  Jul: 6, Ago: 7, Sep: 8, Oct: 9, Nov: 10, Dic: 11,
+};
+
+function publishedAt(post: (typeof blogPosts)[number]) {
+  const [day, month, year] = post.fecha.split(' ');
+  return Date.UTC(Number(year), MONTHS[month] ?? 0, Number(day));
+}
+
+const suggestedArticles = [...blogPosts]
+  .sort((a, b) => publishedAt(b) - publishedAt(a))
+  .slice(0, 3);
 
 const seasonalArticles = ['lisboa-cuando-llueve', 'lisboa-en-navidad', 'nochevieja-lisboa'].map((id) => {
   const post = blogPosts.find((article) => article.id === id);
@@ -157,14 +165,14 @@ export default function HomePage() {
           <div className="mb-8 flex flex-col gap-5 border-b border-night/15 pb-6 sm:flex-row sm:items-end sm:justify-between md:mb-10">
             <div>
               <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
-                Del blog
+                Últimos artículos
               </p>
               <h2 id="articulos-sugeridos" className="font-display text-[2rem] not-italic leading-tight text-night md:text-[2.5rem]">
-                Para leer antes de ir.
+                Lo último publicado.
               </h2>
             </div>
             <Link href="/blog" className="w-fit border-b border-night pb-1 font-body text-sm text-night transition-colors hover:border-terracotta hover:text-terracotta">
-              Todos los artículos
+              Ver todas las guías
             </Link>
           </div>
 
