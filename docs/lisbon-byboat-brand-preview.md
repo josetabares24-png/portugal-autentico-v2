@@ -22,4 +22,19 @@ La publicación sigue requiriendo aprobación expresa y preparación específica
 
 ## Comprobaciones
 
-Contrato de fuente: Article completo, constantes de fotos/enlaces y componentes compartidos intactos; noindex y slug conservados. TypeScript y ESLint de los dos componentes pasan. Build, verificación de contenido renderizado, móvil/teclado/imágenes/enlaces y Preview se completan antes de entregar. Sin compras, clicks de reserva, formularios o mensajes reales de QA. No Lighthouse o dispositivos físicos certificados.
+Aplicación verificada:09936f0a8e38e3e25f3addaca99fecc51827b463. [Preview READY](https://portugal-autentico-v2-ayhzhtemq-estabaenlisboa.vercel.app/blog/paseo-en-velero-lisboa-lisbon-byboat), Next.js16.3.5; enlace temporal entregado fuera de Git. PR120 sigue en borrador. El commit posterior solo registra evidencia/documentación.
+
+| Control | Resultado |
+|---|---|
+| Build | 144rutas, incluido el artículo y el alias previo |
+| TypeScript / ESLint acotado | Sin errores |
+| CI de aplicación | Seis checks correctos |
+| Conservación y renderizado remoto | 39/39; Article completo, constantes de fotos/enlaces, diez párrafos/notas, precios, tres destinos patrocinados, índice/anclas, mapa, schema parseable, canonical/noindex, listado y alias |
+| SEO remoto | 1424/1424;106URLs de sitemap,115páginas,16redirects, sin fallos |
+| Navegador | Cinco anchos reales320/390/412/768/1440, sin overflow ni imágenes cargadas rotas observadas; unaH1/un índice |
+| Identidad / CTA | Colores computados crema245/239/230, noche26/43/74 y terracota184/71/46; dos botones de48px |
+| Interacciones | Índice cerrado en móvil/abierto en escritorio, apertura con Enter y foco nativo, enlace a embarque a100px bajo cabecera y mapaOSM visible |
+
+El primer controlCI detectó que excluir el borrador solo en sitemap no actualizaba la política compartida. Se declara ahora en noindexPaths y se retira la excepción ad hoc. Se conserva el control original, sin omitirlo ni debilitar sus aserciones. La comparación de fuente normaliza únicamente finales de línea Git/Windows.
+
+[Evidencia y capturas](qa/2026-10-28/lisbon-byboat/README.md). Es emulación de viewport, no dispositivos físicos; no Lighthouse o INP nuevos. Las imágenes lazy se comprueban cuando cargan, sin afirmar que todos los recursos de terceros se han revalidado. Sin compras, clics de reserva, formularios o mensajes reales de QA. No efecto de ventas o posicionamiento medido.
