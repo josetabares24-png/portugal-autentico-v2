@@ -1,5 +1,7 @@
 ## 28 octubre 2026 — ByBoat: redonda, precios sobrios y botones sin iconos
 
+Aplicación `ae79d0f`, PR121 borrador, Preview `njaxvlns1` READY y seis CI correctos. Build144/TypeScript/ESLint, conservación39 local/remota y SEO remoto1424/106URLs/16redirects pasan. Cinco anchos locales sin overflow/cursivas/flechas; 26px para precios y botones48px. Apertura visual del nuevo origen remoto bloqueada por revisión automática/cuota, registrada sin sortearla; la evidencia visual es local. [Entrega y capturas](../docs/byboat-final-polish.md). Producción sigue `96162fe`; Home/header de PR120 no aprobados.
+
 José señala en iPhone cursivas ajenas al blog, flechas renderizadas como emoji y cifras decorativas. Corrección aislada en `preview/byboat-final-polish`, desde `cc61ffe`, sin las propuestas Home/header del PR120 que no están aprobadas. Alcance solo componente/CSS ByBoat, con los importes y datos intactos; [contrato y QA](../docs/byboat-final-polish.md). No publicación ni correo. El estado anterior siguiente es historial de la primera entrega visual.
 
 ## 28 octubre 2026 — Lisbon ByBoat con identidad propia, solo Preview

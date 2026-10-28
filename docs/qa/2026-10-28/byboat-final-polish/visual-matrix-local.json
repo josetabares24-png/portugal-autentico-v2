@@ -1,0 +1,377 @@
+[
+  {
+    "buttons": [
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas de día (enlace patrocinado, abre en otra pestaña)"
+      },
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas al atardecer (enlace patrocinado, abre en otra pestaña)"
+      }
+    ],
+    "headings": [
+      {
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "origin": "http://localhost:5253",
+    "prices": [
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "45 € por persona"
+      },
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "60 € por persona"
+      }
+    ],
+    "scrollWidth": 312,
+    "titleSecondLineStyle": "normal",
+    "unicodeArrows": 0,
+    "width": 320
+  },
+  {
+    "buttons": [
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas de día (enlace patrocinado, abre en otra pestaña)"
+      },
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas al atardecer (enlace patrocinado, abre en otra pestaña)"
+      }
+    ],
+    "headings": [
+      {
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "origin": "http://localhost:5253",
+    "prices": [
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "45 € por persona"
+      },
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "60 € por persona"
+      }
+    ],
+    "scrollWidth": 382,
+    "titleSecondLineStyle": "normal",
+    "unicodeArrows": 0,
+    "width": 390
+  },
+  {
+    "buttons": [
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas de día (enlace patrocinado, abre en otra pestaña)"
+      },
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas al atardecer (enlace patrocinado, abre en otra pestaña)"
+      }
+    ],
+    "headings": [
+      {
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "origin": "http://localhost:5253",
+    "prices": [
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "45 € por persona"
+      },
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "60 € por persona"
+      }
+    ],
+    "scrollWidth": 404,
+    "titleSecondLineStyle": "normal",
+    "unicodeArrows": 0,
+    "width": 412
+  },
+  {
+    "buttons": [
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas de día (enlace patrocinado, abre en otra pestaña)"
+      },
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas al atardecer (enlace patrocinado, abre en otra pestaña)"
+      }
+    ],
+    "headings": [
+      {
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "origin": "http://localhost:5253",
+    "prices": [
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "45 € por persona"
+      },
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "60 € por persona"
+      }
+    ],
+    "scrollWidth": 760,
+    "titleSecondLineStyle": "normal",
+    "unicodeArrows": 0,
+    "width": 768
+  },
+  {
+    "buttons": [
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas de día (enlace patrocinado, abre en otra pestaña)"
+      },
+      {
+        "align": "center",
+        "height": 48,
+        "text": "Ver salidas al atardecer (enlace patrocinado, abre en otra pestaña)"
+      }
+    ],
+    "headings": [
+      {
+        "style": "normal",
+        "weight": "700"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "origin": "http://localhost:5253",
+    "prices": [
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "45 € por persona"
+      },
+      {
+        "family": "plusJakarta, \"plusJakarta Fallback\", montserrat, \"montserrat Fallback\", sans-serif",
+        "figures": "lining-nums proportional-nums",
+        "size": "26px",
+        "text": "60 € por persona"
+      }
+    ],
+    "scrollWidth": 1432,
+    "titleSecondLineStyle": "normal",
+    "unicodeArrows": 0,
+    "width": 1440
+  }
+]

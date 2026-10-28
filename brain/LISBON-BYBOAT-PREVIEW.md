@@ -2,6 +2,8 @@
 
 ## Corrección solicitada desde iPhone — 28 octubre
 
+Entrega corregida: aplicación `ae79d0f`, PR121 borrador independiente y Preview `njaxvlns1` READY; seis CI, build144/TypeScript/ESLint correctos. Conservación39 local/remota; SEO1530 local y1424 remoto con106URLs/16redirects, sin fallos. Cinco anchos locales320–1440 sin overflow ni cursivas en H1/H2/H3, precios en lectura26px y CTA48px sin flechas. El navegador no abrió el nuevo origen de Preview por fallo de revisión automática/cuota; QA visual local y controles HTTP remotos se distinguen en el informe. Producción intacta, sin correo ni pago. PR120 conserva el experimento Home/header pendiente y no debe fusionarse junto a esta revisión.
+
 José rechaza cursiva, flechas que se presentan como emoji y cifras decorativas en los precios. Se corrige únicamente ByBoat en `preview/byboat-final-polish`, rama desde `cc61ffe` sin los commits Home/header. H1/H2/H3 en redonda, CTA solo con texto y precios en la fuente de lectura a 26px con cifras alineadas; mismos importes/destinos/fotos/contenido. [Contrato y QA](../docs/byboat-final-polish.md). La cabecera anterior se conserva; Home y navegación nuevas siguen pendientes. Solo Preview, sin aprobación de publicación.
 
 ## Entrega independiente — 28 octubre

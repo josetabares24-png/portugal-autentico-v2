@@ -19,4 +19,12 @@ El contenido factual, fotos, precios, destinos Bokun/mapa/operador, canonical, s
 
 ## Revisión
 
-Pendiente de registrar build, TypeScript/ESLint, conservación del contenido, QA SEO y capturas de la nueva Preview. No producción. La aprobación de este reportaje no aprobaría el lote Home/header que continúa en PR120; antes de publicar se debe preparar el estado editorial/indexación y verificar el alcance exacto.
+Aplicación `ae79d0fcc6b0c3e39b222ef343093835687a0a79`, PR121 borrador. Vercel `dpl_97axvQiPhPuFBoqKkmhuRtwtuPBv` READY, host `portugal-autentico-v2-njaxvlns1-estabaenlisboa.vercel.app`; enlace temporal entregado fuera de Git. Seis CI de la aplicación correctos. Build de 144 rutas, TypeScript y ESLint del componente pasan.
+
+Conservación local y remota: 39/39 comprobaciones; objeto Article, diez párrafos/notas, constantes de fotos/destinos, precios, patrocinios, canonical/noindex, mapa, índice/anclas y schema correctos. SEO local 1530/1530; remoto 1424/1424, 106 URLs de sitemap, 115 páginas y 16 redirects, sin fallos. La diferencia de recuento local/remoto corresponde al entorno del script, no a controles omitidos.
+
+Revisión visual sobre la misma compilación local a 320, 390, 412, 768 y 1440px: sin overflow, H1/H2/H3 y segunda línea del H1 en redonda; precios Plus Jakarta Sans de 26px y `lining-nums proportional-nums`; dos botones de al menos 48px, texto centrado, cero flechas Unicode en los enlaces del reportaje. Capturas y estilos computados en [evidencia](qa/2026-10-28/byboat-final-polish/). No se incorporan fuentes, dependencias o código cliente nuevos.
+
+Límite: la revisión automática bloqueó abrir el nuevo origen Vercel en el navegador por cuota de uso. Se mantuvo ese bloqueo; la certificación visual es local, mientras que los controles HTTP remotos iniciados previamente sí finalizaron. No se afirma una comprobación visual remota ni en un iPhone físico.
+
+No producción. La aprobación de este reportaje no aprobaría el lote Home/header que continúa en PR120; antes de publicar se debe preparar el estado editorial/indexación y verificar el alcance exacto.
