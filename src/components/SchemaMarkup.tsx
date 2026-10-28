@@ -8,8 +8,8 @@ export default function SchemaMarkup() {
     "logo": {
       "@type": "ImageObject",
       "url": "https://estabaenlisboa.com/logo.png",
-      "width": 600,
-      "height": 188,
+      "width": 1200,
+      "height": 500,
       "caption": "Estaba en Lisboa - Guías de Lisboa"
     },
     "image": "https://estabaenlisboa.com/logo.png",
