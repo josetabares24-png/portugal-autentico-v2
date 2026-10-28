@@ -45,3 +45,15 @@ El workflow no puede programarse en GitHub Actions hasta que exista en la rama p
 ## Alcance expresamente excluido
 
 Esta implementación no instala Lighthouse CI como bloqueo permanente de cada PR, no hace un `next analyze`, no añade axe-core aparte, no toca frontend, SEO ni artículos y no activa tareas de pago. La fase siguiente decidirá si existen umbrales robustos para un gate de CI, basándose en resultados reales de varias ejecuciones.
+
+## Primera línea base observada: 28/10/2026
+
+[GitHub Actions: ejecución #40786457887](https://github.com/josetabares24-png/portugal-autentico-v2/actions/runs/40786457887) y artifact `web-quality-40786457887` (30 días).
+
+- Unlighthouse móvil: **35 rutas muestreadas**. Rendimiento mínimo **82/100** (en `/blog/donde-alojarse-en-lisboa`), media **94,9/100**; accesibilidad mínima **93/100**, SEO y buenas prácticas **100/100** en toda la muestra. No significa que las demás rutas o el rendimiento real de usuarios tengan esas cifras.
+- Linkinator emitió **41 incidencias** con `--verbosity ERROR`, no 41 enlaces comprobados en total: **36 respuestas 403** de servicios externos (21 Stay22 y 9 GetYourGuide/gyg.me), **2 respuestas 404** del mismo destino MAAT, **2 sin respuesta HTTP** y **1 respuesta 523**. **Cero URLs internas** entre esas incidencias.
+- Los 404 del MAAT aparecen desde `/blog/lisboa-en-enero` y `/blog/nochevieja-lisboa`. URL antigua: `https://www.maat.pt/pt/visitar`; la web oficial publica ahora `https://www.maat.pt/pt/planear-visita`. Corregirlos en PR separado tras verificar intención y contexto.
+- Las respuestas 403 de afiliados no prueban que fallen en el navegador de un visitante. No tocar tracking sin comprobación manual.
+- Tras la primera revisión se ajustó la clasificación del informe para separar 404/410 de posibles bloqueos y se cambió a `--verbosity INFO` para conservar más detalle del rastreo posterior. El baseline del primer JSON `ERROR` no permite inferir número total de enlaces únicos comprobados.
+
+La interpretación anterior es **observación técnica**, no un cambio de SEO ni un resultado comercial.
