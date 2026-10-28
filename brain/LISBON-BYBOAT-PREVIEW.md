@@ -2,6 +2,8 @@
 
 ## Desplegado para feedback — 28 octubre
 
+José pide ahora modificar las menciones de idioma del artículo. Se aplica en PR122 el resultado de la verificación: servicio multilingüe con español disponible, confirmación al reservar y francés del atardecer sin garantizar. Corrección factual coherente en intro, cuerpo, bloque de idiomas y tarjetas; sin cambios de diseño, precios o destinos. La nota histórica siguiente «sin cambios de aplicación» describe solo la fase de investigación anterior; esta corrección sí está autorizada.
+
 Idiomas del velero verificados después en las reservas Bokun oficiales: día1163355 enumera EN/FR/PT/ES; atardecer1163354 enumera PT/EN/ES en «Live tour guide», aunque su descripción también menciona FR. Ambas fichas son multilingües y Pedro confirmó español en su correo del 27/10. No presentar el paseo como exclusivamente español ni garantizar francés en atardecer sin aclaración. Redacción propuesta: «Guía multilingüe, con explicaciones en español disponibles; confirma el idioma al reservar». [Fuentes y discrepancia](../docs/byboat-public-review-release.md). No cambios de aplicación ni correo enviado en esta verificación.
 
 Idiomas verificados en página/código y correo el 28/10: ByBoat solo en español, sin contraparte /en; el piloto inglés de seis URLs no lo incluye. Pedro Sá Vieira escribe en portugués en sus dos respuestas del 27/10. Propuesta y aceptación son para un artículo original en español; esto no implica traducción inglesa/portuguesa. El texto de correo sugerido se corrige a portugués. No correo enviado ni cambio de idiomas del sitio.

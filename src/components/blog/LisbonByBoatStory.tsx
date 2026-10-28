@@ -65,7 +65,7 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
           <figcaption>Fotografía: Lisbon ByBoat</figcaption>
         </figure>
         <dl className={styles.essentials} aria-label="El paseo, de un vistazo">
-          {[['Duración', '120 minutos'], ['Paseos', 'De día · atardecer'], ['Incluye', '2 bebidas'], ['Explicaciones', 'En español']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+          {[['Duración', '120 minutos'], ['Paseos', 'De día · atardecer'], ['Incluye', '2 bebidas'], ['Idiomas', 'Multilingüe · español disponible']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
         </dl>
         <div className={styles.readingGrid}>
           <ArticleToc headings={headings} />

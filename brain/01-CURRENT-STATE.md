@@ -1,3 +1,7 @@
+## 28 octubre 2026 — Corrección de idiomas de ByBoat solicitada
+
+José pide aplicar al artículo la verificación de las reservas oficiales: guía multilingüe, español disponible; ES/EN/PT en ambos, FR confirmado en diurno y a consultar en atardecer. Introducción, experiencia, bloque de idiomas y las dos tarjetas se corrigen coherentemente en PR122, que también conserva el registro de publicación anterior. No cambia diseño, importes, URLs, enlaces, Home/header o noindex. [Fuentes y alcance](../docs/byboat-public-review-release.md). QA/despliegue de este ajuste pendientes de cierre.
+
 ## 28 octubre 2026 — ByBoat público para feedback del operador
 
 José pide desplegarlo para poder enviar el correo y recibir comentarios. PR121/head `1d20a26` fusionado normalmente en `006f698`, seis checks correctos, sin conflictos/hilos pendientes. Vercel `dpl_8H77vxVaLbYoSo4Uaq485CLokPX4` READY/production y alias públicos asignados. [Artículo](https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat) HTTP200; queda noindex/follow, fuera del sitemap y con el aviso de revisión mientras el operador responde. QA pública39 conservación/1530 SEO,106URLs/115páginas/16redirects y cinco anchos reales sin overflow/cursivas/flechas; precios26px/botones48px. [Registro y correo sugerido](../docs/byboat-public-review-release.md). Home/header/globals intactos; PR120 sigue pendiente y no debe fusionarse para publicar ByBoat. Ningún correo enviado; feedback, pago y reservas no confirmados. Esta nota supera los estados de solo Preview que siguen como historial.
