@@ -1,5 +1,9 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Entrega independiente — 28 octubre
+
+José no está convencido de la propuesta Home/header y pide recibir primero la versión final de ByBoat. No existe aprobación de esas superficies ni de producción. Se entrega el reportaje de aplicación `09936f0`, Preview `ayhzhtemq`, con la cabecera anterior: su diseño/contenido ByBoat coincide con el candidato posterior, sin incluir la propuesta nueva de navegación/Home. Enlace temporal renovado y entregado fuera de Git. Verificados en navegador título, foto, comparación de salidas y destinos patrocinados; canonical propio y noindex/follow conservados. Esta entrega es para revisión, no publicación. PR120 aún reúne ambos lotes: una futura autorización limitada a ByBoat requiere aislar ese lote antes de fusionar; no incluir silenciosamente Home/header. La reconsideración del menú queda pendiente después de esta entrega.
+
 ## Ampliación solicitada —28 octubre
 
 Nuevo cierre de aplicación `adf76c7`: Preview `7938lei1b` READY, seis CI y revisión visual en 15 vistas correctos; navegación178/SEO1424/inglés224/conservaciónByBoat39 sin fallos. Home automática y menú de cuatro opciones listos para revisión de José, con capturas en el informe enlazado. La Preview anterior `ayhzhtemq` queda como evidencia histórica del diseño ByBoat. Producción no modificada; PR120 sigue borrador.
