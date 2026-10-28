@@ -10,7 +10,13 @@ URL estable: https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboa
 
 Se conserva el estado de revisión visible y noindex/follow mientras el operador revisa el contenido; fuera del sitemap, con canonical propio y enlaces patrocinados. Este despliegue hace accesible la página, no activa una campaña SEO ni supone aprobación del operador, pago recibido o reserva. No se modifica la Home ni el header. PR120 no debe fusionarse para publicar este reportaje: contiene la propuesta de navegación/Home no aprobada y una versión anterior de ByBoat.
 
-El propósito expresado es que José pueda enviar el correo. Se prepara un texto para él, sin acceder a Gmail, crear mensajes ni enviarlos al operador.
+La primera petición de despliegue solo preparaba un texto para José, sin enviarlo. Después de revisar el mensaje portugués completo, José autoriza expresamente enviarlo desde su cuenta; el resultado se registra a continuación.
+
+## Envío de la respuesta aprobada
+
+28/10/2026,14:32:59UTC: enviado desde estabaenlisboa@gmail.com a Pedro en el mismo hilo de la conversación, con el asunto existente. Gmail devuelve mensaje `1a182edb95f0a4b3`, hilo `1a17c70d994ebe83`, etiqueta SENT; una lectura posterior confirma remitente, destinatario, asunto, enlace del artículo y las preguntas aprobadas sobre solicitar español/francés al atardecer. No se adjuntan archivos ni se añaden destinatarios. No duplicar el envío.
+
+Se envía el texto mostrado y aprobado por José, en portugués, pidiendo feedback y validación de las informaciones de los paseos. El texto sugerido más abajo conserva el historial de preparación y no constituye un nuevo mensaje pendiente de envío. El bot lisboa-revenue-bot se inspeccionó previamente: prepara borradores/aprobaciones y lee Gmail; este envío se hace mediante el conector Gmail con autorización humana. No se implementan o activan envíos automáticos. Envío confirmado no significa entrega, lectura, aceptación, pago o reserva.
 
 ## Despliegue y comprobaciones
 
