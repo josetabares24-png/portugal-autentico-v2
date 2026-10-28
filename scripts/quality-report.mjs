@@ -38,7 +38,19 @@ function classifyLinks(payload) {
   const redirects = rows.filter((item) => /REDIRECT/i.test(String(item.state ?? ''))
     || (item.redirects && (Array.isArray(item.redirects) ? item.redirects.length : true)));
   const skipped = rows.filter((item) => /SKIP|UNKNOWN/i.test(String(item.state ?? '')));
-  return { total: rows.length, bad, redirects, skipped };
+  const status = (item) => Number(item.status ?? item.statusCode);
+  const notFound = bad.filter((item) => [404, 410].includes(status(item)));
+  const blocked = bad.filter((item) => [403, 429].includes(status(item)));
+  const unstable = bad.filter((item) => !notFound.includes(item) && !blocked.includes(item));
+  const own = bad.filter((item) => {
+    try {
+      const host = new URL(item.url ?? item.href).hostname;
+      return host === 'estabaenlisboa.com' || host === 'www.estabaenlisboa.com';
+    } catch {
+      return false;
+    }
+  });
+  return { reported: rows.length, bad, redirects, skipped, notFound, blocked, unstable, own };
 }
 
 function findLighthouseJson(dir, depth = 0) {
@@ -75,6 +87,7 @@ function classifyLighthouse(payload) {
     practices: score(item['best-practices'] ?? item.bestPractices),
   }));
   const severity = (item) => {
+    if (item.seo === null && item.accessibility === null && item.performance === null) return 'sin-datos';
     if ((item.seo !== null && item.seo < 0.8)
       || (item.accessibility !== null && item.accessibility < 0.8)
       || (item.performance !== null && item.performance < 0.5)) return 'critica';
@@ -84,7 +97,7 @@ function classifyLighthouse(payload) {
     return 'correcta';
   };
   const categories = measured.map((item) => ({ ...item, severity: severity(item) }));
-  const priority = { critica: 0, mejorable: 1, correcta: 2 };
+  const priority = { critica: 0, mejorable: 1, 'sin-datos': 2, correcta: 3 };
   categories.sort((a, b) => priority[a.severity] - priority[b.severity]
     || (a.performance ?? 1) - (b.performance ?? 1));
   return {
@@ -92,6 +105,7 @@ function classifyLighthouse(payload) {
     critical: categories.filter((item) => item.severity === 'critica').length,
     warning: categories.filter((item) => item.severity === 'mejorable').length,
     okay: categories.filter((item) => item.severity === 'correcta').length,
+    unknown: categories.filter((item) => item.severity === 'sin-datos').length,
   };
 }
 
@@ -124,8 +138,12 @@ function markdown({ links, linkError, lighthouse, lighthouseError, mode, linkExi
   if (!links) {
     lines.push('⚠️ Sin resultado verificable. ' + (linkError ?? 'Formato desconocido.'));
   } else {
-    lines.push('- Enlaces encontrados: **' + links.total + '**');
-    lines.push('- Enlaces rotos o fallidos: **' + links.bad.length + '**');
+    lines.push('- Registros devueltos por Linkinator: **' + links.reported + '** (no equivalen al total de enlaces comprobados).');
+    lines.push('- Incidencias detectadas: **' + links.bad.length + '**');
+    lines.push('- Respuestas 404/410: **' + links.notFound.length + '** (verificar en navegador).');
+    lines.push('- Respuestas 403/429: **' + links.blocked.length + '** (posibles bloqueos anti-bot).');
+    lines.push('- Sin respuesta/servidor/otras: **' + links.unstable.length + '**.');
+    lines.push('- Incidencias con destino en nuestra propia web: **' + links.own.length + '**.');
     lines.push('- Redirecciones identificadas: **' + links.redirects.length + '**');
     lines.push('- Enlaces omitidos/no verificables: **' + links.skipped.length + '**');
     lines.push('');
@@ -134,7 +152,12 @@ function markdown({ links, linkError, lighthouse, lighthouseError, mode, linkExi
       lines.push('');
       lines.push('| Destino | Origen | Estado |');
       lines.push('|---|---|---|');
-      for (const item of links.bad.slice(0, 25)) {
+      const ordered = [...links.bad].sort((a, b) => {
+        const rank = (item) => [404, 410].includes(Number(item.status ?? item.statusCode)) ? 0
+          : [403, 429].includes(Number(item.status ?? item.statusCode)) ? 2 : 1;
+        return rank(a) - rank(b);
+      });
+      for (const item of ordered.slice(0, 25)) {
         lines.push('| ' + clean(item.url ?? item.href) + ' | ' + clean(linkSource(item))
           + ' | ' + clean(item.status ?? item.statusCode ?? item.state) + ' |');
       }
@@ -155,6 +178,7 @@ function markdown({ links, linkError, lighthouse, lighthouseError, mode, linkExi
     lines.push('- 🔴 Críticas: **' + lighthouse.critical + '**');
     lines.push('- 🟠 Mejorables: **' + lighthouse.warning + '**');
     lines.push('- 🟢 Correctas: **' + lighthouse.okay + '**');
+    lines.push('- ⚪ Sin puntuaciones legibles: **' + lighthouse.unknown + '**');
     lines.push('');
     lines.push('### Páginas que requieren revisión');
     lines.push('');
@@ -193,12 +217,12 @@ function selfTest() {
     { path: '/', performance: 0.4, accessibility: 1, seo: 1 },
     { path: '/blog', performance: 0.88, accessibility: 1, seo: 1 },
   ]);
-  if (!links || links.total !== 3 || links.bad.length !== 1 || links.redirects.length !== 1
+  if (!links || links.reported !== 3 || links.bad.length !== 1 || links.notFound.length !== 1 || links.redirects.length !== 1
     || !lighthouse || lighthouse.critical !== 1 || lighthouse.okay !== 1) {
     throw new Error('Self-test falló: clasificación de resultados.');
   }
   const summary = markdown({ links, lighthouse, mode: 'full', linkExit: '1', lighthouseExit: '0' });
-  if (!summary.includes('Enlaces rotos o fallidos: **1**') || !summary.includes('Críticas: **1**')) {
+  if (!summary.includes('Incidencias detectadas: **1**') || !summary.includes('Críticas: **1**')) {
     throw new Error('Self-test falló: Markdown de salida.');
   }
   console.log('Quality Bot: self-test OK');
