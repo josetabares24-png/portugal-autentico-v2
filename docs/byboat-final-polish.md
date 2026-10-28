@@ -1,5 +1,7 @@
 # ByBoat: corrección tipográfica y botones
 
+Estado posterior: José autorizó desplegar esta entrega para pedir feedback al operador; PR121 está fusionado y la URL pública verificada. [Registro de publicación](byboat-public-review-release.md). Los apartados de Preview siguientes conservan el historial de QA previo.
+
 28 de octubre de 2026. José aporta una captura de iPhone y pide coherencia con los artículos del blog: quitar cursivas, iconos de acción y números decorativos. La selección de Home y la nueva navegación no están aprobadas.
 
 ## Baseline y alcance

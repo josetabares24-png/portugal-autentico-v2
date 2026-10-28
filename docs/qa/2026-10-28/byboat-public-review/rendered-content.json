@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-28",
+  "base": "https://estabaenlisboa.com",
+  "head": "006f69808debd86be94a3d6eedb1efcd63ef2b0d",
+  "checks": [
+    {
+      "name": "Article data object unchanged",
+      "pass": true
+    },
+    {
+      "name": "Booking, map and photo constants unchanged",
+      "pass": true
+    },
+    {
+      "name": "Shared UI and global CSS unchanged",
+      "pass": true
+    },
+    {
+      "name": "Article returns 200",
+      "pass": true
+    },
+    {
+      "name": "One H1 with complete existing title",
+      "pass": true
+    },
+    {
+      "name": "Spanish language",
+      "pass": true
+    },
+    {
+      "name": "Self canonical",
+      "pass": true
+    },
+    {
+      "name": "Draft keeps noindex and policy follow",
+      "pass": true
+    },
+    {
+      "name": "Baseline copy includes substantive paragraphs",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 1",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 2",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 3",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 4",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 5",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 6",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 7",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 8",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 9",
+      "pass": true
+    },
+    {
+      "name": "Preserved paragraph or note 10",
+      "pass": true
+    },
+    {
+      "name": "Existing comparison information: 45 €",
+      "pass": true
+    },
+    {
+      "name": "Existing comparison information: 60 €",
+      "pass": true
+    },
+    {
+      "name": "Existing comparison information: 120 minutos",
+      "pass": true
+    },
+    {
+      "name": "Existing comparison information: Dos bebidas y explicaciones en español",
+      "pass": true
+    },
+    {
+      "name": "Exactly three existing sponsored destinations",
+      "pass": true
+    },
+    {
+      "name": "Correct Bokun experience 1163355",
+      "pass": true
+    },
+    {
+      "name": "Correct Bokun experience 1163354",
+      "pass": true
+    },
+    {
+      "name": "Official all-tours link retained",
+      "pass": true
+    },
+    {
+      "name": "Sponsor links retain rel and new-tab behavior",
+      "pass": true
+    },
+    {
+      "name": "Commercial disclosure visible in markup",
+      "pass": true
+    },
+    {
+      "name": "One shared article contents",
+      "pass": true
+    },
+    {
+      "name": "All section anchors exist",
+      "pass": true
+    },
+    {
+      "name": "Three operator photographs",
+      "pass": true
+    },
+    {
+      "name": "Original map and directions retained",
+      "pass": true
+    },
+    {
+      "name": "Schema parseable",
+      "pass": true
+    },
+    {
+      "name": "Schema parseable",
+      "pass": true
+    },
+    {
+      "name": "Sitemap keeps 106 URLs",
+      "pass": true
+    },
+    {
+      "name": "No unpublished article in sitemap",
+      "pass": true
+    },
+    {
+      "name": "Preview blog lists the article",
+      "pass": true
+    },
+    {
+      "name": "Existing Preview alias still redirects directly",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "paragraphs": 10
+}

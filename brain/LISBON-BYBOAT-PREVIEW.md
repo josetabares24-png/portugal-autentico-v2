@@ -1,5 +1,15 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Desplegado para feedback — 28 octubre
+
+José pide ahora modificar las menciones de idioma del artículo. Se aplica en PR122 el resultado de la verificación: servicio multilingüe con español disponible, confirmación al reservar y francés del atardecer sin garantizar. Corrección factual coherente en intro, cuerpo, bloque de idiomas y tarjetas; sin cambios de diseño, precios o destinos. La nota histórica siguiente «sin cambios de aplicación» describe solo la fase de investigación anterior; esta corrección sí está autorizada.
+
+Idiomas del velero verificados después en las reservas Bokun oficiales: día1163355 enumera EN/FR/PT/ES; atardecer1163354 enumera PT/EN/ES en «Live tour guide», aunque su descripción también menciona FR. Ambas fichas son multilingües y Pedro confirmó español en su correo del 27/10. No presentar el paseo como exclusivamente español ni garantizar francés en atardecer sin aclaración. Redacción propuesta: «Guía multilingüe, con explicaciones en español disponibles; confirma el idioma al reservar». [Fuentes y discrepancia](../docs/byboat-public-review-release.md). No cambios de aplicación ni correo enviado en esta verificación.
+
+Idiomas verificados en página/código y correo el 28/10: ByBoat solo en español, sin contraparte /en; el piloto inglés de seis URLs no lo incluye. Pedro Sá Vieira escribe en portugués en sus dos respuestas del 27/10. Propuesta y aceptación son para un artículo original en español; esto no implica traducción inglesa/portuguesa. El texto de correo sugerido se corrige a portugués. No correo enviado ni cambio de idiomas del sitio.
+
+José autoriza «Súbelo despliega…» sobre la entrega corregida de ByBoat. PR121 fusionado normalmente, head `1d20a26`, merge `006f698`, Vercel production `dpl_8H77vxVaLbYoSo4Uaq485CLokPX4` READY. URL pública estable `/blog/paseo-en-velero-lisboa-lisbon-byboat`, HTTP200; revisión visible/noindex/follow y fuera del sitemap hasta cerrar feedback del operador. Conservación39/SEO1530 en producción y QA visual remota en cinco anchos correctos. Home/header de PR120 siguen sin aprobar ni publicar. [Registro, evidencia y texto para José](../docs/byboat-public-review-release.md). No correo enviado ni pago/reserva inferidos. Esta publicación supersede las restricciones históricas de solo Preview de las notas siguientes; no autoriza activar indexación o el lote de Home/navegación.
+
 ## Corrección solicitada desde iPhone — 28 octubre
 
 Entrega corregida: aplicación `ae79d0f`, PR121 borrador independiente y Preview `njaxvlns1` READY; seis CI, build144/TypeScript/ESLint correctos. Conservación39 local/remota; SEO1530 local y1424 remoto con106URLs/16redirects, sin fallos. Cinco anchos locales320–1440 sin overflow ni cursivas en H1/H2/H3, precios en lectura26px y CTA48px sin flechas. El navegador no abrió el nuevo origen de Preview por fallo de revisión automática/cuota; QA visual local y controles HTTP remotos se distinguen en el informe. Producción intacta, sin correo ni pago. PR120 conserva el experimento Home/header pendiente y no debe fusionarse junto a esta revisión.
