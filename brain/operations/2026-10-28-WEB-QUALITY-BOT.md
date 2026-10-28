@@ -38,3 +38,17 @@ Añadir **Linkinator 8.1.0** y **Unlighthouse 0.19.1** como ejecutables externos
 5. Crear un backlog de causas verificadas por URL/plantilla y priorizar **una intervención pequeña** sin tocar URLs protegidas sin consulta de GSC.
 
 Documentación: [Web Quality Bot](../../docs/web-quality-audit.md).
+
+## Primera ejecución real observada — 2026-10-28
+
+Evidencia: [Actions #40786457887](https://github.com/josetabares24-png/portugal-autentico-v2/actions/runs/40786457887), artifact `web-quality-40786457887`; no deployment ni cambio de frontend.
+
+**Unlighthouse móvil:** 35 rutas de muestra, rendimiento mínimo0,82 (donde-alojarse-en-lisboa), promedio0,949; accesibilidad mínima0,93; SEO y buenas prácticas1,0 en las 35. Estos son scores sintéticos, no CWV de campo; muestra incompleta de las URLs indexables.
+
+**Linkinator:** 41 filas marcadas como BROKEN con `verbosity ERROR`: 36 HTTP403 externos (21 Stay22, 9 GetYourGuide/gyg.me, además prensa y museos), 2 HTTP404 del mismo URL `www.maat.pt/pt/visitar` desde `/blog/lisboa-en-enero` y `/blog/nochevieja-lisboa`, 2 errores de red/status0 (ASAE y Mercado de Arroios), 1 HTTP523 (Carris Metropolitana). Cero destinos internos propios. El JSON filtrado no demuestra cobertura total ni 41 roturas para humanos.
+
+El sitio oficial del museo presenta actualmente `https://www.maat.pt/pt/planear-visita`. Candidato a corrección puntual, no incluida en esta PR de instrumentación.
+
+**Aprendizaje de instrumentación:** el primer workflow guardó resultados pero omitió artifacts porque la carpeta empezaba con punto; corregido con `include-hidden-files: true` y salida de summary en logs. Posteriormente se modificó el generador para diferenciar bloqueos 403/429, 404/410 y errores de red, y se activó `verbosity INFO` en el siguiente escaneo para no confundir incidencias reportadas con total de enlaces comprobados.
+
+**Decisión:** Mantener fase1 en observación; ningún redirect/SEO o afiliado se cambia por un 403 de crawler. No se instala Lighthouse CI hasta tener baseline comparable y revisar coste.
