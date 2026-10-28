@@ -1,0 +1,134 @@
+name: Web Quality Bot — Estaba en Lisboa
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/web-quality-audit.yml'
+      - 'scripts/quality-report.mjs'
+      - 'docs/web-quality-audit.md'
+      - 'brain/operations/2026-10-28-WEB-QUALITY-BOT.md'
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Alcance de la auditoría'
+        required: true
+        default: 'links-and-performance'
+        type: choice
+        options:
+          - links
+          - links-and-performance
+  schedule:
+    - cron: '25 6 * * 1'   # Lunes 06:25 UTC: enlaces
+    - cron: '50 6 1 * *'   # Día 1, 06:50 UTC: enlaces + Unlighthouse móvil
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-quality-${{ github.event_name }}-${{ github.event.schedule || inputs.scope || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validar el generador de informes
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check scripts/quality-report.mjs
+      - run: node scripts/quality-report.mjs --self-test
+
+  audit:
+    name: Auditar producción sin modificarla
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SITE_ORIGIN: https://estabaenlisboa.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enlaces de todas las páginas del sitemap
+        id: links
+        shell: bash
+        run: |
+          mkdir -p .quality-reports
+          set +e
+          npx --yes linkinator@8.1.0 "$SITE_ORIGIN" \
+            --sitemap \
+            --concurrency 8 \
+            --timeout 20000 \
+            --retry --retry-errors --retry-errors-count 2 \
+            --redirects warn --require-https warn \
+            --format JSON --verbosity ERROR \
+            > .quality-reports/linkinator.json 2> .quality-reports/linkinator.log
+          result=$?
+          echo "exit_code=$result" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Lighthouse móvil por plantillas representativas
+        id: lighthouse
+        if: >-
+          (github.event_name == 'workflow_dispatch' && inputs.scope == 'links-and-performance') ||
+          (github.event_name == 'schedule' && github.event.schedule == '50 6 1 * *')
+        shell: bash
+        run: |
+          set +e
+          npx --yes --package=unlighthouse@0.19.1 unlighthouse-ci \
+            --site "$SITE_ORIGIN" \
+            --sitemaps "$SITE_ORIGIN/sitemap.xml" \
+            --mobile --samples 1 --no-cache \
+            --reporter json \
+            --output-path .quality-reports/unlighthouse \
+            > .quality-reports/unlighthouse.log 2>&1
+          result=$?
+          echo "exit_code=$result" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Resumen con evidencia y límites
+        if: always()
+        shell: bash
+        run: |
+          mode=links
+          if [[ -n "${{ steps.lighthouse.outputs.exit_code }}" ]]; then
+            mode=full
+          fi
+          node scripts/quality-report.mjs \
+            --mode "$mode" \
+            --links .quality-reports/linkinator.json \
+            --lighthouse .quality-reports/unlighthouse \
+            --link-exit "${{ steps.links.outputs.exit_code }}" \
+            --lighthouse-exit "${{ steps.lighthouse.outputs.exit_code }}" \
+            --out .quality-reports/summary.md
+          if [[ -f .quality-reports/summary.md ]]; then
+            cat .quality-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Guardar resultados descargables (30 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-quality-${{ github.run_id }}
+          path: .quality-reports/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Mostrar si el escaneo ha fallado
+        if: always()
+        shell: bash
+        run: |
+          if [[ "${{ steps.links.outputs.exit_code }}" != '0' ]]; then
+            echo 'Linkinator encontró errores o no pudo terminar. Ver informe y logs.'
+            exit 1
+          fi
+          if [[ -n "${{ steps.lighthouse.outputs.exit_code }}" && "${{ steps.lighthouse.outputs.exit_code }}" != '0' ]]; then
+            echo 'Unlighthouse no terminó correctamente. Ver informe y logs.'
+            exit 1
+          fi
