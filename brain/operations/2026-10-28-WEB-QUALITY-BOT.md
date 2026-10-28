@@ -1,6 +1,6 @@
 # Web Quality Bot: integración inicial (2026-10-28)
 
-**Estado:** CANDIDATO EN PR / NO FUSIONADO. Auditoría real **pendiente** tras incorporación a `main`.
+**Estado:** CANDIDATO EN PR / NO FUSIONADO. Auditoría inicial de observación disparada en PR; resultados pendientes al redactar.
 
 ## Diagnóstico y evidencia
 
@@ -19,7 +19,7 @@ Añadir **Linkinator 8.1.0** y **Unlighthouse 0.19.1** como ejecutables externos
 - Día 1 de mes 06:50 UTC: además Unlighthouse móvil con muestreo inteligente por plantilla.
 - Disparo manual de cada modalidad después de publicar el workflow en `main`.
 - En cada ejecución: `summary.md`, JSON y logs como artifact 30 días. Fallos del escáner son fallos, no "todo verde".
-- PR de implementación: validar sintaxis y pruebas del generador; **sin escanear producción automáticamente por cada PR**.
+- PR que toque el propio bot: validar sintaxis, pruebas del generador y ejecutar una **línea base de solo lectura no bloqueante**; no se audita en PRs de código ajeno.
 - Umbrales rojo/naranja/verde son clasificación preliminar para triage, no promesa de mejora de Google.
 - El workflow es de solo lectura para el repositorio y el sitio; no manda correo, no cambia web, no hace remediación automática.
 
@@ -33,7 +33,7 @@ Añadir **Linkinator 8.1.0** y **Unlighthouse 0.19.1** como ejecutables externos
 
 1. Validar la PR con el workflow de `node --check` + `--self-test` y el TypeScript CI existente.
 2. Revisar diff y no fusionar a ciegas; no hay cambio visual ni de producción de la aplicación.
-3. Tras aprobación e incorporación del workflow, ejecutar manualmente **links-and-performance** para la primera línea base.
+3. Revisar la primera línea base de la PR y repetir manualmente **links-and-performance** tras merge para verificar la programación.
 4. Leer resumen, JSON y logs; distinguir fallos de red/terceros frente a errores internos.
 5. Crear un backlog de causas verificadas por URL/plantilla y priorizar **una intervención pequeña** sin tocar URLs protegidas sin consulta de GSC.
 
