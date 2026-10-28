@@ -19,6 +19,7 @@
     { "source": "/actividades/sintra-dia-completo", "destination": "/blog/sintra-desde-lisboa" }
   ],
   "noindexPaths": [
+    "/blog/paseo-en-velero-lisboa-lisbon-byboat",
     "/comprar-entradas",
     "/planifica-tu-viaje",
     "/faq",

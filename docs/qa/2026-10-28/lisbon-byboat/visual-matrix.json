@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-28",
+  "head": "09936f0a8e38e3e25f3addaca99fecc51827b463",
+  "views": [
+    {
+      "broken": [],
+      "colors": {
+        "background": "rgb(245, 239, 230)",
+        "text": "rgb(26, 43, 74)"
+      },
+      "ctas": [
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        },
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        }
+      ],
+      "h1": 1,
+      "height": 844,
+      "scrollWidth": 312,
+      "toc": 1,
+      "tocOpen": false,
+      "width": 320,
+      "requested": {
+        "width": 320,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "broken": [],
+      "colors": {
+        "background": "rgb(245, 239, 230)",
+        "text": "rgb(26, 43, 74)"
+      },
+      "ctas": [
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        },
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        }
+      ],
+      "h1": 1,
+      "height": 844,
+      "scrollWidth": 382,
+      "toc": 1,
+      "tocOpen": false,
+      "width": 390,
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "broken": [],
+      "colors": {
+        "background": "rgb(245, 239, 230)",
+        "text": "rgb(26, 43, 74)"
+      },
+      "ctas": [
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        },
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        }
+      ],
+      "h1": 1,
+      "height": 915,
+      "scrollWidth": 404,
+      "toc": 1,
+      "tocOpen": false,
+      "width": 412,
+      "requested": {
+        "width": 412,
+        "height": 915
+      },
+      "passed": true
+    },
+    {
+      "broken": [],
+      "colors": {
+        "background": "rgb(245, 239, 230)",
+        "text": "rgb(26, 43, 74)"
+      },
+      "ctas": [
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        },
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        }
+      ],
+      "h1": 1,
+      "height": 1024,
+      "scrollWidth": 760,
+      "toc": 1,
+      "tocOpen": false,
+      "width": 768,
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true
+    },
+    {
+      "broken": [],
+      "colors": {
+        "background": "rgb(245, 239, 230)",
+        "text": "rgb(26, 43, 74)"
+      },
+      "ctas": [
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        },
+        {
+          "color": "rgb(184, 71, 46)",
+          "height": 48
+        }
+      ],
+      "h1": 1,
+      "height": 1000,
+      "scrollWidth": 1432,
+      "toc": 1,
+      "tocOpen": true,
+      "width": 1440,
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "passed": true
+    }
+  ]
+}
