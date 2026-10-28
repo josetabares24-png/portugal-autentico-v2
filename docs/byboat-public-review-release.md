@@ -24,15 +24,17 @@ Navbar, Home y CSS global comparados contra producción anterior `96162fe`: sin 
 
 ## Texto sugerido para José
 
-Hola, Pedro:
+Verificación del 28/10: la página pública declara idioma español, sin alternates ni versión inglesa registrada. La web sí tiene seis rutas del piloto inglés, pero ninguna corresponde a ByBoat. El hilo de correo del 27/10 está en portugués: Pedro responde en portugués y acepta avanzar tras una propuesta que especifica un artículo original en español. El correo de revisión debe redactarse en portugués; el idioma de comunicación con el operador no cambia el idioma contratado del artículo. No se guarda el correo completo ni sus adjuntos en el repositorio.
 
-Ya está disponible la versión del artículo sobre Lisbon ByBoat para que podáis revisarla:
+Olá, Pedro,
+
+Já está disponível a versão do artigo sobre a Lisbon ByBoat para a vossa revisão:
 
 https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat
 
-Me gustaría saber qué os parece el contenido y la presentación, y si cambiaríais algo. Revisad también las fotos, los precios, lo que incluye cada paseo, el punto de embarque y los enlaces de reserva para confirmar que todo está correcto.
+Gostaria de saber a vossa opinião sobre o conteúdo e a apresentação, e se há algo que gostariam de alterar. Agradeço também que confirmem as fotografias, os preços, o que está incluído em cada passeio, o ponto de encontro e os links de reserva.
 
-Con vuestros comentarios puedo dejarlo cerrado.
+Com os vossos comentários, poderei finalizar a versão do artigo.
 
-Gracias,
+Muito obrigado,
 José

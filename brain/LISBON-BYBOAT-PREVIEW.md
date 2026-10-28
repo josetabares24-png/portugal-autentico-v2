@@ -2,6 +2,8 @@
 
 ## Desplegado para feedback — 28 octubre
 
+Idiomas verificados en página/código y correo el 28/10: ByBoat solo en español, sin contraparte /en; el piloto inglés de seis URLs no lo incluye. Pedro Sá Vieira escribe en portugués en sus dos respuestas del 27/10. Propuesta y aceptación son para un artículo original en español; esto no implica traducción inglesa/portuguesa. El texto de correo sugerido se corrige a portugués. No correo enviado ni cambio de idiomas del sitio.
+
 José autoriza «Súbelo despliega…» sobre la entrega corregida de ByBoat. PR121 fusionado normalmente, head `1d20a26`, merge `006f698`, Vercel production `dpl_8H77vxVaLbYoSo4Uaq485CLokPX4` READY. URL pública estable `/blog/paseo-en-velero-lisboa-lisbon-byboat`, HTTP200; revisión visible/noindex/follow y fuera del sitemap hasta cerrar feedback del operador. Conservación39/SEO1530 en producción y QA visual remota en cinco anchos correctos. Home/header de PR120 siguen sin aprobar ni publicar. [Registro, evidencia y texto para José](../docs/byboat-public-review-release.md). No correo enviado ni pago/reserva inferidos. Esta publicación supersede las restricciones históricas de solo Preview de las notas siguientes; no autoriza activar indexación o el lote de Home/navegación.
 
 ## Corrección solicitada desde iPhone — 28 octubre
