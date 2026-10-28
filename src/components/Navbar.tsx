@@ -1,80 +1,124 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/Icon';
 import { englishCounterpart } from '@/lib/language-alternates';
-import { editorialNavigation, lisboaNavigation } from '@/data/editorial-navigation';
+
+const navLinks = [
+  { href: '/blog', label: 'Guías' },
+  { href: '/comprar-entradas', label: 'Entradas' },
+  { href: '/free-tours-lisboa', label: 'Free tours' },
+] as const;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [lisboaOpen, setLisboaOpen] = useState(false);
-  const lisboaContainer = useRef<HTMLDivElement>(null);
-  const lisboaButton = useRef<HTMLButtonElement>(null);
-  const mobileButton = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
-  // next-intl's internal /es prefix is absent from public URLs.
   const publicPathname = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
   const englishHref = englishCounterpart(publicPathname);
-  const isActive = (href: string) => !href.includes('#') &&
-    (publicPathname === href || publicPathname.startsWith(`${href}/`));
+  const isActive = (href: string) =>
+    publicPathname === href || publicPathname.startsWith(`${href}/`);
 
-  useEffect(() => {
-    if (!lisboaOpen) return;
-    function dismiss(event: PointerEvent) {
-      if (event.target instanceof Node && !lisboaContainer.current?.contains(event.target)) setLisboaOpen(false);
-    }
-    document.addEventListener('pointerdown', dismiss);
-    return () => document.removeEventListener('pointerdown', dismiss);
-  }, [lisboaOpen]);
-
-  function closeMenus() {
-    setLisboaOpen(false);
+  function closeMenu() {
     setMobileMenuOpen(false);
   }
 
   return (
-    <nav aria-label="Navegación principal" onKeyDown={(event) => {
-      if (event.key !== 'Escape') return;
-      if (lisboaOpen) lisboaButton.current?.focus();
-      if (mobileMenuOpen) mobileButton.current?.focus();
-      closeMenus();
-    }} className="sticky top-0 z-50 border-b border-taupe/10 bg-cream/95 shadow-sm backdrop-blur-sm">
+    <nav
+      aria-label="Navegación principal"
+      className="sticky top-0 z-50 border-b border-night/10 bg-cream/95 backdrop-blur-sm"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" onClick={closeMenus} className="shrink-0 rounded-sm transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
-            <Image src="/logo.png" alt="Estaba en Lisboa" width={160} height={48} priority className="h-12 w-auto" />
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="shrink-0 rounded-sm transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+          >
+            <Image
+              src="/logo.png"
+              alt="Estaba en Lisboa"
+              width={160}
+              height={48}
+              priority
+              className="h-11 w-auto md:h-12"
+            />
           </Link>
-          <div className="hidden items-center gap-3 xl:flex">
-            <div ref={lisboaContainer} className="relative" onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setLisboaOpen(false);
-            }}>
-              <button ref={lisboaButton} type="button" aria-expanded={lisboaOpen} aria-controls="lisboa-desktop-links" onClick={() => setLisboaOpen((open) => !open)} className="nav-link nav-link-desktop gap-2 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
-                Lisboa <span aria-hidden="true" className="text-xs">{lisboaOpen ? '−' : '+'}</span>
-              </button>
-              <div id="lisboa-desktop-links" hidden={!lisboaOpen} className="absolute right-0 top-full w-56 border border-border-soft bg-cream p-2 shadow-soft">
-                {lisboaNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="flex min-h-11 items-center rounded-sm px-4 text-sm text-night hover:bg-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">{link.label}</Link>)}
-              </div>
-            </div>
-            {editorialNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-desktop rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">{link.label}</Link>)}
-            {englishHref ? <a href={englishHref} hrefLang="en" lang="en" className="inline-flex min-h-11 items-center border-l border-border-soft pl-4 text-xs font-bold text-night" aria-label="Read this page in English">EN</a> : null}
+
+          <div className="hidden items-center gap-7 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+                className="relative inline-flex min-h-11 items-center font-body text-sm font-semibold text-night transition-colors hover:text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta aria-[current=page]:text-terracotta"
+              >
+                {link.label}
+                {isActive(link.href) ? (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-1 h-px bg-terracotta"
+                  />
+                ) : null}
+              </Link>
+            ))}
+
+            {englishHref ? (
+              <a
+                href={englishHref}
+                hrefLang="en"
+                lang="en"
+                className="inline-flex min-h-11 items-center border-l border-night/10 pl-5 font-body text-xs font-semibold text-text-secondary transition-colors hover:text-night"
+                aria-label="Read this page in English"
+              >
+                EN
+              </a>
+            ) : null}
           </div>
-          <button ref={mobileButton} type="button" onClick={() => { setMobileMenuOpen((open) => !open); setLisboaOpen(false); }} className="flex min-h-11 min-w-11 items-center justify-center rounded-md text-night hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta xl:hidden" aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'} aria-controls="editorial-mobile-links" aria-expanded={mobileMenuOpen}>
-            <Icon name={mobileMenuOpen ? 'close' : 'menu'} size={28} aria-hidden="true" />
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-md text-night hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta md:hidden"
+            aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+            aria-controls="main-mobile-menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <Icon name={mobileMenuOpen ? 'close' : 'menu'} size={27} aria-hidden="true" />
           </button>
         </div>
-        <div id="editorial-mobile-links" hidden={!mobileMenuOpen} className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-taupe/20 py-3 xl:hidden">
-          <details className="border-b border-border-soft pb-2">
-            <summary className="min-h-11 cursor-pointer py-3 font-semibold text-night focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">Lisboa</summary>
-            <div className="pl-4">{lisboaNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-mobile focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">{link.label}</Link>)}</div>
-          </details>
-          {editorialNavigation.map((link) => <Link key={link.href} href={link.href} onClick={closeMenus} aria-current={isActive(link.href) ? 'page' : undefined} className="nav-link nav-link-mobile focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta">{link.label}</Link>)}
-          <div className="mt-2 flex flex-wrap gap-x-5 border-t border-border-soft pt-2 text-sm text-text-secondary">
-            {englishHref ? <a href={englishHref} hrefLang="en" lang="en" className="inline-flex min-h-11 items-center underline underline-offset-4">Read this page in English</a> : null}
-            <Link href="/blog#catalogo" onClick={closeMenus} className="inline-flex min-h-11 items-center underline underline-offset-4">Todas las guías</Link>
-          </div>
+
+        <div
+          id="main-mobile-menu"
+          hidden={!mobileMenuOpen}
+          className="border-t border-night/10 py-2 md:hidden"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMenu}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className="flex min-h-12 items-center justify-between border-b border-night/10 py-3 font-body text-base font-semibold text-night last:border-b-0 aria-[current=page]:text-terracotta"
+            >
+              {link.label}
+              <span aria-hidden="true" className="text-terracotta">↗</span>
+            </Link>
+          ))}
+
+          {englishHref ? (
+            <a
+              href={englishHref}
+              hrefLang="en"
+              lang="en"
+              onClick={closeMenu}
+              className="mt-2 inline-flex min-h-11 items-center font-body text-sm text-text-secondary underline underline-offset-4"
+            >
+              Read this page in English
+            </a>
+          ) : null}
         </div>
       </div>
     </nav>
