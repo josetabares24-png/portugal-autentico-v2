@@ -1,6 +1,6 @@
 ## 28 octubre 2026 — Corrección de idiomas de ByBoat solicitada
 
-José pide aplicar al artículo la verificación de las reservas oficiales: guía multilingüe, español disponible; ES/EN/PT en ambos, FR confirmado en diurno y a consultar en atardecer. Introducción, experiencia, bloque de idiomas y las dos tarjetas se corrigen coherentemente en PR122, que también conserva el registro de publicación anterior. No cambia diseño, importes, URLs, enlaces, Home/header o noindex. [Fuentes y alcance](../docs/byboat-public-review-release.md). QA/despliegue de este ajuste pendientes de cierre.
+José pide aplicar al artículo la verificación de las reservas oficiales: guía multilingüe, español disponible; ES/EN/PT en ambos, FR confirmado en diurno y a consultar en atardecer. Introducción, experiencia, bloque de idiomas y las dos tarjetas corregidos en PR122/head352efc7, merge normal6beb734. Vercel production2ZbUxMT7TygJPBa4jsGjBCEmqYaG READY, alias asignados y texto público verificado. CincoCI presentes/build144/TypeScript/ESLint y QA SEO1530 local/producción pasan;106URLs/115páginas/16redirects. Preview y producción a320/390/1440 sin overflow; sin las frases antiguas. Diseño, importes45/60, URLs, enlaces, Home/header y noindex intactos. [Fuentes, alcance y evidencia](../docs/byboat-public-review-release.md). Ningún correo enviado.
 
 ## 28 octubre 2026 — ByBoat público para feedback del operador
 
