@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import DocumentShell from "@/components/DocumentShell";
 import EnglishNavigation from "@/components/english/EnglishNavigation";
@@ -30,6 +31,9 @@ const website = {
     url: "https://estabaenlisboa.com",
   },
 };
+const footerLinkClass =
+  "inline-flex min-h-10 items-center font-body text-sm leading-6 text-night/85 underline underline-offset-4 decoration-night/30 transition-colors hover:text-terracotta focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta";
+
 export default function EnglishLayout({
   children,
 }: {
@@ -47,51 +51,50 @@ export default function EnglishLayout({
     >
       <EnglishNavigation />
       {children}
-      <footer className="border-t border-border-soft bg-white/40">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-2">
+      <footer className="border-t border-night/15 bg-[#eee8df] text-night">
+        <div className="mx-auto max-w-6xl px-6 pb-24 pt-11 md:grid md:grid-cols-2 md:gap-x-20 md:px-8 md:pb-10 md:pt-14">
           <div>
-            <p className="font-display text-2xl font-semibold text-night">
-              Estaba en Lisboa
-            </p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-text-secondary">
+            <Link
+              href="/en"
+              className="inline-block max-w-full rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta"
+            >
+              <Image
+                src="/logo.png"
+                alt="Estaba en Lisboa — home"
+                width={1200}
+                height={500}
+                className="h-auto w-[228px] max-w-full sm:w-[250px]"
+              />
+            </Link>
+            <p className="mt-3 max-w-md font-body text-[13px] leading-6 text-night/75">
               Lisbon guides by José Tabares, who lives in the city. Practical
               decisions first, with official sources for changing information.
             </p>
-            <Link
-              href="/sobre-nosotros"
-              className="mt-3 inline-flex min-h-11 items-center text-sm underline"
-            >
+            <Link href="/sobre-nosotros" className={footerLinkClass}>
               About José and the publication (in Spanish)
             </Link>
           </div>
-          <div id="affiliate-policy">
-            <h2 className="font-body text-sm font-bold">About booking links</h2>
-            <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+          <div id="affiliate-policy" className="mt-9 border-t border-night/15 pt-7 md:mt-0 md:border-t-0 md:pt-0">
+            <h2 className="font-body text-[11px] font-bold not-italic uppercase tracking-[0.17em] text-night/80">
+              About booking links
+            </h2>
+            <p className="mt-3 max-w-md font-body text-[13px] leading-6 text-night/75">
               Some links are affiliate links. If you book through them, this
               publication may receive a commission. The provider handles your
               reservation, prices, changes and cancellation terms.
             </p>
-            <div className="mt-3 flex flex-wrap gap-x-5 text-sm">
-              <Link
-                className="inline-flex min-h-11 items-center underline"
-                href="/politica-privacidad"
-              >
-                Privacy (Spanish)
-              </Link>
-              <Link
-                className="inline-flex min-h-11 items-center underline"
-                href="/politica-cookies"
-              >
-                Cookies (Spanish)
-              </Link>
-              <Link
-                className="inline-flex min-h-11 items-center underline"
-                href="/aviso-legal"
-              >
-                Legal notice (Spanish)
-              </Link>
-            </div>
           </div>
+          <nav aria-label="Legal information" className="mt-9 flex flex-wrap gap-x-5 gap-y-1 border-t border-night/15 pt-5 md:col-span-2 md:mt-12 md:pt-6">
+            <Link className={footerLinkClass} href="/politica-privacidad">
+              Privacy (Spanish)
+            </Link>
+            <Link className={footerLinkClass} href="/politica-cookies">
+              Cookies (Spanish)
+            </Link>
+            <Link className={footerLinkClass} href="/aviso-legal">
+              Legal notice (Spanish)
+            </Link>
+          </nav>
         </div>
       </footer>
       <CookieBanner language="en" />
