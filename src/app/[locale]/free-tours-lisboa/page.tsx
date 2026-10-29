@@ -4,7 +4,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import Icon from '@/components/Icon';
 import { AffiliateLink } from '@/components/afiliados/AffiliateLink';
-import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
+import FreeToursEditorialHero from '@/components/free-tours/FreeToursEditorialHero';
 import FreeTourLiveFinder from '@/components/free-tours/FreeTourLiveFinder';
 import {
   FREE_TOUR_ROUTES,
@@ -152,26 +152,7 @@ export default function FreeToursLisboaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
-      <TourismBookingHero
-        image={HERO_IMAGE}
-        imageAlt="Arco da Rua Augusta y viajeros caminando por la Baixa de Lisboa"
-        objectPosition="center 45%"
-        eyebrow="Reserva sin pago previo"
-        title="Free tours en Lisboa"
-        description="Elige fecha, compara recorridos en español y reserva tu plaza. No pagas por adelantado; al terminar decides la propina."
-        primaryHref="#disponibilidad"
-        primaryLabel="Ver tours y horarios"
-        secondaryHref="#comparar-rutas"
-        secondaryLabel="Comparar zonas"
-        signals={['Horarios reales', 'Sin pago previo', 'Propina al terminar']}
-        breadcrumb={(
-          <nav aria-label="Breadcrumb" className="mb-auto flex items-center gap-2 pt-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">
-            <Link href="/" className="transition-colors hover:text-gold">Inicio</Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-white">Free tours</span>
-          </nav>
-        )}
-      />
+      <FreeToursEditorialHero />
 
       <FreeTourLiveFinder />
 
