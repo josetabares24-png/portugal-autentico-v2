@@ -37,11 +37,11 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.2fr,1fr,1fr]">
           <Link href="/" className="inline-block self-start opacity-90 hover:opacity-100 transition-opacity">
             <Image
-              src="/logo.png"
+              src="/brand/logo-v1-inverso.png"
               alt="Estaba en Lisboa"
               width={140}
               height={44}
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto"
             />
           </Link>
 
