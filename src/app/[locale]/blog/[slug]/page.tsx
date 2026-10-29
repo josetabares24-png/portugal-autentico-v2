@@ -6161,8 +6161,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_URL}/logo.png`,
-        width: 600,
-        height: 188,
+        width: 1200,
+        height: 500,
       },
     },
     inLanguage: 'es-ES',
