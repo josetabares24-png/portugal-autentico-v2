@@ -1,6 +1,12 @@
 # Lisbon ByBoat — identidad propia, 27 October 2026
 
+## Mensaje de revisión enviado — 28 octubre
+
+Tras mostrar el texto portugués, José autoriza expresamente enviarlo desde estabaenlisboa@gmail.com. Gmail confirma un único mensaje SENT `1a182edb95f0a4b3` en el hilo previo `1a17c70d994ebe83`, a14:32:59UTC. Se verifica remitente, destinatario Pedro, asunto existente, enlace al artículo y preguntas aprobadas sobre español/francés. La integración de Revenue OS revisada es de lectura; envío manual autorizado mediante el conector Gmail, sin cambios en el bot ni activación de envíos automáticos. A la espera de feedback, sin lectura/entrega, aprobación comercial, pago o reserva inferidos. Las notas históricas «correo no enviado» siguientes quedan superadas por este registro.
+
 ## Desplegado para feedback — 28 octubre
+
+Corrección de idiomas ya pública: PR122/head352efc7 fusionado normalmente en6beb734, Vercel production2ZbUxMT7TygJPBa4jsGjBCEmqYaG READY. Texto coherente en intro/cuerpo/bloque y tarjetas: guía multilingüe, español disponible, confirmación al reservar; francés del atardecer a consultar. CincoCI/build/TypeScript/lint y1530checksSEO local/producción pasan; Preview/producción320/390/1440 sin overflow. Precio/fotos/destinos/URL/canonical/noindex preservados y Home/header intactos. [Registro y captura pública](../docs/byboat-public-review-release.md). El despliegue006f698 siguiente corresponde a la primera entrega;6beb734 lo sustituye con esta corrección factual.
 
 José pide ahora modificar las menciones de idioma del artículo. Se aplica en PR122 el resultado de la verificación: servicio multilingüe con español disponible, confirmación al reservar y francés del atardecer sin garantizar. Corrección factual coherente en intro, cuerpo, bloque de idiomas y tarjetas; sin cambios de diseño, precios o destinos. La nota histórica siguiente «sin cambios de aplicación» describe solo la fase de investigación anterior; esta corrección sí está autorizada.
 

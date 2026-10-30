@@ -10,7 +10,13 @@ URL estable: https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboa
 
 Se conserva el estado de revisión visible y noindex/follow mientras el operador revisa el contenido; fuera del sitemap, con canonical propio y enlaces patrocinados. Este despliegue hace accesible la página, no activa una campaña SEO ni supone aprobación del operador, pago recibido o reserva. No se modifica la Home ni el header. PR120 no debe fusionarse para publicar este reportaje: contiene la propuesta de navegación/Home no aprobada y una versión anterior de ByBoat.
 
-El propósito expresado es que José pueda enviar el correo. Se prepara un texto para él, sin acceder a Gmail, crear mensajes ni enviarlos al operador.
+La primera petición de despliegue solo preparaba un texto para José, sin enviarlo. Después de revisar el mensaje portugués completo, José autoriza expresamente enviarlo desde su cuenta; el resultado se registra a continuación.
+
+## Envío de la respuesta aprobada
+
+28/10/2026,14:32:59UTC: enviado desde estabaenlisboa@gmail.com a Pedro en el mismo hilo de la conversación, con el asunto existente. Gmail devuelve mensaje `1a182edb95f0a4b3`, hilo `1a17c70d994ebe83`, etiqueta SENT; una lectura posterior confirma remitente, destinatario, asunto, enlace del artículo y las preguntas aprobadas sobre solicitar español/francés al atardecer. No se adjuntan archivos ni se añaden destinatarios. No duplicar el envío.
+
+Se envía el texto mostrado y aprobado por José, en portugués, pidiendo feedback y validación de las informaciones de los paseos. El texto sugerido más abajo conserva el historial de preparación y no constituye un nuevo mensaje pendiente de envío. El bot lisboa-revenue-bot se inspeccionó previamente: prepara borradores/aprobaciones y lee Gmail; este envío se hace mediante el conector Gmail con autorización humana. No se implementan o activan envíos automáticos. Envío confirmado no significa entrega, lectura, aceptación, pago o reserva.
 
 ## Despliegue y comprobaciones
 
@@ -49,4 +55,8 @@ Conclusión: español confirmado en ambos, junto a inglés y portugués; francé
 
 Redacción verificada: «Guía multilingüe, con explicaciones en español disponibles. Confirma el idioma al reservar». No afirmar «tour exclusivamente en español». [Extractos de las reservas](qa/2026-10-28/byboat-public-review/official-booking-languages.json).
 
-José solicita después aplicar la corrección a todas las menciones de idiomas. PR122 se amplía desde el registro documental a ese cambio factual acotado: introducción, explicación de la experiencia, bloque de idiomas y las dos celdas que alimentan las tarjetas. Se enumera ES/EN/PT en ambos y FR en diurno; el francés en atardecer se consulta con la empresa, sin prometerlo. Mismos precios, fotos, enlaces, diseño, fechas originales y política SEO. Home/header siguen fuera. Validación y despliegue de esta corrección pendientes de registrar. No correo enviado.
+José solicita después aplicar la corrección a todas las menciones de idiomas. PR122 se amplía desde el registro documental a ese cambio factual acotado: introducción, explicación de la experiencia, bloque de idiomas y las dos celdas que alimentan las tarjetas. Se enumera ES/EN/PT en ambos y FR en diurno; el francés en atardecer se consulta con la empresa, sin prometerlo. Mismos precios, fotos, enlaces, diseño, fechas originales y política SEO. Home/header siguen fuera. No correo enviado.
+
+Corrección publicada: PR122/head `352efc7a3223fdfd62fa6687e1dc58cfeca4bc6c`, merge normal `6beb734e564c5250e1930524eecd0b55d206113f`, Vercel production `dpl_2ZbUxMT7TygJPBa4jsGjBCEmqYaG` READY y alias públicos asignados. Watcher confirma exactitud del head fusionado. Cinco controles CI presentes pasan, sin conflictos o hilos pendientes; build144, TypeScript y ESLint correctos. QA SEO local y de producción1530/1530:106URLs de sitemap,115páginas y16redirects, sin fallos.
+
+Preview `qk98liq4o` y producción verificadas en navegador a320/390/1440px, sin overflow. Se leen las correcciones en intro, cuerpo, bloque de idiomas y las dos tarjetas, sin las tres fórmulas antiguas ambiguas. Un H1, canonical propio/noindex follow y los tres destinos patrocinados conservados; precios45/60. [Captura pública, DOM y anchos](qa/2026-10-28/byboat-languages/). Este registro posterior no cambia aplicación.
