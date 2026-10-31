@@ -1,0 +1,26 @@
+name: Human Web preview source audit
+on:
+  push:
+    branches:
+      - preview/human-web-design-system-2026-10-31
+    paths:
+      - 'scripts/smoke-human-web-preview.mjs'
+      - 'src/components/human-web/**'
+      - 'src/app/[locale]/human-web-system/**'
+      - '.github/workflows/human-web-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lab-source-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node version
+        run: node --version
+      - name: Audit preview source and assets
+        run: node scripts/smoke-human-web-preview.mjs
