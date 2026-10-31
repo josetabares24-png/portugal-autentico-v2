@@ -46,11 +46,11 @@ jobs:
             "pages": {
               "home": {
                 "baseline": "https://estabaenlisboa.com/",
-                "candidate": "http://127.0.0.1:3000/human-web-system"
+                "candidate": "http://localhost:3000/human-web-system"
               },
               "interior": {
                 "baseline": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
-                "candidate": "http://127.0.0.1:3000/itinerarios/lisboa-1-dia-lo-esencial"
+                "candidate": "http://localhost:3000/itinerarios/lisboa-1-dia-lo-esencial"
               }
             }
           }
@@ -60,14 +60,14 @@ jobs:
           python .human-webs-evidence/tools/visual-evidence/capture.py --config /tmp/human-web-first-trial.json --stage baseline --out visual-evidence/baseline
       - name: Start preview locally without exposing private Vercel URL
         run: |
-          npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/human-web-next.log 2>&1 &
+          npm run dev -- --hostname localhost --port 3000 > /tmp/human-web-next.log 2>&1 &
           echo $! > /tmp/human-web-next.pid
           for n in $(seq 1 12); do
-            status=$(curl -s -o /dev/null -w '%{http_code}' --max-time 8 http://127.0.0.1:3000/human-web-system || true)
+            status=$(curl -s -o /dev/null -w '%{http_code}' --max-time 8 http://localhost:3000/human-web-system || true)
             echo "Preview local response $n: HTTP $status"
             if [[ "$status" = "200" || "$status" = "307" || "$status" = "308" ]]; then
               echo "Headers for preview route:"
-              curl -s -D - -o /dev/null --max-time 8 http://127.0.0.1:3000/human-web-system | head -25
+              curl -s -D - -o /dev/null --max-time 8 http://localhost:3000/human-web-system | head -25
               break
             fi
             if [ "$n" = 12 ]; then tail -80 /tmp/human-web-next.log; exit 1; fi
