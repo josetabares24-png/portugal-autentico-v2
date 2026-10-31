@@ -7,7 +7,7 @@ import styles from './LisbonByBoatStory.module.css';
 type Props = {
   article: Article;
   photos: { hero: string; boat: string; sailing: string };
-  links: { day: string; sunset: string; all: string; map: string };
+  links: { day: string; sunset: string; all: string; map: string; whatsapp: string };
 };
 
 function sectionBlocks(article: Article, title: string) {
@@ -50,7 +50,6 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
 
   return (
     <div className={styles.story}>
-      <div className={styles.preview}>Vista previa · Pendiente de aprobación</div>
       <div className={styles.frame}>
         <nav className={styles.breadcrumb} aria-label="Ruta de navegación"><Link href="/blog">Blog</Link><span aria-hidden="true">/</span><span>Lisbon ByBoat</span></nav>
         <header className={styles.header}>
@@ -65,7 +64,7 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
           <figcaption>Fotografía: Lisbon ByBoat</figcaption>
         </figure>
         <dl className={styles.essentials} aria-label="El paseo, de un vistazo">
-          {[['Duración', '120 minutos'], ['Paseos', 'De día · atardecer'], ['Incluye', '2 bebidas'], ['Idiomas', 'Multilingüe · español disponible']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+          {[['Duración', '120 minutos'], ['Paseos', 'De día · atardecer'], ['Incluye', '2 bebidas'], ['Tripulación', '2 personas']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
         </dl>
         <div className={styles.readingGrid}>
           <ArticleToc headings={headings} />
@@ -118,7 +117,10 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
             <section className={styles.ending}>
               <h2>¿Merece la pena incluirlo en tu viaje?</h2>
               <Copy blocks={sectionBlocks(article, '¿Merece la pena incluirlo en tu viaje?')} />
-              <a className={styles.allTours} href={links.all} target="_blank" rel="sponsored nofollow noopener noreferrer">Ver todas las experiencias de Lisbon ByBoat<span className="sr-only"> (enlace patrocinado, abre en otra pestaña)</span></a>
+              <div className={styles.contactLinks}>
+                <a className={styles.allTours} href={links.all} target="_blank" rel="sponsored nofollow noopener noreferrer">Ver todas las experiencias de Lisbon ByBoat<span className="sr-only"> (enlace patrocinado, abre en otra pestaña)</span></a>
+                <a className={styles.allTours} href={links.whatsapp} target="_blank" rel="sponsored nofollow noopener noreferrer">WhatsApp · +351 933 914 743<span className="sr-only"> (contacto de Lisbon ByBoat, abre en otra pestaña)</span></a>
+              </div>
               <p className={styles.small}>Este contenido es una colaboración comercial. No constituye una reseña basada en una experiencia personal a bordo.</p>
             </section>
           </article>

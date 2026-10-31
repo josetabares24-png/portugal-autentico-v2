@@ -9,6 +9,7 @@ const dayUrl = 'https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97-91
 const sunsetUrl = 'https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97-91056bb16516/experience/1163354';
 const allToursUrl = 'https://www.lisbonbyboat.com/toursbyboat';
 const mapUrl = 'https://maps.app.goo.gl/kFC7h23W5V6RbtJV9';
+const whatsappUrl = 'https://wa.me/351933914743';
 const heroImage = '/images/actividades/passeio-barco-rio-tejo-lisboa.webp';
 const photos = {
   hero: 'https://static.wixstatic.com/media/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg/v1/fill/w_980,h_490,al_c,q_85/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg',
@@ -23,18 +24,18 @@ const article: Article = {
   imageAlt: 'Paseo en barco por el río Tajo, en Lisboa',
   categoria: 'Guías',
   fecha: '27 Oct 2026',
+  dateModified: '2026-10-31',
   minutos: 5,
   contenido: [
     { tipo: 'parrafo', texto: 'Hay una Lisboa que se descubre caminando por sus calles y otra que aparece cuando nos alejamos de la orilla. Desde el Tajo, las colinas de Alfama, la silueta del puente 25 de Abril y los monumentos de Belém componen un paisaje diferente, lejos del ritmo de las zonas más concurridas.' },
-    { tipo: 'parrafo', texto: 'Navegar por el río permite contemplar esa otra perspectiva de la ciudad. Lisbon ByBoat propone recorridos de dos horas en velero, con guía multilingüe y explicaciones en español disponibles. Hay salidas de día y al atardecer.' },
+    { tipo: 'parrafo', texto: 'Navegar por el río permite contemplar esa otra perspectiva de la ciudad. Lisbon ByBoat propone recorridos de dos horas en velero, con comentarios personalizados sobre Lisboa y dos opciones de horario: durante el día o al atardecer.' },
     { tipo: 'subtitulo', texto: 'Cómo es el paseo en velero por Lisboa' },
-    { tipo: 'parrafo', texto: 'La experiencia parte de la zona de Belém, estrechamente vinculada a la historia marítima portuguesa. Desde el agua, los monumentos de la ribera se ven sin las prisas de una visita a pie. La tripulación está formada por dos personas y ofrece explicaciones personalizadas en varios idiomas.' },
-    { tipo: 'parrafo', texto: 'Las fichas de reserva indican español, inglés y portugués para ambos paseos, y también francés para el diurno. Confirma el idioma de tu salida al reservar. Si necesitas francés al atardecer, consúltalo con la empresa antes de reservar.' },
+    { tipo: 'parrafo', texto: 'La experiencia parte de la zona de Belém, estrechamente vinculada a la historia marítima portuguesa. Desde el agua, los monumentos de la ribera se ven sin las prisas de una visita a pie. La tripulación está formada por dos personas y adapta los comentarios sobre los monumentos y las vistas de Lisboa al grupo de cada salida.' },
     { tipo: 'parrafo', texto: 'Las dos experiencias principales duran 120 minutos e incluyen dos bebidas por persona. Se navega en pequeños grupos; los horarios y la disponibilidad se consultan al reservar.' },
     { tipo: 'subtitulo', texto: 'Qué paseo elegir: de día o al atardecer' },
     { tipo: 'tabla', texto: 'Comparación de los dos paseos de Lisbon ByBoat', columnas: ['Experiencia', 'Duración', 'Precio por persona', 'Incluye'], filas: [
-      ['Lisbon Sailing Tour (día)', '120 minutos', '45 €', 'Dos bebidas y guía multilingüe (español disponible)'],
-      ['Lisbon Sunset Sailing Tour', '120 minutos', '60 €', 'Dos bebidas y guía multilingüe (español disponible)'],
+      ['Lisbon Sailing Tour (día)', '120 minutos', '45 €', 'Dos bebidas'],
+      ['Lisbon Sunset Sailing Tour', '120 minutos', '60 €', 'Dos bebidas'],
     ] },
     { tipo: 'parrafo', texto: 'El paseo diurno resulta práctico para reconocer los monumentos y fotografiar la ciudad con luz natural. El de atardecer ofrece una experiencia más pausada, con los cambios de luz sobre el Tajo. Los precios son orientativos a octubre de 2026 y pueden variar según las condiciones de reserva.' },
     { tipo: 'subtitulo', texto: 'Qué monumentos se ven desde el río' },
@@ -61,16 +62,15 @@ const relatedPosts = ['belem-barrio-guia', 'lisboa-en-pareja', 'como-moverse-por
 });
 
 export const metadata: Metadata = {
-  title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat | Vista previa',
+  title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat',
   description: article.descripcion,
   alternates: { canonical: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat' },
-  robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
 };
 
 export default function LisbonByBoatArticle() {
   return (
     <main id="main-content" className="article-page article-v2 bg-background-light">
-      <LisbonByBoatStory article={article} photos={photos} links={{ day: dayUrl, sunset: sunsetUrl, all: allToursUrl, map: mapUrl }} />
+      <LisbonByBoatStory article={article} photos={photos} links={{ day: dayUrl, sunset: sunsetUrl, all: allToursUrl, map: mapUrl, whatsapp: whatsappUrl }} />
       <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
         <ArticleRelated posts={relatedPosts} />
         <div className="article-compact-ending mx-auto mt-10 max-w-2xl">

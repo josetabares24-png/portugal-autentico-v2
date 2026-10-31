@@ -7,13 +7,6 @@
   outline: 2px solid var(--color-focus);
   outline-offset: 5px;
 }
-.preview {
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-taupe);
-  font-size: 11px;
-  text-align: center;
-}
 .frame { max-width: 1248px; margin: auto; padding: 0 32px; }
 .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 20px; color: var(--color-taupe); font-size: 12px; }
 .breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
@@ -66,6 +59,7 @@
 .map > div { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px; font-size: 13px; }
 .map a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--color-terracotta); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .ending { padding-top: 32px; border-top: 1px solid var(--color-border); }
+.contactLinks { display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; }
 .allTours { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; margin-top: 20px; color: var(--color-terracotta); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 1023px) {
   .readingGrid { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 32px; }
