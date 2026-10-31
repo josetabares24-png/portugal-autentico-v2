@@ -1,0 +1,95 @@
+name: Human Web first real visual trial
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - preview/human-web-design-system-2026-10-31
+    paths:
+      - '.github/workflows/human-web-visual-trial.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  first-visual-trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout Estaba en Lisboa preview
+        uses: actions/checkout@v4
+      - name: Checkout Human Webs evidence tools
+        uses: actions/checkout@v4
+        with:
+          repository: josetabares24-png/human-webs-mega
+          ref: feat/text-first-cta-cross-sector-2026-10-31
+          path: .human-webs-evidence
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Next.js project
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: |
+          python -m pip install "playwright==1.55.0"
+          python -m playwright install --with-deps chromium
+      - name: Start preview locally without exposing private Vercel URL
+        run: |
+          npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/human-web-next.log 2>&1 &
+          echo $! > /tmp/human-web-next.pid
+          for n in $(seq 1 75); do
+            if curl -s -L --max-time 8 -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/human-web-system | grep -q '^200$'; then
+              echo "Local design-lab HTTP 200"
+              break
+            fi
+            if [ "$n" = 75 ]; then tail -100 /tmp/human-web-next.log; exit 1; fi
+            sleep 3
+          done
+      - name: Define transparent page comparison
+        run: |
+          cat > /tmp/human-web-first-trial.json <<'JSON'
+          {
+            "project": "Estaba en Lisboa - first visual prototype trial (different home routes, not A/B)",
+            "pages": {
+              "home": {
+                "baseline": "https://estabaenlisboa.com/",
+                "candidate": "http://127.0.0.1:3000/human-web-system"
+              },
+              "interior": {
+                "baseline": "https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial",
+                "candidate": "http://127.0.0.1:3000/itinerarios/lisboa-1-dia-lo-esencial"
+              }
+            }
+          }
+          JSON
+      - name: Real screenshots - production baseline (read-only)
+        run: |
+          python .human-webs-evidence/tools/visual-evidence/capture.py --config /tmp/human-web-first-trial.json --stage baseline --out visual-evidence/baseline
+      - name: Real screenshots - local preview prototype
+        run: |
+          python .human-webs-evidence/tools/visual-evidence/capture.py --config /tmp/human-web-first-trial.json --stage candidate --out visual-evidence/candidate
+      - name: Verify PNG integrity and compose comparison report
+        run: |
+          node .human-webs-evidence/tools/visual-evidence/report.mjs --dir visual-evidence
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          for (const stage of ['baseline','candidate']) {
+            const m=JSON.parse(readFileSync('visual-evidence/'+stage+'/manifest.json','utf8'));
+            console.log(stage,JSON.stringify(m.screenshots.map(x=>({page:x.page,viewport:x.viewport,httpStatus:x.httpStatus,issues:x.issues,h1:x.checks.h1Count,images:x.checks.visibleImages,title:x.checks.documentTitle}))));
+          }
+          NODE
+      - name: Attach screenshots and comparison as private run artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lisboa-human-web-first-visual-trial
+          path: |
+            visual-evidence/
+            /tmp/human-web-next.log
+          retention-days: 7
+          if-no-files-found: warn
