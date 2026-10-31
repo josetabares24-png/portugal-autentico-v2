@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Cómo es navegar por Lisboa en velero: recorridos de dos horas, opciones de día y al atardecer, precios y punto de embarque en Belém. Colaboración comercial.',
     categoria: 'Guías',
     fecha: '27 Oct 2026',
-    dateModified: '2026-10-27',
+    dateModified: '2026-10-31',
     autor: 'José Tabares',
     imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
   },
