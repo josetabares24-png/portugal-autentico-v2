@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Compass, Ticket, Ship, MapPinned, MoveRight, MousePointer2, Eye, Sparkles } from 'lucide-react';
+import { Compass, Ticket, Ship, MapPinned, Focus, MousePointer2, Eye, Accessibility } from 'lucide-react';
 import s from './HumanWebLab.module.css';
 
 type FontPair = 'editorial' | 'expressive' | 'classic';
@@ -50,8 +50,8 @@ export default function HumanWebLab({fontClasses}:Props){
         <h1 id="hw-hero" className={s.heroTitle}>La Lisboa<br/>de <em>verdad.</em></h1>
         <p className={s.heroBody}>Tours, entradas y rincones recomendados desde la ciudad. Para que descubras Lisboa a tu ritmo, con consejos que te ayudan a elegir.</p>
         <div className={s.ctaRow}>
-          <a className={`${button} ${s.pill}`} href="#experiencias">Ver tours y actividades <ArrowRight size={17}/></a>
-          <Link className={`${s.button} ${s.cream}`} href="/itinerarios">Preparar mi viaje <ArrowUpRight size={17}/></Link>
+          <a className={`${button} ${s.pill}`} href="#experiencias">Ver tours y actividades</a>
+          <Link className={`${s.button} ${s.cream}`} href="/itinerarios">Preparar mi viaje</Link>
         </div>
       </div>
       <div className={s.heroAside} aria-hidden="true">Lisboa siempre tiene<br/>otra historia.</div>
@@ -67,7 +67,7 @@ export default function HumanWebLab({fontClasses}:Props){
         <div><div className={s.eyebrow} style={{color:'var(--hw-clay)'}}>Elige bien qué reservar</div>
           <h2 id="experiencias-title" className={s.sectionTitle}>Experiencias para vivir Lisboa.</h2>
           <p className={s.sectionCopy}>Menos listas interminables. Más recomendaciones claras sobre qué compensa, qué visitar y cómo organizarlo.</p></div>
-        <Link className={s.sectionLink} href="/actividades">Explorar todas las actividades ↗</Link>
+        <Link className={s.sectionLink} href="/actividades">Explorar todas las actividades</Link>
       </div>
       <div className={s.tabs} aria-label="Categorías de experiencias">{(['Todos','Paseos en barco','Free tours','Entradas','Excursiones'] as Category[]).map(c=>
         <button key={c} type="button" aria-pressed={category===c} className={s.tab} onClick={()=>setCategory(c)}>{c}</button>
@@ -75,7 +75,7 @@ export default function HumanWebLab({fontClasses}:Props){
       <div className={s.cards}>
         {shown.map(e=><Link href={e.href} className={s.card} key={e.title} aria-label={`Ver guía: ${e.title}`}>
           <div className={s.cardPhoto}><Image src={e.image} alt={e.alt} fill sizes="(max-width: 680px) 50vw, (max-width: 990px) 50vw, 25vw" /><span className={s.chip}>{e.tag}</span></div>
-          <div className={s.cardBody}><h3 className={s.cardTitle}>{e.title}</h3><p className={s.cardDesc}>{e.description}</p><div className={s.cardFoot}><span>Ver guía y opciones</span><span className={s.cardArrow} aria-hidden="true">↗</span></div></div>
+          <div className={s.cardBody}><h3 className={s.cardTitle}>{e.title}</h3><p className={s.cardDesc}>{e.description}</p><div className={s.cardFoot}><span>Ver guía y opciones</span></div></div>
         </Link>)}
       </div>
     </div></section>
@@ -84,7 +84,7 @@ export default function HumanWebLab({fontClasses}:Props){
       <div className={s.editorialCopy}>
         <div className={s.eyebrow}>Una guía con criterio propio</div><h2 id="editorial-title">Consejos de alguien que vive aquí.</h2>
         <p>No quiero que reserves por reservar. Prefiero ayudarte a saber qué vale la pena, cuándo conviene ir y cuáles son las alternativas gratuitas.</p>
-        <Link className={`${s.button} ${s.cream}`} href="/sobre-nosotros">Conoce la historia <ArrowUpRight size={17}/></Link>
+        <Link className={`${s.button} ${s.cream}`} href="/sobre-nosotros">Conoce la historia</Link>
       </div>
     </div></section>
     <section id="biblioteca" className={`${s.section} ${s.library}`} aria-labelledby="biblioteca-title"><div className={s.container}>
@@ -94,20 +94,20 @@ export default function HumanWebLab({fontClasses}:Props){
         <h3 className={s.sampleTitle}>Lisboa, sin prisa.</h3>
         <p className={s.sampleText}>Descubre sus barrios, encuentra un buen tour y reserva únicamente lo que te apetezca de verdad.</p>
         <span className={s.samplePair}>{p.fonts}</span>
-        <button type="button" className={`${s.button} ${s.textBtn}`} onClick={()=>setPair(p.id)}>Probar combinación <ArrowRight size={15}/></button>
+        <button type="button" className={`${s.button} ${s.textBtn}`} onClick={()=>setPair(p.id)}>Probar combinación</button>
       </div>)}</div>
       <div className={s.libraryGrid}>
         <div><h3 className={s.componentTitle}>Botones que invitan a actuar.</h3><p className={s.componentSubtitle}>Cuatro jerarquías reales: principal, secundaria, editorial y puntual. El texto debe decir qué pasa al tocar, nunca prometer algo no disponible.</p>
-          <div className={s.label}>Acción principal</div><div className={s.buttonGrid}><a className={`${s.button} ${s.primary}`} href="#experiencias">Ver experiencias <ArrowRight size={17}/></a><Link className={`${s.button} ${s.primary} ${s.pill}`} href="/free-tours-lisboa">Explorar free tours <ArrowUpRight size={17}/></Link></div>
-          <div className={s.label}>Acción secundaria y editorial</div><div className={s.buttonGrid}><Link className={`${s.button} ${s.outline}`} href="/itinerarios">Ver itinerarios <ArrowRight size={17}/></Link><Link className={`${s.button} ${s.textBtn}`} href="/blog">Leer la guía <ArrowUpRight size={17}/></Link></div>
-          <div className={s.label}>Destacado puntual</div><div className={s.buttonGrid}><Link className={`${s.button} ${s.dark}`} href="/que-ver-en-lisboa">Qué ver en Lisboa <MoveRight size={17}/></Link><Link className={`${s.button} ${s.gold}`} href="/actividades">Elegir actividad <ArrowRight size={17}/></Link></div>
+          <div className={s.label}>Acción principal</div><div className={s.buttonGrid}><a className={`${s.button} ${s.primary}`} href="#experiencias">Ver experiencias</a><Link className={`${s.button} ${s.primary} ${s.pill}`} href="/free-tours-lisboa">Explorar free tours</Link></div>
+          <div className={s.label}>Acción secundaria y editorial</div><div className={s.buttonGrid}><Link className={`${s.button} ${s.outline}`} href="/itinerarios">Ver itinerarios</Link><Link className={`${s.button} ${s.textBtn}`} href="/blog">Leer la guía</Link></div>
+          <div className={s.label}>Destacado puntual</div><div className={s.buttonGrid}><Link className={`${s.button} ${s.dark}`} href="/que-ver-en-lisboa">Qué ver en Lisboa</Link><Link className={`${s.button} ${s.gold}`} href="/actividades">Elegir actividad</Link></div>
         </div>
         <div><h3 className={s.componentTitle}>Movimiento, sin ruido.</h3><p className={s.componentSubtitle}>Las transiciones se apoyan principalmente en opacidad y transformaciones; se desactivan cuando la persona prefiere menos movimiento.</p>
           <div className={s.motionList}>
-            <div className={s.motionTile}><span className={s.motionIcon}><MoveRight size={22}/></span><span><strong>Hover con intención</strong><small>El icono avanza unos píxeles para reforzar la dirección.</small></span></div>
+            <div className={s.motionTile}><span className={s.motionIcon}><Focus size={22}/></span><span><strong>Hover claro, sin flechas</strong><small>El contraste y los estados indican la interacción, sin adornos.</small></span></div>
             <div className={s.motionTile}><span className={s.motionIcon}><MousePointer2 size={22}/></span><span><strong>Tarjetas con elevación discreta</strong><small>Movimiento corto; sin saltos ni zoom agresivo.</small></span></div>
             <div className={s.motionTile}><span className={s.motionIcon}><Eye size={22}/></span><span><strong>Entrada editorial suave</strong><small>Aparece solo al cargar la portada, sin parallax continuo.</small></span></div>
-            <div className={s.motionTile}><span className={s.motionIcon}><Sparkles size={22}/></span><span><strong>Menos movimiento, misma experiencia</strong><small>Respeta el sistema operativo y el botón de este laboratorio.</small></span></div>
+            <div className={s.motionTile}><span className={s.motionIcon}><Accessibility size={22}/></span><span><strong>Menos movimiento, misma experiencia</strong><small>Respeta el sistema operativo y el botón de este laboratorio.</small></span></div>
           </div><p className={s.note}>La biblioteca es una prueba aislada. Se validarán contraste, tamaños, CLS, LCP e interacción móvil antes de trasladar estilos a producción.</p>
         </div>
       </div>
