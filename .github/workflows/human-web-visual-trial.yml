@@ -38,18 +38,6 @@ jobs:
         run: |
           python -m pip install "playwright==1.55.0"
           python -m playwright install --with-deps chromium
-      - name: Start preview locally without exposing private Vercel URL
-        run: |
-          npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/human-web-next.log 2>&1 &
-          echo $! > /tmp/human-web-next.pid
-          for n in $(seq 1 75); do
-            if curl -s -L --max-time 8 -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/human-web-system | grep -q '^200$'; then
-              echo "Local design-lab HTTP 200"
-              break
-            fi
-            if [ "$n" = 75 ]; then tail -100 /tmp/human-web-next.log; exit 1; fi
-            sleep 3
-          done
       - name: Define transparent page comparison
         run: |
           cat > /tmp/human-web-first-trial.json <<'JSON'
@@ -70,6 +58,18 @@ jobs:
       - name: Real screenshots - production baseline (read-only)
         run: |
           python .human-webs-evidence/tools/visual-evidence/capture.py --config /tmp/human-web-first-trial.json --stage baseline --out visual-evidence/baseline
+      - name: Start preview locally without exposing private Vercel URL
+        run: |
+          npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/human-web-next.log 2>&1 &
+          echo $! > /tmp/human-web-next.pid
+          for n in $(seq 1 22); do
+            if curl -s -L --max-time 3 -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/human-web-system | grep -q '^200$'; then
+              echo "Local design-lab HTTP 200"
+              break
+            fi
+            if [ "$n" = 22 ]; then tail -100 /tmp/human-web-next.log; exit 1; fi
+            sleep 2
+          done
       - name: Real screenshots - local preview prototype
         run: |
           python .human-webs-evidence/tools/visual-evidence/capture.py --config /tmp/human-web-first-trial.json --stage candidate --out visual-evidence/candidate
