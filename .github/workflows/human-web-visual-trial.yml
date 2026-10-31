@@ -62,14 +62,15 @@ jobs:
         run: |
           npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/human-web-next.log 2>&1 &
           echo $! > /tmp/human-web-next.pid
-          for n in $(seq 1 2); do
-            status=$(curl -s -L --max-time 75 -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/human-web-system || true)
-            echo "Preview probe $n HTTP $status"
-            if [ "$status" = 200 ]; then
-              echo "Local design-lab HTTP 200"
+          for n in $(seq 1 12); do
+            status=$(curl -s -o /dev/null -w '%{http_code}' --max-time 8 http://127.0.0.1:3000/human-web-system || true)
+            echo "Preview local response $n: HTTP $status"
+            if [[ "$status" = "200" || "$status" = "307" || "$status" = "308" ]]; then
+              echo "Headers for preview route:"
+              curl -s -D - -o /dev/null --max-time 8 http://127.0.0.1:3000/human-web-system | head -25
               break
             fi
-            if [ "$n" = 2 ]; then tail -100 /tmp/human-web-next.log; exit 1; fi
+            if [ "$n" = 12 ]; then tail -80 /tmp/human-web-next.log; exit 1; fi
             sleep 2
           done
       - name: Real screenshots - local preview prototype
