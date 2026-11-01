@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import PhotoCreditLine from "@/components/ui/PhotoCreditLine";
 import tours from "@/data/english-walking-tours.json";
 import { withGuruwalkRef, buildAffiliateUrl } from "@/lib/affiliate";
 import { ENGLISH_TOURS_CAMPAIGN } from "@/lib/english-bookings";
@@ -35,6 +36,7 @@ export default function EnglishTourSelection({
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
+            <PhotoCreditLine image={tour.image} lang="en" className="px-5 pt-2" />
             <div className="flex flex-1 flex-col p-5">
               <div className="mb-2 flex items-center gap-2">
                 <Icon
