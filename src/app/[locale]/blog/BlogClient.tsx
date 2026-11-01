@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState, type ReactNode } from 'react';
-import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
+import { EditorialArticleCard, uniqueArticleImages } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
@@ -36,6 +36,10 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
 
   const allRemaining = postsFiltrados.slice(4);
   const remaining = allRemaining.slice((paginaActual - 1) * POSTS_PER_PAGE, paginaActual * POSTS_PER_PAGE);
+  // Fotos únicas dentro del catálogo visible de esta página. Un duplicado
+  // queda como tarjeta textual, sin imagen de relleno.
+  const firstPagePosts = paginaActual === 1 ? postsFiltrados.slice(0, 4) : [];
+  const visibleImages = uniqueArticleImages([...firstPagePosts, ...remaining]);
 
   function cambiarCategoria(cat: string) {
     setCategoriaActiva(cat);
@@ -83,7 +87,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
       {/* The first four archive records stay crawlable on page one. */}
       {paginaActual === 1 && postsFiltrados.length > 0 && <section className="bg-background-light py-6" aria-label="Primeras guías del catálogo">
         <div className="site-container grid gap-6 md:grid-cols-2">
-          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="grid" headingLevel={3} />)}
+          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="grid" headingLevel={3} imageOverride={visibleImages.get(post.id)} />)}
         </div>
       </section>}
 
@@ -103,7 +107,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
           )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => (
-              <EditorialArticleCard key={post.id} post={post} headingLevel={3} />
+              <EditorialArticleCard key={post.id} post={post} headingLevel={3} imageOverride={visibleImages.get(post.id)} />
             ))}
           </div>
 
