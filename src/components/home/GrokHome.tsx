@@ -193,6 +193,23 @@ export default function GrokHome() {
         </div>
       </section>
 
+      <section className={s.section} aria-labelledby="home-seasonal-title">
+        <div className={s.container}>
+          <p className={s.scriptLabel}>Para estas fechas</p>
+          <h2 id="home-seasonal-title" className={s.sectionHeading}>Si vienes en otoño o invierno</h2>
+          <p className={s.sectionLead}>Navidad, lluvia y fin de año cambian los planes. Consulta fechas y horarios en cada guía.</p>
+          <nav className={s.discover} aria-label="Guías de temporada">
+            <Link href="/blog/lisboa-cuando-llueve"><strong>Cuando llueve</strong><span>Planes a cubierto y alternativas.</span></Link>
+            <Link href="/blog/lisboa-en-navidad"><strong>Navidad en Lisboa</strong><span>Mercados, luces y visitas.</span></Link>
+            <Link href="/blog/nochevieja-lisboa"><strong>Fin de año</strong><span>Celebraciones y transporte.</span></Link>
+            <Link href="/blog/lisboa-en-enero"><strong>Lisboa en enero</strong><span>Qué abre y qué puede cerrar.</span></Link>
+          </nav>
+          <p style={{marginTop:24,fontSize:14,color:'#526971'}}>
+            Este proyecto lo escribo y reviso desde Lisboa. <Link href="/sobre-nosotros" className={s.readLink}>Conoce quién está detrás</Link>
+          </p>
+        </div>
+      </section>
+
       <aside className={s.trust} aria-label="Cómo preparamos nuestras recomendaciones">
         <div className={s.container}>
           <div className={s.trustGrid}>
