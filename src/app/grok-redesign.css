@@ -411,3 +411,136 @@
   }
   .grok-blog-feature-small .grok-blog-seasonal-grid article h3 { font-size: 1.32rem; }
 }
+
+
+/* Cabecera editorial para los itinerarios de 1, 3 días y demás rutas
+ * (la ruta de 2 días tiene su composición propia). */
+.grok-itinerary-page .grok-pack-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(285px,34vw,425px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background: var(--eel-sea-dark);
+}
+.grok-pack-hero-image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 48%;
+}
+.grok-pack-hero-shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg,rgba(1,67,73,.87),rgba(1,94,100,.58),rgba(1,67,73,.8));
+}
+.grok-pack-hero-content {
+  padding: 42px 22px 65px;
+  max-width: 780px;
+}
+.grok-pack-back {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 40px;
+  margin-bottom: 15px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+}
+.grok-pack-back:hover { background: rgba(255,255,255,.16); color: #fff; }
+.grok-pack-script {
+  font-family: var(--grok-script),cursive;
+  font-weight: 600;
+  font-size: clamp(1.5rem,2.6vw,2.1rem);
+  color: var(--eel-yellow);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.grok-pack-hero h1 {
+  font-family: var(--eel-display-font);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2.4rem,5.4vw,4.35rem);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: #fff;
+  text-wrap: balance;
+}
+.grok-pack-summary { color: #f4faf9; font-size: .97rem; line-height: 1.65; margin-top: 14px; }
+.grok-pack-facts {
+  position: relative;
+  z-index: 2;
+  margin: -29px auto 0;
+  width: min(calc(100% - 44px),1120px);
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  background: #fff;
+  border: 1px solid var(--eel-line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(6,46,53,.12);
+}
+.grok-pack-facts > div { padding: 18px 20px; }
+.grok-pack-facts > div + div { border-left: 1px solid var(--eel-line); }
+.grok-pack-facts small {
+  display: block;
+  color: var(--eel-sea-dark);
+  font-size: .67rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 4px;
+}
+.grok-pack-facts strong {
+  display: block;
+  font-size: .83rem;
+  font-weight: 700;
+  color: var(--eel-deep);
+  line-height: 1.45;
+}
+.grok-pack-body .card-surface { border: 1px solid var(--eel-line); border-top: 3px solid var(--eel-yellow); }
+.grok-pack-body .card-surface h3 { color: var(--eel-deep); }
+.grok-pack-body #preview { scroll-margin-top: 100px; }
+.grok-pack-body #preview > p {
+  color: var(--eel-sea-dark);
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  border-color: var(--eel-line);
+}
+.grok-pack-body #preview > div > div {
+  border-color: var(--eel-line);
+  background: #fff;
+  border-radius: 7px;
+  padding: 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 15px rgba(8,48,62,.045);
+}
+.grok-pack-body #preview > div > div > span { color: var(--eel-sea-dark); }
+.grok-pack-body #preview > div > div > div > p:first-child {
+  color: var(--eel-deep);
+  font-family: var(--eel-display-font);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+@media(max-width:800px) {
+  .grok-pack-facts { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .grok-pack-facts > div:nth-child(3) { border-left: 0; border-top: 1px solid var(--eel-line); }
+  .grok-pack-facts > div:nth-child(4) { border-top: 1px solid var(--eel-line); }
+  .grok-pack-facts > div { padding: 13px; }
+}
+@media(max-width:600px) {
+  .grok-itinerary-page .grok-pack-hero { min-height: 345px; }
+  .grok-pack-hero-content { padding: 35px 16px 70px; }
+  .grok-pack-hero h1 { font-size: clamp(2.3rem,9vw,3.05rem); }
+  .grok-pack-facts { width: min(calc(100% - 28px),1120px); margin-top: -42px; }
+  .grok-pack-facts strong { font-size: .75rem; }
+  .grok-pack-body #preview > div > div { grid-template-columns: 1fr; gap: 4px; padding: 14px; }
+}
