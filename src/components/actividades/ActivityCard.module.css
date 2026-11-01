@@ -14,10 +14,16 @@
     grid-template-columns: minmax(0, 1fr) 96px;
     grid-template-areas:
       "heading image"
+      "credit credit"
       "description description"
       "details details"
       "tip tip";
     column-gap: 16px;
+  }
+
+  .compact .credit {
+    grid-area: credit;
+    margin-top: 0;
   }
 
   .compact .heading {

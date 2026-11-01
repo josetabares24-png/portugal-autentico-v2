@@ -77,3 +77,38 @@ Las fotos de IA se sustituyen por fotos de Wikimedia Commons con autor y licenci
 | Jerónimos, móvil | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/antes-jeronimos-movil.jpg) | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-jeronimos-movil.jpg) |
 | Belém, escritorio | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/antes-belem-escritorio.jpg) | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-belem-escritorio.jpg) |
 | Belém, móvil | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/antes-belem-movil.jpg) | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-belem-movil.jpg) |
+
+## Revisión de 1 Millon (1/11/2026)
+1. **Crédito visible junto a las fotos de Commons en las tarjetas:**
+   - En `ActivityCard` (/actividades y recomendaciones) y en `EditorialArticleCard` (listado del blog: destacada, rejilla y compacta).
+   - Como toda la tarjeta es un enlace, el crédito va en texto bajo la foto, igual que en `BookingCard`: "Foto: Autor / Wikimedia Commons, licencia (reducida y convertida a WebP)". Las licencias enlazadas siguen en la portada del artículo y en las fuentes.
+   - En móvil, `ActivityCard.module.css` le da su propia fila en la tarjeta compacta.
+2. **"(reducida y convertida a WebP)"** aparece en todos los créditos visibles:
+   - Portada del artículo (`ArticleHero`).
+   - Tarjetas de reserva (`BookingCard`, a través de `formatPhotoCreditShort`).
+   - Lista de créditos de /comprar-entradas.
+   - Páginas en inglés: `EnglishArticle` y `EnglishVisitChoices`, como "resized and converted to WebP".
+   - Sale de `photoAdaptation()` en `photo-credits.ts`. Una foto servida sin cambios llevaría `unmodified: true`.
+   - `photo-credits.ts` y el componente nuevo `PhotoCreditLine.tsx` son idénticos a los del PR #133.
+3. **Torre, comprobado el 1/11/2026:**
+   - **La directora y los "20 minutos":** la fuente es la noticia de Lusa en [Observador (26/05/2026)](https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/). Cita a Margarida Donas Botto: "a espera será no máximo de uns 20 minutos". Se mantiene la frase, ahora atribuida con su nombre, el medio y la fecha. La fuente en el desplegable se llama ahora "Observador (Lusa): la directora calcula una espera de unos 20 minutos como mucho".
+   - **"Unas 60 personas cada media hora, 900 al día":** solo lo dice la directora en esa noticia. No aparece ni en la web oficial (/visitar) ni en la venta oficial MMP (MEO Blueticket). **Se quita** en 4 sitios: la metadescripción, la entradilla, el párrafo de "Franjas horarias y aforo" y la pregunta frecuente del aforo. Queda "la entrada va con día y franja horaria", que sí está en la venta oficial.
+   - **"El quiosco cierra a las 16:30": se mantiene.** La web oficial dice "A bilheteira encerra às 16h30 - Quiosque situado no espaço fronteiro ao monumento com emissão física de bilhetes para o Mosteiro dos Jerónimos e para a Torre de Belém". Observador (Lusa) confirma la venta en persona "na bilheteira do Mosteiro dos Jerónimos".
+   - La fuente de Renascença se renombra: no la he podido abrir hoy (responde 403), así que ya no se le atribuye el aforo.
+
+| Sitio | Antes | Después |
+|---|---|---|
+| Tarjeta de /actividades, móvil | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/antes-tarjeta-actividad-movil.jpg) | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-tarjeta-actividad-movil.jpg) |
+| Tarjeta de /actividades, escritorio | | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-tarjeta-actividad-escritorio.jpg) |
+| Tarjeta del blog | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/antes-tarjeta-blog.jpg) | ![](https://raw.githubusercontent.com/josetabares24-png/portugal-autentico-v2/mejora-belem-torre-jeronimos-2026-11-01/docs/capturas/belem-2026-11-01/despues-tarjeta-blog.jpg) |
+
+**Pruebas tras la revisión:**
+- `typecheck`, ESLint de los archivos tocados y `build`: OK.
+- `smoke:sitemap`: 67/67.
+- `smoke:seo-migration`: 1530 comprobaciones, 0 fallos.
+- `smoke:technical-quality`: 1220 comprobaciones, 0 fallos.
+- Sitemap idéntico al de producción (107 URLs).
+
+**Pendiente para José:**
+- **Hora de apertura de la Torre:** el 1/11/2026, la web oficial (/visitar) y la ficha de Museus e Monumentos dicen las dos "Terça a Domingo, das 9h30 às 17h30" para la Torre. Se puede volver a poner la apertura de las 9:30 si José lo aprueba.
+- **Tarjeta de la Torre en /actividades** (`activities.ts`, fuera del alcance de este PR): sigue diciendo "45 min", "a 10 minutos a pie" y "unas 900 entradas al día". Ninguna de las tres tiene fuente oficial.

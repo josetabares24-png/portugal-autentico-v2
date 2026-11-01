@@ -541,7 +541,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         'Cuánto cuesta la entrada a la Torre de Belém en 2026, cómo funcionan las franjas horarias desde la reapertura, dónde comprarla si en la Torre ya no hay taquilla, quién entra gratis y cuándo cierra.',
       seoTitle: 'Torre de Belém: entradas, precio y horario 2026',
       metaDescription:
-        'Entrada 15 €, con franja horaria y unas 900 plazas al día. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, última entrada y días de cierre.',
+        'Entrada 15 €, con día y franja horaria. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, última entrada y días de cierre.',
       imagen: '/images/commons/torre-belem-werner-wikimedia.webp',
       imageAlt: 'La Torre de Belém vista de lado sobre el río Tajo, con el baluarte abajo y la torre de piedra clara',
       categoria: 'Entradas',
@@ -563,8 +563,8 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         { label: 'Jerónimos y Torre de Belém: la Torre', href: `${BELEM_OFICIAL}/torre-de-belem` },
         { label: 'MEO Blueticket: venta oficial de la Torre de Belém', href: 'https://mmp.bymeoblueticket.pt/pt/event/14776/torre-de-belem' },
         { label: 'Museus e Monumentos de Portugal: la Torre de Belém reabre (mayo de 2026)', href: 'https://www.museusemonumentos.pt/en/noticia-com/torre-de-belem-reabre-ao-publico' },
-        { label: 'Renascença: entrevista a la directora sobre aforo y venta (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
-        { label: 'Observador: franjas de 60 personas cada media hora (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
+        { label: 'Renascença: la Torre de Belém reabre con nueva venta de entradas (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
+        { label: 'Observador (Lusa): la directora calcula una espera de unos 20 minutos como mucho (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
         { label: 'Visit Lisboa Shop: preguntas frecuentes de la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/blogs/news/lisboa-card-f-a-q' },
         { label: 'Património Cultural: ficha de la Torre de Belém (historia)', href: 'https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=323060' },
         { label: 'UNESCO: Monasterio de los Jerónimos y Torre de Belém', href: 'https://whc.unesco.org/en/list/263/' },
@@ -575,7 +575,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'La entrada a la Torre de Belém cuesta 15 € y va con día y franja horaria. Desde que reabrió el 27 de mayo de 2026 entran unas 60 personas cada media hora, unas 900 al día. En la Torre ya no hay taquilla: se compra online o en el quiosco frente al Monasterio de los Jerónimos. Abre de martes a domingo, con última entrada a las 17:00, y cierra los lunes.',
+            'La entrada a la Torre de Belém cuesta 15 € y va con día y franja horaria. En la Torre ya no hay taquilla: se compra online o en el quiosco frente al Monasterio de los Jerónimos. Abre de martes a domingo, con última entrada a las 17:00, y cierra los lunes.',
         },
         {
           tipo: 'lista',
@@ -619,7 +619,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'La Torre reabrió el 27 de mayo de 2026, después de la primera obra de conservación a fondo desde 1998. Desde entonces se entra por franjas de media hora, con unas 60 personas por franja y un máximo de unas 900 al día.',
+            'La Torre reabrió el 27 de mayo de 2026, después de la primera obra de conservación a fondo desde 1998. Desde entonces la entrada se compra para un día y una franja horaria.',
         },
         {
           tipo: 'parrafo',
@@ -629,7 +629,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'Sobre la espera fuera hay dos versiones. La directora del monumento calculó en la reapertura que, con las franjas, sería de unos 20 minutos como mucho. La ficha de Tiqets avisa de que, incluso con hora reservada, en temporada alta puede pasar de una hora, y de que hay muy pocos sitios para sentarse. Lleva agua y algo para el sol o la lluvia.',
+            'Sobre la espera fuera hay dos versiones. La directora del monumento, Margarida Donas Botto, calculó en la reapertura que con las franjas sería de unos 20 minutos como mucho, según recogió Observador de la agencia Lusa el 26 de mayo de 2026. La ficha de Tiqets avisa de que, incluso con hora reservada, en temporada alta puede pasar de una hora, y de que hay muy pocos sitios para sentarse. Lleva agua y algo para el sol o la lluvia.',
         },
         {
           tipo: 'aviso',
@@ -774,7 +774,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       },
       {
         q: '¿Hay que reservar hora?',
-        a: 'Sí. Se entra por franjas de media hora, con unas 60 personas por franja y unas 900 al día. Las entradas se agotan a menudo.',
+        a: 'Sí. La entrada va con día y franja horaria, y la web oficial avisa de que se agotan a menudo.',
       },
       {
         q: '¿Abre los lunes?',

@@ -3,7 +3,7 @@ import { Clock3, Route, TicketCheck } from 'lucide-react';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
 import { HUB_PRODUCTS, HUB_SECTIONS } from '@/data/bookings';
-import { getPhotoCredit, type PhotoCredit } from '@/data/photo-credits';
+import { getPhotoCredit, photoAdaptation, type PhotoCredit } from '@/data/photo-credits';
 import type { TiqetsSnapshotMap } from '@/types/tiqets-live';
 
 const PAGE_URL = 'https://estabaenlisboa.com/comprar-entradas';
@@ -323,7 +323,7 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
                   ) : (
                     credit.license
                   )}
-                  .
+                  {photoAdaptation(credit) ? ` (${photoAdaptation(credit)})` : null}.
                 </li>
               ))}
             </ul>

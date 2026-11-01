@@ -16,6 +16,11 @@ export interface PhotoCredit {
   licenseUrl?: string;
   /** Ficha del archivo original en Wikimedia Commons. */
   sourceUrl: string;
+  /**
+   * `true` solo si el archivo se sirve tal cual. Por defecto se entiende que
+   * se redujo y se pasó a WebP, como dice `public/images/commons/CREDITOS.md`.
+   */
+  unmodified?: boolean;
 }
 
 export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
@@ -86,7 +91,14 @@ export function getPhotoCredit(image?: string): PhotoCredit | undefined {
   return image ? PHOTO_CREDITS[image] : undefined;
 }
 
-/** «Foto: Autor / Wikimedia Commons, CC BY-SA 4.0». */
+/** Cambio hecho al archivo original, para mostrarlo junto al crédito. */
+export function photoAdaptation(credit: PhotoCredit, lang: 'es' | 'en' = 'es'): string | undefined {
+  if (credit.unmodified) return undefined;
+  return lang === 'en' ? 'resized and converted to WebP' : 'reducida y convertida a WebP';
+}
+
+/** «Foto: Autor / Wikimedia Commons, CC BY-SA 4.0 (reducida y convertida a WebP)». */
 export function formatPhotoCreditShort(credit: PhotoCredit): string {
-  return `Foto: ${credit.author} / Wikimedia Commons, ${credit.license}`;
+  const adaptation = photoAdaptation(credit);
+  return `Foto: ${credit.author} / Wikimedia Commons, ${credit.license}${adaptation ? ` (${adaptation})` : ''}`;
 }
