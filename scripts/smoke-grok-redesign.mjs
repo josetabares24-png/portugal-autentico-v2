@@ -32,6 +32,14 @@ assert('Home limpia: solo botón de acceso a artículos, sin cinco cuadros extra
   home.includes('Ver todos los artículos') && !home.includes('Artículos editoriales recomendados') &&
   ['time-out-market-lisboa','estacion-oriente-lisboa','estacion-olaias-lisboa','paseo-en-velero-lisboa-lisbon-byboat'].every(x => posts.includes("id: '" + x + "'")));
 assert('Home siempre ordenada por publicaciones', home.includes('blogPostsByDate.slice(0, 5)') && posts.includes('export const blogPostsByDate: BlogPost[]') && !home.includes('const picks ='));
+const blogArchive = load('src/app/[locale]/blog/BlogClient.tsx');
+const blogPageSource = load('src/app/[locale]/blog/page.tsx');
+assert('Home y blog comparten cronología, destacando Lisbon ByBoat',
+  posts.includes("id: 'paseo-en-velero-lisboa-lisbon-byboat'") &&
+  blogArchive.includes('blogPostsByDate.filter') &&
+  blogArchive.includes('Últimos artículos') &&
+  blogPageSource.includes('blogPostsByDate.map((post)'));
+
 assert('ruta de 2 días se mantiene fuera del listado cronológico', home.includes('Ver itinerario completo') && home.includes('/itinerarios/lisboa-2-dias-completo'));
 const twoDays = load('src/components/itinerarios/GrokTwoDayItinerary.tsx');
 const packRoute = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
