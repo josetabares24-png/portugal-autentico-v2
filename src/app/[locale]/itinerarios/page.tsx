@@ -89,7 +89,7 @@ export default async function ItinerariosPage() {
   };
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-itinerary-page">
       <PageIntro
         eyebrow="Guías de viaje"
         title="Itinerarios para Lisboa"
