@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-head-element -- Shared App Router root document; only JSON-LD is placed here, all metadata uses the Metadata API. */
 import localFont from "next/font/local";
-import { Abril_Fatface, Heebo } from "next/font/google";
+import { Abril_Fatface, Heebo, Caveat } from "next/font/google";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import "@/app/globals.css";
 import "@/app/grok-redesign.css";
@@ -52,6 +52,7 @@ const plusJakarta = localFont({
 // Variables de marca: cargadas una sola vez en el shell compartido.
 const grokDisplay = Abril_Fatface({ subsets: ["latin"], weight: "400", variable: "--grok-display", display: "swap" });
 const grokBody = Heebo({ subsets: ["latin"], variable: "--grok-body", display: "swap" });
+const grokScript = Caveat({ subsets: ["latin"], variable: "--grok-script", display: "swap" });
 
 export default function DocumentShell({
   children,
@@ -66,7 +67,7 @@ export default function DocumentShell({
     <html lang={language}>
       <head>{language === "es" ? <SchemaMarkup /> : schema}</head>
       <body
-        className={`${montserrat.variable} ${playfair.variable} ${plusJakarta.variable} ${grokDisplay.variable} ${grokBody.variable} antialiased`}
+        className={`${montserrat.variable} ${playfair.variable} ${plusJakarta.variable} ${grokDisplay.variable} ${grokBody.variable} ${grokScript.variable} antialiased`}
       >
         <a
           href="#main-content"
