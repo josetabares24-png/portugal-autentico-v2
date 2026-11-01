@@ -544,3 +544,71 @@
   .grok-pack-facts strong { font-size: .75rem; }
   .grok-pack-body #preview > div > div { grid-template-columns: 1fr; gap: 4px; padding: 14px; }
 }
+
+
+/* Guías editoriales: fotografía real y títulos claros en lugar de listas textuales.
+   No modifica el archivo, la paginación o el SEO del blog. */
+.grok-blog-reading-grid {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.grok-blog-reading-item {
+  display: grid;
+  grid-template-columns: minmax(88px,120px) minmax(0,1fr);
+  align-items: stretch;
+  border: 1px solid var(--eel-line);
+  border-radius: 7px;
+  background: #fff;
+  overflow: hidden;
+  min-height: 103px;
+  text-decoration: none;
+  box-shadow: 0 5px 17px rgba(8,48,62,.045);
+  transition: box-shadow .18s ease,transform .18s ease;
+}
+.grok-blog-reading-item:hover {
+  box-shadow: 0 9px 22px rgba(8,48,62,.11);
+  transform: translateY(-2px);
+}
+.grok-blog-reading-image {
+  position: relative;
+  min-width: 0;
+  min-height: 102px;
+  overflow: hidden;
+  background: var(--eel-mist);
+}
+.grok-blog-reading-image img { object-fit: cover; }
+.grok-blog-reading-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 12px 14px;
+}
+.grok-blog-reading-category {
+  color: var(--eel-sea-dark);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: var(--eel-interface-font);
+  font-weight: 800;
+  font-size: .65rem;
+  margin-bottom: 6px;
+}
+.grok-blog-reading-title {
+  font-family: var(--eel-display-font);
+  font-weight: 400;
+  font-size: clamp(1.05rem,1.5vw,1.22rem);
+  line-height: 1.26;
+  color: var(--eel-deep);
+}
+.grok-blog-reading-item:hover .grok-blog-reading-title { color: var(--eel-sea-dark); }
+@media(max-width:640px) {
+  .grok-blog-reading-item { grid-template-columns: 110px minmax(0,1fr); }
+  .grok-blog-reading-title { font-size: 1.09rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grok-blog-reading-item { transition: none; }
+  .grok-blog-reading-item:hover { transform: none; }
+}
