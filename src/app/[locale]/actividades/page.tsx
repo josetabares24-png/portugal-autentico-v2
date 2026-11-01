@@ -59,7 +59,7 @@ export default function ActividadesPage() {
   const actividadesRestantes = filtered.slice(6);
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-directory-page">
       <PageIntro
         eyebrow="Actividades"
         title="Lisboa sin gastar mucho"
