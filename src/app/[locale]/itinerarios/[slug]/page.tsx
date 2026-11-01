@@ -71,7 +71,7 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
     return (
       <main id="main-content" className="grok-itinerary-page">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
-        <GrokTwoDayItinerary />
+        <GrokTwoDayItinerary guide={pack} />
       </main>
     );
   }
