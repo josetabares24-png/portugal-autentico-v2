@@ -446,8 +446,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Desde que reabrió en mayo de 2026 se entra por franjas horarias con aforo limitado. Cierra los lunes.',
     kind: 'Entrada',
-    image: '/images/actividades/torre-de-belem-lisboa.webp',
-    imageAlt: 'Torre de Belém junto al río Tajo',
+    image: '/images/commons/torre-belem-werner-wikimedia.webp',
+    imageAlt: 'La Torre de Belém vista de lado sobre el río Tajo',
     searchTerms: ['torre de belem', 'torre', 'belem', 'entrada', 'monumento'],
     hub: {
       render: 'native-card',
@@ -480,8 +480,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'La entrada oficial al claustro con franja horaria, para quien ya tiene el día de Belém decidido.',
     kind: 'Entrada',
-    image: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
-    imageAlt: 'Claustro del Monasterio de los Jerónimos en Belém',
+    image: '/images/commons/claustro-jeronimos-halun-wikimedia.webp',
+    imageAlt: 'Claustro de los Jerónimos con sus dos pisos de arcos y el jardín',
     searchTerms: ['jeronimos', 'monasterio', 'mosteiro', 'claustro', 'belem', 'entrada'],
     // Proveedor real: Museus e Monumentos de Portugal; no reembolsable ni
     // cambia de fecha (ficha Tiqets, 9/10/2026). Desde el 9/10/2026 también

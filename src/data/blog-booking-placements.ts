@@ -170,7 +170,7 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
       beforeHeading: 'que-ves-con-cada-entrada',
       intro:
-        'Si haces Jerónimos y Torre el mismo día, puedes comprar las dos entradas juntas. Sale 1 € más caro que comprarlas por separado en la taquilla; revisa en la ficha las condiciones de cambio.',
+        'Si haces Jerónimos y Torre el mismo día, Tiqets vende un pack con las dos entradas. Es un producto de Tiqets, no una entrada combinada oficial. Compara su precio con el de las dos sueltas y revisa en la ficha las condiciones de cambio.',
     },
   ],
   // tarjeta-navegante-lisboa · 1.060 impresiones / 23 clics (28 d a 07/10)
@@ -419,10 +419,10 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'belem-barrio-guia': [
     {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
-      // Después de Jerónimos y Torre, antes de los Pastéis.
-      beforeHeading: 'pasteis-de-belem-la-fila-que-vale-la-pena',
+      // Después de Jerónimos y Torre (guía de zona revisada el 1/11/2026).
+      beforeHeading: 'entre-los-dos-monumentos',
       intro:
-        'Si vas a entrar en los Jerónimos y en la Torre el mismo día, puedes comprar las dos entradas juntas. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
+        'Si vas a entrar en los Jerónimos y en la Torre el mismo día, Tiqets vende un pack con las dos entradas. Es un producto de Tiqets, no una entrada combinada oficial. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
     },
   ],
 };

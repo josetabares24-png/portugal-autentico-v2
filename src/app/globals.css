@@ -1598,3 +1598,7 @@ button:active:not(:disabled) {
 .article-content aside.article-booking a.article-booking-option:hover {
   color: #fff;
 }
+
+/* Crédito de la foto de portada (fotos de Wikimedia Commons). Contraste AA sobre fondo claro. */
+.article-hero-credit{margin-top:.5rem;font-size:.8125rem;line-height:1.4;color:#4a4a4a}
+.article-hero-credit a{color:inherit;text-decoration:underline}

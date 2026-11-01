@@ -59,6 +59,20 @@ export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
     sourceUrl:
       'https://commons.wikimedia.org/wiki/File:View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries,_Bel%C3%A9m,_Lisbon,_20250604_1111_9124.jpg',
   },
+  '/images/commons/torre-belem-werner-wikimedia.webp': {
+    subject: 'Torre de Belém vista de lado, sobre el Tajo',
+    author: 'Berthold Werner',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lisbon_Torre_de_Bel%C3%A9m_BW_2018-10-03_16-35-08.jpg',
+  },
+  '/images/commons/claustro-jeronimos-halun-wikimedia.webp': {
+    subject: 'Claustro del Monasterio de los Jerónimos, con sus dos pisos y el jardín',
+    author: 'Jakub Hałun',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cloister_of_the_Jer%C3%B3nimos_Monastery_in_Bel%C3%A9m,_Lisbon,_20250604_1309_9188.jpg',
+  },
   '/images/commons/sintra-palacio-pena-wikimedia.webp': {
     subject: 'Palacio da Pena, Sintra',
     author: 'CEphoto, Uwe Aranas',

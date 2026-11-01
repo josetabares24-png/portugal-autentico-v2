@@ -52,3 +52,21 @@ Datos en `src/data/photo-credits.ts`. Descargadas y comprobadas el 9/10/2026.
 - Autor: CEphoto, Uwe Aranas
 - Licencia: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)
 - Enlace: https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg
+
+## torre-belem-werner-wikimedia.webp
+
+- Archivo original: Lisbon Torre de Belém BW 2018-10-03 16-35-08.jpg
+- Qué muestra (según su ficha): la Torre de Belém de lado, sobre el Tajo
+- Autor: Berthold Werner
+- Licencia: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+- Enlace: https://commons.wikimedia.org/wiki/File:Lisbon_Torre_de_Bel%C3%A9m_BW_2018-10-03_16-35-08.jpg
+- Reducida a 1600 px de ancho y convertida a WebP el 1/11/2026; sin otros cambios. Comprobada en Commons el 31/10/2026.
+
+## claustro-jeronimos-halun-wikimedia.webp
+
+- Archivo original: Cloister of the Jerónimos Monastery in Belém, Lisbon, 20250604 1309 9188.jpg
+- Qué muestra (según su ficha): el claustro de los Jerónimos, patio con los dos pisos y el jardín
+- Autor: Jakub Hałun
+- Licencia: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- Enlace: https://commons.wikimedia.org/wiki/File:Cloister_of_the_Jer%C3%B3nimos_Monastery_in_Bel%C3%A9m,_Lisbon,_20250604_1309_9188.jpg
+- Reducida a 1600 px de ancho y convertida a WebP el 1/11/2026; sin otros cambios. Comprobada en Commons el 31/10/2026.
