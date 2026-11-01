@@ -141,13 +141,6 @@ export default function GrokHome() {
           <p style={{textAlign:'center',marginTop:28}}>
             <Link className={s.tealButton} href="/blog">Ver todos los artículos</Link>
           </p>
-          <nav className={s.discover} aria-label="Artículos editoriales recomendados">
-            <Link href="/blog/time-out-market-lisboa"><strong>Time Out Market</strong><span>Qué puedes comer y cuándo compensa ir.</span></Link>
-            <Link href="/blog/estacion-oriente-lisboa"><strong>Estación de Oriente</strong><span>Tren, metro y arquitectura para visitar.</span></Link>
-            <Link href="/blog/estacion-olaias-lisboa"><strong>Estación de Olaias</strong><span>Arte y una estación diferente de Lisboa.</span></Link>
-            <Link href="/blog/paseo-en-velero-lisboa-lisbon-byboat"><strong>Lisboa en velero</strong><span>Un paseo por el Tajo con Lisbon ByBoat. Colaboración comercial.</span></Link>
-            <Link href="/blog/lisboa-en-4-dias"><strong>Lisboa en 4 días</strong><span>Una ruta con más tiempo para recorrer los barrios.</span></Link>
-          </nav>
         </div>
       </section>
 
