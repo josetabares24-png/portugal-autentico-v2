@@ -43,7 +43,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
   }
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-blog-page">
       <BlogLandingHeader />
 
       {editorialCover}
