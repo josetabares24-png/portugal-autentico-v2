@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { guidePacks, guidePackSlugs } from '@/data/guide-packs';
 import { getGuidePack } from '@/lib/guide-store';
 import { blogPosts } from '@/data/blog-posts';
+import GrokTwoDayItinerary from '@/components/itinerarios/GrokTwoDayItinerary';
 
 const relatedReadingSlugs = [
   'como-moverse-por-lisboa',
@@ -62,6 +63,18 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
     isAccessibleForFree: true,
     url: `https://estabaenlisboa.com/itinerarios/${slug}`,
   };
+
+  // Diseño completo de la propuesta visual aprobada para la ruta de 2 días.
+  // Se mantienen esta URL, canonical, metadata y JSON-LD propios.
+  // Los demás itinerarios conservan el renderer editorial existente.
+  if (slug === 'lisboa-2-dias-completo') {
+    return (
+      <main id="main-content" className="grok-itinerary-page">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
+        <GrokTwoDayItinerary />
+      </main>
+    );
+  }
 
   return (
     <main id="main-content" className="grok-itinerary-page">
