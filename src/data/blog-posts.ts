@@ -117,9 +117,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Claustro 18 € con hora, iglesia gratis y cerrado los lunes. Dónde comprar la entrada, cómo reducir la cola y cómo llegar en tren desde Cais do Sodré.',
     categoria: 'Cultura',
     fecha: '9 Oct 2026',
-    dateModified: '2026-10-09',
+    dateModified: '2026-11-01',
     autor: 'José Tabares',
-    imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+    imagen: '/images/commons/claustro-jeronimos-halun-wikimedia.webp',
   },
   {
     id: 'lisboa-en-5-dias',
@@ -634,12 +634,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'belem-barrio-guia',
-    titulo: 'Belém: El Barrio de los Descubrimientos y los Pastéis de Nata',
-    excerpt: 'Belém es el barrio donde Portugal cambió la historia del mundo. Jerónimos, Torre de Belém, Padrão dos Descobrimentos y la pastelería más famosa del mundo. Cómo visitarlo sin prisas.',
+    titulo: 'Qué ver en Belém: la Torre, los Jerónimos y el paseo junto al río',
+    excerpt: 'Cómo organizar Belém: el Monasterio de los Jerónimos, la Torre de Belém, el Padrão dos Descobrimentos, los Pastéis de Belém y cómo llegar desde el centro.',
     categoria: 'Guías',
     fecha: '21 Mar 2026',
+    dateModified: '2026-11-01',
     autor: 'José Tabares',
-    imagen: '/images/actividades/torre-de-belem-lisboa.webp',
+    imagen: '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp',
   },
   {
     id: 'chiado-bairro-alto-guia',
@@ -697,6 +698,6 @@ export const blogPosts: BlogPost[] = [
     fecha: '11 Mar 2026',
     dateModified: '2026-09-21',
     autor: 'José Tabares',
-    imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
+    imagen: '/images/commons/claustro-jeronimos-halun-wikimedia.webp',
   },
 ];

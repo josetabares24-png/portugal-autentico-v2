@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Article } from './article-types';
+import { getPhotoCredit, photoAdaptation } from '@/data/photo-credits';
 
 type ArticleHeroProps = {
   article: Article;
@@ -25,6 +26,7 @@ export function ArticleHero({
   editorialPilot = false,
   breadcrumb = { href: '/blog', label: 'Blog' },
 }: ArticleHeroProps) {
+  const heroCredit = getPhotoCredit(heroImage);
   const byline = (
     <p className="article-meta uppercase tracking-widest mb-3">
       {article.categoria} &mdash; {article.fecha}
@@ -90,6 +92,15 @@ export function ArticleHero({
               fetchPriority="high"
             />
           </div>
+          {heroCredit && (
+            /* Foto de terceros con licencia libre: crédito visible bajo la portada (autor, licencia y ficha original). */
+            <figcaption className="article-hero-credit">
+              Foto: {heroCredit.author},{' '}
+              {heroCredit.licenseUrl ? <a href={heroCredit.licenseUrl} target="_blank" rel="license noopener noreferrer">{heroCredit.license}</a> : heroCredit.license}, vía{' '}
+              <a href={heroCredit.sourceUrl} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
+              {photoAdaptation(heroCredit) ? ` (${photoAdaptation(heroCredit)})` : null}
+            </figcaption>
+          )}
         </figure>
       )}
       {editorialPilot && (

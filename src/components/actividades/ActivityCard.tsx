@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Activity } from '@/data/activities';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
+import { formatPhotoCreditShort, getPhotoCredit } from '@/data/photo-credits';
 import styles from './ActivityCard.module.css';
 
 function formatPrice(n: number) {
@@ -15,6 +16,9 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
     : activity.priceFrom !== undefined
       ? `Desde ${formatPrice(activity.priceFrom)} €`
       : 'De pago';
+
+  // Foto de Commons: crédito en texto junto a la foto (la tarjeta entera es un enlace).
+  const photoCredit = getPhotoCredit(activity.image);
 
   return (
     <Link
@@ -38,6 +42,9 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
             <ActivityImagePlaceholder />
           )}
         </div>
+        {photoCredit ? (
+          <p className={`mb-3 -mt-2 font-body text-[11px] leading-snug text-text-secondary ${styles.credit}`}>{formatPhotoCreditShort(photoCredit)}</p>
+        ) : null}
 
         <div className={styles.heading}>
           <div className={`mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 ${styles.category}`}>
@@ -62,7 +69,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
           <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
-          <span className="text-text-secondary text-xs font-medium">{activity.duration}</span>
+          {activity.duration ? <span className="text-text-secondary text-xs font-medium">{activity.duration}</span> : null}
         </div>
 
         <div className={`border-l-2 border-gold bg-background-light/60 px-3 py-2.5 ${styles.tip}`}>

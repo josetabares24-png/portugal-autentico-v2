@@ -718,7 +718,7 @@ async function checkActivityImages(baseUrl) {
     const destination = REDIRECTS.get(route) ?? route;
     const cards = [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)]
       .filter((match) => attributes(match[0].slice(0, match[0].indexOf('>') + 1)).href === destination);
-    return !cards.some((card) => card[1].includes('<article') && card[1].includes('images%2Factividades'));
+    return !cards.some((card) => card[1].includes('<article') && /images%2F(actividades|commons)%2F/.test(card[1]));
   });
   record(
     'las 13 actividades muestran imagen y no placeholder',

@@ -541,14 +541,14 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         'Cuánto cuesta la entrada a la Torre de Belém en 2026, cómo funcionan las franjas horarias desde la reapertura, dónde comprarla si en la Torre ya no hay taquilla, quién entra gratis y cuándo cierra.',
       seoTitle: 'Torre de Belém: entradas, precio y horario 2026',
       metaDescription:
-        'Entrada 15 €, con franja horaria y unas 900 plazas al día. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, horario y días de cierre.',
-      imagen: '/images/actividades/torre-de-belem-lisboa.webp',
-      imageAlt: 'Torre de Belém junto al río Tajo',
+        'Entrada 15 €, con día y franja horaria. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, última entrada y días de cierre.',
+      imagen: '/images/commons/torre-belem-werner-wikimedia.webp',
+      imageAlt: 'La Torre de Belém vista de lado sobre el río Tajo, con el baluarte abajo y la torre de piedra clara',
       categoria: 'Entradas',
       fecha: '25 Oct 2026',
-      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
-      dateModified: '2026-10-25',
-      minutos: 6,
+      fechaActualizacion: 'Precios y cierres verificados el 31 de octubre de 2026',
+      dateModified: '2026-11-01',
+      minutos: 7,
       links: [
         { href: '/blog/monasterio-jeronimos-entradas', label: 'Monasterio de los Jerónimos: entradas y horarios' },
         { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
@@ -563,23 +563,28 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         { label: 'Jerónimos y Torre de Belém: la Torre', href: `${BELEM_OFICIAL}/torre-de-belem` },
         { label: 'MEO Blueticket: venta oficial de la Torre de Belém', href: 'https://mmp.bymeoblueticket.pt/pt/event/14776/torre-de-belem' },
         { label: 'Museus e Monumentos de Portugal: la Torre de Belém reabre (mayo de 2026)', href: 'https://www.museusemonumentos.pt/en/noticia-com/torre-de-belem-reabre-ao-publico' },
-        { label: 'Renascença: entrevista a la directora sobre aforo y venta (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
-        { label: 'Observador: franjas de 60 personas cada media hora (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
+        { label: 'Renascença: la Torre de Belém reabre con nueva venta de entradas (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
+        { label: 'Observador (Lusa): la directora calcula una espera de unos 20 minutos como mucho (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
         { label: 'Visit Lisboa Shop: preguntas frecuentes de la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/blogs/news/lisboa-card-f-a-q' },
+        { label: 'MEO Blueticket: ficha oficial del claustro de los Jerónimos (la Torre, a 250 metros de la orilla)', href: 'https://mmp.bymeoblueticket.pt/pt/event/14759/mosteiro-dos-jeronimos-claustro' },
+        { label: 'Património Cultural: ficha de la Torre de Belém (historia)', href: 'https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=323060' },
+        { label: 'UNESCO: Monasterio de los Jerónimos y Torre de Belém', href: 'https://whc.unesco.org/en/list/263/' },
+        { label: 'Carris: línea 15E', href: 'https://www.carris.pt/viaje/carreiras/15e/' },
+        { label: 'CP: horario de la línea de Cascais', href: 'https://www.cp.pt/info/documents/d/cp/comboios-urbanos-lisboa-cascais' },
       ],
       contenido: [
         {
           tipo: 'parrafo',
           texto:
-            'La entrada a la Torre de Belém cuesta 15 € y va con día y franja horaria. Desde que reabrió el 27 de mayo de 2026 entran unas 60 personas cada media hora, unas 900 al día. En la Torre ya no hay taquilla: se compra online o en el quiosco frente al Monasterio de los Jerónimos. Abre de martes a domingo de 9:30 a 17:30, con última entrada a las 17:00, y cierra los lunes.',
+            'La entrada a la Torre de Belém cuesta 15 € y va con día y franja horaria. En la Torre ya no hay taquilla: se compra online o en el quiosco frente al Monasterio de los Jerónimos. Abre de martes a domingo, con última entrada a las 17:00, y cierra los lunes.',
         },
         {
           tipo: 'lista',
           items: [
             '15 €. Mayores de 65 y jóvenes de 13 a 24 años, la mitad. Menores de 12 años (incluidos), gratis.',
-            'Venta oficial online: 15 € más gastos de gestión, 15,92 € en total.',
+            'Venta oficial online: el importe final lo ves en la web antes de pagar.',
             'En la Torre no se vende. La venta en persona está en el quiosco frente a los Jerónimos, que cierra a las 16:30.',
-            'De martes a domingo, de 9:30 a 17:30. Última entrada a las 17:00.',
+            'De martes a domingo. Última entrada a las 17:00.',
             'Cierra los lunes, el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio y el 25 de diciembre.',
             'Con la Lisboa Card es gratis, pero hay que reservar franja con el número de la tarjeta.',
           ],
@@ -615,7 +620,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'La Torre reabrió el 27 de mayo de 2026, después de la primera obra de conservación a fondo desde 1998. Desde entonces se entra por franjas de media hora, a partir de las 9:30, con unas 60 personas por franja y un máximo de unas 900 al día. La escalera de caracol de la torre es muy estrecha y no deja subir a mucha gente a la vez.',
+            'La Torre reabrió el 27 de mayo de 2026, después de la primera obra de conservación a fondo desde 1998. Desde entonces la entrada se compra para un día y una franja horaria.',
         },
         {
           tipo: 'parrafo',
@@ -625,7 +630,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'Sobre la espera fuera hay dos versiones. La directora del monumento calculó en la reapertura que, con las franjas, sería de unos 20 minutos como mucho. La ficha de Tiqets avisa de que, incluso con hora reservada, en temporada alta puede pasar de una hora, y de que hay muy pocos sitios para sentarse. Lleva agua y algo para el sol o la lluvia.',
+            'Sobre la espera fuera hay dos versiones. La directora del monumento, Margarida Donas Botto, calculó en la reapertura que con las franjas sería de unos 20 minutos como mucho, según recogió Observador de la agencia Lusa el 26 de mayo de 2026. La ficha de Tiqets avisa de que, incluso con hora reservada, en temporada alta puede pasar de una hora, y de que hay muy pocos sitios para sentarse. Lleva agua y algo para el sol o la lluvia.',
         },
         {
           tipo: 'aviso',
@@ -639,7 +644,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
           texto: 'Dónde comprar la entrada a la Torre de Belém.',
           columnas: ['Dónde', 'Precio', 'Para quién'],
           filas: [
-            ['Web oficial (MEO Blueticket)', '15 € + gastos (15,92 € en total)', 'Quien quiere pagar lo mínimo y poder cambiar la franja'],
+            ['Web oficial (MEO Blueticket)', '15 € (el importe final se ve antes de pagar)', 'Quien quiere comprar en la venta oficial y poder cambiar la franja'],
             ['Quiosco frente a los Jerónimos', '15 €', 'Familias (el billete familia solo se vende aquí) y residentes con Acesso 52. Cierra a las 16:30'],
             ['Tiqets', 'El de su ficha, según la fecha', 'Quien prefiere comprar en español. El proveedor es el propio organismo, Museus e Monumentos de Portugal'],
           ],
@@ -652,19 +657,24 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'El monumento no tiene audioguías. Tiqets vende también un combinado de Jerónimos y Torre para quien hace los dos el mismo día.',
+            'El monumento no tiene audioguías. Tiqets vende también un pack de Jerónimos y Torre para quien hace los dos el mismo día. Es un producto de Tiqets: la web oficial no vende una entrada combinada.',
         },
 
         { tipo: 'subtitulo', texto: 'Horarios y cierres' },
         {
           tipo: 'tabla',
           texto: 'Horario de la Torre de Belém.',
-          columnas: ['', 'Abre', 'Cierra', 'Última entrada'],
+          columnas: ['', 'Última entrada', 'Cierra'],
           filas: [
-            ['Martes a domingo', '9:30', '17:30', '17:00'],
-            ['Quiosco de venta (frente a los Jerónimos)', '—', '16:30', '—'],
-            ['Lunes', 'Cerrado', '—', '—'],
+            ['Martes a domingo', '17:00', '—'],
+            ['Quiosco de venta (frente a los Jerónimos)', '—', '16:30'],
+            ['Lunes', 'Cerrado', 'Cerrado'],
           ],
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'La hora de apertura, mírala en la web oficial del monumento antes de ir.',
         },
         {
           tipo: 'parrafo',
@@ -672,12 +682,29 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
             'Además de los lunes, cierra el 1 de enero, el domingo de Pascua, el 1 de mayo, el 13 de junio (San Antonio, fiesta de Lisboa) y el 25 de diciembre.',
         },
 
+        { tipo: 'subtitulo', texto: 'Un poco de historia' },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Proteger la entrada del Tajo ya era un plan de D. João II. Lo hizo D. Manuel I: la obra empezó en 1514 y la dirigió Francisco de Arruda. Se levantó sobre una roca de basalto, a unos 250 metros de la orilla. Hoy queda casi en la orilla porque los rellenos de tierra y la arena del río cambiaron el paisaje.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'En 1515, con la obra en marcha, llegó a Lisboa un rinoceronte traído de la India. Causó mucha curiosidad en Europa, y la Torre tiene una cabeza de rinoceronte esculpida en la base de una de las garitas. Búscala desde fuera.',
+        },
+        {
+          tipo: 'parrafo',
+          texto:
+            'Desde 1983, la Torre y el Monasterio de los Jerónimos son Patrimonio Mundial de la UNESCO.',
+        },
+
         { tipo: 'subtitulo', texto: 'Qué se ve dentro' },
         {
           tipo: 'lista',
           items: [
             'El baluarte, la parte baja que da al río, con la batería de cañones.',
-            'La torre, de varios pisos unidos por una escalera de caracol muy estrecha: la Sala del Gobernador, la del Rey, la de Audiencias y la capilla.',
+            'La torre, de varios pisos: la Sala del Gobernador, la del Rey, la de Audiencias y la capilla.',
             'La terraza de arriba, con el Tajo a la altura del agua.',
             'Por fuera, los detalles manuelinos tallados en la piedra y el rinoceronte de la base de una garita.',
           ],
@@ -685,7 +712,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'Con movilidad reducida solo se puede visitar la planta baja del baluarte: a la torre se sube por la escalera de caracol. Por dentro se ve en unos 45 minutos.',
+            'Con movilidad reducida solo se puede visitar la planta baja del baluarte, según la web oficial.',
         },
 
         { tipo: 'subtitulo', texto: 'Con la Lisboa Card' },
@@ -705,9 +732,9 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'lista',
           items: [
-            'Tren de la línea de Cascais desde Cais do Sodré hasta Belém: 8 minutos.',
-            'Tranvía 15E desde Praça da Figueira o Cais do Sodré.',
-            'Desde el Monasterio de los Jerónimos, unos 10 minutos a pie. Lo normal es hacer los dos el mismo día.',
+            'Tren de la línea de Cascais desde Cais do Sodré hasta la estación de Belém. No todos los trenes paran en Belém: mira el horario de CP.',
+            'Tranvía 15E desde Praça da Figueira o Cais do Sodré. Para en «Mosteiro Jerónimos», «Belém (Museu Coches)» y «Centro Cultural Belém».',
+            'La Torre y los Jerónimos están en la misma orilla, y lo normal es hacer los dos el mismo día.',
           ],
         },
         {
@@ -740,7 +767,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
     faqs: [
       {
         q: '¿Cuánto cuesta la entrada a la Torre de Belém en 2026?',
-        a: '15 €. Mayores de 65 y jóvenes de 13 a 24 años pagan la mitad, y los menores de 12 entran gratis. En la venta oficial online se suman los gastos de gestión: 15,92 € en total.',
+        a: '15 €. Mayores de 65 y jóvenes de 13 a 24 años pagan la mitad, y los menores de 12 entran gratis. En la venta oficial online, el importe final lo ves antes de pagar.',
       },
       {
         q: '¿Se puede comprar la entrada en la Torre?',
@@ -748,11 +775,11 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       },
       {
         q: '¿Hay que reservar hora?',
-        a: 'Sí. Se entra por franjas de media hora, con unas 60 personas por franja y unas 900 al día. Las entradas se agotan a menudo.',
+        a: 'Sí. La entrada va con día y franja horaria, y la web oficial avisa de que se agotan a menudo.',
       },
       {
         q: '¿Abre los lunes?',
-        a: 'No. Abre de martes a domingo de 9:30 a 17:30, con última entrada a las 17:00.',
+        a: 'No. Abre de martes a domingo, con última entrada a las 17:00.',
       },
       {
         q: '¿Es gratis con la Lisboa Card?',
@@ -764,11 +791,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       },
       {
         q: '¿Se puede visitar con movilidad reducida?',
-        a: 'Solo la planta baja del baluarte. A la torre se sube por una escalera de caracol muy estrecha.',
-      },
-      {
-        q: '¿Cuánto tiempo hace falta?',
-        a: 'Unos 45 minutos dentro, más la espera para entrar.',
+        a: 'Solo la planta baja del baluarte, según la web oficial.',
       },
     ],
     placements: [

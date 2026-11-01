@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { BlogPost } from '@/data/blog-posts';
 import { blogFallbackImage, blogImageMap } from '@/lib/media';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
+import { formatPhotoCreditShort, getPhotoCredit } from '@/data/photo-credits';
 
 type EditorialArticleCardVariant = 'feature' | 'compact' | 'grid';
 
@@ -18,6 +19,9 @@ export function getArticleImage(post: BlogPost) {
 
 export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 }: EditorialArticleCardProps) {
   const imageSrc = getArticleImage(post);
+  // Foto de Commons: crédito en texto junto a la foto (la tarjeta entera es un enlace).
+  const photoCredit = getPhotoCredit(imageSrc);
+  const imageCredit = photoCredit ? formatPhotoCreditShort(photoCredit) : undefined;
   const Heading = headingLevel === 3 ? 'h3' : 'h2';
 
   if (variant === 'feature') {
@@ -35,6 +39,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
               priority
             />
           </div>
+          {imageCredit ? <p className="mb-3 -mt-2 font-body text-[11px] leading-snug text-text-secondary">{imageCredit}</p> : null}
           <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
             {post.categoria} &mdash; {post.fecha}
           </p>
@@ -70,6 +75,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
             <Heading className="break-words font-body text-[0.95rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-terracotta">
               {post.titulo}
             </Heading>
+            {imageCredit ? <p className="mt-1 font-body text-[10px] leading-snug text-text-secondary">{imageCredit}</p> : null}
           </div>
         </Link>
       </article>
@@ -89,6 +95,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
             sizes="(max-width: 639px) calc(100vw - 3rem), (max-width: 1023px) 45vw, 350px"
           />
         </div>
+        {imageCredit ? <p className="mb-3 -mt-2 font-body text-[11px] leading-snug text-text-secondary">{imageCredit}</p> : null}
         <p className="mb-2 font-body text-xs uppercase tracking-[0.18em] text-text-secondary">
           {post.categoria} &mdash; {post.fecha}
         </p>

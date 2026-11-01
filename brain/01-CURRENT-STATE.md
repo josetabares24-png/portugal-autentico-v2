@@ -1,3 +1,7 @@
+## 1 noviembre 2026 — Torre, Jerónimos y Belém con datos verificados (PR borrador)
+
+José pide modificar sus páginas sin crear otras. Se tocan tres URLs vivas, sin cambiar ninguna: `/actividades/torre-de-belem`, `/blog/monasterio-jeronimos-entradas` (se conservan el título y los h2) y `/blog/belem-barrio-guia` (guía de zona). `/actividades/mosteiro-jeronimos` sigue con su 301. Se quitan cifras sin fuente (hora de apertura de la Torre, 45 min, escalera, 15,92/19,11, precios de Tiqets, tiempos a pie, autobuses) y se sustituyen las fotos IA de la Torre y del claustro por fotos de Commons, con el crédito visible en la portada. Línea base: Lighthouse en producción y capturas. Sitemap idéntico (107) y smokes OK. [Detalle](../docs/belem-torre-jeronimos-2026-11-01.md).
+
 ## 28 octubre 2026 — Corrección de idiomas de ByBoat solicitada
 
 José pide aplicar al artículo la verificación de las reservas oficiales: guía multilingüe, español disponible; ES/EN/PT en ambos, FR confirmado en diurno y a consultar en atardecer. Introducción, experiencia, bloque de idiomas y las dos tarjetas se corrigen coherentemente en PR122, que también conserva el registro de publicación anterior. No cambia diseño, importes, URLs, enlaces, Home/header o noindex. [Fuentes y alcance](../docs/byboat-public-review-release.md). QA/despliegue de este ajuste pendientes de cierre.

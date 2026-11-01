@@ -28,7 +28,8 @@ export interface Activity {
   priceLabel: string;
   /** Precio numérico de partida en EUR, solo cuando es inequívoco (para schema.org Offer). */
   priceFrom?: number;
-  duration: string;
+  /** Sin cifra si no hay fuente: la tarjeta y la ficha no muestran nada. */
+  duration?: string;
   /** Ausente cuando no hay foto verificada que corresponda realmente a este lugar (ver ActivityImagePlaceholder). */
   image?: string;
   /** Texto alternativo descriptivo de la foto; si falta, se usa el título como respaldo. */
@@ -232,9 +233,8 @@ export const activities: Activity[] = [
     isFree: false,
     priceLabel: 'Desde 18 €',
     priceFrom: 18,
-    duration: '1 h',
-    image: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
-    imageAlt: 'Claustro del Mosteiro dos Jerónimos en Belém',
+    image: '/images/commons/claustro-jeronimos-halun-wikimedia.webp',
+    imageAlt: 'Claustro de los Jerónimos con sus dos pisos de arcos y el jardín',
     description: 'La obra cumbre del manuelino. La iglesia es gratis; se paga el claustro, que es lo que más merece la entrada.',
     savingTip: 'La iglesia del monasterio (con la tumba de Vasco da Gama) es gratuita: solo se paga el claustro. Ya no hay domingos gratis. Entran gratis los menores de 12 años, y los residentes en Portugal 52 días al año (Acesso 52, solo en taquilla). Mayores de 65 y jóvenes de 13 a 24 pagan la mitad.',
     officialUrl: 'https://mosteirojeronimos.torrebelem.gov.pt/visitar',
@@ -263,11 +263,10 @@ export const activities: Activity[] = [
     isFree: false,
     priceLabel: 'Desde 15 €',
     priceFrom: 15,
-    duration: '45 min',
-    image: '/images/actividades/torre-de-belem-lisboa.webp',
-    imageAlt: 'Torre de Belém junto al río Tajo',
+    image: '/images/commons/torre-belem-werner-wikimedia.webp',
+    imageAlt: 'La Torre de Belém vista de lado sobre el río Tajo',
     description: 'Torre-fortaleza junto al río, símbolo de la Era de los Descubrimientos y Patrimonio de la Humanidad.',
-    savingTip: 'Combina la visita con los Jerónimos en la misma mañana: están a 10 minutos a pie y ahorras un desplazamiento. Reserva con antelación: desde la reapertura de mayo de 2026 el acceso es por franjas horarias limitadas (unas 900 entradas al día).',
+    savingTip: 'Combina la visita con los Jerónimos el mismo día: los dos están en Belém y ahorras un desplazamiento. Reserva con antelación: desde la reapertura de mayo de 2026 se entra por franjas horarias y las entradas se agotan a menudo.',
     officialUrl: 'https://www.museusemonumentos.pt/pt/museus-e-monumentos/torre-de-belem',
     lastVerified: '2026-10-25',
     statusNote: 'Reabierta el 27 de mayo de 2026 tras un año de obras (PRR), con nuevo sistema de acceso por franjas horarias para reducir las colas.',
