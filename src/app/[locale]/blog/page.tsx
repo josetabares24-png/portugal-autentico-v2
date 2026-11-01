@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import BlogClient from './BlogClient';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPosts, blogPostsByDate } from '@/data/blog-posts';
 import { BlogEditorialCover } from '@/components/blog/BlogEditorialCover';
 import { toIsoEditorialDate } from '@/lib/editorial-date';
 
@@ -58,10 +58,11 @@ const jsonLd = {
   name: 'Guías de Lisboa y Portugal',
   url: 'https://estabaenlisboa.com/blog',
   description: BLOG_DESCRIPTION,
-  blogPost: blogPosts.map((post) => ({
+  blogPost: blogPostsByDate.map((post) => ({
     '@type': 'BlogPosting',
     headline: post.titulo,
     ...(toIsoEditorialDate(post.fecha) ? { datePublished: toIsoEditorialDate(post.fecha) } : {}),
+    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
     author: {
       '@type': 'Person',
       name: post.autor,

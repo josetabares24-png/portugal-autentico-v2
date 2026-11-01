@@ -1,3 +1,5 @@
+import { toIsoEditorialDate } from '@/lib/editorial-date';
+
 export interface BlogPost {
   id: string;
   titulo: string;
@@ -700,3 +702,20 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
 ];
+
+/**
+ * Artículos del más nuevo al más antiguo según su `fecha` de publicación.
+ * Usa `toIsoEditorialDate`, el mismo parser que da el `datePublished` del
+ * JSON-LD, para que el orden y el dato publicado no puedan discrepar.
+ * Empates: se respeta el orden de `blogPosts` (sort estable). Una fecha que no
+ * se puede leer va al final; nunca se inventa una fecha.
+ * `scripts/test-blog-order.mjs` comprueba el orden y que no haya fechas ilegibles.
+ */
+export function blogPublishedTime(post: Pick<BlogPost, 'fecha'>): number {
+  const iso = toIsoEditorialDate(post.fecha);
+  return iso ? Date.parse(`${iso}T00:00:00Z`) : Number.NEGATIVE_INFINITY;
+}
+
+export const blogPostsByDate: BlogPost[] = [...blogPosts].sort(
+  (a, b) => blogPublishedTime(b) - blogPublishedTime(a),
+);

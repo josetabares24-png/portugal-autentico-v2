@@ -1,3 +1,7 @@
+## 1 noviembre 2026 — Blog en orden cronológico (PR borrador)
+
+José pide reconstruir la web con el diseño del preview y mantener en orden lo más nuevo del blog. En este PR solo va el orden: el catálogo de `/blog` y su JSON-LD pasan a ordenarse por `fecha` real, más nuevo primero, de forma automática (`blogPostsByDate`). Línea base `470e43c`, 107 URLs y 16 redirecciones sin cambios. Conflicto señalado sin resolverlo por mi cuenta: Torre (`/actividades/torre-de-belem`), Jerónimos (`/blog/monasterio-jeronimos-entradas`) y Belém (`/blog/belem-barrio-guia`) ya existen, así que crear guías nuevas las canibalizaría. José tiene que decidir si se mejoran en su URL o si se crean las nuevas con redirección. El rediseño completo va página a página con aprobación visual (L-003). [Detalle](../docs/blog-orden-cronologico-2026-11-01.md).
+
 ## 28 octubre 2026 — Corrección de idiomas de ByBoat solicitada
 
 José pide aplicar al artículo la verificación de las reservas oficiales: guía multilingüe, español disponible; ES/EN/PT en ambos, FR confirmado en diurno y a consultar en atardecer. Introducción, experiencia, bloque de idiomas y las dos tarjetas se corrigen coherentemente en PR122, que también conserva el registro de publicación anterior. No cambia diseño, importes, URLs, enlaces, Home/header o noindex. [Fuentes y alcance](../docs/byboat-public-review-release.md). QA/despliegue de este ajuste pendientes de cierre.
