@@ -552,7 +552,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '12 Mar 2026',
     dateModified: '2026-10-24',
     autor: 'José Tabares',
-    imagen: '/images/aldaba-puerta-lisboa.jpg',
+    imagen: '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   },
   {
     id: 'novedades-lisboa-2026',
