@@ -251,6 +251,44 @@
   outline: 3px solid var(--eel-yellow);
 }
 
+/* Tarjeta de actividades compartida: fotografía, precio, etiqueta y tip.
+   Conserva precio/textos del catálogo existente (sin inventarlos). */
+.grok-directory-page a.grok-activity-card {
+  border-color: var(--eel-line);
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 7px 22px rgba(8,48,62,.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.grok-directory-page a.grok-activity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(8,48,62,.13);
+}
+.grok-directory-page .grok-activity-card h3 {
+  color: var(--eel-deep);
+  font-family: var(--eel-display-font);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.grok-directory-page .grok-activity-card .border-gold { border-color: var(--eel-yellow); }
+.grok-directory-page .grok-activity-card .bg-background-light\/60 { background: #f2f8f8; }
+.grok-booking-page #comparar-rutas article {
+  border-color: var(--eel-line);
+  border-radius: 8px;
+  box-shadow: 0 7px 24px rgba(8,48,62,.08);
+}
+.grok-booking-page #comparar-rutas article h3 { color: var(--eel-deep); }
+.grok-booking-page #comparar-rutas article a.bg-terracotta {
+  background: var(--eel-yellow);
+  color: var(--eel-deep);
+}
+.grok-booking-page #comparar-rutas article a.bg-terracotta:hover {
+  background: #ffe273;
+}
+.grok-booking-page #catalogo nav a:hover { border-color: var(--eel-sea); color: var(--eel-sea-dark); }
+
 /* Itinerarios y catálogo: respeto de grids y puntos de anclaje. */
 .grok-itinerary-page h1,
 .grok-itinerary-page .page-title {
