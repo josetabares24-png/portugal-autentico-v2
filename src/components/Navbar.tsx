@@ -24,7 +24,7 @@ export default function Navbar() {
     publicPathname === href || publicPathname.startsWith(href + '/');
 
   return (
-    <nav aria-label="Navegación principal" className="sticky top-0 z-50 border-b border-[#067c80] bg-[#079a9c] text-white">
+    <nav aria-label="Navegación principal" className="sticky top-0 z-50 border-b border-[#015a5c] bg-[#016d6f] text-white">
       <div className="mx-auto max-w-[1250px] px-4 sm:px-6">
         <div className="flex min-h-[68px] items-center justify-between gap-3">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="Estaba en Lisboa — Inicio"
