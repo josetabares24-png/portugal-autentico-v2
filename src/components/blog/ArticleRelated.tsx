@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
+import { formatPhotoCreditShort, getPhotoCredit } from '@/data/photo-credits';
 
 type RelatedPost = {
   id: string;
@@ -39,6 +40,11 @@ export function ArticleRelated({ posts }: { posts: RelatedPost[] }) {
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
             </div>
+            {getPhotoCredit(post.imagen) ? (
+              <p className="-mt-1 mb-2 font-body text-[11px] leading-snug text-text-secondary">
+                {formatPhotoCreditShort(getPhotoCredit(post.imagen)!)}
+              </p>
+            ) : null}
             <p className="article-related-category uppercase tracking-widest mb-1">{post.categoria}</p>
             <h4 className="transition-colors">{post.titulo}</h4>
           </TrackedInternalLink>

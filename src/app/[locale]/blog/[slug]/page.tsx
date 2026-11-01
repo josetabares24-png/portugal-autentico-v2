@@ -5234,10 +5234,10 @@ const articles: Record<string, Article> = {
   },  "belem-barrio-guia": {
     titulo: "Qué ver en Belém: la Torre, los Jerónimos y el paseo junto al río",
     seoTitle: "Qué ver en Belém, Lisboa: guía del barrio",
-    metaDescription: "Qué ver en Belém y cómo organizar la visita: el Monasterio de los Jerónimos, la Torre de Belém, el Padrão dos Descobrimentos, los Pastéis de Belém y cómo llegar desde el centro.",
+    metaDescription: "Qué ver en Belém: los Jerónimos, la Torre de Belém, el Padrão dos Descobrimentos y los Pastéis de Belém, y cómo llegar desde el centro de Lisboa.",
     descripcion: "Belém está junto al Tajo, al oeste del centro de Lisboa. Aquí están el Monasterio de los Jerónimos y la Torre de Belém, y se pueden ver en el mismo paseo junto al río.",
-    imagen: "/images/commons/jeronimos-torre-belem-wikimedia.webp",
-    imageAlt: "El Monasterio de los Jerónimos y la plaza del Imperio vistos desde lo alto del Padrão dos Descobrimentos",
+    imagen: "/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp",
+    imageAlt: "La Torre de Belém junto al Tajo, con el Puente 25 de Abril y un velero al fondo",
     categoria: "Guías",
     fecha: "21 Mar 2026",
     fechaActualizacion: "Revisado el 31 de octubre de 2026",
@@ -5261,7 +5261,7 @@ const articles: Record<string, Article> = {
       { label: "Pastéis de Belém", href: "https://pasteisdebelem.pt/" },
     ],
     contenido: [
-      { tipo: "parrafo", texto: "Belém está junto al Tajo, al oeste del centro de Lisboa. Aquí están los dos monumentos que mandó levantar D. Manuel I en el siglo XVI: el Monasterio de los Jerónimos y la Torre de Belém. Desde 1983 son Patrimonio Mundial de la UNESCO. Cada uno tiene su entrada y su guía con precios y horarios; esta página es para organizar la zona." },
+      { tipo: "parrafo", texto: "Belém está junto al Tajo, al oeste del centro de Lisboa. Aquí están los dos monumentos que mandó levantar D. Manuel I en el siglo XVI: el Monasterio de los Jerónimos y la Torre de Belém. Desde 1983 son Patrimonio Mundial de la UNESCO. Cada uno tiene su entrada y su guía con precios y horarios, enlazadas más abajo." },
       { tipo: "lista", items: [
         "Monasterio de los Jerónimos: la iglesia es gratis y el claustro se paga.",
         "Torre de Belém: se entra con franja horaria y la entrada se compra antes.",
@@ -5665,7 +5665,7 @@ const localImages: Record<string, string> = {
   'alfama-historia-guia': '/images/alfama-panoramica.jpg',
   'gastronomia-portuguesa-guia': '/images/tasca-da-graca.jpg',
   'fado-historia-origen': '/images/fado-tasca-noche.jpg',
-  'belem-barrio-guia': '/images/commons/jeronimos-torre-belem-wikimedia.webp',
+  'belem-barrio-guia': '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp',
   'chiado-bairro-alto-guia': '/images/tranvia-28.jpg',
   'mouraria-barrio-guia': '/images/alfama-panoramica.jpg',
   'vinos-portugueses-guia': '/images/fado-tasca-noche.jpg',

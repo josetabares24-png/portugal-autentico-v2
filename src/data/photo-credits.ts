@@ -78,6 +78,13 @@ export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
     licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cloister_of_the_Jer%C3%B3nimos_Monastery_in_Bel%C3%A9m,_Lisbon,_20250604_1309_9188.jpg',
   },
+  '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp': {
+    subject: 'Torre de Belém con el Puente 25 de Abril y un velero al fondo',
+    author: 'Lisbon Photoshoots',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Tower_and_the_25_de_Abril_Bridge_in_the_background.jpg',
+  },
   '/images/commons/sintra-palacio-pena-wikimedia.webp': {
     subject: 'Palacio da Pena, Sintra',
     author: 'CEphoto, Uwe Aranas',

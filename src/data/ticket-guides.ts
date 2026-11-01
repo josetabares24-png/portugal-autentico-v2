@@ -314,9 +314,9 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
       categoria: 'Entradas',
       fecha: '25 Oct 2026',
-      fechaActualizacion: 'Precios y cierres verificados el 31 de octubre de 2026',
-      dateModified: '2026-11-01',
-      minutos: 7,
+      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
+      dateModified: '2026-10-25',
+      minutos: 6,
       links: [
         { href: '/blog/parque-das-nacoes-lisboa-que-ver', label: 'Qué ver en Parque das Nações' },
         { href: '/blog/estacion-oriente-lisboa', label: 'Estación de Oriente' },
@@ -566,6 +566,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         { label: 'Renascença: la Torre de Belém reabre con nueva venta de entradas (26/05/2026)', href: 'https://rr.pt/especial/pais/2026/05/26/de-cara-lavada-com-menos-visitantes-e-nova-bilhetica-torre-de-belem-reabre-ao-publico/472215/' },
         { label: 'Observador (Lusa): la directora calcula una espera de unos 20 minutos como mucho (26/05/2026)', href: 'https://observador.pt/2026/05/26/torre-de-belem-reabre-a-brilhar-e-com-novo-sistema-de-entradas-para-reduzir-filas/' },
         { label: 'Visit Lisboa Shop: preguntas frecuentes de la Lisboa Card', href: 'https://shop.visitlisboa.com/pt/blogs/news/lisboa-card-f-a-q' },
+        { label: 'MEO Blueticket: ficha oficial del claustro de los Jerónimos (la Torre, a 250 metros de la orilla)', href: 'https://mmp.bymeoblueticket.pt/pt/event/14759/mosteiro-dos-jeronimos-claustro' },
         { label: 'Património Cultural: ficha de la Torre de Belém (historia)', href: 'https://imovel.patrimoniocultural.gov.pt/detalhes.php?code=323060' },
         { label: 'UNESCO: Monasterio de los Jerónimos y Torre de Belém', href: 'https://whc.unesco.org/en/list/263/' },
         { label: 'Carris: línea 15E', href: 'https://www.carris.pt/viaje/carreiras/15e/' },
@@ -673,7 +674,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'No ponemos la hora de apertura porque dos páginas oficiales dan horas distintas. Antes de ir, mírala en la web oficial del monumento.',
+            'La hora de apertura, mírala en la web oficial del monumento antes de ir.',
         },
         {
           tipo: 'parrafo',
@@ -695,7 +696,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'Desde 1983, la Torre y el Monasterio de los Jerónimos son Patrimonio Mundial de la UNESCO. Fuentes: Museus e Monumentos de Portugal, Património Cultural y UNESCO, enlazadas al final.',
+            'Desde 1983, la Torre y el Monasterio de los Jerónimos son Patrimonio Mundial de la UNESCO.',
         },
 
         { tipo: 'subtitulo', texto: 'Qué se ve dentro' },

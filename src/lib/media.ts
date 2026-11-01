@@ -20,7 +20,7 @@ export const blogImageMap: Record<string, string> = {
   'estacion-olaias-lisboa': '/images/lisboa-originales/estacion-olaias-lisboa/estacion-olaias-lisboa-hero-techo-colores.jpg',
   'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
   'arquitectura-manuelina-lisboa': '/images/commons/claustro-jeronimos-halun-wikimedia.webp',
-  'belem-barrio-guia': '/images/commons/jeronimos-torre-belem-wikimedia.webp',
+  'belem-barrio-guia': '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp',
   'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'mejores-apps-lisboa': '/images/turista-tranvia-28.jpg',

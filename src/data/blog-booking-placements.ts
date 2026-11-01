@@ -62,6 +62,11 @@ export interface BlogBookingPlacement {
   position?: BookingBlockPosition;
   /** Una o dos frases con el porqué, en la voz del artículo. */
   intro: string;
+  /**
+   * Solo Tiqets: sufijo para que cada botón de una misma página tenga su
+   * propio `tq_campaign` (`web_blog_<slug>_<sufijo>`). El primero va sin sufijo.
+   */
+  campaignSuffix?: string;
 }
 
 export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
@@ -169,6 +174,8 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
     {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
       beforeHeading: 'que-ves-con-cada-entrada',
+      // Segundo botón de Tiqets en la página: campaña propia para medirlo aparte.
+      campaignSuffix: 'pack-torre',
       intro:
         'Si haces Jerónimos y Torre el mismo día, Tiqets vende un pack con las dos entradas. Es un producto de Tiqets, no una entrada combinada oficial. Compara su precio con el de las dos sueltas y revisa en la ficha las condiciones de cambio.',
     },
@@ -419,8 +426,8 @@ export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
   'belem-barrio-guia': [
     {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
-      // Después de Jerónimos y Torre (guía de zona revisada el 1/11/2026).
-      beforeHeading: 'entre-los-dos-monumentos',
+      // Después de Jerónimos y Torre, antes de los Pastéis.
+      beforeHeading: 'pasteis-de-belem-la-fila-que-vale-la-pena',
       intro:
         'Si vas a entrar en los Jerónimos y en la Torre el mismo día, Tiqets vende un pack con las dos entradas. Es un producto de Tiqets, no una entrada combinada oficial. Compara antes el precio con el de las dos sueltas y mira en la ficha las condiciones de cambio.',
     },

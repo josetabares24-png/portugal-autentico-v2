@@ -257,7 +257,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
           <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
             {activity.title}
           </h1>
-          <p className="text-white/70 text-sm">{activity.zone} &middot; {activity.duration}</p>
+          <p className="text-white/70 text-sm">{activity.zone}{activity.duration ? <> &middot; {activity.duration}</> : null}</p>
         </div>
       </section>
 
@@ -271,10 +271,12 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
                 {activity.priceLabel}
               </p>
             </div>
-            <div className="text-right">
-              <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Duración</p>
-              <p className="text-2xl font-bold text-text-main">{activity.duration}</p>
-            </div>
+            {activity.duration ? (
+              <div className="text-right">
+                <p className="text-xs uppercase tracking-widest text-text-secondary mb-1">Duración</p>
+                <p className="text-2xl font-bold text-text-main">{activity.duration}</p>
+              </div>
+            ) : null}
           </div>
 
           <p className="text-text-secondary leading-relaxed mb-8">{activity.description}</p>

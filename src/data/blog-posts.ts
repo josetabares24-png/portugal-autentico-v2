@@ -640,7 +640,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '21 Mar 2026',
     dateModified: '2026-11-01',
     autor: 'José Tabares',
-    imagen: '/images/commons/jeronimos-torre-belem-wikimedia.webp',
+    imagen: '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp',
   },
   {
     id: 'chiado-bairro-alto-guia',

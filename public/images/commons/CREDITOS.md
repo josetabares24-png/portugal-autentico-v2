@@ -70,3 +70,12 @@ Datos en `src/data/photo-credits.ts`. Descargadas y comprobadas el 9/10/2026.
 - Licencia: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 - Enlace: https://commons.wikimedia.org/wiki/File:Cloister_of_the_Jer%C3%B3nimos_Monastery_in_Bel%C3%A9m,_Lisbon,_20250604_1309_9188.jpg
 - Reducida a 1600 px de ancho y convertida a WebP el 1/11/2026; sin otros cambios. Comprobada en Commons el 31/10/2026.
+
+## torre-belem-puente-lisbon-photoshoots-wikimedia.webp
+
+- Archivo original: Belém Tower and the 25 de Abril Bridge in the background.jpg
+- Qué muestra (según su ficha): la Torre de Belém con el Puente 25 de Abril al fondo
+- Autor: Lisbon Photoshoots ("Own work")
+- Licencia: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+- Enlace: https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Tower_and_the_25_de_Abril_Bridge_in_the_background.jpg
+- Reducida a 1600 px de ancho y convertida a WebP el 1/11/2026; sin otros cambios. Comprobada en Commons el 1/11/2026.
