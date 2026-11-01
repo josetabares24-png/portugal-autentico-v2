@@ -612,3 +612,31 @@
   .grok-blog-reading-item { transition: none; }
   .grok-blog-reading-item:hover { transform: none; }
 }
+
+
+/* En ausencia de una foto propia y distinta se conserva el artículo y
+ * su enlace, nunca se muestra una fotografía de otro lugar. */
+.grok-blog-reading-item--text {
+  grid-template-columns: minmax(0,1fr);
+  min-height: 92px;
+  border-left: 3px solid var(--eel-sea);
+}
+.grok-blog-reading-grid--three {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
+.grok-blog-reading-grid--three .grok-blog-reading-item {
+  grid-template-columns: 120px minmax(0,1fr);
+}
+.grok-blog-reading-grid--three .grok-blog-reading-item--text {
+  grid-template-columns: minmax(0,1fr);
+}
+@media(max-width:960px) {
+  .grok-blog-reading-grid--three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:640px) {
+  .grok-blog-reading-grid--three { grid-template-columns: minmax(0,1fr); }
+  .grok-blog-reading-grid--three .grok-blog-reading-item { grid-template-columns: 110px minmax(0,1fr); }
+  .grok-blog-reading-grid--three .grok-blog-reading-item--text,
+  .grok-blog-reading-item--text { grid-template-columns: minmax(0,1fr); }
+}
