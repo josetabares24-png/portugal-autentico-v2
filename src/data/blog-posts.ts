@@ -1,3 +1,5 @@
+import { toIsoEditorialDate } from '@/lib/editorial-date';
+
 export interface BlogPost {
   id: string;
   titulo: string;
@@ -700,3 +702,14 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
 ];
+
+/**
+ * Único orden editorial para Home, /blog y su JSON-LD.
+ * Se ordena por fecha REAL de publicación, no por dateModified.
+ * Las entradas que comparten fecha conservan el orden del catálogo.
+ * No altera el array original consumido por enlaces, sitemap y metadatos.
+ */
+export const blogPostsByDate: BlogPost[] = blogPosts
+  .map((post, index) => ({ post, index, published: toIsoEditorialDate(post.fecha) ?? '' }))
+  .sort((a, b) => b.published.localeCompare(a.published) || a.index - b.index)
+  .map(({ post }) => post);
