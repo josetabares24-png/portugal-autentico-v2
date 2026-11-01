@@ -148,7 +148,7 @@ export default function FreeToursLisboaPage() {
   const allToursUrl = getFreeTourAffiliateUrl(allTours);
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-booking-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
 
