@@ -54,23 +54,7 @@ export function BlogEditorialCover() {
       <Link href="#catalogo" className="inline-flex min-h-11 items-center text-text-secondary underline underline-offset-4">Todas las guías</Link>
     </nav>
 
-    <div className="grok-blog-feature-layout">
-      <section aria-label="Guía destacada" className="grok-blog-feature-lead">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.13em] text-[#016d6f]">Destacado</p>
-        <EditorialArticleCard post={article(selection.featured)} variant="feature" />
-      </section>
-      <aside aria-labelledby="seasonal-title" className="grok-blog-feature-small">
-        <h2 id="seasonal-title" className="font-display text-2xl font-semibold not-italic text-text-main">Para los próximos meses</h2>
-        <p className="mb-4 mt-2 text-sm text-text-secondary">Navidad, lluvia y fin de año: qué hacer y qué revisar antes de ir.</p>
-        <div className="grok-blog-seasonal-grid">
-          {[...selection.seasonal, selection.planning[0]].map((id) => (
-            <EditorialArticleCard key={id} post={article(id)} variant="compact" headingLevel={3} />
-          ))}
-        </div>
-      </aside>
-    </div>
-
-    <section id="planea-tu-viaje" aria-labelledby="planning-title" className="mt-12 scroll-mt-24 border-y border-border-soft py-7 md:mt-16">
+    <section id="planea-tu-viaje" aria-labelledby="planning-title" className="mt-8 scroll-mt-24 border-y border-border-soft py-7 md:mt-10">
       <h2 id="planning-title" className="font-display text-3xl font-semibold not-italic text-text-main">Planea tu viaje</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-3">{selection.planning.map((id, index) => (
         <EditorialArticleCard
