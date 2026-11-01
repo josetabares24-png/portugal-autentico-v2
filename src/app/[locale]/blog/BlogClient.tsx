@@ -83,7 +83,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
       {/* The first four archive records stay crawlable on page one. */}
       {paginaActual === 1 && postsFiltrados.length > 0 && <section className="bg-background-light py-6" aria-label="Primeras guías del catálogo">
         <div className="site-container grid gap-6 md:grid-cols-2">
-          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="compact" headingLevel={3} />)}
+          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="grid" headingLevel={3} />)}
         </div>
       </section>}
 
