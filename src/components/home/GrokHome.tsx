@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Abril_Fatface, Heebo } from 'next/font/google';
 import type { BlogPost } from '@/data/blog-posts';
 import { blogPosts } from '@/data/blog-posts';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
@@ -66,9 +67,12 @@ const moreGuides = [
   { title: 'Evita errores', description: 'Cuestas, reservas y lo que conviene saber.', href: '/blog/errores-turistas-lisboa' },
 ];
 
+const abril = Abril_Fatface({ subsets: ['latin'], weight: '400', variable: '--grok-display', display: 'swap' });
+const heebo = Heebo({ subsets: ['latin'], variable: '--grok-body', display: 'swap' });
+
 export default function GrokHome() {
   return (
-    <main id="main-content" className={s.page}>
+    <main id="main-content" className={[s.page, abril.variable, heebo.variable].join(" ")}>
       <section className={s.hero} aria-labelledby="home-grok-title">
         <div className={s.heroPhoto}>
           <Image src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg" alt="Tejados de Alfama y vistas al Tajo en Lisboa" fill priority fetchPriority="high" sizes="100vw" />
