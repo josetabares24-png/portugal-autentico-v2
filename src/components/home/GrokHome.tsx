@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { BlogPost } from '@/data/blog-posts';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPostsByDate } from '@/data/blog-posts';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
-import { getArticleImage } from '@/components/blog/EditorialArticleCard';
+import { uniqueArticleImages } from '@/components/blog/EditorialArticleCard';
 import GrokQuickSearch from './GrokQuickSearch';
 import s from './GrokHome.module.css';
 
@@ -17,15 +16,9 @@ const sections = [
   { title: 'Alojamiento', subtitle: 'Dónde dormir', href: '/blog/donde-alojarse-en-lisboa' },
 ];
 
-const picks = [
-  'monasterio-jeronimos-entradas',
-  'sintra-desde-lisboa',
-  'alfama-historia-guia',
-  'donde-escuchar-fado-autentico',
-];
-const featured: BlogPost[] = picks
-  .map((id) => blogPosts.find((post) => post.id === id))
-  .filter((post): post is BlogPost => Boolean(post));
+// La Home publica automáticamente los cinco artículos más recientes.
+const recentPosts = blogPostsByDate.slice(0, 5);
+const recentImages = uniqueArticleImages(recentPosts);
 
 const experiences = [
   {
@@ -102,41 +95,27 @@ export default function GrokHome() {
           <div className={s.centerHeading}>
             <p className={s.scriptLabel}>Blog</p>
             <h2 id="home-articles-heading" className={s.sectionHeading}>Artículos para decidir tu viaje</h2>
-            <p className={s.sectionLead}>Lo que conviene saber antes de reservar.</p>
+            <p className={s.sectionLead}>Publicaciones recientes, de la más nueva a la más antigua.</p>
           </div>
           <div className={s.blogGrid}>
-            <article className={s.articleCard}>
-              <Link href="/itinerarios/lisboa-2-dias-completo" aria-label="Ver el itinerario de Lisboa en dos días">
-                <div className={s.articlePhoto}>
-                  <Image
-                    src="/images/lisboa-originales/electrico-15e-caf-lisboa.jpg"
-                    alt="Tranvía de Lisboa pasando por una calle del centro"
-                    fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 42vw"
-                  />
-                </div>
-              </Link>
-              <div className={s.articleBody}>
-                <span className={s.articleCategory}>ITINERARIO</span>
-                <h3><Link href="/itinerarios/lisboa-2-dias-completo">Lisboa en 2 días: qué ver y qué reservar</Link></h3>
-                <p>Dos días organizados por zonas, con paradas claras, fotos y consejos para decidir las reservas antes de salir.</p>
-                <Link className={s.readLink} href="/itinerarios/lisboa-2-dias-completo">Ver itinerario</Link>
-              </div>
-            </article>
-            {featured.map((post) => (
-              <article className={s.articleCard} key={post.id}>
-                <Link href={'/blog/' + post.id} aria-label={'Leer ' + post.titulo}>
-                  <div className={s.articlePhoto}>
-                    <Image src={getArticleImage(post)} alt={post.titulo} fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" />
+            {recentPosts.map((post) => {
+              const image = recentImages.get(post.id);
+              return (
+                <article className={s.articleCard} key={post.id}>
+                  <Link href={'/blog/' + post.id} aria-label={'Leer ' + post.titulo}>
+                    {image && <div className={s.articlePhoto}>
+                      <Image src={image} alt={post.titulo} fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 42vw" />
+                    </div>}
+                  </Link>
+                  <div className={s.articleBody}>
+                    <span className={s.articleCategory}>{post.categoria} · {post.fecha}</span>
+                    <h3><Link href={'/blog/' + post.id}>{post.titulo}</Link></h3>
+                    <p>{post.excerpt}</p>
+                    <Link className={s.readLink} href={'/blog/' + post.id}>Leer artículo</Link>
                   </div>
-                </Link>
-                <div className={s.articleBody}>
-                  <span className={s.articleCategory}>{post.categoria}</span>
-                  <h3><Link href={'/blog/' + post.id}>{post.titulo}</Link></h3>
-                  <p>{post.excerpt}</p>
-                  <Link className={s.readLink} href={'/blog/' + post.id}>Leer artículo</Link>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
           <p style={{textAlign:'center',marginTop:28}}>
             <Link className={s.tealButton} href="/blog">Ver todos los artículos</Link>
