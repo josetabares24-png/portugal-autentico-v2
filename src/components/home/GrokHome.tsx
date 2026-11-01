@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Abril_Fatface, Heebo } from 'next/font/google';
 import type { BlogPost } from '@/data/blog-posts';
 import { blogPosts } from '@/data/blog-posts';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
@@ -69,12 +68,9 @@ const moreGuides = [
   { title: 'Dónde hacer fotos', description: 'La mejor luz y las calles que merecen una parada.', href: '/blog/donde-fotografiar-lisboa' },
 ];
 
-const abril = Abril_Fatface({ subsets: ['latin'], weight: '400', variable: '--grok-display', display: 'swap' });
-const heebo = Heebo({ subsets: ['latin'], variable: '--grok-body', display: 'swap' });
-
 export default function GrokHome() {
   return (
-    <main id="main-content" className={[s.page, abril.variable, heebo.variable].join(" ")}>
+    <main id="main-content" className={s.page}>
       <section className={s.hero} aria-labelledby="home-grok-title">
         <div className={s.heroPhoto}>
           <Image src="/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg" alt="Tejados de Alfama y vistas al Tajo en Lisboa" fill priority fetchPriority="high" sizes="100vw" />
