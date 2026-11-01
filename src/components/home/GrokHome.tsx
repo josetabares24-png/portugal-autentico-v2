@@ -82,7 +82,7 @@ export default function GrokHome() {
           <p className={s.heroText}>Artículos claros, rutas y consejos desde la ciudad. Consulta las opciones antes de reservar.</p>
           <GrokQuickSearch />
           <nav className={s.quickLinks} aria-label="Búsquedas populares">
-            <Link href="/itinerarios">Qué ver en 2 días</Link>
+            <Link href="/itinerarios/lisboa-2-dias-completo">Qué ver en 2 días</Link>
             <Link href="/comprar-entradas">Entradas Belém</Link>
             <Link href="/free-tours-lisboa">Free tours</Link>
             <Link href="/blog/sintra-desde-lisboa">Sintra</Link>
@@ -171,7 +171,8 @@ export default function GrokHome() {
               <p className={s.scriptLabel}>Itinerarios</p>
               <h2 id="home-itinerary-heading" className={s.sectionHeading}>Lisboa en 2 días</h2>
               <p className={s.itineraryLead}>Una idea para repartir el centro y Belém en dos jornadas. Los horarios, los precios y el acceso pueden cambiar: confirma cada parada antes de salir.</p>
-              <Link href="/itinerarios" className={s.yellow}>Ver todos los itinerarios</Link>
+              <Link href="/itinerarios/lisboa-2-dias-completo" className={s.yellow}>Ver itinerario completo</Link>
+              <p style={{marginTop:12}}><Link className={s.readLink} href="/itinerarios">Comparar rutas de 1, 2 o 3 días</Link></p>
               <div className={s.itineraryImage}>
                 <Image src="/images/lisboa-originales/rua-augusta-arco-lisboa.webp" alt="Arco da Rua Augusta en Lisboa" fill sizes="(max-width: 900px) 100vw, 35vw" />
               </div>
