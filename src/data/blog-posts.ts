@@ -700,3 +700,26 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
 ];
+
+/**
+ * Artículos del más nuevo al más antiguo según su `fecha` de publicación.
+ * El listado del blog y su JSON-LD usan esta lista para que el orden se mantenga
+ * solo al añadir un artículo, sin depender de dónde se inserte en `blogPosts`.
+ * Empates: se respeta el orden de `blogPosts` (sort estable).
+ * Una fecha que no se puede leer va al final; nunca se inventa una fecha.
+ */
+const MESES_PUBLICACION: Record<string, number> = {
+  ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sep: 8, oct: 9, nov: 10, dic: 11,
+};
+
+export function blogPublishedTime(post: Pick<BlogPost, 'fecha'>): number {
+  const partes = post.fecha.trim().split(/\s+/);
+  if (partes.length !== 3) return Number.NEGATIVE_INFINITY;
+  const mes = MESES_PUBLICACION[partes[1].toLowerCase()];
+  const time = Date.UTC(Number(partes[2]), mes ?? NaN, Number(partes[0]));
+  return Number.isNaN(time) ? Number.NEGATIVE_INFINITY : time;
+}
+
+export const blogPostsByDate: BlogPost[] = [...blogPosts].sort(
+  (a, b) => blogPublishedTime(b) - blogPublishedTime(a),
+);

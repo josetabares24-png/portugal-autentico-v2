@@ -5,7 +5,7 @@ import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPostsByDate } from '@/data/blog-posts';
 
 const POSTS_PER_PAGE = 9;
 
@@ -27,8 +27,8 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
   const postsFiltrados = useMemo(
     () =>
       categoriaActiva === 'Todos'
-        ? blogPosts
-        : blogPosts.filter((post) => post.categoria === categoriaActiva),
+        ? blogPostsByDate
+        : blogPostsByDate.filter((post) => post.categoria === categoriaActiva),
     [categoriaActiva]
   );
 
