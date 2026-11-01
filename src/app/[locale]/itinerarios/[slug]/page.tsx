@@ -80,31 +80,34 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
     <main id="main-content" className="grok-itinerary-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
 
-      {/* Hero */}
-      <section className="relative h-[55vh] min-h-[340px] overflow-hidden">
+      {/* Cabecera fotográfica coherente con la referencia de Grok */}
+      <section className="grok-pack-hero" aria-labelledby="grok-pack-title">
         <Image
           src={pack.image}
           alt={pack.title}
           fill
-          className="object-cover"
+          className="grok-pack-hero-image"
           priority
           fetchPriority="high"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute bottom-0 left-0 p-10 md:p-16 max-w-2xl">
-          <Link href="/itinerarios" className="text-white/60 text-xs uppercase tracking-widest hover:text-white transition-colors mb-4 block">
-            ← Itinerarios
-          </Link>
-          <h1 className="font-display italic text-white text-4xl md:text-6xl leading-tight mb-2">
-            {pack.title}
-          </h1>
-          <p className="text-white/70 text-sm">{pack.duration} &middot; Ruta, mapa y consejos locales</p>
+        <div className="grok-pack-hero-shade" aria-hidden="true" />
+        <div className="grok-pack-hero-content">
+          <Link href="/itinerarios" className="grok-pack-back">Ver todos los itinerarios</Link>
+          <p className="grok-pack-script">Itinerarios</p>
+          <h1 id="grok-pack-title">{pack.title}</h1>
+          <p className="grok-pack-summary">{pack.duration} · Rutas por zonas y consejos para preparar tu visita.</p>
         </div>
       </section>
+      <div className="grok-pack-facts" aria-label="Información del itinerario">
+        <div><small>Duración</small><strong>{pack.duration}</strong></div>
+        <div><small>Cómo usarlo</small><strong>Plan flexible</strong></div>
+        <div><small>Transporte</small><strong>Depende de las paradas</strong></div>
+        <div><small>Antes de salir</small><strong>Comprueba los accesos</strong></div>
+      </div>
 
       {/* Layout principal */}
-      <section className="bg-background-light py-20">
+      <section className="grok-pack-body bg-background-light py-14 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-[2fr,1fr] gap-16 items-start">
             {/* Contenido */}
@@ -112,9 +115,9 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
               {/* Tres pilares */}
               <div className="grid sm:grid-cols-3 gap-8 mb-16">
                 {[
-                  { titulo: 'Ruta profesional', desc: 'Orden lógico, tiempos reales y consejos locales.' },
-                  { titulo: 'Consejos locales', desc: 'Recomendaciones para comer y spots fotográficos.' },
-                  { titulo: 'Actualizado 2026', desc: 'Horarios revisados y recomendaciones recientes.' },
+                  { titulo: 'Organizado por zonas', desc: 'Paradas agrupadas para decidir cómo repartir los días.' },
+                  { titulo: 'A tu ritmo', desc: 'Puedes cambiar el orden según el clima y las cuestas.' },
+                  { titulo: 'Comprueba antes de ir', desc: 'Horarios y acceso pueden variar; revisa las fichas oficiales.' },
                 ].map((item) => (
                   <div key={item.titulo} className="card-surface p-5 border-t-2 border-gold">
                     <h3 className="font-semibold text-text-main text-sm mb-1">{item.titulo}</h3>
