@@ -19,7 +19,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
   return (
     <Link
       href={resolveInternalHref(`/actividades/${activity.slug}`)}
-      className={`group flex h-full flex-col border-t border-border-soft bg-white/25 px-1 pt-3 transition-colors hover:bg-white/45 ${compactMobile ? styles.compact : ''}`}
+      className={`grok-activity-card group flex h-full flex-col border border-border-soft bg-white p-3 transition-colors hover:bg-white ${compactMobile ? styles.compact : ''}`}
     >
       <article className={`flex h-full flex-col ${styles.content}`}>
         <div className={`relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60 ${styles.image}`}>
@@ -52,7 +52,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
             </span>
           </div>
 
-          <h3 className={`mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-terracotta ${styles.title}`}>
+          <h3 className={`mb-2 font-display text-lg font-semibold not-italic leading-snug text-text-main transition-colors group-hover:text-[#007c81] ${styles.title}`}>
             {activity.title}
           </h3>
         </div>
