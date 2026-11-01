@@ -19,40 +19,31 @@ const slugs = travelerGuides.map((guide) => guide.slug);
 const portalIds = travelerGuides.map((guide) => guide.portalId);
 const practicalToolTitles = travelerGuides.map((guide) => guide.practicalTool.title);
 const widgetGuides = travelerGuides.filter((guide) => guide.getYourGuideWidget);
-const homeDirectory = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'TravelerDirectory.tsx'), 'utf8');
+const homeComponent = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'GrokHome.tsx'), 'utf8');
+const homeStyles = readFileSync(join(process.cwd(), 'src', 'components', 'home', 'GrokHome.module.css'), 'utf8');
 const homePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'page.tsx'), 'utf8');
 const navbar = readFileSync(join(process.cwd(), 'src', 'components', 'Navbar.tsx'), 'utf8');
 const pillarComponent = readFileSync(join(process.cwd(), 'src', 'components', 'traveler', 'TravelPillarPage.tsx'), 'utf8');
 const blogArticlePage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'blog', '[slug]', 'page.tsx'), 'utf8');
 const authorPage = readFileSync(join(process.cwd(), 'src', 'app', '[locale]', 'sobre-nosotros', 'page.tsx'), 'utf8');
-const directHomeTitles = [
-  'Organizar mis días',
-  'Qué ver',
-  'Cómo moverte',
-  'Dónde alojarte',
-  'Dónde comer',
-  'Dónde tomar algo',
-  'Dónde hacer fotos',
-  'Qué evitar',
-];
-
 check(travelerGuides.length === 7, 'se conservan exactamente siete prototipos heredados');
 check(new Set(slugs).size === slugs.length, 'los slugs no se repiten');
 check(new Set(portalIds).size === portalIds.length, 'los identificadores de analítica no se repiten');
 check(new Set(practicalToolTitles).size === practicalToolTitles.length, 'cada guía tiene una herramienta práctica distinta');
 check(widgetGuides.length === 1, 'sólo una guía carga un widget de reservas');
-check(directHomeTitles.every((title) => homeDirectory.includes(title)), 'la Home nombra directamente las ocho necesidades');
-check(!homeDirectory.includes('¿Cuánto tiempo tienes para Lisboa?'), 'la Home no recupera el bloque intermedio de duración');
-check(!homeDirectory.includes('/guia/'), 'la Home no enlaza páginas-puente');
-check(homeDirectory.includes('lg:grid-cols-6'), 'la Home usa una composición editorial 2 + 3 + 3 en escritorio');
+check(homePage.includes('<GrokHome />'), 'el Home real utiliza el nuevo componente editorial');
 check(
-  ['/que-ver-en-lisboa', '/donde-comer-en-lisboa'].every((href) => homeDirectory.includes(href)),
-  'la Home enlaza directamente los dos nuevos pilares',
+  ['/que-ver-en-lisboa', '/donde-comer-en-lisboa', '/blog/vida-nocturna-lisboa', '/blog/donde-fotografiar-lisboa',
+   '/blog/como-moverse-por-lisboa', '/blog/donde-alojarse-en-lisboa', '/blog/errores-turistas-lisboa', '/itinerarios']
+    .every((href) => homeComponent.includes(href)),
+  'la Home sigue enlazando las necesidades prácticas sin páginas-puente',
 );
+check(!homeComponent.includes("href='/guia/"), 'la nueva Home no enlaza páginas-puente');
+check(homeStyles.includes('@media(max-width:640px)'), 'la nueva Home tiene composición móvil explícita');
 check(
-  homePage.includes('Artículos que te pueden interesar')
-    && ['time-out-market-lisboa', 'estacion-oriente-lisboa', 'estacion-olaias-lisboa'].every((slug) => homePage.includes(slug)),
-  'la Home conserva al final los tres artículos editoriales aprobados',
+  ['time-out-market-lisboa', 'estacion-oriente-lisboa', 'estacion-olaias-lisboa']
+    .every((slug) => homeComponent.includes(slug)),
+  'la Home conserva los tres artículos editoriales aprobados',
 );
 check(
   navbar.includes("{ href: '/comprar-entradas', label: 'Entradas' }"),
