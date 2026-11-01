@@ -18,16 +18,16 @@ export function ItineraryCard({
 }: ItineraryCardProps) {
   return (
     <article
-      className={`group relative flex h-full flex-col border-y border-border-soft bg-white/25 px-1 pb-0 pt-3 transition-colors hover:bg-white/45 ${
-        featured ? 'border-t-2 border-t-gold bg-white/35' : ''
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-[#d7e8e8] bg-white p-4 shadow-[0_6px_18px_rgba(8,48,62,0.08)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_25px_rgba(8,48,62,0.12)] ${
+        featured ? 'border-t-4 border-t-[#ffcb05]' : ''
       } ${size === 'compact' ? 'px-4' : ''}`}
     >
       {featured && (
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+          <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#007c81]">
             Recomendada
           </span>
-          <span aria-hidden="true" className="h-px flex-1 bg-gold/45" />
+          <span aria-hidden="true" className="h-px flex-1 bg-[#ffcb05]/45" />
         </div>
       )}
 
@@ -59,10 +59,10 @@ export function ItineraryCard({
         {description}
       </p>
 
-      <ul className="mb-5 space-y-2 border-t border-border-soft pt-4">
+      <ul className="mb-5 space-y-2 border-t border-[#d7e8e8] pt-4">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-start gap-3 font-body text-sm leading-relaxed text-text-secondary">
-            <span aria-hidden="true" className="mt-[0.65rem] h-px w-3 flex-shrink-0 bg-gold" />
+            <span aria-hidden="true" className="mt-[0.65rem] h-px w-3 flex-shrink-0 bg-[#ffcb05]" />
             <span>{feature}</span>
           </li>
         ))}
@@ -73,7 +73,7 @@ export function ItineraryCard({
           href={href}
           className="inline-flex min-h-10 items-center gap-2 font-body text-sm font-semibold text-terracotta underline decoration-terracotta/40 underline-offset-4 transition-colors hover:text-primary-dark hover:decoration-primary-dark"
         >
-          Ver ruta completa <span aria-hidden="true">&rarr;</span>
+          Ver ruta completa
         </Link>
       </div>
     </article>
