@@ -20,7 +20,7 @@ function ReadingList({ ids }: { ids: readonly string[] }) {
       </span>
       <span className="grok-blog-reading-copy">
         <span className="grok-blog-reading-category">{post.categoria}</span>
-        <span className="grok-blog-reading-title">{post.titulo}</span>
+        <h3 className="grok-blog-reading-title">{post.titulo}</h3>
       </span>
     </Link></li>;
   })}</ul>;
