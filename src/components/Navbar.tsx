@@ -69,10 +69,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/comprar-entradas" onClick={() => setMobileMenuOpen(false)}
-            className="mt-3 flex min-h-11 items-center justify-center rounded-[4px] bg-[#ffcb05] px-4 font-body text-sm font-extrabold text-[#103442]">
-            Ver entradas
-          </Link>
         </div>
       </div>
     </nav>
