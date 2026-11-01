@@ -28,7 +28,9 @@ assert('Home usa datos reales del blog', home.includes("from '@/data/blog-posts'
 assert('buscador interactivo con etiquetas y destino', search.includes('role="search"') && search.includes('aria-live="polite"') && search.includes('router.push') && search.includes('type="submit"'));
 assert('Home conserva free tours, entradas, itinerarios y colaboración', ['/free-tours-lisboa','/comprar-entradas','/itinerarios','/blog/monasterio-jeronimos-entradas'].every(x=>home.includes(x)));
 assert('Home conserva autoría y lecturas estacionales', ['/sobre-nosotros','/blog/lisboa-cuando-llueve','/blog/lisboa-en-navidad','/blog/nochevieja-lisboa'].every(x=>home.includes(x)));
-assert('Home conserva artículos editoriales SEO', ['time-out-market-lisboa','estacion-oriente-lisboa','estacion-olaias-lisboa'].every(x=>home.includes(x)));
+assert('Home limpia: solo botón de acceso a artículos, sin cinco cuadros extra',
+  home.includes('Ver todos los artículos') && !home.includes('Artículos editoriales recomendados') &&
+  ['time-out-market-lisboa','estacion-oriente-lisboa','estacion-olaias-lisboa','paseo-en-velero-lisboa-lisbon-byboat'].every(x => posts.includes("id: '" + x + "'")));
 const picked = [...home.matchAll(/^\s*'([\w-]+)',\s*$/gm)].map(x=>x[1]);
 assert('todos los artículos destacados existen en catálogo', picked.length >= 4 && picked.every(id=>posts.includes("id: '" + id + "'")));
 assert('tarjeta principal de dos días abre ruta real', home.includes('Lisboa en 2 días: qué ver y qué reservar') && home.includes('/itinerarios/lisboa-2-dias-completo'));
@@ -55,6 +57,23 @@ const packRouteSource = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
 assert('los otros itinerarios también usan el diseño Grok', packRouteSource.includes('grok-pack-hero') && packRouteSource.includes('grok-pack-facts'));
 const blogCover = load('src/components/blog/BlogEditorialCover.tsx');
 assert('portada del blog mantiene tarjetas y fotos', blogCover.includes('grok-blog-feature-layout') && blogCover.includes('grok-blog-reading-image') && blogCover.includes('getArticleImage(post)'));
+const cardSource = load('src/components/blog/EditorialArticleCard.tsx');
+const catalogSource = load('src/app/[locale]/blog/BlogClient.tsx');
+const mediaSource = load('src/lib/media.ts');
+const articleSource = load('src/app/[locale]/blog/[slug]/page.tsx');
+const azulejoImage = '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png';
+assert('foto de azulejos coherente en artículo, catálogo y OG',
+  posts.includes("imagen: '" + azulejoImage + "'") &&
+  mediaSource.includes("'azulejos-portugueses-historia': '" + azulejoImage + "'") &&
+  articleSource.includes("'azulejos-portugueses-historia': '" + azulejoImage + "'") &&
+  existsSync(join(root, 'public', azulejoImage.slice(1))));
+assert('los listados no repiten imágenes visibles ni inventan otras',
+  cardSource.includes('uniqueArticleImages(') &&
+  blogCover.includes('reservedImages={[getArticleImage(lead)]}') &&
+  blogCover.includes('ids={selection.transport} columns={3}') &&
+  blogCover.includes('grok-blog-reading-item--text') &&
+  catalogSource.includes('imageOverride={visibleImages.get(post.id)}'));
+
 assert('navbar y CTAs utilizan turquesa con contraste', navbar.includes('bg-[#016d6f]') && brandCSS.includes('--eel-sea: #016d6f'));
 assert('no se importaron rutas HTML estáticas a Next', !/href=["'](?:\/[^"']+)?\.html["']/.test(home+navbar));
 assert('fuentes Abril y Heebo compartidas', shell.includes('Abril_Fatface') && shell.includes('Heebo') && shell.includes('grok-redesign.css'));
