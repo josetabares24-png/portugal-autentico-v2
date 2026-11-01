@@ -54,16 +54,22 @@ const { document: trips } = await page('/portugal');
 check('Escapadas opens with a destination photograph', trips.querySelector('main img')?.getAttribute('alt') === 'Palacio da Pena en Sintra, Portugal');
 check('Escapadas has no author portrait in main or social cover', ![...trips.querySelectorAll('main img, meta[property="og:image"], meta[name="twitter:image"]')].some((image) => /jose-tabares-oporto/.test(image.getAttribute('src') || image.getAttribute('content') || '')));
 const { document: home } = await page('/');
-check('home retains one H1 and its brand promise', home.querySelectorAll('h1').length === 1 && home.querySelector('h1')?.textContent.trim() === 'La Lisboa que le enseño a quien viene a verme.');
+check('new Home has exactly one descriptive H1', home.querySelectorAll('h1').length === 1 && home.querySelector('h1')?.textContent.trim() === 'Todo para planear tu viaje a Lisboa');
 check('home retains its canonical', home.querySelector('link[rel=canonical]')?.getAttribute('href') === 'https://estabaenlisboa.com');
-const homeSections = [...home.querySelectorAll('main section')];
-check('home practical guides precede reservations', homeSections.indexOf(home.getElementById('guia-practica')) >= 0 && homeSections.indexOf(home.getElementById('guia-practica')) < homeSections.indexOf(home.querySelector('section[aria-labelledby=imprescindibles]')));
-const homePortals = [...home.querySelectorAll('nav[aria-label="Guías completas para preparar Lisboa"] a')];
-check('home retains eight direct guide destinations', homePortals.length === 8 && new Set(homePortals.map((link) => link.getAttribute('href'))).size === 8);
+const guideNav = home.querySelector('nav[aria-label="Explorar Lisboa por tema"]');
+const activityBlock = home.querySelector('section[aria-labelledby="home-experiences-heading"]');
+const homeBlocks = [...home.querySelector('main')?.children || []];
+check('new Home places practical guides before reservations', Boolean(guideNav && activityBlock) && homeBlocks.indexOf(guideNav) >= 0 && homeBlocks.indexOf(guideNav) < homeBlocks.indexOf(activityBlock));
+const homePortals = [
+  ...home.querySelectorAll('nav[aria-label="Explorar Lisboa por tema"] a'),
+  ...home.querySelectorAll('nav[aria-label="Más consejos útiles"] a'),
+];
+check('new Home retains at least eight distinct practical guide destinations', homePortals.length >= 8 && new Set(homePortals.map((link) => link.getAttribute('href'))).size === homePortals.length);
+check('new Home offers an accessible search form', Boolean(home.querySelector('form[role=search] input[type=search]') && home.querySelector('form[role=search] button[type=submit]')));
 for (const link of homePortals) {
   const href = link.getAttribute('href');
   const destination = await page(href);
-  check(`home guide opens directly: ${href}`, destination.status === 200);
+  check('home guide opens directly: ' + href, destination.status === 200);
 }
 check('home retains a visible author destination', home.querySelector('main a[href="/sobre-nosotros"]'));
 check('home has a seasonal selection using existing guides', home.querySelectorAll('section[aria-labelledby=home-seasonal-title] a[href^="/blog/"]').length >= 2);
