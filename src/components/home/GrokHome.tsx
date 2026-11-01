@@ -17,7 +17,6 @@ const sections = [
 ];
 
 const picks = [
-  'lisboa-en-4-dias',
   'monasterio-jeronimos-entradas',
   'sintra-desde-lisboa',
   'alfama-historia-guia',
@@ -105,6 +104,23 @@ export default function GrokHome() {
             <p className={s.sectionLead}>Lo que conviene saber antes de reservar.</p>
           </div>
           <div className={s.blogGrid}>
+            <article className={s.articleCard}>
+              <Link href="/itinerarios/lisboa-2-dias-completo" aria-label="Ver el itinerario de Lisboa en dos días">
+                <div className={s.articlePhoto}>
+                  <Image
+                    src="/images/lisboa-originales/electrico-15e-caf-lisboa.jpg"
+                    alt="Tranvía de Lisboa pasando por una calle del centro"
+                    fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 42vw"
+                  />
+                </div>
+              </Link>
+              <div className={s.articleBody}>
+                <span className={s.articleCategory}>ITINERARIO</span>
+                <h3><Link href="/itinerarios/lisboa-2-dias-completo">Lisboa en 2 días: qué ver y qué reservar</Link></h3>
+                <p>Dos días organizados por zonas, con paradas claras, fotos y consejos para decidir las reservas antes de salir.</p>
+                <Link className={s.readLink} href="/itinerarios/lisboa-2-dias-completo">Ver itinerario</Link>
+              </div>
+            </article>
             {featured.map((post) => (
               <article className={s.articleCard} key={post.id}>
                 <Link href={'/blog/' + post.id} aria-label={'Leer ' + post.titulo}>
@@ -129,6 +145,7 @@ export default function GrokHome() {
             <Link href="/blog/estacion-oriente-lisboa"><strong>Estación de Oriente</strong><span>Tren, metro y arquitectura para visitar.</span></Link>
             <Link href="/blog/estacion-olaias-lisboa"><strong>Estación de Olaias</strong><span>Arte y una estación diferente de Lisboa.</span></Link>
             <Link href="/blog/paseo-en-velero-lisboa-lisbon-byboat"><strong>Lisboa en velero</strong><span>Un paseo por el Tajo con Lisbon ByBoat. Colaboración comercial.</span></Link>
+            <Link href="/blog/lisboa-en-4-dias"><strong>Lisboa en 4 días</strong><span>Una ruta con más tiempo para recorrer los barrios.</span></Link>
           </nav>
         </div>
       </section>
