@@ -1,3 +1,5 @@
+import { toIsoEditorialDate } from '@/lib/editorial-date';
+
 export interface BlogPost {
   id: string;
   titulo: string;
@@ -703,21 +705,15 @@ export const blogPosts: BlogPost[] = [
 
 /**
  * Artículos del más nuevo al más antiguo según su `fecha` de publicación.
- * El listado del blog y su JSON-LD usan esta lista para que el orden se mantenga
- * solo al añadir un artículo, sin depender de dónde se inserte en `blogPosts`.
- * Empates: se respeta el orden de `blogPosts` (sort estable).
- * Una fecha que no se puede leer va al final; nunca se inventa una fecha.
+ * Usa `toIsoEditorialDate`, el mismo parser que da el `datePublished` del
+ * JSON-LD, para que el orden y el dato publicado no puedan discrepar.
+ * Empates: se respeta el orden de `blogPosts` (sort estable). Una fecha que no
+ * se puede leer va al final; nunca se inventa una fecha.
+ * `scripts/test-blog-order.mjs` comprueba el orden y que no haya fechas ilegibles.
  */
-const MESES_PUBLICACION: Record<string, number> = {
-  ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sep: 8, oct: 9, nov: 10, dic: 11,
-};
-
 export function blogPublishedTime(post: Pick<BlogPost, 'fecha'>): number {
-  const partes = post.fecha.trim().split(/\s+/);
-  if (partes.length !== 3) return Number.NEGATIVE_INFINITY;
-  const mes = MESES_PUBLICACION[partes[1].toLowerCase()];
-  const time = Date.UTC(Number(partes[2]), mes ?? NaN, Number(partes[0]));
-  return Number.isNaN(time) ? Number.NEGATIVE_INFINITY : time;
+  const iso = toIsoEditorialDate(post.fecha);
+  return iso ? Date.parse(`${iso}T00:00:00Z`) : Number.NEGATIVE_INFINITY;
 }
 
 export const blogPostsByDate: BlogPost[] = [...blogPosts].sort(

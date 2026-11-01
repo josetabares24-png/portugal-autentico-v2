@@ -10,7 +10,7 @@ José: "reconstruye mi web ya … piensa en el SEO, los posts más nuevos del bl
 - JSON-LD `Blog` de `/blog`: mismo orden manual, sin `dateModified`.
 
 ## Cambio de este PR
-- `src/data/blog-posts.ts`: `blogPostsByDate`, una copia de `blogPosts` ordenada por `fecha` (la fecha de publicación que ya tiene cada artículo), más nuevo primero, sort estable en empates. No se cambia ni se inventa ninguna fecha. Si una fecha no se puede leer va al final (hoy: 0 casos de 71).
+- `src/data/blog-posts.ts`: `blogPostsByDate`, una copia de `blogPosts` ordenada por `fecha` con `toIsoEditorialDate` (el mismo parser del `datePublished`) (la fecha de publicación que ya tiene cada artículo), más nuevo primero, sort estable en empates. No se cambia ni se inventa ninguna fecha. Si una fecha no se puede leer va al final (hoy: 0 casos de 71).
 - `/blog` (`BlogClient.tsx`): catálogo y filtros por categoría usan `blogPostsByDate`. La fecha ya era visible en cada tarjeta (`categoría — fecha`). La portada editorial (`blog-editorial-selection.ts`) no cambia: es una selección curada.
 - `/blog` (`page.tsx`): el JSON-LD `Blog` lista los artículos en ese orden y añade `dateModified` cuando el artículo lo tiene en los datos.
 - El orden se mantiene solo: un artículo nuevo sale arriba por su `fecha`, sin importar dónde se añada en `blogPosts`.
@@ -26,8 +26,10 @@ José: "reconstruye mi web ya … piensa en el SEO, los posts más nuevos del bl
 3. **Diferencias de datos que hay que revisar** entre la guía actual de la Torre y la investigación del 31/10/2026 (`v4/research/belem.md`). La investigación da la Torre con una única fuente oficial de horario que no coincide con otra (Cultura Portugal dice 10:00), y no confirma "45 minutos dentro" ni "escalera de caracol muy estrecha". Antes de tocar esa ficha hay que contrastarlo con la fuente oficial.
 
 ## Pruebas
+- `npm run test:blog-order` (nuevo, `scripts/test-blog-order.mjs`): 71 artículos de más nuevo a más antiguo, ninguno perdido ni duplicado y 0 fechas ilegibles. Usa `toIsoEditorialDate`, el mismo parser del `datePublished`.
 - `npm run typecheck`: OK. ESLint en los archivos tocados: OK. `npm run build`: OK.
 - `/blog` en local: 200, un solo h1, canonical `https://estabaenlisboa.com/blog`. Catálogo: `paseo-en-velero-lisboa-lisbon-byboat` (27 Oct), `lisboa-en-enero` (25 Oct), `quinta-da-regaleira-entradas` (25 Oct), `portugal-en-7-dias` (14 Oct)… JSON-LD con `datePublished`/`dateModified` reales.
 - `smoke:sitemap` contra el build local: 67/67 comprobaciones OK; las 107 URLs responden 200, sin redirección ni noindex.
+- `smoke:seo-migration`: 1530 comprobaciones, 0 fallos (107 URLs del sitemap, 16 redirecciones).
 - Lighthouse de `/blog` sobre el build de producción local: móvil 87/100/100/100, escritorio 100/100/100/100 (Performance/Accessibility/Best Practices/SEO). No hay medición de `main` en la misma máquina, así que no se atribuye el 87 de móvil a este cambio.
 - Inventario de URLs antes y después: `docs/blog-orden-cronologico-2026-11-01-urls.md` (107 URLs y 16 redirecciones, ninguna cambia).
