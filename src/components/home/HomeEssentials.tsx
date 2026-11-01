@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import PhotoCreditLine from '@/components/ui/PhotoCreditLine';
 
 /*
  * Fila «Imprescindibles» bajo el hero: las tres reservas que más se repiten en
@@ -34,7 +35,7 @@ const essentials: Essential[] = [
     title: 'Belém',
     detail: 'Los Jerónimos, la Torre de Belém y la historia marítima, con guía.',
     href: '/free-tours-lisboa#ruta-belem',
-    image: '/images/actividades/torre-de-belem-lisboa.webp',
+    image: '/images/commons/torre-belem-werner-wikimedia.webp',
     imageAlt: 'Torre de Belém junto al río Tajo',
   },
   {
@@ -89,6 +90,9 @@ export default function HomeEssentials() {
             </li>
           ))}
         </ul>
+        {essentials.map((item) => (
+          <PhotoCreditLine key={item.id} image={item.image} label={`Foto de ${item.title}`} className="mt-2" />
+        ))}
       </div>
     </section>
   );

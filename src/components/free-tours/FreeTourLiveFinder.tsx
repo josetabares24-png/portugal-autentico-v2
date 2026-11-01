@@ -15,6 +15,8 @@ import {
   formatFreeTourTime,
 } from "@/lib/free-tour-booking-options";
 
+import PhotoCreditLine from "@/components/ui/PhotoCreditLine";
+
 import { finderCopy } from "./finder-copy";
 
 type FinderState = "idle" | "loading" | "success" | "error";
@@ -22,7 +24,7 @@ type FinderState = "idle" | "loading" | "success" | "error";
 const FALLBACK_IMAGES = [
   "/images/lisboa-originales/rua-augusta-arco-lisboa.webp",
   "/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg",
-  "/images/actividades/torre-de-belem-lisboa.webp",
+  "/images/commons/torre-belem-werner-wikimedia.webp",
 ];
 
 function lisbonDate(date = new Date()) {
@@ -104,10 +106,12 @@ function LiveTourImage({
   source,
   fallback,
   alt,
+  lang,
 }: {
   source?: string;
   fallback: string;
   alt: string;
+  lang: "es" | "en";
 }) {
   const preferredSource = source || fallback;
   const [failedSource, setFailedSource] = useState<string | null>(null);
@@ -115,14 +119,25 @@ function LiveTourImage({
     failedSource === preferredSource ? fallback : preferredSource;
 
   return (
-    <img
-      src={currentSource}
-      alt={alt}
-      loading="lazy"
-      referrerPolicy="no-referrer"
-      onError={() => setFailedSource(preferredSource)}
-      className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
-    />
+    <>
+      <div className="aspect-[16/10] overflow-hidden bg-border-soft">
+        <img
+          src={currentSource}
+          alt={alt}
+          width={640}
+          height={400}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setFailedSource(preferredSource)}
+          className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
+        />
+      </div>
+      <PhotoCreditLine
+        image={currentSource}
+        lang={lang}
+        className="px-5 pt-2"
+      />
+    </>
   );
 }
 
@@ -316,17 +331,16 @@ export default function FreeTourLiveFinder({
                       key={tour.id}
                       className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-border-soft bg-white shadow-card"
                     >
-                      <div className="aspect-[16/10] overflow-hidden bg-border-soft">
-                        <LiveTourImage
-                          source={tour.imageUrl}
-                          fallback={fallback}
-                          alt={
-                            language === "en"
-                              ? `${tour.name}, walking tour in Lisbon`
-                              : `Recorrido de ${tour.name} en Lisboa`
-                          }
-                        />
-                      </div>
+                      <LiveTourImage
+                        source={tour.imageUrl}
+                        fallback={fallback}
+                        alt={
+                          language === "en"
+                            ? `${tour.name}, walking tour in Lisbon`
+                            : `Recorrido de ${tour.name} en Lisboa`
+                        }
+                        lang={language}
+                      />
 
                       <div className="flex flex-1 flex-col p-5">
                         <p className="mb-2 font-body text-[10px] font-bold uppercase tracking-[0.15em] text-terracotta">

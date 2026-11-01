@@ -1,4 +1,5 @@
 import { languageAlternates } from '@/lib/language-alternates';
+import PhotoCreditLine from '@/components/ui/PhotoCreditLine';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -210,6 +211,7 @@ export default function FreeToursLisboaPage() {
                       />
                     </div>
                   )}
+                  <PhotoCreditLine image={route.image} className="px-5 pt-2" />
 
                   <div className="flex flex-1 flex-col p-5">
                     <div className="mb-2 flex items-center gap-2">
