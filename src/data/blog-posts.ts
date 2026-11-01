@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '9 Oct 2026',
     dateModified: '2026-10-09',
     autor: 'José Tabares',
-    imagen: '/images/estacion-sintra.jpg',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
   },
   {
     id: 'lisboa-en-navidad',
@@ -620,7 +620,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '23 Mar 2026',
     dateModified: '2026-10-21',
     autor: 'José Tabares',
-    imagen: '/images/tasca-da-graca.jpg',
+    imagen: '/images/actividades/pasteis-de-belem.webp',
   },
   {
     id: 'fado-historia-origen',
@@ -669,7 +669,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '16 Mar 2026',
     dateModified: '2026-10-21',
     autor: 'José Tabares',
-    imagen: '/images/fado-tasca-noche.jpg',
+    imagen: '/images/vino-celebracion.jpg',
   },
   {
     id: 'tram-28-historia-guia',
