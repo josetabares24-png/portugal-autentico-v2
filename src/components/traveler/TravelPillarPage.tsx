@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
 import { ArticleFigure } from '@/components/blog/ArticleFigure';
@@ -301,7 +300,7 @@ export function TravelPillarPage({
                             contentId={link.href}
                             className="article-inline-cta-link"
                           >
-                            {link.label} →
+                            {link.label}
                           </TrackedInternalLink>
                         </li>
                       ))}
@@ -354,7 +353,7 @@ export function TravelPillarPage({
               <p className="article-related-category mb-1 uppercase tracking-widest">Para seguir preparando</p>
               <h3>Lecturas relacionadas</h3>
             </div>
-            <Link href="/blog" className="article-related-link flex-none">Ver el Blog →</Link>
+            <Link href="/blog" className="article-related-link flex-none">Ver el blog</Link>
           </div>
           <nav aria-label="Lecturas relacionadas" className="grid border-y border-border-soft sm:grid-cols-2">
             {guide.relatedGuides.map((related, index) => (
@@ -374,12 +373,9 @@ export function TravelPillarPage({
                     {related.text}
                   </p>
                 </div>
-                <ArrowUpRight
-                  size={18}
-                  strokeWidth={1.8}
-                  className="text-night transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-terracotta"
-                  aria-hidden="true"
-                />
+                <span className="shrink-0 self-start rounded-[4px] border border-[#d6e8e8] bg-[#f2f9f9] px-3 py-2 text-xs font-semibold text-[#016d6f] transition-colors group-hover:border-[#016d6f]">
+                  Leer guía
+                </span>
               </TrackedInternalLink>
             ))}
           </nav>
