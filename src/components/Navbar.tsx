@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex min-h-[68px] items-center justify-between gap-3">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="Estaba en Lisboa — Inicio"
             className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
-            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={1200} height={500} priority className="h-[44px] w-auto sm:h-[48px]" />
+            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={1200} height={500} priority className="h-[40px] w-auto sm:h-[48px]" />
           </Link>
 
           <div className="hidden items-center justify-center gap-5 lg:flex xl:gap-7">
@@ -51,7 +51,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link href="/comprar-entradas" className="hidden min-h-10 shrink-0 items-center justify-center rounded-[4px] bg-[#ffcb05] px-4 font-body text-[13px] font-extrabold text-[#103442] transition-colors hover:bg-[#ffe276] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:inline-flex">
+          <Link href="/comprar-entradas" className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-[4px] bg-[#fcc603] px-2.5 font-body text-[11px] font-extrabold text-[#103442] transition-colors hover:bg-[#ffe276] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-4 sm:text-[13px]">
             Ver entradas
           </Link>
           <button ref={mobileMenuToggle} type="button" onClick={() => setMobileMenuOpen((open) => !open)}
