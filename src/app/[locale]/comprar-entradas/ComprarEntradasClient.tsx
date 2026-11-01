@@ -84,7 +84,7 @@ interface ComprarEntradasClientProps {
 
 export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntradasClientProps) {
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-booking-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
