@@ -40,10 +40,13 @@ check(
 );
 check(!homeComponent.includes("href='/guia/"), 'la nueva Home no enlaza páginas-puente');
 check(homeStyles.includes('@media(max-width:640px)'), 'la nueva Home tiene composición móvil explícita');
+const blogCatalog = readFileSync(join(process.cwd(), 'src', 'data', 'blog-posts.ts'), 'utf8');
 check(
+  homeComponent.includes('Ver todos los artículos') &&
+  !homeComponent.includes('Artículos editoriales recomendados') &&
   ['time-out-market-lisboa', 'estacion-oriente-lisboa', 'estacion-olaias-lisboa']
-    .every((slug) => homeComponent.includes(slug)),
-  'la Home conserva los tres artículos editoriales aprobados',
+    .every((slug) => blogCatalog.includes("id: '" + slug + "'")),
+  'la Home evita tarjetas redundantes y el blog conserva los tres artículos editoriales',
 );
 check(
   navbar.includes("{ href: '/comprar-entradas', label: 'Entradas' }"),
