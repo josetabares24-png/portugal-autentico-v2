@@ -11,13 +11,17 @@ function article(id: string): BlogPost {
   if (!post) throw new Error(`Editorial selection refers to missing article: ${id}`);
   return post;
 }
-const textLink = 'block rounded-sm py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta';
-
 function ReadingList({ ids }: { ids: readonly string[] }) {
-  return <ul className="divide-y divide-border-soft">{ids.map((id) => {
+  return <ul className="grok-blog-reading-grid">{ids.map((id) => {
     const post = article(id);
-    return <li key={id}><Link href={`/blog/${id}`} className={`${textLink} group`}>
-      <h3 className="font-display text-xl font-semibold not-italic leading-snug text-text-main group-hover:text-terracotta">{post.titulo}</h3>
+    return <li key={id}><Link href={`/blog/${id}`} className="grok-blog-reading-item group">
+      <span className="grok-blog-reading-image">
+        <Image src={getArticleImage(post)} alt="" fill sizes="(max-width: 680px) 112px, 130px" />
+      </span>
+      <span className="grok-blog-reading-copy">
+        <span className="grok-blog-reading-category">{post.categoria}</span>
+        <span className="grok-blog-reading-title">{post.titulo}</span>
+      </span>
     </Link></li>;
   })}</ul>;
 }
@@ -62,10 +66,9 @@ export function BlogEditorialCover() {
 
     <section id="planea-tu-viaje" aria-labelledby="planning-title" className="mt-12 scroll-mt-24 border-y border-border-soft py-7 md:mt-16">
       <h2 id="planning-title" className="font-display text-3xl font-semibold not-italic text-text-main">Planea tu viaje</h2>
-      <div className="mt-3 grid gap-x-8 md:grid-cols-3">{selection.planning.map((id) => {
-        const post = article(id);
-        return <Link key={id} href={`/blog/${id}`} className={`${textLink} group`}><h3 className="font-body text-base font-semibold not-italic leading-snug text-text-main group-hover:text-terracotta">{post.titulo}</h3></Link>;
-      })}</div>
+      <div className="mt-5 grid gap-4 md:grid-cols-3">{selection.planning.map((id) => (
+        <EditorialArticleCard key={id} post={article(id)} variant="grid" headingLevel={3} />
+      ))}</div>
       <div className="mt-3 flex flex-wrap gap-x-6 border-t border-border-soft pt-2 text-sm text-terracotta">
         {[
           ['/calculadora-presupuesto-lisboa', 'Calcula tu presupuesto'], ['/itinerarios', 'Rutas de 1, 2 y 3 días'],
@@ -94,7 +97,7 @@ export function BlogEditorialCover() {
 
     <section id="escapadas" aria-labelledby="trips-title" className="mt-10 scroll-mt-24 border-t border-text-main pt-5 md:mt-12">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3"><h2 id="trips-title" className="font-display text-3xl font-semibold not-italic text-text-main">Escapadas desde Lisboa</h2><Link href="/portugal" className="inline-flex min-h-11 items-center text-sm text-terracotta underline underline-offset-4">Seguir por Portugal</Link></div>
-      <div className="grid gap-6 lg:grid-cols-3">{selection.trips.map((id) => <EditorialArticleCard key={id} post={article(id)} variant="compact" headingLevel={3} />)}</div>
+      <div className="grid gap-6 lg:grid-cols-3">{selection.trips.map((id) => <EditorialArticleCard key={id} post={article(id)} variant="grid" headingLevel={3} />)}</div>
     </section>
   </div>;
 }
