@@ -74,7 +74,7 @@
 .rowCopy h3 { font-family: var(--grok-display), Georgia, serif; font-size: clamp(1.05rem,1.75vw,1.45rem); font-weight: 400; margin: 4px 0 8px; color: var(--ink); line-height: 1.2; }
 .rowCopy p { font-size: .82rem; color: var(--muted); line-height: 1.55; }
 .micro { display: inline-block; margin-top: 10px; background: #fff6cf; color: #5b4a1b; padding: 4px 7px; font-size: .69rem; line-height: 1.45; border-radius: 3px; }
-.action { display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: 16px 17px; background: #009797; color: white; text-align: center; }
+.action { display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: 16px 17px; background: var(--teal); color: white; text-align: center; }
 .action strong { color: #fff; font-family: var(--grok-display), Georgia, serif; font-weight: 400; font-size: clamp(.99rem,1.65vw,1.4rem); line-height: 1.16; }
 .actionButton { background: var(--yellow); color: #102b32; border-radius: 4px; padding: 10px 7px; font-size: .76rem; font-weight: 800; line-height: 1.3; margin: 12px 0 6px; text-decoration: none; }
 .actionButton:hover { color: #102b32; background: #ffdd42; }
