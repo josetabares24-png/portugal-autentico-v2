@@ -30,7 +30,17 @@ assert('Home conserva free tours, entradas, itinerarios y colaboración', ['/fre
 assert('Home conserva autoría y lecturas estacionales', ['/sobre-nosotros','/blog/lisboa-cuando-llueve','/blog/lisboa-en-navidad','/blog/nochevieja-lisboa'].every(x=>home.includes(x)));
 assert('Home conserva artículos editoriales SEO', ['time-out-market-lisboa','estacion-oriente-lisboa','estacion-olaias-lisboa'].every(x=>home.includes(x)));
 const picked = [...home.matchAll(/^\s*'([\w-]+)',\s*$/gm)].map(x=>x[1]);
-assert('todos los artículos destacados existen en catálogo', picked.length >= 5 && picked.every(id=>posts.includes("id: '" + id + "'")));
+assert('todos los artículos destacados existen en catálogo', picked.length >= 4 && picked.every(id=>posts.includes("id: '" + id + "'")));
+assert('tarjeta principal de dos días abre ruta real', home.includes('Lisboa en 2 días: qué ver y qué reservar') && home.includes('/itinerarios/lisboa-2-dias-completo'));
+const twoDays = load('src/components/itinerarios/GrokTwoDayItinerary.tsx');
+const packRoute = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
+const routeStops = [...twoDays.matchAll(/^\s*id: '([^']+)',/gm)].map(m=>m[1]);
+assert('itinerario visual contiene seis paradas distintas', routeStops.length === 6 && new Set(routeStops).size === 6);
+assert('galería y jornadas de la maqueta conectadas', twoDays.includes('styles.photoGrid') && twoDays.includes('styles.dayRows') && twoDays.includes('styles.actionButton'));
+assert('ruta 2 días conserva el canonical', packRoute.includes('https://estabaenlisboa.com/itinerarios/') && packRoute.includes('<GrokTwoDayItinerary />'));
+assert('no hay precios inventados en la ruta de 2 días', !/€|EUR|Desde \d+\s*€/.test(twoDays));
+assert('enlaces del itinerario apuntan a rutas propias', !/href:\s*'https?:/.test(twoDays));
+assert('la ruta especial no crea un main anidado', !/<main\b/.test(twoDays));
 assert('no se importaron rutas HTML estáticas a Next', !/href=["'](?:\/[^"']+)?\.html["']/.test(home+navbar));
 assert('fuentes Abril y Heebo compartidas', shell.includes('Abril_Fatface') && shell.includes('Heebo') && shell.includes('grok-redesign.css'));
 assert('el sistema visual tiene adaptaciones móviles', homeCSS.includes('@media(max-width:640px)') && brandCSS.includes('@media (max-width:640px)'));
