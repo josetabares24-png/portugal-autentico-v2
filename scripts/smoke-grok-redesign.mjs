@@ -62,6 +62,19 @@ assert('el sistema visual tiene adaptaciones móviles', homeCSS.includes('@media
 assert('la capa visual aplica a artículos reales', brandCSS.includes('.article-page .article-title') && brandCSS.includes('.article-page .article-booking'));
 assert('las reservas mantienen su componente original', bookingHero.includes('primaryHref') && bookingHero.includes('data-grok-booking-primary'));
 assert('siguen los enlaces legales del footer', ['/politica-privacidad','/politica-cookies','/aviso-legal','/terminos-condiciones'].every(x=>footer.includes(x)));
+const cookieBanner = load('src/components/CookieBanner.tsx');
+assert('cookies usan blanco, turquesa y amarillo del nuevo diseño',
+  cookieBanner.includes('border-t-[#016d6f]') && cookieBanner.includes('bg-[#fcc603]') &&
+  cookieBanner.includes('bg-white') && !cookieBanner.includes('bg-terracotta'));
+assert('cookies mantienen aceptar, rechazar y preferencias',
+  cookieBanner.includes('onClick={rejectCookies}') && cookieBanner.includes('onClick={acceptCookies}') &&
+  cookieBanner.includes('onClick={openPreferences}') && cookieBanner.includes('onClick={closeBanner}'));
+assert('consentimiento solo con elección explícita y notificación',
+  cookieBanner.includes("localStorage.setItem('cookieConsentExplicit', 'true')") &&
+  cookieBanner.includes("window.dispatchEvent(new CustomEvent('cookie-consent'"));
+assert('footer compacto en móvil conserva identidad',
+  footer.includes('w-[150px]') && footer.includes('pb-8 pt-8') && !footer.includes('pb-24'));
+
 assert('navegación móvil identificable', navbar.includes('aria-expanded') && navbar.includes('main-mobile-menu'));
 
 assert('el botón Buscar siempre abre el primer resultado disponible',
