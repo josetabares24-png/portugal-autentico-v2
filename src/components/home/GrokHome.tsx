@@ -65,6 +65,8 @@ const moreGuides = [
   { title: 'Dónde comer', description: 'Comida portuguesa, mercados y presupuesto.', href: '/donde-comer-en-lisboa' },
   { title: 'Miradores', description: 'Cuáles elegir y cuándo ir.', href: '/blog/mejores-miradores-lisboa' },
   { title: 'Evita errores', description: 'Cuestas, reservas y lo que conviene saber.', href: '/blog/errores-turistas-lisboa' },
+  { title: 'Dónde tomar algo', description: 'Fado, terrazas y vida nocturna.', href: '/blog/vida-nocturna-lisboa' },
+  { title: 'Dónde hacer fotos', description: 'La mejor luz y las calles que merecen una parada.', href: '/blog/donde-fotografiar-lisboa' },
 ];
 
 const abril = Abril_Fatface({ subsets: ['latin'], weight: '400', variable: '--grok-display', display: 'swap' });
@@ -126,6 +128,11 @@ export default function GrokHome() {
           <p style={{textAlign:'center',marginTop:28}}>
             <Link className={s.tealButton} href="/blog">Ver todos los artículos</Link>
           </p>
+          <nav className={s.discover} aria-label="Artículos editoriales recomendados">
+            <Link href="/blog/time-out-market-lisboa"><strong>Time Out Market</strong><span>Qué puedes comer y cuándo compensa ir.</span></Link>
+            <Link href="/blog/estacion-oriente-lisboa"><strong>Estación de Oriente</strong><span>Tren, metro y arquitectura para visitar.</span></Link>
+            <Link href="/blog/estacion-olaias-lisboa"><strong>Estación de Olaias</strong><span>Arte y una estación diferente de Lisboa.</span></Link>
+          </nav>
         </div>
       </section>
 
