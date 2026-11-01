@@ -71,5 +71,8 @@ jobs:
       - name: Build and validate SEO surface
         run: npm run smoke:sitemap
 
+      - name: Verify latest articles in Home and blog
+        run: npm run test:blog-chronology
+
       - name: Guard design, links and photos of Grok redesign
         run: npm run smoke:grok-redesign
