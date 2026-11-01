@@ -20,6 +20,7 @@
     "smoke:editorial-navigation": "node --import ./scripts/register-ts.mjs scripts/smoke-editorial-navigation.mjs",
     "smoke:technical-quality": "node scripts/smoke-technical-quality.mjs",
     "test:editorial-date": "node --import ./scripts/register-ts.mjs scripts/test-editorial-date.mjs",
+    "test:blog-chronology": "node --import ./scripts/register-ts.mjs scripts/test-blog-chronology.mjs",
     "smoke:traveler-guides": "node --import ./scripts/register-ts.mjs scripts/smoke-traveler-guides.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",
