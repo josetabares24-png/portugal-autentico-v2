@@ -41,9 +41,9 @@ assert('ruta 2 días conserva el canonical', packRoute.includes('https://estabae
 assert('no hay precios inventados en la ruta de 2 días', !/€|EUR|Desde \d+\s*€/.test(twoDays));
 assert('enlaces del itinerario apuntan a rutas propias', !/href:\s*'https?:/.test(twoDays));
 assert('la ruta especial no crea un main anidado', !/<main\b/.test(twoDays));
-const dayImages = [...new Set([...twoDays.matchAll(/(?:src|photo):?\\s*=?\\s*['\"]([^'\"]+\\.(?:webp|jpg|jpeg|png))['\"]/gi)].map(m => m[1]))].filter(p => p.startsWith('/'));
+const dayImages = [...new Set([...twoDays.matchAll(/(?:src|photo):?\s*=?\s*['"]([^'"]+\.(?:webp|jpg|jpeg|png))['"]/gi)].map(m => m[1]))].filter(p => p.startsWith('/'));
 assert('las seis fotografías del itinerario existen', dayImages.length >= 6 && dayImages.every(p => existsSync(join(root,'public',p.slice(1)))));
-const stopLinks = [...twoDays.matchAll(/^\\s*href: '([^']+)'/gm)].map(m => m[1]);
+const stopLinks = [...twoDays.matchAll(/^\s*href: '([^']+)'/gm)].map(m => m[1]);
 const activities = load('src/data/activities.ts');
 assert('las seis paradas abren destinos reales', stopLinks.length === 6 && stopLinks.every(href => {
   if (href.startsWith('/blog/')) return posts.includes("id: '" + href.slice('/blog/'.length) + "'");
