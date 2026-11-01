@@ -60,62 +60,70 @@ export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'e
   return (
     <>
       {show && (
-        <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:inset-x-auto sm:bottom-4 sm:right-4 sm:w-[min(360px,calc(100vw-2rem))] sm:p-0">
-          <div className="relative rounded-lg border border-border-soft bg-background-light/95 p-2.5 pr-14 shadow-soft backdrop-blur sm:p-3 sm:pr-14">
-            <button
-              onClick={closeBanner}
-              className="absolute right-1.5 top-1.5 flex h-11 w-11 items-center justify-center rounded-full text-base font-bold text-text-secondary transition-colors hover:text-text-main"
-              aria-label={english ? 'Close cookie banner' : 'Cerrar banner de cookies'}
-            >
-              ✕
-            </button>
-
-            <div className="space-y-2 sm:space-y-2.5">
-              <div>
-                <h3 className="sr-only mb-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-text-main sm:not-sr-only">
-                  Cookies
-                </h3>
-                <p className="text-[10px] leading-[1.35] text-text-secondary sm:text-[11px] sm:leading-snug">
-                  {english ? 'We use cookies to measure traffic and improve the site. You can accept, reject or read our' : 'Usamos cookies para medir el tráfico y mejorar la web. Puedes aceptar, rechazar o leer la'}{' '}
-                  <Link href="/politica-cookies" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    {english ? 'Cookie policy (Spanish)' : 'Política de Cookies'}
-                  </Link>
-                  {' '}{english ? 'and' : 'y la'}{' '}
-                  <Link href="/politica-privacidad" className="text-terracotta underline underline-offset-2 hover:no-underline">
-                    {english ? 'Privacy policy (Spanish)' : 'Privacidad'}
-                  </Link>.
-                </p>
-              </div>
-
-              <div className="grid w-full grid-cols-2 gap-2">
-                <button
-                  onClick={rejectCookies}
-                  className="min-h-11 rounded-md border border-border-soft px-3 py-1.5 text-xs font-semibold text-text-secondary transition-colors hover:border-text-secondary hover:text-text-main"
-                  aria-label={english ? 'Reject cookies' : 'Rechazar cookies'}
-                >
-                  {english ? 'Reject' : 'Rechazar'}
-                </button>
-                <button
-                  onClick={acceptCookies}
-                  className="min-h-11 rounded-md bg-terracotta px-3 py-1.5 font-body text-xs font-semibold text-white transition-colors hover:bg-primary-dark"
-                  aria-label={english ? 'Accept cookies' : 'Aceptar cookies'}
-                >
-                  {english ? 'Accept' : 'Aceptar'}
-                </button>
-              </div>
+        <div className="fixed inset-x-3 bottom-[calc(0.75rem+env(safe-area-inset-bottom))] z-[60] mx-auto max-w-[480px] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:mx-0 sm:w-[420px]">
+          <section
+            role="region"
+            aria-labelledby="cookie-banner-title"
+            className="relative overflow-hidden rounded-[9px] border border-[#d7e8e8] border-t-[3px] border-t-[#016d6f] bg-white px-4 pb-4 pt-3.5 text-[#0b2a3d] shadow-[0_12px_42px_rgba(5,36,45,0.22)] sm:px-5 sm:pb-5 sm:pt-4"
+            style={{ fontFamily: 'var(--grok-body), Arial, sans-serif' }}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <h2 id="cookie-banner-title" className="pr-2 font-semibold text-[15px] leading-6 text-[#0b2a3d]">
+                {english ? 'Privacy and cookies' : 'Privacidad y cookies'}
+              </h2>
+              <button
+                type="button"
+                onClick={closeBanner}
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[5px] text-[#52666b] transition-colors hover:bg-[#e6f1f1] hover:text-[#0b2a3d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016d6f]"
+                aria-label={english ? 'Close cookie banner' : 'Cerrar banner de cookies'}
+              >
+                <span aria-hidden="true" className="text-lg leading-none">×</span>
+              </button>
             </div>
-          </div>
+            <p className="mt-1.5 text-[12px] leading-[1.55] text-[#52666b] sm:text-[13px]">
+              {english
+                ? 'We use optional analytics cookies to understand visits and improve the guide. You can accept or reject them.'
+                : 'Usamos cookies opcionales para conocer las visitas y mejorar la guía. Puedes aceptarlas o rechazarlas.'}
+              {' '}
+              <Link href="/politica-cookies" className="font-semibold text-[#016d6f] underline decoration-[#016d6f]/40 underline-offset-[3px] hover:decoration-[#016d6f]">
+                {english ? 'Cookie policy (Spanish)' : 'Política de cookies'}
+              </Link>
+              {' · '}
+              <Link href="/politica-privacidad" className="font-semibold text-[#016d6f] underline decoration-[#016d6f]/40 underline-offset-[3px] hover:decoration-[#016d6f]">
+                {english ? 'Privacy policy (Spanish)' : 'Privacidad'}
+              </Link>.
+            </p>
+            <div className="mt-3.5 grid grid-cols-2 gap-2.5">
+              <button
+                type="button"
+                onClick={rejectCookies}
+                className="min-h-11 rounded-[5px] border border-[#016d6f] bg-white px-3 py-2 text-[13px] font-bold text-[#015a5c] transition-colors hover:bg-[#e6f1f1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016d6f]"
+                aria-label={english ? 'Reject cookies' : 'Rechazar cookies'}
+              >
+                {english ? 'Reject' : 'Rechazar'}
+              </button>
+              <button
+                type="button"
+                onClick={acceptCookies}
+                className="min-h-11 rounded-[5px] bg-[#fcc603] px-3 py-2 text-[13px] font-bold text-[#0b2a3d] transition-colors hover:bg-[#ffe273] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016d6f]"
+                aria-label={english ? 'Accept cookies' : 'Aceptar cookies'}
+              >
+                {english ? 'Accept' : 'Aceptar'}
+              </button>
+            </div>
+          </section>
         </div>
       )}
 
       {!show && consent !== null && explicitConsent && (
         <button
+          type="button"
           onClick={openPreferences}
-          className="fixed bottom-3 left-3 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border-soft bg-background-light text-terracotta shadow-soft transition-colors hover:border-terracotta hover:bg-white"
+          className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] left-3 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-[#d7e8e8] bg-white text-[#016d6f] shadow-[0_4px_18px_rgba(5,36,45,0.16)] transition-colors hover:border-[#016d6f] hover:bg-[#e6f1f1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016d6f]"
           aria-label={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
           title={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
         >
-          <Settings2 size={17} strokeWidth={1.8} aria-hidden="true" />
+          <Settings2 size={18} strokeWidth={1.8} aria-hidden="true" />
         </button>
       )}
     </>
