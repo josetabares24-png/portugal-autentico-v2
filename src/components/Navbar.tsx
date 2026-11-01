@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex min-h-[68px] items-center justify-between gap-3">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="Estaba en Lisboa — Inicio"
             className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
-            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={180} height={56} priority className="h-[48px] w-auto" />
+            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={1200} height={500} priority className="h-[44px] w-auto sm:h-[48px]" />
           </Link>
 
           <div className="hidden items-center justify-center gap-5 lg:flex xl:gap-7">
