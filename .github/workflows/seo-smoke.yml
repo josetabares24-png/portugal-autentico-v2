@@ -17,6 +17,9 @@ on:
       - 'src/data/activities.ts'
       - 'src/data/guide-packs.ts'
       - 'scripts/smoke-sitemap.mjs'
+      - 'scripts/smoke-grok-redesign.mjs'
+      - 'src/components/home/GrokHome.tsx'
+      - 'src/app/grok-redesign.css'
       - '.github/workflows/seo-smoke.yml'
   push:
     branches:
@@ -35,6 +38,9 @@ on:
       - 'src/data/activities.ts'
       - 'src/data/guide-packs.ts'
       - 'scripts/smoke-sitemap.mjs'
+      - 'scripts/smoke-grok-redesign.mjs'
+      - 'src/components/home/GrokHome.tsx'
+      - 'src/app/grok-redesign.css'
       - '.github/workflows/seo-smoke.yml'
 
 permissions:
@@ -64,3 +70,6 @@ jobs:
 
       - name: Build and validate SEO surface
         run: npm run smoke:sitemap
+
+      - name: Guard design, links and photos of Grok redesign
+        run: npm run smoke:grok-redesign
