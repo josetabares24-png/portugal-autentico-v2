@@ -44,12 +44,19 @@ export function BlogEditorialCover() {
       <Link href="#catalogo" className="inline-flex min-h-11 items-center text-text-secondary underline underline-offset-4">Todas las guías</Link>
     </nav>
 
-    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:gap-10">
-      <section aria-label="Guía destacada"><p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-terracotta">Destacado</p><EditorialArticleCard post={article(selection.featured)} variant="feature" /></section>
-      <aside aria-labelledby="seasonal-title" className="border-t border-border-soft pt-4 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-        <h2 id="seasonal-title" className="mb-2 font-display text-2xl font-semibold not-italic text-text-main">Para los próximos meses</h2>
-        <p className="mb-5 text-sm leading-relaxed text-text-secondary">Navidad y fin de año, con las referencias y condiciones de cada guía.</p>
-        <div className="space-y-6">{selection.seasonal.map((id) => <EditorialArticleCard key={id} post={article(id)} variant="compact" headingLevel={3} />)}</div>
+    <div className="grok-blog-feature-layout">
+      <section aria-label="Guía destacada" className="grok-blog-feature-lead">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.13em] text-[#016d6f]">Destacado</p>
+        <EditorialArticleCard post={article(selection.featured)} variant="feature" />
+      </section>
+      <aside aria-labelledby="seasonal-title" className="grok-blog-feature-small">
+        <h2 id="seasonal-title" className="font-display text-2xl font-semibold not-italic text-text-main">Para los próximos meses</h2>
+        <p className="mb-4 mt-2 text-sm text-text-secondary">Navidad, lluvia y fin de año: qué hacer y qué revisar antes de ir.</p>
+        <div className="grok-blog-seasonal-grid">
+          {[...selection.seasonal, selection.planning[0]].map((id) => (
+            <EditorialArticleCard key={id} post={article(id)} variant="compact" headingLevel={3} />
+          ))}
+        </div>
       </aside>
     </div>
 
