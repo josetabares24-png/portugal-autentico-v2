@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/comprar-entradas', label: 'Entradas' },
   { href: '/free-tours-lisboa', label: 'Free tours' },
   { href: '/blog/excursiones-desde-lisboa', label: 'Excursiones' },
+  { href: '/itinerarios', label: 'Itinerarios' },
   { href: '/blog/donde-alojarse-en-lisboa', label: 'Alojamiento' },
 ] as const;
 
