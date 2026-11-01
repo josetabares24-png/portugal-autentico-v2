@@ -24,16 +24,15 @@ const posts = load('src/data/blog-posts.ts');
 assert('Home único H1 y nuevo titular', home.includes('Todo para planear tu viaje a Lisboa') && (home.match(/<h1\b/g)||[]).length === 1);
 assert('metadatos originales siguen definidos en página real', page.includes('canonical: HOME_URL') && page.includes("languageAlternates('/')"));
 assert('Home conserva JSON-LD de CollectionPage', page.includes("'@type': 'CollectionPage'") && page.includes("'@id': HOME_URL + '/#webpage'"));
-assert('Home usa datos reales del blog', home.includes("from '@/data/blog-posts'") && home.includes('getArticleImage(post)') && home.includes('post.excerpt'));
+assert('Home usa datos recientes del blog', home.includes('blogPostsByDate.slice(0, 5)') && home.includes('recentImages.get(post.id)') && home.includes('post.excerpt'));
 assert('buscador interactivo con etiquetas y destino', search.includes('role="search"') && search.includes('aria-live="polite"') && search.includes('router.push') && search.includes('type="submit"'));
 assert('Home conserva free tours, entradas, itinerarios y colaboración', ['/free-tours-lisboa','/comprar-entradas','/itinerarios','/blog/monasterio-jeronimos-entradas'].every(x=>home.includes(x)));
 assert('Home conserva autoría y lecturas estacionales', ['/sobre-nosotros','/blog/lisboa-cuando-llueve','/blog/lisboa-en-navidad','/blog/nochevieja-lisboa'].every(x=>home.includes(x)));
 assert('Home limpia: solo botón de acceso a artículos, sin cinco cuadros extra',
   home.includes('Ver todos los artículos') && !home.includes('Artículos editoriales recomendados') &&
   ['time-out-market-lisboa','estacion-oriente-lisboa','estacion-olaias-lisboa','paseo-en-velero-lisboa-lisbon-byboat'].every(x => posts.includes("id: '" + x + "'")));
-const picked = [...home.matchAll(/^\s*'([\w-]+)',\s*$/gm)].map(x=>x[1]);
-assert('todos los artículos destacados existen en catálogo', picked.length >= 4 && picked.every(id=>posts.includes("id: '" + id + "'")));
-assert('tarjeta principal de dos días abre ruta real', home.includes('Lisboa en 2 días: qué ver y qué reservar') && home.includes('/itinerarios/lisboa-2-dias-completo'));
+assert('Home siempre ordenada por publicaciones', home.includes('blogPostsByDate.slice(0, 5)') && posts.includes('export const blogPostsByDate: BlogPost[]') && !home.includes('const picks ='));
+assert('ruta de 2 días se mantiene fuera del listado cronológico', home.includes('Ver itinerario completo') && home.includes('/itinerarios/lisboa-2-dias-completo'));
 const twoDays = load('src/components/itinerarios/GrokTwoDayItinerary.tsx');
 const packRoute = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
 const routeStops = [...twoDays.matchAll(/^\s*id: '([^']+)',/gm)].map(m=>m[1]);
@@ -56,7 +55,7 @@ assert('las seis paradas abren destinos reales', stopLinks.length === 6 && stopL
 const packRouteSource = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
 assert('los otros itinerarios también usan el diseño Grok', packRouteSource.includes('grok-pack-hero') && packRouteSource.includes('grok-pack-facts'));
 const blogCover = load('src/components/blog/BlogEditorialCover.tsx');
-assert('portada del blog mantiene tarjetas y fotos', blogCover.includes('grok-blog-feature-layout') && blogCover.includes('grok-blog-reading-image') && blogCover.includes('uniqueArticleImages('));
+assert('portada del blog conserva guías por temas, sin tapar la cronología', !blogCover.includes('grok-blog-feature-layout') && blogCover.includes('grok-blog-reading-image') && blogCover.includes('uniqueArticleImages('));
 const cardSource = load('src/components/blog/EditorialArticleCard.tsx');
 const catalogSource = load('src/app/[locale]/blog/BlogClient.tsx');
 const mediaSource = load('src/lib/media.ts');
