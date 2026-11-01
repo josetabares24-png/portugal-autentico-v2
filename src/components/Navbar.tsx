@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -18,13 +18,23 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuToggle = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const publicPathname = pathname.replace(/^\/es(?=\/|$)/, '') || '/';
   const isActive = (href: string) =>
     publicPathname === href || publicPathname.startsWith(href + '/');
 
   return (
-    <nav aria-label="Navegación principal" className="sticky top-0 z-50 border-b border-[#015a5c] bg-[#016d6f] text-white">
+    <nav
+      aria-label="Navegación principal"
+      className="sticky top-0 z-50 border-b border-[#015a5c] bg-[#016d6f] text-white"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && mobileMenuOpen) {
+          setMobileMenuOpen(false);
+          mobileMenuToggle.current?.focus();
+        }
+      }}
+    >
       <div className="mx-auto max-w-[1250px] px-4 sm:px-6">
         <div className="flex min-h-[68px] items-center justify-between gap-3">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="Estaba en Lisboa — Inicio"
@@ -44,7 +54,7 @@ export default function Navbar() {
           <Link href="/comprar-entradas" className="hidden min-h-10 shrink-0 items-center justify-center rounded-[4px] bg-[#ffcb05] px-4 font-body text-[13px] font-extrabold text-[#103442] transition-colors hover:bg-[#ffe276] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:inline-flex">
             Ver entradas
           </Link>
-          <button type="button" onClick={() => setMobileMenuOpen((open) => !open)}
+          <button ref={mobileMenuToggle} type="button" onClick={() => setMobileMenuOpen((open) => !open)}
             className="flex min-h-11 min-w-11 items-center justify-center rounded-sm text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#ffcb05] lg:hidden"
             aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
             aria-controls="main-mobile-menu" aria-expanded={mobileMenuOpen}>
