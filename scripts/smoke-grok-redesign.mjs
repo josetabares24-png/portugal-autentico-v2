@@ -56,7 +56,7 @@ assert('las seis paradas abren destinos reales', stopLinks.length === 6 && stopL
 const packRouteSource = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
 assert('los otros itinerarios también usan el diseño Grok', packRouteSource.includes('grok-pack-hero') && packRouteSource.includes('grok-pack-facts'));
 const blogCover = load('src/components/blog/BlogEditorialCover.tsx');
-assert('portada del blog mantiene tarjetas y fotos', blogCover.includes('grok-blog-feature-layout') && blogCover.includes('grok-blog-reading-image') && blogCover.includes('getArticleImage(post)'));
+assert('portada del blog mantiene tarjetas y fotos', blogCover.includes('grok-blog-feature-layout') && blogCover.includes('grok-blog-reading-image') && blogCover.includes('uniqueArticleImages('));
 const cardSource = load('src/components/blog/EditorialArticleCard.tsx');
 const catalogSource = load('src/app/[locale]/blog/BlogClient.tsx');
 const mediaSource = load('src/lib/media.ts');
