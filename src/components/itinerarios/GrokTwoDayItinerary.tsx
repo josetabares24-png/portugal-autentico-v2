@@ -139,7 +139,7 @@ export default function GrokTwoDayItinerary() {
         <div><small>Cuestas</small><strong>Alfama tiene pendientes</strong></div>
       </section>
 
-      <main className={styles.container}>
+      <div className={styles.container}>
         <section className={styles.overview} aria-labelledby="grok-two-day-stops">
           <div className={styles.sectionHead}>
             <p className={styles.script}>De un vistazo</p>
@@ -212,7 +212,7 @@ export default function GrokTwoDayItinerary() {
             <Link href="/itinerarios">Todas las rutas</Link>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.disclosures}>
         <div><strong>Precios con fecha</strong>La disponibilidad y los importes se comprueban en las páginas correspondientes, no en este itinerario.</div>
