@@ -62,6 +62,30 @@ assert('la capa visual aplica a artículos reales', brandCSS.includes('.article-
 assert('las reservas mantienen su componente original', bookingHero.includes('primaryHref') && bookingHero.includes('data-grok-booking-primary'));
 assert('siguen los enlaces legales del footer', ['/politica-privacidad','/politica-cookies','/aviso-legal','/terminos-condiciones'].every(x=>footer.includes(x)));
 assert('navegación móvil identificable', navbar.includes('aria-expanded') && navbar.includes('main-mobile-menu'));
+
+assert('el botón Buscar siempre abre el primer resultado disponible',
+  search.includes('results.length > 0') && search.includes('router.push(results[0].href)'));
+assert('el menú se cierra con Escape y recupera el foco',
+  navbar.includes("event.key === 'Escape'") && navbar.includes('mobileMenuToggle.current?.focus()'));
+assert('el logo conserva su relación de aspecto original',
+  navbar.includes('width={1200} height={500}') && footer.includes('width={1200}') && footer.includes('height={500}'));
+const activitiesCatalog = load('src/data/activities.ts');
+const itineraryCatalog = load('src/data/guide-packs.ts');
+const policy = JSON.parse(load('src/data/seo-url-policy.json'));
+const curatedLinks = [...new Set([home, search, navbar, footer, twoDays].flatMap(source =>
+  [...source.matchAll(/\bhref\s*(?:=|:)\s*['"](\/[^'"]+)['"]/g)].map(match => match[1])
+))];
+const catalogHasDestination = (href) => {
+  if (href.startsWith('/blog/')) return posts.includes("id: '" + href.slice('/blog/'.length) + "'");
+  if (href.startsWith('/actividades/')) return activitiesCatalog.includes("slug: '" + href.slice('/actividades/'.length) + "'");
+  if (href.startsWith('/itinerarios/')) return itineraryCatalog.includes("'" + href.slice('/itinerarios/'.length) + "':");
+  return true;
+};
+assert('las tarjetas y búsquedas no enlazan slugs inexistentes',
+  curatedLinks.length >= 30 && curatedLinks.every(catalogHasDestination));
+assert('no hay redirecciones innecesarias en los enlaces nuevos',
+  !curatedLinks.some(href => policy.redirects.some(item => item.source === href)));
+
 const required = [
   'src/app/[locale]/blog/BlogClient.tsx',
   'src/app/[locale]/free-tours-lisboa/page.tsx',
