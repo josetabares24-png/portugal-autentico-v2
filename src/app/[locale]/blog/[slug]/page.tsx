@@ -5624,7 +5624,7 @@ const localImages: Record<string, string> = {
   'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
-  'azulejos-portugueses-historia': '/images/aldaba-puerta-lisboa.jpg',
+  'azulejos-portugueses-historia': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'novedades-lisboa-2026': '/images/parque-nacoes-torres-atardecer.jpg',
   'festivales-eventos-lisboa-2026': '/images/festival-sardinhas-noche.jpg',
   'lisboa-vs-porto': '/images/alfama-panoramica.jpg',
@@ -5742,6 +5742,7 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
  * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
  */
 const heroAlt: Record<string, string> = {
+  'azulejos-portugueses-historia': 'Panel de azulejos portugueses que representa el Terreiro do Paço histórico de Lisboa',
   'mejores-miradores-lisboa':
     'Vista de Alfama desde Portas do Sol, con los tejados de Lisboa y el río Tajo al fondo',
   'como-moverse-por-lisboa':
