@@ -5,7 +5,7 @@ import { EditorialArticleCard, uniqueArticleImages } from '@/components/blog/Edi
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPostsByDate } from '@/data/blog-posts';
 
 const POSTS_PER_PAGE = 9;
 
@@ -27,8 +27,8 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
   const postsFiltrados = useMemo(
     () =>
       categoriaActiva === 'Todos'
-        ? blogPosts
-        : blogPosts.filter((post) => post.categoria === categoriaActiva),
+        ? blogPostsByDate
+        : blogPostsByDate.filter((post) => post.categoria === categoriaActiva),
     [categoriaActiva]
   );
 
@@ -50,11 +50,9 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
     <main id="main-content" className="grok-blog-page">
       <BlogLandingHeader />
 
-      {editorialCover}
-
       <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-8">
-        <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Todas las guías</h2>
-        <p className="mt-2 text-sm text-text-secondary">Explora el catálogo por tema o sigue las páginas del archivo.</p>
+        <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Últimos artículos</h2>
+        <p className="mt-2 text-sm text-text-secondary">Ordenados por fecha de publicación, del más reciente al más antiguo. Puedes filtrar por tema.</p>
       </div>
 
       {/* Filtros por categoría */}
@@ -125,6 +123,16 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
           />
         </div>
       </section>}
+
+      {categoriaActiva === 'Todos' && paginaActual === 1 && editorialCover && (
+        <section aria-label="Explorar guías por temas" className="border-t border-border-soft">
+          <div className="site-container pt-10">
+            <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Explorar por temas</h2>
+            <p className="mt-2 text-sm text-text-secondary">Barrios, transporte, gastronomía y otras guías para preparar tu viaje.</p>
+          </div>
+          {editorialCover}
+        </section>
+      )}
 
     </main>
   );
