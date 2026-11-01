@@ -320,3 +320,94 @@
   :is(.grok-booking-page,.grok-directory-page,.grok-itinerary-page,.grok-blog-page,.article-page)
     :is(a,button) { transition-duration: 0ms; }
 }
+
+/* Blog: composición editorial fotográfica de la propuesta (destacado + 4). */
+.grok-blog-feature-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.85fr);
+  align-items: stretch;
+  gap: 20px;
+}
+.grok-blog-feature-lead {
+  min-width: 0;
+}
+.grok-blog-feature-lead > article,
+.grok-blog-feature-small .grok-blog-seasonal-grid > article {
+  border: 1px solid var(--eel-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 7px 22px rgba(8,48,62,.07);
+}
+.grok-blog-feature-lead > article { padding: 12px; }
+.grok-blog-feature-lead > article > a > div:first-child {
+  aspect-ratio: 1.22;
+  margin-bottom: 13px;
+}
+.grok-blog-feature-lead article h2 {
+  font-family: var(--eel-display-font);
+  font-size: clamp(1.5rem,2.6vw,2.25rem);
+  font-weight: 400;
+  line-height: 1.18;
+}
+.grok-blog-feature-small { min-width: 0; }
+.grok-blog-feature-small > h2 {
+  font-family: var(--eel-display-font);
+  font-weight: 400;
+}
+.grok-blog-seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+.grok-blog-feature-small .grok-blog-seasonal-grid article > a {
+  display: block;
+  padding: 10px;
+  height: 100%;
+}
+.grok-blog-feature-small .grok-blog-seasonal-grid article > a > div:first-child {
+  width: 100%;
+  aspect-ratio: 1.68;
+  margin-bottom: 11px;
+}
+.grok-blog-feature-small .grok-blog-seasonal-grid article > a > div:first-child img {
+  width: 100%;
+  object-fit: cover;
+}
+.grok-blog-feature-small .grok-blog-seasonal-grid article h3 {
+  color: var(--eel-deep);
+  font-family: var(--eel-display-font);
+  font-size: clamp(1rem,1.75vw,1.24rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.grok-blog-feature-small .grok-blog-seasonal-grid article p {
+  color: var(--eel-sea-dark);
+  font-size: .67rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.grok-blog-feature-layout a:hover :is(h2,h3) { color: var(--eel-sea-dark); }
+.grok-blog-page #catalogo { scroll-margin-top: 100px; }
+.grok-blog-page #catalogo > h2 {
+  font-family: var(--eel-display-font);
+  font-size: clamp(2rem,3vw,2.8rem);
+  font-weight: 400;
+}
+.grok-blog-page section[aria-label="Primeras guías del catálogo"] {
+  background: #f6faf9;
+}
+@media (max-width:900px) {
+  .grok-blog-feature-layout { grid-template-columns: minmax(0,1fr) minmax(0,1.5fr); gap: 14px; }
+  .grok-blog-seasonal-grid { gap: 10px; }
+}
+@media (max-width:680px) {
+  .grok-blog-feature-layout { grid-template-columns: 1fr; gap: 30px; }
+  .grok-blog-feature-lead > article > a > div:first-child { aspect-ratio: 1.7; }
+  .grok-blog-feature-lead article h2 { font-size: 1.75rem; }
+  .grok-blog-seasonal-grid { grid-template-columns: 1fr; gap: 12px; }
+  .grok-blog-feature-small .grok-blog-seasonal-grid article > a > div:first-child {
+    aspect-ratio: 1.8;
+  }
+  .grok-blog-feature-small .grok-blog-seasonal-grid article h3 { font-size: 1.32rem; }
+}
