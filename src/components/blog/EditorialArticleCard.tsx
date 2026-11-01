@@ -10,20 +10,35 @@ interface EditorialArticleCardProps {
   post: BlogPost;
   variant?: EditorialArticleCardVariant;
   headingLevel?: 2 | 3;
+  /** null = artículo sin imagen repetida; undefined = usar portada del catálogo. */
+  imageOverride?: string | null;
 }
 
 export function getArticleImage(post: BlogPost) {
   return blogImageMap[post.id] || post.imagen || blogFallbackImage;
 }
 
-export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 }: EditorialArticleCardProps) {
-  const imageSrc = getArticleImage(post);
+/** Devuelve una imagen distinta por tarjeta. Si no hay otra foto verificable, no inventa ninguna. */
+export function uniqueArticleImages(posts: readonly BlogPost[], reservedImages: readonly string[] = []) {
+  const used = new Set(reservedImages);
+  const images = new Map<string, string | null>();
+  for (const post of posts) {
+    const src = getArticleImage(post);
+    if (used.has(src)) images.set(post.id, null);
+    else { images.set(post.id, src); used.add(src); }
+  }
+  return images;
+}
+
+export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2, imageOverride }: EditorialArticleCardProps) {
+  const imageSrc = imageOverride === undefined ? getArticleImage(post) : imageOverride;
   const Heading = headingLevel === 3 ? 'h3' : 'h2';
 
   if (variant === 'feature') {
     return (
       <article className="min-w-0">
         <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
+          {imageSrc && (
           <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-white/60">
             <Image
               src={imageSrc}
@@ -35,6 +50,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
               priority
             />
           </div>
+          )}
           <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#008f91]">
             {post.categoria} &mdash; {post.fecha}
           </p>
@@ -52,7 +68,8 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
   if (variant === 'compact') {
     return (
       <article className="min-w-0">
-        <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group grid grid-cols-[5.5rem_minmax(0,1fr)] gap-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
+        <Link href={resolveInternalHref(`/blog/${post.id}`)} className={`group grid ${imageSrc ? "grid-cols-[5.5rem_minmax(0,1fr)]" : "grid-cols-1"} gap-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]`}>
+          {imageSrc && (
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-white/60">
             <Image
               src={imageSrc}
@@ -63,6 +80,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
               sizes="88px"
             />
           </div>
+          )}
           <div className="min-w-0">
             <p className="mb-1 font-body text-[11px] uppercase tracking-[0.14em] text-text-secondary">
               {post.categoria}
@@ -79,6 +97,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
   return (
     <article className="min-w-0">
       <Link href={resolveInternalHref(`/blog/${post.id}`)} className="group block h-full rounded-[8px] border border-[#d8e9e9] bg-white p-4 shadow-[0_6px_18px_rgba(8,48,62,0.07)] transition-shadow hover:shadow-[0_12px_24px_rgba(8,48,62,0.13)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
+        {imageSrc && (
         <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-md bg-white/60">
           <Image
             src={imageSrc}
@@ -89,6 +108,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2 
             sizes="(max-width: 639px) calc(100vw - 3rem), (max-width: 1023px) 45vw, 350px"
           />
         </div>
+        )}
         <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#008f91]">
           {post.categoria} &mdash; {post.fecha}
         </p>
