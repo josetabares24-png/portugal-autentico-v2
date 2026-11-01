@@ -55,8 +55,14 @@ export default function GrokQuickSearch() {
       router.push('/blog');
       return;
     }
-    setShowResults(true);
-    if (results.length === 1) router.push(results[0].href);
+    // Al pulsar Buscar siempre se abre la guía más relevante.
+    // Las demás coincidencias siguen disponibles al escribir en el menú.
+    if (results.length > 0) {
+      setShowResults(false);
+      router.push(results[0].href);
+    } else {
+      setShowResults(true);
+    }
   }
 
   return (
