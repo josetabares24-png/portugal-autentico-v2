@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { BlogPost } from '@/data/blog-posts';
 import { blogPosts } from '@/data/blog-posts';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
+import { getArticleImage } from '@/components/blog/EditorialArticleCard';
 import GrokQuickSearch from './GrokQuickSearch';
 import s from './GrokHome.module.css';
 
@@ -56,7 +57,7 @@ const itinerary = [
   { place: 'Alfama y sus miradores', area: 'Día 1 · Alfama', detail: 'Subidas, callejuelas y vistas sobre el Tajo.', href: '/blog/alfama-historia-guia', photo: '/images/lisboa-originales/alfama-lisboa-tejados-rio-tejo.jpg' },
   { place: 'Torre de Belém', area: 'Día 2 · Belém', detail: 'Comprueba el acceso y posibles cierres antes de ir.', href: '/actividades/torre-de-belem', photo: '/images/actividades/torre-de-belem-lisboa.webp' },
   { place: 'Monasterio de los Jerónimos', area: 'Día 2 · Belém', detail: 'Horarios, entradas y qué merece la pena visitar.', href: '/blog/monasterio-jeronimos-entradas', photo: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp' },
-  { place: 'Pastéis de Belém', area: 'Día 2 · Belém', detail: 'Una parada cerca del monasterio antes de seguir.', href: '/blog/pasteles-de-belem', photo: '/images/actividades/torre-de-belem-lisboa.webp' },
+  { place: 'Pastéis de Belém', area: 'Día 2 · Belém', detail: 'Una parada cerca del monasterio antes de seguir.', href: '/blog/pasteles-de-belem', photo: '/images/actividades/pasteis-de-belem.webp' },
 ];
 const moreGuides = [
   { title: 'Cómo moverte', description: 'Metro, tranvías y trenes sin confusiones.', href: '/blog/como-moverse-por-lisboa' },
@@ -125,7 +126,7 @@ export default function GrokHome() {
               <article className={s.articleCard} key={post.id}>
                 <Link href={'/blog/' + post.id} aria-label={'Leer ' + post.titulo}>
                   <div className={s.articlePhoto}>
-                    <Image src={post.imagen} alt={post.titulo} fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" />
+                    <Image src={getArticleImage(post)} alt={post.titulo} fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw" />
                   </div>
                 </Link>
                 <div className={s.articleBody}>
