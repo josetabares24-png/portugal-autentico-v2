@@ -2,10 +2,10 @@
    Interfaz únicamente: no modifica contenidos, URLs, datos ni reservas.
    Selectores limitados a superficies aprobadas y componentes compartidos. */
 :root {
-  --eel-sea: #008f91;
-  --eel-sea-dark: #01676b;
-  --eel-deep: #0b3040;
-  --eel-yellow: #ffcb05;
+  --eel-sea: #016d6f;
+  --eel-sea-dark: #015a5c;
+  --eel-deep: #0b2a3d;
+  --eel-yellow: #fcc603;
   --eel-paper: #f5fafa;
   --eel-mist: #e6f1f1;
   --eel-line: #d7e8e8;
