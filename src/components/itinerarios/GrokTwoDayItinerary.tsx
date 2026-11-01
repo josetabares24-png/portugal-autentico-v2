@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './GrokTwoDayItinerary.module.css';
+import type { GuidePack } from '@/data/guide-packs';
 
 /**
  * Página de 2 días inspirada en la versión aprobada de Grok.
@@ -113,7 +114,7 @@ const days = [
   { day: 2 as const, title: 'Día 2', eyebrow: 'Belém y atardecer', summary: 'Agrupa los monumentos de Belém antes de volver al centro.' },
 ];
 
-export default function GrokTwoDayItinerary() {
+export default function GrokTwoDayItinerary({ guide }: { guide: Pick<GuidePack, 'highlights'> }) {
   return (
     <div className={styles.page}>
       <header className={styles.hero}>
@@ -200,6 +201,29 @@ export default function GrokTwoDayItinerary() {
           </div>
           <Link href="/blog/alfama-historia-guia">Leer la guía completa de Alfama</Link>
         </aside>
+
+        {guide.highlights.length > 0 && (
+          <section className={styles.classicRoute} aria-labelledby="ruta-alternativa-title">
+            <p className={styles.script}>Una ruta alternativa</p>
+            <h2 id="ruta-alternativa-title">Más ideas para tus dos días</h2>
+            <p className={styles.classicIntro}>
+              Además de las seis paradas de la ruta visual, esta es la propuesta
+              que ya formaba parte de nuestra guía. Puedes escoger las visitas
+              que más te interesen sin intentar hacerlo todo.
+            </p>
+            <ol className={styles.classicList}>
+              {guide.highlights.map((highlight, index) => (
+                <li key={index} className={styles.classicStop}>
+                  <span className={styles.classicTime}>{highlight.time}</span>
+                  <div>
+                    <h3>{highlight.place}</h3>
+                    <p>{highlight.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         <section className={styles.after} aria-label="Más formas de preparar tu visita">
           <div>
