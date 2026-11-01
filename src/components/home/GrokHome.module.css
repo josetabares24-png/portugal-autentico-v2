@@ -20,6 +20,9 @@
 .sectionLead { font-size: .94rem; color: #57666c; line-height: 1.65; }
 .centerHeading { text-align: center; margin-bottom: 28px; }
 .hero { position: relative; min-height: 430px; height: clamp(450px, 52vw, 555px); isolation: isolate; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+/* Al desplegar resultados, el buscador pasa por encima de las tarjetas
+   que sobresalen del hero; sin modificar la composición en reposo. */
+.hero:has(.searchResults) { z-index: 4; }
 .heroPhoto { position: absolute; inset: 0; z-index: -2; }
 .heroPhoto img { object-fit: cover; object-position: center 56%; }
 .heroTint { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg,rgba(1,50,60,.72),rgba(1,56,64,.55) 55%,rgba(2,50,58,.74)); }
