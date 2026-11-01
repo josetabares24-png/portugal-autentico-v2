@@ -279,7 +279,8 @@
   border-radius: 8px;
   box-shadow: 0 7px 24px rgba(8,48,62,.08);
 }
-.grok-booking-page #comparar-rutas article h3 { color: var(--eel-deep); }
+.grok-booking-page #comparar-rutas article:not(.bg-night) h3 { color: var(--eel-deep); }
+.grok-booking-page #comparar-rutas article.bg-night :is(h3,p) { color: #fff; }
 .grok-booking-page #comparar-rutas article a.bg-terracotta {
   background: var(--eel-yellow);
   color: var(--eel-deep);
