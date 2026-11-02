@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import { getPhotoCredit, photoAdaptation } from "@/data/photo-credits";
 import tours from "@/data/english-walking-tours.json";
 import { withGuruwalkRef, buildAffiliateUrl } from "@/lib/affiliate";
 import { ENGLISH_TOURS_CAMPAIGN } from "@/lib/english-bookings";
@@ -35,6 +36,28 @@ export default function EnglishTourSelection({
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
+            {(() => {
+              const credit = getPhotoCredit(tour.image);
+              if (!credit) return null;
+              const adaptation = photoAdaptation(credit, "en");
+              return (
+                <p className="px-5 pt-2 text-[11px] leading-snug text-text-secondary">
+                  Photo:{" "}
+                  <a className="underline underline-offset-2" href={credit.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    {credit.author} / Wikimedia Commons
+                  </a>
+                  {", "}
+                  {credit.licenseUrl ? (
+                    <a className="underline underline-offset-2" href={credit.licenseUrl} target="_blank" rel="noopener noreferrer license">
+                      {credit.license}
+                    </a>
+                  ) : (
+                    credit.license
+                  )}
+                  {adaptation ? ` (${adaptation})` : null}
+                </p>
+              );
+            })()}
             <div className="flex flex-1 flex-col p-5">
               <div className="mb-2 flex items-center gap-2">
                 <Icon
