@@ -86,6 +86,7 @@ export function ArticleBookingBlock({
                   href={option.url}
                   target="_blank"
                   rel="sponsored nofollow noopener noreferrer"
+                  data-cta={`${contentId}-${option.id}`}
                   className="article-booking-option btn-outline h-full w-full px-3 py-2.5 text-sm"
                   onClick={() =>
                     trackAffiliateClick({
@@ -115,6 +116,7 @@ export function ArticleBookingBlock({
             href={url}
             target="_blank"
             rel="sponsored noopener noreferrer"
+            data-cta={contentId}
             className="article-booking-button btn-primary w-full px-6 py-3 text-base sm:w-auto"
             onClick={() =>
               trackAffiliateClick({

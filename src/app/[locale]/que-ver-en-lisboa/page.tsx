@@ -62,6 +62,8 @@ const PLACEMENTS: BlogBookingPlacement[] = [
     },
     {
       offer: { type: 'product', productId: 'jeronimos-torre-belem' },
+      // Segundo botón de Tiqets en la página: campaña propia para medirlo aparte.
+      campaignSuffix: 'pack-belem',
       intro:
         'Si en Belém vas a entrar en el claustro de los Jerónimos y en la Torre el mismo día, puedes llevar las dos entradas en una sola compra.',
     },
