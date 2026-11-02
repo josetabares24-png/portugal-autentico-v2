@@ -668,7 +668,7 @@ async function checkEntradasIndexability(baseUrl, locs) {
   const robots = metaValues(html, 'robots');
   const googlebot = metaValues(html, 'googlebot');
   const explicitIndex = (values) => values.length > 0 && values.every((v) =>
-    /\\bindex\\b/i.test(v) && /\\bfollow\\b/i.test(v) &&
+    /\bindex\b/i.test(v) && /\bfollow\b/i.test(v) &&
     !blocksIndexing(v) && !blocksFollowing(v)
   );
   record(
@@ -678,7 +678,7 @@ async function checkEntradasIndexability(baseUrl, locs) {
       locs.filter((loc) => loc === url).length === 1 &&
       explicitIndex(robots) && explicitIndex(googlebot) &&
       indexingBlocks(html, res).length === 0 &&
-      /<h1[\\s>]/i.test(html) && html.includes('Entradas que sí conviene comprar antes'),
+      /<h1[\s>]/i.test(html) && html.includes('Entradas que sí conviene comprar antes'),
     `HTTP ${res.status}, robots=${JSON.stringify(robots)}, googlebot=${JSON.stringify(googlebot)}, sitemap=${locs.includes(url)}`,
   );
 }
