@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const article: Article = {
-  titulo: 'Dónde comer ceviche peruano en Alcântara: Sinchi, Lisboa',
+  titulo: 'Sinchi Lisboa: ceviche peruano en Alcântara, carta y reservas',
   descripcion: 'Sinchi, restaurante peruano en Alcântara, Lisboa: ceviches, lomo saltado, precios de la carta, dirección y cómo reservar.',
   subtitulo: 'Ceviches, tiraditos, lomo saltado y una carta que lleva los sabores peruanos hasta Alcântara. Esto es lo que puedes pedir, lo que cuesta y cómo reservar.',
   imagen: '',
@@ -81,7 +81,7 @@ const article: Article = {
     },
     {
       tipo: 'parrafo',
-      texto: 'No es una propuesta para comer por muy poco dinero, pero puedes calcular el presupuesto antes de ir. TheFork señala un precio medio orientativo de 26 € por persona, aunque depende de lo que pidas y de las bebidas.',
+      texto: 'Con estos precios puedes calcular el presupuesto antes de ir. El coste final dependerá de los platos, las bebidas y de si compartes alguna entrada o postre.',
     },
     { tipo: 'subtitulo', texto: '¿Qué beber? Pisco sour, chicha morada y vinos peruanos' },
     {
@@ -96,7 +96,7 @@ const article: Article = {
     { tipo: 'subtitulo', texto: 'Horarios y cómo reservar en Sinchi' },
     {
       tipo: 'parrafo',
-      texto: 'El propio restaurante nos confirmó que atiende llamadas y WhatsApp en el +351 924 385 110. También tiene página web, sinchi.eatbu.com, y puedes consultar sus opciones de reserva en TheFork. Los horarios publicados en internet no coinciden entre sí; para comprobar los horarios actuales y las excepciones de festivos, abre su ficha en Google Maps antes de ir.',
+      texto: 'Puedes reservar directamente desde la web oficial de Sinchi, donde encontrarás la sección «Reserva». Así contactas con el propio restaurante, sin pasar por otros portales. Si tienes dudas sobre la disponibilidad, también puedes escribirles por WhatsApp al +351 924 385 110. Para comprobar posibles cambios de horarios o festivos, consulta su ficha de Google Maps antes de desplazarte.',
     },
     {
       tipo: 'tabla',
@@ -122,7 +122,7 @@ const article: Article = {
     },
     {
       tipo: 'parrafo',
-      texto: 'Como referencia externa, TheFork mostraba el 2 de noviembre de 2026 una puntuación de 9,7 sobre 10 y más de 330 opiniones. Esa valoración puede cambiar y no sustituye una visita propia. Si te interesa probarlo, revisa la carta actual y reserva directamente con el restaurante.',
+      texto: 'Si te interesa probar Sinchi, puedes ver el menú, comprobar los horarios y acceder a su sección de reservas desde la web del propio restaurante. Y si tienes alguna petición especial, escríbeles por WhatsApp antes de ir.',
     },
   ],
 };
@@ -141,6 +141,34 @@ export default function SinchiEditorialPreview() {
       </div>
 
       <ArticleHero article={article} authorName="José Tabares" heroImage={null} isEditorialV2 />
+
+      <section className="mx-auto max-w-6xl px-4 pb-6" aria-label="Reserva directa en Sinchi">
+        <div className="flex flex-col gap-4 border-y border-border-soft bg-[#F4F0E9] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7B654F]">Reserva directa · Sin intermediarios</p>
+            <p className="mt-1 font-display text-xl font-semibold text-text-main">¿Te apetece probar Sinchi?</p>
+            <p className="mt-1 text-sm text-text-secondary">Entra en su web oficial y busca la sección «Reserva» para elegir tu mesa.</p>
+          </div>
+          <div className="flex flex-col gap-2 sm:shrink-0">
+            <a
+              href="https://sinchi.eatbu.com/?lang=pt"
+              target="_blank"
+              rel="sponsored nofollow noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center rounded-md bg-text-main px-6 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-85"
+            >
+              Reservar en la web oficial
+            </a>
+            <a
+              href="https://wa.me/351924385110"
+              target="_blank"
+              rel="sponsored nofollow noopener noreferrer"
+              className="text-center text-xs font-medium text-text-secondary underline underline-offset-4 hover:text-text-main"
+            >
+              ¿Dudas? Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* La galería enlaza fotografías publicadas en el sitio oficial de Sinchi.
           Únicamente revisión noindex: permiso de republicación pendiente. */}
@@ -204,42 +232,29 @@ export default function SinchiEditorialPreview() {
             <section className="article-reading mt-10 border-t border-border-soft pt-7" aria-label="Contactar y reservar en Sinchi">
               <h2 className="font-display text-2xl font-semibold text-text-main">Reserva tu mesa</h2>
               <p className="mt-2 text-text-secondary">
-                Comprueba los horarios del día en Google Maps y reserva directamente con Sinchi. También puedes mirar su web o TheFork.
+                Si quieres ir a comer, reserva en la página oficial de Sinchi. Allí encontrarás su apartado «Reserva». Si necesitas confirmar disponibilidad o una petición especial, puedes escribir directamente al restaurante por WhatsApp.
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href="https://wa.me/351924385110"
-                  target="_blank"
-                  rel="sponsored nofollow noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-md bg-text-main px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-85"
-                >
-                  Escribir a Sinchi por WhatsApp
-                </a>
-                <a
-                  href="https://www.thefork.pt/restaurante/sinchi-cozinha-peruana-r831205"
-                  target="_blank"
-                  rel="sponsored nofollow noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-5 py-3 text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
-                >
-                  Consultar Sinchi en TheFork
-                </a>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="https://sinchi.eatbu.com/?lang=pt"
                   target="_blank"
                   rel="sponsored nofollow noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-5 py-3 text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
+                  className="inline-flex min-h-12 items-center justify-center rounded-md bg-text-main px-6 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-85"
                 >
-                  Página web de Sinchi
+                  Reservar directamente con Sinchi
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa"
+                  href="https://wa.me/351924385110"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-5 py-3 text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
+                  rel="sponsored nofollow noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-border-soft px-6 py-3 text-center text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
                 >
-                  Horarios actualizados en Google Maps
+                  Consultar por WhatsApp
                 </a>
               </div>
+              <p className="mt-3 text-xs leading-relaxed text-text-secondary">
+                La reserva se realiza en la web del restaurante, no en Estaba en Lisboa. Consulta en la sección «Reserva» sus opciones y disponibilidad.
+              </p>
               <p className="mt-3 text-xs text-text-secondary">Rua Luís de Camões 90, Alcântara, Lisboa · +351 924 385 110</p>
               <a href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm underline underline-offset-4">Cómo llegar con Google Maps</a>
             </section>
@@ -249,7 +264,6 @@ export default function SinchiEditorialPreview() {
                 sources={[
                   { label: 'Sinchi: web y datos de contacto', href: 'https://sinchi.eatbu.com/?lang=pt' },
                   { label: 'Google Maps: ubicación y consulta de horarios actuales', href: 'https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa' },
-                  { label: 'TheFork: carta y opiniones de Sinchi', href: 'https://www.thefork.pt/restaurante/sinchi-cozinha-peruana-r831205' },
                   { label: 'Consulado del Perú: restaurantes peruanos en Lisboa', href: 'https://www.consulado.pe/es/Lisboa/Lists/RestaurantesPeruanos/DispForm.aspx?ContentTypeId=0x0100E1004E32DD4B264D8928886040921D86&ID=16' },
                 ]}
               />
