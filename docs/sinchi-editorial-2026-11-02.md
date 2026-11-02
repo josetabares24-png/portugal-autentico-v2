@@ -43,3 +43,10 @@ Las fotografías mostradas en TheFork pueden pertenecer a fotógrafos, clientes,
 - **Lomo saltado, foto de cliente (`customer`):** https://cdn.thefork.com/tf-lab/image/upload/w_640%2Cc_fill%2Cq_auto%2Cf_auto/customer/5286bdc1-93df-489f-a2d7-cc8e788114ef/f9365665-d858-4dee-ac6f-047542243aa0.jpg
 
 El servidor puede bloquear hotlinks de terceros o cambiar las URLs. Antes de publicar, solicitar originales/fotografías autorizadas del restaurante, optimizarlas a WebP/AVIF y sustituir los vínculos remotos. Las fotos se muestran solo en la rama de prueba noindex para evaluar la composición editorial.
+
+
+## Actualización de galería y horarios de la web oficial · 2 noviembre 2026
+- Se han reemplazado las imágenes de TheFork (incluidas las publicadas por clientes) por **las seis fotografías enlazadas de la galería oficial** de https://sinchi.eatbu.com/?lang=pt . No se descargaron ni copiaron al repositorio. Se mantiene pendiente la autorización expresa para el uso editorial definitivo.
+- Fuente de galería y sus URLs: `https://cdn.website.dish.co/media/ce/3c/8383499/Sinchi-SC1-jpg.jpg`, `https://cdn.website.dish.co/media/7f/f8/8383508/Sinchi-SC2-jpg.jpg`, `https://cdn.website.dish.co/media/a6/b4/8383514/Sinchi-SC3-jpg.jpg`, `https://cdn.website.dish.co/media/f8/33/8383519/Sinchi-SC4-jpg.jpg`, `https://cdn.website.dish.co/media/8f/4b/8383524/Sinchi-SC5-jpg.jpg` y `https://cdn.website.dish.co/media/9b/c4/8383529/Sinchi-SC6-jpg.jpg`.
+- Según la página oficial consultada el 02-11-2026: lunes 12–16 y 19–23; martes cerrado; miércoles 12–16; jueves y viernes 12–16 y 19–23; sábado 13–16 y 19–23; domingo cerrado. **Google Maps sigue siendo la primera referencia para horarios especiales o cambios**, con confirmación por WhatsApp ante cualquier contradicción. No atribuir estos horarios a Google Maps porque proceden de la web oficial.
+- La vista de revisión debe comprobarse en móvil. Si el CDN bloquea enlaces de imágenes (hotlinking), pedir imágenes originales al restaurante y sustituir URLs externas. No publicar sin permiso de derechos ni la aprobación comercial.
