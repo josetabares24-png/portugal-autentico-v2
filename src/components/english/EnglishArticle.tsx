@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import articles from "@/data/english-pilot-articles.json";
-import { getPhotoCredit } from "@/data/photo-credits";
+import { getPhotoCredit, photoAdaptation } from "@/data/photo-credits";
 import { englishPilotRoutes } from "@/lib/language-alternates";
 import { findProductById } from "@/data/bookings";
 import { withGuruwalkRef, buildAffiliateUrl } from "@/lib/affiliate";
@@ -247,7 +247,7 @@ export default function EnglishArticle({ article }: { article: Article }) {
                     >
                       {credit.license}
                     </Link>
-                    . Used in this crop.
+                    {photoAdaptation(credit, "en") ? ` (${photoAdaptation(credit, "en")})` : null}. Used in this crop.
                   </figcaption>
                 ) : "caption" in article && article.caption ? (
                   <figcaption className="mt-2 text-xs text-text-secondary">

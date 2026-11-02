@@ -79,7 +79,9 @@ export function resolveBookingBlocks(
     const product = findProductById(offer.productId);
     const link = product ? resolveBookingLink(product, 'article') : null;
     if (!product || !link) return [];
-    const campaign = link.provider === 'tiqets' ? `web_${surface}_${slug}` : link.campaign;
+    const campaign = link.provider === 'tiqets'
+      ? `web_${surface}_${slug}${placement.campaignSuffix ? `_${placement.campaignSuffix}` : ''}`
+      : link.campaign;
     const url = link.provider === 'tiqets' ? withTiqetsCampaign(link.url, campaign) : link.url;
     return [{
       intro: placement.intro,

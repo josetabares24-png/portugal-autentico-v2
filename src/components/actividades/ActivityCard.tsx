@@ -64,7 +64,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
           <span className={`font-semibold ${activity.isFree ? 'text-terracotta' : 'text-text-main'}`}>
             {activity.priceLabel}
           </span>
-          <span className="text-text-secondary text-xs font-medium">{activity.duration}</span>
+          {activity.duration ? <span className="text-text-secondary text-xs font-medium">{activity.duration}</span> : null}
         </div>
 
         <div className={`border-l-2 border-gold bg-background-light/60 px-3 py-2.5 ${styles.tip}`}>

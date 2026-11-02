@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getPhotoCredit } from "@/data/photo-credits";
+import { getPhotoCredit, photoAdaptation } from "@/data/photo-credits";
 import EnglishGuideLink from "./EnglishGuideLink";
 
 const penaImage = "/images/commons/sintra-palacio-pena-wikimedia.webp";
@@ -104,7 +104,7 @@ export default function EnglishVisitChoices() {
                 >
                   {credit.license}
                 </Link>
-                . Cropped.
+                {photoAdaptation(credit, "en") ? ` (${photoAdaptation(credit, "en")})` : null}. Cropped.
               </p>
             ) : null}
           </div>
