@@ -10,4 +10,6 @@
 
 **HIPÓTESIS:** menos contenido repetido y menor altura facilitan llegar a artículos y reservas; no se atribuyen mejoras de ventas o SEO sin datos.
 
+Revisión final del calendario: el contenedor visual es un label asociado al input, para que el icono no quede como una zona inerte. Un solo campo accesible, teclado y envío comprobados a320px; build144 y Lighthousea11y100 repetidos tras ese ajuste semántico. No altera el aspecto ni la API.
+
 **ESTADO/SIGUIENTE:** [informe y evidencia](../docs/mobile-feedback-2026-11-02.md); head/READY/CI finales en PR134. Revisión física en iPhone pendiente; sin Safari iOS en este entorno. No merge ni producción. No repetir la recomendación de añadir hero al blog salvo nueva necesidad editorial o instrucción de José.

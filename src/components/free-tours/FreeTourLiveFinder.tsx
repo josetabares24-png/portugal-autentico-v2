@@ -229,7 +229,7 @@ export default function FreeTourLiveFinder({
               {copy.date}
             </label>
             <div className="grid min-w-0 gap-2.5 sm:grid-cols-[minmax(0,1fr)_auto]">
-              <div className="free-tour-date-control flex min-w-0 items-center gap-3 rounded-md border border-border-soft bg-white px-3 shadow-sm focus-within:border-terracotta focus-within:ring-2 focus-within:ring-terracotta/15">
+              <label htmlFor="free-tour-date" className="free-tour-date-control flex min-w-0 items-center gap-3 rounded-md border border-border-soft bg-white px-3 shadow-sm focus-within:border-terracotta focus-within:ring-2 focus-within:ring-terracotta/15">
                 <CalendarDays
                   className="pointer-events-none shrink-0 text-terracotta"
                   size={18}
@@ -252,7 +252,7 @@ export default function FreeTourLiveFinder({
                   required
                   className="free-tour-date-input block h-11 min-w-0 w-full max-w-full flex-1 appearance-none border-0 bg-transparent p-0 text-left font-body text-base text-night [color-scheme:light] focus:outline-none focus:ring-0"
                 />
-              </div>
+              </label>
               <button
                 type="submit"
                 disabled={state === "loading"}
