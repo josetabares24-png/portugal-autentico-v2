@@ -521,7 +521,7 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     category: 'entradas',
     blurb:
       'Las dos entradas de Belém en una sola compra, para quien visita ambos el mismo día. La Torre entra por franjas horarias desde su reapertura en mayo de 2026.',
-    kind: 'Entrada combinada',
+    kind: 'Pack de Tiqets, no una entrada oficial',
     // Foto de Wikimedia Commons (no es de José): crédito en src/data/photo-credits.ts.
     image: '/images/commons/jeronimos-torre-belem-wikimedia.webp',
     imageAlt: 'El Monasterio de los Jerónimos y la plaza del Imperio vistos desde lo alto del Padrão dos Descobrimentos',
