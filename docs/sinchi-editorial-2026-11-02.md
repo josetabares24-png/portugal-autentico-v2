@@ -5,6 +5,7 @@
 - Sin alta en `blog-posts.ts`, sin indexación, sin cambios en la navegación, home, blog o sitemap.
 - Colaboración comercial ofrecida por **50 €**. El restaurante dijo que le interesa; **no consta aceptación final del texto ni pago**. El primer correo prometía coordinar pago/publicación después de la aprobación.
 - No atribuir visita, prueba personal de platos o testimonio propio.
+- Actualización visual de preview del 2-11-2026: tres imágenes **enlazadas directamente** desde la ficha Sinchi en TheFork, con atribución visible y aviso de autorización pendiente. No se ha subido ninguna al repositorio ni a producción. Las 2 fotos de clientes no deben pasar al artículo público sin permiso específico.
 - El objetivo SEO al publicar sería «ceviche peruano en Alcântara / Sinchi Lisboa», como artículo propio, no un post descontextualizado.
 
 ## Fuentes primarias
@@ -35,3 +36,10 @@ Las fotografías mostradas en TheFork pueden pertenecer a fotógrafos, clientes,
 - [ ] Migrar a ruta definitiva `/blog/donde-comer-ceviche-peruano-alcantara-sinchi`; añadir entrada al catálogo con imagen autorizada, fecha correcta y enlaces.
 - [ ] Añadir metadata indexable, OG, breadcrumbs/structured data adecuados al artículo, enlaces comerciales `rel=sponsored` y aviso visible.
 - [ ] Ejecutar `npm run typecheck`, `npm run smoke:blog`, `npm run test:blog-chronology`, `npm run smoke:sitemap` y revisar móvil/escritorio antes de merge.
+
+## URLs de imágenes usadas en la previsualización (no reutilizar automáticamente en producción)
+- **Portada, ceviche (apartado `restaurant` de TheFork):** https://cdn.thefork.com/tf-lab/image/upload/w_1080%2Cc_fill%2Cq_auto%2Cf_auto/restaurant/5286bdc1-93df-489f-a2d7-cc8e788114ef/ff878f4c-8a6c-4471-bb3e-a807cf7061e3.jpg
+- **Mesa de platos, foto de cliente (`customer`):** https://cdn.thefork.com/tf-lab/image/upload/w_1080%2Cc_fill%2Cq_auto%2Cf_auto/customer/5286bdc1-93df-489f-a2d7-cc8e788114ef/43402a42-c0af-419f-bd57-e04d34b0ddba.jpg
+- **Lomo saltado, foto de cliente (`customer`):** https://cdn.thefork.com/tf-lab/image/upload/w_640%2Cc_fill%2Cq_auto%2Cf_auto/customer/5286bdc1-93df-489f-a2d7-cc8e788114ef/f9365665-d858-4dee-ac6f-047542243aa0.jpg
+
+El servidor puede bloquear hotlinks de terceros o cambiar las URLs. Antes de publicar, solicitar originales/fotografías autorizadas del restaurante, optimizarlas a WebP/AVIF y sustituir los vínculos remotos. Las fotos se muestran solo en la rama de prueba noindex para evaluar la composición editorial.
