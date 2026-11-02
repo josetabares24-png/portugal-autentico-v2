@@ -5275,7 +5275,7 @@ const articles: Record<string, Article> = {
       { tipo: "enlace", texto: "Precio del claustro, horario de la iglesia, cómo reducir la cola y cómo llegar.", href: "/blog/monasterio-jeronimos-entradas", label: "Monasterio de los Jerónimos: entradas y horarios" },
 
       { tipo: "subtitulo", texto: "La Torre de Belém" },
-      { tipo: "parrafo", texto: "La obra empezó en 1514, sobre una roca en el río, para vigilar la entrada de Lisboa. Hoy queda casi en la orilla porque los rellenos de tierra cambiaron el paisaje. Desde el paseo junto al río se ve entera sin pagar. Por fuera, busca la cabeza de rinoceronte esculpida en la base de una de las garitas: recuerda al rinoceronte que llegó de la India en 1515." },
+      { tipo: "parrafo", texto: "La obra empezó en 1514, sobre una roca en el río, para vigilar la entrada de Lisboa. Desde el paseo junto al río se ve entera sin pagar. Por fuera, busca la cabeza de rinoceronte esculpida en la base de una de las garitas: recuerda al rinoceronte que llegó de la India en 1515." },
       { tipo: "enlace", texto: "Precio, franjas horarias, última entrada y dónde comprarla.", href: "/actividades/torre-de-belem", label: "Torre de Belém: entradas y horario" },
 
       { tipo: "subtitulo", texto: "Entre los dos monumentos" },

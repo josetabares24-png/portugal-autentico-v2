@@ -657,7 +657,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'El monumento no tiene audioguías. Tiqets vende también un pack de Jerónimos y Torre para quien hace los dos el mismo día. Es un producto de Tiqets: la web oficial no vende una entrada combinada.',
+            'El monumento no tiene audioguías. Tiqets vende también un pack de Jerónimos y Torre para quien hace los dos el mismo día. Es un producto de Tiqets, no una entrada oficial.',
         },
 
         { tipo: 'subtitulo', texto: 'Horarios y cierres' },
@@ -686,7 +686,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
         {
           tipo: 'parrafo',
           texto:
-            'Proteger la entrada del Tajo ya era un plan de D. João II. Lo hizo D. Manuel I: la obra empezó en 1514 y la dirigió Francisco de Arruda. Se levantó sobre una roca de basalto, a unos 250 metros de la orilla. Hoy queda casi en la orilla porque los rellenos de tierra y la arena del río cambiaron el paisaje.',
+            'Proteger la entrada del Tajo ya era un plan de D. João II. Lo hizo D. Manuel I: la obra empezó en 1514 y la dirigió Francisco de Arruda. Se levantó sobre una roca de basalto, a unos 250 metros de la orilla.',
         },
         {
           tipo: 'parrafo',
