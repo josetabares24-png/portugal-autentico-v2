@@ -1,0 +1,272 @@
+[
+  {
+    "file": "lighthouse-preview-blog-final.json",
+    "url": "http://localhost:3440/blog",
+    "fetchTime": "2026-11-02T07:17:57.674Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 89,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3801.876525,
+    "CLS": 0,
+    "TBT": 27,
+    "TTFB": 79,
+    "totalBytes": 794574,
+    "jsTransferBytes": 205089,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-preview-free-tours-final.json",
+    "url": "http://localhost:3440/free-tours-lisboa",
+    "fetchTime": "2026-11-02T07:18:40.930Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 88,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3953.0660000000003,
+    "CLS": 0,
+    "TBT": 27,
+    "TTFB": 7,
+    "totalBytes": 813592,
+    "jsTransferBytes": 195618,
+    "fontRequests": 3,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-preview-home-final.json",
+    "url": "http://localhost:3440/",
+    "fetchTime": "2026-11-02T07:17:43.875Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 88,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3904.2742500000004,
+    "CLS": 0,
+    "TBT": 29.5,
+    "TTFB": 69,
+    "totalBytes": 971483,
+    "jsTransferBytes": 206183,
+    "fontRequests": 3,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-preview-itinerary-final.json",
+    "url": "http://localhost:3440/itinerarios/lisboa-2-dias-completo",
+    "fetchTime": "2026-11-02T07:33:13.656Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 89,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3807.4016,
+    "CLS": 0,
+    "TBT": 29.5,
+    "TTFB": 7,
+    "totalBytes": 690640,
+    "jsTransferBytes": 195073,
+    "fontRequests": 3,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-preview-tickets-final.json",
+    "url": "http://localhost:3440/comprar-entradas",
+    "fetchTime": "2026-11-02T07:18:25.712Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 89,
+    "accessibility": 100,
+    "seo": 69,
+    "LCP": 3815.1490249999997,
+    "CLS": 0,
+    "TBT": 35.5,
+    "TTFB": 8,
+    "totalBytes": 582349,
+    "jsTransferBytes": 195618,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-production-blog-final.json",
+    "url": "https://estabaenlisboa.com/blog",
+    "fetchTime": "2026-11-02T07:13:18.739Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 94,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 2985.9775,
+    "CLS": 0,
+    "TBT": 46,
+    "TTFB": 36,
+    "totalBytes": 745520,
+    "jsTransferBytes": 194538,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-production-free-tours-final.json",
+    "url": "https://estabaenlisboa.com/free-tours-lisboa",
+    "fetchTime": "2026-11-02T07:14:06.490Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 94,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3050.6365,
+    "CLS": 0,
+    "TBT": 49,
+    "TTFB": 33,
+    "totalBytes": 767059,
+    "jsTransferBytes": 181023,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-production-home-final.json",
+    "url": "https://estabaenlisboa.com/",
+    "fetchTime": "2026-11-02T07:13:03.294Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 96,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 2777.282,
+    "CLS": 0,
+    "TBT": 31,
+    "TTFB": 30,
+    "totalBytes": 740930,
+    "jsTransferBytes": 186208,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-production-itinerary-final.json",
+    "url": "https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo",
+    "fetchTime": "2026-11-02T07:13:33.636Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 91,
+    "accessibility": 100,
+    "seo": 100,
+    "LCP": 3276.842,
+    "CLS": 0,
+    "TBT": 60,
+    "TTFB": 31,
+    "totalBytes": 546908,
+    "jsTransferBytes": 181389,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  },
+  {
+    "file": "lighthouse-production-tickets-final.json",
+    "url": "https://estabaenlisboa.com/comprar-entradas",
+    "fetchTime": "2026-11-02T07:13:50.165Z",
+    "settings": {
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "performance": 90,
+    "accessibility": 100,
+    "seo": 69,
+    "LCP": 3366.581,
+    "CLS": 0,
+    "TBT": 59,
+    "TTFB": 31,
+    "totalBytes": 546532,
+    "jsTransferBytes": 191620,
+    "fontRequests": 4,
+    "labelContentNameMismatch": 1
+  }
+]

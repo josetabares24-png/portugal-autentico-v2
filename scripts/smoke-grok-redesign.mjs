@@ -21,7 +21,7 @@ const bookingHero = load('src/components/booking/TourismBookingHero.tsx');
 const footer = load('src/components/Footer.tsx');
 const posts = load('src/data/blog-posts.ts');
 
-assert('Home único H1 y nuevo titular', home.includes('Todo para planear tu viaje a Lisboa') && (home.match(/<h1\b/g)||[]).length === 1);
+assert('Home único H1 y nuevo titular', home.includes('Todo para planear tu viaje a ') && home.includes('>Lisboa</span>') && (home.match(/<h1\b/g)||[]).length === 1);
 assert('metadatos originales siguen definidos en página real', page.includes('canonical: HOME_URL') && page.includes("languageAlternates('/')"));
 assert('Home conserva JSON-LD de CollectionPage', page.includes("'@type': 'CollectionPage'") && page.includes("'@id': HOME_URL + '/#webpage'"));
 assert('Home usa datos recientes del blog', home.includes('blogPostsByDate.slice(0, 5)') && home.includes('recentImages.get(post.id)') && home.includes('post.excerpt'));
@@ -42,15 +42,15 @@ assert('Home y blog comparten cronología, destacando Lisbon ByBoat',
 
 assert('ruta de 2 días se mantiene fuera del listado cronológico', home.includes('Ver itinerario completo') && home.includes('/itinerarios/lisboa-2-dias-completo'));
 const twoDays = load('src/components/itinerarios/GrokTwoDayItinerary.tsx');
-const packRoute = load('src/app/[locale]/itinerarios/[slug]/page.tsx');
+const packRoute = load('src/app/[locale]/itinerarios/lisboa-2-dias-completo/page.tsx');
 const routeStops = [...twoDays.matchAll(/^\s*id: '([^']+)',/gm)].map(m=>m[1]);
 assert('itinerario visual contiene seis paradas distintas', routeStops.length === 6 && new Set(routeStops).size === 6);
 assert('galería y jornadas de la maqueta conectadas', twoDays.includes('styles.photoGrid') && twoDays.includes('styles.dayRows') && twoDays.includes('styles.actionButton'));
-assert('ruta 2 días conserva el canonical', packRoute.includes('https://estabaenlisboa.com/itinerarios/') && packRoute.includes('<GrokTwoDayItinerary guide={pack} />'));
+assert('ruta 2 días conserva el canonical', packRoute.includes('https://estabaenlisboa.com/itinerarios/') && packRoute.includes('<GrokTwoDayItinerary>'));
 assert('no hay precios inventados en la ruta de 2 días', !/€|EUR|Desde \d+\s*€/.test(twoDays));
 assert('enlaces del itinerario apuntan a rutas propias', !/href:\s*'https?:/.test(twoDays));
 assert('la ruta especial no crea un main anidado', !/<main\b/.test(twoDays));
-assert('el diseño de 2 días conserva los highlights reales del editor', twoDays.includes('guide.highlights.map') && packRoute.includes('guide={pack}'));
+assert('la ruta pública conserva las once paradas y el mapa reales', packRoute.includes('lisboa2DiasTimeline') && packRoute.includes('<ItineraryDay ') && packRoute.includes('<ItineraryMapSection') && packRoute.includes('<GrokTwoDayItinerary>'));
 const dayImages = [...new Set([...twoDays.matchAll(/(?:src|photo):?\s*=?\s*['"]([^'"]+\.(?:webp|jpg|jpeg|png))['"]/gi)].map(m => m[1]))].filter(p => p.startsWith('/'));
 assert('las seis fotografías del itinerario existen', dayImages.length >= 6 && dayImages.every(p => existsSync(join(root,'public',p.slice(1)))));
 const stopLinks = [...twoDays.matchAll(/^\s*href: '([^']+)'/gm)].map(m => m[1]);
@@ -114,7 +114,7 @@ const itineraryCatalog = load('src/data/guide-packs.ts');
 const policy = JSON.parse(load('src/data/seo-url-policy.json'));
 const curatedLinks = [...new Set([home, search, navbar, footer, twoDays].flatMap(source =>
   [...source.matchAll(/\bhref\s*(?:=|:)\s*['"](\/[^'"]+)['"]/g)].map(match => match[1])
-))];
+))].filter(href => href !== '/blog/'); // Prefijo concatenado del índice; destinos completos comprobados en smoke:grok-rendered.
 const catalogHasDestination = (href) => {
   if (href.startsWith('/blog/')) return posts.includes("id: '" + href.slice('/blog/'.length) + "'");
   if (href.startsWith('/actividades/')) return activitiesCatalog.includes("slug: '" + href.slice('/actividades/'.length) + "'");

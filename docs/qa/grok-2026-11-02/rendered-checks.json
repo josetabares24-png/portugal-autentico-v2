@@ -1,0 +1,554 @@
+[
+  {
+    "name": "Home: latest five publications in date order",
+    "pass": true
+  },
+  {
+    "name": "Blog: same publication order",
+    "pass": true
+  },
+  {
+    "name": "Real two-day route serves six gallery links",
+    "pass": true
+  },
+  {
+    "name": "Two-day gallery anchors exist",
+    "pass": true
+  },
+  {
+    "name": "Two-day detailed itinerary preserves every original stop",
+    "pass": true
+  },
+  {
+    "name": "Two-day original booking destinations retained",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios/lisboa-1-dia-lo-esencial uses shared photographic header",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios/lisboa-3-dias-premium uses shared photographic header",
+    "pass": true
+  },
+  {
+    "name": "mejores-mercados-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "belem-barrio-guia photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "monasterio-jeronimos-entradas photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "arquitectura-manuelina-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "vinos-portugueses-guia photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "mouraria-barrio-guia photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "semana-santa-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "bacalhau-plato-portugal photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "playas-cerca-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "patinetes-electricos-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "como-pagar-en-portugal photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "casa-cristiano-ronaldo-portugal-quinta-da-marinha photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "restaurantes-romanticos-lisboa photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "aeropuerto-lisboa-al-centro photo matches editorial decision",
+    "pass": true
+  },
+  {
+    "name": "Home cards have unique photographs",
+    "pass": true
+  },
+  {
+    "name": "Spanish document preloads only three font families",
+    "pass": true
+  },
+  {
+    "name": "home single main and H1",
+    "pass": true
+  },
+  {
+    "name": "blog single main and H1",
+    "pass": true
+  },
+  {
+    "name": "two days single main and H1",
+    "pass": true
+  },
+  {
+    "name": "Sitemap byte-for-byte preserved",
+    "pass": true
+  },
+  {
+    "name": "/ metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/cascais-cabo-da-roca metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/castelo-sao-jorge metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/cristo-rei metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/crucero-atardecer-tajo metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/elevador-santa-justa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/fado-en-alfama metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/free-walking-tour-centro metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/jardim-estrela-principe-real metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/lx-factory metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/miradouro-portas-do-sol metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/miradouro-santa-luzia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/miradouro-senhora-do-monte metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/oceanario-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/parque-eduardo-vii metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/pasteis-de-belem metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/tasca-tradicional metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/actividades/torre-de-belem metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog?page=2 metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog?page=8 metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/aeropuerto-lisboa-al-centro metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/alfama-historia-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/arquitectura-manuelina-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/azulejos-portugueses-historia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/bacalhau-plato-portugal metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/baixa-lisboa-que-ver metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/barrios-imprescindibles metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/belem-barrio-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/casa-cristiano-ronaldo-portugal-quinta-da-marinha metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/chiado-bairro-alto-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/como-moverse-por-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/como-moverse-por-portugal metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/como-pagar-en-portugal metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/descubrimientos-portugueses-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/donde-alojarse-en-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/donde-comer-barato-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/donde-escuchar-fado-autentico metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/donde-fotografiar-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/donde-tomar-cafe-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/errores-turistas-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/estacion-olaias-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/estacion-oriente-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/excursiones-desde-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/fado-historia-origen metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/festivales-eventos-lisboa-2026 metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/gastronomia-portuguesa-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/graca-lisboa-que-ver metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/historia-de-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-card-vale-la-pena metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-con-ninos metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-cuando-llueve metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-4-dias metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-5-dias metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-7-dias metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-enero metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-navidad metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-en-pareja metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/lisboa-vs-porto metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/mejor-epoca-visitar-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/mejores-apps-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/mejores-mercados-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/mejores-miradores-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/metro-lisboa-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/monasterio-jeronimos-entradas metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/monumentos-de-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/mouraria-barrio-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/nochevieja-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/novedades-lisboa-2026 metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/obidos-vila-natal metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/palacio-da-pena-entradas metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/parque-das-nacoes-lisboa-que-ver metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/paseo-en-velero-lisboa-lisbon-byboat metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/pasteles-de-belem metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/patinetes-electricos-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/playas-cerca-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/portugal-en-7-dias metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/presupuesto-viajar-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/que-comprar-lisboa-souvenirs metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/que-hacer-gratis-en-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/que-ver-cascais-desde-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/quinta-da-regaleira-entradas metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/restaurantes-romanticos-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/semana-santa-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/sintra-desde-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/tarjeta-navegante-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/terremoto-lisboa-1755 metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/time-out-market-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/tram-28-historia-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/vida-nocturna-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/vinos-portugueses-guia metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/blog/volta-portugal-devolucion-envases metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/calculadora-presupuesto-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/contacto metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/donde-comer-en-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en/lisbon-3-day-itinerary metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en/lisbon-airport-to-city-centre metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en/lisbon-free-walking-tours metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en/lisbon-metro-guide metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/en/pena-palace-tickets metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/free-tours-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios/lisboa-1-dia-lo-esencial metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios/lisboa-2-dias-completo metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/itinerarios/lisboa-3-dias-premium metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/portugal metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/que-ver-en-lisboa metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/robots.txt metadata, article text and affiliate links preserved",
+    "pass": true
+  },
+  {
+    "name": "/sobre-nosotros metadata, article text and affiliate links preserved",
+    "pass": true
+  }
+]

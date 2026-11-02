@@ -1,0 +1,26 @@
+
+> portugal-autentico@0.1.0 smoke:free-tours
+> node scripts/smoke-free-tours.mjs
+
+== Modo remoto: probando http://localhost:3440 (sin build/start local) ==
+
+El servidor remoto no tiene ID de afiliado configurado.
+
+--- Sin GURUWALK_AFFILIATE_REF: los CTA deben quedar inertes ---
+OK   sin ID no se publica ninguna URL de GuruWalk - landing=0 ficha=0
+OK   los 8 CTA afiliados quedan inertes - 8 inertes (landing 7 + ficha 1)
+OK   sin ID no aparece ningún placeholder público - ninguno
+OK   la landing sigue respondiendo 200 sin ID - H1 presente
+
+OK   la foto del hero no da 404 - HTTP 200 /images/lisboa-originales/rua-augusta-arco-lisboa.webp
+
+OK   /sitemap.xml responde 200 - HTTP 200
+OK   la landing está en el sitemap - presente
+
+OK   /actividades sigue respondiendo 200 - HTTP 200
+OK   /actividades enlaza la landing de free tours - enlace presente
+OK   /actividades enlaza las 3 rutas destacadas - 3/3
+OK   /actividades conserva las 17 fichas vivas - 17 fichas enlazadas
+OK   /actividades no enlaza las tres fichas redirigidas - sin dependencias de 301
+
+12/12 comprobaciones OK.

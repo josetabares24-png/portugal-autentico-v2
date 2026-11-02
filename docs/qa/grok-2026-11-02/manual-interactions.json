@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-02",
+  "origin": "http://localhost:3440",
+  "method": "IAB CUA UI actions with DOM/AX verification",
+  "checks": [
+    {
+      "name": "Mobile menu open/Escape",
+      "pass": true,
+      "evidence": "aria-expanded false, focus restored to Abrir menú de navegación"
+    },
+    {
+      "name": "Search BYBOAT, ¿tres días?, zxqvvv",
+      "pass": true,
+      "evidence": "Canonical ByBoat/3-day result, 3-day form navigation, empty state; Escape from result returns to searchbox"
+    },
+    {
+      "name": "Blog filters/pagination",
+      "pass": true,
+      "evidence": "Gastronomía 8 articles; Todos restores; page2 URL/canonical retained"
+    },
+    {
+      "name": "Two-day details/gallery",
+      "pass": true,
+      "evidence": "11 original titles and map retained, details opened through UI; Belém anchor top94.92px below sticky header on small screen"
+    },
+    {
+      "name": "Cookie consent",
+      "pass": true,
+      "evidence": "Footer reopen; close preserves state; accepted then reload persists; revoked/rejected then reload persists; 0 analytics loader scripts on local host"
+    },
+    {
+      "name": "Ticket catalog",
+      "pass": true,
+      "evidence": "Primary CTA #catalogo and Oceanário product975260/partner/campaign preserved"
+    },
+    {
+      "name": "ByBoat index",
+      "pass": true,
+      "evidence": "Index opens, Mapa y embarque points to #embarque; sponsor and Bokun links preserved"
+    },
+    {
+      "name": "Tour availability error",
+      "pass": true,
+      "evidence": "Real local request enters honest error state; no configured referred booking locally, not a live reservation pass"
+    }
+  ],
+  "consoleErrorsCaptured": [],
+  "notCertified": [
+    "Complete NVDA screen-reader matrix",
+    "OS reduced-motion and zoom matrix",
+    "Live purchase/reservation",
+    "Configured Supabase dynamic guide",
+    "Field INP"
+  ]
+}

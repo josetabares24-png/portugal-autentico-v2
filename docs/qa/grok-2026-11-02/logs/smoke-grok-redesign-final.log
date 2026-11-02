@@ -1,0 +1,48 @@
+
+> portugal-autentico@0.1.0 smoke:grok-redesign
+> node scripts/smoke-grok-redesign.mjs
+
+OK   Home único H1 y nuevo titular
+OK   metadatos originales siguen definidos en página real
+OK   Home conserva JSON-LD de CollectionPage
+OK   Home usa datos recientes del blog
+OK   buscador interactivo con etiquetas y destino
+OK   Home conserva free tours, entradas, itinerarios y colaboración
+OK   Home conserva autoría y lecturas estacionales
+OK   Home limpia: solo botón de acceso a artículos, sin cinco cuadros extra
+OK   Home siempre ordenada por publicaciones
+OK   Home y blog comparten cronología, destacando Lisbon ByBoat
+OK   ruta de 2 días se mantiene fuera del listado cronológico
+OK   itinerario visual contiene seis paradas distintas
+OK   galería y jornadas de la maqueta conectadas
+OK   ruta 2 días conserva el canonical
+OK   no hay precios inventados en la ruta de 2 días
+OK   enlaces del itinerario apuntan a rutas propias
+OK   la ruta especial no crea un main anidado
+OK   la ruta pública conserva las once paradas y el mapa reales
+OK   las seis fotografías del itinerario existen
+OK   las seis paradas abren destinos reales
+OK   los otros itinerarios también usan el diseño Grok
+OK   portada del blog conserva guías por temas, sin tapar la cronología
+OK   foto de azulejos coherente en artículo, catálogo y OG
+OK   los listados no repiten imágenes visibles ni inventan otras
+OK   navbar y CTAs utilizan turquesa con contraste
+OK   no se importaron rutas HTML estáticas a Next
+OK   fuentes Abril y Heebo compartidas
+OK   el sistema visual tiene adaptaciones móviles
+OK   la capa visual aplica a artículos reales
+OK   las reservas mantienen su componente original
+OK   siguen los enlaces legales del footer
+OK   cookies usan blanco, turquesa y amarillo del nuevo diseño
+OK   cookies mantienen aceptar, rechazar y preferencias
+OK   consentimiento solo con elección explícita y notificación
+OK   footer compacto en móvil conserva identidad
+OK   navegación móvil identificable
+OK   el botón Buscar siempre abre el primer resultado disponible
+OK   el menú se cierra con Escape y recupera el foco
+OK   el logo conserva su relación de aspecto original
+OK   las tarjetas y búsquedas no enlazan slugs inexistentes
+OK   no hay redirecciones innecesarias en los enlaces nuevos
+OK   todas las superficies clave están conectadas
+OK   las fotografías explícitas de Home existen
+{"total":43,"failures":0,"checkedImages":5}

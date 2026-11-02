@@ -36,7 +36,8 @@
     "test:free-tour-options": "node --import ./scripts/register-ts.mjs --test scripts/test-free-tour-options.mjs",
     "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs",
     "test:english-bookings": "node --import ./scripts/register-ts.mjs --test scripts/test-english-bookings.mjs",
-    "smoke:grok-redesign": "node scripts/smoke-grok-redesign.mjs"
+    "smoke:grok-redesign": "node scripts/smoke-grok-redesign.mjs",
+    "smoke:grok-rendered": "node --import ./scripts/register-ts.mjs scripts/smoke-grok-rendered.mjs"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.10",

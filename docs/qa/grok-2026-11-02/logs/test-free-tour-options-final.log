@@ -1,0 +1,19 @@
+
+> portugal-autentico@0.1.0 test:free-tour-options
+> node --import ./scripts/register-ts.mjs --test scripts/test-free-tour-options.mjs
+
+✔ same destination at several times produces one honest CTA and preserves date/ref (0.7556ms)
+✔ different provider destinations remain separate; shared ones are deduplicated (0.2878ms)
+✔ fallback remains bookable without slots and keeps the original URL (0.1144ms)
+(node:42136) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/estab/Desktop/estaba-lisboa-redesign/src/lib/free-tour-booking-options.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\estab\Desktop\estaba-lisboa-redesign\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.6768

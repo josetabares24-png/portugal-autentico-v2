@@ -1,0 +1,14 @@
+{
+  "scope": "Pre-push observation. Final head, CI and exact deployment are recorded in the PR134 description at handoff, without triggering a second deployment for a documentation-only status update.",
+  "observedAt": "2026-11-02",
+  "observedHead": "06ecc92e16d3bd75ab3aa90328b000fbe4bb3f50",
+  "applicationCommits": [
+    "1b164b7",
+    "67e1119"
+  ],
+  "pr": "https://github.com/josetabares24-png/portugal-autentico-v2/pull/134",
+  "draft": true,
+  "vercelObserved": "FAILURE build-rate-limit on both existing Vercel contexts",
+  "oldReadyIsFinalCandidate": false,
+  "productionModified": false
+}

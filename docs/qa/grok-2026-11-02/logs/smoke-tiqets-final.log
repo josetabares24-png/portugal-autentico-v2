@@ -1,0 +1,5 @@
+
+> portugal-autentico@0.1.0 smoke:tiqets
+> node scripts/smoke-tiqets.mjs
+
+OK  Tiqets queda server-only, atribuido y con fallback editorial.

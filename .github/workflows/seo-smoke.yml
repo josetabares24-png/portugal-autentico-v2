@@ -12,7 +12,10 @@ on:
       - 'src/app/[locale]/actividades/**'
       - 'src/app/[locale]/free-tours-lisboa/**'
       - 'src/app/[locale]/itinerarios/**'
-      - 'src/components/Navbar.tsx'
+      - 'src/components/**'
+      - 'src/lib/editorial-photo-policy.ts'
+      - 'src/app/globals.css'
+      - 'scripts/smoke-grok-rendered.mjs'
       - 'src/data/blog-posts.ts'
       - 'src/data/activities.ts'
       - 'src/data/guide-packs.ts'
@@ -33,7 +36,10 @@ on:
       - 'src/app/[locale]/actividades/**'
       - 'src/app/[locale]/free-tours-lisboa/**'
       - 'src/app/[locale]/itinerarios/**'
-      - 'src/components/Navbar.tsx'
+      - 'src/components/**'
+      - 'src/lib/editorial-photo-policy.ts'
+      - 'src/app/globals.css'
+      - 'scripts/smoke-grok-rendered.mjs'
       - 'src/data/blog-posts.ts'
       - 'src/data/activities.ts'
       - 'src/data/guide-packs.ts'
@@ -76,3 +82,16 @@ jobs:
 
       - name: Guard design, links and photos of Grok redesign
         run: npm run smoke:grok-redesign
+
+      - name: Check rendered routes, photos and retained itinerary
+        env:
+          SMOKE_BASE_URL: http://localhost:3440
+        run: |
+          npm run start -- --hostname localhost --port 3440 > /tmp/grok-next.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            curl --fail --silent http://localhost:3440/sitemap.xml > /dev/null && break
+            sleep 1
+          done
+          npm run smoke:grok-rendered

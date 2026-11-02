@@ -1,0 +1,22 @@
+
+> portugal-autentico@0.1.0 test:analytics
+> node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs
+
+✔ only the exact public hostnames are allowed (3.4836ms)
+✔ no consent, implicit acceptance and blocked storage do not initialize GA (0.3494ms)
+✔ accept, revoke and reaccept update GA without duplicate config/pageviews (1.0587ms)
+✔ product events require a production host even if gtag already exists (0.3506ms)
+✔ revocation suppresses product events after initialization (0.293ms)
+(node:38840) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/estab/Desktop/estaba-lisboa-redesign/src/lib/analytics-runtime.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\estab\Desktop\estaba-lisboa-redesign\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ server rendering does not initialize or track (0.3066ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 209.5237
