@@ -26,6 +26,7 @@ La segunda revisión del mismo agente encontró fuentes interiores incorrectas, 
 - La puntuación de Lighthouse puede omitir hallazgos experimentales: leer los fallos individuales.
 - Mantener el baseline de metadata/cuerpo comercial y contrastar contenido renderizado, además de SEO superficial.
 - El catálogo cronológico no debe imitar los artículos ficticios del montaje; la composición y la marca sí.
+- Verificar el runner real: Node20 de GitHub no cargaba los `.ts` que Node24 local sí aceptaba. El primer CI falló; se corrigió el loader con TypeScript de desarrollo existente y se repitieron138controles+11pruebas en Node20.20.2 antes de subir la corrección.
 
 ## IMPACTO ESPERADO / HIPÓTESIS / RIESGO
 
@@ -33,6 +34,6 @@ Coherencia, orientación y lectura mejores son hipótesis de producto; no se atr
 
 ## ESTADO / SIGUIENTE ACCIÓN
 
-Commits de aplicación `1b164b7`, `67e1119`; pruebas/evidencia/memoria en la misma PR. [Estado remoto final](../docs/qa/grok-2026-11-02/remote-status.json). Revisar Home/dos días con José, comprobar READY y reservas en entorno configurado, revisar precios/horarios históricos; después decidir producción con autorización expresa. Ningún merge, producción, compra, campaña o correo ejecutado.
+Commits de aplicación `1b164b7`, `67e1119`; pruebas/evidencia/memoria en la misma PR. [Observación remota y enlace a cierre de PR134](../docs/qa/grok-2026-11-02/remote-status.json). La aplicación3718c87 llegó a READY y devolvió3tours/8horarios reales para03/11 con referido/fecha; cambio con teclado a05/11 retira resultados antiguos. Se corrige después solo el loader de tests para cerrar el CI de Node20. Revisar Home/dos días con José, confirmar READY del nuevo head, revisar precios/horarios históricos; después decidir producción con autorización expresa. Ningún merge, producción, compra, campaña o correo ejecutado.
 
 Los bloqueos previos de GSC/Windsor no cambian; no se vuelven a interpretar datos ausentes como cero. Conversiones y comisiones siguen DESCONOCIDAS. PR132/133 revisados selectivamente, sin fusión automática.

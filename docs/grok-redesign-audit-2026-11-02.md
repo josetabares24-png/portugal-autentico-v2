@@ -28,7 +28,7 @@ Revisión del 1–2 de noviembre de 2026. Candidato para revisión de José, **s
 | ByBoat | `LisbonByBoatStory.module.css`: colores y tipografía coherentes, composición propia, precios/texto/fotos del operador y destinos Bokun conservados. |
 | Protección | Nuevos `capture-redesign-surface.mjs` y `smoke-grok-rendered.mjs`, actualización de smoke de Grok/sitemap y CI SEO. El test del sitemap admite fotos reales en Commons, además de la carpeta anterior. |
 
-No se añadió ninguna dependencia de ejecución. No se editó `main` ni se fusionaron PR131/132/133. De PR133 se reutilizaron selectivamente fotos y sus atribuciones, con su procedencia registrada.
+No se añadió ninguna dependencia de ejecución. `scripts/ts-resolve.mjs` incorpora carga de TypeScript para Node20 usando el compilador de desarrollo ya instalado, solo si el loader nativo rechaza `.ts`. No se editó `main` ni se fusionaron PR131/132/133. De PR133 se reutilizaron selectivamente fotos y sus atribuciones, con su procedencia registrada.
 
 ## C. Fidelidad visual
 
@@ -114,6 +114,7 @@ Las correcciones previas de azulejos/aldaba y Pena/estación ya estaban en la ra
 | Itinerarios / Free tours sin configuración local | 26 / 12 correctos |
 | Tiqets | Adaptador server-only, atribución y fallback conservados |
 | Analytics / opciones tours / reservas inglés | 6 / 3 / 2 pruebas correctas |
+| Compatibilidad Node20.20.2 de CI | 138 controles renderizados y 11 pruebas de integraciones correctos en la misma versión del runner |
 | Lighthouse | 100 a11y en las cinco superficies; fallo experimental de etiqueta de galería corregido y repetido |
 | Navegador real | 45 vistas; menú/Escape/foco, buscador ByBoat/tres días/signos/estado vacío, filtros Gastronomía/Todos y paginación SSR, ruta detallada/mapa, cookies y anclas |
 
@@ -122,6 +123,10 @@ Pruebas manuales: el filtro muestra ocho artículos gastronómicos sin recuperar
 Segunda revisión crítica realizada por el mismo agente, sin auditor externo: encontró y corrigió la caída de fuentes interiores, el botón flotante que tapaba lectura, el test de fuente que no garantizaba la ruta servida y el nombre accesible de galería que aún fallaba pese a a11y100. No se trató compilar como aprobación visual.
 
 Incidencias de ejecución resueltas: una prueba de itinerarios se inició por error en modo local y reconstruyó `.next` con el servidor vivo, causando errores transitorios de manifests. Se detuvieron esos procesos, se recompiló/reinició y se repitieron los controles HTTP usando `SMOKE_BASE_URL`; los resultados finales anteriores son de esa repetición. Un inicio de Chrome de Lighthouse falló; la repetición completó el informe.
+
+El primer CI del commit3718c87 detectó `ERR_UNKNOWN_FILE_EXTENSION`: el runner usa Node20 y el entorno local Node24. Se añadió al loader la transpilación de respaldo con TypeScript existente; el mismo smoke138 y las11 pruebas de integraciones se repitieron correctamente con Node20.20.2. La prueba remota de aplicación de ese commit sí fue READY: el fallo era del nuevo test, no una razón para ocultar CI rojo ni aprobar ese head como cierre.
+
+Validación remota adicional sobre la aplicación67e1119, idéntica a la del candidato corregido de tests: el navegador autenticado abrió Home y Free tours en Vercel; GuruWalk devolvió tres recorridos y ocho horarios para03/11/2026, con `beginsAt`/`endsAt` y referido conservados. Cambiar la fecha con teclado a05/11 retiró los tres resultados anteriores. [Respuesta observada](qa/grok-2026-11-02/remote-live-tours.json) y [captura](qa/grok-2026-11-02/remote-tours-390.jpg). No se efectuó ninguna reserva. HTTP externo anónimo redirige a VercelSSO; no se desactivó protección ni se creó un enlace temporal público. La URL READY del head final se comunica en PR134 y en la entrega.
 
 No ejecutado/no certificado: compra o reserva real, envío de formularios/correos, administración Supabase con guía real, lector NVDA completo, matriz de zoom/OS y emulación exhaustiva de reducción de movimiento, ni INP de campo. Las reglas `prefers-reduced-motion` se revisaron en CSS. GuruWalk local devuelve un error honesto por falta de configuración; ocho CTA están inertes deliberadamente sin referido. No se copian secretos ni se presenta esa prueba como una reserva funcional en vivo.
 
