@@ -35,6 +35,7 @@ const excludedPath = (route) => REDIRECTS.has(route) || NOINDEX_PATHS.has(route)
 const MANDATORY = [...new Set([
   `${PROD_ORIGIN}/`,
   `${PROD_ORIGIN}/blog`,
+  `${PROD_ORIGIN}/comprar-entradas`,
   `${PROD_ORIGIN}/itinerarios`,
   `${PROD_ORIGIN}/que-ver-en-lisboa`,
   `${PROD_ORIGIN}/donde-comer-en-lisboa`,
