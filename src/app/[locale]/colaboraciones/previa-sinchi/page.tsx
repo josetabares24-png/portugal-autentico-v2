@@ -12,8 +12,8 @@ import { slugify } from '@/components/blog/article-utils';
  * La ficha no se añade al índice del blog, ni a su catálogo, ni al sitemap.
  *
  * IMPORTANTE: La carta recibida por Gmail el 02-11-2026 es la fuente principal
- * para precios y platos. Las imágenes de TheFork/Instagram se han identificado
- * como candidatas visuales, pero NO se reproducen sin permiso para republicar.
+ * para precios y platos. Las fotografías enlazadas desde TheFork se muestran
+ * solo en esta vista de prueba noindex: falta autorización para publicación.
  */
 export const metadata: Metadata = {
   title: 'Vista previa · Sinchi y el ceviche peruano en Alcântara',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const article: Article = {
   titulo: 'Dónde comer ceviche peruano en Alcântara: Sinchi, Lisboa',
   descripcion: 'Sinchi, restaurante peruano en Alcântara, Lisboa: ceviches, lomo saltado, precios de la carta, dirección y cómo reservar.',
-  subtitulo: 'Un restaurante de cocina peruana en la Rua Luís de Camões. Qué platos encontrarás, cuánto cuestan y cómo reservar si estás por Alcântara.',
+  subtitulo: 'Ceviches, tiraditos, lomo saltado y una carta que lleva los sabores peruanos hasta Alcântara. Esto es lo que puedes pedir, lo que cuesta y cómo reservar.',
   imagen: '',
   categoria: 'Gastronomía',
   fecha: '2 Nov 2026',
@@ -41,7 +41,7 @@ const article: Article = {
     { tipo: 'subtitulo', texto: 'Qué encontrarás en la carta de Sinchi' },
     {
       tipo: 'parrafo',
-      texto: 'El ceviche es uno de los motivos más claros para elegir Sinchi. La versión clásica combina pescado blanco con cebolla morada, choclo, maíz cancha, camote y leche de tigre. Si prefieres algo diferente, también hay ceviche al ají amarillo, ceviche de atún y una versión nikkei con salsa de influencia japonesa.',
+      texto: 'La carta dedica una sección completa al ceviche. El clásico lleva pescado blanco, cebolla morada, choclo, maíz cancha, camote y leche de tigre. También hay versiones con ají amarillo, atún y una interpretación nikkei con salsa de influencia japonesa. Si es tu primera vez con la cocina peruana, el clásico ayuda a entender por qué este plato es tan conocido.',
     },
     {
       tipo: 'parrafo',
@@ -91,12 +91,12 @@ const article: Article = {
     { tipo: 'subtitulo', texto: 'Dónde está Sinchi en Alcântara' },
     {
       tipo: 'parrafo',
-      texto: 'El restaurante está en Rua Luís de Camões 90, 1300-360 Lisboa, en Alcântara. Es una zona que puedes encajar en un día dedicado a la parte occidental de Lisboa. Si vas expresamente, guarda la dirección exacta y comprueba el horario antes de salir.',
+      texto: 'Sinchi está en Rua Luís de Camões 90, 1300-360 Lisboa, en Alcântara. Puedes encajar una comida aquí en una jornada por la zona occidental de la ciudad, pero comprueba antes los horarios: no abre todos los días y el servicio de cena no figura para cada jornada.',
     },
-    { tipo: 'subtitulo', texto: 'Cómo reservar en Sinchi' },
+    { tipo: 'subtitulo', texto: 'Horarios y cómo reservar en Sinchi' },
     {
       tipo: 'parrafo',
-      texto: 'El restaurante nos confirmó que atiende llamadas y WhatsApp en el +351 924 385 110. También dispone de una ficha en TheFork para consultar su carta, fotografías y las opciones de reserva que estén habilitadas en cada momento.',
+      texto: 'El propio restaurante nos confirmó que atiende llamadas y WhatsApp en el +351 924 385 110. Según su web oficial consultada en noviembre de 2026, abre lunes y de miércoles a sábado, con horarios distintos según el día; cierra martes y domingos. También puedes consultar su ficha de TheFork para comprobar las opciones de reserva disponibles.',
     },
     {
       tipo: 'nota',
@@ -129,31 +129,84 @@ export default function SinchiEditorialPreview() {
 
       <ArticleHero article={article} authorName="José Tabares" heroImage={null} isEditorialV2 />
 
-      <div className="mx-auto max-w-6xl px-4 pb-3">
-        <figure className="relative overflow-hidden border border-border-soft bg-[#EFE7D9]">
-          <div className="flex min-h-[220px] flex-col items-start justify-end gap-2 px-6 py-8 sm:min-h-[320px] sm:px-10">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#836F5D]">Fotografía editorial pendiente</span>
-            <p className="max-w-xl font-display text-2xl font-semibold text-[#45372D] sm:text-4xl">
-              Ceviche peruano, en Alcântara.
-            </p>
-            <p className="max-w-xl text-sm text-[#6D5D4F]">
-              Portada reservada para una foto real de Sinchi, tras confirmar autorización de uso.
-            </p>
+      {/* Fotografías reales tomadas de la ficha Sinchi/TheFork. Preview sin indexar.
+          No descargar/republicar en producción sin autorización de derechos. */}
+      <section className="mx-auto max-w-6xl px-4 pb-6" aria-label="Fotografías de platos servidos en Sinchi">
+        <div className="grid gap-2.5 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]">
+          <figure className="relative aspect-[5/4] overflow-hidden bg-[#E8E1D9] lg:aspect-auto lg:min-h-[485px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://cdn.thefork.com/tf-lab/image/upload/w_1080%2Cc_fill%2Cq_auto%2Cf_auto/restaurant/5286bdc1-93df-489f-a2d7-cc8e788114ef/ff878f4c-8a6c-4471-bb3e-a807cf7061e3.jpg"
+              alt="Ceviche de pescado blanco con camote, maíz y cebolla morada fotografiado en Sinchi Lisboa"
+              width={1080}
+              height={1080}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              fetchPriority="high"
+              referrerPolicy="no-referrer"
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent px-5 pb-5 pt-24 text-white sm:px-7 sm:pb-7">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/85">Cocina peruana · Alcântara</span>
+              <p className="mt-1.5 max-w-md font-display text-2xl font-semibold leading-tight sm:text-3xl">El ceviche, protagonista de la carta</p>
+              <span className="mt-2 block text-xs text-white/85">Fotografía publicada en la ficha de Sinchi en TheFork</span>
+            </figcaption>
+          </figure>
+
+          <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-1">
+            <figure className="relative aspect-square overflow-hidden bg-[#E8E1D9] lg:aspect-auto lg:min-h-[237px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://cdn.thefork.com/tf-lab/image/upload/w_1080%2Cc_fill%2Cq_auto%2Cf_auto/customer/5286bdc1-93df-489f-a2d7-cc8e788114ef/43402a42-c0af-419f-bd57-e04d34b0ddba.jpg"
+                alt="Mesa con ceviche y un plato de carne salteada en Sinchi Lisboa"
+                width={1080}
+                height={1080}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-9 text-xs font-medium text-white sm:px-5 sm:pb-4">Ceviche y platos calientes</figcaption>
+            </figure>
+            <figure className="relative aspect-square overflow-hidden bg-[#E8E1D9] lg:aspect-auto lg:min-h-[237px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://cdn.thefork.com/tf-lab/image/upload/w_640%2Cc_fill%2Cq_auto%2Cf_auto/customer/5286bdc1-93df-489f-a2d7-cc8e788114ef/f9365665-d858-4dee-ac6f-047542243aa0.jpg"
+                alt="Plato de lomo saltado con carne, verduras, patatas y arroz en Sinchi Lisboa"
+                width={640}
+                height={640}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-9 text-xs font-medium text-white sm:px-5 sm:pb-4">Lomo saltado</figcaption>
+            </figure>
           </div>
-        </figure>
-        <p className="mt-3 text-xs text-text-secondary">
-          Selección fotográfica pendiente de autorización: ceviche clásico, lomo saltado e interior del restaurante.
-          <a href="https://www.thefork.pt/restaurante/sinchi-cozinha-peruana-r831205" target="_blank" rel="noopener noreferrer" className="ml-1 underline underline-offset-2">
-            Ver fotografías de referencia en TheFork
-          </a>.
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-border-soft pb-5">
+          <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-text-secondary">
+            <span>Alcântara, Lisboa</span>
+            <span>Cocina peruana</span>
+            <span>Ceviche clásico: 22 €</span>
+          </div>
+          <a
+            href="https://www.thefork.pt/restaurante/sinchi-cozinha-peruana-r831205"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-text-secondary underline underline-offset-4 hover:text-text-main"
+          >
+            Fotografías de referencia: TheFork
+          </a>
+        </div>
+        <p className="mt-3 text-xs leading-relaxed text-text-secondary">
+          Vista de revisión: imágenes de la ficha de Sinchi en TheFork enlazadas temporalmente, incluida fotografía de cliente.
+          Falta confirmar el permiso para republicarlas antes de pasar el artículo a producción.
         </p>
-      </div>
+      </section>
 
       <div className="mx-auto max-w-6xl px-4 pb-16">
         <div className="grid gap-10 lg:grid-cols-[1fr,320px]">
           <div className="min-w-0">
-            <p className="article-reading mb-6 text-xs text-text-secondary">
-              Colaboración comercial con Sinchi · Información de carta proporcionada por el restaurante.
+            <p className="article-reading mb-5 border-l-2 border-[#B98F68] pl-4 text-sm text-text-secondary">
+              Este artículo forma parte de una colaboración comercial con Sinchi. Los platos y precios se han revisado a partir de la carta enviada por el restaurante en noviembre de 2026.
             </p>
             <ArticleBody
               article={article}
@@ -187,6 +240,7 @@ export default function SinchiEditorialPreview() {
                 </a>
               </div>
               <p className="mt-3 text-xs text-text-secondary">Rua Luís de Camões 90, Alcântara, Lisboa · +351 924 385 110</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm underline underline-offset-4">Ver dirección en Google Maps</a>
             </section>
             <div className="mt-10">
               <ArticleSources
