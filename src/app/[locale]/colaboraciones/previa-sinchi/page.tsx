@@ -91,16 +91,16 @@ const article: Article = {
     { tipo: 'subtitulo', texto: 'Dónde está Sinchi en Alcântara' },
     {
       tipo: 'parrafo',
-      texto: 'Sinchi está en Rua Luís de Camões 90, 1300-360 Lisboa, en Alcântara. Puedes encajar una comida aquí en una jornada por la zona occidental de la ciudad, pero comprueba antes los horarios: no abre todos los días y el servicio de cena no figura para cada jornada.',
+      texto: 'Sinchi está en Rua Luís de Camões 90, 1300-360 Lisboa, en Alcântara. Puedes encajar una comida aquí en una jornada por la zona occidental de la ciudad. Si planeas ir, revisa antes su ficha en Google Maps para consultar los horarios del día, incluidos posibles cambios por festivos.',
     },
     { tipo: 'subtitulo', texto: 'Horarios y cómo reservar en Sinchi' },
     {
       tipo: 'parrafo',
-      texto: 'El propio restaurante nos confirmó que atiende llamadas y WhatsApp en el +351 924 385 110. Según su web oficial consultada en noviembre de 2026, abre lunes y de miércoles a sábado, con horarios distintos según el día; cierra martes y domingos. También puedes consultar su ficha de TheFork para comprobar las opciones de reserva disponibles.',
+      texto: 'El propio restaurante nos confirmó que atiende llamadas y WhatsApp en el +351 924 385 110. También tiene página web, sinchi.eatbu.com, y puedes consultar sus opciones de reserva en TheFork. Los horarios publicados en internet no coinciden entre sí; para comprobar los horarios actuales y las excepciones de festivos, abre su ficha en Google Maps antes de ir.',
     },
     {
       tipo: 'nota',
-      texto: 'Los horarios publicados en diferentes directorios pueden no coincidir. Para evitar un viaje en vano, confirma por WhatsApp el día y la hora en que quieres ir, especialmente si vas a comer fuera del horario habitual.',
+      texto: 'Horarios: consulta siempre Google Maps para la fecha de tu visita. Si encuentras alguna diferencia entre Google Maps, la web del local y TheFork, confirma directamente por WhatsApp con Sinchi.',
     },
     { tipo: 'subtitulo', texto: '¿Merece la pena tenerlo en cuenta?' },
     {
@@ -219,7 +219,7 @@ export default function SinchiEditorialPreview() {
             <section className="article-reading mt-10 border-t border-border-soft pt-7" aria-label="Contactar y reservar en Sinchi">
               <h2 className="font-display text-2xl font-semibold text-text-main">Reserva tu mesa</h2>
               <p className="mt-2 text-text-secondary">
-                Para consultar disponibilidad, horario o dudas sobre la carta, habla con el restaurante directamente.
+                Comprueba los horarios del día en Google Maps y reserva directamente con Sinchi. También puedes mirar su web o TheFork.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
@@ -238,15 +238,32 @@ export default function SinchiEditorialPreview() {
                 >
                   Consultar Sinchi en TheFork
                 </a>
+                <a
+                  href="https://sinchi.eatbu.com/?lang=pt"
+                  target="_blank"
+                  rel="sponsored nofollow noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-5 py-3 text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
+                >
+                  Página web de Sinchi
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-5 py-3 text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
+                >
+                  Horarios actualizados en Google Maps
+                </a>
               </div>
               <p className="mt-3 text-xs text-text-secondary">Rua Luís de Camões 90, Alcântara, Lisboa · +351 924 385 110</p>
-              <a href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm underline underline-offset-4">Ver dirección en Google Maps</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm underline underline-offset-4">Cómo llegar con Google Maps</a>
             </section>
             <div className="mt-10">
               <ArticleSources
                 verifiedDate="2026-11-02"
                 sources={[
                   { label: 'Sinchi: web y datos de contacto', href: 'https://sinchi.eatbu.com/?lang=pt' },
+                  { label: 'Google Maps: ubicación y consulta de horarios actuales', href: 'https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa' },
                   { label: 'TheFork: carta y opiniones de Sinchi', href: 'https://www.thefork.pt/restaurante/sinchi-cozinha-peruana-r831205' },
                   { label: 'Consulado del Perú: restaurantes peruanos en Lisboa', href: 'https://www.consulado.pe/es/Lisboa/Lists/RestaurantesPeruanos/DispForm.aspx?ContentTypeId=0x0100E1004E32DD4B264D8928886040921D86&ID=16' },
                 ]}
