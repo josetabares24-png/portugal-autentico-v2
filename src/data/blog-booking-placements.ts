@@ -62,6 +62,11 @@ export interface BlogBookingPlacement {
   position?: BookingBlockPosition;
   /** Una o dos frases con el porqué, en la voz del artículo. */
   intro: string;
+  /**
+   * Solo Tiqets: sufijo para que cada botón de una misma página tenga su
+   * propio `tq_campaign` (`web_blog_<slug>_<sufijo>`). El primero va sin sufijo.
+   */
+  campaignSuffix?: string;
 }
 
 export const BLOG_BOOKING_PLACEMENTS: Record<string, BlogBookingPlacement[]> = {
