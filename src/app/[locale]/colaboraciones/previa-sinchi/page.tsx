@@ -32,13 +32,13 @@ const article: Article = {
   contenido: [
     {
       tipo: 'parrafo',
-      texto: 'Si estás por Alcântara y te apetece comer peruano en Lisboa, apunta este nombre: Sinchi. Está en la Rua Luís de Camões y su carta gira alrededor de platos reconocibles de Perú, como el ceviche, el lomo saltado, los tiraditos y el arroz chaufa. No es una carta genérica de comida latina: hay ingredientes, salsas y preparaciones muy concretas de la cocina peruana.',
+      texto: 'Si estás por Alcântara y te provoca comer peruano, hay un restaurante que vale la pena tener localizado: Sinchi. Está en la Rua Luís de Camões y en su carta aparecen ceviches, tiraditos, lomo saltado y arroz chaufa. Es uno de esos sitios donde puedes ir con ganas de pescado y marisco o sentarte a comer un buen plato caliente.',
     },
     {
       tipo: 'parrafo',
-      texto: 'Para esta guía revisamos la carta enviada por el propio restaurante el 2 de noviembre de 2026, sus datos de contacto y las referencias públicas disponibles. No presentamos la experiencia como una visita personal ni atribuimos al local impresiones que no hayamos comprobado.',
+      texto: 'La carta tiene bastante donde elegir, así que voy a quedarme con los platos que mejor explican lo que ofrece Sinchi. Los precios que verás más abajo salen del menú que el restaurante compartió directamente con Estaba en Lisboa en noviembre de 2026.',
     },
-    { tipo: 'subtitulo', texto: 'Qué pedir en Sinchi: ceviches, lomo saltado y cocina peruana' },
+    { tipo: 'subtitulo', texto: 'Qué encontrarás en la carta de Sinchi' },
     {
       tipo: 'parrafo',
       texto: 'El ceviche es uno de los motivos más claros para elegir Sinchi. La versión clásica combina pescado blanco con cebolla morada, choclo, maíz cancha, camote y leche de tigre. Si prefieres algo diferente, también hay ceviche al ají amarillo, ceviche de atún y una versión nikkei con salsa de influencia japonesa.',
@@ -81,7 +81,7 @@ const article: Article = {
     },
     {
       tipo: 'parrafo',
-      texto: 'No lo incluiríamos entre los restaurantes más económicos de Lisboa, pero la carta permite ver claramente qué presupuesto necesitas. En TheFork se muestra un precio medio orientativo de 26 € por persona; esa cifra y los importes de la carta no equivalen a un menú cerrado.',
+      texto: 'No es una propuesta para comer por muy poco dinero, pero puedes calcular el presupuesto antes de ir. TheFork señala un precio medio orientativo de 26 € por persona, aunque depende de lo que pidas y de las bebidas.',
     },
     { tipo: 'subtitulo', texto: '¿Qué beber? Pisco sour, chicha morada y vinos peruanos' },
     {
@@ -105,7 +105,7 @@ const article: Article = {
     { tipo: 'subtitulo', texto: '¿Merece la pena tenerlo en cuenta?' },
     {
       tipo: 'parrafo',
-      texto: 'Sinchi puede encajarte si buscas una comida peruana concreta en Alcântara y te interesan los ceviches, los tiraditos o los platos al wok. Su propuesta no se limita a un solo plato famoso y la carta permite elegir entre pescado, marisco y opciones calientes.',
+      texto: 'Si lo que te apetece es un ceviche y estás por Alcântara, Sinchi tiene varias versiones para elegir. Y si vas acompañado de alguien que prefiere comer caliente, también hay lomo saltado, arroz chaufa y tallarines. Eso facilita bastante elegir un sitio sin que todo el grupo tenga que pedir lo mismo.',
     },
     {
       tipo: 'parrafo',
