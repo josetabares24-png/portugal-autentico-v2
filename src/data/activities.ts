@@ -245,7 +245,7 @@ export const activities: Activity[] = [
     seoTitle: 'Torre de Belém: entradas, precio y franjas horarias',
     guide: { href: '/blog/belem-barrio-guia', label: 'Qué ver en Belém' },
     experiencia: {
-      intro: 'Es la imagen que todo el mundo tiene en la cabeza cuando piensa en Lisboa. La obra empezó en 1514, con D. Manuel I, para proteger la entrada del Tajo. Se levantó sobre una roca de basalto, a unos 250 metros de la orilla; hoy queda casi en la orilla porque los rellenos de tierra y la arena del río cambiaron el paisaje.',
+      intro: 'Es la imagen que todo el mundo tiene en la cabeza cuando piensa en Lisboa. La obra empezó en 1514, con D. Manuel I, para proteger la entrada del Tajo. Se levantó sobre una roca de basalto, a unos 250 metros de la orilla.',
       queVeras: [
         'La terraza superior, con la mejor vista del Tajo desde el nivel del agua',
         'La cabeza de rinoceronte esculpida en la base de una de las garitas: en 1515 llegó a Lisboa un rinoceronte traído de la India',
