@@ -63,7 +63,7 @@ export default function Lisboa1DiaPage() {
   };
 
   return (
-    <main id="main-content" className="bg-background-light">
+    <main id="main-content" className="grok-itinerary-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <ItineraryHero

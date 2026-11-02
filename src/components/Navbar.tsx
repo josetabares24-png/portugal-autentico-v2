@@ -35,11 +35,11 @@ export default function Navbar() {
         }
       }}
     >
-      <div className="mx-auto max-w-[1250px] px-4 sm:px-6">
-        <div className="flex min-h-[68px] items-center justify-between gap-3">
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6">
+        <div className="flex min-h-[68px] items-center justify-between gap-3 lg:min-h-[88px]">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} aria-label="Estaba en Lisboa — Inicio"
             className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffcb05]">
-            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={1200} height={500} priority className="h-[40px] w-auto sm:h-[48px]" />
+            <Image src="/brand/logo-v1-inverso.png" alt="Estaba en Lisboa" width={1200} height={500} sizes="(max-width: 1023px) 135px, 212px" priority className="h-[56px] w-auto lg:h-[88px]" />
           </Link>
 
           <div className="hidden items-center justify-center gap-5 lg:flex xl:gap-7">

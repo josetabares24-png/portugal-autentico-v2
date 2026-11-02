@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './GrokTwoDayItinerary.module.css';
-import type { GuidePack } from '@/data/guide-packs';
+import type { ReactNode } from 'react';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 
 /**
  * Página de 2 días inspirada en la versión aprobada de Grok.
@@ -70,7 +72,7 @@ const stops: Stop[] = [
     area: 'BELÉM',
     name: 'Torre de Belém y Jerónimos',
     subtitle: 'Dos monumentos de la zona. Consulta el acceso antes de ir.',
-    photo: '/images/actividades/torre-de-belem-lisboa.webp',
+    photo: '/images/commons/torre-belem-werner-wikimedia.webp',
     alt: 'Torre de Belém junto al río Tajo',
     href: '/blog/belem-barrio-guia',
     cta: 'Planear visita',
@@ -114,7 +116,7 @@ const days = [
   { day: 2 as const, title: 'Día 2', eyebrow: 'Belém y atardecer', summary: 'Agrupa los monumentos de Belém antes de volver al centro.' },
 ];
 
-export default function GrokTwoDayItinerary({ guide }: { guide: Pick<GuidePack, 'highlights'> }) {
+export default function GrokTwoDayItinerary({ children }: { children?: ReactNode }) {
   return (
     <div className={styles.page}>
       <header className={styles.hero}>
@@ -126,7 +128,7 @@ export default function GrokTwoDayItinerary({ guide }: { guide: Pick<GuidePack, 
         />
         <div className={styles.heroOverlay} aria-hidden="true"/>
         <div className={styles.heroContent}>
-          <Link href="/itinerarios" className={styles.back}>Ver otros itinerarios</Link>
+          <div className="grok-hero-breadcrumb"><Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Itinerarios', href: '/itinerarios' }, { label: 'Lisboa en 2 días' }]} /></div>
           <p className={styles.script}>Itinerario</p>
           <h1>Lisboa en 2 días</h1>
           <p className={styles.intro}>Día 1 por el centro y Alfama. Día 2 en Belém, con tiempo para un mirador.</p>
@@ -142,15 +144,11 @@ export default function GrokTwoDayItinerary({ guide }: { guide: Pick<GuidePack, 
 
       <div className={styles.container}>
         <section className={styles.overview} aria-labelledby="grok-two-day-stops">
-          <div className={styles.sectionHead}>
-            <p className={styles.script}>De un vistazo</p>
-            <h2 id="grok-two-day-stops">Tu ruta, parada a parada</h2>
-            <p>Seis ideas para orientarte. Puedes ajustar el orden según horarios, clima y energía.</p>
-          </div>
+          <h2 id="grok-two-day-stops" className="sr-only">Paradas del itinerario</h2>
           <div className={styles.photoGrid}>
             {stops.map((stop, index) => (
-              <Link key={stop.id} href={'#' + stop.id} className={styles.photoCard} aria-label={'Ver parada: ' + stop.name}>
-                <Image src={stop.photo} alt={stop.alt} fill sizes="(max-width: 640px) 50vw, 33vw" className={styles.photo}/>
+              <Link key={stop.id} href={'#' + stop.id} className={styles.photoCard}>
+                <Image src={stop.photo} alt="" fill sizes="(max-width: 640px) 50vw, 33vw" className={styles.photo}/>
                 <div className={styles.photoShade} aria-hidden="true"/>
                 <span className={styles.photoNum}>{String(index + 1).padStart(2,'0')}</span>
                 <div className={styles.photoText}>
@@ -202,28 +200,8 @@ export default function GrokTwoDayItinerary({ guide }: { guide: Pick<GuidePack, 
           <Link href="/blog/alfama-historia-guia">Leer la guía completa de Alfama</Link>
         </aside>
 
-        {guide.highlights.length > 0 && (
-          <section className={styles.classicRoute} aria-labelledby="ruta-alternativa-title">
-            <p className={styles.script}>Una ruta alternativa</p>
-            <h2 id="ruta-alternativa-title">Más ideas para tus dos días</h2>
-            <p className={styles.classicIntro}>
-              Además de las seis paradas de la ruta visual, esta es la propuesta
-              que ya formaba parte de nuestra guía. Puedes escoger las visitas
-              que más te interesen sin intentar hacerlo todo.
-            </p>
-            <ol className={styles.classicList}>
-              {guide.highlights.map((highlight, index) => (
-                <li key={index} className={styles.classicStop}>
-                  <span className={styles.classicTime}>{highlight.time}</span>
-                  <div>
-                    <h3>{highlight.place}</h3>
-                    <p>{highlight.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
+        <PhotoAttribution image="/images/commons/torre-belem-werner-wikimedia.webp" />
+        {children}
 
         <section className={styles.after} aria-label="Más formas de preparar tu visita">
           <div>

@@ -1,8 +1,8 @@
 .page {
-  --teal: #016d6f;
-  --teal-dark: #015a5c;
-  --yellow: #fcc603;
-  --ink: #0b2a3d;
+  --teal: var(--eel-sea);
+  --teal-dark: var(--eel-sea-dark);
+  --yellow: var(--eel-yellow);
+  --ink: var(--eel-deep);
   --muted: #52636b;
   --line: #d6e8e8;
   color: var(--ink);
@@ -11,9 +11,9 @@
   padding-bottom: 0;
 }
 .page * { box-sizing: border-box; }
-.page :is(a,button):focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.page :is(a,button):focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 3px; box-shadow: 0 0 0 2px #fff; }
 .page h1, .page h2, .page h3, .page strong { font-style: normal; }
-.container { width: min(calc(100% - 40px), 1130px); margin: 0 auto; }
+.container { width: min(calc(100% - 40px), 1308px); margin: 0 auto; }
 .hero {
   min-height: 310px;
   position: relative;
@@ -31,10 +31,10 @@
 .back:hover { background: #ffffff2c; color: white; }
 .script { font-family: var(--grok-script), 'Brush Script MT', cursive; font-size: clamp(1.4rem,2.3vw,1.95rem); color: var(--teal); font-weight: 600; letter-spacing: .01em; line-height: 1.3; }
 .hero .script { color: var(--yellow); }
-.hero h1 { font-family: var(--grok-display), Georgia, serif; font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.1; letter-spacing: -.02em; font-weight: 400; color: white; margin: 0 0 10px; }
+.hero h1 { text-wrap: balance; font-family: var(--grok-display), Georgia, serif; font-size: clamp(2.8rem, 5.2vw, 4.25rem); line-height: 1.1; letter-spacing: -.02em; font-weight: 400; color: white; margin: 0 0 10px; }
 .intro { color: #f5fafb; line-height: 1.65; font-size: clamp(.9rem,1.5vw,1.02rem); }
 .quickFacts {
-  width: min(calc(100% - 40px), 1120px);
+  width: min(calc(100% - 40px), 1308px);
   margin: -30px auto 0;
   position: relative;
   z-index: 2;
@@ -50,9 +50,8 @@
 .quickFacts small { display: block; color: var(--teal); font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: .065em; margin-bottom: 3px; }
 .quickFacts strong { font-size: .85rem; font-weight: 600; display: block; line-height: 1.45; }
 .overview { padding: 55px 0 30px; }
-.sectionHead { margin-bottom: 22px; }
-.sectionHead h2, .dayHeading h2, .after h2 { font-family: var(--grok-display), Georgia, serif; font-size: clamp(1.9rem,3vw,2.65rem); font-weight: 400; margin: 2px 0 8px; letter-spacing: -.02em; line-height: 1.2; }
-.sectionHead > p:last-child, .dayHeading > p:last-child { color: var(--muted); font-size: .89rem; line-height: 1.6; }
+.dayHeading h2, .after h2 { font-family: var(--grok-display), Georgia, serif; font-size: clamp(1.9rem,3vw,2.65rem); font-weight: 400; margin: 2px 0 8px; letter-spacing: -.02em; line-height: 1.2; }
+.dayHeading > p:last-child { color: var(--muted); font-size: .89rem; line-height: 1.6; }
 .photoGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
 .photoCard { position: relative; height: clamp(160px,18vw,230px); border-radius: 8px; isolation: isolate; overflow: hidden; color: white; }
 .photo { object-fit: cover; transition: transform .45s ease; }
@@ -72,17 +71,17 @@
 .rowCopy { padding: 22px 20px 16px; }
 .area { display: block; color: var(--teal); font-weight: 800; font-size: .65rem; line-height: 1.3; text-transform: uppercase; letter-spacing: .07em; }
 .rowCopy h3 { font-family: var(--grok-display), Georgia, serif; font-size: clamp(1.05rem,1.75vw,1.45rem); font-weight: 400; margin: 4px 0 8px; color: var(--ink); line-height: 1.2; }
-.rowCopy p { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+.rowCopy p { font-size: .94rem; color: var(--muted); line-height: 1.55; }
 .micro { display: inline-block; margin-top: 10px; background: #fff6cf; color: #5b4a1b; padding: 4px 7px; font-size: .69rem; line-height: 1.45; border-radius: 3px; }
 .action { display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: 16px 17px; background: var(--teal); color: white; text-align: center; }
 .action strong { color: #fff; font-family: var(--grok-display), Georgia, serif; font-weight: 400; font-size: clamp(.99rem,1.65vw,1.4rem); line-height: 1.16; }
-.actionButton { background: var(--yellow); color: #102b32; border-radius: 4px; padding: 10px 7px; font-size: .76rem; font-weight: 800; line-height: 1.3; margin: 12px 0 6px; text-decoration: none; }
+.actionButton { display: flex; align-items: center; justify-content: center; min-height: 44px; background: var(--yellow); color: #102b32; border-radius: 4px; padding: 10px 7px; font-size: .9rem; font-weight: 800; line-height: 1.3; margin: 12px 0 6px; text-decoration: none; }
 .actionButton:hover { color: #102b32; background: #ffdd42; }
 .action small { color: #ffffffd9; font-size: .65rem; line-height: 1.4; }
 .factBox { margin-top: 32px; background: #f6faf9; border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
 .factBox h2 { font-family: var(--grok-display),Georgia,serif; font-weight: 400; font-size: clamp(1.3rem,2vw,1.65rem); margin-bottom: 14px; }
 .factBox > div { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 25px; row-gap: 14px; }
-.factBox p { font-size: .79rem; color: var(--muted); line-height: 1.55; }
+.factBox p { font-size: .94rem; color: var(--muted); line-height: 1.55; }
 .factBox p strong { color: var(--teal); display: block; text-transform: uppercase; font-size: .66rem; letter-spacing: .05em; margin-bottom: 2px; }
 .factBox a { color: var(--teal-dark); display: inline-block; font-weight: 700; font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; margin-top: 19px; }
 .after { padding: 50px 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
@@ -112,7 +111,7 @@
  .container { width: min(calc(100% - 28px),1130px); }
  .quickFacts { width: min(calc(100% - 28px),1120px); margin-top: -45px; }
  .quickFacts div { padding: 12px 13px; }
- .quickFacts strong { font-size: .76rem; }
+ .quickFacts strong { font-size: .9rem; }
  .overview { padding: 42px 0 14px; }
  .photoGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
  .photoCard { height: clamp(150px,43vw,205px); }
@@ -123,7 +122,7 @@
  .rowImage { min-height: 140px; }
  .rowCopy { padding: 13px 12px; }
  .rowCopy h3 { font-size: 1.12rem; }
- .rowCopy p { font-size: .76rem; }
+ .rowCopy p { font-size: .9rem; }
  .action { grid-column: 1 / -1; min-height: 65px; display: grid; grid-template-columns: 1fr auto; text-align: left; align-items: center; gap: 3px 12px; padding: 10px 14px; }
  .action strong { font-size: 1.05rem; }
  .actionButton { margin: 0; padding: 10px 14px; }
@@ -136,67 +135,7 @@
  .photo,.links a { transition:none; }
  .photoCard:hover .photo,.rowImage:hover .photo { transform:none; }
 }
-
-
-/* Conservación del itinerario editorial anterior, debajo de la ruta visual. */
-.classicRoute {
-  margin-top: 40px;
-  padding: clamp(22px,4vw,38px);
-  background: #f4f9f9;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-.classicRoute h2 {
-  font-family: var(--grok-display),Georgia,serif;
-  font-size: clamp(1.6rem,2.7vw,2.2rem);
-  line-height: 1.2;
-  font-weight: 400;
-  margin: 2px 0 11px;
-}
-.classicIntro {
-  font-size: .9rem;
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 760px;
-}
-.classicList {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 12px;
-  padding: 0;
-  margin: 24px 0 0;
-}
-.classicStop {
-  display: grid;
-  grid-template-columns: minmax(62px,.32fr) minmax(0,1fr);
-  align-items: start;
-  gap: 12px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: #fff;
-  padding: 17px;
-}
-.classicTime {
-  color: var(--teal-dark);
-  font-size: .74rem;
-  line-height: 1.4;
-  font-weight: 800;
-}
-.classicStop h3 {
-  font-family: var(--grok-display),Georgia,serif;
-  font-size: clamp(1.02rem,1.5vw,1.25rem);
-  font-weight: 400;
-  line-height: 1.23;
-  margin-bottom: 6px;
-}
-.classicStop p {
-  font-size: .82rem;
-  line-height: 1.6;
-  color: var(--muted);
-}
-@media(max-width:680px) {
-  .classicList { grid-template-columns: 1fr; gap: 10px; }
-  .classicStop { padding: 13px; }
-  .classicRoute { margin-top: 24px; }
+@media (min-width:1024px) {
+ .photoCard { height: clamp(200px,18vw,260px); }
+ .row { grid-template-columns: 260px minmax(0,1fr) 260px; min-height: 230px; }
 }

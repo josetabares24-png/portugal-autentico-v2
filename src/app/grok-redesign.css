@@ -1,4 +1,4 @@
-/* Estaba en Lisboa: sistema visual 2027 inspirado en el prototipo GROK.
+/* Estaba en Lisboa: sistema visual aprobado el 1 de noviembre de 2026.
    Interfaz únicamente: no modifica contenidos, URLs, datos ni reservas.
    Selectores limitados a superficies aprobadas y componentes compartidos. */
 :root {
@@ -10,9 +10,28 @@
   --eel-mist: #e6f1f1;
   --eel-line: #d7e8e8;
   --eel-body: #52676e;
+  --eel-header-height: 68px;
+}
+@media (min-width:1024px) { :root { --eel-header-height: 88px; } }
+.brand-es {
+  /* next/font define sus variables en body, no en :root. Resolver aquí
+     evita que los componentes interiores caigan en la sans del navegador. */
   --eel-display-font: var(--grok-display), Georgia, serif;
   --eel-interface-font: var(--grok-body), Arial, sans-serif;
+  /* Los componentes anteriores siguen usando estos contratos tipográficos.
+     Resolverlos aquí evita cargar tres familias antiguas y mezclar fuentes. */
+  --font-body: var(--grok-body);
+  --font-display: var(--grok-display);
+  --font-article: var(--grok-body);
+  font-family: var(--eel-interface-font);
 }
+.brand-es :is(footer h2, #cookie-banner-title) {
+  font-family: var(--eel-interface-font);
+  font-style: normal;
+}
+.brand-es :is(h1,h2,h3,h4) { font-style: normal; }
+.brand-es :is(h1,h2,h3).font-display { font-weight: 400; }
+.grok-blog-script { font-family: var(--grok-script), cursive; color: var(--eel-sea-dark); font-size: 2rem; font-weight: 400; line-height: 1.2; }
 :is(.grok-booking-page,.grok-directory-page,.grok-itinerary-page,.grok-blog-page,.article-page,.travel-pillar-page) {
   --color-gold: var(--eel-yellow);
   --color-focus: var(--eel-sea);
@@ -38,8 +57,9 @@
 :is(.grok-booking-page,.grok-directory-page,.grok-itinerary-page,.grok-blog-page)
   :is(a,button,input,summary):focus-visible,
 .article-page :is(a,button,input,summary):focus-visible {
-  outline: 3px solid var(--eel-yellow);
+  outline: 3px solid var(--eel-sea-dark);
   outline-offset: 3px;
+  box-shadow: 0 0 0 2px #fff;
 }
 :is(.grok-booking-page,.grok-directory-page,.grok-itinerary-page,.grok-blog-page)
   .page-eyebrow {
@@ -104,6 +124,7 @@
   --article-border: #dbe8e8;
   --article-surface: #ffffff;
   background: #f8fbfa;
+  font-family: var(--eel-interface-font);
 }
 .article-page .article-breadcrumb {
   font-family: var(--eel-interface-font);
@@ -487,7 +508,7 @@
 }
 .grok-pack-facts > div { padding: 18px 20px; }
 .grok-pack-facts > div + div { border-left: 1px solid var(--eel-line); }
-.grok-pack-facts small {
+.grok-pack-facts :is(small,dt) {
   display: block;
   color: var(--eel-sea-dark);
   font-size: .67rem;
@@ -496,13 +517,22 @@
   letter-spacing: .07em;
   margin-bottom: 4px;
 }
-.grok-pack-facts strong {
+.grok-pack-facts :is(strong,dd) {
   display: block;
   font-size: .83rem;
   font-weight: 700;
   color: var(--eel-deep);
   line-height: 1.45;
 }
+.grok-hero-breadcrumb nav { margin-bottom: 18px; }
+.grok-hero-breadcrumb ol { justify-content: center; }
+.grok-hero-breadcrumb :is(ol,span,a) { color: #fff; }
+.grok-hero-breadcrumb a { text-decoration: underline; text-underline-offset: 3px; }
+.grok-original-route { margin-top: 28px; border-block: 1px solid var(--eel-line); }
+.grok-original-route > summary { cursor: pointer; padding: 20px 4px; min-height: 48px; font-weight: 700; color: var(--eel-sea-dark); }
+.grok-original-route[open] > summary { border-bottom: 1px solid var(--eel-line); }
+.photo-attribution { margin: 8px 0 0; padding: 0 4px; color: #52676e; font: 400 .75rem/1.5 var(--grok-body, Arial), sans-serif; }
+.photo-attribution a { color: var(--eel-sea-dark); text-decoration: underline; text-underline-offset: 2px; }
 .grok-pack-body .card-surface { border: 1px solid var(--eel-line); border-top: 3px solid var(--eel-yellow); }
 .grok-pack-body .card-surface h3 { color: var(--eel-deep); }
 .grok-pack-body #preview { scroll-margin-top: 100px; }

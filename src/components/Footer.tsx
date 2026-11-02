@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { CookiePreferencesButton } from '@/components/CookieBanner';
 
 /**
  * Cierre editorial compartido. Sin patrón decorativo ni dependencias extra:
@@ -48,6 +49,7 @@ export default function Footer() {
                 alt="Estaba en Lisboa — inicio"
                 width={1200}
                 height={500}
+                sizes="(max-width: 639px) 150px, (max-width: 767px) 175px, 190px"
                 className="h-auto w-[150px] max-w-full sm:w-[175px] md:w-[190px]"
               />
             </Link>
@@ -97,6 +99,7 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <CookiePreferencesButton className={legalClass} />
           </nav>
         </div>
       </div>

@@ -2,27 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Settings2 } from 'lucide-react';
 
 export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'en' }) {
   const english = language === 'en';
   const [show, setShow] = useState(false);
-  const [consent, setConsent] = useState<string | null>(null);
-  const [explicitConsent, setExplicitConsent] = useState(false);
 
   useEffect(() => {
-    const storedConsent = localStorage.getItem('cookieConsent');
-    const explicit = localStorage.getItem('cookieConsentExplicit');
+    let storedConsent: string | null = null;
+    let explicit: string | null = null;
+    try {
+      storedConsent = localStorage.getItem('cookieConsent');
+      explicit = localStorage.getItem('cookieConsentExplicit');
+    } catch { /* Sin almacenamiento disponible no hay consentimiento válido. */ }
     const hasValidConsent = storedConsent === 'accepted' || storedConsent === 'rejected';
 
     if (hasValidConsent && explicit === 'true') {
-      setConsent(storedConsent);
-      setExplicitConsent(true);
-      document.documentElement.dataset.cookieConsent = storedConsent;
+      document.documentElement.dataset.cookieConsent = storedConsent === 'accepted' ? 'accepted' : 'rejected';
       setShow(false);
     } else {
-      setConsent(null);
-      setExplicitConsent(false);
       setShow(true);
     }
   }, []);
@@ -34,11 +31,11 @@ export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'e
   }, []);
 
   const applyConsent = (value: 'accepted' | 'rejected') => {
-    localStorage.setItem('cookieConsent', value);
-    localStorage.setItem('cookieConsentExplicit', 'true');
+    try {
+      localStorage.setItem('cookieConsent', value);
+      localStorage.setItem('cookieConsentExplicit', 'true');
+    } catch { /* Los consumidores mantienen analytics desactivado si no pueden leerlo. */ }
     document.documentElement.dataset.cookieConsent = value;
-    setConsent(value);
-    setExplicitConsent(true);
     setShow(false);
 
     if (value === 'rejected') {
@@ -53,9 +50,6 @@ export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'e
   const acceptCookies = () => applyConsent('accepted');
   const rejectCookies = () => applyConsent('rejected');
   const closeBanner = () => setShow(false);
-  const openPreferences = () => setShow(true);
-
-  if (!show && !explicitConsent) return null;
 
   return (
     <>
@@ -115,17 +109,17 @@ export default function CookieBanner({ language = 'es' }: { language?: 'es' | 'e
         </div>
       )}
 
-      {!show && consent !== null && explicitConsent && (
-        <button
-          type="button"
-          onClick={openPreferences}
-          className="fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] left-3 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-[#d7e8e8] bg-white text-[#016d6f] shadow-[0_4px_18px_rgba(5,36,45,0.16)] transition-colors hover:border-[#016d6f] hover:bg-[#e6f1f1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#016d6f]"
-          aria-label={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
-          title={english ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}
-        >
-          <Settings2 size={18} strokeWidth={1.8} aria-hidden="true" />
-        </button>
-      )}
     </>
+  );
+}
+
+/** Acceso permanente sin cubrir la lectura ni las acciones en móvil. */
+export function CookiePreferencesButton({ language = 'es', className }: { language?: 'es' | 'en'; className?: string }) {
+  const openPreferences = () => window.dispatchEvent(new Event('open-cookie-preferences'));
+  return (
+    <button type="button" onClick={openPreferences} className={className}
+      aria-label={language === 'en' ? 'Change cookie preferences' : 'Cambiar preferencias de cookies'}>
+      {language === 'en' ? 'Cookie preferences' : 'Preferencias de cookies'}
+    </button>
   );
 }

@@ -192,7 +192,7 @@ export default function Lisboa3DiasPremiumPage() {
   };
 
   return (
-    <main id="main-content" className="bg-background-light">
+    <main id="main-content" className="grok-itinerary-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
