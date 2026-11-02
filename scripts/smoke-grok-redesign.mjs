@@ -26,6 +26,18 @@ assert('metadatos originales siguen definidos en página real', page.includes('c
 assert('Home conserva JSON-LD de CollectionPage', page.includes("'@type': 'CollectionPage'") && page.includes("'@id': HOME_URL + '/#webpage'"));
 assert('Home usa datos recientes del blog', home.includes('blogPostsByDate.slice(0, 5)') && home.includes('recentImages.get(post.id)') && home.includes('post.excerpt'));
 assert('buscador interactivo con etiquetas y destino', search.includes('role="search"') && search.includes('aria-live="polite"') && search.includes('router.push') && search.includes('type="submit"'));
+assert('al seleccionar sugerencia se autocompleta sin navegar antes de Buscar',
+  search.includes('setTerm(suggestion.label)') &&
+  search.includes('setSelected(suggestion)') &&
+  search.includes('onClick={() => selectSuggestion(result)}') &&
+  search.includes('selected?.label === term ? selected.href') &&
+  search.includes('setSelected(null)') &&
+  !search.includes('<Link href={result.href}'));
+assert('sugerencias táctiles no desaparecen antes del click en Safari iOS',
+  search.includes("document.addEventListener('pointerdown', dismissOutside)") &&
+  search.includes('event.relatedTarget &&') &&
+  search.includes('onMouseDown={(event) => event.preventDefault()}') &&
+  homeCSS.includes('.searchResults li button'));
 assert('Home conserva free tours, entradas, itinerarios y colaboración', ['/free-tours-lisboa','/comprar-entradas','/itinerarios','/blog/monasterio-jeronimos-entradas'].every(x=>home.includes(x)));
 assert('Home conserva autoría y lecturas estacionales', ['/sobre-nosotros','/blog/lisboa-cuando-llueve','/blog/lisboa-en-navidad','/blog/nochevieja-lisboa'].every(x=>home.includes(x)));
 assert('Home limpia: solo botón de acceso a artículos, sin cinco cuadros extra',
@@ -103,8 +115,10 @@ assert('footer compacto en móvil conserva identidad',
 
 assert('navegación móvil identificable', navbar.includes('aria-expanded') && navbar.includes('main-mobile-menu'));
 
-assert('el botón Buscar siempre abre el primer resultado disponible',
-  search.includes('results.length > 0') && search.includes('router.push(results[0].href)'));
+assert('Buscar respeta la selección manual y conserva el primer resultado como alternativa',
+  search.includes('selected?.label === term ? selected.href : results[0]?.href') &&
+  search.includes('router.push(destination)') &&
+  search.includes("router.push('/blog')"));
 assert('el menú se cierra con Escape y recupera el foco',
   navbar.includes("event.key === 'Escape'") && navbar.includes('mobileMenuToggle.current?.focus()'));
 assert('el logo conserva su relación de aspecto original',
