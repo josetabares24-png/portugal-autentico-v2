@@ -104,7 +104,17 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
           {results.length ? (
             <ul>{results.map((result) => (
               <li key={result.href}>
-                <button type="button" onClick={() => selectSuggestion(result)}>
+                <button
+                  type="button"
+                  // Safari iOS puede desenfocar el input antes del click.
+                  // Guardar la sugerencia ya en pointerdown táctil evita
+                  // que el onBlur desmonte el menú antes de seleccionarla.
+                  onPointerDown={(event) => {
+                    if (event.pointerType === 'touch') selectSuggestion(result);
+                    else event.preventDefault();
+                  }}
+                  onClick={() => selectSuggestion(result)}
+                >
                   {result.label}
                 </button>
               </li>
