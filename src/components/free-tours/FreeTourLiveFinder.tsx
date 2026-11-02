@@ -15,6 +15,7 @@ import {
   formatFreeTourTime,
 } from "@/lib/free-tour-booking-options";
 
+import { PhotoAttribution } from "@/components/ui/PhotoAttribution";
 import { finderCopy } from "./finder-copy";
 
 type FinderState = "idle" | "loading" | "success" | "error";
@@ -22,7 +23,7 @@ type FinderState = "idle" | "loading" | "success" | "error";
 const FALLBACK_IMAGES = [
   "/images/lisboa-originales/rua-augusta-arco-lisboa.webp",
   "/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg",
-  "/images/actividades/torre-de-belem-lisboa.webp",
+  "/images/commons/torre-belem-werner-wikimedia.webp",
 ];
 
 function lisbonDate(date = new Date()) {
@@ -115,6 +116,7 @@ function LiveTourImage({
     failedSource === preferredSource ? fallback : preferredSource;
 
   return (
+    <figure className="relative h-full">
     <img
       src={currentSource}
       alt={alt}
@@ -123,6 +125,8 @@ function LiveTourImage({
       onError={() => setFailedSource(preferredSource)}
       className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
     />
+    {currentSource.includes('/commons/') && <figcaption className="absolute inset-x-0 bottom-0 bg-white/95 px-2 pb-1"><PhotoAttribution image={currentSource} /></figcaption>}
+    </figure>
   );
 }
 

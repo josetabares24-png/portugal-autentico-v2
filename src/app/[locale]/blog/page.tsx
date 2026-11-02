@@ -3,6 +3,8 @@ import BlogClient from './BlogClient';
 import { blogPostsByDate } from '@/data/blog-posts';
 import { BlogEditorialCover } from '@/components/blog/BlogEditorialCover';
 import { toIsoEditorialDate } from '@/lib/editorial-date';
+import { editorialPhoto } from '@/lib/editorial-photo-policy';
+import { blogImageMap } from '@/lib/media';
 
 const BLOG_TITLE = 'Guías de Lisboa y Portugal | Estaba en Lisboa';
 const BLOG_DESCRIPTION = 'Guías de Lisboa y Portugal: transporte, rutas, barrios, escapadas, comida y consejos prácticos para organizar el viaje desde una base local.';
@@ -66,7 +68,7 @@ const jsonLd = {
       '@type': 'Person',
       name: post.autor,
     },
-    image: `https://estabaenlisboa.com${post.imagen}`,
+    ...(editorialPhoto(post.id, blogImageMap[post.id] || post.imagen) ? { image: `https://estabaenlisboa.com${editorialPhoto(post.id, blogImageMap[post.id] || post.imagen)}` } : {}),
     url: `https://estabaenlisboa.com/blog/${post.id}`,
   })),
 };

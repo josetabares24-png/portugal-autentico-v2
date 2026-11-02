@@ -4,6 +4,7 @@ import { blogPosts, type BlogPost } from '@/data/blog-posts';
 import { blogEditorialSelection as selection } from '@/data/blog-editorial-selection';
 import { lisboaNavigation } from '@/data/editorial-navigation';
 import { EditorialArticleCard, getArticleImage, uniqueArticleImages } from './EditorialArticleCard';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 
 const postsById = new Map(blogPosts.map((post) => [post.id, post]));
 function article(id: string): BlogPost {
@@ -13,7 +14,7 @@ function article(id: string): BlogPost {
 }
 function ReadingList({
   ids, reservedImages = [], columns = 1,
-}: { ids: readonly string[]; reservedImages?: readonly string[]; columns?: 1 | 3 }) {
+}: { ids: readonly string[]; reservedImages?: readonly (string | null)[]; columns?: 1 | 3 }) {
   // Nunca repetir la misma fotografía en una sección. Si no hay alternativa
   // verificada, dejamos la tarjeta sin imagen (no ponemos una genérica).
   const unique = uniqueArticleImages(ids.map(article), reservedImages);
@@ -28,21 +29,23 @@ function ReadingList({
         <span className="grok-blog-reading-category">{post.categoria}</span>
         <h3 className="grok-blog-reading-title">{post.titulo}</h3>
       </span>
-    </Link></li>;
+    </Link>{image && <PhotoAttribution image={image} />}</li>;
   })}</ul>;
 }
 
 function Topic({ id, title, ids }: { id: string; title: string; ids: readonly string[] }) {
   const lead = article(ids[0]);
+  const leadImage = getArticleImage(lead);
   return <section id={id} aria-labelledby={`${id}-title`} className="min-w-0 scroll-mt-24">
     <h2 id={`${id}-title`} className="mb-6 border-t border-text-main pt-4 font-display text-3xl font-semibold not-italic text-text-main">{title}</h2>
     <Link href={`/blog/${lead.id}`} className="group block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
-      <div className="relative mb-4 aspect-[16/9] overflow-hidden bg-white/60">
-        <Image src={getArticleImage(lead)} alt={lead.titulo} fill sizes="(max-width: 767px) calc(100vw - 3rem), 520px" className="object-cover" />
-      </div>
+      {leadImage && <div className="relative mb-4 aspect-[16/9] overflow-hidden bg-white/60">
+        <Image src={leadImage} alt={lead.titulo} fill sizes="(max-width: 767px) calc(100vw - 3rem), 520px" className="object-cover" />
+      </div>}
       <h3 className="font-display text-2xl font-semibold not-italic leading-snug text-text-main group-hover:text-terracotta">{lead.titulo}</h3>
       <p className="mt-3 text-sm leading-relaxed text-text-secondary">{lead.excerpt}</p>
     </Link>
+    {leadImage && <PhotoAttribution image={leadImage} />}
     <div className="mt-4"><ReadingList ids={ids.slice(1)} reservedImages={[getArticleImage(lead)]} /></div>
   </section>;
 }

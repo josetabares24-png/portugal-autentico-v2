@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Activity } from '@/data/activities';
 import { ActivityImagePlaceholder } from '@/components/actividades/ActivityImagePlaceholder';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 import styles from './ActivityCard.module.css';
 
 function formatPrice(n: number) {
@@ -17,6 +18,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
       : 'De pago';
 
   return (
+    <div className="flex h-full flex-col">
     <Link
       href={resolveInternalHref(`/actividades/${activity.slug}`)}
       className={`grok-activity-card group flex h-full flex-col border border-border-soft bg-white p-3 transition-colors hover:bg-white ${compactMobile ? styles.compact : ''}`}
@@ -73,5 +75,7 @@ export function ActivityCard({ activity, compactMobile = false }: { activity: Ac
         </div>
       </article>
     </Link>
+    {activity.image && <PhotoAttribution image={activity.image} />}
+    </div>
   );
 }

@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { BlogPost } from '@/data/blog-posts';
-import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import { blogImageMap } from '@/lib/media';
+import { editorialPhoto } from '@/lib/editorial-photo-policy';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
 
 type EditorialArticleCardVariant = 'feature' | 'compact' | 'grid';
@@ -15,16 +17,16 @@ interface EditorialArticleCardProps {
 }
 
 export function getArticleImage(post: BlogPost) {
-  return blogImageMap[post.id] || post.imagen || blogFallbackImage;
+  return editorialPhoto(post.id, blogImageMap[post.id] || post.imagen);
 }
 
 /** Devuelve una imagen distinta por tarjeta. Si no hay otra foto verificable, no inventa ninguna. */
-export function uniqueArticleImages(posts: readonly BlogPost[], reservedImages: readonly string[] = []) {
+export function uniqueArticleImages(posts: readonly BlogPost[], reservedImages: readonly (string | null)[] = []) {
   const used = new Set(reservedImages);
   const images = new Map<string, string | null>();
   for (const post of posts) {
     const src = getArticleImage(post);
-    if (used.has(src)) images.set(post.id, null);
+    if (!src || used.has(src)) images.set(post.id, null);
     else { images.set(post.id, src); used.add(src); }
   }
   return images;
@@ -51,7 +53,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2,
             />
           </div>
           )}
-          <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#008f91]">
+          <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#015a5c]">
             {post.categoria} &mdash; {post.fecha}
           </p>
           <Heading className="mb-3 break-words font-display text-3xl font-semibold not-italic leading-tight tracking-normal text-text-main transition-colors group-hover:text-[#007b81] md:text-4xl">
@@ -61,6 +63,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2,
             {post.excerpt}
           </p>
         </Link>
+        {imageSrc && <PhotoAttribution image={imageSrc} />}
       </article>
     );
   }
@@ -109,7 +112,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2,
           />
         </div>
         )}
-        <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#008f91]">
+        <p className="mb-2 font-body text-xs uppercase tracking-[0.1em] text-[#015a5c]">
           {post.categoria} &mdash; {post.fecha}
         </p>
         <Heading className="mb-2 break-words font-display text-[1.375rem] font-semibold not-italic leading-snug tracking-normal text-text-main transition-colors group-hover:text-[#007b81]">
@@ -117,6 +120,7 @@ export function EditorialArticleCard({ post, variant = 'grid', headingLevel = 2,
         </Heading>
         <p className="font-body text-[0.9375rem] leading-relaxed text-text-secondary">{post.excerpt}</p>
       </Link>
+      {imageSrc && <PhotoAttribution image={imageSrc} />}
     </article>
   );
 }

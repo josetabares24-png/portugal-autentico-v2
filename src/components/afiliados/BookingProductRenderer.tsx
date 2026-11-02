@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 import { GetYourGuideWidget } from '@/components/afiliados/GetYourGuideWidget';
 import { TiqetsWidget } from '@/components/afiliados/TiqetsWidget';
 import { BookingCard } from '@/components/afiliados/BookingCard';
@@ -180,6 +181,7 @@ function SinConsentimiento({
         ) : null}
       </div>
 
+      {product.image && <PhotoAttribution image={product.image} />}
       <div className="flex flex-1 flex-col">
         <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-terracotta">
           {product.kind}

@@ -15,7 +15,8 @@ import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
 import Stay22Script from '@/components/afiliados/Stay22Script';
 import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
-import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import { blogImageMap } from '@/lib/media';
+import { editorialPhoto } from '@/lib/editorial-photo-policy';
 import { articleHasNewsletter } from '@/lib/newsletter';
 import { EDITORIAL_PILOT } from '@/data/editorial-pilot';
 import { EDITORIAL_TRANSPORT } from '@/data/editorial-transport';
@@ -5881,9 +5882,10 @@ function getSeoDescription(description: string) {
 
 function resolveBlogImage(slug: string, image?: string) {
   const mapped = blogImageMap[slug];
-  const candidate = mapped || image || blogFallbackImage;
+  const candidate = editorialPhoto(slug, mapped || image);
+  if (!candidate) return null;
   if (candidate.startsWith('http')) {
-    return blogFallbackImage;
+    return null;
   }
   return candidate;
 }
@@ -6024,14 +6026,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ...(article.dateModified ? { modifiedTime: article.dateModified } : {}),
       authors: [AUTHOR_PROFILE_URL],
       section: article.categoria,
-      images: [
+      images: image ? [
         {
           url: toAbsoluteUrl(image),
           width: 1200,
           height: 630,
           alt: article.imageAlt ?? article.titulo,
         },
-      ],
+      ] : [],
     },
     /*
      * Sin este bloque, cada artículo heredaba el `twitter:title` y el
@@ -6045,10 +6047,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
      * sin imagen. La imagen es la misma que ya usa Open Graph aquí arriba.
      */
     twitter: {
-      card: 'summary_large_image',
+      card: image ? 'summary_large_image' : 'summary',
       title: seoTitle,
       description: seoDescription,
-      images: [toAbsoluteUrl(image)],
+      images: image ? [toAbsoluteUrl(image)] : [],
     },
   };
 }
@@ -6146,10 +6148,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       name: AUTHOR_NAME,
       url: AUTHOR_PROFILE_URL,
     },
-    image: {
+    ...(heroImage ? { image: {
       '@type': 'ImageObject',
       url: toAbsoluteUrl(heroImage),
-    },
+    } } : {}),
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': toAbsoluteUrl(`/blog/${slug}`),

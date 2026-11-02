@@ -56,7 +56,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
       </div>
 
       {/* Filtros por categoría */}
-      <section className="bg-background-light border-b border-border-soft py-3 sticky top-[69px] z-10">
+      <section className="bg-background-light border-b border-border-soft py-3 sticky top-[var(--eel-header-height)] z-10">
         <div className="max-w-6xl mx-auto px-6">
           {/*
             * Son siete categorías. En móvil no caben en una línea y se

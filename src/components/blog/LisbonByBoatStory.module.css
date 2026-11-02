@@ -1,4 +1,12 @@
 .story {
+  --color-cream: #fff;
+  --color-night: var(--eel-deep);
+  --color-terracotta: var(--eel-sea);
+  --color-primary-dark: var(--eel-sea-dark);
+  --color-taupe: var(--eel-body);
+  --color-surface: var(--eel-paper);
+  --color-border: var(--eel-line);
+  --color-focus: var(--eel-sea-dark);
   background: var(--color-cream);
   color: var(--color-night);
   font-family: var(--font-article), var(--font-body), sans-serif;
@@ -12,8 +20,8 @@
 .breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
 .header { max-width: 960px; padding: 38px 0 34px; }
 .eyebrow { color: var(--color-terracotta); font-size: 11px; font-weight: 700; letter-spacing: .16em; line-height: 1.6; text-transform: uppercase; }
-.title { margin: 18px 0 0; font-size: clamp(2.4rem, 5.1vw, 4.5rem); font-weight: 700; font-style: normal; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
-.title span { display: block; margin-top: 12px; font-size: clamp(1.5rem, 2.7vw, 2.35rem); font-style: normal; font-weight: 600; line-height: 1.24; letter-spacing: -.02em; }
+.title { margin: 18px 0 0; font-size: clamp(2.4rem, 5.1vw, 4.5rem); font-weight: 400; font-style: normal; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+.title span { display: block; margin-top: 12px; font-size: clamp(1.5rem, 2.7vw, 2.35rem); font-style: normal; font-weight: 400; line-height: 1.24; letter-spacing: -.02em; }
 .subtitle { max-width: 740px; margin-top: 22px; color: var(--color-taupe); font-size: 17px; line-height: 1.75; }
 .byline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; color: var(--color-taupe); font-size: 12px; line-height: 1.8; }
 .byline a { color: var(--color-night); text-decoration: underline; text-underline-offset: 3px; }
@@ -37,7 +45,7 @@
 .intro { max-width: 740px; }
 .intro p:first-child { font-size: 18px; line-height: 1.85; }
 .reading > section { margin-top: 56px; scroll-margin-top: 100px; }
-.reading h2 { max-width: 740px; margin: 8px 0 20px; font-size: clamp(1.8rem, 3vw, 2.55rem); font-weight: 600; font-style: normal; line-height: 1.2; text-wrap: balance; }
+.reading h2 { max-width: 740px; margin: 8px 0 20px; font-size: clamp(1.8rem, 3vw, 2.55rem); font-weight: 400; font-style: normal; line-height: 1.2; text-wrap: balance; }
 .reading .eyebrow { margin-top: 0; }
 .reading ul { display: grid; gap: 12px; padding-left: 20px; list-style: disc; }
 .reading li { padding-left: 4px; }

@@ -16,6 +16,11 @@ export interface PhotoCredit {
   licenseUrl?: string;
   /** Ficha del archivo original en Wikimedia Commons. */
   sourceUrl: string;
+  /**
+   * `true` solo si el archivo se sirve tal cual. Por defecto se entiende que
+   * se redujo y se pasó a WebP, como dice `public/images/commons/CREDITOS.md`.
+   */
+  unmodified?: boolean;
 }
 
 export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
@@ -59,6 +64,27 @@ export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
     sourceUrl:
       'https://commons.wikimedia.org/wiki/File:View_of_Mosteiro_dos_Jer%C3%B3nimos_from_Monument_of_the_Discoveries,_Bel%C3%A9m,_Lisbon,_20250604_1111_9124.jpg',
   },
+  '/images/commons/torre-belem-werner-wikimedia.webp': {
+    subject: 'Torre de Belém vista de lado, sobre el Tajo',
+    author: 'Berthold Werner',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lisbon_Torre_de_Bel%C3%A9m_BW_2018-10-03_16-35-08.jpg',
+  },
+  '/images/commons/claustro-jeronimos-halun-wikimedia.webp': {
+    subject: 'Claustro del Monasterio de los Jerónimos, con sus dos pisos y el jardín',
+    author: 'Jakub Hałun',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cloister_of_the_Jer%C3%B3nimos_Monastery_in_Bel%C3%A9m,_Lisbon,_20250604_1309_9188.jpg',
+  },
+  '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp': {
+    subject: 'Torre de Belém con el Puente 25 de Abril y un velero al fondo',
+    author: 'Lisbon Photoshoots',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Tower_and_the_25_de_Abril_Bridge_in_the_background.jpg',
+  },
   '/images/commons/sintra-palacio-pena-wikimedia.webp': {
     subject: 'Palacio da Pena, Sintra',
     author: 'CEphoto, Uwe Aranas',
@@ -72,7 +98,14 @@ export function getPhotoCredit(image?: string): PhotoCredit | undefined {
   return image ? PHOTO_CREDITS[image] : undefined;
 }
 
-/** «Foto: Autor / Wikimedia Commons, CC BY-SA 4.0». */
+/** Cambio hecho al archivo original, para mostrarlo junto al crédito. */
+export function photoAdaptation(credit: PhotoCredit, lang: 'es' | 'en' = 'es'): string | undefined {
+  if (credit.unmodified) return undefined;
+  return lang === 'en' ? 'resized and converted to WebP' : 'reducida y convertida a WebP';
+}
+
+/** «Foto: Autor / Wikimedia Commons, CC BY-SA 4.0 (reducida y convertida a WebP)». */
 export function formatPhotoCreditShort(credit: PhotoCredit): string {
-  return `Foto: ${credit.author} / Wikimedia Commons, ${credit.license}`;
+  const adaptation = photoAdaptation(credit);
+  return `Foto: ${credit.author} / Wikimedia Commons, ${credit.license}${adaptation ? ` (${adaptation})` : ''}`;
 }

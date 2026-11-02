@@ -117,7 +117,7 @@ export const FREE_TOUR_CATEGORIES: readonly FreeTourCategory[] = [
     name: 'Belém',
     label: 'Historia marítima',
     icon: 'sailing',
-    image: '/images/actividades/torre-de-belem-lisboa.webp',
+    image: '/images/commons/torre-belem-werner-wikimedia.webp',
     imageAlt: 'Torre de Belém junto al río Tajo',
     description:
       'Una ruta centrada en los Descubrimientos, los Jerónimos, la Torre de Belém y la historia marítima portuguesa.',
