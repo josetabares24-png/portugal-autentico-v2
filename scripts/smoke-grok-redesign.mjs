@@ -115,8 +115,10 @@ assert('footer compacto en móvil conserva identidad',
 
 assert('navegación móvil identificable', navbar.includes('aria-expanded') && navbar.includes('main-mobile-menu'));
 
-assert('el botón Buscar siempre abre el primer resultado disponible',
-  search.includes('results.length > 0') && search.includes('router.push(results[0].href)'));
+assert('Buscar respeta la selección manual y conserva el primer resultado como alternativa',
+  search.includes('selected?.label === term ? selected.href : results[0]?.href') &&
+  search.includes('router.push(destination)') &&
+  search.includes("router.push('/blog')"));
 assert('el menú se cierra con Escape y recupera el foco',
   navbar.includes("event.key === 'Escape'") && navbar.includes('mobileMenuToggle.current?.focus()'));
 assert('el logo conserva su relación de aspecto original',
