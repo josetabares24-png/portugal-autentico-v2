@@ -50,9 +50,9 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
     <main id="main-content" className="grok-blog-page">
       <BlogLandingHeader />
 
-      <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-8">
-        <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Últimos artículos</h2>
-        <p className="mt-2 text-sm text-text-secondary">Ordenados por fecha de publicación, del más reciente al más antiguo. Puedes filtrar por tema.</p>
+      <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-5 md:pt-8">
+        <h2 className="font-display text-2xl font-semibold not-italic text-text-main md:text-3xl">Últimos artículos</h2>
+        <p className="mt-2 text-sm text-text-secondary">Publicaciones recientes. Filtra por tema.</p>
       </div>
 
       {/* Filtros por categoría */}

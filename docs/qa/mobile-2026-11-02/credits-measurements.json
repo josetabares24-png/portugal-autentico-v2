@@ -1,0 +1,12 @@
+{
+  "creditsOpen": {
+    "height": 652,
+    "licenses": 8,
+    "open": true,
+    "sources": 8
+  },
+  "creditsClosed": {
+    "height": 44,
+    "open": false
+  }
+}

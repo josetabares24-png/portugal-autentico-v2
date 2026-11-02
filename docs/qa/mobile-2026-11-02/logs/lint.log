@@ -1,0 +1,11 @@
+
+> portugal-autentico@0.1.0 lint
+> eslint .
+
+[BABEL] Note: The code generator has deoptimised the styling of C:\Users\estab\Desktop\estaba-lisboa-redesign\src\app\[locale]\blog\[slug]\page.tsx as it exceeds the max of 500KB.
+
+C:\Users\estab\Desktop\estaba-lisboa-redesign\src\components\itinerarios\ItineraryContextualCta.tsx
+  84:6  warning  React Hook useEffect has a missing dependency: 'analyticsParams'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+✖ 1 problem (0 errors, 1 warning)
+

@@ -3,7 +3,7 @@ import { Clock3, Route, TicketCheck } from 'lucide-react';
 import { BookingProductRenderer } from '@/components/afiliados/BookingProductRenderer';
 import { TourismBookingHero } from '@/components/booking/TourismBookingHero';
 import { HUB_PRODUCTS, HUB_SECTIONS } from '@/data/bookings';
-import { getPhotoCredit, type PhotoCredit } from '@/data/photo-credits';
+import { getPhotoCredit, photoAdaptation, type PhotoCredit } from '@/data/photo-credits';
 import type { TiqetsSnapshotMap } from '@/types/tiqets-live';
 
 const PAGE_URL = 'https://estabaenlisboa.com/comprar-entradas';
@@ -286,14 +286,15 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
       </section>
 
       {hubPhotoCredits.length > 0 ? (
-        <section aria-labelledby="creditos-fotos" className="border-t border-border-soft bg-background-light pb-10 pt-8">
+        <section aria-labelledby="creditos-fotos" className="border-t border-border-soft bg-background-light py-4 md:py-5">
           <div className="mx-auto max-w-3xl px-6">
-            <h2 id="creditos-fotos" className="font-body text-xs font-bold uppercase tracking-[0.16em] text-text-secondary">
+            <details className="photo-credits-disclosure">
+            <summary id="creditos-fotos" className="min-h-11 cursor-pointer py-3 font-body text-sm font-semibold text-text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
               Créditos de las fotos
-            </h2>
+            </summary>
             <p className="mt-2 font-article text-xs leading-relaxed text-text-secondary">
-              Estas fotos no son mías: son de Wikimedia Commons, con licencia libre. Las he
-              reducido de tamaño; por lo demás, están como las publicó su autor.
+              Fotografías de Wikimedia Commons. Aquí puedes consultar el autor, la fuente,
+              la licencia y las adaptaciones de cada imagen.
             </p>
             <ul className="mt-3 space-y-1.5 font-body text-xs leading-relaxed text-text-secondary">
               {hubPhotoCredits.map(({ productName, credit }) => (
@@ -323,10 +324,11 @@ export default function ComprarEntradasClient({ tiqetsProducts }: ComprarEntrada
                   ) : (
                     credit.license
                   )}
-                  .
+                  . {photoAdaptation(credit)}
                 </li>
               ))}
             </ul>
+            </details>
           </div>
         </section>
       ) : null}

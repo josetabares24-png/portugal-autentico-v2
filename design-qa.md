@@ -46,4 +46,18 @@ Menú móvil abre/cierra con Escape y devuelve foco. Buscador con ByBoat, «¿tr
 
 **Checklist:** fuente y capturas abiertas; comparación conjunta completa y enfocada; cinco anchos verificados; correcciones recapturadas; funcionalidad principal probada; límites registrados; mantener preview abierta para José. La aprobación de publicación sigue separada.
 
+## Actualización tras las cinco capturas del iPhone de José
+
+La instrucción posterior pide menos altura, créditos plegados y retirar el bloque de pasos. [Informe de esta iteración](docs/mobile-feedback-2026-11-02.md). Las cinco imágenes de José son la fuente del problema; antes/después adicionales capturados en esta revisión, sin usar capturas antiguas como evidencia nueva.
+
+- [Comparación conjunta de pie](docs/qa/mobile-2026-11-02/compare-footer.jpg) y [blog](docs/qa/mobile-2026-11-02/compare-blog.jpg), fuente anterior izquierda/implementación nueva derecha, mismo viewport390, raster382px sin estirar. En el pie se compara solo ese componente, no la sección previa de dos páginas diferentes.
+- Ambos montajes se abrieron y revisaron juntos tras recapturar el antes del pie a la escala correcta; no se aceptó la primera imagen, cuyo bitmap aún tenía el tamaño anterior.
+- P1: desbordamiento de fecha reportado en Safari iOS. Se elimina el padding del control nativo y se traslada al contenedor; min-width0/minmax. Input44px contenido a320/390/768/1440 en Chromium. No se declara reproducción ni certificación del motor Safari iOS.
+- P2: pie y cabecera demasiado altos. Pie498→327px, blog321→238px; logo móvil104px, mismos13enlaces. Blog mantiene cabecera textual por decisión delegada: las imágenes editoriales aparecen antes.
+- P2: créditos extensos y explicación duplicada. Créditos44px plegados, ocho fuentes/licencias accesibles por click/Enter; atribución individual del artículo comprobada. Se retiran cuatro pasos y consejos repetidos; FAQ/propinas conservados.
+- Tipografía/paleta/fotografías mantienen la marca existente; sin nuevos assets ni paquetes. Espacios reducidos sin recortar el selector ni los enlaces. Texto/metadata/artículos/afiliación verificados con nueva captura110rutas y138controles.
+- 15capturas nuevas de las3páginas en5anchos, sin overflow; dimensiones raster contrastadas. Build/TypeScript y checks relevantes correctos; Lighthousea11y100 en3páginas y consola final sin errores observados. [Matriz](docs/qa/mobile-2026-11-02/matrix.json), [créditos cerrados](docs/qa/mobile-2026-11-02/credits-closed-390.jpg) y [abiertos](docs/qa/mobile-2026-11-02/credits-open-390.jpg).
+
+No quedan P0/P1/P2 visuales accionables observados en las superficies disponibles. El iPhone físico, lectores de pantalla exhaustivos y aprobación de producción siguen fuera de esta certificación local; el defecto específico reportado debe revisarse en ese dispositivo con la nueva preview.
+
 final result: passed

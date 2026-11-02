@@ -1,0 +1,5 @@
+
+> portugal-autentico@0.1.0 test:blog-chronology
+> node scripts/test-blog-chronology.mjs
+
+Cronología OK: 71 artículos. Más reciente: paseo-en-velero-lisboa-lisbon-byboat 2026-10-27

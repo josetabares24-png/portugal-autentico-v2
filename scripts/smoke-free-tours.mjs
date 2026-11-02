@@ -361,12 +361,12 @@ async function checkLanding(baseUrl, expectedRef = null) {
   // duplicaría cualquier recuento hecho sobre el HTML en bruto.
   const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '');
   const stepCount = [...visible.matchAll(/Paso\s\d/g)].length;
-  record('el funcionamiento se explica en 4 pasos', stepCount === 4, `${stepCount} pasos`);
+  record('propina visible sin repetir un bloque de cuatro pasos', stepCount === 0 && visible.includes('Propina al terminar'), `${stepCount} pasos repetidos`);
 
   record(
-    'hay bloque de consejos prácticos',
-    html.includes('Consejos prácticos antes de salir'),
-    'presente'
+    'movilidad y calzado conservados en las preguntas desplegables',
+    visible.includes('¿Qué conviene llevar?') && visible.includes('¿Es buena opción si me cuesta caminar?') && visible.includes('Calzado cómodo'),
+    'consejos sin duplicar una sección'
   );
 
   record(

@@ -51,36 +51,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const steps = [
-  {
-    icon: 'event_available',
-    title: 'Reservas tu plaza',
-    text: 'No pagas nada al reservar. Sirve para que el guía sepa cuántos vais.',
-  },
-  {
-    icon: 'directions_walk',
-    title: 'Haces el recorrido',
-    text: 'A pie, con un guía en español que te va contando la zona.',
-  },
-  {
-    icon: 'recommend',
-    title: 'Al final, tú decides',
-    text: 'Le das al guía lo que te parezca justo según cómo haya ido.',
-  },
-  {
-    icon: 'savings',
-    title: 'Cuánto se suele dar',
-    text: 'No hay mínimo. Como referencia, mucha gente deja entre 5 y 10 € por persona.',
-  },
-];
-
-const tips = [
-  { icon: 'schedule', text: 'En temporada alta, reserva con antelación: los grupos se llenan.' },
-  { icon: 'directions_walk', text: 'Calzado cómodo. Lisboa es adoquín y cuesta.' },
-  { icon: 'translate', text: 'Comprueba idioma, hora y punto de encuentro antes de salir.' },
-  { icon: 'PersonStanding', text: 'Revisa la dificultad y las pendientes, sobre todo en Alfama.' },
-];
-
 const faqs = [
   {
     question: '¿Un free tour es realmente gratis?',
@@ -329,57 +299,6 @@ export default function FreeToursLisboaPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------------------------------------------------------
-          Cómo funciona + consejos
-      ---------------------------------------------------------------- */}
-      <section className="bg-background-light py-10 md:py-12">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">Antes de reservar</p>
-          <h2 className="mb-4 max-w-2xl font-display text-3xl font-semibold not-italic leading-tight text-text-main md:text-4xl">
-            Cómo funciona realmente un free tour
-          </h2>
-          <p className="mb-10 max-w-2xl leading-relaxed text-text-secondary">
-            «Free» no quiere decir que el guía trabaje gratis: cobra de la propina.
-            Si es tu primer free tour, esto es lo que conviene saber.
-          </p>
-
-          <ol className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, index) => (
-              <li key={step.title} className="relative flex flex-col lg:pr-6">
-                {/* Progresión visual entre pasos, sólo donde hay hueco */}
-                {index < steps.length - 1 && (
-                  <span aria-hidden="true" className="absolute right-0 top-5 hidden h-px w-6 bg-border-soft lg:block" />
-                )}
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-gold/40 bg-white text-gold">
-                    <Icon name={step.icon} size={18} />
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-terracotta">
-                    {`Paso ${index + 1}`}
-                  </span>
-                </div>
-                <h3 className="mb-1.5 font-semibold text-text-main">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{step.text}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-10 border-l-2 border-gold bg-white/35 px-5 py-5 md:mt-12 md:px-6">
-            <h3 className="mb-4 font-display text-xl font-semibold not-italic leading-snug text-text-main">
-              Consejos prácticos antes de salir
-            </h3>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {tips.map((tip) => (
-                <li key={tip.text} className="flex items-start gap-2.5 text-sm leading-relaxed text-text-secondary">
-                  <Icon name={tip.icon} size={16} className="mt-0.5 flex-shrink-0 text-gold" />
-                  <span>{tip.text}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>

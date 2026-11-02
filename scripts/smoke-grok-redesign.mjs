@@ -99,7 +99,7 @@ assert('consentimiento solo con elección explícita y notificación',
   cookieBanner.includes("localStorage.setItem('cookieConsentExplicit', 'true')") &&
   cookieBanner.includes("window.dispatchEvent(new CustomEvent('cookie-consent'"));
 assert('footer compacto en móvil conserva identidad',
-  footer.includes('w-[150px]') && footer.includes('pb-8 pt-8') && !footer.includes('pb-24'));
+  footer.includes('w-[104px]') && footer.includes('py-5') && !footer.includes('pb-24'));
 
 assert('navegación móvil identificable', navbar.includes('aria-expanded') && navbar.includes('main-mobile-menu'));
 

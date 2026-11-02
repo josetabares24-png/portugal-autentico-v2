@@ -533,6 +533,14 @@
 .grok-original-route[open] > summary { border-bottom: 1px solid var(--eel-line); }
 .photo-attribution { margin: 8px 0 0; padding: 0 4px; color: #52676e; font: 400 .75rem/1.5 var(--grok-body, Arial), sans-serif; }
 .photo-attribution a { color: var(--eel-sea-dark); text-decoration: underline; text-underline-offset: 2px; }
+.photo-attribution > summary { min-height: 32px; padding: 6px 0; color: var(--eel-sea-dark); cursor: pointer; font-weight: 600; }
+.photo-attribution > summary:focus-visible { outline: 2px solid var(--eel-sea-dark); outline-offset: 2px; }
+.photo-attribution > p { margin: 4px 0 0; }
+/* WebKit/iOS calcula mal width:100% en date con padding. El espacio y
+   borde pertenecen al contenedor, y el control nativo puede encogerse. */
+.free-tour-date-input { min-inline-size: 0; padding: 0; border-radius: 0; }
+.free-tour-date-input::-webkit-date-and-time-value { min-height: 1.5em; text-align: left; }
+.free-tour-date-input::-webkit-datetime-edit { padding: 0; }
 .grok-pack-body .card-surface { border: 1px solid var(--eel-line); border-top: 3px solid var(--eel-yellow); }
 .grok-pack-body .card-surface h3 { color: var(--eel-deep); }
 .grok-pack-body #preview { scroll-margin-top: 100px; }
