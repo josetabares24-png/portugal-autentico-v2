@@ -98,9 +98,9 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
       </form>
       {showResults && term.trim() && (
         <div className={s.searchResults} id="grok-home-search-results">
-          <p className={s.visuallyHidden} role="status" aria-live="polite">
+          <span className={s.visuallyHidden} role="status" aria-live="polite">
             {results.length ? `${results.length} sugerencias disponibles. Usa Tab para elegir una.` : 'No hay coincidencias.'}
-          </p>
+          </span>
           {results.length ? (
             <ul>{results.map((result) => (
               <li key={result.href}>
