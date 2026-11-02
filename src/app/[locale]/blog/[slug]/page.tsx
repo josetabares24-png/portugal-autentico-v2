@@ -15,7 +15,8 @@ import { BLOG_BOOKING_PLACEMENTS } from '@/data/blog-booking-placements';
 import Stay22Script from '@/components/afiliados/Stay22Script';
 import { resolveBookingBlocks, type ResolvedBookingBlock } from '@/lib/booking-blocks';
 import { BLOG_RELATED_POST_IDS } from '@/data/blog-related';
-import { blogFallbackImage, blogImageMap } from '@/lib/media';
+import { blogImageMap } from '@/lib/media';
+import { editorialPhoto } from '@/lib/editorial-photo-policy';
 import { articleHasNewsletter } from '@/lib/newsletter';
 import { EDITORIAL_PILOT } from '@/data/editorial-pilot';
 import { EDITORIAL_TRANSPORT } from '@/data/editorial-transport';
@@ -936,8 +937,8 @@ const articles: Record<string, Article> = {
     descripcion: 'Qué incluye cada entrada al Palacio da Pena, precios oficiales de 2026, cómo funciona la hora fija, dónde comprar y cómo subir desde Lisboa en tren desde Rossio y autobús 434.',
     seoTitle: 'Palacio da Pena 2026: entradas, horarios y cómo ir',
     metaDescription: 'Entrada a Pena desde 20 € con hora fija y sin tolerancia de retraso. Horarios, qué incluye cada billete y cómo subir en tren desde Rossio y autobús 434.',
-    imagen: '/images/estacion-sintra.jpg',
-    imageAlt: 'Estación de tren de Sintra, de donde sale el autobús 434 que sube a la Pena',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
+    imageAlt: 'Palácio da Pena en Sintra, edificio de colores sobre la sierra',
     categoria: 'Guías',
     fecha: '9 Oct 2026',
     fechaActualizacion: 'Verificado el 9 de octubre de 2026',
@@ -5624,19 +5625,19 @@ const localImages: Record<string, string> = {
   'historia-de-lisboa': '/images/lisboa-originales/mural-historia-lisboa.jpg',
   'terremoto-lisboa-1755': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'descubrimientos-portugueses-lisboa': '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
-  'azulejos-portugueses-historia': '/images/aldaba-puerta-lisboa.jpg',
+  'azulejos-portugueses-historia': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'novedades-lisboa-2026': '/images/parque-nacoes-torres-atardecer.jpg',
   'festivales-eventos-lisboa-2026': '/images/festival-sardinhas-noche.jpg',
   'lisboa-vs-porto': '/images/alfama-panoramica.jpg',
   'monumentos-de-lisboa': '/images/estatua-praca-lisboa.jpg',
   'semana-santa-lisboa': '/images/bairro-alto-calle-noche.jpg',
   'alfama-historia-guia': '/images/alfama-panoramica.jpg',
-  'gastronomia-portuguesa-guia': '/images/tasca-da-graca.jpg',
+  'gastronomia-portuguesa-guia': '/images/actividades/pasteis-de-belem.webp',
   'fado-historia-origen': '/images/fado-tasca-noche.jpg',
   'belem-barrio-guia': '/images/actividades/torre-de-belem-lisboa.webp',
   'chiado-bairro-alto-guia': '/images/tranvia-28.jpg',
   'mouraria-barrio-guia': '/images/alfama-panoramica.jpg',
-  'vinos-portugueses-guia': '/images/fado-tasca-noche.jpg',
+  'vinos-portugueses-guia': '/images/vino-celebracion.jpg',
   'tram-28-historia-guia': '/images/tranvia-28.jpg',
   'bacalhau-plato-portugal': '/images/tasca-da-graca.jpg',
   'arquitectura-manuelina-lisboa': '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
@@ -5742,6 +5743,7 @@ const AUDITED_ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
  * `imageAlt` cambiaría también el `og:image:alt`, y esta fase no toca metadata.
  */
 const heroAlt: Record<string, string> = {
+  'azulejos-portugueses-historia': 'Panel de azulejos portugueses que representa el Terreiro do Paço histórico de Lisboa',
   'mejores-miradores-lisboa':
     'Vista de Alfama desde Portas do Sol, con los tejados de Lisboa y el río Tajo al fondo',
   'como-moverse-por-lisboa':
@@ -5880,9 +5882,10 @@ function getSeoDescription(description: string) {
 
 function resolveBlogImage(slug: string, image?: string) {
   const mapped = blogImageMap[slug];
-  const candidate = mapped || image || blogFallbackImage;
+  const candidate = editorialPhoto(slug, mapped || image);
+  if (!candidate) return null;
   if (candidate.startsWith('http')) {
-    return blogFallbackImage;
+    return null;
   }
   return candidate;
 }
@@ -6023,14 +6026,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ...(article.dateModified ? { modifiedTime: article.dateModified } : {}),
       authors: [AUTHOR_PROFILE_URL],
       section: article.categoria,
-      images: [
+      images: image ? [
         {
           url: toAbsoluteUrl(image),
           width: 1200,
           height: 630,
           alt: article.imageAlt ?? article.titulo,
         },
-      ],
+      ] : [],
     },
     /*
      * Sin este bloque, cada artículo heredaba el `twitter:title` y el
@@ -6044,10 +6047,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
      * sin imagen. La imagen es la misma que ya usa Open Graph aquí arriba.
      */
     twitter: {
-      card: 'summary_large_image',
+      card: image ? 'summary_large_image' : 'summary',
       title: seoTitle,
       description: seoDescription,
-      images: [toAbsoluteUrl(image)],
+      images: image ? [toAbsoluteUrl(image)] : [],
     },
   };
 }
@@ -6145,10 +6148,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       name: AUTHOR_NAME,
       url: AUTHOR_PROFILE_URL,
     },
-    image: {
+    ...(heroImage ? { image: {
       '@type': 'ImageObject',
       url: toAbsoluteUrl(heroImage),
-    },
+    } } : {}),
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': toAbsoluteUrl(`/blog/${slug}`),

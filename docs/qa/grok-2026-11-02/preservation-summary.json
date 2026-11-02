@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "sha256": "9805d2d0fa6d47b47f57d3eb5f15466e73b9fb206eabcc9993b04502721054aa",
+    "capturedAt": "2026-11-01T20:36:20.478Z",
+    "urls": 110,
+    "sitemapSha256": "216e2d752302cc742fca57878fdd5fb1f8c599a2694e531351ae78530eedacac",
+    "errors": []
+  },
+  "after": {
+    "sha256": "20666fa6c0669daccd150b97b0117987f5f6e0d095c4883ae9fda3c0711a4ac5",
+    "capturedAt": "2026-11-02T07:32:10.503Z",
+    "urls": 110,
+    "sitemapSha256": "216e2d752302cc742fca57878fdd5fb1f8c599a2694e531351ae78530eedacac",
+    "errors": []
+  }
+}

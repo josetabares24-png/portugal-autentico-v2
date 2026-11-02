@@ -40,7 +40,7 @@ export function TourismBookingHero({
   objectPosition = 'center',
 }: TourismBookingHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden bg-night text-white">
+    <section className="grok-booking-hero relative isolate overflow-hidden bg-night text-white">
       <Image
         src={image}
         alt={imageAlt}
@@ -58,7 +58,7 @@ export function TourismBookingHero({
             separar; el `pb` evita que la miga toque el antetítulo. */}
         {breadcrumb ? <div className="mb-auto pb-7">{breadcrumb}</div> : null}
 
-        <p className="mb-3 font-body text-xs font-bold uppercase tracking-[0.18em] text-gold">
+        <p data-grok-booking-eyebrow="true" className="mb-3 font-body text-xs font-bold uppercase tracking-[0.18em] text-gold">
           {eyebrow}
         </p>
         <h1 className="max-w-4xl font-display text-[2.65rem] font-semibold leading-[1.02] tracking-normal text-white sm:text-5xl md:text-6xl">
@@ -71,10 +71,9 @@ export function TourismBookingHero({
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href={primaryHref}
-            className="inline-flex min-h-12 items-center justify-center rounded-md bg-terracotta px-6 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            data-grok-booking-primary="true" className="inline-flex min-h-12 items-center justify-center rounded-md bg-terracotta px-6 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             {primaryLabel}
-            <span aria-hidden="true" className="ml-2">↓</span>
           </Link>
           {secondaryHref && secondaryLabel ? (
             <Link

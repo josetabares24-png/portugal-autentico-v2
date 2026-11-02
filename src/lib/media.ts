@@ -14,6 +14,7 @@ export const timelineFallbackImages = [
 ];
 
 export const blogImageMap: Record<string, string> = {
+  'azulejos-portugueses-historia': '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   'casa-cristiano-ronaldo-portugal-quinta-da-marinha': '/images/actividades/cascais-centro-historico.webp',
   'time-out-market-lisboa': '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg',
   'estacion-oriente-lisboa': '/images/lisboa-originales/estacion-oriente-lisboa/estacion-oriente-lisboa-tren-cubierta-calatrava.jpg',

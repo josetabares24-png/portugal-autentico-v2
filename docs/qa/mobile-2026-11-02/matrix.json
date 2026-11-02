@@ -1,0 +1,122 @@
+[
+  {
+    "name": "blog",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1432,
+    "width": 1440
+  },
+  {
+    "name": "blog",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "name": "blog",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "name": "blog",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "name": "blog",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "name": "tours",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1432,
+    "width": 1440
+  },
+  {
+    "name": "tours",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "name": "tours",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "name": "tours",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "name": "tours",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "name": "tickets",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1432,
+    "width": 1440
+  },
+  {
+    "name": "tickets",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 1016,
+    "width": 1024
+  },
+  {
+    "name": "tickets",
+    "footerHeight": 302.09375,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "name": "tickets",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "name": "tickets",
+    "footerHeight": 326.96875,
+    "h1": 1,
+    "main": 1,
+    "scrollWidth": 312,
+    "width": 320
+  }
+]

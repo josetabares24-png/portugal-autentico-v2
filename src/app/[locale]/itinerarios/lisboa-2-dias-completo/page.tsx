@@ -1,4 +1,4 @@
-import { ItineraryHero } from '@/components/itinerarios/ItineraryHero';
+import GrokTwoDayItinerary from '@/components/itinerarios/GrokTwoDayItinerary';
 import { ItineraryDayOverview } from '@/components/itinerarios/ItineraryDayOverview';
 import { ItineraryDay } from '@/components/itinerarios/ItineraryDay';
 import { ItineraryMapSection } from '@/components/itinerarios/ItineraryMapSection';
@@ -45,12 +45,6 @@ const SLUG = 'lisboa-2-dias-completo';
 
 export default function Lisboa2DiasCompletoPage() {
   const dias = agruparPorDia(lisboa2DiasTimeline, lisboa2DiasDays);
-  const totalParadas = lisboa2DiasTimeline.length;
-
-  const horas = dias.flatMap((d) => d.stops.map((s) => s.time)).sort();
-  const primeraHora = horas[0] ?? '';
-  const ultimaHora = horas[horas.length - 1] ?? '';
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -61,24 +55,13 @@ export default function Lisboa2DiasCompletoPage() {
   };
 
   return (
-    <main id="main-content" className="bg-background-light">
+    <main id="main-content" className="grok-itinerary-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <ItineraryHero
-        eyebrow="Itinerario"
-        breadcrumbLabel="Lisboa en 2 días"
-        title="Lisboa en 2 días"
-        lead="Dos jornadas cerradas: el centro histórico y el tranvía 28 el primer día, Belém y LX Factory el segundo, con fado en Alfama para cerrar. Con la hora de cada parada y el mapa al final."
-        image="/images/miradouro-atardecer.jpg"
-        imageAlt="Atardecer desde un miradouro de Lisboa, con los tejados del centro al fondo"
-        meta={[
-          { label: 'Duración', value: '2 días', icon: 'schedule' },
-          { label: 'Paradas', value: `${totalParadas}`, icon: 'location_on' },
-          { label: 'Horario', value: `${primeraHora}–${ultimaHora}`, icon: 'event' },
-          { label: 'Cómo moverse', value: 'A pie y tranvía', icon: 'directions_walk' },
-        ]}
-      />
-
+      <GrokTwoDayItinerary>
+      <details className="grok-original-route" id="recorrido-completo">
+        <summary>Recorrido detallado: las {lisboa2DiasTimeline.length} paradas, mapa y reservas</summary>
+        <p className="px-6 pt-6 text-base leading-relaxed">El resumen de arriba es flexible. Aquí conservamos la ruta editorial completa, con sus recomendaciones y enlaces de reserva. Las horas son orientativas; elige las visitas que encajen en tu viaje.</p>
       <div className="mx-auto max-w-4xl px-6 pt-10 md:px-8 md:pt-14">
         <ItineraryDayOverview dias={dias} />
       </div>
@@ -97,6 +80,8 @@ export default function Lisboa2DiasCompletoPage() {
       />
 
       <ItineraryPersonalizeCTA currentSlug={SLUG} currentDays={2} />
+      </details>
+      </GrokTwoDayItinerary>
     </main>
   );
 }

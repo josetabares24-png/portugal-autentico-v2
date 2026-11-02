@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import DocumentShell from "@/components/DocumentShell";
+import DocumentShell from "@/components/EnglishDocumentShell";
 import EnglishNavigation from "@/components/english/EnglishNavigation";
-import CookieBanner from "@/components/CookieBanner";
+import CookieBanner, { CookiePreferencesButton } from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
@@ -94,6 +94,7 @@ export default function EnglishLayout({
             <Link className={footerLinkClass} href="/aviso-legal">
               Legal notice (Spanish)
             </Link>
+            <CookiePreferencesButton language="en" className={footerLinkClass} />
           </nav>
         </div>
       </footer>

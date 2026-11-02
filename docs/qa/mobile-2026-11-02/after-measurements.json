@@ -1,0 +1,114 @@
+[
+  {
+    "control": {
+      "bottom": 862.578125,
+      "height": 46,
+      "left": 24,
+      "right": 358,
+      "top": 816.578125,
+      "width": 334,
+      "x": 24,
+      "y": 816.578125
+    },
+    "footerHeight": 326.96875,
+    "footerLinks": 13,
+    "input": {
+      "bottom": 861.578125,
+      "height": 44,
+      "left": 67,
+      "right": 345,
+      "top": 817.578125,
+      "width": 278,
+      "x": 67,
+      "y": 817.578125
+    },
+    "padding": "0px",
+    "route": "/free-tours-lisboa",
+    "scrollWidth": 382,
+    "width": 390
+  },
+  {
+    "control": {
+      "bottom": 863.25,
+      "height": 46,
+      "left": 24,
+      "right": 288,
+      "top": 817.25,
+      "width": 264,
+      "x": 24,
+      "y": 817.25
+    },
+    "footerHeight": 326.96875,
+    "footerLinks": 13,
+    "input": {
+      "bottom": 862.25,
+      "height": 44,
+      "left": 67,
+      "right": 275,
+      "top": 818.25,
+      "width": 208,
+      "x": 67,
+      "y": 818.25
+    },
+    "padding": "0px",
+    "route": "/free-tours-lisboa",
+    "scrollWidth": 312,
+    "width": 320
+  },
+  {
+    "control": {
+      "bottom": 883.5,
+      "height": 46,
+      "left": 40,
+      "right": 543.90625,
+      "top": 837.5,
+      "width": 503.90625,
+      "x": 40,
+      "y": 837.5
+    },
+    "footerHeight": 302.09375,
+    "footerLinks": 13,
+    "input": {
+      "bottom": 882.5,
+      "height": 44,
+      "left": 83,
+      "right": 530.90625,
+      "top": 838.5,
+      "width": 447.90625,
+      "x": 83,
+      "y": 838.5
+    },
+    "padding": "0px",
+    "route": "/free-tours-lisboa",
+    "scrollWidth": 760,
+    "width": 768
+  },
+  {
+    "control": {
+      "bottom": 746.5,
+      "height": 46,
+      "left": 647.828125,
+      "right": 1075.90625,
+      "top": 700.5,
+      "width": 428.078125,
+      "x": 647.828125,
+      "y": 700.5
+    },
+    "footerHeight": 302.09375,
+    "footerLinks": 13,
+    "input": {
+      "bottom": 745.5,
+      "height": 44,
+      "left": 690.828125,
+      "right": 1062.90625,
+      "top": 701.5,
+      "width": 372.078125,
+      "x": 690.828125,
+      "y": 701.5
+    },
+    "padding": "0px",
+    "route": "/free-tours-lisboa",
+    "scrollWidth": 1432,
+    "width": 1440
+  }
+]

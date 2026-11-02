@@ -1,0 +1,15 @@
+{
+  "footer": {
+    "height": 498.375,
+    "links": 13
+  },
+  "blog": {
+    "height": 320.890625
+  },
+  "date": {
+    "height": 52,
+    "paddingLeft": "48px",
+    "paddingRight": "48px",
+    "width": 334
+  }
+}

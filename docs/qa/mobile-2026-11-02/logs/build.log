@@ -1,0 +1,114 @@
+
+> portugal-autentico@0.1.0 build
+> next build
+
+▲ Next.js 16.3.5 (Turbopack)
+✓ Running next.config.mjs took 215ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.1s
+  Running TypeScript ...
+  Finished TypeScript in 5.3s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/144) ...
+  Generating static pages using 15 workers (36/144) 
+  Generating static pages using 15 workers (72/144) 
+  Generating static pages using 15 workers (108/144) 
+✓ Generating static pages using 15 workers (144/144) in 1212ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+├   /[locale]
+│ └ ● /es
+├ ƒ /[locale]/[...notFound]
+├   /[locale]/actividades
+│ └ ● /es/actividades
+├   /[locale]/actividades/[slug]
+│ ├ ● /es/actividades/miradouro-santa-luzia
+│ ├ ● /es/actividades/miradouro-senhora-do-monte
+│ ├ ● /es/actividades/miradouro-portas-do-sol
+│ └ ● [+17 more paths]
+├   /[locale]/aviso-legal
+│ └ ● /es/aviso-legal
+├ ƒ /[locale]/blog
+├   /[locale]/blog/[slug]
+│ ├ ● /es/blog/paseo-en-velero-lisboa-lisbon-byboat
+│ ├ ● /es/blog/portugal-en-7-dias
+│ ├ ● /es/blog/como-moverse-por-portugal
+│ └ ● [+68 more paths]
+├   /[locale]/blog/paseo-en-velero-lisboa-lisbon-byboat
+│ └ ● /es/blog/paseo-en-velero-lisboa-lisbon-byboat
+├   /[locale]/calculadora-presupuesto-lisboa
+│ └ ● /es/calculadora-presupuesto-lisboa
+├   /[locale]/colaboraciones/previa-lisbon-byboat
+│ └ ● /es/colaboraciones/previa-lisbon-byboat
+├   /[locale]/comprar-entradas
+│ └ ● /es/comprar-entradas
+├   /[locale]/contacto
+│ └ ● /es/contacto
+├   /[locale]/donde-comer-en-lisboa
+│ └ ● /es/donde-comer-en-lisboa
+├   /[locale]/faq
+│ └ ● /es/faq
+├   /[locale]/free-tours-lisboa
+│ └ ● /es/free-tours-lisboa
+├   /[locale]/guia/[slug]
+│ ├ ● /es/guia/rutas
+│ ├ ● /es/guia/movilidad
+│ ├ ● /es/guia/que-visitar
+│ └ ● [+4 more paths]
+├   /[locale]/itinerarios
+│ └ ● /es/itinerarios
+├   /[locale]/itinerarios/[slug]
+│ ├ ● /es/itinerarios/lisboa-1-dia-lo-esencial
+│ ├ ● /es/itinerarios/lisboa-2-dias-completo
+│ ├ ● /es/itinerarios/lisboa-3-dias-premium
+│ └ ● [+4 more paths]
+├   /[locale]/itinerarios/lisboa-1-dia-lo-esencial
+│ └ ● /es/itinerarios/lisboa-1-dia-lo-esencial
+├   /[locale]/itinerarios/lisboa-2-dias-completo
+│ └ ● /es/itinerarios/lisboa-2-dias-completo
+├   /[locale]/itinerarios/lisboa-3-dias-premium
+│ └ ● /es/itinerarios/lisboa-3-dias-premium
+├   /[locale]/planifica-tu-viaje
+│ └ ● /es/planifica-tu-viaje
+├   /[locale]/politica-cookies
+│ └ ● /es/politica-cookies
+├   /[locale]/politica-privacidad
+│ └ ● /es/politica-privacidad
+├   /[locale]/portugal
+│ └ ● /es/portugal
+├   /[locale]/que-ver-en-lisboa
+│ └ ● /es/que-ver-en-lisboa
+├   /[locale]/sobre-nosotros
+│ └ ● /es/sobre-nosotros
+├   /[locale]/terminos-condiciones
+│ └ ● /es/terminos-condiciones
+├   /[locale]/transporte-lisboa
+│ └ ● /es/transporte-lisboa
+├   /[locale]/unsubscribe
+│ └ ● /es/unsubscribe
+├ ƒ /api/brevo/campaign
+├ ƒ /api/contact
+├ ƒ /api/free-tours
+├ ƒ /api/media
+├ ƒ /api/planifica-tu-viaje
+├ ƒ /api/presupuesto
+├ ƒ /api/unsubscribe
+├ ○ /app/lisboa-1-dia
+├ ○ /en
+├   /en/[slug]
+│ ├ ● /en/lisbon-airport-to-city-centre
+│ ├ ● /en/lisbon-metro-guide
+│ ├ ● /en/lisbon-3-day-itinerary
+│ └ ● [+2 more paths]
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

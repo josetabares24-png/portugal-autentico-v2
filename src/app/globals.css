@@ -1598,3 +1598,48 @@ button:active:not(:disabled) {
 .article-content aside.article-booking a.article-booking-option:hover {
   color: #fff;
 }
+
+
+/* GROK / ESTABA EN LISBOA — puente visual de páginas interiores.
+ * Solo colores, contornos y tipografía de componentes compartidos.
+ * No modifica el contenido editorial, HTML semántico, URLs ni afiliados. */
+.page-intro {
+  background: #f2f9f9;
+  border-color: #d7e8e8;
+}
+.page-intro .page-eyebrow {
+  color: #08797e;
+  letter-spacing: .11em;
+}
+.page-intro .page-title {
+  font-family: var(--font-display), Georgia, serif;
+  color: #0b3040;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -.02em;
+}
+.page-intro .page-description { color: #526971; }
+.filter-chip:hover {
+  border-color: #008f91;
+  color: #01676b;
+}
+.filter-chip-primary-active,
+.filter-chip-primary-active:hover {
+  border-color: #008f91;
+  background: #008f91;
+  color: #fff;
+}
+.btn-primary {
+  background: #008f91;
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #01676b;
+}
+.btn-dark:hover:not(:disabled) { background: #008f91; }
+.article-content a:hover { text-decoration-thickness: .12em; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-dark,
+  .filter-chip { transition: none; }
+}

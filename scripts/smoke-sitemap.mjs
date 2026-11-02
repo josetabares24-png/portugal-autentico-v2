@@ -659,6 +659,30 @@ async function checkNoindexPages(baseUrl, locs) {
   }
 }
 
+
+async function checkEntradasIndexability(baseUrl, locs) {
+  const path = '/comprar-entradas';
+  const url = `${PROD_ORIGIN}${path}`;
+  const res = await fetch(`${baseUrl}${path}`, { redirect: 'manual' });
+  const html = await res.text();
+  const robots = metaValues(html, 'robots');
+  const googlebot = metaValues(html, 'googlebot');
+  const explicitIndex = (values) => values.length > 0 && values.every((v) =>
+    /\bindex\b/i.test(v) && /\bfollow\b/i.test(v) &&
+    !blocksIndexing(v) && !blocksFollowing(v)
+  );
+  record(
+    '/comprar-entradas es indexable, con canonical propio y en el sitemap',
+    res.status === 200 && !res.headers.get('location') &&
+      selfCanonical(html, url) &&
+      locs.filter((loc) => loc === url).length === 1 &&
+      explicitIndex(robots) && explicitIndex(googlebot) &&
+      indexingBlocks(html, res).length === 0 &&
+      /<h1[\s>]/i.test(html) && html.includes('Entradas que sí conviene comprar antes'),
+    `HTTP ${res.status}, robots=${JSON.stringify(robots)}, googlebot=${JSON.stringify(googlebot)}, sitemap=${locs.includes(url)}`,
+  );
+}
+
 async function checkLegacyGuideRedirects(baseUrl) {
   const redirects = new Map([
     ['/guia/rutas', '/itinerarios'],
@@ -719,7 +743,7 @@ async function checkActivityImages(baseUrl) {
     const destination = REDIRECTS.get(route) ?? route;
     const cards = [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)]
       .filter((match) => attributes(match[0].slice(0, match[0].indexOf('>') + 1)).href === destination);
-    return !cards.some((card) => card[1].includes('<article') && card[1].includes('images%2Factividades'));
+    return !cards.some((card) => card[1].includes('<article') && /images%2F(?:actividades|commons)/.test(card[1]));
   });
   record(
     'las 13 actividades muestran imagen y no placeholder',
@@ -831,6 +855,7 @@ async function main() {
     await checkRobots(baseUrl);
     log('');
     await checkNoindexPages(baseUrl, locs);
+    await checkEntradasIndexability(baseUrl, locs);
     log('');
     await checkNavigation(baseUrl);
     log('');

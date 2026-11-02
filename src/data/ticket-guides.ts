@@ -542,7 +542,7 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       seoTitle: 'Torre de Belém: entradas, precio y horario 2026',
       metaDescription:
         'Entrada 15 €, con franja horaria y unas 900 plazas al día. Dónde comprarla (en la Torre no hay taquilla), quién entra gratis, horario y días de cierre.',
-      imagen: '/images/actividades/torre-de-belem-lisboa.webp',
+      imagen: '/images/commons/torre-belem-werner-wikimedia.webp',
       imageAlt: 'Torre de Belém junto al río Tajo',
       categoria: 'Entradas',
       fecha: '25 Oct 2026',

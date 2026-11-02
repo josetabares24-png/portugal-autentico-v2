@@ -1,0 +1,6 @@
+
+> portugal-autentico@0.1.0 smoke:seo-migration
+> node scripts/smoke-seo-migration.mjs
+
+Migration QA: http://localhost:3440
+{"checks":1530,"failures":0,"sitemapUrls":107,"pages":115,"uniqueInternalLinks":122,"redirects":16}

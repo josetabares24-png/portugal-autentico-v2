@@ -1,6 +1,6 @@
 /**
  * Gancho de resolución para poder probar los módulos TypeScript del proyecto
- * desde Node sin dependencias.
+ * desde Node sin añadir dependencias de ejecución a la aplicación.
  *
  * El problema: Node 22 sabe quitarle los tipos a un `.ts`, pero al resolver
  * módulos ESM exige la extensión explícita. El código fuente, en cambio,
@@ -18,6 +18,25 @@
 
 import { pathToFileURL } from 'node:url';
 import { resolve as resolverRuta } from 'node:path';
+import { readFile } from 'node:fs/promises';
+
+// Node20 (CI) no tiene el stripping nativo de tipos de Node22+. Usamos el
+// compilador ya instalado como devDependency solo cuando el loader nativo
+// rechaza una extensión .ts; no cambiamos la carga de los demás módulos.
+export async function load(url, context, next) {
+  try {
+    return await next(url, context);
+  } catch (error) {
+    if (error.code !== 'ERR_UNKNOWN_FILE_EXTENSION' || !url.startsWith('file:') || !url.endsWith('.ts')) throw error;
+    const { default: ts } = await import('typescript');
+    const source = await readFile(new URL(url), 'utf8');
+    const compiled = ts.transpileModule(source, {
+      fileName: new URL(url).pathname,
+      compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
+    });
+    return { format: 'module', source: compiled.outputText, shortCircuit: true };
+  }
+}
 
 /**
  * El alias `@/` del tsconfig, que apunta a `src/`. Sin esto no se puede

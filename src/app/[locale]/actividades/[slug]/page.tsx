@@ -1,3 +1,4 @@
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 import Link from 'next/link';
 import Image from 'next/image';
 import { toIsoEditorialDate } from '@/lib/editorial-date';
@@ -261,6 +262,7 @@ export default async function ActivityDetailPage({ params }: { params: Promise<{
         </div>
       </section>
 
+      {activity.image && <div className="site-container"><PhotoAttribution image={activity.image} /></div>}
       {/* Contenido */}
       <section className="bg-background-light py-20">
         <div className="max-w-3xl mx-auto px-6">

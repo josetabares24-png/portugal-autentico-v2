@@ -15,6 +15,7 @@ import {
   formatFreeTourTime,
 } from "@/lib/free-tour-booking-options";
 
+import { PhotoAttribution } from "@/components/ui/PhotoAttribution";
 import { finderCopy } from "./finder-copy";
 
 type FinderState = "idle" | "loading" | "success" | "error";
@@ -22,7 +23,7 @@ type FinderState = "idle" | "loading" | "success" | "error";
 const FALLBACK_IMAGES = [
   "/images/lisboa-originales/rua-augusta-arco-lisboa.webp",
   "/images/lisboa-originales/alfama-rua-da-adica-lisboa.jpg",
-  "/images/actividades/torre-de-belem-lisboa.webp",
+  "/images/commons/torre-belem-werner-wikimedia.webp",
 ];
 
 function lisbonDate(date = new Date()) {
@@ -115,6 +116,7 @@ function LiveTourImage({
     failedSource === preferredSource ? fallback : preferredSource;
 
   return (
+    <figure className="relative h-full">
     <img
       src={currentSource}
       alt={alt}
@@ -123,6 +125,8 @@ function LiveTourImage({
       onError={() => setFailedSource(preferredSource)}
       className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
     />
+    {currentSource.includes('/commons/') && <figcaption className="absolute inset-x-0 bottom-0 bg-white/95 px-2 pb-1"><PhotoAttribution image={currentSource} /></figcaption>}
+    </figure>
   );
 }
 
@@ -201,15 +205,15 @@ export default function FreeTourLiveFinder({
   return (
     <section
       id="disponibilidad"
-      className="scroll-mt-20 bg-background-light pb-5 pt-9 md:pb-7 md:pt-12"
+      className="scroll-mt-24 bg-background-light pb-4 pt-6 md:pb-7 md:pt-10"
     >
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="grid gap-6 border-y border-border-soft py-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16 lg:py-7">
+        <div className="grid min-w-0 gap-4 border-y border-border-soft py-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-12 lg:py-7">
           <div>
             <p className="mb-2 font-body text-xs font-bold uppercase tracking-[0.16em] text-terracotta">
               {copy.eyebrow}
             </p>
-            <h2 className="max-w-xl font-display text-[2rem] font-semibold not-italic leading-[1.08] text-night md:text-4xl">
+            <h2 className="max-w-xl font-display text-[1.75rem] font-semibold not-italic leading-[1.12] text-night md:text-4xl">
               {copy.title}
             </h2>
             <p className="mt-3 max-w-xl font-body text-sm leading-relaxed text-text-secondary md:text-base">
@@ -217,18 +221,18 @@ export default function FreeTourLiveFinder({
             </p>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="min-w-0">
             <label
               htmlFor="free-tour-date"
               className="mb-2 block font-body text-xs font-bold uppercase tracking-[0.14em] text-text-secondary"
             >
               {copy.date}
             </label>
-            <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
-              <div className="relative">
+            <div className="grid min-w-0 gap-2.5 sm:grid-cols-[minmax(0,1fr)_auto]">
+              <label htmlFor="free-tour-date" className="free-tour-date-control flex min-w-0 items-center gap-3 rounded-md border border-border-soft bg-white px-3 shadow-sm focus-within:border-terracotta focus-within:ring-2 focus-within:ring-terracotta/15">
                 <CalendarDays
-                  className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-terracotta"
-                  size={19}
+                  className="pointer-events-none shrink-0 text-terracotta"
+                  size={18}
                   aria-hidden="true"
                 />
                 <input
@@ -246,13 +250,13 @@ export default function FreeTourLiveFinder({
                     setState("idle");
                   }}
                   required
-                  className="min-h-12 w-full rounded-md border border-border-soft bg-white px-12 py-3 font-body text-base text-night shadow-sm [color-scheme:light] focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/15"
+                  className="free-tour-date-input block h-11 min-w-0 w-full max-w-full flex-1 appearance-none border-0 bg-transparent p-0 text-left font-body text-base text-night [color-scheme:light] focus:outline-none focus:ring-0"
                 />
-              </div>
+              </label>
               <button
                 type="submit"
                 disabled={state === "loading"}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-terracotta px-6 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark disabled:cursor-wait disabled:opacity-70"
+                className="inline-flex min-h-11 min-w-0 items-center justify-center gap-2 rounded-md bg-terracotta px-4 font-body text-sm font-bold text-white transition-colors hover:bg-primary-dark disabled:cursor-wait disabled:opacity-70"
               >
                 {state === "loading" ? (
                   <LoaderCircle

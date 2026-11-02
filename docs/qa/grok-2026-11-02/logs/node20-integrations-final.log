@@ -1,0 +1,65 @@
+TAP version 13
+# Subtest: only the exact public hostnames are allowed
+ok 1 - only the exact public hostnames are allowed
+  ---
+  duration_ms: 1.7026
+  ...
+# Subtest: no consent, implicit acceptance and blocked storage do not initialize GA
+ok 2 - no consent, implicit acceptance and blocked storage do not initialize GA
+  ---
+  duration_ms: 0.4668
+  ...
+# Subtest: accept, revoke and reaccept update GA without duplicate config/pageviews
+ok 3 - accept, revoke and reaccept update GA without duplicate config/pageviews
+  ---
+  duration_ms: 0.8642
+  ...
+# Subtest: product events require a production host even if gtag already exists
+ok 4 - product events require a production host even if gtag already exists
+  ---
+  duration_ms: 0.3252
+  ...
+# Subtest: revocation suppresses product events after initialization
+ok 5 - revocation suppresses product events after initialization
+  ---
+  duration_ms: 0.229
+  ...
+# Subtest: server rendering does not initialize or track
+ok 6 - server rendering does not initialize or track
+  ---
+  duration_ms: 0.2392
+  ...
+# Subtest: verified English Pena destination preserves partner and all original booking parameters
+ok 7 - verified English Pena destination preserves partner and all original booking parameters
+  ---
+  duration_ms: 1.557
+  ...
+# Subtest: localization never substitutes another product, provider or unattributed link
+ok 8 - localization never substitutes another product, provider or unattributed link
+  ---
+  duration_ms: 0.2212
+  ...
+# Subtest: same destination at several times produces one honest CTA and preserves date/ref
+ok 9 - same destination at several times produces one honest CTA and preserves date/ref
+  ---
+  duration_ms: 1.379
+  ...
+# Subtest: different provider destinations remain separate; shared ones are deduplicated
+ok 10 - different provider destinations remain separate; shared ones are deduplicated
+  ---
+  duration_ms: 0.2977
+  ...
+# Subtest: fallback remains bookable without slots and keeps the original URL
+ok 11 - fallback remains bookable without slots and keeps the original URL
+  ---
+  duration_ms: 0.1153
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 754.2658

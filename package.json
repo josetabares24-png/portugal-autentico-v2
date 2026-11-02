@@ -20,6 +20,7 @@
     "smoke:editorial-navigation": "node --import ./scripts/register-ts.mjs scripts/smoke-editorial-navigation.mjs",
     "smoke:technical-quality": "node scripts/smoke-technical-quality.mjs",
     "test:editorial-date": "node --import ./scripts/register-ts.mjs scripts/test-editorial-date.mjs",
+    "test:blog-chronology": "node scripts/test-blog-chronology.mjs",
     "smoke:traveler-guides": "node --import ./scripts/register-ts.mjs scripts/smoke-traveler-guides.mjs",
     "smoke:calculadora": "node --import ./scripts/register-ts.mjs scripts/smoke-calculadora.mjs",
     "test:budget": "node scripts/test-budget-calculator.mjs",
@@ -34,7 +35,9 @@
     "test:english-tours": "node --import ./scripts/register-ts.mjs --test scripts/test-english-tours.mjs",
     "test:free-tour-options": "node --import ./scripts/register-ts.mjs --test scripts/test-free-tour-options.mjs",
     "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs",
-    "test:english-bookings": "node --import ./scripts/register-ts.mjs --test scripts/test-english-bookings.mjs"
+    "test:english-bookings": "node --import ./scripts/register-ts.mjs --test scripts/test-english-bookings.mjs",
+    "smoke:grok-redesign": "node scripts/smoke-grok-redesign.mjs",
+    "smoke:grok-rendered": "node --import ./scripts/register-ts.mjs scripts/smoke-grok-rendered.mjs"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.10",

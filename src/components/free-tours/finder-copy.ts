@@ -19,7 +19,7 @@ export const finderCopy = {
     empty:
       "No aparecieron recorridos para ese día. Prueba otra fecha o compara las zonas que encontrarás más abajo.",
     error:
-      "Ahora mismo no pudimos traer los horarios. La comparación de rutas y los enlaces de reserva siguen disponibles debajo.",
+      "Ahora mismo no pudimos traer los horarios. Puedes comparar las rutas debajo y volver a intentarlo más tarde.",
   },
   en: {
     locale: "en-GB",
@@ -41,6 +41,6 @@ export const finderCopy = {
     empty:
       "We could not confirm English times for these five walks on this date. Try another day or check the full directory on GuruWalk.",
     error:
-      "We could not load times just now. You can still check English tours through the GuruWalk link below.",
+      "We could not load times just now. You can compare the walks below and try again later.",
   },
 } as const;

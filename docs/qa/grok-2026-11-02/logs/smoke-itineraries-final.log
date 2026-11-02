@@ -1,0 +1,52 @@
+
+> portugal-autentico@0.1.0 smoke:itineraries
+> node scripts/smoke-itineraries.mjs
+
+NOTA: los 7 slugs de guidePackSlugs tienen ruta estática propia y no
+pasan por itinerarios/[slug]/page.tsx (Next.js prioriza la ruta
+literal). Esta prueba confirma que esas 7 páginas funcionan, y que la
+rama "no encontrado" del route dinámico responde 404 correctamente.
+La rama "encontrado" de itinerarios/[slug]/page.tsx (una guía real
+guardada en Supabase) no se puede probar aquí: este
+entorno no tiene una conexión Supabase activa con datos de prueba.
+
+== Modo remoto: probando http://localhost:3440 (sin build/start local) ==
+
+OK   /itinerarios responde 200 - HTTP 200
+
+OK   lisboa-1-dia-lo-esencial: HTTP 200 - HTTP 200
+OK   lisboa-1-dia-lo-esencial: title no es "Guía no encontrada" - title="Qué ver en Lisboa en 1 día: ruta y mapa | Estaba en Lisboa"
+OK   lisboa-1-dia-lo-esencial: canonical correcto - canonical="https://estabaenlisboa.com/itinerarios/lisboa-1-dia-lo-esencial"
+OK   lisboa-2-dias-completo: HTTP 200 - HTTP 200
+OK   lisboa-2-dias-completo: title no es "Guía no encontrada" - title="Lisboa en 2 días: itinerario completo | Estaba en Lisboa"
+OK   lisboa-2-dias-completo: canonical correcto - canonical="https://estabaenlisboa.com/itinerarios/lisboa-2-dias-completo"
+OK   lisboa-3-dias-premium: HTTP 200 - HTTP 200
+OK   lisboa-3-dias-premium: title no es "Guía no encontrada" - title="Lisboa en 3 días: itinerario completo | Estaba en Lisboa"
+OK   lisboa-3-dias-premium: canonical correcto - canonical="https://estabaenlisboa.com/itinerarios/lisboa-3-dias-premium"
+
+OK   /itinerarios/lisboa-romantica: redirect permanente - HTTP 301
+OK   /itinerarios/lisboa-romantica: destino /blog/lisboa-en-pareja - /blog/lisboa-en-pareja
+OK   /itinerarios/lisboa-romantica: sin cadena de redirecciones - HTTP 200 en /blog/lisboa-en-pareja
+OK   /itinerarios/lisboa-familiar: redirect permanente - HTTP 308
+OK   /itinerarios/lisboa-familiar: destino /blog/lisboa-con-ninos - /blog/lisboa-con-ninos
+OK   /itinerarios/lisboa-familiar: sin cadena de redirecciones - HTTP 200 en /blog/lisboa-con-ninos
+OK   /itinerarios/lisboa-fotografia: redirect permanente - HTTP 301
+OK   /itinerarios/lisboa-fotografia: destino /blog/donde-fotografiar-lisboa - /blog/donde-fotografiar-lisboa
+OK   /itinerarios/lisboa-fotografia: sin cadena de redirecciones - HTTP 200 en /blog/donde-fotografiar-lisboa
+OK   /itinerarios/lisboa-full-week: redirect permanente - HTTP 308
+OK   /itinerarios/lisboa-full-week: destino /blog/lisboa-en-7-dias - /blog/lisboa-en-7-dias
+OK   /itinerarios/lisboa-full-week: sin cadena de redirecciones - HTTP 200 en /blog/lisboa-en-7-dias
+OK   /blog/que-hacer-en-lisboa-en-3-dias: redirect permanente - HTTP 301
+OK   /blog/que-hacer-en-lisboa-en-3-dias: destino /itinerarios/lisboa-3-dias-premium - /itinerarios/lisboa-3-dias-premium
+OK   /blog/que-hacer-en-lisboa-en-3-dias: sin cadena de redirecciones - HTTP 200 en /itinerarios/lisboa-3-dias-premium
+
+OK   itinerario-que-no-existe-de-verdad: HTTP 404 - HTTP 404
+
+--- Tabla resumen ---
+| Ruta | HTTP | Título | Canonical | Robots | Resultado |
+|---|---|---|---|---|---|
+| /itinerarios/lisboa-1-dia-lo-esencial | 200 | Qué ver en Lisboa en 1 día: ruta y mapa | Estaba en Lisboa | correcto | index, follow | OK |
+| /itinerarios/lisboa-2-dias-completo | 200 | Lisboa en 2 días: itinerario completo | Estaba en Lisboa | correcto | index, follow | OK |
+| /itinerarios/lisboa-3-dias-premium | 200 | Lisboa en 3 días: itinerario completo | Estaba en Lisboa | correcto | index, follow | OK |
+
+26/26 comprobaciones OK.

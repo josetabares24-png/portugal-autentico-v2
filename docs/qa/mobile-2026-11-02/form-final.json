@@ -1,0 +1,11 @@
+{
+  "viewport": 320,
+  "dateFields": 1,
+  "labels": 2,
+  "inputWidth": 208,
+  "inputHeight": 44,
+  "padding": "0px",
+  "keyboardChange": "2026-11-03 -> 2026-11-04",
+  "submit": "Existing API reached, honest error state without local provider credentials",
+  "apiChanged": false
+}

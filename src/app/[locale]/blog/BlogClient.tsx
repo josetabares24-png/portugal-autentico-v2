@@ -1,11 +1,11 @@
 'use client';
 
 import { useMemo, useState, type ReactNode } from 'react';
-import { EditorialArticleCard } from '@/components/blog/EditorialArticleCard';
+import { EditorialArticleCard, uniqueArticleImages } from '@/components/blog/EditorialArticleCard';
 import { BlogLandingHeader } from '@/components/blog/BlogLandingHeader';
 import { BlogPagination } from '@/components/blog/BlogPagination';
 import { FilterChip } from '@/components/FilterChip';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPostsByDate } from '@/data/blog-posts';
 
 const POSTS_PER_PAGE = 9;
 
@@ -27,8 +27,8 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
   const postsFiltrados = useMemo(
     () =>
       categoriaActiva === 'Todos'
-        ? blogPosts
-        : blogPosts.filter((post) => post.categoria === categoriaActiva),
+        ? blogPostsByDate
+        : blogPostsByDate.filter((post) => post.categoria === categoriaActiva),
     [categoriaActiva]
   );
 
@@ -36,6 +36,10 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
 
   const allRemaining = postsFiltrados.slice(4);
   const remaining = allRemaining.slice((paginaActual - 1) * POSTS_PER_PAGE, paginaActual * POSTS_PER_PAGE);
+  // Fotos únicas dentro del catálogo visible de esta página. Un duplicado
+  // queda como tarjeta textual, sin imagen de relleno.
+  const firstPagePosts = paginaActual === 1 ? postsFiltrados.slice(0, 4) : [];
+  const visibleImages = uniqueArticleImages([...firstPagePosts, ...remaining]);
 
   function cambiarCategoria(cat: string) {
     setCategoriaActiva(cat);
@@ -43,18 +47,16 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
   }
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="grok-blog-page">
       <BlogLandingHeader />
 
-      {editorialCover}
-
-      <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-8">
-        <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Todas las guías</h2>
-        <p className="mt-2 text-sm text-text-secondary">Explora el catálogo por tema o sigue las páginas del archivo.</p>
+      <div id="catalogo" className="site-container scroll-mt-24 border-t border-border-soft pb-4 pt-5 md:pt-8">
+        <h2 className="font-display text-2xl font-semibold not-italic text-text-main md:text-3xl">Últimos artículos</h2>
+        <p className="mt-2 text-sm text-text-secondary">Publicaciones recientes. Filtra por tema.</p>
       </div>
 
       {/* Filtros por categoría */}
-      <section className="bg-background-light border-b border-border-soft py-3 sticky top-16 z-10">
+      <section className="bg-background-light border-b border-border-soft py-3 sticky top-[var(--eel-header-height)] z-10">
         <div className="max-w-6xl mx-auto px-6">
           {/*
             * Son siete categorías. En móvil no caben en una línea y se
@@ -83,7 +85,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
       {/* The first four archive records stay crawlable on page one. */}
       {paginaActual === 1 && postsFiltrados.length > 0 && <section className="bg-background-light py-6" aria-label="Primeras guías del catálogo">
         <div className="site-container grid gap-6 md:grid-cols-2">
-          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="compact" headingLevel={3} />)}
+          {postsFiltrados.slice(0, 4).map((post) => <EditorialArticleCard key={post.id} post={post} variant="grid" headingLevel={3} imageOverride={visibleImages.get(post.id)} />)}
         </div>
       </section>}
 
@@ -103,7 +105,7 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
           )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remaining.map((post) => (
-              <EditorialArticleCard key={post.id} post={post} headingLevel={3} />
+              <EditorialArticleCard key={post.id} post={post} headingLevel={3} imageOverride={visibleImages.get(post.id)} />
             ))}
           </div>
 
@@ -121,6 +123,16 @@ export default function BlogClient({ initialPage = 1, editorialCover }: BlogClie
           />
         </div>
       </section>}
+
+      {categoriaActiva === 'Todos' && paginaActual === 1 && editorialCover && (
+        <section aria-label="Explorar guías por temas" className="border-t border-border-soft">
+          <div className="site-container pt-10">
+            <h2 className="font-display text-3xl font-semibold not-italic text-text-main">Explorar por temas</h2>
+            <p className="mt-2 text-sm text-text-secondary">Barrios, transporte, gastronomía y otras guías para preparar tu viaje.</p>
+          </div>
+          {editorialCover}
+        </section>
+      )}
 
     </main>
   );

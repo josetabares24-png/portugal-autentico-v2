@@ -1,3 +1,5 @@
+import { toIsoEditorialDate } from '@/lib/editorial-date';
+
 export interface BlogPost {
   id: string;
   titulo: string;
@@ -89,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '9 Oct 2026',
     dateModified: '2026-10-09',
     autor: 'José Tabares',
-    imagen: '/images/estacion-sintra.jpg',
+    imagen: '/images/commons/sintra-palacio-pena-wikimedia.webp',
   },
   {
     id: 'lisboa-en-navidad',
@@ -552,7 +554,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '12 Mar 2026',
     dateModified: '2026-10-24',
     autor: 'José Tabares',
-    imagen: '/images/aldaba-puerta-lisboa.jpg',
+    imagen: '/images/lisboa-originales/azulejo-terreiro-do-paco-siglo-xviii.png',
   },
   {
     id: 'novedades-lisboa-2026',
@@ -620,7 +622,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '23 Mar 2026',
     dateModified: '2026-10-21',
     autor: 'José Tabares',
-    imagen: '/images/tasca-da-graca.jpg',
+    imagen: '/images/actividades/pasteis-de-belem.webp',
   },
   {
     id: 'fado-historia-origen',
@@ -669,7 +671,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '16 Mar 2026',
     dateModified: '2026-10-21',
     autor: 'José Tabares',
-    imagen: '/images/fado-tasca-noche.jpg',
+    imagen: '/images/vino-celebracion.jpg',
   },
   {
     id: 'tram-28-historia-guia',
@@ -700,3 +702,14 @@ export const blogPosts: BlogPost[] = [
     imagen: '/images/actividades/mosteiro-dos-jeronimos-claustro.webp',
   },
 ];
+
+/**
+ * Único orden editorial para Home, /blog y su JSON-LD.
+ * Se ordena por fecha REAL de publicación, no por dateModified.
+ * Las entradas que comparten fecha conservan el orden del catálogo.
+ * No altera el array original consumido por enlaces, sitemap y metadatos.
+ */
+export const blogPostsByDate: BlogPost[] = blogPosts
+  .map((post, index) => ({ post, index, published: toIsoEditorialDate(post.fecha) ?? '' }))
+  .sort((a, b) => b.published.localeCompare(a.published) || a.index - b.index)
+  .map(({ post }) => post);

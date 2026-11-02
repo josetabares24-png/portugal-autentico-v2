@@ -1,0 +1,707 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "requestedWidth": 1440,
+    "file": "responsive/home-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Todo para planear tu viaje a Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "home",
+    "path": "/",
+    "requestedWidth": 1024,
+    "file": "responsive/home-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Todo para planear tu viaje a Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "home",
+    "path": "/",
+    "requestedWidth": 768,
+    "file": "responsive/home-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Todo para planear tu viaje a Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "home",
+    "path": "/",
+    "requestedWidth": 390,
+    "file": "responsive/home-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Todo para planear tu viaje a Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "home",
+    "path": "/",
+    "requestedWidth": 320,
+    "file": "responsive/home-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Todo para planear tu viaje a Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "requestedWidth": 1440,
+    "file": "responsive/blog-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Guías de Lisboa y Portugal"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "requestedWidth": 1024,
+    "file": "responsive/blog-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Guías de Lisboa y Portugal"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "requestedWidth": 768,
+    "file": "responsive/blog-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Guías de Lisboa y Portugal"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "requestedWidth": 390,
+    "file": "responsive/blog-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Guías de Lisboa y Portugal"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "requestedWidth": 320,
+    "file": "responsive/blog-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Guías de Lisboa y Portugal"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "byboat",
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "requestedWidth": 1440,
+    "file": "responsive/byboat-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "byboat",
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "requestedWidth": 1024,
+    "file": "responsive/byboat-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "byboat",
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "requestedWidth": 768,
+    "file": "responsive/byboat-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "byboat",
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "requestedWidth": 390,
+    "file": "responsive/byboat-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "byboat",
+    "path": "/blog/paseo-en-velero-lisboa-lisbon-byboat",
+    "requestedWidth": 320,
+    "file": "responsive/byboat-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "tickets",
+    "path": "/comprar-entradas",
+    "requestedWidth": 1440,
+    "file": "responsive/tickets-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Comprar entradas en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "tickets",
+    "path": "/comprar-entradas",
+    "requestedWidth": 1024,
+    "file": "responsive/tickets-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Comprar entradas en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "tickets",
+    "path": "/comprar-entradas",
+    "requestedWidth": 768,
+    "file": "responsive/tickets-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Comprar entradas en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "tickets",
+    "path": "/comprar-entradas",
+    "requestedWidth": 390,
+    "file": "responsive/tickets-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Comprar entradas en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "tickets",
+    "path": "/comprar-entradas",
+    "requestedWidth": 320,
+    "file": "responsive/tickets-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Comprar entradas en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "free-tours",
+    "path": "/free-tours-lisboa",
+    "requestedWidth": 1440,
+    "file": "responsive/free-tours-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Free tours en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "free-tours",
+    "path": "/free-tours-lisboa",
+    "requestedWidth": 1024,
+    "file": "responsive/free-tours-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Free tours en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "free-tours",
+    "path": "/free-tours-lisboa",
+    "requestedWidth": 768,
+    "file": "responsive/free-tours-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Free tours en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "free-tours",
+    "path": "/free-tours-lisboa",
+    "requestedWidth": 390,
+    "file": "responsive/free-tours-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Free tours en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "free-tours",
+    "path": "/free-tours-lisboa",
+    "requestedWidth": 320,
+    "file": "responsive/free-tours-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Free tours en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "jeronimos",
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "requestedWidth": 1440,
+    "file": "responsive/jeronimos-1440.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "jeronimos",
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "requestedWidth": 1024,
+    "file": "responsive/jeronimos-1024.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "jeronimos",
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "requestedWidth": 768,
+    "file": "responsive/jeronimos-768.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "jeronimos",
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "requestedWidth": 390,
+    "file": "responsive/jeronimos-390.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "jeronimos",
+    "path": "/blog/monasterio-jeronimos-entradas",
+    "requestedWidth": 320,
+    "file": "responsive/jeronimos-320.jpg",
+    "bodyFont": "Heebo, \"Heebo Fallback\", Arial, sans-serif",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Monasterio de los Jerónimos: entradas, horarios y cómo ir (2026)"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  },
+  {
+    "name": "one-day",
+    "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+    "requestedWidth": 1440,
+    "file": "responsive/one-day-1440.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Qué ver en Lisboa en 1 día"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "one-day",
+    "path": "/itinerarios/lisboa-1-dia-lo-esencial",
+    "requestedWidth": 390,
+    "file": "responsive/one-day-390.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Qué ver en Lisboa en 1 día"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "three-days",
+    "path": "/itinerarios/lisboa-3-dias-premium",
+    "requestedWidth": 1440,
+    "file": "responsive/three-days-1440.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 3 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "three-days",
+    "path": "/itinerarios/lisboa-3-dias-premium",
+    "requestedWidth": 390,
+    "file": "responsive/three-days-390.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 3 días"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "what-to-see",
+    "path": "/que-ver-en-lisboa",
+    "requestedWidth": 1440,
+    "file": "responsive/what-to-see-1440.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Qué ver en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "what-to-see",
+    "path": "/que-ver-en-lisboa",
+    "requestedWidth": 390,
+    "file": "responsive/what-to-see-390.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Qué ver en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "where-to-eat",
+    "path": "/donde-comer-en-lisboa",
+    "requestedWidth": 1440,
+    "file": "responsive/where-to-eat-1440.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Dónde comer en Lisboa"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "where-to-eat",
+    "path": "/donde-comer-en-lisboa",
+    "requestedWidth": 390,
+    "file": "responsive/where-to-eat-390.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Dónde comer en Lisboa"
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "english",
+    "path": "/en",
+    "requestedWidth": 1440,
+    "file": "responsive/english-1440.jpg",
+    "font": "playfair, \"playfair Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "The Lisbon I show friends who come to visit."
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1432,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "english",
+    "path": "/en",
+    "requestedWidth": 390,
+    "file": "responsive/english-390.jpg",
+    "font": "playfair, \"playfair Fallback\", \"Playfair Display\", Georgia, serif",
+    "h1": [
+      "The Lisbon I show friends who come to visit."
+    ],
+    "height": 844,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "itinerary",
+    "path": "/itinerarios/lisboa-2-dias-completo",
+    "requestedWidth": 1440,
+    "file": "responsive/itinerary-1440.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 2 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1440,
+    "visibleBroken": [],
+    "width": 1440
+  },
+  {
+    "name": "itinerary",
+    "path": "/itinerarios/lisboa-2-dias-completo",
+    "requestedWidth": 1024,
+    "file": "responsive/itinerary-1024.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 2 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 1016,
+    "visibleBroken": [],
+    "width": 1024
+  },
+  {
+    "name": "itinerary",
+    "path": "/itinerarios/lisboa-2-dias-completo",
+    "requestedWidth": 768,
+    "file": "responsive/itinerary-768.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 2 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 760,
+    "visibleBroken": [],
+    "width": 768
+  },
+  {
+    "name": "itinerary",
+    "path": "/itinerarios/lisboa-2-dias-completo",
+    "requestedWidth": 390,
+    "file": "responsive/itinerary-390.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 2 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 382,
+    "visibleBroken": [],
+    "width": 390
+  },
+  {
+    "name": "itinerary",
+    "path": "/itinerarios/lisboa-2-dias-completo",
+    "requestedWidth": 320,
+    "file": "responsive/itinerary-320.jpg",
+    "font": "\"Abril Fatface\", \"Abril Fatface Fallback\", Georgia, serif",
+    "h1": [
+      "Lisboa en 2 días"
+    ],
+    "height": 1000,
+    "main": 1,
+    "scrollWidth": 312,
+    "visibleBroken": [],
+    "width": 320
+  }
+]

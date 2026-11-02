@@ -1,0 +1,23 @@
+[
+  {
+    "url": "http://localhost:3440/blog",
+    "fetchTime": "2026-11-02T13:27:47.208Z",
+    "lighthouseVersion": "13.6.0",
+    "accessibility": 100,
+    "failures": []
+  },
+  {
+    "url": "http://localhost:3440/comprar-entradas",
+    "fetchTime": "2026-11-02T13:27:59.820Z",
+    "lighthouseVersion": "13.6.0",
+    "accessibility": 100,
+    "failures": []
+  },
+  {
+    "url": "http://localhost:3440/free-tours-lisboa",
+    "fetchTime": "2026-11-02T13:38:58.415Z",
+    "lighthouseVersion": "13.6.0",
+    "accessibility": 100,
+    "failures": []
+  }
+]

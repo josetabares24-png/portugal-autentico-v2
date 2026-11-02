@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Article } from './article-types';
+import { PhotoAttribution } from '@/components/ui/PhotoAttribution';
 
 type ArticleHeroProps = {
   article: Article;
   authorName: string;
-  heroImage: string;
+  heroImage: string | null;
   heroImageAlt?: string;
   isEditorialV2: boolean;
   editorialPilot?: boolean;
@@ -68,7 +69,7 @@ export function ArticleHero({
       </header>
 
       {/* Fotografía de portada: es el LCP, por eso va con priority */}
-      {isEditorialV2 && heroImageAlt && (
+      {isEditorialV2 && heroImage && heroImageAlt && (
         <figure className="article-hero max-w-6xl mx-auto px-4">
           <div className="article-hero-frame">
             <Image
@@ -90,6 +91,7 @@ export function ArticleHero({
               fetchPriority="high"
             />
           </div>
+          <figcaption><PhotoAttribution image={heroImage} /></figcaption>
         </figure>
       )}
       {editorialPilot && (

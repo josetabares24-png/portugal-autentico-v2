@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import BlogClient from './BlogClient';
-import { blogPosts } from '@/data/blog-posts';
+import { blogPostsByDate } from '@/data/blog-posts';
 import { BlogEditorialCover } from '@/components/blog/BlogEditorialCover';
 import { toIsoEditorialDate } from '@/lib/editorial-date';
+import { editorialPhoto } from '@/lib/editorial-photo-policy';
+import { blogImageMap } from '@/lib/media';
 
 const BLOG_TITLE = 'Guías de Lisboa y Portugal | Estaba en Lisboa';
 const BLOG_DESCRIPTION = 'Guías de Lisboa y Portugal: transporte, rutas, barrios, escapadas, comida y consejos prácticos para organizar el viaje desde una base local.';
@@ -13,7 +15,7 @@ type BlogPageProps = {
 
 function resolveBlogPage(page: string | string[] | undefined) {
   const requested = Number.parseInt(Array.isArray(page) ? page[0] : page ?? '1', 10);
-  const totalPages = Math.max(1, Math.ceil(Math.max(0, blogPosts.length - 4) / 9));
+  const totalPages = Math.max(1, Math.ceil(Math.max(0, blogPostsByDate.length - 4) / 9));
   return Number.isFinite(requested) ? Math.min(Math.max(requested, 1), totalPages) : 1;
 }
 
@@ -58,7 +60,7 @@ const jsonLd = {
   name: 'Guías de Lisboa y Portugal',
   url: 'https://estabaenlisboa.com/blog',
   description: BLOG_DESCRIPTION,
-  blogPost: blogPosts.map((post) => ({
+  blogPost: blogPostsByDate.map((post) => ({
     '@type': 'BlogPosting',
     headline: post.titulo,
     ...(toIsoEditorialDate(post.fecha) ? { datePublished: toIsoEditorialDate(post.fecha) } : {}),
@@ -66,7 +68,7 @@ const jsonLd = {
       '@type': 'Person',
       name: post.autor,
     },
-    image: `https://estabaenlisboa.com${post.imagen}`,
+    ...(editorialPhoto(post.id, blogImageMap[post.id] || post.imagen) ? { image: `https://estabaenlisboa.com${editorialPhoto(post.id, blogImageMap[post.id] || post.imagen)}` } : {}),
     url: `https://estabaenlisboa.com/blog/${post.id}`,
   })),
 };
