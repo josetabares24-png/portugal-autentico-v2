@@ -52,7 +52,15 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
   const input = useRef<HTMLInputElement>(null);
   const [term, setTerm] = useState('');
   const [showResults, setShowResults] = useState(false);
+  const [selected, setSelected] = useState<{ label: string; href: string } | null>(null);
   const results = findTopics(term, articles);
+
+  // Elegir una sugerencia rellena la búsqueda; NO navega hasta pulsar Buscar.
+  function selectSuggestion(suggestion: { label: string; href: string }) {
+    setTerm(suggestion.label);
+    setSelected(suggestion);
+    setShowResults(false);
+  }
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -62,9 +70,10 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
     }
     // Al pulsar Buscar siempre se abre la guía más relevante.
     // Las demás coincidencias siguen disponibles al escribir en el menú.
-    if (results.length > 0) {
+    const destination = selected?.label === term ? selected.href : results[0]?.href;
+    if (destination) {
       setShowResults(false);
-      router.push(results[0].href);
+      router.push(destination);
     } else {
       setShowResults(true);
     }
@@ -78,18 +87,27 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
         <label className={s.visuallyHidden} htmlFor="grok-home-search">¿Qué quieres hacer en Lisboa?</label>
         <input
           id="grok-home-search" type="search" value={term} ref={input}
-          onChange={(e) => { setTerm(e.target.value); setShowResults(Boolean(e.target.value.trim())); }}
-          onFocus={() => { if (term.trim()) setShowResults(true); }}
+          onChange={(e) => { setTerm(e.target.value); setSelected(null); setShowResults(Boolean(e.target.value.trim())); }}
+          onFocus={() => { if (term.trim() && !selected) setShowResults(true); }}
           placeholder="¿Qué quieres hacer en Lisboa?" autoComplete="off"
           aria-controls={showResults && term.trim() ? 'grok-home-search-results' : undefined}
+          aria-expanded={Boolean(showResults && term.trim())}
+          aria-autocomplete="list"
         />
         <button type="submit">Buscar</button>
       </form>
       {showResults && term.trim() && (
-        <div className={s.searchResults} id="grok-home-search-results" role="status" aria-live="polite">
+        <div className={s.searchResults} id="grok-home-search-results">
+          <p className={s.visuallyHidden} role="status" aria-live="polite">
+            {results.length ? `${results.length} sugerencias disponibles. Usa Tab para elegir una.` : 'No hay coincidencias.'}
+          </p>
           {results.length ? (
             <ul>{results.map((result) => (
-              <li key={result.href}><Link href={result.href} onClick={() => setShowResults(false)}>{result.label}</Link></li>
+              <li key={result.href}>
+                <button type="button" onClick={() => selectSuggestion(result)}>
+                  {result.label}
+                </button>
+              </li>
             ))}</ul>
           ) : (
             <p>No encontré una coincidencia. <Link href="/blog">Explorar todas las guías</Link></p>
