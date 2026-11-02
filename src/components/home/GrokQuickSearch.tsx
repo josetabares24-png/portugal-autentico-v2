@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import s from './GrokHome.module.css';
@@ -50,10 +50,23 @@ function findTopics(input: string, articles: readonly {label: string; href: stri
 export default function GrokQuickSearch({ articles }: { articles: readonly {label: string; href: string}[] }) {
   const router = useRouter();
   const input = useRef<HTMLInputElement>(null);
+  const wrap = useRef<HTMLDivElement>(null);
   const [term, setTerm] = useState('');
   const [showResults, setShowResults] = useState(false);
   const [selected, setSelected] = useState<{ label: string; href: string } | null>(null);
   const results = findTopics(term, articles);
+
+  // En Safari iOS, tocar un botón puede desenfocar el input con relatedTarget
+  // nulo. Solo cerramos al tocar FUERA del buscador, nunca al tocar una opción.
+  useEffect(() => {
+    const dismissOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !wrap.current?.contains(event.target)) {
+        setShowResults(false);
+      }
+    };
+    document.addEventListener('pointerdown', dismissOutside);
+    return () => document.removeEventListener('pointerdown', dismissOutside);
+  }, []);
 
   // Elegir una sugerencia rellena la búsqueda; NO navega hasta pulsar Buscar.
   function selectSuggestion(suggestion: { label: string; href: string }) {
@@ -80,8 +93,8 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
   }
 
   return (
-    <div className={s.searchWrap}
-      onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setShowResults(false); }}
+    <div ref={wrap} className={s.searchWrap}
+      onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setShowResults(false); }}
       onKeyDown={event => { if (event.key === 'Escape') { input.current?.focus(); setShowResults(false); } }}>
       <form onSubmit={submit} className={s.searchForm} role="search" aria-label="Buscar cómo preparar tu visita">
         <label className={s.visuallyHidden} htmlFor="grok-home-search">¿Qué quieres hacer en Lisboa?</label>
@@ -106,13 +119,7 @@ export default function GrokQuickSearch({ articles }: { articles: readonly {labe
               <li key={result.href}>
                 <button
                   type="button"
-                  // Safari iOS puede desenfocar el input antes del click.
-                  // Guardar la sugerencia ya en pointerdown táctil evita
-                  // que el onBlur desmonte el menú antes de seleccionarla.
-                  onPointerDown={(event) => {
-                    if (event.pointerType === 'touch') selectSuggestion(result);
-                    else event.preventDefault();
-                  }}
+                  onMouseDown={(event) => event.preventDefault()}
                   onClick={() => selectSuggestion(result)}
                 >
                   {result.label}
