@@ -31,7 +31,7 @@ const article: Article = {
   minutos: 3,
   contenido: [
     { tipo: 'parrafo', texto: 'En la Rua Luís de Camões, en Alcântara, está Sinchi, un restaurante peruano que tiene ceviches, tiraditos y también platos al wok. Si estás buscando dónde comer peruano en Lisboa, es una opción que puedes guardar para tu próxima comida por esta zona.' },
-    { tipo: 'parrafo', texto: 'El restaurante nos compartió su carta para preparar este artículo, así que podemos hablar de platos y precios reales sin inventar una experiencia personal. Te dejo algunas referencias para hacerte una idea antes de reservar.' },
+    { tipo: 'parrafo', texto: 'El restaurante nos compartió su carta en noviembre de 2026. De ahí salen estas referencias de platos y precios para que puedas hacerte una idea antes de reservar.' },
     { tipo: 'subtitulo', texto: 'Qué comer en Sinchi: ceviche, lomo saltado y más' },
     { tipo: 'parrafo', texto: 'El ceviche clásico lleva pescado blanco, cebolla morada, choclo, maíz cancha, camote y leche de tigre. También hay versiones con ají amarillo y una opción del barrio que mezcla distintos mariscos. Si prefieres un plato caliente, el lomo saltado combina ternera al wok, cebolla, tomate y arroz.' },
     { tipo: 'lista', items: [
@@ -53,6 +53,9 @@ const article: Article = {
   ],
 };
 
+const sinchiBookingUrl = 'https://sinchi.eatbu.com/?lang=pt&utm_source=estabaenlisboa&utm_medium=referral&utm_campaign=sinchi_editorial';
+const sinchiWhatsAppUrl = 'https://wa.me/351924385110?text=Hola%2C%20vi%20Sinchi%20en%20Estaba%20en%20Lisboa%20y%20quer%C3%ADa%20consultar%20una%20reserva.%20%C2%BFTienen%20disponibilidad%3F';
+
 const headings = article.contenido
   .filter((block) => block.tipo === 'subtitulo' && block.texto)
   .map((block) => ({ title: block.texto!, id: slugify(block.texto!) }));
@@ -62,7 +65,7 @@ export default function SinchiEditorialPreview() {
     <main id="main-content" className="article-page article-v2 bg-background-light">
       <div className="border-b border-border-soft bg-[#F1ECE4]">
         <div className="mx-auto max-w-6xl px-4 py-3 text-xs font-medium tracking-[0.08em] text-text-main sm:text-sm">
-          VISTA PREVIA EDITORIAL · PROPUESTA PARA SINCHI · NO PUBLICADA
+          PROPUESTA EDITORIAL PARA SINCHI · VISTA PREVIA NO PUBLICADA
         </div>
       </div>
 
@@ -77,7 +80,7 @@ export default function SinchiEditorialPreview() {
           </div>
           <div className="flex flex-col gap-2 sm:shrink-0">
             <a
-              href="https://sinchi.eatbu.com/?lang=pt"
+              href={sinchiBookingUrl}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-text-main px-6 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-85"
@@ -85,7 +88,7 @@ export default function SinchiEditorialPreview() {
               Ver la web oficial y reservar
             </a>
             <a
-              href="https://wa.me/351924385110"
+              href={sinchiWhatsAppUrl}
               target="_blank"
               rel="sponsored nofollow noopener noreferrer"
               className="text-center text-xs font-medium text-text-secondary underline underline-offset-4 hover:text-text-main"
@@ -138,7 +141,7 @@ export default function SinchiEditorialPreview() {
           <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-text-secondary"><span>Alcântara, Lisboa</span><span>Cocina peruana</span><span>Ceviche clásico: 22 €</span></div>
           <a href="https://sinchi.eatbu.com/?lang=pt" target="_blank" rel="noopener noreferrer" className="text-xs text-text-secondary underline underline-offset-4 hover:text-text-main">Fotografías: web de Sinchi</a>
         </div>
-        <p className="mt-3 text-xs leading-relaxed text-text-secondary">Fotografías de la galería publicada por Sinchi en su sitio web. Su uso en el artículo definitivo estará sujeto a autorización del restaurante.</p>
+        <p className="mt-3 text-xs leading-relaxed text-text-secondary">Fotografías de la galería publicada por Sinchi en su web, mostradas para revisión de esta propuesta.</p>
       </section>
 
       <div className="mx-auto max-w-6xl px-4 pb-16">
@@ -195,7 +198,7 @@ export default function SinchiEditorialPreview() {
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href="https://sinchi.eatbu.com/?lang=pt"
+                  href={sinchiBookingUrl}
                   target="_blank"
                   rel="sponsored nofollow noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-md bg-text-main px-6 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-85"
@@ -203,7 +206,7 @@ export default function SinchiEditorialPreview() {
                   Reservar directamente con Sinchi
                 </a>
                 <a
-                  href="https://wa.me/351924385110"
+                  href={sinchiWhatsAppUrl}
                   target="_blank"
                   rel="sponsored nofollow noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-md border border-border-soft px-6 py-3 text-center text-sm font-semibold text-text-main hover:bg-[#F4F0EB]"
