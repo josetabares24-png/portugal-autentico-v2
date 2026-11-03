@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
 import type {
@@ -26,6 +26,8 @@ type ArticleBodyProps = {
   seoDescription: string;
   takeaways: string[];
   editorial?: EditorialPilot;
+  /** Bloques editoriales específicos insertados tras un epígrafe; no cambia el resto del blog. */
+  insertAfterHeading?: Record<string, ReactNode>;
   /**
    * Ofertas resueltas en servidor. Fallback final tras contenido y FAQ;
    * D-067 permite un único traslado contextual en tres páginas explícitas.
@@ -45,6 +47,7 @@ export function ArticleBody({
   takeaways,
   bookings = [],
   editorial,
+  insertAfterHeading,
 }: ArticleBodyProps) {
   let bodyBlocks = article.contenido.slice(1);
   const originalLead = article.contenido.find((block) => block.tipo === 'parrafo');
@@ -294,6 +297,7 @@ export function ArticleBody({
               />
             )}
             {renderBlock(block, index)}
+            {block.tipo === 'subtitulo' && block.texto && insertAfterHeading?.[slugify(block.texto)]}
           </Fragment>
         ))}
       </div>
