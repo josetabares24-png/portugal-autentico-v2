@@ -47,7 +47,7 @@ const article: Article = {
     { tipo: 'parrafo', texto: 'Lo encontrarás en Rua Luís de Camões 90, 1300-360 Lisboa. Más abajo tienes el mapa para ubicar la dirección y abrir la ruta directamente en Google Maps.' },
     { tipo: 'subtitulo', texto: 'Horario y reservas directamente con Sinchi' },
     { tipo: 'parrafo', texto: 'Sinchi tiene página web propia con una sección de reservas. Puedes entrar desde el enlace de este artículo o, si prefieres consultar algo antes, escribir por WhatsApp al +351 924 385 110.' },
-    { tipo: 'nota', texto: 'Los horarios no coinciden en todas las plataformas. Antes de ir, consulta los horarios de la fecha en Google Maps y confirma con el restaurante si hay festivos o alguna duda.' },
+    { tipo: 'nota', texto: 'Para consultar el horario actualizado de Sinchi, revisa su ficha en Google Maps antes de ir.' },
     { tipo: 'subtitulo', texto: '¿Para quién puede ser una buena opción?' },
     { tipo: 'parrafo', texto: 'Si te gustan los ceviches o quieres probar cocina peruana en Lisboa, la carta de Sinchi tiene varias opciones. Y si vas con alguien que prefiere algo caliente, también hay arroz chaufa, tallarines y lomo saltado. Puedes consultar la disponibilidad y reservar directamente con ellos.' },
   ],
