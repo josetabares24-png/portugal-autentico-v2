@@ -206,6 +206,39 @@ export default function SinchiEditorialPreview() {
               seoDescription={article.descripcion}
               takeaways={[]}
             />
+            <section className="mt-10 border-t border-border-soft pt-8" aria-label="Mapa y ubicación de Sinchi Lisboa">
+              <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B735E]">Dónde encontrarlo</p>
+                  <h2 className="font-display text-2xl font-semibold text-text-main sm:text-3xl">Sinchi, en Alcântara</h2>
+                  <address className="mt-2 not-italic text-sm leading-relaxed text-text-secondary">
+                    Rua Luís de Camões 90, 1300-360 Lisboa, Portugal
+                  </address>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-border-soft px-4 py-2.5 text-sm font-semibold text-text-main transition-colors hover:bg-[#F4F0EB]"
+                >
+                  Cómo llegar en Google Maps
+                </a>
+              </div>
+              <div className="overflow-hidden rounded-md border border-border-soft bg-[#F1EEE9]">
+                <iframe
+                  title="Mapa interactivo de Sinchi, Rua Luís de Camões 90, Alcântara, Lisboa"
+                  src="https://maps.google.com/maps?q=Sinchi%20Cozinha%20Peruana%2C%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%2C%201300-360%20Lisboa%2C%20Portugal&z=16&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="block h-[285px] w-full border-0 sm:h-[370px]"
+                />
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-text-secondary">
+                El mapa indica la dirección publicada por el restaurante. Ábrelo en Google Maps para consultar la ruta y los horarios del día.
+              </p>
+            </section>
+
             <section className="article-reading mt-10 border-t border-border-soft pt-7" aria-label="Contactar y reservar en Sinchi">
               <h2 className="font-display text-2xl font-semibold text-text-main">Reserva tu mesa</h2>
               <p className="mt-2 text-text-secondary">
@@ -233,7 +266,6 @@ export default function SinchiEditorialPreview() {
                 La reserva se realiza en la web del restaurante, no en Estaba en Lisboa. Consulta en la sección «Reserva» sus opciones y disponibilidad.
               </p>
               <p className="mt-3 text-xs text-text-secondary">Rua Luís de Camões 90, Alcântara, Lisboa · +351 924 385 110</p>
-              <a href="https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm underline underline-offset-4">Cómo llegar con Google Maps</a>
             </section>
             <div className="mt-10">
               <ArticleSources
