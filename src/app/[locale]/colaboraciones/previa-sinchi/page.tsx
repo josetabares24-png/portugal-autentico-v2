@@ -61,10 +61,6 @@ const article: Article = {
       ],
     },
     { tipo: 'subtitulo', texto: 'Menú completo y precios de Sinchi' },
-    {
-      tipo: 'parrafo',
-      texto: 'Sinchi nos compartió sus cartas de comida y vinos. Las hemos reorganizado aquí para que puedas consultar todos los platos por categoría, sin ampliar fotografías ni descargar archivos. Abre las secciones que te interesen; los precios corresponden a noviembre de 2026 y pueden cambiar.',
-    },
     { tipo: 'subtitulo', texto: '¿Qué beber? Pisco sour, chicha morada y vinos peruanos' },
     {
       tipo: 'parrafo',
