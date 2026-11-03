@@ -45,9 +45,8 @@ const article: Article = {
     { tipo: 'parrafo', texto: 'Para beber, en la carta encontrarás pisco sour clásico y de sabores, chicha morada e Inca Kola. También nos enviaron su selección de vinos, que incluye etiquetas portuguesas y vinos Intipalka del Valle de Ica, en Perú.' },
     { tipo: 'subtitulo', texto: 'Dónde está Sinchi en Alcântara' },
     { tipo: 'parrafo', texto: 'Lo encontrarás en Rua Luís de Camões 90, 1300-360 Lisboa. Más abajo tienes el mapa para ubicar la dirección y abrir la ruta directamente en Google Maps.' },
-    { tipo: 'subtitulo', texto: 'Horario y reservas directamente con Sinchi' },
+    { tipo: 'subtitulo', texto: 'Cómo reservar directamente con Sinchi' },
     { tipo: 'parrafo', texto: 'Sinchi tiene página web propia con una sección de reservas. Puedes entrar desde el enlace de este artículo o, si prefieres consultar algo antes, escribir por WhatsApp al +351 924 385 110.' },
-    { tipo: 'nota', texto: 'Para consultar el horario actualizado de Sinchi, revisa su ficha en Google Maps antes de ir.' },
     { tipo: 'subtitulo', texto: '¿Para quién puede ser una buena opción?' },
     { tipo: 'parrafo', texto: 'Si te gustan los ceviches o quieres probar cocina peruana en Lisboa, la carta de Sinchi tiene varias opciones. Y si vas con alguien que prefiere algo caliente, también hay arroz chaufa, tallarines y lomo saltado. Puedes consultar la disponibilidad y reservar directamente con ellos.' },
   ],
@@ -187,7 +186,7 @@ export default function SinchiEditorialPreview() {
                 />
               </div>
               <p className="mt-3 text-xs leading-relaxed text-text-secondary">
-                El mapa indica la dirección publicada por el restaurante. Ábrelo en Google Maps para consultar la ruta y los horarios del día.
+                El mapa indica la dirección publicada por el restaurante. Ábrelo en Google Maps para consultar cómo llegar.
               </p>
             </section>
 
@@ -224,7 +223,7 @@ export default function SinchiEditorialPreview() {
                 verifiedDate="2026-11-03"
                 sources={[
                   { label: 'Sinchi: web y datos de contacto', href: 'https://sinchi.eatbu.com/?lang=pt' },
-                  { label: 'Google Maps: ubicación y consulta de horarios actuales', href: 'https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa' },
+                  { label: 'Google Maps: ubicación y cómo llegar', href: 'https://www.google.com/maps/search/?api=1&query=Sinchi%20Cozinha%20Peruana%20Rua%20Lu%C3%ADs%20de%20Cam%C3%B5es%2090%20Lisboa' },
                   { label: 'Consulado del Perú: restaurantes peruanos en Lisboa', href: 'https://www.consulado.pe/es/Lisboa/Lists/RestaurantesPeruanos/DispForm.aspx?ContentTypeId=0x0100E1004E32DD4B264D8928886040921D86&ID=16' },
                 ]}
               />
