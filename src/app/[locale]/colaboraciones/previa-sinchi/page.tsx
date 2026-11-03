@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
-import { RestaurantMenu } from '@/components/blog/RestaurantMenu';
-import { sinchiMenu } from '@/data/sinchi-menu';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleSources } from '@/components/blog/ArticleSources';
@@ -26,11 +24,11 @@ export const metadata: Metadata = {
 const article: Article = {
   titulo: 'Sinchi Lisboa: ceviche peruano en Alcântara, carta y reservas',
   descripcion: 'Sinchi, restaurante peruano en Alcântara, Lisboa: ceviches, lomo saltado, precios de la carta, dirección y cómo reservar.',
-  subtitulo: 'Ceviches, tiraditos, lomo saltado y una carta que lleva los sabores peruanos hasta Alcântara. Esto es lo que puedes pedir, lo que cuesta y cómo reservar.',
+  subtitulo: 'Ceviches, tiraditos, lomo saltado y cocina peruana en Alcântara. Algunos platos destacados y cómo reservar directamente con el restaurante.',
   imagen: '',
   categoria: 'Gastronomía',
   fecha: '2 Nov 2026',
-  minutos: 6,
+  minutos: 5,
   contenido: [
     {
       tipo: 'parrafo',
@@ -52,15 +50,16 @@ const article: Article = {
     {
       tipo: 'lista',
       items: [
-        'Ceviche clásico: pescado blanco, cebolla morada, choclo, cancha, camote y leche de tigre.',
-        'Ceviche del barrio: incorpora pescado blanco, pulpo, camarón y calamar.',
-        'Lomo saltado: carne salteada al wok, verduras, salsa de soja y arroz.',
-        'Pulpo al olivo: pulpo con salsa de aceitunas peruanas, palta y tomate cherry.',
-        'Yucas a la huancaína: yuca frita con una salsa cremosa de ají amarillo.',
-        'Arroz chaufa: arroz al wok con huevo y pollo o camarones.',
+        'Ceviche clásico — 22 €: pescado blanco, cebolla morada, choclo, cancha, camote y leche de tigre.',
+        'Ceviche del barrio — 24 €: pescado blanco, pulpo, camarón y calamar.',
+        'Lomo saltado — 26 €: ternera salteada al wok, verduras, salsa de soja y arroz.',
+        'Yuquitas huancaína — 8 €: yuca frita acompañada de salsa huancaína.',
       ],
     },
-    { tipo: 'subtitulo', texto: 'Menú completo y precios de Sinchi' },
+    {
+      tipo: 'parrafo',
+      texto: 'Estos precios son una pequeña referencia de la carta enviada por Sinchi en noviembre de 2026. Para conocer el menú más reciente o preguntar por algún plato, puedes contactar directamente con el restaurante desde su web o por WhatsApp. Así también puedes organizar tu reserva sin intermediarios.',
+    },
     { tipo: 'subtitulo', texto: '¿Qué beber? Pisco sour, chicha morada y vinos peruanos' },
     {
       tipo: 'parrafo',
@@ -125,7 +124,7 @@ export default function SinchiEditorialPreview() {
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7B654F]">Reserva directa · Sin intermediarios</p>
             <p className="mt-1 font-display text-xl font-semibold text-text-main">¿Te apetece probar Sinchi?</p>
-            <p className="mt-1 text-sm text-text-secondary">Entra en su web oficial y busca la sección «Reserva» para elegir tu mesa.</p>
+            <p className="mt-1 text-sm text-text-secondary">Conoce el restaurante y accede a su sección de reservas directamente desde su web.</p>
           </div>
           <div className="flex flex-col gap-2 sm:shrink-0">
             <a
@@ -134,7 +133,7 @@ export default function SinchiEditorialPreview() {
               rel="sponsored nofollow noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-text-main px-6 py-3 text-center text-sm font-semibold text-white transition-opacity hover:opacity-85"
             >
-              Reservar en la web oficial
+              Ver la web de Sinchi y reservar
             </a>
             <a
               href="https://wa.me/351924385110"
@@ -206,22 +205,11 @@ export default function SinchiEditorialPreview() {
               photos={{}}
               seoDescription={article.descripcion}
               takeaways={[]}
-              insertAfterHeading={{
-                [slugify('Menú completo y precios de Sinchi')]: (
-                  <RestaurantMenu
-                    restaurantName="Sinchi"
-                    sections={sinchiMenu}
-                    verifiedOn="noviembre de 2026"
-                    bookingUrl="https://sinchi.eatbu.com/?lang=pt"
-                    bookingLabel="Reservar mesa en la web de Sinchi"
-                  />
-                ),
-              }}
             />
             <section className="article-reading mt-10 border-t border-border-soft pt-7" aria-label="Contactar y reservar en Sinchi">
               <h2 className="font-display text-2xl font-semibold text-text-main">Reserva tu mesa</h2>
               <p className="mt-2 text-text-secondary">
-                Si quieres ir a comer, reserva en la página oficial de Sinchi. Allí encontrarás su apartado «Reserva». Si necesitas confirmar disponibilidad o una petición especial, puedes escribir directamente al restaurante por WhatsApp.
+                En la página oficial de Sinchi encontrarás su apartado «Reserva». Para consultar la carta completa actualizada, disponibilidad o alguna petición especial, puedes escribir directamente al restaurante por WhatsApp.
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
