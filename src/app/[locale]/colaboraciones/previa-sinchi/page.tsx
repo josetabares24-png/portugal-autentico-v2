@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { ArticleBody } from '@/components/blog/ArticleBody';
+import { RestaurantMenu } from '@/components/blog/RestaurantMenu';
+import { sinchiMenu } from '@/data/sinchi-menu';
 import { ArticleFooter } from '@/components/blog/ArticleFooter';
 import { ArticleHero } from '@/components/blog/ArticleHero';
 import { ArticleSources } from '@/components/blog/ArticleSources';
@@ -28,7 +30,7 @@ const article: Article = {
   imagen: '',
   categoria: 'Gastronomía',
   fecha: '2 Nov 2026',
-  minutos: 5,
+  minutos: 6,
   contenido: [
     {
       tipo: 'parrafo',
@@ -58,30 +60,10 @@ const article: Article = {
         'Arroz chaufa: arroz al wok con huevo y pollo o camarones.',
       ],
     },
-    { tipo: 'subtitulo', texto: 'Precios de la carta de Sinchi' },
+    { tipo: 'subtitulo', texto: 'Menú completo y precios de Sinchi' },
     {
       tipo: 'parrafo',
-      texto: 'Estos son algunos precios de la carta que el restaurante nos facilitó para preparar el artículo. Son una referencia de noviembre de 2026; conviene confirmarlos al reservar porque pueden cambiar.',
-    },
-    {
-      tipo: 'tabla',
-      texto: 'Selección de platos y precios facilitados por Sinchi en noviembre de 2026',
-      columnas: ['Plato', 'Precio'],
-      filas: [
-        ['Yuquitas huancaína', '8 €'],
-        ['Pulpo al olivo', '20 €'],
-        ['Ceviche clásico', '22 €'],
-        ['Ceviche al ají amarillo', '22 €'],
-        ['Ceviche del barrio', '24 €'],
-        ['Lomo saltado', '26 €'],
-        ['Arroz chaufa de pollo', '20 €'],
-        ['Trío de ceviches', '38 €'],
-        ['Pisco sour tradicional', '10 €'],
-      ],
-    },
-    {
-      tipo: 'parrafo',
-      texto: 'Con estos precios puedes calcular el presupuesto antes de ir. El coste final dependerá de los platos, las bebidas y de si compartes alguna entrada o postre.',
+      texto: 'Sinchi nos compartió sus cartas de comida y vinos. Las hemos reorganizado aquí para que puedas consultar todos los platos por categoría, sin ampliar fotografías ni descargar archivos. Abre las secciones que te interesen; los precios corresponden a noviembre de 2026 y pueden cambiar.',
     },
     { tipo: 'subtitulo', texto: '¿Qué beber? Pisco sour, chicha morada y vinos peruanos' },
     {
@@ -228,6 +210,17 @@ export default function SinchiEditorialPreview() {
               photos={{}}
               seoDescription={article.descripcion}
               takeaways={[]}
+              insertAfterHeading={{
+                [slugify('Menú completo y precios de Sinchi')]: (
+                  <RestaurantMenu
+                    restaurantName="Sinchi"
+                    sections={sinchiMenu}
+                    verifiedOn="noviembre de 2026"
+                    bookingUrl="https://sinchi.eatbu.com/?lang=pt"
+                    bookingLabel="Reservar mesa en la web de Sinchi"
+                  />
+                ),
+              }}
             />
             <section className="article-reading mt-10 border-t border-border-soft pt-7" aria-label="Contactar y reservar en Sinchi">
               <h2 className="font-display text-2xl font-semibold text-text-main">Reserva tu mesa</h2>
