@@ -37,7 +37,8 @@
     "test:analytics": "node --import ./scripts/register-ts.mjs --test scripts/test-analytics.mjs",
     "test:english-bookings": "node --import ./scripts/register-ts.mjs --test scripts/test-english-bookings.mjs",
     "smoke:grok-redesign": "node scripts/smoke-grok-redesign.mjs",
-    "smoke:grok-rendered": "node --import ./scripts/register-ts.mjs scripts/smoke-grok-rendered.mjs"
+    "smoke:grok-rendered": "node --import ./scripts/register-ts.mjs scripts/smoke-grok-rendered.mjs",
+    "lint:editorial": "node scripts/lint-editorial-natural.mjs public/sinchi-propuesta-editorial.html"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.2.10",
