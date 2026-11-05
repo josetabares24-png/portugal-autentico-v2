@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { SinchiPdfCards, SinchiPreviewFrame } from './SinchiPreviewExperience';
+import { SinchiPreviewFrame } from './SinchiPreviewExperience';
 
 /**
  * Vista de revisión editorial de Sinchi, no indexada ni incluida en el blog.
@@ -23,7 +23,6 @@ export default function SinchiEditorialPreview() {
   return (
     <main id="main-content" className="w-full bg-[#f8f6f1]">
       <SinchiPreviewFrame />
-      <SinchiPdfCards />
     </main>
   );
 }
