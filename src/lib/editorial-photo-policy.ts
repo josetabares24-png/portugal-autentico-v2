@@ -4,7 +4,7 @@
  */
 export const editorialPhotoReview: Record<string, { image: string | null; reason: string }> = {
   'mejores-mercados-lisboa': { image: '/images/lisboa-originales/time-out-market-lisboa/time-out-market-lisboa-interior-puestos-comida.jpg', reason: 'Interior real de un mercado; sustituye una calle residencial.' },
-  'belem-barrio-guia': { image: '/images/commons/torre-belem-werner-wikimedia.webp', reason: 'Fotografía real de Commons con atribución; sustituye la Torre artificial.' },
+  'belem-barrio-guia': { image: '/images/commons/torre-belem-puente-lisbon-photoshoots-wikimedia.webp', reason: 'Fotografía real de Commons (Lisbon Photoshoots, CC BY-SA 4.0) con atribución; sustituye la Torre artificial y no repite la foto de Werner que ya usa la guía de la Torre.' },
   'monasterio-jeronimos-entradas': { image: '/images/commons/claustro-jeronimos-halun-wikimedia.webp', reason: 'Claustro real de Jakub Hałun, CC BY 4.0.' },
   'arquitectura-manuelina-lisboa': { image: '/images/commons/claustro-jeronimos-halun-wikimedia.webp', reason: 'El claustro representa el tema; fotografía real con atribución.' },
   'vinos-portugueses-guia': { image: null, reason: 'El archivo seleccionado se ve negro; no representa vino.' },
