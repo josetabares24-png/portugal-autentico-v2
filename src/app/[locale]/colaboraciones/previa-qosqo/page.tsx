@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import MapaZona from './MapaZona';
 
 /**
  * Vista de revisión editorial de QOSQO (colaboración comercial).
@@ -31,6 +32,24 @@ const galeria: Foto[] = [
   { src: '/images/qosqo/qosqo-sala-y-postre.webp', alt: 'Postre en primer plano y la sala de QOSQO con murales de colores al fondo', w: 1200, h: 1600 },
 ];
 
+const COMO_LLEGAR =
+  'https://www.google.com/maps/dir/?api=1&destination=QOSQO%2C%20Rua%20dos%20Bacalhoeiros%2026A%2C%20Lisboa%2C%20Portugal';
+
+const restaurantJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: 'QOSQO',
+  servesCuisine: 'Peruana',
+  telephone: '+351212418058',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua dos Bacalhoeiros 26A',
+    addressLocality: 'Lisboa',
+    addressCountry: 'PT',
+  },
+  sameAs: ['https://www.facebook.com/ceviche.portugal', 'https://www.instagram.com/qosqo_lisboa/'],
+};
+
 const linkCls = 'font-semibold text-[#0b5c6b] underline underline-offset-4 hover:text-[#08404a]';
 
 export default function QosqoEditorialPreview() {
@@ -41,7 +60,7 @@ export default function QosqoEditorialPreview() {
           Colaboración comercial con QOSQO
         </p>
         <p className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm">
-          Vista de revisión, no publicada. Falta la carta con precios y horarios, confirmar el teléfono y el permiso escrito de las fotos.
+          Borrador para revisión, fuera del blog y del sitemap. Falta la carta con precios, que el restaurante confirme horario y teléfono, y su permiso escrito para las fotos.
         </p>
 
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl">
@@ -61,6 +80,31 @@ export default function QosqoEditorialPreview() {
           <figcaption className="mt-2 text-xs text-neutral-600">Foto: QOSQO.</figcaption>
         </figure>
 
+        <section aria-label="Datos prácticos" className="mt-8 rounded-lg border border-neutral-300 bg-white p-5 text-base">
+          <ul className="space-y-2">
+            <li><strong>Dirección:</strong> Rua dos Bacalhoeiros 26A, Lisboa</li>
+            <li>
+              <strong>Teléfono:</strong>{' '}
+              <a className={linkCls} href="tel:+351212418058" rel="sponsored noopener" data-cta="qosqo-telefono-ficha">+351 212 418 058</a>
+            </li>
+            <li>
+              <strong>Horario publicado:</strong> de domingo a jueves de 12:00 a 23:00, viernes y sábado de 12:00 a 23:30, según{' '}
+              <a className={linkCls} href="https://www.timeout.pt/lisboa/pt/restaurantes/qosqo" target="_blank" rel="noopener">Time Out Lisboa</a>{' '}
+              (junio de 2026). Confírmalo antes de ir.
+            </li>
+            <li><strong>Precios:</strong> pídele la carta al restaurante; aún no tenemos una carta oficial con precios.</li>
+          </ul>
+          <a
+            href={COMO_LLEGAR}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            data-cta="qosqo-como-llegar"
+            className="mt-4 inline-block rounded bg-[#0b5c6b] px-4 py-2 font-semibold text-white hover:bg-[#08404a]"
+          >
+            Cómo llegar a QOSQO
+          </a>
+        </section>
+
         <div className="mt-8 space-y-5 text-lg leading-relaxed">
           <p>
             QOSQO está en la Rua dos Bacalhoeiros, junto al Campo das Cebolas. Si andas por la Sé o bajas de Alfama hacia
@@ -74,7 +118,7 @@ export default function QosqoEditorialPreview() {
           <h2 className="pt-4 text-2xl font-bold">Qué platos propone QOSQO</h2>
           <p>
             Para abrir, el restaurante destaca los tiraditos de atún o corvina con leche de tigre de ají amarillo: pescado
-            crudo en láminas finas, con una salsa cítrica que lleva ese ají amarillo tan típico de Perú. Si no lo conoces,
+            crudo en láminas finas, con una salsa cítrica de ají amarillo. Si no lo conoces,
             pregunta cuánto pica antes de pedir.
           </p>
           <p>
@@ -114,8 +158,8 @@ export default function QosqoEditorialPreview() {
 
           <h2 className="pt-4 text-2xl font-bold">Pisco sour y otras bebidas</h2>
           <p>
-            El pisco sour es la bebida que más destaca QOSQO. En lo que nos mandaron aparecen también piscos de mango y
-            maracuyá, cerveza Cusqueña rubia y negra e Inca Kola.
+            Entre las bebidas que nos ha enviado QOSQO están el pisco sour y versiones de mango y maracuyá. También
+            mencionan cerveza Cusqueña rubia y negra e Inca Kola.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <figure>
@@ -130,20 +174,22 @@ export default function QosqoEditorialPreview() {
 
           <h2 className="pt-4 text-2xl font-bold">Lo que cuenta el restaurante</h2>
           <p>
-            Según QOSQO, lleva cerca de nueve años abierto, tiene dos salas interiores pequeñas y renovó el local a
-            principios de 2026. Su equipo recomienda pedir varios platos al centro para compartir y probar un poco de todo.
+            Según QOSQO, tiene dos salas interiores pequeñas y renovó el local a principios de 2026. Su equipo recomienda pedir varios platos al centro para compartir y probar un poco de todo.
             También organiza a veces cenas temáticas con cocineros peruanos invitados; si te interesa, pregunta por las
             próximas fechas.
           </p>
 
           <h2 className="pt-4 text-2xl font-bold">Dónde está y cómo reservar</h2>
           <p>
-            <strong>Dirección:</strong> Rua dos Bacalhoeiros 26A, 1100-070 Lisboa, en la zona del Campo das Cebolas, a pocos
-            minutos andando de la Sé y de Terreiro do Paço.
+            <strong>Dirección:</strong> Rua dos Bacalhoeiros 26A, Lisboa, en la zona del Campo das Cebolas, entre la Sé y
+            Terreiro do Paço. En metro puedes llegar hasta{' '}
+            <a className={linkCls} href="https://www.metrolisboa.pt/viajar/terreiro-do-paco/" target="_blank" rel="noopener">Terreiro do Paço</a>,
+            en la línea azul, y seguir andando hasta la Rua dos Bacalhoeiros.
           </p>
+          <MapaZona />
           <ul className="list-disc space-y-2 pl-6">
             <li>
-              Correo para reservas:{' '}
+              Consultar disponibilidad por correo:{' '}
               <a className={linkCls} href="mailto:geralqosqo@gmail.com?subject=Reserva%20(desde%20Estaba%20en%20Lisboa)" rel="sponsored noopener">
                 geralqosqo@gmail.com
               </a>
@@ -158,18 +204,21 @@ export default function QosqoEditorialPreview() {
               Teléfono:{' '}
               <a className={linkCls} href="tel:+351212418058" rel="sponsored noopener" data-cta="qosqo-telefono">
                 +351 212 418 058
-              </a>{' '}
-              <span className="text-sm text-amber-700">(pendiente de confirmar por el restaurante)</span>
+              </a>
             </li>
           </ul>
-          <p>Todavía no tenemos horarios ni precios: consúltalos con el restaurante antes de ir.</p>
+          <p>Todavía no tenemos la carta con precios: pídela al restaurante antes de ir.</p>
         </div>
 
         <p className="mt-10 border-t border-neutral-300 pt-4 text-sm text-neutral-600">
-          Colaboración comercial: artículo patrocinado por QOSQO. Fotos cedidas por QOSQO. Información
-          facilitada por el restaurante en noviembre de 2026.
+          Colaboración comercial: artículo patrocinado por QOSQO. Fotografías enviadas por QOSQO; autorización escrita de publicación pendiente. Información
+          facilitada por el restaurante en noviembre de 2026; horario y teléfono contrastados con Time Out Lisboa (junio de 2026).
         </p>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd).replace(/</g, '\\u003c') }}
+      />
     </main>
   );
 }
