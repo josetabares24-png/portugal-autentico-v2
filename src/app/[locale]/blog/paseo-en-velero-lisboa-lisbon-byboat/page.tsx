@@ -61,8 +61,22 @@ const relatedPosts = ['belem-barrio-guia', 'lisboa-en-pareja', 'como-moverse-por
   return post ? [post] : [];
 });
 
+const blogPostingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: article.titulo,
+  description: article.descripcion,
+  datePublished: '2026-10-27',
+  dateModified: '2026-10-31',
+  inLanguage: 'es',
+  mainEntityOfPage: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat',
+  image: `https://estabaenlisboa.com${heroImage}`,
+  author: { '@type': 'Person', name: 'José Tabares', url: 'https://estabaenlisboa.com/sobre-nosotros' },
+  publisher: { '@type': 'Organization', name: 'Estaba en Lisboa', url: 'https://estabaenlisboa.com' },
+};
+
 export const metadata: Metadata = {
-  title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat',
+  title: { absolute: 'Paseo en velero por el Tajo con Lisbon ByBoat' },
   description: article.descripcion,
   alternates: { canonical: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat' },
   openGraph: {
@@ -88,6 +102,10 @@ export const metadata: Metadata = {
 export default function LisbonByBoatArticle() {
   return (
     <main id="main-content" className="article-page article-v2 bg-background-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd).replace(/</g, '\\u003c') }}
+      />
       <LisbonByBoatStory article={article} photos={photos} links={{ day: dayUrl, sunset: sunsetUrl, all: allToursUrl, map: mapUrl, whatsapp: whatsappUrl }} />
       <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
         <ArticleRelated posts={relatedPosts} />

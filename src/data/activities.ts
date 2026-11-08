@@ -513,6 +513,7 @@ export const activities: Activity[] = [
     slug: 'crucero-atardecer-tajo',
     seoTitle: 'Barco al atardecer por el Tajo en Lisboa: precio y cuándo ir',
     guide: { href: '/blog/lisboa-en-pareja', label: 'Lisboa en pareja' },
+    moreGuides: [{ href: '/blog/paseo-en-velero-lisboa-lisbon-byboat', label: 'Paseo en velero por el Tajo con Lisbon ByBoat (colaboración comercial)' }],
     experiencia: {
       intro: 'Lisboa se construyó mirando al río, así que verla desde el agua es verla como estaba pensada. El recorrido pasa por delante de la Baixa, cruza bajo el puente 25 de Abril y llega a la altura de Belém.',
       queVeras: [

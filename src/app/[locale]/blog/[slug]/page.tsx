@@ -409,6 +409,7 @@ const articles: Record<string, Article> = {
       { href: '/portugal', label: 'Más guías para viajar por Portugal' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Transporte en Lisboa: billetes y precios' },
       { href: '/blog/palacio-da-pena-entradas', label: 'Palacio da Pena: entradas y horarios' },
+      { href: '/blog/quinta-da-regaleira-entradas', label: 'Quinta da Regaleira: entradas y horarios' },
       { href: '/blog/lisboa-en-4-dias', label: 'Cómo encajar Sintra en Lisboa en 4 días' },
       { href: '/blog/lisboa-en-5-dias', label: 'Lisboa en 5 días con Sintra' },
       { href: '/blog/como-moverse-por-lisboa', label: 'Cómo moverse por Lisboa' },
@@ -2619,6 +2620,7 @@ const articles: Record<string, Article> = {
     minutos: 10,
     links: [
       { href: '/actividades/crucero-atardecer-tajo', label: 'Paseo en barco al atardecer por el Tajo' },
+      { href: '/blog/paseo-en-velero-lisboa-lisbon-byboat', label: 'Paseo en velero por el Tajo con Lisbon ByBoat (colaboración comercial)' },
       { href: '/blog/mejores-miradores-lisboa', label: 'Los miradores de Lisboa, uno por uno' },
       { href: '/blog/restaurantes-romanticos-lisboa', label: 'Restaurantes para una cena especial' },
       { href: '/blog/donde-escuchar-fado-autentico', label: 'Dónde escuchar fado sin acabar en un espectáculo para turistas' },
