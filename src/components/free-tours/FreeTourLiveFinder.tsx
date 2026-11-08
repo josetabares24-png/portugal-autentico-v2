@@ -105,10 +105,12 @@ function LiveTourImage({
   source,
   fallback,
   alt,
+  lang = "es",
 }: {
   source?: string;
   fallback: string;
   alt: string;
+  lang?: "es" | "en";
 }) {
   const preferredSource = source || fallback;
   const [failedSource, setFailedSource] = useState<string | null>(null);
@@ -125,7 +127,7 @@ function LiveTourImage({
       onError={() => setFailedSource(preferredSource)}
       className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
     />
-    {currentSource.includes('/commons/') && <figcaption className="absolute inset-x-0 bottom-0 bg-white/95 px-2 pb-1"><PhotoAttribution image={currentSource} /></figcaption>}
+    {currentSource.includes('/commons/') && <figcaption className="absolute inset-x-0 bottom-0 bg-white/95 px-2 pb-1"><PhotoAttribution image={currentSource} lang={lang} /></figcaption>}
     </figure>
   );
 }
@@ -329,6 +331,7 @@ export default function FreeTourLiveFinder({
                               ? `${tour.name}, walking tour in Lisbon`
                               : `Recorrido de ${tour.name} en Lisboa`
                           }
+                          lang={language === "en" ? "en" : "es"}
                         />
                       </div>
 
