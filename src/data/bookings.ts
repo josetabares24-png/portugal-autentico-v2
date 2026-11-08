@@ -424,8 +424,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
     blurb:
       'Ver los fuegos de fin de año desde un velero en el río, en lugar de entre la multitud de la plaza.',
     kind: 'Experiencia',
-    image: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
-    imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
+    image: '/images/commons/tajo-niebla-atardecer-pereira-wikimedia.webp',
+    imageAlt: 'Veleros en el río Tajo al atardecer, con niebla y el puente 25 de Abril al fondo',
     searchTerms: ['nochevieja', 'fin de año', 'fuegos artificiales', 'velero', 'barco', 'tajo'],
     links: {
       article: {
@@ -655,8 +655,8 @@ export const BOOKABLE_PRODUCTS: BookableProduct[] = [
       'Ver Lisboa desde el agua le cambia la escala a la ciudad. Si puedes elegir hora, la del atardecer.',
     kind: 'Experiencia',
     badge: 'Plan de tarde',
-    image: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
-    imageAlt: 'Paseo en barco por el río Tajo a su paso por Lisboa',
+    image: '/images/commons/tajo-niebla-atardecer-pereira-wikimedia.webp',
+    imageAlt: 'Veleros en el río Tajo al atardecer, con niebla y el puente 25 de Abril al fondo',
     searchTerms: ['crucero', 'barco', 'velero', 'tajo', 'tejo', 'rio', 'navegar', 'atardecer', 'puesta de sol', 'paseo en barco'],
     hub: {
       render: 'native-card',

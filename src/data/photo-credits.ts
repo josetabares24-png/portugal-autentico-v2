@@ -24,6 +24,21 @@ export interface PhotoCredit {
 }
 
 export const PHOTO_CREDITS: Record<string, PhotoCredit> = {
+  '/images/commons/tajo-niebla-atardecer-pereira-wikimedia.webp': {
+    subject: 'Veleros en el río Tajo al atardecer, con niebla y el puente 25 de Abril',
+    author: 'Eduardo Pereira',
+    license: 'Dominio público',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Lisbon,_Tagus_river,_fog,_mist,_sea,golden_hour,_light,_sun,_sunset,_bridge_(50706209197).jpg',
+  },
+  '/images/commons/padrao-descobrimentos-julesvernex2-wikimedia.webp': {
+    subject: 'Padrão dos Descobrimentos a contraluz al amanecer, Belém',
+    author: 'Jules Verne Times Two',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Contre-jour_image_of_Padr%C3%A3o_dos_Descobrimentos_at_sunrise,_Lisbon,_Portugal_julesvernex2.jpg',
+  },
   '/images/commons/castelo-mouros-wikimedia.webp': {
     subject: 'Muralla del Castelo dos Mouros, Sintra',
     author: 'Diego Delso',

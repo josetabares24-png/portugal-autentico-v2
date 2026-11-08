@@ -543,7 +543,7 @@ export const blogPosts: BlogPost[] = [
     categoria: 'Cultura',
     fecha: '15 Mar 2026',
     autor: 'José Tabares',
-    imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+    imagen: '/images/commons/padrao-descobrimentos-julesvernex2-wikimedia.webp',
       dateModified: '2026-10-24',
   },
   {

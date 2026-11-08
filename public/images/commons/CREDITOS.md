@@ -79,3 +79,21 @@ Datos en `src/data/photo-credits.ts`. Descargadas y comprobadas el 9/10/2026.
 - Licencia: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 - Enlace: https://commons.wikimedia.org/wiki/File:Bel%C3%A9m_Tower_and_the_25_de_Abril_Bridge_in_the_background.jpg
 - Reducida a 1600 px de ancho y convertida a WebP el 1/11/2026; sin otros cambios. Comprobada en Commons el 1/11/2026.
+
+## tajo-niebla-atardecer-pereira-wikimedia.webp
+
+- Archivo original: Lisbon, Tagus river, fog, mist, sea,golden hour, light, sun, sunset, bridge (50706209197).jpg
+- Qué muestra (según su ficha): Lisbon, Tagus river, fog, mist, sea, golden hour, light, sun, sunset, bridge
+- Autor: Eduardo Pereira
+- Licencia: dominio público
+- Enlace: https://commons.wikimedia.org/wiki/File:Lisbon,_Tagus_river,_fog,_mist,_sea,golden_hour,_light,_sun,_sunset,_bridge_(50706209197).jpg
+- Descargada y comprobada el 8/11/2026.
+
+## padrao-descobrimentos-julesvernex2-wikimedia.webp
+
+- Archivo original: Contre-jour image of Padrão dos Descobrimentos at sunrise, Lisbon, Portugal julesvernex2.jpg
+- Qué muestra (según su ficha): Contre-jour image of Padrão dos Descobrimentos at sunrise, Lisbon, Portugal
+- Autor: Jules Verne Times Two
+- Licencia: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+- Enlace: https://commons.wikimedia.org/wiki/File:Contre-jour_image_of_Padr%C3%A3o_dos_Descobrimentos_at_sunrise,_Lisbon,_Portugal_julesvernex2.jpg
+- Descargada y comprobada el 8/11/2026.
