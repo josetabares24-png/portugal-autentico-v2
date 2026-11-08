@@ -85,7 +85,7 @@ export default function QosqoEditorialPreview() {
             <li><strong>Dirección:</strong> Rua dos Bacalhoeiros 26A, Lisboa</li>
             <li>
               <strong>Teléfono:</strong>{' '}
-              <a className={linkCls} href="tel:+351212418058" rel="sponsored nofollow noopener" data-cta="qosqo-telefono-ficha">+351 212 418 058</a>
+              <a className={linkCls} href="tel:+351212418058" rel="sponsored nofollow noopener" data-cta="qosqo-telefono-ficha">+351 21 241 8058</a>
             </li>
             <li>
               <strong>Horario publicado:</strong> de domingo a jueves de 12:00 a 23:00, viernes y sábado de 12:00 a 23:30, según{' '}
@@ -118,7 +118,7 @@ export default function QosqoEditorialPreview() {
           <h2 className="pt-4 text-2xl font-bold">Qué platos propone QOSQO</h2>
           <p>
             Para abrir, el restaurante destaca los tiraditos de atún o corvina con leche de tigre de ají amarillo: pescado
-            crudo en láminas finas, con una salsa cítrica de ají amarillo. Si no lo conoces,
+            crudo en láminas finas, con una salsa cítrica de ají amarillo, un ají peruano. Si no lo conoces,
             pregunta cuánto pica antes de pedir.
           </p>
           <p>
@@ -128,10 +128,10 @@ export default function QosqoEditorialPreview() {
           <p>
             Entre los calientes han elegido el pulpo confitado con puré de camote (boniato) y patatas «ao murro», y la
             costilla de vaca asada con cerveza Cusqueña Negra, puré de choclo (maíz) y arroz jazmín. También el lomo de
-            corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi.
+            corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi (copos de bonito seco).
           </p>
           <p>
-            Si prefieres carne, está el lomo saltado: trozos de lomo de vacuno salteados con verduras, flambeados con pisco
+            En carne, QOSQO propone el lomo saltado: trozos de lomo de vacuno salteados con verduras, flambeados con pisco
             y con arroz blanco. Y el ají de gallina, gallina deshilachada en una crema de ají amarillo con nueces, también
             con arroz. El restaurante dice que tiene opciones vegetarianas; pregunta por ellas y por los alérgenos al
             reservar.
@@ -190,7 +190,7 @@ export default function QosqoEditorialPreview() {
           <ul className="list-disc space-y-2 pl-6">
             <li>
               Consultar disponibilidad por correo:{' '}
-              <a className={linkCls} href="mailto:geralqosqo@gmail.com?subject=Reserva%20(desde%20Estaba%20en%20Lisboa)" rel="sponsored nofollow noopener">
+              <a className={linkCls} href="mailto:geralqosqo@gmail.com?subject=Reserva%20(desde%20Estaba%20en%20Lisboa)" rel="sponsored nofollow noopener" data-cta="qosqo-email">
                 geralqosqo@gmail.com
               </a>
             </li>
@@ -203,7 +203,7 @@ export default function QosqoEditorialPreview() {
             <li>
               Teléfono:{' '}
               <a className={linkCls} href="tel:+351212418058" rel="sponsored nofollow noopener" data-cta="qosqo-telefono">
-                +351 212 418 058
+                +351 21 241 8058
               </a>
             </li>
           </ul>
