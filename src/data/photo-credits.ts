@@ -109,3 +109,31 @@ export function formatPhotoCreditShort(credit: PhotoCredit): string {
   const adaptation = photoAdaptation(credit);
   return `Foto: ${credit.author} / Wikimedia Commons, ${credit.license}${adaptation ? ` (${adaptation})` : ''}`;
 }
+
+/*
+ * Fotos cedidas por un negocio con permiso de publicación. No son de Wikimedia
+ * Commons ni tienen licencia libre, así que van en un registro aparte y no se
+ * mezclan con los créditos de arriba. El permiso por escrito lo guarda José.
+ */
+export interface PermissionPhotoCredit {
+  subject: string;
+  /** Quién cede la foto, tal como debe aparecer en el crédito. */
+  owner: string;
+  /** Mes en que se dio el permiso. */
+  permission: string;
+  unmodified?: boolean;
+}
+
+export const PERMISSION_PHOTO_CREDITS: Record<string, PermissionPhotoCredit> = {
+  '/images/byboat/lisbon-byboat-velero-tajo.webp': {
+    subject: 'Velero de Lisbon ByBoat navegando por el río Tajo con Lisboa al fondo',
+    owner: 'Lisbon ByBoat',
+    permission: 'nov. 2026',
+  },
+};
+
+/** «Foto: Lisbon ByBoat, cedida con permiso (nov. 2026), reducida y convertida a WebP». */
+export function formatPermissionPhotoCredit(credit: PermissionPhotoCredit): string {
+  const adaptation = credit.unmodified ? '' : ', reducida y convertida a WebP';
+  return `Foto: ${credit.owner}, cedida con permiso (${credit.permission})${adaptation}`;
+}
