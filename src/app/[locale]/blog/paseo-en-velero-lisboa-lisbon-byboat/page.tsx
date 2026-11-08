@@ -81,19 +81,19 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat' },
   openGraph: {
     type: 'article',
-    title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat',
+    title: 'Paseo en velero por el Tajo con Lisbon ByBoat',
     description: article.descripcion,
     url: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat',
     images: [{
       url: `https://estabaenlisboa.com${heroImage}`,
-      width: 1600,
-      height: 800,
+      width: 1200,
+      height: 600,
       alt: 'Velero de Lisbon ByBoat navegando por Lisboa y el río Tajo',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat',
+    title: 'Paseo en velero por el Tajo con Lisbon ByBoat',
     description: article.descripcion,
     images: [`https://estabaenlisboa.com${heroImage}`],
   },

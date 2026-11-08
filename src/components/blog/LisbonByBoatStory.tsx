@@ -61,8 +61,8 @@ export default function LisbonByBoatStory({ article, photos, links }: Props) {
           <p className={styles.disclosure}>Colaboración comercial con Lisbon ByBoat</p>
         </header>
         <figure className={styles.hero}>
-          <Image src={photos.hero} alt="Velero navegando por el río Tajo con Lisboa al fondo" width={980} height={490} unoptimized priority sizes="(max-width: 1200px) 100vw, 1184px" />
-          <figcaption>{formatPermissionPhotoCredit(PERMISSION_PHOTO_CREDITS[photos.hero])}</figcaption>
+          <Image src={photos.hero} alt={article.imageAlt ?? article.titulo} width={980} height={490} unoptimized priority sizes="(max-width: 1200px) 100vw, 1184px" />
+          {PERMISSION_PHOTO_CREDITS[photos.hero] ? <figcaption>{formatPermissionPhotoCredit(PERMISSION_PHOTO_CREDITS[photos.hero])}</figcaption> : null}
         </figure>
         <dl className={styles.essentials} aria-label="El paseo, de un vistazo">
           {[['Duración', '120 minutos'], ['Paseos', 'De día · atardecer'], ['Incluye', '2 bebidas'], ['Tripulación', '2 personas']].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
