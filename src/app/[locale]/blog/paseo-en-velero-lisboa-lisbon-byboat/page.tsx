@@ -70,7 +70,6 @@ const blogPostingJsonLd = {
   dateModified: '2026-10-31',
   inLanguage: 'es',
   mainEntityOfPage: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat',
-  image: `https://estabaenlisboa.com${heroImage}`,
   author: { '@type': 'Person', name: 'José Tabares', url: 'https://estabaenlisboa.com/sobre-nosotros' },
   publisher: { '@type': 'Organization', name: 'Estaba en Lisboa', url: 'https://estabaenlisboa.com' },
 };
