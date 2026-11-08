@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-const INSTAGRAM = 'https://www.instagram.com/qosqo_lisboa/?utm_source=estabaenlisboa&utm_medium=referral&utm_campaign=colaboracion_qosqo';
+const INSTAGRAM = 'https://www.instagram.com/qosqo_lisboa/?utm_source=estabaenlisboa&utm_medium=referral&utm_campaign=qosqo&utm_content=instagram';
 
 type Foto = { src: string; alt: string; w: number; h: number; caption?: string };
 
@@ -85,7 +85,7 @@ export default function QosqoEditorialPreview() {
             <li><strong>Dirección:</strong> Rua dos Bacalhoeiros 26A, Lisboa</li>
             <li>
               <strong>Teléfono:</strong>{' '}
-              <a className={linkCls} href="tel:+351212418058" rel="sponsored noopener" data-cta="qosqo-telefono-ficha">+351 212 418 058</a>
+              <a className={linkCls} href="tel:+351212418058" rel="sponsored nofollow noopener" data-cta="qosqo-telefono-ficha">+351 212 418 058</a>
             </li>
             <li>
               <strong>Horario publicado:</strong> de domingo a jueves de 12:00 a 23:00, viernes y sábado de 12:00 a 23:30, según{' '}
@@ -97,7 +97,7 @@ export default function QosqoEditorialPreview() {
           <a
             href={COMO_LLEGAR}
             target="_blank"
-            rel="sponsored noopener noreferrer"
+            rel="sponsored nofollow noopener noreferrer"
             data-cta="qosqo-como-llegar"
             className="mt-4 inline-block rounded bg-[#0b5c6b] px-4 py-2 font-semibold text-white hover:bg-[#08404a]"
           >
@@ -190,19 +190,19 @@ export default function QosqoEditorialPreview() {
           <ul className="list-disc space-y-2 pl-6">
             <li>
               Consultar disponibilidad por correo:{' '}
-              <a className={linkCls} href="mailto:geralqosqo@gmail.com?subject=Reserva%20(desde%20Estaba%20en%20Lisboa)" rel="sponsored noopener">
+              <a className={linkCls} href="mailto:geralqosqo@gmail.com?subject=Reserva%20(desde%20Estaba%20en%20Lisboa)" rel="sponsored nofollow noopener">
                 geralqosqo@gmail.com
               </a>
             </li>
             <li>
               Instagram:{' '}
-              <a className={linkCls} href={INSTAGRAM} target="_blank" rel="sponsored noopener" data-cta="qosqo-instagram">
+              <a className={linkCls} href={INSTAGRAM} target="_blank" rel="sponsored nofollow noopener" data-cta="qosqo-instagram">
                 @qosqo_lisboa
               </a>
             </li>
             <li>
               Teléfono:{' '}
-              <a className={linkCls} href="tel:+351212418058" rel="sponsored noopener" data-cta="qosqo-telefono">
+              <a className={linkCls} href="tel:+351212418058" rel="sponsored nofollow noopener" data-cta="qosqo-telefono">
                 +351 212 418 058
               </a>
             </li>
