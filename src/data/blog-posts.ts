@@ -591,7 +591,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Torre de Belém, Jerónimos, Castelo de São Jorge, el Elevador de Santa Justa... Los monumentos imprescindibles con horarios, precios y cómo evitar las colas.',
     categoria: 'Guías',
     fecha: '3 Mar 2026',
-    dateModified: '2026-10-21',
+    dateModified: '2026-11-02',
     autor: 'José Tabares',
     imagen: '/images/estatua-praca-lisboa.jpg',
   },
@@ -637,7 +637,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'belem-barrio-guia',
     titulo: 'Belém: El Barrio de los Descubrimientos y los Pastéis de Nata',
-    excerpt: 'Belém es el barrio donde Portugal cambió la historia del mundo. Jerónimos, Torre de Belém, Padrão dos Descobrimentos y la pastelería más famosa del mundo. Cómo visitarlo sin prisas.',
+    excerpt: 'Belém es el barrio donde Portugal cambió la historia del mundo. Jerónimos, Torre de Belém, Padrão dos Descobrimentos y los Pastéis de Belém. Cómo visitarlo sin prisas.',
     categoria: 'Guías',
     fecha: '21 Mar 2026',
     autor: 'José Tabares',
