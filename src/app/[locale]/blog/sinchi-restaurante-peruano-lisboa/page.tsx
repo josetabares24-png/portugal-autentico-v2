@@ -55,7 +55,6 @@ const breadcrumbsLd = {
 export default function SinchiArticlePage() {
   return (
     <main id="main-content" className="sinchi-native">
-      <p className="sinchi-disclosure">Colaboración comercial con Sinchi</p>
       <div dangerouslySetInnerHTML={{ __html: SINCHI_APPROVED_HTML }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsLd) }} />

@@ -153,4 +153,4 @@
 }
 
 .sinchi-native{width:100%;max-width:100%;overflow-x:clip}
-.sinchi-native .sinchi-disclosure{margin:0;padding:12px 24px;text-align:center;font-size:11px;letter-spacing:.06em;color:#536157;background:#f8f6f1;border-bottom:1px solid #e1ddd4}
+.sinchi-native .sinchi-sponsored-inline{display:block;font-family:var(--sans);font-size:12px;font-weight:500;line-height:1.5;letter-spacing:.012em;color:#59615b;margin:-4px 0 18px}
