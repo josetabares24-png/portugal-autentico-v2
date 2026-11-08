@@ -60,7 +60,7 @@ export default function QosqoEditorialPreview() {
           Colaboración comercial con QOSQO
         </p>
         <p className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm">
-          Borrador para revisión, fuera del blog y del sitemap. Falta la carta con precios, que el restaurante confirme horario y teléfono, y su permiso escrito para las fotos.
+          Borrador para revisión, fuera del blog y del sitemap. Falta la carta con precios, que el restaurante confirme el horario y su permiso escrito para las fotos.
         </p>
 
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl">
@@ -212,7 +212,7 @@ export default function QosqoEditorialPreview() {
 
         <p className="mt-10 border-t border-neutral-300 pt-4 text-sm text-neutral-600">
           Colaboración comercial: artículo patrocinado por QOSQO. Fotografías enviadas por QOSQO; autorización escrita de publicación pendiente. Información
-          facilitada por el restaurante en noviembre de 2026; horario y teléfono contrastados con Time Out Lisboa (junio de 2026).
+          facilitada por el restaurante en noviembre de 2026; teléfono contrastado con la página oficial de QOSQO en Facebook y horario con Time Out Lisboa (junio de 2026).
         </p>
       </article>
       <script
