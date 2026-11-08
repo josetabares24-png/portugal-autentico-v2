@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     fecha: '27 Oct 2026',
     dateModified: '2026-10-31',
     autor: 'José Tabares',
-    imagen: '/images/actividades/passeio-barco-rio-tejo-lisboa.webp',
+    imagen: '/images/byboat/lisbon-byboat-velero-tajo.webp',
   },
   {
     id: 'portugal-en-7-dias',

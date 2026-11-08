@@ -10,9 +10,9 @@ const sunsetUrl = 'https://widgets.bokun.io/online-sales/2e607b56-835c-47ed-8b97
 const allToursUrl = 'https://www.lisbonbyboat.com/toursbyboat';
 const mapUrl = 'https://maps.app.goo.gl/kFC7h23W5V6RbtJV9';
 const whatsappUrl = 'https://wa.me/351933914743';
-const heroImage = '/images/actividades/passeio-barco-rio-tejo-lisboa.webp';
+const heroImage = '/images/byboat/lisbon-byboat-velero-tajo.webp';
 const photos = {
-  hero: 'https://static.wixstatic.com/media/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg/v1/fill/w_980,h_490,al_c,q_85/79e18a_44777309cb1942a7b12013161a29f581~mv2_d_3648_1824_s_2.jpg',
+  hero: heroImage,
   boat: 'https://static.wixstatic.com/media/79e18a_cd62c06ff9cd4d0c9b1ffb4a351f2ace.jpg/v1/fill/w_980,h_477,al_c,q_85/79e18a_cd62c06ff9cd4d0c9b1ffb4a351f2ace.jpg',
   sailing: 'https://static.wixstatic.com/media/79e18a_641fb43002a542c6aecb5235a20edcf6~mv2_d_4096_2304_s_2.jpg/v1/fill/w_980,h_551,al_c,q_85/79e18a_641fb43002a542c6aecb5235a20edcf6~mv2_d_4096_2304_s_2.jpg',
 };
@@ -21,7 +21,7 @@ const article: Article = {
   descripcion: 'Cómo descubrir Lisboa desde el río Tajo: dos paseos en velero de dos horas, precios, monumentos, embarque en Belém y reservas.',
   subtitulo: 'Belém, el puente 25 de Abril y las colinas de Lisboa vistos desde el río. Qué incluye la experiencia y cómo elegir entre navegar de día o al atardecer.',
   imagen: heroImage,
-  imageAlt: 'Paseo en barco por el río Tajo, en Lisboa',
+  imageAlt: 'Velero de Lisbon ByBoat navegando por el río Tajo con Lisboa al fondo',
   categoria: 'Guías',
   fecha: '27 Oct 2026',
   dateModified: '2026-10-31',
@@ -68,6 +68,7 @@ const blogPostingJsonLd = {
   description: article.descripcion,
   datePublished: '2026-10-27',
   dateModified: '2026-10-31',
+  image: `https://estabaenlisboa.com${heroImage}`,
   inLanguage: 'es',
   mainEntityOfPage: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat',
   author: { '@type': 'Person', name: 'José Tabares', url: 'https://estabaenlisboa.com/sobre-nosotros' },
@@ -84,9 +85,9 @@ export const metadata: Metadata = {
     description: article.descripcion,
     url: 'https://estabaenlisboa.com/blog/paseo-en-velero-lisboa-lisbon-byboat',
     images: [{
-      url: photos.hero,
-      width: 980,
-      height: 490,
+      url: `https://estabaenlisboa.com${heroImage}`,
+      width: 1600,
+      height: 800,
       alt: 'Velero de Lisbon ByBoat navegando por Lisboa y el río Tajo',
     }],
   },
@@ -94,7 +95,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lisboa desde el Tajo: paseo en velero con Lisbon ByBoat',
     description: article.descripcion,
-    images: [photos.hero],
+    images: [`https://estabaenlisboa.com${heroImage}`],
   },
 };
 
