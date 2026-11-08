@@ -199,7 +199,7 @@ const nextConfig = {
         source: '/images/sinchi/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noimageindex' },
+          // Las fotografías de Sinchi pueden indexarse junto al artículo publicado.
         ],
       },
       {

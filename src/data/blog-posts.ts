@@ -14,6 +14,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'sinchi-restaurante-peruano-lisboa',
+    titulo: 'Sinchi, cocina peruana en Alcântara',
+    excerpt: 'Ceviche de corvina, platos criollos, pisco sour y la historia del chef Joseph Ríos. Conoce Sinchi en Lisboa y cómo reservar. Colaboración comercial.',
+    categoria: 'Gastronomía',
+    fecha: '8 Nov 2026',
+    dateModified: '2026-11-08',
+    autor: 'José Tabares',
+    imagen: '/images/sinchi/11-ceviche-galeria-d4c6f4fac0.webp',
+  },
+  {
     id: 'paseo-en-velero-lisboa-lisbon-byboat',
     titulo: 'Lisboa desde el Tajo: un paseo en velero con Lisbon ByBoat',
     excerpt: 'Cómo es navegar por Lisboa en velero: recorridos de dos horas, opciones de día y al atardecer, precios y punto de embarque en Belém. Colaboración comercial.',
