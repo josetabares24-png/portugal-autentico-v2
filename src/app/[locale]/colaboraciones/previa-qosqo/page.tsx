@@ -116,21 +116,20 @@ export default function QosqoEditorialPreview() {
           </div>
           <div className={styles.introCopy}>
             <p>
-              Si has caminado desde la Sé de Lisboa hacia el río, seguramente
-              has pasado cerca de QOSQO. Está en la Rua dos Bacalhoeiros,
-              junto al Campo das Cebolas, en una zona que conecta Alfama con
-              Terreiro do Paço.
+              QOSQO está en la Rua dos Bacalhoeiros, junto al
+              Campo das Cebolas. Desde la Sé de Lisboa queda
+              cerca del camino que baja hacia Terreiro do Paço.
             </p>
             <p>
-              Su carta reúne recetas peruanas tradicionales y preparaciones
-              con ingredientes de distintas influencias. El restaurante nos
-              cuenta que suele recomendar varios platos para compartir y
-              descubrir sabores diferentes en una misma comida.
+              El restaurante tiene dos salas pequeñas, según nos
+              cuenta su equipo, y renovó el espacio a comienzos
+              de 2026. Su consejo para conocer la carta es pedir
+              varios platos y compartirlos.
             </p>
             <p>
-              QOSQO explica que cuenta con dos salas interiores y que renovó
-              el espacio a comienzos de 2026. También organiza ocasionalmente
-              encuentros con cocineros peruanos invitados.
+              Hay pescado con lima y ají amarillo, pero también
+              guisos como el ají de gallina y carne preparada al
+              wok. No todo se reduce al ceviche.
             </p>
           </div>
         </section>
@@ -161,18 +160,21 @@ export default function QosqoEditorialPreview() {
             </figure>
             <div className={styles.featureCopy}>
               <p className={styles.eyebrow}>Para empezar</p>
-              <h3>El tiradito y el sabor del ají amarillo</h3>
+              <h3>Tiradito con leche de tigre de ají amarillo</h3>
               <p>
-                El tiradito se prepara con pescado cortado en láminas
-                finas y una salsa de carácter cítrico. QOSQO propone
-                versiones de atún o corvina con leche de tigre de ají
-                amarillo, uno de los sabores más reconocibles de Perú.
+                QOSQO propone tiraditos de atún o corvina:
+                pescado cortado en láminas y servido con leche
+                de tigre de ají amarillo. La leche de tigre
+                es un aliño cítrico que también acompaña
+                al ceviche.
               </p>
               <p>
-                También destacan el ceviche de pescado marinado con
-                lima, cebolla y cilantro, y la causa limeña: una
-                preparación fría a base de patata, ají amarillo y
-                lima, con diferentes rellenos.
+                En la selección que nos enviaron aparece
+                el ceviche, preparado con pescado fresco,
+                lima, cebolla y cilantro. También la causa
+                limeña: un plato frío de patata con ají
+                amarillo y lima, que puede llevar pollo,
+                atún o verduras.
               </p>
             </div>
           </div>
