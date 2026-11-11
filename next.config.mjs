@@ -196,6 +196,13 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/images/qosqo/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noimageindex' },
+        ],
+      },
+      {
         source: '/images/sinchi/:path*',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
