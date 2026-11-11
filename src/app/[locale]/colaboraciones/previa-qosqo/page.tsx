@@ -156,7 +156,7 @@ export default function QosqoEditorialPreview() {
                 sizes="(max-width: 680px) 100vw, 48vw"
                 loading="lazy"
               />
-              <figcaption>Tiradito con leche de tigre de ají amarillo. Foto: QOSQO.</figcaption>
+              
             </figure>
             <div className={styles.featureCopy}>
               <p className={styles.eyebrow}>Para empezar</p>
@@ -183,22 +183,22 @@ export default function QosqoEditorialPreview() {
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>01</span>
               <h3>Ají de gallina</h3>
-              <p>Gallina deshilachada con crema de ají amarillo y nueces, acompañada de arroz.</p>
+              <p>Gallina deshilachada en crema de ají amarillo y nueces, con arroz blanco. QOSQO aclara que utiliza gallina, no pollo.</p>
             </div>
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>02</span>
               <h3>Lomo saltado</h3>
-              <p>Carne de vacuno salteada con verduras, flambeada con pisco y servida con arroz blanco.</p>
+              <p>Dados de lomo de vacuno salteados con verduras, flambeados con pisco y acompañados de arroz.</p>
             </div>
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>03</span>
               <h3>Corvina con ají amarillo</h3>
-              <p>Lomo de corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi.</p>
+              <p>Corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi, unas láminas finas de bonito seco.</p>
             </div>
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>04</span>
               <h3>Platos para compartir</h3>
-              <p>Entre sus propuestas figuran el pulpo confitado con camote y la costilla asada con cerveza Cusqueña Negra.</p>
+              <p>Pulpo confitado con puré de camote y patatas «ao murro», o costilla de vaca asada con cerveza Cusqueña Negra.</p>
             </div>
           </div>
 
@@ -212,7 +212,7 @@ export default function QosqoEditorialPreview() {
                 sizes="(max-width: 680px) 50vw, 45vw"
                 loading="lazy"
               />
-              <figcaption>Ají de gallina. Foto: QOSQO.</figcaption>
+              <figcaption>Ají de gallina.</figcaption>
             </figure>
             <figure>
               <Image
@@ -223,13 +223,12 @@ export default function QosqoEditorialPreview() {
                 sizes="(max-width: 680px) 50vw, 45vw"
                 loading="lazy"
               />
-              <figcaption>Corvina con ají amarillo. Foto: QOSQO.</figcaption>
+              <figcaption>Corvina con ají amarillo.</figcaption>
             </figure>
           </div>
           <p className={styles.note}>
-            La selección y las descripciones se basan en información del restaurante
-            de noviembre de 2026. Antes de ir, confirma la carta actual,
-            la disponibilidad de los platos y los alérgenos.
+            Si tienes alergias o restricciones alimentarias,
+            consulta los ingredientes y las alternativas directamente con el restaurante.
           </p>
         </section>
 
