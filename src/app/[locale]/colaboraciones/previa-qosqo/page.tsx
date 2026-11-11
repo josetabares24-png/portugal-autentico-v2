@@ -11,7 +11,7 @@ import styles from './QosqoEditorial.module.css';
 export const metadata: Metadata = {
   title: 'QOSQO, cocina peruana junto a la Sé de Lisboa',
   description:
-    'Conoce QOSQO en Rua dos Bacalhoeiros, cerca de la Sé: tiraditos, causa, ají de gallina, pisco sour y datos para reservar.',
+    'QOSQO, restaurante peruano cerca de la Sé de Lisboa: platos destacados, dirección en Rua dos Bacalhoeiros y cómo reservar.',
   robots: {
     index: false,
     follow: false,
@@ -57,11 +57,11 @@ export default function QosqoEditorialPreview() {
               QOSQO<span className="sr-only">, restaurante peruano cerca de la Sé de Lisboa</span>
             </h1>
             <p className={styles.coverSubtitle}>
-              Cocina peruana a unos pasos de la Sé de Lisboa
+              Cocina peruana en Rua dos Bacalhoeiros
             </p>
             <p className={styles.coverDeck}>
-              Ceviches, ají amarillo, platos criollos y pisco sour en
-              Rua dos Bacalhoeiros, muy cerca del Campo das Cebolas.
+              Tiraditos, lomo saltado, ají de gallina y pisco sour.
+              Esto es lo que nos contó QOSQO sobre su carta y cómo visitarlo.
             </p>
             <div className={styles.coverBottom}>
               <span>Por José Tabares</span>
@@ -100,7 +100,7 @@ export default function QosqoEditorialPreview() {
             />
           </figure>
         </div>
-        <p className={styles.credit}>Fotografías facilitadas por QOSQO para esta propuesta editorial.</p>
+        <p className={styles.credit}>Fotografías: QOSQO.</p>
 
         <nav className={styles.quickNav} aria-label="Contenido del artículo">
           <a href="#historia">El restaurante</a>
@@ -112,7 +112,7 @@ export default function QosqoEditorialPreview() {
         <section className={styles.intro} id="historia" aria-labelledby="qosqo-historia">
           <div>
             <span className={styles.sectionNumber}>01 / EL RESTAURANTE</span>
-            <h2 id="qosqo-historia">Una cocina peruana junto al centro histórico</h2>
+            <h2 id="qosqo-historia">Dos salas y una carta para compartir</h2>
           </div>
           <div className={styles.introCopy}>
             <p>
@@ -142,8 +142,8 @@ export default function QosqoEditorialPreview() {
               <h2 id="qosqo-platos">Qué comer en QOSQO</h2>
             </div>
             <p>
-              Una selección de platos que el propio restaurante nos
-              ha presentado para este artículo.
+              Del pescado con ají amarillo a los platos calientes
+              que QOSQO destaca en su carta.
             </p>
           </div>
 
