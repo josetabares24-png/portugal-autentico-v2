@@ -273,10 +273,10 @@ export default function QosqoEditorialPreview() {
             <p className={styles.eyebrow}>04 / MÁS OPCIONES</p>
             <h2 id="qosqo-ambiente">¿Y si no comes carne ni pescado?</h2>
             <p>
-              El equipo de QOSQO nos indicó que también tiene
-              opciones vegetarianas. Como no nos facilitó una
-              lista de esos platos, lo mejor es preguntar
-              qué preparaciones hay disponibles.
+              El equipo de QOSQO señala que también tiene
+              opciones vegetarianas. Si comes sin carne ni
+              pescado, pregunta qué platos hay disponibles
+              y qué ingredientes llevan.
             </p>
             <p>
               De vez en cuando organizan cenas temáticas con
