@@ -117,8 +117,7 @@ export default function QosqoEditorialPreview() {
           <div className={styles.introCopy}>
             <p>
               QOSQO está en la Rua dos Bacalhoeiros, junto al
-              Campo das Cebolas. Desde la Sé de Lisboa queda
-              cerca del camino que baja hacia Terreiro do Paço.
+              Campo das Cebolas. Está entre la zona de la Sé y Terreiro do Paço, cerca del río.
             </p>
             <p>
               El restaurante tiene dos salas pequeñas, según nos
@@ -169,12 +168,7 @@ export default function QosqoEditorialPreview() {
                 al ceviche.
               </p>
               <p>
-                En la selección que nos enviaron aparece
-                el ceviche, preparado con pescado fresco,
-                lima, cebolla y cilantro. También la causa
-                limeña: un plato frío de patata con ají
-                amarillo y lima, que puede llevar pollo,
-                atún o verduras.
+                También nos hablaron del ceviche, con pescado fresco, lima, cebolla y cilantro, y de la causa limeña: patata con ají amarillo y lima, servida fría y con relleno de pollo, atún o verduras.
               </p>
             </div>
           </div>
@@ -193,7 +187,7 @@ export default function QosqoEditorialPreview() {
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>03</span>
               <h3>Corvina con ají amarillo</h3>
-              <p>Corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi, unas láminas finas de bonito seco.</p>
+              <p>Corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi, unas virutas de bonito seco.</p>
             </div>
             <div className={styles.indexRow}>
               <span className={styles.indexCount}>04</span>
