@@ -1,5 +1,18 @@
 # Metrics system
 
+## 11 noviembre 2026 — GSC, 28 días móviles (reporte manual de José)
+
+**Fuente:** cifras compartidas expresamente por José en conversación el 2026-11-11; aún **no verificadas directamente** con extracción de Search Console.
+
+- **Clics orgánicos de Google:** 208.
+- **Impresiones orgánicas de Google:** 19.817.
+- **Ventana:** últimos 28 días de la vista consultada por José (el corte exacto de días finalizados no consta).
+- **CTR derivado aproximado:** 1,05 % (208 / 19.817).
+- **Posición media:** no proporcionada.
+- **Pageviews, sesiones, usuarios, reservas y facturación:** no proporcionados; no inferir de clics ni impresiones.
+- **Uso comercial autorizado de las métricas:** mencionar valores y su fuente/período al responder a clientes que pidan datos de alcance; aclarar que no son pageviews. No repetir cifras históricas en respuestas si el interlocutor ya las recibió, salvo actualización expresamente relevante.
+- **Advertencia de comparación:** los 180 clics y 15.300 impresiones citados para octubre de 2026 pertenecen a un período mensual, no necesariamente comparable con esta ventana móvil de 28 días. No presentar su diferencia como crecimiento causal ni como crecimiento estrictamente equivalente.
+
 ## 24 octubre 2026 — Lectura posterior solicitada, sin datos nuevos válidos
 
 José prioriza puntos4/5/6/7. Windsor descubre cuentas/campos pero bloquea lectura por3cuentas frente a1del plan; descartar fila cero con aviso explícito. GSCWizard sigue subscription_required. No cambios de plan/conexiones. [Registro y ventanas](data/SEARCH-ACCESS-2026-10-24.json). Último dato válido sigue17/10; no medir el efecto de PR116 ni contar /en como fracaso el día de publicar. Comparaciones7/28/90d hasta21/10 preparadas, no ejecutadas con datos válidos. Reservas/comisiones desconocidas.
