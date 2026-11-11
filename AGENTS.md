@@ -26,6 +26,7 @@ Si una propuesta contradice una decisión LOCKED, señala el conflicto y argumen
 - No rediseñar por estética.
 - Cambios visuales importantes requieren aprobación explícita antes de merge.
 - Voz humana: si José no lo diría hablando con alguien, no se publica así.
+- En emails comerciales, aplicar L-008: leer el hilo completo (enviados y recibidos), eliminar repetición de información ya comunicada, responder únicamente a la necesidad nueva y confirmar el siguiente paso. No enviar sin autorización.
 - Fotografía real antes que IA cuando se representa una realidad.
 - No inventar experiencias, datos, precios, horarios o autoridad local.
 - No hacer SEO de relleno.
