@@ -236,21 +236,17 @@ export default function QosqoEditorialPreview() {
           <div className={styles.drinksInner}>
             <div className={styles.drinksCopy}>
               <p className={styles.eyebrow}>03 / PARA BRINDAR</p>
-              <h2 id="qosqo-pisco">Pisco sour y otras bebidas peruanas</h2>
+              <h2 id="qosqo-pisco">Pisco sour, mango y maracuyá</h2>
               <p>
-                El pisco sour tiene su lugar en la mesa de QOSQO.
-                Además de esta combinación de pisco y cítricos,
-                el restaurante nos ha mostrado variantes con
-                frutas como mango y maracuyá.
+                Si preguntas qué beber, QOSQO tiene una sugerencia:
+                empezar con un pisco sour. También nos habló de
+                versiones con mango y maracuyá.
               </p>
               <p>
-                También mencionan Inca Kola y cerveza Cusqueña,
-                dos bebidas que forman parte de su selección
-                de productos peruanos.
-              </p>
-              <p className={styles.smallPrint}>
-                Consulta directamente qué bebidas están disponibles
-                y sus precios en la carta vigente.
+                En su selección aparecen además Inca Kola y
+                las cervezas Cusqueña rubia y negra.
+                Los precios y la disponibilidad se consultan
+                en la carta del restaurante.
               </p>
             </div>
             <figure className={styles.drinksFigure}>
@@ -262,7 +258,7 @@ export default function QosqoEditorialPreview() {
                 sizes="(max-width: 680px) 100vw, 48vw"
                 loading="lazy"
               />
-              <figcaption>Un pisco sour servido en QOSQO. Fotografía: QOSQO.</figcaption>
+              
             </figure>
           </div>
         </section>
@@ -277,21 +273,21 @@ export default function QosqoEditorialPreview() {
               sizes="(max-width: 680px) 100vw, 52vw"
               loading="lazy"
             />
-            <figcaption>Detalle de un postre y el mural del restaurante. Foto: QOSQO.</figcaption>
+            
           </figure>
           <div>
-            <p className={styles.eyebrow}>04 / EL LUGAR</p>
-            <h2 id="qosqo-ambiente">Un alto antes de seguir por Lisboa</h2>
+            <p className={styles.eyebrow}>04 / MÁS OPCIONES</p>
+            <h2 id="qosqo-ambiente">¿Y si no comes carne ni pescado?</h2>
             <p>
-              QOSQO está en una calle que conecta varias de las
-              zonas más visitadas del centro. Es una opción para
-              hacer una pausa después de caminar por Alfama o
-              antes de continuar hacia la ribera.
+              El equipo de QOSQO nos indicó que también tiene
+              opciones vegetarianas. Como no nos facilitó una
+              lista de esos platos, lo mejor es preguntar
+              qué preparaciones hay disponibles.
             </p>
             <p>
-              Si te interesa una experiencia gastronómica concreta
-              o alguno de los eventos con cocineros invitados,
-              pregunta al restaurante por las próximas fechas.
+              De vez en cuando organizan cenas temáticas con
+              cocineros peruanos invitados. Si te interesa
+              asistir, consulta cuándo tienen prevista la siguiente.
             </p>
           </div>
         </section>
@@ -301,11 +297,11 @@ export default function QosqoEditorialPreview() {
             <div className={styles.visitHeader}>
               <div>
                 <p className={styles.eyebrow}>05 / INFORMACIÓN PRÁCTICA</p>
-                <h2 id="qosqo-visita">Dónde está QOSQO y cómo reservar</h2>
+                <h2 id="qosqo-visita">QOSQO: dirección y reservas</h2>
               </div>
               <p>
-                Consulta directamente la disponibilidad, el
-                horario y la carta vigente antes de visitarlo.
+                El restaurante está junto al Campo das Cebolas.
+                Puedes contactar por teléfono o correo para reservar.
               </p>
             </div>
             <div className={styles.visitBody}>
@@ -319,7 +315,7 @@ export default function QosqoEditorialPreview() {
                     Llamar para reservar <span>+351 21 241 8058</span>
                   </a>
                   <a href={EMAIL} rel="sponsored nofollow" data-cta="qosqo-reserva-email">
-                    Consultar por correo <span>Gmail</span>
+                    Consultar por correo <span>Escribir</span>
                   </a>
                   <a href={MAPS} target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="qosqo-como-llegar">
                     Cómo llegar <span>Google Maps</span>
@@ -338,11 +334,11 @@ export default function QosqoEditorialPreview() {
 
         <footer className={styles.footer}>
           <p className={styles.footerDisclosure}>
-            Colaboración comercial con QOSQO. Este artículo se ha preparado a partir
-            de los materiales, fotografías y detalles facilitados por el restaurante,
-            y no representa una visita ni una degustación personal. Esta es
-            una versión preliminar: la publicación definitiva requiere la
-            validación de los datos y la autorización de las fotografías.
+            Colaboración comercial con QOSQO. La información
+            y las fotografías proceden del propio restaurante.
+            No hemos realizado una visita ni una degustación
+            para escribir este artículo. La publicación definitiva
+            queda pendiente de revisión y autorización de las imágenes.
           </p>
           <div className={styles.byline}>
             <Image
