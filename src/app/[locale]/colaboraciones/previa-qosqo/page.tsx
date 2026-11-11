@@ -5,14 +5,13 @@ import MapaZona from './MapaZona';
 import styles from './QosqoEditorial.module.css';
 
 /**
- * QOSQO: propuesta editorial revisable.
- * Se mantiene en ruta temporal noindex, fuera del sitemap y del blog.
- * No confundir la información facilitada por el restaurante con una visita propia.
+ * QOSQO: reportaje gastronómico independiente, creado para revisión.
+ * Noindex, fuera del sitemap; no se atribuye una visita ni una degustación.
  */
 export const metadata: Metadata = {
-  title: 'QOSQO: cocina peruana junto a la Sé de Lisboa',
+  title: 'QOSQO, cocina peruana junto a la Sé de Lisboa',
   description:
-    'QOSQO está junto al Campo das Cebolas, cerca de la Sé de Lisboa. Conoce los platos peruanos que propone, dónde encontrarlo y cómo reservar.',
+    'Conoce QOSQO en Rua dos Bacalhoeiros, cerca de la Sé: tiraditos, causa, ají de gallina, pisco sour y datos para reservar.',
   robots: {
     index: false,
     follow: false,
@@ -21,47 +20,15 @@ export const metadata: Metadata = {
   },
 };
 
-const TEL = 'tel:+351212418058';
+const PHONE = 'tel:+351212418058';
 const EMAIL =
   'mailto:geralqosqo@gmail.com?subject=Reserva%20QOSQO%20(desde%20Estaba%20en%20Lisboa)';
-const DIRECTIONS =
+const MAPS =
   'https://www.google.com/maps/dir/?api=1&destination=QOSQO%2C%20Rua%20dos%20Bacalhoeiros%2026A%2C%20Lisboa%2C%20Portugal';
 const INSTAGRAM =
   'https://www.instagram.com/qosqo_lisboa/?utm_source=estabaenlisboa&utm_medium=referral&utm_campaign=qosqo&utm_content=instagram';
 
-type Photo = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  caption: string;
-};
-
-const extraPhotos: Photo[] = [
-  {
-    src: '/images/qosqo/qosqo-plato-salsa-amarilla.webp',
-    alt: 'Preparación de pescado sobre salsa de ají amarillo con decoración de flores',
-    width: 1067,
-    height: 1600,
-    caption: 'Una de las preparaciones con salsa amarilla fotografiadas por QOSQO.',
-  },
-  {
-    src: '/images/qosqo/qosqo-pisco-sour.webp',
-    alt: 'Pisco sour en una copa sobre un mantel colorido de QOSQO',
-    width: 1280,
-    height: 1600,
-    caption: 'Pisco sour, uno de los cócteles que destaca el restaurante.',
-  },
-  {
-    src: '/images/qosqo/qosqo-plato-principal.webp',
-    alt: 'Plato servido por QOSQO con cebolla morada, hierbas y flores',
-    width: 1200,
-    height: 1600,
-    caption: 'Otra de las elaboraciones que nos compartió el restaurante.',
-  },
-];
-
-const restaurantJsonLd = {
+const restaurantSchema = {
   '@context': 'https://schema.org',
   '@type': 'Restaurant',
   name: 'QOSQO',
@@ -83,329 +50,311 @@ export default function QosqoEditorialPreview() {
   return (
     <main id="main-content" className={styles.page}>
       <article>
-        <header className={styles.hero}>
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Gastronomía · Campo das Cebolas</p>
-            <h1 className={styles.title}>QOSQO: cocina peruana junto a la Sé de Lisboa</h1>
-            <p className={styles.deck}>
-              Entre la Sé y el río, QOSQO reúne ceviches, tiraditos,
-              platos criollos y pisco sour. Una opción para descubrir
-              sabores del Perú mientras recorres el centro de Lisboa.
+        <header className={styles.cover}>
+          <div className={styles.coverInner}>
+            <p className={styles.eyebrow}>Estaba en Lisboa / Gastronomía</p>
+            <h1 className={styles.brandTitle}>
+              QOSQO<span className="sr-only">, restaurante peruano cerca de la Sé de Lisboa</span>
+            </h1>
+            <p className={styles.coverSubtitle}>
+              Cocina peruana a unos pasos de la Sé de Lisboa
             </p>
-            <p className={styles.heroMeta}>Por José Tabares · Estaba en Lisboa</p>
-            <span className={styles.sponsor}>Colaboración comercial con QOSQO</span>
-            <div className={styles.actions}>
-              <a className={styles.primary} href={TEL} rel="sponsored nofollow" data-cta="qosqo-hero-reserva">
-                Llamar para reservar
-              </a>
-              <a className={styles.secondary} href="#platos">
-                Conocer los platos
-              </a>
+            <p className={styles.coverDeck}>
+              Ceviches, ají amarillo, platos criollos y pisco sour en
+              Rua dos Bacalhoeiros, muy cerca del Campo das Cebolas.
+            </p>
+            <div className={styles.coverBottom}>
+              <span>Por José Tabares</span>
+              <span>Colaboración comercial con QOSQO</span>
             </div>
+            <a
+              className={styles.coverAction}
+              href={PHONE}
+              rel="sponsored nofollow"
+              data-cta="qosqo-cabecera-reserva"
+            >
+              Llamar para reservar
+            </a>
           </div>
-          <figure className={styles.heroVisual}>
-            <div className={styles.heroImage}>
-              <Image
-                src="/images/qosqo/qosqo-tiradito-leche-de-tigre-aji-amarillo.webp"
-                alt="Tiradito de pescado con leche de tigre de ají amarillo servido en QOSQO"
-                fill
-                priority
-                sizes="(max-width: 760px) 100vw, 54vw"
-              />
-            </div>
-            <figcaption className={styles.photoCredit}>Fotografía: QOSQO</figcaption>
-          </figure>
         </header>
 
-        <div className={styles.facts}>
-          <div className={styles.factsInner}>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Dirección</span>
-              <span className={styles.factValue}>Rua dos Bacalhoeiros 26A, Lisboa</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Zona</span>
-              <span className={styles.factValue}>Sé · Campo das Cebolas</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Contacto</span>
-              <span className={styles.factValue}>
-                <a href={TEL} rel="sponsored nofollow" data-cta="qosqo-ficha-telefono">
-                  +351 21 241 8058
-                </a>
-              </span>
-            </div>
-          </div>
+        <div className={styles.coverPhotos}>
+          <figure className={styles.coverPhoto}>
+            <Image
+              src="/images/qosqo/qosqo-plato-con-mantel-andino.webp"
+              alt="Pulpo confitado servido sobre un mantel de colores y motivos andinos con el nombre QOSQO"
+              width={1467}
+              height={978}
+              priority
+              sizes="(max-width: 680px) 100vw, 67vw"
+            />
+          </figure>
+          <figure className={styles.coverPhoto}>
+            <Image
+              src="/images/qosqo/qosqo-bebidas.webp"
+              alt="Dos personas brindan con cócteles sobre una mesa del restaurante QOSQO"
+              width={1280}
+              height={1600}
+              sizes="(max-width: 680px) 1px, 33vw"
+              loading="lazy"
+            />
+          </figure>
         </div>
+        <p className={styles.credit}>Fotografías facilitadas por QOSQO para esta propuesta editorial.</p>
 
-        <div className={styles.mainGrid}>
-          <div className={styles.reading}>
-            <p className={styles.lead}>
-              Si estás paseando por las calles de Alfama, visitando la Sé o bajando
-              hacia Terreiro do Paço, QOSQO queda a pocos pasos del Campo das
-              Cebolas. Su carta gira alrededor de la cocina peruana, con
-              preparaciones de pescado, recetas criollas y platos para compartir.
+        <nav className={styles.quickNav} aria-label="Contenido del artículo">
+          <a href="#historia">El restaurante</a>
+          <a href="#platos">Qué comer</a>
+          <a href="#pisco">Bebidas</a>
+          <a href="#visita">Cómo llegar y reservar</a>
+        </nav>
+
+        <section className={styles.intro} id="historia" aria-labelledby="qosqo-historia">
+          <div>
+            <span className={styles.sectionNumber}>01 / EL RESTAURANTE</span>
+            <h2 id="qosqo-historia">Una cocina peruana junto al centro histórico</h2>
+          </div>
+          <div className={styles.introCopy}>
+            <p>
+              Si has caminado desde la Sé de Lisboa hacia el río, seguramente
+              has pasado cerca de QOSQO. Está en la Rua dos Bacalhoeiros,
+              junto al Campo das Cebolas, en una zona que conecta Alfama con
+              Terreiro do Paço.
             </p>
             <p>
-              El restaurante nos facilitó su historia, fotografías y una
-              selección de sus especialidades para preparar esta guía.
-              Te contamos qué puedes encontrar y cómo ponerte en contacto
-              para reservar.
+              Su carta reúne recetas peruanas tradicionales y preparaciones
+              con ingredientes de distintas influencias. El restaurante nos
+              cuenta que suele recomendar varios platos para compartir y
+              descubrir sabores diferentes en una misma comida.
             </p>
-
-            <section id="cocina">
-              <h2>Una mesa para descubrir la cocina peruana</h2>
-              <p>
-                En Perú, comer suele ser una mezcla de tradiciones: del
-                ají y la patata a técnicas e ingredientes que llegaron
-                de otras cocinas. En QOSQO conviven clásicos reconocibles,
-                como el ceviche o el lomo saltado, con elaboraciones de
-                presentación más contemporánea.
-              </p>
-              <p>
-                Su equipo nos cuenta que suele recomendar pedir varios
-                platos al centro de la mesa. Es una forma sencilla de
-                probar distintas recetas, especialmente si es tu primera
-                vez en un restaurante peruano.
-              </p>
-              <figure className={styles.imageWide}>
-                <Image
-                  src="/images/qosqo/qosqo-plato-con-mantel-andino.webp"
-                  alt="Pulpo servido sobre un mantel con motivos andinos y el nombre QOSQO"
-                  width={1467}
-                  height={978}
-                  sizes="(max-width: 760px) 100vw, 715px"
-                  loading="lazy"
-                />
-                <figcaption>
-                  Pulpo confitado con puré de camote y patatas «ao murro», según la descripción de QOSQO.
-                  Fotografía: QOSQO.
-                </figcaption>
-              </figure>
-            </section>
-
-            <section id="platos">
-              <p className={styles.eyebrow}>Qué comer</p>
-              <h2>Los platos que QOSQO quiere que conozcas</h2>
-              <h3>Para empezar: tiradito, ceviche y causa</h3>
-              <p>
-                El tiradito es una buena puerta de entrada a los sabores
-                del Perú: pescado cortado en láminas finas, servido aquí
-                con leche de tigre de ají amarillo. El resultado combina
-                frescura, acidez y el carácter de este ají peruano.
-              </p>
-              <p>
-                QOSQO también destaca su ceviche, preparado con pescado
-                fresco marinado con lima, cebolla y cilantro. Otra
-                especialidad que describen es la causa limeña, un plato
-                frío de patata, ají amarillo y lima que puede llevar
-                distintos rellenos.
-              </p>
-
-              <h3>Platos calientes con carácter</h3>
-              <p>
-                Entre las opciones que nos han presentado están el
-                lomo saltado —carne salteada con verduras y acompañada
-                de arroz— y el ají de gallina, con gallina deshilachada
-                en una crema de ají amarillo y nueces.
-              </p>
-              <div className={styles.imagePair}>
-                <figure>
-                  <Image
-                    src="/images/qosqo/qosqo-aji-de-gallina.webp"
-                    alt="Ají de gallina con arroz blanco servido en QOSQO"
-                    width={1200}
-                    height={1600}
-                    sizes="(max-width: 760px) 50vw, 350px"
-                    loading="lazy"
-                  />
-                  <figcaption>Ají de gallina. Foto: QOSQO.</figcaption>
-                </figure>
-                <figure>
-                  <Image
-                    src="/images/qosqo/qosqo-plato-pescado.webp"
-                    alt="Lomo de corvina con salsa de ají amarillo en un plato de QOSQO"
-                    width={1067}
-                    height={1600}
-                    sizes="(max-width: 760px) 50vw, 350px"
-                    loading="lazy"
-                  />
-                  <figcaption>Corvina con ají amarillo. Foto: QOSQO.</figcaption>
-                </figure>
-              </div>
-              <p>
-                Si prefieres pescado, el restaurante menciona además
-                el lomo de corvina con salsa de ají amarillo, puré de
-                patata, arroz jazmín y katsuobushi. Y para una comida
-                más contundente, propone costilla de vaca asada con
-                cerveza Cusqueña Negra.
-              </p>
-              <div className={styles.shortNote}>
-                Los platos mencionados proceden de la información facilitada
-                por QOSQO en noviembre de 2026. Consulta la carta actual
-                y los alérgenos directamente con el restaurante antes de pedir.
-              </div>
-            </section>
-
-            <section id="pisco">
-              <h2>Un pisco sour para empezar</h2>
-              <p>
-                Para acompañar la comida, QOSQO destaca el pisco sour,
-                uno de los cócteles más conocidos del Perú, y otras
-                combinaciones con frutas tropicales como mango o maracuyá.
-                En su selección también aparecen Inca Kola y cerveza
-                Cusqueña.
-              </p>
-              <figure className={styles.imageNarrow}>
-                <Image
-                  src="/images/qosqo/qosqo-bebidas.webp"
-                  alt="Dos personas sostienen cócteles en una mesa del restaurante QOSQO"
-                  width={1280}
-                  height={1600}
-                  sizes="(max-width: 760px) 100vw, 560px"
-                  loading="lazy"
-                />
-                <figcaption>Un momento para brindar en QOSQO. Fotografía: QOSQO.</figcaption>
-              </figure>
-            </section>
-
-            <section id="ambiente">
-              <h2>Un restaurante pequeño, cerca del río</h2>
-              <p>
-                QOSQO nos cuenta que dispone de dos salas interiores
-                y que renovó el local a comienzos de 2026. Está en
-                la Rua dos Bacalhoeiros, entre la zona de la Sé y
-                Terreiro do Paço, así que es fácil incluirlo en un
-                paseo por el centro histórico.
-              </p>
-              <p>
-                También nos comentan que organizan ocasionalmente
-                encuentros gastronómicos con cocineros peruanos invitados.
-                Si te interesa asistir a alguno, lo mejor es
-                preguntar directamente por las próximas fechas.
-              </p>
-              <figure className={styles.imageNarrow}>
-                <Image
-                  src="/images/qosqo/qosqo-sala-y-postre.webp"
-                  alt="Postre de QOSQO con un mural colorido del restaurante al fondo"
-                  width={1200}
-                  height={1600}
-                  sizes="(max-width: 760px) 100vw, 560px"
-                  loading="lazy"
-                />
-                <figcaption>Un postre con el mural del local al fondo. Foto: QOSQO.</figcaption>
-              </figure>
-            </section>
-          </div>
-
-          <aside className={styles.aside} aria-label="Índice del artículo">
-            <div className={styles.asideInner}>
-              <p className={styles.asideTitle}>En este artículo</p>
-              <nav className={styles.toc} aria-label="Secciones de QOSQO">
-                <a href="#cocina">La cocina de QOSQO</a>
-                <a href="#platos">Qué platos conocer</a>
-                <a href="#pisco">Pisco sour y bebidas</a>
-                <a href="#ambiente">El ambiente</a>
-                <a href="#reservas">Cómo llegar y reservar</a>
-              </nav>
-              <div className={styles.asideAddress}>
-                <strong>QOSQO · Cocina peruana</strong>
-                Rua dos Bacalhoeiros 26A<br />
-                Lisboa, Portugal
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <section className={styles.gallery} aria-label="Más fotografías de QOSQO">
-          <div className={styles.galleryIntro}>
-            <div>
-              <p className={styles.eyebrow}>Desde la mesa</p>
-              <h2>Algunos detalles de QOSQO</h2>
-            </div>
-            <p>Una selección de imágenes compartidas por el restaurante.</p>
-          </div>
-          <div className={styles.galleryGrid}>
-            {extraPhotos.map((photo) => (
-              <figure key={photo.src}>
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={photo.width}
-                  height={photo.height}
-                  sizes="(max-width: 760px) 100vw, 55vw"
-                  loading="lazy"
-                />
-                <figcaption>{photo.caption} Fotografía: QOSQO.</figcaption>
-              </figure>
-            ))}
+            <p>
+              QOSQO explica que cuenta con dos salas interiores y que renovó
+              el espacio a comienzos de 2026. También organiza ocasionalmente
+              encuentros con cocineros peruanos invitados.
+            </p>
           </div>
         </section>
 
-        <section id="reservas" className={styles.booking}>
-          <div className={styles.bookingInner}>
+        <section className={styles.sectionShell} id="platos" aria-labelledby="qosqo-platos">
+          <div className={styles.sectionTitle}>
             <div>
-              <p className={styles.eyebrow}>Antes de ir</p>
-              <h2>Cómo llegar y reservar en QOSQO</h2>
-              <p>
-                El restaurante está en la Rua dos Bacalhoeiros 26A,
-                junto al Campo das Cebolas. Desde la Sé de Lisboa
-                o desde Terreiro do Paço puedes acercarte caminando.
-              </p>
-              <p>
-                Para confirmar la disponibilidad, el horario y la carta
-                actual, contacta directamente con QOSQO.
-              </p>
-              <div className={styles.bookingLinks}>
-                <a className={styles.primary} href={TEL} rel="sponsored nofollow" data-cta="qosqo-final-llamar">
-                  Llamar para reservar
-                </a>
-                <a className={styles.secondary} href={EMAIL} rel="sponsored nofollow" data-cta="qosqo-final-email">
-                  Escribir por correo
-                </a>
-              </div>
-              <div className={styles.contact}>
-                <span>Rua dos Bacalhoeiros 26A, Lisboa, Portugal</span>
-                <span>
-                  <a href={DIRECTIONS} target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="qosqo-direcciones">
-                    Ver cómo llegar en Google Maps
-                  </a>
-                </span>
-                <span>
-                  <a href={INSTAGRAM} target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="qosqo-instagram">
-                    Instagram @qosqo_lisboa
-                  </a>
-                </span>
-              </div>
+              <span className={styles.sectionNumber}>02 / EN LA MESA</span>
+              <h2 id="qosqo-platos">Qué comer en QOSQO</h2>
             </div>
-            <div className={styles.mapPanel}>
-              <MapaZona />
+            <p>
+              Una selección de platos que el propio restaurante nos
+              ha presentado para este artículo.
+            </p>
+          </div>
+
+          <div className={styles.editorialFeature}>
+            <figure>
+              <Image
+                src="/images/qosqo/qosqo-tiradito-leche-de-tigre-aji-amarillo.webp"
+                alt="Tiradito de pescado sobre salsa amarilla, con pequeños acompañamientos crujientes"
+                width={1073}
+                height={1344}
+                sizes="(max-width: 680px) 100vw, 48vw"
+                loading="lazy"
+              />
+              <figcaption>Tiradito con leche de tigre de ají amarillo. Foto: QOSQO.</figcaption>
+            </figure>
+            <div className={styles.featureCopy}>
+              <p className={styles.eyebrow}>Para empezar</p>
+              <h3>El tiradito y el sabor del ají amarillo</h3>
+              <p>
+                El tiradito se prepara con pescado cortado en láminas
+                finas y una salsa de carácter cítrico. QOSQO propone
+                versiones de atún o corvina con leche de tigre de ají
+                amarillo, uno de los sabores más reconocibles de Perú.
+              </p>
+              <p>
+                También destacan el ceviche de pescado marinado con
+                lima, cebolla y cilantro, y la causa limeña: una
+                preparación fría a base de patata, ají amarillo y
+                lima, con diferentes rellenos.
+              </p>
             </div>
           </div>
-        </section>
 
-        <footer className={styles.bottom}>
-          <p>
-            <strong>Sobre este contenido:</strong> colaboración comercial con QOSQO.
-            Las fotografías y los detalles de los platos fueron facilitados por
-            el restaurante en noviembre de 2026. Esta publicación no es una
-            reseña de una visita personal; antes de publicar su versión definitiva
-            se revisarán los datos y permisos de las imágenes con QOSQO.
+          <div className={styles.index} aria-label="Otras especialidades">
+            <div className={styles.indexRow}>
+              <span className={styles.indexCount}>01</span>
+              <h3>Ají de gallina</h3>
+              <p>Gallina deshilachada con crema de ají amarillo y nueces, acompañada de arroz.</p>
+            </div>
+            <div className={styles.indexRow}>
+              <span className={styles.indexCount}>02</span>
+              <h3>Lomo saltado</h3>
+              <p>Carne de vacuno salteada con verduras, flambeada con pisco y servida con arroz blanco.</p>
+            </div>
+            <div className={styles.indexRow}>
+              <span className={styles.indexCount}>03</span>
+              <h3>Corvina con ají amarillo</h3>
+              <p>Lomo de corvina con salsa de ají amarillo, puré de patata, arroz jazmín y katsuobushi.</p>
+            </div>
+            <div className={styles.indexRow}>
+              <span className={styles.indexCount}>04</span>
+              <h3>Platos para compartir</h3>
+              <p>Entre sus propuestas figuran el pulpo confitado con camote y la costilla asada con cerveza Cusqueña Negra.</p>
+            </div>
+          </div>
+
+          <div className={styles.doublePhoto}>
+            <figure>
+              <Image
+                src="/images/qosqo/qosqo-aji-de-gallina.webp"
+                alt="Ají de gallina con arroz, servido sobre un mantel de QOSQO"
+                width={1200}
+                height={1600}
+                sizes="(max-width: 680px) 50vw, 45vw"
+                loading="lazy"
+              />
+              <figcaption>Ají de gallina. Foto: QOSQO.</figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/qosqo/qosqo-plato-pescado.webp"
+                alt="Corvina servida con salsa de ají amarillo en QOSQO"
+                width={1067}
+                height={1600}
+                sizes="(max-width: 680px) 50vw, 45vw"
+                loading="lazy"
+              />
+              <figcaption>Corvina con ají amarillo. Foto: QOSQO.</figcaption>
+            </figure>
+          </div>
+          <p className={styles.note}>
+            La selección y las descripciones se basan en información del restaurante
+            de noviembre de 2026. Antes de ir, confirma la carta actual,
+            la disponibilidad de los platos y los alérgenos.
           </p>
-          <div className={styles.author}>
+        </section>
+
+        <section className={styles.drinks} id="pisco" aria-labelledby="qosqo-pisco">
+          <div className={styles.drinksInner}>
+            <div className={styles.drinksCopy}>
+              <p className={styles.eyebrow}>03 / PARA BRINDAR</p>
+              <h2 id="qosqo-pisco">Pisco sour y otras bebidas peruanas</h2>
+              <p>
+                El pisco sour tiene su lugar en la mesa de QOSQO.
+                Además de esta combinación de pisco y cítricos,
+                el restaurante nos ha mostrado variantes con
+                frutas como mango y maracuyá.
+              </p>
+              <p>
+                También mencionan Inca Kola y cerveza Cusqueña,
+                dos bebidas que forman parte de su selección
+                de productos peruanos.
+              </p>
+              <p className={styles.smallPrint}>
+                Consulta directamente qué bebidas están disponibles
+                y sus precios en la carta vigente.
+              </p>
+            </div>
+            <figure className={styles.drinksFigure}>
+              <Image
+                src="/images/qosqo/qosqo-pisco-sour.webp"
+                alt="Cóctel pisco sour junto a un mantel con el nombre de QOSQO"
+                width={1280}
+                height={1600}
+                sizes="(max-width: 680px) 100vw, 48vw"
+                loading="lazy"
+              />
+              <figcaption>Un pisco sour servido en QOSQO. Fotografía: QOSQO.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className={styles.strip} aria-labelledby="qosqo-ambiente">
+          <figure className={styles.stripImage}>
+            <Image
+              src="/images/qosqo/qosqo-sala-y-postre.webp"
+              alt="Postre de QOSQO con el mural de colores del restaurante desenfocado al fondo"
+              width={1200}
+              height={1600}
+              sizes="(max-width: 680px) 100vw, 52vw"
+              loading="lazy"
+            />
+            <figcaption>Detalle de un postre y el mural del restaurante. Foto: QOSQO.</figcaption>
+          </figure>
+          <div>
+            <p className={styles.eyebrow}>04 / EL LUGAR</p>
+            <h2 id="qosqo-ambiente">Un alto antes de seguir por Lisboa</h2>
+            <p>
+              QOSQO está en una calle que conecta varias de las
+              zonas más visitadas del centro. Es una opción para
+              hacer una pausa después de caminar por Alfama o
+              antes de continuar hacia la ribera.
+            </p>
+            <p>
+              Si te interesa una experiencia gastronómica concreta
+              o alguno de los eventos con cocineros invitados,
+              pregunta al restaurante por las próximas fechas.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.visit} id="visita" aria-labelledby="qosqo-visita">
+          <div className={styles.visitInner}>
+            <div className={styles.visitHeader}>
+              <div>
+                <p className={styles.eyebrow}>05 / INFORMACIÓN PRÁCTICA</p>
+                <h2 id="qosqo-visita">Dónde está QOSQO y cómo reservar</h2>
+              </div>
+              <p>
+                Consulta directamente la disponibilidad, el
+                horario y la carta vigente antes de visitarlo.
+              </p>
+            </div>
+            <div className={styles.visitBody}>
+              <div>
+                <p className={styles.address}>
+                  Rua dos Bacalhoeiros 26A<br />
+                  Lisboa, Portugal
+                </p>
+                <div className={styles.contactRows}>
+                  <a href={PHONE} rel="sponsored nofollow" data-cta="qosqo-reserva-llamar">
+                    Llamar para reservar <span>+351 21 241 8058</span>
+                  </a>
+                  <a href={EMAIL} rel="sponsored nofollow" data-cta="qosqo-reserva-email">
+                    Consultar por correo <span>Gmail</span>
+                  </a>
+                  <a href={MAPS} target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="qosqo-como-llegar">
+                    Cómo llegar <span>Google Maps</span>
+                  </a>
+                  <a href={INSTAGRAM} target="_blank" rel="sponsored nofollow noopener noreferrer" data-cta="qosqo-instagram">
+                    Ver Instagram <span>@qosqo_lisboa</span>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.visitMap}>
+                <MapaZona />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className={styles.footer}>
+          <p className={styles.footerDisclosure}>
+            Colaboración comercial con QOSQO. Este artículo se ha preparado a partir
+            de los materiales, fotografías y detalles facilitados por el restaurante,
+            y no representa una visita ni una degustación personal. Esta es
+            una versión preliminar: la publicación definitiva requiere la
+            validación de los datos y la autorización de las fotografías.
+          </p>
+          <div className={styles.byline}>
             <Image
               src="/images/jose/jose-tabares-avatar.jpg"
               alt="José Tabares"
-              width={43}
-              height={43}
+              width={44}
+              height={44}
               loading="lazy"
             />
             <div>
-              <strong>Escrito por José Tabares</strong>
-              <span>
-                Creador de Estaba en Lisboa, una guía independiente de la ciudad en español.
-                {' '}<Link href="/sobre-nosotros">Conoce el proyecto</Link>.
-              </span>
+              <strong>José Tabares</strong>
+              Estaba en Lisboa · Guías independientes en español.{' '}
+              <Link href="/sobre-nosotros">Sobre el proyecto</Link>
             </div>
           </div>
         </footer>
@@ -413,7 +362,7 @@ export default function QosqoEditorialPreview() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(restaurantJsonLd).replace(/</g, '\\u003c'),
+          __html: JSON.stringify(restaurantSchema).replace(/</g, '\\u003c'),
         }}
       />
     </main>
