@@ -84,4 +84,23 @@ No usar «el primer restaurante peruano de Portugal» como hecho sin resolver co
 [ ] `npm run typecheck` y smokes relevantes; Vercel Preview READY verificado en el SHA.  
 [ ] Revisión visual del usuario antes de merge/publicación; revisión del restaurante y acuerdo comercial después.
 
-**Esta nota es solo el diseño aprobado para debate, no una implementación ni una promesa de QA realizada.**
+**La propuesta inicial de este documento fue replanteada por petición expresa de José: QOSQO no debe parecerse a Sinchi. La versión de diseño aplicada en la rama se detalla en el apartado siguiente; no se ha fusionado ni publicado.**
+
+
+## 9. Giro de dirección artística aplicado: QOSQO no debe copiar Sinchi (11/11/2026)
+
+**Solicitud de José:** «que no sea igual al otro peruano que hicimos; tenemos que ser profesionales y hacerlo de otra manera».
+
+**Decisión de diseño implementada en la rama de preview y aún pendiente de aprobación visual:**
+
+- Sinchi sigue siendo la referencia positiva, pero **no se reutiliza su estructura** de hero dividido, índice lateral, galería en rejilla y bloque final de reserva.
+- Nuevo concepto «reportaje gastronómico de QOSQO»: cabecera tipográfica centrada con el nombre QOSQO en gran formato, fondo vino `#37232e`, subtítulo de ubicación y patrocinio legible.
+- Apertura panorámica en dos fotos: plato sobre mantel identitario QOSQO + escena humana de cócteles. Móvil muestra únicamente la foto horizontal para no forzar recortes ni duplicar imágenes.
+- Navegación corta de anclas, capítulos numerados, primer capítulo en editorial de columnas con texto largo, plato destacado en fotografía + texto y otras especialidades en índice tipográfico sin tarjetas.
+- Apartado pisco sour como capítulo oscuro propio, postre/contexto en bloque fotográfico separado, contacto y mapa en cierre utilitario.
+- Paleta del restaurante derivada de sus fotos: vino, crema, ocre. El sitio principal conserva su marca; estilos locales CSS Modules, sin añadir fuentes ni alterar la home, Sinchi o Lisbon ByBoat.
+- Se conservaron noindex/noarchive, enlaces comerciales `rel=sponsored nofollow`, fuente de los datos explícita, ausencia de precios sin carta y no atribuir visita propia.
+- Cambios acotados a `src/app/[locale]/colaboraciones/previa-qosqo/page.tsx` y `QosqoEditorial.module.css` de PR #141. Se requiere verificar el deploy del commit exacto, revisar móvil y escritorio y obtener aprobación de José.
+- No fusionar a `main`, no indexar, no enviar al restaurante, no considerar el pago cerrado.
+
+**Control importante:** la promesa de «formato Brisa» es un requisito de presentación visual, no una razón para generar nuevas imágenes de platos que aparenten provenir del restaurante. Solo se usan fotografías existentes de QOSQO.
