@@ -77,3 +77,19 @@ Si en el futuro queremos ofrecer newsletter dentro de un formulario de servicio:
 - el sistema debe poder demostrar qué consentimiento se obtuvo y en qué contexto.
 
 Nunca reutilizar silenciosamente una lista transaccional o de leads como lista de marketing.
+
+
+## L-008 — Hilos comerciales: continuidad, no repetición
+**Estado:** LOCKED  
+**Fecha:** 2026-11-11
+
+Antes de redactar o enviar respuestas desde Estaba en Lisboa, recuperar el historial **enviado y recibido**, no solo el último correo ni la etiqueta «no leído». Distinguir respuesta realmente pendiente de seguimiento y de tareas que requieren ejecución sin otro email.
+
+- Registrar para la redacción: oferta/condiciones ya explicadas, preguntas respondidas, preguntas nuevas, compromisos vigentes y siguiente paso.
+- No repetir presentación de la web, precio, cifras Search Console, propuesta editorial, disculpas o preguntas ya resueltas, salvo necesidad explícita.
+- Dar prioridad a contestar preguntas concretas; no inventar tráfico ni equiparar impresiones con visitas o pageviews.
+- Ajustar idioma, formalidad y longitud a la persona; borrar frases de relleno y respetar el estilo humano de L-002.
+- Aplicar una comprobación de novedad frase a frase y una única acción útil al cierre. Si no hay información nueva ni una decisión que desbloquear, no enviar por inercia.
+- No enviar correos sin autorización. No almacenar contenido de emails privados, contactos personales ni contratos en el repositorio público.
+
+Aprendizaje: los borradores comerciales del 2026-11-11 repetían datos y argumentos que el destinatario ya había recibido; se corrigió el procedimiento antes del envío.
