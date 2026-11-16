@@ -106,10 +106,10 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'lisboa-en-navidad',
     titulo: 'Lisboa en Navidad 2026: luces, mercados y qué abre cada día',
-    excerpt: 'El mercado del Rossio, las luces de la Baixa y Wonderland, con las fechas de 2026 que ya se conocen, qué abre el 24, 25 y 31 y cómo es la Nochevieja.',
+    excerpt: 'El mercado del Rossio, las luces de la Baixa y Wonderland, con las fechas de 2026 ya publicadas, qué abre el 24, 25 y 31 y cómo es la Nochevieja.',
     categoria: 'Planificación',
     fecha: '9 Oct 2026',
-    dateModified: '2026-10-25',
+    dateModified: '2026-11-16',
     autor: 'José Tabares',
     imagen: '/images/lisboa-originales/rua-augusta-arco-lisboa.webp',
   },
