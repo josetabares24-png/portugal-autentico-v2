@@ -12,14 +12,14 @@ export type EditorialPilot = ArticleEssentialsProps & {
 /** Seven reviewed pages only. No automatic category-based activation. */
 export const EDITORIAL_PILOT: Record<string, EditorialPilot> = {
   'metro-lisboa-guia': {
-    type: 'transport', sourceBlocks: [0, 2, 5, 9, 12, 15],
+    type: 'transport', sourceBlocks: [0, 2, 3, 6, 10, 13, 16],
     rows: [
       { label: 'Horario', value: '06:30–01:00, en condiciones normales.' },
       { label: 'Billete', value: 'Carris/Metro: 1,90 €.' },
       { label: 'Tarjeta', value: 'Navegante ocasional: 0,50 €; viajes aparte.' },
       { label: '24 horas', value: 'Carris/Metro: 7,25 €.' },
       { label: 'Aeropuerto', value: 'Línea Roja; comprueba el transbordo al alojamiento.' },
-      { label: 'Mapa y uso', value: 'Abre el plano oficial de la primera sección y busca estación, sentido y transbordo.' },
+      { label: 'Mapa', value: 'El diagrama oficial de 2026 está al inicio, con enlace a Metro de Lisboa.' },
     ],
   },
   'tarjeta-navegante-lisboa': {

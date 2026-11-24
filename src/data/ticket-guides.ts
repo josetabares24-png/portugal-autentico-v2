@@ -307,15 +307,15 @@ export const TICKET_GUIDES: Record<string, TicketGuide> = {
       titulo: 'Oceanário de Lisboa: entradas, precios y horario (2026)',
       descripcion:
         'Cuánto cuesta la entrada al Oceanário de Lisboa en 2026 según la hora, el descuento de la compra online, el horario de los días especiales, qué incluye el billete y cómo llegar en metro.',
-      seoTitle: 'Oceanário de Lisboa: entradas, precio y horario 2026',
+      seoTitle: 'Oceanário de Lisboa: entradas desde 25,50 € y horario',
       metaDescription:
         'Entrada de 25,50 € a 29,90 € según la hora. Horario, días especiales, qué incluye y cómo llegar en metro.',
       imagen: '/images/actividades/oceanario-de-lisboa.webp',
       imageAlt: 'Exterior del Oceanário de Lisboa visto desde el paseo del Parque das Nações',
       categoria: 'Entradas',
       fecha: '25 Oct 2026',
-      fechaActualizacion: 'Verificado el 25 de octubre de 2026',
-      dateModified: '2026-10-25',
+      fechaActualizacion: 'Verificado el 24 de noviembre de 2026',
+      dateModified: '2026-11-24',
       minutos: 6,
       links: [
         { href: '/blog/parque-das-nacoes-lisboa-que-ver', label: 'Qué ver en Parque das Nações' },

@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Image from 'next/image';
 import TrackedInternalLink from '@/components/TrackedInternalLink';
 import { resolveInternalHref } from '@/lib/seo-url-policy';
 import type {
@@ -218,6 +219,34 @@ export function ArticleBody({
      * al artículo. Enlaza siempre a una sección de la web propia, nunca
      * a un afiliado directo.
      */
+    if (bloque.tipo === 'imagen' && bloque.imagen) {
+      const caption = bloque.caption || bloque.texto || '';
+      return (
+        <figure key={index} className="article-figure article-figure-diagram">
+          <Image
+            src={bloque.imagen}
+            alt={caption || 'Imagen del artículo'}
+            width={1800}
+            height={1273}
+            className="article-figure-diagram-img"
+            sizes="(max-width: 768px) 100vw, 700px"
+          />
+          {caption ? (
+            <figcaption className="article-figure-caption">
+              {caption}
+              {bloque.href && bloque.label ? (
+                <>
+                  {' '}
+                  <a href={bloque.href} target="_blank" rel="noopener noreferrer">
+                    {bloque.label}
+                  </a>
+                </>
+              ) : null}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+    }
     if (bloque.tipo === 'enlace' && bloque.href && bloque.label) {
       return (
         <aside key={index} className="article-inline-cta border-l-2 border-terracotta">
